@@ -6,31 +6,34 @@ part of 'inline.dart';
 // Inline operation models (part 29)
 /// The severity of the advisory. You must choose between setting this field or `cvss_vector_string`.
 final class PrivateVulnerabilityReportCreateSeverity {
-
   final String value;
 
   const PrivateVulnerabilityReportCreateSeverity._(this.value);
 
-  factory PrivateVulnerabilityReportCreateSeverity.fromJson(String value) => PrivateVulnerabilityReportCreateSeverity._(value);
+  factory PrivateVulnerabilityReportCreateSeverity.fromJson(String value) =>
+      PrivateVulnerabilityReportCreateSeverity._(value);
 
-  static const critical = PrivateVulnerabilityReportCreateSeverity._('critical');
+  static const critical =
+      PrivateVulnerabilityReportCreateSeverity._('critical');
   static const high = PrivateVulnerabilityReportCreateSeverity._('high');
   static const medium = PrivateVulnerabilityReportCreateSeverity._('medium');
   static const low = PrivateVulnerabilityReportCreateSeverity._('low');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PrivateVulnerabilityReportCreateSeverity && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PrivateVulnerabilityReportCreateSeverity && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The current state of the project.
 final class ProjectsV2State {
-
   final String value;
 
   const ProjectsV2State._(this.value);
@@ -42,25 +45,29 @@ final class ProjectsV2State {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ProjectsV2State && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ProjectsV2State && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The field's data type.
 final class ProjectsV2FieldDataType {
-
   final String value;
 
   const ProjectsV2FieldDataType._(this.value);
 
-  factory ProjectsV2FieldDataType.fromJson(String value) => ProjectsV2FieldDataType._(value);
+  factory ProjectsV2FieldDataType.fromJson(String value) =>
+      ProjectsV2FieldDataType._(value);
 
   static const assignees = ProjectsV2FieldDataType._('assignees');
-  static const linkedPullRequests = ProjectsV2FieldDataType._('linked_pull_requests');
+  static const linkedPullRequests =
+      ProjectsV2FieldDataType._('linked_pull_requests');
   static const reviewers = ProjectsV2FieldDataType._('reviewers');
   static const labels = ProjectsV2FieldDataType._('labels');
   static const milestone = ProjectsV2FieldDataType._('milestone');
@@ -73,26 +80,30 @@ final class ProjectsV2FieldDataType {
   static const iteration = ProjectsV2FieldDataType._('iteration');
   static const issueType = ProjectsV2FieldDataType._('issue_type');
   static const parentIssue = ProjectsV2FieldDataType._('parent_issue');
-  static const subIssuesProgress = ProjectsV2FieldDataType._('sub_issues_progress');
+  static const subIssuesProgress =
+      ProjectsV2FieldDataType._('sub_issues_progress');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ProjectsV2FieldDataType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ProjectsV2FieldDataType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The color associated with the option.
 final class ProjectsV2FieldSingleSelectOptionColor {
-
   final String value;
 
   const ProjectsV2FieldSingleSelectOptionColor._(this.value);
 
-  factory ProjectsV2FieldSingleSelectOptionColor.fromJson(String value) => ProjectsV2FieldSingleSelectOptionColor._(value);
+  factory ProjectsV2FieldSingleSelectOptionColor.fromJson(String value) =>
+      ProjectsV2FieldSingleSelectOptionColor._(value);
 
   static const blue = ProjectsV2FieldSingleSelectOptionColor._('BLUE');
   static const gray = ProjectsV2FieldSingleSelectOptionColor._('GRAY');
@@ -105,22 +116,25 @@ final class ProjectsV2FieldSingleSelectOptionColor {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ProjectsV2FieldSingleSelectOptionColor && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ProjectsV2FieldSingleSelectOptionColor && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The current status.
 final class ProjectsV2StatusUpdateStatus {
-
   final String value;
 
   const ProjectsV2StatusUpdateStatus._(this.value);
 
-  factory ProjectsV2StatusUpdateStatus.fromJson(String value) => ProjectsV2StatusUpdateStatus._(value);
+  factory ProjectsV2StatusUpdateStatus.fromJson(String value) =>
+      ProjectsV2StatusUpdateStatus._(value);
 
   static const inactive = ProjectsV2StatusUpdateStatus._('INACTIVE');
   static const onTrack = ProjectsV2StatusUpdateStatus._('ON_TRACK');
@@ -130,22 +144,25 @@ final class ProjectsV2StatusUpdateStatus {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ProjectsV2StatusUpdateStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ProjectsV2StatusUpdateStatus && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The layout of the view.
 final class ProjectsV2ViewLayout {
-
   final String value;
 
   const ProjectsV2ViewLayout._(this.value);
 
-  factory ProjectsV2ViewLayout.fromJson(String value) => ProjectsV2ViewLayout._(value);
+  factory ProjectsV2ViewLayout.fromJson(String value) =>
+      ProjectsV2ViewLayout._(value);
 
   static const table = ProjectsV2ViewLayout._('table');
   static const board = ProjectsV2ViewLayout._('board');
@@ -153,17 +170,19 @@ final class ProjectsV2ViewLayout {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ProjectsV2ViewLayout && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ProjectsV2ViewLayout && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// State of this Pull Request. Either `open` or `closed`.
 final class PullRequestState {
-
   final String value;
 
   const PullRequestState._(this.value);
@@ -175,22 +194,25 @@ final class PullRequestState {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullRequestState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullRequestState && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `status` wire field.
 final class PullRequestMergeAsyncResultStatus {
-
   final String value;
 
   const PullRequestMergeAsyncResultStatus._(this.value);
 
-  factory PullRequestMergeAsyncResultStatus.fromJson(String value) => PullRequestMergeAsyncResultStatus._(value);
+  factory PullRequestMergeAsyncResultStatus.fromJson(String value) =>
+      PullRequestMergeAsyncResultStatus._(value);
 
   static const pending = PullRequestMergeAsyncResultStatus._('pending');
   static const merged = PullRequestMergeAsyncResultStatus._('merged');
@@ -199,79 +221,105 @@ final class PullRequestMergeAsyncResultStatus {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullRequestMergeAsyncResultStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullRequestMergeAsyncResultStatus && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `merge_action` wire field.
 final class PullRequestMergeAsyncResultDetailsVariant0MergeAction {
-
   final String value;
 
   const PullRequestMergeAsyncResultDetailsVariant0MergeAction._(this.value);
 
-  factory PullRequestMergeAsyncResultDetailsVariant0MergeAction.fromJson(String value) => PullRequestMergeAsyncResultDetailsVariant0MergeAction._(value);
+  factory PullRequestMergeAsyncResultDetailsVariant0MergeAction.fromJson(
+          String value) =>
+      PullRequestMergeAsyncResultDetailsVariant0MergeAction._(value);
 
-  static const default_ = PullRequestMergeAsyncResultDetailsVariant0MergeAction._('default');
-  static const mergeQueue = PullRequestMergeAsyncResultDetailsVariant0MergeAction._('merge_queue');
-  static const directMerge = PullRequestMergeAsyncResultDetailsVariant0MergeAction._('direct_merge');
+  static const default_ =
+      PullRequestMergeAsyncResultDetailsVariant0MergeAction._('default');
+  static const mergeQueue =
+      PullRequestMergeAsyncResultDetailsVariant0MergeAction._('merge_queue');
+  static const directMerge =
+      PullRequestMergeAsyncResultDetailsVariant0MergeAction._('direct_merge');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullRequestMergeAsyncResultDetailsVariant0MergeAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullRequestMergeAsyncResultDetailsVariant0MergeAction &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `merge_method` wire field.
 final class PullRequestMergeAsyncResultDetailsVariant0MergeMethod {
-
   final String value;
 
   const PullRequestMergeAsyncResultDetailsVariant0MergeMethod._(this.value);
 
-  factory PullRequestMergeAsyncResultDetailsVariant0MergeMethod.fromJson(String value) => PullRequestMergeAsyncResultDetailsVariant0MergeMethod._(value);
+  factory PullRequestMergeAsyncResultDetailsVariant0MergeMethod.fromJson(
+          String value) =>
+      PullRequestMergeAsyncResultDetailsVariant0MergeMethod._(value);
 
-  static const default_ = PullRequestMergeAsyncResultDetailsVariant0MergeMethod._('default');
-  static const merge = PullRequestMergeAsyncResultDetailsVariant0MergeMethod._('merge');
-  static const squash = PullRequestMergeAsyncResultDetailsVariant0MergeMethod._('squash');
-  static const rebase = PullRequestMergeAsyncResultDetailsVariant0MergeMethod._('rebase');
+  static const default_ =
+      PullRequestMergeAsyncResultDetailsVariant0MergeMethod._('default');
+  static const merge =
+      PullRequestMergeAsyncResultDetailsVariant0MergeMethod._('merge');
+  static const squash =
+      PullRequestMergeAsyncResultDetailsVariant0MergeMethod._('squash');
+  static const rebase =
+      PullRequestMergeAsyncResultDetailsVariant0MergeMethod._('rebase');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullRequestMergeAsyncResultDetailsVariant0MergeMethod && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullRequestMergeAsyncResultDetailsVariant0MergeMethod &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class PullRequestRequestedReviewersItemVariant0Type {
-
   final String value;
 
   const PullRequestRequestedReviewersItemVariant0Type._(this.value);
 
-  factory PullRequestRequestedReviewersItemVariant0Type.fromJson(String value) => PullRequestRequestedReviewersItemVariant0Type._(value);
+  factory PullRequestRequestedReviewersItemVariant0Type.fromJson(
+          String value) =>
+      PullRequestRequestedReviewersItemVariant0Type._(value);
 
   static const bot = PullRequestRequestedReviewersItemVariant0Type._('Bot');
   static const user = PullRequestRequestedReviewersItemVariant0Type._('User');
-  static const organization = PullRequestRequestedReviewersItemVariant0Type._('Organization');
+  static const organization =
+      PullRequestRequestedReviewersItemVariant0Type._('Organization');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullRequestRequestedReviewersItemVariant0Type && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullRequestRequestedReviewersItemVariant0Type &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

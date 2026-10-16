@@ -11,98 +11,189 @@ sealed class NullableSecretScanningFirstDetectedLocation {
   static const String constructionSurface = 'named';
   const NullableSecretScanningFirstDetectedLocation();
   factory NullableSecretScanningFirstDetectedLocation.fromJson(Object? json) {
-    try { return NullableSecretScanningFirstDetectedLocationSecretScanningLocationCommit(SecretScanningLocationCommit.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return NullableSecretScanningFirstDetectedLocationSecretScanningLocationWikiCommit(SecretScanningLocationWikiCommit.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return NullableSecretScanningFirstDetectedLocationSecretScanningLocationIssueTitle(SecretScanningLocationIssueTitle.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return NullableSecretScanningFirstDetectedLocationSecretScanningLocationIssueBody(SecretScanningLocationIssueBody.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return NullableSecretScanningFirstDetectedLocationSecretScanningLocationIssueComment(SecretScanningLocationIssueComment.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return NullableSecretScanningFirstDetectedLocationSecretScanningLocationDiscussionTitle(SecretScanningLocationDiscussionTitle.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return NullableSecretScanningFirstDetectedLocationSecretScanningLocationDiscussionBody(SecretScanningLocationDiscussionBody.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return NullableSecretScanningFirstDetectedLocationSecretScanningLocationDiscussionComment(SecretScanningLocationDiscussionComment.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return NullableSecretScanningFirstDetectedLocationSecretScanningLocationPullRequestTitle(SecretScanningLocationPullRequestTitle.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return NullableSecretScanningFirstDetectedLocationSecretScanningLocationPullRequestBody(SecretScanningLocationPullRequestBody.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return NullableSecretScanningFirstDetectedLocationSecretScanningLocationPullRequestComment(SecretScanningLocationPullRequestComment.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return NullableSecretScanningFirstDetectedLocationSecretScanningLocationPullRequestReview(SecretScanningLocationPullRequestReview.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return NullableSecretScanningFirstDetectedLocationSecretScanningLocationPullRequestReviewComment(SecretScanningLocationPullRequestReviewComment.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    throw FormatException("No variant matched for NullableSecretScanningFirstDetectedLocation");
+    try {
+      return NullableSecretScanningFirstDetectedLocationSecretScanningLocationCommit(
+          SecretScanningLocationCommit.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return NullableSecretScanningFirstDetectedLocationSecretScanningLocationWikiCommit(
+          SecretScanningLocationWikiCommit.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return NullableSecretScanningFirstDetectedLocationSecretScanningLocationIssueTitle(
+          SecretScanningLocationIssueTitle.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return NullableSecretScanningFirstDetectedLocationSecretScanningLocationIssueBody(
+          SecretScanningLocationIssueBody.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return NullableSecretScanningFirstDetectedLocationSecretScanningLocationIssueComment(
+          SecretScanningLocationIssueComment.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return NullableSecretScanningFirstDetectedLocationSecretScanningLocationDiscussionTitle(
+          SecretScanningLocationDiscussionTitle.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return NullableSecretScanningFirstDetectedLocationSecretScanningLocationDiscussionBody(
+          SecretScanningLocationDiscussionBody.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return NullableSecretScanningFirstDetectedLocationSecretScanningLocationDiscussionComment(
+          SecretScanningLocationDiscussionComment.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return NullableSecretScanningFirstDetectedLocationSecretScanningLocationPullRequestTitle(
+          SecretScanningLocationPullRequestTitle.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return NullableSecretScanningFirstDetectedLocationSecretScanningLocationPullRequestBody(
+          SecretScanningLocationPullRequestBody.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return NullableSecretScanningFirstDetectedLocationSecretScanningLocationPullRequestComment(
+          SecretScanningLocationPullRequestComment.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return NullableSecretScanningFirstDetectedLocationSecretScanningLocationPullRequestReview(
+          SecretScanningLocationPullRequestReview.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return NullableSecretScanningFirstDetectedLocationSecretScanningLocationPullRequestReviewComment(
+          SecretScanningLocationPullRequestReviewComment.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    throw FormatException(
+        "No variant matched for NullableSecretScanningFirstDetectedLocation");
   }
   Object? toJson();
 }
 
-final class NullableSecretScanningFirstDetectedLocationSecretScanningLocationCommit extends NullableSecretScanningFirstDetectedLocation {
+final class NullableSecretScanningFirstDetectedLocationSecretScanningLocationCommit
+    extends NullableSecretScanningFirstDetectedLocation {
   final SecretScanningLocationCommit value;
-  const NullableSecretScanningFirstDetectedLocationSecretScanningLocationCommit(this.value);
-  @override Object? toJson() => value.toJson();
+  const NullableSecretScanningFirstDetectedLocationSecretScanningLocationCommit(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class NullableSecretScanningFirstDetectedLocationSecretScanningLocationWikiCommit extends NullableSecretScanningFirstDetectedLocation {
+final class NullableSecretScanningFirstDetectedLocationSecretScanningLocationWikiCommit
+    extends NullableSecretScanningFirstDetectedLocation {
   final SecretScanningLocationWikiCommit value;
-  const NullableSecretScanningFirstDetectedLocationSecretScanningLocationWikiCommit(this.value);
-  @override Object? toJson() => value.toJson();
+  const NullableSecretScanningFirstDetectedLocationSecretScanningLocationWikiCommit(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class NullableSecretScanningFirstDetectedLocationSecretScanningLocationIssueTitle extends NullableSecretScanningFirstDetectedLocation {
+final class NullableSecretScanningFirstDetectedLocationSecretScanningLocationIssueTitle
+    extends NullableSecretScanningFirstDetectedLocation {
   final SecretScanningLocationIssueTitle value;
-  const NullableSecretScanningFirstDetectedLocationSecretScanningLocationIssueTitle(this.value);
-  @override Object? toJson() => value.toJson();
+  const NullableSecretScanningFirstDetectedLocationSecretScanningLocationIssueTitle(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class NullableSecretScanningFirstDetectedLocationSecretScanningLocationIssueBody extends NullableSecretScanningFirstDetectedLocation {
+final class NullableSecretScanningFirstDetectedLocationSecretScanningLocationIssueBody
+    extends NullableSecretScanningFirstDetectedLocation {
   final SecretScanningLocationIssueBody value;
-  const NullableSecretScanningFirstDetectedLocationSecretScanningLocationIssueBody(this.value);
-  @override Object? toJson() => value.toJson();
+  const NullableSecretScanningFirstDetectedLocationSecretScanningLocationIssueBody(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class NullableSecretScanningFirstDetectedLocationSecretScanningLocationIssueComment extends NullableSecretScanningFirstDetectedLocation {
+final class NullableSecretScanningFirstDetectedLocationSecretScanningLocationIssueComment
+    extends NullableSecretScanningFirstDetectedLocation {
   final SecretScanningLocationIssueComment value;
-  const NullableSecretScanningFirstDetectedLocationSecretScanningLocationIssueComment(this.value);
-  @override Object? toJson() => value.toJson();
+  const NullableSecretScanningFirstDetectedLocationSecretScanningLocationIssueComment(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class NullableSecretScanningFirstDetectedLocationSecretScanningLocationDiscussionTitle extends NullableSecretScanningFirstDetectedLocation {
+final class NullableSecretScanningFirstDetectedLocationSecretScanningLocationDiscussionTitle
+    extends NullableSecretScanningFirstDetectedLocation {
   final SecretScanningLocationDiscussionTitle value;
-  const NullableSecretScanningFirstDetectedLocationSecretScanningLocationDiscussionTitle(this.value);
-  @override Object? toJson() => value.toJson();
+  const NullableSecretScanningFirstDetectedLocationSecretScanningLocationDiscussionTitle(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class NullableSecretScanningFirstDetectedLocationSecretScanningLocationDiscussionBody extends NullableSecretScanningFirstDetectedLocation {
+final class NullableSecretScanningFirstDetectedLocationSecretScanningLocationDiscussionBody
+    extends NullableSecretScanningFirstDetectedLocation {
   final SecretScanningLocationDiscussionBody value;
-  const NullableSecretScanningFirstDetectedLocationSecretScanningLocationDiscussionBody(this.value);
-  @override Object? toJson() => value.toJson();
+  const NullableSecretScanningFirstDetectedLocationSecretScanningLocationDiscussionBody(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class NullableSecretScanningFirstDetectedLocationSecretScanningLocationDiscussionComment extends NullableSecretScanningFirstDetectedLocation {
+final class NullableSecretScanningFirstDetectedLocationSecretScanningLocationDiscussionComment
+    extends NullableSecretScanningFirstDetectedLocation {
   final SecretScanningLocationDiscussionComment value;
-  const NullableSecretScanningFirstDetectedLocationSecretScanningLocationDiscussionComment(this.value);
-  @override Object? toJson() => value.toJson();
+  const NullableSecretScanningFirstDetectedLocationSecretScanningLocationDiscussionComment(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class NullableSecretScanningFirstDetectedLocationSecretScanningLocationPullRequestTitle extends NullableSecretScanningFirstDetectedLocation {
+final class NullableSecretScanningFirstDetectedLocationSecretScanningLocationPullRequestTitle
+    extends NullableSecretScanningFirstDetectedLocation {
   final SecretScanningLocationPullRequestTitle value;
-  const NullableSecretScanningFirstDetectedLocationSecretScanningLocationPullRequestTitle(this.value);
-  @override Object? toJson() => value.toJson();
+  const NullableSecretScanningFirstDetectedLocationSecretScanningLocationPullRequestTitle(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class NullableSecretScanningFirstDetectedLocationSecretScanningLocationPullRequestBody extends NullableSecretScanningFirstDetectedLocation {
+final class NullableSecretScanningFirstDetectedLocationSecretScanningLocationPullRequestBody
+    extends NullableSecretScanningFirstDetectedLocation {
   final SecretScanningLocationPullRequestBody value;
-  const NullableSecretScanningFirstDetectedLocationSecretScanningLocationPullRequestBody(this.value);
-  @override Object? toJson() => value.toJson();
+  const NullableSecretScanningFirstDetectedLocationSecretScanningLocationPullRequestBody(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class NullableSecretScanningFirstDetectedLocationSecretScanningLocationPullRequestComment extends NullableSecretScanningFirstDetectedLocation {
+final class NullableSecretScanningFirstDetectedLocationSecretScanningLocationPullRequestComment
+    extends NullableSecretScanningFirstDetectedLocation {
   final SecretScanningLocationPullRequestComment value;
-  const NullableSecretScanningFirstDetectedLocationSecretScanningLocationPullRequestComment(this.value);
-  @override Object? toJson() => value.toJson();
+  const NullableSecretScanningFirstDetectedLocationSecretScanningLocationPullRequestComment(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class NullableSecretScanningFirstDetectedLocationSecretScanningLocationPullRequestReview extends NullableSecretScanningFirstDetectedLocation {
+final class NullableSecretScanningFirstDetectedLocationSecretScanningLocationPullRequestReview
+    extends NullableSecretScanningFirstDetectedLocation {
   final SecretScanningLocationPullRequestReview value;
-  const NullableSecretScanningFirstDetectedLocationSecretScanningLocationPullRequestReview(this.value);
-  @override Object? toJson() => value.toJson();
+  const NullableSecretScanningFirstDetectedLocationSecretScanningLocationPullRequestReview(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class NullableSecretScanningFirstDetectedLocationSecretScanningLocationPullRequestReviewComment extends NullableSecretScanningFirstDetectedLocation {
+final class NullableSecretScanningFirstDetectedLocationSecretScanningLocationPullRequestReviewComment
+    extends NullableSecretScanningFirstDetectedLocation {
   final SecretScanningLocationPullRequestReviewComment value;
-  const NullableSecretScanningFirstDetectedLocationSecretScanningLocationPullRequestReviewComment(this.value);
-  @override Object? toJson() => value.toJson();
+  const NullableSecretScanningFirstDetectedLocationSecretScanningLocationPullRequestReviewComment(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }

@@ -6,56 +6,62 @@ part of 'inline.dart';
 // Inline operation models (part 41)
 /// The role of the user in the team.
 final class TeamMembershipRole {
-
   final String value;
 
   const TeamMembershipRole._(this.value);
 
-  factory TeamMembershipRole.fromJson(String value) => TeamMembershipRole._(value);
+  factory TeamMembershipRole.fromJson(String value) =>
+      TeamMembershipRole._(value);
 
   static const member = TeamMembershipRole._('member');
   static const maintainer = TeamMembershipRole._('maintainer');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is TeamMembershipRole && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is TeamMembershipRole && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The state of the user's membership in the team.
 final class TeamMembershipState {
-
   final String value;
 
   const TeamMembershipState._(this.value);
 
-  factory TeamMembershipState.fromJson(String value) => TeamMembershipState._(value);
+  factory TeamMembershipState.fromJson(String value) =>
+      TeamMembershipState._(value);
 
   static const active = TeamMembershipState._('active');
   static const pending = TeamMembershipState._('pending');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is TeamMembershipState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is TeamMembershipState && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Determines if the team has a direct, indirect, or mixed relationship to a role
 final class TeamRoleAssignmentAssignment {
-
   final String value;
 
   const TeamRoleAssignmentAssignment._(this.value);
 
-  factory TeamRoleAssignmentAssignment.fromJson(String value) => TeamRoleAssignmentAssignment._(value);
+  factory TeamRoleAssignmentAssignment.fromJson(String value) =>
+      TeamRoleAssignmentAssignment._(value);
 
   static const direct = TeamRoleAssignmentAssignment._('direct');
   static const indirect = TeamRoleAssignmentAssignment._('indirect');
@@ -63,39 +69,44 @@ final class TeamRoleAssignmentAssignment {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is TeamRoleAssignmentAssignment && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is TeamRoleAssignmentAssignment && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The ownership type of the team
 final class TeamRoleAssignmentType {
-
   final String value;
 
   const TeamRoleAssignmentType._(this.value);
 
-  factory TeamRoleAssignmentType.fromJson(String value) => TeamRoleAssignmentType._(value);
+  factory TeamRoleAssignmentType.fromJson(String value) =>
+      TeamRoleAssignmentType._(value);
 
   static const enterprise = TeamRoleAssignmentType._('enterprise');
   static const organization = TeamRoleAssignmentType._('organization');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is TeamRoleAssignmentType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is TeamRoleAssignmentType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The ownership type of the team
 final class TeamSimpleType {
-
   final String value;
 
   const TeamSimpleType._(this.value);
@@ -107,91 +118,107 @@ final class TeamSimpleType {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is TeamSimpleType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is TeamSimpleType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The type of scope for the budget
 final class UpdateBudgetBudgetBudgetScope {
-
   final String value;
 
   const UpdateBudgetBudgetBudgetScope._(this.value);
 
-  factory UpdateBudgetBudgetBudgetScope.fromJson(String value) => UpdateBudgetBudgetBudgetScope._(value);
+  factory UpdateBudgetBudgetBudgetScope.fromJson(String value) =>
+      UpdateBudgetBudgetBudgetScope._(value);
 
   static const enterprise = UpdateBudgetBudgetBudgetScope._('enterprise');
   static const organization = UpdateBudgetBudgetBudgetScope._('organization');
   static const repository = UpdateBudgetBudgetBudgetScope._('repository');
   static const costCenter = UpdateBudgetBudgetBudgetScope._('cost_center');
-  static const multiUserCustomer = UpdateBudgetBudgetBudgetScope._('multi_user_customer');
-  static const multiUserCostCenter = UpdateBudgetBudgetBudgetScope._('multi_user_cost_center');
+  static const multiUserCustomer =
+      UpdateBudgetBudgetBudgetScope._('multi_user_customer');
+  static const multiUserCostCenter =
+      UpdateBudgetBudgetBudgetScope._('multi_user_cost_center');
   static const user = UpdateBudgetBudgetBudgetScope._('user');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is UpdateBudgetBudgetBudgetScope && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is UpdateBudgetBudgetBudgetScope && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `budget_type` wire field.
 final class UpdateBudgetBudgetBudgetTypeVariant0 {
-
   final String value;
 
   const UpdateBudgetBudgetBudgetTypeVariant0._(this.value);
 
-  factory UpdateBudgetBudgetBudgetTypeVariant0.fromJson(String value) => UpdateBudgetBudgetBudgetTypeVariant0._(value);
+  factory UpdateBudgetBudgetBudgetTypeVariant0.fromJson(String value) =>
+      UpdateBudgetBudgetBudgetTypeVariant0._(value);
 
-  static const productpricing = UpdateBudgetBudgetBudgetTypeVariant0._('ProductPricing');
+  static const productpricing =
+      UpdateBudgetBudgetBudgetTypeVariant0._('ProductPricing');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is UpdateBudgetBudgetBudgetTypeVariant0 && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is UpdateBudgetBudgetBudgetTypeVariant0 && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `budget_type` wire field.
 final class UpdateBudgetBudgetBudgetTypeVariant1 {
-
   final String value;
 
   const UpdateBudgetBudgetBudgetTypeVariant1._(this.value);
 
-  factory UpdateBudgetBudgetBudgetTypeVariant1.fromJson(String value) => UpdateBudgetBudgetBudgetTypeVariant1._(value);
+  factory UpdateBudgetBudgetBudgetTypeVariant1.fromJson(String value) =>
+      UpdateBudgetBudgetBudgetTypeVariant1._(value);
 
-  static const skupricing = UpdateBudgetBudgetBudgetTypeVariant1._('SkuPricing');
+  static const skupricing =
+      UpdateBudgetBudgetBudgetTypeVariant1._('SkuPricing');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is UpdateBudgetBudgetBudgetTypeVariant1 && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is UpdateBudgetBudgetBudgetTypeVariant1 && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Determines if the user has a direct, indirect, or mixed relationship to a role
 final class UserRoleAssignmentAssignment {
-
   final String value;
 
   const UserRoleAssignmentAssignment._(this.value);
 
-  factory UserRoleAssignmentAssignment.fromJson(String value) => UserRoleAssignmentAssignment._(value);
+  factory UserRoleAssignmentAssignment.fromJson(String value) =>
+      UserRoleAssignmentAssignment._(value);
 
   static const direct = UserRoleAssignmentAssignment._('direct');
   static const indirect = UserRoleAssignmentAssignment._('indirect');
@@ -199,94 +226,115 @@ final class UserRoleAssignmentAssignment {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is UserRoleAssignmentAssignment && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is UserRoleAssignmentAssignment && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookBranchProtectionConfigurationDisabledAction {
-
   final String value;
 
   const WebhookBranchProtectionConfigurationDisabledAction._(this.value);
 
-  factory WebhookBranchProtectionConfigurationDisabledAction.fromJson(String value) => WebhookBranchProtectionConfigurationDisabledAction._(value);
+  factory WebhookBranchProtectionConfigurationDisabledAction.fromJson(
+          String value) =>
+      WebhookBranchProtectionConfigurationDisabledAction._(value);
 
-  static const disabled = WebhookBranchProtectionConfigurationDisabledAction._('disabled');
+  static const disabled =
+      WebhookBranchProtectionConfigurationDisabledAction._('disabled');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookBranchProtectionConfigurationDisabledAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookBranchProtectionConfigurationDisabledAction &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookBranchProtectionConfigurationEnabledAction {
-
   final String value;
 
   const WebhookBranchProtectionConfigurationEnabledAction._(this.value);
 
-  factory WebhookBranchProtectionConfigurationEnabledAction.fromJson(String value) => WebhookBranchProtectionConfigurationEnabledAction._(value);
+  factory WebhookBranchProtectionConfigurationEnabledAction.fromJson(
+          String value) =>
+      WebhookBranchProtectionConfigurationEnabledAction._(value);
 
-  static const enabled = WebhookBranchProtectionConfigurationEnabledAction._('enabled');
+  static const enabled =
+      WebhookBranchProtectionConfigurationEnabledAction._('enabled');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookBranchProtectionConfigurationEnabledAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookBranchProtectionConfigurationEnabledAction &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookBranchProtectionRuleCreatedAction {
-
   final String value;
 
   const WebhookBranchProtectionRuleCreatedAction._(this.value);
 
-  factory WebhookBranchProtectionRuleCreatedAction.fromJson(String value) => WebhookBranchProtectionRuleCreatedAction._(value);
+  factory WebhookBranchProtectionRuleCreatedAction.fromJson(String value) =>
+      WebhookBranchProtectionRuleCreatedAction._(value);
 
   static const created = WebhookBranchProtectionRuleCreatedAction._('created');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookBranchProtectionRuleCreatedAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookBranchProtectionRuleCreatedAction && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookBranchProtectionRuleDeletedAction {
-
   final String value;
 
   const WebhookBranchProtectionRuleDeletedAction._(this.value);
 
-  factory WebhookBranchProtectionRuleDeletedAction.fromJson(String value) => WebhookBranchProtectionRuleDeletedAction._(value);
+  factory WebhookBranchProtectionRuleDeletedAction.fromJson(String value) =>
+      WebhookBranchProtectionRuleDeletedAction._(value);
 
   static const deleted = WebhookBranchProtectionRuleDeletedAction._('deleted');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookBranchProtectionRuleDeletedAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookBranchProtectionRuleDeletedAction && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

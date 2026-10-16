@@ -6,7 +6,6 @@ part of 'inline.dart';
 // Inline operation models (part 38)
 /// The result of the rule evaluations for rules with the `active` enforcement status.
 final class RuleSuiteResult {
-
   final String value;
 
   const RuleSuiteResult._(this.value);
@@ -19,67 +18,77 @@ final class RuleSuiteResult {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RuleSuiteResult && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RuleSuiteResult && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The enforcement level of this rule source.
 final class RuleSuiteRuleEvaluationsItemEnforcement {
-
   final String value;
 
   const RuleSuiteRuleEvaluationsItemEnforcement._(this.value);
 
-  factory RuleSuiteRuleEvaluationsItemEnforcement.fromJson(String value) => RuleSuiteRuleEvaluationsItemEnforcement._(value);
+  factory RuleSuiteRuleEvaluationsItemEnforcement.fromJson(String value) =>
+      RuleSuiteRuleEvaluationsItemEnforcement._(value);
 
   static const active = RuleSuiteRuleEvaluationsItemEnforcement._('active');
   static const evaluate = RuleSuiteRuleEvaluationsItemEnforcement._('evaluate');
-  static const deletedRuleset = RuleSuiteRuleEvaluationsItemEnforcement._('deleted ruleset');
+  static const deletedRuleset =
+      RuleSuiteRuleEvaluationsItemEnforcement._('deleted ruleset');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RuleSuiteRuleEvaluationsItemEnforcement && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RuleSuiteRuleEvaluationsItemEnforcement && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The result of the evaluation of the individual rule.
 final class RuleSuiteRuleEvaluationsItemResult {
-
   final String value;
 
   const RuleSuiteRuleEvaluationsItemResult._(this.value);
 
-  factory RuleSuiteRuleEvaluationsItemResult.fromJson(String value) => RuleSuiteRuleEvaluationsItemResult._(value);
+  factory RuleSuiteRuleEvaluationsItemResult.fromJson(String value) =>
+      RuleSuiteRuleEvaluationsItemResult._(value);
 
   static const pass = RuleSuiteRuleEvaluationsItemResult._('pass');
   static const fail = RuleSuiteRuleEvaluationsItemResult._('fail');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RuleSuiteRuleEvaluationsItemResult && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RuleSuiteRuleEvaluationsItemResult && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`.
 final class RuleSuitesItemEvaluationResult {
-
   final String value;
 
   const RuleSuitesItemEvaluationResult._(this.value);
 
-  factory RuleSuitesItemEvaluationResult.fromJson(String value) => RuleSuitesItemEvaluationResult._(value);
+  factory RuleSuitesItemEvaluationResult.fromJson(String value) =>
+      RuleSuitesItemEvaluationResult._(value);
 
   static const pass = RuleSuitesItemEvaluationResult._('pass');
   static const fail = RuleSuitesItemEvaluationResult._('fail');
@@ -87,22 +96,25 @@ final class RuleSuitesItemEvaluationResult {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RuleSuitesItemEvaluationResult && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RuleSuitesItemEvaluationResult && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The result of the rule evaluations for rules with the `active` enforcement status.
 final class RuleSuitesItemResult {
-
   final String value;
 
   const RuleSuitesItemResult._(this.value);
 
-  factory RuleSuitesItemResult.fromJson(String value) => RuleSuitesItemResult._(value);
+  factory RuleSuitesItemResult.fromJson(String value) =>
+      RuleSuitesItemResult._(value);
 
   static const pass = RuleSuitesItemResult._('pass');
   static const fail = RuleSuitesItemResult._('fail');
@@ -110,17 +122,19 @@ final class RuleSuitesItemResult {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RuleSuitesItemResult && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RuleSuitesItemResult && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The type of label. Read-only labels are applied automatically when the runner is configured.
 final class RunnerLabelType {
-
   final String value;
 
   const RunnerLabelType._(this.value);
@@ -132,22 +146,25 @@ final class RunnerLabelType {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RunnerLabelType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RunnerLabelType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The token status as of the latest validity check.
 final class SecretScanningAlertValidity {
-
   final String value;
 
   const SecretScanningAlertValidity._(this.value);
 
-  factory SecretScanningAlertValidity.fromJson(String value) => SecretScanningAlertValidity._(value);
+  factory SecretScanningAlertValidity.fromJson(String value) =>
+      SecretScanningAlertValidity._(value);
 
   static const active = SecretScanningAlertValidity._('active');
   static const inactive = SecretScanningAlertValidity._('inactive');
@@ -155,44 +172,50 @@ final class SecretScanningAlertValidity {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is SecretScanningAlertValidity && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is SecretScanningAlertValidity && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The category of the detected secret. `default` covers specific provider patterns and custom patterns; `generic` covers non-specific patterns and AI-detected secrets.
 final class SecretScanningAlertWebhookSecretCategory {
-
   final String value;
 
   const SecretScanningAlertWebhookSecretCategory._(this.value);
 
-  factory SecretScanningAlertWebhookSecretCategory.fromJson(String value) => SecretScanningAlertWebhookSecretCategory._(value);
+  factory SecretScanningAlertWebhookSecretCategory.fromJson(String value) =>
+      SecretScanningAlertWebhookSecretCategory._(value);
 
   static const default_ = SecretScanningAlertWebhookSecretCategory._('default');
   static const generic = SecretScanningAlertWebhookSecretCategory._('generic');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is SecretScanningAlertWebhookSecretCategory && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is SecretScanningAlertWebhookSecretCategory && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The token status as of the latest validity check.
 final class SecretScanningAlertWebhookValidity {
-
   final String value;
 
   const SecretScanningAlertWebhookValidity._(this.value);
 
-  factory SecretScanningAlertWebhookValidity.fromJson(String value) => SecretScanningAlertWebhookValidity._(value);
+  factory SecretScanningAlertWebhookValidity.fromJson(String value) =>
+      SecretScanningAlertWebhookValidity._(value);
 
   static const active = SecretScanningAlertWebhookValidity._('active');
   static const inactive = SecretScanningAlertWebhookValidity._('inactive');
@@ -200,22 +223,25 @@ final class SecretScanningAlertWebhookValidity {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is SecretScanningAlertWebhookValidity && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is SecretScanningAlertWebhookValidity && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The token status as of the latest validity check.
 final class SecretScanningAlertWithMetadataValidity {
-
   final String value;
 
   const SecretScanningAlertWithMetadataValidity._(this.value);
 
-  factory SecretScanningAlertWithMetadataValidity.fromJson(String value) => SecretScanningAlertWithMetadataValidity._(value);
+  factory SecretScanningAlertWithMetadataValidity.fromJson(String value) =>
+      SecretScanningAlertWithMetadataValidity._(value);
 
   static const active = SecretScanningAlertWithMetadataValidity._('active');
   static const inactive = SecretScanningAlertWithMetadataValidity._('inactive');
@@ -223,60 +249,79 @@ final class SecretScanningAlertWithMetadataValidity {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is SecretScanningAlertWithMetadataValidity && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is SecretScanningAlertWithMetadataValidity && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The state of the custom pattern.
 final class SecretScanningCustomPatternState {
-
   final String value;
 
   const SecretScanningCustomPatternState._(this.value);
 
-  factory SecretScanningCustomPatternState.fromJson(String value) => SecretScanningCustomPatternState._(value);
+  factory SecretScanningCustomPatternState.fromJson(String value) =>
+      SecretScanningCustomPatternState._(value);
 
   static const published = SecretScanningCustomPatternState._('published');
   static const unpublished = SecretScanningCustomPatternState._('unpublished');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is SecretScanningCustomPatternState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is SecretScanningCustomPatternState && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// A machine-readable code describing the error.
 final class SecretScanningCustomPatternValidationErrorCode {
-
   final String value;
 
   const SecretScanningCustomPatternValidationErrorCode._(this.value);
 
-  factory SecretScanningCustomPatternValidationErrorCode.fromJson(String value) => SecretScanningCustomPatternValidationErrorCode._(value);
+  factory SecretScanningCustomPatternValidationErrorCode.fromJson(
+          String value) =>
+      SecretScanningCustomPatternValidationErrorCode._(value);
 
-  static const invalid = SecretScanningCustomPatternValidationErrorCode._('invalid');
-  static const unprocessable = SecretScanningCustomPatternValidationErrorCode._('unprocessable');
-  static const startDelimiter = SecretScanningCustomPatternValidationErrorCode._('start_delimiter');
-  static const endDelimiter = SecretScanningCustomPatternValidationErrorCode._('end_delimiter');
+  static const invalid =
+      SecretScanningCustomPatternValidationErrorCode._('invalid');
+  static const unprocessable =
+      SecretScanningCustomPatternValidationErrorCode._('unprocessable');
+  static const startDelimiter =
+      SecretScanningCustomPatternValidationErrorCode._('start_delimiter');
+  static const endDelimiter =
+      SecretScanningCustomPatternValidationErrorCode._('end_delimiter');
   static const name2 = SecretScanningCustomPatternValidationErrorCode._('name');
-  static const mustMatch = SecretScanningCustomPatternValidationErrorCode._('must_match');
-  static const mustNotMatch = SecretScanningCustomPatternValidationErrorCode._('must_not_match');
-  static const customPatternVersionMismatch = SecretScanningCustomPatternValidationErrorCode._('custom_pattern_version_mismatch');
+  static const mustMatch =
+      SecretScanningCustomPatternValidationErrorCode._('must_match');
+  static const mustNotMatch =
+      SecretScanningCustomPatternValidationErrorCode._('must_not_match');
+  static const customPatternVersionMismatch =
+      SecretScanningCustomPatternValidationErrorCode._(
+          'custom_pattern_version_mismatch');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is SecretScanningCustomPatternValidationErrorCode && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is SecretScanningCustomPatternValidationErrorCode &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

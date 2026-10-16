@@ -8,89 +8,182 @@ part of 'search.dart';
 class IssueSearchResultItemLabelsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `int64`-formatted value serialized in the `id` wire field.
   final SdkOptional<int> id;
+
   /// Optional `string` value serialized in the `node_id` wire field.
   final SdkOptional<String> nodeId;
+
   /// Optional `string` value serialized in the `url` wire field.
   final SdkOptional<String> url;
+
   /// Optional `string` value serialized in the `name` wire field.
   final SdkOptional<String> name;
+
   /// Optional `string` value serialized in the `color` wire field.
   final SdkOptional<String> color;
+
   /// Optional `boolean` value serialized in the `default` wire field.
   final SdkOptional<bool> default_;
+
   /// Optional `string` value serialized in the `description` wire field.
   final SdkOptional<String?> description;
+
   /// Timestamp indicating when the label was archived, or `null` if it has not been archived.
   final SdkOptional<String?> archivedAt;
+
   /// The user who archived the label, or `null` if it has not been archived.
   final SdkOptional<SimpleUser?> archivedBy;
 
-  const IssueSearchResultItemLabelsItem({this.id = const SdkOmitted(), this.nodeId = const SdkOmitted(), this.url = const SdkOmitted(), this.name = const SdkOmitted(), this.color = const SdkOmitted(), this.default_ = const SdkOmitted(), this.description = const SdkOmitted(), this.archivedAt = const SdkOmitted(), this.archivedBy = const SdkOmitted()});
+  const IssueSearchResultItemLabelsItem(
+      {this.id = const SdkOmitted(),
+      this.nodeId = const SdkOmitted(),
+      this.url = const SdkOmitted(),
+      this.name = const SdkOmitted(),
+      this.color = const SdkOmitted(),
+      this.default_ = const SdkOmitted(),
+      this.description = const SdkOmitted(),
+      this.archivedAt = const SdkOmitted(),
+      this.archivedBy = const SdkOmitted()});
 
-  IssueSearchResultItemLabelsItem Function({SdkOptional<int> id, SdkOptional<String> nodeId, SdkOptional<String> url, SdkOptional<String> name, SdkOptional<String> color, SdkOptional<bool> default_, SdkOptional<String?> description, SdkOptional<String?> archivedAt, SdkOptional<SimpleUser?> archivedBy}) get copyWith => _copyWith;
+  IssueSearchResultItemLabelsItem Function(
+      {SdkOptional<int> id,
+      SdkOptional<String> nodeId,
+      SdkOptional<String> url,
+      SdkOptional<String> name,
+      SdkOptional<String> color,
+      SdkOptional<bool> default_,
+      SdkOptional<String?> description,
+      SdkOptional<String?> archivedAt,
+      SdkOptional<SimpleUser?> archivedBy}) get copyWith => _copyWith;
 
-  IssueSearchResultItemLabelsItem _copyWith({Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? url = sdkOmittedValue, Object? name = sdkOmittedValue, Object? color = sdkOmittedValue, Object? default_ = sdkOmittedValue, Object? description = sdkOmittedValue, Object? archivedAt = sdkOmittedValue, Object? archivedBy = sdkOmittedValue}) => IssueSearchResultItemLabelsItem(
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as SdkOptional<String>,
-    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    color: identical(color, sdkOmittedValue) ? this.color : color as SdkOptional<String>,
-    default_: identical(default_, sdkOmittedValue) ? this.default_ : default_ as SdkOptional<bool>,
-    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String?>,
-    archivedAt: identical(archivedAt, sdkOmittedValue) ? this.archivedAt : archivedAt as SdkOptional<String?>,
-    archivedBy: identical(archivedBy, sdkOmittedValue) ? this.archivedBy : archivedBy as SdkOptional<SimpleUser?>,
-  );
+  IssueSearchResultItemLabelsItem _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? color = sdkOmittedValue,
+          Object? default_ = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? archivedAt = sdkOmittedValue,
+          Object? archivedBy = sdkOmittedValue}) =>
+      IssueSearchResultItemLabelsItem(
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+        nodeId: identical(nodeId, sdkOmittedValue)
+            ? this.nodeId
+            : nodeId as SdkOptional<String>,
+        url: identical(url, sdkOmittedValue)
+            ? this.url
+            : url as SdkOptional<String>,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        color: identical(color, sdkOmittedValue)
+            ? this.color
+            : color as SdkOptional<String>,
+        default_: identical(default_, sdkOmittedValue)
+            ? this.default_
+            : default_ as SdkOptional<bool>,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as SdkOptional<String?>,
+        archivedAt: identical(archivedAt, sdkOmittedValue)
+            ? this.archivedAt
+            : archivedAt as SdkOptional<String?>,
+        archivedBy: identical(archivedBy, sdkOmittedValue)
+            ? this.archivedBy
+            : archivedBy as SdkOptional<SimpleUser?>,
+      );
 
-  factory IssueSearchResultItemLabelsItem.fromJson(Map<String, dynamic> json) => IssueSearchResultItemLabelsItem(
-    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
-    nodeId: json['node_id'] != null ? SdkPresent((json['node_id'] as String?)!) : const SdkOmitted(),
-    url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    color: json['color'] != null ? SdkPresent((json['color'] as String?)!) : const SdkOmitted(),
-    default_: json['default'] != null ? SdkPresent((json['default'] as bool?)!) : const SdkOmitted(),
-    description: json.containsKey('description') ? SdkPresent(json['description'] as String?) : const SdkOmitted(),
-    archivedAt: json.containsKey('archived_at') ? SdkPresent(json['archived_at'] as String?) : const SdkOmitted(),
-    archivedBy: json.containsKey('archived_by') ? SdkPresent(json['archived_by'] != null ? SimpleUser.fromJson(json['archived_by'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-  );
+  factory IssueSearchResultItemLabelsItem.fromJson(Map<String, dynamic> json) =>
+      IssueSearchResultItemLabelsItem(
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        nodeId: json['node_id'] != null
+            ? SdkPresent((json['node_id'] as String?)!)
+            : const SdkOmitted(),
+        url: json['url'] != null
+            ? SdkPresent((json['url'] as String?)!)
+            : const SdkOmitted(),
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+        color: json['color'] != null
+            ? SdkPresent((json['color'] as String?)!)
+            : const SdkOmitted(),
+        default_: json['default'] != null
+            ? SdkPresent((json['default'] as bool?)!)
+            : const SdkOmitted(),
+        description: json.containsKey('description')
+            ? SdkPresent(json['description'] as String?)
+            : const SdkOmitted(),
+        archivedAt: json.containsKey('archived_at')
+            ? SdkPresent(json['archived_at'] as String?)
+            : const SdkOmitted(),
+        archivedBy: json.containsKey('archived_by')
+            ? SdkPresent(json['archived_by'] != null
+                ? SimpleUser.fromJson(
+                    json['archived_by'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (id) {
-      SdkPresent<int>(value: final value) => {'id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (nodeId) {
-      SdkPresent<String>(value: final value) => {'node_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (url) {
-      SdkPresent<String>(value: final value) => {'url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (color) {
-      SdkPresent<String>(value: final value) => {'color': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (default_) {
-      SdkPresent<bool>(value: final value) => {'default': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (description) {
-      SdkPresent<String?>(value: final value) => {'description': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (archivedAt) {
-      SdkPresent<String?>(value: final value) => {'archived_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (archivedBy) {
-      SdkPresent<SimpleUser?>(value: final value) => {'archived_by': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (nodeId) {
+          SdkPresent<String>(value: final value) => {
+              'node_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (url) {
+          SdkPresent<String>(value: final value) => {
+              'url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (color) {
+          SdkPresent<String>(value: final value) => {
+              'color': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (default_) {
+          SdkPresent<bool>(value: final value) => {
+              'default': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (description) {
+          SdkPresent<String?>(value: final value) => {
+              'description': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (archivedAt) {
+          SdkPresent<String?>(value: final value) => {
+              'archived_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (archivedBy) {
+          SdkPresent<SimpleUser?>(value: final value) => {
+              'archived_by': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

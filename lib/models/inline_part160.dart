@@ -6,281 +6,399 @@ part of 'inline.dart';
 // Inline operation models (part 160)
 /// Required enumerated value serialized in the `privacy` wire field.
 final class WebhookPullRequestEnqueuedPullRequestRequestedReviewersItemVariant1ParentPrivacy {
-
   final String value;
 
-  const WebhookPullRequestEnqueuedPullRequestRequestedReviewersItemVariant1ParentPrivacy._(this.value);
+  const WebhookPullRequestEnqueuedPullRequestRequestedReviewersItemVariant1ParentPrivacy._(
+      this.value);
 
-  factory WebhookPullRequestEnqueuedPullRequestRequestedReviewersItemVariant1ParentPrivacy.fromJson(String value) => WebhookPullRequestEnqueuedPullRequestRequestedReviewersItemVariant1ParentPrivacy._(value);
+  factory WebhookPullRequestEnqueuedPullRequestRequestedReviewersItemVariant1ParentPrivacy.fromJson(
+          String value) =>
+      WebhookPullRequestEnqueuedPullRequestRequestedReviewersItemVariant1ParentPrivacy
+          ._(value);
 
-  static const open = WebhookPullRequestEnqueuedPullRequestRequestedReviewersItemVariant1ParentPrivacy._('open');
-  static const closed = WebhookPullRequestEnqueuedPullRequestRequestedReviewersItemVariant1ParentPrivacy._('closed');
-  static const secret = WebhookPullRequestEnqueuedPullRequestRequestedReviewersItemVariant1ParentPrivacy._('secret');
+  static const open =
+      WebhookPullRequestEnqueuedPullRequestRequestedReviewersItemVariant1ParentPrivacy
+          ._('open');
+  static const closed =
+      WebhookPullRequestEnqueuedPullRequestRequestedReviewersItemVariant1ParentPrivacy
+          ._('closed');
+  static const secret =
+      WebhookPullRequestEnqueuedPullRequestRequestedReviewersItemVariant1ParentPrivacy
+          ._('secret');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestEnqueuedPullRequestRequestedReviewersItemVariant1ParentPrivacy && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookPullRequestEnqueuedPullRequestRequestedReviewersItemVariant1ParentPrivacy &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `privacy` wire field.
 final class WebhookPullRequestEnqueuedPullRequestRequestedReviewersItemVariant1Privacy {
-
   final String value;
 
-  const WebhookPullRequestEnqueuedPullRequestRequestedReviewersItemVariant1Privacy._(this.value);
+  const WebhookPullRequestEnqueuedPullRequestRequestedReviewersItemVariant1Privacy._(
+      this.value);
 
-  factory WebhookPullRequestEnqueuedPullRequestRequestedReviewersItemVariant1Privacy.fromJson(String value) => WebhookPullRequestEnqueuedPullRequestRequestedReviewersItemVariant1Privacy._(value);
+  factory WebhookPullRequestEnqueuedPullRequestRequestedReviewersItemVariant1Privacy.fromJson(
+          String value) =>
+      WebhookPullRequestEnqueuedPullRequestRequestedReviewersItemVariant1Privacy
+          ._(value);
 
-  static const open = WebhookPullRequestEnqueuedPullRequestRequestedReviewersItemVariant1Privacy._('open');
-  static const closed = WebhookPullRequestEnqueuedPullRequestRequestedReviewersItemVariant1Privacy._('closed');
-  static const secret = WebhookPullRequestEnqueuedPullRequestRequestedReviewersItemVariant1Privacy._('secret');
+  static const open =
+      WebhookPullRequestEnqueuedPullRequestRequestedReviewersItemVariant1Privacy
+          ._('open');
+  static const closed =
+      WebhookPullRequestEnqueuedPullRequestRequestedReviewersItemVariant1Privacy
+          ._('closed');
+  static const secret =
+      WebhookPullRequestEnqueuedPullRequestRequestedReviewersItemVariant1Privacy
+          ._('secret');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestEnqueuedPullRequestRequestedReviewersItemVariant1Privacy && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookPullRequestEnqueuedPullRequestRequestedReviewersItemVariant1Privacy &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookPullRequestLabeledAction {
-
   final String value;
 
   const WebhookPullRequestLabeledAction._(this.value);
 
-  factory WebhookPullRequestLabeledAction.fromJson(String value) => WebhookPullRequestLabeledAction._(value);
+  factory WebhookPullRequestLabeledAction.fromJson(String value) =>
+      WebhookPullRequestLabeledAction._(value);
 
   static const labeled = WebhookPullRequestLabeledAction._('labeled');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestLabeledAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookPullRequestLabeledAction && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `active_lock_reason` wire field.
 final class WebhookPullRequestLabeledPullRequestActiveLockReason {
-
   final String value;
 
   const WebhookPullRequestLabeledPullRequestActiveLockReason._(this.value);
 
-  factory WebhookPullRequestLabeledPullRequestActiveLockReason.fromJson(String value) => WebhookPullRequestLabeledPullRequestActiveLockReason._(value);
+  factory WebhookPullRequestLabeledPullRequestActiveLockReason.fromJson(
+          String value) =>
+      WebhookPullRequestLabeledPullRequestActiveLockReason._(value);
 
-  static const resolved = WebhookPullRequestLabeledPullRequestActiveLockReason._('resolved');
-  static const offTopic = WebhookPullRequestLabeledPullRequestActiveLockReason._('off-topic');
-  static const tooHeated = WebhookPullRequestLabeledPullRequestActiveLockReason._('too heated');
-  static const spam = WebhookPullRequestLabeledPullRequestActiveLockReason._('spam');
+  static const resolved =
+      WebhookPullRequestLabeledPullRequestActiveLockReason._('resolved');
+  static const offTopic =
+      WebhookPullRequestLabeledPullRequestActiveLockReason._('off-topic');
+  static const tooHeated =
+      WebhookPullRequestLabeledPullRequestActiveLockReason._('too heated');
+  static const spam =
+      WebhookPullRequestLabeledPullRequestActiveLockReason._('spam');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestLabeledPullRequestActiveLockReason && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookPullRequestLabeledPullRequestActiveLockReason &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhookPullRequestLabeledPullRequestAssigneeType {
-
   final String value;
 
   const WebhookPullRequestLabeledPullRequestAssigneeType._(this.value);
 
-  factory WebhookPullRequestLabeledPullRequestAssigneeType.fromJson(String value) => WebhookPullRequestLabeledPullRequestAssigneeType._(value);
+  factory WebhookPullRequestLabeledPullRequestAssigneeType.fromJson(
+          String value) =>
+      WebhookPullRequestLabeledPullRequestAssigneeType._(value);
 
   static const bot = WebhookPullRequestLabeledPullRequestAssigneeType._('Bot');
-  static const user = WebhookPullRequestLabeledPullRequestAssigneeType._('User');
-  static const organization = WebhookPullRequestLabeledPullRequestAssigneeType._('Organization');
-  static const mannequin = WebhookPullRequestLabeledPullRequestAssigneeType._('Mannequin');
+  static const user =
+      WebhookPullRequestLabeledPullRequestAssigneeType._('User');
+  static const organization =
+      WebhookPullRequestLabeledPullRequestAssigneeType._('Organization');
+  static const mannequin =
+      WebhookPullRequestLabeledPullRequestAssigneeType._('Mannequin');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestLabeledPullRequestAssigneeType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookPullRequestLabeledPullRequestAssigneeType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhookPullRequestLabeledPullRequestAssigneesItemType {
-
   final String value;
 
   const WebhookPullRequestLabeledPullRequestAssigneesItemType._(this.value);
 
-  factory WebhookPullRequestLabeledPullRequestAssigneesItemType.fromJson(String value) => WebhookPullRequestLabeledPullRequestAssigneesItemType._(value);
+  factory WebhookPullRequestLabeledPullRequestAssigneesItemType.fromJson(
+          String value) =>
+      WebhookPullRequestLabeledPullRequestAssigneesItemType._(value);
 
-  static const bot = WebhookPullRequestLabeledPullRequestAssigneesItemType._('Bot');
-  static const user = WebhookPullRequestLabeledPullRequestAssigneesItemType._('User');
-  static const organization = WebhookPullRequestLabeledPullRequestAssigneesItemType._('Organization');
-  static const mannequin = WebhookPullRequestLabeledPullRequestAssigneesItemType._('Mannequin');
+  static const bot =
+      WebhookPullRequestLabeledPullRequestAssigneesItemType._('Bot');
+  static const user =
+      WebhookPullRequestLabeledPullRequestAssigneesItemType._('User');
+  static const organization =
+      WebhookPullRequestLabeledPullRequestAssigneesItemType._('Organization');
+  static const mannequin =
+      WebhookPullRequestLabeledPullRequestAssigneesItemType._('Mannequin');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestLabeledPullRequestAssigneesItemType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookPullRequestLabeledPullRequestAssigneesItemType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// How the author is associated with the repository.
 final class WebhookPullRequestLabeledPullRequestAuthorAssociation {
-
   final String value;
 
   const WebhookPullRequestLabeledPullRequestAuthorAssociation._(this.value);
 
-  factory WebhookPullRequestLabeledPullRequestAuthorAssociation.fromJson(String value) => WebhookPullRequestLabeledPullRequestAuthorAssociation._(value);
+  factory WebhookPullRequestLabeledPullRequestAuthorAssociation.fromJson(
+          String value) =>
+      WebhookPullRequestLabeledPullRequestAuthorAssociation._(value);
 
-  static const collaborator = WebhookPullRequestLabeledPullRequestAuthorAssociation._('COLLABORATOR');
-  static const contributor = WebhookPullRequestLabeledPullRequestAuthorAssociation._('CONTRIBUTOR');
-  static const firstTimer = WebhookPullRequestLabeledPullRequestAuthorAssociation._('FIRST_TIMER');
-  static const firstTimeContributor = WebhookPullRequestLabeledPullRequestAuthorAssociation._('FIRST_TIME_CONTRIBUTOR');
-  static const mannequin = WebhookPullRequestLabeledPullRequestAuthorAssociation._('MANNEQUIN');
-  static const member = WebhookPullRequestLabeledPullRequestAuthorAssociation._('MEMBER');
-  static const none = WebhookPullRequestLabeledPullRequestAuthorAssociation._('NONE');
-  static const owner = WebhookPullRequestLabeledPullRequestAuthorAssociation._('OWNER');
+  static const collaborator =
+      WebhookPullRequestLabeledPullRequestAuthorAssociation._('COLLABORATOR');
+  static const contributor =
+      WebhookPullRequestLabeledPullRequestAuthorAssociation._('CONTRIBUTOR');
+  static const firstTimer =
+      WebhookPullRequestLabeledPullRequestAuthorAssociation._('FIRST_TIMER');
+  static const firstTimeContributor =
+      WebhookPullRequestLabeledPullRequestAuthorAssociation._(
+          'FIRST_TIME_CONTRIBUTOR');
+  static const mannequin =
+      WebhookPullRequestLabeledPullRequestAuthorAssociation._('MANNEQUIN');
+  static const member =
+      WebhookPullRequestLabeledPullRequestAuthorAssociation._('MEMBER');
+  static const none =
+      WebhookPullRequestLabeledPullRequestAuthorAssociation._('NONE');
+  static const owner =
+      WebhookPullRequestLabeledPullRequestAuthorAssociation._('OWNER');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestLabeledPullRequestAuthorAssociation && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookPullRequestLabeledPullRequestAuthorAssociation &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhookPullRequestLabeledPullRequestAutoMergeEnabledByType {
-
   final String value;
 
-  const WebhookPullRequestLabeledPullRequestAutoMergeEnabledByType._(this.value);
+  const WebhookPullRequestLabeledPullRequestAutoMergeEnabledByType._(
+      this.value);
 
-  factory WebhookPullRequestLabeledPullRequestAutoMergeEnabledByType.fromJson(String value) => WebhookPullRequestLabeledPullRequestAutoMergeEnabledByType._(value);
+  factory WebhookPullRequestLabeledPullRequestAutoMergeEnabledByType.fromJson(
+          String value) =>
+      WebhookPullRequestLabeledPullRequestAutoMergeEnabledByType._(value);
 
-  static const bot = WebhookPullRequestLabeledPullRequestAutoMergeEnabledByType._('Bot');
-  static const user = WebhookPullRequestLabeledPullRequestAutoMergeEnabledByType._('User');
-  static const organization = WebhookPullRequestLabeledPullRequestAutoMergeEnabledByType._('Organization');
+  static const bot =
+      WebhookPullRequestLabeledPullRequestAutoMergeEnabledByType._('Bot');
+  static const user =
+      WebhookPullRequestLabeledPullRequestAutoMergeEnabledByType._('User');
+  static const organization =
+      WebhookPullRequestLabeledPullRequestAutoMergeEnabledByType._(
+          'Organization');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestLabeledPullRequestAutoMergeEnabledByType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookPullRequestLabeledPullRequestAutoMergeEnabledByType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The merge method to use.
 final class WebhookPullRequestLabeledPullRequestAutoMergeMergeMethod {
-
   final String value;
 
   const WebhookPullRequestLabeledPullRequestAutoMergeMergeMethod._(this.value);
 
-  factory WebhookPullRequestLabeledPullRequestAutoMergeMergeMethod.fromJson(String value) => WebhookPullRequestLabeledPullRequestAutoMergeMergeMethod._(value);
+  factory WebhookPullRequestLabeledPullRequestAutoMergeMergeMethod.fromJson(
+          String value) =>
+      WebhookPullRequestLabeledPullRequestAutoMergeMergeMethod._(value);
 
-  static const merge = WebhookPullRequestLabeledPullRequestAutoMergeMergeMethod._('merge');
-  static const squash = WebhookPullRequestLabeledPullRequestAutoMergeMergeMethod._('squash');
-  static const rebase = WebhookPullRequestLabeledPullRequestAutoMergeMergeMethod._('rebase');
+  static const merge =
+      WebhookPullRequestLabeledPullRequestAutoMergeMergeMethod._('merge');
+  static const squash =
+      WebhookPullRequestLabeledPullRequestAutoMergeMergeMethod._('squash');
+  static const rebase =
+      WebhookPullRequestLabeledPullRequestAutoMergeMergeMethod._('rebase');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestLabeledPullRequestAutoMergeMergeMethod && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookPullRequestLabeledPullRequestAutoMergeMergeMethod &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The default value for a merge commit message. - `PR_TITLE` - default to the pull request's title. - `PR_BODY` - default to the pull request's body. - `BLANK` - default to a blank commit message.
 final class WebhookPullRequestLabeledPullRequestBaseRepoMergeCommitMessage {
-
   final String value;
 
-  const WebhookPullRequestLabeledPullRequestBaseRepoMergeCommitMessage._(this.value);
+  const WebhookPullRequestLabeledPullRequestBaseRepoMergeCommitMessage._(
+      this.value);
 
-  factory WebhookPullRequestLabeledPullRequestBaseRepoMergeCommitMessage.fromJson(String value) => WebhookPullRequestLabeledPullRequestBaseRepoMergeCommitMessage._(value);
+  factory WebhookPullRequestLabeledPullRequestBaseRepoMergeCommitMessage.fromJson(
+          String value) =>
+      WebhookPullRequestLabeledPullRequestBaseRepoMergeCommitMessage._(value);
 
-  static const prBody = WebhookPullRequestLabeledPullRequestBaseRepoMergeCommitMessage._('PR_BODY');
-  static const prTitle = WebhookPullRequestLabeledPullRequestBaseRepoMergeCommitMessage._('PR_TITLE');
-  static const blank = WebhookPullRequestLabeledPullRequestBaseRepoMergeCommitMessage._('BLANK');
+  static const prBody =
+      WebhookPullRequestLabeledPullRequestBaseRepoMergeCommitMessage._(
+          'PR_BODY');
+  static const prTitle =
+      WebhookPullRequestLabeledPullRequestBaseRepoMergeCommitMessage._(
+          'PR_TITLE');
+  static const blank =
+      WebhookPullRequestLabeledPullRequestBaseRepoMergeCommitMessage._('BLANK');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestLabeledPullRequestBaseRepoMergeCommitMessage && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookPullRequestLabeledPullRequestBaseRepoMergeCommitMessage &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The default value for a merge commit title. - `PR_TITLE` - default to the pull request's title. - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
 final class WebhookPullRequestLabeledPullRequestBaseRepoMergeCommitTitle {
-
   final String value;
 
-  const WebhookPullRequestLabeledPullRequestBaseRepoMergeCommitTitle._(this.value);
+  const WebhookPullRequestLabeledPullRequestBaseRepoMergeCommitTitle._(
+      this.value);
 
-  factory WebhookPullRequestLabeledPullRequestBaseRepoMergeCommitTitle.fromJson(String value) => WebhookPullRequestLabeledPullRequestBaseRepoMergeCommitTitle._(value);
+  factory WebhookPullRequestLabeledPullRequestBaseRepoMergeCommitTitle.fromJson(
+          String value) =>
+      WebhookPullRequestLabeledPullRequestBaseRepoMergeCommitTitle._(value);
 
-  static const prTitle = WebhookPullRequestLabeledPullRequestBaseRepoMergeCommitTitle._('PR_TITLE');
-  static const mergeMessage = WebhookPullRequestLabeledPullRequestBaseRepoMergeCommitTitle._('MERGE_MESSAGE');
+  static const prTitle =
+      WebhookPullRequestLabeledPullRequestBaseRepoMergeCommitTitle._(
+          'PR_TITLE');
+  static const mergeMessage =
+      WebhookPullRequestLabeledPullRequestBaseRepoMergeCommitTitle._(
+          'MERGE_MESSAGE');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestLabeledPullRequestBaseRepoMergeCommitTitle && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookPullRequestLabeledPullRequestBaseRepoMergeCommitTitle &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhookPullRequestLabeledPullRequestBaseRepoOwnerType {
-
   final String value;
 
   const WebhookPullRequestLabeledPullRequestBaseRepoOwnerType._(this.value);
 
-  factory WebhookPullRequestLabeledPullRequestBaseRepoOwnerType.fromJson(String value) => WebhookPullRequestLabeledPullRequestBaseRepoOwnerType._(value);
+  factory WebhookPullRequestLabeledPullRequestBaseRepoOwnerType.fromJson(
+          String value) =>
+      WebhookPullRequestLabeledPullRequestBaseRepoOwnerType._(value);
 
-  static const bot = WebhookPullRequestLabeledPullRequestBaseRepoOwnerType._('Bot');
-  static const user = WebhookPullRequestLabeledPullRequestBaseRepoOwnerType._('User');
-  static const organization = WebhookPullRequestLabeledPullRequestBaseRepoOwnerType._('Organization');
+  static const bot =
+      WebhookPullRequestLabeledPullRequestBaseRepoOwnerType._('Bot');
+  static const user =
+      WebhookPullRequestLabeledPullRequestBaseRepoOwnerType._('User');
+  static const organization =
+      WebhookPullRequestLabeledPullRequestBaseRepoOwnerType._('Organization');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestLabeledPullRequestBaseRepoOwnerType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookPullRequestLabeledPullRequestBaseRepoOwnerType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

@@ -7,267 +7,519 @@ part of 'inline.dart';
 class ReposCreateOrUpdateFileContentsRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The commit message.
   final String message;
+
   /// The new file content, using Base64 encoding.
   final String content;
+
   /// **Required if you are updating a file**. The blob SHA of the file being replaced.
   final SdkOptional<String> sha;
+
   /// The branch name. Default: the repository’s default branch.
   final SdkOptional<String> branch;
+
   /// The person that committed the file. Default: the authenticated user.
-  final SdkOptional<ReposCreateOrUpdateFileContentsRequestBodyCommitter> committer;
+  final SdkOptional<ReposCreateOrUpdateFileContentsRequestBodyCommitter>
+      committer;
+
   /// The author of the file. Default: The `committer` or the authenticated user if you omit `committer`.
   final SdkOptional<ReposCreateOrUpdateFileContentsRequestBodyAuthor> author;
 
-  const ReposCreateOrUpdateFileContentsRequestBody({required this.message, required this.content, this.sha = const SdkOmitted(), this.branch = const SdkOmitted(), this.committer = const SdkOmitted(), this.author = const SdkOmitted()});
+  const ReposCreateOrUpdateFileContentsRequestBody(
+      {required this.message,
+      required this.content,
+      this.sha = const SdkOmitted(),
+      this.branch = const SdkOmitted(),
+      this.committer = const SdkOmitted(),
+      this.author = const SdkOmitted()});
 
-  ReposCreateOrUpdateFileContentsRequestBody Function({String message, String content, SdkOptional<String> sha, SdkOptional<String> branch, SdkOptional<ReposCreateOrUpdateFileContentsRequestBodyCommitter> committer, SdkOptional<ReposCreateOrUpdateFileContentsRequestBodyAuthor> author}) get copyWith => _copyWith;
+  ReposCreateOrUpdateFileContentsRequestBody Function(
+          {String message,
+          String content,
+          SdkOptional<String> sha,
+          SdkOptional<String> branch,
+          SdkOptional<ReposCreateOrUpdateFileContentsRequestBodyCommitter>
+              committer,
+          SdkOptional<ReposCreateOrUpdateFileContentsRequestBodyAuthor> author})
+      get copyWith => _copyWith;
 
-  ReposCreateOrUpdateFileContentsRequestBody _copyWith({Object? message = sdkOmittedValue, Object? content = sdkOmittedValue, Object? sha = sdkOmittedValue, Object? branch = sdkOmittedValue, Object? committer = sdkOmittedValue, Object? author = sdkOmittedValue}) => ReposCreateOrUpdateFileContentsRequestBody(
-    message: identical(message, sdkOmittedValue) ? this.message : message as String,
-    content: identical(content, sdkOmittedValue) ? this.content : content as String,
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as SdkOptional<String>,
-    branch: identical(branch, sdkOmittedValue) ? this.branch : branch as SdkOptional<String>,
-    committer: identical(committer, sdkOmittedValue) ? this.committer : committer as SdkOptional<ReposCreateOrUpdateFileContentsRequestBodyCommitter>,
-    author: identical(author, sdkOmittedValue) ? this.author : author as SdkOptional<ReposCreateOrUpdateFileContentsRequestBodyAuthor>,
-  );
+  ReposCreateOrUpdateFileContentsRequestBody _copyWith(
+          {Object? message = sdkOmittedValue,
+          Object? content = sdkOmittedValue,
+          Object? sha = sdkOmittedValue,
+          Object? branch = sdkOmittedValue,
+          Object? committer = sdkOmittedValue,
+          Object? author = sdkOmittedValue}) =>
+      ReposCreateOrUpdateFileContentsRequestBody(
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+        content: identical(content, sdkOmittedValue)
+            ? this.content
+            : content as String,
+        sha: identical(sha, sdkOmittedValue)
+            ? this.sha
+            : sha as SdkOptional<String>,
+        branch: identical(branch, sdkOmittedValue)
+            ? this.branch
+            : branch as SdkOptional<String>,
+        committer: identical(committer, sdkOmittedValue)
+            ? this.committer
+            : committer as SdkOptional<
+                ReposCreateOrUpdateFileContentsRequestBodyCommitter>,
+        author: identical(author, sdkOmittedValue)
+            ? this.author
+            : author as SdkOptional<
+                ReposCreateOrUpdateFileContentsRequestBodyAuthor>,
+      );
 
-  factory ReposCreateOrUpdateFileContentsRequestBody.fromJson(Map<String, dynamic> json) => ReposCreateOrUpdateFileContentsRequestBody(
-    message: (json['message'] as String?)!,
-    content: (json['content'] as String?)!,
-    sha: json['sha'] != null ? SdkPresent((json['sha'] as String?)!) : const SdkOmitted(),
-    branch: json['branch'] != null ? SdkPresent((json['branch'] as String?)!) : const SdkOmitted(),
-    committer: json['committer'] != null ? SdkPresent((json['committer'] != null ? ReposCreateOrUpdateFileContentsRequestBodyCommitter.fromJson(json['committer'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    author: json['author'] != null ? SdkPresent((json['author'] != null ? ReposCreateOrUpdateFileContentsRequestBodyAuthor.fromJson(json['author'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-  );
+  factory ReposCreateOrUpdateFileContentsRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      ReposCreateOrUpdateFileContentsRequestBody(
+        message: (json['message'] as String?)!,
+        content: (json['content'] as String?)!,
+        sha: json['sha'] != null
+            ? SdkPresent((json['sha'] as String?)!)
+            : const SdkOmitted(),
+        branch: json['branch'] != null
+            ? SdkPresent((json['branch'] as String?)!)
+            : const SdkOmitted(),
+        committer: json['committer'] != null
+            ? SdkPresent((json['committer'] != null
+                ? ReposCreateOrUpdateFileContentsRequestBodyCommitter.fromJson(
+                    json['committer'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        author: json['author'] != null
+            ? SdkPresent((json['author'] != null
+                ? ReposCreateOrUpdateFileContentsRequestBodyAuthor.fromJson(
+                    json['author'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'message': message,
-    'content': content,
-    ...switch (sha) {
-      SdkPresent<String>(value: final value) => {'sha': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (branch) {
-      SdkPresent<String>(value: final value) => {'branch': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (committer) {
-      SdkPresent<ReposCreateOrUpdateFileContentsRequestBodyCommitter>(value: final value) => {'committer': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (author) {
-      SdkPresent<ReposCreateOrUpdateFileContentsRequestBodyAuthor>(value: final value) => {'author': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'message': message,
+        'content': content,
+        ...switch (sha) {
+          SdkPresent<String>(value: final value) => {
+              'sha': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (branch) {
+          SdkPresent<String>(value: final value) => {
+              'branch': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (committer) {
+          SdkPresent<ReposCreateOrUpdateFileContentsRequestBodyCommitter>(
+            value: final value
+          ) =>
+            {
+              'committer': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (author) {
+          SdkPresent<ReposCreateOrUpdateFileContentsRequestBodyAuthor>(
+            value: final value
+          ) =>
+            {
+              'author': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// object containing information about the committer.
 class ReposDeleteFileRequestBodyCommitter {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the author (or committer) of the commit
   final SdkOptional<String> name;
+
   /// The email of the author (or committer) of the commit
   final SdkOptional<String> email;
 
-  const ReposDeleteFileRequestBodyCommitter({this.name = const SdkOmitted(), this.email = const SdkOmitted()});
+  const ReposDeleteFileRequestBodyCommitter(
+      {this.name = const SdkOmitted(), this.email = const SdkOmitted()});
 
-  ReposDeleteFileRequestBodyCommitter Function({SdkOptional<String> name, SdkOptional<String> email}) get copyWith => _copyWith;
+  ReposDeleteFileRequestBodyCommitter Function(
+      {SdkOptional<String> name,
+      SdkOptional<String> email}) get copyWith => _copyWith;
 
-  ReposDeleteFileRequestBodyCommitter _copyWith({Object? name = sdkOmittedValue, Object? email = sdkOmittedValue}) => ReposDeleteFileRequestBodyCommitter(
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    email: identical(email, sdkOmittedValue) ? this.email : email as SdkOptional<String>,
-  );
+  ReposDeleteFileRequestBodyCommitter _copyWith(
+          {Object? name = sdkOmittedValue, Object? email = sdkOmittedValue}) =>
+      ReposDeleteFileRequestBodyCommitter(
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        email: identical(email, sdkOmittedValue)
+            ? this.email
+            : email as SdkOptional<String>,
+      );
 
-  factory ReposDeleteFileRequestBodyCommitter.fromJson(Map<String, dynamic> json) => ReposDeleteFileRequestBodyCommitter(
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    email: json['email'] != null ? SdkPresent((json['email'] as String?)!) : const SdkOmitted(),
-  );
+  factory ReposDeleteFileRequestBodyCommitter.fromJson(
+          Map<String, dynamic> json) =>
+      ReposDeleteFileRequestBodyCommitter(
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+        email: json['email'] != null
+            ? SdkPresent((json['email'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (email) {
-      SdkPresent<String>(value: final value) => {'email': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (email) {
+          SdkPresent<String>(value: final value) => {
+              'email': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// object containing information about the author.
 class ReposDeleteFileRequestBodyAuthor {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the author (or committer) of the commit
   final SdkOptional<String> name;
+
   /// The email of the author (or committer) of the commit
   final SdkOptional<String> email;
 
-  const ReposDeleteFileRequestBodyAuthor({this.name = const SdkOmitted(), this.email = const SdkOmitted()});
+  const ReposDeleteFileRequestBodyAuthor(
+      {this.name = const SdkOmitted(), this.email = const SdkOmitted()});
 
-  ReposDeleteFileRequestBodyAuthor Function({SdkOptional<String> name, SdkOptional<String> email}) get copyWith => _copyWith;
+  ReposDeleteFileRequestBodyAuthor Function(
+      {SdkOptional<String> name,
+      SdkOptional<String> email}) get copyWith => _copyWith;
 
-  ReposDeleteFileRequestBodyAuthor _copyWith({Object? name = sdkOmittedValue, Object? email = sdkOmittedValue}) => ReposDeleteFileRequestBodyAuthor(
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    email: identical(email, sdkOmittedValue) ? this.email : email as SdkOptional<String>,
-  );
+  ReposDeleteFileRequestBodyAuthor _copyWith(
+          {Object? name = sdkOmittedValue, Object? email = sdkOmittedValue}) =>
+      ReposDeleteFileRequestBodyAuthor(
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        email: identical(email, sdkOmittedValue)
+            ? this.email
+            : email as SdkOptional<String>,
+      );
 
-  factory ReposDeleteFileRequestBodyAuthor.fromJson(Map<String, dynamic> json) => ReposDeleteFileRequestBodyAuthor(
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    email: json['email'] != null ? SdkPresent((json['email'] as String?)!) : const SdkOmitted(),
-  );
+  factory ReposDeleteFileRequestBodyAuthor.fromJson(
+          Map<String, dynamic> json) =>
+      ReposDeleteFileRequestBodyAuthor(
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+        email: json['email'] != null
+            ? SdkPresent((json['email'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (email) {
-      SdkPresent<String>(value: final value) => {'email': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (email) {
+          SdkPresent<String>(value: final value) => {
+              'email': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class ReposDeleteFileRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The commit message.
   final String message;
+
   /// The blob SHA of the file being deleted.
   final String sha;
+
   /// The branch name. Default: the repository’s default branch
   final SdkOptional<String> branch;
+
   /// object containing information about the committer.
   final SdkOptional<ReposDeleteFileRequestBodyCommitter> committer;
+
   /// object containing information about the author.
   final SdkOptional<ReposDeleteFileRequestBodyAuthor> author;
 
-  const ReposDeleteFileRequestBody({required this.message, required this.sha, this.branch = const SdkOmitted(), this.committer = const SdkOmitted(), this.author = const SdkOmitted()});
+  const ReposDeleteFileRequestBody(
+      {required this.message,
+      required this.sha,
+      this.branch = const SdkOmitted(),
+      this.committer = const SdkOmitted(),
+      this.author = const SdkOmitted()});
 
-  ReposDeleteFileRequestBody Function({String message, String sha, SdkOptional<String> branch, SdkOptional<ReposDeleteFileRequestBodyCommitter> committer, SdkOptional<ReposDeleteFileRequestBodyAuthor> author}) get copyWith => _copyWith;
+  ReposDeleteFileRequestBody Function(
+          {String message,
+          String sha,
+          SdkOptional<String> branch,
+          SdkOptional<ReposDeleteFileRequestBodyCommitter> committer,
+          SdkOptional<ReposDeleteFileRequestBodyAuthor> author})
+      get copyWith => _copyWith;
 
-  ReposDeleteFileRequestBody _copyWith({Object? message = sdkOmittedValue, Object? sha = sdkOmittedValue, Object? branch = sdkOmittedValue, Object? committer = sdkOmittedValue, Object? author = sdkOmittedValue}) => ReposDeleteFileRequestBody(
-    message: identical(message, sdkOmittedValue) ? this.message : message as String,
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-    branch: identical(branch, sdkOmittedValue) ? this.branch : branch as SdkOptional<String>,
-    committer: identical(committer, sdkOmittedValue) ? this.committer : committer as SdkOptional<ReposDeleteFileRequestBodyCommitter>,
-    author: identical(author, sdkOmittedValue) ? this.author : author as SdkOptional<ReposDeleteFileRequestBodyAuthor>,
-  );
+  ReposDeleteFileRequestBody _copyWith(
+          {Object? message = sdkOmittedValue,
+          Object? sha = sdkOmittedValue,
+          Object? branch = sdkOmittedValue,
+          Object? committer = sdkOmittedValue,
+          Object? author = sdkOmittedValue}) =>
+      ReposDeleteFileRequestBody(
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+        branch: identical(branch, sdkOmittedValue)
+            ? this.branch
+            : branch as SdkOptional<String>,
+        committer: identical(committer, sdkOmittedValue)
+            ? this.committer
+            : committer as SdkOptional<ReposDeleteFileRequestBodyCommitter>,
+        author: identical(author, sdkOmittedValue)
+            ? this.author
+            : author as SdkOptional<ReposDeleteFileRequestBodyAuthor>,
+      );
 
-  factory ReposDeleteFileRequestBody.fromJson(Map<String, dynamic> json) => ReposDeleteFileRequestBody(
-    message: (json['message'] as String?)!,
-    sha: (json['sha'] as String?)!,
-    branch: json['branch'] != null ? SdkPresent((json['branch'] as String?)!) : const SdkOmitted(),
-    committer: json['committer'] != null ? SdkPresent((json['committer'] != null ? ReposDeleteFileRequestBodyCommitter.fromJson(json['committer'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    author: json['author'] != null ? SdkPresent((json['author'] != null ? ReposDeleteFileRequestBodyAuthor.fromJson(json['author'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-  );
+  factory ReposDeleteFileRequestBody.fromJson(Map<String, dynamic> json) =>
+      ReposDeleteFileRequestBody(
+        message: (json['message'] as String?)!,
+        sha: (json['sha'] as String?)!,
+        branch: json['branch'] != null
+            ? SdkPresent((json['branch'] as String?)!)
+            : const SdkOmitted(),
+        committer: json['committer'] != null
+            ? SdkPresent((json['committer'] != null
+                ? ReposDeleteFileRequestBodyCommitter.fromJson(
+                    json['committer'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        author: json['author'] != null
+            ? SdkPresent((json['author'] != null
+                ? ReposDeleteFileRequestBodyAuthor.fromJson(
+                    json['author'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'message': message,
-    'sha': sha,
-    ...switch (branch) {
-      SdkPresent<String>(value: final value) => {'branch': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (committer) {
-      SdkPresent<ReposDeleteFileRequestBodyCommitter>(value: final value) => {'committer': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (author) {
-      SdkPresent<ReposDeleteFileRequestBodyAuthor>(value: final value) => {'author': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'message': message,
+        'sha': sha,
+        ...switch (branch) {
+          SdkPresent<String>(value: final value) => {
+              'branch': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (committer) {
+          SdkPresent<ReposDeleteFileRequestBodyCommitter>(value: final value) =>
+            {
+              'committer': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (author) {
+          SdkPresent<ReposDeleteFileRequestBodyAuthor>(value: final value) => {
+              'author': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class ReposCreateDeploymentRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The ref to deploy. This can be a branch, tag, or SHA.
   final String ref;
+
   /// Specifies a task to execute (e.g., `deploy` or `deploy:migrations`).
   final SdkOptional<String> task;
+
   /// Attempts to automatically merge the default branch into the requested ref, if it's behind the default branch.
   final SdkOptional<bool> autoMerge;
+
   /// The [status](https://docs.github.com/rest/commits/statuses) contexts to verify against commit status checks. If you omit this parameter, GitHub verifies all unique contexts before creating a deployment. To bypass checking entirely, pass an empty array. Defaults to all unique contexts.
   final SdkOptional<List<String>> requiredContexts;
   final SdkOptional<dynamic> payload;
+
   /// Name for the target deployment environment (e.g., `production`, `staging`, `qa`).
   final SdkOptional<String> environment;
+
   /// Short description of the deployment.
   final SdkOptional<String?> description;
+
   /// Specifies if the given environment is specific to the deployment and will no longer exist at some point in the future. Default: `false`
   final SdkOptional<bool> transientEnvironment;
+
   /// Specifies if the given environment is one that end-users directly interact with. Default: `true` when `environment` is `production` and `false` otherwise.
   final SdkOptional<bool> productionEnvironment;
 
-  const ReposCreateDeploymentRequestBody({required this.ref, this.task = const SdkOmitted(), this.autoMerge = const SdkOmitted(), this.requiredContexts = const SdkOmitted(), this.payload = const SdkOmitted(), this.environment = const SdkOmitted(), this.description = const SdkOmitted(), this.transientEnvironment = const SdkOmitted(), this.productionEnvironment = const SdkOmitted()});
+  const ReposCreateDeploymentRequestBody(
+      {required this.ref,
+      this.task = const SdkOmitted(),
+      this.autoMerge = const SdkOmitted(),
+      this.requiredContexts = const SdkOmitted(),
+      this.payload = const SdkOmitted(),
+      this.environment = const SdkOmitted(),
+      this.description = const SdkOmitted(),
+      this.transientEnvironment = const SdkOmitted(),
+      this.productionEnvironment = const SdkOmitted()});
 
-  ReposCreateDeploymentRequestBody Function({String ref, SdkOptional<String> task, SdkOptional<bool> autoMerge, SdkOptional<List<String>> requiredContexts, SdkOptional<dynamic> payload, SdkOptional<String> environment, SdkOptional<String?> description, SdkOptional<bool> transientEnvironment, SdkOptional<bool> productionEnvironment}) get copyWith => _copyWith;
+  ReposCreateDeploymentRequestBody Function(
+      {String ref,
+      SdkOptional<String> task,
+      SdkOptional<bool> autoMerge,
+      SdkOptional<List<String>> requiredContexts,
+      SdkOptional<dynamic> payload,
+      SdkOptional<String> environment,
+      SdkOptional<String?> description,
+      SdkOptional<bool> transientEnvironment,
+      SdkOptional<bool> productionEnvironment}) get copyWith => _copyWith;
 
-  ReposCreateDeploymentRequestBody _copyWith({Object? ref = sdkOmittedValue, Object? task = sdkOmittedValue, Object? autoMerge = sdkOmittedValue, Object? requiredContexts = sdkOmittedValue, Object? payload = sdkOmittedValue, Object? environment = sdkOmittedValue, Object? description = sdkOmittedValue, Object? transientEnvironment = sdkOmittedValue, Object? productionEnvironment = sdkOmittedValue}) => ReposCreateDeploymentRequestBody(
-    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-    task: identical(task, sdkOmittedValue) ? this.task : task as SdkOptional<String>,
-    autoMerge: identical(autoMerge, sdkOmittedValue) ? this.autoMerge : autoMerge as SdkOptional<bool>,
-    requiredContexts: identical(requiredContexts, sdkOmittedValue) ? this.requiredContexts : requiredContexts as SdkOptional<List<String>>,
-    payload: identical(payload, sdkOmittedValue) ? this.payload : payload as SdkOptional<dynamic>,
-    environment: identical(environment, sdkOmittedValue) ? this.environment : environment as SdkOptional<String>,
-    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String?>,
-    transientEnvironment: identical(transientEnvironment, sdkOmittedValue) ? this.transientEnvironment : transientEnvironment as SdkOptional<bool>,
-    productionEnvironment: identical(productionEnvironment, sdkOmittedValue) ? this.productionEnvironment : productionEnvironment as SdkOptional<bool>,
-  );
+  ReposCreateDeploymentRequestBody _copyWith(
+          {Object? ref = sdkOmittedValue,
+          Object? task = sdkOmittedValue,
+          Object? autoMerge = sdkOmittedValue,
+          Object? requiredContexts = sdkOmittedValue,
+          Object? payload = sdkOmittedValue,
+          Object? environment = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? transientEnvironment = sdkOmittedValue,
+          Object? productionEnvironment = sdkOmittedValue}) =>
+      ReposCreateDeploymentRequestBody(
+        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+        task: identical(task, sdkOmittedValue)
+            ? this.task
+            : task as SdkOptional<String>,
+        autoMerge: identical(autoMerge, sdkOmittedValue)
+            ? this.autoMerge
+            : autoMerge as SdkOptional<bool>,
+        requiredContexts: identical(requiredContexts, sdkOmittedValue)
+            ? this.requiredContexts
+            : requiredContexts as SdkOptional<List<String>>,
+        payload: identical(payload, sdkOmittedValue)
+            ? this.payload
+            : payload as SdkOptional<dynamic>,
+        environment: identical(environment, sdkOmittedValue)
+            ? this.environment
+            : environment as SdkOptional<String>,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as SdkOptional<String?>,
+        transientEnvironment: identical(transientEnvironment, sdkOmittedValue)
+            ? this.transientEnvironment
+            : transientEnvironment as SdkOptional<bool>,
+        productionEnvironment: identical(productionEnvironment, sdkOmittedValue)
+            ? this.productionEnvironment
+            : productionEnvironment as SdkOptional<bool>,
+      );
 
-  factory ReposCreateDeploymentRequestBody.fromJson(Map<String, dynamic> json) => ReposCreateDeploymentRequestBody(
-    ref: (json['ref'] as String?)!,
-    task: json['task'] != null ? SdkPresent((json['task'] as String?)!) : const SdkOmitted(),
-    autoMerge: json['auto_merge'] != null ? SdkPresent((json['auto_merge'] as bool?)!) : const SdkOmitted(),
-    requiredContexts: json['required_contexts'] != null ? SdkPresent(((json['required_contexts'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    payload: json['payload'] != null ? SdkPresent((json['payload'])!) : const SdkOmitted(),
-    environment: json['environment'] != null ? SdkPresent((json['environment'] as String?)!) : const SdkOmitted(),
-    description: json.containsKey('description') ? SdkPresent(json['description'] as String?) : const SdkOmitted(),
-    transientEnvironment: json['transient_environment'] != null ? SdkPresent((json['transient_environment'] as bool?)!) : const SdkOmitted(),
-    productionEnvironment: json['production_environment'] != null ? SdkPresent((json['production_environment'] as bool?)!) : const SdkOmitted(),
-  );
+  factory ReposCreateDeploymentRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      ReposCreateDeploymentRequestBody(
+        ref: (json['ref'] as String?)!,
+        task: json['task'] != null
+            ? SdkPresent((json['task'] as String?)!)
+            : const SdkOmitted(),
+        autoMerge: json['auto_merge'] != null
+            ? SdkPresent((json['auto_merge'] as bool?)!)
+            : const SdkOmitted(),
+        requiredContexts: json['required_contexts'] != null
+            ? SdkPresent(((json['required_contexts'] as List?)
+                ?.map((e) => e as String)
+                .toList())!)
+            : const SdkOmitted(),
+        payload: json['payload'] != null
+            ? SdkPresent((json['payload'])!)
+            : const SdkOmitted(),
+        environment: json['environment'] != null
+            ? SdkPresent((json['environment'] as String?)!)
+            : const SdkOmitted(),
+        description: json.containsKey('description')
+            ? SdkPresent(json['description'] as String?)
+            : const SdkOmitted(),
+        transientEnvironment: json['transient_environment'] != null
+            ? SdkPresent((json['transient_environment'] as bool?)!)
+            : const SdkOmitted(),
+        productionEnvironment: json['production_environment'] != null
+            ? SdkPresent((json['production_environment'] as bool?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'ref': ref,
-    ...switch (task) {
-      SdkPresent<String>(value: final value) => {'task': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (autoMerge) {
-      SdkPresent<bool>(value: final value) => {'auto_merge': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (requiredContexts) {
-      SdkPresent<List<String>>(value: final value) => {'required_contexts': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (payload) {
-      SdkPresent<dynamic>(value: final value) => {'payload': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (environment) {
-      SdkPresent<String>(value: final value) => {'environment': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (description) {
-      SdkPresent<String?>(value: final value) => {'description': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (transientEnvironment) {
-      SdkPresent<bool>(value: final value) => {'transient_environment': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (productionEnvironment) {
-      SdkPresent<bool>(value: final value) => {'production_environment': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'ref': ref,
+        ...switch (task) {
+          SdkPresent<String>(value: final value) => {
+              'task': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (autoMerge) {
+          SdkPresent<bool>(value: final value) => {
+              'auto_merge': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (requiredContexts) {
+          SdkPresent<List<String>>(value: final value) => {
+              'required_contexts': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (payload) {
+          SdkPresent<dynamic>(value: final value) => {
+              'payload': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (environment) {
+          SdkPresent<String>(value: final value) => {
+              'environment': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (description) {
+          SdkPresent<String?>(value: final value) => {
+              'description': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (transientEnvironment) {
+          SdkPresent<bool>(value: final value) => {
+              'transient_environment': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (productionEnvironment) {
+          SdkPresent<bool>(value: final value) => {
+              'production_environment': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

@@ -6,274 +6,386 @@ part of 'inline.dart';
 // Inline operation models (part 267)
 /// Visibility of a runner group. You can select all repositories, select individual repositories, or limit access to private repositories.
 final class ActionsCreateSelfHostedRunnerGroupForOrgRequestBodyVisibility {
-
   final String value;
 
-  const ActionsCreateSelfHostedRunnerGroupForOrgRequestBodyVisibility._(this.value);
+  const ActionsCreateSelfHostedRunnerGroupForOrgRequestBodyVisibility._(
+      this.value);
 
-  factory ActionsCreateSelfHostedRunnerGroupForOrgRequestBodyVisibility.fromJson(String value) => ActionsCreateSelfHostedRunnerGroupForOrgRequestBodyVisibility._(value);
+  factory ActionsCreateSelfHostedRunnerGroupForOrgRequestBodyVisibility.fromJson(
+          String value) =>
+      ActionsCreateSelfHostedRunnerGroupForOrgRequestBodyVisibility._(value);
 
-  static const selected = ActionsCreateSelfHostedRunnerGroupForOrgRequestBodyVisibility._('selected');
-  static const all = ActionsCreateSelfHostedRunnerGroupForOrgRequestBodyVisibility._('all');
-  static const private = ActionsCreateSelfHostedRunnerGroupForOrgRequestBodyVisibility._('private');
+  static const selected =
+      ActionsCreateSelfHostedRunnerGroupForOrgRequestBodyVisibility._(
+          'selected');
+  static const all =
+      ActionsCreateSelfHostedRunnerGroupForOrgRequestBodyVisibility._('all');
+  static const private =
+      ActionsCreateSelfHostedRunnerGroupForOrgRequestBodyVisibility._(
+          'private');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ActionsCreateSelfHostedRunnerGroupForOrgRequestBodyVisibility && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ActionsCreateSelfHostedRunnerGroupForOrgRequestBodyVisibility &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Visibility of a runner group. You can select all repositories, select individual repositories, or all private repositories.
 final class ActionsUpdateSelfHostedRunnerGroupForOrgRequestBodyVisibility {
-
   final String value;
 
-  const ActionsUpdateSelfHostedRunnerGroupForOrgRequestBodyVisibility._(this.value);
+  const ActionsUpdateSelfHostedRunnerGroupForOrgRequestBodyVisibility._(
+      this.value);
 
-  factory ActionsUpdateSelfHostedRunnerGroupForOrgRequestBodyVisibility.fromJson(String value) => ActionsUpdateSelfHostedRunnerGroupForOrgRequestBodyVisibility._(value);
+  factory ActionsUpdateSelfHostedRunnerGroupForOrgRequestBodyVisibility.fromJson(
+          String value) =>
+      ActionsUpdateSelfHostedRunnerGroupForOrgRequestBodyVisibility._(value);
 
-  static const selected = ActionsUpdateSelfHostedRunnerGroupForOrgRequestBodyVisibility._('selected');
-  static const all = ActionsUpdateSelfHostedRunnerGroupForOrgRequestBodyVisibility._('all');
-  static const private = ActionsUpdateSelfHostedRunnerGroupForOrgRequestBodyVisibility._('private');
+  static const selected =
+      ActionsUpdateSelfHostedRunnerGroupForOrgRequestBodyVisibility._(
+          'selected');
+  static const all =
+      ActionsUpdateSelfHostedRunnerGroupForOrgRequestBodyVisibility._('all');
+  static const private =
+      ActionsUpdateSelfHostedRunnerGroupForOrgRequestBodyVisibility._(
+          'private');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ActionsUpdateSelfHostedRunnerGroupForOrgRequestBodyVisibility && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ActionsUpdateSelfHostedRunnerGroupForOrgRequestBodyVisibility &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Which type of organization repositories have access to the organization secret. `selected` means only the repositories specified by `selected_repository_ids` can access the secret.
 final class ActionsCreateOrUpdateOrgSecretRequestBodyVisibility {
-
   final String value;
 
   const ActionsCreateOrUpdateOrgSecretRequestBodyVisibility._(this.value);
 
-  factory ActionsCreateOrUpdateOrgSecretRequestBodyVisibility.fromJson(String value) => ActionsCreateOrUpdateOrgSecretRequestBodyVisibility._(value);
+  factory ActionsCreateOrUpdateOrgSecretRequestBodyVisibility.fromJson(
+          String value) =>
+      ActionsCreateOrUpdateOrgSecretRequestBodyVisibility._(value);
 
-  static const all = ActionsCreateOrUpdateOrgSecretRequestBodyVisibility._('all');
-  static const private = ActionsCreateOrUpdateOrgSecretRequestBodyVisibility._('private');
-  static const selected = ActionsCreateOrUpdateOrgSecretRequestBodyVisibility._('selected');
+  static const all =
+      ActionsCreateOrUpdateOrgSecretRequestBodyVisibility._('all');
+  static const private =
+      ActionsCreateOrUpdateOrgSecretRequestBodyVisibility._('private');
+  static const selected =
+      ActionsCreateOrUpdateOrgSecretRequestBodyVisibility._('selected');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ActionsCreateOrUpdateOrgSecretRequestBodyVisibility && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ActionsCreateOrUpdateOrgSecretRequestBodyVisibility &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The type of repositories in the organization that can access the variable. `selected` means only the repositories specified by `selected_repository_ids` can access the variable.
 final class ActionsCreateOrgVariableRequestBodyVisibility {
-
   final String value;
 
   const ActionsCreateOrgVariableRequestBodyVisibility._(this.value);
 
-  factory ActionsCreateOrgVariableRequestBodyVisibility.fromJson(String value) => ActionsCreateOrgVariableRequestBodyVisibility._(value);
+  factory ActionsCreateOrgVariableRequestBodyVisibility.fromJson(
+          String value) =>
+      ActionsCreateOrgVariableRequestBodyVisibility._(value);
 
   static const all = ActionsCreateOrgVariableRequestBodyVisibility._('all');
-  static const private = ActionsCreateOrgVariableRequestBodyVisibility._('private');
-  static const selected = ActionsCreateOrgVariableRequestBodyVisibility._('selected');
+  static const private =
+      ActionsCreateOrgVariableRequestBodyVisibility._('private');
+  static const selected =
+      ActionsCreateOrgVariableRequestBodyVisibility._('selected');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ActionsCreateOrgVariableRequestBodyVisibility && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ActionsCreateOrgVariableRequestBodyVisibility &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The type of repositories in the organization that can access the variable. `selected` means only the repositories specified by `selected_repository_ids` can access the variable.
 final class ActionsUpdateOrgVariableRequestBodyVisibility {
-
   final String value;
 
   const ActionsUpdateOrgVariableRequestBodyVisibility._(this.value);
 
-  factory ActionsUpdateOrgVariableRequestBodyVisibility.fromJson(String value) => ActionsUpdateOrgVariableRequestBodyVisibility._(value);
+  factory ActionsUpdateOrgVariableRequestBodyVisibility.fromJson(
+          String value) =>
+      ActionsUpdateOrgVariableRequestBodyVisibility._(value);
 
   static const all = ActionsUpdateOrgVariableRequestBodyVisibility._('all');
-  static const private = ActionsUpdateOrgVariableRequestBodyVisibility._('private');
-  static const selected = ActionsUpdateOrgVariableRequestBodyVisibility._('selected');
+  static const private =
+      ActionsUpdateOrgVariableRequestBodyVisibility._('private');
+  static const selected =
+      ActionsUpdateOrgVariableRequestBodyVisibility._('selected');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ActionsUpdateOrgVariableRequestBodyVisibility && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ActionsUpdateOrgVariableRequestBodyVisibility &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Which type of organization repositories have access to the organization secret. `selected` means only the repositories specified by `selected_repository_ids` can access the secret.
 final class AgentsCreateOrUpdateOrgSecretRequestBodyVisibility {
-
   final String value;
 
   const AgentsCreateOrUpdateOrgSecretRequestBodyVisibility._(this.value);
 
-  factory AgentsCreateOrUpdateOrgSecretRequestBodyVisibility.fromJson(String value) => AgentsCreateOrUpdateOrgSecretRequestBodyVisibility._(value);
+  factory AgentsCreateOrUpdateOrgSecretRequestBodyVisibility.fromJson(
+          String value) =>
+      AgentsCreateOrUpdateOrgSecretRequestBodyVisibility._(value);
 
-  static const all = AgentsCreateOrUpdateOrgSecretRequestBodyVisibility._('all');
-  static const private = AgentsCreateOrUpdateOrgSecretRequestBodyVisibility._('private');
-  static const selected = AgentsCreateOrUpdateOrgSecretRequestBodyVisibility._('selected');
+  static const all =
+      AgentsCreateOrUpdateOrgSecretRequestBodyVisibility._('all');
+  static const private =
+      AgentsCreateOrUpdateOrgSecretRequestBodyVisibility._('private');
+  static const selected =
+      AgentsCreateOrUpdateOrgSecretRequestBodyVisibility._('selected');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentsCreateOrUpdateOrgSecretRequestBodyVisibility && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is AgentsCreateOrUpdateOrgSecretRequestBodyVisibility &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The type of repositories in the organization that can access the variable. `selected` means only the repositories specified by `selected_repository_ids` can access the variable.
 final class AgentsCreateOrgVariableRequestBodyVisibility {
-
   final String value;
 
   const AgentsCreateOrgVariableRequestBodyVisibility._(this.value);
 
-  factory AgentsCreateOrgVariableRequestBodyVisibility.fromJson(String value) => AgentsCreateOrgVariableRequestBodyVisibility._(value);
+  factory AgentsCreateOrgVariableRequestBodyVisibility.fromJson(String value) =>
+      AgentsCreateOrgVariableRequestBodyVisibility._(value);
 
   static const all = AgentsCreateOrgVariableRequestBodyVisibility._('all');
-  static const private = AgentsCreateOrgVariableRequestBodyVisibility._('private');
-  static const selected = AgentsCreateOrgVariableRequestBodyVisibility._('selected');
+  static const private =
+      AgentsCreateOrgVariableRequestBodyVisibility._('private');
+  static const selected =
+      AgentsCreateOrgVariableRequestBodyVisibility._('selected');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentsCreateOrgVariableRequestBodyVisibility && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is AgentsCreateOrgVariableRequestBodyVisibility &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The type of repositories in the organization that can access the variable. `selected` means only the repositories specified by `selected_repository_ids` can access the variable.
 final class AgentsUpdateOrgVariableRequestBodyVisibility {
-
   final String value;
 
   const AgentsUpdateOrgVariableRequestBodyVisibility._(this.value);
 
-  factory AgentsUpdateOrgVariableRequestBodyVisibility.fromJson(String value) => AgentsUpdateOrgVariableRequestBodyVisibility._(value);
+  factory AgentsUpdateOrgVariableRequestBodyVisibility.fromJson(String value) =>
+      AgentsUpdateOrgVariableRequestBodyVisibility._(value);
 
   static const all = AgentsUpdateOrgVariableRequestBodyVisibility._('all');
-  static const private = AgentsUpdateOrgVariableRequestBodyVisibility._('private');
-  static const selected = AgentsUpdateOrgVariableRequestBodyVisibility._('selected');
+  static const private =
+      AgentsUpdateOrgVariableRequestBodyVisibility._('private');
+  static const selected =
+      AgentsUpdateOrgVariableRequestBodyVisibility._('selected');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentsUpdateOrgVariableRequestBodyVisibility && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is AgentsUpdateOrgVariableRequestBodyVisibility &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class OrgsCreateArtifactDeploymentRecordRequestBodyRuntimeRisksItem {
-
   final String value;
 
-  const OrgsCreateArtifactDeploymentRecordRequestBodyRuntimeRisksItem._(this.value);
+  const OrgsCreateArtifactDeploymentRecordRequestBodyRuntimeRisksItem._(
+      this.value);
 
-  factory OrgsCreateArtifactDeploymentRecordRequestBodyRuntimeRisksItem.fromJson(String value) => OrgsCreateArtifactDeploymentRecordRequestBodyRuntimeRisksItem._(value);
+  factory OrgsCreateArtifactDeploymentRecordRequestBodyRuntimeRisksItem.fromJson(
+          String value) =>
+      OrgsCreateArtifactDeploymentRecordRequestBodyRuntimeRisksItem._(value);
 
-  static const criticalResource = OrgsCreateArtifactDeploymentRecordRequestBodyRuntimeRisksItem._('critical-resource');
-  static const internetExposed = OrgsCreateArtifactDeploymentRecordRequestBodyRuntimeRisksItem._('internet-exposed');
-  static const lateralMovement = OrgsCreateArtifactDeploymentRecordRequestBodyRuntimeRisksItem._('lateral-movement');
-  static const sensitiveData = OrgsCreateArtifactDeploymentRecordRequestBodyRuntimeRisksItem._('sensitive-data');
+  static const criticalResource =
+      OrgsCreateArtifactDeploymentRecordRequestBodyRuntimeRisksItem._(
+          'critical-resource');
+  static const internetExposed =
+      OrgsCreateArtifactDeploymentRecordRequestBodyRuntimeRisksItem._(
+          'internet-exposed');
+  static const lateralMovement =
+      OrgsCreateArtifactDeploymentRecordRequestBodyRuntimeRisksItem._(
+          'lateral-movement');
+  static const sensitiveData =
+      OrgsCreateArtifactDeploymentRecordRequestBodyRuntimeRisksItem._(
+          'sensitive-data');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is OrgsCreateArtifactDeploymentRecordRequestBodyRuntimeRisksItem && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is OrgsCreateArtifactDeploymentRecordRequestBodyRuntimeRisksItem &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The status of the artifact. Can be either deployed or decommissioned.
 final class OrgsCreateArtifactDeploymentRecordRequestBodyStatus {
-
   final String value;
 
   const OrgsCreateArtifactDeploymentRecordRequestBodyStatus._(this.value);
 
-  factory OrgsCreateArtifactDeploymentRecordRequestBodyStatus.fromJson(String value) => OrgsCreateArtifactDeploymentRecordRequestBodyStatus._(value);
+  factory OrgsCreateArtifactDeploymentRecordRequestBodyStatus.fromJson(
+          String value) =>
+      OrgsCreateArtifactDeploymentRecordRequestBodyStatus._(value);
 
-  static const deployed = OrgsCreateArtifactDeploymentRecordRequestBodyStatus._('deployed');
-  static const decommissioned = OrgsCreateArtifactDeploymentRecordRequestBodyStatus._('decommissioned');
+  static const deployed =
+      OrgsCreateArtifactDeploymentRecordRequestBodyStatus._('deployed');
+  static const decommissioned =
+      OrgsCreateArtifactDeploymentRecordRequestBodyStatus._('decommissioned');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is OrgsCreateArtifactDeploymentRecordRequestBodyStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is OrgsCreateArtifactDeploymentRecordRequestBodyStatus &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemRuntimeRisksItem {
-
   final String value;
 
-  const OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemRuntimeRisksItem._(this.value);
+  const OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemRuntimeRisksItem._(
+      this.value);
 
-  factory OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemRuntimeRisksItem.fromJson(String value) => OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemRuntimeRisksItem._(value);
+  factory OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemRuntimeRisksItem.fromJson(
+          String value) =>
+      OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemRuntimeRisksItem
+          ._(value);
 
-  static const criticalResource = OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemRuntimeRisksItem._('critical-resource');
-  static const internetExposed = OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemRuntimeRisksItem._('internet-exposed');
-  static const lateralMovement = OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemRuntimeRisksItem._('lateral-movement');
-  static const sensitiveData = OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemRuntimeRisksItem._('sensitive-data');
+  static const criticalResource =
+      OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemRuntimeRisksItem
+          ._('critical-resource');
+  static const internetExposed =
+      OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemRuntimeRisksItem
+          ._('internet-exposed');
+  static const lateralMovement =
+      OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemRuntimeRisksItem
+          ._('lateral-movement');
+  static const sensitiveData =
+      OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemRuntimeRisksItem
+          ._('sensitive-data');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemRuntimeRisksItem && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemRuntimeRisksItem &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The deployment status of the artifact.
 final class OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemStatus {
-
   final String value;
 
-  const OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemStatus._(this.value);
+  const OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemStatus._(
+      this.value);
 
-  factory OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemStatus.fromJson(String value) => OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemStatus._(value);
+  factory OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemStatus.fromJson(
+          String value) =>
+      OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemStatus._(value);
 
-  static const deployed = OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemStatus._('deployed');
-  static const decommissioned = OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemStatus._('decommissioned');
+  static const deployed =
+      OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemStatus._(
+          'deployed');
+  static const decommissioned =
+      OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemStatus._(
+          'decommissioned');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemStatus &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

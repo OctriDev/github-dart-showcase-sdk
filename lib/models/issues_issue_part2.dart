@@ -8,42 +8,73 @@ part of 'issues_issue.dart';
 class IssueEventDismissedReview {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `state` wire field.
   final String state;
+
   /// Required `integer` value serialized in the `review_id` wire field.
   final int reviewId;
+
   /// Required `string` value serialized in the `dismissal_message` wire field.
   final String? dismissalMessage;
+
   /// Optional `string` value serialized in the `dismissal_commit_id` wire field.
   final SdkOptional<String?> dismissalCommitId;
 
-  const IssueEventDismissedReview({required this.state, required this.reviewId, required this.dismissalMessage, this.dismissalCommitId = const SdkOmitted()});
+  const IssueEventDismissedReview(
+      {required this.state,
+      required this.reviewId,
+      required this.dismissalMessage,
+      this.dismissalCommitId = const SdkOmitted()});
 
-  IssueEventDismissedReview Function({String state, int reviewId, String? dismissalMessage, SdkOptional<String?> dismissalCommitId}) get copyWith => _copyWith;
+  IssueEventDismissedReview Function(
+      {String state,
+      int reviewId,
+      String? dismissalMessage,
+      SdkOptional<String?> dismissalCommitId}) get copyWith => _copyWith;
 
-  IssueEventDismissedReview _copyWith({Object? state = sdkOmittedValue, Object? reviewId = sdkOmittedValue, Object? dismissalMessage = sdkOmittedValue, Object? dismissalCommitId = sdkOmittedValue}) => IssueEventDismissedReview(
-    state: identical(state, sdkOmittedValue) ? this.state : state as String,
-    reviewId: identical(reviewId, sdkOmittedValue) ? this.reviewId : reviewId as int,
-    dismissalMessage: identical(dismissalMessage, sdkOmittedValue) ? this.dismissalMessage : dismissalMessage as String?,
-    dismissalCommitId: identical(dismissalCommitId, sdkOmittedValue) ? this.dismissalCommitId : dismissalCommitId as SdkOptional<String?>,
-  );
+  IssueEventDismissedReview _copyWith(
+          {Object? state = sdkOmittedValue,
+          Object? reviewId = sdkOmittedValue,
+          Object? dismissalMessage = sdkOmittedValue,
+          Object? dismissalCommitId = sdkOmittedValue}) =>
+      IssueEventDismissedReview(
+        state: identical(state, sdkOmittedValue) ? this.state : state as String,
+        reviewId: identical(reviewId, sdkOmittedValue)
+            ? this.reviewId
+            : reviewId as int,
+        dismissalMessage: identical(dismissalMessage, sdkOmittedValue)
+            ? this.dismissalMessage
+            : dismissalMessage as String?,
+        dismissalCommitId: identical(dismissalCommitId, sdkOmittedValue)
+            ? this.dismissalCommitId
+            : dismissalCommitId as SdkOptional<String?>,
+      );
 
-  factory IssueEventDismissedReview.fromJson(Map<String, dynamic> json) => IssueEventDismissedReview(
-    state: (json['state'] as String?)!,
-    reviewId: ((json['review_id'] as num?)?.toInt())!,
-    dismissalMessage: json.containsKey('dismissal_message') ? json['dismissal_message'] as String? : throw ArgumentError.value(null, 'dismissal_message', 'Required property is missing'),
-    dismissalCommitId: json.containsKey('dismissal_commit_id') ? SdkPresent(json['dismissal_commit_id'] as String?) : const SdkOmitted(),
-  );
+  factory IssueEventDismissedReview.fromJson(Map<String, dynamic> json) =>
+      IssueEventDismissedReview(
+        state: (json['state'] as String?)!,
+        reviewId: ((json['review_id'] as num?)?.toInt())!,
+        dismissalMessage: json.containsKey('dismissal_message')
+            ? json['dismissal_message'] as String?
+            : throw ArgumentError.value(
+                null, 'dismissal_message', 'Required property is missing'),
+        dismissalCommitId: json.containsKey('dismissal_commit_id')
+            ? SdkPresent(json['dismissal_commit_id'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'state': state,
-    'review_id': reviewId,
-    'dismissal_message': dismissalMessage,
-    ...switch (dismissalCommitId) {
-      SdkPresent<String?>(value: final value) => {'dismissal_commit_id': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'state': state,
+        'review_id': reviewId,
+        'dismissal_message': dismissalMessage,
+        ...switch (dismissalCommitId) {
+          SdkPresent<String?>(value: final value) => {
+              'dismissal_commit_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 sealed class IssueEventForIssue {
@@ -51,32 +82,113 @@ sealed class IssueEventForIssue {
   static const String constructionSurface = 'named';
   const IssueEventForIssue();
   factory IssueEventForIssue.fromJson(Object? json) {
-    try { return IssueEventForIssueLabeledIssueEvent(LabeledIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return IssueEventForIssueUnlabeledIssueEvent(UnlabeledIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return IssueEventForIssueAssignedIssueEvent(AssignedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return IssueEventForIssueUnassignedIssueEvent(UnassignedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return IssueEventForIssueMilestonedIssueEvent(MilestonedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return IssueEventForIssueDemilestonedIssueEvent(DemilestonedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return IssueEventForIssueRenamedIssueEvent(RenamedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return IssueEventForIssueReviewRequestedIssueEvent(ReviewRequestedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return IssueEventForIssueReviewRequestRemovedIssueEvent(ReviewRequestRemovedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return IssueEventForIssueReviewDismissedIssueEvent(ReviewDismissedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return IssueEventForIssueLockedIssueEvent(LockedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return IssueEventForIssueAddedToProjectIssueEvent(AddedToProjectIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return IssueEventForIssueMovedColumnInProjectIssueEvent(MovedColumnInProjectIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return IssueEventForIssueRemovedFromProjectIssueEvent(RemovedFromProjectIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return IssueEventForIssueConvertedNoteToIssueIssueEvent(ConvertedNoteToIssueIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return IssueEventForIssueIssueTypeAddedIssueEvent(IssueTypeAddedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return IssueEventForIssueIssueTypeRemovedIssueEvent(IssueTypeRemovedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return IssueEventForIssueIssueTypeChangedIssueEvent(IssueTypeChangedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return IssueEventForIssueSubIssueAddedIssueEvent(SubIssueAddedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return IssueEventForIssueSubIssueRemovedIssueEvent(SubIssueRemovedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return IssueEventForIssueParentIssueAddedIssueEvent(ParentIssueAddedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return IssueEventForIssueParentIssueRemovedIssueEvent(ParentIssueRemovedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return IssueEventForIssueBlockedByAddedIssueEvent(BlockedByAddedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return IssueEventForIssueBlockedByRemovedIssueEvent(BlockedByRemovedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return IssueEventForIssueBlockingAddedIssueEvent(BlockingAddedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return IssueEventForIssueBlockingRemovedIssueEvent(BlockingRemovedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try {
+      return IssueEventForIssueLabeledIssueEvent(
+          LabeledIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return IssueEventForIssueUnlabeledIssueEvent(
+          UnlabeledIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return IssueEventForIssueAssignedIssueEvent(
+          AssignedIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return IssueEventForIssueUnassignedIssueEvent(
+          UnassignedIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return IssueEventForIssueMilestonedIssueEvent(
+          MilestonedIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return IssueEventForIssueDemilestonedIssueEvent(
+          DemilestonedIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return IssueEventForIssueRenamedIssueEvent(
+          RenamedIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return IssueEventForIssueReviewRequestedIssueEvent(
+          ReviewRequestedIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return IssueEventForIssueReviewRequestRemovedIssueEvent(
+          ReviewRequestRemovedIssueEvent.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return IssueEventForIssueReviewDismissedIssueEvent(
+          ReviewDismissedIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return IssueEventForIssueLockedIssueEvent(
+          LockedIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return IssueEventForIssueAddedToProjectIssueEvent(
+          AddedToProjectIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return IssueEventForIssueMovedColumnInProjectIssueEvent(
+          MovedColumnInProjectIssueEvent.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return IssueEventForIssueRemovedFromProjectIssueEvent(
+          RemovedFromProjectIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return IssueEventForIssueConvertedNoteToIssueIssueEvent(
+          ConvertedNoteToIssueIssueEvent.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return IssueEventForIssueIssueTypeAddedIssueEvent(
+          IssueTypeAddedIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return IssueEventForIssueIssueTypeRemovedIssueEvent(
+          IssueTypeRemovedIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return IssueEventForIssueIssueTypeChangedIssueEvent(
+          IssueTypeChangedIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return IssueEventForIssueSubIssueAddedIssueEvent(
+          SubIssueAddedIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return IssueEventForIssueSubIssueRemovedIssueEvent(
+          SubIssueRemovedIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return IssueEventForIssueParentIssueAddedIssueEvent(
+          ParentIssueAddedIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return IssueEventForIssueParentIssueRemovedIssueEvent(
+          ParentIssueRemovedIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return IssueEventForIssueBlockedByAddedIssueEvent(
+          BlockedByAddedIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return IssueEventForIssueBlockedByRemovedIssueEvent(
+          BlockedByRemovedIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return IssueEventForIssueBlockingAddedIssueEvent(
+          BlockingAddedIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return IssueEventForIssueBlockingRemovedIssueEvent(
+          BlockingRemovedIssueEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
     throw FormatException("No variant matched for IssueEventForIssue");
   }
   Object? toJson();
@@ -85,184 +197,242 @@ sealed class IssueEventForIssue {
 final class IssueEventForIssueLabeledIssueEvent extends IssueEventForIssue {
   final LabeledIssueEvent value;
   const IssueEventForIssueLabeledIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 final class IssueEventForIssueUnlabeledIssueEvent extends IssueEventForIssue {
   final UnlabeledIssueEvent value;
   const IssueEventForIssueUnlabeledIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 final class IssueEventForIssueAssignedIssueEvent extends IssueEventForIssue {
   final AssignedIssueEvent value;
   const IssueEventForIssueAssignedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 final class IssueEventForIssueUnassignedIssueEvent extends IssueEventForIssue {
   final UnassignedIssueEvent value;
   const IssueEventForIssueUnassignedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 final class IssueEventForIssueMilestonedIssueEvent extends IssueEventForIssue {
   final MilestonedIssueEvent value;
   const IssueEventForIssueMilestonedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class IssueEventForIssueDemilestonedIssueEvent extends IssueEventForIssue {
+final class IssueEventForIssueDemilestonedIssueEvent
+    extends IssueEventForIssue {
   final DemilestonedIssueEvent value;
   const IssueEventForIssueDemilestonedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 final class IssueEventForIssueRenamedIssueEvent extends IssueEventForIssue {
   final RenamedIssueEvent value;
   const IssueEventForIssueRenamedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class IssueEventForIssueReviewRequestedIssueEvent extends IssueEventForIssue {
+final class IssueEventForIssueReviewRequestedIssueEvent
+    extends IssueEventForIssue {
   final ReviewRequestedIssueEvent value;
   const IssueEventForIssueReviewRequestedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class IssueEventForIssueReviewRequestRemovedIssueEvent extends IssueEventForIssue {
+final class IssueEventForIssueReviewRequestRemovedIssueEvent
+    extends IssueEventForIssue {
   final ReviewRequestRemovedIssueEvent value;
   const IssueEventForIssueReviewRequestRemovedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class IssueEventForIssueReviewDismissedIssueEvent extends IssueEventForIssue {
+final class IssueEventForIssueReviewDismissedIssueEvent
+    extends IssueEventForIssue {
   final ReviewDismissedIssueEvent value;
   const IssueEventForIssueReviewDismissedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 final class IssueEventForIssueLockedIssueEvent extends IssueEventForIssue {
   final LockedIssueEvent value;
   const IssueEventForIssueLockedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class IssueEventForIssueAddedToProjectIssueEvent extends IssueEventForIssue {
+final class IssueEventForIssueAddedToProjectIssueEvent
+    extends IssueEventForIssue {
   final AddedToProjectIssueEvent value;
   const IssueEventForIssueAddedToProjectIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class IssueEventForIssueMovedColumnInProjectIssueEvent extends IssueEventForIssue {
+final class IssueEventForIssueMovedColumnInProjectIssueEvent
+    extends IssueEventForIssue {
   final MovedColumnInProjectIssueEvent value;
   const IssueEventForIssueMovedColumnInProjectIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class IssueEventForIssueRemovedFromProjectIssueEvent extends IssueEventForIssue {
+final class IssueEventForIssueRemovedFromProjectIssueEvent
+    extends IssueEventForIssue {
   final RemovedFromProjectIssueEvent value;
   const IssueEventForIssueRemovedFromProjectIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class IssueEventForIssueConvertedNoteToIssueIssueEvent extends IssueEventForIssue {
+final class IssueEventForIssueConvertedNoteToIssueIssueEvent
+    extends IssueEventForIssue {
   final ConvertedNoteToIssueIssueEvent value;
   const IssueEventForIssueConvertedNoteToIssueIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class IssueEventForIssueIssueTypeAddedIssueEvent extends IssueEventForIssue {
+final class IssueEventForIssueIssueTypeAddedIssueEvent
+    extends IssueEventForIssue {
   final IssueTypeAddedIssueEvent value;
   const IssueEventForIssueIssueTypeAddedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class IssueEventForIssueIssueTypeRemovedIssueEvent extends IssueEventForIssue {
+final class IssueEventForIssueIssueTypeRemovedIssueEvent
+    extends IssueEventForIssue {
   final IssueTypeRemovedIssueEvent value;
   const IssueEventForIssueIssueTypeRemovedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class IssueEventForIssueIssueTypeChangedIssueEvent extends IssueEventForIssue {
+final class IssueEventForIssueIssueTypeChangedIssueEvent
+    extends IssueEventForIssue {
   final IssueTypeChangedIssueEvent value;
   const IssueEventForIssueIssueTypeChangedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class IssueEventForIssueSubIssueAddedIssueEvent extends IssueEventForIssue {
+final class IssueEventForIssueSubIssueAddedIssueEvent
+    extends IssueEventForIssue {
   final SubIssueAddedIssueEvent value;
   const IssueEventForIssueSubIssueAddedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class IssueEventForIssueSubIssueRemovedIssueEvent extends IssueEventForIssue {
+final class IssueEventForIssueSubIssueRemovedIssueEvent
+    extends IssueEventForIssue {
   final SubIssueRemovedIssueEvent value;
   const IssueEventForIssueSubIssueRemovedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class IssueEventForIssueParentIssueAddedIssueEvent extends IssueEventForIssue {
+final class IssueEventForIssueParentIssueAddedIssueEvent
+    extends IssueEventForIssue {
   final ParentIssueAddedIssueEvent value;
   const IssueEventForIssueParentIssueAddedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class IssueEventForIssueParentIssueRemovedIssueEvent extends IssueEventForIssue {
+final class IssueEventForIssueParentIssueRemovedIssueEvent
+    extends IssueEventForIssue {
   final ParentIssueRemovedIssueEvent value;
   const IssueEventForIssueParentIssueRemovedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class IssueEventForIssueBlockedByAddedIssueEvent extends IssueEventForIssue {
+final class IssueEventForIssueBlockedByAddedIssueEvent
+    extends IssueEventForIssue {
   final BlockedByAddedIssueEvent value;
   const IssueEventForIssueBlockedByAddedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class IssueEventForIssueBlockedByRemovedIssueEvent extends IssueEventForIssue {
+final class IssueEventForIssueBlockedByRemovedIssueEvent
+    extends IssueEventForIssue {
   final BlockedByRemovedIssueEvent value;
   const IssueEventForIssueBlockedByRemovedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class IssueEventForIssueBlockingAddedIssueEvent extends IssueEventForIssue {
+final class IssueEventForIssueBlockingAddedIssueEvent
+    extends IssueEventForIssue {
   final BlockingAddedIssueEvent value;
   const IssueEventForIssueBlockingAddedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class IssueEventForIssueBlockingRemovedIssueEvent extends IssueEventForIssue {
+final class IssueEventForIssueBlockingRemovedIssueEvent
+    extends IssueEventForIssue {
   final BlockingRemovedIssueEvent value;
   const IssueEventForIssueBlockingRemovedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// Issue Event Label
 class IssueEventLabel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `name` wire field.
   final String? name;
+
   /// Required `string` value serialized in the `color` wire field.
   final String? color;
 
   const IssueEventLabel({required this.name, required this.color});
 
-  IssueEventLabel Function({String? name, String? color}) get copyWith => _copyWith;
+  IssueEventLabel Function({String? name, String? color}) get copyWith =>
+      _copyWith;
 
-  IssueEventLabel _copyWith({Object? name = sdkOmittedValue, Object? color = sdkOmittedValue}) => IssueEventLabel(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String?,
-    color: identical(color, sdkOmittedValue) ? this.color : color as String?,
-  );
+  IssueEventLabel _copyWith(
+          {Object? name = sdkOmittedValue, Object? color = sdkOmittedValue}) =>
+      IssueEventLabel(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String?,
+        color:
+            identical(color, sdkOmittedValue) ? this.color : color as String?,
+      );
 
-  factory IssueEventLabel.fromJson(Map<String, dynamic> json) => IssueEventLabel(
-    name: json.containsKey('name') ? json['name'] as String? : throw ArgumentError.value(null, 'name', 'Required property is missing'),
-    color: json.containsKey('color') ? json['color'] as String? : throw ArgumentError.value(null, 'color', 'Required property is missing'),
-  );
+  factory IssueEventLabel.fromJson(Map<String, dynamic> json) =>
+      IssueEventLabel(
+        name: json.containsKey('name')
+            ? json['name'] as String?
+            : throw ArgumentError.value(
+                null, 'name', 'Required property is missing'),
+        color: json.containsKey('color')
+            ? json['color'] as String?
+            : throw ArgumentError.value(
+                null, 'color', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'color': color,
-  };
+        'name': name,
+        'color': color,
+      };
 }

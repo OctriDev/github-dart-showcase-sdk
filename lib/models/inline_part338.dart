@@ -8,163 +8,381 @@ part of 'inline.dart';
 class AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Error message
   final SdkOptional<String> message;
 
-  const AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemError({this.message = const SdkOmitted()});
+  const AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemError(
+      {this.message = const SdkOmitted()});
 
-  AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemError Function({SdkOptional<String> message}) get copyWith => _copyWith;
+  AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemError Function(
+      {SdkOptional<String> message}) get copyWith => _copyWith;
 
-  AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemError _copyWith({Object? message = sdkOmittedValue}) => AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemError(
-    message: identical(message, sdkOmittedValue) ? this.message : message as SdkOptional<String>,
-  );
+  AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemError _copyWith(
+          {Object? message = sdkOmittedValue}) =>
+      AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemError(
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as SdkOptional<String>,
+      );
 
-  factory AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemError.fromJson(Map<String, dynamic> json) => AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemError(
-    message: json['message'] != null ? SdkPresent((json['message'] as String?)!) : const SdkOmitted(),
-  );
+  factory AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemError.fromJson(
+          Map<String, dynamic> json) =>
+      AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemError(
+        message: json['message'] != null
+            ? SdkPresent((json['message'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (message) {
-      SdkPresent<String>(value: final value) => {'message': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (message) {
+          SdkPresent<String>(value: final value) => {
+              'message': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Full session details within a task
 class AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Session ID
   final String id;
+
   /// Session name
   final SdkOptional<String> name;
+
   /// The user who created this session
-  final SdkOptional<AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUser> user;
+  final SdkOptional<
+      AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUser> user;
+
   /// The owner of the repository
-  final SdkOptional<AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemOwner> owner;
+  final SdkOptional<
+      AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemOwner> owner;
+
   /// The repository this session belongs to
-  final SdkOptional<AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemRepository> repository;
+  final SdkOptional<
+          AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemRepository>
+      repository;
+
   /// Task ID this session belongs to
   final SdkOptional<String> taskId;
+
   /// Current state of a session
   final AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemState state;
+
   /// Creation timestamp
   final String createdAt;
+
   /// Last update timestamp
   final SdkOptional<String> updatedAt;
+
   /// Completion timestamp
   final SdkOptional<String> completedAt;
+
   /// Content of the triggering event
   final SdkOptional<String> prompt;
+
   /// Head branch name
   final SdkOptional<String> headRef;
+
   /// Base branch name
   final SdkOptional<String> baseRef;
+
   /// Model used for this session
   final SdkOptional<String> model;
+
   /// Structured information about billing units consumed by the session.
-  final SdkOptional<AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUsage> usage;
+  final SdkOptional<
+      AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUsage> usage;
+
   /// Error details for a failed session
-  final SdkOptional<AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemError> error;
+  final SdkOptional<
+      AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemError> error;
 
-  const AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItem({required this.id, this.name = const SdkOmitted(), this.user = const SdkOmitted(), this.owner = const SdkOmitted(), this.repository = const SdkOmitted(), this.taskId = const SdkOmitted(), required this.state, required this.createdAt, this.updatedAt = const SdkOmitted(), this.completedAt = const SdkOmitted(), this.prompt = const SdkOmitted(), this.headRef = const SdkOmitted(), this.baseRef = const SdkOmitted(), this.model = const SdkOmitted(), this.usage = const SdkOmitted(), this.error = const SdkOmitted()});
+  const AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItem(
+      {required this.id,
+      this.name = const SdkOmitted(),
+      this.user = const SdkOmitted(),
+      this.owner = const SdkOmitted(),
+      this.repository = const SdkOmitted(),
+      this.taskId = const SdkOmitted(),
+      required this.state,
+      required this.createdAt,
+      this.updatedAt = const SdkOmitted(),
+      this.completedAt = const SdkOmitted(),
+      this.prompt = const SdkOmitted(),
+      this.headRef = const SdkOmitted(),
+      this.baseRef = const SdkOmitted(),
+      this.model = const SdkOmitted(),
+      this.usage = const SdkOmitted(),
+      this.error = const SdkOmitted()});
 
-  AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItem Function({String id, SdkOptional<String> name, SdkOptional<AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUser> user, SdkOptional<AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemOwner> owner, SdkOptional<AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemRepository> repository, SdkOptional<String> taskId, AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemState state, String createdAt, SdkOptional<String> updatedAt, SdkOptional<String> completedAt, SdkOptional<String> prompt, SdkOptional<String> headRef, SdkOptional<String> baseRef, SdkOptional<String> model, SdkOptional<AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUsage> usage, SdkOptional<AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemError> error}) get copyWith => _copyWith;
+  AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItem Function(
+      {String id,
+      SdkOptional<String> name,
+      SdkOptional<AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUser>
+          user,
+      SdkOptional<AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemOwner>
+          owner,
+      SdkOptional<
+              AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemRepository>
+          repository,
+      SdkOptional<String> taskId,
+      AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemState state,
+      String createdAt,
+      SdkOptional<String> updatedAt,
+      SdkOptional<String> completedAt,
+      SdkOptional<String> prompt,
+      SdkOptional<String> headRef,
+      SdkOptional<String> baseRef,
+      SdkOptional<String> model,
+      SdkOptional<AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUsage>
+          usage,
+      SdkOptional<AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemError>
+          error}) get copyWith => _copyWith;
 
-  AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItem _copyWith({Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? user = sdkOmittedValue, Object? owner = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? taskId = sdkOmittedValue, Object? state = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? completedAt = sdkOmittedValue, Object? prompt = sdkOmittedValue, Object? headRef = sdkOmittedValue, Object? baseRef = sdkOmittedValue, Object? model = sdkOmittedValue, Object? usage = sdkOmittedValue, Object? error = sdkOmittedValue}) => AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItem(
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    user: identical(user, sdkOmittedValue) ? this.user : user as SdkOptional<AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUser>,
-    owner: identical(owner, sdkOmittedValue) ? this.owner : owner as SdkOptional<AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemOwner>,
-    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as SdkOptional<AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemRepository>,
-    taskId: identical(taskId, sdkOmittedValue) ? this.taskId : taskId as SdkOptional<String>,
-    state: identical(state, sdkOmittedValue) ? this.state : state as AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemState,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as SdkOptional<String>,
-    completedAt: identical(completedAt, sdkOmittedValue) ? this.completedAt : completedAt as SdkOptional<String>,
-    prompt: identical(prompt, sdkOmittedValue) ? this.prompt : prompt as SdkOptional<String>,
-    headRef: identical(headRef, sdkOmittedValue) ? this.headRef : headRef as SdkOptional<String>,
-    baseRef: identical(baseRef, sdkOmittedValue) ? this.baseRef : baseRef as SdkOptional<String>,
-    model: identical(model, sdkOmittedValue) ? this.model : model as SdkOptional<String>,
-    usage: identical(usage, sdkOmittedValue) ? this.usage : usage as SdkOptional<AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUsage>,
-    error: identical(error, sdkOmittedValue) ? this.error : error as SdkOptional<AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemError>,
-  );
+  AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItem _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? user = sdkOmittedValue,
+          Object? owner = sdkOmittedValue,
+          Object? repository = sdkOmittedValue,
+          Object? taskId = sdkOmittedValue,
+          Object? state = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? completedAt = sdkOmittedValue,
+          Object? prompt = sdkOmittedValue,
+          Object? headRef = sdkOmittedValue,
+          Object? baseRef = sdkOmittedValue,
+          Object? model = sdkOmittedValue,
+          Object? usage = sdkOmittedValue,
+          Object? error = sdkOmittedValue}) =>
+      AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItem(
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        user: identical(user, sdkOmittedValue)
+            ? this.user
+            : user as SdkOptional<
+                AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUser>,
+        owner: identical(owner, sdkOmittedValue)
+            ? this.owner
+            : owner as SdkOptional<
+                AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemOwner>,
+        repository: identical(repository, sdkOmittedValue)
+            ? this.repository
+            : repository as SdkOptional<
+                AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemRepository>,
+        taskId: identical(taskId, sdkOmittedValue)
+            ? this.taskId
+            : taskId as SdkOptional<String>,
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state
+                as AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemState,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as SdkOptional<String>,
+        completedAt: identical(completedAt, sdkOmittedValue)
+            ? this.completedAt
+            : completedAt as SdkOptional<String>,
+        prompt: identical(prompt, sdkOmittedValue)
+            ? this.prompt
+            : prompt as SdkOptional<String>,
+        headRef: identical(headRef, sdkOmittedValue)
+            ? this.headRef
+            : headRef as SdkOptional<String>,
+        baseRef: identical(baseRef, sdkOmittedValue)
+            ? this.baseRef
+            : baseRef as SdkOptional<String>,
+        model: identical(model, sdkOmittedValue)
+            ? this.model
+            : model as SdkOptional<String>,
+        usage: identical(usage, sdkOmittedValue)
+            ? this.usage
+            : usage as SdkOptional<
+                AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUsage>,
+        error: identical(error, sdkOmittedValue)
+            ? this.error
+            : error as SdkOptional<
+                AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemError>,
+      );
 
-  factory AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItem.fromJson(Map<String, dynamic> json) => AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItem(
-    id: (json['id'] as String?)!,
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    user: json['user'] != null ? SdkPresent((json['user'] != null ? AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUser.fromJson(json['user'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    owner: json['owner'] != null ? SdkPresent((json['owner'] != null ? AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemOwner.fromJson(json['owner'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    repository: json['repository'] != null ? SdkPresent((json['repository'] != null ? AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemRepository.fromJson(json['repository'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    taskId: json['task_id'] != null ? SdkPresent((json['task_id'] as String?)!) : const SdkOmitted(),
-    state: (json['state'] != null ? AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemState.fromJson(json['state'] as String) : null)!,
-    createdAt: (json['created_at'] as String?)!,
-    updatedAt: json['updated_at'] != null ? SdkPresent((json['updated_at'] as String?)!) : const SdkOmitted(),
-    completedAt: json['completed_at'] != null ? SdkPresent((json['completed_at'] as String?)!) : const SdkOmitted(),
-    prompt: json['prompt'] != null ? SdkPresent((json['prompt'] as String?)!) : const SdkOmitted(),
-    headRef: json['head_ref'] != null ? SdkPresent((json['head_ref'] as String?)!) : const SdkOmitted(),
-    baseRef: json['base_ref'] != null ? SdkPresent((json['base_ref'] as String?)!) : const SdkOmitted(),
-    model: json['model'] != null ? SdkPresent((json['model'] as String?)!) : const SdkOmitted(),
-    usage: json['usage'] != null ? SdkPresent((json['usage'] != null ? AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUsage.fromJson(json['usage'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    error: json['error'] != null ? SdkPresent((json['error'] != null ? AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemError.fromJson(json['error'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-  );
+  factory AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItem.fromJson(
+          Map<String, dynamic> json) =>
+      AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItem(
+        id: (json['id'] as String?)!,
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+        user: json['user'] != null
+            ? SdkPresent((json['user'] != null
+                ? AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUser
+                    .fromJson(json['user'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        owner: json['owner'] != null
+            ? SdkPresent((json['owner'] != null
+                ? AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemOwner
+                    .fromJson(json['owner'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        repository: json['repository'] != null
+            ? SdkPresent((json['repository'] != null
+                ? AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemRepository
+                    .fromJson(json['repository'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        taskId: json['task_id'] != null
+            ? SdkPresent((json['task_id'] as String?)!)
+            : const SdkOmitted(),
+        state: (json['state'] != null
+            ? AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemState
+                .fromJson(json['state'] as String)
+            : null)!,
+        createdAt: (json['created_at'] as String?)!,
+        updatedAt: json['updated_at'] != null
+            ? SdkPresent((json['updated_at'] as String?)!)
+            : const SdkOmitted(),
+        completedAt: json['completed_at'] != null
+            ? SdkPresent((json['completed_at'] as String?)!)
+            : const SdkOmitted(),
+        prompt: json['prompt'] != null
+            ? SdkPresent((json['prompt'] as String?)!)
+            : const SdkOmitted(),
+        headRef: json['head_ref'] != null
+            ? SdkPresent((json['head_ref'] as String?)!)
+            : const SdkOmitted(),
+        baseRef: json['base_ref'] != null
+            ? SdkPresent((json['base_ref'] as String?)!)
+            : const SdkOmitted(),
+        model: json['model'] != null
+            ? SdkPresent((json['model'] as String?)!)
+            : const SdkOmitted(),
+        usage: json['usage'] != null
+            ? SdkPresent((json['usage'] != null
+                ? AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUsage
+                    .fromJson(json['usage'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        error: json['error'] != null
+            ? SdkPresent((json['error'] != null
+                ? AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemError
+                    .fromJson(json['error'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (user) {
-      SdkPresent<AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUser>(value: final value) => {'user': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (owner) {
-      SdkPresent<AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemOwner>(value: final value) => {'owner': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (repository) {
-      SdkPresent<AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemRepository>(value: final value) => {'repository': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (taskId) {
-      SdkPresent<String>(value: final value) => {'task_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    'state': state.toJson(),
-    'created_at': createdAt,
-    ...switch (updatedAt) {
-      SdkPresent<String>(value: final value) => {'updated_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (completedAt) {
-      SdkPresent<String>(value: final value) => {'completed_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (prompt) {
-      SdkPresent<String>(value: final value) => {'prompt': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (headRef) {
-      SdkPresent<String>(value: final value) => {'head_ref': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (baseRef) {
-      SdkPresent<String>(value: final value) => {'base_ref': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (model) {
-      SdkPresent<String>(value: final value) => {'model': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (usage) {
-      SdkPresent<AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUsage>(value: final value) => {'usage': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (error) {
-      SdkPresent<AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemError>(value: final value) => {'error': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'id': id,
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (user) {
+          SdkPresent<
+                AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUser>(
+            value: final value
+          ) =>
+            {
+              'user': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (owner) {
+          SdkPresent<
+                AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemOwner>(
+            value: final value
+          ) =>
+            {
+              'owner': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (repository) {
+          SdkPresent<
+                AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemRepository>(
+            value: final value
+          ) =>
+            {
+              'repository': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (taskId) {
+          SdkPresent<String>(value: final value) => {
+              'task_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'state': state.toJson(),
+        'created_at': createdAt,
+        ...switch (updatedAt) {
+          SdkPresent<String>(value: final value) => {
+              'updated_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (completedAt) {
+          SdkPresent<String>(value: final value) => {
+              'completed_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (prompt) {
+          SdkPresent<String>(value: final value) => {
+              'prompt': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (headRef) {
+          SdkPresent<String>(value: final value) => {
+              'head_ref': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (baseRef) {
+          SdkPresent<String>(value: final value) => {
+              'base_ref': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (model) {
+          SdkPresent<String>(value: final value) => {
+              'model': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (usage) {
+          SdkPresent<
+                AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUsage>(
+            value: final value
+          ) =>
+            {
+              'usage': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (error) {
+          SdkPresent<
+                AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemError>(
+            value: final value
+          ) =>
+            {
+              'error': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

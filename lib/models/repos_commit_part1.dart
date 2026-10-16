@@ -8,119 +8,220 @@ part of 'repos_commit.dart';
 class CommitActivity {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required array value serialized in the `days` wire field.
   final List<int> days;
+
   /// Required `integer` value serialized in the `total` wire field.
   final int total;
+
   /// Required `integer` value serialized in the `week` wire field.
   final int week;
 
-  const CommitActivity({required this.days, required this.total, required this.week});
+  const CommitActivity(
+      {required this.days, required this.total, required this.week});
 
-  CommitActivity Function({List<int> days, int total, int week}) get copyWith => _copyWith;
+  CommitActivity Function({List<int> days, int total, int week}) get copyWith =>
+      _copyWith;
 
-  CommitActivity _copyWith({Object? days = sdkOmittedValue, Object? total = sdkOmittedValue, Object? week = sdkOmittedValue}) => CommitActivity(
-    days: identical(days, sdkOmittedValue) ? this.days : days as List<int>,
-    total: identical(total, sdkOmittedValue) ? this.total : total as int,
-    week: identical(week, sdkOmittedValue) ? this.week : week as int,
-  );
+  CommitActivity _copyWith(
+          {Object? days = sdkOmittedValue,
+          Object? total = sdkOmittedValue,
+          Object? week = sdkOmittedValue}) =>
+      CommitActivity(
+        days: identical(days, sdkOmittedValue) ? this.days : days as List<int>,
+        total: identical(total, sdkOmittedValue) ? this.total : total as int,
+        week: identical(week, sdkOmittedValue) ? this.week : week as int,
+      );
 
   factory CommitActivity.fromJson(Map<String, dynamic> json) => CommitActivity(
-    days: ((json['days'] as List?)?.map((e) => (e as num).toInt()).toList())!,
-    total: ((json['total'] as num?)?.toInt())!,
-    week: ((json['week'] as num?)?.toInt())!,
-  );
+        days:
+            ((json['days'] as List?)?.map((e) => (e as num).toInt()).toList())!,
+        total: ((json['total'] as num?)?.toInt())!,
+        week: ((json['week'] as num?)?.toInt())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'days': days,
-    'total': total,
-    'week': week,
-  };
+        'days': days,
+        'total': total,
+        'week': week,
+      };
 }
 
 /// Commit Comparison
 class CommitComparison {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
+
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String htmlUrl;
+
   /// Required `uri`-formatted value serialized in the `permalink_url` wire field.
   final String permalinkUrl;
+
   /// Required `uri`-formatted value serialized in the `diff_url` wire field.
   final String diffUrl;
+
   /// Required `uri`-formatted value serialized in the `patch_url` wire field.
   final String patchUrl;
+
   /// Commit
   final Commit baseCommit;
+
   /// Commit
   final Commit mergeBaseCommit;
+
   /// Required enumerated value serialized in the `status` wire field.
   final CommitComparisonStatus status;
+
   /// Required `integer` value serialized in the `ahead_by` wire field.
   final int aheadBy;
+
   /// Required `integer` value serialized in the `behind_by` wire field.
   final int behindBy;
+
   /// Required `integer` value serialized in the `total_commits` wire field.
   final int totalCommits;
+
   /// Required array value serialized in the `commits` wire field.
   final List<Commit> commits;
+
   /// Optional array value serialized in the `files` wire field.
   final SdkOptional<List<DiffEntry>> files;
 
-  const CommitComparison({required this.url, required this.htmlUrl, required this.permalinkUrl, required this.diffUrl, required this.patchUrl, required this.baseCommit, required this.mergeBaseCommit, required this.status, required this.aheadBy, required this.behindBy, required this.totalCommits, required this.commits, this.files = const SdkOmitted()});
+  const CommitComparison(
+      {required this.url,
+      required this.htmlUrl,
+      required this.permalinkUrl,
+      required this.diffUrl,
+      required this.patchUrl,
+      required this.baseCommit,
+      required this.mergeBaseCommit,
+      required this.status,
+      required this.aheadBy,
+      required this.behindBy,
+      required this.totalCommits,
+      required this.commits,
+      this.files = const SdkOmitted()});
 
-  CommitComparison Function({String url, String htmlUrl, String permalinkUrl, String diffUrl, String patchUrl, Commit baseCommit, Commit mergeBaseCommit, CommitComparisonStatus status, int aheadBy, int behindBy, int totalCommits, List<Commit> commits, SdkOptional<List<DiffEntry>> files}) get copyWith => _copyWith;
+  CommitComparison Function(
+      {String url,
+      String htmlUrl,
+      String permalinkUrl,
+      String diffUrl,
+      String patchUrl,
+      Commit baseCommit,
+      Commit mergeBaseCommit,
+      CommitComparisonStatus status,
+      int aheadBy,
+      int behindBy,
+      int totalCommits,
+      List<Commit> commits,
+      SdkOptional<List<DiffEntry>> files}) get copyWith => _copyWith;
 
-  CommitComparison _copyWith({Object? url = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? permalinkUrl = sdkOmittedValue, Object? diffUrl = sdkOmittedValue, Object? patchUrl = sdkOmittedValue, Object? baseCommit = sdkOmittedValue, Object? mergeBaseCommit = sdkOmittedValue, Object? status = sdkOmittedValue, Object? aheadBy = sdkOmittedValue, Object? behindBy = sdkOmittedValue, Object? totalCommits = sdkOmittedValue, Object? commits = sdkOmittedValue, Object? files = sdkOmittedValue}) => CommitComparison(
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
-    permalinkUrl: identical(permalinkUrl, sdkOmittedValue) ? this.permalinkUrl : permalinkUrl as String,
-    diffUrl: identical(diffUrl, sdkOmittedValue) ? this.diffUrl : diffUrl as String,
-    patchUrl: identical(patchUrl, sdkOmittedValue) ? this.patchUrl : patchUrl as String,
-    baseCommit: identical(baseCommit, sdkOmittedValue) ? this.baseCommit : baseCommit as Commit,
-    mergeBaseCommit: identical(mergeBaseCommit, sdkOmittedValue) ? this.mergeBaseCommit : mergeBaseCommit as Commit,
-    status: identical(status, sdkOmittedValue) ? this.status : status as CommitComparisonStatus,
-    aheadBy: identical(aheadBy, sdkOmittedValue) ? this.aheadBy : aheadBy as int,
-    behindBy: identical(behindBy, sdkOmittedValue) ? this.behindBy : behindBy as int,
-    totalCommits: identical(totalCommits, sdkOmittedValue) ? this.totalCommits : totalCommits as int,
-    commits: identical(commits, sdkOmittedValue) ? this.commits : commits as List<Commit>,
-    files: identical(files, sdkOmittedValue) ? this.files : files as SdkOptional<List<DiffEntry>>,
-  );
+  CommitComparison _copyWith(
+          {Object? url = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? permalinkUrl = sdkOmittedValue,
+          Object? diffUrl = sdkOmittedValue,
+          Object? patchUrl = sdkOmittedValue,
+          Object? baseCommit = sdkOmittedValue,
+          Object? mergeBaseCommit = sdkOmittedValue,
+          Object? status = sdkOmittedValue,
+          Object? aheadBy = sdkOmittedValue,
+          Object? behindBy = sdkOmittedValue,
+          Object? totalCommits = sdkOmittedValue,
+          Object? commits = sdkOmittedValue,
+          Object? files = sdkOmittedValue}) =>
+      CommitComparison(
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as String,
+        permalinkUrl: identical(permalinkUrl, sdkOmittedValue)
+            ? this.permalinkUrl
+            : permalinkUrl as String,
+        diffUrl: identical(diffUrl, sdkOmittedValue)
+            ? this.diffUrl
+            : diffUrl as String,
+        patchUrl: identical(patchUrl, sdkOmittedValue)
+            ? this.patchUrl
+            : patchUrl as String,
+        baseCommit: identical(baseCommit, sdkOmittedValue)
+            ? this.baseCommit
+            : baseCommit as Commit,
+        mergeBaseCommit: identical(mergeBaseCommit, sdkOmittedValue)
+            ? this.mergeBaseCommit
+            : mergeBaseCommit as Commit,
+        status: identical(status, sdkOmittedValue)
+            ? this.status
+            : status as CommitComparisonStatus,
+        aheadBy:
+            identical(aheadBy, sdkOmittedValue) ? this.aheadBy : aheadBy as int,
+        behindBy: identical(behindBy, sdkOmittedValue)
+            ? this.behindBy
+            : behindBy as int,
+        totalCommits: identical(totalCommits, sdkOmittedValue)
+            ? this.totalCommits
+            : totalCommits as int,
+        commits: identical(commits, sdkOmittedValue)
+            ? this.commits
+            : commits as List<Commit>,
+        files: identical(files, sdkOmittedValue)
+            ? this.files
+            : files as SdkOptional<List<DiffEntry>>,
+      );
 
-  factory CommitComparison.fromJson(Map<String, dynamic> json) => CommitComparison(
-    url: (json['url'] as String?)!,
-    htmlUrl: (json['html_url'] as String?)!,
-    permalinkUrl: (json['permalink_url'] as String?)!,
-    diffUrl: (json['diff_url'] as String?)!,
-    patchUrl: (json['patch_url'] as String?)!,
-    baseCommit: (json['base_commit'] != null ? Commit.fromJson(json['base_commit'] as Map<String, dynamic>) : null)!,
-    mergeBaseCommit: (json['merge_base_commit'] != null ? Commit.fromJson(json['merge_base_commit'] as Map<String, dynamic>) : null)!,
-    status: (json['status'] != null ? CommitComparisonStatus.fromJson(json['status'] as String) : null)!,
-    aheadBy: ((json['ahead_by'] as num?)?.toInt())!,
-    behindBy: ((json['behind_by'] as num?)?.toInt())!,
-    totalCommits: ((json['total_commits'] as num?)?.toInt())!,
-    commits: ((json['commits'] as List?)?.map((e) => Commit.fromJson(e as Map<String, dynamic>)).toList())!,
-    files: json['files'] != null ? SdkPresent(((json['files'] as List?)?.map((e) => DiffEntry.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
+  factory CommitComparison.fromJson(Map<String, dynamic> json) =>
+      CommitComparison(
+        url: (json['url'] as String?)!,
+        htmlUrl: (json['html_url'] as String?)!,
+        permalinkUrl: (json['permalink_url'] as String?)!,
+        diffUrl: (json['diff_url'] as String?)!,
+        patchUrl: (json['patch_url'] as String?)!,
+        baseCommit: (json['base_commit'] != null
+            ? Commit.fromJson(json['base_commit'] as Map<String, dynamic>)
+            : null)!,
+        mergeBaseCommit: (json['merge_base_commit'] != null
+            ? Commit.fromJson(json['merge_base_commit'] as Map<String, dynamic>)
+            : null)!,
+        status: (json['status'] != null
+            ? CommitComparisonStatus.fromJson(json['status'] as String)
+            : null)!,
+        aheadBy: ((json['ahead_by'] as num?)?.toInt())!,
+        behindBy: ((json['behind_by'] as num?)?.toInt())!,
+        totalCommits: ((json['total_commits'] as num?)?.toInt())!,
+        commits: ((json['commits'] as List?)
+            ?.map((e) => Commit.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        files: json['files'] != null
+            ? SdkPresent(((json['files'] as List?)
+                ?.map((e) => DiffEntry.fromJson(e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'url': url,
-    'html_url': htmlUrl,
-    'permalink_url': permalinkUrl,
-    'diff_url': diffUrl,
-    'patch_url': patchUrl,
-    'base_commit': baseCommit.toJson(),
-    'merge_base_commit': mergeBaseCommit.toJson(),
-    'status': status.toJson(),
-    'ahead_by': aheadBy,
-    'behind_by': behindBy,
-    'total_commits': totalCommits,
-    'commits': commits.map((item) => item.toJson()).toList(),
-    ...switch (files) {
-      SdkPresent<List<DiffEntry>>(value: final value) => {'files': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'url': url,
+        'html_url': htmlUrl,
+        'permalink_url': permalinkUrl,
+        'diff_url': diffUrl,
+        'patch_url': patchUrl,
+        'base_commit': baseCommit.toJson(),
+        'merge_base_commit': mergeBaseCommit.toJson(),
+        'status': status.toJson(),
+        'ahead_by': aheadBy,
+        'behind_by': behindBy,
+        'total_commits': totalCommits,
+        'commits': commits.map((item) => item.toJson()).toList(),
+        ...switch (files) {
+          SdkPresent<List<DiffEntry>>(value: final value) => {
+              'files': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

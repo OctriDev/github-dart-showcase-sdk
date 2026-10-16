@@ -8,16 +8,21 @@ part of 'inline.dart';
 enum CopilotSpaceCollaboratorVariant0Variant1ActorType {
   user;
 
-  static CopilotSpaceCollaboratorVariant0Variant1ActorType fromJson(String value) {
+  static CopilotSpaceCollaboratorVariant0Variant1ActorType fromJson(
+      String value) {
     switch (value) {
-      case 'User': return CopilotSpaceCollaboratorVariant0Variant1ActorType.user;
-      default: throw ArgumentError('Unknown CopilotSpaceCollaboratorVariant0Variant1ActorType: $value');
+      case 'User':
+        return CopilotSpaceCollaboratorVariant0Variant1ActorType.user;
+      default:
+        throw ArgumentError(
+            'Unknown CopilotSpaceCollaboratorVariant0Variant1ActorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case CopilotSpaceCollaboratorVariant0Variant1ActorType.user: return 'User';
+      case CopilotSpaceCollaboratorVariant0Variant1ActorType.user:
+        return 'User';
     }
   }
 
@@ -27,25 +32,31 @@ enum CopilotSpaceCollaboratorVariant0Variant1ActorType {
 
 /// The role granted to the collaborator
 final class CopilotSpaceCollaboratorVariant0Variant1Role {
-
   final String value;
 
   const CopilotSpaceCollaboratorVariant0Variant1Role._(this.value);
 
-  factory CopilotSpaceCollaboratorVariant0Variant1Role.fromJson(String value) => CopilotSpaceCollaboratorVariant0Variant1Role._(value);
+  factory CopilotSpaceCollaboratorVariant0Variant1Role.fromJson(String value) =>
+      CopilotSpaceCollaboratorVariant0Variant1Role._(value);
 
-  static const reader = CopilotSpaceCollaboratorVariant0Variant1Role._('reader');
-  static const writer = CopilotSpaceCollaboratorVariant0Variant1Role._('writer');
+  static const reader =
+      CopilotSpaceCollaboratorVariant0Variant1Role._('reader');
+  static const writer =
+      CopilotSpaceCollaboratorVariant0Variant1Role._('writer');
   static const admin = CopilotSpaceCollaboratorVariant0Variant1Role._('admin');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CopilotSpaceCollaboratorVariant0Variant1Role && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CopilotSpaceCollaboratorVariant0Variant1Role &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The collaborator actor type.
@@ -54,14 +65,18 @@ enum CopilotSpaceCollaboratorVariant1ActorType {
 
   static CopilotSpaceCollaboratorVariant1ActorType fromJson(String value) {
     switch (value) {
-      case 'Team': return CopilotSpaceCollaboratorVariant1ActorType.team;
-      default: throw ArgumentError('Unknown CopilotSpaceCollaboratorVariant1ActorType: $value');
+      case 'Team':
+        return CopilotSpaceCollaboratorVariant1ActorType.team;
+      default:
+        throw ArgumentError(
+            'Unknown CopilotSpaceCollaboratorVariant1ActorType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case CopilotSpaceCollaboratorVariant1ActorType.team: return 'Team';
+      case CopilotSpaceCollaboratorVariant1ActorType.team:
+        return 'Team';
     }
   }
 
@@ -71,12 +86,12 @@ enum CopilotSpaceCollaboratorVariant1ActorType {
 
 /// The role granted to the collaborator
 final class CopilotSpaceCollaboratorVariant1Role {
-
   final String value;
 
   const CopilotSpaceCollaboratorVariant1Role._(this.value);
 
-  factory CopilotSpaceCollaboratorVariant1Role.fromJson(String value) => CopilotSpaceCollaboratorVariant1Role._(value);
+  factory CopilotSpaceCollaboratorVariant1Role.fromJson(String value) =>
+      CopilotSpaceCollaboratorVariant1Role._(value);
 
   static const reader = CopilotSpaceCollaboratorVariant1Role._('reader');
   static const writer = CopilotSpaceCollaboratorVariant1Role._('writer');
@@ -84,160 +99,188 @@ final class CopilotSpaceCollaboratorVariant1Role {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CopilotSpaceCollaboratorVariant1Role && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CopilotSpaceCollaboratorVariant1Role && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class CopilotSpaceCollaboratorVariant1Type {
-
   final String value;
 
   const CopilotSpaceCollaboratorVariant1Type._(this.value);
 
-  factory CopilotSpaceCollaboratorVariant1Type.fromJson(String value) => CopilotSpaceCollaboratorVariant1Type._(value);
+  factory CopilotSpaceCollaboratorVariant1Type.fromJson(String value) =>
+      CopilotSpaceCollaboratorVariant1Type._(value);
 
   static const team = CopilotSpaceCollaboratorVariant1Type._('Team');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CopilotSpaceCollaboratorVariant1Type && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CopilotSpaceCollaboratorVariant1Type && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The type of the resource.
 final class CopilotSpaceResourceResourceType {
-
   final String value;
 
   const CopilotSpaceResourceResourceType._(this.value);
 
-  factory CopilotSpaceResourceResourceType.fromJson(String value) => CopilotSpaceResourceResourceType._(value);
+  factory CopilotSpaceResourceResourceType.fromJson(String value) =>
+      CopilotSpaceResourceResourceType._(value);
 
   static const repository = CopilotSpaceResourceResourceType._('repository');
   static const githubFile = CopilotSpaceResourceResourceType._('github_file');
   static const freeText = CopilotSpaceResourceResourceType._('free_text');
   static const githubIssue = CopilotSpaceResourceResourceType._('github_issue');
-  static const githubPullRequest = CopilotSpaceResourceResourceType._('github_pull_request');
-  static const mediaContent = CopilotSpaceResourceResourceType._('media_content');
-  static const uploadedTextFile = CopilotSpaceResourceResourceType._('uploaded_text_file');
+  static const githubPullRequest =
+      CopilotSpaceResourceResourceType._('github_pull_request');
+  static const mediaContent =
+      CopilotSpaceResourceResourceType._('media_content');
+  static const uploadedTextFile =
+      CopilotSpaceResourceResourceType._('uploaded_text_file');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CopilotSpaceResourceResourceType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CopilotSpaceResourceResourceType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The type of scope for the budget
 final class CreateBudgetBudgetBudgetScope {
-
   final String value;
 
   const CreateBudgetBudgetBudgetScope._(this.value);
 
-  factory CreateBudgetBudgetBudgetScope.fromJson(String value) => CreateBudgetBudgetBudgetScope._(value);
+  factory CreateBudgetBudgetBudgetScope.fromJson(String value) =>
+      CreateBudgetBudgetBudgetScope._(value);
 
   static const enterprise = CreateBudgetBudgetBudgetScope._('enterprise');
   static const organization = CreateBudgetBudgetBudgetScope._('organization');
   static const repository = CreateBudgetBudgetBudgetScope._('repository');
   static const costCenter = CreateBudgetBudgetBudgetScope._('cost_center');
-  static const multiUserCustomer = CreateBudgetBudgetBudgetScope._('multi_user_customer');
-  static const multiUserCostCenter = CreateBudgetBudgetBudgetScope._('multi_user_cost_center');
+  static const multiUserCustomer =
+      CreateBudgetBudgetBudgetScope._('multi_user_customer');
+  static const multiUserCostCenter =
+      CreateBudgetBudgetBudgetScope._('multi_user_cost_center');
   static const user = CreateBudgetBudgetBudgetScope._('user');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CreateBudgetBudgetBudgetScope && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CreateBudgetBudgetBudgetScope && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `budget_type` wire field.
 final class CreateBudgetBudgetBudgetTypeVariant0 {
-
   final String value;
 
   const CreateBudgetBudgetBudgetTypeVariant0._(this.value);
 
-  factory CreateBudgetBudgetBudgetTypeVariant0.fromJson(String value) => CreateBudgetBudgetBudgetTypeVariant0._(value);
+  factory CreateBudgetBudgetBudgetTypeVariant0.fromJson(String value) =>
+      CreateBudgetBudgetBudgetTypeVariant0._(value);
 
-  static const productpricing = CreateBudgetBudgetBudgetTypeVariant0._('ProductPricing');
+  static const productpricing =
+      CreateBudgetBudgetBudgetTypeVariant0._('ProductPricing');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CreateBudgetBudgetBudgetTypeVariant0 && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CreateBudgetBudgetBudgetTypeVariant0 && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `budget_type` wire field.
 final class CreateBudgetBudgetBudgetTypeVariant1 {
-
   final String value;
 
   const CreateBudgetBudgetBudgetTypeVariant1._(this.value);
 
-  factory CreateBudgetBudgetBudgetTypeVariant1.fromJson(String value) => CreateBudgetBudgetBudgetTypeVariant1._(value);
+  factory CreateBudgetBudgetBudgetTypeVariant1.fromJson(String value) =>
+      CreateBudgetBudgetBudgetTypeVariant1._(value);
 
-  static const skupricing = CreateBudgetBudgetBudgetTypeVariant1._('SkuPricing');
+  static const skupricing =
+      CreateBudgetBudgetBudgetTypeVariant1._('SkuPricing');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CreateBudgetBudgetBudgetTypeVariant1 && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CreateBudgetBudgetBudgetTypeVariant1 && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The source type of the property
 final class CustomPropertySourceType {
-
   final String value;
 
   const CustomPropertySourceType._(this.value);
 
-  factory CustomPropertySourceType.fromJson(String value) => CustomPropertySourceType._(value);
+  factory CustomPropertySourceType.fromJson(String value) =>
+      CustomPropertySourceType._(value);
 
   static const organization = CustomPropertySourceType._('organization');
   static const enterprise = CustomPropertySourceType._('enterprise');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CustomPropertySourceType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CustomPropertySourceType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The type of the value for the property
 final class CustomPropertyValueType {
-
   final String value;
 
   const CustomPropertyValueType._(this.value);
 
-  factory CustomPropertyValueType.fromJson(String value) => CustomPropertyValueType._(value);
+  factory CustomPropertyValueType.fromJson(String value) =>
+      CustomPropertyValueType._(value);
 
   static const string = CustomPropertyValueType._('string');
   static const singleSelect = CustomPropertyValueType._('single_select');
@@ -247,32 +290,39 @@ final class CustomPropertyValueType {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CustomPropertyValueType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CustomPropertyValueType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Who can edit the values of the property
 final class CustomPropertyValuesEditableBy {
-
   final String value;
 
   const CustomPropertyValuesEditableBy._(this.value);
 
-  factory CustomPropertyValuesEditableBy.fromJson(String value) => CustomPropertyValuesEditableBy._(value);
+  factory CustomPropertyValuesEditableBy.fromJson(String value) =>
+      CustomPropertyValuesEditableBy._(value);
 
   static const orgActors = CustomPropertyValuesEditableBy._('org_actors');
-  static const orgAndRepoActors = CustomPropertyValuesEditableBy._('org_and_repo_actors');
+  static const orgAndRepoActors =
+      CustomPropertyValuesEditableBy._('org_and_repo_actors');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CustomPropertyValuesEditableBy && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CustomPropertyValuesEditableBy && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

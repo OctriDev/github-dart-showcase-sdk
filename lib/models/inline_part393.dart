@@ -7,72 +7,157 @@ part of 'inline.dart';
 class CodespacesCreateForAuthenticatedUserRequestBodyVariant1 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Pull request number for this codespace
-  final CodespacesCreateForAuthenticatedUserRequestBodyVariant1PullRequest pullRequest;
+  final CodespacesCreateForAuthenticatedUserRequestBodyVariant1PullRequest
+      pullRequest;
+
   /// The requested location for a new codespace. Best efforts are made to respect this upon creation. Assigned by IP if not provided.
   final SdkOptional<String> location;
+
   /// The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is closing down.
-  final SdkOptional<CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo> geo;
+  final SdkOptional<CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo>
+      geo;
+
   /// Machine type to use for this codespace
   final SdkOptional<String> machine;
+
   /// Path to devcontainer.json config to use for this codespace
   final SdkOptional<String> devcontainerPath;
+
   /// Working directory for this codespace
   final SdkOptional<String> workingDirectory;
+
   /// Time in minutes before codespace stops from inactivity
   final SdkOptional<int> idleTimeoutMinutes;
 
-  const CodespacesCreateForAuthenticatedUserRequestBodyVariant1({required this.pullRequest, this.location = const SdkOmitted(), this.geo = const SdkOmitted(), this.machine = const SdkOmitted(), this.devcontainerPath = const SdkOmitted(), this.workingDirectory = const SdkOmitted(), this.idleTimeoutMinutes = const SdkOmitted()});
+  const CodespacesCreateForAuthenticatedUserRequestBodyVariant1(
+      {required this.pullRequest,
+      this.location = const SdkOmitted(),
+      this.geo = const SdkOmitted(),
+      this.machine = const SdkOmitted(),
+      this.devcontainerPath = const SdkOmitted(),
+      this.workingDirectory = const SdkOmitted(),
+      this.idleTimeoutMinutes = const SdkOmitted()});
 
-  CodespacesCreateForAuthenticatedUserRequestBodyVariant1 Function({CodespacesCreateForAuthenticatedUserRequestBodyVariant1PullRequest pullRequest, SdkOptional<String> location, SdkOptional<CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo> geo, SdkOptional<String> machine, SdkOptional<String> devcontainerPath, SdkOptional<String> workingDirectory, SdkOptional<int> idleTimeoutMinutes}) get copyWith => _copyWith;
+  CodespacesCreateForAuthenticatedUserRequestBodyVariant1 Function(
+      {CodespacesCreateForAuthenticatedUserRequestBodyVariant1PullRequest
+          pullRequest,
+      SdkOptional<String> location,
+      SdkOptional<CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo>
+          geo,
+      SdkOptional<String> machine,
+      SdkOptional<String> devcontainerPath,
+      SdkOptional<String> workingDirectory,
+      SdkOptional<int> idleTimeoutMinutes}) get copyWith => _copyWith;
 
-  CodespacesCreateForAuthenticatedUserRequestBodyVariant1 _copyWith({Object? pullRequest = sdkOmittedValue, Object? location = sdkOmittedValue, Object? geo = sdkOmittedValue, Object? machine = sdkOmittedValue, Object? devcontainerPath = sdkOmittedValue, Object? workingDirectory = sdkOmittedValue, Object? idleTimeoutMinutes = sdkOmittedValue}) => CodespacesCreateForAuthenticatedUserRequestBodyVariant1(
-    pullRequest: identical(pullRequest, sdkOmittedValue) ? this.pullRequest : pullRequest as CodespacesCreateForAuthenticatedUserRequestBodyVariant1PullRequest,
-    location: identical(location, sdkOmittedValue) ? this.location : location as SdkOptional<String>,
-    geo: identical(geo, sdkOmittedValue) ? this.geo : geo as SdkOptional<CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo>,
-    machine: identical(machine, sdkOmittedValue) ? this.machine : machine as SdkOptional<String>,
-    devcontainerPath: identical(devcontainerPath, sdkOmittedValue) ? this.devcontainerPath : devcontainerPath as SdkOptional<String>,
-    workingDirectory: identical(workingDirectory, sdkOmittedValue) ? this.workingDirectory : workingDirectory as SdkOptional<String>,
-    idleTimeoutMinutes: identical(idleTimeoutMinutes, sdkOmittedValue) ? this.idleTimeoutMinutes : idleTimeoutMinutes as SdkOptional<int>,
-  );
+  CodespacesCreateForAuthenticatedUserRequestBodyVariant1 _copyWith(
+          {Object? pullRequest = sdkOmittedValue,
+          Object? location = sdkOmittedValue,
+          Object? geo = sdkOmittedValue,
+          Object? machine = sdkOmittedValue,
+          Object? devcontainerPath = sdkOmittedValue,
+          Object? workingDirectory = sdkOmittedValue,
+          Object? idleTimeoutMinutes = sdkOmittedValue}) =>
+      CodespacesCreateForAuthenticatedUserRequestBodyVariant1(
+        pullRequest: identical(pullRequest, sdkOmittedValue)
+            ? this.pullRequest
+            : pullRequest
+                as CodespacesCreateForAuthenticatedUserRequestBodyVariant1PullRequest,
+        location: identical(location, sdkOmittedValue)
+            ? this.location
+            : location as SdkOptional<String>,
+        geo: identical(geo, sdkOmittedValue)
+            ? this.geo
+            : geo as SdkOptional<
+                CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo>,
+        machine: identical(machine, sdkOmittedValue)
+            ? this.machine
+            : machine as SdkOptional<String>,
+        devcontainerPath: identical(devcontainerPath, sdkOmittedValue)
+            ? this.devcontainerPath
+            : devcontainerPath as SdkOptional<String>,
+        workingDirectory: identical(workingDirectory, sdkOmittedValue)
+            ? this.workingDirectory
+            : workingDirectory as SdkOptional<String>,
+        idleTimeoutMinutes: identical(idleTimeoutMinutes, sdkOmittedValue)
+            ? this.idleTimeoutMinutes
+            : idleTimeoutMinutes as SdkOptional<int>,
+      );
 
-  factory CodespacesCreateForAuthenticatedUserRequestBodyVariant1.fromJson(Map<String, dynamic> json) => CodespacesCreateForAuthenticatedUserRequestBodyVariant1(
-    pullRequest: (json['pull_request'] != null ? CodespacesCreateForAuthenticatedUserRequestBodyVariant1PullRequest.fromJson(json['pull_request'] as Map<String, dynamic>) : null)!,
-    location: json['location'] != null ? SdkPresent((json['location'] as String?)!) : const SdkOmitted(),
-    geo: json['geo'] != null ? SdkPresent((json['geo'] != null ? CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo.fromJson(json['geo'] as String) : null)!) : const SdkOmitted(),
-    machine: json['machine'] != null ? SdkPresent((json['machine'] as String?)!) : const SdkOmitted(),
-    devcontainerPath: json['devcontainer_path'] != null ? SdkPresent((json['devcontainer_path'] as String?)!) : const SdkOmitted(),
-    workingDirectory: json['working_directory'] != null ? SdkPresent((json['working_directory'] as String?)!) : const SdkOmitted(),
-    idleTimeoutMinutes: json['idle_timeout_minutes'] != null ? SdkPresent(((json['idle_timeout_minutes'] as num?)?.toInt())!) : const SdkOmitted(),
-  );
+  factory CodespacesCreateForAuthenticatedUserRequestBodyVariant1.fromJson(
+          Map<String, dynamic> json) =>
+      CodespacesCreateForAuthenticatedUserRequestBodyVariant1(
+        pullRequest: (json['pull_request'] != null
+            ? CodespacesCreateForAuthenticatedUserRequestBodyVariant1PullRequest
+                .fromJson(json['pull_request'] as Map<String, dynamic>)
+            : null)!,
+        location: json['location'] != null
+            ? SdkPresent((json['location'] as String?)!)
+            : const SdkOmitted(),
+        geo: json['geo'] != null
+            ? SdkPresent((json['geo'] != null
+                ? CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo
+                    .fromJson(json['geo'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        machine: json['machine'] != null
+            ? SdkPresent((json['machine'] as String?)!)
+            : const SdkOmitted(),
+        devcontainerPath: json['devcontainer_path'] != null
+            ? SdkPresent((json['devcontainer_path'] as String?)!)
+            : const SdkOmitted(),
+        workingDirectory: json['working_directory'] != null
+            ? SdkPresent((json['working_directory'] as String?)!)
+            : const SdkOmitted(),
+        idleTimeoutMinutes: json['idle_timeout_minutes'] != null
+            ? SdkPresent(((json['idle_timeout_minutes'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'pull_request': pullRequest.toJson(),
-    ...switch (location) {
-      SdkPresent<String>(value: final value) => {'location': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (geo) {
-      SdkPresent<CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo>(value: final value) => {'geo': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (machine) {
-      SdkPresent<String>(value: final value) => {'machine': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (devcontainerPath) {
-      SdkPresent<String>(value: final value) => {'devcontainer_path': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (workingDirectory) {
-      SdkPresent<String>(value: final value) => {'working_directory': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (idleTimeoutMinutes) {
-      SdkPresent<int>(value: final value) => {'idle_timeout_minutes': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'pull_request': pullRequest.toJson(),
+        ...switch (location) {
+          SdkPresent<String>(value: final value) => {
+              'location': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (geo) {
+          SdkPresent<
+                CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo>(
+            value: final value
+          ) =>
+            {
+              'geo': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (machine) {
+          SdkPresent<String>(value: final value) => {
+              'machine': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (devcontainerPath) {
+          SdkPresent<String>(value: final value) => {
+              'devcontainer_path': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (workingDirectory) {
+          SdkPresent<String>(value: final value) => {
+              'working_directory': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (idleTimeoutMinutes) {
+          SdkPresent<int>(value: final value) => {
+              'idle_timeout_minutes': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class CodespacesListSecretsForAuthenticatedUserResponse {
@@ -81,63 +166,107 @@ class CodespacesListSecretsForAuthenticatedUserResponse {
   final int totalCount;
   final List<CodespacesSecret> secrets;
 
-  const CodespacesListSecretsForAuthenticatedUserResponse({required this.totalCount, required this.secrets});
+  const CodespacesListSecretsForAuthenticatedUserResponse(
+      {required this.totalCount, required this.secrets});
 
-  CodespacesListSecretsForAuthenticatedUserResponse Function({int totalCount, List<CodespacesSecret> secrets}) get copyWith => _copyWith;
+  CodespacesListSecretsForAuthenticatedUserResponse Function(
+      {int totalCount,
+      List<CodespacesSecret> secrets}) get copyWith => _copyWith;
 
-  CodespacesListSecretsForAuthenticatedUserResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? secrets = sdkOmittedValue}) => CodespacesListSecretsForAuthenticatedUserResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    secrets: identical(secrets, sdkOmittedValue) ? this.secrets : secrets as List<CodespacesSecret>,
-  );
+  CodespacesListSecretsForAuthenticatedUserResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? secrets = sdkOmittedValue}) =>
+      CodespacesListSecretsForAuthenticatedUserResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        secrets: identical(secrets, sdkOmittedValue)
+            ? this.secrets
+            : secrets as List<CodespacesSecret>,
+      );
 
-  factory CodespacesListSecretsForAuthenticatedUserResponse.fromJson(Map<String, dynamic> json) => CodespacesListSecretsForAuthenticatedUserResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    secrets: ((json['secrets'] as List?)?.map((e) => CodespacesSecret.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+  factory CodespacesListSecretsForAuthenticatedUserResponse.fromJson(
+          Map<String, dynamic> json) =>
+      CodespacesListSecretsForAuthenticatedUserResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        secrets: ((json['secrets'] as List?)
+            ?.map((e) => CodespacesSecret.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'secrets': secrets.map((item) => item.toJson()).toList(),
-  };
+        'total_count': totalCount,
+        'secrets': secrets.map((item) => item.toJson()).toList(),
+      };
 }
 
 class CodespacesCreateOrUpdateSecretForAuthenticatedUserRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get the public key for the authenticated user](https://docs.github.com/rest/codespaces/secrets#get-public-key-for-the-authenticated-user) endpoint.
   final SdkOptional<String> encryptedValue;
+
   /// ID of the key you used to encrypt the secret.
   final String keyId;
+
   /// An array of repository ids that can access the user secret. You can manage the list of selected repositories using the [List selected repositories for a user secret](https://docs.github.com/rest/codespaces/secrets#list-selected-repositories-for-a-user-secret), [Set selected repositories for a user secret](https://docs.github.com/rest/codespaces/secrets#set-selected-repositories-for-a-user-secret), and [Remove a selected repository from a user secret](https://docs.github.com/rest/codespaces/secrets#remove-a-selected-repository-from-a-user-secret) endpoints.
   final SdkOptional<List<dynamic>> selectedRepositoryIds;
 
-  const CodespacesCreateOrUpdateSecretForAuthenticatedUserRequestBody({this.encryptedValue = const SdkOmitted(), required this.keyId, this.selectedRepositoryIds = const SdkOmitted()});
+  const CodespacesCreateOrUpdateSecretForAuthenticatedUserRequestBody(
+      {this.encryptedValue = const SdkOmitted(),
+      required this.keyId,
+      this.selectedRepositoryIds = const SdkOmitted()});
 
-  CodespacesCreateOrUpdateSecretForAuthenticatedUserRequestBody Function({SdkOptional<String> encryptedValue, String keyId, SdkOptional<List<dynamic>> selectedRepositoryIds}) get copyWith => _copyWith;
+  CodespacesCreateOrUpdateSecretForAuthenticatedUserRequestBody Function(
+          {SdkOptional<String> encryptedValue,
+          String keyId,
+          SdkOptional<List<dynamic>> selectedRepositoryIds})
+      get copyWith => _copyWith;
 
-  CodespacesCreateOrUpdateSecretForAuthenticatedUserRequestBody _copyWith({Object? encryptedValue = sdkOmittedValue, Object? keyId = sdkOmittedValue, Object? selectedRepositoryIds = sdkOmittedValue}) => CodespacesCreateOrUpdateSecretForAuthenticatedUserRequestBody(
-    encryptedValue: identical(encryptedValue, sdkOmittedValue) ? this.encryptedValue : encryptedValue as SdkOptional<String>,
-    keyId: identical(keyId, sdkOmittedValue) ? this.keyId : keyId as String,
-    selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue) ? this.selectedRepositoryIds : selectedRepositoryIds as SdkOptional<List<dynamic>>,
-  );
+  CodespacesCreateOrUpdateSecretForAuthenticatedUserRequestBody _copyWith(
+          {Object? encryptedValue = sdkOmittedValue,
+          Object? keyId = sdkOmittedValue,
+          Object? selectedRepositoryIds = sdkOmittedValue}) =>
+      CodespacesCreateOrUpdateSecretForAuthenticatedUserRequestBody(
+        encryptedValue: identical(encryptedValue, sdkOmittedValue)
+            ? this.encryptedValue
+            : encryptedValue as SdkOptional<String>,
+        keyId: identical(keyId, sdkOmittedValue) ? this.keyId : keyId as String,
+        selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue)
+            ? this.selectedRepositoryIds
+            : selectedRepositoryIds as SdkOptional<List<dynamic>>,
+      );
 
-  factory CodespacesCreateOrUpdateSecretForAuthenticatedUserRequestBody.fromJson(Map<String, dynamic> json) => CodespacesCreateOrUpdateSecretForAuthenticatedUserRequestBody(
-    encryptedValue: json['encrypted_value'] != null ? SdkPresent((json['encrypted_value'] as String?)!) : const SdkOmitted(),
-    keyId: (json['key_id'] as String?)!,
-    selectedRepositoryIds: json['selected_repository_ids'] != null ? SdkPresent(((json['selected_repository_ids'] as List?)?.map((e) => e).toList())!) : const SdkOmitted(),
-  );
+  factory CodespacesCreateOrUpdateSecretForAuthenticatedUserRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      CodespacesCreateOrUpdateSecretForAuthenticatedUserRequestBody(
+        encryptedValue: json['encrypted_value'] != null
+            ? SdkPresent((json['encrypted_value'] as String?)!)
+            : const SdkOmitted(),
+        keyId: (json['key_id'] as String?)!,
+        selectedRepositoryIds: json['selected_repository_ids'] != null
+            ? SdkPresent(((json['selected_repository_ids'] as List?)
+                ?.map((e) => e)
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (encryptedValue) {
-      SdkPresent<String>(value: final value) => {'encrypted_value': value,},
-      _ => const <String, dynamic>{},
-    },
-    'key_id': keyId,
-    ...switch (selectedRepositoryIds) {
-      SdkPresent<List<dynamic>>(value: final value) => {'selected_repository_ids': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (encryptedValue) {
+          SdkPresent<String>(value: final value) => {
+              'encrypted_value': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'key_id': keyId,
+        ...switch (selectedRepositoryIds) {
+          SdkPresent<List<dynamic>>(value: final value) => {
+              'selected_repository_ids': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class CodespacesListRepositoriesForSecretForAuthenticatedUserResponse {
@@ -146,89 +275,149 @@ class CodespacesListRepositoriesForSecretForAuthenticatedUserResponse {
   final int totalCount;
   final List<MinimalRepository> repositories;
 
-  const CodespacesListRepositoriesForSecretForAuthenticatedUserResponse({required this.totalCount, required this.repositories});
+  const CodespacesListRepositoriesForSecretForAuthenticatedUserResponse(
+      {required this.totalCount, required this.repositories});
 
-  CodespacesListRepositoriesForSecretForAuthenticatedUserResponse Function({int totalCount, List<MinimalRepository> repositories}) get copyWith => _copyWith;
+  CodespacesListRepositoriesForSecretForAuthenticatedUserResponse Function(
+      {int totalCount,
+      List<MinimalRepository> repositories}) get copyWith => _copyWith;
 
-  CodespacesListRepositoriesForSecretForAuthenticatedUserResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? repositories = sdkOmittedValue}) => CodespacesListRepositoriesForSecretForAuthenticatedUserResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    repositories: identical(repositories, sdkOmittedValue) ? this.repositories : repositories as List<MinimalRepository>,
-  );
+  CodespacesListRepositoriesForSecretForAuthenticatedUserResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? repositories = sdkOmittedValue}) =>
+      CodespacesListRepositoriesForSecretForAuthenticatedUserResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        repositories: identical(repositories, sdkOmittedValue)
+            ? this.repositories
+            : repositories as List<MinimalRepository>,
+      );
 
-  factory CodespacesListRepositoriesForSecretForAuthenticatedUserResponse.fromJson(Map<String, dynamic> json) => CodespacesListRepositoriesForSecretForAuthenticatedUserResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    repositories: ((json['repositories'] as List?)?.map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+  factory CodespacesListRepositoriesForSecretForAuthenticatedUserResponse.fromJson(
+          Map<String, dynamic> json) =>
+      CodespacesListRepositoriesForSecretForAuthenticatedUserResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        repositories: ((json['repositories'] as List?)
+            ?.map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'repositories': repositories.map((item) => item.toJson()).toList(),
-  };
+        'total_count': totalCount,
+        'repositories': repositories.map((item) => item.toJson()).toList(),
+      };
 }
 
 class CodespacesSetRepositoriesForSecretForAuthenticatedUserRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// An array of repository ids for which a codespace can access the secret. You can manage the list of selected repositories using the [List selected repositories for a user secret](https://docs.github.com/rest/codespaces/secrets#list-selected-repositories-for-a-user-secret), [Add a selected repository to a user secret](https://docs.github.com/rest/codespaces/secrets#add-a-selected-repository-to-a-user-secret), and [Remove a selected repository from a user secret](https://docs.github.com/rest/codespaces/secrets#remove-a-selected-repository-from-a-user-secret) endpoints.
   final List<int> selectedRepositoryIds;
 
-  const CodespacesSetRepositoriesForSecretForAuthenticatedUserRequestBody({required this.selectedRepositoryIds});
+  const CodespacesSetRepositoriesForSecretForAuthenticatedUserRequestBody(
+      {required this.selectedRepositoryIds});
 
-  CodespacesSetRepositoriesForSecretForAuthenticatedUserRequestBody Function({List<int> selectedRepositoryIds}) get copyWith => _copyWith;
+  CodespacesSetRepositoriesForSecretForAuthenticatedUserRequestBody Function(
+      {List<int> selectedRepositoryIds}) get copyWith => _copyWith;
 
-  CodespacesSetRepositoriesForSecretForAuthenticatedUserRequestBody _copyWith({Object? selectedRepositoryIds = sdkOmittedValue}) => CodespacesSetRepositoriesForSecretForAuthenticatedUserRequestBody(
-    selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue) ? this.selectedRepositoryIds : selectedRepositoryIds as List<int>,
-  );
+  CodespacesSetRepositoriesForSecretForAuthenticatedUserRequestBody _copyWith(
+          {Object? selectedRepositoryIds = sdkOmittedValue}) =>
+      CodespacesSetRepositoriesForSecretForAuthenticatedUserRequestBody(
+        selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue)
+            ? this.selectedRepositoryIds
+            : selectedRepositoryIds as List<int>,
+      );
 
-  factory CodespacesSetRepositoriesForSecretForAuthenticatedUserRequestBody.fromJson(Map<String, dynamic> json) => CodespacesSetRepositoriesForSecretForAuthenticatedUserRequestBody(
-    selectedRepositoryIds: ((json['selected_repository_ids'] as List?)?.map((e) => (e as num).toInt()).toList())!,
-  );
+  factory CodespacesSetRepositoriesForSecretForAuthenticatedUserRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      CodespacesSetRepositoriesForSecretForAuthenticatedUserRequestBody(
+        selectedRepositoryIds: ((json['selected_repository_ids'] as List?)
+            ?.map((e) => (e as num).toInt())
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'selected_repository_ids': selectedRepositoryIds,
-  };
+        'selected_repository_ids': selectedRepositoryIds,
+      };
 }
 
 class CodespacesUpdateForAuthenticatedUserRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// A valid machine to transition this codespace to.
   final SdkOptional<String> machine;
+
   /// Display name for this codespace
   final SdkOptional<String> displayName;
+
   /// Recently opened folders inside the codespace. It is currently used by the clients to determine the folder path to load the codespace in.
   final SdkOptional<List<String>> recentFolders;
 
-  const CodespacesUpdateForAuthenticatedUserRequestBody({this.machine = const SdkOmitted(), this.displayName = const SdkOmitted(), this.recentFolders = const SdkOmitted()});
+  const CodespacesUpdateForAuthenticatedUserRequestBody(
+      {this.machine = const SdkOmitted(),
+      this.displayName = const SdkOmitted(),
+      this.recentFolders = const SdkOmitted()});
 
-  CodespacesUpdateForAuthenticatedUserRequestBody Function({SdkOptional<String> machine, SdkOptional<String> displayName, SdkOptional<List<String>> recentFolders}) get copyWith => _copyWith;
+  CodespacesUpdateForAuthenticatedUserRequestBody Function(
+      {SdkOptional<String> machine,
+      SdkOptional<String> displayName,
+      SdkOptional<List<String>> recentFolders}) get copyWith => _copyWith;
 
-  CodespacesUpdateForAuthenticatedUserRequestBody _copyWith({Object? machine = sdkOmittedValue, Object? displayName = sdkOmittedValue, Object? recentFolders = sdkOmittedValue}) => CodespacesUpdateForAuthenticatedUserRequestBody(
-    machine: identical(machine, sdkOmittedValue) ? this.machine : machine as SdkOptional<String>,
-    displayName: identical(displayName, sdkOmittedValue) ? this.displayName : displayName as SdkOptional<String>,
-    recentFolders: identical(recentFolders, sdkOmittedValue) ? this.recentFolders : recentFolders as SdkOptional<List<String>>,
-  );
+  CodespacesUpdateForAuthenticatedUserRequestBody _copyWith(
+          {Object? machine = sdkOmittedValue,
+          Object? displayName = sdkOmittedValue,
+          Object? recentFolders = sdkOmittedValue}) =>
+      CodespacesUpdateForAuthenticatedUserRequestBody(
+        machine: identical(machine, sdkOmittedValue)
+            ? this.machine
+            : machine as SdkOptional<String>,
+        displayName: identical(displayName, sdkOmittedValue)
+            ? this.displayName
+            : displayName as SdkOptional<String>,
+        recentFolders: identical(recentFolders, sdkOmittedValue)
+            ? this.recentFolders
+            : recentFolders as SdkOptional<List<String>>,
+      );
 
-  factory CodespacesUpdateForAuthenticatedUserRequestBody.fromJson(Map<String, dynamic> json) => CodespacesUpdateForAuthenticatedUserRequestBody(
-    machine: json['machine'] != null ? SdkPresent((json['machine'] as String?)!) : const SdkOmitted(),
-    displayName: json['display_name'] != null ? SdkPresent((json['display_name'] as String?)!) : const SdkOmitted(),
-    recentFolders: json['recent_folders'] != null ? SdkPresent(((json['recent_folders'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-  );
+  factory CodespacesUpdateForAuthenticatedUserRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      CodespacesUpdateForAuthenticatedUserRequestBody(
+        machine: json['machine'] != null
+            ? SdkPresent((json['machine'] as String?)!)
+            : const SdkOmitted(),
+        displayName: json['display_name'] != null
+            ? SdkPresent((json['display_name'] as String?)!)
+            : const SdkOmitted(),
+        recentFolders: json['recent_folders'] != null
+            ? SdkPresent(((json['recent_folders'] as List?)
+                ?.map((e) => e as String)
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (machine) {
-      SdkPresent<String>(value: final value) => {'machine': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (displayName) {
-      SdkPresent<String>(value: final value) => {'display_name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (recentFolders) {
-      SdkPresent<List<String>>(value: final value) => {'recent_folders': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (machine) {
+          SdkPresent<String>(value: final value) => {
+              'machine': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (displayName) {
+          SdkPresent<String>(value: final value) => {
+              'display_name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (recentFolders) {
+          SdkPresent<List<String>>(value: final value) => {
+              'recent_folders': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class CodespacesCodespaceMachinesForAuthenticatedUserResponse {
@@ -237,56 +426,92 @@ class CodespacesCodespaceMachinesForAuthenticatedUserResponse {
   final int totalCount;
   final List<CodespaceMachine> machines;
 
-  const CodespacesCodespaceMachinesForAuthenticatedUserResponse({required this.totalCount, required this.machines});
+  const CodespacesCodespaceMachinesForAuthenticatedUserResponse(
+      {required this.totalCount, required this.machines});
 
-  CodespacesCodespaceMachinesForAuthenticatedUserResponse Function({int totalCount, List<CodespaceMachine> machines}) get copyWith => _copyWith;
+  CodespacesCodespaceMachinesForAuthenticatedUserResponse Function(
+      {int totalCount,
+      List<CodespaceMachine> machines}) get copyWith => _copyWith;
 
-  CodespacesCodespaceMachinesForAuthenticatedUserResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? machines = sdkOmittedValue}) => CodespacesCodespaceMachinesForAuthenticatedUserResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    machines: identical(machines, sdkOmittedValue) ? this.machines : machines as List<CodespaceMachine>,
-  );
+  CodespacesCodespaceMachinesForAuthenticatedUserResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? machines = sdkOmittedValue}) =>
+      CodespacesCodespaceMachinesForAuthenticatedUserResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        machines: identical(machines, sdkOmittedValue)
+            ? this.machines
+            : machines as List<CodespaceMachine>,
+      );
 
-  factory CodespacesCodespaceMachinesForAuthenticatedUserResponse.fromJson(Map<String, dynamic> json) => CodespacesCodespaceMachinesForAuthenticatedUserResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    machines: ((json['machines'] as List?)?.map((e) => CodespaceMachine.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+  factory CodespacesCodespaceMachinesForAuthenticatedUserResponse.fromJson(
+          Map<String, dynamic> json) =>
+      CodespacesCodespaceMachinesForAuthenticatedUserResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        machines: ((json['machines'] as List?)
+            ?.map((e) => CodespaceMachine.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'machines': machines.map((item) => item.toJson()).toList(),
-  };
+        'total_count': totalCount,
+        'machines': machines.map((item) => item.toJson()).toList(),
+      };
 }
 
 class CodespacesPublishForAuthenticatedUserRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// A name for the new repository.
   final SdkOptional<String> name;
+
   /// Whether the new repository should be private.
   final SdkOptional<bool> private;
 
-  const CodespacesPublishForAuthenticatedUserRequestBody({this.name = const SdkOmitted(), this.private = const SdkOmitted()});
+  const CodespacesPublishForAuthenticatedUserRequestBody(
+      {this.name = const SdkOmitted(), this.private = const SdkOmitted()});
 
-  CodespacesPublishForAuthenticatedUserRequestBody Function({SdkOptional<String> name, SdkOptional<bool> private}) get copyWith => _copyWith;
+  CodespacesPublishForAuthenticatedUserRequestBody Function(
+      {SdkOptional<String> name,
+      SdkOptional<bool> private}) get copyWith => _copyWith;
 
-  CodespacesPublishForAuthenticatedUserRequestBody _copyWith({Object? name = sdkOmittedValue, Object? private = sdkOmittedValue}) => CodespacesPublishForAuthenticatedUserRequestBody(
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    private: identical(private, sdkOmittedValue) ? this.private : private as SdkOptional<bool>,
-  );
+  CodespacesPublishForAuthenticatedUserRequestBody _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? private = sdkOmittedValue}) =>
+      CodespacesPublishForAuthenticatedUserRequestBody(
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        private: identical(private, sdkOmittedValue)
+            ? this.private
+            : private as SdkOptional<bool>,
+      );
 
-  factory CodespacesPublishForAuthenticatedUserRequestBody.fromJson(Map<String, dynamic> json) => CodespacesPublishForAuthenticatedUserRequestBody(
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    private: json['private'] != null ? SdkPresent((json['private'] as bool?)!) : const SdkOmitted(),
-  );
+  factory CodespacesPublishForAuthenticatedUserRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      CodespacesPublishForAuthenticatedUserRequestBody(
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+        private: json['private'] != null
+            ? SdkPresent((json['private'] as bool?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (private) {
-      SdkPresent<bool>(value: final value) => {'private': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (private) {
+          SdkPresent<bool>(value: final value) => {
+              'private': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

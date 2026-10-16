@@ -6,99 +6,122 @@ part of 'inline.dart';
 // Inline operation models (part 141)
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookMetaDeletedAction {
-
   final String value;
 
   const WebhookMetaDeletedAction._(this.value);
 
-  factory WebhookMetaDeletedAction.fromJson(String value) => WebhookMetaDeletedAction._(value);
+  factory WebhookMetaDeletedAction.fromJson(String value) =>
+      WebhookMetaDeletedAction._(value);
 
   static const deleted = WebhookMetaDeletedAction._('deleted');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookMetaDeletedAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookMetaDeletedAction && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `content_type` wire field.
 final class WebhookMetaDeletedHookConfigContentType {
-
   final String value;
 
   const WebhookMetaDeletedHookConfigContentType._(this.value);
 
-  factory WebhookMetaDeletedHookConfigContentType.fromJson(String value) => WebhookMetaDeletedHookConfigContentType._(value);
+  factory WebhookMetaDeletedHookConfigContentType.fromJson(String value) =>
+      WebhookMetaDeletedHookConfigContentType._(value);
 
   static const json = WebhookMetaDeletedHookConfigContentType._('json');
   static const form = WebhookMetaDeletedHookConfigContentType._('form');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookMetaDeletedHookConfigContentType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookMetaDeletedHookConfigContentType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `events[]` wire field.
 final class WebhookMetaDeletedHookEventsItem {
-
   final String value;
 
   const WebhookMetaDeletedHookEventsItem._(this.value);
 
-  factory WebhookMetaDeletedHookEventsItem.fromJson(String value) => WebhookMetaDeletedHookEventsItem._(value);
+  factory WebhookMetaDeletedHookEventsItem.fromJson(String value) =>
+      WebhookMetaDeletedHookEventsItem._(value);
 
   static const unknown = WebhookMetaDeletedHookEventsItem._('*');
-  static const branchProtectionRule = WebhookMetaDeletedHookEventsItem._('branch_protection_rule');
+  static const branchProtectionRule =
+      WebhookMetaDeletedHookEventsItem._('branch_protection_rule');
   static const checkRun = WebhookMetaDeletedHookEventsItem._('check_run');
   static const checkSuite = WebhookMetaDeletedHookEventsItem._('check_suite');
-  static const codeScanningAlert = WebhookMetaDeletedHookEventsItem._('code_scanning_alert');
-  static const commitComment = WebhookMetaDeletedHookEventsItem._('commit_comment');
+  static const codeScanningAlert =
+      WebhookMetaDeletedHookEventsItem._('code_scanning_alert');
+  static const commitComment =
+      WebhookMetaDeletedHookEventsItem._('commit_comment');
   static const create = WebhookMetaDeletedHookEventsItem._('create');
   static const delete = WebhookMetaDeletedHookEventsItem._('delete');
   static const deployment = WebhookMetaDeletedHookEventsItem._('deployment');
-  static const deploymentStatus = WebhookMetaDeletedHookEventsItem._('deployment_status');
+  static const deploymentStatus =
+      WebhookMetaDeletedHookEventsItem._('deployment_status');
   static const deployKey = WebhookMetaDeletedHookEventsItem._('deploy_key');
   static const discussion = WebhookMetaDeletedHookEventsItem._('discussion');
-  static const discussionComment = WebhookMetaDeletedHookEventsItem._('discussion_comment');
+  static const discussionComment =
+      WebhookMetaDeletedHookEventsItem._('discussion_comment');
   static const fork = WebhookMetaDeletedHookEventsItem._('fork');
   static const gollum = WebhookMetaDeletedHookEventsItem._('gollum');
   static const issues = WebhookMetaDeletedHookEventsItem._('issues');
-  static const issueComment = WebhookMetaDeletedHookEventsItem._('issue_comment');
+  static const issueComment =
+      WebhookMetaDeletedHookEventsItem._('issue_comment');
   static const label = WebhookMetaDeletedHookEventsItem._('label');
   static const member = WebhookMetaDeletedHookEventsItem._('member');
   static const membership = WebhookMetaDeletedHookEventsItem._('membership');
   static const meta = WebhookMetaDeletedHookEventsItem._('meta');
   static const milestone = WebhookMetaDeletedHookEventsItem._('milestone');
-  static const organization = WebhookMetaDeletedHookEventsItem._('organization');
+  static const organization =
+      WebhookMetaDeletedHookEventsItem._('organization');
   static const orgBlock = WebhookMetaDeletedHookEventsItem._('org_block');
   static const package = WebhookMetaDeletedHookEventsItem._('package');
   static const pageBuild = WebhookMetaDeletedHookEventsItem._('page_build');
   static const project = WebhookMetaDeletedHookEventsItem._('project');
   static const projectCard = WebhookMetaDeletedHookEventsItem._('project_card');
-  static const projectColumn = WebhookMetaDeletedHookEventsItem._('project_column');
+  static const projectColumn =
+      WebhookMetaDeletedHookEventsItem._('project_column');
   static const public = WebhookMetaDeletedHookEventsItem._('public');
   static const pullRequest = WebhookMetaDeletedHookEventsItem._('pull_request');
-  static const pullRequestReview = WebhookMetaDeletedHookEventsItem._('pull_request_review');
-  static const pullRequestReviewComment = WebhookMetaDeletedHookEventsItem._('pull_request_review_comment');
-  static const pullRequestReviewThread = WebhookMetaDeletedHookEventsItem._('pull_request_review_thread');
+  static const pullRequestReview =
+      WebhookMetaDeletedHookEventsItem._('pull_request_review');
+  static const pullRequestReviewComment =
+      WebhookMetaDeletedHookEventsItem._('pull_request_review_comment');
+  static const pullRequestReviewThread =
+      WebhookMetaDeletedHookEventsItem._('pull_request_review_thread');
   static const push = WebhookMetaDeletedHookEventsItem._('push');
-  static const registryPackage = WebhookMetaDeletedHookEventsItem._('registry_package');
+  static const registryPackage =
+      WebhookMetaDeletedHookEventsItem._('registry_package');
   static const release = WebhookMetaDeletedHookEventsItem._('release');
   static const repository = WebhookMetaDeletedHookEventsItem._('repository');
-  static const repositoryImport = WebhookMetaDeletedHookEventsItem._('repository_import');
-  static const repositoryVulnerabilityAlert = WebhookMetaDeletedHookEventsItem._('repository_vulnerability_alert');
-  static const secretScanningAlert = WebhookMetaDeletedHookEventsItem._('secret_scanning_alert');
-  static const secretScanningAlertLocation = WebhookMetaDeletedHookEventsItem._('secret_scanning_alert_location');
-  static const securityAndAnalysis = WebhookMetaDeletedHookEventsItem._('security_and_analysis');
+  static const repositoryImport =
+      WebhookMetaDeletedHookEventsItem._('repository_import');
+  static const repositoryVulnerabilityAlert =
+      WebhookMetaDeletedHookEventsItem._('repository_vulnerability_alert');
+  static const secretScanningAlert =
+      WebhookMetaDeletedHookEventsItem._('secret_scanning_alert');
+  static const secretScanningAlertLocation =
+      WebhookMetaDeletedHookEventsItem._('secret_scanning_alert_location');
+  static const securityAndAnalysis =
+      WebhookMetaDeletedHookEventsItem._('security_and_analysis');
   static const star = WebhookMetaDeletedHookEventsItem._('star');
   static const status = WebhookMetaDeletedHookEventsItem._('status');
   static const team = WebhookMetaDeletedHookEventsItem._('team');
@@ -106,183 +129,214 @@ final class WebhookMetaDeletedHookEventsItem {
   static const watch = WebhookMetaDeletedHookEventsItem._('watch');
   static const workflowJob = WebhookMetaDeletedHookEventsItem._('workflow_job');
   static const workflowRun = WebhookMetaDeletedHookEventsItem._('workflow_run');
-  static const repositoryDispatch = WebhookMetaDeletedHookEventsItem._('repository_dispatch');
-  static const projectsV2Item = WebhookMetaDeletedHookEventsItem._('projects_v2_item');
+  static const repositoryDispatch =
+      WebhookMetaDeletedHookEventsItem._('repository_dispatch');
+  static const projectsV2Item =
+      WebhookMetaDeletedHookEventsItem._('projects_v2_item');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookMetaDeletedHookEventsItem && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookMetaDeletedHookEventsItem && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookMilestoneClosedAction {
-
   final String value;
 
   const WebhookMilestoneClosedAction._(this.value);
 
-  factory WebhookMilestoneClosedAction.fromJson(String value) => WebhookMilestoneClosedAction._(value);
+  factory WebhookMilestoneClosedAction.fromJson(String value) =>
+      WebhookMilestoneClosedAction._(value);
 
   static const closed = WebhookMilestoneClosedAction._('closed');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookMilestoneClosedAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookMilestoneClosedAction && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookMilestoneCreatedAction {
-
   final String value;
 
   const WebhookMilestoneCreatedAction._(this.value);
 
-  factory WebhookMilestoneCreatedAction.fromJson(String value) => WebhookMilestoneCreatedAction._(value);
+  factory WebhookMilestoneCreatedAction.fromJson(String value) =>
+      WebhookMilestoneCreatedAction._(value);
 
   static const created = WebhookMilestoneCreatedAction._('created');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookMilestoneCreatedAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookMilestoneCreatedAction && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookMilestoneDeletedAction {
-
   final String value;
 
   const WebhookMilestoneDeletedAction._(this.value);
 
-  factory WebhookMilestoneDeletedAction.fromJson(String value) => WebhookMilestoneDeletedAction._(value);
+  factory WebhookMilestoneDeletedAction.fromJson(String value) =>
+      WebhookMilestoneDeletedAction._(value);
 
   static const deleted = WebhookMilestoneDeletedAction._('deleted');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookMilestoneDeletedAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookMilestoneDeletedAction && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookMilestoneEditedAction {
-
   final String value;
 
   const WebhookMilestoneEditedAction._(this.value);
 
-  factory WebhookMilestoneEditedAction.fromJson(String value) => WebhookMilestoneEditedAction._(value);
+  factory WebhookMilestoneEditedAction.fromJson(String value) =>
+      WebhookMilestoneEditedAction._(value);
 
   static const edited = WebhookMilestoneEditedAction._('edited');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookMilestoneEditedAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookMilestoneEditedAction && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookMilestoneOpenedAction {
-
   final String value;
 
   const WebhookMilestoneOpenedAction._(this.value);
 
-  factory WebhookMilestoneOpenedAction.fromJson(String value) => WebhookMilestoneOpenedAction._(value);
+  factory WebhookMilestoneOpenedAction.fromJson(String value) =>
+      WebhookMilestoneOpenedAction._(value);
 
   static const opened = WebhookMilestoneOpenedAction._('opened');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookMilestoneOpenedAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookMilestoneOpenedAction && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookOrganizationDeletedAction {
-
   final String value;
 
   const WebhookOrganizationDeletedAction._(this.value);
 
-  factory WebhookOrganizationDeletedAction.fromJson(String value) => WebhookOrganizationDeletedAction._(value);
+  factory WebhookOrganizationDeletedAction.fromJson(String value) =>
+      WebhookOrganizationDeletedAction._(value);
 
   static const deleted = WebhookOrganizationDeletedAction._('deleted');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookOrganizationDeletedAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookOrganizationDeletedAction && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookOrganizationMemberAddedAction {
-
   final String value;
 
   const WebhookOrganizationMemberAddedAction._(this.value);
 
-  factory WebhookOrganizationMemberAddedAction.fromJson(String value) => WebhookOrganizationMemberAddedAction._(value);
+  factory WebhookOrganizationMemberAddedAction.fromJson(String value) =>
+      WebhookOrganizationMemberAddedAction._(value);
 
-  static const memberAdded = WebhookOrganizationMemberAddedAction._('member_added');
+  static const memberAdded =
+      WebhookOrganizationMemberAddedAction._('member_added');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookOrganizationMemberAddedAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookOrganizationMemberAddedAction && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookOrganizationMemberInvitedAction {
-
   final String value;
 
   const WebhookOrganizationMemberInvitedAction._(this.value);
 
-  factory WebhookOrganizationMemberInvitedAction.fromJson(String value) => WebhookOrganizationMemberInvitedAction._(value);
+  factory WebhookOrganizationMemberInvitedAction.fromJson(String value) =>
+      WebhookOrganizationMemberInvitedAction._(value);
 
-  static const memberInvited = WebhookOrganizationMemberInvitedAction._('member_invited');
+  static const memberInvited =
+      WebhookOrganizationMemberInvitedAction._('member_invited');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookOrganizationMemberInvitedAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookOrganizationMemberInvitedAction && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

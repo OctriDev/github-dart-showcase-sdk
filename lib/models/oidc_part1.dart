@@ -8,83 +8,127 @@ part of 'oidc.dart';
 class OidcCustomPropertyInclusion {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the custom property that is included in the OIDC token
   final String customPropertyName;
+
   /// Whether the inclusion was defined at the organization or enterprise level
   final OidcCustomPropertyInclusionInclusionSource inclusionSource;
 
-  const OidcCustomPropertyInclusion({required this.customPropertyName, required this.inclusionSource});
+  const OidcCustomPropertyInclusion(
+      {required this.customPropertyName, required this.inclusionSource});
 
-  OidcCustomPropertyInclusion Function({String customPropertyName, OidcCustomPropertyInclusionInclusionSource inclusionSource}) get copyWith => _copyWith;
+  OidcCustomPropertyInclusion Function(
+          {String customPropertyName,
+          OidcCustomPropertyInclusionInclusionSource inclusionSource})
+      get copyWith => _copyWith;
 
-  OidcCustomPropertyInclusion _copyWith({Object? customPropertyName = sdkOmittedValue, Object? inclusionSource = sdkOmittedValue}) => OidcCustomPropertyInclusion(
-    customPropertyName: identical(customPropertyName, sdkOmittedValue) ? this.customPropertyName : customPropertyName as String,
-    inclusionSource: identical(inclusionSource, sdkOmittedValue) ? this.inclusionSource : inclusionSource as OidcCustomPropertyInclusionInclusionSource,
-  );
+  OidcCustomPropertyInclusion _copyWith(
+          {Object? customPropertyName = sdkOmittedValue,
+          Object? inclusionSource = sdkOmittedValue}) =>
+      OidcCustomPropertyInclusion(
+        customPropertyName: identical(customPropertyName, sdkOmittedValue)
+            ? this.customPropertyName
+            : customPropertyName as String,
+        inclusionSource: identical(inclusionSource, sdkOmittedValue)
+            ? this.inclusionSource
+            : inclusionSource as OidcCustomPropertyInclusionInclusionSource,
+      );
 
-  factory OidcCustomPropertyInclusion.fromJson(Map<String, dynamic> json) => OidcCustomPropertyInclusion(
-    customPropertyName: (json['custom_property_name'] as String?)!,
-    inclusionSource: (json['inclusion_source'] != null ? OidcCustomPropertyInclusionInclusionSource.fromJson(json['inclusion_source'] as String) : null)!,
-  );
+  factory OidcCustomPropertyInclusion.fromJson(Map<String, dynamic> json) =>
+      OidcCustomPropertyInclusion(
+        customPropertyName: (json['custom_property_name'] as String?)!,
+        inclusionSource: (json['inclusion_source'] != null
+            ? OidcCustomPropertyInclusionInclusionSource.fromJson(
+                json['inclusion_source'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'custom_property_name': customPropertyName,
-    'inclusion_source': inclusionSource.toJson(),
-  };
+        'custom_property_name': customPropertyName,
+        'inclusion_source': inclusionSource.toJson(),
+      };
 }
 
 /// Input for creating an OIDC custom property inclusion
 class OidcCustomPropertyInclusionInput {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the custom property to include in the OIDC token
   final String customPropertyName;
 
   const OidcCustomPropertyInclusionInput({required this.customPropertyName});
 
-  OidcCustomPropertyInclusionInput Function({String customPropertyName}) get copyWith => _copyWith;
+  OidcCustomPropertyInclusionInput Function({String customPropertyName})
+      get copyWith => _copyWith;
 
-  OidcCustomPropertyInclusionInput _copyWith({Object? customPropertyName = sdkOmittedValue}) => OidcCustomPropertyInclusionInput(
-    customPropertyName: identical(customPropertyName, sdkOmittedValue) ? this.customPropertyName : customPropertyName as String,
-  );
+  OidcCustomPropertyInclusionInput _copyWith(
+          {Object? customPropertyName = sdkOmittedValue}) =>
+      OidcCustomPropertyInclusionInput(
+        customPropertyName: identical(customPropertyName, sdkOmittedValue)
+            ? this.customPropertyName
+            : customPropertyName as String,
+      );
 
-  factory OidcCustomPropertyInclusionInput.fromJson(Map<String, dynamic> json) => OidcCustomPropertyInclusionInput(
-    customPropertyName: (json['custom_property_name'] as String?)!,
-  );
+  factory OidcCustomPropertyInclusionInput.fromJson(
+          Map<String, dynamic> json) =>
+      OidcCustomPropertyInclusionInput(
+        customPropertyName: (json['custom_property_name'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'custom_property_name': customPropertyName,
-  };
+        'custom_property_name': customPropertyName,
+      };
 }
 
 /// Actions OIDC Subject customization
 class OidcCustomSub {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Array of unique strings. Each claim key can only contain alphanumeric characters and underscores.
   final List<String> includeClaimKeys;
+
   /// Whether to opt in to the immutable OIDC subject claim format for the organization. When `true`, new OIDC tokens will use a stable, repository-ID-based `sub` claim instead of the name-based format.
   final SdkOptional<bool> useImmutableSubject;
 
-  const OidcCustomSub({required this.includeClaimKeys, this.useImmutableSubject = const SdkOmitted()});
+  const OidcCustomSub(
+      {required this.includeClaimKeys,
+      this.useImmutableSubject = const SdkOmitted()});
 
-  OidcCustomSub Function({List<String> includeClaimKeys, SdkOptional<bool> useImmutableSubject}) get copyWith => _copyWith;
+  OidcCustomSub Function(
+      {List<String> includeClaimKeys,
+      SdkOptional<bool> useImmutableSubject}) get copyWith => _copyWith;
 
-  OidcCustomSub _copyWith({Object? includeClaimKeys = sdkOmittedValue, Object? useImmutableSubject = sdkOmittedValue}) => OidcCustomSub(
-    includeClaimKeys: identical(includeClaimKeys, sdkOmittedValue) ? this.includeClaimKeys : includeClaimKeys as List<String>,
-    useImmutableSubject: identical(useImmutableSubject, sdkOmittedValue) ? this.useImmutableSubject : useImmutableSubject as SdkOptional<bool>,
-  );
+  OidcCustomSub _copyWith(
+          {Object? includeClaimKeys = sdkOmittedValue,
+          Object? useImmutableSubject = sdkOmittedValue}) =>
+      OidcCustomSub(
+        includeClaimKeys: identical(includeClaimKeys, sdkOmittedValue)
+            ? this.includeClaimKeys
+            : includeClaimKeys as List<String>,
+        useImmutableSubject: identical(useImmutableSubject, sdkOmittedValue)
+            ? this.useImmutableSubject
+            : useImmutableSubject as SdkOptional<bool>,
+      );
 
   factory OidcCustomSub.fromJson(Map<String, dynamic> json) => OidcCustomSub(
-    includeClaimKeys: ((json['include_claim_keys'] as List?)?.map((e) => e as String).toList())!,
-    useImmutableSubject: json['use_immutable_subject'] != null ? SdkPresent((json['use_immutable_subject'] as bool?)!) : const SdkOmitted(),
-  );
+        includeClaimKeys: ((json['include_claim_keys'] as List?)
+            ?.map((e) => e as String)
+            .toList())!,
+        useImmutableSubject: json['use_immutable_subject'] != null
+            ? SdkPresent((json['use_immutable_subject'] as bool?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'include_claim_keys': includeClaimKeys,
-    ...switch (useImmutableSubject) {
-      SdkPresent<bool>(value: final value) => {'use_immutable_subject': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'include_claim_keys': includeClaimKeys,
+        ...switch (useImmutableSubject) {
+          SdkPresent<bool>(value: final value) => {
+              'use_immutable_subject': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

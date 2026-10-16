@@ -8,277 +8,551 @@ part of 'webhook_pull_request_labeled.dart';
 class WebhookPullRequestLabeledPullRequestLabelsItemArchivedBy {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `string` value serialized in the `name` wire field.
   final SdkOptional<String?> name;
+
   /// Optional `string` value serialized in the `email` wire field.
   final SdkOptional<String?> email;
+
   /// Required `string` value serialized in the `login` wire field.
   final String login;
+
   /// Required `int64`-formatted value serialized in the `id` wire field.
   final int id;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// Required `uri`-formatted value serialized in the `avatar_url` wire field.
   final String avatarUrl;
+
   /// Required `string` value serialized in the `gravatar_id` wire field.
   final String? gravatarId;
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
+
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String htmlUrl;
+
   /// Required `uri`-formatted value serialized in the `followers_url` wire field.
   final String followersUrl;
+
   /// Required `string` value serialized in the `following_url` wire field.
   final String followingUrl;
+
   /// Required `string` value serialized in the `gists_url` wire field.
   final String gistsUrl;
+
   /// Required `string` value serialized in the `starred_url` wire field.
   final String starredUrl;
+
   /// Required `uri`-formatted value serialized in the `subscriptions_url` wire field.
   final String subscriptionsUrl;
+
   /// Required `uri`-formatted value serialized in the `organizations_url` wire field.
   final String organizationsUrl;
+
   /// Required `uri`-formatted value serialized in the `repos_url` wire field.
   final String reposUrl;
+
   /// Required `string` value serialized in the `events_url` wire field.
   final String eventsUrl;
+
   /// Required `uri`-formatted value serialized in the `received_events_url` wire field.
   final String receivedEventsUrl;
+
   /// Required `string` value serialized in the `type` wire field.
   final String type_;
+
   /// Required `boolean` value serialized in the `site_admin` wire field.
   final bool siteAdmin;
+
   /// Optional `string` value serialized in the `starred_at` wire field.
   final SdkOptional<String> starredAt;
+
   /// Optional `string` value serialized in the `user_view_type` wire field.
   final SdkOptional<String> userViewType;
 
-  const WebhookPullRequestLabeledPullRequestLabelsItemArchivedBy({this.name = const SdkOmitted(), this.email = const SdkOmitted(), required this.login, required this.id, required this.nodeId, required this.avatarUrl, required this.gravatarId, required this.url, required this.htmlUrl, required this.followersUrl, required this.followingUrl, required this.gistsUrl, required this.starredUrl, required this.subscriptionsUrl, required this.organizationsUrl, required this.reposUrl, required this.eventsUrl, required this.receivedEventsUrl, required this.type_, required this.siteAdmin, this.starredAt = const SdkOmitted(), this.userViewType = const SdkOmitted()});
+  const WebhookPullRequestLabeledPullRequestLabelsItemArchivedBy(
+      {this.name = const SdkOmitted(),
+      this.email = const SdkOmitted(),
+      required this.login,
+      required this.id,
+      required this.nodeId,
+      required this.avatarUrl,
+      required this.gravatarId,
+      required this.url,
+      required this.htmlUrl,
+      required this.followersUrl,
+      required this.followingUrl,
+      required this.gistsUrl,
+      required this.starredUrl,
+      required this.subscriptionsUrl,
+      required this.organizationsUrl,
+      required this.reposUrl,
+      required this.eventsUrl,
+      required this.receivedEventsUrl,
+      required this.type_,
+      required this.siteAdmin,
+      this.starredAt = const SdkOmitted(),
+      this.userViewType = const SdkOmitted()});
 
-  WebhookPullRequestLabeledPullRequestLabelsItemArchivedBy Function({SdkOptional<String?> name, SdkOptional<String?> email, String login, int id, String nodeId, String avatarUrl, String? gravatarId, String url, String htmlUrl, String followersUrl, String followingUrl, String gistsUrl, String starredUrl, String subscriptionsUrl, String organizationsUrl, String reposUrl, String eventsUrl, String receivedEventsUrl, String type_, bool siteAdmin, SdkOptional<String> starredAt, SdkOptional<String> userViewType}) get copyWith => _copyWith;
+  WebhookPullRequestLabeledPullRequestLabelsItemArchivedBy Function(
+      {SdkOptional<String?> name,
+      SdkOptional<String?> email,
+      String login,
+      int id,
+      String nodeId,
+      String avatarUrl,
+      String? gravatarId,
+      String url,
+      String htmlUrl,
+      String followersUrl,
+      String followingUrl,
+      String gistsUrl,
+      String starredUrl,
+      String subscriptionsUrl,
+      String organizationsUrl,
+      String reposUrl,
+      String eventsUrl,
+      String receivedEventsUrl,
+      String type_,
+      bool siteAdmin,
+      SdkOptional<String> starredAt,
+      SdkOptional<String> userViewType}) get copyWith => _copyWith;
 
-  WebhookPullRequestLabeledPullRequestLabelsItemArchivedBy _copyWith({Object? name = sdkOmittedValue, Object? email = sdkOmittedValue, Object? login = sdkOmittedValue, Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? avatarUrl = sdkOmittedValue, Object? gravatarId = sdkOmittedValue, Object? url = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? followersUrl = sdkOmittedValue, Object? followingUrl = sdkOmittedValue, Object? gistsUrl = sdkOmittedValue, Object? starredUrl = sdkOmittedValue, Object? subscriptionsUrl = sdkOmittedValue, Object? organizationsUrl = sdkOmittedValue, Object? reposUrl = sdkOmittedValue, Object? eventsUrl = sdkOmittedValue, Object? receivedEventsUrl = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? siteAdmin = sdkOmittedValue, Object? starredAt = sdkOmittedValue, Object? userViewType = sdkOmittedValue}) => WebhookPullRequestLabeledPullRequestLabelsItemArchivedBy(
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String?>,
-    email: identical(email, sdkOmittedValue) ? this.email : email as SdkOptional<String?>,
-    login: identical(login, sdkOmittedValue) ? this.login : login as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    avatarUrl: identical(avatarUrl, sdkOmittedValue) ? this.avatarUrl : avatarUrl as String,
-    gravatarId: identical(gravatarId, sdkOmittedValue) ? this.gravatarId : gravatarId as String?,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
-    followersUrl: identical(followersUrl, sdkOmittedValue) ? this.followersUrl : followersUrl as String,
-    followingUrl: identical(followingUrl, sdkOmittedValue) ? this.followingUrl : followingUrl as String,
-    gistsUrl: identical(gistsUrl, sdkOmittedValue) ? this.gistsUrl : gistsUrl as String,
-    starredUrl: identical(starredUrl, sdkOmittedValue) ? this.starredUrl : starredUrl as String,
-    subscriptionsUrl: identical(subscriptionsUrl, sdkOmittedValue) ? this.subscriptionsUrl : subscriptionsUrl as String,
-    organizationsUrl: identical(organizationsUrl, sdkOmittedValue) ? this.organizationsUrl : organizationsUrl as String,
-    reposUrl: identical(reposUrl, sdkOmittedValue) ? this.reposUrl : reposUrl as String,
-    eventsUrl: identical(eventsUrl, sdkOmittedValue) ? this.eventsUrl : eventsUrl as String,
-    receivedEventsUrl: identical(receivedEventsUrl, sdkOmittedValue) ? this.receivedEventsUrl : receivedEventsUrl as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as String,
-    siteAdmin: identical(siteAdmin, sdkOmittedValue) ? this.siteAdmin : siteAdmin as bool,
-    starredAt: identical(starredAt, sdkOmittedValue) ? this.starredAt : starredAt as SdkOptional<String>,
-    userViewType: identical(userViewType, sdkOmittedValue) ? this.userViewType : userViewType as SdkOptional<String>,
-  );
+  WebhookPullRequestLabeledPullRequestLabelsItemArchivedBy _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? email = sdkOmittedValue,
+          Object? login = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? avatarUrl = sdkOmittedValue,
+          Object? gravatarId = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? followersUrl = sdkOmittedValue,
+          Object? followingUrl = sdkOmittedValue,
+          Object? gistsUrl = sdkOmittedValue,
+          Object? starredUrl = sdkOmittedValue,
+          Object? subscriptionsUrl = sdkOmittedValue,
+          Object? organizationsUrl = sdkOmittedValue,
+          Object? reposUrl = sdkOmittedValue,
+          Object? eventsUrl = sdkOmittedValue,
+          Object? receivedEventsUrl = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? siteAdmin = sdkOmittedValue,
+          Object? starredAt = sdkOmittedValue,
+          Object? userViewType = sdkOmittedValue}) =>
+      WebhookPullRequestLabeledPullRequestLabelsItemArchivedBy(
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String?>,
+        email: identical(email, sdkOmittedValue)
+            ? this.email
+            : email as SdkOptional<String?>,
+        login: identical(login, sdkOmittedValue) ? this.login : login as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        avatarUrl: identical(avatarUrl, sdkOmittedValue)
+            ? this.avatarUrl
+            : avatarUrl as String,
+        gravatarId: identical(gravatarId, sdkOmittedValue)
+            ? this.gravatarId
+            : gravatarId as String?,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as String,
+        followersUrl: identical(followersUrl, sdkOmittedValue)
+            ? this.followersUrl
+            : followersUrl as String,
+        followingUrl: identical(followingUrl, sdkOmittedValue)
+            ? this.followingUrl
+            : followingUrl as String,
+        gistsUrl: identical(gistsUrl, sdkOmittedValue)
+            ? this.gistsUrl
+            : gistsUrl as String,
+        starredUrl: identical(starredUrl, sdkOmittedValue)
+            ? this.starredUrl
+            : starredUrl as String,
+        subscriptionsUrl: identical(subscriptionsUrl, sdkOmittedValue)
+            ? this.subscriptionsUrl
+            : subscriptionsUrl as String,
+        organizationsUrl: identical(organizationsUrl, sdkOmittedValue)
+            ? this.organizationsUrl
+            : organizationsUrl as String,
+        reposUrl: identical(reposUrl, sdkOmittedValue)
+            ? this.reposUrl
+            : reposUrl as String,
+        eventsUrl: identical(eventsUrl, sdkOmittedValue)
+            ? this.eventsUrl
+            : eventsUrl as String,
+        receivedEventsUrl: identical(receivedEventsUrl, sdkOmittedValue)
+            ? this.receivedEventsUrl
+            : receivedEventsUrl as String,
+        type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as String,
+        siteAdmin: identical(siteAdmin, sdkOmittedValue)
+            ? this.siteAdmin
+            : siteAdmin as bool,
+        starredAt: identical(starredAt, sdkOmittedValue)
+            ? this.starredAt
+            : starredAt as SdkOptional<String>,
+        userViewType: identical(userViewType, sdkOmittedValue)
+            ? this.userViewType
+            : userViewType as SdkOptional<String>,
+      );
 
-  factory WebhookPullRequestLabeledPullRequestLabelsItemArchivedBy.fromJson(Map<String, dynamic> json) => WebhookPullRequestLabeledPullRequestLabelsItemArchivedBy(
-    name: json.containsKey('name') ? SdkPresent(json['name'] as String?) : const SdkOmitted(),
-    email: json.containsKey('email') ? SdkPresent(json['email'] as String?) : const SdkOmitted(),
-    login: (json['login'] as String?)!,
-    id: ((json['id'] as num?)?.toInt())!,
-    nodeId: (json['node_id'] as String?)!,
-    avatarUrl: (json['avatar_url'] as String?)!,
-    gravatarId: json.containsKey('gravatar_id') ? json['gravatar_id'] as String? : throw ArgumentError.value(null, 'gravatar_id', 'Required property is missing'),
-    url: (json['url'] as String?)!,
-    htmlUrl: (json['html_url'] as String?)!,
-    followersUrl: (json['followers_url'] as String?)!,
-    followingUrl: (json['following_url'] as String?)!,
-    gistsUrl: (json['gists_url'] as String?)!,
-    starredUrl: (json['starred_url'] as String?)!,
-    subscriptionsUrl: (json['subscriptions_url'] as String?)!,
-    organizationsUrl: (json['organizations_url'] as String?)!,
-    reposUrl: (json['repos_url'] as String?)!,
-    eventsUrl: (json['events_url'] as String?)!,
-    receivedEventsUrl: (json['received_events_url'] as String?)!,
-    type_: (json['type'] as String?)!,
-    siteAdmin: (json['site_admin'] as bool?)!,
-    starredAt: json['starred_at'] != null ? SdkPresent((json['starred_at'] as String?)!) : const SdkOmitted(),
-    userViewType: json['user_view_type'] != null ? SdkPresent((json['user_view_type'] as String?)!) : const SdkOmitted(),
-  );
+  factory WebhookPullRequestLabeledPullRequestLabelsItemArchivedBy.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPullRequestLabeledPullRequestLabelsItemArchivedBy(
+        name: json.containsKey('name')
+            ? SdkPresent(json['name'] as String?)
+            : const SdkOmitted(),
+        email: json.containsKey('email')
+            ? SdkPresent(json['email'] as String?)
+            : const SdkOmitted(),
+        login: (json['login'] as String?)!,
+        id: ((json['id'] as num?)?.toInt())!,
+        nodeId: (json['node_id'] as String?)!,
+        avatarUrl: (json['avatar_url'] as String?)!,
+        gravatarId: json.containsKey('gravatar_id')
+            ? json['gravatar_id'] as String?
+            : throw ArgumentError.value(
+                null, 'gravatar_id', 'Required property is missing'),
+        url: (json['url'] as String?)!,
+        htmlUrl: (json['html_url'] as String?)!,
+        followersUrl: (json['followers_url'] as String?)!,
+        followingUrl: (json['following_url'] as String?)!,
+        gistsUrl: (json['gists_url'] as String?)!,
+        starredUrl: (json['starred_url'] as String?)!,
+        subscriptionsUrl: (json['subscriptions_url'] as String?)!,
+        organizationsUrl: (json['organizations_url'] as String?)!,
+        reposUrl: (json['repos_url'] as String?)!,
+        eventsUrl: (json['events_url'] as String?)!,
+        receivedEventsUrl: (json['received_events_url'] as String?)!,
+        type_: (json['type'] as String?)!,
+        siteAdmin: (json['site_admin'] as bool?)!,
+        starredAt: json['starred_at'] != null
+            ? SdkPresent((json['starred_at'] as String?)!)
+            : const SdkOmitted(),
+        userViewType: json['user_view_type'] != null
+            ? SdkPresent((json['user_view_type'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (name) {
-      SdkPresent<String?>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (email) {
-      SdkPresent<String?>(value: final value) => {'email': value,},
-      _ => const <String, dynamic>{},
-    },
-    'login': login,
-    'id': id,
-    'node_id': nodeId,
-    'avatar_url': avatarUrl,
-    'gravatar_id': gravatarId,
-    'url': url,
-    'html_url': htmlUrl,
-    'followers_url': followersUrl,
-    'following_url': followingUrl,
-    'gists_url': gistsUrl,
-    'starred_url': starredUrl,
-    'subscriptions_url': subscriptionsUrl,
-    'organizations_url': organizationsUrl,
-    'repos_url': reposUrl,
-    'events_url': eventsUrl,
-    'received_events_url': receivedEventsUrl,
-    'type': type_,
-    'site_admin': siteAdmin,
-    ...switch (starredAt) {
-      SdkPresent<String>(value: final value) => {'starred_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (userViewType) {
-      SdkPresent<String>(value: final value) => {'user_view_type': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (name) {
+          SdkPresent<String?>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (email) {
+          SdkPresent<String?>(value: final value) => {
+              'email': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'login': login,
+        'id': id,
+        'node_id': nodeId,
+        'avatar_url': avatarUrl,
+        'gravatar_id': gravatarId,
+        'url': url,
+        'html_url': htmlUrl,
+        'followers_url': followersUrl,
+        'following_url': followingUrl,
+        'gists_url': gistsUrl,
+        'starred_url': starredUrl,
+        'subscriptions_url': subscriptionsUrl,
+        'organizations_url': organizationsUrl,
+        'repos_url': reposUrl,
+        'events_url': eventsUrl,
+        'received_events_url': receivedEventsUrl,
+        'type': type_,
+        'site_admin': siteAdmin,
+        ...switch (starredAt) {
+          SdkPresent<String>(value: final value) => {
+              'starred_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (userViewType) {
+          SdkPresent<String>(value: final value) => {
+              'user_view_type': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Required object value serialized in the `labels[]` wire field.
 class WebhookPullRequestLabeledPullRequestLabelsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// 6-character hex code, without the leading #, identifying the color
   final String color;
+
   /// Required `boolean` value serialized in the `default` wire field.
   final bool default_;
+
   /// Required `string` value serialized in the `description` wire field.
   final String? description;
+
   /// Timestamp indicating when the label was archived, or `null` if it has not been archived.
   final String? archivedAt;
+
   /// The user who archived the label, or `null` if it has not been archived.
   final SimpleUser? archivedBy;
+
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
+
   /// The name of the label.
   final String name;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// URL for the label
   final String url;
 
-  const WebhookPullRequestLabeledPullRequestLabelsItem({required this.color, required this.default_, required this.description, required this.archivedAt, required this.archivedBy, required this.id, required this.name, required this.nodeId, required this.url});
+  const WebhookPullRequestLabeledPullRequestLabelsItem(
+      {required this.color,
+      required this.default_,
+      required this.description,
+      required this.archivedAt,
+      required this.archivedBy,
+      required this.id,
+      required this.name,
+      required this.nodeId,
+      required this.url});
 
-  WebhookPullRequestLabeledPullRequestLabelsItem Function({String color, bool default_, String? description, String? archivedAt, SimpleUser? archivedBy, int id, String name, String nodeId, String url}) get copyWith => _copyWith;
+  WebhookPullRequestLabeledPullRequestLabelsItem Function(
+      {String color,
+      bool default_,
+      String? description,
+      String? archivedAt,
+      SimpleUser? archivedBy,
+      int id,
+      String name,
+      String nodeId,
+      String url}) get copyWith => _copyWith;
 
-  WebhookPullRequestLabeledPullRequestLabelsItem _copyWith({Object? color = sdkOmittedValue, Object? default_ = sdkOmittedValue, Object? description = sdkOmittedValue, Object? archivedAt = sdkOmittedValue, Object? archivedBy = sdkOmittedValue, Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookPullRequestLabeledPullRequestLabelsItem(
-    color: identical(color, sdkOmittedValue) ? this.color : color as String,
-    default_: identical(default_, sdkOmittedValue) ? this.default_ : default_ as bool,
-    description: identical(description, sdkOmittedValue) ? this.description : description as String?,
-    archivedAt: identical(archivedAt, sdkOmittedValue) ? this.archivedAt : archivedAt as String?,
-    archivedBy: identical(archivedBy, sdkOmittedValue) ? this.archivedBy : archivedBy as SimpleUser?,
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  WebhookPullRequestLabeledPullRequestLabelsItem _copyWith(
+          {Object? color = sdkOmittedValue,
+          Object? default_ = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? archivedAt = sdkOmittedValue,
+          Object? archivedBy = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? url = sdkOmittedValue}) =>
+      WebhookPullRequestLabeledPullRequestLabelsItem(
+        color: identical(color, sdkOmittedValue) ? this.color : color as String,
+        default_: identical(default_, sdkOmittedValue)
+            ? this.default_
+            : default_ as bool,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as String?,
+        archivedAt: identical(archivedAt, sdkOmittedValue)
+            ? this.archivedAt
+            : archivedAt as String?,
+        archivedBy: identical(archivedBy, sdkOmittedValue)
+            ? this.archivedBy
+            : archivedBy as SimpleUser?,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
-  factory WebhookPullRequestLabeledPullRequestLabelsItem.fromJson(Map<String, dynamic> json) => WebhookPullRequestLabeledPullRequestLabelsItem(
-    color: (json['color'] as String?)!,
-    default_: (json['default'] as bool?)!,
-    description: json.containsKey('description') ? json['description'] as String? : throw ArgumentError.value(null, 'description', 'Required property is missing'),
-    archivedAt: json.containsKey('archived_at') ? json['archived_at'] as String? : throw ArgumentError.value(null, 'archived_at', 'Required property is missing'),
-    archivedBy: json.containsKey('archived_by') ? json['archived_by'] != null ? SimpleUser.fromJson(json['archived_by'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'archived_by', 'Required property is missing'),
-    id: ((json['id'] as num?)?.toInt())!,
-    name: (json['name'] as String?)!,
-    nodeId: (json['node_id'] as String?)!,
-    url: (json['url'] as String?)!,
-  );
+  factory WebhookPullRequestLabeledPullRequestLabelsItem.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPullRequestLabeledPullRequestLabelsItem(
+        color: (json['color'] as String?)!,
+        default_: (json['default'] as bool?)!,
+        description: json.containsKey('description')
+            ? json['description'] as String?
+            : throw ArgumentError.value(
+                null, 'description', 'Required property is missing'),
+        archivedAt: json.containsKey('archived_at')
+            ? json['archived_at'] as String?
+            : throw ArgumentError.value(
+                null, 'archived_at', 'Required property is missing'),
+        archivedBy: json.containsKey('archived_by')
+            ? json['archived_by'] != null
+                ? SimpleUser.fromJson(
+                    json['archived_by'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'archived_by', 'Required property is missing'),
+        id: ((json['id'] as num?)?.toInt())!,
+        name: (json['name'] as String?)!,
+        nodeId: (json['node_id'] as String?)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'color': color,
-    'default': default_,
-    'description': description,
-    'archived_at': archivedAt,
-    'archived_by': archivedBy?.toJson(),
-    'id': id,
-    'name': name,
-    'node_id': nodeId,
-    'url': url,
-  };
+        'color': color,
+        'default': default_,
+        'description': description,
+        'archived_at': archivedAt,
+        'archived_by': archivedBy?.toJson(),
+        'id': id,
+        'name': name,
+        'node_id': nodeId,
+        'url': url,
+      };
 }
 
 /// Optional object value serialized in the `parent` wire field.
 class WebhookPullRequestLabeledPullRequestRequestedTeamsItemParent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Description of the team
   final String? description;
+
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String htmlUrl;
+
   /// Unique identifier of the team
   final int id;
+
   /// Required `uri-template`-formatted value serialized in the `members_url` wire field.
   final String membersUrl;
+
   /// Name of the team
   final String name;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// Permission that the team will have for its repositories
   final String permission;
+
   /// Required enumerated value serialized in the `privacy` wire field.
-  final WebhookPullRequestLabeledPullRequestRequestedTeamsItemParentPrivacy privacy;
+  final WebhookPullRequestLabeledPullRequestRequestedTeamsItemParentPrivacy
+      privacy;
+
   /// Required `uri`-formatted value serialized in the `repositories_url` wire field.
   final String repositoriesUrl;
+
   /// Required `string` value serialized in the `slug` wire field.
   final String slug;
+
   /// URL for the team
   final String url;
 
-  const WebhookPullRequestLabeledPullRequestRequestedTeamsItemParent({required this.description, required this.htmlUrl, required this.id, required this.membersUrl, required this.name, required this.nodeId, required this.permission, required this.privacy, required this.repositoriesUrl, required this.slug, required this.url});
+  const WebhookPullRequestLabeledPullRequestRequestedTeamsItemParent(
+      {required this.description,
+      required this.htmlUrl,
+      required this.id,
+      required this.membersUrl,
+      required this.name,
+      required this.nodeId,
+      required this.permission,
+      required this.privacy,
+      required this.repositoriesUrl,
+      required this.slug,
+      required this.url});
 
-  WebhookPullRequestLabeledPullRequestRequestedTeamsItemParent Function({String? description, String htmlUrl, int id, String membersUrl, String name, String nodeId, String permission, WebhookPullRequestLabeledPullRequestRequestedTeamsItemParentPrivacy privacy, String repositoriesUrl, String slug, String url}) get copyWith => _copyWith;
+  WebhookPullRequestLabeledPullRequestRequestedTeamsItemParent Function(
+      {String? description,
+      String htmlUrl,
+      int id,
+      String membersUrl,
+      String name,
+      String nodeId,
+      String permission,
+      WebhookPullRequestLabeledPullRequestRequestedTeamsItemParentPrivacy
+          privacy,
+      String repositoriesUrl,
+      String slug,
+      String url}) get copyWith => _copyWith;
 
-  WebhookPullRequestLabeledPullRequestRequestedTeamsItemParent _copyWith({Object? description = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? id = sdkOmittedValue, Object? membersUrl = sdkOmittedValue, Object? name = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? permission = sdkOmittedValue, Object? privacy = sdkOmittedValue, Object? repositoriesUrl = sdkOmittedValue, Object? slug = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookPullRequestLabeledPullRequestRequestedTeamsItemParent(
-    description: identical(description, sdkOmittedValue) ? this.description : description as String?,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    membersUrl: identical(membersUrl, sdkOmittedValue) ? this.membersUrl : membersUrl as String,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    permission: identical(permission, sdkOmittedValue) ? this.permission : permission as String,
-    privacy: identical(privacy, sdkOmittedValue) ? this.privacy : privacy as WebhookPullRequestLabeledPullRequestRequestedTeamsItemParentPrivacy,
-    repositoriesUrl: identical(repositoriesUrl, sdkOmittedValue) ? this.repositoriesUrl : repositoriesUrl as String,
-    slug: identical(slug, sdkOmittedValue) ? this.slug : slug as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  WebhookPullRequestLabeledPullRequestRequestedTeamsItemParent _copyWith(
+          {Object? description = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? membersUrl = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? permission = sdkOmittedValue,
+          Object? privacy = sdkOmittedValue,
+          Object? repositoriesUrl = sdkOmittedValue,
+          Object? slug = sdkOmittedValue,
+          Object? url = sdkOmittedValue}) =>
+      WebhookPullRequestLabeledPullRequestRequestedTeamsItemParent(
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as String?,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        membersUrl: identical(membersUrl, sdkOmittedValue)
+            ? this.membersUrl
+            : membersUrl as String,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        permission: identical(permission, sdkOmittedValue)
+            ? this.permission
+            : permission as String,
+        privacy: identical(privacy, sdkOmittedValue)
+            ? this.privacy
+            : privacy
+                as WebhookPullRequestLabeledPullRequestRequestedTeamsItemParentPrivacy,
+        repositoriesUrl: identical(repositoriesUrl, sdkOmittedValue)
+            ? this.repositoriesUrl
+            : repositoriesUrl as String,
+        slug: identical(slug, sdkOmittedValue) ? this.slug : slug as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
-  factory WebhookPullRequestLabeledPullRequestRequestedTeamsItemParent.fromJson(Map<String, dynamic> json) => WebhookPullRequestLabeledPullRequestRequestedTeamsItemParent(
-    description: json.containsKey('description') ? json['description'] as String? : throw ArgumentError.value(null, 'description', 'Required property is missing'),
-    htmlUrl: (json['html_url'] as String?)!,
-    id: ((json['id'] as num?)?.toInt())!,
-    membersUrl: (json['members_url'] as String?)!,
-    name: (json['name'] as String?)!,
-    nodeId: (json['node_id'] as String?)!,
-    permission: (json['permission'] as String?)!,
-    privacy: (json['privacy'] != null ? WebhookPullRequestLabeledPullRequestRequestedTeamsItemParentPrivacy.fromJson(json['privacy'] as String) : null)!,
-    repositoriesUrl: (json['repositories_url'] as String?)!,
-    slug: (json['slug'] as String?)!,
-    url: (json['url'] as String?)!,
-  );
+  factory WebhookPullRequestLabeledPullRequestRequestedTeamsItemParent.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPullRequestLabeledPullRequestRequestedTeamsItemParent(
+        description: json.containsKey('description')
+            ? json['description'] as String?
+            : throw ArgumentError.value(
+                null, 'description', 'Required property is missing'),
+        htmlUrl: (json['html_url'] as String?)!,
+        id: ((json['id'] as num?)?.toInt())!,
+        membersUrl: (json['members_url'] as String?)!,
+        name: (json['name'] as String?)!,
+        nodeId: (json['node_id'] as String?)!,
+        permission: (json['permission'] as String?)!,
+        privacy: (json['privacy'] != null
+            ? WebhookPullRequestLabeledPullRequestRequestedTeamsItemParentPrivacy
+                .fromJson(json['privacy'] as String)
+            : null)!,
+        repositoriesUrl: (json['repositories_url'] as String?)!,
+        slug: (json['slug'] as String?)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'description': description,
-    'html_url': htmlUrl,
-    'id': id,
-    'members_url': membersUrl,
-    'name': name,
-    'node_id': nodeId,
-    'permission': permission,
-    'privacy': privacy.toJson(),
-    'repositories_url': repositoriesUrl,
-    'slug': slug,
-    'url': url,
-  };
+        'description': description,
+        'html_url': htmlUrl,
+        'id': id,
+        'members_url': membersUrl,
+        'name': name,
+        'node_id': nodeId,
+        'permission': permission,
+        'privacy': privacy.toJson(),
+        'repositories_url': repositoriesUrl,
+        'slug': slug,
+        'url': url,
+      };
 }

@@ -22,16 +22,20 @@ Future<List<OrganizationSimple>> orgsList(ClientConfig config,
   return (await sdkRequest<List<OrganizationSimple>>('GET', '/organizations',
           config: config,
           query: {
-            'since': SdkQueryValue(SdkUtils.unwrapOptional(since), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true)
+            'since': SdkQueryValue(SdkUtils.unwrapOptional(since),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsList',
-          fromJsonRaw: (value) => (value as List).map((item) => OrganizationSimple.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) =>
+                  OrganizationSimple.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions))
       .data;
 }
-
 
 /// Gets information about an organization. When the value of `two_factor_requirement_enabled` is `true`, the organization requires all members, billing managers, outside collaborators, guest collaborators, repository collaborators, or everyone with access to any repository within the organization to enable [two-factor authentication](https://docs.github.com/articles/securing-your-account-with-two-factor-authentication-2fa/). To see the full details about an organization, the authenticated user must be an organization owner. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to see the full details about an organization. To see information about an organization's GitHub plan, GitHub Apps need the `Organization plan` permission.
 ///
@@ -43,12 +47,14 @@ Future<OrganizationFull> orgsGet(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsGet',
-          fromJsonRaw: (value) => OrganizationFull.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              OrganizationFull.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Updates an organization's profile and member privileges. Use the profile fields and repository-creation settings to change organization details and member permissions; `members_allowed_repository_creation_type` is closing down in favor of more granular settings. The authenticated user must be an organization owner, and OAuth app tokens and personal access tokens (classic) must have the `admin:org` or `repo` scope.
 ///
@@ -203,26 +209,36 @@ Future<OrganizationFull> orgsUpdate(ClientConfig config,
     SdkOptional<String> description = const SdkOmitted(),
     SdkOptional<bool> hasOrganizationProjects = const SdkOmitted(),
     SdkOptional<bool> hasRepositoryProjects = const SdkOmitted(),
-    SdkOptional<OrgsUpdateRequestBodyDefaultRepositoryPermission> defaultRepositoryPermission = const SdkOmitted(),
+    SdkOptional<OrgsUpdateRequestBodyDefaultRepositoryPermission>
+        defaultRepositoryPermission = const SdkOmitted(),
     SdkOptional<bool> membersCanCreateRepositories = const SdkOmitted(),
     SdkOptional<bool> membersCanCreateInternalRepositories = const SdkOmitted(),
     SdkOptional<bool> membersCanCreatePrivateRepositories = const SdkOmitted(),
     SdkOptional<bool> membersCanCreatePublicRepositories = const SdkOmitted(),
-    SdkOptional<OrgsUpdateRequestBodyMembersAllowedRepositoryCreationType> membersAllowedRepositoryCreationType = const SdkOmitted(),
+    SdkOptional<OrgsUpdateRequestBodyMembersAllowedRepositoryCreationType>
+        membersAllowedRepositoryCreationType = const SdkOmitted(),
     SdkOptional<bool> membersCanCreatePages = const SdkOmitted(),
     SdkOptional<bool> membersCanCreatePublicPages = const SdkOmitted(),
     SdkOptional<bool> membersCanCreatePrivatePages = const SdkOmitted(),
     SdkOptional<bool> membersCanForkPrivateRepositories = const SdkOmitted(),
     SdkOptional<bool> webCommitSignoffRequired = const SdkOmitted(),
     SdkOptional<String> blog = const SdkOmitted(),
-    SdkOptional<bool> advancedSecurityEnabledForNewRepositories = const SdkOmitted(),
-    SdkOptional<bool> dependabotAlertsEnabledForNewRepositories = const SdkOmitted(),
-    SdkOptional<bool> dependabotSecurityUpdatesEnabledForNewRepositories = const SdkOmitted(),
-    SdkOptional<bool> dependencyGraphEnabledForNewRepositories = const SdkOmitted(),
-    SdkOptional<bool> secretScanningEnabledForNewRepositories = const SdkOmitted(),
-    SdkOptional<bool> secretScanningPushProtectionEnabledForNewRepositories = const SdkOmitted(),
-    SdkOptional<bool> secretScanningPushProtectionCustomLinkEnabled = const SdkOmitted(),
-    SdkOptional<String> secretScanningPushProtectionCustomLink = const SdkOmitted(),
+    SdkOptional<bool> advancedSecurityEnabledForNewRepositories =
+        const SdkOmitted(),
+    SdkOptional<bool> dependabotAlertsEnabledForNewRepositories =
+        const SdkOmitted(),
+    SdkOptional<bool> dependabotSecurityUpdatesEnabledForNewRepositories =
+        const SdkOmitted(),
+    SdkOptional<bool> dependencyGraphEnabledForNewRepositories =
+        const SdkOmitted(),
+    SdkOptional<bool> secretScanningEnabledForNewRepositories =
+        const SdkOmitted(),
+    SdkOptional<bool> secretScanningPushProtectionEnabledForNewRepositories =
+        const SdkOmitted(),
+    SdkOptional<bool> secretScanningPushProtectionCustomLinkEnabled =
+        const SdkOmitted(),
+    SdkOptional<String> secretScanningPushProtectionCustomLink =
+        const SdkOmitted(),
     SdkOptional<bool> deployKeysEnabledForRepositories = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<OrganizationFull>(
@@ -236,38 +252,69 @@ Future<OrganizationFull> orgsUpdate(ClientConfig config,
             'location': SdkUtils.unwrapOptional(location),
             'name': SdkUtils.unwrapOptional(name),
             'description': SdkUtils.unwrapOptional(description),
-            'has_organization_projects': SdkUtils.unwrapOptional(hasOrganizationProjects),
-            'has_repository_projects': SdkUtils.unwrapOptional(hasRepositoryProjects),
-            'default_repository_permission': SdkUtils.unwrapOptional(defaultRepositoryPermission),
-            'members_can_create_repositories': SdkUtils.unwrapOptional(membersCanCreateRepositories),
-            'members_can_create_internal_repositories': SdkUtils.unwrapOptional(membersCanCreateInternalRepositories),
-            'members_can_create_private_repositories': SdkUtils.unwrapOptional(membersCanCreatePrivateRepositories),
-            'members_can_create_public_repositories': SdkUtils.unwrapOptional(membersCanCreatePublicRepositories),
-            'members_allowed_repository_creation_type': SdkUtils.unwrapOptional(membersAllowedRepositoryCreationType),
-            'members_can_create_pages': SdkUtils.unwrapOptional(membersCanCreatePages),
-            'members_can_create_public_pages': SdkUtils.unwrapOptional(membersCanCreatePublicPages),
-            'members_can_create_private_pages': SdkUtils.unwrapOptional(membersCanCreatePrivatePages),
-            'members_can_fork_private_repositories': SdkUtils.unwrapOptional(membersCanForkPrivateRepositories),
-            'web_commit_signoff_required': SdkUtils.unwrapOptional(webCommitSignoffRequired),
+            'has_organization_projects':
+                SdkUtils.unwrapOptional(hasOrganizationProjects),
+            'has_repository_projects':
+                SdkUtils.unwrapOptional(hasRepositoryProjects),
+            'default_repository_permission':
+                SdkUtils.unwrapOptional(defaultRepositoryPermission),
+            'members_can_create_repositories':
+                SdkUtils.unwrapOptional(membersCanCreateRepositories),
+            'members_can_create_internal_repositories':
+                SdkUtils.unwrapOptional(membersCanCreateInternalRepositories),
+            'members_can_create_private_repositories':
+                SdkUtils.unwrapOptional(membersCanCreatePrivateRepositories),
+            'members_can_create_public_repositories':
+                SdkUtils.unwrapOptional(membersCanCreatePublicRepositories),
+            'members_allowed_repository_creation_type':
+                SdkUtils.unwrapOptional(membersAllowedRepositoryCreationType),
+            'members_can_create_pages':
+                SdkUtils.unwrapOptional(membersCanCreatePages),
+            'members_can_create_public_pages':
+                SdkUtils.unwrapOptional(membersCanCreatePublicPages),
+            'members_can_create_private_pages':
+                SdkUtils.unwrapOptional(membersCanCreatePrivatePages),
+            'members_can_fork_private_repositories':
+                SdkUtils.unwrapOptional(membersCanForkPrivateRepositories),
+            'web_commit_signoff_required':
+                SdkUtils.unwrapOptional(webCommitSignoffRequired),
             'blog': SdkUtils.unwrapOptional(blog),
-            'advanced_security_enabled_for_new_repositories': SdkUtils.unwrapOptional(advancedSecurityEnabledForNewRepositories),
-            'dependabot_alerts_enabled_for_new_repositories': SdkUtils.unwrapOptional(dependabotAlertsEnabledForNewRepositories),
-            'dependabot_security_updates_enabled_for_new_repositories': SdkUtils.unwrapOptional(dependabotSecurityUpdatesEnabledForNewRepositories),
-            'dependency_graph_enabled_for_new_repositories': SdkUtils.unwrapOptional(dependencyGraphEnabledForNewRepositories),
-            'secret_scanning_enabled_for_new_repositories': SdkUtils.unwrapOptional(secretScanningEnabledForNewRepositories),
-            'secret_scanning_push_protection_enabled_for_new_repositories': SdkUtils.unwrapOptional(secretScanningPushProtectionEnabledForNewRepositories),
-            'secret_scanning_push_protection_custom_link_enabled': SdkUtils.unwrapOptional(secretScanningPushProtectionCustomLinkEnabled),
-            'secret_scanning_push_protection_custom_link': SdkUtils.unwrapOptional(secretScanningPushProtectionCustomLink),
-            'deploy_keys_enabled_for_repositories': SdkUtils.unwrapOptional(deployKeysEnabledForRepositories)
+            'advanced_security_enabled_for_new_repositories':
+                SdkUtils.unwrapOptional(
+                    advancedSecurityEnabledForNewRepositories),
+            'dependabot_alerts_enabled_for_new_repositories':
+                SdkUtils.unwrapOptional(
+                    dependabotAlertsEnabledForNewRepositories),
+            'dependabot_security_updates_enabled_for_new_repositories':
+                SdkUtils.unwrapOptional(
+                    dependabotSecurityUpdatesEnabledForNewRepositories),
+            'dependency_graph_enabled_for_new_repositories':
+                SdkUtils.unwrapOptional(
+                    dependencyGraphEnabledForNewRepositories),
+            'secret_scanning_enabled_for_new_repositories':
+                SdkUtils.unwrapOptional(
+                    secretScanningEnabledForNewRepositories),
+            'secret_scanning_push_protection_enabled_for_new_repositories':
+                SdkUtils.unwrapOptional(
+                    secretScanningPushProtectionEnabledForNewRepositories),
+            'secret_scanning_push_protection_custom_link_enabled':
+                SdkUtils.unwrapOptional(
+                    secretScanningPushProtectionCustomLinkEnabled),
+            'secret_scanning_push_protection_custom_link':
+                SdkUtils.unwrapOptional(secretScanningPushProtectionCustomLink),
+            'deploy_keys_enabled_for_repositories':
+                SdkUtils.unwrapOptional(deployKeysEnabledForRepositories)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsUpdate',
-          fromJsonRaw: (value) => OrganizationFull.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              OrganizationFull.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'409': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '409': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Deletes an organization and all its repositories. The organization login will be unavailable for 90 days after deletion. Please review the Terms of Service regarding account deletion before using this endpoint: https://docs.github.com/site-policy/github-terms/github-terms-of-service
 ///
@@ -281,10 +328,12 @@ Future<Map<String, dynamic>> orgsDelete(ClientConfig config,
           operationId: 'orgsDelete',
           fromJsonRaw: (value) => value as Map<String, dynamic>,
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Create or update deployment records for an artifact associated with an organization. This endpoint allows you to record information about a specific artifact, such as its name, digest, environments, cluster, and deployment. The deployment name has to be uniqe within a cluster (i.e a combination of logical, physical environment and cluster) as it identifies unique deployment. Multiple requests for the same combination of logical, physical environment, cluster and deployment name will only create one record, successive request will update the existing record. This allows for a stable tracking of a deployment where the actual deployed artifact can change over time.
 ///
@@ -323,7 +372,10 @@ Future<OrgsCreateArtifactDeploymentRecordResponse>
         SdkOptional<String> physicalEnvironment = const SdkOmitted(),
         SdkOptional<String> cluster = const SdkOmitted(),
         SdkOptional<Map<String, String>> tags = const SdkOmitted(),
-        SdkOptional<List<OrgsCreateArtifactDeploymentRecordRequestBodyRuntimeRisksItem>> runtimeRisks = const SdkOmitted(),
+        SdkOptional<
+                List<
+                    OrgsCreateArtifactDeploymentRecordRequestBodyRuntimeRisksItem>>
+            runtimeRisks = const SdkOmitted(),
         SdkOptional<String> githubRepository = const SdkOmitted(),
         SdkOptional<bool> returnRecords = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
@@ -341,12 +393,15 @@ Future<OrgsCreateArtifactDeploymentRecordResponse>
   if (cluster is SdkPresent<String>) {
     validateLength('cluster', cluster.value, max: 128);
   }
-  if (runtimeRisks is SdkPresent<List<OrgsCreateArtifactDeploymentRecordRequestBodyRuntimeRisksItem>>) {
+  if (runtimeRisks is SdkPresent<
+      List<OrgsCreateArtifactDeploymentRecordRequestBodyRuntimeRisksItem>>) {
     validateItems('runtime_risks', runtimeRisks.value, max: 4);
   }
   if (githubRepository is SdkPresent<String>) {
-    validateLength('github_repository', githubRepository.value, min: 1, max: 100);
-    sdkValidatePattern('github_repository', githubRepository.value, '^[A-Za-z0-9.\\-_]+\$');
+    validateLength('github_repository', githubRepository.value,
+        min: 1, max: 100);
+    sdkValidatePattern(
+        'github_repository', githubRepository.value, '^[A-Za-z0-9.\\-_]+\$');
   }
 
   return (await sdkRequest<OrgsCreateArtifactDeploymentRecordResponse>('POST',
@@ -359,7 +414,8 @@ Future<OrgsCreateArtifactDeploymentRecordResponse>
             'logical_environment': logicalEnvironment,
             'deployment_name': deploymentName,
             'version': SdkUtils.unwrapOptional(version),
-            'physical_environment': SdkUtils.unwrapOptional(physicalEnvironment),
+            'physical_environment':
+                SdkUtils.unwrapOptional(physicalEnvironment),
             'cluster': SdkUtils.unwrapOptional(cluster),
             'tags': SdkUtils.unwrapOptional(tags),
             'runtime_risks': SdkUtils.unwrapOptional(runtimeRisks),
@@ -368,12 +424,17 @@ Future<OrgsCreateArtifactDeploymentRecordResponse>
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsCreateArtifactDeploymentRecord',
-          fromJsonRaw: (value) => OrgsCreateArtifactDeploymentRecordResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              OrgsCreateArtifactDeploymentRecordResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Set deployment records for a given cluster. If proposed records in the 'deployments' field have identical 'cluster', 'logical_environment', 'physical_environment', and 'deployment_name' values as existing records, the existing records will be updated. If no existing records match, new records will be created. Note: Artifacts are uniquely identified by the combination of their repository and digest fields. If two entries in the deployments array resolve to the same repository and have identical digest fields but differing name and version fields, the endpoint will use the artifact name and version from the record processed first, since a single artifact (identified by repository and digest) can only have one name and version.
 ///
@@ -390,16 +451,17 @@ Future<OrgsCreateArtifactDeploymentRecordResponse>
 ///   lacks write access, or no matching attestation can be found.
 /// [returnRecords] If true, the endpoint will return the set records in the
 ///   response body
-Future<OrgsSetClusterDeploymentRecordsResponse>
-    orgsSetClusterDeploymentRecords(ClientConfig config,
-        {required String org,
-        required String cluster,
-        required String logicalEnvironment,
-        required List<OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItem> deployments,
-        SdkOptional<String> physicalEnvironment = const SdkOmitted(),
-        SdkOptional<bool> partialSuccess = const SdkOmitted(),
-        SdkOptional<bool> returnRecords = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<OrgsSetClusterDeploymentRecordsResponse> orgsSetClusterDeploymentRecords(
+    ClientConfig config,
+    {required String org,
+    required String cluster,
+    required String logicalEnvironment,
+    required List<OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItem>
+        deployments,
+    SdkOptional<String> physicalEnvironment = const SdkOmitted(),
+    SdkOptional<bool> partialSuccess = const SdkOmitted(),
+    SdkOptional<bool> returnRecords = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   validateLength('cluster', cluster, min: 1, max: 128);
   sdkValidatePattern('cluster', cluster, '^[a-zA-Z0-9._-]+\$');
   validateLength('logical_environment', logicalEnvironment, min: 1, max: 128);
@@ -414,18 +476,24 @@ Future<OrgsSetClusterDeploymentRecordsResponse>
           body: {
             'logical_environment': logicalEnvironment,
             'deployments': deployments,
-            'physical_environment': SdkUtils.unwrapOptional(physicalEnvironment),
+            'physical_environment':
+                SdkUtils.unwrapOptional(physicalEnvironment),
             'partial_success': SdkUtils.unwrapOptional(partialSuccess),
             'return_records': SdkUtils.unwrapOptional(returnRecords)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsSetClusterDeploymentRecords',
-          fromJsonRaw: (value) => OrgsSetClusterDeploymentRecordsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              OrgsSetClusterDeploymentRecordsResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Create a background job to set deployment records for a given cluster. Performs validation and permission checks synchronously, returning rejected deployments immediately, then enqueues a background job for the actual deployment updates. Use the companion GET endpoint to poll for job status.
 ///
@@ -439,7 +507,9 @@ Future<OrgsCreateClusterDeploymentRecordsJobResponse>
         {required String org,
         required String cluster,
         required String logicalEnvironment,
-        required List<OrgsCreateClusterDeploymentRecordsJobRequestBodyDeploymentsItem> deployments,
+        required List<
+                OrgsCreateClusterDeploymentRecordsJobRequestBodyDeploymentsItem>
+            deployments,
         SdkOptional<String> physicalEnvironment = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
   validateLength('cluster', cluster, min: 1, max: 128);
@@ -450,7 +520,8 @@ Future<OrgsCreateClusterDeploymentRecordsJobResponse>
     validateLength('physical_environment', physicalEnvironment.value, max: 128);
   }
 
-  return (await sdkRequest<OrgsCreateClusterDeploymentRecordsJobResponse>('POST',
+  return (await sdkRequest<OrgsCreateClusterDeploymentRecordsJobResponse>(
+          'POST',
           '/orgs/${Uri.encodeComponent(org.toString())}/artifacts/metadata/deployment-record/cluster/${Uri.encodeComponent(cluster.toString())}/jobs',
           config: config,
           body: {
@@ -460,12 +531,21 @@ Future<OrgsCreateClusterDeploymentRecordsJobResponse>
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsCreateClusterDeploymentRecordsJob',
-          fromJsonRaw: (value) => OrgsCreateClusterDeploymentRecordsJobResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              OrgsCreateClusterDeploymentRecordsJobResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '409': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Get the status and results of a previously created cluster deployment records job.
 ///
@@ -488,10 +568,11 @@ Future<OrgsGetClusterDeploymentRecordsJobResponse>
           operationId: 'orgsGetClusterDeploymentRecordsJob',
           fromJsonRaw: (value) => OrgsGetClusterDeploymentRecordsJobResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Create metadata storage records for artifacts associated with an organization. This endpoint will create a new artifact storage record on behalf of any artifact matching the provided digest and associated with a repository owned by the organization.
 ///
@@ -512,20 +593,21 @@ Future<OrgsGetClusterDeploymentRecordsJobResponse>
 ///   attestation instead of this parameter.
 /// [returnRecords] If true, the endpoint will return the created record in the
 ///   response body.
-Future<OrgsCreateArtifactStorageRecordResponse>
-    orgsCreateArtifactStorageRecord(ClientConfig config,
-        {required String org,
-        required String name,
-        required String digest,
-        required String registryUrl,
-        SdkOptional<String> version = const SdkOmitted(),
-        SdkOptional<String> artifactUrl = const SdkOmitted(),
-        SdkOptional<String> path = const SdkOmitted(),
-        SdkOptional<String> repository = const SdkOmitted(),
-        SdkOptional<OrgsCreateArtifactStorageRecordRequestBodyStatus> status = const SdkOmitted(),
-        SdkOptional<String> githubRepository = const SdkOmitted(),
-        SdkOptional<bool> returnRecords = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<OrgsCreateArtifactStorageRecordResponse> orgsCreateArtifactStorageRecord(
+    ClientConfig config,
+    {required String org,
+    required String name,
+    required String digest,
+    required String registryUrl,
+    SdkOptional<String> version = const SdkOmitted(),
+    SdkOptional<String> artifactUrl = const SdkOmitted(),
+    SdkOptional<String> path = const SdkOmitted(),
+    SdkOptional<String> repository = const SdkOmitted(),
+    SdkOptional<OrgsCreateArtifactStorageRecordRequestBodyStatus> status =
+        const SdkOmitted(),
+    SdkOptional<String> githubRepository = const SdkOmitted(),
+    SdkOptional<bool> returnRecords = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   validateLength('name', name, min: 1, max: 256);
   validateLength('digest', digest, min: 71, max: 71);
   sdkValidatePattern('digest', digest, '^sha256:[a-f0-9]{64}\$');
@@ -548,8 +630,10 @@ Future<OrgsCreateArtifactStorageRecordResponse>
     validateLength('repository', repository.value, max: 128);
   }
   if (githubRepository is SdkPresent<String>) {
-    validateLength('github_repository', githubRepository.value, min: 1, max: 100);
-    sdkValidatePattern('github_repository', githubRepository.value, '^[A-Za-z0-9.\\-_]+\$');
+    validateLength('github_repository', githubRepository.value,
+        min: 1, max: 100);
+    sdkValidatePattern(
+        'github_repository', githubRepository.value, '^[A-Za-z0-9.\\-_]+\$');
   }
 
   return (await sdkRequest<OrgsCreateArtifactStorageRecordResponse>('POST',
@@ -569,12 +653,17 @@ Future<OrgsCreateArtifactStorageRecordResponse>
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsCreateArtifactStorageRecord',
-          fromJsonRaw: (value) => OrgsCreateArtifactStorageRecordResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              OrgsCreateArtifactStorageRecordResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// List deployment records for an artifact metadata associated with an organization.
 ///
@@ -594,22 +683,23 @@ Future<OrgsListArtifactDeploymentRecordsResponse>
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsListArtifactDeploymentRecords',
-          fromJsonRaw: (value) => OrgsListArtifactDeploymentRecordsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              OrgsListArtifactDeploymentRecordsResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// List artifact storage records with a given subject digest for repositories owned by an organization. Results are filtered by the authenticated user's permissions; records for repositories the user cannot read are omitted. Fine-grained access tokens require the `artifact-metadata:read` permission.
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [subjectDigest] The parameter should be set to the attestation's subject's
 ///   SHA256 digest, in the form `sha256:HEX_DIGEST`.
-Future<OrgsListArtifactStorageRecordsResponse>
-    orgsListArtifactStorageRecords(ClientConfig config,
-        {required String org,
-        required String subjectDigest,
-        RequestOptions? requestOptions}) async {
+Future<OrgsListArtifactStorageRecordsResponse> orgsListArtifactStorageRecords(
+    ClientConfig config,
+    {required String org,
+    required String subjectDigest,
+    RequestOptions? requestOptions}) async {
   validateLength('subject_digest', subjectDigest, min: 71, max: 71);
   sdkValidatePattern('subject_digest', subjectDigest, '^sha256:[a-f0-9]{64}\$');
 
@@ -618,11 +708,12 @@ Future<OrgsListArtifactStorageRecordsResponse>
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsListArtifactStorageRecords',
-          fromJsonRaw: (value) => OrgsListArtifactStorageRecordsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              OrgsListArtifactStorageRecordsResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// List a collection of artifact attestations associated with any entry in a list of subject digests owned by an organization. The collection of attestations returned by this endpoint is filtered according to the authenticated user's permissions; if the authenticated user cannot read a repository, the attestations associated with that repository will not be included in the response. In addition, when using a fine-grained access token the `attestations:read` permission is required. **Please note:** in order to offer meaningful security benefits, an attestation's signature and timestamps **must** be cryptographically verified, and the identity of the attestation signer **must** be validated. Attestations can be verified using the [GitHub CLI `attestation verify` command](https://cli.github.com/manual/gh_attestation_verify). For more information, see [our guide on how to use artifact attestations to establish a build's provenance](https://docs.github.com/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds).
 ///
@@ -647,24 +738,27 @@ Future<OrgsListArtifactStorageRecordsResponse>
 /// [predicateType] Optional filter for fetching attestations with a given
 ///   predicate type. This option accepts `provenance`, `sbom`, `release`, or
 ///   freeform text for custom predicate types.
-Future<OrgsListAttestationsBulkResponse>
-    orgsListAttestationsBulk(ClientConfig config,
-        {required String org,
-        required List<String> subjectDigests,
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<String> before = const SdkOmitted(),
-        SdkOptional<String> after = const SdkOmitted(),
-        SdkOptional<String> predicateType = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<OrgsListAttestationsBulkResponse> orgsListAttestationsBulk(
+    ClientConfig config,
+    {required String org,
+    required List<String> subjectDigests,
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<String> before = const SdkOmitted(),
+    SdkOptional<String> after = const SdkOmitted(),
+    SdkOptional<String> predicateType = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   validateItems('subject_digests', subjectDigests, min: 1, max: 1024);
 
   return (await sdkRequest<OrgsListAttestationsBulkResponse>('POST',
           '/orgs/${Uri.encodeComponent(org.toString())}/attestations/bulk-list',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'before': SdkQueryValue(SdkUtils.unwrapOptional(before), style: 'form', explode: true),
-            'after': SdkQueryValue(SdkUtils.unwrapOptional(after), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'before': SdkQueryValue(SdkUtils.unwrapOptional(before),
+                style: 'form', explode: true),
+            'after': SdkQueryValue(SdkUtils.unwrapOptional(after),
+                style: 'form', explode: true)
           },
           body: {
             'subject_digests': subjectDigests,
@@ -672,11 +766,11 @@ Future<OrgsListAttestationsBulkResponse>
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsListAttestationsBulk',
-          fromJsonRaw: (value) => OrgsListAttestationsBulkResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => OrgsListAttestationsBulkResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Deletes artifact attestations in bulk by subject digest or unique attestation ID. Provide one of `subject_digests` or `attestation_ids` to identify the attestations to remove, but not both. A 200 response confirms the bulk deletion request was processed.
 ///
@@ -696,10 +790,11 @@ Future<void> orgsDeleteAttestationsBulk(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'orgsDeleteAttestationsBulk',
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Deletes artifact attestations associated with a subject digest. Use `org` and `subject_digest` to identify the organization and the artifact whose attestations you want to remove.
 ///
@@ -717,10 +812,11 @@ Future<void> orgsDeleteAttestationsBySubjectDigest(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'orgsDeleteAttestationsBySubjectDigest',
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// List repositories owned by the provided organization that have created at least one attested artifact Results will be sorted in ascending order by repository ID
 ///
@@ -752,22 +848,32 @@ Future<List<OrgsListAttestationRepositoriesResponseItem>>
         SdkOptional<String> after = const SdkOmitted(),
         SdkOptional<String> predicateType = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
-  return (await sdkRequest<List<OrgsListAttestationRepositoriesResponseItem>>('GET',
+  return (await sdkRequest<List<OrgsListAttestationRepositoriesResponseItem>>(
+          'GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/attestations/repositories',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'before': SdkQueryValue(SdkUtils.unwrapOptional(before), style: 'form', explode: true),
-            'after': SdkQueryValue(SdkUtils.unwrapOptional(after), style: 'form', explode: true),
-            'predicate_type': SdkQueryValue(SdkUtils.unwrapOptional(predicateType), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'before': SdkQueryValue(SdkUtils.unwrapOptional(before),
+                style: 'form', explode: true),
+            'after': SdkQueryValue(SdkUtils.unwrapOptional(after),
+                style: 'form', explode: true),
+            'predicate_type': SdkQueryValue(
+                SdkUtils.unwrapOptional(predicateType),
+                style: 'form',
+                explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsListAttestationRepositories',
-          fromJsonRaw: (value) => (value as List).map((item) => OrgsListAttestationRepositoriesResponseItem.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) =>
+                  OrgsListAttestationRepositoriesResponseItem.fromJson(
+                      item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions))
       .data;
 }
-
 
 /// Delete an artifact attestation by unique ID that is associated with a repository owned by an org.
 ///
@@ -783,10 +889,12 @@ Future<void> orgsDeleteAttestationsById(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'orgsDeleteAttestationsById',
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// List a collection of artifact attestations with a given subject digest that are associated with repositories owned by an organization. The collection of attestations returned by this endpoint is filtered according to the authenticated user's permissions; if the authenticated user cannot read a repository, the attestations associated with that repository will not be included in the response. In addition, when using a fine-grained access token the `attestations:read` permission is required. **Please note:** in order to offer meaningful security benefits, an attestation's signature and timestamps **must** be cryptographically verified, and the identity of the attestation signer **must** be validated. Attestations can be verified using the [GitHub CLI `attestation verify` command](https://cli.github.com/manual/gh_attestation_verify). For more information, see [our guide on how to use artifact attestations to establish a build's provenance](https://docs.github.com/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds).
 ///
@@ -824,18 +932,24 @@ Future<OrgsListAttestationsResponse> orgsListAttestations(ClientConfig config,
           '/orgs/${Uri.encodeComponent(org.toString())}/attestations/${Uri.encodeComponent(subjectDigest.toString())}',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'before': SdkQueryValue(SdkUtils.unwrapOptional(before), style: 'form', explode: true),
-            'after': SdkQueryValue(SdkUtils.unwrapOptional(after), style: 'form', explode: true),
-            'predicate_type': SdkQueryValue(SdkUtils.unwrapOptional(predicateType), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'before': SdkQueryValue(SdkUtils.unwrapOptional(before),
+                style: 'form', explode: true),
+            'after': SdkQueryValue(SdkUtils.unwrapOptional(after),
+                style: 'form', explode: true),
+            'predicate_type': SdkQueryValue(
+                SdkUtils.unwrapOptional(predicateType),
+                style: 'form',
+                explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsListAttestations',
-          fromJsonRaw: (value) => OrgsListAttestationsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => OrgsListAttestationsResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists users blocked by an organization. Use `per_page` and `page` to paginate the results.
 ///
@@ -859,16 +973,19 @@ Future<List<SimpleUser>> orgsListBlockedUsers(ClientConfig config,
           'GET', '/orgs/${Uri.encodeComponent(org.toString())}/blocks',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsListBlockedUsers',
-          fromJsonRaw: (value) => (value as List).map((item) => SimpleUser.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => SimpleUser.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions))
       .data;
 }
-
 
 /// Returns a 204 if the given user is blocked by the given organization. Returns a 404 if the organization is not blocking the user, or if the user account has been identified as spam by GitHub.
 ///
@@ -884,10 +1001,11 @@ Future<void> orgsCheckBlockedUser(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'orgsCheckBlockedUser',
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Blocks the given user on behalf of the specified organization and returns a 204. If the organization cannot block the given user a 422 is returned.
 ///
@@ -903,10 +1021,12 @@ Future<void> orgsBlockUser(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'orgsBlockUser',
           options: requestOptions,
-          errors: {'422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '422': (value) =>
+            ValidationError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Unblocks the given user on behalf of the specified organization.
 ///
@@ -925,7 +1045,6 @@ Future<void> orgsUnblockUser(ClientConfig config,
       .data;
 }
 
-
 /// The return hash contains `failed_at` and `failed_reason` fields which represent the time at which the invitation failed and the reason for the failure.
 ///
 /// [org] The organization name. The name is not case sensitive.
@@ -937,27 +1056,33 @@ Future<void> orgsUnblockUser(ClientConfig config,
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<List<OrganizationInvitation>>
-    orgsListFailedInvitations(ClientConfig config,
-        {required String org,
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<List<OrganizationInvitation>> orgsListFailedInvitations(
+    ClientConfig config,
+    {required String org,
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<OrganizationInvitation>>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/failed_invitations',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsListFailedInvitations',
-          fromJsonRaw: (value) => (value as List).map((item) => OrganizationInvitation.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) =>
+                  OrganizationInvitation.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// List webhooks for an organization. The authenticated user must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
 ///
@@ -979,17 +1104,22 @@ Future<List<OrgHook>> orgsListWebhooks(ClientConfig config,
           'GET', '/orgs/${Uri.encodeComponent(org.toString())}/hooks',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsListWebhooks',
-          fromJsonRaw: (value) => (value as List).map((item) => OrgHook.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => OrgHook.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Create a hook that posts payloads in JSON format. You must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
 ///
@@ -1019,12 +1149,17 @@ Future<OrgHook> orgsCreateWebhook(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsCreateWebhook',
-          fromJsonRaw: (value) => OrgHook.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              OrgHook.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Returns a webhook configured in an organization. To get only the webhook `config` properties, see "Get a webhook configuration for an organization. You must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
 ///
@@ -1042,10 +1177,11 @@ Future<OrgHook> orgsGetWebhook(ClientConfig config,
           operationId: 'orgsGetWebhook',
           fromJsonRaw: (value) => OrgHook.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Updates an organization webhook, including its delivery URL, subscribed events, active state, and configuration. If you previously set a `secret`, provide the same secret or a new one; otherwise, the secret is removed. You must be an organization owner, and OAuth app tokens and personal access tokens (classic) need the `admin:org_hook` scope.
 ///
@@ -1063,7 +1199,8 @@ Future<OrgHook> orgsGetWebhook(ClientConfig config,
 Future<OrgHook> orgsUpdateWebhook(ClientConfig config,
     {required String org,
     required int hookId,
-    SdkOptional<OrgsUpdateWebhookRequestBodyConfig> config_ = const SdkOmitted(),
+    SdkOptional<OrgsUpdateWebhookRequestBodyConfig> config_ =
+        const SdkOmitted(),
     SdkOptional<List<String>> events = const SdkOmitted(),
     SdkOptional<bool> active = const SdkOmitted(),
     SdkOptional<String> name = const SdkOmitted(),
@@ -1079,12 +1216,17 @@ Future<OrgHook> orgsUpdateWebhook(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsUpdateWebhook',
-          fromJsonRaw: (value) => OrgHook.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              OrgHook.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Delete a webhook for an organization. The authenticated user must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
 ///
@@ -1101,10 +1243,11 @@ Future<void> orgsDeleteWebhook(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'orgsDeleteWebhook',
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Returns the webhook configuration for an organization. To get more information about the webhook, including the `active` state and `events`, use "Get an organization webhook ." You must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
 ///
@@ -1120,11 +1263,11 @@ Future<WebhookConfig> orgsGetWebhookConfigForOrg(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsGetWebhookConfigForOrg',
-          fromJsonRaw: (value) => WebhookConfig.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              WebhookConfig.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Updates the configuration used to deliver an organization webhook's payloads. Set `url`, `content_type`, `secret`, or `insecure_ssl` without changing the webhook's active state or subscribed events. You must be an organization owner, and OAuth app tokens and personal access tokens (classic) need the `admin:org_hook` scope.
 ///
@@ -1162,11 +1305,11 @@ Future<WebhookConfig> orgsUpdateWebhookConfigForOrg(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsUpdateWebhookConfigForOrg',
-          fromJsonRaw: (value) => WebhookConfig.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              WebhookConfig.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Returns a list of webhook deliveries for a webhook configured in an organization. You must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
 ///
@@ -1196,18 +1339,28 @@ Future<List<HookDeliveryItem>> orgsListWebhookDeliveries(ClientConfig config,
           '/orgs/${Uri.encodeComponent(org.toString())}/hooks/${Uri.encodeComponent(hookId.toString())}/deliveries',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'cursor': SdkQueryValue(SdkUtils.unwrapOptional(cursor), style: 'form', explode: true),
-            'status': SdkQueryValue(SdkUtils.unwrapOptional(status), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'cursor': SdkQueryValue(SdkUtils.unwrapOptional(cursor),
+                style: 'form', explode: true),
+            'status': SdkQueryValue(SdkUtils.unwrapOptional(status),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsListWebhookDeliveries',
-          fromJsonRaw: (value) => (value as List).map((item) => HookDeliveryItem.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) =>
+                  HookDeliveryItem.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Retrieves a delivery for a webhook configured in an organization. Use `hook_id` and `delivery_id` to identify the webhook and delivery whose details you need. You must be an organization owner, and OAuth app tokens and personal access tokens (classic) need the `admin:org_hook` scope.
 ///
@@ -1226,12 +1379,16 @@ Future<HookDelivery> orgsGetWebhookDelivery(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsGetWebhookDelivery',
-          fromJsonRaw: (value) => HookDelivery.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              HookDelivery.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '400': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '422': (value) =>
+            ValidationError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Triggers a redelivery attempt for a delivery made by a webhook configured in an organization. Use `hook_id` and `delivery_id` to identify the webhook and delivery to redeliver. You must be an organization owner, and OAuth app tokens and personal access tokens (classic) need the `admin:org_hook` scope.
 ///
@@ -1252,10 +1409,13 @@ Future<Map<String, dynamic>> orgsRedeliverWebhookDelivery(ClientConfig config,
           operationId: 'orgsRedeliverWebhookDelivery',
           fromJsonRaw: (value) => value as Map<String, dynamic>,
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '400': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '422': (value) =>
+            ValidationError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// This will trigger a [ping event](https://docs.github.com/webhooks/#ping-event) to be sent to the hook. You must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
 ///
@@ -1272,10 +1432,11 @@ Future<void> orgsPingWebhook(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'orgsPingWebhook',
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Get API request count statistics for an actor broken down by route within a specified time frame. Under normal conditions, you can expect API data to appear within 4–6 hours after making a request. During incidents or periods of unusually high volume, it may take longer to show up.
 ///
@@ -1301,38 +1462,51 @@ Future<void> orgsPingWebhook(ClientConfig config,
 /// [sort] The property to sort the results by.
 /// [apiRouteSubstring] Providing a substring will filter results where the API
 ///   route contains the substring. This is a case-insensitive search.
-Future<List<ApiInsightsRouteStatsItem>>
-    apiInsightsGetRouteStatsByActor(ClientConfig config,
-        {required String org,
-        required SchemaSchema6eadbb7f actorType,
-        required int actorId,
-        required String minTimestamp,
-        SdkOptional<String> maxTimestamp = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<SchemaSchema0df64690> direction = const SdkOmitted(),
-        SdkOptional<List<SchemaSchemaItem>> sort = const SdkOmitted(),
-        SdkOptional<String> apiRouteSubstring = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<List<ApiInsightsRouteStatsItem>> apiInsightsGetRouteStatsByActor(
+    ClientConfig config,
+    {required String org,
+    required SchemaSchema6eadbb7f actorType,
+    required int actorId,
+    required String minTimestamp,
+    SdkOptional<String> maxTimestamp = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<SchemaSchema0df64690> direction = const SdkOmitted(),
+    SdkOptional<List<SchemaSchemaItem>> sort = const SdkOmitted(),
+    SdkOptional<String> apiRouteSubstring = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<ApiInsightsRouteStatsItem>>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/insights/api/route-stats/${Uri.encodeComponent(actorType.toString())}/${Uri.encodeComponent(actorId.toString())}',
           config: config,
           query: {
-            'min_timestamp': SdkQueryValue(minTimestamp, style: 'form', explode: true),
-            'max_timestamp': SdkQueryValue(SdkUtils.unwrapOptional(maxTimestamp), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction), style: 'form', explode: true),
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true),
-            'api_route_substring': SdkQueryValue(SdkUtils.unwrapOptional(apiRouteSubstring), style: 'form', explode: true)
+            'min_timestamp':
+                SdkQueryValue(minTimestamp, style: 'form', explode: true),
+            'max_timestamp': SdkQueryValue(
+                SdkUtils.unwrapOptional(maxTimestamp),
+                style: 'form',
+                explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction),
+                style: 'form', explode: true),
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
+                style: 'form', explode: true),
+            'api_route_substring': SdkQueryValue(
+                SdkUtils.unwrapOptional(apiRouteSubstring),
+                style: 'form',
+                explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'apiInsightsGetRouteStatsByActor',
-          fromJsonRaw: (value) => (value as List).map((item) => ApiInsightsRouteStatsItem.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => ApiInsightsRouteStatsItem.fromJson(
+                  item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions))
       .data;
 }
-
 
 /// Get API request statistics for all subjects within an organization within a specified time frame. Subjects can be users or GitHub Apps. Under normal conditions, you can expect API data to appear within 4–6 hours after making a request. During incidents or periods of unusually high volume, it may take longer to show up.
 ///
@@ -1356,36 +1530,49 @@ Future<List<ApiInsightsRouteStatsItem>>
 /// [sort] The property to sort the results by.
 /// [subjectNameSubstring] Providing a substring will filter results where the
 ///   subject name contains the substring. This is a case-insensitive search.
-Future<List<ApiInsightsSubjectStatsItem>>
-    apiInsightsGetSubjectStats(ClientConfig config,
-        {required String org,
-        required String minTimestamp,
-        SdkOptional<String> maxTimestamp = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<SchemaSchema0df64690> direction = const SdkOmitted(),
-        SdkOptional<List<SchemaSchemaItemc3fee875>> sort = const SdkOmitted(),
-        SdkOptional<String> subjectNameSubstring = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<List<ApiInsightsSubjectStatsItem>> apiInsightsGetSubjectStats(
+    ClientConfig config,
+    {required String org,
+    required String minTimestamp,
+    SdkOptional<String> maxTimestamp = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<SchemaSchema0df64690> direction = const SdkOmitted(),
+    SdkOptional<List<SchemaSchemaItemc3fee875>> sort = const SdkOmitted(),
+    SdkOptional<String> subjectNameSubstring = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<ApiInsightsSubjectStatsItem>>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/insights/api/subject-stats',
           config: config,
           query: {
-            'min_timestamp': SdkQueryValue(minTimestamp, style: 'form', explode: true),
-            'max_timestamp': SdkQueryValue(SdkUtils.unwrapOptional(maxTimestamp), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction), style: 'form', explode: true),
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true),
-            'subject_name_substring': SdkQueryValue(SdkUtils.unwrapOptional(subjectNameSubstring), style: 'form', explode: true)
+            'min_timestamp':
+                SdkQueryValue(minTimestamp, style: 'form', explode: true),
+            'max_timestamp': SdkQueryValue(
+                SdkUtils.unwrapOptional(maxTimestamp),
+                style: 'form',
+                explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction),
+                style: 'form', explode: true),
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
+                style: 'form', explode: true),
+            'subject_name_substring': SdkQueryValue(
+                SdkUtils.unwrapOptional(subjectNameSubstring),
+                style: 'form',
+                explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'apiInsightsGetSubjectStats',
-          fromJsonRaw: (value) => (value as List).map((item) => ApiInsightsSubjectStatsItem.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => ApiInsightsSubjectStatsItem.fromJson(
+                  item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions))
       .data;
 }
-
 
 /// Get overall statistics of API requests made within an organization by all users and apps within a specified time frame. Under normal conditions, you can expect API data to appear within 4–6 hours after making a request. During incidents or periods of unusually high volume, it may take longer to show up.
 ///
@@ -1406,16 +1593,20 @@ Future<ApiInsightsSummaryStats> apiInsightsGetSummaryStats(ClientConfig config,
           '/orgs/${Uri.encodeComponent(org.toString())}/insights/api/summary-stats',
           config: config,
           query: {
-            'min_timestamp': SdkQueryValue(minTimestamp, style: 'form', explode: true),
-            'max_timestamp': SdkQueryValue(SdkUtils.unwrapOptional(maxTimestamp), style: 'form', explode: true)
+            'min_timestamp':
+                SdkQueryValue(minTimestamp, style: 'form', explode: true),
+            'max_timestamp': SdkQueryValue(
+                SdkUtils.unwrapOptional(maxTimestamp),
+                style: 'form',
+                explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'apiInsightsGetSummaryStats',
-          fromJsonRaw: (value) => ApiInsightsSummaryStats.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ApiInsightsSummaryStats.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Get overall statistics of API requests within the organization for a user. Under normal conditions, you can expect API data to appear within 4–6 hours after making a request. During incidents or periods of unusually high volume, it may take longer to show up.
 ///
@@ -1428,27 +1619,31 @@ Future<ApiInsightsSummaryStats> apiInsightsGetSummaryStats(ClientConfig config,
 ///   time 30 days ago. This is a timestamp in [ISO
 ///   8601](https://en.wikipedia.org/wiki/ISO_8601) format:
 ///   `YYYY-MM-DDTHH:MM:SSZ`.
-Future<ApiInsightsSummaryStats>
-    apiInsightsGetSummaryStatsByUser(ClientConfig config,
-        {required String org,
-        required String userId,
-        required String minTimestamp,
-        SdkOptional<String> maxTimestamp = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ApiInsightsSummaryStats> apiInsightsGetSummaryStatsByUser(
+    ClientConfig config,
+    {required String org,
+    required String userId,
+    required String minTimestamp,
+    SdkOptional<String> maxTimestamp = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<ApiInsightsSummaryStats>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/insights/api/summary-stats/users/${Uri.encodeComponent(userId.toString())}',
           config: config,
           query: {
-            'min_timestamp': SdkQueryValue(minTimestamp, style: 'form', explode: true),
-            'max_timestamp': SdkQueryValue(SdkUtils.unwrapOptional(maxTimestamp), style: 'form', explode: true)
+            'min_timestamp':
+                SdkQueryValue(minTimestamp, style: 'form', explode: true),
+            'max_timestamp': SdkQueryValue(
+                SdkUtils.unwrapOptional(maxTimestamp),
+                style: 'form',
+                explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'apiInsightsGetSummaryStatsByUser',
-          fromJsonRaw: (value) => ApiInsightsSummaryStats.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ApiInsightsSummaryStats.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Get overall statistics of API requests within the organization made by a specific actor. Actors can be GitHub App installations, OAuth apps or other tokens on behalf of a user. Under normal conditions, you can expect API data to appear within 4–6 hours after making a request. During incidents or periods of unusually high volume, it may take longer to show up.
 ///
@@ -1462,28 +1657,32 @@ Future<ApiInsightsSummaryStats>
 ///   time 30 days ago. This is a timestamp in [ISO
 ///   8601](https://en.wikipedia.org/wiki/ISO_8601) format:
 ///   `YYYY-MM-DDTHH:MM:SSZ`.
-Future<ApiInsightsSummaryStats>
-    apiInsightsGetSummaryStatsByActor(ClientConfig config,
-        {required String org,
-        required SchemaSchema6eadbb7f actorType,
-        required int actorId,
-        required String minTimestamp,
-        SdkOptional<String> maxTimestamp = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ApiInsightsSummaryStats> apiInsightsGetSummaryStatsByActor(
+    ClientConfig config,
+    {required String org,
+    required SchemaSchema6eadbb7f actorType,
+    required int actorId,
+    required String minTimestamp,
+    SdkOptional<String> maxTimestamp = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<ApiInsightsSummaryStats>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/insights/api/summary-stats/${Uri.encodeComponent(actorType.toString())}/${Uri.encodeComponent(actorId.toString())}',
           config: config,
           query: {
-            'min_timestamp': SdkQueryValue(minTimestamp, style: 'form', explode: true),
-            'max_timestamp': SdkQueryValue(SdkUtils.unwrapOptional(maxTimestamp), style: 'form', explode: true)
+            'min_timestamp':
+                SdkQueryValue(minTimestamp, style: 'form', explode: true),
+            'max_timestamp': SdkQueryValue(
+                SdkUtils.unwrapOptional(maxTimestamp),
+                style: 'form',
+                explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'apiInsightsGetSummaryStatsByActor',
-          fromJsonRaw: (value) => ApiInsightsSummaryStats.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ApiInsightsSummaryStats.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Get the number of API requests and rate-limited requests made within an organization over a specified time period. Under normal conditions, you can expect API data to appear within 4–6 hours after making a request. During incidents or periods of unusually high volume, it may take longer to show up.
 ///
@@ -1497,28 +1696,35 @@ Future<ApiInsightsSummaryStats>
 ///   time 30 days ago. This is a timestamp in [ISO
 ///   8601](https://en.wikipedia.org/wiki/ISO_8601) format:
 ///   `YYYY-MM-DDTHH:MM:SSZ`.
-Future<List<ApiInsightsTimeStatsItem>>
-    apiInsightsGetTimeStats(ClientConfig config,
-        {required String org,
-        required String minTimestamp,
-        required String timestampIncrement,
-        SdkOptional<String> maxTimestamp = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<List<ApiInsightsTimeStatsItem>> apiInsightsGetTimeStats(
+    ClientConfig config,
+    {required String org,
+    required String minTimestamp,
+    required String timestampIncrement,
+    SdkOptional<String> maxTimestamp = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<ApiInsightsTimeStatsItem>>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/insights/api/time-stats',
           config: config,
           query: {
-            'min_timestamp': SdkQueryValue(minTimestamp, style: 'form', explode: true),
-            'timestamp_increment': SdkQueryValue(timestampIncrement, style: 'form', explode: true),
-            'max_timestamp': SdkQueryValue(SdkUtils.unwrapOptional(maxTimestamp), style: 'form', explode: true)
+            'min_timestamp':
+                SdkQueryValue(minTimestamp, style: 'form', explode: true),
+            'timestamp_increment':
+                SdkQueryValue(timestampIncrement, style: 'form', explode: true),
+            'max_timestamp': SdkQueryValue(
+                SdkUtils.unwrapOptional(maxTimestamp),
+                style: 'form',
+                explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'apiInsightsGetTimeStats',
-          fromJsonRaw: (value) => (value as List).map((item) => ApiInsightsTimeStatsItem.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => ApiInsightsTimeStatsItem.fromJson(
+                  item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions))
       .data;
 }
-
 
 /// Get the number of API requests and rate-limited requests made within an organization by a specific user over a specified time period. Under normal conditions, you can expect API data to appear within 4–6 hours after making a request. During incidents or periods of unusually high volume, it may take longer to show up.
 ///
@@ -1533,29 +1739,36 @@ Future<List<ApiInsightsTimeStatsItem>>
 ///   time 30 days ago. This is a timestamp in [ISO
 ///   8601](https://en.wikipedia.org/wiki/ISO_8601) format:
 ///   `YYYY-MM-DDTHH:MM:SSZ`.
-Future<List<ApiInsightsTimeStatsItem>>
-    apiInsightsGetTimeStatsByUser(ClientConfig config,
-        {required String org,
-        required String userId,
-        required String minTimestamp,
-        required String timestampIncrement,
-        SdkOptional<String> maxTimestamp = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<List<ApiInsightsTimeStatsItem>> apiInsightsGetTimeStatsByUser(
+    ClientConfig config,
+    {required String org,
+    required String userId,
+    required String minTimestamp,
+    required String timestampIncrement,
+    SdkOptional<String> maxTimestamp = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<ApiInsightsTimeStatsItem>>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/insights/api/time-stats/users/${Uri.encodeComponent(userId.toString())}',
           config: config,
           query: {
-            'min_timestamp': SdkQueryValue(minTimestamp, style: 'form', explode: true),
-            'timestamp_increment': SdkQueryValue(timestampIncrement, style: 'form', explode: true),
-            'max_timestamp': SdkQueryValue(SdkUtils.unwrapOptional(maxTimestamp), style: 'form', explode: true)
+            'min_timestamp':
+                SdkQueryValue(minTimestamp, style: 'form', explode: true),
+            'timestamp_increment':
+                SdkQueryValue(timestampIncrement, style: 'form', explode: true),
+            'max_timestamp': SdkQueryValue(
+                SdkUtils.unwrapOptional(maxTimestamp),
+                style: 'form',
+                explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'apiInsightsGetTimeStatsByUser',
-          fromJsonRaw: (value) => (value as List).map((item) => ApiInsightsTimeStatsItem.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => ApiInsightsTimeStatsItem.fromJson(
+                  item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions))
       .data;
 }
-
 
 /// Get the number of API requests and rate-limited requests made within an organization by a specific actor within a specified time period. Under normal conditions, you can expect API data to appear within 4–6 hours after making a request. During incidents or periods of unusually high volume, it may take longer to show up.
 ///
@@ -1571,30 +1784,37 @@ Future<List<ApiInsightsTimeStatsItem>>
 ///   time 30 days ago. This is a timestamp in [ISO
 ///   8601](https://en.wikipedia.org/wiki/ISO_8601) format:
 ///   `YYYY-MM-DDTHH:MM:SSZ`.
-Future<List<ApiInsightsTimeStatsItem>>
-    apiInsightsGetTimeStatsByActor(ClientConfig config,
-        {required String org,
-        required SchemaSchema6eadbb7f actorType,
-        required int actorId,
-        required String minTimestamp,
-        required String timestampIncrement,
-        SdkOptional<String> maxTimestamp = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<List<ApiInsightsTimeStatsItem>> apiInsightsGetTimeStatsByActor(
+    ClientConfig config,
+    {required String org,
+    required SchemaSchema6eadbb7f actorType,
+    required int actorId,
+    required String minTimestamp,
+    required String timestampIncrement,
+    SdkOptional<String> maxTimestamp = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<ApiInsightsTimeStatsItem>>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/insights/api/time-stats/${Uri.encodeComponent(actorType.toString())}/${Uri.encodeComponent(actorId.toString())}',
           config: config,
           query: {
-            'min_timestamp': SdkQueryValue(minTimestamp, style: 'form', explode: true),
-            'timestamp_increment': SdkQueryValue(timestampIncrement, style: 'form', explode: true),
-            'max_timestamp': SdkQueryValue(SdkUtils.unwrapOptional(maxTimestamp), style: 'form', explode: true)
+            'min_timestamp':
+                SdkQueryValue(minTimestamp, style: 'form', explode: true),
+            'timestamp_increment':
+                SdkQueryValue(timestampIncrement, style: 'form', explode: true),
+            'max_timestamp': SdkQueryValue(
+                SdkUtils.unwrapOptional(maxTimestamp),
+                style: 'form',
+                explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'apiInsightsGetTimeStatsByActor',
-          fromJsonRaw: (value) => (value as List).map((item) => ApiInsightsTimeStatsItem.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => ApiInsightsTimeStatsItem.fromJson(
+                  item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions))
       .data;
 }
-
 
 /// Get API usage statistics within an organization for a user broken down by the type of access. Under normal conditions, you can expect API data to appear within 4–6 hours after making a request. During incidents or periods of unusually high volume, it may take longer to show up.
 ///
@@ -1619,37 +1839,50 @@ Future<List<ApiInsightsTimeStatsItem>>
 /// [sort] The property to sort the results by.
 /// [actorNameSubstring] Providing a substring will filter results where the
 ///   actor name contains the substring. This is a case-insensitive search.
-Future<List<ApiInsightsUserStatsItem>>
-    apiInsightsGetUserStats(ClientConfig config,
-        {required String org,
-        required String userId,
-        required String minTimestamp,
-        SdkOptional<String> maxTimestamp = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<SchemaSchema0df64690> direction = const SdkOmitted(),
-        SdkOptional<List<SchemaSchemaItemc3fee875>> sort = const SdkOmitted(),
-        SdkOptional<String> actorNameSubstring = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<List<ApiInsightsUserStatsItem>> apiInsightsGetUserStats(
+    ClientConfig config,
+    {required String org,
+    required String userId,
+    required String minTimestamp,
+    SdkOptional<String> maxTimestamp = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<SchemaSchema0df64690> direction = const SdkOmitted(),
+    SdkOptional<List<SchemaSchemaItemc3fee875>> sort = const SdkOmitted(),
+    SdkOptional<String> actorNameSubstring = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<ApiInsightsUserStatsItem>>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/insights/api/user-stats/${Uri.encodeComponent(userId.toString())}',
           config: config,
           query: {
-            'min_timestamp': SdkQueryValue(minTimestamp, style: 'form', explode: true),
-            'max_timestamp': SdkQueryValue(SdkUtils.unwrapOptional(maxTimestamp), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction), style: 'form', explode: true),
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true),
-            'actor_name_substring': SdkQueryValue(SdkUtils.unwrapOptional(actorNameSubstring), style: 'form', explode: true)
+            'min_timestamp':
+                SdkQueryValue(minTimestamp, style: 'form', explode: true),
+            'max_timestamp': SdkQueryValue(
+                SdkUtils.unwrapOptional(maxTimestamp),
+                style: 'form',
+                explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction),
+                style: 'form', explode: true),
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
+                style: 'form', explode: true),
+            'actor_name_substring': SdkQueryValue(
+                SdkUtils.unwrapOptional(actorNameSubstring),
+                style: 'form',
+                explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'apiInsightsGetUserStats',
-          fromJsonRaw: (value) => (value as List).map((item) => ApiInsightsUserStatsItem.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => ApiInsightsUserStatsItem.fromJson(
+                  item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists all GitHub Apps in an organization. The installation count includes all GitHub Apps installed on repositories in the organization. The authenticated user must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `admin:read` scope to use this endpoint.
 ///
@@ -1662,26 +1895,28 @@ Future<List<ApiInsightsUserStatsItem>>
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<OrgsListAppInstallationsResponse>
-    orgsListAppInstallations(ClientConfig config,
-        {required String org,
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<OrgsListAppInstallationsResponse> orgsListAppInstallations(
+    ClientConfig config,
+    {required String org,
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<OrgsListAppInstallationsResponse>(
           'GET', '/orgs/${Uri.encodeComponent(org.toString())}/installations',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsListAppInstallations',
-          fromJsonRaw: (value) => OrgsListAppInstallationsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => OrgsListAppInstallationsResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// The return hash contains a `role` field which refers to the Organization Invitation role and will be one of the following values: `direct_member`, `admin`, `billing_manager`, or `hiring_manager`. If the invitee is not a GitHub member, the `login` field in the return hash will be `null`.
 ///
@@ -1696,31 +1931,42 @@ Future<OrgsListAppInstallationsResponse>
 ///   -rest-api)."
 /// [role] Filter invitations by their member role.
 /// [invitationSource] Filter invitations by their invitation source.
-Future<List<OrganizationInvitation>>
-    orgsListPendingInvitations(ClientConfig config,
-        {required String org,
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        SdkOptional<OrgsListPendingInvitationsRole> role = const SdkOmitted(),
-        SdkOptional<OrgsListPendingInvitationsInvitationSource> invitationSource = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<List<OrganizationInvitation>> orgsListPendingInvitations(
+    ClientConfig config,
+    {required String org,
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    SdkOptional<OrgsListPendingInvitationsRole> role = const SdkOmitted(),
+    SdkOptional<OrgsListPendingInvitationsInvitationSource> invitationSource =
+        const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<OrganizationInvitation>>(
           'GET', '/orgs/${Uri.encodeComponent(org.toString())}/invitations',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'role': SdkQueryValue(SdkUtils.unwrapOptional(role), style: 'form', explode: true),
-            'invitation_source': SdkQueryValue(SdkUtils.unwrapOptional(invitationSource), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'role': SdkQueryValue(SdkUtils.unwrapOptional(role),
+                style: 'form', explode: true),
+            'invitation_source': SdkQueryValue(
+                SdkUtils.unwrapOptional(invitationSource),
+                style: 'form',
+                explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsListPendingInvitations',
-          fromJsonRaw: (value) => (value as List).map((item) => OrganizationInvitation.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) =>
+                  OrganizationInvitation.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Invite people to an organization by using their GitHub user ID or their email address. In order to create invitations in an organization, the authenticated user must be an organization owner. This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see "[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)" and "[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api)."
 ///
@@ -1757,12 +2003,17 @@ Future<OrganizationInvitation> orgsCreateInvitation(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsCreateInvitation',
-          fromJsonRaw: (value) => OrganizationInvitation.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              OrganizationInvitation.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Cancel an organization invitation. In order to cancel an organization invitation, the authenticated user must be an organization owner. This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications).
 ///
@@ -1778,10 +2029,13 @@ Future<void> orgsCancelInvitation(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'orgsCancelInvitation',
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '422': (value) =>
+            ValidationError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// List all teams associated with an invitation. In order to see invitations in an organization, the authenticated user must be an organization owner.
 ///
@@ -1805,17 +2059,22 @@ Future<List<Team>> orgsListInvitationTeams(ClientConfig config,
           '/orgs/${Uri.encodeComponent(org.toString())}/invitations/${Uri.encodeComponent(invitationId.toString())}/teams',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsListInvitationTeams',
-          fromJsonRaw: (value) => (value as List).map((item) => Team.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => Team.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Lists all issue fields for an organization. OAuth app tokens and personal access tokens (classic) need the read:org scope to use this endpoint.
 ///
@@ -1827,12 +2086,17 @@ Future<List<IssueField?>> orgsListIssueFields(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsListIssueFields',
-          fromJsonRaw: (value) => (value as List).map((item) => item == null ? null : IssueField.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => item == null
+                  ? null
+                  : IssueField.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Creates a new issue field for an organization. You can find out more about issue fields in [Managing issue fields in an organization](https://docs.github.com/issues/tracking-your-work-with-issues/using-issues/managing-issue-fields-in-an-organization). To use this endpoint, the authenticated user must be an administrator for the organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -1851,8 +2115,10 @@ Future<IssueField> orgsCreateIssueField(ClientConfig config,
     required String name,
     required OrganizationCreateIssueFieldDataType dataType,
     SdkOptional<String?> description = const SdkOmitted(),
-    SdkOptional<OrganizationCreateIssueFieldVisibility> visibility = const SdkOmitted(),
-    SdkOptional<List<OrganizationCreateIssueFieldOptionsItem>?> options = const SdkOmitted(),
+    SdkOptional<OrganizationCreateIssueFieldVisibility> visibility =
+        const SdkOmitted(),
+    SdkOptional<List<OrganizationCreateIssueFieldOptionsItem>?> options =
+        const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<IssueField>(
           'POST', '/orgs/${Uri.encodeComponent(org.toString())}/issue-fields',
@@ -1866,12 +2132,17 @@ Future<IssueField> orgsCreateIssueField(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsCreateIssueField',
-          fromJsonRaw: (value) => IssueField.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              IssueField.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Updates an issue field for an organization. You can find out more about issue fields in [Managing issue fields in an organization](https://docs.github.com/issues/tracking-your-work-with-issues/using-issues/managing-issue-fields-in-an-organization). To use this endpoint, the authenticated user must be an administrator for the organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -1894,8 +2165,10 @@ Future<IssueField> orgsUpdateIssueField(ClientConfig config,
     required int issueFieldId,
     SdkOptional<String> name = const SdkOmitted(),
     SdkOptional<String?> description = const SdkOmitted(),
-    SdkOptional<OrganizationUpdateIssueFieldVisibility> visibility = const SdkOmitted(),
-    SdkOptional<List<OrganizationUpdateIssueFieldOptionsItem>> options = const SdkOmitted(),
+    SdkOptional<OrganizationUpdateIssueFieldVisibility> visibility =
+        const SdkOmitted(),
+    SdkOptional<List<OrganizationUpdateIssueFieldOptionsItem>> options =
+        const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<IssueField>('PATCH',
           '/orgs/${Uri.encodeComponent(org.toString())}/issue-fields/${Uri.encodeComponent(issueFieldId.toString())}',
@@ -1908,12 +2181,17 @@ Future<IssueField> orgsUpdateIssueField(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsUpdateIssueField',
-          fromJsonRaw: (value) => IssueField.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              IssueField.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Deletes an issue field for an organization. You can find out more about issue fields in [Managing issue fields in an organization](https://docs.github.com/issues/tracking-your-work-with-issues/using-issues/managing-issue-fields-in-an-organization). To use this endpoint, the authenticated user must be an administrator for the organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -1929,10 +2207,13 @@ Future<void> orgsDeleteIssueField(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'orgsDeleteIssueField',
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '422': (value) =>
+            ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Lists all issue types for an organization. OAuth app tokens and personal access tokens (classic) need the read:org scope to use this endpoint.
 ///
@@ -1944,12 +2225,17 @@ Future<List<IssueType?>> orgsListIssueTypes(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsListIssueTypes',
-          fromJsonRaw: (value) => (value as List).map((item) => item == null ? null : IssueType.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => item == null
+                  ? null
+                  : IssueType.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Create a new issue type for an organization. You can find out more about issue types in [Managing issue types in an organization](https://docs.github.com/issues/tracking-your-work-with-issues/configuring-issues/managing-issue-types-in-an-organization). To use this endpoint, the authenticated user must be an administrator for the organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -1977,12 +2263,17 @@ Future<IssueType> orgsCreateIssueType(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsCreateIssueType',
-          fromJsonRaw: (value) => IssueType.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              IssueType.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Updates an issue type for an organization. You can find out more about issue types in [Managing issue types in an organization](https://docs.github.com/issues/tracking-your-work-with-issues/configuring-issues/managing-issue-types-in-an-organization). To use this endpoint, the authenticated user must be an administrator for the organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -2012,12 +2303,17 @@ Future<IssueType> orgsUpdateIssueType(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsUpdateIssueType',
-          fromJsonRaw: (value) => IssueType.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              IssueType.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Deletes an issue type for an organization. You can find out more about issue types in [Managing issue types in an organization](https://docs.github.com/issues/tracking-your-work-with-issues/configuring-issues/managing-issue-types-in-an-organization). To use this endpoint, the authenticated user must be an administrator for the organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -2033,10 +2329,13 @@ Future<void> orgsDeleteIssueType(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'orgsDeleteIssueType',
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '422': (value) =>
+            ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// List all users who are members of an organization. If the authenticated user is also a member of this organization then both concealed and public members will be returned.
 ///
@@ -2071,19 +2370,27 @@ Future<List<SimpleUser>> orgsListMembers(ClientConfig config,
           'GET', '/orgs/${Uri.encodeComponent(org.toString())}/members',
           config: config,
           query: {
-            'filter': SdkQueryValue(SdkUtils.unwrapOptional(filter), style: 'form', explode: true),
-            'role': SdkQueryValue(SdkUtils.unwrapOptional(role), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'filter': SdkQueryValue(SdkUtils.unwrapOptional(filter),
+                style: 'form', explode: true),
+            'role': SdkQueryValue(SdkUtils.unwrapOptional(role),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsListMembers',
-          fromJsonRaw: (value) => (value as List).map((item) => SimpleUser.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => SimpleUser.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Check if a user is, publicly or privately, a member of the organization.
 ///
@@ -2102,7 +2409,6 @@ Future<void> orgsCheckMembershipForUser(ClientConfig config,
       .data;
 }
 
-
 /// Removing a user from this list will remove them from all teams and they will no longer have any access to the organization's repositories. &gt; [!NOTE] &gt; If a user has both direct membership in the organization as well as indirect membership via an enterprise team, only their direct membership will be removed. Their indirect membership via an enterprise team remains until the user is removed from the enterprise team.
 ///
 /// [org] The organization name. The name is not case sensitive.
@@ -2117,10 +2423,11 @@ Future<void> orgsRemoveMember(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'orgsRemoveMember',
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// In order to get a user's membership with an organization, the authenticated user must be an organization member. The `state` parameter in the response can be used to identify the user's membership status.
 ///
@@ -2135,12 +2442,15 @@ Future<OrgMembership> orgsGetMembershipForUser(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsGetMembershipForUser',
-          fromJsonRaw: (value) => OrgMembership.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              OrgMembership.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Only authenticated organization owners can add a member to the organization or update the member's role. * If the authenticated user is _adding_ a member to the organization, the invited user will receive an email inviting them to the organization. The user's [membership status](https://docs.github.com/rest/orgs/members#get-organization-membership-for-a-user) will be `pending` until they accept the invitation. * Authenticated users can _update_ a user's membership by passing the `role` parameter. If the authenticated user changes a member's role to `admin`, the affected user will receive an email notifying them that they've been made an organization owner. If the authenticated user changes an owner's role to `member`, no email will be sent. **Rate limits** To prevent abuse, organization owners are limited to creating 50 organization invitations for an organization within a 24 hour period. If the organization is more than one month old or on a paid plan, the limit is 500 invitations per 24 hour period.
 ///
@@ -2152,7 +2462,8 @@ Future<OrgMembership> orgsGetMembershipForUser(ClientConfig config,
 Future<OrgMembership> orgsSetMembershipForUser(ClientConfig config,
     {required String org,
     required String username,
-    SdkOptional<OrgsSetMembershipForUserRequestBodyRole> role = const SdkOmitted(),
+    SdkOptional<OrgsSetMembershipForUserRequestBodyRole> role =
+        const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<OrgMembership>('PUT',
           '/orgs/${Uri.encodeComponent(org.toString())}/memberships/${Uri.encodeComponent(username.toString())}',
@@ -2160,12 +2471,17 @@ Future<OrgMembership> orgsSetMembershipForUser(ClientConfig config,
           body: {'role': SdkUtils.unwrapOptional(role)},
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsSetMembershipForUser',
-          fromJsonRaw: (value) => OrgMembership.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              OrgMembership.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// In order to remove a user's membership with an organization, the authenticated user must be an organization owner. If the specified user is an active member of the organization, this will remove them from the organization. If the specified user has been invited to the organization, this will cancel their invitation. The specified user will receive an email notification in both cases. &gt; [!NOTE] &gt; If a user has both direct membership in the organization as well as indirect membership via an enterprise team, only their direct membership will be removed. Their indirect membership via an enterprise team remains until the user is removed from the enterprise team.
 ///
@@ -2181,10 +2497,12 @@ Future<void> orgsRemoveMembershipForUser(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'orgsRemoveMembershipForUser',
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Lists the organization roles available in this organization. For more information on organization roles, see "[Using organization roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/using-organization-roles)." To use this endpoint, the authenticated user must be one of: - An administrator for the organization. - An organization member (or a member of a team) assigned a custom organization role that includes the **View organization roles** (`read_organization_custom_org_role`) permission. For more information, see "[Permissions for organization access](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/permissions-of-custom-organization-roles#permissions-for-organization-access)." OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -2196,12 +2514,16 @@ Future<OrgsListOrgRolesResponse> orgsListOrgRoles(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsListOrgRoles',
-          fromJsonRaw: (value) => OrgsListOrgRolesResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              OrgsListOrgRolesResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '422': (value) =>
+            ValidationError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Removes all assigned organization roles from a team. For more information on organization roles, see "[Using organization roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/using-organization-roles)." The authenticated user must be an administrator for the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -2219,7 +2541,6 @@ Future<void> orgsRevokeAllOrgRolesTeam(ClientConfig config,
           options: requestOptions))
       .data;
 }
-
 
 /// Assigns an organization role to a team in an organization. For more information on organization roles, see "[Using organization roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/using-organization-roles)." The authenticated user must be an administrator for the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -2240,7 +2561,6 @@ Future<void> orgsAssignTeamToOrgRole(ClientConfig config,
       .data;
 }
 
-
 /// Removes an organization role from a team. For more information on organization roles, see "[Using organization roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/using-organization-roles)." The authenticated user must be an administrator for the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
@@ -2260,7 +2580,6 @@ Future<void> orgsRevokeOrgRoleTeam(ClientConfig config,
       .data;
 }
 
-
 /// Revokes all assigned organization roles from a user. For more information on organization roles, see "[Using organization roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/using-organization-roles)." The authenticated user must be an administrator for the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
@@ -2277,7 +2596,6 @@ Future<void> orgsRevokeAllOrgRolesUser(ClientConfig config,
           options: requestOptions))
       .data;
 }
-
 
 /// Assigns an organization role to a member of an organization. For more information on organization roles, see "[Using organization roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/using-organization-roles)." The authenticated user must be an administrator for the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -2298,7 +2616,6 @@ Future<void> orgsAssignUserToOrgRole(ClientConfig config,
       .data;
 }
 
-
 /// Remove an organization role from a user. For more information on organization roles, see "[Using organization roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/using-organization-roles)." The authenticated user must be an administrator for the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
@@ -2318,7 +2635,6 @@ Future<void> orgsRevokeOrgRoleUser(ClientConfig config,
       .data;
 }
 
-
 /// Gets an organization role that is available to this organization. For more information on organization roles, see "[Using organization roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/using-organization-roles)." To use this endpoint, the authenticated user must be one of: - An administrator for the organization. - An organization member (or a member of a team) assigned a custom organization role that includes the **View organization roles** (`read_organization_custom_org_role`) permission. For more information, see "[Permissions for organization access](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/permissions-of-custom-organization-roles#permissions-for-organization-access)." OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
@@ -2332,12 +2648,16 @@ Future<OrganizationRole> orgsGetOrgRole(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsGetOrgRole',
-          fromJsonRaw: (value) => OrganizationRole.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              OrganizationRole.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '422': (value) =>
+            ValidationError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Lists the teams that are assigned to an organization role. For more information on organization roles, see "[Using organization roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/using-organization-roles)." To use this endpoint, you must be an administrator for the organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -2361,16 +2681,20 @@ Future<List<TeamRoleAssignment>> orgsListOrgRoleTeams(ClientConfig config,
           '/orgs/${Uri.encodeComponent(org.toString())}/organization-roles/${Uri.encodeComponent(roleId.toString())}/teams',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsListOrgRoleTeams',
-          fromJsonRaw: (value) => (value as List).map((item) => TeamRoleAssignment.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) =>
+                  TeamRoleAssignment.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists organization members that are assigned to an organization role. For more information on organization roles, see "[Using organization roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/using-organization-roles)." To use this endpoint, you must be an administrator for the organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -2394,16 +2718,20 @@ Future<List<UserRoleAssignment>> orgsListOrgRoleUsers(ClientConfig config,
           '/orgs/${Uri.encodeComponent(org.toString())}/organization-roles/${Uri.encodeComponent(roleId.toString())}/users',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsListOrgRoleUsers',
-          fromJsonRaw: (value) => (value as List).map((item) => UserRoleAssignment.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) =>
+                  UserRoleAssignment.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions))
       .data;
 }
-
 
 /// List all users who are outside collaborators of an organization.
 ///
@@ -2435,17 +2763,21 @@ Future<List<SimpleUser>> orgsListOutsideCollaborators(ClientConfig config,
           '/orgs/${Uri.encodeComponent(org.toString())}/outside_collaborators',
           config: config,
           query: {
-            'filter': SdkQueryValue(SdkUtils.unwrapOptional(filter), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'filter': SdkQueryValue(SdkUtils.unwrapOptional(filter),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsListOutsideCollaborators',
-          fromJsonRaw: (value) => (value as List).map((item) => SimpleUser.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => SimpleUser.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions))
       .data;
 }
-
 
 /// When an organization member is converted to an outside collaborator, they'll only have access to the repositories that their current team membership allows. The user will no longer be a member of the organization. For more information, see "[Converting an organization member to an outside collaborator](https://docs.github.com/articles/converting-an-organization-member-to-an-outside-collaborator/)". Converting an organization member to an outside collaborator may be restricted by enterprise administrators. For more information, see "[Enforcing repository management policies in your enterprise](https://docs.github.com/admin/policies/enforcing-policies-for-your-enterprise/enforcing-repository-management-policies-in-your-enterprise#enforcing-a-policy-for-inviting-outside-collaborators-to-repositories)."
 ///
@@ -2453,12 +2785,12 @@ Future<List<SimpleUser>> orgsListOutsideCollaborators(ClientConfig config,
 /// [username] The handle for the GitHub user account.
 /// [async_] When set to `true`, the request will be performed asynchronously.
 ///   Returns a 202 status code when the job is successfully queued.
-Future<Map<String, dynamic>>
-    orgsConvertMemberToOutsideCollaborator(ClientConfig config,
-        {required String org,
-        required String username,
-        SdkOptional<bool> async_ = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<Map<String, dynamic>> orgsConvertMemberToOutsideCollaborator(
+    ClientConfig config,
+    {required String org,
+    required String username,
+    SdkOptional<bool> async_ = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<Map<String, dynamic>>('PUT',
           '/orgs/${Uri.encodeComponent(org.toString())}/outside_collaborators/${Uri.encodeComponent(username.toString())}',
           config: config,
@@ -2467,10 +2799,11 @@ Future<Map<String, dynamic>>
           operationId: 'orgsConvertMemberToOutsideCollaborator',
           fromJsonRaw: (value) => value as Map<String, dynamic>,
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Removing a user from this list will remove them from all the organization's repositories.
 ///
@@ -2488,7 +2821,6 @@ Future<void> orgsRemoveOutsideCollaborator(ClientConfig config,
           options: requestOptions))
       .data;
 }
-
 
 /// Lists requests from organization members to access organization resources with a fine-grained personal access token. Only GitHub Apps can use this endpoint.
 ///
@@ -2542,29 +2874,55 @@ Future<List<OrganizationProgrammaticAccessGrantRequest>>
     validateItems('token_id', tokenId.value, max: 50);
   }
 
-  return (await sdkRequest<List<OrganizationProgrammaticAccessGrantRequest>>('GET',
+  return (await sdkRequest<List<OrganizationProgrammaticAccessGrantRequest>>(
+          'GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/personal-access-token-requests',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true),
-            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction), style: 'form', explode: true),
-            'owner': SdkQueryValue(SdkUtils.unwrapOptional(owner), style: 'form', explode: true),
-            'repository': SdkQueryValue(SdkUtils.unwrapOptional(repository), style: 'form', explode: true),
-            'permission': SdkQueryValue(SdkUtils.unwrapOptional(permission), style: 'form', explode: true),
-            'last_used_before': SdkQueryValue(SdkUtils.unwrapOptional(lastUsedBefore), style: 'form', explode: true),
-            'last_used_after': SdkQueryValue(SdkUtils.unwrapOptional(lastUsedAfter), style: 'form', explode: true),
-            'token_id': SdkQueryValue(SdkUtils.unwrapOptional(tokenId), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
+                style: 'form', explode: true),
+            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction),
+                style: 'form', explode: true),
+            'owner': SdkQueryValue(SdkUtils.unwrapOptional(owner),
+                style: 'form', explode: true),
+            'repository': SdkQueryValue(SdkUtils.unwrapOptional(repository),
+                style: 'form', explode: true),
+            'permission': SdkQueryValue(SdkUtils.unwrapOptional(permission),
+                style: 'form', explode: true),
+            'last_used_before': SdkQueryValue(
+                SdkUtils.unwrapOptional(lastUsedBefore),
+                style: 'form',
+                explode: true),
+            'last_used_after': SdkQueryValue(
+                SdkUtils.unwrapOptional(lastUsedAfter),
+                style: 'form',
+                explode: true),
+            'token_id': SdkQueryValue(SdkUtils.unwrapOptional(tokenId),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsListPatGrantRequests',
-          fromJsonRaw: (value) => (value as List).map((item) => OrganizationProgrammaticAccessGrantRequest.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) =>
+                  OrganizationProgrammaticAccessGrantRequest.fromJson(
+                      item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>),
+            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Approves or denies multiple pending requests to access organization resources via a fine-grained personal access token. Only GitHub Apps can use this endpoint.
 ///
@@ -2574,13 +2932,13 @@ Future<List<OrganizationProgrammaticAccessGrantRequest>>
 ///   fine-grained personal access token. Must be formed of between 1 and 100
 ///   `pat_request_id` values.
 /// [reason] Reason for approving or denying the requests. Max 1024 characters.
-Future<Map<String, dynamic>>
-    orgsReviewPatGrantRequestsInBulk(ClientConfig config,
-        {required String org,
-        required OrgsReviewPatGrantRequestsInBulkRequestBodyAction action,
-        SdkOptional<List<int>> patRequestIds = const SdkOmitted(),
-        SdkOptional<String?> reason = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<Map<String, dynamic>> orgsReviewPatGrantRequestsInBulk(
+    ClientConfig config,
+    {required String org,
+    required OrgsReviewPatGrantRequestsInBulkRequestBodyAction action,
+    SdkOptional<List<int>> patRequestIds = const SdkOmitted(),
+    SdkOptional<String?> reason = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   if (patRequestIds is SdkPresent<List<int>>) {
     validateItems('pat_request_ids', patRequestIds.value, min: 1, max: 100);
   }
@@ -2603,10 +2961,17 @@ Future<Map<String, dynamic>>
           operationId: 'orgsReviewPatGrantRequestsInBulk',
           fromJsonRaw: (value) => value as Map<String, dynamic>,
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>),
+            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Approves or denies a pending request to access organization resources via a fine-grained personal access token. Only GitHub Apps can use this endpoint.
 ///
@@ -2635,10 +3000,17 @@ Future<void> orgsReviewPatGrantRequest(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'orgsReviewPatGrantRequest',
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>),
+            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Lists the repositories a fine-grained personal access token request is requesting access to. Only GitHub Apps can use this endpoint.
 ///
@@ -2653,28 +3025,38 @@ Future<void> orgsReviewPatGrantRequest(ClientConfig config,
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<List<MinimalRepository>>
-    orgsListPatGrantRequestRepositories(ClientConfig config,
-        {required String org,
-        required int patRequestId,
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<List<MinimalRepository>> orgsListPatGrantRequestRepositories(
+    ClientConfig config,
+    {required String org,
+    required int patRequestId,
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<MinimalRepository>>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/personal-access-token-requests/${Uri.encodeComponent(patRequestId.toString())}/repositories',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsListPatGrantRequestRepositories',
-          fromJsonRaw: (value) => (value as List).map((item) => MinimalRepository.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) =>
+                  MinimalRepository.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Lists approved fine-grained personal access tokens owned by organization members that can access organization resources. Only GitHub Apps can use this endpoint.
 ///
@@ -2701,20 +3083,20 @@ Future<List<MinimalRepository>>
 ///   8601](https://en.wikipedia.org/wiki/ISO_8601) format:
 ///   `YYYY-MM-DDTHH:MM:SSZ`.
 /// [tokenId] The ID of the token
-Future<List<OrganizationProgrammaticAccessGrant>>
-    orgsListPatGrants(ClientConfig config,
-        {required String org,
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        SdkOptional<SchemaSchema1220214b> sort = const SdkOmitted(),
-        SdkOptional<SchemaSchema0df64690> direction = const SdkOmitted(),
-        SdkOptional<List<String>> owner = const SdkOmitted(),
-        SdkOptional<String> repository = const SdkOmitted(),
-        SdkOptional<String> permission = const SdkOmitted(),
-        SdkOptional<String> lastUsedBefore = const SdkOmitted(),
-        SdkOptional<String> lastUsedAfter = const SdkOmitted(),
-        SdkOptional<List<String>> tokenId = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<List<OrganizationProgrammaticAccessGrant>> orgsListPatGrants(
+    ClientConfig config,
+    {required String org,
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    SdkOptional<SchemaSchema1220214b> sort = const SdkOmitted(),
+    SdkOptional<SchemaSchema0df64690> direction = const SdkOmitted(),
+    SdkOptional<List<String>> owner = const SdkOmitted(),
+    SdkOptional<String> repository = const SdkOmitted(),
+    SdkOptional<String> permission = const SdkOmitted(),
+    SdkOptional<String> lastUsedBefore = const SdkOmitted(),
+    SdkOptional<String> lastUsedAfter = const SdkOmitted(),
+    SdkOptional<List<String>> tokenId = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   if (owner is SdkPresent<List<String>>) {
     validateItems('owner', owner.value, max: 10);
   }
@@ -2732,25 +3114,49 @@ Future<List<OrganizationProgrammaticAccessGrant>>
           '/orgs/${Uri.encodeComponent(org.toString())}/personal-access-tokens',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true),
-            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction), style: 'form', explode: true),
-            'owner': SdkQueryValue(SdkUtils.unwrapOptional(owner), style: 'form', explode: true),
-            'repository': SdkQueryValue(SdkUtils.unwrapOptional(repository), style: 'form', explode: true),
-            'permission': SdkQueryValue(SdkUtils.unwrapOptional(permission), style: 'form', explode: true),
-            'last_used_before': SdkQueryValue(SdkUtils.unwrapOptional(lastUsedBefore), style: 'form', explode: true),
-            'last_used_after': SdkQueryValue(SdkUtils.unwrapOptional(lastUsedAfter), style: 'form', explode: true),
-            'token_id': SdkQueryValue(SdkUtils.unwrapOptional(tokenId), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
+                style: 'form', explode: true),
+            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction),
+                style: 'form', explode: true),
+            'owner': SdkQueryValue(SdkUtils.unwrapOptional(owner),
+                style: 'form', explode: true),
+            'repository': SdkQueryValue(SdkUtils.unwrapOptional(repository),
+                style: 'form', explode: true),
+            'permission': SdkQueryValue(SdkUtils.unwrapOptional(permission),
+                style: 'form', explode: true),
+            'last_used_before': SdkQueryValue(
+                SdkUtils.unwrapOptional(lastUsedBefore),
+                style: 'form',
+                explode: true),
+            'last_used_after': SdkQueryValue(
+                SdkUtils.unwrapOptional(lastUsedAfter),
+                style: 'form',
+                explode: true),
+            'token_id': SdkQueryValue(SdkUtils.unwrapOptional(tokenId),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsListPatGrants',
-          fromJsonRaw: (value) => (value as List).map((item) => OrganizationProgrammaticAccessGrant.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => OrganizationProgrammaticAccessGrant.fromJson(
+                  item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>),
+            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Updates the access organization members have to organization resources via fine-grained personal access tokens. Limited to revoking a token's existing access. Only GitHub Apps can use this endpoint.
 ///
@@ -2772,10 +3178,17 @@ Future<Map<String, dynamic>> orgsUpdatePatAccesses(ClientConfig config,
           operationId: 'orgsUpdatePatAccesses',
           fromJsonRaw: (value) => value as Map<String, dynamic>,
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>),
+            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Updates the access an organization member has to organization resources via a fine-grained personal access token. Limited to revoking the token's existing access. Limited to revoking a token's existing access. Only GitHub Apps can use this endpoint.
 ///
@@ -2794,10 +3207,17 @@ Future<void> orgsUpdatePatAccess(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'orgsUpdatePatAccess',
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>),
+            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Lists the repositories a fine-grained personal access token has access to. Only GitHub Apps can use this endpoint.
 ///
@@ -2811,45 +3231,66 @@ Future<void> orgsUpdatePatAccess(ClientConfig config,
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<List<MinimalRepository>>
-    orgsListPatGrantRepositories(ClientConfig config,
-        {required String org,
-        required int patId,
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<List<MinimalRepository>> orgsListPatGrantRepositories(
+    ClientConfig config,
+    {required String org,
+    required int patId,
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<MinimalRepository>>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/personal-access-tokens/${Uri.encodeComponent(patId.toString())}/repositories',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsListPatGrantRepositories',
-          fromJsonRaw: (value) => (value as List).map((item) => MinimalRepository.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) =>
+                  MinimalRepository.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Gets the registered GitHub App installations used to read and write external custom properties for an organization. A GitHub App installation token will only be able to see its own registration info, whereas an authenticated user will be able to see all registrations for the organization. To use this endpoint, the authenticated caller must have the `organization_external_properties_for_repos:admin` permission.
 ///
 /// [org] The organization name. The name is not case sensitive.
-Future<List<OrganizationExternalPropertyInstallation>> orgsExternalPropertiesForReposGetOrganizationAppInstallations(ClientConfig config,
-    {required String org, RequestOptions? requestOptions}) async {
+Future<List<OrganizationExternalPropertyInstallation>>
+    orgsExternalPropertiesForReposGetOrganizationAppInstallations(
+        ClientConfig config,
+        {required String org,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<OrganizationExternalPropertyInstallation>>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/properties/installations',
           config: config,
           decoder: SdkResponseDecoder.json,
-          operationId: 'orgsExternalPropertiesForReposGetOrganizationAppInstallations',
-          fromJsonRaw: (value) => (value as List).map((item) => OrganizationExternalPropertyInstallation.fromJson(item as Map<String, dynamic>)).toList(),
+          operationId:
+              'orgsExternalPropertiesForReposGetOrganizationAppInstallations',
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => OrganizationExternalPropertyInstallation.fromJson(
+                  item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '422': (value) =>
+            ValidationError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Registers a GitHub App installation so it can read and write external custom properties for an organization, and assigns it a display name. The display name must be 1 to 15 characters and contain only letters and numbers. Capitalization is preserved as entered. An app installation can only be registered once, and its display name can't be changed afterward. Calling with an app installation that has already been registered returns a `422` response with an `already_exists` error code for `installation_id`. If the display name is already in use by another app installation in the organization, the response is `422` with an `already_exists` error code for `display_name`. An invalid display name also returns `422`. The app installation being registered must have write or admin permission for organization external custom properties for repositories. If it doesn't, the response is `422`. This is the permission of the installation being registered, which isn't necessarily the caller. Uninstalling the GitHub App unregisters it, and removes the external custom properties it created. To use this endpoint, the authenticated caller must have the `organization_external_properties_for_repos:admin` permission.
 ///
@@ -2864,7 +3305,8 @@ Future<List<OrganizationExternalPropertyInstallation>> orgsExternalPropertiesFor
 ///   can be omitted. It is required for all other callers (users and fine-grained
 ///   personal access tokens).
 Future<OrganizationExternalPropertyInstallation>
-    orgsExternalPropertiesForReposRegisterOrganizationAppInstallation(ClientConfig config,
+    orgsExternalPropertiesForReposRegisterOrganizationAppInstallation(
+        ClientConfig config,
         {required String org,
         required String displayName,
         SdkOptional<int> installationId = const SdkOmitted(),
@@ -2880,30 +3322,50 @@ Future<OrganizationExternalPropertyInstallation>
             'installation_id': SdkUtils.unwrapOptional(installationId)
           },
           decoder: SdkResponseDecoder.json,
-          operationId: 'orgsExternalPropertiesForReposRegisterOrganizationAppInstallation',
-          fromJsonRaw: (value) => OrganizationExternalPropertyInstallation.fromJson(value as Map<String, dynamic>),
+          operationId:
+              'orgsExternalPropertiesForReposRegisterOrganizationAppInstallation',
+          fromJsonRaw: (value) =>
+              OrganizationExternalPropertyInstallation.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Gets all external custom properties defined for the authenticated GitHub App installation on an organization. To use this endpoint, the authenticated GitHub App must have the `organization_external_properties_for_repos:read` permission.
 ///
 /// [org] The organization name. The name is not case sensitive.
-Future<List<ExternalProperty>> orgsExternalPropertiesForReposGetOrganizationDefinitions(ClientConfig config,
-    {required String org, RequestOptions? requestOptions}) async {
+Future<List<ExternalProperty>>
+    orgsExternalPropertiesForReposGetOrganizationDefinitions(
+        ClientConfig config,
+        {required String org,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<ExternalProperty>>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/properties/installations/schema',
           config: config,
           decoder: SdkResponseDecoder.json,
-          operationId: 'orgsExternalPropertiesForReposGetOrganizationDefinitions',
-          fromJsonRaw: (value) => (value as List).map((item) => ExternalProperty.fromJson(item as Map<String, dynamic>)).toList(),
+          operationId:
+              'orgsExternalPropertiesForReposGetOrganizationDefinitions',
+          fromJsonRaw: (value) => (value as List)
+              .map((item) =>
+                  ExternalProperty.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '422': (value) =>
+            ValidationError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Create new or update existing external custom property values for repositories in a batch that belong to an organization. Each target repository will have its external custom property values updated to match the values provided in the request. A maximum of 30 repositories can be updated in a single request. Using a value of `null` for an external custom property will remove or 'unset' the property value from the repository. To use this endpoint, the authenticated GitHub App must have the `organization_external_properties_for_repos:write` permission.
 ///
@@ -2912,12 +3374,12 @@ Future<List<ExternalProperty>> orgsExternalPropertiesForReposGetOrganizationDefi
 ///   property values will be applied to.
 /// [properties] List of external custom property names and associated values to
 ///   apply to the repositories.
-Future<void>
-    orgsExternalPropertiesForReposCreateOrUpdateOrganizationValues(ClientConfig config,
-        {required String org,
-        required List<String> repositoryNames,
-        required List<CustomPropertyValue> properties,
-        RequestOptions? requestOptions}) async {
+Future<void> orgsExternalPropertiesForReposCreateOrUpdateOrganizationValues(
+    ClientConfig config,
+    {required String org,
+    required List<String> repositoryNames,
+    required List<CustomPropertyValue> properties,
+    RequestOptions? requestOptions}) async {
   validateItems('repository_names', repositoryNames, min: 1, max: 30);
 
   return (await sdkRequest<void>('PATCH',
@@ -2925,12 +3387,19 @@ Future<void>
           config: config,
           body: {'repository_names': repositoryNames, 'properties': properties},
           decoder: SdkResponseDecoder.empty,
-          operationId: 'orgsExternalPropertiesForReposCreateOrUpdateOrganizationValues',
+          operationId:
+              'orgsExternalPropertiesForReposCreateOrUpdateOrganizationValues',
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Create new or update existing external custom property values for a single named property across repositories that belong to an organization. Up to 100 repository values can be updated in a single request. Repositories not included in the request are left unchanged. Using a value of `null` for a repository will remove or 'unset' the property value for that repository. A request that only contains `null` values for a property that does not yet exist is a no-op. To use this endpoint, the authenticated GitHub App must have the `organization_external_properties_for_repos:write` permission.
 ///
@@ -2939,68 +3408,87 @@ Future<void>
 /// [repositoryValues] The names of repositories and the values that the named
 ///   external custom property will be set to.
 Future<void>
-    orgsExternalPropertiesForReposCreateOrUpdateValuesForOrganizationProperty(ClientConfig config,
+    orgsExternalPropertiesForReposCreateOrUpdateValuesForOrganizationProperty(
+        ClientConfig config,
         {required String org,
         required String propertyName,
         required List<RepositoryExternalPropertyPayload> repositoryValues,
         RequestOptions? requestOptions}) async {
   validateItems('repository_values', repositoryValues, min: 1, max: 100);
 
-  return (await sdkRequest<void>('PATCH',
-          '/orgs/${Uri.encodeComponent(org.toString())}/properties/installations/values/${Uri.encodeComponent(propertyName.toString())}',
+  return (await sdkRequest<void>(
+          'PATCH', '/orgs/${Uri.encodeComponent(org.toString())}/properties/installations/values/${Uri.encodeComponent(propertyName.toString())}',
           config: config,
           body: {'repository_values': repositoryValues},
           decoder: SdkResponseDecoder.empty,
-          operationId: 'orgsExternalPropertiesForReposCreateOrUpdateValuesForOrganizationProperty',
+          operationId:
+              'orgsExternalPropertiesForReposCreateOrUpdateValuesForOrganizationProperty',
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Removes all external custom property values for a specified property name across all repositories that belong to an organization. To use this endpoint, the authenticated GitHub App must have the `organization_external_properties_for_repos:write` permission.
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [propertyName] The name of the external custom property
-Future<void>
-    orgsExternalPropertiesForReposDeleteOrganizationValues(ClientConfig config,
-        {required String org,
-        required String propertyName,
-        RequestOptions? requestOptions}) async {
+Future<void> orgsExternalPropertiesForReposDeleteOrganizationValues(
+    ClientConfig config,
+    {required String org,
+    required String propertyName,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('DELETE',
           '/orgs/${Uri.encodeComponent(org.toString())}/properties/installations/values/${Uri.encodeComponent(propertyName.toString())}',
           config: config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'orgsExternalPropertiesForReposDeleteOrganizationValues',
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '422': (value) =>
+            ValidationError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Gets all custom properties defined for an organization. Organization members can read these properties.
 ///
 /// [org] The organization name. The name is not case sensitive.
-Future<List<CustomProperty>> orgsCustomPropertiesForReposGetOrganizationDefinitions(ClientConfig config,
-    {required String org, RequestOptions? requestOptions}) async {
+Future<List<CustomProperty>>
+    orgsCustomPropertiesForReposGetOrganizationDefinitions(ClientConfig config,
+        {required String org, RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<CustomProperty>>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/properties/schema',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsCustomPropertiesForReposGetOrganizationDefinitions',
-          fromJsonRaw: (value) => (value as List).map((item) => CustomProperty.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) =>
+                  CustomProperty.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Creates new or updates existing custom properties defined for an organization in a batch. If the property already exists, the existing property will be replaced with the new values. Missing optional values will fall back to default values, previous values will be overwritten. E.g. if a property exists with `values_editable_by: org_and_repo_actors` and it's updated without specifying `values_editable_by`, it will be updated to default value `org_actors`. To use this endpoint, the authenticated user must be one of: - An administrator for the organization. - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [properties] The array of custom properties to create or update.
 Future<List<CustomProperty>>
-    orgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitions(ClientConfig config,
+    orgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitions(
+        ClientConfig config,
         {required String org,
         required List<CustomProperty> properties,
         RequestOptions? requestOptions}) async {
@@ -3011,34 +3499,44 @@ Future<List<CustomProperty>>
           config: config,
           body: {'properties': properties},
           decoder: SdkResponseDecoder.json,
-          operationId: 'orgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitions',
-          fromJsonRaw: (value) => (value as List).map((item) => CustomProperty.fromJson(item as Map<String, dynamic>)).toList(),
+          operationId:
+              'orgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitions',
+          fromJsonRaw: (value) => (value as List)
+              .map((item) =>
+                  CustomProperty.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Gets a custom property that is defined for an organization. Organization members can read these properties.
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [customPropertyName] The custom property name
-Future<CustomProperty>
-    orgsCustomPropertiesForReposGetOrganizationDefinition(ClientConfig config,
-        {required String org,
-        required String customPropertyName,
-        RequestOptions? requestOptions}) async {
+Future<CustomProperty> orgsCustomPropertiesForReposGetOrganizationDefinition(
+    ClientConfig config,
+    {required String org,
+    required String customPropertyName,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<CustomProperty>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/properties/schema/${Uri.encodeComponent(customPropertyName.toString())}',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsCustomPropertiesForReposGetOrganizationDefinition',
-          fromJsonRaw: (value) => CustomProperty.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              CustomProperty.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Creates a new or updates an existing custom property that is defined for an organization. To use this endpoint, the authenticated user must be one of: - An administrator for the organization. - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.
 ///
@@ -3053,7 +3551,8 @@ Future<CustomProperty>
 /// [valuesEditableBy] Who can edit the values of the property
 /// [requireExplicitValues] Whether setting properties values is mandatory
 Future<CustomProperty>
-    orgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinition(ClientConfig config,
+    orgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinition(
+        ClientConfig config,
         {required String org,
         required String customPropertyName,
         required CustomPropertySetPayloadValueType valueType,
@@ -3061,7 +3560,8 @@ Future<CustomProperty>
         SdkOptional<dynamic> defaultValue = const SdkOmitted(),
         SdkOptional<String?> description = const SdkOmitted(),
         SdkOptional<List<String>?> allowedValues = const SdkOmitted(),
-        SdkOptional<CustomPropertySetPayloadValuesEditableBy?> valuesEditableBy = const SdkOmitted(),
+        SdkOptional<CustomPropertySetPayloadValuesEditableBy?>
+            valuesEditableBy = const SdkOmitted(),
         SdkOptional<bool> requireExplicitValues = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
   return (await sdkRequest<CustomProperty>('PUT',
@@ -3074,36 +3574,45 @@ Future<CustomProperty>
             'description': SdkUtils.unwrapOptional(description),
             'allowed_values': SdkUtils.unwrapOptional(allowedValues),
             'values_editable_by': SdkUtils.unwrapOptional(valuesEditableBy),
-            'require_explicit_values': SdkUtils.unwrapOptional(requireExplicitValues)
+            'require_explicit_values':
+                SdkUtils.unwrapOptional(requireExplicitValues)
           },
           decoder: SdkResponseDecoder.json,
-          operationId: 'orgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinition',
-          fromJsonRaw: (value) => CustomProperty.fromJson(value as Map<String, dynamic>),
+          operationId:
+              'orgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinition',
+          fromJsonRaw: (value) =>
+              CustomProperty.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Removes a custom property that is defined for an organization. To use this endpoint, the authenticated user must be one of: - An administrator for the organization. - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [customPropertyName] The custom property name
-Future<void>
-    orgsCustomPropertiesForReposDeleteOrganizationDefinition(ClientConfig config,
-        {required String org,
-        required String customPropertyName,
-        RequestOptions? requestOptions}) async {
+Future<void> orgsCustomPropertiesForReposDeleteOrganizationDefinition(
+    ClientConfig config,
+    {required String org,
+    required String customPropertyName,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('DELETE',
           '/orgs/${Uri.encodeComponent(org.toString())}/properties/schema/${Uri.encodeComponent(customPropertyName.toString())}',
           config: config,
           decoder: SdkResponseDecoder.empty,
-          operationId: 'orgsCustomPropertiesForReposDeleteOrganizationDefinition',
+          operationId:
+              'orgsCustomPropertiesForReposDeleteOrganizationDefinition',
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Lists organization repositories with all of their custom property values. Organization members can read these properties.
 ///
@@ -3136,18 +3645,29 @@ Future<List<OrgRepoCustomPropertyValues>>
           '/orgs/${Uri.encodeComponent(org.toString())}/properties/values',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'repository_query': SdkQueryValue(SdkUtils.unwrapOptional(repositoryQuery), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'repository_query': SdkQueryValue(
+                SdkUtils.unwrapOptional(repositoryQuery),
+                style: 'form',
+                explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsCustomPropertiesForReposGetOrganizationValues',
-          fromJsonRaw: (value) => (value as List).map((item) => OrgRepoCustomPropertyValues.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => OrgRepoCustomPropertyValues.fromJson(
+                  item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Create new or update existing custom property values for repositories in a batch that belong to an organization. Each target repository will have its custom property values updated to match the values provided in the request. A maximum of 30 repositories can be updated in a single request. Using a value of `null` for a custom property will remove or 'unset' the property value from the repository. To use this endpoint, the authenticated user must be one of: - An administrator for the organization. - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_values_editor` in the organization.
 ///
@@ -3156,12 +3676,12 @@ Future<List<OrgRepoCustomPropertyValues>>
 ///   will be applied to.
 /// [properties] List of custom property names and associated values to apply to
 ///   the repositories.
-Future<void>
-    orgsCustomPropertiesForReposCreateOrUpdateOrganizationValues(ClientConfig config,
-        {required String org,
-        required List<String> repositoryNames,
-        required List<CustomPropertyValue> properties,
-        RequestOptions? requestOptions}) async {
+Future<void> orgsCustomPropertiesForReposCreateOrUpdateOrganizationValues(
+    ClientConfig config,
+    {required String org,
+    required List<String> repositoryNames,
+    required List<CustomPropertyValue> properties,
+    RequestOptions? requestOptions}) async {
   validateItems('repository_names', repositoryNames, min: 1, max: 30);
 
   return (await sdkRequest<void>('PATCH',
@@ -3169,12 +3689,19 @@ Future<void>
           config: config,
           body: {'repository_names': repositoryNames, 'properties': properties},
           decoder: SdkResponseDecoder.empty,
-          operationId: 'orgsCustomPropertiesForReposCreateOrUpdateOrganizationValues',
+          operationId:
+              'orgsCustomPropertiesForReposCreateOrUpdateOrganizationValues',
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Members of an organization can choose to have their membership publicized or not.
 ///
@@ -3196,16 +3723,19 @@ Future<List<SimpleUser>> orgsListPublicMembers(ClientConfig config,
           'GET', '/orgs/${Uri.encodeComponent(org.toString())}/public_members',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsListPublicMembers',
-          fromJsonRaw: (value) => (value as List).map((item) => SimpleUser.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => SimpleUser.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions))
       .data;
 }
-
 
 /// Check if the provided user is a public member of the organization.
 ///
@@ -3224,7 +3754,6 @@ Future<void> orgsCheckPublicMembershipForUser(ClientConfig config,
       .data;
 }
 
-
 /// The user can publicize their own membership. (A user cannot publicize the membership for another user.) Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP method](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method)."
 ///
 /// [org] The organization name. The name is not case sensitive.
@@ -3239,10 +3768,11 @@ Future<void> orgsSetPublicMembershipForAuthenticatedUser(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'orgsSetPublicMembershipForAuthenticatedUser',
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Removes the public membership for the authenticated user from the specified organization, unless public visibility is enforced by default.
 ///
@@ -3260,7 +3790,6 @@ Future<void> orgsRemovePublicMembershipForAuthenticatedUser(ClientConfig config,
           options: requestOptions))
       .data;
 }
-
 
 /// Lists the historical versions of an organization ruleset. Use `org` and `ruleset_id` to identify the ruleset, and use `page` and `per_page` to paginate the results.
 ///
@@ -3286,17 +3815,25 @@ Future<List<RulesetVersion>> orgsGetOrgRulesetHistory(ClientConfig config,
           '/orgs/${Uri.encodeComponent(org.toString())}/rulesets/${Uri.encodeComponent(rulesetId.toString())}/history',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsGetOrgRulesetHistory',
-          fromJsonRaw: (value) => (value as List).map((item) => RulesetVersion.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) =>
+                  RulesetVersion.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Retrieves a specific historical version of an organization ruleset. Use `org`, `ruleset_id`, and `version_id` to identify the organization, ruleset, and version to retrieve.
 ///
@@ -3315,12 +3852,15 @@ Future<RulesetVersionWithState> orgsGetOrgRulesetVersion(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsGetOrgRulesetVersion',
-          fromJsonRaw: (value) => RulesetVersionWithState.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              RulesetVersionWithState.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// &gt; [!WARNING] &gt; **Closing down notice:** This operation is closing down and will be removed starting January 1, 2026. Please use the "[Organization Roles](https://docs.github.com/rest/orgs/organization-roles)" endpoints instead.
 ///
@@ -3334,11 +3874,12 @@ Future<List<TeamSimple>> orgsListSecurityManagerTeams(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsListSecurityManagerTeams',
-          fromJsonRaw: (value) => (value as List).map((item) => TeamSimple.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => TeamSimple.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions))
       .data;
 }
-
 
 /// &gt; [!WARNING] &gt; **Closing down notice:** This operation is closing down and will be removed starting January 1, 2026. Please use the "[Organization Roles](https://docs.github.com/rest/orgs/organization-roles)" endpoints instead.
 ///
@@ -3359,7 +3900,6 @@ Future<void> orgsAddSecurityManagerTeam(ClientConfig config,
       .data;
 }
 
-
 /// &gt; [!WARNING] &gt; **Closing down notice:** This operation is closing down and will be removed starting January 1, 2026. Please use the "[Organization Roles](https://docs.github.com/rest/orgs/organization-roles)" endpoints instead.
 ///
 /// [org] The organization name. The name is not case sensitive.
@@ -3379,22 +3919,24 @@ Future<void> orgsRemoveSecurityManagerTeam(ClientConfig config,
       .data;
 }
 
-
 /// Gets the immutable releases policy for repositories in an organization. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
-Future<ImmutableReleasesOrganizationSettings> orgsGetImmutableReleasesSettings(ClientConfig config,
-    {required String org, RequestOptions? requestOptions}) async {
+Future<ImmutableReleasesOrganizationSettings> orgsGetImmutableReleasesSettings(
+    ClientConfig config,
+    {required String org,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<ImmutableReleasesOrganizationSettings>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/settings/immutable-releases',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsGetImmutableReleasesSettings',
-          fromJsonRaw: (value) => ImmutableReleasesOrganizationSettings.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ImmutableReleasesOrganizationSettings.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Sets the immutable releases policy for repositories in an organization. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -3413,7 +3955,8 @@ Future<ImmutableReleasesOrganizationSettings> orgsGetImmutableReleasesSettings(C
 ///   sitory-for-immutable-releases-in-an-organization) endpoints.
 Future<void> orgsSetImmutableReleasesSettings(ClientConfig config,
     {required String org,
-    required OrgsSetImmutableReleasesSettingsRequestBodyEnforcedRepositories enforcedRepositories,
+    required OrgsSetImmutableReleasesSettingsRequestBodyEnforcedRepositories
+        enforcedRepositories,
     SdkOptional<List<int>> selectedRepositoryIds = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('PUT',
@@ -3421,14 +3964,14 @@ Future<void> orgsSetImmutableReleasesSettings(ClientConfig config,
           config: config,
           body: {
             'enforced_repositories': enforcedRepositories,
-            'selected_repository_ids': SdkUtils.unwrapOptional(selectedRepositoryIds)
+            'selected_repository_ids':
+                SdkUtils.unwrapOptional(selectedRepositoryIds)
           },
           decoder: SdkResponseDecoder.empty,
           operationId: 'orgsSetImmutableReleasesSettings',
           options: requestOptions))
       .data;
 }
-
 
 /// List all of the repositories that have been selected for immutable releases enforcement in an organization. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -3447,20 +3990,24 @@ Future<OrgsGetImmutableReleasesSettingsRepositoriesResponse>
         SdkOptional<int> page = const SdkOmitted(),
         SdkOptional<int> perPage = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
-  return (await sdkRequest<OrgsGetImmutableReleasesSettingsRepositoriesResponse>('GET',
+  return (await sdkRequest<
+              OrgsGetImmutableReleasesSettingsRepositoriesResponse>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/settings/immutable-releases/repositories',
           config: config,
           query: {
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true)
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsGetImmutableReleasesSettingsRepositories',
-          fromJsonRaw: (value) => OrgsGetImmutableReleasesSettingsRepositoriesResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              OrgsGetImmutableReleasesSettingsRepositoriesResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Replaces all repositories that have been selected for immutable releases enforcement in an organization. To use this endpoint, the organization immutable releases policy for `enforced_repositories` must be configured to `selected`. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -3489,44 +4036,43 @@ Future<void> orgsSetImmutableReleasesSettingsRepositories(ClientConfig config,
       .data;
 }
 
-
 /// Adds a repository to the list of selected repositories that are enforced for immutable releases in an organization. To use this endpoint, the organization immutable releases policy for `enforced_repositories` must be configured to `selected`. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [repositoryId] The unique identifier of the repository.
-Future<void>
-    orgsEnableSelectedRepositoryImmutableReleasesOrganization(ClientConfig config,
-        {required String org,
-        required int repositoryId,
-        RequestOptions? requestOptions}) async {
+Future<void> orgsEnableSelectedRepositoryImmutableReleasesOrganization(
+    ClientConfig config,
+    {required String org,
+    required int repositoryId,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('PUT',
           '/orgs/${Uri.encodeComponent(org.toString())}/settings/immutable-releases/repositories/${Uri.encodeComponent(repositoryId.toString())}',
           config: config,
           decoder: SdkResponseDecoder.empty,
-          operationId: 'orgsEnableSelectedRepositoryImmutableReleasesOrganization',
+          operationId:
+              'orgsEnableSelectedRepositoryImmutableReleasesOrganization',
           options: requestOptions))
       .data;
 }
-
 
 /// Removes a repository from the list of selected repositories that are enforced for immutable releases in an organization. To use this endpoint, the organization immutable releases policy for `enforced_repositories` must be configured to `selected`. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [repositoryId] The unique identifier of the repository.
-Future<void>
-    orgsDisableSelectedRepositoryImmutableReleasesOrganization(ClientConfig config,
-        {required String org,
-        required int repositoryId,
-        RequestOptions? requestOptions}) async {
+Future<void> orgsDisableSelectedRepositoryImmutableReleasesOrganization(
+    ClientConfig config,
+    {required String org,
+    required int repositoryId,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('DELETE',
           '/orgs/${Uri.encodeComponent(org.toString())}/settings/immutable-releases/repositories/${Uri.encodeComponent(repositoryId.toString())}',
           config: config,
           decoder: SdkResponseDecoder.empty,
-          operationId: 'orgsDisableSelectedRepositoryImmutableReleasesOrganization',
+          operationId:
+              'orgsDisableSelectedRepositoryImmutableReleasesOrganization',
           options: requestOptions))
       .data;
 }
-
 
 /// &gt; [!WARNING] &gt; **Closing down notice:** The ability to enable or disable a security feature for all eligible repositories in an organization is closing down. Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead. For more information, see the [changelog](https://github.blog/changelog/2024-07-22-deprecation-of-api-endpoint-to-enable-or-disable-a-security-feature-for-an-organization/). Enables or disables the specified security feature for all eligible repositories in an organization. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)." The authenticated user must be an organization owner or be member of a team with the security manager role to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `admin:org`, `write:org`, or `repo` scopes to use this endpoint.
 ///
@@ -3544,13 +4090,15 @@ Future<void>
 ///   the preferred query suite of the organization will be applied.
 ///
 /// **Deprecated:** this operation is deprecated and may be removed in a future release.
-Future<void>
-    orgsEnableOrDisableSecurityProductOnAllOrgRepos(ClientConfig config,
-        {required String org,
-        required SchemaSchemae123ddd7 securityProduct,
-        required SchemaSchemad185c506 enablement,
-        SdkOptional<OrgsEnableOrDisableSecurityProductOnAllOrgReposRequestBodyQuerySuite> querySuite = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<void> orgsEnableOrDisableSecurityProductOnAllOrgRepos(
+    ClientConfig config,
+    {required String org,
+    required SchemaSchemae123ddd7 securityProduct,
+    required SchemaSchemad185c506 enablement,
+    SdkOptional<
+            OrgsEnableOrDisableSecurityProductOnAllOrgReposRequestBodyQuerySuite>
+        querySuite = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('POST',
           '/orgs/${Uri.encodeComponent(org.toString())}/${Uri.encodeComponent(securityProduct.toString())}/${Uri.encodeComponent(enablement.toString())}',
           config: config,
@@ -3560,7 +4108,6 @@ Future<void>
           options: requestOptions))
       .data;
 }
-
 
 /// Lists all of the authenticated user's organization memberships.
 ///
@@ -3574,27 +4121,40 @@ Future<void>
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<List<OrgMembership>>
-    orgsListMembershipsForAuthenticatedUser(ClientConfig config,
-        {SdkOptional<OrgsListMembershipsForAuthenticatedUserState> state = const SdkOmitted(),
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<List<OrgMembership>> orgsListMembershipsForAuthenticatedUser(
+    ClientConfig config,
+    {SdkOptional<OrgsListMembershipsForAuthenticatedUserState> state =
+        const SdkOmitted(),
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<OrgMembership>>('GET', '/user/memberships/orgs',
           config: config,
           query: {
-            'state': SdkQueryValue(SdkUtils.unwrapOptional(state), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'state': SdkQueryValue(SdkUtils.unwrapOptional(state),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsListMembershipsForAuthenticatedUser',
-          fromJsonRaw: (value) => (value as List).map((item) => OrgMembership.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) =>
+                  OrgMembership.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '401': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// If the authenticated user is an active or pending member of the organization, this endpoint will return the user's membership. If the authenticated user is not affiliated with the organization, a `404` is returned. This endpoint will return a `403` if the request is made by a GitHub App that is blocked by the organization.
 ///
@@ -3606,35 +4166,45 @@ Future<OrgMembership> orgsGetMembershipForAuthenticatedUser(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsGetMembershipForAuthenticatedUser',
-          fromJsonRaw: (value) => OrgMembership.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              OrgMembership.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Converts the authenticated user to an active member of the organization, if that user has a pending invitation from the organization.
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [state] The state that the membership should be in. Only `"active"` will be
 ///   accepted.
-Future<OrgMembership>
-    orgsUpdateMembershipForAuthenticatedUser(ClientConfig config,
-        {required String org,
-        required OrgsUpdateMembershipForAuthenticatedUserRequestBodyState state,
-        RequestOptions? requestOptions}) async {
+Future<OrgMembership> orgsUpdateMembershipForAuthenticatedUser(
+    ClientConfig config,
+    {required String org,
+    required OrgsUpdateMembershipForAuthenticatedUserRequestBodyState state,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<OrgMembership>('PATCH',
           '/user/memberships/orgs/${Uri.encodeComponent(org.toString())}',
           config: config,
           body: {'state': state},
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsUpdateMembershipForAuthenticatedUser',
-          fromJsonRaw: (value) => OrgMembership.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              OrgMembership.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// List organizations for the authenticated user. For OAuth app tokens and personal access tokens (classic), this endpoint only lists organizations that your authorization allows you to operate on in some way (e.g., you can list teams with `read:org` scope, you can publicize your organization membership with `user` scope, etc.). Therefore, this API requires at least `user` or `read:org` scope for OAuth app tokens and personal access tokens (classic). Requests with insufficient scope will receive a `403 Forbidden` response. &gt; [!NOTE] &gt; Requests using a fine-grained access token will receive a `200 Success` response with an empty list.
 ///
@@ -3646,25 +4216,33 @@ Future<OrgMembership>
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<List<OrganizationSimple>>
-    orgsListForAuthenticatedUser(ClientConfig config,
-        {SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<List<OrganizationSimple>> orgsListForAuthenticatedUser(
+    ClientConfig config,
+    {SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<OrganizationSimple>>('GET', '/user/orgs',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsListForAuthenticatedUser',
-          fromJsonRaw: (value) => (value as List).map((item) => OrganizationSimple.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) =>
+                  OrganizationSimple.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '401': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// List [public organization memberships](https://docs.github.com/articles/publicizing-or-concealing-organization-membership) for the specified user. This method only lists _public_ memberships, regardless of authentication. If you need to fetch all of the organization memberships (public and private) for the authenticated user, use the [List organizations for the authenticated user](https://docs.github.com/rest/orgs/orgs#list-organizations-for-the-authenticated-user) API instead.
 ///
@@ -3686,12 +4264,17 @@ Future<List<OrganizationSimple>> orgsListForUser(ClientConfig config,
           'GET', '/users/${Uri.encodeComponent(username.toString())}/orgs',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'orgsListForUser',
-          fromJsonRaw: (value) => (value as List).map((item) => OrganizationSimple.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) =>
+                  OrganizationSimple.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions))
       .data;
 }

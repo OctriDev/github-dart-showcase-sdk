@@ -7,95 +7,154 @@ part of 'inline.dart';
 class ActionsUpdateEnvironmentVariableRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the variable.
   final SdkOptional<String> name;
+
   /// The value of the variable.
   final SdkOptional<String> value;
 
-  const ActionsUpdateEnvironmentVariableRequestBody({this.name = const SdkOmitted(), this.value = const SdkOmitted()});
+  const ActionsUpdateEnvironmentVariableRequestBody(
+      {this.name = const SdkOmitted(), this.value = const SdkOmitted()});
 
-  ActionsUpdateEnvironmentVariableRequestBody Function({SdkOptional<String> name, SdkOptional<String> value}) get copyWith => _copyWith;
+  ActionsUpdateEnvironmentVariableRequestBody Function(
+      {SdkOptional<String> name,
+      SdkOptional<String> value}) get copyWith => _copyWith;
 
-  ActionsUpdateEnvironmentVariableRequestBody _copyWith({Object? name = sdkOmittedValue, Object? value = sdkOmittedValue}) => ActionsUpdateEnvironmentVariableRequestBody(
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    value: identical(value, sdkOmittedValue) ? this.value : value as SdkOptional<String>,
-  );
+  ActionsUpdateEnvironmentVariableRequestBody _copyWith(
+          {Object? name = sdkOmittedValue, Object? value = sdkOmittedValue}) =>
+      ActionsUpdateEnvironmentVariableRequestBody(
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        value: identical(value, sdkOmittedValue)
+            ? this.value
+            : value as SdkOptional<String>,
+      );
 
-  factory ActionsUpdateEnvironmentVariableRequestBody.fromJson(Map<String, dynamic> json) => ActionsUpdateEnvironmentVariableRequestBody(
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    value: json['value'] != null ? SdkPresent((json['value'] as String?)!) : const SdkOmitted(),
-  );
+  factory ActionsUpdateEnvironmentVariableRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      ActionsUpdateEnvironmentVariableRequestBody(
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+        value: json['value'] != null
+            ? SdkPresent((json['value'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (value) {
-      SdkPresent<String>(value: final value) => {'value': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (value) {
+          SdkPresent<String>(value: final value) => {
+              'value': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Actions OIDC Subject customization
 class OidcUpdateOidcCustomSubTemplateForOrgRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Array of unique strings. Each claim key can only contain alphanumeric characters and underscores.
   final SdkOptional<List<String>> includeClaimKeys;
+
   /// Whether to opt in to the immutable OIDC subject claim format for the organization. When `true`, new OIDC tokens will use a stable, repository-ID-based `sub` claim instead of the name-based format.
   final SdkOptional<bool> useImmutableSubject;
 
-  const OidcUpdateOidcCustomSubTemplateForOrgRequestBody({this.includeClaimKeys = const SdkOmitted(), this.useImmutableSubject = const SdkOmitted()});
+  const OidcUpdateOidcCustomSubTemplateForOrgRequestBody(
+      {this.includeClaimKeys = const SdkOmitted(),
+      this.useImmutableSubject = const SdkOmitted()});
 
-  OidcUpdateOidcCustomSubTemplateForOrgRequestBody Function({SdkOptional<List<String>> includeClaimKeys, SdkOptional<bool> useImmutableSubject}) get copyWith => _copyWith;
+  OidcUpdateOidcCustomSubTemplateForOrgRequestBody Function(
+      {SdkOptional<List<String>> includeClaimKeys,
+      SdkOptional<bool> useImmutableSubject}) get copyWith => _copyWith;
 
-  OidcUpdateOidcCustomSubTemplateForOrgRequestBody _copyWith({Object? includeClaimKeys = sdkOmittedValue, Object? useImmutableSubject = sdkOmittedValue}) => OidcUpdateOidcCustomSubTemplateForOrgRequestBody(
-    includeClaimKeys: identical(includeClaimKeys, sdkOmittedValue) ? this.includeClaimKeys : includeClaimKeys as SdkOptional<List<String>>,
-    useImmutableSubject: identical(useImmutableSubject, sdkOmittedValue) ? this.useImmutableSubject : useImmutableSubject as SdkOptional<bool>,
-  );
+  OidcUpdateOidcCustomSubTemplateForOrgRequestBody _copyWith(
+          {Object? includeClaimKeys = sdkOmittedValue,
+          Object? useImmutableSubject = sdkOmittedValue}) =>
+      OidcUpdateOidcCustomSubTemplateForOrgRequestBody(
+        includeClaimKeys: identical(includeClaimKeys, sdkOmittedValue)
+            ? this.includeClaimKeys
+            : includeClaimKeys as SdkOptional<List<String>>,
+        useImmutableSubject: identical(useImmutableSubject, sdkOmittedValue)
+            ? this.useImmutableSubject
+            : useImmutableSubject as SdkOptional<bool>,
+      );
 
-  factory OidcUpdateOidcCustomSubTemplateForOrgRequestBody.fromJson(Map<String, dynamic> json) => OidcUpdateOidcCustomSubTemplateForOrgRequestBody(
-    includeClaimKeys: json['include_claim_keys'] != null ? SdkPresent(((json['include_claim_keys'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    useImmutableSubject: json['use_immutable_subject'] != null ? SdkPresent((json['use_immutable_subject'] as bool?)!) : const SdkOmitted(),
-  );
+  factory OidcUpdateOidcCustomSubTemplateForOrgRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      OidcUpdateOidcCustomSubTemplateForOrgRequestBody(
+        includeClaimKeys: json['include_claim_keys'] != null
+            ? SdkPresent(((json['include_claim_keys'] as List?)
+                ?.map((e) => e as String)
+                .toList())!)
+            : const SdkOmitted(),
+        useImmutableSubject: json['use_immutable_subject'] != null
+            ? SdkPresent((json['use_immutable_subject'] as bool?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (includeClaimKeys) {
-      SdkPresent<List<String>>(value: final value) => {'include_claim_keys': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (useImmutableSubject) {
-      SdkPresent<bool>(value: final value) => {'use_immutable_subject': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (includeClaimKeys) {
+          SdkPresent<List<String>>(value: final value) => {
+              'include_claim_keys': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (useImmutableSubject) {
+          SdkPresent<bool>(value: final value) => {
+              'use_immutable_subject': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Feature options for Automatic dependency submission
 class CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraphAutosubmitActionOptions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Whether to use runners labeled with 'dependency-submission' or standard GitHub runners.
   final SdkOptional<bool> labeledRunners;
 
-  const CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraphAutosubmitActionOptions({this.labeledRunners = const SdkOmitted()});
+  const CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraphAutosubmitActionOptions(
+      {this.labeledRunners = const SdkOmitted()});
 
-  CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraphAutosubmitActionOptions Function({SdkOptional<bool> labeledRunners}) get copyWith => _copyWith;
+  CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraphAutosubmitActionOptions
+      Function({SdkOptional<bool> labeledRunners}) get copyWith => _copyWith;
 
-  CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraphAutosubmitActionOptions _copyWith({Object? labeledRunners = sdkOmittedValue}) => CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraphAutosubmitActionOptions(
-    labeledRunners: identical(labeledRunners, sdkOmittedValue) ? this.labeledRunners : labeledRunners as SdkOptional<bool>,
-  );
+  CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraphAutosubmitActionOptions
+      _copyWith({Object? labeledRunners = sdkOmittedValue}) =>
+          CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraphAutosubmitActionOptions(
+            labeledRunners: identical(labeledRunners, sdkOmittedValue)
+                ? this.labeledRunners
+                : labeledRunners as SdkOptional<bool>,
+          );
 
-  factory CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraphAutosubmitActionOptions.fromJson(Map<String, dynamic> json) => CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraphAutosubmitActionOptions(
-    labeledRunners: json['labeled_runners'] != null ? SdkPresent((json['labeled_runners'] as bool?)!) : const SdkOmitted(),
-  );
+  factory CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraphAutosubmitActionOptions.fromJson(
+          Map<String, dynamic> json) =>
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraphAutosubmitActionOptions(
+        labeledRunners: json['labeled_runners'] != null
+            ? SdkPresent((json['labeled_runners'] as bool?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (labeledRunners) {
-      SdkPresent<bool>(value: final value) => {'labeled_runners': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (labeledRunners) {
+          SdkPresent<bool>(value: final value) => {
+              'labeled_runners': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

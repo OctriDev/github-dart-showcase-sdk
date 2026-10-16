@@ -7,117 +7,217 @@ part of 'webhook_pull_request_review_request_removed.dart';
 class WebhookPullRequestReviewRequestRemovedVariant0PullRequestLabelsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// 6-character hex code, without the leading #, identifying the color
   final String color;
   final bool default_;
   final String? description;
   final int id;
+
   /// The name of the label.
   final String name;
   final String nodeId;
+
   /// URL for the label
   final String url;
 
-  const WebhookPullRequestReviewRequestRemovedVariant0PullRequestLabelsItem({required this.color, required this.default_, required this.description, required this.id, required this.name, required this.nodeId, required this.url});
+  const WebhookPullRequestReviewRequestRemovedVariant0PullRequestLabelsItem(
+      {required this.color,
+      required this.default_,
+      required this.description,
+      required this.id,
+      required this.name,
+      required this.nodeId,
+      required this.url});
 
-  WebhookPullRequestReviewRequestRemovedVariant0PullRequestLabelsItem Function({String color, bool default_, String? description, int id, String name, String nodeId, String url}) get copyWith => _copyWith;
+  WebhookPullRequestReviewRequestRemovedVariant0PullRequestLabelsItem Function(
+      {String color,
+      bool default_,
+      String? description,
+      int id,
+      String name,
+      String nodeId,
+      String url}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewRequestRemovedVariant0PullRequestLabelsItem _copyWith({Object? color = sdkOmittedValue, Object? default_ = sdkOmittedValue, Object? description = sdkOmittedValue, Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookPullRequestReviewRequestRemovedVariant0PullRequestLabelsItem(
-    color: identical(color, sdkOmittedValue) ? this.color : color as String,
-    default_: identical(default_, sdkOmittedValue) ? this.default_ : default_ as bool,
-    description: identical(description, sdkOmittedValue) ? this.description : description as String?,
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  WebhookPullRequestReviewRequestRemovedVariant0PullRequestLabelsItem _copyWith(
+          {Object? color = sdkOmittedValue,
+          Object? default_ = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? url = sdkOmittedValue}) =>
+      WebhookPullRequestReviewRequestRemovedVariant0PullRequestLabelsItem(
+        color: identical(color, sdkOmittedValue) ? this.color : color as String,
+        default_: identical(default_, sdkOmittedValue)
+            ? this.default_
+            : default_ as bool,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as String?,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
-  factory WebhookPullRequestReviewRequestRemovedVariant0PullRequestLabelsItem.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewRequestRemovedVariant0PullRequestLabelsItem(
-    color: (json['color'] as String?)!,
-    default_: (json['default'] as bool?)!,
-    description: json.containsKey('description') ? json['description'] as String? : throw ArgumentError.value(null, 'description', 'Required property is missing'),
-    id: ((json['id'] as num?)?.toInt())!,
-    name: (json['name'] as String?)!,
-    nodeId: (json['node_id'] as String?)!,
-    url: (json['url'] as String?)!,
-  );
+  factory WebhookPullRequestReviewRequestRemovedVariant0PullRequestLabelsItem.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPullRequestReviewRequestRemovedVariant0PullRequestLabelsItem(
+        color: (json['color'] as String?)!,
+        default_: (json['default'] as bool?)!,
+        description: json.containsKey('description')
+            ? json['description'] as String?
+            : throw ArgumentError.value(
+                null, 'description', 'Required property is missing'),
+        id: ((json['id'] as num?)?.toInt())!,
+        name: (json['name'] as String?)!,
+        nodeId: (json['node_id'] as String?)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'color': color,
-    'default': default_,
-    'description': description,
-    'id': id,
-    'name': name,
-    'node_id': nodeId,
-    'url': url,
-  };
+        'color': color,
+        'default': default_,
+        'description': description,
+        'id': id,
+        'name': name,
+        'node_id': nodeId,
+        'url': url,
+      };
 }
 
 class WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItemParent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Description of the team
   final String? description;
   final String htmlUrl;
+
   /// Unique identifier of the team
   final int id;
   final String membersUrl;
+
   /// Name of the team
   final String name;
   final String nodeId;
+
   /// Permission that the team will have for its repositories
   final String permission;
-  final WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItemParentPrivacy privacy;
+  final WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItemParentPrivacy
+      privacy;
   final String repositoriesUrl;
   final String slug;
+
   /// URL for the team
   final String url;
 
-  const WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItemParent({required this.description, required this.htmlUrl, required this.id, required this.membersUrl, required this.name, required this.nodeId, required this.permission, required this.privacy, required this.repositoriesUrl, required this.slug, required this.url});
+  const WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItemParent(
+      {required this.description,
+      required this.htmlUrl,
+      required this.id,
+      required this.membersUrl,
+      required this.name,
+      required this.nodeId,
+      required this.permission,
+      required this.privacy,
+      required this.repositoriesUrl,
+      required this.slug,
+      required this.url});
 
-  WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItemParent Function({String? description, String htmlUrl, int id, String membersUrl, String name, String nodeId, String permission, WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItemParentPrivacy privacy, String repositoriesUrl, String slug, String url}) get copyWith => _copyWith;
+  WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItemParent Function(
+      {String? description,
+      String htmlUrl,
+      int id,
+      String membersUrl,
+      String name,
+      String nodeId,
+      String permission,
+      WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItemParentPrivacy
+          privacy,
+      String repositoriesUrl,
+      String slug,
+      String url}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItemParent _copyWith({Object? description = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? id = sdkOmittedValue, Object? membersUrl = sdkOmittedValue, Object? name = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? permission = sdkOmittedValue, Object? privacy = sdkOmittedValue, Object? repositoriesUrl = sdkOmittedValue, Object? slug = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItemParent(
-    description: identical(description, sdkOmittedValue) ? this.description : description as String?,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    membersUrl: identical(membersUrl, sdkOmittedValue) ? this.membersUrl : membersUrl as String,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    permission: identical(permission, sdkOmittedValue) ? this.permission : permission as String,
-    privacy: identical(privacy, sdkOmittedValue) ? this.privacy : privacy as WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItemParentPrivacy,
-    repositoriesUrl: identical(repositoriesUrl, sdkOmittedValue) ? this.repositoriesUrl : repositoriesUrl as String,
-    slug: identical(slug, sdkOmittedValue) ? this.slug : slug as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItemParent
+      _copyWith(
+              {Object? description = sdkOmittedValue,
+              Object? htmlUrl = sdkOmittedValue,
+              Object? id = sdkOmittedValue,
+              Object? membersUrl = sdkOmittedValue,
+              Object? name = sdkOmittedValue,
+              Object? nodeId = sdkOmittedValue,
+              Object? permission = sdkOmittedValue,
+              Object? privacy = sdkOmittedValue,
+              Object? repositoriesUrl = sdkOmittedValue,
+              Object? slug = sdkOmittedValue,
+              Object? url = sdkOmittedValue}) =>
+          WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItemParent(
+            description: identical(description, sdkOmittedValue)
+                ? this.description
+                : description as String?,
+            htmlUrl: identical(htmlUrl, sdkOmittedValue)
+                ? this.htmlUrl
+                : htmlUrl as String,
+            id: identical(id, sdkOmittedValue) ? this.id : id as int,
+            membersUrl: identical(membersUrl, sdkOmittedValue)
+                ? this.membersUrl
+                : membersUrl as String,
+            name: identical(name, sdkOmittedValue) ? this.name : name as String,
+            nodeId: identical(nodeId, sdkOmittedValue)
+                ? this.nodeId
+                : nodeId as String,
+            permission: identical(permission, sdkOmittedValue)
+                ? this.permission
+                : permission as String,
+            privacy: identical(privacy, sdkOmittedValue)
+                ? this.privacy
+                : privacy
+                    as WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItemParentPrivacy,
+            repositoriesUrl: identical(repositoriesUrl, sdkOmittedValue)
+                ? this.repositoriesUrl
+                : repositoriesUrl as String,
+            slug: identical(slug, sdkOmittedValue) ? this.slug : slug as String,
+            url: identical(url, sdkOmittedValue) ? this.url : url as String,
+          );
 
-  factory WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItemParent.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItemParent(
-    description: json.containsKey('description') ? json['description'] as String? : throw ArgumentError.value(null, 'description', 'Required property is missing'),
-    htmlUrl: (json['html_url'] as String?)!,
-    id: ((json['id'] as num?)?.toInt())!,
-    membersUrl: (json['members_url'] as String?)!,
-    name: (json['name'] as String?)!,
-    nodeId: (json['node_id'] as String?)!,
-    permission: (json['permission'] as String?)!,
-    privacy: (json['privacy'] != null ? WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItemParentPrivacy.fromJson(json['privacy'] as String) : null)!,
-    repositoriesUrl: (json['repositories_url'] as String?)!,
-    slug: (json['slug'] as String?)!,
-    url: (json['url'] as String?)!,
-  );
+  factory WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItemParent.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItemParent(
+        description: json.containsKey('description')
+            ? json['description'] as String?
+            : throw ArgumentError.value(
+                null, 'description', 'Required property is missing'),
+        htmlUrl: (json['html_url'] as String?)!,
+        id: ((json['id'] as num?)?.toInt())!,
+        membersUrl: (json['members_url'] as String?)!,
+        name: (json['name'] as String?)!,
+        nodeId: (json['node_id'] as String?)!,
+        permission: (json['permission'] as String?)!,
+        privacy: (json['privacy'] != null
+            ? WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItemParentPrivacy
+                .fromJson(json['privacy'] as String)
+            : null)!,
+        repositoriesUrl: (json['repositories_url'] as String?)!,
+        slug: (json['slug'] as String?)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'description': description,
-    'html_url': htmlUrl,
-    'id': id,
-    'members_url': membersUrl,
-    'name': name,
-    'node_id': nodeId,
-    'permission': permission,
-    'privacy': privacy.toJson(),
-    'repositories_url': repositoriesUrl,
-    'slug': slug,
-    'url': url,
-  };
+        'description': description,
+        'html_url': htmlUrl,
+        'id': id,
+        'members_url': membersUrl,
+        'name': name,
+        'node_id': nodeId,
+        'permission': permission,
+        'privacy': privacy.toJson(),
+        'repositories_url': repositoriesUrl,
+        'slug': slug,
+        'url': url,
+      };
 }
 
 /// Groups of organization members that gives permissions on specified repositories.
@@ -125,79 +225,174 @@ class WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsIte
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   final SdkOptional<bool> deleted;
+
   /// Description of the team
   final String? description;
   final String htmlUrl;
+
   /// Unique identifier of the team
   final int id;
   final String membersUrl;
+
   /// Name of the team
   final String name;
   final String nodeId;
-  final SdkOptional<WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItemParent?> parent;
+  final SdkOptional<
+          WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItemParent?>
+      parent;
+
   /// Permission that the team will have for its repositories
   final String permission;
-  final WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItemPrivacy privacy;
+  final WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItemPrivacy
+      privacy;
   final String repositoriesUrl;
   final String slug;
+
   /// URL for the team
   final String url;
 
-  const WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItem({this.deleted = const SdkOmitted(), required this.description, required this.htmlUrl, required this.id, required this.membersUrl, required this.name, required this.nodeId, this.parent = const SdkOmitted(), required this.permission, required this.privacy, required this.repositoriesUrl, required this.slug, required this.url});
+  const WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItem(
+      {this.deleted = const SdkOmitted(),
+      required this.description,
+      required this.htmlUrl,
+      required this.id,
+      required this.membersUrl,
+      required this.name,
+      required this.nodeId,
+      this.parent = const SdkOmitted(),
+      required this.permission,
+      required this.privacy,
+      required this.repositoriesUrl,
+      required this.slug,
+      required this.url});
 
-  WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItem Function({SdkOptional<bool> deleted, String? description, String htmlUrl, int id, String membersUrl, String name, String nodeId, SdkOptional<WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItemParent?> parent, String permission, WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItemPrivacy privacy, String repositoriesUrl, String slug, String url}) get copyWith => _copyWith;
+  WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItem Function(
+      {SdkOptional<bool> deleted,
+      String? description,
+      String htmlUrl,
+      int id,
+      String membersUrl,
+      String name,
+      String nodeId,
+      SdkOptional<
+              WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItemParent?>
+          parent,
+      String permission,
+      WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItemPrivacy
+          privacy,
+      String repositoriesUrl,
+      String slug,
+      String url}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItem _copyWith({Object? deleted = sdkOmittedValue, Object? description = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? id = sdkOmittedValue, Object? membersUrl = sdkOmittedValue, Object? name = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? parent = sdkOmittedValue, Object? permission = sdkOmittedValue, Object? privacy = sdkOmittedValue, Object? repositoriesUrl = sdkOmittedValue, Object? slug = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItem(
-    deleted: identical(deleted, sdkOmittedValue) ? this.deleted : deleted as SdkOptional<bool>,
-    description: identical(description, sdkOmittedValue) ? this.description : description as String?,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    membersUrl: identical(membersUrl, sdkOmittedValue) ? this.membersUrl : membersUrl as String,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    parent: identical(parent, sdkOmittedValue) ? this.parent : parent as SdkOptional<WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItemParent?>,
-    permission: identical(permission, sdkOmittedValue) ? this.permission : permission as String,
-    privacy: identical(privacy, sdkOmittedValue) ? this.privacy : privacy as WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItemPrivacy,
-    repositoriesUrl: identical(repositoriesUrl, sdkOmittedValue) ? this.repositoriesUrl : repositoriesUrl as String,
-    slug: identical(slug, sdkOmittedValue) ? this.slug : slug as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItem
+      _copyWith(
+              {Object? deleted = sdkOmittedValue,
+              Object? description = sdkOmittedValue,
+              Object? htmlUrl = sdkOmittedValue,
+              Object? id = sdkOmittedValue,
+              Object? membersUrl = sdkOmittedValue,
+              Object? name = sdkOmittedValue,
+              Object? nodeId = sdkOmittedValue,
+              Object? parent = sdkOmittedValue,
+              Object? permission = sdkOmittedValue,
+              Object? privacy = sdkOmittedValue,
+              Object? repositoriesUrl = sdkOmittedValue,
+              Object? slug = sdkOmittedValue,
+              Object? url = sdkOmittedValue}) =>
+          WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItem(
+            deleted: identical(deleted, sdkOmittedValue)
+                ? this.deleted
+                : deleted as SdkOptional<bool>,
+            description: identical(description, sdkOmittedValue)
+                ? this.description
+                : description as String?,
+            htmlUrl: identical(htmlUrl, sdkOmittedValue)
+                ? this.htmlUrl
+                : htmlUrl as String,
+            id: identical(id, sdkOmittedValue) ? this.id : id as int,
+            membersUrl: identical(membersUrl, sdkOmittedValue)
+                ? this.membersUrl
+                : membersUrl as String,
+            name: identical(name, sdkOmittedValue) ? this.name : name as String,
+            nodeId: identical(nodeId, sdkOmittedValue)
+                ? this.nodeId
+                : nodeId as String,
+            parent: identical(parent, sdkOmittedValue)
+                ? this.parent
+                : parent as SdkOptional<
+                    WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItemParent?>,
+            permission: identical(permission, sdkOmittedValue)
+                ? this.permission
+                : permission as String,
+            privacy: identical(privacy, sdkOmittedValue)
+                ? this.privacy
+                : privacy
+                    as WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItemPrivacy,
+            repositoriesUrl: identical(repositoriesUrl, sdkOmittedValue)
+                ? this.repositoriesUrl
+                : repositoriesUrl as String,
+            slug: identical(slug, sdkOmittedValue) ? this.slug : slug as String,
+            url: identical(url, sdkOmittedValue) ? this.url : url as String,
+          );
 
-  factory WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItem.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItem(
-    deleted: json['deleted'] != null ? SdkPresent((json['deleted'] as bool?)!) : const SdkOmitted(),
-    description: json.containsKey('description') ? json['description'] as String? : throw ArgumentError.value(null, 'description', 'Required property is missing'),
-    htmlUrl: (json['html_url'] as String?)!,
-    id: ((json['id'] as num?)?.toInt())!,
-    membersUrl: (json['members_url'] as String?)!,
-    name: (json['name'] as String?)!,
-    nodeId: (json['node_id'] as String?)!,
-    parent: json.containsKey('parent') ? SdkPresent(json['parent'] != null ? WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItemParent.fromJson(json['parent'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-    permission: (json['permission'] as String?)!,
-    privacy: (json['privacy'] != null ? WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItemPrivacy.fromJson(json['privacy'] as String) : null)!,
-    repositoriesUrl: (json['repositories_url'] as String?)!,
-    slug: (json['slug'] as String?)!,
-    url: (json['url'] as String?)!,
-  );
+  factory WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItem.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItem(
+        deleted: json['deleted'] != null
+            ? SdkPresent((json['deleted'] as bool?)!)
+            : const SdkOmitted(),
+        description: json.containsKey('description')
+            ? json['description'] as String?
+            : throw ArgumentError.value(
+                null, 'description', 'Required property is missing'),
+        htmlUrl: (json['html_url'] as String?)!,
+        id: ((json['id'] as num?)?.toInt())!,
+        membersUrl: (json['members_url'] as String?)!,
+        name: (json['name'] as String?)!,
+        nodeId: (json['node_id'] as String?)!,
+        parent: json.containsKey('parent')
+            ? SdkPresent(json['parent'] != null
+                ? WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItemParent
+                    .fromJson(json['parent'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        permission: (json['permission'] as String?)!,
+        privacy: (json['privacy'] != null
+            ? WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItemPrivacy
+                .fromJson(json['privacy'] as String)
+            : null)!,
+        repositoriesUrl: (json['repositories_url'] as String?)!,
+        slug: (json['slug'] as String?)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (deleted) {
-      SdkPresent<bool>(value: final value) => {'deleted': value,},
-      _ => const <String, dynamic>{},
-    },
-    'description': description,
-    'html_url': htmlUrl,
-    'id': id,
-    'members_url': membersUrl,
-    'name': name,
-    'node_id': nodeId,
-    ...switch (parent) {
-      SdkPresent<WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItemParent?>(value: final value) => {'parent': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'permission': permission,
-    'privacy': privacy.toJson(),
-    'repositories_url': repositoriesUrl,
-    'slug': slug,
-    'url': url,
-  };
+        ...switch (deleted) {
+          SdkPresent<bool>(value: final value) => {
+              'deleted': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'description': description,
+        'html_url': htmlUrl,
+        'id': id,
+        'members_url': membersUrl,
+        'name': name,
+        'node_id': nodeId,
+        ...switch (parent) {
+          SdkPresent<
+                WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItemParent?>(
+            value: final value
+          ) =>
+            {
+              'parent': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'permission': permission,
+        'privacy': privacy.toJson(),
+        'repositories_url': repositoriesUrl,
+        'slug': slug,
+        'url': url,
+      };
 }

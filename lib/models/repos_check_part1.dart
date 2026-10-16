@@ -8,56 +8,79 @@ part of 'repos_check.dart';
 class CheckAutomatedSecurityFixes {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Whether Dependabot security updates are enabled for the repository.
   final bool enabled;
+
   /// Whether Dependabot security updates are paused for the repository.
   final bool paused;
 
-  const CheckAutomatedSecurityFixes({required this.enabled, required this.paused});
+  const CheckAutomatedSecurityFixes(
+      {required this.enabled, required this.paused});
 
-  CheckAutomatedSecurityFixes Function({bool enabled, bool paused}) get copyWith => _copyWith;
+  CheckAutomatedSecurityFixes Function({bool enabled, bool paused})
+      get copyWith => _copyWith;
 
-  CheckAutomatedSecurityFixes _copyWith({Object? enabled = sdkOmittedValue, Object? paused = sdkOmittedValue}) => CheckAutomatedSecurityFixes(
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as bool,
-    paused: identical(paused, sdkOmittedValue) ? this.paused : paused as bool,
-  );
+  CheckAutomatedSecurityFixes _copyWith(
+          {Object? enabled = sdkOmittedValue,
+          Object? paused = sdkOmittedValue}) =>
+      CheckAutomatedSecurityFixes(
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as bool,
+        paused:
+            identical(paused, sdkOmittedValue) ? this.paused : paused as bool,
+      );
 
-  factory CheckAutomatedSecurityFixes.fromJson(Map<String, dynamic> json) => CheckAutomatedSecurityFixes(
-    enabled: (json['enabled'] as bool?)!,
-    paused: (json['paused'] as bool?)!,
-  );
+  factory CheckAutomatedSecurityFixes.fromJson(Map<String, dynamic> json) =>
+      CheckAutomatedSecurityFixes(
+        enabled: (json['enabled'] as bool?)!,
+        paused: (json['paused'] as bool?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'enabled': enabled,
-    'paused': paused,
-  };
+        'enabled': enabled,
+        'paused': paused,
+      };
 }
 
 /// Check immutable releases
 class CheckImmutableReleases {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Whether immutable releases are enabled for the repository.
   final bool enabled;
+
   /// Whether immutable releases are enforced by the repository owner.
   final bool enforcedByOwner;
 
-  const CheckImmutableReleases({required this.enabled, required this.enforcedByOwner});
+  const CheckImmutableReleases(
+      {required this.enabled, required this.enforcedByOwner});
 
-  CheckImmutableReleases Function({bool enabled, bool enforcedByOwner}) get copyWith => _copyWith;
+  CheckImmutableReleases Function({bool enabled, bool enforcedByOwner})
+      get copyWith => _copyWith;
 
-  CheckImmutableReleases _copyWith({Object? enabled = sdkOmittedValue, Object? enforcedByOwner = sdkOmittedValue}) => CheckImmutableReleases(
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as bool,
-    enforcedByOwner: identical(enforcedByOwner, sdkOmittedValue) ? this.enforcedByOwner : enforcedByOwner as bool,
-  );
+  CheckImmutableReleases _copyWith(
+          {Object? enabled = sdkOmittedValue,
+          Object? enforcedByOwner = sdkOmittedValue}) =>
+      CheckImmutableReleases(
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as bool,
+        enforcedByOwner: identical(enforcedByOwner, sdkOmittedValue)
+            ? this.enforcedByOwner
+            : enforcedByOwner as bool,
+      );
 
-  factory CheckImmutableReleases.fromJson(Map<String, dynamic> json) => CheckImmutableReleases(
-    enabled: (json['enabled'] as bool?)!,
-    enforcedByOwner: (json['enforced_by_owner'] as bool?)!,
-  );
+  factory CheckImmutableReleases.fromJson(Map<String, dynamic> json) =>
+      CheckImmutableReleases(
+        enabled: (json['enabled'] as bool?)!,
+        enforcedByOwner: (json['enforced_by_owner'] as bool?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'enabled': enabled,
-    'enforced_by_owner': enforcedByOwner,
-  };
+        'enabled': enabled,
+        'enforced_by_owner': enforcedByOwner,
+      };
 }

@@ -7,165 +7,276 @@ part of 'inline.dart';
 class OrgsExternalPropertiesForReposRegisterOrganizationAppInstallationRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The unique identifier of the GitHub App installation to register for managing external custom properties. When authenticating as a GitHub App installation, this defaults to the authenticated installation and can be omitted. It is required for all other callers (users and fine-grained personal access tokens).
   final SdkOptional<int> installationId;
+
   /// The display name for this app installation's external custom properties in the organization. Must be 1 to 15 characters and contain only letters and numbers. Capitalization is preserved as entered. This can't be changed after the app installation is registered.
   final String displayName;
 
-  const OrgsExternalPropertiesForReposRegisterOrganizationAppInstallationRequestBody({this.installationId = const SdkOmitted(), required this.displayName});
+  const OrgsExternalPropertiesForReposRegisterOrganizationAppInstallationRequestBody(
+      {this.installationId = const SdkOmitted(), required this.displayName});
 
-  OrgsExternalPropertiesForReposRegisterOrganizationAppInstallationRequestBody Function({SdkOptional<int> installationId, String displayName}) get copyWith => _copyWith;
+  OrgsExternalPropertiesForReposRegisterOrganizationAppInstallationRequestBody
+          Function({SdkOptional<int> installationId, String displayName})
+      get copyWith => _copyWith;
 
-  OrgsExternalPropertiesForReposRegisterOrganizationAppInstallationRequestBody _copyWith({Object? installationId = sdkOmittedValue, Object? displayName = sdkOmittedValue}) => OrgsExternalPropertiesForReposRegisterOrganizationAppInstallationRequestBody(
-    installationId: identical(installationId, sdkOmittedValue) ? this.installationId : installationId as SdkOptional<int>,
-    displayName: identical(displayName, sdkOmittedValue) ? this.displayName : displayName as String,
-  );
+  OrgsExternalPropertiesForReposRegisterOrganizationAppInstallationRequestBody
+      _copyWith(
+              {Object? installationId = sdkOmittedValue,
+              Object? displayName = sdkOmittedValue}) =>
+          OrgsExternalPropertiesForReposRegisterOrganizationAppInstallationRequestBody(
+            installationId: identical(installationId, sdkOmittedValue)
+                ? this.installationId
+                : installationId as SdkOptional<int>,
+            displayName: identical(displayName, sdkOmittedValue)
+                ? this.displayName
+                : displayName as String,
+          );
 
-  factory OrgsExternalPropertiesForReposRegisterOrganizationAppInstallationRequestBody.fromJson(Map<String, dynamic> json) => OrgsExternalPropertiesForReposRegisterOrganizationAppInstallationRequestBody(
-    installationId: json['installation_id'] != null ? SdkPresent(((json['installation_id'] as num?)?.toInt())!) : const SdkOmitted(),
-    displayName: (json['display_name'] as String?)!,
-  );
+  factory OrgsExternalPropertiesForReposRegisterOrganizationAppInstallationRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      OrgsExternalPropertiesForReposRegisterOrganizationAppInstallationRequestBody(
+        installationId: json['installation_id'] != null
+            ? SdkPresent(((json['installation_id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        displayName: (json['display_name'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (installationId) {
-      SdkPresent<int>(value: final value) => {'installation_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    'display_name': displayName,
-  };
+        ...switch (installationId) {
+          SdkPresent<int>(value: final value) => {
+              'installation_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'display_name': displayName,
+      };
 }
 
 class OrgsExternalPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The names of repositories that the external custom property values will be applied to.
   final List<String> repositoryNames;
+
   /// List of external custom property names and associated values to apply to the repositories.
   final List<CustomPropertyValue> properties;
 
-  const OrgsExternalPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody({required this.repositoryNames, required this.properties});
+  const OrgsExternalPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody(
+      {required this.repositoryNames, required this.properties});
 
-  OrgsExternalPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody Function({List<String> repositoryNames, List<CustomPropertyValue> properties}) get copyWith => _copyWith;
+  OrgsExternalPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody Function(
+      {List<String> repositoryNames,
+      List<CustomPropertyValue> properties}) get copyWith => _copyWith;
 
-  OrgsExternalPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody _copyWith({Object? repositoryNames = sdkOmittedValue, Object? properties = sdkOmittedValue}) => OrgsExternalPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody(
-    repositoryNames: identical(repositoryNames, sdkOmittedValue) ? this.repositoryNames : repositoryNames as List<String>,
-    properties: identical(properties, sdkOmittedValue) ? this.properties : properties as List<CustomPropertyValue>,
-  );
+  OrgsExternalPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody
+      _copyWith(
+              {Object? repositoryNames = sdkOmittedValue,
+              Object? properties = sdkOmittedValue}) =>
+          OrgsExternalPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody(
+            repositoryNames: identical(repositoryNames, sdkOmittedValue)
+                ? this.repositoryNames
+                : repositoryNames as List<String>,
+            properties: identical(properties, sdkOmittedValue)
+                ? this.properties
+                : properties as List<CustomPropertyValue>,
+          );
 
-  factory OrgsExternalPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody.fromJson(Map<String, dynamic> json) => OrgsExternalPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody(
-    repositoryNames: ((json['repository_names'] as List?)?.map((e) => e as String).toList())!,
-    properties: ((json['properties'] as List?)?.map((e) => CustomPropertyValue.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+  factory OrgsExternalPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      OrgsExternalPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody(
+        repositoryNames: ((json['repository_names'] as List?)
+            ?.map((e) => e as String)
+            .toList())!,
+        properties: ((json['properties'] as List?)
+            ?.map(
+                (e) => CustomPropertyValue.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'repository_names': repositoryNames,
-    'properties': properties.map((item) => item.toJson()).toList(),
-  };
+        'repository_names': repositoryNames,
+        'properties': properties.map((item) => item.toJson()).toList(),
+      };
 }
 
 class OrgsExternalPropertiesForReposCreateOrUpdateValuesForOrganizationPropertyRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The names of repositories and the values that the named external custom property will be set to.
   final List<RepositoryExternalPropertyPayload> repositoryValues;
 
-  const OrgsExternalPropertiesForReposCreateOrUpdateValuesForOrganizationPropertyRequestBody({required this.repositoryValues});
+  const OrgsExternalPropertiesForReposCreateOrUpdateValuesForOrganizationPropertyRequestBody(
+      {required this.repositoryValues});
 
-  OrgsExternalPropertiesForReposCreateOrUpdateValuesForOrganizationPropertyRequestBody Function({List<RepositoryExternalPropertyPayload> repositoryValues}) get copyWith => _copyWith;
+  OrgsExternalPropertiesForReposCreateOrUpdateValuesForOrganizationPropertyRequestBody
+          Function({List<RepositoryExternalPropertyPayload> repositoryValues})
+      get copyWith => _copyWith;
 
-  OrgsExternalPropertiesForReposCreateOrUpdateValuesForOrganizationPropertyRequestBody _copyWith({Object? repositoryValues = sdkOmittedValue}) => OrgsExternalPropertiesForReposCreateOrUpdateValuesForOrganizationPropertyRequestBody(
-    repositoryValues: identical(repositoryValues, sdkOmittedValue) ? this.repositoryValues : repositoryValues as List<RepositoryExternalPropertyPayload>,
-  );
+  OrgsExternalPropertiesForReposCreateOrUpdateValuesForOrganizationPropertyRequestBody
+      _copyWith({Object? repositoryValues = sdkOmittedValue}) =>
+          OrgsExternalPropertiesForReposCreateOrUpdateValuesForOrganizationPropertyRequestBody(
+            repositoryValues: identical(repositoryValues, sdkOmittedValue)
+                ? this.repositoryValues
+                : repositoryValues as List<RepositoryExternalPropertyPayload>,
+          );
 
-  factory OrgsExternalPropertiesForReposCreateOrUpdateValuesForOrganizationPropertyRequestBody.fromJson(Map<String, dynamic> json) => OrgsExternalPropertiesForReposCreateOrUpdateValuesForOrganizationPropertyRequestBody(
-    repositoryValues: ((json['repository_values'] as List?)?.map((e) => RepositoryExternalPropertyPayload.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+  factory OrgsExternalPropertiesForReposCreateOrUpdateValuesForOrganizationPropertyRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      OrgsExternalPropertiesForReposCreateOrUpdateValuesForOrganizationPropertyRequestBody(
+        repositoryValues: ((json['repository_values'] as List?)
+            ?.map((e) => RepositoryExternalPropertyPayload.fromJson(
+                e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'repository_values': repositoryValues.map((item) => item.toJson()).toList(),
-  };
+        'repository_values':
+            repositoryValues.map((item) => item.toJson()).toList(),
+      };
 }
 
 class OrgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitionsRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The array of custom properties to create or update.
   final List<CustomProperty> properties;
 
-  const OrgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitionsRequestBody({required this.properties});
+  const OrgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitionsRequestBody(
+      {required this.properties});
 
-  OrgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitionsRequestBody Function({List<CustomProperty> properties}) get copyWith => _copyWith;
+  OrgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitionsRequestBody
+      Function({List<CustomProperty> properties}) get copyWith => _copyWith;
 
-  OrgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitionsRequestBody _copyWith({Object? properties = sdkOmittedValue}) => OrgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitionsRequestBody(
-    properties: identical(properties, sdkOmittedValue) ? this.properties : properties as List<CustomProperty>,
-  );
+  OrgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitionsRequestBody
+      _copyWith({Object? properties = sdkOmittedValue}) =>
+          OrgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitionsRequestBody(
+            properties: identical(properties, sdkOmittedValue)
+                ? this.properties
+                : properties as List<CustomProperty>,
+          );
 
-  factory OrgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitionsRequestBody.fromJson(Map<String, dynamic> json) => OrgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitionsRequestBody(
-    properties: ((json['properties'] as List?)?.map((e) => CustomProperty.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+  factory OrgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitionsRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      OrgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitionsRequestBody(
+        properties: ((json['properties'] as List?)
+            ?.map((e) => CustomProperty.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'properties': properties.map((item) => item.toJson()).toList(),
-  };
+        'properties': properties.map((item) => item.toJson()).toList(),
+      };
 }
 
 class OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The names of repositories that the custom property values will be applied to.
   final List<String> repositoryNames;
+
   /// List of custom property names and associated values to apply to the repositories.
   final List<CustomPropertyValue> properties;
 
-  const OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody({required this.repositoryNames, required this.properties});
+  const OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody(
+      {required this.repositoryNames, required this.properties});
 
-  OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody Function({List<String> repositoryNames, List<CustomPropertyValue> properties}) get copyWith => _copyWith;
+  OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody Function(
+      {List<String> repositoryNames,
+      List<CustomPropertyValue> properties}) get copyWith => _copyWith;
 
-  OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody _copyWith({Object? repositoryNames = sdkOmittedValue, Object? properties = sdkOmittedValue}) => OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody(
-    repositoryNames: identical(repositoryNames, sdkOmittedValue) ? this.repositoryNames : repositoryNames as List<String>,
-    properties: identical(properties, sdkOmittedValue) ? this.properties : properties as List<CustomPropertyValue>,
-  );
+  OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody
+      _copyWith(
+              {Object? repositoryNames = sdkOmittedValue,
+              Object? properties = sdkOmittedValue}) =>
+          OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody(
+            repositoryNames: identical(repositoryNames, sdkOmittedValue)
+                ? this.repositoryNames
+                : repositoryNames as List<String>,
+            properties: identical(properties, sdkOmittedValue)
+                ? this.properties
+                : properties as List<CustomPropertyValue>,
+          );
 
-  factory OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody.fromJson(Map<String, dynamic> json) => OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody(
-    repositoryNames: ((json['repository_names'] as List?)?.map((e) => e as String).toList())!,
-    properties: ((json['properties'] as List?)?.map((e) => CustomPropertyValue.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+  factory OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody(
+        repositoryNames: ((json['repository_names'] as List?)
+            ?.map((e) => e as String)
+            .toList())!,
+        properties: ((json['properties'] as List?)
+            ?.map(
+                (e) => CustomPropertyValue.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'repository_names': repositoryNames,
-    'properties': properties.map((item) => item.toJson()).toList(),
-  };
+        'repository_names': repositoryNames,
+        'properties': properties.map((item) => item.toJson()).toList(),
+      };
 }
 
 class OrgsSetImmutableReleasesSettingsRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The policy that controls how immutable releases are enforced in the organization.
-  final OrgsSetImmutableReleasesSettingsRequestBodyEnforcedRepositories enforcedRepositories;
+  final OrgsSetImmutableReleasesSettingsRequestBodyEnforcedRepositories
+      enforcedRepositories;
+
   /// An array of repository ids for which immutable releases enforcement should be applied. You can only provide a list of repository ids when the `enforced_repositories` is set to `selected`. You can add and remove individual repositories using the [Enable a selected repository for immutable releases in an organization](https://docs.github.com/rest/orgs/orgs#enable-a-selected-repository-for-immutable-releases-in-an-organization) and [Disable a selected repository for immutable releases in an organization](https://docs.github.com/rest/orgs/orgs#disable-a-selected-repository-for-immutable-releases-in-an-organization) endpoints.
   final SdkOptional<List<int>> selectedRepositoryIds;
 
-  const OrgsSetImmutableReleasesSettingsRequestBody({required this.enforcedRepositories, this.selectedRepositoryIds = const SdkOmitted()});
+  const OrgsSetImmutableReleasesSettingsRequestBody(
+      {required this.enforcedRepositories,
+      this.selectedRepositoryIds = const SdkOmitted()});
 
-  OrgsSetImmutableReleasesSettingsRequestBody Function({OrgsSetImmutableReleasesSettingsRequestBodyEnforcedRepositories enforcedRepositories, SdkOptional<List<int>> selectedRepositoryIds}) get copyWith => _copyWith;
+  OrgsSetImmutableReleasesSettingsRequestBody Function(
+      {OrgsSetImmutableReleasesSettingsRequestBodyEnforcedRepositories
+          enforcedRepositories,
+      SdkOptional<List<int>> selectedRepositoryIds}) get copyWith => _copyWith;
 
-  OrgsSetImmutableReleasesSettingsRequestBody _copyWith({Object? enforcedRepositories = sdkOmittedValue, Object? selectedRepositoryIds = sdkOmittedValue}) => OrgsSetImmutableReleasesSettingsRequestBody(
-    enforcedRepositories: identical(enforcedRepositories, sdkOmittedValue) ? this.enforcedRepositories : enforcedRepositories as OrgsSetImmutableReleasesSettingsRequestBodyEnforcedRepositories,
-    selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue) ? this.selectedRepositoryIds : selectedRepositoryIds as SdkOptional<List<int>>,
-  );
+  OrgsSetImmutableReleasesSettingsRequestBody _copyWith(
+          {Object? enforcedRepositories = sdkOmittedValue,
+          Object? selectedRepositoryIds = sdkOmittedValue}) =>
+      OrgsSetImmutableReleasesSettingsRequestBody(
+        enforcedRepositories: identical(enforcedRepositories, sdkOmittedValue)
+            ? this.enforcedRepositories
+            : enforcedRepositories
+                as OrgsSetImmutableReleasesSettingsRequestBodyEnforcedRepositories,
+        selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue)
+            ? this.selectedRepositoryIds
+            : selectedRepositoryIds as SdkOptional<List<int>>,
+      );
 
-  factory OrgsSetImmutableReleasesSettingsRequestBody.fromJson(Map<String, dynamic> json) => OrgsSetImmutableReleasesSettingsRequestBody(
-    enforcedRepositories: (json['enforced_repositories'] != null ? OrgsSetImmutableReleasesSettingsRequestBodyEnforcedRepositories.fromJson(json['enforced_repositories'] as String) : null)!,
-    selectedRepositoryIds: json['selected_repository_ids'] != null ? SdkPresent(((json['selected_repository_ids'] as List?)?.map((e) => (e as num).toInt()).toList())!) : const SdkOmitted(),
-  );
+  factory OrgsSetImmutableReleasesSettingsRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      OrgsSetImmutableReleasesSettingsRequestBody(
+        enforcedRepositories: (json['enforced_repositories'] != null
+            ? OrgsSetImmutableReleasesSettingsRequestBodyEnforcedRepositories
+                .fromJson(json['enforced_repositories'] as String)
+            : null)!,
+        selectedRepositoryIds: json['selected_repository_ids'] != null
+            ? SdkPresent(((json['selected_repository_ids'] as List?)
+                ?.map((e) => (e as num).toInt())
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'enforced_repositories': enforcedRepositories.toJson(),
-    ...switch (selectedRepositoryIds) {
-      SdkPresent<List<int>>(value: final value) => {'selected_repository_ids': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'enforced_repositories': enforcedRepositories.toJson(),
+        ...switch (selectedRepositoryIds) {
+          SdkPresent<List<int>>(value: final value) => {
+              'selected_repository_ids': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class OrgsGetImmutableReleasesSettingsRepositoriesResponse {
@@ -174,102 +285,165 @@ class OrgsGetImmutableReleasesSettingsRepositoriesResponse {
   final int totalCount;
   final List<MinimalRepository> repositories;
 
-  const OrgsGetImmutableReleasesSettingsRepositoriesResponse({required this.totalCount, required this.repositories});
+  const OrgsGetImmutableReleasesSettingsRepositoriesResponse(
+      {required this.totalCount, required this.repositories});
 
-  OrgsGetImmutableReleasesSettingsRepositoriesResponse Function({int totalCount, List<MinimalRepository> repositories}) get copyWith => _copyWith;
+  OrgsGetImmutableReleasesSettingsRepositoriesResponse Function(
+      {int totalCount,
+      List<MinimalRepository> repositories}) get copyWith => _copyWith;
 
-  OrgsGetImmutableReleasesSettingsRepositoriesResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? repositories = sdkOmittedValue}) => OrgsGetImmutableReleasesSettingsRepositoriesResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    repositories: identical(repositories, sdkOmittedValue) ? this.repositories : repositories as List<MinimalRepository>,
-  );
+  OrgsGetImmutableReleasesSettingsRepositoriesResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? repositories = sdkOmittedValue}) =>
+      OrgsGetImmutableReleasesSettingsRepositoriesResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        repositories: identical(repositories, sdkOmittedValue)
+            ? this.repositories
+            : repositories as List<MinimalRepository>,
+      );
 
-  factory OrgsGetImmutableReleasesSettingsRepositoriesResponse.fromJson(Map<String, dynamic> json) => OrgsGetImmutableReleasesSettingsRepositoriesResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    repositories: ((json['repositories'] as List?)?.map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+  factory OrgsGetImmutableReleasesSettingsRepositoriesResponse.fromJson(
+          Map<String, dynamic> json) =>
+      OrgsGetImmutableReleasesSettingsRepositoriesResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        repositories: ((json['repositories'] as List?)
+            ?.map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'repositories': repositories.map((item) => item.toJson()).toList(),
-  };
+        'total_count': totalCount,
+        'repositories': repositories.map((item) => item.toJson()).toList(),
+      };
 }
 
 class OrgsSetImmutableReleasesSettingsRepositoriesRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// An array of repository ids for which immutable releases enforcement should be applied. You can only provide a list of repository ids when the `enforced_repositories` is set to `selected`. You can add and remove individual repositories using the [Enable a selected repository for immutable releases in an organization](https://docs.github.com/rest/orgs/orgs#enable-a-selected-repository-for-immutable-releases-in-an-organization) and [Disable a selected repository for immutable releases in an organization](https://docs.github.com/rest/orgs/orgs#disable-a-selected-repository-for-immutable-releases-in-an-organization) endpoints.
   final List<int> selectedRepositoryIds;
 
-  const OrgsSetImmutableReleasesSettingsRepositoriesRequestBody({required this.selectedRepositoryIds});
+  const OrgsSetImmutableReleasesSettingsRepositoriesRequestBody(
+      {required this.selectedRepositoryIds});
 
-  OrgsSetImmutableReleasesSettingsRepositoriesRequestBody Function({List<int> selectedRepositoryIds}) get copyWith => _copyWith;
+  OrgsSetImmutableReleasesSettingsRepositoriesRequestBody Function(
+      {List<int> selectedRepositoryIds}) get copyWith => _copyWith;
 
-  OrgsSetImmutableReleasesSettingsRepositoriesRequestBody _copyWith({Object? selectedRepositoryIds = sdkOmittedValue}) => OrgsSetImmutableReleasesSettingsRepositoriesRequestBody(
-    selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue) ? this.selectedRepositoryIds : selectedRepositoryIds as List<int>,
-  );
+  OrgsSetImmutableReleasesSettingsRepositoriesRequestBody _copyWith(
+          {Object? selectedRepositoryIds = sdkOmittedValue}) =>
+      OrgsSetImmutableReleasesSettingsRepositoriesRequestBody(
+        selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue)
+            ? this.selectedRepositoryIds
+            : selectedRepositoryIds as List<int>,
+      );
 
-  factory OrgsSetImmutableReleasesSettingsRepositoriesRequestBody.fromJson(Map<String, dynamic> json) => OrgsSetImmutableReleasesSettingsRepositoriesRequestBody(
-    selectedRepositoryIds: ((json['selected_repository_ids'] as List?)?.map((e) => (e as num).toInt()).toList())!,
-  );
+  factory OrgsSetImmutableReleasesSettingsRepositoriesRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      OrgsSetImmutableReleasesSettingsRepositoriesRequestBody(
+        selectedRepositoryIds: ((json['selected_repository_ids'] as List?)
+            ?.map((e) => (e as num).toInt())
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'selected_repository_ids': selectedRepositoryIds,
-  };
+        'selected_repository_ids': selectedRepositoryIds,
+      };
 }
 
 class OrgsUpdateMembershipForAuthenticatedUserRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The state that the membership should be in. Only `"active"` will be accepted.
   final OrgsUpdateMembershipForAuthenticatedUserRequestBodyState state;
 
-  const OrgsUpdateMembershipForAuthenticatedUserRequestBody({required this.state});
+  const OrgsUpdateMembershipForAuthenticatedUserRequestBody(
+      {required this.state});
 
-  OrgsUpdateMembershipForAuthenticatedUserRequestBody Function({OrgsUpdateMembershipForAuthenticatedUserRequestBodyState state}) get copyWith => _copyWith;
+  OrgsUpdateMembershipForAuthenticatedUserRequestBody Function(
+          {OrgsUpdateMembershipForAuthenticatedUserRequestBodyState state})
+      get copyWith => _copyWith;
 
-  OrgsUpdateMembershipForAuthenticatedUserRequestBody _copyWith({Object? state = sdkOmittedValue}) => OrgsUpdateMembershipForAuthenticatedUserRequestBody(
-    state: identical(state, sdkOmittedValue) ? this.state : state as OrgsUpdateMembershipForAuthenticatedUserRequestBodyState,
-  );
+  OrgsUpdateMembershipForAuthenticatedUserRequestBody _copyWith(
+          {Object? state = sdkOmittedValue}) =>
+      OrgsUpdateMembershipForAuthenticatedUserRequestBody(
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state as OrgsUpdateMembershipForAuthenticatedUserRequestBodyState,
+      );
 
-  factory OrgsUpdateMembershipForAuthenticatedUserRequestBody.fromJson(Map<String, dynamic> json) => OrgsUpdateMembershipForAuthenticatedUserRequestBody(
-    state: (json['state'] != null ? OrgsUpdateMembershipForAuthenticatedUserRequestBodyState.fromJson(json['state'] as String) : null)!,
-  );
+  factory OrgsUpdateMembershipForAuthenticatedUserRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      OrgsUpdateMembershipForAuthenticatedUserRequestBody(
+        state: (json['state'] != null
+            ? OrgsUpdateMembershipForAuthenticatedUserRequestBodyState.fromJson(
+                json['state'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'state': state.toJson(),
-  };
+        'state': state.toJson(),
+      };
 }
 
 class BillingCreateOrganizationBudgetRequestBodyBudgetAlerting {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Whether alerts are enabled for this budget. Rejected for user-scope as alerting is always disabled for them.
   final SdkOptional<bool> willAlert;
+
   /// Array of user login names who will receive alerts. Rejected for user-scope as alerting is always disabled for them.
   final SdkOptional<List<String>> alertRecipients;
 
-  const BillingCreateOrganizationBudgetRequestBodyBudgetAlerting({this.willAlert = const SdkOmitted(), this.alertRecipients = const SdkOmitted()});
+  const BillingCreateOrganizationBudgetRequestBodyBudgetAlerting(
+      {this.willAlert = const SdkOmitted(),
+      this.alertRecipients = const SdkOmitted()});
 
-  BillingCreateOrganizationBudgetRequestBodyBudgetAlerting Function({SdkOptional<bool> willAlert, SdkOptional<List<String>> alertRecipients}) get copyWith => _copyWith;
+  BillingCreateOrganizationBudgetRequestBodyBudgetAlerting Function(
+      {SdkOptional<bool> willAlert,
+      SdkOptional<List<String>> alertRecipients}) get copyWith => _copyWith;
 
-  BillingCreateOrganizationBudgetRequestBodyBudgetAlerting _copyWith({Object? willAlert = sdkOmittedValue, Object? alertRecipients = sdkOmittedValue}) => BillingCreateOrganizationBudgetRequestBodyBudgetAlerting(
-    willAlert: identical(willAlert, sdkOmittedValue) ? this.willAlert : willAlert as SdkOptional<bool>,
-    alertRecipients: identical(alertRecipients, sdkOmittedValue) ? this.alertRecipients : alertRecipients as SdkOptional<List<String>>,
-  );
+  BillingCreateOrganizationBudgetRequestBodyBudgetAlerting _copyWith(
+          {Object? willAlert = sdkOmittedValue,
+          Object? alertRecipients = sdkOmittedValue}) =>
+      BillingCreateOrganizationBudgetRequestBodyBudgetAlerting(
+        willAlert: identical(willAlert, sdkOmittedValue)
+            ? this.willAlert
+            : willAlert as SdkOptional<bool>,
+        alertRecipients: identical(alertRecipients, sdkOmittedValue)
+            ? this.alertRecipients
+            : alertRecipients as SdkOptional<List<String>>,
+      );
 
-  factory BillingCreateOrganizationBudgetRequestBodyBudgetAlerting.fromJson(Map<String, dynamic> json) => BillingCreateOrganizationBudgetRequestBodyBudgetAlerting(
-    willAlert: json['will_alert'] != null ? SdkPresent((json['will_alert'] as bool?)!) : const SdkOmitted(),
-    alertRecipients: json['alert_recipients'] != null ? SdkPresent(((json['alert_recipients'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-  );
+  factory BillingCreateOrganizationBudgetRequestBodyBudgetAlerting.fromJson(
+          Map<String, dynamic> json) =>
+      BillingCreateOrganizationBudgetRequestBodyBudgetAlerting(
+        willAlert: json['will_alert'] != null
+            ? SdkPresent((json['will_alert'] as bool?)!)
+            : const SdkOmitted(),
+        alertRecipients: json['alert_recipients'] != null
+            ? SdkPresent(((json['alert_recipients'] as List?)
+                ?.map((e) => e as String)
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (willAlert) {
-      SdkPresent<bool>(value: final value) => {'will_alert': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (alertRecipients) {
-      SdkPresent<List<String>>(value: final value) => {'alert_recipients': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (willAlert) {
+          SdkPresent<bool>(value: final value) => {
+              'will_alert': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (alertRecipients) {
+          SdkPresent<List<String>>(value: final value) => {
+              'alert_recipients': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

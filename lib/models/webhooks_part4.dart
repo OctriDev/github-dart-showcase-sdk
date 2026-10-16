@@ -8,85 +8,178 @@ part of 'webhooks.dart';
 class WebhooksAnswer {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// How the author is associated with the repository.
   final WebhooksAnswerAuthorAssociation authorAssociation;
+
   /// Required `string` value serialized in the `body` wire field.
   final String body;
+
   /// Required `integer` value serialized in the `child_comment_count` wire field.
   final int childCommentCount;
+
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String createdAt;
+
   /// Required `integer` value serialized in the `discussion_id` wire field.
   final int discussionId;
+
   /// Required `string` value serialized in the `html_url` wire field.
   final String htmlUrl;
+
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// Required API value serialized in the `parent_id` wire field.
   final dynamic parentId;
+
   /// Optional object value serialized in the `reactions` wire field.
   final SdkOptional<WebhooksAnswerReactions> reactions;
+
   /// Required `string` value serialized in the `repository_url` wire field.
   final String repositoryUrl;
+
   /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
   final String updatedAt;
+
   /// Required object value serialized in the `user` wire field.
   final WebhooksAnswerUser? user;
 
-  const WebhooksAnswer({required this.authorAssociation, required this.body, required this.childCommentCount, required this.createdAt, required this.discussionId, required this.htmlUrl, required this.id, required this.nodeId, required this.parentId, this.reactions = const SdkOmitted(), required this.repositoryUrl, required this.updatedAt, required this.user});
+  const WebhooksAnswer(
+      {required this.authorAssociation,
+      required this.body,
+      required this.childCommentCount,
+      required this.createdAt,
+      required this.discussionId,
+      required this.htmlUrl,
+      required this.id,
+      required this.nodeId,
+      required this.parentId,
+      this.reactions = const SdkOmitted(),
+      required this.repositoryUrl,
+      required this.updatedAt,
+      required this.user});
 
-  WebhooksAnswer Function({WebhooksAnswerAuthorAssociation authorAssociation, String body, int childCommentCount, String createdAt, int discussionId, String htmlUrl, int id, String nodeId, dynamic parentId, SdkOptional<WebhooksAnswerReactions> reactions, String repositoryUrl, String updatedAt, WebhooksAnswerUser? user}) get copyWith => _copyWith;
+  WebhooksAnswer Function(
+      {WebhooksAnswerAuthorAssociation authorAssociation,
+      String body,
+      int childCommentCount,
+      String createdAt,
+      int discussionId,
+      String htmlUrl,
+      int id,
+      String nodeId,
+      dynamic parentId,
+      SdkOptional<WebhooksAnswerReactions> reactions,
+      String repositoryUrl,
+      String updatedAt,
+      WebhooksAnswerUser? user}) get copyWith => _copyWith;
 
-  WebhooksAnswer _copyWith({Object? authorAssociation = sdkOmittedValue, Object? body = sdkOmittedValue, Object? childCommentCount = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? discussionId = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? parentId = sdkOmittedValue, Object? reactions = sdkOmittedValue, Object? repositoryUrl = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? user = sdkOmittedValue}) => WebhooksAnswer(
-    authorAssociation: identical(authorAssociation, sdkOmittedValue) ? this.authorAssociation : authorAssociation as WebhooksAnswerAuthorAssociation,
-    body: identical(body, sdkOmittedValue) ? this.body : body as String,
-    childCommentCount: identical(childCommentCount, sdkOmittedValue) ? this.childCommentCount : childCommentCount as int,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    discussionId: identical(discussionId, sdkOmittedValue) ? this.discussionId : discussionId as int,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    parentId: identical(parentId, sdkOmittedValue) ? this.parentId : parentId as dynamic,
-    reactions: identical(reactions, sdkOmittedValue) ? this.reactions : reactions as SdkOptional<WebhooksAnswerReactions>,
-    repositoryUrl: identical(repositoryUrl, sdkOmittedValue) ? this.repositoryUrl : repositoryUrl as String,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
-    user: identical(user, sdkOmittedValue) ? this.user : user as WebhooksAnswerUser?,
-  );
+  WebhooksAnswer _copyWith(
+          {Object? authorAssociation = sdkOmittedValue,
+          Object? body = sdkOmittedValue,
+          Object? childCommentCount = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? discussionId = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? parentId = sdkOmittedValue,
+          Object? reactions = sdkOmittedValue,
+          Object? repositoryUrl = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? user = sdkOmittedValue}) =>
+      WebhooksAnswer(
+        authorAssociation: identical(authorAssociation, sdkOmittedValue)
+            ? this.authorAssociation
+            : authorAssociation as WebhooksAnswerAuthorAssociation,
+        body: identical(body, sdkOmittedValue) ? this.body : body as String,
+        childCommentCount: identical(childCommentCount, sdkOmittedValue)
+            ? this.childCommentCount
+            : childCommentCount as int,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        discussionId: identical(discussionId, sdkOmittedValue)
+            ? this.discussionId
+            : discussionId as int,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        parentId: identical(parentId, sdkOmittedValue)
+            ? this.parentId
+            : parentId as dynamic,
+        reactions: identical(reactions, sdkOmittedValue)
+            ? this.reactions
+            : reactions as SdkOptional<WebhooksAnswerReactions>,
+        repositoryUrl: identical(repositoryUrl, sdkOmittedValue)
+            ? this.repositoryUrl
+            : repositoryUrl as String,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+        user: identical(user, sdkOmittedValue)
+            ? this.user
+            : user as WebhooksAnswerUser?,
+      );
 
   factory WebhooksAnswer.fromJson(Map<String, dynamic> json) => WebhooksAnswer(
-    authorAssociation: (json['author_association'] != null ? WebhooksAnswerAuthorAssociation.fromJson(json['author_association'] as String) : null)!,
-    body: (json['body'] as String?)!,
-    childCommentCount: ((json['child_comment_count'] as num?)?.toInt())!,
-    createdAt: (json['created_at'] as String?)!,
-    discussionId: ((json['discussion_id'] as num?)?.toInt())!,
-    htmlUrl: (json['html_url'] as String?)!,
-    id: ((json['id'] as num?)?.toInt())!,
-    nodeId: (json['node_id'] as String?)!,
-    parentId: json.containsKey('parent_id') ? json['parent_id'] : throw ArgumentError.value(null, 'parent_id', 'Required property is missing'),
-    reactions: json['reactions'] != null ? SdkPresent((json['reactions'] != null ? WebhooksAnswerReactions.fromJson(json['reactions'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    repositoryUrl: (json['repository_url'] as String?)!,
-    updatedAt: (json['updated_at'] as String?)!,
-    user: json.containsKey('user') ? json['user'] != null ? WebhooksAnswerUser.fromJson(json['user'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'user', 'Required property is missing'),
-  );
+        authorAssociation: (json['author_association'] != null
+            ? WebhooksAnswerAuthorAssociation.fromJson(
+                json['author_association'] as String)
+            : null)!,
+        body: (json['body'] as String?)!,
+        childCommentCount: ((json['child_comment_count'] as num?)?.toInt())!,
+        createdAt: (json['created_at'] as String?)!,
+        discussionId: ((json['discussion_id'] as num?)?.toInt())!,
+        htmlUrl: (json['html_url'] as String?)!,
+        id: ((json['id'] as num?)?.toInt())!,
+        nodeId: (json['node_id'] as String?)!,
+        parentId: json.containsKey('parent_id')
+            ? json['parent_id']
+            : throw ArgumentError.value(
+                null, 'parent_id', 'Required property is missing'),
+        reactions: json['reactions'] != null
+            ? SdkPresent((json['reactions'] != null
+                ? WebhooksAnswerReactions.fromJson(
+                    json['reactions'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        repositoryUrl: (json['repository_url'] as String?)!,
+        updatedAt: (json['updated_at'] as String?)!,
+        user: json.containsKey('user')
+            ? json['user'] != null
+                ? WebhooksAnswerUser.fromJson(
+                    json['user'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'user', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'author_association': authorAssociation.toJson(),
-    'body': body,
-    'child_comment_count': childCommentCount,
-    'created_at': createdAt,
-    'discussion_id': discussionId,
-    'html_url': htmlUrl,
-    'id': id,
-    'node_id': nodeId,
-    'parent_id': parentId,
-    ...switch (reactions) {
-      SdkPresent<WebhooksAnswerReactions>(value: final value) => {'reactions': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'repository_url': repositoryUrl,
-    'updated_at': updatedAt,
-    'user': user?.toJson(),
-  };
+        'author_association': authorAssociation.toJson(),
+        'body': body,
+        'child_comment_count': childCommentCount,
+        'created_at': createdAt,
+        'discussion_id': discussionId,
+        'html_url': htmlUrl,
+        'id': id,
+        'node_id': nodeId,
+        'parent_id': parentId,
+        ...switch (reactions) {
+          SdkPresent<WebhooksAnswerReactions>(value: final value) => {
+              'reactions': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'repository_url': repositoryUrl,
+        'updated_at': updatedAt,
+        'user': user?.toJson(),
+      };
 }

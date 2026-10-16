@@ -8,61 +8,86 @@ part of 'agent_tasks.dart';
 class ArtifactsItemDataVariant0 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// GitHub resource ID
   final int id;
+
   /// GraphQL global ID
   final SdkOptional<String> globalId;
 
-  const ArtifactsItemDataVariant0({required this.id, this.globalId = const SdkOmitted()});
+  const ArtifactsItemDataVariant0(
+      {required this.id, this.globalId = const SdkOmitted()});
 
-  ArtifactsItemDataVariant0 Function({int id, SdkOptional<String> globalId}) get copyWith => _copyWith;
+  ArtifactsItemDataVariant0 Function({int id, SdkOptional<String> globalId})
+      get copyWith => _copyWith;
 
-  ArtifactsItemDataVariant0 _copyWith({Object? id = sdkOmittedValue, Object? globalId = sdkOmittedValue}) => ArtifactsItemDataVariant0(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    globalId: identical(globalId, sdkOmittedValue) ? this.globalId : globalId as SdkOptional<String>,
-  );
+  ArtifactsItemDataVariant0 _copyWith(
+          {Object? id = sdkOmittedValue, Object? globalId = sdkOmittedValue}) =>
+      ArtifactsItemDataVariant0(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        globalId: identical(globalId, sdkOmittedValue)
+            ? this.globalId
+            : globalId as SdkOptional<String>,
+      );
 
-  factory ArtifactsItemDataVariant0.fromJson(Map<String, dynamic> json) => ArtifactsItemDataVariant0(
-    id: ((json['id'] as num?)?.toInt())!,
-    globalId: json['global_id'] != null ? SdkPresent((json['global_id'] as String?)!) : const SdkOmitted(),
-  );
+  factory ArtifactsItemDataVariant0.fromJson(Map<String, dynamic> json) =>
+      ArtifactsItemDataVariant0(
+        id: ((json['id'] as num?)?.toInt())!,
+        globalId: json['global_id'] != null
+            ? SdkPresent((json['global_id'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    ...switch (globalId) {
-      SdkPresent<String>(value: final value) => {'global_id': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'id': id,
+        ...switch (globalId) {
+          SdkPresent<String>(value: final value) => {
+              'global_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// A Git branch reference
 class ArtifactsItemDataVariant1 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Head branch name
   final String headRef;
+
   /// Base branch name
   final String baseRef;
 
-  const ArtifactsItemDataVariant1({required this.headRef, required this.baseRef});
+  const ArtifactsItemDataVariant1(
+      {required this.headRef, required this.baseRef});
 
-  ArtifactsItemDataVariant1 Function({String headRef, String baseRef}) get copyWith => _copyWith;
+  ArtifactsItemDataVariant1 Function({String headRef, String baseRef})
+      get copyWith => _copyWith;
 
-  ArtifactsItemDataVariant1 _copyWith({Object? headRef = sdkOmittedValue, Object? baseRef = sdkOmittedValue}) => ArtifactsItemDataVariant1(
-    headRef: identical(headRef, sdkOmittedValue) ? this.headRef : headRef as String,
-    baseRef: identical(baseRef, sdkOmittedValue) ? this.baseRef : baseRef as String,
-  );
+  ArtifactsItemDataVariant1 _copyWith(
+          {Object? headRef = sdkOmittedValue,
+          Object? baseRef = sdkOmittedValue}) =>
+      ArtifactsItemDataVariant1(
+        headRef: identical(headRef, sdkOmittedValue)
+            ? this.headRef
+            : headRef as String,
+        baseRef: identical(baseRef, sdkOmittedValue)
+            ? this.baseRef
+            : baseRef as String,
+      );
 
-  factory ArtifactsItemDataVariant1.fromJson(Map<String, dynamic> json) => ArtifactsItemDataVariant1(
-    headRef: (json['head_ref'] as String?)!,
-    baseRef: (json['base_ref'] as String?)!,
-  );
+  factory ArtifactsItemDataVariant1.fromJson(Map<String, dynamic> json) =>
+      ArtifactsItemDataVariant1(
+        headRef: (json['head_ref'] as String?)!,
+        baseRef: (json['base_ref'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'head_ref': headRef,
-    'base_ref': baseRef,
-  };
+        'head_ref': headRef,
+        'base_ref': baseRef,
+      };
 }
 
 sealed class ArtifactsItemData {
@@ -70,84 +95,119 @@ sealed class ArtifactsItemData {
   static const String constructionSurface = 'named';
   const ArtifactsItemData();
   factory ArtifactsItemData.fromJson(Object? json) {
-    try { return ArtifactsItemDataArtifactsItemDataVariant0(ArtifactsItemDataVariant0.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return ArtifactsItemDataArtifactsItemDataVariant1(ArtifactsItemDataVariant1.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try {
+      return ArtifactsItemDataArtifactsItemDataVariant0(
+          ArtifactsItemDataVariant0.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return ArtifactsItemDataArtifactsItemDataVariant1(
+          ArtifactsItemDataVariant1.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
     throw FormatException("No variant matched for ArtifactsItemData");
   }
   Object? toJson();
 }
 
-final class ArtifactsItemDataArtifactsItemDataVariant0 extends ArtifactsItemData {
+final class ArtifactsItemDataArtifactsItemDataVariant0
+    extends ArtifactsItemData {
   final ArtifactsItemDataVariant0 value;
   const ArtifactsItemDataArtifactsItemDataVariant0(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class ArtifactsItemDataArtifactsItemDataVariant1 extends ArtifactsItemData {
+final class ArtifactsItemDataArtifactsItemDataVariant1
+    extends ArtifactsItemData {
   final ArtifactsItemDataVariant1 value;
   const ArtifactsItemDataArtifactsItemDataVariant1(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A GitHub resource (pull request, issue, etc.)
 class ArtifactsItemData2Variant0 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// GitHub resource ID
   final int id;
+
   /// GraphQL global ID
   final SdkOptional<String> globalId;
 
-  const ArtifactsItemData2Variant0({required this.id, this.globalId = const SdkOmitted()});
+  const ArtifactsItemData2Variant0(
+      {required this.id, this.globalId = const SdkOmitted()});
 
-  ArtifactsItemData2Variant0 Function({int id, SdkOptional<String> globalId}) get copyWith => _copyWith;
+  ArtifactsItemData2Variant0 Function({int id, SdkOptional<String> globalId})
+      get copyWith => _copyWith;
 
-  ArtifactsItemData2Variant0 _copyWith({Object? id = sdkOmittedValue, Object? globalId = sdkOmittedValue}) => ArtifactsItemData2Variant0(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    globalId: identical(globalId, sdkOmittedValue) ? this.globalId : globalId as SdkOptional<String>,
-  );
+  ArtifactsItemData2Variant0 _copyWith(
+          {Object? id = sdkOmittedValue, Object? globalId = sdkOmittedValue}) =>
+      ArtifactsItemData2Variant0(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        globalId: identical(globalId, sdkOmittedValue)
+            ? this.globalId
+            : globalId as SdkOptional<String>,
+      );
 
-  factory ArtifactsItemData2Variant0.fromJson(Map<String, dynamic> json) => ArtifactsItemData2Variant0(
-    id: ((json['id'] as num?)?.toInt())!,
-    globalId: json['global_id'] != null ? SdkPresent((json['global_id'] as String?)!) : const SdkOmitted(),
-  );
+  factory ArtifactsItemData2Variant0.fromJson(Map<String, dynamic> json) =>
+      ArtifactsItemData2Variant0(
+        id: ((json['id'] as num?)?.toInt())!,
+        globalId: json['global_id'] != null
+            ? SdkPresent((json['global_id'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    ...switch (globalId) {
-      SdkPresent<String>(value: final value) => {'global_id': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'id': id,
+        ...switch (globalId) {
+          SdkPresent<String>(value: final value) => {
+              'global_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// A Git branch reference
 class ArtifactsItemData2Variant1 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Head branch name
   final String headRef;
+
   /// Base branch name
   final String baseRef;
 
-  const ArtifactsItemData2Variant1({required this.headRef, required this.baseRef});
+  const ArtifactsItemData2Variant1(
+      {required this.headRef, required this.baseRef});
 
-  ArtifactsItemData2Variant1 Function({String headRef, String baseRef}) get copyWith => _copyWith;
+  ArtifactsItemData2Variant1 Function({String headRef, String baseRef})
+      get copyWith => _copyWith;
 
-  ArtifactsItemData2Variant1 _copyWith({Object? headRef = sdkOmittedValue, Object? baseRef = sdkOmittedValue}) => ArtifactsItemData2Variant1(
-    headRef: identical(headRef, sdkOmittedValue) ? this.headRef : headRef as String,
-    baseRef: identical(baseRef, sdkOmittedValue) ? this.baseRef : baseRef as String,
-  );
+  ArtifactsItemData2Variant1 _copyWith(
+          {Object? headRef = sdkOmittedValue,
+          Object? baseRef = sdkOmittedValue}) =>
+      ArtifactsItemData2Variant1(
+        headRef: identical(headRef, sdkOmittedValue)
+            ? this.headRef
+            : headRef as String,
+        baseRef: identical(baseRef, sdkOmittedValue)
+            ? this.baseRef
+            : baseRef as String,
+      );
 
-  factory ArtifactsItemData2Variant1.fromJson(Map<String, dynamic> json) => ArtifactsItemData2Variant1(
-    headRef: (json['head_ref'] as String?)!,
-    baseRef: (json['base_ref'] as String?)!,
-  );
+  factory ArtifactsItemData2Variant1.fromJson(Map<String, dynamic> json) =>
+      ArtifactsItemData2Variant1(
+        headRef: (json['head_ref'] as String?)!,
+        baseRef: (json['base_ref'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'head_ref': headRef,
-    'base_ref': baseRef,
-  };
+        'head_ref': headRef,
+        'base_ref': baseRef,
+      };
 }
 
 sealed class ArtifactsItemData2 {
@@ -155,84 +215,119 @@ sealed class ArtifactsItemData2 {
   static const String constructionSurface = 'named';
   const ArtifactsItemData2();
   factory ArtifactsItemData2.fromJson(Object? json) {
-    try { return ArtifactsItemData2ArtifactsItemData2Variant0(ArtifactsItemData2Variant0.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return ArtifactsItemData2ArtifactsItemData2Variant1(ArtifactsItemData2Variant1.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try {
+      return ArtifactsItemData2ArtifactsItemData2Variant0(
+          ArtifactsItemData2Variant0.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return ArtifactsItemData2ArtifactsItemData2Variant1(
+          ArtifactsItemData2Variant1.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
     throw FormatException("No variant matched for ArtifactsItemData2");
   }
   Object? toJson();
 }
 
-final class ArtifactsItemData2ArtifactsItemData2Variant0 extends ArtifactsItemData2 {
+final class ArtifactsItemData2ArtifactsItemData2Variant0
+    extends ArtifactsItemData2 {
   final ArtifactsItemData2Variant0 value;
   const ArtifactsItemData2ArtifactsItemData2Variant0(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class ArtifactsItemData2ArtifactsItemData2Variant1 extends ArtifactsItemData2 {
+final class ArtifactsItemData2ArtifactsItemData2Variant1
+    extends ArtifactsItemData2 {
   final ArtifactsItemData2Variant1 value;
   const ArtifactsItemData2ArtifactsItemData2Variant1(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A GitHub resource (pull request, issue, etc.)
 class ArtifactsItemData3Variant0 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// GitHub resource ID
   final int id;
+
   /// GraphQL global ID
   final SdkOptional<String> globalId;
 
-  const ArtifactsItemData3Variant0({required this.id, this.globalId = const SdkOmitted()});
+  const ArtifactsItemData3Variant0(
+      {required this.id, this.globalId = const SdkOmitted()});
 
-  ArtifactsItemData3Variant0 Function({int id, SdkOptional<String> globalId}) get copyWith => _copyWith;
+  ArtifactsItemData3Variant0 Function({int id, SdkOptional<String> globalId})
+      get copyWith => _copyWith;
 
-  ArtifactsItemData3Variant0 _copyWith({Object? id = sdkOmittedValue, Object? globalId = sdkOmittedValue}) => ArtifactsItemData3Variant0(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    globalId: identical(globalId, sdkOmittedValue) ? this.globalId : globalId as SdkOptional<String>,
-  );
+  ArtifactsItemData3Variant0 _copyWith(
+          {Object? id = sdkOmittedValue, Object? globalId = sdkOmittedValue}) =>
+      ArtifactsItemData3Variant0(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        globalId: identical(globalId, sdkOmittedValue)
+            ? this.globalId
+            : globalId as SdkOptional<String>,
+      );
 
-  factory ArtifactsItemData3Variant0.fromJson(Map<String, dynamic> json) => ArtifactsItemData3Variant0(
-    id: ((json['id'] as num?)?.toInt())!,
-    globalId: json['global_id'] != null ? SdkPresent((json['global_id'] as String?)!) : const SdkOmitted(),
-  );
+  factory ArtifactsItemData3Variant0.fromJson(Map<String, dynamic> json) =>
+      ArtifactsItemData3Variant0(
+        id: ((json['id'] as num?)?.toInt())!,
+        globalId: json['global_id'] != null
+            ? SdkPresent((json['global_id'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    ...switch (globalId) {
-      SdkPresent<String>(value: final value) => {'global_id': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'id': id,
+        ...switch (globalId) {
+          SdkPresent<String>(value: final value) => {
+              'global_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// A Git branch reference
 class ArtifactsItemData3Variant1 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Head branch name
   final String headRef;
+
   /// Base branch name
   final String baseRef;
 
-  const ArtifactsItemData3Variant1({required this.headRef, required this.baseRef});
+  const ArtifactsItemData3Variant1(
+      {required this.headRef, required this.baseRef});
 
-  ArtifactsItemData3Variant1 Function({String headRef, String baseRef}) get copyWith => _copyWith;
+  ArtifactsItemData3Variant1 Function({String headRef, String baseRef})
+      get copyWith => _copyWith;
 
-  ArtifactsItemData3Variant1 _copyWith({Object? headRef = sdkOmittedValue, Object? baseRef = sdkOmittedValue}) => ArtifactsItemData3Variant1(
-    headRef: identical(headRef, sdkOmittedValue) ? this.headRef : headRef as String,
-    baseRef: identical(baseRef, sdkOmittedValue) ? this.baseRef : baseRef as String,
-  );
+  ArtifactsItemData3Variant1 _copyWith(
+          {Object? headRef = sdkOmittedValue,
+          Object? baseRef = sdkOmittedValue}) =>
+      ArtifactsItemData3Variant1(
+        headRef: identical(headRef, sdkOmittedValue)
+            ? this.headRef
+            : headRef as String,
+        baseRef: identical(baseRef, sdkOmittedValue)
+            ? this.baseRef
+            : baseRef as String,
+      );
 
-  factory ArtifactsItemData3Variant1.fromJson(Map<String, dynamic> json) => ArtifactsItemData3Variant1(
-    headRef: (json['head_ref'] as String?)!,
-    baseRef: (json['base_ref'] as String?)!,
-  );
+  factory ArtifactsItemData3Variant1.fromJson(Map<String, dynamic> json) =>
+      ArtifactsItemData3Variant1(
+        headRef: (json['head_ref'] as String?)!,
+        baseRef: (json['base_ref'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'head_ref': headRef,
-    'base_ref': baseRef,
-  };
+        'head_ref': headRef,
+        'base_ref': baseRef,
+      };
 }
 
 sealed class ArtifactsItemData3 {
@@ -240,21 +335,31 @@ sealed class ArtifactsItemData3 {
   static const String constructionSurface = 'named';
   const ArtifactsItemData3();
   factory ArtifactsItemData3.fromJson(Object? json) {
-    try { return ArtifactsItemData3ArtifactsItemData3Variant0(ArtifactsItemData3Variant0.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return ArtifactsItemData3ArtifactsItemData3Variant1(ArtifactsItemData3Variant1.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try {
+      return ArtifactsItemData3ArtifactsItemData3Variant0(
+          ArtifactsItemData3Variant0.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return ArtifactsItemData3ArtifactsItemData3Variant1(
+          ArtifactsItemData3Variant1.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
     throw FormatException("No variant matched for ArtifactsItemData3");
   }
   Object? toJson();
 }
 
-final class ArtifactsItemData3ArtifactsItemData3Variant0 extends ArtifactsItemData3 {
+final class ArtifactsItemData3ArtifactsItemData3Variant0
+    extends ArtifactsItemData3 {
   final ArtifactsItemData3Variant0 value;
   const ArtifactsItemData3ArtifactsItemData3Variant0(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class ArtifactsItemData3ArtifactsItemData3Variant1 extends ArtifactsItemData3 {
+final class ArtifactsItemData3ArtifactsItemData3Variant1
+    extends ArtifactsItemData3 {
   final ArtifactsItemData3Variant1 value;
   const ArtifactsItemData3ArtifactsItemData3Variant1(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }

@@ -18,27 +18,38 @@ import '../types.dart';
 ///   determined. This parameter expects the format `{base}...{head}`.
 /// [name] The full path, relative to the repository root, of the dependency
 ///   manifest file.
-Future<List<DependencyGraphDiffItem>>
-    dependencyGraphDiffRange(ClientConfig config,
-        {required String owner,
-        required String repo,
-        required String basehead,
-        SdkOptional<String> name = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<List<DependencyGraphDiffItem>> dependencyGraphDiffRange(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    required String basehead,
+    SdkOptional<String> name = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<DependencyGraphDiffItem>>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/dependency-graph/compare/${Uri.encodeComponent(basehead.toString())}',
           config: config,
           query: {
-            'name': SdkQueryValue(SdkUtils.unwrapOptional(name), style: 'form', explode: true)
+            'name': SdkQueryValue(SdkUtils.unwrapOptional(name),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'dependencyGraphDiffRange',
-          fromJsonRaw: (value) => (value as List).map((item) => DependencyGraphDiffItem.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => DependencyGraphDiffItem.fromJson(
+                  item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// &gt; [!WARNING] &gt; **Closing down notice:** This operation is closing down and will not be accessible after November 13, 2026. Please migrate to the asynchronous flow. Use "[Request generation of a software bill of materials (SBOM) for a repository](https://docs.github.com/rest/dependency-graph/sboms#request-generation-of-a-software-bill-of-materials-sbom-for-a-repository)" to trigger the report, then "[Fetch a software bill of materials (SBOM) for a repository](https://docs.github.com/rest/dependency-graph/sboms#fetch-a-software-bill-of-materials-sbom-for-a-repository)" to retrieve it. For more information, see the [changelog](https://github.blog/changelog/2026-05-12-synchronous-sbom-api-deprecated/). Exports the software bill of materials (SBOM) for a repository in SPDX JSON format.
 ///
@@ -56,12 +67,15 @@ Future<DependencyGraphSpdxSbom> dependencyGraphExportSbom(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'dependencyGraphExportSbom',
-          fromJsonRaw: (value) => DependencyGraphSpdxSbom.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              DependencyGraphSpdxSbom.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Fetches a previously generated software bill of materials (SBOM) for a repository. When the SBOM is ready, the response is a 302 redirect to a temporary download URL for the SBOM in SPDX JSON format. The generated SBOM report may be retained for up to one week from the original request. The temporary download URL returned by this endpoint expires separately, and its expiry is set when the fetch request is made.
 ///
@@ -80,10 +94,12 @@ Future<void> dependencyGraphFetchSbomReport(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'dependencyGraphFetchSbomReport',
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Triggers a job to generate a software bill of materials (SBOM) for a repository in SPDX JSON format.
 ///
@@ -100,12 +116,16 @@ Future<DependencyGraphGenerateSbomReportResponse>
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'dependencyGraphGenerateSbomReport',
-          fromJsonRaw: (value) => DependencyGraphGenerateSbomReportResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              DependencyGraphGenerateSbomReportResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Creates a dependency snapshot for a repository, recording the dependencies detected at a specific commit and ref. Supply the required `detector`, `version`, `ref`, `sha`, `job`, and `scanned` fields; `ref` must begin with `refs/`, and `sha` must be 40–64 characters. Add `manifests` and up to eight scalar-valued `metadata` entries when you need to include dependency details or domain-specific information.
 ///
@@ -143,7 +163,8 @@ Future<DependencyGraphCreateRepositorySnapshotResponse>
   sdkValidatePattern('ref', ref, '^refs/');
   sdkValidateDateTime('scanned', scanned);
 
-  return (await sdkRequest<DependencyGraphCreateRepositorySnapshotResponse>('POST',
+  return (await sdkRequest<DependencyGraphCreateRepositorySnapshotResponse>(
+          'POST',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/dependency-graph/snapshots',
           config: config,
           body: {
@@ -158,7 +179,9 @@ Future<DependencyGraphCreateRepositorySnapshotResponse>
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'dependencyGraphCreateRepositorySnapshot',
-          fromJsonRaw: (value) => DependencyGraphCreateRepositorySnapshotResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              DependencyGraphCreateRepositorySnapshotResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

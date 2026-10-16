@@ -8,276 +8,474 @@ part of 'repos_repository_rule.dart';
 class RepositoryRuleFilePathRestriction {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final RepositoryRuleFilePathRestrictionType type_;
+
   /// Optional object value serialized in the `parameters` wire field.
   final SdkOptional<RepositoryRuleFilePathRestrictionParameters> parameters;
 
-  const RepositoryRuleFilePathRestriction({required this.type_, this.parameters = const SdkOmitted()});
+  const RepositoryRuleFilePathRestriction(
+      {required this.type_, this.parameters = const SdkOmitted()});
 
-  RepositoryRuleFilePathRestriction Function({RepositoryRuleFilePathRestrictionType type_, SdkOptional<RepositoryRuleFilePathRestrictionParameters> parameters}) get copyWith => _copyWith;
+  RepositoryRuleFilePathRestriction Function(
+          {RepositoryRuleFilePathRestrictionType type_,
+          SdkOptional<RepositoryRuleFilePathRestrictionParameters> parameters})
+      get copyWith => _copyWith;
 
-  RepositoryRuleFilePathRestriction _copyWith({Object? type_ = sdkOmittedValue, Object? parameters = sdkOmittedValue}) => RepositoryRuleFilePathRestriction(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RepositoryRuleFilePathRestrictionType,
-    parameters: identical(parameters, sdkOmittedValue) ? this.parameters : parameters as SdkOptional<RepositoryRuleFilePathRestrictionParameters>,
-  );
+  RepositoryRuleFilePathRestriction _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? parameters = sdkOmittedValue}) =>
+      RepositoryRuleFilePathRestriction(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as RepositoryRuleFilePathRestrictionType,
+        parameters: identical(parameters, sdkOmittedValue)
+            ? this.parameters
+            : parameters
+                as SdkOptional<RepositoryRuleFilePathRestrictionParameters>,
+      );
 
-  factory RepositoryRuleFilePathRestriction.fromJson(Map<String, dynamic> json) => RepositoryRuleFilePathRestriction(
-    type_: (json['type'] != null ? RepositoryRuleFilePathRestrictionType.fromJson(json['type'] as String) : null)!,
-    parameters: json['parameters'] != null ? SdkPresent((json['parameters'] != null ? RepositoryRuleFilePathRestrictionParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-  );
+  factory RepositoryRuleFilePathRestriction.fromJson(
+          Map<String, dynamic> json) =>
+      RepositoryRuleFilePathRestriction(
+        type_: (json['type'] != null
+            ? RepositoryRuleFilePathRestrictionType.fromJson(
+                json['type'] as String)
+            : null)!,
+        parameters: json['parameters'] != null
+            ? SdkPresent((json['parameters'] != null
+                ? RepositoryRuleFilePathRestrictionParameters.fromJson(
+                    json['parameters'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    ...switch (parameters) {
-      SdkPresent<RepositoryRuleFilePathRestrictionParameters>(value: final value) => {'parameters': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'type': type_.toJson(),
+        ...switch (parameters) {
+          SdkPresent<RepositoryRuleFilePathRestrictionParameters>(
+            value: final value
+          ) =>
+            {
+              'parameters': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Enforce any added or changed dependencies to comply with the organization's license policy.
 class RepositoryRuleLicenseComplianceScanning {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final RepositoryRuleLicenseComplianceScanningType type_;
 
   const RepositoryRuleLicenseComplianceScanning({required this.type_});
 
-  RepositoryRuleLicenseComplianceScanning Function({RepositoryRuleLicenseComplianceScanningType type_}) get copyWith => _copyWith;
+  RepositoryRuleLicenseComplianceScanning Function(
+          {RepositoryRuleLicenseComplianceScanningType type_})
+      get copyWith => _copyWith;
 
-  RepositoryRuleLicenseComplianceScanning _copyWith({Object? type_ = sdkOmittedValue}) => RepositoryRuleLicenseComplianceScanning(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RepositoryRuleLicenseComplianceScanningType,
-  );
+  RepositoryRuleLicenseComplianceScanning _copyWith(
+          {Object? type_ = sdkOmittedValue}) =>
+      RepositoryRuleLicenseComplianceScanning(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as RepositoryRuleLicenseComplianceScanningType,
+      );
 
-  factory RepositoryRuleLicenseComplianceScanning.fromJson(Map<String, dynamic> json) => RepositoryRuleLicenseComplianceScanning(
-    type_: (json['type'] != null ? RepositoryRuleLicenseComplianceScanningType.fromJson(json['type'] as String) : null)!,
-  );
+  factory RepositoryRuleLicenseComplianceScanning.fromJson(
+          Map<String, dynamic> json) =>
+      RepositoryRuleLicenseComplianceScanning(
+        type_: (json['type'] != null
+            ? RepositoryRuleLicenseComplianceScanningType.fromJson(
+                json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }
 
 /// Optional object value serialized in the `parameters` wire field.
 class RepositoryRuleMaxFilePathLengthParameters {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The maximum amount of characters allowed in file paths.
   final int maxFilePathLength;
 
-  const RepositoryRuleMaxFilePathLengthParameters({required this.maxFilePathLength});
+  const RepositoryRuleMaxFilePathLengthParameters(
+      {required this.maxFilePathLength});
 
-  RepositoryRuleMaxFilePathLengthParameters Function({int maxFilePathLength}) get copyWith => _copyWith;
+  RepositoryRuleMaxFilePathLengthParameters Function({int maxFilePathLength})
+      get copyWith => _copyWith;
 
-  RepositoryRuleMaxFilePathLengthParameters _copyWith({Object? maxFilePathLength = sdkOmittedValue}) => RepositoryRuleMaxFilePathLengthParameters(
-    maxFilePathLength: identical(maxFilePathLength, sdkOmittedValue) ? this.maxFilePathLength : maxFilePathLength as int,
-  );
+  RepositoryRuleMaxFilePathLengthParameters _copyWith(
+          {Object? maxFilePathLength = sdkOmittedValue}) =>
+      RepositoryRuleMaxFilePathLengthParameters(
+        maxFilePathLength: identical(maxFilePathLength, sdkOmittedValue)
+            ? this.maxFilePathLength
+            : maxFilePathLength as int,
+      );
 
-  factory RepositoryRuleMaxFilePathLengthParameters.fromJson(Map<String, dynamic> json) => RepositoryRuleMaxFilePathLengthParameters(
-    maxFilePathLength: ((json['max_file_path_length'] as num?)?.toInt())!,
-  );
+  factory RepositoryRuleMaxFilePathLengthParameters.fromJson(
+          Map<String, dynamic> json) =>
+      RepositoryRuleMaxFilePathLengthParameters(
+        maxFilePathLength: ((json['max_file_path_length'] as num?)?.toInt())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'max_file_path_length': maxFilePathLength,
-  };
+        'max_file_path_length': maxFilePathLength,
+      };
 }
 
 /// Prevent commits that include file paths that exceed the specified character limit from being pushed to the commit graph.
 class RepositoryRuleMaxFilePathLength {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final RepositoryRuleMaxFilePathLengthType type_;
+
   /// Optional object value serialized in the `parameters` wire field.
   final SdkOptional<RepositoryRuleMaxFilePathLengthParameters> parameters;
 
-  const RepositoryRuleMaxFilePathLength({required this.type_, this.parameters = const SdkOmitted()});
+  const RepositoryRuleMaxFilePathLength(
+      {required this.type_, this.parameters = const SdkOmitted()});
 
-  RepositoryRuleMaxFilePathLength Function({RepositoryRuleMaxFilePathLengthType type_, SdkOptional<RepositoryRuleMaxFilePathLengthParameters> parameters}) get copyWith => _copyWith;
+  RepositoryRuleMaxFilePathLength Function(
+          {RepositoryRuleMaxFilePathLengthType type_,
+          SdkOptional<RepositoryRuleMaxFilePathLengthParameters> parameters})
+      get copyWith => _copyWith;
 
-  RepositoryRuleMaxFilePathLength _copyWith({Object? type_ = sdkOmittedValue, Object? parameters = sdkOmittedValue}) => RepositoryRuleMaxFilePathLength(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RepositoryRuleMaxFilePathLengthType,
-    parameters: identical(parameters, sdkOmittedValue) ? this.parameters : parameters as SdkOptional<RepositoryRuleMaxFilePathLengthParameters>,
-  );
+  RepositoryRuleMaxFilePathLength _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? parameters = sdkOmittedValue}) =>
+      RepositoryRuleMaxFilePathLength(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as RepositoryRuleMaxFilePathLengthType,
+        parameters: identical(parameters, sdkOmittedValue)
+            ? this.parameters
+            : parameters
+                as SdkOptional<RepositoryRuleMaxFilePathLengthParameters>,
+      );
 
-  factory RepositoryRuleMaxFilePathLength.fromJson(Map<String, dynamic> json) => RepositoryRuleMaxFilePathLength(
-    type_: (json['type'] != null ? RepositoryRuleMaxFilePathLengthType.fromJson(json['type'] as String) : null)!,
-    parameters: json['parameters'] != null ? SdkPresent((json['parameters'] != null ? RepositoryRuleMaxFilePathLengthParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-  );
+  factory RepositoryRuleMaxFilePathLength.fromJson(Map<String, dynamic> json) =>
+      RepositoryRuleMaxFilePathLength(
+        type_: (json['type'] != null
+            ? RepositoryRuleMaxFilePathLengthType.fromJson(
+                json['type'] as String)
+            : null)!,
+        parameters: json['parameters'] != null
+            ? SdkPresent((json['parameters'] != null
+                ? RepositoryRuleMaxFilePathLengthParameters.fromJson(
+                    json['parameters'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    ...switch (parameters) {
-      SdkPresent<RepositoryRuleMaxFilePathLengthParameters>(value: final value) => {'parameters': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'type': type_.toJson(),
+        ...switch (parameters) {
+          SdkPresent<RepositoryRuleMaxFilePathLengthParameters>(
+            value: final value
+          ) =>
+            {
+              'parameters': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Optional object value serialized in the `parameters` wire field.
 class RepositoryRuleMaxFileSizeParameters {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The maximum file size allowed in megabytes. This limit does not apply to Git Large File Storage (Git LFS).
   final int maxFileSize;
 
   const RepositoryRuleMaxFileSizeParameters({required this.maxFileSize});
 
-  RepositoryRuleMaxFileSizeParameters Function({int maxFileSize}) get copyWith => _copyWith;
+  RepositoryRuleMaxFileSizeParameters Function({int maxFileSize})
+      get copyWith => _copyWith;
 
-  RepositoryRuleMaxFileSizeParameters _copyWith({Object? maxFileSize = sdkOmittedValue}) => RepositoryRuleMaxFileSizeParameters(
-    maxFileSize: identical(maxFileSize, sdkOmittedValue) ? this.maxFileSize : maxFileSize as int,
-  );
+  RepositoryRuleMaxFileSizeParameters _copyWith(
+          {Object? maxFileSize = sdkOmittedValue}) =>
+      RepositoryRuleMaxFileSizeParameters(
+        maxFileSize: identical(maxFileSize, sdkOmittedValue)
+            ? this.maxFileSize
+            : maxFileSize as int,
+      );
 
-  factory RepositoryRuleMaxFileSizeParameters.fromJson(Map<String, dynamic> json) => RepositoryRuleMaxFileSizeParameters(
-    maxFileSize: ((json['max_file_size'] as num?)?.toInt())!,
-  );
+  factory RepositoryRuleMaxFileSizeParameters.fromJson(
+          Map<String, dynamic> json) =>
+      RepositoryRuleMaxFileSizeParameters(
+        maxFileSize: ((json['max_file_size'] as num?)?.toInt())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'max_file_size': maxFileSize,
-  };
+        'max_file_size': maxFileSize,
+      };
 }
 
 /// Prevent commits with individual files that exceed the specified limit from being pushed to the commit graph.
 class RepositoryRuleMaxFileSize {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final RepositoryRuleMaxFileSizeType type_;
+
   /// Optional object value serialized in the `parameters` wire field.
   final SdkOptional<RepositoryRuleMaxFileSizeParameters> parameters;
 
-  const RepositoryRuleMaxFileSize({required this.type_, this.parameters = const SdkOmitted()});
+  const RepositoryRuleMaxFileSize(
+      {required this.type_, this.parameters = const SdkOmitted()});
 
-  RepositoryRuleMaxFileSize Function({RepositoryRuleMaxFileSizeType type_, SdkOptional<RepositoryRuleMaxFileSizeParameters> parameters}) get copyWith => _copyWith;
+  RepositoryRuleMaxFileSize Function(
+          {RepositoryRuleMaxFileSizeType type_,
+          SdkOptional<RepositoryRuleMaxFileSizeParameters> parameters})
+      get copyWith => _copyWith;
 
-  RepositoryRuleMaxFileSize _copyWith({Object? type_ = sdkOmittedValue, Object? parameters = sdkOmittedValue}) => RepositoryRuleMaxFileSize(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RepositoryRuleMaxFileSizeType,
-    parameters: identical(parameters, sdkOmittedValue) ? this.parameters : parameters as SdkOptional<RepositoryRuleMaxFileSizeParameters>,
-  );
+  RepositoryRuleMaxFileSize _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? parameters = sdkOmittedValue}) =>
+      RepositoryRuleMaxFileSize(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as RepositoryRuleMaxFileSizeType,
+        parameters: identical(parameters, sdkOmittedValue)
+            ? this.parameters
+            : parameters as SdkOptional<RepositoryRuleMaxFileSizeParameters>,
+      );
 
-  factory RepositoryRuleMaxFileSize.fromJson(Map<String, dynamic> json) => RepositoryRuleMaxFileSize(
-    type_: (json['type'] != null ? RepositoryRuleMaxFileSizeType.fromJson(json['type'] as String) : null)!,
-    parameters: json['parameters'] != null ? SdkPresent((json['parameters'] != null ? RepositoryRuleMaxFileSizeParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-  );
+  factory RepositoryRuleMaxFileSize.fromJson(Map<String, dynamic> json) =>
+      RepositoryRuleMaxFileSize(
+        type_: (json['type'] != null
+            ? RepositoryRuleMaxFileSizeType.fromJson(json['type'] as String)
+            : null)!,
+        parameters: json['parameters'] != null
+            ? SdkPresent((json['parameters'] != null
+                ? RepositoryRuleMaxFileSizeParameters.fromJson(
+                    json['parameters'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    ...switch (parameters) {
-      SdkPresent<RepositoryRuleMaxFileSizeParameters>(value: final value) => {'parameters': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'type': type_.toJson(),
+        ...switch (parameters) {
+          SdkPresent<RepositoryRuleMaxFileSizeParameters>(value: final value) =>
+            {
+              'parameters': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Optional object value serialized in the `parameters` wire field.
 class RepositoryRuleMergeQueueParameters {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Maximum time for a required status check to report a conclusion. After this much time has elapsed, checks that have not reported a conclusion will be assumed to have failed
   final int checkResponseTimeoutMinutes;
+
   /// When set to ALLGREEN, the merge commit created by merge queue for each PR in the group must pass all required checks to merge. When set to HEADGREEN, only the commit at the head of the merge group, i.e. the commit containing changes from all of the PRs in the group, must pass its required checks to merge.
   final RepositoryRuleMergeQueueParametersGroupingStrategy groupingStrategy;
+
   /// Limit the number of queued pull requests requesting checks and workflow runs at the same time.
   final int maxEntriesToBuild;
+
   /// The maximum number of PRs that will be merged together in a group.
   final int maxEntriesToMerge;
+
   /// Method to use when merging changes from queued pull requests.
   final RepositoryRuleMergeQueueParametersMergeMethod mergeMethod;
+
   /// The minimum number of PRs that will be merged together in a group.
   final int minEntriesToMerge;
+
   /// The time merge queue should wait after the first PR is added to the queue for the minimum group size to be met. After this time has elapsed, the minimum group size will be ignored and a smaller group will be merged.
   final int minEntriesToMergeWaitMinutes;
 
-  const RepositoryRuleMergeQueueParameters({required this.checkResponseTimeoutMinutes, required this.groupingStrategy, required this.maxEntriesToBuild, required this.maxEntriesToMerge, required this.mergeMethod, required this.minEntriesToMerge, required this.minEntriesToMergeWaitMinutes});
+  const RepositoryRuleMergeQueueParameters(
+      {required this.checkResponseTimeoutMinutes,
+      required this.groupingStrategy,
+      required this.maxEntriesToBuild,
+      required this.maxEntriesToMerge,
+      required this.mergeMethod,
+      required this.minEntriesToMerge,
+      required this.minEntriesToMergeWaitMinutes});
 
-  RepositoryRuleMergeQueueParameters Function({int checkResponseTimeoutMinutes, RepositoryRuleMergeQueueParametersGroupingStrategy groupingStrategy, int maxEntriesToBuild, int maxEntriesToMerge, RepositoryRuleMergeQueueParametersMergeMethod mergeMethod, int minEntriesToMerge, int minEntriesToMergeWaitMinutes}) get copyWith => _copyWith;
+  RepositoryRuleMergeQueueParameters Function(
+      {int checkResponseTimeoutMinutes,
+      RepositoryRuleMergeQueueParametersGroupingStrategy groupingStrategy,
+      int maxEntriesToBuild,
+      int maxEntriesToMerge,
+      RepositoryRuleMergeQueueParametersMergeMethod mergeMethod,
+      int minEntriesToMerge,
+      int minEntriesToMergeWaitMinutes}) get copyWith => _copyWith;
 
-  RepositoryRuleMergeQueueParameters _copyWith({Object? checkResponseTimeoutMinutes = sdkOmittedValue, Object? groupingStrategy = sdkOmittedValue, Object? maxEntriesToBuild = sdkOmittedValue, Object? maxEntriesToMerge = sdkOmittedValue, Object? mergeMethod = sdkOmittedValue, Object? minEntriesToMerge = sdkOmittedValue, Object? minEntriesToMergeWaitMinutes = sdkOmittedValue}) => RepositoryRuleMergeQueueParameters(
-    checkResponseTimeoutMinutes: identical(checkResponseTimeoutMinutes, sdkOmittedValue) ? this.checkResponseTimeoutMinutes : checkResponseTimeoutMinutes as int,
-    groupingStrategy: identical(groupingStrategy, sdkOmittedValue) ? this.groupingStrategy : groupingStrategy as RepositoryRuleMergeQueueParametersGroupingStrategy,
-    maxEntriesToBuild: identical(maxEntriesToBuild, sdkOmittedValue) ? this.maxEntriesToBuild : maxEntriesToBuild as int,
-    maxEntriesToMerge: identical(maxEntriesToMerge, sdkOmittedValue) ? this.maxEntriesToMerge : maxEntriesToMerge as int,
-    mergeMethod: identical(mergeMethod, sdkOmittedValue) ? this.mergeMethod : mergeMethod as RepositoryRuleMergeQueueParametersMergeMethod,
-    minEntriesToMerge: identical(minEntriesToMerge, sdkOmittedValue) ? this.minEntriesToMerge : minEntriesToMerge as int,
-    minEntriesToMergeWaitMinutes: identical(minEntriesToMergeWaitMinutes, sdkOmittedValue) ? this.minEntriesToMergeWaitMinutes : minEntriesToMergeWaitMinutes as int,
-  );
+  RepositoryRuleMergeQueueParameters _copyWith(
+          {Object? checkResponseTimeoutMinutes = sdkOmittedValue,
+          Object? groupingStrategy = sdkOmittedValue,
+          Object? maxEntriesToBuild = sdkOmittedValue,
+          Object? maxEntriesToMerge = sdkOmittedValue,
+          Object? mergeMethod = sdkOmittedValue,
+          Object? minEntriesToMerge = sdkOmittedValue,
+          Object? minEntriesToMergeWaitMinutes = sdkOmittedValue}) =>
+      RepositoryRuleMergeQueueParameters(
+        checkResponseTimeoutMinutes:
+            identical(checkResponseTimeoutMinutes, sdkOmittedValue)
+                ? this.checkResponseTimeoutMinutes
+                : checkResponseTimeoutMinutes as int,
+        groupingStrategy: identical(groupingStrategy, sdkOmittedValue)
+            ? this.groupingStrategy
+            : groupingStrategy
+                as RepositoryRuleMergeQueueParametersGroupingStrategy,
+        maxEntriesToBuild: identical(maxEntriesToBuild, sdkOmittedValue)
+            ? this.maxEntriesToBuild
+            : maxEntriesToBuild as int,
+        maxEntriesToMerge: identical(maxEntriesToMerge, sdkOmittedValue)
+            ? this.maxEntriesToMerge
+            : maxEntriesToMerge as int,
+        mergeMethod: identical(mergeMethod, sdkOmittedValue)
+            ? this.mergeMethod
+            : mergeMethod as RepositoryRuleMergeQueueParametersMergeMethod,
+        minEntriesToMerge: identical(minEntriesToMerge, sdkOmittedValue)
+            ? this.minEntriesToMerge
+            : minEntriesToMerge as int,
+        minEntriesToMergeWaitMinutes:
+            identical(minEntriesToMergeWaitMinutes, sdkOmittedValue)
+                ? this.minEntriesToMergeWaitMinutes
+                : minEntriesToMergeWaitMinutes as int,
+      );
 
-  factory RepositoryRuleMergeQueueParameters.fromJson(Map<String, dynamic> json) => RepositoryRuleMergeQueueParameters(
-    checkResponseTimeoutMinutes: ((json['check_response_timeout_minutes'] as num?)?.toInt())!,
-    groupingStrategy: (json['grouping_strategy'] != null ? RepositoryRuleMergeQueueParametersGroupingStrategy.fromJson(json['grouping_strategy'] as String) : null)!,
-    maxEntriesToBuild: ((json['max_entries_to_build'] as num?)?.toInt())!,
-    maxEntriesToMerge: ((json['max_entries_to_merge'] as num?)?.toInt())!,
-    mergeMethod: (json['merge_method'] != null ? RepositoryRuleMergeQueueParametersMergeMethod.fromJson(json['merge_method'] as String) : null)!,
-    minEntriesToMerge: ((json['min_entries_to_merge'] as num?)?.toInt())!,
-    minEntriesToMergeWaitMinutes: ((json['min_entries_to_merge_wait_minutes'] as num?)?.toInt())!,
-  );
+  factory RepositoryRuleMergeQueueParameters.fromJson(
+          Map<String, dynamic> json) =>
+      RepositoryRuleMergeQueueParameters(
+        checkResponseTimeoutMinutes:
+            ((json['check_response_timeout_minutes'] as num?)?.toInt())!,
+        groupingStrategy: (json['grouping_strategy'] != null
+            ? RepositoryRuleMergeQueueParametersGroupingStrategy.fromJson(
+                json['grouping_strategy'] as String)
+            : null)!,
+        maxEntriesToBuild: ((json['max_entries_to_build'] as num?)?.toInt())!,
+        maxEntriesToMerge: ((json['max_entries_to_merge'] as num?)?.toInt())!,
+        mergeMethod: (json['merge_method'] != null
+            ? RepositoryRuleMergeQueueParametersMergeMethod.fromJson(
+                json['merge_method'] as String)
+            : null)!,
+        minEntriesToMerge: ((json['min_entries_to_merge'] as num?)?.toInt())!,
+        minEntriesToMergeWaitMinutes:
+            ((json['min_entries_to_merge_wait_minutes'] as num?)?.toInt())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'check_response_timeout_minutes': checkResponseTimeoutMinutes,
-    'grouping_strategy': groupingStrategy.toJson(),
-    'max_entries_to_build': maxEntriesToBuild,
-    'max_entries_to_merge': maxEntriesToMerge,
-    'merge_method': mergeMethod.toJson(),
-    'min_entries_to_merge': minEntriesToMerge,
-    'min_entries_to_merge_wait_minutes': minEntriesToMergeWaitMinutes,
-  };
+        'check_response_timeout_minutes': checkResponseTimeoutMinutes,
+        'grouping_strategy': groupingStrategy.toJson(),
+        'max_entries_to_build': maxEntriesToBuild,
+        'max_entries_to_merge': maxEntriesToMerge,
+        'merge_method': mergeMethod.toJson(),
+        'min_entries_to_merge': minEntriesToMerge,
+        'min_entries_to_merge_wait_minutes': minEntriesToMergeWaitMinutes,
+      };
 }
 
 /// Merges must be performed via a merge queue.
 class RepositoryRuleMergeQueue {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final RepositoryRuleMergeQueueType type_;
+
   /// Optional object value serialized in the `parameters` wire field.
   final SdkOptional<RepositoryRuleMergeQueueParameters> parameters;
 
-  const RepositoryRuleMergeQueue({required this.type_, this.parameters = const SdkOmitted()});
+  const RepositoryRuleMergeQueue(
+      {required this.type_, this.parameters = const SdkOmitted()});
 
-  RepositoryRuleMergeQueue Function({RepositoryRuleMergeQueueType type_, SdkOptional<RepositoryRuleMergeQueueParameters> parameters}) get copyWith => _copyWith;
+  RepositoryRuleMergeQueue Function(
+          {RepositoryRuleMergeQueueType type_,
+          SdkOptional<RepositoryRuleMergeQueueParameters> parameters})
+      get copyWith => _copyWith;
 
-  RepositoryRuleMergeQueue _copyWith({Object? type_ = sdkOmittedValue, Object? parameters = sdkOmittedValue}) => RepositoryRuleMergeQueue(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RepositoryRuleMergeQueueType,
-    parameters: identical(parameters, sdkOmittedValue) ? this.parameters : parameters as SdkOptional<RepositoryRuleMergeQueueParameters>,
-  );
+  RepositoryRuleMergeQueue _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? parameters = sdkOmittedValue}) =>
+      RepositoryRuleMergeQueue(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as RepositoryRuleMergeQueueType,
+        parameters: identical(parameters, sdkOmittedValue)
+            ? this.parameters
+            : parameters as SdkOptional<RepositoryRuleMergeQueueParameters>,
+      );
 
-  factory RepositoryRuleMergeQueue.fromJson(Map<String, dynamic> json) => RepositoryRuleMergeQueue(
-    type_: (json['type'] != null ? RepositoryRuleMergeQueueType.fromJson(json['type'] as String) : null)!,
-    parameters: json['parameters'] != null ? SdkPresent((json['parameters'] != null ? RepositoryRuleMergeQueueParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-  );
+  factory RepositoryRuleMergeQueue.fromJson(Map<String, dynamic> json) =>
+      RepositoryRuleMergeQueue(
+        type_: (json['type'] != null
+            ? RepositoryRuleMergeQueueType.fromJson(json['type'] as String)
+            : null)!,
+        parameters: json['parameters'] != null
+            ? SdkPresent((json['parameters'] != null
+                ? RepositoryRuleMergeQueueParameters.fromJson(
+                    json['parameters'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    ...switch (parameters) {
-      SdkPresent<RepositoryRuleMergeQueueParameters>(value: final value) => {'parameters': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'type': type_.toJson(),
+        ...switch (parameters) {
+          SdkPresent<RepositoryRuleMergeQueueParameters>(value: final value) =>
+            {
+              'parameters': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Prevent users with push access from force pushing to refs.
 class RepositoryRuleNonFastForward {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `type` wire field.
   final RepositoryRuleNonFastForwardType type_;
 
   const RepositoryRuleNonFastForward({required this.type_});
 
-  RepositoryRuleNonFastForward Function({RepositoryRuleNonFastForwardType type_}) get copyWith => _copyWith;
+  RepositoryRuleNonFastForward Function(
+      {RepositoryRuleNonFastForwardType type_}) get copyWith => _copyWith;
 
-  RepositoryRuleNonFastForward _copyWith({Object? type_ = sdkOmittedValue}) => RepositoryRuleNonFastForward(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RepositoryRuleNonFastForwardType,
-  );
+  RepositoryRuleNonFastForward _copyWith({Object? type_ = sdkOmittedValue}) =>
+      RepositoryRuleNonFastForward(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as RepositoryRuleNonFastForwardType,
+      );
 
-  factory RepositoryRuleNonFastForward.fromJson(Map<String, dynamic> json) => RepositoryRuleNonFastForward(
-    type_: (json['type'] != null ? RepositoryRuleNonFastForwardType.fromJson(json['type'] as String) : null)!,
-  );
+  factory RepositoryRuleNonFastForward.fromJson(Map<String, dynamic> json) =>
+      RepositoryRuleNonFastForward(
+        type_: (json['type'] != null
+            ? RepositoryRuleNonFastForwardType.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-  };
+        'type': type_.toJson(),
+      };
 }

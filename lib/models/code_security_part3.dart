@@ -8,104 +8,206 @@ part of 'code_security.dart';
 class CodeSecurityConfigurationForRepository {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The attachment status of the code security configuration on the repository.
   final SdkOptional<CodeSecurityConfigurationForRepositoryStatus> status;
+
   /// A code security configuration
   final SdkOptional<CodeSecurityConfiguration> configuration;
 
-  const CodeSecurityConfigurationForRepository({this.status = const SdkOmitted(), this.configuration = const SdkOmitted()});
+  const CodeSecurityConfigurationForRepository(
+      {this.status = const SdkOmitted(),
+      this.configuration = const SdkOmitted()});
 
-  CodeSecurityConfigurationForRepository Function({SdkOptional<CodeSecurityConfigurationForRepositoryStatus> status, SdkOptional<CodeSecurityConfiguration> configuration}) get copyWith => _copyWith;
+  CodeSecurityConfigurationForRepository Function(
+          {SdkOptional<CodeSecurityConfigurationForRepositoryStatus> status,
+          SdkOptional<CodeSecurityConfiguration> configuration})
+      get copyWith => _copyWith;
 
-  CodeSecurityConfigurationForRepository _copyWith({Object? status = sdkOmittedValue, Object? configuration = sdkOmittedValue}) => CodeSecurityConfigurationForRepository(
-    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<CodeSecurityConfigurationForRepositoryStatus>,
-    configuration: identical(configuration, sdkOmittedValue) ? this.configuration : configuration as SdkOptional<CodeSecurityConfiguration>,
-  );
+  CodeSecurityConfigurationForRepository _copyWith(
+          {Object? status = sdkOmittedValue,
+          Object? configuration = sdkOmittedValue}) =>
+      CodeSecurityConfigurationForRepository(
+        status: identical(status, sdkOmittedValue)
+            ? this.status
+            : status
+                as SdkOptional<CodeSecurityConfigurationForRepositoryStatus>,
+        configuration: identical(configuration, sdkOmittedValue)
+            ? this.configuration
+            : configuration as SdkOptional<CodeSecurityConfiguration>,
+      );
 
-  factory CodeSecurityConfigurationForRepository.fromJson(Map<String, dynamic> json) => CodeSecurityConfigurationForRepository(
-    status: json['status'] != null ? SdkPresent((json['status'] != null ? CodeSecurityConfigurationForRepositoryStatus.fromJson(json['status'] as String) : null)!) : const SdkOmitted(),
-    configuration: json['configuration'] != null ? SdkPresent((json['configuration'] != null ? CodeSecurityConfiguration.fromJson(json['configuration'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-  );
+  factory CodeSecurityConfigurationForRepository.fromJson(
+          Map<String, dynamic> json) =>
+      CodeSecurityConfigurationForRepository(
+        status: json['status'] != null
+            ? SdkPresent((json['status'] != null
+                ? CodeSecurityConfigurationForRepositoryStatus.fromJson(
+                    json['status'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        configuration: json['configuration'] != null
+            ? SdkPresent((json['configuration'] != null
+                ? CodeSecurityConfiguration.fromJson(
+                    json['configuration'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (status) {
-      SdkPresent<CodeSecurityConfigurationForRepositoryStatus>(value: final value) => {'status': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (configuration) {
-      SdkPresent<CodeSecurityConfiguration>(value: final value) => {'configuration': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (status) {
+          SdkPresent<CodeSecurityConfigurationForRepositoryStatus>(
+            value: final value
+          ) =>
+            {
+              'status': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (configuration) {
+          SdkPresent<CodeSecurityConfiguration>(value: final value) => {
+              'configuration': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Repositories associated with a code security configuration and attachment status
 class CodeSecurityConfigurationRepositories {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The attachment status of the code security configuration on the repository.
   final SdkOptional<CodeSecurityConfigurationRepositoriesStatus> status;
+
   /// A GitHub repository.
   final SdkOptional<SimpleRepository> repository;
 
-  const CodeSecurityConfigurationRepositories({this.status = const SdkOmitted(), this.repository = const SdkOmitted()});
+  const CodeSecurityConfigurationRepositories(
+      {this.status = const SdkOmitted(), this.repository = const SdkOmitted()});
 
-  CodeSecurityConfigurationRepositories Function({SdkOptional<CodeSecurityConfigurationRepositoriesStatus> status, SdkOptional<SimpleRepository> repository}) get copyWith => _copyWith;
+  CodeSecurityConfigurationRepositories Function(
+      {SdkOptional<CodeSecurityConfigurationRepositoriesStatus> status,
+      SdkOptional<SimpleRepository> repository}) get copyWith => _copyWith;
 
-  CodeSecurityConfigurationRepositories _copyWith({Object? status = sdkOmittedValue, Object? repository = sdkOmittedValue}) => CodeSecurityConfigurationRepositories(
-    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<CodeSecurityConfigurationRepositoriesStatus>,
-    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as SdkOptional<SimpleRepository>,
-  );
+  CodeSecurityConfigurationRepositories _copyWith(
+          {Object? status = sdkOmittedValue,
+          Object? repository = sdkOmittedValue}) =>
+      CodeSecurityConfigurationRepositories(
+        status: identical(status, sdkOmittedValue)
+            ? this.status
+            : status
+                as SdkOptional<CodeSecurityConfigurationRepositoriesStatus>,
+        repository: identical(repository, sdkOmittedValue)
+            ? this.repository
+            : repository as SdkOptional<SimpleRepository>,
+      );
 
-  factory CodeSecurityConfigurationRepositories.fromJson(Map<String, dynamic> json) => CodeSecurityConfigurationRepositories(
-    status: json['status'] != null ? SdkPresent((json['status'] != null ? CodeSecurityConfigurationRepositoriesStatus.fromJson(json['status'] as String) : null)!) : const SdkOmitted(),
-    repository: json['repository'] != null ? SdkPresent((json['repository'] != null ? SimpleRepository.fromJson(json['repository'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-  );
+  factory CodeSecurityConfigurationRepositories.fromJson(
+          Map<String, dynamic> json) =>
+      CodeSecurityConfigurationRepositories(
+        status: json['status'] != null
+            ? SdkPresent((json['status'] != null
+                ? CodeSecurityConfigurationRepositoriesStatus.fromJson(
+                    json['status'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        repository: json['repository'] != null
+            ? SdkPresent((json['repository'] != null
+                ? SimpleRepository.fromJson(
+                    json['repository'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (status) {
-      SdkPresent<CodeSecurityConfigurationRepositoriesStatus>(value: final value) => {'status': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (repository) {
-      SdkPresent<SimpleRepository>(value: final value) => {'repository': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (status) {
+          SdkPresent<CodeSecurityConfigurationRepositoriesStatus>(
+            value: final value
+          ) =>
+            {
+              'status': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (repository) {
+          SdkPresent<SimpleRepository>(value: final value) => {
+              'repository': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class CodeSecurityDefaultConfigurationsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The visibility of newly created repositories for which the code security configuration will be applied to by default
-  final SdkOptional<CodeSecurityDefaultConfigurationsItemDefaultForNewRepos> defaultForNewRepos;
+  final SdkOptional<CodeSecurityDefaultConfigurationsItemDefaultForNewRepos>
+      defaultForNewRepos;
+
   /// A code security configuration
   final SdkOptional<CodeSecurityConfiguration> configuration;
 
-  const CodeSecurityDefaultConfigurationsItem({this.defaultForNewRepos = const SdkOmitted(), this.configuration = const SdkOmitted()});
+  const CodeSecurityDefaultConfigurationsItem(
+      {this.defaultForNewRepos = const SdkOmitted(),
+      this.configuration = const SdkOmitted()});
 
-  CodeSecurityDefaultConfigurationsItem Function({SdkOptional<CodeSecurityDefaultConfigurationsItemDefaultForNewRepos> defaultForNewRepos, SdkOptional<CodeSecurityConfiguration> configuration}) get copyWith => _copyWith;
+  CodeSecurityDefaultConfigurationsItem Function(
+          {SdkOptional<CodeSecurityDefaultConfigurationsItemDefaultForNewRepos>
+              defaultForNewRepos,
+          SdkOptional<CodeSecurityConfiguration> configuration})
+      get copyWith => _copyWith;
 
-  CodeSecurityDefaultConfigurationsItem _copyWith({Object? defaultForNewRepos = sdkOmittedValue, Object? configuration = sdkOmittedValue}) => CodeSecurityDefaultConfigurationsItem(
-    defaultForNewRepos: identical(defaultForNewRepos, sdkOmittedValue) ? this.defaultForNewRepos : defaultForNewRepos as SdkOptional<CodeSecurityDefaultConfigurationsItemDefaultForNewRepos>,
-    configuration: identical(configuration, sdkOmittedValue) ? this.configuration : configuration as SdkOptional<CodeSecurityConfiguration>,
-  );
+  CodeSecurityDefaultConfigurationsItem _copyWith(
+          {Object? defaultForNewRepos = sdkOmittedValue,
+          Object? configuration = sdkOmittedValue}) =>
+      CodeSecurityDefaultConfigurationsItem(
+        defaultForNewRepos: identical(defaultForNewRepos, sdkOmittedValue)
+            ? this.defaultForNewRepos
+            : defaultForNewRepos as SdkOptional<
+                CodeSecurityDefaultConfigurationsItemDefaultForNewRepos>,
+        configuration: identical(configuration, sdkOmittedValue)
+            ? this.configuration
+            : configuration as SdkOptional<CodeSecurityConfiguration>,
+      );
 
-  factory CodeSecurityDefaultConfigurationsItem.fromJson(Map<String, dynamic> json) => CodeSecurityDefaultConfigurationsItem(
-    defaultForNewRepos: json['default_for_new_repos'] != null ? SdkPresent((json['default_for_new_repos'] != null ? CodeSecurityDefaultConfigurationsItemDefaultForNewRepos.fromJson(json['default_for_new_repos'] as String) : null)!) : const SdkOmitted(),
-    configuration: json['configuration'] != null ? SdkPresent((json['configuration'] != null ? CodeSecurityConfiguration.fromJson(json['configuration'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-  );
+  factory CodeSecurityDefaultConfigurationsItem.fromJson(
+          Map<String, dynamic> json) =>
+      CodeSecurityDefaultConfigurationsItem(
+        defaultForNewRepos: json['default_for_new_repos'] != null
+            ? SdkPresent((json['default_for_new_repos'] != null
+                ? CodeSecurityDefaultConfigurationsItemDefaultForNewRepos
+                    .fromJson(json['default_for_new_repos'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        configuration: json['configuration'] != null
+            ? SdkPresent((json['configuration'] != null
+                ? CodeSecurityConfiguration.fromJson(
+                    json['configuration'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (defaultForNewRepos) {
-      SdkPresent<CodeSecurityDefaultConfigurationsItemDefaultForNewRepos>(value: final value) => {'default_for_new_repos': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (configuration) {
-      SdkPresent<CodeSecurityConfiguration>(value: final value) => {'configuration': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (defaultForNewRepos) {
+          SdkPresent<CodeSecurityDefaultConfigurationsItemDefaultForNewRepos>(
+            value: final value
+          ) =>
+            {
+              'default_for_new_repos': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (configuration) {
+          SdkPresent<CodeSecurityConfiguration>(value: final value) => {
+              'configuration': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 // CodeSecurityDefaultConfigurations = List<CodeSecurityDefaultConfigurationsItem>

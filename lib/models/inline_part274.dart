@@ -5,12 +5,12 @@ part of 'inline.dart';
 
 // Inline operation models (part 274)
 final class OrgsListPendingInvitationsInvitationSource {
-
   final String value;
 
   const OrgsListPendingInvitationsInvitationSource._(this.value);
 
-  factory OrgsListPendingInvitationsInvitationSource.fromJson(String value) => OrgsListPendingInvitationsInvitationSource._(value);
+  factory OrgsListPendingInvitationsInvitationSource.fromJson(String value) =>
+      OrgsListPendingInvitationsInvitationSource._(value);
 
   static const all = OrgsListPendingInvitationsInvitationSource._('all');
   static const member = OrgsListPendingInvitationsInvitationSource._('member');
@@ -18,45 +18,54 @@ final class OrgsListPendingInvitationsInvitationSource {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is OrgsListPendingInvitationsInvitationSource && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is OrgsListPendingInvitationsInvitationSource &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The role for the new member. * `admin` - Organization owners with full administrative rights to the organization and complete access to all repositories and teams. * `direct_member` - Non-owner organization members with ability to see other members and join teams by invitation. * `billing_manager` - Non-owner organization members with ability to manage the billing settings of your organization. * `reinstate` - The previous role assigned to the invitee before they were removed from your organization. Can be one of the roles listed above. Only works if the invitee was previously part of your organization.
 final class OrgsCreateInvitationRequestBodyRole {
-
   final String value;
 
   const OrgsCreateInvitationRequestBodyRole._(this.value);
 
-  factory OrgsCreateInvitationRequestBodyRole.fromJson(String value) => OrgsCreateInvitationRequestBodyRole._(value);
+  factory OrgsCreateInvitationRequestBodyRole.fromJson(String value) =>
+      OrgsCreateInvitationRequestBodyRole._(value);
 
   static const admin = OrgsCreateInvitationRequestBodyRole._('admin');
-  static const directMember = OrgsCreateInvitationRequestBodyRole._('direct_member');
-  static const billingManager = OrgsCreateInvitationRequestBodyRole._('billing_manager');
+  static const directMember =
+      OrgsCreateInvitationRequestBodyRole._('direct_member');
+  static const billingManager =
+      OrgsCreateInvitationRequestBodyRole._('billing_manager');
   static const reinstate = OrgsCreateInvitationRequestBodyRole._('reinstate');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is OrgsCreateInvitationRequestBodyRole && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is OrgsCreateInvitationRequestBodyRole && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class IssuesListForOrgFilter {
-
   final String value;
 
   const IssuesListForOrgFilter._(this.value);
 
-  factory IssuesListForOrgFilter.fromJson(String value) => IssuesListForOrgFilter._(value);
+  factory IssuesListForOrgFilter.fromJson(String value) =>
+      IssuesListForOrgFilter._(value);
 
   static const assigned = IssuesListForOrgFilter._('assigned');
   static const created = IssuesListForOrgFilter._('created');
@@ -67,21 +76,24 @@ final class IssuesListForOrgFilter {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is IssuesListForOrgFilter && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is IssuesListForOrgFilter && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class IssuesListForOrgState {
-
   final String value;
 
   const IssuesListForOrgState._(this.value);
 
-  factory IssuesListForOrgState.fromJson(String value) => IssuesListForOrgState._(value);
+  factory IssuesListForOrgState.fromJson(String value) =>
+      IssuesListForOrgState._(value);
 
   static const open = IssuesListForOrgState._('open');
   static const closed = IssuesListForOrgState._('closed');
@@ -89,21 +101,24 @@ final class IssuesListForOrgState {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is IssuesListForOrgState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is IssuesListForOrgState && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class IssuesListForOrgSort {
-
   final String value;
 
   const IssuesListForOrgSort._(this.value);
 
-  factory IssuesListForOrgSort.fromJson(String value) => IssuesListForOrgSort._(value);
+  factory IssuesListForOrgSort.fromJson(String value) =>
+      IssuesListForOrgSort._(value);
 
   static const created = IssuesListForOrgSort._('created');
   static const updated = IssuesListForOrgSort._('updated');
@@ -111,21 +126,24 @@ final class IssuesListForOrgSort {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is IssuesListForOrgSort && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is IssuesListForOrgSort && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class OrgsListMembersFilter {
-
   final String value;
 
   const OrgsListMembersFilter._(this.value);
 
-  factory OrgsListMembersFilter.fromJson(String value) => OrgsListMembersFilter._(value);
+  factory OrgsListMembersFilter.fromJson(String value) =>
+      OrgsListMembersFilter._(value);
 
   static const v2faDisabled = OrgsListMembersFilter._('2fa_disabled');
   static const v2faInsecure = OrgsListMembersFilter._('2fa_insecure');
@@ -133,21 +151,24 @@ final class OrgsListMembersFilter {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is OrgsListMembersFilter && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is OrgsListMembersFilter && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class OrgsListMembersRole {
-
   final String value;
 
   const OrgsListMembersRole._(this.value);
 
-  factory OrgsListMembersRole.fromJson(String value) => OrgsListMembersRole._(value);
+  factory OrgsListMembersRole.fromJson(String value) =>
+      OrgsListMembersRole._(value);
 
   static const all = OrgsListMembersRole._('all');
   static const admin = OrgsListMembersRole._('admin');
@@ -155,116 +176,139 @@ final class OrgsListMembersRole {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is OrgsListMembersRole && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is OrgsListMembersRole && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The role to give the user in the organization. Can be one of: * `admin` - The user will become an owner of the organization. * `member` - The user will become a non-owner member of the organization.
 final class OrgsSetMembershipForUserRequestBodyRole {
-
   final String value;
 
   const OrgsSetMembershipForUserRequestBodyRole._(this.value);
 
-  factory OrgsSetMembershipForUserRequestBodyRole.fromJson(String value) => OrgsSetMembershipForUserRequestBodyRole._(value);
+  factory OrgsSetMembershipForUserRequestBodyRole.fromJson(String value) =>
+      OrgsSetMembershipForUserRequestBodyRole._(value);
 
   static const admin = OrgsSetMembershipForUserRequestBodyRole._('admin');
   static const member = OrgsSetMembershipForUserRequestBodyRole._('member');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is OrgsSetMembershipForUserRequestBodyRole && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is OrgsSetMembershipForUserRequestBodyRole && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Allowed values that can be passed to the exclude param.
 final class MigrationsListForOrgExcludeItem {
-
   final String value;
 
   const MigrationsListForOrgExcludeItem._(this.value);
 
-  factory MigrationsListForOrgExcludeItem.fromJson(String value) => MigrationsListForOrgExcludeItem._(value);
+  factory MigrationsListForOrgExcludeItem.fromJson(String value) =>
+      MigrationsListForOrgExcludeItem._(value);
 
   static const repositories = MigrationsListForOrgExcludeItem._('repositories');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is MigrationsListForOrgExcludeItem && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is MigrationsListForOrgExcludeItem && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class MigrationsStartForOrgRequestBodyExcludeItem {
-
   final String value;
 
   const MigrationsStartForOrgRequestBodyExcludeItem._(this.value);
 
-  factory MigrationsStartForOrgRequestBodyExcludeItem.fromJson(String value) => MigrationsStartForOrgRequestBodyExcludeItem._(value);
+  factory MigrationsStartForOrgRequestBodyExcludeItem.fromJson(String value) =>
+      MigrationsStartForOrgRequestBodyExcludeItem._(value);
 
-  static const repositories = MigrationsStartForOrgRequestBodyExcludeItem._('repositories');
+  static const repositories =
+      MigrationsStartForOrgRequestBodyExcludeItem._('repositories');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is MigrationsStartForOrgRequestBodyExcludeItem && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is MigrationsStartForOrgRequestBodyExcludeItem &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Allowed values that can be passed to the exclude param.
 final class MigrationsGetStatusForOrgExcludeItem {
-
   final String value;
 
   const MigrationsGetStatusForOrgExcludeItem._(this.value);
 
-  factory MigrationsGetStatusForOrgExcludeItem.fromJson(String value) => MigrationsGetStatusForOrgExcludeItem._(value);
+  factory MigrationsGetStatusForOrgExcludeItem.fromJson(String value) =>
+      MigrationsGetStatusForOrgExcludeItem._(value);
 
-  static const repositories = MigrationsGetStatusForOrgExcludeItem._('repositories');
+  static const repositories =
+      MigrationsGetStatusForOrgExcludeItem._('repositories');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is MigrationsGetStatusForOrgExcludeItem && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is MigrationsGetStatusForOrgExcludeItem && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class OrgsListOutsideCollaboratorsFilter {
-
   final String value;
 
   const OrgsListOutsideCollaboratorsFilter._(this.value);
 
-  factory OrgsListOutsideCollaboratorsFilter.fromJson(String value) => OrgsListOutsideCollaboratorsFilter._(value);
+  factory OrgsListOutsideCollaboratorsFilter.fromJson(String value) =>
+      OrgsListOutsideCollaboratorsFilter._(value);
 
-  static const v2faDisabled = OrgsListOutsideCollaboratorsFilter._('2fa_disabled');
-  static const v2faInsecure = OrgsListOutsideCollaboratorsFilter._('2fa_insecure');
+  static const v2faDisabled =
+      OrgsListOutsideCollaboratorsFilter._('2fa_disabled');
+  static const v2faInsecure =
+      OrgsListOutsideCollaboratorsFilter._('2fa_insecure');
   static const all = OrgsListOutsideCollaboratorsFilter._('all');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is OrgsListOutsideCollaboratorsFilter && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is OrgsListOutsideCollaboratorsFilter && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

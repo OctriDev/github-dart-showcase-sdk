@@ -10,14 +10,17 @@ enum ContentFileType {
 
   static ContentFileType fromJson(String value) {
     switch (value) {
-      case 'file': return ContentFileType.file;
-      default: throw ArgumentError('Unknown ContentFileType: $value');
+      case 'file':
+        return ContentFileType.file;
+      default:
+        throw ArgumentError('Unknown ContentFileType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ContentFileType.file: return 'file';
+      case ContentFileType.file:
+        return 'file';
     }
   }
 
@@ -31,14 +34,17 @@ enum ContentSubmoduleType {
 
   static ContentSubmoduleType fromJson(String value) {
     switch (value) {
-      case 'submodule': return ContentSubmoduleType.submodule;
-      default: throw ArgumentError('Unknown ContentSubmoduleType: $value');
+      case 'submodule':
+        return ContentSubmoduleType.submodule;
+      default:
+        throw ArgumentError('Unknown ContentSubmoduleType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ContentSubmoduleType.submodule: return 'submodule';
+      case ContentSubmoduleType.submodule:
+        return 'submodule';
     }
   }
 
@@ -52,14 +58,17 @@ enum ContentSymlinkType {
 
   static ContentSymlinkType fromJson(String value) {
     switch (value) {
-      case 'symlink': return ContentSymlinkType.symlink;
-      default: throw ArgumentError('Unknown ContentSymlinkType: $value');
+      case 'symlink':
+        return ContentSymlinkType.symlink;
+      default:
+        throw ArgumentError('Unknown ContentSymlinkType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ContentSymlinkType.symlink: return 'symlink';
+      case ContentSymlinkType.symlink:
+        return 'symlink';
     }
   }
 
@@ -69,12 +78,12 @@ enum ContentSymlinkType {
 
 /// The organization policy for allowing or disallowing Copilot CLI.
 final class CopilotOrganizationDetailsCli {
-
   final String value;
 
   const CopilotOrganizationDetailsCli._(this.value);
 
-  factory CopilotOrganizationDetailsCli.fromJson(String value) => CopilotOrganizationDetailsCli._(value);
+  factory CopilotOrganizationDetailsCli.fromJson(String value) =>
+      CopilotOrganizationDetailsCli._(value);
 
   static const enabled = CopilotOrganizationDetailsCli._('enabled');
   static const disabled = CopilotOrganizationDetailsCli._('disabled');
@@ -82,137 +91,168 @@ final class CopilotOrganizationDetailsCli {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CopilotOrganizationDetailsCli && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CopilotOrganizationDetailsCli && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The organization policy for allowing or disallowing Copilot Chat in the IDE.
 final class CopilotOrganizationDetailsIdeChat {
-
   final String value;
 
   const CopilotOrganizationDetailsIdeChat._(this.value);
 
-  factory CopilotOrganizationDetailsIdeChat.fromJson(String value) => CopilotOrganizationDetailsIdeChat._(value);
+  factory CopilotOrganizationDetailsIdeChat.fromJson(String value) =>
+      CopilotOrganizationDetailsIdeChat._(value);
 
   static const enabled = CopilotOrganizationDetailsIdeChat._('enabled');
   static const disabled = CopilotOrganizationDetailsIdeChat._('disabled');
-  static const unconfigured = CopilotOrganizationDetailsIdeChat._('unconfigured');
+  static const unconfigured =
+      CopilotOrganizationDetailsIdeChat._('unconfigured');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CopilotOrganizationDetailsIdeChat && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CopilotOrganizationDetailsIdeChat && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The Copilot plan of the organization, or the parent enterprise, when applicable.
 final class CopilotOrganizationDetailsPlanType {
-
   final String value;
 
   const CopilotOrganizationDetailsPlanType._(this.value);
 
-  factory CopilotOrganizationDetailsPlanType.fromJson(String value) => CopilotOrganizationDetailsPlanType._(value);
+  factory CopilotOrganizationDetailsPlanType.fromJson(String value) =>
+      CopilotOrganizationDetailsPlanType._(value);
 
   static const business = CopilotOrganizationDetailsPlanType._('business');
   static const enterprise = CopilotOrganizationDetailsPlanType._('enterprise');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CopilotOrganizationDetailsPlanType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CopilotOrganizationDetailsPlanType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The organization policy for allowing or disallowing Copilot features on GitHub.com.
 final class CopilotOrganizationDetailsPlatformChat {
-
   final String value;
 
   const CopilotOrganizationDetailsPlatformChat._(this.value);
 
-  factory CopilotOrganizationDetailsPlatformChat.fromJson(String value) => CopilotOrganizationDetailsPlatformChat._(value);
+  factory CopilotOrganizationDetailsPlatformChat.fromJson(String value) =>
+      CopilotOrganizationDetailsPlatformChat._(value);
 
   static const enabled = CopilotOrganizationDetailsPlatformChat._('enabled');
   static const disabled = CopilotOrganizationDetailsPlatformChat._('disabled');
-  static const unconfigured = CopilotOrganizationDetailsPlatformChat._('unconfigured');
+  static const unconfigured =
+      CopilotOrganizationDetailsPlatformChat._('unconfigured');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CopilotOrganizationDetailsPlatformChat && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CopilotOrganizationDetailsPlatformChat && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The organization policy for allowing or blocking suggestions matching public code (duplication detection filter).
 final class CopilotOrganizationDetailsPublicCodeSuggestions {
-
   final String value;
 
   const CopilotOrganizationDetailsPublicCodeSuggestions._(this.value);
 
-  factory CopilotOrganizationDetailsPublicCodeSuggestions.fromJson(String value) => CopilotOrganizationDetailsPublicCodeSuggestions._(value);
+  factory CopilotOrganizationDetailsPublicCodeSuggestions.fromJson(
+          String value) =>
+      CopilotOrganizationDetailsPublicCodeSuggestions._(value);
 
-  static const allow = CopilotOrganizationDetailsPublicCodeSuggestions._('allow');
-  static const block = CopilotOrganizationDetailsPublicCodeSuggestions._('block');
-  static const unconfigured = CopilotOrganizationDetailsPublicCodeSuggestions._('unconfigured');
+  static const allow =
+      CopilotOrganizationDetailsPublicCodeSuggestions._('allow');
+  static const block =
+      CopilotOrganizationDetailsPublicCodeSuggestions._('block');
+  static const unconfigured =
+      CopilotOrganizationDetailsPublicCodeSuggestions._('unconfigured');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CopilotOrganizationDetailsPublicCodeSuggestions && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CopilotOrganizationDetailsPublicCodeSuggestions &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The mode of assigning new seats.
 final class CopilotOrganizationDetailsSeatManagementSetting {
-
   final String value;
 
   const CopilotOrganizationDetailsSeatManagementSetting._(this.value);
 
-  factory CopilotOrganizationDetailsSeatManagementSetting.fromJson(String value) => CopilotOrganizationDetailsSeatManagementSetting._(value);
+  factory CopilotOrganizationDetailsSeatManagementSetting.fromJson(
+          String value) =>
+      CopilotOrganizationDetailsSeatManagementSetting._(value);
 
-  static const assignAll = CopilotOrganizationDetailsSeatManagementSetting._('assign_all');
-  static const assignSelected = CopilotOrganizationDetailsSeatManagementSetting._('assign_selected');
-  static const disabled = CopilotOrganizationDetailsSeatManagementSetting._('disabled');
-  static const unconfigured = CopilotOrganizationDetailsSeatManagementSetting._('unconfigured');
+  static const assignAll =
+      CopilotOrganizationDetailsSeatManagementSetting._('assign_all');
+  static const assignSelected =
+      CopilotOrganizationDetailsSeatManagementSetting._('assign_selected');
+  static const disabled =
+      CopilotOrganizationDetailsSeatManagementSetting._('disabled');
+  static const unconfigured =
+      CopilotOrganizationDetailsSeatManagementSetting._('unconfigured');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CopilotOrganizationDetailsSeatManagementSetting && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CopilotOrganizationDetailsSeatManagementSetting &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The Copilot plan of the organization, or the parent enterprise, when applicable.
 final class CopilotSeatDetailsPlanType {
-
   final String value;
 
   const CopilotSeatDetailsPlanType._(this.value);
 
-  factory CopilotSeatDetailsPlanType.fromJson(String value) => CopilotSeatDetailsPlanType._(value);
+  factory CopilotSeatDetailsPlanType.fromJson(String value) =>
+      CopilotSeatDetailsPlanType._(value);
 
   static const business = CopilotSeatDetailsPlanType._('business');
   static const enterprise = CopilotSeatDetailsPlanType._('enterprise');
@@ -220,22 +260,25 @@ final class CopilotSeatDetailsPlanType {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CopilotSeatDetailsPlanType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CopilotSeatDetailsPlanType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The base role that determines default permissions. - `no_access`: No default access - `reader`: Default read permissions - `writer`: Default write permissions (organization spaces only) - `admin`: Default admin permissions (organization spaces only)
 final class CopilotSpaceBaseRole {
-
   final String value;
 
   const CopilotSpaceBaseRole._(this.value);
 
-  factory CopilotSpaceBaseRole.fromJson(String value) => CopilotSpaceBaseRole._(value);
+  factory CopilotSpaceBaseRole.fromJson(String value) =>
+      CopilotSpaceBaseRole._(value);
 
   static const reader = CopilotSpaceBaseRole._('reader');
   static const writer = CopilotSpaceBaseRole._('writer');
@@ -244,37 +287,52 @@ final class CopilotSpaceBaseRole {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CopilotSpaceBaseRole && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CopilotSpaceBaseRole && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The type of resource.
 final class CopilotSpaceResourcesAttributesItemResourceType {
-
   final String value;
 
   const CopilotSpaceResourcesAttributesItemResourceType._(this.value);
 
-  factory CopilotSpaceResourcesAttributesItemResourceType.fromJson(String value) => CopilotSpaceResourcesAttributesItemResourceType._(value);
+  factory CopilotSpaceResourcesAttributesItemResourceType.fromJson(
+          String value) =>
+      CopilotSpaceResourcesAttributesItemResourceType._(value);
 
-  static const repository = CopilotSpaceResourcesAttributesItemResourceType._('repository');
-  static const githubFile = CopilotSpaceResourcesAttributesItemResourceType._('github_file');
-  static const freeText = CopilotSpaceResourcesAttributesItemResourceType._('free_text');
-  static const githubIssue = CopilotSpaceResourcesAttributesItemResourceType._('github_issue');
-  static const githubPullRequest = CopilotSpaceResourcesAttributesItemResourceType._('github_pull_request');
-  static const mediaContent = CopilotSpaceResourcesAttributesItemResourceType._('media_content');
-  static const uploadedTextFile = CopilotSpaceResourcesAttributesItemResourceType._('uploaded_text_file');
+  static const repository =
+      CopilotSpaceResourcesAttributesItemResourceType._('repository');
+  static const githubFile =
+      CopilotSpaceResourcesAttributesItemResourceType._('github_file');
+  static const freeText =
+      CopilotSpaceResourcesAttributesItemResourceType._('free_text');
+  static const githubIssue =
+      CopilotSpaceResourcesAttributesItemResourceType._('github_issue');
+  static const githubPullRequest =
+      CopilotSpaceResourcesAttributesItemResourceType._('github_pull_request');
+  static const mediaContent =
+      CopilotSpaceResourcesAttributesItemResourceType._('media_content');
+  static const uploadedTextFile =
+      CopilotSpaceResourcesAttributesItemResourceType._('uploaded_text_file');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CopilotSpaceResourcesAttributesItemResourceType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CopilotSpaceResourcesAttributesItemResourceType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

@@ -8,61 +8,137 @@ part of 'webhook_dependabot_alert_reintroduced.dart';
 class WebhookDependabotAlertReintroduced {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `action` wire field.
   final WebhookDependabotAlertReintroducedAction action;
+
   /// A Dependabot alert.
   final DependabotAlert alert;
+
   /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured for and sent to a GitHub App. For more information, see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
   final SdkOptional<SimpleInstallation> installation;
+
   /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an organization, or when the event occurs from activity in a repository owned by an organization.
   final SdkOptional<OrganizationSimpleWebhooks> organization;
+
   /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured on an enterprise account or an organization that's part of an enterprise account. For more information, see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
   final SdkOptional<EnterpriseWebhooks> enterprise;
+
   /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property when the event occurs from activity in a repository.
   final RepositoryWebhooks repository;
+
   /// A GitHub user.
   final SimpleUser sender;
 
-  const WebhookDependabotAlertReintroduced({required this.action, required this.alert, this.installation = const SdkOmitted(), this.organization = const SdkOmitted(), this.enterprise = const SdkOmitted(), required this.repository, required this.sender});
+  const WebhookDependabotAlertReintroduced(
+      {required this.action,
+      required this.alert,
+      this.installation = const SdkOmitted(),
+      this.organization = const SdkOmitted(),
+      this.enterprise = const SdkOmitted(),
+      required this.repository,
+      required this.sender});
 
-  WebhookDependabotAlertReintroduced Function({WebhookDependabotAlertReintroducedAction action, DependabotAlert alert, SdkOptional<SimpleInstallation> installation, SdkOptional<OrganizationSimpleWebhooks> organization, SdkOptional<EnterpriseWebhooks> enterprise, RepositoryWebhooks repository, SimpleUser sender}) get copyWith => _copyWith;
+  WebhookDependabotAlertReintroduced Function(
+      {WebhookDependabotAlertReintroducedAction action,
+      DependabotAlert alert,
+      SdkOptional<SimpleInstallation> installation,
+      SdkOptional<OrganizationSimpleWebhooks> organization,
+      SdkOptional<EnterpriseWebhooks> enterprise,
+      RepositoryWebhooks repository,
+      SimpleUser sender}) get copyWith => _copyWith;
 
-  WebhookDependabotAlertReintroduced _copyWith({Object? action = sdkOmittedValue, Object? alert = sdkOmittedValue, Object? installation = sdkOmittedValue, Object? organization = sdkOmittedValue, Object? enterprise = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? sender = sdkOmittedValue}) => WebhookDependabotAlertReintroduced(
-    action: identical(action, sdkOmittedValue) ? this.action : action as WebhookDependabotAlertReintroducedAction,
-    alert: identical(alert, sdkOmittedValue) ? this.alert : alert as DependabotAlert,
-    installation: identical(installation, sdkOmittedValue) ? this.installation : installation as SdkOptional<SimpleInstallation>,
-    organization: identical(organization, sdkOmittedValue) ? this.organization : organization as SdkOptional<OrganizationSimpleWebhooks>,
-    enterprise: identical(enterprise, sdkOmittedValue) ? this.enterprise : enterprise as SdkOptional<EnterpriseWebhooks>,
-    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as RepositoryWebhooks,
-    sender: identical(sender, sdkOmittedValue) ? this.sender : sender as SimpleUser,
-  );
+  WebhookDependabotAlertReintroduced _copyWith(
+          {Object? action = sdkOmittedValue,
+          Object? alert = sdkOmittedValue,
+          Object? installation = sdkOmittedValue,
+          Object? organization = sdkOmittedValue,
+          Object? enterprise = sdkOmittedValue,
+          Object? repository = sdkOmittedValue,
+          Object? sender = sdkOmittedValue}) =>
+      WebhookDependabotAlertReintroduced(
+        action: identical(action, sdkOmittedValue)
+            ? this.action
+            : action as WebhookDependabotAlertReintroducedAction,
+        alert: identical(alert, sdkOmittedValue)
+            ? this.alert
+            : alert as DependabotAlert,
+        installation: identical(installation, sdkOmittedValue)
+            ? this.installation
+            : installation as SdkOptional<SimpleInstallation>,
+        organization: identical(organization, sdkOmittedValue)
+            ? this.organization
+            : organization as SdkOptional<OrganizationSimpleWebhooks>,
+        enterprise: identical(enterprise, sdkOmittedValue)
+            ? this.enterprise
+            : enterprise as SdkOptional<EnterpriseWebhooks>,
+        repository: identical(repository, sdkOmittedValue)
+            ? this.repository
+            : repository as RepositoryWebhooks,
+        sender: identical(sender, sdkOmittedValue)
+            ? this.sender
+            : sender as SimpleUser,
+      );
 
-  factory WebhookDependabotAlertReintroduced.fromJson(Map<String, dynamic> json) => WebhookDependabotAlertReintroduced(
-    action: (json['action'] != null ? WebhookDependabotAlertReintroducedAction.fromJson(json['action'] as String) : null)!,
-    alert: (json['alert'] != null ? DependabotAlert.fromJson(json['alert'] as Map<String, dynamic>) : null)!,
-    installation: json['installation'] != null ? SdkPresent((json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    organization: json['organization'] != null ? SdkPresent((json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    enterprise: json['enterprise'] != null ? SdkPresent((json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    repository: (json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null)!,
-    sender: (json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null)!,
-  );
+  factory WebhookDependabotAlertReintroduced.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookDependabotAlertReintroduced(
+        action: (json['action'] != null
+            ? WebhookDependabotAlertReintroducedAction.fromJson(
+                json['action'] as String)
+            : null)!,
+        alert: (json['alert'] != null
+            ? DependabotAlert.fromJson(json['alert'] as Map<String, dynamic>)
+            : null)!,
+        installation: json['installation'] != null
+            ? SdkPresent((json['installation'] != null
+                ? SimpleInstallation.fromJson(
+                    json['installation'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        organization: json['organization'] != null
+            ? SdkPresent((json['organization'] != null
+                ? OrganizationSimpleWebhooks.fromJson(
+                    json['organization'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        enterprise: json['enterprise'] != null
+            ? SdkPresent((json['enterprise'] != null
+                ? EnterpriseWebhooks.fromJson(
+                    json['enterprise'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        repository: (json['repository'] != null
+            ? RepositoryWebhooks.fromJson(
+                json['repository'] as Map<String, dynamic>)
+            : null)!,
+        sender: (json['sender'] != null
+            ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'action': action.toJson(),
-    'alert': alert.toJson(),
-    ...switch (installation) {
-      SdkPresent<SimpleInstallation>(value: final value) => {'installation': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (organization) {
-      SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {'organization': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (enterprise) {
-      SdkPresent<EnterpriseWebhooks>(value: final value) => {'enterprise': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'repository': repository.toJson(),
-    'sender': sender.toJson(),
-  };
+        'action': action.toJson(),
+        'alert': alert.toJson(),
+        ...switch (installation) {
+          SdkPresent<SimpleInstallation>(value: final value) => {
+              'installation': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (organization) {
+          SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {
+              'organization': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (enterprise) {
+          SdkPresent<EnterpriseWebhooks>(value: final value) => {
+              'enterprise': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'repository': repository.toJson(),
+        'sender': sender.toJson(),
+      };
 }

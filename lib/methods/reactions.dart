@@ -27,7 +27,8 @@ Future<List<Reaction>> reactionsListForCommitComment(ClientConfig config,
     {required String owner,
     required String repo,
     required int commentId,
-    SdkOptional<ReactionsListForCommitCommentContent> content = const SdkOmitted(),
+    SdkOptional<ReactionsListForCommitCommentContent> content =
+        const SdkOmitted(),
     SdkOptional<int> perPage = const SdkOmitted(),
     SdkOptional<int> page = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
@@ -35,18 +36,24 @@ Future<List<Reaction>> reactionsListForCommitComment(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/comments/${Uri.encodeComponent(commentId.toString())}/reactions',
           config: config,
           query: {
-            'content': SdkQueryValue(SdkUtils.unwrapOptional(content), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'content': SdkQueryValue(SdkUtils.unwrapOptional(content),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reactionsListForCommitComment',
-          fromJsonRaw: (value) => (value as List).map((item) => Reaction.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => Reaction.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Create a reaction to a [commit comment](https://docs.github.com/rest/commits/comments#get-a-commit-comment). A response with an HTTP `200` status means that you already added the reaction type to this commit comment.
 ///
@@ -69,12 +76,15 @@ Future<Reaction> reactionsCreateForCommitComment(ClientConfig config,
           body: {'content': content},
           decoder: SdkResponseDecoder.json,
           operationId: 'reactionsCreateForCommitComment',
-          fromJsonRaw: (value) => Reaction.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              Reaction.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// &gt; [!NOTE] &gt; You can also specify a repository by `repository_id` using the route `DELETE /repositories/:repository_id/comments/:comment_id/reactions/:reaction_id`. Delete a reaction to a [commit comment](https://docs.github.com/rest/commits/comments#get-a-commit-comment).
 ///
@@ -98,7 +108,6 @@ Future<void> reactionsDeleteForCommitComment(ClientConfig config,
       .data;
 }
 
-
 /// List the reactions to an [issue comment](https://docs.github.com/rest/issues/comments#get-an-issue-comment).
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
@@ -120,7 +129,8 @@ Future<List<Reaction>> reactionsListForIssueComment(ClientConfig config,
     {required String owner,
     required String repo,
     required int commentId,
-    SdkOptional<ReactionsListForIssueCommentContent> content = const SdkOmitted(),
+    SdkOptional<ReactionsListForIssueCommentContent> content =
+        const SdkOmitted(),
     SdkOptional<int> perPage = const SdkOmitted(),
     SdkOptional<int> page = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
@@ -128,18 +138,24 @@ Future<List<Reaction>> reactionsListForIssueComment(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/issues/comments/${Uri.encodeComponent(commentId.toString())}/reactions',
           config: config,
           query: {
-            'content': SdkQueryValue(SdkUtils.unwrapOptional(content), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'content': SdkQueryValue(SdkUtils.unwrapOptional(content),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reactionsListForIssueComment',
-          fromJsonRaw: (value) => (value as List).map((item) => Reaction.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => Reaction.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Create a reaction to an [issue comment](https://docs.github.com/rest/issues/comments#get-an-issue-comment). A response with an HTTP `200` status means that you already added the reaction type to this issue comment.
 ///
@@ -162,12 +178,15 @@ Future<Reaction> reactionsCreateForIssueComment(ClientConfig config,
           body: {'content': content},
           decoder: SdkResponseDecoder.json,
           operationId: 'reactionsCreateForIssueComment',
-          fromJsonRaw: (value) => Reaction.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              Reaction.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// &gt; [!NOTE] &gt; You can also specify a repository by `repository_id` using the route `DELETE delete /repositories/:repository_id/issues/comments/:comment_id/reactions/:reaction_id`. Delete a reaction to an [issue comment](https://docs.github.com/rest/issues/comments#get-an-issue-comment).
 ///
@@ -190,7 +209,6 @@ Future<void> reactionsDeleteForIssueComment(ClientConfig config,
           options: requestOptions))
       .data;
 }
-
 
 /// Lists reactions to an issue in a repository. Use `content` to filter the results to one reaction type, or omit it to list all reactions; use `page` and `per_page` to paginate the results.
 ///
@@ -223,18 +241,26 @@ Future<List<Reaction>> reactionsListForIssue(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/issues/${Uri.encodeComponent(issueNumber.toString())}/reactions',
           config: config,
           query: {
-            'content': SdkQueryValue(SdkUtils.unwrapOptional(content), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'content': SdkQueryValue(SdkUtils.unwrapOptional(content),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reactionsListForIssue',
-          fromJsonRaw: (value) => (value as List).map((item) => Reaction.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => Reaction.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '410': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '410': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Create a reaction to an [issue](https://docs.github.com/rest/issues/issues#get-an-issue). A response with an HTTP `200` status means that you already added the reaction type to this issue.
 ///
@@ -257,12 +283,15 @@ Future<Reaction> reactionsCreateForIssue(ClientConfig config,
           body: {'content': content},
           decoder: SdkResponseDecoder.json,
           operationId: 'reactionsCreateForIssue',
-          fromJsonRaw: (value) => Reaction.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              Reaction.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// &gt; [!NOTE] &gt; You can also specify a repository by `repository_id` using the route `DELETE /repositories/:repository_id/issues/:issue_number/reactions/:reaction_id`. Delete a reaction to an [issue](https://docs.github.com/rest/issues/issues#get-an-issue).
 ///
@@ -286,7 +315,6 @@ Future<void> reactionsDeleteForIssue(ClientConfig config,
       .data;
 }
 
-
 /// List the reactions to a [pull request review comment](https://docs.github.com/rest/pulls/comments#get-a-review-comment-for-a-pull-request).
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
@@ -304,31 +332,38 @@ Future<void> reactionsDeleteForIssue(ClientConfig config,
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<List<Reaction>>
-    reactionsListForPullRequestReviewComment(ClientConfig config,
-        {required String owner,
-        required String repo,
-        required int commentId,
-        SdkOptional<ReactionsListForPullRequestReviewCommentContent> content = const SdkOmitted(),
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<List<Reaction>> reactionsListForPullRequestReviewComment(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    required int commentId,
+    SdkOptional<ReactionsListForPullRequestReviewCommentContent> content =
+        const SdkOmitted(),
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<Reaction>>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/pulls/comments/${Uri.encodeComponent(commentId.toString())}/reactions',
           config: config,
           query: {
-            'content': SdkQueryValue(SdkUtils.unwrapOptional(content), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'content': SdkQueryValue(SdkUtils.unwrapOptional(content),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reactionsListForPullRequestReviewComment',
-          fromJsonRaw: (value) => (value as List).map((item) => Reaction.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => Reaction.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Create a reaction to a [pull request review comment](https://docs.github.com/rest/pulls/comments#get-a-review-comment-for-a-pull-request). A response with an HTTP `200` status means that you already added the reaction type to this pull request review comment.
 ///
@@ -343,7 +378,8 @@ Future<Reaction> reactionsCreateForPullRequestReviewComment(ClientConfig config,
     {required String owner,
     required String repo,
     required int commentId,
-    required ReactionsCreateForPullRequestReviewCommentRequestBodyContent content,
+    required ReactionsCreateForPullRequestReviewCommentRequestBodyContent
+        content,
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<Reaction>('POST',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/pulls/comments/${Uri.encodeComponent(commentId.toString())}/reactions',
@@ -351,12 +387,15 @@ Future<Reaction> reactionsCreateForPullRequestReviewComment(ClientConfig config,
           body: {'content': content},
           decoder: SdkResponseDecoder.json,
           operationId: 'reactionsCreateForPullRequestReviewComment',
-          fromJsonRaw: (value) => Reaction.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              Reaction.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// &gt; [!NOTE] &gt; You can also specify a repository by `repository_id` using the route `DELETE /repositories/:repository_id/pulls/comments/:comment_id/reactions/:reaction_id.` Delete a reaction to a [pull request review comment](https://docs.github.com/rest/pulls/comments#get-a-review-comment-for-a-pull-request).
 ///
@@ -379,7 +418,6 @@ Future<void> reactionsDeleteForPullRequestComment(ClientConfig config,
           options: requestOptions))
       .data;
 }
-
 
 /// List the reactions to a [release](https://docs.github.com/rest/releases/releases#get-a-release).
 ///
@@ -410,18 +448,24 @@ Future<List<Reaction>> reactionsListForRelease(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/releases/${Uri.encodeComponent(releaseId.toString())}/reactions',
           config: config,
           query: {
-            'content': SdkQueryValue(SdkUtils.unwrapOptional(content), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'content': SdkQueryValue(SdkUtils.unwrapOptional(content),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'reactionsListForRelease',
-          fromJsonRaw: (value) => (value as List).map((item) => Reaction.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => Reaction.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Create a reaction to a [release](https://docs.github.com/rest/releases/releases#get-a-release). A response with a `Status: 200 OK` means that you already added the reaction type to this release.
 ///
@@ -444,12 +488,15 @@ Future<Reaction> reactionsCreateForRelease(ClientConfig config,
           body: {'content': content},
           decoder: SdkResponseDecoder.json,
           operationId: 'reactionsCreateForRelease',
-          fromJsonRaw: (value) => Reaction.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              Reaction.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// &gt; [!NOTE] &gt; You can also specify a repository by `repository_id` using the route `DELETE delete /repositories/:repository_id/releases/:release_id/reactions/:reaction_id`. Delete a reaction to a [release](https://docs.github.com/rest/releases/releases#get-a-release).
 ///

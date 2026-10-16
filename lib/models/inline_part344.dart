@@ -7,62 +7,127 @@ part of 'inline.dart';
 class AppsScopeTokenRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The access token used to authenticate to the GitHub API.
   final String accessToken;
+
   /// The name of the user or organization to scope the user access token to. **Required** unless `target_id` is specified.
   final SdkOptional<String> target;
+
   /// The ID of the user or organization to scope the user access token to. **Required** unless `target` is specified.
   final SdkOptional<int> targetId;
+
   /// The list of repository names to scope the user access token to. `repositories` may not be specified if `repository_ids` is specified.
   final SdkOptional<List<String>> repositories;
+
   /// The list of repository IDs to scope the user access token to. `repository_ids` may not be specified if `repositories` is specified.
   final SdkOptional<List<int>> repositoryIds;
+
   /// The permissions granted to the fine-grained access token.
   final SdkOptional<AppPermissions> permissions;
 
-  const AppsScopeTokenRequestBody({required this.accessToken, this.target = const SdkOmitted(), this.targetId = const SdkOmitted(), this.repositories = const SdkOmitted(), this.repositoryIds = const SdkOmitted(), this.permissions = const SdkOmitted()});
+  const AppsScopeTokenRequestBody(
+      {required this.accessToken,
+      this.target = const SdkOmitted(),
+      this.targetId = const SdkOmitted(),
+      this.repositories = const SdkOmitted(),
+      this.repositoryIds = const SdkOmitted(),
+      this.permissions = const SdkOmitted()});
 
-  AppsScopeTokenRequestBody Function({String accessToken, SdkOptional<String> target, SdkOptional<int> targetId, SdkOptional<List<String>> repositories, SdkOptional<List<int>> repositoryIds, SdkOptional<AppPermissions> permissions}) get copyWith => _copyWith;
+  AppsScopeTokenRequestBody Function(
+      {String accessToken,
+      SdkOptional<String> target,
+      SdkOptional<int> targetId,
+      SdkOptional<List<String>> repositories,
+      SdkOptional<List<int>> repositoryIds,
+      SdkOptional<AppPermissions> permissions}) get copyWith => _copyWith;
 
-  AppsScopeTokenRequestBody _copyWith({Object? accessToken = sdkOmittedValue, Object? target = sdkOmittedValue, Object? targetId = sdkOmittedValue, Object? repositories = sdkOmittedValue, Object? repositoryIds = sdkOmittedValue, Object? permissions = sdkOmittedValue}) => AppsScopeTokenRequestBody(
-    accessToken: identical(accessToken, sdkOmittedValue) ? this.accessToken : accessToken as String,
-    target: identical(target, sdkOmittedValue) ? this.target : target as SdkOptional<String>,
-    targetId: identical(targetId, sdkOmittedValue) ? this.targetId : targetId as SdkOptional<int>,
-    repositories: identical(repositories, sdkOmittedValue) ? this.repositories : repositories as SdkOptional<List<String>>,
-    repositoryIds: identical(repositoryIds, sdkOmittedValue) ? this.repositoryIds : repositoryIds as SdkOptional<List<int>>,
-    permissions: identical(permissions, sdkOmittedValue) ? this.permissions : permissions as SdkOptional<AppPermissions>,
-  );
+  AppsScopeTokenRequestBody _copyWith(
+          {Object? accessToken = sdkOmittedValue,
+          Object? target = sdkOmittedValue,
+          Object? targetId = sdkOmittedValue,
+          Object? repositories = sdkOmittedValue,
+          Object? repositoryIds = sdkOmittedValue,
+          Object? permissions = sdkOmittedValue}) =>
+      AppsScopeTokenRequestBody(
+        accessToken: identical(accessToken, sdkOmittedValue)
+            ? this.accessToken
+            : accessToken as String,
+        target: identical(target, sdkOmittedValue)
+            ? this.target
+            : target as SdkOptional<String>,
+        targetId: identical(targetId, sdkOmittedValue)
+            ? this.targetId
+            : targetId as SdkOptional<int>,
+        repositories: identical(repositories, sdkOmittedValue)
+            ? this.repositories
+            : repositories as SdkOptional<List<String>>,
+        repositoryIds: identical(repositoryIds, sdkOmittedValue)
+            ? this.repositoryIds
+            : repositoryIds as SdkOptional<List<int>>,
+        permissions: identical(permissions, sdkOmittedValue)
+            ? this.permissions
+            : permissions as SdkOptional<AppPermissions>,
+      );
 
-  factory AppsScopeTokenRequestBody.fromJson(Map<String, dynamic> json) => AppsScopeTokenRequestBody(
-    accessToken: (json['access_token'] as String?)!,
-    target: json['target'] != null ? SdkPresent((json['target'] as String?)!) : const SdkOmitted(),
-    targetId: json['target_id'] != null ? SdkPresent(((json['target_id'] as num?)?.toInt())!) : const SdkOmitted(),
-    repositories: json['repositories'] != null ? SdkPresent(((json['repositories'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    repositoryIds: json['repository_ids'] != null ? SdkPresent(((json['repository_ids'] as List?)?.map((e) => (e as num).toInt()).toList())!) : const SdkOmitted(),
-    permissions: json['permissions'] != null ? SdkPresent((json['permissions'] != null ? AppPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-  );
+  factory AppsScopeTokenRequestBody.fromJson(Map<String, dynamic> json) =>
+      AppsScopeTokenRequestBody(
+        accessToken: (json['access_token'] as String?)!,
+        target: json['target'] != null
+            ? SdkPresent((json['target'] as String?)!)
+            : const SdkOmitted(),
+        targetId: json['target_id'] != null
+            ? SdkPresent(((json['target_id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        repositories: json['repositories'] != null
+            ? SdkPresent(((json['repositories'] as List?)
+                ?.map((e) => e as String)
+                .toList())!)
+            : const SdkOmitted(),
+        repositoryIds: json['repository_ids'] != null
+            ? SdkPresent(((json['repository_ids'] as List?)
+                ?.map((e) => (e as num).toInt())
+                .toList())!)
+            : const SdkOmitted(),
+        permissions: json['permissions'] != null
+            ? SdkPresent((json['permissions'] != null
+                ? AppPermissions.fromJson(
+                    json['permissions'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'access_token': accessToken,
-    ...switch (target) {
-      SdkPresent<String>(value: final value) => {'target': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (targetId) {
-      SdkPresent<int>(value: final value) => {'target_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (repositories) {
-      SdkPresent<List<String>>(value: final value) => {'repositories': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (repositoryIds) {
-      SdkPresent<List<int>>(value: final value) => {'repository_ids': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (permissions) {
-      SdkPresent<AppPermissions>(value: final value) => {'permissions': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'access_token': accessToken,
+        ...switch (target) {
+          SdkPresent<String>(value: final value) => {
+              'target': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (targetId) {
+          SdkPresent<int>(value: final value) => {
+              'target_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (repositories) {
+          SdkPresent<List<String>>(value: final value) => {
+              'repositories': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (repositoryIds) {
+          SdkPresent<List<int>>(value: final value) => {
+              'repository_ids': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (permissions) {
+          SdkPresent<AppPermissions>(value: final value) => {
+              'permissions': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

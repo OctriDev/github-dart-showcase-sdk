@@ -6,189 +6,236 @@ part of 'inline.dart';
 // Inline operation models (part 19)
 /// The execution scope of the vulnerable dependency.
 final class DependabotAlertWithdrawnWebhookDependencyScope {
-
   final String value;
 
   const DependabotAlertWithdrawnWebhookDependencyScope._(this.value);
 
-  factory DependabotAlertWithdrawnWebhookDependencyScope.fromJson(String value) => DependabotAlertWithdrawnWebhookDependencyScope._(value);
+  factory DependabotAlertWithdrawnWebhookDependencyScope.fromJson(
+          String value) =>
+      DependabotAlertWithdrawnWebhookDependencyScope._(value);
 
-  static const development = DependabotAlertWithdrawnWebhookDependencyScope._('development');
-  static const runtime = DependabotAlertWithdrawnWebhookDependencyScope._('runtime');
+  static const development =
+      DependabotAlertWithdrawnWebhookDependencyScope._('development');
+  static const runtime =
+      DependabotAlertWithdrawnWebhookDependencyScope._('runtime');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is DependabotAlertWithdrawnWebhookDependencyScope && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is DependabotAlertWithdrawnWebhookDependencyScope &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The state of the Dependabot alert.
 final class DependabotAlertWithdrawnWebhookState {
-
   final String value;
 
   const DependabotAlertWithdrawnWebhookState._(this.value);
 
-  factory DependabotAlertWithdrawnWebhookState.fromJson(String value) => DependabotAlertWithdrawnWebhookState._(value);
+  factory DependabotAlertWithdrawnWebhookState.fromJson(String value) =>
+      DependabotAlertWithdrawnWebhookState._(value);
 
   static const withdrawn = DependabotAlertWithdrawnWebhookState._('withdrawn');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is DependabotAlertWithdrawnWebhookState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is DependabotAlertWithdrawnWebhookState && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The vulnerable dependency's relationship to your project. &gt; [!NOTE] &gt; We are rolling out support for dependency relationship across ecosystems. This value will be "unknown" for all dependencies in unsupported ecosystems.
 final class DependabotAlertWithRepositoryDependencyRelationship {
-
   final String value;
 
   const DependabotAlertWithRepositoryDependencyRelationship._(this.value);
 
-  factory DependabotAlertWithRepositoryDependencyRelationship.fromJson(String value) => DependabotAlertWithRepositoryDependencyRelationship._(value);
+  factory DependabotAlertWithRepositoryDependencyRelationship.fromJson(
+          String value) =>
+      DependabotAlertWithRepositoryDependencyRelationship._(value);
 
-  static const unknown = DependabotAlertWithRepositoryDependencyRelationship._('unknown');
-  static const direct = DependabotAlertWithRepositoryDependencyRelationship._('direct');
-  static const transitive = DependabotAlertWithRepositoryDependencyRelationship._('transitive');
-  static const inconclusive = DependabotAlertWithRepositoryDependencyRelationship._('inconclusive');
+  static const unknown =
+      DependabotAlertWithRepositoryDependencyRelationship._('unknown');
+  static const direct =
+      DependabotAlertWithRepositoryDependencyRelationship._('direct');
+  static const transitive =
+      DependabotAlertWithRepositoryDependencyRelationship._('transitive');
+  static const inconclusive =
+      DependabotAlertWithRepositoryDependencyRelationship._('inconclusive');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is DependabotAlertWithRepositoryDependencyRelationship && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is DependabotAlertWithRepositoryDependencyRelationship &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The execution scope of the vulnerable dependency.
 final class DependabotAlertWithRepositoryDependencyScope {
-
   final String value;
 
   const DependabotAlertWithRepositoryDependencyScope._(this.value);
 
-  factory DependabotAlertWithRepositoryDependencyScope.fromJson(String value) => DependabotAlertWithRepositoryDependencyScope._(value);
+  factory DependabotAlertWithRepositoryDependencyScope.fromJson(String value) =>
+      DependabotAlertWithRepositoryDependencyScope._(value);
 
-  static const development = DependabotAlertWithRepositoryDependencyScope._('development');
-  static const runtime = DependabotAlertWithRepositoryDependencyScope._('runtime');
+  static const development =
+      DependabotAlertWithRepositoryDependencyScope._('development');
+  static const runtime =
+      DependabotAlertWithRepositoryDependencyScope._('runtime');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is DependabotAlertWithRepositoryDependencyScope && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is DependabotAlertWithRepositoryDependencyScope &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The reason that the alert was dismissed.
 final class DependabotAlertWithRepositoryDismissedReason {
-
   final String value;
 
   const DependabotAlertWithRepositoryDismissedReason._(this.value);
 
-  factory DependabotAlertWithRepositoryDismissedReason.fromJson(String value) => DependabotAlertWithRepositoryDismissedReason._(value);
+  factory DependabotAlertWithRepositoryDismissedReason.fromJson(String value) =>
+      DependabotAlertWithRepositoryDismissedReason._(value);
 
-  static const fixStarted = DependabotAlertWithRepositoryDismissedReason._('fix_started');
-  static const inaccurate = DependabotAlertWithRepositoryDismissedReason._('inaccurate');
-  static const noBandwidth = DependabotAlertWithRepositoryDismissedReason._('no_bandwidth');
-  static const notUsed = DependabotAlertWithRepositoryDismissedReason._('not_used');
-  static const tolerableRisk = DependabotAlertWithRepositoryDismissedReason._('tolerable_risk');
+  static const fixStarted =
+      DependabotAlertWithRepositoryDismissedReason._('fix_started');
+  static const inaccurate =
+      DependabotAlertWithRepositoryDismissedReason._('inaccurate');
+  static const noBandwidth =
+      DependabotAlertWithRepositoryDismissedReason._('no_bandwidth');
+  static const notUsed =
+      DependabotAlertWithRepositoryDismissedReason._('not_used');
+  static const tolerableRisk =
+      DependabotAlertWithRepositoryDismissedReason._('tolerable_risk');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is DependabotAlertWithRepositoryDismissedReason && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is DependabotAlertWithRepositoryDismissedReason &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The state of the Dependabot alert.
 final class DependabotAlertWithRepositoryState {
-
   final String value;
 
   const DependabotAlertWithRepositoryState._(this.value);
 
-  factory DependabotAlertWithRepositoryState.fromJson(String value) => DependabotAlertWithRepositoryState._(value);
+  factory DependabotAlertWithRepositoryState.fromJson(String value) =>
+      DependabotAlertWithRepositoryState._(value);
 
-  static const autoDismissed = DependabotAlertWithRepositoryState._('auto_dismissed');
+  static const autoDismissed =
+      DependabotAlertWithRepositoryState._('auto_dismissed');
   static const dismissed = DependabotAlertWithRepositoryState._('dismissed');
   static const fixed = DependabotAlertWithRepositoryState._('fixed');
   static const open = DependabotAlertWithRepositoryState._('open');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is DependabotAlertWithRepositoryState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is DependabotAlertWithRepositoryState && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The default repository access level for Dependabot updates.
 final class DependabotRepositoryAccessDetailsDefaultLevel {
-
   final String value;
 
   const DependabotRepositoryAccessDetailsDefaultLevel._(this.value);
 
-  factory DependabotRepositoryAccessDetailsDefaultLevel.fromJson(String value) => DependabotRepositoryAccessDetailsDefaultLevel._(value);
+  factory DependabotRepositoryAccessDetailsDefaultLevel.fromJson(
+          String value) =>
+      DependabotRepositoryAccessDetailsDefaultLevel._(value);
 
-  static const public = DependabotRepositoryAccessDetailsDefaultLevel._('public');
-  static const internal = DependabotRepositoryAccessDetailsDefaultLevel._('internal');
+  static const public =
+      DependabotRepositoryAccessDetailsDefaultLevel._('public');
+  static const internal =
+      DependabotRepositoryAccessDetailsDefaultLevel._('internal');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is DependabotRepositoryAccessDetailsDefaultLevel && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is DependabotRepositoryAccessDetailsDefaultLevel &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// A notation of whether a dependency is requested directly by this manifest or is a dependency of another dependency.
 final class DependencyRelationship {
-
   final String value;
 
   const DependencyRelationship._(this.value);
 
-  factory DependencyRelationship.fromJson(String value) => DependencyRelationship._(value);
+  factory DependencyRelationship.fromJson(String value) =>
+      DependencyRelationship._(value);
 
   static const direct = DependencyRelationship._('direct');
   static const indirect = DependencyRelationship._('indirect');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is DependencyRelationship && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is DependencyRelationship && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// A notation of whether the dependency is required for the primary build artifact (runtime) or is only used for development. Future versions of this specification may allow for more granular scopes.
 final class DependencyScope {
-
   final String value;
 
   const DependencyScope._(this.value);
@@ -200,43 +247,49 @@ final class DependencyScope {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is DependencyScope && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is DependencyScope && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class DependencyGraphDiffItemChangeType {
-
   final String value;
 
   const DependencyGraphDiffItemChangeType._(this.value);
 
-  factory DependencyGraphDiffItemChangeType.fromJson(String value) => DependencyGraphDiffItemChangeType._(value);
+  factory DependencyGraphDiffItemChangeType.fromJson(String value) =>
+      DependencyGraphDiffItemChangeType._(value);
 
   static const added = DependencyGraphDiffItemChangeType._('added');
   static const removed = DependencyGraphDiffItemChangeType._('removed');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is DependencyGraphDiffItemChangeType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is DependencyGraphDiffItemChangeType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Where the dependency is utilized. `development` means that the dependency is only utilized in the development environment. `runtime` means that the dependency is utilized at runtime and in the development environment.
 final class DependencyGraphDiffItemScope {
-
   final String value;
 
   const DependencyGraphDiffItemScope._(this.value);
 
-  factory DependencyGraphDiffItemScope.fromJson(String value) => DependencyGraphDiffItemScope._(value);
+  factory DependencyGraphDiffItemScope.fromJson(String value) =>
+      DependencyGraphDiffItemScope._(value);
 
   static const unknown = DependencyGraphDiffItemScope._('unknown');
   static const runtime = DependencyGraphDiffItemScope._('runtime');
@@ -244,32 +297,38 @@ final class DependencyGraphDiffItemScope {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is DependencyGraphDiffItemScope && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is DependencyGraphDiffItemScope && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Whether this rule targets a branch or tag.
 final class DeploymentBranchPolicyType {
-
   final String value;
 
   const DeploymentBranchPolicyType._(this.value);
 
-  factory DeploymentBranchPolicyType.fromJson(String value) => DeploymentBranchPolicyType._(value);
+  factory DeploymentBranchPolicyType.fromJson(String value) =>
+      DeploymentBranchPolicyType._(value);
 
   static const branch = DeploymentBranchPolicyType._('branch');
   static const tag = DeploymentBranchPolicyType._('tag');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is DeploymentBranchPolicyType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is DeploymentBranchPolicyType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

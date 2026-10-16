@@ -6,259 +6,350 @@ part of 'inline.dart';
 // Inline operation models (part 88)
 /// State of the issue; either 'open' or 'closed'
 final class WebhookIssueCommentPinnedIssueVariant0State {
-
   final String value;
 
   const WebhookIssueCommentPinnedIssueVariant0State._(this.value);
 
-  factory WebhookIssueCommentPinnedIssueVariant0State.fromJson(String value) => WebhookIssueCommentPinnedIssueVariant0State._(value);
+  factory WebhookIssueCommentPinnedIssueVariant0State.fromJson(String value) =>
+      WebhookIssueCommentPinnedIssueVariant0State._(value);
 
   static const open = WebhookIssueCommentPinnedIssueVariant0State._('open');
   static const closed = WebhookIssueCommentPinnedIssueVariant0State._('closed');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookIssueCommentPinnedIssueVariant0State && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookIssueCommentPinnedIssueVariant0State &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhookIssueCommentPinnedIssueVariant0UserType {
-
   final String value;
 
   const WebhookIssueCommentPinnedIssueVariant0UserType._(this.value);
 
-  factory WebhookIssueCommentPinnedIssueVariant0UserType.fromJson(String value) => WebhookIssueCommentPinnedIssueVariant0UserType._(value);
+  factory WebhookIssueCommentPinnedIssueVariant0UserType.fromJson(
+          String value) =>
+      WebhookIssueCommentPinnedIssueVariant0UserType._(value);
 
   static const bot = WebhookIssueCommentPinnedIssueVariant0UserType._('Bot');
   static const user = WebhookIssueCommentPinnedIssueVariant0UserType._('User');
-  static const organization = WebhookIssueCommentPinnedIssueVariant0UserType._('Organization');
-  static const mannequin = WebhookIssueCommentPinnedIssueVariant0UserType._('Mannequin');
+  static const organization =
+      WebhookIssueCommentPinnedIssueVariant0UserType._('Organization');
+  static const mannequin =
+      WebhookIssueCommentPinnedIssueVariant0UserType._('Mannequin');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookIssueCommentPinnedIssueVariant0UserType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookIssueCommentPinnedIssueVariant0UserType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhookIssueCommentPinnedIssueVariant1AssigneeType {
-
   final String value;
 
   const WebhookIssueCommentPinnedIssueVariant1AssigneeType._(this.value);
 
-  factory WebhookIssueCommentPinnedIssueVariant1AssigneeType.fromJson(String value) => WebhookIssueCommentPinnedIssueVariant1AssigneeType._(value);
+  factory WebhookIssueCommentPinnedIssueVariant1AssigneeType.fromJson(
+          String value) =>
+      WebhookIssueCommentPinnedIssueVariant1AssigneeType._(value);
 
-  static const bot = WebhookIssueCommentPinnedIssueVariant1AssigneeType._('Bot');
-  static const user = WebhookIssueCommentPinnedIssueVariant1AssigneeType._('User');
-  static const organization = WebhookIssueCommentPinnedIssueVariant1AssigneeType._('Organization');
-  static const mannequin = WebhookIssueCommentPinnedIssueVariant1AssigneeType._('Mannequin');
+  static const bot =
+      WebhookIssueCommentPinnedIssueVariant1AssigneeType._('Bot');
+  static const user =
+      WebhookIssueCommentPinnedIssueVariant1AssigneeType._('User');
+  static const organization =
+      WebhookIssueCommentPinnedIssueVariant1AssigneeType._('Organization');
+  static const mannequin =
+      WebhookIssueCommentPinnedIssueVariant1AssigneeType._('Mannequin');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookIssueCommentPinnedIssueVariant1AssigneeType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookIssueCommentPinnedIssueVariant1AssigneeType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// State of the issue; either 'open' or 'closed'
 final class WebhookIssueCommentPinnedIssueVariant1State {
-
   final String value;
 
   const WebhookIssueCommentPinnedIssueVariant1State._(this.value);
 
-  factory WebhookIssueCommentPinnedIssueVariant1State.fromJson(String value) => WebhookIssueCommentPinnedIssueVariant1State._(value);
+  factory WebhookIssueCommentPinnedIssueVariant1State.fromJson(String value) =>
+      WebhookIssueCommentPinnedIssueVariant1State._(value);
 
   static const open = WebhookIssueCommentPinnedIssueVariant1State._('open');
   static const closed = WebhookIssueCommentPinnedIssueVariant1State._('closed');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookIssueCommentPinnedIssueVariant1State && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookIssueCommentPinnedIssueVariant1State &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookIssueCommentUnpinnedAction {
-
   final String value;
 
   const WebhookIssueCommentUnpinnedAction._(this.value);
 
-  factory WebhookIssueCommentUnpinnedAction.fromJson(String value) => WebhookIssueCommentUnpinnedAction._(value);
+  factory WebhookIssueCommentUnpinnedAction.fromJson(String value) =>
+      WebhookIssueCommentUnpinnedAction._(value);
 
   static const unpinned = WebhookIssueCommentUnpinnedAction._('unpinned');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookIssueCommentUnpinnedAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookIssueCommentUnpinnedAction && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `active_lock_reason` wire field.
 final class WebhookIssueCommentUnpinnedIssueVariant0ActiveLockReason {
-
   final String value;
 
   const WebhookIssueCommentUnpinnedIssueVariant0ActiveLockReason._(this.value);
 
-  factory WebhookIssueCommentUnpinnedIssueVariant0ActiveLockReason.fromJson(String value) => WebhookIssueCommentUnpinnedIssueVariant0ActiveLockReason._(value);
+  factory WebhookIssueCommentUnpinnedIssueVariant0ActiveLockReason.fromJson(
+          String value) =>
+      WebhookIssueCommentUnpinnedIssueVariant0ActiveLockReason._(value);
 
-  static const resolved = WebhookIssueCommentUnpinnedIssueVariant0ActiveLockReason._('resolved');
-  static const offTopic = WebhookIssueCommentUnpinnedIssueVariant0ActiveLockReason._('off-topic');
-  static const tooHeated = WebhookIssueCommentUnpinnedIssueVariant0ActiveLockReason._('too heated');
-  static const spam = WebhookIssueCommentUnpinnedIssueVariant0ActiveLockReason._('spam');
+  static const resolved =
+      WebhookIssueCommentUnpinnedIssueVariant0ActiveLockReason._('resolved');
+  static const offTopic =
+      WebhookIssueCommentUnpinnedIssueVariant0ActiveLockReason._('off-topic');
+  static const tooHeated =
+      WebhookIssueCommentUnpinnedIssueVariant0ActiveLockReason._('too heated');
+  static const spam =
+      WebhookIssueCommentUnpinnedIssueVariant0ActiveLockReason._('spam');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookIssueCommentUnpinnedIssueVariant0ActiveLockReason && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookIssueCommentUnpinnedIssueVariant0ActiveLockReason &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhookIssueCommentUnpinnedIssueVariant0AssigneeType {
-
   final String value;
 
   const WebhookIssueCommentUnpinnedIssueVariant0AssigneeType._(this.value);
 
-  factory WebhookIssueCommentUnpinnedIssueVariant0AssigneeType.fromJson(String value) => WebhookIssueCommentUnpinnedIssueVariant0AssigneeType._(value);
+  factory WebhookIssueCommentUnpinnedIssueVariant0AssigneeType.fromJson(
+          String value) =>
+      WebhookIssueCommentUnpinnedIssueVariant0AssigneeType._(value);
 
-  static const bot = WebhookIssueCommentUnpinnedIssueVariant0AssigneeType._('Bot');
-  static const user = WebhookIssueCommentUnpinnedIssueVariant0AssigneeType._('User');
-  static const organization = WebhookIssueCommentUnpinnedIssueVariant0AssigneeType._('Organization');
-  static const mannequin = WebhookIssueCommentUnpinnedIssueVariant0AssigneeType._('Mannequin');
+  static const bot =
+      WebhookIssueCommentUnpinnedIssueVariant0AssigneeType._('Bot');
+  static const user =
+      WebhookIssueCommentUnpinnedIssueVariant0AssigneeType._('User');
+  static const organization =
+      WebhookIssueCommentUnpinnedIssueVariant0AssigneeType._('Organization');
+  static const mannequin =
+      WebhookIssueCommentUnpinnedIssueVariant0AssigneeType._('Mannequin');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookIssueCommentUnpinnedIssueVariant0AssigneeType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookIssueCommentUnpinnedIssueVariant0AssigneeType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhookIssueCommentUnpinnedIssueVariant0AssigneesItemType {
-
   final String value;
 
   const WebhookIssueCommentUnpinnedIssueVariant0AssigneesItemType._(this.value);
 
-  factory WebhookIssueCommentUnpinnedIssueVariant0AssigneesItemType.fromJson(String value) => WebhookIssueCommentUnpinnedIssueVariant0AssigneesItemType._(value);
+  factory WebhookIssueCommentUnpinnedIssueVariant0AssigneesItemType.fromJson(
+          String value) =>
+      WebhookIssueCommentUnpinnedIssueVariant0AssigneesItemType._(value);
 
-  static const bot = WebhookIssueCommentUnpinnedIssueVariant0AssigneesItemType._('Bot');
-  static const user = WebhookIssueCommentUnpinnedIssueVariant0AssigneesItemType._('User');
-  static const organization = WebhookIssueCommentUnpinnedIssueVariant0AssigneesItemType._('Organization');
-  static const mannequin = WebhookIssueCommentUnpinnedIssueVariant0AssigneesItemType._('Mannequin');
+  static const bot =
+      WebhookIssueCommentUnpinnedIssueVariant0AssigneesItemType._('Bot');
+  static const user =
+      WebhookIssueCommentUnpinnedIssueVariant0AssigneesItemType._('User');
+  static const organization =
+      WebhookIssueCommentUnpinnedIssueVariant0AssigneesItemType._(
+          'Organization');
+  static const mannequin =
+      WebhookIssueCommentUnpinnedIssueVariant0AssigneesItemType._('Mannequin');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookIssueCommentUnpinnedIssueVariant0AssigneesItemType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookIssueCommentUnpinnedIssueVariant0AssigneesItemType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// How the author is associated with the repository.
 final class WebhookIssueCommentUnpinnedIssueVariant0AuthorAssociation {
-
   final String value;
 
   const WebhookIssueCommentUnpinnedIssueVariant0AuthorAssociation._(this.value);
 
-  factory WebhookIssueCommentUnpinnedIssueVariant0AuthorAssociation.fromJson(String value) => WebhookIssueCommentUnpinnedIssueVariant0AuthorAssociation._(value);
+  factory WebhookIssueCommentUnpinnedIssueVariant0AuthorAssociation.fromJson(
+          String value) =>
+      WebhookIssueCommentUnpinnedIssueVariant0AuthorAssociation._(value);
 
-  static const collaborator = WebhookIssueCommentUnpinnedIssueVariant0AuthorAssociation._('COLLABORATOR');
-  static const contributor = WebhookIssueCommentUnpinnedIssueVariant0AuthorAssociation._('CONTRIBUTOR');
-  static const firstTimer = WebhookIssueCommentUnpinnedIssueVariant0AuthorAssociation._('FIRST_TIMER');
-  static const firstTimeContributor = WebhookIssueCommentUnpinnedIssueVariant0AuthorAssociation._('FIRST_TIME_CONTRIBUTOR');
-  static const mannequin = WebhookIssueCommentUnpinnedIssueVariant0AuthorAssociation._('MANNEQUIN');
-  static const member = WebhookIssueCommentUnpinnedIssueVariant0AuthorAssociation._('MEMBER');
-  static const none = WebhookIssueCommentUnpinnedIssueVariant0AuthorAssociation._('NONE');
-  static const owner = WebhookIssueCommentUnpinnedIssueVariant0AuthorAssociation._('OWNER');
+  static const collaborator =
+      WebhookIssueCommentUnpinnedIssueVariant0AuthorAssociation._(
+          'COLLABORATOR');
+  static const contributor =
+      WebhookIssueCommentUnpinnedIssueVariant0AuthorAssociation._(
+          'CONTRIBUTOR');
+  static const firstTimer =
+      WebhookIssueCommentUnpinnedIssueVariant0AuthorAssociation._(
+          'FIRST_TIMER');
+  static const firstTimeContributor =
+      WebhookIssueCommentUnpinnedIssueVariant0AuthorAssociation._(
+          'FIRST_TIME_CONTRIBUTOR');
+  static const mannequin =
+      WebhookIssueCommentUnpinnedIssueVariant0AuthorAssociation._('MANNEQUIN');
+  static const member =
+      WebhookIssueCommentUnpinnedIssueVariant0AuthorAssociation._('MEMBER');
+  static const none =
+      WebhookIssueCommentUnpinnedIssueVariant0AuthorAssociation._('NONE');
+  static const owner =
+      WebhookIssueCommentUnpinnedIssueVariant0AuthorAssociation._('OWNER');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookIssueCommentUnpinnedIssueVariant0AuthorAssociation && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookIssueCommentUnpinnedIssueVariant0AuthorAssociation &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhookIssueCommentUnpinnedIssueVariant0MilestoneCreatorType {
-
   final String value;
 
-  const WebhookIssueCommentUnpinnedIssueVariant0MilestoneCreatorType._(this.value);
+  const WebhookIssueCommentUnpinnedIssueVariant0MilestoneCreatorType._(
+      this.value);
 
-  factory WebhookIssueCommentUnpinnedIssueVariant0MilestoneCreatorType.fromJson(String value) => WebhookIssueCommentUnpinnedIssueVariant0MilestoneCreatorType._(value);
+  factory WebhookIssueCommentUnpinnedIssueVariant0MilestoneCreatorType.fromJson(
+          String value) =>
+      WebhookIssueCommentUnpinnedIssueVariant0MilestoneCreatorType._(value);
 
-  static const bot = WebhookIssueCommentUnpinnedIssueVariant0MilestoneCreatorType._('Bot');
-  static const user = WebhookIssueCommentUnpinnedIssueVariant0MilestoneCreatorType._('User');
-  static const organization = WebhookIssueCommentUnpinnedIssueVariant0MilestoneCreatorType._('Organization');
-  static const mannequin = WebhookIssueCommentUnpinnedIssueVariant0MilestoneCreatorType._('Mannequin');
+  static const bot =
+      WebhookIssueCommentUnpinnedIssueVariant0MilestoneCreatorType._('Bot');
+  static const user =
+      WebhookIssueCommentUnpinnedIssueVariant0MilestoneCreatorType._('User');
+  static const organization =
+      WebhookIssueCommentUnpinnedIssueVariant0MilestoneCreatorType._(
+          'Organization');
+  static const mannequin =
+      WebhookIssueCommentUnpinnedIssueVariant0MilestoneCreatorType._(
+          'Mannequin');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookIssueCommentUnpinnedIssueVariant0MilestoneCreatorType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookIssueCommentUnpinnedIssueVariant0MilestoneCreatorType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The state of the milestone.
 final class WebhookIssueCommentUnpinnedIssueVariant0MilestoneState {
-
   final String value;
 
   const WebhookIssueCommentUnpinnedIssueVariant0MilestoneState._(this.value);
 
-  factory WebhookIssueCommentUnpinnedIssueVariant0MilestoneState.fromJson(String value) => WebhookIssueCommentUnpinnedIssueVariant0MilestoneState._(value);
+  factory WebhookIssueCommentUnpinnedIssueVariant0MilestoneState.fromJson(
+          String value) =>
+      WebhookIssueCommentUnpinnedIssueVariant0MilestoneState._(value);
 
-  static const open = WebhookIssueCommentUnpinnedIssueVariant0MilestoneState._('open');
-  static const closed = WebhookIssueCommentUnpinnedIssueVariant0MilestoneState._('closed');
+  static const open =
+      WebhookIssueCommentUnpinnedIssueVariant0MilestoneState._('open');
+  static const closed =
+      WebhookIssueCommentUnpinnedIssueVariant0MilestoneState._('closed');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookIssueCommentUnpinnedIssueVariant0MilestoneState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookIssueCommentUnpinnedIssueVariant0MilestoneState &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

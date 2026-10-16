@@ -8,259 +8,472 @@ part of 'codespaces.dart';
 class CodespaceExportDetails {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// State of the latest export
   final SdkOptional<String?> state;
+
   /// Completion time of the last export operation
   final SdkOptional<String?> completedAt;
+
   /// Name of the exported branch
   final SdkOptional<String?> branch;
+
   /// Git commit SHA of the exported branch
   final SdkOptional<String?> sha;
+
   /// Id for the export details
   final SdkOptional<String> id;
+
   /// Url for fetching export details
   final SdkOptional<String> exportUrl;
+
   /// Web url for the exported branch
   final SdkOptional<String?> htmlUrl;
 
-  const CodespaceExportDetails({this.state = const SdkOmitted(), this.completedAt = const SdkOmitted(), this.branch = const SdkOmitted(), this.sha = const SdkOmitted(), this.id = const SdkOmitted(), this.exportUrl = const SdkOmitted(), this.htmlUrl = const SdkOmitted()});
+  const CodespaceExportDetails(
+      {this.state = const SdkOmitted(),
+      this.completedAt = const SdkOmitted(),
+      this.branch = const SdkOmitted(),
+      this.sha = const SdkOmitted(),
+      this.id = const SdkOmitted(),
+      this.exportUrl = const SdkOmitted(),
+      this.htmlUrl = const SdkOmitted()});
 
-  CodespaceExportDetails Function({SdkOptional<String?> state, SdkOptional<String?> completedAt, SdkOptional<String?> branch, SdkOptional<String?> sha, SdkOptional<String> id, SdkOptional<String> exportUrl, SdkOptional<String?> htmlUrl}) get copyWith => _copyWith;
+  CodespaceExportDetails Function(
+      {SdkOptional<String?> state,
+      SdkOptional<String?> completedAt,
+      SdkOptional<String?> branch,
+      SdkOptional<String?> sha,
+      SdkOptional<String> id,
+      SdkOptional<String> exportUrl,
+      SdkOptional<String?> htmlUrl}) get copyWith => _copyWith;
 
-  CodespaceExportDetails _copyWith({Object? state = sdkOmittedValue, Object? completedAt = sdkOmittedValue, Object? branch = sdkOmittedValue, Object? sha = sdkOmittedValue, Object? id = sdkOmittedValue, Object? exportUrl = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue}) => CodespaceExportDetails(
-    state: identical(state, sdkOmittedValue) ? this.state : state as SdkOptional<String?>,
-    completedAt: identical(completedAt, sdkOmittedValue) ? this.completedAt : completedAt as SdkOptional<String?>,
-    branch: identical(branch, sdkOmittedValue) ? this.branch : branch as SdkOptional<String?>,
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as SdkOptional<String?>,
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<String>,
-    exportUrl: identical(exportUrl, sdkOmittedValue) ? this.exportUrl : exportUrl as SdkOptional<String>,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String?>,
-  );
+  CodespaceExportDetails _copyWith(
+          {Object? state = sdkOmittedValue,
+          Object? completedAt = sdkOmittedValue,
+          Object? branch = sdkOmittedValue,
+          Object? sha = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? exportUrl = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue}) =>
+      CodespaceExportDetails(
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state as SdkOptional<String?>,
+        completedAt: identical(completedAt, sdkOmittedValue)
+            ? this.completedAt
+            : completedAt as SdkOptional<String?>,
+        branch: identical(branch, sdkOmittedValue)
+            ? this.branch
+            : branch as SdkOptional<String?>,
+        sha: identical(sha, sdkOmittedValue)
+            ? this.sha
+            : sha as SdkOptional<String?>,
+        id: identical(id, sdkOmittedValue)
+            ? this.id
+            : id as SdkOptional<String>,
+        exportUrl: identical(exportUrl, sdkOmittedValue)
+            ? this.exportUrl
+            : exportUrl as SdkOptional<String>,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as SdkOptional<String?>,
+      );
 
-  factory CodespaceExportDetails.fromJson(Map<String, dynamic> json) => CodespaceExportDetails(
-    state: json.containsKey('state') ? SdkPresent(json['state'] as String?) : const SdkOmitted(),
-    completedAt: json.containsKey('completed_at') ? SdkPresent(json['completed_at'] as String?) : const SdkOmitted(),
-    branch: json.containsKey('branch') ? SdkPresent(json['branch'] as String?) : const SdkOmitted(),
-    sha: json.containsKey('sha') ? SdkPresent(json['sha'] as String?) : const SdkOmitted(),
-    id: json['id'] != null ? SdkPresent((json['id'] as String?)!) : const SdkOmitted(),
-    exportUrl: json['export_url'] != null ? SdkPresent((json['export_url'] as String?)!) : const SdkOmitted(),
-    htmlUrl: json.containsKey('html_url') ? SdkPresent(json['html_url'] as String?) : const SdkOmitted(),
-  );
+  factory CodespaceExportDetails.fromJson(Map<String, dynamic> json) =>
+      CodespaceExportDetails(
+        state: json.containsKey('state')
+            ? SdkPresent(json['state'] as String?)
+            : const SdkOmitted(),
+        completedAt: json.containsKey('completed_at')
+            ? SdkPresent(json['completed_at'] as String?)
+            : const SdkOmitted(),
+        branch: json.containsKey('branch')
+            ? SdkPresent(json['branch'] as String?)
+            : const SdkOmitted(),
+        sha: json.containsKey('sha')
+            ? SdkPresent(json['sha'] as String?)
+            : const SdkOmitted(),
+        id: json['id'] != null
+            ? SdkPresent((json['id'] as String?)!)
+            : const SdkOmitted(),
+        exportUrl: json['export_url'] != null
+            ? SdkPresent((json['export_url'] as String?)!)
+            : const SdkOmitted(),
+        htmlUrl: json.containsKey('html_url')
+            ? SdkPresent(json['html_url'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (state) {
-      SdkPresent<String?>(value: final value) => {'state': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (completedAt) {
-      SdkPresent<String?>(value: final value) => {'completed_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (branch) {
-      SdkPresent<String?>(value: final value) => {'branch': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (sha) {
-      SdkPresent<String?>(value: final value) => {'sha': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (id) {
-      SdkPresent<String>(value: final value) => {'id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (exportUrl) {
-      SdkPresent<String>(value: final value) => {'export_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (htmlUrl) {
-      SdkPresent<String?>(value: final value) => {'html_url': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (state) {
+          SdkPresent<String?>(value: final value) => {
+              'state': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (completedAt) {
+          SdkPresent<String?>(value: final value) => {
+              'completed_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (branch) {
+          SdkPresent<String?>(value: final value) => {
+              'branch': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (sha) {
+          SdkPresent<String?>(value: final value) => {
+              'sha': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (id) {
+          SdkPresent<String>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (exportUrl) {
+          SdkPresent<String>(value: final value) => {
+              'export_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (htmlUrl) {
+          SdkPresent<String?>(value: final value) => {
+              'html_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// A description of the machine powering a codespace.
 class CodespaceMachine {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the machine.
   final String name;
+
   /// The display name of the machine includes cores, memory, and storage.
   final String displayName;
+
   /// The operating system of the machine.
   final String operatingSystem;
+
   /// How much storage is available to the codespace.
   final int storageInBytes;
+
   /// How much memory is available to the codespace.
   final int memoryInBytes;
+
   /// How many cores are available to the codespace.
   final int cpus;
+
   /// Whether a prebuild is currently available when creating a codespace for this machine and repository. If a branch was not specified as a ref, the default branch will be assumed. Value will be "null" if prebuilds are not supported or prebuild availability could not be determined. Value will be "none" if no prebuild is available. Latest values "ready" and "in_progress" indicate the prebuild availability status.
   final CodespaceMachinePrebuildAvailability? prebuildAvailability;
 
-  const CodespaceMachine({required this.name, required this.displayName, required this.operatingSystem, required this.storageInBytes, required this.memoryInBytes, required this.cpus, required this.prebuildAvailability});
+  const CodespaceMachine(
+      {required this.name,
+      required this.displayName,
+      required this.operatingSystem,
+      required this.storageInBytes,
+      required this.memoryInBytes,
+      required this.cpus,
+      required this.prebuildAvailability});
 
-  CodespaceMachine Function({String name, String displayName, String operatingSystem, int storageInBytes, int memoryInBytes, int cpus, CodespaceMachinePrebuildAvailability? prebuildAvailability}) get copyWith => _copyWith;
+  CodespaceMachine Function(
+          {String name,
+          String displayName,
+          String operatingSystem,
+          int storageInBytes,
+          int memoryInBytes,
+          int cpus,
+          CodespaceMachinePrebuildAvailability? prebuildAvailability})
+      get copyWith => _copyWith;
 
-  CodespaceMachine _copyWith({Object? name = sdkOmittedValue, Object? displayName = sdkOmittedValue, Object? operatingSystem = sdkOmittedValue, Object? storageInBytes = sdkOmittedValue, Object? memoryInBytes = sdkOmittedValue, Object? cpus = sdkOmittedValue, Object? prebuildAvailability = sdkOmittedValue}) => CodespaceMachine(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    displayName: identical(displayName, sdkOmittedValue) ? this.displayName : displayName as String,
-    operatingSystem: identical(operatingSystem, sdkOmittedValue) ? this.operatingSystem : operatingSystem as String,
-    storageInBytes: identical(storageInBytes, sdkOmittedValue) ? this.storageInBytes : storageInBytes as int,
-    memoryInBytes: identical(memoryInBytes, sdkOmittedValue) ? this.memoryInBytes : memoryInBytes as int,
-    cpus: identical(cpus, sdkOmittedValue) ? this.cpus : cpus as int,
-    prebuildAvailability: identical(prebuildAvailability, sdkOmittedValue) ? this.prebuildAvailability : prebuildAvailability as CodespaceMachinePrebuildAvailability?,
-  );
+  CodespaceMachine _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? displayName = sdkOmittedValue,
+          Object? operatingSystem = sdkOmittedValue,
+          Object? storageInBytes = sdkOmittedValue,
+          Object? memoryInBytes = sdkOmittedValue,
+          Object? cpus = sdkOmittedValue,
+          Object? prebuildAvailability = sdkOmittedValue}) =>
+      CodespaceMachine(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        displayName: identical(displayName, sdkOmittedValue)
+            ? this.displayName
+            : displayName as String,
+        operatingSystem: identical(operatingSystem, sdkOmittedValue)
+            ? this.operatingSystem
+            : operatingSystem as String,
+        storageInBytes: identical(storageInBytes, sdkOmittedValue)
+            ? this.storageInBytes
+            : storageInBytes as int,
+        memoryInBytes: identical(memoryInBytes, sdkOmittedValue)
+            ? this.memoryInBytes
+            : memoryInBytes as int,
+        cpus: identical(cpus, sdkOmittedValue) ? this.cpus : cpus as int,
+        prebuildAvailability: identical(prebuildAvailability, sdkOmittedValue)
+            ? this.prebuildAvailability
+            : prebuildAvailability as CodespaceMachinePrebuildAvailability?,
+      );
 
-  factory CodespaceMachine.fromJson(Map<String, dynamic> json) => CodespaceMachine(
-    name: (json['name'] as String?)!,
-    displayName: (json['display_name'] as String?)!,
-    operatingSystem: (json['operating_system'] as String?)!,
-    storageInBytes: ((json['storage_in_bytes'] as num?)?.toInt())!,
-    memoryInBytes: ((json['memory_in_bytes'] as num?)?.toInt())!,
-    cpus: ((json['cpus'] as num?)?.toInt())!,
-    prebuildAvailability: json.containsKey('prebuild_availability') ? json['prebuild_availability'] != null ? CodespaceMachinePrebuildAvailability.fromJson(json['prebuild_availability'] as String) : null : throw ArgumentError.value(null, 'prebuild_availability', 'Required property is missing'),
-  );
+  factory CodespaceMachine.fromJson(Map<String, dynamic> json) =>
+      CodespaceMachine(
+        name: (json['name'] as String?)!,
+        displayName: (json['display_name'] as String?)!,
+        operatingSystem: (json['operating_system'] as String?)!,
+        storageInBytes: ((json['storage_in_bytes'] as num?)?.toInt())!,
+        memoryInBytes: ((json['memory_in_bytes'] as num?)?.toInt())!,
+        cpus: ((json['cpus'] as num?)?.toInt())!,
+        prebuildAvailability: json.containsKey('prebuild_availability')
+            ? json['prebuild_availability'] != null
+                ? CodespaceMachinePrebuildAvailability.fromJson(
+                    json['prebuild_availability'] as String)
+                : null
+            : throw ArgumentError.value(
+                null, 'prebuild_availability', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'display_name': displayName,
-    'operating_system': operatingSystem,
-    'storage_in_bytes': storageInBytes,
-    'memory_in_bytes': memoryInBytes,
-    'cpus': cpus,
-    'prebuild_availability': prebuildAvailability?.toJson(),
-  };
+        'name': name,
+        'display_name': displayName,
+        'operating_system': operatingSystem,
+        'storage_in_bytes': storageInBytes,
+        'memory_in_bytes': memoryInBytes,
+        'cpus': cpus,
+        'prebuild_availability': prebuildAvailability?.toJson(),
+      };
 }
 
 /// Secrets for a GitHub Codespace.
 class CodespacesOrgSecret {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the secret
   final String name;
+
   /// The date and time at which the secret was created, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
   final String createdAt;
+
   /// The date and time at which the secret was created, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
   final String updatedAt;
+
   /// The type of repositories in the organization that the secret is visible to
   final CodespacesOrgSecretVisibility visibility;
+
   /// The API URL at which the list of repositories this secret is visible to can be retrieved
   final SdkOptional<String> selectedRepositoriesUrl;
 
-  const CodespacesOrgSecret({required this.name, required this.createdAt, required this.updatedAt, required this.visibility, this.selectedRepositoriesUrl = const SdkOmitted()});
+  const CodespacesOrgSecret(
+      {required this.name,
+      required this.createdAt,
+      required this.updatedAt,
+      required this.visibility,
+      this.selectedRepositoriesUrl = const SdkOmitted()});
 
-  CodespacesOrgSecret Function({String name, String createdAt, String updatedAt, CodespacesOrgSecretVisibility visibility, SdkOptional<String> selectedRepositoriesUrl}) get copyWith => _copyWith;
+  CodespacesOrgSecret Function(
+      {String name,
+      String createdAt,
+      String updatedAt,
+      CodespacesOrgSecretVisibility visibility,
+      SdkOptional<String> selectedRepositoriesUrl}) get copyWith => _copyWith;
 
-  CodespacesOrgSecret _copyWith({Object? name = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? visibility = sdkOmittedValue, Object? selectedRepositoriesUrl = sdkOmittedValue}) => CodespacesOrgSecret(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
-    visibility: identical(visibility, sdkOmittedValue) ? this.visibility : visibility as CodespacesOrgSecretVisibility,
-    selectedRepositoriesUrl: identical(selectedRepositoriesUrl, sdkOmittedValue) ? this.selectedRepositoriesUrl : selectedRepositoriesUrl as SdkOptional<String>,
-  );
+  CodespacesOrgSecret _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? visibility = sdkOmittedValue,
+          Object? selectedRepositoriesUrl = sdkOmittedValue}) =>
+      CodespacesOrgSecret(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+        visibility: identical(visibility, sdkOmittedValue)
+            ? this.visibility
+            : visibility as CodespacesOrgSecretVisibility,
+        selectedRepositoriesUrl:
+            identical(selectedRepositoriesUrl, sdkOmittedValue)
+                ? this.selectedRepositoriesUrl
+                : selectedRepositoriesUrl as SdkOptional<String>,
+      );
 
-  factory CodespacesOrgSecret.fromJson(Map<String, dynamic> json) => CodespacesOrgSecret(
-    name: (json['name'] as String?)!,
-    createdAt: (json['created_at'] as String?)!,
-    updatedAt: (json['updated_at'] as String?)!,
-    visibility: (json['visibility'] != null ? CodespacesOrgSecretVisibility.fromJson(json['visibility'] as String) : null)!,
-    selectedRepositoriesUrl: json['selected_repositories_url'] != null ? SdkPresent((json['selected_repositories_url'] as String?)!) : const SdkOmitted(),
-  );
+  factory CodespacesOrgSecret.fromJson(Map<String, dynamic> json) =>
+      CodespacesOrgSecret(
+        name: (json['name'] as String?)!,
+        createdAt: (json['created_at'] as String?)!,
+        updatedAt: (json['updated_at'] as String?)!,
+        visibility: (json['visibility'] != null
+            ? CodespacesOrgSecretVisibility.fromJson(
+                json['visibility'] as String)
+            : null)!,
+        selectedRepositoriesUrl: json['selected_repositories_url'] != null
+            ? SdkPresent((json['selected_repositories_url'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'created_at': createdAt,
-    'updated_at': updatedAt,
-    'visibility': visibility.toJson(),
-    ...switch (selectedRepositoriesUrl) {
-      SdkPresent<String>(value: final value) => {'selected_repositories_url': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'name': name,
+        'created_at': createdAt,
+        'updated_at': updatedAt,
+        'visibility': visibility.toJson(),
+        ...switch (selectedRepositoriesUrl) {
+          SdkPresent<String>(value: final value) => {
+              'selected_repositories_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Permission check result for a given devcontainer config.
 class CodespacesPermissionsCheckForDevcontainer {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Whether the user has accepted the permissions defined by the devcontainer config
   final bool accepted;
 
   const CodespacesPermissionsCheckForDevcontainer({required this.accepted});
 
-  CodespacesPermissionsCheckForDevcontainer Function({bool accepted}) get copyWith => _copyWith;
+  CodespacesPermissionsCheckForDevcontainer Function({bool accepted})
+      get copyWith => _copyWith;
 
-  CodespacesPermissionsCheckForDevcontainer _copyWith({Object? accepted = sdkOmittedValue}) => CodespacesPermissionsCheckForDevcontainer(
-    accepted: identical(accepted, sdkOmittedValue) ? this.accepted : accepted as bool,
-  );
+  CodespacesPermissionsCheckForDevcontainer _copyWith(
+          {Object? accepted = sdkOmittedValue}) =>
+      CodespacesPermissionsCheckForDevcontainer(
+        accepted: identical(accepted, sdkOmittedValue)
+            ? this.accepted
+            : accepted as bool,
+      );
 
-  factory CodespacesPermissionsCheckForDevcontainer.fromJson(Map<String, dynamic> json) => CodespacesPermissionsCheckForDevcontainer(
-    accepted: (json['accepted'] as bool?)!,
-  );
+  factory CodespacesPermissionsCheckForDevcontainer.fromJson(
+          Map<String, dynamic> json) =>
+      CodespacesPermissionsCheckForDevcontainer(
+        accepted: (json['accepted'] as bool?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'accepted': accepted,
-  };
+        'accepted': accepted,
+      };
 }
 
 /// The public key used for setting Codespaces secrets.
 class CodespacesPublicKey {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The identifier for the key.
   final String keyId;
+
   /// The Base64 encoded public key.
   final String key;
+
   /// Optional `integer` value serialized in the `id` wire field.
   final SdkOptional<int> id;
+
   /// Optional `string` value serialized in the `url` wire field.
   final SdkOptional<String> url;
+
   /// Optional `string` value serialized in the `title` wire field.
   final SdkOptional<String> title;
+
   /// Optional `string` value serialized in the `created_at` wire field.
   final SdkOptional<String> createdAt;
 
-  const CodespacesPublicKey({required this.keyId, required this.key, this.id = const SdkOmitted(), this.url = const SdkOmitted(), this.title = const SdkOmitted(), this.createdAt = const SdkOmitted()});
+  const CodespacesPublicKey(
+      {required this.keyId,
+      required this.key,
+      this.id = const SdkOmitted(),
+      this.url = const SdkOmitted(),
+      this.title = const SdkOmitted(),
+      this.createdAt = const SdkOmitted()});
 
-  CodespacesPublicKey Function({String keyId, String key, SdkOptional<int> id, SdkOptional<String> url, SdkOptional<String> title, SdkOptional<String> createdAt}) get copyWith => _copyWith;
+  CodespacesPublicKey Function(
+      {String keyId,
+      String key,
+      SdkOptional<int> id,
+      SdkOptional<String> url,
+      SdkOptional<String> title,
+      SdkOptional<String> createdAt}) get copyWith => _copyWith;
 
-  CodespacesPublicKey _copyWith({Object? keyId = sdkOmittedValue, Object? key = sdkOmittedValue, Object? id = sdkOmittedValue, Object? url = sdkOmittedValue, Object? title = sdkOmittedValue, Object? createdAt = sdkOmittedValue}) => CodespacesPublicKey(
-    keyId: identical(keyId, sdkOmittedValue) ? this.keyId : keyId as String,
-    key: identical(key, sdkOmittedValue) ? this.key : key as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
-    title: identical(title, sdkOmittedValue) ? this.title : title as SdkOptional<String>,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as SdkOptional<String>,
-  );
+  CodespacesPublicKey _copyWith(
+          {Object? keyId = sdkOmittedValue,
+          Object? key = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? title = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue}) =>
+      CodespacesPublicKey(
+        keyId: identical(keyId, sdkOmittedValue) ? this.keyId : keyId as String,
+        key: identical(key, sdkOmittedValue) ? this.key : key as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+        url: identical(url, sdkOmittedValue)
+            ? this.url
+            : url as SdkOptional<String>,
+        title: identical(title, sdkOmittedValue)
+            ? this.title
+            : title as SdkOptional<String>,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as SdkOptional<String>,
+      );
 
-  factory CodespacesPublicKey.fromJson(Map<String, dynamic> json) => CodespacesPublicKey(
-    keyId: (json['key_id'] as String?)!,
-    key: (json['key'] as String?)!,
-    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
-    url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
-    title: json['title'] != null ? SdkPresent((json['title'] as String?)!) : const SdkOmitted(),
-    createdAt: json['created_at'] != null ? SdkPresent((json['created_at'] as String?)!) : const SdkOmitted(),
-  );
+  factory CodespacesPublicKey.fromJson(Map<String, dynamic> json) =>
+      CodespacesPublicKey(
+        keyId: (json['key_id'] as String?)!,
+        key: (json['key'] as String?)!,
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        url: json['url'] != null
+            ? SdkPresent((json['url'] as String?)!)
+            : const SdkOmitted(),
+        title: json['title'] != null
+            ? SdkPresent((json['title'] as String?)!)
+            : const SdkOmitted(),
+        createdAt: json['created_at'] != null
+            ? SdkPresent((json['created_at'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'key_id': keyId,
-    'key': key,
-    ...switch (id) {
-      SdkPresent<int>(value: final value) => {'id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (url) {
-      SdkPresent<String>(value: final value) => {'url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (title) {
-      SdkPresent<String>(value: final value) => {'title': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (createdAt) {
-      SdkPresent<String>(value: final value) => {'created_at': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'key_id': keyId,
+        'key': key,
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (url) {
+          SdkPresent<String>(value: final value) => {
+              'url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (title) {
+          SdkPresent<String>(value: final value) => {
+              'title': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (createdAt) {
+          SdkPresent<String>(value: final value) => {
+              'created_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

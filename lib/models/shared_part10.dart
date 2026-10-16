@@ -8,136 +8,246 @@ part of 'shared.dart';
 class ReactionRollup {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
+
   /// Required `integer` value serialized in the `total_count` wire field.
   final int totalCount;
+
   /// Required `integer` value serialized in the `+1` wire field.
   final int plus1;
+
   /// Required `integer` value serialized in the `-1` wire field.
   final int minus1;
+
   /// Required `integer` value serialized in the `laugh` wire field.
   final int laugh;
+
   /// Required `integer` value serialized in the `confused` wire field.
   final int confused;
+
   /// Required `integer` value serialized in the `heart` wire field.
   final int heart;
+
   /// Required `integer` value serialized in the `hooray` wire field.
   final int hooray;
+
   /// Required `integer` value serialized in the `eyes` wire field.
   final int eyes;
+
   /// Required `integer` value serialized in the `rocket` wire field.
   final int rocket;
 
-  const ReactionRollup({required this.url, required this.totalCount, required this.plus1, required this.minus1, required this.laugh, required this.confused, required this.heart, required this.hooray, required this.eyes, required this.rocket});
+  const ReactionRollup(
+      {required this.url,
+      required this.totalCount,
+      required this.plus1,
+      required this.minus1,
+      required this.laugh,
+      required this.confused,
+      required this.heart,
+      required this.hooray,
+      required this.eyes,
+      required this.rocket});
 
-  ReactionRollup Function({String url, int totalCount, int plus1, int minus1, int laugh, int confused, int heart, int hooray, int eyes, int rocket}) get copyWith => _copyWith;
+  ReactionRollup Function(
+      {String url,
+      int totalCount,
+      int plus1,
+      int minus1,
+      int laugh,
+      int confused,
+      int heart,
+      int hooray,
+      int eyes,
+      int rocket}) get copyWith => _copyWith;
 
-  ReactionRollup _copyWith({Object? url = sdkOmittedValue, Object? totalCount = sdkOmittedValue, Object? plus1 = sdkOmittedValue, Object? minus1 = sdkOmittedValue, Object? laugh = sdkOmittedValue, Object? confused = sdkOmittedValue, Object? heart = sdkOmittedValue, Object? hooray = sdkOmittedValue, Object? eyes = sdkOmittedValue, Object? rocket = sdkOmittedValue}) => ReactionRollup(
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    plus1: identical(plus1, sdkOmittedValue) ? this.plus1 : plus1 as int,
-    minus1: identical(minus1, sdkOmittedValue) ? this.minus1 : minus1 as int,
-    laugh: identical(laugh, sdkOmittedValue) ? this.laugh : laugh as int,
-    confused: identical(confused, sdkOmittedValue) ? this.confused : confused as int,
-    heart: identical(heart, sdkOmittedValue) ? this.heart : heart as int,
-    hooray: identical(hooray, sdkOmittedValue) ? this.hooray : hooray as int,
-    eyes: identical(eyes, sdkOmittedValue) ? this.eyes : eyes as int,
-    rocket: identical(rocket, sdkOmittedValue) ? this.rocket : rocket as int,
-  );
+  ReactionRollup _copyWith(
+          {Object? url = sdkOmittedValue,
+          Object? totalCount = sdkOmittedValue,
+          Object? plus1 = sdkOmittedValue,
+          Object? minus1 = sdkOmittedValue,
+          Object? laugh = sdkOmittedValue,
+          Object? confused = sdkOmittedValue,
+          Object? heart = sdkOmittedValue,
+          Object? hooray = sdkOmittedValue,
+          Object? eyes = sdkOmittedValue,
+          Object? rocket = sdkOmittedValue}) =>
+      ReactionRollup(
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        plus1: identical(plus1, sdkOmittedValue) ? this.plus1 : plus1 as int,
+        minus1:
+            identical(minus1, sdkOmittedValue) ? this.minus1 : minus1 as int,
+        laugh: identical(laugh, sdkOmittedValue) ? this.laugh : laugh as int,
+        confused: identical(confused, sdkOmittedValue)
+            ? this.confused
+            : confused as int,
+        heart: identical(heart, sdkOmittedValue) ? this.heart : heart as int,
+        hooray:
+            identical(hooray, sdkOmittedValue) ? this.hooray : hooray as int,
+        eyes: identical(eyes, sdkOmittedValue) ? this.eyes : eyes as int,
+        rocket:
+            identical(rocket, sdkOmittedValue) ? this.rocket : rocket as int,
+      );
 
   factory ReactionRollup.fromJson(Map<String, dynamic> json) => ReactionRollup(
-    url: (json['url'] as String?)!,
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    plus1: ((json['+1'] as num?)?.toInt())!,
-    minus1: ((json['-1'] as num?)?.toInt())!,
-    laugh: ((json['laugh'] as num?)?.toInt())!,
-    confused: ((json['confused'] as num?)?.toInt())!,
-    heart: ((json['heart'] as num?)?.toInt())!,
-    hooray: ((json['hooray'] as num?)?.toInt())!,
-    eyes: ((json['eyes'] as num?)?.toInt())!,
-    rocket: ((json['rocket'] as num?)?.toInt())!,
-  );
+        url: (json['url'] as String?)!,
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        plus1: ((json['+1'] as num?)?.toInt())!,
+        minus1: ((json['-1'] as num?)?.toInt())!,
+        laugh: ((json['laugh'] as num?)?.toInt())!,
+        confused: ((json['confused'] as num?)?.toInt())!,
+        heart: ((json['heart'] as num?)?.toInt())!,
+        hooray: ((json['hooray'] as num?)?.toInt())!,
+        eyes: ((json['eyes'] as num?)?.toInt())!,
+        rocket: ((json['rocket'] as num?)?.toInt())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'url': url,
-    'total_count': totalCount,
-    '+1': plus1,
-    '-1': minus1,
-    'laugh': laugh,
-    'confused': confused,
-    'heart': heart,
-    'hooray': hooray,
-    'eyes': eyes,
-    'rocket': rocket,
-  };
+        'url': url,
+        'total_count': totalCount,
+        '+1': plus1,
+        '-1': minus1,
+        'laugh': laugh,
+        'confused': confused,
+        'heart': heart,
+        'hooray': hooray,
+        'eyes': eyes,
+        'rocket': rocket,
+      };
 }
 
 /// Scim Error
 class ScimError {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `string` value serialized in the `message` wire field.
   final SdkOptional<String?> message;
+
   /// Optional `string` value serialized in the `documentation_url` wire field.
   final SdkOptional<String?> documentationUrl;
+
   /// Optional `string` value serialized in the `detail` wire field.
   final SdkOptional<String?> detail;
+
   /// Optional `integer` value serialized in the `status` wire field.
   final SdkOptional<int> status;
+
   /// Optional `string` value serialized in the `scimType` wire field.
   final SdkOptional<String?> scimType;
+
   /// Optional array value serialized in the `schemas` wire field.
   final SdkOptional<List<String>> schemas;
 
-  const ScimError({this.message = const SdkOmitted(), this.documentationUrl = const SdkOmitted(), this.detail = const SdkOmitted(), this.status = const SdkOmitted(), this.scimType = const SdkOmitted(), this.schemas = const SdkOmitted()});
+  const ScimError(
+      {this.message = const SdkOmitted(),
+      this.documentationUrl = const SdkOmitted(),
+      this.detail = const SdkOmitted(),
+      this.status = const SdkOmitted(),
+      this.scimType = const SdkOmitted(),
+      this.schemas = const SdkOmitted()});
 
-  ScimError Function({SdkOptional<String?> message, SdkOptional<String?> documentationUrl, SdkOptional<String?> detail, SdkOptional<int> status, SdkOptional<String?> scimType, SdkOptional<List<String>> schemas}) get copyWith => _copyWith;
+  ScimError Function(
+      {SdkOptional<String?> message,
+      SdkOptional<String?> documentationUrl,
+      SdkOptional<String?> detail,
+      SdkOptional<int> status,
+      SdkOptional<String?> scimType,
+      SdkOptional<List<String>> schemas}) get copyWith => _copyWith;
 
-  ScimError _copyWith({Object? message = sdkOmittedValue, Object? documentationUrl = sdkOmittedValue, Object? detail = sdkOmittedValue, Object? status = sdkOmittedValue, Object? scimType = sdkOmittedValue, Object? schemas = sdkOmittedValue}) => ScimError(
-    message: identical(message, sdkOmittedValue) ? this.message : message as SdkOptional<String?>,
-    documentationUrl: identical(documentationUrl, sdkOmittedValue) ? this.documentationUrl : documentationUrl as SdkOptional<String?>,
-    detail: identical(detail, sdkOmittedValue) ? this.detail : detail as SdkOptional<String?>,
-    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<int>,
-    scimType: identical(scimType, sdkOmittedValue) ? this.scimType : scimType as SdkOptional<String?>,
-    schemas: identical(schemas, sdkOmittedValue) ? this.schemas : schemas as SdkOptional<List<String>>,
-  );
+  ScimError _copyWith(
+          {Object? message = sdkOmittedValue,
+          Object? documentationUrl = sdkOmittedValue,
+          Object? detail = sdkOmittedValue,
+          Object? status = sdkOmittedValue,
+          Object? scimType = sdkOmittedValue,
+          Object? schemas = sdkOmittedValue}) =>
+      ScimError(
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as SdkOptional<String?>,
+        documentationUrl: identical(documentationUrl, sdkOmittedValue)
+            ? this.documentationUrl
+            : documentationUrl as SdkOptional<String?>,
+        detail: identical(detail, sdkOmittedValue)
+            ? this.detail
+            : detail as SdkOptional<String?>,
+        status: identical(status, sdkOmittedValue)
+            ? this.status
+            : status as SdkOptional<int>,
+        scimType: identical(scimType, sdkOmittedValue)
+            ? this.scimType
+            : scimType as SdkOptional<String?>,
+        schemas: identical(schemas, sdkOmittedValue)
+            ? this.schemas
+            : schemas as SdkOptional<List<String>>,
+      );
 
   factory ScimError.fromJson(Map<String, dynamic> json) => ScimError(
-    message: json.containsKey('message') ? SdkPresent(json['message'] as String?) : const SdkOmitted(),
-    documentationUrl: json.containsKey('documentation_url') ? SdkPresent(json['documentation_url'] as String?) : const SdkOmitted(),
-    detail: json.containsKey('detail') ? SdkPresent(json['detail'] as String?) : const SdkOmitted(),
-    status: json['status'] != null ? SdkPresent(((json['status'] as num?)?.toInt())!) : const SdkOmitted(),
-    scimType: json.containsKey('scimType') ? SdkPresent(json['scimType'] as String?) : const SdkOmitted(),
-    schemas: json['schemas'] != null ? SdkPresent(((json['schemas'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-  );
+        message: json.containsKey('message')
+            ? SdkPresent(json['message'] as String?)
+            : const SdkOmitted(),
+        documentationUrl: json.containsKey('documentation_url')
+            ? SdkPresent(json['documentation_url'] as String?)
+            : const SdkOmitted(),
+        detail: json.containsKey('detail')
+            ? SdkPresent(json['detail'] as String?)
+            : const SdkOmitted(),
+        status: json['status'] != null
+            ? SdkPresent(((json['status'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        scimType: json.containsKey('scimType')
+            ? SdkPresent(json['scimType'] as String?)
+            : const SdkOmitted(),
+        schemas: json['schemas'] != null
+            ? SdkPresent(
+                ((json['schemas'] as List?)?.map((e) => e as String).toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (message) {
-      SdkPresent<String?>(value: final value) => {'message': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (documentationUrl) {
-      SdkPresent<String?>(value: final value) => {'documentation_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (detail) {
-      SdkPresent<String?>(value: final value) => {'detail': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (status) {
-      SdkPresent<int>(value: final value) => {'status': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (scimType) {
-      SdkPresent<String?>(value: final value) => {'scimType': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (schemas) {
-      SdkPresent<List<String>>(value: final value) => {'schemas': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (message) {
+          SdkPresent<String?>(value: final value) => {
+              'message': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (documentationUrl) {
+          SdkPresent<String?>(value: final value) => {
+              'documentation_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (detail) {
+          SdkPresent<String?>(value: final value) => {
+              'detail': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (status) {
+          SdkPresent<int>(value: final value) => {
+              'status': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (scimType) {
+          SdkPresent<String?>(value: final value) => {
+              'scimType': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (schemas) {
+          SdkPresent<List<String>>(value: final value) => {
+              'schemas': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 // SecretScanningPushProtectionBypassPlaceholderId = String
@@ -146,76 +256,131 @@ class ScimError {
 class SubIssuesSummary {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `integer` value serialized in the `total` wire field.
   final int total;
+
   /// Required `integer` value serialized in the `completed` wire field.
   final int completed;
+
   /// Required `integer` value serialized in the `percent_completed` wire field.
   final int percentCompleted;
 
-  const SubIssuesSummary({required this.total, required this.completed, required this.percentCompleted});
+  const SubIssuesSummary(
+      {required this.total,
+      required this.completed,
+      required this.percentCompleted});
 
-  SubIssuesSummary Function({int total, int completed, int percentCompleted}) get copyWith => _copyWith;
+  SubIssuesSummary Function({int total, int completed, int percentCompleted})
+      get copyWith => _copyWith;
 
-  SubIssuesSummary _copyWith({Object? total = sdkOmittedValue, Object? completed = sdkOmittedValue, Object? percentCompleted = sdkOmittedValue}) => SubIssuesSummary(
-    total: identical(total, sdkOmittedValue) ? this.total : total as int,
-    completed: identical(completed, sdkOmittedValue) ? this.completed : completed as int,
-    percentCompleted: identical(percentCompleted, sdkOmittedValue) ? this.percentCompleted : percentCompleted as int,
-  );
+  SubIssuesSummary _copyWith(
+          {Object? total = sdkOmittedValue,
+          Object? completed = sdkOmittedValue,
+          Object? percentCompleted = sdkOmittedValue}) =>
+      SubIssuesSummary(
+        total: identical(total, sdkOmittedValue) ? this.total : total as int,
+        completed: identical(completed, sdkOmittedValue)
+            ? this.completed
+            : completed as int,
+        percentCompleted: identical(percentCompleted, sdkOmittedValue)
+            ? this.percentCompleted
+            : percentCompleted as int,
+      );
 
-  factory SubIssuesSummary.fromJson(Map<String, dynamic> json) => SubIssuesSummary(
-    total: ((json['total'] as num?)?.toInt())!,
-    completed: ((json['completed'] as num?)?.toInt())!,
-    percentCompleted: ((json['percent_completed'] as num?)?.toInt())!,
-  );
+  factory SubIssuesSummary.fromJson(Map<String, dynamic> json) =>
+      SubIssuesSummary(
+        total: ((json['total'] as num?)?.toInt())!,
+        completed: ((json['completed'] as num?)?.toInt())!,
+        percentCompleted: ((json['percent_completed'] as num?)?.toInt())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'total': total,
-    'completed': completed,
-    'percent_completed': percentCompleted,
-  };
+        'total': total,
+        'completed': completed,
+        'percent_completed': percentCompleted,
+      };
 }
 
 /// Typed representation of the `Verification` API schema.
 class Verification {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `boolean` value serialized in the `verified` wire field.
   final bool verified;
+
   /// Required `string` value serialized in the `reason` wire field.
   final String reason;
+
   /// Required `string` value serialized in the `payload` wire field.
   final String? payload;
+
   /// Required `string` value serialized in the `signature` wire field.
   final String? signature;
+
   /// Required `string` value serialized in the `verified_at` wire field.
   final String? verifiedAt;
 
-  const Verification({required this.verified, required this.reason, required this.payload, required this.signature, required this.verifiedAt});
+  const Verification(
+      {required this.verified,
+      required this.reason,
+      required this.payload,
+      required this.signature,
+      required this.verifiedAt});
 
-  Verification Function({bool verified, String reason, String? payload, String? signature, String? verifiedAt}) get copyWith => _copyWith;
+  Verification Function(
+      {bool verified,
+      String reason,
+      String? payload,
+      String? signature,
+      String? verifiedAt}) get copyWith => _copyWith;
 
-  Verification _copyWith({Object? verified = sdkOmittedValue, Object? reason = sdkOmittedValue, Object? payload = sdkOmittedValue, Object? signature = sdkOmittedValue, Object? verifiedAt = sdkOmittedValue}) => Verification(
-    verified: identical(verified, sdkOmittedValue) ? this.verified : verified as bool,
-    reason: identical(reason, sdkOmittedValue) ? this.reason : reason as String,
-    payload: identical(payload, sdkOmittedValue) ? this.payload : payload as String?,
-    signature: identical(signature, sdkOmittedValue) ? this.signature : signature as String?,
-    verifiedAt: identical(verifiedAt, sdkOmittedValue) ? this.verifiedAt : verifiedAt as String?,
-  );
+  Verification _copyWith(
+          {Object? verified = sdkOmittedValue,
+          Object? reason = sdkOmittedValue,
+          Object? payload = sdkOmittedValue,
+          Object? signature = sdkOmittedValue,
+          Object? verifiedAt = sdkOmittedValue}) =>
+      Verification(
+        verified: identical(verified, sdkOmittedValue)
+            ? this.verified
+            : verified as bool,
+        reason:
+            identical(reason, sdkOmittedValue) ? this.reason : reason as String,
+        payload: identical(payload, sdkOmittedValue)
+            ? this.payload
+            : payload as String?,
+        signature: identical(signature, sdkOmittedValue)
+            ? this.signature
+            : signature as String?,
+        verifiedAt: identical(verifiedAt, sdkOmittedValue)
+            ? this.verifiedAt
+            : verifiedAt as String?,
+      );
 
   factory Verification.fromJson(Map<String, dynamic> json) => Verification(
-    verified: (json['verified'] as bool?)!,
-    reason: (json['reason'] as String?)!,
-    payload: json.containsKey('payload') ? json['payload'] as String? : throw ArgumentError.value(null, 'payload', 'Required property is missing'),
-    signature: json.containsKey('signature') ? json['signature'] as String? : throw ArgumentError.value(null, 'signature', 'Required property is missing'),
-    verifiedAt: json.containsKey('verified_at') ? json['verified_at'] as String? : throw ArgumentError.value(null, 'verified_at', 'Required property is missing'),
-  );
+        verified: (json['verified'] as bool?)!,
+        reason: (json['reason'] as String?)!,
+        payload: json.containsKey('payload')
+            ? json['payload'] as String?
+            : throw ArgumentError.value(
+                null, 'payload', 'Required property is missing'),
+        signature: json.containsKey('signature')
+            ? json['signature'] as String?
+            : throw ArgumentError.value(
+                null, 'signature', 'Required property is missing'),
+        verifiedAt: json.containsKey('verified_at')
+            ? json['verified_at'] as String?
+            : throw ArgumentError.value(
+                null, 'verified_at', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'verified': verified,
-    'reason': reason,
-    'payload': payload,
-    'signature': signature,
-    'verified_at': verifiedAt,
-  };
+        'verified': verified,
+        'reason': reason,
+        'payload': payload,
+        'signature': signature,
+        'verified_at': verifiedAt,
+      };
 }

@@ -5,12 +5,12 @@ part of 'inline.dart';
 
 // Inline operation models (part 284)
 final class ReactionsListForIssueContent {
-
   final String value;
 
   const ReactionsListForIssueContent._(this.value);
 
-  factory ReactionsListForIssueContent.fromJson(String value) => ReactionsListForIssueContent._(value);
+  factory ReactionsListForIssueContent.fromJson(String value) =>
+      ReactionsListForIssueContent._(value);
 
   static const plus1 = ReactionsListForIssueContent._('+1');
   static const minus1 = ReactionsListForIssueContent._('-1');
@@ -23,27 +23,31 @@ final class ReactionsListForIssueContent {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReactionsListForIssueContent && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ReactionsListForIssueContent && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the issue.
 final class ReactionsCreateForIssueRequestBodyContent {
-
   final String value;
 
   const ReactionsCreateForIssueRequestBodyContent._(this.value);
 
-  factory ReactionsCreateForIssueRequestBodyContent.fromJson(String value) => ReactionsCreateForIssueRequestBodyContent._(value);
+  factory ReactionsCreateForIssueRequestBodyContent.fromJson(String value) =>
+      ReactionsCreateForIssueRequestBodyContent._(value);
 
   static const plus1 = ReactionsCreateForIssueRequestBodyContent._('+1');
   static const minus1 = ReactionsCreateForIssueRequestBodyContent._('-1');
   static const laugh = ReactionsCreateForIssueRequestBodyContent._('laugh');
-  static const confused = ReactionsCreateForIssueRequestBodyContent._('confused');
+  static const confused =
+      ReactionsCreateForIssueRequestBodyContent._('confused');
   static const heart = ReactionsCreateForIssueRequestBodyContent._('heart');
   static const hooray = ReactionsCreateForIssueRequestBodyContent._('hooray');
   static const rocket = ReactionsCreateForIssueRequestBodyContent._('rocket');
@@ -51,21 +55,25 @@ final class ReactionsCreateForIssueRequestBodyContent {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReactionsCreateForIssueRequestBodyContent && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ReactionsCreateForIssueRequestBodyContent &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class IssuesListSuggestionsState {
-
   final String value;
 
   const IssuesListSuggestionsState._(this.value);
 
-  factory IssuesListSuggestionsState.fromJson(String value) => IssuesListSuggestionsState._(value);
+  factory IssuesListSuggestionsState.fromJson(String value) =>
+      IssuesListSuggestionsState._(value);
 
   static const pending = IssuesListSuggestionsState._('pending');
   static const applied = IssuesListSuggestionsState._('applied');
@@ -77,21 +85,24 @@ final class IssuesListSuggestionsState {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is IssuesListSuggestionsState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is IssuesListSuggestionsState && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class IssuesListSuggestionsAction {
-
   final String value;
 
   const IssuesListSuggestionsAction._(this.value);
 
-  factory IssuesListSuggestionsAction.fromJson(String value) => IssuesListSuggestionsAction._(value);
+  factory IssuesListSuggestionsAction.fromJson(String value) =>
+      IssuesListSuggestionsAction._(value);
 
   static const setType = IssuesListSuggestionsAction._('set_type');
   static const addLabel = IssuesListSuggestionsAction._('add_label');
@@ -101,42 +112,48 @@ final class IssuesListSuggestionsAction {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is IssuesListSuggestionsAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is IssuesListSuggestionsAction && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class IssuesListCommentsForRepoDirection {
-
   final String value;
 
   const IssuesListCommentsForRepoDirection._(this.value);
 
-  factory IssuesListCommentsForRepoDirection.fromJson(String value) => IssuesListCommentsForRepoDirection._(value);
+  factory IssuesListCommentsForRepoDirection.fromJson(String value) =>
+      IssuesListCommentsForRepoDirection._(value);
 
   static const asc = IssuesListCommentsForRepoDirection._('asc');
   static const desc = IssuesListCommentsForRepoDirection._('desc');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is IssuesListCommentsForRepoDirection && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is IssuesListCommentsForRepoDirection && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class ReactionsListForIssueCommentContent {
-
   final String value;
 
   const ReactionsListForIssueCommentContent._(this.value);
 
-  factory ReactionsListForIssueCommentContent.fromJson(String value) => ReactionsListForIssueCommentContent._(value);
+  factory ReactionsListForIssueCommentContent.fromJson(String value) =>
+      ReactionsListForIssueCommentContent._(value);
 
   static const plus1 = ReactionsListForIssueCommentContent._('+1');
   static const minus1 = ReactionsListForIssueCommentContent._('-1');
@@ -149,49 +166,64 @@ final class ReactionsListForIssueCommentContent {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReactionsListForIssueCommentContent && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ReactionsListForIssueCommentContent && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the issue comment.
 final class ReactionsCreateForIssueCommentRequestBodyContent {
-
   final String value;
 
   const ReactionsCreateForIssueCommentRequestBodyContent._(this.value);
 
-  factory ReactionsCreateForIssueCommentRequestBodyContent.fromJson(String value) => ReactionsCreateForIssueCommentRequestBodyContent._(value);
+  factory ReactionsCreateForIssueCommentRequestBodyContent.fromJson(
+          String value) =>
+      ReactionsCreateForIssueCommentRequestBodyContent._(value);
 
   static const plus1 = ReactionsCreateForIssueCommentRequestBodyContent._('+1');
-  static const minus1 = ReactionsCreateForIssueCommentRequestBodyContent._('-1');
-  static const laugh = ReactionsCreateForIssueCommentRequestBodyContent._('laugh');
-  static const confused = ReactionsCreateForIssueCommentRequestBodyContent._('confused');
-  static const heart = ReactionsCreateForIssueCommentRequestBodyContent._('heart');
-  static const hooray = ReactionsCreateForIssueCommentRequestBodyContent._('hooray');
-  static const rocket = ReactionsCreateForIssueCommentRequestBodyContent._('rocket');
-  static const eyes = ReactionsCreateForIssueCommentRequestBodyContent._('eyes');
+  static const minus1 =
+      ReactionsCreateForIssueCommentRequestBodyContent._('-1');
+  static const laugh =
+      ReactionsCreateForIssueCommentRequestBodyContent._('laugh');
+  static const confused =
+      ReactionsCreateForIssueCommentRequestBodyContent._('confused');
+  static const heart =
+      ReactionsCreateForIssueCommentRequestBodyContent._('heart');
+  static const hooray =
+      ReactionsCreateForIssueCommentRequestBodyContent._('hooray');
+  static const rocket =
+      ReactionsCreateForIssueCommentRequestBodyContent._('rocket');
+  static const eyes =
+      ReactionsCreateForIssueCommentRequestBodyContent._('eyes');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReactionsCreateForIssueCommentRequestBodyContent && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ReactionsCreateForIssueCommentRequestBodyContent &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class IssuesListMilestonesState {
-
   final String value;
 
   const IssuesListMilestonesState._(this.value);
 
-  factory IssuesListMilestonesState.fromJson(String value) => IssuesListMilestonesState._(value);
+  factory IssuesListMilestonesState.fromJson(String value) =>
+      IssuesListMilestonesState._(value);
 
   static const open = IssuesListMilestonesState._('open');
   static const closed = IssuesListMilestonesState._('closed');
@@ -199,96 +231,111 @@ final class IssuesListMilestonesState {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is IssuesListMilestonesState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is IssuesListMilestonesState && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class IssuesListMilestonesSort {
-
   final String value;
 
   const IssuesListMilestonesSort._(this.value);
 
-  factory IssuesListMilestonesSort.fromJson(String value) => IssuesListMilestonesSort._(value);
+  factory IssuesListMilestonesSort.fromJson(String value) =>
+      IssuesListMilestonesSort._(value);
 
   static const dueOn = IssuesListMilestonesSort._('due_on');
   static const completeness = IssuesListMilestonesSort._('completeness');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is IssuesListMilestonesSort && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is IssuesListMilestonesSort && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class IssuesListMilestonesDirection {
-
   final String value;
 
   const IssuesListMilestonesDirection._(this.value);
 
-  factory IssuesListMilestonesDirection.fromJson(String value) => IssuesListMilestonesDirection._(value);
+  factory IssuesListMilestonesDirection.fromJson(String value) =>
+      IssuesListMilestonesDirection._(value);
 
   static const asc = IssuesListMilestonesDirection._('asc');
   static const desc = IssuesListMilestonesDirection._('desc');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is IssuesListMilestonesDirection && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is IssuesListMilestonesDirection && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The state of the milestone. Either `open` or `closed`.
 final class IssuesCreateMilestoneRequestBodyState {
-
   final String value;
 
   const IssuesCreateMilestoneRequestBodyState._(this.value);
 
-  factory IssuesCreateMilestoneRequestBodyState.fromJson(String value) => IssuesCreateMilestoneRequestBodyState._(value);
+  factory IssuesCreateMilestoneRequestBodyState.fromJson(String value) =>
+      IssuesCreateMilestoneRequestBodyState._(value);
 
   static const open = IssuesCreateMilestoneRequestBodyState._('open');
   static const closed = IssuesCreateMilestoneRequestBodyState._('closed');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is IssuesCreateMilestoneRequestBodyState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is IssuesCreateMilestoneRequestBodyState && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The state of the milestone. Either `open` or `closed`.
 final class IssuesUpdateMilestoneRequestBodyState {
-
   final String value;
 
   const IssuesUpdateMilestoneRequestBodyState._(this.value);
 
-  factory IssuesUpdateMilestoneRequestBodyState.fromJson(String value) => IssuesUpdateMilestoneRequestBodyState._(value);
+  factory IssuesUpdateMilestoneRequestBodyState.fromJson(String value) =>
+      IssuesUpdateMilestoneRequestBodyState._(value);
 
   static const open = IssuesUpdateMilestoneRequestBodyState._('open');
   static const closed = IssuesUpdateMilestoneRequestBodyState._('closed');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is IssuesUpdateMilestoneRequestBodyState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is IssuesUpdateMilestoneRequestBodyState && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

@@ -7,92 +7,176 @@ part of 'inline.dart';
 class ActionsCreateOrgVariableRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the variable.
   final String name;
+
   /// The value of the variable.
   final String value;
+
   /// The type of repositories in the organization that can access the variable. `selected` means only the repositories specified by `selected_repository_ids` can access the variable.
   final ActionsCreateOrgVariableRequestBodyVisibility visibility;
+
   /// An array of repository ids that can access the organization variable. You can only provide a list of repository ids when the `visibility` is set to `selected`.
   final SdkOptional<List<int>> selectedRepositoryIds;
 
-  const ActionsCreateOrgVariableRequestBody({required this.name, required this.value, required this.visibility, this.selectedRepositoryIds = const SdkOmitted()});
+  const ActionsCreateOrgVariableRequestBody(
+      {required this.name,
+      required this.value,
+      required this.visibility,
+      this.selectedRepositoryIds = const SdkOmitted()});
 
-  ActionsCreateOrgVariableRequestBody Function({String name, String value, ActionsCreateOrgVariableRequestBodyVisibility visibility, SdkOptional<List<int>> selectedRepositoryIds}) get copyWith => _copyWith;
+  ActionsCreateOrgVariableRequestBody Function(
+      {String name,
+      String value,
+      ActionsCreateOrgVariableRequestBodyVisibility visibility,
+      SdkOptional<List<int>> selectedRepositoryIds}) get copyWith => _copyWith;
 
-  ActionsCreateOrgVariableRequestBody _copyWith({Object? name = sdkOmittedValue, Object? value = sdkOmittedValue, Object? visibility = sdkOmittedValue, Object? selectedRepositoryIds = sdkOmittedValue}) => ActionsCreateOrgVariableRequestBody(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    value: identical(value, sdkOmittedValue) ? this.value : value as String,
-    visibility: identical(visibility, sdkOmittedValue) ? this.visibility : visibility as ActionsCreateOrgVariableRequestBodyVisibility,
-    selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue) ? this.selectedRepositoryIds : selectedRepositoryIds as SdkOptional<List<int>>,
-  );
+  ActionsCreateOrgVariableRequestBody _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? value = sdkOmittedValue,
+          Object? visibility = sdkOmittedValue,
+          Object? selectedRepositoryIds = sdkOmittedValue}) =>
+      ActionsCreateOrgVariableRequestBody(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        value: identical(value, sdkOmittedValue) ? this.value : value as String,
+        visibility: identical(visibility, sdkOmittedValue)
+            ? this.visibility
+            : visibility as ActionsCreateOrgVariableRequestBodyVisibility,
+        selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue)
+            ? this.selectedRepositoryIds
+            : selectedRepositoryIds as SdkOptional<List<int>>,
+      );
 
-  factory ActionsCreateOrgVariableRequestBody.fromJson(Map<String, dynamic> json) => ActionsCreateOrgVariableRequestBody(
-    name: (json['name'] as String?)!,
-    value: (json['value'] as String?)!,
-    visibility: (json['visibility'] != null ? ActionsCreateOrgVariableRequestBodyVisibility.fromJson(json['visibility'] as String) : null)!,
-    selectedRepositoryIds: json['selected_repository_ids'] != null ? SdkPresent(((json['selected_repository_ids'] as List?)?.map((e) => (e as num).toInt()).toList())!) : const SdkOmitted(),
-  );
+  factory ActionsCreateOrgVariableRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      ActionsCreateOrgVariableRequestBody(
+        name: (json['name'] as String?)!,
+        value: (json['value'] as String?)!,
+        visibility: (json['visibility'] != null
+            ? ActionsCreateOrgVariableRequestBodyVisibility.fromJson(
+                json['visibility'] as String)
+            : null)!,
+        selectedRepositoryIds: json['selected_repository_ids'] != null
+            ? SdkPresent(((json['selected_repository_ids'] as List?)
+                ?.map((e) => (e as num).toInt())
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'value': value,
-    'visibility': visibility.toJson(),
-    ...switch (selectedRepositoryIds) {
-      SdkPresent<List<int>>(value: final value) => {'selected_repository_ids': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'name': name,
+        'value': value,
+        'visibility': visibility.toJson(),
+        ...switch (selectedRepositoryIds) {
+          SdkPresent<List<int>>(value: final value) => {
+              'selected_repository_ids': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class ActionsUpdateOrgVariableRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the variable.
   final SdkOptional<String> name;
+
   /// The value of the variable.
   final SdkOptional<String> value;
+
   /// The type of repositories in the organization that can access the variable. `selected` means only the repositories specified by `selected_repository_ids` can access the variable.
   final SdkOptional<ActionsUpdateOrgVariableRequestBodyVisibility> visibility;
+
   /// An array of repository ids that can access the organization variable. You can only provide a list of repository ids when the `visibility` is set to `selected`.
   final SdkOptional<List<int>> selectedRepositoryIds;
 
-  const ActionsUpdateOrgVariableRequestBody({this.name = const SdkOmitted(), this.value = const SdkOmitted(), this.visibility = const SdkOmitted(), this.selectedRepositoryIds = const SdkOmitted()});
+  const ActionsUpdateOrgVariableRequestBody(
+      {this.name = const SdkOmitted(),
+      this.value = const SdkOmitted(),
+      this.visibility = const SdkOmitted(),
+      this.selectedRepositoryIds = const SdkOmitted()});
 
-  ActionsUpdateOrgVariableRequestBody Function({SdkOptional<String> name, SdkOptional<String> value, SdkOptional<ActionsUpdateOrgVariableRequestBodyVisibility> visibility, SdkOptional<List<int>> selectedRepositoryIds}) get copyWith => _copyWith;
+  ActionsUpdateOrgVariableRequestBody Function(
+      {SdkOptional<String> name,
+      SdkOptional<String> value,
+      SdkOptional<ActionsUpdateOrgVariableRequestBodyVisibility> visibility,
+      SdkOptional<List<int>> selectedRepositoryIds}) get copyWith => _copyWith;
 
-  ActionsUpdateOrgVariableRequestBody _copyWith({Object? name = sdkOmittedValue, Object? value = sdkOmittedValue, Object? visibility = sdkOmittedValue, Object? selectedRepositoryIds = sdkOmittedValue}) => ActionsUpdateOrgVariableRequestBody(
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    value: identical(value, sdkOmittedValue) ? this.value : value as SdkOptional<String>,
-    visibility: identical(visibility, sdkOmittedValue) ? this.visibility : visibility as SdkOptional<ActionsUpdateOrgVariableRequestBodyVisibility>,
-    selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue) ? this.selectedRepositoryIds : selectedRepositoryIds as SdkOptional<List<int>>,
-  );
+  ActionsUpdateOrgVariableRequestBody _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? value = sdkOmittedValue,
+          Object? visibility = sdkOmittedValue,
+          Object? selectedRepositoryIds = sdkOmittedValue}) =>
+      ActionsUpdateOrgVariableRequestBody(
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        value: identical(value, sdkOmittedValue)
+            ? this.value
+            : value as SdkOptional<String>,
+        visibility: identical(visibility, sdkOmittedValue)
+            ? this.visibility
+            : visibility
+                as SdkOptional<ActionsUpdateOrgVariableRequestBodyVisibility>,
+        selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue)
+            ? this.selectedRepositoryIds
+            : selectedRepositoryIds as SdkOptional<List<int>>,
+      );
 
-  factory ActionsUpdateOrgVariableRequestBody.fromJson(Map<String, dynamic> json) => ActionsUpdateOrgVariableRequestBody(
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    value: json['value'] != null ? SdkPresent((json['value'] as String?)!) : const SdkOmitted(),
-    visibility: json['visibility'] != null ? SdkPresent((json['visibility'] != null ? ActionsUpdateOrgVariableRequestBodyVisibility.fromJson(json['visibility'] as String) : null)!) : const SdkOmitted(),
-    selectedRepositoryIds: json['selected_repository_ids'] != null ? SdkPresent(((json['selected_repository_ids'] as List?)?.map((e) => (e as num).toInt()).toList())!) : const SdkOmitted(),
-  );
+  factory ActionsUpdateOrgVariableRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      ActionsUpdateOrgVariableRequestBody(
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+        value: json['value'] != null
+            ? SdkPresent((json['value'] as String?)!)
+            : const SdkOmitted(),
+        visibility: json['visibility'] != null
+            ? SdkPresent((json['visibility'] != null
+                ? ActionsUpdateOrgVariableRequestBodyVisibility.fromJson(
+                    json['visibility'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        selectedRepositoryIds: json['selected_repository_ids'] != null
+            ? SdkPresent(((json['selected_repository_ids'] as List?)
+                ?.map((e) => (e as num).toInt())
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (value) {
-      SdkPresent<String>(value: final value) => {'value': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (visibility) {
-      SdkPresent<ActionsUpdateOrgVariableRequestBodyVisibility>(value: final value) => {'visibility': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (selectedRepositoryIds) {
-      SdkPresent<List<int>>(value: final value) => {'selected_repository_ids': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (value) {
+          SdkPresent<String>(value: final value) => {
+              'value': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (visibility) {
+          SdkPresent<ActionsUpdateOrgVariableRequestBodyVisibility>(
+            value: final value
+          ) =>
+            {
+              'visibility': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (selectedRepositoryIds) {
+          SdkPresent<List<int>>(value: final value) => {
+              'selected_repository_ids': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class ActionsListSelectedReposForOrgVariableResponse {
@@ -101,47 +185,72 @@ class ActionsListSelectedReposForOrgVariableResponse {
   final int totalCount;
   final List<MinimalRepository> repositories;
 
-  const ActionsListSelectedReposForOrgVariableResponse({required this.totalCount, required this.repositories});
+  const ActionsListSelectedReposForOrgVariableResponse(
+      {required this.totalCount, required this.repositories});
 
-  ActionsListSelectedReposForOrgVariableResponse Function({int totalCount, List<MinimalRepository> repositories}) get copyWith => _copyWith;
+  ActionsListSelectedReposForOrgVariableResponse Function(
+      {int totalCount,
+      List<MinimalRepository> repositories}) get copyWith => _copyWith;
 
-  ActionsListSelectedReposForOrgVariableResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? repositories = sdkOmittedValue}) => ActionsListSelectedReposForOrgVariableResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    repositories: identical(repositories, sdkOmittedValue) ? this.repositories : repositories as List<MinimalRepository>,
-  );
+  ActionsListSelectedReposForOrgVariableResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? repositories = sdkOmittedValue}) =>
+      ActionsListSelectedReposForOrgVariableResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        repositories: identical(repositories, sdkOmittedValue)
+            ? this.repositories
+            : repositories as List<MinimalRepository>,
+      );
 
-  factory ActionsListSelectedReposForOrgVariableResponse.fromJson(Map<String, dynamic> json) => ActionsListSelectedReposForOrgVariableResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    repositories: ((json['repositories'] as List?)?.map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+  factory ActionsListSelectedReposForOrgVariableResponse.fromJson(
+          Map<String, dynamic> json) =>
+      ActionsListSelectedReposForOrgVariableResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        repositories: ((json['repositories'] as List?)
+            ?.map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'repositories': repositories.map((item) => item.toJson()).toList(),
-  };
+        'total_count': totalCount,
+        'repositories': repositories.map((item) => item.toJson()).toList(),
+      };
 }
 
 class ActionsSetSelectedReposForOrgVariableRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The IDs of the repositories that can access the organization variable.
   final List<int> selectedRepositoryIds;
 
-  const ActionsSetSelectedReposForOrgVariableRequestBody({required this.selectedRepositoryIds});
+  const ActionsSetSelectedReposForOrgVariableRequestBody(
+      {required this.selectedRepositoryIds});
 
-  ActionsSetSelectedReposForOrgVariableRequestBody Function({List<int> selectedRepositoryIds}) get copyWith => _copyWith;
+  ActionsSetSelectedReposForOrgVariableRequestBody Function(
+      {List<int> selectedRepositoryIds}) get copyWith => _copyWith;
 
-  ActionsSetSelectedReposForOrgVariableRequestBody _copyWith({Object? selectedRepositoryIds = sdkOmittedValue}) => ActionsSetSelectedReposForOrgVariableRequestBody(
-    selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue) ? this.selectedRepositoryIds : selectedRepositoryIds as List<int>,
-  );
+  ActionsSetSelectedReposForOrgVariableRequestBody _copyWith(
+          {Object? selectedRepositoryIds = sdkOmittedValue}) =>
+      ActionsSetSelectedReposForOrgVariableRequestBody(
+        selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue)
+            ? this.selectedRepositoryIds
+            : selectedRepositoryIds as List<int>,
+      );
 
-  factory ActionsSetSelectedReposForOrgVariableRequestBody.fromJson(Map<String, dynamic> json) => ActionsSetSelectedReposForOrgVariableRequestBody(
-    selectedRepositoryIds: ((json['selected_repository_ids'] as List?)?.map((e) => (e as num).toInt()).toList())!,
-  );
+  factory ActionsSetSelectedReposForOrgVariableRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      ActionsSetSelectedReposForOrgVariableRequestBody(
+        selectedRepositoryIds: ((json['selected_repository_ids'] as List?)
+            ?.map((e) => (e as num).toInt())
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'selected_repository_ids': selectedRepositoryIds,
-  };
+        'selected_repository_ids': selectedRepositoryIds,
+      };
 }
 
 class ActionsListArtifactsForRepoResponse {
@@ -150,98 +259,165 @@ class ActionsListArtifactsForRepoResponse {
   final int totalCount;
   final List<Artifact> artifacts;
 
-  const ActionsListArtifactsForRepoResponse({required this.totalCount, required this.artifacts});
+  const ActionsListArtifactsForRepoResponse(
+      {required this.totalCount, required this.artifacts});
 
-  ActionsListArtifactsForRepoResponse Function({int totalCount, List<Artifact> artifacts}) get copyWith => _copyWith;
+  ActionsListArtifactsForRepoResponse Function(
+      {int totalCount, List<Artifact> artifacts}) get copyWith => _copyWith;
 
-  ActionsListArtifactsForRepoResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? artifacts = sdkOmittedValue}) => ActionsListArtifactsForRepoResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    artifacts: identical(artifacts, sdkOmittedValue) ? this.artifacts : artifacts as List<Artifact>,
-  );
+  ActionsListArtifactsForRepoResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? artifacts = sdkOmittedValue}) =>
+      ActionsListArtifactsForRepoResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        artifacts: identical(artifacts, sdkOmittedValue)
+            ? this.artifacts
+            : artifacts as List<Artifact>,
+      );
 
-  factory ActionsListArtifactsForRepoResponse.fromJson(Map<String, dynamic> json) => ActionsListArtifactsForRepoResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    artifacts: ((json['artifacts'] as List?)?.map((e) => Artifact.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+  factory ActionsListArtifactsForRepoResponse.fromJson(
+          Map<String, dynamic> json) =>
+      ActionsListArtifactsForRepoResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        artifacts: ((json['artifacts'] as List?)
+            ?.map((e) => Artifact.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'artifacts': artifacts.map((item) => item.toJson()).toList(),
-  };
+        'total_count': totalCount,
+        'artifacts': artifacts.map((item) => item.toJson()).toList(),
+      };
 }
 
 class ActionsReRunJobForWorkflowRunRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Whether to enable debug logging for the re-run.
   final SdkOptional<bool> enableDebugLogging;
+
   /// Whether to enable the debugger for the re-run of this job.
   final SdkOptional<bool> enableDebugger;
 
-  const ActionsReRunJobForWorkflowRunRequestBody({this.enableDebugLogging = const SdkOmitted(), this.enableDebugger = const SdkOmitted()});
+  const ActionsReRunJobForWorkflowRunRequestBody(
+      {this.enableDebugLogging = const SdkOmitted(),
+      this.enableDebugger = const SdkOmitted()});
 
-  ActionsReRunJobForWorkflowRunRequestBody Function({SdkOptional<bool> enableDebugLogging, SdkOptional<bool> enableDebugger}) get copyWith => _copyWith;
+  ActionsReRunJobForWorkflowRunRequestBody Function(
+      {SdkOptional<bool> enableDebugLogging,
+      SdkOptional<bool> enableDebugger}) get copyWith => _copyWith;
 
-  ActionsReRunJobForWorkflowRunRequestBody _copyWith({Object? enableDebugLogging = sdkOmittedValue, Object? enableDebugger = sdkOmittedValue}) => ActionsReRunJobForWorkflowRunRequestBody(
-    enableDebugLogging: identical(enableDebugLogging, sdkOmittedValue) ? this.enableDebugLogging : enableDebugLogging as SdkOptional<bool>,
-    enableDebugger: identical(enableDebugger, sdkOmittedValue) ? this.enableDebugger : enableDebugger as SdkOptional<bool>,
-  );
+  ActionsReRunJobForWorkflowRunRequestBody _copyWith(
+          {Object? enableDebugLogging = sdkOmittedValue,
+          Object? enableDebugger = sdkOmittedValue}) =>
+      ActionsReRunJobForWorkflowRunRequestBody(
+        enableDebugLogging: identical(enableDebugLogging, sdkOmittedValue)
+            ? this.enableDebugLogging
+            : enableDebugLogging as SdkOptional<bool>,
+        enableDebugger: identical(enableDebugger, sdkOmittedValue)
+            ? this.enableDebugger
+            : enableDebugger as SdkOptional<bool>,
+      );
 
-  factory ActionsReRunJobForWorkflowRunRequestBody.fromJson(Map<String, dynamic> json) => ActionsReRunJobForWorkflowRunRequestBody(
-    enableDebugLogging: json['enable_debug_logging'] != null ? SdkPresent((json['enable_debug_logging'] as bool?)!) : const SdkOmitted(),
-    enableDebugger: json['enable_debugger'] != null ? SdkPresent((json['enable_debugger'] as bool?)!) : const SdkOmitted(),
-  );
+  factory ActionsReRunJobForWorkflowRunRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      ActionsReRunJobForWorkflowRunRequestBody(
+        enableDebugLogging: json['enable_debug_logging'] != null
+            ? SdkPresent((json['enable_debug_logging'] as bool?)!)
+            : const SdkOmitted(),
+        enableDebugger: json['enable_debugger'] != null
+            ? SdkPresent((json['enable_debugger'] as bool?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (enableDebugLogging) {
-      SdkPresent<bool>(value: final value) => {'enable_debug_logging': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (enableDebugger) {
-      SdkPresent<bool>(value: final value) => {'enable_debugger': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (enableDebugLogging) {
+          SdkPresent<bool>(value: final value) => {
+              'enable_debug_logging': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (enableDebugger) {
+          SdkPresent<bool>(value: final value) => {
+              'enable_debugger': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Actions OIDC subject customization for a repository
 class ActionsSetCustomOidcSubClaimForRepoRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Whether to use the default template or not. If `true`, the `include_claim_keys` field is ignored.
   final bool useDefault;
+
   /// Array of unique strings. Each claim key can only contain alphanumeric characters and underscores.
   final SdkOptional<List<String>> includeClaimKeys;
+
   /// Whether to opt in to the immutable OIDC subject claim format for this repository. When `true`, OIDC tokens will use a stable, repository-ID-based `sub` claim.
   final SdkOptional<bool> useImmutableSubject;
 
-  const ActionsSetCustomOidcSubClaimForRepoRequestBody({required this.useDefault, this.includeClaimKeys = const SdkOmitted(), this.useImmutableSubject = const SdkOmitted()});
+  const ActionsSetCustomOidcSubClaimForRepoRequestBody(
+      {required this.useDefault,
+      this.includeClaimKeys = const SdkOmitted(),
+      this.useImmutableSubject = const SdkOmitted()});
 
-  ActionsSetCustomOidcSubClaimForRepoRequestBody Function({bool useDefault, SdkOptional<List<String>> includeClaimKeys, SdkOptional<bool> useImmutableSubject}) get copyWith => _copyWith;
+  ActionsSetCustomOidcSubClaimForRepoRequestBody Function(
+      {bool useDefault,
+      SdkOptional<List<String>> includeClaimKeys,
+      SdkOptional<bool> useImmutableSubject}) get copyWith => _copyWith;
 
-  ActionsSetCustomOidcSubClaimForRepoRequestBody _copyWith({Object? useDefault = sdkOmittedValue, Object? includeClaimKeys = sdkOmittedValue, Object? useImmutableSubject = sdkOmittedValue}) => ActionsSetCustomOidcSubClaimForRepoRequestBody(
-    useDefault: identical(useDefault, sdkOmittedValue) ? this.useDefault : useDefault as bool,
-    includeClaimKeys: identical(includeClaimKeys, sdkOmittedValue) ? this.includeClaimKeys : includeClaimKeys as SdkOptional<List<String>>,
-    useImmutableSubject: identical(useImmutableSubject, sdkOmittedValue) ? this.useImmutableSubject : useImmutableSubject as SdkOptional<bool>,
-  );
+  ActionsSetCustomOidcSubClaimForRepoRequestBody _copyWith(
+          {Object? useDefault = sdkOmittedValue,
+          Object? includeClaimKeys = sdkOmittedValue,
+          Object? useImmutableSubject = sdkOmittedValue}) =>
+      ActionsSetCustomOidcSubClaimForRepoRequestBody(
+        useDefault: identical(useDefault, sdkOmittedValue)
+            ? this.useDefault
+            : useDefault as bool,
+        includeClaimKeys: identical(includeClaimKeys, sdkOmittedValue)
+            ? this.includeClaimKeys
+            : includeClaimKeys as SdkOptional<List<String>>,
+        useImmutableSubject: identical(useImmutableSubject, sdkOmittedValue)
+            ? this.useImmutableSubject
+            : useImmutableSubject as SdkOptional<bool>,
+      );
 
-  factory ActionsSetCustomOidcSubClaimForRepoRequestBody.fromJson(Map<String, dynamic> json) => ActionsSetCustomOidcSubClaimForRepoRequestBody(
-    useDefault: (json['use_default'] as bool?)!,
-    includeClaimKeys: json['include_claim_keys'] != null ? SdkPresent(((json['include_claim_keys'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    useImmutableSubject: json['use_immutable_subject'] != null ? SdkPresent((json['use_immutable_subject'] as bool?)!) : const SdkOmitted(),
-  );
+  factory ActionsSetCustomOidcSubClaimForRepoRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      ActionsSetCustomOidcSubClaimForRepoRequestBody(
+        useDefault: (json['use_default'] as bool?)!,
+        includeClaimKeys: json['include_claim_keys'] != null
+            ? SdkPresent(((json['include_claim_keys'] as List?)
+                ?.map((e) => e as String)
+                .toList())!)
+            : const SdkOmitted(),
+        useImmutableSubject: json['use_immutable_subject'] != null
+            ? SdkPresent((json['use_immutable_subject'] as bool?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'use_default': useDefault,
-    ...switch (includeClaimKeys) {
-      SdkPresent<List<String>>(value: final value) => {'include_claim_keys': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (useImmutableSubject) {
-      SdkPresent<bool>(value: final value) => {'use_immutable_subject': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'use_default': useDefault,
+        ...switch (includeClaimKeys) {
+          SdkPresent<List<String>>(value: final value) => {
+              'include_claim_keys': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (useImmutableSubject) {
+          SdkPresent<bool>(value: final value) => {
+              'use_immutable_subject': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class ActionsListRepoOrganizationSecretsResponse {
@@ -250,24 +426,37 @@ class ActionsListRepoOrganizationSecretsResponse {
   final int totalCount;
   final List<ActionsSecret> secrets;
 
-  const ActionsListRepoOrganizationSecretsResponse({required this.totalCount, required this.secrets});
+  const ActionsListRepoOrganizationSecretsResponse(
+      {required this.totalCount, required this.secrets});
 
-  ActionsListRepoOrganizationSecretsResponse Function({int totalCount, List<ActionsSecret> secrets}) get copyWith => _copyWith;
+  ActionsListRepoOrganizationSecretsResponse Function(
+      {int totalCount, List<ActionsSecret> secrets}) get copyWith => _copyWith;
 
-  ActionsListRepoOrganizationSecretsResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? secrets = sdkOmittedValue}) => ActionsListRepoOrganizationSecretsResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    secrets: identical(secrets, sdkOmittedValue) ? this.secrets : secrets as List<ActionsSecret>,
-  );
+  ActionsListRepoOrganizationSecretsResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? secrets = sdkOmittedValue}) =>
+      ActionsListRepoOrganizationSecretsResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        secrets: identical(secrets, sdkOmittedValue)
+            ? this.secrets
+            : secrets as List<ActionsSecret>,
+      );
 
-  factory ActionsListRepoOrganizationSecretsResponse.fromJson(Map<String, dynamic> json) => ActionsListRepoOrganizationSecretsResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    secrets: ((json['secrets'] as List?)?.map((e) => ActionsSecret.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+  factory ActionsListRepoOrganizationSecretsResponse.fromJson(
+          Map<String, dynamic> json) =>
+      ActionsListRepoOrganizationSecretsResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        secrets: ((json['secrets'] as List?)
+            ?.map((e) => ActionsSecret.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'secrets': secrets.map((item) => item.toJson()).toList(),
-  };
+        'total_count': totalCount,
+        'secrets': secrets.map((item) => item.toJson()).toList(),
+      };
 }
 
 class ActionsListRepoOrganizationVariablesResponse {
@@ -276,22 +465,36 @@ class ActionsListRepoOrganizationVariablesResponse {
   final int totalCount;
   final List<ActionsVariable> variables;
 
-  const ActionsListRepoOrganizationVariablesResponse({required this.totalCount, required this.variables});
+  const ActionsListRepoOrganizationVariablesResponse(
+      {required this.totalCount, required this.variables});
 
-  ActionsListRepoOrganizationVariablesResponse Function({int totalCount, List<ActionsVariable> variables}) get copyWith => _copyWith;
+  ActionsListRepoOrganizationVariablesResponse Function(
+      {int totalCount,
+      List<ActionsVariable> variables}) get copyWith => _copyWith;
 
-  ActionsListRepoOrganizationVariablesResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? variables = sdkOmittedValue}) => ActionsListRepoOrganizationVariablesResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    variables: identical(variables, sdkOmittedValue) ? this.variables : variables as List<ActionsVariable>,
-  );
+  ActionsListRepoOrganizationVariablesResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? variables = sdkOmittedValue}) =>
+      ActionsListRepoOrganizationVariablesResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        variables: identical(variables, sdkOmittedValue)
+            ? this.variables
+            : variables as List<ActionsVariable>,
+      );
 
-  factory ActionsListRepoOrganizationVariablesResponse.fromJson(Map<String, dynamic> json) => ActionsListRepoOrganizationVariablesResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    variables: ((json['variables'] as List?)?.map((e) => ActionsVariable.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+  factory ActionsListRepoOrganizationVariablesResponse.fromJson(
+          Map<String, dynamic> json) =>
+      ActionsListRepoOrganizationVariablesResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        variables: ((json['variables'] as List?)
+            ?.map((e) => ActionsVariable.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'variables': variables.map((item) => item.toJson()).toList(),
-  };
+        'total_count': totalCount,
+        'variables': variables.map((item) => item.toJson()).toList(),
+      };
 }

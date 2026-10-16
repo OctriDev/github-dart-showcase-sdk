@@ -18,27 +18,37 @@ import '../types.dart';
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<CodespacesListInOrganizationResponse>
-    codespacesListInOrganization(ClientConfig config,
-        {required String org,
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<CodespacesListInOrganizationResponse> codespacesListInOrganization(
+    ClientConfig config,
+    {required String org,
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<CodespacesListInOrganizationResponse>(
           'GET', '/orgs/${Uri.encodeComponent(org.toString())}/codespaces',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'codespacesListInOrganization',
-          fromJsonRaw: (value) => CodespacesListInOrganizationResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CodespacesListInOrganizationResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '401': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Sets which users can access codespaces in an organization. This is synonymous with granting or revoking codespaces access permissions for users according to the visibility. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -70,10 +80,15 @@ Future<void> codespacesSetCodespacesAccess(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'codespacesSetCodespacesAccess',
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>),
+            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Codespaces for the specified users will be billed to the organization. To use this endpoint, the access settings for the organization must be set to `selected_members`. For information on how to change this setting, see "[Manage access control for organization codespaces](https://docs.github.com/rest/codespaces/organizations#manage-access-control-for-organization-codespaces)." OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -95,10 +110,15 @@ Future<void> codespacesSetCodespacesAccessUsers(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'codespacesSetCodespacesAccessUsers',
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>),
+            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Codespaces for the specified users will no longer be billed to the organization. To use this endpoint, the access settings for the organization must be set to `selected_members`. For information on how to change this setting, see "[Manage access control for organization codespaces](https://docs.github.com/rest/codespaces/organizations#manage-access-control-for-organization-codespaces)." OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -120,10 +140,15 @@ Future<void> codespacesDeleteCodespacesAccessUsers(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'codespacesDeleteCodespacesAccessUsers',
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>),
+            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Lists all Codespaces development environment secrets available at the organization-level without revealing their encrypted values. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -136,26 +161,28 @@ Future<void> codespacesDeleteCodespacesAccessUsers(ClientConfig config,
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<CodespacesListOrgSecretsResponse>
-    codespacesListOrgSecrets(ClientConfig config,
-        {required String org,
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<CodespacesListOrgSecretsResponse> codespacesListOrgSecrets(
+    ClientConfig config,
+    {required String org,
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<CodespacesListOrgSecretsResponse>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/codespaces/secrets',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'codespacesListOrgSecrets',
-          fromJsonRaw: (value) => CodespacesListOrgSecretsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CodespacesListOrgSecretsResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Gets a public key for an organization, which is required in order to encrypt secrets. You need to encrypt the value of a secret before you can create or update secrets. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -167,11 +194,11 @@ Future<CodespacesPublicKey> codespacesGetOrgPublicKey(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'codespacesGetOrgPublicKey',
-          fromJsonRaw: (value) => CodespacesPublicKey.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              CodespacesPublicKey.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Gets an organization development environment secret without revealing its encrypted value. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -186,11 +213,11 @@ Future<CodespacesOrgSecret> codespacesGetOrgSecret(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'codespacesGetOrgSecret',
-          fromJsonRaw: (value) => CodespacesOrgSecret.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              CodespacesOrgSecret.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Creates or updates an organization development environment secret with an encrypted value. Encrypt your secret using [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see "[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api)." OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -217,17 +244,18 @@ Future<CodespacesOrgSecret> codespacesGetOrgSecret(ClientConfig config,
 ///   repository from an organization
 ///   secret](https://docs.github.com/rest/codespaces/organization-secrets#remove-
 ///   selected-repository-from-an-organization-secret) endpoints.
-Future<Map<String, dynamic>>
-    codespacesCreateOrUpdateOrgSecret(ClientConfig config,
-        {required String org,
-        required String secretName,
-        required CodespacesCreateOrUpdateOrgSecretRequestBodyVisibility visibility,
-        SdkOptional<String> encryptedValue = const SdkOmitted(),
-        SdkOptional<String> keyId = const SdkOmitted(),
-        SdkOptional<List<int>> selectedRepositoryIds = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<Map<String, dynamic>> codespacesCreateOrUpdateOrgSecret(
+    ClientConfig config,
+    {required String org,
+    required String secretName,
+    required CodespacesCreateOrUpdateOrgSecretRequestBodyVisibility visibility,
+    SdkOptional<String> encryptedValue = const SdkOmitted(),
+    SdkOptional<String> keyId = const SdkOmitted(),
+    SdkOptional<List<int>> selectedRepositoryIds = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   if (encryptedValue is SdkPresent<String>) {
-    sdkValidatePattern('encrypted_value', encryptedValue.value, '^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})\$');
+    sdkValidatePattern('encrypted_value', encryptedValue.value,
+        '^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})\$');
   }
 
   return (await sdkRequest<Map<String, dynamic>>('PUT',
@@ -237,16 +265,21 @@ Future<Map<String, dynamic>>
             'visibility': visibility,
             'encrypted_value': SdkUtils.unwrapOptional(encryptedValue),
             'key_id': SdkUtils.unwrapOptional(keyId),
-            'selected_repository_ids': SdkUtils.unwrapOptional(selectedRepositoryIds)
+            'selected_repository_ids':
+                SdkUtils.unwrapOptional(selectedRepositoryIds)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'codespacesCreateOrUpdateOrgSecret',
           fromJsonRaw: (value) => value as Map<String, dynamic>,
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Deletes an organization development environment secret using the secret name. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -262,10 +295,11 @@ Future<void> codespacesDeleteOrgSecret(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'codespacesDeleteOrgSecret',
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Lists all repositories that have been selected when the `visibility` for repository access to a secret is set to `selected`. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -286,21 +320,27 @@ Future<CodespacesListSelectedReposForOrgSecretResponse>
         SdkOptional<int> page = const SdkOmitted(),
         SdkOptional<int> perPage = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
-  return (await sdkRequest<CodespacesListSelectedReposForOrgSecretResponse>('GET',
+  return (await sdkRequest<CodespacesListSelectedReposForOrgSecretResponse>(
+          'GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/codespaces/secrets/${Uri.encodeComponent(secretName.toString())}/repositories',
           config: config,
           query: {
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true)
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'codespacesListSelectedReposForOrgSecret',
-          fromJsonRaw: (value) => CodespacesListSelectedReposForOrgSecretResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              CodespacesListSelectedReposForOrgSecretResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Replaces all repositories for an organization development environment secret when the `visibility` for repository access is set to `selected`. The visibility is set when you [Create or update an organization secret](https://docs.github.com/rest/codespaces/organization-secrets#create-or-update-an-organization-secret). OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -327,10 +367,11 @@ Future<void> codespacesSetSelectedReposForOrgSecret(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'codespacesSetSelectedReposForOrgSecret',
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Adds a repository to an organization development environment secret's selected repository access list. Use this operation only when the secret's `visibility` is set to `selected`; OAuth app tokens and personal access tokens (classic) require the `admin:org` scope.
 ///
@@ -349,10 +390,13 @@ Future<void> codespacesAddSelectedRepoToOrgSecret(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'codespacesAddSelectedRepoToOrgSecret',
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '422': (value) =>
+            ValidationError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Removes a repository from an organization development environment secret's selected repository access list. Use this operation only when the secret's `visibility` is set to `selected`; OAuth app tokens and personal access tokens (classic) require the `admin:org` scope.
 ///
@@ -371,10 +415,13 @@ Future<void> codespacesRemoveSelectedRepoFromOrgSecret(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'codespacesRemoveSelectedRepoFromOrgSecret',
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '422': (value) =>
+            ValidationError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Lists the codespaces that a member of an organization has for repositories in that organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -399,29 +446,40 @@ Future<CodespacesGetCodespacesForUserInOrgResponse>
           '/orgs/${Uri.encodeComponent(org.toString())}/members/${Uri.encodeComponent(username.toString())}/codespaces',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'codespacesGetCodespacesForUserInOrg',
-          fromJsonRaw: (value) => CodespacesGetCodespacesForUserInOrgResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              CodespacesGetCodespacesForUserInOrgResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '401': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Deletes a user's codespace. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [username] The handle for the GitHub user account.
 /// [codespaceName] The name of the codespace.
-Future<Map<String, dynamic>>
-    codespacesDeleteFromOrganization(ClientConfig config,
-        {required String org,
-        required String username,
-        required String codespaceName,
-        RequestOptions? requestOptions}) async {
+Future<Map<String, dynamic>> codespacesDeleteFromOrganization(
+    ClientConfig config,
+    {required String org,
+    required String username,
+    required String codespaceName,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<Map<String, dynamic>>('DELETE',
           '/orgs/${Uri.encodeComponent(org.toString())}/members/${Uri.encodeComponent(username.toString())}/codespaces/${Uri.encodeComponent(codespaceName.toString())}',
           config: config,
@@ -429,10 +487,14 @@ Future<Map<String, dynamic>>
           operationId: 'codespacesDeleteFromOrganization',
           fromJsonRaw: (value) => value as Map<String, dynamic>,
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Stops a user's codespace. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -449,12 +511,17 @@ Future<Codespace> codespacesStopInOrganization(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'codespacesStopInOrganization',
-          fromJsonRaw: (value) => Codespace.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              Codespace.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Lists the codespaces associated to a specified repository and the authenticated user. OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
@@ -476,21 +543,33 @@ Future<CodespacesListInRepositoryForAuthenticatedUserResponse>
         SdkOptional<int> perPage = const SdkOmitted(),
         SdkOptional<int> page = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
-  return (await sdkRequest<CodespacesListInRepositoryForAuthenticatedUserResponse>('GET',
+  return (await sdkRequest<
+              CodespacesListInRepositoryForAuthenticatedUserResponse>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/codespaces',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'codespacesListInRepositoryForAuthenticatedUser',
-          fromJsonRaw: (value) => CodespacesListInRepositoryForAuthenticatedUserResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              CodespacesListInRepositoryForAuthenticatedUserResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '401': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Creates a codespace owned by the authenticated user in the specified repository. OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
@@ -514,22 +593,23 @@ Future<CodespacesListInRepositoryForAuthenticatedUserResponse>
 /// [retentionPeriodMinutes] Duration in minutes after codespace has gone idle
 ///   in which it will be deleted. Must be integer minutes between 0 and 43200 (30
 ///   days).
-Future<Codespace>
-    codespacesCreateWithRepoForAuthenticatedUser(ClientConfig config,
-        {required String owner,
-        required String repo,
-        SdkOptional<String> ref = const SdkOmitted(),
-        SdkOptional<String> location = const SdkOmitted(),
-        SdkOptional<CodespacesCreateWithRepoForAuthenticatedUserRequestBodyGeo> geo = const SdkOmitted(),
-        SdkOptional<String> clientIp = const SdkOmitted(),
-        SdkOptional<String> machine = const SdkOmitted(),
-        SdkOptional<String> devcontainerPath = const SdkOmitted(),
-        SdkOptional<bool> multiRepoPermissionsOptOut = const SdkOmitted(),
-        SdkOptional<String> workingDirectory = const SdkOmitted(),
-        SdkOptional<int> idleTimeoutMinutes = const SdkOmitted(),
-        SdkOptional<String> displayName = const SdkOmitted(),
-        SdkOptional<int> retentionPeriodMinutes = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<Codespace> codespacesCreateWithRepoForAuthenticatedUser(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    SdkOptional<String> ref = const SdkOmitted(),
+    SdkOptional<String> location = const SdkOmitted(),
+    SdkOptional<CodespacesCreateWithRepoForAuthenticatedUserRequestBodyGeo>
+        geo = const SdkOmitted(),
+    SdkOptional<String> clientIp = const SdkOmitted(),
+    SdkOptional<String> machine = const SdkOmitted(),
+    SdkOptional<String> devcontainerPath = const SdkOmitted(),
+    SdkOptional<bool> multiRepoPermissionsOptOut = const SdkOmitted(),
+    SdkOptional<String> workingDirectory = const SdkOmitted(),
+    SdkOptional<int> idleTimeoutMinutes = const SdkOmitted(),
+    SdkOptional<String> displayName = const SdkOmitted(),
+    SdkOptional<int> retentionPeriodMinutes = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<Codespace>('POST',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/codespaces',
           config: config,
@@ -540,20 +620,30 @@ Future<Codespace>
             'client_ip': SdkUtils.unwrapOptional(clientIp),
             'machine': SdkUtils.unwrapOptional(machine),
             'devcontainer_path': SdkUtils.unwrapOptional(devcontainerPath),
-            'multi_repo_permissions_opt_out': SdkUtils.unwrapOptional(multiRepoPermissionsOptOut),
+            'multi_repo_permissions_opt_out':
+                SdkUtils.unwrapOptional(multiRepoPermissionsOptOut),
             'working_directory': SdkUtils.unwrapOptional(workingDirectory),
             'idle_timeout_minutes': SdkUtils.unwrapOptional(idleTimeoutMinutes),
             'display_name': SdkUtils.unwrapOptional(displayName),
-            'retention_period_minutes': SdkUtils.unwrapOptional(retentionPeriodMinutes)
+            'retention_period_minutes':
+                SdkUtils.unwrapOptional(retentionPeriodMinutes)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'codespacesCreateWithRepoForAuthenticatedUser',
-          fromJsonRaw: (value) => Codespace.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              Codespace.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '401': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Lists the devcontainer.json files associated with a specified repository and the authenticated user. These files specify launchpoint configurations for codespaces created within the repository. OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
@@ -569,27 +659,44 @@ Future<Codespace>
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
 Future<CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponse>
-    codespacesListDevcontainersInRepositoryForAuthenticatedUser(ClientConfig config,
+    codespacesListDevcontainersInRepositoryForAuthenticatedUser(
+        ClientConfig config,
         {required String owner,
         required String repo,
         SdkOptional<int> perPage = const SdkOmitted(),
         SdkOptional<int> page = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
-  return (await sdkRequest<CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponse>('GET',
+  return (await sdkRequest<
+              CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponse>(
+          'GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/codespaces/devcontainers',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
-          operationId: 'codespacesListDevcontainersInRepositoryForAuthenticatedUser',
-          fromJsonRaw: (value) => CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponse.fromJson(value as Map<String, dynamic>),
+          operationId:
+              'codespacesListDevcontainersInRepositoryForAuthenticatedUser',
+          fromJsonRaw: (value) =>
+              CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponse
+                  .fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '401': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// List the machine types available for a given repository based on its configuration. OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
@@ -609,22 +716,35 @@ Future<CodespacesRepoMachinesForAuthenticatedUserResponse>
         SdkOptional<String> clientIp = const SdkOmitted(),
         SdkOptional<String> ref = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
-  return (await sdkRequest<CodespacesRepoMachinesForAuthenticatedUserResponse>('GET',
+  return (await sdkRequest<CodespacesRepoMachinesForAuthenticatedUserResponse>(
+          'GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/codespaces/machines',
           config: config,
           query: {
-            'location': SdkQueryValue(SdkUtils.unwrapOptional(location), style: 'form', explode: true),
-            'client_ip': SdkQueryValue(SdkUtils.unwrapOptional(clientIp), style: 'form', explode: true),
-            'ref': SdkQueryValue(SdkUtils.unwrapOptional(ref), style: 'form', explode: true)
+            'location': SdkQueryValue(SdkUtils.unwrapOptional(location),
+                style: 'form', explode: true),
+            'client_ip': SdkQueryValue(SdkUtils.unwrapOptional(clientIp),
+                style: 'form', explode: true),
+            'ref': SdkQueryValue(SdkUtils.unwrapOptional(ref),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'codespacesRepoMachinesForAuthenticatedUser',
-          fromJsonRaw: (value) => CodespacesRepoMachinesForAuthenticatedUserResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              CodespacesRepoMachinesForAuthenticatedUserResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '401': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Gets the default attributes for codespaces created by the user with the repository. OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
@@ -642,21 +762,31 @@ Future<CodespacesPreFlightWithRepoForAuthenticatedUserResponse>
         SdkOptional<String> ref = const SdkOmitted(),
         SdkOptional<String> clientIp = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
-  return (await sdkRequest<CodespacesPreFlightWithRepoForAuthenticatedUserResponse>('GET',
+  return (await sdkRequest<
+              CodespacesPreFlightWithRepoForAuthenticatedUserResponse>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/codespaces/new',
           config: config,
           query: {
-            'ref': SdkQueryValue(SdkUtils.unwrapOptional(ref), style: 'form', explode: true),
-            'client_ip': SdkQueryValue(SdkUtils.unwrapOptional(clientIp), style: 'form', explode: true)
+            'ref': SdkQueryValue(SdkUtils.unwrapOptional(ref),
+                style: 'form', explode: true),
+            'client_ip': SdkQueryValue(SdkUtils.unwrapOptional(clientIp),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'codespacesPreFlightWithRepoForAuthenticatedUser',
-          fromJsonRaw: (value) => CodespacesPreFlightWithRepoForAuthenticatedUserResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              CodespacesPreFlightWithRepoForAuthenticatedUserResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '401': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Checks whether the permissions defined by a given devcontainer configuration have been accepted by the authenticated user. OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
@@ -683,16 +813,27 @@ Future<CodespacesPermissionsCheckForDevcontainer>
           config: config,
           query: {
             'ref': SdkQueryValue(ref, style: 'form', explode: true),
-            'devcontainer_path': SdkQueryValue(devcontainerPath, style: 'form', explode: true)
+            'devcontainer_path':
+                SdkQueryValue(devcontainerPath, style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'codespacesCheckPermissionsForDevcontainer',
-          fromJsonRaw: (value) => CodespacesPermissionsCheckForDevcontainer.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              CodespacesPermissionsCheckForDevcontainer.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '401': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Lists all development environment secrets available in a repository without revealing their encrypted values. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -707,27 +848,29 @@ Future<CodespacesPermissionsCheckForDevcontainer>
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<CodespacesListRepoSecretsResponse>
-    codespacesListRepoSecrets(ClientConfig config,
-        {required String owner,
-        required String repo,
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<CodespacesListRepoSecretsResponse> codespacesListRepoSecrets(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<CodespacesListRepoSecretsResponse>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/codespaces/secrets',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'codespacesListRepoSecrets',
-          fromJsonRaw: (value) => CodespacesListRepoSecretsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CodespacesListRepoSecretsResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Gets your public key, which you need to encrypt secrets. You need to encrypt a secret before you can create or update secrets. If the repository is private, OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -743,11 +886,11 @@ Future<CodespacesPublicKey> codespacesGetRepoPublicKey(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'codespacesGetRepoPublicKey',
-          fromJsonRaw: (value) => CodespacesPublicKey.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              CodespacesPublicKey.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Gets a single repository development environment secret without revealing its encrypted value. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -765,11 +908,11 @@ Future<RepoCodespacesSecret> codespacesGetRepoSecret(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'codespacesGetRepoSecret',
-          fromJsonRaw: (value) => RepoCodespacesSecret.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              RepoCodespacesSecret.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Creates or updates a repository development environment secret with an encrypted value. Encrypt your secret using [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see "[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api)." OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint. The associated user must be a repository admin.
 ///
@@ -783,16 +926,17 @@ Future<RepoCodespacesSecret> codespacesGetRepoSecret(ClientConfig config,
 ///   key](https://docs.github.com/rest/codespaces/repository-secrets#get-a-reposi
 ///   tory-public-key) endpoint.
 /// [keyId] ID of the key you used to encrypt the secret.
-Future<Map<String, dynamic>>
-    codespacesCreateOrUpdateRepoSecret(ClientConfig config,
-        {required String owner,
-        required String repo,
-        required String secretName,
-        SdkOptional<String> encryptedValue = const SdkOmitted(),
-        SdkOptional<String> keyId = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<Map<String, dynamic>> codespacesCreateOrUpdateRepoSecret(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    required String secretName,
+    SdkOptional<String> encryptedValue = const SdkOmitted(),
+    SdkOptional<String> keyId = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   if (encryptedValue is SdkPresent<String>) {
-    sdkValidatePattern('encrypted_value', encryptedValue.value, '^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})\$');
+    sdkValidatePattern('encrypted_value', encryptedValue.value,
+        '^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})\$');
   }
 
   return (await sdkRequest<Map<String, dynamic>>('PUT',
@@ -808,7 +952,6 @@ Future<Map<String, dynamic>>
           options: requestOptions))
       .data;
 }
-
 
 /// Deletes a development environment secret in a repository using the secret name. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint. The associated user must be a repository admin.
 ///
@@ -829,7 +972,6 @@ Future<void> codespacesDeleteRepoSecret(ClientConfig config,
           options: requestOptions))
       .data;
 }
-
 
 /// Creates a codespace owned by the authenticated user for the specified pull request. OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
@@ -853,22 +995,23 @@ Future<void> codespacesDeleteRepoSecret(ClientConfig config,
 /// [retentionPeriodMinutes] Duration in minutes after codespace has gone idle
 ///   in which it will be deleted. Must be integer minutes between 0 and 43200 (30
 ///   days).
-Future<Codespace>
-    codespacesCreateWithPrForAuthenticatedUser(ClientConfig config,
-        {required String owner,
-        required String repo,
-        required int pullNumber,
-        SdkOptional<String> location = const SdkOmitted(),
-        SdkOptional<CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo> geo = const SdkOmitted(),
-        SdkOptional<String> clientIp = const SdkOmitted(),
-        SdkOptional<String> machine = const SdkOmitted(),
-        SdkOptional<String> devcontainerPath = const SdkOmitted(),
-        SdkOptional<bool> multiRepoPermissionsOptOut = const SdkOmitted(),
-        SdkOptional<String> workingDirectory = const SdkOmitted(),
-        SdkOptional<int> idleTimeoutMinutes = const SdkOmitted(),
-        SdkOptional<String> displayName = const SdkOmitted(),
-        SdkOptional<int> retentionPeriodMinutes = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<Codespace> codespacesCreateWithPrForAuthenticatedUser(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    required int pullNumber,
+    SdkOptional<String> location = const SdkOmitted(),
+    SdkOptional<CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo> geo =
+        const SdkOmitted(),
+    SdkOptional<String> clientIp = const SdkOmitted(),
+    SdkOptional<String> machine = const SdkOmitted(),
+    SdkOptional<String> devcontainerPath = const SdkOmitted(),
+    SdkOptional<bool> multiRepoPermissionsOptOut = const SdkOmitted(),
+    SdkOptional<String> workingDirectory = const SdkOmitted(),
+    SdkOptional<int> idleTimeoutMinutes = const SdkOmitted(),
+    SdkOptional<String> displayName = const SdkOmitted(),
+    SdkOptional<int> retentionPeriodMinutes = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<Codespace>('POST',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/pulls/${Uri.encodeComponent(pullNumber.toString())}/codespaces',
           config: config,
@@ -878,20 +1021,28 @@ Future<Codespace>
             'client_ip': SdkUtils.unwrapOptional(clientIp),
             'machine': SdkUtils.unwrapOptional(machine),
             'devcontainer_path': SdkUtils.unwrapOptional(devcontainerPath),
-            'multi_repo_permissions_opt_out': SdkUtils.unwrapOptional(multiRepoPermissionsOptOut),
+            'multi_repo_permissions_opt_out':
+                SdkUtils.unwrapOptional(multiRepoPermissionsOptOut),
             'working_directory': SdkUtils.unwrapOptional(workingDirectory),
             'idle_timeout_minutes': SdkUtils.unwrapOptional(idleTimeoutMinutes),
             'display_name': SdkUtils.unwrapOptional(displayName),
-            'retention_period_minutes': SdkUtils.unwrapOptional(retentionPeriodMinutes)
+            'retention_period_minutes':
+                SdkUtils.unwrapOptional(retentionPeriodMinutes)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'codespacesCreateWithPrForAuthenticatedUser',
-          fromJsonRaw: (value) => Codespace.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              Codespace.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '401': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Lists the authenticated user's codespaces. OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
@@ -914,18 +1065,32 @@ Future<CodespacesListForAuthenticatedUserResponse>
           'GET', '/user/codespaces',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'repository_id': SdkQueryValue(SdkUtils.unwrapOptional(repositoryId), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'repository_id': SdkQueryValue(
+                SdkUtils.unwrapOptional(repositoryId),
+                style: 'form',
+                explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'codespacesListForAuthenticatedUser',
-          fromJsonRaw: (value) => CodespacesListForAuthenticatedUserResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              CodespacesListForAuthenticatedUserResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '401': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Creates a codespace owned by the authenticated user for a repository or pull request. Provide either `repository_id` or `pull_request`, but not both, and use `geo` to select a region when needed. A 202 response indicates that creation partially failed and is being retried in the background.
 ///
@@ -937,12 +1102,16 @@ Future<Codespace> codespacesCreateForAuthenticatedUser(ClientConfig config,
           body: body,
           decoder: SdkResponseDecoder.json,
           operationId: 'codespacesCreateForAuthenticatedUser',
-          fromJsonRaw: (value) => Codespace.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              Codespace.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Lists all development environment secrets available for a user's codespaces without revealing their encrypted values. The authenticated user must have Codespaces access to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `codespace` or `codespace:secrets` scope to use this endpoint.
 ///
@@ -963,46 +1132,52 @@ Future<CodespacesListSecretsForAuthenticatedUserResponse>
           'GET', '/user/codespaces/secrets',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'codespacesListSecretsForAuthenticatedUser',
-          fromJsonRaw: (value) => CodespacesListSecretsForAuthenticatedUserResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              CodespacesListSecretsForAuthenticatedUserResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
 
-
 /// Gets your public key, which you need to encrypt secrets. You need to encrypt a secret before you can create or update secrets. The authenticated user must have Codespaces access to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `codespace` or `codespace:secrets` scope to use this endpoint.
-Future<CodespacesUserPublicKey> codespacesGetPublicKeyForAuthenticatedUser(ClientConfig config,
+Future<CodespacesUserPublicKey> codespacesGetPublicKeyForAuthenticatedUser(
+    ClientConfig config,
     {RequestOptions? requestOptions}) async {
   return (await sdkRequest<CodespacesUserPublicKey>(
           'GET', '/user/codespaces/secrets/public-key',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'codespacesGetPublicKeyForAuthenticatedUser',
-          fromJsonRaw: (value) => CodespacesUserPublicKey.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              CodespacesUserPublicKey.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
 
-
 /// Gets a development environment secret available to a user's codespaces without revealing its encrypted value. The authenticated user must have Codespaces access to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `codespace` or `codespace:secrets` scope to use this endpoint.
 ///
 /// [secretName] The name of the secret.
-Future<CodespacesSecret> codespacesGetSecretForAuthenticatedUser(ClientConfig config,
-    {required String secretName, RequestOptions? requestOptions}) async {
+Future<CodespacesSecret> codespacesGetSecretForAuthenticatedUser(
+    ClientConfig config,
+    {required String secretName,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<CodespacesSecret>('GET',
           '/user/codespaces/secrets/${Uri.encodeComponent(secretName.toString())}',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'codespacesGetSecretForAuthenticatedUser',
-          fromJsonRaw: (value) => CodespacesSecret.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              CodespacesSecret.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Creates or updates a development environment secret for a user's codespace with an encrypted value. Encrypt your secret using [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see "[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api)." The authenticated user must have Codespaces access to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `codespace` or `codespace:secrets` scope to use this endpoint.
 ///
@@ -1023,15 +1198,16 @@ Future<CodespacesSecret> codespacesGetSecretForAuthenticatedUser(ClientConfig co
 ///   ories-for-a-user-secret), and [Remove a selected repository from a user
 ///   secret](https://docs.github.com/rest/codespaces/secrets#remove-a-selected-re
 ///   pository-from-a-user-secret) endpoints.
-Future<Map<String, dynamic>>
-    codespacesCreateOrUpdateSecretForAuthenticatedUser(ClientConfig config,
-        {required String secretName,
-        required String keyId,
-        SdkOptional<String> encryptedValue = const SdkOmitted(),
-        SdkOptional<List<dynamic>> selectedRepositoryIds = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<Map<String, dynamic>> codespacesCreateOrUpdateSecretForAuthenticatedUser(
+    ClientConfig config,
+    {required String secretName,
+    required String keyId,
+    SdkOptional<String> encryptedValue = const SdkOmitted(),
+    SdkOptional<List<dynamic>> selectedRepositoryIds = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   if (encryptedValue is SdkPresent<String>) {
-    sdkValidatePattern('encrypted_value', encryptedValue.value, '^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})\$');
+    sdkValidatePattern('encrypted_value', encryptedValue.value,
+        '^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})\$');
   }
 
   return (await sdkRequest<Map<String, dynamic>>('PUT',
@@ -1040,16 +1216,21 @@ Future<Map<String, dynamic>>
           body: {
             'key_id': keyId,
             'encrypted_value': SdkUtils.unwrapOptional(encryptedValue),
-            'selected_repository_ids': SdkUtils.unwrapOptional(selectedRepositoryIds)
+            'selected_repository_ids':
+                SdkUtils.unwrapOptional(selectedRepositoryIds)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'codespacesCreateOrUpdateSecretForAuthenticatedUser',
           fromJsonRaw: (value) => value as Map<String, dynamic>,
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Deletes a development environment secret from a user's codespaces using the secret name. Deleting the secret will remove access from all codespaces that were allowed to access the secret. The authenticated user must have Codespaces access to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `codespace` or `codespace:secrets` scope to use this endpoint.
 ///
@@ -1065,23 +1246,32 @@ Future<void> codespacesDeleteSecretForAuthenticatedUser(ClientConfig config,
       .data;
 }
 
-
 /// List the repositories that have been granted the ability to use a user's development environment secret. The authenticated user must have Codespaces access to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `codespace` or `codespace:secrets` scope to use this endpoint.
 ///
 /// [secretName] The name of the secret.
-Future<CodespacesListRepositoriesForSecretForAuthenticatedUserResponse> codespacesListRepositoriesForSecretForAuthenticatedUser(ClientConfig config,
-    {required String secretName, RequestOptions? requestOptions}) async {
-  return (await sdkRequest<CodespacesListRepositoriesForSecretForAuthenticatedUserResponse>('GET',
+Future<CodespacesListRepositoriesForSecretForAuthenticatedUserResponse>
+    codespacesListRepositoriesForSecretForAuthenticatedUser(ClientConfig config,
+        {required String secretName, RequestOptions? requestOptions}) async {
+  return (await sdkRequest<
+              CodespacesListRepositoriesForSecretForAuthenticatedUserResponse>(
+          'GET',
           '/user/codespaces/secrets/${Uri.encodeComponent(secretName.toString())}/repositories',
           config: config,
           decoder: SdkResponseDecoder.json,
-          operationId: 'codespacesListRepositoriesForSecretForAuthenticatedUser',
-          fromJsonRaw: (value) => CodespacesListRepositoriesForSecretForAuthenticatedUserResponse.fromJson(value as Map<String, dynamic>),
+          operationId:
+              'codespacesListRepositoriesForSecretForAuthenticatedUser',
+          fromJsonRaw: (value) =>
+              CodespacesListRepositoriesForSecretForAuthenticatedUserResponse
+                  .fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Select the repositories that will use a user's development environment secret. The authenticated user must have Codespaces access to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `codespace` or `codespace:secrets` scope to use this endpoint.
 ///
@@ -1095,11 +1285,11 @@ Future<CodespacesListRepositoriesForSecretForAuthenticatedUserResponse> codespac
 ///   itory-to-a-user-secret), and [Remove a selected repository from a user
 ///   secret](https://docs.github.com/rest/codespaces/secrets#remove-a-selected-re
 ///   pository-from-a-user-secret) endpoints.
-Future<void>
-    codespacesSetRepositoriesForSecretForAuthenticatedUser(ClientConfig config,
-        {required String secretName,
-        required List<int> selectedRepositoryIds,
-        RequestOptions? requestOptions}) async {
+Future<void> codespacesSetRepositoriesForSecretForAuthenticatedUser(
+    ClientConfig config,
+    {required String secretName,
+    required List<int> selectedRepositoryIds,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('PUT',
           '/user/codespaces/secrets/${Uri.encodeComponent(secretName.toString())}/repositories',
           config: config,
@@ -1107,52 +1297,68 @@ Future<void>
           decoder: SdkResponseDecoder.empty,
           operationId: 'codespacesSetRepositoriesForSecretForAuthenticatedUser',
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '401': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Adds a repository to the selected repositories for an authenticated user's Codespaces secret. Use this operation to grant the secret access to a specific repository. The authenticated user must have Codespaces access, and OAuth app tokens and personal access tokens (classic) must include the `codespace` or `codespace:secrets` scope.
 ///
 /// Adds a repository to the selected repositories for a user's development environment secret. The authenticated user must have Codespaces access to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `codespace` or `codespace:secrets` scope to use this endpoint.
 ///
 /// [secretName] The name of the secret.
-Future<void>
-    codespacesAddRepositoryForSecretForAuthenticatedUser(ClientConfig config,
-        {required String secretName,
-        required int repositoryId,
-        RequestOptions? requestOptions}) async {
+Future<void> codespacesAddRepositoryForSecretForAuthenticatedUser(
+    ClientConfig config,
+    {required String secretName,
+    required int repositoryId,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('PUT',
           '/user/codespaces/secrets/${Uri.encodeComponent(secretName.toString())}/repositories/${Uri.encodeComponent(repositoryId.toString())}',
           config: config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'codespacesAddRepositoryForSecretForAuthenticatedUser',
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Removes a repository from the selected repositories for an authenticated user's Codespaces secret. Use this operation to revoke the secret's access to a specific repository. The authenticated user must have Codespaces access, and OAuth app tokens and personal access tokens (classic) must include the `codespace` or `codespace:secrets` scope.
 ///
 /// Removes a repository from the selected repositories for a user's development environment secret. The authenticated user must have Codespaces access to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `codespace` or `codespace:secrets` scope to use this endpoint.
 ///
 /// [secretName] The name of the secret.
-Future<void>
-    codespacesRemoveRepositoryForSecretForAuthenticatedUser(ClientConfig config,
-        {required String secretName,
-        required int repositoryId,
-        RequestOptions? requestOptions}) async {
+Future<void> codespacesRemoveRepositoryForSecretForAuthenticatedUser(
+    ClientConfig config,
+    {required String secretName,
+    required int repositoryId,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('DELETE',
           '/user/codespaces/secrets/${Uri.encodeComponent(secretName.toString())}/repositories/${Uri.encodeComponent(repositoryId.toString())}',
           config: config,
           decoder: SdkResponseDecoder.empty,
-          operationId: 'codespacesRemoveRepositoryForSecretForAuthenticatedUser',
+          operationId:
+              'codespacesRemoveRepositoryForSecretForAuthenticatedUser',
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Gets information about a user's codespace. OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
@@ -1164,12 +1370,17 @@ Future<Codespace> codespacesGetForAuthenticatedUser(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'codespacesGetForAuthenticatedUser',
-          fromJsonRaw: (value) => Codespace.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              Codespace.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Updates a codespace owned by the authenticated user. Currently only the codespace's machine type and recent folders can be modified using this endpoint. If you specify a new machine type it will be applied the next time your codespace is started. OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
@@ -1195,18 +1406,26 @@ Future<Codespace> codespacesUpdateForAuthenticatedUser(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'codespacesUpdateForAuthenticatedUser',
-          fromJsonRaw: (value) => Codespace.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              Codespace.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '401': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Deletes a user's codespace. OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
 /// [codespaceName] The name of the codespace.
-Future<Map<String, dynamic>> codespacesDeleteForAuthenticatedUser(ClientConfig config,
-    {required String codespaceName, RequestOptions? requestOptions}) async {
+Future<Map<String, dynamic>> codespacesDeleteForAuthenticatedUser(
+    ClientConfig config,
+    {required String codespaceName,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<Map<String, dynamic>>('DELETE',
           '/user/codespaces/${Uri.encodeComponent(codespaceName.toString())}',
           config: config,
@@ -1214,38 +1433,51 @@ Future<Map<String, dynamic>> codespacesDeleteForAuthenticatedUser(ClientConfig c
           operationId: 'codespacesDeleteForAuthenticatedUser',
           fromJsonRaw: (value) => value as Map<String, dynamic>,
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Triggers an export of the specified codespace and returns a URL and ID where the status of the export can be monitored. If changes cannot be pushed to the codespace's repository, they will be pushed to a new or previously-existing fork instead. OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
 /// [codespaceName] The name of the codespace.
-Future<CodespaceExportDetails> codespacesExportForAuthenticatedUser(ClientConfig config,
-    {required String codespaceName, RequestOptions? requestOptions}) async {
+Future<CodespaceExportDetails> codespacesExportForAuthenticatedUser(
+    ClientConfig config,
+    {required String codespaceName,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<CodespaceExportDetails>('POST',
           '/user/codespaces/${Uri.encodeComponent(codespaceName.toString())}/exports',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'codespacesExportForAuthenticatedUser',
-          fromJsonRaw: (value) => CodespaceExportDetails.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              CodespaceExportDetails.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '422': (value) =>
+            ValidationError.fromJson(value as Map<String, dynamic>),
+        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Gets information about an export of a codespace. OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
 /// [codespaceName] The name of the codespace.
 /// [exportId] The ID of the export operation, or `latest`. Currently only
 ///   `latest` is currently supported.
-Future<CodespaceExportDetails>
-    codespacesGetExportDetailsForAuthenticatedUser(ClientConfig config,
-        {required String codespaceName,
-        required String exportId,
-        RequestOptions? requestOptions}) async {
+Future<CodespaceExportDetails> codespacesGetExportDetailsForAuthenticatedUser(
+    ClientConfig config,
+    {required String codespaceName,
+    required String exportId,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<CodespaceExportDetails>('GET',
           '/user/codespaces/${Uri.encodeComponent(codespaceName.toString())}/exports/${Uri.encodeComponent(exportId.toString())}',
           config: config,
@@ -1253,39 +1485,48 @@ Future<CodespaceExportDetails>
           operationId: 'codespacesGetExportDetailsForAuthenticatedUser',
           fromJsonRaw: (value) => CodespaceExportDetails.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// List the machine types a codespace can transition to use. OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
 /// [codespaceName] The name of the codespace.
-Future<CodespacesCodespaceMachinesForAuthenticatedUserResponse> codespacesCodespaceMachinesForAuthenticatedUser(ClientConfig config,
-    {required String codespaceName, RequestOptions? requestOptions}) async {
-  return (await sdkRequest<CodespacesCodespaceMachinesForAuthenticatedUserResponse>('GET',
+Future<CodespacesCodespaceMachinesForAuthenticatedUserResponse>
+    codespacesCodespaceMachinesForAuthenticatedUser(ClientConfig config,
+        {required String codespaceName, RequestOptions? requestOptions}) async {
+  return (await sdkRequest<
+              CodespacesCodespaceMachinesForAuthenticatedUserResponse>('GET',
           '/user/codespaces/${Uri.encodeComponent(codespaceName.toString())}/machines',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'codespacesCodespaceMachinesForAuthenticatedUser',
-          fromJsonRaw: (value) => CodespacesCodespaceMachinesForAuthenticatedUserResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              CodespacesCodespaceMachinesForAuthenticatedUserResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Publishes an unpublished codespace, creating a new repository and assigning it to the codespace. The codespace's token is granted write permissions to the repository, allowing the user to push their changes. This will fail for a codespace that is already published, meaning it has an associated repository. OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
 /// [codespaceName] The name of the codespace.
 /// [name] A name for the new repository.
 /// [private] Whether the new repository should be private.
-Future<CodespaceWithFullRepository>
-    codespacesPublishForAuthenticatedUser(ClientConfig config,
-        {required String codespaceName,
-        SdkOptional<String> name = const SdkOmitted(),
-        SdkOptional<bool> private = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<CodespaceWithFullRepository> codespacesPublishForAuthenticatedUser(
+    ClientConfig config,
+    {required String codespaceName,
+    SdkOptional<String> name = const SdkOmitted(),
+    SdkOptional<bool> private = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<CodespaceWithFullRepository>('POST',
           '/user/codespaces/${Uri.encodeComponent(codespaceName.toString())}/publish',
           config: config,
@@ -1295,12 +1536,21 @@ Future<CodespaceWithFullRepository>
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'codespacesPublishForAuthenticatedUser',
-          fromJsonRaw: (value) => CodespaceWithFullRepository.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CodespaceWithFullRepository.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '401': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Starts a user's codespace. OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
@@ -1312,12 +1562,20 @@ Future<Codespace> codespacesStartForAuthenticatedUser(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'codespacesStartForAuthenticatedUser',
-          fromJsonRaw: (value) => Codespace.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              Codespace.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '402': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '400': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '402': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '409': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Stops a user's codespace. OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
@@ -1329,8 +1587,14 @@ Future<Codespace> codespacesStopForAuthenticatedUser(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'codespacesStopForAuthenticatedUser',
-          fromJsonRaw: (value) => Codespace.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              Codespace.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }

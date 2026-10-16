@@ -6,117 +6,153 @@ part of 'inline.dart';
 // Inline operation models (part 285)
 /// The process in which the Page will be built. Possible values are `"legacy"` and `"workflow"`.
 final class ReposCreatePagesSiteRequestBodyBuildType {
-
   final String value;
 
   const ReposCreatePagesSiteRequestBodyBuildType._(this.value);
 
-  factory ReposCreatePagesSiteRequestBodyBuildType.fromJson(String value) => ReposCreatePagesSiteRequestBodyBuildType._(value);
+  factory ReposCreatePagesSiteRequestBodyBuildType.fromJson(String value) =>
+      ReposCreatePagesSiteRequestBodyBuildType._(value);
 
   static const legacy = ReposCreatePagesSiteRequestBodyBuildType._('legacy');
-  static const workflow = ReposCreatePagesSiteRequestBodyBuildType._('workflow');
+  static const workflow =
+      ReposCreatePagesSiteRequestBodyBuildType._('workflow');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReposCreatePagesSiteRequestBodyBuildType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ReposCreatePagesSiteRequestBodyBuildType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The repository directory that includes the source files for the Pages site. Allowed paths are `/` or `/docs`. Default: `/`
 final class ReposCreatePagesSiteRequestBodySourcePath {
-
   final String value;
 
   const ReposCreatePagesSiteRequestBodySourcePath._(this.value);
 
-  factory ReposCreatePagesSiteRequestBodySourcePath.fromJson(String value) => ReposCreatePagesSiteRequestBodySourcePath._(value);
+  factory ReposCreatePagesSiteRequestBodySourcePath.fromJson(String value) =>
+      ReposCreatePagesSiteRequestBodySourcePath._(value);
 
   static const unknown = ReposCreatePagesSiteRequestBodySourcePath._('/');
   static const docs = ReposCreatePagesSiteRequestBodySourcePath._('/docs');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReposCreatePagesSiteRequestBodySourcePath && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ReposCreatePagesSiteRequestBodySourcePath &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The process by which the GitHub Pages site will be built. `workflow` means that the site is built by a custom GitHub Actions workflow. `legacy` means that the site is built by GitHub when changes are pushed to a specific branch.
 final class ReposUpdateInformationAboutPagesSiteRequestBodyBuildType {
-
   final String value;
 
   const ReposUpdateInformationAboutPagesSiteRequestBodyBuildType._(this.value);
 
-  factory ReposUpdateInformationAboutPagesSiteRequestBodyBuildType.fromJson(String value) => ReposUpdateInformationAboutPagesSiteRequestBodyBuildType._(value);
+  factory ReposUpdateInformationAboutPagesSiteRequestBodyBuildType.fromJson(
+          String value) =>
+      ReposUpdateInformationAboutPagesSiteRequestBodyBuildType._(value);
 
-  static const legacy = ReposUpdateInformationAboutPagesSiteRequestBodyBuildType._('legacy');
-  static const workflow = ReposUpdateInformationAboutPagesSiteRequestBodyBuildType._('workflow');
+  static const legacy =
+      ReposUpdateInformationAboutPagesSiteRequestBodyBuildType._('legacy');
+  static const workflow =
+      ReposUpdateInformationAboutPagesSiteRequestBodyBuildType._('workflow');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReposUpdateInformationAboutPagesSiteRequestBodyBuildType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ReposUpdateInformationAboutPagesSiteRequestBodyBuildType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Update the source for the repository. Must include the branch name, and may optionally specify the subdirectory `/docs`. Possible values are `"gh-pages"`, `"master"`, and `"master /docs"`.
 final class ReposUpdateInformationAboutPagesSiteRequestBodySourceVariant0 {
-
   final String value;
 
-  const ReposUpdateInformationAboutPagesSiteRequestBodySourceVariant0._(this.value);
+  const ReposUpdateInformationAboutPagesSiteRequestBodySourceVariant0._(
+      this.value);
 
-  factory ReposUpdateInformationAboutPagesSiteRequestBodySourceVariant0.fromJson(String value) => ReposUpdateInformationAboutPagesSiteRequestBodySourceVariant0._(value);
+  factory ReposUpdateInformationAboutPagesSiteRequestBodySourceVariant0.fromJson(
+          String value) =>
+      ReposUpdateInformationAboutPagesSiteRequestBodySourceVariant0._(value);
 
-  static const ghPages = ReposUpdateInformationAboutPagesSiteRequestBodySourceVariant0._('gh-pages');
-  static const master = ReposUpdateInformationAboutPagesSiteRequestBodySourceVariant0._('master');
-  static const masterDocs = ReposUpdateInformationAboutPagesSiteRequestBodySourceVariant0._('master /docs');
+  static const ghPages =
+      ReposUpdateInformationAboutPagesSiteRequestBodySourceVariant0._(
+          'gh-pages');
+  static const master =
+      ReposUpdateInformationAboutPagesSiteRequestBodySourceVariant0._('master');
+  static const masterDocs =
+      ReposUpdateInformationAboutPagesSiteRequestBodySourceVariant0._(
+          'master /docs');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReposUpdateInformationAboutPagesSiteRequestBodySourceVariant0 && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ReposUpdateInformationAboutPagesSiteRequestBodySourceVariant0 &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The repository directory that includes the source files for the Pages site. Allowed paths are `/` or `/docs`.
 final class ReposUpdateInformationAboutPagesSiteRequestBodySourceVariant1Path {
-
   final String value;
 
-  const ReposUpdateInformationAboutPagesSiteRequestBodySourceVariant1Path._(this.value);
+  const ReposUpdateInformationAboutPagesSiteRequestBodySourceVariant1Path._(
+      this.value);
 
-  factory ReposUpdateInformationAboutPagesSiteRequestBodySourceVariant1Path.fromJson(String value) => ReposUpdateInformationAboutPagesSiteRequestBodySourceVariant1Path._(value);
+  factory ReposUpdateInformationAboutPagesSiteRequestBodySourceVariant1Path.fromJson(
+          String value) =>
+      ReposUpdateInformationAboutPagesSiteRequestBodySourceVariant1Path._(
+          value);
 
-  static const unknown = ReposUpdateInformationAboutPagesSiteRequestBodySourceVariant1Path._('/');
-  static const docs = ReposUpdateInformationAboutPagesSiteRequestBodySourceVariant1Path._('/docs');
+  static const unknown =
+      ReposUpdateInformationAboutPagesSiteRequestBodySourceVariant1Path._('/');
+  static const docs =
+      ReposUpdateInformationAboutPagesSiteRequestBodySourceVariant1Path._(
+          '/docs');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReposUpdateInformationAboutPagesSiteRequestBodySourceVariant1Path && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is ReposUpdateInformationAboutPagesSiteRequestBodySourceVariant1Path &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class PullsListState {
-
   final String value;
 
   const PullsListState._(this.value);
@@ -129,16 +165,18 @@ final class PullsListState {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullsListState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullsListState && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class PullsListSort {
-
   final String value;
 
   const PullsListSort._(this.value);
@@ -152,132 +190,157 @@ final class PullsListSort {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullsListSort && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullsListSort && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class PullsListDirection {
-
   final String value;
 
   const PullsListDirection._(this.value);
 
-  factory PullsListDirection.fromJson(String value) => PullsListDirection._(value);
+  factory PullsListDirection.fromJson(String value) =>
+      PullsListDirection._(value);
 
   static const asc = PullsListDirection._('asc');
   static const desc = PullsListDirection._('desc');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullsListDirection && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullsListDirection && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// State of this Pull Request. Either `open` or `closed`.
 final class PullsUpdateRequestBodyState {
-
   final String value;
 
   const PullsUpdateRequestBodyState._(this.value);
 
-  factory PullsUpdateRequestBodyState.fromJson(String value) => PullsUpdateRequestBodyState._(value);
+  factory PullsUpdateRequestBodyState.fromJson(String value) =>
+      PullsUpdateRequestBodyState._(value);
 
   static const open = PullsUpdateRequestBodyState._('open');
   static const closed = PullsUpdateRequestBodyState._('closed');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullsUpdateRequestBodyState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullsUpdateRequestBodyState && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is closing down.
 final class CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo {
-
   final String value;
 
   const CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo._(this.value);
 
-  factory CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo.fromJson(String value) => CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo._(value);
+  factory CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo.fromJson(
+          String value) =>
+      CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo._(value);
 
-  static const europewest = CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo._('EuropeWest');
-  static const southeastasia = CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo._('SoutheastAsia');
-  static const useast = CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo._('UsEast');
-  static const uswest = CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo._('UsWest');
+  static const europewest =
+      CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo._('EuropeWest');
+  static const southeastasia =
+      CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo._(
+          'SoutheastAsia');
+  static const useast =
+      CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo._('UsEast');
+  static const uswest =
+      CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo._('UsWest');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class PullsListReviewCommentsDirection {
-
   final String value;
 
   const PullsListReviewCommentsDirection._(this.value);
 
-  factory PullsListReviewCommentsDirection.fromJson(String value) => PullsListReviewCommentsDirection._(value);
+  factory PullsListReviewCommentsDirection.fromJson(String value) =>
+      PullsListReviewCommentsDirection._(value);
 
   static const asc = PullsListReviewCommentsDirection._('asc');
   static const desc = PullsListReviewCommentsDirection._('desc');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullsListReviewCommentsDirection && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullsListReviewCommentsDirection && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// In a split diff view, the side of the diff that the pull request's changes appear on. Can be `LEFT` or `RIGHT`. Use `LEFT` for deletions that appear in red. Use `RIGHT` for additions that appear in green or unchanged lines that appear in white and are shown for context. For a multi-line comment, side represents whether the last line of the comment range is a deletion or addition. For more information, see "[Diff view options](https://docs.github.com/articles/about-comparing-branches-in-pull-requests#diff-view-options)" in the GitHub Help documentation.
 final class PullsCreateReviewCommentRequestBodySide {
-
   final String value;
 
   const PullsCreateReviewCommentRequestBodySide._(this.value);
 
-  factory PullsCreateReviewCommentRequestBodySide.fromJson(String value) => PullsCreateReviewCommentRequestBodySide._(value);
+  factory PullsCreateReviewCommentRequestBodySide.fromJson(String value) =>
+      PullsCreateReviewCommentRequestBodySide._(value);
 
   static const left = PullsCreateReviewCommentRequestBodySide._('LEFT');
   static const right = PullsCreateReviewCommentRequestBodySide._('RIGHT');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullsCreateReviewCommentRequestBodySide && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullsCreateReviewCommentRequestBodySide && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// **Required when using multi-line comments unless using `in_reply_to`**. The `start_side` is the starting side of the diff that the comment applies to. Can be `LEFT` or `RIGHT`. To learn more about multi-line comments, see "[Commenting on a pull request](https://docs.github.com/articles/commenting-on-a-pull-request#adding-line-comments-to-a-pull-request)" in the GitHub Help documentation. See `side` in this table for additional context.
 final class PullsCreateReviewCommentRequestBodyStartSide {
-
   final String value;
 
   const PullsCreateReviewCommentRequestBodyStartSide._(this.value);
 
-  factory PullsCreateReviewCommentRequestBodyStartSide.fromJson(String value) => PullsCreateReviewCommentRequestBodyStartSide._(value);
+  factory PullsCreateReviewCommentRequestBodyStartSide.fromJson(String value) =>
+      PullsCreateReviewCommentRequestBodyStartSide._(value);
 
   static const left = PullsCreateReviewCommentRequestBodyStartSide._('LEFT');
   static const right = PullsCreateReviewCommentRequestBodyStartSide._('RIGHT');
@@ -285,10 +348,14 @@ final class PullsCreateReviewCommentRequestBodyStartSide {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullsCreateReviewCommentRequestBodyStartSide && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullsCreateReviewCommentRequestBodyStartSide &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

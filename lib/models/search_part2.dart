@@ -8,268 +8,556 @@ part of 'search.dart';
 class CommitSearchResultItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
+
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
+
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String htmlUrl;
+
   /// Required `uri`-formatted value serialized in the `comments_url` wire field.
   final String commentsUrl;
+
   /// Required object value serialized in the `commit` wire field.
   final CommitSearchResultItemCommit commit;
+
   /// A GitHub user.
   final NullableSimpleUser? author;
+
   /// Metaproperties for Git author/committer information.
   final NullableGitUser? committer;
+
   /// Required array value serialized in the `parents` wire field.
   final List<CommitSearchResultItemParentsItem> parents;
+
   /// Minimal Repository
   final MinimalRepository repository;
+
   /// Required `number` value serialized in the `score` wire field.
   final double score;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// Optional array value serialized in the `text_matches` wire field.
   final SdkOptional<List<SearchResultTextMatchesItem>> textMatches;
 
-  const CommitSearchResultItem({required this.url, required this.sha, required this.htmlUrl, required this.commentsUrl, required this.commit, required this.author, required this.committer, required this.parents, required this.repository, required this.score, required this.nodeId, this.textMatches = const SdkOmitted()});
+  const CommitSearchResultItem(
+      {required this.url,
+      required this.sha,
+      required this.htmlUrl,
+      required this.commentsUrl,
+      required this.commit,
+      required this.author,
+      required this.committer,
+      required this.parents,
+      required this.repository,
+      required this.score,
+      required this.nodeId,
+      this.textMatches = const SdkOmitted()});
 
-  CommitSearchResultItem Function({String url, String sha, String htmlUrl, String commentsUrl, CommitSearchResultItemCommit commit, NullableSimpleUser? author, NullableGitUser? committer, List<CommitSearchResultItemParentsItem> parents, MinimalRepository repository, double score, String nodeId, SdkOptional<List<SearchResultTextMatchesItem>> textMatches}) get copyWith => _copyWith;
+  CommitSearchResultItem Function(
+          {String url,
+          String sha,
+          String htmlUrl,
+          String commentsUrl,
+          CommitSearchResultItemCommit commit,
+          NullableSimpleUser? author,
+          NullableGitUser? committer,
+          List<CommitSearchResultItemParentsItem> parents,
+          MinimalRepository repository,
+          double score,
+          String nodeId,
+          SdkOptional<List<SearchResultTextMatchesItem>> textMatches})
+      get copyWith => _copyWith;
 
-  CommitSearchResultItem _copyWith({Object? url = sdkOmittedValue, Object? sha = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? commentsUrl = sdkOmittedValue, Object? commit = sdkOmittedValue, Object? author = sdkOmittedValue, Object? committer = sdkOmittedValue, Object? parents = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? score = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? textMatches = sdkOmittedValue}) => CommitSearchResultItem(
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
-    commentsUrl: identical(commentsUrl, sdkOmittedValue) ? this.commentsUrl : commentsUrl as String,
-    commit: identical(commit, sdkOmittedValue) ? this.commit : commit as CommitSearchResultItemCommit,
-    author: identical(author, sdkOmittedValue) ? this.author : author as NullableSimpleUser?,
-    committer: identical(committer, sdkOmittedValue) ? this.committer : committer as NullableGitUser?,
-    parents: identical(parents, sdkOmittedValue) ? this.parents : parents as List<CommitSearchResultItemParentsItem>,
-    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as MinimalRepository,
-    score: identical(score, sdkOmittedValue) ? this.score : score as double,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    textMatches: identical(textMatches, sdkOmittedValue) ? this.textMatches : textMatches as SdkOptional<List<SearchResultTextMatchesItem>>,
-  );
+  CommitSearchResultItem _copyWith(
+          {Object? url = sdkOmittedValue,
+          Object? sha = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? commentsUrl = sdkOmittedValue,
+          Object? commit = sdkOmittedValue,
+          Object? author = sdkOmittedValue,
+          Object? committer = sdkOmittedValue,
+          Object? parents = sdkOmittedValue,
+          Object? repository = sdkOmittedValue,
+          Object? score = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? textMatches = sdkOmittedValue}) =>
+      CommitSearchResultItem(
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as String,
+        commentsUrl: identical(commentsUrl, sdkOmittedValue)
+            ? this.commentsUrl
+            : commentsUrl as String,
+        commit: identical(commit, sdkOmittedValue)
+            ? this.commit
+            : commit as CommitSearchResultItemCommit,
+        author: identical(author, sdkOmittedValue)
+            ? this.author
+            : author as NullableSimpleUser?,
+        committer: identical(committer, sdkOmittedValue)
+            ? this.committer
+            : committer as NullableGitUser?,
+        parents: identical(parents, sdkOmittedValue)
+            ? this.parents
+            : parents as List<CommitSearchResultItemParentsItem>,
+        repository: identical(repository, sdkOmittedValue)
+            ? this.repository
+            : repository as MinimalRepository,
+        score: identical(score, sdkOmittedValue) ? this.score : score as double,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        textMatches: identical(textMatches, sdkOmittedValue)
+            ? this.textMatches
+            : textMatches as SdkOptional<List<SearchResultTextMatchesItem>>,
+      );
 
-  factory CommitSearchResultItem.fromJson(Map<String, dynamic> json) => CommitSearchResultItem(
-    url: (json['url'] as String?)!,
-    sha: (json['sha'] as String?)!,
-    htmlUrl: (json['html_url'] as String?)!,
-    commentsUrl: (json['comments_url'] as String?)!,
-    commit: (json['commit'] != null ? CommitSearchResultItemCommit.fromJson(json['commit'] as Map<String, dynamic>) : null)!,
-    author: json.containsKey('author') ? json['author'] != null ? NullableSimpleUser.fromJson(json['author'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'author', 'Required property is missing'),
-    committer: json.containsKey('committer') ? json['committer'] != null ? NullableGitUser.fromJson(json['committer'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'committer', 'Required property is missing'),
-    parents: ((json['parents'] as List?)?.map((e) => CommitSearchResultItemParentsItem.fromJson(e as Map<String, dynamic>)).toList())!,
-    repository: (json['repository'] != null ? MinimalRepository.fromJson(json['repository'] as Map<String, dynamic>) : null)!,
-    score: ((json['score'] as num?)?.toDouble())!,
-    nodeId: (json['node_id'] as String?)!,
-    textMatches: json['text_matches'] != null ? SdkPresent(((json['text_matches'] as List?)?.map((e) => SearchResultTextMatchesItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
+  factory CommitSearchResultItem.fromJson(Map<String, dynamic> json) =>
+      CommitSearchResultItem(
+        url: (json['url'] as String?)!,
+        sha: (json['sha'] as String?)!,
+        htmlUrl: (json['html_url'] as String?)!,
+        commentsUrl: (json['comments_url'] as String?)!,
+        commit: (json['commit'] != null
+            ? CommitSearchResultItemCommit.fromJson(
+                json['commit'] as Map<String, dynamic>)
+            : null)!,
+        author: json.containsKey('author')
+            ? json['author'] != null
+                ? NullableSimpleUser.fromJson(
+                    json['author'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'author', 'Required property is missing'),
+        committer: json.containsKey('committer')
+            ? json['committer'] != null
+                ? NullableGitUser.fromJson(
+                    json['committer'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'committer', 'Required property is missing'),
+        parents: ((json['parents'] as List?)
+            ?.map((e) => CommitSearchResultItemParentsItem.fromJson(
+                e as Map<String, dynamic>))
+            .toList())!,
+        repository: (json['repository'] != null
+            ? MinimalRepository.fromJson(
+                json['repository'] as Map<String, dynamic>)
+            : null)!,
+        score: ((json['score'] as num?)?.toDouble())!,
+        nodeId: (json['node_id'] as String?)!,
+        textMatches: json['text_matches'] != null
+            ? SdkPresent(((json['text_matches'] as List?)
+                ?.map((e) => SearchResultTextMatchesItem.fromJson(
+                    e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'url': url,
-    'sha': sha,
-    'html_url': htmlUrl,
-    'comments_url': commentsUrl,
-    'commit': commit.toJson(),
-    'author': author?.toJson(),
-    'committer': committer?.toJson(),
-    'parents': parents.map((item) => item.toJson()).toList(),
-    'repository': repository.toJson(),
-    'score': score,
-    'node_id': nodeId,
-    ...switch (textMatches) {
-      SdkPresent<List<SearchResultTextMatchesItem>>(value: final value) => {'text_matches': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'url': url,
+        'sha': sha,
+        'html_url': htmlUrl,
+        'comments_url': commentsUrl,
+        'commit': commit.toJson(),
+        'author': author?.toJson(),
+        'committer': committer?.toJson(),
+        'parents': parents.map((item) => item.toJson()).toList(),
+        'repository': repository.toJson(),
+        'score': score,
+        'node_id': nodeId,
+        ...switch (textMatches) {
+          SdkPresent<List<SearchResultTextMatchesItem>>(value: final value) => {
+              'text_matches': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Optional object value serialized in the `pull_request` wire field.
 class IssueSearchResultItemPullRequest {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `date-time`-formatted value serialized in the `merged_at` wire field.
   final SdkOptional<String?> mergedAt;
+
   /// Required `uri`-formatted value serialized in the `diff_url` wire field.
   final String? diffUrl;
+
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String? htmlUrl;
+
   /// Required `uri`-formatted value serialized in the `patch_url` wire field.
   final String? patchUrl;
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String? url;
 
-  const IssueSearchResultItemPullRequest({this.mergedAt = const SdkOmitted(), required this.diffUrl, required this.htmlUrl, required this.patchUrl, required this.url});
+  const IssueSearchResultItemPullRequest(
+      {this.mergedAt = const SdkOmitted(),
+      required this.diffUrl,
+      required this.htmlUrl,
+      required this.patchUrl,
+      required this.url});
 
-  IssueSearchResultItemPullRequest Function({SdkOptional<String?> mergedAt, String? diffUrl, String? htmlUrl, String? patchUrl, String? url}) get copyWith => _copyWith;
+  IssueSearchResultItemPullRequest Function(
+      {SdkOptional<String?> mergedAt,
+      String? diffUrl,
+      String? htmlUrl,
+      String? patchUrl,
+      String? url}) get copyWith => _copyWith;
 
-  IssueSearchResultItemPullRequest _copyWith({Object? mergedAt = sdkOmittedValue, Object? diffUrl = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? patchUrl = sdkOmittedValue, Object? url = sdkOmittedValue}) => IssueSearchResultItemPullRequest(
-    mergedAt: identical(mergedAt, sdkOmittedValue) ? this.mergedAt : mergedAt as SdkOptional<String?>,
-    diffUrl: identical(diffUrl, sdkOmittedValue) ? this.diffUrl : diffUrl as String?,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String?,
-    patchUrl: identical(patchUrl, sdkOmittedValue) ? this.patchUrl : patchUrl as String?,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String?,
-  );
+  IssueSearchResultItemPullRequest _copyWith(
+          {Object? mergedAt = sdkOmittedValue,
+          Object? diffUrl = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? patchUrl = sdkOmittedValue,
+          Object? url = sdkOmittedValue}) =>
+      IssueSearchResultItemPullRequest(
+        mergedAt: identical(mergedAt, sdkOmittedValue)
+            ? this.mergedAt
+            : mergedAt as SdkOptional<String?>,
+        diffUrl: identical(diffUrl, sdkOmittedValue)
+            ? this.diffUrl
+            : diffUrl as String?,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as String?,
+        patchUrl: identical(patchUrl, sdkOmittedValue)
+            ? this.patchUrl
+            : patchUrl as String?,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String?,
+      );
 
-  factory IssueSearchResultItemPullRequest.fromJson(Map<String, dynamic> json) => IssueSearchResultItemPullRequest(
-    mergedAt: json.containsKey('merged_at') ? SdkPresent(json['merged_at'] as String?) : const SdkOmitted(),
-    diffUrl: json.containsKey('diff_url') ? json['diff_url'] as String? : throw ArgumentError.value(null, 'diff_url', 'Required property is missing'),
-    htmlUrl: json.containsKey('html_url') ? json['html_url'] as String? : throw ArgumentError.value(null, 'html_url', 'Required property is missing'),
-    patchUrl: json.containsKey('patch_url') ? json['patch_url'] as String? : throw ArgumentError.value(null, 'patch_url', 'Required property is missing'),
-    url: json.containsKey('url') ? json['url'] as String? : throw ArgumentError.value(null, 'url', 'Required property is missing'),
-  );
+  factory IssueSearchResultItemPullRequest.fromJson(
+          Map<String, dynamic> json) =>
+      IssueSearchResultItemPullRequest(
+        mergedAt: json.containsKey('merged_at')
+            ? SdkPresent(json['merged_at'] as String?)
+            : const SdkOmitted(),
+        diffUrl: json.containsKey('diff_url')
+            ? json['diff_url'] as String?
+            : throw ArgumentError.value(
+                null, 'diff_url', 'Required property is missing'),
+        htmlUrl: json.containsKey('html_url')
+            ? json['html_url'] as String?
+            : throw ArgumentError.value(
+                null, 'html_url', 'Required property is missing'),
+        patchUrl: json.containsKey('patch_url')
+            ? json['patch_url'] as String?
+            : throw ArgumentError.value(
+                null, 'patch_url', 'Required property is missing'),
+        url: json.containsKey('url')
+            ? json['url'] as String?
+            : throw ArgumentError.value(
+                null, 'url', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (mergedAt) {
-      SdkPresent<String?>(value: final value) => {'merged_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    'diff_url': diffUrl,
-    'html_url': htmlUrl,
-    'patch_url': patchUrl,
-    'url': url,
-  };
+        ...switch (mergedAt) {
+          SdkPresent<String?>(value: final value) => {
+              'merged_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'diff_url': diffUrl,
+        'html_url': htmlUrl,
+        'patch_url': patchUrl,
+        'url': url,
+      };
 }
 
 /// The user who archived the label, or `null` if it has not been archived.
 class IssueSearchResultItemLabelsItemArchivedBy {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `string` value serialized in the `name` wire field.
   final SdkOptional<String?> name;
+
   /// Optional `string` value serialized in the `email` wire field.
   final SdkOptional<String?> email;
+
   /// Required `string` value serialized in the `login` wire field.
   final String login;
+
   /// Required `int64`-formatted value serialized in the `id` wire field.
   final int id;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// Required `uri`-formatted value serialized in the `avatar_url` wire field.
   final String avatarUrl;
+
   /// Required `string` value serialized in the `gravatar_id` wire field.
   final String? gravatarId;
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
+
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String htmlUrl;
+
   /// Required `uri`-formatted value serialized in the `followers_url` wire field.
   final String followersUrl;
+
   /// Required `string` value serialized in the `following_url` wire field.
   final String followingUrl;
+
   /// Required `string` value serialized in the `gists_url` wire field.
   final String gistsUrl;
+
   /// Required `string` value serialized in the `starred_url` wire field.
   final String starredUrl;
+
   /// Required `uri`-formatted value serialized in the `subscriptions_url` wire field.
   final String subscriptionsUrl;
+
   /// Required `uri`-formatted value serialized in the `organizations_url` wire field.
   final String organizationsUrl;
+
   /// Required `uri`-formatted value serialized in the `repos_url` wire field.
   final String reposUrl;
+
   /// Required `string` value serialized in the `events_url` wire field.
   final String eventsUrl;
+
   /// Required `uri`-formatted value serialized in the `received_events_url` wire field.
   final String receivedEventsUrl;
+
   /// Required `string` value serialized in the `type` wire field.
   final String type_;
+
   /// Required `boolean` value serialized in the `site_admin` wire field.
   final bool siteAdmin;
+
   /// Optional `string` value serialized in the `starred_at` wire field.
   final SdkOptional<String> starredAt;
+
   /// Optional `string` value serialized in the `user_view_type` wire field.
   final SdkOptional<String> userViewType;
 
-  const IssueSearchResultItemLabelsItemArchivedBy({this.name = const SdkOmitted(), this.email = const SdkOmitted(), required this.login, required this.id, required this.nodeId, required this.avatarUrl, required this.gravatarId, required this.url, required this.htmlUrl, required this.followersUrl, required this.followingUrl, required this.gistsUrl, required this.starredUrl, required this.subscriptionsUrl, required this.organizationsUrl, required this.reposUrl, required this.eventsUrl, required this.receivedEventsUrl, required this.type_, required this.siteAdmin, this.starredAt = const SdkOmitted(), this.userViewType = const SdkOmitted()});
+  const IssueSearchResultItemLabelsItemArchivedBy(
+      {this.name = const SdkOmitted(),
+      this.email = const SdkOmitted(),
+      required this.login,
+      required this.id,
+      required this.nodeId,
+      required this.avatarUrl,
+      required this.gravatarId,
+      required this.url,
+      required this.htmlUrl,
+      required this.followersUrl,
+      required this.followingUrl,
+      required this.gistsUrl,
+      required this.starredUrl,
+      required this.subscriptionsUrl,
+      required this.organizationsUrl,
+      required this.reposUrl,
+      required this.eventsUrl,
+      required this.receivedEventsUrl,
+      required this.type_,
+      required this.siteAdmin,
+      this.starredAt = const SdkOmitted(),
+      this.userViewType = const SdkOmitted()});
 
-  IssueSearchResultItemLabelsItemArchivedBy Function({SdkOptional<String?> name, SdkOptional<String?> email, String login, int id, String nodeId, String avatarUrl, String? gravatarId, String url, String htmlUrl, String followersUrl, String followingUrl, String gistsUrl, String starredUrl, String subscriptionsUrl, String organizationsUrl, String reposUrl, String eventsUrl, String receivedEventsUrl, String type_, bool siteAdmin, SdkOptional<String> starredAt, SdkOptional<String> userViewType}) get copyWith => _copyWith;
+  IssueSearchResultItemLabelsItemArchivedBy Function(
+      {SdkOptional<String?> name,
+      SdkOptional<String?> email,
+      String login,
+      int id,
+      String nodeId,
+      String avatarUrl,
+      String? gravatarId,
+      String url,
+      String htmlUrl,
+      String followersUrl,
+      String followingUrl,
+      String gistsUrl,
+      String starredUrl,
+      String subscriptionsUrl,
+      String organizationsUrl,
+      String reposUrl,
+      String eventsUrl,
+      String receivedEventsUrl,
+      String type_,
+      bool siteAdmin,
+      SdkOptional<String> starredAt,
+      SdkOptional<String> userViewType}) get copyWith => _copyWith;
 
-  IssueSearchResultItemLabelsItemArchivedBy _copyWith({Object? name = sdkOmittedValue, Object? email = sdkOmittedValue, Object? login = sdkOmittedValue, Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? avatarUrl = sdkOmittedValue, Object? gravatarId = sdkOmittedValue, Object? url = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? followersUrl = sdkOmittedValue, Object? followingUrl = sdkOmittedValue, Object? gistsUrl = sdkOmittedValue, Object? starredUrl = sdkOmittedValue, Object? subscriptionsUrl = sdkOmittedValue, Object? organizationsUrl = sdkOmittedValue, Object? reposUrl = sdkOmittedValue, Object? eventsUrl = sdkOmittedValue, Object? receivedEventsUrl = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? siteAdmin = sdkOmittedValue, Object? starredAt = sdkOmittedValue, Object? userViewType = sdkOmittedValue}) => IssueSearchResultItemLabelsItemArchivedBy(
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String?>,
-    email: identical(email, sdkOmittedValue) ? this.email : email as SdkOptional<String?>,
-    login: identical(login, sdkOmittedValue) ? this.login : login as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    avatarUrl: identical(avatarUrl, sdkOmittedValue) ? this.avatarUrl : avatarUrl as String,
-    gravatarId: identical(gravatarId, sdkOmittedValue) ? this.gravatarId : gravatarId as String?,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
-    followersUrl: identical(followersUrl, sdkOmittedValue) ? this.followersUrl : followersUrl as String,
-    followingUrl: identical(followingUrl, sdkOmittedValue) ? this.followingUrl : followingUrl as String,
-    gistsUrl: identical(gistsUrl, sdkOmittedValue) ? this.gistsUrl : gistsUrl as String,
-    starredUrl: identical(starredUrl, sdkOmittedValue) ? this.starredUrl : starredUrl as String,
-    subscriptionsUrl: identical(subscriptionsUrl, sdkOmittedValue) ? this.subscriptionsUrl : subscriptionsUrl as String,
-    organizationsUrl: identical(organizationsUrl, sdkOmittedValue) ? this.organizationsUrl : organizationsUrl as String,
-    reposUrl: identical(reposUrl, sdkOmittedValue) ? this.reposUrl : reposUrl as String,
-    eventsUrl: identical(eventsUrl, sdkOmittedValue) ? this.eventsUrl : eventsUrl as String,
-    receivedEventsUrl: identical(receivedEventsUrl, sdkOmittedValue) ? this.receivedEventsUrl : receivedEventsUrl as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as String,
-    siteAdmin: identical(siteAdmin, sdkOmittedValue) ? this.siteAdmin : siteAdmin as bool,
-    starredAt: identical(starredAt, sdkOmittedValue) ? this.starredAt : starredAt as SdkOptional<String>,
-    userViewType: identical(userViewType, sdkOmittedValue) ? this.userViewType : userViewType as SdkOptional<String>,
-  );
+  IssueSearchResultItemLabelsItemArchivedBy _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? email = sdkOmittedValue,
+          Object? login = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? avatarUrl = sdkOmittedValue,
+          Object? gravatarId = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? followersUrl = sdkOmittedValue,
+          Object? followingUrl = sdkOmittedValue,
+          Object? gistsUrl = sdkOmittedValue,
+          Object? starredUrl = sdkOmittedValue,
+          Object? subscriptionsUrl = sdkOmittedValue,
+          Object? organizationsUrl = sdkOmittedValue,
+          Object? reposUrl = sdkOmittedValue,
+          Object? eventsUrl = sdkOmittedValue,
+          Object? receivedEventsUrl = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? siteAdmin = sdkOmittedValue,
+          Object? starredAt = sdkOmittedValue,
+          Object? userViewType = sdkOmittedValue}) =>
+      IssueSearchResultItemLabelsItemArchivedBy(
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String?>,
+        email: identical(email, sdkOmittedValue)
+            ? this.email
+            : email as SdkOptional<String?>,
+        login: identical(login, sdkOmittedValue) ? this.login : login as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        avatarUrl: identical(avatarUrl, sdkOmittedValue)
+            ? this.avatarUrl
+            : avatarUrl as String,
+        gravatarId: identical(gravatarId, sdkOmittedValue)
+            ? this.gravatarId
+            : gravatarId as String?,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as String,
+        followersUrl: identical(followersUrl, sdkOmittedValue)
+            ? this.followersUrl
+            : followersUrl as String,
+        followingUrl: identical(followingUrl, sdkOmittedValue)
+            ? this.followingUrl
+            : followingUrl as String,
+        gistsUrl: identical(gistsUrl, sdkOmittedValue)
+            ? this.gistsUrl
+            : gistsUrl as String,
+        starredUrl: identical(starredUrl, sdkOmittedValue)
+            ? this.starredUrl
+            : starredUrl as String,
+        subscriptionsUrl: identical(subscriptionsUrl, sdkOmittedValue)
+            ? this.subscriptionsUrl
+            : subscriptionsUrl as String,
+        organizationsUrl: identical(organizationsUrl, sdkOmittedValue)
+            ? this.organizationsUrl
+            : organizationsUrl as String,
+        reposUrl: identical(reposUrl, sdkOmittedValue)
+            ? this.reposUrl
+            : reposUrl as String,
+        eventsUrl: identical(eventsUrl, sdkOmittedValue)
+            ? this.eventsUrl
+            : eventsUrl as String,
+        receivedEventsUrl: identical(receivedEventsUrl, sdkOmittedValue)
+            ? this.receivedEventsUrl
+            : receivedEventsUrl as String,
+        type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as String,
+        siteAdmin: identical(siteAdmin, sdkOmittedValue)
+            ? this.siteAdmin
+            : siteAdmin as bool,
+        starredAt: identical(starredAt, sdkOmittedValue)
+            ? this.starredAt
+            : starredAt as SdkOptional<String>,
+        userViewType: identical(userViewType, sdkOmittedValue)
+            ? this.userViewType
+            : userViewType as SdkOptional<String>,
+      );
 
-  factory IssueSearchResultItemLabelsItemArchivedBy.fromJson(Map<String, dynamic> json) => IssueSearchResultItemLabelsItemArchivedBy(
-    name: json.containsKey('name') ? SdkPresent(json['name'] as String?) : const SdkOmitted(),
-    email: json.containsKey('email') ? SdkPresent(json['email'] as String?) : const SdkOmitted(),
-    login: (json['login'] as String?)!,
-    id: ((json['id'] as num?)?.toInt())!,
-    nodeId: (json['node_id'] as String?)!,
-    avatarUrl: (json['avatar_url'] as String?)!,
-    gravatarId: json.containsKey('gravatar_id') ? json['gravatar_id'] as String? : throw ArgumentError.value(null, 'gravatar_id', 'Required property is missing'),
-    url: (json['url'] as String?)!,
-    htmlUrl: (json['html_url'] as String?)!,
-    followersUrl: (json['followers_url'] as String?)!,
-    followingUrl: (json['following_url'] as String?)!,
-    gistsUrl: (json['gists_url'] as String?)!,
-    starredUrl: (json['starred_url'] as String?)!,
-    subscriptionsUrl: (json['subscriptions_url'] as String?)!,
-    organizationsUrl: (json['organizations_url'] as String?)!,
-    reposUrl: (json['repos_url'] as String?)!,
-    eventsUrl: (json['events_url'] as String?)!,
-    receivedEventsUrl: (json['received_events_url'] as String?)!,
-    type_: (json['type'] as String?)!,
-    siteAdmin: (json['site_admin'] as bool?)!,
-    starredAt: json['starred_at'] != null ? SdkPresent((json['starred_at'] as String?)!) : const SdkOmitted(),
-    userViewType: json['user_view_type'] != null ? SdkPresent((json['user_view_type'] as String?)!) : const SdkOmitted(),
-  );
+  factory IssueSearchResultItemLabelsItemArchivedBy.fromJson(
+          Map<String, dynamic> json) =>
+      IssueSearchResultItemLabelsItemArchivedBy(
+        name: json.containsKey('name')
+            ? SdkPresent(json['name'] as String?)
+            : const SdkOmitted(),
+        email: json.containsKey('email')
+            ? SdkPresent(json['email'] as String?)
+            : const SdkOmitted(),
+        login: (json['login'] as String?)!,
+        id: ((json['id'] as num?)?.toInt())!,
+        nodeId: (json['node_id'] as String?)!,
+        avatarUrl: (json['avatar_url'] as String?)!,
+        gravatarId: json.containsKey('gravatar_id')
+            ? json['gravatar_id'] as String?
+            : throw ArgumentError.value(
+                null, 'gravatar_id', 'Required property is missing'),
+        url: (json['url'] as String?)!,
+        htmlUrl: (json['html_url'] as String?)!,
+        followersUrl: (json['followers_url'] as String?)!,
+        followingUrl: (json['following_url'] as String?)!,
+        gistsUrl: (json['gists_url'] as String?)!,
+        starredUrl: (json['starred_url'] as String?)!,
+        subscriptionsUrl: (json['subscriptions_url'] as String?)!,
+        organizationsUrl: (json['organizations_url'] as String?)!,
+        reposUrl: (json['repos_url'] as String?)!,
+        eventsUrl: (json['events_url'] as String?)!,
+        receivedEventsUrl: (json['received_events_url'] as String?)!,
+        type_: (json['type'] as String?)!,
+        siteAdmin: (json['site_admin'] as bool?)!,
+        starredAt: json['starred_at'] != null
+            ? SdkPresent((json['starred_at'] as String?)!)
+            : const SdkOmitted(),
+        userViewType: json['user_view_type'] != null
+            ? SdkPresent((json['user_view_type'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (name) {
-      SdkPresent<String?>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (email) {
-      SdkPresent<String?>(value: final value) => {'email': value,},
-      _ => const <String, dynamic>{},
-    },
-    'login': login,
-    'id': id,
-    'node_id': nodeId,
-    'avatar_url': avatarUrl,
-    'gravatar_id': gravatarId,
-    'url': url,
-    'html_url': htmlUrl,
-    'followers_url': followersUrl,
-    'following_url': followingUrl,
-    'gists_url': gistsUrl,
-    'starred_url': starredUrl,
-    'subscriptions_url': subscriptionsUrl,
-    'organizations_url': organizationsUrl,
-    'repos_url': reposUrl,
-    'events_url': eventsUrl,
-    'received_events_url': receivedEventsUrl,
-    'type': type_,
-    'site_admin': siteAdmin,
-    ...switch (starredAt) {
-      SdkPresent<String>(value: final value) => {'starred_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (userViewType) {
-      SdkPresent<String>(value: final value) => {'user_view_type': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (name) {
+          SdkPresent<String?>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (email) {
+          SdkPresent<String?>(value: final value) => {
+              'email': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'login': login,
+        'id': id,
+        'node_id': nodeId,
+        'avatar_url': avatarUrl,
+        'gravatar_id': gravatarId,
+        'url': url,
+        'html_url': htmlUrl,
+        'followers_url': followersUrl,
+        'following_url': followingUrl,
+        'gists_url': gistsUrl,
+        'starred_url': starredUrl,
+        'subscriptions_url': subscriptionsUrl,
+        'organizations_url': organizationsUrl,
+        'repos_url': reposUrl,
+        'events_url': eventsUrl,
+        'received_events_url': receivedEventsUrl,
+        'type': type_,
+        'site_admin': siteAdmin,
+        ...switch (starredAt) {
+          SdkPresent<String>(value: final value) => {
+              'starred_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (userViewType) {
+          SdkPresent<String>(value: final value) => {
+              'user_view_type': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

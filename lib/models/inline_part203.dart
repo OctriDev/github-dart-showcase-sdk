@@ -6,271 +6,406 @@ part of 'inline.dart';
 // Inline operation models (part 203)
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhookPullRequestUnassignedPullRequestBaseRepoOwnerType {
-
   final String value;
 
   const WebhookPullRequestUnassignedPullRequestBaseRepoOwnerType._(this.value);
 
-  factory WebhookPullRequestUnassignedPullRequestBaseRepoOwnerType.fromJson(String value) => WebhookPullRequestUnassignedPullRequestBaseRepoOwnerType._(value);
+  factory WebhookPullRequestUnassignedPullRequestBaseRepoOwnerType.fromJson(
+          String value) =>
+      WebhookPullRequestUnassignedPullRequestBaseRepoOwnerType._(value);
 
-  static const bot = WebhookPullRequestUnassignedPullRequestBaseRepoOwnerType._('Bot');
-  static const user = WebhookPullRequestUnassignedPullRequestBaseRepoOwnerType._('User');
-  static const organization = WebhookPullRequestUnassignedPullRequestBaseRepoOwnerType._('Organization');
+  static const bot =
+      WebhookPullRequestUnassignedPullRequestBaseRepoOwnerType._('Bot');
+  static const user =
+      WebhookPullRequestUnassignedPullRequestBaseRepoOwnerType._('User');
+  static const organization =
+      WebhookPullRequestUnassignedPullRequestBaseRepoOwnerType._(
+          'Organization');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestUnassignedPullRequestBaseRepoOwnerType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookPullRequestUnassignedPullRequestBaseRepoOwnerType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The policy controlling who can create pull requests: all or collaborators_only.
 final class WebhookPullRequestUnassignedPullRequestBaseRepoPullRequestCreationPolicy {
-
   final String value;
 
-  const WebhookPullRequestUnassignedPullRequestBaseRepoPullRequestCreationPolicy._(this.value);
+  const WebhookPullRequestUnassignedPullRequestBaseRepoPullRequestCreationPolicy._(
+      this.value);
 
-  factory WebhookPullRequestUnassignedPullRequestBaseRepoPullRequestCreationPolicy.fromJson(String value) => WebhookPullRequestUnassignedPullRequestBaseRepoPullRequestCreationPolicy._(value);
+  factory WebhookPullRequestUnassignedPullRequestBaseRepoPullRequestCreationPolicy.fromJson(
+          String value) =>
+      WebhookPullRequestUnassignedPullRequestBaseRepoPullRequestCreationPolicy
+          ._(value);
 
-  static const all = WebhookPullRequestUnassignedPullRequestBaseRepoPullRequestCreationPolicy._('all');
-  static const collaboratorsOnly = WebhookPullRequestUnassignedPullRequestBaseRepoPullRequestCreationPolicy._('collaborators_only');
+  static const all =
+      WebhookPullRequestUnassignedPullRequestBaseRepoPullRequestCreationPolicy
+          ._('all');
+  static const collaboratorsOnly =
+      WebhookPullRequestUnassignedPullRequestBaseRepoPullRequestCreationPolicy
+          ._('collaborators_only');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestUnassignedPullRequestBaseRepoPullRequestCreationPolicy && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookPullRequestUnassignedPullRequestBaseRepoPullRequestCreationPolicy &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The default value for a squash merge commit message: - `PR_BODY` - default to the pull request's body. - `COMMIT_MESSAGES` - default to the branch's commit messages. - `BLANK` - default to a blank commit message.
 final class WebhookPullRequestUnassignedPullRequestBaseRepoSquashMergeCommitMessage {
-
   final String value;
 
-  const WebhookPullRequestUnassignedPullRequestBaseRepoSquashMergeCommitMessage._(this.value);
+  const WebhookPullRequestUnassignedPullRequestBaseRepoSquashMergeCommitMessage._(
+      this.value);
 
-  factory WebhookPullRequestUnassignedPullRequestBaseRepoSquashMergeCommitMessage.fromJson(String value) => WebhookPullRequestUnassignedPullRequestBaseRepoSquashMergeCommitMessage._(value);
+  factory WebhookPullRequestUnassignedPullRequestBaseRepoSquashMergeCommitMessage.fromJson(
+          String value) =>
+      WebhookPullRequestUnassignedPullRequestBaseRepoSquashMergeCommitMessage._(
+          value);
 
-  static const prBody = WebhookPullRequestUnassignedPullRequestBaseRepoSquashMergeCommitMessage._('PR_BODY');
-  static const commitMessages = WebhookPullRequestUnassignedPullRequestBaseRepoSquashMergeCommitMessage._('COMMIT_MESSAGES');
-  static const blank = WebhookPullRequestUnassignedPullRequestBaseRepoSquashMergeCommitMessage._('BLANK');
+  static const prBody =
+      WebhookPullRequestUnassignedPullRequestBaseRepoSquashMergeCommitMessage._(
+          'PR_BODY');
+  static const commitMessages =
+      WebhookPullRequestUnassignedPullRequestBaseRepoSquashMergeCommitMessage._(
+          'COMMIT_MESSAGES');
+  static const blank =
+      WebhookPullRequestUnassignedPullRequestBaseRepoSquashMergeCommitMessage._(
+          'BLANK');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestUnassignedPullRequestBaseRepoSquashMergeCommitMessage && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookPullRequestUnassignedPullRequestBaseRepoSquashMergeCommitMessage &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The default value for a squash merge commit title: - `PR_TITLE` - default to the pull request's title. - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
 final class WebhookPullRequestUnassignedPullRequestBaseRepoSquashMergeCommitTitle {
-
   final String value;
 
-  const WebhookPullRequestUnassignedPullRequestBaseRepoSquashMergeCommitTitle._(this.value);
+  const WebhookPullRequestUnassignedPullRequestBaseRepoSquashMergeCommitTitle._(
+      this.value);
 
-  factory WebhookPullRequestUnassignedPullRequestBaseRepoSquashMergeCommitTitle.fromJson(String value) => WebhookPullRequestUnassignedPullRequestBaseRepoSquashMergeCommitTitle._(value);
+  factory WebhookPullRequestUnassignedPullRequestBaseRepoSquashMergeCommitTitle.fromJson(
+          String value) =>
+      WebhookPullRequestUnassignedPullRequestBaseRepoSquashMergeCommitTitle._(
+          value);
 
-  static const prTitle = WebhookPullRequestUnassignedPullRequestBaseRepoSquashMergeCommitTitle._('PR_TITLE');
-  static const commitOrPrTitle = WebhookPullRequestUnassignedPullRequestBaseRepoSquashMergeCommitTitle._('COMMIT_OR_PR_TITLE');
+  static const prTitle =
+      WebhookPullRequestUnassignedPullRequestBaseRepoSquashMergeCommitTitle._(
+          'PR_TITLE');
+  static const commitOrPrTitle =
+      WebhookPullRequestUnassignedPullRequestBaseRepoSquashMergeCommitTitle._(
+          'COMMIT_OR_PR_TITLE');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestUnassignedPullRequestBaseRepoSquashMergeCommitTitle && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookPullRequestUnassignedPullRequestBaseRepoSquashMergeCommitTitle &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `visibility` wire field.
 final class WebhookPullRequestUnassignedPullRequestBaseRepoVisibility {
-
   final String value;
 
   const WebhookPullRequestUnassignedPullRequestBaseRepoVisibility._(this.value);
 
-  factory WebhookPullRequestUnassignedPullRequestBaseRepoVisibility.fromJson(String value) => WebhookPullRequestUnassignedPullRequestBaseRepoVisibility._(value);
+  factory WebhookPullRequestUnassignedPullRequestBaseRepoVisibility.fromJson(
+          String value) =>
+      WebhookPullRequestUnassignedPullRequestBaseRepoVisibility._(value);
 
-  static const public = WebhookPullRequestUnassignedPullRequestBaseRepoVisibility._('public');
-  static const private = WebhookPullRequestUnassignedPullRequestBaseRepoVisibility._('private');
-  static const internal = WebhookPullRequestUnassignedPullRequestBaseRepoVisibility._('internal');
+  static const public =
+      WebhookPullRequestUnassignedPullRequestBaseRepoVisibility._('public');
+  static const private =
+      WebhookPullRequestUnassignedPullRequestBaseRepoVisibility._('private');
+  static const internal =
+      WebhookPullRequestUnassignedPullRequestBaseRepoVisibility._('internal');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestUnassignedPullRequestBaseRepoVisibility && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookPullRequestUnassignedPullRequestBaseRepoVisibility &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhookPullRequestUnassignedPullRequestBaseUserType {
-
   final String value;
 
   const WebhookPullRequestUnassignedPullRequestBaseUserType._(this.value);
 
-  factory WebhookPullRequestUnassignedPullRequestBaseUserType.fromJson(String value) => WebhookPullRequestUnassignedPullRequestBaseUserType._(value);
+  factory WebhookPullRequestUnassignedPullRequestBaseUserType.fromJson(
+          String value) =>
+      WebhookPullRequestUnassignedPullRequestBaseUserType._(value);
 
-  static const bot = WebhookPullRequestUnassignedPullRequestBaseUserType._('Bot');
-  static const user = WebhookPullRequestUnassignedPullRequestBaseUserType._('User');
-  static const organization = WebhookPullRequestUnassignedPullRequestBaseUserType._('Organization');
+  static const bot =
+      WebhookPullRequestUnassignedPullRequestBaseUserType._('Bot');
+  static const user =
+      WebhookPullRequestUnassignedPullRequestBaseUserType._('User');
+  static const organization =
+      WebhookPullRequestUnassignedPullRequestBaseUserType._('Organization');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestUnassignedPullRequestBaseUserType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookPullRequestUnassignedPullRequestBaseUserType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The default value for a merge commit message. - `PR_TITLE` - default to the pull request's title. - `PR_BODY` - default to the pull request's body. - `BLANK` - default to a blank commit message.
 final class WebhookPullRequestUnassignedPullRequestHeadRepoMergeCommitMessage {
-
   final String value;
 
-  const WebhookPullRequestUnassignedPullRequestHeadRepoMergeCommitMessage._(this.value);
+  const WebhookPullRequestUnassignedPullRequestHeadRepoMergeCommitMessage._(
+      this.value);
 
-  factory WebhookPullRequestUnassignedPullRequestHeadRepoMergeCommitMessage.fromJson(String value) => WebhookPullRequestUnassignedPullRequestHeadRepoMergeCommitMessage._(value);
+  factory WebhookPullRequestUnassignedPullRequestHeadRepoMergeCommitMessage.fromJson(
+          String value) =>
+      WebhookPullRequestUnassignedPullRequestHeadRepoMergeCommitMessage._(
+          value);
 
-  static const prBody = WebhookPullRequestUnassignedPullRequestHeadRepoMergeCommitMessage._('PR_BODY');
-  static const prTitle = WebhookPullRequestUnassignedPullRequestHeadRepoMergeCommitMessage._('PR_TITLE');
-  static const blank = WebhookPullRequestUnassignedPullRequestHeadRepoMergeCommitMessage._('BLANK');
+  static const prBody =
+      WebhookPullRequestUnassignedPullRequestHeadRepoMergeCommitMessage._(
+          'PR_BODY');
+  static const prTitle =
+      WebhookPullRequestUnassignedPullRequestHeadRepoMergeCommitMessage._(
+          'PR_TITLE');
+  static const blank =
+      WebhookPullRequestUnassignedPullRequestHeadRepoMergeCommitMessage._(
+          'BLANK');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestUnassignedPullRequestHeadRepoMergeCommitMessage && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookPullRequestUnassignedPullRequestHeadRepoMergeCommitMessage &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The default value for a merge commit title. - `PR_TITLE` - default to the pull request's title. - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
 final class WebhookPullRequestUnassignedPullRequestHeadRepoMergeCommitTitle {
-
   final String value;
 
-  const WebhookPullRequestUnassignedPullRequestHeadRepoMergeCommitTitle._(this.value);
+  const WebhookPullRequestUnassignedPullRequestHeadRepoMergeCommitTitle._(
+      this.value);
 
-  factory WebhookPullRequestUnassignedPullRequestHeadRepoMergeCommitTitle.fromJson(String value) => WebhookPullRequestUnassignedPullRequestHeadRepoMergeCommitTitle._(value);
+  factory WebhookPullRequestUnassignedPullRequestHeadRepoMergeCommitTitle.fromJson(
+          String value) =>
+      WebhookPullRequestUnassignedPullRequestHeadRepoMergeCommitTitle._(value);
 
-  static const prTitle = WebhookPullRequestUnassignedPullRequestHeadRepoMergeCommitTitle._('PR_TITLE');
-  static const mergeMessage = WebhookPullRequestUnassignedPullRequestHeadRepoMergeCommitTitle._('MERGE_MESSAGE');
+  static const prTitle =
+      WebhookPullRequestUnassignedPullRequestHeadRepoMergeCommitTitle._(
+          'PR_TITLE');
+  static const mergeMessage =
+      WebhookPullRequestUnassignedPullRequestHeadRepoMergeCommitTitle._(
+          'MERGE_MESSAGE');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestUnassignedPullRequestHeadRepoMergeCommitTitle && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookPullRequestUnassignedPullRequestHeadRepoMergeCommitTitle &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhookPullRequestUnassignedPullRequestHeadRepoOwnerType {
-
   final String value;
 
   const WebhookPullRequestUnassignedPullRequestHeadRepoOwnerType._(this.value);
 
-  factory WebhookPullRequestUnassignedPullRequestHeadRepoOwnerType.fromJson(String value) => WebhookPullRequestUnassignedPullRequestHeadRepoOwnerType._(value);
+  factory WebhookPullRequestUnassignedPullRequestHeadRepoOwnerType.fromJson(
+          String value) =>
+      WebhookPullRequestUnassignedPullRequestHeadRepoOwnerType._(value);
 
-  static const bot = WebhookPullRequestUnassignedPullRequestHeadRepoOwnerType._('Bot');
-  static const user = WebhookPullRequestUnassignedPullRequestHeadRepoOwnerType._('User');
-  static const organization = WebhookPullRequestUnassignedPullRequestHeadRepoOwnerType._('Organization');
+  static const bot =
+      WebhookPullRequestUnassignedPullRequestHeadRepoOwnerType._('Bot');
+  static const user =
+      WebhookPullRequestUnassignedPullRequestHeadRepoOwnerType._('User');
+  static const organization =
+      WebhookPullRequestUnassignedPullRequestHeadRepoOwnerType._(
+          'Organization');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestUnassignedPullRequestHeadRepoOwnerType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookPullRequestUnassignedPullRequestHeadRepoOwnerType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The policy controlling who can create pull requests: all or collaborators_only.
 final class WebhookPullRequestUnassignedPullRequestHeadRepoPullRequestCreationPolicy {
-
   final String value;
 
-  const WebhookPullRequestUnassignedPullRequestHeadRepoPullRequestCreationPolicy._(this.value);
+  const WebhookPullRequestUnassignedPullRequestHeadRepoPullRequestCreationPolicy._(
+      this.value);
 
-  factory WebhookPullRequestUnassignedPullRequestHeadRepoPullRequestCreationPolicy.fromJson(String value) => WebhookPullRequestUnassignedPullRequestHeadRepoPullRequestCreationPolicy._(value);
+  factory WebhookPullRequestUnassignedPullRequestHeadRepoPullRequestCreationPolicy.fromJson(
+          String value) =>
+      WebhookPullRequestUnassignedPullRequestHeadRepoPullRequestCreationPolicy
+          ._(value);
 
-  static const all = WebhookPullRequestUnassignedPullRequestHeadRepoPullRequestCreationPolicy._('all');
-  static const collaboratorsOnly = WebhookPullRequestUnassignedPullRequestHeadRepoPullRequestCreationPolicy._('collaborators_only');
+  static const all =
+      WebhookPullRequestUnassignedPullRequestHeadRepoPullRequestCreationPolicy
+          ._('all');
+  static const collaboratorsOnly =
+      WebhookPullRequestUnassignedPullRequestHeadRepoPullRequestCreationPolicy
+          ._('collaborators_only');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestUnassignedPullRequestHeadRepoPullRequestCreationPolicy && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookPullRequestUnassignedPullRequestHeadRepoPullRequestCreationPolicy &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The default value for a squash merge commit message: - `PR_BODY` - default to the pull request's body. - `COMMIT_MESSAGES` - default to the branch's commit messages. - `BLANK` - default to a blank commit message.
 final class WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitMessage {
-
   final String value;
 
-  const WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitMessage._(this.value);
+  const WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitMessage._(
+      this.value);
 
-  factory WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitMessage.fromJson(String value) => WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitMessage._(value);
+  factory WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitMessage.fromJson(
+          String value) =>
+      WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitMessage._(
+          value);
 
-  static const prBody = WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitMessage._('PR_BODY');
-  static const commitMessages = WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitMessage._('COMMIT_MESSAGES');
-  static const blank = WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitMessage._('BLANK');
+  static const prBody =
+      WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitMessage._(
+          'PR_BODY');
+  static const commitMessages =
+      WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitMessage._(
+          'COMMIT_MESSAGES');
+  static const blank =
+      WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitMessage._(
+          'BLANK');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitMessage && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitMessage &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The default value for a squash merge commit title: - `PR_TITLE` - default to the pull request's title. - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
 final class WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitTitle {
-
   final String value;
 
-  const WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitTitle._(this.value);
+  const WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitTitle._(
+      this.value);
 
-  factory WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitTitle.fromJson(String value) => WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitTitle._(value);
+  factory WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitTitle.fromJson(
+          String value) =>
+      WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitTitle._(
+          value);
 
-  static const prTitle = WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitTitle._('PR_TITLE');
-  static const commitOrPrTitle = WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitTitle._('COMMIT_OR_PR_TITLE');
+  static const prTitle =
+      WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitTitle._(
+          'PR_TITLE');
+  static const commitOrPrTitle =
+      WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitTitle._(
+          'COMMIT_OR_PR_TITLE');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitTitle && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookPullRequestUnassignedPullRequestHeadRepoSquashMergeCommitTitle &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

@@ -8,249 +8,393 @@ part of 'webhook_pull_request_review_comment_created.dart';
 class WebhookPullRequestReviewCommentCreatedPullRequestLinksComments {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri-template`-formatted value serialized in the `href` wire field.
   final String href;
 
-  const WebhookPullRequestReviewCommentCreatedPullRequestLinksComments({required this.href});
+  const WebhookPullRequestReviewCommentCreatedPullRequestLinksComments(
+      {required this.href});
 
-  WebhookPullRequestReviewCommentCreatedPullRequestLinksComments Function({String href}) get copyWith => _copyWith;
+  WebhookPullRequestReviewCommentCreatedPullRequestLinksComments Function(
+      {String href}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewCommentCreatedPullRequestLinksComments _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestReviewCommentCreatedPullRequestLinksComments(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  WebhookPullRequestReviewCommentCreatedPullRequestLinksComments _copyWith(
+          {Object? href = sdkOmittedValue}) =>
+      WebhookPullRequestReviewCommentCreatedPullRequestLinksComments(
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
-  factory WebhookPullRequestReviewCommentCreatedPullRequestLinksComments.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewCommentCreatedPullRequestLinksComments(
-    href: (json['href'] as String?)!,
-  );
+  factory WebhookPullRequestReviewCommentCreatedPullRequestLinksComments.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPullRequestReviewCommentCreatedPullRequestLinksComments(
+        href: (json['href'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 /// Required object value serialized in the `commits` wire field.
 class WebhookPullRequestReviewCommentCreatedPullRequestLinksCommits {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri-template`-formatted value serialized in the `href` wire field.
   final String href;
 
-  const WebhookPullRequestReviewCommentCreatedPullRequestLinksCommits({required this.href});
+  const WebhookPullRequestReviewCommentCreatedPullRequestLinksCommits(
+      {required this.href});
 
-  WebhookPullRequestReviewCommentCreatedPullRequestLinksCommits Function({String href}) get copyWith => _copyWith;
+  WebhookPullRequestReviewCommentCreatedPullRequestLinksCommits Function(
+      {String href}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewCommentCreatedPullRequestLinksCommits _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestReviewCommentCreatedPullRequestLinksCommits(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  WebhookPullRequestReviewCommentCreatedPullRequestLinksCommits _copyWith(
+          {Object? href = sdkOmittedValue}) =>
+      WebhookPullRequestReviewCommentCreatedPullRequestLinksCommits(
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
-  factory WebhookPullRequestReviewCommentCreatedPullRequestLinksCommits.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewCommentCreatedPullRequestLinksCommits(
-    href: (json['href'] as String?)!,
-  );
+  factory WebhookPullRequestReviewCommentCreatedPullRequestLinksCommits.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPullRequestReviewCommentCreatedPullRequestLinksCommits(
+        href: (json['href'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 /// Required object value serialized in the `html` wire field.
 class WebhookPullRequestReviewCommentCreatedPullRequestLinksHtml {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri-template`-formatted value serialized in the `href` wire field.
   final String href;
 
-  const WebhookPullRequestReviewCommentCreatedPullRequestLinksHtml({required this.href});
+  const WebhookPullRequestReviewCommentCreatedPullRequestLinksHtml(
+      {required this.href});
 
-  WebhookPullRequestReviewCommentCreatedPullRequestLinksHtml Function({String href}) get copyWith => _copyWith;
+  WebhookPullRequestReviewCommentCreatedPullRequestLinksHtml Function(
+      {String href}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewCommentCreatedPullRequestLinksHtml _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestReviewCommentCreatedPullRequestLinksHtml(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  WebhookPullRequestReviewCommentCreatedPullRequestLinksHtml _copyWith(
+          {Object? href = sdkOmittedValue}) =>
+      WebhookPullRequestReviewCommentCreatedPullRequestLinksHtml(
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
-  factory WebhookPullRequestReviewCommentCreatedPullRequestLinksHtml.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewCommentCreatedPullRequestLinksHtml(
-    href: (json['href'] as String?)!,
-  );
+  factory WebhookPullRequestReviewCommentCreatedPullRequestLinksHtml.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPullRequestReviewCommentCreatedPullRequestLinksHtml(
+        href: (json['href'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 /// Required object value serialized in the `issue` wire field.
 class WebhookPullRequestReviewCommentCreatedPullRequestLinksIssue {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri-template`-formatted value serialized in the `href` wire field.
   final String href;
 
-  const WebhookPullRequestReviewCommentCreatedPullRequestLinksIssue({required this.href});
+  const WebhookPullRequestReviewCommentCreatedPullRequestLinksIssue(
+      {required this.href});
 
-  WebhookPullRequestReviewCommentCreatedPullRequestLinksIssue Function({String href}) get copyWith => _copyWith;
+  WebhookPullRequestReviewCommentCreatedPullRequestLinksIssue Function(
+      {String href}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewCommentCreatedPullRequestLinksIssue _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestReviewCommentCreatedPullRequestLinksIssue(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  WebhookPullRequestReviewCommentCreatedPullRequestLinksIssue _copyWith(
+          {Object? href = sdkOmittedValue}) =>
+      WebhookPullRequestReviewCommentCreatedPullRequestLinksIssue(
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
-  factory WebhookPullRequestReviewCommentCreatedPullRequestLinksIssue.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewCommentCreatedPullRequestLinksIssue(
-    href: (json['href'] as String?)!,
-  );
+  factory WebhookPullRequestReviewCommentCreatedPullRequestLinksIssue.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPullRequestReviewCommentCreatedPullRequestLinksIssue(
+        href: (json['href'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 /// Required object value serialized in the `review_comment` wire field.
 class WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComment {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri-template`-formatted value serialized in the `href` wire field.
   final String href;
 
-  const WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComment({required this.href});
+  const WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComment(
+      {required this.href});
 
-  WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComment Function({String href}) get copyWith => _copyWith;
+  WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComment Function(
+      {String href}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComment _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComment(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComment _copyWith(
+          {Object? href = sdkOmittedValue}) =>
+      WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComment(
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
-  factory WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComment.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComment(
-    href: (json['href'] as String?)!,
-  );
+  factory WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComment.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComment(
+        href: (json['href'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 /// Required object value serialized in the `review_comments` wire field.
 class WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComments {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri-template`-formatted value serialized in the `href` wire field.
   final String href;
 
-  const WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComments({required this.href});
+  const WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComments(
+      {required this.href});
 
-  WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComments Function({String href}) get copyWith => _copyWith;
+  WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComments Function(
+      {String href}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComments _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComments(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComments
+      _copyWith({Object? href = sdkOmittedValue}) =>
+          WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComments(
+            href: identical(href, sdkOmittedValue) ? this.href : href as String,
+          );
 
-  factory WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComments.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComments(
-    href: (json['href'] as String?)!,
-  );
+  factory WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComments.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComments(
+        href: (json['href'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 /// Required object value serialized in the `self` wire field.
 class WebhookPullRequestReviewCommentCreatedPullRequestLinksSelf {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri-template`-formatted value serialized in the `href` wire field.
   final String href;
 
-  const WebhookPullRequestReviewCommentCreatedPullRequestLinksSelf({required this.href});
+  const WebhookPullRequestReviewCommentCreatedPullRequestLinksSelf(
+      {required this.href});
 
-  WebhookPullRequestReviewCommentCreatedPullRequestLinksSelf Function({String href}) get copyWith => _copyWith;
+  WebhookPullRequestReviewCommentCreatedPullRequestLinksSelf Function(
+      {String href}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewCommentCreatedPullRequestLinksSelf _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestReviewCommentCreatedPullRequestLinksSelf(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  WebhookPullRequestReviewCommentCreatedPullRequestLinksSelf _copyWith(
+          {Object? href = sdkOmittedValue}) =>
+      WebhookPullRequestReviewCommentCreatedPullRequestLinksSelf(
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
-  factory WebhookPullRequestReviewCommentCreatedPullRequestLinksSelf.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewCommentCreatedPullRequestLinksSelf(
-    href: (json['href'] as String?)!,
-  );
+  factory WebhookPullRequestReviewCommentCreatedPullRequestLinksSelf.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPullRequestReviewCommentCreatedPullRequestLinksSelf(
+        href: (json['href'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 /// Required object value serialized in the `statuses` wire field.
 class WebhookPullRequestReviewCommentCreatedPullRequestLinksStatuses {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri-template`-formatted value serialized in the `href` wire field.
   final String href;
 
-  const WebhookPullRequestReviewCommentCreatedPullRequestLinksStatuses({required this.href});
+  const WebhookPullRequestReviewCommentCreatedPullRequestLinksStatuses(
+      {required this.href});
 
-  WebhookPullRequestReviewCommentCreatedPullRequestLinksStatuses Function({String href}) get copyWith => _copyWith;
+  WebhookPullRequestReviewCommentCreatedPullRequestLinksStatuses Function(
+      {String href}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewCommentCreatedPullRequestLinksStatuses _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestReviewCommentCreatedPullRequestLinksStatuses(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  WebhookPullRequestReviewCommentCreatedPullRequestLinksStatuses _copyWith(
+          {Object? href = sdkOmittedValue}) =>
+      WebhookPullRequestReviewCommentCreatedPullRequestLinksStatuses(
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
-  factory WebhookPullRequestReviewCommentCreatedPullRequestLinksStatuses.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewCommentCreatedPullRequestLinksStatuses(
-    href: (json['href'] as String?)!,
-  );
+  factory WebhookPullRequestReviewCommentCreatedPullRequestLinksStatuses.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPullRequestReviewCommentCreatedPullRequestLinksStatuses(
+        href: (json['href'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 /// Required object value serialized in the `_links` wire field.
 class WebhookPullRequestReviewCommentCreatedPullRequestLinks {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required object value serialized in the `comments` wire field.
   final WebhookPullRequestReviewCommentCreatedPullRequestLinksComments comments;
+
   /// Required object value serialized in the `commits` wire field.
   final WebhookPullRequestReviewCommentCreatedPullRequestLinksCommits commits;
+
   /// Required object value serialized in the `html` wire field.
   final WebhookPullRequestReviewCommentCreatedPullRequestLinksHtml html;
+
   /// Required object value serialized in the `issue` wire field.
   final WebhookPullRequestReviewCommentCreatedPullRequestLinksIssue issue;
+
   /// Required object value serialized in the `review_comment` wire field.
-  final WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComment reviewComment;
+  final WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComment
+      reviewComment;
+
   /// Required object value serialized in the `review_comments` wire field.
-  final WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComments reviewComments;
+  final WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComments
+      reviewComments;
+
   /// Required object value serialized in the `self` wire field.
   final WebhookPullRequestReviewCommentCreatedPullRequestLinksSelf self;
+
   /// Required object value serialized in the `statuses` wire field.
   final WebhookPullRequestReviewCommentCreatedPullRequestLinksStatuses statuses;
 
-  const WebhookPullRequestReviewCommentCreatedPullRequestLinks({required this.comments, required this.commits, required this.html, required this.issue, required this.reviewComment, required this.reviewComments, required this.self, required this.statuses});
+  const WebhookPullRequestReviewCommentCreatedPullRequestLinks(
+      {required this.comments,
+      required this.commits,
+      required this.html,
+      required this.issue,
+      required this.reviewComment,
+      required this.reviewComments,
+      required this.self,
+      required this.statuses});
 
-  WebhookPullRequestReviewCommentCreatedPullRequestLinks Function({WebhookPullRequestReviewCommentCreatedPullRequestLinksComments comments, WebhookPullRequestReviewCommentCreatedPullRequestLinksCommits commits, WebhookPullRequestReviewCommentCreatedPullRequestLinksHtml html, WebhookPullRequestReviewCommentCreatedPullRequestLinksIssue issue, WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComment reviewComment, WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComments reviewComments, WebhookPullRequestReviewCommentCreatedPullRequestLinksSelf self, WebhookPullRequestReviewCommentCreatedPullRequestLinksStatuses statuses}) get copyWith => _copyWith;
+  WebhookPullRequestReviewCommentCreatedPullRequestLinks Function(
+      {WebhookPullRequestReviewCommentCreatedPullRequestLinksComments comments,
+      WebhookPullRequestReviewCommentCreatedPullRequestLinksCommits commits,
+      WebhookPullRequestReviewCommentCreatedPullRequestLinksHtml html,
+      WebhookPullRequestReviewCommentCreatedPullRequestLinksIssue issue,
+      WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComment
+          reviewComment,
+      WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComments
+          reviewComments,
+      WebhookPullRequestReviewCommentCreatedPullRequestLinksSelf self,
+      WebhookPullRequestReviewCommentCreatedPullRequestLinksStatuses
+          statuses}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewCommentCreatedPullRequestLinks _copyWith({Object? comments = sdkOmittedValue, Object? commits = sdkOmittedValue, Object? html = sdkOmittedValue, Object? issue = sdkOmittedValue, Object? reviewComment = sdkOmittedValue, Object? reviewComments = sdkOmittedValue, Object? self = sdkOmittedValue, Object? statuses = sdkOmittedValue}) => WebhookPullRequestReviewCommentCreatedPullRequestLinks(
-    comments: identical(comments, sdkOmittedValue) ? this.comments : comments as WebhookPullRequestReviewCommentCreatedPullRequestLinksComments,
-    commits: identical(commits, sdkOmittedValue) ? this.commits : commits as WebhookPullRequestReviewCommentCreatedPullRequestLinksCommits,
-    html: identical(html, sdkOmittedValue) ? this.html : html as WebhookPullRequestReviewCommentCreatedPullRequestLinksHtml,
-    issue: identical(issue, sdkOmittedValue) ? this.issue : issue as WebhookPullRequestReviewCommentCreatedPullRequestLinksIssue,
-    reviewComment: identical(reviewComment, sdkOmittedValue) ? this.reviewComment : reviewComment as WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComment,
-    reviewComments: identical(reviewComments, sdkOmittedValue) ? this.reviewComments : reviewComments as WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComments,
-    self: identical(self, sdkOmittedValue) ? this.self : self as WebhookPullRequestReviewCommentCreatedPullRequestLinksSelf,
-    statuses: identical(statuses, sdkOmittedValue) ? this.statuses : statuses as WebhookPullRequestReviewCommentCreatedPullRequestLinksStatuses,
-  );
+  WebhookPullRequestReviewCommentCreatedPullRequestLinks _copyWith(
+          {Object? comments = sdkOmittedValue,
+          Object? commits = sdkOmittedValue,
+          Object? html = sdkOmittedValue,
+          Object? issue = sdkOmittedValue,
+          Object? reviewComment = sdkOmittedValue,
+          Object? reviewComments = sdkOmittedValue,
+          Object? self = sdkOmittedValue,
+          Object? statuses = sdkOmittedValue}) =>
+      WebhookPullRequestReviewCommentCreatedPullRequestLinks(
+        comments: identical(comments, sdkOmittedValue)
+            ? this.comments
+            : comments
+                as WebhookPullRequestReviewCommentCreatedPullRequestLinksComments,
+        commits: identical(commits, sdkOmittedValue)
+            ? this.commits
+            : commits
+                as WebhookPullRequestReviewCommentCreatedPullRequestLinksCommits,
+        html: identical(html, sdkOmittedValue)
+            ? this.html
+            : html
+                as WebhookPullRequestReviewCommentCreatedPullRequestLinksHtml,
+        issue: identical(issue, sdkOmittedValue)
+            ? this.issue
+            : issue
+                as WebhookPullRequestReviewCommentCreatedPullRequestLinksIssue,
+        reviewComment: identical(reviewComment, sdkOmittedValue)
+            ? this.reviewComment
+            : reviewComment
+                as WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComment,
+        reviewComments: identical(reviewComments, sdkOmittedValue)
+            ? this.reviewComments
+            : reviewComments
+                as WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComments,
+        self: identical(self, sdkOmittedValue)
+            ? this.self
+            : self
+                as WebhookPullRequestReviewCommentCreatedPullRequestLinksSelf,
+        statuses: identical(statuses, sdkOmittedValue)
+            ? this.statuses
+            : statuses
+                as WebhookPullRequestReviewCommentCreatedPullRequestLinksStatuses,
+      );
 
-  factory WebhookPullRequestReviewCommentCreatedPullRequestLinks.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewCommentCreatedPullRequestLinks(
-    comments: (json['comments'] != null ? WebhookPullRequestReviewCommentCreatedPullRequestLinksComments.fromJson(json['comments'] as Map<String, dynamic>) : null)!,
-    commits: (json['commits'] != null ? WebhookPullRequestReviewCommentCreatedPullRequestLinksCommits.fromJson(json['commits'] as Map<String, dynamic>) : null)!,
-    html: (json['html'] != null ? WebhookPullRequestReviewCommentCreatedPullRequestLinksHtml.fromJson(json['html'] as Map<String, dynamic>) : null)!,
-    issue: (json['issue'] != null ? WebhookPullRequestReviewCommentCreatedPullRequestLinksIssue.fromJson(json['issue'] as Map<String, dynamic>) : null)!,
-    reviewComment: (json['review_comment'] != null ? WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComment.fromJson(json['review_comment'] as Map<String, dynamic>) : null)!,
-    reviewComments: (json['review_comments'] != null ? WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComments.fromJson(json['review_comments'] as Map<String, dynamic>) : null)!,
-    self: (json['self'] != null ? WebhookPullRequestReviewCommentCreatedPullRequestLinksSelf.fromJson(json['self'] as Map<String, dynamic>) : null)!,
-    statuses: (json['statuses'] != null ? WebhookPullRequestReviewCommentCreatedPullRequestLinksStatuses.fromJson(json['statuses'] as Map<String, dynamic>) : null)!,
-  );
+  factory WebhookPullRequestReviewCommentCreatedPullRequestLinks.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPullRequestReviewCommentCreatedPullRequestLinks(
+        comments: (json['comments'] != null
+            ? WebhookPullRequestReviewCommentCreatedPullRequestLinksComments
+                .fromJson(json['comments'] as Map<String, dynamic>)
+            : null)!,
+        commits: (json['commits'] != null
+            ? WebhookPullRequestReviewCommentCreatedPullRequestLinksCommits
+                .fromJson(json['commits'] as Map<String, dynamic>)
+            : null)!,
+        html: (json['html'] != null
+            ? WebhookPullRequestReviewCommentCreatedPullRequestLinksHtml
+                .fromJson(json['html'] as Map<String, dynamic>)
+            : null)!,
+        issue: (json['issue'] != null
+            ? WebhookPullRequestReviewCommentCreatedPullRequestLinksIssue
+                .fromJson(json['issue'] as Map<String, dynamic>)
+            : null)!,
+        reviewComment: (json['review_comment'] != null
+            ? WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComment
+                .fromJson(json['review_comment'] as Map<String, dynamic>)
+            : null)!,
+        reviewComments: (json['review_comments'] != null
+            ? WebhookPullRequestReviewCommentCreatedPullRequestLinksReviewComments
+                .fromJson(json['review_comments'] as Map<String, dynamic>)
+            : null)!,
+        self: (json['self'] != null
+            ? WebhookPullRequestReviewCommentCreatedPullRequestLinksSelf
+                .fromJson(json['self'] as Map<String, dynamic>)
+            : null)!,
+        statuses: (json['statuses'] != null
+            ? WebhookPullRequestReviewCommentCreatedPullRequestLinksStatuses
+                .fromJson(json['statuses'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'comments': comments.toJson(),
-    'commits': commits.toJson(),
-    'html': html.toJson(),
-    'issue': issue.toJson(),
-    'review_comment': reviewComment.toJson(),
-    'review_comments': reviewComments.toJson(),
-    'self': self.toJson(),
-    'statuses': statuses.toJson(),
-  };
+        'comments': comments.toJson(),
+        'commits': commits.toJson(),
+        'html': html.toJson(),
+        'issue': issue.toJson(),
+        'review_comment': reviewComment.toJson(),
+        'review_comments': reviewComments.toJson(),
+        'self': self.toJson(),
+        'statuses': statuses.toJson(),
+      };
 }

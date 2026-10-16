@@ -8,32 +8,55 @@ part of 'actions.dart';
 class SelfHostedRunnersSettings {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The policy that controls whether self-hosted runners can be used by repositories in the organization
   final SelfHostedRunnersSettingsEnabledRepositories enabledRepositories;
+
   /// The URL to the endpoint for managing selected repositories for self-hosted runners in the organization
   final SdkOptional<String> selectedRepositoriesUrl;
 
-  const SelfHostedRunnersSettings({required this.enabledRepositories, this.selectedRepositoriesUrl = const SdkOmitted()});
+  const SelfHostedRunnersSettings(
+      {required this.enabledRepositories,
+      this.selectedRepositoriesUrl = const SdkOmitted()});
 
-  SelfHostedRunnersSettings Function({SelfHostedRunnersSettingsEnabledRepositories enabledRepositories, SdkOptional<String> selectedRepositoriesUrl}) get copyWith => _copyWith;
+  SelfHostedRunnersSettings Function(
+      {SelfHostedRunnersSettingsEnabledRepositories enabledRepositories,
+      SdkOptional<String> selectedRepositoriesUrl}) get copyWith => _copyWith;
 
-  SelfHostedRunnersSettings _copyWith({Object? enabledRepositories = sdkOmittedValue, Object? selectedRepositoriesUrl = sdkOmittedValue}) => SelfHostedRunnersSettings(
-    enabledRepositories: identical(enabledRepositories, sdkOmittedValue) ? this.enabledRepositories : enabledRepositories as SelfHostedRunnersSettingsEnabledRepositories,
-    selectedRepositoriesUrl: identical(selectedRepositoriesUrl, sdkOmittedValue) ? this.selectedRepositoriesUrl : selectedRepositoriesUrl as SdkOptional<String>,
-  );
+  SelfHostedRunnersSettings _copyWith(
+          {Object? enabledRepositories = sdkOmittedValue,
+          Object? selectedRepositoriesUrl = sdkOmittedValue}) =>
+      SelfHostedRunnersSettings(
+        enabledRepositories: identical(enabledRepositories, sdkOmittedValue)
+            ? this.enabledRepositories
+            : enabledRepositories
+                as SelfHostedRunnersSettingsEnabledRepositories,
+        selectedRepositoriesUrl:
+            identical(selectedRepositoriesUrl, sdkOmittedValue)
+                ? this.selectedRepositoriesUrl
+                : selectedRepositoriesUrl as SdkOptional<String>,
+      );
 
-  factory SelfHostedRunnersSettings.fromJson(Map<String, dynamic> json) => SelfHostedRunnersSettings(
-    enabledRepositories: (json['enabled_repositories'] != null ? SelfHostedRunnersSettingsEnabledRepositories.fromJson(json['enabled_repositories'] as String) : null)!,
-    selectedRepositoriesUrl: json['selected_repositories_url'] != null ? SdkPresent((json['selected_repositories_url'] as String?)!) : const SdkOmitted(),
-  );
+  factory SelfHostedRunnersSettings.fromJson(Map<String, dynamic> json) =>
+      SelfHostedRunnersSettings(
+        enabledRepositories: (json['enabled_repositories'] != null
+            ? SelfHostedRunnersSettingsEnabledRepositories.fromJson(
+                json['enabled_repositories'] as String)
+            : null)!,
+        selectedRepositoriesUrl: json['selected_repositories_url'] != null
+            ? SdkPresent((json['selected_repositories_url'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'enabled_repositories': enabledRepositories.toJson(),
-    ...switch (selectedRepositoriesUrl) {
-      SdkPresent<String>(value: final value) => {'selected_repositories_url': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'enabled_repositories': enabledRepositories.toJson(),
+        ...switch (selectedRepositoriesUrl) {
+          SdkPresent<String>(value: final value) => {
+              'selected_repositories_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 // ShaPinningRequired = bool

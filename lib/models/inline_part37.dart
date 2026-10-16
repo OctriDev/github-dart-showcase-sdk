@@ -6,257 +6,317 @@ part of 'inline.dart';
 // Inline operation models (part 37)
 /// The policy controlling who can create pull requests: all or collaborators_only.
 final class RepositoryWebhooksPullRequestCreationPolicy {
-
   final String value;
 
   const RepositoryWebhooksPullRequestCreationPolicy._(this.value);
 
-  factory RepositoryWebhooksPullRequestCreationPolicy.fromJson(String value) => RepositoryWebhooksPullRequestCreationPolicy._(value);
+  factory RepositoryWebhooksPullRequestCreationPolicy.fromJson(String value) =>
+      RepositoryWebhooksPullRequestCreationPolicy._(value);
 
   static const all = RepositoryWebhooksPullRequestCreationPolicy._('all');
-  static const collaboratorsOnly = RepositoryWebhooksPullRequestCreationPolicy._('collaborators_only');
+  static const collaboratorsOnly =
+      RepositoryWebhooksPullRequestCreationPolicy._('collaborators_only');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RepositoryWebhooksPullRequestCreationPolicy && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RepositoryWebhooksPullRequestCreationPolicy &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The default value for a squash merge commit message: - `PR_BODY` - default to the pull request's body. - `COMMIT_MESSAGES` - default to the branch's commit messages. - `BLANK` - default to a blank commit message.
 final class RepositoryWebhooksSquashMergeCommitMessage {
-
   final String value;
 
   const RepositoryWebhooksSquashMergeCommitMessage._(this.value);
 
-  factory RepositoryWebhooksSquashMergeCommitMessage.fromJson(String value) => RepositoryWebhooksSquashMergeCommitMessage._(value);
+  factory RepositoryWebhooksSquashMergeCommitMessage.fromJson(String value) =>
+      RepositoryWebhooksSquashMergeCommitMessage._(value);
 
   static const prBody = RepositoryWebhooksSquashMergeCommitMessage._('PR_BODY');
-  static const commitMessages = RepositoryWebhooksSquashMergeCommitMessage._('COMMIT_MESSAGES');
+  static const commitMessages =
+      RepositoryWebhooksSquashMergeCommitMessage._('COMMIT_MESSAGES');
   static const blank = RepositoryWebhooksSquashMergeCommitMessage._('BLANK');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RepositoryWebhooksSquashMergeCommitMessage && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RepositoryWebhooksSquashMergeCommitMessage &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The default value for a squash merge commit title: - `PR_TITLE` - default to the pull request's title. - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
 final class RepositoryWebhooksSquashMergeCommitTitle {
-
   final String value;
 
   const RepositoryWebhooksSquashMergeCommitTitle._(this.value);
 
-  factory RepositoryWebhooksSquashMergeCommitTitle.fromJson(String value) => RepositoryWebhooksSquashMergeCommitTitle._(value);
+  factory RepositoryWebhooksSquashMergeCommitTitle.fromJson(String value) =>
+      RepositoryWebhooksSquashMergeCommitTitle._(value);
 
   static const prTitle = RepositoryWebhooksSquashMergeCommitTitle._('PR_TITLE');
-  static const commitOrPrTitle = RepositoryWebhooksSquashMergeCommitTitle._('COMMIT_OR_PR_TITLE');
+  static const commitOrPrTitle =
+      RepositoryWebhooksSquashMergeCommitTitle._('COMMIT_OR_PR_TITLE');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RepositoryWebhooksSquashMergeCommitTitle && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RepositoryWebhooksSquashMergeCommitTitle && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The default value for a merge commit message. - `PR_TITLE` - default to the pull request's title. - `PR_BODY` - default to the pull request's body. - `BLANK` - default to a blank commit message.
 final class RepositoryWebhooksTemplateRepositoryMergeCommitMessage {
-
   final String value;
 
   const RepositoryWebhooksTemplateRepositoryMergeCommitMessage._(this.value);
 
-  factory RepositoryWebhooksTemplateRepositoryMergeCommitMessage.fromJson(String value) => RepositoryWebhooksTemplateRepositoryMergeCommitMessage._(value);
+  factory RepositoryWebhooksTemplateRepositoryMergeCommitMessage.fromJson(
+          String value) =>
+      RepositoryWebhooksTemplateRepositoryMergeCommitMessage._(value);
 
-  static const prBody = RepositoryWebhooksTemplateRepositoryMergeCommitMessage._('PR_BODY');
-  static const prTitle = RepositoryWebhooksTemplateRepositoryMergeCommitMessage._('PR_TITLE');
-  static const blank = RepositoryWebhooksTemplateRepositoryMergeCommitMessage._('BLANK');
+  static const prBody =
+      RepositoryWebhooksTemplateRepositoryMergeCommitMessage._('PR_BODY');
+  static const prTitle =
+      RepositoryWebhooksTemplateRepositoryMergeCommitMessage._('PR_TITLE');
+  static const blank =
+      RepositoryWebhooksTemplateRepositoryMergeCommitMessage._('BLANK');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RepositoryWebhooksTemplateRepositoryMergeCommitMessage && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RepositoryWebhooksTemplateRepositoryMergeCommitMessage &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The default value for a merge commit title. - `PR_TITLE` - default to the pull request's title. - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
 final class RepositoryWebhooksTemplateRepositoryMergeCommitTitle {
-
   final String value;
 
   const RepositoryWebhooksTemplateRepositoryMergeCommitTitle._(this.value);
 
-  factory RepositoryWebhooksTemplateRepositoryMergeCommitTitle.fromJson(String value) => RepositoryWebhooksTemplateRepositoryMergeCommitTitle._(value);
+  factory RepositoryWebhooksTemplateRepositoryMergeCommitTitle.fromJson(
+          String value) =>
+      RepositoryWebhooksTemplateRepositoryMergeCommitTitle._(value);
 
-  static const prTitle = RepositoryWebhooksTemplateRepositoryMergeCommitTitle._('PR_TITLE');
-  static const mergeMessage = RepositoryWebhooksTemplateRepositoryMergeCommitTitle._('MERGE_MESSAGE');
+  static const prTitle =
+      RepositoryWebhooksTemplateRepositoryMergeCommitTitle._('PR_TITLE');
+  static const mergeMessage =
+      RepositoryWebhooksTemplateRepositoryMergeCommitTitle._('MERGE_MESSAGE');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RepositoryWebhooksTemplateRepositoryMergeCommitTitle && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RepositoryWebhooksTemplateRepositoryMergeCommitTitle &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The default value for a squash merge commit message: - `PR_BODY` - default to the pull request's body. - `COMMIT_MESSAGES` - default to the branch's commit messages. - `BLANK` - default to a blank commit message.
 final class RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage {
-
   final String value;
 
-  const RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage._(this.value);
+  const RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage._(
+      this.value);
 
-  factory RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.fromJson(String value) => RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage._(value);
+  factory RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.fromJson(
+          String value) =>
+      RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage._(value);
 
-  static const prBody = RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage._('PR_BODY');
-  static const commitMessages = RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage._('COMMIT_MESSAGES');
-  static const blank = RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage._('BLANK');
+  static const prBody =
+      RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage._('PR_BODY');
+  static const commitMessages =
+      RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage._(
+          'COMMIT_MESSAGES');
+  static const blank =
+      RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage._('BLANK');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The default value for a squash merge commit title: - `PR_TITLE` - default to the pull request's title. - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
 final class RepositoryWebhooksTemplateRepositorySquashMergeCommitTitle {
-
   final String value;
 
-  const RepositoryWebhooksTemplateRepositorySquashMergeCommitTitle._(this.value);
+  const RepositoryWebhooksTemplateRepositorySquashMergeCommitTitle._(
+      this.value);
 
-  factory RepositoryWebhooksTemplateRepositorySquashMergeCommitTitle.fromJson(String value) => RepositoryWebhooksTemplateRepositorySquashMergeCommitTitle._(value);
+  factory RepositoryWebhooksTemplateRepositorySquashMergeCommitTitle.fromJson(
+          String value) =>
+      RepositoryWebhooksTemplateRepositorySquashMergeCommitTitle._(value);
 
-  static const prTitle = RepositoryWebhooksTemplateRepositorySquashMergeCommitTitle._('PR_TITLE');
-  static const commitOrPrTitle = RepositoryWebhooksTemplateRepositorySquashMergeCommitTitle._('COMMIT_OR_PR_TITLE');
+  static const prTitle =
+      RepositoryWebhooksTemplateRepositorySquashMergeCommitTitle._('PR_TITLE');
+  static const commitOrPrTitle =
+      RepositoryWebhooksTemplateRepositorySquashMergeCommitTitle._(
+          'COMMIT_OR_PR_TITLE');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RepositoryWebhooksTemplateRepositorySquashMergeCommitTitle && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RepositoryWebhooksTemplateRepositorySquashMergeCommitTitle &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The side of the first line of the range for a multi-line comment.
 final class ReviewCommentSide {
-
   final String value;
 
   const ReviewCommentSide._(this.value);
 
-  factory ReviewCommentSide.fromJson(String value) => ReviewCommentSide._(value);
+  factory ReviewCommentSide.fromJson(String value) =>
+      ReviewCommentSide._(value);
 
   static const left = ReviewCommentSide._('LEFT');
   static const right = ReviewCommentSide._('RIGHT');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReviewCommentSide && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ReviewCommentSide && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The side of the first line of the range for a multi-line comment.
 final class ReviewCommentStartSide {
-
   final String value;
 
   const ReviewCommentStartSide._(this.value);
 
-  factory ReviewCommentStartSide.fromJson(String value) => ReviewCommentStartSide._(value);
+  factory ReviewCommentStartSide.fromJson(String value) =>
+      ReviewCommentStartSide._(value);
 
   static const left = ReviewCommentStartSide._('LEFT');
   static const right = ReviewCommentStartSide._('RIGHT');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReviewCommentStartSide && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ReviewCommentStartSide && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The level at which the comment is targeted, can be a diff line or a file.
 final class ReviewCommentSubjectType {
-
   final String value;
 
   const ReviewCommentSubjectType._(this.value);
 
-  factory ReviewCommentSubjectType.fromJson(String value) => ReviewCommentSubjectType._(value);
+  factory ReviewCommentSubjectType.fromJson(String value) =>
+      ReviewCommentSubjectType._(value);
 
   static const line = ReviewCommentSubjectType._('line');
   static const file = ReviewCommentSubjectType._('file');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReviewCommentSubjectType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ReviewCommentSubjectType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Whether to approve or reject deployment to the specified environments.
 final class ReviewCustomGatesStateRequiredState {
-
   final String value;
 
   const ReviewCustomGatesStateRequiredState._(this.value);
 
-  factory ReviewCustomGatesStateRequiredState.fromJson(String value) => ReviewCustomGatesStateRequiredState._(value);
+  factory ReviewCustomGatesStateRequiredState.fromJson(String value) =>
+      ReviewCustomGatesStateRequiredState._(value);
 
   static const approved = ReviewCustomGatesStateRequiredState._('approved');
   static const rejected = ReviewCustomGatesStateRequiredState._('rejected');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReviewCustomGatesStateRequiredState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ReviewCustomGatesStateRequiredState && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`. Null if no rules with `evaluate` enforcement status were run.
 final class RuleSuiteEvaluationResult {
-
   final String value;
 
   const RuleSuiteEvaluationResult._(this.value);
 
-  factory RuleSuiteEvaluationResult.fromJson(String value) => RuleSuiteEvaluationResult._(value);
+  factory RuleSuiteEvaluationResult.fromJson(String value) =>
+      RuleSuiteEvaluationResult._(value);
 
   static const pass = RuleSuiteEvaluationResult._('pass');
   static const fail = RuleSuiteEvaluationResult._('fail');
@@ -264,10 +324,13 @@ final class RuleSuiteEvaluationResult {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RuleSuiteEvaluationResult && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RuleSuiteEvaluationResult && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

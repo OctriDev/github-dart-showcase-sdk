@@ -9,8 +9,12 @@ sealed class NullableDeploymentPayload {
   static const String constructionSurface = 'named';
   const NullableDeploymentPayload();
   factory NullableDeploymentPayload.fromJson(Object? json) {
-    if (json is String) { return NullableDeploymentPayloadString(json); }
-    if (json is Map) { return NullableDeploymentPayloadMap(Map<String, Object?>.from(json)); }
+    if (json is String) {
+      return NullableDeploymentPayloadString(json);
+    }
+    if (json is Map) {
+      return NullableDeploymentPayloadMap(Map<String, Object?>.from(json));
+    }
     throw FormatException("No variant matched for NullableDeploymentPayload");
   }
   Object? toJson();
@@ -19,182 +23,347 @@ sealed class NullableDeploymentPayload {
 final class NullableDeploymentPayloadMap extends NullableDeploymentPayload {
   final Map<String, Object?> value;
   const NullableDeploymentPayloadMap(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 final class NullableDeploymentPayloadString extends NullableDeploymentPayload {
   final String value;
   const NullableDeploymentPayloadString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 /// A request for a specific ref(branch,sha,tag) to be deployed
 class NullableDeployment {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
+
   /// Unique identifier of the deployment
   final int id;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
+
   /// The ref to deploy. This can be a branch, tag, or sha.
   final String ref;
+
   /// Parameter to specify a task to execute
   final String task;
+
   /// Required API value serialized in the `payload` wire field.
   final dynamic payload;
+
   /// Optional `string` value serialized in the `original_environment` wire field.
   final SdkOptional<String> originalEnvironment;
+
   /// Name for the target deployment environment.
   final String environment;
+
   /// Required `string` value serialized in the `description` wire field.
   final String? description;
+
   /// A GitHub user.
   final NullableSimpleUser? creator;
+
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String createdAt;
+
   /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
   final String updatedAt;
+
   /// Required `uri`-formatted value serialized in the `statuses_url` wire field.
   final String statusesUrl;
+
   /// Required `uri`-formatted value serialized in the `repository_url` wire field.
   final String repositoryUrl;
+
   /// Specifies if the given environment is will no longer exist at some point in the future. Default: false.
   final SdkOptional<bool> transientEnvironment;
+
   /// Specifies if the given environment is one that end-users directly interact with. Default: false.
   final SdkOptional<bool> productionEnvironment;
+
   /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
   final SdkOptional<NullableIntegration?> performedViaGithubApp;
 
-  const NullableDeployment({required this.url, required this.id, required this.nodeId, required this.sha, required this.ref, required this.task, required this.payload, this.originalEnvironment = const SdkOmitted(), required this.environment, required this.description, required this.creator, required this.createdAt, required this.updatedAt, required this.statusesUrl, required this.repositoryUrl, this.transientEnvironment = const SdkOmitted(), this.productionEnvironment = const SdkOmitted(), this.performedViaGithubApp = const SdkOmitted()});
+  const NullableDeployment(
+      {required this.url,
+      required this.id,
+      required this.nodeId,
+      required this.sha,
+      required this.ref,
+      required this.task,
+      required this.payload,
+      this.originalEnvironment = const SdkOmitted(),
+      required this.environment,
+      required this.description,
+      required this.creator,
+      required this.createdAt,
+      required this.updatedAt,
+      required this.statusesUrl,
+      required this.repositoryUrl,
+      this.transientEnvironment = const SdkOmitted(),
+      this.productionEnvironment = const SdkOmitted(),
+      this.performedViaGithubApp = const SdkOmitted()});
 
-  NullableDeployment Function({String url, int id, String nodeId, String sha, String ref, String task, dynamic payload, SdkOptional<String> originalEnvironment, String environment, String? description, NullableSimpleUser? creator, String createdAt, String updatedAt, String statusesUrl, String repositoryUrl, SdkOptional<bool> transientEnvironment, SdkOptional<bool> productionEnvironment, SdkOptional<NullableIntegration?> performedViaGithubApp}) get copyWith => _copyWith;
+  NullableDeployment Function(
+          {String url,
+          int id,
+          String nodeId,
+          String sha,
+          String ref,
+          String task,
+          dynamic payload,
+          SdkOptional<String> originalEnvironment,
+          String environment,
+          String? description,
+          NullableSimpleUser? creator,
+          String createdAt,
+          String updatedAt,
+          String statusesUrl,
+          String repositoryUrl,
+          SdkOptional<bool> transientEnvironment,
+          SdkOptional<bool> productionEnvironment,
+          SdkOptional<NullableIntegration?> performedViaGithubApp})
+      get copyWith => _copyWith;
 
-  NullableDeployment _copyWith({Object? url = sdkOmittedValue, Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? sha = sdkOmittedValue, Object? ref = sdkOmittedValue, Object? task = sdkOmittedValue, Object? payload = sdkOmittedValue, Object? originalEnvironment = sdkOmittedValue, Object? environment = sdkOmittedValue, Object? description = sdkOmittedValue, Object? creator = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? statusesUrl = sdkOmittedValue, Object? repositoryUrl = sdkOmittedValue, Object? transientEnvironment = sdkOmittedValue, Object? productionEnvironment = sdkOmittedValue, Object? performedViaGithubApp = sdkOmittedValue}) => NullableDeployment(
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-    task: identical(task, sdkOmittedValue) ? this.task : task as String,
-    payload: identical(payload, sdkOmittedValue) ? this.payload : payload as dynamic,
-    originalEnvironment: identical(originalEnvironment, sdkOmittedValue) ? this.originalEnvironment : originalEnvironment as SdkOptional<String>,
-    environment: identical(environment, sdkOmittedValue) ? this.environment : environment as String,
-    description: identical(description, sdkOmittedValue) ? this.description : description as String?,
-    creator: identical(creator, sdkOmittedValue) ? this.creator : creator as NullableSimpleUser?,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
-    statusesUrl: identical(statusesUrl, sdkOmittedValue) ? this.statusesUrl : statusesUrl as String,
-    repositoryUrl: identical(repositoryUrl, sdkOmittedValue) ? this.repositoryUrl : repositoryUrl as String,
-    transientEnvironment: identical(transientEnvironment, sdkOmittedValue) ? this.transientEnvironment : transientEnvironment as SdkOptional<bool>,
-    productionEnvironment: identical(productionEnvironment, sdkOmittedValue) ? this.productionEnvironment : productionEnvironment as SdkOptional<bool>,
-    performedViaGithubApp: identical(performedViaGithubApp, sdkOmittedValue) ? this.performedViaGithubApp : performedViaGithubApp as SdkOptional<NullableIntegration?>,
-  );
+  NullableDeployment _copyWith(
+          {Object? url = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? sha = sdkOmittedValue,
+          Object? ref = sdkOmittedValue,
+          Object? task = sdkOmittedValue,
+          Object? payload = sdkOmittedValue,
+          Object? originalEnvironment = sdkOmittedValue,
+          Object? environment = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? creator = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? statusesUrl = sdkOmittedValue,
+          Object? repositoryUrl = sdkOmittedValue,
+          Object? transientEnvironment = sdkOmittedValue,
+          Object? productionEnvironment = sdkOmittedValue,
+          Object? performedViaGithubApp = sdkOmittedValue}) =>
+      NullableDeployment(
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+        task: identical(task, sdkOmittedValue) ? this.task : task as String,
+        payload: identical(payload, sdkOmittedValue)
+            ? this.payload
+            : payload as dynamic,
+        originalEnvironment: identical(originalEnvironment, sdkOmittedValue)
+            ? this.originalEnvironment
+            : originalEnvironment as SdkOptional<String>,
+        environment: identical(environment, sdkOmittedValue)
+            ? this.environment
+            : environment as String,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as String?,
+        creator: identical(creator, sdkOmittedValue)
+            ? this.creator
+            : creator as NullableSimpleUser?,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+        statusesUrl: identical(statusesUrl, sdkOmittedValue)
+            ? this.statusesUrl
+            : statusesUrl as String,
+        repositoryUrl: identical(repositoryUrl, sdkOmittedValue)
+            ? this.repositoryUrl
+            : repositoryUrl as String,
+        transientEnvironment: identical(transientEnvironment, sdkOmittedValue)
+            ? this.transientEnvironment
+            : transientEnvironment as SdkOptional<bool>,
+        productionEnvironment: identical(productionEnvironment, sdkOmittedValue)
+            ? this.productionEnvironment
+            : productionEnvironment as SdkOptional<bool>,
+        performedViaGithubApp: identical(performedViaGithubApp, sdkOmittedValue)
+            ? this.performedViaGithubApp
+            : performedViaGithubApp as SdkOptional<NullableIntegration?>,
+      );
 
-  factory NullableDeployment.fromJson(Map<String, dynamic> json) => NullableDeployment(
-    url: (json['url'] as String?)!,
-    id: ((json['id'] as num?)?.toInt())!,
-    nodeId: (json['node_id'] as String?)!,
-    sha: (json['sha'] as String?)!,
-    ref: (json['ref'] as String?)!,
-    task: (json['task'] as String?)!,
-    payload: (json['payload'])!,
-    originalEnvironment: json['original_environment'] != null ? SdkPresent((json['original_environment'] as String?)!) : const SdkOmitted(),
-    environment: (json['environment'] as String?)!,
-    description: json.containsKey('description') ? json['description'] as String? : throw ArgumentError.value(null, 'description', 'Required property is missing'),
-    creator: json.containsKey('creator') ? json['creator'] != null ? NullableSimpleUser.fromJson(json['creator'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'creator', 'Required property is missing'),
-    createdAt: (json['created_at'] as String?)!,
-    updatedAt: (json['updated_at'] as String?)!,
-    statusesUrl: (json['statuses_url'] as String?)!,
-    repositoryUrl: (json['repository_url'] as String?)!,
-    transientEnvironment: json['transient_environment'] != null ? SdkPresent((json['transient_environment'] as bool?)!) : const SdkOmitted(),
-    productionEnvironment: json['production_environment'] != null ? SdkPresent((json['production_environment'] as bool?)!) : const SdkOmitted(),
-    performedViaGithubApp: json.containsKey('performed_via_github_app') ? SdkPresent(json['performed_via_github_app'] != null ? NullableIntegration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-  );
+  factory NullableDeployment.fromJson(Map<String, dynamic> json) =>
+      NullableDeployment(
+        url: (json['url'] as String?)!,
+        id: ((json['id'] as num?)?.toInt())!,
+        nodeId: (json['node_id'] as String?)!,
+        sha: (json['sha'] as String?)!,
+        ref: (json['ref'] as String?)!,
+        task: (json['task'] as String?)!,
+        payload: (json['payload'])!,
+        originalEnvironment: json['original_environment'] != null
+            ? SdkPresent((json['original_environment'] as String?)!)
+            : const SdkOmitted(),
+        environment: (json['environment'] as String?)!,
+        description: json.containsKey('description')
+            ? json['description'] as String?
+            : throw ArgumentError.value(
+                null, 'description', 'Required property is missing'),
+        creator: json.containsKey('creator')
+            ? json['creator'] != null
+                ? NullableSimpleUser.fromJson(
+                    json['creator'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'creator', 'Required property is missing'),
+        createdAt: (json['created_at'] as String?)!,
+        updatedAt: (json['updated_at'] as String?)!,
+        statusesUrl: (json['statuses_url'] as String?)!,
+        repositoryUrl: (json['repository_url'] as String?)!,
+        transientEnvironment: json['transient_environment'] != null
+            ? SdkPresent((json['transient_environment'] as bool?)!)
+            : const SdkOmitted(),
+        productionEnvironment: json['production_environment'] != null
+            ? SdkPresent((json['production_environment'] as bool?)!)
+            : const SdkOmitted(),
+        performedViaGithubApp: json.containsKey('performed_via_github_app')
+            ? SdkPresent(json['performed_via_github_app'] != null
+                ? NullableIntegration.fromJson(
+                    json['performed_via_github_app'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'url': url,
-    'id': id,
-    'node_id': nodeId,
-    'sha': sha,
-    'ref': ref,
-    'task': task,
-    'payload': payload,
-    ...switch (originalEnvironment) {
-      SdkPresent<String>(value: final value) => {'original_environment': value,},
-      _ => const <String, dynamic>{},
-    },
-    'environment': environment,
-    'description': description,
-    'creator': creator?.toJson(),
-    'created_at': createdAt,
-    'updated_at': updatedAt,
-    'statuses_url': statusesUrl,
-    'repository_url': repositoryUrl,
-    ...switch (transientEnvironment) {
-      SdkPresent<bool>(value: final value) => {'transient_environment': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (productionEnvironment) {
-      SdkPresent<bool>(value: final value) => {'production_environment': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (performedViaGithubApp) {
-      SdkPresent<NullableIntegration?>(value: final value) => {'performed_via_github_app': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'url': url,
+        'id': id,
+        'node_id': nodeId,
+        'sha': sha,
+        'ref': ref,
+        'task': task,
+        'payload': payload,
+        ...switch (originalEnvironment) {
+          SdkPresent<String>(value: final value) => {
+              'original_environment': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'environment': environment,
+        'description': description,
+        'creator': creator?.toJson(),
+        'created_at': createdAt,
+        'updated_at': updatedAt,
+        'statuses_url': statusesUrl,
+        'repository_url': repositoryUrl,
+        ...switch (transientEnvironment) {
+          SdkPresent<bool>(value: final value) => {
+              'transient_environment': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (productionEnvironment) {
+          SdkPresent<bool>(value: final value) => {
+              'production_environment': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (performedViaGithubApp) {
+          SdkPresent<NullableIntegration?>(value: final value) => {
+              'performed_via_github_app': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Optional object value serialized in the `permissions` wire field.
 class NullableRepositoryWebhooksPermissions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `boolean` value serialized in the `admin` wire field.
   final bool admin;
+
   /// Required `boolean` value serialized in the `pull` wire field.
   final bool pull;
+
   /// Optional `boolean` value serialized in the `triage` wire field.
   final SdkOptional<bool> triage;
+
   /// Required `boolean` value serialized in the `push` wire field.
   final bool push;
+
   /// Optional `boolean` value serialized in the `maintain` wire field.
   final SdkOptional<bool> maintain;
 
-  const NullableRepositoryWebhooksPermissions({required this.admin, required this.pull, this.triage = const SdkOmitted(), required this.push, this.maintain = const SdkOmitted()});
+  const NullableRepositoryWebhooksPermissions(
+      {required this.admin,
+      required this.pull,
+      this.triage = const SdkOmitted(),
+      required this.push,
+      this.maintain = const SdkOmitted()});
 
-  NullableRepositoryWebhooksPermissions Function({bool admin, bool pull, SdkOptional<bool> triage, bool push, SdkOptional<bool> maintain}) get copyWith => _copyWith;
+  NullableRepositoryWebhooksPermissions Function(
+      {bool admin,
+      bool pull,
+      SdkOptional<bool> triage,
+      bool push,
+      SdkOptional<bool> maintain}) get copyWith => _copyWith;
 
-  NullableRepositoryWebhooksPermissions _copyWith({Object? admin = sdkOmittedValue, Object? pull = sdkOmittedValue, Object? triage = sdkOmittedValue, Object? push = sdkOmittedValue, Object? maintain = sdkOmittedValue}) => NullableRepositoryWebhooksPermissions(
-    admin: identical(admin, sdkOmittedValue) ? this.admin : admin as bool,
-    pull: identical(pull, sdkOmittedValue) ? this.pull : pull as bool,
-    triage: identical(triage, sdkOmittedValue) ? this.triage : triage as SdkOptional<bool>,
-    push: identical(push, sdkOmittedValue) ? this.push : push as bool,
-    maintain: identical(maintain, sdkOmittedValue) ? this.maintain : maintain as SdkOptional<bool>,
-  );
+  NullableRepositoryWebhooksPermissions _copyWith(
+          {Object? admin = sdkOmittedValue,
+          Object? pull = sdkOmittedValue,
+          Object? triage = sdkOmittedValue,
+          Object? push = sdkOmittedValue,
+          Object? maintain = sdkOmittedValue}) =>
+      NullableRepositoryWebhooksPermissions(
+        admin: identical(admin, sdkOmittedValue) ? this.admin : admin as bool,
+        pull: identical(pull, sdkOmittedValue) ? this.pull : pull as bool,
+        triage: identical(triage, sdkOmittedValue)
+            ? this.triage
+            : triage as SdkOptional<bool>,
+        push: identical(push, sdkOmittedValue) ? this.push : push as bool,
+        maintain: identical(maintain, sdkOmittedValue)
+            ? this.maintain
+            : maintain as SdkOptional<bool>,
+      );
 
-  factory NullableRepositoryWebhooksPermissions.fromJson(Map<String, dynamic> json) => NullableRepositoryWebhooksPermissions(
-    admin: (json['admin'] as bool?)!,
-    pull: (json['pull'] as bool?)!,
-    triage: json['triage'] != null ? SdkPresent((json['triage'] as bool?)!) : const SdkOmitted(),
-    push: (json['push'] as bool?)!,
-    maintain: json['maintain'] != null ? SdkPresent((json['maintain'] as bool?)!) : const SdkOmitted(),
-  );
+  factory NullableRepositoryWebhooksPermissions.fromJson(
+          Map<String, dynamic> json) =>
+      NullableRepositoryWebhooksPermissions(
+        admin: (json['admin'] as bool?)!,
+        pull: (json['pull'] as bool?)!,
+        triage: json['triage'] != null
+            ? SdkPresent((json['triage'] as bool?)!)
+            : const SdkOmitted(),
+        push: (json['push'] as bool?)!,
+        maintain: json['maintain'] != null
+            ? SdkPresent((json['maintain'] as bool?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'admin': admin,
-    'pull': pull,
-    ...switch (triage) {
-      SdkPresent<bool>(value: final value) => {'triage': value,},
-      _ => const <String, dynamic>{},
-    },
-    'push': push,
-    ...switch (maintain) {
-      SdkPresent<bool>(value: final value) => {'maintain': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'admin': admin,
+        'pull': pull,
+        ...switch (triage) {
+          SdkPresent<bool>(value: final value) => {
+              'triage': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'push': push,
+        ...switch (maintain) {
+          SdkPresent<bool>(value: final value) => {
+              'maintain': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

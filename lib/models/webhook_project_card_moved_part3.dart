@@ -8,88 +8,179 @@ part of 'webhook_project_card_moved.dart';
 class WebhookProjectCardMovedProjectCardVariant0 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `integer` value serialized in the `after_id` wire field.
   final SdkOptional<int?> afterId;
+
   /// Whether or not the card is archived
   final bool archived;
+
   /// Required `integer` value serialized in the `column_id` wire field.
   final int columnId;
+
   /// Required `uri`-formatted value serialized in the `column_url` wire field.
   final String columnUrl;
+
   /// Optional `uri`-formatted value serialized in the `content_url` wire field.
   final SdkOptional<String> contentUrl;
+
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String createdAt;
+
   /// Required object value serialized in the `creator` wire field.
   final WebhookProjectCardMovedProjectCardVariant0Creator? creator;
+
   /// The project card's ID
   final int id;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// Required `string` value serialized in the `note` wire field.
   final String? note;
+
   /// Required `uri`-formatted value serialized in the `project_url` wire field.
   final String projectUrl;
+
   /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
   final String updatedAt;
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
 
-  const WebhookProjectCardMovedProjectCardVariant0({this.afterId = const SdkOmitted(), required this.archived, required this.columnId, required this.columnUrl, this.contentUrl = const SdkOmitted(), required this.createdAt, required this.creator, required this.id, required this.nodeId, required this.note, required this.projectUrl, required this.updatedAt, required this.url});
+  const WebhookProjectCardMovedProjectCardVariant0(
+      {this.afterId = const SdkOmitted(),
+      required this.archived,
+      required this.columnId,
+      required this.columnUrl,
+      this.contentUrl = const SdkOmitted(),
+      required this.createdAt,
+      required this.creator,
+      required this.id,
+      required this.nodeId,
+      required this.note,
+      required this.projectUrl,
+      required this.updatedAt,
+      required this.url});
 
-  WebhookProjectCardMovedProjectCardVariant0 Function({SdkOptional<int?> afterId, bool archived, int columnId, String columnUrl, SdkOptional<String> contentUrl, String createdAt, WebhookProjectCardMovedProjectCardVariant0Creator? creator, int id, String nodeId, String? note, String projectUrl, String updatedAt, String url}) get copyWith => _copyWith;
+  WebhookProjectCardMovedProjectCardVariant0 Function(
+      {SdkOptional<int?> afterId,
+      bool archived,
+      int columnId,
+      String columnUrl,
+      SdkOptional<String> contentUrl,
+      String createdAt,
+      WebhookProjectCardMovedProjectCardVariant0Creator? creator,
+      int id,
+      String nodeId,
+      String? note,
+      String projectUrl,
+      String updatedAt,
+      String url}) get copyWith => _copyWith;
 
-  WebhookProjectCardMovedProjectCardVariant0 _copyWith({Object? afterId = sdkOmittedValue, Object? archived = sdkOmittedValue, Object? columnId = sdkOmittedValue, Object? columnUrl = sdkOmittedValue, Object? contentUrl = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? creator = sdkOmittedValue, Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? note = sdkOmittedValue, Object? projectUrl = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookProjectCardMovedProjectCardVariant0(
-    afterId: identical(afterId, sdkOmittedValue) ? this.afterId : afterId as SdkOptional<int?>,
-    archived: identical(archived, sdkOmittedValue) ? this.archived : archived as bool,
-    columnId: identical(columnId, sdkOmittedValue) ? this.columnId : columnId as int,
-    columnUrl: identical(columnUrl, sdkOmittedValue) ? this.columnUrl : columnUrl as String,
-    contentUrl: identical(contentUrl, sdkOmittedValue) ? this.contentUrl : contentUrl as SdkOptional<String>,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    creator: identical(creator, sdkOmittedValue) ? this.creator : creator as WebhookProjectCardMovedProjectCardVariant0Creator?,
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    note: identical(note, sdkOmittedValue) ? this.note : note as String?,
-    projectUrl: identical(projectUrl, sdkOmittedValue) ? this.projectUrl : projectUrl as String,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  WebhookProjectCardMovedProjectCardVariant0 _copyWith(
+          {Object? afterId = sdkOmittedValue,
+          Object? archived = sdkOmittedValue,
+          Object? columnId = sdkOmittedValue,
+          Object? columnUrl = sdkOmittedValue,
+          Object? contentUrl = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? creator = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? note = sdkOmittedValue,
+          Object? projectUrl = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? url = sdkOmittedValue}) =>
+      WebhookProjectCardMovedProjectCardVariant0(
+        afterId: identical(afterId, sdkOmittedValue)
+            ? this.afterId
+            : afterId as SdkOptional<int?>,
+        archived: identical(archived, sdkOmittedValue)
+            ? this.archived
+            : archived as bool,
+        columnId: identical(columnId, sdkOmittedValue)
+            ? this.columnId
+            : columnId as int,
+        columnUrl: identical(columnUrl, sdkOmittedValue)
+            ? this.columnUrl
+            : columnUrl as String,
+        contentUrl: identical(contentUrl, sdkOmittedValue)
+            ? this.contentUrl
+            : contentUrl as SdkOptional<String>,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        creator: identical(creator, sdkOmittedValue)
+            ? this.creator
+            : creator as WebhookProjectCardMovedProjectCardVariant0Creator?,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        note: identical(note, sdkOmittedValue) ? this.note : note as String?,
+        projectUrl: identical(projectUrl, sdkOmittedValue)
+            ? this.projectUrl
+            : projectUrl as String,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
-  factory WebhookProjectCardMovedProjectCardVariant0.fromJson(Map<String, dynamic> json) => WebhookProjectCardMovedProjectCardVariant0(
-    afterId: json.containsKey('after_id') ? SdkPresent((json['after_id'] as num?)?.toInt()) : const SdkOmitted(),
-    archived: (json['archived'] as bool?)!,
-    columnId: ((json['column_id'] as num?)?.toInt())!,
-    columnUrl: (json['column_url'] as String?)!,
-    contentUrl: json['content_url'] != null ? SdkPresent((json['content_url'] as String?)!) : const SdkOmitted(),
-    createdAt: (json['created_at'] as String?)!,
-    creator: json.containsKey('creator') ? json['creator'] != null ? WebhookProjectCardMovedProjectCardVariant0Creator.fromJson(json['creator'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'creator', 'Required property is missing'),
-    id: ((json['id'] as num?)?.toInt())!,
-    nodeId: (json['node_id'] as String?)!,
-    note: json.containsKey('note') ? json['note'] as String? : throw ArgumentError.value(null, 'note', 'Required property is missing'),
-    projectUrl: (json['project_url'] as String?)!,
-    updatedAt: (json['updated_at'] as String?)!,
-    url: (json['url'] as String?)!,
-  );
+  factory WebhookProjectCardMovedProjectCardVariant0.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookProjectCardMovedProjectCardVariant0(
+        afterId: json.containsKey('after_id')
+            ? SdkPresent((json['after_id'] as num?)?.toInt())
+            : const SdkOmitted(),
+        archived: (json['archived'] as bool?)!,
+        columnId: ((json['column_id'] as num?)?.toInt())!,
+        columnUrl: (json['column_url'] as String?)!,
+        contentUrl: json['content_url'] != null
+            ? SdkPresent((json['content_url'] as String?)!)
+            : const SdkOmitted(),
+        createdAt: (json['created_at'] as String?)!,
+        creator: json.containsKey('creator')
+            ? json['creator'] != null
+                ? WebhookProjectCardMovedProjectCardVariant0Creator.fromJson(
+                    json['creator'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'creator', 'Required property is missing'),
+        id: ((json['id'] as num?)?.toInt())!,
+        nodeId: (json['node_id'] as String?)!,
+        note: json.containsKey('note')
+            ? json['note'] as String?
+            : throw ArgumentError.value(
+                null, 'note', 'Required property is missing'),
+        projectUrl: (json['project_url'] as String?)!,
+        updatedAt: (json['updated_at'] as String?)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (afterId) {
-      SdkPresent<int?>(value: final value) => {'after_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    'archived': archived,
-    'column_id': columnId,
-    'column_url': columnUrl,
-    ...switch (contentUrl) {
-      SdkPresent<String>(value: final value) => {'content_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    'created_at': createdAt,
-    'creator': creator?.toJson(),
-    'id': id,
-    'node_id': nodeId,
-    'note': note,
-    'project_url': projectUrl,
-    'updated_at': updatedAt,
-    'url': url,
-  };
+        ...switch (afterId) {
+          SdkPresent<int?>(value: final value) => {
+              'after_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'archived': archived,
+        'column_id': columnId,
+        'column_url': columnUrl,
+        ...switch (contentUrl) {
+          SdkPresent<String>(value: final value) => {
+              'content_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'created_at': createdAt,
+        'creator': creator?.toJson(),
+        'id': id,
+        'node_id': nodeId,
+        'note': note,
+        'project_url': projectUrl,
+        'updated_at': updatedAt,
+        'url': url,
+      };
 }

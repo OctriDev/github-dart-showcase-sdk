@@ -87,63 +87,97 @@ import '../types.dart';
 ///   hex-encoded SHA-256 hash of the email address to match (for example, the
 ///   SHA-256 of `user@example.com`). Only alerts that have an `owner_email`
 ///   metadata value whose SHA-256 hash equals this parameter are returned.
-Future<List<OrganizationSecretScanningAlert>>
-    secretScanningListAlertsForOrg(ClientConfig config,
-        {required String org,
-        SdkOptional<SchemaSchema0374f8f2> state = const SdkOmitted(),
-        SdkOptional<String> secretType = const SdkOmitted(),
-        SdkOptional<String> excludeSecretTypes = const SdkOmitted(),
-        SdkOptional<String> excludeProviders = const SdkOmitted(),
-        SdkOptional<String> providers = const SdkOmitted(),
-        SdkOptional<String> resolution = const SdkOmitted(),
-        SdkOptional<String> assignee = const SdkOmitted(),
-        SdkOptional<SchemaSchemad4e3ed8d> sort = const SdkOmitted(),
-        SdkOptional<SchemaSchema0df64690> direction = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<String> before = const SdkOmitted(),
-        SdkOptional<String> after = const SdkOmitted(),
-        SdkOptional<String> validity = const SdkOmitted(),
-        SdkOptional<bool> isPubliclyLeaked = const SdkOmitted(),
-        SdkOptional<bool> isMultiRepo = const SdkOmitted(),
-        SdkOptional<bool> hideSecret = const SdkOmitted(),
-        SdkOptional<bool> isBypassed = const SdkOmitted(),
-        SdkOptional<String> includedMetadata = const SdkOmitted(),
-        SdkOptional<String> ownerEmailHash = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<List<OrganizationSecretScanningAlert>> secretScanningListAlertsForOrg(
+    ClientConfig config,
+    {required String org,
+    SdkOptional<SchemaSchema0374f8f2> state = const SdkOmitted(),
+    SdkOptional<String> secretType = const SdkOmitted(),
+    SdkOptional<String> excludeSecretTypes = const SdkOmitted(),
+    SdkOptional<String> excludeProviders = const SdkOmitted(),
+    SdkOptional<String> providers = const SdkOmitted(),
+    SdkOptional<String> resolution = const SdkOmitted(),
+    SdkOptional<String> assignee = const SdkOmitted(),
+    SdkOptional<SchemaSchemad4e3ed8d> sort = const SdkOmitted(),
+    SdkOptional<SchemaSchema0df64690> direction = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<String> before = const SdkOmitted(),
+    SdkOptional<String> after = const SdkOmitted(),
+    SdkOptional<String> validity = const SdkOmitted(),
+    SdkOptional<bool> isPubliclyLeaked = const SdkOmitted(),
+    SdkOptional<bool> isMultiRepo = const SdkOmitted(),
+    SdkOptional<bool> hideSecret = const SdkOmitted(),
+    SdkOptional<bool> isBypassed = const SdkOmitted(),
+    SdkOptional<String> includedMetadata = const SdkOmitted(),
+    SdkOptional<String> ownerEmailHash = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<OrganizationSecretScanningAlert>>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/secret-scanning/alerts',
           config: config,
           query: {
-            'state': SdkQueryValue(SdkUtils.unwrapOptional(state), style: 'form', explode: true),
-            'secret_type': SdkQueryValue(SdkUtils.unwrapOptional(secretType), style: 'form', explode: true),
-            'exclude_secret_types': SdkQueryValue(SdkUtils.unwrapOptional(excludeSecretTypes), style: 'form', explode: true),
-            'exclude_providers': SdkQueryValue(SdkUtils.unwrapOptional(excludeProviders), style: 'form', explode: true),
-            'providers': SdkQueryValue(SdkUtils.unwrapOptional(providers), style: 'form', explode: true),
-            'resolution': SdkQueryValue(SdkUtils.unwrapOptional(resolution), style: 'form', explode: true),
-            'assignee': SdkQueryValue(SdkUtils.unwrapOptional(assignee), style: 'form', explode: true),
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true),
-            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'before': SdkQueryValue(SdkUtils.unwrapOptional(before), style: 'form', explode: true),
-            'after': SdkQueryValue(SdkUtils.unwrapOptional(after), style: 'form', explode: true),
-            'validity': SdkQueryValue(SdkUtils.unwrapOptional(validity), style: 'form', explode: true),
-            'is_publicly_leaked': SdkQueryValue(SdkUtils.unwrapOptional(isPubliclyLeaked), style: 'form', explode: true),
-            'is_multi_repo': SdkQueryValue(SdkUtils.unwrapOptional(isMultiRepo), style: 'form', explode: true),
-            'hide_secret': SdkQueryValue(SdkUtils.unwrapOptional(hideSecret), style: 'form', explode: true),
-            'is_bypassed': SdkQueryValue(SdkUtils.unwrapOptional(isBypassed), style: 'form', explode: true),
-            'included_metadata': SdkQueryValue(SdkUtils.unwrapOptional(includedMetadata), style: 'form', explode: true),
-            'owner_email_hash': SdkQueryValue(SdkUtils.unwrapOptional(ownerEmailHash), style: 'form', explode: true)
+            'state': SdkQueryValue(SdkUtils.unwrapOptional(state),
+                style: 'form', explode: true),
+            'secret_type': SdkQueryValue(SdkUtils.unwrapOptional(secretType),
+                style: 'form', explode: true),
+            'exclude_secret_types': SdkQueryValue(
+                SdkUtils.unwrapOptional(excludeSecretTypes),
+                style: 'form',
+                explode: true),
+            'exclude_providers': SdkQueryValue(
+                SdkUtils.unwrapOptional(excludeProviders),
+                style: 'form',
+                explode: true),
+            'providers': SdkQueryValue(SdkUtils.unwrapOptional(providers),
+                style: 'form', explode: true),
+            'resolution': SdkQueryValue(SdkUtils.unwrapOptional(resolution),
+                style: 'form', explode: true),
+            'assignee': SdkQueryValue(SdkUtils.unwrapOptional(assignee),
+                style: 'form', explode: true),
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
+                style: 'form', explode: true),
+            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'before': SdkQueryValue(SdkUtils.unwrapOptional(before),
+                style: 'form', explode: true),
+            'after': SdkQueryValue(SdkUtils.unwrapOptional(after),
+                style: 'form', explode: true),
+            'validity': SdkQueryValue(SdkUtils.unwrapOptional(validity),
+                style: 'form', explode: true),
+            'is_publicly_leaked': SdkQueryValue(
+                SdkUtils.unwrapOptional(isPubliclyLeaked),
+                style: 'form',
+                explode: true),
+            'is_multi_repo': SdkQueryValue(SdkUtils.unwrapOptional(isMultiRepo),
+                style: 'form', explode: true),
+            'hide_secret': SdkQueryValue(SdkUtils.unwrapOptional(hideSecret),
+                style: 'form', explode: true),
+            'is_bypassed': SdkQueryValue(SdkUtils.unwrapOptional(isBypassed),
+                style: 'form', explode: true),
+            'included_metadata': SdkQueryValue(
+                SdkUtils.unwrapOptional(includedMetadata),
+                style: 'form',
+                explode: true),
+            'owner_email_hash': SdkQueryValue(
+                SdkUtils.unwrapOptional(ownerEmailHash),
+                style: 'form',
+                explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'secretScanningListAlertsForOrg',
-          fromJsonRaw: (value) => (value as List).map((item) => OrganizationSecretScanningAlert.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => OrganizationSecretScanningAlert.fromJson(
+                  item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Lists secret scanning custom patterns for an organization. Personal access tokens (classic) need the `read:org` scope to use this endpoint.
 ///
@@ -166,35 +200,49 @@ Future<List<OrganizationSecretScanningAlert>>
 ///   after this cursor. For more information, see "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<List<SecretScanningCustomPattern>>
-    secretScanningListOrgCustomPatterns(ClientConfig config,
-        {required String org,
-        SdkOptional<SchemaSchemac908804b> state = const SdkOmitted(),
-        SdkOptional<SchemaSchemad6199d03> pushProtection = const SdkOmitted(),
-        SdkOptional<SchemaSchema6c93bb3e> sort = const SdkOmitted(),
-        SdkOptional<SchemaSchema0df64690> direction = const SdkOmitted(),
-        SdkOptional<String> before = const SdkOmitted(),
-        SdkOptional<String> after = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<List<SecretScanningCustomPattern>> secretScanningListOrgCustomPatterns(
+    ClientConfig config,
+    {required String org,
+    SdkOptional<SchemaSchemac908804b> state = const SdkOmitted(),
+    SdkOptional<SchemaSchemad6199d03> pushProtection = const SdkOmitted(),
+    SdkOptional<SchemaSchema6c93bb3e> sort = const SdkOmitted(),
+    SdkOptional<SchemaSchema0df64690> direction = const SdkOmitted(),
+    SdkOptional<String> before = const SdkOmitted(),
+    SdkOptional<String> after = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<SecretScanningCustomPattern>>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/secret-scanning/custom-patterns',
           config: config,
           query: {
-            'state': SdkQueryValue(SdkUtils.unwrapOptional(state), style: 'form', explode: true),
-            'push_protection': SdkQueryValue(SdkUtils.unwrapOptional(pushProtection), style: 'form', explode: true),
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true),
-            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction), style: 'form', explode: true),
-            'before': SdkQueryValue(SdkUtils.unwrapOptional(before), style: 'form', explode: true),
-            'after': SdkQueryValue(SdkUtils.unwrapOptional(after), style: 'form', explode: true)
+            'state': SdkQueryValue(SdkUtils.unwrapOptional(state),
+                style: 'form', explode: true),
+            'push_protection': SdkQueryValue(
+                SdkUtils.unwrapOptional(pushProtection),
+                style: 'form',
+                explode: true),
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
+                style: 'form', explode: true),
+            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction),
+                style: 'form', explode: true),
+            'before': SdkQueryValue(SdkUtils.unwrapOptional(before),
+                style: 'form', explode: true),
+            'after': SdkQueryValue(SdkUtils.unwrapOptional(after),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'secretScanningListOrgCustomPatterns',
-          fromJsonRaw: (value) => (value as List).map((item) => SecretScanningCustomPattern.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => SecretScanningCustomPattern.fromJson(
+                  item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Bulk creates secret scanning custom patterns for an organization. Personal access tokens (classic) need the `write:org` scope to use this endpoint.
 ///
@@ -207,18 +255,26 @@ Future<SecretScanningBulkCreateOrgCustomPatternsResponse>
         RequestOptions? requestOptions}) async {
   validateItems('patterns', patterns, max: 100);
 
-  return (await sdkRequest<SecretScanningBulkCreateOrgCustomPatternsResponse>('POST',
+  return (await sdkRequest<SecretScanningBulkCreateOrgCustomPatternsResponse>(
+          'POST',
           '/orgs/${Uri.encodeComponent(org.toString())}/secret-scanning/custom-patterns',
           config: config,
           body: {'patterns': patterns},
           decoder: SdkResponseDecoder.json,
           operationId: 'secretScanningBulkCreateOrgCustomPatterns',
-          fromJsonRaw: (value) => SecretScanningBulkCreateOrgCustomPatternsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              SecretScanningBulkCreateOrgCustomPatternsResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Bulk deletes secret scanning custom patterns for an organization. Personal access tokens (classic) need the `write:org` scope to use this endpoint.
 ///
@@ -231,7 +287,9 @@ Future<SecretScanningBulkCreateOrgCustomPatternsResponse>
 Future<void> secretScanningBulkDeleteOrgCustomPatterns(ClientConfig config,
     {required String org,
     required List<SecretScanningCustomPatternToDelete> patterns,
-    SdkOptional<SecretScanningBulkDeleteOrgCustomPatternsRequestBodyPostDeleteAction> postDeleteAction = const SdkOmitted(),
+    SdkOptional<
+            SecretScanningBulkDeleteOrgCustomPatternsRequestBodyPostDeleteAction>
+        postDeleteAction = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   validateItems('patterns', patterns, max: 500);
 
@@ -245,10 +303,17 @@ Future<void> secretScanningBulkDeleteOrgCustomPatterns(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'secretScanningBulkDeleteOrgCustomPatterns',
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '412': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '412': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Updates a secret scanning custom pattern for an organization. Personal access tokens (classic) need the `write:org` scope to use this endpoint.
 ///
@@ -262,17 +327,17 @@ Future<void> secretScanningBulkDeleteOrgCustomPatterns(ClientConfig config,
 /// [endDelimiter] The updated end delimiter regex for the custom pattern.
 /// [mustMatch] Updated list of regexes that the secret must match.
 /// [mustNotMatch] Updated list of regexes that the secret must not match.
-Future<SecretScanningCustomPattern>
-    secretScanningUpdateOrgCustomPattern(ClientConfig config,
-        {required String org,
-        required int patternId,
-        required String? customPatternVersion,
-        SdkOptional<String> pattern = const SdkOmitted(),
-        SdkOptional<String> startDelimiter = const SdkOmitted(),
-        SdkOptional<String> endDelimiter = const SdkOmitted(),
-        SdkOptional<List<String>> mustMatch = const SdkOmitted(),
-        SdkOptional<List<String>> mustNotMatch = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<SecretScanningCustomPattern> secretScanningUpdateOrgCustomPattern(
+    ClientConfig config,
+    {required String org,
+    required int patternId,
+    required String? customPatternVersion,
+    SdkOptional<String> pattern = const SdkOmitted(),
+    SdkOptional<String> startDelimiter = const SdkOmitted(),
+    SdkOptional<String> endDelimiter = const SdkOmitted(),
+    SdkOptional<List<String>> mustMatch = const SdkOmitted(),
+    SdkOptional<List<String>> mustNotMatch = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<SecretScanningCustomPattern>('PATCH',
           '/orgs/${Uri.encodeComponent(org.toString())}/secret-scanning/custom-patterns/${Uri.encodeComponent(patternId.toString())}',
           config: config,
@@ -286,29 +351,45 @@ Future<SecretScanningCustomPattern>
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'secretScanningUpdateOrgCustomPattern',
-          fromJsonRaw: (value) => SecretScanningCustomPattern.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => SecretScanningCustomPattern.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '412': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '412': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Lists the secret scanning pattern configurations for an organization. Personal access tokens (classic) need the `read:org` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
-Future<SecretScanningPatternConfiguration> secretScanningListOrgPatternConfigs(ClientConfig config,
-    {required String org, RequestOptions? requestOptions}) async {
+Future<SecretScanningPatternConfiguration> secretScanningListOrgPatternConfigs(
+    ClientConfig config,
+    {required String org,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<SecretScanningPatternConfiguration>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/secret-scanning/pattern-configurations',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'secretScanningListOrgPatternConfigs',
-          fromJsonRaw: (value) => SecretScanningPatternConfiguration.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => SecretScanningPatternConfiguration.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Updates the secret scanning pattern configurations for an organization. Personal access tokens (classic) need the `write:org` scope to use this endpoint.
 ///
@@ -322,25 +403,47 @@ Future<SecretScanningUpdateOrgPatternConfigsResponse>
     secretScanningUpdateOrgPatternConfigs(ClientConfig config,
         {required String org,
         SdkOptional<String?> patternConfigVersion = const SdkOmitted(),
-        SdkOptional<List<SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItem>> providerPatternSettings = const SdkOmitted(),
-        SdkOptional<List<SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItem>> customPatternSettings = const SdkOmitted(),
+        SdkOptional<
+                List<
+                    SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItem>>
+            providerPatternSettings = const SdkOmitted(),
+        SdkOptional<
+                List<
+                    SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItem>>
+            customPatternSettings = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
-  return (await sdkRequest<SecretScanningUpdateOrgPatternConfigsResponse>('PATCH',
+  return (await sdkRequest<SecretScanningUpdateOrgPatternConfigsResponse>(
+          'PATCH',
           '/orgs/${Uri.encodeComponent(org.toString())}/secret-scanning/pattern-configurations',
           config: config,
           body: {
-            'pattern_config_version': SdkUtils.unwrapOptional(patternConfigVersion),
-            'provider_pattern_settings': SdkUtils.unwrapOptional(providerPatternSettings),
-            'custom_pattern_settings': SdkUtils.unwrapOptional(customPatternSettings)
+            'pattern_config_version':
+                SdkUtils.unwrapOptional(patternConfigVersion),
+            'provider_pattern_settings':
+                SdkUtils.unwrapOptional(providerPatternSettings),
+            'custom_pattern_settings':
+                SdkUtils.unwrapOptional(customPatternSettings)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'secretScanningUpdateOrgPatternConfigs',
-          fromJsonRaw: (value) => SecretScanningUpdateOrgPatternConfigsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              SecretScanningUpdateOrgPatternConfigsResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '409': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Lists secret scanning alerts for an eligible repository, from newest to oldest. The authenticated user must be an administrator for the repository or for the organization that owns the repository to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
 ///
@@ -424,63 +527,95 @@ Future<SecretScanningUpdateOrgPatternConfigsResponse>
 ///   hex-encoded SHA-256 hash of the email address to match (for example, the
 ///   SHA-256 of `user@example.com`). Only alerts that have an `owner_email`
 ///   metadata value whose SHA-256 hash equals this parameter are returned.
-Future<List<SecretScanningAlert>>
-    secretScanningListAlertsForRepo(ClientConfig config,
-        {required String owner,
-        required String repo,
-        SdkOptional<SchemaSchema0374f8f2> state = const SdkOmitted(),
-        SdkOptional<String> secretType = const SdkOmitted(),
-        SdkOptional<String> excludeSecretTypes = const SdkOmitted(),
-        SdkOptional<String> excludeProviders = const SdkOmitted(),
-        SdkOptional<String> providers = const SdkOmitted(),
-        SdkOptional<String> resolution = const SdkOmitted(),
-        SdkOptional<String> assignee = const SdkOmitted(),
-        SdkOptional<SchemaSchemad4e3ed8d> sort = const SdkOmitted(),
-        SdkOptional<SchemaSchema0df64690> direction = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<String> before = const SdkOmitted(),
-        SdkOptional<String> after = const SdkOmitted(),
-        SdkOptional<String> validity = const SdkOmitted(),
-        SdkOptional<bool> isPubliclyLeaked = const SdkOmitted(),
-        SdkOptional<bool> isMultiRepo = const SdkOmitted(),
-        SdkOptional<bool> hideSecret = const SdkOmitted(),
-        SdkOptional<bool> isBypassed = const SdkOmitted(),
-        SdkOptional<String> includedMetadata = const SdkOmitted(),
-        SdkOptional<String> ownerEmailHash = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<List<SecretScanningAlert>> secretScanningListAlertsForRepo(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    SdkOptional<SchemaSchema0374f8f2> state = const SdkOmitted(),
+    SdkOptional<String> secretType = const SdkOmitted(),
+    SdkOptional<String> excludeSecretTypes = const SdkOmitted(),
+    SdkOptional<String> excludeProviders = const SdkOmitted(),
+    SdkOptional<String> providers = const SdkOmitted(),
+    SdkOptional<String> resolution = const SdkOmitted(),
+    SdkOptional<String> assignee = const SdkOmitted(),
+    SdkOptional<SchemaSchemad4e3ed8d> sort = const SdkOmitted(),
+    SdkOptional<SchemaSchema0df64690> direction = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<String> before = const SdkOmitted(),
+    SdkOptional<String> after = const SdkOmitted(),
+    SdkOptional<String> validity = const SdkOmitted(),
+    SdkOptional<bool> isPubliclyLeaked = const SdkOmitted(),
+    SdkOptional<bool> isMultiRepo = const SdkOmitted(),
+    SdkOptional<bool> hideSecret = const SdkOmitted(),
+    SdkOptional<bool> isBypassed = const SdkOmitted(),
+    SdkOptional<String> includedMetadata = const SdkOmitted(),
+    SdkOptional<String> ownerEmailHash = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<SecretScanningAlert>>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/secret-scanning/alerts',
           config: config,
           query: {
-            'state': SdkQueryValue(SdkUtils.unwrapOptional(state), style: 'form', explode: true),
-            'secret_type': SdkQueryValue(SdkUtils.unwrapOptional(secretType), style: 'form', explode: true),
-            'exclude_secret_types': SdkQueryValue(SdkUtils.unwrapOptional(excludeSecretTypes), style: 'form', explode: true),
-            'exclude_providers': SdkQueryValue(SdkUtils.unwrapOptional(excludeProviders), style: 'form', explode: true),
-            'providers': SdkQueryValue(SdkUtils.unwrapOptional(providers), style: 'form', explode: true),
-            'resolution': SdkQueryValue(SdkUtils.unwrapOptional(resolution), style: 'form', explode: true),
-            'assignee': SdkQueryValue(SdkUtils.unwrapOptional(assignee), style: 'form', explode: true),
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true),
-            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'before': SdkQueryValue(SdkUtils.unwrapOptional(before), style: 'form', explode: true),
-            'after': SdkQueryValue(SdkUtils.unwrapOptional(after), style: 'form', explode: true),
-            'validity': SdkQueryValue(SdkUtils.unwrapOptional(validity), style: 'form', explode: true),
-            'is_publicly_leaked': SdkQueryValue(SdkUtils.unwrapOptional(isPubliclyLeaked), style: 'form', explode: true),
-            'is_multi_repo': SdkQueryValue(SdkUtils.unwrapOptional(isMultiRepo), style: 'form', explode: true),
-            'hide_secret': SdkQueryValue(SdkUtils.unwrapOptional(hideSecret), style: 'form', explode: true),
-            'is_bypassed': SdkQueryValue(SdkUtils.unwrapOptional(isBypassed), style: 'form', explode: true),
-            'included_metadata': SdkQueryValue(SdkUtils.unwrapOptional(includedMetadata), style: 'form', explode: true),
-            'owner_email_hash': SdkQueryValue(SdkUtils.unwrapOptional(ownerEmailHash), style: 'form', explode: true)
+            'state': SdkQueryValue(SdkUtils.unwrapOptional(state),
+                style: 'form', explode: true),
+            'secret_type': SdkQueryValue(SdkUtils.unwrapOptional(secretType),
+                style: 'form', explode: true),
+            'exclude_secret_types': SdkQueryValue(
+                SdkUtils.unwrapOptional(excludeSecretTypes),
+                style: 'form',
+                explode: true),
+            'exclude_providers': SdkQueryValue(
+                SdkUtils.unwrapOptional(excludeProviders),
+                style: 'form',
+                explode: true),
+            'providers': SdkQueryValue(SdkUtils.unwrapOptional(providers),
+                style: 'form', explode: true),
+            'resolution': SdkQueryValue(SdkUtils.unwrapOptional(resolution),
+                style: 'form', explode: true),
+            'assignee': SdkQueryValue(SdkUtils.unwrapOptional(assignee),
+                style: 'form', explode: true),
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
+                style: 'form', explode: true),
+            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'before': SdkQueryValue(SdkUtils.unwrapOptional(before),
+                style: 'form', explode: true),
+            'after': SdkQueryValue(SdkUtils.unwrapOptional(after),
+                style: 'form', explode: true),
+            'validity': SdkQueryValue(SdkUtils.unwrapOptional(validity),
+                style: 'form', explode: true),
+            'is_publicly_leaked': SdkQueryValue(
+                SdkUtils.unwrapOptional(isPubliclyLeaked),
+                style: 'form',
+                explode: true),
+            'is_multi_repo': SdkQueryValue(SdkUtils.unwrapOptional(isMultiRepo),
+                style: 'form', explode: true),
+            'hide_secret': SdkQueryValue(SdkUtils.unwrapOptional(hideSecret),
+                style: 'form', explode: true),
+            'is_bypassed': SdkQueryValue(SdkUtils.unwrapOptional(isBypassed),
+                style: 'form', explode: true),
+            'included_metadata': SdkQueryValue(
+                SdkUtils.unwrapOptional(includedMetadata),
+                style: 'form',
+                explode: true),
+            'owner_email_hash': SdkQueryValue(
+                SdkUtils.unwrapOptional(ownerEmailHash),
+                style: 'form',
+                explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'secretScanningListAlertsForRepo',
-          fromJsonRaw: (value) => (value as List).map((item) => SecretScanningAlert.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) =>
+                  SecretScanningAlert.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions))
       .data;
 }
-
 
 /// Gets a single secret scanning alert detected in an eligible repository. The authenticated user must be an administrator for the repository or for the organization that owns the repository to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
 ///
@@ -493,26 +628,27 @@ Future<List<SecretScanningAlert>>
 ///   /repos/{owner}/{repo}/code-scanning/alerts` operation.
 /// [hideSecret] A boolean value representing whether or not to hide literal
 ///   secrets in the results.
-Future<SecretScanningAlertWithMetadata>
-    secretScanningGetAlert(ClientConfig config,
-        {required String owner,
-        required String repo,
-        required int alertNumber,
-        SdkOptional<bool> hideSecret = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<SecretScanningAlertWithMetadata> secretScanningGetAlert(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    required int alertNumber,
+    SdkOptional<bool> hideSecret = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<SecretScanningAlertWithMetadata>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/secret-scanning/alerts/${Uri.encodeComponent(alertNumber.toString())}',
           config: config,
           query: {
-            'hide_secret': SdkQueryValue(SdkUtils.unwrapOptional(hideSecret), style: 'form', explode: true)
+            'hide_secret': SdkQueryValue(SdkUtils.unwrapOptional(hideSecret),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'secretScanningGetAlert',
-          fromJsonRaw: (value) => SecretScanningAlertWithMetadata.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => SecretScanningAlertWithMetadata.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Updates the status of a secret scanning alert in an eligible repository. You can also use this endpoint to assign or unassign an alert to a user who has write access to the repository. The authenticated user must be an administrator for the repository or for the organization that owns the repository to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
 ///
@@ -533,17 +669,18 @@ Future<SecretScanningAlertWithMetadata>
 ///   unassign the alert.
 /// [validity] Sets the validity of the secret scanning alert. Can be `active`,
 ///   `inactive`, or `null` to clear the override.
-Future<SecretScanningAlertWithMetadata>
-    secretScanningUpdateAlert(ClientConfig config,
-        {required String owner,
-        required String repo,
-        required int alertNumber,
-        SdkOptional<SecretScanningAlertState> state = const SdkOmitted(),
-        SdkOptional<SecretScanningAlertResolution?> resolution = const SdkOmitted(),
-        SdkOptional<String?> resolutionComment = const SdkOmitted(),
-        SdkOptional<String?> assignee = const SdkOmitted(),
-        SdkOptional<SecretScanningUpdateAlertRequestBodyValidity?> validity = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<SecretScanningAlertWithMetadata> secretScanningUpdateAlert(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    required int alertNumber,
+    SdkOptional<SecretScanningAlertState> state = const SdkOmitted(),
+    SdkOptional<SecretScanningAlertResolution?> resolution = const SdkOmitted(),
+    SdkOptional<String?> resolutionComment = const SdkOmitted(),
+    SdkOptional<String?> assignee = const SdkOmitted(),
+    SdkOptional<SecretScanningUpdateAlertRequestBodyValidity?> validity =
+        const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<SecretScanningAlertWithMetadata>('PATCH',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/secret-scanning/alerts/${Uri.encodeComponent(alertNumber.toString())}',
           config: config,
@@ -556,11 +693,11 @@ Future<SecretScanningAlertWithMetadata>
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'secretScanningUpdateAlert',
-          fromJsonRaw: (value) => SecretScanningAlertWithMetadata.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => SecretScanningAlertWithMetadata.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists all locations for a given secret scanning alert for an eligible repository. The authenticated user must be an administrator for the repository or for the organization that owns the repository to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
 ///
@@ -579,28 +716,32 @@ Future<SecretScanningAlertWithMetadata>
 ///   see "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<List<SecretScanningLocation>>
-    secretScanningListLocationsForAlert(ClientConfig config,
-        {required String owner,
-        required String repo,
-        required int alertNumber,
-        SdkOptional<int> page = const SdkOmitted(),
-        SdkOptional<int> perPage = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<List<SecretScanningLocation>> secretScanningListLocationsForAlert(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    required int alertNumber,
+    SdkOptional<int> page = const SdkOmitted(),
+    SdkOptional<int> perPage = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<SecretScanningLocation>>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/secret-scanning/alerts/${Uri.encodeComponent(alertNumber.toString())}/locations',
           config: config,
           query: {
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true)
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'secretScanningListLocationsForAlert',
-          fromJsonRaw: (value) => (value as List).map((item) => SecretScanningLocation.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) =>
+                  SecretScanningLocation.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists secret scanning custom patterns for a repository. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead. Fine-grained access tokens require the `administration:write` repository permission.
 ///
@@ -625,36 +766,50 @@ Future<List<SecretScanningLocation>>
 ///   after this cursor. For more information, see "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<List<SecretScanningCustomPattern>>
-    secretScanningListRepoCustomPatterns(ClientConfig config,
-        {required String owner,
-        required String repo,
-        SdkOptional<SchemaSchemac908804b> state = const SdkOmitted(),
-        SdkOptional<SchemaSchemad6199d03> pushProtection = const SdkOmitted(),
-        SdkOptional<SchemaSchema6c93bb3e> sort = const SdkOmitted(),
-        SdkOptional<SchemaSchema0df64690> direction = const SdkOmitted(),
-        SdkOptional<String> before = const SdkOmitted(),
-        SdkOptional<String> after = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<List<SecretScanningCustomPattern>> secretScanningListRepoCustomPatterns(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    SdkOptional<SchemaSchemac908804b> state = const SdkOmitted(),
+    SdkOptional<SchemaSchemad6199d03> pushProtection = const SdkOmitted(),
+    SdkOptional<SchemaSchema6c93bb3e> sort = const SdkOmitted(),
+    SdkOptional<SchemaSchema0df64690> direction = const SdkOmitted(),
+    SdkOptional<String> before = const SdkOmitted(),
+    SdkOptional<String> after = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<SecretScanningCustomPattern>>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/secret-scanning/custom-patterns',
           config: config,
           query: {
-            'state': SdkQueryValue(SdkUtils.unwrapOptional(state), style: 'form', explode: true),
-            'push_protection': SdkQueryValue(SdkUtils.unwrapOptional(pushProtection), style: 'form', explode: true),
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true),
-            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction), style: 'form', explode: true),
-            'before': SdkQueryValue(SdkUtils.unwrapOptional(before), style: 'form', explode: true),
-            'after': SdkQueryValue(SdkUtils.unwrapOptional(after), style: 'form', explode: true)
+            'state': SdkQueryValue(SdkUtils.unwrapOptional(state),
+                style: 'form', explode: true),
+            'push_protection': SdkQueryValue(
+                SdkUtils.unwrapOptional(pushProtection),
+                style: 'form',
+                explode: true),
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
+                style: 'form', explode: true),
+            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction),
+                style: 'form', explode: true),
+            'before': SdkQueryValue(SdkUtils.unwrapOptional(before),
+                style: 'form', explode: true),
+            'after': SdkQueryValue(SdkUtils.unwrapOptional(after),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'secretScanningListRepoCustomPatterns',
-          fromJsonRaw: (value) => (value as List).map((item) => SecretScanningCustomPattern.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => SecretScanningCustomPattern.fromJson(
+                  item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Bulk creates secret scanning custom patterns for a repository. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead. Fine-grained access tokens require the `administration:write` repository permission.
 ///
@@ -670,18 +825,26 @@ Future<SecretScanningBulkCreateRepoCustomPatternsResponse>
         RequestOptions? requestOptions}) async {
   validateItems('patterns', patterns, max: 100);
 
-  return (await sdkRequest<SecretScanningBulkCreateRepoCustomPatternsResponse>('POST',
+  return (await sdkRequest<SecretScanningBulkCreateRepoCustomPatternsResponse>(
+          'POST',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/secret-scanning/custom-patterns',
           config: config,
           body: {'patterns': patterns},
           decoder: SdkResponseDecoder.json,
           operationId: 'secretScanningBulkCreateRepoCustomPatterns',
-          fromJsonRaw: (value) => SecretScanningBulkCreateRepoCustomPatternsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              SecretScanningBulkCreateRepoCustomPatternsResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Bulk deletes secret scanning custom patterns for a repository. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead. Fine-grained access tokens require the `administration:write` repository permission.
 ///
@@ -697,7 +860,9 @@ Future<void> secretScanningBulkDeleteRepoCustomPatterns(ClientConfig config,
     {required String owner,
     required String repo,
     required List<SecretScanningCustomPatternToDelete> patterns,
-    SdkOptional<SecretScanningBulkDeleteRepoCustomPatternsRequestBodyPostDeleteAction> postDeleteAction = const SdkOmitted(),
+    SdkOptional<
+            SecretScanningBulkDeleteRepoCustomPatternsRequestBodyPostDeleteAction>
+        postDeleteAction = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   validateItems('patterns', patterns, max: 500);
 
@@ -711,10 +876,17 @@ Future<void> secretScanningBulkDeleteRepoCustomPatterns(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'secretScanningBulkDeleteRepoCustomPatterns',
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '412': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '412': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Updates a secret scanning custom pattern for a repository. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead. Fine-grained access tokens require the `administration:write` repository permission.
 ///
@@ -730,18 +902,18 @@ Future<void> secretScanningBulkDeleteRepoCustomPatterns(ClientConfig config,
 /// [endDelimiter] The updated end delimiter regex for the custom pattern.
 /// [mustMatch] Updated list of regexes that the secret must match.
 /// [mustNotMatch] Updated list of regexes that the secret must not match.
-Future<SecretScanningCustomPattern>
-    secretScanningUpdateRepoCustomPattern(ClientConfig config,
-        {required String owner,
-        required String repo,
-        required int patternId,
-        required String? customPatternVersion,
-        SdkOptional<String> pattern = const SdkOmitted(),
-        SdkOptional<String> startDelimiter = const SdkOmitted(),
-        SdkOptional<String> endDelimiter = const SdkOmitted(),
-        SdkOptional<List<String>> mustMatch = const SdkOmitted(),
-        SdkOptional<List<String>> mustNotMatch = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<SecretScanningCustomPattern> secretScanningUpdateRepoCustomPattern(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    required int patternId,
+    required String? customPatternVersion,
+    SdkOptional<String> pattern = const SdkOmitted(),
+    SdkOptional<String> startDelimiter = const SdkOmitted(),
+    SdkOptional<String> endDelimiter = const SdkOmitted(),
+    SdkOptional<List<String>> mustMatch = const SdkOmitted(),
+    SdkOptional<List<String>> mustNotMatch = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<SecretScanningCustomPattern>('PATCH',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/secret-scanning/custom-patterns/${Uri.encodeComponent(patternId.toString())}',
           config: config,
@@ -755,12 +927,23 @@ Future<SecretScanningCustomPattern>
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'secretScanningUpdateRepoCustomPattern',
-          fromJsonRaw: (value) => SecretScanningCustomPattern.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => SecretScanningCustomPattern.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '412': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '412': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Creates a bypass for a previously push protected secret. The authenticated user must be the original author of the committed secret. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -783,28 +966,29 @@ Future<SecretScanningPushProtectionBypass>
           body: {'reason': reason, 'placeholder_id': placeholderId},
           decoder: SdkResponseDecoder.json,
           operationId: 'secretScanningCreatePushProtectionBypass',
-          fromJsonRaw: (value) => SecretScanningPushProtectionBypass.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => SecretScanningPushProtectionBypass.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists the latest default incremental and backfill scans by type for a repository. &gt; [!NOTE] &gt; This endpoint requires [GitHub Advanced Security](https://docs.github.com/get-started/learning-about-github/about-github-advanced-security). OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
 /// [repo] The name of the repository without the `.git` extension. The name is
 ///   not case sensitive.
-Future<SecretScanningScanHistory>
-    secretScanningGetScanHistory(ClientConfig config,
-        {required String owner,
-        required String repo,
-        RequestOptions? requestOptions}) async {
+Future<SecretScanningScanHistory> secretScanningGetScanHistory(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<SecretScanningScanHistory>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/secret-scanning/scan-history',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'secretScanningGetScanHistory',
-          fromJsonRaw: (value) => SecretScanningScanHistory.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              SecretScanningScanHistory.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

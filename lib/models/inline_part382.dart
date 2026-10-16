@@ -12,161 +12,349 @@ class OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle 
   final SdkOptional<Map<String, Object?>> verificationMaterial;
   final SdkOptional<Map<String, Object?>> dsseEnvelope;
 
-  const OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle({this.mediaType = const SdkOmitted(), this.verificationMaterial = const SdkOmitted(), this.dsseEnvelope = const SdkOmitted()});
+  const OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle(
+      {this.mediaType = const SdkOmitted(),
+      this.verificationMaterial = const SdkOmitted(),
+      this.dsseEnvelope = const SdkOmitted()});
 
-  OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle Function({SdkOptional<String> mediaType, SdkOptional<Map<String, Object?>> verificationMaterial, SdkOptional<Map<String, Object?>> dsseEnvelope}) get copyWith => _copyWith;
+  OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle Function(
+          {SdkOptional<String> mediaType,
+          SdkOptional<Map<String, Object?>> verificationMaterial,
+          SdkOptional<Map<String, Object?>> dsseEnvelope})
+      get copyWith => _copyWith;
 
-  OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle _copyWith({Object? mediaType = sdkOmittedValue, Object? verificationMaterial = sdkOmittedValue, Object? dsseEnvelope = sdkOmittedValue}) => OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle(
-    mediaType: identical(mediaType, sdkOmittedValue) ? this.mediaType : mediaType as SdkOptional<String>,
-    verificationMaterial: identical(verificationMaterial, sdkOmittedValue) ? this.verificationMaterial : verificationMaterial as SdkOptional<Map<String, Object?>>,
-    dsseEnvelope: identical(dsseEnvelope, sdkOmittedValue) ? this.dsseEnvelope : dsseEnvelope as SdkOptional<Map<String, Object?>>,
-  );
+  OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle
+      _copyWith(
+              {Object? mediaType = sdkOmittedValue,
+              Object? verificationMaterial = sdkOmittedValue,
+              Object? dsseEnvelope = sdkOmittedValue}) =>
+          OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle(
+            mediaType: identical(mediaType, sdkOmittedValue)
+                ? this.mediaType
+                : mediaType as SdkOptional<String>,
+            verificationMaterial:
+                identical(verificationMaterial, sdkOmittedValue)
+                    ? this.verificationMaterial
+                    : verificationMaterial as SdkOptional<Map<String, Object?>>,
+            dsseEnvelope: identical(dsseEnvelope, sdkOmittedValue)
+                ? this.dsseEnvelope
+                : dsseEnvelope as SdkOptional<Map<String, Object?>>,
+          );
 
-  factory OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle.fromJson(Map<String, dynamic> json) => OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle(
-    mediaType: json['mediaType'] != null ? SdkPresent((json['mediaType'] as String?)!) : const SdkOmitted(),
-    verificationMaterial: json['verificationMaterial'] != null ? SdkPresent((json['verificationMaterial'] == null ? null : Map<String, dynamic>.from(json['verificationMaterial'] as Map).map((key, value) => MapEntry(key, value)))!) : const SdkOmitted(),
-    dsseEnvelope: json['dsseEnvelope'] != null ? SdkPresent((json['dsseEnvelope'] == null ? null : Map<String, dynamic>.from(json['dsseEnvelope'] as Map).map((key, value) => MapEntry(key, value)))!) : const SdkOmitted(),
-  );
+  factory OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle.fromJson(
+          Map<String, dynamic> json) =>
+      OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle(
+        mediaType: json['mediaType'] != null
+            ? SdkPresent((json['mediaType'] as String?)!)
+            : const SdkOmitted(),
+        verificationMaterial: json['verificationMaterial'] != null
+            ? SdkPresent((json['verificationMaterial'] == null
+                ? null
+                : Map<String, dynamic>.from(json['verificationMaterial'] as Map)
+                    .map((key, value) => MapEntry(key, value)))!)
+            : const SdkOmitted(),
+        dsseEnvelope: json['dsseEnvelope'] != null
+            ? SdkPresent((json['dsseEnvelope'] == null
+                ? null
+                : Map<String, dynamic>.from(json['dsseEnvelope'] as Map)
+                    .map((key, value) => MapEntry(key, value)))!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (mediaType) {
-      SdkPresent<String>(value: final value) => {'mediaType': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (verificationMaterial) {
-      SdkPresent<Map<String, Object?>>(value: final value) => {'verificationMaterial': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (dsseEnvelope) {
-      SdkPresent<Map<String, Object?>>(value: final value) => {'dsseEnvelope': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (mediaType) {
+          SdkPresent<String>(value: final value) => {
+              'mediaType': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (verificationMaterial) {
+          SdkPresent<Map<String, Object?>>(value: final value) => {
+              'verificationMaterial': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (dsseEnvelope) {
+          SdkPresent<Map<String, Object?>>(value: final value) => {
+              'dsseEnvelope': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The bundle of the attestation.
-  final SdkOptional<OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle> bundle;
+  final SdkOptional<
+          OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle>
+      bundle;
   final SdkOptional<int> repositoryId;
   final SdkOptional<String> bundleUrl;
 
-  const OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItem({this.bundle = const SdkOmitted(), this.repositoryId = const SdkOmitted(), this.bundleUrl = const SdkOmitted()});
+  const OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItem(
+      {this.bundle = const SdkOmitted(),
+      this.repositoryId = const SdkOmitted(),
+      this.bundleUrl = const SdkOmitted()});
 
-  OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItem Function({SdkOptional<OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle> bundle, SdkOptional<int> repositoryId, SdkOptional<String> bundleUrl}) get copyWith => _copyWith;
+  OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItem Function(
+      {SdkOptional<
+              OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle>
+          bundle,
+      SdkOptional<int> repositoryId,
+      SdkOptional<String> bundleUrl}) get copyWith => _copyWith;
 
-  OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItem _copyWith({Object? bundle = sdkOmittedValue, Object? repositoryId = sdkOmittedValue, Object? bundleUrl = sdkOmittedValue}) => OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItem(
-    bundle: identical(bundle, sdkOmittedValue) ? this.bundle : bundle as SdkOptional<OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle>,
-    repositoryId: identical(repositoryId, sdkOmittedValue) ? this.repositoryId : repositoryId as SdkOptional<int>,
-    bundleUrl: identical(bundleUrl, sdkOmittedValue) ? this.bundleUrl : bundleUrl as SdkOptional<String>,
-  );
+  OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItem _copyWith(
+          {Object? bundle = sdkOmittedValue,
+          Object? repositoryId = sdkOmittedValue,
+          Object? bundleUrl = sdkOmittedValue}) =>
+      OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItem(
+        bundle: identical(bundle, sdkOmittedValue)
+            ? this.bundle
+            : bundle as SdkOptional<
+                OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle>,
+        repositoryId: identical(repositoryId, sdkOmittedValue)
+            ? this.repositoryId
+            : repositoryId as SdkOptional<int>,
+        bundleUrl: identical(bundleUrl, sdkOmittedValue)
+            ? this.bundleUrl
+            : bundleUrl as SdkOptional<String>,
+      );
 
-  factory OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItem.fromJson(Map<String, dynamic> json) => OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItem(
-    bundle: json['bundle'] != null ? SdkPresent((json['bundle'] != null ? OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle.fromJson(json['bundle'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    repositoryId: json['repository_id'] != null ? SdkPresent(((json['repository_id'] as num?)?.toInt())!) : const SdkOmitted(),
-    bundleUrl: json['bundle_url'] != null ? SdkPresent((json['bundle_url'] as String?)!) : const SdkOmitted(),
-  );
+  factory OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItem.fromJson(
+          Map<String, dynamic> json) =>
+      OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItem(
+        bundle: json['bundle'] != null
+            ? SdkPresent((json['bundle'] != null
+                ? OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle
+                    .fromJson(json['bundle'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        repositoryId: json['repository_id'] != null
+            ? SdkPresent(((json['repository_id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        bundleUrl: json['bundle_url'] != null
+            ? SdkPresent((json['bundle_url'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (bundle) {
-      SdkPresent<OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle>(value: final value) => {'bundle': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (repositoryId) {
-      SdkPresent<int>(value: final value) => {'repository_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (bundleUrl) {
-      SdkPresent<String>(value: final value) => {'bundle_url': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (bundle) {
+          SdkPresent<
+                OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle>(
+            value: final value
+          ) =>
+            {
+              'bundle': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (repositoryId) {
+          SdkPresent<int>(value: final value) => {
+              'repository_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (bundleUrl) {
+          SdkPresent<String>(value: final value) => {
+              'bundle_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Information about the current page.
 class OrgsListAttestationsBulkResponsePageInfo {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Indicates whether there is a next page.
   final SdkOptional<bool> hasNext;
+
   /// Indicates whether there is a previous page.
   final SdkOptional<bool> hasPrevious;
+
   /// The cursor to the next page.
   final SdkOptional<String> next;
+
   /// The cursor to the previous page.
   final SdkOptional<String> previous;
 
-  const OrgsListAttestationsBulkResponsePageInfo({this.hasNext = const SdkOmitted(), this.hasPrevious = const SdkOmitted(), this.next = const SdkOmitted(), this.previous = const SdkOmitted()});
+  const OrgsListAttestationsBulkResponsePageInfo(
+      {this.hasNext = const SdkOmitted(),
+      this.hasPrevious = const SdkOmitted(),
+      this.next = const SdkOmitted(),
+      this.previous = const SdkOmitted()});
 
-  OrgsListAttestationsBulkResponsePageInfo Function({SdkOptional<bool> hasNext, SdkOptional<bool> hasPrevious, SdkOptional<String> next, SdkOptional<String> previous}) get copyWith => _copyWith;
+  OrgsListAttestationsBulkResponsePageInfo Function(
+      {SdkOptional<bool> hasNext,
+      SdkOptional<bool> hasPrevious,
+      SdkOptional<String> next,
+      SdkOptional<String> previous}) get copyWith => _copyWith;
 
-  OrgsListAttestationsBulkResponsePageInfo _copyWith({Object? hasNext = sdkOmittedValue, Object? hasPrevious = sdkOmittedValue, Object? next = sdkOmittedValue, Object? previous = sdkOmittedValue}) => OrgsListAttestationsBulkResponsePageInfo(
-    hasNext: identical(hasNext, sdkOmittedValue) ? this.hasNext : hasNext as SdkOptional<bool>,
-    hasPrevious: identical(hasPrevious, sdkOmittedValue) ? this.hasPrevious : hasPrevious as SdkOptional<bool>,
-    next: identical(next, sdkOmittedValue) ? this.next : next as SdkOptional<String>,
-    previous: identical(previous, sdkOmittedValue) ? this.previous : previous as SdkOptional<String>,
-  );
+  OrgsListAttestationsBulkResponsePageInfo _copyWith(
+          {Object? hasNext = sdkOmittedValue,
+          Object? hasPrevious = sdkOmittedValue,
+          Object? next = sdkOmittedValue,
+          Object? previous = sdkOmittedValue}) =>
+      OrgsListAttestationsBulkResponsePageInfo(
+        hasNext: identical(hasNext, sdkOmittedValue)
+            ? this.hasNext
+            : hasNext as SdkOptional<bool>,
+        hasPrevious: identical(hasPrevious, sdkOmittedValue)
+            ? this.hasPrevious
+            : hasPrevious as SdkOptional<bool>,
+        next: identical(next, sdkOmittedValue)
+            ? this.next
+            : next as SdkOptional<String>,
+        previous: identical(previous, sdkOmittedValue)
+            ? this.previous
+            : previous as SdkOptional<String>,
+      );
 
-  factory OrgsListAttestationsBulkResponsePageInfo.fromJson(Map<String, dynamic> json) => OrgsListAttestationsBulkResponsePageInfo(
-    hasNext: json['has_next'] != null ? SdkPresent((json['has_next'] as bool?)!) : const SdkOmitted(),
-    hasPrevious: json['has_previous'] != null ? SdkPresent((json['has_previous'] as bool?)!) : const SdkOmitted(),
-    next: json['next'] != null ? SdkPresent((json['next'] as String?)!) : const SdkOmitted(),
-    previous: json['previous'] != null ? SdkPresent((json['previous'] as String?)!) : const SdkOmitted(),
-  );
+  factory OrgsListAttestationsBulkResponsePageInfo.fromJson(
+          Map<String, dynamic> json) =>
+      OrgsListAttestationsBulkResponsePageInfo(
+        hasNext: json['has_next'] != null
+            ? SdkPresent((json['has_next'] as bool?)!)
+            : const SdkOmitted(),
+        hasPrevious: json['has_previous'] != null
+            ? SdkPresent((json['has_previous'] as bool?)!)
+            : const SdkOmitted(),
+        next: json['next'] != null
+            ? SdkPresent((json['next'] as String?)!)
+            : const SdkOmitted(),
+        previous: json['previous'] != null
+            ? SdkPresent((json['previous'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (hasNext) {
-      SdkPresent<bool>(value: final value) => {'has_next': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (hasPrevious) {
-      SdkPresent<bool>(value: final value) => {'has_previous': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (next) {
-      SdkPresent<String>(value: final value) => {'next': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (previous) {
-      SdkPresent<String>(value: final value) => {'previous': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (hasNext) {
+          SdkPresent<bool>(value: final value) => {
+              'has_next': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (hasPrevious) {
+          SdkPresent<bool>(value: final value) => {
+              'has_previous': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (next) {
+          SdkPresent<String>(value: final value) => {
+              'next': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (previous) {
+          SdkPresent<String>(value: final value) => {
+              'previous': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class OrgsListAttestationsBulkResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Mapping of subject digest to bundles.
-  final SdkOptional<Map<String, List<OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItem>>> attestationsSubjectDigests;
+  final SdkOptional<
+          Map<
+              String,
+              List<
+                  OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItem>>>
+      attestationsSubjectDigests;
+
   /// Information about the current page.
   final SdkOptional<OrgsListAttestationsBulkResponsePageInfo> pageInfo;
 
-  const OrgsListAttestationsBulkResponse({this.attestationsSubjectDigests = const SdkOmitted(), this.pageInfo = const SdkOmitted()});
+  const OrgsListAttestationsBulkResponse(
+      {this.attestationsSubjectDigests = const SdkOmitted(),
+      this.pageInfo = const SdkOmitted()});
 
-  OrgsListAttestationsBulkResponse Function({SdkOptional<Map<String, List<OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItem>>> attestationsSubjectDigests, SdkOptional<OrgsListAttestationsBulkResponsePageInfo> pageInfo}) get copyWith => _copyWith;
+  OrgsListAttestationsBulkResponse Function(
+      {SdkOptional<
+              Map<
+                  String,
+                  List<
+                      OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItem>>>
+          attestationsSubjectDigests,
+      SdkOptional<OrgsListAttestationsBulkResponsePageInfo>
+          pageInfo}) get copyWith => _copyWith;
 
-  OrgsListAttestationsBulkResponse _copyWith({Object? attestationsSubjectDigests = sdkOmittedValue, Object? pageInfo = sdkOmittedValue}) => OrgsListAttestationsBulkResponse(
-    attestationsSubjectDigests: identical(attestationsSubjectDigests, sdkOmittedValue) ? this.attestationsSubjectDigests : attestationsSubjectDigests as SdkOptional<Map<String, List<OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItem>>>,
-    pageInfo: identical(pageInfo, sdkOmittedValue) ? this.pageInfo : pageInfo as SdkOptional<OrgsListAttestationsBulkResponsePageInfo>,
-  );
+  OrgsListAttestationsBulkResponse _copyWith(
+          {Object? attestationsSubjectDigests = sdkOmittedValue,
+          Object? pageInfo = sdkOmittedValue}) =>
+      OrgsListAttestationsBulkResponse(
+        attestationsSubjectDigests: identical(
+                attestationsSubjectDigests, sdkOmittedValue)
+            ? this.attestationsSubjectDigests
+            : attestationsSubjectDigests as SdkOptional<
+                Map<
+                    String,
+                    List<
+                        OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItem>>>,
+        pageInfo: identical(pageInfo, sdkOmittedValue)
+            ? this.pageInfo
+            : pageInfo as SdkOptional<OrgsListAttestationsBulkResponsePageInfo>,
+      );
 
-  factory OrgsListAttestationsBulkResponse.fromJson(Map<String, dynamic> json) => OrgsListAttestationsBulkResponse(
-    attestationsSubjectDigests: json['attestations_subject_digests'] != null ? SdkPresent((json['attestations_subject_digests'] == null ? null : Map<String, dynamic>.from(json['attestations_subject_digests'] as Map).map((key, value) => MapEntry(key, (value as List).map((item) => OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItem.fromJson(item as Map<String, dynamic>)).toList())))!) : const SdkOmitted(),
-    pageInfo: json['page_info'] != null ? SdkPresent((json['page_info'] != null ? OrgsListAttestationsBulkResponsePageInfo.fromJson(json['page_info'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-  );
+  factory OrgsListAttestationsBulkResponse.fromJson(
+          Map<String, dynamic> json) =>
+      OrgsListAttestationsBulkResponse(
+        attestationsSubjectDigests: json['attestations_subject_digests'] != null
+            ? SdkPresent((json['attestations_subject_digests'] == null
+                ? null
+                : Map<String, dynamic>.from(
+                        json['attestations_subject_digests'] as Map)
+                    .map((key, value) => MapEntry(
+                        key,
+                        (value as List)
+                            .map((item) =>
+                                OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItem
+                                    .fromJson(item as Map<String, dynamic>))
+                            .toList())))!)
+            : const SdkOmitted(),
+        pageInfo: json['page_info'] != null
+            ? SdkPresent((json['page_info'] != null
+                ? OrgsListAttestationsBulkResponsePageInfo.fromJson(
+                    json['page_info'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (attestationsSubjectDigests) {
-      SdkPresent<Map<String, List<OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItem>>>(value: final value) => {'attestations_subject_digests': value.map((key, value) => MapEntry(key, value.map((item) => item.toJson()).toList())),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (pageInfo) {
-      SdkPresent<OrgsListAttestationsBulkResponsePageInfo>(value: final value) => {'page_info': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (attestationsSubjectDigests) {
+          SdkPresent<
+                Map<
+                    String,
+                    List<
+                        OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItem>>>(
+            value: final value
+          ) =>
+            {
+              'attestations_subject_digests': value.map((key, value) =>
+                  MapEntry(key, value.map((item) => item.toJson()).toList())),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (pageInfo) {
+          SdkPresent<OrgsListAttestationsBulkResponsePageInfo>(
+            value: final value
+          ) =>
+            {
+              'page_info': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class OrgsListAttestationRepositoriesResponseItem {
@@ -175,30 +363,47 @@ class OrgsListAttestationRepositoriesResponseItem {
   final SdkOptional<int> id;
   final SdkOptional<String> name;
 
-  const OrgsListAttestationRepositoriesResponseItem({this.id = const SdkOmitted(), this.name = const SdkOmitted()});
+  const OrgsListAttestationRepositoriesResponseItem(
+      {this.id = const SdkOmitted(), this.name = const SdkOmitted()});
 
-  OrgsListAttestationRepositoriesResponseItem Function({SdkOptional<int> id, SdkOptional<String> name}) get copyWith => _copyWith;
+  OrgsListAttestationRepositoriesResponseItem Function(
+      {SdkOptional<int> id,
+      SdkOptional<String> name}) get copyWith => _copyWith;
 
-  OrgsListAttestationRepositoriesResponseItem _copyWith({Object? id = sdkOmittedValue, Object? name = sdkOmittedValue}) => OrgsListAttestationRepositoriesResponseItem(
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-  );
+  OrgsListAttestationRepositoriesResponseItem _copyWith(
+          {Object? id = sdkOmittedValue, Object? name = sdkOmittedValue}) =>
+      OrgsListAttestationRepositoriesResponseItem(
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+      );
 
-  factory OrgsListAttestationRepositoriesResponseItem.fromJson(Map<String, dynamic> json) => OrgsListAttestationRepositoriesResponseItem(
-    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-  );
+  factory OrgsListAttestationRepositoriesResponseItem.fromJson(
+          Map<String, dynamic> json) =>
+      OrgsListAttestationRepositoriesResponseItem(
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (id) {
-      SdkPresent<int>(value: final value) => {'id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// The attestation's Sigstore Bundle. Refer to the [Sigstore Bundle Specification](https://github.com/sigstore/protobuf-specs/blob/main/protos/sigstore_bundle.proto) for more information.
@@ -209,81 +414,165 @@ class OrgsListAttestationsResponseAttestationsItemBundle {
   final SdkOptional<Map<String, Object?>> verificationMaterial;
   final SdkOptional<Map<String, Object?>> dsseEnvelope;
 
-  const OrgsListAttestationsResponseAttestationsItemBundle({this.mediaType = const SdkOmitted(), this.verificationMaterial = const SdkOmitted(), this.dsseEnvelope = const SdkOmitted()});
+  const OrgsListAttestationsResponseAttestationsItemBundle(
+      {this.mediaType = const SdkOmitted(),
+      this.verificationMaterial = const SdkOmitted(),
+      this.dsseEnvelope = const SdkOmitted()});
 
-  OrgsListAttestationsResponseAttestationsItemBundle Function({SdkOptional<String> mediaType, SdkOptional<Map<String, Object?>> verificationMaterial, SdkOptional<Map<String, Object?>> dsseEnvelope}) get copyWith => _copyWith;
+  OrgsListAttestationsResponseAttestationsItemBundle Function(
+          {SdkOptional<String> mediaType,
+          SdkOptional<Map<String, Object?>> verificationMaterial,
+          SdkOptional<Map<String, Object?>> dsseEnvelope})
+      get copyWith => _copyWith;
 
-  OrgsListAttestationsResponseAttestationsItemBundle _copyWith({Object? mediaType = sdkOmittedValue, Object? verificationMaterial = sdkOmittedValue, Object? dsseEnvelope = sdkOmittedValue}) => OrgsListAttestationsResponseAttestationsItemBundle(
-    mediaType: identical(mediaType, sdkOmittedValue) ? this.mediaType : mediaType as SdkOptional<String>,
-    verificationMaterial: identical(verificationMaterial, sdkOmittedValue) ? this.verificationMaterial : verificationMaterial as SdkOptional<Map<String, Object?>>,
-    dsseEnvelope: identical(dsseEnvelope, sdkOmittedValue) ? this.dsseEnvelope : dsseEnvelope as SdkOptional<Map<String, Object?>>,
-  );
+  OrgsListAttestationsResponseAttestationsItemBundle _copyWith(
+          {Object? mediaType = sdkOmittedValue,
+          Object? verificationMaterial = sdkOmittedValue,
+          Object? dsseEnvelope = sdkOmittedValue}) =>
+      OrgsListAttestationsResponseAttestationsItemBundle(
+        mediaType: identical(mediaType, sdkOmittedValue)
+            ? this.mediaType
+            : mediaType as SdkOptional<String>,
+        verificationMaterial: identical(verificationMaterial, sdkOmittedValue)
+            ? this.verificationMaterial
+            : verificationMaterial as SdkOptional<Map<String, Object?>>,
+        dsseEnvelope: identical(dsseEnvelope, sdkOmittedValue)
+            ? this.dsseEnvelope
+            : dsseEnvelope as SdkOptional<Map<String, Object?>>,
+      );
 
-  factory OrgsListAttestationsResponseAttestationsItemBundle.fromJson(Map<String, dynamic> json) => OrgsListAttestationsResponseAttestationsItemBundle(
-    mediaType: json['mediaType'] != null ? SdkPresent((json['mediaType'] as String?)!) : const SdkOmitted(),
-    verificationMaterial: json['verificationMaterial'] != null ? SdkPresent((json['verificationMaterial'] == null ? null : Map<String, dynamic>.from(json['verificationMaterial'] as Map).map((key, value) => MapEntry(key, value)))!) : const SdkOmitted(),
-    dsseEnvelope: json['dsseEnvelope'] != null ? SdkPresent((json['dsseEnvelope'] == null ? null : Map<String, dynamic>.from(json['dsseEnvelope'] as Map).map((key, value) => MapEntry(key, value)))!) : const SdkOmitted(),
-  );
+  factory OrgsListAttestationsResponseAttestationsItemBundle.fromJson(
+          Map<String, dynamic> json) =>
+      OrgsListAttestationsResponseAttestationsItemBundle(
+        mediaType: json['mediaType'] != null
+            ? SdkPresent((json['mediaType'] as String?)!)
+            : const SdkOmitted(),
+        verificationMaterial: json['verificationMaterial'] != null
+            ? SdkPresent((json['verificationMaterial'] == null
+                ? null
+                : Map<String, dynamic>.from(json['verificationMaterial'] as Map)
+                    .map((key, value) => MapEntry(key, value)))!)
+            : const SdkOmitted(),
+        dsseEnvelope: json['dsseEnvelope'] != null
+            ? SdkPresent((json['dsseEnvelope'] == null
+                ? null
+                : Map<String, dynamic>.from(json['dsseEnvelope'] as Map)
+                    .map((key, value) => MapEntry(key, value)))!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (mediaType) {
-      SdkPresent<String>(value: final value) => {'mediaType': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (verificationMaterial) {
-      SdkPresent<Map<String, Object?>>(value: final value) => {'verificationMaterial': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (dsseEnvelope) {
-      SdkPresent<Map<String, Object?>>(value: final value) => {'dsseEnvelope': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (mediaType) {
+          SdkPresent<String>(value: final value) => {
+              'mediaType': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (verificationMaterial) {
+          SdkPresent<Map<String, Object?>>(value: final value) => {
+              'verificationMaterial': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (dsseEnvelope) {
+          SdkPresent<Map<String, Object?>>(value: final value) => {
+              'dsseEnvelope': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class OrgsListAttestationsResponseAttestationsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The attestation's Sigstore Bundle. Refer to the [Sigstore Bundle Specification](https://github.com/sigstore/protobuf-specs/blob/main/protos/sigstore_bundle.proto) for more information.
   final SdkOptional<OrgsListAttestationsResponseAttestationsItemBundle?> bundle;
   final SdkOptional<int> repositoryId;
   final SdkOptional<String> bundleUrl;
   final SdkOptional<String> initiator;
 
-  const OrgsListAttestationsResponseAttestationsItem({this.bundle = const SdkOmitted(), this.repositoryId = const SdkOmitted(), this.bundleUrl = const SdkOmitted(), this.initiator = const SdkOmitted()});
+  const OrgsListAttestationsResponseAttestationsItem(
+      {this.bundle = const SdkOmitted(),
+      this.repositoryId = const SdkOmitted(),
+      this.bundleUrl = const SdkOmitted(),
+      this.initiator = const SdkOmitted()});
 
-  OrgsListAttestationsResponseAttestationsItem Function({SdkOptional<OrgsListAttestationsResponseAttestationsItemBundle?> bundle, SdkOptional<int> repositoryId, SdkOptional<String> bundleUrl, SdkOptional<String> initiator}) get copyWith => _copyWith;
+  OrgsListAttestationsResponseAttestationsItem Function(
+      {SdkOptional<OrgsListAttestationsResponseAttestationsItemBundle?> bundle,
+      SdkOptional<int> repositoryId,
+      SdkOptional<String> bundleUrl,
+      SdkOptional<String> initiator}) get copyWith => _copyWith;
 
-  OrgsListAttestationsResponseAttestationsItem _copyWith({Object? bundle = sdkOmittedValue, Object? repositoryId = sdkOmittedValue, Object? bundleUrl = sdkOmittedValue, Object? initiator = sdkOmittedValue}) => OrgsListAttestationsResponseAttestationsItem(
-    bundle: identical(bundle, sdkOmittedValue) ? this.bundle : bundle as SdkOptional<OrgsListAttestationsResponseAttestationsItemBundle?>,
-    repositoryId: identical(repositoryId, sdkOmittedValue) ? this.repositoryId : repositoryId as SdkOptional<int>,
-    bundleUrl: identical(bundleUrl, sdkOmittedValue) ? this.bundleUrl : bundleUrl as SdkOptional<String>,
-    initiator: identical(initiator, sdkOmittedValue) ? this.initiator : initiator as SdkOptional<String>,
-  );
+  OrgsListAttestationsResponseAttestationsItem _copyWith(
+          {Object? bundle = sdkOmittedValue,
+          Object? repositoryId = sdkOmittedValue,
+          Object? bundleUrl = sdkOmittedValue,
+          Object? initiator = sdkOmittedValue}) =>
+      OrgsListAttestationsResponseAttestationsItem(
+        bundle: identical(bundle, sdkOmittedValue)
+            ? this.bundle
+            : bundle as SdkOptional<
+                OrgsListAttestationsResponseAttestationsItemBundle?>,
+        repositoryId: identical(repositoryId, sdkOmittedValue)
+            ? this.repositoryId
+            : repositoryId as SdkOptional<int>,
+        bundleUrl: identical(bundleUrl, sdkOmittedValue)
+            ? this.bundleUrl
+            : bundleUrl as SdkOptional<String>,
+        initiator: identical(initiator, sdkOmittedValue)
+            ? this.initiator
+            : initiator as SdkOptional<String>,
+      );
 
-  factory OrgsListAttestationsResponseAttestationsItem.fromJson(Map<String, dynamic> json) => OrgsListAttestationsResponseAttestationsItem(
-    bundle: json.containsKey('bundle') ? SdkPresent(json['bundle'] != null ? OrgsListAttestationsResponseAttestationsItemBundle.fromJson(json['bundle'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-    repositoryId: json['repository_id'] != null ? SdkPresent(((json['repository_id'] as num?)?.toInt())!) : const SdkOmitted(),
-    bundleUrl: json['bundle_url'] != null ? SdkPresent((json['bundle_url'] as String?)!) : const SdkOmitted(),
-    initiator: json['initiator'] != null ? SdkPresent((json['initiator'] as String?)!) : const SdkOmitted(),
-  );
+  factory OrgsListAttestationsResponseAttestationsItem.fromJson(
+          Map<String, dynamic> json) =>
+      OrgsListAttestationsResponseAttestationsItem(
+        bundle: json.containsKey('bundle')
+            ? SdkPresent(json['bundle'] != null
+                ? OrgsListAttestationsResponseAttestationsItemBundle.fromJson(
+                    json['bundle'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        repositoryId: json['repository_id'] != null
+            ? SdkPresent(((json['repository_id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        bundleUrl: json['bundle_url'] != null
+            ? SdkPresent((json['bundle_url'] as String?)!)
+            : const SdkOmitted(),
+        initiator: json['initiator'] != null
+            ? SdkPresent((json['initiator'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (bundle) {
-      SdkPresent<OrgsListAttestationsResponseAttestationsItemBundle?>(value: final value) => {'bundle': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (repositoryId) {
-      SdkPresent<int>(value: final value) => {'repository_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (bundleUrl) {
-      SdkPresent<String>(value: final value) => {'bundle_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (initiator) {
-      SdkPresent<String>(value: final value) => {'initiator': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (bundle) {
+          SdkPresent<OrgsListAttestationsResponseAttestationsItemBundle?>(
+            value: final value
+          ) =>
+            {
+              'bundle': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (repositoryId) {
+          SdkPresent<int>(value: final value) => {
+              'repository_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (bundleUrl) {
+          SdkPresent<String>(value: final value) => {
+              'bundle_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (initiator) {
+          SdkPresent<String>(value: final value) => {
+              'initiator': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

@@ -6,287 +6,358 @@ part of 'inline.dart';
 // Inline operation models (part 142)
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhookOrganizationMemberInvitedInvitationInviterType {
-
   final String value;
 
   const WebhookOrganizationMemberInvitedInvitationInviterType._(this.value);
 
-  factory WebhookOrganizationMemberInvitedInvitationInviterType.fromJson(String value) => WebhookOrganizationMemberInvitedInvitationInviterType._(value);
+  factory WebhookOrganizationMemberInvitedInvitationInviterType.fromJson(
+          String value) =>
+      WebhookOrganizationMemberInvitedInvitationInviterType._(value);
 
-  static const bot = WebhookOrganizationMemberInvitedInvitationInviterType._('Bot');
-  static const user = WebhookOrganizationMemberInvitedInvitationInviterType._('User');
-  static const organization = WebhookOrganizationMemberInvitedInvitationInviterType._('Organization');
+  static const bot =
+      WebhookOrganizationMemberInvitedInvitationInviterType._('Bot');
+  static const user =
+      WebhookOrganizationMemberInvitedInvitationInviterType._('User');
+  static const organization =
+      WebhookOrganizationMemberInvitedInvitationInviterType._('Organization');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookOrganizationMemberInvitedInvitationInviterType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookOrganizationMemberInvitedInvitationInviterType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookOrganizationMemberRemovedAction {
-
   final String value;
 
   const WebhookOrganizationMemberRemovedAction._(this.value);
 
-  factory WebhookOrganizationMemberRemovedAction.fromJson(String value) => WebhookOrganizationMemberRemovedAction._(value);
+  factory WebhookOrganizationMemberRemovedAction.fromJson(String value) =>
+      WebhookOrganizationMemberRemovedAction._(value);
 
-  static const memberRemoved = WebhookOrganizationMemberRemovedAction._('member_removed');
+  static const memberRemoved =
+      WebhookOrganizationMemberRemovedAction._('member_removed');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookOrganizationMemberRemovedAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookOrganizationMemberRemovedAction && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookOrganizationRenamedAction {
-
   final String value;
 
   const WebhookOrganizationRenamedAction._(this.value);
 
-  factory WebhookOrganizationRenamedAction.fromJson(String value) => WebhookOrganizationRenamedAction._(value);
+  factory WebhookOrganizationRenamedAction.fromJson(String value) =>
+      WebhookOrganizationRenamedAction._(value);
 
   static const renamed = WebhookOrganizationRenamedAction._('renamed');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookOrganizationRenamedAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookOrganizationRenamedAction && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookOrgBlockBlockedAction {
-
   final String value;
 
   const WebhookOrgBlockBlockedAction._(this.value);
 
-  factory WebhookOrgBlockBlockedAction.fromJson(String value) => WebhookOrgBlockBlockedAction._(value);
+  factory WebhookOrgBlockBlockedAction.fromJson(String value) =>
+      WebhookOrgBlockBlockedAction._(value);
 
   static const blocked = WebhookOrgBlockBlockedAction._('blocked');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookOrgBlockBlockedAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookOrgBlockBlockedAction && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookOrgBlockUnblockedAction {
-
   final String value;
 
   const WebhookOrgBlockUnblockedAction._(this.value);
 
-  factory WebhookOrgBlockUnblockedAction.fromJson(String value) => WebhookOrgBlockUnblockedAction._(value);
+  factory WebhookOrgBlockUnblockedAction.fromJson(String value) =>
+      WebhookOrgBlockUnblockedAction._(value);
 
   static const unblocked = WebhookOrgBlockUnblockedAction._('unblocked');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookOrgBlockUnblockedAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookOrgBlockUnblockedAction && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookPackagePublishedAction {
-
   final String value;
 
   const WebhookPackagePublishedAction._(this.value);
 
-  factory WebhookPackagePublishedAction.fromJson(String value) => WebhookPackagePublishedAction._(value);
+  factory WebhookPackagePublishedAction.fromJson(String value) =>
+      WebhookPackagePublishedAction._(value);
 
   static const published = WebhookPackagePublishedAction._('published');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPackagePublishedAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookPackagePublishedAction && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhookPackagePublishedPackageOwnerType {
-
   final String value;
 
   const WebhookPackagePublishedPackageOwnerType._(this.value);
 
-  factory WebhookPackagePublishedPackageOwnerType.fromJson(String value) => WebhookPackagePublishedPackageOwnerType._(value);
+  factory WebhookPackagePublishedPackageOwnerType.fromJson(String value) =>
+      WebhookPackagePublishedPackageOwnerType._(value);
 
   static const bot = WebhookPackagePublishedPackageOwnerType._('Bot');
   static const user = WebhookPackagePublishedPackageOwnerType._('User');
-  static const organization = WebhookPackagePublishedPackageOwnerType._('Organization');
+  static const organization =
+      WebhookPackagePublishedPackageOwnerType._('Organization');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPackagePublishedPackageOwnerType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookPackagePublishedPackageOwnerType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhookPackagePublishedPackagePackageVersionAuthorType {
-
   final String value;
 
   const WebhookPackagePublishedPackagePackageVersionAuthorType._(this.value);
 
-  factory WebhookPackagePublishedPackagePackageVersionAuthorType.fromJson(String value) => WebhookPackagePublishedPackagePackageVersionAuthorType._(value);
+  factory WebhookPackagePublishedPackagePackageVersionAuthorType.fromJson(
+          String value) =>
+      WebhookPackagePublishedPackagePackageVersionAuthorType._(value);
 
-  static const bot = WebhookPackagePublishedPackagePackageVersionAuthorType._('Bot');
-  static const user = WebhookPackagePublishedPackagePackageVersionAuthorType._('User');
-  static const organization = WebhookPackagePublishedPackagePackageVersionAuthorType._('Organization');
+  static const bot =
+      WebhookPackagePublishedPackagePackageVersionAuthorType._('Bot');
+  static const user =
+      WebhookPackagePublishedPackagePackageVersionAuthorType._('User');
+  static const organization =
+      WebhookPackagePublishedPackagePackageVersionAuthorType._('Organization');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPackagePublishedPackagePackageVersionAuthorType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookPackagePublishedPackagePackageVersionAuthorType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhookPackagePublishedPackagePackageVersionReleaseAuthorType {
-
   final String value;
 
-  const WebhookPackagePublishedPackagePackageVersionReleaseAuthorType._(this.value);
+  const WebhookPackagePublishedPackagePackageVersionReleaseAuthorType._(
+      this.value);
 
-  factory WebhookPackagePublishedPackagePackageVersionReleaseAuthorType.fromJson(String value) => WebhookPackagePublishedPackagePackageVersionReleaseAuthorType._(value);
+  factory WebhookPackagePublishedPackagePackageVersionReleaseAuthorType.fromJson(
+          String value) =>
+      WebhookPackagePublishedPackagePackageVersionReleaseAuthorType._(value);
 
-  static const bot = WebhookPackagePublishedPackagePackageVersionReleaseAuthorType._('Bot');
-  static const user = WebhookPackagePublishedPackagePackageVersionReleaseAuthorType._('User');
-  static const organization = WebhookPackagePublishedPackagePackageVersionReleaseAuthorType._('Organization');
+  static const bot =
+      WebhookPackagePublishedPackagePackageVersionReleaseAuthorType._('Bot');
+  static const user =
+      WebhookPackagePublishedPackagePackageVersionReleaseAuthorType._('User');
+  static const organization =
+      WebhookPackagePublishedPackagePackageVersionReleaseAuthorType._(
+          'Organization');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPackagePublishedPackagePackageVersionReleaseAuthorType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookPackagePublishedPackagePackageVersionReleaseAuthorType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookPackageUpdatedAction {
-
   final String value;
 
   const WebhookPackageUpdatedAction._(this.value);
 
-  factory WebhookPackageUpdatedAction.fromJson(String value) => WebhookPackageUpdatedAction._(value);
+  factory WebhookPackageUpdatedAction.fromJson(String value) =>
+      WebhookPackageUpdatedAction._(value);
 
   static const updated = WebhookPackageUpdatedAction._('updated');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPackageUpdatedAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookPackageUpdatedAction && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhookPackageUpdatedPackageOwnerType {
-
   final String value;
 
   const WebhookPackageUpdatedPackageOwnerType._(this.value);
 
-  factory WebhookPackageUpdatedPackageOwnerType.fromJson(String value) => WebhookPackageUpdatedPackageOwnerType._(value);
+  factory WebhookPackageUpdatedPackageOwnerType.fromJson(String value) =>
+      WebhookPackageUpdatedPackageOwnerType._(value);
 
   static const bot = WebhookPackageUpdatedPackageOwnerType._('Bot');
   static const user = WebhookPackageUpdatedPackageOwnerType._('User');
-  static const organization = WebhookPackageUpdatedPackageOwnerType._('Organization');
+  static const organization =
+      WebhookPackageUpdatedPackageOwnerType._('Organization');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPackageUpdatedPackageOwnerType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookPackageUpdatedPackageOwnerType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhookPackageUpdatedPackagePackageVersionAuthorType {
-
   final String value;
 
   const WebhookPackageUpdatedPackagePackageVersionAuthorType._(this.value);
 
-  factory WebhookPackageUpdatedPackagePackageVersionAuthorType.fromJson(String value) => WebhookPackageUpdatedPackagePackageVersionAuthorType._(value);
+  factory WebhookPackageUpdatedPackagePackageVersionAuthorType.fromJson(
+          String value) =>
+      WebhookPackageUpdatedPackagePackageVersionAuthorType._(value);
 
-  static const bot = WebhookPackageUpdatedPackagePackageVersionAuthorType._('Bot');
-  static const user = WebhookPackageUpdatedPackagePackageVersionAuthorType._('User');
-  static const organization = WebhookPackageUpdatedPackagePackageVersionAuthorType._('Organization');
+  static const bot =
+      WebhookPackageUpdatedPackagePackageVersionAuthorType._('Bot');
+  static const user =
+      WebhookPackageUpdatedPackagePackageVersionAuthorType._('User');
+  static const organization =
+      WebhookPackageUpdatedPackagePackageVersionAuthorType._('Organization');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPackageUpdatedPackagePackageVersionAuthorType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookPackageUpdatedPackagePackageVersionAuthorType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhookPackageUpdatedPackagePackageVersionReleaseAuthorType {
-
   final String value;
 
-  const WebhookPackageUpdatedPackagePackageVersionReleaseAuthorType._(this.value);
+  const WebhookPackageUpdatedPackagePackageVersionReleaseAuthorType._(
+      this.value);
 
-  factory WebhookPackageUpdatedPackagePackageVersionReleaseAuthorType.fromJson(String value) => WebhookPackageUpdatedPackagePackageVersionReleaseAuthorType._(value);
+  factory WebhookPackageUpdatedPackagePackageVersionReleaseAuthorType.fromJson(
+          String value) =>
+      WebhookPackageUpdatedPackagePackageVersionReleaseAuthorType._(value);
 
-  static const bot = WebhookPackageUpdatedPackagePackageVersionReleaseAuthorType._('Bot');
-  static const user = WebhookPackageUpdatedPackagePackageVersionReleaseAuthorType._('User');
-  static const organization = WebhookPackageUpdatedPackagePackageVersionReleaseAuthorType._('Organization');
+  static const bot =
+      WebhookPackageUpdatedPackagePackageVersionReleaseAuthorType._('Bot');
+  static const user =
+      WebhookPackageUpdatedPackagePackageVersionReleaseAuthorType._('User');
+  static const organization =
+      WebhookPackageUpdatedPackagePackageVersionReleaseAuthorType._(
+          'Organization');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPackageUpdatedPackagePackageVersionReleaseAuthorType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookPackageUpdatedPackagePackageVersionReleaseAuthorType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

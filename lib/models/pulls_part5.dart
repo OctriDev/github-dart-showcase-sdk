@@ -8,157 +8,289 @@ part of 'pulls.dart';
 class PullRequestReviewLinks {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required object value serialized in the `html` wire field.
   final PullRequestReviewLinksHtml html;
+
   /// Required object value serialized in the `pull_request` wire field.
   final PullRequestReviewLinksPullRequest pullRequest;
 
   const PullRequestReviewLinks({required this.html, required this.pullRequest});
 
-  PullRequestReviewLinks Function({PullRequestReviewLinksHtml html, PullRequestReviewLinksPullRequest pullRequest}) get copyWith => _copyWith;
+  PullRequestReviewLinks Function(
+      {PullRequestReviewLinksHtml html,
+      PullRequestReviewLinksPullRequest pullRequest}) get copyWith => _copyWith;
 
-  PullRequestReviewLinks _copyWith({Object? html = sdkOmittedValue, Object? pullRequest = sdkOmittedValue}) => PullRequestReviewLinks(
-    html: identical(html, sdkOmittedValue) ? this.html : html as PullRequestReviewLinksHtml,
-    pullRequest: identical(pullRequest, sdkOmittedValue) ? this.pullRequest : pullRequest as PullRequestReviewLinksPullRequest,
-  );
+  PullRequestReviewLinks _copyWith(
+          {Object? html = sdkOmittedValue,
+          Object? pullRequest = sdkOmittedValue}) =>
+      PullRequestReviewLinks(
+        html: identical(html, sdkOmittedValue)
+            ? this.html
+            : html as PullRequestReviewLinksHtml,
+        pullRequest: identical(pullRequest, sdkOmittedValue)
+            ? this.pullRequest
+            : pullRequest as PullRequestReviewLinksPullRequest,
+      );
 
-  factory PullRequestReviewLinks.fromJson(Map<String, dynamic> json) => PullRequestReviewLinks(
-    html: (json['html'] != null ? PullRequestReviewLinksHtml.fromJson(json['html'] as Map<String, dynamic>) : null)!,
-    pullRequest: (json['pull_request'] != null ? PullRequestReviewLinksPullRequest.fromJson(json['pull_request'] as Map<String, dynamic>) : null)!,
-  );
+  factory PullRequestReviewLinks.fromJson(Map<String, dynamic> json) =>
+      PullRequestReviewLinks(
+        html: (json['html'] != null
+            ? PullRequestReviewLinksHtml.fromJson(
+                json['html'] as Map<String, dynamic>)
+            : null)!,
+        pullRequest: (json['pull_request'] != null
+            ? PullRequestReviewLinksPullRequest.fromJson(
+                json['pull_request'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'html': html.toJson(),
-    'pull_request': pullRequest.toJson(),
-  };
+        'html': html.toJson(),
+        'pull_request': pullRequest.toJson(),
+      };
 }
 
 /// Pull Request Reviews are reviews on pull requests.
 class PullRequestReview {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Unique identifier of the review
   final int id;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// A GitHub user.
   final NullableSimpleUser? user;
+
   /// The text of the review.
   final String body;
+
   /// Required `string` value serialized in the `state` wire field.
   final String state;
+
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String htmlUrl;
+
   /// Required `uri`-formatted value serialized in the `pull_request_url` wire field.
   final String pullRequestUrl;
+
   /// Required object value serialized in the `_links` wire field.
   final PullRequestReviewLinks links;
+
   /// Optional `date-time`-formatted value serialized in the `submitted_at` wire field.
   final SdkOptional<String> submittedAt;
+
   /// A commit SHA for the review. If the commit object was garbage collected or forcibly deleted, then it no longer exists in Git and this value will be `null`.
   final String? commitId;
+
   /// Optional `string` value serialized in the `body_html` wire field.
   final SdkOptional<String> bodyHtml;
+
   /// Optional `string` value serialized in the `body_text` wire field.
   final SdkOptional<String> bodyText;
+
   /// How the author is associated with the repository.
   final AuthorAssociation authorAssociation;
 
-  const PullRequestReview({required this.id, required this.nodeId, required this.user, required this.body, required this.state, required this.htmlUrl, required this.pullRequestUrl, required this.links, this.submittedAt = const SdkOmitted(), required this.commitId, this.bodyHtml = const SdkOmitted(), this.bodyText = const SdkOmitted(), required this.authorAssociation});
+  const PullRequestReview(
+      {required this.id,
+      required this.nodeId,
+      required this.user,
+      required this.body,
+      required this.state,
+      required this.htmlUrl,
+      required this.pullRequestUrl,
+      required this.links,
+      this.submittedAt = const SdkOmitted(),
+      required this.commitId,
+      this.bodyHtml = const SdkOmitted(),
+      this.bodyText = const SdkOmitted(),
+      required this.authorAssociation});
 
-  PullRequestReview Function({int id, String nodeId, NullableSimpleUser? user, String body, String state, String htmlUrl, String pullRequestUrl, PullRequestReviewLinks links, SdkOptional<String> submittedAt, String? commitId, SdkOptional<String> bodyHtml, SdkOptional<String> bodyText, AuthorAssociation authorAssociation}) get copyWith => _copyWith;
+  PullRequestReview Function(
+      {int id,
+      String nodeId,
+      NullableSimpleUser? user,
+      String body,
+      String state,
+      String htmlUrl,
+      String pullRequestUrl,
+      PullRequestReviewLinks links,
+      SdkOptional<String> submittedAt,
+      String? commitId,
+      SdkOptional<String> bodyHtml,
+      SdkOptional<String> bodyText,
+      AuthorAssociation authorAssociation}) get copyWith => _copyWith;
 
-  PullRequestReview _copyWith({Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? user = sdkOmittedValue, Object? body = sdkOmittedValue, Object? state = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? pullRequestUrl = sdkOmittedValue, Object? links = sdkOmittedValue, Object? submittedAt = sdkOmittedValue, Object? commitId = sdkOmittedValue, Object? bodyHtml = sdkOmittedValue, Object? bodyText = sdkOmittedValue, Object? authorAssociation = sdkOmittedValue}) => PullRequestReview(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    user: identical(user, sdkOmittedValue) ? this.user : user as NullableSimpleUser?,
-    body: identical(body, sdkOmittedValue) ? this.body : body as String,
-    state: identical(state, sdkOmittedValue) ? this.state : state as String,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
-    pullRequestUrl: identical(pullRequestUrl, sdkOmittedValue) ? this.pullRequestUrl : pullRequestUrl as String,
-    links: identical(links, sdkOmittedValue) ? this.links : links as PullRequestReviewLinks,
-    submittedAt: identical(submittedAt, sdkOmittedValue) ? this.submittedAt : submittedAt as SdkOptional<String>,
-    commitId: identical(commitId, sdkOmittedValue) ? this.commitId : commitId as String?,
-    bodyHtml: identical(bodyHtml, sdkOmittedValue) ? this.bodyHtml : bodyHtml as SdkOptional<String>,
-    bodyText: identical(bodyText, sdkOmittedValue) ? this.bodyText : bodyText as SdkOptional<String>,
-    authorAssociation: identical(authorAssociation, sdkOmittedValue) ? this.authorAssociation : authorAssociation as AuthorAssociation,
-  );
+  PullRequestReview _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? user = sdkOmittedValue,
+          Object? body = sdkOmittedValue,
+          Object? state = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? pullRequestUrl = sdkOmittedValue,
+          Object? links = sdkOmittedValue,
+          Object? submittedAt = sdkOmittedValue,
+          Object? commitId = sdkOmittedValue,
+          Object? bodyHtml = sdkOmittedValue,
+          Object? bodyText = sdkOmittedValue,
+          Object? authorAssociation = sdkOmittedValue}) =>
+      PullRequestReview(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        user: identical(user, sdkOmittedValue)
+            ? this.user
+            : user as NullableSimpleUser?,
+        body: identical(body, sdkOmittedValue) ? this.body : body as String,
+        state: identical(state, sdkOmittedValue) ? this.state : state as String,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as String,
+        pullRequestUrl: identical(pullRequestUrl, sdkOmittedValue)
+            ? this.pullRequestUrl
+            : pullRequestUrl as String,
+        links: identical(links, sdkOmittedValue)
+            ? this.links
+            : links as PullRequestReviewLinks,
+        submittedAt: identical(submittedAt, sdkOmittedValue)
+            ? this.submittedAt
+            : submittedAt as SdkOptional<String>,
+        commitId: identical(commitId, sdkOmittedValue)
+            ? this.commitId
+            : commitId as String?,
+        bodyHtml: identical(bodyHtml, sdkOmittedValue)
+            ? this.bodyHtml
+            : bodyHtml as SdkOptional<String>,
+        bodyText: identical(bodyText, sdkOmittedValue)
+            ? this.bodyText
+            : bodyText as SdkOptional<String>,
+        authorAssociation: identical(authorAssociation, sdkOmittedValue)
+            ? this.authorAssociation
+            : authorAssociation as AuthorAssociation,
+      );
 
-  factory PullRequestReview.fromJson(Map<String, dynamic> json) => PullRequestReview(
-    id: ((json['id'] as num?)?.toInt())!,
-    nodeId: (json['node_id'] as String?)!,
-    user: json.containsKey('user') ? json['user'] != null ? NullableSimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'user', 'Required property is missing'),
-    body: (json['body'] as String?)!,
-    state: (json['state'] as String?)!,
-    htmlUrl: (json['html_url'] as String?)!,
-    pullRequestUrl: (json['pull_request_url'] as String?)!,
-    links: (json['_links'] != null ? PullRequestReviewLinks.fromJson(json['_links'] as Map<String, dynamic>) : null)!,
-    submittedAt: json['submitted_at'] != null ? SdkPresent((json['submitted_at'] as String?)!) : const SdkOmitted(),
-    commitId: json.containsKey('commit_id') ? json['commit_id'] as String? : throw ArgumentError.value(null, 'commit_id', 'Required property is missing'),
-    bodyHtml: json['body_html'] != null ? SdkPresent((json['body_html'] as String?)!) : const SdkOmitted(),
-    bodyText: json['body_text'] != null ? SdkPresent((json['body_text'] as String?)!) : const SdkOmitted(),
-    authorAssociation: (json['author_association'] != null ? AuthorAssociation.fromJson(json['author_association'] as String) : null)!,
-  );
+  factory PullRequestReview.fromJson(Map<String, dynamic> json) =>
+      PullRequestReview(
+        id: ((json['id'] as num?)?.toInt())!,
+        nodeId: (json['node_id'] as String?)!,
+        user: json.containsKey('user')
+            ? json['user'] != null
+                ? NullableSimpleUser.fromJson(
+                    json['user'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'user', 'Required property is missing'),
+        body: (json['body'] as String?)!,
+        state: (json['state'] as String?)!,
+        htmlUrl: (json['html_url'] as String?)!,
+        pullRequestUrl: (json['pull_request_url'] as String?)!,
+        links: (json['_links'] != null
+            ? PullRequestReviewLinks.fromJson(
+                json['_links'] as Map<String, dynamic>)
+            : null)!,
+        submittedAt: json['submitted_at'] != null
+            ? SdkPresent((json['submitted_at'] as String?)!)
+            : const SdkOmitted(),
+        commitId: json.containsKey('commit_id')
+            ? json['commit_id'] as String?
+            : throw ArgumentError.value(
+                null, 'commit_id', 'Required property is missing'),
+        bodyHtml: json['body_html'] != null
+            ? SdkPresent((json['body_html'] as String?)!)
+            : const SdkOmitted(),
+        bodyText: json['body_text'] != null
+            ? SdkPresent((json['body_text'] as String?)!)
+            : const SdkOmitted(),
+        authorAssociation: (json['author_association'] != null
+            ? AuthorAssociation.fromJson(json['author_association'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'node_id': nodeId,
-    'user': user?.toJson(),
-    'body': body,
-    'state': state,
-    'html_url': htmlUrl,
-    'pull_request_url': pullRequestUrl,
-    '_links': links.toJson(),
-    ...switch (submittedAt) {
-      SdkPresent<String>(value: final value) => {'submitted_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    'commit_id': commitId,
-    ...switch (bodyHtml) {
-      SdkPresent<String>(value: final value) => {'body_html': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (bodyText) {
-      SdkPresent<String>(value: final value) => {'body_text': value,},
-      _ => const <String, dynamic>{},
-    },
-    'author_association': authorAssociation.toJson(),
-  };
+        'id': id,
+        'node_id': nodeId,
+        'user': user?.toJson(),
+        'body': body,
+        'state': state,
+        'html_url': htmlUrl,
+        'pull_request_url': pullRequestUrl,
+        '_links': links.toJson(),
+        ...switch (submittedAt) {
+          SdkPresent<String>(value: final value) => {
+              'submitted_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'commit_id': commitId,
+        ...switch (bodyHtml) {
+          SdkPresent<String>(value: final value) => {
+              'body_html': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (bodyText) {
+          SdkPresent<String>(value: final value) => {
+              'body_text': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'author_association': authorAssociation.toJson(),
+      };
 }
 
 /// Pull Request Review Request
 class PullRequestReviewRequest {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required array value serialized in the `users` wire field.
   final List<SimpleUser> users;
+
   /// Required array value serialized in the `teams` wire field.
   final List<Team> teams;
 
   const PullRequestReviewRequest({required this.users, required this.teams});
 
-  PullRequestReviewRequest Function({List<SimpleUser> users, List<Team> teams}) get copyWith => _copyWith;
+  PullRequestReviewRequest Function({List<SimpleUser> users, List<Team> teams})
+      get copyWith => _copyWith;
 
-  PullRequestReviewRequest _copyWith({Object? users = sdkOmittedValue, Object? teams = sdkOmittedValue}) => PullRequestReviewRequest(
-    users: identical(users, sdkOmittedValue) ? this.users : users as List<SimpleUser>,
-    teams: identical(teams, sdkOmittedValue) ? this.teams : teams as List<Team>,
-  );
+  PullRequestReviewRequest _copyWith(
+          {Object? users = sdkOmittedValue, Object? teams = sdkOmittedValue}) =>
+      PullRequestReviewRequest(
+        users: identical(users, sdkOmittedValue)
+            ? this.users
+            : users as List<SimpleUser>,
+        teams: identical(teams, sdkOmittedValue)
+            ? this.teams
+            : teams as List<Team>,
+      );
 
-  factory PullRequestReviewRequest.fromJson(Map<String, dynamic> json) => PullRequestReviewRequest(
-    users: ((json['users'] as List?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList())!,
-    teams: ((json['teams'] as List?)?.map((e) => Team.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+  factory PullRequestReviewRequest.fromJson(Map<String, dynamic> json) =>
+      PullRequestReviewRequest(
+        users: ((json['users'] as List?)
+            ?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        teams: ((json['teams'] as List?)
+            ?.map((e) => Team.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'users': users.map((item) => item.toJson()).toList(),
-    'teams': teams.map((item) => item.toJson()).toList(),
-  };
+        'users': users.map((item) => item.toJson()).toList(),
+        'teams': teams.map((item) => item.toJson()).toList(),
+      };
 }
 
 /// Required object value serialized in the `base` wire field.
 class PullRequestStackMinimalBase {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `ref` wire field.
   final String ref;
 
@@ -166,88 +298,138 @@ class PullRequestStackMinimalBase {
 
   PullRequestStackMinimalBase Function({String ref}) get copyWith => _copyWith;
 
-  PullRequestStackMinimalBase _copyWith({Object? ref = sdkOmittedValue}) => PullRequestStackMinimalBase(
-    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-  );
+  PullRequestStackMinimalBase _copyWith({Object? ref = sdkOmittedValue}) =>
+      PullRequestStackMinimalBase(
+        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+      );
 
-  factory PullRequestStackMinimalBase.fromJson(Map<String, dynamic> json) => PullRequestStackMinimalBase(
-    ref: (json['ref'] as String?)!,
-  );
+  factory PullRequestStackMinimalBase.fromJson(Map<String, dynamic> json) =>
+      PullRequestStackMinimalBase(
+        ref: (json['ref'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'ref': ref,
-  };
+        'ref': ref,
+      };
 }
 
 /// Required object value serialized in the `head` wire field.
 class PullRequestStackMinimalPullRequestsItemHead {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `ref` wire field.
   final String ref;
+
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
 
-  const PullRequestStackMinimalPullRequestsItemHead({required this.ref, required this.sha});
+  const PullRequestStackMinimalPullRequestsItemHead(
+      {required this.ref, required this.sha});
 
-  PullRequestStackMinimalPullRequestsItemHead Function({String ref, String sha}) get copyWith => _copyWith;
+  PullRequestStackMinimalPullRequestsItemHead Function({String ref, String sha})
+      get copyWith => _copyWith;
 
-  PullRequestStackMinimalPullRequestsItemHead _copyWith({Object? ref = sdkOmittedValue, Object? sha = sdkOmittedValue}) => PullRequestStackMinimalPullRequestsItemHead(
-    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-  );
+  PullRequestStackMinimalPullRequestsItemHead _copyWith(
+          {Object? ref = sdkOmittedValue, Object? sha = sdkOmittedValue}) =>
+      PullRequestStackMinimalPullRequestsItemHead(
+        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+      );
 
-  factory PullRequestStackMinimalPullRequestsItemHead.fromJson(Map<String, dynamic> json) => PullRequestStackMinimalPullRequestsItemHead(
-    ref: (json['ref'] as String?)!,
-    sha: (json['sha'] as String?)!,
-  );
+  factory PullRequestStackMinimalPullRequestsItemHead.fromJson(
+          Map<String, dynamic> json) =>
+      PullRequestStackMinimalPullRequestsItemHead(
+        ref: (json['ref'] as String?)!,
+        sha: (json['sha'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'ref': ref,
-    'sha': sha,
-  };
+        'ref': ref,
+        'sha': sha,
+      };
 }
 
 /// Required object value serialized in the `pull_requests[]` wire field.
 class PullRequestStackMinimalPullRequestsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `integer` value serialized in the `number` wire field.
   final int number;
+
   /// Required enumerated value serialized in the `state` wire field.
   final PullRequestStackMinimalPullRequestsItemState state;
+
   /// Required `boolean` value serialized in the `draft` wire field.
   final bool draft;
+
   /// Required `date-time`-formatted value serialized in the `merged_at` wire field.
   final String? mergedAt;
+
   /// Required object value serialized in the `head` wire field.
   final PullRequestStackMinimalPullRequestsItemHead head;
 
-  const PullRequestStackMinimalPullRequestsItem({required this.number, required this.state, required this.draft, required this.mergedAt, required this.head});
+  const PullRequestStackMinimalPullRequestsItem(
+      {required this.number,
+      required this.state,
+      required this.draft,
+      required this.mergedAt,
+      required this.head});
 
-  PullRequestStackMinimalPullRequestsItem Function({int number, PullRequestStackMinimalPullRequestsItemState state, bool draft, String? mergedAt, PullRequestStackMinimalPullRequestsItemHead head}) get copyWith => _copyWith;
+  PullRequestStackMinimalPullRequestsItem Function(
+          {int number,
+          PullRequestStackMinimalPullRequestsItemState state,
+          bool draft,
+          String? mergedAt,
+          PullRequestStackMinimalPullRequestsItemHead head})
+      get copyWith => _copyWith;
 
-  PullRequestStackMinimalPullRequestsItem _copyWith({Object? number = sdkOmittedValue, Object? state = sdkOmittedValue, Object? draft = sdkOmittedValue, Object? mergedAt = sdkOmittedValue, Object? head = sdkOmittedValue}) => PullRequestStackMinimalPullRequestsItem(
-    number: identical(number, sdkOmittedValue) ? this.number : number as int,
-    state: identical(state, sdkOmittedValue) ? this.state : state as PullRequestStackMinimalPullRequestsItemState,
-    draft: identical(draft, sdkOmittedValue) ? this.draft : draft as bool,
-    mergedAt: identical(mergedAt, sdkOmittedValue) ? this.mergedAt : mergedAt as String?,
-    head: identical(head, sdkOmittedValue) ? this.head : head as PullRequestStackMinimalPullRequestsItemHead,
-  );
+  PullRequestStackMinimalPullRequestsItem _copyWith(
+          {Object? number = sdkOmittedValue,
+          Object? state = sdkOmittedValue,
+          Object? draft = sdkOmittedValue,
+          Object? mergedAt = sdkOmittedValue,
+          Object? head = sdkOmittedValue}) =>
+      PullRequestStackMinimalPullRequestsItem(
+        number:
+            identical(number, sdkOmittedValue) ? this.number : number as int,
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state as PullRequestStackMinimalPullRequestsItemState,
+        draft: identical(draft, sdkOmittedValue) ? this.draft : draft as bool,
+        mergedAt: identical(mergedAt, sdkOmittedValue)
+            ? this.mergedAt
+            : mergedAt as String?,
+        head: identical(head, sdkOmittedValue)
+            ? this.head
+            : head as PullRequestStackMinimalPullRequestsItemHead,
+      );
 
-  factory PullRequestStackMinimalPullRequestsItem.fromJson(Map<String, dynamic> json) => PullRequestStackMinimalPullRequestsItem(
-    number: ((json['number'] as num?)?.toInt())!,
-    state: (json['state'] != null ? PullRequestStackMinimalPullRequestsItemState.fromJson(json['state'] as String) : null)!,
-    draft: (json['draft'] as bool?)!,
-    mergedAt: json.containsKey('merged_at') ? json['merged_at'] as String? : throw ArgumentError.value(null, 'merged_at', 'Required property is missing'),
-    head: (json['head'] != null ? PullRequestStackMinimalPullRequestsItemHead.fromJson(json['head'] as Map<String, dynamic>) : null)!,
-  );
+  factory PullRequestStackMinimalPullRequestsItem.fromJson(
+          Map<String, dynamic> json) =>
+      PullRequestStackMinimalPullRequestsItem(
+        number: ((json['number'] as num?)?.toInt())!,
+        state: (json['state'] != null
+            ? PullRequestStackMinimalPullRequestsItemState.fromJson(
+                json['state'] as String)
+            : null)!,
+        draft: (json['draft'] as bool?)!,
+        mergedAt: json.containsKey('merged_at')
+            ? json['merged_at'] as String?
+            : throw ArgumentError.value(
+                null, 'merged_at', 'Required property is missing'),
+        head: (json['head'] != null
+            ? PullRequestStackMinimalPullRequestsItemHead.fromJson(
+                json['head'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'number': number,
-    'state': state.toJson(),
-    'draft': draft,
-    'merged_at': mergedAt,
-    'head': head.toJson(),
-  };
+        'number': number,
+        'state': state.toJson(),
+        'draft': draft,
+        'merged_at': mergedAt,
+        'head': head.toJson(),
+      };
 }

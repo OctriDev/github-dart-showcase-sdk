@@ -8,279 +8,504 @@ part of 'repos_deployment.dart';
 class DeploymentBranchPolicy {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The unique identifier of the branch or tag policy.
   final SdkOptional<int> id;
+
   /// Optional `string` value serialized in the `node_id` wire field.
   final SdkOptional<String> nodeId;
+
   /// The name pattern that branches or tags must match in order to deploy to the environment.
   final SdkOptional<String> name;
+
   /// Whether this rule targets a branch or tag.
   final SdkOptional<DeploymentBranchPolicyType> type_;
 
-  const DeploymentBranchPolicy({this.id = const SdkOmitted(), this.nodeId = const SdkOmitted(), this.name = const SdkOmitted(), this.type_ = const SdkOmitted()});
+  const DeploymentBranchPolicy(
+      {this.id = const SdkOmitted(),
+      this.nodeId = const SdkOmitted(),
+      this.name = const SdkOmitted(),
+      this.type_ = const SdkOmitted()});
 
-  DeploymentBranchPolicy Function({SdkOptional<int> id, SdkOptional<String> nodeId, SdkOptional<String> name, SdkOptional<DeploymentBranchPolicyType> type_}) get copyWith => _copyWith;
+  DeploymentBranchPolicy Function(
+      {SdkOptional<int> id,
+      SdkOptional<String> nodeId,
+      SdkOptional<String> name,
+      SdkOptional<DeploymentBranchPolicyType> type_}) get copyWith => _copyWith;
 
-  DeploymentBranchPolicy _copyWith({Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? name = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => DeploymentBranchPolicy(
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as SdkOptional<String>,
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<DeploymentBranchPolicyType>,
-  );
+  DeploymentBranchPolicy _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      DeploymentBranchPolicy(
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+        nodeId: identical(nodeId, sdkOmittedValue)
+            ? this.nodeId
+            : nodeId as SdkOptional<String>,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as SdkOptional<DeploymentBranchPolicyType>,
+      );
 
-  factory DeploymentBranchPolicy.fromJson(Map<String, dynamic> json) => DeploymentBranchPolicy(
-    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
-    nodeId: json['node_id'] != null ? SdkPresent((json['node_id'] as String?)!) : const SdkOmitted(),
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    type_: json['type'] != null ? SdkPresent((json['type'] != null ? DeploymentBranchPolicyType.fromJson(json['type'] as String) : null)!) : const SdkOmitted(),
-  );
+  factory DeploymentBranchPolicy.fromJson(Map<String, dynamic> json) =>
+      DeploymentBranchPolicy(
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        nodeId: json['node_id'] != null
+            ? SdkPresent((json['node_id'] as String?)!)
+            : const SdkOmitted(),
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+        type_: json['type'] != null
+            ? SdkPresent((json['type'] != null
+                ? DeploymentBranchPolicyType.fromJson(json['type'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (id) {
-      SdkPresent<int>(value: final value) => {'id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (nodeId) {
-      SdkPresent<String>(value: final value) => {'node_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (type_) {
-      SdkPresent<DeploymentBranchPolicyType>(value: final value) => {'type': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (nodeId) {
+          SdkPresent<String>(value: final value) => {
+              'node_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (type_) {
+          SdkPresent<DeploymentBranchPolicyType>(value: final value) => {
+              'type': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Typed representation of the `DeploymentBranchPolicyNamePattern` API schema.
 class DeploymentBranchPolicyNamePattern {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name pattern that branches must match in order to deploy to the environment. Wildcard characters will not match `/`. For example, to match branches that begin with `release/` and contain an additional single slash, use `release/*/*`. For more information about pattern matching syntax, see the [Ruby File.fnmatch documentation](https://ruby-doc.org/core-2.5.1/File.html#method-c-fnmatch).
   final String name;
 
   const DeploymentBranchPolicyNamePattern({required this.name});
 
-  DeploymentBranchPolicyNamePattern Function({String name}) get copyWith => _copyWith;
+  DeploymentBranchPolicyNamePattern Function({String name}) get copyWith =>
+      _copyWith;
 
-  DeploymentBranchPolicyNamePattern _copyWith({Object? name = sdkOmittedValue}) => DeploymentBranchPolicyNamePattern(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-  );
+  DeploymentBranchPolicyNamePattern _copyWith(
+          {Object? name = sdkOmittedValue}) =>
+      DeploymentBranchPolicyNamePattern(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+      );
 
-  factory DeploymentBranchPolicyNamePattern.fromJson(Map<String, dynamic> json) => DeploymentBranchPolicyNamePattern(
-    name: (json['name'] as String?)!,
-  );
+  factory DeploymentBranchPolicyNamePattern.fromJson(
+          Map<String, dynamic> json) =>
+      DeploymentBranchPolicyNamePattern(
+        name: (json['name'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-  };
+        'name': name,
+      };
 }
 
 /// Typed representation of the `DeploymentBranchPolicyNamePatternWithType` API schema.
 class DeploymentBranchPolicyNamePatternWithType {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name pattern that branches or tags must match in order to deploy to the environment. Wildcard characters will not match `/`. For example, to match branches that begin with `release/` and contain an additional single slash, use `release/*/*`. For more information about pattern matching syntax, see the [Ruby File.fnmatch documentation](https://ruby-doc.org/core-2.5.1/File.html#method-c-fnmatch).
   final String name;
+
   /// Whether this rule targets a branch or tag
   final SdkOptional<DeploymentBranchPolicyNamePatternWithTypeType> type_;
 
-  const DeploymentBranchPolicyNamePatternWithType({required this.name, this.type_ = const SdkOmitted()});
+  const DeploymentBranchPolicyNamePatternWithType(
+      {required this.name, this.type_ = const SdkOmitted()});
 
-  DeploymentBranchPolicyNamePatternWithType Function({String name, SdkOptional<DeploymentBranchPolicyNamePatternWithTypeType> type_}) get copyWith => _copyWith;
+  DeploymentBranchPolicyNamePatternWithType Function(
+          {String name,
+          SdkOptional<DeploymentBranchPolicyNamePatternWithTypeType> type_})
+      get copyWith => _copyWith;
 
-  DeploymentBranchPolicyNamePatternWithType _copyWith({Object? name = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => DeploymentBranchPolicyNamePatternWithType(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<DeploymentBranchPolicyNamePatternWithTypeType>,
-  );
+  DeploymentBranchPolicyNamePatternWithType _copyWith(
+          {Object? name = sdkOmittedValue, Object? type_ = sdkOmittedValue}) =>
+      DeploymentBranchPolicyNamePatternWithType(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_
+                as SdkOptional<DeploymentBranchPolicyNamePatternWithTypeType>,
+      );
 
-  factory DeploymentBranchPolicyNamePatternWithType.fromJson(Map<String, dynamic> json) => DeploymentBranchPolicyNamePatternWithType(
-    name: (json['name'] as String?)!,
-    type_: json['type'] != null ? SdkPresent((json['type'] != null ? DeploymentBranchPolicyNamePatternWithTypeType.fromJson(json['type'] as String) : null)!) : const SdkOmitted(),
-  );
+  factory DeploymentBranchPolicyNamePatternWithType.fromJson(
+          Map<String, dynamic> json) =>
+      DeploymentBranchPolicyNamePatternWithType(
+        name: (json['name'] as String?)!,
+        type_: json['type'] != null
+            ? SdkPresent((json['type'] != null
+                ? DeploymentBranchPolicyNamePatternWithTypeType.fromJson(
+                    json['type'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    ...switch (type_) {
-      SdkPresent<DeploymentBranchPolicyNamePatternWithTypeType>(value: final value) => {'type': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'name': name,
+        ...switch (type_) {
+          SdkPresent<DeploymentBranchPolicyNamePatternWithTypeType>(
+            value: final value
+          ) =>
+            {
+              'type': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.
 class DeploymentBranchPolicySettings {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Whether only branches with branch protection rules can deploy to this environment. If `protected_branches` is `true`, `custom_branch_policies` must be `false`; if `protected_branches` is `false`, `custom_branch_policies` must be `true`.
   final bool protectedBranches;
+
   /// Whether only branches that match the specified name patterns can deploy to this environment. If `custom_branch_policies` is `true`, `protected_branches` must be `false`; if `custom_branch_policies` is `false`, `protected_branches` must be `true`.
   final bool customBranchPolicies;
 
-  const DeploymentBranchPolicySettings({required this.protectedBranches, required this.customBranchPolicies});
+  const DeploymentBranchPolicySettings(
+      {required this.protectedBranches, required this.customBranchPolicies});
 
-  DeploymentBranchPolicySettings Function({bool protectedBranches, bool customBranchPolicies}) get copyWith => _copyWith;
+  DeploymentBranchPolicySettings Function(
+      {bool protectedBranches,
+      bool customBranchPolicies}) get copyWith => _copyWith;
 
-  DeploymentBranchPolicySettings _copyWith({Object? protectedBranches = sdkOmittedValue, Object? customBranchPolicies = sdkOmittedValue}) => DeploymentBranchPolicySettings(
-    protectedBranches: identical(protectedBranches, sdkOmittedValue) ? this.protectedBranches : protectedBranches as bool,
-    customBranchPolicies: identical(customBranchPolicies, sdkOmittedValue) ? this.customBranchPolicies : customBranchPolicies as bool,
-  );
+  DeploymentBranchPolicySettings _copyWith(
+          {Object? protectedBranches = sdkOmittedValue,
+          Object? customBranchPolicies = sdkOmittedValue}) =>
+      DeploymentBranchPolicySettings(
+        protectedBranches: identical(protectedBranches, sdkOmittedValue)
+            ? this.protectedBranches
+            : protectedBranches as bool,
+        customBranchPolicies: identical(customBranchPolicies, sdkOmittedValue)
+            ? this.customBranchPolicies
+            : customBranchPolicies as bool,
+      );
 
-  factory DeploymentBranchPolicySettings.fromJson(Map<String, dynamic> json) => DeploymentBranchPolicySettings(
-    protectedBranches: (json['protected_branches'] as bool?)!,
-    customBranchPolicies: (json['custom_branch_policies'] as bool?)!,
-  );
+  factory DeploymentBranchPolicySettings.fromJson(Map<String, dynamic> json) =>
+      DeploymentBranchPolicySettings(
+        protectedBranches: (json['protected_branches'] as bool?)!,
+        customBranchPolicies: (json['custom_branch_policies'] as bool?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'protected_branches': protectedBranches,
-    'custom_branch_policies': customBranchPolicies,
-  };
+        'protected_branches': protectedBranches,
+        'custom_branch_policies': customBranchPolicies,
+      };
 }
 
 /// Deployment protection rule
 class DeploymentProtectionRule {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The unique identifier for the deployment protection rule.
   final int id;
+
   /// The node ID for the deployment protection rule.
   final String nodeId;
+
   /// Whether the deployment protection rule is enabled for the environment.
   final bool enabled;
+
   /// A GitHub App that is providing a custom deployment protection rule.
   final CustomDeploymentRuleApp app;
 
-  const DeploymentProtectionRule({required this.id, required this.nodeId, required this.enabled, required this.app});
+  const DeploymentProtectionRule(
+      {required this.id,
+      required this.nodeId,
+      required this.enabled,
+      required this.app});
 
-  DeploymentProtectionRule Function({int id, String nodeId, bool enabled, CustomDeploymentRuleApp app}) get copyWith => _copyWith;
+  DeploymentProtectionRule Function(
+      {int id,
+      String nodeId,
+      bool enabled,
+      CustomDeploymentRuleApp app}) get copyWith => _copyWith;
 
-  DeploymentProtectionRule _copyWith({Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? enabled = sdkOmittedValue, Object? app = sdkOmittedValue}) => DeploymentProtectionRule(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as bool,
-    app: identical(app, sdkOmittedValue) ? this.app : app as CustomDeploymentRuleApp,
-  );
+  DeploymentProtectionRule _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? enabled = sdkOmittedValue,
+          Object? app = sdkOmittedValue}) =>
+      DeploymentProtectionRule(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as bool,
+        app: identical(app, sdkOmittedValue)
+            ? this.app
+            : app as CustomDeploymentRuleApp,
+      );
 
-  factory DeploymentProtectionRule.fromJson(Map<String, dynamic> json) => DeploymentProtectionRule(
-    id: ((json['id'] as num?)?.toInt())!,
-    nodeId: (json['node_id'] as String?)!,
-    enabled: (json['enabled'] as bool?)!,
-    app: (json['app'] != null ? CustomDeploymentRuleApp.fromJson(json['app'] as Map<String, dynamic>) : null)!,
-  );
+  factory DeploymentProtectionRule.fromJson(Map<String, dynamic> json) =>
+      DeploymentProtectionRule(
+        id: ((json['id'] as num?)?.toInt())!,
+        nodeId: (json['node_id'] as String?)!,
+        enabled: (json['enabled'] as bool?)!,
+        app: (json['app'] != null
+            ? CustomDeploymentRuleApp.fromJson(
+                json['app'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'node_id': nodeId,
-    'enabled': enabled,
-    'app': app.toJson(),
-  };
+        'id': id,
+        'node_id': nodeId,
+        'enabled': enabled,
+        'app': app.toJson(),
+      };
 }
 
 /// The status of a deployment.
 class DeploymentStatus {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
+
   /// Required `int64`-formatted value serialized in the `id` wire field.
   final int id;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// The state of the status.
   final DeploymentStatusState state;
+
   /// A GitHub user.
   final NullableSimpleUser? creator;
+
   /// A short description of the status.
   final String description;
+
   /// The environment of the deployment that the status is for.
   final SdkOptional<String> environment;
+
   /// Closing down notice: the URL to associate with this status.
   final String targetUrl;
+
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String createdAt;
+
   /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
   final String updatedAt;
+
   /// Required `uri`-formatted value serialized in the `deployment_url` wire field.
   final String deploymentUrl;
+
   /// Required `uri`-formatted value serialized in the `repository_url` wire field.
   final String repositoryUrl;
+
   /// The URL for accessing your environment.
   final SdkOptional<String> environmentUrl;
+
   /// The URL to associate with this status.
   final SdkOptional<String> logUrl;
+
   /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
   final SdkOptional<NullableIntegration?> performedViaGithubApp;
 
-  const DeploymentStatus({required this.url, required this.id, required this.nodeId, required this.state, required this.creator, required this.description, this.environment = const SdkOmitted(), required this.targetUrl, required this.createdAt, required this.updatedAt, required this.deploymentUrl, required this.repositoryUrl, this.environmentUrl = const SdkOmitted(), this.logUrl = const SdkOmitted(), this.performedViaGithubApp = const SdkOmitted()});
+  const DeploymentStatus(
+      {required this.url,
+      required this.id,
+      required this.nodeId,
+      required this.state,
+      required this.creator,
+      required this.description,
+      this.environment = const SdkOmitted(),
+      required this.targetUrl,
+      required this.createdAt,
+      required this.updatedAt,
+      required this.deploymentUrl,
+      required this.repositoryUrl,
+      this.environmentUrl = const SdkOmitted(),
+      this.logUrl = const SdkOmitted(),
+      this.performedViaGithubApp = const SdkOmitted()});
 
-  DeploymentStatus Function({String url, int id, String nodeId, DeploymentStatusState state, NullableSimpleUser? creator, String description, SdkOptional<String> environment, String targetUrl, String createdAt, String updatedAt, String deploymentUrl, String repositoryUrl, SdkOptional<String> environmentUrl, SdkOptional<String> logUrl, SdkOptional<NullableIntegration?> performedViaGithubApp}) get copyWith => _copyWith;
+  DeploymentStatus Function(
+          {String url,
+          int id,
+          String nodeId,
+          DeploymentStatusState state,
+          NullableSimpleUser? creator,
+          String description,
+          SdkOptional<String> environment,
+          String targetUrl,
+          String createdAt,
+          String updatedAt,
+          String deploymentUrl,
+          String repositoryUrl,
+          SdkOptional<String> environmentUrl,
+          SdkOptional<String> logUrl,
+          SdkOptional<NullableIntegration?> performedViaGithubApp})
+      get copyWith => _copyWith;
 
-  DeploymentStatus _copyWith({Object? url = sdkOmittedValue, Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? state = sdkOmittedValue, Object? creator = sdkOmittedValue, Object? description = sdkOmittedValue, Object? environment = sdkOmittedValue, Object? targetUrl = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? deploymentUrl = sdkOmittedValue, Object? repositoryUrl = sdkOmittedValue, Object? environmentUrl = sdkOmittedValue, Object? logUrl = sdkOmittedValue, Object? performedViaGithubApp = sdkOmittedValue}) => DeploymentStatus(
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    state: identical(state, sdkOmittedValue) ? this.state : state as DeploymentStatusState,
-    creator: identical(creator, sdkOmittedValue) ? this.creator : creator as NullableSimpleUser?,
-    description: identical(description, sdkOmittedValue) ? this.description : description as String,
-    environment: identical(environment, sdkOmittedValue) ? this.environment : environment as SdkOptional<String>,
-    targetUrl: identical(targetUrl, sdkOmittedValue) ? this.targetUrl : targetUrl as String,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
-    deploymentUrl: identical(deploymentUrl, sdkOmittedValue) ? this.deploymentUrl : deploymentUrl as String,
-    repositoryUrl: identical(repositoryUrl, sdkOmittedValue) ? this.repositoryUrl : repositoryUrl as String,
-    environmentUrl: identical(environmentUrl, sdkOmittedValue) ? this.environmentUrl : environmentUrl as SdkOptional<String>,
-    logUrl: identical(logUrl, sdkOmittedValue) ? this.logUrl : logUrl as SdkOptional<String>,
-    performedViaGithubApp: identical(performedViaGithubApp, sdkOmittedValue) ? this.performedViaGithubApp : performedViaGithubApp as SdkOptional<NullableIntegration?>,
-  );
+  DeploymentStatus _copyWith(
+          {Object? url = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? state = sdkOmittedValue,
+          Object? creator = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? environment = sdkOmittedValue,
+          Object? targetUrl = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? deploymentUrl = sdkOmittedValue,
+          Object? repositoryUrl = sdkOmittedValue,
+          Object? environmentUrl = sdkOmittedValue,
+          Object? logUrl = sdkOmittedValue,
+          Object? performedViaGithubApp = sdkOmittedValue}) =>
+      DeploymentStatus(
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state as DeploymentStatusState,
+        creator: identical(creator, sdkOmittedValue)
+            ? this.creator
+            : creator as NullableSimpleUser?,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as String,
+        environment: identical(environment, sdkOmittedValue)
+            ? this.environment
+            : environment as SdkOptional<String>,
+        targetUrl: identical(targetUrl, sdkOmittedValue)
+            ? this.targetUrl
+            : targetUrl as String,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+        deploymentUrl: identical(deploymentUrl, sdkOmittedValue)
+            ? this.deploymentUrl
+            : deploymentUrl as String,
+        repositoryUrl: identical(repositoryUrl, sdkOmittedValue)
+            ? this.repositoryUrl
+            : repositoryUrl as String,
+        environmentUrl: identical(environmentUrl, sdkOmittedValue)
+            ? this.environmentUrl
+            : environmentUrl as SdkOptional<String>,
+        logUrl: identical(logUrl, sdkOmittedValue)
+            ? this.logUrl
+            : logUrl as SdkOptional<String>,
+        performedViaGithubApp: identical(performedViaGithubApp, sdkOmittedValue)
+            ? this.performedViaGithubApp
+            : performedViaGithubApp as SdkOptional<NullableIntegration?>,
+      );
 
-  factory DeploymentStatus.fromJson(Map<String, dynamic> json) => DeploymentStatus(
-    url: (json['url'] as String?)!,
-    id: ((json['id'] as num?)?.toInt())!,
-    nodeId: (json['node_id'] as String?)!,
-    state: (json['state'] != null ? DeploymentStatusState.fromJson(json['state'] as String) : null)!,
-    creator: json.containsKey('creator') ? json['creator'] != null ? NullableSimpleUser.fromJson(json['creator'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'creator', 'Required property is missing'),
-    description: (json['description'] as String?)!,
-    environment: json['environment'] != null ? SdkPresent((json['environment'] as String?)!) : const SdkOmitted(),
-    targetUrl: (json['target_url'] as String?)!,
-    createdAt: (json['created_at'] as String?)!,
-    updatedAt: (json['updated_at'] as String?)!,
-    deploymentUrl: (json['deployment_url'] as String?)!,
-    repositoryUrl: (json['repository_url'] as String?)!,
-    environmentUrl: json['environment_url'] != null ? SdkPresent((json['environment_url'] as String?)!) : const SdkOmitted(),
-    logUrl: json['log_url'] != null ? SdkPresent((json['log_url'] as String?)!) : const SdkOmitted(),
-    performedViaGithubApp: json.containsKey('performed_via_github_app') ? SdkPresent(json['performed_via_github_app'] != null ? NullableIntegration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-  );
+  factory DeploymentStatus.fromJson(Map<String, dynamic> json) =>
+      DeploymentStatus(
+        url: (json['url'] as String?)!,
+        id: ((json['id'] as num?)?.toInt())!,
+        nodeId: (json['node_id'] as String?)!,
+        state: (json['state'] != null
+            ? DeploymentStatusState.fromJson(json['state'] as String)
+            : null)!,
+        creator: json.containsKey('creator')
+            ? json['creator'] != null
+                ? NullableSimpleUser.fromJson(
+                    json['creator'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'creator', 'Required property is missing'),
+        description: (json['description'] as String?)!,
+        environment: json['environment'] != null
+            ? SdkPresent((json['environment'] as String?)!)
+            : const SdkOmitted(),
+        targetUrl: (json['target_url'] as String?)!,
+        createdAt: (json['created_at'] as String?)!,
+        updatedAt: (json['updated_at'] as String?)!,
+        deploymentUrl: (json['deployment_url'] as String?)!,
+        repositoryUrl: (json['repository_url'] as String?)!,
+        environmentUrl: json['environment_url'] != null
+            ? SdkPresent((json['environment_url'] as String?)!)
+            : const SdkOmitted(),
+        logUrl: json['log_url'] != null
+            ? SdkPresent((json['log_url'] as String?)!)
+            : const SdkOmitted(),
+        performedViaGithubApp: json.containsKey('performed_via_github_app')
+            ? SdkPresent(json['performed_via_github_app'] != null
+                ? NullableIntegration.fromJson(
+                    json['performed_via_github_app'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'url': url,
-    'id': id,
-    'node_id': nodeId,
-    'state': state.toJson(),
-    'creator': creator?.toJson(),
-    'description': description,
-    ...switch (environment) {
-      SdkPresent<String>(value: final value) => {'environment': value,},
-      _ => const <String, dynamic>{},
-    },
-    'target_url': targetUrl,
-    'created_at': createdAt,
-    'updated_at': updatedAt,
-    'deployment_url': deploymentUrl,
-    'repository_url': repositoryUrl,
-    ...switch (environmentUrl) {
-      SdkPresent<String>(value: final value) => {'environment_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (logUrl) {
-      SdkPresent<String>(value: final value) => {'log_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (performedViaGithubApp) {
-      SdkPresent<NullableIntegration?>(value: final value) => {'performed_via_github_app': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'url': url,
+        'id': id,
+        'node_id': nodeId,
+        'state': state.toJson(),
+        'creator': creator?.toJson(),
+        'description': description,
+        ...switch (environment) {
+          SdkPresent<String>(value: final value) => {
+              'environment': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'target_url': targetUrl,
+        'created_at': createdAt,
+        'updated_at': updatedAt,
+        'deployment_url': deploymentUrl,
+        'repository_url': repositoryUrl,
+        ...switch (environmentUrl) {
+          SdkPresent<String>(value: final value) => {
+              'environment_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (logUrl) {
+          SdkPresent<String>(value: final value) => {
+              'log_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (performedViaGithubApp) {
+          SdkPresent<NullableIntegration?>(value: final value) => {
+              'performed_via_github_app': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

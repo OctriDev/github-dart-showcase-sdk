@@ -6,101 +6,124 @@ part of 'inline.dart';
 // Inline operation models (part 40)
 /// Optional enumerated value serialized in the `status` wire field.
 final class SecurityAndAnalysisSecretScanningNonProviderPatternsStatus {
-
   final String value;
 
-  const SecurityAndAnalysisSecretScanningNonProviderPatternsStatus._(this.value);
+  const SecurityAndAnalysisSecretScanningNonProviderPatternsStatus._(
+      this.value);
 
-  factory SecurityAndAnalysisSecretScanningNonProviderPatternsStatus.fromJson(String value) => SecurityAndAnalysisSecretScanningNonProviderPatternsStatus._(value);
+  factory SecurityAndAnalysisSecretScanningNonProviderPatternsStatus.fromJson(
+          String value) =>
+      SecurityAndAnalysisSecretScanningNonProviderPatternsStatus._(value);
 
-  static const enabled = SecurityAndAnalysisSecretScanningNonProviderPatternsStatus._('enabled');
-  static const disabled = SecurityAndAnalysisSecretScanningNonProviderPatternsStatus._('disabled');
+  static const enabled =
+      SecurityAndAnalysisSecretScanningNonProviderPatternsStatus._('enabled');
+  static const disabled =
+      SecurityAndAnalysisSecretScanningNonProviderPatternsStatus._('disabled');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is SecurityAndAnalysisSecretScanningNonProviderPatternsStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is SecurityAndAnalysisSecretScanningNonProviderPatternsStatus &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `status` wire field.
 final class SecurityAndAnalysisSecretScanningPushProtectionStatus {
-
   final String value;
 
   const SecurityAndAnalysisSecretScanningPushProtectionStatus._(this.value);
 
-  factory SecurityAndAnalysisSecretScanningPushProtectionStatus.fromJson(String value) => SecurityAndAnalysisSecretScanningPushProtectionStatus._(value);
+  factory SecurityAndAnalysisSecretScanningPushProtectionStatus.fromJson(
+          String value) =>
+      SecurityAndAnalysisSecretScanningPushProtectionStatus._(value);
 
-  static const enabled = SecurityAndAnalysisSecretScanningPushProtectionStatus._('enabled');
-  static const disabled = SecurityAndAnalysisSecretScanningPushProtectionStatus._('disabled');
+  static const enabled =
+      SecurityAndAnalysisSecretScanningPushProtectionStatus._('enabled');
+  static const disabled =
+      SecurityAndAnalysisSecretScanningPushProtectionStatus._('disabled');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is SecurityAndAnalysisSecretScanningPushProtectionStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is SecurityAndAnalysisSecretScanningPushProtectionStatus &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `status` wire field.
 final class SecurityAndAnalysisSecretScanningStatus {
-
   final String value;
 
   const SecurityAndAnalysisSecretScanningStatus._(this.value);
 
-  factory SecurityAndAnalysisSecretScanningStatus.fromJson(String value) => SecurityAndAnalysisSecretScanningStatus._(value);
+  factory SecurityAndAnalysisSecretScanningStatus.fromJson(String value) =>
+      SecurityAndAnalysisSecretScanningStatus._(value);
 
   static const enabled = SecurityAndAnalysisSecretScanningStatus._('enabled');
   static const disabled = SecurityAndAnalysisSecretScanningStatus._('disabled');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is SecurityAndAnalysisSecretScanningStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is SecurityAndAnalysisSecretScanningStatus && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The policy that controls whether self-hosted runners can be used by repositories in the organization
 final class SelfHostedRunnersSettingsEnabledRepositories {
-
   final String value;
 
   const SelfHostedRunnersSettingsEnabledRepositories._(this.value);
 
-  factory SelfHostedRunnersSettingsEnabledRepositories.fromJson(String value) => SelfHostedRunnersSettingsEnabledRepositories._(value);
+  factory SelfHostedRunnersSettingsEnabledRepositories.fromJson(String value) =>
+      SelfHostedRunnersSettingsEnabledRepositories._(value);
 
   static const all = SelfHostedRunnersSettingsEnabledRepositories._('all');
-  static const selected = SelfHostedRunnersSettingsEnabledRepositories._('selected');
+  static const selected =
+      SelfHostedRunnersSettingsEnabledRepositories._('selected');
   static const none = SelfHostedRunnersSettingsEnabledRepositories._('none');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is SelfHostedRunnersSettingsEnabledRepositories && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is SelfHostedRunnersSettingsEnabledRepositories &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `conclusion` wire field.
 final class SimpleCheckSuiteConclusion {
-
   final String value;
 
   const SimpleCheckSuiteConclusion._(this.value);
 
-  factory SimpleCheckSuiteConclusion.fromJson(String value) => SimpleCheckSuiteConclusion._(value);
+  factory SimpleCheckSuiteConclusion.fromJson(String value) =>
+      SimpleCheckSuiteConclusion._(value);
 
   static const success = SimpleCheckSuiteConclusion._('success');
   static const failure = SimpleCheckSuiteConclusion._('failure');
@@ -114,22 +137,25 @@ final class SimpleCheckSuiteConclusion {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is SimpleCheckSuiteConclusion && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is SimpleCheckSuiteConclusion && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `status` wire field.
 final class SimpleCheckSuiteStatus {
-
   final String value;
 
   const SimpleCheckSuiteStatus._(this.value);
 
-  factory SimpleCheckSuiteStatus.fromJson(String value) => SimpleCheckSuiteStatus._(value);
+  factory SimpleCheckSuiteStatus.fromJson(String value) =>
+      SimpleCheckSuiteStatus._(value);
 
   static const queued = SimpleCheckSuiteStatus._('queued');
   static const inProgress = SimpleCheckSuiteStatus._('in_progress');
@@ -139,17 +165,19 @@ final class SimpleCheckSuiteStatus {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is SimpleCheckSuiteStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is SimpleCheckSuiteStatus && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// How the team's access to the repository was granted. This property is only present when the team is returned in a repository context, such as `GET /repos/{owner}/{repo}/teams`.
 final class TeamAccessSource {
-
   final String value;
 
   const TeamAccessSource._(this.value);
@@ -162,17 +190,19 @@ final class TeamAccessSource {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is TeamAccessSource && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is TeamAccessSource && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The ownership type of the team
 final class TeamType {
-
   final String value;
 
   const TeamType._(this.value);
@@ -184,39 +214,45 @@ final class TeamType {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is TeamType && other.value == value;
+  @override
+  bool operator ==(Object other) => other is TeamType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The notification setting the team has set
 final class TeamFullNotificationSetting {
-
   final String value;
 
   const TeamFullNotificationSetting._(this.value);
 
-  factory TeamFullNotificationSetting.fromJson(String value) => TeamFullNotificationSetting._(value);
+  factory TeamFullNotificationSetting.fromJson(String value) =>
+      TeamFullNotificationSetting._(value);
 
-  static const notificationsEnabled = TeamFullNotificationSetting._('notifications_enabled');
-  static const notificationsDisabled = TeamFullNotificationSetting._('notifications_disabled');
+  static const notificationsEnabled =
+      TeamFullNotificationSetting._('notifications_enabled');
+  static const notificationsDisabled =
+      TeamFullNotificationSetting._('notifications_disabled');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is TeamFullNotificationSetting && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is TeamFullNotificationSetting && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The level of privacy this team should have
 final class TeamFullPrivacy {
-
   final String value;
 
   const TeamFullPrivacy._(this.value);
@@ -228,17 +264,19 @@ final class TeamFullPrivacy {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is TeamFullPrivacy && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is TeamFullPrivacy && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The ownership type of the team
 final class TeamFullType {
-
   final String value;
 
   const TeamFullType._(this.value);
@@ -250,17 +288,19 @@ final class TeamFullType {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is TeamFullType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is TeamFullType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The member's role on the team. Only present on the `List team members` endpoint, and only when the feature is enabled for the organization.
 final class TeamMemberRole {
-
   final String value;
 
   const TeamMemberRole._(this.value);
@@ -272,10 +312,13 @@ final class TeamMemberRole {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is TeamMemberRole && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is TeamMemberRole && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

@@ -8,133 +8,198 @@ part of 'git.dart';
 class Blob {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `content` wire field.
   final String content;
+
   /// Required `string` value serialized in the `encoding` wire field.
   final String encoding;
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
+
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
+
   /// Required `integer` value serialized in the `size` wire field.
   final int? size;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// Optional `string` value serialized in the `highlighted_content` wire field.
   final SdkOptional<String> highlightedContent;
 
-  const Blob({required this.content, required this.encoding, required this.url, required this.sha, required this.size, required this.nodeId, this.highlightedContent = const SdkOmitted()});
+  const Blob(
+      {required this.content,
+      required this.encoding,
+      required this.url,
+      required this.sha,
+      required this.size,
+      required this.nodeId,
+      this.highlightedContent = const SdkOmitted()});
 
-  Blob Function({String content, String encoding, String url, String sha, int? size, String nodeId, SdkOptional<String> highlightedContent}) get copyWith => _copyWith;
+  Blob Function(
+      {String content,
+      String encoding,
+      String url,
+      String sha,
+      int? size,
+      String nodeId,
+      SdkOptional<String> highlightedContent}) get copyWith => _copyWith;
 
-  Blob _copyWith({Object? content = sdkOmittedValue, Object? encoding = sdkOmittedValue, Object? url = sdkOmittedValue, Object? sha = sdkOmittedValue, Object? size = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? highlightedContent = sdkOmittedValue}) => Blob(
-    content: identical(content, sdkOmittedValue) ? this.content : content as String,
-    encoding: identical(encoding, sdkOmittedValue) ? this.encoding : encoding as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-    size: identical(size, sdkOmittedValue) ? this.size : size as int?,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    highlightedContent: identical(highlightedContent, sdkOmittedValue) ? this.highlightedContent : highlightedContent as SdkOptional<String>,
-  );
+  Blob _copyWith(
+          {Object? content = sdkOmittedValue,
+          Object? encoding = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? sha = sdkOmittedValue,
+          Object? size = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? highlightedContent = sdkOmittedValue}) =>
+      Blob(
+        content: identical(content, sdkOmittedValue)
+            ? this.content
+            : content as String,
+        encoding: identical(encoding, sdkOmittedValue)
+            ? this.encoding
+            : encoding as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+        size: identical(size, sdkOmittedValue) ? this.size : size as int?,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        highlightedContent: identical(highlightedContent, sdkOmittedValue)
+            ? this.highlightedContent
+            : highlightedContent as SdkOptional<String>,
+      );
 
   factory Blob.fromJson(Map<String, dynamic> json) => Blob(
-    content: (json['content'] as String?)!,
-    encoding: (json['encoding'] as String?)!,
-    url: (json['url'] as String?)!,
-    sha: (json['sha'] as String?)!,
-    size: json.containsKey('size') ? (json['size'] as num?)?.toInt() : throw ArgumentError.value(null, 'size', 'Required property is missing'),
-    nodeId: (json['node_id'] as String?)!,
-    highlightedContent: json['highlighted_content'] != null ? SdkPresent((json['highlighted_content'] as String?)!) : const SdkOmitted(),
-  );
+        content: (json['content'] as String?)!,
+        encoding: (json['encoding'] as String?)!,
+        url: (json['url'] as String?)!,
+        sha: (json['sha'] as String?)!,
+        size: json.containsKey('size')
+            ? (json['size'] as num?)?.toInt()
+            : throw ArgumentError.value(
+                null, 'size', 'Required property is missing'),
+        nodeId: (json['node_id'] as String?)!,
+        highlightedContent: json['highlighted_content'] != null
+            ? SdkPresent((json['highlighted_content'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'content': content,
-    'encoding': encoding,
-    'url': url,
-    'sha': sha,
-    'size': size,
-    'node_id': nodeId,
-    ...switch (highlightedContent) {
-      SdkPresent<String>(value: final value) => {'highlighted_content': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'content': content,
+        'encoding': encoding,
+        'url': url,
+        'sha': sha,
+        'size': size,
+        'node_id': nodeId,
+        ...switch (highlightedContent) {
+          SdkPresent<String>(value: final value) => {
+              'highlighted_content': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Identifying information for the git-user
 class GitCommitAuthor {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Timestamp of the commit
   final String date;
+
   /// Git email address of the user
   final String email;
+
   /// Name of the git user
   final String name;
 
-  const GitCommitAuthor({required this.date, required this.email, required this.name});
+  const GitCommitAuthor(
+      {required this.date, required this.email, required this.name});
 
-  GitCommitAuthor Function({String date, String email, String name}) get copyWith => _copyWith;
+  GitCommitAuthor Function({String date, String email, String name})
+      get copyWith => _copyWith;
 
-  GitCommitAuthor _copyWith({Object? date = sdkOmittedValue, Object? email = sdkOmittedValue, Object? name = sdkOmittedValue}) => GitCommitAuthor(
-    date: identical(date, sdkOmittedValue) ? this.date : date as String,
-    email: identical(email, sdkOmittedValue) ? this.email : email as String,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-  );
+  GitCommitAuthor _copyWith(
+          {Object? date = sdkOmittedValue,
+          Object? email = sdkOmittedValue,
+          Object? name = sdkOmittedValue}) =>
+      GitCommitAuthor(
+        date: identical(date, sdkOmittedValue) ? this.date : date as String,
+        email: identical(email, sdkOmittedValue) ? this.email : email as String,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+      );
 
-  factory GitCommitAuthor.fromJson(Map<String, dynamic> json) => GitCommitAuthor(
-    date: (json['date'] as String?)!,
-    email: (json['email'] as String?)!,
-    name: (json['name'] as String?)!,
-  );
+  factory GitCommitAuthor.fromJson(Map<String, dynamic> json) =>
+      GitCommitAuthor(
+        date: (json['date'] as String?)!,
+        email: (json['email'] as String?)!,
+        name: (json['name'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'date': date,
-    'email': email,
-    'name': name,
-  };
+        'date': date,
+        'email': email,
+        'name': name,
+      };
 }
 
 /// Identifying information for the git-user
 class GitCommitCommitter {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Timestamp of the commit
   final String date;
+
   /// Git email address of the user
   final String email;
+
   /// Name of the git user
   final String name;
 
-  const GitCommitCommitter({required this.date, required this.email, required this.name});
+  const GitCommitCommitter(
+      {required this.date, required this.email, required this.name});
 
-  GitCommitCommitter Function({String date, String email, String name}) get copyWith => _copyWith;
+  GitCommitCommitter Function({String date, String email, String name})
+      get copyWith => _copyWith;
 
-  GitCommitCommitter _copyWith({Object? date = sdkOmittedValue, Object? email = sdkOmittedValue, Object? name = sdkOmittedValue}) => GitCommitCommitter(
-    date: identical(date, sdkOmittedValue) ? this.date : date as String,
-    email: identical(email, sdkOmittedValue) ? this.email : email as String,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-  );
+  GitCommitCommitter _copyWith(
+          {Object? date = sdkOmittedValue,
+          Object? email = sdkOmittedValue,
+          Object? name = sdkOmittedValue}) =>
+      GitCommitCommitter(
+        date: identical(date, sdkOmittedValue) ? this.date : date as String,
+        email: identical(email, sdkOmittedValue) ? this.email : email as String,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+      );
 
-  factory GitCommitCommitter.fromJson(Map<String, dynamic> json) => GitCommitCommitter(
-    date: (json['date'] as String?)!,
-    email: (json['email'] as String?)!,
-    name: (json['name'] as String?)!,
-  );
+  factory GitCommitCommitter.fromJson(Map<String, dynamic> json) =>
+      GitCommitCommitter(
+        date: (json['date'] as String?)!,
+        email: (json['email'] as String?)!,
+        name: (json['name'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'date': date,
-    'email': email,
-    'name': name,
-  };
+        'date': date,
+        'email': email,
+        'name': name,
+      };
 }
 
 /// Required object value serialized in the `tree` wire field.
 class GitCommitTree {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// SHA for the commit
   final String sha;
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
 
@@ -142,96 +207,150 @@ class GitCommitTree {
 
   GitCommitTree Function({String sha, String url}) get copyWith => _copyWith;
 
-  GitCommitTree _copyWith({Object? sha = sdkOmittedValue, Object? url = sdkOmittedValue}) => GitCommitTree(
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  GitCommitTree _copyWith(
+          {Object? sha = sdkOmittedValue, Object? url = sdkOmittedValue}) =>
+      GitCommitTree(
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
   factory GitCommitTree.fromJson(Map<String, dynamic> json) => GitCommitTree(
-    sha: (json['sha'] as String?)!,
-    url: (json['url'] as String?)!,
-  );
+        sha: (json['sha'] as String?)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'sha': sha,
-    'url': url,
-  };
+        'sha': sha,
+        'url': url,
+      };
 }
 
 /// Required object value serialized in the `verification` wire field.
 class GitCommitVerification {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `boolean` value serialized in the `verified` wire field.
   final bool verified;
+
   /// Required `string` value serialized in the `reason` wire field.
   final String reason;
+
   /// Required `string` value serialized in the `signature` wire field.
   final String? signature;
+
   /// Required `string` value serialized in the `payload` wire field.
   final String? payload;
+
   /// Required `string` value serialized in the `verified_at` wire field.
   final String? verifiedAt;
 
-  const GitCommitVerification({required this.verified, required this.reason, required this.signature, required this.payload, required this.verifiedAt});
+  const GitCommitVerification(
+      {required this.verified,
+      required this.reason,
+      required this.signature,
+      required this.payload,
+      required this.verifiedAt});
 
-  GitCommitVerification Function({bool verified, String reason, String? signature, String? payload, String? verifiedAt}) get copyWith => _copyWith;
+  GitCommitVerification Function(
+      {bool verified,
+      String reason,
+      String? signature,
+      String? payload,
+      String? verifiedAt}) get copyWith => _copyWith;
 
-  GitCommitVerification _copyWith({Object? verified = sdkOmittedValue, Object? reason = sdkOmittedValue, Object? signature = sdkOmittedValue, Object? payload = sdkOmittedValue, Object? verifiedAt = sdkOmittedValue}) => GitCommitVerification(
-    verified: identical(verified, sdkOmittedValue) ? this.verified : verified as bool,
-    reason: identical(reason, sdkOmittedValue) ? this.reason : reason as String,
-    signature: identical(signature, sdkOmittedValue) ? this.signature : signature as String?,
-    payload: identical(payload, sdkOmittedValue) ? this.payload : payload as String?,
-    verifiedAt: identical(verifiedAt, sdkOmittedValue) ? this.verifiedAt : verifiedAt as String?,
-  );
+  GitCommitVerification _copyWith(
+          {Object? verified = sdkOmittedValue,
+          Object? reason = sdkOmittedValue,
+          Object? signature = sdkOmittedValue,
+          Object? payload = sdkOmittedValue,
+          Object? verifiedAt = sdkOmittedValue}) =>
+      GitCommitVerification(
+        verified: identical(verified, sdkOmittedValue)
+            ? this.verified
+            : verified as bool,
+        reason:
+            identical(reason, sdkOmittedValue) ? this.reason : reason as String,
+        signature: identical(signature, sdkOmittedValue)
+            ? this.signature
+            : signature as String?,
+        payload: identical(payload, sdkOmittedValue)
+            ? this.payload
+            : payload as String?,
+        verifiedAt: identical(verifiedAt, sdkOmittedValue)
+            ? this.verifiedAt
+            : verifiedAt as String?,
+      );
 
-  factory GitCommitVerification.fromJson(Map<String, dynamic> json) => GitCommitVerification(
-    verified: (json['verified'] as bool?)!,
-    reason: (json['reason'] as String?)!,
-    signature: json.containsKey('signature') ? json['signature'] as String? : throw ArgumentError.value(null, 'signature', 'Required property is missing'),
-    payload: json.containsKey('payload') ? json['payload'] as String? : throw ArgumentError.value(null, 'payload', 'Required property is missing'),
-    verifiedAt: json.containsKey('verified_at') ? json['verified_at'] as String? : throw ArgumentError.value(null, 'verified_at', 'Required property is missing'),
-  );
+  factory GitCommitVerification.fromJson(Map<String, dynamic> json) =>
+      GitCommitVerification(
+        verified: (json['verified'] as bool?)!,
+        reason: (json['reason'] as String?)!,
+        signature: json.containsKey('signature')
+            ? json['signature'] as String?
+            : throw ArgumentError.value(
+                null, 'signature', 'Required property is missing'),
+        payload: json.containsKey('payload')
+            ? json['payload'] as String?
+            : throw ArgumentError.value(
+                null, 'payload', 'Required property is missing'),
+        verifiedAt: json.containsKey('verified_at')
+            ? json['verified_at'] as String?
+            : throw ArgumentError.value(
+                null, 'verified_at', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'verified': verified,
-    'reason': reason,
-    'signature': signature,
-    'payload': payload,
-    'verified_at': verifiedAt,
-  };
+        'verified': verified,
+        'reason': reason,
+        'signature': signature,
+        'payload': payload,
+        'verified_at': verifiedAt,
+      };
 }
 
 /// Required object value serialized in the `parents[]` wire field.
 class GitCommitParentsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// SHA for the commit
   final String sha;
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
+
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String htmlUrl;
 
-  const GitCommitParentsItem({required this.sha, required this.url, required this.htmlUrl});
+  const GitCommitParentsItem(
+      {required this.sha, required this.url, required this.htmlUrl});
 
-  GitCommitParentsItem Function({String sha, String url, String htmlUrl}) get copyWith => _copyWith;
+  GitCommitParentsItem Function({String sha, String url, String htmlUrl})
+      get copyWith => _copyWith;
 
-  GitCommitParentsItem _copyWith({Object? sha = sdkOmittedValue, Object? url = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue}) => GitCommitParentsItem(
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
-  );
+  GitCommitParentsItem _copyWith(
+          {Object? sha = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue}) =>
+      GitCommitParentsItem(
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as String,
+      );
 
-  factory GitCommitParentsItem.fromJson(Map<String, dynamic> json) => GitCommitParentsItem(
-    sha: (json['sha'] as String?)!,
-    url: (json['url'] as String?)!,
-    htmlUrl: (json['html_url'] as String?)!,
-  );
+  factory GitCommitParentsItem.fromJson(Map<String, dynamic> json) =>
+      GitCommitParentsItem(
+        sha: (json['sha'] as String?)!,
+        url: (json['url'] as String?)!,
+        htmlUrl: (json['html_url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'sha': sha,
-    'url': url,
-    'html_url': htmlUrl,
-  };
+        'sha': sha,
+        'url': url,
+        'html_url': htmlUrl,
+      };
 }

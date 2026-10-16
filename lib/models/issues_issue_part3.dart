@@ -8,6 +8,7 @@ part of 'issues_issue.dart';
 class IssueEventMilestone {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `title` wire field.
   final String title;
 
@@ -15,77 +16,119 @@ class IssueEventMilestone {
 
   IssueEventMilestone Function({String title}) get copyWith => _copyWith;
 
-  IssueEventMilestone _copyWith({Object? title = sdkOmittedValue}) => IssueEventMilestone(
-    title: identical(title, sdkOmittedValue) ? this.title : title as String,
-  );
+  IssueEventMilestone _copyWith({Object? title = sdkOmittedValue}) =>
+      IssueEventMilestone(
+        title: identical(title, sdkOmittedValue) ? this.title : title as String,
+      );
 
-  factory IssueEventMilestone.fromJson(Map<String, dynamic> json) => IssueEventMilestone(
-    title: (json['title'] as String?)!,
-  );
+  factory IssueEventMilestone.fromJson(Map<String, dynamic> json) =>
+      IssueEventMilestone(
+        title: (json['title'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'title': title,
-  };
+        'title': title,
+      };
 }
 
 /// Issue Event Project Card
 class IssueEventProjectCard {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
+
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
+
   /// Required `uri`-formatted value serialized in the `project_url` wire field.
   final String projectUrl;
+
   /// Required `integer` value serialized in the `project_id` wire field.
   final int projectId;
+
   /// Required `string` value serialized in the `column_name` wire field.
   final String columnName;
+
   /// Optional `string` value serialized in the `previous_column_name` wire field.
   final SdkOptional<String> previousColumnName;
 
-  const IssueEventProjectCard({required this.url, required this.id, required this.projectUrl, required this.projectId, required this.columnName, this.previousColumnName = const SdkOmitted()});
+  const IssueEventProjectCard(
+      {required this.url,
+      required this.id,
+      required this.projectUrl,
+      required this.projectId,
+      required this.columnName,
+      this.previousColumnName = const SdkOmitted()});
 
-  IssueEventProjectCard Function({String url, int id, String projectUrl, int projectId, String columnName, SdkOptional<String> previousColumnName}) get copyWith => _copyWith;
+  IssueEventProjectCard Function(
+      {String url,
+      int id,
+      String projectUrl,
+      int projectId,
+      String columnName,
+      SdkOptional<String> previousColumnName}) get copyWith => _copyWith;
 
-  IssueEventProjectCard _copyWith({Object? url = sdkOmittedValue, Object? id = sdkOmittedValue, Object? projectUrl = sdkOmittedValue, Object? projectId = sdkOmittedValue, Object? columnName = sdkOmittedValue, Object? previousColumnName = sdkOmittedValue}) => IssueEventProjectCard(
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    projectUrl: identical(projectUrl, sdkOmittedValue) ? this.projectUrl : projectUrl as String,
-    projectId: identical(projectId, sdkOmittedValue) ? this.projectId : projectId as int,
-    columnName: identical(columnName, sdkOmittedValue) ? this.columnName : columnName as String,
-    previousColumnName: identical(previousColumnName, sdkOmittedValue) ? this.previousColumnName : previousColumnName as SdkOptional<String>,
-  );
+  IssueEventProjectCard _copyWith(
+          {Object? url = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? projectUrl = sdkOmittedValue,
+          Object? projectId = sdkOmittedValue,
+          Object? columnName = sdkOmittedValue,
+          Object? previousColumnName = sdkOmittedValue}) =>
+      IssueEventProjectCard(
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        projectUrl: identical(projectUrl, sdkOmittedValue)
+            ? this.projectUrl
+            : projectUrl as String,
+        projectId: identical(projectId, sdkOmittedValue)
+            ? this.projectId
+            : projectId as int,
+        columnName: identical(columnName, sdkOmittedValue)
+            ? this.columnName
+            : columnName as String,
+        previousColumnName: identical(previousColumnName, sdkOmittedValue)
+            ? this.previousColumnName
+            : previousColumnName as SdkOptional<String>,
+      );
 
-  factory IssueEventProjectCard.fromJson(Map<String, dynamic> json) => IssueEventProjectCard(
-    url: (json['url'] as String?)!,
-    id: ((json['id'] as num?)?.toInt())!,
-    projectUrl: (json['project_url'] as String?)!,
-    projectId: ((json['project_id'] as num?)?.toInt())!,
-    columnName: (json['column_name'] as String?)!,
-    previousColumnName: json['previous_column_name'] != null ? SdkPresent((json['previous_column_name'] as String?)!) : const SdkOmitted(),
-  );
+  factory IssueEventProjectCard.fromJson(Map<String, dynamic> json) =>
+      IssueEventProjectCard(
+        url: (json['url'] as String?)!,
+        id: ((json['id'] as num?)?.toInt())!,
+        projectUrl: (json['project_url'] as String?)!,
+        projectId: ((json['project_id'] as num?)?.toInt())!,
+        columnName: (json['column_name'] as String?)!,
+        previousColumnName: json['previous_column_name'] != null
+            ? SdkPresent((json['previous_column_name'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'url': url,
-    'id': id,
-    'project_url': projectUrl,
-    'project_id': projectId,
-    'column_name': columnName,
-    ...switch (previousColumnName) {
-      SdkPresent<String>(value: final value) => {'previous_column_name': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'url': url,
+        'id': id,
+        'project_url': projectUrl,
+        'project_id': projectId,
+        'column_name': columnName,
+        ...switch (previousColumnName) {
+          SdkPresent<String>(value: final value) => {
+              'previous_column_name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Issue Event Rename
 class IssueEventRename {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `from` wire field.
   final String from;
+
   /// Required `string` value serialized in the `to` wire field.
   final String to;
 
@@ -93,20 +136,23 @@ class IssueEventRename {
 
   IssueEventRename Function({String from, String to}) get copyWith => _copyWith;
 
-  IssueEventRename _copyWith({Object? from = sdkOmittedValue, Object? to = sdkOmittedValue}) => IssueEventRename(
-    from: identical(from, sdkOmittedValue) ? this.from : from as String,
-    to: identical(to, sdkOmittedValue) ? this.to : to as String,
-  );
+  IssueEventRename _copyWith(
+          {Object? from = sdkOmittedValue, Object? to = sdkOmittedValue}) =>
+      IssueEventRename(
+        from: identical(from, sdkOmittedValue) ? this.from : from as String,
+        to: identical(to, sdkOmittedValue) ? this.to : to as String,
+      );
 
-  factory IssueEventRename.fromJson(Map<String, dynamic> json) => IssueEventRename(
-    from: (json['from'] as String?)!,
-    to: (json['to'] as String?)!,
-  );
+  factory IssueEventRename.fromJson(Map<String, dynamic> json) =>
+      IssueEventRename(
+        from: (json['from'] as String?)!,
+        to: (json['to'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'from': from,
-    'to': to,
-  };
+        'from': from,
+        'to': to,
+      };
 }
 
 sealed class IssueSuggestionTargetValue {
@@ -114,119 +160,240 @@ sealed class IssueSuggestionTargetValue {
   static const String constructionSurface = 'named';
   const IssueSuggestionTargetValue();
   factory IssueSuggestionTargetValue.fromJson(Object? json) {
-    if (json is String) { return IssueSuggestionTargetValueString(json); }
-    if (json is num) { return IssueSuggestionTargetValueDouble(json.toDouble()); }
-    if (json is bool) { return IssueSuggestionTargetValueBool(json); }
-    if (json is List) { return IssueSuggestionTargetValueListString(json.map((e) => e as String).toList().cast<String>()); }
+    if (json is String) {
+      return IssueSuggestionTargetValueString(json);
+    }
+    if (json is num) {
+      return IssueSuggestionTargetValueDouble(json.toDouble());
+    }
+    if (json is bool) {
+      return IssueSuggestionTargetValueBool(json);
+    }
+    if (json is List) {
+      return IssueSuggestionTargetValueListString(
+          json.map((e) => e as String).toList().cast<String>());
+    }
     throw FormatException("No variant matched for IssueSuggestionTargetValue");
   }
   Object? toJson();
 }
 
-final class IssueSuggestionTargetValueString extends IssueSuggestionTargetValue {
+final class IssueSuggestionTargetValueString
+    extends IssueSuggestionTargetValue {
   final String value;
   const IssueSuggestionTargetValueString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
-final class IssueSuggestionTargetValueDouble extends IssueSuggestionTargetValue {
+final class IssueSuggestionTargetValueDouble
+    extends IssueSuggestionTargetValue {
   final double value;
   const IssueSuggestionTargetValueDouble(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 final class IssueSuggestionTargetValueBool extends IssueSuggestionTargetValue {
   final bool value;
   const IssueSuggestionTargetValueBool(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
-final class IssueSuggestionTargetValueListString extends IssueSuggestionTargetValue {
+final class IssueSuggestionTargetValueListString
+    extends IssueSuggestionTargetValue {
   final List<String> value;
   const IssueSuggestionTargetValueListString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 /// An agent-proposed change to an issue that a maintainer can approve or dismiss.
 class IssueSuggestion {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The unique identifier of the suggestion.
   final int id;
+
   /// The unique identifier of the issue the suggestion applies to.
   final int issueId;
+
   /// The kind of change proposed.
   final IssueSuggestionAction action;
+
   /// The suggestion's lifecycle state.
   final IssueSuggestionState state;
+
   /// The identifier of the target the change applies to (issue type, label, field, assignee, or duplicate issue), when applicable.
   final int? targetId;
+
   /// The proposed value, when applicable. An array for multi-select field suggestions.
   final dynamic targetValue;
+
   /// The rationale the actor provided for the suggestion.
   final String? rationale;
+
   /// The actor's confidence level in the suggestion.
   final IssueSuggestionConfidence? confidence;
+
   /// The unique identifier of the actor that proposed the suggestion.
   final int? actorId;
+
   /// The identifier of the timeline event created when the suggestion was approved, when applicable.
   final int? issueEventId;
+
   /// The unique identifier of the user who approved or dismissed the suggestion.
   final int? resolvedBy;
+
   /// The time the suggestion was created.
   final String createdAt;
+
   /// The time the suggestion was last updated.
   final String updatedAt;
 
-  const IssueSuggestion({required this.id, required this.issueId, required this.action, required this.state, required this.targetId, required this.targetValue, required this.rationale, required this.confidence, required this.actorId, required this.issueEventId, required this.resolvedBy, required this.createdAt, required this.updatedAt});
+  const IssueSuggestion(
+      {required this.id,
+      required this.issueId,
+      required this.action,
+      required this.state,
+      required this.targetId,
+      required this.targetValue,
+      required this.rationale,
+      required this.confidence,
+      required this.actorId,
+      required this.issueEventId,
+      required this.resolvedBy,
+      required this.createdAt,
+      required this.updatedAt});
 
-  IssueSuggestion Function({int id, int issueId, IssueSuggestionAction action, IssueSuggestionState state, int? targetId, dynamic targetValue, String? rationale, IssueSuggestionConfidence? confidence, int? actorId, int? issueEventId, int? resolvedBy, String createdAt, String updatedAt}) get copyWith => _copyWith;
+  IssueSuggestion Function(
+      {int id,
+      int issueId,
+      IssueSuggestionAction action,
+      IssueSuggestionState state,
+      int? targetId,
+      dynamic targetValue,
+      String? rationale,
+      IssueSuggestionConfidence? confidence,
+      int? actorId,
+      int? issueEventId,
+      int? resolvedBy,
+      String createdAt,
+      String updatedAt}) get copyWith => _copyWith;
 
-  IssueSuggestion _copyWith({Object? id = sdkOmittedValue, Object? issueId = sdkOmittedValue, Object? action = sdkOmittedValue, Object? state = sdkOmittedValue, Object? targetId = sdkOmittedValue, Object? targetValue = sdkOmittedValue, Object? rationale = sdkOmittedValue, Object? confidence = sdkOmittedValue, Object? actorId = sdkOmittedValue, Object? issueEventId = sdkOmittedValue, Object? resolvedBy = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue}) => IssueSuggestion(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    issueId: identical(issueId, sdkOmittedValue) ? this.issueId : issueId as int,
-    action: identical(action, sdkOmittedValue) ? this.action : action as IssueSuggestionAction,
-    state: identical(state, sdkOmittedValue) ? this.state : state as IssueSuggestionState,
-    targetId: identical(targetId, sdkOmittedValue) ? this.targetId : targetId as int?,
-    targetValue: identical(targetValue, sdkOmittedValue) ? this.targetValue : targetValue as dynamic,
-    rationale: identical(rationale, sdkOmittedValue) ? this.rationale : rationale as String?,
-    confidence: identical(confidence, sdkOmittedValue) ? this.confidence : confidence as IssueSuggestionConfidence?,
-    actorId: identical(actorId, sdkOmittedValue) ? this.actorId : actorId as int?,
-    issueEventId: identical(issueEventId, sdkOmittedValue) ? this.issueEventId : issueEventId as int?,
-    resolvedBy: identical(resolvedBy, sdkOmittedValue) ? this.resolvedBy : resolvedBy as int?,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
-  );
+  IssueSuggestion _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? issueId = sdkOmittedValue,
+          Object? action = sdkOmittedValue,
+          Object? state = sdkOmittedValue,
+          Object? targetId = sdkOmittedValue,
+          Object? targetValue = sdkOmittedValue,
+          Object? rationale = sdkOmittedValue,
+          Object? confidence = sdkOmittedValue,
+          Object? actorId = sdkOmittedValue,
+          Object? issueEventId = sdkOmittedValue,
+          Object? resolvedBy = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue}) =>
+      IssueSuggestion(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        issueId:
+            identical(issueId, sdkOmittedValue) ? this.issueId : issueId as int,
+        action: identical(action, sdkOmittedValue)
+            ? this.action
+            : action as IssueSuggestionAction,
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state as IssueSuggestionState,
+        targetId: identical(targetId, sdkOmittedValue)
+            ? this.targetId
+            : targetId as int?,
+        targetValue: identical(targetValue, sdkOmittedValue)
+            ? this.targetValue
+            : targetValue as dynamic,
+        rationale: identical(rationale, sdkOmittedValue)
+            ? this.rationale
+            : rationale as String?,
+        confidence: identical(confidence, sdkOmittedValue)
+            ? this.confidence
+            : confidence as IssueSuggestionConfidence?,
+        actorId: identical(actorId, sdkOmittedValue)
+            ? this.actorId
+            : actorId as int?,
+        issueEventId: identical(issueEventId, sdkOmittedValue)
+            ? this.issueEventId
+            : issueEventId as int?,
+        resolvedBy: identical(resolvedBy, sdkOmittedValue)
+            ? this.resolvedBy
+            : resolvedBy as int?,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+      );
 
-  factory IssueSuggestion.fromJson(Map<String, dynamic> json) => IssueSuggestion(
-    id: ((json['id'] as num?)?.toInt())!,
-    issueId: ((json['issue_id'] as num?)?.toInt())!,
-    action: (json['action'] != null ? IssueSuggestionAction.fromJson(json['action'] as String) : null)!,
-    state: (json['state'] != null ? IssueSuggestionState.fromJson(json['state'] as String) : null)!,
-    targetId: json.containsKey('target_id') ? (json['target_id'] as num?)?.toInt() : throw ArgumentError.value(null, 'target_id', 'Required property is missing'),
-    targetValue: json.containsKey('target_value') ? json['target_value'] : throw ArgumentError.value(null, 'target_value', 'Required property is missing'),
-    rationale: json.containsKey('rationale') ? json['rationale'] as String? : throw ArgumentError.value(null, 'rationale', 'Required property is missing'),
-    confidence: json.containsKey('confidence') ? json['confidence'] != null ? IssueSuggestionConfidence.fromJson(json['confidence'] as String) : null : throw ArgumentError.value(null, 'confidence', 'Required property is missing'),
-    actorId: json.containsKey('actor_id') ? (json['actor_id'] as num?)?.toInt() : throw ArgumentError.value(null, 'actor_id', 'Required property is missing'),
-    issueEventId: json.containsKey('issue_event_id') ? (json['issue_event_id'] as num?)?.toInt() : throw ArgumentError.value(null, 'issue_event_id', 'Required property is missing'),
-    resolvedBy: json.containsKey('resolved_by') ? (json['resolved_by'] as num?)?.toInt() : throw ArgumentError.value(null, 'resolved_by', 'Required property is missing'),
-    createdAt: (json['created_at'] as String?)!,
-    updatedAt: (json['updated_at'] as String?)!,
-  );
+  factory IssueSuggestion.fromJson(Map<String, dynamic> json) =>
+      IssueSuggestion(
+        id: ((json['id'] as num?)?.toInt())!,
+        issueId: ((json['issue_id'] as num?)?.toInt())!,
+        action: (json['action'] != null
+            ? IssueSuggestionAction.fromJson(json['action'] as String)
+            : null)!,
+        state: (json['state'] != null
+            ? IssueSuggestionState.fromJson(json['state'] as String)
+            : null)!,
+        targetId: json.containsKey('target_id')
+            ? (json['target_id'] as num?)?.toInt()
+            : throw ArgumentError.value(
+                null, 'target_id', 'Required property is missing'),
+        targetValue: json.containsKey('target_value')
+            ? json['target_value']
+            : throw ArgumentError.value(
+                null, 'target_value', 'Required property is missing'),
+        rationale: json.containsKey('rationale')
+            ? json['rationale'] as String?
+            : throw ArgumentError.value(
+                null, 'rationale', 'Required property is missing'),
+        confidence: json.containsKey('confidence')
+            ? json['confidence'] != null
+                ? IssueSuggestionConfidence.fromJson(
+                    json['confidence'] as String)
+                : null
+            : throw ArgumentError.value(
+                null, 'confidence', 'Required property is missing'),
+        actorId: json.containsKey('actor_id')
+            ? (json['actor_id'] as num?)?.toInt()
+            : throw ArgumentError.value(
+                null, 'actor_id', 'Required property is missing'),
+        issueEventId: json.containsKey('issue_event_id')
+            ? (json['issue_event_id'] as num?)?.toInt()
+            : throw ArgumentError.value(
+                null, 'issue_event_id', 'Required property is missing'),
+        resolvedBy: json.containsKey('resolved_by')
+            ? (json['resolved_by'] as num?)?.toInt()
+            : throw ArgumentError.value(
+                null, 'resolved_by', 'Required property is missing'),
+        createdAt: (json['created_at'] as String?)!,
+        updatedAt: (json['updated_at'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'issue_id': issueId,
-    'action': action.toJson(),
-    'state': state.toJson(),
-    'target_id': targetId,
-    'target_value': targetValue,
-    'rationale': rationale,
-    'confidence': confidence?.toJson(),
-    'actor_id': actorId,
-    'issue_event_id': issueEventId,
-    'resolved_by': resolvedBy,
-    'created_at': createdAt,
-    'updated_at': updatedAt,
-  };
+        'id': id,
+        'issue_id': issueId,
+        'action': action.toJson(),
+        'state': state.toJson(),
+        'target_id': targetId,
+        'target_value': targetValue,
+        'rationale': rationale,
+        'confidence': confidence?.toJson(),
+        'actor_id': actorId,
+        'issue_event_id': issueEventId,
+        'resolved_by': resolvedBy,
+        'created_at': createdAt,
+        'updated_at': updatedAt,
+      };
 }

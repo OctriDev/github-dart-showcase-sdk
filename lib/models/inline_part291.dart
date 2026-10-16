@@ -6,276 +6,374 @@ part of 'inline.dart';
 // Inline operation models (part 291)
 /// The type of resource.
 final class CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType {
-
   final String value;
 
-  const CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType._(this.value);
+  const CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType._(
+      this.value);
 
-  factory CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType.fromJson(String value) => CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType._(value);
+  factory CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType.fromJson(
+          String value) =>
+      CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType
+          ._(value);
 
-  static const repository = CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType._('repository');
-  static const githubFile = CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType._('github_file');
-  static const freeText = CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType._('free_text');
-  static const githubIssue = CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType._('github_issue');
-  static const githubPullRequest = CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType._('github_pull_request');
-  static const mediaContent = CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType._('media_content');
-  static const uploadedTextFile = CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType._('uploaded_text_file');
+  static const repository =
+      CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType
+          ._('repository');
+  static const githubFile =
+      CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType
+          ._('github_file');
+  static const freeText =
+      CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType
+          ._('free_text');
+  static const githubIssue =
+      CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType
+          ._('github_issue');
+  static const githubPullRequest =
+      CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType
+          ._('github_pull_request');
+  static const mediaContent =
+      CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType
+          ._('media_content');
+  static const uploadedTextFile =
+      CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType
+          ._('uploaded_text_file');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The type of actor (must be `User` for user-owned spaces; `Team` will be rejected).
 final class CopilotSpacesAddCollaboratorForUserRequestBodyActorType {
-
   final String value;
 
   const CopilotSpacesAddCollaboratorForUserRequestBodyActorType._(this.value);
 
-  factory CopilotSpacesAddCollaboratorForUserRequestBodyActorType.fromJson(String value) => CopilotSpacesAddCollaboratorForUserRequestBodyActorType._(value);
+  factory CopilotSpacesAddCollaboratorForUserRequestBodyActorType.fromJson(
+          String value) =>
+      CopilotSpacesAddCollaboratorForUserRequestBodyActorType._(value);
 
-  static const user = CopilotSpacesAddCollaboratorForUserRequestBodyActorType._('User');
-  static const team = CopilotSpacesAddCollaboratorForUserRequestBodyActorType._('Team');
+  static const user =
+      CopilotSpacesAddCollaboratorForUserRequestBodyActorType._('User');
+  static const team =
+      CopilotSpacesAddCollaboratorForUserRequestBodyActorType._('Team');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CopilotSpacesAddCollaboratorForUserRequestBodyActorType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CopilotSpacesAddCollaboratorForUserRequestBodyActorType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The role to grant to the collaborator.
 final class CopilotSpacesAddCollaboratorForUserRequestBodyRole {
-
   final String value;
 
   const CopilotSpacesAddCollaboratorForUserRequestBodyRole._(this.value);
 
-  factory CopilotSpacesAddCollaboratorForUserRequestBodyRole.fromJson(String value) => CopilotSpacesAddCollaboratorForUserRequestBodyRole._(value);
+  factory CopilotSpacesAddCollaboratorForUserRequestBodyRole.fromJson(
+          String value) =>
+      CopilotSpacesAddCollaboratorForUserRequestBodyRole._(value);
 
-  static const reader = CopilotSpacesAddCollaboratorForUserRequestBodyRole._('reader');
-  static const writer = CopilotSpacesAddCollaboratorForUserRequestBodyRole._('writer');
-  static const admin = CopilotSpacesAddCollaboratorForUserRequestBodyRole._('admin');
+  static const reader =
+      CopilotSpacesAddCollaboratorForUserRequestBodyRole._('reader');
+  static const writer =
+      CopilotSpacesAddCollaboratorForUserRequestBodyRole._('writer');
+  static const admin =
+      CopilotSpacesAddCollaboratorForUserRequestBodyRole._('admin');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CopilotSpacesAddCollaboratorForUserRequestBodyRole && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CopilotSpacesAddCollaboratorForUserRequestBodyRole &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class CopilotSpacesRemoveCollaboratorForUserActorType {
-
   final String value;
 
   const CopilotSpacesRemoveCollaboratorForUserActorType._(this.value);
 
-  factory CopilotSpacesRemoveCollaboratorForUserActorType.fromJson(String value) => CopilotSpacesRemoveCollaboratorForUserActorType._(value);
+  factory CopilotSpacesRemoveCollaboratorForUserActorType.fromJson(
+          String value) =>
+      CopilotSpacesRemoveCollaboratorForUserActorType._(value);
 
   static const user = CopilotSpacesRemoveCollaboratorForUserActorType._('User');
   static const team = CopilotSpacesRemoveCollaboratorForUserActorType._('Team');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CopilotSpacesRemoveCollaboratorForUserActorType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CopilotSpacesRemoveCollaboratorForUserActorType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class CopilotSpacesUpdateCollaboratorForUserActorType {
-
   final String value;
 
   const CopilotSpacesUpdateCollaboratorForUserActorType._(this.value);
 
-  factory CopilotSpacesUpdateCollaboratorForUserActorType.fromJson(String value) => CopilotSpacesUpdateCollaboratorForUserActorType._(value);
+  factory CopilotSpacesUpdateCollaboratorForUserActorType.fromJson(
+          String value) =>
+      CopilotSpacesUpdateCollaboratorForUserActorType._(value);
 
   static const user = CopilotSpacesUpdateCollaboratorForUserActorType._('User');
   static const team = CopilotSpacesUpdateCollaboratorForUserActorType._('Team');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CopilotSpacesUpdateCollaboratorForUserActorType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CopilotSpacesUpdateCollaboratorForUserActorType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The new role to grant to the collaborator. Use `no_access` to remove the collaborator.
 final class CopilotSpacesUpdateCollaboratorForUserRequestBodyRole {
-
   final String value;
 
   const CopilotSpacesUpdateCollaboratorForUserRequestBodyRole._(this.value);
 
-  factory CopilotSpacesUpdateCollaboratorForUserRequestBodyRole.fromJson(String value) => CopilotSpacesUpdateCollaboratorForUserRequestBodyRole._(value);
+  factory CopilotSpacesUpdateCollaboratorForUserRequestBodyRole.fromJson(
+          String value) =>
+      CopilotSpacesUpdateCollaboratorForUserRequestBodyRole._(value);
 
-  static const reader = CopilotSpacesUpdateCollaboratorForUserRequestBodyRole._('reader');
-  static const writer = CopilotSpacesUpdateCollaboratorForUserRequestBodyRole._('writer');
-  static const admin = CopilotSpacesUpdateCollaboratorForUserRequestBodyRole._('admin');
-  static const noAccess = CopilotSpacesUpdateCollaboratorForUserRequestBodyRole._('no_access');
+  static const reader =
+      CopilotSpacesUpdateCollaboratorForUserRequestBodyRole._('reader');
+  static const writer =
+      CopilotSpacesUpdateCollaboratorForUserRequestBodyRole._('writer');
+  static const admin =
+      CopilotSpacesUpdateCollaboratorForUserRequestBodyRole._('admin');
+  static const noAccess =
+      CopilotSpacesUpdateCollaboratorForUserRequestBodyRole._('no_access');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CopilotSpacesUpdateCollaboratorForUserRequestBodyRole && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CopilotSpacesUpdateCollaboratorForUserRequestBodyRole &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The type of resource to create.
 final class CopilotSpacesCreateResourceForUserRequestBodyResourceType {
-
   final String value;
 
   const CopilotSpacesCreateResourceForUserRequestBodyResourceType._(this.value);
 
-  factory CopilotSpacesCreateResourceForUserRequestBodyResourceType.fromJson(String value) => CopilotSpacesCreateResourceForUserRequestBodyResourceType._(value);
+  factory CopilotSpacesCreateResourceForUserRequestBodyResourceType.fromJson(
+          String value) =>
+      CopilotSpacesCreateResourceForUserRequestBodyResourceType._(value);
 
-  static const repository = CopilotSpacesCreateResourceForUserRequestBodyResourceType._('repository');
-  static const githubFile = CopilotSpacesCreateResourceForUserRequestBodyResourceType._('github_file');
-  static const freeText = CopilotSpacesCreateResourceForUserRequestBodyResourceType._('free_text');
-  static const githubIssue = CopilotSpacesCreateResourceForUserRequestBodyResourceType._('github_issue');
-  static const githubPullRequest = CopilotSpacesCreateResourceForUserRequestBodyResourceType._('github_pull_request');
+  static const repository =
+      CopilotSpacesCreateResourceForUserRequestBodyResourceType._('repository');
+  static const githubFile =
+      CopilotSpacesCreateResourceForUserRequestBodyResourceType._(
+          'github_file');
+  static const freeText =
+      CopilotSpacesCreateResourceForUserRequestBodyResourceType._('free_text');
+  static const githubIssue =
+      CopilotSpacesCreateResourceForUserRequestBodyResourceType._(
+          'github_issue');
+  static const githubPullRequest =
+      CopilotSpacesCreateResourceForUserRequestBodyResourceType._(
+          'github_pull_request');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CopilotSpacesCreateResourceForUserRequestBodyResourceType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CopilotSpacesCreateResourceForUserRequestBodyResourceType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class UsersGetContextForUserSubjectType {
-
   final String value;
 
   const UsersGetContextForUserSubjectType._(this.value);
 
-  factory UsersGetContextForUserSubjectType.fromJson(String value) => UsersGetContextForUserSubjectType._(value);
+  factory UsersGetContextForUserSubjectType.fromJson(String value) =>
+      UsersGetContextForUserSubjectType._(value);
 
-  static const organization = UsersGetContextForUserSubjectType._('organization');
+  static const organization =
+      UsersGetContextForUserSubjectType._('organization');
   static const repository = UsersGetContextForUserSubjectType._('repository');
   static const issue = UsersGetContextForUserSubjectType._('issue');
-  static const pullRequest = UsersGetContextForUserSubjectType._('pull_request');
+  static const pullRequest =
+      UsersGetContextForUserSubjectType._('pull_request');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is UsersGetContextForUserSubjectType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is UsersGetContextForUserSubjectType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class PackagesListPackagesForUserPackageType {
-
   final String value;
 
   const PackagesListPackagesForUserPackageType._(this.value);
 
-  factory PackagesListPackagesForUserPackageType.fromJson(String value) => PackagesListPackagesForUserPackageType._(value);
+  factory PackagesListPackagesForUserPackageType.fromJson(String value) =>
+      PackagesListPackagesForUserPackageType._(value);
 
   static const npm = PackagesListPackagesForUserPackageType._('npm');
   static const maven = PackagesListPackagesForUserPackageType._('maven');
   static const rubygems = PackagesListPackagesForUserPackageType._('rubygems');
   static const docker = PackagesListPackagesForUserPackageType._('docker');
   static const nuget = PackagesListPackagesForUserPackageType._('nuget');
-  static const container = PackagesListPackagesForUserPackageType._('container');
+  static const container =
+      PackagesListPackagesForUserPackageType._('container');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PackagesListPackagesForUserPackageType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PackagesListPackagesForUserPackageType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The field's data type.
 final class ProjectsAddFieldForUserRequestBodyVariant0DataType {
-
   final String value;
 
   const ProjectsAddFieldForUserRequestBodyVariant0DataType._(this.value);
 
-  factory ProjectsAddFieldForUserRequestBodyVariant0DataType.fromJson(String value) => ProjectsAddFieldForUserRequestBodyVariant0DataType._(value);
+  factory ProjectsAddFieldForUserRequestBodyVariant0DataType.fromJson(
+          String value) =>
+      ProjectsAddFieldForUserRequestBodyVariant0DataType._(value);
 
-  static const text = ProjectsAddFieldForUserRequestBodyVariant0DataType._('text');
-  static const number = ProjectsAddFieldForUserRequestBodyVariant0DataType._('number');
-  static const date = ProjectsAddFieldForUserRequestBodyVariant0DataType._('date');
+  static const text =
+      ProjectsAddFieldForUserRequestBodyVariant0DataType._('text');
+  static const number =
+      ProjectsAddFieldForUserRequestBodyVariant0DataType._('number');
+  static const date =
+      ProjectsAddFieldForUserRequestBodyVariant0DataType._('date');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ProjectsAddFieldForUserRequestBodyVariant0DataType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ProjectsAddFieldForUserRequestBodyVariant0DataType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The field's data type.
 final class ProjectsAddFieldForUserRequestBodyVariant1DataType {
-
   final String value;
 
   const ProjectsAddFieldForUserRequestBodyVariant1DataType._(this.value);
 
-  factory ProjectsAddFieldForUserRequestBodyVariant1DataType.fromJson(String value) => ProjectsAddFieldForUserRequestBodyVariant1DataType._(value);
+  factory ProjectsAddFieldForUserRequestBodyVariant1DataType.fromJson(
+          String value) =>
+      ProjectsAddFieldForUserRequestBodyVariant1DataType._(value);
 
-  static const singleSelect = ProjectsAddFieldForUserRequestBodyVariant1DataType._('single_select');
+  static const singleSelect =
+      ProjectsAddFieldForUserRequestBodyVariant1DataType._('single_select');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ProjectsAddFieldForUserRequestBodyVariant1DataType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ProjectsAddFieldForUserRequestBodyVariant1DataType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The field's data type.
 final class ProjectsAddFieldForUserRequestBodyVariant2DataType {
-
   final String value;
 
   const ProjectsAddFieldForUserRequestBodyVariant2DataType._(this.value);
 
-  factory ProjectsAddFieldForUserRequestBodyVariant2DataType.fromJson(String value) => ProjectsAddFieldForUserRequestBodyVariant2DataType._(value);
+  factory ProjectsAddFieldForUserRequestBodyVariant2DataType.fromJson(
+          String value) =>
+      ProjectsAddFieldForUserRequestBodyVariant2DataType._(value);
 
-  static const iteration = ProjectsAddFieldForUserRequestBodyVariant2DataType._('iteration');
+  static const iteration =
+      ProjectsAddFieldForUserRequestBodyVariant2DataType._('iteration');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ProjectsAddFieldForUserRequestBodyVariant2DataType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ProjectsAddFieldForUserRequestBodyVariant2DataType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

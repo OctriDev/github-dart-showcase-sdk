@@ -8,281 +8,708 @@ part of 'inline.dart';
 class AgentTasksGetTaskByIdResponseVariant1SessionsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Session ID
   final String id;
+
   /// Session name
   final SdkOptional<String> name;
+
   /// The user who created this session
   final SdkOptional<AgentTasksGetTaskByIdResponseVariant1SessionsItemUser> user;
+
   /// The owner of the repository
-  final SdkOptional<AgentTasksGetTaskByIdResponseVariant1SessionsItemOwner> owner;
+  final SdkOptional<AgentTasksGetTaskByIdResponseVariant1SessionsItemOwner>
+      owner;
+
   /// The repository this session belongs to
-  final SdkOptional<AgentTasksGetTaskByIdResponseVariant1SessionsItemRepository> repository;
+  final SdkOptional<AgentTasksGetTaskByIdResponseVariant1SessionsItemRepository>
+      repository;
+
   /// Task ID this session belongs to
   final SdkOptional<String> taskId;
+
   /// Current state of a session
   final AgentTasksGetTaskByIdResponseVariant1SessionsItemState state;
+
   /// Creation timestamp
   final String createdAt;
+
   /// Last update timestamp
   final SdkOptional<String> updatedAt;
+
   /// Completion timestamp
   final SdkOptional<String> completedAt;
+
   /// Content of the triggering event
   final SdkOptional<String> prompt;
+
   /// Head branch name
   final SdkOptional<String> headRef;
+
   /// Base branch name
   final SdkOptional<String> baseRef;
+
   /// Model used for this session
   final SdkOptional<String> model;
+
   /// Structured information about billing units consumed by the session.
-  final SdkOptional<AgentTasksGetTaskByIdResponseVariant1SessionsItemUsage> usage;
+  final SdkOptional<AgentTasksGetTaskByIdResponseVariant1SessionsItemUsage>
+      usage;
+
   /// Error details for a failed session
-  final SdkOptional<AgentTasksGetTaskByIdResponseVariant1SessionsItemError> error;
+  final SdkOptional<AgentTasksGetTaskByIdResponseVariant1SessionsItemError>
+      error;
 
-  const AgentTasksGetTaskByIdResponseVariant1SessionsItem({required this.id, this.name = const SdkOmitted(), this.user = const SdkOmitted(), this.owner = const SdkOmitted(), this.repository = const SdkOmitted(), this.taskId = const SdkOmitted(), required this.state, required this.createdAt, this.updatedAt = const SdkOmitted(), this.completedAt = const SdkOmitted(), this.prompt = const SdkOmitted(), this.headRef = const SdkOmitted(), this.baseRef = const SdkOmitted(), this.model = const SdkOmitted(), this.usage = const SdkOmitted(), this.error = const SdkOmitted()});
+  const AgentTasksGetTaskByIdResponseVariant1SessionsItem(
+      {required this.id,
+      this.name = const SdkOmitted(),
+      this.user = const SdkOmitted(),
+      this.owner = const SdkOmitted(),
+      this.repository = const SdkOmitted(),
+      this.taskId = const SdkOmitted(),
+      required this.state,
+      required this.createdAt,
+      this.updatedAt = const SdkOmitted(),
+      this.completedAt = const SdkOmitted(),
+      this.prompt = const SdkOmitted(),
+      this.headRef = const SdkOmitted(),
+      this.baseRef = const SdkOmitted(),
+      this.model = const SdkOmitted(),
+      this.usage = const SdkOmitted(),
+      this.error = const SdkOmitted()});
 
-  AgentTasksGetTaskByIdResponseVariant1SessionsItem Function({String id, SdkOptional<String> name, SdkOptional<AgentTasksGetTaskByIdResponseVariant1SessionsItemUser> user, SdkOptional<AgentTasksGetTaskByIdResponseVariant1SessionsItemOwner> owner, SdkOptional<AgentTasksGetTaskByIdResponseVariant1SessionsItemRepository> repository, SdkOptional<String> taskId, AgentTasksGetTaskByIdResponseVariant1SessionsItemState state, String createdAt, SdkOptional<String> updatedAt, SdkOptional<String> completedAt, SdkOptional<String> prompt, SdkOptional<String> headRef, SdkOptional<String> baseRef, SdkOptional<String> model, SdkOptional<AgentTasksGetTaskByIdResponseVariant1SessionsItemUsage> usage, SdkOptional<AgentTasksGetTaskByIdResponseVariant1SessionsItemError> error}) get copyWith => _copyWith;
+  AgentTasksGetTaskByIdResponseVariant1SessionsItem Function(
+      {String id,
+      SdkOptional<String> name,
+      SdkOptional<AgentTasksGetTaskByIdResponseVariant1SessionsItemUser> user,
+      SdkOptional<AgentTasksGetTaskByIdResponseVariant1SessionsItemOwner> owner,
+      SdkOptional<AgentTasksGetTaskByIdResponseVariant1SessionsItemRepository>
+          repository,
+      SdkOptional<String> taskId,
+      AgentTasksGetTaskByIdResponseVariant1SessionsItemState state,
+      String createdAt,
+      SdkOptional<String> updatedAt,
+      SdkOptional<String> completedAt,
+      SdkOptional<String> prompt,
+      SdkOptional<String> headRef,
+      SdkOptional<String> baseRef,
+      SdkOptional<String> model,
+      SdkOptional<AgentTasksGetTaskByIdResponseVariant1SessionsItemUsage> usage,
+      SdkOptional<AgentTasksGetTaskByIdResponseVariant1SessionsItemError>
+          error}) get copyWith => _copyWith;
 
-  AgentTasksGetTaskByIdResponseVariant1SessionsItem _copyWith({Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? user = sdkOmittedValue, Object? owner = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? taskId = sdkOmittedValue, Object? state = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? completedAt = sdkOmittedValue, Object? prompt = sdkOmittedValue, Object? headRef = sdkOmittedValue, Object? baseRef = sdkOmittedValue, Object? model = sdkOmittedValue, Object? usage = sdkOmittedValue, Object? error = sdkOmittedValue}) => AgentTasksGetTaskByIdResponseVariant1SessionsItem(
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    user: identical(user, sdkOmittedValue) ? this.user : user as SdkOptional<AgentTasksGetTaskByIdResponseVariant1SessionsItemUser>,
-    owner: identical(owner, sdkOmittedValue) ? this.owner : owner as SdkOptional<AgentTasksGetTaskByIdResponseVariant1SessionsItemOwner>,
-    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as SdkOptional<AgentTasksGetTaskByIdResponseVariant1SessionsItemRepository>,
-    taskId: identical(taskId, sdkOmittedValue) ? this.taskId : taskId as SdkOptional<String>,
-    state: identical(state, sdkOmittedValue) ? this.state : state as AgentTasksGetTaskByIdResponseVariant1SessionsItemState,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as SdkOptional<String>,
-    completedAt: identical(completedAt, sdkOmittedValue) ? this.completedAt : completedAt as SdkOptional<String>,
-    prompt: identical(prompt, sdkOmittedValue) ? this.prompt : prompt as SdkOptional<String>,
-    headRef: identical(headRef, sdkOmittedValue) ? this.headRef : headRef as SdkOptional<String>,
-    baseRef: identical(baseRef, sdkOmittedValue) ? this.baseRef : baseRef as SdkOptional<String>,
-    model: identical(model, sdkOmittedValue) ? this.model : model as SdkOptional<String>,
-    usage: identical(usage, sdkOmittedValue) ? this.usage : usage as SdkOptional<AgentTasksGetTaskByIdResponseVariant1SessionsItemUsage>,
-    error: identical(error, sdkOmittedValue) ? this.error : error as SdkOptional<AgentTasksGetTaskByIdResponseVariant1SessionsItemError>,
-  );
+  AgentTasksGetTaskByIdResponseVariant1SessionsItem _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? user = sdkOmittedValue,
+          Object? owner = sdkOmittedValue,
+          Object? repository = sdkOmittedValue,
+          Object? taskId = sdkOmittedValue,
+          Object? state = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? completedAt = sdkOmittedValue,
+          Object? prompt = sdkOmittedValue,
+          Object? headRef = sdkOmittedValue,
+          Object? baseRef = sdkOmittedValue,
+          Object? model = sdkOmittedValue,
+          Object? usage = sdkOmittedValue,
+          Object? error = sdkOmittedValue}) =>
+      AgentTasksGetTaskByIdResponseVariant1SessionsItem(
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        user: identical(user, sdkOmittedValue)
+            ? this.user
+            : user as SdkOptional<
+                AgentTasksGetTaskByIdResponseVariant1SessionsItemUser>,
+        owner: identical(owner, sdkOmittedValue)
+            ? this.owner
+            : owner as SdkOptional<
+                AgentTasksGetTaskByIdResponseVariant1SessionsItemOwner>,
+        repository: identical(repository, sdkOmittedValue)
+            ? this.repository
+            : repository as SdkOptional<
+                AgentTasksGetTaskByIdResponseVariant1SessionsItemRepository>,
+        taskId: identical(taskId, sdkOmittedValue)
+            ? this.taskId
+            : taskId as SdkOptional<String>,
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state as AgentTasksGetTaskByIdResponseVariant1SessionsItemState,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as SdkOptional<String>,
+        completedAt: identical(completedAt, sdkOmittedValue)
+            ? this.completedAt
+            : completedAt as SdkOptional<String>,
+        prompt: identical(prompt, sdkOmittedValue)
+            ? this.prompt
+            : prompt as SdkOptional<String>,
+        headRef: identical(headRef, sdkOmittedValue)
+            ? this.headRef
+            : headRef as SdkOptional<String>,
+        baseRef: identical(baseRef, sdkOmittedValue)
+            ? this.baseRef
+            : baseRef as SdkOptional<String>,
+        model: identical(model, sdkOmittedValue)
+            ? this.model
+            : model as SdkOptional<String>,
+        usage: identical(usage, sdkOmittedValue)
+            ? this.usage
+            : usage as SdkOptional<
+                AgentTasksGetTaskByIdResponseVariant1SessionsItemUsage>,
+        error: identical(error, sdkOmittedValue)
+            ? this.error
+            : error as SdkOptional<
+                AgentTasksGetTaskByIdResponseVariant1SessionsItemError>,
+      );
 
-  factory AgentTasksGetTaskByIdResponseVariant1SessionsItem.fromJson(Map<String, dynamic> json) => AgentTasksGetTaskByIdResponseVariant1SessionsItem(
-    id: (json['id'] as String?)!,
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    user: json['user'] != null ? SdkPresent((json['user'] != null ? AgentTasksGetTaskByIdResponseVariant1SessionsItemUser.fromJson(json['user'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    owner: json['owner'] != null ? SdkPresent((json['owner'] != null ? AgentTasksGetTaskByIdResponseVariant1SessionsItemOwner.fromJson(json['owner'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    repository: json['repository'] != null ? SdkPresent((json['repository'] != null ? AgentTasksGetTaskByIdResponseVariant1SessionsItemRepository.fromJson(json['repository'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    taskId: json['task_id'] != null ? SdkPresent((json['task_id'] as String?)!) : const SdkOmitted(),
-    state: (json['state'] != null ? AgentTasksGetTaskByIdResponseVariant1SessionsItemState.fromJson(json['state'] as String) : null)!,
-    createdAt: (json['created_at'] as String?)!,
-    updatedAt: json['updated_at'] != null ? SdkPresent((json['updated_at'] as String?)!) : const SdkOmitted(),
-    completedAt: json['completed_at'] != null ? SdkPresent((json['completed_at'] as String?)!) : const SdkOmitted(),
-    prompt: json['prompt'] != null ? SdkPresent((json['prompt'] as String?)!) : const SdkOmitted(),
-    headRef: json['head_ref'] != null ? SdkPresent((json['head_ref'] as String?)!) : const SdkOmitted(),
-    baseRef: json['base_ref'] != null ? SdkPresent((json['base_ref'] as String?)!) : const SdkOmitted(),
-    model: json['model'] != null ? SdkPresent((json['model'] as String?)!) : const SdkOmitted(),
-    usage: json['usage'] != null ? SdkPresent((json['usage'] != null ? AgentTasksGetTaskByIdResponseVariant1SessionsItemUsage.fromJson(json['usage'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    error: json['error'] != null ? SdkPresent((json['error'] != null ? AgentTasksGetTaskByIdResponseVariant1SessionsItemError.fromJson(json['error'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-  );
+  factory AgentTasksGetTaskByIdResponseVariant1SessionsItem.fromJson(
+          Map<String, dynamic> json) =>
+      AgentTasksGetTaskByIdResponseVariant1SessionsItem(
+        id: (json['id'] as String?)!,
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+        user: json['user'] != null
+            ? SdkPresent((json['user'] != null
+                ? AgentTasksGetTaskByIdResponseVariant1SessionsItemUser
+                    .fromJson(json['user'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        owner: json['owner'] != null
+            ? SdkPresent((json['owner'] != null
+                ? AgentTasksGetTaskByIdResponseVariant1SessionsItemOwner
+                    .fromJson(json['owner'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        repository: json['repository'] != null
+            ? SdkPresent((json['repository'] != null
+                ? AgentTasksGetTaskByIdResponseVariant1SessionsItemRepository
+                    .fromJson(json['repository'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        taskId: json['task_id'] != null
+            ? SdkPresent((json['task_id'] as String?)!)
+            : const SdkOmitted(),
+        state: (json['state'] != null
+            ? AgentTasksGetTaskByIdResponseVariant1SessionsItemState.fromJson(
+                json['state'] as String)
+            : null)!,
+        createdAt: (json['created_at'] as String?)!,
+        updatedAt: json['updated_at'] != null
+            ? SdkPresent((json['updated_at'] as String?)!)
+            : const SdkOmitted(),
+        completedAt: json['completed_at'] != null
+            ? SdkPresent((json['completed_at'] as String?)!)
+            : const SdkOmitted(),
+        prompt: json['prompt'] != null
+            ? SdkPresent((json['prompt'] as String?)!)
+            : const SdkOmitted(),
+        headRef: json['head_ref'] != null
+            ? SdkPresent((json['head_ref'] as String?)!)
+            : const SdkOmitted(),
+        baseRef: json['base_ref'] != null
+            ? SdkPresent((json['base_ref'] as String?)!)
+            : const SdkOmitted(),
+        model: json['model'] != null
+            ? SdkPresent((json['model'] as String?)!)
+            : const SdkOmitted(),
+        usage: json['usage'] != null
+            ? SdkPresent((json['usage'] != null
+                ? AgentTasksGetTaskByIdResponseVariant1SessionsItemUsage
+                    .fromJson(json['usage'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        error: json['error'] != null
+            ? SdkPresent((json['error'] != null
+                ? AgentTasksGetTaskByIdResponseVariant1SessionsItemError
+                    .fromJson(json['error'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (user) {
-      SdkPresent<AgentTasksGetTaskByIdResponseVariant1SessionsItemUser>(value: final value) => {'user': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (owner) {
-      SdkPresent<AgentTasksGetTaskByIdResponseVariant1SessionsItemOwner>(value: final value) => {'owner': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (repository) {
-      SdkPresent<AgentTasksGetTaskByIdResponseVariant1SessionsItemRepository>(value: final value) => {'repository': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (taskId) {
-      SdkPresent<String>(value: final value) => {'task_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    'state': state.toJson(),
-    'created_at': createdAt,
-    ...switch (updatedAt) {
-      SdkPresent<String>(value: final value) => {'updated_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (completedAt) {
-      SdkPresent<String>(value: final value) => {'completed_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (prompt) {
-      SdkPresent<String>(value: final value) => {'prompt': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (headRef) {
-      SdkPresent<String>(value: final value) => {'head_ref': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (baseRef) {
-      SdkPresent<String>(value: final value) => {'base_ref': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (model) {
-      SdkPresent<String>(value: final value) => {'model': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (usage) {
-      SdkPresent<AgentTasksGetTaskByIdResponseVariant1SessionsItemUsage>(value: final value) => {'usage': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (error) {
-      SdkPresent<AgentTasksGetTaskByIdResponseVariant1SessionsItemError>(value: final value) => {'error': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'id': id,
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (user) {
+          SdkPresent<AgentTasksGetTaskByIdResponseVariant1SessionsItemUser>(
+            value: final value
+          ) =>
+            {
+              'user': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (owner) {
+          SdkPresent<AgentTasksGetTaskByIdResponseVariant1SessionsItemOwner>(
+            value: final value
+          ) =>
+            {
+              'owner': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (repository) {
+          SdkPresent<
+                AgentTasksGetTaskByIdResponseVariant1SessionsItemRepository>(
+            value: final value
+          ) =>
+            {
+              'repository': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (taskId) {
+          SdkPresent<String>(value: final value) => {
+              'task_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'state': state.toJson(),
+        'created_at': createdAt,
+        ...switch (updatedAt) {
+          SdkPresent<String>(value: final value) => {
+              'updated_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (completedAt) {
+          SdkPresent<String>(value: final value) => {
+              'completed_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (prompt) {
+          SdkPresent<String>(value: final value) => {
+              'prompt': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (headRef) {
+          SdkPresent<String>(value: final value) => {
+              'head_ref': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (baseRef) {
+          SdkPresent<String>(value: final value) => {
+              'base_ref': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (model) {
+          SdkPresent<String>(value: final value) => {
+              'model': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (usage) {
+          SdkPresent<AgentTasksGetTaskByIdResponseVariant1SessionsItemUsage>(
+            value: final value
+          ) =>
+            {
+              'usage': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (error) {
+          SdkPresent<AgentTasksGetTaskByIdResponseVariant1SessionsItemError>(
+            value: final value
+          ) =>
+            {
+              'error': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class AgentTasksGetTaskByIdResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Unique task identifier
   final String id;
+
   /// API URL for this task
   final SdkOptional<String> url;
+
   /// Web URL for this task
   final SdkOptional<String> htmlUrl;
+
   /// Human-readable name derived from the task prompt
   final SdkOptional<String> name;
+
   /// The entity who created this task
-  final SdkOptional<AgentTasksGetTaskByIdResponseVariant0CreatorVariant0> creator;
+  final SdkOptional<AgentTasksGetTaskByIdResponseVariant0CreatorVariant0>
+      creator;
+
   /// Type of the task creator
-  final SdkOptional<AgentTasksGetTaskByIdResponseVariant0CreatorType> creatorType;
+  final SdkOptional<AgentTasksGetTaskByIdResponseVariant0CreatorType>
+      creatorType;
+
   /// User objects of collaborators on this task
-  final SdkOptional<List<AgentTasksGetTaskByIdResponseVariant0UserCollaboratorsItem>> userCollaborators;
+  final SdkOptional<
+          List<AgentTasksGetTaskByIdResponseVariant0UserCollaboratorsItem>>
+      userCollaborators;
+
   /// The owner of the repository
   final SdkOptional<AgentTasksGetTaskByIdResponseVariant0Owner> owner;
+
   /// The repository this task belongs to
   final SdkOptional<AgentTasksGetTaskByIdResponseVariant0Repository> repository;
+
   /// Current state of the task, derived from its most recent session
   final AgentTasksGetTaskByIdResponseVariant0State state;
+
   /// Number of sessions in this task
   final SdkOptional<int> sessionCount;
+
   /// Resources created by this task (PRs, branches, etc.)
-  final SdkOptional<List<AgentTasksGetTaskByIdResponseVariant0ArtifactsItem>> artifacts;
+  final SdkOptional<List<AgentTasksGetTaskByIdResponseVariant0ArtifactsItem>>
+      artifacts;
+
   /// Timestamp when the task was archived, null if not archived
   final SdkOptional<String?> archivedAt;
+
   /// Timestamp of the most recent update
   final SdkOptional<String> updatedAt;
+
   /// Timestamp when the task was created
   final String createdAt;
+
   /// Custom agent metadata associated with this task
-  final SdkOptional<AgentTasksGetTaskByIdResponseVariant0CustomAgent> customAgent;
+  final SdkOptional<AgentTasksGetTaskByIdResponseVariant0CustomAgent>
+      customAgent;
+
   /// Sessions associated with this task
-  final SdkOptional<List<AgentTasksGetTaskByIdResponseVariant1SessionsItem>> sessions;
+  final SdkOptional<List<AgentTasksGetTaskByIdResponseVariant1SessionsItem>>
+      sessions;
 
-  const AgentTasksGetTaskByIdResponse({required this.id, this.url = const SdkOmitted(), this.htmlUrl = const SdkOmitted(), this.name = const SdkOmitted(), this.creator = const SdkOmitted(), this.creatorType = const SdkOmitted(), this.userCollaborators = const SdkOmitted(), this.owner = const SdkOmitted(), this.repository = const SdkOmitted(), required this.state, this.sessionCount = const SdkOmitted(), this.artifacts = const SdkOmitted(), this.archivedAt = const SdkOmitted(), this.updatedAt = const SdkOmitted(), required this.createdAt, this.customAgent = const SdkOmitted(), this.sessions = const SdkOmitted()});
+  const AgentTasksGetTaskByIdResponse(
+      {required this.id,
+      this.url = const SdkOmitted(),
+      this.htmlUrl = const SdkOmitted(),
+      this.name = const SdkOmitted(),
+      this.creator = const SdkOmitted(),
+      this.creatorType = const SdkOmitted(),
+      this.userCollaborators = const SdkOmitted(),
+      this.owner = const SdkOmitted(),
+      this.repository = const SdkOmitted(),
+      required this.state,
+      this.sessionCount = const SdkOmitted(),
+      this.artifacts = const SdkOmitted(),
+      this.archivedAt = const SdkOmitted(),
+      this.updatedAt = const SdkOmitted(),
+      required this.createdAt,
+      this.customAgent = const SdkOmitted(),
+      this.sessions = const SdkOmitted()});
 
-  AgentTasksGetTaskByIdResponse Function({String id, SdkOptional<String> url, SdkOptional<String> htmlUrl, SdkOptional<String> name, SdkOptional<AgentTasksGetTaskByIdResponseVariant0CreatorVariant0> creator, SdkOptional<AgentTasksGetTaskByIdResponseVariant0CreatorType> creatorType, SdkOptional<List<AgentTasksGetTaskByIdResponseVariant0UserCollaboratorsItem>> userCollaborators, SdkOptional<AgentTasksGetTaskByIdResponseVariant0Owner> owner, SdkOptional<AgentTasksGetTaskByIdResponseVariant0Repository> repository, AgentTasksGetTaskByIdResponseVariant0State state, SdkOptional<int> sessionCount, SdkOptional<List<AgentTasksGetTaskByIdResponseVariant0ArtifactsItem>> artifacts, SdkOptional<String?> archivedAt, SdkOptional<String> updatedAt, String createdAt, SdkOptional<AgentTasksGetTaskByIdResponseVariant0CustomAgent> customAgent, SdkOptional<List<AgentTasksGetTaskByIdResponseVariant1SessionsItem>> sessions}) get copyWith => _copyWith;
+  AgentTasksGetTaskByIdResponse Function(
+      {String id,
+      SdkOptional<String> url,
+      SdkOptional<String> htmlUrl,
+      SdkOptional<String> name,
+      SdkOptional<AgentTasksGetTaskByIdResponseVariant0CreatorVariant0> creator,
+      SdkOptional<AgentTasksGetTaskByIdResponseVariant0CreatorType> creatorType,
+      SdkOptional<
+              List<AgentTasksGetTaskByIdResponseVariant0UserCollaboratorsItem>>
+          userCollaborators,
+      SdkOptional<AgentTasksGetTaskByIdResponseVariant0Owner> owner,
+      SdkOptional<AgentTasksGetTaskByIdResponseVariant0Repository> repository,
+      AgentTasksGetTaskByIdResponseVariant0State state,
+      SdkOptional<int> sessionCount,
+      SdkOptional<List<AgentTasksGetTaskByIdResponseVariant0ArtifactsItem>>
+          artifacts,
+      SdkOptional<String?> archivedAt,
+      SdkOptional<String> updatedAt,
+      String createdAt,
+      SdkOptional<AgentTasksGetTaskByIdResponseVariant0CustomAgent> customAgent,
+      SdkOptional<List<AgentTasksGetTaskByIdResponseVariant1SessionsItem>>
+          sessions}) get copyWith => _copyWith;
 
-  AgentTasksGetTaskByIdResponse _copyWith({Object? id = sdkOmittedValue, Object? url = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? name = sdkOmittedValue, Object? creator = sdkOmittedValue, Object? creatorType = sdkOmittedValue, Object? userCollaborators = sdkOmittedValue, Object? owner = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? state = sdkOmittedValue, Object? sessionCount = sdkOmittedValue, Object? artifacts = sdkOmittedValue, Object? archivedAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? customAgent = sdkOmittedValue, Object? sessions = sdkOmittedValue}) => AgentTasksGetTaskByIdResponse(
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String>,
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    creator: identical(creator, sdkOmittedValue) ? this.creator : creator as SdkOptional<AgentTasksGetTaskByIdResponseVariant0CreatorVariant0>,
-    creatorType: identical(creatorType, sdkOmittedValue) ? this.creatorType : creatorType as SdkOptional<AgentTasksGetTaskByIdResponseVariant0CreatorType>,
-    userCollaborators: identical(userCollaborators, sdkOmittedValue) ? this.userCollaborators : userCollaborators as SdkOptional<List<AgentTasksGetTaskByIdResponseVariant0UserCollaboratorsItem>>,
-    owner: identical(owner, sdkOmittedValue) ? this.owner : owner as SdkOptional<AgentTasksGetTaskByIdResponseVariant0Owner>,
-    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as SdkOptional<AgentTasksGetTaskByIdResponseVariant0Repository>,
-    state: identical(state, sdkOmittedValue) ? this.state : state as AgentTasksGetTaskByIdResponseVariant0State,
-    sessionCount: identical(sessionCount, sdkOmittedValue) ? this.sessionCount : sessionCount as SdkOptional<int>,
-    artifacts: identical(artifacts, sdkOmittedValue) ? this.artifacts : artifacts as SdkOptional<List<AgentTasksGetTaskByIdResponseVariant0ArtifactsItem>>,
-    archivedAt: identical(archivedAt, sdkOmittedValue) ? this.archivedAt : archivedAt as SdkOptional<String?>,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as SdkOptional<String>,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    customAgent: identical(customAgent, sdkOmittedValue) ? this.customAgent : customAgent as SdkOptional<AgentTasksGetTaskByIdResponseVariant0CustomAgent>,
-    sessions: identical(sessions, sdkOmittedValue) ? this.sessions : sessions as SdkOptional<List<AgentTasksGetTaskByIdResponseVariant1SessionsItem>>,
-  );
+  AgentTasksGetTaskByIdResponse _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? creator = sdkOmittedValue,
+          Object? creatorType = sdkOmittedValue,
+          Object? userCollaborators = sdkOmittedValue,
+          Object? owner = sdkOmittedValue,
+          Object? repository = sdkOmittedValue,
+          Object? state = sdkOmittedValue,
+          Object? sessionCount = sdkOmittedValue,
+          Object? artifacts = sdkOmittedValue,
+          Object? archivedAt = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? customAgent = sdkOmittedValue,
+          Object? sessions = sdkOmittedValue}) =>
+      AgentTasksGetTaskByIdResponse(
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        url: identical(url, sdkOmittedValue)
+            ? this.url
+            : url as SdkOptional<String>,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as SdkOptional<String>,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        creator: identical(creator, sdkOmittedValue)
+            ? this.creator
+            : creator as SdkOptional<
+                AgentTasksGetTaskByIdResponseVariant0CreatorVariant0>,
+        creatorType: identical(creatorType, sdkOmittedValue)
+            ? this.creatorType
+            : creatorType as SdkOptional<
+                AgentTasksGetTaskByIdResponseVariant0CreatorType>,
+        userCollaborators: identical(userCollaborators, sdkOmittedValue)
+            ? this.userCollaborators
+            : userCollaborators as SdkOptional<
+                List<
+                    AgentTasksGetTaskByIdResponseVariant0UserCollaboratorsItem>>,
+        owner: identical(owner, sdkOmittedValue)
+            ? this.owner
+            : owner as SdkOptional<AgentTasksGetTaskByIdResponseVariant0Owner>,
+        repository: identical(repository, sdkOmittedValue)
+            ? this.repository
+            : repository
+                as SdkOptional<AgentTasksGetTaskByIdResponseVariant0Repository>,
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state as AgentTasksGetTaskByIdResponseVariant0State,
+        sessionCount: identical(sessionCount, sdkOmittedValue)
+            ? this.sessionCount
+            : sessionCount as SdkOptional<int>,
+        artifacts: identical(artifacts, sdkOmittedValue)
+            ? this.artifacts
+            : artifacts as SdkOptional<
+                List<AgentTasksGetTaskByIdResponseVariant0ArtifactsItem>>,
+        archivedAt: identical(archivedAt, sdkOmittedValue)
+            ? this.archivedAt
+            : archivedAt as SdkOptional<String?>,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as SdkOptional<String>,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        customAgent: identical(customAgent, sdkOmittedValue)
+            ? this.customAgent
+            : customAgent as SdkOptional<
+                AgentTasksGetTaskByIdResponseVariant0CustomAgent>,
+        sessions: identical(sessions, sdkOmittedValue)
+            ? this.sessions
+            : sessions as SdkOptional<
+                List<AgentTasksGetTaskByIdResponseVariant1SessionsItem>>,
+      );
 
-  factory AgentTasksGetTaskByIdResponse.fromJson(Map<String, dynamic> json) => AgentTasksGetTaskByIdResponse(
-    id: (json['id'] as String?)!,
-    url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
-    htmlUrl: json['html_url'] != null ? SdkPresent((json['html_url'] as String?)!) : const SdkOmitted(),
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    creator: json['creator'] != null ? SdkPresent((json['creator'] != null ? AgentTasksGetTaskByIdResponseVariant0CreatorVariant0.fromJson(json['creator'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    creatorType: json['creator_type'] != null ? SdkPresent((json['creator_type'] != null ? AgentTasksGetTaskByIdResponseVariant0CreatorType.fromJson(json['creator_type'] as String) : null)!) : const SdkOmitted(),
-    userCollaborators: json['user_collaborators'] != null ? SdkPresent(((json['user_collaborators'] as List?)?.map((e) => AgentTasksGetTaskByIdResponseVariant0UserCollaboratorsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-    owner: json['owner'] != null ? SdkPresent((json['owner'] != null ? AgentTasksGetTaskByIdResponseVariant0Owner.fromJson(json['owner'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    repository: json['repository'] != null ? SdkPresent((json['repository'] != null ? AgentTasksGetTaskByIdResponseVariant0Repository.fromJson(json['repository'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    state: (json['state'] != null ? AgentTasksGetTaskByIdResponseVariant0State.fromJson(json['state'] as String) : null)!,
-    sessionCount: json['session_count'] != null ? SdkPresent(((json['session_count'] as num?)?.toInt())!) : const SdkOmitted(),
-    artifacts: json['artifacts'] != null ? SdkPresent(((json['artifacts'] as List?)?.map((e) => AgentTasksGetTaskByIdResponseVariant0ArtifactsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-    archivedAt: json.containsKey('archived_at') ? SdkPresent(json['archived_at'] as String?) : const SdkOmitted(),
-    updatedAt: json['updated_at'] != null ? SdkPresent((json['updated_at'] as String?)!) : const SdkOmitted(),
-    createdAt: (json['created_at'] as String?)!,
-    customAgent: json['custom_agent'] != null ? SdkPresent((json['custom_agent'] != null ? AgentTasksGetTaskByIdResponseVariant0CustomAgent.fromJson(json['custom_agent'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    sessions: json['sessions'] != null ? SdkPresent(((json['sessions'] as List?)?.map((e) => AgentTasksGetTaskByIdResponseVariant1SessionsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
+  factory AgentTasksGetTaskByIdResponse.fromJson(Map<String, dynamic> json) =>
+      AgentTasksGetTaskByIdResponse(
+        id: (json['id'] as String?)!,
+        url: json['url'] != null
+            ? SdkPresent((json['url'] as String?)!)
+            : const SdkOmitted(),
+        htmlUrl: json['html_url'] != null
+            ? SdkPresent((json['html_url'] as String?)!)
+            : const SdkOmitted(),
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+        creator: json['creator'] != null
+            ? SdkPresent((json['creator'] != null
+                ? AgentTasksGetTaskByIdResponseVariant0CreatorVariant0.fromJson(
+                    json['creator'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        creatorType: json['creator_type'] != null
+            ? SdkPresent((json['creator_type'] != null
+                ? AgentTasksGetTaskByIdResponseVariant0CreatorType.fromJson(
+                    json['creator_type'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        userCollaborators: json['user_collaborators'] != null
+            ? SdkPresent(((json['user_collaborators'] as List?)
+                ?.map((e) =>
+                    AgentTasksGetTaskByIdResponseVariant0UserCollaboratorsItem
+                        .fromJson(e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+        owner: json['owner'] != null
+            ? SdkPresent((json['owner'] != null
+                ? AgentTasksGetTaskByIdResponseVariant0Owner.fromJson(
+                    json['owner'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        repository: json['repository'] != null
+            ? SdkPresent((json['repository'] != null
+                ? AgentTasksGetTaskByIdResponseVariant0Repository.fromJson(
+                    json['repository'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        state: (json['state'] != null
+            ? AgentTasksGetTaskByIdResponseVariant0State.fromJson(
+                json['state'] as String)
+            : null)!,
+        sessionCount: json['session_count'] != null
+            ? SdkPresent(((json['session_count'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        artifacts: json['artifacts'] != null
+            ? SdkPresent(((json['artifacts'] as List?)
+                ?.map((e) =>
+                    AgentTasksGetTaskByIdResponseVariant0ArtifactsItem.fromJson(
+                        e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+        archivedAt: json.containsKey('archived_at')
+            ? SdkPresent(json['archived_at'] as String?)
+            : const SdkOmitted(),
+        updatedAt: json['updated_at'] != null
+            ? SdkPresent((json['updated_at'] as String?)!)
+            : const SdkOmitted(),
+        createdAt: (json['created_at'] as String?)!,
+        customAgent: json['custom_agent'] != null
+            ? SdkPresent((json['custom_agent'] != null
+                ? AgentTasksGetTaskByIdResponseVariant0CustomAgent.fromJson(
+                    json['custom_agent'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        sessions: json['sessions'] != null
+            ? SdkPresent(((json['sessions'] as List?)
+                ?.map((e) =>
+                    AgentTasksGetTaskByIdResponseVariant1SessionsItem.fromJson(
+                        e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    ...switch (url) {
-      SdkPresent<String>(value: final value) => {'url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (htmlUrl) {
-      SdkPresent<String>(value: final value) => {'html_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (creator) {
-      SdkPresent<AgentTasksGetTaskByIdResponseVariant0CreatorVariant0>(value: final value) => {'creator': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (creatorType) {
-      SdkPresent<AgentTasksGetTaskByIdResponseVariant0CreatorType>(value: final value) => {'creator_type': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (userCollaborators) {
-      SdkPresent<List<AgentTasksGetTaskByIdResponseVariant0UserCollaboratorsItem>>(value: final value) => {'user_collaborators': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (owner) {
-      SdkPresent<AgentTasksGetTaskByIdResponseVariant0Owner>(value: final value) => {'owner': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (repository) {
-      SdkPresent<AgentTasksGetTaskByIdResponseVariant0Repository>(value: final value) => {'repository': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'state': state.toJson(),
-    ...switch (sessionCount) {
-      SdkPresent<int>(value: final value) => {'session_count': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (artifacts) {
-      SdkPresent<List<AgentTasksGetTaskByIdResponseVariant0ArtifactsItem>>(value: final value) => {'artifacts': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (archivedAt) {
-      SdkPresent<String?>(value: final value) => {'archived_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (updatedAt) {
-      SdkPresent<String>(value: final value) => {'updated_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    'created_at': createdAt,
-    ...switch (customAgent) {
-      SdkPresent<AgentTasksGetTaskByIdResponseVariant0CustomAgent>(value: final value) => {'custom_agent': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (sessions) {
-      SdkPresent<List<AgentTasksGetTaskByIdResponseVariant1SessionsItem>>(value: final value) => {'sessions': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'id': id,
+        ...switch (url) {
+          SdkPresent<String>(value: final value) => {
+              'url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (htmlUrl) {
+          SdkPresent<String>(value: final value) => {
+              'html_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (creator) {
+          SdkPresent<AgentTasksGetTaskByIdResponseVariant0CreatorVariant0>(
+            value: final value
+          ) =>
+            {
+              'creator': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (creatorType) {
+          SdkPresent<AgentTasksGetTaskByIdResponseVariant0CreatorType>(
+            value: final value
+          ) =>
+            {
+              'creator_type': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (userCollaborators) {
+          SdkPresent<
+                List<
+                    AgentTasksGetTaskByIdResponseVariant0UserCollaboratorsItem>>(
+            value: final value
+          ) =>
+            {
+              'user_collaborators': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (owner) {
+          SdkPresent<AgentTasksGetTaskByIdResponseVariant0Owner>(
+            value: final value
+          ) =>
+            {
+              'owner': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (repository) {
+          SdkPresent<AgentTasksGetTaskByIdResponseVariant0Repository>(
+            value: final value
+          ) =>
+            {
+              'repository': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'state': state.toJson(),
+        ...switch (sessionCount) {
+          SdkPresent<int>(value: final value) => {
+              'session_count': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (artifacts) {
+          SdkPresent<List<AgentTasksGetTaskByIdResponseVariant0ArtifactsItem>>(
+            value: final value
+          ) =>
+            {
+              'artifacts': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (archivedAt) {
+          SdkPresent<String?>(value: final value) => {
+              'archived_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (updatedAt) {
+          SdkPresent<String>(value: final value) => {
+              'updated_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'created_at': createdAt,
+        ...switch (customAgent) {
+          SdkPresent<AgentTasksGetTaskByIdResponseVariant0CustomAgent>(
+            value: final value
+          ) =>
+            {
+              'custom_agent': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (sessions) {
+          SdkPresent<List<AgentTasksGetTaskByIdResponseVariant1SessionsItem>>(
+            value: final value
+          ) =>
+            {
+              'sessions': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

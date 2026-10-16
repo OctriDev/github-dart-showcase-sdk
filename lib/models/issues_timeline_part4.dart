@@ -4,242 +4,348 @@
 part of 'issues_timeline.dart';
 
 // issues_timeline domain models (part 4)
-final class TimelineIssueEventsTimelineCommittedEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsTimelineCommittedEvent
+    extends TimelineIssueEvents {
   final TimelineCommittedEvent value;
   const TimelineIssueEventsTimelineCommittedEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsTimelineReviewedEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsTimelineReviewedEvent
+    extends TimelineIssueEvents {
   final TimelineReviewedEvent value;
   const TimelineIssueEventsTimelineReviewedEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsTimelineLineCommentedEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsTimelineLineCommentedEvent
+    extends TimelineIssueEvents {
   final TimelineLineCommentedEvent value;
   const TimelineIssueEventsTimelineLineCommentedEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsTimelineCommitCommentedEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsTimelineCommitCommentedEvent
+    extends TimelineIssueEvents {
   final TimelineCommitCommentedEvent value;
   const TimelineIssueEventsTimelineCommitCommentedEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsTimelineAssignedIssueEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsTimelineAssignedIssueEvent
+    extends TimelineIssueEvents {
   final TimelineAssignedIssueEvent value;
   const TimelineIssueEventsTimelineAssignedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsTimelineUnassignedIssueEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsTimelineUnassignedIssueEvent
+    extends TimelineIssueEvents {
   final TimelineUnassignedIssueEvent value;
   const TimelineIssueEventsTimelineUnassignedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsStateChangeIssueEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsStateChangeIssueEvent
+    extends TimelineIssueEvents {
   final StateChangeIssueEvent value;
   const TimelineIssueEventsStateChangeIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsIssueTypeAddedIssueEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsIssueTypeAddedIssueEvent
+    extends TimelineIssueEvents {
   final IssueTypeAddedIssueEvent value;
   const TimelineIssueEventsIssueTypeAddedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsIssueTypeRemovedIssueEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsIssueTypeRemovedIssueEvent
+    extends TimelineIssueEvents {
   final IssueTypeRemovedIssueEvent value;
   const TimelineIssueEventsIssueTypeRemovedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsIssueTypeChangedIssueEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsIssueTypeChangedIssueEvent
+    extends TimelineIssueEvents {
   final IssueTypeChangedIssueEvent value;
   const TimelineIssueEventsIssueTypeChangedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsSubIssueAddedIssueEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsSubIssueAddedIssueEvent
+    extends TimelineIssueEvents {
   final SubIssueAddedIssueEvent value;
   const TimelineIssueEventsSubIssueAddedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsSubIssueRemovedIssueEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsSubIssueRemovedIssueEvent
+    extends TimelineIssueEvents {
   final SubIssueRemovedIssueEvent value;
   const TimelineIssueEventsSubIssueRemovedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsParentIssueAddedIssueEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsParentIssueAddedIssueEvent
+    extends TimelineIssueEvents {
   final ParentIssueAddedIssueEvent value;
   const TimelineIssueEventsParentIssueAddedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsParentIssueRemovedIssueEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsParentIssueRemovedIssueEvent
+    extends TimelineIssueEvents {
   final ParentIssueRemovedIssueEvent value;
   const TimelineIssueEventsParentIssueRemovedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsBlockedByAddedIssueEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsBlockedByAddedIssueEvent
+    extends TimelineIssueEvents {
   final BlockedByAddedIssueEvent value;
   const TimelineIssueEventsBlockedByAddedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsBlockedByRemovedIssueEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsBlockedByRemovedIssueEvent
+    extends TimelineIssueEvents {
   final BlockedByRemovedIssueEvent value;
   const TimelineIssueEventsBlockedByRemovedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsBlockingAddedIssueEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsBlockingAddedIssueEvent
+    extends TimelineIssueEvents {
   final BlockingAddedIssueEvent value;
   const TimelineIssueEventsBlockingAddedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsBlockingRemovedIssueEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsBlockingRemovedIssueEvent
+    extends TimelineIssueEvents {
   final BlockingRemovedIssueEvent value;
   const TimelineIssueEventsBlockingRemovedIssueEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsTimelineConnectedEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsTimelineConnectedEvent
+    extends TimelineIssueEvents {
   final TimelineConnectedEvent value;
   const TimelineIssueEventsTimelineConnectedEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TimelineIssueEventsTimelineDisconnectedEvent extends TimelineIssueEvents {
+final class TimelineIssueEventsTimelineDisconnectedEvent
+    extends TimelineIssueEvents {
   final TimelineDisconnectedEvent value;
   const TimelineIssueEventsTimelineDisconnectedEvent(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// Timeline Line Commented Event
 class TimelineLineCommentedEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `string` value serialized in the `event` wire field.
   final SdkOptional<String> event;
+
   /// Optional `string` value serialized in the `node_id` wire field.
   final SdkOptional<String> nodeId;
+
   /// Optional array value serialized in the `comments` wire field.
   final SdkOptional<List<PullRequestReviewComment>> comments;
 
-  const TimelineLineCommentedEvent({this.event = const SdkOmitted(), this.nodeId = const SdkOmitted(), this.comments = const SdkOmitted()});
+  const TimelineLineCommentedEvent(
+      {this.event = const SdkOmitted(),
+      this.nodeId = const SdkOmitted(),
+      this.comments = const SdkOmitted()});
 
-  TimelineLineCommentedEvent Function({SdkOptional<String> event, SdkOptional<String> nodeId, SdkOptional<List<PullRequestReviewComment>> comments}) get copyWith => _copyWith;
+  TimelineLineCommentedEvent Function(
+          {SdkOptional<String> event,
+          SdkOptional<String> nodeId,
+          SdkOptional<List<PullRequestReviewComment>> comments})
+      get copyWith => _copyWith;
 
-  TimelineLineCommentedEvent _copyWith({Object? event = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? comments = sdkOmittedValue}) => TimelineLineCommentedEvent(
-    event: identical(event, sdkOmittedValue) ? this.event : event as SdkOptional<String>,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as SdkOptional<String>,
-    comments: identical(comments, sdkOmittedValue) ? this.comments : comments as SdkOptional<List<PullRequestReviewComment>>,
-  );
+  TimelineLineCommentedEvent _copyWith(
+          {Object? event = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? comments = sdkOmittedValue}) =>
+      TimelineLineCommentedEvent(
+        event: identical(event, sdkOmittedValue)
+            ? this.event
+            : event as SdkOptional<String>,
+        nodeId: identical(nodeId, sdkOmittedValue)
+            ? this.nodeId
+            : nodeId as SdkOptional<String>,
+        comments: identical(comments, sdkOmittedValue)
+            ? this.comments
+            : comments as SdkOptional<List<PullRequestReviewComment>>,
+      );
 
-  factory TimelineLineCommentedEvent.fromJson(Map<String, dynamic> json) => TimelineLineCommentedEvent(
-    event: json['event'] != null ? SdkPresent((json['event'] as String?)!) : const SdkOmitted(),
-    nodeId: json['node_id'] != null ? SdkPresent((json['node_id'] as String?)!) : const SdkOmitted(),
-    comments: json['comments'] != null ? SdkPresent(((json['comments'] as List?)?.map((e) => PullRequestReviewComment.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
+  factory TimelineLineCommentedEvent.fromJson(Map<String, dynamic> json) =>
+      TimelineLineCommentedEvent(
+        event: json['event'] != null
+            ? SdkPresent((json['event'] as String?)!)
+            : const SdkOmitted(),
+        nodeId: json['node_id'] != null
+            ? SdkPresent((json['node_id'] as String?)!)
+            : const SdkOmitted(),
+        comments: json['comments'] != null
+            ? SdkPresent(((json['comments'] as List?)
+                ?.map((e) => PullRequestReviewComment.fromJson(
+                    e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (event) {
-      SdkPresent<String>(value: final value) => {'event': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (nodeId) {
-      SdkPresent<String>(value: final value) => {'node_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (comments) {
-      SdkPresent<List<PullRequestReviewComment>>(value: final value) => {'comments': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (event) {
+          SdkPresent<String>(value: final value) => {
+              'event': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (nodeId) {
+          SdkPresent<String>(value: final value) => {
+              'node_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (comments) {
+          SdkPresent<List<PullRequestReviewComment>>(value: final value) => {
+              'comments': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Required object value serialized in the `html` wire field.
 class TimelineReviewedEventLinksHtml {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `href` wire field.
   final String href;
 
   const TimelineReviewedEventLinksHtml({required this.href});
 
-  TimelineReviewedEventLinksHtml Function({String href}) get copyWith => _copyWith;
+  TimelineReviewedEventLinksHtml Function({String href}) get copyWith =>
+      _copyWith;
 
-  TimelineReviewedEventLinksHtml _copyWith({Object? href = sdkOmittedValue}) => TimelineReviewedEventLinksHtml(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  TimelineReviewedEventLinksHtml _copyWith({Object? href = sdkOmittedValue}) =>
+      TimelineReviewedEventLinksHtml(
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
-  factory TimelineReviewedEventLinksHtml.fromJson(Map<String, dynamic> json) => TimelineReviewedEventLinksHtml(
-    href: (json['href'] as String?)!,
-  );
+  factory TimelineReviewedEventLinksHtml.fromJson(Map<String, dynamic> json) =>
+      TimelineReviewedEventLinksHtml(
+        href: (json['href'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 /// Required object value serialized in the `pull_request` wire field.
 class TimelineReviewedEventLinksPullRequest {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `href` wire field.
   final String href;
 
   const TimelineReviewedEventLinksPullRequest({required this.href});
 
-  TimelineReviewedEventLinksPullRequest Function({String href}) get copyWith => _copyWith;
+  TimelineReviewedEventLinksPullRequest Function({String href}) get copyWith =>
+      _copyWith;
 
-  TimelineReviewedEventLinksPullRequest _copyWith({Object? href = sdkOmittedValue}) => TimelineReviewedEventLinksPullRequest(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  TimelineReviewedEventLinksPullRequest _copyWith(
+          {Object? href = sdkOmittedValue}) =>
+      TimelineReviewedEventLinksPullRequest(
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
-  factory TimelineReviewedEventLinksPullRequest.fromJson(Map<String, dynamic> json) => TimelineReviewedEventLinksPullRequest(
-    href: (json['href'] as String?)!,
-  );
+  factory TimelineReviewedEventLinksPullRequest.fromJson(
+          Map<String, dynamic> json) =>
+      TimelineReviewedEventLinksPullRequest(
+        href: (json['href'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 /// Required object value serialized in the `_links` wire field.
 class TimelineReviewedEventLinks {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required object value serialized in the `html` wire field.
   final TimelineReviewedEventLinksHtml html;
+
   /// Required object value serialized in the `pull_request` wire field.
   final TimelineReviewedEventLinksPullRequest pullRequest;
 
-  const TimelineReviewedEventLinks({required this.html, required this.pullRequest});
+  const TimelineReviewedEventLinks(
+      {required this.html, required this.pullRequest});
 
-  TimelineReviewedEventLinks Function({TimelineReviewedEventLinksHtml html, TimelineReviewedEventLinksPullRequest pullRequest}) get copyWith => _copyWith;
+  TimelineReviewedEventLinks Function(
+          {TimelineReviewedEventLinksHtml html,
+          TimelineReviewedEventLinksPullRequest pullRequest})
+      get copyWith => _copyWith;
 
-  TimelineReviewedEventLinks _copyWith({Object? html = sdkOmittedValue, Object? pullRequest = sdkOmittedValue}) => TimelineReviewedEventLinks(
-    html: identical(html, sdkOmittedValue) ? this.html : html as TimelineReviewedEventLinksHtml,
-    pullRequest: identical(pullRequest, sdkOmittedValue) ? this.pullRequest : pullRequest as TimelineReviewedEventLinksPullRequest,
-  );
+  TimelineReviewedEventLinks _copyWith(
+          {Object? html = sdkOmittedValue,
+          Object? pullRequest = sdkOmittedValue}) =>
+      TimelineReviewedEventLinks(
+        html: identical(html, sdkOmittedValue)
+            ? this.html
+            : html as TimelineReviewedEventLinksHtml,
+        pullRequest: identical(pullRequest, sdkOmittedValue)
+            ? this.pullRequest
+            : pullRequest as TimelineReviewedEventLinksPullRequest,
+      );
 
-  factory TimelineReviewedEventLinks.fromJson(Map<String, dynamic> json) => TimelineReviewedEventLinks(
-    html: (json['html'] != null ? TimelineReviewedEventLinksHtml.fromJson(json['html'] as Map<String, dynamic>) : null)!,
-    pullRequest: (json['pull_request'] != null ? TimelineReviewedEventLinksPullRequest.fromJson(json['pull_request'] as Map<String, dynamic>) : null)!,
-  );
+  factory TimelineReviewedEventLinks.fromJson(Map<String, dynamic> json) =>
+      TimelineReviewedEventLinks(
+        html: (json['html'] != null
+            ? TimelineReviewedEventLinksHtml.fromJson(
+                json['html'] as Map<String, dynamic>)
+            : null)!,
+        pullRequest: (json['pull_request'] != null
+            ? TimelineReviewedEventLinksPullRequest.fromJson(
+                json['pull_request'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'html': html.toJson(),
-    'pull_request': pullRequest.toJson(),
-  };
+        'html': html.toJson(),
+        'pull_request': pullRequest.toJson(),
+      };
 }

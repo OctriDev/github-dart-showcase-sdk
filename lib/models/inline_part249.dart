@@ -6,290 +6,473 @@ part of 'inline.dart';
 // Inline operation models (part 249)
 /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
 final class AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope {
-
   final String value;
 
-  const AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope._(this.value);
+  const AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope._(
+      this.value);
 
-  factory AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope.fromJson(String value) => AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope._(value);
+  factory AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope.fromJson(
+          String value) =>
+      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope
+          ._(value);
 
-  static const trigger = AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope._('trigger');
-  static const repository = AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope._('repository');
+  static const trigger =
+      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope
+          ._('repository');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
 final class AgentAutomationsCreateRepoAutomationResponseTriggersSubIssueAddedWriteScope {
-
   final String value;
 
-  const AgentAutomationsCreateRepoAutomationResponseTriggersSubIssueAddedWriteScope._(this.value);
+  const AgentAutomationsCreateRepoAutomationResponseTriggersSubIssueAddedWriteScope._(
+      this.value);
 
-  factory AgentAutomationsCreateRepoAutomationResponseTriggersSubIssueAddedWriteScope.fromJson(String value) => AgentAutomationsCreateRepoAutomationResponseTriggersSubIssueAddedWriteScope._(value);
+  factory AgentAutomationsCreateRepoAutomationResponseTriggersSubIssueAddedWriteScope.fromJson(
+          String value) =>
+      AgentAutomationsCreateRepoAutomationResponseTriggersSubIssueAddedWriteScope
+          ._(value);
 
-  static const trigger = AgentAutomationsCreateRepoAutomationResponseTriggersSubIssueAddedWriteScope._('trigger');
-  static const repository = AgentAutomationsCreateRepoAutomationResponseTriggersSubIssueAddedWriteScope._('repository');
+  static const trigger =
+      AgentAutomationsCreateRepoAutomationResponseTriggersSubIssueAddedWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsCreateRepoAutomationResponseTriggersSubIssueAddedWriteScope
+          ._('repository');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsCreateRepoAutomationResponseTriggersSubIssueAddedWriteScope && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentAutomationsCreateRepoAutomationResponseTriggersSubIssueAddedWriteScope &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunConclusionsItem {
-
   final String value;
 
-  const AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunConclusionsItem._(this.value);
+  const AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunConclusionsItem._(
+      this.value);
 
-  factory AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunConclusionsItem.fromJson(String value) => AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunConclusionsItem._(value);
+  factory AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunConclusionsItem.fromJson(
+          String value) =>
+      AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunConclusionsItem
+          ._(value);
 
-  static const failure = AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunConclusionsItem._('failure');
+  static const failure =
+      AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunConclusionsItem
+          ._('failure');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunConclusionsItem && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunConclusionsItem &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
 final class AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunWriteScope {
-
   final String value;
 
-  const AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunWriteScope._(this.value);
+  const AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunWriteScope._(
+      this.value);
 
-  factory AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunWriteScope.fromJson(String value) => AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunWriteScope._(value);
+  factory AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunWriteScope.fromJson(
+          String value) =>
+      AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunWriteScope
+          ._(value);
 
-  static const trigger = AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunWriteScope._('trigger');
-  static const repository = AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunWriteScope._('repository');
+  static const trigger =
+      AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunWriteScope
+          ._('repository');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunWriteScope && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunWriteScope &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Controls which repository resources a run may modify. `trigger` limits writes to the resource that started the run, when one exists, and resources created during the run; `repository` allows writes to any resource in the repository. Supported values: `trigger`, `repository`.
 final class AgentAutomationsCreateRepoAutomationResponseWriteScope {
-
   final String value;
 
   const AgentAutomationsCreateRepoAutomationResponseWriteScope._(this.value);
 
-  factory AgentAutomationsCreateRepoAutomationResponseWriteScope.fromJson(String value) => AgentAutomationsCreateRepoAutomationResponseWriteScope._(value);
+  factory AgentAutomationsCreateRepoAutomationResponseWriteScope.fromJson(
+          String value) =>
+      AgentAutomationsCreateRepoAutomationResponseWriteScope._(value);
 
-  static const trigger = AgentAutomationsCreateRepoAutomationResponseWriteScope._('trigger');
-  static const repository = AgentAutomationsCreateRepoAutomationResponseWriteScope._('repository');
+  static const trigger =
+      AgentAutomationsCreateRepoAutomationResponseWriteScope._('trigger');
+  static const repository =
+      AgentAutomationsCreateRepoAutomationResponseWriteScope._('repository');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsCreateRepoAutomationResponseWriteScope && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is AgentAutomationsCreateRepoAutomationResponseWriteScope &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Machine-readable error code
 final class AgentAutomationsCreateRepoAutomationResponseErrorsItemCode {
-
   final String value;
 
-  const AgentAutomationsCreateRepoAutomationResponseErrorsItemCode._(this.value);
+  const AgentAutomationsCreateRepoAutomationResponseErrorsItemCode._(
+      this.value);
 
-  factory AgentAutomationsCreateRepoAutomationResponseErrorsItemCode.fromJson(String value) => AgentAutomationsCreateRepoAutomationResponseErrorsItemCode._(value);
+  factory AgentAutomationsCreateRepoAutomationResponseErrorsItemCode.fromJson(
+          String value) =>
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode._(value);
 
-  static const missing = AgentAutomationsCreateRepoAutomationResponseErrorsItemCode._('missing');
-  static const missingField = AgentAutomationsCreateRepoAutomationResponseErrorsItemCode._('missing_field');
-  static const invalid = AgentAutomationsCreateRepoAutomationResponseErrorsItemCode._('invalid');
-  static const alreadyExists = AgentAutomationsCreateRepoAutomationResponseErrorsItemCode._('already_exists');
-  static const unprocessable = AgentAutomationsCreateRepoAutomationResponseErrorsItemCode._('unprocessable');
-  static const custom = AgentAutomationsCreateRepoAutomationResponseErrorsItemCode._('custom');
+  static const missing =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode._('missing');
+  static const missingField =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode._(
+          'missing_field');
+  static const invalid =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode._('invalid');
+  static const alreadyExists =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode._(
+          'already_exists');
+  static const unprocessable =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode._(
+          'unprocessable');
+  static const custom =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode._('custom');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsCreateRepoAutomationResponseErrorsItemCode && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is AgentAutomationsCreateRepoAutomationResponseErrorsItemCode &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Machine-readable error code
 final class AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3 {
-
   final String value;
 
-  const AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3._(this.value);
+  const AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3._(
+      this.value);
 
-  factory AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3.fromJson(String value) => AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3._(value);
+  factory AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3.fromJson(
+          String value) =>
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3._(
+          value);
 
-  static const missing = AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3._('missing');
-  static const missingField = AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3._('missing_field');
-  static const invalid = AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3._('invalid');
-  static const alreadyExists = AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3._('already_exists');
-  static const unprocessable = AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3._('unprocessable');
-  static const custom = AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3._('custom');
+  static const missing =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3._(
+          'missing');
+  static const missingField =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3._(
+          'missing_field');
+  static const invalid =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3._(
+          'invalid');
+  static const alreadyExists =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3._(
+          'already_exists');
+  static const unprocessable =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3._(
+          'unprocessable');
+  static const custom =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3._(
+          'custom');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3 && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3 &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Machine-readable error code
 final class AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235 {
-
   final String value;
 
-  const AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235._(this.value);
+  const AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235._(
+      this.value);
 
-  factory AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235.fromJson(String value) => AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235._(value);
+  factory AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235.fromJson(
+          String value) =>
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235._(
+          value);
 
-  static const missing = AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235._('missing');
-  static const missingField = AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235._('missing_field');
-  static const invalid = AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235._('invalid');
-  static const alreadyExists = AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235._('already_exists');
-  static const unprocessable = AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235._('unprocessable');
-  static const custom = AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235._('custom');
+  static const missing =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235._(
+          'missing');
+  static const missingField =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235._(
+          'missing_field');
+  static const invalid =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235._(
+          'invalid');
+  static const alreadyExists =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235._(
+          'already_exists');
+  static const unprocessable =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235._(
+          'unprocessable');
+  static const custom =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235._(
+          'custom');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235 && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235 &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Machine-readable error code
 final class AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce {
-
   final String value;
 
-  const AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce._(this.value);
+  const AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce._(
+      this.value);
 
-  factory AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce.fromJson(String value) => AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce._(value);
+  factory AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce.fromJson(
+          String value) =>
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce._(
+          value);
 
-  static const missing = AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce._('missing');
-  static const missingField = AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce._('missing_field');
-  static const invalid = AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce._('invalid');
-  static const alreadyExists = AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce._('already_exists');
-  static const unprocessable = AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce._('unprocessable');
-  static const custom = AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce._('custom');
+  static const missing =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce._(
+          'missing');
+  static const missingField =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce._(
+          'missing_field');
+  static const invalid =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce._(
+          'invalid');
+  static const alreadyExists =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce._(
+          'already_exists');
+  static const unprocessable =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce._(
+          'unprocessable');
+  static const custom =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce._(
+          'custom');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Machine-readable error code
 final class AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0 {
-
   final String value;
 
-  const AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0._(this.value);
+  const AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0._(
+      this.value);
 
-  factory AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0.fromJson(String value) => AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0._(value);
+  factory AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0.fromJson(
+          String value) =>
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0._(
+          value);
 
-  static const missing = AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0._('missing');
-  static const missingField = AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0._('missing_field');
-  static const invalid = AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0._('invalid');
-  static const alreadyExists = AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0._('already_exists');
-  static const unprocessable = AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0._('unprocessable');
-  static const custom = AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0._('custom');
+  static const missing =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0._(
+          'missing');
+  static const missingField =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0._(
+          'missing_field');
+  static const invalid =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0._(
+          'invalid');
+  static const alreadyExists =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0._(
+          'already_exists');
+  static const unprocessable =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0._(
+          'unprocessable');
+  static const custom =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0._(
+          'custom');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0 && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0 &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Machine-readable error code
 final class AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode {
-
   final String value;
 
-  const AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode._(this.value);
+  const AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode._(
+      this.value);
 
-  factory AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode.fromJson(String value) => AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode._(value);
+  factory AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode.fromJson(
+          String value) =>
+      AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode._(value);
 
-  static const missing = AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode._('missing');
-  static const missingField = AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode._('missing_field');
-  static const invalid = AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode._('invalid');
-  static const alreadyExists = AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode._('already_exists');
-  static const unprocessable = AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode._('unprocessable');
-  static const custom = AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode._('custom');
+  static const missing =
+      AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode._('missing');
+  static const missingField =
+      AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode._(
+          'missing_field');
+  static const invalid =
+      AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode._('invalid');
+  static const alreadyExists =
+      AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode._(
+          'already_exists');
+  static const unprocessable =
+      AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode._(
+          'unprocessable');
+  static const custom =
+      AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode._('custom');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Machine-readable error code
 final class AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b {
-
   final String value;
 
-  const AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b._(this.value);
+  const AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b._(
+      this.value);
 
-  factory AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b.fromJson(String value) => AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b._(value);
+  factory AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b.fromJson(
+          String value) =>
+      AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b._(
+          value);
 
-  static const missing = AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b._('missing');
-  static const missingField = AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b._('missing_field');
-  static const invalid = AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b._('invalid');
-  static const alreadyExists = AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b._('already_exists');
-  static const unprocessable = AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b._('unprocessable');
-  static const custom = AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b._('custom');
+  static const missing =
+      AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b._(
+          'missing');
+  static const missingField =
+      AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b._(
+          'missing_field');
+  static const invalid =
+      AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b._(
+          'invalid');
+  static const alreadyExists =
+      AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b._(
+          'already_exists');
+  static const unprocessable =
+      AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b._(
+          'unprocessable');
+  static const custom =
+      AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b._(
+          'custom');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

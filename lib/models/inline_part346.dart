@@ -8,33 +8,62 @@ class AppsListReposAccessibleToInstallationResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   final int totalCount;
-  final List<AppsListReposAccessibleToInstallationResponseRepositoriesItem> repositories;
+  final List<AppsListReposAccessibleToInstallationResponseRepositoriesItem>
+      repositories;
   final SdkOptional<String> repositorySelection;
 
-  const AppsListReposAccessibleToInstallationResponse({required this.totalCount, required this.repositories, this.repositorySelection = const SdkOmitted()});
+  const AppsListReposAccessibleToInstallationResponse(
+      {required this.totalCount,
+      required this.repositories,
+      this.repositorySelection = const SdkOmitted()});
 
-  AppsListReposAccessibleToInstallationResponse Function({int totalCount, List<AppsListReposAccessibleToInstallationResponseRepositoriesItem> repositories, SdkOptional<String> repositorySelection}) get copyWith => _copyWith;
+  AppsListReposAccessibleToInstallationResponse Function(
+      {int totalCount,
+      List<AppsListReposAccessibleToInstallationResponseRepositoriesItem>
+          repositories,
+      SdkOptional<String> repositorySelection}) get copyWith => _copyWith;
 
-  AppsListReposAccessibleToInstallationResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? repositories = sdkOmittedValue, Object? repositorySelection = sdkOmittedValue}) => AppsListReposAccessibleToInstallationResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    repositories: identical(repositories, sdkOmittedValue) ? this.repositories : repositories as List<AppsListReposAccessibleToInstallationResponseRepositoriesItem>,
-    repositorySelection: identical(repositorySelection, sdkOmittedValue) ? this.repositorySelection : repositorySelection as SdkOptional<String>,
-  );
+  AppsListReposAccessibleToInstallationResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? repositories = sdkOmittedValue,
+          Object? repositorySelection = sdkOmittedValue}) =>
+      AppsListReposAccessibleToInstallationResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        repositories: identical(repositories, sdkOmittedValue)
+            ? this.repositories
+            : repositories as List<
+                AppsListReposAccessibleToInstallationResponseRepositoriesItem>,
+        repositorySelection: identical(repositorySelection, sdkOmittedValue)
+            ? this.repositorySelection
+            : repositorySelection as SdkOptional<String>,
+      );
 
-  factory AppsListReposAccessibleToInstallationResponse.fromJson(Map<String, dynamic> json) => AppsListReposAccessibleToInstallationResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    repositories: ((json['repositories'] as List?)?.map((e) => AppsListReposAccessibleToInstallationResponseRepositoriesItem.fromJson(e as Map<String, dynamic>)).toList())!,
-    repositorySelection: json['repository_selection'] != null ? SdkPresent((json['repository_selection'] as String?)!) : const SdkOmitted(),
-  );
+  factory AppsListReposAccessibleToInstallationResponse.fromJson(
+          Map<String, dynamic> json) =>
+      AppsListReposAccessibleToInstallationResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        repositories: ((json['repositories'] as List?)
+            ?.map((e) =>
+                AppsListReposAccessibleToInstallationResponseRepositoriesItem
+                    .fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        repositorySelection: json['repository_selection'] != null
+            ? SdkPresent((json['repository_selection'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'repositories': repositories.map((item) => item.toJson()).toList(),
-    ...switch (repositorySelection) {
-      SdkPresent<String>(value: final value) => {'repository_selection': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'total_count': totalCount,
+        'repositories': repositories.map((item) => item.toJson()).toList(),
+        ...switch (repositorySelection) {
+          SdkPresent<String>(value: final value) => {
+              'repository_selection': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class AppsListInstallationsForAuthenticatedUserResponse {
@@ -43,22 +72,36 @@ class AppsListInstallationsForAuthenticatedUserResponse {
   final int totalCount;
   final List<Installation> installations;
 
-  const AppsListInstallationsForAuthenticatedUserResponse({required this.totalCount, required this.installations});
+  const AppsListInstallationsForAuthenticatedUserResponse(
+      {required this.totalCount, required this.installations});
 
-  AppsListInstallationsForAuthenticatedUserResponse Function({int totalCount, List<Installation> installations}) get copyWith => _copyWith;
+  AppsListInstallationsForAuthenticatedUserResponse Function(
+      {int totalCount,
+      List<Installation> installations}) get copyWith => _copyWith;
 
-  AppsListInstallationsForAuthenticatedUserResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? installations = sdkOmittedValue}) => AppsListInstallationsForAuthenticatedUserResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    installations: identical(installations, sdkOmittedValue) ? this.installations : installations as List<Installation>,
-  );
+  AppsListInstallationsForAuthenticatedUserResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? installations = sdkOmittedValue}) =>
+      AppsListInstallationsForAuthenticatedUserResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        installations: identical(installations, sdkOmittedValue)
+            ? this.installations
+            : installations as List<Installation>,
+      );
 
-  factory AppsListInstallationsForAuthenticatedUserResponse.fromJson(Map<String, dynamic> json) => AppsListInstallationsForAuthenticatedUserResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    installations: ((json['installations'] as List?)?.map((e) => Installation.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+  factory AppsListInstallationsForAuthenticatedUserResponse.fromJson(
+          Map<String, dynamic> json) =>
+      AppsListInstallationsForAuthenticatedUserResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        installations: ((json['installations'] as List?)
+            ?.map((e) => Installation.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'installations': installations.map((item) => item.toJson()).toList(),
-  };
+        'total_count': totalCount,
+        'installations': installations.map((item) => item.toJson()).toList(),
+      };
 }

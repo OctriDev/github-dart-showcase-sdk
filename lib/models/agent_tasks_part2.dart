@@ -8,61 +8,88 @@ part of 'agent_tasks.dart';
 class TasksItemArtifactsItemData2Variant0 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// GitHub resource ID
   final int id;
+
   /// GraphQL global ID
   final SdkOptional<String> globalId;
 
-  const TasksItemArtifactsItemData2Variant0({required this.id, this.globalId = const SdkOmitted()});
+  const TasksItemArtifactsItemData2Variant0(
+      {required this.id, this.globalId = const SdkOmitted()});
 
-  TasksItemArtifactsItemData2Variant0 Function({int id, SdkOptional<String> globalId}) get copyWith => _copyWith;
+  TasksItemArtifactsItemData2Variant0 Function(
+      {int id, SdkOptional<String> globalId}) get copyWith => _copyWith;
 
-  TasksItemArtifactsItemData2Variant0 _copyWith({Object? id = sdkOmittedValue, Object? globalId = sdkOmittedValue}) => TasksItemArtifactsItemData2Variant0(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    globalId: identical(globalId, sdkOmittedValue) ? this.globalId : globalId as SdkOptional<String>,
-  );
+  TasksItemArtifactsItemData2Variant0 _copyWith(
+          {Object? id = sdkOmittedValue, Object? globalId = sdkOmittedValue}) =>
+      TasksItemArtifactsItemData2Variant0(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        globalId: identical(globalId, sdkOmittedValue)
+            ? this.globalId
+            : globalId as SdkOptional<String>,
+      );
 
-  factory TasksItemArtifactsItemData2Variant0.fromJson(Map<String, dynamic> json) => TasksItemArtifactsItemData2Variant0(
-    id: ((json['id'] as num?)?.toInt())!,
-    globalId: json['global_id'] != null ? SdkPresent((json['global_id'] as String?)!) : const SdkOmitted(),
-  );
+  factory TasksItemArtifactsItemData2Variant0.fromJson(
+          Map<String, dynamic> json) =>
+      TasksItemArtifactsItemData2Variant0(
+        id: ((json['id'] as num?)?.toInt())!,
+        globalId: json['global_id'] != null
+            ? SdkPresent((json['global_id'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    ...switch (globalId) {
-      SdkPresent<String>(value: final value) => {'global_id': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'id': id,
+        ...switch (globalId) {
+          SdkPresent<String>(value: final value) => {
+              'global_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// A Git branch reference
 class TasksItemArtifactsItemData2Variant1 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Head branch name
   final String headRef;
+
   /// Base branch name
   final String baseRef;
 
-  const TasksItemArtifactsItemData2Variant1({required this.headRef, required this.baseRef});
+  const TasksItemArtifactsItemData2Variant1(
+      {required this.headRef, required this.baseRef});
 
-  TasksItemArtifactsItemData2Variant1 Function({String headRef, String baseRef}) get copyWith => _copyWith;
+  TasksItemArtifactsItemData2Variant1 Function({String headRef, String baseRef})
+      get copyWith => _copyWith;
 
-  TasksItemArtifactsItemData2Variant1 _copyWith({Object? headRef = sdkOmittedValue, Object? baseRef = sdkOmittedValue}) => TasksItemArtifactsItemData2Variant1(
-    headRef: identical(headRef, sdkOmittedValue) ? this.headRef : headRef as String,
-    baseRef: identical(baseRef, sdkOmittedValue) ? this.baseRef : baseRef as String,
-  );
+  TasksItemArtifactsItemData2Variant1 _copyWith(
+          {Object? headRef = sdkOmittedValue,
+          Object? baseRef = sdkOmittedValue}) =>
+      TasksItemArtifactsItemData2Variant1(
+        headRef: identical(headRef, sdkOmittedValue)
+            ? this.headRef
+            : headRef as String,
+        baseRef: identical(baseRef, sdkOmittedValue)
+            ? this.baseRef
+            : baseRef as String,
+      );
 
-  factory TasksItemArtifactsItemData2Variant1.fromJson(Map<String, dynamic> json) => TasksItemArtifactsItemData2Variant1(
-    headRef: (json['head_ref'] as String?)!,
-    baseRef: (json['base_ref'] as String?)!,
-  );
+  factory TasksItemArtifactsItemData2Variant1.fromJson(
+          Map<String, dynamic> json) =>
+      TasksItemArtifactsItemData2Variant1(
+        headRef: (json['head_ref'] as String?)!,
+        baseRef: (json['base_ref'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'head_ref': headRef,
-    'base_ref': baseRef,
-  };
+        'head_ref': headRef,
+        'base_ref': baseRef,
+      };
 }
 
 sealed class TasksItemArtifactsItemData2 {
@@ -70,84 +97,125 @@ sealed class TasksItemArtifactsItemData2 {
   static const String constructionSurface = 'named';
   const TasksItemArtifactsItemData2();
   factory TasksItemArtifactsItemData2.fromJson(Object? json) {
-    try { return TasksItemArtifactsItemData2TasksItemArtifactsItemData2Variant0(TasksItemArtifactsItemData2Variant0.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return TasksItemArtifactsItemData2TasksItemArtifactsItemData2Variant1(TasksItemArtifactsItemData2Variant1.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try {
+      return TasksItemArtifactsItemData2TasksItemArtifactsItemData2Variant0(
+          TasksItemArtifactsItemData2Variant0.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return TasksItemArtifactsItemData2TasksItemArtifactsItemData2Variant1(
+          TasksItemArtifactsItemData2Variant1.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
     throw FormatException("No variant matched for TasksItemArtifactsItemData2");
   }
   Object? toJson();
 }
 
-final class TasksItemArtifactsItemData2TasksItemArtifactsItemData2Variant0 extends TasksItemArtifactsItemData2 {
+final class TasksItemArtifactsItemData2TasksItemArtifactsItemData2Variant0
+    extends TasksItemArtifactsItemData2 {
   final TasksItemArtifactsItemData2Variant0 value;
-  const TasksItemArtifactsItemData2TasksItemArtifactsItemData2Variant0(this.value);
-  @override Object? toJson() => value.toJson();
+  const TasksItemArtifactsItemData2TasksItemArtifactsItemData2Variant0(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TasksItemArtifactsItemData2TasksItemArtifactsItemData2Variant1 extends TasksItemArtifactsItemData2 {
+final class TasksItemArtifactsItemData2TasksItemArtifactsItemData2Variant1
+    extends TasksItemArtifactsItemData2 {
   final TasksItemArtifactsItemData2Variant1 value;
-  const TasksItemArtifactsItemData2TasksItemArtifactsItemData2Variant1(this.value);
-  @override Object? toJson() => value.toJson();
+  const TasksItemArtifactsItemData2TasksItemArtifactsItemData2Variant1(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
 /// A GitHub resource (pull request, issue, etc.)
 class TasksItemArtifactsItemData3Variant0 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// GitHub resource ID
   final int id;
+
   /// GraphQL global ID
   final SdkOptional<String> globalId;
 
-  const TasksItemArtifactsItemData3Variant0({required this.id, this.globalId = const SdkOmitted()});
+  const TasksItemArtifactsItemData3Variant0(
+      {required this.id, this.globalId = const SdkOmitted()});
 
-  TasksItemArtifactsItemData3Variant0 Function({int id, SdkOptional<String> globalId}) get copyWith => _copyWith;
+  TasksItemArtifactsItemData3Variant0 Function(
+      {int id, SdkOptional<String> globalId}) get copyWith => _copyWith;
 
-  TasksItemArtifactsItemData3Variant0 _copyWith({Object? id = sdkOmittedValue, Object? globalId = sdkOmittedValue}) => TasksItemArtifactsItemData3Variant0(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    globalId: identical(globalId, sdkOmittedValue) ? this.globalId : globalId as SdkOptional<String>,
-  );
+  TasksItemArtifactsItemData3Variant0 _copyWith(
+          {Object? id = sdkOmittedValue, Object? globalId = sdkOmittedValue}) =>
+      TasksItemArtifactsItemData3Variant0(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        globalId: identical(globalId, sdkOmittedValue)
+            ? this.globalId
+            : globalId as SdkOptional<String>,
+      );
 
-  factory TasksItemArtifactsItemData3Variant0.fromJson(Map<String, dynamic> json) => TasksItemArtifactsItemData3Variant0(
-    id: ((json['id'] as num?)?.toInt())!,
-    globalId: json['global_id'] != null ? SdkPresent((json['global_id'] as String?)!) : const SdkOmitted(),
-  );
+  factory TasksItemArtifactsItemData3Variant0.fromJson(
+          Map<String, dynamic> json) =>
+      TasksItemArtifactsItemData3Variant0(
+        id: ((json['id'] as num?)?.toInt())!,
+        globalId: json['global_id'] != null
+            ? SdkPresent((json['global_id'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    ...switch (globalId) {
-      SdkPresent<String>(value: final value) => {'global_id': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'id': id,
+        ...switch (globalId) {
+          SdkPresent<String>(value: final value) => {
+              'global_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// A Git branch reference
 class TasksItemArtifactsItemData3Variant1 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Head branch name
   final String headRef;
+
   /// Base branch name
   final String baseRef;
 
-  const TasksItemArtifactsItemData3Variant1({required this.headRef, required this.baseRef});
+  const TasksItemArtifactsItemData3Variant1(
+      {required this.headRef, required this.baseRef});
 
-  TasksItemArtifactsItemData3Variant1 Function({String headRef, String baseRef}) get copyWith => _copyWith;
+  TasksItemArtifactsItemData3Variant1 Function({String headRef, String baseRef})
+      get copyWith => _copyWith;
 
-  TasksItemArtifactsItemData3Variant1 _copyWith({Object? headRef = sdkOmittedValue, Object? baseRef = sdkOmittedValue}) => TasksItemArtifactsItemData3Variant1(
-    headRef: identical(headRef, sdkOmittedValue) ? this.headRef : headRef as String,
-    baseRef: identical(baseRef, sdkOmittedValue) ? this.baseRef : baseRef as String,
-  );
+  TasksItemArtifactsItemData3Variant1 _copyWith(
+          {Object? headRef = sdkOmittedValue,
+          Object? baseRef = sdkOmittedValue}) =>
+      TasksItemArtifactsItemData3Variant1(
+        headRef: identical(headRef, sdkOmittedValue)
+            ? this.headRef
+            : headRef as String,
+        baseRef: identical(baseRef, sdkOmittedValue)
+            ? this.baseRef
+            : baseRef as String,
+      );
 
-  factory TasksItemArtifactsItemData3Variant1.fromJson(Map<String, dynamic> json) => TasksItemArtifactsItemData3Variant1(
-    headRef: (json['head_ref'] as String?)!,
-    baseRef: (json['base_ref'] as String?)!,
-  );
+  factory TasksItemArtifactsItemData3Variant1.fromJson(
+          Map<String, dynamic> json) =>
+      TasksItemArtifactsItemData3Variant1(
+        headRef: (json['head_ref'] as String?)!,
+        baseRef: (json['base_ref'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'head_ref': headRef,
-    'base_ref': baseRef,
-  };
+        'head_ref': headRef,
+        'base_ref': baseRef,
+      };
 }
 
 sealed class TasksItemArtifactsItemData3 {
@@ -155,21 +223,35 @@ sealed class TasksItemArtifactsItemData3 {
   static const String constructionSurface = 'named';
   const TasksItemArtifactsItemData3();
   factory TasksItemArtifactsItemData3.fromJson(Object? json) {
-    try { return TasksItemArtifactsItemData3TasksItemArtifactsItemData3Variant0(TasksItemArtifactsItemData3Variant0.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return TasksItemArtifactsItemData3TasksItemArtifactsItemData3Variant1(TasksItemArtifactsItemData3Variant1.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try {
+      return TasksItemArtifactsItemData3TasksItemArtifactsItemData3Variant0(
+          TasksItemArtifactsItemData3Variant0.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return TasksItemArtifactsItemData3TasksItemArtifactsItemData3Variant1(
+          TasksItemArtifactsItemData3Variant1.fromJson(
+              json as Map<String, dynamic>));
+    } catch (_) {}
     throw FormatException("No variant matched for TasksItemArtifactsItemData3");
   }
   Object? toJson();
 }
 
-final class TasksItemArtifactsItemData3TasksItemArtifactsItemData3Variant0 extends TasksItemArtifactsItemData3 {
+final class TasksItemArtifactsItemData3TasksItemArtifactsItemData3Variant0
+    extends TasksItemArtifactsItemData3 {
   final TasksItemArtifactsItemData3Variant0 value;
-  const TasksItemArtifactsItemData3TasksItemArtifactsItemData3Variant0(this.value);
-  @override Object? toJson() => value.toJson();
+  const TasksItemArtifactsItemData3TasksItemArtifactsItemData3Variant0(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class TasksItemArtifactsItemData3TasksItemArtifactsItemData3Variant1 extends TasksItemArtifactsItemData3 {
+final class TasksItemArtifactsItemData3TasksItemArtifactsItemData3Variant1
+    extends TasksItemArtifactsItemData3 {
   final TasksItemArtifactsItemData3Variant1 value;
-  const TasksItemArtifactsItemData3TasksItemArtifactsItemData3Variant1(this.value);
-  @override Object? toJson() => value.toJson();
+  const TasksItemArtifactsItemData3TasksItemArtifactsItemData3Variant1(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }

@@ -6,12 +6,12 @@ part of 'inline.dart';
 // Inline operation models (part 27)
 /// Source answers the question, "where did this role come from?"
 final class OrganizationRoleSource {
-
   final String value;
 
   const OrganizationRoleSource._(this.value);
 
-  factory OrganizationRoleSource.fromJson(String value) => OrganizationRoleSource._(value);
+  factory OrganizationRoleSource.fromJson(String value) =>
+      OrganizationRoleSource._(value);
 
   static const organization = OrganizationRoleSource._('Organization');
   static const enterprise = OrganizationRoleSource._('Enterprise');
@@ -19,22 +19,25 @@ final class OrganizationRoleSource {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is OrganizationRoleSource && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is OrganizationRoleSource && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The token status as of the latest validity check.
 final class OrganizationSecretScanningAlertValidity {
-
   final String value;
 
   const OrganizationSecretScanningAlertValidity._(this.value);
 
-  factory OrganizationSecretScanningAlertValidity.fromJson(String value) => OrganizationSecretScanningAlertValidity._(value);
+  factory OrganizationSecretScanningAlertValidity.fromJson(String value) =>
+      OrganizationSecretScanningAlertValidity._(value);
 
   static const active = OrganizationSecretScanningAlertValidity._('active');
   static const inactive = OrganizationSecretScanningAlertValidity._('inactive');
@@ -42,72 +45,86 @@ final class OrganizationSecretScanningAlertValidity {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is OrganizationSecretScanningAlertValidity && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is OrganizationSecretScanningAlertValidity && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Color for the option.
 final class OrganizationUpdateIssueFieldOptionsItemColor {
-
   final String value;
 
   const OrganizationUpdateIssueFieldOptionsItemColor._(this.value);
 
-  factory OrganizationUpdateIssueFieldOptionsItemColor.fromJson(String value) => OrganizationUpdateIssueFieldOptionsItemColor._(value);
+  factory OrganizationUpdateIssueFieldOptionsItemColor.fromJson(String value) =>
+      OrganizationUpdateIssueFieldOptionsItemColor._(value);
 
   static const gray = OrganizationUpdateIssueFieldOptionsItemColor._('gray');
   static const blue = OrganizationUpdateIssueFieldOptionsItemColor._('blue');
   static const green = OrganizationUpdateIssueFieldOptionsItemColor._('green');
-  static const yellow = OrganizationUpdateIssueFieldOptionsItemColor._('yellow');
-  static const orange = OrganizationUpdateIssueFieldOptionsItemColor._('orange');
+  static const yellow =
+      OrganizationUpdateIssueFieldOptionsItemColor._('yellow');
+  static const orange =
+      OrganizationUpdateIssueFieldOptionsItemColor._('orange');
   static const red = OrganizationUpdateIssueFieldOptionsItemColor._('red');
   static const pink = OrganizationUpdateIssueFieldOptionsItemColor._('pink');
-  static const purple = OrganizationUpdateIssueFieldOptionsItemColor._('purple');
+  static const purple =
+      OrganizationUpdateIssueFieldOptionsItemColor._('purple');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is OrganizationUpdateIssueFieldOptionsItemColor && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is OrganizationUpdateIssueFieldOptionsItemColor &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The visibility of the issue field. Can be `organization_members_only` (visible only within the organization) or `all` (visible to all users who can see issues). Only used when the visibility settings feature is enabled.
 final class OrganizationUpdateIssueFieldVisibility {
-
   final String value;
 
   const OrganizationUpdateIssueFieldVisibility._(this.value);
 
-  factory OrganizationUpdateIssueFieldVisibility.fromJson(String value) => OrganizationUpdateIssueFieldVisibility._(value);
+  factory OrganizationUpdateIssueFieldVisibility.fromJson(String value) =>
+      OrganizationUpdateIssueFieldVisibility._(value);
 
-  static const organizationMembersOnly = OrganizationUpdateIssueFieldVisibility._('organization_members_only');
+  static const organizationMembersOnly =
+      OrganizationUpdateIssueFieldVisibility._('organization_members_only');
   static const all = OrganizationUpdateIssueFieldVisibility._('all');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is OrganizationUpdateIssueFieldVisibility && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is OrganizationUpdateIssueFieldVisibility && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Color for the issue type.
 final class OrganizationUpdateIssueTypeColor {
-
   final String value;
 
   const OrganizationUpdateIssueTypeColor._(this.value);
 
-  factory OrganizationUpdateIssueTypeColor.fromJson(String value) => OrganizationUpdateIssueTypeColor._(value);
+  factory OrganizationUpdateIssueTypeColor.fromJson(String value) =>
+      OrganizationUpdateIssueTypeColor._(value);
 
   static const gray = OrganizationUpdateIssueTypeColor._('gray');
   static const blue = OrganizationUpdateIssueTypeColor._('blue');
@@ -120,22 +137,25 @@ final class OrganizationUpdateIssueTypeColor {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is OrganizationUpdateIssueTypeColor && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is OrganizationUpdateIssueTypeColor && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The user's membership type in the organization.
 final class OrgMembershipRole {
-
   final String value;
 
   const OrgMembershipRole._(this.value);
 
-  factory OrgMembershipRole.fromJson(String value) => OrgMembershipRole._(value);
+  factory OrgMembershipRole.fromJson(String value) =>
+      OrgMembershipRole._(value);
 
   static const admin = OrgMembershipRole._('admin');
   static const member = OrgMembershipRole._('member');
@@ -143,146 +163,207 @@ final class OrgMembershipRole {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is OrgMembershipRole && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is OrgMembershipRole && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The state of the member in the organization. The `pending` state indicates the user has not yet accepted an invitation.
 final class OrgMembershipState {
-
   final String value;
 
   const OrgMembershipState._(this.value);
 
-  factory OrgMembershipState.fromJson(String value) => OrgMembershipState._(value);
+  factory OrgMembershipState.fromJson(String value) =>
+      OrgMembershipState._(value);
 
   static const active = OrgMembershipState._('active');
   static const pending = OrgMembershipState._('pending');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is OrgMembershipState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is OrgMembershipState && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The authentication type for the private registry.
 final class OrgPrivateRegistryConfigurationAuthType {
-
   final String value;
 
   const OrgPrivateRegistryConfigurationAuthType._(this.value);
 
-  factory OrgPrivateRegistryConfigurationAuthType.fromJson(String value) => OrgPrivateRegistryConfigurationAuthType._(value);
+  factory OrgPrivateRegistryConfigurationAuthType.fromJson(String value) =>
+      OrgPrivateRegistryConfigurationAuthType._(value);
 
   static const token = OrgPrivateRegistryConfigurationAuthType._('token');
-  static const usernamePassword = OrgPrivateRegistryConfigurationAuthType._('username_password');
-  static const oidcAzure = OrgPrivateRegistryConfigurationAuthType._('oidc_azure');
+  static const usernamePassword =
+      OrgPrivateRegistryConfigurationAuthType._('username_password');
+  static const oidcAzure =
+      OrgPrivateRegistryConfigurationAuthType._('oidc_azure');
   static const oidcAws = OrgPrivateRegistryConfigurationAuthType._('oidc_aws');
-  static const oidcJfrog = OrgPrivateRegistryConfigurationAuthType._('oidc_jfrog');
-  static const oidcCloudsmith = OrgPrivateRegistryConfigurationAuthType._('oidc_cloudsmith');
+  static const oidcJfrog =
+      OrgPrivateRegistryConfigurationAuthType._('oidc_jfrog');
+  static const oidcCloudsmith =
+      OrgPrivateRegistryConfigurationAuthType._('oidc_cloudsmith');
   static const oidcGcp = OrgPrivateRegistryConfigurationAuthType._('oidc_gcp');
-  static const anonymous = OrgPrivateRegistryConfigurationAuthType._('anonymous');
+  static const anonymous =
+      OrgPrivateRegistryConfigurationAuthType._('anonymous');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is OrgPrivateRegistryConfigurationAuthType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is OrgPrivateRegistryConfigurationAuthType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The registry type.
 final class OrgPrivateRegistryConfigurationRegistryType {
-
   final String value;
 
   const OrgPrivateRegistryConfigurationRegistryType._(this.value);
 
-  factory OrgPrivateRegistryConfigurationRegistryType.fromJson(String value) => OrgPrivateRegistryConfigurationRegistryType._(value);
+  factory OrgPrivateRegistryConfigurationRegistryType.fromJson(String value) =>
+      OrgPrivateRegistryConfigurationRegistryType._(value);
 
-  static const mavenRepository = OrgPrivateRegistryConfigurationRegistryType._('maven_repository');
-  static const nugetFeed = OrgPrivateRegistryConfigurationRegistryType._('nuget_feed');
-  static const goproxyServer = OrgPrivateRegistryConfigurationRegistryType._('goproxy_server');
-  static const npmRegistry = OrgPrivateRegistryConfigurationRegistryType._('npm_registry');
-  static const rubygemsServer = OrgPrivateRegistryConfigurationRegistryType._('rubygems_server');
-  static const cargoRegistry = OrgPrivateRegistryConfigurationRegistryType._('cargo_registry');
-  static const composerRepository = OrgPrivateRegistryConfigurationRegistryType._('composer_repository');
-  static const dockerRegistry = OrgPrivateRegistryConfigurationRegistryType._('docker_registry');
-  static const gitSource = OrgPrivateRegistryConfigurationRegistryType._('git_source');
-  static const helmRegistry = OrgPrivateRegistryConfigurationRegistryType._('helm_registry');
-  static const hexOrganization = OrgPrivateRegistryConfigurationRegistryType._('hex_organization');
-  static const hexRepository = OrgPrivateRegistryConfigurationRegistryType._('hex_repository');
-  static const pubRepository = OrgPrivateRegistryConfigurationRegistryType._('pub_repository');
-  static const pythonIndex = OrgPrivateRegistryConfigurationRegistryType._('python_index');
-  static const terraformRegistry = OrgPrivateRegistryConfigurationRegistryType._('terraform_registry');
+  static const mavenRepository =
+      OrgPrivateRegistryConfigurationRegistryType._('maven_repository');
+  static const nugetFeed =
+      OrgPrivateRegistryConfigurationRegistryType._('nuget_feed');
+  static const goproxyServer =
+      OrgPrivateRegistryConfigurationRegistryType._('goproxy_server');
+  static const npmRegistry =
+      OrgPrivateRegistryConfigurationRegistryType._('npm_registry');
+  static const rubygemsServer =
+      OrgPrivateRegistryConfigurationRegistryType._('rubygems_server');
+  static const cargoRegistry =
+      OrgPrivateRegistryConfigurationRegistryType._('cargo_registry');
+  static const composerRepository =
+      OrgPrivateRegistryConfigurationRegistryType._('composer_repository');
+  static const dockerRegistry =
+      OrgPrivateRegistryConfigurationRegistryType._('docker_registry');
+  static const gitSource =
+      OrgPrivateRegistryConfigurationRegistryType._('git_source');
+  static const helmRegistry =
+      OrgPrivateRegistryConfigurationRegistryType._('helm_registry');
+  static const hexOrganization =
+      OrgPrivateRegistryConfigurationRegistryType._('hex_organization');
+  static const hexRepository =
+      OrgPrivateRegistryConfigurationRegistryType._('hex_repository');
+  static const pubRepository =
+      OrgPrivateRegistryConfigurationRegistryType._('pub_repository');
+  static const pythonIndex =
+      OrgPrivateRegistryConfigurationRegistryType._('python_index');
+  static const terraformRegistry =
+      OrgPrivateRegistryConfigurationRegistryType._('terraform_registry');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is OrgPrivateRegistryConfigurationRegistryType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is OrgPrivateRegistryConfigurationRegistryType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Which type of organization repositories have access to the private registry.
 final class OrgPrivateRegistryConfigurationVisibility {
-
   final String value;
 
   const OrgPrivateRegistryConfigurationVisibility._(this.value);
 
-  factory OrgPrivateRegistryConfigurationVisibility.fromJson(String value) => OrgPrivateRegistryConfigurationVisibility._(value);
+  factory OrgPrivateRegistryConfigurationVisibility.fromJson(String value) =>
+      OrgPrivateRegistryConfigurationVisibility._(value);
 
   static const all = OrgPrivateRegistryConfigurationVisibility._('all');
   static const private = OrgPrivateRegistryConfigurationVisibility._('private');
-  static const selected = OrgPrivateRegistryConfigurationVisibility._('selected');
+  static const selected =
+      OrgPrivateRegistryConfigurationVisibility._('selected');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is OrgPrivateRegistryConfigurationVisibility && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is OrgPrivateRegistryConfigurationVisibility &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The authentication type for the private registry.
 final class OrgPrivateRegistryConfigurationWithSelectedRepositoriesAuthType {
-
   final String value;
 
-  const OrgPrivateRegistryConfigurationWithSelectedRepositoriesAuthType._(this.value);
+  const OrgPrivateRegistryConfigurationWithSelectedRepositoriesAuthType._(
+      this.value);
 
-  factory OrgPrivateRegistryConfigurationWithSelectedRepositoriesAuthType.fromJson(String value) => OrgPrivateRegistryConfigurationWithSelectedRepositoriesAuthType._(value);
+  factory OrgPrivateRegistryConfigurationWithSelectedRepositoriesAuthType.fromJson(
+          String value) =>
+      OrgPrivateRegistryConfigurationWithSelectedRepositoriesAuthType._(value);
 
-  static const token = OrgPrivateRegistryConfigurationWithSelectedRepositoriesAuthType._('token');
-  static const usernamePassword = OrgPrivateRegistryConfigurationWithSelectedRepositoriesAuthType._('username_password');
-  static const oidcAzure = OrgPrivateRegistryConfigurationWithSelectedRepositoriesAuthType._('oidc_azure');
-  static const oidcAws = OrgPrivateRegistryConfigurationWithSelectedRepositoriesAuthType._('oidc_aws');
-  static const oidcJfrog = OrgPrivateRegistryConfigurationWithSelectedRepositoriesAuthType._('oidc_jfrog');
-  static const oidcCloudsmith = OrgPrivateRegistryConfigurationWithSelectedRepositoriesAuthType._('oidc_cloudsmith');
-  static const oidcGcp = OrgPrivateRegistryConfigurationWithSelectedRepositoriesAuthType._('oidc_gcp');
-  static const anonymous = OrgPrivateRegistryConfigurationWithSelectedRepositoriesAuthType._('anonymous');
+  static const token =
+      OrgPrivateRegistryConfigurationWithSelectedRepositoriesAuthType._(
+          'token');
+  static const usernamePassword =
+      OrgPrivateRegistryConfigurationWithSelectedRepositoriesAuthType._(
+          'username_password');
+  static const oidcAzure =
+      OrgPrivateRegistryConfigurationWithSelectedRepositoriesAuthType._(
+          'oidc_azure');
+  static const oidcAws =
+      OrgPrivateRegistryConfigurationWithSelectedRepositoriesAuthType._(
+          'oidc_aws');
+  static const oidcJfrog =
+      OrgPrivateRegistryConfigurationWithSelectedRepositoriesAuthType._(
+          'oidc_jfrog');
+  static const oidcCloudsmith =
+      OrgPrivateRegistryConfigurationWithSelectedRepositoriesAuthType._(
+          'oidc_cloudsmith');
+  static const oidcGcp =
+      OrgPrivateRegistryConfigurationWithSelectedRepositoriesAuthType._(
+          'oidc_gcp');
+  static const anonymous =
+      OrgPrivateRegistryConfigurationWithSelectedRepositoriesAuthType._(
+          'anonymous');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is OrgPrivateRegistryConfigurationWithSelectedRepositoriesAuthType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is OrgPrivateRegistryConfigurationWithSelectedRepositoriesAuthType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

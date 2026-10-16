@@ -6,129 +6,178 @@ part of 'inline.dart';
 // Inline operation models (part 289)
 /// The permission to grant the team on this repository. If no permission is specified, the team's `permission` attribute will be used to determine what permission to grant the team on this repository.
 final class TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission {
-
   final String value;
 
-  const TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission._(this.value);
+  const TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission._(
+      this.value);
 
-  factory TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission.fromJson(String value) => TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission._(value);
+  factory TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission.fromJson(
+          String value) =>
+      TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission._(value);
 
-  static const pull = TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission._('pull');
-  static const push = TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission._('push');
-  static const admin = TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission._('admin');
+  static const pull =
+      TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission._('pull');
+  static const push =
+      TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission._('push');
+  static const admin =
+      TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission._('admin');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is closing down.
 final class CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo {
-
   final String value;
 
-  const CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo._(this.value);
+  const CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo._(
+      this.value);
 
-  factory CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo.fromJson(String value) => CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo._(value);
+  factory CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo.fromJson(
+          String value) =>
+      CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo._(value);
 
-  static const europewest = CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo._('EuropeWest');
-  static const southeastasia = CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo._('SoutheastAsia');
-  static const useast = CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo._('UsEast');
-  static const uswest = CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo._('UsWest');
+  static const europewest =
+      CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo._(
+          'EuropeWest');
+  static const southeastasia =
+      CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo._(
+          'SoutheastAsia');
+  static const useast =
+      CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo._('UsEast');
+  static const uswest =
+      CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo._('UsWest');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is closing down.
 final class CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo {
-
   final String value;
 
-  const CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo._(this.value);
+  const CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo._(
+      this.value);
 
-  factory CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo.fromJson(String value) => CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo._(value);
+  factory CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo.fromJson(
+          String value) =>
+      CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo._(value);
 
-  static const europewest = CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo._('EuropeWest');
-  static const southeastasia = CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo._('SoutheastAsia');
-  static const useast = CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo._('UsEast');
-  static const uswest = CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo._('UsWest');
+  static const europewest =
+      CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo._(
+          'EuropeWest');
+  static const southeastasia =
+      CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo._(
+          'SoutheastAsia');
+  static const useast =
+      CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo._('UsEast');
+  static const uswest =
+      CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo._('UsWest');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Denotes whether an email is publicly visible.
 final class UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility {
-
   final String value;
 
-  const UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility._(this.value);
+  const UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility._(
+      this.value);
 
-  factory UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility.fromJson(String value) => UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility._(value);
+  factory UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility.fromJson(
+          String value) =>
+      UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility._(
+          value);
 
-  static const public = UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility._('public');
-  static const private = UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility._('private');
+  static const public =
+      UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility._(
+          'public');
+  static const private =
+      UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility._(
+          'private');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class IssuesListForAuthenticatedUserFilter {
-
   final String value;
 
   const IssuesListForAuthenticatedUserFilter._(this.value);
 
-  factory IssuesListForAuthenticatedUserFilter.fromJson(String value) => IssuesListForAuthenticatedUserFilter._(value);
+  factory IssuesListForAuthenticatedUserFilter.fromJson(String value) =>
+      IssuesListForAuthenticatedUserFilter._(value);
 
   static const assigned = IssuesListForAuthenticatedUserFilter._('assigned');
   static const created = IssuesListForAuthenticatedUserFilter._('created');
   static const mentioned = IssuesListForAuthenticatedUserFilter._('mentioned');
-  static const subscribed = IssuesListForAuthenticatedUserFilter._('subscribed');
+  static const subscribed =
+      IssuesListForAuthenticatedUserFilter._('subscribed');
   static const repos = IssuesListForAuthenticatedUserFilter._('repos');
   static const all = IssuesListForAuthenticatedUserFilter._('all');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is IssuesListForAuthenticatedUserFilter && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is IssuesListForAuthenticatedUserFilter && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class IssuesListForAuthenticatedUserState {
-
   final String value;
 
   const IssuesListForAuthenticatedUserState._(this.value);
 
-  factory IssuesListForAuthenticatedUserState.fromJson(String value) => IssuesListForAuthenticatedUserState._(value);
+  factory IssuesListForAuthenticatedUserState.fromJson(String value) =>
+      IssuesListForAuthenticatedUserState._(value);
 
   static const open = IssuesListForAuthenticatedUserState._('open');
   static const closed = IssuesListForAuthenticatedUserState._('closed');
@@ -136,21 +185,24 @@ final class IssuesListForAuthenticatedUserState {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is IssuesListForAuthenticatedUserState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is IssuesListForAuthenticatedUserState && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class IssuesListForAuthenticatedUserSort {
-
   final String value;
 
   const IssuesListForAuthenticatedUserSort._(this.value);
 
-  factory IssuesListForAuthenticatedUserSort.fromJson(String value) => IssuesListForAuthenticatedUserSort._(value);
+  factory IssuesListForAuthenticatedUserSort.fromJson(String value) =>
+      IssuesListForAuthenticatedUserSort._(value);
 
   static const created = IssuesListForAuthenticatedUserSort._('created');
   static const updated = IssuesListForAuthenticatedUserSort._('updated');
@@ -158,119 +210,164 @@ final class IssuesListForAuthenticatedUserSort {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is IssuesListForAuthenticatedUserSort && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is IssuesListForAuthenticatedUserSort && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class OrgsListMembershipsForAuthenticatedUserState {
-
   final String value;
 
   const OrgsListMembershipsForAuthenticatedUserState._(this.value);
 
-  factory OrgsListMembershipsForAuthenticatedUserState.fromJson(String value) => OrgsListMembershipsForAuthenticatedUserState._(value);
+  factory OrgsListMembershipsForAuthenticatedUserState.fromJson(String value) =>
+      OrgsListMembershipsForAuthenticatedUserState._(value);
 
-  static const active = OrgsListMembershipsForAuthenticatedUserState._('active');
-  static const pending = OrgsListMembershipsForAuthenticatedUserState._('pending');
+  static const active =
+      OrgsListMembershipsForAuthenticatedUserState._('active');
+  static const pending =
+      OrgsListMembershipsForAuthenticatedUserState._('pending');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is OrgsListMembershipsForAuthenticatedUserState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is OrgsListMembershipsForAuthenticatedUserState &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The state that the membership should be in. Only `"active"` will be accepted.
 final class OrgsUpdateMembershipForAuthenticatedUserRequestBodyState {
-
   final String value;
 
   const OrgsUpdateMembershipForAuthenticatedUserRequestBodyState._(this.value);
 
-  factory OrgsUpdateMembershipForAuthenticatedUserRequestBodyState.fromJson(String value) => OrgsUpdateMembershipForAuthenticatedUserRequestBodyState._(value);
+  factory OrgsUpdateMembershipForAuthenticatedUserRequestBodyState.fromJson(
+          String value) =>
+      OrgsUpdateMembershipForAuthenticatedUserRequestBodyState._(value);
 
-  static const active = OrgsUpdateMembershipForAuthenticatedUserRequestBodyState._('active');
+  static const active =
+      OrgsUpdateMembershipForAuthenticatedUserRequestBodyState._('active');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is OrgsUpdateMembershipForAuthenticatedUserRequestBodyState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is OrgsUpdateMembershipForAuthenticatedUserRequestBodyState &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Allowed values that can be passed to the exclude param.
 final class MigrationsStartForAuthenticatedUserRequestBodyExcludeItem {
-
   final String value;
 
   const MigrationsStartForAuthenticatedUserRequestBodyExcludeItem._(this.value);
 
-  factory MigrationsStartForAuthenticatedUserRequestBodyExcludeItem.fromJson(String value) => MigrationsStartForAuthenticatedUserRequestBodyExcludeItem._(value);
+  factory MigrationsStartForAuthenticatedUserRequestBodyExcludeItem.fromJson(
+          String value) =>
+      MigrationsStartForAuthenticatedUserRequestBodyExcludeItem._(value);
 
-  static const repositories = MigrationsStartForAuthenticatedUserRequestBodyExcludeItem._('repositories');
+  static const repositories =
+      MigrationsStartForAuthenticatedUserRequestBodyExcludeItem._(
+          'repositories');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is MigrationsStartForAuthenticatedUserRequestBodyExcludeItem && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is MigrationsStartForAuthenticatedUserRequestBodyExcludeItem &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class PackagesListPackagesForAuthenticatedUserPackageType {
-
   final String value;
 
   const PackagesListPackagesForAuthenticatedUserPackageType._(this.value);
 
-  factory PackagesListPackagesForAuthenticatedUserPackageType.fromJson(String value) => PackagesListPackagesForAuthenticatedUserPackageType._(value);
+  factory PackagesListPackagesForAuthenticatedUserPackageType.fromJson(
+          String value) =>
+      PackagesListPackagesForAuthenticatedUserPackageType._(value);
 
-  static const npm = PackagesListPackagesForAuthenticatedUserPackageType._('npm');
-  static const maven = PackagesListPackagesForAuthenticatedUserPackageType._('maven');
-  static const rubygems = PackagesListPackagesForAuthenticatedUserPackageType._('rubygems');
-  static const docker = PackagesListPackagesForAuthenticatedUserPackageType._('docker');
-  static const nuget = PackagesListPackagesForAuthenticatedUserPackageType._('nuget');
-  static const container = PackagesListPackagesForAuthenticatedUserPackageType._('container');
+  static const npm =
+      PackagesListPackagesForAuthenticatedUserPackageType._('npm');
+  static const maven =
+      PackagesListPackagesForAuthenticatedUserPackageType._('maven');
+  static const rubygems =
+      PackagesListPackagesForAuthenticatedUserPackageType._('rubygems');
+  static const docker =
+      PackagesListPackagesForAuthenticatedUserPackageType._('docker');
+  static const nuget =
+      PackagesListPackagesForAuthenticatedUserPackageType._('nuget');
+  static const container =
+      PackagesListPackagesForAuthenticatedUserPackageType._('container');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PackagesListPackagesForAuthenticatedUserPackageType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PackagesListPackagesForAuthenticatedUserPackageType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserState {
-
   final String value;
 
-  const PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserState._(this.value);
+  const PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserState._(
+      this.value);
 
-  factory PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserState.fromJson(String value) => PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserState._(value);
+  factory PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserState.fromJson(
+          String value) =>
+      PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserState._(
+          value);
 
-  static const active = PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserState._('active');
-  static const deleted = PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserState._('deleted');
+  static const active =
+      PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserState._(
+          'active');
+  static const deleted =
+      PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserState._(
+          'deleted');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserState &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

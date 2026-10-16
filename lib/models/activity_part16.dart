@@ -8,271 +8,436 @@ part of 'activity.dart';
 class ReleaseEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `action` wire field.
   final String action;
+
   /// Required API value serialized in the `release` wire field.
   final ReleaseEventRelease release;
 
   const ReleaseEvent({required this.action, required this.release});
 
-  ReleaseEvent Function({String action, ReleaseEventRelease release}) get copyWith => _copyWith;
+  ReleaseEvent Function({String action, ReleaseEventRelease release})
+      get copyWith => _copyWith;
 
-  ReleaseEvent _copyWith({Object? action = sdkOmittedValue, Object? release = sdkOmittedValue}) => ReleaseEvent(
-    action: identical(action, sdkOmittedValue) ? this.action : action as String,
-    release: identical(release, sdkOmittedValue) ? this.release : release as ReleaseEventRelease,
-  );
+  ReleaseEvent _copyWith(
+          {Object? action = sdkOmittedValue,
+          Object? release = sdkOmittedValue}) =>
+      ReleaseEvent(
+        action:
+            identical(action, sdkOmittedValue) ? this.action : action as String,
+        release: identical(release, sdkOmittedValue)
+            ? this.release
+            : release as ReleaseEventRelease,
+      );
 
   factory ReleaseEvent.fromJson(Map<String, dynamic> json) => ReleaseEvent(
-    action: (json['action'] as String?)!,
-    release: (json['release'] != null ? ReleaseEventRelease.fromJson(json['release'] as Map<String, dynamic>) : null)!,
-  );
+        action: (json['action'] as String?)!,
+        release: (json['release'] != null
+            ? ReleaseEventRelease.fromJson(
+                json['release'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'action': action,
-    'release': release.toJson(),
-  };
+        'action': action,
+        'release': release.toJson(),
+      };
 }
 
 /// Repository invitations let you manage who you collaborate with.
 class RepositorySubscription {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Determines if notifications should be received from this repository.
   final bool subscribed;
+
   /// Determines if all notifications should be blocked from this repository.
   final bool ignored;
+
   /// Required `string` value serialized in the `reason` wire field.
   final String? reason;
+
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String createdAt;
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
+
   /// Required `uri`-formatted value serialized in the `repository_url` wire field.
   final String repositoryUrl;
 
-  const RepositorySubscription({required this.subscribed, required this.ignored, required this.reason, required this.createdAt, required this.url, required this.repositoryUrl});
+  const RepositorySubscription(
+      {required this.subscribed,
+      required this.ignored,
+      required this.reason,
+      required this.createdAt,
+      required this.url,
+      required this.repositoryUrl});
 
-  RepositorySubscription Function({bool subscribed, bool ignored, String? reason, String createdAt, String url, String repositoryUrl}) get copyWith => _copyWith;
+  RepositorySubscription Function(
+      {bool subscribed,
+      bool ignored,
+      String? reason,
+      String createdAt,
+      String url,
+      String repositoryUrl}) get copyWith => _copyWith;
 
-  RepositorySubscription _copyWith({Object? subscribed = sdkOmittedValue, Object? ignored = sdkOmittedValue, Object? reason = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? url = sdkOmittedValue, Object? repositoryUrl = sdkOmittedValue}) => RepositorySubscription(
-    subscribed: identical(subscribed, sdkOmittedValue) ? this.subscribed : subscribed as bool,
-    ignored: identical(ignored, sdkOmittedValue) ? this.ignored : ignored as bool,
-    reason: identical(reason, sdkOmittedValue) ? this.reason : reason as String?,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    repositoryUrl: identical(repositoryUrl, sdkOmittedValue) ? this.repositoryUrl : repositoryUrl as String,
-  );
+  RepositorySubscription _copyWith(
+          {Object? subscribed = sdkOmittedValue,
+          Object? ignored = sdkOmittedValue,
+          Object? reason = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? repositoryUrl = sdkOmittedValue}) =>
+      RepositorySubscription(
+        subscribed: identical(subscribed, sdkOmittedValue)
+            ? this.subscribed
+            : subscribed as bool,
+        ignored: identical(ignored, sdkOmittedValue)
+            ? this.ignored
+            : ignored as bool,
+        reason: identical(reason, sdkOmittedValue)
+            ? this.reason
+            : reason as String?,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        repositoryUrl: identical(repositoryUrl, sdkOmittedValue)
+            ? this.repositoryUrl
+            : repositoryUrl as String,
+      );
 
-  factory RepositorySubscription.fromJson(Map<String, dynamic> json) => RepositorySubscription(
-    subscribed: (json['subscribed'] as bool?)!,
-    ignored: (json['ignored'] as bool?)!,
-    reason: json.containsKey('reason') ? json['reason'] as String? : throw ArgumentError.value(null, 'reason', 'Required property is missing'),
-    createdAt: (json['created_at'] as String?)!,
-    url: (json['url'] as String?)!,
-    repositoryUrl: (json['repository_url'] as String?)!,
-  );
+  factory RepositorySubscription.fromJson(Map<String, dynamic> json) =>
+      RepositorySubscription(
+        subscribed: (json['subscribed'] as bool?)!,
+        ignored: (json['ignored'] as bool?)!,
+        reason: json.containsKey('reason')
+            ? json['reason'] as String?
+            : throw ArgumentError.value(
+                null, 'reason', 'Required property is missing'),
+        createdAt: (json['created_at'] as String?)!,
+        url: (json['url'] as String?)!,
+        repositoryUrl: (json['repository_url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'subscribed': subscribed,
-    'ignored': ignored,
-    'reason': reason,
-    'created_at': createdAt,
-    'url': url,
-    'repository_url': repositoryUrl,
-  };
+        'subscribed': subscribed,
+        'ignored': ignored,
+        'reason': reason,
+        'created_at': createdAt,
+        'url': url,
+        'repository_url': repositoryUrl,
+      };
 }
 
 /// Stargazer
 class Stargazer {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `date-time`-formatted value serialized in the `starred_at` wire field.
   final String starredAt;
+
   /// A GitHub user.
   final NullableSimpleUser? user;
 
   const Stargazer({required this.starredAt, required this.user});
 
-  Stargazer Function({String starredAt, NullableSimpleUser? user}) get copyWith => _copyWith;
+  Stargazer Function({String starredAt, NullableSimpleUser? user})
+      get copyWith => _copyWith;
 
-  Stargazer _copyWith({Object? starredAt = sdkOmittedValue, Object? user = sdkOmittedValue}) => Stargazer(
-    starredAt: identical(starredAt, sdkOmittedValue) ? this.starredAt : starredAt as String,
-    user: identical(user, sdkOmittedValue) ? this.user : user as NullableSimpleUser?,
-  );
+  Stargazer _copyWith(
+          {Object? starredAt = sdkOmittedValue,
+          Object? user = sdkOmittedValue}) =>
+      Stargazer(
+        starredAt: identical(starredAt, sdkOmittedValue)
+            ? this.starredAt
+            : starredAt as String,
+        user: identical(user, sdkOmittedValue)
+            ? this.user
+            : user as NullableSimpleUser?,
+      );
 
   factory Stargazer.fromJson(Map<String, dynamic> json) => Stargazer(
-    starredAt: (json['starred_at'] as String?)!,
-    user: json.containsKey('user') ? json['user'] != null ? NullableSimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'user', 'Required property is missing'),
-  );
+        starredAt: (json['starred_at'] as String?)!,
+        user: json.containsKey('user')
+            ? json['user'] != null
+                ? NullableSimpleUser.fromJson(
+                    json['user'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'user', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'starred_at': starredAt,
-    'user': user?.toJson(),
-  };
+        'starred_at': starredAt,
+        'user': user?.toJson(),
+      };
 }
 
 /// Stargazer History
 class StargazerHistory {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The number of stars created on each day of the week, starting on Sunday.
   final List<int> days;
+
   /// The number of stars created during the week.
   final int total;
+
   /// The start of the week, given as a Unix timestamp.
   final int week;
 
-  const StargazerHistory({required this.days, required this.total, required this.week});
+  const StargazerHistory(
+      {required this.days, required this.total, required this.week});
 
-  StargazerHistory Function({List<int> days, int total, int week}) get copyWith => _copyWith;
+  StargazerHistory Function({List<int> days, int total, int week})
+      get copyWith => _copyWith;
 
-  StargazerHistory _copyWith({Object? days = sdkOmittedValue, Object? total = sdkOmittedValue, Object? week = sdkOmittedValue}) => StargazerHistory(
-    days: identical(days, sdkOmittedValue) ? this.days : days as List<int>,
-    total: identical(total, sdkOmittedValue) ? this.total : total as int,
-    week: identical(week, sdkOmittedValue) ? this.week : week as int,
-  );
+  StargazerHistory _copyWith(
+          {Object? days = sdkOmittedValue,
+          Object? total = sdkOmittedValue,
+          Object? week = sdkOmittedValue}) =>
+      StargazerHistory(
+        days: identical(days, sdkOmittedValue) ? this.days : days as List<int>,
+        total: identical(total, sdkOmittedValue) ? this.total : total as int,
+        week: identical(week, sdkOmittedValue) ? this.week : week as int,
+      );
 
-  factory StargazerHistory.fromJson(Map<String, dynamic> json) => StargazerHistory(
-    days: ((json['days'] as List?)?.map((e) => (e as num).toInt()).toList())!,
-    total: ((json['total'] as num?)?.toInt())!,
-    week: ((json['week'] as num?)?.toInt())!,
-  );
+  factory StargazerHistory.fromJson(Map<String, dynamic> json) =>
+      StargazerHistory(
+        days:
+            ((json['days'] as List?)?.map((e) => (e as num).toInt()).toList())!,
+        total: ((json['total'] as num?)?.toInt())!,
+        week: ((json['week'] as num?)?.toInt())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'days': days,
-    'total': total,
-    'week': week,
-  };
+        'days': days,
+        'total': total,
+        'week': week,
+      };
 }
 
 /// Starred Repository
 class StarredRepository {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `date-time`-formatted value serialized in the `starred_at` wire field.
   final String starredAt;
+
   /// A repository on GitHub.
   final Repository repo;
 
   const StarredRepository({required this.starredAt, required this.repo});
 
-  StarredRepository Function({String starredAt, Repository repo}) get copyWith => _copyWith;
+  StarredRepository Function({String starredAt, Repository repo})
+      get copyWith => _copyWith;
 
-  StarredRepository _copyWith({Object? starredAt = sdkOmittedValue, Object? repo = sdkOmittedValue}) => StarredRepository(
-    starredAt: identical(starredAt, sdkOmittedValue) ? this.starredAt : starredAt as String,
-    repo: identical(repo, sdkOmittedValue) ? this.repo : repo as Repository,
-  );
+  StarredRepository _copyWith(
+          {Object? starredAt = sdkOmittedValue,
+          Object? repo = sdkOmittedValue}) =>
+      StarredRepository(
+        starredAt: identical(starredAt, sdkOmittedValue)
+            ? this.starredAt
+            : starredAt as String,
+        repo: identical(repo, sdkOmittedValue) ? this.repo : repo as Repository,
+      );
 
-  factory StarredRepository.fromJson(Map<String, dynamic> json) => StarredRepository(
-    starredAt: (json['starred_at'] as String?)!,
-    repo: (json['repo'] != null ? Repository.fromJson(json['repo'] as Map<String, dynamic>) : null)!,
-  );
+  factory StarredRepository.fromJson(Map<String, dynamic> json) =>
+      StarredRepository(
+        starredAt: (json['starred_at'] as String?)!,
+        repo: (json['repo'] != null
+            ? Repository.fromJson(json['repo'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'starred_at': starredAt,
-    'repo': repo.toJson(),
-  };
+        'starred_at': starredAt,
+        'repo': repo.toJson(),
+      };
 }
 
 /// Required object value serialized in the `subject` wire field.
 class ThreadSubject {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `title` wire field.
   final String title;
+
   /// Required `string` value serialized in the `url` wire field.
   final String url;
+
   /// Required `string` value serialized in the `latest_comment_url` wire field.
   final String latestCommentUrl;
+
   /// Required `string` value serialized in the `type` wire field.
   final String type_;
 
-  const ThreadSubject({required this.title, required this.url, required this.latestCommentUrl, required this.type_});
+  const ThreadSubject(
+      {required this.title,
+      required this.url,
+      required this.latestCommentUrl,
+      required this.type_});
 
-  ThreadSubject Function({String title, String url, String latestCommentUrl, String type_}) get copyWith => _copyWith;
+  ThreadSubject Function(
+      {String title,
+      String url,
+      String latestCommentUrl,
+      String type_}) get copyWith => _copyWith;
 
-  ThreadSubject _copyWith({Object? title = sdkOmittedValue, Object? url = sdkOmittedValue, Object? latestCommentUrl = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => ThreadSubject(
-    title: identical(title, sdkOmittedValue) ? this.title : title as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    latestCommentUrl: identical(latestCommentUrl, sdkOmittedValue) ? this.latestCommentUrl : latestCommentUrl as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as String,
-  );
+  ThreadSubject _copyWith(
+          {Object? title = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? latestCommentUrl = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      ThreadSubject(
+        title: identical(title, sdkOmittedValue) ? this.title : title as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        latestCommentUrl: identical(latestCommentUrl, sdkOmittedValue)
+            ? this.latestCommentUrl
+            : latestCommentUrl as String,
+        type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as String,
+      );
 
   factory ThreadSubject.fromJson(Map<String, dynamic> json) => ThreadSubject(
-    title: (json['title'] as String?)!,
-    url: (json['url'] as String?)!,
-    latestCommentUrl: (json['latest_comment_url'] as String?)!,
-    type_: (json['type'] as String?)!,
-  );
+        title: (json['title'] as String?)!,
+        url: (json['url'] as String?)!,
+        latestCommentUrl: (json['latest_comment_url'] as String?)!,
+        type_: (json['type'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'title': title,
-    'url': url,
-    'latest_comment_url': latestCommentUrl,
-    'type': type_,
-  };
+        'title': title,
+        'url': url,
+        'latest_comment_url': latestCommentUrl,
+        'type': type_,
+      };
 }
 
 /// Thread
 class Thread {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `id` wire field.
   final String id;
+
   /// Minimal Repository
   final MinimalRepository repository;
+
   /// Required object value serialized in the `subject` wire field.
   final ThreadSubject subject;
+
   /// Required `string` value serialized in the `reason` wire field.
   final String reason;
+
   /// Required `boolean` value serialized in the `unread` wire field.
   final bool unread;
+
   /// Required `string` value serialized in the `updated_at` wire field.
   final String updatedAt;
+
   /// Required `string` value serialized in the `last_read_at` wire field.
   final String? lastReadAt;
+
   /// Required `string` value serialized in the `url` wire field.
   final String url;
+
   /// Required `string` value serialized in the `subscription_url` wire field.
   final String subscriptionUrl;
 
-  const Thread({required this.id, required this.repository, required this.subject, required this.reason, required this.unread, required this.updatedAt, required this.lastReadAt, required this.url, required this.subscriptionUrl});
+  const Thread(
+      {required this.id,
+      required this.repository,
+      required this.subject,
+      required this.reason,
+      required this.unread,
+      required this.updatedAt,
+      required this.lastReadAt,
+      required this.url,
+      required this.subscriptionUrl});
 
-  Thread Function({String id, MinimalRepository repository, ThreadSubject subject, String reason, bool unread, String updatedAt, String? lastReadAt, String url, String subscriptionUrl}) get copyWith => _copyWith;
+  Thread Function(
+      {String id,
+      MinimalRepository repository,
+      ThreadSubject subject,
+      String reason,
+      bool unread,
+      String updatedAt,
+      String? lastReadAt,
+      String url,
+      String subscriptionUrl}) get copyWith => _copyWith;
 
-  Thread _copyWith({Object? id = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? subject = sdkOmittedValue, Object? reason = sdkOmittedValue, Object? unread = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? lastReadAt = sdkOmittedValue, Object? url = sdkOmittedValue, Object? subscriptionUrl = sdkOmittedValue}) => Thread(
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as MinimalRepository,
-    subject: identical(subject, sdkOmittedValue) ? this.subject : subject as ThreadSubject,
-    reason: identical(reason, sdkOmittedValue) ? this.reason : reason as String,
-    unread: identical(unread, sdkOmittedValue) ? this.unread : unread as bool,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
-    lastReadAt: identical(lastReadAt, sdkOmittedValue) ? this.lastReadAt : lastReadAt as String?,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    subscriptionUrl: identical(subscriptionUrl, sdkOmittedValue) ? this.subscriptionUrl : subscriptionUrl as String,
-  );
+  Thread _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? repository = sdkOmittedValue,
+          Object? subject = sdkOmittedValue,
+          Object? reason = sdkOmittedValue,
+          Object? unread = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? lastReadAt = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? subscriptionUrl = sdkOmittedValue}) =>
+      Thread(
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        repository: identical(repository, sdkOmittedValue)
+            ? this.repository
+            : repository as MinimalRepository,
+        subject: identical(subject, sdkOmittedValue)
+            ? this.subject
+            : subject as ThreadSubject,
+        reason:
+            identical(reason, sdkOmittedValue) ? this.reason : reason as String,
+        unread:
+            identical(unread, sdkOmittedValue) ? this.unread : unread as bool,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+        lastReadAt: identical(lastReadAt, sdkOmittedValue)
+            ? this.lastReadAt
+            : lastReadAt as String?,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        subscriptionUrl: identical(subscriptionUrl, sdkOmittedValue)
+            ? this.subscriptionUrl
+            : subscriptionUrl as String,
+      );
 
   factory Thread.fromJson(Map<String, dynamic> json) => Thread(
-    id: (json['id'] as String?)!,
-    repository: (json['repository'] != null ? MinimalRepository.fromJson(json['repository'] as Map<String, dynamic>) : null)!,
-    subject: (json['subject'] != null ? ThreadSubject.fromJson(json['subject'] as Map<String, dynamic>) : null)!,
-    reason: (json['reason'] as String?)!,
-    unread: (json['unread'] as bool?)!,
-    updatedAt: (json['updated_at'] as String?)!,
-    lastReadAt: json.containsKey('last_read_at') ? json['last_read_at'] as String? : throw ArgumentError.value(null, 'last_read_at', 'Required property is missing'),
-    url: (json['url'] as String?)!,
-    subscriptionUrl: (json['subscription_url'] as String?)!,
-  );
+        id: (json['id'] as String?)!,
+        repository: (json['repository'] != null
+            ? MinimalRepository.fromJson(
+                json['repository'] as Map<String, dynamic>)
+            : null)!,
+        subject: (json['subject'] != null
+            ? ThreadSubject.fromJson(json['subject'] as Map<String, dynamic>)
+            : null)!,
+        reason: (json['reason'] as String?)!,
+        unread: (json['unread'] as bool?)!,
+        updatedAt: (json['updated_at'] as String?)!,
+        lastReadAt: json.containsKey('last_read_at')
+            ? json['last_read_at'] as String?
+            : throw ArgumentError.value(
+                null, 'last_read_at', 'Required property is missing'),
+        url: (json['url'] as String?)!,
+        subscriptionUrl: (json['subscription_url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'repository': repository.toJson(),
-    'subject': subject.toJson(),
-    'reason': reason,
-    'unread': unread,
-    'updated_at': updatedAt,
-    'last_read_at': lastReadAt,
-    'url': url,
-    'subscription_url': subscriptionUrl,
-  };
+        'id': id,
+        'repository': repository.toJson(),
+        'subject': subject.toJson(),
+        'reason': reason,
+        'unread': unread,
+        'updated_at': updatedAt,
+        'last_read_at': lastReadAt,
+        'url': url,
+        'subscription_url': subscriptionUrl,
+      };
 }

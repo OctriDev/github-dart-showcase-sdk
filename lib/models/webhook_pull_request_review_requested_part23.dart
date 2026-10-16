@@ -8,69 +8,165 @@ class WebhookPullRequestReviewRequestedVariant0 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   final WebhookPullRequestReviewRequestedVariant0Action action;
+
   /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured on an enterprise account or an organization that's part of an enterprise account. For more information, see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
   final SdkOptional<EnterpriseWebhooks> enterprise;
+
   /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured for and sent to a GitHub App. For more information, see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
   final SdkOptional<SimpleInstallation> installation;
+
   /// The pull request number.
   final int number;
+
   /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an organization, or when the event occurs from activity in a repository owned by an organization.
   final SdkOptional<OrganizationSimpleWebhooks> organization;
   final WebhookPullRequestReviewRequestedVariant0PullRequest pullRequest;
+
   /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property when the event occurs from activity in a repository.
   final RepositoryWebhooks repository;
-  final WebhookPullRequestReviewRequestedVariant0RequestedReviewer? requestedReviewer;
+  final WebhookPullRequestReviewRequestedVariant0RequestedReviewer?
+      requestedReviewer;
+
   /// A GitHub user.
   final SimpleUser sender;
 
-  const WebhookPullRequestReviewRequestedVariant0({required this.action, this.enterprise = const SdkOmitted(), this.installation = const SdkOmitted(), required this.number, this.organization = const SdkOmitted(), required this.pullRequest, required this.repository, required this.requestedReviewer, required this.sender});
+  const WebhookPullRequestReviewRequestedVariant0(
+      {required this.action,
+      this.enterprise = const SdkOmitted(),
+      this.installation = const SdkOmitted(),
+      required this.number,
+      this.organization = const SdkOmitted(),
+      required this.pullRequest,
+      required this.repository,
+      required this.requestedReviewer,
+      required this.sender});
 
-  WebhookPullRequestReviewRequestedVariant0 Function({WebhookPullRequestReviewRequestedVariant0Action action, SdkOptional<EnterpriseWebhooks> enterprise, SdkOptional<SimpleInstallation> installation, int number, SdkOptional<OrganizationSimpleWebhooks> organization, WebhookPullRequestReviewRequestedVariant0PullRequest pullRequest, RepositoryWebhooks repository, WebhookPullRequestReviewRequestedVariant0RequestedReviewer? requestedReviewer, SimpleUser sender}) get copyWith => _copyWith;
+  WebhookPullRequestReviewRequestedVariant0 Function(
+      {WebhookPullRequestReviewRequestedVariant0Action action,
+      SdkOptional<EnterpriseWebhooks> enterprise,
+      SdkOptional<SimpleInstallation> installation,
+      int number,
+      SdkOptional<OrganizationSimpleWebhooks> organization,
+      WebhookPullRequestReviewRequestedVariant0PullRequest pullRequest,
+      RepositoryWebhooks repository,
+      WebhookPullRequestReviewRequestedVariant0RequestedReviewer?
+          requestedReviewer,
+      SimpleUser sender}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewRequestedVariant0 _copyWith({Object? action = sdkOmittedValue, Object? enterprise = sdkOmittedValue, Object? installation = sdkOmittedValue, Object? number = sdkOmittedValue, Object? organization = sdkOmittedValue, Object? pullRequest = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? requestedReviewer = sdkOmittedValue, Object? sender = sdkOmittedValue}) => WebhookPullRequestReviewRequestedVariant0(
-    action: identical(action, sdkOmittedValue) ? this.action : action as WebhookPullRequestReviewRequestedVariant0Action,
-    enterprise: identical(enterprise, sdkOmittedValue) ? this.enterprise : enterprise as SdkOptional<EnterpriseWebhooks>,
-    installation: identical(installation, sdkOmittedValue) ? this.installation : installation as SdkOptional<SimpleInstallation>,
-    number: identical(number, sdkOmittedValue) ? this.number : number as int,
-    organization: identical(organization, sdkOmittedValue) ? this.organization : organization as SdkOptional<OrganizationSimpleWebhooks>,
-    pullRequest: identical(pullRequest, sdkOmittedValue) ? this.pullRequest : pullRequest as WebhookPullRequestReviewRequestedVariant0PullRequest,
-    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as RepositoryWebhooks,
-    requestedReviewer: identical(requestedReviewer, sdkOmittedValue) ? this.requestedReviewer : requestedReviewer as WebhookPullRequestReviewRequestedVariant0RequestedReviewer?,
-    sender: identical(sender, sdkOmittedValue) ? this.sender : sender as SimpleUser,
-  );
+  WebhookPullRequestReviewRequestedVariant0 _copyWith(
+          {Object? action = sdkOmittedValue,
+          Object? enterprise = sdkOmittedValue,
+          Object? installation = sdkOmittedValue,
+          Object? number = sdkOmittedValue,
+          Object? organization = sdkOmittedValue,
+          Object? pullRequest = sdkOmittedValue,
+          Object? repository = sdkOmittedValue,
+          Object? requestedReviewer = sdkOmittedValue,
+          Object? sender = sdkOmittedValue}) =>
+      WebhookPullRequestReviewRequestedVariant0(
+        action: identical(action, sdkOmittedValue)
+            ? this.action
+            : action as WebhookPullRequestReviewRequestedVariant0Action,
+        enterprise: identical(enterprise, sdkOmittedValue)
+            ? this.enterprise
+            : enterprise as SdkOptional<EnterpriseWebhooks>,
+        installation: identical(installation, sdkOmittedValue)
+            ? this.installation
+            : installation as SdkOptional<SimpleInstallation>,
+        number:
+            identical(number, sdkOmittedValue) ? this.number : number as int,
+        organization: identical(organization, sdkOmittedValue)
+            ? this.organization
+            : organization as SdkOptional<OrganizationSimpleWebhooks>,
+        pullRequest: identical(pullRequest, sdkOmittedValue)
+            ? this.pullRequest
+            : pullRequest
+                as WebhookPullRequestReviewRequestedVariant0PullRequest,
+        repository: identical(repository, sdkOmittedValue)
+            ? this.repository
+            : repository as RepositoryWebhooks,
+        requestedReviewer: identical(requestedReviewer, sdkOmittedValue)
+            ? this.requestedReviewer
+            : requestedReviewer
+                as WebhookPullRequestReviewRequestedVariant0RequestedReviewer?,
+        sender: identical(sender, sdkOmittedValue)
+            ? this.sender
+            : sender as SimpleUser,
+      );
 
-  factory WebhookPullRequestReviewRequestedVariant0.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewRequestedVariant0(
-    action: (json['action'] != null ? WebhookPullRequestReviewRequestedVariant0Action.fromJson(json['action'] as String) : null)!,
-    enterprise: json['enterprise'] != null ? SdkPresent((json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    installation: json['installation'] != null ? SdkPresent((json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    number: ((json['number'] as num?)?.toInt())!,
-    organization: json['organization'] != null ? SdkPresent((json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    pullRequest: (json['pull_request'] != null ? WebhookPullRequestReviewRequestedVariant0PullRequest.fromJson(json['pull_request'] as Map<String, dynamic>) : null)!,
-    repository: (json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null)!,
-    requestedReviewer: json.containsKey('requested_reviewer') ? json['requested_reviewer'] != null ? WebhookPullRequestReviewRequestedVariant0RequestedReviewer.fromJson(json['requested_reviewer'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'requested_reviewer', 'Required property is missing'),
-    sender: (json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null)!,
-  );
+  factory WebhookPullRequestReviewRequestedVariant0.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPullRequestReviewRequestedVariant0(
+        action: (json['action'] != null
+            ? WebhookPullRequestReviewRequestedVariant0Action.fromJson(
+                json['action'] as String)
+            : null)!,
+        enterprise: json['enterprise'] != null
+            ? SdkPresent((json['enterprise'] != null
+                ? EnterpriseWebhooks.fromJson(
+                    json['enterprise'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        installation: json['installation'] != null
+            ? SdkPresent((json['installation'] != null
+                ? SimpleInstallation.fromJson(
+                    json['installation'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        number: ((json['number'] as num?)?.toInt())!,
+        organization: json['organization'] != null
+            ? SdkPresent((json['organization'] != null
+                ? OrganizationSimpleWebhooks.fromJson(
+                    json['organization'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        pullRequest: (json['pull_request'] != null
+            ? WebhookPullRequestReviewRequestedVariant0PullRequest.fromJson(
+                json['pull_request'] as Map<String, dynamic>)
+            : null)!,
+        repository: (json['repository'] != null
+            ? RepositoryWebhooks.fromJson(
+                json['repository'] as Map<String, dynamic>)
+            : null)!,
+        requestedReviewer: json.containsKey('requested_reviewer')
+            ? json['requested_reviewer'] != null
+                ? WebhookPullRequestReviewRequestedVariant0RequestedReviewer
+                    .fromJson(
+                        json['requested_reviewer'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'requested_reviewer', 'Required property is missing'),
+        sender: (json['sender'] != null
+            ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'action': action.toJson(),
-    ...switch (enterprise) {
-      SdkPresent<EnterpriseWebhooks>(value: final value) => {'enterprise': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (installation) {
-      SdkPresent<SimpleInstallation>(value: final value) => {'installation': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'number': number,
-    ...switch (organization) {
-      SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {'organization': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'pull_request': pullRequest.toJson(),
-    'repository': repository.toJson(),
-    'requested_reviewer': requestedReviewer?.toJson(),
-    'sender': sender.toJson(),
-  };
+        'action': action.toJson(),
+        ...switch (enterprise) {
+          SdkPresent<EnterpriseWebhooks>(value: final value) => {
+              'enterprise': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (installation) {
+          SdkPresent<SimpleInstallation>(value: final value) => {
+              'installation': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'number': number,
+        ...switch (organization) {
+          SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {
+              'organization': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'pull_request': pullRequest.toJson(),
+        'repository': repository.toJson(),
+        'requested_reviewer': requestedReviewer?.toJson(),
+        'sender': sender.toJson(),
+      };
 }
 
 class WebhookPullRequestReviewRequestedVariant1PullRequestLinksComments {
@@ -78,21 +174,27 @@ class WebhookPullRequestReviewRequestedVariant1PullRequestLinksComments {
   static const String constructionSurface = 'named';
   final String href;
 
-  const WebhookPullRequestReviewRequestedVariant1PullRequestLinksComments({required this.href});
+  const WebhookPullRequestReviewRequestedVariant1PullRequestLinksComments(
+      {required this.href});
 
-  WebhookPullRequestReviewRequestedVariant1PullRequestLinksComments Function({String href}) get copyWith => _copyWith;
+  WebhookPullRequestReviewRequestedVariant1PullRequestLinksComments Function(
+      {String href}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewRequestedVariant1PullRequestLinksComments _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestReviewRequestedVariant1PullRequestLinksComments(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  WebhookPullRequestReviewRequestedVariant1PullRequestLinksComments _copyWith(
+          {Object? href = sdkOmittedValue}) =>
+      WebhookPullRequestReviewRequestedVariant1PullRequestLinksComments(
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
-  factory WebhookPullRequestReviewRequestedVariant1PullRequestLinksComments.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewRequestedVariant1PullRequestLinksComments(
-    href: (json['href'] as String?)!,
-  );
+  factory WebhookPullRequestReviewRequestedVariant1PullRequestLinksComments.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPullRequestReviewRequestedVariant1PullRequestLinksComments(
+        href: (json['href'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 class WebhookPullRequestReviewRequestedVariant1PullRequestLinksCommits {
@@ -100,21 +202,27 @@ class WebhookPullRequestReviewRequestedVariant1PullRequestLinksCommits {
   static const String constructionSurface = 'named';
   final String href;
 
-  const WebhookPullRequestReviewRequestedVariant1PullRequestLinksCommits({required this.href});
+  const WebhookPullRequestReviewRequestedVariant1PullRequestLinksCommits(
+      {required this.href});
 
-  WebhookPullRequestReviewRequestedVariant1PullRequestLinksCommits Function({String href}) get copyWith => _copyWith;
+  WebhookPullRequestReviewRequestedVariant1PullRequestLinksCommits Function(
+      {String href}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewRequestedVariant1PullRequestLinksCommits _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestReviewRequestedVariant1PullRequestLinksCommits(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  WebhookPullRequestReviewRequestedVariant1PullRequestLinksCommits _copyWith(
+          {Object? href = sdkOmittedValue}) =>
+      WebhookPullRequestReviewRequestedVariant1PullRequestLinksCommits(
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
-  factory WebhookPullRequestReviewRequestedVariant1PullRequestLinksCommits.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewRequestedVariant1PullRequestLinksCommits(
-    href: (json['href'] as String?)!,
-  );
+  factory WebhookPullRequestReviewRequestedVariant1PullRequestLinksCommits.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPullRequestReviewRequestedVariant1PullRequestLinksCommits(
+        href: (json['href'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 class WebhookPullRequestReviewRequestedVariant1PullRequestLinksHtml {
@@ -122,21 +230,27 @@ class WebhookPullRequestReviewRequestedVariant1PullRequestLinksHtml {
   static const String constructionSurface = 'named';
   final String href;
 
-  const WebhookPullRequestReviewRequestedVariant1PullRequestLinksHtml({required this.href});
+  const WebhookPullRequestReviewRequestedVariant1PullRequestLinksHtml(
+      {required this.href});
 
-  WebhookPullRequestReviewRequestedVariant1PullRequestLinksHtml Function({String href}) get copyWith => _copyWith;
+  WebhookPullRequestReviewRequestedVariant1PullRequestLinksHtml Function(
+      {String href}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewRequestedVariant1PullRequestLinksHtml _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestReviewRequestedVariant1PullRequestLinksHtml(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  WebhookPullRequestReviewRequestedVariant1PullRequestLinksHtml _copyWith(
+          {Object? href = sdkOmittedValue}) =>
+      WebhookPullRequestReviewRequestedVariant1PullRequestLinksHtml(
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
-  factory WebhookPullRequestReviewRequestedVariant1PullRequestLinksHtml.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewRequestedVariant1PullRequestLinksHtml(
-    href: (json['href'] as String?)!,
-  );
+  factory WebhookPullRequestReviewRequestedVariant1PullRequestLinksHtml.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPullRequestReviewRequestedVariant1PullRequestLinksHtml(
+        href: (json['href'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 class WebhookPullRequestReviewRequestedVariant1PullRequestLinksIssue {
@@ -144,21 +258,27 @@ class WebhookPullRequestReviewRequestedVariant1PullRequestLinksIssue {
   static const String constructionSurface = 'named';
   final String href;
 
-  const WebhookPullRequestReviewRequestedVariant1PullRequestLinksIssue({required this.href});
+  const WebhookPullRequestReviewRequestedVariant1PullRequestLinksIssue(
+      {required this.href});
 
-  WebhookPullRequestReviewRequestedVariant1PullRequestLinksIssue Function({String href}) get copyWith => _copyWith;
+  WebhookPullRequestReviewRequestedVariant1PullRequestLinksIssue Function(
+      {String href}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewRequestedVariant1PullRequestLinksIssue _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestReviewRequestedVariant1PullRequestLinksIssue(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  WebhookPullRequestReviewRequestedVariant1PullRequestLinksIssue _copyWith(
+          {Object? href = sdkOmittedValue}) =>
+      WebhookPullRequestReviewRequestedVariant1PullRequestLinksIssue(
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
-  factory WebhookPullRequestReviewRequestedVariant1PullRequestLinksIssue.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewRequestedVariant1PullRequestLinksIssue(
-    href: (json['href'] as String?)!,
-  );
+  factory WebhookPullRequestReviewRequestedVariant1PullRequestLinksIssue.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPullRequestReviewRequestedVariant1PullRequestLinksIssue(
+        href: (json['href'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 class WebhookPullRequestReviewRequestedVariant1PullRequestLinksReviewComment {
@@ -166,21 +286,27 @@ class WebhookPullRequestReviewRequestedVariant1PullRequestLinksReviewComment {
   static const String constructionSurface = 'named';
   final String href;
 
-  const WebhookPullRequestReviewRequestedVariant1PullRequestLinksReviewComment({required this.href});
+  const WebhookPullRequestReviewRequestedVariant1PullRequestLinksReviewComment(
+      {required this.href});
 
-  WebhookPullRequestReviewRequestedVariant1PullRequestLinksReviewComment Function({String href}) get copyWith => _copyWith;
+  WebhookPullRequestReviewRequestedVariant1PullRequestLinksReviewComment
+      Function({String href}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewRequestedVariant1PullRequestLinksReviewComment _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestReviewRequestedVariant1PullRequestLinksReviewComment(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  WebhookPullRequestReviewRequestedVariant1PullRequestLinksReviewComment
+      _copyWith({Object? href = sdkOmittedValue}) =>
+          WebhookPullRequestReviewRequestedVariant1PullRequestLinksReviewComment(
+            href: identical(href, sdkOmittedValue) ? this.href : href as String,
+          );
 
-  factory WebhookPullRequestReviewRequestedVariant1PullRequestLinksReviewComment.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewRequestedVariant1PullRequestLinksReviewComment(
-    href: (json['href'] as String?)!,
-  );
+  factory WebhookPullRequestReviewRequestedVariant1PullRequestLinksReviewComment.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPullRequestReviewRequestedVariant1PullRequestLinksReviewComment(
+        href: (json['href'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 class WebhookPullRequestReviewRequestedVariant1PullRequestLinksReviewComments {
@@ -188,21 +314,27 @@ class WebhookPullRequestReviewRequestedVariant1PullRequestLinksReviewComments {
   static const String constructionSurface = 'named';
   final String href;
 
-  const WebhookPullRequestReviewRequestedVariant1PullRequestLinksReviewComments({required this.href});
+  const WebhookPullRequestReviewRequestedVariant1PullRequestLinksReviewComments(
+      {required this.href});
 
-  WebhookPullRequestReviewRequestedVariant1PullRequestLinksReviewComments Function({String href}) get copyWith => _copyWith;
+  WebhookPullRequestReviewRequestedVariant1PullRequestLinksReviewComments
+      Function({String href}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewRequestedVariant1PullRequestLinksReviewComments _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestReviewRequestedVariant1PullRequestLinksReviewComments(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  WebhookPullRequestReviewRequestedVariant1PullRequestLinksReviewComments
+      _copyWith({Object? href = sdkOmittedValue}) =>
+          WebhookPullRequestReviewRequestedVariant1PullRequestLinksReviewComments(
+            href: identical(href, sdkOmittedValue) ? this.href : href as String,
+          );
 
-  factory WebhookPullRequestReviewRequestedVariant1PullRequestLinksReviewComments.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewRequestedVariant1PullRequestLinksReviewComments(
-    href: (json['href'] as String?)!,
-  );
+  factory WebhookPullRequestReviewRequestedVariant1PullRequestLinksReviewComments.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPullRequestReviewRequestedVariant1PullRequestLinksReviewComments(
+        href: (json['href'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 class WebhookPullRequestReviewRequestedVariant1PullRequestLinksSelf {
@@ -210,21 +342,27 @@ class WebhookPullRequestReviewRequestedVariant1PullRequestLinksSelf {
   static const String constructionSurface = 'named';
   final String href;
 
-  const WebhookPullRequestReviewRequestedVariant1PullRequestLinksSelf({required this.href});
+  const WebhookPullRequestReviewRequestedVariant1PullRequestLinksSelf(
+      {required this.href});
 
-  WebhookPullRequestReviewRequestedVariant1PullRequestLinksSelf Function({String href}) get copyWith => _copyWith;
+  WebhookPullRequestReviewRequestedVariant1PullRequestLinksSelf Function(
+      {String href}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewRequestedVariant1PullRequestLinksSelf _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestReviewRequestedVariant1PullRequestLinksSelf(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  WebhookPullRequestReviewRequestedVariant1PullRequestLinksSelf _copyWith(
+          {Object? href = sdkOmittedValue}) =>
+      WebhookPullRequestReviewRequestedVariant1PullRequestLinksSelf(
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
-  factory WebhookPullRequestReviewRequestedVariant1PullRequestLinksSelf.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewRequestedVariant1PullRequestLinksSelf(
-    href: (json['href'] as String?)!,
-  );
+  factory WebhookPullRequestReviewRequestedVariant1PullRequestLinksSelf.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPullRequestReviewRequestedVariant1PullRequestLinksSelf(
+        href: (json['href'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 class WebhookPullRequestReviewRequestedVariant1PullRequestLinksStatuses {
@@ -232,19 +370,25 @@ class WebhookPullRequestReviewRequestedVariant1PullRequestLinksStatuses {
   static const String constructionSurface = 'named';
   final String href;
 
-  const WebhookPullRequestReviewRequestedVariant1PullRequestLinksStatuses({required this.href});
+  const WebhookPullRequestReviewRequestedVariant1PullRequestLinksStatuses(
+      {required this.href});
 
-  WebhookPullRequestReviewRequestedVariant1PullRequestLinksStatuses Function({String href}) get copyWith => _copyWith;
+  WebhookPullRequestReviewRequestedVariant1PullRequestLinksStatuses Function(
+      {String href}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewRequestedVariant1PullRequestLinksStatuses _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestReviewRequestedVariant1PullRequestLinksStatuses(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  WebhookPullRequestReviewRequestedVariant1PullRequestLinksStatuses _copyWith(
+          {Object? href = sdkOmittedValue}) =>
+      WebhookPullRequestReviewRequestedVariant1PullRequestLinksStatuses(
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
-  factory WebhookPullRequestReviewRequestedVariant1PullRequestLinksStatuses.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewRequestedVariant1PullRequestLinksStatuses(
-    href: (json['href'] as String?)!,
-  );
+  factory WebhookPullRequestReviewRequestedVariant1PullRequestLinksStatuses.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPullRequestReviewRequestedVariant1PullRequestLinksStatuses(
+        href: (json['href'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }

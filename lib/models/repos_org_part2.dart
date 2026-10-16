@@ -4,20 +4,26 @@
 part of 'repos_org.dart';
 
 // repos_org domain models (part 2)
-final class OrgRulesetConditionsOrgRulesetConditionsVariant0 extends OrgRulesetConditions {
+final class OrgRulesetConditionsOrgRulesetConditionsVariant0
+    extends OrgRulesetConditions {
   final OrgRulesetConditionsVariant0 value;
   const OrgRulesetConditionsOrgRulesetConditionsVariant0(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class OrgRulesetConditionsOrgRulesetConditionsVariant1 extends OrgRulesetConditions {
+final class OrgRulesetConditionsOrgRulesetConditionsVariant1
+    extends OrgRulesetConditions {
   final OrgRulesetConditionsVariant1 value;
   const OrgRulesetConditionsOrgRulesetConditionsVariant1(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class OrgRulesetConditionsOrgRulesetConditionsVariant2 extends OrgRulesetConditions {
+final class OrgRulesetConditionsOrgRulesetConditionsVariant2
+    extends OrgRulesetConditions {
   final OrgRulesetConditionsVariant2 value;
   const OrgRulesetConditionsOrgRulesetConditionsVariant2(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }

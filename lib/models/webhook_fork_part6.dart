@@ -8,641 +8,1428 @@ part of 'webhook_fork.dart';
 class WebhookForkForkeeVariant1 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `boolean` value serialized in the `allow_forking` wire field.
   final SdkOptional<bool> allowForking;
+
   /// Optional `string` value serialized in the `archive_url` wire field.
   final SdkOptional<String> archiveUrl;
+
   /// Optional `boolean` value serialized in the `archived` wire field.
   final SdkOptional<bool> archived;
+
   /// Optional `string` value serialized in the `assignees_url` wire field.
   final SdkOptional<String> assigneesUrl;
+
   /// Optional `string` value serialized in the `blobs_url` wire field.
   final SdkOptional<String> blobsUrl;
+
   /// Optional `string` value serialized in the `branches_url` wire field.
   final SdkOptional<String> branchesUrl;
+
   /// Optional `string` value serialized in the `clone_url` wire field.
   final SdkOptional<String> cloneUrl;
+
   /// Optional `string` value serialized in the `collaborators_url` wire field.
   final SdkOptional<String> collaboratorsUrl;
+
   /// Optional `string` value serialized in the `comments_url` wire field.
   final SdkOptional<String> commentsUrl;
+
   /// Optional `string` value serialized in the `commits_url` wire field.
   final SdkOptional<String> commitsUrl;
+
   /// Optional `string` value serialized in the `compare_url` wire field.
   final SdkOptional<String> compareUrl;
+
   /// Optional `string` value serialized in the `contents_url` wire field.
   final SdkOptional<String> contentsUrl;
+
   /// Optional `string` value serialized in the `contributors_url` wire field.
   final SdkOptional<String> contributorsUrl;
+
   /// Optional `string` value serialized in the `created_at` wire field.
   final SdkOptional<String> createdAt;
+
   /// Optional `string` value serialized in the `default_branch` wire field.
   final SdkOptional<String> defaultBranch;
+
   /// Optional `string` value serialized in the `deployments_url` wire field.
   final SdkOptional<String> deploymentsUrl;
+
   /// Optional `string` value serialized in the `description` wire field.
   final SdkOptional<String?> description;
+
   /// Optional `boolean` value serialized in the `disabled` wire field.
   final SdkOptional<bool> disabled;
+
   /// Optional `string` value serialized in the `downloads_url` wire field.
   final SdkOptional<String> downloadsUrl;
+
   /// Optional `string` value serialized in the `events_url` wire field.
   final SdkOptional<String> eventsUrl;
+
   /// Optional enumerated value serialized in the `fork` wire field.
   final SdkOptional<WebhookForkForkeeVariant1Fork> fork;
+
   /// Optional `integer` value serialized in the `forks` wire field.
   final SdkOptional<int> forks;
+
   /// Optional `integer` value serialized in the `forks_count` wire field.
   final SdkOptional<int> forksCount;
+
   /// Optional `string` value serialized in the `forks_url` wire field.
   final SdkOptional<String> forksUrl;
+
   /// Optional `string` value serialized in the `full_name` wire field.
   final SdkOptional<String> fullName;
+
   /// Optional `string` value serialized in the `git_commits_url` wire field.
   final SdkOptional<String> gitCommitsUrl;
+
   /// Optional `string` value serialized in the `git_refs_url` wire field.
   final SdkOptional<String> gitRefsUrl;
+
   /// Optional `string` value serialized in the `git_tags_url` wire field.
   final SdkOptional<String> gitTagsUrl;
+
   /// Optional `string` value serialized in the `git_url` wire field.
   final SdkOptional<String> gitUrl;
+
   /// Optional `boolean` value serialized in the `has_downloads` wire field.
   final SdkOptional<bool> hasDownloads;
+
   /// Optional `boolean` value serialized in the `has_issues` wire field.
   final SdkOptional<bool> hasIssues;
+
   /// Optional `boolean` value serialized in the `has_pages` wire field.
   final SdkOptional<bool> hasPages;
+
   /// Optional `boolean` value serialized in the `has_projects` wire field.
   final SdkOptional<bool> hasProjects;
+
   /// Optional `boolean` value serialized in the `has_wiki` wire field.
   final SdkOptional<bool> hasWiki;
+
   /// Optional `string` value serialized in the `homepage` wire field.
   final SdkOptional<String?> homepage;
+
   /// Optional `string` value serialized in the `hooks_url` wire field.
   final SdkOptional<String> hooksUrl;
+
   /// Optional `string` value serialized in the `html_url` wire field.
   final SdkOptional<String> htmlUrl;
+
   /// Optional `integer` value serialized in the `id` wire field.
   final SdkOptional<int> id;
+
   /// Optional `boolean` value serialized in the `is_template` wire field.
   final SdkOptional<bool> isTemplate;
+
   /// Optional `string` value serialized in the `issue_comment_url` wire field.
   final SdkOptional<String> issueCommentUrl;
+
   /// Optional `string` value serialized in the `issue_events_url` wire field.
   final SdkOptional<String> issueEventsUrl;
+
   /// Optional `string` value serialized in the `issues_url` wire field.
   final SdkOptional<String> issuesUrl;
+
   /// Optional `string` value serialized in the `keys_url` wire field.
   final SdkOptional<String> keysUrl;
+
   /// Optional `string` value serialized in the `labels_url` wire field.
   final SdkOptional<String> labelsUrl;
+
   /// Optional API value serialized in the `language` wire field.
   final SdkOptional<dynamic> language;
+
   /// Optional `string` value serialized in the `languages_url` wire field.
   final SdkOptional<String> languagesUrl;
+
   /// Optional object value serialized in the `license` wire field.
   final SdkOptional<Map<String, dynamic>?> license;
+
   /// Optional `string` value serialized in the `merges_url` wire field.
   final SdkOptional<String> mergesUrl;
+
   /// Optional `string` value serialized in the `milestones_url` wire field.
   final SdkOptional<String> milestonesUrl;
+
   /// Optional API value serialized in the `mirror_url` wire field.
   final SdkOptional<dynamic> mirrorUrl;
+
   /// Optional `string` value serialized in the `name` wire field.
   final SdkOptional<String> name;
+
   /// Optional `string` value serialized in the `node_id` wire field.
   final SdkOptional<String> nodeId;
+
   /// Optional `string` value serialized in the `notifications_url` wire field.
   final SdkOptional<String> notificationsUrl;
+
   /// Optional `integer` value serialized in the `open_issues` wire field.
   final SdkOptional<int> openIssues;
+
   /// Optional `integer` value serialized in the `open_issues_count` wire field.
   final SdkOptional<int> openIssuesCount;
+
   /// Optional object value serialized in the `owner` wire field.
   final SdkOptional<WebhookForkForkeeVariant1Owner> owner;
+
   /// Optional `boolean` value serialized in the `private` wire field.
   final SdkOptional<bool> private;
+
   /// Optional `boolean` value serialized in the `public` wire field.
   final SdkOptional<bool> public;
+
   /// Optional `string` value serialized in the `pulls_url` wire field.
   final SdkOptional<String> pullsUrl;
+
   /// Optional `string` value serialized in the `pushed_at` wire field.
   final SdkOptional<String> pushedAt;
+
   /// Optional `string` value serialized in the `releases_url` wire field.
   final SdkOptional<String> releasesUrl;
+
   /// Optional `integer` value serialized in the `size` wire field.
   final SdkOptional<int> size;
+
   /// Optional `string` value serialized in the `ssh_url` wire field.
   final SdkOptional<String> sshUrl;
+
   /// Optional `integer` value serialized in the `stargazers_count` wire field.
   final SdkOptional<int> stargazersCount;
+
   /// Optional `string` value serialized in the `stargazers_url` wire field.
   final SdkOptional<String> stargazersUrl;
+
   /// Optional `string` value serialized in the `statuses_url` wire field.
   final SdkOptional<String> statusesUrl;
+
   /// Optional `string` value serialized in the `subscribers_url` wire field.
   final SdkOptional<String> subscribersUrl;
+
   /// Optional `string` value serialized in the `subscription_url` wire field.
   final SdkOptional<String> subscriptionUrl;
+
   /// Optional `string` value serialized in the `svn_url` wire field.
   final SdkOptional<String> svnUrl;
+
   /// Optional `string` value serialized in the `tags_url` wire field.
   final SdkOptional<String> tagsUrl;
+
   /// Optional `string` value serialized in the `teams_url` wire field.
   final SdkOptional<String> teamsUrl;
+
   /// Optional array value serialized in the `topics` wire field.
   final SdkOptional<List<dynamic>> topics;
+
   /// Optional `string` value serialized in the `trees_url` wire field.
   final SdkOptional<String> treesUrl;
+
   /// Optional `string` value serialized in the `updated_at` wire field.
   final SdkOptional<String> updatedAt;
+
   /// Optional `string` value serialized in the `url` wire field.
   final SdkOptional<String> url;
+
   /// Optional `string` value serialized in the `visibility` wire field.
   final SdkOptional<String> visibility;
+
   /// Optional `integer` value serialized in the `watchers` wire field.
   final SdkOptional<int> watchers;
+
   /// Optional `integer` value serialized in the `watchers_count` wire field.
   final SdkOptional<int> watchersCount;
 
-  const WebhookForkForkeeVariant1({this.allowForking = const SdkOmitted(), this.archiveUrl = const SdkOmitted(), this.archived = const SdkOmitted(), this.assigneesUrl = const SdkOmitted(), this.blobsUrl = const SdkOmitted(), this.branchesUrl = const SdkOmitted(), this.cloneUrl = const SdkOmitted(), this.collaboratorsUrl = const SdkOmitted(), this.commentsUrl = const SdkOmitted(), this.commitsUrl = const SdkOmitted(), this.compareUrl = const SdkOmitted(), this.contentsUrl = const SdkOmitted(), this.contributorsUrl = const SdkOmitted(), this.createdAt = const SdkOmitted(), this.defaultBranch = const SdkOmitted(), this.deploymentsUrl = const SdkOmitted(), this.description = const SdkOmitted(), this.disabled = const SdkOmitted(), this.downloadsUrl = const SdkOmitted(), this.eventsUrl = const SdkOmitted(), this.fork = const SdkOmitted(), this.forks = const SdkOmitted(), this.forksCount = const SdkOmitted(), this.forksUrl = const SdkOmitted(), this.fullName = const SdkOmitted(), this.gitCommitsUrl = const SdkOmitted(), this.gitRefsUrl = const SdkOmitted(), this.gitTagsUrl = const SdkOmitted(), this.gitUrl = const SdkOmitted(), this.hasDownloads = const SdkOmitted(), this.hasIssues = const SdkOmitted(), this.hasPages = const SdkOmitted(), this.hasProjects = const SdkOmitted(), this.hasWiki = const SdkOmitted(), this.homepage = const SdkOmitted(), this.hooksUrl = const SdkOmitted(), this.htmlUrl = const SdkOmitted(), this.id = const SdkOmitted(), this.isTemplate = const SdkOmitted(), this.issueCommentUrl = const SdkOmitted(), this.issueEventsUrl = const SdkOmitted(), this.issuesUrl = const SdkOmitted(), this.keysUrl = const SdkOmitted(), this.labelsUrl = const SdkOmitted(), this.language = const SdkOmitted(), this.languagesUrl = const SdkOmitted(), this.license = const SdkOmitted(), this.mergesUrl = const SdkOmitted(), this.milestonesUrl = const SdkOmitted(), this.mirrorUrl = const SdkOmitted(), this.name = const SdkOmitted(), this.nodeId = const SdkOmitted(), this.notificationsUrl = const SdkOmitted(), this.openIssues = const SdkOmitted(), this.openIssuesCount = const SdkOmitted(), this.owner = const SdkOmitted(), this.private = const SdkOmitted(), this.public = const SdkOmitted(), this.pullsUrl = const SdkOmitted(), this.pushedAt = const SdkOmitted(), this.releasesUrl = const SdkOmitted(), this.size = const SdkOmitted(), this.sshUrl = const SdkOmitted(), this.stargazersCount = const SdkOmitted(), this.stargazersUrl = const SdkOmitted(), this.statusesUrl = const SdkOmitted(), this.subscribersUrl = const SdkOmitted(), this.subscriptionUrl = const SdkOmitted(), this.svnUrl = const SdkOmitted(), this.tagsUrl = const SdkOmitted(), this.teamsUrl = const SdkOmitted(), this.topics = const SdkOmitted(), this.treesUrl = const SdkOmitted(), this.updatedAt = const SdkOmitted(), this.url = const SdkOmitted(), this.visibility = const SdkOmitted(), this.watchers = const SdkOmitted(), this.watchersCount = const SdkOmitted()});
+  const WebhookForkForkeeVariant1(
+      {this.allowForking = const SdkOmitted(),
+      this.archiveUrl = const SdkOmitted(),
+      this.archived = const SdkOmitted(),
+      this.assigneesUrl = const SdkOmitted(),
+      this.blobsUrl = const SdkOmitted(),
+      this.branchesUrl = const SdkOmitted(),
+      this.cloneUrl = const SdkOmitted(),
+      this.collaboratorsUrl = const SdkOmitted(),
+      this.commentsUrl = const SdkOmitted(),
+      this.commitsUrl = const SdkOmitted(),
+      this.compareUrl = const SdkOmitted(),
+      this.contentsUrl = const SdkOmitted(),
+      this.contributorsUrl = const SdkOmitted(),
+      this.createdAt = const SdkOmitted(),
+      this.defaultBranch = const SdkOmitted(),
+      this.deploymentsUrl = const SdkOmitted(),
+      this.description = const SdkOmitted(),
+      this.disabled = const SdkOmitted(),
+      this.downloadsUrl = const SdkOmitted(),
+      this.eventsUrl = const SdkOmitted(),
+      this.fork = const SdkOmitted(),
+      this.forks = const SdkOmitted(),
+      this.forksCount = const SdkOmitted(),
+      this.forksUrl = const SdkOmitted(),
+      this.fullName = const SdkOmitted(),
+      this.gitCommitsUrl = const SdkOmitted(),
+      this.gitRefsUrl = const SdkOmitted(),
+      this.gitTagsUrl = const SdkOmitted(),
+      this.gitUrl = const SdkOmitted(),
+      this.hasDownloads = const SdkOmitted(),
+      this.hasIssues = const SdkOmitted(),
+      this.hasPages = const SdkOmitted(),
+      this.hasProjects = const SdkOmitted(),
+      this.hasWiki = const SdkOmitted(),
+      this.homepage = const SdkOmitted(),
+      this.hooksUrl = const SdkOmitted(),
+      this.htmlUrl = const SdkOmitted(),
+      this.id = const SdkOmitted(),
+      this.isTemplate = const SdkOmitted(),
+      this.issueCommentUrl = const SdkOmitted(),
+      this.issueEventsUrl = const SdkOmitted(),
+      this.issuesUrl = const SdkOmitted(),
+      this.keysUrl = const SdkOmitted(),
+      this.labelsUrl = const SdkOmitted(),
+      this.language = const SdkOmitted(),
+      this.languagesUrl = const SdkOmitted(),
+      this.license = const SdkOmitted(),
+      this.mergesUrl = const SdkOmitted(),
+      this.milestonesUrl = const SdkOmitted(),
+      this.mirrorUrl = const SdkOmitted(),
+      this.name = const SdkOmitted(),
+      this.nodeId = const SdkOmitted(),
+      this.notificationsUrl = const SdkOmitted(),
+      this.openIssues = const SdkOmitted(),
+      this.openIssuesCount = const SdkOmitted(),
+      this.owner = const SdkOmitted(),
+      this.private = const SdkOmitted(),
+      this.public = const SdkOmitted(),
+      this.pullsUrl = const SdkOmitted(),
+      this.pushedAt = const SdkOmitted(),
+      this.releasesUrl = const SdkOmitted(),
+      this.size = const SdkOmitted(),
+      this.sshUrl = const SdkOmitted(),
+      this.stargazersCount = const SdkOmitted(),
+      this.stargazersUrl = const SdkOmitted(),
+      this.statusesUrl = const SdkOmitted(),
+      this.subscribersUrl = const SdkOmitted(),
+      this.subscriptionUrl = const SdkOmitted(),
+      this.svnUrl = const SdkOmitted(),
+      this.tagsUrl = const SdkOmitted(),
+      this.teamsUrl = const SdkOmitted(),
+      this.topics = const SdkOmitted(),
+      this.treesUrl = const SdkOmitted(),
+      this.updatedAt = const SdkOmitted(),
+      this.url = const SdkOmitted(),
+      this.visibility = const SdkOmitted(),
+      this.watchers = const SdkOmitted(),
+      this.watchersCount = const SdkOmitted()});
 
-  WebhookForkForkeeVariant1 Function({SdkOptional<bool> allowForking, SdkOptional<String> archiveUrl, SdkOptional<bool> archived, SdkOptional<String> assigneesUrl, SdkOptional<String> blobsUrl, SdkOptional<String> branchesUrl, SdkOptional<String> cloneUrl, SdkOptional<String> collaboratorsUrl, SdkOptional<String> commentsUrl, SdkOptional<String> commitsUrl, SdkOptional<String> compareUrl, SdkOptional<String> contentsUrl, SdkOptional<String> contributorsUrl, SdkOptional<String> createdAt, SdkOptional<String> defaultBranch, SdkOptional<String> deploymentsUrl, SdkOptional<String?> description, SdkOptional<bool> disabled, SdkOptional<String> downloadsUrl, SdkOptional<String> eventsUrl, SdkOptional<WebhookForkForkeeVariant1Fork> fork, SdkOptional<int> forks, SdkOptional<int> forksCount, SdkOptional<String> forksUrl, SdkOptional<String> fullName, SdkOptional<String> gitCommitsUrl, SdkOptional<String> gitRefsUrl, SdkOptional<String> gitTagsUrl, SdkOptional<String> gitUrl, SdkOptional<bool> hasDownloads, SdkOptional<bool> hasIssues, SdkOptional<bool> hasPages, SdkOptional<bool> hasProjects, SdkOptional<bool> hasWiki, SdkOptional<String?> homepage, SdkOptional<String> hooksUrl, SdkOptional<String> htmlUrl, SdkOptional<int> id, SdkOptional<bool> isTemplate, SdkOptional<String> issueCommentUrl, SdkOptional<String> issueEventsUrl, SdkOptional<String> issuesUrl, SdkOptional<String> keysUrl, SdkOptional<String> labelsUrl, SdkOptional<dynamic> language, SdkOptional<String> languagesUrl, SdkOptional<Map<String, dynamic>?> license, SdkOptional<String> mergesUrl, SdkOptional<String> milestonesUrl, SdkOptional<dynamic> mirrorUrl, SdkOptional<String> name, SdkOptional<String> nodeId, SdkOptional<String> notificationsUrl, SdkOptional<int> openIssues, SdkOptional<int> openIssuesCount, SdkOptional<WebhookForkForkeeVariant1Owner> owner, SdkOptional<bool> private, SdkOptional<bool> public, SdkOptional<String> pullsUrl, SdkOptional<String> pushedAt, SdkOptional<String> releasesUrl, SdkOptional<int> size, SdkOptional<String> sshUrl, SdkOptional<int> stargazersCount, SdkOptional<String> stargazersUrl, SdkOptional<String> statusesUrl, SdkOptional<String> subscribersUrl, SdkOptional<String> subscriptionUrl, SdkOptional<String> svnUrl, SdkOptional<String> tagsUrl, SdkOptional<String> teamsUrl, SdkOptional<List<dynamic>> topics, SdkOptional<String> treesUrl, SdkOptional<String> updatedAt, SdkOptional<String> url, SdkOptional<String> visibility, SdkOptional<int> watchers, SdkOptional<int> watchersCount}) get copyWith => _copyWith;
+  WebhookForkForkeeVariant1 Function(
+      {SdkOptional<bool> allowForking,
+      SdkOptional<String> archiveUrl,
+      SdkOptional<bool> archived,
+      SdkOptional<String> assigneesUrl,
+      SdkOptional<String> blobsUrl,
+      SdkOptional<String> branchesUrl,
+      SdkOptional<String> cloneUrl,
+      SdkOptional<String> collaboratorsUrl,
+      SdkOptional<String> commentsUrl,
+      SdkOptional<String> commitsUrl,
+      SdkOptional<String> compareUrl,
+      SdkOptional<String> contentsUrl,
+      SdkOptional<String> contributorsUrl,
+      SdkOptional<String> createdAt,
+      SdkOptional<String> defaultBranch,
+      SdkOptional<String> deploymentsUrl,
+      SdkOptional<String?> description,
+      SdkOptional<bool> disabled,
+      SdkOptional<String> downloadsUrl,
+      SdkOptional<String> eventsUrl,
+      SdkOptional<WebhookForkForkeeVariant1Fork> fork,
+      SdkOptional<int> forks,
+      SdkOptional<int> forksCount,
+      SdkOptional<String> forksUrl,
+      SdkOptional<String> fullName,
+      SdkOptional<String> gitCommitsUrl,
+      SdkOptional<String> gitRefsUrl,
+      SdkOptional<String> gitTagsUrl,
+      SdkOptional<String> gitUrl,
+      SdkOptional<bool> hasDownloads,
+      SdkOptional<bool> hasIssues,
+      SdkOptional<bool> hasPages,
+      SdkOptional<bool> hasProjects,
+      SdkOptional<bool> hasWiki,
+      SdkOptional<String?> homepage,
+      SdkOptional<String> hooksUrl,
+      SdkOptional<String> htmlUrl,
+      SdkOptional<int> id,
+      SdkOptional<bool> isTemplate,
+      SdkOptional<String> issueCommentUrl,
+      SdkOptional<String> issueEventsUrl,
+      SdkOptional<String> issuesUrl,
+      SdkOptional<String> keysUrl,
+      SdkOptional<String> labelsUrl,
+      SdkOptional<dynamic> language,
+      SdkOptional<String> languagesUrl,
+      SdkOptional<Map<String, dynamic>?> license,
+      SdkOptional<String> mergesUrl,
+      SdkOptional<String> milestonesUrl,
+      SdkOptional<dynamic> mirrorUrl,
+      SdkOptional<String> name,
+      SdkOptional<String> nodeId,
+      SdkOptional<String> notificationsUrl,
+      SdkOptional<int> openIssues,
+      SdkOptional<int> openIssuesCount,
+      SdkOptional<WebhookForkForkeeVariant1Owner> owner,
+      SdkOptional<bool> private,
+      SdkOptional<bool> public,
+      SdkOptional<String> pullsUrl,
+      SdkOptional<String> pushedAt,
+      SdkOptional<String> releasesUrl,
+      SdkOptional<int> size,
+      SdkOptional<String> sshUrl,
+      SdkOptional<int> stargazersCount,
+      SdkOptional<String> stargazersUrl,
+      SdkOptional<String> statusesUrl,
+      SdkOptional<String> subscribersUrl,
+      SdkOptional<String> subscriptionUrl,
+      SdkOptional<String> svnUrl,
+      SdkOptional<String> tagsUrl,
+      SdkOptional<String> teamsUrl,
+      SdkOptional<List<dynamic>> topics,
+      SdkOptional<String> treesUrl,
+      SdkOptional<String> updatedAt,
+      SdkOptional<String> url,
+      SdkOptional<String> visibility,
+      SdkOptional<int> watchers,
+      SdkOptional<int> watchersCount}) get copyWith => _copyWith;
 
-  WebhookForkForkeeVariant1 _copyWith({Object? allowForking = sdkOmittedValue, Object? archiveUrl = sdkOmittedValue, Object? archived = sdkOmittedValue, Object? assigneesUrl = sdkOmittedValue, Object? blobsUrl = sdkOmittedValue, Object? branchesUrl = sdkOmittedValue, Object? cloneUrl = sdkOmittedValue, Object? collaboratorsUrl = sdkOmittedValue, Object? commentsUrl = sdkOmittedValue, Object? commitsUrl = sdkOmittedValue, Object? compareUrl = sdkOmittedValue, Object? contentsUrl = sdkOmittedValue, Object? contributorsUrl = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? defaultBranch = sdkOmittedValue, Object? deploymentsUrl = sdkOmittedValue, Object? description = sdkOmittedValue, Object? disabled = sdkOmittedValue, Object? downloadsUrl = sdkOmittedValue, Object? eventsUrl = sdkOmittedValue, Object? fork = sdkOmittedValue, Object? forks = sdkOmittedValue, Object? forksCount = sdkOmittedValue, Object? forksUrl = sdkOmittedValue, Object? fullName = sdkOmittedValue, Object? gitCommitsUrl = sdkOmittedValue, Object? gitRefsUrl = sdkOmittedValue, Object? gitTagsUrl = sdkOmittedValue, Object? gitUrl = sdkOmittedValue, Object? hasDownloads = sdkOmittedValue, Object? hasIssues = sdkOmittedValue, Object? hasPages = sdkOmittedValue, Object? hasProjects = sdkOmittedValue, Object? hasWiki = sdkOmittedValue, Object? homepage = sdkOmittedValue, Object? hooksUrl = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? id = sdkOmittedValue, Object? isTemplate = sdkOmittedValue, Object? issueCommentUrl = sdkOmittedValue, Object? issueEventsUrl = sdkOmittedValue, Object? issuesUrl = sdkOmittedValue, Object? keysUrl = sdkOmittedValue, Object? labelsUrl = sdkOmittedValue, Object? language = sdkOmittedValue, Object? languagesUrl = sdkOmittedValue, Object? license = sdkOmittedValue, Object? mergesUrl = sdkOmittedValue, Object? milestonesUrl = sdkOmittedValue, Object? mirrorUrl = sdkOmittedValue, Object? name = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? notificationsUrl = sdkOmittedValue, Object? openIssues = sdkOmittedValue, Object? openIssuesCount = sdkOmittedValue, Object? owner = sdkOmittedValue, Object? private = sdkOmittedValue, Object? public = sdkOmittedValue, Object? pullsUrl = sdkOmittedValue, Object? pushedAt = sdkOmittedValue, Object? releasesUrl = sdkOmittedValue, Object? size = sdkOmittedValue, Object? sshUrl = sdkOmittedValue, Object? stargazersCount = sdkOmittedValue, Object? stargazersUrl = sdkOmittedValue, Object? statusesUrl = sdkOmittedValue, Object? subscribersUrl = sdkOmittedValue, Object? subscriptionUrl = sdkOmittedValue, Object? svnUrl = sdkOmittedValue, Object? tagsUrl = sdkOmittedValue, Object? teamsUrl = sdkOmittedValue, Object? topics = sdkOmittedValue, Object? treesUrl = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? url = sdkOmittedValue, Object? visibility = sdkOmittedValue, Object? watchers = sdkOmittedValue, Object? watchersCount = sdkOmittedValue}) => WebhookForkForkeeVariant1(
-    allowForking: identical(allowForking, sdkOmittedValue) ? this.allowForking : allowForking as SdkOptional<bool>,
-    archiveUrl: identical(archiveUrl, sdkOmittedValue) ? this.archiveUrl : archiveUrl as SdkOptional<String>,
-    archived: identical(archived, sdkOmittedValue) ? this.archived : archived as SdkOptional<bool>,
-    assigneesUrl: identical(assigneesUrl, sdkOmittedValue) ? this.assigneesUrl : assigneesUrl as SdkOptional<String>,
-    blobsUrl: identical(blobsUrl, sdkOmittedValue) ? this.blobsUrl : blobsUrl as SdkOptional<String>,
-    branchesUrl: identical(branchesUrl, sdkOmittedValue) ? this.branchesUrl : branchesUrl as SdkOptional<String>,
-    cloneUrl: identical(cloneUrl, sdkOmittedValue) ? this.cloneUrl : cloneUrl as SdkOptional<String>,
-    collaboratorsUrl: identical(collaboratorsUrl, sdkOmittedValue) ? this.collaboratorsUrl : collaboratorsUrl as SdkOptional<String>,
-    commentsUrl: identical(commentsUrl, sdkOmittedValue) ? this.commentsUrl : commentsUrl as SdkOptional<String>,
-    commitsUrl: identical(commitsUrl, sdkOmittedValue) ? this.commitsUrl : commitsUrl as SdkOptional<String>,
-    compareUrl: identical(compareUrl, sdkOmittedValue) ? this.compareUrl : compareUrl as SdkOptional<String>,
-    contentsUrl: identical(contentsUrl, sdkOmittedValue) ? this.contentsUrl : contentsUrl as SdkOptional<String>,
-    contributorsUrl: identical(contributorsUrl, sdkOmittedValue) ? this.contributorsUrl : contributorsUrl as SdkOptional<String>,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as SdkOptional<String>,
-    defaultBranch: identical(defaultBranch, sdkOmittedValue) ? this.defaultBranch : defaultBranch as SdkOptional<String>,
-    deploymentsUrl: identical(deploymentsUrl, sdkOmittedValue) ? this.deploymentsUrl : deploymentsUrl as SdkOptional<String>,
-    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String?>,
-    disabled: identical(disabled, sdkOmittedValue) ? this.disabled : disabled as SdkOptional<bool>,
-    downloadsUrl: identical(downloadsUrl, sdkOmittedValue) ? this.downloadsUrl : downloadsUrl as SdkOptional<String>,
-    eventsUrl: identical(eventsUrl, sdkOmittedValue) ? this.eventsUrl : eventsUrl as SdkOptional<String>,
-    fork: identical(fork, sdkOmittedValue) ? this.fork : fork as SdkOptional<WebhookForkForkeeVariant1Fork>,
-    forks: identical(forks, sdkOmittedValue) ? this.forks : forks as SdkOptional<int>,
-    forksCount: identical(forksCount, sdkOmittedValue) ? this.forksCount : forksCount as SdkOptional<int>,
-    forksUrl: identical(forksUrl, sdkOmittedValue) ? this.forksUrl : forksUrl as SdkOptional<String>,
-    fullName: identical(fullName, sdkOmittedValue) ? this.fullName : fullName as SdkOptional<String>,
-    gitCommitsUrl: identical(gitCommitsUrl, sdkOmittedValue) ? this.gitCommitsUrl : gitCommitsUrl as SdkOptional<String>,
-    gitRefsUrl: identical(gitRefsUrl, sdkOmittedValue) ? this.gitRefsUrl : gitRefsUrl as SdkOptional<String>,
-    gitTagsUrl: identical(gitTagsUrl, sdkOmittedValue) ? this.gitTagsUrl : gitTagsUrl as SdkOptional<String>,
-    gitUrl: identical(gitUrl, sdkOmittedValue) ? this.gitUrl : gitUrl as SdkOptional<String>,
-    hasDownloads: identical(hasDownloads, sdkOmittedValue) ? this.hasDownloads : hasDownloads as SdkOptional<bool>,
-    hasIssues: identical(hasIssues, sdkOmittedValue) ? this.hasIssues : hasIssues as SdkOptional<bool>,
-    hasPages: identical(hasPages, sdkOmittedValue) ? this.hasPages : hasPages as SdkOptional<bool>,
-    hasProjects: identical(hasProjects, sdkOmittedValue) ? this.hasProjects : hasProjects as SdkOptional<bool>,
-    hasWiki: identical(hasWiki, sdkOmittedValue) ? this.hasWiki : hasWiki as SdkOptional<bool>,
-    homepage: identical(homepage, sdkOmittedValue) ? this.homepage : homepage as SdkOptional<String?>,
-    hooksUrl: identical(hooksUrl, sdkOmittedValue) ? this.hooksUrl : hooksUrl as SdkOptional<String>,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String>,
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-    isTemplate: identical(isTemplate, sdkOmittedValue) ? this.isTemplate : isTemplate as SdkOptional<bool>,
-    issueCommentUrl: identical(issueCommentUrl, sdkOmittedValue) ? this.issueCommentUrl : issueCommentUrl as SdkOptional<String>,
-    issueEventsUrl: identical(issueEventsUrl, sdkOmittedValue) ? this.issueEventsUrl : issueEventsUrl as SdkOptional<String>,
-    issuesUrl: identical(issuesUrl, sdkOmittedValue) ? this.issuesUrl : issuesUrl as SdkOptional<String>,
-    keysUrl: identical(keysUrl, sdkOmittedValue) ? this.keysUrl : keysUrl as SdkOptional<String>,
-    labelsUrl: identical(labelsUrl, sdkOmittedValue) ? this.labelsUrl : labelsUrl as SdkOptional<String>,
-    language: identical(language, sdkOmittedValue) ? this.language : language as SdkOptional<dynamic>,
-    languagesUrl: identical(languagesUrl, sdkOmittedValue) ? this.languagesUrl : languagesUrl as SdkOptional<String>,
-    license: identical(license, sdkOmittedValue) ? this.license : license as SdkOptional<Map<String, dynamic>?>,
-    mergesUrl: identical(mergesUrl, sdkOmittedValue) ? this.mergesUrl : mergesUrl as SdkOptional<String>,
-    milestonesUrl: identical(milestonesUrl, sdkOmittedValue) ? this.milestonesUrl : milestonesUrl as SdkOptional<String>,
-    mirrorUrl: identical(mirrorUrl, sdkOmittedValue) ? this.mirrorUrl : mirrorUrl as SdkOptional<dynamic>,
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as SdkOptional<String>,
-    notificationsUrl: identical(notificationsUrl, sdkOmittedValue) ? this.notificationsUrl : notificationsUrl as SdkOptional<String>,
-    openIssues: identical(openIssues, sdkOmittedValue) ? this.openIssues : openIssues as SdkOptional<int>,
-    openIssuesCount: identical(openIssuesCount, sdkOmittedValue) ? this.openIssuesCount : openIssuesCount as SdkOptional<int>,
-    owner: identical(owner, sdkOmittedValue) ? this.owner : owner as SdkOptional<WebhookForkForkeeVariant1Owner>,
-    private: identical(private, sdkOmittedValue) ? this.private : private as SdkOptional<bool>,
-    public: identical(public, sdkOmittedValue) ? this.public : public as SdkOptional<bool>,
-    pullsUrl: identical(pullsUrl, sdkOmittedValue) ? this.pullsUrl : pullsUrl as SdkOptional<String>,
-    pushedAt: identical(pushedAt, sdkOmittedValue) ? this.pushedAt : pushedAt as SdkOptional<String>,
-    releasesUrl: identical(releasesUrl, sdkOmittedValue) ? this.releasesUrl : releasesUrl as SdkOptional<String>,
-    size: identical(size, sdkOmittedValue) ? this.size : size as SdkOptional<int>,
-    sshUrl: identical(sshUrl, sdkOmittedValue) ? this.sshUrl : sshUrl as SdkOptional<String>,
-    stargazersCount: identical(stargazersCount, sdkOmittedValue) ? this.stargazersCount : stargazersCount as SdkOptional<int>,
-    stargazersUrl: identical(stargazersUrl, sdkOmittedValue) ? this.stargazersUrl : stargazersUrl as SdkOptional<String>,
-    statusesUrl: identical(statusesUrl, sdkOmittedValue) ? this.statusesUrl : statusesUrl as SdkOptional<String>,
-    subscribersUrl: identical(subscribersUrl, sdkOmittedValue) ? this.subscribersUrl : subscribersUrl as SdkOptional<String>,
-    subscriptionUrl: identical(subscriptionUrl, sdkOmittedValue) ? this.subscriptionUrl : subscriptionUrl as SdkOptional<String>,
-    svnUrl: identical(svnUrl, sdkOmittedValue) ? this.svnUrl : svnUrl as SdkOptional<String>,
-    tagsUrl: identical(tagsUrl, sdkOmittedValue) ? this.tagsUrl : tagsUrl as SdkOptional<String>,
-    teamsUrl: identical(teamsUrl, sdkOmittedValue) ? this.teamsUrl : teamsUrl as SdkOptional<String>,
-    topics: identical(topics, sdkOmittedValue) ? this.topics : topics as SdkOptional<List<dynamic>>,
-    treesUrl: identical(treesUrl, sdkOmittedValue) ? this.treesUrl : treesUrl as SdkOptional<String>,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as SdkOptional<String>,
-    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
-    visibility: identical(visibility, sdkOmittedValue) ? this.visibility : visibility as SdkOptional<String>,
-    watchers: identical(watchers, sdkOmittedValue) ? this.watchers : watchers as SdkOptional<int>,
-    watchersCount: identical(watchersCount, sdkOmittedValue) ? this.watchersCount : watchersCount as SdkOptional<int>,
-  );
+  WebhookForkForkeeVariant1 _copyWith(
+          {Object? allowForking = sdkOmittedValue,
+          Object? archiveUrl = sdkOmittedValue,
+          Object? archived = sdkOmittedValue,
+          Object? assigneesUrl = sdkOmittedValue,
+          Object? blobsUrl = sdkOmittedValue,
+          Object? branchesUrl = sdkOmittedValue,
+          Object? cloneUrl = sdkOmittedValue,
+          Object? collaboratorsUrl = sdkOmittedValue,
+          Object? commentsUrl = sdkOmittedValue,
+          Object? commitsUrl = sdkOmittedValue,
+          Object? compareUrl = sdkOmittedValue,
+          Object? contentsUrl = sdkOmittedValue,
+          Object? contributorsUrl = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? defaultBranch = sdkOmittedValue,
+          Object? deploymentsUrl = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? disabled = sdkOmittedValue,
+          Object? downloadsUrl = sdkOmittedValue,
+          Object? eventsUrl = sdkOmittedValue,
+          Object? fork = sdkOmittedValue,
+          Object? forks = sdkOmittedValue,
+          Object? forksCount = sdkOmittedValue,
+          Object? forksUrl = sdkOmittedValue,
+          Object? fullName = sdkOmittedValue,
+          Object? gitCommitsUrl = sdkOmittedValue,
+          Object? gitRefsUrl = sdkOmittedValue,
+          Object? gitTagsUrl = sdkOmittedValue,
+          Object? gitUrl = sdkOmittedValue,
+          Object? hasDownloads = sdkOmittedValue,
+          Object? hasIssues = sdkOmittedValue,
+          Object? hasPages = sdkOmittedValue,
+          Object? hasProjects = sdkOmittedValue,
+          Object? hasWiki = sdkOmittedValue,
+          Object? homepage = sdkOmittedValue,
+          Object? hooksUrl = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? isTemplate = sdkOmittedValue,
+          Object? issueCommentUrl = sdkOmittedValue,
+          Object? issueEventsUrl = sdkOmittedValue,
+          Object? issuesUrl = sdkOmittedValue,
+          Object? keysUrl = sdkOmittedValue,
+          Object? labelsUrl = sdkOmittedValue,
+          Object? language = sdkOmittedValue,
+          Object? languagesUrl = sdkOmittedValue,
+          Object? license = sdkOmittedValue,
+          Object? mergesUrl = sdkOmittedValue,
+          Object? milestonesUrl = sdkOmittedValue,
+          Object? mirrorUrl = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? notificationsUrl = sdkOmittedValue,
+          Object? openIssues = sdkOmittedValue,
+          Object? openIssuesCount = sdkOmittedValue,
+          Object? owner = sdkOmittedValue,
+          Object? private = sdkOmittedValue,
+          Object? public = sdkOmittedValue,
+          Object? pullsUrl = sdkOmittedValue,
+          Object? pushedAt = sdkOmittedValue,
+          Object? releasesUrl = sdkOmittedValue,
+          Object? size = sdkOmittedValue,
+          Object? sshUrl = sdkOmittedValue,
+          Object? stargazersCount = sdkOmittedValue,
+          Object? stargazersUrl = sdkOmittedValue,
+          Object? statusesUrl = sdkOmittedValue,
+          Object? subscribersUrl = sdkOmittedValue,
+          Object? subscriptionUrl = sdkOmittedValue,
+          Object? svnUrl = sdkOmittedValue,
+          Object? tagsUrl = sdkOmittedValue,
+          Object? teamsUrl = sdkOmittedValue,
+          Object? topics = sdkOmittedValue,
+          Object? treesUrl = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? visibility = sdkOmittedValue,
+          Object? watchers = sdkOmittedValue,
+          Object? watchersCount = sdkOmittedValue}) =>
+      WebhookForkForkeeVariant1(
+        allowForking: identical(allowForking, sdkOmittedValue)
+            ? this.allowForking
+            : allowForking as SdkOptional<bool>,
+        archiveUrl: identical(archiveUrl, sdkOmittedValue)
+            ? this.archiveUrl
+            : archiveUrl as SdkOptional<String>,
+        archived: identical(archived, sdkOmittedValue)
+            ? this.archived
+            : archived as SdkOptional<bool>,
+        assigneesUrl: identical(assigneesUrl, sdkOmittedValue)
+            ? this.assigneesUrl
+            : assigneesUrl as SdkOptional<String>,
+        blobsUrl: identical(blobsUrl, sdkOmittedValue)
+            ? this.blobsUrl
+            : blobsUrl as SdkOptional<String>,
+        branchesUrl: identical(branchesUrl, sdkOmittedValue)
+            ? this.branchesUrl
+            : branchesUrl as SdkOptional<String>,
+        cloneUrl: identical(cloneUrl, sdkOmittedValue)
+            ? this.cloneUrl
+            : cloneUrl as SdkOptional<String>,
+        collaboratorsUrl: identical(collaboratorsUrl, sdkOmittedValue)
+            ? this.collaboratorsUrl
+            : collaboratorsUrl as SdkOptional<String>,
+        commentsUrl: identical(commentsUrl, sdkOmittedValue)
+            ? this.commentsUrl
+            : commentsUrl as SdkOptional<String>,
+        commitsUrl: identical(commitsUrl, sdkOmittedValue)
+            ? this.commitsUrl
+            : commitsUrl as SdkOptional<String>,
+        compareUrl: identical(compareUrl, sdkOmittedValue)
+            ? this.compareUrl
+            : compareUrl as SdkOptional<String>,
+        contentsUrl: identical(contentsUrl, sdkOmittedValue)
+            ? this.contentsUrl
+            : contentsUrl as SdkOptional<String>,
+        contributorsUrl: identical(contributorsUrl, sdkOmittedValue)
+            ? this.contributorsUrl
+            : contributorsUrl as SdkOptional<String>,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as SdkOptional<String>,
+        defaultBranch: identical(defaultBranch, sdkOmittedValue)
+            ? this.defaultBranch
+            : defaultBranch as SdkOptional<String>,
+        deploymentsUrl: identical(deploymentsUrl, sdkOmittedValue)
+            ? this.deploymentsUrl
+            : deploymentsUrl as SdkOptional<String>,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as SdkOptional<String?>,
+        disabled: identical(disabled, sdkOmittedValue)
+            ? this.disabled
+            : disabled as SdkOptional<bool>,
+        downloadsUrl: identical(downloadsUrl, sdkOmittedValue)
+            ? this.downloadsUrl
+            : downloadsUrl as SdkOptional<String>,
+        eventsUrl: identical(eventsUrl, sdkOmittedValue)
+            ? this.eventsUrl
+            : eventsUrl as SdkOptional<String>,
+        fork: identical(fork, sdkOmittedValue)
+            ? this.fork
+            : fork as SdkOptional<WebhookForkForkeeVariant1Fork>,
+        forks: identical(forks, sdkOmittedValue)
+            ? this.forks
+            : forks as SdkOptional<int>,
+        forksCount: identical(forksCount, sdkOmittedValue)
+            ? this.forksCount
+            : forksCount as SdkOptional<int>,
+        forksUrl: identical(forksUrl, sdkOmittedValue)
+            ? this.forksUrl
+            : forksUrl as SdkOptional<String>,
+        fullName: identical(fullName, sdkOmittedValue)
+            ? this.fullName
+            : fullName as SdkOptional<String>,
+        gitCommitsUrl: identical(gitCommitsUrl, sdkOmittedValue)
+            ? this.gitCommitsUrl
+            : gitCommitsUrl as SdkOptional<String>,
+        gitRefsUrl: identical(gitRefsUrl, sdkOmittedValue)
+            ? this.gitRefsUrl
+            : gitRefsUrl as SdkOptional<String>,
+        gitTagsUrl: identical(gitTagsUrl, sdkOmittedValue)
+            ? this.gitTagsUrl
+            : gitTagsUrl as SdkOptional<String>,
+        gitUrl: identical(gitUrl, sdkOmittedValue)
+            ? this.gitUrl
+            : gitUrl as SdkOptional<String>,
+        hasDownloads: identical(hasDownloads, sdkOmittedValue)
+            ? this.hasDownloads
+            : hasDownloads as SdkOptional<bool>,
+        hasIssues: identical(hasIssues, sdkOmittedValue)
+            ? this.hasIssues
+            : hasIssues as SdkOptional<bool>,
+        hasPages: identical(hasPages, sdkOmittedValue)
+            ? this.hasPages
+            : hasPages as SdkOptional<bool>,
+        hasProjects: identical(hasProjects, sdkOmittedValue)
+            ? this.hasProjects
+            : hasProjects as SdkOptional<bool>,
+        hasWiki: identical(hasWiki, sdkOmittedValue)
+            ? this.hasWiki
+            : hasWiki as SdkOptional<bool>,
+        homepage: identical(homepage, sdkOmittedValue)
+            ? this.homepage
+            : homepage as SdkOptional<String?>,
+        hooksUrl: identical(hooksUrl, sdkOmittedValue)
+            ? this.hooksUrl
+            : hooksUrl as SdkOptional<String>,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as SdkOptional<String>,
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+        isTemplate: identical(isTemplate, sdkOmittedValue)
+            ? this.isTemplate
+            : isTemplate as SdkOptional<bool>,
+        issueCommentUrl: identical(issueCommentUrl, sdkOmittedValue)
+            ? this.issueCommentUrl
+            : issueCommentUrl as SdkOptional<String>,
+        issueEventsUrl: identical(issueEventsUrl, sdkOmittedValue)
+            ? this.issueEventsUrl
+            : issueEventsUrl as SdkOptional<String>,
+        issuesUrl: identical(issuesUrl, sdkOmittedValue)
+            ? this.issuesUrl
+            : issuesUrl as SdkOptional<String>,
+        keysUrl: identical(keysUrl, sdkOmittedValue)
+            ? this.keysUrl
+            : keysUrl as SdkOptional<String>,
+        labelsUrl: identical(labelsUrl, sdkOmittedValue)
+            ? this.labelsUrl
+            : labelsUrl as SdkOptional<String>,
+        language: identical(language, sdkOmittedValue)
+            ? this.language
+            : language as SdkOptional<dynamic>,
+        languagesUrl: identical(languagesUrl, sdkOmittedValue)
+            ? this.languagesUrl
+            : languagesUrl as SdkOptional<String>,
+        license: identical(license, sdkOmittedValue)
+            ? this.license
+            : license as SdkOptional<Map<String, dynamic>?>,
+        mergesUrl: identical(mergesUrl, sdkOmittedValue)
+            ? this.mergesUrl
+            : mergesUrl as SdkOptional<String>,
+        milestonesUrl: identical(milestonesUrl, sdkOmittedValue)
+            ? this.milestonesUrl
+            : milestonesUrl as SdkOptional<String>,
+        mirrorUrl: identical(mirrorUrl, sdkOmittedValue)
+            ? this.mirrorUrl
+            : mirrorUrl as SdkOptional<dynamic>,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        nodeId: identical(nodeId, sdkOmittedValue)
+            ? this.nodeId
+            : nodeId as SdkOptional<String>,
+        notificationsUrl: identical(notificationsUrl, sdkOmittedValue)
+            ? this.notificationsUrl
+            : notificationsUrl as SdkOptional<String>,
+        openIssues: identical(openIssues, sdkOmittedValue)
+            ? this.openIssues
+            : openIssues as SdkOptional<int>,
+        openIssuesCount: identical(openIssuesCount, sdkOmittedValue)
+            ? this.openIssuesCount
+            : openIssuesCount as SdkOptional<int>,
+        owner: identical(owner, sdkOmittedValue)
+            ? this.owner
+            : owner as SdkOptional<WebhookForkForkeeVariant1Owner>,
+        private: identical(private, sdkOmittedValue)
+            ? this.private
+            : private as SdkOptional<bool>,
+        public: identical(public, sdkOmittedValue)
+            ? this.public
+            : public as SdkOptional<bool>,
+        pullsUrl: identical(pullsUrl, sdkOmittedValue)
+            ? this.pullsUrl
+            : pullsUrl as SdkOptional<String>,
+        pushedAt: identical(pushedAt, sdkOmittedValue)
+            ? this.pushedAt
+            : pushedAt as SdkOptional<String>,
+        releasesUrl: identical(releasesUrl, sdkOmittedValue)
+            ? this.releasesUrl
+            : releasesUrl as SdkOptional<String>,
+        size: identical(size, sdkOmittedValue)
+            ? this.size
+            : size as SdkOptional<int>,
+        sshUrl: identical(sshUrl, sdkOmittedValue)
+            ? this.sshUrl
+            : sshUrl as SdkOptional<String>,
+        stargazersCount: identical(stargazersCount, sdkOmittedValue)
+            ? this.stargazersCount
+            : stargazersCount as SdkOptional<int>,
+        stargazersUrl: identical(stargazersUrl, sdkOmittedValue)
+            ? this.stargazersUrl
+            : stargazersUrl as SdkOptional<String>,
+        statusesUrl: identical(statusesUrl, sdkOmittedValue)
+            ? this.statusesUrl
+            : statusesUrl as SdkOptional<String>,
+        subscribersUrl: identical(subscribersUrl, sdkOmittedValue)
+            ? this.subscribersUrl
+            : subscribersUrl as SdkOptional<String>,
+        subscriptionUrl: identical(subscriptionUrl, sdkOmittedValue)
+            ? this.subscriptionUrl
+            : subscriptionUrl as SdkOptional<String>,
+        svnUrl: identical(svnUrl, sdkOmittedValue)
+            ? this.svnUrl
+            : svnUrl as SdkOptional<String>,
+        tagsUrl: identical(tagsUrl, sdkOmittedValue)
+            ? this.tagsUrl
+            : tagsUrl as SdkOptional<String>,
+        teamsUrl: identical(teamsUrl, sdkOmittedValue)
+            ? this.teamsUrl
+            : teamsUrl as SdkOptional<String>,
+        topics: identical(topics, sdkOmittedValue)
+            ? this.topics
+            : topics as SdkOptional<List<dynamic>>,
+        treesUrl: identical(treesUrl, sdkOmittedValue)
+            ? this.treesUrl
+            : treesUrl as SdkOptional<String>,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as SdkOptional<String>,
+        url: identical(url, sdkOmittedValue)
+            ? this.url
+            : url as SdkOptional<String>,
+        visibility: identical(visibility, sdkOmittedValue)
+            ? this.visibility
+            : visibility as SdkOptional<String>,
+        watchers: identical(watchers, sdkOmittedValue)
+            ? this.watchers
+            : watchers as SdkOptional<int>,
+        watchersCount: identical(watchersCount, sdkOmittedValue)
+            ? this.watchersCount
+            : watchersCount as SdkOptional<int>,
+      );
 
-  factory WebhookForkForkeeVariant1.fromJson(Map<String, dynamic> json) => WebhookForkForkeeVariant1(
-    allowForking: json['allow_forking'] != null ? SdkPresent((json['allow_forking'] as bool?)!) : const SdkOmitted(),
-    archiveUrl: json['archive_url'] != null ? SdkPresent((json['archive_url'] as String?)!) : const SdkOmitted(),
-    archived: json['archived'] != null ? SdkPresent((json['archived'] as bool?)!) : const SdkOmitted(),
-    assigneesUrl: json['assignees_url'] != null ? SdkPresent((json['assignees_url'] as String?)!) : const SdkOmitted(),
-    blobsUrl: json['blobs_url'] != null ? SdkPresent((json['blobs_url'] as String?)!) : const SdkOmitted(),
-    branchesUrl: json['branches_url'] != null ? SdkPresent((json['branches_url'] as String?)!) : const SdkOmitted(),
-    cloneUrl: json['clone_url'] != null ? SdkPresent((json['clone_url'] as String?)!) : const SdkOmitted(),
-    collaboratorsUrl: json['collaborators_url'] != null ? SdkPresent((json['collaborators_url'] as String?)!) : const SdkOmitted(),
-    commentsUrl: json['comments_url'] != null ? SdkPresent((json['comments_url'] as String?)!) : const SdkOmitted(),
-    commitsUrl: json['commits_url'] != null ? SdkPresent((json['commits_url'] as String?)!) : const SdkOmitted(),
-    compareUrl: json['compare_url'] != null ? SdkPresent((json['compare_url'] as String?)!) : const SdkOmitted(),
-    contentsUrl: json['contents_url'] != null ? SdkPresent((json['contents_url'] as String?)!) : const SdkOmitted(),
-    contributorsUrl: json['contributors_url'] != null ? SdkPresent((json['contributors_url'] as String?)!) : const SdkOmitted(),
-    createdAt: json['created_at'] != null ? SdkPresent((json['created_at'] as String?)!) : const SdkOmitted(),
-    defaultBranch: json['default_branch'] != null ? SdkPresent((json['default_branch'] as String?)!) : const SdkOmitted(),
-    deploymentsUrl: json['deployments_url'] != null ? SdkPresent((json['deployments_url'] as String?)!) : const SdkOmitted(),
-    description: json.containsKey('description') ? SdkPresent(json['description'] as String?) : const SdkOmitted(),
-    disabled: json['disabled'] != null ? SdkPresent((json['disabled'] as bool?)!) : const SdkOmitted(),
-    downloadsUrl: json['downloads_url'] != null ? SdkPresent((json['downloads_url'] as String?)!) : const SdkOmitted(),
-    eventsUrl: json['events_url'] != null ? SdkPresent((json['events_url'] as String?)!) : const SdkOmitted(),
-    fork: json['fork'] != null ? SdkPresent((json['fork'] != null ? WebhookForkForkeeVariant1Fork.fromJson(json['fork'] as bool) : null)!) : const SdkOmitted(),
-    forks: json['forks'] != null ? SdkPresent(((json['forks'] as num?)?.toInt())!) : const SdkOmitted(),
-    forksCount: json['forks_count'] != null ? SdkPresent(((json['forks_count'] as num?)?.toInt())!) : const SdkOmitted(),
-    forksUrl: json['forks_url'] != null ? SdkPresent((json['forks_url'] as String?)!) : const SdkOmitted(),
-    fullName: json['full_name'] != null ? SdkPresent((json['full_name'] as String?)!) : const SdkOmitted(),
-    gitCommitsUrl: json['git_commits_url'] != null ? SdkPresent((json['git_commits_url'] as String?)!) : const SdkOmitted(),
-    gitRefsUrl: json['git_refs_url'] != null ? SdkPresent((json['git_refs_url'] as String?)!) : const SdkOmitted(),
-    gitTagsUrl: json['git_tags_url'] != null ? SdkPresent((json['git_tags_url'] as String?)!) : const SdkOmitted(),
-    gitUrl: json['git_url'] != null ? SdkPresent((json['git_url'] as String?)!) : const SdkOmitted(),
-    hasDownloads: json['has_downloads'] != null ? SdkPresent((json['has_downloads'] as bool?)!) : const SdkOmitted(),
-    hasIssues: json['has_issues'] != null ? SdkPresent((json['has_issues'] as bool?)!) : const SdkOmitted(),
-    hasPages: json['has_pages'] != null ? SdkPresent((json['has_pages'] as bool?)!) : const SdkOmitted(),
-    hasProjects: json['has_projects'] != null ? SdkPresent((json['has_projects'] as bool?)!) : const SdkOmitted(),
-    hasWiki: json['has_wiki'] != null ? SdkPresent((json['has_wiki'] as bool?)!) : const SdkOmitted(),
-    homepage: json.containsKey('homepage') ? SdkPresent(json['homepage'] as String?) : const SdkOmitted(),
-    hooksUrl: json['hooks_url'] != null ? SdkPresent((json['hooks_url'] as String?)!) : const SdkOmitted(),
-    htmlUrl: json['html_url'] != null ? SdkPresent((json['html_url'] as String?)!) : const SdkOmitted(),
-    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
-    isTemplate: json['is_template'] != null ? SdkPresent((json['is_template'] as bool?)!) : const SdkOmitted(),
-    issueCommentUrl: json['issue_comment_url'] != null ? SdkPresent((json['issue_comment_url'] as String?)!) : const SdkOmitted(),
-    issueEventsUrl: json['issue_events_url'] != null ? SdkPresent((json['issue_events_url'] as String?)!) : const SdkOmitted(),
-    issuesUrl: json['issues_url'] != null ? SdkPresent((json['issues_url'] as String?)!) : const SdkOmitted(),
-    keysUrl: json['keys_url'] != null ? SdkPresent((json['keys_url'] as String?)!) : const SdkOmitted(),
-    labelsUrl: json['labels_url'] != null ? SdkPresent((json['labels_url'] as String?)!) : const SdkOmitted(),
-    language: json.containsKey('language') ? SdkPresent(json['language']) : const SdkOmitted(),
-    languagesUrl: json['languages_url'] != null ? SdkPresent((json['languages_url'] as String?)!) : const SdkOmitted(),
-    license: json.containsKey('license') ? SdkPresent(json['license'] == null ? null : json['license'] as Map<String, dynamic>) : const SdkOmitted(),
-    mergesUrl: json['merges_url'] != null ? SdkPresent((json['merges_url'] as String?)!) : const SdkOmitted(),
-    milestonesUrl: json['milestones_url'] != null ? SdkPresent((json['milestones_url'] as String?)!) : const SdkOmitted(),
-    mirrorUrl: json.containsKey('mirror_url') ? SdkPresent(json['mirror_url']) : const SdkOmitted(),
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    nodeId: json['node_id'] != null ? SdkPresent((json['node_id'] as String?)!) : const SdkOmitted(),
-    notificationsUrl: json['notifications_url'] != null ? SdkPresent((json['notifications_url'] as String?)!) : const SdkOmitted(),
-    openIssues: json['open_issues'] != null ? SdkPresent(((json['open_issues'] as num?)?.toInt())!) : const SdkOmitted(),
-    openIssuesCount: json['open_issues_count'] != null ? SdkPresent(((json['open_issues_count'] as num?)?.toInt())!) : const SdkOmitted(),
-    owner: json['owner'] != null ? SdkPresent((json['owner'] != null ? WebhookForkForkeeVariant1Owner.fromJson(json['owner'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    private: json['private'] != null ? SdkPresent((json['private'] as bool?)!) : const SdkOmitted(),
-    public: json['public'] != null ? SdkPresent((json['public'] as bool?)!) : const SdkOmitted(),
-    pullsUrl: json['pulls_url'] != null ? SdkPresent((json['pulls_url'] as String?)!) : const SdkOmitted(),
-    pushedAt: json['pushed_at'] != null ? SdkPresent((json['pushed_at'] as String?)!) : const SdkOmitted(),
-    releasesUrl: json['releases_url'] != null ? SdkPresent((json['releases_url'] as String?)!) : const SdkOmitted(),
-    size: json['size'] != null ? SdkPresent(((json['size'] as num?)?.toInt())!) : const SdkOmitted(),
-    sshUrl: json['ssh_url'] != null ? SdkPresent((json['ssh_url'] as String?)!) : const SdkOmitted(),
-    stargazersCount: json['stargazers_count'] != null ? SdkPresent(((json['stargazers_count'] as num?)?.toInt())!) : const SdkOmitted(),
-    stargazersUrl: json['stargazers_url'] != null ? SdkPresent((json['stargazers_url'] as String?)!) : const SdkOmitted(),
-    statusesUrl: json['statuses_url'] != null ? SdkPresent((json['statuses_url'] as String?)!) : const SdkOmitted(),
-    subscribersUrl: json['subscribers_url'] != null ? SdkPresent((json['subscribers_url'] as String?)!) : const SdkOmitted(),
-    subscriptionUrl: json['subscription_url'] != null ? SdkPresent((json['subscription_url'] as String?)!) : const SdkOmitted(),
-    svnUrl: json['svn_url'] != null ? SdkPresent((json['svn_url'] as String?)!) : const SdkOmitted(),
-    tagsUrl: json['tags_url'] != null ? SdkPresent((json['tags_url'] as String?)!) : const SdkOmitted(),
-    teamsUrl: json['teams_url'] != null ? SdkPresent((json['teams_url'] as String?)!) : const SdkOmitted(),
-    topics: json['topics'] != null ? SdkPresent(((json['topics'] as List?)?.map((e) => e).toList())!) : const SdkOmitted(),
-    treesUrl: json['trees_url'] != null ? SdkPresent((json['trees_url'] as String?)!) : const SdkOmitted(),
-    updatedAt: json['updated_at'] != null ? SdkPresent((json['updated_at'] as String?)!) : const SdkOmitted(),
-    url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
-    visibility: json['visibility'] != null ? SdkPresent((json['visibility'] as String?)!) : const SdkOmitted(),
-    watchers: json['watchers'] != null ? SdkPresent(((json['watchers'] as num?)?.toInt())!) : const SdkOmitted(),
-    watchersCount: json['watchers_count'] != null ? SdkPresent(((json['watchers_count'] as num?)?.toInt())!) : const SdkOmitted(),
-  );
+  factory WebhookForkForkeeVariant1.fromJson(Map<String, dynamic> json) =>
+      WebhookForkForkeeVariant1(
+        allowForking: json['allow_forking'] != null
+            ? SdkPresent((json['allow_forking'] as bool?)!)
+            : const SdkOmitted(),
+        archiveUrl: json['archive_url'] != null
+            ? SdkPresent((json['archive_url'] as String?)!)
+            : const SdkOmitted(),
+        archived: json['archived'] != null
+            ? SdkPresent((json['archived'] as bool?)!)
+            : const SdkOmitted(),
+        assigneesUrl: json['assignees_url'] != null
+            ? SdkPresent((json['assignees_url'] as String?)!)
+            : const SdkOmitted(),
+        blobsUrl: json['blobs_url'] != null
+            ? SdkPresent((json['blobs_url'] as String?)!)
+            : const SdkOmitted(),
+        branchesUrl: json['branches_url'] != null
+            ? SdkPresent((json['branches_url'] as String?)!)
+            : const SdkOmitted(),
+        cloneUrl: json['clone_url'] != null
+            ? SdkPresent((json['clone_url'] as String?)!)
+            : const SdkOmitted(),
+        collaboratorsUrl: json['collaborators_url'] != null
+            ? SdkPresent((json['collaborators_url'] as String?)!)
+            : const SdkOmitted(),
+        commentsUrl: json['comments_url'] != null
+            ? SdkPresent((json['comments_url'] as String?)!)
+            : const SdkOmitted(),
+        commitsUrl: json['commits_url'] != null
+            ? SdkPresent((json['commits_url'] as String?)!)
+            : const SdkOmitted(),
+        compareUrl: json['compare_url'] != null
+            ? SdkPresent((json['compare_url'] as String?)!)
+            : const SdkOmitted(),
+        contentsUrl: json['contents_url'] != null
+            ? SdkPresent((json['contents_url'] as String?)!)
+            : const SdkOmitted(),
+        contributorsUrl: json['contributors_url'] != null
+            ? SdkPresent((json['contributors_url'] as String?)!)
+            : const SdkOmitted(),
+        createdAt: json['created_at'] != null
+            ? SdkPresent((json['created_at'] as String?)!)
+            : const SdkOmitted(),
+        defaultBranch: json['default_branch'] != null
+            ? SdkPresent((json['default_branch'] as String?)!)
+            : const SdkOmitted(),
+        deploymentsUrl: json['deployments_url'] != null
+            ? SdkPresent((json['deployments_url'] as String?)!)
+            : const SdkOmitted(),
+        description: json.containsKey('description')
+            ? SdkPresent(json['description'] as String?)
+            : const SdkOmitted(),
+        disabled: json['disabled'] != null
+            ? SdkPresent((json['disabled'] as bool?)!)
+            : const SdkOmitted(),
+        downloadsUrl: json['downloads_url'] != null
+            ? SdkPresent((json['downloads_url'] as String?)!)
+            : const SdkOmitted(),
+        eventsUrl: json['events_url'] != null
+            ? SdkPresent((json['events_url'] as String?)!)
+            : const SdkOmitted(),
+        fork: json['fork'] != null
+            ? SdkPresent((json['fork'] != null
+                ? WebhookForkForkeeVariant1Fork.fromJson(json['fork'] as bool)
+                : null)!)
+            : const SdkOmitted(),
+        forks: json['forks'] != null
+            ? SdkPresent(((json['forks'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        forksCount: json['forks_count'] != null
+            ? SdkPresent(((json['forks_count'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        forksUrl: json['forks_url'] != null
+            ? SdkPresent((json['forks_url'] as String?)!)
+            : const SdkOmitted(),
+        fullName: json['full_name'] != null
+            ? SdkPresent((json['full_name'] as String?)!)
+            : const SdkOmitted(),
+        gitCommitsUrl: json['git_commits_url'] != null
+            ? SdkPresent((json['git_commits_url'] as String?)!)
+            : const SdkOmitted(),
+        gitRefsUrl: json['git_refs_url'] != null
+            ? SdkPresent((json['git_refs_url'] as String?)!)
+            : const SdkOmitted(),
+        gitTagsUrl: json['git_tags_url'] != null
+            ? SdkPresent((json['git_tags_url'] as String?)!)
+            : const SdkOmitted(),
+        gitUrl: json['git_url'] != null
+            ? SdkPresent((json['git_url'] as String?)!)
+            : const SdkOmitted(),
+        hasDownloads: json['has_downloads'] != null
+            ? SdkPresent((json['has_downloads'] as bool?)!)
+            : const SdkOmitted(),
+        hasIssues: json['has_issues'] != null
+            ? SdkPresent((json['has_issues'] as bool?)!)
+            : const SdkOmitted(),
+        hasPages: json['has_pages'] != null
+            ? SdkPresent((json['has_pages'] as bool?)!)
+            : const SdkOmitted(),
+        hasProjects: json['has_projects'] != null
+            ? SdkPresent((json['has_projects'] as bool?)!)
+            : const SdkOmitted(),
+        hasWiki: json['has_wiki'] != null
+            ? SdkPresent((json['has_wiki'] as bool?)!)
+            : const SdkOmitted(),
+        homepage: json.containsKey('homepage')
+            ? SdkPresent(json['homepage'] as String?)
+            : const SdkOmitted(),
+        hooksUrl: json['hooks_url'] != null
+            ? SdkPresent((json['hooks_url'] as String?)!)
+            : const SdkOmitted(),
+        htmlUrl: json['html_url'] != null
+            ? SdkPresent((json['html_url'] as String?)!)
+            : const SdkOmitted(),
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        isTemplate: json['is_template'] != null
+            ? SdkPresent((json['is_template'] as bool?)!)
+            : const SdkOmitted(),
+        issueCommentUrl: json['issue_comment_url'] != null
+            ? SdkPresent((json['issue_comment_url'] as String?)!)
+            : const SdkOmitted(),
+        issueEventsUrl: json['issue_events_url'] != null
+            ? SdkPresent((json['issue_events_url'] as String?)!)
+            : const SdkOmitted(),
+        issuesUrl: json['issues_url'] != null
+            ? SdkPresent((json['issues_url'] as String?)!)
+            : const SdkOmitted(),
+        keysUrl: json['keys_url'] != null
+            ? SdkPresent((json['keys_url'] as String?)!)
+            : const SdkOmitted(),
+        labelsUrl: json['labels_url'] != null
+            ? SdkPresent((json['labels_url'] as String?)!)
+            : const SdkOmitted(),
+        language: json.containsKey('language')
+            ? SdkPresent(json['language'])
+            : const SdkOmitted(),
+        languagesUrl: json['languages_url'] != null
+            ? SdkPresent((json['languages_url'] as String?)!)
+            : const SdkOmitted(),
+        license: json.containsKey('license')
+            ? SdkPresent(json['license'] == null
+                ? null
+                : json['license'] as Map<String, dynamic>)
+            : const SdkOmitted(),
+        mergesUrl: json['merges_url'] != null
+            ? SdkPresent((json['merges_url'] as String?)!)
+            : const SdkOmitted(),
+        milestonesUrl: json['milestones_url'] != null
+            ? SdkPresent((json['milestones_url'] as String?)!)
+            : const SdkOmitted(),
+        mirrorUrl: json.containsKey('mirror_url')
+            ? SdkPresent(json['mirror_url'])
+            : const SdkOmitted(),
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+        nodeId: json['node_id'] != null
+            ? SdkPresent((json['node_id'] as String?)!)
+            : const SdkOmitted(),
+        notificationsUrl: json['notifications_url'] != null
+            ? SdkPresent((json['notifications_url'] as String?)!)
+            : const SdkOmitted(),
+        openIssues: json['open_issues'] != null
+            ? SdkPresent(((json['open_issues'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        openIssuesCount: json['open_issues_count'] != null
+            ? SdkPresent(((json['open_issues_count'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        owner: json['owner'] != null
+            ? SdkPresent((json['owner'] != null
+                ? WebhookForkForkeeVariant1Owner.fromJson(
+                    json['owner'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        private: json['private'] != null
+            ? SdkPresent((json['private'] as bool?)!)
+            : const SdkOmitted(),
+        public: json['public'] != null
+            ? SdkPresent((json['public'] as bool?)!)
+            : const SdkOmitted(),
+        pullsUrl: json['pulls_url'] != null
+            ? SdkPresent((json['pulls_url'] as String?)!)
+            : const SdkOmitted(),
+        pushedAt: json['pushed_at'] != null
+            ? SdkPresent((json['pushed_at'] as String?)!)
+            : const SdkOmitted(),
+        releasesUrl: json['releases_url'] != null
+            ? SdkPresent((json['releases_url'] as String?)!)
+            : const SdkOmitted(),
+        size: json['size'] != null
+            ? SdkPresent(((json['size'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        sshUrl: json['ssh_url'] != null
+            ? SdkPresent((json['ssh_url'] as String?)!)
+            : const SdkOmitted(),
+        stargazersCount: json['stargazers_count'] != null
+            ? SdkPresent(((json['stargazers_count'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        stargazersUrl: json['stargazers_url'] != null
+            ? SdkPresent((json['stargazers_url'] as String?)!)
+            : const SdkOmitted(),
+        statusesUrl: json['statuses_url'] != null
+            ? SdkPresent((json['statuses_url'] as String?)!)
+            : const SdkOmitted(),
+        subscribersUrl: json['subscribers_url'] != null
+            ? SdkPresent((json['subscribers_url'] as String?)!)
+            : const SdkOmitted(),
+        subscriptionUrl: json['subscription_url'] != null
+            ? SdkPresent((json['subscription_url'] as String?)!)
+            : const SdkOmitted(),
+        svnUrl: json['svn_url'] != null
+            ? SdkPresent((json['svn_url'] as String?)!)
+            : const SdkOmitted(),
+        tagsUrl: json['tags_url'] != null
+            ? SdkPresent((json['tags_url'] as String?)!)
+            : const SdkOmitted(),
+        teamsUrl: json['teams_url'] != null
+            ? SdkPresent((json['teams_url'] as String?)!)
+            : const SdkOmitted(),
+        topics: json['topics'] != null
+            ? SdkPresent(((json['topics'] as List?)?.map((e) => e).toList())!)
+            : const SdkOmitted(),
+        treesUrl: json['trees_url'] != null
+            ? SdkPresent((json['trees_url'] as String?)!)
+            : const SdkOmitted(),
+        updatedAt: json['updated_at'] != null
+            ? SdkPresent((json['updated_at'] as String?)!)
+            : const SdkOmitted(),
+        url: json['url'] != null
+            ? SdkPresent((json['url'] as String?)!)
+            : const SdkOmitted(),
+        visibility: json['visibility'] != null
+            ? SdkPresent((json['visibility'] as String?)!)
+            : const SdkOmitted(),
+        watchers: json['watchers'] != null
+            ? SdkPresent(((json['watchers'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        watchersCount: json['watchers_count'] != null
+            ? SdkPresent(((json['watchers_count'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (allowForking) {
-      SdkPresent<bool>(value: final value) => {'allow_forking': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (archiveUrl) {
-      SdkPresent<String>(value: final value) => {'archive_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (archived) {
-      SdkPresent<bool>(value: final value) => {'archived': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (assigneesUrl) {
-      SdkPresent<String>(value: final value) => {'assignees_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (blobsUrl) {
-      SdkPresent<String>(value: final value) => {'blobs_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (branchesUrl) {
-      SdkPresent<String>(value: final value) => {'branches_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (cloneUrl) {
-      SdkPresent<String>(value: final value) => {'clone_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (collaboratorsUrl) {
-      SdkPresent<String>(value: final value) => {'collaborators_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (commentsUrl) {
-      SdkPresent<String>(value: final value) => {'comments_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (commitsUrl) {
-      SdkPresent<String>(value: final value) => {'commits_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (compareUrl) {
-      SdkPresent<String>(value: final value) => {'compare_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (contentsUrl) {
-      SdkPresent<String>(value: final value) => {'contents_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (contributorsUrl) {
-      SdkPresent<String>(value: final value) => {'contributors_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (createdAt) {
-      SdkPresent<String>(value: final value) => {'created_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (defaultBranch) {
-      SdkPresent<String>(value: final value) => {'default_branch': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (deploymentsUrl) {
-      SdkPresent<String>(value: final value) => {'deployments_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (description) {
-      SdkPresent<String?>(value: final value) => {'description': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (disabled) {
-      SdkPresent<bool>(value: final value) => {'disabled': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (downloadsUrl) {
-      SdkPresent<String>(value: final value) => {'downloads_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (eventsUrl) {
-      SdkPresent<String>(value: final value) => {'events_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (fork) {
-      SdkPresent<WebhookForkForkeeVariant1Fork>(value: final value) => {'fork': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (forks) {
-      SdkPresent<int>(value: final value) => {'forks': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (forksCount) {
-      SdkPresent<int>(value: final value) => {'forks_count': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (forksUrl) {
-      SdkPresent<String>(value: final value) => {'forks_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (fullName) {
-      SdkPresent<String>(value: final value) => {'full_name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (gitCommitsUrl) {
-      SdkPresent<String>(value: final value) => {'git_commits_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (gitRefsUrl) {
-      SdkPresent<String>(value: final value) => {'git_refs_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (gitTagsUrl) {
-      SdkPresent<String>(value: final value) => {'git_tags_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (gitUrl) {
-      SdkPresent<String>(value: final value) => {'git_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (hasDownloads) {
-      SdkPresent<bool>(value: final value) => {'has_downloads': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (hasIssues) {
-      SdkPresent<bool>(value: final value) => {'has_issues': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (hasPages) {
-      SdkPresent<bool>(value: final value) => {'has_pages': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (hasProjects) {
-      SdkPresent<bool>(value: final value) => {'has_projects': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (hasWiki) {
-      SdkPresent<bool>(value: final value) => {'has_wiki': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (homepage) {
-      SdkPresent<String?>(value: final value) => {'homepage': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (hooksUrl) {
-      SdkPresent<String>(value: final value) => {'hooks_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (htmlUrl) {
-      SdkPresent<String>(value: final value) => {'html_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (id) {
-      SdkPresent<int>(value: final value) => {'id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (isTemplate) {
-      SdkPresent<bool>(value: final value) => {'is_template': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (issueCommentUrl) {
-      SdkPresent<String>(value: final value) => {'issue_comment_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (issueEventsUrl) {
-      SdkPresent<String>(value: final value) => {'issue_events_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (issuesUrl) {
-      SdkPresent<String>(value: final value) => {'issues_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (keysUrl) {
-      SdkPresent<String>(value: final value) => {'keys_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (labelsUrl) {
-      SdkPresent<String>(value: final value) => {'labels_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (language) {
-      SdkPresent<dynamic>(value: final value) => {'language': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (languagesUrl) {
-      SdkPresent<String>(value: final value) => {'languages_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (license) {
-      SdkPresent<Map<String, dynamic>?>(value: final value) => {'license': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (mergesUrl) {
-      SdkPresent<String>(value: final value) => {'merges_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (milestonesUrl) {
-      SdkPresent<String>(value: final value) => {'milestones_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (mirrorUrl) {
-      SdkPresent<dynamic>(value: final value) => {'mirror_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (nodeId) {
-      SdkPresent<String>(value: final value) => {'node_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (notificationsUrl) {
-      SdkPresent<String>(value: final value) => {'notifications_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (openIssues) {
-      SdkPresent<int>(value: final value) => {'open_issues': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (openIssuesCount) {
-      SdkPresent<int>(value: final value) => {'open_issues_count': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (owner) {
-      SdkPresent<WebhookForkForkeeVariant1Owner>(value: final value) => {'owner': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (private) {
-      SdkPresent<bool>(value: final value) => {'private': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (public) {
-      SdkPresent<bool>(value: final value) => {'public': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (pullsUrl) {
-      SdkPresent<String>(value: final value) => {'pulls_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (pushedAt) {
-      SdkPresent<String>(value: final value) => {'pushed_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (releasesUrl) {
-      SdkPresent<String>(value: final value) => {'releases_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (size) {
-      SdkPresent<int>(value: final value) => {'size': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (sshUrl) {
-      SdkPresent<String>(value: final value) => {'ssh_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (stargazersCount) {
-      SdkPresent<int>(value: final value) => {'stargazers_count': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (stargazersUrl) {
-      SdkPresent<String>(value: final value) => {'stargazers_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (statusesUrl) {
-      SdkPresent<String>(value: final value) => {'statuses_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (subscribersUrl) {
-      SdkPresent<String>(value: final value) => {'subscribers_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (subscriptionUrl) {
-      SdkPresent<String>(value: final value) => {'subscription_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (svnUrl) {
-      SdkPresent<String>(value: final value) => {'svn_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (tagsUrl) {
-      SdkPresent<String>(value: final value) => {'tags_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (teamsUrl) {
-      SdkPresent<String>(value: final value) => {'teams_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (topics) {
-      SdkPresent<List<dynamic>>(value: final value) => {'topics': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (treesUrl) {
-      SdkPresent<String>(value: final value) => {'trees_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (updatedAt) {
-      SdkPresent<String>(value: final value) => {'updated_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (url) {
-      SdkPresent<String>(value: final value) => {'url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (visibility) {
-      SdkPresent<String>(value: final value) => {'visibility': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (watchers) {
-      SdkPresent<int>(value: final value) => {'watchers': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (watchersCount) {
-      SdkPresent<int>(value: final value) => {'watchers_count': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (allowForking) {
+          SdkPresent<bool>(value: final value) => {
+              'allow_forking': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (archiveUrl) {
+          SdkPresent<String>(value: final value) => {
+              'archive_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (archived) {
+          SdkPresent<bool>(value: final value) => {
+              'archived': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (assigneesUrl) {
+          SdkPresent<String>(value: final value) => {
+              'assignees_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (blobsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'blobs_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (branchesUrl) {
+          SdkPresent<String>(value: final value) => {
+              'branches_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (cloneUrl) {
+          SdkPresent<String>(value: final value) => {
+              'clone_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (collaboratorsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'collaborators_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (commentsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'comments_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (commitsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'commits_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (compareUrl) {
+          SdkPresent<String>(value: final value) => {
+              'compare_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (contentsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'contents_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (contributorsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'contributors_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (createdAt) {
+          SdkPresent<String>(value: final value) => {
+              'created_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (defaultBranch) {
+          SdkPresent<String>(value: final value) => {
+              'default_branch': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (deploymentsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'deployments_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (description) {
+          SdkPresent<String?>(value: final value) => {
+              'description': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (disabled) {
+          SdkPresent<bool>(value: final value) => {
+              'disabled': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (downloadsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'downloads_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (eventsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'events_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (fork) {
+          SdkPresent<WebhookForkForkeeVariant1Fork>(value: final value) => {
+              'fork': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (forks) {
+          SdkPresent<int>(value: final value) => {
+              'forks': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (forksCount) {
+          SdkPresent<int>(value: final value) => {
+              'forks_count': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (forksUrl) {
+          SdkPresent<String>(value: final value) => {
+              'forks_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (fullName) {
+          SdkPresent<String>(value: final value) => {
+              'full_name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (gitCommitsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'git_commits_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (gitRefsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'git_refs_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (gitTagsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'git_tags_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (gitUrl) {
+          SdkPresent<String>(value: final value) => {
+              'git_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (hasDownloads) {
+          SdkPresent<bool>(value: final value) => {
+              'has_downloads': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (hasIssues) {
+          SdkPresent<bool>(value: final value) => {
+              'has_issues': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (hasPages) {
+          SdkPresent<bool>(value: final value) => {
+              'has_pages': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (hasProjects) {
+          SdkPresent<bool>(value: final value) => {
+              'has_projects': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (hasWiki) {
+          SdkPresent<bool>(value: final value) => {
+              'has_wiki': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (homepage) {
+          SdkPresent<String?>(value: final value) => {
+              'homepage': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (hooksUrl) {
+          SdkPresent<String>(value: final value) => {
+              'hooks_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (htmlUrl) {
+          SdkPresent<String>(value: final value) => {
+              'html_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (isTemplate) {
+          SdkPresent<bool>(value: final value) => {
+              'is_template': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (issueCommentUrl) {
+          SdkPresent<String>(value: final value) => {
+              'issue_comment_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (issueEventsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'issue_events_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (issuesUrl) {
+          SdkPresent<String>(value: final value) => {
+              'issues_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (keysUrl) {
+          SdkPresent<String>(value: final value) => {
+              'keys_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (labelsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'labels_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (language) {
+          SdkPresent<dynamic>(value: final value) => {
+              'language': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (languagesUrl) {
+          SdkPresent<String>(value: final value) => {
+              'languages_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (license) {
+          SdkPresent<Map<String, dynamic>?>(value: final value) => {
+              'license': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (mergesUrl) {
+          SdkPresent<String>(value: final value) => {
+              'merges_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (milestonesUrl) {
+          SdkPresent<String>(value: final value) => {
+              'milestones_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (mirrorUrl) {
+          SdkPresent<dynamic>(value: final value) => {
+              'mirror_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (nodeId) {
+          SdkPresent<String>(value: final value) => {
+              'node_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (notificationsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'notifications_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (openIssues) {
+          SdkPresent<int>(value: final value) => {
+              'open_issues': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (openIssuesCount) {
+          SdkPresent<int>(value: final value) => {
+              'open_issues_count': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (owner) {
+          SdkPresent<WebhookForkForkeeVariant1Owner>(value: final value) => {
+              'owner': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (private) {
+          SdkPresent<bool>(value: final value) => {
+              'private': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (public) {
+          SdkPresent<bool>(value: final value) => {
+              'public': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (pullsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'pulls_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (pushedAt) {
+          SdkPresent<String>(value: final value) => {
+              'pushed_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (releasesUrl) {
+          SdkPresent<String>(value: final value) => {
+              'releases_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (size) {
+          SdkPresent<int>(value: final value) => {
+              'size': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (sshUrl) {
+          SdkPresent<String>(value: final value) => {
+              'ssh_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (stargazersCount) {
+          SdkPresent<int>(value: final value) => {
+              'stargazers_count': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (stargazersUrl) {
+          SdkPresent<String>(value: final value) => {
+              'stargazers_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (statusesUrl) {
+          SdkPresent<String>(value: final value) => {
+              'statuses_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (subscribersUrl) {
+          SdkPresent<String>(value: final value) => {
+              'subscribers_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (subscriptionUrl) {
+          SdkPresent<String>(value: final value) => {
+              'subscription_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (svnUrl) {
+          SdkPresent<String>(value: final value) => {
+              'svn_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (tagsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'tags_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (teamsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'teams_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (topics) {
+          SdkPresent<List<dynamic>>(value: final value) => {
+              'topics': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (treesUrl) {
+          SdkPresent<String>(value: final value) => {
+              'trees_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (updatedAt) {
+          SdkPresent<String>(value: final value) => {
+              'updated_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (url) {
+          SdkPresent<String>(value: final value) => {
+              'url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (visibility) {
+          SdkPresent<String>(value: final value) => {
+              'visibility': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (watchers) {
+          SdkPresent<int>(value: final value) => {
+              'watchers': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (watchersCount) {
+          SdkPresent<int>(value: final value) => {
+              'watchers_count': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

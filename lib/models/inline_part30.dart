@@ -5,287 +5,375 @@ part of 'inline.dart';
 
 // Inline operation models (part 30)
 final class PullRequestRequestedReviewersItemVariant1ParentPrivacy {
-
   final String value;
 
   const PullRequestRequestedReviewersItemVariant1ParentPrivacy._(this.value);
 
-  factory PullRequestRequestedReviewersItemVariant1ParentPrivacy.fromJson(String value) => PullRequestRequestedReviewersItemVariant1ParentPrivacy._(value);
+  factory PullRequestRequestedReviewersItemVariant1ParentPrivacy.fromJson(
+          String value) =>
+      PullRequestRequestedReviewersItemVariant1ParentPrivacy._(value);
 
-  static const open = PullRequestRequestedReviewersItemVariant1ParentPrivacy._('open');
-  static const closed = PullRequestRequestedReviewersItemVariant1ParentPrivacy._('closed');
-  static const secret = PullRequestRequestedReviewersItemVariant1ParentPrivacy._('secret');
+  static const open =
+      PullRequestRequestedReviewersItemVariant1ParentPrivacy._('open');
+  static const closed =
+      PullRequestRequestedReviewersItemVariant1ParentPrivacy._('closed');
+  static const secret =
+      PullRequestRequestedReviewersItemVariant1ParentPrivacy._('secret');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullRequestRequestedReviewersItemVariant1ParentPrivacy && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullRequestRequestedReviewersItemVariant1ParentPrivacy &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class PullRequestRequestedReviewersItemVariant1Privacy {
-
   final String value;
 
   const PullRequestRequestedReviewersItemVariant1Privacy._(this.value);
 
-  factory PullRequestRequestedReviewersItemVariant1Privacy.fromJson(String value) => PullRequestRequestedReviewersItemVariant1Privacy._(value);
+  factory PullRequestRequestedReviewersItemVariant1Privacy.fromJson(
+          String value) =>
+      PullRequestRequestedReviewersItemVariant1Privacy._(value);
 
-  static const open = PullRequestRequestedReviewersItemVariant1Privacy._('open');
-  static const closed = PullRequestRequestedReviewersItemVariant1Privacy._('closed');
-  static const secret = PullRequestRequestedReviewersItemVariant1Privacy._('secret');
+  static const open =
+      PullRequestRequestedReviewersItemVariant1Privacy._('open');
+  static const closed =
+      PullRequestRequestedReviewersItemVariant1Privacy._('closed');
+  static const secret =
+      PullRequestRequestedReviewersItemVariant1Privacy._('secret');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullRequestRequestedReviewersItemVariant1Privacy && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullRequestRequestedReviewersItemVariant1Privacy &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class PullRequestRequestedReviewersItem2Variant0Type {
-
   final String value;
 
   const PullRequestRequestedReviewersItem2Variant0Type._(this.value);
 
-  factory PullRequestRequestedReviewersItem2Variant0Type.fromJson(String value) => PullRequestRequestedReviewersItem2Variant0Type._(value);
+  factory PullRequestRequestedReviewersItem2Variant0Type.fromJson(
+          String value) =>
+      PullRequestRequestedReviewersItem2Variant0Type._(value);
 
   static const bot = PullRequestRequestedReviewersItem2Variant0Type._('Bot');
   static const user = PullRequestRequestedReviewersItem2Variant0Type._('User');
-  static const organization = PullRequestRequestedReviewersItem2Variant0Type._('Organization');
+  static const organization =
+      PullRequestRequestedReviewersItem2Variant0Type._('Organization');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullRequestRequestedReviewersItem2Variant0Type && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullRequestRequestedReviewersItem2Variant0Type &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class PullRequestRequestedReviewersItem2Variant1ParentPrivacy {
-
   final String value;
 
   const PullRequestRequestedReviewersItem2Variant1ParentPrivacy._(this.value);
 
-  factory PullRequestRequestedReviewersItem2Variant1ParentPrivacy.fromJson(String value) => PullRequestRequestedReviewersItem2Variant1ParentPrivacy._(value);
+  factory PullRequestRequestedReviewersItem2Variant1ParentPrivacy.fromJson(
+          String value) =>
+      PullRequestRequestedReviewersItem2Variant1ParentPrivacy._(value);
 
-  static const open = PullRequestRequestedReviewersItem2Variant1ParentPrivacy._('open');
-  static const closed = PullRequestRequestedReviewersItem2Variant1ParentPrivacy._('closed');
-  static const secret = PullRequestRequestedReviewersItem2Variant1ParentPrivacy._('secret');
+  static const open =
+      PullRequestRequestedReviewersItem2Variant1ParentPrivacy._('open');
+  static const closed =
+      PullRequestRequestedReviewersItem2Variant1ParentPrivacy._('closed');
+  static const secret =
+      PullRequestRequestedReviewersItem2Variant1ParentPrivacy._('secret');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullRequestRequestedReviewersItem2Variant1ParentPrivacy && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullRequestRequestedReviewersItem2Variant1ParentPrivacy &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class PullRequestRequestedReviewersItem2Variant1Privacy {
-
   final String value;
 
   const PullRequestRequestedReviewersItem2Variant1Privacy._(this.value);
 
-  factory PullRequestRequestedReviewersItem2Variant1Privacy.fromJson(String value) => PullRequestRequestedReviewersItem2Variant1Privacy._(value);
+  factory PullRequestRequestedReviewersItem2Variant1Privacy.fromJson(
+          String value) =>
+      PullRequestRequestedReviewersItem2Variant1Privacy._(value);
 
-  static const open = PullRequestRequestedReviewersItem2Variant1Privacy._('open');
-  static const closed = PullRequestRequestedReviewersItem2Variant1Privacy._('closed');
-  static const secret = PullRequestRequestedReviewersItem2Variant1Privacy._('secret');
+  static const open =
+      PullRequestRequestedReviewersItem2Variant1Privacy._('open');
+  static const closed =
+      PullRequestRequestedReviewersItem2Variant1Privacy._('closed');
+  static const secret =
+      PullRequestRequestedReviewersItem2Variant1Privacy._('secret');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullRequestRequestedReviewersItem2Variant1Privacy && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullRequestRequestedReviewersItem2Variant1Privacy &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class PullRequestRequestedReviewersItem3Variant0Type {
-
   final String value;
 
   const PullRequestRequestedReviewersItem3Variant0Type._(this.value);
 
-  factory PullRequestRequestedReviewersItem3Variant0Type.fromJson(String value) => PullRequestRequestedReviewersItem3Variant0Type._(value);
+  factory PullRequestRequestedReviewersItem3Variant0Type.fromJson(
+          String value) =>
+      PullRequestRequestedReviewersItem3Variant0Type._(value);
 
   static const bot = PullRequestRequestedReviewersItem3Variant0Type._('Bot');
   static const user = PullRequestRequestedReviewersItem3Variant0Type._('User');
-  static const organization = PullRequestRequestedReviewersItem3Variant0Type._('Organization');
+  static const organization =
+      PullRequestRequestedReviewersItem3Variant0Type._('Organization');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullRequestRequestedReviewersItem3Variant0Type && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullRequestRequestedReviewersItem3Variant0Type &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class PullRequestRequestedReviewersItem3Variant1ParentPrivacy {
-
   final String value;
 
   const PullRequestRequestedReviewersItem3Variant1ParentPrivacy._(this.value);
 
-  factory PullRequestRequestedReviewersItem3Variant1ParentPrivacy.fromJson(String value) => PullRequestRequestedReviewersItem3Variant1ParentPrivacy._(value);
+  factory PullRequestRequestedReviewersItem3Variant1ParentPrivacy.fromJson(
+          String value) =>
+      PullRequestRequestedReviewersItem3Variant1ParentPrivacy._(value);
 
-  static const open = PullRequestRequestedReviewersItem3Variant1ParentPrivacy._('open');
-  static const closed = PullRequestRequestedReviewersItem3Variant1ParentPrivacy._('closed');
-  static const secret = PullRequestRequestedReviewersItem3Variant1ParentPrivacy._('secret');
+  static const open =
+      PullRequestRequestedReviewersItem3Variant1ParentPrivacy._('open');
+  static const closed =
+      PullRequestRequestedReviewersItem3Variant1ParentPrivacy._('closed');
+  static const secret =
+      PullRequestRequestedReviewersItem3Variant1ParentPrivacy._('secret');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullRequestRequestedReviewersItem3Variant1ParentPrivacy && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullRequestRequestedReviewersItem3Variant1ParentPrivacy &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class PullRequestRequestedReviewersItem3Variant1Privacy {
-
   final String value;
 
   const PullRequestRequestedReviewersItem3Variant1Privacy._(this.value);
 
-  factory PullRequestRequestedReviewersItem3Variant1Privacy.fromJson(String value) => PullRequestRequestedReviewersItem3Variant1Privacy._(value);
+  factory PullRequestRequestedReviewersItem3Variant1Privacy.fromJson(
+          String value) =>
+      PullRequestRequestedReviewersItem3Variant1Privacy._(value);
 
-  static const open = PullRequestRequestedReviewersItem3Variant1Privacy._('open');
-  static const closed = PullRequestRequestedReviewersItem3Variant1Privacy._('closed');
-  static const secret = PullRequestRequestedReviewersItem3Variant1Privacy._('secret');
+  static const open =
+      PullRequestRequestedReviewersItem3Variant1Privacy._('open');
+  static const closed =
+      PullRequestRequestedReviewersItem3Variant1Privacy._('closed');
+  static const secret =
+      PullRequestRequestedReviewersItem3Variant1Privacy._('secret');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullRequestRequestedReviewersItem3Variant1Privacy && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullRequestRequestedReviewersItem3Variant1Privacy &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class PullRequestRequestedReviewersItem4Variant0Type {
-
   final String value;
 
   const PullRequestRequestedReviewersItem4Variant0Type._(this.value);
 
-  factory PullRequestRequestedReviewersItem4Variant0Type.fromJson(String value) => PullRequestRequestedReviewersItem4Variant0Type._(value);
+  factory PullRequestRequestedReviewersItem4Variant0Type.fromJson(
+          String value) =>
+      PullRequestRequestedReviewersItem4Variant0Type._(value);
 
   static const bot = PullRequestRequestedReviewersItem4Variant0Type._('Bot');
   static const user = PullRequestRequestedReviewersItem4Variant0Type._('User');
-  static const organization = PullRequestRequestedReviewersItem4Variant0Type._('Organization');
+  static const organization =
+      PullRequestRequestedReviewersItem4Variant0Type._('Organization');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullRequestRequestedReviewersItem4Variant0Type && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullRequestRequestedReviewersItem4Variant0Type &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class PullRequestRequestedReviewersItem4Variant1ParentPrivacy {
-
   final String value;
 
   const PullRequestRequestedReviewersItem4Variant1ParentPrivacy._(this.value);
 
-  factory PullRequestRequestedReviewersItem4Variant1ParentPrivacy.fromJson(String value) => PullRequestRequestedReviewersItem4Variant1ParentPrivacy._(value);
+  factory PullRequestRequestedReviewersItem4Variant1ParentPrivacy.fromJson(
+          String value) =>
+      PullRequestRequestedReviewersItem4Variant1ParentPrivacy._(value);
 
-  static const open = PullRequestRequestedReviewersItem4Variant1ParentPrivacy._('open');
-  static const closed = PullRequestRequestedReviewersItem4Variant1ParentPrivacy._('closed');
-  static const secret = PullRequestRequestedReviewersItem4Variant1ParentPrivacy._('secret');
+  static const open =
+      PullRequestRequestedReviewersItem4Variant1ParentPrivacy._('open');
+  static const closed =
+      PullRequestRequestedReviewersItem4Variant1ParentPrivacy._('closed');
+  static const secret =
+      PullRequestRequestedReviewersItem4Variant1ParentPrivacy._('secret');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullRequestRequestedReviewersItem4Variant1ParentPrivacy && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullRequestRequestedReviewersItem4Variant1ParentPrivacy &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class PullRequestRequestedReviewersItem4Variant1Privacy {
-
   final String value;
 
   const PullRequestRequestedReviewersItem4Variant1Privacy._(this.value);
 
-  factory PullRequestRequestedReviewersItem4Variant1Privacy.fromJson(String value) => PullRequestRequestedReviewersItem4Variant1Privacy._(value);
+  factory PullRequestRequestedReviewersItem4Variant1Privacy.fromJson(
+          String value) =>
+      PullRequestRequestedReviewersItem4Variant1Privacy._(value);
 
-  static const open = PullRequestRequestedReviewersItem4Variant1Privacy._('open');
-  static const closed = PullRequestRequestedReviewersItem4Variant1Privacy._('closed');
-  static const secret = PullRequestRequestedReviewersItem4Variant1Privacy._('secret');
+  static const open =
+      PullRequestRequestedReviewersItem4Variant1Privacy._('open');
+  static const closed =
+      PullRequestRequestedReviewersItem4Variant1Privacy._('closed');
+  static const secret =
+      PullRequestRequestedReviewersItem4Variant1Privacy._('secret');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullRequestRequestedReviewersItem4Variant1Privacy && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullRequestRequestedReviewersItem4Variant1Privacy &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The side of the diff to which the comment applies. The side of the last line of the range for a multi-line comment
 final class PullRequestReviewCommentSide {
-
   final String value;
 
   const PullRequestReviewCommentSide._(this.value);
 
-  factory PullRequestReviewCommentSide.fromJson(String value) => PullRequestReviewCommentSide._(value);
+  factory PullRequestReviewCommentSide.fromJson(String value) =>
+      PullRequestReviewCommentSide._(value);
 
   static const left = PullRequestReviewCommentSide._('LEFT');
   static const right = PullRequestReviewCommentSide._('RIGHT');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullRequestReviewCommentSide && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullRequestReviewCommentSide && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The side of the first line of the range for a multi-line comment.
 final class PullRequestReviewCommentStartSide {
-
   final String value;
 
   const PullRequestReviewCommentStartSide._(this.value);
 
-  factory PullRequestReviewCommentStartSide.fromJson(String value) => PullRequestReviewCommentStartSide._(value);
+  factory PullRequestReviewCommentStartSide.fromJson(String value) =>
+      PullRequestReviewCommentStartSide._(value);
 
   static const left = PullRequestReviewCommentStartSide._('LEFT');
   static const right = PullRequestReviewCommentStartSide._('RIGHT');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullRequestReviewCommentStartSide && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullRequestReviewCommentStartSide && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

@@ -10,19 +10,24 @@ import '../types.dart';
 /// Gets GitHub Actions cache retention limit for an enterprise. All organizations and repositories under this enterprise may not set a higher cache retention limit. OAuth tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint. &gt; [!NOTE] &gt; The "Enterprise administration" fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
 ///
 /// [enterprise] The slug version of the enterprise name.
-Future<ActionsCacheRetentionLimitForEnterprise> actionsGetActionsCacheRetentionLimitForEnterprise(ClientConfig config,
-    {required String enterprise, RequestOptions? requestOptions}) async {
+Future<ActionsCacheRetentionLimitForEnterprise>
+    actionsGetActionsCacheRetentionLimitForEnterprise(ClientConfig config,
+        {required String enterprise, RequestOptions? requestOptions}) async {
   return (await sdkRequest<ActionsCacheRetentionLimitForEnterprise>('GET',
           '/enterprises/${Uri.encodeComponent(enterprise.toString())}/actions/cache/retention-limit',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetActionsCacheRetentionLimitForEnterprise',
-          fromJsonRaw: (value) => ActionsCacheRetentionLimitForEnterprise.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsCacheRetentionLimitForEnterprise.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Sets GitHub Actions cache retention limit for an enterprise. All organizations and repositories under this enterprise may not set a higher cache retention limit. OAuth tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint. &gt; [!NOTE] &gt; The "Enterprise administration" fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
 ///
@@ -30,52 +35,63 @@ Future<ActionsCacheRetentionLimitForEnterprise> actionsGetActionsCacheRetentionL
 /// [maxCacheRetentionDays] For repositories & organizations in an enterprise,
 ///   the maximum duration, in days, for which caches in a repository may be
 ///   retained.
-Future<void>
-    actionsSetActionsCacheRetentionLimitForEnterprise(ClientConfig config,
-        {required String enterprise,
-        SdkOptional<int> maxCacheRetentionDays = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<void> actionsSetActionsCacheRetentionLimitForEnterprise(
+    ClientConfig config,
+    {required String enterprise,
+    SdkOptional<int> maxCacheRetentionDays = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('PUT',
           '/enterprises/${Uri.encodeComponent(enterprise.toString())}/actions/cache/retention-limit',
           config: config,
           body: {
-            'max_cache_retention_days': SdkUtils.unwrapOptional(maxCacheRetentionDays)
+            'max_cache_retention_days':
+                SdkUtils.unwrapOptional(maxCacheRetentionDays)
           },
           decoder: SdkResponseDecoder.empty,
           operationId: 'actionsSetActionsCacheRetentionLimitForEnterprise',
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Gets GitHub Actions cache storage limit for an enterprise. All organizations and repositories under this enterprise may not set a higher cache storage limit. OAuth tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint. &gt; [!NOTE] &gt; The "Enterprise administration" fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
 ///
 /// [enterprise] The slug version of the enterprise name.
-Future<ActionsCacheStorageLimitForEnterprise> actionsGetActionsCacheStorageLimitForEnterprise(ClientConfig config,
-    {required String enterprise, RequestOptions? requestOptions}) async {
+Future<ActionsCacheStorageLimitForEnterprise>
+    actionsGetActionsCacheStorageLimitForEnterprise(ClientConfig config,
+        {required String enterprise, RequestOptions? requestOptions}) async {
   return (await sdkRequest<ActionsCacheStorageLimitForEnterprise>('GET',
           '/enterprises/${Uri.encodeComponent(enterprise.toString())}/actions/cache/storage-limit',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetActionsCacheStorageLimitForEnterprise',
-          fromJsonRaw: (value) => ActionsCacheStorageLimitForEnterprise.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsCacheStorageLimitForEnterprise.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Sets GitHub Actions cache storage limit for an enterprise. All organizations and repositories under this enterprise may not set a higher cache storage limit. OAuth tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint. &gt; [!NOTE] &gt; The "Enterprise administration" fine-grained permission is not available to callers. To use this API, you must use an OAuth app token or a personal access token (classic).
 ///
 /// [enterprise] The slug version of the enterprise name.
 /// [maxCacheSizeGb] For repositories & organizations in an enterprise, the
 ///   maximum size limit for the sum of all caches in a repository, in gigabytes.
-Future<void>
-    actionsSetActionsCacheStorageLimitForEnterprise(ClientConfig config,
-        {required String enterprise,
-        SdkOptional<int> maxCacheSizeGb = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<void> actionsSetActionsCacheStorageLimitForEnterprise(
+    ClientConfig config,
+    {required String enterprise,
+    SdkOptional<int> maxCacheSizeGb = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('PUT',
           '/enterprises/${Uri.encodeComponent(enterprise.toString())}/actions/cache/storage-limit',
           config: config,
@@ -83,79 +99,100 @@ Future<void>
           decoder: SdkResponseDecoder.empty,
           operationId: 'actionsSetActionsCacheStorageLimitForEnterprise',
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Gets GitHub Actions cache retention limit for an organization. All repositories under this organization may not set a higher cache retention limit. OAuth tokens and personal access tokens (classic) need the `admin:organization` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
-Future<ActionsCacheRetentionLimitForOrganization> actionsGetActionsCacheRetentionLimitForOrganization(ClientConfig config,
-    {required String org, RequestOptions? requestOptions}) async {
+Future<ActionsCacheRetentionLimitForOrganization>
+    actionsGetActionsCacheRetentionLimitForOrganization(ClientConfig config,
+        {required String org, RequestOptions? requestOptions}) async {
   return (await sdkRequest<ActionsCacheRetentionLimitForOrganization>('GET',
           '/organizations/${Uri.encodeComponent(org.toString())}/actions/cache/retention-limit',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetActionsCacheRetentionLimitForOrganization',
-          fromJsonRaw: (value) => ActionsCacheRetentionLimitForOrganization.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsCacheRetentionLimitForOrganization.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Sets GitHub Actions cache retention limit for an organization. All repositories under this organization may not set a higher cache retention limit. OAuth tokens and personal access tokens (classic) need the `admin:organization` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [maxCacheRetentionDays] For repositories in this organization, the maximum
 ///   duration, in days, for which caches in a repository may be retained.
-Future<void>
-    actionsSetActionsCacheRetentionLimitForOrganization(ClientConfig config,
-        {required String org,
-        SdkOptional<int> maxCacheRetentionDays = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<void> actionsSetActionsCacheRetentionLimitForOrganization(
+    ClientConfig config,
+    {required String org,
+    SdkOptional<int> maxCacheRetentionDays = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('PUT',
           '/organizations/${Uri.encodeComponent(org.toString())}/actions/cache/retention-limit',
           config: config,
           body: {
-            'max_cache_retention_days': SdkUtils.unwrapOptional(maxCacheRetentionDays)
+            'max_cache_retention_days':
+                SdkUtils.unwrapOptional(maxCacheRetentionDays)
           },
           decoder: SdkResponseDecoder.empty,
           operationId: 'actionsSetActionsCacheRetentionLimitForOrganization',
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Gets GitHub Actions cache storage limit for an organization. All repositories under this organization may not set a higher cache storage limit. OAuth tokens and personal access tokens (classic) need the `admin:organization` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
-Future<ActionsCacheStorageLimitForOrganization> actionsGetActionsCacheStorageLimitForOrganization(ClientConfig config,
-    {required String org, RequestOptions? requestOptions}) async {
+Future<ActionsCacheStorageLimitForOrganization>
+    actionsGetActionsCacheStorageLimitForOrganization(ClientConfig config,
+        {required String org, RequestOptions? requestOptions}) async {
   return (await sdkRequest<ActionsCacheStorageLimitForOrganization>('GET',
           '/organizations/${Uri.encodeComponent(org.toString())}/actions/cache/storage-limit',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetActionsCacheStorageLimitForOrganization',
-          fromJsonRaw: (value) => ActionsCacheStorageLimitForOrganization.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsCacheStorageLimitForOrganization.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Sets GitHub Actions cache storage limit for an organization. All organizations and repositories under this organization may not set a higher cache storage limit. OAuth tokens and personal access tokens (classic) need the `admin:organization` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [maxCacheSizeGb] For repositories in the organization, the maximum size
 ///   limit for the sum of all caches in a repository, in gigabytes.
-Future<void>
-    actionsSetActionsCacheStorageLimitForOrganization(ClientConfig config,
-        {required String org,
-        SdkOptional<int> maxCacheSizeGb = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<void> actionsSetActionsCacheStorageLimitForOrganization(
+    ClientConfig config,
+    {required String org,
+    SdkOptional<int> maxCacheSizeGb = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('PUT',
           '/organizations/${Uri.encodeComponent(org.toString())}/actions/cache/storage-limit',
           config: config,
@@ -163,26 +200,33 @@ Future<void>
           decoder: SdkResponseDecoder.empty,
           operationId: 'actionsSetActionsCacheStorageLimitForOrganization',
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Gets the total GitHub Actions cache usage for an organization. The data fetched using this API is refreshed approximately every 5 minutes, so values returned from this endpoint may take at least 5 minutes to get updated. OAuth tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
-Future<ActionsCacheUsageOrgEnterprise> actionsGetActionsCacheUsageForOrg(ClientConfig config,
-    {required String org, RequestOptions? requestOptions}) async {
+Future<ActionsCacheUsageOrgEnterprise> actionsGetActionsCacheUsageForOrg(
+    ClientConfig config,
+    {required String org,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<ActionsCacheUsageOrgEnterprise>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/cache/usage',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetActionsCacheUsageForOrg',
-          fromJsonRaw: (value) => ActionsCacheUsageOrgEnterprise.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ActionsCacheUsageOrgEnterprise.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists repositories and their GitHub Actions cache usage for an organization. The data fetched using this API is refreshed approximately every 5 minutes, so values returned from this endpoint may take at least 5 minutes to get updated. OAuth tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
 ///
@@ -201,20 +245,24 @@ Future<ActionsGetActionsCacheUsageByRepoForOrgResponse>
         SdkOptional<int> perPage = const SdkOmitted(),
         SdkOptional<int> page = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
-  return (await sdkRequest<ActionsGetActionsCacheUsageByRepoForOrgResponse>('GET',
+  return (await sdkRequest<ActionsGetActionsCacheUsageByRepoForOrgResponse>(
+          'GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/cache/usage-by-repository',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetActionsCacheUsageByRepoForOrg',
-          fromJsonRaw: (value) => ActionsGetActionsCacheUsageByRepoForOrgResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsGetActionsCacheUsageByRepoForOrgResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists all GitHub-hosted runners configured in an organization. OAuth app tokens and personal access tokens (classic) need the `manage_runner:org` scope to use this endpoint.
 ///
@@ -227,26 +275,29 @@ Future<ActionsGetActionsCacheUsageByRepoForOrgResponse>
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<ActionsListHostedRunnersForOrgResponse>
-    actionsListHostedRunnersForOrg(ClientConfig config,
-        {required String org,
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ActionsListHostedRunnersForOrgResponse> actionsListHostedRunnersForOrg(
+    ClientConfig config,
+    {required String org,
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<ActionsListHostedRunnersForOrgResponse>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/hosted-runners',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsListHostedRunnersForOrg',
-          fromJsonRaw: (value) => ActionsListHostedRunnersForOrgResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsListHostedRunnersForOrgResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Creates a GitHub-hosted runner for an organization. OAuth tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.
 ///
@@ -289,47 +340,50 @@ Future<ActionsHostedRunner> actionsCreateHostedRunnerForOrg(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsCreateHostedRunnerForOrg',
-          fromJsonRaw: (value) => ActionsHostedRunner.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsHostedRunner.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
 
-
 /// List custom images for an organization. OAuth tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
-Future<ActionsListCustomImagesForOrgResponse> actionsListCustomImagesForOrg(ClientConfig config,
-    {required String org, RequestOptions? requestOptions}) async {
+Future<ActionsListCustomImagesForOrgResponse> actionsListCustomImagesForOrg(
+    ClientConfig config,
+    {required String org,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<ActionsListCustomImagesForOrgResponse>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/hosted-runners/images/custom',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsListCustomImagesForOrg',
-          fromJsonRaw: (value) => ActionsListCustomImagesForOrgResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsListCustomImagesForOrgResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Get a custom image definition for GitHub Actions Hosted Runners. OAuth tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [imageDefinitionId] Image definition ID of custom image
-Future<ActionsHostedRunnerCustomImage>
-    actionsGetCustomImageForOrg(ClientConfig config,
-        {required String org,
-        required int imageDefinitionId,
-        RequestOptions? requestOptions}) async {
+Future<ActionsHostedRunnerCustomImage> actionsGetCustomImageForOrg(
+    ClientConfig config,
+    {required String org,
+    required int imageDefinitionId,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<ActionsHostedRunnerCustomImage>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/hosted-runners/images/custom/${Uri.encodeComponent(imageDefinitionId.toString())}',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetCustomImageForOrg',
-          fromJsonRaw: (value) => ActionsHostedRunnerCustomImage.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ActionsHostedRunnerCustomImage.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Delete a custom image from the organization. OAuth tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.
 ///
@@ -348,7 +402,6 @@ Future<void> actionsDeleteCustomImageFromOrg(ClientConfig config,
       .data;
 }
 
-
 /// List image versions of a custom image for an organization. OAuth tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.
 ///
 /// [imageDefinitionId] Image definition ID of custom image
@@ -363,11 +416,12 @@ Future<ActionsListCustomImageVersionsForOrgResponse>
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsListCustomImageVersionsForOrg',
-          fromJsonRaw: (value) => ActionsListCustomImageVersionsForOrgResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsListCustomImageVersionsForOrgResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Get an image version of a custom image for GitHub Actions Hosted Runners. OAuth tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.
 ///
@@ -387,11 +441,12 @@ Future<ActionsHostedRunnerCustomImageVersion>
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetCustomImageVersionForOrg',
-          fromJsonRaw: (value) => ActionsHostedRunnerCustomImageVersion.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsHostedRunnerCustomImageVersion.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Delete an image version of custom image from the organization. OAuth tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.
 ///
@@ -414,86 +469,99 @@ Future<void> actionsDeleteCustomImageVersionFromOrg(ClientConfig config,
       .data;
 }
 
-
 /// Get the list of GitHub-owned images available for GitHub-hosted runners for an organization.
 ///
 /// [org] The organization name. The name is not case sensitive.
-Future<ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse> actionsGetHostedRunnersGithubOwnedImagesForOrg(ClientConfig config,
-    {required String org, RequestOptions? requestOptions}) async {
-  return (await sdkRequest<ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse>('GET',
+Future<ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse>
+    actionsGetHostedRunnersGithubOwnedImagesForOrg(ClientConfig config,
+        {required String org, RequestOptions? requestOptions}) async {
+  return (await sdkRequest<
+              ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/hosted-runners/images/github-owned',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetHostedRunnersGithubOwnedImagesForOrg',
-          fromJsonRaw: (value) => ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Get the list of partner images available for GitHub-hosted runners for an organization.
 ///
 /// [org] The organization name. The name is not case sensitive.
-Future<ActionsGetHostedRunnersPartnerImagesForOrgResponse> actionsGetHostedRunnersPartnerImagesForOrg(ClientConfig config,
-    {required String org, RequestOptions? requestOptions}) async {
-  return (await sdkRequest<ActionsGetHostedRunnersPartnerImagesForOrgResponse>('GET',
+Future<ActionsGetHostedRunnersPartnerImagesForOrgResponse>
+    actionsGetHostedRunnersPartnerImagesForOrg(ClientConfig config,
+        {required String org, RequestOptions? requestOptions}) async {
+  return (await sdkRequest<ActionsGetHostedRunnersPartnerImagesForOrgResponse>(
+          'GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/hosted-runners/images/partner',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetHostedRunnersPartnerImagesForOrg',
-          fromJsonRaw: (value) => ActionsGetHostedRunnersPartnerImagesForOrgResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsGetHostedRunnersPartnerImagesForOrgResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
 
-
 /// Get the GitHub-hosted runners limits for an organization.
 ///
 /// [org] The organization name. The name is not case sensitive.
-Future<ActionsHostedRunnerLimits> actionsGetHostedRunnersLimitsForOrg(ClientConfig config,
-    {required String org, RequestOptions? requestOptions}) async {
+Future<ActionsHostedRunnerLimits> actionsGetHostedRunnersLimitsForOrg(
+    ClientConfig config,
+    {required String org,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<ActionsHostedRunnerLimits>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/hosted-runners/limits',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetHostedRunnersLimitsForOrg',
-          fromJsonRaw: (value) => ActionsHostedRunnerLimits.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsHostedRunnerLimits.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Get the list of machine specs available for GitHub-hosted runners for an organization.
 ///
 /// [org] The organization name. The name is not case sensitive.
-Future<ActionsGetHostedRunnersMachineSpecsForOrgResponse> actionsGetHostedRunnersMachineSpecsForOrg(ClientConfig config,
-    {required String org, RequestOptions? requestOptions}) async {
-  return (await sdkRequest<ActionsGetHostedRunnersMachineSpecsForOrgResponse>('GET',
+Future<ActionsGetHostedRunnersMachineSpecsForOrgResponse>
+    actionsGetHostedRunnersMachineSpecsForOrg(ClientConfig config,
+        {required String org, RequestOptions? requestOptions}) async {
+  return (await sdkRequest<ActionsGetHostedRunnersMachineSpecsForOrgResponse>(
+          'GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/hosted-runners/machine-sizes',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetHostedRunnersMachineSpecsForOrg',
-          fromJsonRaw: (value) => ActionsGetHostedRunnersMachineSpecsForOrgResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsGetHostedRunnersMachineSpecsForOrgResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Get the list of platforms available for GitHub-hosted runners for an organization.
 ///
 /// [org] The organization name. The name is not case sensitive.
-Future<ActionsGetHostedRunnersPlatformsForOrgResponse> actionsGetHostedRunnersPlatformsForOrg(ClientConfig config,
-    {required String org, RequestOptions? requestOptions}) async {
-  return (await sdkRequest<ActionsGetHostedRunnersPlatformsForOrgResponse>('GET',
+Future<ActionsGetHostedRunnersPlatformsForOrgResponse>
+    actionsGetHostedRunnersPlatformsForOrg(ClientConfig config,
+        {required String org, RequestOptions? requestOptions}) async {
+  return (await sdkRequest<ActionsGetHostedRunnersPlatformsForOrgResponse>(
+          'GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/hosted-runners/platforms',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetHostedRunnersPlatformsForOrg',
-          fromJsonRaw: (value) => ActionsGetHostedRunnersPlatformsForOrgResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsGetHostedRunnersPlatformsForOrgResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Gets a GitHub-hosted runner configured in an organization. OAuth app tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.
 ///
@@ -508,11 +576,11 @@ Future<ActionsHostedRunner> actionsGetHostedRunnerForOrg(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetHostedRunnerForOrg',
-          fromJsonRaw: (value) => ActionsHostedRunner.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsHostedRunner.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Updates a GitHub-hosted runner for an organization. OAuth app tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.
 ///
@@ -547,7 +615,8 @@ Future<ActionsHostedRunner> actionsUpdateHostedRunnerForOrg(ClientConfig config,
     SdkOptional<int> maximumRunners = const SdkOmitted(),
     SdkOptional<bool> enableStaticIp = const SdkOmitted(),
     SdkOptional<String> size = const SdkOmitted(),
-    SdkOptional<ActionsUpdateHostedRunnerForOrgRequestBodyImageSource> imageSource = const SdkOmitted(),
+    SdkOptional<ActionsUpdateHostedRunnerForOrgRequestBodyImageSource>
+        imageSource = const SdkOmitted(),
     SdkOptional<String> imageId = const SdkOmitted(),
     SdkOptional<String?> imageVersion = const SdkOmitted(),
     SdkOptional<bool> imageGen = const SdkOmitted(),
@@ -568,11 +637,11 @@ Future<ActionsHostedRunner> actionsUpdateHostedRunnerForOrg(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsUpdateHostedRunnerForOrg',
-          fromJsonRaw: (value) => ActionsHostedRunner.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsHostedRunner.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Deletes a GitHub-hosted runner for an organization.
 ///
@@ -587,27 +656,28 @@ Future<ActionsHostedRunner> actionsDeleteHostedRunnerForOrg(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsDeleteHostedRunnerForOrg',
-          fromJsonRaw: (value) => ActionsHostedRunner.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsHostedRunner.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
 
-
 /// Gets the GitHub Actions permissions policy for repositories and allowed actions and reusable workflows in an organization. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
-Future<ActionsOrganizationPermissions> actionsGetGithubActionsPermissionsOrganization(ClientConfig config,
-    {required String org, RequestOptions? requestOptions}) async {
+Future<ActionsOrganizationPermissions>
+    actionsGetGithubActionsPermissionsOrganization(ClientConfig config,
+        {required String org, RequestOptions? requestOptions}) async {
   return (await sdkRequest<ActionsOrganizationPermissions>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/permissions',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetGithubActionsPermissionsOrganization',
-          fromJsonRaw: (value) => ActionsOrganizationPermissions.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ActionsOrganizationPermissions.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Sets the GitHub Actions permissions policy for repositories and allowed actions and reusable workflows in an organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -638,34 +708,38 @@ Future<void> actionsSetGithubActionsPermissionsOrganization(ClientConfig config,
       .data;
 }
 
-
 /// Gets retention settings for checks, workflow runs, commit statuses, artifacts, and logs for an organization. Checks include check suites, check runs, and check annotations. These settings also apply to checks and commit statuses created by third-party integrations, and are not limited to data created by GitHub Actions. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the "Actions policies" fine-grained permission to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
-Future<ActionsArtifactAndLogRetentionResponse> actionsGetArtifactAndLogRetentionSettingsOrganization(ClientConfig config,
-    {required String org, RequestOptions? requestOptions}) async {
+Future<ActionsArtifactAndLogRetentionResponse>
+    actionsGetArtifactAndLogRetentionSettingsOrganization(ClientConfig config,
+        {required String org, RequestOptions? requestOptions}) async {
   return (await sdkRequest<ActionsArtifactAndLogRetentionResponse>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/permissions/artifact-and-log-retention',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetArtifactAndLogRetentionSettingsOrganization',
-          fromJsonRaw: (value) => ActionsArtifactAndLogRetentionResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsArtifactAndLogRetentionResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Sets retention settings for checks, workflow runs, commit statuses, artifacts, and logs for an organization. Checks include check suites, check runs, and check annotations. These settings also apply to checks and commit statuses created by third-party integrations, and are not limited to data created by GitHub Actions. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the "Actions policies" fine-grained permission to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [days] The number of days to retain checks, workflow runs, commit statuses,
 ///   artifacts, and logs
-Future<void>
-    actionsSetArtifactAndLogRetentionSettingsOrganization(ClientConfig config,
-        {required String org,
-        required int days,
-        RequestOptions? requestOptions}) async {
+Future<void> actionsSetArtifactAndLogRetentionSettingsOrganization(
+    ClientConfig config,
+    {required String org,
+    required int days,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('PUT',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/permissions/artifact-and-log-retention',
           config: config,
@@ -673,16 +747,27 @@ Future<void>
           decoder: SdkResponseDecoder.empty,
           operationId: 'actionsSetArtifactAndLogRetentionSettingsOrganization',
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '409': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Gets the fork PR contributor approval policy for an organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the "Actions policies" fine-grained permission to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
-Future<ActionsForkPrContributorApproval> actionsGetForkPrContributorApprovalPermissionsOrganization(ClientConfig config,
-    {required String org, RequestOptions? requestOptions}) async {
+Future<ActionsForkPrContributorApproval>
+    actionsGetForkPrContributorApprovalPermissionsOrganization(
+        ClientConfig config,
+        {required String org,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<ActionsForkPrContributorApproval>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/permissions/fork-pr-contributor-approval',
           config: config,
@@ -690,49 +775,62 @@ Future<ActionsForkPrContributorApproval> actionsGetForkPrContributorApprovalPerm
           operationId: 'actionsGetForkPrContributorApprovalPermissionsOrganization',
           fromJsonRaw: (value) => ActionsForkPrContributorApproval.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Sets the fork PR contributor approval policy for an organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [approvalPolicy] The policy that controls when fork PR workflows require
 ///   approval from a maintainer.
-Future<void>
-    actionsSetForkPrContributorApprovalPermissionsOrganization(ClientConfig config,
-        {required String org,
-        required ActionsForkPrContributorApprovalApprovalPolicy approvalPolicy,
-        RequestOptions? requestOptions}) async {
+Future<void> actionsSetForkPrContributorApprovalPermissionsOrganization(
+    ClientConfig config,
+    {required String org,
+    required ActionsForkPrContributorApprovalApprovalPolicy approvalPolicy,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('PUT',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/permissions/fork-pr-contributor-approval',
           config: config,
           body: {'approval_policy': approvalPolicy},
           decoder: SdkResponseDecoder.empty,
-          operationId: 'actionsSetForkPrContributorApprovalPermissionsOrganization',
+          operationId:
+              'actionsSetForkPrContributorApprovalPermissionsOrganization',
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Gets the settings for whether workflows from fork pull requests can run on private repositories in an organization.
 ///
 /// [org] The organization name. The name is not case sensitive.
-Future<ActionsForkPrWorkflowsPrivateRepos> actionsGetPrivateRepoForkPrWorkflowsSettingsOrganization(ClientConfig config,
-    {required String org, RequestOptions? requestOptions}) async {
+Future<ActionsForkPrWorkflowsPrivateRepos>
+    actionsGetPrivateRepoForkPrWorkflowsSettingsOrganization(
+        ClientConfig config,
+        {required String org,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<ActionsForkPrWorkflowsPrivateRepos>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/permissions/fork-pr-workflows-private-repos',
           config: config,
           decoder: SdkResponseDecoder.json,
-          operationId: 'actionsGetPrivateRepoForkPrWorkflowsSettingsOrganization',
-          fromJsonRaw: (value) => ActionsForkPrWorkflowsPrivateRepos.fromJson(value as Map<String, dynamic>),
+          operationId:
+              'actionsGetPrivateRepoForkPrWorkflowsSettingsOrganization',
+          fromJsonRaw: (value) => ActionsForkPrWorkflowsPrivateRepos.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Sets the settings for whether workflows from fork pull requests can run on private repositories in an organization.
 ///
@@ -746,30 +844,41 @@ Future<ActionsForkPrWorkflowsPrivateRepos> actionsGetPrivateRepoForkPrWorkflowsS
 ///   workflows triggered by pull requests from forks.
 /// [requireApprovalForForkPrWorkflows] Whether workflows triggered by pull
 ///   requests from forks require approval from a repository administrator to run.
-Future<void>
-    actionsSetPrivateRepoForkPrWorkflowsSettingsOrganization(ClientConfig config,
-        {required String org,
-        required bool runWorkflowsFromForkPullRequests,
-        SdkOptional<bool> sendWriteTokensToWorkflows = const SdkOmitted(),
-        SdkOptional<bool> sendSecretsAndVariables = const SdkOmitted(),
-        SdkOptional<bool> requireApprovalForForkPrWorkflows = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<void> actionsSetPrivateRepoForkPrWorkflowsSettingsOrganization(
+    ClientConfig config,
+    {required String org,
+    required bool runWorkflowsFromForkPullRequests,
+    SdkOptional<bool> sendWriteTokensToWorkflows = const SdkOmitted(),
+    SdkOptional<bool> sendSecretsAndVariables = const SdkOmitted(),
+    SdkOptional<bool> requireApprovalForForkPrWorkflows = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('PUT',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/permissions/fork-pr-workflows-private-repos',
           config: config,
           body: {
-            'run_workflows_from_fork_pull_requests': runWorkflowsFromForkPullRequests,
-            'send_write_tokens_to_workflows': SdkUtils.unwrapOptional(sendWriteTokensToWorkflows),
-            'send_secrets_and_variables': SdkUtils.unwrapOptional(sendSecretsAndVariables),
-            'require_approval_for_fork_pr_workflows': SdkUtils.unwrapOptional(requireApprovalForForkPrWorkflows)
+            'run_workflows_from_fork_pull_requests':
+                runWorkflowsFromForkPullRequests,
+            'send_write_tokens_to_workflows':
+                SdkUtils.unwrapOptional(sendWriteTokensToWorkflows),
+            'send_secrets_and_variables':
+                SdkUtils.unwrapOptional(sendSecretsAndVariables),
+            'require_approval_for_fork_pr_workflows':
+                SdkUtils.unwrapOptional(requireApprovalForForkPrWorkflows)
           },
           decoder: SdkResponseDecoder.empty,
-          operationId: 'actionsSetPrivateRepoForkPrWorkflowsSettingsOrganization',
+          operationId:
+              'actionsSetPrivateRepoForkPrWorkflowsSettingsOrganization',
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Lists the selected repositories that are enabled for GitHub Actions in an organization. To use this endpoint, the organization permission policy for `enabled_repositories` must be configured to `selected`. For more information, see "Set GitHub Actions permissions for an organization." OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -783,99 +892,108 @@ Future<void>
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
 Future<ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse>
-    actionsListSelectedRepositoriesEnabledGithubActionsOrganization(ClientConfig config,
+    actionsListSelectedRepositoriesEnabledGithubActionsOrganization(
+        ClientConfig config,
         {required String org,
         SdkOptional<int> perPage = const SdkOmitted(),
         SdkOptional<int> page = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
-  return (await sdkRequest<ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse>('GET',
+  return (await sdkRequest<
+              ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse>(
+          'GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/permissions/repositories',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
-          operationId: 'actionsListSelectedRepositoriesEnabledGithubActionsOrganization',
-          fromJsonRaw: (value) => ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse.fromJson(value as Map<String, dynamic>),
+          operationId:
+              'actionsListSelectedRepositoriesEnabledGithubActionsOrganization',
+          fromJsonRaw: (value) =>
+              ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse
+                  .fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Replaces the list of selected repositories that are enabled for GitHub Actions in an organization. To use this endpoint, the organization permission policy for `enabled_repositories` must be configured to `selected`. For more information, see "Set GitHub Actions permissions for an organization." OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [selectedRepositoryIds] List of repository IDs to enable for GitHub Actions.
-Future<void>
-    actionsSetSelectedRepositoriesEnabledGithubActionsOrganization(ClientConfig config,
-        {required String org,
-        required List<int> selectedRepositoryIds,
-        RequestOptions? requestOptions}) async {
+Future<void> actionsSetSelectedRepositoriesEnabledGithubActionsOrganization(
+    ClientConfig config,
+    {required String org,
+    required List<int> selectedRepositoryIds,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('PUT',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/permissions/repositories',
           config: config,
           body: {'selected_repository_ids': selectedRepositoryIds},
           decoder: SdkResponseDecoder.empty,
-          operationId: 'actionsSetSelectedRepositoriesEnabledGithubActionsOrganization',
+          operationId:
+              'actionsSetSelectedRepositoriesEnabledGithubActionsOrganization',
           options: requestOptions))
       .data;
 }
-
 
 /// Adds a repository to the list of selected repositories that are enabled for GitHub Actions in an organization. To use this endpoint, the organization permission policy for `enabled_repositories` must be must be configured to `selected`. For more information, see "Set GitHub Actions permissions for an organization." OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [repositoryId] The unique identifier of the repository.
-Future<void>
-    actionsEnableSelectedRepositoryGithubActionsOrganization(ClientConfig config,
-        {required String org,
-        required int repositoryId,
-        RequestOptions? requestOptions}) async {
+Future<void> actionsEnableSelectedRepositoryGithubActionsOrganization(
+    ClientConfig config,
+    {required String org,
+    required int repositoryId,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('PUT',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/permissions/repositories/${Uri.encodeComponent(repositoryId.toString())}',
           config: config,
           decoder: SdkResponseDecoder.empty,
-          operationId: 'actionsEnableSelectedRepositoryGithubActionsOrganization',
+          operationId:
+              'actionsEnableSelectedRepositoryGithubActionsOrganization',
           options: requestOptions))
       .data;
 }
-
 
 /// Removes a repository from the list of selected repositories that are enabled for GitHub Actions in an organization. To use this endpoint, the organization permission policy for `enabled_repositories` must be configured to `selected`. For more information, see "Set GitHub Actions permissions for an organization." OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [repositoryId] The unique identifier of the repository.
-Future<void>
-    actionsDisableSelectedRepositoryGithubActionsOrganization(ClientConfig config,
-        {required String org,
-        required int repositoryId,
-        RequestOptions? requestOptions}) async {
+Future<void> actionsDisableSelectedRepositoryGithubActionsOrganization(
+    ClientConfig config,
+    {required String org,
+    required int repositoryId,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('DELETE',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/permissions/repositories/${Uri.encodeComponent(repositoryId.toString())}',
           config: config,
           decoder: SdkResponseDecoder.empty,
-          operationId: 'actionsDisableSelectedRepositoryGithubActionsOrganization',
+          operationId:
+              'actionsDisableSelectedRepositoryGithubActionsOrganization',
           options: requestOptions))
       .data;
 }
 
-
 /// Gets the selected actions and reusable workflows that are allowed in an organization. To use this endpoint, the organization permission policy for `allowed_actions` must be configured to `selected`. For more information, see "Set GitHub Actions permissions for an organization." OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
-Future<SelectedActions> actionsGetAllowedActionsOrganization(ClientConfig config,
-    {required String org, RequestOptions? requestOptions}) async {
+Future<SelectedActions> actionsGetAllowedActionsOrganization(
+    ClientConfig config,
+    {required String org,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<SelectedActions>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/permissions/selected-actions',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetAllowedActionsOrganization',
-          fromJsonRaw: (value) => SelectedActions.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              SelectedActions.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Sets the actions and reusable workflows that are allowed in an organization. To use this endpoint, the organization permission policy for `allowed_actions` must be configured to `selected`. For more information, see "Set GitHub Actions permissions for an organization." OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -910,34 +1028,38 @@ Future<void> actionsSetAllowedActionsOrganization(ClientConfig config,
       .data;
 }
 
-
 /// Gets the settings for self-hosted runners for an organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the "Actions policies" fine-grained permission to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
-Future<SelfHostedRunnersSettings> actionsGetSelfHostedRunnersPermissionsOrganization(ClientConfig config,
-    {required String org, RequestOptions? requestOptions}) async {
+Future<SelfHostedRunnersSettings>
+    actionsGetSelfHostedRunnersPermissionsOrganization(ClientConfig config,
+        {required String org, RequestOptions? requestOptions}) async {
   return (await sdkRequest<SelfHostedRunnersSettings>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/permissions/self-hosted-runners',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetSelfHostedRunnersPermissionsOrganization',
-          fromJsonRaw: (value) => SelfHostedRunnersSettings.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              SelfHostedRunnersSettings.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Sets the settings for self-hosted runners for an organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the "Actions policies" fine-grained permission to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [enabledRepositories] The policy that controls whether self-hosted runners
 ///   can be used in the organization
-Future<void>
-    actionsSetSelfHostedRunnersPermissionsOrganization(ClientConfig config,
-        {required String org,
-        required ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBodyEnabledRepositories enabledRepositories,
-        RequestOptions? requestOptions}) async {
+Future<void> actionsSetSelfHostedRunnersPermissionsOrganization(
+    ClientConfig config,
+    {required String org,
+    required ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBodyEnabledRepositories
+        enabledRepositories,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('PUT',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/permissions/self-hosted-runners',
           config: config,
@@ -945,10 +1067,18 @@ Future<void>
           decoder: SdkResponseDecoder.empty,
           operationId: 'actionsSetSelfHostedRunnersPermissionsOrganization',
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '409': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Lists repositories that are allowed to use self-hosted runners in an organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the "Actions policies" fine-grained permission to use this endpoint.
 ///
@@ -962,104 +1092,138 @@ Future<void>
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
 Future<ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse>
-    actionsListSelectedRepositoriesSelfHostedRunnersOrganization(ClientConfig config,
+    actionsListSelectedRepositoriesSelfHostedRunnersOrganization(
+        ClientConfig config,
         {required String org,
         SdkOptional<int> perPage = const SdkOmitted(),
         SdkOptional<int> page = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
-  return (await sdkRequest<ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse>('GET',
+  return (await sdkRequest<
+              ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse>(
+          'GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/permissions/self-hosted-runners/repositories',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
-          operationId: 'actionsListSelectedRepositoriesSelfHostedRunnersOrganization',
-          fromJsonRaw: (value) => ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse.fromJson(value as Map<String, dynamic>),
+          operationId:
+              'actionsListSelectedRepositoriesSelfHostedRunnersOrganization',
+          fromJsonRaw: (value) =>
+              ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse
+                  .fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Sets repositories that are allowed to use self-hosted runners in an organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the "Actions policies" fine-grained permission to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [selectedRepositoryIds] IDs of repositories that can use repository-level
 ///   self-hosted runners
-Future<void>
-    actionsSetSelectedRepositoriesSelfHostedRunnersOrganization(ClientConfig config,
-        {required String org,
-        required List<int> selectedRepositoryIds,
-        RequestOptions? requestOptions}) async {
+Future<void> actionsSetSelectedRepositoriesSelfHostedRunnersOrganization(
+    ClientConfig config,
+    {required String org,
+    required List<int> selectedRepositoryIds,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('PUT',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/permissions/self-hosted-runners/repositories',
           config: config,
           body: {'selected_repository_ids': selectedRepositoryIds},
           decoder: SdkResponseDecoder.empty,
-          operationId: 'actionsSetSelectedRepositoriesSelfHostedRunnersOrganization',
+          operationId:
+              'actionsSetSelectedRepositoriesSelfHostedRunnersOrganization',
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Adds a repository to the list of repositories that are allowed to use self-hosted runners in an organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the "Actions policies" fine-grained permission to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [repositoryId] The unique identifier of the repository.
-Future<void>
-    actionsEnableSelectedRepositorySelfHostedRunnersOrganization(ClientConfig config,
-        {required String org,
-        required int repositoryId,
-        RequestOptions? requestOptions}) async {
+Future<void> actionsEnableSelectedRepositorySelfHostedRunnersOrganization(
+    ClientConfig config,
+    {required String org,
+    required int repositoryId,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('PUT',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/permissions/self-hosted-runners/repositories/${Uri.encodeComponent(repositoryId.toString())}',
           config: config,
           decoder: SdkResponseDecoder.empty,
-          operationId: 'actionsEnableSelectedRepositorySelfHostedRunnersOrganization',
+          operationId:
+              'actionsEnableSelectedRepositorySelfHostedRunnersOrganization',
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '409': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '422': (value) =>
+            ValidationError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Removes a repository from the list of repositories that are allowed to use self-hosted runners in an organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the "Actions policies" fine-grained permission to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [repositoryId] The unique identifier of the repository.
-Future<void>
-    actionsDisableSelectedRepositorySelfHostedRunnersOrganization(ClientConfig config,
-        {required String org,
-        required int repositoryId,
-        RequestOptions? requestOptions}) async {
+Future<void> actionsDisableSelectedRepositorySelfHostedRunnersOrganization(
+    ClientConfig config,
+    {required String org,
+    required int repositoryId,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('DELETE',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/permissions/self-hosted-runners/repositories/${Uri.encodeComponent(repositoryId.toString())}',
           config: config,
           decoder: SdkResponseDecoder.empty,
-          operationId: 'actionsDisableSelectedRepositorySelfHostedRunnersOrganization',
+          operationId:
+              'actionsDisableSelectedRepositorySelfHostedRunnersOrganization',
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '409': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '422': (value) =>
+            ValidationError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Gets the default workflow permissions granted to the `GITHUB_TOKEN` when running workflows in an organization, as well as whether GitHub Actions can submit approving pull request reviews. For more information, see "[Setting the permissions of the GITHUB_TOKEN for your organization](https://docs.github.com/organizations/managing-organization-settings/disabling-or-limiting-github-actions-for-your-organization#setting-the-permissions-of-the-github_token-for-your-organization)." OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
-Future<ActionsGetDefaultWorkflowPermissions> actionsGetGithubActionsDefaultWorkflowPermissionsOrganization(ClientConfig config,
-    {required String org, RequestOptions? requestOptions}) async {
-  return (await sdkRequest<ActionsGetDefaultWorkflowPermissions>('GET',
-          '/orgs/${Uri.encodeComponent(org.toString())}/actions/permissions/workflow',
+Future<ActionsGetDefaultWorkflowPermissions>
+    actionsGetGithubActionsDefaultWorkflowPermissionsOrganization(
+        ClientConfig config,
+        {required String org,
+        RequestOptions? requestOptions}) async {
+  return (await sdkRequest<ActionsGetDefaultWorkflowPermissions>(
+          'GET', '/orgs/${Uri.encodeComponent(org.toString())}/actions/permissions/workflow',
           config: config,
           decoder: SdkResponseDecoder.json,
-          operationId: 'actionsGetGithubActionsDefaultWorkflowPermissionsOrganization',
-          fromJsonRaw: (value) => ActionsGetDefaultWorkflowPermissions.fromJson(value as Map<String, dynamic>),
+          operationId:
+              'actionsGetGithubActionsDefaultWorkflowPermissionsOrganization',
+          fromJsonRaw: (value) => ActionsGetDefaultWorkflowPermissions.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Sets the default workflow permissions granted to the `GITHUB_TOKEN` when running workflows in an organization, and sets if GitHub Actions can submit approving pull request reviews. For more information, see "[Setting the permissions of the GITHUB_TOKEN for your organization](https://docs.github.com/organizations/managing-organization-settings/disabling-or-limiting-github-actions-for-your-organization#setting-the-permissions-of-the-github_token-for-your-organization)." OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -1068,25 +1232,28 @@ Future<ActionsGetDefaultWorkflowPermissions> actionsGetGithubActionsDefaultWorkf
 ///   GITHUB_TOKEN when running workflows.
 /// [canApprovePullRequestReviews] Whether GitHub Actions can approve pull
 ///   requests. Enabling this can be a security risk.
-Future<void>
-    actionsSetGithubActionsDefaultWorkflowPermissionsOrganization(ClientConfig config,
-        {required String org,
-        SdkOptional<ActionsDefaultWorkflowPermissions> defaultWorkflowPermissions = const SdkOmitted(),
-        SdkOptional<bool> canApprovePullRequestReviews = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
-  return (await sdkRequest<void>('PUT',
-          '/orgs/${Uri.encodeComponent(org.toString())}/actions/permissions/workflow',
+Future<void> actionsSetGithubActionsDefaultWorkflowPermissionsOrganization(
+    ClientConfig config,
+    {required String org,
+    SdkOptional<ActionsDefaultWorkflowPermissions> defaultWorkflowPermissions =
+        const SdkOmitted(),
+    SdkOptional<bool> canApprovePullRequestReviews = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
+  return (await sdkRequest<void>(
+          'PUT', '/orgs/${Uri.encodeComponent(org.toString())}/actions/permissions/workflow',
           config: config,
           body: {
-            'default_workflow_permissions': SdkUtils.unwrapOptional(defaultWorkflowPermissions),
-            'can_approve_pull_request_reviews': SdkUtils.unwrapOptional(canApprovePullRequestReviews)
+            'default_workflow_permissions':
+                SdkUtils.unwrapOptional(defaultWorkflowPermissions),
+            'can_approve_pull_request_reviews':
+                SdkUtils.unwrapOptional(canApprovePullRequestReviews)
           },
           decoder: SdkResponseDecoder.empty,
-          operationId: 'actionsSetGithubActionsDefaultWorkflowPermissionsOrganization',
+          operationId:
+              'actionsSetGithubActionsDefaultWorkflowPermissionsOrganization',
           options: requestOptions))
       .data;
 }
-
 
 /// Lists Actions policies configured for an organization. Set `has_parents` to include policies configured at higher levels that apply to the organization, and use `page` and `per_page` to paginate the results.
 ///
@@ -1103,29 +1270,36 @@ Future<void>
 ///   -rest-api)."
 /// [hasParents] Include policies configured at higher levels that apply to this
 ///   organization
-Future<ActionsGetOrgActionsPoliciesResponse>
-    actionsGetOrgActionsPolicies(ClientConfig config,
-        {required String org,
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        SdkOptional<bool> hasParents = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ActionsGetOrgActionsPoliciesResponse> actionsGetOrgActionsPolicies(
+    ClientConfig config,
+    {required String org,
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    SdkOptional<bool> hasParents = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<ActionsGetOrgActionsPoliciesResponse>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/policies',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'has_parents': SdkQueryValue(SdkUtils.unwrapOptional(hasParents), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'has_parents': SdkQueryValue(SdkUtils.unwrapOptional(hasParents),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetOrgActionsPolicies',
-          fromJsonRaw: (value) => ActionsGetOrgActionsPoliciesResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ActionsGetOrgActionsPoliciesResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Create an Actions policy for an organization. Omitting `workflow_path` targets all workflows without storing an explicit condition.
 ///
@@ -1156,12 +1330,18 @@ Future<ActionsPolicy> actionsCreateOrgActionsPolicy(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsCreateOrgActionsPolicy',
-          fromJsonRaw: (value) => ActionsPolicy.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsPolicy.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>),
+            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Get a specific Actions policy for an organization.
 ///
@@ -1176,12 +1356,15 @@ Future<ActionsPolicy> actionsGetOrgActionsPolicy(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetOrgActionsPolicy',
-          fromJsonRaw: (value) => ActionsPolicy.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsPolicy.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Update an Actions policy for an organization. Omitting `workflow_path` preserves the policy's existing workflow targeting.
 ///
@@ -1214,12 +1397,18 @@ Future<ActionsPolicy> actionsUpdateOrgActionsPolicy(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsUpdateOrgActionsPolicy',
-          fromJsonRaw: (value) => ActionsPolicy.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsPolicy.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>),
+            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Deletes an organization-level Actions policy. Use `org` and `policy_id` to identify the organization and policy to remove; the policy must belong to that organization.
 ///
@@ -1237,10 +1426,12 @@ Future<void> actionsDeleteOrgActionsPolicy(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'actionsDeleteOrgActionsPolicy',
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Lists all self-hosted runner groups configured in an organization and inherited from an enterprise. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -1262,21 +1453,28 @@ Future<ActionsListSelfHostedRunnerGroupsForOrgResponse>
         SdkOptional<int> page = const SdkOmitted(),
         SdkOptional<String> visibleToRepository = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
-  return (await sdkRequest<ActionsListSelfHostedRunnerGroupsForOrgResponse>('GET',
+  return (await sdkRequest<ActionsListSelfHostedRunnerGroupsForOrgResponse>(
+          'GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/runner-groups',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'visible_to_repository': SdkQueryValue(SdkUtils.unwrapOptional(visibleToRepository), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'visible_to_repository': SdkQueryValue(
+                SdkUtils.unwrapOptional(visibleToRepository),
+                style: 'form',
+                explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsListSelfHostedRunnerGroupsForOrg',
-          fromJsonRaw: (value) => ActionsListSelfHostedRunnerGroupsForOrgResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsListSelfHostedRunnerGroupsForOrgResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Creates a new self-hosted runner group for an organization. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -1296,58 +1494,63 @@ Future<ActionsListSelfHostedRunnerGroupsForOrgResponse>
 ///   `true`.
 /// [networkConfigurationId] The identifier of a hosted compute network
 ///   configuration.
-Future<RunnerGroupsOrg>
-    actionsCreateSelfHostedRunnerGroupForOrg(ClientConfig config,
-        {required String org,
-        required String name,
-        SdkOptional<ActionsCreateSelfHostedRunnerGroupForOrgRequestBodyVisibility> visibility = const SdkOmitted(),
-        SdkOptional<List<int>> selectedRepositoryIds = const SdkOmitted(),
-        SdkOptional<List<int>> runners = const SdkOmitted(),
-        SdkOptional<bool> allowsPublicRepositories = const SdkOmitted(),
-        SdkOptional<bool> restrictedToWorkflows = const SdkOmitted(),
-        SdkOptional<List<String>> selectedWorkflows = const SdkOmitted(),
-        SdkOptional<String> networkConfigurationId = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<RunnerGroupsOrg> actionsCreateSelfHostedRunnerGroupForOrg(
+    ClientConfig config,
+    {required String org,
+    required String name,
+    SdkOptional<ActionsCreateSelfHostedRunnerGroupForOrgRequestBodyVisibility>
+        visibility = const SdkOmitted(),
+    SdkOptional<List<int>> selectedRepositoryIds = const SdkOmitted(),
+    SdkOptional<List<int>> runners = const SdkOmitted(),
+    SdkOptional<bool> allowsPublicRepositories = const SdkOmitted(),
+    SdkOptional<bool> restrictedToWorkflows = const SdkOmitted(),
+    SdkOptional<List<String>> selectedWorkflows = const SdkOmitted(),
+    SdkOptional<String> networkConfigurationId = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<RunnerGroupsOrg>('POST',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/runner-groups',
           config: config,
           body: {
             'name': name,
             'visibility': SdkUtils.unwrapOptional(visibility),
-            'selected_repository_ids': SdkUtils.unwrapOptional(selectedRepositoryIds),
+            'selected_repository_ids':
+                SdkUtils.unwrapOptional(selectedRepositoryIds),
             'runners': SdkUtils.unwrapOptional(runners),
-            'allows_public_repositories': SdkUtils.unwrapOptional(allowsPublicRepositories),
-            'restricted_to_workflows': SdkUtils.unwrapOptional(restrictedToWorkflows),
+            'allows_public_repositories':
+                SdkUtils.unwrapOptional(allowsPublicRepositories),
+            'restricted_to_workflows':
+                SdkUtils.unwrapOptional(restrictedToWorkflows),
             'selected_workflows': SdkUtils.unwrapOptional(selectedWorkflows),
-            'network_configuration_id': SdkUtils.unwrapOptional(networkConfigurationId)
+            'network_configuration_id':
+                SdkUtils.unwrapOptional(networkConfigurationId)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsCreateSelfHostedRunnerGroupForOrg',
-          fromJsonRaw: (value) => RunnerGroupsOrg.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              RunnerGroupsOrg.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Gets a specific self-hosted runner group for an organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [runnerGroupId] Unique identifier of the self-hosted runner group.
-Future<RunnerGroupsOrg>
-    actionsGetSelfHostedRunnerGroupForOrg(ClientConfig config,
-        {required String org,
-        required int runnerGroupId,
-        RequestOptions? requestOptions}) async {
+Future<RunnerGroupsOrg> actionsGetSelfHostedRunnerGroupForOrg(
+    ClientConfig config,
+    {required String org,
+    required int runnerGroupId,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<RunnerGroupsOrg>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/runner-groups/${Uri.encodeComponent(runnerGroupId.toString())}',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetSelfHostedRunnerGroupForOrg',
-          fromJsonRaw: (value) => RunnerGroupsOrg.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              RunnerGroupsOrg.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Updates the `name` and `visibility` of a self-hosted runner group in an organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -1365,35 +1568,39 @@ Future<RunnerGroupsOrg>
 ///   `true`.
 /// [networkConfigurationId] The identifier of a hosted compute network
 ///   configuration.
-Future<RunnerGroupsOrg>
-    actionsUpdateSelfHostedRunnerGroupForOrg(ClientConfig config,
-        {required String org,
-        required int runnerGroupId,
-        required String name,
-        SdkOptional<ActionsUpdateSelfHostedRunnerGroupForOrgRequestBodyVisibility> visibility = const SdkOmitted(),
-        SdkOptional<bool> allowsPublicRepositories = const SdkOmitted(),
-        SdkOptional<bool> restrictedToWorkflows = const SdkOmitted(),
-        SdkOptional<List<String>> selectedWorkflows = const SdkOmitted(),
-        SdkOptional<String?> networkConfigurationId = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<RunnerGroupsOrg> actionsUpdateSelfHostedRunnerGroupForOrg(
+    ClientConfig config,
+    {required String org,
+    required int runnerGroupId,
+    required String name,
+    SdkOptional<ActionsUpdateSelfHostedRunnerGroupForOrgRequestBodyVisibility>
+        visibility = const SdkOmitted(),
+    SdkOptional<bool> allowsPublicRepositories = const SdkOmitted(),
+    SdkOptional<bool> restrictedToWorkflows = const SdkOmitted(),
+    SdkOptional<List<String>> selectedWorkflows = const SdkOmitted(),
+    SdkOptional<String?> networkConfigurationId = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<RunnerGroupsOrg>('PATCH',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/runner-groups/${Uri.encodeComponent(runnerGroupId.toString())}',
           config: config,
           body: {
             'name': name,
             'visibility': SdkUtils.unwrapOptional(visibility),
-            'allows_public_repositories': SdkUtils.unwrapOptional(allowsPublicRepositories),
-            'restricted_to_workflows': SdkUtils.unwrapOptional(restrictedToWorkflows),
+            'allows_public_repositories':
+                SdkUtils.unwrapOptional(allowsPublicRepositories),
+            'restricted_to_workflows':
+                SdkUtils.unwrapOptional(restrictedToWorkflows),
             'selected_workflows': SdkUtils.unwrapOptional(selectedWorkflows),
-            'network_configuration_id': SdkUtils.unwrapOptional(networkConfigurationId)
+            'network_configuration_id':
+                SdkUtils.unwrapOptional(networkConfigurationId)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsUpdateSelfHostedRunnerGroupForOrg',
-          fromJsonRaw: (value) => RunnerGroupsOrg.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              RunnerGroupsOrg.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Deletes a self-hosted runner group for an organization. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -1411,7 +1618,6 @@ Future<void> actionsDeleteSelfHostedRunnerGroupFromOrg(ClientConfig config,
           options: requestOptions))
       .data;
 }
-
 
 /// Lists the GitHub-hosted runners in an organization group. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -1432,20 +1638,24 @@ Future<ActionsListGithubHostedRunnersInGroupForOrgResponse>
         SdkOptional<int> perPage = const SdkOmitted(),
         SdkOptional<int> page = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
-  return (await sdkRequest<ActionsListGithubHostedRunnersInGroupForOrgResponse>('GET',
+  return (await sdkRequest<ActionsListGithubHostedRunnersInGroupForOrgResponse>(
+          'GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/runner-groups/${Uri.encodeComponent(runnerGroupId.toString())}/hosted-runners',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsListGithubHostedRunnersInGroupForOrg',
-          fromJsonRaw: (value) => ActionsListGithubHostedRunnersInGroupForOrgResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsListGithubHostedRunnersInGroupForOrgResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists the repositories with access to a self-hosted runner group configured in an organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -1466,20 +1676,24 @@ Future<ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponse>
         SdkOptional<int> page = const SdkOmitted(),
         SdkOptional<int> perPage = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
-  return (await sdkRequest<ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponse>('GET',
+  return (await sdkRequest<
+              ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponse>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/runner-groups/${Uri.encodeComponent(runnerGroupId.toString())}/repositories',
           config: config,
           query: {
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true)
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsListRepoAccessToSelfHostedRunnerGroupInOrg',
-          fromJsonRaw: (value) => ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponse
+                  .fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Replaces the list of repositories that have access to a self-hosted runner group configured in an organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -1487,12 +1701,12 @@ Future<ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponse>
 /// [runnerGroupId] Unique identifier of the self-hosted runner group.
 /// [selectedRepositoryIds] List of repository IDs that can access the runner
 ///   group.
-Future<void>
-    actionsSetRepoAccessToSelfHostedRunnerGroupInOrg(ClientConfig config,
-        {required String org,
-        required int runnerGroupId,
-        required List<int> selectedRepositoryIds,
-        RequestOptions? requestOptions}) async {
+Future<void> actionsSetRepoAccessToSelfHostedRunnerGroupInOrg(
+    ClientConfig config,
+    {required String org,
+    required int runnerGroupId,
+    required List<int> selectedRepositoryIds,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('PUT',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/runner-groups/${Uri.encodeComponent(runnerGroupId.toString())}/repositories',
           config: config,
@@ -1503,18 +1717,17 @@ Future<void>
       .data;
 }
 
-
 /// Adds a repository to the list of repositories that can access a self-hosted runner group. The runner group must have `visibility` set to `selected`. For more information, see "Create a self-hosted runner group for an organization." OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [runnerGroupId] Unique identifier of the self-hosted runner group.
 /// [repositoryId] The unique identifier of the repository.
-Future<void>
-    actionsAddRepoAccessToSelfHostedRunnerGroupInOrg(ClientConfig config,
-        {required String org,
-        required int runnerGroupId,
-        required int repositoryId,
-        RequestOptions? requestOptions}) async {
+Future<void> actionsAddRepoAccessToSelfHostedRunnerGroupInOrg(
+    ClientConfig config,
+    {required String org,
+    required int runnerGroupId,
+    required int repositoryId,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('PUT',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/runner-groups/${Uri.encodeComponent(runnerGroupId.toString())}/repositories/${Uri.encodeComponent(repositoryId.toString())}',
           config: config,
@@ -1524,18 +1737,17 @@ Future<void>
       .data;
 }
 
-
 /// Removes a repository from the list of selected repositories that can access a self-hosted runner group. The runner group must have `visibility` set to `selected`. For more information, see "Create a self-hosted runner group for an organization." OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [runnerGroupId] Unique identifier of the self-hosted runner group.
 /// [repositoryId] The unique identifier of the repository.
-Future<void>
-    actionsRemoveRepoAccessToSelfHostedRunnerGroupInOrg(ClientConfig config,
-        {required String org,
-        required int runnerGroupId,
-        required int repositoryId,
-        RequestOptions? requestOptions}) async {
+Future<void> actionsRemoveRepoAccessToSelfHostedRunnerGroupInOrg(
+    ClientConfig config,
+    {required String org,
+    required int runnerGroupId,
+    required int repositoryId,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('DELETE',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/runner-groups/${Uri.encodeComponent(runnerGroupId.toString())}/repositories/${Uri.encodeComponent(repositoryId.toString())}',
           config: config,
@@ -1544,7 +1756,6 @@ Future<void>
           options: requestOptions))
       .data;
 }
-
 
 /// Lists self-hosted runners that are in a specific organization group. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -1565,20 +1776,24 @@ Future<ActionsListSelfHostedRunnersInGroupForOrgResponse>
         SdkOptional<int> perPage = const SdkOmitted(),
         SdkOptional<int> page = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
-  return (await sdkRequest<ActionsListSelfHostedRunnersInGroupForOrgResponse>('GET',
+  return (await sdkRequest<ActionsListSelfHostedRunnersInGroupForOrgResponse>(
+          'GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/runner-groups/${Uri.encodeComponent(runnerGroupId.toString())}/runners',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsListSelfHostedRunnersInGroupForOrg',
-          fromJsonRaw: (value) => ActionsListSelfHostedRunnersInGroupForOrgResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsListSelfHostedRunnersInGroupForOrgResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Replaces the list of self-hosted runners that are part of an organization runner group. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -1600,7 +1815,6 @@ Future<void> actionsSetSelfHostedRunnersInGroupForOrg(ClientConfig config,
       .data;
 }
 
-
 /// Adds a self-hosted runner to a runner group configured in an organization. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
@@ -1620,7 +1834,6 @@ Future<void> actionsAddSelfHostedRunnerToGroupForOrg(ClientConfig config,
       .data;
 }
 
-
 /// Removes a self-hosted runner from a group configured in an organization. The runner is then returned to the default group. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
@@ -1639,7 +1852,6 @@ Future<void> actionsRemoveSelfHostedRunnerFromGroupForOrg(ClientConfig config,
           options: requestOptions))
       .data;
 }
-
 
 /// Lists all self-hosted runners configured in an organization. Authenticated users must have admin access to the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
@@ -1664,17 +1876,21 @@ Future<ActionsListSelfHostedRunnersForOrgResponse>
           'GET', '/orgs/${Uri.encodeComponent(org.toString())}/actions/runners',
           config: config,
           query: {
-            'name': SdkQueryValue(SdkUtils.unwrapOptional(name), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'name': SdkQueryValue(SdkUtils.unwrapOptional(name),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsListSelfHostedRunnersForOrg',
-          fromJsonRaw: (value) => ActionsListSelfHostedRunnersForOrgResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsListSelfHostedRunnersForOrgResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Gets the end-of-life schedule for a specific runner version in an organization. Returns the runner version and the dates when registration and runtime support will end. Authenticated users must have admin access to the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
@@ -1685,32 +1901,38 @@ Future<ActionsGetRunnerVersionDeprecationForOrgResponse>
         {required String org,
         required String version,
         RequestOptions? requestOptions}) async {
-  return (await sdkRequest<ActionsGetRunnerVersionDeprecationForOrgResponse>('GET',
+  return (await sdkRequest<ActionsGetRunnerVersionDeprecationForOrgResponse>(
+          'GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/runners/deprecations/${Uri.encodeComponent(version.toString())}',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetRunnerVersionDeprecationForOrg',
-          fromJsonRaw: (value) => ActionsGetRunnerVersionDeprecationForOrgResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsGetRunnerVersionDeprecationForOrgResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
 
-
 /// Lists binaries for the runner application that you can download and run. Authenticated users must have admin access to the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
 /// [org] The organization name. The name is not case sensitive.
-Future<List<RunnerApplication>> actionsListRunnerApplicationsForOrg(ClientConfig config,
-    {required String org, RequestOptions? requestOptions}) async {
+Future<List<RunnerApplication>> actionsListRunnerApplicationsForOrg(
+    ClientConfig config,
+    {required String org,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<RunnerApplication>>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/runners/downloads',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsListRunnerApplicationsForOrg',
-          fromJsonRaw: (value) => (value as List).map((item) => RunnerApplication.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) =>
+                  RunnerApplication.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions))
       .data;
 }
-
 
 /// Generates a configuration that can be passed to the runner application at startup. The authenticated user must have admin access to the organization. OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -1721,14 +1943,14 @@ Future<List<RunnerApplication>> actionsListRunnerApplicationsForOrg(ClientConfig
 ///   items**: 1. **Maximum items**: 100.
 /// [workFolder] The working directory to be used for job execution, relative to
 ///   the runner install directory.
-Future<SchemaSchemacee94e2c>
-    actionsGenerateRunnerJitconfigForOrg(ClientConfig config,
-        {required String org,
-        required String name,
-        required int runnerGroupId,
-        required List<String> labels,
-        SdkOptional<String> workFolder = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<SchemaSchemacee94e2c> actionsGenerateRunnerJitconfigForOrg(
+    ClientConfig config,
+    {required String org,
+    required String name,
+    required int runnerGroupId,
+    required List<String> labels,
+    SdkOptional<String> workFolder = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   validateItems('labels', labels, min: 1, max: 100);
 
   return (await sdkRequest<SchemaSchemacee94e2c>('POST',
@@ -1742,28 +1964,37 @@ Future<SchemaSchemacee94e2c>
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGenerateRunnerJitconfigForOrg',
-          fromJsonRaw: (value) => SchemaSchemacee94e2c.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              SchemaSchemacee94e2c.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '409': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Returns a token that you can pass to the `config` script. The token expires after one hour. For example, you can replace `TOKEN` in the following example with the registration token provided by this endpoint to configure your self-hosted runner: ``` ./config.sh --url https://github.com/octo-org --token TOKEN ``` Authenticated users must have admin access to the organization to use this endpoint. OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
-Future<AuthenticationToken> actionsCreateRegistrationTokenForOrg(ClientConfig config,
-    {required String org, RequestOptions? requestOptions}) async {
+Future<AuthenticationToken> actionsCreateRegistrationTokenForOrg(
+    ClientConfig config,
+    {required String org,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<AuthenticationToken>('POST',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/runners/registration-token',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsCreateRegistrationTokenForOrg',
-          fromJsonRaw: (value) => AuthenticationToken.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              AuthenticationToken.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Returns a token that you can pass to the `config` script to remove a self-hosted runner from an organization. The token expires after one hour. For example, you can replace `TOKEN` in the following example with the registration token provided by this endpoint to remove your self-hosted runner from an organization: ``` ./config.sh remove --token TOKEN ``` Authenticated users must have admin access to the organization to use this endpoint. OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -1775,11 +2006,11 @@ Future<AuthenticationToken> actionsCreateRemoveTokenForOrg(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsCreateRemoveTokenForOrg',
-          fromJsonRaw: (value) => AuthenticationToken.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              AuthenticationToken.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Gets a specific self-hosted runner configured in an organization. Authenticated users must have admin access to the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
@@ -1794,11 +2025,11 @@ Future<Runner> actionsGetSelfHostedRunnerForOrg(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetSelfHostedRunnerForOrg',
-          fromJsonRaw: (value) => Runner.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              Runner.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Forces the removal of a self-hosted runner from an organization. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. Authenticated users must have admin access to the organization to use this endpoint. OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -1814,20 +2045,22 @@ Future<void> actionsDeleteSelfHostedRunnerFromOrg(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'actionsDeleteSelfHostedRunnerFromOrg',
           options: requestOptions,
-          errors: {'422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '422': (value) =>
+            ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Lists all labels for a self-hosted runner configured in an organization. Authenticated users must have admin access to the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [runnerId] Unique identifier of the self-hosted runner.
-Future<SchemaSchemac8266fdc>
-    actionsListLabelsForSelfHostedRunnerForOrg(ClientConfig config,
-        {required String org,
-        required int runnerId,
-        RequestOptions? requestOptions}) async {
+Future<SchemaSchemac8266fdc> actionsListLabelsForSelfHostedRunnerForOrg(
+    ClientConfig config,
+    {required String org,
+    required int runnerId,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<SchemaSchemac8266fdc>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/runners/${Uri.encodeComponent(runnerId.toString())}/labels',
           config: config,
@@ -1835,22 +2068,23 @@ Future<SchemaSchemac8266fdc>
           operationId: 'actionsListLabelsForSelfHostedRunnerForOrg',
           fromJsonRaw: (value) => SchemaSchemac8266fdc.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Adds custom labels to a self-hosted runner configured in an organization. Authenticated users must have admin access to the organization to use this endpoint. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [runnerId] Unique identifier of the self-hosted runner.
 /// [labels] The names of the custom labels to add to the runner.
-Future<SchemaSchemac8266fdc>
-    actionsAddCustomLabelsToSelfHostedRunnerForOrg(ClientConfig config,
-        {required String org,
-        required int runnerId,
-        required List<String> labels,
-        RequestOptions? requestOptions}) async {
+Future<SchemaSchemac8266fdc> actionsAddCustomLabelsToSelfHostedRunnerForOrg(
+    ClientConfig config,
+    {required String org,
+    required int runnerId,
+    required List<String> labels,
+    RequestOptions? requestOptions}) async {
   validateItems('labels', labels, min: 1, max: 100);
 
   return (await sdkRequest<SchemaSchemac8266fdc>('POST',
@@ -1859,12 +2093,17 @@ Future<SchemaSchemac8266fdc>
           body: {'labels': labels},
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsAddCustomLabelsToSelfHostedRunnerForOrg',
-          fromJsonRaw: (value) => SchemaSchemac8266fdc.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              SchemaSchemac8266fdc.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Remove all previous custom labels and set the new custom labels for a specific self-hosted runner configured in an organization. Authenticated users must have admin access to the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
@@ -1872,12 +2111,12 @@ Future<SchemaSchemac8266fdc>
 /// [runnerId] Unique identifier of the self-hosted runner.
 /// [labels] The names of the custom labels to set for the runner. You can pass
 ///   an empty array to remove all custom labels.
-Future<SchemaSchemac8266fdc>
-    actionsSetCustomLabelsForSelfHostedRunnerForOrg(ClientConfig config,
-        {required String org,
-        required int runnerId,
-        required List<String> labels,
-        RequestOptions? requestOptions}) async {
+Future<SchemaSchemac8266fdc> actionsSetCustomLabelsForSelfHostedRunnerForOrg(
+    ClientConfig config,
+    {required String org,
+    required int runnerId,
+    required List<String> labels,
+    RequestOptions? requestOptions}) async {
   validateItems('labels', labels, min: 0, max: 100);
 
   return (await sdkRequest<SchemaSchemac8266fdc>('PUT',
@@ -1886,12 +2125,17 @@ Future<SchemaSchemac8266fdc>
           body: {'labels': labels},
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsSetCustomLabelsForSelfHostedRunnerForOrg',
-          fromJsonRaw: (value) => SchemaSchemac8266fdc.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              SchemaSchemac8266fdc.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Remove all custom labels from a self-hosted runner configured in an organization. Returns the remaining read-only labels from the runner. Authenticated users must have admin access to the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
@@ -1909,33 +2153,38 @@ Future<SchemaSchema328ddb88>
           operationId: 'actionsRemoveAllCustomLabelsFromSelfHostedRunnerForOrg',
           fromJsonRaw: (value) => SchemaSchema328ddb88.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Remove a custom label from a self-hosted runner configured in an organization. Returns the remaining labels from the runner. This endpoint returns a `404 Not Found` status if the custom label is not present on the runner. Authenticated users must have admin access to the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [runnerId] Unique identifier of the self-hosted runner.
 /// [name] The name of a self-hosted runner's custom label.
-Future<SchemaSchemac8266fdc>
-    actionsRemoveCustomLabelFromSelfHostedRunnerForOrg(ClientConfig config,
-        {required String org,
-        required int runnerId,
-        required String name,
-        RequestOptions? requestOptions}) async {
+Future<SchemaSchemac8266fdc> actionsRemoveCustomLabelFromSelfHostedRunnerForOrg(
+    ClientConfig config,
+    {required String org,
+    required int runnerId,
+    required String name,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<SchemaSchemac8266fdc>('DELETE',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/runners/${Uri.encodeComponent(runnerId.toString())}/labels/${Uri.encodeComponent(name.toString())}',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsRemoveCustomLabelFromSelfHostedRunnerForOrg',
-          fromJsonRaw: (value) => SchemaSchemac8266fdc.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              SchemaSchemac8266fdc.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '422': (value) =>
+            ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Lists all secrets available in an organization without revealing their encrypted values. Authenticated users must have collaborator access to a repository to create, update, or read secrets. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
@@ -1957,16 +2206,18 @@ Future<ActionsListOrgSecretsResponse> actionsListOrgSecrets(ClientConfig config,
           'GET', '/orgs/${Uri.encodeComponent(org.toString())}/actions/secrets',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsListOrgSecrets',
-          fromJsonRaw: (value) => ActionsListOrgSecretsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ActionsListOrgSecretsResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Gets your public key, which you need to encrypt secrets. You need to encrypt a secret before you can create or update secrets. The authenticated user must have collaborator access to a repository to create, update, or read secrets. OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -1978,11 +2229,11 @@ Future<ActionsPublicKey> actionsGetOrgPublicKey(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetOrgPublicKey',
-          fromJsonRaw: (value) => ActionsPublicKey.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsPublicKey.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Gets a single organization secret without revealing its encrypted value. The authenticated user must have collaborator access to a repository to create, update, or read secrets OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -1997,11 +2248,11 @@ Future<OrganizationActionsSecret> actionsGetOrgSecret(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetOrgSecret',
-          fromJsonRaw: (value) => OrganizationActionsSecret.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              OrganizationActionsSecret.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Creates or updates an organization secret with an encrypted value. Encrypt your secret using [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see "[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api)." Authenticated users must have collaborator access to a repository to create, update, or read secrets. OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -2036,7 +2287,8 @@ Future<Map<String, dynamic>> actionsCreateOrUpdateOrgSecret(ClientConfig config,
     required ActionsCreateOrUpdateOrgSecretRequestBodyVisibility visibility,
     SdkOptional<List<int>> selectedRepositoryIds = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
-  sdkValidatePattern('encrypted_value', encryptedValue, '^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})\$');
+  sdkValidatePattern('encrypted_value', encryptedValue,
+      '^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})\$');
 
   return (await sdkRequest<Map<String, dynamic>>('PUT',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/secrets/${Uri.encodeComponent(secretName.toString())}',
@@ -2045,7 +2297,8 @@ Future<Map<String, dynamic>> actionsCreateOrUpdateOrgSecret(ClientConfig config,
             'encrypted_value': encryptedValue,
             'key_id': keyId,
             'visibility': visibility,
-            'selected_repository_ids': SdkUtils.unwrapOptional(selectedRepositoryIds)
+            'selected_repository_ids':
+                SdkUtils.unwrapOptional(selectedRepositoryIds)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsCreateOrUpdateOrgSecret',
@@ -2053,7 +2306,6 @@ Future<Map<String, dynamic>> actionsCreateOrUpdateOrgSecret(ClientConfig config,
           options: requestOptions))
       .data;
 }
-
 
 /// Deletes a secret in an organization using the secret name. Authenticated users must have collaborator access to a repository to create, update, or read secrets. OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -2071,7 +2323,6 @@ Future<void> actionsDeleteOrgSecret(ClientConfig config,
           options: requestOptions))
       .data;
 }
-
 
 /// Lists all repositories that have been selected when the `visibility` for repository access to a secret is set to `selected`. Authenticated users must have collaborator access to a repository to create, update, or read secrets. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
@@ -2096,16 +2347,19 @@ Future<ActionsListSelectedReposForOrgSecretResponse>
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/secrets/${Uri.encodeComponent(secretName.toString())}/repositories',
           config: config,
           query: {
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true)
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsListSelectedReposForOrgSecret',
-          fromJsonRaw: (value) => ActionsListSelectedReposForOrgSecretResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsListSelectedReposForOrgSecretResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Replaces all repositories for an organization secret when the `visibility` for repository access is set to `selected`. The visibility is set when you [Create or update an organization secret](https://docs.github.com/rest/actions/secrets#create-or-update-an-organization-secret). Authenticated users must have collaborator access to a repository to create, update, or read secrets. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
@@ -2135,7 +2389,6 @@ Future<void> actionsSetSelectedReposForOrgSecret(ClientConfig config,
       .data;
 }
 
-
 /// Adds a repository to an organization secret's selected repository list. Use this operation when the secret's `visibility` is set to `selected`; the authenticated user must have collaborator access to the repository. OAuth tokens and personal access tokens (classic) need the `admin:org` scope, plus the `repo` scope for private repositories.
 ///
 /// Adds a repository to an organization secret when the `visibility` for repository access is set to `selected`. For more information about setting the visibility, see [Create or update an organization secret](https://docs.github.com/rest/actions/secrets#create-or-update-an-organization-secret). Authenticated users must have collaborator access to a repository to create, update, or read secrets. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
@@ -2155,7 +2408,6 @@ Future<void> actionsAddSelectedRepoToOrgSecret(ClientConfig config,
           options: requestOptions))
       .data;
 }
-
 
 /// Removes a repository from an organization secret's selected repository list. Use this operation when the secret's `visibility` is set to `selected`; the authenticated user must have collaborator access to the repository. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope, plus the `repo` scope for private repositories.
 ///
@@ -2177,7 +2429,6 @@ Future<void> actionsRemoveSelectedRepoFromOrgSecret(ClientConfig config,
       .data;
 }
 
-
 /// Lists all organization variables. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
 /// [org] The organization name. The name is not case sensitive.
@@ -2189,26 +2440,28 @@ Future<void> actionsRemoveSelectedRepoFromOrgSecret(ClientConfig config,
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<ActionsListOrgVariablesResponse>
-    actionsListOrgVariables(ClientConfig config,
-        {required String org,
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ActionsListOrgVariablesResponse> actionsListOrgVariables(
+    ClientConfig config,
+    {required String org,
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<ActionsListOrgVariablesResponse>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/variables',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsListOrgVariables',
-          fromJsonRaw: (value) => ActionsListOrgVariablesResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ActionsListOrgVariablesResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Creates an organization variable that you can reference in a GitHub Actions workflow. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -2235,7 +2488,8 @@ Future<Map<String, dynamic>> actionsCreateOrgVariable(ClientConfig config,
             'name': name,
             'value': value_,
             'visibility': visibility,
-            'selected_repository_ids': SdkUtils.unwrapOptional(selectedRepositoryIds)
+            'selected_repository_ids':
+                SdkUtils.unwrapOptional(selectedRepositoryIds)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsCreateOrgVariable',
@@ -2243,7 +2497,6 @@ Future<Map<String, dynamic>> actionsCreateOrgVariable(ClientConfig config,
           options: requestOptions))
       .data;
 }
-
 
 /// Gets a specific variable in an organization. The authenticated user must have collaborator access to a repository to create, update, or read variables. OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -2258,11 +2511,11 @@ Future<OrganizationActionsVariable> actionsGetOrgVariable(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetOrgVariable',
-          fromJsonRaw: (value) => OrganizationActionsVariable.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => OrganizationActionsVariable.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Updates an organization variable that you can reference in a GitHub Actions workflow. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
@@ -2281,7 +2534,8 @@ Future<void> actionsUpdateOrgVariable(ClientConfig config,
     required String name,
     SdkOptional<String> name_2 = const SdkOmitted(),
     SdkOptional<String> value_ = const SdkOmitted(),
-    SdkOptional<ActionsUpdateOrgVariableRequestBodyVisibility> visibility = const SdkOmitted(),
+    SdkOptional<ActionsUpdateOrgVariableRequestBodyVisibility> visibility =
+        const SdkOmitted(),
     SdkOptional<List<int>> selectedRepositoryIds = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('PATCH',
@@ -2291,14 +2545,14 @@ Future<void> actionsUpdateOrgVariable(ClientConfig config,
             'name': SdkUtils.unwrapOptional(name_2),
             'value': SdkUtils.unwrapOptional(value_),
             'visibility': SdkUtils.unwrapOptional(visibility),
-            'selected_repository_ids': SdkUtils.unwrapOptional(selectedRepositoryIds)
+            'selected_repository_ids':
+                SdkUtils.unwrapOptional(selectedRepositoryIds)
           },
           decoder: SdkResponseDecoder.empty,
           operationId: 'actionsUpdateOrgVariable',
           options: requestOptions))
       .data;
 }
-
 
 /// Deletes an organization variable using the variable name. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -2316,7 +2570,6 @@ Future<void> actionsDeleteOrgVariable(ClientConfig config,
           options: requestOptions))
       .data;
 }
-
 
 /// Lists all repositories that can access an organization variable that is available to selected repositories. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
@@ -2337,20 +2590,24 @@ Future<ActionsListSelectedReposForOrgVariableResponse>
         SdkOptional<int> page = const SdkOmitted(),
         SdkOptional<int> perPage = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
-  return (await sdkRequest<ActionsListSelectedReposForOrgVariableResponse>('GET',
+  return (await sdkRequest<ActionsListSelectedReposForOrgVariableResponse>(
+          'GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/variables/${Uri.encodeComponent(name.toString())}/repositories',
           config: config,
           query: {
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true)
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsListSelectedReposForOrgVariable',
-          fromJsonRaw: (value) => ActionsListSelectedReposForOrgVariableResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsListSelectedReposForOrgVariableResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Replaces all repositories for an organization variable that is available to selected repositories. Organization variables that are available to selected repositories have their `visibility` field set to `selected`. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
@@ -2373,7 +2630,6 @@ Future<void> actionsSetSelectedReposForOrgVariable(ClientConfig config,
       .data;
 }
 
-
 /// Adds a repository to an organization variable configured for selected repositories. Use `name` and `repository_id` to identify the variable and repository to include; the variable must have `visibility` set to `selected`. The authenticated user must have collaborator access to the repository, and the token must have the required organization scope.
 ///
 /// Adds a repository to an organization variable that is available to selected repositories. Organization variables that are available to selected repositories have their `visibility` field set to `selected`. Authenticated users must have collaborator access to a repository to create, update, or read secrets. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
@@ -2393,7 +2649,6 @@ Future<void> actionsAddSelectedRepoToOrgVariable(ClientConfig config,
           options: requestOptions))
       .data;
 }
-
 
 /// Removes a repository from an organization variable configured for selected repositories. Use `name` and `repository_id` to identify the variable and repository to remove; the variable must have `visibility` set to `selected`. The authenticated user must have collaborator access to the repository, and the token must have the required organization scope.
 ///
@@ -2415,7 +2670,6 @@ Future<void> actionsRemoveSelectedRepoFromOrgVariable(ClientConfig config,
       .data;
 }
 
-
 /// Lists all artifacts for a repository. Anyone with read access to the repository can use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
@@ -2431,29 +2685,32 @@ Future<void> actionsRemoveSelectedRepoFromOrgVariable(ClientConfig config,
 ///   -rest-api)."
 /// [name] The name field of an artifact. When specified, only artifacts with
 ///   this name will be returned.
-Future<ActionsListArtifactsForRepoResponse>
-    actionsListArtifactsForRepo(ClientConfig config,
-        {required String owner,
-        required String repo,
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        SdkOptional<String> name = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ActionsListArtifactsForRepoResponse> actionsListArtifactsForRepo(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    SdkOptional<String> name = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<ActionsListArtifactsForRepoResponse>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/artifacts',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'name': SdkQueryValue(SdkUtils.unwrapOptional(name), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'name': SdkQueryValue(SdkUtils.unwrapOptional(name),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsListArtifactsForRepo',
-          fromJsonRaw: (value) => ActionsListArtifactsForRepoResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ActionsListArtifactsForRepoResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Gets a specific artifact for a workflow run. Anyone with read access to the repository can use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -2471,11 +2728,11 @@ Future<Artifact> actionsGetArtifact(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetArtifact',
-          fromJsonRaw: (value) => Artifact.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              Artifact.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Deletes an artifact for a workflow run. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -2497,7 +2754,6 @@ Future<void> actionsDeleteArtifact(ClientConfig config,
       .data;
 }
 
-
 /// Retrieves a short-lived redirect URL for downloading an artifact archive from a repository. Use `owner`, `repo`, and `artifact_id` to identify the repository and artifact; the download URL expires after one minute. Send `archive_format` as `zip`, and use an OAuth token or personal access token (classic) with the `repo` scope.
 ///
 /// Gets a redirect URL to download an archive for a repository. This URL expires after 1 minute. Look for `Location:` in the response header to find the URL for the download. The `:archive_format` must be `zip`. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
@@ -2518,10 +2774,11 @@ Future<void> actionsDownloadArtifact(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'actionsDownloadArtifact',
           options: requestOptions,
-          errors: {'410': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '410': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Gets GitHub Actions cache retention limit for a repository. This determines how long caches will be retained for, if not manually removed or evicted due to size constraints. OAuth tokens and personal access tokens (classic) need the `admin:repository` scope to use this endpoint.
 ///
@@ -2538,12 +2795,16 @@ Future<ActionsCacheRetentionLimitForRepository>
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetActionsCacheRetentionLimitForRepository',
-          fromJsonRaw: (value) => ActionsCacheRetentionLimitForRepository.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsCacheRetentionLimitForRepository.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Sets GitHub Actions cache retention limit for a repository. This determines how long caches will be retained for, if not manually removed or evicted due to size constraints. OAuth tokens and personal access tokens (classic) need the `admin:repository` scope to use this endpoint.
 ///
@@ -2552,25 +2813,31 @@ Future<ActionsCacheRetentionLimitForRepository>
 ///   not case sensitive.
 /// [maxCacheRetentionDays] The maximum number of days to keep caches in this
 ///   repository.
-Future<void>
-    actionsSetActionsCacheRetentionLimitForRepository(ClientConfig config,
-        {required String owner,
-        required String repo,
-        SdkOptional<int> maxCacheRetentionDays = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<void> actionsSetActionsCacheRetentionLimitForRepository(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    SdkOptional<int> maxCacheRetentionDays = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('PUT',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/cache/retention-limit',
           config: config,
           body: {
-            'max_cache_retention_days': SdkUtils.unwrapOptional(maxCacheRetentionDays)
+            'max_cache_retention_days':
+                SdkUtils.unwrapOptional(maxCacheRetentionDays)
           },
           decoder: SdkResponseDecoder.empty,
           operationId: 'actionsSetActionsCacheRetentionLimitForRepository',
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Gets GitHub Actions cache storage limit for a repository. This determines the maximum size of caches that can be stored before eviction occurs. OAuth tokens and personal access tokens (classic) need the `admin:repository` scope to use this endpoint.
 ///
@@ -2587,12 +2854,16 @@ Future<ActionsCacheStorageLimitForRepository>
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetActionsCacheStorageLimitForRepository',
-          fromJsonRaw: (value) => ActionsCacheStorageLimitForRepository.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsCacheStorageLimitForRepository.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Sets GitHub Actions cache storage limit for a repository. This determines the maximum size of caches that can be stored before eviction occurs. OAuth tokens and personal access tokens (classic) need the `admin:repository` scope to use this endpoint.
 ///
@@ -2601,12 +2872,12 @@ Future<ActionsCacheStorageLimitForRepository>
 ///   not case sensitive.
 /// [maxCacheSizeGb] The maximum total cache size for this repository, in
 ///   gigabytes.
-Future<void>
-    actionsSetActionsCacheStorageLimitForRepository(ClientConfig config,
-        {required String owner,
-        required String repo,
-        SdkOptional<int> maxCacheSizeGb = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<void> actionsSetActionsCacheStorageLimitForRepository(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    SdkOptional<int> maxCacheSizeGb = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('PUT',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/cache/storage-limit',
           config: config,
@@ -2614,31 +2885,36 @@ Future<void>
           decoder: SdkResponseDecoder.empty,
           operationId: 'actionsSetActionsCacheStorageLimitForRepository',
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Gets GitHub Actions cache usage for a repository. The data fetched using this API is refreshed approximately every 5 minutes, so values returned from this endpoint may take at least 5 minutes to get updated. Anyone with read access to the repository can use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
 /// [repo] The name of the repository without the `.git` extension. The name is
 ///   not case sensitive.
-Future<ActionsCacheUsageByRepository>
-    actionsGetActionsCacheUsage(ClientConfig config,
-        {required String owner,
-        required String repo,
-        RequestOptions? requestOptions}) async {
+Future<ActionsCacheUsageByRepository> actionsGetActionsCacheUsage(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<ActionsCacheUsageByRepository>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/cache/usage',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetActionsCacheUsage',
-          fromJsonRaw: (value) => ActionsCacheUsageByRepository.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ActionsCacheUsageByRepository.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists the GitHub Actions caches for a repository. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -2675,20 +2951,26 @@ Future<ActionsCacheList> actionsGetActionsCacheList(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/caches',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'ref': SdkQueryValue(SdkUtils.unwrapOptional(ref), style: 'form', explode: true),
-            'key': SdkQueryValue(SdkUtils.unwrapOptional(key), style: 'form', explode: true),
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true),
-            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'ref': SdkQueryValue(SdkUtils.unwrapOptional(ref),
+                style: 'form', explode: true),
+            'key': SdkQueryValue(SdkUtils.unwrapOptional(key),
+                style: 'form', explode: true),
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
+                style: 'form', explode: true),
+            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetActionsCacheList',
-          fromJsonRaw: (value) => ActionsCacheList.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsCacheList.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Deletes one or more GitHub Actions caches for a repository, using a complete cache key. By default, all caches that match the provided key are deleted, but you can optionally provide a Git ref to restrict deletions to caches that match both the provided key and the Git ref. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -2710,15 +2992,16 @@ Future<ActionsCacheList> actionsDeleteActionsCacheByKey(ClientConfig config,
           config: config,
           query: {
             'key': SdkQueryValue(key, style: 'form', explode: true),
-            'ref': SdkQueryValue(SdkUtils.unwrapOptional(ref), style: 'form', explode: true)
+            'ref': SdkQueryValue(SdkUtils.unwrapOptional(ref),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsDeleteActionsCacheByKey',
-          fromJsonRaw: (value) => ActionsCacheList.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsCacheList.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Deletes a GitHub Actions cache for a repository, using a cache ID. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -2740,7 +3023,6 @@ Future<void> actionsDeleteActionsCacheById(ClientConfig config,
       .data;
 }
 
-
 /// Lists the active concurrency groups for a repository. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
@@ -2756,28 +3038,33 @@ Future<void> actionsDeleteActionsCacheById(ClientConfig config,
 ///   after this cursor. For more information, see "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<ConcurrencyGroupList>
-    actionsListConcurrencyGroupsForRepository(ClientConfig config,
-        {required String owner,
-        required String repo,
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<String> after = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ConcurrencyGroupList> actionsListConcurrencyGroupsForRepository(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<String> after = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<ConcurrencyGroupList>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/concurrency_groups',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'after': SdkQueryValue(SdkUtils.unwrapOptional(after), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'after': SdkQueryValue(SdkUtils.unwrapOptional(after),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsListConcurrencyGroupsForRepository',
-          fromJsonRaw: (value) => ConcurrencyGroupList.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ConcurrencyGroupList.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Gets a specific concurrency group for a repository, including all instances in the group's queue. Returns 404 if the group is inactive or does not exist. Optionally, pass `ahead_of_run` or `ahead_of_job` to filter the results to only the items ahead of the specified workflow run or job in the queue, plus the specified item itself (returned as the last element). This is useful for determining what is blocking a particular run or job. Returns 422 if the specified run or job is not in this concurrency group. When using `ahead_of_run`, this matches workflow-level concurrency and any reusable-workflow leases held on behalf of that run. Job-level leases within the run are not considered to block the run as a whole. Use `ahead_of_job` to match job-level concurrency and reusable-workflow leases on the job's ancestor paths. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
@@ -2792,14 +3079,14 @@ Future<ConcurrencyGroupList>
 /// [aheadOfJob] Filter to items ahead of this job ID in the queue, plus the job
 ///   itself. Matches job-level concurrency and reusable-workflow leases on the
 ///   job's ancestor paths. Mutually exclusive with `ahead_of_run`.
-Future<ConcurrencyGroup>
-    actionsGetConcurrencyGroupForRepository(ClientConfig config,
-        {required String owner,
-        required String repo,
-        required String concurrencyGroupName,
-        SdkOptional<int> aheadOfRun = const SdkOmitted(),
-        SdkOptional<int> aheadOfJob = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ConcurrencyGroup> actionsGetConcurrencyGroupForRepository(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    required String concurrencyGroupName,
+    SdkOptional<int> aheadOfRun = const SdkOmitted(),
+    SdkOptional<int> aheadOfJob = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   if (aheadOfRun is SdkPresent<int>) {
     validateRange('ahead_of_run', aheadOfRun.value, min: 1);
   }
@@ -2811,17 +3098,24 @@ Future<ConcurrencyGroup>
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/concurrency_groups/${Uri.encodeComponent(concurrencyGroupName.toString())}',
           config: config,
           query: {
-            'ahead_of_run': SdkQueryValue(SdkUtils.unwrapOptional(aheadOfRun), style: 'form', explode: true),
-            'ahead_of_job': SdkQueryValue(SdkUtils.unwrapOptional(aheadOfJob), style: 'form', explode: true)
+            'ahead_of_run': SdkQueryValue(SdkUtils.unwrapOptional(aheadOfRun),
+                style: 'form', explode: true),
+            'ahead_of_job': SdkQueryValue(SdkUtils.unwrapOptional(aheadOfJob),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetConcurrencyGroupForRepository',
-          fromJsonRaw: (value) => ConcurrencyGroup.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ConcurrencyGroup.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Gets a specific job in a workflow run. Anyone with read access to the repository can use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -2844,7 +3138,6 @@ Future<Job> actionsGetJobForWorkflowRun(ClientConfig config,
       .data;
 }
 
-
 /// Gets a redirect URL to download a plain text file of logs for a workflow job. This link expires after 1 minute. Look for `Location:` in the response header to find the URL for the download. Anyone with read access to the repository can use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
@@ -2864,7 +3157,6 @@ Future<void> actionsDownloadJobLogsForWorkflowRun(ClientConfig config,
           options: requestOptions))
       .data;
 }
-
 
 /// Re-run a job and its dependent jobs in a workflow run. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -2892,10 +3184,11 @@ Future<Map<String, dynamic>> actionsReRunJobForWorkflowRun(ClientConfig config,
           operationId: 'actionsReRunJobForWorkflowRun',
           fromJsonRaw: (value) => value as Map<String, dynamic>,
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Gets a redirect URL to download a plain text file of logs for a specific step of a workflow job. This link expires after 1 minute. Look for `Location:` in the response header to find the URL for the download. This endpoint is intended for selective retrieval of one step. To download complete job logs, use the [job logs endpoint](https://docs.github.com/rest/actions/workflow-jobs#download-job-logs-for-a-workflow-run). Anyone with read access to the repository can use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -2921,28 +3214,30 @@ Future<void> actionsDownloadStepLogsForWorkflowRunJob(ClientConfig config,
       .data;
 }
 
-
 /// Gets the customization template for an OpenID Connect (OIDC) subject claim. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
 /// [repo] The name of the repository without the `.git` extension. The name is
 ///   not case sensitive.
-Future<OidcCustomSubRepo>
-    actionsGetCustomOidcSubClaimForRepo(ClientConfig config,
-        {required String owner,
-        required String repo,
-        RequestOptions? requestOptions}) async {
+Future<OidcCustomSubRepo> actionsGetCustomOidcSubClaimForRepo(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<OidcCustomSubRepo>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/oidc/customization/sub',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetCustomOidcSubClaimForRepo',
-          fromJsonRaw: (value) => OidcCustomSubRepo.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              OidcCustomSubRepo.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '400': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Sets the customization template and `opt-in` or `opt-out` flag for an OpenID Connect (OIDC) subject claim for a repository. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -2956,30 +3251,37 @@ Future<OidcCustomSubRepo>
 /// [useImmutableSubject] Whether to opt in to the immutable OIDC subject claim
 ///   format for this repository. When `true`, OIDC tokens will use a stable,
 ///   repository-ID-based `sub` claim.
-Future<Map<String, dynamic>>
-    actionsSetCustomOidcSubClaimForRepo(ClientConfig config,
-        {required String owner,
-        required String repo,
-        required bool useDefault,
-        SdkOptional<List<String>> includeClaimKeys = const SdkOmitted(),
-        SdkOptional<bool> useImmutableSubject = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<Map<String, dynamic>> actionsSetCustomOidcSubClaimForRepo(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    required bool useDefault,
+    SdkOptional<List<String>> includeClaimKeys = const SdkOmitted(),
+    SdkOptional<bool> useImmutableSubject = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<Map<String, dynamic>>('PUT',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/oidc/customization/sub',
           config: config,
           body: {
             'use_default': useDefault,
             'include_claim_keys': SdkUtils.unwrapOptional(includeClaimKeys),
-            'use_immutable_subject': SdkUtils.unwrapOptional(useImmutableSubject)
+            'use_immutable_subject':
+                SdkUtils.unwrapOptional(useImmutableSubject)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsSetCustomOidcSubClaimForRepo',
           fromJsonRaw: (value) => value as Map<String, dynamic>,
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Lists all organization secrets shared with a repository without revealing their encrypted values. Authenticated users must have collaborator access to a repository to create, update, or read secrets. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -3005,16 +3307,19 @@ Future<ActionsListRepoOrganizationSecretsResponse>
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/organization-secrets',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsListRepoOrganizationSecrets',
-          fromJsonRaw: (value) => ActionsListRepoOrganizationSecretsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsListRepoOrganizationSecretsResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists all organization variables shared with a repository. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -3040,16 +3345,19 @@ Future<ActionsListRepoOrganizationVariablesResponse>
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/organization-variables',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsListRepoOrganizationVariables',
-          fromJsonRaw: (value) => ActionsListRepoOrganizationVariablesResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsListRepoOrganizationVariablesResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Gets the GitHub Actions permissions policy for a repository, including whether GitHub Actions is enabled and the actions and reusable workflows allowed to run in the repository. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -3066,11 +3374,11 @@ Future<ActionsRepositoryPermissions>
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetGithubActionsPermissionsRepository',
-          fromJsonRaw: (value) => ActionsRepositoryPermissions.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ActionsRepositoryPermissions.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Sets the GitHub Actions permissions policy for enabling GitHub Actions and allowed actions and reusable workflows in the repository. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -3103,27 +3411,26 @@ Future<void> actionsSetGithubActionsPermissionsRepository(ClientConfig config,
       .data;
 }
 
-
 /// Gets the level of access that workflows outside of the repository have to actions and reusable workflows in the repository. This endpoint only applies to private repositories. For more information, see "[Allowing access to components in a private repository](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#allowing-access-to-components-in-a-private-repository)." OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
 /// [repo] The name of the repository without the `.git` extension. The name is
 ///   not case sensitive.
-Future<ActionsWorkflowAccessToRepository>
-    actionsGetWorkflowAccessToRepository(ClientConfig config,
-        {required String owner,
-        required String repo,
-        RequestOptions? requestOptions}) async {
+Future<ActionsWorkflowAccessToRepository> actionsGetWorkflowAccessToRepository(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<ActionsWorkflowAccessToRepository>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/permissions/access',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetWorkflowAccessToRepository',
-          fromJsonRaw: (value) => ActionsWorkflowAccessToRepository.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ActionsWorkflowAccessToRepository.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Sets the level of access that workflows outside of the repository have to actions and reusable workflows in the repository. This endpoint only applies to private repositories. For more information, see "[Allowing access to components in a private repository](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#allowing-access-to-components-in-a-private-repository)". OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -3150,7 +3457,6 @@ Future<void> actionsSetWorkflowAccessToRepository(ClientConfig config,
       .data;
 }
 
-
 /// Gets retention settings for checks, workflow runs, commit statuses, artifacts, and logs for a repository. Checks include check suites, check runs, and check annotations. These settings also apply to checks and commit statuses created by third-party integrations, and are not limited to data created by GitHub Actions. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
@@ -3168,10 +3474,11 @@ Future<ActionsArtifactAndLogRetentionResponse>
           operationId: 'actionsGetArtifactAndLogRetentionSettingsRepository',
           fromJsonRaw: (value) => ActionsArtifactAndLogRetentionResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Sets retention settings for checks, workflow runs, commit statuses, artifacts, and logs for a repository. Checks include check suites, check runs, and check annotations. These settings also apply to checks and commit statuses created by third-party integrations, and are not limited to data created by GitHub Actions. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -3180,12 +3487,12 @@ Future<ActionsArtifactAndLogRetentionResponse>
 ///   not case sensitive.
 /// [days] The number of days to retain checks, workflow runs, commit statuses,
 ///   artifacts, and logs
-Future<void>
-    actionsSetArtifactAndLogRetentionSettingsRepository(ClientConfig config,
-        {required String owner,
-        required String repo,
-        required int days,
-        RequestOptions? requestOptions}) async {
+Future<void> actionsSetArtifactAndLogRetentionSettingsRepository(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    required int days,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('PUT',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/permissions/artifact-and-log-retention',
           config: config,
@@ -3193,10 +3500,14 @@ Future<void>
           decoder: SdkResponseDecoder.empty,
           operationId: 'actionsSetArtifactAndLogRetentionSettingsRepository',
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Gets the fork PR contributor approval policy for a repository. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -3204,7 +3515,8 @@ Future<void>
 /// [repo] The name of the repository without the `.git` extension. The name is
 ///   not case sensitive.
 Future<ActionsForkPrContributorApproval>
-    actionsGetForkPrContributorApprovalPermissionsRepository(ClientConfig config,
+    actionsGetForkPrContributorApprovalPermissionsRepository(
+        ClientConfig config,
         {required String owner,
         required String repo,
         RequestOptions? requestOptions}) async {
@@ -3215,10 +3527,11 @@ Future<ActionsForkPrContributorApproval>
           operationId: 'actionsGetForkPrContributorApprovalPermissionsRepository',
           fromJsonRaw: (value) => ActionsForkPrContributorApproval.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Sets the fork PR contributor approval policy for a repository. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -3227,23 +3540,28 @@ Future<ActionsForkPrContributorApproval>
 ///   not case sensitive.
 /// [approvalPolicy] The policy that controls when fork PR workflows require
 ///   approval from a maintainer.
-Future<void>
-    actionsSetForkPrContributorApprovalPermissionsRepository(ClientConfig config,
-        {required String owner,
-        required String repo,
-        required ActionsForkPrContributorApprovalApprovalPolicy approvalPolicy,
-        RequestOptions? requestOptions}) async {
+Future<void> actionsSetForkPrContributorApprovalPermissionsRepository(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    required ActionsForkPrContributorApprovalApprovalPolicy approvalPolicy,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('PUT',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/permissions/fork-pr-contributor-approval',
           config: config,
           body: {'approval_policy': approvalPolicy},
           decoder: SdkResponseDecoder.empty,
-          operationId: 'actionsSetForkPrContributorApprovalPermissionsRepository',
+          operationId:
+              'actionsSetForkPrContributorApprovalPermissionsRepository',
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Gets the settings for whether workflows from fork pull requests can run on a private repository. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -3260,12 +3578,15 @@ Future<ActionsForkPrWorkflowsPrivateRepos>
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetPrivateRepoForkPrWorkflowsSettingsRepository',
-          fromJsonRaw: (value) => ActionsForkPrWorkflowsPrivateRepos.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ActionsForkPrWorkflowsPrivateRepos.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Sets the settings for whether workflows from fork pull requests can run on a private repository. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -3281,31 +3602,39 @@ Future<ActionsForkPrWorkflowsPrivateRepos>
 ///   workflows triggered by pull requests from forks.
 /// [requireApprovalForForkPrWorkflows] Whether workflows triggered by pull
 ///   requests from forks require approval from a repository administrator to run.
-Future<void>
-    actionsSetPrivateRepoForkPrWorkflowsSettingsRepository(ClientConfig config,
-        {required String owner,
-        required String repo,
-        required bool runWorkflowsFromForkPullRequests,
-        SdkOptional<bool> sendWriteTokensToWorkflows = const SdkOmitted(),
-        SdkOptional<bool> sendSecretsAndVariables = const SdkOmitted(),
-        SdkOptional<bool> requireApprovalForForkPrWorkflows = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<void> actionsSetPrivateRepoForkPrWorkflowsSettingsRepository(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    required bool runWorkflowsFromForkPullRequests,
+    SdkOptional<bool> sendWriteTokensToWorkflows = const SdkOmitted(),
+    SdkOptional<bool> sendSecretsAndVariables = const SdkOmitted(),
+    SdkOptional<bool> requireApprovalForForkPrWorkflows = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('PUT',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/permissions/fork-pr-workflows-private-repos',
           config: config,
           body: {
-            'run_workflows_from_fork_pull_requests': runWorkflowsFromForkPullRequests,
-            'send_write_tokens_to_workflows': SdkUtils.unwrapOptional(sendWriteTokensToWorkflows),
-            'send_secrets_and_variables': SdkUtils.unwrapOptional(sendSecretsAndVariables),
-            'require_approval_for_fork_pr_workflows': SdkUtils.unwrapOptional(requireApprovalForForkPrWorkflows)
+            'run_workflows_from_fork_pull_requests':
+                runWorkflowsFromForkPullRequests,
+            'send_write_tokens_to_workflows':
+                SdkUtils.unwrapOptional(sendWriteTokensToWorkflows),
+            'send_secrets_and_variables':
+                SdkUtils.unwrapOptional(sendSecretsAndVariables),
+            'require_approval_for_fork_pr_workflows':
+                SdkUtils.unwrapOptional(requireApprovalForForkPrWorkflows)
           },
           decoder: SdkResponseDecoder.empty,
           operationId: 'actionsSetPrivateRepoForkPrWorkflowsSettingsRepository',
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Gets the settings for selected actions and reusable workflows that are allowed in a repository. To use this endpoint, the repository policy for `allowed_actions` must be configured to `selected`. For more information, see "Set GitHub Actions permissions for a repository." OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -3321,11 +3650,11 @@ Future<SelectedActions> actionsGetAllowedActionsRepository(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetAllowedActionsRepository',
-          fromJsonRaw: (value) => SelectedActions.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              SelectedActions.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Sets the actions and reusable workflows that are allowed in a repository. To use this endpoint, the repository permission policy for `allowed_actions` must be configured to `selected`. For more information, see "Set GitHub Actions permissions for a repository." OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -3363,14 +3692,14 @@ Future<void> actionsSetAllowedActionsRepository(ClientConfig config,
       .data;
 }
 
-
 /// Gets the default workflow permissions granted to the `GITHUB_TOKEN` when running workflows in a repository, as well as if GitHub Actions can submit approving pull request reviews. For more information, see "[Setting the permissions of the GITHUB_TOKEN for your repository](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#setting-the-permissions-of-the-github_token-for-your-repository)." OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
 /// [repo] The name of the repository without the `.git` extension. The name is
 ///   not case sensitive.
 Future<ActionsGetDefaultWorkflowPermissions>
-    actionsGetGithubActionsDefaultWorkflowPermissionsRepository(ClientConfig config,
+    actionsGetGithubActionsDefaultWorkflowPermissionsRepository(
+        ClientConfig config,
         {required String owner,
         required String repo,
         RequestOptions? requestOptions}) async {
@@ -3378,12 +3707,13 @@ Future<ActionsGetDefaultWorkflowPermissions>
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/permissions/workflow',
           config: config,
           decoder: SdkResponseDecoder.json,
-          operationId: 'actionsGetGithubActionsDefaultWorkflowPermissionsRepository',
-          fromJsonRaw: (value) => ActionsGetDefaultWorkflowPermissions.fromJson(value as Map<String, dynamic>),
+          operationId:
+              'actionsGetGithubActionsDefaultWorkflowPermissionsRepository',
+          fromJsonRaw: (value) => ActionsGetDefaultWorkflowPermissions.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Sets the default workflow permissions granted to the `GITHUB_TOKEN` when running workflows in a repository, and sets if GitHub Actions can submit approving pull request reviews. For more information, see "[Setting the permissions of the GITHUB_TOKEN for your repository](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#setting-the-permissions-of-the-github_token-for-your-repository)." OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -3394,26 +3724,29 @@ Future<ActionsGetDefaultWorkflowPermissions>
 ///   GITHUB_TOKEN when running workflows.
 /// [canApprovePullRequestReviews] Whether GitHub Actions can approve pull
 ///   requests. Enabling this can be a security risk.
-Future<void>
-    actionsSetGithubActionsDefaultWorkflowPermissionsRepository(ClientConfig config,
-        {required String owner,
-        required String repo,
-        SdkOptional<ActionsDefaultWorkflowPermissions> defaultWorkflowPermissions = const SdkOmitted(),
-        SdkOptional<bool> canApprovePullRequestReviews = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<void> actionsSetGithubActionsDefaultWorkflowPermissionsRepository(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    SdkOptional<ActionsDefaultWorkflowPermissions> defaultWorkflowPermissions =
+        const SdkOmitted(),
+    SdkOptional<bool> canApprovePullRequestReviews = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('PUT',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/permissions/workflow',
           config: config,
           body: {
-            'default_workflow_permissions': SdkUtils.unwrapOptional(defaultWorkflowPermissions),
-            'can_approve_pull_request_reviews': SdkUtils.unwrapOptional(canApprovePullRequestReviews)
+            'default_workflow_permissions':
+                SdkUtils.unwrapOptional(defaultWorkflowPermissions),
+            'can_approve_pull_request_reviews':
+                SdkUtils.unwrapOptional(canApprovePullRequestReviews)
           },
           decoder: SdkResponseDecoder.empty,
-          operationId: 'actionsSetGithubActionsDefaultWorkflowPermissionsRepository',
+          operationId:
+              'actionsSetGithubActionsDefaultWorkflowPermissionsRepository',
           options: requestOptions))
       .data;
 }
-
 
 /// Lists Actions policies that apply to a repository. Use `has_parents` to include policies configured at higher levels, and `page` and `per_page` to paginate the results.
 ///
@@ -3432,30 +3765,38 @@ Future<void>
 ///   -rest-api)."
 /// [hasParents] Include policies configured at higher levels that apply to this
 ///   repository
-Future<ActionsGetRepoActionsPoliciesResponse>
-    actionsGetRepoActionsPolicies(ClientConfig config,
-        {required String owner,
-        required String repo,
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        SdkOptional<bool> hasParents = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ActionsGetRepoActionsPoliciesResponse> actionsGetRepoActionsPolicies(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    SdkOptional<bool> hasParents = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<ActionsGetRepoActionsPoliciesResponse>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/policies',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'has_parents': SdkQueryValue(SdkUtils.unwrapOptional(hasParents), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'has_parents': SdkQueryValue(SdkUtils.unwrapOptional(hasParents),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetRepoActionsPolicies',
-          fromJsonRaw: (value) => ActionsGetRepoActionsPoliciesResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsGetRepoActionsPoliciesResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Create an Actions policy for a repository. Omitting `workflow_path` targets all workflows without storing an explicit condition.
 ///
@@ -3489,12 +3830,18 @@ Future<ActionsPolicy> actionsCreateRepoActionsPolicy(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsCreateRepoActionsPolicy',
-          fromJsonRaw: (value) => ActionsPolicy.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsPolicy.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>),
+            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Retrieves a specific Actions policy for a repository. Use `policy_id` to identify the policy and inspect its target, source, enforcement level, and rules.
 ///
@@ -3514,12 +3861,15 @@ Future<ActionsPolicy> actionsGetRepoActionsPolicy(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetRepoActionsPolicy',
-          fromJsonRaw: (value) => ActionsPolicy.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsPolicy.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Update an Actions policy for a repository. Omitting `workflow_path` preserves the policy's existing workflow targeting.
 ///
@@ -3555,12 +3905,18 @@ Future<ActionsPolicy> actionsUpdateRepoActionsPolicy(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsUpdateRepoActionsPolicy',
-          fromJsonRaw: (value) => ActionsPolicy.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsPolicy.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>),
+            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Deletes an Actions policy from a repository. Use `policy_id` to identify the policy you want to remove; this operation does not return a response body when successful.
 ///
@@ -3581,10 +3937,12 @@ Future<void> actionsDeleteRepoActionsPolicy(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'actionsDeleteRepoActionsPolicy',
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Lists all self-hosted runners configured in a repository. Authenticated users must have admin access to the repository to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -3612,17 +3970,21 @@ Future<ActionsListSelfHostedRunnersForRepoResponse>
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/runners',
           config: config,
           query: {
-            'name': SdkQueryValue(SdkUtils.unwrapOptional(name), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'name': SdkQueryValue(SdkUtils.unwrapOptional(name),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsListSelfHostedRunnersForRepo',
-          fromJsonRaw: (value) => ActionsListSelfHostedRunnersForRepoResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsListSelfHostedRunnersForRepoResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Gets the end-of-life schedule for a specific runner version in a repository. Returns the runner version and the dates when registration and runtime support will end. Authenticated users must have admin access to the repository to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -3636,37 +3998,41 @@ Future<ActionsGetRunnerVersionDeprecationForRepoResponse>
         required String repo,
         required String version,
         RequestOptions? requestOptions}) async {
-  return (await sdkRequest<ActionsGetRunnerVersionDeprecationForRepoResponse>('GET',
+  return (await sdkRequest<ActionsGetRunnerVersionDeprecationForRepoResponse>(
+          'GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/runners/deprecations/${Uri.encodeComponent(version.toString())}',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetRunnerVersionDeprecationForRepo',
-          fromJsonRaw: (value) => ActionsGetRunnerVersionDeprecationForRepoResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsGetRunnerVersionDeprecationForRepoResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists binaries for the runner application that you can download and run. Authenticated users must have admin access to the repository to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
 /// [repo] The name of the repository without the `.git` extension. The name is
 ///   not case sensitive.
-Future<List<RunnerApplication>>
-    actionsListRunnerApplicationsForRepo(ClientConfig config,
-        {required String owner,
-        required String repo,
-        RequestOptions? requestOptions}) async {
+Future<List<RunnerApplication>> actionsListRunnerApplicationsForRepo(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<RunnerApplication>>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/runners/downloads',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsListRunnerApplicationsForRepo',
-          fromJsonRaw: (value) => (value as List).map((item) => RunnerApplication.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) =>
+                  RunnerApplication.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions))
       .data;
 }
-
 
 /// Generates a configuration that can be passed to the runner application at startup. The authenticated user must have admin access to the repository. OAuth tokens and personal access tokens (classic) need the`repo` scope to use this endpoint.
 ///
@@ -3679,15 +4045,15 @@ Future<List<RunnerApplication>>
 ///   items**: 1. **Maximum items**: 100.
 /// [workFolder] The working directory to be used for job execution, relative to
 ///   the runner install directory.
-Future<SchemaSchemacee94e2c>
-    actionsGenerateRunnerJitconfigForRepo(ClientConfig config,
-        {required String owner,
-        required String repo,
-        required String name,
-        required int runnerGroupId,
-        required List<String> labels,
-        SdkOptional<String> workFolder = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<SchemaSchemacee94e2c> actionsGenerateRunnerJitconfigForRepo(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    required String name,
+    required int runnerGroupId,
+    required List<String> labels,
+    SdkOptional<String> workFolder = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   validateItems('labels', labels, min: 1, max: 100);
 
   return (await sdkRequest<SchemaSchemacee94e2c>('POST',
@@ -3701,33 +4067,40 @@ Future<SchemaSchemacee94e2c>
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGenerateRunnerJitconfigForRepo',
-          fromJsonRaw: (value) => SchemaSchemacee94e2c.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              SchemaSchemacee94e2c.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '409': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Returns a token that you can pass to the `config` script. The token expires after one hour. For example, you can replace `TOKEN` in the following example with the registration token provided by this endpoint to configure your self-hosted runner: ``` ./config.sh --url https://github.com/octo-org --token TOKEN ``` Authenticated users must have admin access to the repository to use this endpoint. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
 /// [repo] The name of the repository without the `.git` extension. The name is
 ///   not case sensitive.
-Future<AuthenticationToken>
-    actionsCreateRegistrationTokenForRepo(ClientConfig config,
-        {required String owner,
-        required String repo,
-        RequestOptions? requestOptions}) async {
+Future<AuthenticationToken> actionsCreateRegistrationTokenForRepo(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<AuthenticationToken>('POST',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/runners/registration-token',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsCreateRegistrationTokenForRepo',
-          fromJsonRaw: (value) => AuthenticationToken.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              AuthenticationToken.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Returns a token that you can pass to the `config` script to remove a self-hosted runner from an repository. The token expires after one hour. For example, you can replace `TOKEN` in the following example with the registration token provided by this endpoint to remove your self-hosted runner from an organization: ``` ./config.sh remove --token TOKEN ``` Authenticated users must have admin access to the repository to use this endpoint. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -3743,11 +4116,11 @@ Future<AuthenticationToken> actionsCreateRemoveTokenForRepo(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsCreateRemoveTokenForRepo',
-          fromJsonRaw: (value) => AuthenticationToken.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              AuthenticationToken.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Gets a specific self-hosted runner configured in a repository. Authenticated users must have admin access to the repository to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -3765,11 +4138,11 @@ Future<Runner> actionsGetSelfHostedRunnerForRepo(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetSelfHostedRunnerForRepo',
-          fromJsonRaw: (value) => Runner.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              Runner.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Forces the removal of a self-hosted runner from a repository. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. Authenticated users must have admin access to the repository to use this endpoint. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -3788,10 +4161,12 @@ Future<void> actionsDeleteSelfHostedRunnerFromRepo(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'actionsDeleteSelfHostedRunnerFromRepo',
           options: requestOptions,
-          errors: {'422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '422': (value) =>
+            ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Lists all labels for a self-hosted runner configured in a repository. Authenticated users must have admin access to the repository to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -3799,12 +4174,12 @@ Future<void> actionsDeleteSelfHostedRunnerFromRepo(ClientConfig config,
 /// [repo] The name of the repository without the `.git` extension. The name is
 ///   not case sensitive.
 /// [runnerId] Unique identifier of the self-hosted runner.
-Future<SchemaSchemac8266fdc>
-    actionsListLabelsForSelfHostedRunnerForRepo(ClientConfig config,
-        {required String owner,
-        required String repo,
-        required int runnerId,
-        RequestOptions? requestOptions}) async {
+Future<SchemaSchemac8266fdc> actionsListLabelsForSelfHostedRunnerForRepo(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    required int runnerId,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<SchemaSchemac8266fdc>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/runners/${Uri.encodeComponent(runnerId.toString())}/labels',
           config: config,
@@ -3812,10 +4187,11 @@ Future<SchemaSchemac8266fdc>
           operationId: 'actionsListLabelsForSelfHostedRunnerForRepo',
           fromJsonRaw: (value) => SchemaSchemac8266fdc.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Adds custom labels to a self-hosted runner configured in a repository. Authenticated users must have admin access to the organization to use this endpoint. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -3824,13 +4200,13 @@ Future<SchemaSchemac8266fdc>
 ///   not case sensitive.
 /// [runnerId] Unique identifier of the self-hosted runner.
 /// [labels] The names of the custom labels to add to the runner.
-Future<SchemaSchemac8266fdc>
-    actionsAddCustomLabelsToSelfHostedRunnerForRepo(ClientConfig config,
-        {required String owner,
-        required String repo,
-        required int runnerId,
-        required List<String> labels,
-        RequestOptions? requestOptions}) async {
+Future<SchemaSchemac8266fdc> actionsAddCustomLabelsToSelfHostedRunnerForRepo(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    required int runnerId,
+    required List<String> labels,
+    RequestOptions? requestOptions}) async {
   validateItems('labels', labels, min: 1, max: 100);
 
   return (await sdkRequest<SchemaSchemac8266fdc>('POST',
@@ -3839,12 +4215,17 @@ Future<SchemaSchemac8266fdc>
           body: {'labels': labels},
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsAddCustomLabelsToSelfHostedRunnerForRepo',
-          fromJsonRaw: (value) => SchemaSchemac8266fdc.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              SchemaSchemac8266fdc.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Remove all previous custom labels and set the new custom labels for a specific self-hosted runner configured in a repository. Authenticated users must have admin access to the repository to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -3854,13 +4235,13 @@ Future<SchemaSchemac8266fdc>
 /// [runnerId] Unique identifier of the self-hosted runner.
 /// [labels] The names of the custom labels to set for the runner. You can pass
 ///   an empty array to remove all custom labels.
-Future<SchemaSchemac8266fdc>
-    actionsSetCustomLabelsForSelfHostedRunnerForRepo(ClientConfig config,
-        {required String owner,
-        required String repo,
-        required int runnerId,
-        required List<String> labels,
-        RequestOptions? requestOptions}) async {
+Future<SchemaSchemac8266fdc> actionsSetCustomLabelsForSelfHostedRunnerForRepo(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    required int runnerId,
+    required List<String> labels,
+    RequestOptions? requestOptions}) async {
   validateItems('labels', labels, min: 0, max: 100);
 
   return (await sdkRequest<SchemaSchemac8266fdc>('PUT',
@@ -3869,12 +4250,17 @@ Future<SchemaSchemac8266fdc>
           body: {'labels': labels},
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsSetCustomLabelsForSelfHostedRunnerForRepo',
-          fromJsonRaw: (value) => SchemaSchemac8266fdc.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              SchemaSchemac8266fdc.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Remove all custom labels from a self-hosted runner configured in a repository. Returns the remaining read-only labels from the runner. Authenticated users must have admin access to the repository to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -3895,10 +4281,11 @@ Future<SchemaSchema328ddb88>
           operationId: 'actionsRemoveAllCustomLabelsFromSelfHostedRunnerForRepo',
           fromJsonRaw: (value) => SchemaSchema328ddb88.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Remove a custom label from a self-hosted runner configured in a repository. Returns the remaining labels from the runner. This endpoint returns a `404 Not Found` status if the custom label is not present on the runner. Authenticated users must have admin access to the repository to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -3919,12 +4306,16 @@ Future<SchemaSchemac8266fdc>
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsRemoveCustomLabelFromSelfHostedRunnerForRepo',
-          fromJsonRaw: (value) => SchemaSchemac8266fdc.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              SchemaSchemac8266fdc.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '422': (value) =>
+            ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Lists all workflow runs for a repository. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#parameters). Anyone with read access to the repository can use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository. This endpoint will return up to 1,000 results for each search when using the following parameters: `actor`, `branch`, `check_suite_id`, `created`, `event`, `head_sha`, `status`.
 ///
@@ -3962,21 +4353,21 @@ Future<SchemaSchemac8266fdc>
 ///   specify.
 /// [headSha] Only returns workflow runs that are associated with the specified
 ///   `head_sha`.
-Future<ActionsListWorkflowRunsForRepoResponse>
-    actionsListWorkflowRunsForRepo(ClientConfig config,
-        {required String owner,
-        required String repo,
-        SdkOptional<String> actor = const SdkOmitted(),
-        SdkOptional<String> branch = const SdkOmitted(),
-        SdkOptional<String> event = const SdkOmitted(),
-        SdkOptional<SchemaSchema9f04b9bc> status = const SdkOmitted(),
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        SdkOptional<String> created = const SdkOmitted(),
-        SdkOptional<bool> excludePullRequests = const SdkOmitted(),
-        SdkOptional<int> checkSuiteId = const SdkOmitted(),
-        SdkOptional<String> headSha = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ActionsListWorkflowRunsForRepoResponse> actionsListWorkflowRunsForRepo(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    SdkOptional<String> actor = const SdkOmitted(),
+    SdkOptional<String> branch = const SdkOmitted(),
+    SdkOptional<String> event = const SdkOmitted(),
+    SdkOptional<SchemaSchema9f04b9bc> status = const SdkOmitted(),
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    SdkOptional<String> created = const SdkOmitted(),
+    SdkOptional<bool> excludePullRequests = const SdkOmitted(),
+    SdkOptional<int> checkSuiteId = const SdkOmitted(),
+    SdkOptional<String> headSha = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   if (created is SdkPresent<String>) {
     sdkValidateDateTime('created', created.value);
   }
@@ -3985,24 +4376,39 @@ Future<ActionsListWorkflowRunsForRepoResponse>
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/runs',
           config: config,
           query: {
-            'actor': SdkQueryValue(SdkUtils.unwrapOptional(actor), style: 'form', explode: true),
-            'branch': SdkQueryValue(SdkUtils.unwrapOptional(branch), style: 'form', explode: true),
-            'event': SdkQueryValue(SdkUtils.unwrapOptional(event), style: 'form', explode: true),
-            'status': SdkQueryValue(SdkUtils.unwrapOptional(status), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'created': SdkQueryValue(SdkUtils.unwrapOptional(created), style: 'form', explode: true),
-            'exclude_pull_requests': SdkQueryValue(SdkUtils.unwrapOptional(excludePullRequests), style: 'form', explode: true),
-            'check_suite_id': SdkQueryValue(SdkUtils.unwrapOptional(checkSuiteId), style: 'form', explode: true),
-            'head_sha': SdkQueryValue(SdkUtils.unwrapOptional(headSha), style: 'form', explode: true)
+            'actor': SdkQueryValue(SdkUtils.unwrapOptional(actor),
+                style: 'form', explode: true),
+            'branch': SdkQueryValue(SdkUtils.unwrapOptional(branch),
+                style: 'form', explode: true),
+            'event': SdkQueryValue(SdkUtils.unwrapOptional(event),
+                style: 'form', explode: true),
+            'status': SdkQueryValue(SdkUtils.unwrapOptional(status),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'created': SdkQueryValue(SdkUtils.unwrapOptional(created),
+                style: 'form', explode: true),
+            'exclude_pull_requests': SdkQueryValue(
+                SdkUtils.unwrapOptional(excludePullRequests),
+                style: 'form',
+                explode: true),
+            'check_suite_id': SdkQueryValue(
+                SdkUtils.unwrapOptional(checkSuiteId),
+                style: 'form',
+                explode: true),
+            'head_sha': SdkQueryValue(SdkUtils.unwrapOptional(headSha),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsListWorkflowRunsForRepo',
-          fromJsonRaw: (value) => ActionsListWorkflowRunsForRepoResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsListWorkflowRunsForRepoResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Gets a specific workflow run. Anyone with read access to the repository can use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
@@ -4022,15 +4428,18 @@ Future<WorkflowRun> actionsGetWorkflowRun(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/runs/${Uri.encodeComponent(runId.toString())}',
           config: config,
           query: {
-            'exclude_pull_requests': SdkQueryValue(SdkUtils.unwrapOptional(excludePullRequests), style: 'form', explode: true)
+            'exclude_pull_requests': SdkQueryValue(
+                SdkUtils.unwrapOptional(excludePullRequests),
+                style: 'form',
+                explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetWorkflowRun',
-          fromJsonRaw: (value) => WorkflowRun.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              WorkflowRun.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Deletes a specific workflow run. Anyone with write access to the repository can use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -4052,7 +4461,6 @@ Future<void> actionsDeleteWorkflowRun(ClientConfig config,
       .data;
 }
 
-
 /// Anyone with read access to the repository can use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
@@ -4069,11 +4477,13 @@ Future<List<EnvironmentApprovals>> actionsGetReviewsForRun(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetReviewsForRun',
-          fromJsonRaw: (value) => (value as List).map((item) => EnvironmentApprovals.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) =>
+                  EnvironmentApprovals.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions))
       .data;
 }
-
 
 /// Approves a workflow run for a pull request from a public fork of a first time contributor. For more information, see ["Approving workflow runs from public forks](https://docs.github.com/actions/managing-workflow-runs/approving-workflow-runs-from-public-forks)." OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -4093,10 +4503,12 @@ Future<Map<String, dynamic>> actionsApproveWorkflowRun(ClientConfig config,
           operationId: 'actionsApproveWorkflowRun',
           fromJsonRaw: (value) => value as Map<String, dynamic>,
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Lists artifacts for a workflow run. Anyone with read access to the repository can use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
@@ -4115,32 +4527,37 @@ Future<Map<String, dynamic>> actionsApproveWorkflowRun(ClientConfig config,
 /// [name] The name field of an artifact. When specified, only artifacts with
 ///   this name will be returned.
 /// [direction] The direction to sort the results by.
-Future<ActionsListWorkflowRunArtifactsResponse>
-    actionsListWorkflowRunArtifacts(ClientConfig config,
-        {required String owner,
-        required String repo,
-        required int runId,
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        SdkOptional<String> name = const SdkOmitted(),
-        SdkOptional<SchemaSchema0df64690> direction = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ActionsListWorkflowRunArtifactsResponse> actionsListWorkflowRunArtifacts(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    required int runId,
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    SdkOptional<String> name = const SdkOmitted(),
+    SdkOptional<SchemaSchema0df64690> direction = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<ActionsListWorkflowRunArtifactsResponse>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/runs/${Uri.encodeComponent(runId.toString())}/artifacts',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'name': SdkQueryValue(SdkUtils.unwrapOptional(name), style: 'form', explode: true),
-            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'name': SdkQueryValue(SdkUtils.unwrapOptional(name),
+                style: 'form', explode: true),
+            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsListWorkflowRunArtifacts',
-          fromJsonRaw: (value) => ActionsListWorkflowRunArtifactsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsListWorkflowRunArtifactsResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Gets a specific workflow run attempt. Anyone with read access to the repository can use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
@@ -4162,15 +4579,18 @@ Future<WorkflowRun> actionsGetWorkflowRunAttempt(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/runs/${Uri.encodeComponent(runId.toString())}/attempts/${Uri.encodeComponent(attemptNumber.toString())}',
           config: config,
           query: {
-            'exclude_pull_requests': SdkQueryValue(SdkUtils.unwrapOptional(excludePullRequests), style: 'form', explode: true)
+            'exclude_pull_requests': SdkQueryValue(
+                SdkUtils.unwrapOptional(excludePullRequests),
+                style: 'form',
+                explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetWorkflowRunAttempt',
-          fromJsonRaw: (value) => WorkflowRun.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              WorkflowRun.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists jobs for a specific workflow run attempt. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#parameters). Anyone with read access to the repository can use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
@@ -4200,17 +4620,22 @@ Future<ActionsListJobsForWorkflowRunAttemptResponse>
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/runs/${Uri.encodeComponent(runId.toString())}/attempts/${Uri.encodeComponent(attemptNumber.toString())}/jobs',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsListJobsForWorkflowRunAttempt',
-          fromJsonRaw: (value) => ActionsListJobsForWorkflowRunAttemptResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsListJobsForWorkflowRunAttemptResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Gets a redirect URL to download an archive of log files for a specific workflow run attempt. This link expires after 1 minute. Look for `Location:` in the response header to find the URL for the download. Anyone with read access to the repository can use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -4234,7 +4659,6 @@ Future<void> actionsDownloadWorkflowRunAttemptLogs(ClientConfig config,
       .data;
 }
 
-
 /// Cancels a workflow run using its `id`. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
@@ -4253,10 +4677,11 @@ Future<Map<String, dynamic>> actionsCancelWorkflowRun(ClientConfig config,
           operationId: 'actionsCancelWorkflowRun',
           fromJsonRaw: (value) => value as Map<String, dynamic>,
           options: requestOptions,
-          errors: {'409': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '409': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Lists all concurrency groups associated with a workflow run or its jobs. The set of groups is derived from the run's configuration, so a group is included even when the run no longer has any items currently holding or waiting in it. In that case the `group_members` array will be empty. `total_count` reflects the number of groups the run participates in by configuration, not the number with active items. This differs from `GET /repos/{owner}/{repo}/actions/concurrency_groups/{group_name}`, which returns 404 when a group has no active items. That endpoint reports the live state of a group repo-wide, while this endpoint reports the groups associated with a specific run by configuration. Results are sorted by group name and support cursor-based pagination via `before` and `after`. The `after` cursor paginates forward only and does not emit a `rel="prev"` Link; use `before` to page backward from a forward page's `next` cursor. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
@@ -4280,31 +4705,39 @@ Future<Map<String, dynamic>> actionsCancelWorkflowRun(ClientConfig config,
 ///   after this cursor. For more information, see "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<ConcurrencyGroupRunList>
-    actionsListConcurrencyGroupsForWorkflowRun(ClientConfig config,
-        {required String owner,
-        required String repo,
-        required int runId,
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<String> before = const SdkOmitted(),
-        SdkOptional<String> after = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ConcurrencyGroupRunList> actionsListConcurrencyGroupsForWorkflowRun(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    required int runId,
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<String> before = const SdkOmitted(),
+    SdkOptional<String> after = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<ConcurrencyGroupRunList>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/runs/${Uri.encodeComponent(runId.toString())}/concurrency_groups',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'before': SdkQueryValue(SdkUtils.unwrapOptional(before), style: 'form', explode: true),
-            'after': SdkQueryValue(SdkUtils.unwrapOptional(after), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'before': SdkQueryValue(SdkUtils.unwrapOptional(before),
+                style: 'form', explode: true),
+            'after': SdkQueryValue(SdkUtils.unwrapOptional(after),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsListConcurrencyGroupsForWorkflowRun',
-          fromJsonRaw: (value) => ConcurrencyGroupRunList.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ConcurrencyGroupRunList.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Submits an approval or rejection for a custom deployment protection rule on a workflow run. Use this endpoint when your GitHub App owns the rule; to review a deployment waiting on a person or team, use POST /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments instead. OAuth app tokens and personal access tokens (classic) need the `repo` scope for private repositories.
 ///
@@ -4330,7 +4763,6 @@ Future<void> actionsReviewCustomGatesForRun(ClientConfig config,
       .data;
 }
 
-
 /// Cancels a workflow run and bypasses conditions that would otherwise cause a workflow execution to continue, such as an `always()` condition on a job. You should only use this endpoint to cancel a workflow run when the workflow run is not responding to `POST /repos/{owner}/{repo}/actions/runs/{run_id}/cancel`. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
@@ -4349,10 +4781,11 @@ Future<Map<String, dynamic>> actionsForceCancelWorkflowRun(ClientConfig config,
           operationId: 'actionsForceCancelWorkflowRun',
           fromJsonRaw: (value) => value as Map<String, dynamic>,
           options: requestOptions,
-          errors: {'409': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '409': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Lists jobs for a workflow run. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#parameters). Anyone with read access to the repository can use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
@@ -4371,30 +4804,35 @@ Future<Map<String, dynamic>> actionsForceCancelWorkflowRun(ClientConfig config,
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<ActionsListJobsForWorkflowRunResponse>
-    actionsListJobsForWorkflowRun(ClientConfig config,
-        {required String owner,
-        required String repo,
-        required int runId,
-        SdkOptional<ActionsListJobsForWorkflowRunFilter> filter = const SdkOmitted(),
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ActionsListJobsForWorkflowRunResponse> actionsListJobsForWorkflowRun(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    required int runId,
+    SdkOptional<ActionsListJobsForWorkflowRunFilter> filter =
+        const SdkOmitted(),
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<ActionsListJobsForWorkflowRunResponse>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/runs/${Uri.encodeComponent(runId.toString())}/jobs',
           config: config,
           query: {
-            'filter': SdkQueryValue(SdkUtils.unwrapOptional(filter), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'filter': SdkQueryValue(SdkUtils.unwrapOptional(filter),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsListJobsForWorkflowRun',
-          fromJsonRaw: (value) => ActionsListJobsForWorkflowRunResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsListJobsForWorkflowRunResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Gets a redirect URL to download an archive of log files for a workflow run. This link expires after 1 minute. Look for `Location:` in the response header to find the URL for the download. Anyone with read access to the repository can use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -4416,7 +4854,6 @@ Future<void> actionsDownloadWorkflowRunLogs(ClientConfig config,
       .data;
 }
 
-
 /// Deletes all logs for a workflow run. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
@@ -4434,10 +4871,12 @@ Future<void> actionsDeleteWorkflowRunLogs(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'actionsDeleteWorkflowRunLogs',
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Get all deployment environments for a workflow run that are waiting for protection rules to pass. Anyone with read access to the repository can use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -4445,22 +4884,24 @@ Future<void> actionsDeleteWorkflowRunLogs(ClientConfig config,
 /// [repo] The name of the repository without the `.git` extension. The name is
 ///   not case sensitive.
 /// [runId] The unique identifier of the workflow run.
-Future<List<PendingDeployment>>
-    actionsGetPendingDeploymentsForRun(ClientConfig config,
-        {required String owner,
-        required String repo,
-        required int runId,
-        RequestOptions? requestOptions}) async {
+Future<List<PendingDeployment>> actionsGetPendingDeploymentsForRun(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    required int runId,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<PendingDeployment>>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/runs/${Uri.encodeComponent(runId.toString())}/pending_deployments',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetPendingDeploymentsForRun',
-          fromJsonRaw: (value) => (value as List).map((item) => PendingDeployment.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) =>
+                  PendingDeployment.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions))
       .data;
 }
-
 
 /// Approve or reject pending deployments that are waiting on approval by a required reviewer. Required reviewers with read access to the repository contents and deployments can use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -4472,17 +4913,17 @@ Future<List<PendingDeployment>>
 /// [state] Whether to approve or reject deployment to the specified
 ///   environments.
 /// [comment] A comment to accompany the deployment review
-Future<List<Deployment>>
-    actionsReviewPendingDeploymentsForRun(ClientConfig config,
-        {required String owner,
-        required String repo,
-        required int runId,
-        required List<int> environmentIds,
-        required ActionsReviewPendingDeploymentsForRunRequestBodyState state,
-        required String comment,
-        RequestOptions? requestOptions}) async {
-  return (await sdkRequest<List<Deployment>>('POST',
-          '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/runs/${Uri.encodeComponent(runId.toString())}/pending_deployments',
+Future<List<Deployment>> actionsReviewPendingDeploymentsForRun(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    required int runId,
+    required List<int> environmentIds,
+    required ActionsReviewPendingDeploymentsForRunRequestBodyState state,
+    required String comment,
+    RequestOptions? requestOptions}) async {
+  return (await sdkRequest<List<Deployment>>(
+          'POST', '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/runs/${Uri.encodeComponent(runId.toString())}/pending_deployments',
           config: config,
           body: {
             'environment_ids': environmentIds,
@@ -4491,11 +4932,12 @@ Future<List<Deployment>>
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsReviewPendingDeploymentsForRun',
-          fromJsonRaw: (value) => (value as List).map((item) => Deployment.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => Deployment.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions))
       .data;
 }
-
 
 /// Re-runs your workflow run using its `id`. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -4523,7 +4965,6 @@ Future<Map<String, dynamic>> actionsReRunWorkflow(ClientConfig config,
       .data;
 }
 
-
 /// Re-run all of the failed jobs and their dependent jobs in a workflow run using the `id` of the workflow run. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
@@ -4550,7 +4991,6 @@ Future<Map<String, dynamic>> actionsReRunWorkflowFailedJobs(ClientConfig config,
       .data;
 }
 
-
 /// &gt; [!WARNING] &gt; This endpoint is in the process of closing down. Refer to "[Actions Get workflow usage and Get workflow run usage endpoints closing down](https://github.blog/changelog/2025-02-02-actions-get-workflow-usage-and-get-workflow-run-usage-endpoints-closing-down/)" for more information. Gets the number of billable minutes and total run time for a specific workflow run. Billable minutes only apply to workflows in private repositories that use GitHub-hosted runners. Usage is listed for each GitHub-hosted runner operating system in milliseconds. Any job re-runs are also included in the usage. The usage does not include the multiplier for macOS and Windows runners and is not rounded up to the nearest whole minute. For more information, see "[Managing billing for GitHub Actions](https://docs.github.com/github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-actions)". Anyone with read access to the repository can use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
@@ -4567,11 +5007,11 @@ Future<WorkflowRunUsage> actionsGetWorkflowRunUsage(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetWorkflowRunUsage',
-          fromJsonRaw: (value) => WorkflowRunUsage.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              WorkflowRunUsage.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists all secrets available in a repository without revealing their encrypted values. Authenticated users must have collaborator access to a repository to create, update, or read secrets. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -4586,27 +5026,29 @@ Future<WorkflowRunUsage> actionsGetWorkflowRunUsage(ClientConfig config,
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<ActionsListRepoSecretsResponse>
-    actionsListRepoSecrets(ClientConfig config,
-        {required String owner,
-        required String repo,
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ActionsListRepoSecretsResponse> actionsListRepoSecrets(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<ActionsListRepoSecretsResponse>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/secrets',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsListRepoSecrets',
-          fromJsonRaw: (value) => ActionsListRepoSecretsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ActionsListRepoSecretsResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Gets your public key, which you need to encrypt secrets. You need to encrypt a secret before you can create or update secrets. Anyone with read access to the repository can use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -4622,11 +5064,11 @@ Future<ActionsPublicKey> actionsGetRepoPublicKey(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetRepoPublicKey',
-          fromJsonRaw: (value) => ActionsPublicKey.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsPublicKey.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Gets a single repository secret without revealing its encrypted value. The authenticated user must have collaborator access to the repository to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -4644,11 +5086,11 @@ Future<ActionsSecret> actionsGetRepoSecret(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetRepoSecret',
-          fromJsonRaw: (value) => ActionsSecret.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsSecret.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Creates or updates a repository secret with an encrypted value. Encrypt your secret using [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see "[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api)." Authenticated users must have collaborator access to a repository to create, update, or read secrets. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -4662,15 +5104,16 @@ Future<ActionsSecret> actionsGetRepoSecret(ClientConfig config,
 ///   key](https://docs.github.com/rest/actions/secrets#get-a-repository-public-ke
 ///   y) endpoint.
 /// [keyId] ID of the key you used to encrypt the secret.
-Future<Map<String, dynamic>>
-    actionsCreateOrUpdateRepoSecret(ClientConfig config,
-        {required String owner,
-        required String repo,
-        required String secretName,
-        required String encryptedValue,
-        required String keyId,
-        RequestOptions? requestOptions}) async {
-  sdkValidatePattern('encrypted_value', encryptedValue, '^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})\$');
+Future<Map<String, dynamic>> actionsCreateOrUpdateRepoSecret(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    required String secretName,
+    required String encryptedValue,
+    required String keyId,
+    RequestOptions? requestOptions}) async {
+  sdkValidatePattern('encrypted_value', encryptedValue,
+      '^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})\$');
 
   return (await sdkRequest<Map<String, dynamic>>('PUT',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/secrets/${Uri.encodeComponent(secretName.toString())}',
@@ -4682,7 +5125,6 @@ Future<Map<String, dynamic>>
           options: requestOptions))
       .data;
 }
-
 
 /// Deletes a secret in a repository using the secret name. Authenticated users must have collaborator access to a repository to create, update, or read secrets. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -4704,7 +5146,6 @@ Future<void> actionsDeleteRepoSecret(ClientConfig config,
       .data;
 }
 
-
 /// Lists all repository variables. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
@@ -4718,27 +5159,29 @@ Future<void> actionsDeleteRepoSecret(ClientConfig config,
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<ActionsListRepoVariablesResponse>
-    actionsListRepoVariables(ClientConfig config,
-        {required String owner,
-        required String repo,
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ActionsListRepoVariablesResponse> actionsListRepoVariables(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<ActionsListRepoVariablesResponse>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/variables',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsListRepoVariables',
-          fromJsonRaw: (value) => ActionsListRepoVariablesResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ActionsListRepoVariablesResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Creates a repository variable that you can reference in a GitHub Actions workflow. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -4764,7 +5207,6 @@ Future<Map<String, dynamic>> actionsCreateRepoVariable(ClientConfig config,
       .data;
 }
 
-
 /// Gets a specific variable in a repository. The authenticated user must have collaborator access to the repository to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
@@ -4781,11 +5223,11 @@ Future<ActionsVariable> actionsGetRepoVariable(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetRepoVariable',
-          fromJsonRaw: (value) => ActionsVariable.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsVariable.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Updates a repository variable that you can reference in a GitHub Actions workflow. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -4815,7 +5257,6 @@ Future<void> actionsUpdateRepoVariable(ClientConfig config,
       .data;
 }
 
-
 /// Deletes a repository variable using the variable name. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
@@ -4836,7 +5277,6 @@ Future<void> actionsDeleteRepoVariable(ClientConfig config,
       .data;
 }
 
-
 /// Lists the workflows in a repository. Anyone with read access to the repository can use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
@@ -4850,27 +5290,29 @@ Future<void> actionsDeleteRepoVariable(ClientConfig config,
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<ActionsListRepoWorkflowsResponse>
-    actionsListRepoWorkflows(ClientConfig config,
-        {required String owner,
-        required String repo,
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ActionsListRepoWorkflowsResponse> actionsListRepoWorkflows(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<ActionsListRepoWorkflowsResponse>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/workflows',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsListRepoWorkflows',
-          fromJsonRaw: (value) => ActionsListRepoWorkflowsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ActionsListRepoWorkflowsResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Gets a specific workflow. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`. Anyone with read access to the repository can use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
@@ -4889,11 +5331,11 @@ Future<Workflow> actionsGetWorkflow(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetWorkflow',
-          fromJsonRaw: (value) => Workflow.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              Workflow.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Disables a workflow and sets the `state` of the workflow to `disabled_manually`. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -4916,7 +5358,6 @@ Future<void> actionsDisableWorkflow(ClientConfig config,
       .data;
 }
 
-
 /// You can use this endpoint to manually trigger a GitHub Actions workflow run. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`. You must configure your GitHub Actions workflow to run when the `workflow_dispatch` webhook event occurs. The `inputs` are configured in the workflow file. For more information about how to configure the `workflow_dispatch` event in the workflow file, see "Events that trigger workflows." OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
@@ -4931,15 +5372,15 @@ Future<void> actionsDisableWorkflow(ClientConfig config,
 ///   workflow file will be used when `inputs` are omitted.
 /// [returnRunDetails] Whether the response should include the workflow run ID
 ///   and URLs.
-Future<WorkflowDispatchResponse>
-    actionsCreateWorkflowDispatch(ClientConfig config,
-        {required String owner,
-        required String repo,
-        required dynamic workflowId,
-        required String ref,
-        SdkOptional<Map<String, Object?>> inputs = const SdkOmitted(),
-        SdkOptional<bool> returnRunDetails = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<WorkflowDispatchResponse> actionsCreateWorkflowDispatch(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    required dynamic workflowId,
+    required String ref,
+    SdkOptional<Map<String, Object?>> inputs = const SdkOmitted(),
+    SdkOptional<bool> returnRunDetails = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<WorkflowDispatchResponse>('POST',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/workflows/${Uri.encodeComponent(workflowId.toString())}/dispatches',
           config: config,
@@ -4950,11 +5391,11 @@ Future<WorkflowDispatchResponse>
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsCreateWorkflowDispatch',
-          fromJsonRaw: (value) => WorkflowDispatchResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              WorkflowDispatchResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Enables a workflow and sets the `state` of the workflow to `active`. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -4976,7 +5417,6 @@ Future<void> actionsEnableWorkflow(ClientConfig config,
           options: requestOptions))
       .data;
 }
-
 
 /// List all workflow runs for a workflow. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#parameters). Anyone with read access to the repository can use this endpoint OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository. This endpoint will return up to 1,000 results for each search when using the following parameters: `actor`, `branch`, `check_suite_id`, `created`, `event`, `head_sha`, `status`.
 ///
@@ -5016,22 +5456,22 @@ Future<void> actionsEnableWorkflow(ClientConfig config,
 ///   specify.
 /// [headSha] Only returns workflow runs that are associated with the specified
 ///   `head_sha`.
-Future<ActionsListWorkflowRunsResponse>
-    actionsListWorkflowRuns(ClientConfig config,
-        {required String owner,
-        required String repo,
-        required dynamic workflowId,
-        SdkOptional<String> actor = const SdkOmitted(),
-        SdkOptional<String> branch = const SdkOmitted(),
-        SdkOptional<String> event = const SdkOmitted(),
-        SdkOptional<SchemaSchema9f04b9bc> status = const SdkOmitted(),
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        SdkOptional<String> created = const SdkOmitted(),
-        SdkOptional<bool> excludePullRequests = const SdkOmitted(),
-        SdkOptional<int> checkSuiteId = const SdkOmitted(),
-        SdkOptional<String> headSha = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ActionsListWorkflowRunsResponse> actionsListWorkflowRuns(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    required dynamic workflowId,
+    SdkOptional<String> actor = const SdkOmitted(),
+    SdkOptional<String> branch = const SdkOmitted(),
+    SdkOptional<String> event = const SdkOmitted(),
+    SdkOptional<SchemaSchema9f04b9bc> status = const SdkOmitted(),
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    SdkOptional<String> created = const SdkOmitted(),
+    SdkOptional<bool> excludePullRequests = const SdkOmitted(),
+    SdkOptional<int> checkSuiteId = const SdkOmitted(),
+    SdkOptional<String> headSha = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   if (created is SdkPresent<String>) {
     sdkValidateDateTime('created', created.value);
   }
@@ -5040,24 +5480,38 @@ Future<ActionsListWorkflowRunsResponse>
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/workflows/${Uri.encodeComponent(workflowId.toString())}/runs',
           config: config,
           query: {
-            'actor': SdkQueryValue(SdkUtils.unwrapOptional(actor), style: 'form', explode: true),
-            'branch': SdkQueryValue(SdkUtils.unwrapOptional(branch), style: 'form', explode: true),
-            'event': SdkQueryValue(SdkUtils.unwrapOptional(event), style: 'form', explode: true),
-            'status': SdkQueryValue(SdkUtils.unwrapOptional(status), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'created': SdkQueryValue(SdkUtils.unwrapOptional(created), style: 'form', explode: true),
-            'exclude_pull_requests': SdkQueryValue(SdkUtils.unwrapOptional(excludePullRequests), style: 'form', explode: true),
-            'check_suite_id': SdkQueryValue(SdkUtils.unwrapOptional(checkSuiteId), style: 'form', explode: true),
-            'head_sha': SdkQueryValue(SdkUtils.unwrapOptional(headSha), style: 'form', explode: true)
+            'actor': SdkQueryValue(SdkUtils.unwrapOptional(actor),
+                style: 'form', explode: true),
+            'branch': SdkQueryValue(SdkUtils.unwrapOptional(branch),
+                style: 'form', explode: true),
+            'event': SdkQueryValue(SdkUtils.unwrapOptional(event),
+                style: 'form', explode: true),
+            'status': SdkQueryValue(SdkUtils.unwrapOptional(status),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'created': SdkQueryValue(SdkUtils.unwrapOptional(created),
+                style: 'form', explode: true),
+            'exclude_pull_requests': SdkQueryValue(
+                SdkUtils.unwrapOptional(excludePullRequests),
+                style: 'form',
+                explode: true),
+            'check_suite_id': SdkQueryValue(
+                SdkUtils.unwrapOptional(checkSuiteId),
+                style: 'form',
+                explode: true),
+            'head_sha': SdkQueryValue(SdkUtils.unwrapOptional(headSha),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsListWorkflowRuns',
-          fromJsonRaw: (value) => ActionsListWorkflowRunsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ActionsListWorkflowRunsResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// &gt; [!WARNING] &gt; This endpoint is in the process of closing down. Refer to "[Actions Get workflow usage and Get workflow run usage endpoints closing down](https://github.blog/changelog/2025-02-02-actions-get-workflow-usage-and-get-workflow-run-usage-endpoints-closing-down/)" for more information. Gets the number of billable minutes used by a specific workflow during the current billing cycle. Billable minutes only apply to workflows in private repositories that use GitHub-hosted runners. Usage is listed for each GitHub-hosted runner operating system in milliseconds. Any job re-runs are also included in the usage. The usage does not include the multiplier for macOS and Windows runners and is not rounded up to the nearest whole minute. For more information, see "[Managing billing for GitHub Actions](https://docs.github.com/github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-actions)". You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`. Anyone with read access to the repository can use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 ///
@@ -5076,11 +5530,11 @@ Future<WorkflowUsage> actionsGetWorkflowUsage(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetWorkflowUsage',
-          fromJsonRaw: (value) => WorkflowUsage.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              WorkflowUsage.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists all secrets available in an environment without revealing their encrypted values. Authenticated users must have collaborator access to a repository to create, update, or read secrets. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -5097,28 +5551,31 @@ Future<WorkflowUsage> actionsGetWorkflowUsage(ClientConfig config,
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<ActionsListEnvironmentSecretsResponse>
-    actionsListEnvironmentSecrets(ClientConfig config,
-        {required String owner,
-        required String repo,
-        required String environmentName,
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ActionsListEnvironmentSecretsResponse> actionsListEnvironmentSecrets(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    required String environmentName,
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<ActionsListEnvironmentSecretsResponse>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/environments/${Uri.encodeComponent(environmentName.toString())}/secrets',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsListEnvironmentSecrets',
-          fromJsonRaw: (value) => ActionsListEnvironmentSecretsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsListEnvironmentSecretsResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Get the public key for an environment, which you need to encrypt environment secrets. You need to encrypt a secret before you can create or update secrets. Anyone with read access to the repository can use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -5137,11 +5594,11 @@ Future<ActionsPublicKey> actionsGetEnvironmentPublicKey(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetEnvironmentPublicKey',
-          fromJsonRaw: (value) => ActionsPublicKey.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsPublicKey.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Gets a single environment secret without revealing its encrypted value. Authenticated users must have collaborator access to a repository to create, update, or read secrets. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -5162,11 +5619,11 @@ Future<ActionsSecret> actionsGetEnvironmentSecret(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetEnvironmentSecret',
-          fromJsonRaw: (value) => ActionsSecret.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsSecret.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Creates or updates an environment secret with an encrypted value. Encrypt your secret using [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see "[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api)." Authenticated users must have collaborator access to a repository to create, update, or read secrets. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -5182,16 +5639,17 @@ Future<ActionsSecret> actionsGetEnvironmentSecret(ClientConfig config,
 ///   key](https://docs.github.com/rest/actions/secrets#get-an-environment-public-
 ///   key) endpoint.
 /// [keyId] ID of the key you used to encrypt the secret.
-Future<Map<String, dynamic>>
-    actionsCreateOrUpdateEnvironmentSecret(ClientConfig config,
-        {required String owner,
-        required String repo,
-        required String environmentName,
-        required String secretName,
-        required String encryptedValue,
-        required String keyId,
-        RequestOptions? requestOptions}) async {
-  sdkValidatePattern('encrypted_value', encryptedValue, '^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})\$');
+Future<Map<String, dynamic>> actionsCreateOrUpdateEnvironmentSecret(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    required String environmentName,
+    required String secretName,
+    required String encryptedValue,
+    required String keyId,
+    RequestOptions? requestOptions}) async {
+  sdkValidatePattern('encrypted_value', encryptedValue,
+      '^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})\$');
 
   return (await sdkRequest<Map<String, dynamic>>('PUT',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/environments/${Uri.encodeComponent(environmentName.toString())}/secrets/${Uri.encodeComponent(secretName.toString())}',
@@ -5203,7 +5661,6 @@ Future<Map<String, dynamic>>
           options: requestOptions))
       .data;
 }
-
 
 /// Deletes a secret in an environment using the secret name. Authenticated users must have collaborator access to a repository to create, update, or read secrets. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -5228,7 +5685,6 @@ Future<void> actionsDeleteEnvironmentSecret(ClientConfig config,
       .data;
 }
 
-
 /// Lists all environment variables. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
@@ -5244,28 +5700,31 @@ Future<void> actionsDeleteEnvironmentSecret(ClientConfig config,
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<ActionsListEnvironmentVariablesResponse>
-    actionsListEnvironmentVariables(ClientConfig config,
-        {required String owner,
-        required String repo,
-        required String environmentName,
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ActionsListEnvironmentVariablesResponse> actionsListEnvironmentVariables(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    required String environmentName,
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<ActionsListEnvironmentVariablesResponse>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/environments/${Uri.encodeComponent(environmentName.toString())}/variables',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsListEnvironmentVariables',
-          fromJsonRaw: (value) => ActionsListEnvironmentVariablesResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsListEnvironmentVariablesResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Create an environment variable that you can reference in a GitHub Actions workflow. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -5276,14 +5735,14 @@ Future<ActionsListEnvironmentVariablesResponse>
 ///   For example, any slashes in the name must be replaced with `%2F`.
 /// [name] The name of the variable.
 /// [value_] The value of the variable.
-Future<Map<String, dynamic>>
-    actionsCreateEnvironmentVariable(ClientConfig config,
-        {required String owner,
-        required String repo,
-        required String environmentName,
-        required String name,
-        required String value_,
-        RequestOptions? requestOptions}) async {
+Future<Map<String, dynamic>> actionsCreateEnvironmentVariable(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    required String environmentName,
+    required String name,
+    required String value_,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<Map<String, dynamic>>('POST',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/environments/${Uri.encodeComponent(environmentName.toString())}/variables',
           config: config,
@@ -5294,7 +5753,6 @@ Future<Map<String, dynamic>>
           options: requestOptions))
       .data;
 }
-
 
 /// Gets a specific variable in an environment. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -5315,11 +5773,11 @@ Future<ActionsVariable> actionsGetEnvironmentVariable(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGetEnvironmentVariable',
-          fromJsonRaw: (value) => ActionsVariable.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ActionsVariable.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Updates an environment variable that you can reference in a GitHub Actions workflow. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -5351,7 +5809,6 @@ Future<void> actionsUpdateEnvironmentVariable(ClientConfig config,
           options: requestOptions))
       .data;
 }
-
 
 /// Deletes an environment variable using the variable name. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///

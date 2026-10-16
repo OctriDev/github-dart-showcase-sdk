@@ -10,14 +10,18 @@ enum RepositoryRuleCommitterEmailPatternType {
 
   static RepositoryRuleCommitterEmailPatternType fromJson(String value) {
     switch (value) {
-      case 'committer_email_pattern': return RepositoryRuleCommitterEmailPatternType.committerEmailPattern;
-      default: throw ArgumentError('Unknown RepositoryRuleCommitterEmailPatternType: $value');
+      case 'committer_email_pattern':
+        return RepositoryRuleCommitterEmailPatternType.committerEmailPattern;
+      default:
+        throw ArgumentError(
+            'Unknown RepositoryRuleCommitterEmailPatternType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RepositoryRuleCommitterEmailPatternType.committerEmailPattern: return 'committer_email_pattern';
+      case RepositoryRuleCommitterEmailPatternType.committerEmailPattern:
+        return 'committer_email_pattern';
     }
   }
 
@@ -31,14 +35,18 @@ enum RepositoryRuleCopilotCodeReviewType {
 
   static RepositoryRuleCopilotCodeReviewType fromJson(String value) {
     switch (value) {
-      case 'copilot_code_review': return RepositoryRuleCopilotCodeReviewType.copilotCodeReview;
-      default: throw ArgumentError('Unknown RepositoryRuleCopilotCodeReviewType: $value');
+      case 'copilot_code_review':
+        return RepositoryRuleCopilotCodeReviewType.copilotCodeReview;
+      default:
+        throw ArgumentError(
+            'Unknown RepositoryRuleCopilotCodeReviewType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RepositoryRuleCopilotCodeReviewType.copilotCodeReview: return 'copilot_code_review';
+      case RepositoryRuleCopilotCodeReviewType.copilotCodeReview:
+        return 'copilot_code_review';
     }
   }
 
@@ -52,14 +60,17 @@ enum RepositoryRuleCreationType {
 
   static RepositoryRuleCreationType fromJson(String value) {
     switch (value) {
-      case 'creation': return RepositoryRuleCreationType.creation;
-      default: throw ArgumentError('Unknown RepositoryRuleCreationType: $value');
+      case 'creation':
+        return RepositoryRuleCreationType.creation;
+      default:
+        throw ArgumentError('Unknown RepositoryRuleCreationType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RepositoryRuleCreationType.creation: return 'creation';
+      case RepositoryRuleCreationType.creation:
+        return 'creation';
     }
   }
 
@@ -73,14 +84,17 @@ enum RepositoryRuleDeletionType {
 
   static RepositoryRuleDeletionType fromJson(String value) {
     switch (value) {
-      case 'deletion': return RepositoryRuleDeletionType.deletion;
-      default: throw ArgumentError('Unknown RepositoryRuleDeletionType: $value');
+      case 'deletion':
+        return RepositoryRuleDeletionType.deletion;
+      default:
+        throw ArgumentError('Unknown RepositoryRuleDeletionType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RepositoryRuleDeletionType.deletion: return 'deletion';
+      case RepositoryRuleDeletionType.deletion:
+        return 'deletion';
     }
   }
 
@@ -94,14 +108,19 @@ enum RepositoryRuleFileExtensionRestrictionType {
 
   static RepositoryRuleFileExtensionRestrictionType fromJson(String value) {
     switch (value) {
-      case 'file_extension_restriction': return RepositoryRuleFileExtensionRestrictionType.fileExtensionRestriction;
-      default: throw ArgumentError('Unknown RepositoryRuleFileExtensionRestrictionType: $value');
+      case 'file_extension_restriction':
+        return RepositoryRuleFileExtensionRestrictionType
+            .fileExtensionRestriction;
+      default:
+        throw ArgumentError(
+            'Unknown RepositoryRuleFileExtensionRestrictionType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RepositoryRuleFileExtensionRestrictionType.fileExtensionRestriction: return 'file_extension_restriction';
+      case RepositoryRuleFileExtensionRestrictionType.fileExtensionRestriction:
+        return 'file_extension_restriction';
     }
   }
 
@@ -115,14 +134,18 @@ enum RepositoryRuleFilePathRestrictionType {
 
   static RepositoryRuleFilePathRestrictionType fromJson(String value) {
     switch (value) {
-      case 'file_path_restriction': return RepositoryRuleFilePathRestrictionType.filePathRestriction;
-      default: throw ArgumentError('Unknown RepositoryRuleFilePathRestrictionType: $value');
+      case 'file_path_restriction':
+        return RepositoryRuleFilePathRestrictionType.filePathRestriction;
+      default:
+        throw ArgumentError(
+            'Unknown RepositoryRuleFilePathRestrictionType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RepositoryRuleFilePathRestrictionType.filePathRestriction: return 'file_path_restriction';
+      case RepositoryRuleFilePathRestrictionType.filePathRestriction:
+        return 'file_path_restriction';
     }
   }
 
@@ -136,14 +159,20 @@ enum RepositoryRuleLicenseComplianceScanningType {
 
   static RepositoryRuleLicenseComplianceScanningType fromJson(String value) {
     switch (value) {
-      case 'license_compliance_scanning': return RepositoryRuleLicenseComplianceScanningType.licenseComplianceScanning;
-      default: throw ArgumentError('Unknown RepositoryRuleLicenseComplianceScanningType: $value');
+      case 'license_compliance_scanning':
+        return RepositoryRuleLicenseComplianceScanningType
+            .licenseComplianceScanning;
+      default:
+        throw ArgumentError(
+            'Unknown RepositoryRuleLicenseComplianceScanningType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RepositoryRuleLicenseComplianceScanningType.licenseComplianceScanning: return 'license_compliance_scanning';
+      case RepositoryRuleLicenseComplianceScanningType
+            .licenseComplianceScanning:
+        return 'license_compliance_scanning';
     }
   }
 
@@ -157,14 +186,18 @@ enum RepositoryRuleMaxFilePathLengthType {
 
   static RepositoryRuleMaxFilePathLengthType fromJson(String value) {
     switch (value) {
-      case 'max_file_path_length': return RepositoryRuleMaxFilePathLengthType.maxFilePathLength;
-      default: throw ArgumentError('Unknown RepositoryRuleMaxFilePathLengthType: $value');
+      case 'max_file_path_length':
+        return RepositoryRuleMaxFilePathLengthType.maxFilePathLength;
+      default:
+        throw ArgumentError(
+            'Unknown RepositoryRuleMaxFilePathLengthType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RepositoryRuleMaxFilePathLengthType.maxFilePathLength: return 'max_file_path_length';
+      case RepositoryRuleMaxFilePathLengthType.maxFilePathLength:
+        return 'max_file_path_length';
     }
   }
 
@@ -178,14 +211,17 @@ enum RepositoryRuleMaxFileSizeType {
 
   static RepositoryRuleMaxFileSizeType fromJson(String value) {
     switch (value) {
-      case 'max_file_size': return RepositoryRuleMaxFileSizeType.maxFileSize;
-      default: throw ArgumentError('Unknown RepositoryRuleMaxFileSizeType: $value');
+      case 'max_file_size':
+        return RepositoryRuleMaxFileSizeType.maxFileSize;
+      default:
+        throw ArgumentError('Unknown RepositoryRuleMaxFileSizeType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RepositoryRuleMaxFileSizeType.maxFileSize: return 'max_file_size';
+      case RepositoryRuleMaxFileSizeType.maxFileSize:
+        return 'max_file_size';
     }
   }
 
@@ -195,47 +231,61 @@ enum RepositoryRuleMaxFileSizeType {
 
 /// When set to ALLGREEN, the merge commit created by merge queue for each PR in the group must pass all required checks to merge. When set to HEADGREEN, only the commit at the head of the merge group, i.e. the commit containing changes from all of the PRs in the group, must pass its required checks to merge.
 final class RepositoryRuleMergeQueueParametersGroupingStrategy {
-
   final String value;
 
   const RepositoryRuleMergeQueueParametersGroupingStrategy._(this.value);
 
-  factory RepositoryRuleMergeQueueParametersGroupingStrategy.fromJson(String value) => RepositoryRuleMergeQueueParametersGroupingStrategy._(value);
+  factory RepositoryRuleMergeQueueParametersGroupingStrategy.fromJson(
+          String value) =>
+      RepositoryRuleMergeQueueParametersGroupingStrategy._(value);
 
-  static const allgreen = RepositoryRuleMergeQueueParametersGroupingStrategy._('ALLGREEN');
-  static const headgreen = RepositoryRuleMergeQueueParametersGroupingStrategy._('HEADGREEN');
+  static const allgreen =
+      RepositoryRuleMergeQueueParametersGroupingStrategy._('ALLGREEN');
+  static const headgreen =
+      RepositoryRuleMergeQueueParametersGroupingStrategy._('HEADGREEN');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RepositoryRuleMergeQueueParametersGroupingStrategy && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RepositoryRuleMergeQueueParametersGroupingStrategy &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Method to use when merging changes from queued pull requests.
 final class RepositoryRuleMergeQueueParametersMergeMethod {
-
   final String value;
 
   const RepositoryRuleMergeQueueParametersMergeMethod._(this.value);
 
-  factory RepositoryRuleMergeQueueParametersMergeMethod.fromJson(String value) => RepositoryRuleMergeQueueParametersMergeMethod._(value);
+  factory RepositoryRuleMergeQueueParametersMergeMethod.fromJson(
+          String value) =>
+      RepositoryRuleMergeQueueParametersMergeMethod._(value);
 
   static const merge = RepositoryRuleMergeQueueParametersMergeMethod._('MERGE');
-  static const squash = RepositoryRuleMergeQueueParametersMergeMethod._('SQUASH');
-  static const rebase = RepositoryRuleMergeQueueParametersMergeMethod._('REBASE');
+  static const squash =
+      RepositoryRuleMergeQueueParametersMergeMethod._('SQUASH');
+  static const rebase =
+      RepositoryRuleMergeQueueParametersMergeMethod._('REBASE');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RepositoryRuleMergeQueueParametersMergeMethod && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RepositoryRuleMergeQueueParametersMergeMethod &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `type` wire field.
@@ -244,14 +294,17 @@ enum RepositoryRuleMergeQueueType {
 
   static RepositoryRuleMergeQueueType fromJson(String value) {
     switch (value) {
-      case 'merge_queue': return RepositoryRuleMergeQueueType.mergeQueue;
-      default: throw ArgumentError('Unknown RepositoryRuleMergeQueueType: $value');
+      case 'merge_queue':
+        return RepositoryRuleMergeQueueType.mergeQueue;
+      default:
+        throw ArgumentError('Unknown RepositoryRuleMergeQueueType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RepositoryRuleMergeQueueType.mergeQueue: return 'merge_queue';
+      case RepositoryRuleMergeQueueType.mergeQueue:
+        return 'merge_queue';
     }
   }
 
@@ -265,14 +318,17 @@ enum RepositoryRuleNonFastForwardType {
 
   static RepositoryRuleNonFastForwardType fromJson(String value) {
     switch (value) {
-      case 'non_fast_forward': return RepositoryRuleNonFastForwardType.nonFastForward;
-      default: throw ArgumentError('Unknown RepositoryRuleNonFastForwardType: $value');
+      case 'non_fast_forward':
+        return RepositoryRuleNonFastForwardType.nonFastForward;
+      default:
+        throw ArgumentError('Unknown RepositoryRuleNonFastForwardType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RepositoryRuleNonFastForwardType.nonFastForward: return 'non_fast_forward';
+      case RepositoryRuleNonFastForwardType.nonFastForward:
+        return 'non_fast_forward';
     }
   }
 

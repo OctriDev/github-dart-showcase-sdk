@@ -8,215 +8,330 @@ part of 'webhook_deployment_status_created.dart';
 class WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBaseRepo {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
+
   /// Required `string` value serialized in the `name` wire field.
   final String name;
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
 
-  const WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBaseRepo({required this.id, required this.name, required this.url});
+  const WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBaseRepo(
+      {required this.id, required this.name, required this.url});
 
-  WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBaseRepo Function({int id, String name, String url}) get copyWith => _copyWith;
+  WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBaseRepo Function(
+      {int id, String name, String url}) get copyWith => _copyWith;
 
-  WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBaseRepo _copyWith({Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBaseRepo(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBaseRepo _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? url = sdkOmittedValue}) =>
+      WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBaseRepo(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
-  factory WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBaseRepo.fromJson(Map<String, dynamic> json) => WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBaseRepo(
-    id: ((json['id'] as num?)?.toInt())!,
-    name: (json['name'] as String?)!,
-    url: (json['url'] as String?)!,
-  );
+  factory WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBaseRepo.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBaseRepo(
+        id: ((json['id'] as num?)?.toInt())!,
+        name: (json['name'] as String?)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'name': name,
-    'url': url,
-  };
+        'id': id,
+        'name': name,
+        'url': url,
+      };
 }
 
 /// Required object value serialized in the `base` wire field.
 class WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBase {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `ref` wire field.
   final String ref;
+
   /// Required object value serialized in the `repo` wire field.
   final WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBaseRepo repo;
+
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
 
-  const WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBase({required this.ref, required this.repo, required this.sha});
+  const WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBase(
+      {required this.ref, required this.repo, required this.sha});
 
-  WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBase Function({String ref, WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBaseRepo repo, String sha}) get copyWith => _copyWith;
+  WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBase Function(
+      {String ref,
+      WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBaseRepo repo,
+      String sha}) get copyWith => _copyWith;
 
-  WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBase _copyWith({Object? ref = sdkOmittedValue, Object? repo = sdkOmittedValue, Object? sha = sdkOmittedValue}) => WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBase(
-    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-    repo: identical(repo, sdkOmittedValue) ? this.repo : repo as WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBaseRepo,
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-  );
+  WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBase _copyWith(
+          {Object? ref = sdkOmittedValue,
+          Object? repo = sdkOmittedValue,
+          Object? sha = sdkOmittedValue}) =>
+      WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBase(
+        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+        repo: identical(repo, sdkOmittedValue)
+            ? this.repo
+            : repo
+                as WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBaseRepo,
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+      );
 
-  factory WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBase.fromJson(Map<String, dynamic> json) => WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBase(
-    ref: (json['ref'] as String?)!,
-    repo: (json['repo'] != null ? WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBaseRepo.fromJson(json['repo'] as Map<String, dynamic>) : null)!,
-    sha: (json['sha'] as String?)!,
-  );
+  factory WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBase.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBase(
+        ref: (json['ref'] as String?)!,
+        repo: (json['repo'] != null
+            ? WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBaseRepo
+                .fromJson(json['repo'] as Map<String, dynamic>)
+            : null)!,
+        sha: (json['sha'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'ref': ref,
-    'repo': repo.toJson(),
-    'sha': sha,
-  };
+        'ref': ref,
+        'repo': repo.toJson(),
+        'sha': sha,
+      };
 }
 
 /// Required object value serialized in the `repo` wire field.
 class WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHeadRepo {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
+
   /// Required `string` value serialized in the `name` wire field.
   final String name;
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
 
-  const WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHeadRepo({required this.id, required this.name, required this.url});
+  const WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHeadRepo(
+      {required this.id, required this.name, required this.url});
 
-  WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHeadRepo Function({int id, String name, String url}) get copyWith => _copyWith;
+  WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHeadRepo Function(
+      {int id, String name, String url}) get copyWith => _copyWith;
 
-  WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHeadRepo _copyWith({Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHeadRepo(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHeadRepo _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? url = sdkOmittedValue}) =>
+      WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHeadRepo(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
-  factory WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHeadRepo.fromJson(Map<String, dynamic> json) => WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHeadRepo(
-    id: ((json['id'] as num?)?.toInt())!,
-    name: (json['name'] as String?)!,
-    url: (json['url'] as String?)!,
-  );
+  factory WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHeadRepo.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHeadRepo(
+        id: ((json['id'] as num?)?.toInt())!,
+        name: (json['name'] as String?)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'name': name,
-    'url': url,
-  };
+        'id': id,
+        'name': name,
+        'url': url,
+      };
 }
 
 /// Required object value serialized in the `head` wire field.
 class WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHead {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `ref` wire field.
   final String ref;
+
   /// Required object value serialized in the `repo` wire field.
   final WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHeadRepo repo;
+
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
 
-  const WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHead({required this.ref, required this.repo, required this.sha});
+  const WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHead(
+      {required this.ref, required this.repo, required this.sha});
 
-  WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHead Function({String ref, WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHeadRepo repo, String sha}) get copyWith => _copyWith;
+  WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHead Function(
+      {String ref,
+      WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHeadRepo repo,
+      String sha}) get copyWith => _copyWith;
 
-  WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHead _copyWith({Object? ref = sdkOmittedValue, Object? repo = sdkOmittedValue, Object? sha = sdkOmittedValue}) => WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHead(
-    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-    repo: identical(repo, sdkOmittedValue) ? this.repo : repo as WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHeadRepo,
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-  );
+  WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHead _copyWith(
+          {Object? ref = sdkOmittedValue,
+          Object? repo = sdkOmittedValue,
+          Object? sha = sdkOmittedValue}) =>
+      WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHead(
+        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+        repo: identical(repo, sdkOmittedValue)
+            ? this.repo
+            : repo
+                as WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHeadRepo,
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+      );
 
-  factory WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHead.fromJson(Map<String, dynamic> json) => WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHead(
-    ref: (json['ref'] as String?)!,
-    repo: (json['repo'] != null ? WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHeadRepo.fromJson(json['repo'] as Map<String, dynamic>) : null)!,
-    sha: (json['sha'] as String?)!,
-  );
+  factory WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHead.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHead(
+        ref: (json['ref'] as String?)!,
+        repo: (json['repo'] != null
+            ? WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHeadRepo
+                .fromJson(json['repo'] as Map<String, dynamic>)
+            : null)!,
+        sha: (json['sha'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'ref': ref,
-    'repo': repo.toJson(),
-    'sha': sha,
-  };
+        'ref': ref,
+        'repo': repo.toJson(),
+        'sha': sha,
+      };
 }
 
 /// Required object value serialized in the `pull_requests[]` wire field.
 class WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required object value serialized in the `base` wire field.
   final WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBase base_;
+
   /// Required object value serialized in the `head` wire field.
   final WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHead head;
+
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
+
   /// Required `integer` value serialized in the `number` wire field.
   final int number;
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
 
-  const WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItem({required this.base_, required this.head, required this.id, required this.number, required this.url});
+  const WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItem(
+      {required this.base_,
+      required this.head,
+      required this.id,
+      required this.number,
+      required this.url});
 
-  WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItem Function({WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBase base_, WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHead head, int id, int number, String url}) get copyWith => _copyWith;
+  WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItem Function(
+      {WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBase base_,
+      WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHead head,
+      int id,
+      int number,
+      String url}) get copyWith => _copyWith;
 
-  WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItem _copyWith({Object? base_ = sdkOmittedValue, Object? head = sdkOmittedValue, Object? id = sdkOmittedValue, Object? number = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItem(
-    base_: identical(base_, sdkOmittedValue) ? this.base_ : base_ as WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBase,
-    head: identical(head, sdkOmittedValue) ? this.head : head as WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHead,
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    number: identical(number, sdkOmittedValue) ? this.number : number as int,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItem _copyWith(
+          {Object? base_ = sdkOmittedValue,
+          Object? head = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? number = sdkOmittedValue,
+          Object? url = sdkOmittedValue}) =>
+      WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItem(
+        base_: identical(base_, sdkOmittedValue)
+            ? this.base_
+            : base_
+                as WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBase,
+        head: identical(head, sdkOmittedValue)
+            ? this.head
+            : head
+                as WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHead,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        number:
+            identical(number, sdkOmittedValue) ? this.number : number as int,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
-  factory WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItem.fromJson(Map<String, dynamic> json) => WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItem(
-    base_: (json['base'] != null ? WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBase.fromJson(json['base'] as Map<String, dynamic>) : null)!,
-    head: (json['head'] != null ? WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHead.fromJson(json['head'] as Map<String, dynamic>) : null)!,
-    id: ((json['id'] as num?)?.toInt())!,
-    number: ((json['number'] as num?)?.toInt())!,
-    url: (json['url'] as String?)!,
-  );
+  factory WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItem.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItem(
+        base_: (json['base'] != null
+            ? WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBase
+                .fromJson(json['base'] as Map<String, dynamic>)
+            : null)!,
+        head: (json['head'] != null
+            ? WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHead
+                .fromJson(json['head'] as Map<String, dynamic>)
+            : null)!,
+        id: ((json['id'] as num?)?.toInt())!,
+        number: ((json['number'] as num?)?.toInt())!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'base': base_.toJson(),
-    'head': head.toJson(),
-    'id': id,
-    'number': number,
-    'url': url,
-  };
+        'base': base_.toJson(),
+        'head': head.toJson(),
+        'id': id,
+        'number': number,
+        'url': url,
+      };
 }
 
 /// Required object value serialized in the `referenced_workflows[]` wire field.
 class WebhookDeploymentStatusCreatedWorkflowRunReferencedWorkflowsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `path` wire field.
   final String path;
+
   /// Optional `string` value serialized in the `ref` wire field.
   final SdkOptional<String> ref;
+
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
 
-  const WebhookDeploymentStatusCreatedWorkflowRunReferencedWorkflowsItem({required this.path, this.ref = const SdkOmitted(), required this.sha});
+  const WebhookDeploymentStatusCreatedWorkflowRunReferencedWorkflowsItem(
+      {required this.path, this.ref = const SdkOmitted(), required this.sha});
 
-  WebhookDeploymentStatusCreatedWorkflowRunReferencedWorkflowsItem Function({String path, SdkOptional<String> ref, String sha}) get copyWith => _copyWith;
+  WebhookDeploymentStatusCreatedWorkflowRunReferencedWorkflowsItem Function(
+      {String path,
+      SdkOptional<String> ref,
+      String sha}) get copyWith => _copyWith;
 
-  WebhookDeploymentStatusCreatedWorkflowRunReferencedWorkflowsItem _copyWith({Object? path = sdkOmittedValue, Object? ref = sdkOmittedValue, Object? sha = sdkOmittedValue}) => WebhookDeploymentStatusCreatedWorkflowRunReferencedWorkflowsItem(
-    path: identical(path, sdkOmittedValue) ? this.path : path as String,
-    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as SdkOptional<String>,
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-  );
+  WebhookDeploymentStatusCreatedWorkflowRunReferencedWorkflowsItem _copyWith(
+          {Object? path = sdkOmittedValue,
+          Object? ref = sdkOmittedValue,
+          Object? sha = sdkOmittedValue}) =>
+      WebhookDeploymentStatusCreatedWorkflowRunReferencedWorkflowsItem(
+        path: identical(path, sdkOmittedValue) ? this.path : path as String,
+        ref: identical(ref, sdkOmittedValue)
+            ? this.ref
+            : ref as SdkOptional<String>,
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+      );
 
-  factory WebhookDeploymentStatusCreatedWorkflowRunReferencedWorkflowsItem.fromJson(Map<String, dynamic> json) => WebhookDeploymentStatusCreatedWorkflowRunReferencedWorkflowsItem(
-    path: (json['path'] as String?)!,
-    ref: json['ref'] != null ? SdkPresent((json['ref'] as String?)!) : const SdkOmitted(),
-    sha: (json['sha'] as String?)!,
-  );
+  factory WebhookDeploymentStatusCreatedWorkflowRunReferencedWorkflowsItem.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookDeploymentStatusCreatedWorkflowRunReferencedWorkflowsItem(
+        path: (json['path'] as String?)!,
+        ref: json['ref'] != null
+            ? SdkPresent((json['ref'] as String?)!)
+            : const SdkOmitted(),
+        sha: (json['sha'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'path': path,
-    ...switch (ref) {
-      SdkPresent<String>(value: final value) => {'ref': value,},
-      _ => const <String, dynamic>{},
-    },
-    'sha': sha,
-  };
+        'path': path,
+        ...switch (ref) {
+          SdkPresent<String>(value: final value) => {
+              'ref': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'sha': sha,
+      };
 }

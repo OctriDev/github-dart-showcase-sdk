@@ -5,12 +5,12 @@ part of 'inline.dart';
 
 // Inline operation models (part 281)
 final class ReactionsListForCommitCommentContent {
-
   final String value;
 
   const ReactionsListForCommitCommentContent._(this.value);
 
-  factory ReactionsListForCommitCommentContent.fromJson(String value) => ReactionsListForCommitCommentContent._(value);
+  factory ReactionsListForCommitCommentContent.fromJson(String value) =>
+      ReactionsListForCommitCommentContent._(value);
 
   static const plus1 = ReactionsListForCommitCommentContent._('+1');
   static const minus1 = ReactionsListForCommitCommentContent._('-1');
@@ -23,144 +23,185 @@ final class ReactionsListForCommitCommentContent {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReactionsListForCommitCommentContent && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ReactionsListForCommitCommentContent && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the commit comment.
 final class ReactionsCreateForCommitCommentRequestBodyContent {
-
   final String value;
 
   const ReactionsCreateForCommitCommentRequestBodyContent._(this.value);
 
-  factory ReactionsCreateForCommitCommentRequestBodyContent.fromJson(String value) => ReactionsCreateForCommitCommentRequestBodyContent._(value);
+  factory ReactionsCreateForCommitCommentRequestBodyContent.fromJson(
+          String value) =>
+      ReactionsCreateForCommitCommentRequestBodyContent._(value);
 
-  static const plus1 = ReactionsCreateForCommitCommentRequestBodyContent._('+1');
-  static const minus1 = ReactionsCreateForCommitCommentRequestBodyContent._('-1');
-  static const laugh = ReactionsCreateForCommitCommentRequestBodyContent._('laugh');
-  static const confused = ReactionsCreateForCommitCommentRequestBodyContent._('confused');
-  static const heart = ReactionsCreateForCommitCommentRequestBodyContent._('heart');
-  static const hooray = ReactionsCreateForCommitCommentRequestBodyContent._('hooray');
-  static const rocket = ReactionsCreateForCommitCommentRequestBodyContent._('rocket');
-  static const eyes = ReactionsCreateForCommitCommentRequestBodyContent._('eyes');
+  static const plus1 =
+      ReactionsCreateForCommitCommentRequestBodyContent._('+1');
+  static const minus1 =
+      ReactionsCreateForCommitCommentRequestBodyContent._('-1');
+  static const laugh =
+      ReactionsCreateForCommitCommentRequestBodyContent._('laugh');
+  static const confused =
+      ReactionsCreateForCommitCommentRequestBodyContent._('confused');
+  static const heart =
+      ReactionsCreateForCommitCommentRequestBodyContent._('heart');
+  static const hooray =
+      ReactionsCreateForCommitCommentRequestBodyContent._('hooray');
+  static const rocket =
+      ReactionsCreateForCommitCommentRequestBodyContent._('rocket');
+  static const eyes =
+      ReactionsCreateForCommitCommentRequestBodyContent._('eyes');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReactionsCreateForCommitCommentRequestBodyContent && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ReactionsCreateForCommitCommentRequestBodyContent &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class ChecksListForRefFilter {
-
   final String value;
 
   const ChecksListForRefFilter._(this.value);
 
-  factory ChecksListForRefFilter.fromJson(String value) => ChecksListForRefFilter._(value);
+  factory ChecksListForRefFilter.fromJson(String value) =>
+      ChecksListForRefFilter._(value);
 
   static const latest = ChecksListForRefFilter._('latest');
   static const all = ChecksListForRefFilter._('all');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ChecksListForRefFilter && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ChecksListForRefFilter && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// **Required when `state` is `dismissed`.** A reason for dismissing the alert.
 final class DependabotUpdateAlertRequestBodyDismissedReason {
-
   final String value;
 
   const DependabotUpdateAlertRequestBodyDismissedReason._(this.value);
 
-  factory DependabotUpdateAlertRequestBodyDismissedReason.fromJson(String value) => DependabotUpdateAlertRequestBodyDismissedReason._(value);
+  factory DependabotUpdateAlertRequestBodyDismissedReason.fromJson(
+          String value) =>
+      DependabotUpdateAlertRequestBodyDismissedReason._(value);
 
-  static const fixStarted = DependabotUpdateAlertRequestBodyDismissedReason._('fix_started');
-  static const inaccurate = DependabotUpdateAlertRequestBodyDismissedReason._('inaccurate');
-  static const noBandwidth = DependabotUpdateAlertRequestBodyDismissedReason._('no_bandwidth');
-  static const notUsed = DependabotUpdateAlertRequestBodyDismissedReason._('not_used');
-  static const tolerableRisk = DependabotUpdateAlertRequestBodyDismissedReason._('tolerable_risk');
+  static const fixStarted =
+      DependabotUpdateAlertRequestBodyDismissedReason._('fix_started');
+  static const inaccurate =
+      DependabotUpdateAlertRequestBodyDismissedReason._('inaccurate');
+  static const noBandwidth =
+      DependabotUpdateAlertRequestBodyDismissedReason._('no_bandwidth');
+  static const notUsed =
+      DependabotUpdateAlertRequestBodyDismissedReason._('not_used');
+  static const tolerableRisk =
+      DependabotUpdateAlertRequestBodyDismissedReason._('tolerable_risk');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is DependabotUpdateAlertRequestBodyDismissedReason && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is DependabotUpdateAlertRequestBodyDismissedReason &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The state of the Dependabot alert. A `dismissed_reason` must be provided when setting the state to `dismissed`.
 final class DependabotUpdateAlertRequestBodyState {
-
   final String value;
 
   const DependabotUpdateAlertRequestBodyState._(this.value);
 
-  factory DependabotUpdateAlertRequestBodyState.fromJson(String value) => DependabotUpdateAlertRequestBodyState._(value);
+  factory DependabotUpdateAlertRequestBodyState.fromJson(String value) =>
+      DependabotUpdateAlertRequestBodyState._(value);
 
   static const dismissed = DependabotUpdateAlertRequestBodyState._('dismissed');
   static const open = DependabotUpdateAlertRequestBodyState._('open');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is DependabotUpdateAlertRequestBodyState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is DependabotUpdateAlertRequestBodyState && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The state of the status. When you set a transient deployment to `inactive`, the deployment will be shown as `destroyed` in GitHub.
 final class ReposCreateDeploymentStatusRequestBodyState {
-
   final String value;
 
   const ReposCreateDeploymentStatusRequestBodyState._(this.value);
 
-  factory ReposCreateDeploymentStatusRequestBodyState.fromJson(String value) => ReposCreateDeploymentStatusRequestBodyState._(value);
+  factory ReposCreateDeploymentStatusRequestBodyState.fromJson(String value) =>
+      ReposCreateDeploymentStatusRequestBodyState._(value);
 
   static const error = ReposCreateDeploymentStatusRequestBodyState._('error');
-  static const failure = ReposCreateDeploymentStatusRequestBodyState._('failure');
-  static const inactive = ReposCreateDeploymentStatusRequestBodyState._('inactive');
-  static const inProgress = ReposCreateDeploymentStatusRequestBodyState._('in_progress');
+  static const failure =
+      ReposCreateDeploymentStatusRequestBodyState._('failure');
+  static const inactive =
+      ReposCreateDeploymentStatusRequestBodyState._('inactive');
+  static const inProgress =
+      ReposCreateDeploymentStatusRequestBodyState._('in_progress');
   static const queued = ReposCreateDeploymentStatusRequestBodyState._('queued');
-  static const pending = ReposCreateDeploymentStatusRequestBodyState._('pending');
-  static const success = ReposCreateDeploymentStatusRequestBodyState._('success');
+  static const pending =
+      ReposCreateDeploymentStatusRequestBodyState._('pending');
+  static const success =
+      ReposCreateDeploymentStatusRequestBodyState._('success');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReposCreateDeploymentStatusRequestBodyState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ReposCreateDeploymentStatusRequestBodyState &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class ReposListForksSort {
-
   final String value;
 
   const ReposListForksSort._(this.value);
 
-  factory ReposListForksSort.fromJson(String value) => ReposListForksSort._(value);
+  factory ReposListForksSort.fromJson(String value) =>
+      ReposListForksSort._(value);
 
   static const newest = ReposListForksSort._('newest');
   static const oldest = ReposListForksSort._('oldest');
@@ -169,22 +210,25 @@ final class ReposListForksSort {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReposListForksSort && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ReposListForksSort && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The type of the object we're tagging. Normally this is a `commit` but it can also be a `tree` or a `blob`.
 final class GitCreateTagRequestBodyType {
-
   final String value;
 
   const GitCreateTagRequestBodyType._(this.value);
 
-  factory GitCreateTagRequestBodyType.fromJson(String value) => GitCreateTagRequestBodyType._(value);
+  factory GitCreateTagRequestBodyType.fromJson(String value) =>
+      GitCreateTagRequestBodyType._(value);
 
   static const commit = GitCreateTagRequestBodyType._('commit');
   static const tree = GitCreateTagRequestBodyType._('tree');
@@ -192,22 +236,25 @@ final class GitCreateTagRequestBodyType {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is GitCreateTagRequestBodyType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is GitCreateTagRequestBodyType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The file mode; one of `100644` for file (blob), `100755` for executable (blob), `040000` for subdirectory (tree), `160000` for submodule (commit), or `120000` for a blob that specifies the path of a symlink.
 final class GitCreateTreeRequestBodyTreeItemMode {
-
   final String value;
 
   const GitCreateTreeRequestBodyTreeItemMode._(this.value);
 
-  factory GitCreateTreeRequestBodyTreeItemMode.fromJson(String value) => GitCreateTreeRequestBodyTreeItemMode._(value);
+  factory GitCreateTreeRequestBodyTreeItemMode.fromJson(String value) =>
+      GitCreateTreeRequestBodyTreeItemMode._(value);
 
   static const v100644 = GitCreateTreeRequestBodyTreeItemMode._('100644');
   static const v100755 = GitCreateTreeRequestBodyTreeItemMode._('100755');
@@ -217,22 +264,25 @@ final class GitCreateTreeRequestBodyTreeItemMode {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is GitCreateTreeRequestBodyTreeItemMode && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is GitCreateTreeRequestBodyTreeItemMode && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Either `blob`, `tree`, or `commit`.
 final class GitCreateTreeRequestBodyTreeItemType {
-
   final String value;
 
   const GitCreateTreeRequestBodyTreeItemType._(this.value);
 
-  factory GitCreateTreeRequestBodyTreeItemType.fromJson(String value) => GitCreateTreeRequestBodyTreeItemType._(value);
+  factory GitCreateTreeRequestBodyTreeItemType.fromJson(String value) =>
+      GitCreateTreeRequestBodyTreeItemType._(value);
 
   static const blob = GitCreateTreeRequestBodyTreeItemType._('blob');
   static const tree = GitCreateTreeRequestBodyTreeItemType._('tree');
@@ -240,34 +290,41 @@ final class GitCreateTreeRequestBodyTreeItemType {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is GitCreateTreeRequestBodyTreeItemType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is GitCreateTreeRequestBodyTreeItemType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The type of version control system you are migrating from.
 final class MigrationsUpdateImportRequestBodyVcs {
-
   final String value;
 
   const MigrationsUpdateImportRequestBodyVcs._(this.value);
 
-  factory MigrationsUpdateImportRequestBodyVcs.fromJson(String value) => MigrationsUpdateImportRequestBodyVcs._(value);
+  factory MigrationsUpdateImportRequestBodyVcs.fromJson(String value) =>
+      MigrationsUpdateImportRequestBodyVcs._(value);
 
-  static const subversion = MigrationsUpdateImportRequestBodyVcs._('subversion');
+  static const subversion =
+      MigrationsUpdateImportRequestBodyVcs._('subversion');
   static const tfvc = MigrationsUpdateImportRequestBodyVcs._('tfvc');
   static const git = MigrationsUpdateImportRequestBodyVcs._('git');
   static const mercurial = MigrationsUpdateImportRequestBodyVcs._('mercurial');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is MigrationsUpdateImportRequestBodyVcs && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is MigrationsUpdateImportRequestBodyVcs && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

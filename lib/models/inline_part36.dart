@@ -6,36 +6,40 @@ part of 'inline.dart';
 // Inline operation models (part 36)
 /// The bypass type of the user making the API request for this ruleset. This field is only returned when querying the repository-level endpoint.
 final class RepositoryRulesetCurrentUserCanBypass {
-
   final String value;
 
   const RepositoryRulesetCurrentUserCanBypass._(this.value);
 
-  factory RepositoryRulesetCurrentUserCanBypass.fromJson(String value) => RepositoryRulesetCurrentUserCanBypass._(value);
+  factory RepositoryRulesetCurrentUserCanBypass.fromJson(String value) =>
+      RepositoryRulesetCurrentUserCanBypass._(value);
 
   static const always = RepositoryRulesetCurrentUserCanBypass._('always');
-  static const pullRequestsOnly = RepositoryRulesetCurrentUserCanBypass._('pull_requests_only');
+  static const pullRequestsOnly =
+      RepositoryRulesetCurrentUserCanBypass._('pull_requests_only');
   static const never = RepositoryRulesetCurrentUserCanBypass._('never');
   static const exempt = RepositoryRulesetCurrentUserCanBypass._('exempt');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RepositoryRulesetCurrentUserCanBypass && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RepositoryRulesetCurrentUserCanBypass && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The type of the source of the ruleset
 final class RepositoryRulesetSourceType {
-
   final String value;
 
   const RepositoryRulesetSourceType._(this.value);
 
-  factory RepositoryRulesetSourceType.fromJson(String value) => RepositoryRulesetSourceType._(value);
+  factory RepositoryRulesetSourceType.fromJson(String value) =>
+      RepositoryRulesetSourceType._(value);
 
   static const repository = RepositoryRulesetSourceType._('Repository');
   static const organization = RepositoryRulesetSourceType._('Organization');
@@ -43,22 +47,25 @@ final class RepositoryRulesetSourceType {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RepositoryRulesetSourceType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RepositoryRulesetSourceType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The target of the ruleset
 final class RepositoryRulesetTarget {
-
   final String value;
 
   const RepositoryRulesetTarget._(this.value);
 
-  factory RepositoryRulesetTarget.fromJson(String value) => RepositoryRulesetTarget._(value);
+  factory RepositoryRulesetTarget.fromJson(String value) =>
+      RepositoryRulesetTarget._(value);
 
   static const branch = RepositoryRulesetTarget._('branch');
   static const tag = RepositoryRulesetTarget._('tag');
@@ -67,107 +74,136 @@ final class RepositoryRulesetTarget {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RepositoryRulesetTarget && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RepositoryRulesetTarget && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The type of actor that can bypass a ruleset.
 final class RepositoryRulesetBypassActorActorType {
-
   final String value;
 
   const RepositoryRulesetBypassActorActorType._(this.value);
 
-  factory RepositoryRulesetBypassActorActorType.fromJson(String value) => RepositoryRulesetBypassActorActorType._(value);
+  factory RepositoryRulesetBypassActorActorType.fromJson(String value) =>
+      RepositoryRulesetBypassActorActorType._(value);
 
-  static const integration = RepositoryRulesetBypassActorActorType._('Integration');
-  static const organizationadmin = RepositoryRulesetBypassActorActorType._('OrganizationAdmin');
-  static const repositoryrole = RepositoryRulesetBypassActorActorType._('RepositoryRole');
+  static const integration =
+      RepositoryRulesetBypassActorActorType._('Integration');
+  static const organizationadmin =
+      RepositoryRulesetBypassActorActorType._('OrganizationAdmin');
+  static const repositoryrole =
+      RepositoryRulesetBypassActorActorType._('RepositoryRole');
   static const team = RepositoryRulesetBypassActorActorType._('Team');
   static const deploykey = RepositoryRulesetBypassActorActorType._('DeployKey');
   static const user = RepositoryRulesetBypassActorActorType._('User');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RepositoryRulesetBypassActorActorType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RepositoryRulesetBypassActorActorType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests. `pull_request` is not applicable for the `DeployKey` actor type. Also, `pull_request` is only applicable to branch rulesets. When `bypass_mode` is `exempt`, rules will not be run for that actor and a bypass audit entry will not be created.
 final class RepositoryRulesetBypassActorBypassMode {
-
   final String value;
 
   const RepositoryRulesetBypassActorBypassMode._(this.value);
 
-  factory RepositoryRulesetBypassActorBypassMode.fromJson(String value) => RepositoryRulesetBypassActorBypassMode._(value);
+  factory RepositoryRulesetBypassActorBypassMode.fromJson(String value) =>
+      RepositoryRulesetBypassActorBypassMode._(value);
 
   static const always = RepositoryRulesetBypassActorBypassMode._('always');
-  static const pullRequest = RepositoryRulesetBypassActorBypassMode._('pull_request');
+  static const pullRequest =
+      RepositoryRulesetBypassActorBypassMode._('pull_request');
   static const exempt = RepositoryRulesetBypassActorBypassMode._('exempt');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RepositoryRulesetBypassActorBypassMode && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RepositoryRulesetBypassActorBypassMode && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The source of the repository property. Defaults to 'custom' if not specified.
 final class RepositoryRulesetConditionsRepositoryPropertySpecSource {
-
   final String value;
 
   const RepositoryRulesetConditionsRepositoryPropertySpecSource._(this.value);
 
-  factory RepositoryRulesetConditionsRepositoryPropertySpecSource.fromJson(String value) => RepositoryRulesetConditionsRepositoryPropertySpecSource._(value);
+  factory RepositoryRulesetConditionsRepositoryPropertySpecSource.fromJson(
+          String value) =>
+      RepositoryRulesetConditionsRepositoryPropertySpecSource._(value);
 
-  static const custom = RepositoryRulesetConditionsRepositoryPropertySpecSource._('custom');
-  static const system = RepositoryRulesetConditionsRepositoryPropertySpecSource._('system');
+  static const custom =
+      RepositoryRulesetConditionsRepositoryPropertySpecSource._('custom');
+  static const system =
+      RepositoryRulesetConditionsRepositoryPropertySpecSource._('system');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RepositoryRulesetConditionsRepositoryPropertySpecSource && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RepositoryRulesetConditionsRepositoryPropertySpecSource &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The operator to use for matching.
 final class RepositoryRuleTagNamePatternParametersOperator {
-
   final String value;
 
   const RepositoryRuleTagNamePatternParametersOperator._(this.value);
 
-  factory RepositoryRuleTagNamePatternParametersOperator.fromJson(String value) => RepositoryRuleTagNamePatternParametersOperator._(value);
+  factory RepositoryRuleTagNamePatternParametersOperator.fromJson(
+          String value) =>
+      RepositoryRuleTagNamePatternParametersOperator._(value);
 
-  static const startsWith = RepositoryRuleTagNamePatternParametersOperator._('starts_with');
-  static const endsWith = RepositoryRuleTagNamePatternParametersOperator._('ends_with');
-  static const contains = RepositoryRuleTagNamePatternParametersOperator._('contains');
-  static const regex = RepositoryRuleTagNamePatternParametersOperator._('regex');
+  static const startsWith =
+      RepositoryRuleTagNamePatternParametersOperator._('starts_with');
+  static const endsWith =
+      RepositoryRuleTagNamePatternParametersOperator._('ends_with');
+  static const contains =
+      RepositoryRuleTagNamePatternParametersOperator._('contains');
+  static const regex =
+      RepositoryRuleTagNamePatternParametersOperator._('regex');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RepositoryRuleTagNamePatternParametersOperator && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RepositoryRuleTagNamePatternParametersOperator &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `type` wire field.
@@ -176,14 +212,17 @@ enum RepositoryRuleTagNamePatternType {
 
   static RepositoryRuleTagNamePatternType fromJson(String value) {
     switch (value) {
-      case 'tag_name_pattern': return RepositoryRuleTagNamePatternType.tagNamePattern;
-      default: throw ArgumentError('Unknown RepositoryRuleTagNamePatternType: $value');
+      case 'tag_name_pattern':
+        return RepositoryRuleTagNamePatternType.tagNamePattern;
+      default:
+        throw ArgumentError('Unknown RepositoryRuleTagNamePatternType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RepositoryRuleTagNamePatternType.tagNamePattern: return 'tag_name_pattern';
+      case RepositoryRuleTagNamePatternType.tagNamePattern:
+        return 'tag_name_pattern';
     }
   }
 
@@ -197,14 +236,17 @@ enum RepositoryRuleUpdateType {
 
   static RepositoryRuleUpdateType fromJson(String value) {
     switch (value) {
-      case 'update': return RepositoryRuleUpdateType.update;
-      default: throw ArgumentError('Unknown RepositoryRuleUpdateType: $value');
+      case 'update':
+        return RepositoryRuleUpdateType.update;
+      default:
+        throw ArgumentError('Unknown RepositoryRuleUpdateType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RepositoryRuleUpdateType.update: return 'update';
+      case RepositoryRuleUpdateType.update:
+        return 'update';
     }
   }
 
@@ -218,14 +260,17 @@ enum RepositoryRuleWorkflowsType {
 
   static RepositoryRuleWorkflowsType fromJson(String value) {
     switch (value) {
-      case 'workflows': return RepositoryRuleWorkflowsType.workflows;
-      default: throw ArgumentError('Unknown RepositoryRuleWorkflowsType: $value');
+      case 'workflows':
+        return RepositoryRuleWorkflowsType.workflows;
+      default:
+        throw ArgumentError('Unknown RepositoryRuleWorkflowsType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case RepositoryRuleWorkflowsType.workflows: return 'workflows';
+      case RepositoryRuleWorkflowsType.workflows:
+        return 'workflows';
     }
   }
 
@@ -235,12 +280,12 @@ enum RepositoryRuleWorkflowsType {
 
 /// The default value for a merge commit message. - `PR_TITLE` - default to the pull request's title. - `PR_BODY` - default to the pull request's body. - `BLANK` - default to a blank commit message.
 final class RepositoryWebhooksMergeCommitMessage {
-
   final String value;
 
   const RepositoryWebhooksMergeCommitMessage._(this.value);
 
-  factory RepositoryWebhooksMergeCommitMessage.fromJson(String value) => RepositoryWebhooksMergeCommitMessage._(value);
+  factory RepositoryWebhooksMergeCommitMessage.fromJson(String value) =>
+      RepositoryWebhooksMergeCommitMessage._(value);
 
   static const prBody = RepositoryWebhooksMergeCommitMessage._('PR_BODY');
   static const prTitle = RepositoryWebhooksMergeCommitMessage._('PR_TITLE');
@@ -248,32 +293,39 @@ final class RepositoryWebhooksMergeCommitMessage {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RepositoryWebhooksMergeCommitMessage && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RepositoryWebhooksMergeCommitMessage && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The default value for a merge commit title. - `PR_TITLE` - default to the pull request's title. - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
 final class RepositoryWebhooksMergeCommitTitle {
-
   final String value;
 
   const RepositoryWebhooksMergeCommitTitle._(this.value);
 
-  factory RepositoryWebhooksMergeCommitTitle.fromJson(String value) => RepositoryWebhooksMergeCommitTitle._(value);
+  factory RepositoryWebhooksMergeCommitTitle.fromJson(String value) =>
+      RepositoryWebhooksMergeCommitTitle._(value);
 
   static const prTitle = RepositoryWebhooksMergeCommitTitle._('PR_TITLE');
-  static const mergeMessage = RepositoryWebhooksMergeCommitTitle._('MERGE_MESSAGE');
+  static const mergeMessage =
+      RepositoryWebhooksMergeCommitTitle._('MERGE_MESSAGE');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RepositoryWebhooksMergeCommitTitle && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RepositoryWebhooksMergeCommitTitle && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

@@ -7,176 +7,347 @@ part of 'inline.dart';
 class CodeScanningUpdateAlertRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Sets the state of the code scanning alert. You must provide `dismissed_reason` when you set the state to `dismissed`.
   final SdkOptional<CodeScanningAlertSetState> state;
+
   /// **Required when the state is dismissed.** The reason for dismissing or closing the alert.
   final SdkOptional<CodeScanningAlertDismissedReason?> dismissedReason;
+
   /// The dismissal comment associated with the dismissal of the alert.
   final SdkOptional<String?> dismissedComment;
+
   /// If `true`, attempt to create an alert dismissal request.
   final SdkOptional<bool> createRequest;
+
   /// The list of users to assign to the code scanning alert. An empty array unassigns all previous assignees from the alert.
   final SdkOptional<List<String>> assignees;
 
-  const CodeScanningUpdateAlertRequestBody({this.state = const SdkOmitted(), this.dismissedReason = const SdkOmitted(), this.dismissedComment = const SdkOmitted(), this.createRequest = const SdkOmitted(), this.assignees = const SdkOmitted()});
+  const CodeScanningUpdateAlertRequestBody(
+      {this.state = const SdkOmitted(),
+      this.dismissedReason = const SdkOmitted(),
+      this.dismissedComment = const SdkOmitted(),
+      this.createRequest = const SdkOmitted(),
+      this.assignees = const SdkOmitted()});
 
-  CodeScanningUpdateAlertRequestBody Function({SdkOptional<CodeScanningAlertSetState> state, SdkOptional<CodeScanningAlertDismissedReason?> dismissedReason, SdkOptional<String?> dismissedComment, SdkOptional<bool> createRequest, SdkOptional<List<String>> assignees}) get copyWith => _copyWith;
+  CodeScanningUpdateAlertRequestBody Function(
+      {SdkOptional<CodeScanningAlertSetState> state,
+      SdkOptional<CodeScanningAlertDismissedReason?> dismissedReason,
+      SdkOptional<String?> dismissedComment,
+      SdkOptional<bool> createRequest,
+      SdkOptional<List<String>> assignees}) get copyWith => _copyWith;
 
-  CodeScanningUpdateAlertRequestBody _copyWith({Object? state = sdkOmittedValue, Object? dismissedReason = sdkOmittedValue, Object? dismissedComment = sdkOmittedValue, Object? createRequest = sdkOmittedValue, Object? assignees = sdkOmittedValue}) => CodeScanningUpdateAlertRequestBody(
-    state: identical(state, sdkOmittedValue) ? this.state : state as SdkOptional<CodeScanningAlertSetState>,
-    dismissedReason: identical(dismissedReason, sdkOmittedValue) ? this.dismissedReason : dismissedReason as SdkOptional<CodeScanningAlertDismissedReason?>,
-    dismissedComment: identical(dismissedComment, sdkOmittedValue) ? this.dismissedComment : dismissedComment as SdkOptional<String?>,
-    createRequest: identical(createRequest, sdkOmittedValue) ? this.createRequest : createRequest as SdkOptional<bool>,
-    assignees: identical(assignees, sdkOmittedValue) ? this.assignees : assignees as SdkOptional<List<String>>,
-  );
+  CodeScanningUpdateAlertRequestBody _copyWith(
+          {Object? state = sdkOmittedValue,
+          Object? dismissedReason = sdkOmittedValue,
+          Object? dismissedComment = sdkOmittedValue,
+          Object? createRequest = sdkOmittedValue,
+          Object? assignees = sdkOmittedValue}) =>
+      CodeScanningUpdateAlertRequestBody(
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state as SdkOptional<CodeScanningAlertSetState>,
+        dismissedReason: identical(dismissedReason, sdkOmittedValue)
+            ? this.dismissedReason
+            : dismissedReason as SdkOptional<CodeScanningAlertDismissedReason?>,
+        dismissedComment: identical(dismissedComment, sdkOmittedValue)
+            ? this.dismissedComment
+            : dismissedComment as SdkOptional<String?>,
+        createRequest: identical(createRequest, sdkOmittedValue)
+            ? this.createRequest
+            : createRequest as SdkOptional<bool>,
+        assignees: identical(assignees, sdkOmittedValue)
+            ? this.assignees
+            : assignees as SdkOptional<List<String>>,
+      );
 
-  factory CodeScanningUpdateAlertRequestBody.fromJson(Map<String, dynamic> json) => CodeScanningUpdateAlertRequestBody(
-    state: json['state'] != null ? SdkPresent((json['state'] != null ? CodeScanningAlertSetState.fromJson(json['state'] as String) : null)!) : const SdkOmitted(),
-    dismissedReason: json.containsKey('dismissed_reason') ? SdkPresent(json['dismissed_reason'] != null ? CodeScanningAlertDismissedReason.fromJson(json['dismissed_reason'] as String) : null) : const SdkOmitted(),
-    dismissedComment: json.containsKey('dismissed_comment') ? SdkPresent(json['dismissed_comment'] as String?) : const SdkOmitted(),
-    createRequest: json['create_request'] != null ? SdkPresent((json['create_request'] as bool?)!) : const SdkOmitted(),
-    assignees: json['assignees'] != null ? SdkPresent(((json['assignees'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-  );
+  factory CodeScanningUpdateAlertRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      CodeScanningUpdateAlertRequestBody(
+        state: json['state'] != null
+            ? SdkPresent((json['state'] != null
+                ? CodeScanningAlertSetState.fromJson(json['state'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        dismissedReason: json.containsKey('dismissed_reason')
+            ? SdkPresent(json['dismissed_reason'] != null
+                ? CodeScanningAlertDismissedReason.fromJson(
+                    json['dismissed_reason'] as String)
+                : null)
+            : const SdkOmitted(),
+        dismissedComment: json.containsKey('dismissed_comment')
+            ? SdkPresent(json['dismissed_comment'] as String?)
+            : const SdkOmitted(),
+        createRequest: json['create_request'] != null
+            ? SdkPresent((json['create_request'] as bool?)!)
+            : const SdkOmitted(),
+        assignees: json['assignees'] != null
+            ? SdkPresent(((json['assignees'] as List?)
+                ?.map((e) => e as String)
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (state) {
-      SdkPresent<CodeScanningAlertSetState>(value: final value) => {'state': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (dismissedReason) {
-      SdkPresent<CodeScanningAlertDismissedReason?>(value: final value) => {'dismissed_reason': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (dismissedComment) {
-      SdkPresent<String?>(value: final value) => {'dismissed_comment': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (createRequest) {
-      SdkPresent<bool>(value: final value) => {'create_request': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (assignees) {
-      SdkPresent<List<String>>(value: final value) => {'assignees': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (state) {
+          SdkPresent<CodeScanningAlertSetState>(value: final value) => {
+              'state': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (dismissedReason) {
+          SdkPresent<CodeScanningAlertDismissedReason?>(value: final value) => {
+              'dismissed_reason': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (dismissedComment) {
+          SdkPresent<String?>(value: final value) => {
+              'dismissed_comment': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (createRequest) {
+          SdkPresent<bool>(value: final value) => {
+              'create_request': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (assignees) {
+          SdkPresent<List<String>>(value: final value) => {
+              'assignees': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class CodeScanningCreateVariantAnalysisRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The language targeted by the CodeQL query
   final CodeScanningVariantAnalysisLanguage language;
+
   /// A Base64-encoded tarball containing a CodeQL query and all its dependencies
   final String queryPack;
+
   /// List of repository names (in the form `owner/repo-name`) to run the query against. Precisely one property from `repositories`, `repository_lists` and `repository_owners` is required.
   final SdkOptional<List<String>> repositories;
+
   /// List of repository lists to run the query against. Precisely one property from `repositories`, `repository_lists` and `repository_owners` is required.
   final SdkOptional<List<String>> repositoryLists;
+
   /// List of organization or user names whose repositories the query should be run against. Precisely one property from `repositories`, `repository_lists` and `repository_owners` is required.
   final SdkOptional<List<String>> repositoryOwners;
 
-  const CodeScanningCreateVariantAnalysisRequestBody({required this.language, required this.queryPack, this.repositories = const SdkOmitted(), this.repositoryLists = const SdkOmitted(), this.repositoryOwners = const SdkOmitted()});
+  const CodeScanningCreateVariantAnalysisRequestBody(
+      {required this.language,
+      required this.queryPack,
+      this.repositories = const SdkOmitted(),
+      this.repositoryLists = const SdkOmitted(),
+      this.repositoryOwners = const SdkOmitted()});
 
-  CodeScanningCreateVariantAnalysisRequestBody Function({CodeScanningVariantAnalysisLanguage language, String queryPack, SdkOptional<List<String>> repositories, SdkOptional<List<String>> repositoryLists, SdkOptional<List<String>> repositoryOwners}) get copyWith => _copyWith;
+  CodeScanningCreateVariantAnalysisRequestBody Function(
+      {CodeScanningVariantAnalysisLanguage language,
+      String queryPack,
+      SdkOptional<List<String>> repositories,
+      SdkOptional<List<String>> repositoryLists,
+      SdkOptional<List<String>> repositoryOwners}) get copyWith => _copyWith;
 
-  CodeScanningCreateVariantAnalysisRequestBody _copyWith({Object? language = sdkOmittedValue, Object? queryPack = sdkOmittedValue, Object? repositories = sdkOmittedValue, Object? repositoryLists = sdkOmittedValue, Object? repositoryOwners = sdkOmittedValue}) => CodeScanningCreateVariantAnalysisRequestBody(
-    language: identical(language, sdkOmittedValue) ? this.language : language as CodeScanningVariantAnalysisLanguage,
-    queryPack: identical(queryPack, sdkOmittedValue) ? this.queryPack : queryPack as String,
-    repositories: identical(repositories, sdkOmittedValue) ? this.repositories : repositories as SdkOptional<List<String>>,
-    repositoryLists: identical(repositoryLists, sdkOmittedValue) ? this.repositoryLists : repositoryLists as SdkOptional<List<String>>,
-    repositoryOwners: identical(repositoryOwners, sdkOmittedValue) ? this.repositoryOwners : repositoryOwners as SdkOptional<List<String>>,
-  );
+  CodeScanningCreateVariantAnalysisRequestBody _copyWith(
+          {Object? language = sdkOmittedValue,
+          Object? queryPack = sdkOmittedValue,
+          Object? repositories = sdkOmittedValue,
+          Object? repositoryLists = sdkOmittedValue,
+          Object? repositoryOwners = sdkOmittedValue}) =>
+      CodeScanningCreateVariantAnalysisRequestBody(
+        language: identical(language, sdkOmittedValue)
+            ? this.language
+            : language as CodeScanningVariantAnalysisLanguage,
+        queryPack: identical(queryPack, sdkOmittedValue)
+            ? this.queryPack
+            : queryPack as String,
+        repositories: identical(repositories, sdkOmittedValue)
+            ? this.repositories
+            : repositories as SdkOptional<List<String>>,
+        repositoryLists: identical(repositoryLists, sdkOmittedValue)
+            ? this.repositoryLists
+            : repositoryLists as SdkOptional<List<String>>,
+        repositoryOwners: identical(repositoryOwners, sdkOmittedValue)
+            ? this.repositoryOwners
+            : repositoryOwners as SdkOptional<List<String>>,
+      );
 
-  factory CodeScanningCreateVariantAnalysisRequestBody.fromJson(Map<String, dynamic> json) => CodeScanningCreateVariantAnalysisRequestBody(
-    language: (json['language'] != null ? CodeScanningVariantAnalysisLanguage.fromJson(json['language'] as String) : null)!,
-    queryPack: (json['query_pack'] as String?)!,
-    repositories: json['repositories'] != null ? SdkPresent(((json['repositories'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    repositoryLists: json['repository_lists'] != null ? SdkPresent(((json['repository_lists'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    repositoryOwners: json['repository_owners'] != null ? SdkPresent(((json['repository_owners'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-  );
+  factory CodeScanningCreateVariantAnalysisRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      CodeScanningCreateVariantAnalysisRequestBody(
+        language: (json['language'] != null
+            ? CodeScanningVariantAnalysisLanguage.fromJson(
+                json['language'] as String)
+            : null)!,
+        queryPack: (json['query_pack'] as String?)!,
+        repositories: json['repositories'] != null
+            ? SdkPresent(((json['repositories'] as List?)
+                ?.map((e) => e as String)
+                .toList())!)
+            : const SdkOmitted(),
+        repositoryLists: json['repository_lists'] != null
+            ? SdkPresent(((json['repository_lists'] as List?)
+                ?.map((e) => e as String)
+                .toList())!)
+            : const SdkOmitted(),
+        repositoryOwners: json['repository_owners'] != null
+            ? SdkPresent(((json['repository_owners'] as List?)
+                ?.map((e) => e as String)
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'language': language.toJson(),
-    'query_pack': queryPack,
-    ...switch (repositories) {
-      SdkPresent<List<String>>(value: final value) => {'repositories': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (repositoryLists) {
-      SdkPresent<List<String>>(value: final value) => {'repository_lists': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (repositoryOwners) {
-      SdkPresent<List<String>>(value: final value) => {'repository_owners': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'language': language.toJson(),
+        'query_pack': queryPack,
+        ...switch (repositories) {
+          SdkPresent<List<String>>(value: final value) => {
+              'repositories': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (repositoryLists) {
+          SdkPresent<List<String>>(value: final value) => {
+              'repository_lists': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (repositoryOwners) {
+          SdkPresent<List<String>>(value: final value) => {
+              'repository_owners': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class CodeScanningUploadSarifRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The SHA of the commit to which the analysis you are uploading relates.
   final String commitSha;
+
   /// The full Git reference, formatted as `refs/heads/&lt;branch name&gt;`, `refs/tags/&lt;tag&gt;`, `refs/pull/&lt;number&gt;/merge`, or `refs/pull/&lt;number&gt;/head`.
   final String ref;
+
   /// A Base64 string representing the SARIF file to upload. You must first compress your SARIF file using [`gzip`](http://www.gnu.org/software/gzip/manual/gzip.html) and then translate the contents of the file into a Base64 encoding string. For more information, see "[SARIF support for code scanning](https://docs.github.com/code-security/secure-coding/sarif-support-for-code-scanning)."
   final String sarif;
+
   /// The base directory used in the analysis, as it appears in the SARIF file. This property is used to convert file paths from absolute to relative, so that alerts can be mapped to their correct location in the repository.
   final SdkOptional<String> checkoutUri;
+
   /// The time that the analysis run began. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
   final SdkOptional<String> startedAt;
+
   /// The name of the tool used to generate the code scanning analysis. If this parameter is not used, the tool name defaults to "API". If the uploaded SARIF contains a tool GUID, this will be available for filtering using the `tool_guid` parameter of operations such as `GET /repos/{owner}/{repo}/code-scanning/alerts`.
   final SdkOptional<String> toolName;
+
   /// Whether the SARIF file will be validated according to the code scanning specifications. This parameter is intended to help integrators ensure that the uploaded SARIF files are correctly rendered by code scanning.
   final SdkOptional<bool> validate;
 
-  const CodeScanningUploadSarifRequestBody({required this.commitSha, required this.ref, required this.sarif, this.checkoutUri = const SdkOmitted(), this.startedAt = const SdkOmitted(), this.toolName = const SdkOmitted(), this.validate = const SdkOmitted()});
+  const CodeScanningUploadSarifRequestBody(
+      {required this.commitSha,
+      required this.ref,
+      required this.sarif,
+      this.checkoutUri = const SdkOmitted(),
+      this.startedAt = const SdkOmitted(),
+      this.toolName = const SdkOmitted(),
+      this.validate = const SdkOmitted()});
 
-  CodeScanningUploadSarifRequestBody Function({String commitSha, String ref, String sarif, SdkOptional<String> checkoutUri, SdkOptional<String> startedAt, SdkOptional<String> toolName, SdkOptional<bool> validate}) get copyWith => _copyWith;
+  CodeScanningUploadSarifRequestBody Function(
+      {String commitSha,
+      String ref,
+      String sarif,
+      SdkOptional<String> checkoutUri,
+      SdkOptional<String> startedAt,
+      SdkOptional<String> toolName,
+      SdkOptional<bool> validate}) get copyWith => _copyWith;
 
-  CodeScanningUploadSarifRequestBody _copyWith({Object? commitSha = sdkOmittedValue, Object? ref = sdkOmittedValue, Object? sarif = sdkOmittedValue, Object? checkoutUri = sdkOmittedValue, Object? startedAt = sdkOmittedValue, Object? toolName = sdkOmittedValue, Object? validate = sdkOmittedValue}) => CodeScanningUploadSarifRequestBody(
-    commitSha: identical(commitSha, sdkOmittedValue) ? this.commitSha : commitSha as String,
-    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-    sarif: identical(sarif, sdkOmittedValue) ? this.sarif : sarif as String,
-    checkoutUri: identical(checkoutUri, sdkOmittedValue) ? this.checkoutUri : checkoutUri as SdkOptional<String>,
-    startedAt: identical(startedAt, sdkOmittedValue) ? this.startedAt : startedAt as SdkOptional<String>,
-    toolName: identical(toolName, sdkOmittedValue) ? this.toolName : toolName as SdkOptional<String>,
-    validate: identical(validate, sdkOmittedValue) ? this.validate : validate as SdkOptional<bool>,
-  );
+  CodeScanningUploadSarifRequestBody _copyWith(
+          {Object? commitSha = sdkOmittedValue,
+          Object? ref = sdkOmittedValue,
+          Object? sarif = sdkOmittedValue,
+          Object? checkoutUri = sdkOmittedValue,
+          Object? startedAt = sdkOmittedValue,
+          Object? toolName = sdkOmittedValue,
+          Object? validate = sdkOmittedValue}) =>
+      CodeScanningUploadSarifRequestBody(
+        commitSha: identical(commitSha, sdkOmittedValue)
+            ? this.commitSha
+            : commitSha as String,
+        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+        sarif: identical(sarif, sdkOmittedValue) ? this.sarif : sarif as String,
+        checkoutUri: identical(checkoutUri, sdkOmittedValue)
+            ? this.checkoutUri
+            : checkoutUri as SdkOptional<String>,
+        startedAt: identical(startedAt, sdkOmittedValue)
+            ? this.startedAt
+            : startedAt as SdkOptional<String>,
+        toolName: identical(toolName, sdkOmittedValue)
+            ? this.toolName
+            : toolName as SdkOptional<String>,
+        validate: identical(validate, sdkOmittedValue)
+            ? this.validate
+            : validate as SdkOptional<bool>,
+      );
 
-  factory CodeScanningUploadSarifRequestBody.fromJson(Map<String, dynamic> json) => CodeScanningUploadSarifRequestBody(
-    commitSha: (json['commit_sha'] as String?)!,
-    ref: (json['ref'] as String?)!,
-    sarif: (json['sarif'] as String?)!,
-    checkoutUri: json['checkout_uri'] != null ? SdkPresent((json['checkout_uri'] as String?)!) : const SdkOmitted(),
-    startedAt: json['started_at'] != null ? SdkPresent((json['started_at'] as String?)!) : const SdkOmitted(),
-    toolName: json['tool_name'] != null ? SdkPresent((json['tool_name'] as String?)!) : const SdkOmitted(),
-    validate: json['validate'] != null ? SdkPresent((json['validate'] as bool?)!) : const SdkOmitted(),
-  );
+  factory CodeScanningUploadSarifRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      CodeScanningUploadSarifRequestBody(
+        commitSha: (json['commit_sha'] as String?)!,
+        ref: (json['ref'] as String?)!,
+        sarif: (json['sarif'] as String?)!,
+        checkoutUri: json['checkout_uri'] != null
+            ? SdkPresent((json['checkout_uri'] as String?)!)
+            : const SdkOmitted(),
+        startedAt: json['started_at'] != null
+            ? SdkPresent((json['started_at'] as String?)!)
+            : const SdkOmitted(),
+        toolName: json['tool_name'] != null
+            ? SdkPresent((json['tool_name'] as String?)!)
+            : const SdkOmitted(),
+        validate: json['validate'] != null
+            ? SdkPresent((json['validate'] as bool?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'commit_sha': commitSha,
-    'ref': ref,
-    'sarif': sarif,
-    ...switch (checkoutUri) {
-      SdkPresent<String>(value: final value) => {'checkout_uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (startedAt) {
-      SdkPresent<String>(value: final value) => {'started_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (toolName) {
-      SdkPresent<String>(value: final value) => {'tool_name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (validate) {
-      SdkPresent<bool>(value: final value) => {'validate': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'commit_sha': commitSha,
+        'ref': ref,
+        'sarif': sarif,
+        ...switch (checkoutUri) {
+          SdkPresent<String>(value: final value) => {
+              'checkout_uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (startedAt) {
+          SdkPresent<String>(value: final value) => {
+              'started_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (toolName) {
+          SdkPresent<String>(value: final value) => {
+              'tool_name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (validate) {
+          SdkPresent<bool>(value: final value) => {
+              'validate': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class CodespacesListInOrganizationResponse {
@@ -185,99 +356,157 @@ class CodespacesListInOrganizationResponse {
   final int totalCount;
   final List<Codespace> codespaces;
 
-  const CodespacesListInOrganizationResponse({required this.totalCount, required this.codespaces});
+  const CodespacesListInOrganizationResponse(
+      {required this.totalCount, required this.codespaces});
 
-  CodespacesListInOrganizationResponse Function({int totalCount, List<Codespace> codespaces}) get copyWith => _copyWith;
+  CodespacesListInOrganizationResponse Function(
+      {int totalCount, List<Codespace> codespaces}) get copyWith => _copyWith;
 
-  CodespacesListInOrganizationResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? codespaces = sdkOmittedValue}) => CodespacesListInOrganizationResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    codespaces: identical(codespaces, sdkOmittedValue) ? this.codespaces : codespaces as List<Codespace>,
-  );
+  CodespacesListInOrganizationResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? codespaces = sdkOmittedValue}) =>
+      CodespacesListInOrganizationResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        codespaces: identical(codespaces, sdkOmittedValue)
+            ? this.codespaces
+            : codespaces as List<Codespace>,
+      );
 
-  factory CodespacesListInOrganizationResponse.fromJson(Map<String, dynamic> json) => CodespacesListInOrganizationResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    codespaces: ((json['codespaces'] as List?)?.map((e) => Codespace.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+  factory CodespacesListInOrganizationResponse.fromJson(
+          Map<String, dynamic> json) =>
+      CodespacesListInOrganizationResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        codespaces: ((json['codespaces'] as List?)
+            ?.map((e) => Codespace.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'codespaces': codespaces.map((item) => item.toJson()).toList(),
-  };
+        'total_count': totalCount,
+        'codespaces': codespaces.map((item) => item.toJson()).toList(),
+      };
 }
 
 class CodespacesSetCodespacesAccessRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Which users can access codespaces in the organization. `disabled` means that no users can access codespaces in the organization.
   final CodespacesSetCodespacesAccessRequestBodyVisibility visibility;
+
   /// The usernames of the organization members who should have access to codespaces in the organization. Required when `visibility` is `selected_members`. The provided list of usernames will replace any existing value.
   final SdkOptional<List<String>> selectedUsernames;
 
-  const CodespacesSetCodespacesAccessRequestBody({required this.visibility, this.selectedUsernames = const SdkOmitted()});
+  const CodespacesSetCodespacesAccessRequestBody(
+      {required this.visibility, this.selectedUsernames = const SdkOmitted()});
 
-  CodespacesSetCodespacesAccessRequestBody Function({CodespacesSetCodespacesAccessRequestBodyVisibility visibility, SdkOptional<List<String>> selectedUsernames}) get copyWith => _copyWith;
+  CodespacesSetCodespacesAccessRequestBody Function(
+      {CodespacesSetCodespacesAccessRequestBodyVisibility visibility,
+      SdkOptional<List<String>> selectedUsernames}) get copyWith => _copyWith;
 
-  CodespacesSetCodespacesAccessRequestBody _copyWith({Object? visibility = sdkOmittedValue, Object? selectedUsernames = sdkOmittedValue}) => CodespacesSetCodespacesAccessRequestBody(
-    visibility: identical(visibility, sdkOmittedValue) ? this.visibility : visibility as CodespacesSetCodespacesAccessRequestBodyVisibility,
-    selectedUsernames: identical(selectedUsernames, sdkOmittedValue) ? this.selectedUsernames : selectedUsernames as SdkOptional<List<String>>,
-  );
+  CodespacesSetCodespacesAccessRequestBody _copyWith(
+          {Object? visibility = sdkOmittedValue,
+          Object? selectedUsernames = sdkOmittedValue}) =>
+      CodespacesSetCodespacesAccessRequestBody(
+        visibility: identical(visibility, sdkOmittedValue)
+            ? this.visibility
+            : visibility as CodespacesSetCodespacesAccessRequestBodyVisibility,
+        selectedUsernames: identical(selectedUsernames, sdkOmittedValue)
+            ? this.selectedUsernames
+            : selectedUsernames as SdkOptional<List<String>>,
+      );
 
-  factory CodespacesSetCodespacesAccessRequestBody.fromJson(Map<String, dynamic> json) => CodespacesSetCodespacesAccessRequestBody(
-    visibility: (json['visibility'] != null ? CodespacesSetCodespacesAccessRequestBodyVisibility.fromJson(json['visibility'] as String) : null)!,
-    selectedUsernames: json['selected_usernames'] != null ? SdkPresent(((json['selected_usernames'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-  );
+  factory CodespacesSetCodespacesAccessRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      CodespacesSetCodespacesAccessRequestBody(
+        visibility: (json['visibility'] != null
+            ? CodespacesSetCodespacesAccessRequestBodyVisibility.fromJson(
+                json['visibility'] as String)
+            : null)!,
+        selectedUsernames: json['selected_usernames'] != null
+            ? SdkPresent(((json['selected_usernames'] as List?)
+                ?.map((e) => e as String)
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'visibility': visibility.toJson(),
-    ...switch (selectedUsernames) {
-      SdkPresent<List<String>>(value: final value) => {'selected_usernames': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'visibility': visibility.toJson(),
+        ...switch (selectedUsernames) {
+          SdkPresent<List<String>>(value: final value) => {
+              'selected_usernames': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class CodespacesSetCodespacesAccessUsersRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The usernames of the organization members and outside collaborators whose codespaces should be billed to the organization.
   final List<String> selectedUsernames;
 
-  const CodespacesSetCodespacesAccessUsersRequestBody({required this.selectedUsernames});
+  const CodespacesSetCodespacesAccessUsersRequestBody(
+      {required this.selectedUsernames});
 
-  CodespacesSetCodespacesAccessUsersRequestBody Function({List<String> selectedUsernames}) get copyWith => _copyWith;
+  CodespacesSetCodespacesAccessUsersRequestBody Function(
+      {List<String> selectedUsernames}) get copyWith => _copyWith;
 
-  CodespacesSetCodespacesAccessUsersRequestBody _copyWith({Object? selectedUsernames = sdkOmittedValue}) => CodespacesSetCodespacesAccessUsersRequestBody(
-    selectedUsernames: identical(selectedUsernames, sdkOmittedValue) ? this.selectedUsernames : selectedUsernames as List<String>,
-  );
+  CodespacesSetCodespacesAccessUsersRequestBody _copyWith(
+          {Object? selectedUsernames = sdkOmittedValue}) =>
+      CodespacesSetCodespacesAccessUsersRequestBody(
+        selectedUsernames: identical(selectedUsernames, sdkOmittedValue)
+            ? this.selectedUsernames
+            : selectedUsernames as List<String>,
+      );
 
-  factory CodespacesSetCodespacesAccessUsersRequestBody.fromJson(Map<String, dynamic> json) => CodespacesSetCodespacesAccessUsersRequestBody(
-    selectedUsernames: ((json['selected_usernames'] as List?)?.map((e) => e as String).toList())!,
-  );
+  factory CodespacesSetCodespacesAccessUsersRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      CodespacesSetCodespacesAccessUsersRequestBody(
+        selectedUsernames: ((json['selected_usernames'] as List?)
+            ?.map((e) => e as String)
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'selected_usernames': selectedUsernames,
-  };
+        'selected_usernames': selectedUsernames,
+      };
 }
 
 class CodespacesDeleteCodespacesAccessUsersRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The usernames of the organization members and outside collaborators whose codespaces should not be billed to the organization.
   final List<String> selectedUsernames;
 
-  const CodespacesDeleteCodespacesAccessUsersRequestBody({required this.selectedUsernames});
+  const CodespacesDeleteCodespacesAccessUsersRequestBody(
+      {required this.selectedUsernames});
 
-  CodespacesDeleteCodespacesAccessUsersRequestBody Function({List<String> selectedUsernames}) get copyWith => _copyWith;
+  CodespacesDeleteCodespacesAccessUsersRequestBody Function(
+      {List<String> selectedUsernames}) get copyWith => _copyWith;
 
-  CodespacesDeleteCodespacesAccessUsersRequestBody _copyWith({Object? selectedUsernames = sdkOmittedValue}) => CodespacesDeleteCodespacesAccessUsersRequestBody(
-    selectedUsernames: identical(selectedUsernames, sdkOmittedValue) ? this.selectedUsernames : selectedUsernames as List<String>,
-  );
+  CodespacesDeleteCodespacesAccessUsersRequestBody _copyWith(
+          {Object? selectedUsernames = sdkOmittedValue}) =>
+      CodespacesDeleteCodespacesAccessUsersRequestBody(
+        selectedUsernames: identical(selectedUsernames, sdkOmittedValue)
+            ? this.selectedUsernames
+            : selectedUsernames as List<String>,
+      );
 
-  factory CodespacesDeleteCodespacesAccessUsersRequestBody.fromJson(Map<String, dynamic> json) => CodespacesDeleteCodespacesAccessUsersRequestBody(
-    selectedUsernames: ((json['selected_usernames'] as List?)?.map((e) => e as String).toList())!,
-  );
+  factory CodespacesDeleteCodespacesAccessUsersRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      CodespacesDeleteCodespacesAccessUsersRequestBody(
+        selectedUsernames: ((json['selected_usernames'] as List?)
+            ?.map((e) => e as String)
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'selected_usernames': selectedUsernames,
-  };
+        'selected_usernames': selectedUsernames,
+      };
 }

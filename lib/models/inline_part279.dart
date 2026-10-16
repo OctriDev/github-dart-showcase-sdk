@@ -6,121 +6,148 @@ part of 'inline.dart';
 // Inline operation models (part 279)
 /// The default value for a squash merge commit message: - `PR_BODY` - default to the pull request's body. - `COMMIT_MESSAGES` - default to the branch's commit messages. - `BLANK` - default to a blank commit message.
 final class ReposUpdateRequestBodySquashMergeCommitMessage {
-
   final String value;
 
   const ReposUpdateRequestBodySquashMergeCommitMessage._(this.value);
 
-  factory ReposUpdateRequestBodySquashMergeCommitMessage.fromJson(String value) => ReposUpdateRequestBodySquashMergeCommitMessage._(value);
+  factory ReposUpdateRequestBodySquashMergeCommitMessage.fromJson(
+          String value) =>
+      ReposUpdateRequestBodySquashMergeCommitMessage._(value);
 
-  static const prBody = ReposUpdateRequestBodySquashMergeCommitMessage._('PR_BODY');
-  static const commitMessages = ReposUpdateRequestBodySquashMergeCommitMessage._('COMMIT_MESSAGES');
-  static const blank = ReposUpdateRequestBodySquashMergeCommitMessage._('BLANK');
+  static const prBody =
+      ReposUpdateRequestBodySquashMergeCommitMessage._('PR_BODY');
+  static const commitMessages =
+      ReposUpdateRequestBodySquashMergeCommitMessage._('COMMIT_MESSAGES');
+  static const blank =
+      ReposUpdateRequestBodySquashMergeCommitMessage._('BLANK');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReposUpdateRequestBodySquashMergeCommitMessage && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ReposUpdateRequestBodySquashMergeCommitMessage &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required when using `squash_merge_commit_message`. The default value for a squash merge commit title: - `PR_TITLE` - default to the pull request's title. - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
 final class ReposUpdateRequestBodySquashMergeCommitTitle {
-
   final String value;
 
   const ReposUpdateRequestBodySquashMergeCommitTitle._(this.value);
 
-  factory ReposUpdateRequestBodySquashMergeCommitTitle.fromJson(String value) => ReposUpdateRequestBodySquashMergeCommitTitle._(value);
+  factory ReposUpdateRequestBodySquashMergeCommitTitle.fromJson(String value) =>
+      ReposUpdateRequestBodySquashMergeCommitTitle._(value);
 
-  static const prTitle = ReposUpdateRequestBodySquashMergeCommitTitle._('PR_TITLE');
-  static const commitOrPrTitle = ReposUpdateRequestBodySquashMergeCommitTitle._('COMMIT_OR_PR_TITLE');
+  static const prTitle =
+      ReposUpdateRequestBodySquashMergeCommitTitle._('PR_TITLE');
+  static const commitOrPrTitle =
+      ReposUpdateRequestBodySquashMergeCommitTitle._('COMMIT_OR_PR_TITLE');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReposUpdateRequestBodySquashMergeCommitTitle && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ReposUpdateRequestBodySquashMergeCommitTitle &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The visibility of the repository.
 final class ReposUpdateRequestBodyVisibility {
-
   final String value;
 
   const ReposUpdateRequestBodyVisibility._(this.value);
 
-  factory ReposUpdateRequestBodyVisibility.fromJson(String value) => ReposUpdateRequestBodyVisibility._(value);
+  factory ReposUpdateRequestBodyVisibility.fromJson(String value) =>
+      ReposUpdateRequestBodyVisibility._(value);
 
   static const public = ReposUpdateRequestBodyVisibility._('public');
   static const private = ReposUpdateRequestBodyVisibility._('private');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReposUpdateRequestBodyVisibility && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ReposUpdateRequestBodyVisibility && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class ActionsListJobsForWorkflowRunFilter {
-
   final String value;
 
   const ActionsListJobsForWorkflowRunFilter._(this.value);
 
-  factory ActionsListJobsForWorkflowRunFilter.fromJson(String value) => ActionsListJobsForWorkflowRunFilter._(value);
+  factory ActionsListJobsForWorkflowRunFilter.fromJson(String value) =>
+      ActionsListJobsForWorkflowRunFilter._(value);
 
   static const latest = ActionsListJobsForWorkflowRunFilter._('latest');
   static const all = ActionsListJobsForWorkflowRunFilter._('all');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ActionsListJobsForWorkflowRunFilter && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ActionsListJobsForWorkflowRunFilter && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Whether to approve or reject deployment to the specified environments.
 final class ActionsReviewPendingDeploymentsForRunRequestBodyState {
-
   final String value;
 
   const ActionsReviewPendingDeploymentsForRunRequestBodyState._(this.value);
 
-  factory ActionsReviewPendingDeploymentsForRunRequestBodyState.fromJson(String value) => ActionsReviewPendingDeploymentsForRunRequestBodyState._(value);
+  factory ActionsReviewPendingDeploymentsForRunRequestBodyState.fromJson(
+          String value) =>
+      ActionsReviewPendingDeploymentsForRunRequestBodyState._(value);
 
-  static const approved = ActionsReviewPendingDeploymentsForRunRequestBodyState._('approved');
-  static const rejected = ActionsReviewPendingDeploymentsForRunRequestBodyState._('rejected');
+  static const approved =
+      ActionsReviewPendingDeploymentsForRunRequestBodyState._('approved');
+  static const rejected =
+      ActionsReviewPendingDeploymentsForRunRequestBodyState._('rejected');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ActionsReviewPendingDeploymentsForRunRequestBodyState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ActionsReviewPendingDeploymentsForRunRequestBodyState &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class ReposListActivitiesTimePeriod {
-
   final String value;
 
   const ReposListActivitiesTimePeriod._(this.value);
 
-  factory ReposListActivitiesTimePeriod.fromJson(String value) => ReposListActivitiesTimePeriod._(value);
+  factory ReposListActivitiesTimePeriod.fromJson(String value) =>
+      ReposListActivitiesTimePeriod._(value);
 
   static const day = ReposListActivitiesTimePeriod._('day');
   static const week = ReposListActivitiesTimePeriod._('week');
@@ -130,37 +157,46 @@ final class ReposListActivitiesTimePeriod {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReposListActivitiesTimePeriod && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ReposListActivitiesTimePeriod && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class ReposListActivitiesActivityType {
-
   final String value;
 
   const ReposListActivitiesActivityType._(this.value);
 
-  factory ReposListActivitiesActivityType.fromJson(String value) => ReposListActivitiesActivityType._(value);
+  factory ReposListActivitiesActivityType.fromJson(String value) =>
+      ReposListActivitiesActivityType._(value);
 
   static const push = ReposListActivitiesActivityType._('push');
   static const forcePush = ReposListActivitiesActivityType._('force_push');
-  static const branchCreation = ReposListActivitiesActivityType._('branch_creation');
-  static const branchDeletion = ReposListActivitiesActivityType._('branch_deletion');
+  static const branchCreation =
+      ReposListActivitiesActivityType._('branch_creation');
+  static const branchDeletion =
+      ReposListActivitiesActivityType._('branch_deletion');
   static const prMerge = ReposListActivitiesActivityType._('pr_merge');
-  static const mergeQueueMerge = ReposListActivitiesActivityType._('merge_queue_merge');
+  static const mergeQueueMerge =
+      ReposListActivitiesActivityType._('merge_queue_merge');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReposListActivitiesActivityType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ReposListActivitiesActivityType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 enum ChecksCreateRequestBodyVariant0Status {
@@ -168,14 +204,18 @@ enum ChecksCreateRequestBodyVariant0Status {
 
   static ChecksCreateRequestBodyVariant0Status fromJson(String value) {
     switch (value) {
-      case 'completed': return ChecksCreateRequestBodyVariant0Status.completed;
-      default: throw ArgumentError('Unknown ChecksCreateRequestBodyVariant0Status: $value');
+      case 'completed':
+        return ChecksCreateRequestBodyVariant0Status.completed;
+      default:
+        throw ArgumentError(
+            'Unknown ChecksCreateRequestBodyVariant0Status: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ChecksCreateRequestBodyVariant0Status.completed: return 'completed';
+      case ChecksCreateRequestBodyVariant0Status.completed:
+        return 'completed';
     }
   }
 
@@ -189,16 +229,22 @@ enum ChecksCreateRequestBodyVariant1Status {
 
   static ChecksCreateRequestBodyVariant1Status fromJson(String value) {
     switch (value) {
-      case 'queued': return ChecksCreateRequestBodyVariant1Status.queued;
-      case 'in_progress': return ChecksCreateRequestBodyVariant1Status.inProgress;
-      default: throw ArgumentError('Unknown ChecksCreateRequestBodyVariant1Status: $value');
+      case 'queued':
+        return ChecksCreateRequestBodyVariant1Status.queued;
+      case 'in_progress':
+        return ChecksCreateRequestBodyVariant1Status.inProgress;
+      default:
+        throw ArgumentError(
+            'Unknown ChecksCreateRequestBodyVariant1Status: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ChecksCreateRequestBodyVariant1Status.queued: return 'queued';
-      case ChecksCreateRequestBodyVariant1Status.inProgress: return 'in_progress';
+      case ChecksCreateRequestBodyVariant1Status.queued:
+        return 'queued';
+      case ChecksCreateRequestBodyVariant1Status.inProgress:
+        return 'in_progress';
     }
   }
 
@@ -208,14 +254,15 @@ enum ChecksCreateRequestBodyVariant1Status {
 
 /// **Required if you provide `completed_at` or a `status` of `completed`**. The final conclusion of the check. **Note:** Providing `conclusion` will automatically set the `status` parameter to `completed`. You cannot change a check run conclusion to `stale`, only GitHub can set this.
 final class ChecksCreateRequestBodyConclusion {
-
   final String value;
 
   const ChecksCreateRequestBodyConclusion._(this.value);
 
-  factory ChecksCreateRequestBodyConclusion.fromJson(String value) => ChecksCreateRequestBodyConclusion._(value);
+  factory ChecksCreateRequestBodyConclusion.fromJson(String value) =>
+      ChecksCreateRequestBodyConclusion._(value);
 
-  static const actionRequired = ChecksCreateRequestBodyConclusion._('action_required');
+  static const actionRequired =
+      ChecksCreateRequestBodyConclusion._('action_required');
   static const cancelled = ChecksCreateRequestBodyConclusion._('cancelled');
   static const failure = ChecksCreateRequestBodyConclusion._('failure');
   static const neutral = ChecksCreateRequestBodyConclusion._('neutral');
@@ -226,45 +273,57 @@ final class ChecksCreateRequestBodyConclusion {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ChecksCreateRequestBodyConclusion && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ChecksCreateRequestBodyConclusion && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The level of the annotation.
 final class ChecksCreateRequestBodyOutputAnnotationsItemAnnotationLevel {
-
   final String value;
 
-  const ChecksCreateRequestBodyOutputAnnotationsItemAnnotationLevel._(this.value);
+  const ChecksCreateRequestBodyOutputAnnotationsItemAnnotationLevel._(
+      this.value);
 
-  factory ChecksCreateRequestBodyOutputAnnotationsItemAnnotationLevel.fromJson(String value) => ChecksCreateRequestBodyOutputAnnotationsItemAnnotationLevel._(value);
+  factory ChecksCreateRequestBodyOutputAnnotationsItemAnnotationLevel.fromJson(
+          String value) =>
+      ChecksCreateRequestBodyOutputAnnotationsItemAnnotationLevel._(value);
 
-  static const notice = ChecksCreateRequestBodyOutputAnnotationsItemAnnotationLevel._('notice');
-  static const warning = ChecksCreateRequestBodyOutputAnnotationsItemAnnotationLevel._('warning');
-  static const failure = ChecksCreateRequestBodyOutputAnnotationsItemAnnotationLevel._('failure');
+  static const notice =
+      ChecksCreateRequestBodyOutputAnnotationsItemAnnotationLevel._('notice');
+  static const warning =
+      ChecksCreateRequestBodyOutputAnnotationsItemAnnotationLevel._('warning');
+  static const failure =
+      ChecksCreateRequestBodyOutputAnnotationsItemAnnotationLevel._('failure');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ChecksCreateRequestBodyOutputAnnotationsItemAnnotationLevel && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ChecksCreateRequestBodyOutputAnnotationsItemAnnotationLevel &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The current status of the check run. Only GitHub Actions can set a status of `waiting`, `pending`, or `requested`.
 final class ChecksCreateRequestBodyStatus {
-
   final String value;
 
   const ChecksCreateRequestBodyStatus._(this.value);
 
-  factory ChecksCreateRequestBodyStatus.fromJson(String value) => ChecksCreateRequestBodyStatus._(value);
+  factory ChecksCreateRequestBodyStatus.fromJson(String value) =>
+      ChecksCreateRequestBodyStatus._(value);
 
   static const queued = ChecksCreateRequestBodyStatus._('queued');
   static const inProgress = ChecksCreateRequestBodyStatus._('in_progress');
@@ -275,10 +334,13 @@ final class ChecksCreateRequestBodyStatus {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ChecksCreateRequestBodyStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ChecksCreateRequestBodyStatus && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

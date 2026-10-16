@@ -8,186 +8,378 @@ part of 'webhook_pull_request_auto_merge_disabled_pull_request_requested_reviewe
 class WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1Parent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Description of the team
   final String? description;
+
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String htmlUrl;
+
   /// Unique identifier of the team
   final int id;
+
   /// Required `uri-template`-formatted value serialized in the `members_url` wire field.
   final String membersUrl;
+
   /// Name of the team
   final String name;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// Permission that the team will have for its repositories
   final String permission;
+
   /// Required enumerated value serialized in the `privacy` wire field.
-  final WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1ParentPrivacy privacy;
+  final WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1ParentPrivacy
+      privacy;
+
   /// Required `uri`-formatted value serialized in the `repositories_url` wire field.
   final String repositoriesUrl;
+
   /// Required `string` value serialized in the `slug` wire field.
   final String slug;
+
   /// URL for the team
   final String url;
 
-  const WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1Parent({required this.description, required this.htmlUrl, required this.id, required this.membersUrl, required this.name, required this.nodeId, required this.permission, required this.privacy, required this.repositoriesUrl, required this.slug, required this.url});
+  const WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1Parent(
+      {required this.description,
+      required this.htmlUrl,
+      required this.id,
+      required this.membersUrl,
+      required this.name,
+      required this.nodeId,
+      required this.permission,
+      required this.privacy,
+      required this.repositoriesUrl,
+      required this.slug,
+      required this.url});
 
-  WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1Parent Function({String? description, String htmlUrl, int id, String membersUrl, String name, String nodeId, String permission, WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1ParentPrivacy privacy, String repositoriesUrl, String slug, String url}) get copyWith => _copyWith;
+  WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1Parent Function(
+      {String? description,
+      String htmlUrl,
+      int id,
+      String membersUrl,
+      String name,
+      String nodeId,
+      String permission,
+      WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1ParentPrivacy
+          privacy,
+      String repositoriesUrl,
+      String slug,
+      String url}) get copyWith => _copyWith;
 
-  WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1Parent _copyWith({Object? description = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? id = sdkOmittedValue, Object? membersUrl = sdkOmittedValue, Object? name = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? permission = sdkOmittedValue, Object? privacy = sdkOmittedValue, Object? repositoriesUrl = sdkOmittedValue, Object? slug = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1Parent(
-    description: identical(description, sdkOmittedValue) ? this.description : description as String?,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    membersUrl: identical(membersUrl, sdkOmittedValue) ? this.membersUrl : membersUrl as String,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    permission: identical(permission, sdkOmittedValue) ? this.permission : permission as String,
-    privacy: identical(privacy, sdkOmittedValue) ? this.privacy : privacy as WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1ParentPrivacy,
-    repositoriesUrl: identical(repositoriesUrl, sdkOmittedValue) ? this.repositoriesUrl : repositoriesUrl as String,
-    slug: identical(slug, sdkOmittedValue) ? this.slug : slug as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1Parent
+      _copyWith(
+              {Object? description = sdkOmittedValue,
+              Object? htmlUrl = sdkOmittedValue,
+              Object? id = sdkOmittedValue,
+              Object? membersUrl = sdkOmittedValue,
+              Object? name = sdkOmittedValue,
+              Object? nodeId = sdkOmittedValue,
+              Object? permission = sdkOmittedValue,
+              Object? privacy = sdkOmittedValue,
+              Object? repositoriesUrl = sdkOmittedValue,
+              Object? slug = sdkOmittedValue,
+              Object? url = sdkOmittedValue}) =>
+          WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1Parent(
+            description: identical(description, sdkOmittedValue)
+                ? this.description
+                : description as String?,
+            htmlUrl: identical(htmlUrl, sdkOmittedValue)
+                ? this.htmlUrl
+                : htmlUrl as String,
+            id: identical(id, sdkOmittedValue) ? this.id : id as int,
+            membersUrl: identical(membersUrl, sdkOmittedValue)
+                ? this.membersUrl
+                : membersUrl as String,
+            name: identical(name, sdkOmittedValue) ? this.name : name as String,
+            nodeId: identical(nodeId, sdkOmittedValue)
+                ? this.nodeId
+                : nodeId as String,
+            permission: identical(permission, sdkOmittedValue)
+                ? this.permission
+                : permission as String,
+            privacy: identical(privacy, sdkOmittedValue)
+                ? this.privacy
+                : privacy
+                    as WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1ParentPrivacy,
+            repositoriesUrl: identical(repositoriesUrl, sdkOmittedValue)
+                ? this.repositoriesUrl
+                : repositoriesUrl as String,
+            slug: identical(slug, sdkOmittedValue) ? this.slug : slug as String,
+            url: identical(url, sdkOmittedValue) ? this.url : url as String,
+          );
 
-  factory WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1Parent.fromJson(Map<String, dynamic> json) => WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1Parent(
-    description: json.containsKey('description') ? json['description'] as String? : throw ArgumentError.value(null, 'description', 'Required property is missing'),
-    htmlUrl: (json['html_url'] as String?)!,
-    id: ((json['id'] as num?)?.toInt())!,
-    membersUrl: (json['members_url'] as String?)!,
-    name: (json['name'] as String?)!,
-    nodeId: (json['node_id'] as String?)!,
-    permission: (json['permission'] as String?)!,
-    privacy: (json['privacy'] != null ? WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1ParentPrivacy.fromJson(json['privacy'] as String) : null)!,
-    repositoriesUrl: (json['repositories_url'] as String?)!,
-    slug: (json['slug'] as String?)!,
-    url: (json['url'] as String?)!,
-  );
+  factory WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1Parent.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1Parent(
+        description: json.containsKey('description')
+            ? json['description'] as String?
+            : throw ArgumentError.value(
+                null, 'description', 'Required property is missing'),
+        htmlUrl: (json['html_url'] as String?)!,
+        id: ((json['id'] as num?)?.toInt())!,
+        membersUrl: (json['members_url'] as String?)!,
+        name: (json['name'] as String?)!,
+        nodeId: (json['node_id'] as String?)!,
+        permission: (json['permission'] as String?)!,
+        privacy: (json['privacy'] != null
+            ? WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1ParentPrivacy
+                .fromJson(json['privacy'] as String)
+            : null)!,
+        repositoriesUrl: (json['repositories_url'] as String?)!,
+        slug: (json['slug'] as String?)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'description': description,
-    'html_url': htmlUrl,
-    'id': id,
-    'members_url': membersUrl,
-    'name': name,
-    'node_id': nodeId,
-    'permission': permission,
-    'privacy': privacy.toJson(),
-    'repositories_url': repositoriesUrl,
-    'slug': slug,
-    'url': url,
-  };
+        'description': description,
+        'html_url': htmlUrl,
+        'id': id,
+        'members_url': membersUrl,
+        'name': name,
+        'node_id': nodeId,
+        'permission': permission,
+        'privacy': privacy.toJson(),
+        'repositories_url': repositoriesUrl,
+        'slug': slug,
+        'url': url,
+      };
 }
 
 /// Groups of organization members that gives permissions on specified repositories.
 class WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `boolean` value serialized in the `deleted` wire field.
   final SdkOptional<bool> deleted;
+
   /// Description of the team
   final String? description;
+
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String htmlUrl;
+
   /// Unique identifier of the team
   final int id;
+
   /// Required `uri-template`-formatted value serialized in the `members_url` wire field.
   final String membersUrl;
+
   /// Name of the team
   final String name;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// Optional object value serialized in the `parent` wire field.
-  final SdkOptional<WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1Parent?> parent;
+  final SdkOptional<
+          WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1Parent?>
+      parent;
+
   /// Permission that the team will have for its repositories
   final String permission;
+
   /// Required enumerated value serialized in the `privacy` wire field.
-  final WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1Privacy privacy;
+  final WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1Privacy
+      privacy;
+
   /// Required `uri`-formatted value serialized in the `repositories_url` wire field.
   final String repositoriesUrl;
+
   /// Required `string` value serialized in the `slug` wire field.
   final String slug;
+
   /// URL for the team
   final String url;
 
-  const WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1({this.deleted = const SdkOmitted(), required this.description, required this.htmlUrl, required this.id, required this.membersUrl, required this.name, required this.nodeId, this.parent = const SdkOmitted(), required this.permission, required this.privacy, required this.repositoriesUrl, required this.slug, required this.url});
+  const WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1(
+      {this.deleted = const SdkOmitted(),
+      required this.description,
+      required this.htmlUrl,
+      required this.id,
+      required this.membersUrl,
+      required this.name,
+      required this.nodeId,
+      this.parent = const SdkOmitted(),
+      required this.permission,
+      required this.privacy,
+      required this.repositoriesUrl,
+      required this.slug,
+      required this.url});
 
-  WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1 Function({SdkOptional<bool> deleted, String? description, String htmlUrl, int id, String membersUrl, String name, String nodeId, SdkOptional<WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1Parent?> parent, String permission, WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1Privacy privacy, String repositoriesUrl, String slug, String url}) get copyWith => _copyWith;
+  WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1 Function(
+      {SdkOptional<bool> deleted,
+      String? description,
+      String htmlUrl,
+      int id,
+      String membersUrl,
+      String name,
+      String nodeId,
+      SdkOptional<
+              WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1Parent?>
+          parent,
+      String permission,
+      WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1Privacy
+          privacy,
+      String repositoriesUrl,
+      String slug,
+      String url}) get copyWith => _copyWith;
 
-  WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1 _copyWith({Object? deleted = sdkOmittedValue, Object? description = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? id = sdkOmittedValue, Object? membersUrl = sdkOmittedValue, Object? name = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? parent = sdkOmittedValue, Object? permission = sdkOmittedValue, Object? privacy = sdkOmittedValue, Object? repositoriesUrl = sdkOmittedValue, Object? slug = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1(
-    deleted: identical(deleted, sdkOmittedValue) ? this.deleted : deleted as SdkOptional<bool>,
-    description: identical(description, sdkOmittedValue) ? this.description : description as String?,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    membersUrl: identical(membersUrl, sdkOmittedValue) ? this.membersUrl : membersUrl as String,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    parent: identical(parent, sdkOmittedValue) ? this.parent : parent as SdkOptional<WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1Parent?>,
-    permission: identical(permission, sdkOmittedValue) ? this.permission : permission as String,
-    privacy: identical(privacy, sdkOmittedValue) ? this.privacy : privacy as WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1Privacy,
-    repositoriesUrl: identical(repositoriesUrl, sdkOmittedValue) ? this.repositoriesUrl : repositoriesUrl as String,
-    slug: identical(slug, sdkOmittedValue) ? this.slug : slug as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1
+      _copyWith(
+              {Object? deleted = sdkOmittedValue,
+              Object? description = sdkOmittedValue,
+              Object? htmlUrl = sdkOmittedValue,
+              Object? id = sdkOmittedValue,
+              Object? membersUrl = sdkOmittedValue,
+              Object? name = sdkOmittedValue,
+              Object? nodeId = sdkOmittedValue,
+              Object? parent = sdkOmittedValue,
+              Object? permission = sdkOmittedValue,
+              Object? privacy = sdkOmittedValue,
+              Object? repositoriesUrl = sdkOmittedValue,
+              Object? slug = sdkOmittedValue,
+              Object? url = sdkOmittedValue}) =>
+          WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1(
+            deleted: identical(deleted, sdkOmittedValue)
+                ? this.deleted
+                : deleted as SdkOptional<bool>,
+            description: identical(description, sdkOmittedValue)
+                ? this.description
+                : description as String?,
+            htmlUrl: identical(htmlUrl, sdkOmittedValue)
+                ? this.htmlUrl
+                : htmlUrl as String,
+            id: identical(id, sdkOmittedValue) ? this.id : id as int,
+            membersUrl: identical(membersUrl, sdkOmittedValue)
+                ? this.membersUrl
+                : membersUrl as String,
+            name: identical(name, sdkOmittedValue) ? this.name : name as String,
+            nodeId: identical(nodeId, sdkOmittedValue)
+                ? this.nodeId
+                : nodeId as String,
+            parent: identical(parent, sdkOmittedValue)
+                ? this.parent
+                : parent as SdkOptional<
+                    WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1Parent?>,
+            permission: identical(permission, sdkOmittedValue)
+                ? this.permission
+                : permission as String,
+            privacy: identical(privacy, sdkOmittedValue)
+                ? this.privacy
+                : privacy
+                    as WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1Privacy,
+            repositoriesUrl: identical(repositoriesUrl, sdkOmittedValue)
+                ? this.repositoriesUrl
+                : repositoriesUrl as String,
+            slug: identical(slug, sdkOmittedValue) ? this.slug : slug as String,
+            url: identical(url, sdkOmittedValue) ? this.url : url as String,
+          );
 
-  factory WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1.fromJson(Map<String, dynamic> json) => WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1(
-    deleted: json['deleted'] != null ? SdkPresent((json['deleted'] as bool?)!) : const SdkOmitted(),
-    description: json.containsKey('description') ? json['description'] as String? : throw ArgumentError.value(null, 'description', 'Required property is missing'),
-    htmlUrl: (json['html_url'] as String?)!,
-    id: ((json['id'] as num?)?.toInt())!,
-    membersUrl: (json['members_url'] as String?)!,
-    name: (json['name'] as String?)!,
-    nodeId: (json['node_id'] as String?)!,
-    parent: json.containsKey('parent') ? SdkPresent(json['parent'] != null ? WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1Parent.fromJson(json['parent'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-    permission: (json['permission'] as String?)!,
-    privacy: (json['privacy'] != null ? WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1Privacy.fromJson(json['privacy'] as String) : null)!,
-    repositoriesUrl: (json['repositories_url'] as String?)!,
-    slug: (json['slug'] as String?)!,
-    url: (json['url'] as String?)!,
-  );
+  factory WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1(
+        deleted: json['deleted'] != null
+            ? SdkPresent((json['deleted'] as bool?)!)
+            : const SdkOmitted(),
+        description: json.containsKey('description')
+            ? json['description'] as String?
+            : throw ArgumentError.value(
+                null, 'description', 'Required property is missing'),
+        htmlUrl: (json['html_url'] as String?)!,
+        id: ((json['id'] as num?)?.toInt())!,
+        membersUrl: (json['members_url'] as String?)!,
+        name: (json['name'] as String?)!,
+        nodeId: (json['node_id'] as String?)!,
+        parent: json.containsKey('parent')
+            ? SdkPresent(json['parent'] != null
+                ? WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1Parent
+                    .fromJson(json['parent'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        permission: (json['permission'] as String?)!,
+        privacy: (json['privacy'] != null
+            ? WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1Privacy
+                .fromJson(json['privacy'] as String)
+            : null)!,
+        repositoriesUrl: (json['repositories_url'] as String?)!,
+        slug: (json['slug'] as String?)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (deleted) {
-      SdkPresent<bool>(value: final value) => {'deleted': value,},
-      _ => const <String, dynamic>{},
-    },
-    'description': description,
-    'html_url': htmlUrl,
-    'id': id,
-    'members_url': membersUrl,
-    'name': name,
-    'node_id': nodeId,
-    ...switch (parent) {
-      SdkPresent<WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1Parent?>(value: final value) => {'parent': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'permission': permission,
-    'privacy': privacy.toJson(),
-    'repositories_url': repositoriesUrl,
-    'slug': slug,
-    'url': url,
-  };
+        ...switch (deleted) {
+          SdkPresent<bool>(value: final value) => {
+              'deleted': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'description': description,
+        'html_url': htmlUrl,
+        'id': id,
+        'members_url': membersUrl,
+        'name': name,
+        'node_id': nodeId,
+        ...switch (parent) {
+          SdkPresent<
+                WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1Parent?>(
+            value: final value
+          ) =>
+            {
+              'parent': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'permission': permission,
+        'privacy': privacy.toJson(),
+        'repositories_url': repositoriesUrl,
+        'slug': slug,
+        'url': url,
+      };
 }
 
 sealed class WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItem();
-  factory WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItem.fromJson(Object? json) {
-    try { return WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemWebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant0(WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant0.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemWebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1(WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    throw FormatException("No variant matched for WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItem");
+  factory WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItem.fromJson(
+      Object? json) {
+    try {
+      return WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemWebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant0(
+          WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant0
+              .fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemWebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1(
+          WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1
+              .fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    throw FormatException(
+        "No variant matched for WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItem");
   }
   Object? toJson();
 }
 
-final class WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemWebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant0 extends WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItem {
-  final WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant0 value;
-  const WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemWebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant0(this.value);
-  @override Object? toJson() => value.toJson();
+final class WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemWebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant0
+    extends WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItem {
+  final WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant0
+      value;
+  const WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemWebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant0(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemWebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1 extends WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItem {
-  final WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1 value;
-  const WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemWebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1(this.value);
-  @override Object? toJson() => value.toJson();
+final class WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemWebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1
+    extends WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItem {
+  final WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1
+      value;
+  const WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemWebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }

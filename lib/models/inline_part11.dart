@@ -6,124 +6,145 @@ part of 'inline.dart';
 // Inline operation models (part 11)
 /// Whether AI Scan is enabled for the repository.
 final class CodeScanningAiScanEnablementPrScan {
-
   final String value;
 
   const CodeScanningAiScanEnablementPrScan._(this.value);
 
-  factory CodeScanningAiScanEnablementPrScan.fromJson(String value) => CodeScanningAiScanEnablementPrScan._(value);
+  factory CodeScanningAiScanEnablementPrScan.fromJson(String value) =>
+      CodeScanningAiScanEnablementPrScan._(value);
 
   static const enabled = CodeScanningAiScanEnablementPrScan._('enabled');
   static const disabled = CodeScanningAiScanEnablementPrScan._('disabled');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeScanningAiScanEnablementPrScan && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodeScanningAiScanEnablementPrScan && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Whether to enable or disable AI Scan for the repository.
 final class CodeScanningAiScanEnablementUpdatePrScan {
-
   final String value;
 
   const CodeScanningAiScanEnablementUpdatePrScan._(this.value);
 
-  factory CodeScanningAiScanEnablementUpdatePrScan.fromJson(String value) => CodeScanningAiScanEnablementUpdatePrScan._(value);
+  factory CodeScanningAiScanEnablementUpdatePrScan.fromJson(String value) =>
+      CodeScanningAiScanEnablementUpdatePrScan._(value);
 
   static const enabled = CodeScanningAiScanEnablementUpdatePrScan._('enabled');
-  static const disabled = CodeScanningAiScanEnablementUpdatePrScan._('disabled');
+  static const disabled =
+      CodeScanningAiScanEnablementUpdatePrScan._('disabled');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeScanningAiScanEnablementUpdatePrScan && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodeScanningAiScanEnablementUpdatePrScan && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Whether AI Scan is enabled for the organization. Organization respects enterprise policy. Disabled organizations prevent repositories from enabling AI Scan. Enabled organizations enable AI Scan for their repositories, but individual repositories can opt out.
 final class CodeScanningAiScanOrgEnablementUpdatePrScan {
-
   final String value;
 
   const CodeScanningAiScanOrgEnablementUpdatePrScan._(this.value);
 
-  factory CodeScanningAiScanOrgEnablementUpdatePrScan.fromJson(String value) => CodeScanningAiScanOrgEnablementUpdatePrScan._(value);
+  factory CodeScanningAiScanOrgEnablementUpdatePrScan.fromJson(String value) =>
+      CodeScanningAiScanOrgEnablementUpdatePrScan._(value);
 
-  static const enabled = CodeScanningAiScanOrgEnablementUpdatePrScan._('enabled');
-  static const disabled = CodeScanningAiScanOrgEnablementUpdatePrScan._('disabled');
+  static const enabled =
+      CodeScanningAiScanOrgEnablementUpdatePrScan._('enabled');
+  static const disabled =
+      CodeScanningAiScanOrgEnablementUpdatePrScan._('disabled');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeScanningAiScanOrgEnablementUpdatePrScan && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodeScanningAiScanOrgEnablementUpdatePrScan &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Whether AI Scan on pull requests is enabled for the organization. The organization setting respects enterprise policy, and repositories inherit it: when disabled, repositories cannot enable AI Scan; when enabled, repositories can still opt out.
 final class CodeScanningAiScanOrgSettingsPrScan {
-
   final String value;
 
   const CodeScanningAiScanOrgSettingsPrScan._(this.value);
 
-  factory CodeScanningAiScanOrgSettingsPrScan.fromJson(String value) => CodeScanningAiScanOrgSettingsPrScan._(value);
+  factory CodeScanningAiScanOrgSettingsPrScan.fromJson(String value) =>
+      CodeScanningAiScanOrgSettingsPrScan._(value);
 
   static const enabled = CodeScanningAiScanOrgSettingsPrScan._('enabled');
   static const disabled = CodeScanningAiScanOrgSettingsPrScan._('disabled');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeScanningAiScanOrgSettingsPrScan && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodeScanningAiScanOrgSettingsPrScan && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The security severity of the alert.
 final class CodeScanningAlertRuleSecuritySeverityLevel {
-
   final String value;
 
   const CodeScanningAlertRuleSecuritySeverityLevel._(this.value);
 
-  factory CodeScanningAlertRuleSecuritySeverityLevel.fromJson(String value) => CodeScanningAlertRuleSecuritySeverityLevel._(value);
+  factory CodeScanningAlertRuleSecuritySeverityLevel.fromJson(String value) =>
+      CodeScanningAlertRuleSecuritySeverityLevel._(value);
 
   static const low = CodeScanningAlertRuleSecuritySeverityLevel._('low');
   static const medium = CodeScanningAlertRuleSecuritySeverityLevel._('medium');
   static const high = CodeScanningAlertRuleSecuritySeverityLevel._('high');
-  static const critical = CodeScanningAlertRuleSecuritySeverityLevel._('critical');
+  static const critical =
+      CodeScanningAlertRuleSecuritySeverityLevel._('critical');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeScanningAlertRuleSecuritySeverityLevel && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodeScanningAlertRuleSecuritySeverityLevel &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The severity of the alert.
 final class CodeScanningAlertRuleSeverity {
-
   final String value;
 
   const CodeScanningAlertRuleSeverity._(this.value);
 
-  factory CodeScanningAlertRuleSeverity.fromJson(String value) => CodeScanningAlertRuleSeverity._(value);
+  factory CodeScanningAlertRuleSeverity.fromJson(String value) =>
+      CodeScanningAlertRuleSeverity._(value);
 
   static const none = CodeScanningAlertRuleSeverity._('none');
   static const note = CodeScanningAlertRuleSeverity._('note');
@@ -132,46 +153,57 @@ final class CodeScanningAlertRuleSeverity {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeScanningAlertRuleSeverity && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodeScanningAlertRuleSeverity && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The security severity of the alert.
 final class CodeScanningAlertRuleSummarySecuritySeverityLevel {
-
   final String value;
 
   const CodeScanningAlertRuleSummarySecuritySeverityLevel._(this.value);
 
-  factory CodeScanningAlertRuleSummarySecuritySeverityLevel.fromJson(String value) => CodeScanningAlertRuleSummarySecuritySeverityLevel._(value);
+  factory CodeScanningAlertRuleSummarySecuritySeverityLevel.fromJson(
+          String value) =>
+      CodeScanningAlertRuleSummarySecuritySeverityLevel._(value);
 
   static const low = CodeScanningAlertRuleSummarySecuritySeverityLevel._('low');
-  static const medium = CodeScanningAlertRuleSummarySecuritySeverityLevel._('medium');
-  static const high = CodeScanningAlertRuleSummarySecuritySeverityLevel._('high');
-  static const critical = CodeScanningAlertRuleSummarySecuritySeverityLevel._('critical');
+  static const medium =
+      CodeScanningAlertRuleSummarySecuritySeverityLevel._('medium');
+  static const high =
+      CodeScanningAlertRuleSummarySecuritySeverityLevel._('high');
+  static const critical =
+      CodeScanningAlertRuleSummarySecuritySeverityLevel._('critical');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeScanningAlertRuleSummarySecuritySeverityLevel && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodeScanningAlertRuleSummarySecuritySeverityLevel &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The severity of the alert.
 final class CodeScanningAlertRuleSummarySeverity {
-
   final String value;
 
   const CodeScanningAlertRuleSummarySeverity._(this.value);
 
-  factory CodeScanningAlertRuleSummarySeverity.fromJson(String value) => CodeScanningAlertRuleSummarySeverity._(value);
+  factory CodeScanningAlertRuleSummarySeverity.fromJson(String value) =>
+      CodeScanningAlertRuleSummarySeverity._(value);
 
   static const none = CodeScanningAlertRuleSummarySeverity._('none');
   static const note = CodeScanningAlertRuleSummarySeverity._('note');
@@ -180,106 +212,125 @@ final class CodeScanningAlertRuleSummarySeverity {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeScanningAlertRuleSummarySeverity && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodeScanningAlertRuleSummarySeverity && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `languages[]` wire field.
 final class CodeScanningDefaultSetupLanguagesItem {
-
   final String value;
 
   const CodeScanningDefaultSetupLanguagesItem._(this.value);
 
-  factory CodeScanningDefaultSetupLanguagesItem.fromJson(String value) => CodeScanningDefaultSetupLanguagesItem._(value);
+  factory CodeScanningDefaultSetupLanguagesItem.fromJson(String value) =>
+      CodeScanningDefaultSetupLanguagesItem._(value);
 
   static const actions = CodeScanningDefaultSetupLanguagesItem._('actions');
   static const cCpp = CodeScanningDefaultSetupLanguagesItem._('c-cpp');
   static const csharp = CodeScanningDefaultSetupLanguagesItem._('csharp');
   static const go = CodeScanningDefaultSetupLanguagesItem._('go');
-  static const javaKotlin = CodeScanningDefaultSetupLanguagesItem._('java-kotlin');
-  static const javascriptTypescript = CodeScanningDefaultSetupLanguagesItem._('javascript-typescript');
-  static const javascript = CodeScanningDefaultSetupLanguagesItem._('javascript');
+  static const javaKotlin =
+      CodeScanningDefaultSetupLanguagesItem._('java-kotlin');
+  static const javascriptTypescript =
+      CodeScanningDefaultSetupLanguagesItem._('javascript-typescript');
+  static const javascript =
+      CodeScanningDefaultSetupLanguagesItem._('javascript');
   static const python = CodeScanningDefaultSetupLanguagesItem._('python');
   static const ruby = CodeScanningDefaultSetupLanguagesItem._('ruby');
-  static const typescript = CodeScanningDefaultSetupLanguagesItem._('typescript');
+  static const typescript =
+      CodeScanningDefaultSetupLanguagesItem._('typescript');
   static const swift = CodeScanningDefaultSetupLanguagesItem._('swift');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeScanningDefaultSetupLanguagesItem && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodeScanningDefaultSetupLanguagesItem && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// CodeQL query suite to be used.
 final class CodeScanningDefaultSetupQuerySuite {
-
   final String value;
 
   const CodeScanningDefaultSetupQuerySuite._(this.value);
 
-  factory CodeScanningDefaultSetupQuerySuite.fromJson(String value) => CodeScanningDefaultSetupQuerySuite._(value);
+  factory CodeScanningDefaultSetupQuerySuite.fromJson(String value) =>
+      CodeScanningDefaultSetupQuerySuite._(value);
 
   static const default_ = CodeScanningDefaultSetupQuerySuite._('default');
   static const extended = CodeScanningDefaultSetupQuerySuite._('extended');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeScanningDefaultSetupQuerySuite && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodeScanningDefaultSetupQuerySuite && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Runner type to be used.
 final class CodeScanningDefaultSetupRunnerType {
-
   final String value;
 
   const CodeScanningDefaultSetupRunnerType._(this.value);
 
-  factory CodeScanningDefaultSetupRunnerType.fromJson(String value) => CodeScanningDefaultSetupRunnerType._(value);
+  factory CodeScanningDefaultSetupRunnerType.fromJson(String value) =>
+      CodeScanningDefaultSetupRunnerType._(value);
 
   static const standard = CodeScanningDefaultSetupRunnerType._('standard');
   static const labeled = CodeScanningDefaultSetupRunnerType._('labeled');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeScanningDefaultSetupRunnerType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodeScanningDefaultSetupRunnerType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The frequency of the periodic analysis.
 final class CodeScanningDefaultSetupSchedule {
-
   final String value;
 
   const CodeScanningDefaultSetupSchedule._(this.value);
 
-  factory CodeScanningDefaultSetupSchedule.fromJson(String value) => CodeScanningDefaultSetupSchedule._(value);
+  factory CodeScanningDefaultSetupSchedule.fromJson(String value) =>
+      CodeScanningDefaultSetupSchedule._(value);
 
   static const weekly = CodeScanningDefaultSetupSchedule._('weekly');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeScanningDefaultSetupSchedule && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodeScanningDefaultSetupSchedule && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

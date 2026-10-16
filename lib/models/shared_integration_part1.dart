@@ -8,161 +8,321 @@ part of 'shared_integration.dart';
 class IntegrationPermissions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `string` value serialized in the `issues` wire field.
   final SdkOptional<String> issues;
+
   /// Optional `string` value serialized in the `checks` wire field.
   final SdkOptional<String> checks;
+
   /// Optional `string` value serialized in the `metadata` wire field.
   final SdkOptional<String> metadata;
+
   /// Optional `string` value serialized in the `contents` wire field.
   final SdkOptional<String> contents;
+
   /// Optional `string` value serialized in the `deployments` wire field.
   final SdkOptional<String> deployments;
   final Map<String, dynamic> additionalProperties;
 
-  const IntegrationPermissions({this.issues = const SdkOmitted(), this.checks = const SdkOmitted(), this.metadata = const SdkOmitted(), this.contents = const SdkOmitted(), this.deployments = const SdkOmitted(), this.additionalProperties = const <String, dynamic>{}});
+  const IntegrationPermissions(
+      {this.issues = const SdkOmitted(),
+      this.checks = const SdkOmitted(),
+      this.metadata = const SdkOmitted(),
+      this.contents = const SdkOmitted(),
+      this.deployments = const SdkOmitted(),
+      this.additionalProperties = const <String, dynamic>{}});
 
-  IntegrationPermissions Function({SdkOptional<String> issues, SdkOptional<String> checks, SdkOptional<String> metadata, SdkOptional<String> contents, SdkOptional<String> deployments}) get copyWith => _copyWith;
+  IntegrationPermissions Function(
+      {SdkOptional<String> issues,
+      SdkOptional<String> checks,
+      SdkOptional<String> metadata,
+      SdkOptional<String> contents,
+      SdkOptional<String> deployments}) get copyWith => _copyWith;
 
-  IntegrationPermissions _copyWith({Object? issues = sdkOmittedValue, Object? checks = sdkOmittedValue, Object? metadata = sdkOmittedValue, Object? contents = sdkOmittedValue, Object? deployments = sdkOmittedValue}) => IntegrationPermissions(
-    issues: identical(issues, sdkOmittedValue) ? this.issues : issues as SdkOptional<String>,
-    checks: identical(checks, sdkOmittedValue) ? this.checks : checks as SdkOptional<String>,
-    metadata: identical(metadata, sdkOmittedValue) ? this.metadata : metadata as SdkOptional<String>,
-    contents: identical(contents, sdkOmittedValue) ? this.contents : contents as SdkOptional<String>,
-    deployments: identical(deployments, sdkOmittedValue) ? this.deployments : deployments as SdkOptional<String>,
-    additionalProperties: additionalProperties,
-  );
+  IntegrationPermissions _copyWith(
+          {Object? issues = sdkOmittedValue,
+          Object? checks = sdkOmittedValue,
+          Object? metadata = sdkOmittedValue,
+          Object? contents = sdkOmittedValue,
+          Object? deployments = sdkOmittedValue}) =>
+      IntegrationPermissions(
+        issues: identical(issues, sdkOmittedValue)
+            ? this.issues
+            : issues as SdkOptional<String>,
+        checks: identical(checks, sdkOmittedValue)
+            ? this.checks
+            : checks as SdkOptional<String>,
+        metadata: identical(metadata, sdkOmittedValue)
+            ? this.metadata
+            : metadata as SdkOptional<String>,
+        contents: identical(contents, sdkOmittedValue)
+            ? this.contents
+            : contents as SdkOptional<String>,
+        deployments: identical(deployments, sdkOmittedValue)
+            ? this.deployments
+            : deployments as SdkOptional<String>,
+        additionalProperties: additionalProperties,
+      );
 
-  factory IntegrationPermissions.fromJson(Map<String, dynamic> json) => IntegrationPermissions(
-    issues: json['issues'] != null ? SdkPresent((json['issues'] as String?)!) : const SdkOmitted(),
-    checks: json['checks'] != null ? SdkPresent((json['checks'] as String?)!) : const SdkOmitted(),
-    metadata: json['metadata'] != null ? SdkPresent((json['metadata'] as String?)!) : const SdkOmitted(),
-    contents: json['contents'] != null ? SdkPresent((json['contents'] as String?)!) : const SdkOmitted(),
-    deployments: json['deployments'] != null ? SdkPresent((json['deployments'] as String?)!) : const SdkOmitted(),
-    additionalProperties: Map.of(json)..removeWhere((key, _) => const <String>{'issues', 'checks', 'metadata', 'contents', 'deployments'}.contains(key)),
-  );
+  factory IntegrationPermissions.fromJson(Map<String, dynamic> json) =>
+      IntegrationPermissions(
+        issues: json['issues'] != null
+            ? SdkPresent((json['issues'] as String?)!)
+            : const SdkOmitted(),
+        checks: json['checks'] != null
+            ? SdkPresent((json['checks'] as String?)!)
+            : const SdkOmitted(),
+        metadata: json['metadata'] != null
+            ? SdkPresent((json['metadata'] as String?)!)
+            : const SdkOmitted(),
+        contents: json['contents'] != null
+            ? SdkPresent((json['contents'] as String?)!)
+            : const SdkOmitted(),
+        deployments: json['deployments'] != null
+            ? SdkPresent((json['deployments'] as String?)!)
+            : const SdkOmitted(),
+        additionalProperties: Map.of(json)
+          ..removeWhere((key, _) => const <String>{
+                'issues',
+                'checks',
+                'metadata',
+                'contents',
+                'deployments'
+              }.contains(key)),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...additionalProperties,
-    ...switch (issues) {
-      SdkPresent<String>(value: final value) => {'issues': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (checks) {
-      SdkPresent<String>(value: final value) => {'checks': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (metadata) {
-      SdkPresent<String>(value: final value) => {'metadata': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (contents) {
-      SdkPresent<String>(value: final value) => {'contents': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (deployments) {
-      SdkPresent<String>(value: final value) => {'deployments': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...additionalProperties,
+        ...switch (issues) {
+          SdkPresent<String>(value: final value) => {
+              'issues': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (checks) {
+          SdkPresent<String>(value: final value) => {
+              'checks': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (metadata) {
+          SdkPresent<String>(value: final value) => {
+              'metadata': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (contents) {
+          SdkPresent<String>(value: final value) => {
+              'contents': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (deployments) {
+          SdkPresent<String>(value: final value) => {
+              'deployments': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
 class Integration {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Unique identifier of the GitHub app
   final int id;
+
   /// The slug name of the GitHub app
   final SdkOptional<String> slug;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// Optional `string` value serialized in the `client_id` wire field.
   final SdkOptional<String> clientId;
+
   /// Required API value serialized in the `owner` wire field.
   final IntegrationOwner owner;
+
   /// The name of the GitHub app
   final String name;
+
   /// Required `string` value serialized in the `description` wire field.
   final String? description;
+
   /// Required `uri`-formatted value serialized in the `external_url` wire field.
   final String externalUrl;
+
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String htmlUrl;
+
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String createdAt;
+
   /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
   final String updatedAt;
+
   /// The set of permissions for the GitHub app
   final IntegrationPermissions permissions;
+
   /// The list of events for the GitHub app. Note that the `installation_target`, `security_advisory`, and `meta` events are not included because they are global events and not specific to an installation.
   final List<String> events;
+
   /// The number of installations associated with the GitHub app. Only returned when the integration is requesting details about itself.
   final SdkOptional<int> installationsCount;
 
-  const Integration({required this.id, this.slug = const SdkOmitted(), required this.nodeId, this.clientId = const SdkOmitted(), required this.owner, required this.name, required this.description, required this.externalUrl, required this.htmlUrl, required this.createdAt, required this.updatedAt, required this.permissions, required this.events, this.installationsCount = const SdkOmitted()});
+  const Integration(
+      {required this.id,
+      this.slug = const SdkOmitted(),
+      required this.nodeId,
+      this.clientId = const SdkOmitted(),
+      required this.owner,
+      required this.name,
+      required this.description,
+      required this.externalUrl,
+      required this.htmlUrl,
+      required this.createdAt,
+      required this.updatedAt,
+      required this.permissions,
+      required this.events,
+      this.installationsCount = const SdkOmitted()});
 
-  Integration Function({int id, SdkOptional<String> slug, String nodeId, SdkOptional<String> clientId, IntegrationOwner owner, String name, String? description, String externalUrl, String htmlUrl, String createdAt, String updatedAt, IntegrationPermissions permissions, List<String> events, SdkOptional<int> installationsCount}) get copyWith => _copyWith;
+  Integration Function(
+      {int id,
+      SdkOptional<String> slug,
+      String nodeId,
+      SdkOptional<String> clientId,
+      IntegrationOwner owner,
+      String name,
+      String? description,
+      String externalUrl,
+      String htmlUrl,
+      String createdAt,
+      String updatedAt,
+      IntegrationPermissions permissions,
+      List<String> events,
+      SdkOptional<int> installationsCount}) get copyWith => _copyWith;
 
-  Integration _copyWith({Object? id = sdkOmittedValue, Object? slug = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? clientId = sdkOmittedValue, Object? owner = sdkOmittedValue, Object? name = sdkOmittedValue, Object? description = sdkOmittedValue, Object? externalUrl = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? permissions = sdkOmittedValue, Object? events = sdkOmittedValue, Object? installationsCount = sdkOmittedValue}) => Integration(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    slug: identical(slug, sdkOmittedValue) ? this.slug : slug as SdkOptional<String>,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    clientId: identical(clientId, sdkOmittedValue) ? this.clientId : clientId as SdkOptional<String>,
-    owner: identical(owner, sdkOmittedValue) ? this.owner : owner as IntegrationOwner,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    description: identical(description, sdkOmittedValue) ? this.description : description as String?,
-    externalUrl: identical(externalUrl, sdkOmittedValue) ? this.externalUrl : externalUrl as String,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
-    permissions: identical(permissions, sdkOmittedValue) ? this.permissions : permissions as IntegrationPermissions,
-    events: identical(events, sdkOmittedValue) ? this.events : events as List<String>,
-    installationsCount: identical(installationsCount, sdkOmittedValue) ? this.installationsCount : installationsCount as SdkOptional<int>,
-  );
+  Integration _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? slug = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? clientId = sdkOmittedValue,
+          Object? owner = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? externalUrl = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? permissions = sdkOmittedValue,
+          Object? events = sdkOmittedValue,
+          Object? installationsCount = sdkOmittedValue}) =>
+      Integration(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        slug: identical(slug, sdkOmittedValue)
+            ? this.slug
+            : slug as SdkOptional<String>,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        clientId: identical(clientId, sdkOmittedValue)
+            ? this.clientId
+            : clientId as SdkOptional<String>,
+        owner: identical(owner, sdkOmittedValue)
+            ? this.owner
+            : owner as IntegrationOwner,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as String?,
+        externalUrl: identical(externalUrl, sdkOmittedValue)
+            ? this.externalUrl
+            : externalUrl as String,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as String,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+        permissions: identical(permissions, sdkOmittedValue)
+            ? this.permissions
+            : permissions as IntegrationPermissions,
+        events: identical(events, sdkOmittedValue)
+            ? this.events
+            : events as List<String>,
+        installationsCount: identical(installationsCount, sdkOmittedValue)
+            ? this.installationsCount
+            : installationsCount as SdkOptional<int>,
+      );
 
   factory Integration.fromJson(Map<String, dynamic> json) => Integration(
-    id: ((json['id'] as num?)?.toInt())!,
-    slug: json['slug'] != null ? SdkPresent((json['slug'] as String?)!) : const SdkOmitted(),
-    nodeId: (json['node_id'] as String?)!,
-    clientId: json['client_id'] != null ? SdkPresent((json['client_id'] as String?)!) : const SdkOmitted(),
-    owner: (json['owner'] != null ? IntegrationOwner.fromJson(json['owner']) : null)!,
-    name: (json['name'] as String?)!,
-    description: json.containsKey('description') ? json['description'] as String? : throw ArgumentError.value(null, 'description', 'Required property is missing'),
-    externalUrl: (json['external_url'] as String?)!,
-    htmlUrl: (json['html_url'] as String?)!,
-    createdAt: (json['created_at'] as String?)!,
-    updatedAt: (json['updated_at'] as String?)!,
-    permissions: (json['permissions'] != null ? IntegrationPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null)!,
-    events: ((json['events'] as List?)?.map((e) => e as String).toList())!,
-    installationsCount: json['installations_count'] != null ? SdkPresent(((json['installations_count'] as num?)?.toInt())!) : const SdkOmitted(),
-  );
+        id: ((json['id'] as num?)?.toInt())!,
+        slug: json['slug'] != null
+            ? SdkPresent((json['slug'] as String?)!)
+            : const SdkOmitted(),
+        nodeId: (json['node_id'] as String?)!,
+        clientId: json['client_id'] != null
+            ? SdkPresent((json['client_id'] as String?)!)
+            : const SdkOmitted(),
+        owner: (json['owner'] != null
+            ? IntegrationOwner.fromJson(json['owner'])
+            : null)!,
+        name: (json['name'] as String?)!,
+        description: json.containsKey('description')
+            ? json['description'] as String?
+            : throw ArgumentError.value(
+                null, 'description', 'Required property is missing'),
+        externalUrl: (json['external_url'] as String?)!,
+        htmlUrl: (json['html_url'] as String?)!,
+        createdAt: (json['created_at'] as String?)!,
+        updatedAt: (json['updated_at'] as String?)!,
+        permissions: (json['permissions'] != null
+            ? IntegrationPermissions.fromJson(
+                json['permissions'] as Map<String, dynamic>)
+            : null)!,
+        events: ((json['events'] as List?)?.map((e) => e as String).toList())!,
+        installationsCount: json['installations_count'] != null
+            ? SdkPresent(((json['installations_count'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    ...switch (slug) {
-      SdkPresent<String>(value: final value) => {'slug': value,},
-      _ => const <String, dynamic>{},
-    },
-    'node_id': nodeId,
-    ...switch (clientId) {
-      SdkPresent<String>(value: final value) => {'client_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    'owner': owner.toJson(),
-    'name': name,
-    'description': description,
-    'external_url': externalUrl,
-    'html_url': htmlUrl,
-    'created_at': createdAt,
-    'updated_at': updatedAt,
-    'permissions': permissions.toJson(),
-    'events': events,
-    ...switch (installationsCount) {
-      SdkPresent<int>(value: final value) => {'installations_count': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'id': id,
+        ...switch (slug) {
+          SdkPresent<String>(value: final value) => {
+              'slug': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'node_id': nodeId,
+        ...switch (clientId) {
+          SdkPresent<String>(value: final value) => {
+              'client_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'owner': owner.toJson(),
+        'name': name,
+        'description': description,
+        'external_url': externalUrl,
+        'html_url': htmlUrl,
+        'created_at': createdAt,
+        'updated_at': updatedAt,
+        'permissions': permissions.toJson(),
+        'events': events,
+        ...switch (installationsCount) {
+          SdkPresent<int>(value: final value) => {
+              'installations_count': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 sealed class IntegrationOwner {
@@ -170,8 +330,14 @@ sealed class IntegrationOwner {
   static const String constructionSurface = 'named';
   const IntegrationOwner();
   factory IntegrationOwner.fromJson(Object? json) {
-    try { return IntegrationOwnerSimpleUser(SimpleUser.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return IntegrationOwnerEnterprise(Enterprise.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try {
+      return IntegrationOwnerSimpleUser(
+          SimpleUser.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return IntegrationOwnerEnterprise(
+          Enterprise.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
     throw FormatException("No variant matched for IntegrationOwner");
   }
   Object? toJson();
@@ -180,11 +346,13 @@ sealed class IntegrationOwner {
 final class IntegrationOwnerSimpleUser extends IntegrationOwner {
   final SimpleUser value;
   const IntegrationOwnerSimpleUser(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 final class IntegrationOwnerEnterprise extends IntegrationOwner {
   final Enterprise value;
   const IntegrationOwnerEnterprise(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }

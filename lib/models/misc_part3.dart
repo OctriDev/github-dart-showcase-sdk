@@ -8,174 +8,359 @@ part of 'misc.dart';
 class PersonalAccessTokenRequestPermissionsResult {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional object value serialized in the `organization` wire field.
   final SdkOptional<Map<String, String>> organization;
+
   /// Optional object value serialized in the `repository` wire field.
   final SdkOptional<Map<String, String>> repository;
+
   /// Optional object value serialized in the `other` wire field.
   final SdkOptional<Map<String, String>> other;
 
-  const PersonalAccessTokenRequestPermissionsResult({this.organization = const SdkOmitted(), this.repository = const SdkOmitted(), this.other = const SdkOmitted()});
+  const PersonalAccessTokenRequestPermissionsResult(
+      {this.organization = const SdkOmitted(),
+      this.repository = const SdkOmitted(),
+      this.other = const SdkOmitted()});
 
-  PersonalAccessTokenRequestPermissionsResult Function({SdkOptional<Map<String, String>> organization, SdkOptional<Map<String, String>> repository, SdkOptional<Map<String, String>> other}) get copyWith => _copyWith;
+  PersonalAccessTokenRequestPermissionsResult Function(
+      {SdkOptional<Map<String, String>> organization,
+      SdkOptional<Map<String, String>> repository,
+      SdkOptional<Map<String, String>> other}) get copyWith => _copyWith;
 
-  PersonalAccessTokenRequestPermissionsResult _copyWith({Object? organization = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? other = sdkOmittedValue}) => PersonalAccessTokenRequestPermissionsResult(
-    organization: identical(organization, sdkOmittedValue) ? this.organization : organization as SdkOptional<Map<String, String>>,
-    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as SdkOptional<Map<String, String>>,
-    other: identical(other, sdkOmittedValue) ? this.other : other as SdkOptional<Map<String, String>>,
-  );
+  PersonalAccessTokenRequestPermissionsResult _copyWith(
+          {Object? organization = sdkOmittedValue,
+          Object? repository = sdkOmittedValue,
+          Object? other = sdkOmittedValue}) =>
+      PersonalAccessTokenRequestPermissionsResult(
+        organization: identical(organization, sdkOmittedValue)
+            ? this.organization
+            : organization as SdkOptional<Map<String, String>>,
+        repository: identical(repository, sdkOmittedValue)
+            ? this.repository
+            : repository as SdkOptional<Map<String, String>>,
+        other: identical(other, sdkOmittedValue)
+            ? this.other
+            : other as SdkOptional<Map<String, String>>,
+      );
 
-  factory PersonalAccessTokenRequestPermissionsResult.fromJson(Map<String, dynamic> json) => PersonalAccessTokenRequestPermissionsResult(
-    organization: json['organization'] != null ? SdkPresent((json['organization'] == null ? null : Map<String, dynamic>.from(json['organization'] as Map).map((key, value) => MapEntry(key, value as String)))!) : const SdkOmitted(),
-    repository: json['repository'] != null ? SdkPresent((json['repository'] == null ? null : Map<String, dynamic>.from(json['repository'] as Map).map((key, value) => MapEntry(key, value as String)))!) : const SdkOmitted(),
-    other: json['other'] != null ? SdkPresent((json['other'] == null ? null : Map<String, dynamic>.from(json['other'] as Map).map((key, value) => MapEntry(key, value as String)))!) : const SdkOmitted(),
-  );
+  factory PersonalAccessTokenRequestPermissionsResult.fromJson(
+          Map<String, dynamic> json) =>
+      PersonalAccessTokenRequestPermissionsResult(
+        organization: json['organization'] != null
+            ? SdkPresent((json['organization'] == null
+                ? null
+                : Map<String, dynamic>.from(json['organization'] as Map)
+                    .map((key, value) => MapEntry(key, value as String)))!)
+            : const SdkOmitted(),
+        repository: json['repository'] != null
+            ? SdkPresent((json['repository'] == null
+                ? null
+                : Map<String, dynamic>.from(json['repository'] as Map)
+                    .map((key, value) => MapEntry(key, value as String)))!)
+            : const SdkOmitted(),
+        other: json['other'] != null
+            ? SdkPresent((json['other'] == null
+                ? null
+                : Map<String, dynamic>.from(json['other'] as Map)
+                    .map((key, value) => MapEntry(key, value as String)))!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (organization) {
-      SdkPresent<Map<String, String>>(value: final value) => {'organization': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (repository) {
-      SdkPresent<Map<String, String>>(value: final value) => {'repository': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (other) {
-      SdkPresent<Map<String, String>>(value: final value) => {'other': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (organization) {
+          SdkPresent<Map<String, String>>(value: final value) => {
+              'organization': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (repository) {
+          SdkPresent<Map<String, String>>(value: final value) => {
+              'repository': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (other) {
+          SdkPresent<Map<String, String>>(value: final value) => {
+              'other': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Required object value serialized in the `repositories[]` wire field.
 class PersonalAccessTokenRequestRepositoriesItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `full_name` wire field.
   final String fullName;
+
   /// Unique identifier of the repository
   final int id;
+
   /// The name of the repository.
   final String name;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// Whether the repository is private or public.
   final bool private;
 
-  const PersonalAccessTokenRequestRepositoriesItem({required this.fullName, required this.id, required this.name, required this.nodeId, required this.private});
+  const PersonalAccessTokenRequestRepositoriesItem(
+      {required this.fullName,
+      required this.id,
+      required this.name,
+      required this.nodeId,
+      required this.private});
 
-  PersonalAccessTokenRequestRepositoriesItem Function({String fullName, int id, String name, String nodeId, bool private}) get copyWith => _copyWith;
+  PersonalAccessTokenRequestRepositoriesItem Function(
+      {String fullName,
+      int id,
+      String name,
+      String nodeId,
+      bool private}) get copyWith => _copyWith;
 
-  PersonalAccessTokenRequestRepositoriesItem _copyWith({Object? fullName = sdkOmittedValue, Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? private = sdkOmittedValue}) => PersonalAccessTokenRequestRepositoriesItem(
-    fullName: identical(fullName, sdkOmittedValue) ? this.fullName : fullName as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    private: identical(private, sdkOmittedValue) ? this.private : private as bool,
-  );
+  PersonalAccessTokenRequestRepositoriesItem _copyWith(
+          {Object? fullName = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? private = sdkOmittedValue}) =>
+      PersonalAccessTokenRequestRepositoriesItem(
+        fullName: identical(fullName, sdkOmittedValue)
+            ? this.fullName
+            : fullName as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        private: identical(private, sdkOmittedValue)
+            ? this.private
+            : private as bool,
+      );
 
-  factory PersonalAccessTokenRequestRepositoriesItem.fromJson(Map<String, dynamic> json) => PersonalAccessTokenRequestRepositoriesItem(
-    fullName: (json['full_name'] as String?)!,
-    id: ((json['id'] as num?)?.toInt())!,
-    name: (json['name'] as String?)!,
-    nodeId: (json['node_id'] as String?)!,
-    private: (json['private'] as bool?)!,
-  );
+  factory PersonalAccessTokenRequestRepositoriesItem.fromJson(
+          Map<String, dynamic> json) =>
+      PersonalAccessTokenRequestRepositoriesItem(
+        fullName: (json['full_name'] as String?)!,
+        id: ((json['id'] as num?)?.toInt())!,
+        name: (json['name'] as String?)!,
+        nodeId: (json['node_id'] as String?)!,
+        private: (json['private'] as bool?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'full_name': fullName,
-    'id': id,
-    'name': name,
-    'node_id': nodeId,
-    'private': private,
-  };
+        'full_name': fullName,
+        'id': id,
+        'name': name,
+        'node_id': nodeId,
+        'private': private,
+      };
 }
 
 /// Details of a Personal Access Token Request.
 class PersonalAccessTokenRequest {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Unique identifier of the request for access via fine-grained personal access token. Used as the `pat_request_id` parameter in the list and review API calls.
   final int id;
+
   /// A GitHub user.
   final SimpleUser owner;
+
   /// New requested permissions, categorized by type of permission.
   final PersonalAccessTokenRequestPermissionsAdded permissionsAdded;
+
   /// Requested permissions that elevate access for a previously approved request for access, categorized by type of permission.
   final PersonalAccessTokenRequestPermissionsUpgraded permissionsUpgraded;
+
   /// Permissions requested, categorized by type of permission. This field incorporates `permissions_added` and `permissions_upgraded`.
   final PersonalAccessTokenRequestPermissionsResult permissionsResult;
+
   /// Type of repository selection requested.
   final PersonalAccessTokenRequestRepositorySelection repositorySelection;
+
   /// The number of repositories the token is requesting access to. This field is only populated when `repository_selection` is `subset`.
   final int? repositoryCount;
+
   /// An array of repository objects the token is requesting access to. This field is only populated when `repository_selection` is `subset`.
   final List<PersonalAccessTokenRequestRepositoriesItem>? repositories;
+
   /// Date and time when the request for access was created.
   final String createdAt;
+
   /// Unique identifier of the user's token. This field can also be found in audit log events and the organization's settings for their PAT grants.
   final int tokenId;
+
   /// The name given to the user's token. This field can also be found in an organization's settings page for Active Tokens.
   final String tokenName;
+
   /// Whether the associated fine-grained personal access token has expired.
   final bool tokenExpired;
+
   /// Date and time when the associated fine-grained personal access token expires.
   final String? tokenExpiresAt;
+
   /// Date and time when the associated fine-grained personal access token was last used for authentication.
   final String? tokenLastUsedAt;
 
-  const PersonalAccessTokenRequest({required this.id, required this.owner, required this.permissionsAdded, required this.permissionsUpgraded, required this.permissionsResult, required this.repositorySelection, required this.repositoryCount, required this.repositories, required this.createdAt, required this.tokenId, required this.tokenName, required this.tokenExpired, required this.tokenExpiresAt, required this.tokenLastUsedAt});
+  const PersonalAccessTokenRequest(
+      {required this.id,
+      required this.owner,
+      required this.permissionsAdded,
+      required this.permissionsUpgraded,
+      required this.permissionsResult,
+      required this.repositorySelection,
+      required this.repositoryCount,
+      required this.repositories,
+      required this.createdAt,
+      required this.tokenId,
+      required this.tokenName,
+      required this.tokenExpired,
+      required this.tokenExpiresAt,
+      required this.tokenLastUsedAt});
 
-  PersonalAccessTokenRequest Function({int id, SimpleUser owner, PersonalAccessTokenRequestPermissionsAdded permissionsAdded, PersonalAccessTokenRequestPermissionsUpgraded permissionsUpgraded, PersonalAccessTokenRequestPermissionsResult permissionsResult, PersonalAccessTokenRequestRepositorySelection repositorySelection, int? repositoryCount, List<PersonalAccessTokenRequestRepositoriesItem>? repositories, String createdAt, int tokenId, String tokenName, bool tokenExpired, String? tokenExpiresAt, String? tokenLastUsedAt}) get copyWith => _copyWith;
+  PersonalAccessTokenRequest Function(
+      {int id,
+      SimpleUser owner,
+      PersonalAccessTokenRequestPermissionsAdded permissionsAdded,
+      PersonalAccessTokenRequestPermissionsUpgraded permissionsUpgraded,
+      PersonalAccessTokenRequestPermissionsResult permissionsResult,
+      PersonalAccessTokenRequestRepositorySelection repositorySelection,
+      int? repositoryCount,
+      List<PersonalAccessTokenRequestRepositoriesItem>? repositories,
+      String createdAt,
+      int tokenId,
+      String tokenName,
+      bool tokenExpired,
+      String? tokenExpiresAt,
+      String? tokenLastUsedAt}) get copyWith => _copyWith;
 
-  PersonalAccessTokenRequest _copyWith({Object? id = sdkOmittedValue, Object? owner = sdkOmittedValue, Object? permissionsAdded = sdkOmittedValue, Object? permissionsUpgraded = sdkOmittedValue, Object? permissionsResult = sdkOmittedValue, Object? repositorySelection = sdkOmittedValue, Object? repositoryCount = sdkOmittedValue, Object? repositories = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? tokenId = sdkOmittedValue, Object? tokenName = sdkOmittedValue, Object? tokenExpired = sdkOmittedValue, Object? tokenExpiresAt = sdkOmittedValue, Object? tokenLastUsedAt = sdkOmittedValue}) => PersonalAccessTokenRequest(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    owner: identical(owner, sdkOmittedValue) ? this.owner : owner as SimpleUser,
-    permissionsAdded: identical(permissionsAdded, sdkOmittedValue) ? this.permissionsAdded : permissionsAdded as PersonalAccessTokenRequestPermissionsAdded,
-    permissionsUpgraded: identical(permissionsUpgraded, sdkOmittedValue) ? this.permissionsUpgraded : permissionsUpgraded as PersonalAccessTokenRequestPermissionsUpgraded,
-    permissionsResult: identical(permissionsResult, sdkOmittedValue) ? this.permissionsResult : permissionsResult as PersonalAccessTokenRequestPermissionsResult,
-    repositorySelection: identical(repositorySelection, sdkOmittedValue) ? this.repositorySelection : repositorySelection as PersonalAccessTokenRequestRepositorySelection,
-    repositoryCount: identical(repositoryCount, sdkOmittedValue) ? this.repositoryCount : repositoryCount as int?,
-    repositories: identical(repositories, sdkOmittedValue) ? this.repositories : repositories as List<PersonalAccessTokenRequestRepositoriesItem>?,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    tokenId: identical(tokenId, sdkOmittedValue) ? this.tokenId : tokenId as int,
-    tokenName: identical(tokenName, sdkOmittedValue) ? this.tokenName : tokenName as String,
-    tokenExpired: identical(tokenExpired, sdkOmittedValue) ? this.tokenExpired : tokenExpired as bool,
-    tokenExpiresAt: identical(tokenExpiresAt, sdkOmittedValue) ? this.tokenExpiresAt : tokenExpiresAt as String?,
-    tokenLastUsedAt: identical(tokenLastUsedAt, sdkOmittedValue) ? this.tokenLastUsedAt : tokenLastUsedAt as String?,
-  );
+  PersonalAccessTokenRequest _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? owner = sdkOmittedValue,
+          Object? permissionsAdded = sdkOmittedValue,
+          Object? permissionsUpgraded = sdkOmittedValue,
+          Object? permissionsResult = sdkOmittedValue,
+          Object? repositorySelection = sdkOmittedValue,
+          Object? repositoryCount = sdkOmittedValue,
+          Object? repositories = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? tokenId = sdkOmittedValue,
+          Object? tokenName = sdkOmittedValue,
+          Object? tokenExpired = sdkOmittedValue,
+          Object? tokenExpiresAt = sdkOmittedValue,
+          Object? tokenLastUsedAt = sdkOmittedValue}) =>
+      PersonalAccessTokenRequest(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        owner: identical(owner, sdkOmittedValue)
+            ? this.owner
+            : owner as SimpleUser,
+        permissionsAdded: identical(permissionsAdded, sdkOmittedValue)
+            ? this.permissionsAdded
+            : permissionsAdded as PersonalAccessTokenRequestPermissionsAdded,
+        permissionsUpgraded: identical(permissionsUpgraded, sdkOmittedValue)
+            ? this.permissionsUpgraded
+            : permissionsUpgraded
+                as PersonalAccessTokenRequestPermissionsUpgraded,
+        permissionsResult: identical(permissionsResult, sdkOmittedValue)
+            ? this.permissionsResult
+            : permissionsResult as PersonalAccessTokenRequestPermissionsResult,
+        repositorySelection: identical(repositorySelection, sdkOmittedValue)
+            ? this.repositorySelection
+            : repositorySelection
+                as PersonalAccessTokenRequestRepositorySelection,
+        repositoryCount: identical(repositoryCount, sdkOmittedValue)
+            ? this.repositoryCount
+            : repositoryCount as int?,
+        repositories: identical(repositories, sdkOmittedValue)
+            ? this.repositories
+            : repositories as List<PersonalAccessTokenRequestRepositoriesItem>?,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        tokenId:
+            identical(tokenId, sdkOmittedValue) ? this.tokenId : tokenId as int,
+        tokenName: identical(tokenName, sdkOmittedValue)
+            ? this.tokenName
+            : tokenName as String,
+        tokenExpired: identical(tokenExpired, sdkOmittedValue)
+            ? this.tokenExpired
+            : tokenExpired as bool,
+        tokenExpiresAt: identical(tokenExpiresAt, sdkOmittedValue)
+            ? this.tokenExpiresAt
+            : tokenExpiresAt as String?,
+        tokenLastUsedAt: identical(tokenLastUsedAt, sdkOmittedValue)
+            ? this.tokenLastUsedAt
+            : tokenLastUsedAt as String?,
+      );
 
-  factory PersonalAccessTokenRequest.fromJson(Map<String, dynamic> json) => PersonalAccessTokenRequest(
-    id: ((json['id'] as num?)?.toInt())!,
-    owner: (json['owner'] != null ? SimpleUser.fromJson(json['owner'] as Map<String, dynamic>) : null)!,
-    permissionsAdded: (json['permissions_added'] != null ? PersonalAccessTokenRequestPermissionsAdded.fromJson(json['permissions_added'] as Map<String, dynamic>) : null)!,
-    permissionsUpgraded: (json['permissions_upgraded'] != null ? PersonalAccessTokenRequestPermissionsUpgraded.fromJson(json['permissions_upgraded'] as Map<String, dynamic>) : null)!,
-    permissionsResult: (json['permissions_result'] != null ? PersonalAccessTokenRequestPermissionsResult.fromJson(json['permissions_result'] as Map<String, dynamic>) : null)!,
-    repositorySelection: (json['repository_selection'] != null ? PersonalAccessTokenRequestRepositorySelection.fromJson(json['repository_selection'] as String) : null)!,
-    repositoryCount: json.containsKey('repository_count') ? (json['repository_count'] as num?)?.toInt() : throw ArgumentError.value(null, 'repository_count', 'Required property is missing'),
-    repositories: json.containsKey('repositories') ? (json['repositories'] as List?)?.map((e) => PersonalAccessTokenRequestRepositoriesItem.fromJson(e as Map<String, dynamic>)).toList() : throw ArgumentError.value(null, 'repositories', 'Required property is missing'),
-    createdAt: (json['created_at'] as String?)!,
-    tokenId: ((json['token_id'] as num?)?.toInt())!,
-    tokenName: (json['token_name'] as String?)!,
-    tokenExpired: (json['token_expired'] as bool?)!,
-    tokenExpiresAt: json.containsKey('token_expires_at') ? json['token_expires_at'] as String? : throw ArgumentError.value(null, 'token_expires_at', 'Required property is missing'),
-    tokenLastUsedAt: json.containsKey('token_last_used_at') ? json['token_last_used_at'] as String? : throw ArgumentError.value(null, 'token_last_used_at', 'Required property is missing'),
-  );
+  factory PersonalAccessTokenRequest.fromJson(Map<String, dynamic> json) =>
+      PersonalAccessTokenRequest(
+        id: ((json['id'] as num?)?.toInt())!,
+        owner: (json['owner'] != null
+            ? SimpleUser.fromJson(json['owner'] as Map<String, dynamic>)
+            : null)!,
+        permissionsAdded: (json['permissions_added'] != null
+            ? PersonalAccessTokenRequestPermissionsAdded.fromJson(
+                json['permissions_added'] as Map<String, dynamic>)
+            : null)!,
+        permissionsUpgraded: (json['permissions_upgraded'] != null
+            ? PersonalAccessTokenRequestPermissionsUpgraded.fromJson(
+                json['permissions_upgraded'] as Map<String, dynamic>)
+            : null)!,
+        permissionsResult: (json['permissions_result'] != null
+            ? PersonalAccessTokenRequestPermissionsResult.fromJson(
+                json['permissions_result'] as Map<String, dynamic>)
+            : null)!,
+        repositorySelection: (json['repository_selection'] != null
+            ? PersonalAccessTokenRequestRepositorySelection.fromJson(
+                json['repository_selection'] as String)
+            : null)!,
+        repositoryCount: json.containsKey('repository_count')
+            ? (json['repository_count'] as num?)?.toInt()
+            : throw ArgumentError.value(
+                null, 'repository_count', 'Required property is missing'),
+        repositories: json.containsKey('repositories')
+            ? (json['repositories'] as List?)
+                ?.map((e) =>
+                    PersonalAccessTokenRequestRepositoriesItem.fromJson(
+                        e as Map<String, dynamic>))
+                .toList()
+            : throw ArgumentError.value(
+                null, 'repositories', 'Required property is missing'),
+        createdAt: (json['created_at'] as String?)!,
+        tokenId: ((json['token_id'] as num?)?.toInt())!,
+        tokenName: (json['token_name'] as String?)!,
+        tokenExpired: (json['token_expired'] as bool?)!,
+        tokenExpiresAt: json.containsKey('token_expires_at')
+            ? json['token_expires_at'] as String?
+            : throw ArgumentError.value(
+                null, 'token_expires_at', 'Required property is missing'),
+        tokenLastUsedAt: json.containsKey('token_last_used_at')
+            ? json['token_last_used_at'] as String?
+            : throw ArgumentError.value(
+                null, 'token_last_used_at', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'owner': owner.toJson(),
-    'permissions_added': permissionsAdded.toJson(),
-    'permissions_upgraded': permissionsUpgraded.toJson(),
-    'permissions_result': permissionsResult.toJson(),
-    'repository_selection': repositorySelection.toJson(),
-    'repository_count': repositoryCount,
-    'repositories': repositories?.map((item) => item.toJson()).toList(),
-    'created_at': createdAt,
-    'token_id': tokenId,
-    'token_name': tokenName,
-    'token_expired': tokenExpired,
-    'token_expires_at': tokenExpiresAt,
-    'token_last_used_at': tokenLastUsedAt,
-  };
+        'id': id,
+        'owner': owner.toJson(),
+        'permissions_added': permissionsAdded.toJson(),
+        'permissions_upgraded': permissionsUpgraded.toJson(),
+        'permissions_result': permissionsResult.toJson(),
+        'repository_selection': repositorySelection.toJson(),
+        'repository_count': repositoryCount,
+        'repositories': repositories?.map((item) => item.toJson()).toList(),
+        'created_at': createdAt,
+        'token_id': tokenId,
+        'token_name': tokenName,
+        'token_expired': tokenExpired,
+        'token_expires_at': tokenExpiresAt,
+        'token_last_used_at': tokenLastUsedAt,
+      };
 }

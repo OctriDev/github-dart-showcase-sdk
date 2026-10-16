@@ -7,24 +7,28 @@ part of 'inline.dart';
 class IssuesUpdateCommentRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The contents of the comment.
   final String body;
 
   const IssuesUpdateCommentRequestBody({required this.body});
 
-  IssuesUpdateCommentRequestBody Function({String body}) get copyWith => _copyWith;
+  IssuesUpdateCommentRequestBody Function({String body}) get copyWith =>
+      _copyWith;
 
-  IssuesUpdateCommentRequestBody _copyWith({Object? body = sdkOmittedValue}) => IssuesUpdateCommentRequestBody(
-    body: identical(body, sdkOmittedValue) ? this.body : body as String,
-  );
+  IssuesUpdateCommentRequestBody _copyWith({Object? body = sdkOmittedValue}) =>
+      IssuesUpdateCommentRequestBody(
+        body: identical(body, sdkOmittedValue) ? this.body : body as String,
+      );
 
-  factory IssuesUpdateCommentRequestBody.fromJson(Map<String, dynamic> json) => IssuesUpdateCommentRequestBody(
-    body: (json['body'] as String?)!,
-  );
+  factory IssuesUpdateCommentRequestBody.fromJson(Map<String, dynamic> json) =>
+      IssuesUpdateCommentRequestBody(
+        body: (json['body'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'body': body,
-  };
+        'body': body,
+      };
 }
 
 class IssuesUpdateRequestBodyLabelsItemVariant1 {
@@ -34,217 +38,447 @@ class IssuesUpdateRequestBodyLabelsItemVariant1 {
   final SdkOptional<String> name;
   final SdkOptional<String?> description;
   final SdkOptional<String?> color;
+
   /// Optional reasoning for selecting this label.
   final SdkOptional<String> rationale;
+
   /// If `true`, the change is stored as a pending suggestion for human review rather than applied directly.
   final SdkOptional<bool> suggest;
+
   /// The confidence level for this label choice.
-  final SdkOptional<IssuesUpdateRequestBodyLabelsItemVariant1Confidence> confidence;
+  final SdkOptional<IssuesUpdateRequestBodyLabelsItemVariant1Confidence>
+      confidence;
 
-  const IssuesUpdateRequestBodyLabelsItemVariant1({this.id = const SdkOmitted(), this.name = const SdkOmitted(), this.description = const SdkOmitted(), this.color = const SdkOmitted(), this.rationale = const SdkOmitted(), this.suggest = const SdkOmitted(), this.confidence = const SdkOmitted()});
+  const IssuesUpdateRequestBodyLabelsItemVariant1(
+      {this.id = const SdkOmitted(),
+      this.name = const SdkOmitted(),
+      this.description = const SdkOmitted(),
+      this.color = const SdkOmitted(),
+      this.rationale = const SdkOmitted(),
+      this.suggest = const SdkOmitted(),
+      this.confidence = const SdkOmitted()});
 
-  IssuesUpdateRequestBodyLabelsItemVariant1 Function({SdkOptional<int> id, SdkOptional<String> name, SdkOptional<String?> description, SdkOptional<String?> color, SdkOptional<String> rationale, SdkOptional<bool> suggest, SdkOptional<IssuesUpdateRequestBodyLabelsItemVariant1Confidence> confidence}) get copyWith => _copyWith;
+  IssuesUpdateRequestBodyLabelsItemVariant1 Function(
+      {SdkOptional<int> id,
+      SdkOptional<String> name,
+      SdkOptional<String?> description,
+      SdkOptional<String?> color,
+      SdkOptional<String> rationale,
+      SdkOptional<bool> suggest,
+      SdkOptional<IssuesUpdateRequestBodyLabelsItemVariant1Confidence>
+          confidence}) get copyWith => _copyWith;
 
-  IssuesUpdateRequestBodyLabelsItemVariant1 _copyWith({Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? description = sdkOmittedValue, Object? color = sdkOmittedValue, Object? rationale = sdkOmittedValue, Object? suggest = sdkOmittedValue, Object? confidence = sdkOmittedValue}) => IssuesUpdateRequestBodyLabelsItemVariant1(
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String?>,
-    color: identical(color, sdkOmittedValue) ? this.color : color as SdkOptional<String?>,
-    rationale: identical(rationale, sdkOmittedValue) ? this.rationale : rationale as SdkOptional<String>,
-    suggest: identical(suggest, sdkOmittedValue) ? this.suggest : suggest as SdkOptional<bool>,
-    confidence: identical(confidence, sdkOmittedValue) ? this.confidence : confidence as SdkOptional<IssuesUpdateRequestBodyLabelsItemVariant1Confidence>,
-  );
+  IssuesUpdateRequestBodyLabelsItemVariant1 _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? color = sdkOmittedValue,
+          Object? rationale = sdkOmittedValue,
+          Object? suggest = sdkOmittedValue,
+          Object? confidence = sdkOmittedValue}) =>
+      IssuesUpdateRequestBodyLabelsItemVariant1(
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as SdkOptional<String?>,
+        color: identical(color, sdkOmittedValue)
+            ? this.color
+            : color as SdkOptional<String?>,
+        rationale: identical(rationale, sdkOmittedValue)
+            ? this.rationale
+            : rationale as SdkOptional<String>,
+        suggest: identical(suggest, sdkOmittedValue)
+            ? this.suggest
+            : suggest as SdkOptional<bool>,
+        confidence: identical(confidence, sdkOmittedValue)
+            ? this.confidence
+            : confidence as SdkOptional<
+                IssuesUpdateRequestBodyLabelsItemVariant1Confidence>,
+      );
 
-  factory IssuesUpdateRequestBodyLabelsItemVariant1.fromJson(Map<String, dynamic> json) => IssuesUpdateRequestBodyLabelsItemVariant1(
-    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    description: json.containsKey('description') ? SdkPresent(json['description'] as String?) : const SdkOmitted(),
-    color: json.containsKey('color') ? SdkPresent(json['color'] as String?) : const SdkOmitted(),
-    rationale: json['rationale'] != null ? SdkPresent((json['rationale'] as String?)!) : const SdkOmitted(),
-    suggest: json['suggest'] != null ? SdkPresent((json['suggest'] as bool?)!) : const SdkOmitted(),
-    confidence: json['confidence'] != null ? SdkPresent((json['confidence'] != null ? IssuesUpdateRequestBodyLabelsItemVariant1Confidence.fromJson(json['confidence'] as String) : null)!) : const SdkOmitted(),
-  );
+  factory IssuesUpdateRequestBodyLabelsItemVariant1.fromJson(
+          Map<String, dynamic> json) =>
+      IssuesUpdateRequestBodyLabelsItemVariant1(
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+        description: json.containsKey('description')
+            ? SdkPresent(json['description'] as String?)
+            : const SdkOmitted(),
+        color: json.containsKey('color')
+            ? SdkPresent(json['color'] as String?)
+            : const SdkOmitted(),
+        rationale: json['rationale'] != null
+            ? SdkPresent((json['rationale'] as String?)!)
+            : const SdkOmitted(),
+        suggest: json['suggest'] != null
+            ? SdkPresent((json['suggest'] as bool?)!)
+            : const SdkOmitted(),
+        confidence: json['confidence'] != null
+            ? SdkPresent((json['confidence'] != null
+                ? IssuesUpdateRequestBodyLabelsItemVariant1Confidence.fromJson(
+                    json['confidence'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (id) {
-      SdkPresent<int>(value: final value) => {'id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (description) {
-      SdkPresent<String?>(value: final value) => {'description': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (color) {
-      SdkPresent<String?>(value: final value) => {'color': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (rationale) {
-      SdkPresent<String>(value: final value) => {'rationale': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (suggest) {
-      SdkPresent<bool>(value: final value) => {'suggest': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (confidence) {
-      SdkPresent<IssuesUpdateRequestBodyLabelsItemVariant1Confidence>(value: final value) => {'confidence': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (description) {
+          SdkPresent<String?>(value: final value) => {
+              'description': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (color) {
+          SdkPresent<String?>(value: final value) => {
+              'color': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (rationale) {
+          SdkPresent<String>(value: final value) => {
+              'rationale': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (suggest) {
+          SdkPresent<bool>(value: final value) => {
+              'suggest': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (confidence) {
+          SdkPresent<IssuesUpdateRequestBodyLabelsItemVariant1Confidence>(
+            value: final value
+          ) =>
+            {
+              'confidence': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class IssuesUpdateRequestBodyAssigneesItemVariant1 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   final SdkOptional<String> login;
+
   /// Optional reasoning for selecting this assignee.
   final SdkOptional<String> rationale;
+
   /// If `true`, the change is stored as a pending suggestion for human review rather than applied directly.
   final SdkOptional<bool> suggest;
+
   /// The confidence level for this assignee choice.
-  final SdkOptional<IssuesUpdateRequestBodyAssigneesItemVariant1Confidence> confidence;
+  final SdkOptional<IssuesUpdateRequestBodyAssigneesItemVariant1Confidence>
+      confidence;
 
-  const IssuesUpdateRequestBodyAssigneesItemVariant1({this.login = const SdkOmitted(), this.rationale = const SdkOmitted(), this.suggest = const SdkOmitted(), this.confidence = const SdkOmitted()});
+  const IssuesUpdateRequestBodyAssigneesItemVariant1(
+      {this.login = const SdkOmitted(),
+      this.rationale = const SdkOmitted(),
+      this.suggest = const SdkOmitted(),
+      this.confidence = const SdkOmitted()});
 
-  IssuesUpdateRequestBodyAssigneesItemVariant1 Function({SdkOptional<String> login, SdkOptional<String> rationale, SdkOptional<bool> suggest, SdkOptional<IssuesUpdateRequestBodyAssigneesItemVariant1Confidence> confidence}) get copyWith => _copyWith;
+  IssuesUpdateRequestBodyAssigneesItemVariant1 Function(
+      {SdkOptional<String> login,
+      SdkOptional<String> rationale,
+      SdkOptional<bool> suggest,
+      SdkOptional<IssuesUpdateRequestBodyAssigneesItemVariant1Confidence>
+          confidence}) get copyWith => _copyWith;
 
-  IssuesUpdateRequestBodyAssigneesItemVariant1 _copyWith({Object? login = sdkOmittedValue, Object? rationale = sdkOmittedValue, Object? suggest = sdkOmittedValue, Object? confidence = sdkOmittedValue}) => IssuesUpdateRequestBodyAssigneesItemVariant1(
-    login: identical(login, sdkOmittedValue) ? this.login : login as SdkOptional<String>,
-    rationale: identical(rationale, sdkOmittedValue) ? this.rationale : rationale as SdkOptional<String>,
-    suggest: identical(suggest, sdkOmittedValue) ? this.suggest : suggest as SdkOptional<bool>,
-    confidence: identical(confidence, sdkOmittedValue) ? this.confidence : confidence as SdkOptional<IssuesUpdateRequestBodyAssigneesItemVariant1Confidence>,
-  );
+  IssuesUpdateRequestBodyAssigneesItemVariant1 _copyWith(
+          {Object? login = sdkOmittedValue,
+          Object? rationale = sdkOmittedValue,
+          Object? suggest = sdkOmittedValue,
+          Object? confidence = sdkOmittedValue}) =>
+      IssuesUpdateRequestBodyAssigneesItemVariant1(
+        login: identical(login, sdkOmittedValue)
+            ? this.login
+            : login as SdkOptional<String>,
+        rationale: identical(rationale, sdkOmittedValue)
+            ? this.rationale
+            : rationale as SdkOptional<String>,
+        suggest: identical(suggest, sdkOmittedValue)
+            ? this.suggest
+            : suggest as SdkOptional<bool>,
+        confidence: identical(confidence, sdkOmittedValue)
+            ? this.confidence
+            : confidence as SdkOptional<
+                IssuesUpdateRequestBodyAssigneesItemVariant1Confidence>,
+      );
 
-  factory IssuesUpdateRequestBodyAssigneesItemVariant1.fromJson(Map<String, dynamic> json) => IssuesUpdateRequestBodyAssigneesItemVariant1(
-    login: json['login'] != null ? SdkPresent((json['login'] as String?)!) : const SdkOmitted(),
-    rationale: json['rationale'] != null ? SdkPresent((json['rationale'] as String?)!) : const SdkOmitted(),
-    suggest: json['suggest'] != null ? SdkPresent((json['suggest'] as bool?)!) : const SdkOmitted(),
-    confidence: json['confidence'] != null ? SdkPresent((json['confidence'] != null ? IssuesUpdateRequestBodyAssigneesItemVariant1Confidence.fromJson(json['confidence'] as String) : null)!) : const SdkOmitted(),
-  );
+  factory IssuesUpdateRequestBodyAssigneesItemVariant1.fromJson(
+          Map<String, dynamic> json) =>
+      IssuesUpdateRequestBodyAssigneesItemVariant1(
+        login: json['login'] != null
+            ? SdkPresent((json['login'] as String?)!)
+            : const SdkOmitted(),
+        rationale: json['rationale'] != null
+            ? SdkPresent((json['rationale'] as String?)!)
+            : const SdkOmitted(),
+        suggest: json['suggest'] != null
+            ? SdkPresent((json['suggest'] as bool?)!)
+            : const SdkOmitted(),
+        confidence: json['confidence'] != null
+            ? SdkPresent((json['confidence'] != null
+                ? IssuesUpdateRequestBodyAssigneesItemVariant1Confidence
+                    .fromJson(json['confidence'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (login) {
-      SdkPresent<String>(value: final value) => {'login': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (rationale) {
-      SdkPresent<String>(value: final value) => {'rationale': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (suggest) {
-      SdkPresent<bool>(value: final value) => {'suggest': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (confidence) {
-      SdkPresent<IssuesUpdateRequestBodyAssigneesItemVariant1Confidence>(value: final value) => {'confidence': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (login) {
+          SdkPresent<String>(value: final value) => {
+              'login': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (rationale) {
+          SdkPresent<String>(value: final value) => {
+              'rationale': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (suggest) {
+          SdkPresent<bool>(value: final value) => {
+              'suggest': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (confidence) {
+          SdkPresent<IssuesUpdateRequestBodyAssigneesItemVariant1Confidence>(
+            value: final value
+          ) =>
+            {
+              'confidence': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class IssuesUpdateRequestBodyIssueFieldValuesItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The ID of the issue field to set
   final int fieldId;
+
   /// The value to set for the field. For multi-select fields, provide an array of option names.
   final dynamic value;
+
   /// Optional reasoning for setting this field value.
   final SdkOptional<String> rationale;
+
   /// If `true`, the change is stored as a pending suggestion for human review rather than applied directly.
   final SdkOptional<bool> suggest;
+
   /// The confidence level for this field value choice.
-  final SdkOptional<IssuesUpdateRequestBodyIssueFieldValuesItemConfidence> confidence;
+  final SdkOptional<IssuesUpdateRequestBodyIssueFieldValuesItemConfidence>
+      confidence;
 
-  const IssuesUpdateRequestBodyIssueFieldValuesItem({required this.fieldId, required this.value, this.rationale = const SdkOmitted(), this.suggest = const SdkOmitted(), this.confidence = const SdkOmitted()});
+  const IssuesUpdateRequestBodyIssueFieldValuesItem(
+      {required this.fieldId,
+      required this.value,
+      this.rationale = const SdkOmitted(),
+      this.suggest = const SdkOmitted(),
+      this.confidence = const SdkOmitted()});
 
-  IssuesUpdateRequestBodyIssueFieldValuesItem Function({int fieldId, dynamic value, SdkOptional<String> rationale, SdkOptional<bool> suggest, SdkOptional<IssuesUpdateRequestBodyIssueFieldValuesItemConfidence> confidence}) get copyWith => _copyWith;
+  IssuesUpdateRequestBodyIssueFieldValuesItem Function(
+      {int fieldId,
+      dynamic value,
+      SdkOptional<String> rationale,
+      SdkOptional<bool> suggest,
+      SdkOptional<IssuesUpdateRequestBodyIssueFieldValuesItemConfidence>
+          confidence}) get copyWith => _copyWith;
 
-  IssuesUpdateRequestBodyIssueFieldValuesItem _copyWith({Object? fieldId = sdkOmittedValue, Object? value = sdkOmittedValue, Object? rationale = sdkOmittedValue, Object? suggest = sdkOmittedValue, Object? confidence = sdkOmittedValue}) => IssuesUpdateRequestBodyIssueFieldValuesItem(
-    fieldId: identical(fieldId, sdkOmittedValue) ? this.fieldId : fieldId as int,
-    value: identical(value, sdkOmittedValue) ? this.value : value as dynamic,
-    rationale: identical(rationale, sdkOmittedValue) ? this.rationale : rationale as SdkOptional<String>,
-    suggest: identical(suggest, sdkOmittedValue) ? this.suggest : suggest as SdkOptional<bool>,
-    confidence: identical(confidence, sdkOmittedValue) ? this.confidence : confidence as SdkOptional<IssuesUpdateRequestBodyIssueFieldValuesItemConfidence>,
-  );
+  IssuesUpdateRequestBodyIssueFieldValuesItem _copyWith(
+          {Object? fieldId = sdkOmittedValue,
+          Object? value = sdkOmittedValue,
+          Object? rationale = sdkOmittedValue,
+          Object? suggest = sdkOmittedValue,
+          Object? confidence = sdkOmittedValue}) =>
+      IssuesUpdateRequestBodyIssueFieldValuesItem(
+        fieldId:
+            identical(fieldId, sdkOmittedValue) ? this.fieldId : fieldId as int,
+        value:
+            identical(value, sdkOmittedValue) ? this.value : value as dynamic,
+        rationale: identical(rationale, sdkOmittedValue)
+            ? this.rationale
+            : rationale as SdkOptional<String>,
+        suggest: identical(suggest, sdkOmittedValue)
+            ? this.suggest
+            : suggest as SdkOptional<bool>,
+        confidence: identical(confidence, sdkOmittedValue)
+            ? this.confidence
+            : confidence as SdkOptional<
+                IssuesUpdateRequestBodyIssueFieldValuesItemConfidence>,
+      );
 
-  factory IssuesUpdateRequestBodyIssueFieldValuesItem.fromJson(Map<String, dynamic> json) => IssuesUpdateRequestBodyIssueFieldValuesItem(
-    fieldId: ((json['field_id'] as num?)?.toInt())!,
-    value: (json['value'])!,
-    rationale: json['rationale'] != null ? SdkPresent((json['rationale'] as String?)!) : const SdkOmitted(),
-    suggest: json['suggest'] != null ? SdkPresent((json['suggest'] as bool?)!) : const SdkOmitted(),
-    confidence: json['confidence'] != null ? SdkPresent((json['confidence'] != null ? IssuesUpdateRequestBodyIssueFieldValuesItemConfidence.fromJson(json['confidence'] as String) : null)!) : const SdkOmitted(),
-  );
+  factory IssuesUpdateRequestBodyIssueFieldValuesItem.fromJson(
+          Map<String, dynamic> json) =>
+      IssuesUpdateRequestBodyIssueFieldValuesItem(
+        fieldId: ((json['field_id'] as num?)?.toInt())!,
+        value: (json['value'])!,
+        rationale: json['rationale'] != null
+            ? SdkPresent((json['rationale'] as String?)!)
+            : const SdkOmitted(),
+        suggest: json['suggest'] != null
+            ? SdkPresent((json['suggest'] as bool?)!)
+            : const SdkOmitted(),
+        confidence: json['confidence'] != null
+            ? SdkPresent((json['confidence'] != null
+                ? IssuesUpdateRequestBodyIssueFieldValuesItemConfidence
+                    .fromJson(json['confidence'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'field_id': fieldId,
-    'value': value,
-    ...switch (rationale) {
-      SdkPresent<String>(value: final value) => {'rationale': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (suggest) {
-      SdkPresent<bool>(value: final value) => {'suggest': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (confidence) {
-      SdkPresent<IssuesUpdateRequestBodyIssueFieldValuesItemConfidence>(value: final value) => {'confidence': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'field_id': fieldId,
+        'value': value,
+        ...switch (rationale) {
+          SdkPresent<String>(value: final value) => {
+              'rationale': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (suggest) {
+          SdkPresent<bool>(value: final value) => {
+              'suggest': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (confidence) {
+          SdkPresent<IssuesUpdateRequestBodyIssueFieldValuesItemConfidence>(
+            value: final value
+          ) =>
+            {
+              'confidence': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// The issue type with optional metadata.
 class IssuesUpdateRequestBodyTypeVariant1 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the issue type to associate with this issue, or `null` to remove the current issue type.
   final SdkOptional<String?> value;
+
   /// Optional reasoning for selecting this type.
   final SdkOptional<String> rationale;
+
   /// If `true`, the change is stored as a pending suggestion for human review rather than applied directly.
   final SdkOptional<bool> suggest;
+
   /// The confidence level for this type choice.
   final SdkOptional<IssuesUpdateRequestBodyTypeVariant1Confidence> confidence;
 
-  const IssuesUpdateRequestBodyTypeVariant1({this.value = const SdkOmitted(), this.rationale = const SdkOmitted(), this.suggest = const SdkOmitted(), this.confidence = const SdkOmitted()});
+  const IssuesUpdateRequestBodyTypeVariant1(
+      {this.value = const SdkOmitted(),
+      this.rationale = const SdkOmitted(),
+      this.suggest = const SdkOmitted(),
+      this.confidence = const SdkOmitted()});
 
-  IssuesUpdateRequestBodyTypeVariant1 Function({SdkOptional<String?> value, SdkOptional<String> rationale, SdkOptional<bool> suggest, SdkOptional<IssuesUpdateRequestBodyTypeVariant1Confidence> confidence}) get copyWith => _copyWith;
+  IssuesUpdateRequestBodyTypeVariant1 Function(
+      {SdkOptional<String?> value,
+      SdkOptional<String> rationale,
+      SdkOptional<bool> suggest,
+      SdkOptional<IssuesUpdateRequestBodyTypeVariant1Confidence>
+          confidence}) get copyWith => _copyWith;
 
-  IssuesUpdateRequestBodyTypeVariant1 _copyWith({Object? value = sdkOmittedValue, Object? rationale = sdkOmittedValue, Object? suggest = sdkOmittedValue, Object? confidence = sdkOmittedValue}) => IssuesUpdateRequestBodyTypeVariant1(
-    value: identical(value, sdkOmittedValue) ? this.value : value as SdkOptional<String?>,
-    rationale: identical(rationale, sdkOmittedValue) ? this.rationale : rationale as SdkOptional<String>,
-    suggest: identical(suggest, sdkOmittedValue) ? this.suggest : suggest as SdkOptional<bool>,
-    confidence: identical(confidence, sdkOmittedValue) ? this.confidence : confidence as SdkOptional<IssuesUpdateRequestBodyTypeVariant1Confidence>,
-  );
+  IssuesUpdateRequestBodyTypeVariant1 _copyWith(
+          {Object? value = sdkOmittedValue,
+          Object? rationale = sdkOmittedValue,
+          Object? suggest = sdkOmittedValue,
+          Object? confidence = sdkOmittedValue}) =>
+      IssuesUpdateRequestBodyTypeVariant1(
+        value: identical(value, sdkOmittedValue)
+            ? this.value
+            : value as SdkOptional<String?>,
+        rationale: identical(rationale, sdkOmittedValue)
+            ? this.rationale
+            : rationale as SdkOptional<String>,
+        suggest: identical(suggest, sdkOmittedValue)
+            ? this.suggest
+            : suggest as SdkOptional<bool>,
+        confidence: identical(confidence, sdkOmittedValue)
+            ? this.confidence
+            : confidence
+                as SdkOptional<IssuesUpdateRequestBodyTypeVariant1Confidence>,
+      );
 
-  factory IssuesUpdateRequestBodyTypeVariant1.fromJson(Map<String, dynamic> json) => IssuesUpdateRequestBodyTypeVariant1(
-    value: json.containsKey('value') ? SdkPresent(json['value'] as String?) : const SdkOmitted(),
-    rationale: json['rationale'] != null ? SdkPresent((json['rationale'] as String?)!) : const SdkOmitted(),
-    suggest: json['suggest'] != null ? SdkPresent((json['suggest'] as bool?)!) : const SdkOmitted(),
-    confidence: json['confidence'] != null ? SdkPresent((json['confidence'] != null ? IssuesUpdateRequestBodyTypeVariant1Confidence.fromJson(json['confidence'] as String) : null)!) : const SdkOmitted(),
-  );
+  factory IssuesUpdateRequestBodyTypeVariant1.fromJson(
+          Map<String, dynamic> json) =>
+      IssuesUpdateRequestBodyTypeVariant1(
+        value: json.containsKey('value')
+            ? SdkPresent(json['value'] as String?)
+            : const SdkOmitted(),
+        rationale: json['rationale'] != null
+            ? SdkPresent((json['rationale'] as String?)!)
+            : const SdkOmitted(),
+        suggest: json['suggest'] != null
+            ? SdkPresent((json['suggest'] as bool?)!)
+            : const SdkOmitted(),
+        confidence: json['confidence'] != null
+            ? SdkPresent((json['confidence'] != null
+                ? IssuesUpdateRequestBodyTypeVariant1Confidence.fromJson(
+                    json['confidence'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (value) {
-      SdkPresent<String?>(value: final value) => {'value': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (rationale) {
-      SdkPresent<String>(value: final value) => {'rationale': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (suggest) {
-      SdkPresent<bool>(value: final value) => {'suggest': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (confidence) {
-      SdkPresent<IssuesUpdateRequestBodyTypeVariant1Confidence>(value: final value) => {'confidence': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (value) {
+          SdkPresent<String?>(value: final value) => {
+              'value': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (rationale) {
+          SdkPresent<String>(value: final value) => {
+              'rationale': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (suggest) {
+          SdkPresent<bool>(value: final value) => {
+              'suggest': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (confidence) {
+          SdkPresent<IssuesUpdateRequestBodyTypeVariant1Confidence>(
+            value: final value
+          ) =>
+            {
+              'confidence': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

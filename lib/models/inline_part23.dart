@@ -6,12 +6,12 @@ part of 'inline.dart';
 // Inline operation models (part 23)
 /// The kind of change proposed.
 final class IssueSuggestionAction {
-
   final String value;
 
   const IssueSuggestionAction._(this.value);
 
-  factory IssueSuggestionAction.fromJson(String value) => IssueSuggestionAction._(value);
+  factory IssueSuggestionAction.fromJson(String value) =>
+      IssueSuggestionAction._(value);
 
   static const setType = IssueSuggestionAction._('set_type');
   static const addLabel = IssueSuggestionAction._('add_label');
@@ -21,22 +21,25 @@ final class IssueSuggestionAction {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is IssueSuggestionAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is IssueSuggestionAction && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The actor's confidence level in the suggestion.
 final class IssueSuggestionConfidence {
-
   final String value;
 
   const IssueSuggestionConfidence._(this.value);
 
-  factory IssueSuggestionConfidence.fromJson(String value) => IssueSuggestionConfidence._(value);
+  factory IssueSuggestionConfidence.fromJson(String value) =>
+      IssueSuggestionConfidence._(value);
 
   static const low = IssueSuggestionConfidence._('LOW');
   static const medium = IssueSuggestionConfidence._('MEDIUM');
@@ -44,22 +47,25 @@ final class IssueSuggestionConfidence {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is IssueSuggestionConfidence && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is IssueSuggestionConfidence && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The suggestion's lifecycle state.
 final class IssueSuggestionState {
-
   final String value;
 
   const IssueSuggestionState._(this.value);
 
-  factory IssueSuggestionState.fromJson(String value) => IssueSuggestionState._(value);
+  factory IssueSuggestionState.fromJson(String value) =>
+      IssueSuggestionState._(value);
 
   static const pending = IssueSuggestionState._('pending');
   static const applied = IssueSuggestionState._('applied');
@@ -70,17 +76,19 @@ final class IssueSuggestionState {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is IssueSuggestionState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is IssueSuggestionState && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The color of the issue type.
 final class IssueTypeColor {
-
   final String value;
 
   const IssueTypeColor._(this.value);
@@ -98,22 +106,25 @@ final class IssueTypeColor {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is IssueTypeColor && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is IssueTypeColor && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The color of the issue type.
 final class IssueTypeWebhookColor {
-
   final String value;
 
   const IssueTypeWebhookColor._(this.value);
 
-  factory IssueTypeWebhookColor.fromJson(String value) => IssueTypeWebhookColor._(value);
+  factory IssueTypeWebhookColor.fromJson(String value) =>
+      IssueTypeWebhookColor._(value);
 
   static const gray = IssueTypeWebhookColor._('gray');
   static const blue = IssueTypeWebhookColor._('blue');
@@ -126,17 +137,19 @@ final class IssueTypeWebhookColor {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is IssueTypeWebhookColor && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is IssueTypeWebhookColor && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The outcome of the job.
 final class JobConclusion {
-
   final String value;
 
   const JobConclusion._(this.value);
@@ -153,17 +166,19 @@ final class JobConclusion {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is JobConclusion && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is JobConclusion && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The phase of the lifecycle that the job is currently in.
 final class JobStatus {
-
   final String value;
 
   const JobStatus._(this.value);
@@ -179,22 +194,24 @@ final class JobStatus {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is JobStatus && other.value == value;
+  @override
+  bool operator ==(Object other) => other is JobStatus && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The phase of the lifecycle that the job is currently in.
 final class JobStepsItemStatus {
-
   final String value;
 
   const JobStepsItemStatus._(this.value);
 
-  factory JobStepsItemStatus.fromJson(String value) => JobStepsItemStatus._(value);
+  factory JobStepsItemStatus.fromJson(String value) =>
+      JobStepsItemStatus._(value);
 
   static const queued = JobStepsItemStatus._('queued');
   static const inProgress = JobStepsItemStatus._('in_progress');
@@ -202,22 +219,25 @@ final class JobStepsItemStatus {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is JobStepsItemStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is JobStepsItemStatus && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `price_model` wire field.
 final class MarketplaceListingPlanPriceModel {
-
   final String value;
 
   const MarketplaceListingPlanPriceModel._(this.value);
 
-  factory MarketplaceListingPlanPriceModel.fromJson(String value) => MarketplaceListingPlanPriceModel._(value);
+  factory MarketplaceListingPlanPriceModel.fromJson(String value) =>
+      MarketplaceListingPlanPriceModel._(value);
 
   static const free = MarketplaceListingPlanPriceModel._('FREE');
   static const flatRate = MarketplaceListingPlanPriceModel._('FLAT_RATE');
@@ -225,22 +245,25 @@ final class MarketplaceListingPlanPriceModel {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is MarketplaceListingPlanPriceModel && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is MarketplaceListingPlanPriceModel && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `merge_type` wire field.
 final class MergedUpstreamMergeType {
-
   final String value;
 
   const MergedUpstreamMergeType._(this.value);
 
-  factory MergedUpstreamMergeType.fromJson(String value) => MergedUpstreamMergeType._(value);
+  factory MergedUpstreamMergeType.fromJson(String value) =>
+      MergedUpstreamMergeType._(value);
 
   static const merge = MergedUpstreamMergeType._('merge');
   static const fastForward = MergedUpstreamMergeType._('fast-forward');
@@ -248,17 +271,19 @@ final class MergedUpstreamMergeType {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is MergedUpstreamMergeType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is MergedUpstreamMergeType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The state of the milestone.
 final class MilestoneState {
-
   final String value;
 
   const MilestoneState._(this.value);
@@ -270,10 +295,13 @@ final class MilestoneState {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is MilestoneState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is MilestoneState && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

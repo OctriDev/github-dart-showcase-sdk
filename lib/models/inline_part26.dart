@@ -6,56 +6,65 @@ part of 'inline.dart';
 // Inline operation models (part 26)
 /// The ownership type of the team
 final class NullableTeamSimpleType {
-
   final String value;
 
   const NullableTeamSimpleType._(this.value);
 
-  factory NullableTeamSimpleType.fromJson(String value) => NullableTeamSimpleType._(value);
+  factory NullableTeamSimpleType.fromJson(String value) =>
+      NullableTeamSimpleType._(value);
 
   static const enterprise = NullableTeamSimpleType._('enterprise');
   static const organization = NullableTeamSimpleType._('organization');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is NullableTeamSimpleType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is NullableTeamSimpleType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Whether the inclusion was defined at the organization or enterprise level
 final class OidcCustomPropertyInclusionInclusionSource {
-
   final String value;
 
   const OidcCustomPropertyInclusionInclusionSource._(this.value);
 
-  factory OidcCustomPropertyInclusionInclusionSource.fromJson(String value) => OidcCustomPropertyInclusionInclusionSource._(value);
+  factory OidcCustomPropertyInclusionInclusionSource.fromJson(String value) =>
+      OidcCustomPropertyInclusionInclusionSource._(value);
 
-  static const organization = OidcCustomPropertyInclusionInclusionSource._('organization');
-  static const enterprise = OidcCustomPropertyInclusionInclusionSource._('enterprise');
+  static const organization =
+      OidcCustomPropertyInclusionInclusionSource._('organization');
+  static const enterprise =
+      OidcCustomPropertyInclusionInclusionSource._('enterprise');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is OidcCustomPropertyInclusionInclusionSource && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is OidcCustomPropertyInclusionInclusionSource &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Visibility of a secret
 final class OrganizationActionsSecretVisibility {
-
   final String value;
 
   const OrganizationActionsSecretVisibility._(this.value);
 
-  factory OrganizationActionsSecretVisibility.fromJson(String value) => OrganizationActionsSecretVisibility._(value);
+  factory OrganizationActionsSecretVisibility.fromJson(String value) =>
+      OrganizationActionsSecretVisibility._(value);
 
   static const all = OrganizationActionsSecretVisibility._('all');
   static const private = OrganizationActionsSecretVisibility._('private');
@@ -63,22 +72,25 @@ final class OrganizationActionsSecretVisibility {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is OrganizationActionsSecretVisibility && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is OrganizationActionsSecretVisibility && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Visibility of a variable
 final class OrganizationActionsVariableVisibility {
-
   final String value;
 
   const OrganizationActionsVariableVisibility._(this.value);
 
-  factory OrganizationActionsVariableVisibility.fromJson(String value) => OrganizationActionsVariableVisibility._(value);
+  factory OrganizationActionsVariableVisibility.fromJson(String value) =>
+      OrganizationActionsVariableVisibility._(value);
 
   static const all = OrganizationActionsVariableVisibility._('all');
   static const private = OrganizationActionsVariableVisibility._('private');
@@ -86,97 +98,116 @@ final class OrganizationActionsVariableVisibility {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is OrganizationActionsVariableVisibility && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is OrganizationActionsVariableVisibility && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The data type of the issue field.
 final class OrganizationCreateIssueFieldDataType {
-
   final String value;
 
   const OrganizationCreateIssueFieldDataType._(this.value);
 
-  factory OrganizationCreateIssueFieldDataType.fromJson(String value) => OrganizationCreateIssueFieldDataType._(value);
+  factory OrganizationCreateIssueFieldDataType.fromJson(String value) =>
+      OrganizationCreateIssueFieldDataType._(value);
 
   static const text = OrganizationCreateIssueFieldDataType._('text');
   static const date = OrganizationCreateIssueFieldDataType._('date');
-  static const singleSelect = OrganizationCreateIssueFieldDataType._('single_select');
-  static const multiSelect = OrganizationCreateIssueFieldDataType._('multi_select');
+  static const singleSelect =
+      OrganizationCreateIssueFieldDataType._('single_select');
+  static const multiSelect =
+      OrganizationCreateIssueFieldDataType._('multi_select');
   static const number = OrganizationCreateIssueFieldDataType._('number');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is OrganizationCreateIssueFieldDataType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is OrganizationCreateIssueFieldDataType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Color for the option.
 final class OrganizationCreateIssueFieldOptionsItemColor {
-
   final String value;
 
   const OrganizationCreateIssueFieldOptionsItemColor._(this.value);
 
-  factory OrganizationCreateIssueFieldOptionsItemColor.fromJson(String value) => OrganizationCreateIssueFieldOptionsItemColor._(value);
+  factory OrganizationCreateIssueFieldOptionsItemColor.fromJson(String value) =>
+      OrganizationCreateIssueFieldOptionsItemColor._(value);
 
   static const gray = OrganizationCreateIssueFieldOptionsItemColor._('gray');
   static const blue = OrganizationCreateIssueFieldOptionsItemColor._('blue');
   static const green = OrganizationCreateIssueFieldOptionsItemColor._('green');
-  static const yellow = OrganizationCreateIssueFieldOptionsItemColor._('yellow');
-  static const orange = OrganizationCreateIssueFieldOptionsItemColor._('orange');
+  static const yellow =
+      OrganizationCreateIssueFieldOptionsItemColor._('yellow');
+  static const orange =
+      OrganizationCreateIssueFieldOptionsItemColor._('orange');
   static const red = OrganizationCreateIssueFieldOptionsItemColor._('red');
   static const pink = OrganizationCreateIssueFieldOptionsItemColor._('pink');
-  static const purple = OrganizationCreateIssueFieldOptionsItemColor._('purple');
+  static const purple =
+      OrganizationCreateIssueFieldOptionsItemColor._('purple');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is OrganizationCreateIssueFieldOptionsItemColor && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is OrganizationCreateIssueFieldOptionsItemColor &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The visibility of the issue field. Can be `organization_members_only` (visible only within the organization) or `all` (visible to all users who can see issues). Only used when the visibility settings feature is enabled. Defaults to `organization_members_only`.
 final class OrganizationCreateIssueFieldVisibility {
-
   final String value;
 
   const OrganizationCreateIssueFieldVisibility._(this.value);
 
-  factory OrganizationCreateIssueFieldVisibility.fromJson(String value) => OrganizationCreateIssueFieldVisibility._(value);
+  factory OrganizationCreateIssueFieldVisibility.fromJson(String value) =>
+      OrganizationCreateIssueFieldVisibility._(value);
 
-  static const organizationMembersOnly = OrganizationCreateIssueFieldVisibility._('organization_members_only');
+  static const organizationMembersOnly =
+      OrganizationCreateIssueFieldVisibility._('organization_members_only');
   static const all = OrganizationCreateIssueFieldVisibility._('all');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is OrganizationCreateIssueFieldVisibility && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is OrganizationCreateIssueFieldVisibility && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Color for the issue type.
 final class OrganizationCreateIssueTypeColor {
-
   final String value;
 
   const OrganizationCreateIssueTypeColor._(this.value);
 
-  factory OrganizationCreateIssueTypeColor.fromJson(String value) => OrganizationCreateIssueTypeColor._(value);
+  factory OrganizationCreateIssueTypeColor.fromJson(String value) =>
+      OrganizationCreateIssueTypeColor._(value);
 
   static const gray = OrganizationCreateIssueTypeColor._('gray');
   static const blue = OrganizationCreateIssueTypeColor._('blue');
@@ -189,22 +220,25 @@ final class OrganizationCreateIssueTypeColor {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is OrganizationCreateIssueTypeColor && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is OrganizationCreateIssueTypeColor && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Visibility of a secret
 final class OrganizationDependabotSecretVisibility {
-
   final String value;
 
   const OrganizationDependabotSecretVisibility._(this.value);
 
-  factory OrganizationDependabotSecretVisibility.fromJson(String value) => OrganizationDependabotSecretVisibility._(value);
+  factory OrganizationDependabotSecretVisibility.fromJson(String value) =>
+      OrganizationDependabotSecretVisibility._(value);
 
   static const all = OrganizationDependabotSecretVisibility._('all');
   static const private = OrganizationDependabotSecretVisibility._('private');
@@ -212,68 +246,88 @@ final class OrganizationDependabotSecretVisibility {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is OrganizationDependabotSecretVisibility && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is OrganizationDependabotSecretVisibility && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Type of repository selection requested.
 final class OrganizationProgrammaticAccessGrantRepositorySelection {
-
   final String value;
 
   const OrganizationProgrammaticAccessGrantRepositorySelection._(this.value);
 
-  factory OrganizationProgrammaticAccessGrantRepositorySelection.fromJson(String value) => OrganizationProgrammaticAccessGrantRepositorySelection._(value);
+  factory OrganizationProgrammaticAccessGrantRepositorySelection.fromJson(
+          String value) =>
+      OrganizationProgrammaticAccessGrantRepositorySelection._(value);
 
-  static const none = OrganizationProgrammaticAccessGrantRepositorySelection._('none');
-  static const all = OrganizationProgrammaticAccessGrantRepositorySelection._('all');
-  static const subset = OrganizationProgrammaticAccessGrantRepositorySelection._('subset');
+  static const none =
+      OrganizationProgrammaticAccessGrantRepositorySelection._('none');
+  static const all =
+      OrganizationProgrammaticAccessGrantRepositorySelection._('all');
+  static const subset =
+      OrganizationProgrammaticAccessGrantRepositorySelection._('subset');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is OrganizationProgrammaticAccessGrantRepositorySelection && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is OrganizationProgrammaticAccessGrantRepositorySelection &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Type of repository selection requested.
 final class OrganizationProgrammaticAccessGrantRequestRepositorySelection {
-
   final String value;
 
-  const OrganizationProgrammaticAccessGrantRequestRepositorySelection._(this.value);
+  const OrganizationProgrammaticAccessGrantRequestRepositorySelection._(
+      this.value);
 
-  factory OrganizationProgrammaticAccessGrantRequestRepositorySelection.fromJson(String value) => OrganizationProgrammaticAccessGrantRequestRepositorySelection._(value);
+  factory OrganizationProgrammaticAccessGrantRequestRepositorySelection.fromJson(
+          String value) =>
+      OrganizationProgrammaticAccessGrantRequestRepositorySelection._(value);
 
-  static const none = OrganizationProgrammaticAccessGrantRequestRepositorySelection._('none');
-  static const all = OrganizationProgrammaticAccessGrantRequestRepositorySelection._('all');
-  static const subset = OrganizationProgrammaticAccessGrantRequestRepositorySelection._('subset');
+  static const none =
+      OrganizationProgrammaticAccessGrantRequestRepositorySelection._('none');
+  static const all =
+      OrganizationProgrammaticAccessGrantRequestRepositorySelection._('all');
+  static const subset =
+      OrganizationProgrammaticAccessGrantRequestRepositorySelection._('subset');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is OrganizationProgrammaticAccessGrantRequestRepositorySelection && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is OrganizationProgrammaticAccessGrantRequestRepositorySelection &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The system role from which this role inherits permissions.
 final class OrganizationRoleBaseRole {
-
   final String value;
 
   const OrganizationRoleBaseRole._(this.value);
 
-  factory OrganizationRoleBaseRole.fromJson(String value) => OrganizationRoleBaseRole._(value);
+  factory OrganizationRoleBaseRole.fromJson(String value) =>
+      OrganizationRoleBaseRole._(value);
 
   static const read = OrganizationRoleBaseRole._('read');
   static const triage = OrganizationRoleBaseRole._('triage');
@@ -283,10 +337,13 @@ final class OrganizationRoleBaseRole {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is OrganizationRoleBaseRole && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is OrganizationRoleBaseRole && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

@@ -5,56 +5,64 @@ part of 'inline.dart';
 
 // Inline operation models (part 280)
 final class ChecksUpdateRequestBodyVariant0Status {
-
   final String value;
 
   const ChecksUpdateRequestBodyVariant0Status._(this.value);
 
-  factory ChecksUpdateRequestBodyVariant0Status.fromJson(String value) => ChecksUpdateRequestBodyVariant0Status._(value);
+  factory ChecksUpdateRequestBodyVariant0Status.fromJson(String value) =>
+      ChecksUpdateRequestBodyVariant0Status._(value);
 
   static const completed = ChecksUpdateRequestBodyVariant0Status._('completed');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ChecksUpdateRequestBodyVariant0Status && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ChecksUpdateRequestBodyVariant0Status && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class ChecksUpdateRequestBodyVariant1Status {
-
   final String value;
 
   const ChecksUpdateRequestBodyVariant1Status._(this.value);
 
-  factory ChecksUpdateRequestBodyVariant1Status.fromJson(String value) => ChecksUpdateRequestBodyVariant1Status._(value);
+  factory ChecksUpdateRequestBodyVariant1Status.fromJson(String value) =>
+      ChecksUpdateRequestBodyVariant1Status._(value);
 
   static const queued = ChecksUpdateRequestBodyVariant1Status._('queued');
-  static const inProgress = ChecksUpdateRequestBodyVariant1Status._('in_progress');
+  static const inProgress =
+      ChecksUpdateRequestBodyVariant1Status._('in_progress');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ChecksUpdateRequestBodyVariant1Status && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ChecksUpdateRequestBodyVariant1Status && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// **Required if you provide `completed_at` or a `status` of `completed`**. The final conclusion of the check. **Note:** Providing `conclusion` will automatically set the `status` parameter to `completed`. You cannot change a check run conclusion to `stale`, only GitHub can set this.
 final class ChecksUpdateRequestBodyConclusion {
-
   final String value;
 
   const ChecksUpdateRequestBodyConclusion._(this.value);
 
-  factory ChecksUpdateRequestBodyConclusion.fromJson(String value) => ChecksUpdateRequestBodyConclusion._(value);
+  factory ChecksUpdateRequestBodyConclusion.fromJson(String value) =>
+      ChecksUpdateRequestBodyConclusion._(value);
 
-  static const actionRequired = ChecksUpdateRequestBodyConclusion._('action_required');
+  static const actionRequired =
+      ChecksUpdateRequestBodyConclusion._('action_required');
   static const cancelled = ChecksUpdateRequestBodyConclusion._('cancelled');
   static const failure = ChecksUpdateRequestBodyConclusion._('failure');
   static const neutral = ChecksUpdateRequestBodyConclusion._('neutral');
@@ -65,45 +73,57 @@ final class ChecksUpdateRequestBodyConclusion {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ChecksUpdateRequestBodyConclusion && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ChecksUpdateRequestBodyConclusion && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The level of the annotation.
 final class ChecksUpdateRequestBodyOutputAnnotationsItemAnnotationLevel {
-
   final String value;
 
-  const ChecksUpdateRequestBodyOutputAnnotationsItemAnnotationLevel._(this.value);
+  const ChecksUpdateRequestBodyOutputAnnotationsItemAnnotationLevel._(
+      this.value);
 
-  factory ChecksUpdateRequestBodyOutputAnnotationsItemAnnotationLevel.fromJson(String value) => ChecksUpdateRequestBodyOutputAnnotationsItemAnnotationLevel._(value);
+  factory ChecksUpdateRequestBodyOutputAnnotationsItemAnnotationLevel.fromJson(
+          String value) =>
+      ChecksUpdateRequestBodyOutputAnnotationsItemAnnotationLevel._(value);
 
-  static const notice = ChecksUpdateRequestBodyOutputAnnotationsItemAnnotationLevel._('notice');
-  static const warning = ChecksUpdateRequestBodyOutputAnnotationsItemAnnotationLevel._('warning');
-  static const failure = ChecksUpdateRequestBodyOutputAnnotationsItemAnnotationLevel._('failure');
+  static const notice =
+      ChecksUpdateRequestBodyOutputAnnotationsItemAnnotationLevel._('notice');
+  static const warning =
+      ChecksUpdateRequestBodyOutputAnnotationsItemAnnotationLevel._('warning');
+  static const failure =
+      ChecksUpdateRequestBodyOutputAnnotationsItemAnnotationLevel._('failure');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ChecksUpdateRequestBodyOutputAnnotationsItemAnnotationLevel && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ChecksUpdateRequestBodyOutputAnnotationsItemAnnotationLevel &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The current status of the check run. Only GitHub Actions can set a status of `waiting`, `pending`, or `requested`.
 final class ChecksUpdateRequestBodyStatus {
-
   final String value;
 
   const ChecksUpdateRequestBodyStatus._(this.value);
 
-  factory ChecksUpdateRequestBodyStatus.fromJson(String value) => ChecksUpdateRequestBodyStatus._(value);
+  factory ChecksUpdateRequestBodyStatus.fromJson(String value) =>
+      ChecksUpdateRequestBodyStatus._(value);
 
   static const queued = ChecksUpdateRequestBodyStatus._('queued');
   static const inProgress = ChecksUpdateRequestBodyStatus._('in_progress');
@@ -114,128 +134,155 @@ final class ChecksUpdateRequestBodyStatus {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ChecksUpdateRequestBodyStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ChecksUpdateRequestBodyStatus && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class ChecksListForSuiteFilter {
-
   final String value;
 
   const ChecksListForSuiteFilter._(this.value);
 
-  factory ChecksListForSuiteFilter.fromJson(String value) => ChecksListForSuiteFilter._(value);
+  factory ChecksListForSuiteFilter.fromJson(String value) =>
+      ChecksListForSuiteFilter._(value);
 
   static const latest = ChecksListForSuiteFilter._('latest');
   static const all = ChecksListForSuiteFilter._('all');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ChecksListForSuiteFilter && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ChecksListForSuiteFilter && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class CodeQualityListFindingsForRepoState {
-
   final String value;
 
   const CodeQualityListFindingsForRepoState._(this.value);
 
-  factory CodeQualityListFindingsForRepoState.fromJson(String value) => CodeQualityListFindingsForRepoState._(value);
+  factory CodeQualityListFindingsForRepoState.fromJson(String value) =>
+      CodeQualityListFindingsForRepoState._(value);
 
   static const open = CodeQualityListFindingsForRepoState._('open');
   static const dismissed = CodeQualityListFindingsForRepoState._('dismissed');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeQualityListFindingsForRepoState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodeQualityListFindingsForRepoState && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class CodeScanningListAlertsForRepoSort {
-
   final String value;
 
   const CodeScanningListAlertsForRepoSort._(this.value);
 
-  factory CodeScanningListAlertsForRepoSort.fromJson(String value) => CodeScanningListAlertsForRepoSort._(value);
+  factory CodeScanningListAlertsForRepoSort.fromJson(String value) =>
+      CodeScanningListAlertsForRepoSort._(value);
 
   static const created = CodeScanningListAlertsForRepoSort._('created');
   static const updated = CodeScanningListAlertsForRepoSort._('updated');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeScanningListAlertsForRepoSort && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodeScanningListAlertsForRepoSort && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class CodeScanningListRecentAnalysesSort {
-
   final String value;
 
   const CodeScanningListRecentAnalysesSort._(this.value);
 
-  factory CodeScanningListRecentAnalysesSort.fromJson(String value) => CodeScanningListRecentAnalysesSort._(value);
+  factory CodeScanningListRecentAnalysesSort.fromJson(String value) =>
+      CodeScanningListRecentAnalysesSort._(value);
 
   static const created = CodeScanningListRecentAnalysesSort._('created');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeScanningListRecentAnalysesSort && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodeScanningListRecentAnalysesSort && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is closing down.
 final class CodespacesCreateWithRepoForAuthenticatedUserRequestBodyGeo {
-
   final String value;
 
-  const CodespacesCreateWithRepoForAuthenticatedUserRequestBodyGeo._(this.value);
+  const CodespacesCreateWithRepoForAuthenticatedUserRequestBodyGeo._(
+      this.value);
 
-  factory CodespacesCreateWithRepoForAuthenticatedUserRequestBodyGeo.fromJson(String value) => CodespacesCreateWithRepoForAuthenticatedUserRequestBodyGeo._(value);
+  factory CodespacesCreateWithRepoForAuthenticatedUserRequestBodyGeo.fromJson(
+          String value) =>
+      CodespacesCreateWithRepoForAuthenticatedUserRequestBodyGeo._(value);
 
-  static const europewest = CodespacesCreateWithRepoForAuthenticatedUserRequestBodyGeo._('EuropeWest');
-  static const southeastasia = CodespacesCreateWithRepoForAuthenticatedUserRequestBodyGeo._('SoutheastAsia');
-  static const useast = CodespacesCreateWithRepoForAuthenticatedUserRequestBodyGeo._('UsEast');
-  static const uswest = CodespacesCreateWithRepoForAuthenticatedUserRequestBodyGeo._('UsWest');
+  static const europewest =
+      CodespacesCreateWithRepoForAuthenticatedUserRequestBodyGeo._(
+          'EuropeWest');
+  static const southeastasia =
+      CodespacesCreateWithRepoForAuthenticatedUserRequestBodyGeo._(
+          'SoutheastAsia');
+  static const useast =
+      CodespacesCreateWithRepoForAuthenticatedUserRequestBodyGeo._('UsEast');
+  static const uswest =
+      CodespacesCreateWithRepoForAuthenticatedUserRequestBodyGeo._('UsWest');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodespacesCreateWithRepoForAuthenticatedUserRequestBodyGeo && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodespacesCreateWithRepoForAuthenticatedUserRequestBodyGeo &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class ReposListCollaboratorsAffiliation {
-
   final String value;
 
   const ReposListCollaboratorsAffiliation._(this.value);
 
-  factory ReposListCollaboratorsAffiliation.fromJson(String value) => ReposListCollaboratorsAffiliation._(value);
+  factory ReposListCollaboratorsAffiliation.fromJson(String value) =>
+      ReposListCollaboratorsAffiliation._(value);
 
   static const outside = ReposListCollaboratorsAffiliation._('outside');
   static const direct = ReposListCollaboratorsAffiliation._('direct');
@@ -243,21 +290,24 @@ final class ReposListCollaboratorsAffiliation {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReposListCollaboratorsAffiliation && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ReposListCollaboratorsAffiliation && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class ReposListCollaboratorsPermission {
-
   final String value;
 
   const ReposListCollaboratorsPermission._(this.value);
 
-  factory ReposListCollaboratorsPermission.fromJson(String value) => ReposListCollaboratorsPermission._(value);
+  factory ReposListCollaboratorsPermission.fromJson(String value) =>
+      ReposListCollaboratorsPermission._(value);
 
   static const pull = ReposListCollaboratorsPermission._('pull');
   static const triage = ReposListCollaboratorsPermission._('triage');
@@ -268,10 +318,13 @@ final class ReposListCollaboratorsPermission {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReposListCollaboratorsPermission && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ReposListCollaboratorsPermission && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

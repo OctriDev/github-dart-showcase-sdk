@@ -8,224 +8,463 @@ part of 'secret_scanning.dart';
 class SecretScanningPatternConfiguration {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The version of the entity. This is used to confirm you're updating the current version of the entity and mitigate unintentionally overriding someone else's update.
   final SdkOptional<String?> patternConfigVersion;
+
   /// Overrides for partner patterns.
-  final SdkOptional<List<SecretScanningPatternOverride>> providerPatternOverrides;
+  final SdkOptional<List<SecretScanningPatternOverride>>
+      providerPatternOverrides;
+
   /// Overrides for custom patterns defined by the organization.
   final SdkOptional<List<SecretScanningPatternOverride>> customPatternOverrides;
 
-  const SecretScanningPatternConfiguration({this.patternConfigVersion = const SdkOmitted(), this.providerPatternOverrides = const SdkOmitted(), this.customPatternOverrides = const SdkOmitted()});
+  const SecretScanningPatternConfiguration(
+      {this.patternConfigVersion = const SdkOmitted(),
+      this.providerPatternOverrides = const SdkOmitted(),
+      this.customPatternOverrides = const SdkOmitted()});
 
-  SecretScanningPatternConfiguration Function({SdkOptional<String?> patternConfigVersion, SdkOptional<List<SecretScanningPatternOverride>> providerPatternOverrides, SdkOptional<List<SecretScanningPatternOverride>> customPatternOverrides}) get copyWith => _copyWith;
+  SecretScanningPatternConfiguration Function(
+      {SdkOptional<String?> patternConfigVersion,
+      SdkOptional<List<SecretScanningPatternOverride>> providerPatternOverrides,
+      SdkOptional<List<SecretScanningPatternOverride>>
+          customPatternOverrides}) get copyWith => _copyWith;
 
-  SecretScanningPatternConfiguration _copyWith({Object? patternConfigVersion = sdkOmittedValue, Object? providerPatternOverrides = sdkOmittedValue, Object? customPatternOverrides = sdkOmittedValue}) => SecretScanningPatternConfiguration(
-    patternConfigVersion: identical(patternConfigVersion, sdkOmittedValue) ? this.patternConfigVersion : patternConfigVersion as SdkOptional<String?>,
-    providerPatternOverrides: identical(providerPatternOverrides, sdkOmittedValue) ? this.providerPatternOverrides : providerPatternOverrides as SdkOptional<List<SecretScanningPatternOverride>>,
-    customPatternOverrides: identical(customPatternOverrides, sdkOmittedValue) ? this.customPatternOverrides : customPatternOverrides as SdkOptional<List<SecretScanningPatternOverride>>,
-  );
+  SecretScanningPatternConfiguration _copyWith(
+          {Object? patternConfigVersion = sdkOmittedValue,
+          Object? providerPatternOverrides = sdkOmittedValue,
+          Object? customPatternOverrides = sdkOmittedValue}) =>
+      SecretScanningPatternConfiguration(
+        patternConfigVersion: identical(patternConfigVersion, sdkOmittedValue)
+            ? this.patternConfigVersion
+            : patternConfigVersion as SdkOptional<String?>,
+        providerPatternOverrides:
+            identical(providerPatternOverrides, sdkOmittedValue)
+                ? this.providerPatternOverrides
+                : providerPatternOverrides
+                    as SdkOptional<List<SecretScanningPatternOverride>>,
+        customPatternOverrides:
+            identical(customPatternOverrides, sdkOmittedValue)
+                ? this.customPatternOverrides
+                : customPatternOverrides
+                    as SdkOptional<List<SecretScanningPatternOverride>>,
+      );
 
-  factory SecretScanningPatternConfiguration.fromJson(Map<String, dynamic> json) => SecretScanningPatternConfiguration(
-    patternConfigVersion: json.containsKey('pattern_config_version') ? SdkPresent(json['pattern_config_version'] as String?) : const SdkOmitted(),
-    providerPatternOverrides: json['provider_pattern_overrides'] != null ? SdkPresent(((json['provider_pattern_overrides'] as List?)?.map((e) => SecretScanningPatternOverride.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-    customPatternOverrides: json['custom_pattern_overrides'] != null ? SdkPresent(((json['custom_pattern_overrides'] as List?)?.map((e) => SecretScanningPatternOverride.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
+  factory SecretScanningPatternConfiguration.fromJson(
+          Map<String, dynamic> json) =>
+      SecretScanningPatternConfiguration(
+        patternConfigVersion: json.containsKey('pattern_config_version')
+            ? SdkPresent(json['pattern_config_version'] as String?)
+            : const SdkOmitted(),
+        providerPatternOverrides: json['provider_pattern_overrides'] != null
+            ? SdkPresent(((json['provider_pattern_overrides'] as List?)
+                ?.map((e) => SecretScanningPatternOverride.fromJson(
+                    e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+        customPatternOverrides: json['custom_pattern_overrides'] != null
+            ? SdkPresent(((json['custom_pattern_overrides'] as List?)
+                ?.map((e) => SecretScanningPatternOverride.fromJson(
+                    e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (patternConfigVersion) {
-      SdkPresent<String?>(value: final value) => {'pattern_config_version': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (providerPatternOverrides) {
-      SdkPresent<List<SecretScanningPatternOverride>>(value: final value) => {'provider_pattern_overrides': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (customPatternOverrides) {
-      SdkPresent<List<SecretScanningPatternOverride>>(value: final value) => {'custom_pattern_overrides': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (patternConfigVersion) {
+          SdkPresent<String?>(value: final value) => {
+              'pattern_config_version': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (providerPatternOverrides) {
+          SdkPresent<List<SecretScanningPatternOverride>>(value: final value) =>
+            {
+              'provider_pattern_overrides':
+                  value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (customPatternOverrides) {
+          SdkPresent<List<SecretScanningPatternOverride>>(value: final value) =>
+            {
+              'custom_pattern_overrides':
+                  value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Typed representation of the `SecretScanningPatternOverride` API schema.
 class SecretScanningPatternOverride {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The ID of the pattern.
   final SdkOptional<String> tokenType;
+
   /// The version of this pattern if it's a custom pattern.
   final SdkOptional<String?> customPatternVersion;
+
   /// The slug of the pattern.
   final SdkOptional<String> slug;
+
   /// The user-friendly name for the pattern.
   final SdkOptional<String> displayName;
+
   /// The total number of alerts generated by this pattern.
   final SdkOptional<int> alertTotal;
+
   /// The percentage of all alerts that this pattern represents, rounded to the nearest integer.
   final SdkOptional<int> alertTotalPercentage;
+
   /// The number of false positive alerts generated by this pattern.
   final SdkOptional<int> falsePositives;
+
   /// The percentage of alerts from this pattern that are false positives, rounded to the nearest integer.
   final SdkOptional<int> falsePositiveRate;
+
   /// The percentage of blocks for this pattern that were bypassed, rounded to the nearest integer.
   final SdkOptional<int> bypassRate;
+
   /// The default push protection setting for this pattern.
   final SdkOptional<SecretScanningPatternOverrideDefaultSetting> defaultSetting;
+
   /// The push protection setting for this pattern set at the enterprise level. Only present for partner patterns when the organization has a parent enterprise.
-  final SdkOptional<SecretScanningPatternOverrideEnterpriseSetting?> enterpriseSetting;
+  final SdkOptional<SecretScanningPatternOverrideEnterpriseSetting?>
+      enterpriseSetting;
+
   /// The current push protection setting for this pattern. If this is `not-set`, then it inherits either the enterprise setting if it exists or the default setting.
   final SdkOptional<SecretScanningPatternOverrideSetting> setting;
 
-  const SecretScanningPatternOverride({this.tokenType = const SdkOmitted(), this.customPatternVersion = const SdkOmitted(), this.slug = const SdkOmitted(), this.displayName = const SdkOmitted(), this.alertTotal = const SdkOmitted(), this.alertTotalPercentage = const SdkOmitted(), this.falsePositives = const SdkOmitted(), this.falsePositiveRate = const SdkOmitted(), this.bypassRate = const SdkOmitted(), this.defaultSetting = const SdkOmitted(), this.enterpriseSetting = const SdkOmitted(), this.setting = const SdkOmitted()});
+  const SecretScanningPatternOverride(
+      {this.tokenType = const SdkOmitted(),
+      this.customPatternVersion = const SdkOmitted(),
+      this.slug = const SdkOmitted(),
+      this.displayName = const SdkOmitted(),
+      this.alertTotal = const SdkOmitted(),
+      this.alertTotalPercentage = const SdkOmitted(),
+      this.falsePositives = const SdkOmitted(),
+      this.falsePositiveRate = const SdkOmitted(),
+      this.bypassRate = const SdkOmitted(),
+      this.defaultSetting = const SdkOmitted(),
+      this.enterpriseSetting = const SdkOmitted(),
+      this.setting = const SdkOmitted()});
 
-  SecretScanningPatternOverride Function({SdkOptional<String> tokenType, SdkOptional<String?> customPatternVersion, SdkOptional<String> slug, SdkOptional<String> displayName, SdkOptional<int> alertTotal, SdkOptional<int> alertTotalPercentage, SdkOptional<int> falsePositives, SdkOptional<int> falsePositiveRate, SdkOptional<int> bypassRate, SdkOptional<SecretScanningPatternOverrideDefaultSetting> defaultSetting, SdkOptional<SecretScanningPatternOverrideEnterpriseSetting?> enterpriseSetting, SdkOptional<SecretScanningPatternOverrideSetting> setting}) get copyWith => _copyWith;
+  SecretScanningPatternOverride Function(
+      {SdkOptional<String> tokenType,
+      SdkOptional<String?> customPatternVersion,
+      SdkOptional<String> slug,
+      SdkOptional<String> displayName,
+      SdkOptional<int> alertTotal,
+      SdkOptional<int> alertTotalPercentage,
+      SdkOptional<int> falsePositives,
+      SdkOptional<int> falsePositiveRate,
+      SdkOptional<int> bypassRate,
+      SdkOptional<SecretScanningPatternOverrideDefaultSetting> defaultSetting,
+      SdkOptional<SecretScanningPatternOverrideEnterpriseSetting?>
+          enterpriseSetting,
+      SdkOptional<SecretScanningPatternOverrideSetting>
+          setting}) get copyWith => _copyWith;
 
-  SecretScanningPatternOverride _copyWith({Object? tokenType = sdkOmittedValue, Object? customPatternVersion = sdkOmittedValue, Object? slug = sdkOmittedValue, Object? displayName = sdkOmittedValue, Object? alertTotal = sdkOmittedValue, Object? alertTotalPercentage = sdkOmittedValue, Object? falsePositives = sdkOmittedValue, Object? falsePositiveRate = sdkOmittedValue, Object? bypassRate = sdkOmittedValue, Object? defaultSetting = sdkOmittedValue, Object? enterpriseSetting = sdkOmittedValue, Object? setting = sdkOmittedValue}) => SecretScanningPatternOverride(
-    tokenType: identical(tokenType, sdkOmittedValue) ? this.tokenType : tokenType as SdkOptional<String>,
-    customPatternVersion: identical(customPatternVersion, sdkOmittedValue) ? this.customPatternVersion : customPatternVersion as SdkOptional<String?>,
-    slug: identical(slug, sdkOmittedValue) ? this.slug : slug as SdkOptional<String>,
-    displayName: identical(displayName, sdkOmittedValue) ? this.displayName : displayName as SdkOptional<String>,
-    alertTotal: identical(alertTotal, sdkOmittedValue) ? this.alertTotal : alertTotal as SdkOptional<int>,
-    alertTotalPercentage: identical(alertTotalPercentage, sdkOmittedValue) ? this.alertTotalPercentage : alertTotalPercentage as SdkOptional<int>,
-    falsePositives: identical(falsePositives, sdkOmittedValue) ? this.falsePositives : falsePositives as SdkOptional<int>,
-    falsePositiveRate: identical(falsePositiveRate, sdkOmittedValue) ? this.falsePositiveRate : falsePositiveRate as SdkOptional<int>,
-    bypassRate: identical(bypassRate, sdkOmittedValue) ? this.bypassRate : bypassRate as SdkOptional<int>,
-    defaultSetting: identical(defaultSetting, sdkOmittedValue) ? this.defaultSetting : defaultSetting as SdkOptional<SecretScanningPatternOverrideDefaultSetting>,
-    enterpriseSetting: identical(enterpriseSetting, sdkOmittedValue) ? this.enterpriseSetting : enterpriseSetting as SdkOptional<SecretScanningPatternOverrideEnterpriseSetting?>,
-    setting: identical(setting, sdkOmittedValue) ? this.setting : setting as SdkOptional<SecretScanningPatternOverrideSetting>,
-  );
+  SecretScanningPatternOverride _copyWith(
+          {Object? tokenType = sdkOmittedValue,
+          Object? customPatternVersion = sdkOmittedValue,
+          Object? slug = sdkOmittedValue,
+          Object? displayName = sdkOmittedValue,
+          Object? alertTotal = sdkOmittedValue,
+          Object? alertTotalPercentage = sdkOmittedValue,
+          Object? falsePositives = sdkOmittedValue,
+          Object? falsePositiveRate = sdkOmittedValue,
+          Object? bypassRate = sdkOmittedValue,
+          Object? defaultSetting = sdkOmittedValue,
+          Object? enterpriseSetting = sdkOmittedValue,
+          Object? setting = sdkOmittedValue}) =>
+      SecretScanningPatternOverride(
+        tokenType: identical(tokenType, sdkOmittedValue)
+            ? this.tokenType
+            : tokenType as SdkOptional<String>,
+        customPatternVersion: identical(customPatternVersion, sdkOmittedValue)
+            ? this.customPatternVersion
+            : customPatternVersion as SdkOptional<String?>,
+        slug: identical(slug, sdkOmittedValue)
+            ? this.slug
+            : slug as SdkOptional<String>,
+        displayName: identical(displayName, sdkOmittedValue)
+            ? this.displayName
+            : displayName as SdkOptional<String>,
+        alertTotal: identical(alertTotal, sdkOmittedValue)
+            ? this.alertTotal
+            : alertTotal as SdkOptional<int>,
+        alertTotalPercentage: identical(alertTotalPercentage, sdkOmittedValue)
+            ? this.alertTotalPercentage
+            : alertTotalPercentage as SdkOptional<int>,
+        falsePositives: identical(falsePositives, sdkOmittedValue)
+            ? this.falsePositives
+            : falsePositives as SdkOptional<int>,
+        falsePositiveRate: identical(falsePositiveRate, sdkOmittedValue)
+            ? this.falsePositiveRate
+            : falsePositiveRate as SdkOptional<int>,
+        bypassRate: identical(bypassRate, sdkOmittedValue)
+            ? this.bypassRate
+            : bypassRate as SdkOptional<int>,
+        defaultSetting: identical(defaultSetting, sdkOmittedValue)
+            ? this.defaultSetting
+            : defaultSetting
+                as SdkOptional<SecretScanningPatternOverrideDefaultSetting>,
+        enterpriseSetting: identical(enterpriseSetting, sdkOmittedValue)
+            ? this.enterpriseSetting
+            : enterpriseSetting
+                as SdkOptional<SecretScanningPatternOverrideEnterpriseSetting?>,
+        setting: identical(setting, sdkOmittedValue)
+            ? this.setting
+            : setting as SdkOptional<SecretScanningPatternOverrideSetting>,
+      );
 
-  factory SecretScanningPatternOverride.fromJson(Map<String, dynamic> json) => SecretScanningPatternOverride(
-    tokenType: json['token_type'] != null ? SdkPresent((json['token_type'] as String?)!) : const SdkOmitted(),
-    customPatternVersion: json.containsKey('custom_pattern_version') ? SdkPresent(json['custom_pattern_version'] as String?) : const SdkOmitted(),
-    slug: json['slug'] != null ? SdkPresent((json['slug'] as String?)!) : const SdkOmitted(),
-    displayName: json['display_name'] != null ? SdkPresent((json['display_name'] as String?)!) : const SdkOmitted(),
-    alertTotal: json['alert_total'] != null ? SdkPresent(((json['alert_total'] as num?)?.toInt())!) : const SdkOmitted(),
-    alertTotalPercentage: json['alert_total_percentage'] != null ? SdkPresent(((json['alert_total_percentage'] as num?)?.toInt())!) : const SdkOmitted(),
-    falsePositives: json['false_positives'] != null ? SdkPresent(((json['false_positives'] as num?)?.toInt())!) : const SdkOmitted(),
-    falsePositiveRate: json['false_positive_rate'] != null ? SdkPresent(((json['false_positive_rate'] as num?)?.toInt())!) : const SdkOmitted(),
-    bypassRate: json['bypass_rate'] != null ? SdkPresent(((json['bypass_rate'] as num?)?.toInt())!) : const SdkOmitted(),
-    defaultSetting: json['default_setting'] != null ? SdkPresent((json['default_setting'] != null ? SecretScanningPatternOverrideDefaultSetting.fromJson(json['default_setting'] as String) : null)!) : const SdkOmitted(),
-    enterpriseSetting: json.containsKey('enterprise_setting') ? SdkPresent(json['enterprise_setting'] != null ? SecretScanningPatternOverrideEnterpriseSetting.fromJson(json['enterprise_setting'] as String) : null) : const SdkOmitted(),
-    setting: json['setting'] != null ? SdkPresent((json['setting'] != null ? SecretScanningPatternOverrideSetting.fromJson(json['setting'] as String) : null)!) : const SdkOmitted(),
-  );
+  factory SecretScanningPatternOverride.fromJson(Map<String, dynamic> json) =>
+      SecretScanningPatternOverride(
+        tokenType: json['token_type'] != null
+            ? SdkPresent((json['token_type'] as String?)!)
+            : const SdkOmitted(),
+        customPatternVersion: json.containsKey('custom_pattern_version')
+            ? SdkPresent(json['custom_pattern_version'] as String?)
+            : const SdkOmitted(),
+        slug: json['slug'] != null
+            ? SdkPresent((json['slug'] as String?)!)
+            : const SdkOmitted(),
+        displayName: json['display_name'] != null
+            ? SdkPresent((json['display_name'] as String?)!)
+            : const SdkOmitted(),
+        alertTotal: json['alert_total'] != null
+            ? SdkPresent(((json['alert_total'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        alertTotalPercentage: json['alert_total_percentage'] != null
+            ? SdkPresent(((json['alert_total_percentage'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        falsePositives: json['false_positives'] != null
+            ? SdkPresent(((json['false_positives'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        falsePositiveRate: json['false_positive_rate'] != null
+            ? SdkPresent(((json['false_positive_rate'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        bypassRate: json['bypass_rate'] != null
+            ? SdkPresent(((json['bypass_rate'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        defaultSetting: json['default_setting'] != null
+            ? SdkPresent((json['default_setting'] != null
+                ? SecretScanningPatternOverrideDefaultSetting.fromJson(
+                    json['default_setting'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        enterpriseSetting: json.containsKey('enterprise_setting')
+            ? SdkPresent(json['enterprise_setting'] != null
+                ? SecretScanningPatternOverrideEnterpriseSetting.fromJson(
+                    json['enterprise_setting'] as String)
+                : null)
+            : const SdkOmitted(),
+        setting: json['setting'] != null
+            ? SdkPresent((json['setting'] != null
+                ? SecretScanningPatternOverrideSetting.fromJson(
+                    json['setting'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (tokenType) {
-      SdkPresent<String>(value: final value) => {'token_type': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (customPatternVersion) {
-      SdkPresent<String?>(value: final value) => {'custom_pattern_version': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (slug) {
-      SdkPresent<String>(value: final value) => {'slug': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (displayName) {
-      SdkPresent<String>(value: final value) => {'display_name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (alertTotal) {
-      SdkPresent<int>(value: final value) => {'alert_total': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (alertTotalPercentage) {
-      SdkPresent<int>(value: final value) => {'alert_total_percentage': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (falsePositives) {
-      SdkPresent<int>(value: final value) => {'false_positives': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (falsePositiveRate) {
-      SdkPresent<int>(value: final value) => {'false_positive_rate': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (bypassRate) {
-      SdkPresent<int>(value: final value) => {'bypass_rate': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (defaultSetting) {
-      SdkPresent<SecretScanningPatternOverrideDefaultSetting>(value: final value) => {'default_setting': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (enterpriseSetting) {
-      SdkPresent<SecretScanningPatternOverrideEnterpriseSetting?>(value: final value) => {'enterprise_setting': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (setting) {
-      SdkPresent<SecretScanningPatternOverrideSetting>(value: final value) => {'setting': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (tokenType) {
+          SdkPresent<String>(value: final value) => {
+              'token_type': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (customPatternVersion) {
+          SdkPresent<String?>(value: final value) => {
+              'custom_pattern_version': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (slug) {
+          SdkPresent<String>(value: final value) => {
+              'slug': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (displayName) {
+          SdkPresent<String>(value: final value) => {
+              'display_name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (alertTotal) {
+          SdkPresent<int>(value: final value) => {
+              'alert_total': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (alertTotalPercentage) {
+          SdkPresent<int>(value: final value) => {
+              'alert_total_percentage': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (falsePositives) {
+          SdkPresent<int>(value: final value) => {
+              'false_positives': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (falsePositiveRate) {
+          SdkPresent<int>(value: final value) => {
+              'false_positive_rate': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (bypassRate) {
+          SdkPresent<int>(value: final value) => {
+              'bypass_rate': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (defaultSetting) {
+          SdkPresent<SecretScanningPatternOverrideDefaultSetting>(
+            value: final value
+          ) =>
+            {
+              'default_setting': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (enterpriseSetting) {
+          SdkPresent<SecretScanningPatternOverrideEnterpriseSetting?>(
+            value: final value
+          ) =>
+            {
+              'enterprise_setting': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (setting) {
+          SdkPresent<SecretScanningPatternOverrideSetting>(
+            value: final value
+          ) =>
+            {
+              'setting': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Typed representation of the `SecretScanningPushProtectionBypass` API schema.
 class SecretScanningPushProtectionBypass {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The reason for bypassing push protection.
   final SdkOptional<SecretScanningPushProtectionBypassReason> reason;
+
   /// The time that the bypass will expire in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
   final SdkOptional<String?> expireAt;
+
   /// The token type this bypass is for.
   final SdkOptional<String> tokenType;
 
-  const SecretScanningPushProtectionBypass({this.reason = const SdkOmitted(), this.expireAt = const SdkOmitted(), this.tokenType = const SdkOmitted()});
+  const SecretScanningPushProtectionBypass(
+      {this.reason = const SdkOmitted(),
+      this.expireAt = const SdkOmitted(),
+      this.tokenType = const SdkOmitted()});
 
-  SecretScanningPushProtectionBypass Function({SdkOptional<SecretScanningPushProtectionBypassReason> reason, SdkOptional<String?> expireAt, SdkOptional<String> tokenType}) get copyWith => _copyWith;
+  SecretScanningPushProtectionBypass Function(
+      {SdkOptional<SecretScanningPushProtectionBypassReason> reason,
+      SdkOptional<String?> expireAt,
+      SdkOptional<String> tokenType}) get copyWith => _copyWith;
 
-  SecretScanningPushProtectionBypass _copyWith({Object? reason = sdkOmittedValue, Object? expireAt = sdkOmittedValue, Object? tokenType = sdkOmittedValue}) => SecretScanningPushProtectionBypass(
-    reason: identical(reason, sdkOmittedValue) ? this.reason : reason as SdkOptional<SecretScanningPushProtectionBypassReason>,
-    expireAt: identical(expireAt, sdkOmittedValue) ? this.expireAt : expireAt as SdkOptional<String?>,
-    tokenType: identical(tokenType, sdkOmittedValue) ? this.tokenType : tokenType as SdkOptional<String>,
-  );
+  SecretScanningPushProtectionBypass _copyWith(
+          {Object? reason = sdkOmittedValue,
+          Object? expireAt = sdkOmittedValue,
+          Object? tokenType = sdkOmittedValue}) =>
+      SecretScanningPushProtectionBypass(
+        reason: identical(reason, sdkOmittedValue)
+            ? this.reason
+            : reason as SdkOptional<SecretScanningPushProtectionBypassReason>,
+        expireAt: identical(expireAt, sdkOmittedValue)
+            ? this.expireAt
+            : expireAt as SdkOptional<String?>,
+        tokenType: identical(tokenType, sdkOmittedValue)
+            ? this.tokenType
+            : tokenType as SdkOptional<String>,
+      );
 
-  factory SecretScanningPushProtectionBypass.fromJson(Map<String, dynamic> json) => SecretScanningPushProtectionBypass(
-    reason: json['reason'] != null ? SdkPresent((json['reason'] != null ? SecretScanningPushProtectionBypassReason.fromJson(json['reason'] as String) : null)!) : const SdkOmitted(),
-    expireAt: json.containsKey('expire_at') ? SdkPresent(json['expire_at'] as String?) : const SdkOmitted(),
-    tokenType: json['token_type'] != null ? SdkPresent((json['token_type'] as String?)!) : const SdkOmitted(),
-  );
+  factory SecretScanningPushProtectionBypass.fromJson(
+          Map<String, dynamic> json) =>
+      SecretScanningPushProtectionBypass(
+        reason: json['reason'] != null
+            ? SdkPresent((json['reason'] != null
+                ? SecretScanningPushProtectionBypassReason.fromJson(
+                    json['reason'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        expireAt: json.containsKey('expire_at')
+            ? SdkPresent(json['expire_at'] as String?)
+            : const SdkOmitted(),
+        tokenType: json['token_type'] != null
+            ? SdkPresent((json['token_type'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (reason) {
-      SdkPresent<SecretScanningPushProtectionBypassReason>(value: final value) => {'reason': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (expireAt) {
-      SdkPresent<String?>(value: final value) => {'expire_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (tokenType) {
-      SdkPresent<String>(value: final value) => {'token_type': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (reason) {
+          SdkPresent<SecretScanningPushProtectionBypassReason>(
+            value: final value
+          ) =>
+            {
+              'reason': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (expireAt) {
+          SdkPresent<String?>(value: final value) => {
+              'expire_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (tokenType) {
+          SdkPresent<String>(value: final value) => {
+              'token_type': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// The reason for bypassing push protection.
 final class SecretScanningPushProtectionBypassReason {
-
   final String value;
 
   const SecretScanningPushProtectionBypassReason._(this.value);
 
-  factory SecretScanningPushProtectionBypassReason.fromJson(String value) => SecretScanningPushProtectionBypassReason._(value);
+  factory SecretScanningPushProtectionBypassReason.fromJson(String value) =>
+      SecretScanningPushProtectionBypassReason._(value);
 
-  static const falsePositive = SecretScanningPushProtectionBypassReason._('false_positive');
-  static const usedInTests = SecretScanningPushProtectionBypassReason._('used_in_tests');
-  static const willFixLater = SecretScanningPushProtectionBypassReason._('will_fix_later');
+  static const falsePositive =
+      SecretScanningPushProtectionBypassReason._('false_positive');
+  static const usedInTests =
+      SecretScanningPushProtectionBypassReason._('used_in_tests');
+  static const willFixLater =
+      SecretScanningPushProtectionBypassReason._('will_fix_later');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is SecretScanningPushProtectionBypassReason && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is SecretScanningPushProtectionBypassReason && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 // SecretScanningRowVersion = String
@@ -234,49 +473,91 @@ final class SecretScanningPushProtectionBypassReason {
 class SecretScanningScan {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The type of scan
   final SdkOptional<String> type_;
+
   /// The state of the scan. Either "completed", "running", "pending", "failed", or "unknown". "failed": this scan type has hit its retry limit and has been marked permanently failed. This usually resolves on its own at the next scheduled scan attempt. If "failed" persists, contact Support. "unknown": the scan is in an unrecognized or currently unhandled state.
   final SdkOptional<String> status;
+
   /// The time that the scan was completed. Empty if the scan is running
   final SdkOptional<String?> completedAt;
+
   /// The time that the scan was started. Empty if the scan is pending
   final SdkOptional<String?> startedAt;
 
-  const SecretScanningScan({this.type_ = const SdkOmitted(), this.status = const SdkOmitted(), this.completedAt = const SdkOmitted(), this.startedAt = const SdkOmitted()});
+  const SecretScanningScan(
+      {this.type_ = const SdkOmitted(),
+      this.status = const SdkOmitted(),
+      this.completedAt = const SdkOmitted(),
+      this.startedAt = const SdkOmitted()});
 
-  SecretScanningScan Function({SdkOptional<String> type_, SdkOptional<String> status, SdkOptional<String?> completedAt, SdkOptional<String?> startedAt}) get copyWith => _copyWith;
+  SecretScanningScan Function(
+      {SdkOptional<String> type_,
+      SdkOptional<String> status,
+      SdkOptional<String?> completedAt,
+      SdkOptional<String?> startedAt}) get copyWith => _copyWith;
 
-  SecretScanningScan _copyWith({Object? type_ = sdkOmittedValue, Object? status = sdkOmittedValue, Object? completedAt = sdkOmittedValue, Object? startedAt = sdkOmittedValue}) => SecretScanningScan(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<String>,
-    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<String>,
-    completedAt: identical(completedAt, sdkOmittedValue) ? this.completedAt : completedAt as SdkOptional<String?>,
-    startedAt: identical(startedAt, sdkOmittedValue) ? this.startedAt : startedAt as SdkOptional<String?>,
-  );
+  SecretScanningScan _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? status = sdkOmittedValue,
+          Object? completedAt = sdkOmittedValue,
+          Object? startedAt = sdkOmittedValue}) =>
+      SecretScanningScan(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as SdkOptional<String>,
+        status: identical(status, sdkOmittedValue)
+            ? this.status
+            : status as SdkOptional<String>,
+        completedAt: identical(completedAt, sdkOmittedValue)
+            ? this.completedAt
+            : completedAt as SdkOptional<String?>,
+        startedAt: identical(startedAt, sdkOmittedValue)
+            ? this.startedAt
+            : startedAt as SdkOptional<String?>,
+      );
 
-  factory SecretScanningScan.fromJson(Map<String, dynamic> json) => SecretScanningScan(
-    type_: json['type'] != null ? SdkPresent((json['type'] as String?)!) : const SdkOmitted(),
-    status: json['status'] != null ? SdkPresent((json['status'] as String?)!) : const SdkOmitted(),
-    completedAt: json.containsKey('completed_at') ? SdkPresent(json['completed_at'] as String?) : const SdkOmitted(),
-    startedAt: json.containsKey('started_at') ? SdkPresent(json['started_at'] as String?) : const SdkOmitted(),
-  );
+  factory SecretScanningScan.fromJson(Map<String, dynamic> json) =>
+      SecretScanningScan(
+        type_: json['type'] != null
+            ? SdkPresent((json['type'] as String?)!)
+            : const SdkOmitted(),
+        status: json['status'] != null
+            ? SdkPresent((json['status'] as String?)!)
+            : const SdkOmitted(),
+        completedAt: json.containsKey('completed_at')
+            ? SdkPresent(json['completed_at'] as String?)
+            : const SdkOmitted(),
+        startedAt: json.containsKey('started_at')
+            ? SdkPresent(json['started_at'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (type_) {
-      SdkPresent<String>(value: final value) => {'type': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (status) {
-      SdkPresent<String>(value: final value) => {'status': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (completedAt) {
-      SdkPresent<String?>(value: final value) => {'completed_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (startedAt) {
-      SdkPresent<String?>(value: final value) => {'started_at': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (type_) {
+          SdkPresent<String>(value: final value) => {
+              'type': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (status) {
+          SdkPresent<String>(value: final value) => {
+              'status': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (completedAt) {
+          SdkPresent<String?>(value: final value) => {
+              'completed_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (startedAt) {
+          SdkPresent<String?>(value: final value) => {
+              'started_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

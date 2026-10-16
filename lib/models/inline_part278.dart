@@ -6,100 +6,120 @@ part of 'inline.dart';
 // Inline operation models (part 278)
 /// The notification setting the team has chosen. The options are: * `notifications_enabled` - team members receive notifications when the team is @mentioned. * `notifications_disabled` - no one receives notifications. Default: `notifications_enabled`
 final class TeamsCreateRequestBodyNotificationSetting {
-
   final String value;
 
   const TeamsCreateRequestBodyNotificationSetting._(this.value);
 
-  factory TeamsCreateRequestBodyNotificationSetting.fromJson(String value) => TeamsCreateRequestBodyNotificationSetting._(value);
+  factory TeamsCreateRequestBodyNotificationSetting.fromJson(String value) =>
+      TeamsCreateRequestBodyNotificationSetting._(value);
 
-  static const notificationsEnabled = TeamsCreateRequestBodyNotificationSetting._('notifications_enabled');
-  static const notificationsDisabled = TeamsCreateRequestBodyNotificationSetting._('notifications_disabled');
+  static const notificationsEnabled =
+      TeamsCreateRequestBodyNotificationSetting._('notifications_enabled');
+  static const notificationsDisabled =
+      TeamsCreateRequestBodyNotificationSetting._('notifications_disabled');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is TeamsCreateRequestBodyNotificationSetting && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is TeamsCreateRequestBodyNotificationSetting &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// **Closing down notice**. The permission that new repositories will be added to the team with when none is specified.
 final class TeamsCreateRequestBodyPermission {
-
   final String value;
 
   const TeamsCreateRequestBodyPermission._(this.value);
 
-  factory TeamsCreateRequestBodyPermission.fromJson(String value) => TeamsCreateRequestBodyPermission._(value);
+  factory TeamsCreateRequestBodyPermission.fromJson(String value) =>
+      TeamsCreateRequestBodyPermission._(value);
 
   static const pull = TeamsCreateRequestBodyPermission._('pull');
   static const push = TeamsCreateRequestBodyPermission._('push');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is TeamsCreateRequestBodyPermission && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is TeamsCreateRequestBodyPermission && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The level of privacy this team should have. The options are: **For a non-nested team:** * `secret` - only visible to organization owners and members of this team. * `closed` - visible to all members of this organization. Default: `secret` **For a parent or child team:** * `closed` - visible to all members of this organization. Default for child team: `closed`
 final class TeamsCreateRequestBodyPrivacy {
-
   final String value;
 
   const TeamsCreateRequestBodyPrivacy._(this.value);
 
-  factory TeamsCreateRequestBodyPrivacy.fromJson(String value) => TeamsCreateRequestBodyPrivacy._(value);
+  factory TeamsCreateRequestBodyPrivacy.fromJson(String value) =>
+      TeamsCreateRequestBodyPrivacy._(value);
 
   static const secret = TeamsCreateRequestBodyPrivacy._('secret');
   static const closed = TeamsCreateRequestBodyPrivacy._('closed');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is TeamsCreateRequestBodyPrivacy && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is TeamsCreateRequestBodyPrivacy && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The notification setting the team has chosen. Editing teams without specifying this parameter leaves `notification_setting` intact. The options are: * `notifications_enabled` - team members receive notifications when the team is @mentioned. * `notifications_disabled` - no one receives notifications.
 final class TeamsUpdateInOrgRequestBodyNotificationSetting {
-
   final String value;
 
   const TeamsUpdateInOrgRequestBodyNotificationSetting._(this.value);
 
-  factory TeamsUpdateInOrgRequestBodyNotificationSetting.fromJson(String value) => TeamsUpdateInOrgRequestBodyNotificationSetting._(value);
+  factory TeamsUpdateInOrgRequestBodyNotificationSetting.fromJson(
+          String value) =>
+      TeamsUpdateInOrgRequestBodyNotificationSetting._(value);
 
-  static const notificationsEnabled = TeamsUpdateInOrgRequestBodyNotificationSetting._('notifications_enabled');
-  static const notificationsDisabled = TeamsUpdateInOrgRequestBodyNotificationSetting._('notifications_disabled');
+  static const notificationsEnabled =
+      TeamsUpdateInOrgRequestBodyNotificationSetting._('notifications_enabled');
+  static const notificationsDisabled =
+      TeamsUpdateInOrgRequestBodyNotificationSetting._(
+          'notifications_disabled');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is TeamsUpdateInOrgRequestBodyNotificationSetting && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is TeamsUpdateInOrgRequestBodyNotificationSetting &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// **Closing down notice**. The permission that new repositories will be added to the team with when none is specified.
 final class TeamsUpdateInOrgRequestBodyPermission {
-
   final String value;
 
   const TeamsUpdateInOrgRequestBodyPermission._(this.value);
 
-  factory TeamsUpdateInOrgRequestBodyPermission.fromJson(String value) => TeamsUpdateInOrgRequestBodyPermission._(value);
+  factory TeamsUpdateInOrgRequestBodyPermission.fromJson(String value) =>
+      TeamsUpdateInOrgRequestBodyPermission._(value);
 
   static const pull = TeamsUpdateInOrgRequestBodyPermission._('pull');
   static const push = TeamsUpdateInOrgRequestBodyPermission._('push');
@@ -107,43 +127,49 @@ final class TeamsUpdateInOrgRequestBodyPermission {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is TeamsUpdateInOrgRequestBodyPermission && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is TeamsUpdateInOrgRequestBodyPermission && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The level of privacy this team should have. Editing teams without specifying this parameter leaves `privacy` intact. When a team is nested, the `privacy` for parent teams cannot be `secret`. The options are: **For a non-nested team:** * `secret` - only visible to organization owners and members of this team. * `closed` - visible to all members of this organization. **For a parent or child team:** * `closed` - visible to all members of this organization.
 final class TeamsUpdateInOrgRequestBodyPrivacy {
-
   final String value;
 
   const TeamsUpdateInOrgRequestBodyPrivacy._(this.value);
 
-  factory TeamsUpdateInOrgRequestBodyPrivacy.fromJson(String value) => TeamsUpdateInOrgRequestBodyPrivacy._(value);
+  factory TeamsUpdateInOrgRequestBodyPrivacy.fromJson(String value) =>
+      TeamsUpdateInOrgRequestBodyPrivacy._(value);
 
   static const secret = TeamsUpdateInOrgRequestBodyPrivacy._('secret');
   static const closed = TeamsUpdateInOrgRequestBodyPrivacy._('closed');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is TeamsUpdateInOrgRequestBodyPrivacy && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is TeamsUpdateInOrgRequestBodyPrivacy && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class TeamsListMembersInOrgRole {
-
   final String value;
 
   const TeamsListMembersInOrgRole._(this.value);
 
-  factory TeamsListMembersInOrgRole.fromJson(String value) => TeamsListMembersInOrgRole._(value);
+  factory TeamsListMembersInOrgRole.fromJson(String value) =>
+      TeamsListMembersInOrgRole._(value);
 
   static const member = TeamsListMembersInOrgRole._('member');
   static const maintainer = TeamsListMembersInOrgRole._('maintainer');
@@ -151,44 +177,54 @@ final class TeamsListMembersInOrgRole {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is TeamsListMembersInOrgRole && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is TeamsListMembersInOrgRole && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The role that this user should have in the team.
 final class TeamsAddOrUpdateMembershipForUserInOrgRequestBodyRole {
-
   final String value;
 
   const TeamsAddOrUpdateMembershipForUserInOrgRequestBodyRole._(this.value);
 
-  factory TeamsAddOrUpdateMembershipForUserInOrgRequestBodyRole.fromJson(String value) => TeamsAddOrUpdateMembershipForUserInOrgRequestBodyRole._(value);
+  factory TeamsAddOrUpdateMembershipForUserInOrgRequestBodyRole.fromJson(
+          String value) =>
+      TeamsAddOrUpdateMembershipForUserInOrgRequestBodyRole._(value);
 
-  static const member = TeamsAddOrUpdateMembershipForUserInOrgRequestBodyRole._('member');
-  static const maintainer = TeamsAddOrUpdateMembershipForUserInOrgRequestBodyRole._('maintainer');
+  static const member =
+      TeamsAddOrUpdateMembershipForUserInOrgRequestBodyRole._('member');
+  static const maintainer =
+      TeamsAddOrUpdateMembershipForUserInOrgRequestBodyRole._('maintainer');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is TeamsAddOrUpdateMembershipForUserInOrgRequestBodyRole && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is TeamsAddOrUpdateMembershipForUserInOrgRequestBodyRole &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The default value for a merge commit message. - `PR_TITLE` - default to the pull request's title. - `PR_BODY` - default to the pull request's body. - `BLANK` - default to a blank commit message.
 final class ReposUpdateRequestBodyMergeCommitMessage {
-
   final String value;
 
   const ReposUpdateRequestBodyMergeCommitMessage._(this.value);
 
-  factory ReposUpdateRequestBodyMergeCommitMessage.fromJson(String value) => ReposUpdateRequestBodyMergeCommitMessage._(value);
+  factory ReposUpdateRequestBodyMergeCommitMessage.fromJson(String value) =>
+      ReposUpdateRequestBodyMergeCommitMessage._(value);
 
   static const prBody = ReposUpdateRequestBodyMergeCommitMessage._('PR_BODY');
   static const prTitle = ReposUpdateRequestBodyMergeCommitMessage._('PR_TITLE');
@@ -196,98 +232,135 @@ final class ReposUpdateRequestBodyMergeCommitMessage {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReposUpdateRequestBodyMergeCommitMessage && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ReposUpdateRequestBodyMergeCommitMessage && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required when using `merge_commit_message`. The default value for a merge commit title. - `PR_TITLE` - default to the pull request's title. - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
 final class ReposUpdateRequestBodyMergeCommitTitle {
-
   final String value;
 
   const ReposUpdateRequestBodyMergeCommitTitle._(this.value);
 
-  factory ReposUpdateRequestBodyMergeCommitTitle.fromJson(String value) => ReposUpdateRequestBodyMergeCommitTitle._(value);
+  factory ReposUpdateRequestBodyMergeCommitTitle.fromJson(String value) =>
+      ReposUpdateRequestBodyMergeCommitTitle._(value);
 
   static const prTitle = ReposUpdateRequestBodyMergeCommitTitle._('PR_TITLE');
-  static const mergeMessage = ReposUpdateRequestBodyMergeCommitTitle._('MERGE_MESSAGE');
+  static const mergeMessage =
+      ReposUpdateRequestBodyMergeCommitTitle._('MERGE_MESSAGE');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReposUpdateRequestBodyMergeCommitTitle && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ReposUpdateRequestBodyMergeCommitTitle && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The policy that controls who can create pull requests for this repository: `all` or `collaborators_only`.
 final class ReposUpdateRequestBodyPullRequestCreationPolicy {
-
   final String value;
 
   const ReposUpdateRequestBodyPullRequestCreationPolicy._(this.value);
 
-  factory ReposUpdateRequestBodyPullRequestCreationPolicy.fromJson(String value) => ReposUpdateRequestBodyPullRequestCreationPolicy._(value);
+  factory ReposUpdateRequestBodyPullRequestCreationPolicy.fromJson(
+          String value) =>
+      ReposUpdateRequestBodyPullRequestCreationPolicy._(value);
 
   static const all = ReposUpdateRequestBodyPullRequestCreationPolicy._('all');
-  static const collaboratorsOnly = ReposUpdateRequestBodyPullRequestCreationPolicy._('collaborators_only');
+  static const collaboratorsOnly =
+      ReposUpdateRequestBodyPullRequestCreationPolicy._('collaborators_only');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReposUpdateRequestBodyPullRequestCreationPolicy && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ReposUpdateRequestBodyPullRequestCreationPolicy &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The bypass mode for the reviewer
 final class ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode {
-
   final String value;
 
-  const ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode._(this.value);
+  const ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode._(
+      this.value);
 
-  factory ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode.fromJson(String value) => ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode._(value);
+  factory ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode.fromJson(
+          String value) =>
+      ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode
+          ._(value);
 
-  static const always = ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode._('ALWAYS');
-  static const exempt = ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode._('EXEMPT');
+  static const always =
+      ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode
+          ._('ALWAYS');
+  static const exempt =
+      ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode
+          ._('EXEMPT');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The type of the bypass reviewer
 final class ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemReviewerType {
-
   final String value;
 
-  const ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemReviewerType._(this.value);
+  const ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemReviewerType._(
+      this.value);
 
-  factory ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemReviewerType.fromJson(String value) => ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemReviewerType._(value);
+  factory ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemReviewerType.fromJson(
+          String value) =>
+      ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemReviewerType
+          ._(value);
 
-  static const team = ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemReviewerType._('TEAM');
-  static const role = ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemReviewerType._('ROLE');
+  static const team =
+      ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemReviewerType
+          ._('TEAM');
+  static const role =
+      ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemReviewerType
+          ._('ROLE');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemReviewerType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemReviewerType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

@@ -8,6 +8,7 @@ part of 'webhooks_review.dart';
 class WebhooksReviewLinksHtml {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri-template`-formatted value serialized in the `href` wire field.
   final String href;
 
@@ -15,68 +16,92 @@ class WebhooksReviewLinksHtml {
 
   WebhooksReviewLinksHtml Function({String href}) get copyWith => _copyWith;
 
-  WebhooksReviewLinksHtml _copyWith({Object? href = sdkOmittedValue}) => WebhooksReviewLinksHtml(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  WebhooksReviewLinksHtml _copyWith({Object? href = sdkOmittedValue}) =>
+      WebhooksReviewLinksHtml(
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
-  factory WebhooksReviewLinksHtml.fromJson(Map<String, dynamic> json) => WebhooksReviewLinksHtml(
-    href: (json['href'] as String?)!,
-  );
+  factory WebhooksReviewLinksHtml.fromJson(Map<String, dynamic> json) =>
+      WebhooksReviewLinksHtml(
+        href: (json['href'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 /// Required object value serialized in the `pull_request` wire field.
 class WebhooksReviewLinksPullRequest {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri-template`-formatted value serialized in the `href` wire field.
   final String href;
 
   const WebhooksReviewLinksPullRequest({required this.href});
 
-  WebhooksReviewLinksPullRequest Function({String href}) get copyWith => _copyWith;
+  WebhooksReviewLinksPullRequest Function({String href}) get copyWith =>
+      _copyWith;
 
-  WebhooksReviewLinksPullRequest _copyWith({Object? href = sdkOmittedValue}) => WebhooksReviewLinksPullRequest(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  WebhooksReviewLinksPullRequest _copyWith({Object? href = sdkOmittedValue}) =>
+      WebhooksReviewLinksPullRequest(
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
-  factory WebhooksReviewLinksPullRequest.fromJson(Map<String, dynamic> json) => WebhooksReviewLinksPullRequest(
-    href: (json['href'] as String?)!,
-  );
+  factory WebhooksReviewLinksPullRequest.fromJson(Map<String, dynamic> json) =>
+      WebhooksReviewLinksPullRequest(
+        href: (json['href'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 /// Required object value serialized in the `_links` wire field.
 class WebhooksReviewLinks {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required object value serialized in the `html` wire field.
   final WebhooksReviewLinksHtml html;
+
   /// Required object value serialized in the `pull_request` wire field.
   final WebhooksReviewLinksPullRequest pullRequest;
 
   const WebhooksReviewLinks({required this.html, required this.pullRequest});
 
-  WebhooksReviewLinks Function({WebhooksReviewLinksHtml html, WebhooksReviewLinksPullRequest pullRequest}) get copyWith => _copyWith;
+  WebhooksReviewLinks Function(
+      {WebhooksReviewLinksHtml html,
+      WebhooksReviewLinksPullRequest pullRequest}) get copyWith => _copyWith;
 
-  WebhooksReviewLinks _copyWith({Object? html = sdkOmittedValue, Object? pullRequest = sdkOmittedValue}) => WebhooksReviewLinks(
-    html: identical(html, sdkOmittedValue) ? this.html : html as WebhooksReviewLinksHtml,
-    pullRequest: identical(pullRequest, sdkOmittedValue) ? this.pullRequest : pullRequest as WebhooksReviewLinksPullRequest,
-  );
+  WebhooksReviewLinks _copyWith(
+          {Object? html = sdkOmittedValue,
+          Object? pullRequest = sdkOmittedValue}) =>
+      WebhooksReviewLinks(
+        html: identical(html, sdkOmittedValue)
+            ? this.html
+            : html as WebhooksReviewLinksHtml,
+        pullRequest: identical(pullRequest, sdkOmittedValue)
+            ? this.pullRequest
+            : pullRequest as WebhooksReviewLinksPullRequest,
+      );
 
-  factory WebhooksReviewLinks.fromJson(Map<String, dynamic> json) => WebhooksReviewLinks(
-    html: (json['html'] != null ? WebhooksReviewLinksHtml.fromJson(json['html'] as Map<String, dynamic>) : null)!,
-    pullRequest: (json['pull_request'] != null ? WebhooksReviewLinksPullRequest.fromJson(json['pull_request'] as Map<String, dynamic>) : null)!,
-  );
+  factory WebhooksReviewLinks.fromJson(Map<String, dynamic> json) =>
+      WebhooksReviewLinks(
+        html: (json['html'] != null
+            ? WebhooksReviewLinksHtml.fromJson(
+                json['html'] as Map<String, dynamic>)
+            : null)!,
+        pullRequest: (json['pull_request'] != null
+            ? WebhooksReviewLinksPullRequest.fromJson(
+                json['pull_request'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'html': html.toJson(),
-    'pull_request': pullRequest.toJson(),
-  };
+        'html': html.toJson(),
+        'pull_request': pullRequest.toJson(),
+      };
 }

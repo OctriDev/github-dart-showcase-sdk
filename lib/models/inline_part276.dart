@@ -6,122 +6,157 @@ part of 'inline.dart';
 // Inline operation models (part 276)
 /// Which type of organization repositories have access to the private registry. `selected` means only the repositories specified by `selected_repository_ids` can access the private registry.
 final class PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyVisibility {
-
   final String value;
 
-  const PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyVisibility._(this.value);
+  const PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyVisibility._(
+      this.value);
 
-  factory PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyVisibility.fromJson(String value) => PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyVisibility._(value);
+  factory PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyVisibility.fromJson(
+          String value) =>
+      PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyVisibility._(value);
 
-  static const all = PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyVisibility._('all');
-  static const private = PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyVisibility._('private');
-  static const selected = PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyVisibility._('selected');
+  static const all =
+      PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyVisibility._('all');
+  static const private =
+      PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyVisibility._(
+          'private');
+  static const selected =
+      PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyVisibility._(
+          'selected');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyVisibility && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyVisibility &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The field's data type.
 final class ProjectsAddFieldForOrgRequestBodyVariant1DataType {
-
   final String value;
 
   const ProjectsAddFieldForOrgRequestBodyVariant1DataType._(this.value);
 
-  factory ProjectsAddFieldForOrgRequestBodyVariant1DataType.fromJson(String value) => ProjectsAddFieldForOrgRequestBodyVariant1DataType._(value);
+  factory ProjectsAddFieldForOrgRequestBodyVariant1DataType.fromJson(
+          String value) =>
+      ProjectsAddFieldForOrgRequestBodyVariant1DataType._(value);
 
-  static const text = ProjectsAddFieldForOrgRequestBodyVariant1DataType._('text');
-  static const number = ProjectsAddFieldForOrgRequestBodyVariant1DataType._('number');
-  static const date = ProjectsAddFieldForOrgRequestBodyVariant1DataType._('date');
+  static const text =
+      ProjectsAddFieldForOrgRequestBodyVariant1DataType._('text');
+  static const number =
+      ProjectsAddFieldForOrgRequestBodyVariant1DataType._('number');
+  static const date =
+      ProjectsAddFieldForOrgRequestBodyVariant1DataType._('date');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ProjectsAddFieldForOrgRequestBodyVariant1DataType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ProjectsAddFieldForOrgRequestBodyVariant1DataType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The field's data type.
 final class ProjectsAddFieldForOrgRequestBodyVariant2DataType {
-
   final String value;
 
   const ProjectsAddFieldForOrgRequestBodyVariant2DataType._(this.value);
 
-  factory ProjectsAddFieldForOrgRequestBodyVariant2DataType.fromJson(String value) => ProjectsAddFieldForOrgRequestBodyVariant2DataType._(value);
+  factory ProjectsAddFieldForOrgRequestBodyVariant2DataType.fromJson(
+          String value) =>
+      ProjectsAddFieldForOrgRequestBodyVariant2DataType._(value);
 
-  static const singleSelect = ProjectsAddFieldForOrgRequestBodyVariant2DataType._('single_select');
+  static const singleSelect =
+      ProjectsAddFieldForOrgRequestBodyVariant2DataType._('single_select');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ProjectsAddFieldForOrgRequestBodyVariant2DataType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ProjectsAddFieldForOrgRequestBodyVariant2DataType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The field's data type.
 final class ProjectsAddFieldForOrgRequestBodyVariant3DataType {
-
   final String value;
 
   const ProjectsAddFieldForOrgRequestBodyVariant3DataType._(this.value);
 
-  factory ProjectsAddFieldForOrgRequestBodyVariant3DataType.fromJson(String value) => ProjectsAddFieldForOrgRequestBodyVariant3DataType._(value);
+  factory ProjectsAddFieldForOrgRequestBodyVariant3DataType.fromJson(
+          String value) =>
+      ProjectsAddFieldForOrgRequestBodyVariant3DataType._(value);
 
-  static const iteration = ProjectsAddFieldForOrgRequestBodyVariant3DataType._('iteration');
+  static const iteration =
+      ProjectsAddFieldForOrgRequestBodyVariant3DataType._('iteration');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ProjectsAddFieldForOrgRequestBodyVariant3DataType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ProjectsAddFieldForOrgRequestBodyVariant3DataType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The type of item to add to the project. Must be either Issue or PullRequest.
 final class ProjectsAddItemForOrgRequestBodyType {
-
   final String value;
 
   const ProjectsAddItemForOrgRequestBodyType._(this.value);
 
-  factory ProjectsAddItemForOrgRequestBodyType.fromJson(String value) => ProjectsAddItemForOrgRequestBodyType._(value);
+  factory ProjectsAddItemForOrgRequestBodyType.fromJson(String value) =>
+      ProjectsAddItemForOrgRequestBodyType._(value);
 
   static const issue = ProjectsAddItemForOrgRequestBodyType._('Issue');
-  static const pullrequest = ProjectsAddItemForOrgRequestBodyType._('PullRequest');
+  static const pullrequest =
+      ProjectsAddItemForOrgRequestBodyType._('PullRequest');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ProjectsAddItemForOrgRequestBodyType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ProjectsAddItemForOrgRequestBodyType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The layout of the view.
 final class ProjectsCreateViewForOrgRequestBodyLayout {
-
   final String value;
 
   const ProjectsCreateViewForOrgRequestBodyLayout._(this.value);
 
-  factory ProjectsCreateViewForOrgRequestBodyLayout.fromJson(String value) => ProjectsCreateViewForOrgRequestBodyLayout._(value);
+  factory ProjectsCreateViewForOrgRequestBodyLayout.fromJson(String value) =>
+      ProjectsCreateViewForOrgRequestBodyLayout._(value);
 
   static const table = ProjectsCreateViewForOrgRequestBodyLayout._('table');
   static const board = ProjectsCreateViewForOrgRequestBodyLayout._('board');
@@ -129,21 +164,25 @@ final class ProjectsCreateViewForOrgRequestBodyLayout {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ProjectsCreateViewForOrgRequestBodyLayout && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ProjectsCreateViewForOrgRequestBodyLayout &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class ReposListForOrgType {
-
   final String value;
 
   const ReposListForOrgType._(this.value);
 
-  factory ReposListForOrgType.fromJson(String value) => ReposListForOrgType._(value);
+  factory ReposListForOrgType.fromJson(String value) =>
+      ReposListForOrgType._(value);
 
   static const all = ReposListForOrgType._('all');
   static const public = ReposListForOrgType._('public');
@@ -154,21 +193,24 @@ final class ReposListForOrgType {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReposListForOrgType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ReposListForOrgType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class ReposListForOrgSort {
-
   final String value;
 
   const ReposListForOrgSort._(this.value);
 
-  factory ReposListForOrgSort.fromJson(String value) => ReposListForOrgSort._(value);
+  factory ReposListForOrgSort.fromJson(String value) =>
+      ReposListForOrgSort._(value);
 
   static const created = ReposListForOrgSort._('created');
   static const updated = ReposListForOrgSort._('updated');
@@ -177,99 +219,126 @@ final class ReposListForOrgSort {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReposListForOrgSort && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ReposListForOrgSort && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class ReposListForOrgDirection {
-
   final String value;
 
   const ReposListForOrgDirection._(this.value);
 
-  factory ReposListForOrgDirection.fromJson(String value) => ReposListForOrgDirection._(value);
+  factory ReposListForOrgDirection.fromJson(String value) =>
+      ReposListForOrgDirection._(value);
 
   static const asc = ReposListForOrgDirection._('asc');
   static const desc = ReposListForOrgDirection._('desc');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReposListForOrgDirection && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ReposListForOrgDirection && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The default value for a merge commit message. - `PR_TITLE` - default to the pull request's title. - `PR_BODY` - default to the pull request's body. - `BLANK` - default to a blank commit message.
 final class ReposCreateInOrgRequestBodyMergeCommitMessage {
-
   final String value;
 
   const ReposCreateInOrgRequestBodyMergeCommitMessage._(this.value);
 
-  factory ReposCreateInOrgRequestBodyMergeCommitMessage.fromJson(String value) => ReposCreateInOrgRequestBodyMergeCommitMessage._(value);
+  factory ReposCreateInOrgRequestBodyMergeCommitMessage.fromJson(
+          String value) =>
+      ReposCreateInOrgRequestBodyMergeCommitMessage._(value);
 
-  static const prBody = ReposCreateInOrgRequestBodyMergeCommitMessage._('PR_BODY');
-  static const prTitle = ReposCreateInOrgRequestBodyMergeCommitMessage._('PR_TITLE');
+  static const prBody =
+      ReposCreateInOrgRequestBodyMergeCommitMessage._('PR_BODY');
+  static const prTitle =
+      ReposCreateInOrgRequestBodyMergeCommitMessage._('PR_TITLE');
   static const blank = ReposCreateInOrgRequestBodyMergeCommitMessage._('BLANK');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReposCreateInOrgRequestBodyMergeCommitMessage && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ReposCreateInOrgRequestBodyMergeCommitMessage &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required when using `merge_commit_message`. The default value for a merge commit title. - `PR_TITLE` - default to the pull request's title. - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
 final class ReposCreateInOrgRequestBodyMergeCommitTitle {
-
   final String value;
 
   const ReposCreateInOrgRequestBodyMergeCommitTitle._(this.value);
 
-  factory ReposCreateInOrgRequestBodyMergeCommitTitle.fromJson(String value) => ReposCreateInOrgRequestBodyMergeCommitTitle._(value);
+  factory ReposCreateInOrgRequestBodyMergeCommitTitle.fromJson(String value) =>
+      ReposCreateInOrgRequestBodyMergeCommitTitle._(value);
 
-  static const prTitle = ReposCreateInOrgRequestBodyMergeCommitTitle._('PR_TITLE');
-  static const mergeMessage = ReposCreateInOrgRequestBodyMergeCommitTitle._('MERGE_MESSAGE');
+  static const prTitle =
+      ReposCreateInOrgRequestBodyMergeCommitTitle._('PR_TITLE');
+  static const mergeMessage =
+      ReposCreateInOrgRequestBodyMergeCommitTitle._('MERGE_MESSAGE');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReposCreateInOrgRequestBodyMergeCommitTitle && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ReposCreateInOrgRequestBodyMergeCommitTitle &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The default value for a squash merge commit message: - `PR_BODY` - default to the pull request's body. - `COMMIT_MESSAGES` - default to the branch's commit messages. - `BLANK` - default to a blank commit message.
 final class ReposCreateInOrgRequestBodySquashMergeCommitMessage {
-
   final String value;
 
   const ReposCreateInOrgRequestBodySquashMergeCommitMessage._(this.value);
 
-  factory ReposCreateInOrgRequestBodySquashMergeCommitMessage.fromJson(String value) => ReposCreateInOrgRequestBodySquashMergeCommitMessage._(value);
+  factory ReposCreateInOrgRequestBodySquashMergeCommitMessage.fromJson(
+          String value) =>
+      ReposCreateInOrgRequestBodySquashMergeCommitMessage._(value);
 
-  static const prBody = ReposCreateInOrgRequestBodySquashMergeCommitMessage._('PR_BODY');
-  static const commitMessages = ReposCreateInOrgRequestBodySquashMergeCommitMessage._('COMMIT_MESSAGES');
-  static const blank = ReposCreateInOrgRequestBodySquashMergeCommitMessage._('BLANK');
+  static const prBody =
+      ReposCreateInOrgRequestBodySquashMergeCommitMessage._('PR_BODY');
+  static const commitMessages =
+      ReposCreateInOrgRequestBodySquashMergeCommitMessage._('COMMIT_MESSAGES');
+  static const blank =
+      ReposCreateInOrgRequestBodySquashMergeCommitMessage._('BLANK');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ReposCreateInOrgRequestBodySquashMergeCommitMessage && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ReposCreateInOrgRequestBodySquashMergeCommitMessage &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

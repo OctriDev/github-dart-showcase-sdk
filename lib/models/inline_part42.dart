@@ -6,290 +6,431 @@ part of 'inline.dart';
 // Inline operation models (part 42)
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookBranchProtectionRuleEditedAction {
-
   final String value;
 
   const WebhookBranchProtectionRuleEditedAction._(this.value);
 
-  factory WebhookBranchProtectionRuleEditedAction.fromJson(String value) => WebhookBranchProtectionRuleEditedAction._(value);
+  factory WebhookBranchProtectionRuleEditedAction.fromJson(String value) =>
+      WebhookBranchProtectionRuleEditedAction._(value);
 
   static const edited = WebhookBranchProtectionRuleEditedAction._('edited');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookBranchProtectionRuleEditedAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookBranchProtectionRuleEditedAction && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `from` wire field.
 final class WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom {
-
   final String value;
 
-  const WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom._(this.value);
+  const WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom._(
+      this.value);
 
-  factory WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom.fromJson(String value) => WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom._(value);
+  factory WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom.fromJson(
+          String value) =>
+      WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom
+          ._(value);
 
-  static const off = WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom._('off');
-  static const nonAdmins = WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom._('non_admins');
-  static const everyone = WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom._('everyone');
+  static const off =
+      WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom
+          ._('off');
+  static const nonAdmins =
+      WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom
+          ._('non_admins');
+  static const everyone =
+      WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom
+          ._('everyone');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevelFrom &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `from` wire field.
 final class WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevelFrom {
-
   final String value;
 
-  const WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevelFrom._(this.value);
+  const WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevelFrom._(
+      this.value);
 
-  factory WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevelFrom.fromJson(String value) => WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevelFrom._(value);
+  factory WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevelFrom.fromJson(
+          String value) =>
+      WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevelFrom._(
+          value);
 
-  static const off = WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevelFrom._('off');
-  static const nonAdmins = WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevelFrom._('non_admins');
-  static const everyone = WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevelFrom._('everyone');
+  static const off =
+      WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevelFrom._(
+          'off');
+  static const nonAdmins =
+      WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevelFrom._(
+          'non_admins');
+  static const everyone =
+      WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevelFrom._(
+          'everyone');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevelFrom && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevelFrom &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `from` wire field.
 final class WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom {
-
   final String value;
 
-  const WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom._(this.value);
+  const WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom._(
+      this.value);
 
-  factory WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom.fromJson(String value) => WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom._(value);
+  factory WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom.fromJson(
+          String value) =>
+      WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom
+          ._(value);
 
-  static const off = WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom._('off');
-  static const nonAdmins = WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom._('non_admins');
-  static const everyone = WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom._('everyone');
+  static const off =
+      WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom
+          ._('off');
+  static const nonAdmins =
+      WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom
+          ._('non_admins');
+  static const everyone =
+      WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom
+          ._('everyone');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `from` wire field.
 final class WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom {
-
   final String value;
 
-  const WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom._(this.value);
+  const WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom._(
+      this.value);
 
-  factory WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom.fromJson(String value) => WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom._(value);
+  factory WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom.fromJson(
+          String value) =>
+      WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom
+          ._(value);
 
-  static const off = WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom._('off');
-  static const nonAdmins = WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom._('non_admins');
-  static const everyone = WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom._('everyone');
+  static const off =
+      WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom
+          ._('off');
+  static const nonAdmins =
+      WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom
+          ._('non_admins');
+  static const everyone =
+      WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom
+          ._('everyone');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `action` wire field.
 final class WebhookCheckRunCompletedAction {
-
   final String value;
 
   const WebhookCheckRunCompletedAction._(this.value);
 
-  factory WebhookCheckRunCompletedAction.fromJson(String value) => WebhookCheckRunCompletedAction._(value);
+  factory WebhookCheckRunCompletedAction.fromJson(String value) =>
+      WebhookCheckRunCompletedAction._(value);
 
   static const completed = WebhookCheckRunCompletedAction._('completed');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookCheckRunCompletedAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookCheckRunCompletedAction && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `action` wire field.
 final class WebhookCheckRunCreatedAction {
-
   final String value;
 
   const WebhookCheckRunCreatedAction._(this.value);
 
-  factory WebhookCheckRunCreatedAction.fromJson(String value) => WebhookCheckRunCreatedAction._(value);
+  factory WebhookCheckRunCreatedAction.fromJson(String value) =>
+      WebhookCheckRunCreatedAction._(value);
 
   static const created = WebhookCheckRunCreatedAction._('created');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookCheckRunCreatedAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookCheckRunCreatedAction && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookCheckRunRequestedActionAction {
-
   final String value;
 
   const WebhookCheckRunRequestedActionAction._(this.value);
 
-  factory WebhookCheckRunRequestedActionAction.fromJson(String value) => WebhookCheckRunRequestedActionAction._(value);
+  factory WebhookCheckRunRequestedActionAction.fromJson(String value) =>
+      WebhookCheckRunRequestedActionAction._(value);
 
-  static const requestedAction = WebhookCheckRunRequestedActionAction._('requested_action');
+  static const requestedAction =
+      WebhookCheckRunRequestedActionAction._('requested_action');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookCheckRunRequestedActionAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookCheckRunRequestedActionAction && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `action` wire field.
 final class WebhookCheckRunRerequestedAction {
-
   final String value;
 
   const WebhookCheckRunRerequestedAction._(this.value);
 
-  factory WebhookCheckRunRerequestedAction.fromJson(String value) => WebhookCheckRunRerequestedAction._(value);
+  factory WebhookCheckRunRerequestedAction.fromJson(String value) =>
+      WebhookCheckRunRerequestedAction._(value);
 
   static const rerequested = WebhookCheckRunRerequestedAction._('rerequested');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookCheckRunRerequestedAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookCheckRunRerequestedAction && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookCheckSuiteCompletedAction {
-
   final String value;
 
   const WebhookCheckSuiteCompletedAction._(this.value);
 
-  factory WebhookCheckSuiteCompletedAction.fromJson(String value) => WebhookCheckSuiteCompletedAction._(value);
+  factory WebhookCheckSuiteCompletedAction.fromJson(String value) =>
+      WebhookCheckSuiteCompletedAction._(value);
 
   static const completed = WebhookCheckSuiteCompletedAction._('completed');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookCheckSuiteCompletedAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookCheckSuiteCompletedAction && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `events[]` wire field.
 final class WebhookCheckSuiteCompletedCheckSuiteAppEventsItem {
-
   final String value;
 
   const WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._(this.value);
 
-  factory WebhookCheckSuiteCompletedCheckSuiteAppEventsItem.fromJson(String value) => WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._(value);
+  factory WebhookCheckSuiteCompletedCheckSuiteAppEventsItem.fromJson(
+          String value) =>
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._(value);
 
-  static const branchProtectionRule = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('branch_protection_rule');
-  static const checkRun = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('check_run');
-  static const checkSuite = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('check_suite');
-  static const codeScanningAlert = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('code_scanning_alert');
-  static const commitComment = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('commit_comment');
-  static const contentReference = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('content_reference');
-  static const create = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('create');
-  static const delete = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('delete');
-  static const deployment = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('deployment');
-  static const deploymentReview = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('deployment_review');
-  static const deploymentStatus = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('deployment_status');
-  static const deployKey = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('deploy_key');
-  static const discussion = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('discussion');
-  static const discussionComment = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('discussion_comment');
-  static const fork = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('fork');
-  static const gollum = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('gollum');
-  static const issues = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('issues');
-  static const issueComment = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('issue_comment');
-  static const label = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('label');
-  static const member = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('member');
-  static const membership = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('membership');
-  static const milestone = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('milestone');
-  static const organization = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('organization');
-  static const orgBlock = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('org_block');
-  static const pageBuild = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('page_build');
-  static const project = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('project');
-  static const projectCard = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('project_card');
-  static const projectColumn = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('project_column');
-  static const public = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('public');
-  static const pullRequest = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('pull_request');
-  static const pullRequestReview = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('pull_request_review');
-  static const pullRequestReviewComment = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('pull_request_review_comment');
-  static const push = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('push');
-  static const registryPackage = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('registry_package');
-  static const release = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('release');
-  static const repository = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('repository');
-  static const repositoryDispatch = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('repository_dispatch');
-  static const secretScanningAlert = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('secret_scanning_alert');
-  static const star = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('star');
-  static const status = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('status');
-  static const team = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('team');
-  static const teamAdd = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('team_add');
-  static const watch = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('watch');
-  static const workflowDispatch = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('workflow_dispatch');
-  static const workflowRun = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('workflow_run');
-  static const mergeGroup = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('merge_group');
-  static const pullRequestReviewThread = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('pull_request_review_thread');
-  static const workflowJob = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('workflow_job');
-  static const mergeQueueEntry = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('merge_queue_entry');
-  static const securityAndAnalysis = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('security_and_analysis');
-  static const projectsV2Item = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('projects_v2_item');
-  static const secretScanningAlertLocation = WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('secret_scanning_alert_location');
+  static const branchProtectionRule =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._(
+          'branch_protection_rule');
+  static const checkRun =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('check_run');
+  static const checkSuite =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('check_suite');
+  static const codeScanningAlert =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._(
+          'code_scanning_alert');
+  static const commitComment =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('commit_comment');
+  static const contentReference =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('content_reference');
+  static const create =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('create');
+  static const delete =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('delete');
+  static const deployment =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('deployment');
+  static const deploymentReview =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('deployment_review');
+  static const deploymentStatus =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('deployment_status');
+  static const deployKey =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('deploy_key');
+  static const discussion =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('discussion');
+  static const discussionComment =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('discussion_comment');
+  static const fork =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('fork');
+  static const gollum =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('gollum');
+  static const issues =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('issues');
+  static const issueComment =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('issue_comment');
+  static const label =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('label');
+  static const member =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('member');
+  static const membership =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('membership');
+  static const milestone =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('milestone');
+  static const organization =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('organization');
+  static const orgBlock =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('org_block');
+  static const pageBuild =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('page_build');
+  static const project =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('project');
+  static const projectCard =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('project_card');
+  static const projectColumn =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('project_column');
+  static const public =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('public');
+  static const pullRequest =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('pull_request');
+  static const pullRequestReview =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._(
+          'pull_request_review');
+  static const pullRequestReviewComment =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._(
+          'pull_request_review_comment');
+  static const push =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('push');
+  static const registryPackage =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('registry_package');
+  static const release =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('release');
+  static const repository =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('repository');
+  static const repositoryDispatch =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._(
+          'repository_dispatch');
+  static const secretScanningAlert =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._(
+          'secret_scanning_alert');
+  static const star =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('star');
+  static const status =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('status');
+  static const team =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('team');
+  static const teamAdd =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('team_add');
+  static const watch =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('watch');
+  static const workflowDispatch =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('workflow_dispatch');
+  static const workflowRun =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('workflow_run');
+  static const mergeGroup =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('merge_group');
+  static const pullRequestReviewThread =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._(
+          'pull_request_review_thread');
+  static const workflowJob =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('workflow_job');
+  static const mergeQueueEntry =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('merge_queue_entry');
+  static const securityAndAnalysis =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._(
+          'security_and_analysis');
+  static const projectsV2Item =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._('projects_v2_item');
+  static const secretScanningAlertLocation =
+      WebhookCheckSuiteCompletedCheckSuiteAppEventsItem._(
+          'secret_scanning_alert_location');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookCheckSuiteCompletedCheckSuiteAppEventsItem && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookCheckSuiteCompletedCheckSuiteAppEventsItem &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
