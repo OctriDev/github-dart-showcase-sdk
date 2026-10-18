@@ -4,274 +4,280 @@
 part of 'inline.dart';
 
 // Inline operation models (part 116)
-/// How the author is associated with the repository.
-final class WebhookIssuesMilestonedIssueAuthorAssociation {
+/// Required enumerated value serialized in the `action` wire field.
+final class WebhookLabelArchivedAction {
 
   final String value;
 
-  const WebhookIssuesMilestonedIssueAuthorAssociation._(this.value);
+  const WebhookLabelArchivedAction._(this.value);
 
-  factory WebhookIssuesMilestonedIssueAuthorAssociation.fromJson(String value) => WebhookIssuesMilestonedIssueAuthorAssociation._(value);
+  factory WebhookLabelArchivedAction.fromJson(String value) => WebhookLabelArchivedAction._(value);
 
-  static const collaborator = WebhookIssuesMilestonedIssueAuthorAssociation._('COLLABORATOR');
-  static const contributor = WebhookIssuesMilestonedIssueAuthorAssociation._('CONTRIBUTOR');
-  static const firstTimer = WebhookIssuesMilestonedIssueAuthorAssociation._('FIRST_TIMER');
-  static const firstTimeContributor = WebhookIssuesMilestonedIssueAuthorAssociation._('FIRST_TIME_CONTRIBUTOR');
-  static const mannequin = WebhookIssuesMilestonedIssueAuthorAssociation._('MANNEQUIN');
-  static const member = WebhookIssuesMilestonedIssueAuthorAssociation._('MEMBER');
-  static const none = WebhookIssuesMilestonedIssueAuthorAssociation._('NONE');
-  static const owner = WebhookIssuesMilestonedIssueAuthorAssociation._('OWNER');
+  static const archived = WebhookLabelArchivedAction._('archived');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookIssuesMilestonedIssueAuthorAssociation && other.value == value;
+  @override bool operator ==(Object other) => other is WebhookLabelArchivedAction && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhookIssuesMilestonedIssueMilestoneCreatorType {
+/// Required enumerated value serialized in the `action` wire field.
+final class WebhookLabelCreatedAction {
 
   final String value;
 
-  const WebhookIssuesMilestonedIssueMilestoneCreatorType._(this.value);
+  const WebhookLabelCreatedAction._(this.value);
 
-  factory WebhookIssuesMilestonedIssueMilestoneCreatorType.fromJson(String value) => WebhookIssuesMilestonedIssueMilestoneCreatorType._(value);
+  factory WebhookLabelCreatedAction.fromJson(String value) => WebhookLabelCreatedAction._(value);
 
-  static const bot = WebhookIssuesMilestonedIssueMilestoneCreatorType._('Bot');
-  static const user = WebhookIssuesMilestonedIssueMilestoneCreatorType._('User');
-  static const organization = WebhookIssuesMilestonedIssueMilestoneCreatorType._('Organization');
-  static const mannequin = WebhookIssuesMilestonedIssueMilestoneCreatorType._('Mannequin');
+  static const created = WebhookLabelCreatedAction._('created');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookIssuesMilestonedIssueMilestoneCreatorType && other.value == value;
+  @override bool operator ==(Object other) => other is WebhookLabelCreatedAction && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// The state of the milestone.
-final class WebhookIssuesMilestonedIssueMilestoneState {
+/// Required enumerated value serialized in the `action` wire field.
+final class WebhookLabelDeletedAction {
 
   final String value;
 
-  const WebhookIssuesMilestonedIssueMilestoneState._(this.value);
+  const WebhookLabelDeletedAction._(this.value);
 
-  factory WebhookIssuesMilestonedIssueMilestoneState.fromJson(String value) => WebhookIssuesMilestonedIssueMilestoneState._(value);
+  factory WebhookLabelDeletedAction.fromJson(String value) => WebhookLabelDeletedAction._(value);
 
-  static const open = WebhookIssuesMilestonedIssueMilestoneState._('open');
-  static const closed = WebhookIssuesMilestonedIssueMilestoneState._('closed');
+  static const deleted = WebhookLabelDeletedAction._('deleted');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookIssuesMilestonedIssueMilestoneState && other.value == value;
+  @override bool operator ==(Object other) => other is WebhookLabelDeletedAction && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Required enumerated value serialized in the `events[]` wire field.
-final class WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem {
+/// Required enumerated value serialized in the `action` wire field.
+final class WebhookLabelEditedAction {
 
   final String value;
 
-  const WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._(this.value);
+  const WebhookLabelEditedAction._(this.value);
 
-  factory WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem.fromJson(String value) => WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._(value);
+  factory WebhookLabelEditedAction.fromJson(String value) => WebhookLabelEditedAction._(value);
 
-  static const branchProtectionRule = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('branch_protection_rule');
-  static const checkRun = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('check_run');
-  static const checkSuite = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('check_suite');
-  static const codeScanningAlert = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('code_scanning_alert');
-  static const commitComment = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('commit_comment');
-  static const contentReference = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('content_reference');
-  static const create = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('create');
-  static const delete = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('delete');
-  static const deployment = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('deployment');
-  static const deploymentReview = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('deployment_review');
-  static const deploymentStatus = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('deployment_status');
-  static const deployKey = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('deploy_key');
-  static const discussion = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('discussion');
-  static const discussionComment = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('discussion_comment');
-  static const fork = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('fork');
-  static const gollum = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('gollum');
-  static const issues = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('issues');
-  static const issueComment = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('issue_comment');
-  static const label = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('label');
-  static const member = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('member');
-  static const membership = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('membership');
-  static const milestone = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('milestone');
-  static const organization = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('organization');
-  static const orgBlock = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('org_block');
-  static const pageBuild = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('page_build');
-  static const project = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('project');
-  static const projectCard = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('project_card');
-  static const projectColumn = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('project_column');
-  static const public = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('public');
-  static const pullRequest = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('pull_request');
-  static const pullRequestReview = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('pull_request_review');
-  static const pullRequestReviewComment = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('pull_request_review_comment');
-  static const push = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('push');
-  static const registryPackage = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('registry_package');
-  static const release = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('release');
-  static const repository = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('repository');
-  static const repositoryDispatch = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('repository_dispatch');
-  static const secretScanningAlert = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('secret_scanning_alert');
-  static const star = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('star');
-  static const status = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('status');
-  static const team = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('team');
-  static const teamAdd = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('team_add');
-  static const watch = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('watch');
-  static const workflowDispatch = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('workflow_dispatch');
-  static const workflowRun = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('workflow_run');
-  static const reminder = WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem._('reminder');
+  static const edited = WebhookLabelEditedAction._('edited');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookIssuesMilestonedIssuePerformedViaGithubAppEventsItem && other.value == value;
+  @override bool operator ==(Object other) => other is WebhookLabelEditedAction && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhookIssuesMilestonedIssuePerformedViaGithubAppOwnerType {
+/// Required enumerated value serialized in the `action` wire field.
+final class WebhookLabelUnarchivedAction {
 
   final String value;
 
-  const WebhookIssuesMilestonedIssuePerformedViaGithubAppOwnerType._(this.value);
+  const WebhookLabelUnarchivedAction._(this.value);
 
-  factory WebhookIssuesMilestonedIssuePerformedViaGithubAppOwnerType.fromJson(String value) => WebhookIssuesMilestonedIssuePerformedViaGithubAppOwnerType._(value);
+  factory WebhookLabelUnarchivedAction.fromJson(String value) => WebhookLabelUnarchivedAction._(value);
 
-  static const bot = WebhookIssuesMilestonedIssuePerformedViaGithubAppOwnerType._('Bot');
-  static const user = WebhookIssuesMilestonedIssuePerformedViaGithubAppOwnerType._('User');
-  static const organization = WebhookIssuesMilestonedIssuePerformedViaGithubAppOwnerType._('Organization');
+  static const unarchived = WebhookLabelUnarchivedAction._('unarchived');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookIssuesMilestonedIssuePerformedViaGithubAppOwnerType && other.value == value;
+  @override bool operator ==(Object other) => other is WebhookLabelUnarchivedAction && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `actions` wire field.
-final class WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissionsActions {
+/// Required enumerated value serialized in the `action` wire field.
+final class WebhookMarketplacePurchaseCancelledAction {
 
   final String value;
 
-  const WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissionsActions._(this.value);
+  const WebhookMarketplacePurchaseCancelledAction._(this.value);
 
-  factory WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissionsActions.fromJson(String value) => WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissionsActions._(value);
+  factory WebhookMarketplacePurchaseCancelledAction.fromJson(String value) => WebhookMarketplacePurchaseCancelledAction._(value);
 
-  static const read = WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissionsActions._('read');
-  static const write = WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissionsActions._('write');
+  static const cancelled = WebhookMarketplacePurchaseCancelledAction._('cancelled');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissionsActions && other.value == value;
+  @override bool operator ==(Object other) => other is WebhookMarketplacePurchaseCancelledAction && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `administration` wire field.
-final class WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissionsAdministration {
+/// Required enumerated value serialized in the `action` wire field.
+final class WebhookMarketplacePurchaseChangedAction {
 
   final String value;
 
-  const WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissionsAdministration._(this.value);
+  const WebhookMarketplacePurchaseChangedAction._(this.value);
 
-  factory WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissionsAdministration.fromJson(String value) => WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissionsAdministration._(value);
+  factory WebhookMarketplacePurchaseChangedAction.fromJson(String value) => WebhookMarketplacePurchaseChangedAction._(value);
 
-  static const read = WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissionsAdministration._('read');
-  static const write = WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissionsAdministration._('write');
+  static const changed = WebhookMarketplacePurchaseChangedAction._('changed');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissionsAdministration && other.value == value;
+  @override bool operator ==(Object other) => other is WebhookMarketplacePurchaseChangedAction && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `checks` wire field.
-final class WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissionsChecks {
+/// Required enumerated value serialized in the `price_model` wire field.
+final class WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel {
 
   final String value;
 
-  const WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissionsChecks._(this.value);
+  const WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel._(this.value);
 
-  factory WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissionsChecks.fromJson(String value) => WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissionsChecks._(value);
+  factory WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel.fromJson(String value) => WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel._(value);
 
-  static const read = WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissionsChecks._('read');
-  static const write = WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissionsChecks._('write');
+  static const free = WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel._('FREE');
+  static const flatRate = WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel._('FLAT_RATE');
+  static const perUnit = WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel._('PER_UNIT');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissionsChecks && other.value == value;
+  @override bool operator ==(Object other) => other is WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `content_references` wire field.
-final class WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissionsContentReferences {
+/// Required enumerated value serialized in the `action` wire field.
+final class WebhookMarketplacePurchasePendingChangeAction {
 
   final String value;
 
-  const WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissionsContentReferences._(this.value);
+  const WebhookMarketplacePurchasePendingChangeAction._(this.value);
 
-  factory WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissionsContentReferences.fromJson(String value) => WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissionsContentReferences._(value);
+  factory WebhookMarketplacePurchasePendingChangeAction.fromJson(String value) => WebhookMarketplacePurchasePendingChangeAction._(value);
 
-  static const read = WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissionsContentReferences._('read');
-  static const write = WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissionsContentReferences._('write');
+  static const pendingChange = WebhookMarketplacePurchasePendingChangeAction._('pending_change');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissionsContentReferences && other.value == value;
+  @override bool operator ==(Object other) => other is WebhookMarketplacePurchasePendingChangeAction && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `contents` wire field.
-final class WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissionsContents {
+/// Required enumerated value serialized in the `price_model` wire field.
+final class WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchasePlanPriceModel {
 
   final String value;
 
-  const WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissionsContents._(this.value);
+  const WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchasePlanPriceModel._(this.value);
 
-  factory WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissionsContents.fromJson(String value) => WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissionsContents._(value);
+  factory WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchasePlanPriceModel.fromJson(String value) => WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchasePlanPriceModel._(value);
 
-  static const read = WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissionsContents._('read');
-  static const write = WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissionsContents._('write');
+  static const free = WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchasePlanPriceModel._('FREE');
+  static const flatRate = WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchasePlanPriceModel._('FLAT_RATE');
+  static const perUnit = WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchasePlanPriceModel._('PER_UNIT');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissionsContents && other.value == value;
+  @override bool operator ==(Object other) => other is WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchasePlanPriceModel && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// Required enumerated value serialized in the `action` wire field.
+final class WebhookMarketplacePurchasePendingChangeCancelledAction {
+
+  final String value;
+
+  const WebhookMarketplacePurchasePendingChangeCancelledAction._(this.value);
+
+  factory WebhookMarketplacePurchasePendingChangeCancelledAction.fromJson(String value) => WebhookMarketplacePurchasePendingChangeCancelledAction._(value);
+
+  static const pendingChangeCancelled = WebhookMarketplacePurchasePendingChangeCancelledAction._('pending_change_cancelled');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is WebhookMarketplacePurchasePendingChangeCancelledAction && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// Required enumerated value serialized in the `price_model` wire field.
+final class WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModel {
+
+  final String value;
+
+  const WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModel._(this.value);
+
+  factory WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModel.fromJson(String value) => WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModel._(value);
+
+  static const free = WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModel._('FREE');
+  static const flatRate = WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModel._('FLAT_RATE');
+  static const perUnit = WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModel._('PER_UNIT');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModel && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// Required enumerated value serialized in the `action` wire field.
+final class WebhookMarketplacePurchasePurchasedAction {
+
+  final String value;
+
+  const WebhookMarketplacePurchasePurchasedAction._(this.value);
+
+  factory WebhookMarketplacePurchasePurchasedAction.fromJson(String value) => WebhookMarketplacePurchasePurchasedAction._(value);
+
+  static const purchased = WebhookMarketplacePurchasePurchasedAction._('purchased');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is WebhookMarketplacePurchasePurchasedAction && other.value == value;
 
   @override int get hashCode => value.hashCode;
 

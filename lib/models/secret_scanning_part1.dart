@@ -11,6 +11,21 @@ sealed class NullableSecretScanningFirstDetectedLocation {
   static const String constructionSurface = 'named';
   const NullableSecretScanningFirstDetectedLocation();
   factory NullableSecretScanningFirstDetectedLocation.fromJson(Object? json) {
+    if (json is Map<String, dynamic>) {
+      try { final value = SecretScanningLocationCommit.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return NullableSecretScanningFirstDetectedLocationSecretScanningLocationCommit(value); } } catch (_) {}
+      try { final value = SecretScanningLocationWikiCommit.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return NullableSecretScanningFirstDetectedLocationSecretScanningLocationWikiCommit(value); } } catch (_) {}
+      try { final value = SecretScanningLocationIssueTitle.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return NullableSecretScanningFirstDetectedLocationSecretScanningLocationIssueTitle(value); } } catch (_) {}
+      try { final value = SecretScanningLocationIssueBody.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return NullableSecretScanningFirstDetectedLocationSecretScanningLocationIssueBody(value); } } catch (_) {}
+      try { final value = SecretScanningLocationIssueComment.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return NullableSecretScanningFirstDetectedLocationSecretScanningLocationIssueComment(value); } } catch (_) {}
+      try { final value = SecretScanningLocationDiscussionTitle.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return NullableSecretScanningFirstDetectedLocationSecretScanningLocationDiscussionTitle(value); } } catch (_) {}
+      try { final value = SecretScanningLocationDiscussionBody.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return NullableSecretScanningFirstDetectedLocationSecretScanningLocationDiscussionBody(value); } } catch (_) {}
+      try { final value = SecretScanningLocationDiscussionComment.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return NullableSecretScanningFirstDetectedLocationSecretScanningLocationDiscussionComment(value); } } catch (_) {}
+      try { final value = SecretScanningLocationPullRequestTitle.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return NullableSecretScanningFirstDetectedLocationSecretScanningLocationPullRequestTitle(value); } } catch (_) {}
+      try { final value = SecretScanningLocationPullRequestBody.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return NullableSecretScanningFirstDetectedLocationSecretScanningLocationPullRequestBody(value); } } catch (_) {}
+      try { final value = SecretScanningLocationPullRequestComment.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return NullableSecretScanningFirstDetectedLocationSecretScanningLocationPullRequestComment(value); } } catch (_) {}
+      try { final value = SecretScanningLocationPullRequestReview.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return NullableSecretScanningFirstDetectedLocationSecretScanningLocationPullRequestReview(value); } } catch (_) {}
+      try { final value = SecretScanningLocationPullRequestReviewComment.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return NullableSecretScanningFirstDetectedLocationSecretScanningLocationPullRequestReviewComment(value); } } catch (_) {}
+    }
     try { return NullableSecretScanningFirstDetectedLocationSecretScanningLocationCommit(SecretScanningLocationCommit.fromJson(json as Map<String, dynamic>)); } catch (_) {}
     try { return NullableSecretScanningFirstDetectedLocationSecretScanningLocationWikiCommit(SecretScanningLocationWikiCommit.fromJson(json as Map<String, dynamic>)); } catch (_) {}
     try { return NullableSecretScanningFirstDetectedLocationSecretScanningLocationIssueTitle(SecretScanningLocationIssueTitle.fromJson(json as Map<String, dynamic>)); } catch (_) {}

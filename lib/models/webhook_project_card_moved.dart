@@ -12,5 +12,3 @@ import 'simple.dart';
 part 'webhook_project_card_moved_part1.dart';
 part 'webhook_project_card_moved_part2.dart';
 part 'webhook_project_card_moved_part3.dart';
-part 'webhook_project_card_moved_part4.dart';
-part 'webhook_project_card_moved_part5.dart';

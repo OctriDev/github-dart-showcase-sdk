@@ -4,285 +4,211 @@
 part of 'inline.dart';
 
 // Inline operation models (part 379)
-class OrgsCreateArtifactDeploymentRecordRequestBody {
+class PrivateRegistriesUpdateOrgPrivateRegistryRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The name of the artifact.
-  final String name;
-  /// The hex encoded digest of the artifact.
-  final String digest;
-  /// The artifact version.
-  final SdkOptional<String> version;
-  /// The status of the artifact. Can be either deployed or decommissioned.
-  final OrgsCreateArtifactDeploymentRecordRequestBodyStatus status;
-  /// The stage of the deployment.
-  final String logicalEnvironment;
-  /// The physical region of the deployment.
-  final SdkOptional<String> physicalEnvironment;
-  /// The deployment cluster.
-  final SdkOptional<String> cluster;
-  /// The unique identifier for the deployment represented by the new record. To accommodate differing containers and namespaces within a cluster, the following format is recommended: {namespaceName}-{deploymentName}-{containerName}.
-  final String deploymentName;
-  /// The tags associated with the deployment.
-  final SdkOptional<Map<String, String>> tags;
-  /// A list of runtime risks associated with the deployment.
-  final SdkOptional<List<OrgsCreateArtifactDeploymentRecordRequestBodyRuntimeRisksItem>> runtimeRisks;
-  /// The name of the GitHub repository associated with the artifact. This should be used when there are no provenance attestations available for the artifact. The repository must belong to the organization specified in the path parameter. If a provenance attestation is available for the artifact, the API will use the repository information from the attestation instead of this parameter.
-  final SdkOptional<String> githubRepository;
-  /// If true, the endpoint will return the created or updated record in the response body.
-  final SdkOptional<bool> returnRecords;
+  /// The registry type.
+  final SdkOptional<PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType> registryType;
+  /// The URL of the private registry.
+  final SdkOptional<String> url;
+  /// The username to use when authenticating with the private registry. This field should be omitted if the private registry does not require a username for authentication.
+  final SdkOptional<String?> username;
+  /// Whether this private registry should replace the base registry (e.g., npmjs.org for npm, rubygems.org for rubygems). When set to `true`, Dependabot will only use this registry and will not fall back to the public registry. When set to `false` (default), Dependabot will use this registry for scoped packages but may fall back to the public registry for other packages.
+  final SdkOptional<bool> replacesBase;
+  /// The value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get private registries public key for an organization](https://docs.github.com/rest/private-registries/organization-configurations#get-private-registries-public-key-for-an-organization) endpoint.
+  final SdkOptional<String> encryptedValue;
+  /// The ID of the key you used to encrypt the secret.
+  final SdkOptional<String> keyId;
+  /// Which type of organization repositories have access to the private registry. `selected` means only the repositories specified by `selected_repository_ids` can access the private registry.
+  final SdkOptional<PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyVisibility> visibility;
+  /// An array of repository IDs that can access the organization private registry. You can only provide a list of repository IDs when `visibility` is set to `selected`. This field should be omitted if `visibility` is set to `all` or `private`.
+  final SdkOptional<List<int>> selectedRepositoryIds;
+  /// The authentication type for the private registry. This field cannot be changed after creation. If provided, it must match the existing `auth_type` of the configuration. To change the authentication type, delete and recreate the configuration.
+  final SdkOptional<PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyAuthType> authType;
+  /// The tenant ID of the Azure AD application. Required when `auth_type` is `oidc_azure`.
+  final SdkOptional<String> tenantId;
+  /// The client ID of the Azure AD application. Required when `auth_type` is `oidc_azure`.
+  final SdkOptional<String> clientId;
+  /// The AWS region. Required when `auth_type` is `oidc_aws`.
+  final SdkOptional<String> awsRegion;
+  /// The AWS account ID. Required when `auth_type` is `oidc_aws`.
+  final SdkOptional<String> accountId;
+  /// The AWS IAM role name. Required when `auth_type` is `oidc_aws`.
+  final SdkOptional<String> roleName;
+  /// The CodeArtifact domain. Required when `auth_type` is `oidc_aws`.
+  final SdkOptional<String> domain;
+  /// The CodeArtifact domain owner (AWS account ID). Required when `auth_type` is `oidc_aws`.
+  final SdkOptional<String> domainOwner;
+  /// The JFrog OIDC provider name. Required when `auth_type` is `oidc_jfrog`.
+  final SdkOptional<String> jfrogOidcProviderName;
+  /// The OIDC audience. Optional for `oidc_aws`, `oidc_jfrog`, and `oidc_gcp`, and required for `oidc_cloudsmith` auth types.
+  final SdkOptional<String> audience;
+  /// The JFrog identity mapping name. Optional for `oidc_jfrog` auth type.
+  final SdkOptional<String> identityMappingName;
+  /// The Cloudsmith organization namespace. Required when `auth_type` is `oidc_cloudsmith`.
+  final SdkOptional<String> namespace;
+  /// The Cloudsmith service account slug. Required when `auth_type` is `oidc_cloudsmith`.
+  final SdkOptional<String> serviceSlug;
+  /// The Cloudsmith API host. Optional for `oidc_cloudsmith` auth type. If omitted, `api.cloudsmith.io` is used by default.
+  final SdkOptional<String> apiHost;
+  /// The full resource name of the GCP Workload Identity Provider (e.g. `projects/&lt;NUM&gt;/locations/global/workloadIdentityPools/&lt;POOL&gt;/providers/&lt;PROVIDER&gt;`). Required when `auth_type` is `oidc_gcp`.
+  final SdkOptional<String> workloadIdentityProvider;
+  /// The GCP service account email to impersonate. Optional for `oidc_gcp` auth type. If omitted, the federated token is used directly (direct WIF).
+  final SdkOptional<String> serviceAccount;
 
-  const OrgsCreateArtifactDeploymentRecordRequestBody({required this.name, required this.digest, this.version = const SdkOmitted(), required this.status, required this.logicalEnvironment, this.physicalEnvironment = const SdkOmitted(), this.cluster = const SdkOmitted(), required this.deploymentName, this.tags = const SdkOmitted(), this.runtimeRisks = const SdkOmitted(), this.githubRepository = const SdkOmitted(), this.returnRecords = const SdkOmitted()});
+  const PrivateRegistriesUpdateOrgPrivateRegistryRequestBody({this.registryType = const SdkOmitted(), this.url = const SdkOmitted(), this.username = const SdkOmitted(), this.replacesBase = const SdkOmitted(), this.encryptedValue = const SdkOmitted(), this.keyId = const SdkOmitted(), this.visibility = const SdkOmitted(), this.selectedRepositoryIds = const SdkOmitted(), this.authType = const SdkOmitted(), this.tenantId = const SdkOmitted(), this.clientId = const SdkOmitted(), this.awsRegion = const SdkOmitted(), this.accountId = const SdkOmitted(), this.roleName = const SdkOmitted(), this.domain = const SdkOmitted(), this.domainOwner = const SdkOmitted(), this.jfrogOidcProviderName = const SdkOmitted(), this.audience = const SdkOmitted(), this.identityMappingName = const SdkOmitted(), this.namespace = const SdkOmitted(), this.serviceSlug = const SdkOmitted(), this.apiHost = const SdkOmitted(), this.workloadIdentityProvider = const SdkOmitted(), this.serviceAccount = const SdkOmitted()});
 
-  OrgsCreateArtifactDeploymentRecordRequestBody Function({String name, String digest, SdkOptional<String> version, OrgsCreateArtifactDeploymentRecordRequestBodyStatus status, String logicalEnvironment, SdkOptional<String> physicalEnvironment, SdkOptional<String> cluster, String deploymentName, SdkOptional<Map<String, String>> tags, SdkOptional<List<OrgsCreateArtifactDeploymentRecordRequestBodyRuntimeRisksItem>> runtimeRisks, SdkOptional<String> githubRepository, SdkOptional<bool> returnRecords}) get copyWith => _copyWith;
+  PrivateRegistriesUpdateOrgPrivateRegistryRequestBody Function({SdkOptional<PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType> registryType, SdkOptional<String> url, SdkOptional<String?> username, SdkOptional<bool> replacesBase, SdkOptional<String> encryptedValue, SdkOptional<String> keyId, SdkOptional<PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyVisibility> visibility, SdkOptional<List<int>> selectedRepositoryIds, SdkOptional<PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyAuthType> authType, SdkOptional<String> tenantId, SdkOptional<String> clientId, SdkOptional<String> awsRegion, SdkOptional<String> accountId, SdkOptional<String> roleName, SdkOptional<String> domain, SdkOptional<String> domainOwner, SdkOptional<String> jfrogOidcProviderName, SdkOptional<String> audience, SdkOptional<String> identityMappingName, SdkOptional<String> namespace, SdkOptional<String> serviceSlug, SdkOptional<String> apiHost, SdkOptional<String> workloadIdentityProvider, SdkOptional<String> serviceAccount}) get copyWith => _copyWith;
 
-  OrgsCreateArtifactDeploymentRecordRequestBody _copyWith({Object? name = sdkOmittedValue, Object? digest = sdkOmittedValue, Object? version = sdkOmittedValue, Object? status = sdkOmittedValue, Object? logicalEnvironment = sdkOmittedValue, Object? physicalEnvironment = sdkOmittedValue, Object? cluster = sdkOmittedValue, Object? deploymentName = sdkOmittedValue, Object? tags = sdkOmittedValue, Object? runtimeRisks = sdkOmittedValue, Object? githubRepository = sdkOmittedValue, Object? returnRecords = sdkOmittedValue}) => OrgsCreateArtifactDeploymentRecordRequestBody(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    digest: identical(digest, sdkOmittedValue) ? this.digest : digest as String,
-    version: identical(version, sdkOmittedValue) ? this.version : version as SdkOptional<String>,
-    status: identical(status, sdkOmittedValue) ? this.status : status as OrgsCreateArtifactDeploymentRecordRequestBodyStatus,
-    logicalEnvironment: identical(logicalEnvironment, sdkOmittedValue) ? this.logicalEnvironment : logicalEnvironment as String,
-    physicalEnvironment: identical(physicalEnvironment, sdkOmittedValue) ? this.physicalEnvironment : physicalEnvironment as SdkOptional<String>,
-    cluster: identical(cluster, sdkOmittedValue) ? this.cluster : cluster as SdkOptional<String>,
-    deploymentName: identical(deploymentName, sdkOmittedValue) ? this.deploymentName : deploymentName as String,
-    tags: identical(tags, sdkOmittedValue) ? this.tags : tags as SdkOptional<Map<String, String>>,
-    runtimeRisks: identical(runtimeRisks, sdkOmittedValue) ? this.runtimeRisks : runtimeRisks as SdkOptional<List<OrgsCreateArtifactDeploymentRecordRequestBodyRuntimeRisksItem>>,
-    githubRepository: identical(githubRepository, sdkOmittedValue) ? this.githubRepository : githubRepository as SdkOptional<String>,
-    returnRecords: identical(returnRecords, sdkOmittedValue) ? this.returnRecords : returnRecords as SdkOptional<bool>,
+  PrivateRegistriesUpdateOrgPrivateRegistryRequestBody _copyWith({Object? registryType = sdkOmittedValue, Object? url = sdkOmittedValue, Object? username = sdkOmittedValue, Object? replacesBase = sdkOmittedValue, Object? encryptedValue = sdkOmittedValue, Object? keyId = sdkOmittedValue, Object? visibility = sdkOmittedValue, Object? selectedRepositoryIds = sdkOmittedValue, Object? authType = sdkOmittedValue, Object? tenantId = sdkOmittedValue, Object? clientId = sdkOmittedValue, Object? awsRegion = sdkOmittedValue, Object? accountId = sdkOmittedValue, Object? roleName = sdkOmittedValue, Object? domain = sdkOmittedValue, Object? domainOwner = sdkOmittedValue, Object? jfrogOidcProviderName = sdkOmittedValue, Object? audience = sdkOmittedValue, Object? identityMappingName = sdkOmittedValue, Object? namespace = sdkOmittedValue, Object? serviceSlug = sdkOmittedValue, Object? apiHost = sdkOmittedValue, Object? workloadIdentityProvider = sdkOmittedValue, Object? serviceAccount = sdkOmittedValue}) => PrivateRegistriesUpdateOrgPrivateRegistryRequestBody(
+    registryType: identical(registryType, sdkOmittedValue) ? this.registryType : registryType as SdkOptional<PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType>,
+    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
+    username: identical(username, sdkOmittedValue) ? this.username : username as SdkOptional<String?>,
+    replacesBase: identical(replacesBase, sdkOmittedValue) ? this.replacesBase : replacesBase as SdkOptional<bool>,
+    encryptedValue: identical(encryptedValue, sdkOmittedValue) ? this.encryptedValue : encryptedValue as SdkOptional<String>,
+    keyId: identical(keyId, sdkOmittedValue) ? this.keyId : keyId as SdkOptional<String>,
+    visibility: identical(visibility, sdkOmittedValue) ? this.visibility : visibility as SdkOptional<PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyVisibility>,
+    selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue) ? this.selectedRepositoryIds : selectedRepositoryIds as SdkOptional<List<int>>,
+    authType: identical(authType, sdkOmittedValue) ? this.authType : authType as SdkOptional<PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyAuthType>,
+    tenantId: identical(tenantId, sdkOmittedValue) ? this.tenantId : tenantId as SdkOptional<String>,
+    clientId: identical(clientId, sdkOmittedValue) ? this.clientId : clientId as SdkOptional<String>,
+    awsRegion: identical(awsRegion, sdkOmittedValue) ? this.awsRegion : awsRegion as SdkOptional<String>,
+    accountId: identical(accountId, sdkOmittedValue) ? this.accountId : accountId as SdkOptional<String>,
+    roleName: identical(roleName, sdkOmittedValue) ? this.roleName : roleName as SdkOptional<String>,
+    domain: identical(domain, sdkOmittedValue) ? this.domain : domain as SdkOptional<String>,
+    domainOwner: identical(domainOwner, sdkOmittedValue) ? this.domainOwner : domainOwner as SdkOptional<String>,
+    jfrogOidcProviderName: identical(jfrogOidcProviderName, sdkOmittedValue) ? this.jfrogOidcProviderName : jfrogOidcProviderName as SdkOptional<String>,
+    audience: identical(audience, sdkOmittedValue) ? this.audience : audience as SdkOptional<String>,
+    identityMappingName: identical(identityMappingName, sdkOmittedValue) ? this.identityMappingName : identityMappingName as SdkOptional<String>,
+    namespace: identical(namespace, sdkOmittedValue) ? this.namespace : namespace as SdkOptional<String>,
+    serviceSlug: identical(serviceSlug, sdkOmittedValue) ? this.serviceSlug : serviceSlug as SdkOptional<String>,
+    apiHost: identical(apiHost, sdkOmittedValue) ? this.apiHost : apiHost as SdkOptional<String>,
+    workloadIdentityProvider: identical(workloadIdentityProvider, sdkOmittedValue) ? this.workloadIdentityProvider : workloadIdentityProvider as SdkOptional<String>,
+    serviceAccount: identical(serviceAccount, sdkOmittedValue) ? this.serviceAccount : serviceAccount as SdkOptional<String>,
   );
 
-  factory OrgsCreateArtifactDeploymentRecordRequestBody.fromJson(Map<String, dynamic> json) => OrgsCreateArtifactDeploymentRecordRequestBody(
-    name: (json['name'] as String?)!,
-    digest: (json['digest'] as String?)!,
-    version: json['version'] != null ? SdkPresent((json['version'] as String?)!) : const SdkOmitted(),
-    status: (json['status'] != null ? OrgsCreateArtifactDeploymentRecordRequestBodyStatus.fromJson(json['status'] as String) : null)!,
-    logicalEnvironment: (json['logical_environment'] as String?)!,
-    physicalEnvironment: json['physical_environment'] != null ? SdkPresent((json['physical_environment'] as String?)!) : const SdkOmitted(),
-    cluster: json['cluster'] != null ? SdkPresent((json['cluster'] as String?)!) : const SdkOmitted(),
-    deploymentName: (json['deployment_name'] as String?)!,
-    tags: json['tags'] != null ? SdkPresent((json['tags'] == null ? null : Map<String, dynamic>.from(json['tags'] as Map).map((key, value) => MapEntry(key, value as String)))!) : const SdkOmitted(),
-    runtimeRisks: json['runtime_risks'] != null ? SdkPresent(((json['runtime_risks'] as List?)?.map((e) => OrgsCreateArtifactDeploymentRecordRequestBodyRuntimeRisksItem.fromJson(e as String)).toList())!) : const SdkOmitted(),
-    githubRepository: json['github_repository'] != null ? SdkPresent((json['github_repository'] as String?)!) : const SdkOmitted(),
-    returnRecords: json['return_records'] != null ? SdkPresent((json['return_records'] as bool?)!) : const SdkOmitted(),
+  factory PrivateRegistriesUpdateOrgPrivateRegistryRequestBody.fromJson(Map<String, dynamic> json) => PrivateRegistriesUpdateOrgPrivateRegistryRequestBody(
+    registryType: json['registry_type'] != null ? SdkPresent((json['registry_type'] != null ? PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType.fromJson(json['registry_type'] as String) : null)!) : const SdkOmitted(),
+    url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
+    username: json.containsKey('username') ? SdkPresent(json['username'] as String?) : const SdkOmitted(),
+    replacesBase: json['replaces_base'] != null ? SdkPresent((json['replaces_base'] as bool?)!) : const SdkOmitted(),
+    encryptedValue: json['encrypted_value'] != null ? SdkPresent((json['encrypted_value'] as String?)!) : const SdkOmitted(),
+    keyId: json['key_id'] != null ? SdkPresent((json['key_id'] as String?)!) : const SdkOmitted(),
+    visibility: json['visibility'] != null ? SdkPresent((json['visibility'] != null ? PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyVisibility.fromJson(json['visibility'] as String) : null)!) : const SdkOmitted(),
+    selectedRepositoryIds: json['selected_repository_ids'] != null ? SdkPresent(((json['selected_repository_ids'] as List?)?.map((e) => (e as num).toInt()).toList())!) : const SdkOmitted(),
+    authType: json['auth_type'] != null ? SdkPresent((json['auth_type'] != null ? PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyAuthType.fromJson(json['auth_type'] as String) : null)!) : const SdkOmitted(),
+    tenantId: json['tenant_id'] != null ? SdkPresent((json['tenant_id'] as String?)!) : const SdkOmitted(),
+    clientId: json['client_id'] != null ? SdkPresent((json['client_id'] as String?)!) : const SdkOmitted(),
+    awsRegion: json['aws_region'] != null ? SdkPresent((json['aws_region'] as String?)!) : const SdkOmitted(),
+    accountId: json['account_id'] != null ? SdkPresent((json['account_id'] as String?)!) : const SdkOmitted(),
+    roleName: json['role_name'] != null ? SdkPresent((json['role_name'] as String?)!) : const SdkOmitted(),
+    domain: json['domain'] != null ? SdkPresent((json['domain'] as String?)!) : const SdkOmitted(),
+    domainOwner: json['domain_owner'] != null ? SdkPresent((json['domain_owner'] as String?)!) : const SdkOmitted(),
+    jfrogOidcProviderName: json['jfrog_oidc_provider_name'] != null ? SdkPresent((json['jfrog_oidc_provider_name'] as String?)!) : const SdkOmitted(),
+    audience: json['audience'] != null ? SdkPresent((json['audience'] as String?)!) : const SdkOmitted(),
+    identityMappingName: json['identity_mapping_name'] != null ? SdkPresent((json['identity_mapping_name'] as String?)!) : const SdkOmitted(),
+    namespace: json['namespace'] != null ? SdkPresent((json['namespace'] as String?)!) : const SdkOmitted(),
+    serviceSlug: json['service_slug'] != null ? SdkPresent((json['service_slug'] as String?)!) : const SdkOmitted(),
+    apiHost: json['api_host'] != null ? SdkPresent((json['api_host'] as String?)!) : const SdkOmitted(),
+    workloadIdentityProvider: json['workload_identity_provider'] != null ? SdkPresent((json['workload_identity_provider'] as String?)!) : const SdkOmitted(),
+    serviceAccount: json['service_account'] != null ? SdkPresent((json['service_account'] as String?)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'digest': digest,
-    ...switch (version) {
-      SdkPresent<String>(value: final value) => {'version': value,},
+    ...switch (registryType) {
+      SdkPresent<PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType>(value: final value) => {'registry_type': value.toJson(),},
       _ => const <String, dynamic>{},
     },
-    'status': status.toJson(),
-    'logical_environment': logicalEnvironment,
-    ...switch (physicalEnvironment) {
-      SdkPresent<String>(value: final value) => {'physical_environment': value,},
+    ...switch (url) {
+      SdkPresent<String>(value: final value) => {'url': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (cluster) {
-      SdkPresent<String>(value: final value) => {'cluster': value,},
+    ...switch (username) {
+      SdkPresent<String?>(value: final value) => {'username': value,},
       _ => const <String, dynamic>{},
     },
-    'deployment_name': deploymentName,
-    ...switch (tags) {
-      SdkPresent<Map<String, String>>(value: final value) => {'tags': value,},
+    ...switch (replacesBase) {
+      SdkPresent<bool>(value: final value) => {'replaces_base': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (runtimeRisks) {
-      SdkPresent<List<OrgsCreateArtifactDeploymentRecordRequestBodyRuntimeRisksItem>>(value: final value) => {'runtime_risks': value.map((item) => item.toJson()).toList(),},
+    ...switch (encryptedValue) {
+      SdkPresent<String>(value: final value) => {'encrypted_value': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (githubRepository) {
-      SdkPresent<String>(value: final value) => {'github_repository': value,},
+    ...switch (keyId) {
+      SdkPresent<String>(value: final value) => {'key_id': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (returnRecords) {
-      SdkPresent<bool>(value: final value) => {'return_records': value,},
+    ...switch (visibility) {
+      SdkPresent<PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyVisibility>(value: final value) => {'visibility': value.toJson(),},
       _ => const <String, dynamic>{},
     },
-  };
-}
-
-class OrgsCreateArtifactDeploymentRecordResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The number of deployment records created
-  final int totalCount;
-  final SdkOptional<List<ArtifactDeploymentRecord>> deploymentRecords;
-
-  const OrgsCreateArtifactDeploymentRecordResponse({required this.totalCount, this.deploymentRecords = const SdkOmitted()});
-
-  OrgsCreateArtifactDeploymentRecordResponse Function({int totalCount, SdkOptional<List<ArtifactDeploymentRecord>> deploymentRecords}) get copyWith => _copyWith;
-
-  OrgsCreateArtifactDeploymentRecordResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? deploymentRecords = sdkOmittedValue}) => OrgsCreateArtifactDeploymentRecordResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    deploymentRecords: identical(deploymentRecords, sdkOmittedValue) ? this.deploymentRecords : deploymentRecords as SdkOptional<List<ArtifactDeploymentRecord>>,
-  );
-
-  factory OrgsCreateArtifactDeploymentRecordResponse.fromJson(Map<String, dynamic> json) => OrgsCreateArtifactDeploymentRecordResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    deploymentRecords: json['deployment_records'] != null ? SdkPresent(((json['deployment_records'] as List?)?.map((e) => ArtifactDeploymentRecord.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    ...switch (deploymentRecords) {
-      SdkPresent<List<ArtifactDeploymentRecord>>(value: final value) => {'deployment_records': value.map((item) => item.toJson()).toList(),},
+    ...switch (selectedRepositoryIds) {
+      SdkPresent<List<int>>(value: final value) => {'selected_repository_ids': value,},
       _ => const <String, dynamic>{},
     },
-  };
-}
-
-class OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItem {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The name of the artifact.
-  final String name;
-  /// The hex encoded digest of the artifact.
-  final String digest;
-  /// The artifact version.
-  final SdkOptional<String> version;
-  /// The deployment status of the artifact.
-  final SdkOptional<OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemStatus> status;
-  /// The unique identifier for the deployment represented by the new record. To accommodate differing containers and namespaces within a record set, the following format is recommended: {namespaceName}-{deploymentName}-{containerName}. The deployment_name must be unique across all entries in the deployments array.
-  final String deploymentName;
-  /// The name of the GitHub repository associated with the artifact. This should be used when there are no provenance attestations available for the artifact. The repository must belong to the organization specified in the path parameter. If a provenance attestation is available for the artifact, the API will use the repository information from the attestation instead of this parameter.
-  final SdkOptional<String> githubRepository;
-  /// Key-value pairs to tag the deployment record.
-  final SdkOptional<Map<String, String>> tags;
-  /// A list of runtime risks associated with the deployment.
-  final SdkOptional<List<OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemRuntimeRisksItem>> runtimeRisks;
-
-  const OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItem({required this.name, required this.digest, this.version = const SdkOmitted(), this.status = const SdkOmitted(), required this.deploymentName, this.githubRepository = const SdkOmitted(), this.tags = const SdkOmitted(), this.runtimeRisks = const SdkOmitted()});
-
-  OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItem Function({String name, String digest, SdkOptional<String> version, SdkOptional<OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemStatus> status, String deploymentName, SdkOptional<String> githubRepository, SdkOptional<Map<String, String>> tags, SdkOptional<List<OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemRuntimeRisksItem>> runtimeRisks}) get copyWith => _copyWith;
-
-  OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItem _copyWith({Object? name = sdkOmittedValue, Object? digest = sdkOmittedValue, Object? version = sdkOmittedValue, Object? status = sdkOmittedValue, Object? deploymentName = sdkOmittedValue, Object? githubRepository = sdkOmittedValue, Object? tags = sdkOmittedValue, Object? runtimeRisks = sdkOmittedValue}) => OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItem(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    digest: identical(digest, sdkOmittedValue) ? this.digest : digest as String,
-    version: identical(version, sdkOmittedValue) ? this.version : version as SdkOptional<String>,
-    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemStatus>,
-    deploymentName: identical(deploymentName, sdkOmittedValue) ? this.deploymentName : deploymentName as String,
-    githubRepository: identical(githubRepository, sdkOmittedValue) ? this.githubRepository : githubRepository as SdkOptional<String>,
-    tags: identical(tags, sdkOmittedValue) ? this.tags : tags as SdkOptional<Map<String, String>>,
-    runtimeRisks: identical(runtimeRisks, sdkOmittedValue) ? this.runtimeRisks : runtimeRisks as SdkOptional<List<OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemRuntimeRisksItem>>,
-  );
-
-  factory OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItem.fromJson(Map<String, dynamic> json) => OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItem(
-    name: (json['name'] as String?)!,
-    digest: (json['digest'] as String?)!,
-    version: json['version'] != null ? SdkPresent((json['version'] as String?)!) : const SdkOmitted(),
-    status: json['status'] != null ? SdkPresent((json['status'] != null ? OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemStatus.fromJson(json['status'] as String) : null)!) : const SdkOmitted(),
-    deploymentName: (json['deployment_name'] as String?)!,
-    githubRepository: json['github_repository'] != null ? SdkPresent((json['github_repository'] as String?)!) : const SdkOmitted(),
-    tags: json['tags'] != null ? SdkPresent((json['tags'] == null ? null : Map<String, dynamic>.from(json['tags'] as Map).map((key, value) => MapEntry(key, value as String)))!) : const SdkOmitted(),
-    runtimeRisks: json['runtime_risks'] != null ? SdkPresent(((json['runtime_risks'] as List?)?.map((e) => OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemRuntimeRisksItem.fromJson(e as String)).toList())!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    'name': name,
-    'digest': digest,
-    ...switch (version) {
-      SdkPresent<String>(value: final value) => {'version': value,},
+    ...switch (authType) {
+      SdkPresent<PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyAuthType>(value: final value) => {'auth_type': value.toJson(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (status) {
-      SdkPresent<OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemStatus>(value: final value) => {'status': value.toJson(),},
+    ...switch (tenantId) {
+      SdkPresent<String>(value: final value) => {'tenant_id': value,},
       _ => const <String, dynamic>{},
     },
-    'deployment_name': deploymentName,
-    ...switch (githubRepository) {
-      SdkPresent<String>(value: final value) => {'github_repository': value,},
+    ...switch (clientId) {
+      SdkPresent<String>(value: final value) => {'client_id': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (tags) {
-      SdkPresent<Map<String, String>>(value: final value) => {'tags': value,},
+    ...switch (awsRegion) {
+      SdkPresent<String>(value: final value) => {'aws_region': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (runtimeRisks) {
-      SdkPresent<List<OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemRuntimeRisksItem>>(value: final value) => {'runtime_risks': value.map((item) => item.toJson()).toList(),},
+    ...switch (accountId) {
+      SdkPresent<String>(value: final value) => {'account_id': value,},
       _ => const <String, dynamic>{},
     },
-  };
-}
-
-class OrgsSetClusterDeploymentRecordsRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The stage of the deployment.
-  final String logicalEnvironment;
-  /// The physical region of the deployment.
-  final SdkOptional<String> physicalEnvironment;
-  /// The list of deployments to record.
-  final List<OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItem> deployments;
-  /// When enabled, deployments associated with repositories the actor can write to are processed while deployments associated with repositories that cannot be resolved or written to by the actor are skipped and reported in the `errors` array. When false (the default), the endpoint returns an error if any targeted repository cannot be resolved, the actor lacks write access, or no matching attestation can be found.
-  final SdkOptional<bool> partialSuccess;
-  /// If true, the endpoint will return the set records in the response body
-  final SdkOptional<bool> returnRecords;
-
-  const OrgsSetClusterDeploymentRecordsRequestBody({required this.logicalEnvironment, this.physicalEnvironment = const SdkOmitted(), required this.deployments, this.partialSuccess = const SdkOmitted(), this.returnRecords = const SdkOmitted()});
-
-  OrgsSetClusterDeploymentRecordsRequestBody Function({String logicalEnvironment, SdkOptional<String> physicalEnvironment, List<OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItem> deployments, SdkOptional<bool> partialSuccess, SdkOptional<bool> returnRecords}) get copyWith => _copyWith;
-
-  OrgsSetClusterDeploymentRecordsRequestBody _copyWith({Object? logicalEnvironment = sdkOmittedValue, Object? physicalEnvironment = sdkOmittedValue, Object? deployments = sdkOmittedValue, Object? partialSuccess = sdkOmittedValue, Object? returnRecords = sdkOmittedValue}) => OrgsSetClusterDeploymentRecordsRequestBody(
-    logicalEnvironment: identical(logicalEnvironment, sdkOmittedValue) ? this.logicalEnvironment : logicalEnvironment as String,
-    physicalEnvironment: identical(physicalEnvironment, sdkOmittedValue) ? this.physicalEnvironment : physicalEnvironment as SdkOptional<String>,
-    deployments: identical(deployments, sdkOmittedValue) ? this.deployments : deployments as List<OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItem>,
-    partialSuccess: identical(partialSuccess, sdkOmittedValue) ? this.partialSuccess : partialSuccess as SdkOptional<bool>,
-    returnRecords: identical(returnRecords, sdkOmittedValue) ? this.returnRecords : returnRecords as SdkOptional<bool>,
-  );
-
-  factory OrgsSetClusterDeploymentRecordsRequestBody.fromJson(Map<String, dynamic> json) => OrgsSetClusterDeploymentRecordsRequestBody(
-    logicalEnvironment: (json['logical_environment'] as String?)!,
-    physicalEnvironment: json['physical_environment'] != null ? SdkPresent((json['physical_environment'] as String?)!) : const SdkOmitted(),
-    deployments: ((json['deployments'] as List?)?.map((e) => OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItem.fromJson(e as Map<String, dynamic>)).toList())!,
-    partialSuccess: json['partial_success'] != null ? SdkPresent((json['partial_success'] as bool?)!) : const SdkOmitted(),
-    returnRecords: json['return_records'] != null ? SdkPresent((json['return_records'] as bool?)!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    'logical_environment': logicalEnvironment,
-    ...switch (physicalEnvironment) {
-      SdkPresent<String>(value: final value) => {'physical_environment': value,},
+    ...switch (roleName) {
+      SdkPresent<String>(value: final value) => {'role_name': value,},
       _ => const <String, dynamic>{},
     },
-    'deployments': deployments.map((item) => item.toJson()).toList(),
-    ...switch (partialSuccess) {
-      SdkPresent<bool>(value: final value) => {'partial_success': value,},
+    ...switch (domain) {
+      SdkPresent<String>(value: final value) => {'domain': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (returnRecords) {
-      SdkPresent<bool>(value: final value) => {'return_records': value,},
+    ...switch (domainOwner) {
+      SdkPresent<String>(value: final value) => {'domain_owner': value,},
       _ => const <String, dynamic>{},
     },
-  };
-}
-
-class OrgsSetClusterDeploymentRecordsResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The number of deployment records created
-  final int totalCount;
-  final SdkOptional<List<ArtifactDeploymentRecord>> deploymentRecords;
-
-  const OrgsSetClusterDeploymentRecordsResponse({required this.totalCount, this.deploymentRecords = const SdkOmitted()});
-
-  OrgsSetClusterDeploymentRecordsResponse Function({int totalCount, SdkOptional<List<ArtifactDeploymentRecord>> deploymentRecords}) get copyWith => _copyWith;
-
-  OrgsSetClusterDeploymentRecordsResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? deploymentRecords = sdkOmittedValue}) => OrgsSetClusterDeploymentRecordsResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    deploymentRecords: identical(deploymentRecords, sdkOmittedValue) ? this.deploymentRecords : deploymentRecords as SdkOptional<List<ArtifactDeploymentRecord>>,
-  );
-
-  factory OrgsSetClusterDeploymentRecordsResponse.fromJson(Map<String, dynamic> json) => OrgsSetClusterDeploymentRecordsResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    deploymentRecords: json['deployment_records'] != null ? SdkPresent(((json['deployment_records'] as List?)?.map((e) => ArtifactDeploymentRecord.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    ...switch (deploymentRecords) {
-      SdkPresent<List<ArtifactDeploymentRecord>>(value: final value) => {'deployment_records': value.map((item) => item.toJson()).toList(),},
+    ...switch (jfrogOidcProviderName) {
+      SdkPresent<String>(value: final value) => {'jfrog_oidc_provider_name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (audience) {
+      SdkPresent<String>(value: final value) => {'audience': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (identityMappingName) {
+      SdkPresent<String>(value: final value) => {'identity_mapping_name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (namespace) {
+      SdkPresent<String>(value: final value) => {'namespace': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (serviceSlug) {
+      SdkPresent<String>(value: final value) => {'service_slug': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (apiHost) {
+      SdkPresent<String>(value: final value) => {'api_host': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (workloadIdentityProvider) {
+      SdkPresent<String>(value: final value) => {'workload_identity_provider': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (serviceAccount) {
+      SdkPresent<String>(value: final value) => {'service_account': value,},
       _ => const <String, dynamic>{},
     },
   };

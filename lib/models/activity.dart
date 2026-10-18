@@ -8,7 +8,6 @@ import 'shared.dart';
 import 'shared_issue.dart';
 import 'shared_nullable.dart';
 import 'shared_pull.dart';
-import 'shared_release.dart';
 import 'shared_repository.dart';
 import 'shared_simple.dart';
 

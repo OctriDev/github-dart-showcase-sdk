@@ -4,6 +4,38 @@
 part of 'repos_repository_rule.dart';
 
 // repos_repository_rule domain models (part 2)
+/// Parameters to be used for the branch_name_pattern rule
+class RepositoryRuleBranchNamePattern {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// Required enumerated value serialized in the `type` wire field.
+  final RepositoryRuleBranchNamePatternType type_;
+  /// Optional object value serialized in the `parameters` wire field.
+  final SdkOptional<RepositoryRuleBranchNamePatternParameters> parameters;
+
+  const RepositoryRuleBranchNamePattern({required this.type_, this.parameters = const SdkOmitted()});
+
+  RepositoryRuleBranchNamePattern Function({RepositoryRuleBranchNamePatternType type_, SdkOptional<RepositoryRuleBranchNamePatternParameters> parameters}) get copyWith => _copyWith;
+
+  RepositoryRuleBranchNamePattern _copyWith({Object? type_ = sdkOmittedValue, Object? parameters = sdkOmittedValue}) => RepositoryRuleBranchNamePattern(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as RepositoryRuleBranchNamePatternType,
+    parameters: identical(parameters, sdkOmittedValue) ? this.parameters : parameters as SdkOptional<RepositoryRuleBranchNamePatternParameters>,
+  );
+
+  factory RepositoryRuleBranchNamePattern.fromJson(Map<String, dynamic> json) => RepositoryRuleBranchNamePattern(
+    type_: (json['type'] != null ? RepositoryRuleBranchNamePatternType.fromJson(json['type'] as String) : null)!,
+    parameters: json['parameters'] != null ? SdkPresent((json['parameters'] != null ? RepositoryRuleBranchNamePatternParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    'type': type_.toJson(),
+    ...switch (parameters) {
+      SdkPresent<RepositoryRuleBranchNamePatternParameters>(value: final value) => {'parameters': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
+}
+
 /// Optional object value serialized in the `parameters` wire field.
 class RepositoryRuleCodeCoverageParameters {
   /// This model is constructed from named fields in one call.

@@ -4,6 +4,104 @@
 part of 'inline.dart';
 
 // Inline operation models (part 17)
+/// The mode of assigning new seats.
+final class CopilotOrganizationDetailsSeatManagementSetting {
+
+  final String value;
+
+  const CopilotOrganizationDetailsSeatManagementSetting._(this.value);
+
+  factory CopilotOrganizationDetailsSeatManagementSetting.fromJson(String value) => CopilotOrganizationDetailsSeatManagementSetting._(value);
+
+  static const assignAll = CopilotOrganizationDetailsSeatManagementSetting._('assign_all');
+  static const assignSelected = CopilotOrganizationDetailsSeatManagementSetting._('assign_selected');
+  static const disabled = CopilotOrganizationDetailsSeatManagementSetting._('disabled');
+  static const unconfigured = CopilotOrganizationDetailsSeatManagementSetting._('unconfigured');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is CopilotOrganizationDetailsSeatManagementSetting && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// The Copilot plan of the organization, or the parent enterprise, when applicable.
+final class CopilotSeatDetailsPlanType {
+
+  final String value;
+
+  const CopilotSeatDetailsPlanType._(this.value);
+
+  factory CopilotSeatDetailsPlanType.fromJson(String value) => CopilotSeatDetailsPlanType._(value);
+
+  static const business = CopilotSeatDetailsPlanType._('business');
+  static const enterprise = CopilotSeatDetailsPlanType._('enterprise');
+  static const unknown = CopilotSeatDetailsPlanType._('unknown');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is CopilotSeatDetailsPlanType && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// The base role that determines default permissions. - `no_access`: No default access - `reader`: Default read permissions - `writer`: Default write permissions (organization spaces only) - `admin`: Default admin permissions (organization spaces only)
+final class CopilotSpaceBaseRole {
+
+  final String value;
+
+  const CopilotSpaceBaseRole._(this.value);
+
+  factory CopilotSpaceBaseRole.fromJson(String value) => CopilotSpaceBaseRole._(value);
+
+  static const reader = CopilotSpaceBaseRole._('reader');
+  static const writer = CopilotSpaceBaseRole._('writer');
+  static const admin = CopilotSpaceBaseRole._('admin');
+  static const noAccess = CopilotSpaceBaseRole._('no_access');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is CopilotSpaceBaseRole && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// The type of resource.
+final class CopilotSpaceResourcesAttributesItemResourceType {
+
+  final String value;
+
+  const CopilotSpaceResourcesAttributesItemResourceType._(this.value);
+
+  factory CopilotSpaceResourcesAttributesItemResourceType.fromJson(String value) => CopilotSpaceResourcesAttributesItemResourceType._(value);
+
+  static const repository = CopilotSpaceResourcesAttributesItemResourceType._('repository');
+  static const githubFile = CopilotSpaceResourcesAttributesItemResourceType._('github_file');
+  static const freeText = CopilotSpaceResourcesAttributesItemResourceType._('free_text');
+  static const githubIssue = CopilotSpaceResourcesAttributesItemResourceType._('github_issue');
+  static const githubPullRequest = CopilotSpaceResourcesAttributesItemResourceType._('github_pull_request');
+  static const mediaContent = CopilotSpaceResourcesAttributesItemResourceType._('media_content');
+  static const uploadedTextFile = CopilotSpaceResourcesAttributesItemResourceType._('uploaded_text_file');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is CopilotSpaceResourcesAttributesItemResourceType && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
 /// The collaborator actor type.
 enum CopilotSpaceCollaboratorVariant0Variant1ActorType {
   user;
@@ -182,96 +280,6 @@ final class CreateBudgetBudgetBudgetTypeVariant0 {
   @override String toString() => value.toString();
 
   @override bool operator ==(Object other) => other is CreateBudgetBudgetBudgetTypeVariant0 && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// Optional enumerated value serialized in the `budget_type` wire field.
-final class CreateBudgetBudgetBudgetTypeVariant1 {
-
-  final String value;
-
-  const CreateBudgetBudgetBudgetTypeVariant1._(this.value);
-
-  factory CreateBudgetBudgetBudgetTypeVariant1.fromJson(String value) => CreateBudgetBudgetBudgetTypeVariant1._(value);
-
-  static const skupricing = CreateBudgetBudgetBudgetTypeVariant1._('SkuPricing');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is CreateBudgetBudgetBudgetTypeVariant1 && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The source type of the property
-final class CustomPropertySourceType {
-
-  final String value;
-
-  const CustomPropertySourceType._(this.value);
-
-  factory CustomPropertySourceType.fromJson(String value) => CustomPropertySourceType._(value);
-
-  static const organization = CustomPropertySourceType._('organization');
-  static const enterprise = CustomPropertySourceType._('enterprise');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is CustomPropertySourceType && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The type of the value for the property
-final class CustomPropertyValueType {
-
-  final String value;
-
-  const CustomPropertyValueType._(this.value);
-
-  factory CustomPropertyValueType.fromJson(String value) => CustomPropertyValueType._(value);
-
-  static const string = CustomPropertyValueType._('string');
-  static const singleSelect = CustomPropertyValueType._('single_select');
-  static const multiSelect = CustomPropertyValueType._('multi_select');
-  static const trueFalse = CustomPropertyValueType._('true_false');
-  static const url = CustomPropertyValueType._('url');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is CustomPropertyValueType && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// Who can edit the values of the property
-final class CustomPropertyValuesEditableBy {
-
-  final String value;
-
-  const CustomPropertyValuesEditableBy._(this.value);
-
-  factory CustomPropertyValuesEditableBy.fromJson(String value) => CustomPropertyValuesEditableBy._(value);
-
-  static const orgActors = CustomPropertyValuesEditableBy._('org_actors');
-  static const orgAndRepoActors = CustomPropertyValuesEditableBy._('org_and_repo_actors');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is CustomPropertyValuesEditableBy && other.value == value;
 
   @override int get hashCode => value.hashCode;
 

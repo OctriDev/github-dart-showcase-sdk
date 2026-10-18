@@ -4,6 +4,77 @@
 part of 'inline.dart';
 
 // Inline operation models (part 13)
+/// The reason for a failure of the variant analysis. This is only available if the variant analysis has failed.
+final class CodeScanningVariantAnalysisFailureReason {
+
+  final String value;
+
+  const CodeScanningVariantAnalysisFailureReason._(this.value);
+
+  factory CodeScanningVariantAnalysisFailureReason.fromJson(String value) => CodeScanningVariantAnalysisFailureReason._(value);
+
+  static const noReposQueried = CodeScanningVariantAnalysisFailureReason._('no_repos_queried');
+  static const actionsWorkflowRunFailed = CodeScanningVariantAnalysisFailureReason._('actions_workflow_run_failed');
+  static const internalError = CodeScanningVariantAnalysisFailureReason._('internal_error');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is CodeScanningVariantAnalysisFailureReason && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// Required enumerated value serialized in the `status` wire field.
+final class CodeScanningVariantAnalysisStatusb8ae78f8 {
+
+  final String value;
+
+  const CodeScanningVariantAnalysisStatusb8ae78f8._(this.value);
+
+  factory CodeScanningVariantAnalysisStatusb8ae78f8.fromJson(String value) => CodeScanningVariantAnalysisStatusb8ae78f8._(value);
+
+  static const inProgress = CodeScanningVariantAnalysisStatusb8ae78f8._('in_progress');
+  static const succeeded = CodeScanningVariantAnalysisStatusb8ae78f8._('succeeded');
+  static const failed = CodeScanningVariantAnalysisStatusb8ae78f8._('failed');
+  static const cancelled = CodeScanningVariantAnalysisStatusb8ae78f8._('cancelled');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is CodeScanningVariantAnalysisStatusb8ae78f8 && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// The enablement status of GitHub Advanced Security
+final class CodeSecurityConfigurationAdvancedSecurity {
+
+  final String value;
+
+  const CodeSecurityConfigurationAdvancedSecurity._(this.value);
+
+  factory CodeSecurityConfigurationAdvancedSecurity.fromJson(String value) => CodeSecurityConfigurationAdvancedSecurity._(value);
+
+  static const enabled = CodeSecurityConfigurationAdvancedSecurity._('enabled');
+  static const disabled = CodeSecurityConfigurationAdvancedSecurity._('disabled');
+  static const codeSecurity = CodeSecurityConfigurationAdvancedSecurity._('code_security');
+  static const secretProtection = CodeSecurityConfigurationAdvancedSecurity._('secret_protection');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is CodeSecurityConfigurationAdvancedSecurity && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
 /// The enablement status of code scanning default setup
 final class CodeSecurityConfigurationCodeScanningDefaultSetup {
 
@@ -206,75 +277,6 @@ final class CodeSecurityConfigurationEnforcement {
   @override String toString() => value.toString();
 
   @override bool operator ==(Object other) => other is CodeSecurityConfigurationEnforcement && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The enablement status of private vulnerability reporting
-final class CodeSecurityConfigurationPrivateVulnerabilityReporting {
-
-  final String value;
-
-  const CodeSecurityConfigurationPrivateVulnerabilityReporting._(this.value);
-
-  factory CodeSecurityConfigurationPrivateVulnerabilityReporting.fromJson(String value) => CodeSecurityConfigurationPrivateVulnerabilityReporting._(value);
-
-  static const enabled = CodeSecurityConfigurationPrivateVulnerabilityReporting._('enabled');
-  static const disabled = CodeSecurityConfigurationPrivateVulnerabilityReporting._('disabled');
-  static const notSet = CodeSecurityConfigurationPrivateVulnerabilityReporting._('not_set');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is CodeSecurityConfigurationPrivateVulnerabilityReporting && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The enablement status of secret scanning
-final class CodeSecurityConfigurationSecretScanning {
-
-  final String value;
-
-  const CodeSecurityConfigurationSecretScanning._(this.value);
-
-  factory CodeSecurityConfigurationSecretScanning.fromJson(String value) => CodeSecurityConfigurationSecretScanning._(value);
-
-  static const enabled = CodeSecurityConfigurationSecretScanning._('enabled');
-  static const disabled = CodeSecurityConfigurationSecretScanning._('disabled');
-  static const notSet = CodeSecurityConfigurationSecretScanning._('not_set');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is CodeSecurityConfigurationSecretScanning && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The enablement status of secret scanning delegated alert dismissal
-final class CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal {
-
-  final String value;
-
-  const CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal._(this.value);
-
-  factory CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal.fromJson(String value) => CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal._(value);
-
-  static const enabled = CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal._('enabled');
-  static const disabled = CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal._('disabled');
-  static const notSet = CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal._('not_set');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal && other.value == value;
 
   @override int get hashCode => value.hashCode;
 

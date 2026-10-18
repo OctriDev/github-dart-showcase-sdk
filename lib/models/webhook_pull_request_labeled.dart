@@ -34,4 +34,3 @@ part 'webhook_pull_request_labeled_part19.dart';
 part 'webhook_pull_request_labeled_part20.dart';
 part 'webhook_pull_request_labeled_part21.dart';
 part 'webhook_pull_request_labeled_part22.dart';
-part 'webhook_pull_request_labeled_part23.dart';

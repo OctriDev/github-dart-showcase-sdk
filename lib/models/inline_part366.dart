@@ -4,289 +4,277 @@
 part of 'inline.dart';
 
 // Inline operation models (part 366)
-class CopilotAddCopilotSeatsForTeamsRequestBody {
+class CampaignsUpdateCampaignRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// List of team names within the organization to which to grant access to GitHub Copilot.
-  final List<String> selectedTeams;
+  /// The name of the campaign
+  final SdkOptional<String> name;
+  /// A description for the campaign
+  final SdkOptional<String> description;
+  /// The logins of the users to set as the campaign managers. At this time, only a single manager can be supplied.
+  final SdkOptional<List<String>> managers;
+  /// The slugs of the teams to set as the campaign managers.
+  final SdkOptional<List<String>> teamManagers;
+  /// The end date and time of the campaign, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
+  final SdkOptional<String> endsAt;
+  /// The contact link of the campaign. Must be a URI.
+  final SdkOptional<String?> contactLink;
+  /// Indicates whether a campaign is open or closed
+  final SdkOptional<CampaignState> state;
 
-  const CopilotAddCopilotSeatsForTeamsRequestBody({required this.selectedTeams});
+  const CampaignsUpdateCampaignRequestBody({this.name = const SdkOmitted(), this.description = const SdkOmitted(), this.managers = const SdkOmitted(), this.teamManagers = const SdkOmitted(), this.endsAt = const SdkOmitted(), this.contactLink = const SdkOmitted(), this.state = const SdkOmitted()});
 
-  CopilotAddCopilotSeatsForTeamsRequestBody Function({List<String> selectedTeams}) get copyWith => _copyWith;
+  CampaignsUpdateCampaignRequestBody Function({SdkOptional<String> name, SdkOptional<String> description, SdkOptional<List<String>> managers, SdkOptional<List<String>> teamManagers, SdkOptional<String> endsAt, SdkOptional<String?> contactLink, SdkOptional<CampaignState> state}) get copyWith => _copyWith;
 
-  CopilotAddCopilotSeatsForTeamsRequestBody _copyWith({Object? selectedTeams = sdkOmittedValue}) => CopilotAddCopilotSeatsForTeamsRequestBody(
-    selectedTeams: identical(selectedTeams, sdkOmittedValue) ? this.selectedTeams : selectedTeams as List<String>,
+  CampaignsUpdateCampaignRequestBody _copyWith({Object? name = sdkOmittedValue, Object? description = sdkOmittedValue, Object? managers = sdkOmittedValue, Object? teamManagers = sdkOmittedValue, Object? endsAt = sdkOmittedValue, Object? contactLink = sdkOmittedValue, Object? state = sdkOmittedValue}) => CampaignsUpdateCampaignRequestBody(
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
+    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String>,
+    managers: identical(managers, sdkOmittedValue) ? this.managers : managers as SdkOptional<List<String>>,
+    teamManagers: identical(teamManagers, sdkOmittedValue) ? this.teamManagers : teamManagers as SdkOptional<List<String>>,
+    endsAt: identical(endsAt, sdkOmittedValue) ? this.endsAt : endsAt as SdkOptional<String>,
+    contactLink: identical(contactLink, sdkOmittedValue) ? this.contactLink : contactLink as SdkOptional<String?>,
+    state: identical(state, sdkOmittedValue) ? this.state : state as SdkOptional<CampaignState>,
   );
 
-  factory CopilotAddCopilotSeatsForTeamsRequestBody.fromJson(Map<String, dynamic> json) => CopilotAddCopilotSeatsForTeamsRequestBody(
-    selectedTeams: ((json['selected_teams'] as List?)?.map((e) => e as String).toList())!,
+  factory CampaignsUpdateCampaignRequestBody.fromJson(Map<String, dynamic> json) => CampaignsUpdateCampaignRequestBody(
+    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
+    description: json['description'] != null ? SdkPresent((json['description'] as String?)!) : const SdkOmitted(),
+    managers: json['managers'] != null ? SdkPresent(((json['managers'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    teamManagers: json['team_managers'] != null ? SdkPresent(((json['team_managers'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    endsAt: json['ends_at'] != null ? SdkPresent((json['ends_at'] as String?)!) : const SdkOmitted(),
+    contactLink: json.containsKey('contact_link') ? SdkPresent(json['contact_link'] as String?) : const SdkOmitted(),
+    state: json['state'] != null ? SdkPresent((json['state'] != null ? CampaignState.fromJson(json['state'] as String) : null)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    'selected_teams': selectedTeams,
-  };
-}
-
-/// The total number of seats created for members of the specified team(s).
-class CopilotAddCopilotSeatsForTeamsResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final int seatsCreated;
-
-  const CopilotAddCopilotSeatsForTeamsResponse({required this.seatsCreated});
-
-  CopilotAddCopilotSeatsForTeamsResponse Function({int seatsCreated}) get copyWith => _copyWith;
-
-  CopilotAddCopilotSeatsForTeamsResponse _copyWith({Object? seatsCreated = sdkOmittedValue}) => CopilotAddCopilotSeatsForTeamsResponse(
-    seatsCreated: identical(seatsCreated, sdkOmittedValue) ? this.seatsCreated : seatsCreated as int,
-  );
-
-  factory CopilotAddCopilotSeatsForTeamsResponse.fromJson(Map<String, dynamic> json) => CopilotAddCopilotSeatsForTeamsResponse(
-    seatsCreated: ((json['seats_created'] as num?)?.toInt())!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'seats_created': seatsCreated,
-  };
-}
-
-class CopilotCancelCopilotSeatAssignmentForTeamsRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The names of teams from which to revoke access to GitHub Copilot.
-  final List<String> selectedTeams;
-
-  const CopilotCancelCopilotSeatAssignmentForTeamsRequestBody({required this.selectedTeams});
-
-  CopilotCancelCopilotSeatAssignmentForTeamsRequestBody Function({List<String> selectedTeams}) get copyWith => _copyWith;
-
-  CopilotCancelCopilotSeatAssignmentForTeamsRequestBody _copyWith({Object? selectedTeams = sdkOmittedValue}) => CopilotCancelCopilotSeatAssignmentForTeamsRequestBody(
-    selectedTeams: identical(selectedTeams, sdkOmittedValue) ? this.selectedTeams : selectedTeams as List<String>,
-  );
-
-  factory CopilotCancelCopilotSeatAssignmentForTeamsRequestBody.fromJson(Map<String, dynamic> json) => CopilotCancelCopilotSeatAssignmentForTeamsRequestBody(
-    selectedTeams: ((json['selected_teams'] as List?)?.map((e) => e as String).toList())!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'selected_teams': selectedTeams,
-  };
-}
-
-/// The total number of seats set to "pending cancellation" for members of the specified team(s).
-class CopilotCancelCopilotSeatAssignmentForTeamsResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final int seatsCancelled;
-
-  const CopilotCancelCopilotSeatAssignmentForTeamsResponse({required this.seatsCancelled});
-
-  CopilotCancelCopilotSeatAssignmentForTeamsResponse Function({int seatsCancelled}) get copyWith => _copyWith;
-
-  CopilotCancelCopilotSeatAssignmentForTeamsResponse _copyWith({Object? seatsCancelled = sdkOmittedValue}) => CopilotCancelCopilotSeatAssignmentForTeamsResponse(
-    seatsCancelled: identical(seatsCancelled, sdkOmittedValue) ? this.seatsCancelled : seatsCancelled as int,
-  );
-
-  factory CopilotCancelCopilotSeatAssignmentForTeamsResponse.fromJson(Map<String, dynamic> json) => CopilotCancelCopilotSeatAssignmentForTeamsResponse(
-    seatsCancelled: ((json['seats_cancelled'] as num?)?.toInt())!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'seats_cancelled': seatsCancelled,
-  };
-}
-
-class CopilotAddCopilotSeatsForUsersRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The usernames of the organization members to be granted access to GitHub Copilot.
-  final List<String> selectedUsernames;
-
-  const CopilotAddCopilotSeatsForUsersRequestBody({required this.selectedUsernames});
-
-  CopilotAddCopilotSeatsForUsersRequestBody Function({List<String> selectedUsernames}) get copyWith => _copyWith;
-
-  CopilotAddCopilotSeatsForUsersRequestBody _copyWith({Object? selectedUsernames = sdkOmittedValue}) => CopilotAddCopilotSeatsForUsersRequestBody(
-    selectedUsernames: identical(selectedUsernames, sdkOmittedValue) ? this.selectedUsernames : selectedUsernames as List<String>,
-  );
-
-  factory CopilotAddCopilotSeatsForUsersRequestBody.fromJson(Map<String, dynamic> json) => CopilotAddCopilotSeatsForUsersRequestBody(
-    selectedUsernames: ((json['selected_usernames'] as List?)?.map((e) => e as String).toList())!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'selected_usernames': selectedUsernames,
-  };
-}
-
-/// The total number of seats created for the specified user(s).
-class CopilotAddCopilotSeatsForUsersResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final int seatsCreated;
-
-  const CopilotAddCopilotSeatsForUsersResponse({required this.seatsCreated});
-
-  CopilotAddCopilotSeatsForUsersResponse Function({int seatsCreated}) get copyWith => _copyWith;
-
-  CopilotAddCopilotSeatsForUsersResponse _copyWith({Object? seatsCreated = sdkOmittedValue}) => CopilotAddCopilotSeatsForUsersResponse(
-    seatsCreated: identical(seatsCreated, sdkOmittedValue) ? this.seatsCreated : seatsCreated as int,
-  );
-
-  factory CopilotAddCopilotSeatsForUsersResponse.fromJson(Map<String, dynamic> json) => CopilotAddCopilotSeatsForUsersResponse(
-    seatsCreated: ((json['seats_created'] as num?)?.toInt())!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'seats_created': seatsCreated,
-  };
-}
-
-class CopilotCancelCopilotSeatAssignmentForUsersRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The usernames of the organization members for which to revoke access to GitHub Copilot.
-  final List<String> selectedUsernames;
-
-  const CopilotCancelCopilotSeatAssignmentForUsersRequestBody({required this.selectedUsernames});
-
-  CopilotCancelCopilotSeatAssignmentForUsersRequestBody Function({List<String> selectedUsernames}) get copyWith => _copyWith;
-
-  CopilotCancelCopilotSeatAssignmentForUsersRequestBody _copyWith({Object? selectedUsernames = sdkOmittedValue}) => CopilotCancelCopilotSeatAssignmentForUsersRequestBody(
-    selectedUsernames: identical(selectedUsernames, sdkOmittedValue) ? this.selectedUsernames : selectedUsernames as List<String>,
-  );
-
-  factory CopilotCancelCopilotSeatAssignmentForUsersRequestBody.fromJson(Map<String, dynamic> json) => CopilotCancelCopilotSeatAssignmentForUsersRequestBody(
-    selectedUsernames: ((json['selected_usernames'] as List?)?.map((e) => e as String).toList())!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'selected_usernames': selectedUsernames,
-  };
-}
-
-/// The total number of seats set to "pending cancellation" for the specified users.
-class CopilotCancelCopilotSeatAssignmentForUsersResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final int seatsCancelled;
-
-  const CopilotCancelCopilotSeatAssignmentForUsersResponse({required this.seatsCancelled});
-
-  CopilotCancelCopilotSeatAssignmentForUsersResponse Function({int seatsCancelled}) get copyWith => _copyWith;
-
-  CopilotCancelCopilotSeatAssignmentForUsersResponse _copyWith({Object? seatsCancelled = sdkOmittedValue}) => CopilotCancelCopilotSeatAssignmentForUsersResponse(
-    seatsCancelled: identical(seatsCancelled, sdkOmittedValue) ? this.seatsCancelled : seatsCancelled as int,
-  );
-
-  factory CopilotCancelCopilotSeatAssignmentForUsersResponse.fromJson(Map<String, dynamic> json) => CopilotCancelCopilotSeatAssignmentForUsersResponse(
-    seatsCancelled: ((json['seats_cancelled'] as num?)?.toInt())!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'seats_cancelled': seatsCancelled,
-  };
-}
-
-class CopilotGetCopilotCodingAgentPermissionsOrganizationResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The policy for which repositories can use Copilot cloud agent. Can be one of `all`, `selected`, or `none`.
-  final CopilotGetCopilotCodingAgentPermissionsOrganizationResponseEnabledRepositories enabledRepositories;
-  /// The URL for the selected repositories endpoint. Only present when `enabled_repositories` is `selected`.
-  final SdkOptional<String> selectedRepositoriesUrl;
-
-  const CopilotGetCopilotCodingAgentPermissionsOrganizationResponse({required this.enabledRepositories, this.selectedRepositoriesUrl = const SdkOmitted()});
-
-  CopilotGetCopilotCodingAgentPermissionsOrganizationResponse Function({CopilotGetCopilotCodingAgentPermissionsOrganizationResponseEnabledRepositories enabledRepositories, SdkOptional<String> selectedRepositoriesUrl}) get copyWith => _copyWith;
-
-  CopilotGetCopilotCodingAgentPermissionsOrganizationResponse _copyWith({Object? enabledRepositories = sdkOmittedValue, Object? selectedRepositoriesUrl = sdkOmittedValue}) => CopilotGetCopilotCodingAgentPermissionsOrganizationResponse(
-    enabledRepositories: identical(enabledRepositories, sdkOmittedValue) ? this.enabledRepositories : enabledRepositories as CopilotGetCopilotCodingAgentPermissionsOrganizationResponseEnabledRepositories,
-    selectedRepositoriesUrl: identical(selectedRepositoriesUrl, sdkOmittedValue) ? this.selectedRepositoriesUrl : selectedRepositoriesUrl as SdkOptional<String>,
-  );
-
-  factory CopilotGetCopilotCodingAgentPermissionsOrganizationResponse.fromJson(Map<String, dynamic> json) => CopilotGetCopilotCodingAgentPermissionsOrganizationResponse(
-    enabledRepositories: (json['enabled_repositories'] != null ? CopilotGetCopilotCodingAgentPermissionsOrganizationResponseEnabledRepositories.fromJson(json['enabled_repositories'] as String) : null)!,
-    selectedRepositoriesUrl: json['selected_repositories_url'] != null ? SdkPresent((json['selected_repositories_url'] as String?)!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    'enabled_repositories': enabledRepositories.toJson(),
-    ...switch (selectedRepositoriesUrl) {
-      SdkPresent<String>(value: final value) => {'selected_repositories_url': value,},
+    ...switch (name) {
+      SdkPresent<String>(value: final value) => {'name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (description) {
+      SdkPresent<String>(value: final value) => {'description': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (managers) {
+      SdkPresent<List<String>>(value: final value) => {'managers': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (teamManagers) {
+      SdkPresent<List<String>>(value: final value) => {'team_managers': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (endsAt) {
+      SdkPresent<String>(value: final value) => {'ends_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (contactLink) {
+      SdkPresent<String?>(value: final value) => {'contact_link': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (state) {
+      SdkPresent<CampaignState>(value: final value) => {'state': value.toJson(),},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-class CopilotSetCopilotCodingAgentPermissionsOrganizationRequestBody {
+class CodeScanningUpdateAlertRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The policy for which repositories can use Copilot cloud agent. Can be one of `all`, `selected`, or `none`.
-  final CopilotSetCopilotCodingAgentPermissionsOrganizationRequestBodyEnabledRepositories enabledRepositories;
+  /// Sets the state of the code scanning alert. You must provide `dismissed_reason` when you set the state to `dismissed`.
+  final SdkOptional<CodeScanningAlertSetState> state;
+  /// **Required when the state is dismissed.** The reason for dismissing or closing the alert.
+  final SdkOptional<CodeScanningAlertDismissedReason?> dismissedReason;
+  /// The dismissal comment associated with the dismissal of the alert.
+  final SdkOptional<String?> dismissedComment;
+  /// If `true`, attempt to create an alert dismissal request.
+  final SdkOptional<bool> createRequest;
+  /// The list of users to assign to the code scanning alert. An empty array unassigns all previous assignees from the alert.
+  final SdkOptional<List<String>> assignees;
 
-  const CopilotSetCopilotCodingAgentPermissionsOrganizationRequestBody({required this.enabledRepositories});
+  const CodeScanningUpdateAlertRequestBody({this.state = const SdkOmitted(), this.dismissedReason = const SdkOmitted(), this.dismissedComment = const SdkOmitted(), this.createRequest = const SdkOmitted(), this.assignees = const SdkOmitted()});
 
-  CopilotSetCopilotCodingAgentPermissionsOrganizationRequestBody Function({CopilotSetCopilotCodingAgentPermissionsOrganizationRequestBodyEnabledRepositories enabledRepositories}) get copyWith => _copyWith;
+  CodeScanningUpdateAlertRequestBody Function({SdkOptional<CodeScanningAlertSetState> state, SdkOptional<CodeScanningAlertDismissedReason?> dismissedReason, SdkOptional<String?> dismissedComment, SdkOptional<bool> createRequest, SdkOptional<List<String>> assignees}) get copyWith => _copyWith;
 
-  CopilotSetCopilotCodingAgentPermissionsOrganizationRequestBody _copyWith({Object? enabledRepositories = sdkOmittedValue}) => CopilotSetCopilotCodingAgentPermissionsOrganizationRequestBody(
-    enabledRepositories: identical(enabledRepositories, sdkOmittedValue) ? this.enabledRepositories : enabledRepositories as CopilotSetCopilotCodingAgentPermissionsOrganizationRequestBodyEnabledRepositories,
+  CodeScanningUpdateAlertRequestBody _copyWith({Object? state = sdkOmittedValue, Object? dismissedReason = sdkOmittedValue, Object? dismissedComment = sdkOmittedValue, Object? createRequest = sdkOmittedValue, Object? assignees = sdkOmittedValue}) => CodeScanningUpdateAlertRequestBody(
+    state: identical(state, sdkOmittedValue) ? this.state : state as SdkOptional<CodeScanningAlertSetState>,
+    dismissedReason: identical(dismissedReason, sdkOmittedValue) ? this.dismissedReason : dismissedReason as SdkOptional<CodeScanningAlertDismissedReason?>,
+    dismissedComment: identical(dismissedComment, sdkOmittedValue) ? this.dismissedComment : dismissedComment as SdkOptional<String?>,
+    createRequest: identical(createRequest, sdkOmittedValue) ? this.createRequest : createRequest as SdkOptional<bool>,
+    assignees: identical(assignees, sdkOmittedValue) ? this.assignees : assignees as SdkOptional<List<String>>,
   );
 
-  factory CopilotSetCopilotCodingAgentPermissionsOrganizationRequestBody.fromJson(Map<String, dynamic> json) => CopilotSetCopilotCodingAgentPermissionsOrganizationRequestBody(
-    enabledRepositories: (json['enabled_repositories'] != null ? CopilotSetCopilotCodingAgentPermissionsOrganizationRequestBodyEnabledRepositories.fromJson(json['enabled_repositories'] as String) : null)!,
+  factory CodeScanningUpdateAlertRequestBody.fromJson(Map<String, dynamic> json) => CodeScanningUpdateAlertRequestBody(
+    state: json['state'] != null ? SdkPresent((json['state'] != null ? CodeScanningAlertSetState.fromJson(json['state'] as String) : null)!) : const SdkOmitted(),
+    dismissedReason: json.containsKey('dismissed_reason') ? SdkPresent(json['dismissed_reason'] != null ? CodeScanningAlertDismissedReason.fromJson(json['dismissed_reason'] as String) : null) : const SdkOmitted(),
+    dismissedComment: json.containsKey('dismissed_comment') ? SdkPresent(json['dismissed_comment'] as String?) : const SdkOmitted(),
+    createRequest: json['create_request'] != null ? SdkPresent((json['create_request'] as bool?)!) : const SdkOmitted(),
+    assignees: json['assignees'] != null ? SdkPresent(((json['assignees'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    'enabled_repositories': enabledRepositories.toJson(),
+    ...switch (state) {
+      SdkPresent<CodeScanningAlertSetState>(value: final value) => {'state': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (dismissedReason) {
+      SdkPresent<CodeScanningAlertDismissedReason?>(value: final value) => {'dismissed_reason': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (dismissedComment) {
+      SdkPresent<String?>(value: final value) => {'dismissed_comment': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (createRequest) {
+      SdkPresent<bool>(value: final value) => {'create_request': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (assignees) {
+      SdkPresent<List<String>>(value: final value) => {'assignees': value,},
+      _ => const <String, dynamic>{},
+    },
   };
 }
 
-class CopilotListCopilotCodingAgentSelectedRepositoriesForOrganizationResponse {
+class CodeScanningCreateVariantAnalysisRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The language targeted by the CodeQL query
+  final CodeScanningVariantAnalysisLanguage language;
+  /// A Base64-encoded tarball containing a CodeQL query and all its dependencies
+  final String queryPack;
+  /// List of repository names (in the form `owner/repo-name`) to run the query against. Precisely one property from `repositories`, `repository_lists` and `repository_owners` is required.
+  final SdkOptional<List<String>> repositories;
+  /// List of repository lists to run the query against. Precisely one property from `repositories`, `repository_lists` and `repository_owners` is required.
+  final SdkOptional<List<String>> repositoryLists;
+  /// List of organization or user names whose repositories the query should be run against. Precisely one property from `repositories`, `repository_lists` and `repository_owners` is required.
+  final SdkOptional<List<String>> repositoryOwners;
+
+  const CodeScanningCreateVariantAnalysisRequestBody({required this.language, required this.queryPack, this.repositories = const SdkOmitted(), this.repositoryLists = const SdkOmitted(), this.repositoryOwners = const SdkOmitted()});
+
+  CodeScanningCreateVariantAnalysisRequestBody Function({CodeScanningVariantAnalysisLanguage language, String queryPack, SdkOptional<List<String>> repositories, SdkOptional<List<String>> repositoryLists, SdkOptional<List<String>> repositoryOwners}) get copyWith => _copyWith;
+
+  CodeScanningCreateVariantAnalysisRequestBody _copyWith({Object? language = sdkOmittedValue, Object? queryPack = sdkOmittedValue, Object? repositories = sdkOmittedValue, Object? repositoryLists = sdkOmittedValue, Object? repositoryOwners = sdkOmittedValue}) => CodeScanningCreateVariantAnalysisRequestBody(
+    language: identical(language, sdkOmittedValue) ? this.language : language as CodeScanningVariantAnalysisLanguage,
+    queryPack: identical(queryPack, sdkOmittedValue) ? this.queryPack : queryPack as String,
+    repositories: identical(repositories, sdkOmittedValue) ? this.repositories : repositories as SdkOptional<List<String>>,
+    repositoryLists: identical(repositoryLists, sdkOmittedValue) ? this.repositoryLists : repositoryLists as SdkOptional<List<String>>,
+    repositoryOwners: identical(repositoryOwners, sdkOmittedValue) ? this.repositoryOwners : repositoryOwners as SdkOptional<List<String>>,
+  );
+
+  factory CodeScanningCreateVariantAnalysisRequestBody.fromJson(Map<String, dynamic> json) => CodeScanningCreateVariantAnalysisRequestBody(
+    language: (json['language'] != null ? CodeScanningVariantAnalysisLanguage.fromJson(json['language'] as String) : null)!,
+    queryPack: (json['query_pack'] as String?)!,
+    repositories: json['repositories'] != null ? SdkPresent(((json['repositories'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    repositoryLists: json['repository_lists'] != null ? SdkPresent(((json['repository_lists'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    repositoryOwners: json['repository_owners'] != null ? SdkPresent(((json['repository_owners'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    'language': language.toJson(),
+    'query_pack': queryPack,
+    ...switch (repositories) {
+      SdkPresent<List<String>>(value: final value) => {'repositories': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (repositoryLists) {
+      SdkPresent<List<String>>(value: final value) => {'repository_lists': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (repositoryOwners) {
+      SdkPresent<List<String>>(value: final value) => {'repository_owners': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
+}
+
+class CodeScanningUploadSarifRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The SHA of the commit to which the analysis you are uploading relates.
+  final String commitSha;
+  /// The full Git reference, formatted as `refs/heads/&lt;branch name&gt;`, `refs/tags/&lt;tag&gt;`, `refs/pull/&lt;number&gt;/merge`, or `refs/pull/&lt;number&gt;/head`.
+  final String ref;
+  /// A Base64 string representing the SARIF file to upload. You must first compress your SARIF file using [`gzip`](http://www.gnu.org/software/gzip/manual/gzip.html) and then translate the contents of the file into a Base64 encoding string. For more information, see "[SARIF support for code scanning](https://docs.github.com/code-security/secure-coding/sarif-support-for-code-scanning)."
+  final String sarif;
+  /// The base directory used in the analysis, as it appears in the SARIF file. This property is used to convert file paths from absolute to relative, so that alerts can be mapped to their correct location in the repository.
+  final SdkOptional<String> checkoutUri;
+  /// The time that the analysis run began. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
+  final SdkOptional<String> startedAt;
+  /// The name of the tool used to generate the code scanning analysis. If this parameter is not used, the tool name defaults to "API". If the uploaded SARIF contains a tool GUID, this will be available for filtering using the `tool_guid` parameter of operations such as `GET /repos/{owner}/{repo}/code-scanning/alerts`.
+  final SdkOptional<String> toolName;
+  /// Whether the SARIF file will be validated according to the code scanning specifications. This parameter is intended to help integrators ensure that the uploaded SARIF files are correctly rendered by code scanning.
+  final SdkOptional<bool> validate;
+
+  const CodeScanningUploadSarifRequestBody({required this.commitSha, required this.ref, required this.sarif, this.checkoutUri = const SdkOmitted(), this.startedAt = const SdkOmitted(), this.toolName = const SdkOmitted(), this.validate = const SdkOmitted()});
+
+  CodeScanningUploadSarifRequestBody Function({String commitSha, String ref, String sarif, SdkOptional<String> checkoutUri, SdkOptional<String> startedAt, SdkOptional<String> toolName, SdkOptional<bool> validate}) get copyWith => _copyWith;
+
+  CodeScanningUploadSarifRequestBody _copyWith({Object? commitSha = sdkOmittedValue, Object? ref = sdkOmittedValue, Object? sarif = sdkOmittedValue, Object? checkoutUri = sdkOmittedValue, Object? startedAt = sdkOmittedValue, Object? toolName = sdkOmittedValue, Object? validate = sdkOmittedValue}) => CodeScanningUploadSarifRequestBody(
+    commitSha: identical(commitSha, sdkOmittedValue) ? this.commitSha : commitSha as String,
+    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+    sarif: identical(sarif, sdkOmittedValue) ? this.sarif : sarif as String,
+    checkoutUri: identical(checkoutUri, sdkOmittedValue) ? this.checkoutUri : checkoutUri as SdkOptional<String>,
+    startedAt: identical(startedAt, sdkOmittedValue) ? this.startedAt : startedAt as SdkOptional<String>,
+    toolName: identical(toolName, sdkOmittedValue) ? this.toolName : toolName as SdkOptional<String>,
+    validate: identical(validate, sdkOmittedValue) ? this.validate : validate as SdkOptional<bool>,
+  );
+
+  factory CodeScanningUploadSarifRequestBody.fromJson(Map<String, dynamic> json) => CodeScanningUploadSarifRequestBody(
+    commitSha: (json['commit_sha'] as String?)!,
+    ref: (json['ref'] as String?)!,
+    sarif: (json['sarif'] as String?)!,
+    checkoutUri: json['checkout_uri'] != null ? SdkPresent((json['checkout_uri'] as String?)!) : const SdkOmitted(),
+    startedAt: json['started_at'] != null ? SdkPresent((json['started_at'] as String?)!) : const SdkOmitted(),
+    toolName: json['tool_name'] != null ? SdkPresent((json['tool_name'] as String?)!) : const SdkOmitted(),
+    validate: json['validate'] != null ? SdkPresent((json['validate'] as bool?)!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    'commit_sha': commitSha,
+    'ref': ref,
+    'sarif': sarif,
+    ...switch (checkoutUri) {
+      SdkPresent<String>(value: final value) => {'checkout_uri': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (startedAt) {
+      SdkPresent<String>(value: final value) => {'started_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (toolName) {
+      SdkPresent<String>(value: final value) => {'tool_name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (validate) {
+      SdkPresent<bool>(value: final value) => {'validate': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
+}
+
+class CodespacesListInOrganizationResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   final int totalCount;
-  final List<MinimalRepository> repositories;
+  final List<Codespace> codespaces;
 
-  const CopilotListCopilotCodingAgentSelectedRepositoriesForOrganizationResponse({required this.totalCount, required this.repositories});
+  const CodespacesListInOrganizationResponse({required this.totalCount, required this.codespaces});
 
-  CopilotListCopilotCodingAgentSelectedRepositoriesForOrganizationResponse Function({int totalCount, List<MinimalRepository> repositories}) get copyWith => _copyWith;
+  CodespacesListInOrganizationResponse Function({int totalCount, List<Codespace> codespaces}) get copyWith => _copyWith;
 
-  CopilotListCopilotCodingAgentSelectedRepositoriesForOrganizationResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? repositories = sdkOmittedValue}) => CopilotListCopilotCodingAgentSelectedRepositoriesForOrganizationResponse(
+  CodespacesListInOrganizationResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? codespaces = sdkOmittedValue}) => CodespacesListInOrganizationResponse(
     totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    repositories: identical(repositories, sdkOmittedValue) ? this.repositories : repositories as List<MinimalRepository>,
+    codespaces: identical(codespaces, sdkOmittedValue) ? this.codespaces : codespaces as List<Codespace>,
   );
 
-  factory CopilotListCopilotCodingAgentSelectedRepositoriesForOrganizationResponse.fromJson(Map<String, dynamic> json) => CopilotListCopilotCodingAgentSelectedRepositoriesForOrganizationResponse(
+  factory CodespacesListInOrganizationResponse.fromJson(Map<String, dynamic> json) => CodespacesListInOrganizationResponse(
     totalCount: ((json['total_count'] as num?)?.toInt())!,
-    repositories: ((json['repositories'] as List?)?.map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList())!,
+    codespaces: ((json['codespaces'] as List?)?.map((e) => Codespace.fromJson(e as Map<String, dynamic>)).toList())!,
   );
 
   Map<String, dynamic> toJson() => {
     'total_count': totalCount,
-    'repositories': repositories.map((item) => item.toJson()).toList(),
-  };
-}
-
-class CopilotSetCopilotCodingAgentSelectedRepositoriesForOrganizationRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// List of repository IDs to enable for Copilot cloud agent.
-  final List<int> selectedRepositoryIds;
-
-  const CopilotSetCopilotCodingAgentSelectedRepositoriesForOrganizationRequestBody({required this.selectedRepositoryIds});
-
-  CopilotSetCopilotCodingAgentSelectedRepositoriesForOrganizationRequestBody Function({List<int> selectedRepositoryIds}) get copyWith => _copyWith;
-
-  CopilotSetCopilotCodingAgentSelectedRepositoriesForOrganizationRequestBody _copyWith({Object? selectedRepositoryIds = sdkOmittedValue}) => CopilotSetCopilotCodingAgentSelectedRepositoriesForOrganizationRequestBody(
-    selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue) ? this.selectedRepositoryIds : selectedRepositoryIds as List<int>,
-  );
-
-  factory CopilotSetCopilotCodingAgentSelectedRepositoriesForOrganizationRequestBody.fromJson(Map<String, dynamic> json) => CopilotSetCopilotCodingAgentSelectedRepositoriesForOrganizationRequestBody(
-    selectedRepositoryIds: ((json['selected_repository_ids'] as List?)?.map((e) => (e as num).toInt()).toList())!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'selected_repository_ids': selectedRepositoryIds,
+    'codespaces': codespaces.map((item) => item.toJson()).toList(),
   };
 }

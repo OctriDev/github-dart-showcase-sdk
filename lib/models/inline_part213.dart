@@ -4,277 +4,269 @@
 part of 'inline.dart';
 
 // Inline operation models (part 213)
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookRepositoryVulnerabilityAlertDismissAction {
-
-  final String value;
-
-  const WebhookRepositoryVulnerabilityAlertDismissAction._(this.value);
-
-  factory WebhookRepositoryVulnerabilityAlertDismissAction.fromJson(String value) => WebhookRepositoryVulnerabilityAlertDismissAction._(value);
-
-  static const dismiss = WebhookRepositoryVulnerabilityAlertDismissAction._('dismiss');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is WebhookRepositoryVulnerabilityAlertDismissAction && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhookRepositoryVulnerabilityAlertDismissAlertDismisserType {
-
-  final String value;
-
-  const WebhookRepositoryVulnerabilityAlertDismissAlertDismisserType._(this.value);
-
-  factory WebhookRepositoryVulnerabilityAlertDismissAlertDismisserType.fromJson(String value) => WebhookRepositoryVulnerabilityAlertDismissAlertDismisserType._(value);
-
-  static const bot = WebhookRepositoryVulnerabilityAlertDismissAlertDismisserType._('Bot');
-  static const user = WebhookRepositoryVulnerabilityAlertDismissAlertDismisserType._('User');
-  static const organization = WebhookRepositoryVulnerabilityAlertDismissAlertDismisserType._('Organization');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is WebhookRepositoryVulnerabilityAlertDismissAlertDismisserType && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
 /// Required enumerated value serialized in the `state` wire field.
-final class WebhookRepositoryVulnerabilityAlertDismissAlertState {
+final class WorkflowState {
 
   final String value;
 
-  const WebhookRepositoryVulnerabilityAlertDismissAlertState._(this.value);
+  const WorkflowState._(this.value);
 
-  factory WebhookRepositoryVulnerabilityAlertDismissAlertState.fromJson(String value) => WebhookRepositoryVulnerabilityAlertDismissAlertState._(value);
+  factory WorkflowState.fromJson(String value) => WorkflowState._(value);
 
-  static const dismissed = WebhookRepositoryVulnerabilityAlertDismissAlertState._('dismissed');
+  static const active = WorkflowState._('active');
+  static const deleted = WorkflowState._('deleted');
+  static const disabledFork = WorkflowState._('disabled_fork');
+  static const disabledInactivity = WorkflowState._('disabled_inactivity');
+  static const disabledManually = WorkflowState._('disabled_manually');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookRepositoryVulnerabilityAlertDismissAlertState && other.value == value;
+  @override bool operator ==(Object other) => other is WorkflowState && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookRepositoryVulnerabilityAlertReopenAction {
+final class SecurityAdvisoriesListGlobalAdvisoriesType {
 
   final String value;
 
-  const WebhookRepositoryVulnerabilityAlertReopenAction._(this.value);
+  const SecurityAdvisoriesListGlobalAdvisoriesType._(this.value);
 
-  factory WebhookRepositoryVulnerabilityAlertReopenAction.fromJson(String value) => WebhookRepositoryVulnerabilityAlertReopenAction._(value);
+  factory SecurityAdvisoriesListGlobalAdvisoriesType.fromJson(String value) => SecurityAdvisoriesListGlobalAdvisoriesType._(value);
 
-  static const reopen = WebhookRepositoryVulnerabilityAlertReopenAction._('reopen');
+  static const reviewed = SecurityAdvisoriesListGlobalAdvisoriesType._('reviewed');
+  static const malware = SecurityAdvisoriesListGlobalAdvisoriesType._('malware');
+  static const unreviewed = SecurityAdvisoriesListGlobalAdvisoriesType._('unreviewed');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookRepositoryVulnerabilityAlertReopenAction && other.value == value;
+  @override bool operator ==(Object other) => other is SecurityAdvisoriesListGlobalAdvisoriesType && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookRepositoryVulnerabilityAlertResolveAction {
+final class SecurityAdvisoriesListGlobalAdvisoriesSort {
 
   final String value;
 
-  const WebhookRepositoryVulnerabilityAlertResolveAction._(this.value);
+  const SecurityAdvisoriesListGlobalAdvisoriesSort._(this.value);
 
-  factory WebhookRepositoryVulnerabilityAlertResolveAction.fromJson(String value) => WebhookRepositoryVulnerabilityAlertResolveAction._(value);
+  factory SecurityAdvisoriesListGlobalAdvisoriesSort.fromJson(String value) => SecurityAdvisoriesListGlobalAdvisoriesSort._(value);
 
-  static const resolve = WebhookRepositoryVulnerabilityAlertResolveAction._('resolve');
+  static const updated = SecurityAdvisoriesListGlobalAdvisoriesSort._('updated');
+  static const published = SecurityAdvisoriesListGlobalAdvisoriesSort._('published');
+  static const epssPercentage = SecurityAdvisoriesListGlobalAdvisoriesSort._('epss_percentage');
+  static const epssPercentile = SecurityAdvisoriesListGlobalAdvisoriesSort._('epss_percentile');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookRepositoryVulnerabilityAlertResolveAction && other.value == value;
+  @override bool operator ==(Object other) => other is SecurityAdvisoriesListGlobalAdvisoriesSort && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhookRepositoryVulnerabilityAlertResolveAlertDismisserType {
+final class SecurityAdvisoriesListGlobalAdvisoriesSeverity {
 
   final String value;
 
-  const WebhookRepositoryVulnerabilityAlertResolveAlertDismisserType._(this.value);
+  const SecurityAdvisoriesListGlobalAdvisoriesSeverity._(this.value);
 
-  factory WebhookRepositoryVulnerabilityAlertResolveAlertDismisserType.fromJson(String value) => WebhookRepositoryVulnerabilityAlertResolveAlertDismisserType._(value);
+  factory SecurityAdvisoriesListGlobalAdvisoriesSeverity.fromJson(String value) => SecurityAdvisoriesListGlobalAdvisoriesSeverity._(value);
 
-  static const bot = WebhookRepositoryVulnerabilityAlertResolveAlertDismisserType._('Bot');
-  static const user = WebhookRepositoryVulnerabilityAlertResolveAlertDismisserType._('User');
-  static const organization = WebhookRepositoryVulnerabilityAlertResolveAlertDismisserType._('Organization');
+  static const unknown = SecurityAdvisoriesListGlobalAdvisoriesSeverity._('unknown');
+  static const low = SecurityAdvisoriesListGlobalAdvisoriesSeverity._('low');
+  static const medium = SecurityAdvisoriesListGlobalAdvisoriesSeverity._('medium');
+  static const high = SecurityAdvisoriesListGlobalAdvisoriesSeverity._('high');
+  static const critical = SecurityAdvisoriesListGlobalAdvisoriesSeverity._('critical');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookRepositoryVulnerabilityAlertResolveAlertDismisserType && other.value == value;
+  @override bool operator ==(Object other) => other is SecurityAdvisoriesListGlobalAdvisoriesSeverity && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Required enumerated value serialized in the `state` wire field.
-final class WebhookRepositoryVulnerabilityAlertResolveAlertState {
+final class AgentAutomationsListAutomationsOwnerType {
 
   final String value;
 
-  const WebhookRepositoryVulnerabilityAlertResolveAlertState._(this.value);
+  const AgentAutomationsListAutomationsOwnerType._(this.value);
 
-  factory WebhookRepositoryVulnerabilityAlertResolveAlertState.fromJson(String value) => WebhookRepositoryVulnerabilityAlertResolveAlertState._(value);
+  factory AgentAutomationsListAutomationsOwnerType.fromJson(String value) => AgentAutomationsListAutomationsOwnerType._(value);
 
-  static const fixed = WebhookRepositoryVulnerabilityAlertResolveAlertState._('fixed');
-  static const open = WebhookRepositoryVulnerabilityAlertResolveAlertState._('open');
+  static const user = AgentAutomationsListAutomationsOwnerType._('user');
+  static const repository = AgentAutomationsListAutomationsOwnerType._('repository');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookRepositoryVulnerabilityAlertResolveAlertState && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsListAutomationsOwnerType && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhooksAlertDismisserType {
+/// Who owns the automation. `user` keeps it private to its creator and its runs act as that user. `repository` makes it belong to the repository, visible to anyone with read access to the repository, and its runs act as the Copilot app rather than as a person.
+final class AgentAutomationsListAutomationsResponseItemOwnerType {
 
   final String value;
 
-  const WebhooksAlertDismisserType._(this.value);
+  const AgentAutomationsListAutomationsResponseItemOwnerType._(this.value);
 
-  factory WebhooksAlertDismisserType.fromJson(String value) => WebhooksAlertDismisserType._(value);
+  factory AgentAutomationsListAutomationsResponseItemOwnerType.fromJson(String value) => AgentAutomationsListAutomationsResponseItemOwnerType._(value);
 
-  static const bot = WebhooksAlertDismisserType._('Bot');
-  static const user = WebhooksAlertDismisserType._('User');
-  static const organization = WebhooksAlertDismisserType._('Organization');
+  static const user = AgentAutomationsListAutomationsResponseItemOwnerType._('user');
+  static const repository = AgentAutomationsListAutomationsResponseItemOwnerType._('repository');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksAlertDismisserType && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsListAutomationsResponseItemOwnerType && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Required enumerated value serialized in the `state` wire field.
-final class WebhooksAlertState {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsListAutomationsResponseItemTriggersAutomationCompletedWriteScope {
 
   final String value;
 
-  const WebhooksAlertState._(this.value);
+  const AgentAutomationsListAutomationsResponseItemTriggersAutomationCompletedWriteScope._(this.value);
 
-  factory WebhooksAlertState.fromJson(String value) => WebhooksAlertState._(value);
+  factory AgentAutomationsListAutomationsResponseItemTriggersAutomationCompletedWriteScope.fromJson(String value) => AgentAutomationsListAutomationsResponseItemTriggersAutomationCompletedWriteScope._(value);
 
-  static const autoDismissed = WebhooksAlertState._('auto_dismissed');
-  static const open = WebhooksAlertState._('open');
+  static const trigger = AgentAutomationsListAutomationsResponseItemTriggersAutomationCompletedWriteScope._('trigger');
+  static const repository = AgentAutomationsListAutomationsResponseItemTriggersAutomationCompletedWriteScope._('repository');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksAlertState && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsListAutomationsResponseItemTriggersAutomationCompletedWriteScope && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// How the author is associated with the repository.
-final class WebhooksAnswerAuthorAssociation {
+final class AgentAutomationsListAutomationsResponseItemTriggersDiscussionCommentCommentTypesItem {
 
   final String value;
 
-  const WebhooksAnswerAuthorAssociation._(this.value);
+  const AgentAutomationsListAutomationsResponseItemTriggersDiscussionCommentCommentTypesItem._(this.value);
 
-  factory WebhooksAnswerAuthorAssociation.fromJson(String value) => WebhooksAnswerAuthorAssociation._(value);
+  factory AgentAutomationsListAutomationsResponseItemTriggersDiscussionCommentCommentTypesItem.fromJson(String value) => AgentAutomationsListAutomationsResponseItemTriggersDiscussionCommentCommentTypesItem._(value);
 
-  static const collaborator = WebhooksAnswerAuthorAssociation._('COLLABORATOR');
-  static const contributor = WebhooksAnswerAuthorAssociation._('CONTRIBUTOR');
-  static const firstTimer = WebhooksAnswerAuthorAssociation._('FIRST_TIMER');
-  static const firstTimeContributor = WebhooksAnswerAuthorAssociation._('FIRST_TIME_CONTRIBUTOR');
-  static const mannequin = WebhooksAnswerAuthorAssociation._('MANNEQUIN');
-  static const member = WebhooksAnswerAuthorAssociation._('MEMBER');
-  static const none = WebhooksAnswerAuthorAssociation._('NONE');
-  static const owner = WebhooksAnswerAuthorAssociation._('OWNER');
+  static const comment = AgentAutomationsListAutomationsResponseItemTriggersDiscussionCommentCommentTypesItem._('comment');
+  static const reply = AgentAutomationsListAutomationsResponseItemTriggersDiscussionCommentCommentTypesItem._('reply');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksAnswerAuthorAssociation && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsListAutomationsResponseItemTriggersDiscussionCommentCommentTypesItem && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhooksAnswerUserType {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsListAutomationsResponseItemTriggersDiscussionCommentWriteScope {
 
   final String value;
 
-  const WebhooksAnswerUserType._(this.value);
+  const AgentAutomationsListAutomationsResponseItemTriggersDiscussionCommentWriteScope._(this.value);
 
-  factory WebhooksAnswerUserType.fromJson(String value) => WebhooksAnswerUserType._(value);
+  factory AgentAutomationsListAutomationsResponseItemTriggersDiscussionCommentWriteScope.fromJson(String value) => AgentAutomationsListAutomationsResponseItemTriggersDiscussionCommentWriteScope._(value);
 
-  static const bot = WebhooksAnswerUserType._('Bot');
-  static const user = WebhooksAnswerUserType._('User');
-  static const organization = WebhooksAnswerUserType._('Organization');
+  static const trigger = AgentAutomationsListAutomationsResponseItemTriggersDiscussionCommentWriteScope._('trigger');
+  static const repository = AgentAutomationsListAutomationsResponseItemTriggersDiscussionCommentWriteScope._('repository');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksAnswerUserType && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsListAutomationsResponseItemTriggersDiscussionCommentWriteScope && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// How the author is associated with the repository.
-final class WebhooksCommentAuthorAssociation {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsListAutomationsResponseItemTriggersDiscussionOpenedWriteScope {
 
   final String value;
 
-  const WebhooksCommentAuthorAssociation._(this.value);
+  const AgentAutomationsListAutomationsResponseItemTriggersDiscussionOpenedWriteScope._(this.value);
 
-  factory WebhooksCommentAuthorAssociation.fromJson(String value) => WebhooksCommentAuthorAssociation._(value);
+  factory AgentAutomationsListAutomationsResponseItemTriggersDiscussionOpenedWriteScope.fromJson(String value) => AgentAutomationsListAutomationsResponseItemTriggersDiscussionOpenedWriteScope._(value);
 
-  static const collaborator = WebhooksCommentAuthorAssociation._('COLLABORATOR');
-  static const contributor = WebhooksCommentAuthorAssociation._('CONTRIBUTOR');
-  static const firstTimer = WebhooksCommentAuthorAssociation._('FIRST_TIMER');
-  static const firstTimeContributor = WebhooksCommentAuthorAssociation._('FIRST_TIME_CONTRIBUTOR');
-  static const mannequin = WebhooksCommentAuthorAssociation._('MANNEQUIN');
-  static const member = WebhooksCommentAuthorAssociation._('MEMBER');
-  static const none = WebhooksCommentAuthorAssociation._('NONE');
-  static const owner = WebhooksCommentAuthorAssociation._('OWNER');
+  static const trigger = AgentAutomationsListAutomationsResponseItemTriggersDiscussionOpenedWriteScope._('trigger');
+  static const repository = AgentAutomationsListAutomationsResponseItemTriggersDiscussionOpenedWriteScope._('repository');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksCommentAuthorAssociation && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsListAutomationsResponseItemTriggersDiscussionOpenedWriteScope && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsListAutomationsResponseItemTriggersDiscussionUpdatedWriteScope {
+
+  final String value;
+
+  const AgentAutomationsListAutomationsResponseItemTriggersDiscussionUpdatedWriteScope._(this.value);
+
+  factory AgentAutomationsListAutomationsResponseItemTriggersDiscussionUpdatedWriteScope.fromJson(String value) => AgentAutomationsListAutomationsResponseItemTriggersDiscussionUpdatedWriteScope._(value);
+
+  static const trigger = AgentAutomationsListAutomationsResponseItemTriggersDiscussionUpdatedWriteScope._('trigger');
+  static const repository = AgentAutomationsListAutomationsResponseItemTriggersDiscussionUpdatedWriteScope._('repository');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is AgentAutomationsListAutomationsResponseItemTriggersDiscussionUpdatedWriteScope && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+final class AgentAutomationsListAutomationsResponseItemTriggersIntervalCadenceItem {
+
+  final String value;
+
+  const AgentAutomationsListAutomationsResponseItemTriggersIntervalCadenceItem._(this.value);
+
+  factory AgentAutomationsListAutomationsResponseItemTriggersIntervalCadenceItem.fromJson(String value) => AgentAutomationsListAutomationsResponseItemTriggersIntervalCadenceItem._(value);
+
+  static const hourly = AgentAutomationsListAutomationsResponseItemTriggersIntervalCadenceItem._('hourly');
+  static const daily = AgentAutomationsListAutomationsResponseItemTriggersIntervalCadenceItem._('daily');
+  static const weekly = AgentAutomationsListAutomationsResponseItemTriggersIntervalCadenceItem._('weekly');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is AgentAutomationsListAutomationsResponseItemTriggersIntervalCadenceItem && other.value == value;
 
   @override int get hashCode => value.hashCode;
 

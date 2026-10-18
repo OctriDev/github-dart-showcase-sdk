@@ -37,7 +37,7 @@ class NullableIssue {
   /// A GitHub user.
   final NullableSimpleUser? user;
   /// Labels to associate with this issue; pass one or more label names to replace the set of labels on this issue; send an empty array to clear all labels from the issue; note that the labels are silently dropped for users without push access to the repository
-  final List<dynamic> labels;
+  final List<NullableIssueLabelsItem> labels;
   /// A GitHub user.
   final NullableSimpleUser? assignee;
   /// Optional array value serialized in the `assignees` wire field.
@@ -91,7 +91,7 @@ class NullableIssue {
 
   const NullableIssue({required this.id, required this.nodeId, required this.url, required this.repositoryUrl, required this.labelsUrl, required this.commentsUrl, required this.eventsUrl, required this.htmlUrl, required this.number, required this.state, this.stateReason = const SdkOmitted(), required this.title, this.body = const SdkOmitted(), required this.user, required this.labels, required this.assignee, this.assignees = const SdkOmitted(), required this.milestone, required this.locked, this.activeLockReason = const SdkOmitted(), required this.comments, this.pullRequest = const SdkOmitted(), required this.closedAt, required this.createdAt, required this.updatedAt, this.draft = const SdkOmitted(), this.closedBy = const SdkOmitted(), this.bodyHtml = const SdkOmitted(), this.bodyText = const SdkOmitted(), this.timelineUrl = const SdkOmitted(), this.type_ = const SdkOmitted(), this.repository = const SdkOmitted(), this.performedViaGithubApp = const SdkOmitted(), this.authorAssociation = const SdkOmitted(), this.reactions = const SdkOmitted(), this.subIssuesSummary = const SdkOmitted(), this.parentIssueUrl = const SdkOmitted(), this.pinnedComment = const SdkOmitted(), this.issueDependenciesSummary = const SdkOmitted(), this.issueFieldValues = const SdkOmitted()});
 
-  NullableIssue Function({int id, String nodeId, String url, String repositoryUrl, String labelsUrl, String commentsUrl, String eventsUrl, String htmlUrl, int number, String state, SdkOptional<NullableIssueStateReason?> stateReason, String title, SdkOptional<String?> body, NullableSimpleUser? user, List<dynamic> labels, NullableSimpleUser? assignee, SdkOptional<List<SimpleUser>> assignees, NullableMilestone? milestone, bool locked, SdkOptional<String?> activeLockReason, int comments, SdkOptional<NullableIssuePullRequest> pullRequest, String? closedAt, String createdAt, String updatedAt, SdkOptional<bool> draft, SdkOptional<NullableSimpleUser?> closedBy, SdkOptional<String> bodyHtml, SdkOptional<String> bodyText, SdkOptional<String> timelineUrl, SdkOptional<IssueType?> type_, SdkOptional<Repository> repository, SdkOptional<NullableIntegration?> performedViaGithubApp, SdkOptional<AuthorAssociation> authorAssociation, SdkOptional<ReactionRollup> reactions, SdkOptional<SubIssuesSummary> subIssuesSummary, SdkOptional<String?> parentIssueUrl, SdkOptional<NullableIssueComment?> pinnedComment, SdkOptional<IssueDependenciesSummary> issueDependenciesSummary, SdkOptional<List<IssueFieldValue>> issueFieldValues}) get copyWith => _copyWith;
+  NullableIssue Function({int id, String nodeId, String url, String repositoryUrl, String labelsUrl, String commentsUrl, String eventsUrl, String htmlUrl, int number, String state, SdkOptional<NullableIssueStateReason?> stateReason, String title, SdkOptional<String?> body, NullableSimpleUser? user, List<NullableIssueLabelsItem> labels, NullableSimpleUser? assignee, SdkOptional<List<SimpleUser>> assignees, NullableMilestone? milestone, bool locked, SdkOptional<String?> activeLockReason, int comments, SdkOptional<NullableIssuePullRequest> pullRequest, String? closedAt, String createdAt, String updatedAt, SdkOptional<bool> draft, SdkOptional<NullableSimpleUser?> closedBy, SdkOptional<String> bodyHtml, SdkOptional<String> bodyText, SdkOptional<String> timelineUrl, SdkOptional<IssueType?> type_, SdkOptional<Repository> repository, SdkOptional<NullableIntegration?> performedViaGithubApp, SdkOptional<AuthorAssociation> authorAssociation, SdkOptional<ReactionRollup> reactions, SdkOptional<SubIssuesSummary> subIssuesSummary, SdkOptional<String?> parentIssueUrl, SdkOptional<NullableIssueComment?> pinnedComment, SdkOptional<IssueDependenciesSummary> issueDependenciesSummary, SdkOptional<List<IssueFieldValue>> issueFieldValues}) get copyWith => _copyWith;
 
   NullableIssue _copyWith({Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? url = sdkOmittedValue, Object? repositoryUrl = sdkOmittedValue, Object? labelsUrl = sdkOmittedValue, Object? commentsUrl = sdkOmittedValue, Object? eventsUrl = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? number = sdkOmittedValue, Object? state = sdkOmittedValue, Object? stateReason = sdkOmittedValue, Object? title = sdkOmittedValue, Object? body = sdkOmittedValue, Object? user = sdkOmittedValue, Object? labels = sdkOmittedValue, Object? assignee = sdkOmittedValue, Object? assignees = sdkOmittedValue, Object? milestone = sdkOmittedValue, Object? locked = sdkOmittedValue, Object? activeLockReason = sdkOmittedValue, Object? comments = sdkOmittedValue, Object? pullRequest = sdkOmittedValue, Object? closedAt = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? draft = sdkOmittedValue, Object? closedBy = sdkOmittedValue, Object? bodyHtml = sdkOmittedValue, Object? bodyText = sdkOmittedValue, Object? timelineUrl = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? performedViaGithubApp = sdkOmittedValue, Object? authorAssociation = sdkOmittedValue, Object? reactions = sdkOmittedValue, Object? subIssuesSummary = sdkOmittedValue, Object? parentIssueUrl = sdkOmittedValue, Object? pinnedComment = sdkOmittedValue, Object? issueDependenciesSummary = sdkOmittedValue, Object? issueFieldValues = sdkOmittedValue}) => NullableIssue(
     id: identical(id, sdkOmittedValue) ? this.id : id as int,
@@ -108,7 +108,7 @@ class NullableIssue {
     title: identical(title, sdkOmittedValue) ? this.title : title as String,
     body: identical(body, sdkOmittedValue) ? this.body : body as SdkOptional<String?>,
     user: identical(user, sdkOmittedValue) ? this.user : user as NullableSimpleUser?,
-    labels: identical(labels, sdkOmittedValue) ? this.labels : labels as List<dynamic>,
+    labels: identical(labels, sdkOmittedValue) ? this.labels : labels as List<NullableIssueLabelsItem>,
     assignee: identical(assignee, sdkOmittedValue) ? this.assignee : assignee as NullableSimpleUser?,
     assignees: identical(assignees, sdkOmittedValue) ? this.assignees : assignees as SdkOptional<List<SimpleUser>>,
     milestone: identical(milestone, sdkOmittedValue) ? this.milestone : milestone as NullableMilestone?,
@@ -151,7 +151,7 @@ class NullableIssue {
     title: (json['title'] as String?)!,
     body: json.containsKey('body') ? SdkPresent(json['body'] as String?) : const SdkOmitted(),
     user: json.containsKey('user') ? json['user'] != null ? NullableSimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'user', 'Required property is missing'),
-    labels: ((json['labels'] as List?)?.map((e) => e).toList())!,
+    labels: ((json['labels'] as List?)?.map((e) => NullableIssueLabelsItem.fromJson(e)).toList())!,
     assignee: json.containsKey('assignee') ? json['assignee'] != null ? NullableSimpleUser.fromJson(json['assignee'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'assignee', 'Required property is missing'),
     assignees: json['assignees'] != null ? SdkPresent(((json['assignees'] as List?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
     milestone: json.containsKey('milestone') ? json['milestone'] != null ? NullableMilestone.fromJson(json['milestone'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'milestone', 'Required property is missing'),
@@ -200,7 +200,7 @@ class NullableIssue {
       _ => const <String, dynamic>{},
     },
     'user': user?.toJson(),
-    'labels': labels,
+    'labels': labels.map((item) => item.toJson()).toList(),
     'assignee': assignee?.toJson(),
     ...switch (assignees) {
       SdkPresent<List<SimpleUser>>(value: final value) => {'assignees': value.map((item) => item.toJson()).toList(),},

@@ -116,6 +116,34 @@ class EnvironmentProtectionRulesItemVariant0 {
   };
 }
 
+sealed class EnvironmentProtectionRulesItemVariant1ReviewersItemReviewer {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  const EnvironmentProtectionRulesItemVariant1ReviewersItemReviewer();
+  factory EnvironmentProtectionRulesItemVariant1ReviewersItemReviewer.fromJson(Object? json) {
+    if (json is Map<String, dynamic>) {
+      try { final value = SimpleUser.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return EnvironmentProtectionRulesItemVariant1ReviewersItemReviewerSimpleUser(value); } } catch (_) {}
+      try { final value = Team.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return EnvironmentProtectionRulesItemVariant1ReviewersItemReviewerTeam(value); } } catch (_) {}
+    }
+    try { return EnvironmentProtectionRulesItemVariant1ReviewersItemReviewerSimpleUser(SimpleUser.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return EnvironmentProtectionRulesItemVariant1ReviewersItemReviewerTeam(Team.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    throw FormatException("No variant matched for EnvironmentProtectionRulesItemVariant1ReviewersItemReviewer");
+  }
+  Object? toJson();
+}
+
+final class EnvironmentProtectionRulesItemVariant1ReviewersItemReviewerSimpleUser extends EnvironmentProtectionRulesItemVariant1ReviewersItemReviewer {
+  final SimpleUser value;
+  const EnvironmentProtectionRulesItemVariant1ReviewersItemReviewerSimpleUser(this.value);
+  @override Object? toJson() => value.toJson();
+}
+
+final class EnvironmentProtectionRulesItemVariant1ReviewersItemReviewerTeam extends EnvironmentProtectionRulesItemVariant1ReviewersItemReviewer {
+  final Team value;
+  const EnvironmentProtectionRulesItemVariant1ReviewersItemReviewerTeam(this.value);
+  @override Object? toJson() => value.toJson();
+}
+
 /// Required object value serialized in the `reviewers[]` wire field.
 class EnvironmentProtectionRulesItemVariant1ReviewersItem {
   /// This model is constructed from named fields in one call.
@@ -123,20 +151,20 @@ class EnvironmentProtectionRulesItemVariant1ReviewersItem {
   /// The type of reviewer.
   final SdkOptional<DeploymentReviewerType> type_;
   /// Optional API value serialized in the `reviewer` wire field.
-  final SdkOptional<ReviewersItemReviewer> reviewer;
+  final SdkOptional<dynamic> reviewer;
 
   const EnvironmentProtectionRulesItemVariant1ReviewersItem({this.type_ = const SdkOmitted(), this.reviewer = const SdkOmitted()});
 
-  EnvironmentProtectionRulesItemVariant1ReviewersItem Function({SdkOptional<DeploymentReviewerType> type_, SdkOptional<ReviewersItemReviewer> reviewer}) get copyWith => _copyWith;
+  EnvironmentProtectionRulesItemVariant1ReviewersItem Function({SdkOptional<DeploymentReviewerType> type_, SdkOptional<dynamic> reviewer}) get copyWith => _copyWith;
 
   EnvironmentProtectionRulesItemVariant1ReviewersItem _copyWith({Object? type_ = sdkOmittedValue, Object? reviewer = sdkOmittedValue}) => EnvironmentProtectionRulesItemVariant1ReviewersItem(
     type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<DeploymentReviewerType>,
-    reviewer: identical(reviewer, sdkOmittedValue) ? this.reviewer : reviewer as SdkOptional<ReviewersItemReviewer>,
+    reviewer: identical(reviewer, sdkOmittedValue) ? this.reviewer : reviewer as SdkOptional<dynamic>,
   );
 
   factory EnvironmentProtectionRulesItemVariant1ReviewersItem.fromJson(Map<String, dynamic> json) => EnvironmentProtectionRulesItemVariant1ReviewersItem(
     type_: json['type'] != null ? SdkPresent((json['type'] != null ? DeploymentReviewerType.fromJson(json['type'] as String) : null)!) : const SdkOmitted(),
-    reviewer: json['reviewer'] != null ? SdkPresent((json['reviewer'] != null ? ReviewersItemReviewer.fromJson(json['reviewer']) : null)!) : const SdkOmitted(),
+    reviewer: json['reviewer'] != null ? SdkPresent((SdkUtils.unionBranch(json['reviewer'], [SimpleUser.fromJson, Team.fromJson]))!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
@@ -145,7 +173,7 @@ class EnvironmentProtectionRulesItemVariant1ReviewersItem {
       _ => const <String, dynamic>{},
     },
     ...switch (reviewer) {
-      SdkPresent<ReviewersItemReviewer>(value: final value) => {'reviewer': value.toJson(),},
+      SdkPresent<dynamic>(value: final value) => {'reviewer': value,},
       _ => const <String, dynamic>{},
     },
   };
@@ -240,6 +268,11 @@ sealed class EnvironmentProtectionRulesItem {
   static const String constructionSurface = 'named';
   const EnvironmentProtectionRulesItem();
   factory EnvironmentProtectionRulesItem.fromJson(Object? json) {
+    if (json is Map<String, dynamic>) {
+      try { final value = EnvironmentProtectionRulesItemVariant0.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return EnvironmentProtectionRulesItemEnvironmentProtectionRulesItemVariant0(value); } } catch (_) {}
+      try { final value = EnvironmentProtectionRulesItemVariant1.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return EnvironmentProtectionRulesItemEnvironmentProtectionRulesItemVariant1(value); } } catch (_) {}
+      try { final value = EnvironmentProtectionRulesItemVariant2.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return EnvironmentProtectionRulesItemEnvironmentProtectionRulesItemVariant2(value); } } catch (_) {}
+    }
     try { return EnvironmentProtectionRulesItemEnvironmentProtectionRulesItemVariant0(EnvironmentProtectionRulesItemVariant0.fromJson(json as Map<String, dynamic>)); } catch (_) {}
     try { return EnvironmentProtectionRulesItemEnvironmentProtectionRulesItemVariant1(EnvironmentProtectionRulesItemVariant1.fromJson(json as Map<String, dynamic>)); } catch (_) {}
     try { return EnvironmentProtectionRulesItemEnvironmentProtectionRulesItemVariant2(EnvironmentProtectionRulesItemVariant2.fromJson(json as Map<String, dynamic>)); } catch (_) {}
@@ -257,11 +290,5 @@ final class EnvironmentProtectionRulesItemEnvironmentProtectionRulesItemVariant0
 final class EnvironmentProtectionRulesItemEnvironmentProtectionRulesItemVariant1 extends EnvironmentProtectionRulesItem {
   final EnvironmentProtectionRulesItemVariant1 value;
   const EnvironmentProtectionRulesItemEnvironmentProtectionRulesItemVariant1(this.value);
-  @override Object? toJson() => value.toJson();
-}
-
-final class EnvironmentProtectionRulesItemEnvironmentProtectionRulesItemVariant2 extends EnvironmentProtectionRulesItem {
-  final EnvironmentProtectionRulesItemVariant2 value;
-  const EnvironmentProtectionRulesItemEnvironmentProtectionRulesItemVariant2(this.value);
   @override Object? toJson() => value.toJson();
 }

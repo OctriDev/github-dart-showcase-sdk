@@ -4,274 +4,270 @@
 part of 'inline.dart';
 
 // Inline operation models (part 387)
-class AgentsListOrgVariablesResponse {
+/// The attestation's Sigstore Bundle. Refer to the [Sigstore Bundle Specification](https://github.com/sigstore/protobuf-specs/blob/main/protos/sigstore_bundle.proto) for more information.
+class ReposCreateAttestationRequestBodyBundle {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<OrganizationActionsVariable> variables;
+  final SdkOptional<String> mediaType;
+  final SdkOptional<Map<String, Object?>> verificationMaterial;
+  final SdkOptional<Map<String, Object?>> dsseEnvelope;
 
-  const AgentsListOrgVariablesResponse({required this.totalCount, required this.variables});
+  const ReposCreateAttestationRequestBodyBundle({this.mediaType = const SdkOmitted(), this.verificationMaterial = const SdkOmitted(), this.dsseEnvelope = const SdkOmitted()});
 
-  AgentsListOrgVariablesResponse Function({int totalCount, List<OrganizationActionsVariable> variables}) get copyWith => _copyWith;
+  ReposCreateAttestationRequestBodyBundle Function({SdkOptional<String> mediaType, SdkOptional<Map<String, Object?>> verificationMaterial, SdkOptional<Map<String, Object?>> dsseEnvelope}) get copyWith => _copyWith;
 
-  AgentsListOrgVariablesResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? variables = sdkOmittedValue}) => AgentsListOrgVariablesResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    variables: identical(variables, sdkOmittedValue) ? this.variables : variables as List<OrganizationActionsVariable>,
+  ReposCreateAttestationRequestBodyBundle _copyWith({Object? mediaType = sdkOmittedValue, Object? verificationMaterial = sdkOmittedValue, Object? dsseEnvelope = sdkOmittedValue}) => ReposCreateAttestationRequestBodyBundle(
+    mediaType: identical(mediaType, sdkOmittedValue) ? this.mediaType : mediaType as SdkOptional<String>,
+    verificationMaterial: identical(verificationMaterial, sdkOmittedValue) ? this.verificationMaterial : verificationMaterial as SdkOptional<Map<String, Object?>>,
+    dsseEnvelope: identical(dsseEnvelope, sdkOmittedValue) ? this.dsseEnvelope : dsseEnvelope as SdkOptional<Map<String, Object?>>,
   );
 
-  factory AgentsListOrgVariablesResponse.fromJson(Map<String, dynamic> json) => AgentsListOrgVariablesResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    variables: ((json['variables'] as List?)?.map((e) => OrganizationActionsVariable.fromJson(e as Map<String, dynamic>)).toList())!,
+  factory ReposCreateAttestationRequestBodyBundle.fromJson(Map<String, dynamic> json) => ReposCreateAttestationRequestBodyBundle(
+    mediaType: json['mediaType'] != null ? SdkPresent((json['mediaType'] as String?)!) : const SdkOmitted(),
+    verificationMaterial: json['verificationMaterial'] != null ? SdkPresent((json['verificationMaterial'] == null ? null : Map<String, dynamic>.from(json['verificationMaterial'] as Map).map((key, value) => MapEntry(key, value)))!) : const SdkOmitted(),
+    dsseEnvelope: json['dsseEnvelope'] != null ? SdkPresent((json['dsseEnvelope'] == null ? null : Map<String, dynamic>.from(json['dsseEnvelope'] as Map).map((key, value) => MapEntry(key, value)))!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'variables': variables.map((item) => item.toJson()).toList(),
-  };
-}
-
-class AgentsCreateOrgVariableRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The name of the variable.
-  final String name;
-  /// The value of the variable.
-  final String value;
-  /// The type of repositories in the organization that can access the variable. `selected` means only the repositories specified by `selected_repository_ids` can access the variable.
-  final AgentsCreateOrgVariableRequestBodyVisibility visibility;
-  /// An array of repository ids that can access the organization variable. You can only provide a list of repository ids when the `visibility` is set to `selected`.
-  final SdkOptional<List<int>> selectedRepositoryIds;
-
-  const AgentsCreateOrgVariableRequestBody({required this.name, required this.value, required this.visibility, this.selectedRepositoryIds = const SdkOmitted()});
-
-  AgentsCreateOrgVariableRequestBody Function({String name, String value, AgentsCreateOrgVariableRequestBodyVisibility visibility, SdkOptional<List<int>> selectedRepositoryIds}) get copyWith => _copyWith;
-
-  AgentsCreateOrgVariableRequestBody _copyWith({Object? name = sdkOmittedValue, Object? value = sdkOmittedValue, Object? visibility = sdkOmittedValue, Object? selectedRepositoryIds = sdkOmittedValue}) => AgentsCreateOrgVariableRequestBody(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    value: identical(value, sdkOmittedValue) ? this.value : value as String,
-    visibility: identical(visibility, sdkOmittedValue) ? this.visibility : visibility as AgentsCreateOrgVariableRequestBodyVisibility,
-    selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue) ? this.selectedRepositoryIds : selectedRepositoryIds as SdkOptional<List<int>>,
-  );
-
-  factory AgentsCreateOrgVariableRequestBody.fromJson(Map<String, dynamic> json) => AgentsCreateOrgVariableRequestBody(
-    name: (json['name'] as String?)!,
-    value: (json['value'] as String?)!,
-    visibility: (json['visibility'] != null ? AgentsCreateOrgVariableRequestBodyVisibility.fromJson(json['visibility'] as String) : null)!,
-    selectedRepositoryIds: json['selected_repository_ids'] != null ? SdkPresent(((json['selected_repository_ids'] as List?)?.map((e) => (e as num).toInt()).toList())!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    'name': name,
-    'value': value,
-    'visibility': visibility.toJson(),
-    ...switch (selectedRepositoryIds) {
-      SdkPresent<List<int>>(value: final value) => {'selected_repository_ids': value,},
+    ...switch (mediaType) {
+      SdkPresent<String>(value: final value) => {'mediaType': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (verificationMaterial) {
+      SdkPresent<Map<String, Object?>>(value: final value) => {'verificationMaterial': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (dsseEnvelope) {
+      SdkPresent<Map<String, Object?>>(value: final value) => {'dsseEnvelope': value,},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-class AgentsUpdateOrgVariableRequestBody {
+class ReposCreateAttestationRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The name of the variable.
-  final SdkOptional<String> name;
-  /// The value of the variable.
-  final SdkOptional<String> value;
-  /// The type of repositories in the organization that can access the variable. `selected` means only the repositories specified by `selected_repository_ids` can access the variable.
-  final SdkOptional<AgentsUpdateOrgVariableRequestBodyVisibility> visibility;
-  /// An array of repository ids that can access the organization variable. You can only provide a list of repository ids when the `visibility` is set to `selected`.
-  final SdkOptional<List<int>> selectedRepositoryIds;
+  /// The attestation's Sigstore Bundle. Refer to the [Sigstore Bundle Specification](https://github.com/sigstore/protobuf-specs/blob/main/protos/sigstore_bundle.proto) for more information.
+  final ReposCreateAttestationRequestBodyBundle bundle;
 
-  const AgentsUpdateOrgVariableRequestBody({this.name = const SdkOmitted(), this.value = const SdkOmitted(), this.visibility = const SdkOmitted(), this.selectedRepositoryIds = const SdkOmitted()});
+  const ReposCreateAttestationRequestBody({required this.bundle});
 
-  AgentsUpdateOrgVariableRequestBody Function({SdkOptional<String> name, SdkOptional<String> value, SdkOptional<AgentsUpdateOrgVariableRequestBodyVisibility> visibility, SdkOptional<List<int>> selectedRepositoryIds}) get copyWith => _copyWith;
+  ReposCreateAttestationRequestBody Function({ReposCreateAttestationRequestBodyBundle bundle}) get copyWith => _copyWith;
 
-  AgentsUpdateOrgVariableRequestBody _copyWith({Object? name = sdkOmittedValue, Object? value = sdkOmittedValue, Object? visibility = sdkOmittedValue, Object? selectedRepositoryIds = sdkOmittedValue}) => AgentsUpdateOrgVariableRequestBody(
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    value: identical(value, sdkOmittedValue) ? this.value : value as SdkOptional<String>,
-    visibility: identical(visibility, sdkOmittedValue) ? this.visibility : visibility as SdkOptional<AgentsUpdateOrgVariableRequestBodyVisibility>,
-    selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue) ? this.selectedRepositoryIds : selectedRepositoryIds as SdkOptional<List<int>>,
+  ReposCreateAttestationRequestBody _copyWith({Object? bundle = sdkOmittedValue}) => ReposCreateAttestationRequestBody(
+    bundle: identical(bundle, sdkOmittedValue) ? this.bundle : bundle as ReposCreateAttestationRequestBodyBundle,
   );
 
-  factory AgentsUpdateOrgVariableRequestBody.fromJson(Map<String, dynamic> json) => AgentsUpdateOrgVariableRequestBody(
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    value: json['value'] != null ? SdkPresent((json['value'] as String?)!) : const SdkOmitted(),
-    visibility: json['visibility'] != null ? SdkPresent((json['visibility'] != null ? AgentsUpdateOrgVariableRequestBodyVisibility.fromJson(json['visibility'] as String) : null)!) : const SdkOmitted(),
-    selectedRepositoryIds: json['selected_repository_ids'] != null ? SdkPresent(((json['selected_repository_ids'] as List?)?.map((e) => (e as num).toInt()).toList())!) : const SdkOmitted(),
+  factory ReposCreateAttestationRequestBody.fromJson(Map<String, dynamic> json) => ReposCreateAttestationRequestBody(
+    bundle: (json['bundle'] != null ? ReposCreateAttestationRequestBodyBundle.fromJson(json['bundle'] as Map<String, dynamic>) : null)!,
   );
 
   Map<String, dynamic> toJson() => {
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
+    'bundle': bundle.toJson(),
+  };
+}
+
+class ReposCreateAttestationResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The ID of the attestation.
+  final SdkOptional<int> id;
+
+  const ReposCreateAttestationResponse({this.id = const SdkOmitted()});
+
+  ReposCreateAttestationResponse Function({SdkOptional<int> id}) get copyWith => _copyWith;
+
+  ReposCreateAttestationResponse _copyWith({Object? id = sdkOmittedValue}) => ReposCreateAttestationResponse(
+    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+  );
+
+  factory ReposCreateAttestationResponse.fromJson(Map<String, dynamic> json) => ReposCreateAttestationResponse(
+    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    ...switch (id) {
+      SdkPresent<int>(value: final value) => {'id': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (value) {
-      SdkPresent<String>(value: final value) => {'value': value,},
+  };
+}
+
+/// The attestation's Sigstore Bundle. Refer to the [Sigstore Bundle Specification](https://github.com/sigstore/protobuf-specs/blob/main/protos/sigstore_bundle.proto) for more information.
+class ReposListAttestationsResponseAttestationsItemBundle {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  final SdkOptional<String> mediaType;
+  final SdkOptional<Map<String, Object?>> verificationMaterial;
+  final SdkOptional<Map<String, Object?>> dsseEnvelope;
+
+  const ReposListAttestationsResponseAttestationsItemBundle({this.mediaType = const SdkOmitted(), this.verificationMaterial = const SdkOmitted(), this.dsseEnvelope = const SdkOmitted()});
+
+  ReposListAttestationsResponseAttestationsItemBundle Function({SdkOptional<String> mediaType, SdkOptional<Map<String, Object?>> verificationMaterial, SdkOptional<Map<String, Object?>> dsseEnvelope}) get copyWith => _copyWith;
+
+  ReposListAttestationsResponseAttestationsItemBundle _copyWith({Object? mediaType = sdkOmittedValue, Object? verificationMaterial = sdkOmittedValue, Object? dsseEnvelope = sdkOmittedValue}) => ReposListAttestationsResponseAttestationsItemBundle(
+    mediaType: identical(mediaType, sdkOmittedValue) ? this.mediaType : mediaType as SdkOptional<String>,
+    verificationMaterial: identical(verificationMaterial, sdkOmittedValue) ? this.verificationMaterial : verificationMaterial as SdkOptional<Map<String, Object?>>,
+    dsseEnvelope: identical(dsseEnvelope, sdkOmittedValue) ? this.dsseEnvelope : dsseEnvelope as SdkOptional<Map<String, Object?>>,
+  );
+
+  factory ReposListAttestationsResponseAttestationsItemBundle.fromJson(Map<String, dynamic> json) => ReposListAttestationsResponseAttestationsItemBundle(
+    mediaType: json['mediaType'] != null ? SdkPresent((json['mediaType'] as String?)!) : const SdkOmitted(),
+    verificationMaterial: json['verificationMaterial'] != null ? SdkPresent((json['verificationMaterial'] == null ? null : Map<String, dynamic>.from(json['verificationMaterial'] as Map).map((key, value) => MapEntry(key, value)))!) : const SdkOmitted(),
+    dsseEnvelope: json['dsseEnvelope'] != null ? SdkPresent((json['dsseEnvelope'] == null ? null : Map<String, dynamic>.from(json['dsseEnvelope'] as Map).map((key, value) => MapEntry(key, value)))!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    ...switch (mediaType) {
+      SdkPresent<String>(value: final value) => {'mediaType': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (visibility) {
-      SdkPresent<AgentsUpdateOrgVariableRequestBodyVisibility>(value: final value) => {'visibility': value.toJson(),},
+    ...switch (verificationMaterial) {
+      SdkPresent<Map<String, Object?>>(value: final value) => {'verificationMaterial': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (selectedRepositoryIds) {
-      SdkPresent<List<int>>(value: final value) => {'selected_repository_ids': value,},
+    ...switch (dsseEnvelope) {
+      SdkPresent<Map<String, Object?>>(value: final value) => {'dsseEnvelope': value,},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-class AgentsListSelectedReposForOrgVariableResponse {
+class ReposListAttestationsResponseAttestationsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<MinimalRepository> repositories;
+  /// The attestation's Sigstore Bundle. Refer to the [Sigstore Bundle Specification](https://github.com/sigstore/protobuf-specs/blob/main/protos/sigstore_bundle.proto) for more information.
+  final SdkOptional<ReposListAttestationsResponseAttestationsItemBundle> bundle;
+  final SdkOptional<int> repositoryId;
+  final SdkOptional<String> bundleUrl;
+  final SdkOptional<String> initiator;
 
-  const AgentsListSelectedReposForOrgVariableResponse({required this.totalCount, required this.repositories});
+  const ReposListAttestationsResponseAttestationsItem({this.bundle = const SdkOmitted(), this.repositoryId = const SdkOmitted(), this.bundleUrl = const SdkOmitted(), this.initiator = const SdkOmitted()});
 
-  AgentsListSelectedReposForOrgVariableResponse Function({int totalCount, List<MinimalRepository> repositories}) get copyWith => _copyWith;
+  ReposListAttestationsResponseAttestationsItem Function({SdkOptional<ReposListAttestationsResponseAttestationsItemBundle> bundle, SdkOptional<int> repositoryId, SdkOptional<String> bundleUrl, SdkOptional<String> initiator}) get copyWith => _copyWith;
 
-  AgentsListSelectedReposForOrgVariableResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? repositories = sdkOmittedValue}) => AgentsListSelectedReposForOrgVariableResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    repositories: identical(repositories, sdkOmittedValue) ? this.repositories : repositories as List<MinimalRepository>,
+  ReposListAttestationsResponseAttestationsItem _copyWith({Object? bundle = sdkOmittedValue, Object? repositoryId = sdkOmittedValue, Object? bundleUrl = sdkOmittedValue, Object? initiator = sdkOmittedValue}) => ReposListAttestationsResponseAttestationsItem(
+    bundle: identical(bundle, sdkOmittedValue) ? this.bundle : bundle as SdkOptional<ReposListAttestationsResponseAttestationsItemBundle>,
+    repositoryId: identical(repositoryId, sdkOmittedValue) ? this.repositoryId : repositoryId as SdkOptional<int>,
+    bundleUrl: identical(bundleUrl, sdkOmittedValue) ? this.bundleUrl : bundleUrl as SdkOptional<String>,
+    initiator: identical(initiator, sdkOmittedValue) ? this.initiator : initiator as SdkOptional<String>,
   );
 
-  factory AgentsListSelectedReposForOrgVariableResponse.fromJson(Map<String, dynamic> json) => AgentsListSelectedReposForOrgVariableResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    repositories: ((json['repositories'] as List?)?.map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList())!,
+  factory ReposListAttestationsResponseAttestationsItem.fromJson(Map<String, dynamic> json) => ReposListAttestationsResponseAttestationsItem(
+    bundle: json['bundle'] != null ? SdkPresent((json['bundle'] != null ? ReposListAttestationsResponseAttestationsItemBundle.fromJson(json['bundle'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    repositoryId: json['repository_id'] != null ? SdkPresent(((json['repository_id'] as num?)?.toInt())!) : const SdkOmitted(),
+    bundleUrl: json['bundle_url'] != null ? SdkPresent((json['bundle_url'] as String?)!) : const SdkOmitted(),
+    initiator: json['initiator'] != null ? SdkPresent((json['initiator'] as String?)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'repositories': repositories.map((item) => item.toJson()).toList(),
+    ...switch (bundle) {
+      SdkPresent<ReposListAttestationsResponseAttestationsItemBundle>(value: final value) => {'bundle': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (repositoryId) {
+      SdkPresent<int>(value: final value) => {'repository_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (bundleUrl) {
+      SdkPresent<String>(value: final value) => {'bundle_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (initiator) {
+      SdkPresent<String>(value: final value) => {'initiator': value,},
+      _ => const <String, dynamic>{},
+    },
   };
 }
 
-class AgentsSetSelectedReposForOrgVariableRequestBody {
+class ReposListAttestationsResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The IDs of the repositories that can access the organization variable.
-  final List<int> selectedRepositoryIds;
+  final SdkOptional<List<ReposListAttestationsResponseAttestationsItem>> attestations;
 
-  const AgentsSetSelectedReposForOrgVariableRequestBody({required this.selectedRepositoryIds});
+  const ReposListAttestationsResponse({this.attestations = const SdkOmitted()});
 
-  AgentsSetSelectedReposForOrgVariableRequestBody Function({List<int> selectedRepositoryIds}) get copyWith => _copyWith;
+  ReposListAttestationsResponse Function({SdkOptional<List<ReposListAttestationsResponseAttestationsItem>> attestations}) get copyWith => _copyWith;
 
-  AgentsSetSelectedReposForOrgVariableRequestBody _copyWith({Object? selectedRepositoryIds = sdkOmittedValue}) => AgentsSetSelectedReposForOrgVariableRequestBody(
-    selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue) ? this.selectedRepositoryIds : selectedRepositoryIds as List<int>,
+  ReposListAttestationsResponse _copyWith({Object? attestations = sdkOmittedValue}) => ReposListAttestationsResponse(
+    attestations: identical(attestations, sdkOmittedValue) ? this.attestations : attestations as SdkOptional<List<ReposListAttestationsResponseAttestationsItem>>,
   );
 
-  factory AgentsSetSelectedReposForOrgVariableRequestBody.fromJson(Map<String, dynamic> json) => AgentsSetSelectedReposForOrgVariableRequestBody(
-    selectedRepositoryIds: ((json['selected_repository_ids'] as List?)?.map((e) => (e as num).toInt()).toList())!,
+  factory ReposListAttestationsResponse.fromJson(Map<String, dynamic> json) => ReposListAttestationsResponse(
+    attestations: json['attestations'] != null ? SdkPresent(((json['attestations'] as List?)?.map((e) => ReposListAttestationsResponseAttestationsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    'selected_repository_ids': selectedRepositoryIds,
+    ...switch (attestations) {
+      SdkPresent<List<ReposListAttestationsResponseAttestationsItem>>(value: final value) => {'attestations': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
   };
 }
 
-class AgentsListRepoOrganizationSecretsResponse {
+class ReposCreateAutolinkRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<ActionsSecret> secrets;
+  /// This prefix appended by certain characters will generate a link any time it is found in an issue, pull request, or commit.
+  final String keyPrefix;
+  /// The URL must contain `&lt;num&gt;` for the reference number. `&lt;num&gt;` matches different characters depending on the value of `is_alphanumeric`.
+  final String urlTemplate;
+  /// Whether this autolink reference matches alphanumeric characters. If true, the `&lt;num&gt;` parameter of the `url_template` matches alphanumeric characters `A-Z` (case insensitive), `0-9`, and `-`. If false, this autolink reference only matches numeric characters.
+  final SdkOptional<bool> isAlphanumeric;
 
-  const AgentsListRepoOrganizationSecretsResponse({required this.totalCount, required this.secrets});
+  const ReposCreateAutolinkRequestBody({required this.keyPrefix, required this.urlTemplate, this.isAlphanumeric = const SdkOmitted()});
 
-  AgentsListRepoOrganizationSecretsResponse Function({int totalCount, List<ActionsSecret> secrets}) get copyWith => _copyWith;
+  ReposCreateAutolinkRequestBody Function({String keyPrefix, String urlTemplate, SdkOptional<bool> isAlphanumeric}) get copyWith => _copyWith;
 
-  AgentsListRepoOrganizationSecretsResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? secrets = sdkOmittedValue}) => AgentsListRepoOrganizationSecretsResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    secrets: identical(secrets, sdkOmittedValue) ? this.secrets : secrets as List<ActionsSecret>,
+  ReposCreateAutolinkRequestBody _copyWith({Object? keyPrefix = sdkOmittedValue, Object? urlTemplate = sdkOmittedValue, Object? isAlphanumeric = sdkOmittedValue}) => ReposCreateAutolinkRequestBody(
+    keyPrefix: identical(keyPrefix, sdkOmittedValue) ? this.keyPrefix : keyPrefix as String,
+    urlTemplate: identical(urlTemplate, sdkOmittedValue) ? this.urlTemplate : urlTemplate as String,
+    isAlphanumeric: identical(isAlphanumeric, sdkOmittedValue) ? this.isAlphanumeric : isAlphanumeric as SdkOptional<bool>,
   );
 
-  factory AgentsListRepoOrganizationSecretsResponse.fromJson(Map<String, dynamic> json) => AgentsListRepoOrganizationSecretsResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    secrets: ((json['secrets'] as List?)?.map((e) => ActionsSecret.fromJson(e as Map<String, dynamic>)).toList())!,
+  factory ReposCreateAutolinkRequestBody.fromJson(Map<String, dynamic> json) => ReposCreateAutolinkRequestBody(
+    keyPrefix: (json['key_prefix'] as String?)!,
+    urlTemplate: (json['url_template'] as String?)!,
+    isAlphanumeric: json['is_alphanumeric'] != null ? SdkPresent((json['is_alphanumeric'] as bool?)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'secrets': secrets.map((item) => item.toJson()).toList(),
+    'key_prefix': keyPrefix,
+    'url_template': urlTemplate,
+    ...switch (isAlphanumeric) {
+      SdkPresent<bool>(value: final value) => {'is_alphanumeric': value,},
+      _ => const <String, dynamic>{},
+    },
   };
 }
 
-class AgentsListRepoOrganizationVariablesResponse {
+class ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<ActionsVariable> variables;
+  /// The name of the required check
+  final String context;
+  /// The ID of the GitHub App that must provide this check. Omit this field to automatically select the GitHub App that has recently provided this check, or any app if it was not set by a GitHub App. Pass -1 to explicitly allow any app to set the status.
+  final SdkOptional<int> appId;
 
-  const AgentsListRepoOrganizationVariablesResponse({required this.totalCount, required this.variables});
+  const ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem({required this.context, this.appId = const SdkOmitted()});
 
-  AgentsListRepoOrganizationVariablesResponse Function({int totalCount, List<ActionsVariable> variables}) get copyWith => _copyWith;
+  ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem Function({String context, SdkOptional<int> appId}) get copyWith => _copyWith;
 
-  AgentsListRepoOrganizationVariablesResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? variables = sdkOmittedValue}) => AgentsListRepoOrganizationVariablesResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    variables: identical(variables, sdkOmittedValue) ? this.variables : variables as List<ActionsVariable>,
+  ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem _copyWith({Object? context = sdkOmittedValue, Object? appId = sdkOmittedValue}) => ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem(
+    context: identical(context, sdkOmittedValue) ? this.context : context as String,
+    appId: identical(appId, sdkOmittedValue) ? this.appId : appId as SdkOptional<int>,
   );
 
-  factory AgentsListRepoOrganizationVariablesResponse.fromJson(Map<String, dynamic> json) => AgentsListRepoOrganizationVariablesResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    variables: ((json['variables'] as List?)?.map((e) => ActionsVariable.fromJson(e as Map<String, dynamic>)).toList())!,
+  factory ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem.fromJson(Map<String, dynamic> json) => ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem(
+    context: (json['context'] as String?)!,
+    appId: json['app_id'] != null ? SdkPresent(((json['app_id'] as num?)?.toInt())!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'variables': variables.map((item) => item.toJson()).toList(),
-  };
-}
-
-class AgentsListRepoSecretsResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<ActionsSecret> secrets;
-
-  const AgentsListRepoSecretsResponse({required this.totalCount, required this.secrets});
-
-  AgentsListRepoSecretsResponse Function({int totalCount, List<ActionsSecret> secrets}) get copyWith => _copyWith;
-
-  AgentsListRepoSecretsResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? secrets = sdkOmittedValue}) => AgentsListRepoSecretsResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    secrets: identical(secrets, sdkOmittedValue) ? this.secrets : secrets as List<ActionsSecret>,
-  );
-
-  factory AgentsListRepoSecretsResponse.fromJson(Map<String, dynamic> json) => AgentsListRepoSecretsResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    secrets: ((json['secrets'] as List?)?.map((e) => ActionsSecret.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'secrets': secrets.map((item) => item.toJson()).toList(),
-  };
-}
-
-class AgentsCreateOrUpdateRepoSecretRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get a repository public key](https://docs.github.com/rest/agents/secrets#get-a-repository-public-key) endpoint.
-  final String encryptedValue;
-  /// ID of the key you used to encrypt the secret.
-  final String keyId;
-
-  const AgentsCreateOrUpdateRepoSecretRequestBody({required this.encryptedValue, required this.keyId});
-
-  AgentsCreateOrUpdateRepoSecretRequestBody Function({String encryptedValue, String keyId}) get copyWith => _copyWith;
-
-  AgentsCreateOrUpdateRepoSecretRequestBody _copyWith({Object? encryptedValue = sdkOmittedValue, Object? keyId = sdkOmittedValue}) => AgentsCreateOrUpdateRepoSecretRequestBody(
-    encryptedValue: identical(encryptedValue, sdkOmittedValue) ? this.encryptedValue : encryptedValue as String,
-    keyId: identical(keyId, sdkOmittedValue) ? this.keyId : keyId as String,
-  );
-
-  factory AgentsCreateOrUpdateRepoSecretRequestBody.fromJson(Map<String, dynamic> json) => AgentsCreateOrUpdateRepoSecretRequestBody(
-    encryptedValue: (json['encrypted_value'] as String?)!,
-    keyId: (json['key_id'] as String?)!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'encrypted_value': encryptedValue,
-    'key_id': keyId,
+    'context': context,
+    ...switch (appId) {
+      SdkPresent<int>(value: final value) => {'app_id': value,},
+      _ => const <String, dynamic>{},
+    },
   };
 }

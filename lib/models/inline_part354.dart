@@ -4,292 +4,227 @@
 part of 'inline.dart';
 
 // Inline operation models (part 354)
-class ActionsSetGithubActionsPermissionsRepositoryRequestBody {
+class IssuesCreateLabelRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// Whether GitHub Actions is enabled on the repository.
-  final bool enabled;
-  /// The permissions policy that controls the actions and reusable workflows that are allowed to run.
-  final SdkOptional<AllowedActions> allowedActions;
-  /// Whether actions must be pinned to a full-length commit SHA.
-  final SdkOptional<bool> shaPinningRequired;
-
-  const ActionsSetGithubActionsPermissionsRepositoryRequestBody({required this.enabled, this.allowedActions = const SdkOmitted(), this.shaPinningRequired = const SdkOmitted()});
-
-  ActionsSetGithubActionsPermissionsRepositoryRequestBody Function({bool enabled, SdkOptional<AllowedActions> allowedActions, SdkOptional<bool> shaPinningRequired}) get copyWith => _copyWith;
-
-  ActionsSetGithubActionsPermissionsRepositoryRequestBody _copyWith({Object? enabled = sdkOmittedValue, Object? allowedActions = sdkOmittedValue, Object? shaPinningRequired = sdkOmittedValue}) => ActionsSetGithubActionsPermissionsRepositoryRequestBody(
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as bool,
-    allowedActions: identical(allowedActions, sdkOmittedValue) ? this.allowedActions : allowedActions as SdkOptional<AllowedActions>,
-    shaPinningRequired: identical(shaPinningRequired, sdkOmittedValue) ? this.shaPinningRequired : shaPinningRequired as SdkOptional<bool>,
-  );
-
-  factory ActionsSetGithubActionsPermissionsRepositoryRequestBody.fromJson(Map<String, dynamic> json) => ActionsSetGithubActionsPermissionsRepositoryRequestBody(
-    enabled: (json['enabled'] as bool?)!,
-    allowedActions: json['allowed_actions'] != null ? SdkPresent((json['allowed_actions'] != null ? AllowedActions.fromJson(json['allowed_actions'] as String) : null)!) : const SdkOmitted(),
-    shaPinningRequired: json['sha_pinning_required'] != null ? SdkPresent((json['sha_pinning_required'] as bool?)!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    'enabled': enabled,
-    ...switch (allowedActions) {
-      SdkPresent<AllowedActions>(value: final value) => {'allowed_actions': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (shaPinningRequired) {
-      SdkPresent<bool>(value: final value) => {'sha_pinning_required': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
-}
-
-class ActionsGetRepoActionsPoliciesResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The total number of Actions policies.
-  final int totalCount;
-  /// An array of Actions policies.
-  final List<ActionsPolicy> policies;
-
-  const ActionsGetRepoActionsPoliciesResponse({required this.totalCount, required this.policies});
-
-  ActionsGetRepoActionsPoliciesResponse Function({int totalCount, List<ActionsPolicy> policies}) get copyWith => _copyWith;
-
-  ActionsGetRepoActionsPoliciesResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? policies = sdkOmittedValue}) => ActionsGetRepoActionsPoliciesResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    policies: identical(policies, sdkOmittedValue) ? this.policies : policies as List<ActionsPolicy>,
-  );
-
-  factory ActionsGetRepoActionsPoliciesResponse.fromJson(Map<String, dynamic> json) => ActionsGetRepoActionsPoliciesResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    policies: ((json['policies'] as List?)?.map((e) => ActionsPolicy.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'policies': policies.map((item) => item.toJson()).toList(),
-  };
-}
-
-class ActionsCreateRepoActionsPolicyRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The name of the policy.
+  /// The name of the label. Emoji can be added to label names, using either native emoji or colon-style markup. For example, typing `:strawberry:` will render the emoji ![:strawberry:](https://github.githubassets.com/images/icons/emoji/unicode/1f353.png ":strawberry:"). For a full list of available emoji and codes, see "[Emoji cheat sheet](https://github.com/ikatyang/emoji-cheat-sheet)."
   final String name;
-  /// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
-  final RepositoryRuleEnforcement enforcement;
-  /// Conditions for a repository Actions policy. The object may be empty to preserve or use the default workflow targeting, or contain only `workflow_path`.
-  final SdkOptional<ActionsPolicyRepoConditions> conditions;
-  /// An array of rules within the policy.
-  final SdkOptional<List<ActionsRule>> rules;
+  /// The [hexadecimal color code](http://www.color-hex.com/) for the label, without the leading `#`.
+  final SdkOptional<String> color;
+  /// A short description of the label. Must be 100 characters or fewer.
+  final SdkOptional<String> description;
 
-  const ActionsCreateRepoActionsPolicyRequestBody({required this.name, required this.enforcement, this.conditions = const SdkOmitted(), this.rules = const SdkOmitted()});
+  const IssuesCreateLabelRequestBody({required this.name, this.color = const SdkOmitted(), this.description = const SdkOmitted()});
 
-  ActionsCreateRepoActionsPolicyRequestBody Function({String name, RepositoryRuleEnforcement enforcement, SdkOptional<ActionsPolicyRepoConditions> conditions, SdkOptional<List<ActionsRule>> rules}) get copyWith => _copyWith;
+  IssuesCreateLabelRequestBody Function({String name, SdkOptional<String> color, SdkOptional<String> description}) get copyWith => _copyWith;
 
-  ActionsCreateRepoActionsPolicyRequestBody _copyWith({Object? name = sdkOmittedValue, Object? enforcement = sdkOmittedValue, Object? conditions = sdkOmittedValue, Object? rules = sdkOmittedValue}) => ActionsCreateRepoActionsPolicyRequestBody(
+  IssuesCreateLabelRequestBody _copyWith({Object? name = sdkOmittedValue, Object? color = sdkOmittedValue, Object? description = sdkOmittedValue}) => IssuesCreateLabelRequestBody(
     name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    enforcement: identical(enforcement, sdkOmittedValue) ? this.enforcement : enforcement as RepositoryRuleEnforcement,
-    conditions: identical(conditions, sdkOmittedValue) ? this.conditions : conditions as SdkOptional<ActionsPolicyRepoConditions>,
-    rules: identical(rules, sdkOmittedValue) ? this.rules : rules as SdkOptional<List<ActionsRule>>,
+    color: identical(color, sdkOmittedValue) ? this.color : color as SdkOptional<String>,
+    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String>,
   );
 
-  factory ActionsCreateRepoActionsPolicyRequestBody.fromJson(Map<String, dynamic> json) => ActionsCreateRepoActionsPolicyRequestBody(
+  factory IssuesCreateLabelRequestBody.fromJson(Map<String, dynamic> json) => IssuesCreateLabelRequestBody(
     name: (json['name'] as String?)!,
-    enforcement: (json['enforcement'] != null ? RepositoryRuleEnforcement.fromJson(json['enforcement'] as String) : null)!,
-    conditions: json['conditions'] != null ? SdkPresent((json['conditions'] != null ? ActionsPolicyRepoConditions.fromJson(json['conditions']) : null)!) : const SdkOmitted(),
-    rules: json['rules'] != null ? SdkPresent(((json['rules'] as List?)?.map((e) => ActionsRule.fromJson(e)).toList())!) : const SdkOmitted(),
+    color: json['color'] != null ? SdkPresent((json['color'] as String?)!) : const SdkOmitted(),
+    description: json['description'] != null ? SdkPresent((json['description'] as String?)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
     'name': name,
-    'enforcement': enforcement.toJson(),
-    ...switch (conditions) {
-      SdkPresent<ActionsPolicyRepoConditions>(value: final value) => {'conditions': value.toJson(),},
+    ...switch (color) {
+      SdkPresent<String>(value: final value) => {'color': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (rules) {
-      SdkPresent<List<ActionsRule>>(value: final value) => {'rules': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
-}
-
-class ActionsUpdateRepoActionsPolicyRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The name of the policy.
-  final SdkOptional<String> name;
-  /// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
-  final SdkOptional<RepositoryRuleEnforcement> enforcement;
-  /// Conditions for a repository Actions policy. The object may be empty to preserve or use the default workflow targeting, or contain only `workflow_path`.
-  final SdkOptional<ActionsPolicyRepoConditions> conditions;
-  /// An array of rules within the policy.
-  final SdkOptional<List<ActionsRule>> rules;
-
-  const ActionsUpdateRepoActionsPolicyRequestBody({this.name = const SdkOmitted(), this.enforcement = const SdkOmitted(), this.conditions = const SdkOmitted(), this.rules = const SdkOmitted()});
-
-  ActionsUpdateRepoActionsPolicyRequestBody Function({SdkOptional<String> name, SdkOptional<RepositoryRuleEnforcement> enforcement, SdkOptional<ActionsPolicyRepoConditions> conditions, SdkOptional<List<ActionsRule>> rules}) get copyWith => _copyWith;
-
-  ActionsUpdateRepoActionsPolicyRequestBody _copyWith({Object? name = sdkOmittedValue, Object? enforcement = sdkOmittedValue, Object? conditions = sdkOmittedValue, Object? rules = sdkOmittedValue}) => ActionsUpdateRepoActionsPolicyRequestBody(
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    enforcement: identical(enforcement, sdkOmittedValue) ? this.enforcement : enforcement as SdkOptional<RepositoryRuleEnforcement>,
-    conditions: identical(conditions, sdkOmittedValue) ? this.conditions : conditions as SdkOptional<ActionsPolicyRepoConditions>,
-    rules: identical(rules, sdkOmittedValue) ? this.rules : rules as SdkOptional<List<ActionsRule>>,
-  );
-
-  factory ActionsUpdateRepoActionsPolicyRequestBody.fromJson(Map<String, dynamic> json) => ActionsUpdateRepoActionsPolicyRequestBody(
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    enforcement: json['enforcement'] != null ? SdkPresent((json['enforcement'] != null ? RepositoryRuleEnforcement.fromJson(json['enforcement'] as String) : null)!) : const SdkOmitted(),
-    conditions: json['conditions'] != null ? SdkPresent((json['conditions'] != null ? ActionsPolicyRepoConditions.fromJson(json['conditions']) : null)!) : const SdkOmitted(),
-    rules: json['rules'] != null ? SdkPresent(((json['rules'] as List?)?.map((e) => ActionsRule.fromJson(e)).toList())!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (enforcement) {
-      SdkPresent<RepositoryRuleEnforcement>(value: final value) => {'enforcement': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (conditions) {
-      SdkPresent<ActionsPolicyRepoConditions>(value: final value) => {'conditions': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (rules) {
-      SdkPresent<List<ActionsRule>>(value: final value) => {'rules': value.map((item) => item.toJson()).toList(),},
+    ...switch (description) {
+      SdkPresent<String>(value: final value) => {'description': value,},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-class ActionsListSelfHostedRunnersForRepoResponse {
+class IssuesUpdateLabelRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<Runner> runners;
+  /// The new name of the label. Emoji can be added to label names, using either native emoji or colon-style markup. For example, typing `:strawberry:` will render the emoji ![:strawberry:](https://github.githubassets.com/images/icons/emoji/unicode/1f353.png ":strawberry:"). For a full list of available emoji and codes, see "[Emoji cheat sheet](https://github.com/ikatyang/emoji-cheat-sheet)."
+  final SdkOptional<String> newName;
+  /// The [hexadecimal color code](http://www.color-hex.com/) for the label, without the leading `#`.
+  final SdkOptional<String> color;
+  /// A short description of the label. Must be 100 characters or fewer.
+  final SdkOptional<String> description;
+  /// Whether to archive or unarchive the label. Archived labels cannot be added to issues or pull requests. For more information, see "[Archiving labels](https://docs.github.com/issues/organizing-your-work-with-labels/managing-labels)."
+  final SdkOptional<bool> archived;
 
-  const ActionsListSelfHostedRunnersForRepoResponse({required this.totalCount, required this.runners});
+  const IssuesUpdateLabelRequestBody({this.newName = const SdkOmitted(), this.color = const SdkOmitted(), this.description = const SdkOmitted(), this.archived = const SdkOmitted()});
 
-  ActionsListSelfHostedRunnersForRepoResponse Function({int totalCount, List<Runner> runners}) get copyWith => _copyWith;
+  IssuesUpdateLabelRequestBody Function({SdkOptional<String> newName, SdkOptional<String> color, SdkOptional<String> description, SdkOptional<bool> archived}) get copyWith => _copyWith;
 
-  ActionsListSelfHostedRunnersForRepoResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? runners = sdkOmittedValue}) => ActionsListSelfHostedRunnersForRepoResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    runners: identical(runners, sdkOmittedValue) ? this.runners : runners as List<Runner>,
+  IssuesUpdateLabelRequestBody _copyWith({Object? newName = sdkOmittedValue, Object? color = sdkOmittedValue, Object? description = sdkOmittedValue, Object? archived = sdkOmittedValue}) => IssuesUpdateLabelRequestBody(
+    newName: identical(newName, sdkOmittedValue) ? this.newName : newName as SdkOptional<String>,
+    color: identical(color, sdkOmittedValue) ? this.color : color as SdkOptional<String>,
+    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String>,
+    archived: identical(archived, sdkOmittedValue) ? this.archived : archived as SdkOptional<bool>,
   );
 
-  factory ActionsListSelfHostedRunnersForRepoResponse.fromJson(Map<String, dynamic> json) => ActionsListSelfHostedRunnersForRepoResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    runners: ((json['runners'] as List?)?.map((e) => Runner.fromJson(e as Map<String, dynamic>)).toList())!,
+  factory IssuesUpdateLabelRequestBody.fromJson(Map<String, dynamic> json) => IssuesUpdateLabelRequestBody(
+    newName: json['new_name'] != null ? SdkPresent((json['new_name'] as String?)!) : const SdkOmitted(),
+    color: json['color'] != null ? SdkPresent((json['color'] as String?)!) : const SdkOmitted(),
+    description: json['description'] != null ? SdkPresent((json['description'] as String?)!) : const SdkOmitted(),
+    archived: json['archived'] != null ? SdkPresent((json['archived'] as bool?)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'runners': runners.map((item) => item.toJson()).toList(),
-  };
-}
-
-class ActionsGetRunnerVersionDeprecationForRepoResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The runner version string.
-  final String runnerVersion;
-  /// The date after which this runner version can no longer register. Null if no schedule is set.
-  final SdkOptional<String?> registrationDeprecatesAt;
-  /// The date after which jobs will no longer be dispatched to runners on this version.
-  final SdkOptional<String?> runtimeDeprecatesAt;
-
-  const ActionsGetRunnerVersionDeprecationForRepoResponse({required this.runnerVersion, this.registrationDeprecatesAt = const SdkOmitted(), this.runtimeDeprecatesAt = const SdkOmitted()});
-
-  ActionsGetRunnerVersionDeprecationForRepoResponse Function({String runnerVersion, SdkOptional<String?> registrationDeprecatesAt, SdkOptional<String?> runtimeDeprecatesAt}) get copyWith => _copyWith;
-
-  ActionsGetRunnerVersionDeprecationForRepoResponse _copyWith({Object? runnerVersion = sdkOmittedValue, Object? registrationDeprecatesAt = sdkOmittedValue, Object? runtimeDeprecatesAt = sdkOmittedValue}) => ActionsGetRunnerVersionDeprecationForRepoResponse(
-    runnerVersion: identical(runnerVersion, sdkOmittedValue) ? this.runnerVersion : runnerVersion as String,
-    registrationDeprecatesAt: identical(registrationDeprecatesAt, sdkOmittedValue) ? this.registrationDeprecatesAt : registrationDeprecatesAt as SdkOptional<String?>,
-    runtimeDeprecatesAt: identical(runtimeDeprecatesAt, sdkOmittedValue) ? this.runtimeDeprecatesAt : runtimeDeprecatesAt as SdkOptional<String?>,
-  );
-
-  factory ActionsGetRunnerVersionDeprecationForRepoResponse.fromJson(Map<String, dynamic> json) => ActionsGetRunnerVersionDeprecationForRepoResponse(
-    runnerVersion: (json['runner_version'] as String?)!,
-    registrationDeprecatesAt: json.containsKey('registration_deprecates_at') ? SdkPresent(json['registration_deprecates_at'] as String?) : const SdkOmitted(),
-    runtimeDeprecatesAt: json.containsKey('runtime_deprecates_at') ? SdkPresent(json['runtime_deprecates_at'] as String?) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    'runner_version': runnerVersion,
-    ...switch (registrationDeprecatesAt) {
-      SdkPresent<String?>(value: final value) => {'registration_deprecates_at': value,},
+    ...switch (newName) {
+      SdkPresent<String>(value: final value) => {'new_name': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (runtimeDeprecatesAt) {
-      SdkPresent<String?>(value: final value) => {'runtime_deprecates_at': value,},
+    ...switch (color) {
+      SdkPresent<String>(value: final value) => {'color': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (description) {
+      SdkPresent<String>(value: final value) => {'description': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (archived) {
+      SdkPresent<bool>(value: final value) => {'archived': value,},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-class ActionsGenerateRunnerJitconfigForRepoRequestBody {
+class IssuesCreateMilestoneRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The name of the new runner.
-  final String name;
-  /// The ID of the runner group to register the runner to.
-  final int runnerGroupId;
-  /// The names of the custom labels to add to the runner. **Minimum items**: 1. **Maximum items**: 100.
-  final List<String> labels;
-  /// The working directory to be used for job execution, relative to the runner install directory.
-  final SdkOptional<String> workFolder;
+  /// The title of the milestone.
+  final String title;
+  /// The state of the milestone. Either `open` or `closed`.
+  final SdkOptional<IssuesCreateMilestoneRequestBodyState> state;
+  /// A description of the milestone.
+  final SdkOptional<String> description;
+  /// The milestone due date. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
+  final SdkOptional<String> dueOn;
 
-  const ActionsGenerateRunnerJitconfigForRepoRequestBody({required this.name, required this.runnerGroupId, required this.labels, this.workFolder = const SdkOmitted()});
+  const IssuesCreateMilestoneRequestBody({required this.title, this.state = const SdkOmitted(), this.description = const SdkOmitted(), this.dueOn = const SdkOmitted()});
 
-  ActionsGenerateRunnerJitconfigForRepoRequestBody Function({String name, int runnerGroupId, List<String> labels, SdkOptional<String> workFolder}) get copyWith => _copyWith;
+  IssuesCreateMilestoneRequestBody Function({String title, SdkOptional<IssuesCreateMilestoneRequestBodyState> state, SdkOptional<String> description, SdkOptional<String> dueOn}) get copyWith => _copyWith;
 
-  ActionsGenerateRunnerJitconfigForRepoRequestBody _copyWith({Object? name = sdkOmittedValue, Object? runnerGroupId = sdkOmittedValue, Object? labels = sdkOmittedValue, Object? workFolder = sdkOmittedValue}) => ActionsGenerateRunnerJitconfigForRepoRequestBody(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    runnerGroupId: identical(runnerGroupId, sdkOmittedValue) ? this.runnerGroupId : runnerGroupId as int,
-    labels: identical(labels, sdkOmittedValue) ? this.labels : labels as List<String>,
-    workFolder: identical(workFolder, sdkOmittedValue) ? this.workFolder : workFolder as SdkOptional<String>,
+  IssuesCreateMilestoneRequestBody _copyWith({Object? title = sdkOmittedValue, Object? state = sdkOmittedValue, Object? description = sdkOmittedValue, Object? dueOn = sdkOmittedValue}) => IssuesCreateMilestoneRequestBody(
+    title: identical(title, sdkOmittedValue) ? this.title : title as String,
+    state: identical(state, sdkOmittedValue) ? this.state : state as SdkOptional<IssuesCreateMilestoneRequestBodyState>,
+    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String>,
+    dueOn: identical(dueOn, sdkOmittedValue) ? this.dueOn : dueOn as SdkOptional<String>,
   );
 
-  factory ActionsGenerateRunnerJitconfigForRepoRequestBody.fromJson(Map<String, dynamic> json) => ActionsGenerateRunnerJitconfigForRepoRequestBody(
-    name: (json['name'] as String?)!,
-    runnerGroupId: ((json['runner_group_id'] as num?)?.toInt())!,
-    labels: ((json['labels'] as List?)?.map((e) => e as String).toList())!,
-    workFolder: json['work_folder'] != null ? SdkPresent((json['work_folder'] as String?)!) : const SdkOmitted(),
+  factory IssuesCreateMilestoneRequestBody.fromJson(Map<String, dynamic> json) => IssuesCreateMilestoneRequestBody(
+    title: (json['title'] as String?)!,
+    state: json['state'] != null ? SdkPresent((json['state'] != null ? IssuesCreateMilestoneRequestBodyState.fromJson(json['state'] as String) : null)!) : const SdkOmitted(),
+    description: json['description'] != null ? SdkPresent((json['description'] as String?)!) : const SdkOmitted(),
+    dueOn: json['due_on'] != null ? SdkPresent((json['due_on'] as String?)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'runner_group_id': runnerGroupId,
-    'labels': labels,
-    ...switch (workFolder) {
-      SdkPresent<String>(value: final value) => {'work_folder': value,},
+    'title': title,
+    ...switch (state) {
+      SdkPresent<IssuesCreateMilestoneRequestBodyState>(value: final value) => {'state': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (description) {
+      SdkPresent<String>(value: final value) => {'description': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (dueOn) {
+      SdkPresent<String>(value: final value) => {'due_on': value,},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-class ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequestBody {
+class IssuesUpdateMilestoneRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The names of the custom labels to add to the runner.
-  final List<String> labels;
+  /// The title of the milestone.
+  final SdkOptional<String> title;
+  /// The state of the milestone. Either `open` or `closed`.
+  final SdkOptional<IssuesUpdateMilestoneRequestBodyState> state;
+  /// A description of the milestone.
+  final SdkOptional<String> description;
+  /// The milestone due date. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
+  final SdkOptional<String> dueOn;
 
-  const ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequestBody({required this.labels});
+  const IssuesUpdateMilestoneRequestBody({this.title = const SdkOmitted(), this.state = const SdkOmitted(), this.description = const SdkOmitted(), this.dueOn = const SdkOmitted()});
 
-  ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequestBody Function({List<String> labels}) get copyWith => _copyWith;
+  IssuesUpdateMilestoneRequestBody Function({SdkOptional<String> title, SdkOptional<IssuesUpdateMilestoneRequestBodyState> state, SdkOptional<String> description, SdkOptional<String> dueOn}) get copyWith => _copyWith;
 
-  ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequestBody _copyWith({Object? labels = sdkOmittedValue}) => ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequestBody(
-    labels: identical(labels, sdkOmittedValue) ? this.labels : labels as List<String>,
+  IssuesUpdateMilestoneRequestBody _copyWith({Object? title = sdkOmittedValue, Object? state = sdkOmittedValue, Object? description = sdkOmittedValue, Object? dueOn = sdkOmittedValue}) => IssuesUpdateMilestoneRequestBody(
+    title: identical(title, sdkOmittedValue) ? this.title : title as SdkOptional<String>,
+    state: identical(state, sdkOmittedValue) ? this.state : state as SdkOptional<IssuesUpdateMilestoneRequestBodyState>,
+    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String>,
+    dueOn: identical(dueOn, sdkOmittedValue) ? this.dueOn : dueOn as SdkOptional<String>,
   );
 
-  factory ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequestBody.fromJson(Map<String, dynamic> json) => ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequestBody(
-    labels: ((json['labels'] as List?)?.map((e) => e as String).toList())!,
+  factory IssuesUpdateMilestoneRequestBody.fromJson(Map<String, dynamic> json) => IssuesUpdateMilestoneRequestBody(
+    title: json['title'] != null ? SdkPresent((json['title'] as String?)!) : const SdkOmitted(),
+    state: json['state'] != null ? SdkPresent((json['state'] != null ? IssuesUpdateMilestoneRequestBodyState.fromJson(json['state'] as String) : null)!) : const SdkOmitted(),
+    description: json['description'] != null ? SdkPresent((json['description'] as String?)!) : const SdkOmitted(),
+    dueOn: json['due_on'] != null ? SdkPresent((json['due_on'] as String?)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    'labels': labels,
+    ...switch (title) {
+      SdkPresent<String>(value: final value) => {'title': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (state) {
+      SdkPresent<IssuesUpdateMilestoneRequestBodyState>(value: final value) => {'state': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (description) {
+      SdkPresent<String>(value: final value) => {'description': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (dueOn) {
+      SdkPresent<String>(value: final value) => {'due_on': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
+}
+
+class MarkdownRenderRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The Markdown text to render in HTML.
+  final String text;
+  /// The rendering mode.
+  final SdkOptional<MarkdownRenderRequestBodyMode> mode;
+  /// The repository context to use when creating references in `gfm` mode. For example, setting `context` to `octo-org/octo-repo` will change the text `#42` into an HTML link to issue 42 in the `octo-org/octo-repo` repository.
+  final SdkOptional<String> context;
+
+  const MarkdownRenderRequestBody({required this.text, this.mode = const SdkOmitted(), this.context = const SdkOmitted()});
+
+  MarkdownRenderRequestBody Function({String text, SdkOptional<MarkdownRenderRequestBodyMode> mode, SdkOptional<String> context}) get copyWith => _copyWith;
+
+  MarkdownRenderRequestBody _copyWith({Object? text = sdkOmittedValue, Object? mode = sdkOmittedValue, Object? context = sdkOmittedValue}) => MarkdownRenderRequestBody(
+    text: identical(text, sdkOmittedValue) ? this.text : text as String,
+    mode: identical(mode, sdkOmittedValue) ? this.mode : mode as SdkOptional<MarkdownRenderRequestBodyMode>,
+    context: identical(context, sdkOmittedValue) ? this.context : context as SdkOptional<String>,
+  );
+
+  factory MarkdownRenderRequestBody.fromJson(Map<String, dynamic> json) => MarkdownRenderRequestBody(
+    text: (json['text'] as String?)!,
+    mode: json['mode'] != null ? SdkPresent((json['mode'] != null ? MarkdownRenderRequestBodyMode.fromJson(json['mode'] as String) : null)!) : const SdkOmitted(),
+    context: json['context'] != null ? SdkPresent((json['context'] as String?)!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    'text': text,
+    ...switch (mode) {
+      SdkPresent<MarkdownRenderRequestBodyMode>(value: final value) => {'mode': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (context) {
+      SdkPresent<String>(value: final value) => {'context': value,},
+      _ => const <String, dynamic>{},
+    },
   };
 }

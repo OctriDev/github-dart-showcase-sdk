@@ -4,206 +4,7 @@
 part of 'inline.dart';
 
 // Inline operation models (part 299)
-class AgentAutomationsGetAutomationResponseTriggersPullRequestOpened {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// A GitHub issue or pull request search query.
-  final SdkOptional<String> query;
-  /// Gitignore-style changed-file path globs.
-  final SdkOptional<List<String>> paths;
-  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-  final SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestOpenedWriteScope> writeScope;
-
-  const AgentAutomationsGetAutomationResponseTriggersPullRequestOpened({this.query = const SdkOmitted(), this.paths = const SdkOmitted(), this.writeScope = const SdkOmitted()});
-
-  AgentAutomationsGetAutomationResponseTriggersPullRequestOpened Function({SdkOptional<String> query, SdkOptional<List<String>> paths, SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestOpenedWriteScope> writeScope}) get copyWith => _copyWith;
-
-  AgentAutomationsGetAutomationResponseTriggersPullRequestOpened _copyWith({Object? query = sdkOmittedValue, Object? paths = sdkOmittedValue, Object? writeScope = sdkOmittedValue}) => AgentAutomationsGetAutomationResponseTriggersPullRequestOpened(
-    query: identical(query, sdkOmittedValue) ? this.query : query as SdkOptional<String>,
-    paths: identical(paths, sdkOmittedValue) ? this.paths : paths as SdkOptional<List<String>>,
-    writeScope: identical(writeScope, sdkOmittedValue) ? this.writeScope : writeScope as SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestOpenedWriteScope>,
-  );
-
-  factory AgentAutomationsGetAutomationResponseTriggersPullRequestOpened.fromJson(Map<String, dynamic> json) => AgentAutomationsGetAutomationResponseTriggersPullRequestOpened(
-    query: json['query'] != null ? SdkPresent((json['query'] as String?)!) : const SdkOmitted(),
-    paths: json['paths'] != null ? SdkPresent(((json['paths'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    writeScope: json['write_scope'] != null ? SdkPresent((json['write_scope'] != null ? AgentAutomationsGetAutomationResponseTriggersPullRequestOpenedWriteScope.fromJson(json['write_scope'] as String) : null)!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    ...switch (query) {
-      SdkPresent<String>(value: final value) => {'query': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (paths) {
-      SdkPresent<List<String>>(value: final value) => {'paths': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (writeScope) {
-      SdkPresent<AgentAutomationsGetAutomationResponseTriggersPullRequestOpenedWriteScope>(value: final value) => {'write_scope': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
-}
-
-class AgentAutomationsGetAutomationResponseTriggersPullRequestSynchronize {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// A GitHub issue or pull request search query.
-  final SdkOptional<String> query;
-  /// Gitignore-style changed-file path globs.
-  final SdkOptional<List<String>> paths;
-  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-  final SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestSynchronizeWriteScope> writeScope;
-
-  const AgentAutomationsGetAutomationResponseTriggersPullRequestSynchronize({this.query = const SdkOmitted(), this.paths = const SdkOmitted(), this.writeScope = const SdkOmitted()});
-
-  AgentAutomationsGetAutomationResponseTriggersPullRequestSynchronize Function({SdkOptional<String> query, SdkOptional<List<String>> paths, SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestSynchronizeWriteScope> writeScope}) get copyWith => _copyWith;
-
-  AgentAutomationsGetAutomationResponseTriggersPullRequestSynchronize _copyWith({Object? query = sdkOmittedValue, Object? paths = sdkOmittedValue, Object? writeScope = sdkOmittedValue}) => AgentAutomationsGetAutomationResponseTriggersPullRequestSynchronize(
-    query: identical(query, sdkOmittedValue) ? this.query : query as SdkOptional<String>,
-    paths: identical(paths, sdkOmittedValue) ? this.paths : paths as SdkOptional<List<String>>,
-    writeScope: identical(writeScope, sdkOmittedValue) ? this.writeScope : writeScope as SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestSynchronizeWriteScope>,
-  );
-
-  factory AgentAutomationsGetAutomationResponseTriggersPullRequestSynchronize.fromJson(Map<String, dynamic> json) => AgentAutomationsGetAutomationResponseTriggersPullRequestSynchronize(
-    query: json['query'] != null ? SdkPresent((json['query'] as String?)!) : const SdkOmitted(),
-    paths: json['paths'] != null ? SdkPresent(((json['paths'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    writeScope: json['write_scope'] != null ? SdkPresent((json['write_scope'] != null ? AgentAutomationsGetAutomationResponseTriggersPullRequestSynchronizeWriteScope.fromJson(json['write_scope'] as String) : null)!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    ...switch (query) {
-      SdkPresent<String>(value: final value) => {'query': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (paths) {
-      SdkPresent<List<String>>(value: final value) => {'paths': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (writeScope) {
-      SdkPresent<AgentAutomationsGetAutomationResponseTriggersPullRequestSynchronizeWriteScope>(value: final value) => {'write_scope': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
-}
-
-class AgentAutomationsGetAutomationResponseTriggersPullRequestMerged {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// A GitHub issue or pull request search query.
-  final SdkOptional<String> query;
-  /// Gitignore-style changed-file path globs.
-  final SdkOptional<List<String>> paths;
-  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-  final SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestMergedWriteScope> writeScope;
-
-  const AgentAutomationsGetAutomationResponseTriggersPullRequestMerged({this.query = const SdkOmitted(), this.paths = const SdkOmitted(), this.writeScope = const SdkOmitted()});
-
-  AgentAutomationsGetAutomationResponseTriggersPullRequestMerged Function({SdkOptional<String> query, SdkOptional<List<String>> paths, SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestMergedWriteScope> writeScope}) get copyWith => _copyWith;
-
-  AgentAutomationsGetAutomationResponseTriggersPullRequestMerged _copyWith({Object? query = sdkOmittedValue, Object? paths = sdkOmittedValue, Object? writeScope = sdkOmittedValue}) => AgentAutomationsGetAutomationResponseTriggersPullRequestMerged(
-    query: identical(query, sdkOmittedValue) ? this.query : query as SdkOptional<String>,
-    paths: identical(paths, sdkOmittedValue) ? this.paths : paths as SdkOptional<List<String>>,
-    writeScope: identical(writeScope, sdkOmittedValue) ? this.writeScope : writeScope as SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestMergedWriteScope>,
-  );
-
-  factory AgentAutomationsGetAutomationResponseTriggersPullRequestMerged.fromJson(Map<String, dynamic> json) => AgentAutomationsGetAutomationResponseTriggersPullRequestMerged(
-    query: json['query'] != null ? SdkPresent((json['query'] as String?)!) : const SdkOmitted(),
-    paths: json['paths'] != null ? SdkPresent(((json['paths'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    writeScope: json['write_scope'] != null ? SdkPresent((json['write_scope'] != null ? AgentAutomationsGetAutomationResponseTriggersPullRequestMergedWriteScope.fromJson(json['write_scope'] as String) : null)!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    ...switch (query) {
-      SdkPresent<String>(value: final value) => {'query': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (paths) {
-      SdkPresent<List<String>>(value: final value) => {'paths': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (writeScope) {
-      SdkPresent<AgentAutomationsGetAutomationResponseTriggersPullRequestMergedWriteScope>(value: final value) => {'write_scope': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
-}
-
-class AgentAutomationsGetAutomationResponseTriggersIssueComment {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// A case-insensitive substring matched against the event body.
-  final SdkOptional<String> bodySubstring;
-  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-  final SdkOptional<AgentAutomationsGetAutomationResponseTriggersIssueCommentWriteScope> writeScope;
-
-  const AgentAutomationsGetAutomationResponseTriggersIssueComment({this.bodySubstring = const SdkOmitted(), this.writeScope = const SdkOmitted()});
-
-  AgentAutomationsGetAutomationResponseTriggersIssueComment Function({SdkOptional<String> bodySubstring, SdkOptional<AgentAutomationsGetAutomationResponseTriggersIssueCommentWriteScope> writeScope}) get copyWith => _copyWith;
-
-  AgentAutomationsGetAutomationResponseTriggersIssueComment _copyWith({Object? bodySubstring = sdkOmittedValue, Object? writeScope = sdkOmittedValue}) => AgentAutomationsGetAutomationResponseTriggersIssueComment(
-    bodySubstring: identical(bodySubstring, sdkOmittedValue) ? this.bodySubstring : bodySubstring as SdkOptional<String>,
-    writeScope: identical(writeScope, sdkOmittedValue) ? this.writeScope : writeScope as SdkOptional<AgentAutomationsGetAutomationResponseTriggersIssueCommentWriteScope>,
-  );
-
-  factory AgentAutomationsGetAutomationResponseTriggersIssueComment.fromJson(Map<String, dynamic> json) => AgentAutomationsGetAutomationResponseTriggersIssueComment(
-    bodySubstring: json['body_substring'] != null ? SdkPresent((json['body_substring'] as String?)!) : const SdkOmitted(),
-    writeScope: json['write_scope'] != null ? SdkPresent((json['write_scope'] != null ? AgentAutomationsGetAutomationResponseTriggersIssueCommentWriteScope.fromJson(json['write_scope'] as String) : null)!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    ...switch (bodySubstring) {
-      SdkPresent<String>(value: final value) => {'body_substring': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (writeScope) {
-      SdkPresent<AgentAutomationsGetAutomationResponseTriggersIssueCommentWriteScope>(value: final value) => {'write_scope': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
-}
-
-class AgentAutomationsGetAutomationResponseTriggersPullRequestComment {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// Pull request conversation and inline review comment types to match.
-  final List<AgentAutomationsGetAutomationResponseTriggersPullRequestCommentCommentTypesItem> commentTypes;
-  /// A case-insensitive substring matched against the event body.
-  final SdkOptional<String> bodySubstring;
-  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-  final SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestCommentWriteScope> writeScope;
-
-  const AgentAutomationsGetAutomationResponseTriggersPullRequestComment({required this.commentTypes, this.bodySubstring = const SdkOmitted(), this.writeScope = const SdkOmitted()});
-
-  AgentAutomationsGetAutomationResponseTriggersPullRequestComment Function({List<AgentAutomationsGetAutomationResponseTriggersPullRequestCommentCommentTypesItem> commentTypes, SdkOptional<String> bodySubstring, SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestCommentWriteScope> writeScope}) get copyWith => _copyWith;
-
-  AgentAutomationsGetAutomationResponseTriggersPullRequestComment _copyWith({Object? commentTypes = sdkOmittedValue, Object? bodySubstring = sdkOmittedValue, Object? writeScope = sdkOmittedValue}) => AgentAutomationsGetAutomationResponseTriggersPullRequestComment(
-    commentTypes: identical(commentTypes, sdkOmittedValue) ? this.commentTypes : commentTypes as List<AgentAutomationsGetAutomationResponseTriggersPullRequestCommentCommentTypesItem>,
-    bodySubstring: identical(bodySubstring, sdkOmittedValue) ? this.bodySubstring : bodySubstring as SdkOptional<String>,
-    writeScope: identical(writeScope, sdkOmittedValue) ? this.writeScope : writeScope as SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestCommentWriteScope>,
-  );
-
-  factory AgentAutomationsGetAutomationResponseTriggersPullRequestComment.fromJson(Map<String, dynamic> json) => AgentAutomationsGetAutomationResponseTriggersPullRequestComment(
-    commentTypes: ((json['comment_types'] as List?)?.map((e) => AgentAutomationsGetAutomationResponseTriggersPullRequestCommentCommentTypesItem.fromJson(e as String)).toList())!,
-    bodySubstring: json['body_substring'] != null ? SdkPresent((json['body_substring'] as String?)!) : const SdkOmitted(),
-    writeScope: json['write_scope'] != null ? SdkPresent((json['write_scope'] != null ? AgentAutomationsGetAutomationResponseTriggersPullRequestCommentWriteScope.fromJson(json['write_scope'] as String) : null)!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    'comment_types': commentTypes.map((item) => item.toJson()).toList(),
-    ...switch (bodySubstring) {
-      SdkPresent<String>(value: final value) => {'body_substring': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (writeScope) {
-      SdkPresent<AgentAutomationsGetAutomationResponseTriggersPullRequestCommentWriteScope>(value: final value) => {'write_scope': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
-}
-
-class AgentAutomationsGetAutomationResponseTriggersDiscussionOpened {
+class AgentAutomationsGetRepoAutomationResponseTriggersDiscussionUpdated {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   /// Discussion category names matched case-insensitively.
@@ -211,22 +12,22 @@ class AgentAutomationsGetAutomationResponseTriggersDiscussionOpened {
   /// A case-insensitive substring matched against the event body.
   final SdkOptional<String> bodySubstring;
   /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-  final SdkOptional<AgentAutomationsGetAutomationResponseTriggersDiscussionOpenedWriteScope> writeScope;
+  final SdkOptional<AgentAutomationsGetRepoAutomationResponseTriggersDiscussionUpdatedWriteScope> writeScope;
 
-  const AgentAutomationsGetAutomationResponseTriggersDiscussionOpened({this.categories = const SdkOmitted(), this.bodySubstring = const SdkOmitted(), this.writeScope = const SdkOmitted()});
+  const AgentAutomationsGetRepoAutomationResponseTriggersDiscussionUpdated({this.categories = const SdkOmitted(), this.bodySubstring = const SdkOmitted(), this.writeScope = const SdkOmitted()});
 
-  AgentAutomationsGetAutomationResponseTriggersDiscussionOpened Function({SdkOptional<List<String>> categories, SdkOptional<String> bodySubstring, SdkOptional<AgentAutomationsGetAutomationResponseTriggersDiscussionOpenedWriteScope> writeScope}) get copyWith => _copyWith;
+  AgentAutomationsGetRepoAutomationResponseTriggersDiscussionUpdated Function({SdkOptional<List<String>> categories, SdkOptional<String> bodySubstring, SdkOptional<AgentAutomationsGetRepoAutomationResponseTriggersDiscussionUpdatedWriteScope> writeScope}) get copyWith => _copyWith;
 
-  AgentAutomationsGetAutomationResponseTriggersDiscussionOpened _copyWith({Object? categories = sdkOmittedValue, Object? bodySubstring = sdkOmittedValue, Object? writeScope = sdkOmittedValue}) => AgentAutomationsGetAutomationResponseTriggersDiscussionOpened(
+  AgentAutomationsGetRepoAutomationResponseTriggersDiscussionUpdated _copyWith({Object? categories = sdkOmittedValue, Object? bodySubstring = sdkOmittedValue, Object? writeScope = sdkOmittedValue}) => AgentAutomationsGetRepoAutomationResponseTriggersDiscussionUpdated(
     categories: identical(categories, sdkOmittedValue) ? this.categories : categories as SdkOptional<List<String>>,
     bodySubstring: identical(bodySubstring, sdkOmittedValue) ? this.bodySubstring : bodySubstring as SdkOptional<String>,
-    writeScope: identical(writeScope, sdkOmittedValue) ? this.writeScope : writeScope as SdkOptional<AgentAutomationsGetAutomationResponseTriggersDiscussionOpenedWriteScope>,
+    writeScope: identical(writeScope, sdkOmittedValue) ? this.writeScope : writeScope as SdkOptional<AgentAutomationsGetRepoAutomationResponseTriggersDiscussionUpdatedWriteScope>,
   );
 
-  factory AgentAutomationsGetAutomationResponseTriggersDiscussionOpened.fromJson(Map<String, dynamic> json) => AgentAutomationsGetAutomationResponseTriggersDiscussionOpened(
+  factory AgentAutomationsGetRepoAutomationResponseTriggersDiscussionUpdated.fromJson(Map<String, dynamic> json) => AgentAutomationsGetRepoAutomationResponseTriggersDiscussionUpdated(
     categories: json['categories'] != null ? SdkPresent(((json['categories'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
     bodySubstring: json['body_substring'] != null ? SdkPresent((json['body_substring'] as String?)!) : const SdkOmitted(),
-    writeScope: json['write_scope'] != null ? SdkPresent((json['write_scope'] != null ? AgentAutomationsGetAutomationResponseTriggersDiscussionOpenedWriteScope.fromJson(json['write_scope'] as String) : null)!) : const SdkOmitted(),
+    writeScope: json['write_scope'] != null ? SdkPresent((json['write_scope'] != null ? AgentAutomationsGetRepoAutomationResponseTriggersDiscussionUpdatedWriteScope.fromJson(json['write_scope'] as String) : null)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
@@ -239,39 +40,47 @@ class AgentAutomationsGetAutomationResponseTriggersDiscussionOpened {
       _ => const <String, dynamic>{},
     },
     ...switch (writeScope) {
-      SdkPresent<AgentAutomationsGetAutomationResponseTriggersDiscussionOpenedWriteScope>(value: final value) => {'write_scope': value.toJson(),},
+      SdkPresent<AgentAutomationsGetRepoAutomationResponseTriggersDiscussionUpdatedWriteScope>(value: final value) => {'write_scope': value.toJson(),},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-class AgentAutomationsGetAutomationResponseTriggersDiscussionUpdated {
+class AgentAutomationsGetRepoAutomationResponseTriggersDiscussionComment {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+  /// Top-level discussion comments and replies to match. Omit to match both.
+  final SdkOptional<List<AgentAutomationsGetRepoAutomationResponseTriggersDiscussionCommentCommentTypesItem>> commentTypes;
   /// Discussion category names matched case-insensitively.
   final SdkOptional<List<String>> categories;
   /// A case-insensitive substring matched against the event body.
   final SdkOptional<String> bodySubstring;
   /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-  final SdkOptional<AgentAutomationsGetAutomationResponseTriggersDiscussionUpdatedWriteScope> writeScope;
+  final SdkOptional<AgentAutomationsGetRepoAutomationResponseTriggersDiscussionCommentWriteScope> writeScope;
 
-  const AgentAutomationsGetAutomationResponseTriggersDiscussionUpdated({this.categories = const SdkOmitted(), this.bodySubstring = const SdkOmitted(), this.writeScope = const SdkOmitted()});
+  const AgentAutomationsGetRepoAutomationResponseTriggersDiscussionComment({this.commentTypes = const SdkOmitted(), this.categories = const SdkOmitted(), this.bodySubstring = const SdkOmitted(), this.writeScope = const SdkOmitted()});
 
-  AgentAutomationsGetAutomationResponseTriggersDiscussionUpdated Function({SdkOptional<List<String>> categories, SdkOptional<String> bodySubstring, SdkOptional<AgentAutomationsGetAutomationResponseTriggersDiscussionUpdatedWriteScope> writeScope}) get copyWith => _copyWith;
+  AgentAutomationsGetRepoAutomationResponseTriggersDiscussionComment Function({SdkOptional<List<AgentAutomationsGetRepoAutomationResponseTriggersDiscussionCommentCommentTypesItem>> commentTypes, SdkOptional<List<String>> categories, SdkOptional<String> bodySubstring, SdkOptional<AgentAutomationsGetRepoAutomationResponseTriggersDiscussionCommentWriteScope> writeScope}) get copyWith => _copyWith;
 
-  AgentAutomationsGetAutomationResponseTriggersDiscussionUpdated _copyWith({Object? categories = sdkOmittedValue, Object? bodySubstring = sdkOmittedValue, Object? writeScope = sdkOmittedValue}) => AgentAutomationsGetAutomationResponseTriggersDiscussionUpdated(
+  AgentAutomationsGetRepoAutomationResponseTriggersDiscussionComment _copyWith({Object? commentTypes = sdkOmittedValue, Object? categories = sdkOmittedValue, Object? bodySubstring = sdkOmittedValue, Object? writeScope = sdkOmittedValue}) => AgentAutomationsGetRepoAutomationResponseTriggersDiscussionComment(
+    commentTypes: identical(commentTypes, sdkOmittedValue) ? this.commentTypes : commentTypes as SdkOptional<List<AgentAutomationsGetRepoAutomationResponseTriggersDiscussionCommentCommentTypesItem>>,
     categories: identical(categories, sdkOmittedValue) ? this.categories : categories as SdkOptional<List<String>>,
     bodySubstring: identical(bodySubstring, sdkOmittedValue) ? this.bodySubstring : bodySubstring as SdkOptional<String>,
-    writeScope: identical(writeScope, sdkOmittedValue) ? this.writeScope : writeScope as SdkOptional<AgentAutomationsGetAutomationResponseTriggersDiscussionUpdatedWriteScope>,
+    writeScope: identical(writeScope, sdkOmittedValue) ? this.writeScope : writeScope as SdkOptional<AgentAutomationsGetRepoAutomationResponseTriggersDiscussionCommentWriteScope>,
   );
 
-  factory AgentAutomationsGetAutomationResponseTriggersDiscussionUpdated.fromJson(Map<String, dynamic> json) => AgentAutomationsGetAutomationResponseTriggersDiscussionUpdated(
+  factory AgentAutomationsGetRepoAutomationResponseTriggersDiscussionComment.fromJson(Map<String, dynamic> json) => AgentAutomationsGetRepoAutomationResponseTriggersDiscussionComment(
+    commentTypes: json['comment_types'] != null ? SdkPresent(((json['comment_types'] as List?)?.map((e) => AgentAutomationsGetRepoAutomationResponseTriggersDiscussionCommentCommentTypesItem.fromJson(e as String)).toList())!) : const SdkOmitted(),
     categories: json['categories'] != null ? SdkPresent(((json['categories'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
     bodySubstring: json['body_substring'] != null ? SdkPresent((json['body_substring'] as String?)!) : const SdkOmitted(),
-    writeScope: json['write_scope'] != null ? SdkPresent((json['write_scope'] != null ? AgentAutomationsGetAutomationResponseTriggersDiscussionUpdatedWriteScope.fromJson(json['write_scope'] as String) : null)!) : const SdkOmitted(),
+    writeScope: json['write_scope'] != null ? SdkPresent((json['write_scope'] != null ? AgentAutomationsGetRepoAutomationResponseTriggersDiscussionCommentWriteScope.fromJson(json['write_scope'] as String) : null)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
+    ...switch (commentTypes) {
+      SdkPresent<List<AgentAutomationsGetRepoAutomationResponseTriggersDiscussionCommentCommentTypesItem>>(value: final value) => {'comment_types': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
     ...switch (categories) {
       SdkPresent<List<String>>(value: final value) => {'categories': value,},
       _ => const <String, dynamic>{},
@@ -281,7 +90,175 @@ class AgentAutomationsGetAutomationResponseTriggersDiscussionUpdated {
       _ => const <String, dynamic>{},
     },
     ...switch (writeScope) {
-      SdkPresent<AgentAutomationsGetAutomationResponseTriggersDiscussionUpdatedWriteScope>(value: final value) => {'write_scope': value.toJson(),},
+      SdkPresent<AgentAutomationsGetRepoAutomationResponseTriggersDiscussionCommentWriteScope>(value: final value) => {'write_scope': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
+}
+
+class AgentAutomationsGetRepoAutomationResponseTriggersIssueAssigned {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// A GitHub issue or pull request search query.
+  final SdkOptional<String> query;
+  /// Affected assignee logins matched case-insensitively.
+  final SdkOptional<List<String>> assignees;
+  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+  final SdkOptional<AgentAutomationsGetRepoAutomationResponseTriggersIssueAssignedWriteScope> writeScope;
+
+  const AgentAutomationsGetRepoAutomationResponseTriggersIssueAssigned({this.query = const SdkOmitted(), this.assignees = const SdkOmitted(), this.writeScope = const SdkOmitted()});
+
+  AgentAutomationsGetRepoAutomationResponseTriggersIssueAssigned Function({SdkOptional<String> query, SdkOptional<List<String>> assignees, SdkOptional<AgentAutomationsGetRepoAutomationResponseTriggersIssueAssignedWriteScope> writeScope}) get copyWith => _copyWith;
+
+  AgentAutomationsGetRepoAutomationResponseTriggersIssueAssigned _copyWith({Object? query = sdkOmittedValue, Object? assignees = sdkOmittedValue, Object? writeScope = sdkOmittedValue}) => AgentAutomationsGetRepoAutomationResponseTriggersIssueAssigned(
+    query: identical(query, sdkOmittedValue) ? this.query : query as SdkOptional<String>,
+    assignees: identical(assignees, sdkOmittedValue) ? this.assignees : assignees as SdkOptional<List<String>>,
+    writeScope: identical(writeScope, sdkOmittedValue) ? this.writeScope : writeScope as SdkOptional<AgentAutomationsGetRepoAutomationResponseTriggersIssueAssignedWriteScope>,
+  );
+
+  factory AgentAutomationsGetRepoAutomationResponseTriggersIssueAssigned.fromJson(Map<String, dynamic> json) => AgentAutomationsGetRepoAutomationResponseTriggersIssueAssigned(
+    query: json['query'] != null ? SdkPresent((json['query'] as String?)!) : const SdkOmitted(),
+    assignees: json['assignees'] != null ? SdkPresent(((json['assignees'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    writeScope: json['write_scope'] != null ? SdkPresent((json['write_scope'] != null ? AgentAutomationsGetRepoAutomationResponseTriggersIssueAssignedWriteScope.fromJson(json['write_scope'] as String) : null)!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    ...switch (query) {
+      SdkPresent<String>(value: final value) => {'query': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (assignees) {
+      SdkPresent<List<String>>(value: final value) => {'assignees': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (writeScope) {
+      SdkPresent<AgentAutomationsGetRepoAutomationResponseTriggersIssueAssignedWriteScope>(value: final value) => {'write_scope': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
+}
+
+class AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssigned {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// A GitHub issue or pull request search query.
+  final SdkOptional<String> query;
+  /// Gitignore-style changed-file path globs.
+  final SdkOptional<List<String>> paths;
+  /// Affected assignee logins matched case-insensitively.
+  final SdkOptional<List<String>> assignees;
+  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+  final SdkOptional<AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssignedWriteScope> writeScope;
+
+  const AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssigned({this.query = const SdkOmitted(), this.paths = const SdkOmitted(), this.assignees = const SdkOmitted(), this.writeScope = const SdkOmitted()});
+
+  AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssigned Function({SdkOptional<String> query, SdkOptional<List<String>> paths, SdkOptional<List<String>> assignees, SdkOptional<AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssignedWriteScope> writeScope}) get copyWith => _copyWith;
+
+  AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssigned _copyWith({Object? query = sdkOmittedValue, Object? paths = sdkOmittedValue, Object? assignees = sdkOmittedValue, Object? writeScope = sdkOmittedValue}) => AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssigned(
+    query: identical(query, sdkOmittedValue) ? this.query : query as SdkOptional<String>,
+    paths: identical(paths, sdkOmittedValue) ? this.paths : paths as SdkOptional<List<String>>,
+    assignees: identical(assignees, sdkOmittedValue) ? this.assignees : assignees as SdkOptional<List<String>>,
+    writeScope: identical(writeScope, sdkOmittedValue) ? this.writeScope : writeScope as SdkOptional<AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssignedWriteScope>,
+  );
+
+  factory AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssigned.fromJson(Map<String, dynamic> json) => AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssigned(
+    query: json['query'] != null ? SdkPresent((json['query'] as String?)!) : const SdkOmitted(),
+    paths: json['paths'] != null ? SdkPresent(((json['paths'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    assignees: json['assignees'] != null ? SdkPresent(((json['assignees'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    writeScope: json['write_scope'] != null ? SdkPresent((json['write_scope'] != null ? AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssignedWriteScope.fromJson(json['write_scope'] as String) : null)!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    ...switch (query) {
+      SdkPresent<String>(value: final value) => {'query': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (paths) {
+      SdkPresent<List<String>>(value: final value) => {'paths': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (assignees) {
+      SdkPresent<List<String>>(value: final value) => {'assignees': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (writeScope) {
+      SdkPresent<AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssignedWriteScope>(value: final value) => {'write_scope': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
+}
+
+class AgentAutomationsGetRepoAutomationResponseTriggersSubIssueAdded {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// A GitHub issue or pull request search query.
+  final SdkOptional<String> query;
+  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+  final SdkOptional<AgentAutomationsGetRepoAutomationResponseTriggersSubIssueAddedWriteScope> writeScope;
+
+  const AgentAutomationsGetRepoAutomationResponseTriggersSubIssueAdded({this.query = const SdkOmitted(), this.writeScope = const SdkOmitted()});
+
+  AgentAutomationsGetRepoAutomationResponseTriggersSubIssueAdded Function({SdkOptional<String> query, SdkOptional<AgentAutomationsGetRepoAutomationResponseTriggersSubIssueAddedWriteScope> writeScope}) get copyWith => _copyWith;
+
+  AgentAutomationsGetRepoAutomationResponseTriggersSubIssueAdded _copyWith({Object? query = sdkOmittedValue, Object? writeScope = sdkOmittedValue}) => AgentAutomationsGetRepoAutomationResponseTriggersSubIssueAdded(
+    query: identical(query, sdkOmittedValue) ? this.query : query as SdkOptional<String>,
+    writeScope: identical(writeScope, sdkOmittedValue) ? this.writeScope : writeScope as SdkOptional<AgentAutomationsGetRepoAutomationResponseTriggersSubIssueAddedWriteScope>,
+  );
+
+  factory AgentAutomationsGetRepoAutomationResponseTriggersSubIssueAdded.fromJson(Map<String, dynamic> json) => AgentAutomationsGetRepoAutomationResponseTriggersSubIssueAdded(
+    query: json['query'] != null ? SdkPresent((json['query'] as String?)!) : const SdkOmitted(),
+    writeScope: json['write_scope'] != null ? SdkPresent((json['write_scope'] != null ? AgentAutomationsGetRepoAutomationResponseTriggersSubIssueAddedWriteScope.fromJson(json['write_scope'] as String) : null)!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    ...switch (query) {
+      SdkPresent<String>(value: final value) => {'query': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (writeScope) {
+      SdkPresent<AgentAutomationsGetRepoAutomationResponseTriggersSubIssueAddedWriteScope>(value: final value) => {'write_scope': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
+}
+
+class AgentAutomationsGetRepoAutomationResponseTriggersPullRequestReadyForReview {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// A GitHub issue or pull request search query.
+  final SdkOptional<String> query;
+  /// Gitignore-style changed-file path globs.
+  final SdkOptional<List<String>> paths;
+  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+  final SdkOptional<AgentAutomationsGetRepoAutomationResponseTriggersPullRequestReadyForReviewWriteScope> writeScope;
+
+  const AgentAutomationsGetRepoAutomationResponseTriggersPullRequestReadyForReview({this.query = const SdkOmitted(), this.paths = const SdkOmitted(), this.writeScope = const SdkOmitted()});
+
+  AgentAutomationsGetRepoAutomationResponseTriggersPullRequestReadyForReview Function({SdkOptional<String> query, SdkOptional<List<String>> paths, SdkOptional<AgentAutomationsGetRepoAutomationResponseTriggersPullRequestReadyForReviewWriteScope> writeScope}) get copyWith => _copyWith;
+
+  AgentAutomationsGetRepoAutomationResponseTriggersPullRequestReadyForReview _copyWith({Object? query = sdkOmittedValue, Object? paths = sdkOmittedValue, Object? writeScope = sdkOmittedValue}) => AgentAutomationsGetRepoAutomationResponseTriggersPullRequestReadyForReview(
+    query: identical(query, sdkOmittedValue) ? this.query : query as SdkOptional<String>,
+    paths: identical(paths, sdkOmittedValue) ? this.paths : paths as SdkOptional<List<String>>,
+    writeScope: identical(writeScope, sdkOmittedValue) ? this.writeScope : writeScope as SdkOptional<AgentAutomationsGetRepoAutomationResponseTriggersPullRequestReadyForReviewWriteScope>,
+  );
+
+  factory AgentAutomationsGetRepoAutomationResponseTriggersPullRequestReadyForReview.fromJson(Map<String, dynamic> json) => AgentAutomationsGetRepoAutomationResponseTriggersPullRequestReadyForReview(
+    query: json['query'] != null ? SdkPresent((json['query'] as String?)!) : const SdkOmitted(),
+    paths: json['paths'] != null ? SdkPresent(((json['paths'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    writeScope: json['write_scope'] != null ? SdkPresent((json['write_scope'] != null ? AgentAutomationsGetRepoAutomationResponseTriggersPullRequestReadyForReviewWriteScope.fromJson(json['write_scope'] as String) : null)!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    ...switch (query) {
+      SdkPresent<String>(value: final value) => {'query': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (paths) {
+      SdkPresent<List<String>>(value: final value) => {'paths': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (writeScope) {
+      SdkPresent<AgentAutomationsGetRepoAutomationResponseTriggersPullRequestReadyForReviewWriteScope>(value: final value) => {'write_scope': value.toJson(),},
       _ => const <String, dynamic>{},
     },
   };

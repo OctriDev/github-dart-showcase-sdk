@@ -38,59 +38,6 @@ class ReferrerTraffic {
   };
 }
 
-/// Generated name and body describing a release
-class ReleaseNotesContent {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The generated name of the release
-  final String name;
-  /// The generated body describing the contents of the release supporting markdown formatting
-  final String body;
-
-  const ReleaseNotesContent({required this.name, required this.body});
-
-  ReleaseNotesContent Function({String name, String body}) get copyWith => _copyWith;
-
-  ReleaseNotesContent _copyWith({Object? name = sdkOmittedValue, Object? body = sdkOmittedValue}) => ReleaseNotesContent(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    body: identical(body, sdkOmittedValue) ? this.body : body as String,
-  );
-
-  factory ReleaseNotesContent.fromJson(Map<String, dynamic> json) => ReleaseNotesContent(
-    name: (json['name'] as String?)!,
-    body: (json['body'] as String?)!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'name': name,
-    'body': body,
-  };
-}
-
-sealed class ReviewersItemReviewer {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  const ReviewersItemReviewer();
-  factory ReviewersItemReviewer.fromJson(Object? json) {
-    try { return ReviewersItemReviewerSimpleUser(SimpleUser.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return ReviewersItemReviewerTeam(Team.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    throw FormatException("No variant matched for ReviewersItemReviewer");
-  }
-  Object? toJson();
-}
-
-final class ReviewersItemReviewerSimpleUser extends ReviewersItemReviewer {
-  final SimpleUser value;
-  const ReviewersItemReviewerSimpleUser(this.value);
-  @override Object? toJson() => value.toJson();
-}
-
-final class ReviewersItemReviewerTeam extends ReviewersItemReviewer {
-  final Team value;
-  const ReviewersItemReviewerTeam(this.value);
-  @override Object? toJson() => value.toJson();
-}
-
 /// Required object value serialized in the `commit` wire field.
 class ShortBranchCommit {
   /// This model is constructed from named fields in one call.
@@ -273,5 +220,73 @@ class TagCommit {
   Map<String, dynamic> toJson() => {
     'sha': sha,
     'url': url,
+  };
+}
+
+/// Tag
+class Tag {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// Required `string` value serialized in the `name` wire field.
+  final String name;
+  /// Required object value serialized in the `commit` wire field.
+  final TagCommit commit;
+  /// Required `uri`-formatted value serialized in the `zipball_url` wire field.
+  final String zipballUrl;
+  /// Required `uri`-formatted value serialized in the `tarball_url` wire field.
+  final String tarballUrl;
+  /// Required `string` value serialized in the `node_id` wire field.
+  final String nodeId;
+
+  const Tag({required this.name, required this.commit, required this.zipballUrl, required this.tarballUrl, required this.nodeId});
+
+  Tag Function({String name, TagCommit commit, String zipballUrl, String tarballUrl, String nodeId}) get copyWith => _copyWith;
+
+  Tag _copyWith({Object? name = sdkOmittedValue, Object? commit = sdkOmittedValue, Object? zipballUrl = sdkOmittedValue, Object? tarballUrl = sdkOmittedValue, Object? nodeId = sdkOmittedValue}) => Tag(
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    commit: identical(commit, sdkOmittedValue) ? this.commit : commit as TagCommit,
+    zipballUrl: identical(zipballUrl, sdkOmittedValue) ? this.zipballUrl : zipballUrl as String,
+    tarballUrl: identical(tarballUrl, sdkOmittedValue) ? this.tarballUrl : tarballUrl as String,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+  );
+
+  factory Tag.fromJson(Map<String, dynamic> json) => Tag(
+    name: (json['name'] as String?)!,
+    commit: (json['commit'] != null ? TagCommit.fromJson(json['commit'] as Map<String, dynamic>) : null)!,
+    zipballUrl: (json['zipball_url'] as String?)!,
+    tarballUrl: (json['tarball_url'] as String?)!,
+    nodeId: (json['node_id'] as String?)!,
+  );
+
+  Map<String, dynamic> toJson() => {
+    'name': name,
+    'commit': commit.toJson(),
+    'zipball_url': zipballUrl,
+    'tarball_url': tarballUrl,
+    'node_id': nodeId,
+  };
+}
+
+/// A topic aggregates entities that are related to a subject.
+class Topic {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// Required array value serialized in the `names` wire field.
+  final List<String> names;
+
+  const Topic({required this.names});
+
+  Topic Function({List<String> names}) get copyWith => _copyWith;
+
+  Topic _copyWith({Object? names = sdkOmittedValue}) => Topic(
+    names: identical(names, sdkOmittedValue) ? this.names : names as List<String>,
+  );
+
+  factory Topic.fromJson(Map<String, dynamic> json) => Topic(
+    names: ((json['names'] as List?)?.map((e) => e as String).toList())!,
+  );
+
+  Map<String, dynamic> toJson() => {
+    'names': names,
   };
 }

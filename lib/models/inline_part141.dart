@@ -4,284 +4,274 @@
 part of 'inline.dart';
 
 // Inline operation models (part 141)
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookMetaDeletedAction {
+/// Optional enumerated value serialized in the `type` wire field.
+final class WebhookPullRequestLockedPullRequestBaseUserType {
 
   final String value;
 
-  const WebhookMetaDeletedAction._(this.value);
+  const WebhookPullRequestLockedPullRequestBaseUserType._(this.value);
 
-  factory WebhookMetaDeletedAction.fromJson(String value) => WebhookMetaDeletedAction._(value);
+  factory WebhookPullRequestLockedPullRequestBaseUserType.fromJson(String value) => WebhookPullRequestLockedPullRequestBaseUserType._(value);
 
-  static const deleted = WebhookMetaDeletedAction._('deleted');
+  static const bot = WebhookPullRequestLockedPullRequestBaseUserType._('Bot');
+  static const user = WebhookPullRequestLockedPullRequestBaseUserType._('User');
+  static const organization = WebhookPullRequestLockedPullRequestBaseUserType._('Organization');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookMetaDeletedAction && other.value == value;
+  @override bool operator ==(Object other) => other is WebhookPullRequestLockedPullRequestBaseUserType && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Required enumerated value serialized in the `content_type` wire field.
-final class WebhookMetaDeletedHookConfigContentType {
+/// The default value for a merge commit message. - `PR_TITLE` - default to the pull request's title. - `PR_BODY` - default to the pull request's body. - `BLANK` - default to a blank commit message.
+final class WebhookPullRequestLockedPullRequestHeadRepoMergeCommitMessage {
 
   final String value;
 
-  const WebhookMetaDeletedHookConfigContentType._(this.value);
+  const WebhookPullRequestLockedPullRequestHeadRepoMergeCommitMessage._(this.value);
 
-  factory WebhookMetaDeletedHookConfigContentType.fromJson(String value) => WebhookMetaDeletedHookConfigContentType._(value);
+  factory WebhookPullRequestLockedPullRequestHeadRepoMergeCommitMessage.fromJson(String value) => WebhookPullRequestLockedPullRequestHeadRepoMergeCommitMessage._(value);
 
-  static const json = WebhookMetaDeletedHookConfigContentType._('json');
-  static const form = WebhookMetaDeletedHookConfigContentType._('form');
+  static const prBody = WebhookPullRequestLockedPullRequestHeadRepoMergeCommitMessage._('PR_BODY');
+  static const prTitle = WebhookPullRequestLockedPullRequestHeadRepoMergeCommitMessage._('PR_TITLE');
+  static const blank = WebhookPullRequestLockedPullRequestHeadRepoMergeCommitMessage._('BLANK');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookMetaDeletedHookConfigContentType && other.value == value;
+  @override bool operator ==(Object other) => other is WebhookPullRequestLockedPullRequestHeadRepoMergeCommitMessage && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Required enumerated value serialized in the `events[]` wire field.
-final class WebhookMetaDeletedHookEventsItem {
+/// The default value for a merge commit title. - `PR_TITLE` - default to the pull request's title. - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
+final class WebhookPullRequestLockedPullRequestHeadRepoMergeCommitTitle {
 
   final String value;
 
-  const WebhookMetaDeletedHookEventsItem._(this.value);
+  const WebhookPullRequestLockedPullRequestHeadRepoMergeCommitTitle._(this.value);
 
-  factory WebhookMetaDeletedHookEventsItem.fromJson(String value) => WebhookMetaDeletedHookEventsItem._(value);
+  factory WebhookPullRequestLockedPullRequestHeadRepoMergeCommitTitle.fromJson(String value) => WebhookPullRequestLockedPullRequestHeadRepoMergeCommitTitle._(value);
 
-  static const unknown = WebhookMetaDeletedHookEventsItem._('*');
-  static const branchProtectionRule = WebhookMetaDeletedHookEventsItem._('branch_protection_rule');
-  static const checkRun = WebhookMetaDeletedHookEventsItem._('check_run');
-  static const checkSuite = WebhookMetaDeletedHookEventsItem._('check_suite');
-  static const codeScanningAlert = WebhookMetaDeletedHookEventsItem._('code_scanning_alert');
-  static const commitComment = WebhookMetaDeletedHookEventsItem._('commit_comment');
-  static const create = WebhookMetaDeletedHookEventsItem._('create');
-  static const delete = WebhookMetaDeletedHookEventsItem._('delete');
-  static const deployment = WebhookMetaDeletedHookEventsItem._('deployment');
-  static const deploymentStatus = WebhookMetaDeletedHookEventsItem._('deployment_status');
-  static const deployKey = WebhookMetaDeletedHookEventsItem._('deploy_key');
-  static const discussion = WebhookMetaDeletedHookEventsItem._('discussion');
-  static const discussionComment = WebhookMetaDeletedHookEventsItem._('discussion_comment');
-  static const fork = WebhookMetaDeletedHookEventsItem._('fork');
-  static const gollum = WebhookMetaDeletedHookEventsItem._('gollum');
-  static const issues = WebhookMetaDeletedHookEventsItem._('issues');
-  static const issueComment = WebhookMetaDeletedHookEventsItem._('issue_comment');
-  static const label = WebhookMetaDeletedHookEventsItem._('label');
-  static const member = WebhookMetaDeletedHookEventsItem._('member');
-  static const membership = WebhookMetaDeletedHookEventsItem._('membership');
-  static const meta = WebhookMetaDeletedHookEventsItem._('meta');
-  static const milestone = WebhookMetaDeletedHookEventsItem._('milestone');
-  static const organization = WebhookMetaDeletedHookEventsItem._('organization');
-  static const orgBlock = WebhookMetaDeletedHookEventsItem._('org_block');
-  static const package = WebhookMetaDeletedHookEventsItem._('package');
-  static const pageBuild = WebhookMetaDeletedHookEventsItem._('page_build');
-  static const project = WebhookMetaDeletedHookEventsItem._('project');
-  static const projectCard = WebhookMetaDeletedHookEventsItem._('project_card');
-  static const projectColumn = WebhookMetaDeletedHookEventsItem._('project_column');
-  static const public = WebhookMetaDeletedHookEventsItem._('public');
-  static const pullRequest = WebhookMetaDeletedHookEventsItem._('pull_request');
-  static const pullRequestReview = WebhookMetaDeletedHookEventsItem._('pull_request_review');
-  static const pullRequestReviewComment = WebhookMetaDeletedHookEventsItem._('pull_request_review_comment');
-  static const pullRequestReviewThread = WebhookMetaDeletedHookEventsItem._('pull_request_review_thread');
-  static const push = WebhookMetaDeletedHookEventsItem._('push');
-  static const registryPackage = WebhookMetaDeletedHookEventsItem._('registry_package');
-  static const release = WebhookMetaDeletedHookEventsItem._('release');
-  static const repository = WebhookMetaDeletedHookEventsItem._('repository');
-  static const repositoryImport = WebhookMetaDeletedHookEventsItem._('repository_import');
-  static const repositoryVulnerabilityAlert = WebhookMetaDeletedHookEventsItem._('repository_vulnerability_alert');
-  static const secretScanningAlert = WebhookMetaDeletedHookEventsItem._('secret_scanning_alert');
-  static const secretScanningAlertLocation = WebhookMetaDeletedHookEventsItem._('secret_scanning_alert_location');
-  static const securityAndAnalysis = WebhookMetaDeletedHookEventsItem._('security_and_analysis');
-  static const star = WebhookMetaDeletedHookEventsItem._('star');
-  static const status = WebhookMetaDeletedHookEventsItem._('status');
-  static const team = WebhookMetaDeletedHookEventsItem._('team');
-  static const teamAdd = WebhookMetaDeletedHookEventsItem._('team_add');
-  static const watch = WebhookMetaDeletedHookEventsItem._('watch');
-  static const workflowJob = WebhookMetaDeletedHookEventsItem._('workflow_job');
-  static const workflowRun = WebhookMetaDeletedHookEventsItem._('workflow_run');
-  static const repositoryDispatch = WebhookMetaDeletedHookEventsItem._('repository_dispatch');
-  static const projectsV2Item = WebhookMetaDeletedHookEventsItem._('projects_v2_item');
+  static const prTitle = WebhookPullRequestLockedPullRequestHeadRepoMergeCommitTitle._('PR_TITLE');
+  static const mergeMessage = WebhookPullRequestLockedPullRequestHeadRepoMergeCommitTitle._('MERGE_MESSAGE');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookMetaDeletedHookEventsItem && other.value == value;
+  @override bool operator ==(Object other) => other is WebhookPullRequestLockedPullRequestHeadRepoMergeCommitTitle && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookMilestoneClosedAction {
+/// Optional enumerated value serialized in the `type` wire field.
+final class WebhookPullRequestLockedPullRequestHeadRepoOwnerType {
 
   final String value;
 
-  const WebhookMilestoneClosedAction._(this.value);
+  const WebhookPullRequestLockedPullRequestHeadRepoOwnerType._(this.value);
 
-  factory WebhookMilestoneClosedAction.fromJson(String value) => WebhookMilestoneClosedAction._(value);
+  factory WebhookPullRequestLockedPullRequestHeadRepoOwnerType.fromJson(String value) => WebhookPullRequestLockedPullRequestHeadRepoOwnerType._(value);
 
-  static const closed = WebhookMilestoneClosedAction._('closed');
+  static const bot = WebhookPullRequestLockedPullRequestHeadRepoOwnerType._('Bot');
+  static const user = WebhookPullRequestLockedPullRequestHeadRepoOwnerType._('User');
+  static const organization = WebhookPullRequestLockedPullRequestHeadRepoOwnerType._('Organization');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookMilestoneClosedAction && other.value == value;
+  @override bool operator ==(Object other) => other is WebhookPullRequestLockedPullRequestHeadRepoOwnerType && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookMilestoneCreatedAction {
+/// The policy controlling who can create pull requests: all or collaborators_only.
+final class WebhookPullRequestLockedPullRequestHeadRepoPullRequestCreationPolicy {
 
   final String value;
 
-  const WebhookMilestoneCreatedAction._(this.value);
+  const WebhookPullRequestLockedPullRequestHeadRepoPullRequestCreationPolicy._(this.value);
 
-  factory WebhookMilestoneCreatedAction.fromJson(String value) => WebhookMilestoneCreatedAction._(value);
+  factory WebhookPullRequestLockedPullRequestHeadRepoPullRequestCreationPolicy.fromJson(String value) => WebhookPullRequestLockedPullRequestHeadRepoPullRequestCreationPolicy._(value);
 
-  static const created = WebhookMilestoneCreatedAction._('created');
+  static const all = WebhookPullRequestLockedPullRequestHeadRepoPullRequestCreationPolicy._('all');
+  static const collaboratorsOnly = WebhookPullRequestLockedPullRequestHeadRepoPullRequestCreationPolicy._('collaborators_only');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookMilestoneCreatedAction && other.value == value;
+  @override bool operator ==(Object other) => other is WebhookPullRequestLockedPullRequestHeadRepoPullRequestCreationPolicy && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookMilestoneDeletedAction {
+/// The default value for a squash merge commit message: - `PR_BODY` - default to the pull request's body. - `COMMIT_MESSAGES` - default to the branch's commit messages. - `BLANK` - default to a blank commit message.
+final class WebhookPullRequestLockedPullRequestHeadRepoSquashMergeCommitMessage {
 
   final String value;
 
-  const WebhookMilestoneDeletedAction._(this.value);
+  const WebhookPullRequestLockedPullRequestHeadRepoSquashMergeCommitMessage._(this.value);
 
-  factory WebhookMilestoneDeletedAction.fromJson(String value) => WebhookMilestoneDeletedAction._(value);
+  factory WebhookPullRequestLockedPullRequestHeadRepoSquashMergeCommitMessage.fromJson(String value) => WebhookPullRequestLockedPullRequestHeadRepoSquashMergeCommitMessage._(value);
 
-  static const deleted = WebhookMilestoneDeletedAction._('deleted');
+  static const prBody = WebhookPullRequestLockedPullRequestHeadRepoSquashMergeCommitMessage._('PR_BODY');
+  static const commitMessages = WebhookPullRequestLockedPullRequestHeadRepoSquashMergeCommitMessage._('COMMIT_MESSAGES');
+  static const blank = WebhookPullRequestLockedPullRequestHeadRepoSquashMergeCommitMessage._('BLANK');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookMilestoneDeletedAction && other.value == value;
+  @override bool operator ==(Object other) => other is WebhookPullRequestLockedPullRequestHeadRepoSquashMergeCommitMessage && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookMilestoneEditedAction {
+/// The default value for a squash merge commit title: - `PR_TITLE` - default to the pull request's title. - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
+final class WebhookPullRequestLockedPullRequestHeadRepoSquashMergeCommitTitle {
 
   final String value;
 
-  const WebhookMilestoneEditedAction._(this.value);
+  const WebhookPullRequestLockedPullRequestHeadRepoSquashMergeCommitTitle._(this.value);
 
-  factory WebhookMilestoneEditedAction.fromJson(String value) => WebhookMilestoneEditedAction._(value);
+  factory WebhookPullRequestLockedPullRequestHeadRepoSquashMergeCommitTitle.fromJson(String value) => WebhookPullRequestLockedPullRequestHeadRepoSquashMergeCommitTitle._(value);
 
-  static const edited = WebhookMilestoneEditedAction._('edited');
+  static const prTitle = WebhookPullRequestLockedPullRequestHeadRepoSquashMergeCommitTitle._('PR_TITLE');
+  static const commitOrPrTitle = WebhookPullRequestLockedPullRequestHeadRepoSquashMergeCommitTitle._('COMMIT_OR_PR_TITLE');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookMilestoneEditedAction && other.value == value;
+  @override bool operator ==(Object other) => other is WebhookPullRequestLockedPullRequestHeadRepoSquashMergeCommitTitle && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookMilestoneOpenedAction {
+/// Required enumerated value serialized in the `visibility` wire field.
+final class WebhookPullRequestLockedPullRequestHeadRepoVisibility {
 
   final String value;
 
-  const WebhookMilestoneOpenedAction._(this.value);
+  const WebhookPullRequestLockedPullRequestHeadRepoVisibility._(this.value);
 
-  factory WebhookMilestoneOpenedAction.fromJson(String value) => WebhookMilestoneOpenedAction._(value);
+  factory WebhookPullRequestLockedPullRequestHeadRepoVisibility.fromJson(String value) => WebhookPullRequestLockedPullRequestHeadRepoVisibility._(value);
 
-  static const opened = WebhookMilestoneOpenedAction._('opened');
+  static const public = WebhookPullRequestLockedPullRequestHeadRepoVisibility._('public');
+  static const private = WebhookPullRequestLockedPullRequestHeadRepoVisibility._('private');
+  static const internal = WebhookPullRequestLockedPullRequestHeadRepoVisibility._('internal');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookMilestoneOpenedAction && other.value == value;
+  @override bool operator ==(Object other) => other is WebhookPullRequestLockedPullRequestHeadRepoVisibility && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookOrganizationDeletedAction {
+/// Optional enumerated value serialized in the `type` wire field.
+final class WebhookPullRequestLockedPullRequestHeadUserType {
 
   final String value;
 
-  const WebhookOrganizationDeletedAction._(this.value);
+  const WebhookPullRequestLockedPullRequestHeadUserType._(this.value);
 
-  factory WebhookOrganizationDeletedAction.fromJson(String value) => WebhookOrganizationDeletedAction._(value);
+  factory WebhookPullRequestLockedPullRequestHeadUserType.fromJson(String value) => WebhookPullRequestLockedPullRequestHeadUserType._(value);
 
-  static const deleted = WebhookOrganizationDeletedAction._('deleted');
+  static const bot = WebhookPullRequestLockedPullRequestHeadUserType._('Bot');
+  static const user = WebhookPullRequestLockedPullRequestHeadUserType._('User');
+  static const organization = WebhookPullRequestLockedPullRequestHeadUserType._('Organization');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookOrganizationDeletedAction && other.value == value;
+  @override bool operator ==(Object other) => other is WebhookPullRequestLockedPullRequestHeadUserType && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookOrganizationMemberAddedAction {
+/// Optional enumerated value serialized in the `type` wire field.
+final class WebhookPullRequestLockedPullRequestMergedByType {
 
   final String value;
 
-  const WebhookOrganizationMemberAddedAction._(this.value);
+  const WebhookPullRequestLockedPullRequestMergedByType._(this.value);
 
-  factory WebhookOrganizationMemberAddedAction.fromJson(String value) => WebhookOrganizationMemberAddedAction._(value);
+  factory WebhookPullRequestLockedPullRequestMergedByType.fromJson(String value) => WebhookPullRequestLockedPullRequestMergedByType._(value);
 
-  static const memberAdded = WebhookOrganizationMemberAddedAction._('member_added');
+  static const bot = WebhookPullRequestLockedPullRequestMergedByType._('Bot');
+  static const user = WebhookPullRequestLockedPullRequestMergedByType._('User');
+  static const organization = WebhookPullRequestLockedPullRequestMergedByType._('Organization');
+  static const mannequin = WebhookPullRequestLockedPullRequestMergedByType._('Mannequin');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookOrganizationMemberAddedAction && other.value == value;
+  @override bool operator ==(Object other) => other is WebhookPullRequestLockedPullRequestMergedByType && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookOrganizationMemberInvitedAction {
+/// Optional enumerated value serialized in the `type` wire field.
+final class WebhookPullRequestLockedPullRequestMilestoneCreatorType {
 
   final String value;
 
-  const WebhookOrganizationMemberInvitedAction._(this.value);
+  const WebhookPullRequestLockedPullRequestMilestoneCreatorType._(this.value);
 
-  factory WebhookOrganizationMemberInvitedAction.fromJson(String value) => WebhookOrganizationMemberInvitedAction._(value);
+  factory WebhookPullRequestLockedPullRequestMilestoneCreatorType.fromJson(String value) => WebhookPullRequestLockedPullRequestMilestoneCreatorType._(value);
 
-  static const memberInvited = WebhookOrganizationMemberInvitedAction._('member_invited');
+  static const bot = WebhookPullRequestLockedPullRequestMilestoneCreatorType._('Bot');
+  static const user = WebhookPullRequestLockedPullRequestMilestoneCreatorType._('User');
+  static const organization = WebhookPullRequestLockedPullRequestMilestoneCreatorType._('Organization');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookOrganizationMemberInvitedAction && other.value == value;
+  @override bool operator ==(Object other) => other is WebhookPullRequestLockedPullRequestMilestoneCreatorType && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// The state of the milestone.
+final class WebhookPullRequestLockedPullRequestMilestoneState {
+
+  final String value;
+
+  const WebhookPullRequestLockedPullRequestMilestoneState._(this.value);
+
+  factory WebhookPullRequestLockedPullRequestMilestoneState.fromJson(String value) => WebhookPullRequestLockedPullRequestMilestoneState._(value);
+
+  static const open = WebhookPullRequestLockedPullRequestMilestoneState._('open');
+  static const closed = WebhookPullRequestLockedPullRequestMilestoneState._('closed');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is WebhookPullRequestLockedPullRequestMilestoneState && other.value == value;
 
   @override int get hashCode => value.hashCode;
 

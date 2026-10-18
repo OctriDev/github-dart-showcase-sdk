@@ -4,292 +4,269 @@
 part of 'inline.dart';
 
 // Inline operation models (part 334)
-/// A GitHub user
-class AgentAutomationsEditRepoAutomationResponseCreatedBy {
+class ActionsUpdateRepoVariableRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The unique identifier of the user
-  final SdkOptional<int> id;
+  /// The name of the variable.
+  final SdkOptional<String> name;
+  /// The value of the variable.
+  final SdkOptional<String> value;
 
-  const AgentAutomationsEditRepoAutomationResponseCreatedBy({this.id = const SdkOmitted()});
+  const ActionsUpdateRepoVariableRequestBody({this.name = const SdkOmitted(), this.value = const SdkOmitted()});
 
-  AgentAutomationsEditRepoAutomationResponseCreatedBy Function({SdkOptional<int> id}) get copyWith => _copyWith;
+  ActionsUpdateRepoVariableRequestBody Function({SdkOptional<String> name, SdkOptional<String> value}) get copyWith => _copyWith;
 
-  AgentAutomationsEditRepoAutomationResponseCreatedBy _copyWith({Object? id = sdkOmittedValue}) => AgentAutomationsEditRepoAutomationResponseCreatedBy(
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+  ActionsUpdateRepoVariableRequestBody _copyWith({Object? name = sdkOmittedValue, Object? value = sdkOmittedValue}) => ActionsUpdateRepoVariableRequestBody(
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
+    value: identical(value, sdkOmittedValue) ? this.value : value as SdkOptional<String>,
   );
 
-  factory AgentAutomationsEditRepoAutomationResponseCreatedBy.fromJson(Map<String, dynamic> json) => AgentAutomationsEditRepoAutomationResponseCreatedBy(
-    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
+  factory ActionsUpdateRepoVariableRequestBody.fromJson(Map<String, dynamic> json) => ActionsUpdateRepoVariableRequestBody(
+    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
+    value: json['value'] != null ? SdkPresent((json['value'] as String?)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    ...switch (id) {
-      SdkPresent<int>(value: final value) => {'id': value,},
+    ...switch (name) {
+      SdkPresent<String>(value: final value) => {'name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (value) {
+      SdkPresent<String>(value: final value) => {'value': value,},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-/// A full representation of an automation including all configuration fields.
-class AgentAutomationsEditRepoAutomationResponse {
+class ActionsListRepoWorkflowsResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The unique identifier of the automation.
-  final String id;
-  /// The name of the automation.
+  final int totalCount;
+  final List<Workflow> workflows;
+
+  const ActionsListRepoWorkflowsResponse({required this.totalCount, required this.workflows});
+
+  ActionsListRepoWorkflowsResponse Function({int totalCount, List<Workflow> workflows}) get copyWith => _copyWith;
+
+  ActionsListRepoWorkflowsResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? workflows = sdkOmittedValue}) => ActionsListRepoWorkflowsResponse(
+    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
+    workflows: identical(workflows, sdkOmittedValue) ? this.workflows : workflows as List<Workflow>,
+  );
+
+  factory ActionsListRepoWorkflowsResponse.fromJson(Map<String, dynamic> json) => ActionsListRepoWorkflowsResponse(
+    totalCount: ((json['total_count'] as num?)?.toInt())!,
+    workflows: ((json['workflows'] as List?)?.map((e) => Workflow.fromJson(e as Map<String, dynamic>)).toList())!,
+  );
+
+  Map<String, dynamic> toJson() => {
+    'total_count': totalCount,
+    'workflows': workflows.map((item) => item.toJson()).toList(),
+  };
+}
+
+class ActionsCreateWorkflowDispatchRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The git reference for the workflow. The reference can be a branch or tag name.
+  final String ref;
+  /// Input keys and values configured in the workflow file. The maximum number of properties is 25. Any default properties configured in the workflow file will be used when `inputs` are omitted.
+  final SdkOptional<Map<String, Object?>> inputs;
+  /// Whether the response should include the workflow run ID and URLs.
+  final SdkOptional<bool> returnRunDetails;
+
+  const ActionsCreateWorkflowDispatchRequestBody({required this.ref, this.inputs = const SdkOmitted(), this.returnRunDetails = const SdkOmitted()});
+
+  ActionsCreateWorkflowDispatchRequestBody Function({String ref, SdkOptional<Map<String, Object?>> inputs, SdkOptional<bool> returnRunDetails}) get copyWith => _copyWith;
+
+  ActionsCreateWorkflowDispatchRequestBody _copyWith({Object? ref = sdkOmittedValue, Object? inputs = sdkOmittedValue, Object? returnRunDetails = sdkOmittedValue}) => ActionsCreateWorkflowDispatchRequestBody(
+    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+    inputs: identical(inputs, sdkOmittedValue) ? this.inputs : inputs as SdkOptional<Map<String, Object?>>,
+    returnRunDetails: identical(returnRunDetails, sdkOmittedValue) ? this.returnRunDetails : returnRunDetails as SdkOptional<bool>,
+  );
+
+  factory ActionsCreateWorkflowDispatchRequestBody.fromJson(Map<String, dynamic> json) => ActionsCreateWorkflowDispatchRequestBody(
+    ref: (json['ref'] as String?)!,
+    inputs: json['inputs'] != null ? SdkPresent((json['inputs'] == null ? null : Map<String, dynamic>.from(json['inputs'] as Map).map((key, value) => MapEntry(key, value)))!) : const SdkOmitted(),
+    returnRunDetails: json['return_run_details'] != null ? SdkPresent((json['return_run_details'] as bool?)!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    'ref': ref,
+    ...switch (inputs) {
+      SdkPresent<Map<String, Object?>>(value: final value) => {'inputs': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (returnRunDetails) {
+      SdkPresent<bool>(value: final value) => {'return_run_details': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
+}
+
+class ActionsListWorkflowRunsResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  final int totalCount;
+  final List<WorkflowRun> workflowRuns;
+
+  const ActionsListWorkflowRunsResponse({required this.totalCount, required this.workflowRuns});
+
+  ActionsListWorkflowRunsResponse Function({int totalCount, List<WorkflowRun> workflowRuns}) get copyWith => _copyWith;
+
+  ActionsListWorkflowRunsResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? workflowRuns = sdkOmittedValue}) => ActionsListWorkflowRunsResponse(
+    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
+    workflowRuns: identical(workflowRuns, sdkOmittedValue) ? this.workflowRuns : workflowRuns as List<WorkflowRun>,
+  );
+
+  factory ActionsListWorkflowRunsResponse.fromJson(Map<String, dynamic> json) => ActionsListWorkflowRunsResponse(
+    totalCount: ((json['total_count'] as num?)?.toInt())!,
+    workflowRuns: ((json['workflow_runs'] as List?)?.map((e) => WorkflowRun.fromJson(e as Map<String, dynamic>)).toList())!,
+  );
+
+  Map<String, dynamic> toJson() => {
+    'total_count': totalCount,
+    'workflow_runs': workflowRuns.map((item) => item.toJson()).toList(),
+  };
+}
+
+class ActionsListEnvironmentSecretsResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  final int totalCount;
+  final List<ActionsSecret> secrets;
+
+  const ActionsListEnvironmentSecretsResponse({required this.totalCount, required this.secrets});
+
+  ActionsListEnvironmentSecretsResponse Function({int totalCount, List<ActionsSecret> secrets}) get copyWith => _copyWith;
+
+  ActionsListEnvironmentSecretsResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? secrets = sdkOmittedValue}) => ActionsListEnvironmentSecretsResponse(
+    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
+    secrets: identical(secrets, sdkOmittedValue) ? this.secrets : secrets as List<ActionsSecret>,
+  );
+
+  factory ActionsListEnvironmentSecretsResponse.fromJson(Map<String, dynamic> json) => ActionsListEnvironmentSecretsResponse(
+    totalCount: ((json['total_count'] as num?)?.toInt())!,
+    secrets: ((json['secrets'] as List?)?.map((e) => ActionsSecret.fromJson(e as Map<String, dynamic>)).toList())!,
+  );
+
+  Map<String, dynamic> toJson() => {
+    'total_count': totalCount,
+    'secrets': secrets.map((item) => item.toJson()).toList(),
+  };
+}
+
+class ActionsCreateOrUpdateEnvironmentSecretRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get an environment public key](https://docs.github.com/rest/actions/secrets#get-an-environment-public-key) endpoint.
+  final String encryptedValue;
+  /// ID of the key you used to encrypt the secret.
+  final String keyId;
+
+  const ActionsCreateOrUpdateEnvironmentSecretRequestBody({required this.encryptedValue, required this.keyId});
+
+  ActionsCreateOrUpdateEnvironmentSecretRequestBody Function({String encryptedValue, String keyId}) get copyWith => _copyWith;
+
+  ActionsCreateOrUpdateEnvironmentSecretRequestBody _copyWith({Object? encryptedValue = sdkOmittedValue, Object? keyId = sdkOmittedValue}) => ActionsCreateOrUpdateEnvironmentSecretRequestBody(
+    encryptedValue: identical(encryptedValue, sdkOmittedValue) ? this.encryptedValue : encryptedValue as String,
+    keyId: identical(keyId, sdkOmittedValue) ? this.keyId : keyId as String,
+  );
+
+  factory ActionsCreateOrUpdateEnvironmentSecretRequestBody.fromJson(Map<String, dynamic> json) => ActionsCreateOrUpdateEnvironmentSecretRequestBody(
+    encryptedValue: (json['encrypted_value'] as String?)!,
+    keyId: (json['key_id'] as String?)!,
+  );
+
+  Map<String, dynamic> toJson() => {
+    'encrypted_value': encryptedValue,
+    'key_id': keyId,
+  };
+}
+
+class ActionsListEnvironmentVariablesResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  final int totalCount;
+  final List<ActionsVariable> variables;
+
+  const ActionsListEnvironmentVariablesResponse({required this.totalCount, required this.variables});
+
+  ActionsListEnvironmentVariablesResponse Function({int totalCount, List<ActionsVariable> variables}) get copyWith => _copyWith;
+
+  ActionsListEnvironmentVariablesResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? variables = sdkOmittedValue}) => ActionsListEnvironmentVariablesResponse(
+    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
+    variables: identical(variables, sdkOmittedValue) ? this.variables : variables as List<ActionsVariable>,
+  );
+
+  factory ActionsListEnvironmentVariablesResponse.fromJson(Map<String, dynamic> json) => ActionsListEnvironmentVariablesResponse(
+    totalCount: ((json['total_count'] as num?)?.toInt())!,
+    variables: ((json['variables'] as List?)?.map((e) => ActionsVariable.fromJson(e as Map<String, dynamic>)).toList())!,
+  );
+
+  Map<String, dynamic> toJson() => {
+    'total_count': totalCount,
+    'variables': variables.map((item) => item.toJson()).toList(),
+  };
+}
+
+class ActionsCreateEnvironmentVariableRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The name of the variable.
   final String name;
-  /// Whether the automation is currently enabled.
-  final SdkOptional<bool> enabled;
-  /// Who owns the automation. `user` keeps it private to its creator and its runs act as that user. `repository` makes it belong to the repository, visible to anyone with read access to the repository, and its runs act as the Copilot app rather than as a person.
-  final SdkOptional<AgentAutomationsEditRepoAutomationResponseOwnerType> ownerType;
-  /// Controls which repository resources a run may modify. `trigger` limits writes to the resource that started the run, when one exists, and resources created during the run; `repository` allows writes to any resource in the repository. Supported values: `trigger`, `repository`.
-  final SdkOptional<AgentAutomationsEditRepoAutomationResponseWriteScope> writeScope;
-  /// When true, event-triggered runs require the event actor to have repo write permission, even when the org's allow_read_access_triggers policy is enabled. Does not apply to interval-scheduled runs, which always run as the automation owner.
-  final SdkOptional<bool> requireActorWritePermission;
-  /// Public trigger configuration keyed by stable public trigger identifier. Each trigger has a closed, trigger-specific configuration schema.
-  final SdkOptional<AgentAutomationsEditRepoAutomationResponseTriggers> triggers;
-  /// The prompt template for the automation.
-  final String prompt;
-  /// The tools available to the automation.
-  final SdkOptional<List<String>> tools;
-  /// Custom agents (subagents) this automation is allowed to invoke.
-  final SdkOptional<List<String>> allowedCustomAgents;
-  /// The model to use for sessions triggered by this automation. Omit to use the platform default.
-  final SdkOptional<String> model;
-  /// The reasoning effort to use for sessions triggered by this automation. Omit or leave empty for no override. Currently supported values: `none`, `low`, `medium`, `high`, `xhigh`, `max`
-  final SdkOptional<String> reasoningEffort;
-  /// When the automation was created.
-  final String createdAt;
-  /// When the automation was last updated.
-  final String updatedAt;
-  /// A GitHub user
-  final AgentAutomationsEditRepoAutomationResponseCreatedBy createdBy;
+  /// The value of the variable.
+  final String value;
 
-  const AgentAutomationsEditRepoAutomationResponse({required this.id, required this.name, this.enabled = const SdkOmitted(), this.ownerType = const SdkOmitted(), this.writeScope = const SdkOmitted(), this.requireActorWritePermission = const SdkOmitted(), this.triggers = const SdkOmitted(), required this.prompt, this.tools = const SdkOmitted(), this.allowedCustomAgents = const SdkOmitted(), this.model = const SdkOmitted(), this.reasoningEffort = const SdkOmitted(), required this.createdAt, required this.updatedAt, required this.createdBy});
+  const ActionsCreateEnvironmentVariableRequestBody({required this.name, required this.value});
 
-  AgentAutomationsEditRepoAutomationResponse Function({String id, String name, SdkOptional<bool> enabled, SdkOptional<AgentAutomationsEditRepoAutomationResponseOwnerType> ownerType, SdkOptional<AgentAutomationsEditRepoAutomationResponseWriteScope> writeScope, SdkOptional<bool> requireActorWritePermission, SdkOptional<AgentAutomationsEditRepoAutomationResponseTriggers> triggers, String prompt, SdkOptional<List<String>> tools, SdkOptional<List<String>> allowedCustomAgents, SdkOptional<String> model, SdkOptional<String> reasoningEffort, String createdAt, String updatedAt, AgentAutomationsEditRepoAutomationResponseCreatedBy createdBy}) get copyWith => _copyWith;
+  ActionsCreateEnvironmentVariableRequestBody Function({String name, String value}) get copyWith => _copyWith;
 
-  AgentAutomationsEditRepoAutomationResponse _copyWith({Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? enabled = sdkOmittedValue, Object? ownerType = sdkOmittedValue, Object? writeScope = sdkOmittedValue, Object? requireActorWritePermission = sdkOmittedValue, Object? triggers = sdkOmittedValue, Object? prompt = sdkOmittedValue, Object? tools = sdkOmittedValue, Object? allowedCustomAgents = sdkOmittedValue, Object? model = sdkOmittedValue, Object? reasoningEffort = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? createdBy = sdkOmittedValue}) => AgentAutomationsEditRepoAutomationResponse(
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
+  ActionsCreateEnvironmentVariableRequestBody _copyWith({Object? name = sdkOmittedValue, Object? value = sdkOmittedValue}) => ActionsCreateEnvironmentVariableRequestBody(
     name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as SdkOptional<bool>,
-    ownerType: identical(ownerType, sdkOmittedValue) ? this.ownerType : ownerType as SdkOptional<AgentAutomationsEditRepoAutomationResponseOwnerType>,
-    writeScope: identical(writeScope, sdkOmittedValue) ? this.writeScope : writeScope as SdkOptional<AgentAutomationsEditRepoAutomationResponseWriteScope>,
-    requireActorWritePermission: identical(requireActorWritePermission, sdkOmittedValue) ? this.requireActorWritePermission : requireActorWritePermission as SdkOptional<bool>,
-    triggers: identical(triggers, sdkOmittedValue) ? this.triggers : triggers as SdkOptional<AgentAutomationsEditRepoAutomationResponseTriggers>,
-    prompt: identical(prompt, sdkOmittedValue) ? this.prompt : prompt as String,
-    tools: identical(tools, sdkOmittedValue) ? this.tools : tools as SdkOptional<List<String>>,
-    allowedCustomAgents: identical(allowedCustomAgents, sdkOmittedValue) ? this.allowedCustomAgents : allowedCustomAgents as SdkOptional<List<String>>,
-    model: identical(model, sdkOmittedValue) ? this.model : model as SdkOptional<String>,
-    reasoningEffort: identical(reasoningEffort, sdkOmittedValue) ? this.reasoningEffort : reasoningEffort as SdkOptional<String>,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
-    createdBy: identical(createdBy, sdkOmittedValue) ? this.createdBy : createdBy as AgentAutomationsEditRepoAutomationResponseCreatedBy,
+    value: identical(value, sdkOmittedValue) ? this.value : value as String,
   );
 
-  factory AgentAutomationsEditRepoAutomationResponse.fromJson(Map<String, dynamic> json) => AgentAutomationsEditRepoAutomationResponse(
-    id: (json['id'] as String?)!,
+  factory ActionsCreateEnvironmentVariableRequestBody.fromJson(Map<String, dynamic> json) => ActionsCreateEnvironmentVariableRequestBody(
     name: (json['name'] as String?)!,
-    enabled: json['enabled'] != null ? SdkPresent((json['enabled'] as bool?)!) : const SdkOmitted(),
-    ownerType: json['owner_type'] != null ? SdkPresent((json['owner_type'] != null ? AgentAutomationsEditRepoAutomationResponseOwnerType.fromJson(json['owner_type'] as String) : null)!) : const SdkOmitted(),
-    writeScope: json['write_scope'] != null ? SdkPresent((json['write_scope'] != null ? AgentAutomationsEditRepoAutomationResponseWriteScope.fromJson(json['write_scope'] as String) : null)!) : const SdkOmitted(),
-    requireActorWritePermission: json['require_actor_write_permission'] != null ? SdkPresent((json['require_actor_write_permission'] as bool?)!) : const SdkOmitted(),
-    triggers: json['triggers'] != null ? SdkPresent((json['triggers'] != null ? AgentAutomationsEditRepoAutomationResponseTriggers.fromJson(json['triggers'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    prompt: (json['prompt'] as String?)!,
-    tools: json['tools'] != null ? SdkPresent(((json['tools'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    allowedCustomAgents: json['allowed_custom_agents'] != null ? SdkPresent(((json['allowed_custom_agents'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    model: json['model'] != null ? SdkPresent((json['model'] as String?)!) : const SdkOmitted(),
-    reasoningEffort: json['reasoning_effort'] != null ? SdkPresent((json['reasoning_effort'] as String?)!) : const SdkOmitted(),
-    createdAt: (json['created_at'] as String?)!,
-    updatedAt: (json['updated_at'] as String?)!,
-    createdBy: (json['created_by'] != null ? AgentAutomationsEditRepoAutomationResponseCreatedBy.fromJson(json['created_by'] as Map<String, dynamic>) : null)!,
+    value: (json['value'] as String?)!,
   );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
     'name': name,
-    ...switch (enabled) {
-      SdkPresent<bool>(value: final value) => {'enabled': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (ownerType) {
-      SdkPresent<AgentAutomationsEditRepoAutomationResponseOwnerType>(value: final value) => {'owner_type': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (writeScope) {
-      SdkPresent<AgentAutomationsEditRepoAutomationResponseWriteScope>(value: final value) => {'write_scope': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (requireActorWritePermission) {
-      SdkPresent<bool>(value: final value) => {'require_actor_write_permission': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (triggers) {
-      SdkPresent<AgentAutomationsEditRepoAutomationResponseTriggers>(value: final value) => {'triggers': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'prompt': prompt,
-    ...switch (tools) {
-      SdkPresent<List<String>>(value: final value) => {'tools': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (allowedCustomAgents) {
-      SdkPresent<List<String>>(value: final value) => {'allowed_custom_agents': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (model) {
-      SdkPresent<String>(value: final value) => {'model': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (reasoningEffort) {
-      SdkPresent<String>(value: final value) => {'reasoning_effort': value,},
-      _ => const <String, dynamic>{},
-    },
-    'created_at': createdAt,
-    'updated_at': updatedAt,
-    'created_by': createdBy.toJson(),
+    'value': value,
   };
 }
 
-/// A GitHub user
-class AgentTasksListTasksForRepoResponseTasksItemCreatorVariant0 {
+class ActionsUpdateEnvironmentVariableRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The unique identifier of the user
-  final SdkOptional<int> id;
+  /// The name of the variable.
+  final SdkOptional<String> name;
+  /// The value of the variable.
+  final SdkOptional<String> value;
 
-  const AgentTasksListTasksForRepoResponseTasksItemCreatorVariant0({this.id = const SdkOmitted()});
+  const ActionsUpdateEnvironmentVariableRequestBody({this.name = const SdkOmitted(), this.value = const SdkOmitted()});
 
-  AgentTasksListTasksForRepoResponseTasksItemCreatorVariant0 Function({SdkOptional<int> id}) get copyWith => _copyWith;
+  ActionsUpdateEnvironmentVariableRequestBody Function({SdkOptional<String> name, SdkOptional<String> value}) get copyWith => _copyWith;
 
-  AgentTasksListTasksForRepoResponseTasksItemCreatorVariant0 _copyWith({Object? id = sdkOmittedValue}) => AgentTasksListTasksForRepoResponseTasksItemCreatorVariant0(
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+  ActionsUpdateEnvironmentVariableRequestBody _copyWith({Object? name = sdkOmittedValue, Object? value = sdkOmittedValue}) => ActionsUpdateEnvironmentVariableRequestBody(
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
+    value: identical(value, sdkOmittedValue) ? this.value : value as SdkOptional<String>,
   );
 
-  factory AgentTasksListTasksForRepoResponseTasksItemCreatorVariant0.fromJson(Map<String, dynamic> json) => AgentTasksListTasksForRepoResponseTasksItemCreatorVariant0(
-    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
+  factory ActionsUpdateEnvironmentVariableRequestBody.fromJson(Map<String, dynamic> json) => ActionsUpdateEnvironmentVariableRequestBody(
+    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
+    value: json['value'] != null ? SdkPresent((json['value'] as String?)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    ...switch (id) {
-      SdkPresent<int>(value: final value) => {'id': value,},
+    ...switch (name) {
+      SdkPresent<String>(value: final value) => {'name': value,},
       _ => const <String, dynamic>{},
     },
-  };
-}
-
-/// A GitHub user
-class AgentTasksListTasksForRepoResponseTasksItemUserCollaboratorsItem {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The unique identifier of the user
-  final SdkOptional<int> id;
-
-  const AgentTasksListTasksForRepoResponseTasksItemUserCollaboratorsItem({this.id = const SdkOmitted()});
-
-  AgentTasksListTasksForRepoResponseTasksItemUserCollaboratorsItem Function({SdkOptional<int> id}) get copyWith => _copyWith;
-
-  AgentTasksListTasksForRepoResponseTasksItemUserCollaboratorsItem _copyWith({Object? id = sdkOmittedValue}) => AgentTasksListTasksForRepoResponseTasksItemUserCollaboratorsItem(
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-  );
-
-  factory AgentTasksListTasksForRepoResponseTasksItemUserCollaboratorsItem.fromJson(Map<String, dynamic> json) => AgentTasksListTasksForRepoResponseTasksItemUserCollaboratorsItem(
-    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    ...switch (id) {
-      SdkPresent<int>(value: final value) => {'id': value,},
+    ...switch (value) {
+      SdkPresent<String>(value: final value) => {'value': value,},
       _ => const <String, dynamic>{},
     },
-  };
-}
-
-/// The owner of the repository
-class AgentTasksListTasksForRepoResponseTasksItemOwner {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The unique identifier of the user
-  final SdkOptional<int> id;
-
-  const AgentTasksListTasksForRepoResponseTasksItemOwner({this.id = const SdkOmitted()});
-
-  AgentTasksListTasksForRepoResponseTasksItemOwner Function({SdkOptional<int> id}) get copyWith => _copyWith;
-
-  AgentTasksListTasksForRepoResponseTasksItemOwner _copyWith({Object? id = sdkOmittedValue}) => AgentTasksListTasksForRepoResponseTasksItemOwner(
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-  );
-
-  factory AgentTasksListTasksForRepoResponseTasksItemOwner.fromJson(Map<String, dynamic> json) => AgentTasksListTasksForRepoResponseTasksItemOwner(
-    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    ...switch (id) {
-      SdkPresent<int>(value: final value) => {'id': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
-}
-
-/// The repository this task belongs to
-class AgentTasksListTasksForRepoResponseTasksItemRepository {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The unique identifier of the repository
-  final SdkOptional<int> id;
-
-  const AgentTasksListTasksForRepoResponseTasksItemRepository({this.id = const SdkOmitted()});
-
-  AgentTasksListTasksForRepoResponseTasksItemRepository Function({SdkOptional<int> id}) get copyWith => _copyWith;
-
-  AgentTasksListTasksForRepoResponseTasksItemRepository _copyWith({Object? id = sdkOmittedValue}) => AgentTasksListTasksForRepoResponseTasksItemRepository(
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-  );
-
-  factory AgentTasksListTasksForRepoResponseTasksItemRepository.fromJson(Map<String, dynamic> json) => AgentTasksListTasksForRepoResponseTasksItemRepository(
-    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    ...switch (id) {
-      SdkPresent<int>(value: final value) => {'id': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
-}
-
-/// A resource generated by the task
-class AgentTasksListTasksForRepoResponseTasksItemArtifactsItem {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// Provider namespace
-  final AgentTasksListTasksForRepoResponseTasksItemArtifactsItemProvider provider;
-  /// Type of artifact. Available Values: `pull`, `branch`.
-  final AgentTasksListTasksForRepoResponseTasksItemArtifactsItemType type_;
-  /// Resource data (shape depends on type)
-  final TasksItemArtifactsItemData2 data;
-
-  const AgentTasksListTasksForRepoResponseTasksItemArtifactsItem({required this.provider, required this.type_, required this.data});
-
-  AgentTasksListTasksForRepoResponseTasksItemArtifactsItem Function({AgentTasksListTasksForRepoResponseTasksItemArtifactsItemProvider provider, AgentTasksListTasksForRepoResponseTasksItemArtifactsItemType type_, TasksItemArtifactsItemData2 data}) get copyWith => _copyWith;
-
-  AgentTasksListTasksForRepoResponseTasksItemArtifactsItem _copyWith({Object? provider = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? data = sdkOmittedValue}) => AgentTasksListTasksForRepoResponseTasksItemArtifactsItem(
-    provider: identical(provider, sdkOmittedValue) ? this.provider : provider as AgentTasksListTasksForRepoResponseTasksItemArtifactsItemProvider,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as AgentTasksListTasksForRepoResponseTasksItemArtifactsItemType,
-    data: identical(data, sdkOmittedValue) ? this.data : data as TasksItemArtifactsItemData2,
-  );
-
-  factory AgentTasksListTasksForRepoResponseTasksItemArtifactsItem.fromJson(Map<String, dynamic> json) => AgentTasksListTasksForRepoResponseTasksItemArtifactsItem(
-    provider: (json['provider'] != null ? AgentTasksListTasksForRepoResponseTasksItemArtifactsItemProvider.fromJson(json['provider'] as String) : null)!,
-    type_: (json['type'] != null ? AgentTasksListTasksForRepoResponseTasksItemArtifactsItemType.fromJson(json['type'] as String) : null)!,
-    data: (json['data'] != null ? TasksItemArtifactsItemData2.fromJson(json['data']) : null)!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'provider': provider.toJson(),
-    'type': type_.toJson(),
-    'data': data.toJson(),
   };
 }

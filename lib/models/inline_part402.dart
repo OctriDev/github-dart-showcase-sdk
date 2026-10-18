@@ -4,211 +4,285 @@
 part of 'inline.dart';
 
 // Inline operation models (part 402)
-class PrivateRegistriesUpdateOrgPrivateRegistryRequestBody {
+class TeamsCreateRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The registry type.
-  final SdkOptional<PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType> registryType;
-  /// The URL of the private registry.
-  final SdkOptional<String> url;
-  /// The username to use when authenticating with the private registry. This field should be omitted if the private registry does not require a username for authentication.
-  final SdkOptional<String?> username;
-  /// Whether this private registry should replace the base registry (e.g., npmjs.org for npm, rubygems.org for rubygems). When set to `true`, Dependabot will only use this registry and will not fall back to the public registry. When set to `false` (default), Dependabot will use this registry for scoped packages but may fall back to the public registry for other packages.
-  final SdkOptional<bool> replacesBase;
-  /// The value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get private registries public key for an organization](https://docs.github.com/rest/private-registries/organization-configurations#get-private-registries-public-key-for-an-organization) endpoint.
-  final SdkOptional<String> encryptedValue;
-  /// The ID of the key you used to encrypt the secret.
-  final SdkOptional<String> keyId;
-  /// Which type of organization repositories have access to the private registry. `selected` means only the repositories specified by `selected_repository_ids` can access the private registry.
-  final SdkOptional<PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyVisibility> visibility;
-  /// An array of repository IDs that can access the organization private registry. You can only provide a list of repository IDs when `visibility` is set to `selected`. This field should be omitted if `visibility` is set to `all` or `private`.
-  final SdkOptional<List<int>> selectedRepositoryIds;
-  /// The authentication type for the private registry. This field cannot be changed after creation. If provided, it must match the existing `auth_type` of the configuration. To change the authentication type, delete and recreate the configuration.
-  final SdkOptional<PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyAuthType> authType;
-  /// The tenant ID of the Azure AD application. Required when `auth_type` is `oidc_azure`.
-  final SdkOptional<String> tenantId;
-  /// The client ID of the Azure AD application. Required when `auth_type` is `oidc_azure`.
-  final SdkOptional<String> clientId;
-  /// The AWS region. Required when `auth_type` is `oidc_aws`.
-  final SdkOptional<String> awsRegion;
-  /// The AWS account ID. Required when `auth_type` is `oidc_aws`.
-  final SdkOptional<String> accountId;
-  /// The AWS IAM role name. Required when `auth_type` is `oidc_aws`.
-  final SdkOptional<String> roleName;
-  /// The CodeArtifact domain. Required when `auth_type` is `oidc_aws`.
-  final SdkOptional<String> domain;
-  /// The CodeArtifact domain owner (AWS account ID). Required when `auth_type` is `oidc_aws`.
-  final SdkOptional<String> domainOwner;
-  /// The JFrog OIDC provider name. Required when `auth_type` is `oidc_jfrog`.
-  final SdkOptional<String> jfrogOidcProviderName;
-  /// The OIDC audience. Optional for `oidc_aws`, `oidc_jfrog`, and `oidc_gcp`, and required for `oidc_cloudsmith` auth types.
-  final SdkOptional<String> audience;
-  /// The JFrog identity mapping name. Optional for `oidc_jfrog` auth type.
-  final SdkOptional<String> identityMappingName;
-  /// The Cloudsmith organization namespace. Required when `auth_type` is `oidc_cloudsmith`.
-  final SdkOptional<String> namespace;
-  /// The Cloudsmith service account slug. Required when `auth_type` is `oidc_cloudsmith`.
-  final SdkOptional<String> serviceSlug;
-  /// The Cloudsmith API host. Optional for `oidc_cloudsmith` auth type. If omitted, `api.cloudsmith.io` is used by default.
-  final SdkOptional<String> apiHost;
-  /// The full resource name of the GCP Workload Identity Provider (e.g. `projects/&lt;NUM&gt;/locations/global/workloadIdentityPools/&lt;POOL&gt;/providers/&lt;PROVIDER&gt;`). Required when `auth_type` is `oidc_gcp`.
-  final SdkOptional<String> workloadIdentityProvider;
-  /// The GCP service account email to impersonate. Optional for `oidc_gcp` auth type. If omitted, the federated token is used directly (direct WIF).
-  final SdkOptional<String> serviceAccount;
+  /// The name of the team.
+  final String name;
+  /// The description of the team.
+  final SdkOptional<String> description;
+  /// List GitHub usernames for organization members who will become team maintainers.
+  final SdkOptional<List<String>> maintainers;
+  /// The full name (e.g., "organization-name/repository-name") of repositories to add the team to.
+  final SdkOptional<List<String>> repoNames;
+  /// The level of privacy this team should have. The options are: **For a non-nested team:** * `secret` - only visible to organization owners and members of this team. * `closed` - visible to all members of this organization. Default: `secret` **For a parent or child team:** * `closed` - visible to all members of this organization. Default for child team: `closed`
+  final SdkOptional<TeamsCreateRequestBodyPrivacy> privacy;
+  /// The notification setting the team has chosen. The options are: * `notifications_enabled` - team members receive notifications when the team is @mentioned. * `notifications_disabled` - no one receives notifications. Default: `notifications_enabled`
+  final SdkOptional<TeamsCreateRequestBodyNotificationSetting> notificationSetting;
+  /// **Closing down notice**. The permission that new repositories will be added to the team with when none is specified.
+  final SdkOptional<TeamsCreateRequestBodyPermission> permission;
+  /// The ID of a team to set as the parent team.
+  final SdkOptional<int> parentTeamId;
+  /// The slug of a team to set as the parent team. Ignored when `parent_team_id` is also provided.
+  final SdkOptional<String> parentTeamSlug;
 
-  const PrivateRegistriesUpdateOrgPrivateRegistryRequestBody({this.registryType = const SdkOmitted(), this.url = const SdkOmitted(), this.username = const SdkOmitted(), this.replacesBase = const SdkOmitted(), this.encryptedValue = const SdkOmitted(), this.keyId = const SdkOmitted(), this.visibility = const SdkOmitted(), this.selectedRepositoryIds = const SdkOmitted(), this.authType = const SdkOmitted(), this.tenantId = const SdkOmitted(), this.clientId = const SdkOmitted(), this.awsRegion = const SdkOmitted(), this.accountId = const SdkOmitted(), this.roleName = const SdkOmitted(), this.domain = const SdkOmitted(), this.domainOwner = const SdkOmitted(), this.jfrogOidcProviderName = const SdkOmitted(), this.audience = const SdkOmitted(), this.identityMappingName = const SdkOmitted(), this.namespace = const SdkOmitted(), this.serviceSlug = const SdkOmitted(), this.apiHost = const SdkOmitted(), this.workloadIdentityProvider = const SdkOmitted(), this.serviceAccount = const SdkOmitted()});
+  const TeamsCreateRequestBody({required this.name, this.description = const SdkOmitted(), this.maintainers = const SdkOmitted(), this.repoNames = const SdkOmitted(), this.privacy = const SdkOmitted(), this.notificationSetting = const SdkOmitted(), this.permission = const SdkOmitted(), this.parentTeamId = const SdkOmitted(), this.parentTeamSlug = const SdkOmitted()});
 
-  PrivateRegistriesUpdateOrgPrivateRegistryRequestBody Function({SdkOptional<PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType> registryType, SdkOptional<String> url, SdkOptional<String?> username, SdkOptional<bool> replacesBase, SdkOptional<String> encryptedValue, SdkOptional<String> keyId, SdkOptional<PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyVisibility> visibility, SdkOptional<List<int>> selectedRepositoryIds, SdkOptional<PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyAuthType> authType, SdkOptional<String> tenantId, SdkOptional<String> clientId, SdkOptional<String> awsRegion, SdkOptional<String> accountId, SdkOptional<String> roleName, SdkOptional<String> domain, SdkOptional<String> domainOwner, SdkOptional<String> jfrogOidcProviderName, SdkOptional<String> audience, SdkOptional<String> identityMappingName, SdkOptional<String> namespace, SdkOptional<String> serviceSlug, SdkOptional<String> apiHost, SdkOptional<String> workloadIdentityProvider, SdkOptional<String> serviceAccount}) get copyWith => _copyWith;
+  TeamsCreateRequestBody Function({String name, SdkOptional<String> description, SdkOptional<List<String>> maintainers, SdkOptional<List<String>> repoNames, SdkOptional<TeamsCreateRequestBodyPrivacy> privacy, SdkOptional<TeamsCreateRequestBodyNotificationSetting> notificationSetting, SdkOptional<TeamsCreateRequestBodyPermission> permission, SdkOptional<int> parentTeamId, SdkOptional<String> parentTeamSlug}) get copyWith => _copyWith;
 
-  PrivateRegistriesUpdateOrgPrivateRegistryRequestBody _copyWith({Object? registryType = sdkOmittedValue, Object? url = sdkOmittedValue, Object? username = sdkOmittedValue, Object? replacesBase = sdkOmittedValue, Object? encryptedValue = sdkOmittedValue, Object? keyId = sdkOmittedValue, Object? visibility = sdkOmittedValue, Object? selectedRepositoryIds = sdkOmittedValue, Object? authType = sdkOmittedValue, Object? tenantId = sdkOmittedValue, Object? clientId = sdkOmittedValue, Object? awsRegion = sdkOmittedValue, Object? accountId = sdkOmittedValue, Object? roleName = sdkOmittedValue, Object? domain = sdkOmittedValue, Object? domainOwner = sdkOmittedValue, Object? jfrogOidcProviderName = sdkOmittedValue, Object? audience = sdkOmittedValue, Object? identityMappingName = sdkOmittedValue, Object? namespace = sdkOmittedValue, Object? serviceSlug = sdkOmittedValue, Object? apiHost = sdkOmittedValue, Object? workloadIdentityProvider = sdkOmittedValue, Object? serviceAccount = sdkOmittedValue}) => PrivateRegistriesUpdateOrgPrivateRegistryRequestBody(
-    registryType: identical(registryType, sdkOmittedValue) ? this.registryType : registryType as SdkOptional<PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType>,
-    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
-    username: identical(username, sdkOmittedValue) ? this.username : username as SdkOptional<String?>,
-    replacesBase: identical(replacesBase, sdkOmittedValue) ? this.replacesBase : replacesBase as SdkOptional<bool>,
-    encryptedValue: identical(encryptedValue, sdkOmittedValue) ? this.encryptedValue : encryptedValue as SdkOptional<String>,
-    keyId: identical(keyId, sdkOmittedValue) ? this.keyId : keyId as SdkOptional<String>,
-    visibility: identical(visibility, sdkOmittedValue) ? this.visibility : visibility as SdkOptional<PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyVisibility>,
-    selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue) ? this.selectedRepositoryIds : selectedRepositoryIds as SdkOptional<List<int>>,
-    authType: identical(authType, sdkOmittedValue) ? this.authType : authType as SdkOptional<PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyAuthType>,
-    tenantId: identical(tenantId, sdkOmittedValue) ? this.tenantId : tenantId as SdkOptional<String>,
-    clientId: identical(clientId, sdkOmittedValue) ? this.clientId : clientId as SdkOptional<String>,
-    awsRegion: identical(awsRegion, sdkOmittedValue) ? this.awsRegion : awsRegion as SdkOptional<String>,
-    accountId: identical(accountId, sdkOmittedValue) ? this.accountId : accountId as SdkOptional<String>,
-    roleName: identical(roleName, sdkOmittedValue) ? this.roleName : roleName as SdkOptional<String>,
-    domain: identical(domain, sdkOmittedValue) ? this.domain : domain as SdkOptional<String>,
-    domainOwner: identical(domainOwner, sdkOmittedValue) ? this.domainOwner : domainOwner as SdkOptional<String>,
-    jfrogOidcProviderName: identical(jfrogOidcProviderName, sdkOmittedValue) ? this.jfrogOidcProviderName : jfrogOidcProviderName as SdkOptional<String>,
-    audience: identical(audience, sdkOmittedValue) ? this.audience : audience as SdkOptional<String>,
-    identityMappingName: identical(identityMappingName, sdkOmittedValue) ? this.identityMappingName : identityMappingName as SdkOptional<String>,
-    namespace: identical(namespace, sdkOmittedValue) ? this.namespace : namespace as SdkOptional<String>,
-    serviceSlug: identical(serviceSlug, sdkOmittedValue) ? this.serviceSlug : serviceSlug as SdkOptional<String>,
-    apiHost: identical(apiHost, sdkOmittedValue) ? this.apiHost : apiHost as SdkOptional<String>,
-    workloadIdentityProvider: identical(workloadIdentityProvider, sdkOmittedValue) ? this.workloadIdentityProvider : workloadIdentityProvider as SdkOptional<String>,
-    serviceAccount: identical(serviceAccount, sdkOmittedValue) ? this.serviceAccount : serviceAccount as SdkOptional<String>,
+  TeamsCreateRequestBody _copyWith({Object? name = sdkOmittedValue, Object? description = sdkOmittedValue, Object? maintainers = sdkOmittedValue, Object? repoNames = sdkOmittedValue, Object? privacy = sdkOmittedValue, Object? notificationSetting = sdkOmittedValue, Object? permission = sdkOmittedValue, Object? parentTeamId = sdkOmittedValue, Object? parentTeamSlug = sdkOmittedValue}) => TeamsCreateRequestBody(
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String>,
+    maintainers: identical(maintainers, sdkOmittedValue) ? this.maintainers : maintainers as SdkOptional<List<String>>,
+    repoNames: identical(repoNames, sdkOmittedValue) ? this.repoNames : repoNames as SdkOptional<List<String>>,
+    privacy: identical(privacy, sdkOmittedValue) ? this.privacy : privacy as SdkOptional<TeamsCreateRequestBodyPrivacy>,
+    notificationSetting: identical(notificationSetting, sdkOmittedValue) ? this.notificationSetting : notificationSetting as SdkOptional<TeamsCreateRequestBodyNotificationSetting>,
+    permission: identical(permission, sdkOmittedValue) ? this.permission : permission as SdkOptional<TeamsCreateRequestBodyPermission>,
+    parentTeamId: identical(parentTeamId, sdkOmittedValue) ? this.parentTeamId : parentTeamId as SdkOptional<int>,
+    parentTeamSlug: identical(parentTeamSlug, sdkOmittedValue) ? this.parentTeamSlug : parentTeamSlug as SdkOptional<String>,
   );
 
-  factory PrivateRegistriesUpdateOrgPrivateRegistryRequestBody.fromJson(Map<String, dynamic> json) => PrivateRegistriesUpdateOrgPrivateRegistryRequestBody(
-    registryType: json['registry_type'] != null ? SdkPresent((json['registry_type'] != null ? PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType.fromJson(json['registry_type'] as String) : null)!) : const SdkOmitted(),
-    url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
-    username: json.containsKey('username') ? SdkPresent(json['username'] as String?) : const SdkOmitted(),
-    replacesBase: json['replaces_base'] != null ? SdkPresent((json['replaces_base'] as bool?)!) : const SdkOmitted(),
-    encryptedValue: json['encrypted_value'] != null ? SdkPresent((json['encrypted_value'] as String?)!) : const SdkOmitted(),
-    keyId: json['key_id'] != null ? SdkPresent((json['key_id'] as String?)!) : const SdkOmitted(),
-    visibility: json['visibility'] != null ? SdkPresent((json['visibility'] != null ? PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyVisibility.fromJson(json['visibility'] as String) : null)!) : const SdkOmitted(),
-    selectedRepositoryIds: json['selected_repository_ids'] != null ? SdkPresent(((json['selected_repository_ids'] as List?)?.map((e) => (e as num).toInt()).toList())!) : const SdkOmitted(),
-    authType: json['auth_type'] != null ? SdkPresent((json['auth_type'] != null ? PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyAuthType.fromJson(json['auth_type'] as String) : null)!) : const SdkOmitted(),
-    tenantId: json['tenant_id'] != null ? SdkPresent((json['tenant_id'] as String?)!) : const SdkOmitted(),
-    clientId: json['client_id'] != null ? SdkPresent((json['client_id'] as String?)!) : const SdkOmitted(),
-    awsRegion: json['aws_region'] != null ? SdkPresent((json['aws_region'] as String?)!) : const SdkOmitted(),
-    accountId: json['account_id'] != null ? SdkPresent((json['account_id'] as String?)!) : const SdkOmitted(),
-    roleName: json['role_name'] != null ? SdkPresent((json['role_name'] as String?)!) : const SdkOmitted(),
-    domain: json['domain'] != null ? SdkPresent((json['domain'] as String?)!) : const SdkOmitted(),
-    domainOwner: json['domain_owner'] != null ? SdkPresent((json['domain_owner'] as String?)!) : const SdkOmitted(),
-    jfrogOidcProviderName: json['jfrog_oidc_provider_name'] != null ? SdkPresent((json['jfrog_oidc_provider_name'] as String?)!) : const SdkOmitted(),
-    audience: json['audience'] != null ? SdkPresent((json['audience'] as String?)!) : const SdkOmitted(),
-    identityMappingName: json['identity_mapping_name'] != null ? SdkPresent((json['identity_mapping_name'] as String?)!) : const SdkOmitted(),
-    namespace: json['namespace'] != null ? SdkPresent((json['namespace'] as String?)!) : const SdkOmitted(),
-    serviceSlug: json['service_slug'] != null ? SdkPresent((json['service_slug'] as String?)!) : const SdkOmitted(),
-    apiHost: json['api_host'] != null ? SdkPresent((json['api_host'] as String?)!) : const SdkOmitted(),
-    workloadIdentityProvider: json['workload_identity_provider'] != null ? SdkPresent((json['workload_identity_provider'] as String?)!) : const SdkOmitted(),
-    serviceAccount: json['service_account'] != null ? SdkPresent((json['service_account'] as String?)!) : const SdkOmitted(),
+  factory TeamsCreateRequestBody.fromJson(Map<String, dynamic> json) => TeamsCreateRequestBody(
+    name: (json['name'] as String?)!,
+    description: json['description'] != null ? SdkPresent((json['description'] as String?)!) : const SdkOmitted(),
+    maintainers: json['maintainers'] != null ? SdkPresent(((json['maintainers'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    repoNames: json['repo_names'] != null ? SdkPresent(((json['repo_names'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    privacy: json['privacy'] != null ? SdkPresent((json['privacy'] != null ? TeamsCreateRequestBodyPrivacy.fromJson(json['privacy'] as String) : null)!) : const SdkOmitted(),
+    notificationSetting: json['notification_setting'] != null ? SdkPresent((json['notification_setting'] != null ? TeamsCreateRequestBodyNotificationSetting.fromJson(json['notification_setting'] as String) : null)!) : const SdkOmitted(),
+    permission: json['permission'] != null ? SdkPresent((json['permission'] != null ? TeamsCreateRequestBodyPermission.fromJson(json['permission'] as String) : null)!) : const SdkOmitted(),
+    parentTeamId: json['parent_team_id'] != null ? SdkPresent(((json['parent_team_id'] as num?)?.toInt())!) : const SdkOmitted(),
+    parentTeamSlug: json['parent_team_slug'] != null ? SdkPresent((json['parent_team_slug'] as String?)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    ...switch (registryType) {
-      SdkPresent<PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType>(value: final value) => {'registry_type': value.toJson(),},
+    'name': name,
+    ...switch (description) {
+      SdkPresent<String>(value: final value) => {'description': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (url) {
-      SdkPresent<String>(value: final value) => {'url': value,},
+    ...switch (maintainers) {
+      SdkPresent<List<String>>(value: final value) => {'maintainers': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (username) {
-      SdkPresent<String?>(value: final value) => {'username': value,},
+    ...switch (repoNames) {
+      SdkPresent<List<String>>(value: final value) => {'repo_names': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (replacesBase) {
-      SdkPresent<bool>(value: final value) => {'replaces_base': value,},
+    ...switch (privacy) {
+      SdkPresent<TeamsCreateRequestBodyPrivacy>(value: final value) => {'privacy': value.toJson(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (encryptedValue) {
-      SdkPresent<String>(value: final value) => {'encrypted_value': value,},
+    ...switch (notificationSetting) {
+      SdkPresent<TeamsCreateRequestBodyNotificationSetting>(value: final value) => {'notification_setting': value.toJson(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (keyId) {
-      SdkPresent<String>(value: final value) => {'key_id': value,},
+    ...switch (permission) {
+      SdkPresent<TeamsCreateRequestBodyPermission>(value: final value) => {'permission': value.toJson(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (visibility) {
-      SdkPresent<PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyVisibility>(value: final value) => {'visibility': value.toJson(),},
+    ...switch (parentTeamId) {
+      SdkPresent<int>(value: final value) => {'parent_team_id': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (selectedRepositoryIds) {
-      SdkPresent<List<int>>(value: final value) => {'selected_repository_ids': value,},
+    ...switch (parentTeamSlug) {
+      SdkPresent<String>(value: final value) => {'parent_team_slug': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (authType) {
-      SdkPresent<PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyAuthType>(value: final value) => {'auth_type': value.toJson(),},
+  };
+}
+
+class TeamsUpdateInOrgRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The name of the team.
+  final SdkOptional<String> name;
+  /// The description of the team.
+  final SdkOptional<String> description;
+  /// The level of privacy this team should have. Editing teams without specifying this parameter leaves `privacy` intact. When a team is nested, the `privacy` for parent teams cannot be `secret`. The options are: **For a non-nested team:** * `secret` - only visible to organization owners and members of this team. * `closed` - visible to all members of this organization. **For a parent or child team:** * `closed` - visible to all members of this organization.
+  final SdkOptional<TeamsUpdateInOrgRequestBodyPrivacy> privacy;
+  /// The notification setting the team has chosen. Editing teams without specifying this parameter leaves `notification_setting` intact. The options are: * `notifications_enabled` - team members receive notifications when the team is @mentioned. * `notifications_disabled` - no one receives notifications.
+  final SdkOptional<TeamsUpdateInOrgRequestBodyNotificationSetting> notificationSetting;
+  /// **Closing down notice**. The permission that new repositories will be added to the team with when none is specified.
+  final SdkOptional<TeamsUpdateInOrgRequestBodyPermission> permission;
+  /// The ID of a team to set as the parent team.
+  final SdkOptional<int?> parentTeamId;
+  /// The slug of a team to set as the parent team. Ignored when `parent_team_id` is also provided.
+  final SdkOptional<String?> parentTeamSlug;
+
+  const TeamsUpdateInOrgRequestBody({this.name = const SdkOmitted(), this.description = const SdkOmitted(), this.privacy = const SdkOmitted(), this.notificationSetting = const SdkOmitted(), this.permission = const SdkOmitted(), this.parentTeamId = const SdkOmitted(), this.parentTeamSlug = const SdkOmitted()});
+
+  TeamsUpdateInOrgRequestBody Function({SdkOptional<String> name, SdkOptional<String> description, SdkOptional<TeamsUpdateInOrgRequestBodyPrivacy> privacy, SdkOptional<TeamsUpdateInOrgRequestBodyNotificationSetting> notificationSetting, SdkOptional<TeamsUpdateInOrgRequestBodyPermission> permission, SdkOptional<int?> parentTeamId, SdkOptional<String?> parentTeamSlug}) get copyWith => _copyWith;
+
+  TeamsUpdateInOrgRequestBody _copyWith({Object? name = sdkOmittedValue, Object? description = sdkOmittedValue, Object? privacy = sdkOmittedValue, Object? notificationSetting = sdkOmittedValue, Object? permission = sdkOmittedValue, Object? parentTeamId = sdkOmittedValue, Object? parentTeamSlug = sdkOmittedValue}) => TeamsUpdateInOrgRequestBody(
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
+    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String>,
+    privacy: identical(privacy, sdkOmittedValue) ? this.privacy : privacy as SdkOptional<TeamsUpdateInOrgRequestBodyPrivacy>,
+    notificationSetting: identical(notificationSetting, sdkOmittedValue) ? this.notificationSetting : notificationSetting as SdkOptional<TeamsUpdateInOrgRequestBodyNotificationSetting>,
+    permission: identical(permission, sdkOmittedValue) ? this.permission : permission as SdkOptional<TeamsUpdateInOrgRequestBodyPermission>,
+    parentTeamId: identical(parentTeamId, sdkOmittedValue) ? this.parentTeamId : parentTeamId as SdkOptional<int?>,
+    parentTeamSlug: identical(parentTeamSlug, sdkOmittedValue) ? this.parentTeamSlug : parentTeamSlug as SdkOptional<String?>,
+  );
+
+  factory TeamsUpdateInOrgRequestBody.fromJson(Map<String, dynamic> json) => TeamsUpdateInOrgRequestBody(
+    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
+    description: json['description'] != null ? SdkPresent((json['description'] as String?)!) : const SdkOmitted(),
+    privacy: json['privacy'] != null ? SdkPresent((json['privacy'] != null ? TeamsUpdateInOrgRequestBodyPrivacy.fromJson(json['privacy'] as String) : null)!) : const SdkOmitted(),
+    notificationSetting: json['notification_setting'] != null ? SdkPresent((json['notification_setting'] != null ? TeamsUpdateInOrgRequestBodyNotificationSetting.fromJson(json['notification_setting'] as String) : null)!) : const SdkOmitted(),
+    permission: json['permission'] != null ? SdkPresent((json['permission'] != null ? TeamsUpdateInOrgRequestBodyPermission.fromJson(json['permission'] as String) : null)!) : const SdkOmitted(),
+    parentTeamId: json.containsKey('parent_team_id') ? SdkPresent((json['parent_team_id'] as num?)?.toInt()) : const SdkOmitted(),
+    parentTeamSlug: json.containsKey('parent_team_slug') ? SdkPresent(json['parent_team_slug'] as String?) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    ...switch (name) {
+      SdkPresent<String>(value: final value) => {'name': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (tenantId) {
-      SdkPresent<String>(value: final value) => {'tenant_id': value,},
+    ...switch (description) {
+      SdkPresent<String>(value: final value) => {'description': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (clientId) {
-      SdkPresent<String>(value: final value) => {'client_id': value,},
+    ...switch (privacy) {
+      SdkPresent<TeamsUpdateInOrgRequestBodyPrivacy>(value: final value) => {'privacy': value.toJson(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (awsRegion) {
-      SdkPresent<String>(value: final value) => {'aws_region': value,},
+    ...switch (notificationSetting) {
+      SdkPresent<TeamsUpdateInOrgRequestBodyNotificationSetting>(value: final value) => {'notification_setting': value.toJson(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (accountId) {
-      SdkPresent<String>(value: final value) => {'account_id': value,},
+    ...switch (permission) {
+      SdkPresent<TeamsUpdateInOrgRequestBodyPermission>(value: final value) => {'permission': value.toJson(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (roleName) {
-      SdkPresent<String>(value: final value) => {'role_name': value,},
+    ...switch (parentTeamId) {
+      SdkPresent<int?>(value: final value) => {'parent_team_id': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (domain) {
-      SdkPresent<String>(value: final value) => {'domain': value,},
+    ...switch (parentTeamSlug) {
+      SdkPresent<String?>(value: final value) => {'parent_team_slug': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (domainOwner) {
-      SdkPresent<String>(value: final value) => {'domain_owner': value,},
+  };
+}
+
+class TeamsAddOrUpdateMembershipForUserInOrgRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The role that this user should have in the team.
+  final SdkOptional<TeamsAddOrUpdateMembershipForUserInOrgRequestBodyRole> role;
+
+  const TeamsAddOrUpdateMembershipForUserInOrgRequestBody({this.role = const SdkOmitted()});
+
+  TeamsAddOrUpdateMembershipForUserInOrgRequestBody Function({SdkOptional<TeamsAddOrUpdateMembershipForUserInOrgRequestBodyRole> role}) get copyWith => _copyWith;
+
+  TeamsAddOrUpdateMembershipForUserInOrgRequestBody _copyWith({Object? role = sdkOmittedValue}) => TeamsAddOrUpdateMembershipForUserInOrgRequestBody(
+    role: identical(role, sdkOmittedValue) ? this.role : role as SdkOptional<TeamsAddOrUpdateMembershipForUserInOrgRequestBodyRole>,
+  );
+
+  factory TeamsAddOrUpdateMembershipForUserInOrgRequestBody.fromJson(Map<String, dynamic> json) => TeamsAddOrUpdateMembershipForUserInOrgRequestBody(
+    role: json['role'] != null ? SdkPresent((json['role'] != null ? TeamsAddOrUpdateMembershipForUserInOrgRequestBodyRole.fromJson(json['role'] as String) : null)!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    ...switch (role) {
+      SdkPresent<TeamsAddOrUpdateMembershipForUserInOrgRequestBodyRole>(value: final value) => {'role': value.toJson(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (jfrogOidcProviderName) {
-      SdkPresent<String>(value: final value) => {'jfrog_oidc_provider_name': value,},
+  };
+}
+
+class TeamsAddOrUpdateRepoPermissionsInOrgRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The permission to grant the team on this repository. We accept the following permissions to be set: `pull`, `triage`, `push`, `maintain`, `admin` and you can also specify a custom repository role name, if the owning organization has defined any. If no permission is specified, the team's `permission` attribute will be used to determine what permission to grant the team on this repository.
+  final SdkOptional<String> permission;
+
+  const TeamsAddOrUpdateRepoPermissionsInOrgRequestBody({this.permission = const SdkOmitted()});
+
+  TeamsAddOrUpdateRepoPermissionsInOrgRequestBody Function({SdkOptional<String> permission}) get copyWith => _copyWith;
+
+  TeamsAddOrUpdateRepoPermissionsInOrgRequestBody _copyWith({Object? permission = sdkOmittedValue}) => TeamsAddOrUpdateRepoPermissionsInOrgRequestBody(
+    permission: identical(permission, sdkOmittedValue) ? this.permission : permission as SdkOptional<String>,
+  );
+
+  factory TeamsAddOrUpdateRepoPermissionsInOrgRequestBody.fromJson(Map<String, dynamic> json) => TeamsAddOrUpdateRepoPermissionsInOrgRequestBody(
+    permission: json['permission'] != null ? SdkPresent((json['permission'] as String?)!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    ...switch (permission) {
+      SdkPresent<String>(value: final value) => {'permission': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (audience) {
-      SdkPresent<String>(value: final value) => {'audience': value,},
+  };
+}
+
+class TeamsUpdateLegacyRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The name of the team.
+  final String name;
+  /// The description of the team.
+  final SdkOptional<String> description;
+  /// The level of privacy this team should have. Editing teams without specifying this parameter leaves `privacy` intact. The options are: **For a non-nested team:** * `secret` - only visible to organization owners and members of this team. * `closed` - visible to all members of this organization. **For a parent or child team:** * `closed` - visible to all members of this organization.
+  final SdkOptional<TeamsUpdateLegacyRequestBodyPrivacy> privacy;
+  /// The notification setting the team has chosen. Editing teams without specifying this parameter leaves `notification_setting` intact. The options are: * `notifications_enabled` - team members receive notifications when the team is @mentioned. * `notifications_disabled` - no one receives notifications.
+  final SdkOptional<TeamsUpdateLegacyRequestBodyNotificationSetting> notificationSetting;
+  /// **Closing down notice**. The permission that new repositories will be added to the team with when none is specified.
+  final SdkOptional<TeamsUpdateLegacyRequestBodyPermission> permission;
+  /// The ID of a team to set as the parent team.
+  final SdkOptional<int?> parentTeamId;
+  /// The slug of a team to set as the parent team. Ignored when `parent_team_id` is also provided.
+  final SdkOptional<String?> parentTeamSlug;
+
+  const TeamsUpdateLegacyRequestBody({required this.name, this.description = const SdkOmitted(), this.privacy = const SdkOmitted(), this.notificationSetting = const SdkOmitted(), this.permission = const SdkOmitted(), this.parentTeamId = const SdkOmitted(), this.parentTeamSlug = const SdkOmitted()});
+
+  TeamsUpdateLegacyRequestBody Function({String name, SdkOptional<String> description, SdkOptional<TeamsUpdateLegacyRequestBodyPrivacy> privacy, SdkOptional<TeamsUpdateLegacyRequestBodyNotificationSetting> notificationSetting, SdkOptional<TeamsUpdateLegacyRequestBodyPermission> permission, SdkOptional<int?> parentTeamId, SdkOptional<String?> parentTeamSlug}) get copyWith => _copyWith;
+
+  TeamsUpdateLegacyRequestBody _copyWith({Object? name = sdkOmittedValue, Object? description = sdkOmittedValue, Object? privacy = sdkOmittedValue, Object? notificationSetting = sdkOmittedValue, Object? permission = sdkOmittedValue, Object? parentTeamId = sdkOmittedValue, Object? parentTeamSlug = sdkOmittedValue}) => TeamsUpdateLegacyRequestBody(
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String>,
+    privacy: identical(privacy, sdkOmittedValue) ? this.privacy : privacy as SdkOptional<TeamsUpdateLegacyRequestBodyPrivacy>,
+    notificationSetting: identical(notificationSetting, sdkOmittedValue) ? this.notificationSetting : notificationSetting as SdkOptional<TeamsUpdateLegacyRequestBodyNotificationSetting>,
+    permission: identical(permission, sdkOmittedValue) ? this.permission : permission as SdkOptional<TeamsUpdateLegacyRequestBodyPermission>,
+    parentTeamId: identical(parentTeamId, sdkOmittedValue) ? this.parentTeamId : parentTeamId as SdkOptional<int?>,
+    parentTeamSlug: identical(parentTeamSlug, sdkOmittedValue) ? this.parentTeamSlug : parentTeamSlug as SdkOptional<String?>,
+  );
+
+  factory TeamsUpdateLegacyRequestBody.fromJson(Map<String, dynamic> json) => TeamsUpdateLegacyRequestBody(
+    name: (json['name'] as String?)!,
+    description: json['description'] != null ? SdkPresent((json['description'] as String?)!) : const SdkOmitted(),
+    privacy: json['privacy'] != null ? SdkPresent((json['privacy'] != null ? TeamsUpdateLegacyRequestBodyPrivacy.fromJson(json['privacy'] as String) : null)!) : const SdkOmitted(),
+    notificationSetting: json['notification_setting'] != null ? SdkPresent((json['notification_setting'] != null ? TeamsUpdateLegacyRequestBodyNotificationSetting.fromJson(json['notification_setting'] as String) : null)!) : const SdkOmitted(),
+    permission: json['permission'] != null ? SdkPresent((json['permission'] != null ? TeamsUpdateLegacyRequestBodyPermission.fromJson(json['permission'] as String) : null)!) : const SdkOmitted(),
+    parentTeamId: json.containsKey('parent_team_id') ? SdkPresent((json['parent_team_id'] as num?)?.toInt()) : const SdkOmitted(),
+    parentTeamSlug: json.containsKey('parent_team_slug') ? SdkPresent(json['parent_team_slug'] as String?) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    'name': name,
+    ...switch (description) {
+      SdkPresent<String>(value: final value) => {'description': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (identityMappingName) {
-      SdkPresent<String>(value: final value) => {'identity_mapping_name': value,},
+    ...switch (privacy) {
+      SdkPresent<TeamsUpdateLegacyRequestBodyPrivacy>(value: final value) => {'privacy': value.toJson(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (namespace) {
-      SdkPresent<String>(value: final value) => {'namespace': value,},
+    ...switch (notificationSetting) {
+      SdkPresent<TeamsUpdateLegacyRequestBodyNotificationSetting>(value: final value) => {'notification_setting': value.toJson(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (serviceSlug) {
-      SdkPresent<String>(value: final value) => {'service_slug': value,},
+    ...switch (permission) {
+      SdkPresent<TeamsUpdateLegacyRequestBodyPermission>(value: final value) => {'permission': value.toJson(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (apiHost) {
-      SdkPresent<String>(value: final value) => {'api_host': value,},
+    ...switch (parentTeamId) {
+      SdkPresent<int?>(value: final value) => {'parent_team_id': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (workloadIdentityProvider) {
-      SdkPresent<String>(value: final value) => {'workload_identity_provider': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (serviceAccount) {
-      SdkPresent<String>(value: final value) => {'service_account': value,},
+    ...switch (parentTeamSlug) {
+      SdkPresent<String?>(value: final value) => {'parent_team_slug': value,},
       _ => const <String, dynamic>{},
     },
   };

@@ -187,3 +187,100 @@ class ProjectsV2StatusUpdate {
     },
   };
 }
+
+/// A view inside a projects v2 project
+class ProjectsV2View {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The unique identifier of the view.
+  final int id;
+  /// The number of the view within the project.
+  final int number;
+  /// The name of the view.
+  final String name;
+  /// The layout of the view.
+  final ProjectsV2ViewLayout layout;
+  /// The node ID of the view.
+  final String nodeId;
+  /// The API URL of the project that contains the view.
+  final String projectUrl;
+  /// The web URL of the view.
+  final String htmlUrl;
+  /// A GitHub user.
+  final SimpleUser creator;
+  /// The time when the view was created.
+  final String createdAt;
+  /// The time when the view was last updated.
+  final String updatedAt;
+  /// The filter query for the view.
+  final SdkOptional<String?> filter;
+  /// The list of field IDs that are visible in the view.
+  final List<int> visibleFields;
+  /// The sorting configuration for the view. Each element is a tuple of [field_id, direction] where direction is "asc" or "desc".
+  final List<List<dynamic>> sortBy;
+  /// The list of field IDs used for horizontal grouping.
+  final List<int> groupBy;
+  /// The list of field IDs used for vertical grouping (board layout).
+  final List<int> verticalGroupBy;
+
+  const ProjectsV2View({required this.id, required this.number, required this.name, required this.layout, required this.nodeId, required this.projectUrl, required this.htmlUrl, required this.creator, required this.createdAt, required this.updatedAt, this.filter = const SdkOmitted(), required this.visibleFields, required this.sortBy, required this.groupBy, required this.verticalGroupBy});
+
+  ProjectsV2View Function({int id, int number, String name, ProjectsV2ViewLayout layout, String nodeId, String projectUrl, String htmlUrl, SimpleUser creator, String createdAt, String updatedAt, SdkOptional<String?> filter, List<int> visibleFields, List<List<dynamic>> sortBy, List<int> groupBy, List<int> verticalGroupBy}) get copyWith => _copyWith;
+
+  ProjectsV2View _copyWith({Object? id = sdkOmittedValue, Object? number = sdkOmittedValue, Object? name = sdkOmittedValue, Object? layout = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? projectUrl = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? creator = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? filter = sdkOmittedValue, Object? visibleFields = sdkOmittedValue, Object? sortBy = sdkOmittedValue, Object? groupBy = sdkOmittedValue, Object? verticalGroupBy = sdkOmittedValue}) => ProjectsV2View(
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    number: identical(number, sdkOmittedValue) ? this.number : number as int,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    layout: identical(layout, sdkOmittedValue) ? this.layout : layout as ProjectsV2ViewLayout,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+    projectUrl: identical(projectUrl, sdkOmittedValue) ? this.projectUrl : projectUrl as String,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
+    creator: identical(creator, sdkOmittedValue) ? this.creator : creator as SimpleUser,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
+    filter: identical(filter, sdkOmittedValue) ? this.filter : filter as SdkOptional<String?>,
+    visibleFields: identical(visibleFields, sdkOmittedValue) ? this.visibleFields : visibleFields as List<int>,
+    sortBy: identical(sortBy, sdkOmittedValue) ? this.sortBy : sortBy as List<List<dynamic>>,
+    groupBy: identical(groupBy, sdkOmittedValue) ? this.groupBy : groupBy as List<int>,
+    verticalGroupBy: identical(verticalGroupBy, sdkOmittedValue) ? this.verticalGroupBy : verticalGroupBy as List<int>,
+  );
+
+  factory ProjectsV2View.fromJson(Map<String, dynamic> json) => ProjectsV2View(
+    id: ((json['id'] as num?)?.toInt())!,
+    number: ((json['number'] as num?)?.toInt())!,
+    name: (json['name'] as String?)!,
+    layout: (json['layout'] != null ? ProjectsV2ViewLayout.fromJson(json['layout'] as String) : null)!,
+    nodeId: (json['node_id'] as String?)!,
+    projectUrl: (json['project_url'] as String?)!,
+    htmlUrl: (json['html_url'] as String?)!,
+    creator: (json['creator'] != null ? SimpleUser.fromJson(json['creator'] as Map<String, dynamic>) : null)!,
+    createdAt: (json['created_at'] as String?)!,
+    updatedAt: (json['updated_at'] as String?)!,
+    filter: json.containsKey('filter') ? SdkPresent(json['filter'] as String?) : const SdkOmitted(),
+    visibleFields: ((json['visible_fields'] as List?)?.map((e) => (e as num).toInt()).toList())!,
+    sortBy: ((json['sort_by'] as List?)?.map((e) => (e as List).map((item) => item).toList()).toList())!,
+    groupBy: ((json['group_by'] as List?)?.map((e) => (e as num).toInt()).toList())!,
+    verticalGroupBy: ((json['vertical_group_by'] as List?)?.map((e) => (e as num).toInt()).toList())!,
+  );
+
+  Map<String, dynamic> toJson() => {
+    'id': id,
+    'number': number,
+    'name': name,
+    'layout': layout.toJson(),
+    'node_id': nodeId,
+    'project_url': projectUrl,
+    'html_url': htmlUrl,
+    'creator': creator.toJson(),
+    'created_at': createdAt,
+    'updated_at': updatedAt,
+    ...switch (filter) {
+      SdkPresent<String?>(value: final value) => {'filter': value,},
+      _ => const <String, dynamic>{},
+    },
+    'visible_fields': visibleFields,
+    'sort_by': sortBy,
+    'group_by': groupBy,
+    'vertical_group_by': verticalGroupBy,
+  };
+}

@@ -4,151 +4,6 @@
 part of 'inline.dart';
 
 // Inline operation models (part 39)
-/// The location type. Because secrets may be found in different types of resources (ie. code, comments, issues, pull requests, discussions), this field identifies the type of resource where the secret was found.
-final class SecretScanningLocationType {
-
-  final String value;
-
-  const SecretScanningLocationType._(this.value);
-
-  factory SecretScanningLocationType.fromJson(String value) => SecretScanningLocationType._(value);
-
-  static const commit = SecretScanningLocationType._('commit');
-  static const wikiCommit = SecretScanningLocationType._('wiki_commit');
-  static const issueTitle = SecretScanningLocationType._('issue_title');
-  static const issueBody = SecretScanningLocationType._('issue_body');
-  static const issueComment = SecretScanningLocationType._('issue_comment');
-  static const discussionTitle = SecretScanningLocationType._('discussion_title');
-  static const discussionBody = SecretScanningLocationType._('discussion_body');
-  static const discussionComment = SecretScanningLocationType._('discussion_comment');
-  static const pullRequestTitle = SecretScanningLocationType._('pull_request_title');
-  static const pullRequestBody = SecretScanningLocationType._('pull_request_body');
-  static const pullRequestComment = SecretScanningLocationType._('pull_request_comment');
-  static const pullRequestReview = SecretScanningLocationType._('pull_request_review');
-  static const pullRequestReviewComment = SecretScanningLocationType._('pull_request_review_comment');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is SecretScanningLocationType && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The default push protection setting for this pattern.
-final class SecretScanningPatternOverrideDefaultSetting {
-
-  final String value;
-
-  const SecretScanningPatternOverrideDefaultSetting._(this.value);
-
-  factory SecretScanningPatternOverrideDefaultSetting.fromJson(String value) => SecretScanningPatternOverrideDefaultSetting._(value);
-
-  static const disabled = SecretScanningPatternOverrideDefaultSetting._('disabled');
-  static const enabled = SecretScanningPatternOverrideDefaultSetting._('enabled');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is SecretScanningPatternOverrideDefaultSetting && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The push protection setting for this pattern set at the enterprise level. Only present for partner patterns when the organization has a parent enterprise.
-final class SecretScanningPatternOverrideEnterpriseSetting {
-
-  final String value;
-
-  const SecretScanningPatternOverrideEnterpriseSetting._(this.value);
-
-  factory SecretScanningPatternOverrideEnterpriseSetting.fromJson(String value) => SecretScanningPatternOverrideEnterpriseSetting._(value);
-
-  static const notSet = SecretScanningPatternOverrideEnterpriseSetting._('not-set');
-  static const disabled = SecretScanningPatternOverrideEnterpriseSetting._('disabled');
-  static const enabled = SecretScanningPatternOverrideEnterpriseSetting._('enabled');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is SecretScanningPatternOverrideEnterpriseSetting && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The current push protection setting for this pattern. If this is `not-set`, then it inherits either the enterprise setting if it exists or the default setting.
-final class SecretScanningPatternOverrideSetting {
-
-  final String value;
-
-  const SecretScanningPatternOverrideSetting._(this.value);
-
-  factory SecretScanningPatternOverrideSetting.fromJson(String value) => SecretScanningPatternOverrideSetting._(value);
-
-  static const notSet = SecretScanningPatternOverrideSetting._('not-set');
-  static const disabled = SecretScanningPatternOverrideSetting._('disabled');
-  static const enabled = SecretScanningPatternOverrideSetting._('enabled');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is SecretScanningPatternOverrideSetting && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// Optional enumerated value serialized in the `status` wire field.
-final class SecurityAndAnalysisAdvancedSecurityStatus {
-
-  final String value;
-
-  const SecurityAndAnalysisAdvancedSecurityStatus._(this.value);
-
-  factory SecurityAndAnalysisAdvancedSecurityStatus.fromJson(String value) => SecurityAndAnalysisAdvancedSecurityStatus._(value);
-
-  static const enabled = SecurityAndAnalysisAdvancedSecurityStatus._('enabled');
-  static const disabled = SecurityAndAnalysisAdvancedSecurityStatus._('disabled');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is SecurityAndAnalysisAdvancedSecurityStatus && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// Optional enumerated value serialized in the `status` wire field.
-final class SecurityAndAnalysisCodeSecurityStatus {
-
-  final String value;
-
-  const SecurityAndAnalysisCodeSecurityStatus._(this.value);
-
-  factory SecurityAndAnalysisCodeSecurityStatus.fromJson(String value) => SecurityAndAnalysisCodeSecurityStatus._(value);
-
-  static const enabled = SecurityAndAnalysisCodeSecurityStatus._('enabled');
-  static const disabled = SecurityAndAnalysisCodeSecurityStatus._('disabled');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is SecurityAndAnalysisCodeSecurityStatus && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
 /// The enablement status of Dependabot security updates for the repository.
 final class SecurityAndAnalysisDependabotSecurityUpdatesStatus {
 
@@ -276,6 +131,149 @@ final class SecurityAndAnalysisSecretScanningDelegatedBypassStatus {
   @override String toString() => value.toString();
 
   @override bool operator ==(Object other) => other is SecurityAndAnalysisSecretScanningDelegatedBypassStatus && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// Optional enumerated value serialized in the `status` wire field.
+final class SecurityAndAnalysisSecretScanningNonProviderPatternsStatus {
+
+  final String value;
+
+  const SecurityAndAnalysisSecretScanningNonProviderPatternsStatus._(this.value);
+
+  factory SecurityAndAnalysisSecretScanningNonProviderPatternsStatus.fromJson(String value) => SecurityAndAnalysisSecretScanningNonProviderPatternsStatus._(value);
+
+  static const enabled = SecurityAndAnalysisSecretScanningNonProviderPatternsStatus._('enabled');
+  static const disabled = SecurityAndAnalysisSecretScanningNonProviderPatternsStatus._('disabled');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is SecurityAndAnalysisSecretScanningNonProviderPatternsStatus && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// Optional enumerated value serialized in the `status` wire field.
+final class SecurityAndAnalysisSecretScanningPushProtectionStatus {
+
+  final String value;
+
+  const SecurityAndAnalysisSecretScanningPushProtectionStatus._(this.value);
+
+  factory SecurityAndAnalysisSecretScanningPushProtectionStatus.fromJson(String value) => SecurityAndAnalysisSecretScanningPushProtectionStatus._(value);
+
+  static const enabled = SecurityAndAnalysisSecretScanningPushProtectionStatus._('enabled');
+  static const disabled = SecurityAndAnalysisSecretScanningPushProtectionStatus._('disabled');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is SecurityAndAnalysisSecretScanningPushProtectionStatus && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// Optional enumerated value serialized in the `status` wire field.
+final class SecurityAndAnalysisSecretScanningStatus {
+
+  final String value;
+
+  const SecurityAndAnalysisSecretScanningStatus._(this.value);
+
+  factory SecurityAndAnalysisSecretScanningStatus.fromJson(String value) => SecurityAndAnalysisSecretScanningStatus._(value);
+
+  static const enabled = SecurityAndAnalysisSecretScanningStatus._('enabled');
+  static const disabled = SecurityAndAnalysisSecretScanningStatus._('disabled');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is SecurityAndAnalysisSecretScanningStatus && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// The policy that controls whether self-hosted runners can be used by repositories in the organization
+final class SelfHostedRunnersSettingsEnabledRepositories {
+
+  final String value;
+
+  const SelfHostedRunnersSettingsEnabledRepositories._(this.value);
+
+  factory SelfHostedRunnersSettingsEnabledRepositories.fromJson(String value) => SelfHostedRunnersSettingsEnabledRepositories._(value);
+
+  static const all = SelfHostedRunnersSettingsEnabledRepositories._('all');
+  static const selected = SelfHostedRunnersSettingsEnabledRepositories._('selected');
+  static const none = SelfHostedRunnersSettingsEnabledRepositories._('none');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is SelfHostedRunnersSettingsEnabledRepositories && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// Optional enumerated value serialized in the `conclusion` wire field.
+final class SimpleCheckSuiteConclusion {
+
+  final String value;
+
+  const SimpleCheckSuiteConclusion._(this.value);
+
+  factory SimpleCheckSuiteConclusion.fromJson(String value) => SimpleCheckSuiteConclusion._(value);
+
+  static const success = SimpleCheckSuiteConclusion._('success');
+  static const failure = SimpleCheckSuiteConclusion._('failure');
+  static const neutral = SimpleCheckSuiteConclusion._('neutral');
+  static const cancelled = SimpleCheckSuiteConclusion._('cancelled');
+  static const skipped = SimpleCheckSuiteConclusion._('skipped');
+  static const timedOut = SimpleCheckSuiteConclusion._('timed_out');
+  static const actionRequired = SimpleCheckSuiteConclusion._('action_required');
+  static const stale = SimpleCheckSuiteConclusion._('stale');
+  static const startupFailure = SimpleCheckSuiteConclusion._('startup_failure');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is SimpleCheckSuiteConclusion && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// Optional enumerated value serialized in the `status` wire field.
+final class SimpleCheckSuiteStatus {
+
+  final String value;
+
+  const SimpleCheckSuiteStatus._(this.value);
+
+  factory SimpleCheckSuiteStatus.fromJson(String value) => SimpleCheckSuiteStatus._(value);
+
+  static const queued = SimpleCheckSuiteStatus._('queued');
+  static const inProgress = SimpleCheckSuiteStatus._('in_progress');
+  static const completed = SimpleCheckSuiteStatus._('completed');
+  static const pending = SimpleCheckSuiteStatus._('pending');
+  static const waiting = SimpleCheckSuiteStatus._('waiting');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is SimpleCheckSuiteStatus && other.value == value;
 
   @override int get hashCode => value.hashCode;
 

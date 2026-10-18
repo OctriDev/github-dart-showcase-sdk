@@ -4,275 +4,294 @@
 part of 'inline.dart';
 
 // Inline operation models (part 329)
-/// Request body for editing an automation. Omitted fields are left unchanged. Explicit null values are rejected.
-class AgentAutomationsEditRepoAutomationRequestBody {
+class ActionsUpdateSelfHostedRunnerGroupForOrgRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The name of the automation.
-  final SdkOptional<String> name;
-  /// Set to true to enable, false to disable. Omit to leave unchanged.
-  final SdkOptional<bool> enabled;
-  /// Controls which repository resources a run may modify. `trigger` limits writes to the resource that started the run, when one exists, and resources created during the run; `repository` allows writes to any resource in the repository. Supported values: `trigger`, `repository`. Omit to leave unchanged.
-  final SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyWriteScope> writeScope;
-  /// When true, event-triggered runs require the event actor to have repo write permission, even when the org's allow_read_access_triggers policy is enabled. Does not apply to interval-scheduled runs, which always run as the automation owner. Omit to leave unchanged.
-  final SdkOptional<bool> requireActorWritePermission;
-  /// The model to use for sessions triggered by this automation. Omit to leave unchanged. Send an empty string to clear the model and revert to the platform default.
-  final SdkOptional<String> model;
-  /// The reasoning effort to use for sessions triggered by this automation. Omit to leave unchanged. Send an empty string to clear the override. Currently supported values: `none`, `low`, `medium`, `high`, `xhigh`, `max`
-  final SdkOptional<String> reasoningEffort;
-  /// Public trigger configuration keyed by stable public trigger identifier. Each trigger has a closed, trigger-specific configuration schema.
-  final SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggers> triggers;
-  /// The prompt template for the automation.
-  final SdkOptional<String> prompt;
-  /// The tools available to the automation. Send an empty array to clear all tools.
-  final SdkOptional<List<String>> tools;
-  /// Custom agents (subagents) this automation is allowed to invoke. Send an empty array to clear all custom agents.
-  final SdkOptional<List<String>> allowedCustomAgents;
+  /// Name of the runner group.
+  final String name;
+  /// Visibility of a runner group. You can select all repositories, select individual repositories, or all private repositories.
+  final SdkOptional<ActionsUpdateSelfHostedRunnerGroupForOrgRequestBodyVisibility> visibility;
+  /// Whether the runner group can be used by `public` repositories.
+  final SdkOptional<bool> allowsPublicRepositories;
+  /// If `true`, the runner group will be restricted to running only the workflows specified in the `selected_workflows` array.
+  final SdkOptional<bool> restrictedToWorkflows;
+  /// List of workflows the runner group should be allowed to run. This setting will be ignored unless `restricted_to_workflows` is set to `true`.
+  final SdkOptional<List<String>> selectedWorkflows;
+  /// The identifier of a hosted compute network configuration.
+  final SdkOptional<String?> networkConfigurationId;
 
-  const AgentAutomationsEditRepoAutomationRequestBody({this.name = const SdkOmitted(), this.enabled = const SdkOmitted(), this.writeScope = const SdkOmitted(), this.requireActorWritePermission = const SdkOmitted(), this.model = const SdkOmitted(), this.reasoningEffort = const SdkOmitted(), this.triggers = const SdkOmitted(), this.prompt = const SdkOmitted(), this.tools = const SdkOmitted(), this.allowedCustomAgents = const SdkOmitted()});
+  const ActionsUpdateSelfHostedRunnerGroupForOrgRequestBody({required this.name, this.visibility = const SdkOmitted(), this.allowsPublicRepositories = const SdkOmitted(), this.restrictedToWorkflows = const SdkOmitted(), this.selectedWorkflows = const SdkOmitted(), this.networkConfigurationId = const SdkOmitted()});
 
-  AgentAutomationsEditRepoAutomationRequestBody Function({SdkOptional<String> name, SdkOptional<bool> enabled, SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyWriteScope> writeScope, SdkOptional<bool> requireActorWritePermission, SdkOptional<String> model, SdkOptional<String> reasoningEffort, SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggers> triggers, SdkOptional<String> prompt, SdkOptional<List<String>> tools, SdkOptional<List<String>> allowedCustomAgents}) get copyWith => _copyWith;
+  ActionsUpdateSelfHostedRunnerGroupForOrgRequestBody Function({String name, SdkOptional<ActionsUpdateSelfHostedRunnerGroupForOrgRequestBodyVisibility> visibility, SdkOptional<bool> allowsPublicRepositories, SdkOptional<bool> restrictedToWorkflows, SdkOptional<List<String>> selectedWorkflows, SdkOptional<String?> networkConfigurationId}) get copyWith => _copyWith;
 
-  AgentAutomationsEditRepoAutomationRequestBody _copyWith({Object? name = sdkOmittedValue, Object? enabled = sdkOmittedValue, Object? writeScope = sdkOmittedValue, Object? requireActorWritePermission = sdkOmittedValue, Object? model = sdkOmittedValue, Object? reasoningEffort = sdkOmittedValue, Object? triggers = sdkOmittedValue, Object? prompt = sdkOmittedValue, Object? tools = sdkOmittedValue, Object? allowedCustomAgents = sdkOmittedValue}) => AgentAutomationsEditRepoAutomationRequestBody(
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as SdkOptional<bool>,
-    writeScope: identical(writeScope, sdkOmittedValue) ? this.writeScope : writeScope as SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyWriteScope>,
-    requireActorWritePermission: identical(requireActorWritePermission, sdkOmittedValue) ? this.requireActorWritePermission : requireActorWritePermission as SdkOptional<bool>,
-    model: identical(model, sdkOmittedValue) ? this.model : model as SdkOptional<String>,
-    reasoningEffort: identical(reasoningEffort, sdkOmittedValue) ? this.reasoningEffort : reasoningEffort as SdkOptional<String>,
-    triggers: identical(triggers, sdkOmittedValue) ? this.triggers : triggers as SdkOptional<AgentAutomationsEditRepoAutomationRequestBodyTriggers>,
-    prompt: identical(prompt, sdkOmittedValue) ? this.prompt : prompt as SdkOptional<String>,
-    tools: identical(tools, sdkOmittedValue) ? this.tools : tools as SdkOptional<List<String>>,
-    allowedCustomAgents: identical(allowedCustomAgents, sdkOmittedValue) ? this.allowedCustomAgents : allowedCustomAgents as SdkOptional<List<String>>,
+  ActionsUpdateSelfHostedRunnerGroupForOrgRequestBody _copyWith({Object? name = sdkOmittedValue, Object? visibility = sdkOmittedValue, Object? allowsPublicRepositories = sdkOmittedValue, Object? restrictedToWorkflows = sdkOmittedValue, Object? selectedWorkflows = sdkOmittedValue, Object? networkConfigurationId = sdkOmittedValue}) => ActionsUpdateSelfHostedRunnerGroupForOrgRequestBody(
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    visibility: identical(visibility, sdkOmittedValue) ? this.visibility : visibility as SdkOptional<ActionsUpdateSelfHostedRunnerGroupForOrgRequestBodyVisibility>,
+    allowsPublicRepositories: identical(allowsPublicRepositories, sdkOmittedValue) ? this.allowsPublicRepositories : allowsPublicRepositories as SdkOptional<bool>,
+    restrictedToWorkflows: identical(restrictedToWorkflows, sdkOmittedValue) ? this.restrictedToWorkflows : restrictedToWorkflows as SdkOptional<bool>,
+    selectedWorkflows: identical(selectedWorkflows, sdkOmittedValue) ? this.selectedWorkflows : selectedWorkflows as SdkOptional<List<String>>,
+    networkConfigurationId: identical(networkConfigurationId, sdkOmittedValue) ? this.networkConfigurationId : networkConfigurationId as SdkOptional<String?>,
   );
 
-  factory AgentAutomationsEditRepoAutomationRequestBody.fromJson(Map<String, dynamic> json) => AgentAutomationsEditRepoAutomationRequestBody(
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    enabled: json['enabled'] != null ? SdkPresent((json['enabled'] as bool?)!) : const SdkOmitted(),
-    writeScope: json['write_scope'] != null ? SdkPresent((json['write_scope'] != null ? AgentAutomationsEditRepoAutomationRequestBodyWriteScope.fromJson(json['write_scope'] as String) : null)!) : const SdkOmitted(),
-    requireActorWritePermission: json['require_actor_write_permission'] != null ? SdkPresent((json['require_actor_write_permission'] as bool?)!) : const SdkOmitted(),
-    model: json['model'] != null ? SdkPresent((json['model'] as String?)!) : const SdkOmitted(),
-    reasoningEffort: json['reasoning_effort'] != null ? SdkPresent((json['reasoning_effort'] as String?)!) : const SdkOmitted(),
-    triggers: json['triggers'] != null ? SdkPresent((json['triggers'] != null ? AgentAutomationsEditRepoAutomationRequestBodyTriggers.fromJson(json['triggers'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    prompt: json['prompt'] != null ? SdkPresent((json['prompt'] as String?)!) : const SdkOmitted(),
-    tools: json['tools'] != null ? SdkPresent(((json['tools'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    allowedCustomAgents: json['allowed_custom_agents'] != null ? SdkPresent(((json['allowed_custom_agents'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+  factory ActionsUpdateSelfHostedRunnerGroupForOrgRequestBody.fromJson(Map<String, dynamic> json) => ActionsUpdateSelfHostedRunnerGroupForOrgRequestBody(
+    name: (json['name'] as String?)!,
+    visibility: json['visibility'] != null ? SdkPresent((json['visibility'] != null ? ActionsUpdateSelfHostedRunnerGroupForOrgRequestBodyVisibility.fromJson(json['visibility'] as String) : null)!) : const SdkOmitted(),
+    allowsPublicRepositories: json['allows_public_repositories'] != null ? SdkPresent((json['allows_public_repositories'] as bool?)!) : const SdkOmitted(),
+    restrictedToWorkflows: json['restricted_to_workflows'] != null ? SdkPresent((json['restricted_to_workflows'] as bool?)!) : const SdkOmitted(),
+    selectedWorkflows: json['selected_workflows'] != null ? SdkPresent(((json['selected_workflows'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    networkConfigurationId: json.containsKey('network_configuration_id') ? SdkPresent(json['network_configuration_id'] as String?) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
+    'name': name,
+    ...switch (visibility) {
+      SdkPresent<ActionsUpdateSelfHostedRunnerGroupForOrgRequestBodyVisibility>(value: final value) => {'visibility': value.toJson(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (enabled) {
-      SdkPresent<bool>(value: final value) => {'enabled': value,},
+    ...switch (allowsPublicRepositories) {
+      SdkPresent<bool>(value: final value) => {'allows_public_repositories': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (writeScope) {
-      SdkPresent<AgentAutomationsEditRepoAutomationRequestBodyWriteScope>(value: final value) => {'write_scope': value.toJson(),},
+    ...switch (restrictedToWorkflows) {
+      SdkPresent<bool>(value: final value) => {'restricted_to_workflows': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (requireActorWritePermission) {
-      SdkPresent<bool>(value: final value) => {'require_actor_write_permission': value,},
+    ...switch (selectedWorkflows) {
+      SdkPresent<List<String>>(value: final value) => {'selected_workflows': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (model) {
-      SdkPresent<String>(value: final value) => {'model': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (reasoningEffort) {
-      SdkPresent<String>(value: final value) => {'reasoning_effort': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (triggers) {
-      SdkPresent<AgentAutomationsEditRepoAutomationRequestBodyTriggers>(value: final value) => {'triggers': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (prompt) {
-      SdkPresent<String>(value: final value) => {'prompt': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (tools) {
-      SdkPresent<List<String>>(value: final value) => {'tools': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (allowedCustomAgents) {
-      SdkPresent<List<String>>(value: final value) => {'allowed_custom_agents': value,},
+    ...switch (networkConfigurationId) {
+      SdkPresent<String?>(value: final value) => {'network_configuration_id': value,},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-class AgentAutomationsEditRepoAutomationResponseTriggersInterval {
+class ActionsListGithubHostedRunnersInGroupForOrgResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// One or more schedules on which the Automation runs.
-  final List<AgentAutomationsEditRepoAutomationResponseTriggersIntervalCadenceItem> cadence;
-  /// UTC hour anchor (0 through 23) for daily and weekly schedules. Omitted daily and weekly values default to `0` (midnight UTC).
-  final SdkOptional<int> hourUtc;
-  /// UTC weekday anchor for weekly schedules, where `0` is Sunday and `6` is Saturday. Omitted weekly values default to Monday (`1`).
-  final SdkOptional<int> dayOfWeek;
-  /// UTC minute anchor for daily and weekly schedules. Omitted daily and weekly values default to `0`. Must be omitted whenever `cadence` includes `hourly`.
-  final SdkOptional<AgentAutomationsEditRepoAutomationResponseTriggersIntervalMinuteUtc> minuteUtc;
-  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-  final SdkOptional<AgentAutomationsEditRepoAutomationResponseTriggersIntervalWriteScope> writeScope;
+  final double totalCount;
+  final List<ActionsHostedRunner> runners;
 
-  const AgentAutomationsEditRepoAutomationResponseTriggersInterval({required this.cadence, this.hourUtc = const SdkOmitted(), this.dayOfWeek = const SdkOmitted(), this.minuteUtc = const SdkOmitted(), this.writeScope = const SdkOmitted()});
+  const ActionsListGithubHostedRunnersInGroupForOrgResponse({required this.totalCount, required this.runners});
 
-  AgentAutomationsEditRepoAutomationResponseTriggersInterval Function({List<AgentAutomationsEditRepoAutomationResponseTriggersIntervalCadenceItem> cadence, SdkOptional<int> hourUtc, SdkOptional<int> dayOfWeek, SdkOptional<AgentAutomationsEditRepoAutomationResponseTriggersIntervalMinuteUtc> minuteUtc, SdkOptional<AgentAutomationsEditRepoAutomationResponseTriggersIntervalWriteScope> writeScope}) get copyWith => _copyWith;
+  ActionsListGithubHostedRunnersInGroupForOrgResponse Function({double totalCount, List<ActionsHostedRunner> runners}) get copyWith => _copyWith;
 
-  AgentAutomationsEditRepoAutomationResponseTriggersInterval _copyWith({Object? cadence = sdkOmittedValue, Object? hourUtc = sdkOmittedValue, Object? dayOfWeek = sdkOmittedValue, Object? minuteUtc = sdkOmittedValue, Object? writeScope = sdkOmittedValue}) => AgentAutomationsEditRepoAutomationResponseTriggersInterval(
-    cadence: identical(cadence, sdkOmittedValue) ? this.cadence : cadence as List<AgentAutomationsEditRepoAutomationResponseTriggersIntervalCadenceItem>,
-    hourUtc: identical(hourUtc, sdkOmittedValue) ? this.hourUtc : hourUtc as SdkOptional<int>,
-    dayOfWeek: identical(dayOfWeek, sdkOmittedValue) ? this.dayOfWeek : dayOfWeek as SdkOptional<int>,
-    minuteUtc: identical(minuteUtc, sdkOmittedValue) ? this.minuteUtc : minuteUtc as SdkOptional<AgentAutomationsEditRepoAutomationResponseTriggersIntervalMinuteUtc>,
-    writeScope: identical(writeScope, sdkOmittedValue) ? this.writeScope : writeScope as SdkOptional<AgentAutomationsEditRepoAutomationResponseTriggersIntervalWriteScope>,
+  ActionsListGithubHostedRunnersInGroupForOrgResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? runners = sdkOmittedValue}) => ActionsListGithubHostedRunnersInGroupForOrgResponse(
+    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as double,
+    runners: identical(runners, sdkOmittedValue) ? this.runners : runners as List<ActionsHostedRunner>,
   );
 
-  factory AgentAutomationsEditRepoAutomationResponseTriggersInterval.fromJson(Map<String, dynamic> json) => AgentAutomationsEditRepoAutomationResponseTriggersInterval(
-    cadence: ((json['cadence'] as List?)?.map((e) => AgentAutomationsEditRepoAutomationResponseTriggersIntervalCadenceItem.fromJson(e as String)).toList())!,
-    hourUtc: json['hour_utc'] != null ? SdkPresent(((json['hour_utc'] as num?)?.toInt())!) : const SdkOmitted(),
-    dayOfWeek: json['day_of_week'] != null ? SdkPresent(((json['day_of_week'] as num?)?.toInt())!) : const SdkOmitted(),
-    minuteUtc: json['minute_utc'] != null ? SdkPresent((json['minute_utc'] != null ? AgentAutomationsEditRepoAutomationResponseTriggersIntervalMinuteUtc.fromJson((json['minute_utc'] as num).toInt()) : null)!) : const SdkOmitted(),
-    writeScope: json['write_scope'] != null ? SdkPresent((json['write_scope'] != null ? AgentAutomationsEditRepoAutomationResponseTriggersIntervalWriteScope.fromJson(json['write_scope'] as String) : null)!) : const SdkOmitted(),
+  factory ActionsListGithubHostedRunnersInGroupForOrgResponse.fromJson(Map<String, dynamic> json) => ActionsListGithubHostedRunnersInGroupForOrgResponse(
+    totalCount: ((json['total_count'] as num?)?.toDouble())!,
+    runners: ((json['runners'] as List?)?.map((e) => ActionsHostedRunner.fromJson(e as Map<String, dynamic>)).toList())!,
   );
 
   Map<String, dynamic> toJson() => {
-    'cadence': cadence.map((item) => item.toJson()).toList(),
-    ...switch (hourUtc) {
-      SdkPresent<int>(value: final value) => {'hour_utc': value,},
+    'total_count': totalCount,
+    'runners': runners.map((item) => item.toJson()).toList(),
+  };
+}
+
+class ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  final double totalCount;
+  final List<MinimalRepository> repositories;
+
+  const ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponse({required this.totalCount, required this.repositories});
+
+  ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponse Function({double totalCount, List<MinimalRepository> repositories}) get copyWith => _copyWith;
+
+  ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? repositories = sdkOmittedValue}) => ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponse(
+    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as double,
+    repositories: identical(repositories, sdkOmittedValue) ? this.repositories : repositories as List<MinimalRepository>,
+  );
+
+  factory ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponse.fromJson(Map<String, dynamic> json) => ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponse(
+    totalCount: ((json['total_count'] as num?)?.toDouble())!,
+    repositories: ((json['repositories'] as List?)?.map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList())!,
+  );
+
+  Map<String, dynamic> toJson() => {
+    'total_count': totalCount,
+    'repositories': repositories.map((item) => item.toJson()).toList(),
+  };
+}
+
+class ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// List of repository IDs that can access the runner group.
+  final List<int> selectedRepositoryIds;
+
+  const ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequestBody({required this.selectedRepositoryIds});
+
+  ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequestBody Function({List<int> selectedRepositoryIds}) get copyWith => _copyWith;
+
+  ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequestBody _copyWith({Object? selectedRepositoryIds = sdkOmittedValue}) => ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequestBody(
+    selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue) ? this.selectedRepositoryIds : selectedRepositoryIds as List<int>,
+  );
+
+  factory ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequestBody.fromJson(Map<String, dynamic> json) => ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequestBody(
+    selectedRepositoryIds: ((json['selected_repository_ids'] as List?)?.map((e) => (e as num).toInt()).toList())!,
+  );
+
+  Map<String, dynamic> toJson() => {
+    'selected_repository_ids': selectedRepositoryIds,
+  };
+}
+
+class ActionsListSelfHostedRunnersInGroupForOrgResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  final double totalCount;
+  final List<Runner> runners;
+
+  const ActionsListSelfHostedRunnersInGroupForOrgResponse({required this.totalCount, required this.runners});
+
+  ActionsListSelfHostedRunnersInGroupForOrgResponse Function({double totalCount, List<Runner> runners}) get copyWith => _copyWith;
+
+  ActionsListSelfHostedRunnersInGroupForOrgResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? runners = sdkOmittedValue}) => ActionsListSelfHostedRunnersInGroupForOrgResponse(
+    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as double,
+    runners: identical(runners, sdkOmittedValue) ? this.runners : runners as List<Runner>,
+  );
+
+  factory ActionsListSelfHostedRunnersInGroupForOrgResponse.fromJson(Map<String, dynamic> json) => ActionsListSelfHostedRunnersInGroupForOrgResponse(
+    totalCount: ((json['total_count'] as num?)?.toDouble())!,
+    runners: ((json['runners'] as List?)?.map((e) => Runner.fromJson(e as Map<String, dynamic>)).toList())!,
+  );
+
+  Map<String, dynamic> toJson() => {
+    'total_count': totalCount,
+    'runners': runners.map((item) => item.toJson()).toList(),
+  };
+}
+
+class ActionsSetSelfHostedRunnersInGroupForOrgRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// List of runner IDs to add to the runner group.
+  final List<int> runners;
+
+  const ActionsSetSelfHostedRunnersInGroupForOrgRequestBody({required this.runners});
+
+  ActionsSetSelfHostedRunnersInGroupForOrgRequestBody Function({List<int> runners}) get copyWith => _copyWith;
+
+  ActionsSetSelfHostedRunnersInGroupForOrgRequestBody _copyWith({Object? runners = sdkOmittedValue}) => ActionsSetSelfHostedRunnersInGroupForOrgRequestBody(
+    runners: identical(runners, sdkOmittedValue) ? this.runners : runners as List<int>,
+  );
+
+  factory ActionsSetSelfHostedRunnersInGroupForOrgRequestBody.fromJson(Map<String, dynamic> json) => ActionsSetSelfHostedRunnersInGroupForOrgRequestBody(
+    runners: ((json['runners'] as List?)?.map((e) => (e as num).toInt()).toList())!,
+  );
+
+  Map<String, dynamic> toJson() => {
+    'runners': runners,
+  };
+}
+
+class ActionsListSelfHostedRunnersForOrgResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  final int totalCount;
+  final List<Runner> runners;
+
+  const ActionsListSelfHostedRunnersForOrgResponse({required this.totalCount, required this.runners});
+
+  ActionsListSelfHostedRunnersForOrgResponse Function({int totalCount, List<Runner> runners}) get copyWith => _copyWith;
+
+  ActionsListSelfHostedRunnersForOrgResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? runners = sdkOmittedValue}) => ActionsListSelfHostedRunnersForOrgResponse(
+    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
+    runners: identical(runners, sdkOmittedValue) ? this.runners : runners as List<Runner>,
+  );
+
+  factory ActionsListSelfHostedRunnersForOrgResponse.fromJson(Map<String, dynamic> json) => ActionsListSelfHostedRunnersForOrgResponse(
+    totalCount: ((json['total_count'] as num?)?.toInt())!,
+    runners: ((json['runners'] as List?)?.map((e) => Runner.fromJson(e as Map<String, dynamic>)).toList())!,
+  );
+
+  Map<String, dynamic> toJson() => {
+    'total_count': totalCount,
+    'runners': runners.map((item) => item.toJson()).toList(),
+  };
+}
+
+class ActionsGetRunnerVersionDeprecationForOrgResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The runner version string.
+  final String runnerVersion;
+  /// The date after which this runner version can no longer register. Null if no schedule is set.
+  final SdkOptional<String?> registrationDeprecatesAt;
+  /// The date after which jobs will no longer be dispatched to runners on this version.
+  final SdkOptional<String?> runtimeDeprecatesAt;
+
+  const ActionsGetRunnerVersionDeprecationForOrgResponse({required this.runnerVersion, this.registrationDeprecatesAt = const SdkOmitted(), this.runtimeDeprecatesAt = const SdkOmitted()});
+
+  ActionsGetRunnerVersionDeprecationForOrgResponse Function({String runnerVersion, SdkOptional<String?> registrationDeprecatesAt, SdkOptional<String?> runtimeDeprecatesAt}) get copyWith => _copyWith;
+
+  ActionsGetRunnerVersionDeprecationForOrgResponse _copyWith({Object? runnerVersion = sdkOmittedValue, Object? registrationDeprecatesAt = sdkOmittedValue, Object? runtimeDeprecatesAt = sdkOmittedValue}) => ActionsGetRunnerVersionDeprecationForOrgResponse(
+    runnerVersion: identical(runnerVersion, sdkOmittedValue) ? this.runnerVersion : runnerVersion as String,
+    registrationDeprecatesAt: identical(registrationDeprecatesAt, sdkOmittedValue) ? this.registrationDeprecatesAt : registrationDeprecatesAt as SdkOptional<String?>,
+    runtimeDeprecatesAt: identical(runtimeDeprecatesAt, sdkOmittedValue) ? this.runtimeDeprecatesAt : runtimeDeprecatesAt as SdkOptional<String?>,
+  );
+
+  factory ActionsGetRunnerVersionDeprecationForOrgResponse.fromJson(Map<String, dynamic> json) => ActionsGetRunnerVersionDeprecationForOrgResponse(
+    runnerVersion: (json['runner_version'] as String?)!,
+    registrationDeprecatesAt: json.containsKey('registration_deprecates_at') ? SdkPresent(json['registration_deprecates_at'] as String?) : const SdkOmitted(),
+    runtimeDeprecatesAt: json.containsKey('runtime_deprecates_at') ? SdkPresent(json['runtime_deprecates_at'] as String?) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    'runner_version': runnerVersion,
+    ...switch (registrationDeprecatesAt) {
+      SdkPresent<String?>(value: final value) => {'registration_deprecates_at': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (dayOfWeek) {
-      SdkPresent<int>(value: final value) => {'day_of_week': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (minuteUtc) {
-      SdkPresent<AgentAutomationsEditRepoAutomationResponseTriggersIntervalMinuteUtc>(value: final value) => {'minute_utc': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (writeScope) {
-      SdkPresent<AgentAutomationsEditRepoAutomationResponseTriggersIntervalWriteScope>(value: final value) => {'write_scope': value.toJson(),},
+    ...switch (runtimeDeprecatesAt) {
+      SdkPresent<String?>(value: final value) => {'runtime_deprecates_at': value,},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-class AgentAutomationsEditRepoAutomationResponseTriggersIssueOpened {
+class ActionsGenerateRunnerJitconfigForOrgRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// A GitHub issue or pull request search query.
-  final SdkOptional<String> query;
-  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-  final SdkOptional<AgentAutomationsEditRepoAutomationResponseTriggersIssueOpenedWriteScope> writeScope;
+  /// The name of the new runner.
+  final String name;
+  /// The ID of the runner group to register the runner to.
+  final int runnerGroupId;
+  /// The names of the custom labels to add to the runner. **Minimum items**: 1. **Maximum items**: 100.
+  final List<String> labels;
+  /// The working directory to be used for job execution, relative to the runner install directory.
+  final SdkOptional<String> workFolder;
 
-  const AgentAutomationsEditRepoAutomationResponseTriggersIssueOpened({this.query = const SdkOmitted(), this.writeScope = const SdkOmitted()});
+  const ActionsGenerateRunnerJitconfigForOrgRequestBody({required this.name, required this.runnerGroupId, required this.labels, this.workFolder = const SdkOmitted()});
 
-  AgentAutomationsEditRepoAutomationResponseTriggersIssueOpened Function({SdkOptional<String> query, SdkOptional<AgentAutomationsEditRepoAutomationResponseTriggersIssueOpenedWriteScope> writeScope}) get copyWith => _copyWith;
+  ActionsGenerateRunnerJitconfigForOrgRequestBody Function({String name, int runnerGroupId, List<String> labels, SdkOptional<String> workFolder}) get copyWith => _copyWith;
 
-  AgentAutomationsEditRepoAutomationResponseTriggersIssueOpened _copyWith({Object? query = sdkOmittedValue, Object? writeScope = sdkOmittedValue}) => AgentAutomationsEditRepoAutomationResponseTriggersIssueOpened(
-    query: identical(query, sdkOmittedValue) ? this.query : query as SdkOptional<String>,
-    writeScope: identical(writeScope, sdkOmittedValue) ? this.writeScope : writeScope as SdkOptional<AgentAutomationsEditRepoAutomationResponseTriggersIssueOpenedWriteScope>,
+  ActionsGenerateRunnerJitconfigForOrgRequestBody _copyWith({Object? name = sdkOmittedValue, Object? runnerGroupId = sdkOmittedValue, Object? labels = sdkOmittedValue, Object? workFolder = sdkOmittedValue}) => ActionsGenerateRunnerJitconfigForOrgRequestBody(
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    runnerGroupId: identical(runnerGroupId, sdkOmittedValue) ? this.runnerGroupId : runnerGroupId as int,
+    labels: identical(labels, sdkOmittedValue) ? this.labels : labels as List<String>,
+    workFolder: identical(workFolder, sdkOmittedValue) ? this.workFolder : workFolder as SdkOptional<String>,
   );
 
-  factory AgentAutomationsEditRepoAutomationResponseTriggersIssueOpened.fromJson(Map<String, dynamic> json) => AgentAutomationsEditRepoAutomationResponseTriggersIssueOpened(
-    query: json['query'] != null ? SdkPresent((json['query'] as String?)!) : const SdkOmitted(),
-    writeScope: json['write_scope'] != null ? SdkPresent((json['write_scope'] != null ? AgentAutomationsEditRepoAutomationResponseTriggersIssueOpenedWriteScope.fromJson(json['write_scope'] as String) : null)!) : const SdkOmitted(),
+  factory ActionsGenerateRunnerJitconfigForOrgRequestBody.fromJson(Map<String, dynamic> json) => ActionsGenerateRunnerJitconfigForOrgRequestBody(
+    name: (json['name'] as String?)!,
+    runnerGroupId: ((json['runner_group_id'] as num?)?.toInt())!,
+    labels: ((json['labels'] as List?)?.map((e) => e as String).toList())!,
+    workFolder: json['work_folder'] != null ? SdkPresent((json['work_folder'] as String?)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    ...switch (query) {
-      SdkPresent<String>(value: final value) => {'query': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (writeScope) {
-      SdkPresent<AgentAutomationsEditRepoAutomationResponseTriggersIssueOpenedWriteScope>(value: final value) => {'write_scope': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
-}
-
-class AgentAutomationsEditRepoAutomationResponseTriggersIssueLabeled {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// A GitHub issue or pull request search query.
-  final SdkOptional<String> query;
-  /// Label names matched case-insensitively against the label added by the event. Omit or use an empty array to match every added label.
-  final SdkOptional<List<String>> labels;
-  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-  final SdkOptional<AgentAutomationsEditRepoAutomationResponseTriggersIssueLabeledWriteScope> writeScope;
-
-  const AgentAutomationsEditRepoAutomationResponseTriggersIssueLabeled({this.query = const SdkOmitted(), this.labels = const SdkOmitted(), this.writeScope = const SdkOmitted()});
-
-  AgentAutomationsEditRepoAutomationResponseTriggersIssueLabeled Function({SdkOptional<String> query, SdkOptional<List<String>> labels, SdkOptional<AgentAutomationsEditRepoAutomationResponseTriggersIssueLabeledWriteScope> writeScope}) get copyWith => _copyWith;
-
-  AgentAutomationsEditRepoAutomationResponseTriggersIssueLabeled _copyWith({Object? query = sdkOmittedValue, Object? labels = sdkOmittedValue, Object? writeScope = sdkOmittedValue}) => AgentAutomationsEditRepoAutomationResponseTriggersIssueLabeled(
-    query: identical(query, sdkOmittedValue) ? this.query : query as SdkOptional<String>,
-    labels: identical(labels, sdkOmittedValue) ? this.labels : labels as SdkOptional<List<String>>,
-    writeScope: identical(writeScope, sdkOmittedValue) ? this.writeScope : writeScope as SdkOptional<AgentAutomationsEditRepoAutomationResponseTriggersIssueLabeledWriteScope>,
-  );
-
-  factory AgentAutomationsEditRepoAutomationResponseTriggersIssueLabeled.fromJson(Map<String, dynamic> json) => AgentAutomationsEditRepoAutomationResponseTriggersIssueLabeled(
-    query: json['query'] != null ? SdkPresent((json['query'] as String?)!) : const SdkOmitted(),
-    labels: json['labels'] != null ? SdkPresent(((json['labels'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    writeScope: json['write_scope'] != null ? SdkPresent((json['write_scope'] != null ? AgentAutomationsEditRepoAutomationResponseTriggersIssueLabeledWriteScope.fromJson(json['write_scope'] as String) : null)!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    ...switch (query) {
-      SdkPresent<String>(value: final value) => {'query': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (labels) {
-      SdkPresent<List<String>>(value: final value) => {'labels': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (writeScope) {
-      SdkPresent<AgentAutomationsEditRepoAutomationResponseTriggersIssueLabeledWriteScope>(value: final value) => {'write_scope': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
-}
-
-class AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRun {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// Workflow names matched against the name in each workflow YAML file.
-  final List<String> workflows;
-  /// Workflow conclusions to match. The current trigger supports failure.
-  final List<AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRunConclusionsItem> conclusions;
-  /// A GitHub issue or pull request search query.
-  final SdkOptional<String> query;
-  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-  final SdkOptional<AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRunWriteScope> writeScope;
-
-  const AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRun({required this.workflows, required this.conclusions, this.query = const SdkOmitted(), this.writeScope = const SdkOmitted()});
-
-  AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRun Function({List<String> workflows, List<AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRunConclusionsItem> conclusions, SdkOptional<String> query, SdkOptional<AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRunWriteScope> writeScope}) get copyWith => _copyWith;
-
-  AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRun _copyWith({Object? workflows = sdkOmittedValue, Object? conclusions = sdkOmittedValue, Object? query = sdkOmittedValue, Object? writeScope = sdkOmittedValue}) => AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRun(
-    workflows: identical(workflows, sdkOmittedValue) ? this.workflows : workflows as List<String>,
-    conclusions: identical(conclusions, sdkOmittedValue) ? this.conclusions : conclusions as List<AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRunConclusionsItem>,
-    query: identical(query, sdkOmittedValue) ? this.query : query as SdkOptional<String>,
-    writeScope: identical(writeScope, sdkOmittedValue) ? this.writeScope : writeScope as SdkOptional<AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRunWriteScope>,
-  );
-
-  factory AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRun.fromJson(Map<String, dynamic> json) => AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRun(
-    workflows: ((json['workflows'] as List?)?.map((e) => e as String).toList())!,
-    conclusions: ((json['conclusions'] as List?)?.map((e) => AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRunConclusionsItem.fromJson(e as String)).toList())!,
-    query: json['query'] != null ? SdkPresent((json['query'] as String?)!) : const SdkOmitted(),
-    writeScope: json['write_scope'] != null ? SdkPresent((json['write_scope'] != null ? AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRunWriteScope.fromJson(json['write_scope'] as String) : null)!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    'workflows': workflows,
-    'conclusions': conclusions.map((item) => item.toJson()).toList(),
-    ...switch (query) {
-      SdkPresent<String>(value: final value) => {'query': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (writeScope) {
-      SdkPresent<AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRunWriteScope>(value: final value) => {'write_scope': value.toJson(),},
+    'name': name,
+    'runner_group_id': runnerGroupId,
+    'labels': labels,
+    ...switch (workFolder) {
+      SdkPresent<String>(value: final value) => {'work_folder': value,},
       _ => const <String, dynamic>{},
     },
   };

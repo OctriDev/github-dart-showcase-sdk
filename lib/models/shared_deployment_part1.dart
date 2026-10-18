@@ -4,30 +4,6 @@
 part of 'shared_deployment.dart';
 
 // shared_deployment domain models
-sealed class DeploymentPayload {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  const DeploymentPayload();
-  factory DeploymentPayload.fromJson(Object? json) {
-    if (json is String) { return DeploymentPayloadString(json); }
-    if (json is Map) { return DeploymentPayloadMap(Map<String, Object?>.from(json)); }
-    throw FormatException("No variant matched for DeploymentPayload");
-  }
-  Object? toJson();
-}
-
-final class DeploymentPayloadMap extends DeploymentPayload {
-  final Map<String, Object?> value;
-  const DeploymentPayloadMap(this.value);
-  @override Object? toJson() => value;
-}
-
-final class DeploymentPayloadString extends DeploymentPayload {
-  final String value;
-  const DeploymentPayloadString(this.value);
-  @override Object? toJson() => value;
-}
-
 /// A request for a specific ref(branch,sha,tag) to be deployed
 class Deployment {
   /// This model is constructed from named fields in one call.
@@ -45,7 +21,7 @@ class Deployment {
   /// Parameter to specify a task to execute
   final String task;
   /// Required API value serialized in the `payload` wire field.
-  final dynamic payload;
+  final DeploymentPayload payload;
   /// Optional `string` value serialized in the `original_environment` wire field.
   final SdkOptional<String> originalEnvironment;
   /// Name for the target deployment environment.
@@ -71,7 +47,7 @@ class Deployment {
 
   const Deployment({required this.url, required this.id, required this.nodeId, required this.sha, required this.ref, required this.task, required this.payload, this.originalEnvironment = const SdkOmitted(), required this.environment, required this.description, required this.creator, required this.createdAt, required this.updatedAt, required this.statusesUrl, required this.repositoryUrl, this.transientEnvironment = const SdkOmitted(), this.productionEnvironment = const SdkOmitted(), this.performedViaGithubApp = const SdkOmitted()});
 
-  Deployment Function({String url, int id, String nodeId, String sha, String ref, String task, dynamic payload, SdkOptional<String> originalEnvironment, String environment, String? description, NullableSimpleUser? creator, String createdAt, String updatedAt, String statusesUrl, String repositoryUrl, SdkOptional<bool> transientEnvironment, SdkOptional<bool> productionEnvironment, SdkOptional<NullableIntegration?> performedViaGithubApp}) get copyWith => _copyWith;
+  Deployment Function({String url, int id, String nodeId, String sha, String ref, String task, DeploymentPayload payload, SdkOptional<String> originalEnvironment, String environment, String? description, NullableSimpleUser? creator, String createdAt, String updatedAt, String statusesUrl, String repositoryUrl, SdkOptional<bool> transientEnvironment, SdkOptional<bool> productionEnvironment, SdkOptional<NullableIntegration?> performedViaGithubApp}) get copyWith => _copyWith;
 
   Deployment _copyWith({Object? url = sdkOmittedValue, Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? sha = sdkOmittedValue, Object? ref = sdkOmittedValue, Object? task = sdkOmittedValue, Object? payload = sdkOmittedValue, Object? originalEnvironment = sdkOmittedValue, Object? environment = sdkOmittedValue, Object? description = sdkOmittedValue, Object? creator = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? statusesUrl = sdkOmittedValue, Object? repositoryUrl = sdkOmittedValue, Object? transientEnvironment = sdkOmittedValue, Object? productionEnvironment = sdkOmittedValue, Object? performedViaGithubApp = sdkOmittedValue}) => Deployment(
     url: identical(url, sdkOmittedValue) ? this.url : url as String,
@@ -80,7 +56,7 @@ class Deployment {
     sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
     ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
     task: identical(task, sdkOmittedValue) ? this.task : task as String,
-    payload: identical(payload, sdkOmittedValue) ? this.payload : payload as dynamic,
+    payload: identical(payload, sdkOmittedValue) ? this.payload : payload as DeploymentPayload,
     originalEnvironment: identical(originalEnvironment, sdkOmittedValue) ? this.originalEnvironment : originalEnvironment as SdkOptional<String>,
     environment: identical(environment, sdkOmittedValue) ? this.environment : environment as String,
     description: identical(description, sdkOmittedValue) ? this.description : description as String?,
@@ -101,7 +77,7 @@ class Deployment {
     sha: (json['sha'] as String?)!,
     ref: (json['ref'] as String?)!,
     task: (json['task'] as String?)!,
-    payload: (json['payload'])!,
+    payload: (json['payload'] != null ? DeploymentPayload.fromJson(json['payload']) : null)!,
     originalEnvironment: json['original_environment'] != null ? SdkPresent((json['original_environment'] as String?)!) : const SdkOmitted(),
     environment: (json['environment'] as String?)!,
     description: json.containsKey('description') ? json['description'] as String? : throw ArgumentError.value(null, 'description', 'Required property is missing'),
@@ -122,7 +98,7 @@ class Deployment {
     'sha': sha,
     'ref': ref,
     'task': task,
-    'payload': payload,
+    'payload': payload.toJson(),
     ...switch (originalEnvironment) {
       SdkPresent<String>(value: final value) => {'original_environment': value,},
       _ => const <String, dynamic>{},
@@ -147,6 +123,30 @@ class Deployment {
       _ => const <String, dynamic>{},
     },
   };
+}
+
+sealed class DeploymentPayload {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  const DeploymentPayload();
+  factory DeploymentPayload.fromJson(Object? json) {
+    if (json is String) { return DeploymentPayloadString(json); }
+    if (json is Map) { return DeploymentPayloadMap(Map<String, Object?>.from(json)); }
+    throw FormatException("No variant matched for DeploymentPayload");
+  }
+  Object? toJson();
+}
+
+final class DeploymentPayloadMap extends DeploymentPayload {
+  final Map<String, Object?> value;
+  const DeploymentPayloadMap(this.value);
+  @override Object? toJson() => value;
+}
+
+final class DeploymentPayloadString extends DeploymentPayload {
+  final String value;
+  const DeploymentPayloadString(this.value);
+  @override Object? toJson() => value;
 }
 
 /// The type of reviewer.

@@ -1721,7 +1721,7 @@ Future<List<RunnerApplication>> actionsListRunnerApplicationsForOrg(ClientConfig
 ///   items**: 1. **Maximum items**: 100.
 /// [workFolder] The working directory to be used for job execution, relative to
 ///   the runner install directory.
-Future<SchemaSchemacee94e2c>
+Future<ActionsRunnerJitconfig>
     actionsGenerateRunnerJitconfigForOrg(ClientConfig config,
         {required String org,
         required String name,
@@ -1731,7 +1731,7 @@ Future<SchemaSchemacee94e2c>
         RequestOptions? requestOptions}) async {
   validateItems('labels', labels, min: 1, max: 100);
 
-  return (await sdkRequest<SchemaSchemacee94e2c>('POST',
+  return (await sdkRequest<ActionsRunnerJitconfig>('POST',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/runners/generate-jitconfig',
           config: config,
           body: {
@@ -1742,7 +1742,7 @@ Future<SchemaSchemacee94e2c>
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGenerateRunnerJitconfigForOrg',
-          fromJsonRaw: (value) => SchemaSchemacee94e2c.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ActionsRunnerJitconfig.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
           errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
       .data;
@@ -1823,17 +1823,17 @@ Future<void> actionsDeleteSelfHostedRunnerFromOrg(ClientConfig config,
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [runnerId] Unique identifier of the self-hosted runner.
-Future<SchemaSchemac8266fdc>
+Future<ActionsRunnerLabels>
     actionsListLabelsForSelfHostedRunnerForOrg(ClientConfig config,
         {required String org,
         required int runnerId,
         RequestOptions? requestOptions}) async {
-  return (await sdkRequest<SchemaSchemac8266fdc>('GET',
+  return (await sdkRequest<ActionsRunnerLabels>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/runners/${Uri.encodeComponent(runnerId.toString())}/labels',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsListLabelsForSelfHostedRunnerForOrg',
-          fromJsonRaw: (value) => SchemaSchemac8266fdc.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ActionsRunnerLabels.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
           errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
@@ -1845,7 +1845,7 @@ Future<SchemaSchemac8266fdc>
 /// [org] The organization name. The name is not case sensitive.
 /// [runnerId] Unique identifier of the self-hosted runner.
 /// [labels] The names of the custom labels to add to the runner.
-Future<SchemaSchemac8266fdc>
+Future<ActionsRunnerLabels>
     actionsAddCustomLabelsToSelfHostedRunnerForOrg(ClientConfig config,
         {required String org,
         required int runnerId,
@@ -1853,13 +1853,13 @@ Future<SchemaSchemac8266fdc>
         RequestOptions? requestOptions}) async {
   validateItems('labels', labels, min: 1, max: 100);
 
-  return (await sdkRequest<SchemaSchemac8266fdc>('POST',
+  return (await sdkRequest<ActionsRunnerLabels>('POST',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/runners/${Uri.encodeComponent(runnerId.toString())}/labels',
           config: config,
           body: {'labels': labels},
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsAddCustomLabelsToSelfHostedRunnerForOrg',
-          fromJsonRaw: (value) => SchemaSchemac8266fdc.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ActionsRunnerLabels.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
           errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
       .data;
@@ -1872,7 +1872,7 @@ Future<SchemaSchemac8266fdc>
 /// [runnerId] Unique identifier of the self-hosted runner.
 /// [labels] The names of the custom labels to set for the runner. You can pass
 ///   an empty array to remove all custom labels.
-Future<SchemaSchemac8266fdc>
+Future<ActionsRunnerLabels>
     actionsSetCustomLabelsForSelfHostedRunnerForOrg(ClientConfig config,
         {required String org,
         required int runnerId,
@@ -1880,13 +1880,13 @@ Future<SchemaSchemac8266fdc>
         RequestOptions? requestOptions}) async {
   validateItems('labels', labels, min: 0, max: 100);
 
-  return (await sdkRequest<SchemaSchemac8266fdc>('PUT',
+  return (await sdkRequest<ActionsRunnerLabels>('PUT',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/runners/${Uri.encodeComponent(runnerId.toString())}/labels',
           config: config,
           body: {'labels': labels},
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsSetCustomLabelsForSelfHostedRunnerForOrg',
-          fromJsonRaw: (value) => SchemaSchemac8266fdc.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ActionsRunnerLabels.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
           errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
       .data;
@@ -1897,17 +1897,17 @@ Future<SchemaSchemac8266fdc>
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [runnerId] Unique identifier of the self-hosted runner.
-Future<SchemaSchema328ddb88>
+Future<ActionsRunnerLabelsReadonly>
     actionsRemoveAllCustomLabelsFromSelfHostedRunnerForOrg(ClientConfig config,
         {required String org,
         required int runnerId,
         RequestOptions? requestOptions}) async {
-  return (await sdkRequest<SchemaSchema328ddb88>('DELETE',
+  return (await sdkRequest<ActionsRunnerLabelsReadonly>('DELETE',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/runners/${Uri.encodeComponent(runnerId.toString())}/labels',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsRemoveAllCustomLabelsFromSelfHostedRunnerForOrg',
-          fromJsonRaw: (value) => SchemaSchema328ddb88.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ActionsRunnerLabelsReadonly.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
           errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
@@ -1919,18 +1919,18 @@ Future<SchemaSchema328ddb88>
 /// [org] The organization name. The name is not case sensitive.
 /// [runnerId] Unique identifier of the self-hosted runner.
 /// [name] The name of a self-hosted runner's custom label.
-Future<SchemaSchemac8266fdc>
+Future<ActionsRunnerLabels>
     actionsRemoveCustomLabelFromSelfHostedRunnerForOrg(ClientConfig config,
         {required String org,
         required int runnerId,
         required String name,
         RequestOptions? requestOptions}) async {
-  return (await sdkRequest<SchemaSchemac8266fdc>('DELETE',
+  return (await sdkRequest<ActionsRunnerLabels>('DELETE',
           '/orgs/${Uri.encodeComponent(org.toString())}/actions/runners/${Uri.encodeComponent(runnerId.toString())}/labels/${Uri.encodeComponent(name.toString())}',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsRemoveCustomLabelFromSelfHostedRunnerForOrg',
-          fromJsonRaw: (value) => SchemaSchemac8266fdc.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ActionsRunnerLabels.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
           errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
       .data;
@@ -3679,7 +3679,7 @@ Future<List<RunnerApplication>>
 ///   items**: 1. **Maximum items**: 100.
 /// [workFolder] The working directory to be used for job execution, relative to
 ///   the runner install directory.
-Future<SchemaSchemacee94e2c>
+Future<ActionsRunnerJitconfig>
     actionsGenerateRunnerJitconfigForRepo(ClientConfig config,
         {required String owner,
         required String repo,
@@ -3690,7 +3690,7 @@ Future<SchemaSchemacee94e2c>
         RequestOptions? requestOptions}) async {
   validateItems('labels', labels, min: 1, max: 100);
 
-  return (await sdkRequest<SchemaSchemacee94e2c>('POST',
+  return (await sdkRequest<ActionsRunnerJitconfig>('POST',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/runners/generate-jitconfig',
           config: config,
           body: {
@@ -3701,7 +3701,7 @@ Future<SchemaSchemacee94e2c>
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsGenerateRunnerJitconfigForRepo',
-          fromJsonRaw: (value) => SchemaSchemacee94e2c.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ActionsRunnerJitconfig.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
           errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
       .data;
@@ -3799,18 +3799,18 @@ Future<void> actionsDeleteSelfHostedRunnerFromRepo(ClientConfig config,
 /// [repo] The name of the repository without the `.git` extension. The name is
 ///   not case sensitive.
 /// [runnerId] Unique identifier of the self-hosted runner.
-Future<SchemaSchemac8266fdc>
+Future<ActionsRunnerLabels>
     actionsListLabelsForSelfHostedRunnerForRepo(ClientConfig config,
         {required String owner,
         required String repo,
         required int runnerId,
         RequestOptions? requestOptions}) async {
-  return (await sdkRequest<SchemaSchemac8266fdc>('GET',
+  return (await sdkRequest<ActionsRunnerLabels>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/runners/${Uri.encodeComponent(runnerId.toString())}/labels',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsListLabelsForSelfHostedRunnerForRepo',
-          fromJsonRaw: (value) => SchemaSchemac8266fdc.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ActionsRunnerLabels.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
           errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
@@ -3824,7 +3824,7 @@ Future<SchemaSchemac8266fdc>
 ///   not case sensitive.
 /// [runnerId] Unique identifier of the self-hosted runner.
 /// [labels] The names of the custom labels to add to the runner.
-Future<SchemaSchemac8266fdc>
+Future<ActionsRunnerLabels>
     actionsAddCustomLabelsToSelfHostedRunnerForRepo(ClientConfig config,
         {required String owner,
         required String repo,
@@ -3833,13 +3833,13 @@ Future<SchemaSchemac8266fdc>
         RequestOptions? requestOptions}) async {
   validateItems('labels', labels, min: 1, max: 100);
 
-  return (await sdkRequest<SchemaSchemac8266fdc>('POST',
+  return (await sdkRequest<ActionsRunnerLabels>('POST',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/runners/${Uri.encodeComponent(runnerId.toString())}/labels',
           config: config,
           body: {'labels': labels},
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsAddCustomLabelsToSelfHostedRunnerForRepo',
-          fromJsonRaw: (value) => SchemaSchemac8266fdc.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ActionsRunnerLabels.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
           errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
       .data;
@@ -3854,7 +3854,7 @@ Future<SchemaSchemac8266fdc>
 /// [runnerId] Unique identifier of the self-hosted runner.
 /// [labels] The names of the custom labels to set for the runner. You can pass
 ///   an empty array to remove all custom labels.
-Future<SchemaSchemac8266fdc>
+Future<ActionsRunnerLabels>
     actionsSetCustomLabelsForSelfHostedRunnerForRepo(ClientConfig config,
         {required String owner,
         required String repo,
@@ -3863,13 +3863,13 @@ Future<SchemaSchemac8266fdc>
         RequestOptions? requestOptions}) async {
   validateItems('labels', labels, min: 0, max: 100);
 
-  return (await sdkRequest<SchemaSchemac8266fdc>('PUT',
+  return (await sdkRequest<ActionsRunnerLabels>('PUT',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/runners/${Uri.encodeComponent(runnerId.toString())}/labels',
           config: config,
           body: {'labels': labels},
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsSetCustomLabelsForSelfHostedRunnerForRepo',
-          fromJsonRaw: (value) => SchemaSchemac8266fdc.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ActionsRunnerLabels.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
           errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
       .data;
@@ -3882,18 +3882,18 @@ Future<SchemaSchemac8266fdc>
 /// [repo] The name of the repository without the `.git` extension. The name is
 ///   not case sensitive.
 /// [runnerId] Unique identifier of the self-hosted runner.
-Future<SchemaSchema328ddb88>
+Future<ActionsRunnerLabelsReadonly>
     actionsRemoveAllCustomLabelsFromSelfHostedRunnerForRepo(ClientConfig config,
         {required String owner,
         required String repo,
         required int runnerId,
         RequestOptions? requestOptions}) async {
-  return (await sdkRequest<SchemaSchema328ddb88>('DELETE',
+  return (await sdkRequest<ActionsRunnerLabelsReadonly>('DELETE',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/runners/${Uri.encodeComponent(runnerId.toString())}/labels',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsRemoveAllCustomLabelsFromSelfHostedRunnerForRepo',
-          fromJsonRaw: (value) => SchemaSchema328ddb88.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ActionsRunnerLabelsReadonly.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
           errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
@@ -3907,19 +3907,19 @@ Future<SchemaSchema328ddb88>
 ///   not case sensitive.
 /// [runnerId] Unique identifier of the self-hosted runner.
 /// [name] The name of a self-hosted runner's custom label.
-Future<SchemaSchemac8266fdc>
+Future<ActionsRunnerLabels>
     actionsRemoveCustomLabelFromSelfHostedRunnerForRepo(ClientConfig config,
         {required String owner,
         required String repo,
         required int runnerId,
         required String name,
         RequestOptions? requestOptions}) async {
-  return (await sdkRequest<SchemaSchemac8266fdc>('DELETE',
+  return (await sdkRequest<ActionsRunnerLabels>('DELETE',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/actions/runners/${Uri.encodeComponent(runnerId.toString())}/labels/${Uri.encodeComponent(name.toString())}',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'actionsRemoveCustomLabelFromSelfHostedRunnerForRepo',
-          fromJsonRaw: (value) => SchemaSchemac8266fdc.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ActionsRunnerLabels.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
           errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
       .data;

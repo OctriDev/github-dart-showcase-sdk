@@ -71,7 +71,7 @@ class ValidationErrorErrorsItem {
     message: json['message'] != null ? SdkPresent((json['message'] as String?)!) : const SdkOmitted(),
     code: (json['code'] as String?)!,
     index: json['index'] != null ? SdkPresent(((json['index'] as num?)?.toInt())!) : const SdkOmitted(),
-    value: json['value'] != null ? SdkPresent((json['value'])!) : const SdkOmitted(),
+    value: json.containsKey('value') ? SdkPresent(json['value']) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {

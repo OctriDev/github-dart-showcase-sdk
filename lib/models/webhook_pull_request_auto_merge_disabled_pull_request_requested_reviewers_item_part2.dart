@@ -173,6 +173,10 @@ sealed class WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersIte
   static const String constructionSurface = 'named';
   const WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItem();
   factory WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItem.fromJson(Object? json) {
+    if (json is Map<String, dynamic>) {
+      try { final value = WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant0.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemWebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant0(value); } } catch (_) {}
+      try { final value = WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemWebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1(value); } } catch (_) {}
+    }
     try { return WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemWebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant0(WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant0.fromJson(json as Map<String, dynamic>)); } catch (_) {}
     try { return WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemWebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1(WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1.fromJson(json as Map<String, dynamic>)); } catch (_) {}
     throw FormatException("No variant matched for WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItem");

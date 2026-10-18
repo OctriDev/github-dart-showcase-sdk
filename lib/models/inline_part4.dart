@@ -151,6 +151,86 @@ final class ActivityActivityType {
 
 }
 
+enum AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant0Type {
+  string;
+
+  static AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant0Type fromJson(String value) {
+    switch (value) {
+      case 'string': return AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant0Type.string;
+      default: throw ArgumentError('Unknown AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant0Type: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant0Type.string: return 'string';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+final class AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1ItemsType {
+
+  final String value;
+
+  const AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1ItemsType._(this.value);
+
+  factory AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1ItemsType.fromJson(String value) => AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1ItemsType._(value);
+
+  static const string = AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1ItemsType._('string');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1ItemsType && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+enum AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1Type {
+  array;
+
+  static AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1Type fromJson(String value) {
+    switch (value) {
+      case 'array': return AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1Type.array;
+      default: throw ArgumentError('Unknown AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1Type: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1Type.array: return 'array';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+enum AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant2Type {
+  integer;
+
+  static AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant2Type fromJson(String value) {
+    switch (value) {
+      case 'integer': return AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant2Type.integer;
+      default: throw ArgumentError('Unknown AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant2Type: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant2Type.integer: return 'integer';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
 /// The level of permission to grant the access token for GitHub Actions workflows, workflow runs, and artifacts.
 final class AppPermissionsActions {
 
@@ -190,94 +270,6 @@ final class AppPermissionsAdministration {
   @override String toString() => value.toString();
 
   @override bool operator ==(Object other) => other is AppPermissionsAdministration && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The level of permission to grant the access token to create and retrieve build artifact metadata records.
-final class AppPermissionsArtifactMetadata {
-
-  final String value;
-
-  const AppPermissionsArtifactMetadata._(this.value);
-
-  factory AppPermissionsArtifactMetadata.fromJson(String value) => AppPermissionsArtifactMetadata._(value);
-
-  static const read = AppPermissionsArtifactMetadata._('read');
-  static const write = AppPermissionsArtifactMetadata._('write');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is AppPermissionsArtifactMetadata && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The level of permission to create and retrieve the access token for repository attestations.
-final class AppPermissionsAttestations {
-
-  final String value;
-
-  const AppPermissionsAttestations._(this.value);
-
-  factory AppPermissionsAttestations.fromJson(String value) => AppPermissionsAttestations._(value);
-
-  static const read = AppPermissionsAttestations._('read');
-  static const write = AppPermissionsAttestations._('write');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is AppPermissionsAttestations && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The level of permission to grant the access token for checks on code.
-final class AppPermissionsChecks {
-
-  final String value;
-
-  const AppPermissionsChecks._(this.value);
-
-  factory AppPermissionsChecks.fromJson(String value) => AppPermissionsChecks._(value);
-
-  static const read = AppPermissionsChecks._('read');
-  static const write = AppPermissionsChecks._('write');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is AppPermissionsChecks && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The level of permission to grant the access token to view and manage code quality data.
-final class AppPermissionsCodeQuality {
-
-  final String value;
-
-  const AppPermissionsCodeQuality._(this.value);
-
-  factory AppPermissionsCodeQuality.fromJson(String value) => AppPermissionsCodeQuality._(value);
-
-  static const read = AppPermissionsCodeQuality._('read');
-  static const write = AppPermissionsCodeQuality._('write');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is AppPermissionsCodeQuality && other.value == value;
 
   @override int get hashCode => value.hashCode;
 

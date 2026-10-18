@@ -4,166 +4,6 @@
 part of 'inline.dart';
 
 // Inline operation models (part 32)
-/// The default value for a merge commit title. - `PR_TITLE` - default to the pull request's title. - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
-final class RepositoryMergeCommitTitle {
-
-  final String value;
-
-  const RepositoryMergeCommitTitle._(this.value);
-
-  factory RepositoryMergeCommitTitle.fromJson(String value) => RepositoryMergeCommitTitle._(value);
-
-  static const prTitle = RepositoryMergeCommitTitle._('PR_TITLE');
-  static const mergeMessage = RepositoryMergeCommitTitle._('MERGE_MESSAGE');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is RepositoryMergeCommitTitle && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The policy controlling who can create pull requests: all or collaborators_only.
-final class RepositoryPullRequestCreationPolicy {
-
-  final String value;
-
-  const RepositoryPullRequestCreationPolicy._(this.value);
-
-  factory RepositoryPullRequestCreationPolicy.fromJson(String value) => RepositoryPullRequestCreationPolicy._(value);
-
-  static const all = RepositoryPullRequestCreationPolicy._('all');
-  static const collaboratorsOnly = RepositoryPullRequestCreationPolicy._('collaborators_only');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is RepositoryPullRequestCreationPolicy && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The default value for a squash merge commit message: - `PR_BODY` - default to the pull request's body. - `COMMIT_MESSAGES` - default to the branch's commit messages. - `BLANK` - default to a blank commit message.
-final class RepositorySquashMergeCommitMessage {
-
-  final String value;
-
-  const RepositorySquashMergeCommitMessage._(this.value);
-
-  factory RepositorySquashMergeCommitMessage.fromJson(String value) => RepositorySquashMergeCommitMessage._(value);
-
-  static const prBody = RepositorySquashMergeCommitMessage._('PR_BODY');
-  static const commitMessages = RepositorySquashMergeCommitMessage._('COMMIT_MESSAGES');
-  static const blank = RepositorySquashMergeCommitMessage._('BLANK');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is RepositorySquashMergeCommitMessage && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The default value for a squash merge commit title: - `PR_TITLE` - default to the pull request's title. - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
-final class RepositorySquashMergeCommitTitle {
-
-  final String value;
-
-  const RepositorySquashMergeCommitTitle._(this.value);
-
-  factory RepositorySquashMergeCommitTitle.fromJson(String value) => RepositorySquashMergeCommitTitle._(value);
-
-  static const prTitle = RepositorySquashMergeCommitTitle._('PR_TITLE');
-  static const commitOrPrTitle = RepositorySquashMergeCommitTitle._('COMMIT_OR_PR_TITLE');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is RepositorySquashMergeCommitTitle && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The type of identifier.
-final class RepositoryAdvisoryIdentifiersItemType {
-
-  final String value;
-
-  const RepositoryAdvisoryIdentifiersItemType._(this.value);
-
-  factory RepositoryAdvisoryIdentifiersItemType.fromJson(String value) => RepositoryAdvisoryIdentifiersItemType._(value);
-
-  static const cve = RepositoryAdvisoryIdentifiersItemType._('CVE');
-  static const ghsa = RepositoryAdvisoryIdentifiersItemType._('GHSA');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is RepositoryAdvisoryIdentifiersItemType && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The severity of the advisory.
-final class RepositoryAdvisorySeverity {
-
-  final String value;
-
-  const RepositoryAdvisorySeverity._(this.value);
-
-  factory RepositoryAdvisorySeverity.fromJson(String value) => RepositoryAdvisorySeverity._(value);
-
-  static const critical = RepositoryAdvisorySeverity._('critical');
-  static const high = RepositoryAdvisorySeverity._('high');
-  static const medium = RepositoryAdvisorySeverity._('medium');
-  static const low = RepositoryAdvisorySeverity._('low');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is RepositoryAdvisorySeverity && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The state of the advisory.
-final class RepositoryAdvisoryState {
-
-  final String value;
-
-  const RepositoryAdvisoryState._(this.value);
-
-  factory RepositoryAdvisoryState.fromJson(String value) => RepositoryAdvisoryState._(value);
-
-  static const published = RepositoryAdvisoryState._('published');
-  static const closed = RepositoryAdvisoryState._('closed');
-  static const withdrawn = RepositoryAdvisoryState._('withdrawn');
-  static const draft = RepositoryAdvisoryState._('draft');
-  static const triage = RepositoryAdvisoryState._('triage');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is RepositoryAdvisoryState && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
 /// The severity of the advisory. You must choose between setting this field or `cvss_vector_string`.
 final class RepositoryAdvisoryCreateSeverity {
 
@@ -278,4 +118,162 @@ final class RepositoryHashAlgorithmHashAlgorithm {
 
   @override int get hashCode => value.hashCode;
 
+}
+
+/// The permission associated with the invitation.
+final class RepositoryInvitationPermissions {
+
+  final String value;
+
+  const RepositoryInvitationPermissions._(this.value);
+
+  factory RepositoryInvitationPermissions.fromJson(String value) => RepositoryInvitationPermissions._(value);
+
+  static const read = RepositoryInvitationPermissions._('read');
+  static const write = RepositoryInvitationPermissions._('write');
+  static const admin = RepositoryInvitationPermissions._('admin');
+  static const triage = RepositoryInvitationPermissions._('triage');
+  static const triagePlus = RepositoryInvitationPermissions._('triage_plus');
+  static const maintain = RepositoryInvitationPermissions._('maintain');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is RepositoryInvitationPermissions && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// The operator to use for matching.
+final class RepositoryRuleBranchNamePatternParametersOperator {
+
+  final String value;
+
+  const RepositoryRuleBranchNamePatternParametersOperator._(this.value);
+
+  factory RepositoryRuleBranchNamePatternParametersOperator.fromJson(String value) => RepositoryRuleBranchNamePatternParametersOperator._(value);
+
+  static const startsWith = RepositoryRuleBranchNamePatternParametersOperator._('starts_with');
+  static const endsWith = RepositoryRuleBranchNamePatternParametersOperator._('ends_with');
+  static const contains = RepositoryRuleBranchNamePatternParametersOperator._('contains');
+  static const regex = RepositoryRuleBranchNamePatternParametersOperator._('regex');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is RepositoryRuleBranchNamePatternParametersOperator && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum RepositoryRuleBranchNamePatternType {
+  branchNamePattern;
+
+  static RepositoryRuleBranchNamePatternType fromJson(String value) {
+    switch (value) {
+      case 'branch_name_pattern': return RepositoryRuleBranchNamePatternType.branchNamePattern;
+      default: throw ArgumentError('Unknown RepositoryRuleBranchNamePatternType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case RepositoryRuleBranchNamePatternType.branchNamePattern: return 'branch_name_pattern';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum RepositoryRuleCodeCoverageType {
+  codeCoverage;
+
+  static RepositoryRuleCodeCoverageType fromJson(String value) {
+    switch (value) {
+      case 'code_coverage': return RepositoryRuleCodeCoverageType.codeCoverage;
+      default: throw ArgumentError('Unknown RepositoryRuleCodeCoverageType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case RepositoryRuleCodeCoverageType.codeCoverage: return 'code_coverage';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// The lowest severity level at which code quality reviews need to be resolved before commits can be merged.
+final class RepositoryRuleCodeQualityParametersSeverity {
+
+  final String value;
+
+  const RepositoryRuleCodeQualityParametersSeverity._(this.value);
+
+  factory RepositoryRuleCodeQualityParametersSeverity.fromJson(String value) => RepositoryRuleCodeQualityParametersSeverity._(value);
+
+  static const errors = RepositoryRuleCodeQualityParametersSeverity._('errors');
+  static const warnings = RepositoryRuleCodeQualityParametersSeverity._('warnings');
+  static const notes = RepositoryRuleCodeQualityParametersSeverity._('notes');
+  static const all = RepositoryRuleCodeQualityParametersSeverity._('all');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is RepositoryRuleCodeQualityParametersSeverity && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum RepositoryRuleCodeQualityType {
+  codeQuality;
+
+  static RepositoryRuleCodeQualityType fromJson(String value) {
+    switch (value) {
+      case 'code_quality': return RepositoryRuleCodeQualityType.codeQuality;
+      default: throw ArgumentError('Unknown RepositoryRuleCodeQualityType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case RepositoryRuleCodeQualityType.codeQuality: return 'code_quality';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum RepositoryRuleCodeScanningType {
+  codeScanning;
+
+  static RepositoryRuleCodeScanningType fromJson(String value) {
+    switch (value) {
+      case 'code_scanning': return RepositoryRuleCodeScanningType.codeScanning;
+      default: throw ArgumentError('Unknown RepositoryRuleCodeScanningType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case RepositoryRuleCodeScanningType.codeScanning: return 'code_scanning';
+    }
+  }
+
+  @override
+  String toString() => toJson();
 }

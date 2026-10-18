@@ -15,4 +15,3 @@ part 'shared_pull_part2.dart';
 part 'shared_pull_part3.dart';
 part 'shared_pull_part4.dart';
 part 'shared_pull_part5.dart';
-part 'shared_pull_part6.dart';

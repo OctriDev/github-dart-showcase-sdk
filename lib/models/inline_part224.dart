@@ -4,282 +4,284 @@
 part of 'inline.dart';
 
 // Inline operation models (part 224)
-/// State of the project; either 'open' or 'closed'
-final class WebhooksProjectState {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewSubmittedWriteScope {
 
   final String value;
 
-  const WebhooksProjectState._(this.value);
+  const AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewSubmittedWriteScope._(this.value);
 
-  factory WebhooksProjectState.fromJson(String value) => WebhooksProjectState._(value);
+  factory AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewSubmittedWriteScope.fromJson(String value) => AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewSubmittedWriteScope._(value);
 
-  static const open = WebhooksProjectState._('open');
-  static const closed = WebhooksProjectState._('closed');
+  static const trigger = AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewSubmittedWriteScope._('trigger');
+  static const repository = AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewSubmittedWriteScope._('repository');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksProjectState && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewSubmittedWriteScope && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhooksProjectCardCreatorType {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestSynchronizeWriteScope {
 
   final String value;
 
-  const WebhooksProjectCardCreatorType._(this.value);
+  const AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestSynchronizeWriteScope._(this.value);
 
-  factory WebhooksProjectCardCreatorType.fromJson(String value) => WebhooksProjectCardCreatorType._(value);
+  factory AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestSynchronizeWriteScope.fromJson(String value) => AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestSynchronizeWriteScope._(value);
 
-  static const bot = WebhooksProjectCardCreatorType._('Bot');
-  static const user = WebhooksProjectCardCreatorType._('User');
-  static const organization = WebhooksProjectCardCreatorType._('Organization');
+  static const trigger = AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestSynchronizeWriteScope._('trigger');
+  static const repository = AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestSynchronizeWriteScope._('repository');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksProjectCardCreatorType && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestSynchronizeWriteScope && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Required enumerated value serialized in the `active_lock_reason` wire field.
-final class WebhooksPullRequest5ActiveLockReason {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsCreateRepoAutomationRequestBodyTriggersSubIssueAddedWriteScope {
 
   final String value;
 
-  const WebhooksPullRequest5ActiveLockReason._(this.value);
+  const AgentAutomationsCreateRepoAutomationRequestBodyTriggersSubIssueAddedWriteScope._(this.value);
 
-  factory WebhooksPullRequest5ActiveLockReason.fromJson(String value) => WebhooksPullRequest5ActiveLockReason._(value);
+  factory AgentAutomationsCreateRepoAutomationRequestBodyTriggersSubIssueAddedWriteScope.fromJson(String value) => AgentAutomationsCreateRepoAutomationRequestBodyTriggersSubIssueAddedWriteScope._(value);
 
-  static const resolved = WebhooksPullRequest5ActiveLockReason._('resolved');
-  static const offTopic = WebhooksPullRequest5ActiveLockReason._('off-topic');
-  static const tooHeated = WebhooksPullRequest5ActiveLockReason._('too heated');
-  static const spam = WebhooksPullRequest5ActiveLockReason._('spam');
+  static const trigger = AgentAutomationsCreateRepoAutomationRequestBodyTriggersSubIssueAddedWriteScope._('trigger');
+  static const repository = AgentAutomationsCreateRepoAutomationRequestBodyTriggersSubIssueAddedWriteScope._('repository');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksPullRequest5ActiveLockReason && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsCreateRepoAutomationRequestBodyTriggersSubIssueAddedWriteScope && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhooksPullRequest5AssigneeType {
+final class AgentAutomationsCreateRepoAutomationRequestBodyTriggersWorkflowRunConclusionsItem {
 
   final String value;
 
-  const WebhooksPullRequest5AssigneeType._(this.value);
+  const AgentAutomationsCreateRepoAutomationRequestBodyTriggersWorkflowRunConclusionsItem._(this.value);
 
-  factory WebhooksPullRequest5AssigneeType.fromJson(String value) => WebhooksPullRequest5AssigneeType._(value);
+  factory AgentAutomationsCreateRepoAutomationRequestBodyTriggersWorkflowRunConclusionsItem.fromJson(String value) => AgentAutomationsCreateRepoAutomationRequestBodyTriggersWorkflowRunConclusionsItem._(value);
 
-  static const bot = WebhooksPullRequest5AssigneeType._('Bot');
-  static const user = WebhooksPullRequest5AssigneeType._('User');
-  static const organization = WebhooksPullRequest5AssigneeType._('Organization');
-  static const mannequin = WebhooksPullRequest5AssigneeType._('Mannequin');
+  static const failure = AgentAutomationsCreateRepoAutomationRequestBodyTriggersWorkflowRunConclusionsItem._('failure');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksPullRequest5AssigneeType && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsCreateRepoAutomationRequestBodyTriggersWorkflowRunConclusionsItem && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhooksPullRequest5AssigneesItemType {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsCreateRepoAutomationRequestBodyTriggersWorkflowRunWriteScope {
 
   final String value;
 
-  const WebhooksPullRequest5AssigneesItemType._(this.value);
+  const AgentAutomationsCreateRepoAutomationRequestBodyTriggersWorkflowRunWriteScope._(this.value);
 
-  factory WebhooksPullRequest5AssigneesItemType.fromJson(String value) => WebhooksPullRequest5AssigneesItemType._(value);
+  factory AgentAutomationsCreateRepoAutomationRequestBodyTriggersWorkflowRunWriteScope.fromJson(String value) => AgentAutomationsCreateRepoAutomationRequestBodyTriggersWorkflowRunWriteScope._(value);
 
-  static const bot = WebhooksPullRequest5AssigneesItemType._('Bot');
-  static const user = WebhooksPullRequest5AssigneesItemType._('User');
-  static const organization = WebhooksPullRequest5AssigneesItemType._('Organization');
-  static const mannequin = WebhooksPullRequest5AssigneesItemType._('Mannequin');
+  static const trigger = AgentAutomationsCreateRepoAutomationRequestBodyTriggersWorkflowRunWriteScope._('trigger');
+  static const repository = AgentAutomationsCreateRepoAutomationRequestBodyTriggersWorkflowRunWriteScope._('repository');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksPullRequest5AssigneesItemType && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsCreateRepoAutomationRequestBodyTriggersWorkflowRunWriteScope && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// How the author is associated with the repository.
-final class WebhooksPullRequest5AuthorAssociation {
+/// Controls which repository resources a run may modify. `trigger` limits writes to the resource that started the run, when one exists, and resources created during the run; `repository` allows writes to any resource in the repository. Supported values: `trigger`, `repository`.
+final class AgentAutomationsCreateRepoAutomationRequestBodyWriteScope {
 
   final String value;
 
-  const WebhooksPullRequest5AuthorAssociation._(this.value);
+  const AgentAutomationsCreateRepoAutomationRequestBodyWriteScope._(this.value);
 
-  factory WebhooksPullRequest5AuthorAssociation.fromJson(String value) => WebhooksPullRequest5AuthorAssociation._(value);
+  factory AgentAutomationsCreateRepoAutomationRequestBodyWriteScope.fromJson(String value) => AgentAutomationsCreateRepoAutomationRequestBodyWriteScope._(value);
 
-  static const collaborator = WebhooksPullRequest5AuthorAssociation._('COLLABORATOR');
-  static const contributor = WebhooksPullRequest5AuthorAssociation._('CONTRIBUTOR');
-  static const firstTimer = WebhooksPullRequest5AuthorAssociation._('FIRST_TIMER');
-  static const firstTimeContributor = WebhooksPullRequest5AuthorAssociation._('FIRST_TIME_CONTRIBUTOR');
-  static const mannequin = WebhooksPullRequest5AuthorAssociation._('MANNEQUIN');
-  static const member = WebhooksPullRequest5AuthorAssociation._('MEMBER');
-  static const none = WebhooksPullRequest5AuthorAssociation._('NONE');
-  static const owner = WebhooksPullRequest5AuthorAssociation._('OWNER');
+  static const trigger = AgentAutomationsCreateRepoAutomationRequestBodyWriteScope._('trigger');
+  static const repository = AgentAutomationsCreateRepoAutomationRequestBodyWriteScope._('repository');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksPullRequest5AuthorAssociation && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsCreateRepoAutomationRequestBodyWriteScope && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhooksPullRequest5AutoMergeEnabledByType {
+/// Who owns the automation. `user` keeps it private to its creator and its runs act as that user. `repository` makes it belong to the repository, visible to anyone with read access to the repository, and its runs act as the Copilot app rather than as a person.
+final class AgentAutomationsCreateRepoAutomationResponseOwnerType {
 
   final String value;
 
-  const WebhooksPullRequest5AutoMergeEnabledByType._(this.value);
+  const AgentAutomationsCreateRepoAutomationResponseOwnerType._(this.value);
 
-  factory WebhooksPullRequest5AutoMergeEnabledByType.fromJson(String value) => WebhooksPullRequest5AutoMergeEnabledByType._(value);
+  factory AgentAutomationsCreateRepoAutomationResponseOwnerType.fromJson(String value) => AgentAutomationsCreateRepoAutomationResponseOwnerType._(value);
 
-  static const bot = WebhooksPullRequest5AutoMergeEnabledByType._('Bot');
-  static const user = WebhooksPullRequest5AutoMergeEnabledByType._('User');
-  static const organization = WebhooksPullRequest5AutoMergeEnabledByType._('Organization');
+  static const user = AgentAutomationsCreateRepoAutomationResponseOwnerType._('user');
+  static const repository = AgentAutomationsCreateRepoAutomationResponseOwnerType._('repository');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksPullRequest5AutoMergeEnabledByType && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsCreateRepoAutomationResponseOwnerType && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// The merge method to use.
-final class WebhooksPullRequest5AutoMergeMergeMethod {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsCreateRepoAutomationResponseTriggersAutomationCompletedWriteScope {
 
   final String value;
 
-  const WebhooksPullRequest5AutoMergeMergeMethod._(this.value);
+  const AgentAutomationsCreateRepoAutomationResponseTriggersAutomationCompletedWriteScope._(this.value);
 
-  factory WebhooksPullRequest5AutoMergeMergeMethod.fromJson(String value) => WebhooksPullRequest5AutoMergeMergeMethod._(value);
+  factory AgentAutomationsCreateRepoAutomationResponseTriggersAutomationCompletedWriteScope.fromJson(String value) => AgentAutomationsCreateRepoAutomationResponseTriggersAutomationCompletedWriteScope._(value);
 
-  static const merge = WebhooksPullRequest5AutoMergeMergeMethod._('merge');
-  static const squash = WebhooksPullRequest5AutoMergeMergeMethod._('squash');
-  static const rebase = WebhooksPullRequest5AutoMergeMergeMethod._('rebase');
+  static const trigger = AgentAutomationsCreateRepoAutomationResponseTriggersAutomationCompletedWriteScope._('trigger');
+  static const repository = AgentAutomationsCreateRepoAutomationResponseTriggersAutomationCompletedWriteScope._('repository');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksPullRequest5AutoMergeMergeMethod && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsCreateRepoAutomationResponseTriggersAutomationCompletedWriteScope && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// The default value for a merge commit message. - `PR_TITLE` - default to the pull request's title. - `PR_BODY` - default to the pull request's body. - `BLANK` - default to a blank commit message.
-final class WebhooksPullRequest5BaseRepoMergeCommitMessage {
+final class AgentAutomationsCreateRepoAutomationResponseTriggersDiscussionCommentCommentTypesItem {
 
   final String value;
 
-  const WebhooksPullRequest5BaseRepoMergeCommitMessage._(this.value);
+  const AgentAutomationsCreateRepoAutomationResponseTriggersDiscussionCommentCommentTypesItem._(this.value);
 
-  factory WebhooksPullRequest5BaseRepoMergeCommitMessage.fromJson(String value) => WebhooksPullRequest5BaseRepoMergeCommitMessage._(value);
+  factory AgentAutomationsCreateRepoAutomationResponseTriggersDiscussionCommentCommentTypesItem.fromJson(String value) => AgentAutomationsCreateRepoAutomationResponseTriggersDiscussionCommentCommentTypesItem._(value);
 
-  static const prBody = WebhooksPullRequest5BaseRepoMergeCommitMessage._('PR_BODY');
-  static const prTitle = WebhooksPullRequest5BaseRepoMergeCommitMessage._('PR_TITLE');
-  static const blank = WebhooksPullRequest5BaseRepoMergeCommitMessage._('BLANK');
+  static const comment = AgentAutomationsCreateRepoAutomationResponseTriggersDiscussionCommentCommentTypesItem._('comment');
+  static const reply = AgentAutomationsCreateRepoAutomationResponseTriggersDiscussionCommentCommentTypesItem._('reply');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksPullRequest5BaseRepoMergeCommitMessage && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsCreateRepoAutomationResponseTriggersDiscussionCommentCommentTypesItem && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// The default value for a merge commit title. - `PR_TITLE` - default to the pull request's title. - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
-final class WebhooksPullRequest5BaseRepoMergeCommitTitle {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsCreateRepoAutomationResponseTriggersDiscussionCommentWriteScope {
 
   final String value;
 
-  const WebhooksPullRequest5BaseRepoMergeCommitTitle._(this.value);
+  const AgentAutomationsCreateRepoAutomationResponseTriggersDiscussionCommentWriteScope._(this.value);
 
-  factory WebhooksPullRequest5BaseRepoMergeCommitTitle.fromJson(String value) => WebhooksPullRequest5BaseRepoMergeCommitTitle._(value);
+  factory AgentAutomationsCreateRepoAutomationResponseTriggersDiscussionCommentWriteScope.fromJson(String value) => AgentAutomationsCreateRepoAutomationResponseTriggersDiscussionCommentWriteScope._(value);
 
-  static const prTitle = WebhooksPullRequest5BaseRepoMergeCommitTitle._('PR_TITLE');
-  static const mergeMessage = WebhooksPullRequest5BaseRepoMergeCommitTitle._('MERGE_MESSAGE');
+  static const trigger = AgentAutomationsCreateRepoAutomationResponseTriggersDiscussionCommentWriteScope._('trigger');
+  static const repository = AgentAutomationsCreateRepoAutomationResponseTriggersDiscussionCommentWriteScope._('repository');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksPullRequest5BaseRepoMergeCommitTitle && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsCreateRepoAutomationResponseTriggersDiscussionCommentWriteScope && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhooksPullRequest5BaseRepoOwnerType {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsCreateRepoAutomationResponseTriggersDiscussionOpenedWriteScope {
 
   final String value;
 
-  const WebhooksPullRequest5BaseRepoOwnerType._(this.value);
+  const AgentAutomationsCreateRepoAutomationResponseTriggersDiscussionOpenedWriteScope._(this.value);
 
-  factory WebhooksPullRequest5BaseRepoOwnerType.fromJson(String value) => WebhooksPullRequest5BaseRepoOwnerType._(value);
+  factory AgentAutomationsCreateRepoAutomationResponseTriggersDiscussionOpenedWriteScope.fromJson(String value) => AgentAutomationsCreateRepoAutomationResponseTriggersDiscussionOpenedWriteScope._(value);
 
-  static const bot = WebhooksPullRequest5BaseRepoOwnerType._('Bot');
-  static const user = WebhooksPullRequest5BaseRepoOwnerType._('User');
-  static const organization = WebhooksPullRequest5BaseRepoOwnerType._('Organization');
+  static const trigger = AgentAutomationsCreateRepoAutomationResponseTriggersDiscussionOpenedWriteScope._('trigger');
+  static const repository = AgentAutomationsCreateRepoAutomationResponseTriggersDiscussionOpenedWriteScope._('repository');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksPullRequest5BaseRepoOwnerType && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsCreateRepoAutomationResponseTriggersDiscussionOpenedWriteScope && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// The policy controlling who can create pull requests: all or collaborators_only.
-final class WebhooksPullRequest5BaseRepoPullRequestCreationPolicy {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsCreateRepoAutomationResponseTriggersDiscussionUpdatedWriteScope {
 
   final String value;
 
-  const WebhooksPullRequest5BaseRepoPullRequestCreationPolicy._(this.value);
+  const AgentAutomationsCreateRepoAutomationResponseTriggersDiscussionUpdatedWriteScope._(this.value);
 
-  factory WebhooksPullRequest5BaseRepoPullRequestCreationPolicy.fromJson(String value) => WebhooksPullRequest5BaseRepoPullRequestCreationPolicy._(value);
+  factory AgentAutomationsCreateRepoAutomationResponseTriggersDiscussionUpdatedWriteScope.fromJson(String value) => AgentAutomationsCreateRepoAutomationResponseTriggersDiscussionUpdatedWriteScope._(value);
 
-  static const all = WebhooksPullRequest5BaseRepoPullRequestCreationPolicy._('all');
-  static const collaboratorsOnly = WebhooksPullRequest5BaseRepoPullRequestCreationPolicy._('collaborators_only');
+  static const trigger = AgentAutomationsCreateRepoAutomationResponseTriggersDiscussionUpdatedWriteScope._('trigger');
+  static const repository = AgentAutomationsCreateRepoAutomationResponseTriggersDiscussionUpdatedWriteScope._('repository');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksPullRequest5BaseRepoPullRequestCreationPolicy && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsCreateRepoAutomationResponseTriggersDiscussionUpdatedWriteScope && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+final class AgentAutomationsCreateRepoAutomationResponseTriggersIntervalCadenceItem {
+
+  final String value;
+
+  const AgentAutomationsCreateRepoAutomationResponseTriggersIntervalCadenceItem._(this.value);
+
+  factory AgentAutomationsCreateRepoAutomationResponseTriggersIntervalCadenceItem.fromJson(String value) => AgentAutomationsCreateRepoAutomationResponseTriggersIntervalCadenceItem._(value);
+
+  static const hourly = AgentAutomationsCreateRepoAutomationResponseTriggersIntervalCadenceItem._('hourly');
+  static const daily = AgentAutomationsCreateRepoAutomationResponseTriggersIntervalCadenceItem._('daily');
+  static const weekly = AgentAutomationsCreateRepoAutomationResponseTriggersIntervalCadenceItem._('weekly');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is AgentAutomationsCreateRepoAutomationResponseTriggersIntervalCadenceItem && other.value == value;
 
   @override int get hashCode => value.hashCode;
 

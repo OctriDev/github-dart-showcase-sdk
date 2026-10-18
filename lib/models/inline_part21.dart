@@ -4,44 +4,49 @@
 part of 'inline.dart';
 
 // Inline operation models (part 21)
-enum FieldsItemSchemaVariant1Type {
-  array;
+/// Whether team members will receive notifications when the team is mentioned.
+final class EnterpriseTeamNotificationSetting {
 
-  static FieldsItemSchemaVariant1Type fromJson(String value) {
-    switch (value) {
-      case 'array': return FieldsItemSchemaVariant1Type.array;
-      default: throw ArgumentError('Unknown FieldsItemSchemaVariant1Type: $value');
-    }
-  }
+  final String value;
 
-  String toJson() {
-    switch (this) {
-      case FieldsItemSchemaVariant1Type.array: return 'array';
-    }
-  }
+  const EnterpriseTeamNotificationSetting._(this.value);
 
-  @override
-  String toString() => toJson();
+  factory EnterpriseTeamNotificationSetting.fromJson(String value) => EnterpriseTeamNotificationSetting._(value);
+
+  static const notificationsEnabled = EnterpriseTeamNotificationSetting._('notifications_enabled');
+  static const notificationsDisabled = EnterpriseTeamNotificationSetting._('notifications_disabled');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is EnterpriseTeamNotificationSetting && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
 }
 
-enum FieldsItemSchemaVariant2Type {
-  integer;
+/// Whether deployment to the environment(s) was approved or rejected or pending (with comments)
+final class EnvironmentApprovalsState {
 
-  static FieldsItemSchemaVariant2Type fromJson(String value) {
-    switch (value) {
-      case 'integer': return FieldsItemSchemaVariant2Type.integer;
-      default: throw ArgumentError('Unknown FieldsItemSchemaVariant2Type: $value');
-    }
-  }
+  final String value;
 
-  String toJson() {
-    switch (this) {
-      case FieldsItemSchemaVariant2Type.integer: return 'integer';
-    }
-  }
+  const EnvironmentApprovalsState._(this.value);
 
-  @override
-  String toString() => toJson();
+  factory EnvironmentApprovalsState.fromJson(String value) => EnvironmentApprovalsState._(value);
+
+  static const approved = EnvironmentApprovalsState._('approved');
+  static const rejected = EnvironmentApprovalsState._('rejected');
+  static const pending = EnvironmentApprovalsState._('pending');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is EnvironmentApprovalsState && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The policy controlling who can create pull requests: all or collaborators_only.

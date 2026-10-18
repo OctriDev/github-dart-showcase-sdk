@@ -4,301 +4,210 @@
 part of 'webhook_issue_comment_pinned.dart';
 
 // webhook_issue_comment_pinned domain models (part 5)
-/// The set of permissions for the GitHub app
-class WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissions {
+/// The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) the comment belongs to.
+class WebhookIssueCommentPinnedIssue {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// Optional enumerated value serialized in the `actions` wire field.
-  final SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsActions> actions;
-  /// Optional enumerated value serialized in the `administration` wire field.
-  final SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsAdministration> administration;
-  /// Optional enumerated value serialized in the `checks` wire field.
-  final SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsChecks> checks;
-  /// Optional enumerated value serialized in the `content_references` wire field.
-  final SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsContentReferences> contentReferences;
-  /// Optional enumerated value serialized in the `contents` wire field.
-  final SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsContents> contents;
-  /// Optional enumerated value serialized in the `deployments` wire field.
-  final SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsDeployments> deployments;
-  /// Optional enumerated value serialized in the `discussions` wire field.
-  final SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsDiscussions> discussions;
-  /// Optional enumerated value serialized in the `emails` wire field.
-  final SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsEmails> emails;
-  /// Optional enumerated value serialized in the `environments` wire field.
-  final SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsEnvironments> environments;
-  /// Optional enumerated value serialized in the `issues` wire field.
-  final SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsIssues> issues;
-  /// Optional enumerated value serialized in the `keys` wire field.
-  final SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsKeys> keys;
-  /// Optional enumerated value serialized in the `members` wire field.
-  final SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsMembers> members;
-  /// Optional enumerated value serialized in the `metadata` wire field.
-  final SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsMetadata> metadata;
-  /// Optional enumerated value serialized in the `organization_administration` wire field.
-  final SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationAdministration> organizationAdministration;
-  /// Optional enumerated value serialized in the `organization_hooks` wire field.
-  final SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationHooks> organizationHooks;
-  /// Optional enumerated value serialized in the `organization_packages` wire field.
-  final SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationPackages> organizationPackages;
-  /// Optional enumerated value serialized in the `organization_plan` wire field.
-  final SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationPlan> organizationPlan;
-  /// Optional enumerated value serialized in the `organization_projects` wire field.
-  final SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationProjects> organizationProjects;
-  /// Optional enumerated value serialized in the `organization_secrets` wire field.
-  final SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationSecrets> organizationSecrets;
-  /// Optional enumerated value serialized in the `organization_self_hosted_runners` wire field.
-  final SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationSelfHostedRunners> organizationSelfHostedRunners;
-  /// Optional enumerated value serialized in the `organization_user_blocking` wire field.
-  final SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationUserBlocking> organizationUserBlocking;
-  /// Optional enumerated value serialized in the `packages` wire field.
-  final SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsPackages> packages;
-  /// Optional enumerated value serialized in the `pages` wire field.
-  final SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsPages> pages;
-  /// Optional enumerated value serialized in the `pull_requests` wire field.
-  final SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsPullRequests> pullRequests;
-  /// Optional enumerated value serialized in the `repository_hooks` wire field.
-  final SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsRepositoryHooks> repositoryHooks;
-  /// Optional enumerated value serialized in the `repository_projects` wire field.
-  final SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsRepositoryProjects> repositoryProjects;
-  /// Optional enumerated value serialized in the `secret_scanning_alerts` wire field.
-  final SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsSecretScanningAlerts> secretScanningAlerts;
-  /// Optional enumerated value serialized in the `secrets` wire field.
-  final SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsSecrets> secrets;
-  /// Optional enumerated value serialized in the `security_events` wire field.
-  final SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsSecurityEvents> securityEvents;
-  /// Optional enumerated value serialized in the `security_scanning_alert` wire field.
-  final SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsSecurityScanningAlert> securityScanningAlert;
-  /// Optional enumerated value serialized in the `single_file` wire field.
-  final SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsSingleFile> singleFile;
-  /// Optional enumerated value serialized in the `statuses` wire field.
-  final SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsStatuses> statuses;
-  /// Optional enumerated value serialized in the `team_discussions` wire field.
-  final SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsTeamDiscussions> teamDiscussions;
-  /// Optional enumerated value serialized in the `vulnerability_alerts` wire field.
-  final SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsVulnerabilityAlerts> vulnerabilityAlerts;
-  /// Optional enumerated value serialized in the `workflows` wire field.
-  final SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsWorkflows> workflows;
+  /// Required `string` value serialized in the `active_lock_reason` wire field.
+  final String? activeLockReason;
+  /// Required object value serialized in the `assignee` wire field.
+  final WebhookIssueCommentPinnedIssueAssignee? assignee;
+  /// Required array value serialized in the `assignees` wire field.
+  final List<Map<String, dynamic>?> assignees;
+  /// Required `string` value serialized in the `author_association` wire field.
+  final String authorAssociation;
+  /// Required `string` value serialized in the `body` wire field.
+  final String? body;
+  /// Required `string` value serialized in the `closed_at` wire field.
+  final String? closedAt;
+  /// Required `integer` value serialized in the `comments` wire field.
+  final int comments;
+  /// Required `string` value serialized in the `comments_url` wire field.
+  final String commentsUrl;
+  /// Required `string` value serialized in the `created_at` wire field.
+  final String createdAt;
+  /// Optional `boolean` value serialized in the `draft` wire field.
+  final SdkOptional<bool> draft;
+  /// Required `string` value serialized in the `events_url` wire field.
+  final String eventsUrl;
+  /// Required `string` value serialized in the `html_url` wire field.
+  final String htmlUrl;
+  /// Required `integer` value serialized in the `id` wire field.
+  final int id;
+  /// Required array value serialized in the `labels` wire field.
+  final List<WebhookIssueCommentPinnedIssueLabelsItem> labels;
+  /// Required `string` value serialized in the `labels_url` wire field.
+  final String labelsUrl;
+  /// Required `boolean` value serialized in the `locked` wire field.
+  final bool locked;
+  /// Required object value serialized in the `milestone` wire field.
+  final Map<String, dynamic>? milestone;
+  /// Required `string` value serialized in the `node_id` wire field.
+  final String nodeId;
+  /// Required `integer` value serialized in the `number` wire field.
+  final int number;
+  /// Optional object value serialized in the `performed_via_github_app` wire field.
+  final SdkOptional<Map<String, dynamic>?> performedViaGithubApp;
+  /// Optional object value serialized in the `pull_request` wire field.
+  final SdkOptional<WebhookIssueCommentPinnedIssuePullRequest> pullRequest;
+  /// Required object value serialized in the `reactions` wire field.
+  final WebhookIssueCommentPinnedIssueReactions reactions;
+  /// Required `string` value serialized in the `repository_url` wire field.
+  final String repositoryUrl;
+  /// Optional object value serialized in the `sub_issues_summary` wire field.
+  final SdkOptional<SubIssuesSummary> subIssuesSummary;
+  /// Optional object value serialized in the `issue_dependencies_summary` wire field.
+  final SdkOptional<IssueDependenciesSummary> issueDependenciesSummary;
+  /// State of the issue; either 'open' or 'closed'
+  final WebhookIssueCommentPinnedIssueState state;
+  /// Optional `string` value serialized in the `state_reason` wire field.
+  final SdkOptional<String?> stateReason;
+  /// Optional `string` value serialized in the `timeline_url` wire field.
+  final SdkOptional<String> timelineUrl;
+  /// Required `string` value serialized in the `title` wire field.
+  final String title;
+  /// The type assigned to the issue. This is only present for issues in repositories where issue types are supported.
+  final SdkOptional<IssueType?> type_;
+  /// Required `string` value serialized in the `updated_at` wire field.
+  final String updatedAt;
+  /// Required `string` value serialized in the `url` wire field.
+  final String url;
+  /// Required object value serialized in the `user` wire field.
+  final WebhookIssueCommentPinnedIssueUser user;
 
-  const WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissions({this.actions = const SdkOmitted(), this.administration = const SdkOmitted(), this.checks = const SdkOmitted(), this.contentReferences = const SdkOmitted(), this.contents = const SdkOmitted(), this.deployments = const SdkOmitted(), this.discussions = const SdkOmitted(), this.emails = const SdkOmitted(), this.environments = const SdkOmitted(), this.issues = const SdkOmitted(), this.keys = const SdkOmitted(), this.members = const SdkOmitted(), this.metadata = const SdkOmitted(), this.organizationAdministration = const SdkOmitted(), this.organizationHooks = const SdkOmitted(), this.organizationPackages = const SdkOmitted(), this.organizationPlan = const SdkOmitted(), this.organizationProjects = const SdkOmitted(), this.organizationSecrets = const SdkOmitted(), this.organizationSelfHostedRunners = const SdkOmitted(), this.organizationUserBlocking = const SdkOmitted(), this.packages = const SdkOmitted(), this.pages = const SdkOmitted(), this.pullRequests = const SdkOmitted(), this.repositoryHooks = const SdkOmitted(), this.repositoryProjects = const SdkOmitted(), this.secretScanningAlerts = const SdkOmitted(), this.secrets = const SdkOmitted(), this.securityEvents = const SdkOmitted(), this.securityScanningAlert = const SdkOmitted(), this.singleFile = const SdkOmitted(), this.statuses = const SdkOmitted(), this.teamDiscussions = const SdkOmitted(), this.vulnerabilityAlerts = const SdkOmitted(), this.workflows = const SdkOmitted()});
+  const WebhookIssueCommentPinnedIssue({required this.activeLockReason, required this.assignee, required this.assignees, required this.authorAssociation, required this.body, required this.closedAt, required this.comments, required this.commentsUrl, required this.createdAt, this.draft = const SdkOmitted(), required this.eventsUrl, required this.htmlUrl, required this.id, required this.labels, required this.labelsUrl, required this.locked, required this.milestone, required this.nodeId, required this.number, this.performedViaGithubApp = const SdkOmitted(), this.pullRequest = const SdkOmitted(), required this.reactions, required this.repositoryUrl, this.subIssuesSummary = const SdkOmitted(), this.issueDependenciesSummary = const SdkOmitted(), required this.state, this.stateReason = const SdkOmitted(), this.timelineUrl = const SdkOmitted(), required this.title, this.type_ = const SdkOmitted(), required this.updatedAt, required this.url, required this.user});
 
-  WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissions Function({SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsActions> actions, SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsAdministration> administration, SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsChecks> checks, SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsContentReferences> contentReferences, SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsContents> contents, SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsDeployments> deployments, SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsDiscussions> discussions, SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsEmails> emails, SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsEnvironments> environments, SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsIssues> issues, SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsKeys> keys, SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsMembers> members, SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsMetadata> metadata, SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationAdministration> organizationAdministration, SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationHooks> organizationHooks, SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationPackages> organizationPackages, SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationPlan> organizationPlan, SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationProjects> organizationProjects, SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationSecrets> organizationSecrets, SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationSelfHostedRunners> organizationSelfHostedRunners, SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationUserBlocking> organizationUserBlocking, SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsPackages> packages, SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsPages> pages, SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsPullRequests> pullRequests, SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsRepositoryHooks> repositoryHooks, SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsRepositoryProjects> repositoryProjects, SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsSecretScanningAlerts> secretScanningAlerts, SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsSecrets> secrets, SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsSecurityEvents> securityEvents, SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsSecurityScanningAlert> securityScanningAlert, SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsSingleFile> singleFile, SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsStatuses> statuses, SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsTeamDiscussions> teamDiscussions, SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsVulnerabilityAlerts> vulnerabilityAlerts, SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsWorkflows> workflows}) get copyWith => _copyWith;
+  WebhookIssueCommentPinnedIssue Function({String? activeLockReason, WebhookIssueCommentPinnedIssueAssignee? assignee, List<Map<String, dynamic>?> assignees, String authorAssociation, String? body, String? closedAt, int comments, String commentsUrl, String createdAt, SdkOptional<bool> draft, String eventsUrl, String htmlUrl, int id, List<WebhookIssueCommentPinnedIssueLabelsItem> labels, String labelsUrl, bool locked, Map<String, dynamic>? milestone, String nodeId, int number, SdkOptional<Map<String, dynamic>?> performedViaGithubApp, SdkOptional<WebhookIssueCommentPinnedIssuePullRequest> pullRequest, WebhookIssueCommentPinnedIssueReactions reactions, String repositoryUrl, SdkOptional<SubIssuesSummary> subIssuesSummary, SdkOptional<IssueDependenciesSummary> issueDependenciesSummary, WebhookIssueCommentPinnedIssueState state, SdkOptional<String?> stateReason, SdkOptional<String> timelineUrl, String title, SdkOptional<IssueType?> type_, String updatedAt, String url, WebhookIssueCommentPinnedIssueUser user}) get copyWith => _copyWith;
 
-  WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissions _copyWith({Object? actions = sdkOmittedValue, Object? administration = sdkOmittedValue, Object? checks = sdkOmittedValue, Object? contentReferences = sdkOmittedValue, Object? contents = sdkOmittedValue, Object? deployments = sdkOmittedValue, Object? discussions = sdkOmittedValue, Object? emails = sdkOmittedValue, Object? environments = sdkOmittedValue, Object? issues = sdkOmittedValue, Object? keys = sdkOmittedValue, Object? members = sdkOmittedValue, Object? metadata = sdkOmittedValue, Object? organizationAdministration = sdkOmittedValue, Object? organizationHooks = sdkOmittedValue, Object? organizationPackages = sdkOmittedValue, Object? organizationPlan = sdkOmittedValue, Object? organizationProjects = sdkOmittedValue, Object? organizationSecrets = sdkOmittedValue, Object? organizationSelfHostedRunners = sdkOmittedValue, Object? organizationUserBlocking = sdkOmittedValue, Object? packages = sdkOmittedValue, Object? pages = sdkOmittedValue, Object? pullRequests = sdkOmittedValue, Object? repositoryHooks = sdkOmittedValue, Object? repositoryProjects = sdkOmittedValue, Object? secretScanningAlerts = sdkOmittedValue, Object? secrets = sdkOmittedValue, Object? securityEvents = sdkOmittedValue, Object? securityScanningAlert = sdkOmittedValue, Object? singleFile = sdkOmittedValue, Object? statuses = sdkOmittedValue, Object? teamDiscussions = sdkOmittedValue, Object? vulnerabilityAlerts = sdkOmittedValue, Object? workflows = sdkOmittedValue}) => WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissions(
-    actions: identical(actions, sdkOmittedValue) ? this.actions : actions as SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsActions>,
-    administration: identical(administration, sdkOmittedValue) ? this.administration : administration as SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsAdministration>,
-    checks: identical(checks, sdkOmittedValue) ? this.checks : checks as SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsChecks>,
-    contentReferences: identical(contentReferences, sdkOmittedValue) ? this.contentReferences : contentReferences as SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsContentReferences>,
-    contents: identical(contents, sdkOmittedValue) ? this.contents : contents as SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsContents>,
-    deployments: identical(deployments, sdkOmittedValue) ? this.deployments : deployments as SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsDeployments>,
-    discussions: identical(discussions, sdkOmittedValue) ? this.discussions : discussions as SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsDiscussions>,
-    emails: identical(emails, sdkOmittedValue) ? this.emails : emails as SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsEmails>,
-    environments: identical(environments, sdkOmittedValue) ? this.environments : environments as SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsEnvironments>,
-    issues: identical(issues, sdkOmittedValue) ? this.issues : issues as SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsIssues>,
-    keys: identical(keys, sdkOmittedValue) ? this.keys : keys as SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsKeys>,
-    members: identical(members, sdkOmittedValue) ? this.members : members as SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsMembers>,
-    metadata: identical(metadata, sdkOmittedValue) ? this.metadata : metadata as SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsMetadata>,
-    organizationAdministration: identical(organizationAdministration, sdkOmittedValue) ? this.organizationAdministration : organizationAdministration as SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationAdministration>,
-    organizationHooks: identical(organizationHooks, sdkOmittedValue) ? this.organizationHooks : organizationHooks as SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationHooks>,
-    organizationPackages: identical(organizationPackages, sdkOmittedValue) ? this.organizationPackages : organizationPackages as SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationPackages>,
-    organizationPlan: identical(organizationPlan, sdkOmittedValue) ? this.organizationPlan : organizationPlan as SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationPlan>,
-    organizationProjects: identical(organizationProjects, sdkOmittedValue) ? this.organizationProjects : organizationProjects as SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationProjects>,
-    organizationSecrets: identical(organizationSecrets, sdkOmittedValue) ? this.organizationSecrets : organizationSecrets as SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationSecrets>,
-    organizationSelfHostedRunners: identical(organizationSelfHostedRunners, sdkOmittedValue) ? this.organizationSelfHostedRunners : organizationSelfHostedRunners as SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationSelfHostedRunners>,
-    organizationUserBlocking: identical(organizationUserBlocking, sdkOmittedValue) ? this.organizationUserBlocking : organizationUserBlocking as SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationUserBlocking>,
-    packages: identical(packages, sdkOmittedValue) ? this.packages : packages as SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsPackages>,
-    pages: identical(pages, sdkOmittedValue) ? this.pages : pages as SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsPages>,
-    pullRequests: identical(pullRequests, sdkOmittedValue) ? this.pullRequests : pullRequests as SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsPullRequests>,
-    repositoryHooks: identical(repositoryHooks, sdkOmittedValue) ? this.repositoryHooks : repositoryHooks as SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsRepositoryHooks>,
-    repositoryProjects: identical(repositoryProjects, sdkOmittedValue) ? this.repositoryProjects : repositoryProjects as SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsRepositoryProjects>,
-    secretScanningAlerts: identical(secretScanningAlerts, sdkOmittedValue) ? this.secretScanningAlerts : secretScanningAlerts as SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsSecretScanningAlerts>,
-    secrets: identical(secrets, sdkOmittedValue) ? this.secrets : secrets as SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsSecrets>,
-    securityEvents: identical(securityEvents, sdkOmittedValue) ? this.securityEvents : securityEvents as SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsSecurityEvents>,
-    securityScanningAlert: identical(securityScanningAlert, sdkOmittedValue) ? this.securityScanningAlert : securityScanningAlert as SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsSecurityScanningAlert>,
-    singleFile: identical(singleFile, sdkOmittedValue) ? this.singleFile : singleFile as SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsSingleFile>,
-    statuses: identical(statuses, sdkOmittedValue) ? this.statuses : statuses as SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsStatuses>,
-    teamDiscussions: identical(teamDiscussions, sdkOmittedValue) ? this.teamDiscussions : teamDiscussions as SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsTeamDiscussions>,
-    vulnerabilityAlerts: identical(vulnerabilityAlerts, sdkOmittedValue) ? this.vulnerabilityAlerts : vulnerabilityAlerts as SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsVulnerabilityAlerts>,
-    workflows: identical(workflows, sdkOmittedValue) ? this.workflows : workflows as SdkOptional<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsWorkflows>,
+  WebhookIssueCommentPinnedIssue _copyWith({Object? activeLockReason = sdkOmittedValue, Object? assignee = sdkOmittedValue, Object? assignees = sdkOmittedValue, Object? authorAssociation = sdkOmittedValue, Object? body = sdkOmittedValue, Object? closedAt = sdkOmittedValue, Object? comments = sdkOmittedValue, Object? commentsUrl = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? draft = sdkOmittedValue, Object? eventsUrl = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? id = sdkOmittedValue, Object? labels = sdkOmittedValue, Object? labelsUrl = sdkOmittedValue, Object? locked = sdkOmittedValue, Object? milestone = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? number = sdkOmittedValue, Object? performedViaGithubApp = sdkOmittedValue, Object? pullRequest = sdkOmittedValue, Object? reactions = sdkOmittedValue, Object? repositoryUrl = sdkOmittedValue, Object? subIssuesSummary = sdkOmittedValue, Object? issueDependenciesSummary = sdkOmittedValue, Object? state = sdkOmittedValue, Object? stateReason = sdkOmittedValue, Object? timelineUrl = sdkOmittedValue, Object? title = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? url = sdkOmittedValue, Object? user = sdkOmittedValue}) => WebhookIssueCommentPinnedIssue(
+    activeLockReason: identical(activeLockReason, sdkOmittedValue) ? this.activeLockReason : activeLockReason as String?,
+    assignee: identical(assignee, sdkOmittedValue) ? this.assignee : assignee as WebhookIssueCommentPinnedIssueAssignee?,
+    assignees: identical(assignees, sdkOmittedValue) ? this.assignees : assignees as List<Map<String, dynamic>?>,
+    authorAssociation: identical(authorAssociation, sdkOmittedValue) ? this.authorAssociation : authorAssociation as String,
+    body: identical(body, sdkOmittedValue) ? this.body : body as String?,
+    closedAt: identical(closedAt, sdkOmittedValue) ? this.closedAt : closedAt as String?,
+    comments: identical(comments, sdkOmittedValue) ? this.comments : comments as int,
+    commentsUrl: identical(commentsUrl, sdkOmittedValue) ? this.commentsUrl : commentsUrl as String,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    draft: identical(draft, sdkOmittedValue) ? this.draft : draft as SdkOptional<bool>,
+    eventsUrl: identical(eventsUrl, sdkOmittedValue) ? this.eventsUrl : eventsUrl as String,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    labels: identical(labels, sdkOmittedValue) ? this.labels : labels as List<WebhookIssueCommentPinnedIssueLabelsItem>,
+    labelsUrl: identical(labelsUrl, sdkOmittedValue) ? this.labelsUrl : labelsUrl as String,
+    locked: identical(locked, sdkOmittedValue) ? this.locked : locked as bool,
+    milestone: identical(milestone, sdkOmittedValue) ? this.milestone : milestone as Map<String, dynamic>?,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+    number: identical(number, sdkOmittedValue) ? this.number : number as int,
+    performedViaGithubApp: identical(performedViaGithubApp, sdkOmittedValue) ? this.performedViaGithubApp : performedViaGithubApp as SdkOptional<Map<String, dynamic>?>,
+    pullRequest: identical(pullRequest, sdkOmittedValue) ? this.pullRequest : pullRequest as SdkOptional<WebhookIssueCommentPinnedIssuePullRequest>,
+    reactions: identical(reactions, sdkOmittedValue) ? this.reactions : reactions as WebhookIssueCommentPinnedIssueReactions,
+    repositoryUrl: identical(repositoryUrl, sdkOmittedValue) ? this.repositoryUrl : repositoryUrl as String,
+    subIssuesSummary: identical(subIssuesSummary, sdkOmittedValue) ? this.subIssuesSummary : subIssuesSummary as SdkOptional<SubIssuesSummary>,
+    issueDependenciesSummary: identical(issueDependenciesSummary, sdkOmittedValue) ? this.issueDependenciesSummary : issueDependenciesSummary as SdkOptional<IssueDependenciesSummary>,
+    state: identical(state, sdkOmittedValue) ? this.state : state as WebhookIssueCommentPinnedIssueState,
+    stateReason: identical(stateReason, sdkOmittedValue) ? this.stateReason : stateReason as SdkOptional<String?>,
+    timelineUrl: identical(timelineUrl, sdkOmittedValue) ? this.timelineUrl : timelineUrl as SdkOptional<String>,
+    title: identical(title, sdkOmittedValue) ? this.title : title as String,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<IssueType?>,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+    user: identical(user, sdkOmittedValue) ? this.user : user as WebhookIssueCommentPinnedIssueUser,
   );
 
-  factory WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissions.fromJson(Map<String, dynamic> json) => WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissions(
-    actions: json['actions'] != null ? SdkPresent((json['actions'] != null ? WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsActions.fromJson(json['actions'] as String) : null)!) : const SdkOmitted(),
-    administration: json['administration'] != null ? SdkPresent((json['administration'] != null ? WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsAdministration.fromJson(json['administration'] as String) : null)!) : const SdkOmitted(),
-    checks: json['checks'] != null ? SdkPresent((json['checks'] != null ? WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsChecks.fromJson(json['checks'] as String) : null)!) : const SdkOmitted(),
-    contentReferences: json['content_references'] != null ? SdkPresent((json['content_references'] != null ? WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsContentReferences.fromJson(json['content_references'] as String) : null)!) : const SdkOmitted(),
-    contents: json['contents'] != null ? SdkPresent((json['contents'] != null ? WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsContents.fromJson(json['contents'] as String) : null)!) : const SdkOmitted(),
-    deployments: json['deployments'] != null ? SdkPresent((json['deployments'] != null ? WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsDeployments.fromJson(json['deployments'] as String) : null)!) : const SdkOmitted(),
-    discussions: json['discussions'] != null ? SdkPresent((json['discussions'] != null ? WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsDiscussions.fromJson(json['discussions'] as String) : null)!) : const SdkOmitted(),
-    emails: json['emails'] != null ? SdkPresent((json['emails'] != null ? WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsEmails.fromJson(json['emails'] as String) : null)!) : const SdkOmitted(),
-    environments: json['environments'] != null ? SdkPresent((json['environments'] != null ? WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsEnvironments.fromJson(json['environments'] as String) : null)!) : const SdkOmitted(),
-    issues: json['issues'] != null ? SdkPresent((json['issues'] != null ? WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsIssues.fromJson(json['issues'] as String) : null)!) : const SdkOmitted(),
-    keys: json['keys'] != null ? SdkPresent((json['keys'] != null ? WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsKeys.fromJson(json['keys'] as String) : null)!) : const SdkOmitted(),
-    members: json['members'] != null ? SdkPresent((json['members'] != null ? WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsMembers.fromJson(json['members'] as String) : null)!) : const SdkOmitted(),
-    metadata: json['metadata'] != null ? SdkPresent((json['metadata'] != null ? WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsMetadata.fromJson(json['metadata'] as String) : null)!) : const SdkOmitted(),
-    organizationAdministration: json['organization_administration'] != null ? SdkPresent((json['organization_administration'] != null ? WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationAdministration.fromJson(json['organization_administration'] as String) : null)!) : const SdkOmitted(),
-    organizationHooks: json['organization_hooks'] != null ? SdkPresent((json['organization_hooks'] != null ? WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationHooks.fromJson(json['organization_hooks'] as String) : null)!) : const SdkOmitted(),
-    organizationPackages: json['organization_packages'] != null ? SdkPresent((json['organization_packages'] != null ? WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationPackages.fromJson(json['organization_packages'] as String) : null)!) : const SdkOmitted(),
-    organizationPlan: json['organization_plan'] != null ? SdkPresent((json['organization_plan'] != null ? WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationPlan.fromJson(json['organization_plan'] as String) : null)!) : const SdkOmitted(),
-    organizationProjects: json['organization_projects'] != null ? SdkPresent((json['organization_projects'] != null ? WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationProjects.fromJson(json['organization_projects'] as String) : null)!) : const SdkOmitted(),
-    organizationSecrets: json['organization_secrets'] != null ? SdkPresent((json['organization_secrets'] != null ? WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationSecrets.fromJson(json['organization_secrets'] as String) : null)!) : const SdkOmitted(),
-    organizationSelfHostedRunners: json['organization_self_hosted_runners'] != null ? SdkPresent((json['organization_self_hosted_runners'] != null ? WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationSelfHostedRunners.fromJson(json['organization_self_hosted_runners'] as String) : null)!) : const SdkOmitted(),
-    organizationUserBlocking: json['organization_user_blocking'] != null ? SdkPresent((json['organization_user_blocking'] != null ? WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationUserBlocking.fromJson(json['organization_user_blocking'] as String) : null)!) : const SdkOmitted(),
-    packages: json['packages'] != null ? SdkPresent((json['packages'] != null ? WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsPackages.fromJson(json['packages'] as String) : null)!) : const SdkOmitted(),
-    pages: json['pages'] != null ? SdkPresent((json['pages'] != null ? WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsPages.fromJson(json['pages'] as String) : null)!) : const SdkOmitted(),
-    pullRequests: json['pull_requests'] != null ? SdkPresent((json['pull_requests'] != null ? WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsPullRequests.fromJson(json['pull_requests'] as String) : null)!) : const SdkOmitted(),
-    repositoryHooks: json['repository_hooks'] != null ? SdkPresent((json['repository_hooks'] != null ? WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsRepositoryHooks.fromJson(json['repository_hooks'] as String) : null)!) : const SdkOmitted(),
-    repositoryProjects: json['repository_projects'] != null ? SdkPresent((json['repository_projects'] != null ? WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsRepositoryProjects.fromJson(json['repository_projects'] as String) : null)!) : const SdkOmitted(),
-    secretScanningAlerts: json['secret_scanning_alerts'] != null ? SdkPresent((json['secret_scanning_alerts'] != null ? WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsSecretScanningAlerts.fromJson(json['secret_scanning_alerts'] as String) : null)!) : const SdkOmitted(),
-    secrets: json['secrets'] != null ? SdkPresent((json['secrets'] != null ? WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsSecrets.fromJson(json['secrets'] as String) : null)!) : const SdkOmitted(),
-    securityEvents: json['security_events'] != null ? SdkPresent((json['security_events'] != null ? WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsSecurityEvents.fromJson(json['security_events'] as String) : null)!) : const SdkOmitted(),
-    securityScanningAlert: json['security_scanning_alert'] != null ? SdkPresent((json['security_scanning_alert'] != null ? WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsSecurityScanningAlert.fromJson(json['security_scanning_alert'] as String) : null)!) : const SdkOmitted(),
-    singleFile: json['single_file'] != null ? SdkPresent((json['single_file'] != null ? WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsSingleFile.fromJson(json['single_file'] as String) : null)!) : const SdkOmitted(),
-    statuses: json['statuses'] != null ? SdkPresent((json['statuses'] != null ? WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsStatuses.fromJson(json['statuses'] as String) : null)!) : const SdkOmitted(),
-    teamDiscussions: json['team_discussions'] != null ? SdkPresent((json['team_discussions'] != null ? WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsTeamDiscussions.fromJson(json['team_discussions'] as String) : null)!) : const SdkOmitted(),
-    vulnerabilityAlerts: json['vulnerability_alerts'] != null ? SdkPresent((json['vulnerability_alerts'] != null ? WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsVulnerabilityAlerts.fromJson(json['vulnerability_alerts'] as String) : null)!) : const SdkOmitted(),
-    workflows: json['workflows'] != null ? SdkPresent((json['workflows'] != null ? WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsWorkflows.fromJson(json['workflows'] as String) : null)!) : const SdkOmitted(),
+  factory WebhookIssueCommentPinnedIssue.fromJson(Map<String, dynamic> json) => WebhookIssueCommentPinnedIssue(
+    activeLockReason: json.containsKey('active_lock_reason') ? json['active_lock_reason'] as String? : throw ArgumentError.value(null, 'active_lock_reason', 'Required property is missing'),
+    assignee: json.containsKey('assignee') ? json['assignee'] != null ? WebhookIssueCommentPinnedIssueAssignee.fromJson(json['assignee'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'assignee', 'Required property is missing'),
+    assignees: ((json['assignees'] as List?)?.map((e) => e == null ? null : e as Map<String, dynamic>).toList())!,
+    authorAssociation: (json['author_association'] as String?)!,
+    body: json.containsKey('body') ? json['body'] as String? : throw ArgumentError.value(null, 'body', 'Required property is missing'),
+    closedAt: json.containsKey('closed_at') ? json['closed_at'] as String? : throw ArgumentError.value(null, 'closed_at', 'Required property is missing'),
+    comments: ((json['comments'] as num?)?.toInt())!,
+    commentsUrl: (json['comments_url'] as String?)!,
+    createdAt: (json['created_at'] as String?)!,
+    draft: json['draft'] != null ? SdkPresent((json['draft'] as bool?)!) : const SdkOmitted(),
+    eventsUrl: (json['events_url'] as String?)!,
+    htmlUrl: (json['html_url'] as String?)!,
+    id: ((json['id'] as num?)?.toInt())!,
+    labels: ((json['labels'] as List?)?.map((e) => WebhookIssueCommentPinnedIssueLabelsItem.fromJson(e as Map<String, dynamic>)).toList())!,
+    labelsUrl: (json['labels_url'] as String?)!,
+    locked: (json['locked'] as bool?)!,
+    milestone: json.containsKey('milestone') ? json['milestone'] == null ? null : json['milestone'] as Map<String, dynamic> : throw ArgumentError.value(null, 'milestone', 'Required property is missing'),
+    nodeId: (json['node_id'] as String?)!,
+    number: ((json['number'] as num?)?.toInt())!,
+    performedViaGithubApp: json.containsKey('performed_via_github_app') ? SdkPresent(json['performed_via_github_app'] == null ? null : json['performed_via_github_app'] as Map<String, dynamic>) : const SdkOmitted(),
+    pullRequest: json['pull_request'] != null ? SdkPresent((json['pull_request'] != null ? WebhookIssueCommentPinnedIssuePullRequest.fromJson(json['pull_request'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    reactions: (json['reactions'] != null ? WebhookIssueCommentPinnedIssueReactions.fromJson(json['reactions'] as Map<String, dynamic>) : null)!,
+    repositoryUrl: (json['repository_url'] as String?)!,
+    subIssuesSummary: json['sub_issues_summary'] != null ? SdkPresent((json['sub_issues_summary'] != null ? SubIssuesSummary.fromJson(json['sub_issues_summary'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    issueDependenciesSummary: json['issue_dependencies_summary'] != null ? SdkPresent((json['issue_dependencies_summary'] != null ? IssueDependenciesSummary.fromJson(json['issue_dependencies_summary'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    state: (json['state'] != null ? WebhookIssueCommentPinnedIssueState.fromJson(json['state'] as String) : null)!,
+    stateReason: json.containsKey('state_reason') ? SdkPresent(json['state_reason'] as String?) : const SdkOmitted(),
+    timelineUrl: json['timeline_url'] != null ? SdkPresent((json['timeline_url'] as String?)!) : const SdkOmitted(),
+    title: (json['title'] as String?)!,
+    type_: json.containsKey('type') ? SdkPresent(json['type'] != null ? IssueType.fromJson(json['type'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    updatedAt: (json['updated_at'] as String?)!,
+    url: (json['url'] as String?)!,
+    user: (json['user'] != null ? WebhookIssueCommentPinnedIssueUser.fromJson(json['user'] as Map<String, dynamic>) : null)!,
   );
 
   Map<String, dynamic> toJson() => {
-    ...switch (actions) {
-      SdkPresent<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsActions>(value: final value) => {'actions': value.toJson(),},
+    'active_lock_reason': activeLockReason,
+    'assignee': assignee?.toJson(),
+    'assignees': assignees,
+    'author_association': authorAssociation,
+    'body': body,
+    'closed_at': closedAt,
+    'comments': comments,
+    'comments_url': commentsUrl,
+    'created_at': createdAt,
+    ...switch (draft) {
+      SdkPresent<bool>(value: final value) => {'draft': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (administration) {
-      SdkPresent<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsAdministration>(value: final value) => {'administration': value.toJson(),},
+    'events_url': eventsUrl,
+    'html_url': htmlUrl,
+    'id': id,
+    'labels': labels.map((item) => item.toJson()).toList(),
+    'labels_url': labelsUrl,
+    'locked': locked,
+    'milestone': milestone,
+    'node_id': nodeId,
+    'number': number,
+    ...switch (performedViaGithubApp) {
+      SdkPresent<Map<String, dynamic>?>(value: final value) => {'performed_via_github_app': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (checks) {
-      SdkPresent<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsChecks>(value: final value) => {'checks': value.toJson(),},
+    ...switch (pullRequest) {
+      SdkPresent<WebhookIssueCommentPinnedIssuePullRequest>(value: final value) => {'pull_request': value.toJson(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (contentReferences) {
-      SdkPresent<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsContentReferences>(value: final value) => {'content_references': value.toJson(),},
+    'reactions': reactions.toJson(),
+    'repository_url': repositoryUrl,
+    ...switch (subIssuesSummary) {
+      SdkPresent<SubIssuesSummary>(value: final value) => {'sub_issues_summary': value.toJson(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (contents) {
-      SdkPresent<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsContents>(value: final value) => {'contents': value.toJson(),},
+    ...switch (issueDependenciesSummary) {
+      SdkPresent<IssueDependenciesSummary>(value: final value) => {'issue_dependencies_summary': value.toJson(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (deployments) {
-      SdkPresent<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsDeployments>(value: final value) => {'deployments': value.toJson(),},
+    'state': state.toJson(),
+    ...switch (stateReason) {
+      SdkPresent<String?>(value: final value) => {'state_reason': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (discussions) {
-      SdkPresent<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsDiscussions>(value: final value) => {'discussions': value.toJson(),},
+    ...switch (timelineUrl) {
+      SdkPresent<String>(value: final value) => {'timeline_url': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (emails) {
-      SdkPresent<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsEmails>(value: final value) => {'emails': value.toJson(),},
+    'title': title,
+    ...switch (type_) {
+      SdkPresent<IssueType?>(value: final value) => {'type': value?.toJson(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (environments) {
-      SdkPresent<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsEnvironments>(value: final value) => {'environments': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (issues) {
-      SdkPresent<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsIssues>(value: final value) => {'issues': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (keys) {
-      SdkPresent<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsKeys>(value: final value) => {'keys': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (members) {
-      SdkPresent<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsMembers>(value: final value) => {'members': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (metadata) {
-      SdkPresent<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsMetadata>(value: final value) => {'metadata': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (organizationAdministration) {
-      SdkPresent<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationAdministration>(value: final value) => {'organization_administration': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (organizationHooks) {
-      SdkPresent<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationHooks>(value: final value) => {'organization_hooks': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (organizationPackages) {
-      SdkPresent<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationPackages>(value: final value) => {'organization_packages': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (organizationPlan) {
-      SdkPresent<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationPlan>(value: final value) => {'organization_plan': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (organizationProjects) {
-      SdkPresent<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationProjects>(value: final value) => {'organization_projects': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (organizationSecrets) {
-      SdkPresent<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationSecrets>(value: final value) => {'organization_secrets': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (organizationSelfHostedRunners) {
-      SdkPresent<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationSelfHostedRunners>(value: final value) => {'organization_self_hosted_runners': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (organizationUserBlocking) {
-      SdkPresent<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationUserBlocking>(value: final value) => {'organization_user_blocking': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (packages) {
-      SdkPresent<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsPackages>(value: final value) => {'packages': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (pages) {
-      SdkPresent<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsPages>(value: final value) => {'pages': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (pullRequests) {
-      SdkPresent<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsPullRequests>(value: final value) => {'pull_requests': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (repositoryHooks) {
-      SdkPresent<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsRepositoryHooks>(value: final value) => {'repository_hooks': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (repositoryProjects) {
-      SdkPresent<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsRepositoryProjects>(value: final value) => {'repository_projects': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (secretScanningAlerts) {
-      SdkPresent<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsSecretScanningAlerts>(value: final value) => {'secret_scanning_alerts': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (secrets) {
-      SdkPresent<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsSecrets>(value: final value) => {'secrets': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (securityEvents) {
-      SdkPresent<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsSecurityEvents>(value: final value) => {'security_events': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (securityScanningAlert) {
-      SdkPresent<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsSecurityScanningAlert>(value: final value) => {'security_scanning_alert': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (singleFile) {
-      SdkPresent<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsSingleFile>(value: final value) => {'single_file': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (statuses) {
-      SdkPresent<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsStatuses>(value: final value) => {'statuses': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (teamDiscussions) {
-      SdkPresent<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsTeamDiscussions>(value: final value) => {'team_discussions': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (vulnerabilityAlerts) {
-      SdkPresent<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsVulnerabilityAlerts>(value: final value) => {'vulnerability_alerts': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (workflows) {
-      SdkPresent<WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissionsWorkflows>(value: final value) => {'workflows': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
+    'updated_at': updatedAt,
+    'url': url,
+    'user': user.toJson(),
   };
 }

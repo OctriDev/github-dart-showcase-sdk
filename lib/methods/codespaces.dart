@@ -550,7 +550,7 @@ Future<Codespace>
           operationId: 'codespacesCreateWithRepoForAuthenticatedUser',
           fromJsonRaw: (value) => Codespace.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -689,7 +689,7 @@ Future<CodespacesPermissionsCheckForDevcontainer>
           operationId: 'codespacesCheckPermissionsForDevcontainer',
           fromJsonRaw: (value) => CodespacesPermissionsCheckForDevcontainer.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -888,7 +888,7 @@ Future<Codespace>
           operationId: 'codespacesCreateWithPrForAuthenticatedUser',
           fromJsonRaw: (value) => Codespace.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -939,7 +939,7 @@ Future<Codespace> codespacesCreateForAuthenticatedUser(ClientConfig config,
           operationId: 'codespacesCreateForAuthenticatedUser',
           fromJsonRaw: (value) => Codespace.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 

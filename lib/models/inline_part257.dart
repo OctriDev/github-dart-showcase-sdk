@@ -4,284 +4,269 @@
 part of 'inline.dart';
 
 // Inline operation models (part 257)
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRunWriteScope {
+final class ReposListActivitiesTimePeriod {
 
   final String value;
 
-  const AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRunWriteScope._(this.value);
+  const ReposListActivitiesTimePeriod._(this.value);
 
-  factory AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRunWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRunWriteScope._(value);
+  factory ReposListActivitiesTimePeriod.fromJson(String value) => ReposListActivitiesTimePeriod._(value);
 
-  static const trigger = AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRunWriteScope._('trigger');
-  static const repository = AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRunWriteScope._('repository');
+  static const day = ReposListActivitiesTimePeriod._('day');
+  static const week = ReposListActivitiesTimePeriod._('week');
+  static const month = ReposListActivitiesTimePeriod._('month');
+  static const quarter = ReposListActivitiesTimePeriod._('quarter');
+  static const year = ReposListActivitiesTimePeriod._('year');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRunWriteScope && other.value == value;
+  @override bool operator ==(Object other) => other is ReposListActivitiesTimePeriod && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Controls which repository resources a run may modify. `trigger` limits writes to the resource that started the run, when one exists, and resources created during the run; `repository` allows writes to any resource in the repository. Supported values: `trigger`, `repository`.
-final class AgentAutomationsEditRepoAutomationResponseWriteScope {
+final class ReposListActivitiesActivityType {
 
   final String value;
 
-  const AgentAutomationsEditRepoAutomationResponseWriteScope._(this.value);
+  const ReposListActivitiesActivityType._(this.value);
 
-  factory AgentAutomationsEditRepoAutomationResponseWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseWriteScope._(value);
+  factory ReposListActivitiesActivityType.fromJson(String value) => ReposListActivitiesActivityType._(value);
 
-  static const trigger = AgentAutomationsEditRepoAutomationResponseWriteScope._('trigger');
-  static const repository = AgentAutomationsEditRepoAutomationResponseWriteScope._('repository');
+  static const push = ReposListActivitiesActivityType._('push');
+  static const forcePush = ReposListActivitiesActivityType._('force_push');
+  static const branchCreation = ReposListActivitiesActivityType._('branch_creation');
+  static const branchDeletion = ReposListActivitiesActivityType._('branch_deletion');
+  static const prMerge = ReposListActivitiesActivityType._('pr_merge');
+  static const mergeQueueMerge = ReposListActivitiesActivityType._('merge_queue_merge');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseWriteScope && other.value == value;
+  @override bool operator ==(Object other) => other is ReposListActivitiesActivityType && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Machine-readable error code
-final class AgentAutomationsEditRepoAutomationResponseErrorsItemCode {
+enum ChecksCreateRequestBodyVariant0Status {
+  completed;
+
+  static ChecksCreateRequestBodyVariant0Status fromJson(String value) {
+    switch (value) {
+      case 'completed': return ChecksCreateRequestBodyVariant0Status.completed;
+      default: throw ArgumentError('Unknown ChecksCreateRequestBodyVariant0Status: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case ChecksCreateRequestBodyVariant0Status.completed: return 'completed';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+enum ChecksCreateRequestBodyVariant1Status {
+  queued,
+  inProgress;
+
+  static ChecksCreateRequestBodyVariant1Status fromJson(String value) {
+    switch (value) {
+      case 'queued': return ChecksCreateRequestBodyVariant1Status.queued;
+      case 'in_progress': return ChecksCreateRequestBodyVariant1Status.inProgress;
+      default: throw ArgumentError('Unknown ChecksCreateRequestBodyVariant1Status: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case ChecksCreateRequestBodyVariant1Status.queued: return 'queued';
+      case ChecksCreateRequestBodyVariant1Status.inProgress: return 'in_progress';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// **Required if you provide `completed_at` or a `status` of `completed`**. The final conclusion of the check. **Note:** Providing `conclusion` will automatically set the `status` parameter to `completed`. You cannot change a check run conclusion to `stale`, only GitHub can set this.
+final class ChecksCreateRequestBodyConclusion {
 
   final String value;
 
-  const AgentAutomationsEditRepoAutomationResponseErrorsItemCode._(this.value);
+  const ChecksCreateRequestBodyConclusion._(this.value);
 
-  factory AgentAutomationsEditRepoAutomationResponseErrorsItemCode.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseErrorsItemCode._(value);
+  factory ChecksCreateRequestBodyConclusion.fromJson(String value) => ChecksCreateRequestBodyConclusion._(value);
 
-  static const missing = AgentAutomationsEditRepoAutomationResponseErrorsItemCode._('missing');
-  static const missingField = AgentAutomationsEditRepoAutomationResponseErrorsItemCode._('missing_field');
-  static const invalid = AgentAutomationsEditRepoAutomationResponseErrorsItemCode._('invalid');
-  static const alreadyExists = AgentAutomationsEditRepoAutomationResponseErrorsItemCode._('already_exists');
-  static const unprocessable = AgentAutomationsEditRepoAutomationResponseErrorsItemCode._('unprocessable');
-  static const custom = AgentAutomationsEditRepoAutomationResponseErrorsItemCode._('custom');
+  static const actionRequired = ChecksCreateRequestBodyConclusion._('action_required');
+  static const cancelled = ChecksCreateRequestBodyConclusion._('cancelled');
+  static const failure = ChecksCreateRequestBodyConclusion._('failure');
+  static const neutral = ChecksCreateRequestBodyConclusion._('neutral');
+  static const success = ChecksCreateRequestBodyConclusion._('success');
+  static const skipped = ChecksCreateRequestBodyConclusion._('skipped');
+  static const stale = ChecksCreateRequestBodyConclusion._('stale');
+  static const timedOut = ChecksCreateRequestBodyConclusion._('timed_out');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseErrorsItemCode && other.value == value;
+  @override bool operator ==(Object other) => other is ChecksCreateRequestBodyConclusion && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Machine-readable error code
-final class AgentAutomationsEditRepoAutomationResponseErrorsItemCode7cb67728 {
+/// The level of the annotation.
+final class ChecksCreateRequestBodyOutputAnnotationsItemAnnotationLevel {
 
   final String value;
 
-  const AgentAutomationsEditRepoAutomationResponseErrorsItemCode7cb67728._(this.value);
+  const ChecksCreateRequestBodyOutputAnnotationsItemAnnotationLevel._(this.value);
 
-  factory AgentAutomationsEditRepoAutomationResponseErrorsItemCode7cb67728.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseErrorsItemCode7cb67728._(value);
+  factory ChecksCreateRequestBodyOutputAnnotationsItemAnnotationLevel.fromJson(String value) => ChecksCreateRequestBodyOutputAnnotationsItemAnnotationLevel._(value);
 
-  static const missing = AgentAutomationsEditRepoAutomationResponseErrorsItemCode7cb67728._('missing');
-  static const missingField = AgentAutomationsEditRepoAutomationResponseErrorsItemCode7cb67728._('missing_field');
-  static const invalid = AgentAutomationsEditRepoAutomationResponseErrorsItemCode7cb67728._('invalid');
-  static const alreadyExists = AgentAutomationsEditRepoAutomationResponseErrorsItemCode7cb67728._('already_exists');
-  static const unprocessable = AgentAutomationsEditRepoAutomationResponseErrorsItemCode7cb67728._('unprocessable');
-  static const custom = AgentAutomationsEditRepoAutomationResponseErrorsItemCode7cb67728._('custom');
+  static const notice = ChecksCreateRequestBodyOutputAnnotationsItemAnnotationLevel._('notice');
+  static const warning = ChecksCreateRequestBodyOutputAnnotationsItemAnnotationLevel._('warning');
+  static const failure = ChecksCreateRequestBodyOutputAnnotationsItemAnnotationLevel._('failure');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseErrorsItemCode7cb67728 && other.value == value;
+  @override bool operator ==(Object other) => other is ChecksCreateRequestBodyOutputAnnotationsItemAnnotationLevel && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Machine-readable error code
-final class AgentAutomationsEditRepoAutomationResponseErrorsItemCoded44f2d02 {
+/// The current status of the check run. Only GitHub Actions can set a status of `waiting`, `pending`, or `requested`.
+final class ChecksCreateRequestBodyStatus {
 
   final String value;
 
-  const AgentAutomationsEditRepoAutomationResponseErrorsItemCoded44f2d02._(this.value);
+  const ChecksCreateRequestBodyStatus._(this.value);
 
-  factory AgentAutomationsEditRepoAutomationResponseErrorsItemCoded44f2d02.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseErrorsItemCoded44f2d02._(value);
+  factory ChecksCreateRequestBodyStatus.fromJson(String value) => ChecksCreateRequestBodyStatus._(value);
 
-  static const missing = AgentAutomationsEditRepoAutomationResponseErrorsItemCoded44f2d02._('missing');
-  static const missingField = AgentAutomationsEditRepoAutomationResponseErrorsItemCoded44f2d02._('missing_field');
-  static const invalid = AgentAutomationsEditRepoAutomationResponseErrorsItemCoded44f2d02._('invalid');
-  static const alreadyExists = AgentAutomationsEditRepoAutomationResponseErrorsItemCoded44f2d02._('already_exists');
-  static const unprocessable = AgentAutomationsEditRepoAutomationResponseErrorsItemCoded44f2d02._('unprocessable');
-  static const custom = AgentAutomationsEditRepoAutomationResponseErrorsItemCoded44f2d02._('custom');
+  static const queued = ChecksCreateRequestBodyStatus._('queued');
+  static const inProgress = ChecksCreateRequestBodyStatus._('in_progress');
+  static const completed = ChecksCreateRequestBodyStatus._('completed');
+  static const waiting = ChecksCreateRequestBodyStatus._('waiting');
+  static const requested = ChecksCreateRequestBodyStatus._('requested');
+  static const pending = ChecksCreateRequestBodyStatus._('pending');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseErrorsItemCoded44f2d02 && other.value == value;
+  @override bool operator ==(Object other) => other is ChecksCreateRequestBodyStatus && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Machine-readable error code
-final class AgentAutomationsEditRepoAutomationResponseErrorsItemCodebc93f766 {
+/// **Required if you provide `completed_at` or a `status` of `completed`**. The final conclusion of the check. **Note:** Providing `conclusion` will automatically set the `status` parameter to `completed`. You cannot change a check run conclusion to `stale`, only GitHub can set this.
+final class ChecksUpdateRequestBodyVariant0Conclusion {
 
   final String value;
 
-  const AgentAutomationsEditRepoAutomationResponseErrorsItemCodebc93f766._(this.value);
+  const ChecksUpdateRequestBodyVariant0Conclusion._(this.value);
 
-  factory AgentAutomationsEditRepoAutomationResponseErrorsItemCodebc93f766.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseErrorsItemCodebc93f766._(value);
+  factory ChecksUpdateRequestBodyVariant0Conclusion.fromJson(String value) => ChecksUpdateRequestBodyVariant0Conclusion._(value);
 
-  static const missing = AgentAutomationsEditRepoAutomationResponseErrorsItemCodebc93f766._('missing');
-  static const missingField = AgentAutomationsEditRepoAutomationResponseErrorsItemCodebc93f766._('missing_field');
-  static const invalid = AgentAutomationsEditRepoAutomationResponseErrorsItemCodebc93f766._('invalid');
-  static const alreadyExists = AgentAutomationsEditRepoAutomationResponseErrorsItemCodebc93f766._('already_exists');
-  static const unprocessable = AgentAutomationsEditRepoAutomationResponseErrorsItemCodebc93f766._('unprocessable');
-  static const custom = AgentAutomationsEditRepoAutomationResponseErrorsItemCodebc93f766._('custom');
+  static const actionRequired = ChecksUpdateRequestBodyVariant0Conclusion._('action_required');
+  static const cancelled = ChecksUpdateRequestBodyVariant0Conclusion._('cancelled');
+  static const failure = ChecksUpdateRequestBodyVariant0Conclusion._('failure');
+  static const neutral = ChecksUpdateRequestBodyVariant0Conclusion._('neutral');
+  static const success = ChecksUpdateRequestBodyVariant0Conclusion._('success');
+  static const skipped = ChecksUpdateRequestBodyVariant0Conclusion._('skipped');
+  static const stale = ChecksUpdateRequestBodyVariant0Conclusion._('stale');
+  static const timedOut = ChecksUpdateRequestBodyVariant0Conclusion._('timed_out');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseErrorsItemCodebc93f766 && other.value == value;
+  @override bool operator ==(Object other) => other is ChecksUpdateRequestBodyVariant0Conclusion && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-final class AgentTasksListTasksForRepoSort {
+/// The level of the annotation.
+final class ChecksUpdateRequestBodyVariant0OutputAnnotationsItemAnnotationLevel {
 
   final String value;
 
-  const AgentTasksListTasksForRepoSort._(this.value);
+  const ChecksUpdateRequestBodyVariant0OutputAnnotationsItemAnnotationLevel._(this.value);
 
-  factory AgentTasksListTasksForRepoSort.fromJson(String value) => AgentTasksListTasksForRepoSort._(value);
+  factory ChecksUpdateRequestBodyVariant0OutputAnnotationsItemAnnotationLevel.fromJson(String value) => ChecksUpdateRequestBodyVariant0OutputAnnotationsItemAnnotationLevel._(value);
 
-  static const updatedAt = AgentTasksListTasksForRepoSort._('updated_at');
-  static const createdAt = AgentTasksListTasksForRepoSort._('created_at');
+  static const notice = ChecksUpdateRequestBodyVariant0OutputAnnotationsItemAnnotationLevel._('notice');
+  static const warning = ChecksUpdateRequestBodyVariant0OutputAnnotationsItemAnnotationLevel._('warning');
+  static const failure = ChecksUpdateRequestBodyVariant0OutputAnnotationsItemAnnotationLevel._('failure');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentTasksListTasksForRepoSort && other.value == value;
+  @override bool operator ==(Object other) => other is ChecksUpdateRequestBodyVariant0OutputAnnotationsItemAnnotationLevel && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-final class AgentTasksListTasksForRepoDirection {
+final class ChecksUpdateRequestBodyVariant0Status {
 
   final String value;
 
-  const AgentTasksListTasksForRepoDirection._(this.value);
+  const ChecksUpdateRequestBodyVariant0Status._(this.value);
 
-  factory AgentTasksListTasksForRepoDirection.fromJson(String value) => AgentTasksListTasksForRepoDirection._(value);
+  factory ChecksUpdateRequestBodyVariant0Status.fromJson(String value) => ChecksUpdateRequestBodyVariant0Status._(value);
 
-  static const asc = AgentTasksListTasksForRepoDirection._('asc');
-  static const desc = AgentTasksListTasksForRepoDirection._('desc');
+  static const completed = ChecksUpdateRequestBodyVariant0Status._('completed');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentTasksListTasksForRepoDirection && other.value == value;
+  @override bool operator ==(Object other) => other is ChecksUpdateRequestBodyVariant0Status && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Provider namespace
-final class AgentTasksListTasksForRepoResponseTasksItemArtifactsItemProvider {
+/// **Required if you provide `completed_at` or a `status` of `completed`**. The final conclusion of the check. **Note:** Providing `conclusion` will automatically set the `status` parameter to `completed`. You cannot change a check run conclusion to `stale`, only GitHub can set this.
+final class ChecksUpdateRequestBodyVariant1Conclusion {
 
   final String value;
 
-  const AgentTasksListTasksForRepoResponseTasksItemArtifactsItemProvider._(this.value);
+  const ChecksUpdateRequestBodyVariant1Conclusion._(this.value);
 
-  factory AgentTasksListTasksForRepoResponseTasksItemArtifactsItemProvider.fromJson(String value) => AgentTasksListTasksForRepoResponseTasksItemArtifactsItemProvider._(value);
+  factory ChecksUpdateRequestBodyVariant1Conclusion.fromJson(String value) => ChecksUpdateRequestBodyVariant1Conclusion._(value);
 
-  static const github = AgentTasksListTasksForRepoResponseTasksItemArtifactsItemProvider._('github');
+  static const actionRequired = ChecksUpdateRequestBodyVariant1Conclusion._('action_required');
+  static const cancelled = ChecksUpdateRequestBodyVariant1Conclusion._('cancelled');
+  static const failure = ChecksUpdateRequestBodyVariant1Conclusion._('failure');
+  static const neutral = ChecksUpdateRequestBodyVariant1Conclusion._('neutral');
+  static const success = ChecksUpdateRequestBodyVariant1Conclusion._('success');
+  static const skipped = ChecksUpdateRequestBodyVariant1Conclusion._('skipped');
+  static const stale = ChecksUpdateRequestBodyVariant1Conclusion._('stale');
+  static const timedOut = ChecksUpdateRequestBodyVariant1Conclusion._('timed_out');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentTasksListTasksForRepoResponseTasksItemArtifactsItemProvider && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// Type of artifact. Available Values: `pull`, `branch`.
-final class AgentTasksListTasksForRepoResponseTasksItemArtifactsItemType {
-
-  final String value;
-
-  const AgentTasksListTasksForRepoResponseTasksItemArtifactsItemType._(this.value);
-
-  factory AgentTasksListTasksForRepoResponseTasksItemArtifactsItemType.fromJson(String value) => AgentTasksListTasksForRepoResponseTasksItemArtifactsItemType._(value);
-
-  static const pull = AgentTasksListTasksForRepoResponseTasksItemArtifactsItemType._('pull');
-  static const branch = AgentTasksListTasksForRepoResponseTasksItemArtifactsItemType._('branch');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is AgentTasksListTasksForRepoResponseTasksItemArtifactsItemType && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// Type of the task creator
-final class AgentTasksListTasksForRepoResponseTasksItemCreatorType {
-
-  final String value;
-
-  const AgentTasksListTasksForRepoResponseTasksItemCreatorType._(this.value);
-
-  factory AgentTasksListTasksForRepoResponseTasksItemCreatorType.fromJson(String value) => AgentTasksListTasksForRepoResponseTasksItemCreatorType._(value);
-
-  static const user = AgentTasksListTasksForRepoResponseTasksItemCreatorType._('user');
-  static const organization = AgentTasksListTasksForRepoResponseTasksItemCreatorType._('organization');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is AgentTasksListTasksForRepoResponseTasksItemCreatorType && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// Current state of the task, derived from its most recent session
-final class AgentTasksListTasksForRepoResponseTasksItemState {
-
-  final String value;
-
-  const AgentTasksListTasksForRepoResponseTasksItemState._(this.value);
-
-  factory AgentTasksListTasksForRepoResponseTasksItemState.fromJson(String value) => AgentTasksListTasksForRepoResponseTasksItemState._(value);
-
-  static const queued = AgentTasksListTasksForRepoResponseTasksItemState._('queued');
-  static const inProgress = AgentTasksListTasksForRepoResponseTasksItemState._('in_progress');
-  static const completed = AgentTasksListTasksForRepoResponseTasksItemState._('completed');
-  static const failed = AgentTasksListTasksForRepoResponseTasksItemState._('failed');
-  static const idle = AgentTasksListTasksForRepoResponseTasksItemState._('idle');
-  static const waitingForUser = AgentTasksListTasksForRepoResponseTasksItemState._('waiting_for_user');
-  static const timedOut = AgentTasksListTasksForRepoResponseTasksItemState._('timed_out');
-  static const cancelled = AgentTasksListTasksForRepoResponseTasksItemState._('cancelled');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is AgentTasksListTasksForRepoResponseTasksItemState && other.value == value;
+  @override bool operator ==(Object other) => other is ChecksUpdateRequestBodyVariant1Conclusion && other.value == value;
 
   @override int get hashCode => value.hashCode;
 

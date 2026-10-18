@@ -4,288 +4,221 @@
 part of 'inline.dart';
 
 // Inline operation models (part 376)
-class IssuesAddLabelsRequestBodyVariant0LabelsItemVariant1 {
+class MigrationsUpdateImportRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The name of the label to add.
-  final String name;
-  /// Optional reasoning for adding this label.
-  final SdkOptional<String> rationale;
-  /// If `true`, the label is stored as a pending suggestion for human review rather than applied directly.
-  final SdkOptional<bool> suggest;
-  /// The confidence level for this label choice.
-  final SdkOptional<IssuesAddLabelsRequestBodyVariant0LabelsItemVariant1Confidence> confidence;
+  /// The username to provide to the originating repository.
+  final SdkOptional<String> vcsUsername;
+  /// The password to provide to the originating repository.
+  final SdkOptional<String> vcsPassword;
+  /// The type of version control system you are migrating from.
+  final SdkOptional<MigrationsUpdateImportRequestBodyVcs> vcs;
+  /// For a tfvc import, the name of the project that is being imported.
+  final SdkOptional<String> tfvcProject;
 
-  const IssuesAddLabelsRequestBodyVariant0LabelsItemVariant1({required this.name, this.rationale = const SdkOmitted(), this.suggest = const SdkOmitted(), this.confidence = const SdkOmitted()});
+  const MigrationsUpdateImportRequestBody({this.vcsUsername = const SdkOmitted(), this.vcsPassword = const SdkOmitted(), this.vcs = const SdkOmitted(), this.tfvcProject = const SdkOmitted()});
 
-  IssuesAddLabelsRequestBodyVariant0LabelsItemVariant1 Function({String name, SdkOptional<String> rationale, SdkOptional<bool> suggest, SdkOptional<IssuesAddLabelsRequestBodyVariant0LabelsItemVariant1Confidence> confidence}) get copyWith => _copyWith;
+  MigrationsUpdateImportRequestBody Function({SdkOptional<String> vcsUsername, SdkOptional<String> vcsPassword, SdkOptional<MigrationsUpdateImportRequestBodyVcs> vcs, SdkOptional<String> tfvcProject}) get copyWith => _copyWith;
 
-  IssuesAddLabelsRequestBodyVariant0LabelsItemVariant1 _copyWith({Object? name = sdkOmittedValue, Object? rationale = sdkOmittedValue, Object? suggest = sdkOmittedValue, Object? confidence = sdkOmittedValue}) => IssuesAddLabelsRequestBodyVariant0LabelsItemVariant1(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    rationale: identical(rationale, sdkOmittedValue) ? this.rationale : rationale as SdkOptional<String>,
-    suggest: identical(suggest, sdkOmittedValue) ? this.suggest : suggest as SdkOptional<bool>,
-    confidence: identical(confidence, sdkOmittedValue) ? this.confidence : confidence as SdkOptional<IssuesAddLabelsRequestBodyVariant0LabelsItemVariant1Confidence>,
+  MigrationsUpdateImportRequestBody _copyWith({Object? vcsUsername = sdkOmittedValue, Object? vcsPassword = sdkOmittedValue, Object? vcs = sdkOmittedValue, Object? tfvcProject = sdkOmittedValue}) => MigrationsUpdateImportRequestBody(
+    vcsUsername: identical(vcsUsername, sdkOmittedValue) ? this.vcsUsername : vcsUsername as SdkOptional<String>,
+    vcsPassword: identical(vcsPassword, sdkOmittedValue) ? this.vcsPassword : vcsPassword as SdkOptional<String>,
+    vcs: identical(vcs, sdkOmittedValue) ? this.vcs : vcs as SdkOptional<MigrationsUpdateImportRequestBodyVcs>,
+    tfvcProject: identical(tfvcProject, sdkOmittedValue) ? this.tfvcProject : tfvcProject as SdkOptional<String>,
   );
 
-  factory IssuesAddLabelsRequestBodyVariant0LabelsItemVariant1.fromJson(Map<String, dynamic> json) => IssuesAddLabelsRequestBodyVariant0LabelsItemVariant1(
-    name: (json['name'] as String?)!,
-    rationale: json['rationale'] != null ? SdkPresent((json['rationale'] as String?)!) : const SdkOmitted(),
-    suggest: json['suggest'] != null ? SdkPresent((json['suggest'] as bool?)!) : const SdkOmitted(),
-    confidence: json['confidence'] != null ? SdkPresent((json['confidence'] != null ? IssuesAddLabelsRequestBodyVariant0LabelsItemVariant1Confidence.fromJson(json['confidence'] as String) : null)!) : const SdkOmitted(),
+  factory MigrationsUpdateImportRequestBody.fromJson(Map<String, dynamic> json) => MigrationsUpdateImportRequestBody(
+    vcsUsername: json['vcs_username'] != null ? SdkPresent((json['vcs_username'] as String?)!) : const SdkOmitted(),
+    vcsPassword: json['vcs_password'] != null ? SdkPresent((json['vcs_password'] as String?)!) : const SdkOmitted(),
+    vcs: json['vcs'] != null ? SdkPresent((json['vcs'] != null ? MigrationsUpdateImportRequestBodyVcs.fromJson(json['vcs'] as String) : null)!) : const SdkOmitted(),
+    tfvcProject: json['tfvc_project'] != null ? SdkPresent((json['tfvc_project'] as String?)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    ...switch (rationale) {
-      SdkPresent<String>(value: final value) => {'rationale': value,},
+    ...switch (vcsUsername) {
+      SdkPresent<String>(value: final value) => {'vcs_username': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (suggest) {
-      SdkPresent<bool>(value: final value) => {'suggest': value,},
+    ...switch (vcsPassword) {
+      SdkPresent<String>(value: final value) => {'vcs_password': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (confidence) {
-      SdkPresent<IssuesAddLabelsRequestBodyVariant0LabelsItemVariant1Confidence>(value: final value) => {'confidence': value.toJson(),},
+    ...switch (vcs) {
+      SdkPresent<MigrationsUpdateImportRequestBodyVcs>(value: final value) => {'vcs': value.toJson(),},
       _ => const <String, dynamic>{},
     },
-  };
-}
-
-class IssuesAddLabelsRequestBodyVariant0 {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The labels to add to the issue's existing labels. You can also pass an `array` of labels directly, but GitHub recommends passing an object with the `labels` key. To replace all of the labels for an issue, use "[Set labels for an issue](https://docs.github.com/rest/issues/labels#set-labels-for-an-issue)."
-  final SdkOptional<List<dynamic>> labels;
-
-  const IssuesAddLabelsRequestBodyVariant0({this.labels = const SdkOmitted()});
-
-  IssuesAddLabelsRequestBodyVariant0 Function({SdkOptional<List<dynamic>> labels}) get copyWith => _copyWith;
-
-  IssuesAddLabelsRequestBodyVariant0 _copyWith({Object? labels = sdkOmittedValue}) => IssuesAddLabelsRequestBodyVariant0(
-    labels: identical(labels, sdkOmittedValue) ? this.labels : labels as SdkOptional<List<dynamic>>,
-  );
-
-  factory IssuesAddLabelsRequestBodyVariant0.fromJson(Map<String, dynamic> json) => IssuesAddLabelsRequestBodyVariant0(
-    labels: json['labels'] != null ? SdkPresent(((json['labels'] as List?)?.map((e) => e).toList())!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    ...switch (labels) {
-      SdkPresent<List<dynamic>>(value: final value) => {'labels': value,},
+    ...switch (tfvcProject) {
+      SdkPresent<String>(value: final value) => {'tfvc_project': value,},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-class IssuesAddLabelsRequestBodyVariant2Item {
+class MigrationsMapCommitAuthorRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final String name;
-  /// Optional reasoning for adding this label.
-  final SdkOptional<String> rationale;
-  /// If `true`, the label is stored as a pending suggestion for human review rather than applied directly.
-  final SdkOptional<bool> suggest;
-  /// The confidence level for this label choice.
-  final SdkOptional<IssuesAddLabelsRequestBodyVariant2ItemConfidence> confidence;
+  /// The new Git author email.
+  final SdkOptional<String> email;
+  /// The new Git author name.
+  final SdkOptional<String> name;
 
-  const IssuesAddLabelsRequestBodyVariant2Item({required this.name, this.rationale = const SdkOmitted(), this.suggest = const SdkOmitted(), this.confidence = const SdkOmitted()});
+  const MigrationsMapCommitAuthorRequestBody({this.email = const SdkOmitted(), this.name = const SdkOmitted()});
 
-  IssuesAddLabelsRequestBodyVariant2Item Function({String name, SdkOptional<String> rationale, SdkOptional<bool> suggest, SdkOptional<IssuesAddLabelsRequestBodyVariant2ItemConfidence> confidence}) get copyWith => _copyWith;
+  MigrationsMapCommitAuthorRequestBody Function({SdkOptional<String> email, SdkOptional<String> name}) get copyWith => _copyWith;
 
-  IssuesAddLabelsRequestBodyVariant2Item _copyWith({Object? name = sdkOmittedValue, Object? rationale = sdkOmittedValue, Object? suggest = sdkOmittedValue, Object? confidence = sdkOmittedValue}) => IssuesAddLabelsRequestBodyVariant2Item(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    rationale: identical(rationale, sdkOmittedValue) ? this.rationale : rationale as SdkOptional<String>,
-    suggest: identical(suggest, sdkOmittedValue) ? this.suggest : suggest as SdkOptional<bool>,
-    confidence: identical(confidence, sdkOmittedValue) ? this.confidence : confidence as SdkOptional<IssuesAddLabelsRequestBodyVariant2ItemConfidence>,
+  MigrationsMapCommitAuthorRequestBody _copyWith({Object? email = sdkOmittedValue, Object? name = sdkOmittedValue}) => MigrationsMapCommitAuthorRequestBody(
+    email: identical(email, sdkOmittedValue) ? this.email : email as SdkOptional<String>,
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
   );
 
-  factory IssuesAddLabelsRequestBodyVariant2Item.fromJson(Map<String, dynamic> json) => IssuesAddLabelsRequestBodyVariant2Item(
-    name: (json['name'] as String?)!,
-    rationale: json['rationale'] != null ? SdkPresent((json['rationale'] as String?)!) : const SdkOmitted(),
-    suggest: json['suggest'] != null ? SdkPresent((json['suggest'] as bool?)!) : const SdkOmitted(),
-    confidence: json['confidence'] != null ? SdkPresent((json['confidence'] != null ? IssuesAddLabelsRequestBodyVariant2ItemConfidence.fromJson(json['confidence'] as String) : null)!) : const SdkOmitted(),
+  factory MigrationsMapCommitAuthorRequestBody.fromJson(Map<String, dynamic> json) => MigrationsMapCommitAuthorRequestBody(
+    email: json['email'] != null ? SdkPresent((json['email'] as String?)!) : const SdkOmitted(),
+    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    ...switch (rationale) {
-      SdkPresent<String>(value: final value) => {'rationale': value,},
+    ...switch (email) {
+      SdkPresent<String>(value: final value) => {'email': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (suggest) {
-      SdkPresent<bool>(value: final value) => {'suggest': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (confidence) {
-      SdkPresent<IssuesAddLabelsRequestBodyVariant2ItemConfidence>(value: final value) => {'confidence': value.toJson(),},
+    ...switch (name) {
+      SdkPresent<String>(value: final value) => {'name': value,},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-class IssuesSetLabelsRequestBodyVariant0 {
+class MigrationsSetLfsPreferenceRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The names of the labels to set for the issue. The labels you set replace any existing labels. You can pass an empty array to remove all labels. Alternatively, you can pass a single label as a `string` or an `array` of labels directly, but GitHub recommends passing an object with the `labels` key. You can also add labels to the existing labels for an issue. For more information, see "[Add labels to an issue](https://docs.github.com/rest/issues/labels#add-labels-to-an-issue)."
-  final SdkOptional<List<String>> labels;
+  /// Whether to store large files during the import. `opt_in` means large files will be stored using Git LFS. `opt_out` means large files will be removed during the import.
+  final MigrationsSetLfsPreferenceRequestBodyUseLfs useLfs;
 
-  const IssuesSetLabelsRequestBodyVariant0({this.labels = const SdkOmitted()});
+  const MigrationsSetLfsPreferenceRequestBody({required this.useLfs});
 
-  IssuesSetLabelsRequestBodyVariant0 Function({SdkOptional<List<String>> labels}) get copyWith => _copyWith;
+  MigrationsSetLfsPreferenceRequestBody Function({MigrationsSetLfsPreferenceRequestBodyUseLfs useLfs}) get copyWith => _copyWith;
 
-  IssuesSetLabelsRequestBodyVariant0 _copyWith({Object? labels = sdkOmittedValue}) => IssuesSetLabelsRequestBodyVariant0(
-    labels: identical(labels, sdkOmittedValue) ? this.labels : labels as SdkOptional<List<String>>,
+  MigrationsSetLfsPreferenceRequestBody _copyWith({Object? useLfs = sdkOmittedValue}) => MigrationsSetLfsPreferenceRequestBody(
+    useLfs: identical(useLfs, sdkOmittedValue) ? this.useLfs : useLfs as MigrationsSetLfsPreferenceRequestBodyUseLfs,
   );
 
-  factory IssuesSetLabelsRequestBodyVariant0.fromJson(Map<String, dynamic> json) => IssuesSetLabelsRequestBodyVariant0(
-    labels: json['labels'] != null ? SdkPresent(((json['labels'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+  factory MigrationsSetLfsPreferenceRequestBody.fromJson(Map<String, dynamic> json) => MigrationsSetLfsPreferenceRequestBody(
+    useLfs: (json['use_lfs'] != null ? MigrationsSetLfsPreferenceRequestBodyUseLfs.fromJson(json['use_lfs'] as String) : null)!,
   );
 
   Map<String, dynamic> toJson() => {
-    ...switch (labels) {
-      SdkPresent<List<String>>(value: final value) => {'labels': value,},
+    'use_lfs': useLfs.toJson(),
+  };
+}
+
+class MigrationsStartForAuthenticatedUserRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// Lock the repositories being migrated at the start of the migration
+  final SdkOptional<bool> lockRepositories;
+  /// Indicates whether metadata should be excluded and only git source should be included for the migration.
+  final SdkOptional<bool> excludeMetadata;
+  /// Indicates whether the repository git data should be excluded from the migration.
+  final SdkOptional<bool> excludeGitData;
+  /// Do not include attachments in the migration
+  final SdkOptional<bool> excludeAttachments;
+  /// Do not include releases in the migration
+  final SdkOptional<bool> excludeReleases;
+  /// Indicates whether projects owned by the organization or users should be excluded.
+  final SdkOptional<bool> excludeOwnerProjects;
+  /// Indicates whether this should only include organization metadata (repositories array should be empty and will ignore other flags).
+  final SdkOptional<bool> orgMetadataOnly;
+  /// Exclude attributes from the API response to improve performance
+  final SdkOptional<List<MigrationsStartForAuthenticatedUserRequestBodyExcludeItem>> exclude;
+  final List<String> repositories;
+
+  const MigrationsStartForAuthenticatedUserRequestBody({this.lockRepositories = const SdkOmitted(), this.excludeMetadata = const SdkOmitted(), this.excludeGitData = const SdkOmitted(), this.excludeAttachments = const SdkOmitted(), this.excludeReleases = const SdkOmitted(), this.excludeOwnerProjects = const SdkOmitted(), this.orgMetadataOnly = const SdkOmitted(), this.exclude = const SdkOmitted(), required this.repositories});
+
+  MigrationsStartForAuthenticatedUserRequestBody Function({SdkOptional<bool> lockRepositories, SdkOptional<bool> excludeMetadata, SdkOptional<bool> excludeGitData, SdkOptional<bool> excludeAttachments, SdkOptional<bool> excludeReleases, SdkOptional<bool> excludeOwnerProjects, SdkOptional<bool> orgMetadataOnly, SdkOptional<List<MigrationsStartForAuthenticatedUserRequestBodyExcludeItem>> exclude, List<String> repositories}) get copyWith => _copyWith;
+
+  MigrationsStartForAuthenticatedUserRequestBody _copyWith({Object? lockRepositories = sdkOmittedValue, Object? excludeMetadata = sdkOmittedValue, Object? excludeGitData = sdkOmittedValue, Object? excludeAttachments = sdkOmittedValue, Object? excludeReleases = sdkOmittedValue, Object? excludeOwnerProjects = sdkOmittedValue, Object? orgMetadataOnly = sdkOmittedValue, Object? exclude = sdkOmittedValue, Object? repositories = sdkOmittedValue}) => MigrationsStartForAuthenticatedUserRequestBody(
+    lockRepositories: identical(lockRepositories, sdkOmittedValue) ? this.lockRepositories : lockRepositories as SdkOptional<bool>,
+    excludeMetadata: identical(excludeMetadata, sdkOmittedValue) ? this.excludeMetadata : excludeMetadata as SdkOptional<bool>,
+    excludeGitData: identical(excludeGitData, sdkOmittedValue) ? this.excludeGitData : excludeGitData as SdkOptional<bool>,
+    excludeAttachments: identical(excludeAttachments, sdkOmittedValue) ? this.excludeAttachments : excludeAttachments as SdkOptional<bool>,
+    excludeReleases: identical(excludeReleases, sdkOmittedValue) ? this.excludeReleases : excludeReleases as SdkOptional<bool>,
+    excludeOwnerProjects: identical(excludeOwnerProjects, sdkOmittedValue) ? this.excludeOwnerProjects : excludeOwnerProjects as SdkOptional<bool>,
+    orgMetadataOnly: identical(orgMetadataOnly, sdkOmittedValue) ? this.orgMetadataOnly : orgMetadataOnly as SdkOptional<bool>,
+    exclude: identical(exclude, sdkOmittedValue) ? this.exclude : exclude as SdkOptional<List<MigrationsStartForAuthenticatedUserRequestBodyExcludeItem>>,
+    repositories: identical(repositories, sdkOmittedValue) ? this.repositories : repositories as List<String>,
+  );
+
+  factory MigrationsStartForAuthenticatedUserRequestBody.fromJson(Map<String, dynamic> json) => MigrationsStartForAuthenticatedUserRequestBody(
+    lockRepositories: json['lock_repositories'] != null ? SdkPresent((json['lock_repositories'] as bool?)!) : const SdkOmitted(),
+    excludeMetadata: json['exclude_metadata'] != null ? SdkPresent((json['exclude_metadata'] as bool?)!) : const SdkOmitted(),
+    excludeGitData: json['exclude_git_data'] != null ? SdkPresent((json['exclude_git_data'] as bool?)!) : const SdkOmitted(),
+    excludeAttachments: json['exclude_attachments'] != null ? SdkPresent((json['exclude_attachments'] as bool?)!) : const SdkOmitted(),
+    excludeReleases: json['exclude_releases'] != null ? SdkPresent((json['exclude_releases'] as bool?)!) : const SdkOmitted(),
+    excludeOwnerProjects: json['exclude_owner_projects'] != null ? SdkPresent((json['exclude_owner_projects'] as bool?)!) : const SdkOmitted(),
+    orgMetadataOnly: json['org_metadata_only'] != null ? SdkPresent((json['org_metadata_only'] as bool?)!) : const SdkOmitted(),
+    exclude: json['exclude'] != null ? SdkPresent(((json['exclude'] as List?)?.map((e) => MigrationsStartForAuthenticatedUserRequestBodyExcludeItem.fromJson(e as String)).toList())!) : const SdkOmitted(),
+    repositories: ((json['repositories'] as List?)?.map((e) => e as String).toList())!,
+  );
+
+  Map<String, dynamic> toJson() => {
+    ...switch (lockRepositories) {
+      SdkPresent<bool>(value: final value) => {'lock_repositories': value,},
       _ => const <String, dynamic>{},
     },
-  };
-}
-
-class IssuesSetLabelsRequestBodyVariant2LabelsItem {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final String name;
-
-  const IssuesSetLabelsRequestBodyVariant2LabelsItem({required this.name});
-
-  IssuesSetLabelsRequestBodyVariant2LabelsItem Function({String name}) get copyWith => _copyWith;
-
-  IssuesSetLabelsRequestBodyVariant2LabelsItem _copyWith({Object? name = sdkOmittedValue}) => IssuesSetLabelsRequestBodyVariant2LabelsItem(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-  );
-
-  factory IssuesSetLabelsRequestBodyVariant2LabelsItem.fromJson(Map<String, dynamic> json) => IssuesSetLabelsRequestBodyVariant2LabelsItem(
-    name: (json['name'] as String?)!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'name': name,
-  };
-}
-
-class IssuesSetLabelsRequestBodyVariant2 {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final SdkOptional<List<IssuesSetLabelsRequestBodyVariant2LabelsItem>> labels;
-
-  const IssuesSetLabelsRequestBodyVariant2({this.labels = const SdkOmitted()});
-
-  IssuesSetLabelsRequestBodyVariant2 Function({SdkOptional<List<IssuesSetLabelsRequestBodyVariant2LabelsItem>> labels}) get copyWith => _copyWith;
-
-  IssuesSetLabelsRequestBodyVariant2 _copyWith({Object? labels = sdkOmittedValue}) => IssuesSetLabelsRequestBodyVariant2(
-    labels: identical(labels, sdkOmittedValue) ? this.labels : labels as SdkOptional<List<IssuesSetLabelsRequestBodyVariant2LabelsItem>>,
-  );
-
-  factory IssuesSetLabelsRequestBodyVariant2.fromJson(Map<String, dynamic> json) => IssuesSetLabelsRequestBodyVariant2(
-    labels: json['labels'] != null ? SdkPresent(((json['labels'] as List?)?.map((e) => IssuesSetLabelsRequestBodyVariant2LabelsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    ...switch (labels) {
-      SdkPresent<List<IssuesSetLabelsRequestBodyVariant2LabelsItem>>(value: final value) => {'labels': value.map((item) => item.toJson()).toList(),},
+    ...switch (excludeMetadata) {
+      SdkPresent<bool>(value: final value) => {'exclude_metadata': value,},
       _ => const <String, dynamic>{},
     },
-  };
-}
-
-class IssuesSetLabelsRequestBodyVariant3Item {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final String name;
-
-  const IssuesSetLabelsRequestBodyVariant3Item({required this.name});
-
-  IssuesSetLabelsRequestBodyVariant3Item Function({String name}) get copyWith => _copyWith;
-
-  IssuesSetLabelsRequestBodyVariant3Item _copyWith({Object? name = sdkOmittedValue}) => IssuesSetLabelsRequestBodyVariant3Item(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-  );
-
-  factory IssuesSetLabelsRequestBodyVariant3Item.fromJson(Map<String, dynamic> json) => IssuesSetLabelsRequestBodyVariant3Item(
-    name: (json['name'] as String?)!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'name': name,
-  };
-}
-
-class IssuesLockRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The reason for locking the issue or pull request conversation. Lock will fail if you don't use one of these reasons: * `off-topic` * `too heated` * `resolved` * `spam`
-  final SdkOptional<IssuesLockRequestBodyLockReason> lockReason;
-
-  const IssuesLockRequestBody({this.lockReason = const SdkOmitted()});
-
-  IssuesLockRequestBody Function({SdkOptional<IssuesLockRequestBodyLockReason> lockReason}) get copyWith => _copyWith;
-
-  IssuesLockRequestBody _copyWith({Object? lockReason = sdkOmittedValue}) => IssuesLockRequestBody(
-    lockReason: identical(lockReason, sdkOmittedValue) ? this.lockReason : lockReason as SdkOptional<IssuesLockRequestBodyLockReason>,
-  );
-
-  factory IssuesLockRequestBody.fromJson(Map<String, dynamic> json) => IssuesLockRequestBody(
-    lockReason: json['lock_reason'] != null ? SdkPresent((json['lock_reason'] != null ? IssuesLockRequestBodyLockReason.fromJson(json['lock_reason'] as String) : null)!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    ...switch (lockReason) {
-      SdkPresent<IssuesLockRequestBodyLockReason>(value: final value) => {'lock_reason': value.toJson(),},
+    ...switch (excludeGitData) {
+      SdkPresent<bool>(value: final value) => {'exclude_git_data': value,},
       _ => const <String, dynamic>{},
     },
+    ...switch (excludeAttachments) {
+      SdkPresent<bool>(value: final value) => {'exclude_attachments': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (excludeReleases) {
+      SdkPresent<bool>(value: final value) => {'exclude_releases': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (excludeOwnerProjects) {
+      SdkPresent<bool>(value: final value) => {'exclude_owner_projects': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (orgMetadataOnly) {
+      SdkPresent<bool>(value: final value) => {'org_metadata_only': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (exclude) {
+      SdkPresent<List<MigrationsStartForAuthenticatedUserRequestBodyExcludeItem>>(value: final value) => {'exclude': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    'repositories': repositories,
   };
 }
 
-class IssuesAddRelatesToRequestBody {
+class PrivateRegistriesListOrgPrivateRegistriesResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The id of the issue to mark as related to the current issue
-  final int issueId;
+  final int totalCount;
+  final List<OrgPrivateRegistryConfiguration> configurations;
 
-  const IssuesAddRelatesToRequestBody({required this.issueId});
+  const PrivateRegistriesListOrgPrivateRegistriesResponse({required this.totalCount, required this.configurations});
 
-  IssuesAddRelatesToRequestBody Function({int issueId}) get copyWith => _copyWith;
+  PrivateRegistriesListOrgPrivateRegistriesResponse Function({int totalCount, List<OrgPrivateRegistryConfiguration> configurations}) get copyWith => _copyWith;
 
-  IssuesAddRelatesToRequestBody _copyWith({Object? issueId = sdkOmittedValue}) => IssuesAddRelatesToRequestBody(
-    issueId: identical(issueId, sdkOmittedValue) ? this.issueId : issueId as int,
+  PrivateRegistriesListOrgPrivateRegistriesResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? configurations = sdkOmittedValue}) => PrivateRegistriesListOrgPrivateRegistriesResponse(
+    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
+    configurations: identical(configurations, sdkOmittedValue) ? this.configurations : configurations as List<OrgPrivateRegistryConfiguration>,
   );
 
-  factory IssuesAddRelatesToRequestBody.fromJson(Map<String, dynamic> json) => IssuesAddRelatesToRequestBody(
-    issueId: ((json['issue_id'] as num?)?.toInt())!,
+  factory PrivateRegistriesListOrgPrivateRegistriesResponse.fromJson(Map<String, dynamic> json) => PrivateRegistriesListOrgPrivateRegistriesResponse(
+    totalCount: ((json['total_count'] as num?)?.toInt())!,
+    configurations: ((json['configurations'] as List?)?.map((e) => OrgPrivateRegistryConfiguration.fromJson(e as Map<String, dynamic>)).toList())!,
   );
 
   Map<String, dynamic> toJson() => {
-    'issue_id': issueId,
-  };
-}
-
-class IssuesRemoveSubIssueRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The id of the sub-issue to remove
-  final int subIssueId;
-
-  const IssuesRemoveSubIssueRequestBody({required this.subIssueId});
-
-  IssuesRemoveSubIssueRequestBody Function({int subIssueId}) get copyWith => _copyWith;
-
-  IssuesRemoveSubIssueRequestBody _copyWith({Object? subIssueId = sdkOmittedValue}) => IssuesRemoveSubIssueRequestBody(
-    subIssueId: identical(subIssueId, sdkOmittedValue) ? this.subIssueId : subIssueId as int,
-  );
-
-  factory IssuesRemoveSubIssueRequestBody.fromJson(Map<String, dynamic> json) => IssuesRemoveSubIssueRequestBody(
-    subIssueId: ((json['sub_issue_id'] as num?)?.toInt())!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'sub_issue_id': subIssueId,
+    'total_count': totalCount,
+    'configurations': configurations.map((item) => item.toJson()).toList(),
   };
 }

@@ -4,103 +4,70 @@
 part of 'webhook_pull_request_review_requested.dart';
 
 // webhook_pull_request_review_requested domain models (part 32)
-class WebhookPullRequestReviewRequestedVariant1PullRequestBase {
+class WebhookPullRequestReviewRequestedVariant1PullRequestBaseRepoPermissions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final String label;
-  final String ref;
-  /// A git repository
-  final WebhookPullRequestReviewRequestedVariant1PullRequestBaseRepo repo;
-  final String sha;
-  final WebhookPullRequestReviewRequestedVariant1PullRequestBaseUser? user;
+  final bool admin;
+  final SdkOptional<bool> maintain;
+  final bool pull;
+  final bool push;
+  final SdkOptional<bool> triage;
 
-  const WebhookPullRequestReviewRequestedVariant1PullRequestBase({required this.label, required this.ref, required this.repo, required this.sha, required this.user});
+  const WebhookPullRequestReviewRequestedVariant1PullRequestBaseRepoPermissions({required this.admin, this.maintain = const SdkOmitted(), required this.pull, required this.push, this.triage = const SdkOmitted()});
 
-  WebhookPullRequestReviewRequestedVariant1PullRequestBase Function({String label, String ref, WebhookPullRequestReviewRequestedVariant1PullRequestBaseRepo repo, String sha, WebhookPullRequestReviewRequestedVariant1PullRequestBaseUser? user}) get copyWith => _copyWith;
+  WebhookPullRequestReviewRequestedVariant1PullRequestBaseRepoPermissions Function({bool admin, SdkOptional<bool> maintain, bool pull, bool push, SdkOptional<bool> triage}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewRequestedVariant1PullRequestBase _copyWith({Object? label = sdkOmittedValue, Object? ref = sdkOmittedValue, Object? repo = sdkOmittedValue, Object? sha = sdkOmittedValue, Object? user = sdkOmittedValue}) => WebhookPullRequestReviewRequestedVariant1PullRequestBase(
-    label: identical(label, sdkOmittedValue) ? this.label : label as String,
-    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-    repo: identical(repo, sdkOmittedValue) ? this.repo : repo as WebhookPullRequestReviewRequestedVariant1PullRequestBaseRepo,
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-    user: identical(user, sdkOmittedValue) ? this.user : user as WebhookPullRequestReviewRequestedVariant1PullRequestBaseUser?,
+  WebhookPullRequestReviewRequestedVariant1PullRequestBaseRepoPermissions _copyWith({Object? admin = sdkOmittedValue, Object? maintain = sdkOmittedValue, Object? pull = sdkOmittedValue, Object? push = sdkOmittedValue, Object? triage = sdkOmittedValue}) => WebhookPullRequestReviewRequestedVariant1PullRequestBaseRepoPermissions(
+    admin: identical(admin, sdkOmittedValue) ? this.admin : admin as bool,
+    maintain: identical(maintain, sdkOmittedValue) ? this.maintain : maintain as SdkOptional<bool>,
+    pull: identical(pull, sdkOmittedValue) ? this.pull : pull as bool,
+    push: identical(push, sdkOmittedValue) ? this.push : push as bool,
+    triage: identical(triage, sdkOmittedValue) ? this.triage : triage as SdkOptional<bool>,
   );
 
-  factory WebhookPullRequestReviewRequestedVariant1PullRequestBase.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewRequestedVariant1PullRequestBase(
-    label: (json['label'] as String?)!,
-    ref: (json['ref'] as String?)!,
-    repo: (json['repo'] != null ? WebhookPullRequestReviewRequestedVariant1PullRequestBaseRepo.fromJson(json['repo'] as Map<String, dynamic>) : null)!,
-    sha: (json['sha'] as String?)!,
-    user: json.containsKey('user') ? json['user'] != null ? WebhookPullRequestReviewRequestedVariant1PullRequestBaseUser.fromJson(json['user'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'user', 'Required property is missing'),
+  factory WebhookPullRequestReviewRequestedVariant1PullRequestBaseRepoPermissions.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewRequestedVariant1PullRequestBaseRepoPermissions(
+    admin: (json['admin'] as bool?)!,
+    maintain: json['maintain'] != null ? SdkPresent((json['maintain'] as bool?)!) : const SdkOmitted(),
+    pull: (json['pull'] as bool?)!,
+    push: (json['push'] as bool?)!,
+    triage: json['triage'] != null ? SdkPresent((json['triage'] as bool?)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    'label': label,
-    'ref': ref,
-    'repo': repo.toJson(),
-    'sha': sha,
-    'user': user?.toJson(),
+    'admin': admin,
+    ...switch (maintain) {
+      SdkPresent<bool>(value: final value) => {'maintain': value,},
+      _ => const <String, dynamic>{},
+    },
+    'pull': pull,
+    'push': push,
+    ...switch (triage) {
+      SdkPresent<bool>(value: final value) => {'triage': value,},
+      _ => const <String, dynamic>{},
+    },
   };
 }
 
-sealed class WebhookPullRequestReviewRequestedVariant1PullRequestHeadRepoCreatedAt {
+sealed class WebhookPullRequestReviewRequestedVariant1PullRequestBaseRepoPushedAt {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  const WebhookPullRequestReviewRequestedVariant1PullRequestHeadRepoCreatedAt();
-  factory WebhookPullRequestReviewRequestedVariant1PullRequestHeadRepoCreatedAt.fromJson(Object? json) {
-    if (json is String) { return WebhookPullRequestReviewRequestedVariant1PullRequestHeadRepoCreatedAtString(json); }
-    if (json is num) { return WebhookPullRequestReviewRequestedVariant1PullRequestHeadRepoCreatedAtInt(json.toInt()); }
-    throw FormatException("No variant matched for WebhookPullRequestReviewRequestedVariant1PullRequestHeadRepoCreatedAt");
+  const WebhookPullRequestReviewRequestedVariant1PullRequestBaseRepoPushedAt();
+  factory WebhookPullRequestReviewRequestedVariant1PullRequestBaseRepoPushedAt.fromJson(Object? json) {
+    if (json is String) { return WebhookPullRequestReviewRequestedVariant1PullRequestBaseRepoPushedAtString(json); }
+    if (json is num) { return WebhookPullRequestReviewRequestedVariant1PullRequestBaseRepoPushedAtInt(json.toInt()); }
+    throw FormatException("No variant matched for WebhookPullRequestReviewRequestedVariant1PullRequestBaseRepoPushedAt");
   }
   Object? toJson();
 }
 
-final class WebhookPullRequestReviewRequestedVariant1PullRequestHeadRepoCreatedAtInt extends WebhookPullRequestReviewRequestedVariant1PullRequestHeadRepoCreatedAt {
+final class WebhookPullRequestReviewRequestedVariant1PullRequestBaseRepoPushedAtInt extends WebhookPullRequestReviewRequestedVariant1PullRequestBaseRepoPushedAt {
   final int value;
-  const WebhookPullRequestReviewRequestedVariant1PullRequestHeadRepoCreatedAtInt(this.value);
+  const WebhookPullRequestReviewRequestedVariant1PullRequestBaseRepoPushedAtInt(this.value);
   @override Object? toJson() => value;
 }
 
-final class WebhookPullRequestReviewRequestedVariant1PullRequestHeadRepoCreatedAtString extends WebhookPullRequestReviewRequestedVariant1PullRequestHeadRepoCreatedAt {
+final class WebhookPullRequestReviewRequestedVariant1PullRequestBaseRepoPushedAtString extends WebhookPullRequestReviewRequestedVariant1PullRequestBaseRepoPushedAt {
   final String value;
-  const WebhookPullRequestReviewRequestedVariant1PullRequestHeadRepoCreatedAtString(this.value);
+  const WebhookPullRequestReviewRequestedVariant1PullRequestBaseRepoPushedAtString(this.value);
   @override Object? toJson() => value;
-}
-
-class WebhookPullRequestReviewRequestedVariant1PullRequestHeadRepoLicense {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final String key;
-  final String name;
-  final String nodeId;
-  final String spdxId;
-  final String? url;
-
-  const WebhookPullRequestReviewRequestedVariant1PullRequestHeadRepoLicense({required this.key, required this.name, required this.nodeId, required this.spdxId, required this.url});
-
-  WebhookPullRequestReviewRequestedVariant1PullRequestHeadRepoLicense Function({String key, String name, String nodeId, String spdxId, String? url}) get copyWith => _copyWith;
-
-  WebhookPullRequestReviewRequestedVariant1PullRequestHeadRepoLicense _copyWith({Object? key = sdkOmittedValue, Object? name = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? spdxId = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookPullRequestReviewRequestedVariant1PullRequestHeadRepoLicense(
-    key: identical(key, sdkOmittedValue) ? this.key : key as String,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    spdxId: identical(spdxId, sdkOmittedValue) ? this.spdxId : spdxId as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String?,
-  );
-
-  factory WebhookPullRequestReviewRequestedVariant1PullRequestHeadRepoLicense.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewRequestedVariant1PullRequestHeadRepoLicense(
-    key: (json['key'] as String?)!,
-    name: (json['name'] as String?)!,
-    nodeId: (json['node_id'] as String?)!,
-    spdxId: (json['spdx_id'] as String?)!,
-    url: json.containsKey('url') ? json['url'] as String? : throw ArgumentError.value(null, 'url', 'Required property is missing'),
-  );
-
-  Map<String, dynamic> toJson() => {
-    'key': key,
-    'name': name,
-    'node_id': nodeId,
-    'spdx_id': spdxId,
-    'url': url,
-  };
 }

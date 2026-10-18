@@ -4,278 +4,279 @@
 part of 'inline.dart';
 
 // Inline operation models (part 219)
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhooksIssueUserType {
+/// Machine-readable error code
+final class AgentAutomationsListAutomationTasksResponseErrorsItemCode5b4e04b2 {
 
   final String value;
 
-  const WebhooksIssueUserType._(this.value);
+  const AgentAutomationsListAutomationTasksResponseErrorsItemCode5b4e04b2._(this.value);
 
-  factory WebhooksIssueUserType.fromJson(String value) => WebhooksIssueUserType._(value);
+  factory AgentAutomationsListAutomationTasksResponseErrorsItemCode5b4e04b2.fromJson(String value) => AgentAutomationsListAutomationTasksResponseErrorsItemCode5b4e04b2._(value);
 
-  static const bot = WebhooksIssueUserType._('Bot');
-  static const user = WebhooksIssueUserType._('User');
-  static const organization = WebhooksIssueUserType._('Organization');
-  static const mannequin = WebhooksIssueUserType._('Mannequin');
+  static const missing = AgentAutomationsListAutomationTasksResponseErrorsItemCode5b4e04b2._('missing');
+  static const missingField = AgentAutomationsListAutomationTasksResponseErrorsItemCode5b4e04b2._('missing_field');
+  static const invalid = AgentAutomationsListAutomationTasksResponseErrorsItemCode5b4e04b2._('invalid');
+  static const alreadyExists = AgentAutomationsListAutomationTasksResponseErrorsItemCode5b4e04b2._('already_exists');
+  static const unprocessable = AgentAutomationsListAutomationTasksResponseErrorsItemCode5b4e04b2._('unprocessable');
+  static const custom = AgentAutomationsListAutomationTasksResponseErrorsItemCode5b4e04b2._('custom');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksIssueUserType && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsListAutomationTasksResponseErrorsItemCode5b4e04b2 && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Required enumerated value serialized in the `active_lock_reason` wire field.
-final class WebhooksIssue2ActiveLockReason {
+/// Machine-readable error code
+final class AgentAutomationsListAutomationTasksResponseErrorsItemCodeaa92f63b {
 
   final String value;
 
-  const WebhooksIssue2ActiveLockReason._(this.value);
+  const AgentAutomationsListAutomationTasksResponseErrorsItemCodeaa92f63b._(this.value);
 
-  factory WebhooksIssue2ActiveLockReason.fromJson(String value) => WebhooksIssue2ActiveLockReason._(value);
+  factory AgentAutomationsListAutomationTasksResponseErrorsItemCodeaa92f63b.fromJson(String value) => AgentAutomationsListAutomationTasksResponseErrorsItemCodeaa92f63b._(value);
 
-  static const resolved = WebhooksIssue2ActiveLockReason._('resolved');
-  static const offTopic = WebhooksIssue2ActiveLockReason._('off-topic');
-  static const tooHeated = WebhooksIssue2ActiveLockReason._('too heated');
-  static const spam = WebhooksIssue2ActiveLockReason._('spam');
+  static const missing = AgentAutomationsListAutomationTasksResponseErrorsItemCodeaa92f63b._('missing');
+  static const missingField = AgentAutomationsListAutomationTasksResponseErrorsItemCodeaa92f63b._('missing_field');
+  static const invalid = AgentAutomationsListAutomationTasksResponseErrorsItemCodeaa92f63b._('invalid');
+  static const alreadyExists = AgentAutomationsListAutomationTasksResponseErrorsItemCodeaa92f63b._('already_exists');
+  static const unprocessable = AgentAutomationsListAutomationTasksResponseErrorsItemCodeaa92f63b._('unprocessable');
+  static const custom = AgentAutomationsListAutomationTasksResponseErrorsItemCodeaa92f63b._('custom');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksIssue2ActiveLockReason && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsListAutomationTasksResponseErrorsItemCodeaa92f63b && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhooksIssue2AssigneeType {
+/// The tool's behavior level. `read` tools only retrieve data. `write` tools can change data. This describes tool behavior, not a specific GitHub token permission.
+final class AgentAutomationsListAvailableAutomationToolsResponseItemToolsItemScope {
 
   final String value;
 
-  const WebhooksIssue2AssigneeType._(this.value);
+  const AgentAutomationsListAvailableAutomationToolsResponseItemToolsItemScope._(this.value);
 
-  factory WebhooksIssue2AssigneeType.fromJson(String value) => WebhooksIssue2AssigneeType._(value);
+  factory AgentAutomationsListAvailableAutomationToolsResponseItemToolsItemScope.fromJson(String value) => AgentAutomationsListAvailableAutomationToolsResponseItemToolsItemScope._(value);
 
-  static const bot = WebhooksIssue2AssigneeType._('Bot');
-  static const user = WebhooksIssue2AssigneeType._('User');
-  static const organization = WebhooksIssue2AssigneeType._('Organization');
+  static const read = AgentAutomationsListAvailableAutomationToolsResponseItemToolsItemScope._('read');
+  static const write = AgentAutomationsListAvailableAutomationToolsResponseItemToolsItemScope._('write');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksIssue2AssigneeType && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsListAvailableAutomationToolsResponseItemToolsItemScope && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhooksIssue2AssigneesItemType {
+/// Machine-readable error code
+final class AgentAutomationsListAvailableAutomationToolsResponseErrorsItemCode {
 
   final String value;
 
-  const WebhooksIssue2AssigneesItemType._(this.value);
+  const AgentAutomationsListAvailableAutomationToolsResponseErrorsItemCode._(this.value);
 
-  factory WebhooksIssue2AssigneesItemType.fromJson(String value) => WebhooksIssue2AssigneesItemType._(value);
+  factory AgentAutomationsListAvailableAutomationToolsResponseErrorsItemCode.fromJson(String value) => AgentAutomationsListAvailableAutomationToolsResponseErrorsItemCode._(value);
 
-  static const bot = WebhooksIssue2AssigneesItemType._('Bot');
-  static const user = WebhooksIssue2AssigneesItemType._('User');
-  static const organization = WebhooksIssue2AssigneesItemType._('Organization');
+  static const missing = AgentAutomationsListAvailableAutomationToolsResponseErrorsItemCode._('missing');
+  static const missingField = AgentAutomationsListAvailableAutomationToolsResponseErrorsItemCode._('missing_field');
+  static const invalid = AgentAutomationsListAvailableAutomationToolsResponseErrorsItemCode._('invalid');
+  static const alreadyExists = AgentAutomationsListAvailableAutomationToolsResponseErrorsItemCode._('already_exists');
+  static const unprocessable = AgentAutomationsListAvailableAutomationToolsResponseErrorsItemCode._('unprocessable');
+  static const custom = AgentAutomationsListAvailableAutomationToolsResponseErrorsItemCode._('custom');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksIssue2AssigneesItemType && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsListAvailableAutomationToolsResponseErrorsItemCode && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// How the author is associated with the repository.
-final class WebhooksIssue2AuthorAssociation {
+/// Machine-readable error code
+final class AgentAutomationsListAvailableAutomationTriggersResponseErrorsItemCode {
 
   final String value;
 
-  const WebhooksIssue2AuthorAssociation._(this.value);
+  const AgentAutomationsListAvailableAutomationTriggersResponseErrorsItemCode._(this.value);
 
-  factory WebhooksIssue2AuthorAssociation.fromJson(String value) => WebhooksIssue2AuthorAssociation._(value);
+  factory AgentAutomationsListAvailableAutomationTriggersResponseErrorsItemCode.fromJson(String value) => AgentAutomationsListAvailableAutomationTriggersResponseErrorsItemCode._(value);
 
-  static const collaborator = WebhooksIssue2AuthorAssociation._('COLLABORATOR');
-  static const contributor = WebhooksIssue2AuthorAssociation._('CONTRIBUTOR');
-  static const firstTimer = WebhooksIssue2AuthorAssociation._('FIRST_TIMER');
-  static const firstTimeContributor = WebhooksIssue2AuthorAssociation._('FIRST_TIME_CONTRIBUTOR');
-  static const mannequin = WebhooksIssue2AuthorAssociation._('MANNEQUIN');
-  static const member = WebhooksIssue2AuthorAssociation._('MEMBER');
-  static const none = WebhooksIssue2AuthorAssociation._('NONE');
-  static const owner = WebhooksIssue2AuthorAssociation._('OWNER');
+  static const missing = AgentAutomationsListAvailableAutomationTriggersResponseErrorsItemCode._('missing');
+  static const missingField = AgentAutomationsListAvailableAutomationTriggersResponseErrorsItemCode._('missing_field');
+  static const invalid = AgentAutomationsListAvailableAutomationTriggersResponseErrorsItemCode._('invalid');
+  static const alreadyExists = AgentAutomationsListAvailableAutomationTriggersResponseErrorsItemCode._('already_exists');
+  static const unprocessable = AgentAutomationsListAvailableAutomationTriggersResponseErrorsItemCode._('unprocessable');
+  static const custom = AgentAutomationsListAvailableAutomationTriggersResponseErrorsItemCode._('custom');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksIssue2AuthorAssociation && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsListAvailableAutomationTriggersResponseErrorsItemCode && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhooksIssue2MilestoneCreatorType {
+final class AgentAutomationsListRepoAutomationsOwnerType {
 
   final String value;
 
-  const WebhooksIssue2MilestoneCreatorType._(this.value);
+  const AgentAutomationsListRepoAutomationsOwnerType._(this.value);
 
-  factory WebhooksIssue2MilestoneCreatorType.fromJson(String value) => WebhooksIssue2MilestoneCreatorType._(value);
+  factory AgentAutomationsListRepoAutomationsOwnerType.fromJson(String value) => AgentAutomationsListRepoAutomationsOwnerType._(value);
 
-  static const bot = WebhooksIssue2MilestoneCreatorType._('Bot');
-  static const user = WebhooksIssue2MilestoneCreatorType._('User');
-  static const organization = WebhooksIssue2MilestoneCreatorType._('Organization');
+  static const user = AgentAutomationsListRepoAutomationsOwnerType._('user');
+  static const repository = AgentAutomationsListRepoAutomationsOwnerType._('repository');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksIssue2MilestoneCreatorType && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsListRepoAutomationsOwnerType && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// The state of the milestone.
-final class WebhooksIssue2MilestoneState {
+/// Who owns the automation. `user` keeps it private to its creator and its runs act as that user. `repository` makes it belong to the repository, visible to anyone with read access to the repository, and its runs act as the Copilot app rather than as a person.
+final class AgentAutomationsListRepoAutomationsResponseAutomationsItemOwnerType {
 
   final String value;
 
-  const WebhooksIssue2MilestoneState._(this.value);
+  const AgentAutomationsListRepoAutomationsResponseAutomationsItemOwnerType._(this.value);
 
-  factory WebhooksIssue2MilestoneState.fromJson(String value) => WebhooksIssue2MilestoneState._(value);
+  factory AgentAutomationsListRepoAutomationsResponseAutomationsItemOwnerType.fromJson(String value) => AgentAutomationsListRepoAutomationsResponseAutomationsItemOwnerType._(value);
 
-  static const open = WebhooksIssue2MilestoneState._('open');
-  static const closed = WebhooksIssue2MilestoneState._('closed');
+  static const user = AgentAutomationsListRepoAutomationsResponseAutomationsItemOwnerType._('user');
+  static const repository = AgentAutomationsListRepoAutomationsResponseAutomationsItemOwnerType._('repository');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksIssue2MilestoneState && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsListRepoAutomationsResponseAutomationsItemOwnerType && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Required enumerated value serialized in the `events[]` wire field.
-final class WebhooksIssue2PerformedViaGithubAppEventsItem {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersAutomationCompletedWriteScope {
 
   final String value;
 
-  const WebhooksIssue2PerformedViaGithubAppEventsItem._(this.value);
+  const AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersAutomationCompletedWriteScope._(this.value);
 
-  factory WebhooksIssue2PerformedViaGithubAppEventsItem.fromJson(String value) => WebhooksIssue2PerformedViaGithubAppEventsItem._(value);
+  factory AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersAutomationCompletedWriteScope.fromJson(String value) => AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersAutomationCompletedWriteScope._(value);
 
-  static const branchProtectionRule = WebhooksIssue2PerformedViaGithubAppEventsItem._('branch_protection_rule');
-  static const checkRun = WebhooksIssue2PerformedViaGithubAppEventsItem._('check_run');
-  static const checkSuite = WebhooksIssue2PerformedViaGithubAppEventsItem._('check_suite');
-  static const codeScanningAlert = WebhooksIssue2PerformedViaGithubAppEventsItem._('code_scanning_alert');
-  static const commitComment = WebhooksIssue2PerformedViaGithubAppEventsItem._('commit_comment');
-  static const contentReference = WebhooksIssue2PerformedViaGithubAppEventsItem._('content_reference');
-  static const create = WebhooksIssue2PerformedViaGithubAppEventsItem._('create');
-  static const delete = WebhooksIssue2PerformedViaGithubAppEventsItem._('delete');
-  static const deployment = WebhooksIssue2PerformedViaGithubAppEventsItem._('deployment');
-  static const deploymentReview = WebhooksIssue2PerformedViaGithubAppEventsItem._('deployment_review');
-  static const deploymentStatus = WebhooksIssue2PerformedViaGithubAppEventsItem._('deployment_status');
-  static const deployKey = WebhooksIssue2PerformedViaGithubAppEventsItem._('deploy_key');
-  static const discussion = WebhooksIssue2PerformedViaGithubAppEventsItem._('discussion');
-  static const discussionComment = WebhooksIssue2PerformedViaGithubAppEventsItem._('discussion_comment');
-  static const fork = WebhooksIssue2PerformedViaGithubAppEventsItem._('fork');
-  static const gollum = WebhooksIssue2PerformedViaGithubAppEventsItem._('gollum');
-  static const issues = WebhooksIssue2PerformedViaGithubAppEventsItem._('issues');
-  static const issueComment = WebhooksIssue2PerformedViaGithubAppEventsItem._('issue_comment');
-  static const label = WebhooksIssue2PerformedViaGithubAppEventsItem._('label');
-  static const member = WebhooksIssue2PerformedViaGithubAppEventsItem._('member');
-  static const membership = WebhooksIssue2PerformedViaGithubAppEventsItem._('membership');
-  static const milestone = WebhooksIssue2PerformedViaGithubAppEventsItem._('milestone');
-  static const organization = WebhooksIssue2PerformedViaGithubAppEventsItem._('organization');
-  static const orgBlock = WebhooksIssue2PerformedViaGithubAppEventsItem._('org_block');
-  static const pageBuild = WebhooksIssue2PerformedViaGithubAppEventsItem._('page_build');
-  static const project = WebhooksIssue2PerformedViaGithubAppEventsItem._('project');
-  static const projectCard = WebhooksIssue2PerformedViaGithubAppEventsItem._('project_card');
-  static const projectColumn = WebhooksIssue2PerformedViaGithubAppEventsItem._('project_column');
-  static const public = WebhooksIssue2PerformedViaGithubAppEventsItem._('public');
-  static const pullRequest = WebhooksIssue2PerformedViaGithubAppEventsItem._('pull_request');
-  static const pullRequestReview = WebhooksIssue2PerformedViaGithubAppEventsItem._('pull_request_review');
-  static const pullRequestReviewComment = WebhooksIssue2PerformedViaGithubAppEventsItem._('pull_request_review_comment');
-  static const push = WebhooksIssue2PerformedViaGithubAppEventsItem._('push');
-  static const registryPackage = WebhooksIssue2PerformedViaGithubAppEventsItem._('registry_package');
-  static const release = WebhooksIssue2PerformedViaGithubAppEventsItem._('release');
-  static const repository = WebhooksIssue2PerformedViaGithubAppEventsItem._('repository');
-  static const repositoryDispatch = WebhooksIssue2PerformedViaGithubAppEventsItem._('repository_dispatch');
-  static const secretScanningAlert = WebhooksIssue2PerformedViaGithubAppEventsItem._('secret_scanning_alert');
-  static const star = WebhooksIssue2PerformedViaGithubAppEventsItem._('star');
-  static const status = WebhooksIssue2PerformedViaGithubAppEventsItem._('status');
-  static const team = WebhooksIssue2PerformedViaGithubAppEventsItem._('team');
-  static const teamAdd = WebhooksIssue2PerformedViaGithubAppEventsItem._('team_add');
-  static const watch = WebhooksIssue2PerformedViaGithubAppEventsItem._('watch');
-  static const workflowDispatch = WebhooksIssue2PerformedViaGithubAppEventsItem._('workflow_dispatch');
-  static const workflowRun = WebhooksIssue2PerformedViaGithubAppEventsItem._('workflow_run');
+  static const trigger = AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersAutomationCompletedWriteScope._('trigger');
+  static const repository = AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersAutomationCompletedWriteScope._('repository');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksIssue2PerformedViaGithubAppEventsItem && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersAutomationCompletedWriteScope && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhooksIssue2PerformedViaGithubAppOwnerType {
+final class AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersDiscussionCommentCommentTypesItem {
 
   final String value;
 
-  const WebhooksIssue2PerformedViaGithubAppOwnerType._(this.value);
+  const AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersDiscussionCommentCommentTypesItem._(this.value);
 
-  factory WebhooksIssue2PerformedViaGithubAppOwnerType.fromJson(String value) => WebhooksIssue2PerformedViaGithubAppOwnerType._(value);
+  factory AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersDiscussionCommentCommentTypesItem.fromJson(String value) => AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersDiscussionCommentCommentTypesItem._(value);
 
-  static const bot = WebhooksIssue2PerformedViaGithubAppOwnerType._('Bot');
-  static const user = WebhooksIssue2PerformedViaGithubAppOwnerType._('User');
-  static const organization = WebhooksIssue2PerformedViaGithubAppOwnerType._('Organization');
+  static const comment = AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersDiscussionCommentCommentTypesItem._('comment');
+  static const reply = AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersDiscussionCommentCommentTypesItem._('reply');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksIssue2PerformedViaGithubAppOwnerType && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersDiscussionCommentCommentTypesItem && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `actions` wire field.
-final class WebhooksIssue2PerformedViaGithubAppPermissionsActions {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersDiscussionCommentWriteScope {
 
   final String value;
 
-  const WebhooksIssue2PerformedViaGithubAppPermissionsActions._(this.value);
+  const AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersDiscussionCommentWriteScope._(this.value);
 
-  factory WebhooksIssue2PerformedViaGithubAppPermissionsActions.fromJson(String value) => WebhooksIssue2PerformedViaGithubAppPermissionsActions._(value);
+  factory AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersDiscussionCommentWriteScope.fromJson(String value) => AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersDiscussionCommentWriteScope._(value);
 
-  static const read = WebhooksIssue2PerformedViaGithubAppPermissionsActions._('read');
-  static const write = WebhooksIssue2PerformedViaGithubAppPermissionsActions._('write');
+  static const trigger = AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersDiscussionCommentWriteScope._('trigger');
+  static const repository = AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersDiscussionCommentWriteScope._('repository');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksIssue2PerformedViaGithubAppPermissionsActions && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersDiscussionCommentWriteScope && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersDiscussionOpenedWriteScope {
+
+  final String value;
+
+  const AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersDiscussionOpenedWriteScope._(this.value);
+
+  factory AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersDiscussionOpenedWriteScope.fromJson(String value) => AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersDiscussionOpenedWriteScope._(value);
+
+  static const trigger = AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersDiscussionOpenedWriteScope._('trigger');
+  static const repository = AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersDiscussionOpenedWriteScope._('repository');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersDiscussionOpenedWriteScope && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersDiscussionUpdatedWriteScope {
+
+  final String value;
+
+  const AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersDiscussionUpdatedWriteScope._(this.value);
+
+  factory AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersDiscussionUpdatedWriteScope.fromJson(String value) => AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersDiscussionUpdatedWriteScope._(value);
+
+  static const trigger = AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersDiscussionUpdatedWriteScope._('trigger');
+  static const repository = AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersDiscussionUpdatedWriteScope._('repository');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersDiscussionUpdatedWriteScope && other.value == value;
 
   @override int get hashCode => value.hashCode;
 

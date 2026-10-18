@@ -4,294 +4,273 @@
 part of 'inline.dart';
 
 // Inline operation models (part 343)
-class AppsCreateFromManifestResponse {
+class CodeSecurityAttachConfigurationRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// Unique identifier of the GitHub app
-  final int id;
-  /// The slug name of the GitHub app
-  final SdkOptional<String> slug;
-  /// Required `string` value serialized in the `node_id` wire field.
-  final String nodeId;
-  final String clientId;
-  /// Required API value serialized in the `owner` wire field.
-  final IntegrationOwner owner;
-  /// The name of the GitHub app
-  final String name;
-  /// Required `string` value serialized in the `description` wire field.
-  final String? description;
-  /// Required `uri`-formatted value serialized in the `external_url` wire field.
-  final String externalUrl;
-  /// Required `uri`-formatted value serialized in the `html_url` wire field.
-  final String htmlUrl;
-  /// Required `date-time`-formatted value serialized in the `created_at` wire field.
-  final String createdAt;
-  /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
-  final String updatedAt;
-  /// The set of permissions for the GitHub app
-  final IntegrationPermissions permissions;
-  /// The list of events for the GitHub app. Note that the `installation_target`, `security_advisory`, and `meta` events are not included because they are global events and not specific to an installation.
-  final List<String> events;
-  /// The number of installations associated with the GitHub app. Only returned when the integration is requesting details about itself.
-  final SdkOptional<int> installationsCount;
-  final String clientSecret;
-  final String? webhookSecret;
-  final String pem;
-  final Map<String, dynamic> additionalProperties;
+  /// The type of repositories to attach the configuration to. `selected` means the configuration will be attached to only the repositories specified by `selected_repository_ids`
+  final CodeSecurityAttachConfigurationRequestBodyScope scope;
+  /// An array of repository IDs to attach the configuration to. You can only provide a list of repository ids when the `scope` is set to `selected`.
+  final SdkOptional<List<int>> selectedRepositoryIds;
 
-  const AppsCreateFromManifestResponse({required this.id, this.slug = const SdkOmitted(), required this.nodeId, required this.clientId, required this.owner, required this.name, required this.description, required this.externalUrl, required this.htmlUrl, required this.createdAt, required this.updatedAt, required this.permissions, required this.events, this.installationsCount = const SdkOmitted(), required this.clientSecret, required this.webhookSecret, required this.pem, this.additionalProperties = const <String, dynamic>{}});
+  const CodeSecurityAttachConfigurationRequestBody({required this.scope, this.selectedRepositoryIds = const SdkOmitted()});
 
-  AppsCreateFromManifestResponse Function({int id, SdkOptional<String> slug, String nodeId, String clientId, IntegrationOwner owner, String name, String? description, String externalUrl, String htmlUrl, String createdAt, String updatedAt, IntegrationPermissions permissions, List<String> events, SdkOptional<int> installationsCount, String clientSecret, String? webhookSecret, String pem}) get copyWith => _copyWith;
+  CodeSecurityAttachConfigurationRequestBody Function({CodeSecurityAttachConfigurationRequestBodyScope scope, SdkOptional<List<int>> selectedRepositoryIds}) get copyWith => _copyWith;
 
-  AppsCreateFromManifestResponse _copyWith({Object? id = sdkOmittedValue, Object? slug = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? clientId = sdkOmittedValue, Object? owner = sdkOmittedValue, Object? name = sdkOmittedValue, Object? description = sdkOmittedValue, Object? externalUrl = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? permissions = sdkOmittedValue, Object? events = sdkOmittedValue, Object? installationsCount = sdkOmittedValue, Object? clientSecret = sdkOmittedValue, Object? webhookSecret = sdkOmittedValue, Object? pem = sdkOmittedValue}) => AppsCreateFromManifestResponse(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    slug: identical(slug, sdkOmittedValue) ? this.slug : slug as SdkOptional<String>,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    clientId: identical(clientId, sdkOmittedValue) ? this.clientId : clientId as String,
-    owner: identical(owner, sdkOmittedValue) ? this.owner : owner as IntegrationOwner,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    description: identical(description, sdkOmittedValue) ? this.description : description as String?,
-    externalUrl: identical(externalUrl, sdkOmittedValue) ? this.externalUrl : externalUrl as String,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
-    permissions: identical(permissions, sdkOmittedValue) ? this.permissions : permissions as IntegrationPermissions,
-    events: identical(events, sdkOmittedValue) ? this.events : events as List<String>,
-    installationsCount: identical(installationsCount, sdkOmittedValue) ? this.installationsCount : installationsCount as SdkOptional<int>,
-    clientSecret: identical(clientSecret, sdkOmittedValue) ? this.clientSecret : clientSecret as String,
-    webhookSecret: identical(webhookSecret, sdkOmittedValue) ? this.webhookSecret : webhookSecret as String?,
-    pem: identical(pem, sdkOmittedValue) ? this.pem : pem as String,
-    additionalProperties: additionalProperties,
+  CodeSecurityAttachConfigurationRequestBody _copyWith({Object? scope = sdkOmittedValue, Object? selectedRepositoryIds = sdkOmittedValue}) => CodeSecurityAttachConfigurationRequestBody(
+    scope: identical(scope, sdkOmittedValue) ? this.scope : scope as CodeSecurityAttachConfigurationRequestBodyScope,
+    selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue) ? this.selectedRepositoryIds : selectedRepositoryIds as SdkOptional<List<int>>,
   );
 
-  factory AppsCreateFromManifestResponse.fromJson(Map<String, dynamic> json) => AppsCreateFromManifestResponse(
-    id: ((json['id'] as num?)?.toInt())!,
-    slug: json['slug'] != null ? SdkPresent((json['slug'] as String?)!) : const SdkOmitted(),
-    nodeId: (json['node_id'] as String?)!,
-    clientId: (json['client_id'] as String?)!,
-    owner: (json['owner'] != null ? IntegrationOwner.fromJson(json['owner']) : null)!,
-    name: (json['name'] as String?)!,
-    description: json.containsKey('description') ? json['description'] as String? : throw ArgumentError.value(null, 'description', 'Required property is missing'),
-    externalUrl: (json['external_url'] as String?)!,
-    htmlUrl: (json['html_url'] as String?)!,
-    createdAt: (json['created_at'] as String?)!,
-    updatedAt: (json['updated_at'] as String?)!,
-    permissions: (json['permissions'] != null ? IntegrationPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null)!,
-    events: ((json['events'] as List?)?.map((e) => e as String).toList())!,
-    installationsCount: json['installations_count'] != null ? SdkPresent(((json['installations_count'] as num?)?.toInt())!) : const SdkOmitted(),
-    clientSecret: (json['client_secret'] as String?)!,
-    webhookSecret: json.containsKey('webhook_secret') ? json['webhook_secret'] as String? : throw ArgumentError.value(null, 'webhook_secret', 'Required property is missing'),
-    pem: (json['pem'] as String?)!,
-    additionalProperties: Map.of(json)..removeWhere((key, _) => const <String>{'id', 'slug', 'node_id', 'client_id', 'owner', 'name', 'description', 'external_url', 'html_url', 'created_at', 'updated_at', 'permissions', 'events', 'installations_count', 'client_secret', 'webhook_secret', 'pem'}.contains(key)),
+  factory CodeSecurityAttachConfigurationRequestBody.fromJson(Map<String, dynamic> json) => CodeSecurityAttachConfigurationRequestBody(
+    scope: (json['scope'] != null ? CodeSecurityAttachConfigurationRequestBodyScope.fromJson(json['scope'] as String) : null)!,
+    selectedRepositoryIds: json['selected_repository_ids'] != null ? SdkPresent(((json['selected_repository_ids'] as List?)?.map((e) => (e as num).toInt()).toList())!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    ...additionalProperties,
-    'id': id,
-    ...switch (slug) {
-      SdkPresent<String>(value: final value) => {'slug': value,},
-      _ => const <String, dynamic>{},
-    },
-    'node_id': nodeId,
-    'client_id': clientId,
-    'owner': owner.toJson(),
-    'name': name,
-    'description': description,
-    'external_url': externalUrl,
-    'html_url': htmlUrl,
-    'created_at': createdAt,
-    'updated_at': updatedAt,
-    'permissions': permissions.toJson(),
-    'events': events,
-    ...switch (installationsCount) {
-      SdkPresent<int>(value: final value) => {'installations_count': value,},
-      _ => const <String, dynamic>{},
-    },
-    'client_secret': clientSecret,
-    'webhook_secret': webhookSecret,
-    'pem': pem,
-  };
-}
-
-class AppsUpdateWebhookConfigForAppRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The URL to which the payloads will be delivered.
-  final SdkOptional<String> url;
-  /// The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.
-  final SdkOptional<String> contentType;
-  /// If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/webhooks/event-payloads/#delivery-headers).
-  final SdkOptional<String> secret;
-  final SdkOptional<WebhookConfigInsecureSsl> insecureSsl;
-
-  const AppsUpdateWebhookConfigForAppRequestBody({this.url = const SdkOmitted(), this.contentType = const SdkOmitted(), this.secret = const SdkOmitted(), this.insecureSsl = const SdkOmitted()});
-
-  AppsUpdateWebhookConfigForAppRequestBody Function({SdkOptional<String> url, SdkOptional<String> contentType, SdkOptional<String> secret, SdkOptional<WebhookConfigInsecureSsl> insecureSsl}) get copyWith => _copyWith;
-
-  AppsUpdateWebhookConfigForAppRequestBody _copyWith({Object? url = sdkOmittedValue, Object? contentType = sdkOmittedValue, Object? secret = sdkOmittedValue, Object? insecureSsl = sdkOmittedValue}) => AppsUpdateWebhookConfigForAppRequestBody(
-    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
-    contentType: identical(contentType, sdkOmittedValue) ? this.contentType : contentType as SdkOptional<String>,
-    secret: identical(secret, sdkOmittedValue) ? this.secret : secret as SdkOptional<String>,
-    insecureSsl: identical(insecureSsl, sdkOmittedValue) ? this.insecureSsl : insecureSsl as SdkOptional<WebhookConfigInsecureSsl>,
-  );
-
-  factory AppsUpdateWebhookConfigForAppRequestBody.fromJson(Map<String, dynamic> json) => AppsUpdateWebhookConfigForAppRequestBody(
-    url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
-    contentType: json['content_type'] != null ? SdkPresent((json['content_type'] as String?)!) : const SdkOmitted(),
-    secret: json['secret'] != null ? SdkPresent((json['secret'] as String?)!) : const SdkOmitted(),
-    insecureSsl: json['insecure_ssl'] != null ? SdkPresent((json['insecure_ssl'] != null ? WebhookConfigInsecureSsl.fromJson(json['insecure_ssl']) : null)!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    ...switch (url) {
-      SdkPresent<String>(value: final value) => {'url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (contentType) {
-      SdkPresent<String>(value: final value) => {'content_type': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (secret) {
-      SdkPresent<String>(value: final value) => {'secret': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (insecureSsl) {
-      SdkPresent<WebhookConfigInsecureSsl>(value: final value) => {'insecure_ssl': value.toJson(),},
+    'scope': scope.toJson(),
+    ...switch (selectedRepositoryIds) {
+      SdkPresent<List<int>>(value: final value) => {'selected_repository_ids': value,},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-class AppsCreateInstallationAccessTokenRequestBody {
+class CodeSecuritySetConfigurationAsDefaultRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// List of repository names that the token should have access to
-  final SdkOptional<List<String>> repositories;
-  /// List of repository IDs that the token should have access to
-  final SdkOptional<List<int>> repositoryIds;
-  /// The permissions granted to the fine-grained access token.
-  final SdkOptional<AppPermissions> permissions;
+  /// Specify which types of repository this security configuration should be applied to by default.
+  final SdkOptional<CodeSecuritySetConfigurationAsDefaultRequestBodyDefaultForNewRepos> defaultForNewRepos;
 
-  const AppsCreateInstallationAccessTokenRequestBody({this.repositories = const SdkOmitted(), this.repositoryIds = const SdkOmitted(), this.permissions = const SdkOmitted()});
+  const CodeSecuritySetConfigurationAsDefaultRequestBody({this.defaultForNewRepos = const SdkOmitted()});
 
-  AppsCreateInstallationAccessTokenRequestBody Function({SdkOptional<List<String>> repositories, SdkOptional<List<int>> repositoryIds, SdkOptional<AppPermissions> permissions}) get copyWith => _copyWith;
+  CodeSecuritySetConfigurationAsDefaultRequestBody Function({SdkOptional<CodeSecuritySetConfigurationAsDefaultRequestBodyDefaultForNewRepos> defaultForNewRepos}) get copyWith => _copyWith;
 
-  AppsCreateInstallationAccessTokenRequestBody _copyWith({Object? repositories = sdkOmittedValue, Object? repositoryIds = sdkOmittedValue, Object? permissions = sdkOmittedValue}) => AppsCreateInstallationAccessTokenRequestBody(
-    repositories: identical(repositories, sdkOmittedValue) ? this.repositories : repositories as SdkOptional<List<String>>,
-    repositoryIds: identical(repositoryIds, sdkOmittedValue) ? this.repositoryIds : repositoryIds as SdkOptional<List<int>>,
-    permissions: identical(permissions, sdkOmittedValue) ? this.permissions : permissions as SdkOptional<AppPermissions>,
+  CodeSecuritySetConfigurationAsDefaultRequestBody _copyWith({Object? defaultForNewRepos = sdkOmittedValue}) => CodeSecuritySetConfigurationAsDefaultRequestBody(
+    defaultForNewRepos: identical(defaultForNewRepos, sdkOmittedValue) ? this.defaultForNewRepos : defaultForNewRepos as SdkOptional<CodeSecuritySetConfigurationAsDefaultRequestBodyDefaultForNewRepos>,
   );
 
-  factory AppsCreateInstallationAccessTokenRequestBody.fromJson(Map<String, dynamic> json) => AppsCreateInstallationAccessTokenRequestBody(
-    repositories: json['repositories'] != null ? SdkPresent(((json['repositories'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    repositoryIds: json['repository_ids'] != null ? SdkPresent(((json['repository_ids'] as List?)?.map((e) => (e as num).toInt()).toList())!) : const SdkOmitted(),
-    permissions: json['permissions'] != null ? SdkPresent((json['permissions'] != null ? AppPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+  factory CodeSecuritySetConfigurationAsDefaultRequestBody.fromJson(Map<String, dynamic> json) => CodeSecuritySetConfigurationAsDefaultRequestBody(
+    defaultForNewRepos: json['default_for_new_repos'] != null ? SdkPresent((json['default_for_new_repos'] != null ? CodeSecuritySetConfigurationAsDefaultRequestBodyDefaultForNewRepos.fromJson(json['default_for_new_repos'] as String) : null)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    ...switch (repositories) {
-      SdkPresent<List<String>>(value: final value) => {'repositories': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (repositoryIds) {
-      SdkPresent<List<int>>(value: final value) => {'repository_ids': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (permissions) {
-      SdkPresent<AppPermissions>(value: final value) => {'permissions': value.toJson(),},
+    ...switch (defaultForNewRepos) {
+      SdkPresent<CodeSecuritySetConfigurationAsDefaultRequestBodyDefaultForNewRepos>(value: final value) => {'default_for_new_repos': value.toJson(),},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-class AppsDeleteAuthorizationRequestBody {
+class CodeSecuritySetConfigurationAsDefaultResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The OAuth access token used to authenticate to the GitHub API.
-  final String accessToken;
+  /// Specifies which types of repository this security configuration is applied to by default.
+  final SdkOptional<CodeSecuritySetConfigurationAsDefaultResponseDefaultForNewRepos> defaultForNewRepos;
+  /// A code security configuration
+  final SdkOptional<CodeSecurityConfiguration> configuration;
 
-  const AppsDeleteAuthorizationRequestBody({required this.accessToken});
+  const CodeSecuritySetConfigurationAsDefaultResponse({this.defaultForNewRepos = const SdkOmitted(), this.configuration = const SdkOmitted()});
 
-  AppsDeleteAuthorizationRequestBody Function({String accessToken}) get copyWith => _copyWith;
+  CodeSecuritySetConfigurationAsDefaultResponse Function({SdkOptional<CodeSecuritySetConfigurationAsDefaultResponseDefaultForNewRepos> defaultForNewRepos, SdkOptional<CodeSecurityConfiguration> configuration}) get copyWith => _copyWith;
 
-  AppsDeleteAuthorizationRequestBody _copyWith({Object? accessToken = sdkOmittedValue}) => AppsDeleteAuthorizationRequestBody(
-    accessToken: identical(accessToken, sdkOmittedValue) ? this.accessToken : accessToken as String,
+  CodeSecuritySetConfigurationAsDefaultResponse _copyWith({Object? defaultForNewRepos = sdkOmittedValue, Object? configuration = sdkOmittedValue}) => CodeSecuritySetConfigurationAsDefaultResponse(
+    defaultForNewRepos: identical(defaultForNewRepos, sdkOmittedValue) ? this.defaultForNewRepos : defaultForNewRepos as SdkOptional<CodeSecuritySetConfigurationAsDefaultResponseDefaultForNewRepos>,
+    configuration: identical(configuration, sdkOmittedValue) ? this.configuration : configuration as SdkOptional<CodeSecurityConfiguration>,
   );
 
-  factory AppsDeleteAuthorizationRequestBody.fromJson(Map<String, dynamic> json) => AppsDeleteAuthorizationRequestBody(
-    accessToken: (json['access_token'] as String?)!,
+  factory CodeSecuritySetConfigurationAsDefaultResponse.fromJson(Map<String, dynamic> json) => CodeSecuritySetConfigurationAsDefaultResponse(
+    defaultForNewRepos: json['default_for_new_repos'] != null ? SdkPresent((json['default_for_new_repos'] != null ? CodeSecuritySetConfigurationAsDefaultResponseDefaultForNewRepos.fromJson(json['default_for_new_repos'] as String) : null)!) : const SdkOmitted(),
+    configuration: json['configuration'] != null ? SdkPresent((json['configuration'] != null ? CodeSecurityConfiguration.fromJson(json['configuration'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    'access_token': accessToken,
+    ...switch (defaultForNewRepos) {
+      SdkPresent<CodeSecuritySetConfigurationAsDefaultResponseDefaultForNewRepos>(value: final value) => {'default_for_new_repos': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (configuration) {
+      SdkPresent<CodeSecurityConfiguration>(value: final value) => {'configuration': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
   };
 }
 
-class AppsCheckTokenRequestBody {
+class CopilotSetEnterpriseCodingAgentPolicyRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The access_token of the OAuth or GitHub application.
-  final String accessToken;
+  /// The policy state for Copilot cloud agent in the enterprise. Can be one of `enabled_for_all_orgs`, `disabled_for_all_orgs`, `enabled_for_selected_orgs`, or `configured_by_org_admins`.
+  final CopilotSetEnterpriseCodingAgentPolicyRequestBodyPolicyState policyState;
 
-  const AppsCheckTokenRequestBody({required this.accessToken});
+  const CopilotSetEnterpriseCodingAgentPolicyRequestBody({required this.policyState});
 
-  AppsCheckTokenRequestBody Function({String accessToken}) get copyWith => _copyWith;
+  CopilotSetEnterpriseCodingAgentPolicyRequestBody Function({CopilotSetEnterpriseCodingAgentPolicyRequestBodyPolicyState policyState}) get copyWith => _copyWith;
 
-  AppsCheckTokenRequestBody _copyWith({Object? accessToken = sdkOmittedValue}) => AppsCheckTokenRequestBody(
-    accessToken: identical(accessToken, sdkOmittedValue) ? this.accessToken : accessToken as String,
+  CopilotSetEnterpriseCodingAgentPolicyRequestBody _copyWith({Object? policyState = sdkOmittedValue}) => CopilotSetEnterpriseCodingAgentPolicyRequestBody(
+    policyState: identical(policyState, sdkOmittedValue) ? this.policyState : policyState as CopilotSetEnterpriseCodingAgentPolicyRequestBodyPolicyState,
   );
 
-  factory AppsCheckTokenRequestBody.fromJson(Map<String, dynamic> json) => AppsCheckTokenRequestBody(
-    accessToken: (json['access_token'] as String?)!,
+  factory CopilotSetEnterpriseCodingAgentPolicyRequestBody.fromJson(Map<String, dynamic> json) => CopilotSetEnterpriseCodingAgentPolicyRequestBody(
+    policyState: (json['policy_state'] != null ? CopilotSetEnterpriseCodingAgentPolicyRequestBodyPolicyState.fromJson(json['policy_state'] as String) : null)!,
   );
 
   Map<String, dynamic> toJson() => {
-    'access_token': accessToken,
+    'policy_state': policyState.toJson(),
   };
 }
 
-class AppsResetTokenRequestBody {
+class CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The access_token of the OAuth or GitHub application.
-  final String accessToken;
+  /// The name of the custom property to filter by.
+  final String propertyName;
+  /// The values of the custom property to match.
+  final List<String> values;
 
-  const AppsResetTokenRequestBody({required this.accessToken});
+  const CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem({required this.propertyName, required this.values});
 
-  AppsResetTokenRequestBody Function({String accessToken}) get copyWith => _copyWith;
+  CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem Function({String propertyName, List<String> values}) get copyWith => _copyWith;
 
-  AppsResetTokenRequestBody _copyWith({Object? accessToken = sdkOmittedValue}) => AppsResetTokenRequestBody(
-    accessToken: identical(accessToken, sdkOmittedValue) ? this.accessToken : accessToken as String,
+  CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem _copyWith({Object? propertyName = sdkOmittedValue, Object? values = sdkOmittedValue}) => CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem(
+    propertyName: identical(propertyName, sdkOmittedValue) ? this.propertyName : propertyName as String,
+    values: identical(values, sdkOmittedValue) ? this.values : values as List<String>,
   );
 
-  factory AppsResetTokenRequestBody.fromJson(Map<String, dynamic> json) => AppsResetTokenRequestBody(
-    accessToken: (json['access_token'] as String?)!,
+  factory CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem.fromJson(Map<String, dynamic> json) => CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem(
+    propertyName: (json['property_name'] as String?)!,
+    values: ((json['values'] as List?)?.map((e) => e as String).toList())!,
   );
 
   Map<String, dynamic> toJson() => {
-    'access_token': accessToken,
+    'property_name': propertyName,
+    'values': values,
   };
 }
 
-class AppsDeleteTokenRequestBody {
+class CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The OAuth access token used to authenticate to the GitHub API.
-  final String accessToken;
+  /// List of organization logins within the enterprise to enable Copilot cloud agent for.
+  final SdkOptional<List<String>> organizations;
+  /// List of custom property filters to match organizations. Organizations matching any of the specified property name/value pairs will be included. This is a one-time operation, setting the property on an organization in the future will not automatically update its coding agent policy.
+  final SdkOptional<List<CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem>> customProperties;
 
-  const AppsDeleteTokenRequestBody({required this.accessToken});
+  const CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBody({this.organizations = const SdkOmitted(), this.customProperties = const SdkOmitted()});
 
-  AppsDeleteTokenRequestBody Function({String accessToken}) get copyWith => _copyWith;
+  CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBody Function({SdkOptional<List<String>> organizations, SdkOptional<List<CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem>> customProperties}) get copyWith => _copyWith;
 
-  AppsDeleteTokenRequestBody _copyWith({Object? accessToken = sdkOmittedValue}) => AppsDeleteTokenRequestBody(
-    accessToken: identical(accessToken, sdkOmittedValue) ? this.accessToken : accessToken as String,
+  CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBody _copyWith({Object? organizations = sdkOmittedValue, Object? customProperties = sdkOmittedValue}) => CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBody(
+    organizations: identical(organizations, sdkOmittedValue) ? this.organizations : organizations as SdkOptional<List<String>>,
+    customProperties: identical(customProperties, sdkOmittedValue) ? this.customProperties : customProperties as SdkOptional<List<CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem>>,
   );
 
-  factory AppsDeleteTokenRequestBody.fromJson(Map<String, dynamic> json) => AppsDeleteTokenRequestBody(
-    accessToken: (json['access_token'] as String?)!,
+  factory CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBody.fromJson(Map<String, dynamic> json) => CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBody(
+    organizations: json['organizations'] != null ? SdkPresent(((json['organizations'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    customProperties: json['custom_properties'] != null ? SdkPresent(((json['custom_properties'] as List?)?.map((e) => CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    'access_token': accessToken,
+    ...switch (organizations) {
+      SdkPresent<List<String>>(value: final value) => {'organizations': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (customProperties) {
+      SdkPresent<List<CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem>>(value: final value) => {'custom_properties': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
+}
+
+class CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The name of the custom property to filter by.
+  final String propertyName;
+  /// The values of the custom property to match.
+  final List<String> values;
+
+  const CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem({required this.propertyName, required this.values});
+
+  CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem Function({String propertyName, List<String> values}) get copyWith => _copyWith;
+
+  CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem _copyWith({Object? propertyName = sdkOmittedValue, Object? values = sdkOmittedValue}) => CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem(
+    propertyName: identical(propertyName, sdkOmittedValue) ? this.propertyName : propertyName as String,
+    values: identical(values, sdkOmittedValue) ? this.values : values as List<String>,
+  );
+
+  factory CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem.fromJson(Map<String, dynamic> json) => CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem(
+    propertyName: (json['property_name'] as String?)!,
+    values: ((json['values'] as List?)?.map((e) => e as String).toList())!,
+  );
+
+  Map<String, dynamic> toJson() => {
+    'property_name': propertyName,
+    'values': values,
+  };
+}
+
+class CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// List of organization logins within the enterprise to disable Copilot cloud agent for.
+  final SdkOptional<List<String>> organizations;
+  /// List of custom property filters to match organizations. Organizations matching any of the specified property name/value pairs will be included. This is a one-time operation, setting the property on an organization in the future will not automatically update its coding agent policy.
+  final SdkOptional<List<CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem>> customProperties;
+
+  const CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBody({this.organizations = const SdkOmitted(), this.customProperties = const SdkOmitted()});
+
+  CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBody Function({SdkOptional<List<String>> organizations, SdkOptional<List<CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem>> customProperties}) get copyWith => _copyWith;
+
+  CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBody _copyWith({Object? organizations = sdkOmittedValue, Object? customProperties = sdkOmittedValue}) => CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBody(
+    organizations: identical(organizations, sdkOmittedValue) ? this.organizations : organizations as SdkOptional<List<String>>,
+    customProperties: identical(customProperties, sdkOmittedValue) ? this.customProperties : customProperties as SdkOptional<List<CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem>>,
+  );
+
+  factory CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBody.fromJson(Map<String, dynamic> json) => CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBody(
+    organizations: json['organizations'] != null ? SdkPresent(((json['organizations'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    customProperties: json['custom_properties'] != null ? SdkPresent(((json['custom_properties'] as List?)?.map((e) => CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    ...switch (organizations) {
+      SdkPresent<List<String>>(value: final value) => {'organizations': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (customProperties) {
+      SdkPresent<List<CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem>>(value: final value) => {'custom_properties': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
+}
+
+class CopilotListCopilotSeatsResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// Total number of Copilot seats for the organization currently being billed.
+  final SdkOptional<int> totalSeats;
+  final SdkOptional<List<CopilotSeatDetails>> seats;
+
+  const CopilotListCopilotSeatsResponse({this.totalSeats = const SdkOmitted(), this.seats = const SdkOmitted()});
+
+  CopilotListCopilotSeatsResponse Function({SdkOptional<int> totalSeats, SdkOptional<List<CopilotSeatDetails>> seats}) get copyWith => _copyWith;
+
+  CopilotListCopilotSeatsResponse _copyWith({Object? totalSeats = sdkOmittedValue, Object? seats = sdkOmittedValue}) => CopilotListCopilotSeatsResponse(
+    totalSeats: identical(totalSeats, sdkOmittedValue) ? this.totalSeats : totalSeats as SdkOptional<int>,
+    seats: identical(seats, sdkOmittedValue) ? this.seats : seats as SdkOptional<List<CopilotSeatDetails>>,
+  );
+
+  factory CopilotListCopilotSeatsResponse.fromJson(Map<String, dynamic> json) => CopilotListCopilotSeatsResponse(
+    totalSeats: json['total_seats'] != null ? SdkPresent(((json['total_seats'] as num?)?.toInt())!) : const SdkOmitted(),
+    seats: json['seats'] != null ? SdkPresent(((json['seats'] as List?)?.map((e) => CopilotSeatDetails.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    ...switch (totalSeats) {
+      SdkPresent<int>(value: final value) => {'total_seats': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (seats) {
+      SdkPresent<List<CopilotSeatDetails>>(value: final value) => {'seats': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
   };
 }

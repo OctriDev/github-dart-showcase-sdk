@@ -4,38 +4,184 @@
 part of 'inline.dart';
 
 // Inline operation models (part 397)
-class CopilotSpacesUpdateForUserRequestBody {
+class ReposUpdateReleaseRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The name of the Copilot Space.
+  /// The name of the tag.
+  final SdkOptional<String> tagName;
+  /// Specifies the commitish value that determines where the Git tag is created from. Can be any branch or commit SHA. Unused if the Git tag already exists. Default: the repository's default branch.
+  final SdkOptional<String> targetCommitish;
+  /// The name of the release.
   final SdkOptional<String> name;
-  /// A description of the Copilot Space.
-  final SdkOptional<String> description;
-  /// General instructions for the Copilot Space.
-  final SdkOptional<String> generalInstructions;
-  /// The base role that determines default permissions for the space. Changing this field requires admin permissions. - `no_access`: No default access (default) - `reader`: Makes the space publicly readable Note: User spaces do not support writer or admin base roles.
-  final SdkOptional<CopilotSpacesUpdateForUserRequestBodyBaseRole> baseRole;
-  /// Resources to attach to the space.
-  final SdkOptional<List<CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItem>> resourcesAttributes;
+  /// Text describing the contents of the tag.
+  final SdkOptional<String> body;
+  /// `true` makes the release a draft, and `false` publishes the release.
+  final SdkOptional<bool> draft;
+  /// `true` to identify the release as a prerelease, `false` to identify the release as a full release.
+  final SdkOptional<bool> prerelease;
+  /// Specifies whether this release should be set as the latest release for the repository. Drafts and prereleases cannot be set as latest. Defaults to `true` for newly published releases. `legacy` specifies that the latest release should be determined based on the release creation date and higher semantic version.
+  final SdkOptional<ReposUpdateReleaseRequestBodyMakeLatest> makeLatest;
+  /// If specified, a discussion of the specified category is created and linked to the release. The value must be a category that already exists in the repository. If there is already a discussion linked to the release, this parameter is ignored. For more information, see "[Managing categories for discussions in your repository](https://docs.github.com/discussions/managing-discussions-for-your-community/managing-categories-for-discussions-in-your-repository)."
+  final SdkOptional<String> discussionCategoryName;
 
-  const CopilotSpacesUpdateForUserRequestBody({this.name = const SdkOmitted(), this.description = const SdkOmitted(), this.generalInstructions = const SdkOmitted(), this.baseRole = const SdkOmitted(), this.resourcesAttributes = const SdkOmitted()});
+  const ReposUpdateReleaseRequestBody({this.tagName = const SdkOmitted(), this.targetCommitish = const SdkOmitted(), this.name = const SdkOmitted(), this.body = const SdkOmitted(), this.draft = const SdkOmitted(), this.prerelease = const SdkOmitted(), this.makeLatest = const SdkOmitted(), this.discussionCategoryName = const SdkOmitted()});
 
-  CopilotSpacesUpdateForUserRequestBody Function({SdkOptional<String> name, SdkOptional<String> description, SdkOptional<String> generalInstructions, SdkOptional<CopilotSpacesUpdateForUserRequestBodyBaseRole> baseRole, SdkOptional<List<CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItem>> resourcesAttributes}) get copyWith => _copyWith;
+  ReposUpdateReleaseRequestBody Function({SdkOptional<String> tagName, SdkOptional<String> targetCommitish, SdkOptional<String> name, SdkOptional<String> body, SdkOptional<bool> draft, SdkOptional<bool> prerelease, SdkOptional<ReposUpdateReleaseRequestBodyMakeLatest> makeLatest, SdkOptional<String> discussionCategoryName}) get copyWith => _copyWith;
 
-  CopilotSpacesUpdateForUserRequestBody _copyWith({Object? name = sdkOmittedValue, Object? description = sdkOmittedValue, Object? generalInstructions = sdkOmittedValue, Object? baseRole = sdkOmittedValue, Object? resourcesAttributes = sdkOmittedValue}) => CopilotSpacesUpdateForUserRequestBody(
+  ReposUpdateReleaseRequestBody _copyWith({Object? tagName = sdkOmittedValue, Object? targetCommitish = sdkOmittedValue, Object? name = sdkOmittedValue, Object? body = sdkOmittedValue, Object? draft = sdkOmittedValue, Object? prerelease = sdkOmittedValue, Object? makeLatest = sdkOmittedValue, Object? discussionCategoryName = sdkOmittedValue}) => ReposUpdateReleaseRequestBody(
+    tagName: identical(tagName, sdkOmittedValue) ? this.tagName : tagName as SdkOptional<String>,
+    targetCommitish: identical(targetCommitish, sdkOmittedValue) ? this.targetCommitish : targetCommitish as SdkOptional<String>,
     name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String>,
-    generalInstructions: identical(generalInstructions, sdkOmittedValue) ? this.generalInstructions : generalInstructions as SdkOptional<String>,
-    baseRole: identical(baseRole, sdkOmittedValue) ? this.baseRole : baseRole as SdkOptional<CopilotSpacesUpdateForUserRequestBodyBaseRole>,
-    resourcesAttributes: identical(resourcesAttributes, sdkOmittedValue) ? this.resourcesAttributes : resourcesAttributes as SdkOptional<List<CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItem>>,
+    body: identical(body, sdkOmittedValue) ? this.body : body as SdkOptional<String>,
+    draft: identical(draft, sdkOmittedValue) ? this.draft : draft as SdkOptional<bool>,
+    prerelease: identical(prerelease, sdkOmittedValue) ? this.prerelease : prerelease as SdkOptional<bool>,
+    makeLatest: identical(makeLatest, sdkOmittedValue) ? this.makeLatest : makeLatest as SdkOptional<ReposUpdateReleaseRequestBodyMakeLatest>,
+    discussionCategoryName: identical(discussionCategoryName, sdkOmittedValue) ? this.discussionCategoryName : discussionCategoryName as SdkOptional<String>,
   );
 
-  factory CopilotSpacesUpdateForUserRequestBody.fromJson(Map<String, dynamic> json) => CopilotSpacesUpdateForUserRequestBody(
+  factory ReposUpdateReleaseRequestBody.fromJson(Map<String, dynamic> json) => ReposUpdateReleaseRequestBody(
+    tagName: json['tag_name'] != null ? SdkPresent((json['tag_name'] as String?)!) : const SdkOmitted(),
+    targetCommitish: json['target_commitish'] != null ? SdkPresent((json['target_commitish'] as String?)!) : const SdkOmitted(),
     name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    description: json['description'] != null ? SdkPresent((json['description'] as String?)!) : const SdkOmitted(),
-    generalInstructions: json['general_instructions'] != null ? SdkPresent((json['general_instructions'] as String?)!) : const SdkOmitted(),
-    baseRole: json['base_role'] != null ? SdkPresent((json['base_role'] != null ? CopilotSpacesUpdateForUserRequestBodyBaseRole.fromJson(json['base_role'] as String) : null)!) : const SdkOmitted(),
-    resourcesAttributes: json['resources_attributes'] != null ? SdkPresent(((json['resources_attributes'] as List?)?.map((e) => CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+    body: json['body'] != null ? SdkPresent((json['body'] as String?)!) : const SdkOmitted(),
+    draft: json['draft'] != null ? SdkPresent((json['draft'] as bool?)!) : const SdkOmitted(),
+    prerelease: json['prerelease'] != null ? SdkPresent((json['prerelease'] as bool?)!) : const SdkOmitted(),
+    makeLatest: json['make_latest'] != null ? SdkPresent((json['make_latest'] != null ? ReposUpdateReleaseRequestBodyMakeLatest.fromJson(json['make_latest'] as String) : null)!) : const SdkOmitted(),
+    discussionCategoryName: json['discussion_category_name'] != null ? SdkPresent((json['discussion_category_name'] as String?)!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    ...switch (tagName) {
+      SdkPresent<String>(value: final value) => {'tag_name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (targetCommitish) {
+      SdkPresent<String>(value: final value) => {'target_commitish': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (name) {
+      SdkPresent<String>(value: final value) => {'name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (body) {
+      SdkPresent<String>(value: final value) => {'body': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (draft) {
+      SdkPresent<bool>(value: final value) => {'draft': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (prerelease) {
+      SdkPresent<bool>(value: final value) => {'prerelease': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (makeLatest) {
+      SdkPresent<ReposUpdateReleaseRequestBodyMakeLatest>(value: final value) => {'make_latest': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (discussionCategoryName) {
+      SdkPresent<String>(value: final value) => {'discussion_category_name': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
+}
+
+class ReposCreateRepoRulesetRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The name of the ruleset.
+  final String name;
+  /// The target of the ruleset
+  final SdkOptional<ReposCreateRepoRulesetRequestBodyTarget> target;
+  /// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
+  final RepositoryRuleEnforcement enforcement;
+  /// The actors that can bypass the rules in this ruleset
+  final SdkOptional<List<RepositoryRulesetBypassActor>> bypassActors;
+  /// Parameters for a repository ruleset ref name condition
+  final SdkOptional<RepositoryRulesetConditions> conditions;
+  /// An array of rules within the ruleset.
+  final SdkOptional<List<RepositoryRule>> rules;
+
+  const ReposCreateRepoRulesetRequestBody({required this.name, this.target = const SdkOmitted(), required this.enforcement, this.bypassActors = const SdkOmitted(), this.conditions = const SdkOmitted(), this.rules = const SdkOmitted()});
+
+  ReposCreateRepoRulesetRequestBody Function({String name, SdkOptional<ReposCreateRepoRulesetRequestBodyTarget> target, RepositoryRuleEnforcement enforcement, SdkOptional<List<RepositoryRulesetBypassActor>> bypassActors, SdkOptional<RepositoryRulesetConditions> conditions, SdkOptional<List<RepositoryRule>> rules}) get copyWith => _copyWith;
+
+  ReposCreateRepoRulesetRequestBody _copyWith({Object? name = sdkOmittedValue, Object? target = sdkOmittedValue, Object? enforcement = sdkOmittedValue, Object? bypassActors = sdkOmittedValue, Object? conditions = sdkOmittedValue, Object? rules = sdkOmittedValue}) => ReposCreateRepoRulesetRequestBody(
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    target: identical(target, sdkOmittedValue) ? this.target : target as SdkOptional<ReposCreateRepoRulesetRequestBodyTarget>,
+    enforcement: identical(enforcement, sdkOmittedValue) ? this.enforcement : enforcement as RepositoryRuleEnforcement,
+    bypassActors: identical(bypassActors, sdkOmittedValue) ? this.bypassActors : bypassActors as SdkOptional<List<RepositoryRulesetBypassActor>>,
+    conditions: identical(conditions, sdkOmittedValue) ? this.conditions : conditions as SdkOptional<RepositoryRulesetConditions>,
+    rules: identical(rules, sdkOmittedValue) ? this.rules : rules as SdkOptional<List<RepositoryRule>>,
+  );
+
+  factory ReposCreateRepoRulesetRequestBody.fromJson(Map<String, dynamic> json) => ReposCreateRepoRulesetRequestBody(
+    name: (json['name'] as String?)!,
+    target: json['target'] != null ? SdkPresent((json['target'] != null ? ReposCreateRepoRulesetRequestBodyTarget.fromJson(json['target'] as String) : null)!) : const SdkOmitted(),
+    enforcement: (json['enforcement'] != null ? RepositoryRuleEnforcement.fromJson(json['enforcement'] as String) : null)!,
+    bypassActors: json['bypass_actors'] != null ? SdkPresent(((json['bypass_actors'] as List?)?.map((e) => RepositoryRulesetBypassActor.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+    conditions: json['conditions'] != null ? SdkPresent((json['conditions'] != null ? RepositoryRulesetConditions.fromJson(json['conditions'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    rules: json['rules'] != null ? SdkPresent(((json['rules'] as List?)?.map((e) => RepositoryRule.fromJson(e)).toList())!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    'name': name,
+    ...switch (target) {
+      SdkPresent<ReposCreateRepoRulesetRequestBodyTarget>(value: final value) => {'target': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'enforcement': enforcement.toJson(),
+    ...switch (bypassActors) {
+      SdkPresent<List<RepositoryRulesetBypassActor>>(value: final value) => {'bypass_actors': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (conditions) {
+      SdkPresent<RepositoryRulesetConditions>(value: final value) => {'conditions': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (rules) {
+      SdkPresent<List<RepositoryRule>>(value: final value) => {'rules': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
+}
+
+class ReposUpdateRepoRulesetRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The name of the ruleset.
+  final SdkOptional<String> name;
+  /// The target of the ruleset
+  final SdkOptional<ReposUpdateRepoRulesetRequestBodyTarget> target;
+  /// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
+  final SdkOptional<RepositoryRuleEnforcement> enforcement;
+  /// The actors that can bypass the rules in this ruleset
+  final SdkOptional<List<RepositoryRulesetBypassActor>> bypassActors;
+  /// Parameters for a repository ruleset ref name condition
+  final SdkOptional<RepositoryRulesetConditions> conditions;
+  /// An array of rules within the ruleset.
+  final SdkOptional<List<RepositoryRule>> rules;
+
+  const ReposUpdateRepoRulesetRequestBody({this.name = const SdkOmitted(), this.target = const SdkOmitted(), this.enforcement = const SdkOmitted(), this.bypassActors = const SdkOmitted(), this.conditions = const SdkOmitted(), this.rules = const SdkOmitted()});
+
+  ReposUpdateRepoRulesetRequestBody Function({SdkOptional<String> name, SdkOptional<ReposUpdateRepoRulesetRequestBodyTarget> target, SdkOptional<RepositoryRuleEnforcement> enforcement, SdkOptional<List<RepositoryRulesetBypassActor>> bypassActors, SdkOptional<RepositoryRulesetConditions> conditions, SdkOptional<List<RepositoryRule>> rules}) get copyWith => _copyWith;
+
+  ReposUpdateRepoRulesetRequestBody _copyWith({Object? name = sdkOmittedValue, Object? target = sdkOmittedValue, Object? enforcement = sdkOmittedValue, Object? bypassActors = sdkOmittedValue, Object? conditions = sdkOmittedValue, Object? rules = sdkOmittedValue}) => ReposUpdateRepoRulesetRequestBody(
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
+    target: identical(target, sdkOmittedValue) ? this.target : target as SdkOptional<ReposUpdateRepoRulesetRequestBodyTarget>,
+    enforcement: identical(enforcement, sdkOmittedValue) ? this.enforcement : enforcement as SdkOptional<RepositoryRuleEnforcement>,
+    bypassActors: identical(bypassActors, sdkOmittedValue) ? this.bypassActors : bypassActors as SdkOptional<List<RepositoryRulesetBypassActor>>,
+    conditions: identical(conditions, sdkOmittedValue) ? this.conditions : conditions as SdkOptional<RepositoryRulesetConditions>,
+    rules: identical(rules, sdkOmittedValue) ? this.rules : rules as SdkOptional<List<RepositoryRule>>,
+  );
+
+  factory ReposUpdateRepoRulesetRequestBody.fromJson(Map<String, dynamic> json) => ReposUpdateRepoRulesetRequestBody(
+    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
+    target: json['target'] != null ? SdkPresent((json['target'] != null ? ReposUpdateRepoRulesetRequestBodyTarget.fromJson(json['target'] as String) : null)!) : const SdkOmitted(),
+    enforcement: json['enforcement'] != null ? SdkPresent((json['enforcement'] != null ? RepositoryRuleEnforcement.fromJson(json['enforcement'] as String) : null)!) : const SdkOmitted(),
+    bypassActors: json['bypass_actors'] != null ? SdkPresent(((json['bypass_actors'] as List?)?.map((e) => RepositoryRulesetBypassActor.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+    conditions: json['conditions'] != null ? SdkPresent((json['conditions'] != null ? RepositoryRulesetConditions.fromJson(json['conditions'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    rules: json['rules'] != null ? SdkPresent(((json['rules'] as List?)?.map((e) => RepositoryRule.fromJson(e)).toList())!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
@@ -43,252 +189,95 @@ class CopilotSpacesUpdateForUserRequestBody {
       SdkPresent<String>(value: final value) => {'name': value,},
       _ => const <String, dynamic>{},
     },
+    ...switch (target) {
+      SdkPresent<ReposUpdateRepoRulesetRequestBodyTarget>(value: final value) => {'target': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (enforcement) {
+      SdkPresent<RepositoryRuleEnforcement>(value: final value) => {'enforcement': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (bypassActors) {
+      SdkPresent<List<RepositoryRulesetBypassActor>>(value: final value) => {'bypass_actors': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (conditions) {
+      SdkPresent<RepositoryRulesetConditions>(value: final value) => {'conditions': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (rules) {
+      SdkPresent<List<RepositoryRule>>(value: final value) => {'rules': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
+}
+
+class ReposCreateCommitStatusRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The state of the status.
+  final ReposCreateCommitStatusRequestBodyState state;
+  /// The target URL to associate with this status. This URL will be linked from the GitHub UI to allow users to easily see the source of the status. For example, if your continuous integration system is posting build status, you would want to provide the deep link for the build output for this specific SHA: `http://ci.example.com/user/repo/build/sha`
+  final SdkOptional<String?> targetUrl;
+  /// A short description of the status.
+  final SdkOptional<String?> description;
+  /// A string label to differentiate this status from the status of other systems. This field is case-insensitive.
+  final SdkOptional<String> context;
+
+  const ReposCreateCommitStatusRequestBody({required this.state, this.targetUrl = const SdkOmitted(), this.description = const SdkOmitted(), this.context = const SdkOmitted()});
+
+  ReposCreateCommitStatusRequestBody Function({ReposCreateCommitStatusRequestBodyState state, SdkOptional<String?> targetUrl, SdkOptional<String?> description, SdkOptional<String> context}) get copyWith => _copyWith;
+
+  ReposCreateCommitStatusRequestBody _copyWith({Object? state = sdkOmittedValue, Object? targetUrl = sdkOmittedValue, Object? description = sdkOmittedValue, Object? context = sdkOmittedValue}) => ReposCreateCommitStatusRequestBody(
+    state: identical(state, sdkOmittedValue) ? this.state : state as ReposCreateCommitStatusRequestBodyState,
+    targetUrl: identical(targetUrl, sdkOmittedValue) ? this.targetUrl : targetUrl as SdkOptional<String?>,
+    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String?>,
+    context: identical(context, sdkOmittedValue) ? this.context : context as SdkOptional<String>,
+  );
+
+  factory ReposCreateCommitStatusRequestBody.fromJson(Map<String, dynamic> json) => ReposCreateCommitStatusRequestBody(
+    state: (json['state'] != null ? ReposCreateCommitStatusRequestBodyState.fromJson(json['state'] as String) : null)!,
+    targetUrl: json.containsKey('target_url') ? SdkPresent(json['target_url'] as String?) : const SdkOmitted(),
+    description: json.containsKey('description') ? SdkPresent(json['description'] as String?) : const SdkOmitted(),
+    context: json['context'] != null ? SdkPresent((json['context'] as String?)!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    'state': state.toJson(),
+    ...switch (targetUrl) {
+      SdkPresent<String?>(value: final value) => {'target_url': value,},
+      _ => const <String, dynamic>{},
+    },
     ...switch (description) {
-      SdkPresent<String>(value: final value) => {'description': value,},
+      SdkPresent<String?>(value: final value) => {'description': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (generalInstructions) {
-      SdkPresent<String>(value: final value) => {'general_instructions': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (baseRole) {
-      SdkPresent<CopilotSpacesUpdateForUserRequestBodyBaseRole>(value: final value) => {'base_role': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (resourcesAttributes) {
-      SdkPresent<List<CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItem>>(value: final value) => {'resources_attributes': value.map((item) => item.toJson()).toList(),},
+    ...switch (context) {
+      SdkPresent<String>(value: final value) => {'context': value,},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-class CopilotSpacesListCollaboratorsForUserResponse {
+class ReposReplaceAllTopicsRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The list of collaborators for this Copilot Space.
-  final List<CopilotSpaceCollaborator> collaborators;
+  /// An array of topics to add to the repository. Pass one or more topics to _replace_ the set of existing topics. Send an empty array (`[]`) to clear all topics from the repository. **Note:** Topic `names` will be saved as lowercase.
+  final List<String> names;
 
-  const CopilotSpacesListCollaboratorsForUserResponse({required this.collaborators});
+  const ReposReplaceAllTopicsRequestBody({required this.names});
 
-  CopilotSpacesListCollaboratorsForUserResponse Function({List<CopilotSpaceCollaborator> collaborators}) get copyWith => _copyWith;
+  ReposReplaceAllTopicsRequestBody Function({List<String> names}) get copyWith => _copyWith;
 
-  CopilotSpacesListCollaboratorsForUserResponse _copyWith({Object? collaborators = sdkOmittedValue}) => CopilotSpacesListCollaboratorsForUserResponse(
-    collaborators: identical(collaborators, sdkOmittedValue) ? this.collaborators : collaborators as List<CopilotSpaceCollaborator>,
+  ReposReplaceAllTopicsRequestBody _copyWith({Object? names = sdkOmittedValue}) => ReposReplaceAllTopicsRequestBody(
+    names: identical(names, sdkOmittedValue) ? this.names : names as List<String>,
   );
 
-  factory CopilotSpacesListCollaboratorsForUserResponse.fromJson(Map<String, dynamic> json) => CopilotSpacesListCollaboratorsForUserResponse(
-    collaborators: ((json['collaborators'] as List?)?.map((e) => CopilotSpaceCollaborator.fromJson(e)).toList())!,
+  factory ReposReplaceAllTopicsRequestBody.fromJson(Map<String, dynamic> json) => ReposReplaceAllTopicsRequestBody(
+    names: ((json['names'] as List?)?.map((e) => e as String).toList())!,
   );
 
   Map<String, dynamic> toJson() => {
-    'collaborators': collaborators.map((item) => item.toJson()).toList(),
-  };
-}
-
-class CopilotSpacesAddCollaboratorForUserRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The type of actor (must be `User` for user-owned spaces; `Team` will be rejected).
-  final CopilotSpacesAddCollaboratorForUserRequestBodyActorType actorType;
-  /// The username of the collaborator. The numeric user ID is also accepted.
-  final String actorIdentifier;
-  /// The role to grant to the collaborator.
-  final CopilotSpacesAddCollaboratorForUserRequestBodyRole role;
-
-  const CopilotSpacesAddCollaboratorForUserRequestBody({required this.actorType, required this.actorIdentifier, required this.role});
-
-  CopilotSpacesAddCollaboratorForUserRequestBody Function({CopilotSpacesAddCollaboratorForUserRequestBodyActorType actorType, String actorIdentifier, CopilotSpacesAddCollaboratorForUserRequestBodyRole role}) get copyWith => _copyWith;
-
-  CopilotSpacesAddCollaboratorForUserRequestBody _copyWith({Object? actorType = sdkOmittedValue, Object? actorIdentifier = sdkOmittedValue, Object? role = sdkOmittedValue}) => CopilotSpacesAddCollaboratorForUserRequestBody(
-    actorType: identical(actorType, sdkOmittedValue) ? this.actorType : actorType as CopilotSpacesAddCollaboratorForUserRequestBodyActorType,
-    actorIdentifier: identical(actorIdentifier, sdkOmittedValue) ? this.actorIdentifier : actorIdentifier as String,
-    role: identical(role, sdkOmittedValue) ? this.role : role as CopilotSpacesAddCollaboratorForUserRequestBodyRole,
-  );
-
-  factory CopilotSpacesAddCollaboratorForUserRequestBody.fromJson(Map<String, dynamic> json) => CopilotSpacesAddCollaboratorForUserRequestBody(
-    actorType: (json['actor_type'] != null ? CopilotSpacesAddCollaboratorForUserRequestBodyActorType.fromJson(json['actor_type'] as String) : null)!,
-    actorIdentifier: (json['actor_identifier'] as String?)!,
-    role: (json['role'] != null ? CopilotSpacesAddCollaboratorForUserRequestBodyRole.fromJson(json['role'] as String) : null)!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'actor_type': actorType.toJson(),
-    'actor_identifier': actorIdentifier,
-    'role': role.toJson(),
-  };
-}
-
-class CopilotSpacesUpdateCollaboratorForUserRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The new role to grant to the collaborator. Use `no_access` to remove the collaborator.
-  final CopilotSpacesUpdateCollaboratorForUserRequestBodyRole role;
-
-  const CopilotSpacesUpdateCollaboratorForUserRequestBody({required this.role});
-
-  CopilotSpacesUpdateCollaboratorForUserRequestBody Function({CopilotSpacesUpdateCollaboratorForUserRequestBodyRole role}) get copyWith => _copyWith;
-
-  CopilotSpacesUpdateCollaboratorForUserRequestBody _copyWith({Object? role = sdkOmittedValue}) => CopilotSpacesUpdateCollaboratorForUserRequestBody(
-    role: identical(role, sdkOmittedValue) ? this.role : role as CopilotSpacesUpdateCollaboratorForUserRequestBodyRole,
-  );
-
-  factory CopilotSpacesUpdateCollaboratorForUserRequestBody.fromJson(Map<String, dynamic> json) => CopilotSpacesUpdateCollaboratorForUserRequestBody(
-    role: (json['role'] != null ? CopilotSpacesUpdateCollaboratorForUserRequestBodyRole.fromJson(json['role'] as String) : null)!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'role': role.toJson(),
-  };
-}
-
-class CopilotSpacesListResourcesForUserResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The list of resources attached to this Copilot Space.
-  final List<CopilotSpaceResource> resources;
-
-  const CopilotSpacesListResourcesForUserResponse({required this.resources});
-
-  CopilotSpacesListResourcesForUserResponse Function({List<CopilotSpaceResource> resources}) get copyWith => _copyWith;
-
-  CopilotSpacesListResourcesForUserResponse _copyWith({Object? resources = sdkOmittedValue}) => CopilotSpacesListResourcesForUserResponse(
-    resources: identical(resources, sdkOmittedValue) ? this.resources : resources as List<CopilotSpaceResource>,
-  );
-
-  factory CopilotSpacesListResourcesForUserResponse.fromJson(Map<String, dynamic> json) => CopilotSpacesListResourcesForUserResponse(
-    resources: ((json['resources'] as List?)?.map((e) => CopilotSpaceResource.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'resources': resources.map((item) => item.toJson()).toList(),
-  };
-}
-
-class CopilotSpacesCreateResourceForUserRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The type of resource to create.
-  final CopilotSpacesCreateResourceForUserRequestBodyResourceType resourceType;
-  /// Resource-specific metadata.
-  final Map<String, Object?> metadata;
-
-  const CopilotSpacesCreateResourceForUserRequestBody({required this.resourceType, required this.metadata});
-
-  CopilotSpacesCreateResourceForUserRequestBody Function({CopilotSpacesCreateResourceForUserRequestBodyResourceType resourceType, Map<String, Object?> metadata}) get copyWith => _copyWith;
-
-  CopilotSpacesCreateResourceForUserRequestBody _copyWith({Object? resourceType = sdkOmittedValue, Object? metadata = sdkOmittedValue}) => CopilotSpacesCreateResourceForUserRequestBody(
-    resourceType: identical(resourceType, sdkOmittedValue) ? this.resourceType : resourceType as CopilotSpacesCreateResourceForUserRequestBodyResourceType,
-    metadata: identical(metadata, sdkOmittedValue) ? this.metadata : metadata as Map<String, Object?>,
-  );
-
-  factory CopilotSpacesCreateResourceForUserRequestBody.fromJson(Map<String, dynamic> json) => CopilotSpacesCreateResourceForUserRequestBody(
-    resourceType: (json['resource_type'] != null ? CopilotSpacesCreateResourceForUserRequestBodyResourceType.fromJson(json['resource_type'] as String) : null)!,
-    metadata: (json['metadata'] == null ? null : Map<String, dynamic>.from(json['metadata'] as Map).map((key, value) => MapEntry(key, value)))!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'resource_type': resourceType.toJson(),
-    'metadata': metadata,
-  };
-}
-
-class CopilotSpacesUpdateResourceForUserRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// Updated resource-specific metadata.
-  final SdkOptional<Map<String, Object?>> metadata;
-
-  const CopilotSpacesUpdateResourceForUserRequestBody({this.metadata = const SdkOmitted()});
-
-  CopilotSpacesUpdateResourceForUserRequestBody Function({SdkOptional<Map<String, Object?>> metadata}) get copyWith => _copyWith;
-
-  CopilotSpacesUpdateResourceForUserRequestBody _copyWith({Object? metadata = sdkOmittedValue}) => CopilotSpacesUpdateResourceForUserRequestBody(
-    metadata: identical(metadata, sdkOmittedValue) ? this.metadata : metadata as SdkOptional<Map<String, Object?>>,
-  );
-
-  factory CopilotSpacesUpdateResourceForUserRequestBody.fromJson(Map<String, dynamic> json) => CopilotSpacesUpdateResourceForUserRequestBody(
-    metadata: json['metadata'] != null ? SdkPresent((json['metadata'] == null ? null : Map<String, dynamic>.from(json['metadata'] as Map).map((key, value) => MapEntry(key, value)))!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    ...switch (metadata) {
-      SdkPresent<Map<String, Object?>>(value: final value) => {'metadata': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
-}
-
-class InteractionsGetPullRequestCreationCapForOrgResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// Whether the pull request creation cap is enabled
-  final bool enabled;
-  /// The maximum number of open pull requests a user can have at one time
-  final int maxOpenPullRequests;
-  /// Whether draft pull requests count toward the pull request creation cap
-  final SdkOptional<bool> includeDrafts;
-
-  const InteractionsGetPullRequestCreationCapForOrgResponse({required this.enabled, required this.maxOpenPullRequests, this.includeDrafts = const SdkOmitted()});
-
-  InteractionsGetPullRequestCreationCapForOrgResponse Function({bool enabled, int maxOpenPullRequests, SdkOptional<bool> includeDrafts}) get copyWith => _copyWith;
-
-  InteractionsGetPullRequestCreationCapForOrgResponse _copyWith({Object? enabled = sdkOmittedValue, Object? maxOpenPullRequests = sdkOmittedValue, Object? includeDrafts = sdkOmittedValue}) => InteractionsGetPullRequestCreationCapForOrgResponse(
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as bool,
-    maxOpenPullRequests: identical(maxOpenPullRequests, sdkOmittedValue) ? this.maxOpenPullRequests : maxOpenPullRequests as int,
-    includeDrafts: identical(includeDrafts, sdkOmittedValue) ? this.includeDrafts : includeDrafts as SdkOptional<bool>,
-  );
-
-  factory InteractionsGetPullRequestCreationCapForOrgResponse.fromJson(Map<String, dynamic> json) => InteractionsGetPullRequestCreationCapForOrgResponse(
-    enabled: (json['enabled'] as bool?)!,
-    maxOpenPullRequests: ((json['max_open_pull_requests'] as num?)?.toInt())!,
-    includeDrafts: json['include_drafts'] != null ? SdkPresent((json['include_drafts'] as bool?)!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    'enabled': enabled,
-    'max_open_pull_requests': maxOpenPullRequests,
-    ...switch (includeDrafts) {
-      SdkPresent<bool>(value: final value) => {'include_drafts': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
-}
-
-class InteractionsUpdatePullRequestCreationCapForOrgRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// Whether the pull request creation cap is enabled
-  final bool enabled;
-  /// The maximum number of open pull requests a user can have at one time
-  final SdkOptional<int> maxOpenPullRequests;
-  /// Whether draft pull requests count toward the pull request creation cap
-  final SdkOptional<bool> includeDrafts;
-
-  const InteractionsUpdatePullRequestCreationCapForOrgRequestBody({required this.enabled, this.maxOpenPullRequests = const SdkOmitted(), this.includeDrafts = const SdkOmitted()});
-
-  InteractionsUpdatePullRequestCreationCapForOrgRequestBody Function({bool enabled, SdkOptional<int> maxOpenPullRequests, SdkOptional<bool> includeDrafts}) get copyWith => _copyWith;
-
-  InteractionsUpdatePullRequestCreationCapForOrgRequestBody _copyWith({Object? enabled = sdkOmittedValue, Object? maxOpenPullRequests = sdkOmittedValue, Object? includeDrafts = sdkOmittedValue}) => InteractionsUpdatePullRequestCreationCapForOrgRequestBody(
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as bool,
-    maxOpenPullRequests: identical(maxOpenPullRequests, sdkOmittedValue) ? this.maxOpenPullRequests : maxOpenPullRequests as SdkOptional<int>,
-    includeDrafts: identical(includeDrafts, sdkOmittedValue) ? this.includeDrafts : includeDrafts as SdkOptional<bool>,
-  );
-
-  factory InteractionsUpdatePullRequestCreationCapForOrgRequestBody.fromJson(Map<String, dynamic> json) => InteractionsUpdatePullRequestCreationCapForOrgRequestBody(
-    enabled: (json['enabled'] as bool?)!,
-    maxOpenPullRequests: json['max_open_pull_requests'] != null ? SdkPresent(((json['max_open_pull_requests'] as num?)?.toInt())!) : const SdkOmitted(),
-    includeDrafts: json['include_drafts'] != null ? SdkPresent((json['include_drafts'] as bool?)!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    'enabled': enabled,
-    ...switch (maxOpenPullRequests) {
-      SdkPresent<int>(value: final value) => {'max_open_pull_requests': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (includeDrafts) {
-      SdkPresent<bool>(value: final value) => {'include_drafts': value,},
-      _ => const <String, dynamic>{},
-    },
+    'names': names,
   };
 }

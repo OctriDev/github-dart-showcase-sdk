@@ -267,6 +267,10 @@ sealed class IntegrationInstallationRequestAccount {
   static const String constructionSurface = 'named';
   const IntegrationInstallationRequestAccount();
   factory IntegrationInstallationRequestAccount.fromJson(Object? json) {
+    if (json is Map<String, dynamic>) {
+      try { final value = SimpleUser.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IntegrationInstallationRequestAccountSimpleUser(value); } } catch (_) {}
+      try { final value = Enterprise.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IntegrationInstallationRequestAccountEnterprise(value); } } catch (_) {}
+    }
     try { return IntegrationInstallationRequestAccountSimpleUser(SimpleUser.fromJson(json as Map<String, dynamic>)); } catch (_) {}
     try { return IntegrationInstallationRequestAccountEnterprise(Enterprise.fromJson(json as Map<String, dynamic>)); } catch (_) {}
     throw FormatException("No variant matched for IntegrationInstallationRequestAccount");

@@ -48,7 +48,7 @@ Future<BillingAiCreditUsageReportOrg>
           operationId: 'billingGetGithubBillingAiCreditUsageReportOrg',
           fromJsonRaw: (value) => BillingAiCreditUsageReportOrg.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -174,7 +174,7 @@ Future<GetBudget> billingGetBudgetOrg(ClientConfig config,
           operationId: 'billingGetBudgetOrg',
           fromJsonRaw: (value) => GetBudget.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -235,7 +235,7 @@ Future<DeleteBudget> billingDeleteBudgetOrg(ClientConfig config,
           operationId: 'billingDeleteBudgetOrg',
           fromJsonRaw: (value) => DeleteBudget.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -281,7 +281,7 @@ Future<BillingPremiumRequestUsageReportOrg>
           operationId: 'billingGetGithubBillingPremiumRequestUsageReportOrg',
           fromJsonRaw: (value) => BillingPremiumRequestUsageReportOrg.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -317,7 +317,7 @@ Future<BillingUsageReport>
           operationId: 'billingGetGithubBillingUsageReportOrg',
           fromJsonRaw: (value) => BillingUsageReport.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -364,7 +364,7 @@ Future<BillingUsageSummaryReportOrg>
           operationId: 'billingGetGithubBillingUsageSummaryReportOrg',
           fromJsonRaw: (value) => BillingUsageSummaryReportOrg.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -407,7 +407,7 @@ Future<BillingAiCreditUsageReportUser>
           operationId: 'billingGetGithubBillingAiCreditUsageReportUser',
           fromJsonRaw: (value) => BillingAiCreditUsageReportUser.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -450,7 +450,7 @@ Future<BillingPremiumRequestUsageReportUser>
           operationId: 'billingGetGithubBillingPremiumRequestUsageReportUser',
           fromJsonRaw: (value) => BillingPremiumRequestUsageReportUser.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -486,7 +486,7 @@ Future<BillingUsageReportUser>
           operationId: 'billingGetGithubBillingUsageReportUser',
           fromJsonRaw: (value) => BillingUsageReportUser.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -533,6 +533,6 @@ Future<BillingUsageSummaryReportUser>
           operationId: 'billingGetGithubBillingUsageSummaryReportUser',
           fromJsonRaw: (value) => BillingUsageSummaryReportUser.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }

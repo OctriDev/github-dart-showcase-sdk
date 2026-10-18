@@ -4,108 +4,292 @@
 part of 'inline.dart';
 
 // Inline operation models (part 405)
-class ProjectsAddItemForUserRequestBody {
+class ChecksUpdateRequestBodyVariant0 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The type of item to add to the project. Must be either Issue or PullRequest.
-  final ProjectsAddItemForUserRequestBodyType type_;
-  /// The unique identifier of the issue or pull request to add to the project.
-  final SdkOptional<int> id;
-  /// The repository owner login.
-  final SdkOptional<String> owner;
-  /// The repository name.
-  final SdkOptional<String> repo;
-  /// The issue or pull request number.
-  final SdkOptional<int> number;
+  /// The name of the check. For example, "code-coverage".
+  final SdkOptional<String> name;
+  /// The URL of the integrator's site that has the full details of the check.
+  final SdkOptional<String> detailsUrl;
+  /// A reference for the run on the integrator's system.
+  final SdkOptional<String> externalId;
+  /// This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
+  final SdkOptional<String> startedAt;
+  final SdkOptional<ChecksUpdateRequestBodyVariant0Status> status;
+  /// **Required if you provide `completed_at` or a `status` of `completed`**. The final conclusion of the check. **Note:** Providing `conclusion` will automatically set the `status` parameter to `completed`. You cannot change a check run conclusion to `stale`, only GitHub can set this.
+  final ChecksUpdateRequestBodyVariant0Conclusion conclusion;
+  /// The time the check completed. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
+  final SdkOptional<String> completedAt;
+  /// Check runs can accept a variety of data in the `output` object, including a `title` and `summary` and can optionally provide descriptive details about the run.
+  final SdkOptional<ChecksUpdateRequestBodyVariant0Output> output;
+  /// Possible further actions the integrator can perform, which a user may trigger. Each action includes a `label`, `identifier` and `description`. A maximum of three actions are accepted. To learn more about check runs and requested actions, see "[Check runs and requested actions](https://docs.github.com/rest/guides/using-the-rest-api-to-interact-with-checks#check-runs-and-requested-actions)."
+  final SdkOptional<List<ChecksUpdateRequestBodyVariant0ActionsItem>> actions;
+  final Map<String, dynamic> additionalProperties;
 
-  const ProjectsAddItemForUserRequestBody({required this.type_, this.id = const SdkOmitted(), this.owner = const SdkOmitted(), this.repo = const SdkOmitted(), this.number = const SdkOmitted()});
+  const ChecksUpdateRequestBodyVariant0({this.name = const SdkOmitted(), this.detailsUrl = const SdkOmitted(), this.externalId = const SdkOmitted(), this.startedAt = const SdkOmitted(), this.status = const SdkOmitted(), required this.conclusion, this.completedAt = const SdkOmitted(), this.output = const SdkOmitted(), this.actions = const SdkOmitted(), this.additionalProperties = const <String, dynamic>{}});
 
-  ProjectsAddItemForUserRequestBody Function({ProjectsAddItemForUserRequestBodyType type_, SdkOptional<int> id, SdkOptional<String> owner, SdkOptional<String> repo, SdkOptional<int> number}) get copyWith => _copyWith;
+  ChecksUpdateRequestBodyVariant0 Function({SdkOptional<String> name, SdkOptional<String> detailsUrl, SdkOptional<String> externalId, SdkOptional<String> startedAt, SdkOptional<ChecksUpdateRequestBodyVariant0Status> status, ChecksUpdateRequestBodyVariant0Conclusion conclusion, SdkOptional<String> completedAt, SdkOptional<ChecksUpdateRequestBodyVariant0Output> output, SdkOptional<List<ChecksUpdateRequestBodyVariant0ActionsItem>> actions}) get copyWith => _copyWith;
 
-  ProjectsAddItemForUserRequestBody _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? owner = sdkOmittedValue, Object? repo = sdkOmittedValue, Object? number = sdkOmittedValue}) => ProjectsAddItemForUserRequestBody(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as ProjectsAddItemForUserRequestBodyType,
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-    owner: identical(owner, sdkOmittedValue) ? this.owner : owner as SdkOptional<String>,
-    repo: identical(repo, sdkOmittedValue) ? this.repo : repo as SdkOptional<String>,
-    number: identical(number, sdkOmittedValue) ? this.number : number as SdkOptional<int>,
+  ChecksUpdateRequestBodyVariant0 _copyWith({Object? name = sdkOmittedValue, Object? detailsUrl = sdkOmittedValue, Object? externalId = sdkOmittedValue, Object? startedAt = sdkOmittedValue, Object? status = sdkOmittedValue, Object? conclusion = sdkOmittedValue, Object? completedAt = sdkOmittedValue, Object? output = sdkOmittedValue, Object? actions = sdkOmittedValue}) => ChecksUpdateRequestBodyVariant0(
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
+    detailsUrl: identical(detailsUrl, sdkOmittedValue) ? this.detailsUrl : detailsUrl as SdkOptional<String>,
+    externalId: identical(externalId, sdkOmittedValue) ? this.externalId : externalId as SdkOptional<String>,
+    startedAt: identical(startedAt, sdkOmittedValue) ? this.startedAt : startedAt as SdkOptional<String>,
+    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<ChecksUpdateRequestBodyVariant0Status>,
+    conclusion: identical(conclusion, sdkOmittedValue) ? this.conclusion : conclusion as ChecksUpdateRequestBodyVariant0Conclusion,
+    completedAt: identical(completedAt, sdkOmittedValue) ? this.completedAt : completedAt as SdkOptional<String>,
+    output: identical(output, sdkOmittedValue) ? this.output : output as SdkOptional<ChecksUpdateRequestBodyVariant0Output>,
+    actions: identical(actions, sdkOmittedValue) ? this.actions : actions as SdkOptional<List<ChecksUpdateRequestBodyVariant0ActionsItem>>,
+    additionalProperties: additionalProperties,
   );
 
-  factory ProjectsAddItemForUserRequestBody.fromJson(Map<String, dynamic> json) => ProjectsAddItemForUserRequestBody(
-    type_: (json['type'] != null ? ProjectsAddItemForUserRequestBodyType.fromJson(json['type'] as String) : null)!,
-    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
-    owner: json['owner'] != null ? SdkPresent((json['owner'] as String?)!) : const SdkOmitted(),
-    repo: json['repo'] != null ? SdkPresent((json['repo'] as String?)!) : const SdkOmitted(),
-    number: json['number'] != null ? SdkPresent(((json['number'] as num?)?.toInt())!) : const SdkOmitted(),
+  factory ChecksUpdateRequestBodyVariant0.fromJson(Map<String, dynamic> json) => ChecksUpdateRequestBodyVariant0(
+    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
+    detailsUrl: json['details_url'] != null ? SdkPresent((json['details_url'] as String?)!) : const SdkOmitted(),
+    externalId: json['external_id'] != null ? SdkPresent((json['external_id'] as String?)!) : const SdkOmitted(),
+    startedAt: json['started_at'] != null ? SdkPresent((json['started_at'] as String?)!) : const SdkOmitted(),
+    status: json['status'] != null ? SdkPresent((json['status'] != null ? ChecksUpdateRequestBodyVariant0Status.fromJson(json['status'] as String) : null)!) : const SdkOmitted(),
+    conclusion: (json['conclusion'] != null ? ChecksUpdateRequestBodyVariant0Conclusion.fromJson(json['conclusion'] as String) : null)!,
+    completedAt: json['completed_at'] != null ? SdkPresent((json['completed_at'] as String?)!) : const SdkOmitted(),
+    output: json['output'] != null ? SdkPresent((json['output'] != null ? ChecksUpdateRequestBodyVariant0Output.fromJson(json['output'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    actions: json['actions'] != null ? SdkPresent(((json['actions'] as List?)?.map((e) => ChecksUpdateRequestBodyVariant0ActionsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+    additionalProperties: Map.of(json)..removeWhere((key, _) => const <String>{'name', 'details_url', 'external_id', 'started_at', 'status', 'conclusion', 'completed_at', 'output', 'actions'}.contains(key)),
   );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    ...switch (id) {
-      SdkPresent<int>(value: final value) => {'id': value,},
+    ...additionalProperties,
+    ...switch (name) {
+      SdkPresent<String>(value: final value) => {'name': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (owner) {
-      SdkPresent<String>(value: final value) => {'owner': value,},
+    ...switch (detailsUrl) {
+      SdkPresent<String>(value: final value) => {'details_url': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (repo) {
-      SdkPresent<String>(value: final value) => {'repo': value,},
+    ...switch (externalId) {
+      SdkPresent<String>(value: final value) => {'external_id': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (number) {
-      SdkPresent<int>(value: final value) => {'number': value,},
+    ...switch (startedAt) {
+      SdkPresent<String>(value: final value) => {'started_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (status) {
+      SdkPresent<ChecksUpdateRequestBodyVariant0Status>(value: final value) => {'status': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'conclusion': conclusion.toJson(),
+    ...switch (completedAt) {
+      SdkPresent<String>(value: final value) => {'completed_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (output) {
+      SdkPresent<ChecksUpdateRequestBodyVariant0Output>(value: final value) => {'output': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (actions) {
+      SdkPresent<List<ChecksUpdateRequestBodyVariant0ActionsItem>>(value: final value) => {'actions': value.map((item) => item.toJson()).toList(),},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-class ProjectsUpdateItemForUserRequestBodyFieldsItem {
+class ChecksUpdateRequestBodyVariant1OutputAnnotationsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The ID of the project field to update.
-  final int id;
-  /// The new value for the field: - For text, number, and date fields, provide the new value directly. - For single select and iteration fields, provide the ID of the option or iteration. - To clear the field, set this to null.
-  final dynamic value;
+  /// The path of the file to add an annotation to. For example, `assets/css/main.css`.
+  final String path;
+  /// The start line of the annotation. Line numbers start at 1.
+  final int startLine;
+  /// The end line of the annotation.
+  final int endLine;
+  /// The start column of the annotation. Annotations only support `start_column` and `end_column` on the same line. Omit this parameter if `start_line` and `end_line` have different values. Column numbers start at 1.
+  final SdkOptional<int> startColumn;
+  /// The end column of the annotation. Annotations only support `start_column` and `end_column` on the same line. Omit this parameter if `start_line` and `end_line` have different values.
+  final SdkOptional<int> endColumn;
+  /// The level of the annotation.
+  final ChecksUpdateRequestBodyVariant1OutputAnnotationsItemAnnotationLevel annotationLevel;
+  /// A short description of the feedback for these lines of code. The maximum size is 64 KB.
+  final String message;
+  /// The title that represents the annotation. The maximum size is 255 characters.
+  final SdkOptional<String> title;
+  /// Details about this annotation. The maximum size is 64 KB.
+  final SdkOptional<String> rawDetails;
 
-  const ProjectsUpdateItemForUserRequestBodyFieldsItem({required this.id, required this.value});
+  const ChecksUpdateRequestBodyVariant1OutputAnnotationsItem({required this.path, required this.startLine, required this.endLine, this.startColumn = const SdkOmitted(), this.endColumn = const SdkOmitted(), required this.annotationLevel, required this.message, this.title = const SdkOmitted(), this.rawDetails = const SdkOmitted()});
 
-  ProjectsUpdateItemForUserRequestBodyFieldsItem Function({int id, dynamic value}) get copyWith => _copyWith;
+  ChecksUpdateRequestBodyVariant1OutputAnnotationsItem Function({String path, int startLine, int endLine, SdkOptional<int> startColumn, SdkOptional<int> endColumn, ChecksUpdateRequestBodyVariant1OutputAnnotationsItemAnnotationLevel annotationLevel, String message, SdkOptional<String> title, SdkOptional<String> rawDetails}) get copyWith => _copyWith;
 
-  ProjectsUpdateItemForUserRequestBodyFieldsItem _copyWith({Object? id = sdkOmittedValue, Object? value = sdkOmittedValue}) => ProjectsUpdateItemForUserRequestBodyFieldsItem(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    value: identical(value, sdkOmittedValue) ? this.value : value as dynamic,
+  ChecksUpdateRequestBodyVariant1OutputAnnotationsItem _copyWith({Object? path = sdkOmittedValue, Object? startLine = sdkOmittedValue, Object? endLine = sdkOmittedValue, Object? startColumn = sdkOmittedValue, Object? endColumn = sdkOmittedValue, Object? annotationLevel = sdkOmittedValue, Object? message = sdkOmittedValue, Object? title = sdkOmittedValue, Object? rawDetails = sdkOmittedValue}) => ChecksUpdateRequestBodyVariant1OutputAnnotationsItem(
+    path: identical(path, sdkOmittedValue) ? this.path : path as String,
+    startLine: identical(startLine, sdkOmittedValue) ? this.startLine : startLine as int,
+    endLine: identical(endLine, sdkOmittedValue) ? this.endLine : endLine as int,
+    startColumn: identical(startColumn, sdkOmittedValue) ? this.startColumn : startColumn as SdkOptional<int>,
+    endColumn: identical(endColumn, sdkOmittedValue) ? this.endColumn : endColumn as SdkOptional<int>,
+    annotationLevel: identical(annotationLevel, sdkOmittedValue) ? this.annotationLevel : annotationLevel as ChecksUpdateRequestBodyVariant1OutputAnnotationsItemAnnotationLevel,
+    message: identical(message, sdkOmittedValue) ? this.message : message as String,
+    title: identical(title, sdkOmittedValue) ? this.title : title as SdkOptional<String>,
+    rawDetails: identical(rawDetails, sdkOmittedValue) ? this.rawDetails : rawDetails as SdkOptional<String>,
   );
 
-  factory ProjectsUpdateItemForUserRequestBodyFieldsItem.fromJson(Map<String, dynamic> json) => ProjectsUpdateItemForUserRequestBodyFieldsItem(
-    id: ((json['id'] as num?)?.toInt())!,
-    value: json.containsKey('value') ? json['value'] : throw ArgumentError.value(null, 'value', 'Required property is missing'),
+  factory ChecksUpdateRequestBodyVariant1OutputAnnotationsItem.fromJson(Map<String, dynamic> json) => ChecksUpdateRequestBodyVariant1OutputAnnotationsItem(
+    path: (json['path'] as String?)!,
+    startLine: ((json['start_line'] as num?)?.toInt())!,
+    endLine: ((json['end_line'] as num?)?.toInt())!,
+    startColumn: json['start_column'] != null ? SdkPresent(((json['start_column'] as num?)?.toInt())!) : const SdkOmitted(),
+    endColumn: json['end_column'] != null ? SdkPresent(((json['end_column'] as num?)?.toInt())!) : const SdkOmitted(),
+    annotationLevel: (json['annotation_level'] != null ? ChecksUpdateRequestBodyVariant1OutputAnnotationsItemAnnotationLevel.fromJson(json['annotation_level'] as String) : null)!,
+    message: (json['message'] as String?)!,
+    title: json['title'] != null ? SdkPresent((json['title'] as String?)!) : const SdkOmitted(),
+    rawDetails: json['raw_details'] != null ? SdkPresent((json['raw_details'] as String?)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'value': value,
+    'path': path,
+    'start_line': startLine,
+    'end_line': endLine,
+    ...switch (startColumn) {
+      SdkPresent<int>(value: final value) => {'start_column': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (endColumn) {
+      SdkPresent<int>(value: final value) => {'end_column': value,},
+      _ => const <String, dynamic>{},
+    },
+    'annotation_level': annotationLevel.toJson(),
+    'message': message,
+    ...switch (title) {
+      SdkPresent<String>(value: final value) => {'title': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (rawDetails) {
+      SdkPresent<String>(value: final value) => {'raw_details': value,},
+      _ => const <String, dynamic>{},
+    },
   };
 }
 
-class ProjectsUpdateItemForUserRequestBody {
+class ChecksUpdateRequestBodyVariant1OutputImagesItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// A list of field updates to apply.
-  final List<ProjectsUpdateItemForUserRequestBodyFieldsItem> fields;
+  /// The alternative text for the image.
+  final String alt;
+  /// The full URL of the image.
+  final String imageUrl;
+  /// A short image description.
+  final SdkOptional<String> caption;
 
-  const ProjectsUpdateItemForUserRequestBody({required this.fields});
+  const ChecksUpdateRequestBodyVariant1OutputImagesItem({required this.alt, required this.imageUrl, this.caption = const SdkOmitted()});
 
-  ProjectsUpdateItemForUserRequestBody Function({List<ProjectsUpdateItemForUserRequestBodyFieldsItem> fields}) get copyWith => _copyWith;
+  ChecksUpdateRequestBodyVariant1OutputImagesItem Function({String alt, String imageUrl, SdkOptional<String> caption}) get copyWith => _copyWith;
 
-  ProjectsUpdateItemForUserRequestBody _copyWith({Object? fields = sdkOmittedValue}) => ProjectsUpdateItemForUserRequestBody(
-    fields: identical(fields, sdkOmittedValue) ? this.fields : fields as List<ProjectsUpdateItemForUserRequestBodyFieldsItem>,
+  ChecksUpdateRequestBodyVariant1OutputImagesItem _copyWith({Object? alt = sdkOmittedValue, Object? imageUrl = sdkOmittedValue, Object? caption = sdkOmittedValue}) => ChecksUpdateRequestBodyVariant1OutputImagesItem(
+    alt: identical(alt, sdkOmittedValue) ? this.alt : alt as String,
+    imageUrl: identical(imageUrl, sdkOmittedValue) ? this.imageUrl : imageUrl as String,
+    caption: identical(caption, sdkOmittedValue) ? this.caption : caption as SdkOptional<String>,
   );
 
-  factory ProjectsUpdateItemForUserRequestBody.fromJson(Map<String, dynamic> json) => ProjectsUpdateItemForUserRequestBody(
-    fields: ((json['fields'] as List?)?.map((e) => ProjectsUpdateItemForUserRequestBodyFieldsItem.fromJson(e as Map<String, dynamic>)).toList())!,
+  factory ChecksUpdateRequestBodyVariant1OutputImagesItem.fromJson(Map<String, dynamic> json) => ChecksUpdateRequestBodyVariant1OutputImagesItem(
+    alt: (json['alt'] as String?)!,
+    imageUrl: (json['image_url'] as String?)!,
+    caption: json['caption'] != null ? SdkPresent((json['caption'] as String?)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    'fields': fields.map((item) => item.toJson()).toList(),
+    'alt': alt,
+    'image_url': imageUrl,
+    ...switch (caption) {
+      SdkPresent<String>(value: final value) => {'caption': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
+}
+
+/// Check runs can accept a variety of data in the `output` object, including a `title` and `summary` and can optionally provide descriptive details about the run.
+class ChecksUpdateRequestBodyVariant1Output {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// **Required**.
+  final SdkOptional<String> title;
+  /// Can contain Markdown.
+  final String summary;
+  /// Can contain Markdown.
+  final SdkOptional<String> text;
+  /// Adds information from your analysis to specific lines of code. Annotations are visible in GitHub's pull request UI. Annotations are visible in GitHub's pull request UI. The Checks API limits the number of annotations to a maximum of 50 per API request. To create more than 50 annotations, you have to make multiple requests to the [Update a check run](https://docs.github.com/rest/checks/runs#update-a-check-run) endpoint. Each time you update the check run, annotations are appended to the list of annotations that already exist for the check run. GitHub Actions are limited to 10 warning annotations and 10 error annotations per step. For details about annotations in the UI, see "[About status checks](https://docs.github.com/articles/about-status-checks#checks)".
+  final SdkOptional<List<ChecksUpdateRequestBodyVariant1OutputAnnotationsItem>> annotations;
+  /// Adds images to the output displayed in the GitHub pull request UI.
+  final SdkOptional<List<ChecksUpdateRequestBodyVariant1OutputImagesItem>> images;
+
+  const ChecksUpdateRequestBodyVariant1Output({this.title = const SdkOmitted(), required this.summary, this.text = const SdkOmitted(), this.annotations = const SdkOmitted(), this.images = const SdkOmitted()});
+
+  ChecksUpdateRequestBodyVariant1Output Function({SdkOptional<String> title, String summary, SdkOptional<String> text, SdkOptional<List<ChecksUpdateRequestBodyVariant1OutputAnnotationsItem>> annotations, SdkOptional<List<ChecksUpdateRequestBodyVariant1OutputImagesItem>> images}) get copyWith => _copyWith;
+
+  ChecksUpdateRequestBodyVariant1Output _copyWith({Object? title = sdkOmittedValue, Object? summary = sdkOmittedValue, Object? text = sdkOmittedValue, Object? annotations = sdkOmittedValue, Object? images = sdkOmittedValue}) => ChecksUpdateRequestBodyVariant1Output(
+    title: identical(title, sdkOmittedValue) ? this.title : title as SdkOptional<String>,
+    summary: identical(summary, sdkOmittedValue) ? this.summary : summary as String,
+    text: identical(text, sdkOmittedValue) ? this.text : text as SdkOptional<String>,
+    annotations: identical(annotations, sdkOmittedValue) ? this.annotations : annotations as SdkOptional<List<ChecksUpdateRequestBodyVariant1OutputAnnotationsItem>>,
+    images: identical(images, sdkOmittedValue) ? this.images : images as SdkOptional<List<ChecksUpdateRequestBodyVariant1OutputImagesItem>>,
+  );
+
+  factory ChecksUpdateRequestBodyVariant1Output.fromJson(Map<String, dynamic> json) => ChecksUpdateRequestBodyVariant1Output(
+    title: json['title'] != null ? SdkPresent((json['title'] as String?)!) : const SdkOmitted(),
+    summary: (json['summary'] as String?)!,
+    text: json['text'] != null ? SdkPresent((json['text'] as String?)!) : const SdkOmitted(),
+    annotations: json['annotations'] != null ? SdkPresent(((json['annotations'] as List?)?.map((e) => ChecksUpdateRequestBodyVariant1OutputAnnotationsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+    images: json['images'] != null ? SdkPresent(((json['images'] as List?)?.map((e) => ChecksUpdateRequestBodyVariant1OutputImagesItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    ...switch (title) {
+      SdkPresent<String>(value: final value) => {'title': value,},
+      _ => const <String, dynamic>{},
+    },
+    'summary': summary,
+    ...switch (text) {
+      SdkPresent<String>(value: final value) => {'text': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (annotations) {
+      SdkPresent<List<ChecksUpdateRequestBodyVariant1OutputAnnotationsItem>>(value: final value) => {'annotations': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (images) {
+      SdkPresent<List<ChecksUpdateRequestBodyVariant1OutputImagesItem>>(value: final value) => {'images': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
+}
+
+class ChecksUpdateRequestBodyVariant1ActionsItem {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The text to be displayed on a button in the web UI. The maximum size is 20 characters.
+  final String label;
+  /// A short explanation of what this action would do. The maximum size is 40 characters.
+  final String description;
+  /// A reference for the action on the integrator's system. The maximum size is 20 characters.
+  final String identifier;
+
+  const ChecksUpdateRequestBodyVariant1ActionsItem({required this.label, required this.description, required this.identifier});
+
+  ChecksUpdateRequestBodyVariant1ActionsItem Function({String label, String description, String identifier}) get copyWith => _copyWith;
+
+  ChecksUpdateRequestBodyVariant1ActionsItem _copyWith({Object? label = sdkOmittedValue, Object? description = sdkOmittedValue, Object? identifier = sdkOmittedValue}) => ChecksUpdateRequestBodyVariant1ActionsItem(
+    label: identical(label, sdkOmittedValue) ? this.label : label as String,
+    description: identical(description, sdkOmittedValue) ? this.description : description as String,
+    identifier: identical(identifier, sdkOmittedValue) ? this.identifier : identifier as String,
+  );
+
+  factory ChecksUpdateRequestBodyVariant1ActionsItem.fromJson(Map<String, dynamic> json) => ChecksUpdateRequestBodyVariant1ActionsItem(
+    label: (json['label'] as String?)!,
+    description: (json['description'] as String?)!,
+    identifier: (json['identifier'] as String?)!,
+  );
+
+  Map<String, dynamic> toJson() => {
+    'label': label,
+    'description': description,
+    'identifier': identifier,
   };
 }

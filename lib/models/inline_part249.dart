@@ -4,291 +4,275 @@
 part of 'inline.dart';
 
 // Inline operation models (part 249)
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope {
+/// The enablement status of private vulnerability reporting
+final class CodeSecurityUpdateConfigurationRequestBodyPrivateVulnerabilityReporting {
 
   final String value;
 
-  const AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope._(this.value);
+  const CodeSecurityUpdateConfigurationRequestBodyPrivateVulnerabilityReporting._(this.value);
 
-  factory AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope.fromJson(String value) => AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope._(value);
+  factory CodeSecurityUpdateConfigurationRequestBodyPrivateVulnerabilityReporting.fromJson(String value) => CodeSecurityUpdateConfigurationRequestBodyPrivateVulnerabilityReporting._(value);
 
-  static const trigger = AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope._('trigger');
-  static const repository = AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope._('repository');
+  static const enabled = CodeSecurityUpdateConfigurationRequestBodyPrivateVulnerabilityReporting._('enabled');
+  static const disabled = CodeSecurityUpdateConfigurationRequestBodyPrivateVulnerabilityReporting._('disabled');
+  static const notSet = CodeSecurityUpdateConfigurationRequestBodyPrivateVulnerabilityReporting._('not_set');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope && other.value == value;
+  @override bool operator ==(Object other) => other is CodeSecurityUpdateConfigurationRequestBodyPrivateVulnerabilityReporting && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsCreateRepoAutomationResponseTriggersSubIssueAddedWriteScope {
+/// The enablement status of GitHub Secret Protection features.
+final class CodeSecurityUpdateConfigurationRequestBodySecretProtection {
 
   final String value;
 
-  const AgentAutomationsCreateRepoAutomationResponseTriggersSubIssueAddedWriteScope._(this.value);
+  const CodeSecurityUpdateConfigurationRequestBodySecretProtection._(this.value);
 
-  factory AgentAutomationsCreateRepoAutomationResponseTriggersSubIssueAddedWriteScope.fromJson(String value) => AgentAutomationsCreateRepoAutomationResponseTriggersSubIssueAddedWriteScope._(value);
+  factory CodeSecurityUpdateConfigurationRequestBodySecretProtection.fromJson(String value) => CodeSecurityUpdateConfigurationRequestBodySecretProtection._(value);
 
-  static const trigger = AgentAutomationsCreateRepoAutomationResponseTriggersSubIssueAddedWriteScope._('trigger');
-  static const repository = AgentAutomationsCreateRepoAutomationResponseTriggersSubIssueAddedWriteScope._('repository');
+  static const enabled = CodeSecurityUpdateConfigurationRequestBodySecretProtection._('enabled');
+  static const disabled = CodeSecurityUpdateConfigurationRequestBodySecretProtection._('disabled');
+  static const notSet = CodeSecurityUpdateConfigurationRequestBodySecretProtection._('not_set');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsCreateRepoAutomationResponseTriggersSubIssueAddedWriteScope && other.value == value;
+  @override bool operator ==(Object other) => other is CodeSecurityUpdateConfigurationRequestBodySecretProtection && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-final class AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunConclusionsItem {
+/// The enablement status of secret scanning
+final class CodeSecurityUpdateConfigurationRequestBodySecretScanning {
 
   final String value;
 
-  const AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunConclusionsItem._(this.value);
+  const CodeSecurityUpdateConfigurationRequestBodySecretScanning._(this.value);
 
-  factory AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunConclusionsItem.fromJson(String value) => AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunConclusionsItem._(value);
+  factory CodeSecurityUpdateConfigurationRequestBodySecretScanning.fromJson(String value) => CodeSecurityUpdateConfigurationRequestBodySecretScanning._(value);
 
-  static const failure = AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunConclusionsItem._('failure');
+  static const enabled = CodeSecurityUpdateConfigurationRequestBodySecretScanning._('enabled');
+  static const disabled = CodeSecurityUpdateConfigurationRequestBodySecretScanning._('disabled');
+  static const notSet = CodeSecurityUpdateConfigurationRequestBodySecretScanning._('not_set');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunConclusionsItem && other.value == value;
+  @override bool operator ==(Object other) => other is CodeSecurityUpdateConfigurationRequestBodySecretScanning && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunWriteScope {
+/// The enablement status of secret scanning delegated alert dismissal
+final class CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedAlertDismissal {
 
   final String value;
 
-  const AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunWriteScope._(this.value);
+  const CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedAlertDismissal._(this.value);
 
-  factory AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunWriteScope.fromJson(String value) => AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunWriteScope._(value);
+  factory CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedAlertDismissal.fromJson(String value) => CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedAlertDismissal._(value);
 
-  static const trigger = AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunWriteScope._('trigger');
-  static const repository = AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunWriteScope._('repository');
+  static const enabled = CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedAlertDismissal._('enabled');
+  static const disabled = CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedAlertDismissal._('disabled');
+  static const notSet = CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedAlertDismissal._('not_set');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunWriteScope && other.value == value;
+  @override bool operator ==(Object other) => other is CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedAlertDismissal && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Controls which repository resources a run may modify. `trigger` limits writes to the resource that started the run, when one exists, and resources created during the run; `repository` allows writes to any resource in the repository. Supported values: `trigger`, `repository`.
-final class AgentAutomationsCreateRepoAutomationResponseWriteScope {
+/// The enablement status of secret scanning delegated bypass
+final class CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypass {
 
   final String value;
 
-  const AgentAutomationsCreateRepoAutomationResponseWriteScope._(this.value);
+  const CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypass._(this.value);
 
-  factory AgentAutomationsCreateRepoAutomationResponseWriteScope.fromJson(String value) => AgentAutomationsCreateRepoAutomationResponseWriteScope._(value);
+  factory CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypass.fromJson(String value) => CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypass._(value);
 
-  static const trigger = AgentAutomationsCreateRepoAutomationResponseWriteScope._('trigger');
-  static const repository = AgentAutomationsCreateRepoAutomationResponseWriteScope._('repository');
+  static const enabled = CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypass._('enabled');
+  static const disabled = CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypass._('disabled');
+  static const notSet = CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypass._('not_set');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsCreateRepoAutomationResponseWriteScope && other.value == value;
+  @override bool operator ==(Object other) => other is CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypass && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Machine-readable error code
-final class AgentAutomationsCreateRepoAutomationResponseErrorsItemCode {
+/// The bypass mode for the reviewer
+final class CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemMode {
 
   final String value;
 
-  const AgentAutomationsCreateRepoAutomationResponseErrorsItemCode._(this.value);
+  const CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemMode._(this.value);
 
-  factory AgentAutomationsCreateRepoAutomationResponseErrorsItemCode.fromJson(String value) => AgentAutomationsCreateRepoAutomationResponseErrorsItemCode._(value);
+  factory CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemMode.fromJson(String value) => CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemMode._(value);
 
-  static const missing = AgentAutomationsCreateRepoAutomationResponseErrorsItemCode._('missing');
-  static const missingField = AgentAutomationsCreateRepoAutomationResponseErrorsItemCode._('missing_field');
-  static const invalid = AgentAutomationsCreateRepoAutomationResponseErrorsItemCode._('invalid');
-  static const alreadyExists = AgentAutomationsCreateRepoAutomationResponseErrorsItemCode._('already_exists');
-  static const unprocessable = AgentAutomationsCreateRepoAutomationResponseErrorsItemCode._('unprocessable');
-  static const custom = AgentAutomationsCreateRepoAutomationResponseErrorsItemCode._('custom');
+  static const always = CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemMode._('ALWAYS');
+  static const exempt = CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemMode._('EXEMPT');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsCreateRepoAutomationResponseErrorsItemCode && other.value == value;
+  @override bool operator ==(Object other) => other is CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemMode && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Machine-readable error code
-final class AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3 {
+/// The type of the bypass reviewer
+final class CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemReviewerType {
 
   final String value;
 
-  const AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3._(this.value);
+  const CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemReviewerType._(this.value);
 
-  factory AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3.fromJson(String value) => AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3._(value);
+  factory CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemReviewerType.fromJson(String value) => CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemReviewerType._(value);
 
-  static const missing = AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3._('missing');
-  static const missingField = AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3._('missing_field');
-  static const invalid = AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3._('invalid');
-  static const alreadyExists = AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3._('already_exists');
-  static const unprocessable = AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3._('unprocessable');
-  static const custom = AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3._('custom');
+  static const team = CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemReviewerType._('TEAM');
+  static const role = CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemReviewerType._('ROLE');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3 && other.value == value;
+  @override bool operator ==(Object other) => other is CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemReviewerType && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Machine-readable error code
-final class AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235 {
+/// The enablement status of secret scanning extended metadata
+final class CodeSecurityUpdateConfigurationRequestBodySecretScanningExtendedMetadata {
 
   final String value;
 
-  const AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235._(this.value);
+  const CodeSecurityUpdateConfigurationRequestBodySecretScanningExtendedMetadata._(this.value);
 
-  factory AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235.fromJson(String value) => AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235._(value);
+  factory CodeSecurityUpdateConfigurationRequestBodySecretScanningExtendedMetadata.fromJson(String value) => CodeSecurityUpdateConfigurationRequestBodySecretScanningExtendedMetadata._(value);
 
-  static const missing = AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235._('missing');
-  static const missingField = AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235._('missing_field');
-  static const invalid = AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235._('invalid');
-  static const alreadyExists = AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235._('already_exists');
-  static const unprocessable = AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235._('unprocessable');
-  static const custom = AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235._('custom');
+  static const enabled = CodeSecurityUpdateConfigurationRequestBodySecretScanningExtendedMetadata._('enabled');
+  static const disabled = CodeSecurityUpdateConfigurationRequestBodySecretScanningExtendedMetadata._('disabled');
+  static const notSet = CodeSecurityUpdateConfigurationRequestBodySecretScanningExtendedMetadata._('not_set');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235 && other.value == value;
+  @override bool operator ==(Object other) => other is CodeSecurityUpdateConfigurationRequestBodySecretScanningExtendedMetadata && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Machine-readable error code
-final class AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce {
+/// The enablement status of Copilot secret scanning
+final class CodeSecurityUpdateConfigurationRequestBodySecretScanningGenericSecrets {
 
   final String value;
 
-  const AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce._(this.value);
+  const CodeSecurityUpdateConfigurationRequestBodySecretScanningGenericSecrets._(this.value);
 
-  factory AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce.fromJson(String value) => AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce._(value);
+  factory CodeSecurityUpdateConfigurationRequestBodySecretScanningGenericSecrets.fromJson(String value) => CodeSecurityUpdateConfigurationRequestBodySecretScanningGenericSecrets._(value);
 
-  static const missing = AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce._('missing');
-  static const missingField = AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce._('missing_field');
-  static const invalid = AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce._('invalid');
-  static const alreadyExists = AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce._('already_exists');
-  static const unprocessable = AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce._('unprocessable');
-  static const custom = AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce._('custom');
+  static const enabled = CodeSecurityUpdateConfigurationRequestBodySecretScanningGenericSecrets._('enabled');
+  static const disabled = CodeSecurityUpdateConfigurationRequestBodySecretScanningGenericSecrets._('disabled');
+  static const notSet = CodeSecurityUpdateConfigurationRequestBodySecretScanningGenericSecrets._('not_set');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce && other.value == value;
+  @override bool operator ==(Object other) => other is CodeSecurityUpdateConfigurationRequestBodySecretScanningGenericSecrets && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Machine-readable error code
-final class AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0 {
+/// The enablement status of secret scanning non-provider patterns
+final class CodeSecurityUpdateConfigurationRequestBodySecretScanningNonProviderPatterns {
 
   final String value;
 
-  const AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0._(this.value);
+  const CodeSecurityUpdateConfigurationRequestBodySecretScanningNonProviderPatterns._(this.value);
 
-  factory AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0.fromJson(String value) => AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0._(value);
+  factory CodeSecurityUpdateConfigurationRequestBodySecretScanningNonProviderPatterns.fromJson(String value) => CodeSecurityUpdateConfigurationRequestBodySecretScanningNonProviderPatterns._(value);
 
-  static const missing = AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0._('missing');
-  static const missingField = AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0._('missing_field');
-  static const invalid = AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0._('invalid');
-  static const alreadyExists = AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0._('already_exists');
-  static const unprocessable = AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0._('unprocessable');
-  static const custom = AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0._('custom');
+  static const enabled = CodeSecurityUpdateConfigurationRequestBodySecretScanningNonProviderPatterns._('enabled');
+  static const disabled = CodeSecurityUpdateConfigurationRequestBodySecretScanningNonProviderPatterns._('disabled');
+  static const notSet = CodeSecurityUpdateConfigurationRequestBodySecretScanningNonProviderPatterns._('not_set');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0 && other.value == value;
+  @override bool operator ==(Object other) => other is CodeSecurityUpdateConfigurationRequestBodySecretScanningNonProviderPatterns && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Machine-readable error code
-final class AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode {
+/// The enablement status of secret scanning push protection
+final class CodeSecurityUpdateConfigurationRequestBodySecretScanningPushProtection {
 
   final String value;
 
-  const AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode._(this.value);
+  const CodeSecurityUpdateConfigurationRequestBodySecretScanningPushProtection._(this.value);
 
-  factory AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode.fromJson(String value) => AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode._(value);
+  factory CodeSecurityUpdateConfigurationRequestBodySecretScanningPushProtection.fromJson(String value) => CodeSecurityUpdateConfigurationRequestBodySecretScanningPushProtection._(value);
 
-  static const missing = AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode._('missing');
-  static const missingField = AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode._('missing_field');
-  static const invalid = AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode._('invalid');
-  static const alreadyExists = AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode._('already_exists');
-  static const unprocessable = AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode._('unprocessable');
-  static const custom = AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode._('custom');
+  static const enabled = CodeSecurityUpdateConfigurationRequestBodySecretScanningPushProtection._('enabled');
+  static const disabled = CodeSecurityUpdateConfigurationRequestBodySecretScanningPushProtection._('disabled');
+  static const notSet = CodeSecurityUpdateConfigurationRequestBodySecretScanningPushProtection._('not_set');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode && other.value == value;
+  @override bool operator ==(Object other) => other is CodeSecurityUpdateConfigurationRequestBodySecretScanningPushProtection && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Machine-readable error code
-final class AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b {
+/// The enablement status of secret scanning validity checks
+final class CodeSecurityUpdateConfigurationRequestBodySecretScanningValidityChecks {
 
   final String value;
 
-  const AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b._(this.value);
+  const CodeSecurityUpdateConfigurationRequestBodySecretScanningValidityChecks._(this.value);
 
-  factory AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b.fromJson(String value) => AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b._(value);
+  factory CodeSecurityUpdateConfigurationRequestBodySecretScanningValidityChecks.fromJson(String value) => CodeSecurityUpdateConfigurationRequestBodySecretScanningValidityChecks._(value);
 
-  static const missing = AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b._('missing');
-  static const missingField = AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b._('missing_field');
-  static const invalid = AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b._('invalid');
-  static const alreadyExists = AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b._('already_exists');
-  static const unprocessable = AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b._('unprocessable');
-  static const custom = AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b._('custom');
+  static const enabled = CodeSecurityUpdateConfigurationRequestBodySecretScanningValidityChecks._('enabled');
+  static const disabled = CodeSecurityUpdateConfigurationRequestBodySecretScanningValidityChecks._('disabled');
+  static const notSet = CodeSecurityUpdateConfigurationRequestBodySecretScanningValidityChecks._('not_set');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b && other.value == value;
+  @override bool operator ==(Object other) => other is CodeSecurityUpdateConfigurationRequestBodySecretScanningValidityChecks && other.value == value;
 
   @override int get hashCode => value.hashCode;
 

@@ -4,278 +4,168 @@
 part of 'inline.dart';
 
 // Inline operation models (part 291)
-/// The type of resource.
-final class CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType {
-
-  final String value;
-
-  const CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType._(this.value);
-
-  factory CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType.fromJson(String value) => CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType._(value);
-
-  static const repository = CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType._('repository');
-  static const githubFile = CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType._('github_file');
-  static const freeText = CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType._('free_text');
-  static const githubIssue = CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType._('github_issue');
-  static const githubPullRequest = CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType._('github_pull_request');
-  static const mediaContent = CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType._('media_content');
-  static const uploadedTextFile = CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType._('uploaded_text_file');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The type of actor (must be `User` for user-owned spaces; `Team` will be rejected).
-final class CopilotSpacesAddCollaboratorForUserRequestBodyActorType {
-
-  final String value;
-
-  const CopilotSpacesAddCollaboratorForUserRequestBodyActorType._(this.value);
-
-  factory CopilotSpacesAddCollaboratorForUserRequestBodyActorType.fromJson(String value) => CopilotSpacesAddCollaboratorForUserRequestBodyActorType._(value);
-
-  static const user = CopilotSpacesAddCollaboratorForUserRequestBodyActorType._('User');
-  static const team = CopilotSpacesAddCollaboratorForUserRequestBodyActorType._('Team');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is CopilotSpacesAddCollaboratorForUserRequestBodyActorType && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The role to grant to the collaborator.
-final class CopilotSpacesAddCollaboratorForUserRequestBodyRole {
-
-  final String value;
-
-  const CopilotSpacesAddCollaboratorForUserRequestBodyRole._(this.value);
-
-  factory CopilotSpacesAddCollaboratorForUserRequestBodyRole.fromJson(String value) => CopilotSpacesAddCollaboratorForUserRequestBodyRole._(value);
-
-  static const reader = CopilotSpacesAddCollaboratorForUserRequestBodyRole._('reader');
-  static const writer = CopilotSpacesAddCollaboratorForUserRequestBodyRole._('writer');
-  static const admin = CopilotSpacesAddCollaboratorForUserRequestBodyRole._('admin');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is CopilotSpacesAddCollaboratorForUserRequestBodyRole && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-final class CopilotSpacesRemoveCollaboratorForUserActorType {
-
-  final String value;
-
-  const CopilotSpacesRemoveCollaboratorForUserActorType._(this.value);
-
-  factory CopilotSpacesRemoveCollaboratorForUserActorType.fromJson(String value) => CopilotSpacesRemoveCollaboratorForUserActorType._(value);
-
-  static const user = CopilotSpacesRemoveCollaboratorForUserActorType._('User');
-  static const team = CopilotSpacesRemoveCollaboratorForUserActorType._('Team');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is CopilotSpacesRemoveCollaboratorForUserActorType && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-final class CopilotSpacesUpdateCollaboratorForUserActorType {
-
-  final String value;
-
-  const CopilotSpacesUpdateCollaboratorForUserActorType._(this.value);
-
-  factory CopilotSpacesUpdateCollaboratorForUserActorType.fromJson(String value) => CopilotSpacesUpdateCollaboratorForUserActorType._(value);
-
-  static const user = CopilotSpacesUpdateCollaboratorForUserActorType._('User');
-  static const team = CopilotSpacesUpdateCollaboratorForUserActorType._('Team');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is CopilotSpacesUpdateCollaboratorForUserActorType && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The new role to grant to the collaborator. Use `no_access` to remove the collaborator.
-final class CopilotSpacesUpdateCollaboratorForUserRequestBodyRole {
-
-  final String value;
-
-  const CopilotSpacesUpdateCollaboratorForUserRequestBodyRole._(this.value);
-
-  factory CopilotSpacesUpdateCollaboratorForUserRequestBodyRole.fromJson(String value) => CopilotSpacesUpdateCollaboratorForUserRequestBodyRole._(value);
-
-  static const reader = CopilotSpacesUpdateCollaboratorForUserRequestBodyRole._('reader');
-  static const writer = CopilotSpacesUpdateCollaboratorForUserRequestBodyRole._('writer');
-  static const admin = CopilotSpacesUpdateCollaboratorForUserRequestBodyRole._('admin');
-  static const noAccess = CopilotSpacesUpdateCollaboratorForUserRequestBodyRole._('no_access');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is CopilotSpacesUpdateCollaboratorForUserRequestBodyRole && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The type of resource to create.
-final class CopilotSpacesCreateResourceForUserRequestBodyResourceType {
-
-  final String value;
-
-  const CopilotSpacesCreateResourceForUserRequestBodyResourceType._(this.value);
-
-  factory CopilotSpacesCreateResourceForUserRequestBodyResourceType.fromJson(String value) => CopilotSpacesCreateResourceForUserRequestBodyResourceType._(value);
-
-  static const repository = CopilotSpacesCreateResourceForUserRequestBodyResourceType._('repository');
-  static const githubFile = CopilotSpacesCreateResourceForUserRequestBodyResourceType._('github_file');
-  static const freeText = CopilotSpacesCreateResourceForUserRequestBodyResourceType._('free_text');
-  static const githubIssue = CopilotSpacesCreateResourceForUserRequestBodyResourceType._('github_issue');
-  static const githubPullRequest = CopilotSpacesCreateResourceForUserRequestBodyResourceType._('github_pull_request');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is CopilotSpacesCreateResourceForUserRequestBodyResourceType && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-final class UsersGetContextForUserSubjectType {
-
-  final String value;
-
-  const UsersGetContextForUserSubjectType._(this.value);
-
-  factory UsersGetContextForUserSubjectType.fromJson(String value) => UsersGetContextForUserSubjectType._(value);
-
-  static const organization = UsersGetContextForUserSubjectType._('organization');
-  static const repository = UsersGetContextForUserSubjectType._('repository');
-  static const issue = UsersGetContextForUserSubjectType._('issue');
-  static const pullRequest = UsersGetContextForUserSubjectType._('pull_request');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is UsersGetContextForUserSubjectType && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-final class PackagesListPackagesForUserPackageType {
-
-  final String value;
-
-  const PackagesListPackagesForUserPackageType._(this.value);
-
-  factory PackagesListPackagesForUserPackageType.fromJson(String value) => PackagesListPackagesForUserPackageType._(value);
-
-  static const npm = PackagesListPackagesForUserPackageType._('npm');
-  static const maven = PackagesListPackagesForUserPackageType._('maven');
-  static const rubygems = PackagesListPackagesForUserPackageType._('rubygems');
-  static const docker = PackagesListPackagesForUserPackageType._('docker');
-  static const nuget = PackagesListPackagesForUserPackageType._('nuget');
-  static const container = PackagesListPackagesForUserPackageType._('container');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is PackagesListPackagesForUserPackageType && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The field's data type.
-final class ProjectsAddFieldForUserRequestBodyVariant0DataType {
-
-  final String value;
-
-  const ProjectsAddFieldForUserRequestBodyVariant0DataType._(this.value);
-
-  factory ProjectsAddFieldForUserRequestBodyVariant0DataType.fromJson(String value) => ProjectsAddFieldForUserRequestBodyVariant0DataType._(value);
-
-  static const text = ProjectsAddFieldForUserRequestBodyVariant0DataType._('text');
-  static const number = ProjectsAddFieldForUserRequestBodyVariant0DataType._('number');
-  static const date = ProjectsAddFieldForUserRequestBodyVariant0DataType._('date');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is ProjectsAddFieldForUserRequestBodyVariant0DataType && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The field's data type.
-final class ProjectsAddFieldForUserRequestBodyVariant1DataType {
-
-  final String value;
-
-  const ProjectsAddFieldForUserRequestBodyVariant1DataType._(this.value);
-
-  factory ProjectsAddFieldForUserRequestBodyVariant1DataType.fromJson(String value) => ProjectsAddFieldForUserRequestBodyVariant1DataType._(value);
-
-  static const singleSelect = ProjectsAddFieldForUserRequestBodyVariant1DataType._('single_select');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is ProjectsAddFieldForUserRequestBodyVariant1DataType && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The field's data type.
-final class ProjectsAddFieldForUserRequestBodyVariant2DataType {
-
-  final String value;
-
-  const ProjectsAddFieldForUserRequestBodyVariant2DataType._(this.value);
-
-  factory ProjectsAddFieldForUserRequestBodyVariant2DataType.fromJson(String value) => ProjectsAddFieldForUserRequestBodyVariant2DataType._(value);
-
-  static const iteration = ProjectsAddFieldForUserRequestBodyVariant2DataType._('iteration');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is ProjectsAddFieldForUserRequestBodyVariant2DataType && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
+/// Public trigger configuration keyed by stable public trigger identifier. Each trigger has a closed, trigger-specific configuration schema.
+class AgentAutomationsCreateRepoAutomationRequestBodyTriggers {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersInterval> interval;
+  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueOpened> issueOpened;
+  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueLabeled> issueLabeled;
+  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersWorkflowRun> workflowRun;
+  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestOpened> pullRequestOpened;
+  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestSynchronize> pullRequestSynchronize;
+  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestMerged> pullRequestMerged;
+  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueComment> issueComment;
+  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestComment> pullRequestComment;
+  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersDiscussionOpened> discussionOpened;
+  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersDiscussionUpdated> discussionUpdated;
+  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersDiscussionComment> discussionComment;
+  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueAssigned> issueAssigned;
+  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestAssigned> pullRequestAssigned;
+  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersSubIssueAdded> subIssueAdded;
+  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReadyForReview> pullRequestReadyForReview;
+  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestLabeled> pullRequestLabeled;
+  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestMergeConflict> pullRequestMergeConflict;
+  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewSubmitted> pullRequestReviewSubmitted;
+  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewRequested> pullRequestReviewRequested;
+  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersAutomationCompleted> automationCompleted;
+
+  const AgentAutomationsCreateRepoAutomationRequestBodyTriggers({this.interval = const SdkOmitted(), this.issueOpened = const SdkOmitted(), this.issueLabeled = const SdkOmitted(), this.workflowRun = const SdkOmitted(), this.pullRequestOpened = const SdkOmitted(), this.pullRequestSynchronize = const SdkOmitted(), this.pullRequestMerged = const SdkOmitted(), this.issueComment = const SdkOmitted(), this.pullRequestComment = const SdkOmitted(), this.discussionOpened = const SdkOmitted(), this.discussionUpdated = const SdkOmitted(), this.discussionComment = const SdkOmitted(), this.issueAssigned = const SdkOmitted(), this.pullRequestAssigned = const SdkOmitted(), this.subIssueAdded = const SdkOmitted(), this.pullRequestReadyForReview = const SdkOmitted(), this.pullRequestLabeled = const SdkOmitted(), this.pullRequestMergeConflict = const SdkOmitted(), this.pullRequestReviewSubmitted = const SdkOmitted(), this.pullRequestReviewRequested = const SdkOmitted(), this.automationCompleted = const SdkOmitted()});
+
+  AgentAutomationsCreateRepoAutomationRequestBodyTriggers Function({SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersInterval> interval, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueOpened> issueOpened, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueLabeled> issueLabeled, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersWorkflowRun> workflowRun, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestOpened> pullRequestOpened, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestSynchronize> pullRequestSynchronize, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestMerged> pullRequestMerged, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueComment> issueComment, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestComment> pullRequestComment, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersDiscussionOpened> discussionOpened, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersDiscussionUpdated> discussionUpdated, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersDiscussionComment> discussionComment, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueAssigned> issueAssigned, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestAssigned> pullRequestAssigned, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersSubIssueAdded> subIssueAdded, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReadyForReview> pullRequestReadyForReview, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestLabeled> pullRequestLabeled, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestMergeConflict> pullRequestMergeConflict, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewSubmitted> pullRequestReviewSubmitted, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewRequested> pullRequestReviewRequested, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersAutomationCompleted> automationCompleted}) get copyWith => _copyWith;
+
+  AgentAutomationsCreateRepoAutomationRequestBodyTriggers _copyWith({Object? interval = sdkOmittedValue, Object? issueOpened = sdkOmittedValue, Object? issueLabeled = sdkOmittedValue, Object? workflowRun = sdkOmittedValue, Object? pullRequestOpened = sdkOmittedValue, Object? pullRequestSynchronize = sdkOmittedValue, Object? pullRequestMerged = sdkOmittedValue, Object? issueComment = sdkOmittedValue, Object? pullRequestComment = sdkOmittedValue, Object? discussionOpened = sdkOmittedValue, Object? discussionUpdated = sdkOmittedValue, Object? discussionComment = sdkOmittedValue, Object? issueAssigned = sdkOmittedValue, Object? pullRequestAssigned = sdkOmittedValue, Object? subIssueAdded = sdkOmittedValue, Object? pullRequestReadyForReview = sdkOmittedValue, Object? pullRequestLabeled = sdkOmittedValue, Object? pullRequestMergeConflict = sdkOmittedValue, Object? pullRequestReviewSubmitted = sdkOmittedValue, Object? pullRequestReviewRequested = sdkOmittedValue, Object? automationCompleted = sdkOmittedValue}) => AgentAutomationsCreateRepoAutomationRequestBodyTriggers(
+    interval: identical(interval, sdkOmittedValue) ? this.interval : interval as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersInterval>,
+    issueOpened: identical(issueOpened, sdkOmittedValue) ? this.issueOpened : issueOpened as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueOpened>,
+    issueLabeled: identical(issueLabeled, sdkOmittedValue) ? this.issueLabeled : issueLabeled as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueLabeled>,
+    workflowRun: identical(workflowRun, sdkOmittedValue) ? this.workflowRun : workflowRun as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersWorkflowRun>,
+    pullRequestOpened: identical(pullRequestOpened, sdkOmittedValue) ? this.pullRequestOpened : pullRequestOpened as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestOpened>,
+    pullRequestSynchronize: identical(pullRequestSynchronize, sdkOmittedValue) ? this.pullRequestSynchronize : pullRequestSynchronize as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestSynchronize>,
+    pullRequestMerged: identical(pullRequestMerged, sdkOmittedValue) ? this.pullRequestMerged : pullRequestMerged as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestMerged>,
+    issueComment: identical(issueComment, sdkOmittedValue) ? this.issueComment : issueComment as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueComment>,
+    pullRequestComment: identical(pullRequestComment, sdkOmittedValue) ? this.pullRequestComment : pullRequestComment as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestComment>,
+    discussionOpened: identical(discussionOpened, sdkOmittedValue) ? this.discussionOpened : discussionOpened as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersDiscussionOpened>,
+    discussionUpdated: identical(discussionUpdated, sdkOmittedValue) ? this.discussionUpdated : discussionUpdated as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersDiscussionUpdated>,
+    discussionComment: identical(discussionComment, sdkOmittedValue) ? this.discussionComment : discussionComment as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersDiscussionComment>,
+    issueAssigned: identical(issueAssigned, sdkOmittedValue) ? this.issueAssigned : issueAssigned as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueAssigned>,
+    pullRequestAssigned: identical(pullRequestAssigned, sdkOmittedValue) ? this.pullRequestAssigned : pullRequestAssigned as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestAssigned>,
+    subIssueAdded: identical(subIssueAdded, sdkOmittedValue) ? this.subIssueAdded : subIssueAdded as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersSubIssueAdded>,
+    pullRequestReadyForReview: identical(pullRequestReadyForReview, sdkOmittedValue) ? this.pullRequestReadyForReview : pullRequestReadyForReview as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReadyForReview>,
+    pullRequestLabeled: identical(pullRequestLabeled, sdkOmittedValue) ? this.pullRequestLabeled : pullRequestLabeled as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestLabeled>,
+    pullRequestMergeConflict: identical(pullRequestMergeConflict, sdkOmittedValue) ? this.pullRequestMergeConflict : pullRequestMergeConflict as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestMergeConflict>,
+    pullRequestReviewSubmitted: identical(pullRequestReviewSubmitted, sdkOmittedValue) ? this.pullRequestReviewSubmitted : pullRequestReviewSubmitted as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewSubmitted>,
+    pullRequestReviewRequested: identical(pullRequestReviewRequested, sdkOmittedValue) ? this.pullRequestReviewRequested : pullRequestReviewRequested as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewRequested>,
+    automationCompleted: identical(automationCompleted, sdkOmittedValue) ? this.automationCompleted : automationCompleted as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersAutomationCompleted>,
+  );
+
+  factory AgentAutomationsCreateRepoAutomationRequestBodyTriggers.fromJson(Map<String, dynamic> json) => AgentAutomationsCreateRepoAutomationRequestBodyTriggers(
+    interval: json['interval'] != null ? SdkPresent((json['interval'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersInterval.fromJson(json['interval'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    issueOpened: json['issue_opened'] != null ? SdkPresent((json['issue_opened'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueOpened.fromJson(json['issue_opened'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    issueLabeled: json['issue_labeled'] != null ? SdkPresent((json['issue_labeled'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueLabeled.fromJson(json['issue_labeled'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    workflowRun: json['workflow_run'] != null ? SdkPresent((json['workflow_run'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersWorkflowRun.fromJson(json['workflow_run'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    pullRequestOpened: json['pull_request_opened'] != null ? SdkPresent((json['pull_request_opened'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestOpened.fromJson(json['pull_request_opened'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    pullRequestSynchronize: json['pull_request_synchronize'] != null ? SdkPresent((json['pull_request_synchronize'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestSynchronize.fromJson(json['pull_request_synchronize'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    pullRequestMerged: json['pull_request_merged'] != null ? SdkPresent((json['pull_request_merged'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestMerged.fromJson(json['pull_request_merged'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    issueComment: json['issue_comment'] != null ? SdkPresent((json['issue_comment'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueComment.fromJson(json['issue_comment'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    pullRequestComment: json['pull_request_comment'] != null ? SdkPresent((json['pull_request_comment'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestComment.fromJson(json['pull_request_comment'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    discussionOpened: json['discussion_opened'] != null ? SdkPresent((json['discussion_opened'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersDiscussionOpened.fromJson(json['discussion_opened'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    discussionUpdated: json['discussion_updated'] != null ? SdkPresent((json['discussion_updated'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersDiscussionUpdated.fromJson(json['discussion_updated'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    discussionComment: json['discussion_comment'] != null ? SdkPresent((json['discussion_comment'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersDiscussionComment.fromJson(json['discussion_comment'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    issueAssigned: json['issue_assigned'] != null ? SdkPresent((json['issue_assigned'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueAssigned.fromJson(json['issue_assigned'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    pullRequestAssigned: json['pull_request_assigned'] != null ? SdkPresent((json['pull_request_assigned'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestAssigned.fromJson(json['pull_request_assigned'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    subIssueAdded: json['sub_issue_added'] != null ? SdkPresent((json['sub_issue_added'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersSubIssueAdded.fromJson(json['sub_issue_added'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    pullRequestReadyForReview: json['pull_request_ready_for_review'] != null ? SdkPresent((json['pull_request_ready_for_review'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReadyForReview.fromJson(json['pull_request_ready_for_review'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    pullRequestLabeled: json['pull_request_labeled'] != null ? SdkPresent((json['pull_request_labeled'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestLabeled.fromJson(json['pull_request_labeled'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    pullRequestMergeConflict: json['pull_request_merge_conflict'] != null ? SdkPresent((json['pull_request_merge_conflict'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestMergeConflict.fromJson(json['pull_request_merge_conflict'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    pullRequestReviewSubmitted: json['pull_request_review_submitted'] != null ? SdkPresent((json['pull_request_review_submitted'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewSubmitted.fromJson(json['pull_request_review_submitted'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    pullRequestReviewRequested: json['pull_request_review_requested'] != null ? SdkPresent((json['pull_request_review_requested'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewRequested.fromJson(json['pull_request_review_requested'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    automationCompleted: json['automation_completed'] != null ? SdkPresent((json['automation_completed'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersAutomationCompleted.fromJson(json['automation_completed'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    ...switch (interval) {
+      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersInterval>(value: final value) => {'interval': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (issueOpened) {
+      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueOpened>(value: final value) => {'issue_opened': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (issueLabeled) {
+      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueLabeled>(value: final value) => {'issue_labeled': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (workflowRun) {
+      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersWorkflowRun>(value: final value) => {'workflow_run': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pullRequestOpened) {
+      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestOpened>(value: final value) => {'pull_request_opened': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pullRequestSynchronize) {
+      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestSynchronize>(value: final value) => {'pull_request_synchronize': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pullRequestMerged) {
+      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestMerged>(value: final value) => {'pull_request_merged': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (issueComment) {
+      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueComment>(value: final value) => {'issue_comment': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pullRequestComment) {
+      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestComment>(value: final value) => {'pull_request_comment': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (discussionOpened) {
+      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersDiscussionOpened>(value: final value) => {'discussion_opened': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (discussionUpdated) {
+      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersDiscussionUpdated>(value: final value) => {'discussion_updated': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (discussionComment) {
+      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersDiscussionComment>(value: final value) => {'discussion_comment': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (issueAssigned) {
+      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueAssigned>(value: final value) => {'issue_assigned': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pullRequestAssigned) {
+      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestAssigned>(value: final value) => {'pull_request_assigned': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (subIssueAdded) {
+      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersSubIssueAdded>(value: final value) => {'sub_issue_added': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pullRequestReadyForReview) {
+      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReadyForReview>(value: final value) => {'pull_request_ready_for_review': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pullRequestLabeled) {
+      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestLabeled>(value: final value) => {'pull_request_labeled': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pullRequestMergeConflict) {
+      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestMergeConflict>(value: final value) => {'pull_request_merge_conflict': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pullRequestReviewSubmitted) {
+      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewSubmitted>(value: final value) => {'pull_request_review_submitted': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pullRequestReviewRequested) {
+      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewRequested>(value: final value) => {'pull_request_review_requested': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (automationCompleted) {
+      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersAutomationCompleted>(value: final value) => {'automation_completed': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

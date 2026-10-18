@@ -274,29 +274,3 @@ class Event {
     'created_at': createdAt,
   };
 }
-
-sealed class EventPayload {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  const EventPayload();
-  factory EventPayload.fromJson(Object? json) {
-    if (json is Map) { return EventPayloadMap(Map<String, dynamic>.from(json)); }
-    try { return EventPayloadCreateEvent(CreateEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return EventPayloadDeleteEvent(DeleteEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return EventPayloadDiscussionEvent(DiscussionEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return EventPayloadIssuesEvent(IssuesEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return EventPayloadIssueCommentEvent(IssueCommentEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return EventPayloadForkEvent(ForkEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return EventPayloadGollumEvent(GollumEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return EventPayloadMemberEvent(MemberEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return EventPayloadPushEvent(PushEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return EventPayloadPullRequestEvent(PullRequestEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return EventPayloadPullRequestReviewCommentEvent(PullRequestReviewCommentEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return EventPayloadPullRequestReviewEvent(PullRequestReviewEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return EventPayloadCommitCommentEvent(CommitCommentEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return EventPayloadReleaseEvent(ReleaseEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return EventPayloadWatchEvent(WatchEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    throw FormatException("No variant matched for EventPayload");
-  }
-  Object? toJson();
-}

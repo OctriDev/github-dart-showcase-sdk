@@ -5,174 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 34)
 /// Required enumerated value serialized in the `type` wire field.
-enum RepositoryRuleCommitterEmailPatternType {
-  committerEmailPattern;
-
-  static RepositoryRuleCommitterEmailPatternType fromJson(String value) {
-    switch (value) {
-      case 'committer_email_pattern': return RepositoryRuleCommitterEmailPatternType.committerEmailPattern;
-      default: throw ArgumentError('Unknown RepositoryRuleCommitterEmailPatternType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case RepositoryRuleCommitterEmailPatternType.committerEmailPattern: return 'committer_email_pattern';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
-enum RepositoryRuleCopilotCodeReviewType {
-  copilotCodeReview;
-
-  static RepositoryRuleCopilotCodeReviewType fromJson(String value) {
-    switch (value) {
-      case 'copilot_code_review': return RepositoryRuleCopilotCodeReviewType.copilotCodeReview;
-      default: throw ArgumentError('Unknown RepositoryRuleCopilotCodeReviewType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case RepositoryRuleCopilotCodeReviewType.copilotCodeReview: return 'copilot_code_review';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
-enum RepositoryRuleCreationType {
-  creation;
-
-  static RepositoryRuleCreationType fromJson(String value) {
-    switch (value) {
-      case 'creation': return RepositoryRuleCreationType.creation;
-      default: throw ArgumentError('Unknown RepositoryRuleCreationType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case RepositoryRuleCreationType.creation: return 'creation';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
-enum RepositoryRuleDeletionType {
-  deletion;
-
-  static RepositoryRuleDeletionType fromJson(String value) {
-    switch (value) {
-      case 'deletion': return RepositoryRuleDeletionType.deletion;
-      default: throw ArgumentError('Unknown RepositoryRuleDeletionType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case RepositoryRuleDeletionType.deletion: return 'deletion';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
-enum RepositoryRuleFileExtensionRestrictionType {
-  fileExtensionRestriction;
-
-  static RepositoryRuleFileExtensionRestrictionType fromJson(String value) {
-    switch (value) {
-      case 'file_extension_restriction': return RepositoryRuleFileExtensionRestrictionType.fileExtensionRestriction;
-      default: throw ArgumentError('Unknown RepositoryRuleFileExtensionRestrictionType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case RepositoryRuleFileExtensionRestrictionType.fileExtensionRestriction: return 'file_extension_restriction';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
-enum RepositoryRuleFilePathRestrictionType {
-  filePathRestriction;
-
-  static RepositoryRuleFilePathRestrictionType fromJson(String value) {
-    switch (value) {
-      case 'file_path_restriction': return RepositoryRuleFilePathRestrictionType.filePathRestriction;
-      default: throw ArgumentError('Unknown RepositoryRuleFilePathRestrictionType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case RepositoryRuleFilePathRestrictionType.filePathRestriction: return 'file_path_restriction';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
-enum RepositoryRuleLicenseComplianceScanningType {
-  licenseComplianceScanning;
-
-  static RepositoryRuleLicenseComplianceScanningType fromJson(String value) {
-    switch (value) {
-      case 'license_compliance_scanning': return RepositoryRuleLicenseComplianceScanningType.licenseComplianceScanning;
-      default: throw ArgumentError('Unknown RepositoryRuleLicenseComplianceScanningType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case RepositoryRuleLicenseComplianceScanningType.licenseComplianceScanning: return 'license_compliance_scanning';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
-enum RepositoryRuleMaxFilePathLengthType {
-  maxFilePathLength;
-
-  static RepositoryRuleMaxFilePathLengthType fromJson(String value) {
-    switch (value) {
-      case 'max_file_path_length': return RepositoryRuleMaxFilePathLengthType.maxFilePathLength;
-      default: throw ArgumentError('Unknown RepositoryRuleMaxFilePathLengthType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case RepositoryRuleMaxFilePathLengthType.maxFilePathLength: return 'max_file_path_length';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
 enum RepositoryRuleMaxFileSizeType {
   maxFileSize;
 
@@ -273,6 +105,187 @@ enum RepositoryRuleNonFastForwardType {
   String toJson() {
     switch (this) {
       case RepositoryRuleNonFastForwardType.nonFastForward: return 'non_fast_forward';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// The type of the actor
+final class RepositoryRuleParamsActorType {
+
+  final String value;
+
+  const RepositoryRuleParamsActorType._(this.value);
+
+  factory RepositoryRuleParamsActorType.fromJson(String value) => RepositoryRuleParamsActorType._(value);
+
+  static const user = RepositoryRuleParamsActorType._('User');
+  static const team = RepositoryRuleParamsActorType._('Team');
+  static const integrationinstallation = RepositoryRuleParamsActorType._('IntegrationInstallation');
+  static const repositoryrole = RepositoryRuleParamsActorType._('RepositoryRole');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is RepositoryRuleParamsActorType && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// The severity level at which code scanning results that raise alerts block a reference update. For more information on alert severity levels, see "[About code scanning alerts](https://docs.github.com/code-security/code-scanning/managing-code-scanning-alerts/about-code-scanning-alerts#about-alert-severity-and-security-severity-levels)."
+final class RepositoryRuleParamsCodeScanningToolAlertsThreshold {
+
+  final String value;
+
+  const RepositoryRuleParamsCodeScanningToolAlertsThreshold._(this.value);
+
+  factory RepositoryRuleParamsCodeScanningToolAlertsThreshold.fromJson(String value) => RepositoryRuleParamsCodeScanningToolAlertsThreshold._(value);
+
+  static const none = RepositoryRuleParamsCodeScanningToolAlertsThreshold._('none');
+  static const errors = RepositoryRuleParamsCodeScanningToolAlertsThreshold._('errors');
+  static const errorsAndWarnings = RepositoryRuleParamsCodeScanningToolAlertsThreshold._('errors_and_warnings');
+  static const all = RepositoryRuleParamsCodeScanningToolAlertsThreshold._('all');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is RepositoryRuleParamsCodeScanningToolAlertsThreshold && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// The severity level at which code scanning results that raise security alerts block a reference update. For more information on security severity levels, see "[About code scanning alerts](https://docs.github.com/code-security/code-scanning/managing-code-scanning-alerts/about-code-scanning-alerts#about-alert-severity-and-security-severity-levels)."
+final class RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold {
+
+  final String value;
+
+  const RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold._(this.value);
+
+  factory RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold.fromJson(String value) => RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold._(value);
+
+  static const none = RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold._('none');
+  static const critical = RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold._('critical');
+  static const highOrHigher = RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold._('high_or_higher');
+  static const mediumOrHigher = RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold._('medium_or_higher');
+  static const all = RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold._('all');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// The level of authentication required before a pull request can be merged.
+final class RepositoryRuleParamsProofOfPresenceRequiredAuthenticationLevel {
+
+  final String value;
+
+  const RepositoryRuleParamsProofOfPresenceRequiredAuthenticationLevel._(this.value);
+
+  factory RepositoryRuleParamsProofOfPresenceRequiredAuthenticationLevel.fromJson(String value) => RepositoryRuleParamsProofOfPresenceRequiredAuthenticationLevel._(value);
+
+  static const reauth = RepositoryRuleParamsProofOfPresenceRequiredAuthenticationLevel._('reauth');
+  static const mfa = RepositoryRuleParamsProofOfPresenceRequiredAuthenticationLevel._('mfa');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is RepositoryRuleParamsProofOfPresenceRequiredAuthenticationLevel && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// The type of the reviewer
+final class RepositoryRuleParamsReviewerType {
+
+  final String value;
+
+  const RepositoryRuleParamsReviewerType._(this.value);
+
+  factory RepositoryRuleParamsReviewerType.fromJson(String value) => RepositoryRuleParamsReviewerType._(value);
+
+  static const team = RepositoryRuleParamsReviewerType._('Team');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is RepositoryRuleParamsReviewerType && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// Required enumerated value serialized in the `allowed_merge_methods[]` wire field.
+final class RepositoryRulePullRequestParametersAllowedMergeMethodsItem {
+
+  final String value;
+
+  const RepositoryRulePullRequestParametersAllowedMergeMethodsItem._(this.value);
+
+  factory RepositoryRulePullRequestParametersAllowedMergeMethodsItem.fromJson(String value) => RepositoryRulePullRequestParametersAllowedMergeMethodsItem._(value);
+
+  static const merge = RepositoryRulePullRequestParametersAllowedMergeMethodsItem._('merge');
+  static const squash = RepositoryRulePullRequestParametersAllowedMergeMethodsItem._('squash');
+  static const rebase = RepositoryRulePullRequestParametersAllowedMergeMethodsItem._('rebase');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is RepositoryRulePullRequestParametersAllowedMergeMethodsItem && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum RepositoryRulePullRequestType {
+  pullRequest;
+
+  static RepositoryRulePullRequestType fromJson(String value) {
+    switch (value) {
+      case 'pull_request': return RepositoryRulePullRequestType.pullRequest;
+      default: throw ArgumentError('Unknown RepositoryRulePullRequestType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case RepositoryRulePullRequestType.pullRequest: return 'pull_request';
+    }
+  }
+
+  @override
+  String toString() => toJson();
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum RepositoryRuleRequiredDeploymentsType {
+  requiredDeployments;
+
+  static RepositoryRuleRequiredDeploymentsType fromJson(String value) {
+    switch (value) {
+      case 'required_deployments': return RepositoryRuleRequiredDeploymentsType.requiredDeployments;
+      default: throw ArgumentError('Unknown RepositoryRuleRequiredDeploymentsType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case RepositoryRuleRequiredDeploymentsType.requiredDeployments: return 'required_deployments';
     }
   }
 

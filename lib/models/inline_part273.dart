@@ -4,280 +4,75 @@
 part of 'inline.dart';
 
 // Inline operation models (part 273)
-/// The type of resource.
-final class CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType {
+class AgentAutomationsListAutomationsResponseItemTriggersPullRequestReviewRequested {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// A GitHub issue or pull request search query.
+  final SdkOptional<String> query;
+  /// Gitignore-style changed-file path globs.
+  final SdkOptional<List<String>> paths;
+  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+  final SdkOptional<AgentAutomationsListAutomationsResponseItemTriggersPullRequestReviewRequestedWriteScope> writeScope;
 
-  final String value;
+  const AgentAutomationsListAutomationsResponseItemTriggersPullRequestReviewRequested({this.query = const SdkOmitted(), this.paths = const SdkOmitted(), this.writeScope = const SdkOmitted()});
 
-  const CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType._(this.value);
+  AgentAutomationsListAutomationsResponseItemTriggersPullRequestReviewRequested Function({SdkOptional<String> query, SdkOptional<List<String>> paths, SdkOptional<AgentAutomationsListAutomationsResponseItemTriggersPullRequestReviewRequestedWriteScope> writeScope}) get copyWith => _copyWith;
 
-  factory CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType.fromJson(String value) => CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType._(value);
+  AgentAutomationsListAutomationsResponseItemTriggersPullRequestReviewRequested _copyWith({Object? query = sdkOmittedValue, Object? paths = sdkOmittedValue, Object? writeScope = sdkOmittedValue}) => AgentAutomationsListAutomationsResponseItemTriggersPullRequestReviewRequested(
+    query: identical(query, sdkOmittedValue) ? this.query : query as SdkOptional<String>,
+    paths: identical(paths, sdkOmittedValue) ? this.paths : paths as SdkOptional<List<String>>,
+    writeScope: identical(writeScope, sdkOmittedValue) ? this.writeScope : writeScope as SdkOptional<AgentAutomationsListAutomationsResponseItemTriggersPullRequestReviewRequestedWriteScope>,
+  );
 
-  static const repository = CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType._('repository');
-  static const githubFile = CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType._('github_file');
-  static const freeText = CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType._('free_text');
-  static const githubIssue = CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType._('github_issue');
-  static const githubPullRequest = CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType._('github_pull_request');
-  static const mediaContent = CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType._('media_content');
-  static const uploadedTextFile = CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType._('uploaded_text_file');
+  factory AgentAutomationsListAutomationsResponseItemTriggersPullRequestReviewRequested.fromJson(Map<String, dynamic> json) => AgentAutomationsListAutomationsResponseItemTriggersPullRequestReviewRequested(
+    query: json['query'] != null ? SdkPresent((json['query'] as String?)!) : const SdkOmitted(),
+    paths: json['paths'] != null ? SdkPresent(((json['paths'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    writeScope: json['write_scope'] != null ? SdkPresent((json['write_scope'] != null ? AgentAutomationsListAutomationsResponseItemTriggersPullRequestReviewRequestedWriteScope.fromJson(json['write_scope'] as String) : null)!) : const SdkOmitted(),
+  );
 
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
+  Map<String, dynamic> toJson() => {
+    ...switch (query) {
+      SdkPresent<String>(value: final value) => {'query': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (paths) {
+      SdkPresent<List<String>>(value: final value) => {'paths': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (writeScope) {
+      SdkPresent<AgentAutomationsListAutomationsResponseItemTriggersPullRequestReviewRequestedWriteScope>(value: final value) => {'write_scope': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
-/// The type of actor (user or team).
-final class CopilotSpacesAddCollaboratorForOrgRequestBodyActorType {
-
-  final String value;
-
-  const CopilotSpacesAddCollaboratorForOrgRequestBodyActorType._(this.value);
-
-  factory CopilotSpacesAddCollaboratorForOrgRequestBodyActorType.fromJson(String value) => CopilotSpacesAddCollaboratorForOrgRequestBodyActorType._(value);
-
-  static const user = CopilotSpacesAddCollaboratorForOrgRequestBodyActorType._('User');
-  static const team = CopilotSpacesAddCollaboratorForOrgRequestBodyActorType._('Team');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is CopilotSpacesAddCollaboratorForOrgRequestBodyActorType && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The role to grant to the collaborator.
-final class CopilotSpacesAddCollaboratorForOrgRequestBodyRole {
-
-  final String value;
-
-  const CopilotSpacesAddCollaboratorForOrgRequestBodyRole._(this.value);
-
-  factory CopilotSpacesAddCollaboratorForOrgRequestBodyRole.fromJson(String value) => CopilotSpacesAddCollaboratorForOrgRequestBodyRole._(value);
-
-  static const reader = CopilotSpacesAddCollaboratorForOrgRequestBodyRole._('reader');
-  static const writer = CopilotSpacesAddCollaboratorForOrgRequestBodyRole._('writer');
-  static const admin = CopilotSpacesAddCollaboratorForOrgRequestBodyRole._('admin');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is CopilotSpacesAddCollaboratorForOrgRequestBodyRole && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-final class CopilotSpacesRemoveCollaboratorForOrgActorType {
-
-  final String value;
-
-  const CopilotSpacesRemoveCollaboratorForOrgActorType._(this.value);
-
-  factory CopilotSpacesRemoveCollaboratorForOrgActorType.fromJson(String value) => CopilotSpacesRemoveCollaboratorForOrgActorType._(value);
-
-  static const user = CopilotSpacesRemoveCollaboratorForOrgActorType._('User');
-  static const team = CopilotSpacesRemoveCollaboratorForOrgActorType._('Team');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is CopilotSpacesRemoveCollaboratorForOrgActorType && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-final class CopilotSpacesUpdateCollaboratorForOrgActorType {
-
-  final String value;
-
-  const CopilotSpacesUpdateCollaboratorForOrgActorType._(this.value);
-
-  factory CopilotSpacesUpdateCollaboratorForOrgActorType.fromJson(String value) => CopilotSpacesUpdateCollaboratorForOrgActorType._(value);
-
-  static const user = CopilotSpacesUpdateCollaboratorForOrgActorType._('User');
-  static const team = CopilotSpacesUpdateCollaboratorForOrgActorType._('Team');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is CopilotSpacesUpdateCollaboratorForOrgActorType && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The new role to grant to the collaborator. Use `no_access` to remove the collaborator.
-final class CopilotSpacesUpdateCollaboratorForOrgRequestBodyRole {
-
-  final String value;
-
-  const CopilotSpacesUpdateCollaboratorForOrgRequestBodyRole._(this.value);
-
-  factory CopilotSpacesUpdateCollaboratorForOrgRequestBodyRole.fromJson(String value) => CopilotSpacesUpdateCollaboratorForOrgRequestBodyRole._(value);
-
-  static const reader = CopilotSpacesUpdateCollaboratorForOrgRequestBodyRole._('reader');
-  static const writer = CopilotSpacesUpdateCollaboratorForOrgRequestBodyRole._('writer');
-  static const admin = CopilotSpacesUpdateCollaboratorForOrgRequestBodyRole._('admin');
-  static const noAccess = CopilotSpacesUpdateCollaboratorForOrgRequestBodyRole._('no_access');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is CopilotSpacesUpdateCollaboratorForOrgRequestBodyRole && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The type of resource to create.
-final class CopilotSpacesCreateResourceForOrgRequestBodyResourceType {
-
-  final String value;
-
-  const CopilotSpacesCreateResourceForOrgRequestBodyResourceType._(this.value);
-
-  factory CopilotSpacesCreateResourceForOrgRequestBodyResourceType.fromJson(String value) => CopilotSpacesCreateResourceForOrgRequestBodyResourceType._(value);
-
-  static const repository = CopilotSpacesCreateResourceForOrgRequestBodyResourceType._('repository');
-  static const githubFile = CopilotSpacesCreateResourceForOrgRequestBodyResourceType._('github_file');
-  static const freeText = CopilotSpacesCreateResourceForOrgRequestBodyResourceType._('free_text');
-  static const githubIssue = CopilotSpacesCreateResourceForOrgRequestBodyResourceType._('github_issue');
-  static const githubPullRequest = CopilotSpacesCreateResourceForOrgRequestBodyResourceType._('github_pull_request');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is CopilotSpacesCreateResourceForOrgRequestBodyResourceType && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The policy for which repositories can use Copilot cloud agent. Can be one of `all`, `selected`, or `none`.
-final class CopilotGetCopilotCodingAgentPermissionsOrganizationResponseEnabledRepositories {
-
-  final String value;
-
-  const CopilotGetCopilotCodingAgentPermissionsOrganizationResponseEnabledRepositories._(this.value);
-
-  factory CopilotGetCopilotCodingAgentPermissionsOrganizationResponseEnabledRepositories.fromJson(String value) => CopilotGetCopilotCodingAgentPermissionsOrganizationResponseEnabledRepositories._(value);
-
-  static const all = CopilotGetCopilotCodingAgentPermissionsOrganizationResponseEnabledRepositories._('all');
-  static const selected = CopilotGetCopilotCodingAgentPermissionsOrganizationResponseEnabledRepositories._('selected');
-  static const none = CopilotGetCopilotCodingAgentPermissionsOrganizationResponseEnabledRepositories._('none');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is CopilotGetCopilotCodingAgentPermissionsOrganizationResponseEnabledRepositories && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The policy for which repositories can use Copilot cloud agent. Can be one of `all`, `selected`, or `none`.
-final class CopilotSetCopilotCodingAgentPermissionsOrganizationRequestBodyEnabledRepositories {
-
-  final String value;
-
-  const CopilotSetCopilotCodingAgentPermissionsOrganizationRequestBodyEnabledRepositories._(this.value);
-
-  factory CopilotSetCopilotCodingAgentPermissionsOrganizationRequestBodyEnabledRepositories.fromJson(String value) => CopilotSetCopilotCodingAgentPermissionsOrganizationRequestBodyEnabledRepositories._(value);
-
-  static const all = CopilotSetCopilotCodingAgentPermissionsOrganizationRequestBodyEnabledRepositories._('all');
-  static const selected = CopilotSetCopilotCodingAgentPermissionsOrganizationRequestBodyEnabledRepositories._('selected');
-  static const none = CopilotSetCopilotCodingAgentPermissionsOrganizationRequestBodyEnabledRepositories._('none');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is CopilotSetCopilotCodingAgentPermissionsOrganizationRequestBodyEnabledRepositories && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The default repository access level for Dependabot updates.
-final class DependabotSetRepositoryAccessDefaultLevelRequestBodyDefaultLevel {
-
-  final String value;
-
-  const DependabotSetRepositoryAccessDefaultLevelRequestBodyDefaultLevel._(this.value);
-
-  factory DependabotSetRepositoryAccessDefaultLevelRequestBodyDefaultLevel.fromJson(String value) => DependabotSetRepositoryAccessDefaultLevelRequestBodyDefaultLevel._(value);
-
-  static const public = DependabotSetRepositoryAccessDefaultLevelRequestBodyDefaultLevel._('public');
-  static const internal = DependabotSetRepositoryAccessDefaultLevelRequestBodyDefaultLevel._('internal');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is DependabotSetRepositoryAccessDefaultLevelRequestBodyDefaultLevel && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// Which type of organization repositories have access to the organization secret. `selected` means only the repositories specified by `selected_repository_ids` can access the secret.
-final class DependabotCreateOrUpdateOrgSecretRequestBodyVisibility {
-
-  final String value;
-
-  const DependabotCreateOrUpdateOrgSecretRequestBodyVisibility._(this.value);
-
-  factory DependabotCreateOrUpdateOrgSecretRequestBodyVisibility.fromJson(String value) => DependabotCreateOrUpdateOrgSecretRequestBodyVisibility._(value);
-
-  static const all = DependabotCreateOrUpdateOrgSecretRequestBodyVisibility._('all');
-  static const private = DependabotCreateOrUpdateOrgSecretRequestBodyVisibility._('private');
-  static const selected = DependabotCreateOrUpdateOrgSecretRequestBodyVisibility._('selected');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is DependabotCreateOrUpdateOrgSecretRequestBodyVisibility && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-final class OrgsListPendingInvitationsRole {
-
-  final String value;
-
-  const OrgsListPendingInvitationsRole._(this.value);
-
-  factory OrgsListPendingInvitationsRole.fromJson(String value) => OrgsListPendingInvitationsRole._(value);
-
-  static const all = OrgsListPendingInvitationsRole._('all');
-  static const admin = OrgsListPendingInvitationsRole._('admin');
-  static const directMember = OrgsListPendingInvitationsRole._('direct_member');
-  static const billingManager = OrgsListPendingInvitationsRole._('billing_manager');
-  static const hiringManager = OrgsListPendingInvitationsRole._('hiring_manager');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is OrgsListPendingInvitationsRole && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
+class AgentAutomationsListAutomationsResponseItemTriggersAutomationCompleted {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// Upstream Automation IDs in the same repository.
+  final List<String> automationIds;
+  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+  final SdkOptional<AgentAutomationsListAutomationsResponseItemTriggersAutomationCompletedWriteScope> writeScope;
+
+  const AgentAutomationsListAutomationsResponseItemTriggersAutomationCompleted({required this.automationIds, this.writeScope = const SdkOmitted()});
+
+  AgentAutomationsListAutomationsResponseItemTriggersAutomationCompleted Function({List<String> automationIds, SdkOptional<AgentAutomationsListAutomationsResponseItemTriggersAutomationCompletedWriteScope> writeScope}) get copyWith => _copyWith;
+
+  AgentAutomationsListAutomationsResponseItemTriggersAutomationCompleted _copyWith({Object? automationIds = sdkOmittedValue, Object? writeScope = sdkOmittedValue}) => AgentAutomationsListAutomationsResponseItemTriggersAutomationCompleted(
+    automationIds: identical(automationIds, sdkOmittedValue) ? this.automationIds : automationIds as List<String>,
+    writeScope: identical(writeScope, sdkOmittedValue) ? this.writeScope : writeScope as SdkOptional<AgentAutomationsListAutomationsResponseItemTriggersAutomationCompletedWriteScope>,
+  );
+
+  factory AgentAutomationsListAutomationsResponseItemTriggersAutomationCompleted.fromJson(Map<String, dynamic> json) => AgentAutomationsListAutomationsResponseItemTriggersAutomationCompleted(
+    automationIds: ((json['automation_ids'] as List?)?.map((e) => e as String).toList())!,
+    writeScope: json['write_scope'] != null ? SdkPresent((json['write_scope'] != null ? AgentAutomationsListAutomationsResponseItemTriggersAutomationCompletedWriteScope.fromJson(json['write_scope'] as String) : null)!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    'automation_ids': automationIds,
+    ...switch (writeScope) {
+      SdkPresent<AgentAutomationsListAutomationsResponseItemTriggersAutomationCompletedWriteScope>(value: final value) => {'write_scope': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

@@ -4,6 +4,93 @@
 part of 'inline.dart';
 
 // Inline operation models (part 8)
+/// The level of permission to grant the access token to view and manage users blocked by the organization.
+final class AppPermissionsOrganizationUserBlocking {
+
+  final String value;
+
+  const AppPermissionsOrganizationUserBlocking._(this.value);
+
+  factory AppPermissionsOrganizationUserBlocking.fromJson(String value) => AppPermissionsOrganizationUserBlocking._(value);
+
+  static const read = AppPermissionsOrganizationUserBlocking._('read');
+  static const write = AppPermissionsOrganizationUserBlocking._('write');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is AppPermissionsOrganizationUserBlocking && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// The level of permission to grant the access token for packages published to GitHub Packages.
+final class AppPermissionsPackages {
+
+  final String value;
+
+  const AppPermissionsPackages._(this.value);
+
+  factory AppPermissionsPackages.fromJson(String value) => AppPermissionsPackages._(value);
+
+  static const read = AppPermissionsPackages._('read');
+  static const write = AppPermissionsPackages._('write');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is AppPermissionsPackages && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// The level of permission to grant the access token to retrieve Pages statuses, configuration, and builds, as well as create new builds.
+final class AppPermissionsPages {
+
+  final String value;
+
+  const AppPermissionsPages._(this.value);
+
+  factory AppPermissionsPages.fromJson(String value) => AppPermissionsPages._(value);
+
+  static const read = AppPermissionsPages._('read');
+  static const write = AppPermissionsPages._('write');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is AppPermissionsPages && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// The level of permission to grant the access token to manage the profile settings belonging to a user.
+final class AppPermissionsProfile {
+
+  final String value;
+
+  const AppPermissionsProfile._(this.value);
+
+  factory AppPermissionsProfile.fromJson(String value) => AppPermissionsProfile._(value);
+
+  static const write = AppPermissionsProfile._('write');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is AppPermissionsProfile && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
 /// The level of permission to grant the access token for pull requests and related comments, assignees, labels, milestones, and merges.
 final class AppPermissionsPullRequests {
 
@@ -198,95 +285,6 @@ final class AppPermissionsStarring {
   @override String toString() => value.toString();
 
   @override bool operator ==(Object other) => other is AppPermissionsStarring && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The level of permission to grant the access token for commit statuses.
-final class AppPermissionsStatuses {
-
-  final String value;
-
-  const AppPermissionsStatuses._(this.value);
-
-  factory AppPermissionsStatuses.fromJson(String value) => AppPermissionsStatuses._(value);
-
-  static const read = AppPermissionsStatuses._('read');
-  static const write = AppPermissionsStatuses._('write');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is AppPermissionsStatuses && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The level of permission to grant the access token to manage Dependabot alerts.
-final class AppPermissionsVulnerabilityAlerts {
-
-  final String value;
-
-  const AppPermissionsVulnerabilityAlerts._(this.value);
-
-  factory AppPermissionsVulnerabilityAlerts.fromJson(String value) => AppPermissionsVulnerabilityAlerts._(value);
-
-  static const read = AppPermissionsVulnerabilityAlerts._('read');
-  static const write = AppPermissionsVulnerabilityAlerts._('write');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is AppPermissionsVulnerabilityAlerts && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The level of permission to grant the access token to update GitHub Actions workflow files.
-final class AppPermissionsWorkflows {
-
-  final String value;
-
-  const AppPermissionsWorkflows._(this.value);
-
-  factory AppPermissionsWorkflows.fromJson(String value) => AppPermissionsWorkflows._(value);
-
-  static const write = AppPermissionsWorkflows._('write');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is AppPermissionsWorkflows && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// Required enumerated value serialized in the `runtime_risks[]` wire field.
-final class ArtifactDeploymentRecordRuntimeRisksItem {
-
-  final String value;
-
-  const ArtifactDeploymentRecordRuntimeRisksItem._(this.value);
-
-  factory ArtifactDeploymentRecordRuntimeRisksItem.fromJson(String value) => ArtifactDeploymentRecordRuntimeRisksItem._(value);
-
-  static const criticalResource = ArtifactDeploymentRecordRuntimeRisksItem._('critical-resource');
-  static const internetExposed = ArtifactDeploymentRecordRuntimeRisksItem._('internet-exposed');
-  static const lateralMovement = ArtifactDeploymentRecordRuntimeRisksItem._('lateral-movement');
-  static const sensitiveData = ArtifactDeploymentRecordRuntimeRisksItem._('sensitive-data');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is ArtifactDeploymentRecordRuntimeRisksItem && other.value == value;
 
   @override int get hashCode => value.hashCode;
 

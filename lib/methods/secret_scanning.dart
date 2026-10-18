@@ -140,7 +140,7 @@ Future<List<OrganizationSecretScanningAlert>>
           operationId: 'secretScanningListAlertsForOrg',
           fromJsonRaw: (value) => (value as List).map((item) => OrganizationSecretScanningAlert.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -477,7 +477,8 @@ Future<List<SecretScanningAlert>>
           decoder: SdkResponseDecoder.json,
           operationId: 'secretScanningListAlertsForRepo',
           fromJsonRaw: (value) => (value as List).map((item) => SecretScanningAlert.fromJson(item as Map<String, dynamic>)).toList(),
-          options: requestOptions))
+          options: requestOptions,
+          errors: {'503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -509,7 +510,8 @@ Future<SecretScanningAlertWithMetadata>
           decoder: SdkResponseDecoder.json,
           operationId: 'secretScanningGetAlert',
           fromJsonRaw: (value) => SecretScanningAlertWithMetadata.fromJson(value as Map<String, dynamic>),
-          options: requestOptions))
+          options: requestOptions,
+          errors: {'503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -557,7 +559,8 @@ Future<SecretScanningAlertWithMetadata>
           decoder: SdkResponseDecoder.json,
           operationId: 'secretScanningUpdateAlert',
           fromJsonRaw: (value) => SecretScanningAlertWithMetadata.fromJson(value as Map<String, dynamic>),
-          options: requestOptions))
+          options: requestOptions,
+          errors: {'503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -597,7 +600,8 @@ Future<List<SecretScanningLocation>>
           decoder: SdkResponseDecoder.json,
           operationId: 'secretScanningListLocationsForAlert',
           fromJsonRaw: (value) => (value as List).map((item) => SecretScanningLocation.fromJson(item as Map<String, dynamic>)).toList(),
-          options: requestOptions))
+          options: requestOptions,
+          errors: {'503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -784,7 +788,8 @@ Future<SecretScanningPushProtectionBypass>
           decoder: SdkResponseDecoder.json,
           operationId: 'secretScanningCreatePushProtectionBypass',
           fromJsonRaw: (value) => SecretScanningPushProtectionBypass.fromJson(value as Map<String, dynamic>),
-          options: requestOptions))
+          options: requestOptions,
+          errors: {'503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -805,6 +810,7 @@ Future<SecretScanningScanHistory>
           decoder: SdkResponseDecoder.json,
           operationId: 'secretScanningGetScanHistory',
           fromJsonRaw: (value) => SecretScanningScanHistory.fromJson(value as Map<String, dynamic>),
-          options: requestOptions))
+          options: requestOptions,
+          errors: {'503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }

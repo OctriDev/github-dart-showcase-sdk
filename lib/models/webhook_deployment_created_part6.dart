@@ -4,72 +4,61 @@
 part of 'webhook_deployment_created.dart';
 
 // webhook_deployment_created domain models (part 6)
-/// Required object value serialized in the `actor` wire field.
-class WebhookDeploymentCreatedWorkflowRunActor {
+/// Optional object value serialized in the `owner` wire field.
+class WebhookDeploymentCreatedWorkflowRunHeadRepositoryOwner {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// Optional `uri`-formatted value serialized in the `avatar_url` wire field.
+  /// Optional `string` value serialized in the `avatar_url` wire field.
   final SdkOptional<String> avatarUrl;
-  /// Optional `boolean` value serialized in the `deleted` wire field.
-  final SdkOptional<bool> deleted;
-  /// Optional `string` value serialized in the `email` wire field.
-  final SdkOptional<String?> email;
-  /// Optional `uri-template`-formatted value serialized in the `events_url` wire field.
+  /// Optional `string` value serialized in the `events_url` wire field.
   final SdkOptional<String> eventsUrl;
-  /// Optional `uri`-formatted value serialized in the `followers_url` wire field.
+  /// Optional `string` value serialized in the `followers_url` wire field.
   final SdkOptional<String> followersUrl;
-  /// Optional `uri-template`-formatted value serialized in the `following_url` wire field.
+  /// Optional `string` value serialized in the `following_url` wire field.
   final SdkOptional<String> followingUrl;
-  /// Optional `uri-template`-formatted value serialized in the `gists_url` wire field.
+  /// Optional `string` value serialized in the `gists_url` wire field.
   final SdkOptional<String> gistsUrl;
   /// Optional `string` value serialized in the `gravatar_id` wire field.
   final SdkOptional<String> gravatarId;
-  /// Optional `uri`-formatted value serialized in the `html_url` wire field.
+  /// Optional `string` value serialized in the `html_url` wire field.
   final SdkOptional<String> htmlUrl;
-  /// Required `integer` value serialized in the `id` wire field.
-  final int id;
-  /// Required `string` value serialized in the `login` wire field.
-  final String login;
-  /// Optional `string` value serialized in the `name` wire field.
-  final SdkOptional<String> name;
+  /// Optional `integer` value serialized in the `id` wire field.
+  final SdkOptional<int> id;
+  /// Optional `string` value serialized in the `login` wire field.
+  final SdkOptional<String> login;
   /// Optional `string` value serialized in the `node_id` wire field.
   final SdkOptional<String> nodeId;
-  /// Optional `uri`-formatted value serialized in the `organizations_url` wire field.
+  /// Optional `string` value serialized in the `organizations_url` wire field.
   final SdkOptional<String> organizationsUrl;
-  /// Optional `uri`-formatted value serialized in the `received_events_url` wire field.
+  /// Optional `string` value serialized in the `received_events_url` wire field.
   final SdkOptional<String> receivedEventsUrl;
-  /// Optional `uri`-formatted value serialized in the `repos_url` wire field.
+  /// Optional `string` value serialized in the `repos_url` wire field.
   final SdkOptional<String> reposUrl;
   /// Optional `boolean` value serialized in the `site_admin` wire field.
   final SdkOptional<bool> siteAdmin;
-  /// Optional `uri-template`-formatted value serialized in the `starred_url` wire field.
+  /// Optional `string` value serialized in the `starred_url` wire field.
   final SdkOptional<String> starredUrl;
-  /// Optional `uri`-formatted value serialized in the `subscriptions_url` wire field.
+  /// Optional `string` value serialized in the `subscriptions_url` wire field.
   final SdkOptional<String> subscriptionsUrl;
-  /// Optional enumerated value serialized in the `type` wire field.
-  final SdkOptional<WebhookDeploymentCreatedWorkflowRunActorType> type_;
-  /// Optional `uri`-formatted value serialized in the `url` wire field.
+  /// Optional `string` value serialized in the `type` wire field.
+  final SdkOptional<String> type_;
+  /// Optional `string` value serialized in the `url` wire field.
   final SdkOptional<String> url;
-  /// Optional `string` value serialized in the `user_view_type` wire field.
-  final SdkOptional<String> userViewType;
 
-  const WebhookDeploymentCreatedWorkflowRunActor({this.avatarUrl = const SdkOmitted(), this.deleted = const SdkOmitted(), this.email = const SdkOmitted(), this.eventsUrl = const SdkOmitted(), this.followersUrl = const SdkOmitted(), this.followingUrl = const SdkOmitted(), this.gistsUrl = const SdkOmitted(), this.gravatarId = const SdkOmitted(), this.htmlUrl = const SdkOmitted(), required this.id, required this.login, this.name = const SdkOmitted(), this.nodeId = const SdkOmitted(), this.organizationsUrl = const SdkOmitted(), this.receivedEventsUrl = const SdkOmitted(), this.reposUrl = const SdkOmitted(), this.siteAdmin = const SdkOmitted(), this.starredUrl = const SdkOmitted(), this.subscriptionsUrl = const SdkOmitted(), this.type_ = const SdkOmitted(), this.url = const SdkOmitted(), this.userViewType = const SdkOmitted()});
+  const WebhookDeploymentCreatedWorkflowRunHeadRepositoryOwner({this.avatarUrl = const SdkOmitted(), this.eventsUrl = const SdkOmitted(), this.followersUrl = const SdkOmitted(), this.followingUrl = const SdkOmitted(), this.gistsUrl = const SdkOmitted(), this.gravatarId = const SdkOmitted(), this.htmlUrl = const SdkOmitted(), this.id = const SdkOmitted(), this.login = const SdkOmitted(), this.nodeId = const SdkOmitted(), this.organizationsUrl = const SdkOmitted(), this.receivedEventsUrl = const SdkOmitted(), this.reposUrl = const SdkOmitted(), this.siteAdmin = const SdkOmitted(), this.starredUrl = const SdkOmitted(), this.subscriptionsUrl = const SdkOmitted(), this.type_ = const SdkOmitted(), this.url = const SdkOmitted()});
 
-  WebhookDeploymentCreatedWorkflowRunActor Function({SdkOptional<String> avatarUrl, SdkOptional<bool> deleted, SdkOptional<String?> email, SdkOptional<String> eventsUrl, SdkOptional<String> followersUrl, SdkOptional<String> followingUrl, SdkOptional<String> gistsUrl, SdkOptional<String> gravatarId, SdkOptional<String> htmlUrl, int id, String login, SdkOptional<String> name, SdkOptional<String> nodeId, SdkOptional<String> organizationsUrl, SdkOptional<String> receivedEventsUrl, SdkOptional<String> reposUrl, SdkOptional<bool> siteAdmin, SdkOptional<String> starredUrl, SdkOptional<String> subscriptionsUrl, SdkOptional<WebhookDeploymentCreatedWorkflowRunActorType> type_, SdkOptional<String> url, SdkOptional<String> userViewType}) get copyWith => _copyWith;
+  WebhookDeploymentCreatedWorkflowRunHeadRepositoryOwner Function({SdkOptional<String> avatarUrl, SdkOptional<String> eventsUrl, SdkOptional<String> followersUrl, SdkOptional<String> followingUrl, SdkOptional<String> gistsUrl, SdkOptional<String> gravatarId, SdkOptional<String> htmlUrl, SdkOptional<int> id, SdkOptional<String> login, SdkOptional<String> nodeId, SdkOptional<String> organizationsUrl, SdkOptional<String> receivedEventsUrl, SdkOptional<String> reposUrl, SdkOptional<bool> siteAdmin, SdkOptional<String> starredUrl, SdkOptional<String> subscriptionsUrl, SdkOptional<String> type_, SdkOptional<String> url}) get copyWith => _copyWith;
 
-  WebhookDeploymentCreatedWorkflowRunActor _copyWith({Object? avatarUrl = sdkOmittedValue, Object? deleted = sdkOmittedValue, Object? email = sdkOmittedValue, Object? eventsUrl = sdkOmittedValue, Object? followersUrl = sdkOmittedValue, Object? followingUrl = sdkOmittedValue, Object? gistsUrl = sdkOmittedValue, Object? gravatarId = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? id = sdkOmittedValue, Object? login = sdkOmittedValue, Object? name = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? organizationsUrl = sdkOmittedValue, Object? receivedEventsUrl = sdkOmittedValue, Object? reposUrl = sdkOmittedValue, Object? siteAdmin = sdkOmittedValue, Object? starredUrl = sdkOmittedValue, Object? subscriptionsUrl = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue, Object? userViewType = sdkOmittedValue}) => WebhookDeploymentCreatedWorkflowRunActor(
+  WebhookDeploymentCreatedWorkflowRunHeadRepositoryOwner _copyWith({Object? avatarUrl = sdkOmittedValue, Object? eventsUrl = sdkOmittedValue, Object? followersUrl = sdkOmittedValue, Object? followingUrl = sdkOmittedValue, Object? gistsUrl = sdkOmittedValue, Object? gravatarId = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? id = sdkOmittedValue, Object? login = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? organizationsUrl = sdkOmittedValue, Object? receivedEventsUrl = sdkOmittedValue, Object? reposUrl = sdkOmittedValue, Object? siteAdmin = sdkOmittedValue, Object? starredUrl = sdkOmittedValue, Object? subscriptionsUrl = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookDeploymentCreatedWorkflowRunHeadRepositoryOwner(
     avatarUrl: identical(avatarUrl, sdkOmittedValue) ? this.avatarUrl : avatarUrl as SdkOptional<String>,
-    deleted: identical(deleted, sdkOmittedValue) ? this.deleted : deleted as SdkOptional<bool>,
-    email: identical(email, sdkOmittedValue) ? this.email : email as SdkOptional<String?>,
     eventsUrl: identical(eventsUrl, sdkOmittedValue) ? this.eventsUrl : eventsUrl as SdkOptional<String>,
     followersUrl: identical(followersUrl, sdkOmittedValue) ? this.followersUrl : followersUrl as SdkOptional<String>,
     followingUrl: identical(followingUrl, sdkOmittedValue) ? this.followingUrl : followingUrl as SdkOptional<String>,
     gistsUrl: identical(gistsUrl, sdkOmittedValue) ? this.gistsUrl : gistsUrl as SdkOptional<String>,
     gravatarId: identical(gravatarId, sdkOmittedValue) ? this.gravatarId : gravatarId as SdkOptional<String>,
     htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String>,
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    login: identical(login, sdkOmittedValue) ? this.login : login as String,
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
+    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+    login: identical(login, sdkOmittedValue) ? this.login : login as SdkOptional<String>,
     nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as SdkOptional<String>,
     organizationsUrl: identical(organizationsUrl, sdkOmittedValue) ? this.organizationsUrl : organizationsUrl as SdkOptional<String>,
     receivedEventsUrl: identical(receivedEventsUrl, sdkOmittedValue) ? this.receivedEventsUrl : receivedEventsUrl as SdkOptional<String>,
@@ -77,24 +66,20 @@ class WebhookDeploymentCreatedWorkflowRunActor {
     siteAdmin: identical(siteAdmin, sdkOmittedValue) ? this.siteAdmin : siteAdmin as SdkOptional<bool>,
     starredUrl: identical(starredUrl, sdkOmittedValue) ? this.starredUrl : starredUrl as SdkOptional<String>,
     subscriptionsUrl: identical(subscriptionsUrl, sdkOmittedValue) ? this.subscriptionsUrl : subscriptionsUrl as SdkOptional<String>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<WebhookDeploymentCreatedWorkflowRunActorType>,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<String>,
     url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
-    userViewType: identical(userViewType, sdkOmittedValue) ? this.userViewType : userViewType as SdkOptional<String>,
   );
 
-  factory WebhookDeploymentCreatedWorkflowRunActor.fromJson(Map<String, dynamic> json) => WebhookDeploymentCreatedWorkflowRunActor(
+  factory WebhookDeploymentCreatedWorkflowRunHeadRepositoryOwner.fromJson(Map<String, dynamic> json) => WebhookDeploymentCreatedWorkflowRunHeadRepositoryOwner(
     avatarUrl: json['avatar_url'] != null ? SdkPresent((json['avatar_url'] as String?)!) : const SdkOmitted(),
-    deleted: json['deleted'] != null ? SdkPresent((json['deleted'] as bool?)!) : const SdkOmitted(),
-    email: json.containsKey('email') ? SdkPresent(json['email'] as String?) : const SdkOmitted(),
     eventsUrl: json['events_url'] != null ? SdkPresent((json['events_url'] as String?)!) : const SdkOmitted(),
     followersUrl: json['followers_url'] != null ? SdkPresent((json['followers_url'] as String?)!) : const SdkOmitted(),
     followingUrl: json['following_url'] != null ? SdkPresent((json['following_url'] as String?)!) : const SdkOmitted(),
     gistsUrl: json['gists_url'] != null ? SdkPresent((json['gists_url'] as String?)!) : const SdkOmitted(),
     gravatarId: json['gravatar_id'] != null ? SdkPresent((json['gravatar_id'] as String?)!) : const SdkOmitted(),
     htmlUrl: json['html_url'] != null ? SdkPresent((json['html_url'] as String?)!) : const SdkOmitted(),
-    id: ((json['id'] as num?)?.toInt())!,
-    login: (json['login'] as String?)!,
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
+    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
+    login: json['login'] != null ? SdkPresent((json['login'] as String?)!) : const SdkOmitted(),
     nodeId: json['node_id'] != null ? SdkPresent((json['node_id'] as String?)!) : const SdkOmitted(),
     organizationsUrl: json['organizations_url'] != null ? SdkPresent((json['organizations_url'] as String?)!) : const SdkOmitted(),
     receivedEventsUrl: json['received_events_url'] != null ? SdkPresent((json['received_events_url'] as String?)!) : const SdkOmitted(),
@@ -102,22 +87,13 @@ class WebhookDeploymentCreatedWorkflowRunActor {
     siteAdmin: json['site_admin'] != null ? SdkPresent((json['site_admin'] as bool?)!) : const SdkOmitted(),
     starredUrl: json['starred_url'] != null ? SdkPresent((json['starred_url'] as String?)!) : const SdkOmitted(),
     subscriptionsUrl: json['subscriptions_url'] != null ? SdkPresent((json['subscriptions_url'] as String?)!) : const SdkOmitted(),
-    type_: json['type'] != null ? SdkPresent((json['type'] != null ? WebhookDeploymentCreatedWorkflowRunActorType.fromJson(json['type'] as String) : null)!) : const SdkOmitted(),
+    type_: json['type'] != null ? SdkPresent((json['type'] as String?)!) : const SdkOmitted(),
     url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
-    userViewType: json['user_view_type'] != null ? SdkPresent((json['user_view_type'] as String?)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
     ...switch (avatarUrl) {
       SdkPresent<String>(value: final value) => {'avatar_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (deleted) {
-      SdkPresent<bool>(value: final value) => {'deleted': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (email) {
-      SdkPresent<String?>(value: final value) => {'email': value,},
       _ => const <String, dynamic>{},
     },
     ...switch (eventsUrl) {
@@ -144,10 +120,12 @@ class WebhookDeploymentCreatedWorkflowRunActor {
       SdkPresent<String>(value: final value) => {'html_url': value,},
       _ => const <String, dynamic>{},
     },
-    'id': id,
-    'login': login,
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
+    ...switch (id) {
+      SdkPresent<int>(value: final value) => {'id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (login) {
+      SdkPresent<String>(value: final value) => {'login': value,},
       _ => const <String, dynamic>{},
     },
     ...switch (nodeId) {
@@ -179,15 +157,11 @@ class WebhookDeploymentCreatedWorkflowRunActor {
       _ => const <String, dynamic>{},
     },
     ...switch (type_) {
-      SdkPresent<WebhookDeploymentCreatedWorkflowRunActorType>(value: final value) => {'type': value.toJson(),},
+      SdkPresent<String>(value: final value) => {'type': value,},
       _ => const <String, dynamic>{},
     },
     ...switch (url) {
       SdkPresent<String>(value: final value) => {'url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (userViewType) {
-      SdkPresent<String>(value: final value) => {'user_view_type': value,},
       _ => const <String, dynamic>{},
     },
   };

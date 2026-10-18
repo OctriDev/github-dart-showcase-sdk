@@ -4,290 +4,236 @@
 part of 'inline.dart';
 
 // Inline operation models (part 386)
-class BillingCreateOrganizationBudgetRequestBody {
+class ReposUpdateRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The budget amount in whole dollars. For license-based products, this represents the number of licenses.
-  final SdkOptional<int> budgetAmount;
-  /// Whether to prevent additional spending once the budget is exceeded. For `user` and `multi_user_customer` scopes, this must be `true`.
-  final SdkOptional<bool> preventFurtherUsage;
-  final SdkOptional<BillingCreateOrganizationBudgetRequestBodyBudgetAlerting> budgetAlerting;
-  /// The scope of the budget for this organization. - `organization`: Apply the budget to the organization. - `repository`: Apply the budget to a specific repository in the organization. - `multi_user_customer`: Apply a universal budget to all users in the organization. - `user`: Apply the budget to a single user in the organization. `user` and `multi_user_customer` scopes are only supported when `budget_product_sku` is `ai_credits` or `premium_requests`.
-  final SdkOptional<BillingCreateOrganizationBudgetRequestBodyBudgetScope> budgetScope;
-  /// The name of the entity to apply the budget to
-  final SdkOptional<String> budgetEntityName;
-  /// The type of pricing model used by the budget. Determines how `budget_product_sku` is interpreted. - `BundlePricing`: Covers all AI credit SKUs. Set `budget_product_sku` to `ai_credits`. - `ProductPricing`: Covers all SKUs that belong to a product. Set `budget_product_sku` to a product such as `actions` or `packages`. - `SkuPricing`: Covers a single, specific SKU. Set `budget_product_sku` to a SKU such as `actions_linux`.
-  final SdkOptional<BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant0> budgetType;
-  /// A single product or SKU that will be covered in the budget
-  final SdkOptional<String> budgetProductSku;
-  /// The username of the user for `user` scope budgets. This field is required when `budget_scope` is `user`.
-  final SdkOptional<String> user;
-  /// The date the budget will expire in `YYYY-MM-DD` format. Only dates in the future are accepted. If not provided, the budget will not expire. Only supported for budgets with `budget_scope` of `user`
-  final SdkOptional<String> expiresAt;
+  /// The name of the repository.
+  final SdkOptional<String> name;
+  /// A short description of the repository.
+  final SdkOptional<String> description;
+  /// A URL with more information about the repository.
+  final SdkOptional<String> homepage;
+  /// Either `true` to make the repository private or `false` to make it public. Default: `false`. **Note**: You will get a `422` error if the organization restricts [changing repository visibility](https://docs.github.com/articles/repository-permission-levels-for-an-organization#changing-the-visibility-of-repositories) to organization owners and a non-owner tries to change the value of private.
+  final SdkOptional<bool> private;
+  /// The visibility of the repository.
+  final SdkOptional<ReposUpdateRequestBodyVisibility> visibility;
+  /// Specify which security and analysis features to enable or disable for the repository. To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)." For example, to enable GitHub Advanced Security, use this data in the body of the `PATCH` request: `{ "security_and_analysis": {"advanced_security": { "status": "enabled" } } }`. You can check which security and analysis features are currently enabled by using a `GET /repos/{owner}/{repo}` request.
+  final SdkOptional<ReposUpdateRequestBodySecurityAndAnalysis?> securityAndAnalysis;
+  /// Either `true` to enable issues for this repository or `false` to disable them.
+  final SdkOptional<bool> hasIssues;
+  /// Either `true` to enable projects for this repository or `false` to disable them. **Note:** If you're creating a repository in an organization that has disabled repository projects, the default is `false`, and if you pass `true`, the API returns an error.
+  final SdkOptional<bool> hasProjects;
+  /// Either `true` to enable the wiki for this repository or `false` to disable it.
+  final SdkOptional<bool> hasWiki;
+  /// Either `true` to allow pull requests for this repository or `false` to prevent pull requests.
+  final SdkOptional<bool> hasPullRequests;
+  /// The policy that controls who can create pull requests for this repository: `all` or `collaborators_only`.
+  final SdkOptional<ReposUpdateRequestBodyPullRequestCreationPolicy> pullRequestCreationPolicy;
+  /// Either `true` to make this repo available as a template repository or `false` to prevent it.
+  final SdkOptional<bool> isTemplate;
+  /// Updates the default branch for this repository.
+  final SdkOptional<String> defaultBranch;
+  /// Either `true` to allow squash-merging pull requests, or `false` to prevent squash-merging.
+  final SdkOptional<bool> allowSquashMerge;
+  /// Either `true` to allow merging pull requests with a merge commit, or `false` to prevent merging pull requests with merge commits.
+  final SdkOptional<bool> allowMergeCommit;
+  /// Either `true` to allow rebase-merging pull requests, or `false` to prevent rebase-merging.
+  final SdkOptional<bool> allowRebaseMerge;
+  /// Either `true` to allow auto-merge on pull requests, or `false` to disallow auto-merge.
+  final SdkOptional<bool> allowAutoMerge;
+  /// Either `true` to allow automatically deleting head branches when pull requests are merged, or `false` to prevent automatic deletion.
+  final SdkOptional<bool> deleteBranchOnMerge;
+  /// Either `true` to always allow a pull request head branch that is behind its base branch to be updated even if it is not required to be up to date before merging, or false otherwise.
+  final SdkOptional<bool> allowUpdateBranch;
+  /// Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. **This property is closing down. Please use `squash_merge_commit_title` instead.
+  final SdkOptional<bool> useSquashPrTitleAsDefault;
+  /// Required when using `squash_merge_commit_message`. The default value for a squash merge commit title: - `PR_TITLE` - default to the pull request's title. - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
+  final SdkOptional<ReposUpdateRequestBodySquashMergeCommitTitle> squashMergeCommitTitle;
+  /// The default value for a squash merge commit message: - `PR_BODY` - default to the pull request's body. - `COMMIT_MESSAGES` - default to the branch's commit messages. - `BLANK` - default to a blank commit message.
+  final SdkOptional<ReposUpdateRequestBodySquashMergeCommitMessage> squashMergeCommitMessage;
+  /// Required when using `merge_commit_message`. The default value for a merge commit title. - `PR_TITLE` - default to the pull request's title. - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
+  final SdkOptional<ReposUpdateRequestBodyMergeCommitTitle> mergeCommitTitle;
+  /// The default value for a merge commit message. - `PR_TITLE` - default to the pull request's title. - `PR_BODY` - default to the pull request's body. - `BLANK` - default to a blank commit message.
+  final SdkOptional<ReposUpdateRequestBodyMergeCommitMessage> mergeCommitMessage;
+  /// Whether to archive this repository. `false` will unarchive a previously archived repository.
+  final SdkOptional<bool> archived;
+  /// Either `true` to allow private forks, or `false` to prevent private forks.
+  final SdkOptional<bool> allowForking;
+  /// Either `true` to require contributors to sign off on web-based commits, or `false` to not require contributors to sign off on web-based commits.
+  final SdkOptional<bool> webCommitSignoffRequired;
 
-  const BillingCreateOrganizationBudgetRequestBody({this.budgetAmount = const SdkOmitted(), this.preventFurtherUsage = const SdkOmitted(), this.budgetAlerting = const SdkOmitted(), this.budgetScope = const SdkOmitted(), this.budgetEntityName = const SdkOmitted(), this.budgetType = const SdkOmitted(), this.budgetProductSku = const SdkOmitted(), this.user = const SdkOmitted(), this.expiresAt = const SdkOmitted()});
+  const ReposUpdateRequestBody({this.name = const SdkOmitted(), this.description = const SdkOmitted(), this.homepage = const SdkOmitted(), this.private = const SdkOmitted(), this.visibility = const SdkOmitted(), this.securityAndAnalysis = const SdkOmitted(), this.hasIssues = const SdkOmitted(), this.hasProjects = const SdkOmitted(), this.hasWiki = const SdkOmitted(), this.hasPullRequests = const SdkOmitted(), this.pullRequestCreationPolicy = const SdkOmitted(), this.isTemplate = const SdkOmitted(), this.defaultBranch = const SdkOmitted(), this.allowSquashMerge = const SdkOmitted(), this.allowMergeCommit = const SdkOmitted(), this.allowRebaseMerge = const SdkOmitted(), this.allowAutoMerge = const SdkOmitted(), this.deleteBranchOnMerge = const SdkOmitted(), this.allowUpdateBranch = const SdkOmitted(), this.useSquashPrTitleAsDefault = const SdkOmitted(), this.squashMergeCommitTitle = const SdkOmitted(), this.squashMergeCommitMessage = const SdkOmitted(), this.mergeCommitTitle = const SdkOmitted(), this.mergeCommitMessage = const SdkOmitted(), this.archived = const SdkOmitted(), this.allowForking = const SdkOmitted(), this.webCommitSignoffRequired = const SdkOmitted()});
 
-  BillingCreateOrganizationBudgetRequestBody Function({SdkOptional<int> budgetAmount, SdkOptional<bool> preventFurtherUsage, SdkOptional<BillingCreateOrganizationBudgetRequestBodyBudgetAlerting> budgetAlerting, SdkOptional<BillingCreateOrganizationBudgetRequestBodyBudgetScope> budgetScope, SdkOptional<String> budgetEntityName, SdkOptional<BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant0> budgetType, SdkOptional<String> budgetProductSku, SdkOptional<String> user, SdkOptional<String> expiresAt}) get copyWith => _copyWith;
+  ReposUpdateRequestBody Function({SdkOptional<String> name, SdkOptional<String> description, SdkOptional<String> homepage, SdkOptional<bool> private, SdkOptional<ReposUpdateRequestBodyVisibility> visibility, SdkOptional<ReposUpdateRequestBodySecurityAndAnalysis?> securityAndAnalysis, SdkOptional<bool> hasIssues, SdkOptional<bool> hasProjects, SdkOptional<bool> hasWiki, SdkOptional<bool> hasPullRequests, SdkOptional<ReposUpdateRequestBodyPullRequestCreationPolicy> pullRequestCreationPolicy, SdkOptional<bool> isTemplate, SdkOptional<String> defaultBranch, SdkOptional<bool> allowSquashMerge, SdkOptional<bool> allowMergeCommit, SdkOptional<bool> allowRebaseMerge, SdkOptional<bool> allowAutoMerge, SdkOptional<bool> deleteBranchOnMerge, SdkOptional<bool> allowUpdateBranch, SdkOptional<bool> useSquashPrTitleAsDefault, SdkOptional<ReposUpdateRequestBodySquashMergeCommitTitle> squashMergeCommitTitle, SdkOptional<ReposUpdateRequestBodySquashMergeCommitMessage> squashMergeCommitMessage, SdkOptional<ReposUpdateRequestBodyMergeCommitTitle> mergeCommitTitle, SdkOptional<ReposUpdateRequestBodyMergeCommitMessage> mergeCommitMessage, SdkOptional<bool> archived, SdkOptional<bool> allowForking, SdkOptional<bool> webCommitSignoffRequired}) get copyWith => _copyWith;
 
-  BillingCreateOrganizationBudgetRequestBody _copyWith({Object? budgetAmount = sdkOmittedValue, Object? preventFurtherUsage = sdkOmittedValue, Object? budgetAlerting = sdkOmittedValue, Object? budgetScope = sdkOmittedValue, Object? budgetEntityName = sdkOmittedValue, Object? budgetType = sdkOmittedValue, Object? budgetProductSku = sdkOmittedValue, Object? user = sdkOmittedValue, Object? expiresAt = sdkOmittedValue}) => BillingCreateOrganizationBudgetRequestBody(
-    budgetAmount: identical(budgetAmount, sdkOmittedValue) ? this.budgetAmount : budgetAmount as SdkOptional<int>,
-    preventFurtherUsage: identical(preventFurtherUsage, sdkOmittedValue) ? this.preventFurtherUsage : preventFurtherUsage as SdkOptional<bool>,
-    budgetAlerting: identical(budgetAlerting, sdkOmittedValue) ? this.budgetAlerting : budgetAlerting as SdkOptional<BillingCreateOrganizationBudgetRequestBodyBudgetAlerting>,
-    budgetScope: identical(budgetScope, sdkOmittedValue) ? this.budgetScope : budgetScope as SdkOptional<BillingCreateOrganizationBudgetRequestBodyBudgetScope>,
-    budgetEntityName: identical(budgetEntityName, sdkOmittedValue) ? this.budgetEntityName : budgetEntityName as SdkOptional<String>,
-    budgetType: identical(budgetType, sdkOmittedValue) ? this.budgetType : budgetType as SdkOptional<BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant0>,
-    budgetProductSku: identical(budgetProductSku, sdkOmittedValue) ? this.budgetProductSku : budgetProductSku as SdkOptional<String>,
-    user: identical(user, sdkOmittedValue) ? this.user : user as SdkOptional<String>,
-    expiresAt: identical(expiresAt, sdkOmittedValue) ? this.expiresAt : expiresAt as SdkOptional<String>,
+  ReposUpdateRequestBody _copyWith({Object? name = sdkOmittedValue, Object? description = sdkOmittedValue, Object? homepage = sdkOmittedValue, Object? private = sdkOmittedValue, Object? visibility = sdkOmittedValue, Object? securityAndAnalysis = sdkOmittedValue, Object? hasIssues = sdkOmittedValue, Object? hasProjects = sdkOmittedValue, Object? hasWiki = sdkOmittedValue, Object? hasPullRequests = sdkOmittedValue, Object? pullRequestCreationPolicy = sdkOmittedValue, Object? isTemplate = sdkOmittedValue, Object? defaultBranch = sdkOmittedValue, Object? allowSquashMerge = sdkOmittedValue, Object? allowMergeCommit = sdkOmittedValue, Object? allowRebaseMerge = sdkOmittedValue, Object? allowAutoMerge = sdkOmittedValue, Object? deleteBranchOnMerge = sdkOmittedValue, Object? allowUpdateBranch = sdkOmittedValue, Object? useSquashPrTitleAsDefault = sdkOmittedValue, Object? squashMergeCommitTitle = sdkOmittedValue, Object? squashMergeCommitMessage = sdkOmittedValue, Object? mergeCommitTitle = sdkOmittedValue, Object? mergeCommitMessage = sdkOmittedValue, Object? archived = sdkOmittedValue, Object? allowForking = sdkOmittedValue, Object? webCommitSignoffRequired = sdkOmittedValue}) => ReposUpdateRequestBody(
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
+    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String>,
+    homepage: identical(homepage, sdkOmittedValue) ? this.homepage : homepage as SdkOptional<String>,
+    private: identical(private, sdkOmittedValue) ? this.private : private as SdkOptional<bool>,
+    visibility: identical(visibility, sdkOmittedValue) ? this.visibility : visibility as SdkOptional<ReposUpdateRequestBodyVisibility>,
+    securityAndAnalysis: identical(securityAndAnalysis, sdkOmittedValue) ? this.securityAndAnalysis : securityAndAnalysis as SdkOptional<ReposUpdateRequestBodySecurityAndAnalysis?>,
+    hasIssues: identical(hasIssues, sdkOmittedValue) ? this.hasIssues : hasIssues as SdkOptional<bool>,
+    hasProjects: identical(hasProjects, sdkOmittedValue) ? this.hasProjects : hasProjects as SdkOptional<bool>,
+    hasWiki: identical(hasWiki, sdkOmittedValue) ? this.hasWiki : hasWiki as SdkOptional<bool>,
+    hasPullRequests: identical(hasPullRequests, sdkOmittedValue) ? this.hasPullRequests : hasPullRequests as SdkOptional<bool>,
+    pullRequestCreationPolicy: identical(pullRequestCreationPolicy, sdkOmittedValue) ? this.pullRequestCreationPolicy : pullRequestCreationPolicy as SdkOptional<ReposUpdateRequestBodyPullRequestCreationPolicy>,
+    isTemplate: identical(isTemplate, sdkOmittedValue) ? this.isTemplate : isTemplate as SdkOptional<bool>,
+    defaultBranch: identical(defaultBranch, sdkOmittedValue) ? this.defaultBranch : defaultBranch as SdkOptional<String>,
+    allowSquashMerge: identical(allowSquashMerge, sdkOmittedValue) ? this.allowSquashMerge : allowSquashMerge as SdkOptional<bool>,
+    allowMergeCommit: identical(allowMergeCommit, sdkOmittedValue) ? this.allowMergeCommit : allowMergeCommit as SdkOptional<bool>,
+    allowRebaseMerge: identical(allowRebaseMerge, sdkOmittedValue) ? this.allowRebaseMerge : allowRebaseMerge as SdkOptional<bool>,
+    allowAutoMerge: identical(allowAutoMerge, sdkOmittedValue) ? this.allowAutoMerge : allowAutoMerge as SdkOptional<bool>,
+    deleteBranchOnMerge: identical(deleteBranchOnMerge, sdkOmittedValue) ? this.deleteBranchOnMerge : deleteBranchOnMerge as SdkOptional<bool>,
+    allowUpdateBranch: identical(allowUpdateBranch, sdkOmittedValue) ? this.allowUpdateBranch : allowUpdateBranch as SdkOptional<bool>,
+    useSquashPrTitleAsDefault: identical(useSquashPrTitleAsDefault, sdkOmittedValue) ? this.useSquashPrTitleAsDefault : useSquashPrTitleAsDefault as SdkOptional<bool>,
+    squashMergeCommitTitle: identical(squashMergeCommitTitle, sdkOmittedValue) ? this.squashMergeCommitTitle : squashMergeCommitTitle as SdkOptional<ReposUpdateRequestBodySquashMergeCommitTitle>,
+    squashMergeCommitMessage: identical(squashMergeCommitMessage, sdkOmittedValue) ? this.squashMergeCommitMessage : squashMergeCommitMessage as SdkOptional<ReposUpdateRequestBodySquashMergeCommitMessage>,
+    mergeCommitTitle: identical(mergeCommitTitle, sdkOmittedValue) ? this.mergeCommitTitle : mergeCommitTitle as SdkOptional<ReposUpdateRequestBodyMergeCommitTitle>,
+    mergeCommitMessage: identical(mergeCommitMessage, sdkOmittedValue) ? this.mergeCommitMessage : mergeCommitMessage as SdkOptional<ReposUpdateRequestBodyMergeCommitMessage>,
+    archived: identical(archived, sdkOmittedValue) ? this.archived : archived as SdkOptional<bool>,
+    allowForking: identical(allowForking, sdkOmittedValue) ? this.allowForking : allowForking as SdkOptional<bool>,
+    webCommitSignoffRequired: identical(webCommitSignoffRequired, sdkOmittedValue) ? this.webCommitSignoffRequired : webCommitSignoffRequired as SdkOptional<bool>,
   );
 
-  factory BillingCreateOrganizationBudgetRequestBody.fromJson(Map<String, dynamic> json) => BillingCreateOrganizationBudgetRequestBody(
-    budgetAmount: json['budget_amount'] != null ? SdkPresent(((json['budget_amount'] as num?)?.toInt())!) : const SdkOmitted(),
-    preventFurtherUsage: json['prevent_further_usage'] != null ? SdkPresent((json['prevent_further_usage'] as bool?)!) : const SdkOmitted(),
-    budgetAlerting: json['budget_alerting'] != null ? SdkPresent((json['budget_alerting'] != null ? BillingCreateOrganizationBudgetRequestBodyBudgetAlerting.fromJson(json['budget_alerting'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    budgetScope: json['budget_scope'] != null ? SdkPresent((json['budget_scope'] != null ? BillingCreateOrganizationBudgetRequestBodyBudgetScope.fromJson(json['budget_scope'] as String) : null)!) : const SdkOmitted(),
-    budgetEntityName: json['budget_entity_name'] != null ? SdkPresent((json['budget_entity_name'] as String?)!) : const SdkOmitted(),
-    budgetType: json['budget_type'] != null ? SdkPresent((json['budget_type'] != null ? BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant0.fromJson(json['budget_type'] as String) : null)!) : const SdkOmitted(),
-    budgetProductSku: json['budget_product_sku'] != null ? SdkPresent((json['budget_product_sku'] as String?)!) : const SdkOmitted(),
-    user: json['user'] != null ? SdkPresent((json['user'] as String?)!) : const SdkOmitted(),
-    expiresAt: json['expires_at'] != null ? SdkPresent((json['expires_at'] as String?)!) : const SdkOmitted(),
+  factory ReposUpdateRequestBody.fromJson(Map<String, dynamic> json) => ReposUpdateRequestBody(
+    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
+    description: json['description'] != null ? SdkPresent((json['description'] as String?)!) : const SdkOmitted(),
+    homepage: json['homepage'] != null ? SdkPresent((json['homepage'] as String?)!) : const SdkOmitted(),
+    private: json['private'] != null ? SdkPresent((json['private'] as bool?)!) : const SdkOmitted(),
+    visibility: json['visibility'] != null ? SdkPresent((json['visibility'] != null ? ReposUpdateRequestBodyVisibility.fromJson(json['visibility'] as String) : null)!) : const SdkOmitted(),
+    securityAndAnalysis: json.containsKey('security_and_analysis') ? SdkPresent(json['security_and_analysis'] != null ? ReposUpdateRequestBodySecurityAndAnalysis.fromJson(json['security_and_analysis'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    hasIssues: json['has_issues'] != null ? SdkPresent((json['has_issues'] as bool?)!) : const SdkOmitted(),
+    hasProjects: json['has_projects'] != null ? SdkPresent((json['has_projects'] as bool?)!) : const SdkOmitted(),
+    hasWiki: json['has_wiki'] != null ? SdkPresent((json['has_wiki'] as bool?)!) : const SdkOmitted(),
+    hasPullRequests: json['has_pull_requests'] != null ? SdkPresent((json['has_pull_requests'] as bool?)!) : const SdkOmitted(),
+    pullRequestCreationPolicy: json['pull_request_creation_policy'] != null ? SdkPresent((json['pull_request_creation_policy'] != null ? ReposUpdateRequestBodyPullRequestCreationPolicy.fromJson(json['pull_request_creation_policy'] as String) : null)!) : const SdkOmitted(),
+    isTemplate: json['is_template'] != null ? SdkPresent((json['is_template'] as bool?)!) : const SdkOmitted(),
+    defaultBranch: json['default_branch'] != null ? SdkPresent((json['default_branch'] as String?)!) : const SdkOmitted(),
+    allowSquashMerge: json['allow_squash_merge'] != null ? SdkPresent((json['allow_squash_merge'] as bool?)!) : const SdkOmitted(),
+    allowMergeCommit: json['allow_merge_commit'] != null ? SdkPresent((json['allow_merge_commit'] as bool?)!) : const SdkOmitted(),
+    allowRebaseMerge: json['allow_rebase_merge'] != null ? SdkPresent((json['allow_rebase_merge'] as bool?)!) : const SdkOmitted(),
+    allowAutoMerge: json['allow_auto_merge'] != null ? SdkPresent((json['allow_auto_merge'] as bool?)!) : const SdkOmitted(),
+    deleteBranchOnMerge: json['delete_branch_on_merge'] != null ? SdkPresent((json['delete_branch_on_merge'] as bool?)!) : const SdkOmitted(),
+    allowUpdateBranch: json['allow_update_branch'] != null ? SdkPresent((json['allow_update_branch'] as bool?)!) : const SdkOmitted(),
+    useSquashPrTitleAsDefault: json['use_squash_pr_title_as_default'] != null ? SdkPresent((json['use_squash_pr_title_as_default'] as bool?)!) : const SdkOmitted(),
+    squashMergeCommitTitle: json['squash_merge_commit_title'] != null ? SdkPresent((json['squash_merge_commit_title'] != null ? ReposUpdateRequestBodySquashMergeCommitTitle.fromJson(json['squash_merge_commit_title'] as String) : null)!) : const SdkOmitted(),
+    squashMergeCommitMessage: json['squash_merge_commit_message'] != null ? SdkPresent((json['squash_merge_commit_message'] != null ? ReposUpdateRequestBodySquashMergeCommitMessage.fromJson(json['squash_merge_commit_message'] as String) : null)!) : const SdkOmitted(),
+    mergeCommitTitle: json['merge_commit_title'] != null ? SdkPresent((json['merge_commit_title'] != null ? ReposUpdateRequestBodyMergeCommitTitle.fromJson(json['merge_commit_title'] as String) : null)!) : const SdkOmitted(),
+    mergeCommitMessage: json['merge_commit_message'] != null ? SdkPresent((json['merge_commit_message'] != null ? ReposUpdateRequestBodyMergeCommitMessage.fromJson(json['merge_commit_message'] as String) : null)!) : const SdkOmitted(),
+    archived: json['archived'] != null ? SdkPresent((json['archived'] as bool?)!) : const SdkOmitted(),
+    allowForking: json['allow_forking'] != null ? SdkPresent((json['allow_forking'] as bool?)!) : const SdkOmitted(),
+    webCommitSignoffRequired: json['web_commit_signoff_required'] != null ? SdkPresent((json['web_commit_signoff_required'] as bool?)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    ...switch (budgetAmount) {
-      SdkPresent<int>(value: final value) => {'budget_amount': value,},
+    ...switch (name) {
+      SdkPresent<String>(value: final value) => {'name': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (preventFurtherUsage) {
-      SdkPresent<bool>(value: final value) => {'prevent_further_usage': value,},
+    ...switch (description) {
+      SdkPresent<String>(value: final value) => {'description': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (budgetAlerting) {
-      SdkPresent<BillingCreateOrganizationBudgetRequestBodyBudgetAlerting>(value: final value) => {'budget_alerting': value.toJson(),},
+    ...switch (homepage) {
+      SdkPresent<String>(value: final value) => {'homepage': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (budgetScope) {
-      SdkPresent<BillingCreateOrganizationBudgetRequestBodyBudgetScope>(value: final value) => {'budget_scope': value.toJson(),},
+    ...switch (private) {
+      SdkPresent<bool>(value: final value) => {'private': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (budgetEntityName) {
-      SdkPresent<String>(value: final value) => {'budget_entity_name': value,},
+    ...switch (visibility) {
+      SdkPresent<ReposUpdateRequestBodyVisibility>(value: final value) => {'visibility': value.toJson(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (budgetType) {
-      SdkPresent<BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant0>(value: final value) => {'budget_type': value.toJson(),},
+    ...switch (securityAndAnalysis) {
+      SdkPresent<ReposUpdateRequestBodySecurityAndAnalysis?>(value: final value) => {'security_and_analysis': value?.toJson(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (budgetProductSku) {
-      SdkPresent<String>(value: final value) => {'budget_product_sku': value,},
+    ...switch (hasIssues) {
+      SdkPresent<bool>(value: final value) => {'has_issues': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (user) {
-      SdkPresent<String>(value: final value) => {'user': value,},
+    ...switch (hasProjects) {
+      SdkPresent<bool>(value: final value) => {'has_projects': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (expiresAt) {
-      SdkPresent<String>(value: final value) => {'expires_at': value,},
+    ...switch (hasWiki) {
+      SdkPresent<bool>(value: final value) => {'has_wiki': value,},
       _ => const <String, dynamic>{},
     },
-  };
-}
-
-class BillingUpdateBudgetOrgRequestBodyBudgetAlerting {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// Whether alerts are enabled for this budget. Ignored for user-scopes as alerting is always disabled for them.
-  final SdkOptional<bool> willAlert;
-  /// Array of user login names who will receive alerts. Ignored for user-scopes as alerting is always disabled for them.
-  final SdkOptional<List<String>> alertRecipients;
-
-  const BillingUpdateBudgetOrgRequestBodyBudgetAlerting({this.willAlert = const SdkOmitted(), this.alertRecipients = const SdkOmitted()});
-
-  BillingUpdateBudgetOrgRequestBodyBudgetAlerting Function({SdkOptional<bool> willAlert, SdkOptional<List<String>> alertRecipients}) get copyWith => _copyWith;
-
-  BillingUpdateBudgetOrgRequestBodyBudgetAlerting _copyWith({Object? willAlert = sdkOmittedValue, Object? alertRecipients = sdkOmittedValue}) => BillingUpdateBudgetOrgRequestBodyBudgetAlerting(
-    willAlert: identical(willAlert, sdkOmittedValue) ? this.willAlert : willAlert as SdkOptional<bool>,
-    alertRecipients: identical(alertRecipients, sdkOmittedValue) ? this.alertRecipients : alertRecipients as SdkOptional<List<String>>,
-  );
-
-  factory BillingUpdateBudgetOrgRequestBodyBudgetAlerting.fromJson(Map<String, dynamic> json) => BillingUpdateBudgetOrgRequestBodyBudgetAlerting(
-    willAlert: json['will_alert'] != null ? SdkPresent((json['will_alert'] as bool?)!) : const SdkOmitted(),
-    alertRecipients: json['alert_recipients'] != null ? SdkPresent(((json['alert_recipients'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    ...switch (willAlert) {
-      SdkPresent<bool>(value: final value) => {'will_alert': value,},
+    ...switch (hasPullRequests) {
+      SdkPresent<bool>(value: final value) => {'has_pull_requests': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (alertRecipients) {
-      SdkPresent<List<String>>(value: final value) => {'alert_recipients': value,},
+    ...switch (pullRequestCreationPolicy) {
+      SdkPresent<ReposUpdateRequestBodyPullRequestCreationPolicy>(value: final value) => {'pull_request_creation_policy': value.toJson(),},
       _ => const <String, dynamic>{},
     },
-  };
-}
-
-class BillingUpdateBudgetOrgRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The budget amount in whole dollars. For license-based products, this represents the number of licenses.
-  final SdkOptional<int> budgetAmount;
-  /// Whether to prevent additional spending once the budget is exceeded. For budgets with `user` or `multi_user_customer` scope, this must remain `true`.
-  final SdkOptional<bool> preventFurtherUsage;
-  final SdkOptional<BillingUpdateBudgetOrgRequestBodyBudgetAlerting> budgetAlerting;
-  /// The date the budget will expire in `YYYY-MM-DD` format. Only dates in the future are accepted. If not set, the budget will not expire. Setting to `null` or `0` will remove the expiration date from a budget if set. Only supported for existing user-scoped budgets.
-  final SdkOptional<dynamic> expiresAt;
-
-  const BillingUpdateBudgetOrgRequestBody({this.budgetAmount = const SdkOmitted(), this.preventFurtherUsage = const SdkOmitted(), this.budgetAlerting = const SdkOmitted(), this.expiresAt = const SdkOmitted()});
-
-  BillingUpdateBudgetOrgRequestBody Function({SdkOptional<int> budgetAmount, SdkOptional<bool> preventFurtherUsage, SdkOptional<BillingUpdateBudgetOrgRequestBodyBudgetAlerting> budgetAlerting, SdkOptional<dynamic> expiresAt}) get copyWith => _copyWith;
-
-  BillingUpdateBudgetOrgRequestBody _copyWith({Object? budgetAmount = sdkOmittedValue, Object? preventFurtherUsage = sdkOmittedValue, Object? budgetAlerting = sdkOmittedValue, Object? expiresAt = sdkOmittedValue}) => BillingUpdateBudgetOrgRequestBody(
-    budgetAmount: identical(budgetAmount, sdkOmittedValue) ? this.budgetAmount : budgetAmount as SdkOptional<int>,
-    preventFurtherUsage: identical(preventFurtherUsage, sdkOmittedValue) ? this.preventFurtherUsage : preventFurtherUsage as SdkOptional<bool>,
-    budgetAlerting: identical(budgetAlerting, sdkOmittedValue) ? this.budgetAlerting : budgetAlerting as SdkOptional<BillingUpdateBudgetOrgRequestBodyBudgetAlerting>,
-    expiresAt: identical(expiresAt, sdkOmittedValue) ? this.expiresAt : expiresAt as SdkOptional<dynamic>,
-  );
-
-  factory BillingUpdateBudgetOrgRequestBody.fromJson(Map<String, dynamic> json) => BillingUpdateBudgetOrgRequestBody(
-    budgetAmount: json['budget_amount'] != null ? SdkPresent(((json['budget_amount'] as num?)?.toInt())!) : const SdkOmitted(),
-    preventFurtherUsage: json['prevent_further_usage'] != null ? SdkPresent((json['prevent_further_usage'] as bool?)!) : const SdkOmitted(),
-    budgetAlerting: json['budget_alerting'] != null ? SdkPresent((json['budget_alerting'] != null ? BillingUpdateBudgetOrgRequestBodyBudgetAlerting.fromJson(json['budget_alerting'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    expiresAt: json['expires_at'] != null ? SdkPresent((json['expires_at'])!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    ...switch (budgetAmount) {
-      SdkPresent<int>(value: final value) => {'budget_amount': value,},
+    ...switch (isTemplate) {
+      SdkPresent<bool>(value: final value) => {'is_template': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (preventFurtherUsage) {
-      SdkPresent<bool>(value: final value) => {'prevent_further_usage': value,},
+    ...switch (defaultBranch) {
+      SdkPresent<String>(value: final value) => {'default_branch': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (budgetAlerting) {
-      SdkPresent<BillingUpdateBudgetOrgRequestBodyBudgetAlerting>(value: final value) => {'budget_alerting': value.toJson(),},
+    ...switch (allowSquashMerge) {
+      SdkPresent<bool>(value: final value) => {'allow_squash_merge': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (expiresAt) {
-      SdkPresent<dynamic>(value: final value) => {'expires_at': value,},
+    ...switch (allowMergeCommit) {
+      SdkPresent<bool>(value: final value) => {'allow_merge_commit': value,},
       _ => const <String, dynamic>{},
     },
-  };
-}
-
-class AgentsListOrgSecretsResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<OrganizationActionsSecret> secrets;
-
-  const AgentsListOrgSecretsResponse({required this.totalCount, required this.secrets});
-
-  AgentsListOrgSecretsResponse Function({int totalCount, List<OrganizationActionsSecret> secrets}) get copyWith => _copyWith;
-
-  AgentsListOrgSecretsResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? secrets = sdkOmittedValue}) => AgentsListOrgSecretsResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    secrets: identical(secrets, sdkOmittedValue) ? this.secrets : secrets as List<OrganizationActionsSecret>,
-  );
-
-  factory AgentsListOrgSecretsResponse.fromJson(Map<String, dynamic> json) => AgentsListOrgSecretsResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    secrets: ((json['secrets'] as List?)?.map((e) => OrganizationActionsSecret.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'secrets': secrets.map((item) => item.toJson()).toList(),
-  };
-}
-
-class AgentsCreateOrUpdateOrgSecretRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get an organization public key](https://docs.github.com/rest/agents/secrets#get-an-organization-public-key) endpoint.
-  final String encryptedValue;
-  /// ID of the key you used to encrypt the secret.
-  final String keyId;
-  /// Which type of organization repositories have access to the organization secret. `selected` means only the repositories specified by `selected_repository_ids` can access the secret.
-  final AgentsCreateOrUpdateOrgSecretRequestBodyVisibility visibility;
-  /// An array of repository ids that can access the organization secret. You can only provide a list of repository ids when the `visibility` is set to `selected`. You can manage the list of selected repositories using the [List selected repositories for an organization secret](https://docs.github.com/rest/agents/secrets#list-selected-repositories-for-an-organization-secret), [Set selected repositories for an organization secret](https://docs.github.com/rest/agents/secrets#set-selected-repositories-for-an-organization-secret), and [Remove selected repository from an organization secret](https://docs.github.com/rest/agents/secrets#remove-selected-repository-from-an-organization-secret) endpoints.
-  final SdkOptional<List<int>> selectedRepositoryIds;
-
-  const AgentsCreateOrUpdateOrgSecretRequestBody({required this.encryptedValue, required this.keyId, required this.visibility, this.selectedRepositoryIds = const SdkOmitted()});
-
-  AgentsCreateOrUpdateOrgSecretRequestBody Function({String encryptedValue, String keyId, AgentsCreateOrUpdateOrgSecretRequestBodyVisibility visibility, SdkOptional<List<int>> selectedRepositoryIds}) get copyWith => _copyWith;
-
-  AgentsCreateOrUpdateOrgSecretRequestBody _copyWith({Object? encryptedValue = sdkOmittedValue, Object? keyId = sdkOmittedValue, Object? visibility = sdkOmittedValue, Object? selectedRepositoryIds = sdkOmittedValue}) => AgentsCreateOrUpdateOrgSecretRequestBody(
-    encryptedValue: identical(encryptedValue, sdkOmittedValue) ? this.encryptedValue : encryptedValue as String,
-    keyId: identical(keyId, sdkOmittedValue) ? this.keyId : keyId as String,
-    visibility: identical(visibility, sdkOmittedValue) ? this.visibility : visibility as AgentsCreateOrUpdateOrgSecretRequestBodyVisibility,
-    selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue) ? this.selectedRepositoryIds : selectedRepositoryIds as SdkOptional<List<int>>,
-  );
-
-  factory AgentsCreateOrUpdateOrgSecretRequestBody.fromJson(Map<String, dynamic> json) => AgentsCreateOrUpdateOrgSecretRequestBody(
-    encryptedValue: (json['encrypted_value'] as String?)!,
-    keyId: (json['key_id'] as String?)!,
-    visibility: (json['visibility'] != null ? AgentsCreateOrUpdateOrgSecretRequestBodyVisibility.fromJson(json['visibility'] as String) : null)!,
-    selectedRepositoryIds: json['selected_repository_ids'] != null ? SdkPresent(((json['selected_repository_ids'] as List?)?.map((e) => (e as num).toInt()).toList())!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    'encrypted_value': encryptedValue,
-    'key_id': keyId,
-    'visibility': visibility.toJson(),
-    ...switch (selectedRepositoryIds) {
-      SdkPresent<List<int>>(value: final value) => {'selected_repository_ids': value,},
+    ...switch (allowRebaseMerge) {
+      SdkPresent<bool>(value: final value) => {'allow_rebase_merge': value,},
       _ => const <String, dynamic>{},
     },
-  };
-}
-
-class AgentsListSelectedReposForOrgSecretResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<MinimalRepository> repositories;
-
-  const AgentsListSelectedReposForOrgSecretResponse({required this.totalCount, required this.repositories});
-
-  AgentsListSelectedReposForOrgSecretResponse Function({int totalCount, List<MinimalRepository> repositories}) get copyWith => _copyWith;
-
-  AgentsListSelectedReposForOrgSecretResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? repositories = sdkOmittedValue}) => AgentsListSelectedReposForOrgSecretResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    repositories: identical(repositories, sdkOmittedValue) ? this.repositories : repositories as List<MinimalRepository>,
-  );
-
-  factory AgentsListSelectedReposForOrgSecretResponse.fromJson(Map<String, dynamic> json) => AgentsListSelectedReposForOrgSecretResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    repositories: ((json['repositories'] as List?)?.map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'repositories': repositories.map((item) => item.toJson()).toList(),
-  };
-}
-
-class AgentsSetSelectedReposForOrgSecretRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// An array of repository ids that can access the organization secret. You can only provide a list of repository ids when the `visibility` is set to `selected`. You can add and remove individual repositories using the [Add selected repository to an organization secret](https://docs.github.com/rest/agents/secrets#add-selected-repository-to-an-organization-secret) and [Remove selected repository from an organization secret](https://docs.github.com/rest/agents/secrets#remove-selected-repository-from-an-organization-secret) endpoints.
-  final List<int> selectedRepositoryIds;
-
-  const AgentsSetSelectedReposForOrgSecretRequestBody({required this.selectedRepositoryIds});
-
-  AgentsSetSelectedReposForOrgSecretRequestBody Function({List<int> selectedRepositoryIds}) get copyWith => _copyWith;
-
-  AgentsSetSelectedReposForOrgSecretRequestBody _copyWith({Object? selectedRepositoryIds = sdkOmittedValue}) => AgentsSetSelectedReposForOrgSecretRequestBody(
-    selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue) ? this.selectedRepositoryIds : selectedRepositoryIds as List<int>,
-  );
-
-  factory AgentsSetSelectedReposForOrgSecretRequestBody.fromJson(Map<String, dynamic> json) => AgentsSetSelectedReposForOrgSecretRequestBody(
-    selectedRepositoryIds: ((json['selected_repository_ids'] as List?)?.map((e) => (e as num).toInt()).toList())!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'selected_repository_ids': selectedRepositoryIds,
+    ...switch (allowAutoMerge) {
+      SdkPresent<bool>(value: final value) => {'allow_auto_merge': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (deleteBranchOnMerge) {
+      SdkPresent<bool>(value: final value) => {'delete_branch_on_merge': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (allowUpdateBranch) {
+      SdkPresent<bool>(value: final value) => {'allow_update_branch': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (useSquashPrTitleAsDefault) {
+      SdkPresent<bool>(value: final value) => {'use_squash_pr_title_as_default': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (squashMergeCommitTitle) {
+      SdkPresent<ReposUpdateRequestBodySquashMergeCommitTitle>(value: final value) => {'squash_merge_commit_title': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (squashMergeCommitMessage) {
+      SdkPresent<ReposUpdateRequestBodySquashMergeCommitMessage>(value: final value) => {'squash_merge_commit_message': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (mergeCommitTitle) {
+      SdkPresent<ReposUpdateRequestBodyMergeCommitTitle>(value: final value) => {'merge_commit_title': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (mergeCommitMessage) {
+      SdkPresent<ReposUpdateRequestBodyMergeCommitMessage>(value: final value) => {'merge_commit_message': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (archived) {
+      SdkPresent<bool>(value: final value) => {'archived': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (allowForking) {
+      SdkPresent<bool>(value: final value) => {'allow_forking': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (webCommitSignoffRequired) {
+      SdkPresent<bool>(value: final value) => {'web_commit_signoff_required': value,},
+      _ => const <String, dynamic>{},
+    },
   };
 }

@@ -4,100 +4,15 @@
 part of 'webhook_status.dart';
 
 // webhook_status domain models (part 2)
-/// Metaproperties for Git author/committer information.
-class WebhookStatusCommitCommitAuthorVariant0 {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// Optional `date-time`-formatted value serialized in the `date` wire field.
-  final SdkOptional<String> date;
-  /// Required `email`-formatted value serialized in the `email` wire field.
-  final String? email;
-  /// The git author's name.
-  final String name;
-  /// Optional `string` value serialized in the `username` wire field.
-  final SdkOptional<String> username;
-
-  const WebhookStatusCommitCommitAuthorVariant0({this.date = const SdkOmitted(), required this.email, required this.name, this.username = const SdkOmitted()});
-
-  WebhookStatusCommitCommitAuthorVariant0 Function({SdkOptional<String> date, String? email, String name, SdkOptional<String> username}) get copyWith => _copyWith;
-
-  WebhookStatusCommitCommitAuthorVariant0 _copyWith({Object? date = sdkOmittedValue, Object? email = sdkOmittedValue, Object? name = sdkOmittedValue, Object? username = sdkOmittedValue}) => WebhookStatusCommitCommitAuthorVariant0(
-    date: identical(date, sdkOmittedValue) ? this.date : date as SdkOptional<String>,
-    email: identical(email, sdkOmittedValue) ? this.email : email as String?,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    username: identical(username, sdkOmittedValue) ? this.username : username as SdkOptional<String>,
-  );
-
-  factory WebhookStatusCommitCommitAuthorVariant0.fromJson(Map<String, dynamic> json) => WebhookStatusCommitCommitAuthorVariant0(
-    date: json['date'] != null ? SdkPresent((json['date'] as String?)!) : const SdkOmitted(),
-    email: json.containsKey('email') ? json['email'] as String? : throw ArgumentError.value(null, 'email', 'Required property is missing'),
-    name: (json['name'] as String?)!,
-    username: json['username'] != null ? SdkPresent((json['username'] as String?)!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    ...switch (date) {
-      SdkPresent<String>(value: final value) => {'date': value,},
-      _ => const <String, dynamic>{},
-    },
-    'email': email,
-    'name': name,
-    ...switch (username) {
-      SdkPresent<String>(value: final value) => {'username': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
-}
-
 /// Required object value serialized in the `author` wire field.
-class WebhookStatusCommitCommitAuthorVariant1 {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// Required `string` value serialized in the `date` wire field.
-  final String date;
-  /// Optional `string` value serialized in the `email` wire field.
-  final SdkOptional<String> email;
-  /// Optional `string` value serialized in the `name` wire field.
-  final SdkOptional<String> name;
-
-  const WebhookStatusCommitCommitAuthorVariant1({required this.date, this.email = const SdkOmitted(), this.name = const SdkOmitted()});
-
-  WebhookStatusCommitCommitAuthorVariant1 Function({String date, SdkOptional<String> email, SdkOptional<String> name}) get copyWith => _copyWith;
-
-  WebhookStatusCommitCommitAuthorVariant1 _copyWith({Object? date = sdkOmittedValue, Object? email = sdkOmittedValue, Object? name = sdkOmittedValue}) => WebhookStatusCommitCommitAuthorVariant1(
-    date: identical(date, sdkOmittedValue) ? this.date : date as String,
-    email: identical(email, sdkOmittedValue) ? this.email : email as SdkOptional<String>,
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-  );
-
-  factory WebhookStatusCommitCommitAuthorVariant1.fromJson(Map<String, dynamic> json) => WebhookStatusCommitCommitAuthorVariant1(
-    date: (json['date'] as String?)!,
-    email: json['email'] != null ? SdkPresent((json['email'] as String?)!) : const SdkOmitted(),
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    'date': date,
-    ...switch (email) {
-      SdkPresent<String>(value: final value) => {'email': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
-}
-
-/// Required API value serialized in the `author` wire field.
 class WebhookStatusCommitCommitAuthor {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   /// Required `string` value serialized in the `date` wire field.
   final String date;
-  /// Optional `string` value serialized in the `email` wire field.
+  /// Required `string` value serialized in the `email` wire field.
   final String email;
-  /// Optional `string` value serialized in the `name` wire field.
+  /// Required `string` value serialized in the `name` wire field.
   final String name;
   /// Optional `string` value serialized in the `username` wire field.
   final SdkOptional<String> username;
@@ -131,100 +46,15 @@ class WebhookStatusCommitCommitAuthor {
   };
 }
 
-/// Metaproperties for Git author/committer information.
-class WebhookStatusCommitCommitCommitterVariant0 {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// Optional `date-time`-formatted value serialized in the `date` wire field.
-  final SdkOptional<String> date;
-  /// Required `email`-formatted value serialized in the `email` wire field.
-  final String? email;
-  /// The git author's name.
-  final String name;
-  /// Optional `string` value serialized in the `username` wire field.
-  final SdkOptional<String> username;
-
-  const WebhookStatusCommitCommitCommitterVariant0({this.date = const SdkOmitted(), required this.email, required this.name, this.username = const SdkOmitted()});
-
-  WebhookStatusCommitCommitCommitterVariant0 Function({SdkOptional<String> date, String? email, String name, SdkOptional<String> username}) get copyWith => _copyWith;
-
-  WebhookStatusCommitCommitCommitterVariant0 _copyWith({Object? date = sdkOmittedValue, Object? email = sdkOmittedValue, Object? name = sdkOmittedValue, Object? username = sdkOmittedValue}) => WebhookStatusCommitCommitCommitterVariant0(
-    date: identical(date, sdkOmittedValue) ? this.date : date as SdkOptional<String>,
-    email: identical(email, sdkOmittedValue) ? this.email : email as String?,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    username: identical(username, sdkOmittedValue) ? this.username : username as SdkOptional<String>,
-  );
-
-  factory WebhookStatusCommitCommitCommitterVariant0.fromJson(Map<String, dynamic> json) => WebhookStatusCommitCommitCommitterVariant0(
-    date: json['date'] != null ? SdkPresent((json['date'] as String?)!) : const SdkOmitted(),
-    email: json.containsKey('email') ? json['email'] as String? : throw ArgumentError.value(null, 'email', 'Required property is missing'),
-    name: (json['name'] as String?)!,
-    username: json['username'] != null ? SdkPresent((json['username'] as String?)!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    ...switch (date) {
-      SdkPresent<String>(value: final value) => {'date': value,},
-      _ => const <String, dynamic>{},
-    },
-    'email': email,
-    'name': name,
-    ...switch (username) {
-      SdkPresent<String>(value: final value) => {'username': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
-}
-
 /// Required object value serialized in the `committer` wire field.
-class WebhookStatusCommitCommitCommitterVariant1 {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// Required `string` value serialized in the `date` wire field.
-  final String date;
-  /// Optional `string` value serialized in the `email` wire field.
-  final SdkOptional<String> email;
-  /// Optional `string` value serialized in the `name` wire field.
-  final SdkOptional<String> name;
-
-  const WebhookStatusCommitCommitCommitterVariant1({required this.date, this.email = const SdkOmitted(), this.name = const SdkOmitted()});
-
-  WebhookStatusCommitCommitCommitterVariant1 Function({String date, SdkOptional<String> email, SdkOptional<String> name}) get copyWith => _copyWith;
-
-  WebhookStatusCommitCommitCommitterVariant1 _copyWith({Object? date = sdkOmittedValue, Object? email = sdkOmittedValue, Object? name = sdkOmittedValue}) => WebhookStatusCommitCommitCommitterVariant1(
-    date: identical(date, sdkOmittedValue) ? this.date : date as String,
-    email: identical(email, sdkOmittedValue) ? this.email : email as SdkOptional<String>,
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-  );
-
-  factory WebhookStatusCommitCommitCommitterVariant1.fromJson(Map<String, dynamic> json) => WebhookStatusCommitCommitCommitterVariant1(
-    date: (json['date'] as String?)!,
-    email: json['email'] != null ? SdkPresent((json['email'] as String?)!) : const SdkOmitted(),
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    'date': date,
-    ...switch (email) {
-      SdkPresent<String>(value: final value) => {'email': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
-}
-
-/// Required API value serialized in the `committer` wire field.
 class WebhookStatusCommitCommitCommitter {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   /// Required `string` value serialized in the `date` wire field.
   final String date;
-  /// Optional `string` value serialized in the `email` wire field.
+  /// Required `string` value serialized in the `email` wire field.
   final String email;
-  /// Optional `string` value serialized in the `name` wire field.
+  /// Required `string` value serialized in the `name` wire field.
   final String name;
   /// Optional `string` value serialized in the `username` wire field.
   final SdkOptional<String> username;
@@ -284,5 +114,103 @@ class WebhookStatusCommitCommitTree {
   Map<String, dynamic> toJson() => {
     'sha': sha,
     'url': url,
+  };
+}
+
+/// Required object value serialized in the `verification` wire field.
+class WebhookStatusCommitCommitVerification {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// Required `string` value serialized in the `payload` wire field.
+  final String? payload;
+  /// Required enumerated value serialized in the `reason` wire field.
+  final WebhookStatusCommitCommitVerificationReason reason;
+  /// Required `string` value serialized in the `signature` wire field.
+  final String? signature;
+  /// Required `boolean` value serialized in the `verified` wire field.
+  final bool verified;
+  /// Required `string` value serialized in the `verified_at` wire field.
+  final String? verifiedAt;
+
+  const WebhookStatusCommitCommitVerification({required this.payload, required this.reason, required this.signature, required this.verified, required this.verifiedAt});
+
+  WebhookStatusCommitCommitVerification Function({String? payload, WebhookStatusCommitCommitVerificationReason reason, String? signature, bool verified, String? verifiedAt}) get copyWith => _copyWith;
+
+  WebhookStatusCommitCommitVerification _copyWith({Object? payload = sdkOmittedValue, Object? reason = sdkOmittedValue, Object? signature = sdkOmittedValue, Object? verified = sdkOmittedValue, Object? verifiedAt = sdkOmittedValue}) => WebhookStatusCommitCommitVerification(
+    payload: identical(payload, sdkOmittedValue) ? this.payload : payload as String?,
+    reason: identical(reason, sdkOmittedValue) ? this.reason : reason as WebhookStatusCommitCommitVerificationReason,
+    signature: identical(signature, sdkOmittedValue) ? this.signature : signature as String?,
+    verified: identical(verified, sdkOmittedValue) ? this.verified : verified as bool,
+    verifiedAt: identical(verifiedAt, sdkOmittedValue) ? this.verifiedAt : verifiedAt as String?,
+  );
+
+  factory WebhookStatusCommitCommitVerification.fromJson(Map<String, dynamic> json) => WebhookStatusCommitCommitVerification(
+    payload: json.containsKey('payload') ? json['payload'] as String? : throw ArgumentError.value(null, 'payload', 'Required property is missing'),
+    reason: (json['reason'] != null ? WebhookStatusCommitCommitVerificationReason.fromJson(json['reason'] as String) : null)!,
+    signature: json.containsKey('signature') ? json['signature'] as String? : throw ArgumentError.value(null, 'signature', 'Required property is missing'),
+    verified: (json['verified'] as bool?)!,
+    verifiedAt: json.containsKey('verified_at') ? json['verified_at'] as String? : throw ArgumentError.value(null, 'verified_at', 'Required property is missing'),
+  );
+
+  Map<String, dynamic> toJson() => {
+    'payload': payload,
+    'reason': reason.toJson(),
+    'signature': signature,
+    'verified': verified,
+    'verified_at': verifiedAt,
+  };
+}
+
+/// Required object value serialized in the `commit` wire field.
+class WebhookStatusCommitCommit {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// Required object value serialized in the `author` wire field.
+  final WebhookStatusCommitCommitAuthor author;
+  /// Required `integer` value serialized in the `comment_count` wire field.
+  final int commentCount;
+  /// Required object value serialized in the `committer` wire field.
+  final WebhookStatusCommitCommitCommitter committer;
+  /// Required `string` value serialized in the `message` wire field.
+  final String message;
+  /// Required object value serialized in the `tree` wire field.
+  final WebhookStatusCommitCommitTree tree;
+  /// Required `uri`-formatted value serialized in the `url` wire field.
+  final String url;
+  /// Required object value serialized in the `verification` wire field.
+  final WebhookStatusCommitCommitVerification verification;
+
+  const WebhookStatusCommitCommit({required this.author, required this.commentCount, required this.committer, required this.message, required this.tree, required this.url, required this.verification});
+
+  WebhookStatusCommitCommit Function({WebhookStatusCommitCommitAuthor author, int commentCount, WebhookStatusCommitCommitCommitter committer, String message, WebhookStatusCommitCommitTree tree, String url, WebhookStatusCommitCommitVerification verification}) get copyWith => _copyWith;
+
+  WebhookStatusCommitCommit _copyWith({Object? author = sdkOmittedValue, Object? commentCount = sdkOmittedValue, Object? committer = sdkOmittedValue, Object? message = sdkOmittedValue, Object? tree = sdkOmittedValue, Object? url = sdkOmittedValue, Object? verification = sdkOmittedValue}) => WebhookStatusCommitCommit(
+    author: identical(author, sdkOmittedValue) ? this.author : author as WebhookStatusCommitCommitAuthor,
+    commentCount: identical(commentCount, sdkOmittedValue) ? this.commentCount : commentCount as int,
+    committer: identical(committer, sdkOmittedValue) ? this.committer : committer as WebhookStatusCommitCommitCommitter,
+    message: identical(message, sdkOmittedValue) ? this.message : message as String,
+    tree: identical(tree, sdkOmittedValue) ? this.tree : tree as WebhookStatusCommitCommitTree,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+    verification: identical(verification, sdkOmittedValue) ? this.verification : verification as WebhookStatusCommitCommitVerification,
+  );
+
+  factory WebhookStatusCommitCommit.fromJson(Map<String, dynamic> json) => WebhookStatusCommitCommit(
+    author: (json['author'] != null ? WebhookStatusCommitCommitAuthor.fromJson(json['author'] as Map<String, dynamic>) : null)!,
+    commentCount: ((json['comment_count'] as num?)?.toInt())!,
+    committer: (json['committer'] != null ? WebhookStatusCommitCommitCommitter.fromJson(json['committer'] as Map<String, dynamic>) : null)!,
+    message: (json['message'] as String?)!,
+    tree: (json['tree'] != null ? WebhookStatusCommitCommitTree.fromJson(json['tree'] as Map<String, dynamic>) : null)!,
+    url: (json['url'] as String?)!,
+    verification: (json['verification'] != null ? WebhookStatusCommitCommitVerification.fromJson(json['verification'] as Map<String, dynamic>) : null)!,
+  );
+
+  Map<String, dynamic> toJson() => {
+    'author': author.toJson(),
+    'comment_count': commentCount,
+    'committer': committer.toJson(),
+    'message': message,
+    'tree': tree.toJson(),
+    'url': url,
+    'verification': verification.toJson(),
   };
 }

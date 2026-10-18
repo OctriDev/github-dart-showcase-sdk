@@ -51,6 +51,34 @@ sealed class IssueEventForIssue {
   static const String constructionSurface = 'named';
   const IssueEventForIssue();
   factory IssueEventForIssue.fromJson(Object? json) {
+    if (json is Map<String, dynamic>) {
+      try { final value = LabeledIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueLabeledIssueEvent(value); } } catch (_) {}
+      try { final value = UnlabeledIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueUnlabeledIssueEvent(value); } } catch (_) {}
+      try { final value = AssignedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueAssignedIssueEvent(value); } } catch (_) {}
+      try { final value = UnassignedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueUnassignedIssueEvent(value); } } catch (_) {}
+      try { final value = MilestonedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueMilestonedIssueEvent(value); } } catch (_) {}
+      try { final value = DemilestonedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueDemilestonedIssueEvent(value); } } catch (_) {}
+      try { final value = RenamedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueRenamedIssueEvent(value); } } catch (_) {}
+      try { final value = ReviewRequestedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueReviewRequestedIssueEvent(value); } } catch (_) {}
+      try { final value = ReviewRequestRemovedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueReviewRequestRemovedIssueEvent(value); } } catch (_) {}
+      try { final value = ReviewDismissedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueReviewDismissedIssueEvent(value); } } catch (_) {}
+      try { final value = LockedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueLockedIssueEvent(value); } } catch (_) {}
+      try { final value = AddedToProjectIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueAddedToProjectIssueEvent(value); } } catch (_) {}
+      try { final value = MovedColumnInProjectIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueMovedColumnInProjectIssueEvent(value); } } catch (_) {}
+      try { final value = RemovedFromProjectIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueRemovedFromProjectIssueEvent(value); } } catch (_) {}
+      try { final value = ConvertedNoteToIssueIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueConvertedNoteToIssueIssueEvent(value); } } catch (_) {}
+      try { final value = IssueTypeAddedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueIssueTypeAddedIssueEvent(value); } } catch (_) {}
+      try { final value = IssueTypeRemovedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueIssueTypeRemovedIssueEvent(value); } } catch (_) {}
+      try { final value = IssueTypeChangedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueIssueTypeChangedIssueEvent(value); } } catch (_) {}
+      try { final value = SubIssueAddedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueSubIssueAddedIssueEvent(value); } } catch (_) {}
+      try { final value = SubIssueRemovedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueSubIssueRemovedIssueEvent(value); } } catch (_) {}
+      try { final value = ParentIssueAddedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueParentIssueAddedIssueEvent(value); } } catch (_) {}
+      try { final value = ParentIssueRemovedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueParentIssueRemovedIssueEvent(value); } } catch (_) {}
+      try { final value = BlockedByAddedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueBlockedByAddedIssueEvent(value); } } catch (_) {}
+      try { final value = BlockedByRemovedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueBlockedByRemovedIssueEvent(value); } } catch (_) {}
+      try { final value = BlockingAddedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueBlockingAddedIssueEvent(value); } } catch (_) {}
+      try { final value = BlockingRemovedIssueEvent.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return IssueEventForIssueBlockingRemovedIssueEvent(value); } } catch (_) {}
+    }
     try { return IssueEventForIssueLabeledIssueEvent(LabeledIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
     try { return IssueEventForIssueUnlabeledIssueEvent(UnlabeledIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
     try { return IssueEventForIssueAssignedIssueEvent(AssignedIssueEvent.fromJson(json as Map<String, dynamic>)); } catch (_) {}
@@ -236,33 +264,4 @@ final class IssueEventForIssueBlockingRemovedIssueEvent extends IssueEventForIss
   final BlockingRemovedIssueEvent value;
   const IssueEventForIssueBlockingRemovedIssueEvent(this.value);
   @override Object? toJson() => value.toJson();
-}
-
-/// Issue Event Label
-class IssueEventLabel {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// Required `string` value serialized in the `name` wire field.
-  final String? name;
-  /// Required `string` value serialized in the `color` wire field.
-  final String? color;
-
-  const IssueEventLabel({required this.name, required this.color});
-
-  IssueEventLabel Function({String? name, String? color}) get copyWith => _copyWith;
-
-  IssueEventLabel _copyWith({Object? name = sdkOmittedValue, Object? color = sdkOmittedValue}) => IssueEventLabel(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String?,
-    color: identical(color, sdkOmittedValue) ? this.color : color as String?,
-  );
-
-  factory IssueEventLabel.fromJson(Map<String, dynamic> json) => IssueEventLabel(
-    name: json.containsKey('name') ? json['name'] as String? : throw ArgumentError.value(null, 'name', 'Required property is missing'),
-    color: json.containsKey('color') ? json['color'] as String? : throw ArgumentError.value(null, 'color', 'Required property is missing'),
-  );
-
-  Map<String, dynamic> toJson() => {
-    'name': name,
-    'color': color,
-  };
 }

@@ -4,288 +4,282 @@
 part of 'inline.dart';
 
 // Inline operation models (part 128)
+/// State of this Pull Request. Either `open` or `closed`.
+final class WebhookPullRequestAutoMergeDisabledPullRequestState {
+
+  final String value;
+
+  const WebhookPullRequestAutoMergeDisabledPullRequestState._(this.value);
+
+  factory WebhookPullRequestAutoMergeDisabledPullRequestState.fromJson(String value) => WebhookPullRequestAutoMergeDisabledPullRequestState._(value);
+
+  static const open = WebhookPullRequestAutoMergeDisabledPullRequestState._('open');
+  static const closed = WebhookPullRequestAutoMergeDisabledPullRequestState._('closed');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is WebhookPullRequestAutoMergeDisabledPullRequestState && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
 /// Optional enumerated value serialized in the `type` wire field.
-final class WebhookIssuesReopenedIssuePerformedViaGithubAppOwnerType {
+final class WebhookPullRequestAutoMergeDisabledPullRequestUserType {
 
   final String value;
 
-  const WebhookIssuesReopenedIssuePerformedViaGithubAppOwnerType._(this.value);
+  const WebhookPullRequestAutoMergeDisabledPullRequestUserType._(this.value);
 
-  factory WebhookIssuesReopenedIssuePerformedViaGithubAppOwnerType.fromJson(String value) => WebhookIssuesReopenedIssuePerformedViaGithubAppOwnerType._(value);
+  factory WebhookPullRequestAutoMergeDisabledPullRequestUserType.fromJson(String value) => WebhookPullRequestAutoMergeDisabledPullRequestUserType._(value);
 
-  static const bot = WebhookIssuesReopenedIssuePerformedViaGithubAppOwnerType._('Bot');
-  static const user = WebhookIssuesReopenedIssuePerformedViaGithubAppOwnerType._('User');
-  static const organization = WebhookIssuesReopenedIssuePerformedViaGithubAppOwnerType._('Organization');
+  static const bot = WebhookPullRequestAutoMergeDisabledPullRequestUserType._('Bot');
+  static const user = WebhookPullRequestAutoMergeDisabledPullRequestUserType._('User');
+  static const organization = WebhookPullRequestAutoMergeDisabledPullRequestUserType._('Organization');
+  static const mannequin = WebhookPullRequestAutoMergeDisabledPullRequestUserType._('Mannequin');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookIssuesReopenedIssuePerformedViaGithubAppOwnerType && other.value == value;
+  @override bool operator ==(Object other) => other is WebhookPullRequestAutoMergeDisabledPullRequestUserType && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `actions` wire field.
-final class WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsActions {
+/// Optional enumerated value serialized in the `type` wire field.
+final class WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant0Type {
 
   final String value;
 
-  const WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsActions._(this.value);
+  const WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant0Type._(this.value);
 
-  factory WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsActions.fromJson(String value) => WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsActions._(value);
+  factory WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant0Type.fromJson(String value) => WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant0Type._(value);
 
-  static const read = WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsActions._('read');
-  static const write = WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsActions._('write');
+  static const bot = WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant0Type._('Bot');
+  static const user = WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant0Type._('User');
+  static const organization = WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant0Type._('Organization');
+  static const mannequin = WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant0Type._('Mannequin');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsActions && other.value == value;
+  @override bool operator ==(Object other) => other is WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant0Type && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `administration` wire field.
-final class WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsAdministration {
+/// Required enumerated value serialized in the `privacy` wire field.
+final class WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1ParentPrivacy {
 
   final String value;
 
-  const WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsAdministration._(this.value);
+  const WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1ParentPrivacy._(this.value);
 
-  factory WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsAdministration.fromJson(String value) => WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsAdministration._(value);
+  factory WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1ParentPrivacy.fromJson(String value) => WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1ParentPrivacy._(value);
 
-  static const read = WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsAdministration._('read');
-  static const write = WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsAdministration._('write');
+  static const open = WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1ParentPrivacy._('open');
+  static const closed = WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1ParentPrivacy._('closed');
+  static const secret = WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1ParentPrivacy._('secret');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsAdministration && other.value == value;
+  @override bool operator ==(Object other) => other is WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1ParentPrivacy && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `checks` wire field.
-final class WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsChecks {
+/// Required enumerated value serialized in the `privacy` wire field.
+final class WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1Privacy {
 
   final String value;
 
-  const WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsChecks._(this.value);
+  const WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1Privacy._(this.value);
 
-  factory WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsChecks.fromJson(String value) => WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsChecks._(value);
+  factory WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1Privacy.fromJson(String value) => WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1Privacy._(value);
 
-  static const read = WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsChecks._('read');
-  static const write = WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsChecks._('write');
+  static const open = WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1Privacy._('open');
+  static const closed = WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1Privacy._('closed');
+  static const secret = WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1Privacy._('secret');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsChecks && other.value == value;
+  @override bool operator ==(Object other) => other is WebhookPullRequestAutoMergeDisabledPullRequestRequestedReviewersItemVariant1Privacy && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `content_references` wire field.
-final class WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsContentReferences {
+/// Required enumerated value serialized in the `action` wire field.
+final class WebhookPullRequestAutoMergeEnabledAction {
 
   final String value;
 
-  const WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsContentReferences._(this.value);
+  const WebhookPullRequestAutoMergeEnabledAction._(this.value);
 
-  factory WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsContentReferences.fromJson(String value) => WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsContentReferences._(value);
+  factory WebhookPullRequestAutoMergeEnabledAction.fromJson(String value) => WebhookPullRequestAutoMergeEnabledAction._(value);
 
-  static const read = WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsContentReferences._('read');
-  static const write = WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsContentReferences._('write');
+  static const autoMergeEnabled = WebhookPullRequestAutoMergeEnabledAction._('auto_merge_enabled');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsContentReferences && other.value == value;
+  @override bool operator ==(Object other) => other is WebhookPullRequestAutoMergeEnabledAction && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `contents` wire field.
-final class WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsContents {
+/// Required enumerated value serialized in the `active_lock_reason` wire field.
+final class WebhookPullRequestAutoMergeEnabledPullRequestActiveLockReason {
 
   final String value;
 
-  const WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsContents._(this.value);
+  const WebhookPullRequestAutoMergeEnabledPullRequestActiveLockReason._(this.value);
 
-  factory WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsContents.fromJson(String value) => WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsContents._(value);
+  factory WebhookPullRequestAutoMergeEnabledPullRequestActiveLockReason.fromJson(String value) => WebhookPullRequestAutoMergeEnabledPullRequestActiveLockReason._(value);
 
-  static const read = WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsContents._('read');
-  static const write = WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsContents._('write');
+  static const resolved = WebhookPullRequestAutoMergeEnabledPullRequestActiveLockReason._('resolved');
+  static const offTopic = WebhookPullRequestAutoMergeEnabledPullRequestActiveLockReason._('off-topic');
+  static const tooHeated = WebhookPullRequestAutoMergeEnabledPullRequestActiveLockReason._('too heated');
+  static const spam = WebhookPullRequestAutoMergeEnabledPullRequestActiveLockReason._('spam');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsContents && other.value == value;
+  @override bool operator ==(Object other) => other is WebhookPullRequestAutoMergeEnabledPullRequestActiveLockReason && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `deployments` wire field.
-final class WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsDeployments {
+/// Optional enumerated value serialized in the `type` wire field.
+final class WebhookPullRequestAutoMergeEnabledPullRequestAssigneeType {
 
   final String value;
 
-  const WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsDeployments._(this.value);
+  const WebhookPullRequestAutoMergeEnabledPullRequestAssigneeType._(this.value);
 
-  factory WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsDeployments.fromJson(String value) => WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsDeployments._(value);
+  factory WebhookPullRequestAutoMergeEnabledPullRequestAssigneeType.fromJson(String value) => WebhookPullRequestAutoMergeEnabledPullRequestAssigneeType._(value);
 
-  static const read = WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsDeployments._('read');
-  static const write = WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsDeployments._('write');
+  static const bot = WebhookPullRequestAutoMergeEnabledPullRequestAssigneeType._('Bot');
+  static const user = WebhookPullRequestAutoMergeEnabledPullRequestAssigneeType._('User');
+  static const organization = WebhookPullRequestAutoMergeEnabledPullRequestAssigneeType._('Organization');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsDeployments && other.value == value;
+  @override bool operator ==(Object other) => other is WebhookPullRequestAutoMergeEnabledPullRequestAssigneeType && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `discussions` wire field.
-final class WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsDiscussions {
+/// Optional enumerated value serialized in the `type` wire field.
+final class WebhookPullRequestAutoMergeEnabledPullRequestAssigneesItemType {
 
   final String value;
 
-  const WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsDiscussions._(this.value);
+  const WebhookPullRequestAutoMergeEnabledPullRequestAssigneesItemType._(this.value);
 
-  factory WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsDiscussions.fromJson(String value) => WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsDiscussions._(value);
+  factory WebhookPullRequestAutoMergeEnabledPullRequestAssigneesItemType.fromJson(String value) => WebhookPullRequestAutoMergeEnabledPullRequestAssigneesItemType._(value);
 
-  static const read = WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsDiscussions._('read');
-  static const write = WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsDiscussions._('write');
+  static const bot = WebhookPullRequestAutoMergeEnabledPullRequestAssigneesItemType._('Bot');
+  static const user = WebhookPullRequestAutoMergeEnabledPullRequestAssigneesItemType._('User');
+  static const organization = WebhookPullRequestAutoMergeEnabledPullRequestAssigneesItemType._('Organization');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsDiscussions && other.value == value;
+  @override bool operator ==(Object other) => other is WebhookPullRequestAutoMergeEnabledPullRequestAssigneesItemType && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `emails` wire field.
-final class WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsEmails {
+/// How the author is associated with the repository.
+final class WebhookPullRequestAutoMergeEnabledPullRequestAuthorAssociation {
 
   final String value;
 
-  const WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsEmails._(this.value);
+  const WebhookPullRequestAutoMergeEnabledPullRequestAuthorAssociation._(this.value);
 
-  factory WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsEmails.fromJson(String value) => WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsEmails._(value);
+  factory WebhookPullRequestAutoMergeEnabledPullRequestAuthorAssociation.fromJson(String value) => WebhookPullRequestAutoMergeEnabledPullRequestAuthorAssociation._(value);
 
-  static const read = WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsEmails._('read');
-  static const write = WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsEmails._('write');
+  static const collaborator = WebhookPullRequestAutoMergeEnabledPullRequestAuthorAssociation._('COLLABORATOR');
+  static const contributor = WebhookPullRequestAutoMergeEnabledPullRequestAuthorAssociation._('CONTRIBUTOR');
+  static const firstTimer = WebhookPullRequestAutoMergeEnabledPullRequestAuthorAssociation._('FIRST_TIMER');
+  static const firstTimeContributor = WebhookPullRequestAutoMergeEnabledPullRequestAuthorAssociation._('FIRST_TIME_CONTRIBUTOR');
+  static const mannequin = WebhookPullRequestAutoMergeEnabledPullRequestAuthorAssociation._('MANNEQUIN');
+  static const member = WebhookPullRequestAutoMergeEnabledPullRequestAuthorAssociation._('MEMBER');
+  static const none = WebhookPullRequestAutoMergeEnabledPullRequestAuthorAssociation._('NONE');
+  static const owner = WebhookPullRequestAutoMergeEnabledPullRequestAuthorAssociation._('OWNER');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsEmails && other.value == value;
+  @override bool operator ==(Object other) => other is WebhookPullRequestAutoMergeEnabledPullRequestAuthorAssociation && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `environments` wire field.
-final class WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsEnvironments {
+/// Optional enumerated value serialized in the `type` wire field.
+final class WebhookPullRequestAutoMergeEnabledPullRequestAutoMergeEnabledByType {
 
   final String value;
 
-  const WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsEnvironments._(this.value);
+  const WebhookPullRequestAutoMergeEnabledPullRequestAutoMergeEnabledByType._(this.value);
 
-  factory WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsEnvironments.fromJson(String value) => WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsEnvironments._(value);
+  factory WebhookPullRequestAutoMergeEnabledPullRequestAutoMergeEnabledByType.fromJson(String value) => WebhookPullRequestAutoMergeEnabledPullRequestAutoMergeEnabledByType._(value);
 
-  static const read = WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsEnvironments._('read');
-  static const write = WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsEnvironments._('write');
+  static const bot = WebhookPullRequestAutoMergeEnabledPullRequestAutoMergeEnabledByType._('Bot');
+  static const user = WebhookPullRequestAutoMergeEnabledPullRequestAutoMergeEnabledByType._('User');
+  static const organization = WebhookPullRequestAutoMergeEnabledPullRequestAutoMergeEnabledByType._('Organization');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsEnvironments && other.value == value;
+  @override bool operator ==(Object other) => other is WebhookPullRequestAutoMergeEnabledPullRequestAutoMergeEnabledByType && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `issues` wire field.
-final class WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsIssues {
+/// The merge method to use.
+final class WebhookPullRequestAutoMergeEnabledPullRequestAutoMergeMergeMethod {
 
   final String value;
 
-  const WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsIssues._(this.value);
+  const WebhookPullRequestAutoMergeEnabledPullRequestAutoMergeMergeMethod._(this.value);
 
-  factory WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsIssues.fromJson(String value) => WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsIssues._(value);
+  factory WebhookPullRequestAutoMergeEnabledPullRequestAutoMergeMergeMethod.fromJson(String value) => WebhookPullRequestAutoMergeEnabledPullRequestAutoMergeMergeMethod._(value);
 
-  static const read = WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsIssues._('read');
-  static const write = WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsIssues._('write');
+  static const merge = WebhookPullRequestAutoMergeEnabledPullRequestAutoMergeMergeMethod._('merge');
+  static const squash = WebhookPullRequestAutoMergeEnabledPullRequestAutoMergeMergeMethod._('squash');
+  static const rebase = WebhookPullRequestAutoMergeEnabledPullRequestAutoMergeMergeMethod._('rebase');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsIssues && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// Optional enumerated value serialized in the `keys` wire field.
-final class WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsKeys {
-
-  final String value;
-
-  const WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsKeys._(this.value);
-
-  factory WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsKeys.fromJson(String value) => WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsKeys._(value);
-
-  static const read = WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsKeys._('read');
-  static const write = WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsKeys._('write');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsKeys && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// Optional enumerated value serialized in the `members` wire field.
-final class WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsMembers {
-
-  final String value;
-
-  const WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsMembers._(this.value);
-
-  factory WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsMembers.fromJson(String value) => WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsMembers._(value);
-
-  static const read = WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsMembers._('read');
-  static const write = WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsMembers._('write');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is WebhookIssuesReopenedIssuePerformedViaGithubAppPermissionsMembers && other.value == value;
+  @override bool operator ==(Object other) => other is WebhookPullRequestAutoMergeEnabledPullRequestAutoMergeMergeMethod && other.value == value;
 
   @override int get hashCode => value.hashCode;
 

@@ -4,294 +4,287 @@
 part of 'inline.dart';
 
 // Inline operation models (part 351)
-class ActionsUpdateSelfHostedRunnerGroupForOrgRequestBody {
+class IssuesUpdateResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// Name of the runner group.
-  final String name;
-  /// Visibility of a runner group. You can select all repositories, select individual repositories, or all private repositories.
-  final SdkOptional<ActionsUpdateSelfHostedRunnerGroupForOrgRequestBodyVisibility> visibility;
-  /// Whether the runner group can be used by `public` repositories.
-  final SdkOptional<bool> allowsPublicRepositories;
-  /// If `true`, the runner group will be restricted to running only the workflows specified in the `selected_workflows` array.
-  final SdkOptional<bool> restrictedToWorkflows;
-  /// List of workflows the runner group should be allowed to run. This setting will be ignored unless `restricted_to_workflows` is set to `true`.
-  final SdkOptional<List<String>> selectedWorkflows;
-  /// The identifier of a hosted compute network configuration.
-  final SdkOptional<String?> networkConfigurationId;
+  /// Required `int64`-formatted value serialized in the `id` wire field.
+  final int id;
+  /// Required `string` value serialized in the `node_id` wire field.
+  final String nodeId;
+  /// URL for the issue
+  final String url;
+  /// Required `uri`-formatted value serialized in the `repository_url` wire field.
+  final String repositoryUrl;
+  /// Required `string` value serialized in the `labels_url` wire field.
+  final String labelsUrl;
+  /// Required `uri`-formatted value serialized in the `comments_url` wire field.
+  final String commentsUrl;
+  /// Required `uri`-formatted value serialized in the `events_url` wire field.
+  final String eventsUrl;
+  /// Required `uri`-formatted value serialized in the `html_url` wire field.
+  final String htmlUrl;
+  /// Number uniquely identifying the issue within its repository
+  final int number;
+  /// State of the issue; either 'open' or 'closed'
+  final String state;
+  /// The reason for the current state
+  final SdkOptional<IssueStateReason?> stateReason;
+  /// Title of the issue
+  final String title;
+  /// Contents of the issue
+  final SdkOptional<String?> body;
+  /// A GitHub user.
+  final NullableSimpleUser? user;
+  /// Labels to associate with this issue; pass one or more label names to replace the set of labels on this issue; send an empty array to clear all labels from the issue; note that the labels are silently dropped for users without push access to the repository
+  final List<IssueLabelsItem> labels;
+  /// A GitHub user.
+  final NullableSimpleUser? assignee;
+  /// Optional array value serialized in the `assignees` wire field.
+  final SdkOptional<List<SimpleUser>> assignees;
+  /// A collection of related issues and pull requests.
+  final NullableMilestone? milestone;
+  /// Required `boolean` value serialized in the `locked` wire field.
+  final bool locked;
+  /// Optional `string` value serialized in the `active_lock_reason` wire field.
+  final SdkOptional<String?> activeLockReason;
+  /// Required `integer` value serialized in the `comments` wire field.
+  final int comments;
+  /// Optional object value serialized in the `pull_request` wire field.
+  final SdkOptional<IssuePullRequest> pullRequest;
+  /// Required `date-time`-formatted value serialized in the `closed_at` wire field.
+  final String? closedAt;
+  /// Required `date-time`-formatted value serialized in the `created_at` wire field.
+  final String createdAt;
+  /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
+  final String updatedAt;
+  /// Optional `boolean` value serialized in the `draft` wire field.
+  final SdkOptional<bool> draft;
+  /// A GitHub user.
+  final SdkOptional<NullableSimpleUser?> closedBy;
+  /// Optional `string` value serialized in the `body_html` wire field.
+  final SdkOptional<String> bodyHtml;
+  /// Optional `string` value serialized in the `body_text` wire field.
+  final SdkOptional<String> bodyText;
+  /// Optional `uri`-formatted value serialized in the `timeline_url` wire field.
+  final SdkOptional<String> timelineUrl;
+  /// The type assigned to the issue. This is only present for issues in repositories where issue types are supported.
+  final SdkOptional<IssueType?> type_;
+  /// A repository on GitHub.
+  final SdkOptional<Repository> repository;
+  /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
+  final SdkOptional<NullableIntegration?> performedViaGithubApp;
+  /// How the author is associated with the repository.
+  final SdkOptional<AuthorAssociation> authorAssociation;
+  /// Optional object value serialized in the `reactions` wire field.
+  final SdkOptional<ReactionRollup> reactions;
+  /// Optional object value serialized in the `sub_issues_summary` wire field.
+  final SdkOptional<SubIssuesSummary> subIssuesSummary;
+  /// URL to get the parent issue of this issue, if it is a sub-issue
+  final SdkOptional<String?> parentIssueUrl;
+  /// Comments provide a way for people to collaborate on an issue.
+  final SdkOptional<NullableIssueComment?> pinnedComment;
+  /// Optional object value serialized in the `issue_dependencies_summary` wire field.
+  final SdkOptional<IssueDependenciesSummary> issueDependenciesSummary;
+  /// Optional array value serialized in the `issue_field_values` wire field.
+  final SdkOptional<List<IssueFieldValue>> issueFieldValues;
+  /// Pending suggestions for each suggestible field (`type`, `issue_field_values`, `labels`, `assignees`, `state`) the request touched. Omitted for fields not in the request or with no pending or ignored suggestions. Items tagged `ignored` are echoes of the current request's inputs that were not persisted as pending suggestions.
+  final SdkOptional<IssuesUpdateResponseVariant1Suggestions> suggestions;
 
-  const ActionsUpdateSelfHostedRunnerGroupForOrgRequestBody({required this.name, this.visibility = const SdkOmitted(), this.allowsPublicRepositories = const SdkOmitted(), this.restrictedToWorkflows = const SdkOmitted(), this.selectedWorkflows = const SdkOmitted(), this.networkConfigurationId = const SdkOmitted()});
+  const IssuesUpdateResponse({required this.id, required this.nodeId, required this.url, required this.repositoryUrl, required this.labelsUrl, required this.commentsUrl, required this.eventsUrl, required this.htmlUrl, required this.number, required this.state, this.stateReason = const SdkOmitted(), required this.title, this.body = const SdkOmitted(), required this.user, required this.labels, required this.assignee, this.assignees = const SdkOmitted(), required this.milestone, required this.locked, this.activeLockReason = const SdkOmitted(), required this.comments, this.pullRequest = const SdkOmitted(), required this.closedAt, required this.createdAt, required this.updatedAt, this.draft = const SdkOmitted(), this.closedBy = const SdkOmitted(), this.bodyHtml = const SdkOmitted(), this.bodyText = const SdkOmitted(), this.timelineUrl = const SdkOmitted(), this.type_ = const SdkOmitted(), this.repository = const SdkOmitted(), this.performedViaGithubApp = const SdkOmitted(), this.authorAssociation = const SdkOmitted(), this.reactions = const SdkOmitted(), this.subIssuesSummary = const SdkOmitted(), this.parentIssueUrl = const SdkOmitted(), this.pinnedComment = const SdkOmitted(), this.issueDependenciesSummary = const SdkOmitted(), this.issueFieldValues = const SdkOmitted(), this.suggestions = const SdkOmitted()});
 
-  ActionsUpdateSelfHostedRunnerGroupForOrgRequestBody Function({String name, SdkOptional<ActionsUpdateSelfHostedRunnerGroupForOrgRequestBodyVisibility> visibility, SdkOptional<bool> allowsPublicRepositories, SdkOptional<bool> restrictedToWorkflows, SdkOptional<List<String>> selectedWorkflows, SdkOptional<String?> networkConfigurationId}) get copyWith => _copyWith;
+  IssuesUpdateResponse Function({int id, String nodeId, String url, String repositoryUrl, String labelsUrl, String commentsUrl, String eventsUrl, String htmlUrl, int number, String state, SdkOptional<IssueStateReason?> stateReason, String title, SdkOptional<String?> body, NullableSimpleUser? user, List<IssueLabelsItem> labels, NullableSimpleUser? assignee, SdkOptional<List<SimpleUser>> assignees, NullableMilestone? milestone, bool locked, SdkOptional<String?> activeLockReason, int comments, SdkOptional<IssuePullRequest> pullRequest, String? closedAt, String createdAt, String updatedAt, SdkOptional<bool> draft, SdkOptional<NullableSimpleUser?> closedBy, SdkOptional<String> bodyHtml, SdkOptional<String> bodyText, SdkOptional<String> timelineUrl, SdkOptional<IssueType?> type_, SdkOptional<Repository> repository, SdkOptional<NullableIntegration?> performedViaGithubApp, SdkOptional<AuthorAssociation> authorAssociation, SdkOptional<ReactionRollup> reactions, SdkOptional<SubIssuesSummary> subIssuesSummary, SdkOptional<String?> parentIssueUrl, SdkOptional<NullableIssueComment?> pinnedComment, SdkOptional<IssueDependenciesSummary> issueDependenciesSummary, SdkOptional<List<IssueFieldValue>> issueFieldValues, SdkOptional<IssuesUpdateResponseVariant1Suggestions> suggestions}) get copyWith => _copyWith;
 
-  ActionsUpdateSelfHostedRunnerGroupForOrgRequestBody _copyWith({Object? name = sdkOmittedValue, Object? visibility = sdkOmittedValue, Object? allowsPublicRepositories = sdkOmittedValue, Object? restrictedToWorkflows = sdkOmittedValue, Object? selectedWorkflows = sdkOmittedValue, Object? networkConfigurationId = sdkOmittedValue}) => ActionsUpdateSelfHostedRunnerGroupForOrgRequestBody(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    visibility: identical(visibility, sdkOmittedValue) ? this.visibility : visibility as SdkOptional<ActionsUpdateSelfHostedRunnerGroupForOrgRequestBodyVisibility>,
-    allowsPublicRepositories: identical(allowsPublicRepositories, sdkOmittedValue) ? this.allowsPublicRepositories : allowsPublicRepositories as SdkOptional<bool>,
-    restrictedToWorkflows: identical(restrictedToWorkflows, sdkOmittedValue) ? this.restrictedToWorkflows : restrictedToWorkflows as SdkOptional<bool>,
-    selectedWorkflows: identical(selectedWorkflows, sdkOmittedValue) ? this.selectedWorkflows : selectedWorkflows as SdkOptional<List<String>>,
-    networkConfigurationId: identical(networkConfigurationId, sdkOmittedValue) ? this.networkConfigurationId : networkConfigurationId as SdkOptional<String?>,
+  IssuesUpdateResponse _copyWith({Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? url = sdkOmittedValue, Object? repositoryUrl = sdkOmittedValue, Object? labelsUrl = sdkOmittedValue, Object? commentsUrl = sdkOmittedValue, Object? eventsUrl = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? number = sdkOmittedValue, Object? state = sdkOmittedValue, Object? stateReason = sdkOmittedValue, Object? title = sdkOmittedValue, Object? body = sdkOmittedValue, Object? user = sdkOmittedValue, Object? labels = sdkOmittedValue, Object? assignee = sdkOmittedValue, Object? assignees = sdkOmittedValue, Object? milestone = sdkOmittedValue, Object? locked = sdkOmittedValue, Object? activeLockReason = sdkOmittedValue, Object? comments = sdkOmittedValue, Object? pullRequest = sdkOmittedValue, Object? closedAt = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? draft = sdkOmittedValue, Object? closedBy = sdkOmittedValue, Object? bodyHtml = sdkOmittedValue, Object? bodyText = sdkOmittedValue, Object? timelineUrl = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? performedViaGithubApp = sdkOmittedValue, Object? authorAssociation = sdkOmittedValue, Object? reactions = sdkOmittedValue, Object? subIssuesSummary = sdkOmittedValue, Object? parentIssueUrl = sdkOmittedValue, Object? pinnedComment = sdkOmittedValue, Object? issueDependenciesSummary = sdkOmittedValue, Object? issueFieldValues = sdkOmittedValue, Object? suggestions = sdkOmittedValue}) => IssuesUpdateResponse(
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+    repositoryUrl: identical(repositoryUrl, sdkOmittedValue) ? this.repositoryUrl : repositoryUrl as String,
+    labelsUrl: identical(labelsUrl, sdkOmittedValue) ? this.labelsUrl : labelsUrl as String,
+    commentsUrl: identical(commentsUrl, sdkOmittedValue) ? this.commentsUrl : commentsUrl as String,
+    eventsUrl: identical(eventsUrl, sdkOmittedValue) ? this.eventsUrl : eventsUrl as String,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
+    number: identical(number, sdkOmittedValue) ? this.number : number as int,
+    state: identical(state, sdkOmittedValue) ? this.state : state as String,
+    stateReason: identical(stateReason, sdkOmittedValue) ? this.stateReason : stateReason as SdkOptional<IssueStateReason?>,
+    title: identical(title, sdkOmittedValue) ? this.title : title as String,
+    body: identical(body, sdkOmittedValue) ? this.body : body as SdkOptional<String?>,
+    user: identical(user, sdkOmittedValue) ? this.user : user as NullableSimpleUser?,
+    labels: identical(labels, sdkOmittedValue) ? this.labels : labels as List<IssueLabelsItem>,
+    assignee: identical(assignee, sdkOmittedValue) ? this.assignee : assignee as NullableSimpleUser?,
+    assignees: identical(assignees, sdkOmittedValue) ? this.assignees : assignees as SdkOptional<List<SimpleUser>>,
+    milestone: identical(milestone, sdkOmittedValue) ? this.milestone : milestone as NullableMilestone?,
+    locked: identical(locked, sdkOmittedValue) ? this.locked : locked as bool,
+    activeLockReason: identical(activeLockReason, sdkOmittedValue) ? this.activeLockReason : activeLockReason as SdkOptional<String?>,
+    comments: identical(comments, sdkOmittedValue) ? this.comments : comments as int,
+    pullRequest: identical(pullRequest, sdkOmittedValue) ? this.pullRequest : pullRequest as SdkOptional<IssuePullRequest>,
+    closedAt: identical(closedAt, sdkOmittedValue) ? this.closedAt : closedAt as String?,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
+    draft: identical(draft, sdkOmittedValue) ? this.draft : draft as SdkOptional<bool>,
+    closedBy: identical(closedBy, sdkOmittedValue) ? this.closedBy : closedBy as SdkOptional<NullableSimpleUser?>,
+    bodyHtml: identical(bodyHtml, sdkOmittedValue) ? this.bodyHtml : bodyHtml as SdkOptional<String>,
+    bodyText: identical(bodyText, sdkOmittedValue) ? this.bodyText : bodyText as SdkOptional<String>,
+    timelineUrl: identical(timelineUrl, sdkOmittedValue) ? this.timelineUrl : timelineUrl as SdkOptional<String>,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<IssueType?>,
+    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as SdkOptional<Repository>,
+    performedViaGithubApp: identical(performedViaGithubApp, sdkOmittedValue) ? this.performedViaGithubApp : performedViaGithubApp as SdkOptional<NullableIntegration?>,
+    authorAssociation: identical(authorAssociation, sdkOmittedValue) ? this.authorAssociation : authorAssociation as SdkOptional<AuthorAssociation>,
+    reactions: identical(reactions, sdkOmittedValue) ? this.reactions : reactions as SdkOptional<ReactionRollup>,
+    subIssuesSummary: identical(subIssuesSummary, sdkOmittedValue) ? this.subIssuesSummary : subIssuesSummary as SdkOptional<SubIssuesSummary>,
+    parentIssueUrl: identical(parentIssueUrl, sdkOmittedValue) ? this.parentIssueUrl : parentIssueUrl as SdkOptional<String?>,
+    pinnedComment: identical(pinnedComment, sdkOmittedValue) ? this.pinnedComment : pinnedComment as SdkOptional<NullableIssueComment?>,
+    issueDependenciesSummary: identical(issueDependenciesSummary, sdkOmittedValue) ? this.issueDependenciesSummary : issueDependenciesSummary as SdkOptional<IssueDependenciesSummary>,
+    issueFieldValues: identical(issueFieldValues, sdkOmittedValue) ? this.issueFieldValues : issueFieldValues as SdkOptional<List<IssueFieldValue>>,
+    suggestions: identical(suggestions, sdkOmittedValue) ? this.suggestions : suggestions as SdkOptional<IssuesUpdateResponseVariant1Suggestions>,
   );
 
-  factory ActionsUpdateSelfHostedRunnerGroupForOrgRequestBody.fromJson(Map<String, dynamic> json) => ActionsUpdateSelfHostedRunnerGroupForOrgRequestBody(
-    name: (json['name'] as String?)!,
-    visibility: json['visibility'] != null ? SdkPresent((json['visibility'] != null ? ActionsUpdateSelfHostedRunnerGroupForOrgRequestBodyVisibility.fromJson(json['visibility'] as String) : null)!) : const SdkOmitted(),
-    allowsPublicRepositories: json['allows_public_repositories'] != null ? SdkPresent((json['allows_public_repositories'] as bool?)!) : const SdkOmitted(),
-    restrictedToWorkflows: json['restricted_to_workflows'] != null ? SdkPresent((json['restricted_to_workflows'] as bool?)!) : const SdkOmitted(),
-    selectedWorkflows: json['selected_workflows'] != null ? SdkPresent(((json['selected_workflows'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    networkConfigurationId: json.containsKey('network_configuration_id') ? SdkPresent(json['network_configuration_id'] as String?) : const SdkOmitted(),
+  factory IssuesUpdateResponse.fromJson(Map<String, dynamic> json) => IssuesUpdateResponse(
+    id: ((json['id'] as num?)?.toInt())!,
+    nodeId: (json['node_id'] as String?)!,
+    url: (json['url'] as String?)!,
+    repositoryUrl: (json['repository_url'] as String?)!,
+    labelsUrl: (json['labels_url'] as String?)!,
+    commentsUrl: (json['comments_url'] as String?)!,
+    eventsUrl: (json['events_url'] as String?)!,
+    htmlUrl: (json['html_url'] as String?)!,
+    number: ((json['number'] as num?)?.toInt())!,
+    state: (json['state'] as String?)!,
+    stateReason: json.containsKey('state_reason') ? SdkPresent(json['state_reason'] != null ? IssueStateReason.fromJson(json['state_reason'] as String) : null) : const SdkOmitted(),
+    title: (json['title'] as String?)!,
+    body: json.containsKey('body') ? SdkPresent(json['body'] as String?) : const SdkOmitted(),
+    user: json.containsKey('user') ? json['user'] != null ? NullableSimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'user', 'Required property is missing'),
+    labels: ((json['labels'] as List?)?.map((e) => IssueLabelsItem.fromJson(e)).toList())!,
+    assignee: json.containsKey('assignee') ? json['assignee'] != null ? NullableSimpleUser.fromJson(json['assignee'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'assignee', 'Required property is missing'),
+    assignees: json['assignees'] != null ? SdkPresent(((json['assignees'] as List?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+    milestone: json.containsKey('milestone') ? json['milestone'] != null ? NullableMilestone.fromJson(json['milestone'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'milestone', 'Required property is missing'),
+    locked: (json['locked'] as bool?)!,
+    activeLockReason: json.containsKey('active_lock_reason') ? SdkPresent(json['active_lock_reason'] as String?) : const SdkOmitted(),
+    comments: ((json['comments'] as num?)?.toInt())!,
+    pullRequest: json['pull_request'] != null ? SdkPresent((json['pull_request'] != null ? IssuePullRequest.fromJson(json['pull_request'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    closedAt: json.containsKey('closed_at') ? json['closed_at'] as String? : throw ArgumentError.value(null, 'closed_at', 'Required property is missing'),
+    createdAt: (json['created_at'] as String?)!,
+    updatedAt: (json['updated_at'] as String?)!,
+    draft: json['draft'] != null ? SdkPresent((json['draft'] as bool?)!) : const SdkOmitted(),
+    closedBy: json.containsKey('closed_by') ? SdkPresent(json['closed_by'] != null ? NullableSimpleUser.fromJson(json['closed_by'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    bodyHtml: json['body_html'] != null ? SdkPresent((json['body_html'] as String?)!) : const SdkOmitted(),
+    bodyText: json['body_text'] != null ? SdkPresent((json['body_text'] as String?)!) : const SdkOmitted(),
+    timelineUrl: json['timeline_url'] != null ? SdkPresent((json['timeline_url'] as String?)!) : const SdkOmitted(),
+    type_: json.containsKey('type') ? SdkPresent(json['type'] != null ? IssueType.fromJson(json['type'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    repository: json['repository'] != null ? SdkPresent((json['repository'] != null ? Repository.fromJson(json['repository'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    performedViaGithubApp: json.containsKey('performed_via_github_app') ? SdkPresent(json['performed_via_github_app'] != null ? NullableIntegration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    authorAssociation: json['author_association'] != null ? SdkPresent((json['author_association'] != null ? AuthorAssociation.fromJson(json['author_association'] as String) : null)!) : const SdkOmitted(),
+    reactions: json['reactions'] != null ? SdkPresent((json['reactions'] != null ? ReactionRollup.fromJson(json['reactions'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    subIssuesSummary: json['sub_issues_summary'] != null ? SdkPresent((json['sub_issues_summary'] != null ? SubIssuesSummary.fromJson(json['sub_issues_summary'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    parentIssueUrl: json.containsKey('parent_issue_url') ? SdkPresent(json['parent_issue_url'] as String?) : const SdkOmitted(),
+    pinnedComment: json.containsKey('pinned_comment') ? SdkPresent(json['pinned_comment'] != null ? NullableIssueComment.fromJson(json['pinned_comment'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    issueDependenciesSummary: json['issue_dependencies_summary'] != null ? SdkPresent((json['issue_dependencies_summary'] != null ? IssueDependenciesSummary.fromJson(json['issue_dependencies_summary'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    issueFieldValues: json['issue_field_values'] != null ? SdkPresent(((json['issue_field_values'] as List?)?.map((e) => IssueFieldValue.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+    suggestions: json['suggestions'] != null ? SdkPresent((json['suggestions'] != null ? IssuesUpdateResponseVariant1Suggestions.fromJson(json['suggestions'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    ...switch (visibility) {
-      SdkPresent<ActionsUpdateSelfHostedRunnerGroupForOrgRequestBodyVisibility>(value: final value) => {'visibility': value.toJson(),},
+    'id': id,
+    'node_id': nodeId,
+    'url': url,
+    'repository_url': repositoryUrl,
+    'labels_url': labelsUrl,
+    'comments_url': commentsUrl,
+    'events_url': eventsUrl,
+    'html_url': htmlUrl,
+    'number': number,
+    'state': state,
+    ...switch (stateReason) {
+      SdkPresent<IssueStateReason?>(value: final value) => {'state_reason': value?.toJson(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (allowsPublicRepositories) {
-      SdkPresent<bool>(value: final value) => {'allows_public_repositories': value,},
+    'title': title,
+    ...switch (body) {
+      SdkPresent<String?>(value: final value) => {'body': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (restrictedToWorkflows) {
-      SdkPresent<bool>(value: final value) => {'restricted_to_workflows': value,},
+    'user': user?.toJson(),
+    'labels': labels.map((item) => item.toJson()).toList(),
+    'assignee': assignee?.toJson(),
+    ...switch (assignees) {
+      SdkPresent<List<SimpleUser>>(value: final value) => {'assignees': value.map((item) => item.toJson()).toList(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (selectedWorkflows) {
-      SdkPresent<List<String>>(value: final value) => {'selected_workflows': value,},
+    'milestone': milestone?.toJson(),
+    'locked': locked,
+    ...switch (activeLockReason) {
+      SdkPresent<String?>(value: final value) => {'active_lock_reason': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (networkConfigurationId) {
-      SdkPresent<String?>(value: final value) => {'network_configuration_id': value,},
+    'comments': comments,
+    ...switch (pullRequest) {
+      SdkPresent<IssuePullRequest>(value: final value) => {'pull_request': value.toJson(),},
       _ => const <String, dynamic>{},
     },
-  };
-}
-
-class ActionsListGithubHostedRunnersInGroupForOrgResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final double totalCount;
-  final List<ActionsHostedRunner> runners;
-
-  const ActionsListGithubHostedRunnersInGroupForOrgResponse({required this.totalCount, required this.runners});
-
-  ActionsListGithubHostedRunnersInGroupForOrgResponse Function({double totalCount, List<ActionsHostedRunner> runners}) get copyWith => _copyWith;
-
-  ActionsListGithubHostedRunnersInGroupForOrgResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? runners = sdkOmittedValue}) => ActionsListGithubHostedRunnersInGroupForOrgResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as double,
-    runners: identical(runners, sdkOmittedValue) ? this.runners : runners as List<ActionsHostedRunner>,
-  );
-
-  factory ActionsListGithubHostedRunnersInGroupForOrgResponse.fromJson(Map<String, dynamic> json) => ActionsListGithubHostedRunnersInGroupForOrgResponse(
-    totalCount: ((json['total_count'] as num?)?.toDouble())!,
-    runners: ((json['runners'] as List?)?.map((e) => ActionsHostedRunner.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'runners': runners.map((item) => item.toJson()).toList(),
-  };
-}
-
-class ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final double totalCount;
-  final List<MinimalRepository> repositories;
-
-  const ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponse({required this.totalCount, required this.repositories});
-
-  ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponse Function({double totalCount, List<MinimalRepository> repositories}) get copyWith => _copyWith;
-
-  ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? repositories = sdkOmittedValue}) => ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as double,
-    repositories: identical(repositories, sdkOmittedValue) ? this.repositories : repositories as List<MinimalRepository>,
-  );
-
-  factory ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponse.fromJson(Map<String, dynamic> json) => ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponse(
-    totalCount: ((json['total_count'] as num?)?.toDouble())!,
-    repositories: ((json['repositories'] as List?)?.map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'repositories': repositories.map((item) => item.toJson()).toList(),
-  };
-}
-
-class ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// List of repository IDs that can access the runner group.
-  final List<int> selectedRepositoryIds;
-
-  const ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequestBody({required this.selectedRepositoryIds});
-
-  ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequestBody Function({List<int> selectedRepositoryIds}) get copyWith => _copyWith;
-
-  ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequestBody _copyWith({Object? selectedRepositoryIds = sdkOmittedValue}) => ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequestBody(
-    selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue) ? this.selectedRepositoryIds : selectedRepositoryIds as List<int>,
-  );
-
-  factory ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequestBody.fromJson(Map<String, dynamic> json) => ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequestBody(
-    selectedRepositoryIds: ((json['selected_repository_ids'] as List?)?.map((e) => (e as num).toInt()).toList())!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'selected_repository_ids': selectedRepositoryIds,
-  };
-}
-
-class ActionsListSelfHostedRunnersInGroupForOrgResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final double totalCount;
-  final List<Runner> runners;
-
-  const ActionsListSelfHostedRunnersInGroupForOrgResponse({required this.totalCount, required this.runners});
-
-  ActionsListSelfHostedRunnersInGroupForOrgResponse Function({double totalCount, List<Runner> runners}) get copyWith => _copyWith;
-
-  ActionsListSelfHostedRunnersInGroupForOrgResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? runners = sdkOmittedValue}) => ActionsListSelfHostedRunnersInGroupForOrgResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as double,
-    runners: identical(runners, sdkOmittedValue) ? this.runners : runners as List<Runner>,
-  );
-
-  factory ActionsListSelfHostedRunnersInGroupForOrgResponse.fromJson(Map<String, dynamic> json) => ActionsListSelfHostedRunnersInGroupForOrgResponse(
-    totalCount: ((json['total_count'] as num?)?.toDouble())!,
-    runners: ((json['runners'] as List?)?.map((e) => Runner.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'runners': runners.map((item) => item.toJson()).toList(),
-  };
-}
-
-class ActionsSetSelfHostedRunnersInGroupForOrgRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// List of runner IDs to add to the runner group.
-  final List<int> runners;
-
-  const ActionsSetSelfHostedRunnersInGroupForOrgRequestBody({required this.runners});
-
-  ActionsSetSelfHostedRunnersInGroupForOrgRequestBody Function({List<int> runners}) get copyWith => _copyWith;
-
-  ActionsSetSelfHostedRunnersInGroupForOrgRequestBody _copyWith({Object? runners = sdkOmittedValue}) => ActionsSetSelfHostedRunnersInGroupForOrgRequestBody(
-    runners: identical(runners, sdkOmittedValue) ? this.runners : runners as List<int>,
-  );
-
-  factory ActionsSetSelfHostedRunnersInGroupForOrgRequestBody.fromJson(Map<String, dynamic> json) => ActionsSetSelfHostedRunnersInGroupForOrgRequestBody(
-    runners: ((json['runners'] as List?)?.map((e) => (e as num).toInt()).toList())!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'runners': runners,
-  };
-}
-
-class ActionsListSelfHostedRunnersForOrgResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<Runner> runners;
-
-  const ActionsListSelfHostedRunnersForOrgResponse({required this.totalCount, required this.runners});
-
-  ActionsListSelfHostedRunnersForOrgResponse Function({int totalCount, List<Runner> runners}) get copyWith => _copyWith;
-
-  ActionsListSelfHostedRunnersForOrgResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? runners = sdkOmittedValue}) => ActionsListSelfHostedRunnersForOrgResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    runners: identical(runners, sdkOmittedValue) ? this.runners : runners as List<Runner>,
-  );
-
-  factory ActionsListSelfHostedRunnersForOrgResponse.fromJson(Map<String, dynamic> json) => ActionsListSelfHostedRunnersForOrgResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    runners: ((json['runners'] as List?)?.map((e) => Runner.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'runners': runners.map((item) => item.toJson()).toList(),
-  };
-}
-
-class ActionsGetRunnerVersionDeprecationForOrgResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The runner version string.
-  final String runnerVersion;
-  /// The date after which this runner version can no longer register. Null if no schedule is set.
-  final SdkOptional<String?> registrationDeprecatesAt;
-  /// The date after which jobs will no longer be dispatched to runners on this version.
-  final SdkOptional<String?> runtimeDeprecatesAt;
-
-  const ActionsGetRunnerVersionDeprecationForOrgResponse({required this.runnerVersion, this.registrationDeprecatesAt = const SdkOmitted(), this.runtimeDeprecatesAt = const SdkOmitted()});
-
-  ActionsGetRunnerVersionDeprecationForOrgResponse Function({String runnerVersion, SdkOptional<String?> registrationDeprecatesAt, SdkOptional<String?> runtimeDeprecatesAt}) get copyWith => _copyWith;
-
-  ActionsGetRunnerVersionDeprecationForOrgResponse _copyWith({Object? runnerVersion = sdkOmittedValue, Object? registrationDeprecatesAt = sdkOmittedValue, Object? runtimeDeprecatesAt = sdkOmittedValue}) => ActionsGetRunnerVersionDeprecationForOrgResponse(
-    runnerVersion: identical(runnerVersion, sdkOmittedValue) ? this.runnerVersion : runnerVersion as String,
-    registrationDeprecatesAt: identical(registrationDeprecatesAt, sdkOmittedValue) ? this.registrationDeprecatesAt : registrationDeprecatesAt as SdkOptional<String?>,
-    runtimeDeprecatesAt: identical(runtimeDeprecatesAt, sdkOmittedValue) ? this.runtimeDeprecatesAt : runtimeDeprecatesAt as SdkOptional<String?>,
-  );
-
-  factory ActionsGetRunnerVersionDeprecationForOrgResponse.fromJson(Map<String, dynamic> json) => ActionsGetRunnerVersionDeprecationForOrgResponse(
-    runnerVersion: (json['runner_version'] as String?)!,
-    registrationDeprecatesAt: json.containsKey('registration_deprecates_at') ? SdkPresent(json['registration_deprecates_at'] as String?) : const SdkOmitted(),
-    runtimeDeprecatesAt: json.containsKey('runtime_deprecates_at') ? SdkPresent(json['runtime_deprecates_at'] as String?) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    'runner_version': runnerVersion,
-    ...switch (registrationDeprecatesAt) {
-      SdkPresent<String?>(value: final value) => {'registration_deprecates_at': value,},
+    'closed_at': closedAt,
+    'created_at': createdAt,
+    'updated_at': updatedAt,
+    ...switch (draft) {
+      SdkPresent<bool>(value: final value) => {'draft': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (runtimeDeprecatesAt) {
-      SdkPresent<String?>(value: final value) => {'runtime_deprecates_at': value,},
+    ...switch (closedBy) {
+      SdkPresent<NullableSimpleUser?>(value: final value) => {'closed_by': value?.toJson(),},
       _ => const <String, dynamic>{},
     },
-  };
-}
-
-class ActionsGenerateRunnerJitconfigForOrgRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The name of the new runner.
-  final String name;
-  /// The ID of the runner group to register the runner to.
-  final int runnerGroupId;
-  /// The names of the custom labels to add to the runner. **Minimum items**: 1. **Maximum items**: 100.
-  final List<String> labels;
-  /// The working directory to be used for job execution, relative to the runner install directory.
-  final SdkOptional<String> workFolder;
-
-  const ActionsGenerateRunnerJitconfigForOrgRequestBody({required this.name, required this.runnerGroupId, required this.labels, this.workFolder = const SdkOmitted()});
-
-  ActionsGenerateRunnerJitconfigForOrgRequestBody Function({String name, int runnerGroupId, List<String> labels, SdkOptional<String> workFolder}) get copyWith => _copyWith;
-
-  ActionsGenerateRunnerJitconfigForOrgRequestBody _copyWith({Object? name = sdkOmittedValue, Object? runnerGroupId = sdkOmittedValue, Object? labels = sdkOmittedValue, Object? workFolder = sdkOmittedValue}) => ActionsGenerateRunnerJitconfigForOrgRequestBody(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    runnerGroupId: identical(runnerGroupId, sdkOmittedValue) ? this.runnerGroupId : runnerGroupId as int,
-    labels: identical(labels, sdkOmittedValue) ? this.labels : labels as List<String>,
-    workFolder: identical(workFolder, sdkOmittedValue) ? this.workFolder : workFolder as SdkOptional<String>,
-  );
-
-  factory ActionsGenerateRunnerJitconfigForOrgRequestBody.fromJson(Map<String, dynamic> json) => ActionsGenerateRunnerJitconfigForOrgRequestBody(
-    name: (json['name'] as String?)!,
-    runnerGroupId: ((json['runner_group_id'] as num?)?.toInt())!,
-    labels: ((json['labels'] as List?)?.map((e) => e as String).toList())!,
-    workFolder: json['work_folder'] != null ? SdkPresent((json['work_folder'] as String?)!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    'name': name,
-    'runner_group_id': runnerGroupId,
-    'labels': labels,
-    ...switch (workFolder) {
-      SdkPresent<String>(value: final value) => {'work_folder': value,},
+    ...switch (bodyHtml) {
+      SdkPresent<String>(value: final value) => {'body_html': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (bodyText) {
+      SdkPresent<String>(value: final value) => {'body_text': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (timelineUrl) {
+      SdkPresent<String>(value: final value) => {'timeline_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (type_) {
+      SdkPresent<IssueType?>(value: final value) => {'type': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (repository) {
+      SdkPresent<Repository>(value: final value) => {'repository': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (performedViaGithubApp) {
+      SdkPresent<NullableIntegration?>(value: final value) => {'performed_via_github_app': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (authorAssociation) {
+      SdkPresent<AuthorAssociation>(value: final value) => {'author_association': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (reactions) {
+      SdkPresent<ReactionRollup>(value: final value) => {'reactions': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (subIssuesSummary) {
+      SdkPresent<SubIssuesSummary>(value: final value) => {'sub_issues_summary': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (parentIssueUrl) {
+      SdkPresent<String?>(value: final value) => {'parent_issue_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pinnedComment) {
+      SdkPresent<NullableIssueComment?>(value: final value) => {'pinned_comment': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (issueDependenciesSummary) {
+      SdkPresent<IssueDependenciesSummary>(value: final value) => {'issue_dependencies_summary': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (issueFieldValues) {
+      SdkPresent<List<IssueFieldValue>>(value: final value) => {'issue_field_values': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (suggestions) {
+      SdkPresent<IssuesUpdateResponseVariant1Suggestions>(value: final value) => {'suggestions': value.toJson(),},
       _ => const <String, dynamic>{},
     },
   };

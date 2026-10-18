@@ -4,288 +4,269 @@
 part of 'inline.dart';
 
 // Inline operation models (part 255)
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsEditRepoAutomationResponseTriggersAutomationCompletedWriteScope {
+/// Push protection setting to set for the pattern.
+final class SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItemPushProtectionSetting {
 
   final String value;
 
-  const AgentAutomationsEditRepoAutomationResponseTriggersAutomationCompletedWriteScope._(this.value);
+  const SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItemPushProtectionSetting._(this.value);
 
-  factory AgentAutomationsEditRepoAutomationResponseTriggersAutomationCompletedWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseTriggersAutomationCompletedWriteScope._(value);
+  factory SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItemPushProtectionSetting.fromJson(String value) => SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItemPushProtectionSetting._(value);
 
-  static const trigger = AgentAutomationsEditRepoAutomationResponseTriggersAutomationCompletedWriteScope._('trigger');
-  static const repository = AgentAutomationsEditRepoAutomationResponseTriggersAutomationCompletedWriteScope._('repository');
+  static const disabled = SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItemPushProtectionSetting._('disabled');
+  static const enabled = SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItemPushProtectionSetting._('enabled');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersAutomationCompletedWriteScope && other.value == value;
+  @override bool operator ==(Object other) => other is SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItemPushProtectionSetting && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-final class AgentAutomationsEditRepoAutomationResponseTriggersDiscussionCommentCommentTypesItem {
+/// Push protection setting to set for the pattern.
+final class SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItemPushProtectionSetting {
 
   final String value;
 
-  const AgentAutomationsEditRepoAutomationResponseTriggersDiscussionCommentCommentTypesItem._(this.value);
+  const SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItemPushProtectionSetting._(this.value);
 
-  factory AgentAutomationsEditRepoAutomationResponseTriggersDiscussionCommentCommentTypesItem.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseTriggersDiscussionCommentCommentTypesItem._(value);
+  factory SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItemPushProtectionSetting.fromJson(String value) => SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItemPushProtectionSetting._(value);
 
-  static const comment = AgentAutomationsEditRepoAutomationResponseTriggersDiscussionCommentCommentTypesItem._('comment');
-  static const reply = AgentAutomationsEditRepoAutomationResponseTriggersDiscussionCommentCommentTypesItem._('reply');
+  static const notSet = SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItemPushProtectionSetting._('not-set');
+  static const disabled = SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItemPushProtectionSetting._('disabled');
+  static const enabled = SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItemPushProtectionSetting._('enabled');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersDiscussionCommentCommentTypesItem && other.value == value;
+  @override bool operator ==(Object other) => other is SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItemPushProtectionSetting && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsEditRepoAutomationResponseTriggersDiscussionCommentWriteScope {
+final class SecurityAdvisoriesListOrgRepositoryAdvisoriesSort {
 
   final String value;
 
-  const AgentAutomationsEditRepoAutomationResponseTriggersDiscussionCommentWriteScope._(this.value);
+  const SecurityAdvisoriesListOrgRepositoryAdvisoriesSort._(this.value);
 
-  factory AgentAutomationsEditRepoAutomationResponseTriggersDiscussionCommentWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseTriggersDiscussionCommentWriteScope._(value);
+  factory SecurityAdvisoriesListOrgRepositoryAdvisoriesSort.fromJson(String value) => SecurityAdvisoriesListOrgRepositoryAdvisoriesSort._(value);
 
-  static const trigger = AgentAutomationsEditRepoAutomationResponseTriggersDiscussionCommentWriteScope._('trigger');
-  static const repository = AgentAutomationsEditRepoAutomationResponseTriggersDiscussionCommentWriteScope._('repository');
+  static const created = SecurityAdvisoriesListOrgRepositoryAdvisoriesSort._('created');
+  static const updated = SecurityAdvisoriesListOrgRepositoryAdvisoriesSort._('updated');
+  static const published = SecurityAdvisoriesListOrgRepositoryAdvisoriesSort._('published');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersDiscussionCommentWriteScope && other.value == value;
+  @override bool operator ==(Object other) => other is SecurityAdvisoriesListOrgRepositoryAdvisoriesSort && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsEditRepoAutomationResponseTriggersDiscussionOpenedWriteScope {
+final class SecurityAdvisoriesListOrgRepositoryAdvisoriesState {
 
   final String value;
 
-  const AgentAutomationsEditRepoAutomationResponseTriggersDiscussionOpenedWriteScope._(this.value);
+  const SecurityAdvisoriesListOrgRepositoryAdvisoriesState._(this.value);
 
-  factory AgentAutomationsEditRepoAutomationResponseTriggersDiscussionOpenedWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseTriggersDiscussionOpenedWriteScope._(value);
+  factory SecurityAdvisoriesListOrgRepositoryAdvisoriesState.fromJson(String value) => SecurityAdvisoriesListOrgRepositoryAdvisoriesState._(value);
 
-  static const trigger = AgentAutomationsEditRepoAutomationResponseTriggersDiscussionOpenedWriteScope._('trigger');
-  static const repository = AgentAutomationsEditRepoAutomationResponseTriggersDiscussionOpenedWriteScope._('repository');
+  static const triage = SecurityAdvisoriesListOrgRepositoryAdvisoriesState._('triage');
+  static const draft = SecurityAdvisoriesListOrgRepositoryAdvisoriesState._('draft');
+  static const published = SecurityAdvisoriesListOrgRepositoryAdvisoriesState._('published');
+  static const closed = SecurityAdvisoriesListOrgRepositoryAdvisoriesState._('closed');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersDiscussionOpenedWriteScope && other.value == value;
+  @override bool operator ==(Object other) => other is SecurityAdvisoriesListOrgRepositoryAdvisoriesState && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsEditRepoAutomationResponseTriggersDiscussionUpdatedWriteScope {
+/// The policy that controls how immutable releases are enforced in the organization.
+final class OrgsSetImmutableReleasesSettingsRequestBodyEnforcedRepositories {
 
   final String value;
 
-  const AgentAutomationsEditRepoAutomationResponseTriggersDiscussionUpdatedWriteScope._(this.value);
+  const OrgsSetImmutableReleasesSettingsRequestBodyEnforcedRepositories._(this.value);
 
-  factory AgentAutomationsEditRepoAutomationResponseTriggersDiscussionUpdatedWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseTriggersDiscussionUpdatedWriteScope._(value);
+  factory OrgsSetImmutableReleasesSettingsRequestBodyEnforcedRepositories.fromJson(String value) => OrgsSetImmutableReleasesSettingsRequestBodyEnforcedRepositories._(value);
 
-  static const trigger = AgentAutomationsEditRepoAutomationResponseTriggersDiscussionUpdatedWriteScope._('trigger');
-  static const repository = AgentAutomationsEditRepoAutomationResponseTriggersDiscussionUpdatedWriteScope._('repository');
+  static const all = OrgsSetImmutableReleasesSettingsRequestBodyEnforcedRepositories._('all');
+  static const none = OrgsSetImmutableReleasesSettingsRequestBodyEnforcedRepositories._('none');
+  static const selected = OrgsSetImmutableReleasesSettingsRequestBodyEnforcedRepositories._('selected');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersDiscussionUpdatedWriteScope && other.value == value;
+  @override bool operator ==(Object other) => other is OrgsSetImmutableReleasesSettingsRequestBodyEnforcedRepositories && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-final class AgentAutomationsEditRepoAutomationResponseTriggersIntervalCadenceItem {
+/// The hosted compute service to use for the network configuration.
+final class HostedComputeCreateNetworkConfigurationForOrgRequestBodyComputeService {
 
   final String value;
 
-  const AgentAutomationsEditRepoAutomationResponseTriggersIntervalCadenceItem._(this.value);
+  const HostedComputeCreateNetworkConfigurationForOrgRequestBodyComputeService._(this.value);
 
-  factory AgentAutomationsEditRepoAutomationResponseTriggersIntervalCadenceItem.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseTriggersIntervalCadenceItem._(value);
+  factory HostedComputeCreateNetworkConfigurationForOrgRequestBodyComputeService.fromJson(String value) => HostedComputeCreateNetworkConfigurationForOrgRequestBodyComputeService._(value);
 
-  static const hourly = AgentAutomationsEditRepoAutomationResponseTriggersIntervalCadenceItem._('hourly');
-  static const daily = AgentAutomationsEditRepoAutomationResponseTriggersIntervalCadenceItem._('daily');
-  static const weekly = AgentAutomationsEditRepoAutomationResponseTriggersIntervalCadenceItem._('weekly');
+  static const none = HostedComputeCreateNetworkConfigurationForOrgRequestBodyComputeService._('none');
+  static const actions = HostedComputeCreateNetworkConfigurationForOrgRequestBodyComputeService._('actions');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersIntervalCadenceItem && other.value == value;
+  @override bool operator ==(Object other) => other is HostedComputeCreateNetworkConfigurationForOrgRequestBodyComputeService && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// UTC minute anchor for daily and weekly schedules. Omitted daily and weekly values default to `0`. Must be omitted whenever `cadence` includes `hourly`.
-final class AgentAutomationsEditRepoAutomationResponseTriggersIntervalMinuteUtc {
-
-  final int value;
-
-  const AgentAutomationsEditRepoAutomationResponseTriggersIntervalMinuteUtc._(this.value);
-
-  factory AgentAutomationsEditRepoAutomationResponseTriggersIntervalMinuteUtc.fromJson(int value) => AgentAutomationsEditRepoAutomationResponseTriggersIntervalMinuteUtc._(value);
-
-  static const v0 = AgentAutomationsEditRepoAutomationResponseTriggersIntervalMinuteUtc._(0);
-  static const v15 = AgentAutomationsEditRepoAutomationResponseTriggersIntervalMinuteUtc._(15);
-  static const v30 = AgentAutomationsEditRepoAutomationResponseTriggersIntervalMinuteUtc._(30);
-  static const v45 = AgentAutomationsEditRepoAutomationResponseTriggersIntervalMinuteUtc._(45);
-
-  int toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersIntervalMinuteUtc && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsEditRepoAutomationResponseTriggersIntervalWriteScope {
+/// The hosted compute service to use for the network configuration.
+final class HostedComputeUpdateNetworkConfigurationForOrgRequestBodyComputeService {
 
   final String value;
 
-  const AgentAutomationsEditRepoAutomationResponseTriggersIntervalWriteScope._(this.value);
+  const HostedComputeUpdateNetworkConfigurationForOrgRequestBodyComputeService._(this.value);
 
-  factory AgentAutomationsEditRepoAutomationResponseTriggersIntervalWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseTriggersIntervalWriteScope._(value);
+  factory HostedComputeUpdateNetworkConfigurationForOrgRequestBodyComputeService.fromJson(String value) => HostedComputeUpdateNetworkConfigurationForOrgRequestBodyComputeService._(value);
 
-  static const trigger = AgentAutomationsEditRepoAutomationResponseTriggersIntervalWriteScope._('trigger');
-  static const repository = AgentAutomationsEditRepoAutomationResponseTriggersIntervalWriteScope._('repository');
+  static const none = HostedComputeUpdateNetworkConfigurationForOrgRequestBodyComputeService._('none');
+  static const actions = HostedComputeUpdateNetworkConfigurationForOrgRequestBodyComputeService._('actions');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersIntervalWriteScope && other.value == value;
+  @override bool operator ==(Object other) => other is HostedComputeUpdateNetworkConfigurationForOrgRequestBodyComputeService && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsEditRepoAutomationResponseTriggersIssueAssignedWriteScope {
+/// The notification setting the team has chosen. The options are: * `notifications_enabled` - team members receive notifications when the team is @mentioned. * `notifications_disabled` - no one receives notifications. Default: `notifications_enabled`
+final class TeamsCreateRequestBodyNotificationSetting {
 
   final String value;
 
-  const AgentAutomationsEditRepoAutomationResponseTriggersIssueAssignedWriteScope._(this.value);
+  const TeamsCreateRequestBodyNotificationSetting._(this.value);
 
-  factory AgentAutomationsEditRepoAutomationResponseTriggersIssueAssignedWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseTriggersIssueAssignedWriteScope._(value);
+  factory TeamsCreateRequestBodyNotificationSetting.fromJson(String value) => TeamsCreateRequestBodyNotificationSetting._(value);
 
-  static const trigger = AgentAutomationsEditRepoAutomationResponseTriggersIssueAssignedWriteScope._('trigger');
-  static const repository = AgentAutomationsEditRepoAutomationResponseTriggersIssueAssignedWriteScope._('repository');
+  static const notificationsEnabled = TeamsCreateRequestBodyNotificationSetting._('notifications_enabled');
+  static const notificationsDisabled = TeamsCreateRequestBodyNotificationSetting._('notifications_disabled');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersIssueAssignedWriteScope && other.value == value;
+  @override bool operator ==(Object other) => other is TeamsCreateRequestBodyNotificationSetting && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsEditRepoAutomationResponseTriggersIssueCommentWriteScope {
+/// **Closing down notice**. The permission that new repositories will be added to the team with when none is specified.
+final class TeamsCreateRequestBodyPermission {
 
   final String value;
 
-  const AgentAutomationsEditRepoAutomationResponseTriggersIssueCommentWriteScope._(this.value);
+  const TeamsCreateRequestBodyPermission._(this.value);
 
-  factory AgentAutomationsEditRepoAutomationResponseTriggersIssueCommentWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseTriggersIssueCommentWriteScope._(value);
+  factory TeamsCreateRequestBodyPermission.fromJson(String value) => TeamsCreateRequestBodyPermission._(value);
 
-  static const trigger = AgentAutomationsEditRepoAutomationResponseTriggersIssueCommentWriteScope._('trigger');
-  static const repository = AgentAutomationsEditRepoAutomationResponseTriggersIssueCommentWriteScope._('repository');
+  static const pull = TeamsCreateRequestBodyPermission._('pull');
+  static const push = TeamsCreateRequestBodyPermission._('push');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersIssueCommentWriteScope && other.value == value;
+  @override bool operator ==(Object other) => other is TeamsCreateRequestBodyPermission && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsEditRepoAutomationResponseTriggersIssueLabeledWriteScope {
+/// The level of privacy this team should have. The options are: **For a non-nested team:** * `secret` - only visible to organization owners and members of this team. * `closed` - visible to all members of this organization. Default: `secret` **For a parent or child team:** * `closed` - visible to all members of this organization. Default for child team: `closed`
+final class TeamsCreateRequestBodyPrivacy {
 
   final String value;
 
-  const AgentAutomationsEditRepoAutomationResponseTriggersIssueLabeledWriteScope._(this.value);
+  const TeamsCreateRequestBodyPrivacy._(this.value);
 
-  factory AgentAutomationsEditRepoAutomationResponseTriggersIssueLabeledWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseTriggersIssueLabeledWriteScope._(value);
+  factory TeamsCreateRequestBodyPrivacy.fromJson(String value) => TeamsCreateRequestBodyPrivacy._(value);
 
-  static const trigger = AgentAutomationsEditRepoAutomationResponseTriggersIssueLabeledWriteScope._('trigger');
-  static const repository = AgentAutomationsEditRepoAutomationResponseTriggersIssueLabeledWriteScope._('repository');
+  static const secret = TeamsCreateRequestBodyPrivacy._('secret');
+  static const closed = TeamsCreateRequestBodyPrivacy._('closed');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersIssueLabeledWriteScope && other.value == value;
+  @override bool operator ==(Object other) => other is TeamsCreateRequestBodyPrivacy && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsEditRepoAutomationResponseTriggersIssueOpenedWriteScope {
+/// The notification setting the team has chosen. Editing teams without specifying this parameter leaves `notification_setting` intact. The options are: * `notifications_enabled` - team members receive notifications when the team is @mentioned. * `notifications_disabled` - no one receives notifications.
+final class TeamsUpdateInOrgRequestBodyNotificationSetting {
 
   final String value;
 
-  const AgentAutomationsEditRepoAutomationResponseTriggersIssueOpenedWriteScope._(this.value);
+  const TeamsUpdateInOrgRequestBodyNotificationSetting._(this.value);
 
-  factory AgentAutomationsEditRepoAutomationResponseTriggersIssueOpenedWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseTriggersIssueOpenedWriteScope._(value);
+  factory TeamsUpdateInOrgRequestBodyNotificationSetting.fromJson(String value) => TeamsUpdateInOrgRequestBodyNotificationSetting._(value);
 
-  static const trigger = AgentAutomationsEditRepoAutomationResponseTriggersIssueOpenedWriteScope._('trigger');
-  static const repository = AgentAutomationsEditRepoAutomationResponseTriggersIssueOpenedWriteScope._('repository');
+  static const notificationsEnabled = TeamsUpdateInOrgRequestBodyNotificationSetting._('notifications_enabled');
+  static const notificationsDisabled = TeamsUpdateInOrgRequestBodyNotificationSetting._('notifications_disabled');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersIssueOpenedWriteScope && other.value == value;
+  @override bool operator ==(Object other) => other is TeamsUpdateInOrgRequestBodyNotificationSetting && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsEditRepoAutomationResponseTriggersPullRequestAssignedWriteScope {
+/// **Closing down notice**. The permission that new repositories will be added to the team with when none is specified.
+final class TeamsUpdateInOrgRequestBodyPermission {
 
   final String value;
 
-  const AgentAutomationsEditRepoAutomationResponseTriggersPullRequestAssignedWriteScope._(this.value);
+  const TeamsUpdateInOrgRequestBodyPermission._(this.value);
 
-  factory AgentAutomationsEditRepoAutomationResponseTriggersPullRequestAssignedWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseTriggersPullRequestAssignedWriteScope._(value);
+  factory TeamsUpdateInOrgRequestBodyPermission.fromJson(String value) => TeamsUpdateInOrgRequestBodyPermission._(value);
 
-  static const trigger = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestAssignedWriteScope._('trigger');
-  static const repository = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestAssignedWriteScope._('repository');
+  static const pull = TeamsUpdateInOrgRequestBodyPermission._('pull');
+  static const push = TeamsUpdateInOrgRequestBodyPermission._('push');
+  static const admin = TeamsUpdateInOrgRequestBodyPermission._('admin');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersPullRequestAssignedWriteScope && other.value == value;
+  @override bool operator ==(Object other) => other is TeamsUpdateInOrgRequestBodyPermission && other.value == value;
 
   @override int get hashCode => value.hashCode;
 

@@ -35,7 +35,7 @@ Future<List<DependencyGraphDiffItem>>
           operationId: 'dependencyGraphDiffRange',
           fromJsonRaw: (value) => (value as List).map((item) => DependencyGraphDiffItem.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 

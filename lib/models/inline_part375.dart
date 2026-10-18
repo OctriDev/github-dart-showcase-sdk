@@ -4,254 +4,290 @@
 part of 'inline.dart';
 
 // Inline operation models (part 375)
-class IssuesAddAssigneesRequestBodyAssigneesItemVariant1 {
+class InteractionsUpdatePullRequestCreationCapForOrgResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The login of the user to assign.
-  final String login;
-  /// Optional reasoning for adding this assignee.
-  final SdkOptional<String> rationale;
-  /// If `true`, the assignee is stored as a pending suggestion for human review rather than applied directly.
-  final SdkOptional<bool> suggest;
-  /// The confidence level for this assignee choice.
-  final SdkOptional<IssuesAddAssigneesRequestBodyAssigneesItemVariant1Confidence> confidence;
+  /// Whether the pull request creation cap is enabled
+  final bool enabled;
+  /// The maximum number of open pull requests a user can have at one time
+  final int maxOpenPullRequests;
+  /// Whether draft pull requests count toward the pull request creation cap
+  final SdkOptional<bool> includeDrafts;
 
-  const IssuesAddAssigneesRequestBodyAssigneesItemVariant1({required this.login, this.rationale = const SdkOmitted(), this.suggest = const SdkOmitted(), this.confidence = const SdkOmitted()});
+  const InteractionsUpdatePullRequestCreationCapForOrgResponse({required this.enabled, required this.maxOpenPullRequests, this.includeDrafts = const SdkOmitted()});
 
-  IssuesAddAssigneesRequestBodyAssigneesItemVariant1 Function({String login, SdkOptional<String> rationale, SdkOptional<bool> suggest, SdkOptional<IssuesAddAssigneesRequestBodyAssigneesItemVariant1Confidence> confidence}) get copyWith => _copyWith;
+  InteractionsUpdatePullRequestCreationCapForOrgResponse Function({bool enabled, int maxOpenPullRequests, SdkOptional<bool> includeDrafts}) get copyWith => _copyWith;
 
-  IssuesAddAssigneesRequestBodyAssigneesItemVariant1 _copyWith({Object? login = sdkOmittedValue, Object? rationale = sdkOmittedValue, Object? suggest = sdkOmittedValue, Object? confidence = sdkOmittedValue}) => IssuesAddAssigneesRequestBodyAssigneesItemVariant1(
-    login: identical(login, sdkOmittedValue) ? this.login : login as String,
-    rationale: identical(rationale, sdkOmittedValue) ? this.rationale : rationale as SdkOptional<String>,
-    suggest: identical(suggest, sdkOmittedValue) ? this.suggest : suggest as SdkOptional<bool>,
-    confidence: identical(confidence, sdkOmittedValue) ? this.confidence : confidence as SdkOptional<IssuesAddAssigneesRequestBodyAssigneesItemVariant1Confidence>,
+  InteractionsUpdatePullRequestCreationCapForOrgResponse _copyWith({Object? enabled = sdkOmittedValue, Object? maxOpenPullRequests = sdkOmittedValue, Object? includeDrafts = sdkOmittedValue}) => InteractionsUpdatePullRequestCreationCapForOrgResponse(
+    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as bool,
+    maxOpenPullRequests: identical(maxOpenPullRequests, sdkOmittedValue) ? this.maxOpenPullRequests : maxOpenPullRequests as int,
+    includeDrafts: identical(includeDrafts, sdkOmittedValue) ? this.includeDrafts : includeDrafts as SdkOptional<bool>,
   );
 
-  factory IssuesAddAssigneesRequestBodyAssigneesItemVariant1.fromJson(Map<String, dynamic> json) => IssuesAddAssigneesRequestBodyAssigneesItemVariant1(
-    login: (json['login'] as String?)!,
-    rationale: json['rationale'] != null ? SdkPresent((json['rationale'] as String?)!) : const SdkOmitted(),
-    suggest: json['suggest'] != null ? SdkPresent((json['suggest'] as bool?)!) : const SdkOmitted(),
-    confidence: json['confidence'] != null ? SdkPresent((json['confidence'] != null ? IssuesAddAssigneesRequestBodyAssigneesItemVariant1Confidence.fromJson(json['confidence'] as String) : null)!) : const SdkOmitted(),
+  factory InteractionsUpdatePullRequestCreationCapForOrgResponse.fromJson(Map<String, dynamic> json) => InteractionsUpdatePullRequestCreationCapForOrgResponse(
+    enabled: (json['enabled'] as bool?)!,
+    maxOpenPullRequests: ((json['max_open_pull_requests'] as num?)?.toInt())!,
+    includeDrafts: json['include_drafts'] != null ? SdkPresent((json['include_drafts'] as bool?)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    'login': login,
-    ...switch (rationale) {
-      SdkPresent<String>(value: final value) => {'rationale': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (suggest) {
-      SdkPresent<bool>(value: final value) => {'suggest': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (confidence) {
-      SdkPresent<IssuesAddAssigneesRequestBodyAssigneesItemVariant1Confidence>(value: final value) => {'confidence': value.toJson(),},
+    'enabled': enabled,
+    'max_open_pull_requests': maxOpenPullRequests,
+    ...switch (includeDrafts) {
+      SdkPresent<bool>(value: final value) => {'include_drafts': value,},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-class IssuesAddAssigneesRequestBody {
+class InteractionsGetPullRequestCreationCapForRepoResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// Usernames of people to assign this issue to. _NOTE: Only users with push access can add assignees to an issue. Assignees are silently ignored otherwise._
-  final SdkOptional<List<dynamic>> assignees;
+  /// Whether the pull request creation cap is enabled
+  final bool enabled;
+  /// The maximum number of open pull requests a user can have at one time
+  final int maxOpenPullRequests;
+  /// Whether draft pull requests count toward the pull request creation cap
+  final SdkOptional<bool> includeDrafts;
 
-  const IssuesAddAssigneesRequestBody({this.assignees = const SdkOmitted()});
+  const InteractionsGetPullRequestCreationCapForRepoResponse({required this.enabled, required this.maxOpenPullRequests, this.includeDrafts = const SdkOmitted()});
 
-  IssuesAddAssigneesRequestBody Function({SdkOptional<List<dynamic>> assignees}) get copyWith => _copyWith;
+  InteractionsGetPullRequestCreationCapForRepoResponse Function({bool enabled, int maxOpenPullRequests, SdkOptional<bool> includeDrafts}) get copyWith => _copyWith;
 
-  IssuesAddAssigneesRequestBody _copyWith({Object? assignees = sdkOmittedValue}) => IssuesAddAssigneesRequestBody(
-    assignees: identical(assignees, sdkOmittedValue) ? this.assignees : assignees as SdkOptional<List<dynamic>>,
+  InteractionsGetPullRequestCreationCapForRepoResponse _copyWith({Object? enabled = sdkOmittedValue, Object? maxOpenPullRequests = sdkOmittedValue, Object? includeDrafts = sdkOmittedValue}) => InteractionsGetPullRequestCreationCapForRepoResponse(
+    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as bool,
+    maxOpenPullRequests: identical(maxOpenPullRequests, sdkOmittedValue) ? this.maxOpenPullRequests : maxOpenPullRequests as int,
+    includeDrafts: identical(includeDrafts, sdkOmittedValue) ? this.includeDrafts : includeDrafts as SdkOptional<bool>,
   );
 
-  factory IssuesAddAssigneesRequestBody.fromJson(Map<String, dynamic> json) => IssuesAddAssigneesRequestBody(
-    assignees: json['assignees'] != null ? SdkPresent(((json['assignees'] as List?)?.map((e) => e).toList())!) : const SdkOmitted(),
+  factory InteractionsGetPullRequestCreationCapForRepoResponse.fromJson(Map<String, dynamic> json) => InteractionsGetPullRequestCreationCapForRepoResponse(
+    enabled: (json['enabled'] as bool?)!,
+    maxOpenPullRequests: ((json['max_open_pull_requests'] as num?)?.toInt())!,
+    includeDrafts: json['include_drafts'] != null ? SdkPresent((json['include_drafts'] as bool?)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    ...switch (assignees) {
-      SdkPresent<List<dynamic>>(value: final value) => {'assignees': value,},
+    'enabled': enabled,
+    'max_open_pull_requests': maxOpenPullRequests,
+    ...switch (includeDrafts) {
+      SdkPresent<bool>(value: final value) => {'include_drafts': value,},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-class IssuesRemoveAssigneesRequestBody {
+class InteractionsUpdatePullRequestCreationCapForRepoRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// Usernames of assignees to remove from an issue. _NOTE: Only users with push access can remove assignees from an issue. Assignees are silently ignored otherwise._
-  final SdkOptional<List<String>> assignees;
+  /// Whether the pull request creation cap is enabled
+  final bool enabled;
+  /// The maximum number of open pull requests a user can have at one time
+  final SdkOptional<int> maxOpenPullRequests;
+  /// Whether draft pull requests count toward the pull request creation cap
+  final SdkOptional<bool> includeDrafts;
 
-  const IssuesRemoveAssigneesRequestBody({this.assignees = const SdkOmitted()});
+  const InteractionsUpdatePullRequestCreationCapForRepoRequestBody({required this.enabled, this.maxOpenPullRequests = const SdkOmitted(), this.includeDrafts = const SdkOmitted()});
 
-  IssuesRemoveAssigneesRequestBody Function({SdkOptional<List<String>> assignees}) get copyWith => _copyWith;
+  InteractionsUpdatePullRequestCreationCapForRepoRequestBody Function({bool enabled, SdkOptional<int> maxOpenPullRequests, SdkOptional<bool> includeDrafts}) get copyWith => _copyWith;
 
-  IssuesRemoveAssigneesRequestBody _copyWith({Object? assignees = sdkOmittedValue}) => IssuesRemoveAssigneesRequestBody(
-    assignees: identical(assignees, sdkOmittedValue) ? this.assignees : assignees as SdkOptional<List<String>>,
+  InteractionsUpdatePullRequestCreationCapForRepoRequestBody _copyWith({Object? enabled = sdkOmittedValue, Object? maxOpenPullRequests = sdkOmittedValue, Object? includeDrafts = sdkOmittedValue}) => InteractionsUpdatePullRequestCreationCapForRepoRequestBody(
+    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as bool,
+    maxOpenPullRequests: identical(maxOpenPullRequests, sdkOmittedValue) ? this.maxOpenPullRequests : maxOpenPullRequests as SdkOptional<int>,
+    includeDrafts: identical(includeDrafts, sdkOmittedValue) ? this.includeDrafts : includeDrafts as SdkOptional<bool>,
   );
 
-  factory IssuesRemoveAssigneesRequestBody.fromJson(Map<String, dynamic> json) => IssuesRemoveAssigneesRequestBody(
-    assignees: json['assignees'] != null ? SdkPresent(((json['assignees'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+  factory InteractionsUpdatePullRequestCreationCapForRepoRequestBody.fromJson(Map<String, dynamic> json) => InteractionsUpdatePullRequestCreationCapForRepoRequestBody(
+    enabled: (json['enabled'] as bool?)!,
+    maxOpenPullRequests: json['max_open_pull_requests'] != null ? SdkPresent(((json['max_open_pull_requests'] as num?)?.toInt())!) : const SdkOmitted(),
+    includeDrafts: json['include_drafts'] != null ? SdkPresent((json['include_drafts'] as bool?)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    ...switch (assignees) {
-      SdkPresent<List<String>>(value: final value) => {'assignees': value,},
+    'enabled': enabled,
+    ...switch (maxOpenPullRequests) {
+      SdkPresent<int>(value: final value) => {'max_open_pull_requests': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (includeDrafts) {
+      SdkPresent<bool>(value: final value) => {'include_drafts': value,},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-class IssuesCreateCommentRequestBody {
+class InteractionsUpdatePullRequestCreationCapForRepoResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The contents of the comment.
-  final String body;
+  /// Whether the pull request creation cap is enabled
+  final bool enabled;
+  /// The maximum number of open pull requests a user can have at one time
+  final int maxOpenPullRequests;
+  /// Whether draft pull requests count toward the pull request creation cap
+  final SdkOptional<bool> includeDrafts;
 
-  const IssuesCreateCommentRequestBody({required this.body});
+  const InteractionsUpdatePullRequestCreationCapForRepoResponse({required this.enabled, required this.maxOpenPullRequests, this.includeDrafts = const SdkOmitted()});
 
-  IssuesCreateCommentRequestBody Function({String body}) get copyWith => _copyWith;
+  InteractionsUpdatePullRequestCreationCapForRepoResponse Function({bool enabled, int maxOpenPullRequests, SdkOptional<bool> includeDrafts}) get copyWith => _copyWith;
 
-  IssuesCreateCommentRequestBody _copyWith({Object? body = sdkOmittedValue}) => IssuesCreateCommentRequestBody(
-    body: identical(body, sdkOmittedValue) ? this.body : body as String,
+  InteractionsUpdatePullRequestCreationCapForRepoResponse _copyWith({Object? enabled = sdkOmittedValue, Object? maxOpenPullRequests = sdkOmittedValue, Object? includeDrafts = sdkOmittedValue}) => InteractionsUpdatePullRequestCreationCapForRepoResponse(
+    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as bool,
+    maxOpenPullRequests: identical(maxOpenPullRequests, sdkOmittedValue) ? this.maxOpenPullRequests : maxOpenPullRequests as int,
+    includeDrafts: identical(includeDrafts, sdkOmittedValue) ? this.includeDrafts : includeDrafts as SdkOptional<bool>,
   );
 
-  factory IssuesCreateCommentRequestBody.fromJson(Map<String, dynamic> json) => IssuesCreateCommentRequestBody(
-    body: (json['body'] as String?)!,
+  factory InteractionsUpdatePullRequestCreationCapForRepoResponse.fromJson(Map<String, dynamic> json) => InteractionsUpdatePullRequestCreationCapForRepoResponse(
+    enabled: (json['enabled'] as bool?)!,
+    maxOpenPullRequests: ((json['max_open_pull_requests'] as num?)?.toInt())!,
+    includeDrafts: json['include_drafts'] != null ? SdkPresent((json['include_drafts'] as bool?)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    'body': body,
-  };
-}
-
-class IssuesAddBlockedByDependencyRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The id of the issue that blocks the current issue
-  final int issueId;
-
-  const IssuesAddBlockedByDependencyRequestBody({required this.issueId});
-
-  IssuesAddBlockedByDependencyRequestBody Function({int issueId}) get copyWith => _copyWith;
-
-  IssuesAddBlockedByDependencyRequestBody _copyWith({Object? issueId = sdkOmittedValue}) => IssuesAddBlockedByDependencyRequestBody(
-    issueId: identical(issueId, sdkOmittedValue) ? this.issueId : issueId as int,
-  );
-
-  factory IssuesAddBlockedByDependencyRequestBody.fromJson(Map<String, dynamic> json) => IssuesAddBlockedByDependencyRequestBody(
-    issueId: ((json['issue_id'] as num?)?.toInt())!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'issue_id': issueId,
-  };
-}
-
-class IssuesAddIssueFieldValuesRequestBodyIssueFieldValuesItem {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The ID of the issue field to set
-  final int fieldId;
-  /// The value to set for the field. The type depends on the field's data type: - For text fields: provide a string value - For single_select fields: provide the option name as a string (must match an existing option) - For number fields: provide a numeric value - For multi_select fields: provide an array of option names (must match existing options) - For date fields: provide an ISO 8601 date string
-  final dynamic value;
-
-  const IssuesAddIssueFieldValuesRequestBodyIssueFieldValuesItem({required this.fieldId, required this.value});
-
-  IssuesAddIssueFieldValuesRequestBodyIssueFieldValuesItem Function({int fieldId, dynamic value}) get copyWith => _copyWith;
-
-  IssuesAddIssueFieldValuesRequestBodyIssueFieldValuesItem _copyWith({Object? fieldId = sdkOmittedValue, Object? value = sdkOmittedValue}) => IssuesAddIssueFieldValuesRequestBodyIssueFieldValuesItem(
-    fieldId: identical(fieldId, sdkOmittedValue) ? this.fieldId : fieldId as int,
-    value: identical(value, sdkOmittedValue) ? this.value : value as dynamic,
-  );
-
-  factory IssuesAddIssueFieldValuesRequestBodyIssueFieldValuesItem.fromJson(Map<String, dynamic> json) => IssuesAddIssueFieldValuesRequestBodyIssueFieldValuesItem(
-    fieldId: ((json['field_id'] as num?)?.toInt())!,
-    value: (json['value'])!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'field_id': fieldId,
-    'value': value,
-  };
-}
-
-class IssuesAddIssueFieldValuesRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// An array of issue field values to add to this issue. Each field value must include the field ID and the value to set.
-  final SdkOptional<List<IssuesAddIssueFieldValuesRequestBodyIssueFieldValuesItem>> issueFieldValues;
-
-  const IssuesAddIssueFieldValuesRequestBody({this.issueFieldValues = const SdkOmitted()});
-
-  IssuesAddIssueFieldValuesRequestBody Function({SdkOptional<List<IssuesAddIssueFieldValuesRequestBodyIssueFieldValuesItem>> issueFieldValues}) get copyWith => _copyWith;
-
-  IssuesAddIssueFieldValuesRequestBody _copyWith({Object? issueFieldValues = sdkOmittedValue}) => IssuesAddIssueFieldValuesRequestBody(
-    issueFieldValues: identical(issueFieldValues, sdkOmittedValue) ? this.issueFieldValues : issueFieldValues as SdkOptional<List<IssuesAddIssueFieldValuesRequestBodyIssueFieldValuesItem>>,
-  );
-
-  factory IssuesAddIssueFieldValuesRequestBody.fromJson(Map<String, dynamic> json) => IssuesAddIssueFieldValuesRequestBody(
-    issueFieldValues: json['issue_field_values'] != null ? SdkPresent(((json['issue_field_values'] as List?)?.map((e) => IssuesAddIssueFieldValuesRequestBodyIssueFieldValuesItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    ...switch (issueFieldValues) {
-      SdkPresent<List<IssuesAddIssueFieldValuesRequestBodyIssueFieldValuesItem>>(value: final value) => {'issue_field_values': value.map((item) => item.toJson()).toList(),},
+    'enabled': enabled,
+    'max_open_pull_requests': maxOpenPullRequests,
+    ...switch (includeDrafts) {
+      SdkPresent<bool>(value: final value) => {'include_drafts': value,},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-class IssuesSetIssueFieldValuesRequestBodyIssueFieldValuesItem {
+class MigrationsStartForOrgRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The ID of the issue field to set
-  final int fieldId;
-  /// The value to set for the field. The type depends on the field's data type: - For text fields: provide a string value - For single_select fields: provide the option name as a string (must match an existing option) - For number fields: provide a numeric value - For date fields: provide an ISO 8601 date string
-  final dynamic value;
+  /// A list of arrays indicating which repositories should be migrated.
+  final List<String> repositories;
+  /// Indicates whether repositories should be locked (to prevent manipulation) while migrating data.
+  final SdkOptional<bool> lockRepositories;
+  /// Indicates whether metadata should be excluded and only git source should be included for the migration.
+  final SdkOptional<bool> excludeMetadata;
+  /// Indicates whether the repository git data should be excluded from the migration.
+  final SdkOptional<bool> excludeGitData;
+  /// Indicates whether attachments should be excluded from the migration (to reduce migration archive file size).
+  final SdkOptional<bool> excludeAttachments;
+  /// Indicates whether releases should be excluded from the migration (to reduce migration archive file size).
+  final SdkOptional<bool> excludeReleases;
+  /// Indicates whether projects owned by the organization or users should be excluded. from the migration.
+  final SdkOptional<bool> excludeOwnerProjects;
+  /// Indicates whether this should only include organization metadata (repositories array should be empty and will ignore other flags).
+  final SdkOptional<bool> orgMetadataOnly;
+  /// Exclude related items from being returned in the response in order to improve performance of the request.
+  final SdkOptional<List<MigrationsStartForOrgRequestBodyExcludeItem>> exclude;
 
-  const IssuesSetIssueFieldValuesRequestBodyIssueFieldValuesItem({required this.fieldId, required this.value});
+  const MigrationsStartForOrgRequestBody({required this.repositories, this.lockRepositories = const SdkOmitted(), this.excludeMetadata = const SdkOmitted(), this.excludeGitData = const SdkOmitted(), this.excludeAttachments = const SdkOmitted(), this.excludeReleases = const SdkOmitted(), this.excludeOwnerProjects = const SdkOmitted(), this.orgMetadataOnly = const SdkOmitted(), this.exclude = const SdkOmitted()});
 
-  IssuesSetIssueFieldValuesRequestBodyIssueFieldValuesItem Function({int fieldId, dynamic value}) get copyWith => _copyWith;
+  MigrationsStartForOrgRequestBody Function({List<String> repositories, SdkOptional<bool> lockRepositories, SdkOptional<bool> excludeMetadata, SdkOptional<bool> excludeGitData, SdkOptional<bool> excludeAttachments, SdkOptional<bool> excludeReleases, SdkOptional<bool> excludeOwnerProjects, SdkOptional<bool> orgMetadataOnly, SdkOptional<List<MigrationsStartForOrgRequestBodyExcludeItem>> exclude}) get copyWith => _copyWith;
 
-  IssuesSetIssueFieldValuesRequestBodyIssueFieldValuesItem _copyWith({Object? fieldId = sdkOmittedValue, Object? value = sdkOmittedValue}) => IssuesSetIssueFieldValuesRequestBodyIssueFieldValuesItem(
-    fieldId: identical(fieldId, sdkOmittedValue) ? this.fieldId : fieldId as int,
-    value: identical(value, sdkOmittedValue) ? this.value : value as dynamic,
+  MigrationsStartForOrgRequestBody _copyWith({Object? repositories = sdkOmittedValue, Object? lockRepositories = sdkOmittedValue, Object? excludeMetadata = sdkOmittedValue, Object? excludeGitData = sdkOmittedValue, Object? excludeAttachments = sdkOmittedValue, Object? excludeReleases = sdkOmittedValue, Object? excludeOwnerProjects = sdkOmittedValue, Object? orgMetadataOnly = sdkOmittedValue, Object? exclude = sdkOmittedValue}) => MigrationsStartForOrgRequestBody(
+    repositories: identical(repositories, sdkOmittedValue) ? this.repositories : repositories as List<String>,
+    lockRepositories: identical(lockRepositories, sdkOmittedValue) ? this.lockRepositories : lockRepositories as SdkOptional<bool>,
+    excludeMetadata: identical(excludeMetadata, sdkOmittedValue) ? this.excludeMetadata : excludeMetadata as SdkOptional<bool>,
+    excludeGitData: identical(excludeGitData, sdkOmittedValue) ? this.excludeGitData : excludeGitData as SdkOptional<bool>,
+    excludeAttachments: identical(excludeAttachments, sdkOmittedValue) ? this.excludeAttachments : excludeAttachments as SdkOptional<bool>,
+    excludeReleases: identical(excludeReleases, sdkOmittedValue) ? this.excludeReleases : excludeReleases as SdkOptional<bool>,
+    excludeOwnerProjects: identical(excludeOwnerProjects, sdkOmittedValue) ? this.excludeOwnerProjects : excludeOwnerProjects as SdkOptional<bool>,
+    orgMetadataOnly: identical(orgMetadataOnly, sdkOmittedValue) ? this.orgMetadataOnly : orgMetadataOnly as SdkOptional<bool>,
+    exclude: identical(exclude, sdkOmittedValue) ? this.exclude : exclude as SdkOptional<List<MigrationsStartForOrgRequestBodyExcludeItem>>,
   );
 
-  factory IssuesSetIssueFieldValuesRequestBodyIssueFieldValuesItem.fromJson(Map<String, dynamic> json) => IssuesSetIssueFieldValuesRequestBodyIssueFieldValuesItem(
-    fieldId: ((json['field_id'] as num?)?.toInt())!,
-    value: (json['value'])!,
+  factory MigrationsStartForOrgRequestBody.fromJson(Map<String, dynamic> json) => MigrationsStartForOrgRequestBody(
+    repositories: ((json['repositories'] as List?)?.map((e) => e as String).toList())!,
+    lockRepositories: json['lock_repositories'] != null ? SdkPresent((json['lock_repositories'] as bool?)!) : const SdkOmitted(),
+    excludeMetadata: json['exclude_metadata'] != null ? SdkPresent((json['exclude_metadata'] as bool?)!) : const SdkOmitted(),
+    excludeGitData: json['exclude_git_data'] != null ? SdkPresent((json['exclude_git_data'] as bool?)!) : const SdkOmitted(),
+    excludeAttachments: json['exclude_attachments'] != null ? SdkPresent((json['exclude_attachments'] as bool?)!) : const SdkOmitted(),
+    excludeReleases: json['exclude_releases'] != null ? SdkPresent((json['exclude_releases'] as bool?)!) : const SdkOmitted(),
+    excludeOwnerProjects: json['exclude_owner_projects'] != null ? SdkPresent((json['exclude_owner_projects'] as bool?)!) : const SdkOmitted(),
+    orgMetadataOnly: json['org_metadata_only'] != null ? SdkPresent((json['org_metadata_only'] as bool?)!) : const SdkOmitted(),
+    exclude: json['exclude'] != null ? SdkPresent(((json['exclude'] as List?)?.map((e) => MigrationsStartForOrgRequestBodyExcludeItem.fromJson(e as String)).toList())!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    'field_id': fieldId,
-    'value': value,
+    'repositories': repositories,
+    ...switch (lockRepositories) {
+      SdkPresent<bool>(value: final value) => {'lock_repositories': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (excludeMetadata) {
+      SdkPresent<bool>(value: final value) => {'exclude_metadata': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (excludeGitData) {
+      SdkPresent<bool>(value: final value) => {'exclude_git_data': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (excludeAttachments) {
+      SdkPresent<bool>(value: final value) => {'exclude_attachments': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (excludeReleases) {
+      SdkPresent<bool>(value: final value) => {'exclude_releases': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (excludeOwnerProjects) {
+      SdkPresent<bool>(value: final value) => {'exclude_owner_projects': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (orgMetadataOnly) {
+      SdkPresent<bool>(value: final value) => {'org_metadata_only': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (exclude) {
+      SdkPresent<List<MigrationsStartForOrgRequestBodyExcludeItem>>(value: final value) => {'exclude': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
   };
 }
 
-class IssuesSetIssueFieldValuesRequestBody {
+class MigrationsStartImportRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// An array of issue field values to set for this issue. Each field value must include the field ID and the value to set. All existing field values will be replaced.
-  final SdkOptional<List<IssuesSetIssueFieldValuesRequestBodyIssueFieldValuesItem>> issueFieldValues;
+  /// The URL of the originating repository.
+  final String vcsUrl;
+  /// The originating VCS type. Without this parameter, the import job will take additional time to detect the VCS type before beginning the import. This detection step will be reflected in the response.
+  final SdkOptional<MigrationsStartImportRequestBodyVcs> vcs;
+  /// If authentication is required, the username to provide to `vcs_url`.
+  final SdkOptional<String> vcsUsername;
+  /// If authentication is required, the password to provide to `vcs_url`.
+  final SdkOptional<String> vcsPassword;
+  /// For a tfvc import, the name of the project that is being imported.
+  final SdkOptional<String> tfvcProject;
 
-  const IssuesSetIssueFieldValuesRequestBody({this.issueFieldValues = const SdkOmitted()});
+  const MigrationsStartImportRequestBody({required this.vcsUrl, this.vcs = const SdkOmitted(), this.vcsUsername = const SdkOmitted(), this.vcsPassword = const SdkOmitted(), this.tfvcProject = const SdkOmitted()});
 
-  IssuesSetIssueFieldValuesRequestBody Function({SdkOptional<List<IssuesSetIssueFieldValuesRequestBodyIssueFieldValuesItem>> issueFieldValues}) get copyWith => _copyWith;
+  MigrationsStartImportRequestBody Function({String vcsUrl, SdkOptional<MigrationsStartImportRequestBodyVcs> vcs, SdkOptional<String> vcsUsername, SdkOptional<String> vcsPassword, SdkOptional<String> tfvcProject}) get copyWith => _copyWith;
 
-  IssuesSetIssueFieldValuesRequestBody _copyWith({Object? issueFieldValues = sdkOmittedValue}) => IssuesSetIssueFieldValuesRequestBody(
-    issueFieldValues: identical(issueFieldValues, sdkOmittedValue) ? this.issueFieldValues : issueFieldValues as SdkOptional<List<IssuesSetIssueFieldValuesRequestBodyIssueFieldValuesItem>>,
+  MigrationsStartImportRequestBody _copyWith({Object? vcsUrl = sdkOmittedValue, Object? vcs = sdkOmittedValue, Object? vcsUsername = sdkOmittedValue, Object? vcsPassword = sdkOmittedValue, Object? tfvcProject = sdkOmittedValue}) => MigrationsStartImportRequestBody(
+    vcsUrl: identical(vcsUrl, sdkOmittedValue) ? this.vcsUrl : vcsUrl as String,
+    vcs: identical(vcs, sdkOmittedValue) ? this.vcs : vcs as SdkOptional<MigrationsStartImportRequestBodyVcs>,
+    vcsUsername: identical(vcsUsername, sdkOmittedValue) ? this.vcsUsername : vcsUsername as SdkOptional<String>,
+    vcsPassword: identical(vcsPassword, sdkOmittedValue) ? this.vcsPassword : vcsPassword as SdkOptional<String>,
+    tfvcProject: identical(tfvcProject, sdkOmittedValue) ? this.tfvcProject : tfvcProject as SdkOptional<String>,
   );
 
-  factory IssuesSetIssueFieldValuesRequestBody.fromJson(Map<String, dynamic> json) => IssuesSetIssueFieldValuesRequestBody(
-    issueFieldValues: json['issue_field_values'] != null ? SdkPresent(((json['issue_field_values'] as List?)?.map((e) => IssuesSetIssueFieldValuesRequestBodyIssueFieldValuesItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  factory MigrationsStartImportRequestBody.fromJson(Map<String, dynamic> json) => MigrationsStartImportRequestBody(
+    vcsUrl: (json['vcs_url'] as String?)!,
+    vcs: json['vcs'] != null ? SdkPresent((json['vcs'] != null ? MigrationsStartImportRequestBodyVcs.fromJson(json['vcs'] as String) : null)!) : const SdkOmitted(),
+    vcsUsername: json['vcs_username'] != null ? SdkPresent((json['vcs_username'] as String?)!) : const SdkOmitted(),
+    vcsPassword: json['vcs_password'] != null ? SdkPresent((json['vcs_password'] as String?)!) : const SdkOmitted(),
+    tfvcProject: json['tfvc_project'] != null ? SdkPresent((json['tfvc_project'] as String?)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    ...switch (issueFieldValues) {
-      SdkPresent<List<IssuesSetIssueFieldValuesRequestBodyIssueFieldValuesItem>>(value: final value) => {'issue_field_values': value.map((item) => item.toJson()).toList(),},
+    'vcs_url': vcsUrl,
+    ...switch (vcs) {
+      SdkPresent<MigrationsStartImportRequestBodyVcs>(value: final value) => {'vcs': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (vcsUsername) {
+      SdkPresent<String>(value: final value) => {'vcs_username': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (vcsPassword) {
+      SdkPresent<String>(value: final value) => {'vcs_password': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (tfvcProject) {
+      SdkPresent<String>(value: final value) => {'tfvc_project': value,},
       _ => const <String, dynamic>{},
     },
   };

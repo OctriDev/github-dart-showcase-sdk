@@ -16,6 +16,3 @@ part 'security_advisories_part4.dart';
 part 'security_advisories_part5.dart';
 part 'security_advisories_part6.dart';
 part 'security_advisories_part7.dart';
-part 'security_advisories_part8.dart';
-part 'security_advisories_part9.dart';
-part 'security_advisories_part10.dart';

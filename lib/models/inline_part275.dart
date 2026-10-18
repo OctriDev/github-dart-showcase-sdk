@@ -4,283 +4,257 @@
 part of 'inline.dart';
 
 // Inline operation models (part 275)
-final class PackagesListPackagesForOrganizationPackageType {
+/// A GitHub user
+class AgentAutomationsListAutomationsResponseItemCreatedBy {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The unique identifier of the user
+  final SdkOptional<int> id;
 
-  final String value;
+  const AgentAutomationsListAutomationsResponseItemCreatedBy({this.id = const SdkOmitted()});
 
-  const PackagesListPackagesForOrganizationPackageType._(this.value);
+  AgentAutomationsListAutomationsResponseItemCreatedBy Function({SdkOptional<int> id}) get copyWith => _copyWith;
 
-  factory PackagesListPackagesForOrganizationPackageType.fromJson(String value) => PackagesListPackagesForOrganizationPackageType._(value);
+  AgentAutomationsListAutomationsResponseItemCreatedBy _copyWith({Object? id = sdkOmittedValue}) => AgentAutomationsListAutomationsResponseItemCreatedBy(
+    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+  );
 
-  static const npm = PackagesListPackagesForOrganizationPackageType._('npm');
-  static const maven = PackagesListPackagesForOrganizationPackageType._('maven');
-  static const rubygems = PackagesListPackagesForOrganizationPackageType._('rubygems');
-  static const docker = PackagesListPackagesForOrganizationPackageType._('docker');
-  static const nuget = PackagesListPackagesForOrganizationPackageType._('nuget');
-  static const container = PackagesListPackagesForOrganizationPackageType._('container');
+  factory AgentAutomationsListAutomationsResponseItemCreatedBy.fromJson(Map<String, dynamic> json) => AgentAutomationsListAutomationsResponseItemCreatedBy(
+    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
+  );
 
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is PackagesListPackagesForOrganizationPackageType && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
+  Map<String, dynamic> toJson() => {
+    ...switch (id) {
+      SdkPresent<int>(value: final value) => {'id': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
-final class PackagesGetAllPackageVersionsForPackageOwnedByOrgState {
+/// A summary representation of an automation including repository identity (used in cross-repository list responses).
+class AgentAutomationsListAutomationsResponseItem {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The unique identifier of the automation.
+  final String id;
+  /// Repository identity for an automation in cross-repository list responses.
+  final AgentAutomationsListAutomationsResponseItemRepository repository;
+  /// The name of the automation.
+  final String name;
+  /// Whether the automation is currently enabled.
+  final SdkOptional<bool> enabled;
+  /// Who owns the automation. `user` keeps it private to its creator and its runs act as that user. `repository` makes it belong to the repository, visible to anyone with read access to the repository, and its runs act as the Copilot app rather than as a person.
+  final SdkOptional<AgentAutomationsListAutomationsResponseItemOwnerType> ownerType;
+  /// Controls which repository resources a run may modify. `trigger` limits writes to the resource that started the run, when one exists, and resources created during the run; `repository` allows writes to any resource in the repository. Supported values: `trigger`, `repository`.
+  final SdkOptional<AgentAutomationsListAutomationsResponseItemWriteScope> writeScope;
+  /// When true, event-triggered runs require the event actor to have repo write permission, even when the org's allow_read_access_triggers policy is enabled. Does not apply to interval-scheduled runs, which always run as the automation owner.
+  final SdkOptional<bool> requireActorWritePermission;
+  /// The model to use for sessions triggered by this automation. Omit to use the platform default.
+  final SdkOptional<String> model;
+  /// The reasoning effort to use for sessions triggered by this automation. Omit or leave empty for no override. Currently supported values: `none`, `low`, `medium`, `high`, `xhigh`, `max`
+  final SdkOptional<String> reasoningEffort;
+  /// Public trigger configuration keyed by stable public trigger identifier. Each trigger has a closed, trigger-specific configuration schema.
+  final SdkOptional<AgentAutomationsListAutomationsResponseItemTriggers> triggers;
+  /// When the automation was created.
+  final String createdAt;
+  /// When the automation was last updated.
+  final String updatedAt;
+  /// A GitHub user
+  final AgentAutomationsListAutomationsResponseItemCreatedBy createdBy;
 
-  final String value;
+  const AgentAutomationsListAutomationsResponseItem({required this.id, required this.repository, required this.name, this.enabled = const SdkOmitted(), this.ownerType = const SdkOmitted(), this.writeScope = const SdkOmitted(), this.requireActorWritePermission = const SdkOmitted(), this.model = const SdkOmitted(), this.reasoningEffort = const SdkOmitted(), this.triggers = const SdkOmitted(), required this.createdAt, required this.updatedAt, required this.createdBy});
 
-  const PackagesGetAllPackageVersionsForPackageOwnedByOrgState._(this.value);
+  AgentAutomationsListAutomationsResponseItem Function({String id, AgentAutomationsListAutomationsResponseItemRepository repository, String name, SdkOptional<bool> enabled, SdkOptional<AgentAutomationsListAutomationsResponseItemOwnerType> ownerType, SdkOptional<AgentAutomationsListAutomationsResponseItemWriteScope> writeScope, SdkOptional<bool> requireActorWritePermission, SdkOptional<String> model, SdkOptional<String> reasoningEffort, SdkOptional<AgentAutomationsListAutomationsResponseItemTriggers> triggers, String createdAt, String updatedAt, AgentAutomationsListAutomationsResponseItemCreatedBy createdBy}) get copyWith => _copyWith;
 
-  factory PackagesGetAllPackageVersionsForPackageOwnedByOrgState.fromJson(String value) => PackagesGetAllPackageVersionsForPackageOwnedByOrgState._(value);
+  AgentAutomationsListAutomationsResponseItem _copyWith({Object? id = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? name = sdkOmittedValue, Object? enabled = sdkOmittedValue, Object? ownerType = sdkOmittedValue, Object? writeScope = sdkOmittedValue, Object? requireActorWritePermission = sdkOmittedValue, Object? model = sdkOmittedValue, Object? reasoningEffort = sdkOmittedValue, Object? triggers = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? createdBy = sdkOmittedValue}) => AgentAutomationsListAutomationsResponseItem(
+    id: identical(id, sdkOmittedValue) ? this.id : id as String,
+    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as AgentAutomationsListAutomationsResponseItemRepository,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as SdkOptional<bool>,
+    ownerType: identical(ownerType, sdkOmittedValue) ? this.ownerType : ownerType as SdkOptional<AgentAutomationsListAutomationsResponseItemOwnerType>,
+    writeScope: identical(writeScope, sdkOmittedValue) ? this.writeScope : writeScope as SdkOptional<AgentAutomationsListAutomationsResponseItemWriteScope>,
+    requireActorWritePermission: identical(requireActorWritePermission, sdkOmittedValue) ? this.requireActorWritePermission : requireActorWritePermission as SdkOptional<bool>,
+    model: identical(model, sdkOmittedValue) ? this.model : model as SdkOptional<String>,
+    reasoningEffort: identical(reasoningEffort, sdkOmittedValue) ? this.reasoningEffort : reasoningEffort as SdkOptional<String>,
+    triggers: identical(triggers, sdkOmittedValue) ? this.triggers : triggers as SdkOptional<AgentAutomationsListAutomationsResponseItemTriggers>,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
+    createdBy: identical(createdBy, sdkOmittedValue) ? this.createdBy : createdBy as AgentAutomationsListAutomationsResponseItemCreatedBy,
+  );
 
-  static const active = PackagesGetAllPackageVersionsForPackageOwnedByOrgState._('active');
-  static const deleted = PackagesGetAllPackageVersionsForPackageOwnedByOrgState._('deleted');
+  factory AgentAutomationsListAutomationsResponseItem.fromJson(Map<String, dynamic> json) => AgentAutomationsListAutomationsResponseItem(
+    id: (json['id'] as String?)!,
+    repository: (json['repository'] != null ? AgentAutomationsListAutomationsResponseItemRepository.fromJson(json['repository'] as Map<String, dynamic>) : null)!,
+    name: (json['name'] as String?)!,
+    enabled: json['enabled'] != null ? SdkPresent((json['enabled'] as bool?)!) : const SdkOmitted(),
+    ownerType: json['owner_type'] != null ? SdkPresent((json['owner_type'] != null ? AgentAutomationsListAutomationsResponseItemOwnerType.fromJson(json['owner_type'] as String) : null)!) : const SdkOmitted(),
+    writeScope: json['write_scope'] != null ? SdkPresent((json['write_scope'] != null ? AgentAutomationsListAutomationsResponseItemWriteScope.fromJson(json['write_scope'] as String) : null)!) : const SdkOmitted(),
+    requireActorWritePermission: json['require_actor_write_permission'] != null ? SdkPresent((json['require_actor_write_permission'] as bool?)!) : const SdkOmitted(),
+    model: json['model'] != null ? SdkPresent((json['model'] as String?)!) : const SdkOmitted(),
+    reasoningEffort: json['reasoning_effort'] != null ? SdkPresent((json['reasoning_effort'] as String?)!) : const SdkOmitted(),
+    triggers: json['triggers'] != null ? SdkPresent((json['triggers'] != null ? AgentAutomationsListAutomationsResponseItemTriggers.fromJson(json['triggers'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    createdAt: (json['created_at'] as String?)!,
+    updatedAt: (json['updated_at'] as String?)!,
+    createdBy: (json['created_by'] != null ? AgentAutomationsListAutomationsResponseItemCreatedBy.fromJson(json['created_by'] as Map<String, dynamic>) : null)!,
+  );
 
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is PackagesGetAllPackageVersionsForPackageOwnedByOrgState && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
+  Map<String, dynamic> toJson() => {
+    'id': id,
+    'repository': repository.toJson(),
+    'name': name,
+    ...switch (enabled) {
+      SdkPresent<bool>(value: final value) => {'enabled': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (ownerType) {
+      SdkPresent<AgentAutomationsListAutomationsResponseItemOwnerType>(value: final value) => {'owner_type': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (writeScope) {
+      SdkPresent<AgentAutomationsListAutomationsResponseItemWriteScope>(value: final value) => {'write_scope': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (requireActorWritePermission) {
+      SdkPresent<bool>(value: final value) => {'require_actor_write_permission': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (model) {
+      SdkPresent<String>(value: final value) => {'model': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (reasoningEffort) {
+      SdkPresent<String>(value: final value) => {'reasoning_effort': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (triggers) {
+      SdkPresent<AgentAutomationsListAutomationsResponseItemTriggers>(value: final value) => {'triggers': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'created_at': createdAt,
+    'updated_at': updatedAt,
+    'created_by': createdBy.toJson(),
+  };
 }
 
-/// Action to apply to the requests.
-final class OrgsReviewPatGrantRequestsInBulkRequestBodyAction {
+/// A tool that can be selected in an Automation.
+class AgentAutomationsListAvailableAutomationToolsResponseItemToolsItem {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The exact tool identifier accepted by Automation create and edit requests. The catalog is authoritative and open-ended; clients must accept identifiers they have not seen before.
+  final String id;
+  /// The human-readable tool title.
+  final String title;
+  /// A short description of what the tool does.
+  final String description;
+  /// The tool's behavior level. `read` tools only retrieve data. `write` tools can change data. This describes tool behavior, not a specific GitHub token permission.
+  final SdkOptional<AgentAutomationsListAvailableAutomationToolsResponseItemToolsItemScope> scope;
 
-  final String value;
+  const AgentAutomationsListAvailableAutomationToolsResponseItemToolsItem({required this.id, required this.title, required this.description, this.scope = const SdkOmitted()});
 
-  const OrgsReviewPatGrantRequestsInBulkRequestBodyAction._(this.value);
+  AgentAutomationsListAvailableAutomationToolsResponseItemToolsItem Function({String id, String title, String description, SdkOptional<AgentAutomationsListAvailableAutomationToolsResponseItemToolsItemScope> scope}) get copyWith => _copyWith;
 
-  factory OrgsReviewPatGrantRequestsInBulkRequestBodyAction.fromJson(String value) => OrgsReviewPatGrantRequestsInBulkRequestBodyAction._(value);
+  AgentAutomationsListAvailableAutomationToolsResponseItemToolsItem _copyWith({Object? id = sdkOmittedValue, Object? title = sdkOmittedValue, Object? description = sdkOmittedValue, Object? scope = sdkOmittedValue}) => AgentAutomationsListAvailableAutomationToolsResponseItemToolsItem(
+    id: identical(id, sdkOmittedValue) ? this.id : id as String,
+    title: identical(title, sdkOmittedValue) ? this.title : title as String,
+    description: identical(description, sdkOmittedValue) ? this.description : description as String,
+    scope: identical(scope, sdkOmittedValue) ? this.scope : scope as SdkOptional<AgentAutomationsListAvailableAutomationToolsResponseItemToolsItemScope>,
+  );
 
-  static const approve = OrgsReviewPatGrantRequestsInBulkRequestBodyAction._('approve');
-  static const deny = OrgsReviewPatGrantRequestsInBulkRequestBodyAction._('deny');
+  factory AgentAutomationsListAvailableAutomationToolsResponseItemToolsItem.fromJson(Map<String, dynamic> json) => AgentAutomationsListAvailableAutomationToolsResponseItemToolsItem(
+    id: (json['id'] as String?)!,
+    title: (json['title'] as String?)!,
+    description: (json['description'] as String?)!,
+    scope: json['scope'] != null ? SdkPresent((json['scope'] != null ? AgentAutomationsListAvailableAutomationToolsResponseItemToolsItemScope.fromJson(json['scope'] as String) : null)!) : const SdkOmitted(),
+  );
 
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is OrgsReviewPatGrantRequestsInBulkRequestBodyAction && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
+  Map<String, dynamic> toJson() => {
+    'id': id,
+    'title': title,
+    'description': description,
+    ...switch (scope) {
+      SdkPresent<AgentAutomationsListAvailableAutomationToolsResponseItemToolsItemScope>(value: final value) => {'scope': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
-/// Action to apply to the request.
-final class OrgsReviewPatGrantRequestRequestBodyAction {
+/// A CMC-controlled presentation category for Automation tools. Clients must not depend on group identifiers, membership, or ordering remaining stable.
+class AgentAutomationsListAvailableAutomationToolsResponseItem {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// A presentation-category identifier controlled by CMC.
+  final String id;
+  /// The human-readable group title.
+  final String title;
+  /// The tools currently presented in this group.
+  final List<AgentAutomationsListAvailableAutomationToolsResponseItemToolsItem> tools;
 
-  final String value;
+  const AgentAutomationsListAvailableAutomationToolsResponseItem({required this.id, required this.title, required this.tools});
 
-  const OrgsReviewPatGrantRequestRequestBodyAction._(this.value);
+  AgentAutomationsListAvailableAutomationToolsResponseItem Function({String id, String title, List<AgentAutomationsListAvailableAutomationToolsResponseItemToolsItem> tools}) get copyWith => _copyWith;
 
-  factory OrgsReviewPatGrantRequestRequestBodyAction.fromJson(String value) => OrgsReviewPatGrantRequestRequestBodyAction._(value);
+  AgentAutomationsListAvailableAutomationToolsResponseItem _copyWith({Object? id = sdkOmittedValue, Object? title = sdkOmittedValue, Object? tools = sdkOmittedValue}) => AgentAutomationsListAvailableAutomationToolsResponseItem(
+    id: identical(id, sdkOmittedValue) ? this.id : id as String,
+    title: identical(title, sdkOmittedValue) ? this.title : title as String,
+    tools: identical(tools, sdkOmittedValue) ? this.tools : tools as List<AgentAutomationsListAvailableAutomationToolsResponseItemToolsItem>,
+  );
 
-  static const approve = OrgsReviewPatGrantRequestRequestBodyAction._('approve');
-  static const deny = OrgsReviewPatGrantRequestRequestBodyAction._('deny');
+  factory AgentAutomationsListAvailableAutomationToolsResponseItem.fromJson(Map<String, dynamic> json) => AgentAutomationsListAvailableAutomationToolsResponseItem(
+    id: (json['id'] as String?)!,
+    title: (json['title'] as String?)!,
+    tools: ((json['tools'] as List?)?.map((e) => AgentAutomationsListAvailableAutomationToolsResponseItemToolsItem.fromJson(e as Map<String, dynamic>)).toList())!,
+  );
 
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is OrgsReviewPatGrantRequestRequestBodyAction && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
+  Map<String, dynamic> toJson() => {
+    'id': id,
+    'title': title,
+    'tools': tools.map((item) => item.toJson()).toList(),
+  };
 }
 
-/// Action to apply to the fine-grained personal access token.
-final class OrgsUpdatePatAccessesRequestBodyAction {
-
-  final String value;
-
-  const OrgsUpdatePatAccessesRequestBodyAction._(this.value);
-
-  factory OrgsUpdatePatAccessesRequestBodyAction.fromJson(String value) => OrgsUpdatePatAccessesRequestBodyAction._(value);
-
-  static const revoke = OrgsUpdatePatAccessesRequestBodyAction._('revoke');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is OrgsUpdatePatAccessesRequestBodyAction && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// Action to apply to the fine-grained personal access token.
-final class OrgsUpdatePatAccessRequestBodyAction {
-
-  final String value;
-
-  const OrgsUpdatePatAccessRequestBodyAction._(this.value);
-
-  factory OrgsUpdatePatAccessRequestBodyAction.fromJson(String value) => OrgsUpdatePatAccessRequestBodyAction._(value);
-
-  static const revoke = OrgsUpdatePatAccessRequestBodyAction._('revoke');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is OrgsUpdatePatAccessRequestBodyAction && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The authentication type for the private registry. Defaults to `token` if not specified. Use `oidc_azure`, `oidc_aws`, `oidc_jfrog`, `oidc_cloudsmith`, or `oidc_gcp` for OIDC authentication. Use `anonymous` for registries that do not require authentication; `username`, `encrypted_value`, and `key_id` must be omitted.
-final class PrivateRegistriesCreateOrgPrivateRegistryRequestBodyAuthType {
-
-  final String value;
-
-  const PrivateRegistriesCreateOrgPrivateRegistryRequestBodyAuthType._(this.value);
-
-  factory PrivateRegistriesCreateOrgPrivateRegistryRequestBodyAuthType.fromJson(String value) => PrivateRegistriesCreateOrgPrivateRegistryRequestBodyAuthType._(value);
-
-  static const token = PrivateRegistriesCreateOrgPrivateRegistryRequestBodyAuthType._('token');
-  static const usernamePassword = PrivateRegistriesCreateOrgPrivateRegistryRequestBodyAuthType._('username_password');
-  static const oidcAzure = PrivateRegistriesCreateOrgPrivateRegistryRequestBodyAuthType._('oidc_azure');
-  static const oidcAws = PrivateRegistriesCreateOrgPrivateRegistryRequestBodyAuthType._('oidc_aws');
-  static const oidcJfrog = PrivateRegistriesCreateOrgPrivateRegistryRequestBodyAuthType._('oidc_jfrog');
-  static const oidcCloudsmith = PrivateRegistriesCreateOrgPrivateRegistryRequestBodyAuthType._('oidc_cloudsmith');
-  static const oidcGcp = PrivateRegistriesCreateOrgPrivateRegistryRequestBodyAuthType._('oidc_gcp');
-  static const anonymous = PrivateRegistriesCreateOrgPrivateRegistryRequestBodyAuthType._('anonymous');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is PrivateRegistriesCreateOrgPrivateRegistryRequestBodyAuthType && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The registry type.
-final class PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType {
-
-  final String value;
-
-  const PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType._(this.value);
-
-  factory PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType.fromJson(String value) => PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType._(value);
-
-  static const mavenRepository = PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType._('maven_repository');
-  static const nugetFeed = PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType._('nuget_feed');
-  static const goproxyServer = PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType._('goproxy_server');
-  static const npmRegistry = PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType._('npm_registry');
-  static const rubygemsServer = PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType._('rubygems_server');
-  static const cargoRegistry = PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType._('cargo_registry');
-  static const composerRepository = PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType._('composer_repository');
-  static const dockerRegistry = PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType._('docker_registry');
-  static const gitSource = PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType._('git_source');
-  static const helmRegistry = PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType._('helm_registry');
-  static const hexOrganization = PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType._('hex_organization');
-  static const hexRepository = PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType._('hex_repository');
-  static const pubRepository = PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType._('pub_repository');
-  static const pythonIndex = PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType._('python_index');
-  static const terraformRegistry = PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType._('terraform_registry');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// Which type of organization repositories have access to the private registry. `selected` means only the repositories specified by `selected_repository_ids` can access the private registry.
-final class PrivateRegistriesCreateOrgPrivateRegistryRequestBodyVisibility {
-
-  final String value;
-
-  const PrivateRegistriesCreateOrgPrivateRegistryRequestBodyVisibility._(this.value);
-
-  factory PrivateRegistriesCreateOrgPrivateRegistryRequestBodyVisibility.fromJson(String value) => PrivateRegistriesCreateOrgPrivateRegistryRequestBodyVisibility._(value);
-
-  static const all = PrivateRegistriesCreateOrgPrivateRegistryRequestBodyVisibility._('all');
-  static const private = PrivateRegistriesCreateOrgPrivateRegistryRequestBodyVisibility._('private');
-  static const selected = PrivateRegistriesCreateOrgPrivateRegistryRequestBodyVisibility._('selected');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is PrivateRegistriesCreateOrgPrivateRegistryRequestBodyVisibility && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The authentication type for the private registry. This field cannot be changed after creation. If provided, it must match the existing `auth_type` of the configuration. To change the authentication type, delete and recreate the configuration.
-final class PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyAuthType {
-
-  final String value;
-
-  const PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyAuthType._(this.value);
-
-  factory PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyAuthType.fromJson(String value) => PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyAuthType._(value);
-
-  static const token = PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyAuthType._('token');
-  static const usernamePassword = PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyAuthType._('username_password');
-  static const oidcAzure = PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyAuthType._('oidc_azure');
-  static const oidcAws = PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyAuthType._('oidc_aws');
-  static const oidcJfrog = PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyAuthType._('oidc_jfrog');
-  static const oidcCloudsmith = PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyAuthType._('oidc_cloudsmith');
-  static const oidcGcp = PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyAuthType._('oidc_gcp');
-  static const anonymous = PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyAuthType._('anonymous');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyAuthType && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The registry type.
-final class PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType {
-
-  final String value;
-
-  const PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType._(this.value);
-
-  factory PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType.fromJson(String value) => PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType._(value);
-
-  static const mavenRepository = PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType._('maven_repository');
-  static const nugetFeed = PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType._('nuget_feed');
-  static const goproxyServer = PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType._('goproxy_server');
-  static const npmRegistry = PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType._('npm_registry');
-  static const rubygemsServer = PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType._('rubygems_server');
-  static const cargoRegistry = PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType._('cargo_registry');
-  static const composerRepository = PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType._('composer_repository');
-  static const dockerRegistry = PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType._('docker_registry');
-  static const gitSource = PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType._('git_source');
-  static const helmRegistry = PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType._('helm_registry');
-  static const hexOrganization = PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType._('hex_organization');
-  static const hexRepository = PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType._('hex_repository');
-  static const pubRepository = PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType._('pub_repository');
-  static const pythonIndex = PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType._('python_index');
-  static const terraformRegistry = PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType._('terraform_registry');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
+/// A configurable field in a public Automation trigger definition.
+class AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItem {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The stable field identifier used in configured triggers.
+  final String id;
+  /// The human-readable field label.
+  final String label;
+  /// Whether the field must be provided.
+  final bool required_;
+  /// Markdown guidance for configuring the field.
+  final SdkOptional<String> description;
+  /// A restricted JSON Schema fragment describing the field value accepted by Automation create and update requests.
+  final AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchema schema;
+
+  const AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItem({required this.id, required this.label, required this.required_, this.description = const SdkOmitted(), required this.schema});
+
+  AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItem Function({String id, String label, bool required_, SdkOptional<String> description, AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchema schema}) get copyWith => _copyWith;
+
+  AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItem _copyWith({Object? id = sdkOmittedValue, Object? label = sdkOmittedValue, Object? required_ = sdkOmittedValue, Object? description = sdkOmittedValue, Object? schema = sdkOmittedValue}) => AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItem(
+    id: identical(id, sdkOmittedValue) ? this.id : id as String,
+    label: identical(label, sdkOmittedValue) ? this.label : label as String,
+    required_: identical(required_, sdkOmittedValue) ? this.required_ : required_ as bool,
+    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String>,
+    schema: identical(schema, sdkOmittedValue) ? this.schema : schema as AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchema,
+  );
+
+  factory AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItem.fromJson(Map<String, dynamic> json) => AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItem(
+    id: (json['id'] as String?)!,
+    label: (json['label'] as String?)!,
+    required_: (json['required'] as bool?)!,
+    description: json['description'] != null ? SdkPresent((json['description'] as String?)!) : const SdkOmitted(),
+    schema: (json['schema'] != null ? AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchema.fromJson(json['schema']) : null)!,
+  );
+
+  Map<String, dynamic> toJson() => {
+    'id': id,
+    'label': label,
+    'required': required_,
+    ...switch (description) {
+      SdkPresent<String>(value: final value) => {'description': value,},
+      _ => const <String, dynamic>{},
+    },
+    'schema': schema.toJson(),
+  };
 }

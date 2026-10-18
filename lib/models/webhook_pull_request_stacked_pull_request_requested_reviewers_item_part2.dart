@@ -173,6 +173,10 @@ sealed class WebhookPullRequestStackedPullRequestRequestedReviewersItem {
   static const String constructionSurface = 'named';
   const WebhookPullRequestStackedPullRequestRequestedReviewersItem();
   factory WebhookPullRequestStackedPullRequestRequestedReviewersItem.fromJson(Object? json) {
+    if (json is Map<String, dynamic>) {
+      try { final value = WebhookPullRequestStackedPullRequestRequestedReviewersItemVariant0.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return WebhookPullRequestStackedPullRequestRequestedReviewersItemWebhookPullRequestStackedPullRequestRequestedReviewersItemVariant0(value); } } catch (_) {}
+      try { final value = WebhookPullRequestStackedPullRequestRequestedReviewersItemVariant1.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return WebhookPullRequestStackedPullRequestRequestedReviewersItemWebhookPullRequestStackedPullRequestRequestedReviewersItemVariant1(value); } } catch (_) {}
+    }
     try { return WebhookPullRequestStackedPullRequestRequestedReviewersItemWebhookPullRequestStackedPullRequestRequestedReviewersItemVariant0(WebhookPullRequestStackedPullRequestRequestedReviewersItemVariant0.fromJson(json as Map<String, dynamic>)); } catch (_) {}
     try { return WebhookPullRequestStackedPullRequestRequestedReviewersItemWebhookPullRequestStackedPullRequestRequestedReviewersItemVariant1(WebhookPullRequestStackedPullRequestRequestedReviewersItemVariant1.fromJson(json as Map<String, dynamic>)); } catch (_) {}
     throw FormatException("No variant matched for WebhookPullRequestStackedPullRequestRequestedReviewersItem");

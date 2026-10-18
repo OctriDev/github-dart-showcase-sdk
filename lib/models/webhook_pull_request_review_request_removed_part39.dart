@@ -4,168 +4,41 @@
 part of 'webhook_pull_request_review_request_removed.dart';
 
 // webhook_pull_request_review_request_removed domain models (part 39)
-class WebhookPullRequestReviewRequestRemovedVariant1PullRequestMilestoneCreator {
+class WebhookPullRequestReviewRequestRemovedVariant1PullRequestHead {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final SdkOptional<String> avatarUrl;
-  final SdkOptional<bool> deleted;
-  final SdkOptional<String?> email;
-  final SdkOptional<String> eventsUrl;
-  final SdkOptional<String> followersUrl;
-  final SdkOptional<String> followingUrl;
-  final SdkOptional<String> gistsUrl;
-  final SdkOptional<String> gravatarId;
-  final SdkOptional<String> htmlUrl;
-  final int id;
-  final String login;
-  final SdkOptional<String> name;
-  final SdkOptional<String> nodeId;
-  final SdkOptional<String> organizationsUrl;
-  final SdkOptional<String> receivedEventsUrl;
-  final SdkOptional<String> reposUrl;
-  final SdkOptional<bool> siteAdmin;
-  final SdkOptional<String> starredUrl;
-  final SdkOptional<String> subscriptionsUrl;
-  final SdkOptional<WebhookPullRequestReviewRequestRemovedVariant1PullRequestMilestoneCreatorType> type_;
-  final SdkOptional<String> url;
-  final SdkOptional<String> userViewType;
+  final String label;
+  final String ref;
+  /// A git repository
+  final WebhookPullRequestReviewRequestRemovedVariant1PullRequestHeadRepo repo;
+  final String sha;
+  final WebhookPullRequestReviewRequestRemovedVariant1PullRequestHeadUser? user;
 
-  const WebhookPullRequestReviewRequestRemovedVariant1PullRequestMilestoneCreator({this.avatarUrl = const SdkOmitted(), this.deleted = const SdkOmitted(), this.email = const SdkOmitted(), this.eventsUrl = const SdkOmitted(), this.followersUrl = const SdkOmitted(), this.followingUrl = const SdkOmitted(), this.gistsUrl = const SdkOmitted(), this.gravatarId = const SdkOmitted(), this.htmlUrl = const SdkOmitted(), required this.id, required this.login, this.name = const SdkOmitted(), this.nodeId = const SdkOmitted(), this.organizationsUrl = const SdkOmitted(), this.receivedEventsUrl = const SdkOmitted(), this.reposUrl = const SdkOmitted(), this.siteAdmin = const SdkOmitted(), this.starredUrl = const SdkOmitted(), this.subscriptionsUrl = const SdkOmitted(), this.type_ = const SdkOmitted(), this.url = const SdkOmitted(), this.userViewType = const SdkOmitted()});
+  const WebhookPullRequestReviewRequestRemovedVariant1PullRequestHead({required this.label, required this.ref, required this.repo, required this.sha, required this.user});
 
-  WebhookPullRequestReviewRequestRemovedVariant1PullRequestMilestoneCreator Function({SdkOptional<String> avatarUrl, SdkOptional<bool> deleted, SdkOptional<String?> email, SdkOptional<String> eventsUrl, SdkOptional<String> followersUrl, SdkOptional<String> followingUrl, SdkOptional<String> gistsUrl, SdkOptional<String> gravatarId, SdkOptional<String> htmlUrl, int id, String login, SdkOptional<String> name, SdkOptional<String> nodeId, SdkOptional<String> organizationsUrl, SdkOptional<String> receivedEventsUrl, SdkOptional<String> reposUrl, SdkOptional<bool> siteAdmin, SdkOptional<String> starredUrl, SdkOptional<String> subscriptionsUrl, SdkOptional<WebhookPullRequestReviewRequestRemovedVariant1PullRequestMilestoneCreatorType> type_, SdkOptional<String> url, SdkOptional<String> userViewType}) get copyWith => _copyWith;
+  WebhookPullRequestReviewRequestRemovedVariant1PullRequestHead Function({String label, String ref, WebhookPullRequestReviewRequestRemovedVariant1PullRequestHeadRepo repo, String sha, WebhookPullRequestReviewRequestRemovedVariant1PullRequestHeadUser? user}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewRequestRemovedVariant1PullRequestMilestoneCreator _copyWith({Object? avatarUrl = sdkOmittedValue, Object? deleted = sdkOmittedValue, Object? email = sdkOmittedValue, Object? eventsUrl = sdkOmittedValue, Object? followersUrl = sdkOmittedValue, Object? followingUrl = sdkOmittedValue, Object? gistsUrl = sdkOmittedValue, Object? gravatarId = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? id = sdkOmittedValue, Object? login = sdkOmittedValue, Object? name = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? organizationsUrl = sdkOmittedValue, Object? receivedEventsUrl = sdkOmittedValue, Object? reposUrl = sdkOmittedValue, Object? siteAdmin = sdkOmittedValue, Object? starredUrl = sdkOmittedValue, Object? subscriptionsUrl = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue, Object? userViewType = sdkOmittedValue}) => WebhookPullRequestReviewRequestRemovedVariant1PullRequestMilestoneCreator(
-    avatarUrl: identical(avatarUrl, sdkOmittedValue) ? this.avatarUrl : avatarUrl as SdkOptional<String>,
-    deleted: identical(deleted, sdkOmittedValue) ? this.deleted : deleted as SdkOptional<bool>,
-    email: identical(email, sdkOmittedValue) ? this.email : email as SdkOptional<String?>,
-    eventsUrl: identical(eventsUrl, sdkOmittedValue) ? this.eventsUrl : eventsUrl as SdkOptional<String>,
-    followersUrl: identical(followersUrl, sdkOmittedValue) ? this.followersUrl : followersUrl as SdkOptional<String>,
-    followingUrl: identical(followingUrl, sdkOmittedValue) ? this.followingUrl : followingUrl as SdkOptional<String>,
-    gistsUrl: identical(gistsUrl, sdkOmittedValue) ? this.gistsUrl : gistsUrl as SdkOptional<String>,
-    gravatarId: identical(gravatarId, sdkOmittedValue) ? this.gravatarId : gravatarId as SdkOptional<String>,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String>,
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    login: identical(login, sdkOmittedValue) ? this.login : login as String,
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as SdkOptional<String>,
-    organizationsUrl: identical(organizationsUrl, sdkOmittedValue) ? this.organizationsUrl : organizationsUrl as SdkOptional<String>,
-    receivedEventsUrl: identical(receivedEventsUrl, sdkOmittedValue) ? this.receivedEventsUrl : receivedEventsUrl as SdkOptional<String>,
-    reposUrl: identical(reposUrl, sdkOmittedValue) ? this.reposUrl : reposUrl as SdkOptional<String>,
-    siteAdmin: identical(siteAdmin, sdkOmittedValue) ? this.siteAdmin : siteAdmin as SdkOptional<bool>,
-    starredUrl: identical(starredUrl, sdkOmittedValue) ? this.starredUrl : starredUrl as SdkOptional<String>,
-    subscriptionsUrl: identical(subscriptionsUrl, sdkOmittedValue) ? this.subscriptionsUrl : subscriptionsUrl as SdkOptional<String>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<WebhookPullRequestReviewRequestRemovedVariant1PullRequestMilestoneCreatorType>,
-    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
-    userViewType: identical(userViewType, sdkOmittedValue) ? this.userViewType : userViewType as SdkOptional<String>,
+  WebhookPullRequestReviewRequestRemovedVariant1PullRequestHead _copyWith({Object? label = sdkOmittedValue, Object? ref = sdkOmittedValue, Object? repo = sdkOmittedValue, Object? sha = sdkOmittedValue, Object? user = sdkOmittedValue}) => WebhookPullRequestReviewRequestRemovedVariant1PullRequestHead(
+    label: identical(label, sdkOmittedValue) ? this.label : label as String,
+    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+    repo: identical(repo, sdkOmittedValue) ? this.repo : repo as WebhookPullRequestReviewRequestRemovedVariant1PullRequestHeadRepo,
+    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+    user: identical(user, sdkOmittedValue) ? this.user : user as WebhookPullRequestReviewRequestRemovedVariant1PullRequestHeadUser?,
   );
 
-  factory WebhookPullRequestReviewRequestRemovedVariant1PullRequestMilestoneCreator.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewRequestRemovedVariant1PullRequestMilestoneCreator(
-    avatarUrl: json['avatar_url'] != null ? SdkPresent((json['avatar_url'] as String?)!) : const SdkOmitted(),
-    deleted: json['deleted'] != null ? SdkPresent((json['deleted'] as bool?)!) : const SdkOmitted(),
-    email: json.containsKey('email') ? SdkPresent(json['email'] as String?) : const SdkOmitted(),
-    eventsUrl: json['events_url'] != null ? SdkPresent((json['events_url'] as String?)!) : const SdkOmitted(),
-    followersUrl: json['followers_url'] != null ? SdkPresent((json['followers_url'] as String?)!) : const SdkOmitted(),
-    followingUrl: json['following_url'] != null ? SdkPresent((json['following_url'] as String?)!) : const SdkOmitted(),
-    gistsUrl: json['gists_url'] != null ? SdkPresent((json['gists_url'] as String?)!) : const SdkOmitted(),
-    gravatarId: json['gravatar_id'] != null ? SdkPresent((json['gravatar_id'] as String?)!) : const SdkOmitted(),
-    htmlUrl: json['html_url'] != null ? SdkPresent((json['html_url'] as String?)!) : const SdkOmitted(),
-    id: ((json['id'] as num?)?.toInt())!,
-    login: (json['login'] as String?)!,
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    nodeId: json['node_id'] != null ? SdkPresent((json['node_id'] as String?)!) : const SdkOmitted(),
-    organizationsUrl: json['organizations_url'] != null ? SdkPresent((json['organizations_url'] as String?)!) : const SdkOmitted(),
-    receivedEventsUrl: json['received_events_url'] != null ? SdkPresent((json['received_events_url'] as String?)!) : const SdkOmitted(),
-    reposUrl: json['repos_url'] != null ? SdkPresent((json['repos_url'] as String?)!) : const SdkOmitted(),
-    siteAdmin: json['site_admin'] != null ? SdkPresent((json['site_admin'] as bool?)!) : const SdkOmitted(),
-    starredUrl: json['starred_url'] != null ? SdkPresent((json['starred_url'] as String?)!) : const SdkOmitted(),
-    subscriptionsUrl: json['subscriptions_url'] != null ? SdkPresent((json['subscriptions_url'] as String?)!) : const SdkOmitted(),
-    type_: json['type'] != null ? SdkPresent((json['type'] != null ? WebhookPullRequestReviewRequestRemovedVariant1PullRequestMilestoneCreatorType.fromJson(json['type'] as String) : null)!) : const SdkOmitted(),
-    url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
-    userViewType: json['user_view_type'] != null ? SdkPresent((json['user_view_type'] as String?)!) : const SdkOmitted(),
+  factory WebhookPullRequestReviewRequestRemovedVariant1PullRequestHead.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewRequestRemovedVariant1PullRequestHead(
+    label: (json['label'] as String?)!,
+    ref: (json['ref'] as String?)!,
+    repo: (json['repo'] != null ? WebhookPullRequestReviewRequestRemovedVariant1PullRequestHeadRepo.fromJson(json['repo'] as Map<String, dynamic>) : null)!,
+    sha: (json['sha'] as String?)!,
+    user: json.containsKey('user') ? json['user'] != null ? WebhookPullRequestReviewRequestRemovedVariant1PullRequestHeadUser.fromJson(json['user'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'user', 'Required property is missing'),
   );
 
   Map<String, dynamic> toJson() => {
-    ...switch (avatarUrl) {
-      SdkPresent<String>(value: final value) => {'avatar_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (deleted) {
-      SdkPresent<bool>(value: final value) => {'deleted': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (email) {
-      SdkPresent<String?>(value: final value) => {'email': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (eventsUrl) {
-      SdkPresent<String>(value: final value) => {'events_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (followersUrl) {
-      SdkPresent<String>(value: final value) => {'followers_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (followingUrl) {
-      SdkPresent<String>(value: final value) => {'following_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (gistsUrl) {
-      SdkPresent<String>(value: final value) => {'gists_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (gravatarId) {
-      SdkPresent<String>(value: final value) => {'gravatar_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (htmlUrl) {
-      SdkPresent<String>(value: final value) => {'html_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    'id': id,
-    'login': login,
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (nodeId) {
-      SdkPresent<String>(value: final value) => {'node_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (organizationsUrl) {
-      SdkPresent<String>(value: final value) => {'organizations_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (receivedEventsUrl) {
-      SdkPresent<String>(value: final value) => {'received_events_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (reposUrl) {
-      SdkPresent<String>(value: final value) => {'repos_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (siteAdmin) {
-      SdkPresent<bool>(value: final value) => {'site_admin': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (starredUrl) {
-      SdkPresent<String>(value: final value) => {'starred_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (subscriptionsUrl) {
-      SdkPresent<String>(value: final value) => {'subscriptions_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (type_) {
-      SdkPresent<WebhookPullRequestReviewRequestRemovedVariant1PullRequestMilestoneCreatorType>(value: final value) => {'type': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (url) {
-      SdkPresent<String>(value: final value) => {'url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (userViewType) {
-      SdkPresent<String>(value: final value) => {'user_view_type': value,},
-      _ => const <String, dynamic>{},
-    },
+    'label': label,
+    'ref': ref,
+    'repo': repo.toJson(),
+    'sha': sha,
+    'user': user?.toJson(),
   };
 }

@@ -188,38 +188,3 @@ class PushEvent {
     'before': before,
   };
 }
-
-/// Required object value serialized in the `release` wire field.
-class ReleaseEventReleaseVariant1 {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// Optional `boolean` value serialized in the `is_short_description_html_truncated` wire field.
-  final SdkOptional<bool> isShortDescriptionHtmlTruncated;
-  /// Optional `string` value serialized in the `short_description_html` wire field.
-  final SdkOptional<String> shortDescriptionHtml;
-
-  const ReleaseEventReleaseVariant1({this.isShortDescriptionHtmlTruncated = const SdkOmitted(), this.shortDescriptionHtml = const SdkOmitted()});
-
-  ReleaseEventReleaseVariant1 Function({SdkOptional<bool> isShortDescriptionHtmlTruncated, SdkOptional<String> shortDescriptionHtml}) get copyWith => _copyWith;
-
-  ReleaseEventReleaseVariant1 _copyWith({Object? isShortDescriptionHtmlTruncated = sdkOmittedValue, Object? shortDescriptionHtml = sdkOmittedValue}) => ReleaseEventReleaseVariant1(
-    isShortDescriptionHtmlTruncated: identical(isShortDescriptionHtmlTruncated, sdkOmittedValue) ? this.isShortDescriptionHtmlTruncated : isShortDescriptionHtmlTruncated as SdkOptional<bool>,
-    shortDescriptionHtml: identical(shortDescriptionHtml, sdkOmittedValue) ? this.shortDescriptionHtml : shortDescriptionHtml as SdkOptional<String>,
-  );
-
-  factory ReleaseEventReleaseVariant1.fromJson(Map<String, dynamic> json) => ReleaseEventReleaseVariant1(
-    isShortDescriptionHtmlTruncated: json['is_short_description_html_truncated'] != null ? SdkPresent((json['is_short_description_html_truncated'] as bool?)!) : const SdkOmitted(),
-    shortDescriptionHtml: json['short_description_html'] != null ? SdkPresent((json['short_description_html'] as String?)!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    ...switch (isShortDescriptionHtmlTruncated) {
-      SdkPresent<bool>(value: final value) => {'is_short_description_html_truncated': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (shortDescriptionHtml) {
-      SdkPresent<String>(value: final value) => {'short_description_html': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
-}

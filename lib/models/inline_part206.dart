@@ -4,273 +4,275 @@
 part of 'inline.dart';
 
 // Inline operation models (part 206)
-/// The default value for a squash merge commit title: - `PR_TITLE` - default to the pull request's title. - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
-final class WebhookPullRequestUnlabeledPullRequestBaseRepoSquashMergeCommitTitle {
+/// Required enumerated value serialized in the `allow_force_pushes_enforcement_level` wire field.
+final class WebhooksRuleAllowForcePushesEnforcementLevel {
 
   final String value;
 
-  const WebhookPullRequestUnlabeledPullRequestBaseRepoSquashMergeCommitTitle._(this.value);
+  const WebhooksRuleAllowForcePushesEnforcementLevel._(this.value);
 
-  factory WebhookPullRequestUnlabeledPullRequestBaseRepoSquashMergeCommitTitle.fromJson(String value) => WebhookPullRequestUnlabeledPullRequestBaseRepoSquashMergeCommitTitle._(value);
+  factory WebhooksRuleAllowForcePushesEnforcementLevel.fromJson(String value) => WebhooksRuleAllowForcePushesEnforcementLevel._(value);
 
-  static const prTitle = WebhookPullRequestUnlabeledPullRequestBaseRepoSquashMergeCommitTitle._('PR_TITLE');
-  static const commitOrPrTitle = WebhookPullRequestUnlabeledPullRequestBaseRepoSquashMergeCommitTitle._('COMMIT_OR_PR_TITLE');
+  static const off = WebhooksRuleAllowForcePushesEnforcementLevel._('off');
+  static const nonAdmins = WebhooksRuleAllowForcePushesEnforcementLevel._('non_admins');
+  static const everyone = WebhooksRuleAllowForcePushesEnforcementLevel._('everyone');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestUnlabeledPullRequestBaseRepoSquashMergeCommitTitle && other.value == value;
+  @override bool operator ==(Object other) => other is WebhooksRuleAllowForcePushesEnforcementLevel && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Required enumerated value serialized in the `visibility` wire field.
-final class WebhookPullRequestUnlabeledPullRequestBaseRepoVisibility {
+/// Required enumerated value serialized in the `linear_history_requirement_enforcement_level` wire field.
+final class WebhooksRuleLinearHistoryRequirementEnforcementLevel {
 
   final String value;
 
-  const WebhookPullRequestUnlabeledPullRequestBaseRepoVisibility._(this.value);
+  const WebhooksRuleLinearHistoryRequirementEnforcementLevel._(this.value);
 
-  factory WebhookPullRequestUnlabeledPullRequestBaseRepoVisibility.fromJson(String value) => WebhookPullRequestUnlabeledPullRequestBaseRepoVisibility._(value);
+  factory WebhooksRuleLinearHistoryRequirementEnforcementLevel.fromJson(String value) => WebhooksRuleLinearHistoryRequirementEnforcementLevel._(value);
 
-  static const public = WebhookPullRequestUnlabeledPullRequestBaseRepoVisibility._('public');
-  static const private = WebhookPullRequestUnlabeledPullRequestBaseRepoVisibility._('private');
-  static const internal = WebhookPullRequestUnlabeledPullRequestBaseRepoVisibility._('internal');
+  static const off = WebhooksRuleLinearHistoryRequirementEnforcementLevel._('off');
+  static const nonAdmins = WebhooksRuleLinearHistoryRequirementEnforcementLevel._('non_admins');
+  static const everyone = WebhooksRuleLinearHistoryRequirementEnforcementLevel._('everyone');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestUnlabeledPullRequestBaseRepoVisibility && other.value == value;
+  @override bool operator ==(Object other) => other is WebhooksRuleLinearHistoryRequirementEnforcementLevel && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhookPullRequestUnlabeledPullRequestBaseUserType {
+/// The enforcement level of the branch lock setting. `off` means the branch is not locked, `non_admins` means the branch is read-only for non_admins, and `everyone` means the branch is read-only for everyone.
+final class WebhooksRuleLockBranchEnforcementLevel {
 
   final String value;
 
-  const WebhookPullRequestUnlabeledPullRequestBaseUserType._(this.value);
+  const WebhooksRuleLockBranchEnforcementLevel._(this.value);
 
-  factory WebhookPullRequestUnlabeledPullRequestBaseUserType.fromJson(String value) => WebhookPullRequestUnlabeledPullRequestBaseUserType._(value);
+  factory WebhooksRuleLockBranchEnforcementLevel.fromJson(String value) => WebhooksRuleLockBranchEnforcementLevel._(value);
 
-  static const bot = WebhookPullRequestUnlabeledPullRequestBaseUserType._('Bot');
-  static const user = WebhookPullRequestUnlabeledPullRequestBaseUserType._('User');
-  static const organization = WebhookPullRequestUnlabeledPullRequestBaseUserType._('Organization');
+  static const off = WebhooksRuleLockBranchEnforcementLevel._('off');
+  static const nonAdmins = WebhooksRuleLockBranchEnforcementLevel._('non_admins');
+  static const everyone = WebhooksRuleLockBranchEnforcementLevel._('everyone');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestUnlabeledPullRequestBaseUserType && other.value == value;
+  @override bool operator ==(Object other) => other is WebhooksRuleLockBranchEnforcementLevel && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// The default value for a merge commit message.
-final class WebhookPullRequestUnlabeledPullRequestHeadRepoMergeCommitMessage {
+/// Required enumerated value serialized in the `merge_queue_enforcement_level` wire field.
+final class WebhooksRuleMergeQueueEnforcementLevel {
 
   final String value;
 
-  const WebhookPullRequestUnlabeledPullRequestHeadRepoMergeCommitMessage._(this.value);
+  const WebhooksRuleMergeQueueEnforcementLevel._(this.value);
 
-  factory WebhookPullRequestUnlabeledPullRequestHeadRepoMergeCommitMessage.fromJson(String value) => WebhookPullRequestUnlabeledPullRequestHeadRepoMergeCommitMessage._(value);
+  factory WebhooksRuleMergeQueueEnforcementLevel.fromJson(String value) => WebhooksRuleMergeQueueEnforcementLevel._(value);
 
-  static const prBody = WebhookPullRequestUnlabeledPullRequestHeadRepoMergeCommitMessage._('PR_BODY');
-  static const prTitle = WebhookPullRequestUnlabeledPullRequestHeadRepoMergeCommitMessage._('PR_TITLE');
-  static const blank = WebhookPullRequestUnlabeledPullRequestHeadRepoMergeCommitMessage._('BLANK');
+  static const off = WebhooksRuleMergeQueueEnforcementLevel._('off');
+  static const nonAdmins = WebhooksRuleMergeQueueEnforcementLevel._('non_admins');
+  static const everyone = WebhooksRuleMergeQueueEnforcementLevel._('everyone');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestUnlabeledPullRequestHeadRepoMergeCommitMessage && other.value == value;
+  @override bool operator ==(Object other) => other is WebhooksRuleMergeQueueEnforcementLevel && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// The default value for a merge commit message title.
-final class WebhookPullRequestUnlabeledPullRequestHeadRepoMergeCommitTitle {
+/// Required enumerated value serialized in the `pull_request_reviews_enforcement_level` wire field.
+final class WebhooksRulePullRequestReviewsEnforcementLevel {
 
   final String value;
 
-  const WebhookPullRequestUnlabeledPullRequestHeadRepoMergeCommitTitle._(this.value);
+  const WebhooksRulePullRequestReviewsEnforcementLevel._(this.value);
 
-  factory WebhookPullRequestUnlabeledPullRequestHeadRepoMergeCommitTitle.fromJson(String value) => WebhookPullRequestUnlabeledPullRequestHeadRepoMergeCommitTitle._(value);
+  factory WebhooksRulePullRequestReviewsEnforcementLevel.fromJson(String value) => WebhooksRulePullRequestReviewsEnforcementLevel._(value);
 
-  static const prTitle = WebhookPullRequestUnlabeledPullRequestHeadRepoMergeCommitTitle._('PR_TITLE');
-  static const mergeMessage = WebhookPullRequestUnlabeledPullRequestHeadRepoMergeCommitTitle._('MERGE_MESSAGE');
+  static const off = WebhooksRulePullRequestReviewsEnforcementLevel._('off');
+  static const nonAdmins = WebhooksRulePullRequestReviewsEnforcementLevel._('non_admins');
+  static const everyone = WebhooksRulePullRequestReviewsEnforcementLevel._('everyone');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestUnlabeledPullRequestHeadRepoMergeCommitTitle && other.value == value;
+  @override bool operator ==(Object other) => other is WebhooksRulePullRequestReviewsEnforcementLevel && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhookPullRequestUnlabeledPullRequestHeadRepoOwnerType {
+/// Required enumerated value serialized in the `required_conversation_resolution_level` wire field.
+final class WebhooksRuleRequiredConversationResolutionLevel {
 
   final String value;
 
-  const WebhookPullRequestUnlabeledPullRequestHeadRepoOwnerType._(this.value);
+  const WebhooksRuleRequiredConversationResolutionLevel._(this.value);
 
-  factory WebhookPullRequestUnlabeledPullRequestHeadRepoOwnerType.fromJson(String value) => WebhookPullRequestUnlabeledPullRequestHeadRepoOwnerType._(value);
+  factory WebhooksRuleRequiredConversationResolutionLevel.fromJson(String value) => WebhooksRuleRequiredConversationResolutionLevel._(value);
 
-  static const bot = WebhookPullRequestUnlabeledPullRequestHeadRepoOwnerType._('Bot');
-  static const user = WebhookPullRequestUnlabeledPullRequestHeadRepoOwnerType._('User');
-  static const organization = WebhookPullRequestUnlabeledPullRequestHeadRepoOwnerType._('Organization');
+  static const off = WebhooksRuleRequiredConversationResolutionLevel._('off');
+  static const nonAdmins = WebhooksRuleRequiredConversationResolutionLevel._('non_admins');
+  static const everyone = WebhooksRuleRequiredConversationResolutionLevel._('everyone');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestUnlabeledPullRequestHeadRepoOwnerType && other.value == value;
+  @override bool operator ==(Object other) => other is WebhooksRuleRequiredConversationResolutionLevel && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// The policy controlling who can create pull requests: all or collaborators_only.
-final class WebhookPullRequestUnlabeledPullRequestHeadRepoPullRequestCreationPolicy {
+/// Required enumerated value serialized in the `required_deployments_enforcement_level` wire field.
+final class WebhooksRuleRequiredDeploymentsEnforcementLevel {
 
   final String value;
 
-  const WebhookPullRequestUnlabeledPullRequestHeadRepoPullRequestCreationPolicy._(this.value);
+  const WebhooksRuleRequiredDeploymentsEnforcementLevel._(this.value);
 
-  factory WebhookPullRequestUnlabeledPullRequestHeadRepoPullRequestCreationPolicy.fromJson(String value) => WebhookPullRequestUnlabeledPullRequestHeadRepoPullRequestCreationPolicy._(value);
+  factory WebhooksRuleRequiredDeploymentsEnforcementLevel.fromJson(String value) => WebhooksRuleRequiredDeploymentsEnforcementLevel._(value);
 
-  static const all = WebhookPullRequestUnlabeledPullRequestHeadRepoPullRequestCreationPolicy._('all');
-  static const collaboratorsOnly = WebhookPullRequestUnlabeledPullRequestHeadRepoPullRequestCreationPolicy._('collaborators_only');
+  static const off = WebhooksRuleRequiredDeploymentsEnforcementLevel._('off');
+  static const nonAdmins = WebhooksRuleRequiredDeploymentsEnforcementLevel._('non_admins');
+  static const everyone = WebhooksRuleRequiredDeploymentsEnforcementLevel._('everyone');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestUnlabeledPullRequestHeadRepoPullRequestCreationPolicy && other.value == value;
+  @override bool operator ==(Object other) => other is WebhooksRuleRequiredDeploymentsEnforcementLevel && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// The default value for a squash merge commit message: - `PR_BODY` - default to the pull request's body. - `COMMIT_MESSAGES` - default to the branch's commit messages. - `BLANK` - default to a blank commit message.
-final class WebhookPullRequestUnlabeledPullRequestHeadRepoSquashMergeCommitMessage {
+/// Required enumerated value serialized in the `required_status_checks_enforcement_level` wire field.
+final class WebhooksRuleRequiredStatusChecksEnforcementLevel {
 
   final String value;
 
-  const WebhookPullRequestUnlabeledPullRequestHeadRepoSquashMergeCommitMessage._(this.value);
+  const WebhooksRuleRequiredStatusChecksEnforcementLevel._(this.value);
 
-  factory WebhookPullRequestUnlabeledPullRequestHeadRepoSquashMergeCommitMessage.fromJson(String value) => WebhookPullRequestUnlabeledPullRequestHeadRepoSquashMergeCommitMessage._(value);
+  factory WebhooksRuleRequiredStatusChecksEnforcementLevel.fromJson(String value) => WebhooksRuleRequiredStatusChecksEnforcementLevel._(value);
 
-  static const prBody = WebhookPullRequestUnlabeledPullRequestHeadRepoSquashMergeCommitMessage._('PR_BODY');
-  static const commitMessages = WebhookPullRequestUnlabeledPullRequestHeadRepoSquashMergeCommitMessage._('COMMIT_MESSAGES');
-  static const blank = WebhookPullRequestUnlabeledPullRequestHeadRepoSquashMergeCommitMessage._('BLANK');
+  static const off = WebhooksRuleRequiredStatusChecksEnforcementLevel._('off');
+  static const nonAdmins = WebhooksRuleRequiredStatusChecksEnforcementLevel._('non_admins');
+  static const everyone = WebhooksRuleRequiredStatusChecksEnforcementLevel._('everyone');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestUnlabeledPullRequestHeadRepoSquashMergeCommitMessage && other.value == value;
+  @override bool operator ==(Object other) => other is WebhooksRuleRequiredStatusChecksEnforcementLevel && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// The default value for a squash merge commit title: - `PR_TITLE` - default to the pull request's title. - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
-final class WebhookPullRequestUnlabeledPullRequestHeadRepoSquashMergeCommitTitle {
+/// Required enumerated value serialized in the `signature_requirement_enforcement_level` wire field.
+final class WebhooksRuleSignatureRequirementEnforcementLevel {
 
   final String value;
 
-  const WebhookPullRequestUnlabeledPullRequestHeadRepoSquashMergeCommitTitle._(this.value);
+  const WebhooksRuleSignatureRequirementEnforcementLevel._(this.value);
 
-  factory WebhookPullRequestUnlabeledPullRequestHeadRepoSquashMergeCommitTitle.fromJson(String value) => WebhookPullRequestUnlabeledPullRequestHeadRepoSquashMergeCommitTitle._(value);
+  factory WebhooksRuleSignatureRequirementEnforcementLevel.fromJson(String value) => WebhooksRuleSignatureRequirementEnforcementLevel._(value);
 
-  static const prTitle = WebhookPullRequestUnlabeledPullRequestHeadRepoSquashMergeCommitTitle._('PR_TITLE');
-  static const commitOrPrTitle = WebhookPullRequestUnlabeledPullRequestHeadRepoSquashMergeCommitTitle._('COMMIT_OR_PR_TITLE');
+  static const off = WebhooksRuleSignatureRequirementEnforcementLevel._('off');
+  static const nonAdmins = WebhooksRuleSignatureRequirementEnforcementLevel._('non_admins');
+  static const everyone = WebhooksRuleSignatureRequirementEnforcementLevel._('everyone');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestUnlabeledPullRequestHeadRepoSquashMergeCommitTitle && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// Required enumerated value serialized in the `visibility` wire field.
-final class WebhookPullRequestUnlabeledPullRequestHeadRepoVisibility {
-
-  final String value;
-
-  const WebhookPullRequestUnlabeledPullRequestHeadRepoVisibility._(this.value);
-
-  factory WebhookPullRequestUnlabeledPullRequestHeadRepoVisibility.fromJson(String value) => WebhookPullRequestUnlabeledPullRequestHeadRepoVisibility._(value);
-
-  static const public = WebhookPullRequestUnlabeledPullRequestHeadRepoVisibility._('public');
-  static const private = WebhookPullRequestUnlabeledPullRequestHeadRepoVisibility._('private');
-  static const internal = WebhookPullRequestUnlabeledPullRequestHeadRepoVisibility._('internal');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is WebhookPullRequestUnlabeledPullRequestHeadRepoVisibility && other.value == value;
+  @override bool operator ==(Object other) => other is WebhooksRuleSignatureRequirementEnforcementLevel && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
-final class WebhookPullRequestUnlabeledPullRequestHeadUserType {
+final class WebhooksSponsorshipSponsorType {
 
   final String value;
 
-  const WebhookPullRequestUnlabeledPullRequestHeadUserType._(this.value);
+  const WebhooksSponsorshipSponsorType._(this.value);
 
-  factory WebhookPullRequestUnlabeledPullRequestHeadUserType.fromJson(String value) => WebhookPullRequestUnlabeledPullRequestHeadUserType._(value);
+  factory WebhooksSponsorshipSponsorType.fromJson(String value) => WebhooksSponsorshipSponsorType._(value);
 
-  static const bot = WebhookPullRequestUnlabeledPullRequestHeadUserType._('Bot');
-  static const user = WebhookPullRequestUnlabeledPullRequestHeadUserType._('User');
-  static const organization = WebhookPullRequestUnlabeledPullRequestHeadUserType._('Organization');
+  static const bot = WebhooksSponsorshipSponsorType._('Bot');
+  static const user = WebhooksSponsorshipSponsorType._('User');
+  static const organization = WebhooksSponsorshipSponsorType._('Organization');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestUnlabeledPullRequestHeadUserType && other.value == value;
+  @override bool operator ==(Object other) => other is WebhooksSponsorshipSponsorType && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
-final class WebhookPullRequestUnlabeledPullRequestMergedByType {
+final class WebhooksSponsorshipSponsorableType {
 
   final String value;
 
-  const WebhookPullRequestUnlabeledPullRequestMergedByType._(this.value);
+  const WebhooksSponsorshipSponsorableType._(this.value);
 
-  factory WebhookPullRequestUnlabeledPullRequestMergedByType.fromJson(String value) => WebhookPullRequestUnlabeledPullRequestMergedByType._(value);
+  factory WebhooksSponsorshipSponsorableType.fromJson(String value) => WebhooksSponsorshipSponsorableType._(value);
 
-  static const bot = WebhookPullRequestUnlabeledPullRequestMergedByType._('Bot');
-  static const user = WebhookPullRequestUnlabeledPullRequestMergedByType._('User');
-  static const organization = WebhookPullRequestUnlabeledPullRequestMergedByType._('Organization');
+  static const bot = WebhooksSponsorshipSponsorableType._('Bot');
+  static const user = WebhooksSponsorshipSponsorableType._('User');
+  static const organization = WebhooksSponsorshipSponsorableType._('Organization');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookPullRequestUnlabeledPullRequestMergedByType && other.value == value;
+  @override bool operator ==(Object other) => other is WebhooksSponsorshipSponsorableType && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// Required enumerated value serialized in the `action` wire field.
+final class WebhookStarCreatedAction {
+
+  final String value;
+
+  const WebhookStarCreatedAction._(this.value);
+
+  factory WebhookStarCreatedAction.fromJson(String value) => WebhookStarCreatedAction._(value);
+
+  static const created = WebhookStarCreatedAction._('created');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is WebhookStarCreatedAction && other.value == value;
 
   @override int get hashCode => value.hashCode;
 

@@ -4,6 +4,120 @@
 part of 'inline.dart';
 
 // Inline operation models (part 28)
+/// The authentication type for the private registry.
+final class OrgPrivateRegistryConfigurationAuthType {
+
+  final String value;
+
+  const OrgPrivateRegistryConfigurationAuthType._(this.value);
+
+  factory OrgPrivateRegistryConfigurationAuthType.fromJson(String value) => OrgPrivateRegistryConfigurationAuthType._(value);
+
+  static const token = OrgPrivateRegistryConfigurationAuthType._('token');
+  static const usernamePassword = OrgPrivateRegistryConfigurationAuthType._('username_password');
+  static const oidcAzure = OrgPrivateRegistryConfigurationAuthType._('oidc_azure');
+  static const oidcAws = OrgPrivateRegistryConfigurationAuthType._('oidc_aws');
+  static const oidcJfrog = OrgPrivateRegistryConfigurationAuthType._('oidc_jfrog');
+  static const oidcCloudsmith = OrgPrivateRegistryConfigurationAuthType._('oidc_cloudsmith');
+  static const oidcGcp = OrgPrivateRegistryConfigurationAuthType._('oidc_gcp');
+  static const anonymous = OrgPrivateRegistryConfigurationAuthType._('anonymous');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is OrgPrivateRegistryConfigurationAuthType && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// The registry type.
+final class OrgPrivateRegistryConfigurationRegistryType {
+
+  final String value;
+
+  const OrgPrivateRegistryConfigurationRegistryType._(this.value);
+
+  factory OrgPrivateRegistryConfigurationRegistryType.fromJson(String value) => OrgPrivateRegistryConfigurationRegistryType._(value);
+
+  static const mavenRepository = OrgPrivateRegistryConfigurationRegistryType._('maven_repository');
+  static const nugetFeed = OrgPrivateRegistryConfigurationRegistryType._('nuget_feed');
+  static const goproxyServer = OrgPrivateRegistryConfigurationRegistryType._('goproxy_server');
+  static const npmRegistry = OrgPrivateRegistryConfigurationRegistryType._('npm_registry');
+  static const rubygemsServer = OrgPrivateRegistryConfigurationRegistryType._('rubygems_server');
+  static const cargoRegistry = OrgPrivateRegistryConfigurationRegistryType._('cargo_registry');
+  static const composerRepository = OrgPrivateRegistryConfigurationRegistryType._('composer_repository');
+  static const dockerRegistry = OrgPrivateRegistryConfigurationRegistryType._('docker_registry');
+  static const gitSource = OrgPrivateRegistryConfigurationRegistryType._('git_source');
+  static const helmRegistry = OrgPrivateRegistryConfigurationRegistryType._('helm_registry');
+  static const hexOrganization = OrgPrivateRegistryConfigurationRegistryType._('hex_organization');
+  static const hexRepository = OrgPrivateRegistryConfigurationRegistryType._('hex_repository');
+  static const pubRepository = OrgPrivateRegistryConfigurationRegistryType._('pub_repository');
+  static const pythonIndex = OrgPrivateRegistryConfigurationRegistryType._('python_index');
+  static const terraformRegistry = OrgPrivateRegistryConfigurationRegistryType._('terraform_registry');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is OrgPrivateRegistryConfigurationRegistryType && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// Which type of organization repositories have access to the private registry.
+final class OrgPrivateRegistryConfigurationVisibility {
+
+  final String value;
+
+  const OrgPrivateRegistryConfigurationVisibility._(this.value);
+
+  factory OrgPrivateRegistryConfigurationVisibility.fromJson(String value) => OrgPrivateRegistryConfigurationVisibility._(value);
+
+  static const all = OrgPrivateRegistryConfigurationVisibility._('all');
+  static const private = OrgPrivateRegistryConfigurationVisibility._('private');
+  static const selected = OrgPrivateRegistryConfigurationVisibility._('selected');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is OrgPrivateRegistryConfigurationVisibility && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// The authentication type for the private registry.
+final class OrgPrivateRegistryConfigurationWithSelectedRepositoriesAuthType {
+
+  final String value;
+
+  const OrgPrivateRegistryConfigurationWithSelectedRepositoriesAuthType._(this.value);
+
+  factory OrgPrivateRegistryConfigurationWithSelectedRepositoriesAuthType.fromJson(String value) => OrgPrivateRegistryConfigurationWithSelectedRepositoriesAuthType._(value);
+
+  static const token = OrgPrivateRegistryConfigurationWithSelectedRepositoriesAuthType._('token');
+  static const usernamePassword = OrgPrivateRegistryConfigurationWithSelectedRepositoriesAuthType._('username_password');
+  static const oidcAzure = OrgPrivateRegistryConfigurationWithSelectedRepositoriesAuthType._('oidc_azure');
+  static const oidcAws = OrgPrivateRegistryConfigurationWithSelectedRepositoriesAuthType._('oidc_aws');
+  static const oidcJfrog = OrgPrivateRegistryConfigurationWithSelectedRepositoriesAuthType._('oidc_jfrog');
+  static const oidcCloudsmith = OrgPrivateRegistryConfigurationWithSelectedRepositoriesAuthType._('oidc_cloudsmith');
+  static const oidcGcp = OrgPrivateRegistryConfigurationWithSelectedRepositoriesAuthType._('oidc_gcp');
+  static const anonymous = OrgPrivateRegistryConfigurationWithSelectedRepositoriesAuthType._('anonymous');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is OrgPrivateRegistryConfigurationWithSelectedRepositoriesAuthType && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
 /// The registry type.
 final class OrgPrivateRegistryConfigurationWithSelectedRepositoriesRegistryType {
 
@@ -176,115 +290,6 @@ final class PageProtectedDomainState {
   @override String toString() => value.toString();
 
   @override bool operator ==(Object other) => other is PageProtectedDomainState && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The status of the most recent build of the Page.
-final class PageStatus {
-
-  final String value;
-
-  const PageStatus._(this.value);
-
-  factory PageStatus.fromJson(String value) => PageStatus._(value);
-
-  static const built = PageStatus._('built');
-  static const building = PageStatus._('building');
-  static const errored = PageStatus._('errored');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is PageStatus && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The current status of the deployment.
-final class PagesDeploymentStatusStatus {
-
-  final String value;
-
-  const PagesDeploymentStatusStatus._(this.value);
-
-  factory PagesDeploymentStatusStatus.fromJson(String value) => PagesDeploymentStatusStatus._(value);
-
-  static const deploymentInProgress = PagesDeploymentStatusStatus._('deployment_in_progress');
-  static const syncingFiles = PagesDeploymentStatusStatus._('syncing_files');
-  static const finishedFileSync = PagesDeploymentStatusStatus._('finished_file_sync');
-  static const updatingPages = PagesDeploymentStatusStatus._('updating_pages');
-  static const purgingCdn = PagesDeploymentStatusStatus._('purging_cdn');
-  static const deploymentCancelled = PagesDeploymentStatusStatus._('deployment_cancelled');
-  static const deploymentFailed = PagesDeploymentStatusStatus._('deployment_failed');
-  static const deploymentContentFailed = PagesDeploymentStatusStatus._('deployment_content_failed');
-  static const deploymentAttemptError = PagesDeploymentStatusStatus._('deployment_attempt_error');
-  static const deploymentLost = PagesDeploymentStatusStatus._('deployment_lost');
-  static const succeed = PagesDeploymentStatusStatus._('succeed');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is PagesDeploymentStatusStatus && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// Required enumerated value serialized in the `state` wire field.
-final class PagesHttpsCertificateState {
-
-  final String value;
-
-  const PagesHttpsCertificateState._(this.value);
-
-  factory PagesHttpsCertificateState.fromJson(String value) => PagesHttpsCertificateState._(value);
-
-  static const new_ = PagesHttpsCertificateState._('new');
-  static const authorizationCreated = PagesHttpsCertificateState._('authorization_created');
-  static const authorizationPending = PagesHttpsCertificateState._('authorization_pending');
-  static const authorized = PagesHttpsCertificateState._('authorized');
-  static const authorizationRevoked = PagesHttpsCertificateState._('authorization_revoked');
-  static const issued = PagesHttpsCertificateState._('issued');
-  static const uploaded = PagesHttpsCertificateState._('uploaded');
-  static const approved = PagesHttpsCertificateState._('approved');
-  static const errored = PagesHttpsCertificateState._('errored');
-  static const badAuthz = PagesHttpsCertificateState._('bad_authz');
-  static const destroyPending = PagesHttpsCertificateState._('destroy_pending');
-  static const dnsChanged = PagesHttpsCertificateState._('dns_changed');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is PagesHttpsCertificateState && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// Type of repository selection requested.
-final class PersonalAccessTokenRequestRepositorySelection {
-
-  final String value;
-
-  const PersonalAccessTokenRequestRepositorySelection._(this.value);
-
-  factory PersonalAccessTokenRequestRepositorySelection.fromJson(String value) => PersonalAccessTokenRequestRepositorySelection._(value);
-
-  static const none = PersonalAccessTokenRequestRepositorySelection._('none');
-  static const all = PersonalAccessTokenRequestRepositorySelection._('all');
-  static const subset = PersonalAccessTokenRequestRepositorySelection._('subset');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is PersonalAccessTokenRequestRepositorySelection && other.value == value;
 
   @override int get hashCode => value.hashCode;
 

@@ -4,293 +4,253 @@
 part of 'inline.dart';
 
 // Inline operation models (part 348)
-class AppsListInstallationReposForAuthenticatedUserResponse {
+class GistsUpdateRequestBodyFilesValue {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final int totalCount;
-  final SdkOptional<String> repositorySelection;
-  final List<AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItem> repositories;
+  /// The new content of the file.
+  final SdkOptional<String> content;
+  /// The new filename for the file.
+  final SdkOptional<String?> filename;
 
-  const AppsListInstallationReposForAuthenticatedUserResponse({required this.totalCount, this.repositorySelection = const SdkOmitted(), required this.repositories});
+  const GistsUpdateRequestBodyFilesValue({this.content = const SdkOmitted(), this.filename = const SdkOmitted()});
 
-  AppsListInstallationReposForAuthenticatedUserResponse Function({int totalCount, SdkOptional<String> repositorySelection, List<AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItem> repositories}) get copyWith => _copyWith;
+  GistsUpdateRequestBodyFilesValue Function({SdkOptional<String> content, SdkOptional<String?> filename}) get copyWith => _copyWith;
 
-  AppsListInstallationReposForAuthenticatedUserResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? repositorySelection = sdkOmittedValue, Object? repositories = sdkOmittedValue}) => AppsListInstallationReposForAuthenticatedUserResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    repositorySelection: identical(repositorySelection, sdkOmittedValue) ? this.repositorySelection : repositorySelection as SdkOptional<String>,
-    repositories: identical(repositories, sdkOmittedValue) ? this.repositories : repositories as List<AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItem>,
+  GistsUpdateRequestBodyFilesValue _copyWith({Object? content = sdkOmittedValue, Object? filename = sdkOmittedValue}) => GistsUpdateRequestBodyFilesValue(
+    content: identical(content, sdkOmittedValue) ? this.content : content as SdkOptional<String>,
+    filename: identical(filename, sdkOmittedValue) ? this.filename : filename as SdkOptional<String?>,
   );
 
-  factory AppsListInstallationReposForAuthenticatedUserResponse.fromJson(Map<String, dynamic> json) => AppsListInstallationReposForAuthenticatedUserResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    repositorySelection: json['repository_selection'] != null ? SdkPresent((json['repository_selection'] as String?)!) : const SdkOmitted(),
-    repositories: ((json['repositories'] as List?)?.map((e) => AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItem.fromJson(e as Map<String, dynamic>)).toList())!,
+  factory GistsUpdateRequestBodyFilesValue.fromJson(Map<String, dynamic> json) => GistsUpdateRequestBodyFilesValue(
+    content: json['content'] != null ? SdkPresent((json['content'] as String?)!) : const SdkOmitted(),
+    filename: json.containsKey('filename') ? SdkPresent(json['filename'] as String?) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    ...switch (repositorySelection) {
-      SdkPresent<String>(value: final value) => {'repository_selection': value,},
+    ...switch (content) {
+      SdkPresent<String>(value: final value) => {'content': value,},
       _ => const <String, dynamic>{},
     },
-    'repositories': repositories.map((item) => item.toJson()).toList(),
-  };
-}
-
-class CredentialsRevokeRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// A list of credentials to be revoked, up to 1000 per request.
-  final List<String> credentials;
-
-  const CredentialsRevokeRequestBody({required this.credentials});
-
-  CredentialsRevokeRequestBody Function({List<String> credentials}) get copyWith => _copyWith;
-
-  CredentialsRevokeRequestBody _copyWith({Object? credentials = sdkOmittedValue}) => CredentialsRevokeRequestBody(
-    credentials: identical(credentials, sdkOmittedValue) ? this.credentials : credentials as List<String>,
-  );
-
-  factory CredentialsRevokeRequestBody.fromJson(Map<String, dynamic> json) => CredentialsRevokeRequestBody(
-    credentials: ((json['credentials'] as List?)?.map((e) => e as String).toList())!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'credentials': credentials,
-  };
-}
-
-class ActionsGetActionsCacheUsageByRepoForOrgResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<ActionsCacheUsageByRepository> repositoryCacheUsages;
-
-  const ActionsGetActionsCacheUsageByRepoForOrgResponse({required this.totalCount, required this.repositoryCacheUsages});
-
-  ActionsGetActionsCacheUsageByRepoForOrgResponse Function({int totalCount, List<ActionsCacheUsageByRepository> repositoryCacheUsages}) get copyWith => _copyWith;
-
-  ActionsGetActionsCacheUsageByRepoForOrgResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? repositoryCacheUsages = sdkOmittedValue}) => ActionsGetActionsCacheUsageByRepoForOrgResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    repositoryCacheUsages: identical(repositoryCacheUsages, sdkOmittedValue) ? this.repositoryCacheUsages : repositoryCacheUsages as List<ActionsCacheUsageByRepository>,
-  );
-
-  factory ActionsGetActionsCacheUsageByRepoForOrgResponse.fromJson(Map<String, dynamic> json) => ActionsGetActionsCacheUsageByRepoForOrgResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    repositoryCacheUsages: ((json['repository_cache_usages'] as List?)?.map((e) => ActionsCacheUsageByRepository.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'repository_cache_usages': repositoryCacheUsages.map((item) => item.toJson()).toList(),
-  };
-}
-
-class ActionsListHostedRunnersForOrgResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<ActionsHostedRunner> runners;
-
-  const ActionsListHostedRunnersForOrgResponse({required this.totalCount, required this.runners});
-
-  ActionsListHostedRunnersForOrgResponse Function({int totalCount, List<ActionsHostedRunner> runners}) get copyWith => _copyWith;
-
-  ActionsListHostedRunnersForOrgResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? runners = sdkOmittedValue}) => ActionsListHostedRunnersForOrgResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    runners: identical(runners, sdkOmittedValue) ? this.runners : runners as List<ActionsHostedRunner>,
-  );
-
-  factory ActionsListHostedRunnersForOrgResponse.fromJson(Map<String, dynamic> json) => ActionsListHostedRunnersForOrgResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    runners: ((json['runners'] as List?)?.map((e) => ActionsHostedRunner.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'runners': runners.map((item) => item.toJson()).toList(),
-  };
-}
-
-/// The image of runner. To list all available images, use `GET /actions/hosted-runners/images/github-owned` or `GET /actions/hosted-runners/images/partner`.
-class ActionsCreateHostedRunnerForOrgRequestBodyImage {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The unique identifier of the runner image.
-  final SdkOptional<String> id;
-  /// The source of the runner image.
-  final SdkOptional<ActionsCreateHostedRunnerForOrgRequestBodyImageSource> source;
-  /// The version of the runner image to deploy. This is relevant only for runners using custom images.
-  final SdkOptional<String?> version;
-
-  const ActionsCreateHostedRunnerForOrgRequestBodyImage({this.id = const SdkOmitted(), this.source = const SdkOmitted(), this.version = const SdkOmitted()});
-
-  ActionsCreateHostedRunnerForOrgRequestBodyImage Function({SdkOptional<String> id, SdkOptional<ActionsCreateHostedRunnerForOrgRequestBodyImageSource> source, SdkOptional<String?> version}) get copyWith => _copyWith;
-
-  ActionsCreateHostedRunnerForOrgRequestBodyImage _copyWith({Object? id = sdkOmittedValue, Object? source = sdkOmittedValue, Object? version = sdkOmittedValue}) => ActionsCreateHostedRunnerForOrgRequestBodyImage(
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<String>,
-    source: identical(source, sdkOmittedValue) ? this.source : source as SdkOptional<ActionsCreateHostedRunnerForOrgRequestBodyImageSource>,
-    version: identical(version, sdkOmittedValue) ? this.version : version as SdkOptional<String?>,
-  );
-
-  factory ActionsCreateHostedRunnerForOrgRequestBodyImage.fromJson(Map<String, dynamic> json) => ActionsCreateHostedRunnerForOrgRequestBodyImage(
-    id: json['id'] != null ? SdkPresent((json['id'] as String?)!) : const SdkOmitted(),
-    source: json['source'] != null ? SdkPresent((json['source'] != null ? ActionsCreateHostedRunnerForOrgRequestBodyImageSource.fromJson(json['source'] as String) : null)!) : const SdkOmitted(),
-    version: json.containsKey('version') ? SdkPresent(json['version'] as String?) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    ...switch (id) {
-      SdkPresent<String>(value: final value) => {'id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (source) {
-      SdkPresent<ActionsCreateHostedRunnerForOrgRequestBodyImageSource>(value: final value) => {'source': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (version) {
-      SdkPresent<String?>(value: final value) => {'version': value,},
+    ...switch (filename) {
+      SdkPresent<String?>(value: final value) => {'filename': value,},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-class ActionsCreateHostedRunnerForOrgRequestBody {
+class GistsUpdateRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// Name of the runner. Must be between 1 and 64 characters and may only contain upper and lowercase letters a-z, numbers 0-9, '.', '-', and '_'.
-  final String name;
-  /// The image of runner. To list all available images, use `GET /actions/hosted-runners/images/github-owned` or `GET /actions/hosted-runners/images/partner`.
-  final ActionsCreateHostedRunnerForOrgRequestBodyImage image;
-  /// The machine size of the runner. To list available sizes, use `GET actions/hosted-runners/machine-sizes`
-  final String size;
-  /// The existing runner group to add this runner to.
-  final int runnerGroupId;
-  /// The maximum amount of runners to scale up to. Runners will not auto-scale above this number. Use this setting to limit your cost.
-  final SdkOptional<int> maximumRunners;
-  /// Whether this runner should be created with a static public IP. Note limit on account. To list limits on account, use `GET actions/hosted-runners/limits`
-  final SdkOptional<bool> enableStaticIp;
-  /// Whether this runner should be used to generate custom images.
-  final SdkOptional<bool> imageGen;
+  /// The description of the gist.
+  final SdkOptional<String> description;
+  /// The gist files to be updated, renamed, or deleted. Each `key` must match the current filename (including extension) of the targeted gist file. For example: `hello.py`. To delete a file, set the whole file to null. For example: `hello.py : null`. The file will also be deleted if the specified object does not contain at least one of `content` or `filename`.
+  final SdkOptional<Map<String, GistsUpdateRequestBodyFilesValue>> files;
 
-  const ActionsCreateHostedRunnerForOrgRequestBody({required this.name, required this.image, required this.size, required this.runnerGroupId, this.maximumRunners = const SdkOmitted(), this.enableStaticIp = const SdkOmitted(), this.imageGen = const SdkOmitted()});
+  const GistsUpdateRequestBody({this.description = const SdkOmitted(), this.files = const SdkOmitted()});
 
-  ActionsCreateHostedRunnerForOrgRequestBody Function({String name, ActionsCreateHostedRunnerForOrgRequestBodyImage image, String size, int runnerGroupId, SdkOptional<int> maximumRunners, SdkOptional<bool> enableStaticIp, SdkOptional<bool> imageGen}) get copyWith => _copyWith;
+  GistsUpdateRequestBody Function({SdkOptional<String> description, SdkOptional<Map<String, GistsUpdateRequestBodyFilesValue>> files}) get copyWith => _copyWith;
 
-  ActionsCreateHostedRunnerForOrgRequestBody _copyWith({Object? name = sdkOmittedValue, Object? image = sdkOmittedValue, Object? size = sdkOmittedValue, Object? runnerGroupId = sdkOmittedValue, Object? maximumRunners = sdkOmittedValue, Object? enableStaticIp = sdkOmittedValue, Object? imageGen = sdkOmittedValue}) => ActionsCreateHostedRunnerForOrgRequestBody(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    image: identical(image, sdkOmittedValue) ? this.image : image as ActionsCreateHostedRunnerForOrgRequestBodyImage,
-    size: identical(size, sdkOmittedValue) ? this.size : size as String,
-    runnerGroupId: identical(runnerGroupId, sdkOmittedValue) ? this.runnerGroupId : runnerGroupId as int,
-    maximumRunners: identical(maximumRunners, sdkOmittedValue) ? this.maximumRunners : maximumRunners as SdkOptional<int>,
-    enableStaticIp: identical(enableStaticIp, sdkOmittedValue) ? this.enableStaticIp : enableStaticIp as SdkOptional<bool>,
-    imageGen: identical(imageGen, sdkOmittedValue) ? this.imageGen : imageGen as SdkOptional<bool>,
+  GistsUpdateRequestBody _copyWith({Object? description = sdkOmittedValue, Object? files = sdkOmittedValue}) => GistsUpdateRequestBody(
+    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String>,
+    files: identical(files, sdkOmittedValue) ? this.files : files as SdkOptional<Map<String, GistsUpdateRequestBodyFilesValue>>,
   );
 
-  factory ActionsCreateHostedRunnerForOrgRequestBody.fromJson(Map<String, dynamic> json) => ActionsCreateHostedRunnerForOrgRequestBody(
-    name: (json['name'] as String?)!,
-    image: (json['image'] != null ? ActionsCreateHostedRunnerForOrgRequestBodyImage.fromJson(json['image'] as Map<String, dynamic>) : null)!,
-    size: (json['size'] as String?)!,
-    runnerGroupId: ((json['runner_group_id'] as num?)?.toInt())!,
-    maximumRunners: json['maximum_runners'] != null ? SdkPresent(((json['maximum_runners'] as num?)?.toInt())!) : const SdkOmitted(),
-    enableStaticIp: json['enable_static_ip'] != null ? SdkPresent((json['enable_static_ip'] as bool?)!) : const SdkOmitted(),
-    imageGen: json['image_gen'] != null ? SdkPresent((json['image_gen'] as bool?)!) : const SdkOmitted(),
+  factory GistsUpdateRequestBody.fromJson(Map<String, dynamic> json) => GistsUpdateRequestBody(
+    description: json['description'] != null ? SdkPresent((json['description'] as String?)!) : const SdkOmitted(),
+    files: json['files'] != null ? SdkPresent((json['files'] == null ? null : Map<String, dynamic>.from(json['files'] as Map).map((key, value) => MapEntry(key, GistsUpdateRequestBodyFilesValue.fromJson(value as Map<String, dynamic>))))!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'image': image.toJson(),
-    'size': size,
-    'runner_group_id': runnerGroupId,
-    ...switch (maximumRunners) {
-      SdkPresent<int>(value: final value) => {'maximum_runners': value,},
+    ...switch (description) {
+      SdkPresent<String>(value: final value) => {'description': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (enableStaticIp) {
-      SdkPresent<bool>(value: final value) => {'enable_static_ip': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (imageGen) {
-      SdkPresent<bool>(value: final value) => {'image_gen': value,},
+    ...switch (files) {
+      SdkPresent<Map<String, GistsUpdateRequestBodyFilesValue>>(value: final value) => {'files': value.map((key, value) => MapEntry(key, value.toJson())),},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-class ActionsListCustomImagesForOrgResponse {
+class GistsCreateCommentRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<ActionsHostedRunnerCustomImage> images;
+  /// The comment text.
+  final String body;
 
-  const ActionsListCustomImagesForOrgResponse({required this.totalCount, required this.images});
+  const GistsCreateCommentRequestBody({required this.body});
 
-  ActionsListCustomImagesForOrgResponse Function({int totalCount, List<ActionsHostedRunnerCustomImage> images}) get copyWith => _copyWith;
+  GistsCreateCommentRequestBody Function({String body}) get copyWith => _copyWith;
 
-  ActionsListCustomImagesForOrgResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? images = sdkOmittedValue}) => ActionsListCustomImagesForOrgResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    images: identical(images, sdkOmittedValue) ? this.images : images as List<ActionsHostedRunnerCustomImage>,
+  GistsCreateCommentRequestBody _copyWith({Object? body = sdkOmittedValue}) => GistsCreateCommentRequestBody(
+    body: identical(body, sdkOmittedValue) ? this.body : body as String,
   );
 
-  factory ActionsListCustomImagesForOrgResponse.fromJson(Map<String, dynamic> json) => ActionsListCustomImagesForOrgResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    images: ((json['images'] as List?)?.map((e) => ActionsHostedRunnerCustomImage.fromJson(e as Map<String, dynamic>)).toList())!,
+  factory GistsCreateCommentRequestBody.fromJson(Map<String, dynamic> json) => GistsCreateCommentRequestBody(
+    body: (json['body'] as String?)!,
   );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'images': images.map((item) => item.toJson()).toList(),
+    'body': body,
   };
 }
 
-class ActionsListCustomImageVersionsForOrgResponse {
+class GistsUpdateCommentRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<ActionsHostedRunnerCustomImageVersion> imageVersions;
+  /// The comment text.
+  final String body;
 
-  const ActionsListCustomImageVersionsForOrgResponse({required this.totalCount, required this.imageVersions});
+  const GistsUpdateCommentRequestBody({required this.body});
 
-  ActionsListCustomImageVersionsForOrgResponse Function({int totalCount, List<ActionsHostedRunnerCustomImageVersion> imageVersions}) get copyWith => _copyWith;
+  GistsUpdateCommentRequestBody Function({String body}) get copyWith => _copyWith;
 
-  ActionsListCustomImageVersionsForOrgResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? imageVersions = sdkOmittedValue}) => ActionsListCustomImageVersionsForOrgResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    imageVersions: identical(imageVersions, sdkOmittedValue) ? this.imageVersions : imageVersions as List<ActionsHostedRunnerCustomImageVersion>,
+  GistsUpdateCommentRequestBody _copyWith({Object? body = sdkOmittedValue}) => GistsUpdateCommentRequestBody(
+    body: identical(body, sdkOmittedValue) ? this.body : body as String,
   );
 
-  factory ActionsListCustomImageVersionsForOrgResponse.fromJson(Map<String, dynamic> json) => ActionsListCustomImageVersionsForOrgResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    imageVersions: ((json['image_versions'] as List?)?.map((e) => ActionsHostedRunnerCustomImageVersion.fromJson(e as Map<String, dynamic>)).toList())!,
+  factory GistsUpdateCommentRequestBody.fromJson(Map<String, dynamic> json) => GistsUpdateCommentRequestBody(
+    body: (json['body'] as String?)!,
   );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'image_versions': imageVersions.map((item) => item.toJson()).toList(),
+    'body': body,
   };
 }
 
-class ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse {
+class IssuesCreateRequestBodyIssueFieldValuesItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<ActionsHostedRunnerCuratedImage> images;
+  /// The ID of the issue field to set
+  final int fieldId;
+  /// The value to set for the field. For multi-select fields, provide an array of option names.
+  final dynamic value;
 
-  const ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse({required this.totalCount, required this.images});
+  const IssuesCreateRequestBodyIssueFieldValuesItem({required this.fieldId, required this.value});
 
-  ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse Function({int totalCount, List<ActionsHostedRunnerCuratedImage> images}) get copyWith => _copyWith;
+  IssuesCreateRequestBodyIssueFieldValuesItem Function({int fieldId, dynamic value}) get copyWith => _copyWith;
 
-  ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? images = sdkOmittedValue}) => ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    images: identical(images, sdkOmittedValue) ? this.images : images as List<ActionsHostedRunnerCuratedImage>,
+  IssuesCreateRequestBodyIssueFieldValuesItem _copyWith({Object? fieldId = sdkOmittedValue, Object? value = sdkOmittedValue}) => IssuesCreateRequestBodyIssueFieldValuesItem(
+    fieldId: identical(fieldId, sdkOmittedValue) ? this.fieldId : fieldId as int,
+    value: identical(value, sdkOmittedValue) ? this.value : value as dynamic,
   );
 
-  factory ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse.fromJson(Map<String, dynamic> json) => ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    images: ((json['images'] as List?)?.map((e) => ActionsHostedRunnerCuratedImage.fromJson(e as Map<String, dynamic>)).toList())!,
+  factory IssuesCreateRequestBodyIssueFieldValuesItem.fromJson(Map<String, dynamic> json) => IssuesCreateRequestBodyIssueFieldValuesItem(
+    fieldId: ((json['field_id'] as num?)?.toInt())!,
+    value: (json['value'])!,
   );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'images': images.map((item) => item.toJson()).toList(),
+    'field_id': fieldId,
+    'value': value,
+  };
+}
+
+class IssuesCreateRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The title of the issue.
+  final dynamic title;
+  /// The contents of the issue.
+  final SdkOptional<String> body;
+  /// Login for the user that this issue should be assigned to. _NOTE: Only users with push access can set the assignee for new issues. The assignee is silently dropped otherwise. **This field is closing down.**_
+  final SdkOptional<String?> assignee;
+  final SdkOptional<dynamic> milestone;
+  /// Labels to associate with this issue. _NOTE: Only users with push access can set labels for new issues. Labels are silently dropped otherwise._
+  final SdkOptional<List<IssuesCreateRequestLabelsItem>> labels;
+  /// Logins for Users to assign to this issue. _NOTE: Only users with push access can set assignees for new issues. Assignees are silently dropped otherwise._
+  final SdkOptional<List<String>> assignees;
+  /// An array of issue field values to set on this issue. Each field value must include the field ID and the value to set. Issue fields are only available for organization-owned repositories with the feature enabled. Field values are silently dropped otherwise.
+  final SdkOptional<List<IssuesCreateRequestBodyIssueFieldValuesItem>> issueFieldValues;
+  /// The name of the issue type to associate with this issue. _NOTE: Only users with push access can set the type for new issues. The type is silently dropped otherwise._
+  final SdkOptional<String?> type_;
+  /// The id of the parent issue to add this issue to as a sub-issue. _NOTE: Only users with triage access to both the parent issue's repository and this repository can set the parent issue._
+  final SdkOptional<int> parentIssueId;
+
+  const IssuesCreateRequestBody({required this.title, this.body = const SdkOmitted(), this.assignee = const SdkOmitted(), this.milestone = const SdkOmitted(), this.labels = const SdkOmitted(), this.assignees = const SdkOmitted(), this.issueFieldValues = const SdkOmitted(), this.type_ = const SdkOmitted(), this.parentIssueId = const SdkOmitted()});
+
+  IssuesCreateRequestBody Function({dynamic title, SdkOptional<String> body, SdkOptional<String?> assignee, SdkOptional<dynamic> milestone, SdkOptional<List<IssuesCreateRequestLabelsItem>> labels, SdkOptional<List<String>> assignees, SdkOptional<List<IssuesCreateRequestBodyIssueFieldValuesItem>> issueFieldValues, SdkOptional<String?> type_, SdkOptional<int> parentIssueId}) get copyWith => _copyWith;
+
+  IssuesCreateRequestBody _copyWith({Object? title = sdkOmittedValue, Object? body = sdkOmittedValue, Object? assignee = sdkOmittedValue, Object? milestone = sdkOmittedValue, Object? labels = sdkOmittedValue, Object? assignees = sdkOmittedValue, Object? issueFieldValues = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? parentIssueId = sdkOmittedValue}) => IssuesCreateRequestBody(
+    title: identical(title, sdkOmittedValue) ? this.title : title as dynamic,
+    body: identical(body, sdkOmittedValue) ? this.body : body as SdkOptional<String>,
+    assignee: identical(assignee, sdkOmittedValue) ? this.assignee : assignee as SdkOptional<String?>,
+    milestone: identical(milestone, sdkOmittedValue) ? this.milestone : milestone as SdkOptional<dynamic>,
+    labels: identical(labels, sdkOmittedValue) ? this.labels : labels as SdkOptional<List<IssuesCreateRequestLabelsItem>>,
+    assignees: identical(assignees, sdkOmittedValue) ? this.assignees : assignees as SdkOptional<List<String>>,
+    issueFieldValues: identical(issueFieldValues, sdkOmittedValue) ? this.issueFieldValues : issueFieldValues as SdkOptional<List<IssuesCreateRequestBodyIssueFieldValuesItem>>,
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<String?>,
+    parentIssueId: identical(parentIssueId, sdkOmittedValue) ? this.parentIssueId : parentIssueId as SdkOptional<int>,
+  );
+
+  factory IssuesCreateRequestBody.fromJson(Map<String, dynamic> json) => IssuesCreateRequestBody(
+    title: (json['title'])!,
+    body: json['body'] != null ? SdkPresent((json['body'] as String?)!) : const SdkOmitted(),
+    assignee: json.containsKey('assignee') ? SdkPresent(json['assignee'] as String?) : const SdkOmitted(),
+    milestone: json.containsKey('milestone') ? SdkPresent(json['milestone']) : const SdkOmitted(),
+    labels: json['labels'] != null ? SdkPresent(((json['labels'] as List?)?.map((e) => IssuesCreateRequestLabelsItem.fromJson(e)).toList())!) : const SdkOmitted(),
+    assignees: json['assignees'] != null ? SdkPresent(((json['assignees'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    issueFieldValues: json['issue_field_values'] != null ? SdkPresent(((json['issue_field_values'] as List?)?.map((e) => IssuesCreateRequestBodyIssueFieldValuesItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+    type_: json.containsKey('type') ? SdkPresent(json['type'] as String?) : const SdkOmitted(),
+    parentIssueId: json['parent_issue_id'] != null ? SdkPresent(((json['parent_issue_id'] as num?)?.toInt())!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    'title': title,
+    ...switch (body) {
+      SdkPresent<String>(value: final value) => {'body': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (assignee) {
+      SdkPresent<String?>(value: final value) => {'assignee': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (milestone) {
+      SdkPresent<dynamic>(value: final value) => {'milestone': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (labels) {
+      SdkPresent<List<IssuesCreateRequestLabelsItem>>(value: final value) => {'labels': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (assignees) {
+      SdkPresent<List<String>>(value: final value) => {'assignees': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (issueFieldValues) {
+      SdkPresent<List<IssuesCreateRequestBodyIssueFieldValuesItem>>(value: final value) => {'issue_field_values': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (type_) {
+      SdkPresent<String?>(value: final value) => {'type': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (parentIssueId) {
+      SdkPresent<int>(value: final value) => {'parent_issue_id': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
+}
+
+class IssuesUpdateCommentRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The contents of the comment.
+  final String body;
+
+  const IssuesUpdateCommentRequestBody({required this.body});
+
+  IssuesUpdateCommentRequestBody Function({String body}) get copyWith => _copyWith;
+
+  IssuesUpdateCommentRequestBody _copyWith({Object? body = sdkOmittedValue}) => IssuesUpdateCommentRequestBody(
+    body: identical(body, sdkOmittedValue) ? this.body : body as String,
+  );
+
+  factory IssuesUpdateCommentRequestBody.fromJson(Map<String, dynamic> json) => IssuesUpdateCommentRequestBody(
+    body: (json['body'] as String?)!,
+  );
+
+  Map<String, dynamic> toJson() => {
+    'body': body,
   };
 }

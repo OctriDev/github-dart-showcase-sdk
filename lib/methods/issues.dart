@@ -317,7 +317,7 @@ Future<Issue> issuesCreate(ClientConfig config,
     SdkOptional<String> body = const SdkOmitted(),
     SdkOptional<String?> assignee = const SdkOmitted(),
     SdkOptional<dynamic> milestone = const SdkOmitted(),
-    SdkOptional<List<dynamic>> labels = const SdkOmitted(),
+    SdkOptional<List<IssuesCreateRequestLabelsItem>> labels = const SdkOmitted(),
     SdkOptional<List<String>> assignees = const SdkOmitted(),
     SdkOptional<List<IssuesCreateRequestBodyIssueFieldValuesItem>> issueFieldValues = const SdkOmitted(),
     SdkOptional<String?> type_ = const SdkOmitted(),
@@ -341,7 +341,7 @@ Future<Issue> issuesCreate(ClientConfig config,
           operationId: 'issuesCreate',
           fromJsonRaw: (value) => Issue.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '410': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '410': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -510,7 +510,7 @@ Future<void> issuesUnpinComment(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'issuesUnpinComment',
           options: requestOptions,
-          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '410': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '410': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -645,10 +645,10 @@ Future<IssuesUpdateResponse> issuesUpdate(ClientConfig config,
     SdkOptional<IssuesUpdateRequestBodyStateReason?> stateReason = const SdkOmitted(),
     SdkOptional<int> duplicateIssueId = const SdkOmitted(),
     SdkOptional<dynamic> milestone = const SdkOmitted(),
-    SdkOptional<List<dynamic>> labels = const SdkOmitted(),
-    SdkOptional<List<dynamic>> assignees = const SdkOmitted(),
+    SdkOptional<List<IssuesUpdateRequestLabelsItem>> labels = const SdkOmitted(),
+    SdkOptional<List<IssuesUpdateRequestAssigneesItem>> assignees = const SdkOmitted(),
     SdkOptional<List<IssuesUpdateRequestBodyIssueFieldValuesItem>> issueFieldValues = const SdkOmitted(),
-    SdkOptional<dynamic> type_ = const SdkOmitted(),
+    SdkOptional<IssuesUpdateRequestType?> type_ = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<IssuesUpdateResponse>('PATCH',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/issues/${Uri.encodeComponent(issueNumber.toString())}',
@@ -670,7 +670,7 @@ Future<IssuesUpdateResponse> issuesUpdate(ClientConfig config,
           operationId: 'issuesUpdate',
           fromJsonRaw: (value) => IssuesUpdateResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'301': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '410': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'301': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '410': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -688,7 +688,7 @@ Future<Issue> issuesAddAssignees(ClientConfig config,
     {required String owner,
     required String repo,
     required int issueNumber,
-    SdkOptional<List<dynamic>> assignees = const SdkOmitted(),
+    SdkOptional<List<IssuesAddAssigneesRequestAssigneesItem>> assignees = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<Issue>('POST',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/issues/${Uri.encodeComponent(issueNumber.toString())}/assignees',
@@ -1072,7 +1072,7 @@ Future<List<IssueFieldValue>> issuesAddIssueFieldValues(ClientConfig config,
           operationId: 'issuesAddIssueFieldValues',
           fromJsonRaw: (value) => (value as List).map((item) => IssueFieldValue.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -1106,7 +1106,7 @@ Future<List<IssueFieldValue>> issuesSetIssueFieldValues(ClientConfig config,
           operationId: 'issuesSetIssueFieldValues',
           fromJsonRaw: (value) => (value as List).map((item) => IssueFieldValue.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -1130,7 +1130,7 @@ Future<void> issuesDeleteIssueFieldValue(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'issuesDeleteIssueFieldValue',
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -1579,7 +1579,7 @@ Future<Issue> issuesReprioritizeSubIssue(ClientConfig config,
           operationId: 'issuesReprioritizeSubIssue',
           fromJsonRaw: (value) => Issue.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 

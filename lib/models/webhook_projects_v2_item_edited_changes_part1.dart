@@ -11,6 +11,10 @@ sealed class WebhookProjectsV2ItemEditedChangesVariant0FieldValueFrom {
   factory WebhookProjectsV2ItemEditedChangesVariant0FieldValueFrom.fromJson(Object? json) {
     if (json is String) { return WebhookProjectsV2ItemEditedChangesVariant0FieldValueFromString(json); }
     if (json is num) { return WebhookProjectsV2ItemEditedChangesVariant0FieldValueFromInt(json.toInt()); }
+    if (json is Map<String, dynamic>) {
+      try { final value = ProjectsV2SingleSelectOption.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return WebhookProjectsV2ItemEditedChangesVariant0FieldValueFromProjectsV2SingleSelectOption(value); } } catch (_) {}
+      try { final value = ProjectsV2IterationSetting.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return WebhookProjectsV2ItemEditedChangesVariant0FieldValueFromProjectsV2IterationSetting(value); } } catch (_) {}
+    }
     try { return WebhookProjectsV2ItemEditedChangesVariant0FieldValueFromProjectsV2SingleSelectOption(ProjectsV2SingleSelectOption.fromJson(json as Map<String, dynamic>)); } catch (_) {}
     try { return WebhookProjectsV2ItemEditedChangesVariant0FieldValueFromProjectsV2IterationSetting(ProjectsV2IterationSetting.fromJson(json as Map<String, dynamic>)); } catch (_) {}
     throw FormatException("No variant matched for WebhookProjectsV2ItemEditedChangesVariant0FieldValueFrom");
@@ -49,6 +53,10 @@ sealed class WebhookProjectsV2ItemEditedChangesVariant0FieldValueTo {
   factory WebhookProjectsV2ItemEditedChangesVariant0FieldValueTo.fromJson(Object? json) {
     if (json is String) { return WebhookProjectsV2ItemEditedChangesVariant0FieldValueToString(json); }
     if (json is num) { return WebhookProjectsV2ItemEditedChangesVariant0FieldValueToInt(json.toInt()); }
+    if (json is Map<String, dynamic>) {
+      try { final value = ProjectsV2SingleSelectOption.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return WebhookProjectsV2ItemEditedChangesVariant0FieldValueToProjectsV2SingleSelectOption(value); } } catch (_) {}
+      try { final value = ProjectsV2IterationSetting.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return WebhookProjectsV2ItemEditedChangesVariant0FieldValueToProjectsV2IterationSetting(value); } } catch (_) {}
+    }
     try { return WebhookProjectsV2ItemEditedChangesVariant0FieldValueToProjectsV2SingleSelectOption(ProjectsV2SingleSelectOption.fromJson(json as Map<String, dynamic>)); } catch (_) {}
     try { return WebhookProjectsV2ItemEditedChangesVariant0FieldValueToProjectsV2IterationSetting(ProjectsV2IterationSetting.fromJson(json as Map<String, dynamic>)); } catch (_) {}
     throw FormatException("No variant matched for WebhookProjectsV2ItemEditedChangesVariant0FieldValueTo");
@@ -235,6 +243,10 @@ sealed class WebhookProjectsV2ItemEditedChanges {
   static const String constructionSurface = 'named';
   const WebhookProjectsV2ItemEditedChanges();
   factory WebhookProjectsV2ItemEditedChanges.fromJson(Object? json) {
+    if (json is Map<String, dynamic>) {
+      try { final value = WebhookProjectsV2ItemEditedChangesVariant0.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return WebhookProjectsV2ItemEditedChangesWebhookProjectsV2ItemEditedChangesVariant0(value); } } catch (_) {}
+      try { final value = WebhookProjectsV2ItemEditedChangesVariant1.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return WebhookProjectsV2ItemEditedChangesWebhookProjectsV2ItemEditedChangesVariant1(value); } } catch (_) {}
+    }
     try { return WebhookProjectsV2ItemEditedChangesWebhookProjectsV2ItemEditedChangesVariant0(WebhookProjectsV2ItemEditedChangesVariant0.fromJson(json as Map<String, dynamic>)); } catch (_) {}
     try { return WebhookProjectsV2ItemEditedChangesWebhookProjectsV2ItemEditedChangesVariant1(WebhookProjectsV2ItemEditedChangesVariant1.fromJson(json as Map<String, dynamic>)); } catch (_) {}
     throw FormatException("No variant matched for WebhookProjectsV2ItemEditedChanges");

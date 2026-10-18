@@ -4,269 +4,280 @@
 part of 'inline.dart';
 
 // Inline operation models (part 410)
-/// The attestation's Sigstore Bundle. Refer to the [Sigstore Bundle Specification](https://github.com/sigstore/protobuf-specs/blob/main/protos/sigstore_bundle.proto) for more information.
-class ReposCreateAttestationRequestBodyBundle {
+class PullsMergeRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final SdkOptional<String> mediaType;
-  final SdkOptional<Map<String, Object?>> verificationMaterial;
-  final SdkOptional<Map<String, Object?>> dsseEnvelope;
+  /// Title for the automatic commit message.
+  final SdkOptional<String> commitTitle;
+  /// Extra detail to append to automatic commit message.
+  final SdkOptional<String> commitMessage;
+  /// SHA that pull request head must match to allow merge.
+  final SdkOptional<String> sha;
+  /// The merge method to use.
+  final SdkOptional<PullsMergeRequestBodyMergeMethod> mergeMethod;
 
-  const ReposCreateAttestationRequestBodyBundle({this.mediaType = const SdkOmitted(), this.verificationMaterial = const SdkOmitted(), this.dsseEnvelope = const SdkOmitted()});
+  const PullsMergeRequestBody({this.commitTitle = const SdkOmitted(), this.commitMessage = const SdkOmitted(), this.sha = const SdkOmitted(), this.mergeMethod = const SdkOmitted()});
 
-  ReposCreateAttestationRequestBodyBundle Function({SdkOptional<String> mediaType, SdkOptional<Map<String, Object?>> verificationMaterial, SdkOptional<Map<String, Object?>> dsseEnvelope}) get copyWith => _copyWith;
+  PullsMergeRequestBody Function({SdkOptional<String> commitTitle, SdkOptional<String> commitMessage, SdkOptional<String> sha, SdkOptional<PullsMergeRequestBodyMergeMethod> mergeMethod}) get copyWith => _copyWith;
 
-  ReposCreateAttestationRequestBodyBundle _copyWith({Object? mediaType = sdkOmittedValue, Object? verificationMaterial = sdkOmittedValue, Object? dsseEnvelope = sdkOmittedValue}) => ReposCreateAttestationRequestBodyBundle(
-    mediaType: identical(mediaType, sdkOmittedValue) ? this.mediaType : mediaType as SdkOptional<String>,
-    verificationMaterial: identical(verificationMaterial, sdkOmittedValue) ? this.verificationMaterial : verificationMaterial as SdkOptional<Map<String, Object?>>,
-    dsseEnvelope: identical(dsseEnvelope, sdkOmittedValue) ? this.dsseEnvelope : dsseEnvelope as SdkOptional<Map<String, Object?>>,
+  PullsMergeRequestBody _copyWith({Object? commitTitle = sdkOmittedValue, Object? commitMessage = sdkOmittedValue, Object? sha = sdkOmittedValue, Object? mergeMethod = sdkOmittedValue}) => PullsMergeRequestBody(
+    commitTitle: identical(commitTitle, sdkOmittedValue) ? this.commitTitle : commitTitle as SdkOptional<String>,
+    commitMessage: identical(commitMessage, sdkOmittedValue) ? this.commitMessage : commitMessage as SdkOptional<String>,
+    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as SdkOptional<String>,
+    mergeMethod: identical(mergeMethod, sdkOmittedValue) ? this.mergeMethod : mergeMethod as SdkOptional<PullsMergeRequestBodyMergeMethod>,
   );
 
-  factory ReposCreateAttestationRequestBodyBundle.fromJson(Map<String, dynamic> json) => ReposCreateAttestationRequestBodyBundle(
-    mediaType: json['mediaType'] != null ? SdkPresent((json['mediaType'] as String?)!) : const SdkOmitted(),
-    verificationMaterial: json['verificationMaterial'] != null ? SdkPresent((json['verificationMaterial'] == null ? null : Map<String, dynamic>.from(json['verificationMaterial'] as Map).map((key, value) => MapEntry(key, value)))!) : const SdkOmitted(),
-    dsseEnvelope: json['dsseEnvelope'] != null ? SdkPresent((json['dsseEnvelope'] == null ? null : Map<String, dynamic>.from(json['dsseEnvelope'] as Map).map((key, value) => MapEntry(key, value)))!) : const SdkOmitted(),
+  factory PullsMergeRequestBody.fromJson(Map<String, dynamic> json) => PullsMergeRequestBody(
+    commitTitle: json['commit_title'] != null ? SdkPresent((json['commit_title'] as String?)!) : const SdkOmitted(),
+    commitMessage: json['commit_message'] != null ? SdkPresent((json['commit_message'] as String?)!) : const SdkOmitted(),
+    sha: json['sha'] != null ? SdkPresent((json['sha'] as String?)!) : const SdkOmitted(),
+    mergeMethod: json['merge_method'] != null ? SdkPresent((json['merge_method'] != null ? PullsMergeRequestBodyMergeMethod.fromJson(json['merge_method'] as String) : null)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    ...switch (mediaType) {
-      SdkPresent<String>(value: final value) => {'mediaType': value,},
+    ...switch (commitTitle) {
+      SdkPresent<String>(value: final value) => {'commit_title': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (verificationMaterial) {
-      SdkPresent<Map<String, Object?>>(value: final value) => {'verificationMaterial': value,},
+    ...switch (commitMessage) {
+      SdkPresent<String>(value: final value) => {'commit_message': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (dsseEnvelope) {
-      SdkPresent<Map<String, Object?>>(value: final value) => {'dsseEnvelope': value,},
+    ...switch (sha) {
+      SdkPresent<String>(value: final value) => {'sha': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (mergeMethod) {
+      SdkPresent<PullsMergeRequestBodyMergeMethod>(value: final value) => {'merge_method': value.toJson(),},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-class ReposCreateAttestationRequestBody {
+class PullsMergeAsyncRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The attestation's Sigstore Bundle. Refer to the [Sigstore Bundle Specification](https://github.com/sigstore/protobuf-specs/blob/main/protos/sigstore_bundle.proto) for more information.
-  final ReposCreateAttestationRequestBodyBundle bundle;
+  /// Title for the automatic commit message. Only supported for direct merges.
+  final SdkOptional<String> commitTitle;
+  /// Extra detail to append to automatic commit message. Only supported for direct merges.
+  final SdkOptional<String> commitMessage;
+  /// SHA that pull request head must match to allow merge. If not provided, the current head of the PR at the time of the request will be used; if the PR is pushed in between the merge being requested and being executed, the merge will be cancelled.
+  final SdkOptional<String> sha;
+  /// The merge method to use for a direct merge. Only supported for direct merges.
+  final SdkOptional<PullsMergeAsyncRequestBodyMergeMethod> mergeMethod;
+  /// The action that will be taken to merge the pull request. `direct_merge` merges the pull request directly without using a merge queue; `merge_queue` adds the pull request to a merge queue; `default` uses a merge queue if one is configured for the target branch, or merges directly otherwise. If omitted, defaults to `default`.
+  final SdkOptional<PullsMergeAsyncRequestBodyMergeAction> mergeAction;
+  /// Whether to bypass repository rules that the authenticated actor is permitted to bypass.
+  final SdkOptional<bool> bypassRules;
 
-  const ReposCreateAttestationRequestBody({required this.bundle});
+  const PullsMergeAsyncRequestBody({this.commitTitle = const SdkOmitted(), this.commitMessage = const SdkOmitted(), this.sha = const SdkOmitted(), this.mergeMethod = const SdkOmitted(), this.mergeAction = const SdkOmitted(), this.bypassRules = const SdkOmitted()});
 
-  ReposCreateAttestationRequestBody Function({ReposCreateAttestationRequestBodyBundle bundle}) get copyWith => _copyWith;
+  PullsMergeAsyncRequestBody Function({SdkOptional<String> commitTitle, SdkOptional<String> commitMessage, SdkOptional<String> sha, SdkOptional<PullsMergeAsyncRequestBodyMergeMethod> mergeMethod, SdkOptional<PullsMergeAsyncRequestBodyMergeAction> mergeAction, SdkOptional<bool> bypassRules}) get copyWith => _copyWith;
 
-  ReposCreateAttestationRequestBody _copyWith({Object? bundle = sdkOmittedValue}) => ReposCreateAttestationRequestBody(
-    bundle: identical(bundle, sdkOmittedValue) ? this.bundle : bundle as ReposCreateAttestationRequestBodyBundle,
+  PullsMergeAsyncRequestBody _copyWith({Object? commitTitle = sdkOmittedValue, Object? commitMessage = sdkOmittedValue, Object? sha = sdkOmittedValue, Object? mergeMethod = sdkOmittedValue, Object? mergeAction = sdkOmittedValue, Object? bypassRules = sdkOmittedValue}) => PullsMergeAsyncRequestBody(
+    commitTitle: identical(commitTitle, sdkOmittedValue) ? this.commitTitle : commitTitle as SdkOptional<String>,
+    commitMessage: identical(commitMessage, sdkOmittedValue) ? this.commitMessage : commitMessage as SdkOptional<String>,
+    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as SdkOptional<String>,
+    mergeMethod: identical(mergeMethod, sdkOmittedValue) ? this.mergeMethod : mergeMethod as SdkOptional<PullsMergeAsyncRequestBodyMergeMethod>,
+    mergeAction: identical(mergeAction, sdkOmittedValue) ? this.mergeAction : mergeAction as SdkOptional<PullsMergeAsyncRequestBodyMergeAction>,
+    bypassRules: identical(bypassRules, sdkOmittedValue) ? this.bypassRules : bypassRules as SdkOptional<bool>,
   );
 
-  factory ReposCreateAttestationRequestBody.fromJson(Map<String, dynamic> json) => ReposCreateAttestationRequestBody(
-    bundle: (json['bundle'] != null ? ReposCreateAttestationRequestBodyBundle.fromJson(json['bundle'] as Map<String, dynamic>) : null)!,
+  factory PullsMergeAsyncRequestBody.fromJson(Map<String, dynamic> json) => PullsMergeAsyncRequestBody(
+    commitTitle: json['commit_title'] != null ? SdkPresent((json['commit_title'] as String?)!) : const SdkOmitted(),
+    commitMessage: json['commit_message'] != null ? SdkPresent((json['commit_message'] as String?)!) : const SdkOmitted(),
+    sha: json['sha'] != null ? SdkPresent((json['sha'] as String?)!) : const SdkOmitted(),
+    mergeMethod: json['merge_method'] != null ? SdkPresent((json['merge_method'] != null ? PullsMergeAsyncRequestBodyMergeMethod.fromJson(json['merge_method'] as String) : null)!) : const SdkOmitted(),
+    mergeAction: json['merge_action'] != null ? SdkPresent((json['merge_action'] != null ? PullsMergeAsyncRequestBodyMergeAction.fromJson(json['merge_action'] as String) : null)!) : const SdkOmitted(),
+    bypassRules: json['bypass_rules'] != null ? SdkPresent((json['bypass_rules'] as bool?)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    'bundle': bundle.toJson(),
-  };
-}
-
-class ReposCreateAttestationResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The ID of the attestation.
-  final SdkOptional<int> id;
-
-  const ReposCreateAttestationResponse({this.id = const SdkOmitted()});
-
-  ReposCreateAttestationResponse Function({SdkOptional<int> id}) get copyWith => _copyWith;
-
-  ReposCreateAttestationResponse _copyWith({Object? id = sdkOmittedValue}) => ReposCreateAttestationResponse(
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-  );
-
-  factory ReposCreateAttestationResponse.fromJson(Map<String, dynamic> json) => ReposCreateAttestationResponse(
-    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    ...switch (id) {
-      SdkPresent<int>(value: final value) => {'id': value,},
+    ...switch (commitTitle) {
+      SdkPresent<String>(value: final value) => {'commit_title': value,},
       _ => const <String, dynamic>{},
     },
-  };
-}
-
-/// The attestation's Sigstore Bundle. Refer to the [Sigstore Bundle Specification](https://github.com/sigstore/protobuf-specs/blob/main/protos/sigstore_bundle.proto) for more information.
-class ReposListAttestationsResponseAttestationsItemBundle {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final SdkOptional<String> mediaType;
-  final SdkOptional<Map<String, Object?>> verificationMaterial;
-  final SdkOptional<Map<String, Object?>> dsseEnvelope;
-
-  const ReposListAttestationsResponseAttestationsItemBundle({this.mediaType = const SdkOmitted(), this.verificationMaterial = const SdkOmitted(), this.dsseEnvelope = const SdkOmitted()});
-
-  ReposListAttestationsResponseAttestationsItemBundle Function({SdkOptional<String> mediaType, SdkOptional<Map<String, Object?>> verificationMaterial, SdkOptional<Map<String, Object?>> dsseEnvelope}) get copyWith => _copyWith;
-
-  ReposListAttestationsResponseAttestationsItemBundle _copyWith({Object? mediaType = sdkOmittedValue, Object? verificationMaterial = sdkOmittedValue, Object? dsseEnvelope = sdkOmittedValue}) => ReposListAttestationsResponseAttestationsItemBundle(
-    mediaType: identical(mediaType, sdkOmittedValue) ? this.mediaType : mediaType as SdkOptional<String>,
-    verificationMaterial: identical(verificationMaterial, sdkOmittedValue) ? this.verificationMaterial : verificationMaterial as SdkOptional<Map<String, Object?>>,
-    dsseEnvelope: identical(dsseEnvelope, sdkOmittedValue) ? this.dsseEnvelope : dsseEnvelope as SdkOptional<Map<String, Object?>>,
-  );
-
-  factory ReposListAttestationsResponseAttestationsItemBundle.fromJson(Map<String, dynamic> json) => ReposListAttestationsResponseAttestationsItemBundle(
-    mediaType: json['mediaType'] != null ? SdkPresent((json['mediaType'] as String?)!) : const SdkOmitted(),
-    verificationMaterial: json['verificationMaterial'] != null ? SdkPresent((json['verificationMaterial'] == null ? null : Map<String, dynamic>.from(json['verificationMaterial'] as Map).map((key, value) => MapEntry(key, value)))!) : const SdkOmitted(),
-    dsseEnvelope: json['dsseEnvelope'] != null ? SdkPresent((json['dsseEnvelope'] == null ? null : Map<String, dynamic>.from(json['dsseEnvelope'] as Map).map((key, value) => MapEntry(key, value)))!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    ...switch (mediaType) {
-      SdkPresent<String>(value: final value) => {'mediaType': value,},
+    ...switch (commitMessage) {
+      SdkPresent<String>(value: final value) => {'commit_message': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (verificationMaterial) {
-      SdkPresent<Map<String, Object?>>(value: final value) => {'verificationMaterial': value,},
+    ...switch (sha) {
+      SdkPresent<String>(value: final value) => {'sha': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (dsseEnvelope) {
-      SdkPresent<Map<String, Object?>>(value: final value) => {'dsseEnvelope': value,},
+    ...switch (mergeMethod) {
+      SdkPresent<PullsMergeAsyncRequestBodyMergeMethod>(value: final value) => {'merge_method': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (mergeAction) {
+      SdkPresent<PullsMergeAsyncRequestBodyMergeAction>(value: final value) => {'merge_action': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (bypassRules) {
+      SdkPresent<bool>(value: final value) => {'bypass_rules': value,},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-class ReposListAttestationsResponseAttestationsItem {
+class PullsRequestReviewersRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The attestation's Sigstore Bundle. Refer to the [Sigstore Bundle Specification](https://github.com/sigstore/protobuf-specs/blob/main/protos/sigstore_bundle.proto) for more information.
-  final SdkOptional<ReposListAttestationsResponseAttestationsItemBundle> bundle;
-  final SdkOptional<int> repositoryId;
-  final SdkOptional<String> bundleUrl;
-  final SdkOptional<String> initiator;
+  /// An array of user `login`s that will be requested.
+  final SdkOptional<List<String>> reviewers;
+  /// An array of team `slug`s that will be requested.
+  final SdkOptional<List<String>> teamReviewers;
 
-  const ReposListAttestationsResponseAttestationsItem({this.bundle = const SdkOmitted(), this.repositoryId = const SdkOmitted(), this.bundleUrl = const SdkOmitted(), this.initiator = const SdkOmitted()});
+  const PullsRequestReviewersRequestBody({this.reviewers = const SdkOmitted(), this.teamReviewers = const SdkOmitted()});
 
-  ReposListAttestationsResponseAttestationsItem Function({SdkOptional<ReposListAttestationsResponseAttestationsItemBundle> bundle, SdkOptional<int> repositoryId, SdkOptional<String> bundleUrl, SdkOptional<String> initiator}) get copyWith => _copyWith;
+  PullsRequestReviewersRequestBody Function({SdkOptional<List<String>> reviewers, SdkOptional<List<String>> teamReviewers}) get copyWith => _copyWith;
 
-  ReposListAttestationsResponseAttestationsItem _copyWith({Object? bundle = sdkOmittedValue, Object? repositoryId = sdkOmittedValue, Object? bundleUrl = sdkOmittedValue, Object? initiator = sdkOmittedValue}) => ReposListAttestationsResponseAttestationsItem(
-    bundle: identical(bundle, sdkOmittedValue) ? this.bundle : bundle as SdkOptional<ReposListAttestationsResponseAttestationsItemBundle>,
-    repositoryId: identical(repositoryId, sdkOmittedValue) ? this.repositoryId : repositoryId as SdkOptional<int>,
-    bundleUrl: identical(bundleUrl, sdkOmittedValue) ? this.bundleUrl : bundleUrl as SdkOptional<String>,
-    initiator: identical(initiator, sdkOmittedValue) ? this.initiator : initiator as SdkOptional<String>,
+  PullsRequestReviewersRequestBody _copyWith({Object? reviewers = sdkOmittedValue, Object? teamReviewers = sdkOmittedValue}) => PullsRequestReviewersRequestBody(
+    reviewers: identical(reviewers, sdkOmittedValue) ? this.reviewers : reviewers as SdkOptional<List<String>>,
+    teamReviewers: identical(teamReviewers, sdkOmittedValue) ? this.teamReviewers : teamReviewers as SdkOptional<List<String>>,
   );
 
-  factory ReposListAttestationsResponseAttestationsItem.fromJson(Map<String, dynamic> json) => ReposListAttestationsResponseAttestationsItem(
-    bundle: json['bundle'] != null ? SdkPresent((json['bundle'] != null ? ReposListAttestationsResponseAttestationsItemBundle.fromJson(json['bundle'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    repositoryId: json['repository_id'] != null ? SdkPresent(((json['repository_id'] as num?)?.toInt())!) : const SdkOmitted(),
-    bundleUrl: json['bundle_url'] != null ? SdkPresent((json['bundle_url'] as String?)!) : const SdkOmitted(),
-    initiator: json['initiator'] != null ? SdkPresent((json['initiator'] as String?)!) : const SdkOmitted(),
+  factory PullsRequestReviewersRequestBody.fromJson(Map<String, dynamic> json) => PullsRequestReviewersRequestBody(
+    reviewers: json['reviewers'] != null ? SdkPresent(((json['reviewers'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    teamReviewers: json['team_reviewers'] != null ? SdkPresent(((json['team_reviewers'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    ...switch (bundle) {
-      SdkPresent<ReposListAttestationsResponseAttestationsItemBundle>(value: final value) => {'bundle': value.toJson(),},
+    ...switch (reviewers) {
+      SdkPresent<List<String>>(value: final value) => {'reviewers': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (repositoryId) {
-      SdkPresent<int>(value: final value) => {'repository_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (bundleUrl) {
-      SdkPresent<String>(value: final value) => {'bundle_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (initiator) {
-      SdkPresent<String>(value: final value) => {'initiator': value,},
+    ...switch (teamReviewers) {
+      SdkPresent<List<String>>(value: final value) => {'team_reviewers': value,},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-class ReposListAttestationsResponse {
+class PullsRemoveRequestedReviewersRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final SdkOptional<List<ReposListAttestationsResponseAttestationsItem>> attestations;
+  /// An array of user `login`s that will be removed.
+  final List<String> reviewers;
+  /// An array of team `slug`s that will be removed.
+  final SdkOptional<List<String>> teamReviewers;
 
-  const ReposListAttestationsResponse({this.attestations = const SdkOmitted()});
+  const PullsRemoveRequestedReviewersRequestBody({required this.reviewers, this.teamReviewers = const SdkOmitted()});
 
-  ReposListAttestationsResponse Function({SdkOptional<List<ReposListAttestationsResponseAttestationsItem>> attestations}) get copyWith => _copyWith;
+  PullsRemoveRequestedReviewersRequestBody Function({List<String> reviewers, SdkOptional<List<String>> teamReviewers}) get copyWith => _copyWith;
 
-  ReposListAttestationsResponse _copyWith({Object? attestations = sdkOmittedValue}) => ReposListAttestationsResponse(
-    attestations: identical(attestations, sdkOmittedValue) ? this.attestations : attestations as SdkOptional<List<ReposListAttestationsResponseAttestationsItem>>,
+  PullsRemoveRequestedReviewersRequestBody _copyWith({Object? reviewers = sdkOmittedValue, Object? teamReviewers = sdkOmittedValue}) => PullsRemoveRequestedReviewersRequestBody(
+    reviewers: identical(reviewers, sdkOmittedValue) ? this.reviewers : reviewers as List<String>,
+    teamReviewers: identical(teamReviewers, sdkOmittedValue) ? this.teamReviewers : teamReviewers as SdkOptional<List<String>>,
   );
 
-  factory ReposListAttestationsResponse.fromJson(Map<String, dynamic> json) => ReposListAttestationsResponse(
-    attestations: json['attestations'] != null ? SdkPresent(((json['attestations'] as List?)?.map((e) => ReposListAttestationsResponseAttestationsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  factory PullsRemoveRequestedReviewersRequestBody.fromJson(Map<String, dynamic> json) => PullsRemoveRequestedReviewersRequestBody(
+    reviewers: ((json['reviewers'] as List?)?.map((e) => e as String).toList())!,
+    teamReviewers: json['team_reviewers'] != null ? SdkPresent(((json['team_reviewers'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    ...switch (attestations) {
-      SdkPresent<List<ReposListAttestationsResponseAttestationsItem>>(value: final value) => {'attestations': value.map((item) => item.toJson()).toList(),},
+    'reviewers': reviewers,
+    ...switch (teamReviewers) {
+      SdkPresent<List<String>>(value: final value) => {'team_reviewers': value,},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-class ReposCreateAutolinkRequestBody {
+class PullsRerequestReviewersRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// This prefix appended by certain characters will generate a link any time it is found in an issue, pull request, or commit.
-  final String keyPrefix;
-  /// The URL must contain `&lt;num&gt;` for the reference number. `&lt;num&gt;` matches different characters depending on the value of `is_alphanumeric`.
-  final String urlTemplate;
-  /// Whether this autolink reference matches alphanumeric characters. If true, the `&lt;num&gt;` parameter of the `url_template` matches alphanumeric characters `A-Z` (case insensitive), `0-9`, and `-`. If false, this autolink reference only matches numeric characters.
-  final SdkOptional<bool> isAlphanumeric;
+  /// An array of user `login`s whose reviews will be rerequested.
+  final SdkOptional<List<String>> reviewers;
+  /// An array of team `slug`s whose reviews will be rerequested.
+  final SdkOptional<List<String>> teamReviewers;
 
-  const ReposCreateAutolinkRequestBody({required this.keyPrefix, required this.urlTemplate, this.isAlphanumeric = const SdkOmitted()});
+  const PullsRerequestReviewersRequestBody({this.reviewers = const SdkOmitted(), this.teamReviewers = const SdkOmitted()});
 
-  ReposCreateAutolinkRequestBody Function({String keyPrefix, String urlTemplate, SdkOptional<bool> isAlphanumeric}) get copyWith => _copyWith;
+  PullsRerequestReviewersRequestBody Function({SdkOptional<List<String>> reviewers, SdkOptional<List<String>> teamReviewers}) get copyWith => _copyWith;
 
-  ReposCreateAutolinkRequestBody _copyWith({Object? keyPrefix = sdkOmittedValue, Object? urlTemplate = sdkOmittedValue, Object? isAlphanumeric = sdkOmittedValue}) => ReposCreateAutolinkRequestBody(
-    keyPrefix: identical(keyPrefix, sdkOmittedValue) ? this.keyPrefix : keyPrefix as String,
-    urlTemplate: identical(urlTemplate, sdkOmittedValue) ? this.urlTemplate : urlTemplate as String,
-    isAlphanumeric: identical(isAlphanumeric, sdkOmittedValue) ? this.isAlphanumeric : isAlphanumeric as SdkOptional<bool>,
+  PullsRerequestReviewersRequestBody _copyWith({Object? reviewers = sdkOmittedValue, Object? teamReviewers = sdkOmittedValue}) => PullsRerequestReviewersRequestBody(
+    reviewers: identical(reviewers, sdkOmittedValue) ? this.reviewers : reviewers as SdkOptional<List<String>>,
+    teamReviewers: identical(teamReviewers, sdkOmittedValue) ? this.teamReviewers : teamReviewers as SdkOptional<List<String>>,
   );
 
-  factory ReposCreateAutolinkRequestBody.fromJson(Map<String, dynamic> json) => ReposCreateAutolinkRequestBody(
-    keyPrefix: (json['key_prefix'] as String?)!,
-    urlTemplate: (json['url_template'] as String?)!,
-    isAlphanumeric: json['is_alphanumeric'] != null ? SdkPresent((json['is_alphanumeric'] as bool?)!) : const SdkOmitted(),
+  factory PullsRerequestReviewersRequestBody.fromJson(Map<String, dynamic> json) => PullsRerequestReviewersRequestBody(
+    reviewers: json['reviewers'] != null ? SdkPresent(((json['reviewers'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    teamReviewers: json['team_reviewers'] != null ? SdkPresent(((json['team_reviewers'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    'key_prefix': keyPrefix,
-    'url_template': urlTemplate,
-    ...switch (isAlphanumeric) {
-      SdkPresent<bool>(value: final value) => {'is_alphanumeric': value,},
+    ...switch (reviewers) {
+      SdkPresent<List<String>>(value: final value) => {'reviewers': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (teamReviewers) {
+      SdkPresent<List<String>>(value: final value) => {'team_reviewers': value,},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-class ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem {
+class PullsCreateReviewRequestBodyCommentsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The name of the required check
-  final String context;
-  /// The ID of the GitHub App that must provide this check. Omit this field to automatically select the GitHub App that has recently provided this check, or any app if it was not set by a GitHub App. Pass -1 to explicitly allow any app to set the status.
-  final SdkOptional<int> appId;
+  /// The relative path to the file that necessitates a review comment.
+  final String path;
+  /// The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. The `position` value equals the number of lines down from the first "@@" hunk header in the file you want to add a comment. The line just below the "@@" line is position 1, the next line is position 2, and so on. The position in the diff continues to increase through lines of whitespace and additional hunks until the beginning of a new file.
+  final SdkOptional<int> position;
+  /// Text of the review comment.
+  final String body;
+  final SdkOptional<int> line;
+  final SdkOptional<String> side;
+  final SdkOptional<int> startLine;
+  final SdkOptional<String> startSide;
 
-  const ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem({required this.context, this.appId = const SdkOmitted()});
+  const PullsCreateReviewRequestBodyCommentsItem({required this.path, this.position = const SdkOmitted(), required this.body, this.line = const SdkOmitted(), this.side = const SdkOmitted(), this.startLine = const SdkOmitted(), this.startSide = const SdkOmitted()});
 
-  ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem Function({String context, SdkOptional<int> appId}) get copyWith => _copyWith;
+  PullsCreateReviewRequestBodyCommentsItem Function({String path, SdkOptional<int> position, String body, SdkOptional<int> line, SdkOptional<String> side, SdkOptional<int> startLine, SdkOptional<String> startSide}) get copyWith => _copyWith;
 
-  ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem _copyWith({Object? context = sdkOmittedValue, Object? appId = sdkOmittedValue}) => ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem(
-    context: identical(context, sdkOmittedValue) ? this.context : context as String,
-    appId: identical(appId, sdkOmittedValue) ? this.appId : appId as SdkOptional<int>,
+  PullsCreateReviewRequestBodyCommentsItem _copyWith({Object? path = sdkOmittedValue, Object? position = sdkOmittedValue, Object? body = sdkOmittedValue, Object? line = sdkOmittedValue, Object? side = sdkOmittedValue, Object? startLine = sdkOmittedValue, Object? startSide = sdkOmittedValue}) => PullsCreateReviewRequestBodyCommentsItem(
+    path: identical(path, sdkOmittedValue) ? this.path : path as String,
+    position: identical(position, sdkOmittedValue) ? this.position : position as SdkOptional<int>,
+    body: identical(body, sdkOmittedValue) ? this.body : body as String,
+    line: identical(line, sdkOmittedValue) ? this.line : line as SdkOptional<int>,
+    side: identical(side, sdkOmittedValue) ? this.side : side as SdkOptional<String>,
+    startLine: identical(startLine, sdkOmittedValue) ? this.startLine : startLine as SdkOptional<int>,
+    startSide: identical(startSide, sdkOmittedValue) ? this.startSide : startSide as SdkOptional<String>,
   );
 
-  factory ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem.fromJson(Map<String, dynamic> json) => ReposUpdateBranchProtectionRequestBodyRequiredStatusChecksChecksItem(
-    context: (json['context'] as String?)!,
-    appId: json['app_id'] != null ? SdkPresent(((json['app_id'] as num?)?.toInt())!) : const SdkOmitted(),
+  factory PullsCreateReviewRequestBodyCommentsItem.fromJson(Map<String, dynamic> json) => PullsCreateReviewRequestBodyCommentsItem(
+    path: (json['path'] as String?)!,
+    position: json['position'] != null ? SdkPresent(((json['position'] as num?)?.toInt())!) : const SdkOmitted(),
+    body: (json['body'] as String?)!,
+    line: json['line'] != null ? SdkPresent(((json['line'] as num?)?.toInt())!) : const SdkOmitted(),
+    side: json['side'] != null ? SdkPresent((json['side'] as String?)!) : const SdkOmitted(),
+    startLine: json['start_line'] != null ? SdkPresent(((json['start_line'] as num?)?.toInt())!) : const SdkOmitted(),
+    startSide: json['start_side'] != null ? SdkPresent((json['start_side'] as String?)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    'context': context,
-    ...switch (appId) {
-      SdkPresent<int>(value: final value) => {'app_id': value,},
+    'path': path,
+    ...switch (position) {
+      SdkPresent<int>(value: final value) => {'position': value,},
+      _ => const <String, dynamic>{},
+    },
+    'body': body,
+    ...switch (line) {
+      SdkPresent<int>(value: final value) => {'line': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (side) {
+      SdkPresent<String>(value: final value) => {'side': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (startLine) {
+      SdkPresent<int>(value: final value) => {'start_line': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (startSide) {
+      SdkPresent<String>(value: final value) => {'start_side': value,},
       _ => const <String, dynamic>{},
     },
   };

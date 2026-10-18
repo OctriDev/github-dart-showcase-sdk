@@ -4,217 +4,273 @@
 part of 'inline.dart';
 
 // Inline operation models (part 406)
-class ReposCreateInOrgRequestBody {
+class ChecksUpdateRequestBodyVariant1 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The name of the repository.
-  final String name;
-  /// A short description of the repository.
-  final SdkOptional<String> description;
-  /// A URL with more information about the repository.
-  final SdkOptional<String> homepage;
-  /// Whether the repository is private.
-  final SdkOptional<bool> private;
-  /// The visibility of the repository.
-  final SdkOptional<ReposCreateInOrgRequestBodyVisibility> visibility;
-  /// Either `true` to enable issues for this repository or `false` to disable them.
-  final SdkOptional<bool> hasIssues;
-  /// Either `true` to enable projects for this repository or `false` to disable them. **Note:** If you're creating a repository in an organization that has disabled repository projects, the default is `false`, and if you pass `true`, the API returns an error.
-  final SdkOptional<bool> hasProjects;
-  /// Either `true` to enable the wiki for this repository or `false` to disable it.
-  final SdkOptional<bool> hasWiki;
-  /// Whether downloads are enabled.
-  final SdkOptional<bool> hasDownloads;
-  /// Either `true` to make this repo available as a template repository or `false` to prevent it.
-  final SdkOptional<bool> isTemplate;
-  /// The id of the team that will be granted access to this repository. This is only valid when creating a repository in an organization.
-  final SdkOptional<int> teamId;
-  /// Pass `true` to create an initial commit with empty README.
-  final SdkOptional<bool> autoInit;
-  /// Desired language or platform [.gitignore template](https://github.com/github/gitignore) to apply. Use the name of the template without the extension. For example, "Haskell".
-  final SdkOptional<String> gitignoreTemplate;
-  /// Choose an [open source license template](https://choosealicense.com/) that best suits your needs, and then use the [license keyword](https://docs.github.com/articles/licensing-a-repository/#searching-github-by-license-type) as the `license_template` string. For example, "mit" or "mpl-2.0".
-  final SdkOptional<String> licenseTemplate;
-  /// Either `true` to allow squash-merging pull requests, or `false` to prevent squash-merging.
-  final SdkOptional<bool> allowSquashMerge;
-  /// Either `true` to allow merging pull requests with a merge commit, or `false` to prevent merging pull requests with merge commits.
-  final SdkOptional<bool> allowMergeCommit;
-  /// Either `true` to allow rebase-merging pull requests, or `false` to prevent rebase-merging.
-  final SdkOptional<bool> allowRebaseMerge;
-  /// Either `true` to allow auto-merge on pull requests, or `false` to disallow auto-merge.
-  final SdkOptional<bool> allowAutoMerge;
-  /// Either `true` to allow automatically deleting head branches when pull requests are merged, or `false` to prevent automatic deletion. **The authenticated user must be an organization owner to set this property to `true`.**
-  final SdkOptional<bool> deleteBranchOnMerge;
-  /// Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. **This property is closing down. Please use `squash_merge_commit_title` instead.
-  final SdkOptional<bool> useSquashPrTitleAsDefault;
-  /// Required when using `squash_merge_commit_message`. The default value for a squash merge commit title: - `PR_TITLE` - default to the pull request's title. - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
-  final SdkOptional<ReposCreateInOrgRequestBodySquashMergeCommitTitle> squashMergeCommitTitle;
-  /// The default value for a squash merge commit message: - `PR_BODY` - default to the pull request's body. - `COMMIT_MESSAGES` - default to the branch's commit messages. - `BLANK` - default to a blank commit message.
-  final SdkOptional<ReposCreateInOrgRequestBodySquashMergeCommitMessage> squashMergeCommitMessage;
-  /// Required when using `merge_commit_message`. The default value for a merge commit title. - `PR_TITLE` - default to the pull request's title. - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
-  final SdkOptional<ReposCreateInOrgRequestBodyMergeCommitTitle> mergeCommitTitle;
-  /// The default value for a merge commit message. - `PR_TITLE` - default to the pull request's title. - `PR_BODY` - default to the pull request's body. - `BLANK` - default to a blank commit message.
-  final SdkOptional<ReposCreateInOrgRequestBodyMergeCommitMessage> mergeCommitMessage;
-  /// The custom properties for the new repository. The keys are the custom property names, and the values are the corresponding custom property values.
-  final SdkOptional<Map<String, Object?>> customProperties;
+  /// The name of the check. For example, "code-coverage".
+  final SdkOptional<String> name;
+  /// The URL of the integrator's site that has the full details of the check.
+  final SdkOptional<String> detailsUrl;
+  /// A reference for the run on the integrator's system.
+  final SdkOptional<String> externalId;
+  /// This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
+  final SdkOptional<String> startedAt;
+  final SdkOptional<ChecksUpdateRequestBodyVariant1Status> status;
+  /// **Required if you provide `completed_at` or a `status` of `completed`**. The final conclusion of the check. **Note:** Providing `conclusion` will automatically set the `status` parameter to `completed`. You cannot change a check run conclusion to `stale`, only GitHub can set this.
+  final SdkOptional<ChecksUpdateRequestBodyVariant1Conclusion> conclusion;
+  /// The time the check completed. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
+  final SdkOptional<String> completedAt;
+  /// Check runs can accept a variety of data in the `output` object, including a `title` and `summary` and can optionally provide descriptive details about the run.
+  final SdkOptional<ChecksUpdateRequestBodyVariant1Output> output;
+  /// Possible further actions the integrator can perform, which a user may trigger. Each action includes a `label`, `identifier` and `description`. A maximum of three actions are accepted. To learn more about check runs and requested actions, see "[Check runs and requested actions](https://docs.github.com/rest/guides/using-the-rest-api-to-interact-with-checks#check-runs-and-requested-actions)."
+  final SdkOptional<List<ChecksUpdateRequestBodyVariant1ActionsItem>> actions;
+  final Map<String, dynamic> additionalProperties;
 
-  const ReposCreateInOrgRequestBody({required this.name, this.description = const SdkOmitted(), this.homepage = const SdkOmitted(), this.private = const SdkOmitted(), this.visibility = const SdkOmitted(), this.hasIssues = const SdkOmitted(), this.hasProjects = const SdkOmitted(), this.hasWiki = const SdkOmitted(), this.hasDownloads = const SdkOmitted(), this.isTemplate = const SdkOmitted(), this.teamId = const SdkOmitted(), this.autoInit = const SdkOmitted(), this.gitignoreTemplate = const SdkOmitted(), this.licenseTemplate = const SdkOmitted(), this.allowSquashMerge = const SdkOmitted(), this.allowMergeCommit = const SdkOmitted(), this.allowRebaseMerge = const SdkOmitted(), this.allowAutoMerge = const SdkOmitted(), this.deleteBranchOnMerge = const SdkOmitted(), this.useSquashPrTitleAsDefault = const SdkOmitted(), this.squashMergeCommitTitle = const SdkOmitted(), this.squashMergeCommitMessage = const SdkOmitted(), this.mergeCommitTitle = const SdkOmitted(), this.mergeCommitMessage = const SdkOmitted(), this.customProperties = const SdkOmitted()});
+  const ChecksUpdateRequestBodyVariant1({this.name = const SdkOmitted(), this.detailsUrl = const SdkOmitted(), this.externalId = const SdkOmitted(), this.startedAt = const SdkOmitted(), this.status = const SdkOmitted(), this.conclusion = const SdkOmitted(), this.completedAt = const SdkOmitted(), this.output = const SdkOmitted(), this.actions = const SdkOmitted(), this.additionalProperties = const <String, dynamic>{}});
 
-  ReposCreateInOrgRequestBody Function({String name, SdkOptional<String> description, SdkOptional<String> homepage, SdkOptional<bool> private, SdkOptional<ReposCreateInOrgRequestBodyVisibility> visibility, SdkOptional<bool> hasIssues, SdkOptional<bool> hasProjects, SdkOptional<bool> hasWiki, SdkOptional<bool> hasDownloads, SdkOptional<bool> isTemplate, SdkOptional<int> teamId, SdkOptional<bool> autoInit, SdkOptional<String> gitignoreTemplate, SdkOptional<String> licenseTemplate, SdkOptional<bool> allowSquashMerge, SdkOptional<bool> allowMergeCommit, SdkOptional<bool> allowRebaseMerge, SdkOptional<bool> allowAutoMerge, SdkOptional<bool> deleteBranchOnMerge, SdkOptional<bool> useSquashPrTitleAsDefault, SdkOptional<ReposCreateInOrgRequestBodySquashMergeCommitTitle> squashMergeCommitTitle, SdkOptional<ReposCreateInOrgRequestBodySquashMergeCommitMessage> squashMergeCommitMessage, SdkOptional<ReposCreateInOrgRequestBodyMergeCommitTitle> mergeCommitTitle, SdkOptional<ReposCreateInOrgRequestBodyMergeCommitMessage> mergeCommitMessage, SdkOptional<Map<String, Object?>> customProperties}) get copyWith => _copyWith;
+  ChecksUpdateRequestBodyVariant1 Function({SdkOptional<String> name, SdkOptional<String> detailsUrl, SdkOptional<String> externalId, SdkOptional<String> startedAt, SdkOptional<ChecksUpdateRequestBodyVariant1Status> status, SdkOptional<ChecksUpdateRequestBodyVariant1Conclusion> conclusion, SdkOptional<String> completedAt, SdkOptional<ChecksUpdateRequestBodyVariant1Output> output, SdkOptional<List<ChecksUpdateRequestBodyVariant1ActionsItem>> actions}) get copyWith => _copyWith;
 
-  ReposCreateInOrgRequestBody _copyWith({Object? name = sdkOmittedValue, Object? description = sdkOmittedValue, Object? homepage = sdkOmittedValue, Object? private = sdkOmittedValue, Object? visibility = sdkOmittedValue, Object? hasIssues = sdkOmittedValue, Object? hasProjects = sdkOmittedValue, Object? hasWiki = sdkOmittedValue, Object? hasDownloads = sdkOmittedValue, Object? isTemplate = sdkOmittedValue, Object? teamId = sdkOmittedValue, Object? autoInit = sdkOmittedValue, Object? gitignoreTemplate = sdkOmittedValue, Object? licenseTemplate = sdkOmittedValue, Object? allowSquashMerge = sdkOmittedValue, Object? allowMergeCommit = sdkOmittedValue, Object? allowRebaseMerge = sdkOmittedValue, Object? allowAutoMerge = sdkOmittedValue, Object? deleteBranchOnMerge = sdkOmittedValue, Object? useSquashPrTitleAsDefault = sdkOmittedValue, Object? squashMergeCommitTitle = sdkOmittedValue, Object? squashMergeCommitMessage = sdkOmittedValue, Object? mergeCommitTitle = sdkOmittedValue, Object? mergeCommitMessage = sdkOmittedValue, Object? customProperties = sdkOmittedValue}) => ReposCreateInOrgRequestBody(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String>,
-    homepage: identical(homepage, sdkOmittedValue) ? this.homepage : homepage as SdkOptional<String>,
-    private: identical(private, sdkOmittedValue) ? this.private : private as SdkOptional<bool>,
-    visibility: identical(visibility, sdkOmittedValue) ? this.visibility : visibility as SdkOptional<ReposCreateInOrgRequestBodyVisibility>,
-    hasIssues: identical(hasIssues, sdkOmittedValue) ? this.hasIssues : hasIssues as SdkOptional<bool>,
-    hasProjects: identical(hasProjects, sdkOmittedValue) ? this.hasProjects : hasProjects as SdkOptional<bool>,
-    hasWiki: identical(hasWiki, sdkOmittedValue) ? this.hasWiki : hasWiki as SdkOptional<bool>,
-    hasDownloads: identical(hasDownloads, sdkOmittedValue) ? this.hasDownloads : hasDownloads as SdkOptional<bool>,
-    isTemplate: identical(isTemplate, sdkOmittedValue) ? this.isTemplate : isTemplate as SdkOptional<bool>,
-    teamId: identical(teamId, sdkOmittedValue) ? this.teamId : teamId as SdkOptional<int>,
-    autoInit: identical(autoInit, sdkOmittedValue) ? this.autoInit : autoInit as SdkOptional<bool>,
-    gitignoreTemplate: identical(gitignoreTemplate, sdkOmittedValue) ? this.gitignoreTemplate : gitignoreTemplate as SdkOptional<String>,
-    licenseTemplate: identical(licenseTemplate, sdkOmittedValue) ? this.licenseTemplate : licenseTemplate as SdkOptional<String>,
-    allowSquashMerge: identical(allowSquashMerge, sdkOmittedValue) ? this.allowSquashMerge : allowSquashMerge as SdkOptional<bool>,
-    allowMergeCommit: identical(allowMergeCommit, sdkOmittedValue) ? this.allowMergeCommit : allowMergeCommit as SdkOptional<bool>,
-    allowRebaseMerge: identical(allowRebaseMerge, sdkOmittedValue) ? this.allowRebaseMerge : allowRebaseMerge as SdkOptional<bool>,
-    allowAutoMerge: identical(allowAutoMerge, sdkOmittedValue) ? this.allowAutoMerge : allowAutoMerge as SdkOptional<bool>,
-    deleteBranchOnMerge: identical(deleteBranchOnMerge, sdkOmittedValue) ? this.deleteBranchOnMerge : deleteBranchOnMerge as SdkOptional<bool>,
-    useSquashPrTitleAsDefault: identical(useSquashPrTitleAsDefault, sdkOmittedValue) ? this.useSquashPrTitleAsDefault : useSquashPrTitleAsDefault as SdkOptional<bool>,
-    squashMergeCommitTitle: identical(squashMergeCommitTitle, sdkOmittedValue) ? this.squashMergeCommitTitle : squashMergeCommitTitle as SdkOptional<ReposCreateInOrgRequestBodySquashMergeCommitTitle>,
-    squashMergeCommitMessage: identical(squashMergeCommitMessage, sdkOmittedValue) ? this.squashMergeCommitMessage : squashMergeCommitMessage as SdkOptional<ReposCreateInOrgRequestBodySquashMergeCommitMessage>,
-    mergeCommitTitle: identical(mergeCommitTitle, sdkOmittedValue) ? this.mergeCommitTitle : mergeCommitTitle as SdkOptional<ReposCreateInOrgRequestBodyMergeCommitTitle>,
-    mergeCommitMessage: identical(mergeCommitMessage, sdkOmittedValue) ? this.mergeCommitMessage : mergeCommitMessage as SdkOptional<ReposCreateInOrgRequestBodyMergeCommitMessage>,
-    customProperties: identical(customProperties, sdkOmittedValue) ? this.customProperties : customProperties as SdkOptional<Map<String, Object?>>,
+  ChecksUpdateRequestBodyVariant1 _copyWith({Object? name = sdkOmittedValue, Object? detailsUrl = sdkOmittedValue, Object? externalId = sdkOmittedValue, Object? startedAt = sdkOmittedValue, Object? status = sdkOmittedValue, Object? conclusion = sdkOmittedValue, Object? completedAt = sdkOmittedValue, Object? output = sdkOmittedValue, Object? actions = sdkOmittedValue}) => ChecksUpdateRequestBodyVariant1(
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
+    detailsUrl: identical(detailsUrl, sdkOmittedValue) ? this.detailsUrl : detailsUrl as SdkOptional<String>,
+    externalId: identical(externalId, sdkOmittedValue) ? this.externalId : externalId as SdkOptional<String>,
+    startedAt: identical(startedAt, sdkOmittedValue) ? this.startedAt : startedAt as SdkOptional<String>,
+    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<ChecksUpdateRequestBodyVariant1Status>,
+    conclusion: identical(conclusion, sdkOmittedValue) ? this.conclusion : conclusion as SdkOptional<ChecksUpdateRequestBodyVariant1Conclusion>,
+    completedAt: identical(completedAt, sdkOmittedValue) ? this.completedAt : completedAt as SdkOptional<String>,
+    output: identical(output, sdkOmittedValue) ? this.output : output as SdkOptional<ChecksUpdateRequestBodyVariant1Output>,
+    actions: identical(actions, sdkOmittedValue) ? this.actions : actions as SdkOptional<List<ChecksUpdateRequestBodyVariant1ActionsItem>>,
+    additionalProperties: additionalProperties,
   );
 
-  factory ReposCreateInOrgRequestBody.fromJson(Map<String, dynamic> json) => ReposCreateInOrgRequestBody(
-    name: (json['name'] as String?)!,
-    description: json['description'] != null ? SdkPresent((json['description'] as String?)!) : const SdkOmitted(),
-    homepage: json['homepage'] != null ? SdkPresent((json['homepage'] as String?)!) : const SdkOmitted(),
-    private: json['private'] != null ? SdkPresent((json['private'] as bool?)!) : const SdkOmitted(),
-    visibility: json['visibility'] != null ? SdkPresent((json['visibility'] != null ? ReposCreateInOrgRequestBodyVisibility.fromJson(json['visibility'] as String) : null)!) : const SdkOmitted(),
-    hasIssues: json['has_issues'] != null ? SdkPresent((json['has_issues'] as bool?)!) : const SdkOmitted(),
-    hasProjects: json['has_projects'] != null ? SdkPresent((json['has_projects'] as bool?)!) : const SdkOmitted(),
-    hasWiki: json['has_wiki'] != null ? SdkPresent((json['has_wiki'] as bool?)!) : const SdkOmitted(),
-    hasDownloads: json['has_downloads'] != null ? SdkPresent((json['has_downloads'] as bool?)!) : const SdkOmitted(),
-    isTemplate: json['is_template'] != null ? SdkPresent((json['is_template'] as bool?)!) : const SdkOmitted(),
-    teamId: json['team_id'] != null ? SdkPresent(((json['team_id'] as num?)?.toInt())!) : const SdkOmitted(),
-    autoInit: json['auto_init'] != null ? SdkPresent((json['auto_init'] as bool?)!) : const SdkOmitted(),
-    gitignoreTemplate: json['gitignore_template'] != null ? SdkPresent((json['gitignore_template'] as String?)!) : const SdkOmitted(),
-    licenseTemplate: json['license_template'] != null ? SdkPresent((json['license_template'] as String?)!) : const SdkOmitted(),
-    allowSquashMerge: json['allow_squash_merge'] != null ? SdkPresent((json['allow_squash_merge'] as bool?)!) : const SdkOmitted(),
-    allowMergeCommit: json['allow_merge_commit'] != null ? SdkPresent((json['allow_merge_commit'] as bool?)!) : const SdkOmitted(),
-    allowRebaseMerge: json['allow_rebase_merge'] != null ? SdkPresent((json['allow_rebase_merge'] as bool?)!) : const SdkOmitted(),
-    allowAutoMerge: json['allow_auto_merge'] != null ? SdkPresent((json['allow_auto_merge'] as bool?)!) : const SdkOmitted(),
-    deleteBranchOnMerge: json['delete_branch_on_merge'] != null ? SdkPresent((json['delete_branch_on_merge'] as bool?)!) : const SdkOmitted(),
-    useSquashPrTitleAsDefault: json['use_squash_pr_title_as_default'] != null ? SdkPresent((json['use_squash_pr_title_as_default'] as bool?)!) : const SdkOmitted(),
-    squashMergeCommitTitle: json['squash_merge_commit_title'] != null ? SdkPresent((json['squash_merge_commit_title'] != null ? ReposCreateInOrgRequestBodySquashMergeCommitTitle.fromJson(json['squash_merge_commit_title'] as String) : null)!) : const SdkOmitted(),
-    squashMergeCommitMessage: json['squash_merge_commit_message'] != null ? SdkPresent((json['squash_merge_commit_message'] != null ? ReposCreateInOrgRequestBodySquashMergeCommitMessage.fromJson(json['squash_merge_commit_message'] as String) : null)!) : const SdkOmitted(),
-    mergeCommitTitle: json['merge_commit_title'] != null ? SdkPresent((json['merge_commit_title'] != null ? ReposCreateInOrgRequestBodyMergeCommitTitle.fromJson(json['merge_commit_title'] as String) : null)!) : const SdkOmitted(),
-    mergeCommitMessage: json['merge_commit_message'] != null ? SdkPresent((json['merge_commit_message'] != null ? ReposCreateInOrgRequestBodyMergeCommitMessage.fromJson(json['merge_commit_message'] as String) : null)!) : const SdkOmitted(),
-    customProperties: json['custom_properties'] != null ? SdkPresent((json['custom_properties'] == null ? null : Map<String, dynamic>.from(json['custom_properties'] as Map).map((key, value) => MapEntry(key, value)))!) : const SdkOmitted(),
+  factory ChecksUpdateRequestBodyVariant1.fromJson(Map<String, dynamic> json) => ChecksUpdateRequestBodyVariant1(
+    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
+    detailsUrl: json['details_url'] != null ? SdkPresent((json['details_url'] as String?)!) : const SdkOmitted(),
+    externalId: json['external_id'] != null ? SdkPresent((json['external_id'] as String?)!) : const SdkOmitted(),
+    startedAt: json['started_at'] != null ? SdkPresent((json['started_at'] as String?)!) : const SdkOmitted(),
+    status: json['status'] != null ? SdkPresent((json['status'] != null ? ChecksUpdateRequestBodyVariant1Status.fromJson(json['status'] as String) : null)!) : const SdkOmitted(),
+    conclusion: json['conclusion'] != null ? SdkPresent((json['conclusion'] != null ? ChecksUpdateRequestBodyVariant1Conclusion.fromJson(json['conclusion'] as String) : null)!) : const SdkOmitted(),
+    completedAt: json['completed_at'] != null ? SdkPresent((json['completed_at'] as String?)!) : const SdkOmitted(),
+    output: json['output'] != null ? SdkPresent((json['output'] != null ? ChecksUpdateRequestBodyVariant1Output.fromJson(json['output'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    actions: json['actions'] != null ? SdkPresent(((json['actions'] as List?)?.map((e) => ChecksUpdateRequestBodyVariant1ActionsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+    additionalProperties: Map.of(json)..removeWhere((key, _) => const <String>{'name', 'details_url', 'external_id', 'started_at', 'status', 'conclusion', 'completed_at', 'output', 'actions'}.contains(key)),
   );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    ...switch (description) {
-      SdkPresent<String>(value: final value) => {'description': value,},
+    ...additionalProperties,
+    ...switch (name) {
+      SdkPresent<String>(value: final value) => {'name': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (homepage) {
-      SdkPresent<String>(value: final value) => {'homepage': value,},
+    ...switch (detailsUrl) {
+      SdkPresent<String>(value: final value) => {'details_url': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (private) {
-      SdkPresent<bool>(value: final value) => {'private': value,},
+    ...switch (externalId) {
+      SdkPresent<String>(value: final value) => {'external_id': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (visibility) {
-      SdkPresent<ReposCreateInOrgRequestBodyVisibility>(value: final value) => {'visibility': value.toJson(),},
+    ...switch (startedAt) {
+      SdkPresent<String>(value: final value) => {'started_at': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (hasIssues) {
-      SdkPresent<bool>(value: final value) => {'has_issues': value,},
+    ...switch (status) {
+      SdkPresent<ChecksUpdateRequestBodyVariant1Status>(value: final value) => {'status': value.toJson(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (hasProjects) {
-      SdkPresent<bool>(value: final value) => {'has_projects': value,},
+    ...switch (conclusion) {
+      SdkPresent<ChecksUpdateRequestBodyVariant1Conclusion>(value: final value) => {'conclusion': value.toJson(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (hasWiki) {
-      SdkPresent<bool>(value: final value) => {'has_wiki': value,},
+    ...switch (completedAt) {
+      SdkPresent<String>(value: final value) => {'completed_at': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (hasDownloads) {
-      SdkPresent<bool>(value: final value) => {'has_downloads': value,},
+    ...switch (output) {
+      SdkPresent<ChecksUpdateRequestBodyVariant1Output>(value: final value) => {'output': value.toJson(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (isTemplate) {
-      SdkPresent<bool>(value: final value) => {'is_template': value,},
+    ...switch (actions) {
+      SdkPresent<List<ChecksUpdateRequestBodyVariant1ActionsItem>>(value: final value) => {'actions': value.map((item) => item.toJson()).toList(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (teamId) {
-      SdkPresent<int>(value: final value) => {'team_id': value,},
+  };
+}
+
+class ChecksCreateSuiteRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The sha of the head commit.
+  final String headSha;
+
+  const ChecksCreateSuiteRequestBody({required this.headSha});
+
+  ChecksCreateSuiteRequestBody Function({String headSha}) get copyWith => _copyWith;
+
+  ChecksCreateSuiteRequestBody _copyWith({Object? headSha = sdkOmittedValue}) => ChecksCreateSuiteRequestBody(
+    headSha: identical(headSha, sdkOmittedValue) ? this.headSha : headSha as String,
+  );
+
+  factory ChecksCreateSuiteRequestBody.fromJson(Map<String, dynamic> json) => ChecksCreateSuiteRequestBody(
+    headSha: (json['head_sha'] as String?)!,
+  );
+
+  Map<String, dynamic> toJson() => {
+    'head_sha': headSha,
+  };
+}
+
+class ChecksSetSuitesPreferencesRequestBodyAutoTriggerChecksItem {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The `id` of the GitHub App.
+  final int appId;
+  /// Set to `true` to enable automatic creation of CheckSuite events upon pushes to the repository, or `false` to disable them.
+  final bool setting;
+
+  const ChecksSetSuitesPreferencesRequestBodyAutoTriggerChecksItem({required this.appId, required this.setting});
+
+  ChecksSetSuitesPreferencesRequestBodyAutoTriggerChecksItem Function({int appId, bool setting}) get copyWith => _copyWith;
+
+  ChecksSetSuitesPreferencesRequestBodyAutoTriggerChecksItem _copyWith({Object? appId = sdkOmittedValue, Object? setting = sdkOmittedValue}) => ChecksSetSuitesPreferencesRequestBodyAutoTriggerChecksItem(
+    appId: identical(appId, sdkOmittedValue) ? this.appId : appId as int,
+    setting: identical(setting, sdkOmittedValue) ? this.setting : setting as bool,
+  );
+
+  factory ChecksSetSuitesPreferencesRequestBodyAutoTriggerChecksItem.fromJson(Map<String, dynamic> json) => ChecksSetSuitesPreferencesRequestBodyAutoTriggerChecksItem(
+    appId: ((json['app_id'] as num?)?.toInt())!,
+    setting: (json['setting'] as bool?)!,
+  );
+
+  Map<String, dynamic> toJson() => {
+    'app_id': appId,
+    'setting': setting,
+  };
+}
+
+class ChecksSetSuitesPreferencesRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// Enables or disables automatic creation of CheckSuite events upon pushes to the repository. Enabled by default.
+  final SdkOptional<List<ChecksSetSuitesPreferencesRequestBodyAutoTriggerChecksItem>> autoTriggerChecks;
+
+  const ChecksSetSuitesPreferencesRequestBody({this.autoTriggerChecks = const SdkOmitted()});
+
+  ChecksSetSuitesPreferencesRequestBody Function({SdkOptional<List<ChecksSetSuitesPreferencesRequestBodyAutoTriggerChecksItem>> autoTriggerChecks}) get copyWith => _copyWith;
+
+  ChecksSetSuitesPreferencesRequestBody _copyWith({Object? autoTriggerChecks = sdkOmittedValue}) => ChecksSetSuitesPreferencesRequestBody(
+    autoTriggerChecks: identical(autoTriggerChecks, sdkOmittedValue) ? this.autoTriggerChecks : autoTriggerChecks as SdkOptional<List<ChecksSetSuitesPreferencesRequestBodyAutoTriggerChecksItem>>,
+  );
+
+  factory ChecksSetSuitesPreferencesRequestBody.fromJson(Map<String, dynamic> json) => ChecksSetSuitesPreferencesRequestBody(
+    autoTriggerChecks: json['auto_trigger_checks'] != null ? SdkPresent(((json['auto_trigger_checks'] as List?)?.map((e) => ChecksSetSuitesPreferencesRequestBodyAutoTriggerChecksItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    ...switch (autoTriggerChecks) {
+      SdkPresent<List<ChecksSetSuitesPreferencesRequestBodyAutoTriggerChecksItem>>(value: final value) => {'auto_trigger_checks': value.map((item) => item.toJson()).toList(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (autoInit) {
-      SdkPresent<bool>(value: final value) => {'auto_init': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (gitignoreTemplate) {
-      SdkPresent<String>(value: final value) => {'gitignore_template': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (licenseTemplate) {
-      SdkPresent<String>(value: final value) => {'license_template': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (allowSquashMerge) {
-      SdkPresent<bool>(value: final value) => {'allow_squash_merge': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (allowMergeCommit) {
-      SdkPresent<bool>(value: final value) => {'allow_merge_commit': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (allowRebaseMerge) {
-      SdkPresent<bool>(value: final value) => {'allow_rebase_merge': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (allowAutoMerge) {
-      SdkPresent<bool>(value: final value) => {'allow_auto_merge': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (deleteBranchOnMerge) {
-      SdkPresent<bool>(value: final value) => {'delete_branch_on_merge': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (useSquashPrTitleAsDefault) {
-      SdkPresent<bool>(value: final value) => {'use_squash_pr_title_as_default': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (squashMergeCommitTitle) {
-      SdkPresent<ReposCreateInOrgRequestBodySquashMergeCommitTitle>(value: final value) => {'squash_merge_commit_title': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (squashMergeCommitMessage) {
-      SdkPresent<ReposCreateInOrgRequestBodySquashMergeCommitMessage>(value: final value) => {'squash_merge_commit_message': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (mergeCommitTitle) {
-      SdkPresent<ReposCreateInOrgRequestBodyMergeCommitTitle>(value: final value) => {'merge_commit_title': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (mergeCommitMessage) {
-      SdkPresent<ReposCreateInOrgRequestBodyMergeCommitMessage>(value: final value) => {'merge_commit_message': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (customProperties) {
-      SdkPresent<Map<String, Object?>>(value: final value) => {'custom_properties': value,},
-      _ => const <String, dynamic>{},
-    },
+  };
+}
+
+class ChecksListForSuiteResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  final int totalCount;
+  final List<CheckRun> checkRuns;
+
+  const ChecksListForSuiteResponse({required this.totalCount, required this.checkRuns});
+
+  ChecksListForSuiteResponse Function({int totalCount, List<CheckRun> checkRuns}) get copyWith => _copyWith;
+
+  ChecksListForSuiteResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? checkRuns = sdkOmittedValue}) => ChecksListForSuiteResponse(
+    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
+    checkRuns: identical(checkRuns, sdkOmittedValue) ? this.checkRuns : checkRuns as List<CheckRun>,
+  );
+
+  factory ChecksListForSuiteResponse.fromJson(Map<String, dynamic> json) => ChecksListForSuiteResponse(
+    totalCount: ((json['total_count'] as num?)?.toInt())!,
+    checkRuns: ((json['check_runs'] as List?)?.map((e) => CheckRun.fromJson(e as Map<String, dynamic>)).toList())!,
+  );
+
+  Map<String, dynamic> toJson() => {
+    'total_count': totalCount,
+    'check_runs': checkRuns.map((item) => item.toJson()).toList(),
+  };
+}
+
+class ChecksListForRefResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  final int totalCount;
+  final List<CheckRun> checkRuns;
+
+  const ChecksListForRefResponse({required this.totalCount, required this.checkRuns});
+
+  ChecksListForRefResponse Function({int totalCount, List<CheckRun> checkRuns}) get copyWith => _copyWith;
+
+  ChecksListForRefResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? checkRuns = sdkOmittedValue}) => ChecksListForRefResponse(
+    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
+    checkRuns: identical(checkRuns, sdkOmittedValue) ? this.checkRuns : checkRuns as List<CheckRun>,
+  );
+
+  factory ChecksListForRefResponse.fromJson(Map<String, dynamic> json) => ChecksListForRefResponse(
+    totalCount: ((json['total_count'] as num?)?.toInt())!,
+    checkRuns: ((json['check_runs'] as List?)?.map((e) => CheckRun.fromJson(e as Map<String, dynamic>)).toList())!,
+  );
+
+  Map<String, dynamic> toJson() => {
+    'total_count': totalCount,
+    'check_runs': checkRuns.map((item) => item.toJson()).toList(),
+  };
+}
+
+class ChecksListSuitesForRefResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  final int totalCount;
+  final List<CheckSuite> checkSuites;
+
+  const ChecksListSuitesForRefResponse({required this.totalCount, required this.checkSuites});
+
+  ChecksListSuitesForRefResponse Function({int totalCount, List<CheckSuite> checkSuites}) get copyWith => _copyWith;
+
+  ChecksListSuitesForRefResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? checkSuites = sdkOmittedValue}) => ChecksListSuitesForRefResponse(
+    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
+    checkSuites: identical(checkSuites, sdkOmittedValue) ? this.checkSuites : checkSuites as List<CheckSuite>,
+  );
+
+  factory ChecksListSuitesForRefResponse.fromJson(Map<String, dynamic> json) => ChecksListSuitesForRefResponse(
+    totalCount: ((json['total_count'] as num?)?.toInt())!,
+    checkSuites: ((json['check_suites'] as List?)?.map((e) => CheckSuite.fromJson(e as Map<String, dynamic>)).toList())!,
+  );
+
+  Map<String, dynamic> toJson() => {
+    'total_count': totalCount,
+    'check_suites': checkSuites.map((item) => item.toJson()).toList(),
+  };
+}
+
+class ReactionsCreateForCommitCommentRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the commit comment.
+  final ReactionsCreateForCommitCommentRequestBodyContent content;
+
+  const ReactionsCreateForCommitCommentRequestBody({required this.content});
+
+  ReactionsCreateForCommitCommentRequestBody Function({ReactionsCreateForCommitCommentRequestBodyContent content}) get copyWith => _copyWith;
+
+  ReactionsCreateForCommitCommentRequestBody _copyWith({Object? content = sdkOmittedValue}) => ReactionsCreateForCommitCommentRequestBody(
+    content: identical(content, sdkOmittedValue) ? this.content : content as ReactionsCreateForCommitCommentRequestBodyContent,
+  );
+
+  factory ReactionsCreateForCommitCommentRequestBody.fromJson(Map<String, dynamic> json) => ReactionsCreateForCommitCommentRequestBody(
+    content: (json['content'] != null ? ReactionsCreateForCommitCommentRequestBodyContent.fromJson(json['content'] as String) : null)!,
+  );
+
+  Map<String, dynamic> toJson() => {
+    'content': content.toJson(),
   };
 }

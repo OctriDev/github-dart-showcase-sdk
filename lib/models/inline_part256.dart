@@ -4,284 +4,288 @@
 part of 'inline.dart';
 
 // Inline operation models (part 256)
-final class AgentAutomationsEditRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem {
+/// The level of privacy this team should have. Editing teams without specifying this parameter leaves `privacy` intact. When a team is nested, the `privacy` for parent teams cannot be `secret`. The options are: **For a non-nested team:** * `secret` - only visible to organization owners and members of this team. * `closed` - visible to all members of this organization. **For a parent or child team:** * `closed` - visible to all members of this organization.
+final class TeamsUpdateInOrgRequestBodyPrivacy {
 
   final String value;
 
-  const AgentAutomationsEditRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem._(this.value);
+  const TeamsUpdateInOrgRequestBodyPrivacy._(this.value);
 
-  factory AgentAutomationsEditRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem._(value);
+  factory TeamsUpdateInOrgRequestBodyPrivacy.fromJson(String value) => TeamsUpdateInOrgRequestBodyPrivacy._(value);
 
-  static const timelineComment = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem._('timeline_comment');
-  static const reviewComment = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem._('review_comment');
+  static const secret = TeamsUpdateInOrgRequestBodyPrivacy._('secret');
+  static const closed = TeamsUpdateInOrgRequestBodyPrivacy._('closed');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem && other.value == value;
+  @override bool operator ==(Object other) => other is TeamsUpdateInOrgRequestBodyPrivacy && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsEditRepoAutomationResponseTriggersPullRequestCommentWriteScope {
+final class TeamsListMembersInOrgRole {
 
   final String value;
 
-  const AgentAutomationsEditRepoAutomationResponseTriggersPullRequestCommentWriteScope._(this.value);
+  const TeamsListMembersInOrgRole._(this.value);
 
-  factory AgentAutomationsEditRepoAutomationResponseTriggersPullRequestCommentWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseTriggersPullRequestCommentWriteScope._(value);
+  factory TeamsListMembersInOrgRole.fromJson(String value) => TeamsListMembersInOrgRole._(value);
 
-  static const trigger = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestCommentWriteScope._('trigger');
-  static const repository = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestCommentWriteScope._('repository');
+  static const member = TeamsListMembersInOrgRole._('member');
+  static const maintainer = TeamsListMembersInOrgRole._('maintainer');
+  static const all = TeamsListMembersInOrgRole._('all');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersPullRequestCommentWriteScope && other.value == value;
+  @override bool operator ==(Object other) => other is TeamsListMembersInOrgRole && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsEditRepoAutomationResponseTriggersPullRequestLabeledWriteScope {
+/// The role that this user should have in the team.
+final class TeamsAddOrUpdateMembershipForUserInOrgRequestBodyRole {
 
   final String value;
 
-  const AgentAutomationsEditRepoAutomationResponseTriggersPullRequestLabeledWriteScope._(this.value);
+  const TeamsAddOrUpdateMembershipForUserInOrgRequestBodyRole._(this.value);
 
-  factory AgentAutomationsEditRepoAutomationResponseTriggersPullRequestLabeledWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseTriggersPullRequestLabeledWriteScope._(value);
+  factory TeamsAddOrUpdateMembershipForUserInOrgRequestBodyRole.fromJson(String value) => TeamsAddOrUpdateMembershipForUserInOrgRequestBodyRole._(value);
 
-  static const trigger = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestLabeledWriteScope._('trigger');
-  static const repository = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestLabeledWriteScope._('repository');
+  static const member = TeamsAddOrUpdateMembershipForUserInOrgRequestBodyRole._('member');
+  static const maintainer = TeamsAddOrUpdateMembershipForUserInOrgRequestBodyRole._('maintainer');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersPullRequestLabeledWriteScope && other.value == value;
+  @override bool operator ==(Object other) => other is TeamsAddOrUpdateMembershipForUserInOrgRequestBodyRole && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope {
+/// The default value for a merge commit message. - `PR_TITLE` - default to the pull request's title. - `PR_BODY` - default to the pull request's body. - `BLANK` - default to a blank commit message.
+final class ReposUpdateRequestBodyMergeCommitMessage {
 
   final String value;
 
-  const AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope._(this.value);
+  const ReposUpdateRequestBodyMergeCommitMessage._(this.value);
 
-  factory AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope._(value);
+  factory ReposUpdateRequestBodyMergeCommitMessage.fromJson(String value) => ReposUpdateRequestBodyMergeCommitMessage._(value);
 
-  static const trigger = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope._('trigger');
-  static const repository = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope._('repository');
+  static const prBody = ReposUpdateRequestBodyMergeCommitMessage._('PR_BODY');
+  static const prTitle = ReposUpdateRequestBodyMergeCommitMessage._('PR_TITLE');
+  static const blank = ReposUpdateRequestBodyMergeCommitMessage._('BLANK');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope && other.value == value;
+  @override bool operator ==(Object other) => other is ReposUpdateRequestBodyMergeCommitMessage && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMergedWriteScope {
+/// Required when using `merge_commit_message`. The default value for a merge commit title. - `PR_TITLE` - default to the pull request's title. - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
+final class ReposUpdateRequestBodyMergeCommitTitle {
 
   final String value;
 
-  const AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMergedWriteScope._(this.value);
+  const ReposUpdateRequestBodyMergeCommitTitle._(this.value);
 
-  factory AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMergedWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMergedWriteScope._(value);
+  factory ReposUpdateRequestBodyMergeCommitTitle.fromJson(String value) => ReposUpdateRequestBodyMergeCommitTitle._(value);
 
-  static const trigger = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMergedWriteScope._('trigger');
-  static const repository = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMergedWriteScope._('repository');
+  static const prTitle = ReposUpdateRequestBodyMergeCommitTitle._('PR_TITLE');
+  static const mergeMessage = ReposUpdateRequestBodyMergeCommitTitle._('MERGE_MESSAGE');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMergedWriteScope && other.value == value;
+  @override bool operator ==(Object other) => other is ReposUpdateRequestBodyMergeCommitTitle && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsEditRepoAutomationResponseTriggersPullRequestOpenedWriteScope {
+/// The policy that controls who can create pull requests for this repository: `all` or `collaborators_only`.
+final class ReposUpdateRequestBodyPullRequestCreationPolicy {
 
   final String value;
 
-  const AgentAutomationsEditRepoAutomationResponseTriggersPullRequestOpenedWriteScope._(this.value);
+  const ReposUpdateRequestBodyPullRequestCreationPolicy._(this.value);
 
-  factory AgentAutomationsEditRepoAutomationResponseTriggersPullRequestOpenedWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseTriggersPullRequestOpenedWriteScope._(value);
+  factory ReposUpdateRequestBodyPullRequestCreationPolicy.fromJson(String value) => ReposUpdateRequestBodyPullRequestCreationPolicy._(value);
 
-  static const trigger = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestOpenedWriteScope._('trigger');
-  static const repository = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestOpenedWriteScope._('repository');
+  static const all = ReposUpdateRequestBodyPullRequestCreationPolicy._('all');
+  static const collaboratorsOnly = ReposUpdateRequestBodyPullRequestCreationPolicy._('collaborators_only');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersPullRequestOpenedWriteScope && other.value == value;
+  @override bool operator ==(Object other) => other is ReposUpdateRequestBodyPullRequestCreationPolicy && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReadyForReviewWriteScope {
+/// The bypass mode for the reviewer
+final class ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode {
 
   final String value;
 
-  const AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReadyForReviewWriteScope._(this.value);
+  const ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode._(this.value);
 
-  factory AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReadyForReviewWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReadyForReviewWriteScope._(value);
+  factory ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode.fromJson(String value) => ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode._(value);
 
-  static const trigger = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReadyForReviewWriteScope._('trigger');
-  static const repository = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReadyForReviewWriteScope._('repository');
+  static const always = ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode._('ALWAYS');
+  static const exempt = ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode._('EXEMPT');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReadyForReviewWriteScope && other.value == value;
+  @override bool operator ==(Object other) => other is ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewRequestedWriteScope {
+/// The type of the bypass reviewer
+final class ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemReviewerType {
 
   final String value;
 
-  const AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewRequestedWriteScope._(this.value);
+  const ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemReviewerType._(this.value);
 
-  factory AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewRequestedWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewRequestedWriteScope._(value);
+  factory ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemReviewerType.fromJson(String value) => ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemReviewerType._(value);
 
-  static const trigger = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewRequestedWriteScope._('trigger');
-  static const repository = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewRequestedWriteScope._('repository');
+  static const team = ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemReviewerType._('TEAM');
+  static const role = ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemReviewerType._('ROLE');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewRequestedWriteScope && other.value == value;
+  @override bool operator ==(Object other) => other is ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemReviewerType && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-final class AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewSubmittedStatesItem {
+/// The default value for a squash merge commit message: - `PR_BODY` - default to the pull request's body. - `COMMIT_MESSAGES` - default to the branch's commit messages. - `BLANK` - default to a blank commit message.
+final class ReposUpdateRequestBodySquashMergeCommitMessage {
 
   final String value;
 
-  const AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewSubmittedStatesItem._(this.value);
+  const ReposUpdateRequestBodySquashMergeCommitMessage._(this.value);
 
-  factory AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewSubmittedStatesItem.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewSubmittedStatesItem._(value);
+  factory ReposUpdateRequestBodySquashMergeCommitMessage.fromJson(String value) => ReposUpdateRequestBodySquashMergeCommitMessage._(value);
 
-  static const approved = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewSubmittedStatesItem._('approved');
-  static const changesRequested = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewSubmittedStatesItem._('changes_requested');
-  static const commented = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewSubmittedStatesItem._('commented');
+  static const prBody = ReposUpdateRequestBodySquashMergeCommitMessage._('PR_BODY');
+  static const commitMessages = ReposUpdateRequestBodySquashMergeCommitMessage._('COMMIT_MESSAGES');
+  static const blank = ReposUpdateRequestBodySquashMergeCommitMessage._('BLANK');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewSubmittedStatesItem && other.value == value;
+  @override bool operator ==(Object other) => other is ReposUpdateRequestBodySquashMergeCommitMessage && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewSubmittedWriteScope {
+/// Required when using `squash_merge_commit_message`. The default value for a squash merge commit title: - `PR_TITLE` - default to the pull request's title. - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
+final class ReposUpdateRequestBodySquashMergeCommitTitle {
 
   final String value;
 
-  const AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewSubmittedWriteScope._(this.value);
+  const ReposUpdateRequestBodySquashMergeCommitTitle._(this.value);
 
-  factory AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewSubmittedWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewSubmittedWriteScope._(value);
+  factory ReposUpdateRequestBodySquashMergeCommitTitle.fromJson(String value) => ReposUpdateRequestBodySquashMergeCommitTitle._(value);
 
-  static const trigger = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewSubmittedWriteScope._('trigger');
-  static const repository = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewSubmittedWriteScope._('repository');
+  static const prTitle = ReposUpdateRequestBodySquashMergeCommitTitle._('PR_TITLE');
+  static const commitOrPrTitle = ReposUpdateRequestBodySquashMergeCommitTitle._('COMMIT_OR_PR_TITLE');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewSubmittedWriteScope && other.value == value;
+  @override bool operator ==(Object other) => other is ReposUpdateRequestBodySquashMergeCommitTitle && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsEditRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope {
+/// The visibility of the repository.
+final class ReposUpdateRequestBodyVisibility {
 
   final String value;
 
-  const AgentAutomationsEditRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope._(this.value);
+  const ReposUpdateRequestBodyVisibility._(this.value);
 
-  factory AgentAutomationsEditRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope._(value);
+  factory ReposUpdateRequestBodyVisibility.fromJson(String value) => ReposUpdateRequestBodyVisibility._(value);
 
-  static const trigger = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope._('trigger');
-  static const repository = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope._('repository');
+  static const public = ReposUpdateRequestBodyVisibility._('public');
+  static const private = ReposUpdateRequestBodyVisibility._('private');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope && other.value == value;
+  @override bool operator ==(Object other) => other is ReposUpdateRequestBodyVisibility && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsEditRepoAutomationResponseTriggersSubIssueAddedWriteScope {
+final class ActionsListJobsForWorkflowRunFilter {
 
   final String value;
 
-  const AgentAutomationsEditRepoAutomationResponseTriggersSubIssueAddedWriteScope._(this.value);
+  const ActionsListJobsForWorkflowRunFilter._(this.value);
 
-  factory AgentAutomationsEditRepoAutomationResponseTriggersSubIssueAddedWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseTriggersSubIssueAddedWriteScope._(value);
+  factory ActionsListJobsForWorkflowRunFilter.fromJson(String value) => ActionsListJobsForWorkflowRunFilter._(value);
 
-  static const trigger = AgentAutomationsEditRepoAutomationResponseTriggersSubIssueAddedWriteScope._('trigger');
-  static const repository = AgentAutomationsEditRepoAutomationResponseTriggersSubIssueAddedWriteScope._('repository');
+  static const latest = ActionsListJobsForWorkflowRunFilter._('latest');
+  static const all = ActionsListJobsForWorkflowRunFilter._('all');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersSubIssueAddedWriteScope && other.value == value;
+  @override bool operator ==(Object other) => other is ActionsListJobsForWorkflowRunFilter && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-final class AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRunConclusionsItem {
+/// Whether to approve or reject deployment to the specified environments.
+final class ActionsReviewPendingDeploymentsForRunRequestBodyState {
 
   final String value;
 
-  const AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRunConclusionsItem._(this.value);
+  const ActionsReviewPendingDeploymentsForRunRequestBodyState._(this.value);
 
-  factory AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRunConclusionsItem.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRunConclusionsItem._(value);
+  factory ActionsReviewPendingDeploymentsForRunRequestBodyState.fromJson(String value) => ActionsReviewPendingDeploymentsForRunRequestBodyState._(value);
 
-  static const failure = AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRunConclusionsItem._('failure');
+  static const approved = ActionsReviewPendingDeploymentsForRunRequestBodyState._('approved');
+  static const rejected = ActionsReviewPendingDeploymentsForRunRequestBodyState._('rejected');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRunConclusionsItem && other.value == value;
+  @override bool operator ==(Object other) => other is ActionsReviewPendingDeploymentsForRunRequestBodyState && other.value == value;
 
   @override int get hashCode => value.hashCode;
 

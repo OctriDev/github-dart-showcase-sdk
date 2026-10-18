@@ -15,9 +15,9 @@ class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata {
   /// Optional `string` value serialized in the `npm_user` wire field.
   final SdkOptional<String> npmUser;
   /// Optional API value serialized in the `author` wire field.
-  final SdkOptional<dynamic> author;
+  final SdkOptional<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataAuthor?> author;
   /// Optional API value serialized in the `bugs` wire field.
-  final SdkOptional<dynamic> bugs;
+  final SdkOptional<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataBugs?> bugs;
   /// Optional object value serialized in the `dependencies` wire field.
   final SdkOptional<Map<String, dynamic>> dependencies;
   /// Optional object value serialized in the `dev_dependencies` wire field.
@@ -29,7 +29,7 @@ class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata {
   /// Optional `string` value serialized in the `description` wire field.
   final SdkOptional<String> description;
   /// Optional API value serialized in the `dist` wire field.
-  final SdkOptional<dynamic> dist;
+  final SdkOptional<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDist?> dist;
   /// Optional `string` value serialized in the `git_head` wire field.
   final SdkOptional<String> gitHead;
   /// Optional `string` value serialized in the `homepage` wire field.
@@ -39,7 +39,7 @@ class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata {
   /// Optional `string` value serialized in the `main` wire field.
   final SdkOptional<String> main;
   /// Optional API value serialized in the `repository` wire field.
-  final SdkOptional<dynamic> repository;
+  final SdkOptional<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataRepository?> repository;
   /// Optional object value serialized in the `scripts` wire field.
   final SdkOptional<Map<String, dynamic>> scripts;
   /// Optional `string` value serialized in the `id` wire field.
@@ -65,7 +65,7 @@ class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata {
   /// Optional object value serialized in the `man` wire field.
   final SdkOptional<Map<String, dynamic>> man;
   /// Optional API value serialized in the `directories` wire field.
-  final SdkOptional<dynamic> directories;
+  final SdkOptional<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDirectories?> directories;
   /// Optional array value serialized in the `os` wire field.
   final SdkOptional<List<String>> os;
   /// Optional array value serialized in the `cpu` wire field.
@@ -85,25 +85,25 @@ class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata {
 
   const WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata({this.name = const SdkOmitted(), this.version = const SdkOmitted(), this.npmUser = const SdkOmitted(), this.author = const SdkOmitted(), this.bugs = const SdkOmitted(), this.dependencies = const SdkOmitted(), this.devDependencies = const SdkOmitted(), this.peerDependencies = const SdkOmitted(), this.optionalDependencies = const SdkOmitted(), this.description = const SdkOmitted(), this.dist = const SdkOmitted(), this.gitHead = const SdkOmitted(), this.homepage = const SdkOmitted(), this.license = const SdkOmitted(), this.main = const SdkOmitted(), this.repository = const SdkOmitted(), this.scripts = const SdkOmitted(), this.id = const SdkOmitted(), this.nodeVersion = const SdkOmitted(), this.npmVersion = const SdkOmitted(), this.hasShrinkwrap = const SdkOmitted(), this.maintainers = const SdkOmitted(), this.contributors = const SdkOmitted(), this.engines = const SdkOmitted(), this.keywords = const SdkOmitted(), this.files = const SdkOmitted(), this.bin = const SdkOmitted(), this.man = const SdkOmitted(), this.directories = const SdkOmitted(), this.os = const SdkOmitted(), this.cpu = const SdkOmitted(), this.readme = const SdkOmitted(), this.installationCommand = const SdkOmitted(), this.releaseId = const SdkOmitted(), this.commitOid = const SdkOmitted(), this.publishedViaActions = const SdkOmitted(), this.deletedById = const SdkOmitted()});
 
-  WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata Function({SdkOptional<String> name, SdkOptional<String> version, SdkOptional<String> npmUser, SdkOptional<dynamic> author, SdkOptional<dynamic> bugs, SdkOptional<Map<String, dynamic>> dependencies, SdkOptional<Map<String, dynamic>> devDependencies, SdkOptional<Map<String, dynamic>> peerDependencies, SdkOptional<Map<String, dynamic>> optionalDependencies, SdkOptional<String> description, SdkOptional<dynamic> dist, SdkOptional<String> gitHead, SdkOptional<String> homepage, SdkOptional<String> license, SdkOptional<String> main, SdkOptional<dynamic> repository, SdkOptional<Map<String, dynamic>> scripts, SdkOptional<String> id, SdkOptional<String> nodeVersion, SdkOptional<String> npmVersion, SdkOptional<bool> hasShrinkwrap, SdkOptional<List<String>> maintainers, SdkOptional<List<String>> contributors, SdkOptional<Map<String, dynamic>> engines, SdkOptional<List<String>> keywords, SdkOptional<List<String>> files, SdkOptional<Map<String, dynamic>> bin, SdkOptional<Map<String, dynamic>> man, SdkOptional<dynamic> directories, SdkOptional<List<String>> os, SdkOptional<List<String>> cpu, SdkOptional<String> readme, SdkOptional<String> installationCommand, SdkOptional<int> releaseId, SdkOptional<String> commitOid, SdkOptional<bool> publishedViaActions, SdkOptional<int> deletedById}) get copyWith => _copyWith;
+  WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata Function({SdkOptional<String> name, SdkOptional<String> version, SdkOptional<String> npmUser, SdkOptional<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataAuthor?> author, SdkOptional<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataBugs?> bugs, SdkOptional<Map<String, dynamic>> dependencies, SdkOptional<Map<String, dynamic>> devDependencies, SdkOptional<Map<String, dynamic>> peerDependencies, SdkOptional<Map<String, dynamic>> optionalDependencies, SdkOptional<String> description, SdkOptional<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDist?> dist, SdkOptional<String> gitHead, SdkOptional<String> homepage, SdkOptional<String> license, SdkOptional<String> main, SdkOptional<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataRepository?> repository, SdkOptional<Map<String, dynamic>> scripts, SdkOptional<String> id, SdkOptional<String> nodeVersion, SdkOptional<String> npmVersion, SdkOptional<bool> hasShrinkwrap, SdkOptional<List<String>> maintainers, SdkOptional<List<String>> contributors, SdkOptional<Map<String, dynamic>> engines, SdkOptional<List<String>> keywords, SdkOptional<List<String>> files, SdkOptional<Map<String, dynamic>> bin, SdkOptional<Map<String, dynamic>> man, SdkOptional<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDirectories?> directories, SdkOptional<List<String>> os, SdkOptional<List<String>> cpu, SdkOptional<String> readme, SdkOptional<String> installationCommand, SdkOptional<int> releaseId, SdkOptional<String> commitOid, SdkOptional<bool> publishedViaActions, SdkOptional<int> deletedById}) get copyWith => _copyWith;
 
   WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata _copyWith({Object? name = sdkOmittedValue, Object? version = sdkOmittedValue, Object? npmUser = sdkOmittedValue, Object? author = sdkOmittedValue, Object? bugs = sdkOmittedValue, Object? dependencies = sdkOmittedValue, Object? devDependencies = sdkOmittedValue, Object? peerDependencies = sdkOmittedValue, Object? optionalDependencies = sdkOmittedValue, Object? description = sdkOmittedValue, Object? dist = sdkOmittedValue, Object? gitHead = sdkOmittedValue, Object? homepage = sdkOmittedValue, Object? license = sdkOmittedValue, Object? main = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? scripts = sdkOmittedValue, Object? id = sdkOmittedValue, Object? nodeVersion = sdkOmittedValue, Object? npmVersion = sdkOmittedValue, Object? hasShrinkwrap = sdkOmittedValue, Object? maintainers = sdkOmittedValue, Object? contributors = sdkOmittedValue, Object? engines = sdkOmittedValue, Object? keywords = sdkOmittedValue, Object? files = sdkOmittedValue, Object? bin = sdkOmittedValue, Object? man = sdkOmittedValue, Object? directories = sdkOmittedValue, Object? os = sdkOmittedValue, Object? cpu = sdkOmittedValue, Object? readme = sdkOmittedValue, Object? installationCommand = sdkOmittedValue, Object? releaseId = sdkOmittedValue, Object? commitOid = sdkOmittedValue, Object? publishedViaActions = sdkOmittedValue, Object? deletedById = sdkOmittedValue}) => WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata(
     name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
     version: identical(version, sdkOmittedValue) ? this.version : version as SdkOptional<String>,
     npmUser: identical(npmUser, sdkOmittedValue) ? this.npmUser : npmUser as SdkOptional<String>,
-    author: identical(author, sdkOmittedValue) ? this.author : author as SdkOptional<dynamic>,
-    bugs: identical(bugs, sdkOmittedValue) ? this.bugs : bugs as SdkOptional<dynamic>,
+    author: identical(author, sdkOmittedValue) ? this.author : author as SdkOptional<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataAuthor?>,
+    bugs: identical(bugs, sdkOmittedValue) ? this.bugs : bugs as SdkOptional<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataBugs?>,
     dependencies: identical(dependencies, sdkOmittedValue) ? this.dependencies : dependencies as SdkOptional<Map<String, dynamic>>,
     devDependencies: identical(devDependencies, sdkOmittedValue) ? this.devDependencies : devDependencies as SdkOptional<Map<String, dynamic>>,
     peerDependencies: identical(peerDependencies, sdkOmittedValue) ? this.peerDependencies : peerDependencies as SdkOptional<Map<String, dynamic>>,
     optionalDependencies: identical(optionalDependencies, sdkOmittedValue) ? this.optionalDependencies : optionalDependencies as SdkOptional<Map<String, dynamic>>,
     description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String>,
-    dist: identical(dist, sdkOmittedValue) ? this.dist : dist as SdkOptional<dynamic>,
+    dist: identical(dist, sdkOmittedValue) ? this.dist : dist as SdkOptional<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDist?>,
     gitHead: identical(gitHead, sdkOmittedValue) ? this.gitHead : gitHead as SdkOptional<String>,
     homepage: identical(homepage, sdkOmittedValue) ? this.homepage : homepage as SdkOptional<String>,
     license: identical(license, sdkOmittedValue) ? this.license : license as SdkOptional<String>,
     main: identical(main, sdkOmittedValue) ? this.main : main as SdkOptional<String>,
-    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as SdkOptional<dynamic>,
+    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as SdkOptional<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataRepository?>,
     scripts: identical(scripts, sdkOmittedValue) ? this.scripts : scripts as SdkOptional<Map<String, dynamic>>,
     id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<String>,
     nodeVersion: identical(nodeVersion, sdkOmittedValue) ? this.nodeVersion : nodeVersion as SdkOptional<String>,
@@ -116,7 +116,7 @@ class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata {
     files: identical(files, sdkOmittedValue) ? this.files : files as SdkOptional<List<String>>,
     bin: identical(bin, sdkOmittedValue) ? this.bin : bin as SdkOptional<Map<String, dynamic>>,
     man: identical(man, sdkOmittedValue) ? this.man : man as SdkOptional<Map<String, dynamic>>,
-    directories: identical(directories, sdkOmittedValue) ? this.directories : directories as SdkOptional<dynamic>,
+    directories: identical(directories, sdkOmittedValue) ? this.directories : directories as SdkOptional<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDirectories?>,
     os: identical(os, sdkOmittedValue) ? this.os : os as SdkOptional<List<String>>,
     cpu: identical(cpu, sdkOmittedValue) ? this.cpu : cpu as SdkOptional<List<String>>,
     readme: identical(readme, sdkOmittedValue) ? this.readme : readme as SdkOptional<String>,
@@ -131,19 +131,19 @@ class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata {
     name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
     version: json['version'] != null ? SdkPresent((json['version'] as String?)!) : const SdkOmitted(),
     npmUser: json['npm_user'] != null ? SdkPresent((json['npm_user'] as String?)!) : const SdkOmitted(),
-    author: json.containsKey('author') ? SdkPresent(json['author']) : const SdkOmitted(),
-    bugs: json.containsKey('bugs') ? SdkPresent(json['bugs']) : const SdkOmitted(),
+    author: json.containsKey('author') ? SdkPresent(json['author'] != null ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataAuthor.fromJson(json['author']) : null) : const SdkOmitted(),
+    bugs: json.containsKey('bugs') ? SdkPresent(json['bugs'] != null ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataBugs.fromJson(json['bugs']) : null) : const SdkOmitted(),
     dependencies: json['dependencies'] != null ? SdkPresent((json['dependencies'] == null ? null : json['dependencies'] as Map<String, dynamic>)!) : const SdkOmitted(),
     devDependencies: json['dev_dependencies'] != null ? SdkPresent((json['dev_dependencies'] == null ? null : json['dev_dependencies'] as Map<String, dynamic>)!) : const SdkOmitted(),
     peerDependencies: json['peer_dependencies'] != null ? SdkPresent((json['peer_dependencies'] == null ? null : json['peer_dependencies'] as Map<String, dynamic>)!) : const SdkOmitted(),
     optionalDependencies: json['optional_dependencies'] != null ? SdkPresent((json['optional_dependencies'] == null ? null : json['optional_dependencies'] as Map<String, dynamic>)!) : const SdkOmitted(),
     description: json['description'] != null ? SdkPresent((json['description'] as String?)!) : const SdkOmitted(),
-    dist: json.containsKey('dist') ? SdkPresent(json['dist']) : const SdkOmitted(),
+    dist: json.containsKey('dist') ? SdkPresent(json['dist'] != null ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDist.fromJson(json['dist']) : null) : const SdkOmitted(),
     gitHead: json['git_head'] != null ? SdkPresent((json['git_head'] as String?)!) : const SdkOmitted(),
     homepage: json['homepage'] != null ? SdkPresent((json['homepage'] as String?)!) : const SdkOmitted(),
     license: json['license'] != null ? SdkPresent((json['license'] as String?)!) : const SdkOmitted(),
     main: json['main'] != null ? SdkPresent((json['main'] as String?)!) : const SdkOmitted(),
-    repository: json.containsKey('repository') ? SdkPresent(json['repository']) : const SdkOmitted(),
+    repository: json.containsKey('repository') ? SdkPresent(json['repository'] != null ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataRepository.fromJson(json['repository']) : null) : const SdkOmitted(),
     scripts: json['scripts'] != null ? SdkPresent((json['scripts'] == null ? null : json['scripts'] as Map<String, dynamic>)!) : const SdkOmitted(),
     id: json['id'] != null ? SdkPresent((json['id'] as String?)!) : const SdkOmitted(),
     nodeVersion: json['node_version'] != null ? SdkPresent((json['node_version'] as String?)!) : const SdkOmitted(),
@@ -156,7 +156,7 @@ class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata {
     files: json['files'] != null ? SdkPresent(((json['files'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
     bin: json['bin'] != null ? SdkPresent((json['bin'] == null ? null : json['bin'] as Map<String, dynamic>)!) : const SdkOmitted(),
     man: json['man'] != null ? SdkPresent((json['man'] == null ? null : json['man'] as Map<String, dynamic>)!) : const SdkOmitted(),
-    directories: json.containsKey('directories') ? SdkPresent(json['directories']) : const SdkOmitted(),
+    directories: json.containsKey('directories') ? SdkPresent(json['directories'] != null ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDirectories.fromJson(json['directories']) : null) : const SdkOmitted(),
     os: json['os'] != null ? SdkPresent(((json['os'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
     cpu: json['cpu'] != null ? SdkPresent(((json['cpu'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
     readme: json['readme'] != null ? SdkPresent((json['readme'] as String?)!) : const SdkOmitted(),
@@ -181,11 +181,11 @@ class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata {
       _ => const <String, dynamic>{},
     },
     ...switch (author) {
-      SdkPresent<dynamic>(value: final value) => {'author': value,},
+      SdkPresent<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataAuthor?>(value: final value) => {'author': value?.toJson(),},
       _ => const <String, dynamic>{},
     },
     ...switch (bugs) {
-      SdkPresent<dynamic>(value: final value) => {'bugs': value,},
+      SdkPresent<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataBugs?>(value: final value) => {'bugs': value?.toJson(),},
       _ => const <String, dynamic>{},
     },
     ...switch (dependencies) {
@@ -209,7 +209,7 @@ class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata {
       _ => const <String, dynamic>{},
     },
     ...switch (dist) {
-      SdkPresent<dynamic>(value: final value) => {'dist': value,},
+      SdkPresent<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDist?>(value: final value) => {'dist': value?.toJson(),},
       _ => const <String, dynamic>{},
     },
     ...switch (gitHead) {
@@ -229,7 +229,7 @@ class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata {
       _ => const <String, dynamic>{},
     },
     ...switch (repository) {
-      SdkPresent<dynamic>(value: final value) => {'repository': value,},
+      SdkPresent<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataRepository?>(value: final value) => {'repository': value?.toJson(),},
       _ => const <String, dynamic>{},
     },
     ...switch (scripts) {
@@ -281,7 +281,7 @@ class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata {
       _ => const <String, dynamic>{},
     },
     ...switch (directories) {
-      SdkPresent<dynamic>(value: final value) => {'directories': value,},
+      SdkPresent<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDirectories?>(value: final value) => {'directories': value?.toJson(),},
       _ => const <String, dynamic>{},
     },
     ...switch (os) {

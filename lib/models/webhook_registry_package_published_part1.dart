@@ -238,30 +238,6 @@ class WebhookRegistryPackagePublishedRegistryPackagePackageVersionAuthor {
   };
 }
 
-sealed class WebhookRegistryPackagePublishedRegistryPackagePackageVersionBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  const WebhookRegistryPackagePublishedRegistryPackagePackageVersionBody();
-  factory WebhookRegistryPackagePublishedRegistryPackagePackageVersionBody.fromJson(Object? json) {
-    if (json is String) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersionBodyString(json); }
-    if (json is Map) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersionBodyMap(Map<String, dynamic>.from(json)); }
-    throw FormatException("No variant matched for WebhookRegistryPackagePublishedRegistryPackagePackageVersionBody");
-  }
-  Object? toJson();
-}
-
-final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionBodyString extends WebhookRegistryPackagePublishedRegistryPackagePackageVersionBody {
-  final String value;
-  const WebhookRegistryPackagePublishedRegistryPackagePackageVersionBodyString(this.value);
-  @override Object? toJson() => value;
-}
-
-final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionBodyMap extends WebhookRegistryPackagePublishedRegistryPackagePackageVersionBody {
-  final Map<String, dynamic> value;
-  const WebhookRegistryPackagePublishedRegistryPackagePackageVersionBodyMap(this.value);
-  @override Object? toJson() => value;
-}
-
 /// Optional object value serialized in the `tag` wire field.
 class WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadataTag {
   /// This model is constructed from named fields in one call.

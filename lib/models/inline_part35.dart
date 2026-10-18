@@ -4,187 +4,6 @@
 part of 'inline.dart';
 
 // Inline operation models (part 35)
-/// The type of the actor
-final class RepositoryRuleParamsActorType {
-
-  final String value;
-
-  const RepositoryRuleParamsActorType._(this.value);
-
-  factory RepositoryRuleParamsActorType.fromJson(String value) => RepositoryRuleParamsActorType._(value);
-
-  static const user = RepositoryRuleParamsActorType._('User');
-  static const team = RepositoryRuleParamsActorType._('Team');
-  static const integrationinstallation = RepositoryRuleParamsActorType._('IntegrationInstallation');
-  static const repositoryrole = RepositoryRuleParamsActorType._('RepositoryRole');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is RepositoryRuleParamsActorType && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The severity level at which code scanning results that raise alerts block a reference update. For more information on alert severity levels, see "[About code scanning alerts](https://docs.github.com/code-security/code-scanning/managing-code-scanning-alerts/about-code-scanning-alerts#about-alert-severity-and-security-severity-levels)."
-final class RepositoryRuleParamsCodeScanningToolAlertsThreshold {
-
-  final String value;
-
-  const RepositoryRuleParamsCodeScanningToolAlertsThreshold._(this.value);
-
-  factory RepositoryRuleParamsCodeScanningToolAlertsThreshold.fromJson(String value) => RepositoryRuleParamsCodeScanningToolAlertsThreshold._(value);
-
-  static const none = RepositoryRuleParamsCodeScanningToolAlertsThreshold._('none');
-  static const errors = RepositoryRuleParamsCodeScanningToolAlertsThreshold._('errors');
-  static const errorsAndWarnings = RepositoryRuleParamsCodeScanningToolAlertsThreshold._('errors_and_warnings');
-  static const all = RepositoryRuleParamsCodeScanningToolAlertsThreshold._('all');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is RepositoryRuleParamsCodeScanningToolAlertsThreshold && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The severity level at which code scanning results that raise security alerts block a reference update. For more information on security severity levels, see "[About code scanning alerts](https://docs.github.com/code-security/code-scanning/managing-code-scanning-alerts/about-code-scanning-alerts#about-alert-severity-and-security-severity-levels)."
-final class RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold {
-
-  final String value;
-
-  const RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold._(this.value);
-
-  factory RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold.fromJson(String value) => RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold._(value);
-
-  static const none = RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold._('none');
-  static const critical = RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold._('critical');
-  static const highOrHigher = RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold._('high_or_higher');
-  static const mediumOrHigher = RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold._('medium_or_higher');
-  static const all = RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold._('all');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The level of authentication required before a pull request can be merged.
-final class RepositoryRuleParamsProofOfPresenceRequiredAuthenticationLevel {
-
-  final String value;
-
-  const RepositoryRuleParamsProofOfPresenceRequiredAuthenticationLevel._(this.value);
-
-  factory RepositoryRuleParamsProofOfPresenceRequiredAuthenticationLevel.fromJson(String value) => RepositoryRuleParamsProofOfPresenceRequiredAuthenticationLevel._(value);
-
-  static const reauth = RepositoryRuleParamsProofOfPresenceRequiredAuthenticationLevel._('reauth');
-  static const mfa = RepositoryRuleParamsProofOfPresenceRequiredAuthenticationLevel._('mfa');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is RepositoryRuleParamsProofOfPresenceRequiredAuthenticationLevel && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The type of the reviewer
-final class RepositoryRuleParamsReviewerType {
-
-  final String value;
-
-  const RepositoryRuleParamsReviewerType._(this.value);
-
-  factory RepositoryRuleParamsReviewerType.fromJson(String value) => RepositoryRuleParamsReviewerType._(value);
-
-  static const team = RepositoryRuleParamsReviewerType._('Team');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is RepositoryRuleParamsReviewerType && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// Required enumerated value serialized in the `allowed_merge_methods[]` wire field.
-final class RepositoryRulePullRequestParametersAllowedMergeMethodsItem {
-
-  final String value;
-
-  const RepositoryRulePullRequestParametersAllowedMergeMethodsItem._(this.value);
-
-  factory RepositoryRulePullRequestParametersAllowedMergeMethodsItem.fromJson(String value) => RepositoryRulePullRequestParametersAllowedMergeMethodsItem._(value);
-
-  static const merge = RepositoryRulePullRequestParametersAllowedMergeMethodsItem._('merge');
-  static const squash = RepositoryRulePullRequestParametersAllowedMergeMethodsItem._('squash');
-  static const rebase = RepositoryRulePullRequestParametersAllowedMergeMethodsItem._('rebase');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is RepositoryRulePullRequestParametersAllowedMergeMethodsItem && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// Required enumerated value serialized in the `type` wire field.
-enum RepositoryRulePullRequestType {
-  pullRequest;
-
-  static RepositoryRulePullRequestType fromJson(String value) {
-    switch (value) {
-      case 'pull_request': return RepositoryRulePullRequestType.pullRequest;
-      default: throw ArgumentError('Unknown RepositoryRulePullRequestType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case RepositoryRulePullRequestType.pullRequest: return 'pull_request';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-/// Required enumerated value serialized in the `type` wire field.
-enum RepositoryRuleRequiredDeploymentsType {
-  requiredDeployments;
-
-  static RepositoryRuleRequiredDeploymentsType fromJson(String value) {
-    switch (value) {
-      case 'required_deployments': return RepositoryRuleRequiredDeploymentsType.requiredDeployments;
-      default: throw ArgumentError('Unknown RepositoryRuleRequiredDeploymentsType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case RepositoryRuleRequiredDeploymentsType.requiredDeployments: return 'required_deployments';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
 /// Required enumerated value serialized in the `type` wire field.
 enum RepositoryRuleRequiredLinearHistoryType {
   requiredLinearHistory;
@@ -268,4 +87,191 @@ final class RepositoryRuleRulesetInfoRulesetSourceType {
 
   @override int get hashCode => value.hashCode;
 
+}
+
+/// The bypass type of the user making the API request for this ruleset. This field is only returned when querying the repository-level endpoint.
+final class RepositoryRulesetCurrentUserCanBypass {
+
+  final String value;
+
+  const RepositoryRulesetCurrentUserCanBypass._(this.value);
+
+  factory RepositoryRulesetCurrentUserCanBypass.fromJson(String value) => RepositoryRulesetCurrentUserCanBypass._(value);
+
+  static const always = RepositoryRulesetCurrentUserCanBypass._('always');
+  static const pullRequestsOnly = RepositoryRulesetCurrentUserCanBypass._('pull_requests_only');
+  static const never = RepositoryRulesetCurrentUserCanBypass._('never');
+  static const exempt = RepositoryRulesetCurrentUserCanBypass._('exempt');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is RepositoryRulesetCurrentUserCanBypass && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// The type of the source of the ruleset
+final class RepositoryRulesetSourceType {
+
+  final String value;
+
+  const RepositoryRulesetSourceType._(this.value);
+
+  factory RepositoryRulesetSourceType.fromJson(String value) => RepositoryRulesetSourceType._(value);
+
+  static const repository = RepositoryRulesetSourceType._('Repository');
+  static const organization = RepositoryRulesetSourceType._('Organization');
+  static const enterprise = RepositoryRulesetSourceType._('Enterprise');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is RepositoryRulesetSourceType && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// The target of the ruleset
+final class RepositoryRulesetTarget {
+
+  final String value;
+
+  const RepositoryRulesetTarget._(this.value);
+
+  factory RepositoryRulesetTarget.fromJson(String value) => RepositoryRulesetTarget._(value);
+
+  static const branch = RepositoryRulesetTarget._('branch');
+  static const tag = RepositoryRulesetTarget._('tag');
+  static const push = RepositoryRulesetTarget._('push');
+  static const repository = RepositoryRulesetTarget._('repository');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is RepositoryRulesetTarget && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// The type of actor that can bypass a ruleset.
+final class RepositoryRulesetBypassActorActorType {
+
+  final String value;
+
+  const RepositoryRulesetBypassActorActorType._(this.value);
+
+  factory RepositoryRulesetBypassActorActorType.fromJson(String value) => RepositoryRulesetBypassActorActorType._(value);
+
+  static const integration = RepositoryRulesetBypassActorActorType._('Integration');
+  static const organizationadmin = RepositoryRulesetBypassActorActorType._('OrganizationAdmin');
+  static const repositoryrole = RepositoryRulesetBypassActorActorType._('RepositoryRole');
+  static const team = RepositoryRulesetBypassActorActorType._('Team');
+  static const deploykey = RepositoryRulesetBypassActorActorType._('DeployKey');
+  static const user = RepositoryRulesetBypassActorActorType._('User');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is RepositoryRulesetBypassActorActorType && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests. `pull_request` is not applicable for the `DeployKey` actor type. Also, `pull_request` is only applicable to branch rulesets. When `bypass_mode` is `exempt`, rules will not be run for that actor and a bypass audit entry will not be created.
+final class RepositoryRulesetBypassActorBypassMode {
+
+  final String value;
+
+  const RepositoryRulesetBypassActorBypassMode._(this.value);
+
+  factory RepositoryRulesetBypassActorBypassMode.fromJson(String value) => RepositoryRulesetBypassActorBypassMode._(value);
+
+  static const always = RepositoryRulesetBypassActorBypassMode._('always');
+  static const pullRequest = RepositoryRulesetBypassActorBypassMode._('pull_request');
+  static const exempt = RepositoryRulesetBypassActorBypassMode._('exempt');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is RepositoryRulesetBypassActorBypassMode && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// The source of the repository property. Defaults to 'custom' if not specified.
+final class RepositoryRulesetConditionsRepositoryPropertySpecSource {
+
+  final String value;
+
+  const RepositoryRulesetConditionsRepositoryPropertySpecSource._(this.value);
+
+  factory RepositoryRulesetConditionsRepositoryPropertySpecSource.fromJson(String value) => RepositoryRulesetConditionsRepositoryPropertySpecSource._(value);
+
+  static const custom = RepositoryRulesetConditionsRepositoryPropertySpecSource._('custom');
+  static const system = RepositoryRulesetConditionsRepositoryPropertySpecSource._('system');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is RepositoryRulesetConditionsRepositoryPropertySpecSource && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// The operator to use for matching.
+final class RepositoryRuleTagNamePatternParametersOperator {
+
+  final String value;
+
+  const RepositoryRuleTagNamePatternParametersOperator._(this.value);
+
+  factory RepositoryRuleTagNamePatternParametersOperator.fromJson(String value) => RepositoryRuleTagNamePatternParametersOperator._(value);
+
+  static const startsWith = RepositoryRuleTagNamePatternParametersOperator._('starts_with');
+  static const endsWith = RepositoryRuleTagNamePatternParametersOperator._('ends_with');
+  static const contains = RepositoryRuleTagNamePatternParametersOperator._('contains');
+  static const regex = RepositoryRuleTagNamePatternParametersOperator._('regex');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is RepositoryRuleTagNamePatternParametersOperator && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// Required enumerated value serialized in the `type` wire field.
+enum RepositoryRuleTagNamePatternType {
+  tagNamePattern;
+
+  static RepositoryRuleTagNamePatternType fromJson(String value) {
+    switch (value) {
+      case 'tag_name_pattern': return RepositoryRuleTagNamePatternType.tagNamePattern;
+      default: throw ArgumentError('Unknown RepositoryRuleTagNamePatternType: $value');
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case RepositoryRuleTagNamePatternType.tagNamePattern: return 'tag_name_pattern';
+    }
+  }
+
+  @override
+  String toString() => toJson();
 }

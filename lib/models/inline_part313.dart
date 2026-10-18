@@ -4,167 +4,294 @@
 part of 'inline.dart';
 
 // Inline operation models (part 313)
-/// Public trigger configuration keyed by stable public trigger identifier. Each trigger has a closed, trigger-specific configuration schema.
-class AgentAutomationsCreateRepoAutomationRequestBodyTriggers {
+/// Custom agent metadata associated with this task
+class AgentTasksListTasksForRepoResponseTasksItemCustomAgent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersInterval> interval;
-  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueOpened> issueOpened;
-  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueLabeled> issueLabeled;
-  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersWorkflowRun> workflowRun;
-  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestOpened> pullRequestOpened;
-  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestSynchronize> pullRequestSynchronize;
-  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestMerged> pullRequestMerged;
-  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueComment> issueComment;
-  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestComment> pullRequestComment;
-  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersDiscussionOpened> discussionOpened;
-  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersDiscussionUpdated> discussionUpdated;
-  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersDiscussionComment> discussionComment;
-  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueAssigned> issueAssigned;
-  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestAssigned> pullRequestAssigned;
-  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersSubIssueAdded> subIssueAdded;
-  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReadyForReview> pullRequestReadyForReview;
-  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestLabeled> pullRequestLabeled;
-  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestMergeConflict> pullRequestMergeConflict;
-  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewSubmitted> pullRequestReviewSubmitted;
-  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewRequested> pullRequestReviewRequested;
-  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersAutomationCompleted> automationCompleted;
+  /// The custom agent's filename without the extension - for example, `performance-optimizer` for a `.github/agents/performance-optimizer.agent.md` custom agent.
+  final SdkOptional<String> id;
 
-  const AgentAutomationsCreateRepoAutomationRequestBodyTriggers({this.interval = const SdkOmitted(), this.issueOpened = const SdkOmitted(), this.issueLabeled = const SdkOmitted(), this.workflowRun = const SdkOmitted(), this.pullRequestOpened = const SdkOmitted(), this.pullRequestSynchronize = const SdkOmitted(), this.pullRequestMerged = const SdkOmitted(), this.issueComment = const SdkOmitted(), this.pullRequestComment = const SdkOmitted(), this.discussionOpened = const SdkOmitted(), this.discussionUpdated = const SdkOmitted(), this.discussionComment = const SdkOmitted(), this.issueAssigned = const SdkOmitted(), this.pullRequestAssigned = const SdkOmitted(), this.subIssueAdded = const SdkOmitted(), this.pullRequestReadyForReview = const SdkOmitted(), this.pullRequestLabeled = const SdkOmitted(), this.pullRequestMergeConflict = const SdkOmitted(), this.pullRequestReviewSubmitted = const SdkOmitted(), this.pullRequestReviewRequested = const SdkOmitted(), this.automationCompleted = const SdkOmitted()});
+  const AgentTasksListTasksForRepoResponseTasksItemCustomAgent({this.id = const SdkOmitted()});
 
-  AgentAutomationsCreateRepoAutomationRequestBodyTriggers Function({SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersInterval> interval, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueOpened> issueOpened, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueLabeled> issueLabeled, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersWorkflowRun> workflowRun, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestOpened> pullRequestOpened, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestSynchronize> pullRequestSynchronize, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestMerged> pullRequestMerged, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueComment> issueComment, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestComment> pullRequestComment, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersDiscussionOpened> discussionOpened, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersDiscussionUpdated> discussionUpdated, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersDiscussionComment> discussionComment, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueAssigned> issueAssigned, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestAssigned> pullRequestAssigned, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersSubIssueAdded> subIssueAdded, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReadyForReview> pullRequestReadyForReview, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestLabeled> pullRequestLabeled, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestMergeConflict> pullRequestMergeConflict, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewSubmitted> pullRequestReviewSubmitted, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewRequested> pullRequestReviewRequested, SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersAutomationCompleted> automationCompleted}) get copyWith => _copyWith;
+  AgentTasksListTasksForRepoResponseTasksItemCustomAgent Function({SdkOptional<String> id}) get copyWith => _copyWith;
 
-  AgentAutomationsCreateRepoAutomationRequestBodyTriggers _copyWith({Object? interval = sdkOmittedValue, Object? issueOpened = sdkOmittedValue, Object? issueLabeled = sdkOmittedValue, Object? workflowRun = sdkOmittedValue, Object? pullRequestOpened = sdkOmittedValue, Object? pullRequestSynchronize = sdkOmittedValue, Object? pullRequestMerged = sdkOmittedValue, Object? issueComment = sdkOmittedValue, Object? pullRequestComment = sdkOmittedValue, Object? discussionOpened = sdkOmittedValue, Object? discussionUpdated = sdkOmittedValue, Object? discussionComment = sdkOmittedValue, Object? issueAssigned = sdkOmittedValue, Object? pullRequestAssigned = sdkOmittedValue, Object? subIssueAdded = sdkOmittedValue, Object? pullRequestReadyForReview = sdkOmittedValue, Object? pullRequestLabeled = sdkOmittedValue, Object? pullRequestMergeConflict = sdkOmittedValue, Object? pullRequestReviewSubmitted = sdkOmittedValue, Object? pullRequestReviewRequested = sdkOmittedValue, Object? automationCompleted = sdkOmittedValue}) => AgentAutomationsCreateRepoAutomationRequestBodyTriggers(
-    interval: identical(interval, sdkOmittedValue) ? this.interval : interval as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersInterval>,
-    issueOpened: identical(issueOpened, sdkOmittedValue) ? this.issueOpened : issueOpened as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueOpened>,
-    issueLabeled: identical(issueLabeled, sdkOmittedValue) ? this.issueLabeled : issueLabeled as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueLabeled>,
-    workflowRun: identical(workflowRun, sdkOmittedValue) ? this.workflowRun : workflowRun as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersWorkflowRun>,
-    pullRequestOpened: identical(pullRequestOpened, sdkOmittedValue) ? this.pullRequestOpened : pullRequestOpened as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestOpened>,
-    pullRequestSynchronize: identical(pullRequestSynchronize, sdkOmittedValue) ? this.pullRequestSynchronize : pullRequestSynchronize as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestSynchronize>,
-    pullRequestMerged: identical(pullRequestMerged, sdkOmittedValue) ? this.pullRequestMerged : pullRequestMerged as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestMerged>,
-    issueComment: identical(issueComment, sdkOmittedValue) ? this.issueComment : issueComment as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueComment>,
-    pullRequestComment: identical(pullRequestComment, sdkOmittedValue) ? this.pullRequestComment : pullRequestComment as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestComment>,
-    discussionOpened: identical(discussionOpened, sdkOmittedValue) ? this.discussionOpened : discussionOpened as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersDiscussionOpened>,
-    discussionUpdated: identical(discussionUpdated, sdkOmittedValue) ? this.discussionUpdated : discussionUpdated as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersDiscussionUpdated>,
-    discussionComment: identical(discussionComment, sdkOmittedValue) ? this.discussionComment : discussionComment as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersDiscussionComment>,
-    issueAssigned: identical(issueAssigned, sdkOmittedValue) ? this.issueAssigned : issueAssigned as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueAssigned>,
-    pullRequestAssigned: identical(pullRequestAssigned, sdkOmittedValue) ? this.pullRequestAssigned : pullRequestAssigned as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestAssigned>,
-    subIssueAdded: identical(subIssueAdded, sdkOmittedValue) ? this.subIssueAdded : subIssueAdded as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersSubIssueAdded>,
-    pullRequestReadyForReview: identical(pullRequestReadyForReview, sdkOmittedValue) ? this.pullRequestReadyForReview : pullRequestReadyForReview as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReadyForReview>,
-    pullRequestLabeled: identical(pullRequestLabeled, sdkOmittedValue) ? this.pullRequestLabeled : pullRequestLabeled as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestLabeled>,
-    pullRequestMergeConflict: identical(pullRequestMergeConflict, sdkOmittedValue) ? this.pullRequestMergeConflict : pullRequestMergeConflict as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestMergeConflict>,
-    pullRequestReviewSubmitted: identical(pullRequestReviewSubmitted, sdkOmittedValue) ? this.pullRequestReviewSubmitted : pullRequestReviewSubmitted as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewSubmitted>,
-    pullRequestReviewRequested: identical(pullRequestReviewRequested, sdkOmittedValue) ? this.pullRequestReviewRequested : pullRequestReviewRequested as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewRequested>,
-    automationCompleted: identical(automationCompleted, sdkOmittedValue) ? this.automationCompleted : automationCompleted as SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggersAutomationCompleted>,
+  AgentTasksListTasksForRepoResponseTasksItemCustomAgent _copyWith({Object? id = sdkOmittedValue}) => AgentTasksListTasksForRepoResponseTasksItemCustomAgent(
+    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<String>,
   );
 
-  factory AgentAutomationsCreateRepoAutomationRequestBodyTriggers.fromJson(Map<String, dynamic> json) => AgentAutomationsCreateRepoAutomationRequestBodyTriggers(
-    interval: json['interval'] != null ? SdkPresent((json['interval'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersInterval.fromJson(json['interval'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    issueOpened: json['issue_opened'] != null ? SdkPresent((json['issue_opened'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueOpened.fromJson(json['issue_opened'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    issueLabeled: json['issue_labeled'] != null ? SdkPresent((json['issue_labeled'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueLabeled.fromJson(json['issue_labeled'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    workflowRun: json['workflow_run'] != null ? SdkPresent((json['workflow_run'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersWorkflowRun.fromJson(json['workflow_run'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    pullRequestOpened: json['pull_request_opened'] != null ? SdkPresent((json['pull_request_opened'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestOpened.fromJson(json['pull_request_opened'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    pullRequestSynchronize: json['pull_request_synchronize'] != null ? SdkPresent((json['pull_request_synchronize'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestSynchronize.fromJson(json['pull_request_synchronize'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    pullRequestMerged: json['pull_request_merged'] != null ? SdkPresent((json['pull_request_merged'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestMerged.fromJson(json['pull_request_merged'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    issueComment: json['issue_comment'] != null ? SdkPresent((json['issue_comment'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueComment.fromJson(json['issue_comment'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    pullRequestComment: json['pull_request_comment'] != null ? SdkPresent((json['pull_request_comment'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestComment.fromJson(json['pull_request_comment'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    discussionOpened: json['discussion_opened'] != null ? SdkPresent((json['discussion_opened'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersDiscussionOpened.fromJson(json['discussion_opened'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    discussionUpdated: json['discussion_updated'] != null ? SdkPresent((json['discussion_updated'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersDiscussionUpdated.fromJson(json['discussion_updated'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    discussionComment: json['discussion_comment'] != null ? SdkPresent((json['discussion_comment'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersDiscussionComment.fromJson(json['discussion_comment'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    issueAssigned: json['issue_assigned'] != null ? SdkPresent((json['issue_assigned'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueAssigned.fromJson(json['issue_assigned'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    pullRequestAssigned: json['pull_request_assigned'] != null ? SdkPresent((json['pull_request_assigned'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestAssigned.fromJson(json['pull_request_assigned'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    subIssueAdded: json['sub_issue_added'] != null ? SdkPresent((json['sub_issue_added'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersSubIssueAdded.fromJson(json['sub_issue_added'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    pullRequestReadyForReview: json['pull_request_ready_for_review'] != null ? SdkPresent((json['pull_request_ready_for_review'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReadyForReview.fromJson(json['pull_request_ready_for_review'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    pullRequestLabeled: json['pull_request_labeled'] != null ? SdkPresent((json['pull_request_labeled'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestLabeled.fromJson(json['pull_request_labeled'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    pullRequestMergeConflict: json['pull_request_merge_conflict'] != null ? SdkPresent((json['pull_request_merge_conflict'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestMergeConflict.fromJson(json['pull_request_merge_conflict'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    pullRequestReviewSubmitted: json['pull_request_review_submitted'] != null ? SdkPresent((json['pull_request_review_submitted'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewSubmitted.fromJson(json['pull_request_review_submitted'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    pullRequestReviewRequested: json['pull_request_review_requested'] != null ? SdkPresent((json['pull_request_review_requested'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewRequested.fromJson(json['pull_request_review_requested'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    automationCompleted: json['automation_completed'] != null ? SdkPresent((json['automation_completed'] != null ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersAutomationCompleted.fromJson(json['automation_completed'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+  factory AgentTasksListTasksForRepoResponseTasksItemCustomAgent.fromJson(Map<String, dynamic> json) => AgentTasksListTasksForRepoResponseTasksItemCustomAgent(
+    id: json['id'] != null ? SdkPresent((json['id'] as String?)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    ...switch (interval) {
-      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersInterval>(value: final value) => {'interval': value.toJson(),},
+    ...switch (id) {
+      SdkPresent<String>(value: final value) => {'id': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (issueOpened) {
-      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueOpened>(value: final value) => {'issue_opened': value.toJson(),},
+  };
+}
+
+class AgentTasksListTasksForRepoResponseTasksItem {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// Unique task identifier
+  final String id;
+  /// API URL for this task
+  final SdkOptional<String> url;
+  /// Web URL for this task
+  final SdkOptional<String> htmlUrl;
+  /// Human-readable name derived from the task prompt
+  final SdkOptional<String> name;
+  /// The entity who created this task
+  final SdkOptional<AgentTasksListTasksForRepoResponseTasksItemCreator> creator;
+  /// Type of the task creator
+  final SdkOptional<AgentTasksListTasksForRepoResponseTasksItemCreatorType> creatorType;
+  /// User objects of collaborators on this task
+  final SdkOptional<List<AgentTasksListTasksForRepoResponseTasksItemUserCollaboratorsItem>> userCollaborators;
+  /// The owner of the repository
+  final SdkOptional<AgentTasksListTasksForRepoResponseTasksItemOwner> owner;
+  /// The repository this task belongs to
+  final SdkOptional<AgentTasksListTasksForRepoResponseTasksItemRepository> repository;
+  /// Current state of the task, derived from its most recent session
+  final AgentTasksListTasksForRepoResponseTasksItemState state;
+  /// Number of sessions in this task
+  final SdkOptional<int> sessionCount;
+  /// Resources created by this task (PRs, branches, etc.)
+  final SdkOptional<List<AgentTasksListTasksForRepoResponseTasksItemArtifactsItem>> artifacts;
+  /// Timestamp when the task was archived, null if not archived
+  final SdkOptional<String?> archivedAt;
+  /// Timestamp of the most recent update
+  final SdkOptional<String> updatedAt;
+  /// Timestamp when the task was created
+  final String createdAt;
+  /// Custom agent metadata associated with this task
+  final SdkOptional<AgentTasksListTasksForRepoResponseTasksItemCustomAgent> customAgent;
+
+  const AgentTasksListTasksForRepoResponseTasksItem({required this.id, this.url = const SdkOmitted(), this.htmlUrl = const SdkOmitted(), this.name = const SdkOmitted(), this.creator = const SdkOmitted(), this.creatorType = const SdkOmitted(), this.userCollaborators = const SdkOmitted(), this.owner = const SdkOmitted(), this.repository = const SdkOmitted(), required this.state, this.sessionCount = const SdkOmitted(), this.artifacts = const SdkOmitted(), this.archivedAt = const SdkOmitted(), this.updatedAt = const SdkOmitted(), required this.createdAt, this.customAgent = const SdkOmitted()});
+
+  AgentTasksListTasksForRepoResponseTasksItem Function({String id, SdkOptional<String> url, SdkOptional<String> htmlUrl, SdkOptional<String> name, SdkOptional<AgentTasksListTasksForRepoResponseTasksItemCreator> creator, SdkOptional<AgentTasksListTasksForRepoResponseTasksItemCreatorType> creatorType, SdkOptional<List<AgentTasksListTasksForRepoResponseTasksItemUserCollaboratorsItem>> userCollaborators, SdkOptional<AgentTasksListTasksForRepoResponseTasksItemOwner> owner, SdkOptional<AgentTasksListTasksForRepoResponseTasksItemRepository> repository, AgentTasksListTasksForRepoResponseTasksItemState state, SdkOptional<int> sessionCount, SdkOptional<List<AgentTasksListTasksForRepoResponseTasksItemArtifactsItem>> artifacts, SdkOptional<String?> archivedAt, SdkOptional<String> updatedAt, String createdAt, SdkOptional<AgentTasksListTasksForRepoResponseTasksItemCustomAgent> customAgent}) get copyWith => _copyWith;
+
+  AgentTasksListTasksForRepoResponseTasksItem _copyWith({Object? id = sdkOmittedValue, Object? url = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? name = sdkOmittedValue, Object? creator = sdkOmittedValue, Object? creatorType = sdkOmittedValue, Object? userCollaborators = sdkOmittedValue, Object? owner = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? state = sdkOmittedValue, Object? sessionCount = sdkOmittedValue, Object? artifacts = sdkOmittedValue, Object? archivedAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? customAgent = sdkOmittedValue}) => AgentTasksListTasksForRepoResponseTasksItem(
+    id: identical(id, sdkOmittedValue) ? this.id : id as String,
+    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String>,
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
+    creator: identical(creator, sdkOmittedValue) ? this.creator : creator as SdkOptional<AgentTasksListTasksForRepoResponseTasksItemCreator>,
+    creatorType: identical(creatorType, sdkOmittedValue) ? this.creatorType : creatorType as SdkOptional<AgentTasksListTasksForRepoResponseTasksItemCreatorType>,
+    userCollaborators: identical(userCollaborators, sdkOmittedValue) ? this.userCollaborators : userCollaborators as SdkOptional<List<AgentTasksListTasksForRepoResponseTasksItemUserCollaboratorsItem>>,
+    owner: identical(owner, sdkOmittedValue) ? this.owner : owner as SdkOptional<AgentTasksListTasksForRepoResponseTasksItemOwner>,
+    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as SdkOptional<AgentTasksListTasksForRepoResponseTasksItemRepository>,
+    state: identical(state, sdkOmittedValue) ? this.state : state as AgentTasksListTasksForRepoResponseTasksItemState,
+    sessionCount: identical(sessionCount, sdkOmittedValue) ? this.sessionCount : sessionCount as SdkOptional<int>,
+    artifacts: identical(artifacts, sdkOmittedValue) ? this.artifacts : artifacts as SdkOptional<List<AgentTasksListTasksForRepoResponseTasksItemArtifactsItem>>,
+    archivedAt: identical(archivedAt, sdkOmittedValue) ? this.archivedAt : archivedAt as SdkOptional<String?>,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as SdkOptional<String>,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    customAgent: identical(customAgent, sdkOmittedValue) ? this.customAgent : customAgent as SdkOptional<AgentTasksListTasksForRepoResponseTasksItemCustomAgent>,
+  );
+
+  factory AgentTasksListTasksForRepoResponseTasksItem.fromJson(Map<String, dynamic> json) => AgentTasksListTasksForRepoResponseTasksItem(
+    id: (json['id'] as String?)!,
+    url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
+    htmlUrl: json['html_url'] != null ? SdkPresent((json['html_url'] as String?)!) : const SdkOmitted(),
+    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
+    creator: json['creator'] != null ? SdkPresent((json['creator'] != null ? AgentTasksListTasksForRepoResponseTasksItemCreator.fromJson(json['creator'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    creatorType: json['creator_type'] != null ? SdkPresent((json['creator_type'] != null ? AgentTasksListTasksForRepoResponseTasksItemCreatorType.fromJson(json['creator_type'] as String) : null)!) : const SdkOmitted(),
+    userCollaborators: json['user_collaborators'] != null ? SdkPresent(((json['user_collaborators'] as List?)?.map((e) => AgentTasksListTasksForRepoResponseTasksItemUserCollaboratorsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+    owner: json['owner'] != null ? SdkPresent((json['owner'] != null ? AgentTasksListTasksForRepoResponseTasksItemOwner.fromJson(json['owner'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    repository: json['repository'] != null ? SdkPresent((json['repository'] != null ? AgentTasksListTasksForRepoResponseTasksItemRepository.fromJson(json['repository'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    state: (json['state'] != null ? AgentTasksListTasksForRepoResponseTasksItemState.fromJson(json['state'] as String) : null)!,
+    sessionCount: json['session_count'] != null ? SdkPresent(((json['session_count'] as num?)?.toInt())!) : const SdkOmitted(),
+    artifacts: json['artifacts'] != null ? SdkPresent(((json['artifacts'] as List?)?.map((e) => AgentTasksListTasksForRepoResponseTasksItemArtifactsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+    archivedAt: json.containsKey('archived_at') ? SdkPresent(json['archived_at'] as String?) : const SdkOmitted(),
+    updatedAt: json['updated_at'] != null ? SdkPresent((json['updated_at'] as String?)!) : const SdkOmitted(),
+    createdAt: (json['created_at'] as String?)!,
+    customAgent: json['custom_agent'] != null ? SdkPresent((json['custom_agent'] != null ? AgentTasksListTasksForRepoResponseTasksItemCustomAgent.fromJson(json['custom_agent'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    'id': id,
+    ...switch (url) {
+      SdkPresent<String>(value: final value) => {'url': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (issueLabeled) {
-      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueLabeled>(value: final value) => {'issue_labeled': value.toJson(),},
+    ...switch (htmlUrl) {
+      SdkPresent<String>(value: final value) => {'html_url': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (workflowRun) {
-      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersWorkflowRun>(value: final value) => {'workflow_run': value.toJson(),},
+    ...switch (name) {
+      SdkPresent<String>(value: final value) => {'name': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (pullRequestOpened) {
-      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestOpened>(value: final value) => {'pull_request_opened': value.toJson(),},
+    ...switch (creator) {
+      SdkPresent<AgentTasksListTasksForRepoResponseTasksItemCreator>(value: final value) => {'creator': value.toJson(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (pullRequestSynchronize) {
-      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestSynchronize>(value: final value) => {'pull_request_synchronize': value.toJson(),},
+    ...switch (creatorType) {
+      SdkPresent<AgentTasksListTasksForRepoResponseTasksItemCreatorType>(value: final value) => {'creator_type': value.toJson(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (pullRequestMerged) {
-      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestMerged>(value: final value) => {'pull_request_merged': value.toJson(),},
+    ...switch (userCollaborators) {
+      SdkPresent<List<AgentTasksListTasksForRepoResponseTasksItemUserCollaboratorsItem>>(value: final value) => {'user_collaborators': value.map((item) => item.toJson()).toList(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (issueComment) {
-      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueComment>(value: final value) => {'issue_comment': value.toJson(),},
+    ...switch (owner) {
+      SdkPresent<AgentTasksListTasksForRepoResponseTasksItemOwner>(value: final value) => {'owner': value.toJson(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (pullRequestComment) {
-      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestComment>(value: final value) => {'pull_request_comment': value.toJson(),},
+    ...switch (repository) {
+      SdkPresent<AgentTasksListTasksForRepoResponseTasksItemRepository>(value: final value) => {'repository': value.toJson(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (discussionOpened) {
-      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersDiscussionOpened>(value: final value) => {'discussion_opened': value.toJson(),},
+    'state': state.toJson(),
+    ...switch (sessionCount) {
+      SdkPresent<int>(value: final value) => {'session_count': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (discussionUpdated) {
-      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersDiscussionUpdated>(value: final value) => {'discussion_updated': value.toJson(),},
+    ...switch (artifacts) {
+      SdkPresent<List<AgentTasksListTasksForRepoResponseTasksItemArtifactsItem>>(value: final value) => {'artifacts': value.map((item) => item.toJson()).toList(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (discussionComment) {
-      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersDiscussionComment>(value: final value) => {'discussion_comment': value.toJson(),},
+    ...switch (archivedAt) {
+      SdkPresent<String?>(value: final value) => {'archived_at': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (issueAssigned) {
-      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersIssueAssigned>(value: final value) => {'issue_assigned': value.toJson(),},
+    ...switch (updatedAt) {
+      SdkPresent<String>(value: final value) => {'updated_at': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (pullRequestAssigned) {
-      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestAssigned>(value: final value) => {'pull_request_assigned': value.toJson(),},
+    'created_at': createdAt,
+    ...switch (customAgent) {
+      SdkPresent<AgentTasksListTasksForRepoResponseTasksItemCustomAgent>(value: final value) => {'custom_agent': value.toJson(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (subIssueAdded) {
-      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersSubIssueAdded>(value: final value) => {'sub_issue_added': value.toJson(),},
+  };
+}
+
+class AgentTasksListTasksForRepoResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// List of tasks
+  final List<AgentTasksListTasksForRepoResponseTasksItem> tasks;
+  /// Total count of active (non-archived) tasks
+  final SdkOptional<int> totalActiveCount;
+  /// Total count of archived tasks
+  final SdkOptional<int> totalArchivedCount;
+
+  const AgentTasksListTasksForRepoResponse({required this.tasks, this.totalActiveCount = const SdkOmitted(), this.totalArchivedCount = const SdkOmitted()});
+
+  AgentTasksListTasksForRepoResponse Function({List<AgentTasksListTasksForRepoResponseTasksItem> tasks, SdkOptional<int> totalActiveCount, SdkOptional<int> totalArchivedCount}) get copyWith => _copyWith;
+
+  AgentTasksListTasksForRepoResponse _copyWith({Object? tasks = sdkOmittedValue, Object? totalActiveCount = sdkOmittedValue, Object? totalArchivedCount = sdkOmittedValue}) => AgentTasksListTasksForRepoResponse(
+    tasks: identical(tasks, sdkOmittedValue) ? this.tasks : tasks as List<AgentTasksListTasksForRepoResponseTasksItem>,
+    totalActiveCount: identical(totalActiveCount, sdkOmittedValue) ? this.totalActiveCount : totalActiveCount as SdkOptional<int>,
+    totalArchivedCount: identical(totalArchivedCount, sdkOmittedValue) ? this.totalArchivedCount : totalArchivedCount as SdkOptional<int>,
+  );
+
+  factory AgentTasksListTasksForRepoResponse.fromJson(Map<String, dynamic> json) => AgentTasksListTasksForRepoResponse(
+    tasks: ((json['tasks'] as List?)?.map((e) => AgentTasksListTasksForRepoResponseTasksItem.fromJson(e as Map<String, dynamic>)).toList())!,
+    totalActiveCount: json['total_active_count'] != null ? SdkPresent(((json['total_active_count'] as num?)?.toInt())!) : const SdkOmitted(),
+    totalArchivedCount: json['total_archived_count'] != null ? SdkPresent(((json['total_archived_count'] as num?)?.toInt())!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    'tasks': tasks.map((item) => item.toJson()).toList(),
+    ...switch (totalActiveCount) {
+      SdkPresent<int>(value: final value) => {'total_active_count': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (pullRequestReadyForReview) {
-      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReadyForReview>(value: final value) => {'pull_request_ready_for_review': value.toJson(),},
+    ...switch (totalArchivedCount) {
+      SdkPresent<int>(value: final value) => {'total_archived_count': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (pullRequestLabeled) {
-      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestLabeled>(value: final value) => {'pull_request_labeled': value.toJson(),},
+  };
+}
+
+class AgentTasksCreateTaskInRepoRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The user's prompt for the agent
+  final String prompt;
+  /// The model to use for this task. The allowed models may change over time and depend on the user's GitHub Copilot plan and organization policies. Currently supported values: `claude-sonnet-4.6`, `claude-opus-4.6`, `gpt-5.2-codex`, `gpt-5.3-codex`, `gpt-5.4`, `claude-sonnet-4.5`, `claude-opus-4.5`
+  final SdkOptional<String> model;
+  /// Optional identifier for a custom agent to use for this task. Use the custom agent's filename without the extension - for example, for a `.github/agents/performance-optimizer.agent.md` custom agent, use `performance-optimizer`.
+  final SdkOptional<String> customAgent;
+  /// Whether to create a PR.
+  final SdkOptional<bool> createPullRequest;
+  /// Base ref for new branch/PR
+  final SdkOptional<String> baseRef;
+  /// Head ref for existing branch/PR. If provided with `base_ref`, the agent looks up open PR context for `head_ref` targeting `base_ref` and commits to `head_ref` instead of creating a new branch.
+  final SdkOptional<String> headRef;
+
+  const AgentTasksCreateTaskInRepoRequestBody({required this.prompt, this.model = const SdkOmitted(), this.customAgent = const SdkOmitted(), this.createPullRequest = const SdkOmitted(), this.baseRef = const SdkOmitted(), this.headRef = const SdkOmitted()});
+
+  AgentTasksCreateTaskInRepoRequestBody Function({String prompt, SdkOptional<String> model, SdkOptional<String> customAgent, SdkOptional<bool> createPullRequest, SdkOptional<String> baseRef, SdkOptional<String> headRef}) get copyWith => _copyWith;
+
+  AgentTasksCreateTaskInRepoRequestBody _copyWith({Object? prompt = sdkOmittedValue, Object? model = sdkOmittedValue, Object? customAgent = sdkOmittedValue, Object? createPullRequest = sdkOmittedValue, Object? baseRef = sdkOmittedValue, Object? headRef = sdkOmittedValue}) => AgentTasksCreateTaskInRepoRequestBody(
+    prompt: identical(prompt, sdkOmittedValue) ? this.prompt : prompt as String,
+    model: identical(model, sdkOmittedValue) ? this.model : model as SdkOptional<String>,
+    customAgent: identical(customAgent, sdkOmittedValue) ? this.customAgent : customAgent as SdkOptional<String>,
+    createPullRequest: identical(createPullRequest, sdkOmittedValue) ? this.createPullRequest : createPullRequest as SdkOptional<bool>,
+    baseRef: identical(baseRef, sdkOmittedValue) ? this.baseRef : baseRef as SdkOptional<String>,
+    headRef: identical(headRef, sdkOmittedValue) ? this.headRef : headRef as SdkOptional<String>,
+  );
+
+  factory AgentTasksCreateTaskInRepoRequestBody.fromJson(Map<String, dynamic> json) => AgentTasksCreateTaskInRepoRequestBody(
+    prompt: (json['prompt'] as String?)!,
+    model: json['model'] != null ? SdkPresent((json['model'] as String?)!) : const SdkOmitted(),
+    customAgent: json['custom_agent'] != null ? SdkPresent((json['custom_agent'] as String?)!) : const SdkOmitted(),
+    createPullRequest: json['create_pull_request'] != null ? SdkPresent((json['create_pull_request'] as bool?)!) : const SdkOmitted(),
+    baseRef: json['base_ref'] != null ? SdkPresent((json['base_ref'] as String?)!) : const SdkOmitted(),
+    headRef: json['head_ref'] != null ? SdkPresent((json['head_ref'] as String?)!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    'prompt': prompt,
+    ...switch (model) {
+      SdkPresent<String>(value: final value) => {'model': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (pullRequestMergeConflict) {
-      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestMergeConflict>(value: final value) => {'pull_request_merge_conflict': value.toJson(),},
+    ...switch (customAgent) {
+      SdkPresent<String>(value: final value) => {'custom_agent': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (pullRequestReviewSubmitted) {
-      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewSubmitted>(value: final value) => {'pull_request_review_submitted': value.toJson(),},
+    ...switch (createPullRequest) {
+      SdkPresent<bool>(value: final value) => {'create_pull_request': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (pullRequestReviewRequested) {
-      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewRequested>(value: final value) => {'pull_request_review_requested': value.toJson(),},
+    ...switch (baseRef) {
+      SdkPresent<String>(value: final value) => {'base_ref': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (automationCompleted) {
-      SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggersAutomationCompleted>(value: final value) => {'automation_completed': value.toJson(),},
+    ...switch (headRef) {
+      SdkPresent<String>(value: final value) => {'head_ref': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
+}
+
+/// The entity who created this task
+class AgentTasksCreateTaskInRepoResponseCreator {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The unique identifier of the user
+  final SdkOptional<int> id;
+
+  const AgentTasksCreateTaskInRepoResponseCreator({this.id = const SdkOmitted()});
+
+  AgentTasksCreateTaskInRepoResponseCreator Function({SdkOptional<int> id}) get copyWith => _copyWith;
+
+  AgentTasksCreateTaskInRepoResponseCreator _copyWith({Object? id = sdkOmittedValue}) => AgentTasksCreateTaskInRepoResponseCreator(
+    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+  );
+
+  factory AgentTasksCreateTaskInRepoResponseCreator.fromJson(Map<String, dynamic> json) => AgentTasksCreateTaskInRepoResponseCreator(
+    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    ...switch (id) {
+      SdkPresent<int>(value: final value) => {'id': value,},
       _ => const <String, dynamic>{},
     },
   };

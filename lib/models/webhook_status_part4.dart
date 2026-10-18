@@ -4,189 +4,279 @@
 part of 'webhook_status.dart';
 
 // webhook_status domain models (part 4)
-/// Required object value serialized in the `committer` wire field.
-class WebhookStatusCommitCommitter {
+/// Required object value serialized in the `parents[]` wire field.
+class WebhookStatusCommitParentsItem {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// Required `uri`-formatted value serialized in the `html_url` wire field.
+  final String htmlUrl;
+  /// Required `string` value serialized in the `sha` wire field.
+  final String sha;
+  /// Required `uri`-formatted value serialized in the `url` wire field.
+  final String url;
+
+  const WebhookStatusCommitParentsItem({required this.htmlUrl, required this.sha, required this.url});
+
+  WebhookStatusCommitParentsItem Function({String htmlUrl, String sha, String url}) get copyWith => _copyWith;
+
+  WebhookStatusCommitParentsItem _copyWith({Object? htmlUrl = sdkOmittedValue, Object? sha = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookStatusCommitParentsItem(
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
+    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+  );
+
+  factory WebhookStatusCommitParentsItem.fromJson(Map<String, dynamic> json) => WebhookStatusCommitParentsItem(
+    htmlUrl: (json['html_url'] as String?)!,
+    sha: (json['sha'] as String?)!,
+    url: (json['url'] as String?)!,
+  );
+
+  Map<String, dynamic> toJson() => {
+    'html_url': htmlUrl,
+    'sha': sha,
+    'url': url,
+  };
+}
+
+/// Required object value serialized in the `commit` wire field.
+class WebhookStatusCommit {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// Required object value serialized in the `author` wire field.
+  final WebhookStatusCommitAuthor? author;
+  /// Required `uri`-formatted value serialized in the `comments_url` wire field.
+  final String commentsUrl;
+  /// Required object value serialized in the `commit` wire field.
+  final WebhookStatusCommitCommit commit;
+  /// Required object value serialized in the `committer` wire field.
+  final WebhookStatusCommitCommitter? committer;
+  /// Required `uri`-formatted value serialized in the `html_url` wire field.
+  final String htmlUrl;
+  /// Required `string` value serialized in the `node_id` wire field.
+  final String nodeId;
+  /// Required array value serialized in the `parents` wire field.
+  final List<WebhookStatusCommitParentsItem> parents;
+  /// Required `string` value serialized in the `sha` wire field.
+  final String sha;
+  /// Required `uri`-formatted value serialized in the `url` wire field.
+  final String url;
+
+  const WebhookStatusCommit({required this.author, required this.commentsUrl, required this.commit, required this.committer, required this.htmlUrl, required this.nodeId, required this.parents, required this.sha, required this.url});
+
+  WebhookStatusCommit Function({WebhookStatusCommitAuthor? author, String commentsUrl, WebhookStatusCommitCommit commit, WebhookStatusCommitCommitter? committer, String htmlUrl, String nodeId, List<WebhookStatusCommitParentsItem> parents, String sha, String url}) get copyWith => _copyWith;
+
+  WebhookStatusCommit _copyWith({Object? author = sdkOmittedValue, Object? commentsUrl = sdkOmittedValue, Object? commit = sdkOmittedValue, Object? committer = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? parents = sdkOmittedValue, Object? sha = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookStatusCommit(
+    author: identical(author, sdkOmittedValue) ? this.author : author as WebhookStatusCommitAuthor?,
+    commentsUrl: identical(commentsUrl, sdkOmittedValue) ? this.commentsUrl : commentsUrl as String,
+    commit: identical(commit, sdkOmittedValue) ? this.commit : commit as WebhookStatusCommitCommit,
+    committer: identical(committer, sdkOmittedValue) ? this.committer : committer as WebhookStatusCommitCommitter?,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+    parents: identical(parents, sdkOmittedValue) ? this.parents : parents as List<WebhookStatusCommitParentsItem>,
+    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+  );
+
+  factory WebhookStatusCommit.fromJson(Map<String, dynamic> json) => WebhookStatusCommit(
+    author: json.containsKey('author') ? json['author'] != null ? WebhookStatusCommitAuthor.fromJson(json['author'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'author', 'Required property is missing'),
+    commentsUrl: (json['comments_url'] as String?)!,
+    commit: (json['commit'] != null ? WebhookStatusCommitCommit.fromJson(json['commit'] as Map<String, dynamic>) : null)!,
+    committer: json.containsKey('committer') ? json['committer'] != null ? WebhookStatusCommitCommitter.fromJson(json['committer'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'committer', 'Required property is missing'),
+    htmlUrl: (json['html_url'] as String?)!,
+    nodeId: (json['node_id'] as String?)!,
+    parents: ((json['parents'] as List?)?.map((e) => WebhookStatusCommitParentsItem.fromJson(e as Map<String, dynamic>)).toList())!,
+    sha: (json['sha'] as String?)!,
+    url: (json['url'] as String?)!,
+  );
+
+  Map<String, dynamic> toJson() => {
+    'author': author?.toJson(),
+    'comments_url': commentsUrl,
+    'commit': commit.toJson(),
+    'committer': committer?.toJson(),
+    'html_url': htmlUrl,
+    'node_id': nodeId,
+    'parents': parents.map((item) => item.toJson()).toList(),
+    'sha': sha,
+    'url': url,
+  };
+}
+
+/// Required object value serialized in the `commit` wire field.
+class WebhookStatusBranchesItemCommit {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// Required `string` value serialized in the `sha` wire field.
+  final String? sha;
+  /// Required `uri`-formatted value serialized in the `url` wire field.
+  final String? url;
+
+  const WebhookStatusBranchesItemCommit({required this.sha, required this.url});
+
+  WebhookStatusBranchesItemCommit Function({String? sha, String? url}) get copyWith => _copyWith;
+
+  WebhookStatusBranchesItemCommit _copyWith({Object? sha = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookStatusBranchesItemCommit(
+    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String?,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String?,
+  );
+
+  factory WebhookStatusBranchesItemCommit.fromJson(Map<String, dynamic> json) => WebhookStatusBranchesItemCommit(
+    sha: json.containsKey('sha') ? json['sha'] as String? : throw ArgumentError.value(null, 'sha', 'Required property is missing'),
+    url: json.containsKey('url') ? json['url'] as String? : throw ArgumentError.value(null, 'url', 'Required property is missing'),
+  );
+
+  Map<String, dynamic> toJson() => {
+    'sha': sha,
+    'url': url,
+  };
+}
+
+/// Required object value serialized in the `branches[]` wire field.
+class WebhookStatusBranchesItem {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// Required object value serialized in the `commit` wire field.
+  final WebhookStatusBranchesItemCommit commit;
+  /// Required `string` value serialized in the `name` wire field.
+  final String name;
+  /// Required `boolean` value serialized in the `protected` wire field.
+  final bool protected;
+
+  const WebhookStatusBranchesItem({required this.commit, required this.name, required this.protected});
+
+  WebhookStatusBranchesItem Function({WebhookStatusBranchesItemCommit commit, String name, bool protected}) get copyWith => _copyWith;
+
+  WebhookStatusBranchesItem _copyWith({Object? commit = sdkOmittedValue, Object? name = sdkOmittedValue, Object? protected = sdkOmittedValue}) => WebhookStatusBranchesItem(
+    commit: identical(commit, sdkOmittedValue) ? this.commit : commit as WebhookStatusBranchesItemCommit,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    protected: identical(protected, sdkOmittedValue) ? this.protected : protected as bool,
+  );
+
+  factory WebhookStatusBranchesItem.fromJson(Map<String, dynamic> json) => WebhookStatusBranchesItem(
+    commit: (json['commit'] != null ? WebhookStatusBranchesItemCommit.fromJson(json['commit'] as Map<String, dynamic>) : null)!,
+    name: (json['name'] as String?)!,
+    protected: (json['protected'] as bool?)!,
+  );
+
+  Map<String, dynamic> toJson() => {
+    'commit': commit.toJson(),
+    'name': name,
+    'protected': protected,
+  };
+}
+
+/// Typed representation of the `WebhookStatus` API schema.
+class WebhookStatus {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   /// Optional `uri`-formatted value serialized in the `avatar_url` wire field.
-  final SdkOptional<String> avatarUrl;
-  /// Optional `boolean` value serialized in the `deleted` wire field.
-  final SdkOptional<bool> deleted;
-  /// Optional `string` value serialized in the `email` wire field.
-  final SdkOptional<String?> email;
-  /// Optional `uri-template`-formatted value serialized in the `events_url` wire field.
-  final SdkOptional<String> eventsUrl;
-  /// Optional `uri`-formatted value serialized in the `followers_url` wire field.
-  final SdkOptional<String> followersUrl;
-  /// Optional `uri-template`-formatted value serialized in the `following_url` wire field.
-  final SdkOptional<String> followingUrl;
-  /// Optional `uri-template`-formatted value serialized in the `gists_url` wire field.
-  final SdkOptional<String> gistsUrl;
-  /// Optional `string` value serialized in the `gravatar_id` wire field.
-  final SdkOptional<String> gravatarId;
-  /// Optional `uri`-formatted value serialized in the `html_url` wire field.
-  final SdkOptional<String> htmlUrl;
-  /// Optional `integer` value serialized in the `id` wire field.
-  final SdkOptional<int> id;
-  /// Optional `string` value serialized in the `login` wire field.
-  final SdkOptional<String> login;
-  /// Optional `string` value serialized in the `name` wire field.
-  final SdkOptional<String> name;
-  /// Optional `string` value serialized in the `node_id` wire field.
-  final SdkOptional<String> nodeId;
-  /// Optional `uri`-formatted value serialized in the `organizations_url` wire field.
-  final SdkOptional<String> organizationsUrl;
-  /// Optional `uri`-formatted value serialized in the `received_events_url` wire field.
-  final SdkOptional<String> receivedEventsUrl;
-  /// Optional `uri`-formatted value serialized in the `repos_url` wire field.
-  final SdkOptional<String> reposUrl;
-  /// Optional `boolean` value serialized in the `site_admin` wire field.
-  final SdkOptional<bool> siteAdmin;
-  /// Optional `uri-template`-formatted value serialized in the `starred_url` wire field.
-  final SdkOptional<String> starredUrl;
-  /// Optional `uri`-formatted value serialized in the `subscriptions_url` wire field.
-  final SdkOptional<String> subscriptionsUrl;
-  /// Optional enumerated value serialized in the `type` wire field.
-  final SdkOptional<WebhookStatusCommitCommitterType> type_;
-  /// Optional `uri`-formatted value serialized in the `url` wire field.
-  final SdkOptional<String> url;
+  final SdkOptional<String?> avatarUrl;
+  /// An array of branch objects containing the status' SHA. Each branch contains the given SHA, but the SHA may or may not be the head of the branch. The array includes a maximum of 10 branches.
+  final List<WebhookStatusBranchesItem> branches;
+  /// Required object value serialized in the `commit` wire field.
+  final WebhookStatusCommit commit;
+  /// Required `string` value serialized in the `context` wire field.
+  final String context;
+  /// Required `string` value serialized in the `created_at` wire field.
+  final String createdAt;
+  /// The optional human-readable description added to the status.
+  final String? description;
+  /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured on an enterprise account or an organization that's part of an enterprise account. For more information, see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
+  final SdkOptional<EnterpriseWebhooks> enterprise;
+  /// The unique identifier of the status.
+  final int id;
+  /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured for and sent to a GitHub App. For more information, see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
+  final SdkOptional<SimpleInstallation> installation;
+  /// Required `string` value serialized in the `name` wire field.
+  final String name;
+  /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an organization, or when the event occurs from activity in a repository owned by an organization.
+  final SdkOptional<OrganizationSimpleWebhooks> organization;
+  /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property when the event occurs from activity in a repository.
+  final RepositoryWebhooks repository;
+  /// A GitHub user.
+  final SimpleUser sender;
+  /// The Commit SHA.
+  final String sha;
+  /// The new state. Can be `pending`, `success`, `failure`, or `error`.
+  final WebhookStatusState state;
+  /// The optional link added to the status.
+  final String? targetUrl;
+  /// Required `string` value serialized in the `updated_at` wire field.
+  final String updatedAt;
 
-  const WebhookStatusCommitCommitter({this.avatarUrl = const SdkOmitted(), this.deleted = const SdkOmitted(), this.email = const SdkOmitted(), this.eventsUrl = const SdkOmitted(), this.followersUrl = const SdkOmitted(), this.followingUrl = const SdkOmitted(), this.gistsUrl = const SdkOmitted(), this.gravatarId = const SdkOmitted(), this.htmlUrl = const SdkOmitted(), this.id = const SdkOmitted(), this.login = const SdkOmitted(), this.name = const SdkOmitted(), this.nodeId = const SdkOmitted(), this.organizationsUrl = const SdkOmitted(), this.receivedEventsUrl = const SdkOmitted(), this.reposUrl = const SdkOmitted(), this.siteAdmin = const SdkOmitted(), this.starredUrl = const SdkOmitted(), this.subscriptionsUrl = const SdkOmitted(), this.type_ = const SdkOmitted(), this.url = const SdkOmitted()});
+  const WebhookStatus({this.avatarUrl = const SdkOmitted(), required this.branches, required this.commit, required this.context, required this.createdAt, required this.description, this.enterprise = const SdkOmitted(), required this.id, this.installation = const SdkOmitted(), required this.name, this.organization = const SdkOmitted(), required this.repository, required this.sender, required this.sha, required this.state, required this.targetUrl, required this.updatedAt});
 
-  WebhookStatusCommitCommitter Function({SdkOptional<String> avatarUrl, SdkOptional<bool> deleted, SdkOptional<String?> email, SdkOptional<String> eventsUrl, SdkOptional<String> followersUrl, SdkOptional<String> followingUrl, SdkOptional<String> gistsUrl, SdkOptional<String> gravatarId, SdkOptional<String> htmlUrl, SdkOptional<int> id, SdkOptional<String> login, SdkOptional<String> name, SdkOptional<String> nodeId, SdkOptional<String> organizationsUrl, SdkOptional<String> receivedEventsUrl, SdkOptional<String> reposUrl, SdkOptional<bool> siteAdmin, SdkOptional<String> starredUrl, SdkOptional<String> subscriptionsUrl, SdkOptional<WebhookStatusCommitCommitterType> type_, SdkOptional<String> url}) get copyWith => _copyWith;
+  WebhookStatus Function({SdkOptional<String?> avatarUrl, List<WebhookStatusBranchesItem> branches, WebhookStatusCommit commit, String context, String createdAt, String? description, SdkOptional<EnterpriseWebhooks> enterprise, int id, SdkOptional<SimpleInstallation> installation, String name, SdkOptional<OrganizationSimpleWebhooks> organization, RepositoryWebhooks repository, SimpleUser sender, String sha, WebhookStatusState state, String? targetUrl, String updatedAt}) get copyWith => _copyWith;
 
-  WebhookStatusCommitCommitter _copyWith({Object? avatarUrl = sdkOmittedValue, Object? deleted = sdkOmittedValue, Object? email = sdkOmittedValue, Object? eventsUrl = sdkOmittedValue, Object? followersUrl = sdkOmittedValue, Object? followingUrl = sdkOmittedValue, Object? gistsUrl = sdkOmittedValue, Object? gravatarId = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? id = sdkOmittedValue, Object? login = sdkOmittedValue, Object? name = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? organizationsUrl = sdkOmittedValue, Object? receivedEventsUrl = sdkOmittedValue, Object? reposUrl = sdkOmittedValue, Object? siteAdmin = sdkOmittedValue, Object? starredUrl = sdkOmittedValue, Object? subscriptionsUrl = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookStatusCommitCommitter(
-    avatarUrl: identical(avatarUrl, sdkOmittedValue) ? this.avatarUrl : avatarUrl as SdkOptional<String>,
-    deleted: identical(deleted, sdkOmittedValue) ? this.deleted : deleted as SdkOptional<bool>,
-    email: identical(email, sdkOmittedValue) ? this.email : email as SdkOptional<String?>,
-    eventsUrl: identical(eventsUrl, sdkOmittedValue) ? this.eventsUrl : eventsUrl as SdkOptional<String>,
-    followersUrl: identical(followersUrl, sdkOmittedValue) ? this.followersUrl : followersUrl as SdkOptional<String>,
-    followingUrl: identical(followingUrl, sdkOmittedValue) ? this.followingUrl : followingUrl as SdkOptional<String>,
-    gistsUrl: identical(gistsUrl, sdkOmittedValue) ? this.gistsUrl : gistsUrl as SdkOptional<String>,
-    gravatarId: identical(gravatarId, sdkOmittedValue) ? this.gravatarId : gravatarId as SdkOptional<String>,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String>,
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-    login: identical(login, sdkOmittedValue) ? this.login : login as SdkOptional<String>,
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as SdkOptional<String>,
-    organizationsUrl: identical(organizationsUrl, sdkOmittedValue) ? this.organizationsUrl : organizationsUrl as SdkOptional<String>,
-    receivedEventsUrl: identical(receivedEventsUrl, sdkOmittedValue) ? this.receivedEventsUrl : receivedEventsUrl as SdkOptional<String>,
-    reposUrl: identical(reposUrl, sdkOmittedValue) ? this.reposUrl : reposUrl as SdkOptional<String>,
-    siteAdmin: identical(siteAdmin, sdkOmittedValue) ? this.siteAdmin : siteAdmin as SdkOptional<bool>,
-    starredUrl: identical(starredUrl, sdkOmittedValue) ? this.starredUrl : starredUrl as SdkOptional<String>,
-    subscriptionsUrl: identical(subscriptionsUrl, sdkOmittedValue) ? this.subscriptionsUrl : subscriptionsUrl as SdkOptional<String>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<WebhookStatusCommitCommitterType>,
-    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
+  WebhookStatus _copyWith({Object? avatarUrl = sdkOmittedValue, Object? branches = sdkOmittedValue, Object? commit = sdkOmittedValue, Object? context = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? description = sdkOmittedValue, Object? enterprise = sdkOmittedValue, Object? id = sdkOmittedValue, Object? installation = sdkOmittedValue, Object? name = sdkOmittedValue, Object? organization = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? sender = sdkOmittedValue, Object? sha = sdkOmittedValue, Object? state = sdkOmittedValue, Object? targetUrl = sdkOmittedValue, Object? updatedAt = sdkOmittedValue}) => WebhookStatus(
+    avatarUrl: identical(avatarUrl, sdkOmittedValue) ? this.avatarUrl : avatarUrl as SdkOptional<String?>,
+    branches: identical(branches, sdkOmittedValue) ? this.branches : branches as List<WebhookStatusBranchesItem>,
+    commit: identical(commit, sdkOmittedValue) ? this.commit : commit as WebhookStatusCommit,
+    context: identical(context, sdkOmittedValue) ? this.context : context as String,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    description: identical(description, sdkOmittedValue) ? this.description : description as String?,
+    enterprise: identical(enterprise, sdkOmittedValue) ? this.enterprise : enterprise as SdkOptional<EnterpriseWebhooks>,
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    installation: identical(installation, sdkOmittedValue) ? this.installation : installation as SdkOptional<SimpleInstallation>,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    organization: identical(organization, sdkOmittedValue) ? this.organization : organization as SdkOptional<OrganizationSimpleWebhooks>,
+    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as RepositoryWebhooks,
+    sender: identical(sender, sdkOmittedValue) ? this.sender : sender as SimpleUser,
+    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+    state: identical(state, sdkOmittedValue) ? this.state : state as WebhookStatusState,
+    targetUrl: identical(targetUrl, sdkOmittedValue) ? this.targetUrl : targetUrl as String?,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
   );
 
-  factory WebhookStatusCommitCommitter.fromJson(Map<String, dynamic> json) => WebhookStatusCommitCommitter(
-    avatarUrl: json['avatar_url'] != null ? SdkPresent((json['avatar_url'] as String?)!) : const SdkOmitted(),
-    deleted: json['deleted'] != null ? SdkPresent((json['deleted'] as bool?)!) : const SdkOmitted(),
-    email: json.containsKey('email') ? SdkPresent(json['email'] as String?) : const SdkOmitted(),
-    eventsUrl: json['events_url'] != null ? SdkPresent((json['events_url'] as String?)!) : const SdkOmitted(),
-    followersUrl: json['followers_url'] != null ? SdkPresent((json['followers_url'] as String?)!) : const SdkOmitted(),
-    followingUrl: json['following_url'] != null ? SdkPresent((json['following_url'] as String?)!) : const SdkOmitted(),
-    gistsUrl: json['gists_url'] != null ? SdkPresent((json['gists_url'] as String?)!) : const SdkOmitted(),
-    gravatarId: json['gravatar_id'] != null ? SdkPresent((json['gravatar_id'] as String?)!) : const SdkOmitted(),
-    htmlUrl: json['html_url'] != null ? SdkPresent((json['html_url'] as String?)!) : const SdkOmitted(),
-    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
-    login: json['login'] != null ? SdkPresent((json['login'] as String?)!) : const SdkOmitted(),
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    nodeId: json['node_id'] != null ? SdkPresent((json['node_id'] as String?)!) : const SdkOmitted(),
-    organizationsUrl: json['organizations_url'] != null ? SdkPresent((json['organizations_url'] as String?)!) : const SdkOmitted(),
-    receivedEventsUrl: json['received_events_url'] != null ? SdkPresent((json['received_events_url'] as String?)!) : const SdkOmitted(),
-    reposUrl: json['repos_url'] != null ? SdkPresent((json['repos_url'] as String?)!) : const SdkOmitted(),
-    siteAdmin: json['site_admin'] != null ? SdkPresent((json['site_admin'] as bool?)!) : const SdkOmitted(),
-    starredUrl: json['starred_url'] != null ? SdkPresent((json['starred_url'] as String?)!) : const SdkOmitted(),
-    subscriptionsUrl: json['subscriptions_url'] != null ? SdkPresent((json['subscriptions_url'] as String?)!) : const SdkOmitted(),
-    type_: json['type'] != null ? SdkPresent((json['type'] != null ? WebhookStatusCommitCommitterType.fromJson(json['type'] as String) : null)!) : const SdkOmitted(),
-    url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
+  factory WebhookStatus.fromJson(Map<String, dynamic> json) => WebhookStatus(
+    avatarUrl: json.containsKey('avatar_url') ? SdkPresent(json['avatar_url'] as String?) : const SdkOmitted(),
+    branches: ((json['branches'] as List?)?.map((e) => WebhookStatusBranchesItem.fromJson(e as Map<String, dynamic>)).toList())!,
+    commit: (json['commit'] != null ? WebhookStatusCommit.fromJson(json['commit'] as Map<String, dynamic>) : null)!,
+    context: (json['context'] as String?)!,
+    createdAt: (json['created_at'] as String?)!,
+    description: json.containsKey('description') ? json['description'] as String? : throw ArgumentError.value(null, 'description', 'Required property is missing'),
+    enterprise: json['enterprise'] != null ? SdkPresent((json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    id: ((json['id'] as num?)?.toInt())!,
+    installation: json['installation'] != null ? SdkPresent((json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    name: (json['name'] as String?)!,
+    organization: json['organization'] != null ? SdkPresent((json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    repository: (json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null)!,
+    sender: (json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null)!,
+    sha: (json['sha'] as String?)!,
+    state: (json['state'] != null ? WebhookStatusState.fromJson(json['state'] as String) : null)!,
+    targetUrl: json.containsKey('target_url') ? json['target_url'] as String? : throw ArgumentError.value(null, 'target_url', 'Required property is missing'),
+    updatedAt: (json['updated_at'] as String?)!,
   );
 
   Map<String, dynamic> toJson() => {
     ...switch (avatarUrl) {
-      SdkPresent<String>(value: final value) => {'avatar_url': value,},
+      SdkPresent<String?>(value: final value) => {'avatar_url': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (deleted) {
-      SdkPresent<bool>(value: final value) => {'deleted': value,},
+    'branches': branches.map((item) => item.toJson()).toList(),
+    'commit': commit.toJson(),
+    'context': context,
+    'created_at': createdAt,
+    'description': description,
+    ...switch (enterprise) {
+      SdkPresent<EnterpriseWebhooks>(value: final value) => {'enterprise': value.toJson(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (email) {
-      SdkPresent<String?>(value: final value) => {'email': value,},
+    'id': id,
+    ...switch (installation) {
+      SdkPresent<SimpleInstallation>(value: final value) => {'installation': value.toJson(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (eventsUrl) {
-      SdkPresent<String>(value: final value) => {'events_url': value,},
+    'name': name,
+    ...switch (organization) {
+      SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {'organization': value.toJson(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (followersUrl) {
-      SdkPresent<String>(value: final value) => {'followers_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (followingUrl) {
-      SdkPresent<String>(value: final value) => {'following_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (gistsUrl) {
-      SdkPresent<String>(value: final value) => {'gists_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (gravatarId) {
-      SdkPresent<String>(value: final value) => {'gravatar_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (htmlUrl) {
-      SdkPresent<String>(value: final value) => {'html_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (id) {
-      SdkPresent<int>(value: final value) => {'id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (login) {
-      SdkPresent<String>(value: final value) => {'login': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (nodeId) {
-      SdkPresent<String>(value: final value) => {'node_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (organizationsUrl) {
-      SdkPresent<String>(value: final value) => {'organizations_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (receivedEventsUrl) {
-      SdkPresent<String>(value: final value) => {'received_events_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (reposUrl) {
-      SdkPresent<String>(value: final value) => {'repos_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (siteAdmin) {
-      SdkPresent<bool>(value: final value) => {'site_admin': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (starredUrl) {
-      SdkPresent<String>(value: final value) => {'starred_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (subscriptionsUrl) {
-      SdkPresent<String>(value: final value) => {'subscriptions_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (type_) {
-      SdkPresent<WebhookStatusCommitCommitterType>(value: final value) => {'type': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (url) {
-      SdkPresent<String>(value: final value) => {'url': value,},
-      _ => const <String, dynamic>{},
-    },
+    'repository': repository.toJson(),
+    'sender': sender.toJson(),
+    'sha': sha,
+    'state': state.toJson(),
+    'target_url': targetUrl,
+    'updated_at': updatedAt,
   };
 }

@@ -4,6 +4,100 @@
 part of 'inline.dart';
 
 // Inline operation models (part 19)
+/// The type of advisory identifier.
+final class DependabotAlertSecurityAdvisoryIdentifiersItemType {
+
+  final String value;
+
+  const DependabotAlertSecurityAdvisoryIdentifiersItemType._(this.value);
+
+  factory DependabotAlertSecurityAdvisoryIdentifiersItemType.fromJson(String value) => DependabotAlertSecurityAdvisoryIdentifiersItemType._(value);
+
+  static const cve = DependabotAlertSecurityAdvisoryIdentifiersItemType._('CVE');
+  static const ghsa = DependabotAlertSecurityAdvisoryIdentifiersItemType._('GHSA');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is DependabotAlertSecurityAdvisoryIdentifiersItemType && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// The severity of the advisory.
+final class DependabotAlertSecurityAdvisorySeverity {
+
+  final String value;
+
+  const DependabotAlertSecurityAdvisorySeverity._(this.value);
+
+  factory DependabotAlertSecurityAdvisorySeverity.fromJson(String value) => DependabotAlertSecurityAdvisorySeverity._(value);
+
+  static const low = DependabotAlertSecurityAdvisorySeverity._('low');
+  static const medium = DependabotAlertSecurityAdvisorySeverity._('medium');
+  static const high = DependabotAlertSecurityAdvisorySeverity._('high');
+  static const critical = DependabotAlertSecurityAdvisorySeverity._('critical');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is DependabotAlertSecurityAdvisorySeverity && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// The severity of the vulnerability.
+final class DependabotAlertSecurityVulnerabilitySeverity {
+
+  final String value;
+
+  const DependabotAlertSecurityVulnerabilitySeverity._(this.value);
+
+  factory DependabotAlertSecurityVulnerabilitySeverity.fromJson(String value) => DependabotAlertSecurityVulnerabilitySeverity._(value);
+
+  static const low = DependabotAlertSecurityVulnerabilitySeverity._('low');
+  static const medium = DependabotAlertSecurityVulnerabilitySeverity._('medium');
+  static const high = DependabotAlertSecurityVulnerabilitySeverity._('high');
+  static const critical = DependabotAlertSecurityVulnerabilitySeverity._('critical');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is DependabotAlertSecurityVulnerabilitySeverity && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// The vulnerable dependency's relationship to your project. &gt; [!NOTE] &gt; We are rolling out support for dependency relationship across ecosystems. This value will be "unknown" for all dependencies in unsupported ecosystems.
+final class DependabotAlertWithdrawnWebhookDependencyRelationship {
+
+  final String value;
+
+  const DependabotAlertWithdrawnWebhookDependencyRelationship._(this.value);
+
+  factory DependabotAlertWithdrawnWebhookDependencyRelationship.fromJson(String value) => DependabotAlertWithdrawnWebhookDependencyRelationship._(value);
+
+  static const unknown = DependabotAlertWithdrawnWebhookDependencyRelationship._('unknown');
+  static const direct = DependabotAlertWithdrawnWebhookDependencyRelationship._('direct');
+  static const transitive = DependabotAlertWithdrawnWebhookDependencyRelationship._('transitive');
+  static const inconclusive = DependabotAlertWithdrawnWebhookDependencyRelationship._('inconclusive');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is DependabotAlertWithdrawnWebhookDependencyRelationship && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
 /// The execution scope of the vulnerable dependency.
 final class DependabotAlertWithdrawnWebhookDependencyScope {
 
@@ -181,94 +275,6 @@ final class DependencyRelationship {
   @override String toString() => value.toString();
 
   @override bool operator ==(Object other) => other is DependencyRelationship && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// A notation of whether the dependency is required for the primary build artifact (runtime) or is only used for development. Future versions of this specification may allow for more granular scopes.
-final class DependencyScope {
-
-  final String value;
-
-  const DependencyScope._(this.value);
-
-  factory DependencyScope.fromJson(String value) => DependencyScope._(value);
-
-  static const runtime = DependencyScope._('runtime');
-  static const development = DependencyScope._('development');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is DependencyScope && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-final class DependencyGraphDiffItemChangeType {
-
-  final String value;
-
-  const DependencyGraphDiffItemChangeType._(this.value);
-
-  factory DependencyGraphDiffItemChangeType.fromJson(String value) => DependencyGraphDiffItemChangeType._(value);
-
-  static const added = DependencyGraphDiffItemChangeType._('added');
-  static const removed = DependencyGraphDiffItemChangeType._('removed');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is DependencyGraphDiffItemChangeType && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// Where the dependency is utilized. `development` means that the dependency is only utilized in the development environment. `runtime` means that the dependency is utilized at runtime and in the development environment.
-final class DependencyGraphDiffItemScope {
-
-  final String value;
-
-  const DependencyGraphDiffItemScope._(this.value);
-
-  factory DependencyGraphDiffItemScope.fromJson(String value) => DependencyGraphDiffItemScope._(value);
-
-  static const unknown = DependencyGraphDiffItemScope._('unknown');
-  static const runtime = DependencyGraphDiffItemScope._('runtime');
-  static const development = DependencyGraphDiffItemScope._('development');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is DependencyGraphDiffItemScope && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// Whether this rule targets a branch or tag.
-final class DeploymentBranchPolicyType {
-
-  final String value;
-
-  const DeploymentBranchPolicyType._(this.value);
-
-  factory DeploymentBranchPolicyType.fromJson(String value) => DeploymentBranchPolicyType._(value);
-
-  static const branch = DeploymentBranchPolicyType._('branch');
-  static const tag = DeploymentBranchPolicyType._('tag');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is DeploymentBranchPolicyType && other.value == value;
 
   @override int get hashCode => value.hashCode;
 

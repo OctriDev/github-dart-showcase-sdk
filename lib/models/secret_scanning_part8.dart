@@ -4,6 +4,41 @@
 part of 'secret_scanning.dart';
 
 // secret_scanning domain models (part 8)
+/// Typed representation of the `SecretScanningLocation` API schema.
+class SecretScanningLocation {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The location type. Because secrets may be found in different types of resources (ie. code, comments, issues, pull requests, discussions), this field identifies the type of resource where the secret was found.
+  final SdkOptional<SecretScanningLocationType> type_;
+  /// Optional API value serialized in the `details` wire field.
+  final SdkOptional<SecretScanningLocationDetails> details;
+
+  const SecretScanningLocation({this.type_ = const SdkOmitted(), this.details = const SdkOmitted()});
+
+  SecretScanningLocation Function({SdkOptional<SecretScanningLocationType> type_, SdkOptional<SecretScanningLocationDetails> details}) get copyWith => _copyWith;
+
+  SecretScanningLocation _copyWith({Object? type_ = sdkOmittedValue, Object? details = sdkOmittedValue}) => SecretScanningLocation(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<SecretScanningLocationType>,
+    details: identical(details, sdkOmittedValue) ? this.details : details as SdkOptional<SecretScanningLocationDetails>,
+  );
+
+  factory SecretScanningLocation.fromJson(Map<String, dynamic> json) => SecretScanningLocation(
+    type_: json['type'] != null ? SdkPresent((json['type'] != null ? SecretScanningLocationType.fromJson(json['type'] as String) : null)!) : const SdkOmitted(),
+    details: json['details'] != null ? SdkPresent((json['details'] != null ? SecretScanningLocationDetails.fromJson(json['details']) : null)!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    ...switch (type_) {
+      SdkPresent<SecretScanningLocationType>(value: final value) => {'type': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (details) {
+      SdkPresent<SecretScanningLocationDetails>(value: final value) => {'details': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
+}
+
 /// Represents a 'commit' secret scanning location type. This location type shows that a secret was detected inside a commit to a repository.
 class SecretScanningLocationCommit {
   /// This model is constructed from named fields in one call.
@@ -81,6 +116,21 @@ sealed class SecretScanningLocationDetails {
   static const String constructionSurface = 'named';
   const SecretScanningLocationDetails();
   factory SecretScanningLocationDetails.fromJson(Object? json) {
+    if (json is Map<String, dynamic>) {
+      try { final value = SecretScanningLocationCommit.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return SecretScanningLocationDetailsSecretScanningLocationCommit(value); } } catch (_) {}
+      try { final value = SecretScanningLocationWikiCommit.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return SecretScanningLocationDetailsSecretScanningLocationWikiCommit(value); } } catch (_) {}
+      try { final value = SecretScanningLocationIssueTitle.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return SecretScanningLocationDetailsSecretScanningLocationIssueTitle(value); } } catch (_) {}
+      try { final value = SecretScanningLocationIssueBody.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return SecretScanningLocationDetailsSecretScanningLocationIssueBody(value); } } catch (_) {}
+      try { final value = SecretScanningLocationIssueComment.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return SecretScanningLocationDetailsSecretScanningLocationIssueComment(value); } } catch (_) {}
+      try { final value = SecretScanningLocationDiscussionTitle.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return SecretScanningLocationDetailsSecretScanningLocationDiscussionTitle(value); } } catch (_) {}
+      try { final value = SecretScanningLocationDiscussionBody.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return SecretScanningLocationDetailsSecretScanningLocationDiscussionBody(value); } } catch (_) {}
+      try { final value = SecretScanningLocationDiscussionComment.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return SecretScanningLocationDetailsSecretScanningLocationDiscussionComment(value); } } catch (_) {}
+      try { final value = SecretScanningLocationPullRequestTitle.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return SecretScanningLocationDetailsSecretScanningLocationPullRequestTitle(value); } } catch (_) {}
+      try { final value = SecretScanningLocationPullRequestBody.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return SecretScanningLocationDetailsSecretScanningLocationPullRequestBody(value); } } catch (_) {}
+      try { final value = SecretScanningLocationPullRequestComment.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return SecretScanningLocationDetailsSecretScanningLocationPullRequestComment(value); } } catch (_) {}
+      try { final value = SecretScanningLocationPullRequestReview.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return SecretScanningLocationDetailsSecretScanningLocationPullRequestReview(value); } } catch (_) {}
+      try { final value = SecretScanningLocationPullRequestReviewComment.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return SecretScanningLocationDetailsSecretScanningLocationPullRequestReviewComment(value); } } catch (_) {}
+    }
     try { return SecretScanningLocationDetailsSecretScanningLocationCommit(SecretScanningLocationCommit.fromJson(json as Map<String, dynamic>)); } catch (_) {}
     try { return SecretScanningLocationDetailsSecretScanningLocationWikiCommit(SecretScanningLocationWikiCommit.fromJson(json as Map<String, dynamic>)); } catch (_) {}
     try { return SecretScanningLocationDetailsSecretScanningLocationIssueTitle(SecretScanningLocationIssueTitle.fromJson(json as Map<String, dynamic>)); } catch (_) {}
@@ -222,61 +272,5 @@ class SecretScanningLocationDiscussionComment {
 
   Map<String, dynamic> toJson() => {
     'discussion_comment_url': discussionCommentUrl,
-  };
-}
-
-/// Represents a 'discussion_title' secret scanning location type. This location type shows that a secret was detected in the title of a discussion.
-class SecretScanningLocationDiscussionTitle {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The URL to the discussion where the secret was detected.
-  final String discussionTitleUrl;
-
-  const SecretScanningLocationDiscussionTitle({required this.discussionTitleUrl});
-
-  SecretScanningLocationDiscussionTitle Function({String discussionTitleUrl}) get copyWith => _copyWith;
-
-  SecretScanningLocationDiscussionTitle _copyWith({Object? discussionTitleUrl = sdkOmittedValue}) => SecretScanningLocationDiscussionTitle(
-    discussionTitleUrl: identical(discussionTitleUrl, sdkOmittedValue) ? this.discussionTitleUrl : discussionTitleUrl as String,
-  );
-
-  factory SecretScanningLocationDiscussionTitle.fromJson(Map<String, dynamic> json) => SecretScanningLocationDiscussionTitle(
-    discussionTitleUrl: (json['discussion_title_url'] as String?)!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'discussion_title_url': discussionTitleUrl,
-  };
-}
-
-/// Represents an 'issue_body' secret scanning location type. This location type shows that a secret was detected in the body of an issue.
-class SecretScanningLocationIssueBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The API URL to get the issue where the secret was detected.
-  final String issueBodyUrl;
-  /// The GitHub URL for the issue where the secret was detected.
-  final SdkOptional<String> htmlUrl;
-
-  const SecretScanningLocationIssueBody({required this.issueBodyUrl, this.htmlUrl = const SdkOmitted()});
-
-  SecretScanningLocationIssueBody Function({String issueBodyUrl, SdkOptional<String> htmlUrl}) get copyWith => _copyWith;
-
-  SecretScanningLocationIssueBody _copyWith({Object? issueBodyUrl = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue}) => SecretScanningLocationIssueBody(
-    issueBodyUrl: identical(issueBodyUrl, sdkOmittedValue) ? this.issueBodyUrl : issueBodyUrl as String,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String>,
-  );
-
-  factory SecretScanningLocationIssueBody.fromJson(Map<String, dynamic> json) => SecretScanningLocationIssueBody(
-    issueBodyUrl: (json['issue_body_url'] as String?)!,
-    htmlUrl: json['html_url'] != null ? SdkPresent((json['html_url'] as String?)!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    'issue_body_url': issueBodyUrl,
-    ...switch (htmlUrl) {
-      SdkPresent<String>(value: final value) => {'html_url': value,},
-      _ => const <String, dynamic>{},
-    },
   };
 }

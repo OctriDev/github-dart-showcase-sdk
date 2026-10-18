@@ -4,215 +4,199 @@
 part of 'pulls.dart';
 
 // pulls domain models (part 6)
-/// Typed representation of the `PullRequestStackMinimal` API schema.
-class PullRequestStackMinimal {
+/// Legacy Review Comment
+class ReviewComment {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// Required `integer` value serialized in the `id` wire field.
-  final int id;
-  /// Required `integer` value serialized in the `number` wire field.
-  final int number;
-  /// Required `string` value serialized in the `node_id` wire field.
-  final String nodeId;
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
-  /// Required object value serialized in the `base` wire field.
-  final PullRequestStackMinimalBase base_;
-  /// Whether the stack has any open pull request. False when all pull requests are merged or closed.
-  final bool open;
-  /// Required `date-time`-formatted value serialized in the `created_at` wire field.
-  final String createdAt;
-  /// Required array value serialized in the `pull_requests` wire field.
-  final List<PullRequestStackMinimalPullRequestsItem> pullRequests;
-
-  const PullRequestStackMinimal({required this.id, required this.number, required this.nodeId, required this.url, required this.base_, required this.open, required this.createdAt, required this.pullRequests});
-
-  PullRequestStackMinimal Function({int id, int number, String nodeId, String url, PullRequestStackMinimalBase base_, bool open, String createdAt, List<PullRequestStackMinimalPullRequestsItem> pullRequests}) get copyWith => _copyWith;
-
-  PullRequestStackMinimal _copyWith({Object? id = sdkOmittedValue, Object? number = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? url = sdkOmittedValue, Object? base_ = sdkOmittedValue, Object? open = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? pullRequests = sdkOmittedValue}) => PullRequestStackMinimal(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    number: identical(number, sdkOmittedValue) ? this.number : number as int,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    base_: identical(base_, sdkOmittedValue) ? this.base_ : base_ as PullRequestStackMinimalBase,
-    open: identical(open, sdkOmittedValue) ? this.open : open as bool,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    pullRequests: identical(pullRequests, sdkOmittedValue) ? this.pullRequests : pullRequests as List<PullRequestStackMinimalPullRequestsItem>,
-  );
-
-  factory PullRequestStackMinimal.fromJson(Map<String, dynamic> json) => PullRequestStackMinimal(
-    id: ((json['id'] as num?)?.toInt())!,
-    number: ((json['number'] as num?)?.toInt())!,
-    nodeId: (json['node_id'] as String?)!,
-    url: (json['url'] as String?)!,
-    base_: (json['base'] != null ? PullRequestStackMinimalBase.fromJson(json['base'] as Map<String, dynamic>) : null)!,
-    open: (json['open'] as bool?)!,
-    createdAt: (json['created_at'] as String?)!,
-    pullRequests: ((json['pull_requests'] as List?)?.map((e) => PullRequestStackMinimalPullRequestsItem.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'id': id,
-    'number': number,
-    'node_id': nodeId,
-    'url': url,
-    'base': base_.toJson(),
-    'open': open,
-    'created_at': createdAt,
-    'pull_requests': pullRequests.map((item) => item.toJson()).toList(),
-  };
-}
-
-class PullRequestStackPullRequestVariant1 {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final String nodeId;
-  final String title;
-  final PullRequestStackPullRequestVariant1State state;
-  final String? mergedAt;
-  final bool draft;
-  final String htmlUrl;
-  /// A GitHub user.
-  final NullableSimpleUser? user;
-
-  const PullRequestStackPullRequestVariant1({required this.nodeId, required this.title, required this.state, required this.mergedAt, required this.draft, required this.htmlUrl, required this.user});
-
-  PullRequestStackPullRequestVariant1 Function({String nodeId, String title, PullRequestStackPullRequestVariant1State state, String? mergedAt, bool draft, String htmlUrl, NullableSimpleUser? user}) get copyWith => _copyWith;
-
-  PullRequestStackPullRequestVariant1 _copyWith({Object? nodeId = sdkOmittedValue, Object? title = sdkOmittedValue, Object? state = sdkOmittedValue, Object? mergedAt = sdkOmittedValue, Object? draft = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? user = sdkOmittedValue}) => PullRequestStackPullRequestVariant1(
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    title: identical(title, sdkOmittedValue) ? this.title : title as String,
-    state: identical(state, sdkOmittedValue) ? this.state : state as PullRequestStackPullRequestVariant1State,
-    mergedAt: identical(mergedAt, sdkOmittedValue) ? this.mergedAt : mergedAt as String?,
-    draft: identical(draft, sdkOmittedValue) ? this.draft : draft as bool,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
-    user: identical(user, sdkOmittedValue) ? this.user : user as NullableSimpleUser?,
-  );
-
-  factory PullRequestStackPullRequestVariant1.fromJson(Map<String, dynamic> json) => PullRequestStackPullRequestVariant1(
-    nodeId: (json['node_id'] as String?)!,
-    title: (json['title'] as String?)!,
-    state: (json['state'] != null ? PullRequestStackPullRequestVariant1State.fromJson(json['state'] as String) : null)!,
-    mergedAt: json.containsKey('merged_at') ? json['merged_at'] as String? : throw ArgumentError.value(null, 'merged_at', 'Required property is missing'),
-    draft: (json['draft'] as bool?)!,
-    htmlUrl: (json['html_url'] as String?)!,
-    user: json.containsKey('user') ? json['user'] != null ? NullableSimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'user', 'Required property is missing'),
-  );
-
-  Map<String, dynamic> toJson() => {
-    'node_id': nodeId,
-    'title': title,
-    'state': state.toJson(),
-    'merged_at': mergedAt,
-    'draft': draft,
-    'html_url': htmlUrl,
-    'user': user?.toJson(),
-  };
-}
-
-/// Typed representation of the `PullRequestStackPullRequest` API schema.
-class PullRequestStackPullRequest {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
+  /// Required `int64`-formatted value serialized in the `pull_request_review_id` wire field.
+  final int? pullRequestReviewId;
   /// Required `int64`-formatted value serialized in the `id` wire field.
   final int id;
-  /// Required `integer` value serialized in the `number` wire field.
-  final int number;
-  /// Required `string` value serialized in the `url` wire field.
-  final String url;
-  /// Required object value serialized in the `head` wire field.
-  final PullRequestMinimalHead head;
-  /// Required object value serialized in the `base` wire field.
-  final PullRequestMinimalBase base_;
+  /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
-  final String title;
-  final PullRequestStackPullRequestVariant1State state;
-  final String? mergedAt;
-  final bool draft;
-  final String htmlUrl;
+  /// Required `string` value serialized in the `diff_hunk` wire field.
+  final String diffHunk;
+  /// Required `string` value serialized in the `path` wire field.
+  final String path;
+  /// Required `integer` value serialized in the `position` wire field.
+  final int? position;
+  /// Required `integer` value serialized in the `original_position` wire field.
+  final int originalPosition;
+  /// Required `string` value serialized in the `commit_id` wire field.
+  final String commitId;
+  /// Required `string` value serialized in the `original_commit_id` wire field.
+  final String originalCommitId;
+  /// Optional `integer` value serialized in the `in_reply_to_id` wire field.
+  final SdkOptional<int> inReplyToId;
   /// A GitHub user.
   final NullableSimpleUser? user;
+  /// Required `string` value serialized in the `body` wire field.
+  final String body;
+  /// Required `date-time`-formatted value serialized in the `created_at` wire field.
+  final String createdAt;
+  /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
+  final String updatedAt;
+  /// Required `uri`-formatted value serialized in the `html_url` wire field.
+  final String htmlUrl;
+  /// Required `uri`-formatted value serialized in the `pull_request_url` wire field.
+  final String pullRequestUrl;
+  /// How the author is associated with the repository.
+  final AuthorAssociation authorAssociation;
+  /// Required object value serialized in the `_links` wire field.
+  final ReviewCommentLinks links;
+  /// Optional `string` value serialized in the `body_text` wire field.
+  final SdkOptional<String> bodyText;
+  /// Optional `string` value serialized in the `body_html` wire field.
+  final SdkOptional<String> bodyHtml;
+  /// Optional object value serialized in the `reactions` wire field.
+  final SdkOptional<ReactionRollup> reactions;
+  /// The side of the first line of the range for a multi-line comment.
+  final SdkOptional<ReviewCommentSide> side;
+  /// The side of the first line of the range for a multi-line comment.
+  final SdkOptional<ReviewCommentStartSide?> startSide;
+  /// The line of the blob to which the comment applies. The last line of the range for a multi-line comment
+  final SdkOptional<int> line;
+  /// The original line of the blob to which the comment applies. The last line of the range for a multi-line comment
+  final SdkOptional<int> originalLine;
+  /// The first line of the range for a multi-line comment.
+  final SdkOptional<int?> startLine;
+  /// The original first line of the range for a multi-line comment.
+  final SdkOptional<int?> originalStartLine;
+  /// The level at which the comment is targeted, can be a diff line or a file.
+  final SdkOptional<ReviewCommentSubjectType> subjectType;
 
-  const PullRequestStackPullRequest({required this.id, required this.number, required this.url, required this.head, required this.base_, required this.nodeId, required this.title, required this.state, required this.mergedAt, required this.draft, required this.htmlUrl, required this.user});
+  const ReviewComment({required this.url, required this.pullRequestReviewId, required this.id, required this.nodeId, required this.diffHunk, required this.path, required this.position, required this.originalPosition, required this.commitId, required this.originalCommitId, this.inReplyToId = const SdkOmitted(), required this.user, required this.body, required this.createdAt, required this.updatedAt, required this.htmlUrl, required this.pullRequestUrl, required this.authorAssociation, required this.links, this.bodyText = const SdkOmitted(), this.bodyHtml = const SdkOmitted(), this.reactions = const SdkOmitted(), this.side = const SdkOmitted(), this.startSide = const SdkOmitted(), this.line = const SdkOmitted(), this.originalLine = const SdkOmitted(), this.startLine = const SdkOmitted(), this.originalStartLine = const SdkOmitted(), this.subjectType = const SdkOmitted()});
 
-  PullRequestStackPullRequest Function({int id, int number, String url, PullRequestMinimalHead head, PullRequestMinimalBase base_, String nodeId, String title, PullRequestStackPullRequestVariant1State state, String? mergedAt, bool draft, String htmlUrl, NullableSimpleUser? user}) get copyWith => _copyWith;
+  ReviewComment Function({String url, int? pullRequestReviewId, int id, String nodeId, String diffHunk, String path, int? position, int originalPosition, String commitId, String originalCommitId, SdkOptional<int> inReplyToId, NullableSimpleUser? user, String body, String createdAt, String updatedAt, String htmlUrl, String pullRequestUrl, AuthorAssociation authorAssociation, ReviewCommentLinks links, SdkOptional<String> bodyText, SdkOptional<String> bodyHtml, SdkOptional<ReactionRollup> reactions, SdkOptional<ReviewCommentSide> side, SdkOptional<ReviewCommentStartSide?> startSide, SdkOptional<int> line, SdkOptional<int> originalLine, SdkOptional<int?> startLine, SdkOptional<int?> originalStartLine, SdkOptional<ReviewCommentSubjectType> subjectType}) get copyWith => _copyWith;
 
-  PullRequestStackPullRequest _copyWith({Object? id = sdkOmittedValue, Object? number = sdkOmittedValue, Object? url = sdkOmittedValue, Object? head = sdkOmittedValue, Object? base_ = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? title = sdkOmittedValue, Object? state = sdkOmittedValue, Object? mergedAt = sdkOmittedValue, Object? draft = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? user = sdkOmittedValue}) => PullRequestStackPullRequest(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    number: identical(number, sdkOmittedValue) ? this.number : number as int,
+  ReviewComment _copyWith({Object? url = sdkOmittedValue, Object? pullRequestReviewId = sdkOmittedValue, Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? diffHunk = sdkOmittedValue, Object? path = sdkOmittedValue, Object? position = sdkOmittedValue, Object? originalPosition = sdkOmittedValue, Object? commitId = sdkOmittedValue, Object? originalCommitId = sdkOmittedValue, Object? inReplyToId = sdkOmittedValue, Object? user = sdkOmittedValue, Object? body = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? pullRequestUrl = sdkOmittedValue, Object? authorAssociation = sdkOmittedValue, Object? links = sdkOmittedValue, Object? bodyText = sdkOmittedValue, Object? bodyHtml = sdkOmittedValue, Object? reactions = sdkOmittedValue, Object? side = sdkOmittedValue, Object? startSide = sdkOmittedValue, Object? line = sdkOmittedValue, Object? originalLine = sdkOmittedValue, Object? startLine = sdkOmittedValue, Object? originalStartLine = sdkOmittedValue, Object? subjectType = sdkOmittedValue}) => ReviewComment(
     url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    head: identical(head, sdkOmittedValue) ? this.head : head as PullRequestMinimalHead,
-    base_: identical(base_, sdkOmittedValue) ? this.base_ : base_ as PullRequestMinimalBase,
+    pullRequestReviewId: identical(pullRequestReviewId, sdkOmittedValue) ? this.pullRequestReviewId : pullRequestReviewId as int?,
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
     nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    title: identical(title, sdkOmittedValue) ? this.title : title as String,
-    state: identical(state, sdkOmittedValue) ? this.state : state as PullRequestStackPullRequestVariant1State,
-    mergedAt: identical(mergedAt, sdkOmittedValue) ? this.mergedAt : mergedAt as String?,
-    draft: identical(draft, sdkOmittedValue) ? this.draft : draft as bool,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
+    diffHunk: identical(diffHunk, sdkOmittedValue) ? this.diffHunk : diffHunk as String,
+    path: identical(path, sdkOmittedValue) ? this.path : path as String,
+    position: identical(position, sdkOmittedValue) ? this.position : position as int?,
+    originalPosition: identical(originalPosition, sdkOmittedValue) ? this.originalPosition : originalPosition as int,
+    commitId: identical(commitId, sdkOmittedValue) ? this.commitId : commitId as String,
+    originalCommitId: identical(originalCommitId, sdkOmittedValue) ? this.originalCommitId : originalCommitId as String,
+    inReplyToId: identical(inReplyToId, sdkOmittedValue) ? this.inReplyToId : inReplyToId as SdkOptional<int>,
     user: identical(user, sdkOmittedValue) ? this.user : user as NullableSimpleUser?,
+    body: identical(body, sdkOmittedValue) ? this.body : body as String,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
+    pullRequestUrl: identical(pullRequestUrl, sdkOmittedValue) ? this.pullRequestUrl : pullRequestUrl as String,
+    authorAssociation: identical(authorAssociation, sdkOmittedValue) ? this.authorAssociation : authorAssociation as AuthorAssociation,
+    links: identical(links, sdkOmittedValue) ? this.links : links as ReviewCommentLinks,
+    bodyText: identical(bodyText, sdkOmittedValue) ? this.bodyText : bodyText as SdkOptional<String>,
+    bodyHtml: identical(bodyHtml, sdkOmittedValue) ? this.bodyHtml : bodyHtml as SdkOptional<String>,
+    reactions: identical(reactions, sdkOmittedValue) ? this.reactions : reactions as SdkOptional<ReactionRollup>,
+    side: identical(side, sdkOmittedValue) ? this.side : side as SdkOptional<ReviewCommentSide>,
+    startSide: identical(startSide, sdkOmittedValue) ? this.startSide : startSide as SdkOptional<ReviewCommentStartSide?>,
+    line: identical(line, sdkOmittedValue) ? this.line : line as SdkOptional<int>,
+    originalLine: identical(originalLine, sdkOmittedValue) ? this.originalLine : originalLine as SdkOptional<int>,
+    startLine: identical(startLine, sdkOmittedValue) ? this.startLine : startLine as SdkOptional<int?>,
+    originalStartLine: identical(originalStartLine, sdkOmittedValue) ? this.originalStartLine : originalStartLine as SdkOptional<int?>,
+    subjectType: identical(subjectType, sdkOmittedValue) ? this.subjectType : subjectType as SdkOptional<ReviewCommentSubjectType>,
   );
 
-  factory PullRequestStackPullRequest.fromJson(Map<String, dynamic> json) => PullRequestStackPullRequest(
-    id: ((json['id'] as num?)?.toInt())!,
-    number: ((json['number'] as num?)?.toInt())!,
+  factory ReviewComment.fromJson(Map<String, dynamic> json) => ReviewComment(
     url: (json['url'] as String?)!,
-    head: (json['head'] != null ? PullRequestMinimalHead.fromJson(json['head'] as Map<String, dynamic>) : null)!,
-    base_: (json['base'] != null ? PullRequestMinimalBase.fromJson(json['base'] as Map<String, dynamic>) : null)!,
+    pullRequestReviewId: json.containsKey('pull_request_review_id') ? (json['pull_request_review_id'] as num?)?.toInt() : throw ArgumentError.value(null, 'pull_request_review_id', 'Required property is missing'),
+    id: ((json['id'] as num?)?.toInt())!,
     nodeId: (json['node_id'] as String?)!,
-    title: (json['title'] as String?)!,
-    state: (json['state'] != null ? PullRequestStackPullRequestVariant1State.fromJson(json['state'] as String) : null)!,
-    mergedAt: json.containsKey('merged_at') ? json['merged_at'] as String? : throw ArgumentError.value(null, 'merged_at', 'Required property is missing'),
-    draft: (json['draft'] as bool?)!,
-    htmlUrl: (json['html_url'] as String?)!,
+    diffHunk: (json['diff_hunk'] as String?)!,
+    path: (json['path'] as String?)!,
+    position: json.containsKey('position') ? (json['position'] as num?)?.toInt() : throw ArgumentError.value(null, 'position', 'Required property is missing'),
+    originalPosition: ((json['original_position'] as num?)?.toInt())!,
+    commitId: (json['commit_id'] as String?)!,
+    originalCommitId: (json['original_commit_id'] as String?)!,
+    inReplyToId: json['in_reply_to_id'] != null ? SdkPresent(((json['in_reply_to_id'] as num?)?.toInt())!) : const SdkOmitted(),
     user: json.containsKey('user') ? json['user'] != null ? NullableSimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'user', 'Required property is missing'),
+    body: (json['body'] as String?)!,
+    createdAt: (json['created_at'] as String?)!,
+    updatedAt: (json['updated_at'] as String?)!,
+    htmlUrl: (json['html_url'] as String?)!,
+    pullRequestUrl: (json['pull_request_url'] as String?)!,
+    authorAssociation: (json['author_association'] != null ? AuthorAssociation.fromJson(json['author_association'] as String) : null)!,
+    links: (json['_links'] != null ? ReviewCommentLinks.fromJson(json['_links'] as Map<String, dynamic>) : null)!,
+    bodyText: json['body_text'] != null ? SdkPresent((json['body_text'] as String?)!) : const SdkOmitted(),
+    bodyHtml: json['body_html'] != null ? SdkPresent((json['body_html'] as String?)!) : const SdkOmitted(),
+    reactions: json['reactions'] != null ? SdkPresent((json['reactions'] != null ? ReactionRollup.fromJson(json['reactions'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    side: json['side'] != null ? SdkPresent((json['side'] != null ? ReviewCommentSide.fromJson(json['side'] as String) : null)!) : const SdkOmitted(),
+    startSide: json.containsKey('start_side') ? SdkPresent(json['start_side'] != null ? ReviewCommentStartSide.fromJson(json['start_side'] as String) : null) : const SdkOmitted(),
+    line: json['line'] != null ? SdkPresent(((json['line'] as num?)?.toInt())!) : const SdkOmitted(),
+    originalLine: json['original_line'] != null ? SdkPresent(((json['original_line'] as num?)?.toInt())!) : const SdkOmitted(),
+    startLine: json.containsKey('start_line') ? SdkPresent((json['start_line'] as num?)?.toInt()) : const SdkOmitted(),
+    originalStartLine: json.containsKey('original_start_line') ? SdkPresent((json['original_start_line'] as num?)?.toInt()) : const SdkOmitted(),
+    subjectType: json['subject_type'] != null ? SdkPresent((json['subject_type'] != null ? ReviewCommentSubjectType.fromJson(json['subject_type'] as String) : null)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'number': number,
     'url': url,
-    'head': head.toJson(),
-    'base': base_.toJson(),
+    'pull_request_review_id': pullRequestReviewId,
+    'id': id,
     'node_id': nodeId,
-    'title': title,
-    'state': state.toJson(),
-    'merged_at': mergedAt,
-    'draft': draft,
-    'html_url': htmlUrl,
+    'diff_hunk': diffHunk,
+    'path': path,
+    'position': position,
+    'original_position': originalPosition,
+    'commit_id': commitId,
+    'original_commit_id': originalCommitId,
+    ...switch (inReplyToId) {
+      SdkPresent<int>(value: final value) => {'in_reply_to_id': value,},
+      _ => const <String, dynamic>{},
+    },
     'user': user?.toJson(),
-  };
-}
-
-/// Required object value serialized in the `_links` wire field.
-class ReviewCommentLinks {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// Hypermedia Link
-  final Link self;
-  /// Hypermedia Link
-  final Link html;
-  /// Hypermedia Link
-  final Link pullRequest;
-
-  const ReviewCommentLinks({required this.self, required this.html, required this.pullRequest});
-
-  ReviewCommentLinks Function({Link self, Link html, Link pullRequest}) get copyWith => _copyWith;
-
-  ReviewCommentLinks _copyWith({Object? self = sdkOmittedValue, Object? html = sdkOmittedValue, Object? pullRequest = sdkOmittedValue}) => ReviewCommentLinks(
-    self: identical(self, sdkOmittedValue) ? this.self : self as Link,
-    html: identical(html, sdkOmittedValue) ? this.html : html as Link,
-    pullRequest: identical(pullRequest, sdkOmittedValue) ? this.pullRequest : pullRequest as Link,
-  );
-
-  factory ReviewCommentLinks.fromJson(Map<String, dynamic> json) => ReviewCommentLinks(
-    self: (json['self'] != null ? Link.fromJson(json['self'] as Map<String, dynamic>) : null)!,
-    html: (json['html'] != null ? Link.fromJson(json['html'] as Map<String, dynamic>) : null)!,
-    pullRequest: (json['pull_request'] != null ? Link.fromJson(json['pull_request'] as Map<String, dynamic>) : null)!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'self': self.toJson(),
-    'html': html.toJson(),
-    'pull_request': pullRequest.toJson(),
+    'body': body,
+    'created_at': createdAt,
+    'updated_at': updatedAt,
+    'html_url': htmlUrl,
+    'pull_request_url': pullRequestUrl,
+    'author_association': authorAssociation.toJson(),
+    '_links': links.toJson(),
+    ...switch (bodyText) {
+      SdkPresent<String>(value: final value) => {'body_text': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (bodyHtml) {
+      SdkPresent<String>(value: final value) => {'body_html': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (reactions) {
+      SdkPresent<ReactionRollup>(value: final value) => {'reactions': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (side) {
+      SdkPresent<ReviewCommentSide>(value: final value) => {'side': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (startSide) {
+      SdkPresent<ReviewCommentStartSide?>(value: final value) => {'start_side': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (line) {
+      SdkPresent<int>(value: final value) => {'line': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (originalLine) {
+      SdkPresent<int>(value: final value) => {'original_line': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (startLine) {
+      SdkPresent<int?>(value: final value) => {'start_line': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (originalStartLine) {
+      SdkPresent<int?>(value: final value) => {'original_start_line': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (subjectType) {
+      SdkPresent<ReviewCommentSubjectType>(value: final value) => {'subject_type': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
   };
 }

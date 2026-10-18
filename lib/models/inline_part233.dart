@@ -4,283 +4,286 @@
 part of 'inline.dart';
 
 // Inline operation models (part 233)
-/// Required enumerated value serialized in the `conclusion` wire field.
-final class WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItemConclusion {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsEditRepoAutomationResponseTriggersIssueAssignedWriteScope {
 
   final String value;
 
-  const WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItemConclusion._(this.value);
+  const AgentAutomationsEditRepoAutomationResponseTriggersIssueAssignedWriteScope._(this.value);
 
-  factory WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItemConclusion.fromJson(String value) => WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItemConclusion._(value);
+  factory AgentAutomationsEditRepoAutomationResponseTriggersIssueAssignedWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseTriggersIssueAssignedWriteScope._(value);
 
-  static const failure = WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItemConclusion._('failure');
-  static const skipped = WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItemConclusion._('skipped');
-  static const success = WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItemConclusion._('success');
-  static const cancelled = WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItemConclusion._('cancelled');
+  static const trigger = AgentAutomationsEditRepoAutomationResponseTriggersIssueAssignedWriteScope._('trigger');
+  static const repository = AgentAutomationsEditRepoAutomationResponseTriggersIssueAssignedWriteScope._('repository');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItemConclusion && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersIssueAssignedWriteScope && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Required enumerated value serialized in the `status` wire field.
-final class WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItemStatus {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsEditRepoAutomationResponseTriggersIssueCommentWriteScope {
 
   final String value;
 
-  const WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItemStatus._(this.value);
+  const AgentAutomationsEditRepoAutomationResponseTriggersIssueCommentWriteScope._(this.value);
 
-  factory WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItemStatus.fromJson(String value) => WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItemStatus._(value);
+  factory AgentAutomationsEditRepoAutomationResponseTriggersIssueCommentWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseTriggersIssueCommentWriteScope._(value);
 
-  static const inProgress = WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItemStatus._('in_progress');
-  static const completed = WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItemStatus._('completed');
-  static const queued = WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItemStatus._('queued');
-  static const pending = WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItemStatus._('pending');
+  static const trigger = AgentAutomationsEditRepoAutomationResponseTriggersIssueCommentWriteScope._('trigger');
+  static const repository = AgentAutomationsEditRepoAutomationResponseTriggersIssueCommentWriteScope._('repository');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItemStatus && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersIssueCommentWriteScope && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Required enumerated value serialized in the `status` wire field.
-final class WebhookWorkflowJobInProgressWorkflowJobVariant1Status {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsEditRepoAutomationResponseTriggersIssueLabeledWriteScope {
 
   final String value;
 
-  const WebhookWorkflowJobInProgressWorkflowJobVariant1Status._(this.value);
+  const AgentAutomationsEditRepoAutomationResponseTriggersIssueLabeledWriteScope._(this.value);
 
-  factory WebhookWorkflowJobInProgressWorkflowJobVariant1Status.fromJson(String value) => WebhookWorkflowJobInProgressWorkflowJobVariant1Status._(value);
+  factory AgentAutomationsEditRepoAutomationResponseTriggersIssueLabeledWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseTriggersIssueLabeledWriteScope._(value);
 
-  static const inProgress = WebhookWorkflowJobInProgressWorkflowJobVariant1Status._('in_progress');
-  static const completed = WebhookWorkflowJobInProgressWorkflowJobVariant1Status._('completed');
-  static const queued = WebhookWorkflowJobInProgressWorkflowJobVariant1Status._('queued');
+  static const trigger = AgentAutomationsEditRepoAutomationResponseTriggersIssueLabeledWriteScope._('trigger');
+  static const repository = AgentAutomationsEditRepoAutomationResponseTriggersIssueLabeledWriteScope._('repository');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookWorkflowJobInProgressWorkflowJobVariant1Status && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersIssueLabeledWriteScope && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Required enumerated value serialized in the `status` wire field.
-final class WebhookWorkflowJobInProgressWorkflowJobVariant1StepsItemStatus {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsEditRepoAutomationResponseTriggersIssueOpenedWriteScope {
 
   final String value;
 
-  const WebhookWorkflowJobInProgressWorkflowJobVariant1StepsItemStatus._(this.value);
+  const AgentAutomationsEditRepoAutomationResponseTriggersIssueOpenedWriteScope._(this.value);
 
-  factory WebhookWorkflowJobInProgressWorkflowJobVariant1StepsItemStatus.fromJson(String value) => WebhookWorkflowJobInProgressWorkflowJobVariant1StepsItemStatus._(value);
+  factory AgentAutomationsEditRepoAutomationResponseTriggersIssueOpenedWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseTriggersIssueOpenedWriteScope._(value);
 
-  static const inProgress = WebhookWorkflowJobInProgressWorkflowJobVariant1StepsItemStatus._('in_progress');
-  static const completed = WebhookWorkflowJobInProgressWorkflowJobVariant1StepsItemStatus._('completed');
-  static const pending = WebhookWorkflowJobInProgressWorkflowJobVariant1StepsItemStatus._('pending');
-  static const queued = WebhookWorkflowJobInProgressWorkflowJobVariant1StepsItemStatus._('queued');
+  static const trigger = AgentAutomationsEditRepoAutomationResponseTriggersIssueOpenedWriteScope._('trigger');
+  static const repository = AgentAutomationsEditRepoAutomationResponseTriggersIssueOpenedWriteScope._('repository');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookWorkflowJobInProgressWorkflowJobVariant1StepsItemStatus && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersIssueOpenedWriteScope && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookWorkflowJobQueuedAction {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsEditRepoAutomationResponseTriggersPullRequestAssignedWriteScope {
 
   final String value;
 
-  const WebhookWorkflowJobQueuedAction._(this.value);
+  const AgentAutomationsEditRepoAutomationResponseTriggersPullRequestAssignedWriteScope._(this.value);
 
-  factory WebhookWorkflowJobQueuedAction.fromJson(String value) => WebhookWorkflowJobQueuedAction._(value);
+  factory AgentAutomationsEditRepoAutomationResponseTriggersPullRequestAssignedWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseTriggersPullRequestAssignedWriteScope._(value);
 
-  static const queued = WebhookWorkflowJobQueuedAction._('queued');
+  static const trigger = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestAssignedWriteScope._('trigger');
+  static const repository = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestAssignedWriteScope._('repository');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookWorkflowJobQueuedAction && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersPullRequestAssignedWriteScope && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Required enumerated value serialized in the `status` wire field.
-final class WebhookWorkflowJobQueuedWorkflowJobStatus {
+final class AgentAutomationsEditRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem {
 
   final String value;
 
-  const WebhookWorkflowJobQueuedWorkflowJobStatus._(this.value);
+  const AgentAutomationsEditRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem._(this.value);
 
-  factory WebhookWorkflowJobQueuedWorkflowJobStatus.fromJson(String value) => WebhookWorkflowJobQueuedWorkflowJobStatus._(value);
+  factory AgentAutomationsEditRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem._(value);
 
-  static const queued = WebhookWorkflowJobQueuedWorkflowJobStatus._('queued');
-  static const inProgress = WebhookWorkflowJobQueuedWorkflowJobStatus._('in_progress');
-  static const completed = WebhookWorkflowJobQueuedWorkflowJobStatus._('completed');
-  static const waiting = WebhookWorkflowJobQueuedWorkflowJobStatus._('waiting');
+  static const timelineComment = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem._('timeline_comment');
+  static const reviewComment = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem._('review_comment');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookWorkflowJobQueuedWorkflowJobStatus && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Required enumerated value serialized in the `conclusion` wire field.
-final class WebhookWorkflowJobQueuedWorkflowJobStepsItemConclusion {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsEditRepoAutomationResponseTriggersPullRequestCommentWriteScope {
 
   final String value;
 
-  const WebhookWorkflowJobQueuedWorkflowJobStepsItemConclusion._(this.value);
+  const AgentAutomationsEditRepoAutomationResponseTriggersPullRequestCommentWriteScope._(this.value);
 
-  factory WebhookWorkflowJobQueuedWorkflowJobStepsItemConclusion.fromJson(String value) => WebhookWorkflowJobQueuedWorkflowJobStepsItemConclusion._(value);
+  factory AgentAutomationsEditRepoAutomationResponseTriggersPullRequestCommentWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseTriggersPullRequestCommentWriteScope._(value);
 
-  static const failure = WebhookWorkflowJobQueuedWorkflowJobStepsItemConclusion._('failure');
-  static const skipped = WebhookWorkflowJobQueuedWorkflowJobStepsItemConclusion._('skipped');
-  static const success = WebhookWorkflowJobQueuedWorkflowJobStepsItemConclusion._('success');
-  static const cancelled = WebhookWorkflowJobQueuedWorkflowJobStepsItemConclusion._('cancelled');
+  static const trigger = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestCommentWriteScope._('trigger');
+  static const repository = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestCommentWriteScope._('repository');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookWorkflowJobQueuedWorkflowJobStepsItemConclusion && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersPullRequestCommentWriteScope && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Required enumerated value serialized in the `status` wire field.
-final class WebhookWorkflowJobQueuedWorkflowJobStepsItemStatus {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsEditRepoAutomationResponseTriggersPullRequestLabeledWriteScope {
 
   final String value;
 
-  const WebhookWorkflowJobQueuedWorkflowJobStepsItemStatus._(this.value);
+  const AgentAutomationsEditRepoAutomationResponseTriggersPullRequestLabeledWriteScope._(this.value);
 
-  factory WebhookWorkflowJobQueuedWorkflowJobStepsItemStatus.fromJson(String value) => WebhookWorkflowJobQueuedWorkflowJobStepsItemStatus._(value);
+  factory AgentAutomationsEditRepoAutomationResponseTriggersPullRequestLabeledWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseTriggersPullRequestLabeledWriteScope._(value);
 
-  static const completed = WebhookWorkflowJobQueuedWorkflowJobStepsItemStatus._('completed');
-  static const inProgress = WebhookWorkflowJobQueuedWorkflowJobStepsItemStatus._('in_progress');
-  static const queued = WebhookWorkflowJobQueuedWorkflowJobStepsItemStatus._('queued');
-  static const pending = WebhookWorkflowJobQueuedWorkflowJobStepsItemStatus._('pending');
+  static const trigger = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestLabeledWriteScope._('trigger');
+  static const repository = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestLabeledWriteScope._('repository');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookWorkflowJobQueuedWorkflowJobStepsItemStatus && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersPullRequestLabeledWriteScope && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookWorkflowJobWaitingAction {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope {
 
   final String value;
 
-  const WebhookWorkflowJobWaitingAction._(this.value);
+  const AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope._(this.value);
 
-  factory WebhookWorkflowJobWaitingAction.fromJson(String value) => WebhookWorkflowJobWaitingAction._(value);
+  factory AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope._(value);
 
-  static const waiting = WebhookWorkflowJobWaitingAction._('waiting');
+  static const trigger = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope._('trigger');
+  static const repository = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope._('repository');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookWorkflowJobWaitingAction && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Required enumerated value serialized in the `status` wire field.
-final class WebhookWorkflowJobWaitingWorkflowJobStatus {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMergedWriteScope {
 
   final String value;
 
-  const WebhookWorkflowJobWaitingWorkflowJobStatus._(this.value);
+  const AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMergedWriteScope._(this.value);
 
-  factory WebhookWorkflowJobWaitingWorkflowJobStatus.fromJson(String value) => WebhookWorkflowJobWaitingWorkflowJobStatus._(value);
+  factory AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMergedWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMergedWriteScope._(value);
 
-  static const queued = WebhookWorkflowJobWaitingWorkflowJobStatus._('queued');
-  static const inProgress = WebhookWorkflowJobWaitingWorkflowJobStatus._('in_progress');
-  static const completed = WebhookWorkflowJobWaitingWorkflowJobStatus._('completed');
-  static const waiting = WebhookWorkflowJobWaitingWorkflowJobStatus._('waiting');
+  static const trigger = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMergedWriteScope._('trigger');
+  static const repository = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMergedWriteScope._('repository');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookWorkflowJobWaitingWorkflowJobStatus && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMergedWriteScope && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Required enumerated value serialized in the `conclusion` wire field.
-final class WebhookWorkflowJobWaitingWorkflowJobStepsItemConclusion {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsEditRepoAutomationResponseTriggersPullRequestOpenedWriteScope {
 
   final String value;
 
-  const WebhookWorkflowJobWaitingWorkflowJobStepsItemConclusion._(this.value);
+  const AgentAutomationsEditRepoAutomationResponseTriggersPullRequestOpenedWriteScope._(this.value);
 
-  factory WebhookWorkflowJobWaitingWorkflowJobStepsItemConclusion.fromJson(String value) => WebhookWorkflowJobWaitingWorkflowJobStepsItemConclusion._(value);
+  factory AgentAutomationsEditRepoAutomationResponseTriggersPullRequestOpenedWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseTriggersPullRequestOpenedWriteScope._(value);
 
-  static const failure = WebhookWorkflowJobWaitingWorkflowJobStepsItemConclusion._('failure');
-  static const skipped = WebhookWorkflowJobWaitingWorkflowJobStepsItemConclusion._('skipped');
-  static const success = WebhookWorkflowJobWaitingWorkflowJobStepsItemConclusion._('success');
-  static const cancelled = WebhookWorkflowJobWaitingWorkflowJobStepsItemConclusion._('cancelled');
+  static const trigger = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestOpenedWriteScope._('trigger');
+  static const repository = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestOpenedWriteScope._('repository');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookWorkflowJobWaitingWorkflowJobStepsItemConclusion && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersPullRequestOpenedWriteScope && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Required enumerated value serialized in the `status` wire field.
-final class WebhookWorkflowJobWaitingWorkflowJobStepsItemStatus {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReadyForReviewWriteScope {
 
   final String value;
 
-  const WebhookWorkflowJobWaitingWorkflowJobStepsItemStatus._(this.value);
+  const AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReadyForReviewWriteScope._(this.value);
 
-  factory WebhookWorkflowJobWaitingWorkflowJobStepsItemStatus.fromJson(String value) => WebhookWorkflowJobWaitingWorkflowJobStepsItemStatus._(value);
+  factory AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReadyForReviewWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReadyForReviewWriteScope._(value);
 
-  static const completed = WebhookWorkflowJobWaitingWorkflowJobStepsItemStatus._('completed');
-  static const inProgress = WebhookWorkflowJobWaitingWorkflowJobStepsItemStatus._('in_progress');
-  static const queued = WebhookWorkflowJobWaitingWorkflowJobStepsItemStatus._('queued');
-  static const pending = WebhookWorkflowJobWaitingWorkflowJobStepsItemStatus._('pending');
-  static const waiting = WebhookWorkflowJobWaitingWorkflowJobStepsItemStatus._('waiting');
+  static const trigger = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReadyForReviewWriteScope._('trigger');
+  static const repository = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReadyForReviewWriteScope._('repository');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookWorkflowJobWaitingWorkflowJobStepsItemStatus && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReadyForReviewWriteScope && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewRequestedWriteScope {
+
+  final String value;
+
+  const AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewRequestedWriteScope._(this.value);
+
+  factory AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewRequestedWriteScope.fromJson(String value) => AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewRequestedWriteScope._(value);
+
+  static const trigger = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewRequestedWriteScope._('trigger');
+  static const repository = AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewRequestedWriteScope._('repository');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewRequestedWriteScope && other.value == value;
 
   @override int get hashCode => value.hashCode;
 

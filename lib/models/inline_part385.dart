@@ -4,271 +4,209 @@
 part of 'inline.dart';
 
 // Inline operation models (part 385)
-class OrgsExternalPropertiesForReposRegisterOrganizationAppInstallationRequestBody {
+/// Use the `status` property to enable or disable secret scanning delegated alert dismissal for this repository.
+class ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedAlertDismissal {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The unique identifier of the GitHub App installation to register for managing external custom properties. When authenticating as a GitHub App installation, this defaults to the authenticated installation and can be omitted. It is required for all other callers (users and fine-grained personal access tokens).
-  final SdkOptional<int> installationId;
-  /// The display name for this app installation's external custom properties in the organization. Must be 1 to 15 characters and contain only letters and numbers. Capitalization is preserved as entered. This can't be changed after the app installation is registered.
-  final String displayName;
+  /// Can be `enabled` or `disabled`.
+  final SdkOptional<String> status;
 
-  const OrgsExternalPropertiesForReposRegisterOrganizationAppInstallationRequestBody({this.installationId = const SdkOmitted(), required this.displayName});
+  const ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedAlertDismissal({this.status = const SdkOmitted()});
 
-  OrgsExternalPropertiesForReposRegisterOrganizationAppInstallationRequestBody Function({SdkOptional<int> installationId, String displayName}) get copyWith => _copyWith;
+  ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedAlertDismissal Function({SdkOptional<String> status}) get copyWith => _copyWith;
 
-  OrgsExternalPropertiesForReposRegisterOrganizationAppInstallationRequestBody _copyWith({Object? installationId = sdkOmittedValue, Object? displayName = sdkOmittedValue}) => OrgsExternalPropertiesForReposRegisterOrganizationAppInstallationRequestBody(
-    installationId: identical(installationId, sdkOmittedValue) ? this.installationId : installationId as SdkOptional<int>,
-    displayName: identical(displayName, sdkOmittedValue) ? this.displayName : displayName as String,
+  ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedAlertDismissal _copyWith({Object? status = sdkOmittedValue}) => ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedAlertDismissal(
+    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<String>,
   );
 
-  factory OrgsExternalPropertiesForReposRegisterOrganizationAppInstallationRequestBody.fromJson(Map<String, dynamic> json) => OrgsExternalPropertiesForReposRegisterOrganizationAppInstallationRequestBody(
-    installationId: json['installation_id'] != null ? SdkPresent(((json['installation_id'] as num?)?.toInt())!) : const SdkOmitted(),
-    displayName: (json['display_name'] as String?)!,
+  factory ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedAlertDismissal.fromJson(Map<String, dynamic> json) => ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedAlertDismissal(
+    status: json['status'] != null ? SdkPresent((json['status'] as String?)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    ...switch (installationId) {
-      SdkPresent<int>(value: final value) => {'installation_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    'display_name': displayName,
-  };
-}
-
-class OrgsExternalPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The names of repositories that the external custom property values will be applied to.
-  final List<String> repositoryNames;
-  /// List of external custom property names and associated values to apply to the repositories.
-  final List<CustomPropertyValue> properties;
-
-  const OrgsExternalPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody({required this.repositoryNames, required this.properties});
-
-  OrgsExternalPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody Function({List<String> repositoryNames, List<CustomPropertyValue> properties}) get copyWith => _copyWith;
-
-  OrgsExternalPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody _copyWith({Object? repositoryNames = sdkOmittedValue, Object? properties = sdkOmittedValue}) => OrgsExternalPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody(
-    repositoryNames: identical(repositoryNames, sdkOmittedValue) ? this.repositoryNames : repositoryNames as List<String>,
-    properties: identical(properties, sdkOmittedValue) ? this.properties : properties as List<CustomPropertyValue>,
-  );
-
-  factory OrgsExternalPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody.fromJson(Map<String, dynamic> json) => OrgsExternalPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody(
-    repositoryNames: ((json['repository_names'] as List?)?.map((e) => e as String).toList())!,
-    properties: ((json['properties'] as List?)?.map((e) => CustomPropertyValue.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'repository_names': repositoryNames,
-    'properties': properties.map((item) => item.toJson()).toList(),
-  };
-}
-
-class OrgsExternalPropertiesForReposCreateOrUpdateValuesForOrganizationPropertyRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The names of repositories and the values that the named external custom property will be set to.
-  final List<RepositoryExternalPropertyPayload> repositoryValues;
-
-  const OrgsExternalPropertiesForReposCreateOrUpdateValuesForOrganizationPropertyRequestBody({required this.repositoryValues});
-
-  OrgsExternalPropertiesForReposCreateOrUpdateValuesForOrganizationPropertyRequestBody Function({List<RepositoryExternalPropertyPayload> repositoryValues}) get copyWith => _copyWith;
-
-  OrgsExternalPropertiesForReposCreateOrUpdateValuesForOrganizationPropertyRequestBody _copyWith({Object? repositoryValues = sdkOmittedValue}) => OrgsExternalPropertiesForReposCreateOrUpdateValuesForOrganizationPropertyRequestBody(
-    repositoryValues: identical(repositoryValues, sdkOmittedValue) ? this.repositoryValues : repositoryValues as List<RepositoryExternalPropertyPayload>,
-  );
-
-  factory OrgsExternalPropertiesForReposCreateOrUpdateValuesForOrganizationPropertyRequestBody.fromJson(Map<String, dynamic> json) => OrgsExternalPropertiesForReposCreateOrUpdateValuesForOrganizationPropertyRequestBody(
-    repositoryValues: ((json['repository_values'] as List?)?.map((e) => RepositoryExternalPropertyPayload.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'repository_values': repositoryValues.map((item) => item.toJson()).toList(),
-  };
-}
-
-class OrgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitionsRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The array of custom properties to create or update.
-  final List<CustomProperty> properties;
-
-  const OrgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitionsRequestBody({required this.properties});
-
-  OrgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitionsRequestBody Function({List<CustomProperty> properties}) get copyWith => _copyWith;
-
-  OrgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitionsRequestBody _copyWith({Object? properties = sdkOmittedValue}) => OrgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitionsRequestBody(
-    properties: identical(properties, sdkOmittedValue) ? this.properties : properties as List<CustomProperty>,
-  );
-
-  factory OrgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitionsRequestBody.fromJson(Map<String, dynamic> json) => OrgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitionsRequestBody(
-    properties: ((json['properties'] as List?)?.map((e) => CustomProperty.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'properties': properties.map((item) => item.toJson()).toList(),
-  };
-}
-
-class OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The names of repositories that the custom property values will be applied to.
-  final List<String> repositoryNames;
-  /// List of custom property names and associated values to apply to the repositories.
-  final List<CustomPropertyValue> properties;
-
-  const OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody({required this.repositoryNames, required this.properties});
-
-  OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody Function({List<String> repositoryNames, List<CustomPropertyValue> properties}) get copyWith => _copyWith;
-
-  OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody _copyWith({Object? repositoryNames = sdkOmittedValue, Object? properties = sdkOmittedValue}) => OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody(
-    repositoryNames: identical(repositoryNames, sdkOmittedValue) ? this.repositoryNames : repositoryNames as List<String>,
-    properties: identical(properties, sdkOmittedValue) ? this.properties : properties as List<CustomPropertyValue>,
-  );
-
-  factory OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody.fromJson(Map<String, dynamic> json) => OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesRequestBody(
-    repositoryNames: ((json['repository_names'] as List?)?.map((e) => e as String).toList())!,
-    properties: ((json['properties'] as List?)?.map((e) => CustomPropertyValue.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'repository_names': repositoryNames,
-    'properties': properties.map((item) => item.toJson()).toList(),
-  };
-}
-
-class OrgsSetImmutableReleasesSettingsRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The policy that controls how immutable releases are enforced in the organization.
-  final OrgsSetImmutableReleasesSettingsRequestBodyEnforcedRepositories enforcedRepositories;
-  /// An array of repository ids for which immutable releases enforcement should be applied. You can only provide a list of repository ids when the `enforced_repositories` is set to `selected`. You can add and remove individual repositories using the [Enable a selected repository for immutable releases in an organization](https://docs.github.com/rest/orgs/orgs#enable-a-selected-repository-for-immutable-releases-in-an-organization) and [Disable a selected repository for immutable releases in an organization](https://docs.github.com/rest/orgs/orgs#disable-a-selected-repository-for-immutable-releases-in-an-organization) endpoints.
-  final SdkOptional<List<int>> selectedRepositoryIds;
-
-  const OrgsSetImmutableReleasesSettingsRequestBody({required this.enforcedRepositories, this.selectedRepositoryIds = const SdkOmitted()});
-
-  OrgsSetImmutableReleasesSettingsRequestBody Function({OrgsSetImmutableReleasesSettingsRequestBodyEnforcedRepositories enforcedRepositories, SdkOptional<List<int>> selectedRepositoryIds}) get copyWith => _copyWith;
-
-  OrgsSetImmutableReleasesSettingsRequestBody _copyWith({Object? enforcedRepositories = sdkOmittedValue, Object? selectedRepositoryIds = sdkOmittedValue}) => OrgsSetImmutableReleasesSettingsRequestBody(
-    enforcedRepositories: identical(enforcedRepositories, sdkOmittedValue) ? this.enforcedRepositories : enforcedRepositories as OrgsSetImmutableReleasesSettingsRequestBodyEnforcedRepositories,
-    selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue) ? this.selectedRepositoryIds : selectedRepositoryIds as SdkOptional<List<int>>,
-  );
-
-  factory OrgsSetImmutableReleasesSettingsRequestBody.fromJson(Map<String, dynamic> json) => OrgsSetImmutableReleasesSettingsRequestBody(
-    enforcedRepositories: (json['enforced_repositories'] != null ? OrgsSetImmutableReleasesSettingsRequestBodyEnforcedRepositories.fromJson(json['enforced_repositories'] as String) : null)!,
-    selectedRepositoryIds: json['selected_repository_ids'] != null ? SdkPresent(((json['selected_repository_ids'] as List?)?.map((e) => (e as num).toInt()).toList())!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    'enforced_repositories': enforcedRepositories.toJson(),
-    ...switch (selectedRepositoryIds) {
-      SdkPresent<List<int>>(value: final value) => {'selected_repository_ids': value,},
+    ...switch (status) {
+      SdkPresent<String>(value: final value) => {'status': value,},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-class OrgsGetImmutableReleasesSettingsRepositoriesResponse {
+/// Use the `status` property to enable or disable secret scanning delegated bypass for this repository.
+class ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypass {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<MinimalRepository> repositories;
+  /// Can be `enabled` or `disabled`.
+  final SdkOptional<String> status;
 
-  const OrgsGetImmutableReleasesSettingsRepositoriesResponse({required this.totalCount, required this.repositories});
+  const ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypass({this.status = const SdkOmitted()});
 
-  OrgsGetImmutableReleasesSettingsRepositoriesResponse Function({int totalCount, List<MinimalRepository> repositories}) get copyWith => _copyWith;
+  ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypass Function({SdkOptional<String> status}) get copyWith => _copyWith;
 
-  OrgsGetImmutableReleasesSettingsRepositoriesResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? repositories = sdkOmittedValue}) => OrgsGetImmutableReleasesSettingsRepositoriesResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    repositories: identical(repositories, sdkOmittedValue) ? this.repositories : repositories as List<MinimalRepository>,
+  ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypass _copyWith({Object? status = sdkOmittedValue}) => ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypass(
+    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<String>,
   );
 
-  factory OrgsGetImmutableReleasesSettingsRepositoriesResponse.fromJson(Map<String, dynamic> json) => OrgsGetImmutableReleasesSettingsRepositoriesResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    repositories: ((json['repositories'] as List?)?.map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList())!,
+  factory ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypass.fromJson(Map<String, dynamic> json) => ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypass(
+    status: json['status'] != null ? SdkPresent((json['status'] as String?)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'repositories': repositories.map((item) => item.toJson()).toList(),
-  };
-}
-
-class OrgsSetImmutableReleasesSettingsRepositoriesRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// An array of repository ids for which immutable releases enforcement should be applied. You can only provide a list of repository ids when the `enforced_repositories` is set to `selected`. You can add and remove individual repositories using the [Enable a selected repository for immutable releases in an organization](https://docs.github.com/rest/orgs/orgs#enable-a-selected-repository-for-immutable-releases-in-an-organization) and [Disable a selected repository for immutable releases in an organization](https://docs.github.com/rest/orgs/orgs#disable-a-selected-repository-for-immutable-releases-in-an-organization) endpoints.
-  final List<int> selectedRepositoryIds;
-
-  const OrgsSetImmutableReleasesSettingsRepositoriesRequestBody({required this.selectedRepositoryIds});
-
-  OrgsSetImmutableReleasesSettingsRepositoriesRequestBody Function({List<int> selectedRepositoryIds}) get copyWith => _copyWith;
-
-  OrgsSetImmutableReleasesSettingsRepositoriesRequestBody _copyWith({Object? selectedRepositoryIds = sdkOmittedValue}) => OrgsSetImmutableReleasesSettingsRepositoriesRequestBody(
-    selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue) ? this.selectedRepositoryIds : selectedRepositoryIds as List<int>,
-  );
-
-  factory OrgsSetImmutableReleasesSettingsRepositoriesRequestBody.fromJson(Map<String, dynamic> json) => OrgsSetImmutableReleasesSettingsRepositoriesRequestBody(
-    selectedRepositoryIds: ((json['selected_repository_ids'] as List?)?.map((e) => (e as num).toInt()).toList())!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'selected_repository_ids': selectedRepositoryIds,
-  };
-}
-
-class OrgsUpdateMembershipForAuthenticatedUserRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The state that the membership should be in. Only `"active"` will be accepted.
-  final OrgsUpdateMembershipForAuthenticatedUserRequestBodyState state;
-
-  const OrgsUpdateMembershipForAuthenticatedUserRequestBody({required this.state});
-
-  OrgsUpdateMembershipForAuthenticatedUserRequestBody Function({OrgsUpdateMembershipForAuthenticatedUserRequestBodyState state}) get copyWith => _copyWith;
-
-  OrgsUpdateMembershipForAuthenticatedUserRequestBody _copyWith({Object? state = sdkOmittedValue}) => OrgsUpdateMembershipForAuthenticatedUserRequestBody(
-    state: identical(state, sdkOmittedValue) ? this.state : state as OrgsUpdateMembershipForAuthenticatedUserRequestBodyState,
-  );
-
-  factory OrgsUpdateMembershipForAuthenticatedUserRequestBody.fromJson(Map<String, dynamic> json) => OrgsUpdateMembershipForAuthenticatedUserRequestBody(
-    state: (json['state'] != null ? OrgsUpdateMembershipForAuthenticatedUserRequestBodyState.fromJson(json['state'] as String) : null)!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'state': state.toJson(),
-  };
-}
-
-class BillingCreateOrganizationBudgetRequestBodyBudgetAlerting {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// Whether alerts are enabled for this budget. Rejected for user-scope as alerting is always disabled for them.
-  final SdkOptional<bool> willAlert;
-  /// Array of user login names who will receive alerts. Rejected for user-scope as alerting is always disabled for them.
-  final SdkOptional<List<String>> alertRecipients;
-
-  const BillingCreateOrganizationBudgetRequestBodyBudgetAlerting({this.willAlert = const SdkOmitted(), this.alertRecipients = const SdkOmitted()});
-
-  BillingCreateOrganizationBudgetRequestBodyBudgetAlerting Function({SdkOptional<bool> willAlert, SdkOptional<List<String>> alertRecipients}) get copyWith => _copyWith;
-
-  BillingCreateOrganizationBudgetRequestBodyBudgetAlerting _copyWith({Object? willAlert = sdkOmittedValue, Object? alertRecipients = sdkOmittedValue}) => BillingCreateOrganizationBudgetRequestBodyBudgetAlerting(
-    willAlert: identical(willAlert, sdkOmittedValue) ? this.willAlert : willAlert as SdkOptional<bool>,
-    alertRecipients: identical(alertRecipients, sdkOmittedValue) ? this.alertRecipients : alertRecipients as SdkOptional<List<String>>,
-  );
-
-  factory BillingCreateOrganizationBudgetRequestBodyBudgetAlerting.fromJson(Map<String, dynamic> json) => BillingCreateOrganizationBudgetRequestBodyBudgetAlerting(
-    willAlert: json['will_alert'] != null ? SdkPresent((json['will_alert'] as bool?)!) : const SdkOmitted(),
-    alertRecipients: json['alert_recipients'] != null ? SdkPresent(((json['alert_recipients'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    ...switch (willAlert) {
-      SdkPresent<bool>(value: final value) => {'will_alert': value,},
+    ...switch (status) {
+      SdkPresent<String>(value: final value) => {'status': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (alertRecipients) {
-      SdkPresent<List<String>>(value: final value) => {'alert_recipients': value,},
+  };
+}
+
+class ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The ID of the team or role selected as a bypass reviewer
+  final int reviewerId;
+  /// The type of the bypass reviewer
+  final ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemReviewerType reviewerType;
+  /// The bypass mode for the reviewer
+  final SdkOptional<ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode> mode;
+
+  const ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem({required this.reviewerId, required this.reviewerType, this.mode = const SdkOmitted()});
+
+  ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem Function({int reviewerId, ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemReviewerType reviewerType, SdkOptional<ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode> mode}) get copyWith => _copyWith;
+
+  ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem _copyWith({Object? reviewerId = sdkOmittedValue, Object? reviewerType = sdkOmittedValue, Object? mode = sdkOmittedValue}) => ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem(
+    reviewerId: identical(reviewerId, sdkOmittedValue) ? this.reviewerId : reviewerId as int,
+    reviewerType: identical(reviewerType, sdkOmittedValue) ? this.reviewerType : reviewerType as ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemReviewerType,
+    mode: identical(mode, sdkOmittedValue) ? this.mode : mode as SdkOptional<ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode>,
+  );
+
+  factory ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem.fromJson(Map<String, dynamic> json) => ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem(
+    reviewerId: ((json['reviewer_id'] as num?)?.toInt())!,
+    reviewerType: (json['reviewer_type'] != null ? ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemReviewerType.fromJson(json['reviewer_type'] as String) : null)!,
+    mode: json['mode'] != null ? SdkPresent((json['mode'] != null ? ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode.fromJson(json['mode'] as String) : null)!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    'reviewer_id': reviewerId,
+    'reviewer_type': reviewerType.toJson(),
+    ...switch (mode) {
+      SdkPresent<ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode>(value: final value) => {'mode': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
+}
+
+/// Feature options for secret scanning delegated bypass. This object is only honored when `security_and_analysis.secret_scanning_delegated_bypass.status` is set to `enabled`. You can send this object in the same request as `secret_scanning_delegated_bypass`, or update just the options in a separate request.
+class ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptions {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The bypass reviewers for secret scanning delegated bypass. If you omit this field, the existing set of reviewers is unchanged.
+  final SdkOptional<List<ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem>> reviewers;
+
+  const ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptions({this.reviewers = const SdkOmitted()});
+
+  ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptions Function({SdkOptional<List<ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem>> reviewers}) get copyWith => _copyWith;
+
+  ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptions _copyWith({Object? reviewers = sdkOmittedValue}) => ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptions(
+    reviewers: identical(reviewers, sdkOmittedValue) ? this.reviewers : reviewers as SdkOptional<List<ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem>>,
+  );
+
+  factory ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptions.fromJson(Map<String, dynamic> json) => ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptions(
+    reviewers: json['reviewers'] != null ? SdkPresent(((json['reviewers'] as List?)?.map((e) => ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    ...switch (reviewers) {
+      SdkPresent<List<ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem>>(value: final value) => {'reviewers': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
+}
+
+/// Specify which security and analysis features to enable or disable for the repository. To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)." For example, to enable GitHub Advanced Security, use this data in the body of the `PATCH` request: `{ "security_and_analysis": {"advanced_security": { "status": "enabled" } } }`. You can check which security and analysis features are currently enabled by using a `GET /repos/{owner}/{repo}` request.
+class ReposUpdateRequestBodySecurityAndAnalysis {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// Use the `status` property to enable or disable GitHub Advanced Security for this repository. For more information, see "About GitHub Advanced Security." For standalone Code Scanning or Secret Protection products, this parameter cannot be used.
+  final SdkOptional<ReposUpdateRequestBodySecurityAndAnalysisAdvancedSecurity> advancedSecurity;
+  /// Use the `status` property to enable or disable GitHub Code Security for this repository.
+  final SdkOptional<ReposUpdateRequestBodySecurityAndAnalysisCodeSecurity> codeSecurity;
+  /// Use the `status` property to enable or disable secret scanning for this repository. For more information, see "About secret scanning."
+  final SdkOptional<ReposUpdateRequestBodySecurityAndAnalysisSecretScanning> secretScanning;
+  /// Use the `status` property to enable or disable secret scanning push protection for this repository. For more information, see "Protecting pushes with secret scanning."
+  final SdkOptional<ReposUpdateRequestBodySecurityAndAnalysisSecretScanningPushProtection> secretScanningPushProtection;
+  /// Use the `status` property to enable or disable secret scanning AI detection for this repository. For more information, see "[Responsible detection of generic secrets with AI](https://docs.github.com/code-security/secret-scanning/using-advanced-secret-scanning-and-push-protection-features/generic-secret-detection/responsible-ai-generic-secrets)."
+  final SdkOptional<ReposUpdateRequestBodySecurityAndAnalysisSecretScanningAiDetection> secretScanningAiDetection;
+  /// Use the `status` property to enable or disable secret scanning non-provider patterns for this repository. For more information, see "Supported secret scanning patterns."
+  final SdkOptional<ReposUpdateRequestBodySecurityAndAnalysisSecretScanningNonProviderPatterns> secretScanningNonProviderPatterns;
+  /// Use the `status` property to enable or disable secret scanning delegated alert dismissal for this repository.
+  final SdkOptional<ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedAlertDismissal> secretScanningDelegatedAlertDismissal;
+  /// Use the `status` property to enable or disable secret scanning delegated bypass for this repository.
+  final SdkOptional<ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypass> secretScanningDelegatedBypass;
+  /// Feature options for secret scanning delegated bypass. This object is only honored when `security_and_analysis.secret_scanning_delegated_bypass.status` is set to `enabled`. You can send this object in the same request as `secret_scanning_delegated_bypass`, or update just the options in a separate request.
+  final SdkOptional<ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptions> secretScanningDelegatedBypassOptions;
+
+  const ReposUpdateRequestBodySecurityAndAnalysis({this.advancedSecurity = const SdkOmitted(), this.codeSecurity = const SdkOmitted(), this.secretScanning = const SdkOmitted(), this.secretScanningPushProtection = const SdkOmitted(), this.secretScanningAiDetection = const SdkOmitted(), this.secretScanningNonProviderPatterns = const SdkOmitted(), this.secretScanningDelegatedAlertDismissal = const SdkOmitted(), this.secretScanningDelegatedBypass = const SdkOmitted(), this.secretScanningDelegatedBypassOptions = const SdkOmitted()});
+
+  ReposUpdateRequestBodySecurityAndAnalysis Function({SdkOptional<ReposUpdateRequestBodySecurityAndAnalysisAdvancedSecurity> advancedSecurity, SdkOptional<ReposUpdateRequestBodySecurityAndAnalysisCodeSecurity> codeSecurity, SdkOptional<ReposUpdateRequestBodySecurityAndAnalysisSecretScanning> secretScanning, SdkOptional<ReposUpdateRequestBodySecurityAndAnalysisSecretScanningPushProtection> secretScanningPushProtection, SdkOptional<ReposUpdateRequestBodySecurityAndAnalysisSecretScanningAiDetection> secretScanningAiDetection, SdkOptional<ReposUpdateRequestBodySecurityAndAnalysisSecretScanningNonProviderPatterns> secretScanningNonProviderPatterns, SdkOptional<ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedAlertDismissal> secretScanningDelegatedAlertDismissal, SdkOptional<ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypass> secretScanningDelegatedBypass, SdkOptional<ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptions> secretScanningDelegatedBypassOptions}) get copyWith => _copyWith;
+
+  ReposUpdateRequestBodySecurityAndAnalysis _copyWith({Object? advancedSecurity = sdkOmittedValue, Object? codeSecurity = sdkOmittedValue, Object? secretScanning = sdkOmittedValue, Object? secretScanningPushProtection = sdkOmittedValue, Object? secretScanningAiDetection = sdkOmittedValue, Object? secretScanningNonProviderPatterns = sdkOmittedValue, Object? secretScanningDelegatedAlertDismissal = sdkOmittedValue, Object? secretScanningDelegatedBypass = sdkOmittedValue, Object? secretScanningDelegatedBypassOptions = sdkOmittedValue}) => ReposUpdateRequestBodySecurityAndAnalysis(
+    advancedSecurity: identical(advancedSecurity, sdkOmittedValue) ? this.advancedSecurity : advancedSecurity as SdkOptional<ReposUpdateRequestBodySecurityAndAnalysisAdvancedSecurity>,
+    codeSecurity: identical(codeSecurity, sdkOmittedValue) ? this.codeSecurity : codeSecurity as SdkOptional<ReposUpdateRequestBodySecurityAndAnalysisCodeSecurity>,
+    secretScanning: identical(secretScanning, sdkOmittedValue) ? this.secretScanning : secretScanning as SdkOptional<ReposUpdateRequestBodySecurityAndAnalysisSecretScanning>,
+    secretScanningPushProtection: identical(secretScanningPushProtection, sdkOmittedValue) ? this.secretScanningPushProtection : secretScanningPushProtection as SdkOptional<ReposUpdateRequestBodySecurityAndAnalysisSecretScanningPushProtection>,
+    secretScanningAiDetection: identical(secretScanningAiDetection, sdkOmittedValue) ? this.secretScanningAiDetection : secretScanningAiDetection as SdkOptional<ReposUpdateRequestBodySecurityAndAnalysisSecretScanningAiDetection>,
+    secretScanningNonProviderPatterns: identical(secretScanningNonProviderPatterns, sdkOmittedValue) ? this.secretScanningNonProviderPatterns : secretScanningNonProviderPatterns as SdkOptional<ReposUpdateRequestBodySecurityAndAnalysisSecretScanningNonProviderPatterns>,
+    secretScanningDelegatedAlertDismissal: identical(secretScanningDelegatedAlertDismissal, sdkOmittedValue) ? this.secretScanningDelegatedAlertDismissal : secretScanningDelegatedAlertDismissal as SdkOptional<ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedAlertDismissal>,
+    secretScanningDelegatedBypass: identical(secretScanningDelegatedBypass, sdkOmittedValue) ? this.secretScanningDelegatedBypass : secretScanningDelegatedBypass as SdkOptional<ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypass>,
+    secretScanningDelegatedBypassOptions: identical(secretScanningDelegatedBypassOptions, sdkOmittedValue) ? this.secretScanningDelegatedBypassOptions : secretScanningDelegatedBypassOptions as SdkOptional<ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptions>,
+  );
+
+  factory ReposUpdateRequestBodySecurityAndAnalysis.fromJson(Map<String, dynamic> json) => ReposUpdateRequestBodySecurityAndAnalysis(
+    advancedSecurity: json['advanced_security'] != null ? SdkPresent((json['advanced_security'] != null ? ReposUpdateRequestBodySecurityAndAnalysisAdvancedSecurity.fromJson(json['advanced_security'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    codeSecurity: json['code_security'] != null ? SdkPresent((json['code_security'] != null ? ReposUpdateRequestBodySecurityAndAnalysisCodeSecurity.fromJson(json['code_security'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    secretScanning: json['secret_scanning'] != null ? SdkPresent((json['secret_scanning'] != null ? ReposUpdateRequestBodySecurityAndAnalysisSecretScanning.fromJson(json['secret_scanning'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    secretScanningPushProtection: json['secret_scanning_push_protection'] != null ? SdkPresent((json['secret_scanning_push_protection'] != null ? ReposUpdateRequestBodySecurityAndAnalysisSecretScanningPushProtection.fromJson(json['secret_scanning_push_protection'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    secretScanningAiDetection: json['secret_scanning_ai_detection'] != null ? SdkPresent((json['secret_scanning_ai_detection'] != null ? ReposUpdateRequestBodySecurityAndAnalysisSecretScanningAiDetection.fromJson(json['secret_scanning_ai_detection'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    secretScanningNonProviderPatterns: json['secret_scanning_non_provider_patterns'] != null ? SdkPresent((json['secret_scanning_non_provider_patterns'] != null ? ReposUpdateRequestBodySecurityAndAnalysisSecretScanningNonProviderPatterns.fromJson(json['secret_scanning_non_provider_patterns'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    secretScanningDelegatedAlertDismissal: json['secret_scanning_delegated_alert_dismissal'] != null ? SdkPresent((json['secret_scanning_delegated_alert_dismissal'] != null ? ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedAlertDismissal.fromJson(json['secret_scanning_delegated_alert_dismissal'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    secretScanningDelegatedBypass: json['secret_scanning_delegated_bypass'] != null ? SdkPresent((json['secret_scanning_delegated_bypass'] != null ? ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypass.fromJson(json['secret_scanning_delegated_bypass'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    secretScanningDelegatedBypassOptions: json['secret_scanning_delegated_bypass_options'] != null ? SdkPresent((json['secret_scanning_delegated_bypass_options'] != null ? ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptions.fromJson(json['secret_scanning_delegated_bypass_options'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    ...switch (advancedSecurity) {
+      SdkPresent<ReposUpdateRequestBodySecurityAndAnalysisAdvancedSecurity>(value: final value) => {'advanced_security': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (codeSecurity) {
+      SdkPresent<ReposUpdateRequestBodySecurityAndAnalysisCodeSecurity>(value: final value) => {'code_security': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (secretScanning) {
+      SdkPresent<ReposUpdateRequestBodySecurityAndAnalysisSecretScanning>(value: final value) => {'secret_scanning': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (secretScanningPushProtection) {
+      SdkPresent<ReposUpdateRequestBodySecurityAndAnalysisSecretScanningPushProtection>(value: final value) => {'secret_scanning_push_protection': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (secretScanningAiDetection) {
+      SdkPresent<ReposUpdateRequestBodySecurityAndAnalysisSecretScanningAiDetection>(value: final value) => {'secret_scanning_ai_detection': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (secretScanningNonProviderPatterns) {
+      SdkPresent<ReposUpdateRequestBodySecurityAndAnalysisSecretScanningNonProviderPatterns>(value: final value) => {'secret_scanning_non_provider_patterns': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (secretScanningDelegatedAlertDismissal) {
+      SdkPresent<ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedAlertDismissal>(value: final value) => {'secret_scanning_delegated_alert_dismissal': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (secretScanningDelegatedBypass) {
+      SdkPresent<ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypass>(value: final value) => {'secret_scanning_delegated_bypass': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (secretScanningDelegatedBypassOptions) {
+      SdkPresent<ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptions>(value: final value) => {'secret_scanning_delegated_bypass_options': value.toJson(),},
       _ => const <String, dynamic>{},
     },
   };

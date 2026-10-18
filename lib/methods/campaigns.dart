@@ -43,7 +43,7 @@ Future<List<CampaignSummary>> campaignsListOrgCampaigns(ClientConfig config,
           operationId: 'campaignsListOrgCampaigns',
           fromJsonRaw: (value) => (value as List).map((item) => CampaignSummary.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -112,7 +112,7 @@ Future<CampaignSummary> campaignsCreateCampaign(ClientConfig config,
           operationId: 'campaignsCreateCampaign',
           fromJsonRaw: (value) => CampaignSummary.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -132,7 +132,7 @@ Future<CampaignSummary> campaignsGetCampaignSummary(ClientConfig config,
           operationId: 'campaignsGetCampaignSummary',
           fromJsonRaw: (value) => CampaignSummary.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -199,7 +199,7 @@ Future<CampaignSummary> campaignsUpdateCampaign(ClientConfig config,
           operationId: 'campaignsUpdateCampaign',
           fromJsonRaw: (value) => CampaignSummary.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -218,6 +218,6 @@ Future<void> campaignsDeleteCampaign(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'campaignsDeleteCampaign',
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }

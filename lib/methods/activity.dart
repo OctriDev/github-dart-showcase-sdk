@@ -31,7 +31,7 @@ Future<List<Event>> activityListPublicEvents(ClientConfig config,
           operationId: 'activityListPublicEvents',
           fromJsonRaw: (value) => (value as List).map((item) => Event.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 

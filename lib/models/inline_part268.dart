@@ -4,273 +4,278 @@
 part of 'inline.dart';
 
 // Inline operation models (part 268)
-/// The reason the deployment failed processing.
-final class OrgsSetClusterDeploymentRecordsResponseErrorsItemCause {
+/// The default value for a merge commit message. - `PR_TITLE` - default to the pull request's title. - `PR_BODY` - default to the pull request's body. - `BLANK` - default to a blank commit message.
+final class ReposCreateForAuthenticatedUserRequestBodyMergeCommitMessage {
 
   final String value;
 
-  const OrgsSetClusterDeploymentRecordsResponseErrorsItemCause._(this.value);
+  const ReposCreateForAuthenticatedUserRequestBodyMergeCommitMessage._(this.value);
 
-  factory OrgsSetClusterDeploymentRecordsResponseErrorsItemCause.fromJson(String value) => OrgsSetClusterDeploymentRecordsResponseErrorsItemCause._(value);
+  factory ReposCreateForAuthenticatedUserRequestBodyMergeCommitMessage.fromJson(String value) => ReposCreateForAuthenticatedUserRequestBodyMergeCommitMessage._(value);
 
-  static const unauthorized = OrgsSetClusterDeploymentRecordsResponseErrorsItemCause._('unauthorized');
-  static const notFound = OrgsSetClusterDeploymentRecordsResponseErrorsItemCause._('not_found');
+  static const prBody = ReposCreateForAuthenticatedUserRequestBodyMergeCommitMessage._('PR_BODY');
+  static const prTitle = ReposCreateForAuthenticatedUserRequestBodyMergeCommitMessage._('PR_TITLE');
+  static const blank = ReposCreateForAuthenticatedUserRequestBodyMergeCommitMessage._('BLANK');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is OrgsSetClusterDeploymentRecordsResponseErrorsItemCause && other.value == value;
+  @override bool operator ==(Object other) => other is ReposCreateForAuthenticatedUserRequestBodyMergeCommitMessage && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-final class OrgsCreateClusterDeploymentRecordsJobRequestBodyDeploymentsItemRuntimeRisksItem {
+/// Required when using `merge_commit_message`. The default value for a merge commit title. - `PR_TITLE` - default to the pull request's title. - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
+final class ReposCreateForAuthenticatedUserRequestBodyMergeCommitTitle {
 
   final String value;
 
-  const OrgsCreateClusterDeploymentRecordsJobRequestBodyDeploymentsItemRuntimeRisksItem._(this.value);
+  const ReposCreateForAuthenticatedUserRequestBodyMergeCommitTitle._(this.value);
 
-  factory OrgsCreateClusterDeploymentRecordsJobRequestBodyDeploymentsItemRuntimeRisksItem.fromJson(String value) => OrgsCreateClusterDeploymentRecordsJobRequestBodyDeploymentsItemRuntimeRisksItem._(value);
+  factory ReposCreateForAuthenticatedUserRequestBodyMergeCommitTitle.fromJson(String value) => ReposCreateForAuthenticatedUserRequestBodyMergeCommitTitle._(value);
 
-  static const criticalResource = OrgsCreateClusterDeploymentRecordsJobRequestBodyDeploymentsItemRuntimeRisksItem._('critical-resource');
-  static const internetExposed = OrgsCreateClusterDeploymentRecordsJobRequestBodyDeploymentsItemRuntimeRisksItem._('internet-exposed');
-  static const lateralMovement = OrgsCreateClusterDeploymentRecordsJobRequestBodyDeploymentsItemRuntimeRisksItem._('lateral-movement');
-  static const sensitiveData = OrgsCreateClusterDeploymentRecordsJobRequestBodyDeploymentsItemRuntimeRisksItem._('sensitive-data');
+  static const prTitle = ReposCreateForAuthenticatedUserRequestBodyMergeCommitTitle._('PR_TITLE');
+  static const mergeMessage = ReposCreateForAuthenticatedUserRequestBodyMergeCommitTitle._('MERGE_MESSAGE');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is OrgsCreateClusterDeploymentRecordsJobRequestBodyDeploymentsItemRuntimeRisksItem && other.value == value;
+  @override bool operator ==(Object other) => other is ReposCreateForAuthenticatedUserRequestBodyMergeCommitTitle && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// The deployment status of the artifact.
-final class OrgsCreateClusterDeploymentRecordsJobRequestBodyDeploymentsItemStatus {
+/// The default value for a squash merge commit message: - `PR_BODY` - default to the pull request's body. - `COMMIT_MESSAGES` - default to the branch's commit messages. - `BLANK` - default to a blank commit message.
+final class ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitMessage {
 
   final String value;
 
-  const OrgsCreateClusterDeploymentRecordsJobRequestBodyDeploymentsItemStatus._(this.value);
+  const ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitMessage._(this.value);
 
-  factory OrgsCreateClusterDeploymentRecordsJobRequestBodyDeploymentsItemStatus.fromJson(String value) => OrgsCreateClusterDeploymentRecordsJobRequestBodyDeploymentsItemStatus._(value);
+  factory ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitMessage.fromJson(String value) => ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitMessage._(value);
 
-  static const deployed = OrgsCreateClusterDeploymentRecordsJobRequestBodyDeploymentsItemStatus._('deployed');
-  static const decommissioned = OrgsCreateClusterDeploymentRecordsJobRequestBodyDeploymentsItemStatus._('decommissioned');
+  static const prBody = ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitMessage._('PR_BODY');
+  static const commitMessages = ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitMessage._('COMMIT_MESSAGES');
+  static const blank = ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitMessage._('BLANK');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is OrgsCreateClusterDeploymentRecordsJobRequestBodyDeploymentsItemStatus && other.value == value;
+  @override bool operator ==(Object other) => other is ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitMessage && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// The current status of the job.
-final class OrgsGetClusterDeploymentRecordsJobResponseStatus {
+/// Required when using `squash_merge_commit_message`. The default value for a squash merge commit title: - `PR_TITLE` - default to the pull request's title. - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
+final class ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitTitle {
 
   final String value;
 
-  const OrgsGetClusterDeploymentRecordsJobResponseStatus._(this.value);
+  const ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitTitle._(this.value);
 
-  factory OrgsGetClusterDeploymentRecordsJobResponseStatus.fromJson(String value) => OrgsGetClusterDeploymentRecordsJobResponseStatus._(value);
+  factory ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitTitle.fromJson(String value) => ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitTitle._(value);
 
-  static const pending = OrgsGetClusterDeploymentRecordsJobResponseStatus._('pending');
-  static const processing = OrgsGetClusterDeploymentRecordsJobResponseStatus._('processing');
-  static const completed = OrgsGetClusterDeploymentRecordsJobResponseStatus._('completed');
-  static const failed = OrgsGetClusterDeploymentRecordsJobResponseStatus._('failed');
+  static const prTitle = ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitTitle._('PR_TITLE');
+  static const commitOrPrTitle = ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitTitle._('COMMIT_OR_PR_TITLE');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is OrgsGetClusterDeploymentRecordsJobResponseStatus && other.value == value;
+  @override bool operator ==(Object other) => other is ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitTitle && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// The status of the artifact (e.g., active, inactive).
-final class OrgsCreateArtifactStorageRecordRequestBodyStatus {
+/// The layout of the view.
+final class ProjectsCreateViewForUserRequestBodyLayout {
 
   final String value;
 
-  const OrgsCreateArtifactStorageRecordRequestBodyStatus._(this.value);
+  const ProjectsCreateViewForUserRequestBodyLayout._(this.value);
 
-  factory OrgsCreateArtifactStorageRecordRequestBodyStatus.fromJson(String value) => OrgsCreateArtifactStorageRecordRequestBodyStatus._(value);
+  factory ProjectsCreateViewForUserRequestBodyLayout.fromJson(String value) => ProjectsCreateViewForUserRequestBodyLayout._(value);
 
-  static const active = OrgsCreateArtifactStorageRecordRequestBodyStatus._('active');
-  static const eol = OrgsCreateArtifactStorageRecordRequestBodyStatus._('eol');
-  static const deleted = OrgsCreateArtifactStorageRecordRequestBodyStatus._('deleted');
+  static const table = ProjectsCreateViewForUserRequestBodyLayout._('table');
+  static const board = ProjectsCreateViewForUserRequestBodyLayout._('board');
+  static const roadmap = ProjectsCreateViewForUserRequestBodyLayout._('roadmap');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is OrgsCreateArtifactStorageRecordRequestBodyStatus && other.value == value;
+  @override bool operator ==(Object other) => other is ProjectsCreateViewForUserRequestBodyLayout && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-final class CampaignsListOrgCampaignsSort {
+/// The base role that determines default permissions for the space. - `no_access`: No default access (default) - `reader`: Makes the space publicly readable Note: User spaces do not support writer or admin base roles.
+final class CopilotSpacesCreateForUserRequestBodyBaseRole {
 
   final String value;
 
-  const CampaignsListOrgCampaignsSort._(this.value);
+  const CopilotSpacesCreateForUserRequestBodyBaseRole._(this.value);
 
-  factory CampaignsListOrgCampaignsSort.fromJson(String value) => CampaignsListOrgCampaignsSort._(value);
+  factory CopilotSpacesCreateForUserRequestBodyBaseRole.fromJson(String value) => CopilotSpacesCreateForUserRequestBodyBaseRole._(value);
 
-  static const created = CampaignsListOrgCampaignsSort._('created');
-  static const updated = CampaignsListOrgCampaignsSort._('updated');
-  static const endsAt = CampaignsListOrgCampaignsSort._('ends_at');
-  static const published = CampaignsListOrgCampaignsSort._('published');
+  static const reader = CopilotSpacesCreateForUserRequestBodyBaseRole._('reader');
+  static const noAccess = CopilotSpacesCreateForUserRequestBodyBaseRole._('no_access');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CampaignsListOrgCampaignsSort && other.value == value;
+  @override bool operator ==(Object other) => other is CopilotSpacesCreateForUserRequestBodyBaseRole && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-final class CodeScanningListAlertsForOrgSort {
+/// The type of resource.
+final class CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemResourceType {
 
   final String value;
 
-  const CodeScanningListAlertsForOrgSort._(this.value);
+  const CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemResourceType._(this.value);
 
-  factory CodeScanningListAlertsForOrgSort.fromJson(String value) => CodeScanningListAlertsForOrgSort._(value);
+  factory CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemResourceType.fromJson(String value) => CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemResourceType._(value);
 
-  static const created = CodeScanningListAlertsForOrgSort._('created');
-  static const updated = CodeScanningListAlertsForOrgSort._('updated');
+  static const repository = CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemResourceType._('repository');
+  static const githubFile = CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemResourceType._('github_file');
+  static const freeText = CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemResourceType._('free_text');
+  static const githubIssue = CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemResourceType._('github_issue');
+  static const githubPullRequest = CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemResourceType._('github_pull_request');
+  static const mediaContent = CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemResourceType._('media_content');
+  static const uploadedTextFile = CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemResourceType._('uploaded_text_file');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeScanningListAlertsForOrgSort && other.value == value;
+  @override bool operator ==(Object other) => other is CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemResourceType && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-final class CodeSecurityGetConfigurationsForOrgTargetType {
+/// The base role that determines default permissions for the space. Changing this field requires admin permissions. - `no_access`: No default access (default) - `reader`: Makes the space publicly readable Note: User spaces do not support writer or admin base roles.
+final class CopilotSpacesUpdateForUserRequestBodyBaseRole {
 
   final String value;
 
-  const CodeSecurityGetConfigurationsForOrgTargetType._(this.value);
+  const CopilotSpacesUpdateForUserRequestBodyBaseRole._(this.value);
 
-  factory CodeSecurityGetConfigurationsForOrgTargetType.fromJson(String value) => CodeSecurityGetConfigurationsForOrgTargetType._(value);
+  factory CopilotSpacesUpdateForUserRequestBodyBaseRole.fromJson(String value) => CopilotSpacesUpdateForUserRequestBodyBaseRole._(value);
 
-  static const global = CodeSecurityGetConfigurationsForOrgTargetType._('global');
-  static const all = CodeSecurityGetConfigurationsForOrgTargetType._('all');
+  static const reader = CopilotSpacesUpdateForUserRequestBodyBaseRole._('reader');
+  static const noAccess = CopilotSpacesUpdateForUserRequestBodyBaseRole._('no_access');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeSecurityGetConfigurationsForOrgTargetType && other.value == value;
+  @override bool operator ==(Object other) => other is CopilotSpacesUpdateForUserRequestBodyBaseRole && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// The enablement status of GitHub Advanced Security features. `enabled` will enable both Code Security and Secret Protection features. &gt; [!WARNING] &gt; `code_security` and `secret_protection` are deprecated values for this field. Prefer the individual `code_security` and `secret_protection` fields to set the status of these features.
-final class CodeSecurityCreateConfigurationRequestBodyAdvancedSecurity {
+/// The type of resource.
+final class CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType {
 
   final String value;
 
-  const CodeSecurityCreateConfigurationRequestBodyAdvancedSecurity._(this.value);
+  const CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType._(this.value);
 
-  factory CodeSecurityCreateConfigurationRequestBodyAdvancedSecurity.fromJson(String value) => CodeSecurityCreateConfigurationRequestBodyAdvancedSecurity._(value);
+  factory CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType.fromJson(String value) => CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType._(value);
 
-  static const enabled = CodeSecurityCreateConfigurationRequestBodyAdvancedSecurity._('enabled');
-  static const disabled = CodeSecurityCreateConfigurationRequestBodyAdvancedSecurity._('disabled');
-  static const codeSecurity = CodeSecurityCreateConfigurationRequestBodyAdvancedSecurity._('code_security');
-  static const secretProtection = CodeSecurityCreateConfigurationRequestBodyAdvancedSecurity._('secret_protection');
+  static const repository = CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType._('repository');
+  static const githubFile = CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType._('github_file');
+  static const freeText = CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType._('free_text');
+  static const githubIssue = CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType._('github_issue');
+  static const githubPullRequest = CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType._('github_pull_request');
+  static const mediaContent = CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType._('media_content');
+  static const uploadedTextFile = CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType._('uploaded_text_file');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeSecurityCreateConfigurationRequestBodyAdvancedSecurity && other.value == value;
+  @override bool operator ==(Object other) => other is CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// The enablement status of code scanning default setup
-final class CodeSecurityCreateConfigurationRequestBodyCodeScanningDefaultSetup {
+/// The type of actor (must be `User` for user-owned spaces; `Team` will be rejected).
+final class CopilotSpacesAddCollaboratorForUserRequestBodyActorType {
 
   final String value;
 
-  const CodeSecurityCreateConfigurationRequestBodyCodeScanningDefaultSetup._(this.value);
+  const CopilotSpacesAddCollaboratorForUserRequestBodyActorType._(this.value);
 
-  factory CodeSecurityCreateConfigurationRequestBodyCodeScanningDefaultSetup.fromJson(String value) => CodeSecurityCreateConfigurationRequestBodyCodeScanningDefaultSetup._(value);
+  factory CopilotSpacesAddCollaboratorForUserRequestBodyActorType.fromJson(String value) => CopilotSpacesAddCollaboratorForUserRequestBodyActorType._(value);
 
-  static const enabled = CodeSecurityCreateConfigurationRequestBodyCodeScanningDefaultSetup._('enabled');
-  static const disabled = CodeSecurityCreateConfigurationRequestBodyCodeScanningDefaultSetup._('disabled');
-  static const notSet = CodeSecurityCreateConfigurationRequestBodyCodeScanningDefaultSetup._('not_set');
+  static const user = CopilotSpacesAddCollaboratorForUserRequestBodyActorType._('User');
+  static const team = CopilotSpacesAddCollaboratorForUserRequestBodyActorType._('Team');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeSecurityCreateConfigurationRequestBodyCodeScanningDefaultSetup && other.value == value;
+  @override bool operator ==(Object other) => other is CopilotSpacesAddCollaboratorForUserRequestBodyActorType && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// The enablement status of code scanning delegated alert dismissal
-final class CodeSecurityCreateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal {
+/// The role to grant to the collaborator.
+final class CopilotSpacesAddCollaboratorForUserRequestBodyRole {
 
   final String value;
 
-  const CodeSecurityCreateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal._(this.value);
+  const CopilotSpacesAddCollaboratorForUserRequestBodyRole._(this.value);
 
-  factory CodeSecurityCreateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal.fromJson(String value) => CodeSecurityCreateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal._(value);
+  factory CopilotSpacesAddCollaboratorForUserRequestBodyRole.fromJson(String value) => CopilotSpacesAddCollaboratorForUserRequestBodyRole._(value);
 
-  static const enabled = CodeSecurityCreateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal._('enabled');
-  static const disabled = CodeSecurityCreateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal._('disabled');
-  static const notSet = CodeSecurityCreateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal._('not_set');
+  static const reader = CopilotSpacesAddCollaboratorForUserRequestBodyRole._('reader');
+  static const writer = CopilotSpacesAddCollaboratorForUserRequestBodyRole._('writer');
+  static const admin = CopilotSpacesAddCollaboratorForUserRequestBodyRole._('admin');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeSecurityCreateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal && other.value == value;
+  @override bool operator ==(Object other) => other is CopilotSpacesAddCollaboratorForUserRequestBodyRole && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// The enablement status of GitHub Code Security features.
-final class CodeSecurityCreateConfigurationRequestBodyCodeSecurity {
+final class CopilotSpacesRemoveCollaboratorForUserActorType {
 
   final String value;
 
-  const CodeSecurityCreateConfigurationRequestBodyCodeSecurity._(this.value);
+  const CopilotSpacesRemoveCollaboratorForUserActorType._(this.value);
 
-  factory CodeSecurityCreateConfigurationRequestBodyCodeSecurity.fromJson(String value) => CodeSecurityCreateConfigurationRequestBodyCodeSecurity._(value);
+  factory CopilotSpacesRemoveCollaboratorForUserActorType.fromJson(String value) => CopilotSpacesRemoveCollaboratorForUserActorType._(value);
 
-  static const enabled = CodeSecurityCreateConfigurationRequestBodyCodeSecurity._('enabled');
-  static const disabled = CodeSecurityCreateConfigurationRequestBodyCodeSecurity._('disabled');
-  static const notSet = CodeSecurityCreateConfigurationRequestBodyCodeSecurity._('not_set');
+  static const user = CopilotSpacesRemoveCollaboratorForUserActorType._('User');
+  static const team = CopilotSpacesRemoveCollaboratorForUserActorType._('Team');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeSecurityCreateConfigurationRequestBodyCodeSecurity && other.value == value;
+  @override bool operator ==(Object other) => other is CopilotSpacesRemoveCollaboratorForUserActorType && other.value == value;
 
   @override int get hashCode => value.hashCode;
 

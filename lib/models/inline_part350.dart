@@ -4,161 +4,36 @@
 part of 'inline.dart';
 
 // Inline operation models (part 350)
-class ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse {
+class IssuesUpdateResponseVariant1SuggestionsLabelsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final SdkOptional<int> totalCount;
-  final SdkOptional<List<Repository>> repositories;
-
-  const ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse({this.totalCount = const SdkOmitted(), this.repositories = const SdkOmitted()});
-
-  ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse Function({SdkOptional<int> totalCount, SdkOptional<List<Repository>> repositories}) get copyWith => _copyWith;
-
-  ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? repositories = sdkOmittedValue}) => ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as SdkOptional<int>,
-    repositories: identical(repositories, sdkOmittedValue) ? this.repositories : repositories as SdkOptional<List<Repository>>,
-  );
-
-  factory ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse.fromJson(Map<String, dynamic> json) => ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse(
-    totalCount: json['total_count'] != null ? SdkPresent(((json['total_count'] as num?)?.toInt())!) : const SdkOmitted(),
-    repositories: json['repositories'] != null ? SdkPresent(((json['repositories'] as List?)?.map((e) => Repository.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    ...switch (totalCount) {
-      SdkPresent<int>(value: final value) => {'total_count': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (repositories) {
-      SdkPresent<List<Repository>>(value: final value) => {'repositories': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
-}
-
-class ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// IDs of repositories that can use repository-level self-hosted runners
-  final List<int> selectedRepositoryIds;
-
-  const ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationRequestBody({required this.selectedRepositoryIds});
-
-  ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationRequestBody Function({List<int> selectedRepositoryIds}) get copyWith => _copyWith;
-
-  ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationRequestBody _copyWith({Object? selectedRepositoryIds = sdkOmittedValue}) => ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationRequestBody(
-    selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue) ? this.selectedRepositoryIds : selectedRepositoryIds as List<int>,
-  );
-
-  factory ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationRequestBody.fromJson(Map<String, dynamic> json) => ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationRequestBody(
-    selectedRepositoryIds: ((json['selected_repository_ids'] as List?)?.map((e) => (e as num).toInt()).toList())!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'selected_repository_ids': selectedRepositoryIds,
-  };
-}
-
-class ActionsGetOrgActionsPoliciesResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The total number of Actions policies.
-  final int totalCount;
-  /// An array of Actions policies.
-  final List<ActionsPolicy> policies;
-
-  const ActionsGetOrgActionsPoliciesResponse({required this.totalCount, required this.policies});
-
-  ActionsGetOrgActionsPoliciesResponse Function({int totalCount, List<ActionsPolicy> policies}) get copyWith => _copyWith;
-
-  ActionsGetOrgActionsPoliciesResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? policies = sdkOmittedValue}) => ActionsGetOrgActionsPoliciesResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    policies: identical(policies, sdkOmittedValue) ? this.policies : policies as List<ActionsPolicy>,
-  );
-
-  factory ActionsGetOrgActionsPoliciesResponse.fromJson(Map<String, dynamic> json) => ActionsGetOrgActionsPoliciesResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    policies: ((json['policies'] as List?)?.map((e) => ActionsPolicy.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'policies': policies.map((item) => item.toJson()).toList(),
-  };
-}
-
-class ActionsCreateOrgActionsPolicyRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The name of the policy.
-  final String name;
-  /// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
-  final RepositoryRuleEnforcement enforcement;
-  /// Conditions for an organization Actions policy. The conditions object should contain one of `repository_name`, `repository_id`, or `repository_property`, and may also contain `workflow_path`.
-  final SdkOptional<ActionsPolicyOrgConditions> conditions;
-  /// An array of rules within the policy.
-  final SdkOptional<List<ActionsRule>> rules;
-
-  const ActionsCreateOrgActionsPolicyRequestBody({required this.name, required this.enforcement, this.conditions = const SdkOmitted(), this.rules = const SdkOmitted()});
-
-  ActionsCreateOrgActionsPolicyRequestBody Function({String name, RepositoryRuleEnforcement enforcement, SdkOptional<ActionsPolicyOrgConditions> conditions, SdkOptional<List<ActionsRule>> rules}) get copyWith => _copyWith;
-
-  ActionsCreateOrgActionsPolicyRequestBody _copyWith({Object? name = sdkOmittedValue, Object? enforcement = sdkOmittedValue, Object? conditions = sdkOmittedValue, Object? rules = sdkOmittedValue}) => ActionsCreateOrgActionsPolicyRequestBody(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    enforcement: identical(enforcement, sdkOmittedValue) ? this.enforcement : enforcement as RepositoryRuleEnforcement,
-    conditions: identical(conditions, sdkOmittedValue) ? this.conditions : conditions as SdkOptional<ActionsPolicyOrgConditions>,
-    rules: identical(rules, sdkOmittedValue) ? this.rules : rules as SdkOptional<List<ActionsRule>>,
-  );
-
-  factory ActionsCreateOrgActionsPolicyRequestBody.fromJson(Map<String, dynamic> json) => ActionsCreateOrgActionsPolicyRequestBody(
-    name: (json['name'] as String?)!,
-    enforcement: (json['enforcement'] != null ? RepositoryRuleEnforcement.fromJson(json['enforcement'] as String) : null)!,
-    conditions: json['conditions'] != null ? SdkPresent((json['conditions'] != null ? ActionsPolicyOrgConditions.fromJson(json['conditions']) : null)!) : const SdkOmitted(),
-    rules: json['rules'] != null ? SdkPresent(((json['rules'] as List?)?.map((e) => ActionsRule.fromJson(e)).toList())!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    'name': name,
-    'enforcement': enforcement.toJson(),
-    ...switch (conditions) {
-      SdkPresent<ActionsPolicyOrgConditions>(value: final value) => {'conditions': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (rules) {
-      SdkPresent<List<ActionsRule>>(value: final value) => {'rules': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
-}
-
-class ActionsUpdateOrgActionsPolicyRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The name of the policy.
   final SdkOptional<String> name;
-  /// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
-  final SdkOptional<RepositoryRuleEnforcement> enforcement;
-  /// Conditions for an organization Actions policy. The conditions object should contain one of `repository_name`, `repository_id`, or `repository_property`, and may also contain `workflow_path`.
-  final SdkOptional<ActionsPolicyOrgConditions> conditions;
-  /// An array of rules within the policy.
-  final SdkOptional<List<ActionsRule>> rules;
+  final SdkOptional<String> rationale;
+  final SdkOptional<bool> suggest;
+  final SdkOptional<IssuesUpdateResponseVariant1SuggestionsLabelsItemConfidence> confidence;
+  final SdkOptional<bool> ignored;
+  final SdkOptional<IssuesUpdateResponseVariant1SuggestionsLabelsItemIgnoredReason> ignoredReason;
 
-  const ActionsUpdateOrgActionsPolicyRequestBody({this.name = const SdkOmitted(), this.enforcement = const SdkOmitted(), this.conditions = const SdkOmitted(), this.rules = const SdkOmitted()});
+  const IssuesUpdateResponseVariant1SuggestionsLabelsItem({this.name = const SdkOmitted(), this.rationale = const SdkOmitted(), this.suggest = const SdkOmitted(), this.confidence = const SdkOmitted(), this.ignored = const SdkOmitted(), this.ignoredReason = const SdkOmitted()});
 
-  ActionsUpdateOrgActionsPolicyRequestBody Function({SdkOptional<String> name, SdkOptional<RepositoryRuleEnforcement> enforcement, SdkOptional<ActionsPolicyOrgConditions> conditions, SdkOptional<List<ActionsRule>> rules}) get copyWith => _copyWith;
+  IssuesUpdateResponseVariant1SuggestionsLabelsItem Function({SdkOptional<String> name, SdkOptional<String> rationale, SdkOptional<bool> suggest, SdkOptional<IssuesUpdateResponseVariant1SuggestionsLabelsItemConfidence> confidence, SdkOptional<bool> ignored, SdkOptional<IssuesUpdateResponseVariant1SuggestionsLabelsItemIgnoredReason> ignoredReason}) get copyWith => _copyWith;
 
-  ActionsUpdateOrgActionsPolicyRequestBody _copyWith({Object? name = sdkOmittedValue, Object? enforcement = sdkOmittedValue, Object? conditions = sdkOmittedValue, Object? rules = sdkOmittedValue}) => ActionsUpdateOrgActionsPolicyRequestBody(
+  IssuesUpdateResponseVariant1SuggestionsLabelsItem _copyWith({Object? name = sdkOmittedValue, Object? rationale = sdkOmittedValue, Object? suggest = sdkOmittedValue, Object? confidence = sdkOmittedValue, Object? ignored = sdkOmittedValue, Object? ignoredReason = sdkOmittedValue}) => IssuesUpdateResponseVariant1SuggestionsLabelsItem(
     name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    enforcement: identical(enforcement, sdkOmittedValue) ? this.enforcement : enforcement as SdkOptional<RepositoryRuleEnforcement>,
-    conditions: identical(conditions, sdkOmittedValue) ? this.conditions : conditions as SdkOptional<ActionsPolicyOrgConditions>,
-    rules: identical(rules, sdkOmittedValue) ? this.rules : rules as SdkOptional<List<ActionsRule>>,
+    rationale: identical(rationale, sdkOmittedValue) ? this.rationale : rationale as SdkOptional<String>,
+    suggest: identical(suggest, sdkOmittedValue) ? this.suggest : suggest as SdkOptional<bool>,
+    confidence: identical(confidence, sdkOmittedValue) ? this.confidence : confidence as SdkOptional<IssuesUpdateResponseVariant1SuggestionsLabelsItemConfidence>,
+    ignored: identical(ignored, sdkOmittedValue) ? this.ignored : ignored as SdkOptional<bool>,
+    ignoredReason: identical(ignoredReason, sdkOmittedValue) ? this.ignoredReason : ignoredReason as SdkOptional<IssuesUpdateResponseVariant1SuggestionsLabelsItemIgnoredReason>,
   );
 
-  factory ActionsUpdateOrgActionsPolicyRequestBody.fromJson(Map<String, dynamic> json) => ActionsUpdateOrgActionsPolicyRequestBody(
+  factory IssuesUpdateResponseVariant1SuggestionsLabelsItem.fromJson(Map<String, dynamic> json) => IssuesUpdateResponseVariant1SuggestionsLabelsItem(
     name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    enforcement: json['enforcement'] != null ? SdkPresent((json['enforcement'] != null ? RepositoryRuleEnforcement.fromJson(json['enforcement'] as String) : null)!) : const SdkOmitted(),
-    conditions: json['conditions'] != null ? SdkPresent((json['conditions'] != null ? ActionsPolicyOrgConditions.fromJson(json['conditions']) : null)!) : const SdkOmitted(),
-    rules: json['rules'] != null ? SdkPresent(((json['rules'] as List?)?.map((e) => ActionsRule.fromJson(e)).toList())!) : const SdkOmitted(),
+    rationale: json['rationale'] != null ? SdkPresent((json['rationale'] as String?)!) : const SdkOmitted(),
+    suggest: json['suggest'] != null ? SdkPresent((json['suggest'] as bool?)!) : const SdkOmitted(),
+    confidence: json['confidence'] != null ? SdkPresent((json['confidence'] != null ? IssuesUpdateResponseVariant1SuggestionsLabelsItemConfidence.fromJson(json['confidence'] as String) : null)!) : const SdkOmitted(),
+    ignored: json['ignored'] != null ? SdkPresent((json['ignored'] as bool?)!) : const SdkOmitted(),
+    ignoredReason: json['ignored_reason'] != null ? SdkPresent((json['ignored_reason'] != null ? IssuesUpdateResponseVariant1SuggestionsLabelsItemIgnoredReason.fromJson(json['ignored_reason'] as String) : null)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
@@ -166,121 +41,212 @@ class ActionsUpdateOrgActionsPolicyRequestBody {
       SdkPresent<String>(value: final value) => {'name': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (enforcement) {
-      SdkPresent<RepositoryRuleEnforcement>(value: final value) => {'enforcement': value.toJson(),},
+    ...switch (rationale) {
+      SdkPresent<String>(value: final value) => {'rationale': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (conditions) {
-      SdkPresent<ActionsPolicyOrgConditions>(value: final value) => {'conditions': value.toJson(),},
+    ...switch (suggest) {
+      SdkPresent<bool>(value: final value) => {'suggest': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (rules) {
-      SdkPresent<List<ActionsRule>>(value: final value) => {'rules': value.map((item) => item.toJson()).toList(),},
+    ...switch (confidence) {
+      SdkPresent<IssuesUpdateResponseVariant1SuggestionsLabelsItemConfidence>(value: final value) => {'confidence': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (ignored) {
+      SdkPresent<bool>(value: final value) => {'ignored': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (ignoredReason) {
+      SdkPresent<IssuesUpdateResponseVariant1SuggestionsLabelsItemIgnoredReason>(value: final value) => {'ignored_reason': value.toJson(),},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-class ActionsListSelfHostedRunnerGroupsForOrgResponse {
+class IssuesUpdateResponseVariant1SuggestionsAssigneesItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final double totalCount;
-  final List<RunnerGroupsOrg> runnerGroups;
+  final SdkOptional<String> login;
+  final SdkOptional<String> rationale;
+  final SdkOptional<bool> suggest;
+  final SdkOptional<IssuesUpdateResponseVariant1SuggestionsAssigneesItemConfidence> confidence;
+  final SdkOptional<bool> ignored;
+  final SdkOptional<IssuesUpdateResponseVariant1SuggestionsAssigneesItemIgnoredReason> ignoredReason;
 
-  const ActionsListSelfHostedRunnerGroupsForOrgResponse({required this.totalCount, required this.runnerGroups});
+  const IssuesUpdateResponseVariant1SuggestionsAssigneesItem({this.login = const SdkOmitted(), this.rationale = const SdkOmitted(), this.suggest = const SdkOmitted(), this.confidence = const SdkOmitted(), this.ignored = const SdkOmitted(), this.ignoredReason = const SdkOmitted()});
 
-  ActionsListSelfHostedRunnerGroupsForOrgResponse Function({double totalCount, List<RunnerGroupsOrg> runnerGroups}) get copyWith => _copyWith;
+  IssuesUpdateResponseVariant1SuggestionsAssigneesItem Function({SdkOptional<String> login, SdkOptional<String> rationale, SdkOptional<bool> suggest, SdkOptional<IssuesUpdateResponseVariant1SuggestionsAssigneesItemConfidence> confidence, SdkOptional<bool> ignored, SdkOptional<IssuesUpdateResponseVariant1SuggestionsAssigneesItemIgnoredReason> ignoredReason}) get copyWith => _copyWith;
 
-  ActionsListSelfHostedRunnerGroupsForOrgResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? runnerGroups = sdkOmittedValue}) => ActionsListSelfHostedRunnerGroupsForOrgResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as double,
-    runnerGroups: identical(runnerGroups, sdkOmittedValue) ? this.runnerGroups : runnerGroups as List<RunnerGroupsOrg>,
+  IssuesUpdateResponseVariant1SuggestionsAssigneesItem _copyWith({Object? login = sdkOmittedValue, Object? rationale = sdkOmittedValue, Object? suggest = sdkOmittedValue, Object? confidence = sdkOmittedValue, Object? ignored = sdkOmittedValue, Object? ignoredReason = sdkOmittedValue}) => IssuesUpdateResponseVariant1SuggestionsAssigneesItem(
+    login: identical(login, sdkOmittedValue) ? this.login : login as SdkOptional<String>,
+    rationale: identical(rationale, sdkOmittedValue) ? this.rationale : rationale as SdkOptional<String>,
+    suggest: identical(suggest, sdkOmittedValue) ? this.suggest : suggest as SdkOptional<bool>,
+    confidence: identical(confidence, sdkOmittedValue) ? this.confidence : confidence as SdkOptional<IssuesUpdateResponseVariant1SuggestionsAssigneesItemConfidence>,
+    ignored: identical(ignored, sdkOmittedValue) ? this.ignored : ignored as SdkOptional<bool>,
+    ignoredReason: identical(ignoredReason, sdkOmittedValue) ? this.ignoredReason : ignoredReason as SdkOptional<IssuesUpdateResponseVariant1SuggestionsAssigneesItemIgnoredReason>,
   );
 
-  factory ActionsListSelfHostedRunnerGroupsForOrgResponse.fromJson(Map<String, dynamic> json) => ActionsListSelfHostedRunnerGroupsForOrgResponse(
-    totalCount: ((json['total_count'] as num?)?.toDouble())!,
-    runnerGroups: ((json['runner_groups'] as List?)?.map((e) => RunnerGroupsOrg.fromJson(e as Map<String, dynamic>)).toList())!,
+  factory IssuesUpdateResponseVariant1SuggestionsAssigneesItem.fromJson(Map<String, dynamic> json) => IssuesUpdateResponseVariant1SuggestionsAssigneesItem(
+    login: json['login'] != null ? SdkPresent((json['login'] as String?)!) : const SdkOmitted(),
+    rationale: json['rationale'] != null ? SdkPresent((json['rationale'] as String?)!) : const SdkOmitted(),
+    suggest: json['suggest'] != null ? SdkPresent((json['suggest'] as bool?)!) : const SdkOmitted(),
+    confidence: json['confidence'] != null ? SdkPresent((json['confidence'] != null ? IssuesUpdateResponseVariant1SuggestionsAssigneesItemConfidence.fromJson(json['confidence'] as String) : null)!) : const SdkOmitted(),
+    ignored: json['ignored'] != null ? SdkPresent((json['ignored'] as bool?)!) : const SdkOmitted(),
+    ignoredReason: json['ignored_reason'] != null ? SdkPresent((json['ignored_reason'] != null ? IssuesUpdateResponseVariant1SuggestionsAssigneesItemIgnoredReason.fromJson(json['ignored_reason'] as String) : null)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'runner_groups': runnerGroups.map((item) => item.toJson()).toList(),
+    ...switch (login) {
+      SdkPresent<String>(value: final value) => {'login': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (rationale) {
+      SdkPresent<String>(value: final value) => {'rationale': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (suggest) {
+      SdkPresent<bool>(value: final value) => {'suggest': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (confidence) {
+      SdkPresent<IssuesUpdateResponseVariant1SuggestionsAssigneesItemConfidence>(value: final value) => {'confidence': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (ignored) {
+      SdkPresent<bool>(value: final value) => {'ignored': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (ignoredReason) {
+      SdkPresent<IssuesUpdateResponseVariant1SuggestionsAssigneesItemIgnoredReason>(value: final value) => {'ignored_reason': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
   };
 }
 
-class ActionsCreateSelfHostedRunnerGroupForOrgRequestBody {
+class IssuesUpdateResponseVariant1SuggestionsStateItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// Name of the runner group.
-  final String name;
-  /// Visibility of a runner group. You can select all repositories, select individual repositories, or limit access to private repositories.
-  final SdkOptional<ActionsCreateSelfHostedRunnerGroupForOrgRequestBodyVisibility> visibility;
-  /// List of repository IDs that can access the runner group.
-  final SdkOptional<List<int>> selectedRepositoryIds;
-  /// List of runner IDs to add to the runner group.
-  final SdkOptional<List<int>> runners;
-  /// Whether the runner group can be used by `public` repositories.
-  final SdkOptional<bool> allowsPublicRepositories;
-  /// If `true`, the runner group will be restricted to running only the workflows specified in the `selected_workflows` array.
-  final SdkOptional<bool> restrictedToWorkflows;
-  /// List of workflows the runner group should be allowed to run. This setting will be ignored unless `restricted_to_workflows` is set to `true`.
-  final SdkOptional<List<String>> selectedWorkflows;
-  /// The identifier of a hosted compute network configuration.
-  final SdkOptional<String> networkConfigurationId;
+  final SdkOptional<String> value;
+  final SdkOptional<String> stateReason;
+  final SdkOptional<int> duplicateIssueId;
+  final SdkOptional<String> rationale;
+  final SdkOptional<bool> suggest;
+  final SdkOptional<IssuesUpdateResponseVariant1SuggestionsStateItemConfidence> confidence;
+  final SdkOptional<bool> ignored;
+  final SdkOptional<IssuesUpdateResponseVariant1SuggestionsStateItemIgnoredReason> ignoredReason;
 
-  const ActionsCreateSelfHostedRunnerGroupForOrgRequestBody({required this.name, this.visibility = const SdkOmitted(), this.selectedRepositoryIds = const SdkOmitted(), this.runners = const SdkOmitted(), this.allowsPublicRepositories = const SdkOmitted(), this.restrictedToWorkflows = const SdkOmitted(), this.selectedWorkflows = const SdkOmitted(), this.networkConfigurationId = const SdkOmitted()});
+  const IssuesUpdateResponseVariant1SuggestionsStateItem({this.value = const SdkOmitted(), this.stateReason = const SdkOmitted(), this.duplicateIssueId = const SdkOmitted(), this.rationale = const SdkOmitted(), this.suggest = const SdkOmitted(), this.confidence = const SdkOmitted(), this.ignored = const SdkOmitted(), this.ignoredReason = const SdkOmitted()});
 
-  ActionsCreateSelfHostedRunnerGroupForOrgRequestBody Function({String name, SdkOptional<ActionsCreateSelfHostedRunnerGroupForOrgRequestBodyVisibility> visibility, SdkOptional<List<int>> selectedRepositoryIds, SdkOptional<List<int>> runners, SdkOptional<bool> allowsPublicRepositories, SdkOptional<bool> restrictedToWorkflows, SdkOptional<List<String>> selectedWorkflows, SdkOptional<String> networkConfigurationId}) get copyWith => _copyWith;
+  IssuesUpdateResponseVariant1SuggestionsStateItem Function({SdkOptional<String> value, SdkOptional<String> stateReason, SdkOptional<int> duplicateIssueId, SdkOptional<String> rationale, SdkOptional<bool> suggest, SdkOptional<IssuesUpdateResponseVariant1SuggestionsStateItemConfidence> confidence, SdkOptional<bool> ignored, SdkOptional<IssuesUpdateResponseVariant1SuggestionsStateItemIgnoredReason> ignoredReason}) get copyWith => _copyWith;
 
-  ActionsCreateSelfHostedRunnerGroupForOrgRequestBody _copyWith({Object? name = sdkOmittedValue, Object? visibility = sdkOmittedValue, Object? selectedRepositoryIds = sdkOmittedValue, Object? runners = sdkOmittedValue, Object? allowsPublicRepositories = sdkOmittedValue, Object? restrictedToWorkflows = sdkOmittedValue, Object? selectedWorkflows = sdkOmittedValue, Object? networkConfigurationId = sdkOmittedValue}) => ActionsCreateSelfHostedRunnerGroupForOrgRequestBody(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    visibility: identical(visibility, sdkOmittedValue) ? this.visibility : visibility as SdkOptional<ActionsCreateSelfHostedRunnerGroupForOrgRequestBodyVisibility>,
-    selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue) ? this.selectedRepositoryIds : selectedRepositoryIds as SdkOptional<List<int>>,
-    runners: identical(runners, sdkOmittedValue) ? this.runners : runners as SdkOptional<List<int>>,
-    allowsPublicRepositories: identical(allowsPublicRepositories, sdkOmittedValue) ? this.allowsPublicRepositories : allowsPublicRepositories as SdkOptional<bool>,
-    restrictedToWorkflows: identical(restrictedToWorkflows, sdkOmittedValue) ? this.restrictedToWorkflows : restrictedToWorkflows as SdkOptional<bool>,
-    selectedWorkflows: identical(selectedWorkflows, sdkOmittedValue) ? this.selectedWorkflows : selectedWorkflows as SdkOptional<List<String>>,
-    networkConfigurationId: identical(networkConfigurationId, sdkOmittedValue) ? this.networkConfigurationId : networkConfigurationId as SdkOptional<String>,
+  IssuesUpdateResponseVariant1SuggestionsStateItem _copyWith({Object? value = sdkOmittedValue, Object? stateReason = sdkOmittedValue, Object? duplicateIssueId = sdkOmittedValue, Object? rationale = sdkOmittedValue, Object? suggest = sdkOmittedValue, Object? confidence = sdkOmittedValue, Object? ignored = sdkOmittedValue, Object? ignoredReason = sdkOmittedValue}) => IssuesUpdateResponseVariant1SuggestionsStateItem(
+    value: identical(value, sdkOmittedValue) ? this.value : value as SdkOptional<String>,
+    stateReason: identical(stateReason, sdkOmittedValue) ? this.stateReason : stateReason as SdkOptional<String>,
+    duplicateIssueId: identical(duplicateIssueId, sdkOmittedValue) ? this.duplicateIssueId : duplicateIssueId as SdkOptional<int>,
+    rationale: identical(rationale, sdkOmittedValue) ? this.rationale : rationale as SdkOptional<String>,
+    suggest: identical(suggest, sdkOmittedValue) ? this.suggest : suggest as SdkOptional<bool>,
+    confidence: identical(confidence, sdkOmittedValue) ? this.confidence : confidence as SdkOptional<IssuesUpdateResponseVariant1SuggestionsStateItemConfidence>,
+    ignored: identical(ignored, sdkOmittedValue) ? this.ignored : ignored as SdkOptional<bool>,
+    ignoredReason: identical(ignoredReason, sdkOmittedValue) ? this.ignoredReason : ignoredReason as SdkOptional<IssuesUpdateResponseVariant1SuggestionsStateItemIgnoredReason>,
   );
 
-  factory ActionsCreateSelfHostedRunnerGroupForOrgRequestBody.fromJson(Map<String, dynamic> json) => ActionsCreateSelfHostedRunnerGroupForOrgRequestBody(
-    name: (json['name'] as String?)!,
-    visibility: json['visibility'] != null ? SdkPresent((json['visibility'] != null ? ActionsCreateSelfHostedRunnerGroupForOrgRequestBodyVisibility.fromJson(json['visibility'] as String) : null)!) : const SdkOmitted(),
-    selectedRepositoryIds: json['selected_repository_ids'] != null ? SdkPresent(((json['selected_repository_ids'] as List?)?.map((e) => (e as num).toInt()).toList())!) : const SdkOmitted(),
-    runners: json['runners'] != null ? SdkPresent(((json['runners'] as List?)?.map((e) => (e as num).toInt()).toList())!) : const SdkOmitted(),
-    allowsPublicRepositories: json['allows_public_repositories'] != null ? SdkPresent((json['allows_public_repositories'] as bool?)!) : const SdkOmitted(),
-    restrictedToWorkflows: json['restricted_to_workflows'] != null ? SdkPresent((json['restricted_to_workflows'] as bool?)!) : const SdkOmitted(),
-    selectedWorkflows: json['selected_workflows'] != null ? SdkPresent(((json['selected_workflows'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    networkConfigurationId: json['network_configuration_id'] != null ? SdkPresent((json['network_configuration_id'] as String?)!) : const SdkOmitted(),
+  factory IssuesUpdateResponseVariant1SuggestionsStateItem.fromJson(Map<String, dynamic> json) => IssuesUpdateResponseVariant1SuggestionsStateItem(
+    value: json['value'] != null ? SdkPresent((json['value'] as String?)!) : const SdkOmitted(),
+    stateReason: json['state_reason'] != null ? SdkPresent((json['state_reason'] as String?)!) : const SdkOmitted(),
+    duplicateIssueId: json['duplicate_issue_id'] != null ? SdkPresent(((json['duplicate_issue_id'] as num?)?.toInt())!) : const SdkOmitted(),
+    rationale: json['rationale'] != null ? SdkPresent((json['rationale'] as String?)!) : const SdkOmitted(),
+    suggest: json['suggest'] != null ? SdkPresent((json['suggest'] as bool?)!) : const SdkOmitted(),
+    confidence: json['confidence'] != null ? SdkPresent((json['confidence'] != null ? IssuesUpdateResponseVariant1SuggestionsStateItemConfidence.fromJson(json['confidence'] as String) : null)!) : const SdkOmitted(),
+    ignored: json['ignored'] != null ? SdkPresent((json['ignored'] as bool?)!) : const SdkOmitted(),
+    ignoredReason: json['ignored_reason'] != null ? SdkPresent((json['ignored_reason'] != null ? IssuesUpdateResponseVariant1SuggestionsStateItemIgnoredReason.fromJson(json['ignored_reason'] as String) : null)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    ...switch (visibility) {
-      SdkPresent<ActionsCreateSelfHostedRunnerGroupForOrgRequestBodyVisibility>(value: final value) => {'visibility': value.toJson(),},
+    ...switch (value) {
+      SdkPresent<String>(value: final value) => {'value': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (selectedRepositoryIds) {
-      SdkPresent<List<int>>(value: final value) => {'selected_repository_ids': value,},
+    ...switch (stateReason) {
+      SdkPresent<String>(value: final value) => {'state_reason': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (runners) {
-      SdkPresent<List<int>>(value: final value) => {'runners': value,},
+    ...switch (duplicateIssueId) {
+      SdkPresent<int>(value: final value) => {'duplicate_issue_id': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (allowsPublicRepositories) {
-      SdkPresent<bool>(value: final value) => {'allows_public_repositories': value,},
+    ...switch (rationale) {
+      SdkPresent<String>(value: final value) => {'rationale': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (restrictedToWorkflows) {
-      SdkPresent<bool>(value: final value) => {'restricted_to_workflows': value,},
+    ...switch (suggest) {
+      SdkPresent<bool>(value: final value) => {'suggest': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (selectedWorkflows) {
-      SdkPresent<List<String>>(value: final value) => {'selected_workflows': value,},
+    ...switch (confidence) {
+      SdkPresent<IssuesUpdateResponseVariant1SuggestionsStateItemConfidence>(value: final value) => {'confidence': value.toJson(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (networkConfigurationId) {
-      SdkPresent<String>(value: final value) => {'network_configuration_id': value,},
+    ...switch (ignored) {
+      SdkPresent<bool>(value: final value) => {'ignored': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (ignoredReason) {
+      SdkPresent<IssuesUpdateResponseVariant1SuggestionsStateItemIgnoredReason>(value: final value) => {'ignored_reason': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
+}
+
+/// Pending suggestions for each suggestible field (`type`, `issue_field_values`, `labels`, `assignees`, `state`) the request touched. Omitted for fields not in the request or with no pending or ignored suggestions. Items tagged `ignored` are echoes of the current request's inputs that were not persisted as pending suggestions.
+class IssuesUpdateResponseVariant1Suggestions {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  final SdkOptional<List<IssuesUpdateResponseVariant1SuggestionsTypeItem>> type_;
+  final SdkOptional<List<IssuesUpdateResponseVariant1SuggestionsIssueFieldValuesItem>> issueFieldValues;
+  final SdkOptional<List<IssuesUpdateResponseVariant1SuggestionsLabelsItem>> labels;
+  final SdkOptional<List<IssuesUpdateResponseVariant1SuggestionsAssigneesItem>> assignees;
+  final SdkOptional<List<IssuesUpdateResponseVariant1SuggestionsStateItem>> state;
+
+  const IssuesUpdateResponseVariant1Suggestions({this.type_ = const SdkOmitted(), this.issueFieldValues = const SdkOmitted(), this.labels = const SdkOmitted(), this.assignees = const SdkOmitted(), this.state = const SdkOmitted()});
+
+  IssuesUpdateResponseVariant1Suggestions Function({SdkOptional<List<IssuesUpdateResponseVariant1SuggestionsTypeItem>> type_, SdkOptional<List<IssuesUpdateResponseVariant1SuggestionsIssueFieldValuesItem>> issueFieldValues, SdkOptional<List<IssuesUpdateResponseVariant1SuggestionsLabelsItem>> labels, SdkOptional<List<IssuesUpdateResponseVariant1SuggestionsAssigneesItem>> assignees, SdkOptional<List<IssuesUpdateResponseVariant1SuggestionsStateItem>> state}) get copyWith => _copyWith;
+
+  IssuesUpdateResponseVariant1Suggestions _copyWith({Object? type_ = sdkOmittedValue, Object? issueFieldValues = sdkOmittedValue, Object? labels = sdkOmittedValue, Object? assignees = sdkOmittedValue, Object? state = sdkOmittedValue}) => IssuesUpdateResponseVariant1Suggestions(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<List<IssuesUpdateResponseVariant1SuggestionsTypeItem>>,
+    issueFieldValues: identical(issueFieldValues, sdkOmittedValue) ? this.issueFieldValues : issueFieldValues as SdkOptional<List<IssuesUpdateResponseVariant1SuggestionsIssueFieldValuesItem>>,
+    labels: identical(labels, sdkOmittedValue) ? this.labels : labels as SdkOptional<List<IssuesUpdateResponseVariant1SuggestionsLabelsItem>>,
+    assignees: identical(assignees, sdkOmittedValue) ? this.assignees : assignees as SdkOptional<List<IssuesUpdateResponseVariant1SuggestionsAssigneesItem>>,
+    state: identical(state, sdkOmittedValue) ? this.state : state as SdkOptional<List<IssuesUpdateResponseVariant1SuggestionsStateItem>>,
+  );
+
+  factory IssuesUpdateResponseVariant1Suggestions.fromJson(Map<String, dynamic> json) => IssuesUpdateResponseVariant1Suggestions(
+    type_: json['type'] != null ? SdkPresent(((json['type'] as List?)?.map((e) => IssuesUpdateResponseVariant1SuggestionsTypeItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+    issueFieldValues: json['issue_field_values'] != null ? SdkPresent(((json['issue_field_values'] as List?)?.map((e) => IssuesUpdateResponseVariant1SuggestionsIssueFieldValuesItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+    labels: json['labels'] != null ? SdkPresent(((json['labels'] as List?)?.map((e) => IssuesUpdateResponseVariant1SuggestionsLabelsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+    assignees: json['assignees'] != null ? SdkPresent(((json['assignees'] as List?)?.map((e) => IssuesUpdateResponseVariant1SuggestionsAssigneesItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+    state: json['state'] != null ? SdkPresent(((json['state'] as List?)?.map((e) => IssuesUpdateResponseVariant1SuggestionsStateItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    ...switch (type_) {
+      SdkPresent<List<IssuesUpdateResponseVariant1SuggestionsTypeItem>>(value: final value) => {'type': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (issueFieldValues) {
+      SdkPresent<List<IssuesUpdateResponseVariant1SuggestionsIssueFieldValuesItem>>(value: final value) => {'issue_field_values': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (labels) {
+      SdkPresent<List<IssuesUpdateResponseVariant1SuggestionsLabelsItem>>(value: final value) => {'labels': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (assignees) {
+      SdkPresent<List<IssuesUpdateResponseVariant1SuggestionsAssigneesItem>>(value: final value) => {'assignees': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (state) {
+      SdkPresent<List<IssuesUpdateResponseVariant1SuggestionsStateItem>>(value: final value) => {'state': value.map((item) => item.toJson()).toList(),},
       _ => const <String, dynamic>{},
     },
   };

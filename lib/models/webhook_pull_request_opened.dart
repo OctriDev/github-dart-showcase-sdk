@@ -5,7 +5,6 @@
 import '../sdk_utils.dart';
 import 'inline.dart';
 import 'misc.dart';
-import 'pull_request.dart';
 import 'repository.dart';
 import 'shared_simple.dart';
 import 'simple.dart';

@@ -4,6 +4,97 @@
 part of 'inline.dart';
 
 // Inline operation models (part 24)
+/// The phase of the lifecycle that the job is currently in.
+final class JobStepsItemStatus {
+
+  final String value;
+
+  const JobStepsItemStatus._(this.value);
+
+  factory JobStepsItemStatus.fromJson(String value) => JobStepsItemStatus._(value);
+
+  static const queued = JobStepsItemStatus._('queued');
+  static const inProgress = JobStepsItemStatus._('in_progress');
+  static const completed = JobStepsItemStatus._('completed');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is JobStepsItemStatus && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// Required enumerated value serialized in the `price_model` wire field.
+final class MarketplaceListingPlanPriceModel {
+
+  final String value;
+
+  const MarketplaceListingPlanPriceModel._(this.value);
+
+  factory MarketplaceListingPlanPriceModel.fromJson(String value) => MarketplaceListingPlanPriceModel._(value);
+
+  static const free = MarketplaceListingPlanPriceModel._('FREE');
+  static const flatRate = MarketplaceListingPlanPriceModel._('FLAT_RATE');
+  static const perUnit = MarketplaceListingPlanPriceModel._('PER_UNIT');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is MarketplaceListingPlanPriceModel && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// Optional enumerated value serialized in the `merge_type` wire field.
+final class MergedUpstreamMergeType {
+
+  final String value;
+
+  const MergedUpstreamMergeType._(this.value);
+
+  factory MergedUpstreamMergeType.fromJson(String value) => MergedUpstreamMergeType._(value);
+
+  static const merge = MergedUpstreamMergeType._('merge');
+  static const fastForward = MergedUpstreamMergeType._('fast-forward');
+  static const none = MergedUpstreamMergeType._('none');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is MergedUpstreamMergeType && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// The state of the milestone.
+final class MilestoneState {
+
+  final String value;
+
+  const MilestoneState._(this.value);
+
+  factory MilestoneState.fromJson(String value) => MilestoneState._(value);
+
+  static const open = MilestoneState._('open');
+  static const closed = MilestoneState._('closed');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is MilestoneState && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
 /// The policy controlling who can create pull requests: all or collaborators_only.
 final class MinimalRepositoryPullRequestCreationPolicy {
 
@@ -181,98 +272,6 @@ final class NullableMinimalRepositoryPullRequestCreationPolicy {
   @override String toString() => value.toString();
 
   @override bool operator ==(Object other) => other is NullableMinimalRepositoryPullRequestCreationPolicy && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The current status.
-final class NullableProjectsV2StatusUpdateStatus {
-
-  final String value;
-
-  const NullableProjectsV2StatusUpdateStatus._(this.value);
-
-  factory NullableProjectsV2StatusUpdateStatus.fromJson(String value) => NullableProjectsV2StatusUpdateStatus._(value);
-
-  static const inactive = NullableProjectsV2StatusUpdateStatus._('INACTIVE');
-  static const onTrack = NullableProjectsV2StatusUpdateStatus._('ON_TRACK');
-  static const atRisk = NullableProjectsV2StatusUpdateStatus._('AT_RISK');
-  static const offTrack = NullableProjectsV2StatusUpdateStatus._('OFF_TRACK');
-  static const complete = NullableProjectsV2StatusUpdateStatus._('COMPLETE');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is NullableProjectsV2StatusUpdateStatus && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The default value for a merge commit message. - `PR_TITLE` - default to the pull request's title. - `PR_BODY` - default to the pull request's body. - `BLANK` - default to a blank commit message.
-final class NullableRepositoryMergeCommitMessage {
-
-  final String value;
-
-  const NullableRepositoryMergeCommitMessage._(this.value);
-
-  factory NullableRepositoryMergeCommitMessage.fromJson(String value) => NullableRepositoryMergeCommitMessage._(value);
-
-  static const prBody = NullableRepositoryMergeCommitMessage._('PR_BODY');
-  static const prTitle = NullableRepositoryMergeCommitMessage._('PR_TITLE');
-  static const blank = NullableRepositoryMergeCommitMessage._('BLANK');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is NullableRepositoryMergeCommitMessage && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The default value for a merge commit title. - `PR_TITLE` - default to the pull request's title. - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
-final class NullableRepositoryMergeCommitTitle {
-
-  final String value;
-
-  const NullableRepositoryMergeCommitTitle._(this.value);
-
-  factory NullableRepositoryMergeCommitTitle.fromJson(String value) => NullableRepositoryMergeCommitTitle._(value);
-
-  static const prTitle = NullableRepositoryMergeCommitTitle._('PR_TITLE');
-  static const mergeMessage = NullableRepositoryMergeCommitTitle._('MERGE_MESSAGE');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is NullableRepositoryMergeCommitTitle && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The policy controlling who can create pull requests: all or collaborators_only.
-final class NullableRepositoryPullRequestCreationPolicy {
-
-  final String value;
-
-  const NullableRepositoryPullRequestCreationPolicy._(this.value);
-
-  factory NullableRepositoryPullRequestCreationPolicy.fromJson(String value) => NullableRepositoryPullRequestCreationPolicy._(value);
-
-  static const all = NullableRepositoryPullRequestCreationPolicy._('all');
-  static const collaboratorsOnly = NullableRepositoryPullRequestCreationPolicy._('collaborators_only');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is NullableRepositoryPullRequestCreationPolicy && other.value == value;
 
   @override int get hashCode => value.hashCode;
 

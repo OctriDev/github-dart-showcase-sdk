@@ -4,277 +4,288 @@
 part of 'inline.dart';
 
 // Inline operation models (part 264)
-/// The enablement status of Dependabot security updates
-final class CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotSecurityUpdates {
+final class ReactionsListForPullRequestReviewCommentContent {
 
   final String value;
 
-  const CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotSecurityUpdates._(this.value);
+  const ReactionsListForPullRequestReviewCommentContent._(this.value);
 
-  factory CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotSecurityUpdates.fromJson(String value) => CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotSecurityUpdates._(value);
+  factory ReactionsListForPullRequestReviewCommentContent.fromJson(String value) => ReactionsListForPullRequestReviewCommentContent._(value);
 
-  static const enabled = CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotSecurityUpdates._('enabled');
-  static const disabled = CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotSecurityUpdates._('disabled');
-  static const notSet = CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotSecurityUpdates._('not_set');
+  static const plus1 = ReactionsListForPullRequestReviewCommentContent._('+1');
+  static const minus1 = ReactionsListForPullRequestReviewCommentContent._('-1');
+  static const laugh = ReactionsListForPullRequestReviewCommentContent._('laugh');
+  static const confused = ReactionsListForPullRequestReviewCommentContent._('confused');
+  static const heart = ReactionsListForPullRequestReviewCommentContent._('heart');
+  static const hooray = ReactionsListForPullRequestReviewCommentContent._('hooray');
+  static const rocket = ReactionsListForPullRequestReviewCommentContent._('rocket');
+  static const eyes = ReactionsListForPullRequestReviewCommentContent._('eyes');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotSecurityUpdates && other.value == value;
+  @override bool operator ==(Object other) => other is ReactionsListForPullRequestReviewCommentContent && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// The enablement status of Dependency Graph
-final class CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraph {
+/// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the pull request review comment.
+final class ReactionsCreateForPullRequestReviewCommentRequestBodyContent {
 
   final String value;
 
-  const CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraph._(this.value);
+  const ReactionsCreateForPullRequestReviewCommentRequestBodyContent._(this.value);
 
-  factory CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraph.fromJson(String value) => CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraph._(value);
+  factory ReactionsCreateForPullRequestReviewCommentRequestBodyContent.fromJson(String value) => ReactionsCreateForPullRequestReviewCommentRequestBodyContent._(value);
 
-  static const enabled = CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraph._('enabled');
-  static const disabled = CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraph._('disabled');
-  static const notSet = CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraph._('not_set');
+  static const plus1 = ReactionsCreateForPullRequestReviewCommentRequestBodyContent._('+1');
+  static const minus1 = ReactionsCreateForPullRequestReviewCommentRequestBodyContent._('-1');
+  static const laugh = ReactionsCreateForPullRequestReviewCommentRequestBodyContent._('laugh');
+  static const confused = ReactionsCreateForPullRequestReviewCommentRequestBodyContent._('confused');
+  static const heart = ReactionsCreateForPullRequestReviewCommentRequestBodyContent._('heart');
+  static const hooray = ReactionsCreateForPullRequestReviewCommentRequestBodyContent._('hooray');
+  static const rocket = ReactionsCreateForPullRequestReviewCommentRequestBodyContent._('rocket');
+  static const eyes = ReactionsCreateForPullRequestReviewCommentRequestBodyContent._('eyes');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraph && other.value == value;
+  @override bool operator ==(Object other) => other is ReactionsCreateForPullRequestReviewCommentRequestBodyContent && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// The enablement status of Automatic dependency submission
-final class CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitAction {
+/// Specifies whether this release should be set as the latest release for the repository. Drafts and prereleases cannot be set as latest. Defaults to `true` for newly published releases. `legacy` specifies that the latest release should be determined based on the release creation date and higher semantic version.
+final class ReposCreateReleaseRequestBodyMakeLatest {
 
   final String value;
 
-  const CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitAction._(this.value);
+  const ReposCreateReleaseRequestBodyMakeLatest._(this.value);
 
-  factory CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitAction.fromJson(String value) => CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitAction._(value);
+  factory ReposCreateReleaseRequestBodyMakeLatest.fromJson(String value) => ReposCreateReleaseRequestBodyMakeLatest._(value);
 
-  static const enabled = CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitAction._('enabled');
-  static const disabled = CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitAction._('disabled');
-  static const notSet = CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitAction._('not_set');
+  static const true_ = ReposCreateReleaseRequestBodyMakeLatest._('true');
+  static const false_ = ReposCreateReleaseRequestBodyMakeLatest._('false');
+  static const legacy = ReposCreateReleaseRequestBodyMakeLatest._('legacy');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitAction && other.value == value;
+  @override bool operator ==(Object other) => other is ReposCreateReleaseRequestBodyMakeLatest && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// The enforcement status for a security configuration
-final class CodeSecurityUpdateEnterpriseConfigurationRequestBodyEnforcement {
+/// Specifies whether this release should be set as the latest release for the repository. Drafts and prereleases cannot be set as latest. Defaults to `true` for newly published releases. `legacy` specifies that the latest release should be determined based on the release creation date and higher semantic version.
+final class ReposUpdateReleaseRequestBodyMakeLatest {
 
   final String value;
 
-  const CodeSecurityUpdateEnterpriseConfigurationRequestBodyEnforcement._(this.value);
+  const ReposUpdateReleaseRequestBodyMakeLatest._(this.value);
 
-  factory CodeSecurityUpdateEnterpriseConfigurationRequestBodyEnforcement.fromJson(String value) => CodeSecurityUpdateEnterpriseConfigurationRequestBodyEnforcement._(value);
+  factory ReposUpdateReleaseRequestBodyMakeLatest.fromJson(String value) => ReposUpdateReleaseRequestBodyMakeLatest._(value);
 
-  static const enforced = CodeSecurityUpdateEnterpriseConfigurationRequestBodyEnforcement._('enforced');
-  static const unenforced = CodeSecurityUpdateEnterpriseConfigurationRequestBodyEnforcement._('unenforced');
-  static const enterpriseEnforced = CodeSecurityUpdateEnterpriseConfigurationRequestBodyEnforcement._('enterprise_enforced');
+  static const true_ = ReposUpdateReleaseRequestBodyMakeLatest._('true');
+  static const false_ = ReposUpdateReleaseRequestBodyMakeLatest._('false');
+  static const legacy = ReposUpdateReleaseRequestBodyMakeLatest._('legacy');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeSecurityUpdateEnterpriseConfigurationRequestBodyEnforcement && other.value == value;
+  @override bool operator ==(Object other) => other is ReposUpdateReleaseRequestBodyMakeLatest && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// The enablement status of private vulnerability reporting
-final class CodeSecurityUpdateEnterpriseConfigurationRequestBodyPrivateVulnerabilityReporting {
+final class ReactionsListForReleaseContent {
 
   final String value;
 
-  const CodeSecurityUpdateEnterpriseConfigurationRequestBodyPrivateVulnerabilityReporting._(this.value);
+  const ReactionsListForReleaseContent._(this.value);
 
-  factory CodeSecurityUpdateEnterpriseConfigurationRequestBodyPrivateVulnerabilityReporting.fromJson(String value) => CodeSecurityUpdateEnterpriseConfigurationRequestBodyPrivateVulnerabilityReporting._(value);
+  factory ReactionsListForReleaseContent.fromJson(String value) => ReactionsListForReleaseContent._(value);
 
-  static const enabled = CodeSecurityUpdateEnterpriseConfigurationRequestBodyPrivateVulnerabilityReporting._('enabled');
-  static const disabled = CodeSecurityUpdateEnterpriseConfigurationRequestBodyPrivateVulnerabilityReporting._('disabled');
-  static const notSet = CodeSecurityUpdateEnterpriseConfigurationRequestBodyPrivateVulnerabilityReporting._('not_set');
+  static const plus1 = ReactionsListForReleaseContent._('+1');
+  static const laugh = ReactionsListForReleaseContent._('laugh');
+  static const heart = ReactionsListForReleaseContent._('heart');
+  static const hooray = ReactionsListForReleaseContent._('hooray');
+  static const rocket = ReactionsListForReleaseContent._('rocket');
+  static const eyes = ReactionsListForReleaseContent._('eyes');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeSecurityUpdateEnterpriseConfigurationRequestBodyPrivateVulnerabilityReporting && other.value == value;
+  @override bool operator ==(Object other) => other is ReactionsListForReleaseContent && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// The enablement status of GitHub Secret Protection features.
-final class CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretProtection {
+/// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the release.
+final class ReactionsCreateForReleaseRequestBodyContent {
 
   final String value;
 
-  const CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretProtection._(this.value);
+  const ReactionsCreateForReleaseRequestBodyContent._(this.value);
 
-  factory CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretProtection.fromJson(String value) => CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretProtection._(value);
+  factory ReactionsCreateForReleaseRequestBodyContent.fromJson(String value) => ReactionsCreateForReleaseRequestBodyContent._(value);
 
-  static const enabled = CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretProtection._('enabled');
-  static const disabled = CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretProtection._('disabled');
-  static const notSet = CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretProtection._('not_set');
+  static const plus1 = ReactionsCreateForReleaseRequestBodyContent._('+1');
+  static const laugh = ReactionsCreateForReleaseRequestBodyContent._('laugh');
+  static const heart = ReactionsCreateForReleaseRequestBodyContent._('heart');
+  static const hooray = ReactionsCreateForReleaseRequestBodyContent._('hooray');
+  static const rocket = ReactionsCreateForReleaseRequestBodyContent._('rocket');
+  static const eyes = ReactionsCreateForReleaseRequestBodyContent._('eyes');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretProtection && other.value == value;
+  @override bool operator ==(Object other) => other is ReactionsCreateForReleaseRequestBodyContent && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// The enablement status of secret scanning
-final class CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanning {
+/// The target of the ruleset
+final class ReposCreateRepoRulesetRequestBodyTarget {
 
   final String value;
 
-  const CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanning._(this.value);
+  const ReposCreateRepoRulesetRequestBodyTarget._(this.value);
 
-  factory CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanning.fromJson(String value) => CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanning._(value);
+  factory ReposCreateRepoRulesetRequestBodyTarget.fromJson(String value) => ReposCreateRepoRulesetRequestBodyTarget._(value);
 
-  static const enabled = CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanning._('enabled');
-  static const disabled = CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanning._('disabled');
-  static const notSet = CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanning._('not_set');
+  static const branch = ReposCreateRepoRulesetRequestBodyTarget._('branch');
+  static const tag = ReposCreateRepoRulesetRequestBodyTarget._('tag');
+  static const push = ReposCreateRepoRulesetRequestBodyTarget._('push');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanning && other.value == value;
+  @override bool operator ==(Object other) => other is ReposCreateRepoRulesetRequestBodyTarget && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// The enablement status of secret scanning delegated alert dismissal
-final class CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningDelegatedAlertDismissal {
+/// The target of the ruleset
+final class ReposUpdateRepoRulesetRequestBodyTarget {
 
   final String value;
 
-  const CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningDelegatedAlertDismissal._(this.value);
+  const ReposUpdateRepoRulesetRequestBodyTarget._(this.value);
 
-  factory CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningDelegatedAlertDismissal.fromJson(String value) => CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningDelegatedAlertDismissal._(value);
+  factory ReposUpdateRepoRulesetRequestBodyTarget.fromJson(String value) => ReposUpdateRepoRulesetRequestBodyTarget._(value);
 
-  static const enabled = CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningDelegatedAlertDismissal._('enabled');
-  static const disabled = CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningDelegatedAlertDismissal._('disabled');
-  static const notSet = CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningDelegatedAlertDismissal._('not_set');
+  static const branch = ReposUpdateRepoRulesetRequestBodyTarget._('branch');
+  static const tag = ReposUpdateRepoRulesetRequestBodyTarget._('tag');
+  static const push = ReposUpdateRepoRulesetRequestBodyTarget._('push');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningDelegatedAlertDismissal && other.value == value;
+  @override bool operator ==(Object other) => other is ReposUpdateRepoRulesetRequestBodyTarget && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// The enablement status of secret scanning extended metadata
-final class CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningExtendedMetadata {
+/// Sets the validity of the secret scanning alert. Can be `active`, `inactive`, or `null` to clear the override.
+final class SecretScanningUpdateAlertRequestBodyValidity {
 
   final String value;
 
-  const CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningExtendedMetadata._(this.value);
+  const SecretScanningUpdateAlertRequestBodyValidity._(this.value);
 
-  factory CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningExtendedMetadata.fromJson(String value) => CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningExtendedMetadata._(value);
+  factory SecretScanningUpdateAlertRequestBodyValidity.fromJson(String value) => SecretScanningUpdateAlertRequestBodyValidity._(value);
 
-  static const enabled = CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningExtendedMetadata._('enabled');
-  static const disabled = CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningExtendedMetadata._('disabled');
-  static const notSet = CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningExtendedMetadata._('not_set');
+  static const active = SecretScanningUpdateAlertRequestBodyValidity._('active');
+  static const inactive = SecretScanningUpdateAlertRequestBodyValidity._('inactive');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningExtendedMetadata && other.value == value;
+  @override bool operator ==(Object other) => other is SecretScanningUpdateAlertRequestBodyValidity && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// The enablement status of Copilot secret scanning
-final class CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningGenericSecrets {
+/// What to do with alerts associated with the deleted patterns. `delete_alerts` permanently removes the alerts. `resolve_alerts` resolves the alerts as "pattern deleted". Defaults to `delete_alerts` when not specified.
+final class SecretScanningBulkDeleteRepoCustomPatternsRequestBodyPostDeleteAction {
 
   final String value;
 
-  const CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningGenericSecrets._(this.value);
+  const SecretScanningBulkDeleteRepoCustomPatternsRequestBodyPostDeleteAction._(this.value);
 
-  factory CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningGenericSecrets.fromJson(String value) => CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningGenericSecrets._(value);
+  factory SecretScanningBulkDeleteRepoCustomPatternsRequestBodyPostDeleteAction.fromJson(String value) => SecretScanningBulkDeleteRepoCustomPatternsRequestBodyPostDeleteAction._(value);
 
-  static const enabled = CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningGenericSecrets._('enabled');
-  static const disabled = CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningGenericSecrets._('disabled');
-  static const notSet = CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningGenericSecrets._('not_set');
+  static const deleteAlerts = SecretScanningBulkDeleteRepoCustomPatternsRequestBodyPostDeleteAction._('delete_alerts');
+  static const resolveAlerts = SecretScanningBulkDeleteRepoCustomPatternsRequestBodyPostDeleteAction._('resolve_alerts');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningGenericSecrets && other.value == value;
+  @override bool operator ==(Object other) => other is SecretScanningBulkDeleteRepoCustomPatternsRequestBodyPostDeleteAction && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// The enablement status of secret scanning non-provider patterns
-final class CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningNonProviderPatterns {
+final class SecurityAdvisoriesListRepositoryAdvisoriesSort {
 
   final String value;
 
-  const CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningNonProviderPatterns._(this.value);
+  const SecurityAdvisoriesListRepositoryAdvisoriesSort._(this.value);
 
-  factory CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningNonProviderPatterns.fromJson(String value) => CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningNonProviderPatterns._(value);
+  factory SecurityAdvisoriesListRepositoryAdvisoriesSort.fromJson(String value) => SecurityAdvisoriesListRepositoryAdvisoriesSort._(value);
 
-  static const enabled = CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningNonProviderPatterns._('enabled');
-  static const disabled = CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningNonProviderPatterns._('disabled');
-  static const notSet = CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningNonProviderPatterns._('not_set');
+  static const created = SecurityAdvisoriesListRepositoryAdvisoriesSort._('created');
+  static const updated = SecurityAdvisoriesListRepositoryAdvisoriesSort._('updated');
+  static const published = SecurityAdvisoriesListRepositoryAdvisoriesSort._('published');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningNonProviderPatterns && other.value == value;
+  @override bool operator ==(Object other) => other is SecurityAdvisoriesListRepositoryAdvisoriesSort && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// The enablement status of secret scanning push protection
-final class CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningPushProtection {
+final class SecurityAdvisoriesListRepositoryAdvisoriesState {
 
   final String value;
 
-  const CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningPushProtection._(this.value);
+  const SecurityAdvisoriesListRepositoryAdvisoriesState._(this.value);
 
-  factory CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningPushProtection.fromJson(String value) => CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningPushProtection._(value);
+  factory SecurityAdvisoriesListRepositoryAdvisoriesState.fromJson(String value) => SecurityAdvisoriesListRepositoryAdvisoriesState._(value);
 
-  static const enabled = CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningPushProtection._('enabled');
-  static const disabled = CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningPushProtection._('disabled');
-  static const notSet = CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningPushProtection._('not_set');
+  static const triage = SecurityAdvisoriesListRepositoryAdvisoriesState._('triage');
+  static const draft = SecurityAdvisoriesListRepositoryAdvisoriesState._('draft');
+  static const published = SecurityAdvisoriesListRepositoryAdvisoriesState._('published');
+  static const closed = SecurityAdvisoriesListRepositoryAdvisoriesState._('closed');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningPushProtection && other.value == value;
+  @override bool operator ==(Object other) => other is SecurityAdvisoriesListRepositoryAdvisoriesState && other.value == value;
 
   @override int get hashCode => value.hashCode;
 

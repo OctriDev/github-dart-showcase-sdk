@@ -4,6 +4,87 @@
 part of 'inline.dart';
 
 // Inline operation models (part 15)
+/// The attachment status of the code security configuration on the repository.
+final class CodeSecurityConfigurationForRepositoryStatus {
+
+  final String value;
+
+  const CodeSecurityConfigurationForRepositoryStatus._(this.value);
+
+  factory CodeSecurityConfigurationForRepositoryStatus.fromJson(String value) => CodeSecurityConfigurationForRepositoryStatus._(value);
+
+  static const attached = CodeSecurityConfigurationForRepositoryStatus._('attached');
+  static const attaching = CodeSecurityConfigurationForRepositoryStatus._('attaching');
+  static const detached = CodeSecurityConfigurationForRepositoryStatus._('detached');
+  static const removed = CodeSecurityConfigurationForRepositoryStatus._('removed');
+  static const enforced = CodeSecurityConfigurationForRepositoryStatus._('enforced');
+  static const failed = CodeSecurityConfigurationForRepositoryStatus._('failed');
+  static const updating = CodeSecurityConfigurationForRepositoryStatus._('updating');
+  static const removedByEnterprise = CodeSecurityConfigurationForRepositoryStatus._('removed_by_enterprise');
+  static const enterpriseEnforced = CodeSecurityConfigurationForRepositoryStatus._('enterprise_enforced');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is CodeSecurityConfigurationForRepositoryStatus && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// The attachment status of the code security configuration on the repository.
+final class CodeSecurityConfigurationRepositoriesStatus {
+
+  final String value;
+
+  const CodeSecurityConfigurationRepositoriesStatus._(this.value);
+
+  factory CodeSecurityConfigurationRepositoriesStatus.fromJson(String value) => CodeSecurityConfigurationRepositoriesStatus._(value);
+
+  static const attached = CodeSecurityConfigurationRepositoriesStatus._('attached');
+  static const attaching = CodeSecurityConfigurationRepositoriesStatus._('attaching');
+  static const detached = CodeSecurityConfigurationRepositoriesStatus._('detached');
+  static const removed = CodeSecurityConfigurationRepositoriesStatus._('removed');
+  static const enforced = CodeSecurityConfigurationRepositoriesStatus._('enforced');
+  static const failed = CodeSecurityConfigurationRepositoriesStatus._('failed');
+  static const updating = CodeSecurityConfigurationRepositoriesStatus._('updating');
+  static const removedByEnterprise = CodeSecurityConfigurationRepositoriesStatus._('removed_by_enterprise');
+  static const enterpriseEnforced = CodeSecurityConfigurationRepositoriesStatus._('enterprise_enforced');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is CodeSecurityConfigurationRepositoriesStatus && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// The visibility of newly created repositories for which the code security configuration will be applied to by default
+final class CodeSecurityDefaultConfigurationsItemDefaultForNewRepos {
+
+  final String value;
+
+  const CodeSecurityDefaultConfigurationsItemDefaultForNewRepos._(this.value);
+
+  factory CodeSecurityDefaultConfigurationsItemDefaultForNewRepos.fromJson(String value) => CodeSecurityDefaultConfigurationsItemDefaultForNewRepos._(value);
+
+  static const public = CodeSecurityDefaultConfigurationsItemDefaultForNewRepos._('public');
+  static const privateAndInternal = CodeSecurityDefaultConfigurationsItemDefaultForNewRepos._('private_and_internal');
+  static const all = CodeSecurityDefaultConfigurationsItemDefaultForNewRepos._('all');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is CodeSecurityDefaultConfigurationsItemDefaultForNewRepos && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
 /// The initally assigned location of a new codespace.
 final class CodespaceLocation {
 
@@ -190,97 +271,6 @@ final class CodespaceWithFullRepositoryState {
   @override String toString() => value.toString();
 
   @override bool operator ==(Object other) => other is CodespaceWithFullRepositoryState && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// Required enumerated value serialized in the `status` wire field.
-final class CommitComparisonStatus {
-
-  final String value;
-
-  const CommitComparisonStatus._(this.value);
-
-  factory CommitComparisonStatus.fromJson(String value) => CommitComparisonStatus._(value);
-
-  static const diverged = CommitComparisonStatus._('diverged');
-  static const ahead = CommitComparisonStatus._('ahead');
-  static const behind = CommitComparisonStatus._('behind');
-  static const identical = CommitComparisonStatus._('identical');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is CommitComparisonStatus && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// Required enumerated value serialized in the `status` wire field.
-final class ConcurrencyGroupGroupMembersItemStatus {
-
-  final String value;
-
-  const ConcurrencyGroupGroupMembersItemStatus._(this.value);
-
-  factory ConcurrencyGroupGroupMembersItemStatus.fromJson(String value) => ConcurrencyGroupGroupMembersItemStatus._(value);
-
-  static const inProgress = ConcurrencyGroupGroupMembersItemStatus._('in_progress');
-  static const pending = ConcurrencyGroupGroupMembersItemStatus._('pending');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is ConcurrencyGroupGroupMembersItemStatus && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// Required enumerated value serialized in the `status` wire field.
-final class ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItemStatus {
-
-  final String value;
-
-  const ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItemStatus._(this.value);
-
-  factory ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItemStatus.fromJson(String value) => ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItemStatus._(value);
-
-  static const inProgress = ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItemStatus._('in_progress');
-  static const pending = ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItemStatus._('pending');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItemStatus && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-final class ContentDirectoryItemType {
-
-  final String value;
-
-  const ContentDirectoryItemType._(this.value);
-
-  factory ContentDirectoryItemType.fromJson(String value) => ContentDirectoryItemType._(value);
-
-  static const dir = ContentDirectoryItemType._('dir');
-  static const file = ContentDirectoryItemType._('file');
-  static const submodule = ContentDirectoryItemType._('submodule');
-  static const symlink = ContentDirectoryItemType._('symlink');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is ContentDirectoryItemType && other.value == value;
 
   @override int get hashCode => value.hashCode;
 

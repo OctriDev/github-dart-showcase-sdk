@@ -4,265 +4,260 @@
 part of 'inline.dart';
 
 // Inline operation models (part 394)
-class CopilotSpacesListForOrgResponse {
+class ReposCreateDeploymentProtectionRuleRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The list of Copilot Spaces on this page of results.
-  final List<CopilotSpace> spaces;
+  /// The ID of the custom app that will be enabled on the environment.
+  final SdkOptional<int> integrationId;
 
-  const CopilotSpacesListForOrgResponse({required this.spaces});
+  const ReposCreateDeploymentProtectionRuleRequestBody({this.integrationId = const SdkOmitted()});
 
-  CopilotSpacesListForOrgResponse Function({List<CopilotSpace> spaces}) get copyWith => _copyWith;
+  ReposCreateDeploymentProtectionRuleRequestBody Function({SdkOptional<int> integrationId}) get copyWith => _copyWith;
 
-  CopilotSpacesListForOrgResponse _copyWith({Object? spaces = sdkOmittedValue}) => CopilotSpacesListForOrgResponse(
-    spaces: identical(spaces, sdkOmittedValue) ? this.spaces : spaces as List<CopilotSpace>,
+  ReposCreateDeploymentProtectionRuleRequestBody _copyWith({Object? integrationId = sdkOmittedValue}) => ReposCreateDeploymentProtectionRuleRequestBody(
+    integrationId: identical(integrationId, sdkOmittedValue) ? this.integrationId : integrationId as SdkOptional<int>,
   );
 
-  factory CopilotSpacesListForOrgResponse.fromJson(Map<String, dynamic> json) => CopilotSpacesListForOrgResponse(
-    spaces: ((json['spaces'] as List?)?.map((e) => CopilotSpace.fromJson(e as Map<String, dynamic>)).toList())!,
+  factory ReposCreateDeploymentProtectionRuleRequestBody.fromJson(Map<String, dynamic> json) => ReposCreateDeploymentProtectionRuleRequestBody(
+    integrationId: json['integration_id'] != null ? SdkPresent(((json['integration_id'] as num?)?.toInt())!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    'spaces': spaces.map((item) => item.toJson()).toList(),
+    ...switch (integrationId) {
+      SdkPresent<int>(value: final value) => {'integration_id': value,},
+      _ => const <String, dynamic>{},
+    },
   };
 }
 
-/// Metadata specific to the resource type.
-class CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata {
+class ReposListCustomDeploymentRuleIntegrationsResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// Repository ID for repository or file resources.
-  final SdkOptional<int> repositoryId;
-  /// File path for file resources.
-  final SdkOptional<String> filePath;
-  /// Text content for free text resources.
-  final SdkOptional<String> text;
-  /// Name for the resource.
-  final SdkOptional<String> name;
-  /// Issue or PR number.
-  final SdkOptional<int> number;
+  /// The total number of custom deployment protection rule integrations available for this environment.
+  final SdkOptional<int> totalCount;
+  final SdkOptional<List<CustomDeploymentRuleApp>> availableCustomDeploymentProtectionRuleIntegrations;
 
-  const CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata({this.repositoryId = const SdkOmitted(), this.filePath = const SdkOmitted(), this.text = const SdkOmitted(), this.name = const SdkOmitted(), this.number = const SdkOmitted()});
+  const ReposListCustomDeploymentRuleIntegrationsResponse({this.totalCount = const SdkOmitted(), this.availableCustomDeploymentProtectionRuleIntegrations = const SdkOmitted()});
 
-  CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata Function({SdkOptional<int> repositoryId, SdkOptional<String> filePath, SdkOptional<String> text, SdkOptional<String> name, SdkOptional<int> number}) get copyWith => _copyWith;
+  ReposListCustomDeploymentRuleIntegrationsResponse Function({SdkOptional<int> totalCount, SdkOptional<List<CustomDeploymentRuleApp>> availableCustomDeploymentProtectionRuleIntegrations}) get copyWith => _copyWith;
 
-  CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata _copyWith({Object? repositoryId = sdkOmittedValue, Object? filePath = sdkOmittedValue, Object? text = sdkOmittedValue, Object? name = sdkOmittedValue, Object? number = sdkOmittedValue}) => CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata(
-    repositoryId: identical(repositoryId, sdkOmittedValue) ? this.repositoryId : repositoryId as SdkOptional<int>,
-    filePath: identical(filePath, sdkOmittedValue) ? this.filePath : filePath as SdkOptional<String>,
-    text: identical(text, sdkOmittedValue) ? this.text : text as SdkOptional<String>,
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    number: identical(number, sdkOmittedValue) ? this.number : number as SdkOptional<int>,
+  ReposListCustomDeploymentRuleIntegrationsResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? availableCustomDeploymentProtectionRuleIntegrations = sdkOmittedValue}) => ReposListCustomDeploymentRuleIntegrationsResponse(
+    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as SdkOptional<int>,
+    availableCustomDeploymentProtectionRuleIntegrations: identical(availableCustomDeploymentProtectionRuleIntegrations, sdkOmittedValue) ? this.availableCustomDeploymentProtectionRuleIntegrations : availableCustomDeploymentProtectionRuleIntegrations as SdkOptional<List<CustomDeploymentRuleApp>>,
   );
 
-  factory CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata.fromJson(Map<String, dynamic> json) => CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata(
-    repositoryId: json['repository_id'] != null ? SdkPresent(((json['repository_id'] as num?)?.toInt())!) : const SdkOmitted(),
-    filePath: json['file_path'] != null ? SdkPresent((json['file_path'] as String?)!) : const SdkOmitted(),
-    text: json['text'] != null ? SdkPresent((json['text'] as String?)!) : const SdkOmitted(),
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    number: json['number'] != null ? SdkPresent(((json['number'] as num?)?.toInt())!) : const SdkOmitted(),
+  factory ReposListCustomDeploymentRuleIntegrationsResponse.fromJson(Map<String, dynamic> json) => ReposListCustomDeploymentRuleIntegrationsResponse(
+    totalCount: json['total_count'] != null ? SdkPresent(((json['total_count'] as num?)?.toInt())!) : const SdkOmitted(),
+    availableCustomDeploymentProtectionRuleIntegrations: json['available_custom_deployment_protection_rule_integrations'] != null ? SdkPresent(((json['available_custom_deployment_protection_rule_integrations'] as List?)?.map((e) => CustomDeploymentRuleApp.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    ...switch (repositoryId) {
-      SdkPresent<int>(value: final value) => {'repository_id': value,},
+    ...switch (totalCount) {
+      SdkPresent<int>(value: final value) => {'total_count': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (filePath) {
-      SdkPresent<String>(value: final value) => {'file_path': value,},
+    ...switch (availableCustomDeploymentProtectionRuleIntegrations) {
+      SdkPresent<List<CustomDeploymentRuleApp>>(value: final value) => {'available_custom_deployment_protection_rule_integrations': value.map((item) => item.toJson()).toList(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (text) {
-      SdkPresent<String>(value: final value) => {'text': value,},
+  };
+}
+
+class ReposCreateForkRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// Optional parameter to specify the organization name if forking into an organization.
+  final SdkOptional<String> organization;
+  /// When forking from an existing repository, a new name for the fork.
+  final SdkOptional<String> name;
+  /// When forking from an existing repository, fork with only the default branch.
+  final SdkOptional<bool> defaultBranchOnly;
+
+  const ReposCreateForkRequestBody({this.organization = const SdkOmitted(), this.name = const SdkOmitted(), this.defaultBranchOnly = const SdkOmitted()});
+
+  ReposCreateForkRequestBody Function({SdkOptional<String> organization, SdkOptional<String> name, SdkOptional<bool> defaultBranchOnly}) get copyWith => _copyWith;
+
+  ReposCreateForkRequestBody _copyWith({Object? organization = sdkOmittedValue, Object? name = sdkOmittedValue, Object? defaultBranchOnly = sdkOmittedValue}) => ReposCreateForkRequestBody(
+    organization: identical(organization, sdkOmittedValue) ? this.organization : organization as SdkOptional<String>,
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
+    defaultBranchOnly: identical(defaultBranchOnly, sdkOmittedValue) ? this.defaultBranchOnly : defaultBranchOnly as SdkOptional<bool>,
+  );
+
+  factory ReposCreateForkRequestBody.fromJson(Map<String, dynamic> json) => ReposCreateForkRequestBody(
+    organization: json['organization'] != null ? SdkPresent((json['organization'] as String?)!) : const SdkOmitted(),
+    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
+    defaultBranchOnly: json['default_branch_only'] != null ? SdkPresent((json['default_branch_only'] as bool?)!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    ...switch (organization) {
+      SdkPresent<String>(value: final value) => {'organization': value,},
       _ => const <String, dynamic>{},
     },
     ...switch (name) {
       SdkPresent<String>(value: final value) => {'name': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (number) {
-      SdkPresent<int>(value: final value) => {'number': value,},
+    ...switch (defaultBranchOnly) {
+      SdkPresent<bool>(value: final value) => {'default_branch_only': value,},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-class CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem {
+/// Key/value pairs to provide settings for this webhook.
+class ReposCreateWebhookRequestBodyConfig {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The type of resource.
-  final SdkOptional<CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType> resourceType;
-  /// Metadata specific to the resource type.
-  final SdkOptional<CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata> metadata;
+  /// The URL to which the payloads will be delivered.
+  final SdkOptional<String> url;
+  /// The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.
+  final SdkOptional<String> contentType;
+  /// If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/webhooks/event-payloads/#delivery-headers).
+  final SdkOptional<String> secret;
+  final SdkOptional<WebhookConfigInsecureSsl> insecureSsl;
 
-  const CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem({this.resourceType = const SdkOmitted(), this.metadata = const SdkOmitted()});
+  const ReposCreateWebhookRequestBodyConfig({this.url = const SdkOmitted(), this.contentType = const SdkOmitted(), this.secret = const SdkOmitted(), this.insecureSsl = const SdkOmitted()});
 
-  CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem Function({SdkOptional<CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType> resourceType, SdkOptional<CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata> metadata}) get copyWith => _copyWith;
+  ReposCreateWebhookRequestBodyConfig Function({SdkOptional<String> url, SdkOptional<String> contentType, SdkOptional<String> secret, SdkOptional<WebhookConfigInsecureSsl> insecureSsl}) get copyWith => _copyWith;
 
-  CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem _copyWith({Object? resourceType = sdkOmittedValue, Object? metadata = sdkOmittedValue}) => CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem(
-    resourceType: identical(resourceType, sdkOmittedValue) ? this.resourceType : resourceType as SdkOptional<CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType>,
-    metadata: identical(metadata, sdkOmittedValue) ? this.metadata : metadata as SdkOptional<CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata>,
+  ReposCreateWebhookRequestBodyConfig _copyWith({Object? url = sdkOmittedValue, Object? contentType = sdkOmittedValue, Object? secret = sdkOmittedValue, Object? insecureSsl = sdkOmittedValue}) => ReposCreateWebhookRequestBodyConfig(
+    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
+    contentType: identical(contentType, sdkOmittedValue) ? this.contentType : contentType as SdkOptional<String>,
+    secret: identical(secret, sdkOmittedValue) ? this.secret : secret as SdkOptional<String>,
+    insecureSsl: identical(insecureSsl, sdkOmittedValue) ? this.insecureSsl : insecureSsl as SdkOptional<WebhookConfigInsecureSsl>,
   );
 
-  factory CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem.fromJson(Map<String, dynamic> json) => CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem(
-    resourceType: json['resource_type'] != null ? SdkPresent((json['resource_type'] != null ? CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType.fromJson(json['resource_type'] as String) : null)!) : const SdkOmitted(),
-    metadata: json['metadata'] != null ? SdkPresent((json['metadata'] != null ? CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+  factory ReposCreateWebhookRequestBodyConfig.fromJson(Map<String, dynamic> json) => ReposCreateWebhookRequestBodyConfig(
+    url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
+    contentType: json['content_type'] != null ? SdkPresent((json['content_type'] as String?)!) : const SdkOmitted(),
+    secret: json['secret'] != null ? SdkPresent((json['secret'] as String?)!) : const SdkOmitted(),
+    insecureSsl: json['insecure_ssl'] != null ? SdkPresent((json['insecure_ssl'] != null ? WebhookConfigInsecureSsl.fromJson(json['insecure_ssl']) : null)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    ...switch (resourceType) {
-      SdkPresent<CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType>(value: final value) => {'resource_type': value.toJson(),},
+    ...switch (url) {
+      SdkPresent<String>(value: final value) => {'url': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (metadata) {
-      SdkPresent<CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata>(value: final value) => {'metadata': value.toJson(),},
+    ...switch (contentType) {
+      SdkPresent<String>(value: final value) => {'content_type': value,},
       _ => const <String, dynamic>{},
     },
-  };
-}
-
-class CopilotSpacesCreateForOrgRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The name of the Copilot Space.
-  final String name;
-  /// A description of the Copilot Space.
-  final SdkOptional<String> description;
-  /// General instructions for the Copilot Space.
-  final SdkOptional<String> generalInstructions;
-  /// The base role that determines default permissions for organization members. - `no_access`: No default access (default) - `reader`: Organization members can read the space - `writer`: Organization members can read and edit the space - `admin`: Organization members have full admin access to the space
-  final SdkOptional<CopilotSpacesCreateForOrgRequestBodyBaseRole> baseRole;
-  /// Resources to attach to the space.
-  final SdkOptional<List<CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem>> resourcesAttributes;
-
-  const CopilotSpacesCreateForOrgRequestBody({required this.name, this.description = const SdkOmitted(), this.generalInstructions = const SdkOmitted(), this.baseRole = const SdkOmitted(), this.resourcesAttributes = const SdkOmitted()});
-
-  CopilotSpacesCreateForOrgRequestBody Function({String name, SdkOptional<String> description, SdkOptional<String> generalInstructions, SdkOptional<CopilotSpacesCreateForOrgRequestBodyBaseRole> baseRole, SdkOptional<List<CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem>> resourcesAttributes}) get copyWith => _copyWith;
-
-  CopilotSpacesCreateForOrgRequestBody _copyWith({Object? name = sdkOmittedValue, Object? description = sdkOmittedValue, Object? generalInstructions = sdkOmittedValue, Object? baseRole = sdkOmittedValue, Object? resourcesAttributes = sdkOmittedValue}) => CopilotSpacesCreateForOrgRequestBody(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String>,
-    generalInstructions: identical(generalInstructions, sdkOmittedValue) ? this.generalInstructions : generalInstructions as SdkOptional<String>,
-    baseRole: identical(baseRole, sdkOmittedValue) ? this.baseRole : baseRole as SdkOptional<CopilotSpacesCreateForOrgRequestBodyBaseRole>,
-    resourcesAttributes: identical(resourcesAttributes, sdkOmittedValue) ? this.resourcesAttributes : resourcesAttributes as SdkOptional<List<CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem>>,
-  );
-
-  factory CopilotSpacesCreateForOrgRequestBody.fromJson(Map<String, dynamic> json) => CopilotSpacesCreateForOrgRequestBody(
-    name: (json['name'] as String?)!,
-    description: json['description'] != null ? SdkPresent((json['description'] as String?)!) : const SdkOmitted(),
-    generalInstructions: json['general_instructions'] != null ? SdkPresent((json['general_instructions'] as String?)!) : const SdkOmitted(),
-    baseRole: json['base_role'] != null ? SdkPresent((json['base_role'] != null ? CopilotSpacesCreateForOrgRequestBodyBaseRole.fromJson(json['base_role'] as String) : null)!) : const SdkOmitted(),
-    resourcesAttributes: json['resources_attributes'] != null ? SdkPresent(((json['resources_attributes'] as List?)?.map((e) => CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    'name': name,
-    ...switch (description) {
-      SdkPresent<String>(value: final value) => {'description': value,},
+    ...switch (secret) {
+      SdkPresent<String>(value: final value) => {'secret': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (generalInstructions) {
-      SdkPresent<String>(value: final value) => {'general_instructions': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (baseRole) {
-      SdkPresent<CopilotSpacesCreateForOrgRequestBodyBaseRole>(value: final value) => {'base_role': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (resourcesAttributes) {
-      SdkPresent<List<CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem>>(value: final value) => {'resources_attributes': value.map((item) => item.toJson()).toList(),},
+    ...switch (insecureSsl) {
+      SdkPresent<WebhookConfigInsecureSsl>(value: final value) => {'insecure_ssl': value.toJson(),},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-/// Metadata specific to the resource type.
-class CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemMetadata {
+class ReposCreateWebhookRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// Repository ID for repository or file resources.
-  final SdkOptional<int> repositoryId;
-  /// File path for file resources.
-  final SdkOptional<String> filePath;
-  /// Text content for free text resources.
-  final SdkOptional<String> text;
-  /// Name for the resource.
+  /// Use `web` to create a webhook. Default: `web`. This parameter only accepts the value `web`.
   final SdkOptional<String> name;
-  /// Issue or PR number.
-  final SdkOptional<int> number;
+  /// Key/value pairs to provide settings for this webhook.
+  final SdkOptional<ReposCreateWebhookRequestBodyConfig> config;
+  /// Determines what [events](https://docs.github.com/webhooks/event-payloads) the hook is triggered for.
+  final SdkOptional<List<String>> events;
+  /// Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.
+  final SdkOptional<bool> active;
 
-  const CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemMetadata({this.repositoryId = const SdkOmitted(), this.filePath = const SdkOmitted(), this.text = const SdkOmitted(), this.name = const SdkOmitted(), this.number = const SdkOmitted()});
+  const ReposCreateWebhookRequestBody({this.name = const SdkOmitted(), this.config = const SdkOmitted(), this.events = const SdkOmitted(), this.active = const SdkOmitted()});
 
-  CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemMetadata Function({SdkOptional<int> repositoryId, SdkOptional<String> filePath, SdkOptional<String> text, SdkOptional<String> name, SdkOptional<int> number}) get copyWith => _copyWith;
+  ReposCreateWebhookRequestBody Function({SdkOptional<String> name, SdkOptional<ReposCreateWebhookRequestBodyConfig> config, SdkOptional<List<String>> events, SdkOptional<bool> active}) get copyWith => _copyWith;
 
-  CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemMetadata _copyWith({Object? repositoryId = sdkOmittedValue, Object? filePath = sdkOmittedValue, Object? text = sdkOmittedValue, Object? name = sdkOmittedValue, Object? number = sdkOmittedValue}) => CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemMetadata(
-    repositoryId: identical(repositoryId, sdkOmittedValue) ? this.repositoryId : repositoryId as SdkOptional<int>,
-    filePath: identical(filePath, sdkOmittedValue) ? this.filePath : filePath as SdkOptional<String>,
-    text: identical(text, sdkOmittedValue) ? this.text : text as SdkOptional<String>,
+  ReposCreateWebhookRequestBody _copyWith({Object? name = sdkOmittedValue, Object? config = sdkOmittedValue, Object? events = sdkOmittedValue, Object? active = sdkOmittedValue}) => ReposCreateWebhookRequestBody(
     name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    number: identical(number, sdkOmittedValue) ? this.number : number as SdkOptional<int>,
+    config: identical(config, sdkOmittedValue) ? this.config : config as SdkOptional<ReposCreateWebhookRequestBodyConfig>,
+    events: identical(events, sdkOmittedValue) ? this.events : events as SdkOptional<List<String>>,
+    active: identical(active, sdkOmittedValue) ? this.active : active as SdkOptional<bool>,
   );
 
-  factory CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemMetadata.fromJson(Map<String, dynamic> json) => CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemMetadata(
-    repositoryId: json['repository_id'] != null ? SdkPresent(((json['repository_id'] as num?)?.toInt())!) : const SdkOmitted(),
-    filePath: json['file_path'] != null ? SdkPresent((json['file_path'] as String?)!) : const SdkOmitted(),
-    text: json['text'] != null ? SdkPresent((json['text'] as String?)!) : const SdkOmitted(),
+  factory ReposCreateWebhookRequestBody.fromJson(Map<String, dynamic> json) => ReposCreateWebhookRequestBody(
     name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    number: json['number'] != null ? SdkPresent(((json['number'] as num?)?.toInt())!) : const SdkOmitted(),
+    config: json['config'] != null ? SdkPresent((json['config'] != null ? ReposCreateWebhookRequestBodyConfig.fromJson(json['config'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    events: json['events'] != null ? SdkPresent(((json['events'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    active: json['active'] != null ? SdkPresent((json['active'] as bool?)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    ...switch (repositoryId) {
-      SdkPresent<int>(value: final value) => {'repository_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (filePath) {
-      SdkPresent<String>(value: final value) => {'file_path': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (text) {
-      SdkPresent<String>(value: final value) => {'text': value,},
-      _ => const <String, dynamic>{},
-    },
     ...switch (name) {
       SdkPresent<String>(value: final value) => {'name': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (number) {
-      SdkPresent<int>(value: final value) => {'number': value,},
+    ...switch (config) {
+      SdkPresent<ReposCreateWebhookRequestBodyConfig>(value: final value) => {'config': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (events) {
+      SdkPresent<List<String>>(value: final value) => {'events': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (active) {
+      SdkPresent<bool>(value: final value) => {'active': value,},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-class CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItem {
+class ReposUpdateWebhookRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The type of resource.
-  final SdkOptional<CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType> resourceType;
-  /// Metadata specific to the resource type.
-  final SdkOptional<CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemMetadata> metadata;
+  /// Configuration object of the webhook
+  final SdkOptional<WebhookConfig> config;
+  /// Determines what [events](https://docs.github.com/webhooks/event-payloads) the hook is triggered for. This replaces the entire array of events.
+  final SdkOptional<List<String>> events;
+  /// Determines a list of events to be added to the list of events that the Hook triggers for.
+  final SdkOptional<List<String>> addEvents;
+  /// Determines a list of events to be removed from the list of events that the Hook triggers for.
+  final SdkOptional<List<String>> removeEvents;
+  /// Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.
+  final SdkOptional<bool> active;
 
-  const CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItem({this.resourceType = const SdkOmitted(), this.metadata = const SdkOmitted()});
+  const ReposUpdateWebhookRequestBody({this.config = const SdkOmitted(), this.events = const SdkOmitted(), this.addEvents = const SdkOmitted(), this.removeEvents = const SdkOmitted(), this.active = const SdkOmitted()});
 
-  CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItem Function({SdkOptional<CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType> resourceType, SdkOptional<CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemMetadata> metadata}) get copyWith => _copyWith;
+  ReposUpdateWebhookRequestBody Function({SdkOptional<WebhookConfig> config, SdkOptional<List<String>> events, SdkOptional<List<String>> addEvents, SdkOptional<List<String>> removeEvents, SdkOptional<bool> active}) get copyWith => _copyWith;
 
-  CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItem _copyWith({Object? resourceType = sdkOmittedValue, Object? metadata = sdkOmittedValue}) => CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItem(
-    resourceType: identical(resourceType, sdkOmittedValue) ? this.resourceType : resourceType as SdkOptional<CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType>,
-    metadata: identical(metadata, sdkOmittedValue) ? this.metadata : metadata as SdkOptional<CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemMetadata>,
+  ReposUpdateWebhookRequestBody _copyWith({Object? config = sdkOmittedValue, Object? events = sdkOmittedValue, Object? addEvents = sdkOmittedValue, Object? removeEvents = sdkOmittedValue, Object? active = sdkOmittedValue}) => ReposUpdateWebhookRequestBody(
+    config: identical(config, sdkOmittedValue) ? this.config : config as SdkOptional<WebhookConfig>,
+    events: identical(events, sdkOmittedValue) ? this.events : events as SdkOptional<List<String>>,
+    addEvents: identical(addEvents, sdkOmittedValue) ? this.addEvents : addEvents as SdkOptional<List<String>>,
+    removeEvents: identical(removeEvents, sdkOmittedValue) ? this.removeEvents : removeEvents as SdkOptional<List<String>>,
+    active: identical(active, sdkOmittedValue) ? this.active : active as SdkOptional<bool>,
   );
 
-  factory CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItem.fromJson(Map<String, dynamic> json) => CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItem(
-    resourceType: json['resource_type'] != null ? SdkPresent((json['resource_type'] != null ? CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType.fromJson(json['resource_type'] as String) : null)!) : const SdkOmitted(),
-    metadata: json['metadata'] != null ? SdkPresent((json['metadata'] != null ? CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+  factory ReposUpdateWebhookRequestBody.fromJson(Map<String, dynamic> json) => ReposUpdateWebhookRequestBody(
+    config: json['config'] != null ? SdkPresent((json['config'] != null ? WebhookConfig.fromJson(json['config'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    events: json['events'] != null ? SdkPresent(((json['events'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    addEvents: json['add_events'] != null ? SdkPresent(((json['add_events'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    removeEvents: json['remove_events'] != null ? SdkPresent(((json['remove_events'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    active: json['active'] != null ? SdkPresent((json['active'] as bool?)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    ...switch (resourceType) {
-      SdkPresent<CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType>(value: final value) => {'resource_type': value.toJson(),},
+    ...switch (config) {
+      SdkPresent<WebhookConfig>(value: final value) => {'config': value.toJson(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (metadata) {
-      SdkPresent<CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemMetadata>(value: final value) => {'metadata': value.toJson(),},
+    ...switch (events) {
+      SdkPresent<List<String>>(value: final value) => {'events': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (addEvents) {
+      SdkPresent<List<String>>(value: final value) => {'add_events': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (removeEvents) {
+      SdkPresent<List<String>>(value: final value) => {'remove_events': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (active) {
+      SdkPresent<bool>(value: final value) => {'active': value,},
       _ => const <String, dynamic>{},
     },
   };

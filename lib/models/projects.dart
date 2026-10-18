@@ -14,4 +14,3 @@ part 'projects_part2.dart';
 part 'projects_part3.dart';
 part 'projects_part4.dart';
 part 'projects_part5.dart';
-part 'projects_part6.dart';

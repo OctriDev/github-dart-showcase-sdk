@@ -4,61 +4,285 @@
 part of 'inline.dart';
 
 // Inline operation models (part 346)
-class AppsListReposAccessibleToInstallationResponse {
+class DependabotListOrgSecretsResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   final int totalCount;
-  final List<AppsListReposAccessibleToInstallationResponseRepositoriesItem> repositories;
-  final SdkOptional<String> repositorySelection;
+  final List<OrganizationDependabotSecret> secrets;
 
-  const AppsListReposAccessibleToInstallationResponse({required this.totalCount, required this.repositories, this.repositorySelection = const SdkOmitted()});
+  const DependabotListOrgSecretsResponse({required this.totalCount, required this.secrets});
 
-  AppsListReposAccessibleToInstallationResponse Function({int totalCount, List<AppsListReposAccessibleToInstallationResponseRepositoriesItem> repositories, SdkOptional<String> repositorySelection}) get copyWith => _copyWith;
+  DependabotListOrgSecretsResponse Function({int totalCount, List<OrganizationDependabotSecret> secrets}) get copyWith => _copyWith;
 
-  AppsListReposAccessibleToInstallationResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? repositories = sdkOmittedValue, Object? repositorySelection = sdkOmittedValue}) => AppsListReposAccessibleToInstallationResponse(
+  DependabotListOrgSecretsResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? secrets = sdkOmittedValue}) => DependabotListOrgSecretsResponse(
     totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    repositories: identical(repositories, sdkOmittedValue) ? this.repositories : repositories as List<AppsListReposAccessibleToInstallationResponseRepositoriesItem>,
-    repositorySelection: identical(repositorySelection, sdkOmittedValue) ? this.repositorySelection : repositorySelection as SdkOptional<String>,
+    secrets: identical(secrets, sdkOmittedValue) ? this.secrets : secrets as List<OrganizationDependabotSecret>,
   );
 
-  factory AppsListReposAccessibleToInstallationResponse.fromJson(Map<String, dynamic> json) => AppsListReposAccessibleToInstallationResponse(
+  factory DependabotListOrgSecretsResponse.fromJson(Map<String, dynamic> json) => DependabotListOrgSecretsResponse(
     totalCount: ((json['total_count'] as num?)?.toInt())!,
-    repositories: ((json['repositories'] as List?)?.map((e) => AppsListReposAccessibleToInstallationResponseRepositoriesItem.fromJson(e as Map<String, dynamic>)).toList())!,
-    repositorySelection: json['repository_selection'] != null ? SdkPresent((json['repository_selection'] as String?)!) : const SdkOmitted(),
+    secrets: ((json['secrets'] as List?)?.map((e) => OrganizationDependabotSecret.fromJson(e as Map<String, dynamic>)).toList())!,
   );
 
   Map<String, dynamic> toJson() => {
     'total_count': totalCount,
-    'repositories': repositories.map((item) => item.toJson()).toList(),
-    ...switch (repositorySelection) {
-      SdkPresent<String>(value: final value) => {'repository_selection': value,},
+    'secrets': secrets.map((item) => item.toJson()).toList(),
+  };
+}
+
+class DependabotCreateOrUpdateOrgSecretRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get an organization public key](https://docs.github.com/rest/dependabot/secrets#get-an-organization-public-key) endpoint.
+  final SdkOptional<String> encryptedValue;
+  /// ID of the key you used to encrypt the secret.
+  final SdkOptional<String> keyId;
+  /// Which type of organization repositories have access to the organization secret. `selected` means only the repositories specified by `selected_repository_ids` can access the secret.
+  final DependabotCreateOrUpdateOrgSecretRequestBodyVisibility visibility;
+  /// An array of repository ids that can access the organization secret. You can only provide a list of repository ids when the `visibility` is set to `selected`. You can manage the list of selected repositories using the [List selected repositories for an organization secret](https://docs.github.com/rest/dependabot/secrets#list-selected-repositories-for-an-organization-secret), [Set selected repositories for an organization secret](https://docs.github.com/rest/dependabot/secrets#set-selected-repositories-for-an-organization-secret), and [Remove selected repository from an organization secret](https://docs.github.com/rest/dependabot/secrets#remove-selected-repository-from-an-organization-secret) endpoints.
+  final SdkOptional<List<dynamic>> selectedRepositoryIds;
+
+  const DependabotCreateOrUpdateOrgSecretRequestBody({this.encryptedValue = const SdkOmitted(), this.keyId = const SdkOmitted(), required this.visibility, this.selectedRepositoryIds = const SdkOmitted()});
+
+  DependabotCreateOrUpdateOrgSecretRequestBody Function({SdkOptional<String> encryptedValue, SdkOptional<String> keyId, DependabotCreateOrUpdateOrgSecretRequestBodyVisibility visibility, SdkOptional<List<dynamic>> selectedRepositoryIds}) get copyWith => _copyWith;
+
+  DependabotCreateOrUpdateOrgSecretRequestBody _copyWith({Object? encryptedValue = sdkOmittedValue, Object? keyId = sdkOmittedValue, Object? visibility = sdkOmittedValue, Object? selectedRepositoryIds = sdkOmittedValue}) => DependabotCreateOrUpdateOrgSecretRequestBody(
+    encryptedValue: identical(encryptedValue, sdkOmittedValue) ? this.encryptedValue : encryptedValue as SdkOptional<String>,
+    keyId: identical(keyId, sdkOmittedValue) ? this.keyId : keyId as SdkOptional<String>,
+    visibility: identical(visibility, sdkOmittedValue) ? this.visibility : visibility as DependabotCreateOrUpdateOrgSecretRequestBodyVisibility,
+    selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue) ? this.selectedRepositoryIds : selectedRepositoryIds as SdkOptional<List<dynamic>>,
+  );
+
+  factory DependabotCreateOrUpdateOrgSecretRequestBody.fromJson(Map<String, dynamic> json) => DependabotCreateOrUpdateOrgSecretRequestBody(
+    encryptedValue: json['encrypted_value'] != null ? SdkPresent((json['encrypted_value'] as String?)!) : const SdkOmitted(),
+    keyId: json['key_id'] != null ? SdkPresent((json['key_id'] as String?)!) : const SdkOmitted(),
+    visibility: (json['visibility'] != null ? DependabotCreateOrUpdateOrgSecretRequestBodyVisibility.fromJson(json['visibility'] as String) : null)!,
+    selectedRepositoryIds: json['selected_repository_ids'] != null ? SdkPresent(((json['selected_repository_ids'] as List?)?.map((e) => e).toList())!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    ...switch (encryptedValue) {
+      SdkPresent<String>(value: final value) => {'encrypted_value': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (keyId) {
+      SdkPresent<String>(value: final value) => {'key_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    'visibility': visibility.toJson(),
+    ...switch (selectedRepositoryIds) {
+      SdkPresent<List<dynamic>>(value: final value) => {'selected_repository_ids': value,},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-class AppsListInstallationsForAuthenticatedUserResponse {
+class DependabotListSelectedReposForOrgSecretResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   final int totalCount;
-  final List<Installation> installations;
+  final List<MinimalRepository> repositories;
 
-  const AppsListInstallationsForAuthenticatedUserResponse({required this.totalCount, required this.installations});
+  const DependabotListSelectedReposForOrgSecretResponse({required this.totalCount, required this.repositories});
 
-  AppsListInstallationsForAuthenticatedUserResponse Function({int totalCount, List<Installation> installations}) get copyWith => _copyWith;
+  DependabotListSelectedReposForOrgSecretResponse Function({int totalCount, List<MinimalRepository> repositories}) get copyWith => _copyWith;
 
-  AppsListInstallationsForAuthenticatedUserResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? installations = sdkOmittedValue}) => AppsListInstallationsForAuthenticatedUserResponse(
+  DependabotListSelectedReposForOrgSecretResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? repositories = sdkOmittedValue}) => DependabotListSelectedReposForOrgSecretResponse(
     totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    installations: identical(installations, sdkOmittedValue) ? this.installations : installations as List<Installation>,
+    repositories: identical(repositories, sdkOmittedValue) ? this.repositories : repositories as List<MinimalRepository>,
   );
 
-  factory AppsListInstallationsForAuthenticatedUserResponse.fromJson(Map<String, dynamic> json) => AppsListInstallationsForAuthenticatedUserResponse(
+  factory DependabotListSelectedReposForOrgSecretResponse.fromJson(Map<String, dynamic> json) => DependabotListSelectedReposForOrgSecretResponse(
     totalCount: ((json['total_count'] as num?)?.toInt())!,
-    installations: ((json['installations'] as List?)?.map((e) => Installation.fromJson(e as Map<String, dynamic>)).toList())!,
+    repositories: ((json['repositories'] as List?)?.map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList())!,
   );
 
   Map<String, dynamic> toJson() => {
     'total_count': totalCount,
-    'installations': installations.map((item) => item.toJson()).toList(),
+    'repositories': repositories.map((item) => item.toJson()).toList(),
+  };
+}
+
+class DependabotSetSelectedReposForOrgSecretRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// An array of repository ids that can access the organization secret. You can only provide a list of repository ids when the `visibility` is set to `selected`. You can add and remove individual repositories using the [Set selected repositories for an organization secret](https://docs.github.com/rest/dependabot/secrets#set-selected-repositories-for-an-organization-secret) and [Remove selected repository from an organization secret](https://docs.github.com/rest/dependabot/secrets#remove-selected-repository-from-an-organization-secret) endpoints.
+  final List<int> selectedRepositoryIds;
+
+  const DependabotSetSelectedReposForOrgSecretRequestBody({required this.selectedRepositoryIds});
+
+  DependabotSetSelectedReposForOrgSecretRequestBody Function({List<int> selectedRepositoryIds}) get copyWith => _copyWith;
+
+  DependabotSetSelectedReposForOrgSecretRequestBody _copyWith({Object? selectedRepositoryIds = sdkOmittedValue}) => DependabotSetSelectedReposForOrgSecretRequestBody(
+    selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue) ? this.selectedRepositoryIds : selectedRepositoryIds as List<int>,
+  );
+
+  factory DependabotSetSelectedReposForOrgSecretRequestBody.fromJson(Map<String, dynamic> json) => DependabotSetSelectedReposForOrgSecretRequestBody(
+    selectedRepositoryIds: ((json['selected_repository_ids'] as List?)?.map((e) => (e as num).toInt()).toList())!,
+  );
+
+  Map<String, dynamic> toJson() => {
+    'selected_repository_ids': selectedRepositoryIds,
+  };
+}
+
+/// Parameters for AI agent assignment. Only used when an agent bot login is included in `assignees`. Ignored when no agent is being assigned.
+class DependabotUpdateAlertRequestBodyAgentAssignment {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// Custom instructions for the agent.
+  final SdkOptional<String> customInstructions;
+  /// A custom agent identifier.
+  final SdkOptional<String> customAgent;
+  /// The model to use for the agent.
+  final SdkOptional<String> model;
+
+  const DependabotUpdateAlertRequestBodyAgentAssignment({this.customInstructions = const SdkOmitted(), this.customAgent = const SdkOmitted(), this.model = const SdkOmitted()});
+
+  DependabotUpdateAlertRequestBodyAgentAssignment Function({SdkOptional<String> customInstructions, SdkOptional<String> customAgent, SdkOptional<String> model}) get copyWith => _copyWith;
+
+  DependabotUpdateAlertRequestBodyAgentAssignment _copyWith({Object? customInstructions = sdkOmittedValue, Object? customAgent = sdkOmittedValue, Object? model = sdkOmittedValue}) => DependabotUpdateAlertRequestBodyAgentAssignment(
+    customInstructions: identical(customInstructions, sdkOmittedValue) ? this.customInstructions : customInstructions as SdkOptional<String>,
+    customAgent: identical(customAgent, sdkOmittedValue) ? this.customAgent : customAgent as SdkOptional<String>,
+    model: identical(model, sdkOmittedValue) ? this.model : model as SdkOptional<String>,
+  );
+
+  factory DependabotUpdateAlertRequestBodyAgentAssignment.fromJson(Map<String, dynamic> json) => DependabotUpdateAlertRequestBodyAgentAssignment(
+    customInstructions: json['custom_instructions'] != null ? SdkPresent((json['custom_instructions'] as String?)!) : const SdkOmitted(),
+    customAgent: json['custom_agent'] != null ? SdkPresent((json['custom_agent'] as String?)!) : const SdkOmitted(),
+    model: json['model'] != null ? SdkPresent((json['model'] as String?)!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    ...switch (customInstructions) {
+      SdkPresent<String>(value: final value) => {'custom_instructions': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (customAgent) {
+      SdkPresent<String>(value: final value) => {'custom_agent': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (model) {
+      SdkPresent<String>(value: final value) => {'model': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
+}
+
+class DependabotUpdateAlertRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The state of the Dependabot alert. A `dismissed_reason` must be provided when setting the state to `dismissed`.
+  final SdkOptional<DependabotUpdateAlertRequestBodyState> state;
+  /// **Required when `state` is `dismissed`.** A reason for dismissing the alert.
+  final SdkOptional<DependabotUpdateAlertRequestBodyDismissedReason> dismissedReason;
+  /// An optional comment associated with dismissing the alert.
+  final SdkOptional<String> dismissedComment;
+  /// Usernames to assign to this Dependabot Alert. Pass one or more user logins to _replace_ the set of assignees on this alert. Send an empty array (`[]`) to clear all assignees from the alert. To assign an AI agent, include the bot login (for example, `copilot-swe-agent[bot]`).
+  final SdkOptional<List<String>> assignees;
+  /// Parameters for AI agent assignment. Only used when an agent bot login is included in `assignees`. Ignored when no agent is being assigned.
+  final SdkOptional<DependabotUpdateAlertRequestBodyAgentAssignment> agentAssignment;
+
+  const DependabotUpdateAlertRequestBody({this.state = const SdkOmitted(), this.dismissedReason = const SdkOmitted(), this.dismissedComment = const SdkOmitted(), this.assignees = const SdkOmitted(), this.agentAssignment = const SdkOmitted()});
+
+  DependabotUpdateAlertRequestBody Function({SdkOptional<DependabotUpdateAlertRequestBodyState> state, SdkOptional<DependabotUpdateAlertRequestBodyDismissedReason> dismissedReason, SdkOptional<String> dismissedComment, SdkOptional<List<String>> assignees, SdkOptional<DependabotUpdateAlertRequestBodyAgentAssignment> agentAssignment}) get copyWith => _copyWith;
+
+  DependabotUpdateAlertRequestBody _copyWith({Object? state = sdkOmittedValue, Object? dismissedReason = sdkOmittedValue, Object? dismissedComment = sdkOmittedValue, Object? assignees = sdkOmittedValue, Object? agentAssignment = sdkOmittedValue}) => DependabotUpdateAlertRequestBody(
+    state: identical(state, sdkOmittedValue) ? this.state : state as SdkOptional<DependabotUpdateAlertRequestBodyState>,
+    dismissedReason: identical(dismissedReason, sdkOmittedValue) ? this.dismissedReason : dismissedReason as SdkOptional<DependabotUpdateAlertRequestBodyDismissedReason>,
+    dismissedComment: identical(dismissedComment, sdkOmittedValue) ? this.dismissedComment : dismissedComment as SdkOptional<String>,
+    assignees: identical(assignees, sdkOmittedValue) ? this.assignees : assignees as SdkOptional<List<String>>,
+    agentAssignment: identical(agentAssignment, sdkOmittedValue) ? this.agentAssignment : agentAssignment as SdkOptional<DependabotUpdateAlertRequestBodyAgentAssignment>,
+  );
+
+  factory DependabotUpdateAlertRequestBody.fromJson(Map<String, dynamic> json) => DependabotUpdateAlertRequestBody(
+    state: json['state'] != null ? SdkPresent((json['state'] != null ? DependabotUpdateAlertRequestBodyState.fromJson(json['state'] as String) : null)!) : const SdkOmitted(),
+    dismissedReason: json['dismissed_reason'] != null ? SdkPresent((json['dismissed_reason'] != null ? DependabotUpdateAlertRequestBodyDismissedReason.fromJson(json['dismissed_reason'] as String) : null)!) : const SdkOmitted(),
+    dismissedComment: json['dismissed_comment'] != null ? SdkPresent((json['dismissed_comment'] as String?)!) : const SdkOmitted(),
+    assignees: json['assignees'] != null ? SdkPresent(((json['assignees'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    agentAssignment: json['agent_assignment'] != null ? SdkPresent((json['agent_assignment'] != null ? DependabotUpdateAlertRequestBodyAgentAssignment.fromJson(json['agent_assignment'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    ...switch (state) {
+      SdkPresent<DependabotUpdateAlertRequestBodyState>(value: final value) => {'state': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (dismissedReason) {
+      SdkPresent<DependabotUpdateAlertRequestBodyDismissedReason>(value: final value) => {'dismissed_reason': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (dismissedComment) {
+      SdkPresent<String>(value: final value) => {'dismissed_comment': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (assignees) {
+      SdkPresent<List<String>>(value: final value) => {'assignees': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (agentAssignment) {
+      SdkPresent<DependabotUpdateAlertRequestBodyAgentAssignment>(value: final value) => {'agent_assignment': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
+}
+
+class DependabotListRepoSecretsResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  final int totalCount;
+  final List<DependabotSecret> secrets;
+
+  const DependabotListRepoSecretsResponse({required this.totalCount, required this.secrets});
+
+  DependabotListRepoSecretsResponse Function({int totalCount, List<DependabotSecret> secrets}) get copyWith => _copyWith;
+
+  DependabotListRepoSecretsResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? secrets = sdkOmittedValue}) => DependabotListRepoSecretsResponse(
+    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
+    secrets: identical(secrets, sdkOmittedValue) ? this.secrets : secrets as List<DependabotSecret>,
+  );
+
+  factory DependabotListRepoSecretsResponse.fromJson(Map<String, dynamic> json) => DependabotListRepoSecretsResponse(
+    totalCount: ((json['total_count'] as num?)?.toInt())!,
+    secrets: ((json['secrets'] as List?)?.map((e) => DependabotSecret.fromJson(e as Map<String, dynamic>)).toList())!,
+  );
+
+  Map<String, dynamic> toJson() => {
+    'total_count': totalCount,
+    'secrets': secrets.map((item) => item.toJson()).toList(),
+  };
+}
+
+class DependabotCreateOrUpdateRepoSecretRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get a repository public key](https://docs.github.com/rest/dependabot/secrets#get-a-repository-public-key) endpoint.
+  final SdkOptional<String> encryptedValue;
+  /// ID of the key you used to encrypt the secret.
+  final SdkOptional<String> keyId;
+
+  const DependabotCreateOrUpdateRepoSecretRequestBody({this.encryptedValue = const SdkOmitted(), this.keyId = const SdkOmitted()});
+
+  DependabotCreateOrUpdateRepoSecretRequestBody Function({SdkOptional<String> encryptedValue, SdkOptional<String> keyId}) get copyWith => _copyWith;
+
+  DependabotCreateOrUpdateRepoSecretRequestBody _copyWith({Object? encryptedValue = sdkOmittedValue, Object? keyId = sdkOmittedValue}) => DependabotCreateOrUpdateRepoSecretRequestBody(
+    encryptedValue: identical(encryptedValue, sdkOmittedValue) ? this.encryptedValue : encryptedValue as SdkOptional<String>,
+    keyId: identical(keyId, sdkOmittedValue) ? this.keyId : keyId as SdkOptional<String>,
+  );
+
+  factory DependabotCreateOrUpdateRepoSecretRequestBody.fromJson(Map<String, dynamic> json) => DependabotCreateOrUpdateRepoSecretRequestBody(
+    encryptedValue: json['encrypted_value'] != null ? SdkPresent((json['encrypted_value'] as String?)!) : const SdkOmitted(),
+    keyId: json['key_id'] != null ? SdkPresent((json['key_id'] as String?)!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    ...switch (encryptedValue) {
+      SdkPresent<String>(value: final value) => {'encrypted_value': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (keyId) {
+      SdkPresent<String>(value: final value) => {'key_id': value,},
+      _ => const <String, dynamic>{},
+    },
   };
 }

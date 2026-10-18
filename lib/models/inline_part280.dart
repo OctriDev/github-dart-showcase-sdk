@@ -4,274 +4,168 @@
 part of 'inline.dart';
 
 // Inline operation models (part 280)
-final class ChecksUpdateRequestBodyVariant0Status {
-
-  final String value;
-
-  const ChecksUpdateRequestBodyVariant0Status._(this.value);
-
-  factory ChecksUpdateRequestBodyVariant0Status.fromJson(String value) => ChecksUpdateRequestBodyVariant0Status._(value);
-
-  static const completed = ChecksUpdateRequestBodyVariant0Status._('completed');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is ChecksUpdateRequestBodyVariant0Status && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-final class ChecksUpdateRequestBodyVariant1Status {
-
-  final String value;
-
-  const ChecksUpdateRequestBodyVariant1Status._(this.value);
-
-  factory ChecksUpdateRequestBodyVariant1Status.fromJson(String value) => ChecksUpdateRequestBodyVariant1Status._(value);
-
-  static const queued = ChecksUpdateRequestBodyVariant1Status._('queued');
-  static const inProgress = ChecksUpdateRequestBodyVariant1Status._('in_progress');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is ChecksUpdateRequestBodyVariant1Status && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// **Required if you provide `completed_at` or a `status` of `completed`**. The final conclusion of the check. **Note:** Providing `conclusion` will automatically set the `status` parameter to `completed`. You cannot change a check run conclusion to `stale`, only GitHub can set this.
-final class ChecksUpdateRequestBodyConclusion {
-
-  final String value;
-
-  const ChecksUpdateRequestBodyConclusion._(this.value);
-
-  factory ChecksUpdateRequestBodyConclusion.fromJson(String value) => ChecksUpdateRequestBodyConclusion._(value);
-
-  static const actionRequired = ChecksUpdateRequestBodyConclusion._('action_required');
-  static const cancelled = ChecksUpdateRequestBodyConclusion._('cancelled');
-  static const failure = ChecksUpdateRequestBodyConclusion._('failure');
-  static const neutral = ChecksUpdateRequestBodyConclusion._('neutral');
-  static const success = ChecksUpdateRequestBodyConclusion._('success');
-  static const skipped = ChecksUpdateRequestBodyConclusion._('skipped');
-  static const stale = ChecksUpdateRequestBodyConclusion._('stale');
-  static const timedOut = ChecksUpdateRequestBodyConclusion._('timed_out');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is ChecksUpdateRequestBodyConclusion && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The level of the annotation.
-final class ChecksUpdateRequestBodyOutputAnnotationsItemAnnotationLevel {
-
-  final String value;
-
-  const ChecksUpdateRequestBodyOutputAnnotationsItemAnnotationLevel._(this.value);
-
-  factory ChecksUpdateRequestBodyOutputAnnotationsItemAnnotationLevel.fromJson(String value) => ChecksUpdateRequestBodyOutputAnnotationsItemAnnotationLevel._(value);
-
-  static const notice = ChecksUpdateRequestBodyOutputAnnotationsItemAnnotationLevel._('notice');
-  static const warning = ChecksUpdateRequestBodyOutputAnnotationsItemAnnotationLevel._('warning');
-  static const failure = ChecksUpdateRequestBodyOutputAnnotationsItemAnnotationLevel._('failure');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is ChecksUpdateRequestBodyOutputAnnotationsItemAnnotationLevel && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The current status of the check run. Only GitHub Actions can set a status of `waiting`, `pending`, or `requested`.
-final class ChecksUpdateRequestBodyStatus {
-
-  final String value;
-
-  const ChecksUpdateRequestBodyStatus._(this.value);
-
-  factory ChecksUpdateRequestBodyStatus.fromJson(String value) => ChecksUpdateRequestBodyStatus._(value);
-
-  static const queued = ChecksUpdateRequestBodyStatus._('queued');
-  static const inProgress = ChecksUpdateRequestBodyStatus._('in_progress');
-  static const completed = ChecksUpdateRequestBodyStatus._('completed');
-  static const waiting = ChecksUpdateRequestBodyStatus._('waiting');
-  static const requested = ChecksUpdateRequestBodyStatus._('requested');
-  static const pending = ChecksUpdateRequestBodyStatus._('pending');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is ChecksUpdateRequestBodyStatus && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-final class ChecksListForSuiteFilter {
-
-  final String value;
-
-  const ChecksListForSuiteFilter._(this.value);
-
-  factory ChecksListForSuiteFilter.fromJson(String value) => ChecksListForSuiteFilter._(value);
-
-  static const latest = ChecksListForSuiteFilter._('latest');
-  static const all = ChecksListForSuiteFilter._('all');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is ChecksListForSuiteFilter && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-final class CodeQualityListFindingsForRepoState {
-
-  final String value;
-
-  const CodeQualityListFindingsForRepoState._(this.value);
-
-  factory CodeQualityListFindingsForRepoState.fromJson(String value) => CodeQualityListFindingsForRepoState._(value);
-
-  static const open = CodeQualityListFindingsForRepoState._('open');
-  static const dismissed = CodeQualityListFindingsForRepoState._('dismissed');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is CodeQualityListFindingsForRepoState && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-final class CodeScanningListAlertsForRepoSort {
-
-  final String value;
-
-  const CodeScanningListAlertsForRepoSort._(this.value);
-
-  factory CodeScanningListAlertsForRepoSort.fromJson(String value) => CodeScanningListAlertsForRepoSort._(value);
-
-  static const created = CodeScanningListAlertsForRepoSort._('created');
-  static const updated = CodeScanningListAlertsForRepoSort._('updated');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is CodeScanningListAlertsForRepoSort && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-final class CodeScanningListRecentAnalysesSort {
-
-  final String value;
-
-  const CodeScanningListRecentAnalysesSort._(this.value);
-
-  factory CodeScanningListRecentAnalysesSort.fromJson(String value) => CodeScanningListRecentAnalysesSort._(value);
-
-  static const created = CodeScanningListRecentAnalysesSort._('created');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is CodeScanningListRecentAnalysesSort && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is closing down.
-final class CodespacesCreateWithRepoForAuthenticatedUserRequestBodyGeo {
-
-  final String value;
-
-  const CodespacesCreateWithRepoForAuthenticatedUserRequestBodyGeo._(this.value);
-
-  factory CodespacesCreateWithRepoForAuthenticatedUserRequestBodyGeo.fromJson(String value) => CodespacesCreateWithRepoForAuthenticatedUserRequestBodyGeo._(value);
-
-  static const europewest = CodespacesCreateWithRepoForAuthenticatedUserRequestBodyGeo._('EuropeWest');
-  static const southeastasia = CodespacesCreateWithRepoForAuthenticatedUserRequestBodyGeo._('SoutheastAsia');
-  static const useast = CodespacesCreateWithRepoForAuthenticatedUserRequestBodyGeo._('UsEast');
-  static const uswest = CodespacesCreateWithRepoForAuthenticatedUserRequestBodyGeo._('UsWest');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is CodespacesCreateWithRepoForAuthenticatedUserRequestBodyGeo && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-final class ReposListCollaboratorsAffiliation {
-
-  final String value;
-
-  const ReposListCollaboratorsAffiliation._(this.value);
-
-  factory ReposListCollaboratorsAffiliation.fromJson(String value) => ReposListCollaboratorsAffiliation._(value);
-
-  static const outside = ReposListCollaboratorsAffiliation._('outside');
-  static const direct = ReposListCollaboratorsAffiliation._('direct');
-  static const all = ReposListCollaboratorsAffiliation._('all');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is ReposListCollaboratorsAffiliation && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-final class ReposListCollaboratorsPermission {
-
-  final String value;
-
-  const ReposListCollaboratorsPermission._(this.value);
-
-  factory ReposListCollaboratorsPermission.fromJson(String value) => ReposListCollaboratorsPermission._(value);
-
-  static const pull = ReposListCollaboratorsPermission._('pull');
-  static const triage = ReposListCollaboratorsPermission._('triage');
-  static const triagePlus = ReposListCollaboratorsPermission._('triage_plus');
-  static const push = ReposListCollaboratorsPermission._('push');
-  static const maintain = ReposListCollaboratorsPermission._('maintain');
-  static const admin = ReposListCollaboratorsPermission._('admin');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is ReposListCollaboratorsPermission && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
+/// Public trigger configuration keyed by stable public trigger identifier. Each trigger has a closed, trigger-specific configuration schema.
+class AgentAutomationsGetAutomationResponseTriggers {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  final SdkOptional<AgentAutomationsGetAutomationResponseTriggersInterval> interval;
+  final SdkOptional<AgentAutomationsGetAutomationResponseTriggersIssueOpened> issueOpened;
+  final SdkOptional<AgentAutomationsGetAutomationResponseTriggersIssueLabeled> issueLabeled;
+  final SdkOptional<AgentAutomationsGetAutomationResponseTriggersWorkflowRun> workflowRun;
+  final SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestOpened> pullRequestOpened;
+  final SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestSynchronize> pullRequestSynchronize;
+  final SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestMerged> pullRequestMerged;
+  final SdkOptional<AgentAutomationsGetAutomationResponseTriggersIssueComment> issueComment;
+  final SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestComment> pullRequestComment;
+  final SdkOptional<AgentAutomationsGetAutomationResponseTriggersDiscussionOpened> discussionOpened;
+  final SdkOptional<AgentAutomationsGetAutomationResponseTriggersDiscussionUpdated> discussionUpdated;
+  final SdkOptional<AgentAutomationsGetAutomationResponseTriggersDiscussionComment> discussionComment;
+  final SdkOptional<AgentAutomationsGetAutomationResponseTriggersIssueAssigned> issueAssigned;
+  final SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestAssigned> pullRequestAssigned;
+  final SdkOptional<AgentAutomationsGetAutomationResponseTriggersSubIssueAdded> subIssueAdded;
+  final SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestReadyForReview> pullRequestReadyForReview;
+  final SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestLabeled> pullRequestLabeled;
+  final SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestMergeConflict> pullRequestMergeConflict;
+  final SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestReviewSubmitted> pullRequestReviewSubmitted;
+  final SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestReviewRequested> pullRequestReviewRequested;
+  final SdkOptional<AgentAutomationsGetAutomationResponseTriggersAutomationCompleted> automationCompleted;
+
+  const AgentAutomationsGetAutomationResponseTriggers({this.interval = const SdkOmitted(), this.issueOpened = const SdkOmitted(), this.issueLabeled = const SdkOmitted(), this.workflowRun = const SdkOmitted(), this.pullRequestOpened = const SdkOmitted(), this.pullRequestSynchronize = const SdkOmitted(), this.pullRequestMerged = const SdkOmitted(), this.issueComment = const SdkOmitted(), this.pullRequestComment = const SdkOmitted(), this.discussionOpened = const SdkOmitted(), this.discussionUpdated = const SdkOmitted(), this.discussionComment = const SdkOmitted(), this.issueAssigned = const SdkOmitted(), this.pullRequestAssigned = const SdkOmitted(), this.subIssueAdded = const SdkOmitted(), this.pullRequestReadyForReview = const SdkOmitted(), this.pullRequestLabeled = const SdkOmitted(), this.pullRequestMergeConflict = const SdkOmitted(), this.pullRequestReviewSubmitted = const SdkOmitted(), this.pullRequestReviewRequested = const SdkOmitted(), this.automationCompleted = const SdkOmitted()});
+
+  AgentAutomationsGetAutomationResponseTriggers Function({SdkOptional<AgentAutomationsGetAutomationResponseTriggersInterval> interval, SdkOptional<AgentAutomationsGetAutomationResponseTriggersIssueOpened> issueOpened, SdkOptional<AgentAutomationsGetAutomationResponseTriggersIssueLabeled> issueLabeled, SdkOptional<AgentAutomationsGetAutomationResponseTriggersWorkflowRun> workflowRun, SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestOpened> pullRequestOpened, SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestSynchronize> pullRequestSynchronize, SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestMerged> pullRequestMerged, SdkOptional<AgentAutomationsGetAutomationResponseTriggersIssueComment> issueComment, SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestComment> pullRequestComment, SdkOptional<AgentAutomationsGetAutomationResponseTriggersDiscussionOpened> discussionOpened, SdkOptional<AgentAutomationsGetAutomationResponseTriggersDiscussionUpdated> discussionUpdated, SdkOptional<AgentAutomationsGetAutomationResponseTriggersDiscussionComment> discussionComment, SdkOptional<AgentAutomationsGetAutomationResponseTriggersIssueAssigned> issueAssigned, SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestAssigned> pullRequestAssigned, SdkOptional<AgentAutomationsGetAutomationResponseTriggersSubIssueAdded> subIssueAdded, SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestReadyForReview> pullRequestReadyForReview, SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestLabeled> pullRequestLabeled, SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestMergeConflict> pullRequestMergeConflict, SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestReviewSubmitted> pullRequestReviewSubmitted, SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestReviewRequested> pullRequestReviewRequested, SdkOptional<AgentAutomationsGetAutomationResponseTriggersAutomationCompleted> automationCompleted}) get copyWith => _copyWith;
+
+  AgentAutomationsGetAutomationResponseTriggers _copyWith({Object? interval = sdkOmittedValue, Object? issueOpened = sdkOmittedValue, Object? issueLabeled = sdkOmittedValue, Object? workflowRun = sdkOmittedValue, Object? pullRequestOpened = sdkOmittedValue, Object? pullRequestSynchronize = sdkOmittedValue, Object? pullRequestMerged = sdkOmittedValue, Object? issueComment = sdkOmittedValue, Object? pullRequestComment = sdkOmittedValue, Object? discussionOpened = sdkOmittedValue, Object? discussionUpdated = sdkOmittedValue, Object? discussionComment = sdkOmittedValue, Object? issueAssigned = sdkOmittedValue, Object? pullRequestAssigned = sdkOmittedValue, Object? subIssueAdded = sdkOmittedValue, Object? pullRequestReadyForReview = sdkOmittedValue, Object? pullRequestLabeled = sdkOmittedValue, Object? pullRequestMergeConflict = sdkOmittedValue, Object? pullRequestReviewSubmitted = sdkOmittedValue, Object? pullRequestReviewRequested = sdkOmittedValue, Object? automationCompleted = sdkOmittedValue}) => AgentAutomationsGetAutomationResponseTriggers(
+    interval: identical(interval, sdkOmittedValue) ? this.interval : interval as SdkOptional<AgentAutomationsGetAutomationResponseTriggersInterval>,
+    issueOpened: identical(issueOpened, sdkOmittedValue) ? this.issueOpened : issueOpened as SdkOptional<AgentAutomationsGetAutomationResponseTriggersIssueOpened>,
+    issueLabeled: identical(issueLabeled, sdkOmittedValue) ? this.issueLabeled : issueLabeled as SdkOptional<AgentAutomationsGetAutomationResponseTriggersIssueLabeled>,
+    workflowRun: identical(workflowRun, sdkOmittedValue) ? this.workflowRun : workflowRun as SdkOptional<AgentAutomationsGetAutomationResponseTriggersWorkflowRun>,
+    pullRequestOpened: identical(pullRequestOpened, sdkOmittedValue) ? this.pullRequestOpened : pullRequestOpened as SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestOpened>,
+    pullRequestSynchronize: identical(pullRequestSynchronize, sdkOmittedValue) ? this.pullRequestSynchronize : pullRequestSynchronize as SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestSynchronize>,
+    pullRequestMerged: identical(pullRequestMerged, sdkOmittedValue) ? this.pullRequestMerged : pullRequestMerged as SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestMerged>,
+    issueComment: identical(issueComment, sdkOmittedValue) ? this.issueComment : issueComment as SdkOptional<AgentAutomationsGetAutomationResponseTriggersIssueComment>,
+    pullRequestComment: identical(pullRequestComment, sdkOmittedValue) ? this.pullRequestComment : pullRequestComment as SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestComment>,
+    discussionOpened: identical(discussionOpened, sdkOmittedValue) ? this.discussionOpened : discussionOpened as SdkOptional<AgentAutomationsGetAutomationResponseTriggersDiscussionOpened>,
+    discussionUpdated: identical(discussionUpdated, sdkOmittedValue) ? this.discussionUpdated : discussionUpdated as SdkOptional<AgentAutomationsGetAutomationResponseTriggersDiscussionUpdated>,
+    discussionComment: identical(discussionComment, sdkOmittedValue) ? this.discussionComment : discussionComment as SdkOptional<AgentAutomationsGetAutomationResponseTriggersDiscussionComment>,
+    issueAssigned: identical(issueAssigned, sdkOmittedValue) ? this.issueAssigned : issueAssigned as SdkOptional<AgentAutomationsGetAutomationResponseTriggersIssueAssigned>,
+    pullRequestAssigned: identical(pullRequestAssigned, sdkOmittedValue) ? this.pullRequestAssigned : pullRequestAssigned as SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestAssigned>,
+    subIssueAdded: identical(subIssueAdded, sdkOmittedValue) ? this.subIssueAdded : subIssueAdded as SdkOptional<AgentAutomationsGetAutomationResponseTriggersSubIssueAdded>,
+    pullRequestReadyForReview: identical(pullRequestReadyForReview, sdkOmittedValue) ? this.pullRequestReadyForReview : pullRequestReadyForReview as SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestReadyForReview>,
+    pullRequestLabeled: identical(pullRequestLabeled, sdkOmittedValue) ? this.pullRequestLabeled : pullRequestLabeled as SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestLabeled>,
+    pullRequestMergeConflict: identical(pullRequestMergeConflict, sdkOmittedValue) ? this.pullRequestMergeConflict : pullRequestMergeConflict as SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestMergeConflict>,
+    pullRequestReviewSubmitted: identical(pullRequestReviewSubmitted, sdkOmittedValue) ? this.pullRequestReviewSubmitted : pullRequestReviewSubmitted as SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestReviewSubmitted>,
+    pullRequestReviewRequested: identical(pullRequestReviewRequested, sdkOmittedValue) ? this.pullRequestReviewRequested : pullRequestReviewRequested as SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestReviewRequested>,
+    automationCompleted: identical(automationCompleted, sdkOmittedValue) ? this.automationCompleted : automationCompleted as SdkOptional<AgentAutomationsGetAutomationResponseTriggersAutomationCompleted>,
+  );
+
+  factory AgentAutomationsGetAutomationResponseTriggers.fromJson(Map<String, dynamic> json) => AgentAutomationsGetAutomationResponseTriggers(
+    interval: json['interval'] != null ? SdkPresent((json['interval'] != null ? AgentAutomationsGetAutomationResponseTriggersInterval.fromJson(json['interval'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    issueOpened: json['issue_opened'] != null ? SdkPresent((json['issue_opened'] != null ? AgentAutomationsGetAutomationResponseTriggersIssueOpened.fromJson(json['issue_opened'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    issueLabeled: json['issue_labeled'] != null ? SdkPresent((json['issue_labeled'] != null ? AgentAutomationsGetAutomationResponseTriggersIssueLabeled.fromJson(json['issue_labeled'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    workflowRun: json['workflow_run'] != null ? SdkPresent((json['workflow_run'] != null ? AgentAutomationsGetAutomationResponseTriggersWorkflowRun.fromJson(json['workflow_run'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    pullRequestOpened: json['pull_request_opened'] != null ? SdkPresent((json['pull_request_opened'] != null ? AgentAutomationsGetAutomationResponseTriggersPullRequestOpened.fromJson(json['pull_request_opened'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    pullRequestSynchronize: json['pull_request_synchronize'] != null ? SdkPresent((json['pull_request_synchronize'] != null ? AgentAutomationsGetAutomationResponseTriggersPullRequestSynchronize.fromJson(json['pull_request_synchronize'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    pullRequestMerged: json['pull_request_merged'] != null ? SdkPresent((json['pull_request_merged'] != null ? AgentAutomationsGetAutomationResponseTriggersPullRequestMerged.fromJson(json['pull_request_merged'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    issueComment: json['issue_comment'] != null ? SdkPresent((json['issue_comment'] != null ? AgentAutomationsGetAutomationResponseTriggersIssueComment.fromJson(json['issue_comment'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    pullRequestComment: json['pull_request_comment'] != null ? SdkPresent((json['pull_request_comment'] != null ? AgentAutomationsGetAutomationResponseTriggersPullRequestComment.fromJson(json['pull_request_comment'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    discussionOpened: json['discussion_opened'] != null ? SdkPresent((json['discussion_opened'] != null ? AgentAutomationsGetAutomationResponseTriggersDiscussionOpened.fromJson(json['discussion_opened'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    discussionUpdated: json['discussion_updated'] != null ? SdkPresent((json['discussion_updated'] != null ? AgentAutomationsGetAutomationResponseTriggersDiscussionUpdated.fromJson(json['discussion_updated'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    discussionComment: json['discussion_comment'] != null ? SdkPresent((json['discussion_comment'] != null ? AgentAutomationsGetAutomationResponseTriggersDiscussionComment.fromJson(json['discussion_comment'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    issueAssigned: json['issue_assigned'] != null ? SdkPresent((json['issue_assigned'] != null ? AgentAutomationsGetAutomationResponseTriggersIssueAssigned.fromJson(json['issue_assigned'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    pullRequestAssigned: json['pull_request_assigned'] != null ? SdkPresent((json['pull_request_assigned'] != null ? AgentAutomationsGetAutomationResponseTriggersPullRequestAssigned.fromJson(json['pull_request_assigned'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    subIssueAdded: json['sub_issue_added'] != null ? SdkPresent((json['sub_issue_added'] != null ? AgentAutomationsGetAutomationResponseTriggersSubIssueAdded.fromJson(json['sub_issue_added'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    pullRequestReadyForReview: json['pull_request_ready_for_review'] != null ? SdkPresent((json['pull_request_ready_for_review'] != null ? AgentAutomationsGetAutomationResponseTriggersPullRequestReadyForReview.fromJson(json['pull_request_ready_for_review'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    pullRequestLabeled: json['pull_request_labeled'] != null ? SdkPresent((json['pull_request_labeled'] != null ? AgentAutomationsGetAutomationResponseTriggersPullRequestLabeled.fromJson(json['pull_request_labeled'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    pullRequestMergeConflict: json['pull_request_merge_conflict'] != null ? SdkPresent((json['pull_request_merge_conflict'] != null ? AgentAutomationsGetAutomationResponseTriggersPullRequestMergeConflict.fromJson(json['pull_request_merge_conflict'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    pullRequestReviewSubmitted: json['pull_request_review_submitted'] != null ? SdkPresent((json['pull_request_review_submitted'] != null ? AgentAutomationsGetAutomationResponseTriggersPullRequestReviewSubmitted.fromJson(json['pull_request_review_submitted'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    pullRequestReviewRequested: json['pull_request_review_requested'] != null ? SdkPresent((json['pull_request_review_requested'] != null ? AgentAutomationsGetAutomationResponseTriggersPullRequestReviewRequested.fromJson(json['pull_request_review_requested'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    automationCompleted: json['automation_completed'] != null ? SdkPresent((json['automation_completed'] != null ? AgentAutomationsGetAutomationResponseTriggersAutomationCompleted.fromJson(json['automation_completed'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    ...switch (interval) {
+      SdkPresent<AgentAutomationsGetAutomationResponseTriggersInterval>(value: final value) => {'interval': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (issueOpened) {
+      SdkPresent<AgentAutomationsGetAutomationResponseTriggersIssueOpened>(value: final value) => {'issue_opened': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (issueLabeled) {
+      SdkPresent<AgentAutomationsGetAutomationResponseTriggersIssueLabeled>(value: final value) => {'issue_labeled': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (workflowRun) {
+      SdkPresent<AgentAutomationsGetAutomationResponseTriggersWorkflowRun>(value: final value) => {'workflow_run': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pullRequestOpened) {
+      SdkPresent<AgentAutomationsGetAutomationResponseTriggersPullRequestOpened>(value: final value) => {'pull_request_opened': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pullRequestSynchronize) {
+      SdkPresent<AgentAutomationsGetAutomationResponseTriggersPullRequestSynchronize>(value: final value) => {'pull_request_synchronize': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pullRequestMerged) {
+      SdkPresent<AgentAutomationsGetAutomationResponseTriggersPullRequestMerged>(value: final value) => {'pull_request_merged': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (issueComment) {
+      SdkPresent<AgentAutomationsGetAutomationResponseTriggersIssueComment>(value: final value) => {'issue_comment': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pullRequestComment) {
+      SdkPresent<AgentAutomationsGetAutomationResponseTriggersPullRequestComment>(value: final value) => {'pull_request_comment': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (discussionOpened) {
+      SdkPresent<AgentAutomationsGetAutomationResponseTriggersDiscussionOpened>(value: final value) => {'discussion_opened': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (discussionUpdated) {
+      SdkPresent<AgentAutomationsGetAutomationResponseTriggersDiscussionUpdated>(value: final value) => {'discussion_updated': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (discussionComment) {
+      SdkPresent<AgentAutomationsGetAutomationResponseTriggersDiscussionComment>(value: final value) => {'discussion_comment': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (issueAssigned) {
+      SdkPresent<AgentAutomationsGetAutomationResponseTriggersIssueAssigned>(value: final value) => {'issue_assigned': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pullRequestAssigned) {
+      SdkPresent<AgentAutomationsGetAutomationResponseTriggersPullRequestAssigned>(value: final value) => {'pull_request_assigned': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (subIssueAdded) {
+      SdkPresent<AgentAutomationsGetAutomationResponseTriggersSubIssueAdded>(value: final value) => {'sub_issue_added': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pullRequestReadyForReview) {
+      SdkPresent<AgentAutomationsGetAutomationResponseTriggersPullRequestReadyForReview>(value: final value) => {'pull_request_ready_for_review': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pullRequestLabeled) {
+      SdkPresent<AgentAutomationsGetAutomationResponseTriggersPullRequestLabeled>(value: final value) => {'pull_request_labeled': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pullRequestMergeConflict) {
+      SdkPresent<AgentAutomationsGetAutomationResponseTriggersPullRequestMergeConflict>(value: final value) => {'pull_request_merge_conflict': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pullRequestReviewSubmitted) {
+      SdkPresent<AgentAutomationsGetAutomationResponseTriggersPullRequestReviewSubmitted>(value: final value) => {'pull_request_review_submitted': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pullRequestReviewRequested) {
+      SdkPresent<AgentAutomationsGetAutomationResponseTriggersPullRequestReviewRequested>(value: final value) => {'pull_request_review_requested': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (automationCompleted) {
+      SdkPresent<AgentAutomationsGetAutomationResponseTriggersAutomationCompleted>(value: final value) => {'automation_completed': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

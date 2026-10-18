@@ -4,273 +4,278 @@
 part of 'inline.dart';
 
 // Inline operation models (part 265)
-/// The enablement status of secret scanning validity checks
-final class CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningValidityChecks {
+/// The state of the status.
+final class ReposCreateCommitStatusRequestBodyState {
 
   final String value;
 
-  const CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningValidityChecks._(this.value);
+  const ReposCreateCommitStatusRequestBodyState._(this.value);
 
-  factory CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningValidityChecks.fromJson(String value) => CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningValidityChecks._(value);
+  factory ReposCreateCommitStatusRequestBodyState.fromJson(String value) => ReposCreateCommitStatusRequestBodyState._(value);
 
-  static const enabled = CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningValidityChecks._('enabled');
-  static const disabled = CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningValidityChecks._('disabled');
-  static const notSet = CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningValidityChecks._('not_set');
+  static const error = ReposCreateCommitStatusRequestBodyState._('error');
+  static const failure = ReposCreateCommitStatusRequestBodyState._('failure');
+  static const pending = ReposCreateCommitStatusRequestBodyState._('pending');
+  static const success = ReposCreateCommitStatusRequestBodyState._('success');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningValidityChecks && other.value == value;
+  @override bool operator ==(Object other) => other is ReposCreateCommitStatusRequestBodyState && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// The type of repositories to attach the configuration to.
-final class CodeSecurityAttachEnterpriseConfigurationRequestBodyScope {
+final class SearchCodeSort {
 
   final String value;
 
-  const CodeSecurityAttachEnterpriseConfigurationRequestBodyScope._(this.value);
+  const SearchCodeSort._(this.value);
 
-  factory CodeSecurityAttachEnterpriseConfigurationRequestBodyScope.fromJson(String value) => CodeSecurityAttachEnterpriseConfigurationRequestBodyScope._(value);
+  factory SearchCodeSort.fromJson(String value) => SearchCodeSort._(value);
 
-  static const all = CodeSecurityAttachEnterpriseConfigurationRequestBodyScope._('all');
-  static const allWithoutConfigurations = CodeSecurityAttachEnterpriseConfigurationRequestBodyScope._('all_without_configurations');
+  static const indexed = SearchCodeSort._('indexed');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeSecurityAttachEnterpriseConfigurationRequestBodyScope && other.value == value;
+  @override bool operator ==(Object other) => other is SearchCodeSort && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Specify which types of repository this security configuration should be applied to by default.
-final class CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestBodyDefaultForNewRepos {
+final class SearchCodeOrder {
 
   final String value;
 
-  const CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestBodyDefaultForNewRepos._(this.value);
+  const SearchCodeOrder._(this.value);
 
-  factory CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestBodyDefaultForNewRepos.fromJson(String value) => CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestBodyDefaultForNewRepos._(value);
+  factory SearchCodeOrder.fromJson(String value) => SearchCodeOrder._(value);
 
-  static const all = CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestBodyDefaultForNewRepos._('all');
-  static const none = CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestBodyDefaultForNewRepos._('none');
-  static const privateAndInternal = CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestBodyDefaultForNewRepos._('private_and_internal');
-  static const public = CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestBodyDefaultForNewRepos._('public');
+  static const desc = SearchCodeOrder._('desc');
+  static const asc = SearchCodeOrder._('asc');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestBodyDefaultForNewRepos && other.value == value;
+  @override bool operator ==(Object other) => other is SearchCodeOrder && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Specifies which types of repository this security configuration is applied to by default.
-final class CodeSecuritySetConfigurationAsDefaultForEnterpriseResponseDefaultForNewRepos {
+final class SearchCommitsSort {
 
   final String value;
 
-  const CodeSecuritySetConfigurationAsDefaultForEnterpriseResponseDefaultForNewRepos._(this.value);
+  const SearchCommitsSort._(this.value);
 
-  factory CodeSecuritySetConfigurationAsDefaultForEnterpriseResponseDefaultForNewRepos.fromJson(String value) => CodeSecuritySetConfigurationAsDefaultForEnterpriseResponseDefaultForNewRepos._(value);
+  factory SearchCommitsSort.fromJson(String value) => SearchCommitsSort._(value);
 
-  static const all = CodeSecuritySetConfigurationAsDefaultForEnterpriseResponseDefaultForNewRepos._('all');
-  static const none = CodeSecuritySetConfigurationAsDefaultForEnterpriseResponseDefaultForNewRepos._('none');
-  static const privateAndInternal = CodeSecuritySetConfigurationAsDefaultForEnterpriseResponseDefaultForNewRepos._('private_and_internal');
-  static const public = CodeSecuritySetConfigurationAsDefaultForEnterpriseResponseDefaultForNewRepos._('public');
+  static const authorDate = SearchCommitsSort._('author-date');
+  static const committerDate = SearchCommitsSort._('committer-date');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeSecuritySetConfigurationAsDefaultForEnterpriseResponseDefaultForNewRepos && other.value == value;
+  @override bool operator ==(Object other) => other is SearchCommitsSort && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// The policy state for Copilot cloud agent in the enterprise. Can be one of `enabled_for_all_orgs`, `disabled_for_all_orgs`, `enabled_for_selected_orgs`, or `configured_by_org_admins`.
-final class CopilotSetEnterpriseCodingAgentPolicyRequestBodyPolicyState {
+final class SearchIssuesAndPullRequestsSort {
 
   final String value;
 
-  const CopilotSetEnterpriseCodingAgentPolicyRequestBodyPolicyState._(this.value);
+  const SearchIssuesAndPullRequestsSort._(this.value);
 
-  factory CopilotSetEnterpriseCodingAgentPolicyRequestBodyPolicyState.fromJson(String value) => CopilotSetEnterpriseCodingAgentPolicyRequestBodyPolicyState._(value);
+  factory SearchIssuesAndPullRequestsSort.fromJson(String value) => SearchIssuesAndPullRequestsSort._(value);
 
-  static const enabledForAllOrgs = CopilotSetEnterpriseCodingAgentPolicyRequestBodyPolicyState._('enabled_for_all_orgs');
-  static const disabledForAllOrgs = CopilotSetEnterpriseCodingAgentPolicyRequestBodyPolicyState._('disabled_for_all_orgs');
-  static const enabledForSelectedOrgs = CopilotSetEnterpriseCodingAgentPolicyRequestBodyPolicyState._('enabled_for_selected_orgs');
-  static const configuredByOrgAdmins = CopilotSetEnterpriseCodingAgentPolicyRequestBodyPolicyState._('configured_by_org_admins');
+  static const comments = SearchIssuesAndPullRequestsSort._('comments');
+  static const reactions = SearchIssuesAndPullRequestsSort._('reactions');
+  static const reactionsPlus1 = SearchIssuesAndPullRequestsSort._('reactions-+1');
+  static const reactionsMinus1 = SearchIssuesAndPullRequestsSort._('reactions--1');
+  static const reactionsSmile = SearchIssuesAndPullRequestsSort._('reactions-smile');
+  static const reactionsThinkingFace = SearchIssuesAndPullRequestsSort._('reactions-thinking_face');
+  static const reactionsHeart = SearchIssuesAndPullRequestsSort._('reactions-heart');
+  static const reactionsTada = SearchIssuesAndPullRequestsSort._('reactions-tada');
+  static const interactions = SearchIssuesAndPullRequestsSort._('interactions');
+  static const created = SearchIssuesAndPullRequestsSort._('created');
+  static const updated = SearchIssuesAndPullRequestsSort._('updated');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CopilotSetEnterpriseCodingAgentPolicyRequestBodyPolicyState && other.value == value;
+  @override bool operator ==(Object other) => other is SearchIssuesAndPullRequestsSort && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// The default repository access level for Dependabot updates.
-final class DependabotSetRepositoryAccessDefaultLevelForEnterpriseRequestBodyDefaultLevel {
+final class SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem {
 
   final String value;
 
-  const DependabotSetRepositoryAccessDefaultLevelForEnterpriseRequestBodyDefaultLevel._(this.value);
+  const SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem._(this.value);
 
-  factory DependabotSetRepositoryAccessDefaultLevelForEnterpriseRequestBodyDefaultLevel.fromJson(String value) => DependabotSetRepositoryAccessDefaultLevelForEnterpriseRequestBodyDefaultLevel._(value);
+  factory SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem.fromJson(String value) => SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem._(value);
 
-  static const public = DependabotSetRepositoryAccessDefaultLevelForEnterpriseRequestBodyDefaultLevel._('public');
-  static const internal = DependabotSetRepositoryAccessDefaultLevelForEnterpriseRequestBodyDefaultLevel._('internal');
+  static const noTextTerms = SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem._('no_text_terms');
+  static const quotedText = SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem._('quoted_text');
+  static const nonIssueTarget = SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem._('non_issue_target');
+  static const orBooleanNotSupported = SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem._('or_boolean_not_supported');
+  static const noAccessibleRepos = SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem._('no_accessible_repos');
+  static const serverError = SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem._('server_error');
+  static const onlyNonSemanticFieldsRequested = SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem._('only_non_semantic_fields_requested');
+  static const serviceUnavailable = SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem._('service_unavailable');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is DependabotSetRepositoryAccessDefaultLevelForEnterpriseRequestBodyDefaultLevel && other.value == value;
+  @override bool operator ==(Object other) => other is SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-final class GistsCreateRequestBodyPublicVariant1 {
+/// The type of search that was performed. Possible values are `lexical`, `semantic`, or `hybrid`.
+final class SearchIssuesAndPullRequestsResponseSearchType {
 
   final String value;
 
-  const GistsCreateRequestBodyPublicVariant1._(this.value);
+  const SearchIssuesAndPullRequestsResponseSearchType._(this.value);
 
-  factory GistsCreateRequestBodyPublicVariant1.fromJson(String value) => GistsCreateRequestBodyPublicVariant1._(value);
+  factory SearchIssuesAndPullRequestsResponseSearchType.fromJson(String value) => SearchIssuesAndPullRequestsResponseSearchType._(value);
 
-  static const true_ = GistsCreateRequestBodyPublicVariant1._('true');
-  static const false_ = GistsCreateRequestBodyPublicVariant1._('false');
+  static const lexical = SearchIssuesAndPullRequestsResponseSearchType._('lexical');
+  static const semantic = SearchIssuesAndPullRequestsResponseSearchType._('semantic');
+  static const hybrid = SearchIssuesAndPullRequestsResponseSearchType._('hybrid');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is GistsCreateRequestBodyPublicVariant1 && other.value == value;
+  @override bool operator ==(Object other) => other is SearchIssuesAndPullRequestsResponseSearchType && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-final class IssuesListFilter {
+final class SearchLabelsSort {
 
   final String value;
 
-  const IssuesListFilter._(this.value);
+  const SearchLabelsSort._(this.value);
 
-  factory IssuesListFilter.fromJson(String value) => IssuesListFilter._(value);
+  factory SearchLabelsSort.fromJson(String value) => SearchLabelsSort._(value);
 
-  static const assigned = IssuesListFilter._('assigned');
-  static const created = IssuesListFilter._('created');
-  static const mentioned = IssuesListFilter._('mentioned');
-  static const subscribed = IssuesListFilter._('subscribed');
-  static const repos = IssuesListFilter._('repos');
-  static const all = IssuesListFilter._('all');
+  static const created = SearchLabelsSort._('created');
+  static const updated = SearchLabelsSort._('updated');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is IssuesListFilter && other.value == value;
+  @override bool operator ==(Object other) => other is SearchLabelsSort && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-final class IssuesListState {
+final class SearchReposSort {
 
   final String value;
 
-  const IssuesListState._(this.value);
+  const SearchReposSort._(this.value);
 
-  factory IssuesListState.fromJson(String value) => IssuesListState._(value);
+  factory SearchReposSort.fromJson(String value) => SearchReposSort._(value);
 
-  static const open = IssuesListState._('open');
-  static const closed = IssuesListState._('closed');
-  static const all = IssuesListState._('all');
+  static const stars = SearchReposSort._('stars');
+  static const forks = SearchReposSort._('forks');
+  static const helpWantedIssues = SearchReposSort._('help-wanted-issues');
+  static const updated = SearchReposSort._('updated');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is IssuesListState && other.value == value;
+  @override bool operator ==(Object other) => other is SearchReposSort && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-final class IssuesListSort {
+final class SearchUsersSort {
 
   final String value;
 
-  const IssuesListSort._(this.value);
+  const SearchUsersSort._(this.value);
 
-  factory IssuesListSort.fromJson(String value) => IssuesListSort._(value);
+  factory SearchUsersSort.fromJson(String value) => SearchUsersSort._(value);
 
-  static const created = IssuesListSort._('created');
-  static const updated = IssuesListSort._('updated');
-  static const comments = IssuesListSort._('comments');
+  static const followers = SearchUsersSort._('followers');
+  static const repositories = SearchUsersSort._('repositories');
+  static const joined = SearchUsersSort._('joined');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is IssuesListSort && other.value == value;
+  @override bool operator ==(Object other) => other is SearchUsersSort && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// The rendering mode.
-final class MarkdownRenderRequestBodyMode {
+/// The notification setting the team has chosen. Editing teams without specifying this parameter leaves `notification_setting` intact. The options are: * `notifications_enabled` - team members receive notifications when the team is @mentioned. * `notifications_disabled` - no one receives notifications.
+final class TeamsUpdateLegacyRequestBodyNotificationSetting {
 
   final String value;
 
-  const MarkdownRenderRequestBodyMode._(this.value);
+  const TeamsUpdateLegacyRequestBodyNotificationSetting._(this.value);
 
-  factory MarkdownRenderRequestBodyMode.fromJson(String value) => MarkdownRenderRequestBodyMode._(value);
+  factory TeamsUpdateLegacyRequestBodyNotificationSetting.fromJson(String value) => TeamsUpdateLegacyRequestBodyNotificationSetting._(value);
 
-  static const markdown = MarkdownRenderRequestBodyMode._('markdown');
-  static const gfm = MarkdownRenderRequestBodyMode._('gfm');
+  static const notificationsEnabled = TeamsUpdateLegacyRequestBodyNotificationSetting._('notifications_enabled');
+  static const notificationsDisabled = TeamsUpdateLegacyRequestBodyNotificationSetting._('notifications_disabled');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is MarkdownRenderRequestBodyMode && other.value == value;
+  @override bool operator ==(Object other) => other is TeamsUpdateLegacyRequestBodyNotificationSetting && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-final class AppsListAccountsForPlanDirection {
+/// **Closing down notice**. The permission that new repositories will be added to the team with when none is specified.
+final class TeamsUpdateLegacyRequestBodyPermission {
 
   final String value;
 
-  const AppsListAccountsForPlanDirection._(this.value);
+  const TeamsUpdateLegacyRequestBodyPermission._(this.value);
 
-  factory AppsListAccountsForPlanDirection.fromJson(String value) => AppsListAccountsForPlanDirection._(value);
+  factory TeamsUpdateLegacyRequestBodyPermission.fromJson(String value) => TeamsUpdateLegacyRequestBodyPermission._(value);
 
-  static const asc = AppsListAccountsForPlanDirection._('asc');
-  static const desc = AppsListAccountsForPlanDirection._('desc');
+  static const pull = TeamsUpdateLegacyRequestBodyPermission._('pull');
+  static const push = TeamsUpdateLegacyRequestBodyPermission._('push');
+  static const admin = TeamsUpdateLegacyRequestBodyPermission._('admin');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is AppsListAccountsForPlanDirection && other.value == value;
+  @override bool operator ==(Object other) => other is TeamsUpdateLegacyRequestBodyPermission && other.value == value;
 
   @override int get hashCode => value.hashCode;
 

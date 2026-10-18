@@ -4,287 +4,271 @@
 part of 'inline.dart';
 
 // Inline operation models (part 221)
-/// Optional enumerated value serialized in the `organization_hooks` wire field.
-final class WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationHooks {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestOpenedWriteScope {
 
   final String value;
 
-  const WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationHooks._(this.value);
+  const AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestOpenedWriteScope._(this.value);
 
-  factory WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationHooks.fromJson(String value) => WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationHooks._(value);
+  factory AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestOpenedWriteScope.fromJson(String value) => AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestOpenedWriteScope._(value);
 
-  static const read = WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationHooks._('read');
-  static const write = WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationHooks._('write');
+  static const trigger = AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestOpenedWriteScope._('trigger');
+  static const repository = AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestOpenedWriteScope._('repository');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationHooks && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestOpenedWriteScope && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `organization_packages` wire field.
-final class WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationPackages {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReadyForReviewWriteScope {
 
   final String value;
 
-  const WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationPackages._(this.value);
+  const AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReadyForReviewWriteScope._(this.value);
 
-  factory WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationPackages.fromJson(String value) => WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationPackages._(value);
+  factory AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReadyForReviewWriteScope.fromJson(String value) => AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReadyForReviewWriteScope._(value);
 
-  static const read = WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationPackages._('read');
-  static const write = WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationPackages._('write');
+  static const trigger = AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReadyForReviewWriteScope._('trigger');
+  static const repository = AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReadyForReviewWriteScope._('repository');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationPackages && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReadyForReviewWriteScope && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `organization_plan` wire field.
-final class WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationPlan {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReviewRequestedWriteScope {
 
   final String value;
 
-  const WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationPlan._(this.value);
+  const AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReviewRequestedWriteScope._(this.value);
 
-  factory WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationPlan.fromJson(String value) => WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationPlan._(value);
+  factory AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReviewRequestedWriteScope.fromJson(String value) => AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReviewRequestedWriteScope._(value);
 
-  static const read = WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationPlan._('read');
-  static const write = WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationPlan._('write');
+  static const trigger = AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReviewRequestedWriteScope._('trigger');
+  static const repository = AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReviewRequestedWriteScope._('repository');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationPlan && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReviewRequestedWriteScope && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `organization_projects` wire field.
-final class WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationProjects {
+final class AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReviewSubmittedStatesItem {
 
   final String value;
 
-  const WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationProjects._(this.value);
+  const AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReviewSubmittedStatesItem._(this.value);
 
-  factory WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationProjects.fromJson(String value) => WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationProjects._(value);
+  factory AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReviewSubmittedStatesItem.fromJson(String value) => AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReviewSubmittedStatesItem._(value);
 
-  static const read = WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationProjects._('read');
-  static const write = WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationProjects._('write');
+  static const approved = AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReviewSubmittedStatesItem._('approved');
+  static const changesRequested = AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReviewSubmittedStatesItem._('changes_requested');
+  static const commented = AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReviewSubmittedStatesItem._('commented');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationProjects && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReviewSubmittedStatesItem && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `organization_secrets` wire field.
-final class WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationSecrets {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReviewSubmittedWriteScope {
 
   final String value;
 
-  const WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationSecrets._(this.value);
+  const AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReviewSubmittedWriteScope._(this.value);
 
-  factory WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationSecrets.fromJson(String value) => WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationSecrets._(value);
+  factory AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReviewSubmittedWriteScope.fromJson(String value) => AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReviewSubmittedWriteScope._(value);
 
-  static const read = WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationSecrets._('read');
-  static const write = WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationSecrets._('write');
+  static const trigger = AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReviewSubmittedWriteScope._('trigger');
+  static const repository = AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReviewSubmittedWriteScope._('repository');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationSecrets && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReviewSubmittedWriteScope && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `organization_self_hosted_runners` wire field.
-final class WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationSelfHostedRunners {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestSynchronizeWriteScope {
 
   final String value;
 
-  const WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationSelfHostedRunners._(this.value);
+  const AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestSynchronizeWriteScope._(this.value);
 
-  factory WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationSelfHostedRunners.fromJson(String value) => WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationSelfHostedRunners._(value);
+  factory AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestSynchronizeWriteScope.fromJson(String value) => AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestSynchronizeWriteScope._(value);
 
-  static const read = WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationSelfHostedRunners._('read');
-  static const write = WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationSelfHostedRunners._('write');
+  static const trigger = AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestSynchronizeWriteScope._('trigger');
+  static const repository = AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestSynchronizeWriteScope._('repository');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationSelfHostedRunners && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestSynchronizeWriteScope && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `organization_user_blocking` wire field.
-final class WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationUserBlocking {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersSubIssueAddedWriteScope {
 
   final String value;
 
-  const WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationUserBlocking._(this.value);
+  const AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersSubIssueAddedWriteScope._(this.value);
 
-  factory WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationUserBlocking.fromJson(String value) => WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationUserBlocking._(value);
+  factory AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersSubIssueAddedWriteScope.fromJson(String value) => AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersSubIssueAddedWriteScope._(value);
 
-  static const read = WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationUserBlocking._('read');
-  static const write = WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationUserBlocking._('write');
+  static const trigger = AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersSubIssueAddedWriteScope._('trigger');
+  static const repository = AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersSubIssueAddedWriteScope._('repository');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksIssue2PerformedViaGithubAppPermissionsOrganizationUserBlocking && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersSubIssueAddedWriteScope && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `packages` wire field.
-final class WebhooksIssue2PerformedViaGithubAppPermissionsPackages {
+final class AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersWorkflowRunConclusionsItem {
 
   final String value;
 
-  const WebhooksIssue2PerformedViaGithubAppPermissionsPackages._(this.value);
+  const AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersWorkflowRunConclusionsItem._(this.value);
 
-  factory WebhooksIssue2PerformedViaGithubAppPermissionsPackages.fromJson(String value) => WebhooksIssue2PerformedViaGithubAppPermissionsPackages._(value);
+  factory AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersWorkflowRunConclusionsItem.fromJson(String value) => AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersWorkflowRunConclusionsItem._(value);
 
-  static const read = WebhooksIssue2PerformedViaGithubAppPermissionsPackages._('read');
-  static const write = WebhooksIssue2PerformedViaGithubAppPermissionsPackages._('write');
+  static const failure = AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersWorkflowRunConclusionsItem._('failure');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksIssue2PerformedViaGithubAppPermissionsPackages && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersWorkflowRunConclusionsItem && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `pages` wire field.
-final class WebhooksIssue2PerformedViaGithubAppPermissionsPages {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersWorkflowRunWriteScope {
 
   final String value;
 
-  const WebhooksIssue2PerformedViaGithubAppPermissionsPages._(this.value);
+  const AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersWorkflowRunWriteScope._(this.value);
 
-  factory WebhooksIssue2PerformedViaGithubAppPermissionsPages.fromJson(String value) => WebhooksIssue2PerformedViaGithubAppPermissionsPages._(value);
+  factory AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersWorkflowRunWriteScope.fromJson(String value) => AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersWorkflowRunWriteScope._(value);
 
-  static const read = WebhooksIssue2PerformedViaGithubAppPermissionsPages._('read');
-  static const write = WebhooksIssue2PerformedViaGithubAppPermissionsPages._('write');
+  static const trigger = AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersWorkflowRunWriteScope._('trigger');
+  static const repository = AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersWorkflowRunWriteScope._('repository');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksIssue2PerformedViaGithubAppPermissionsPages && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersWorkflowRunWriteScope && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `pull_requests` wire field.
-final class WebhooksIssue2PerformedViaGithubAppPermissionsPullRequests {
+/// Controls which repository resources a run may modify. `trigger` limits writes to the resource that started the run, when one exists, and resources created during the run; `repository` allows writes to any resource in the repository. Supported values: `trigger`, `repository`.
+final class AgentAutomationsListRepoAutomationsResponseAutomationsItemWriteScope {
 
   final String value;
 
-  const WebhooksIssue2PerformedViaGithubAppPermissionsPullRequests._(this.value);
+  const AgentAutomationsListRepoAutomationsResponseAutomationsItemWriteScope._(this.value);
 
-  factory WebhooksIssue2PerformedViaGithubAppPermissionsPullRequests.fromJson(String value) => WebhooksIssue2PerformedViaGithubAppPermissionsPullRequests._(value);
+  factory AgentAutomationsListRepoAutomationsResponseAutomationsItemWriteScope.fromJson(String value) => AgentAutomationsListRepoAutomationsResponseAutomationsItemWriteScope._(value);
 
-  static const read = WebhooksIssue2PerformedViaGithubAppPermissionsPullRequests._('read');
-  static const write = WebhooksIssue2PerformedViaGithubAppPermissionsPullRequests._('write');
+  static const trigger = AgentAutomationsListRepoAutomationsResponseAutomationsItemWriteScope._('trigger');
+  static const repository = AgentAutomationsListRepoAutomationsResponseAutomationsItemWriteScope._('repository');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksIssue2PerformedViaGithubAppPermissionsPullRequests && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsListRepoAutomationsResponseAutomationsItemWriteScope && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `repository_hooks` wire field.
-final class WebhooksIssue2PerformedViaGithubAppPermissionsRepositoryHooks {
+/// Machine-readable error code
+final class AgentAutomationsListRepoAutomationsResponseErrorsItemCode {
 
   final String value;
 
-  const WebhooksIssue2PerformedViaGithubAppPermissionsRepositoryHooks._(this.value);
+  const AgentAutomationsListRepoAutomationsResponseErrorsItemCode._(this.value);
 
-  factory WebhooksIssue2PerformedViaGithubAppPermissionsRepositoryHooks.fromJson(String value) => WebhooksIssue2PerformedViaGithubAppPermissionsRepositoryHooks._(value);
+  factory AgentAutomationsListRepoAutomationsResponseErrorsItemCode.fromJson(String value) => AgentAutomationsListRepoAutomationsResponseErrorsItemCode._(value);
 
-  static const read = WebhooksIssue2PerformedViaGithubAppPermissionsRepositoryHooks._('read');
-  static const write = WebhooksIssue2PerformedViaGithubAppPermissionsRepositoryHooks._('write');
+  static const missing = AgentAutomationsListRepoAutomationsResponseErrorsItemCode._('missing');
+  static const missingField = AgentAutomationsListRepoAutomationsResponseErrorsItemCode._('missing_field');
+  static const invalid = AgentAutomationsListRepoAutomationsResponseErrorsItemCode._('invalid');
+  static const alreadyExists = AgentAutomationsListRepoAutomationsResponseErrorsItemCode._('already_exists');
+  static const unprocessable = AgentAutomationsListRepoAutomationsResponseErrorsItemCode._('unprocessable');
+  static const custom = AgentAutomationsListRepoAutomationsResponseErrorsItemCode._('custom');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksIssue2PerformedViaGithubAppPermissionsRepositoryHooks && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsListRepoAutomationsResponseErrorsItemCode && other.value == value;
 
   @override int get hashCode => value.hashCode;
 
 }
 
-/// Optional enumerated value serialized in the `repository_projects` wire field.
-final class WebhooksIssue2PerformedViaGithubAppPermissionsRepositoryProjects {
+/// Machine-readable error code
+final class AgentAutomationsListRepoAutomationsResponseErrorsItemCodea38a3998 {
 
   final String value;
 
-  const WebhooksIssue2PerformedViaGithubAppPermissionsRepositoryProjects._(this.value);
+  const AgentAutomationsListRepoAutomationsResponseErrorsItemCodea38a3998._(this.value);
 
-  factory WebhooksIssue2PerformedViaGithubAppPermissionsRepositoryProjects.fromJson(String value) => WebhooksIssue2PerformedViaGithubAppPermissionsRepositoryProjects._(value);
+  factory AgentAutomationsListRepoAutomationsResponseErrorsItemCodea38a3998.fromJson(String value) => AgentAutomationsListRepoAutomationsResponseErrorsItemCodea38a3998._(value);
 
-  static const read = WebhooksIssue2PerformedViaGithubAppPermissionsRepositoryProjects._('read');
-  static const write = WebhooksIssue2PerformedViaGithubAppPermissionsRepositoryProjects._('write');
+  static const missing = AgentAutomationsListRepoAutomationsResponseErrorsItemCodea38a3998._('missing');
+  static const missingField = AgentAutomationsListRepoAutomationsResponseErrorsItemCodea38a3998._('missing_field');
+  static const invalid = AgentAutomationsListRepoAutomationsResponseErrorsItemCodea38a3998._('invalid');
+  static const alreadyExists = AgentAutomationsListRepoAutomationsResponseErrorsItemCodea38a3998._('already_exists');
+  static const unprocessable = AgentAutomationsListRepoAutomationsResponseErrorsItemCodea38a3998._('unprocessable');
+  static const custom = AgentAutomationsListRepoAutomationsResponseErrorsItemCodea38a3998._('custom');
 
   String toJson() => value;
 
   @override String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksIssue2PerformedViaGithubAppPermissionsRepositoryProjects && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// Optional enumerated value serialized in the `secret_scanning_alerts` wire field.
-final class WebhooksIssue2PerformedViaGithubAppPermissionsSecretScanningAlerts {
-
-  final String value;
-
-  const WebhooksIssue2PerformedViaGithubAppPermissionsSecretScanningAlerts._(this.value);
-
-  factory WebhooksIssue2PerformedViaGithubAppPermissionsSecretScanningAlerts.fromJson(String value) => WebhooksIssue2PerformedViaGithubAppPermissionsSecretScanningAlerts._(value);
-
-  static const read = WebhooksIssue2PerformedViaGithubAppPermissionsSecretScanningAlerts._('read');
-  static const write = WebhooksIssue2PerformedViaGithubAppPermissionsSecretScanningAlerts._('write');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is WebhooksIssue2PerformedViaGithubAppPermissionsSecretScanningAlerts && other.value == value;
+  @override bool operator ==(Object other) => other is AgentAutomationsListRepoAutomationsResponseErrorsItemCodea38a3998 && other.value == value;
 
   @override int get hashCode => value.hashCode;
 

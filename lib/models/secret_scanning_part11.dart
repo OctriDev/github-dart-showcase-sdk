@@ -4,7 +4,58 @@
 part of 'secret_scanning.dart';
 
 // secret_scanning domain models (part 11)
-/// Required API value serialized in the `custom_pattern_backfill_scans[]` wire field.
+/// Information on a single scan performed by secret scanning on the repository
+class SecretScanningScan {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The type of scan
+  final SdkOptional<String> type_;
+  /// The state of the scan. Either "completed", "running", "pending", "failed", or "unknown". "failed": this scan type has hit its retry limit and has been marked permanently failed. This usually resolves on its own at the next scheduled scan attempt. If "failed" persists, contact Support. "unknown": the scan is in an unrecognized or currently unhandled state.
+  final SdkOptional<String> status;
+  /// The time that the scan was completed. Empty if the scan is running
+  final SdkOptional<String?> completedAt;
+  /// The time that the scan was started. Empty if the scan is pending
+  final SdkOptional<String?> startedAt;
+
+  const SecretScanningScan({this.type_ = const SdkOmitted(), this.status = const SdkOmitted(), this.completedAt = const SdkOmitted(), this.startedAt = const SdkOmitted()});
+
+  SecretScanningScan Function({SdkOptional<String> type_, SdkOptional<String> status, SdkOptional<String?> completedAt, SdkOptional<String?> startedAt}) get copyWith => _copyWith;
+
+  SecretScanningScan _copyWith({Object? type_ = sdkOmittedValue, Object? status = sdkOmittedValue, Object? completedAt = sdkOmittedValue, Object? startedAt = sdkOmittedValue}) => SecretScanningScan(
+    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<String>,
+    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<String>,
+    completedAt: identical(completedAt, sdkOmittedValue) ? this.completedAt : completedAt as SdkOptional<String?>,
+    startedAt: identical(startedAt, sdkOmittedValue) ? this.startedAt : startedAt as SdkOptional<String?>,
+  );
+
+  factory SecretScanningScan.fromJson(Map<String, dynamic> json) => SecretScanningScan(
+    type_: json['type'] != null ? SdkPresent((json['type'] as String?)!) : const SdkOmitted(),
+    status: json['status'] != null ? SdkPresent((json['status'] as String?)!) : const SdkOmitted(),
+    completedAt: json.containsKey('completed_at') ? SdkPresent(json['completed_at'] as String?) : const SdkOmitted(),
+    startedAt: json.containsKey('started_at') ? SdkPresent(json['started_at'] as String?) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    ...switch (type_) {
+      SdkPresent<String>(value: final value) => {'type': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (status) {
+      SdkPresent<String>(value: final value) => {'status': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (completedAt) {
+      SdkPresent<String?>(value: final value) => {'completed_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (startedAt) {
+      SdkPresent<String?>(value: final value) => {'started_at': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
+}
+
+/// Required object value serialized in the `custom_pattern_backfill_scans[]` wire field.
 class SecretScanningScanHistoryCustomPatternBackfillScansItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';

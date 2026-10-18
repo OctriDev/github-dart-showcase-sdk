@@ -4,223 +4,86 @@
 part of 'shared_pull.dart';
 
 // shared_pull domain models (part 5)
-/// Pull Request Simple
-class PullRequestSimple {
+/// Required object value serialized in the `base` wire field.
+class PullRequestStackBase {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// Required `uri`-formatted value serialized in the `url` wire field.
-  final String url;
-  /// Required `int64`-formatted value serialized in the `id` wire field.
-  final int id;
-  /// Required `string` value serialized in the `node_id` wire field.
-  final String nodeId;
-  /// Required `uri`-formatted value serialized in the `html_url` wire field.
-  final String htmlUrl;
-  /// Required `uri`-formatted value serialized in the `diff_url` wire field.
-  final String diffUrl;
-  /// Required `uri`-formatted value serialized in the `patch_url` wire field.
-  final String patchUrl;
-  /// Required `uri`-formatted value serialized in the `issue_url` wire field.
-  final String issueUrl;
-  /// Required `uri`-formatted value serialized in the `commits_url` wire field.
-  final String commitsUrl;
-  /// Required `uri`-formatted value serialized in the `review_comments_url` wire field.
-  final String reviewCommentsUrl;
-  /// Required `string` value serialized in the `review_comment_url` wire field.
-  final String reviewCommentUrl;
-  /// Required `uri`-formatted value serialized in the `comments_url` wire field.
-  final String commentsUrl;
-  /// Required `uri`-formatted value serialized in the `statuses_url` wire field.
-  final String statusesUrl;
-  /// Required `integer` value serialized in the `number` wire field.
-  final int number;
-  /// Required `string` value serialized in the `state` wire field.
-  final String state;
-  /// Required `boolean` value serialized in the `locked` wire field.
-  final bool locked;
-  /// Required `string` value serialized in the `title` wire field.
-  final String title;
-  /// A GitHub user.
-  final NullableSimpleUser? user;
-  /// Required `string` value serialized in the `body` wire field.
-  final String? body;
-  /// Required array value serialized in the `labels` wire field.
-  final List<PullRequestSimpleLabelsItem> labels;
-  /// A collection of related issues and pull requests.
-  final NullableMilestone? milestone;
-  /// Optional `string` value serialized in the `active_lock_reason` wire field.
-  final SdkOptional<String?> activeLockReason;
-  /// Required `date-time`-formatted value serialized in the `created_at` wire field.
-  final String createdAt;
-  /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
-  final String updatedAt;
-  /// Required `date-time`-formatted value serialized in the `closed_at` wire field.
-  final String? closedAt;
-  /// Required `date-time`-formatted value serialized in the `merged_at` wire field.
-  final String? mergedAt;
-  /// Required `string` value serialized in the `merge_commit_sha` wire field.
-  final String? mergeCommitSha;
-  /// A GitHub user.
-  final NullableSimpleUser? assignee;
-  /// Optional array value serialized in the `assignees` wire field.
-  final SdkOptional<List<SimpleUser>> assignees;
-  /// Optional array value serialized in the `requested_reviewers` wire field.
-  final SdkOptional<List<SimpleUser>> requestedReviewers;
-  /// Optional array value serialized in the `requested_teams` wire field.
-  final SdkOptional<List<Team>> requestedTeams;
-  /// Required object value serialized in the `head` wire field.
-  final PullRequestSimpleHead head;
-  /// Required object value serialized in the `base` wire field.
-  final PullRequestSimpleBase base_;
-  /// Required object value serialized in the `_links` wire field.
-  final PullRequestSimpleLinks links;
-  /// How the author is associated with the repository.
-  final AuthorAssociation authorAssociation;
-  /// The status of auto merging a pull request.
-  final AutoMerge? autoMerge;
-  /// The stack information associated with a pull request.
-  final SdkOptional<PullRequestStack?> stack;
-  /// Indicates whether or not the pull request is a draft.
-  final SdkOptional<bool> draft;
+  /// The base ref of the stack this pull request belongs to.
+  final String ref;
+  /// The base SHA of the stack this pull request belongs to.
+  final String sha;
 
-  const PullRequestSimple({required this.url, required this.id, required this.nodeId, required this.htmlUrl, required this.diffUrl, required this.patchUrl, required this.issueUrl, required this.commitsUrl, required this.reviewCommentsUrl, required this.reviewCommentUrl, required this.commentsUrl, required this.statusesUrl, required this.number, required this.state, required this.locked, required this.title, required this.user, required this.body, required this.labels, required this.milestone, this.activeLockReason = const SdkOmitted(), required this.createdAt, required this.updatedAt, required this.closedAt, required this.mergedAt, required this.mergeCommitSha, required this.assignee, this.assignees = const SdkOmitted(), this.requestedReviewers = const SdkOmitted(), this.requestedTeams = const SdkOmitted(), required this.head, required this.base_, required this.links, required this.authorAssociation, required this.autoMerge, this.stack = const SdkOmitted(), this.draft = const SdkOmitted()});
+  const PullRequestStackBase({required this.ref, required this.sha});
 
-  PullRequestSimple Function({String url, int id, String nodeId, String htmlUrl, String diffUrl, String patchUrl, String issueUrl, String commitsUrl, String reviewCommentsUrl, String reviewCommentUrl, String commentsUrl, String statusesUrl, int number, String state, bool locked, String title, NullableSimpleUser? user, String? body, List<PullRequestSimpleLabelsItem> labels, NullableMilestone? milestone, SdkOptional<String?> activeLockReason, String createdAt, String updatedAt, String? closedAt, String? mergedAt, String? mergeCommitSha, NullableSimpleUser? assignee, SdkOptional<List<SimpleUser>> assignees, SdkOptional<List<SimpleUser>> requestedReviewers, SdkOptional<List<Team>> requestedTeams, PullRequestSimpleHead head, PullRequestSimpleBase base_, PullRequestSimpleLinks links, AuthorAssociation authorAssociation, AutoMerge? autoMerge, SdkOptional<PullRequestStack?> stack, SdkOptional<bool> draft}) get copyWith => _copyWith;
+  PullRequestStackBase Function({String ref, String sha}) get copyWith => _copyWith;
 
-  PullRequestSimple _copyWith({Object? url = sdkOmittedValue, Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? diffUrl = sdkOmittedValue, Object? patchUrl = sdkOmittedValue, Object? issueUrl = sdkOmittedValue, Object? commitsUrl = sdkOmittedValue, Object? reviewCommentsUrl = sdkOmittedValue, Object? reviewCommentUrl = sdkOmittedValue, Object? commentsUrl = sdkOmittedValue, Object? statusesUrl = sdkOmittedValue, Object? number = sdkOmittedValue, Object? state = sdkOmittedValue, Object? locked = sdkOmittedValue, Object? title = sdkOmittedValue, Object? user = sdkOmittedValue, Object? body = sdkOmittedValue, Object? labels = sdkOmittedValue, Object? milestone = sdkOmittedValue, Object? activeLockReason = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? closedAt = sdkOmittedValue, Object? mergedAt = sdkOmittedValue, Object? mergeCommitSha = sdkOmittedValue, Object? assignee = sdkOmittedValue, Object? assignees = sdkOmittedValue, Object? requestedReviewers = sdkOmittedValue, Object? requestedTeams = sdkOmittedValue, Object? head = sdkOmittedValue, Object? base_ = sdkOmittedValue, Object? links = sdkOmittedValue, Object? authorAssociation = sdkOmittedValue, Object? autoMerge = sdkOmittedValue, Object? stack = sdkOmittedValue, Object? draft = sdkOmittedValue}) => PullRequestSimple(
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
-    diffUrl: identical(diffUrl, sdkOmittedValue) ? this.diffUrl : diffUrl as String,
-    patchUrl: identical(patchUrl, sdkOmittedValue) ? this.patchUrl : patchUrl as String,
-    issueUrl: identical(issueUrl, sdkOmittedValue) ? this.issueUrl : issueUrl as String,
-    commitsUrl: identical(commitsUrl, sdkOmittedValue) ? this.commitsUrl : commitsUrl as String,
-    reviewCommentsUrl: identical(reviewCommentsUrl, sdkOmittedValue) ? this.reviewCommentsUrl : reviewCommentsUrl as String,
-    reviewCommentUrl: identical(reviewCommentUrl, sdkOmittedValue) ? this.reviewCommentUrl : reviewCommentUrl as String,
-    commentsUrl: identical(commentsUrl, sdkOmittedValue) ? this.commentsUrl : commentsUrl as String,
-    statusesUrl: identical(statusesUrl, sdkOmittedValue) ? this.statusesUrl : statusesUrl as String,
-    number: identical(number, sdkOmittedValue) ? this.number : number as int,
-    state: identical(state, sdkOmittedValue) ? this.state : state as String,
-    locked: identical(locked, sdkOmittedValue) ? this.locked : locked as bool,
-    title: identical(title, sdkOmittedValue) ? this.title : title as String,
-    user: identical(user, sdkOmittedValue) ? this.user : user as NullableSimpleUser?,
-    body: identical(body, sdkOmittedValue) ? this.body : body as String?,
-    labels: identical(labels, sdkOmittedValue) ? this.labels : labels as List<PullRequestSimpleLabelsItem>,
-    milestone: identical(milestone, sdkOmittedValue) ? this.milestone : milestone as NullableMilestone?,
-    activeLockReason: identical(activeLockReason, sdkOmittedValue) ? this.activeLockReason : activeLockReason as SdkOptional<String?>,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
-    closedAt: identical(closedAt, sdkOmittedValue) ? this.closedAt : closedAt as String?,
-    mergedAt: identical(mergedAt, sdkOmittedValue) ? this.mergedAt : mergedAt as String?,
-    mergeCommitSha: identical(mergeCommitSha, sdkOmittedValue) ? this.mergeCommitSha : mergeCommitSha as String?,
-    assignee: identical(assignee, sdkOmittedValue) ? this.assignee : assignee as NullableSimpleUser?,
-    assignees: identical(assignees, sdkOmittedValue) ? this.assignees : assignees as SdkOptional<List<SimpleUser>>,
-    requestedReviewers: identical(requestedReviewers, sdkOmittedValue) ? this.requestedReviewers : requestedReviewers as SdkOptional<List<SimpleUser>>,
-    requestedTeams: identical(requestedTeams, sdkOmittedValue) ? this.requestedTeams : requestedTeams as SdkOptional<List<Team>>,
-    head: identical(head, sdkOmittedValue) ? this.head : head as PullRequestSimpleHead,
-    base_: identical(base_, sdkOmittedValue) ? this.base_ : base_ as PullRequestSimpleBase,
-    links: identical(links, sdkOmittedValue) ? this.links : links as PullRequestSimpleLinks,
-    authorAssociation: identical(authorAssociation, sdkOmittedValue) ? this.authorAssociation : authorAssociation as AuthorAssociation,
-    autoMerge: identical(autoMerge, sdkOmittedValue) ? this.autoMerge : autoMerge as AutoMerge?,
-    stack: identical(stack, sdkOmittedValue) ? this.stack : stack as SdkOptional<PullRequestStack?>,
-    draft: identical(draft, sdkOmittedValue) ? this.draft : draft as SdkOptional<bool>,
+  PullRequestStackBase _copyWith({Object? ref = sdkOmittedValue, Object? sha = sdkOmittedValue}) => PullRequestStackBase(
+    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
   );
 
-  factory PullRequestSimple.fromJson(Map<String, dynamic> json) => PullRequestSimple(
-    url: (json['url'] as String?)!,
-    id: ((json['id'] as num?)?.toInt())!,
-    nodeId: (json['node_id'] as String?)!,
-    htmlUrl: (json['html_url'] as String?)!,
-    diffUrl: (json['diff_url'] as String?)!,
-    patchUrl: (json['patch_url'] as String?)!,
-    issueUrl: (json['issue_url'] as String?)!,
-    commitsUrl: (json['commits_url'] as String?)!,
-    reviewCommentsUrl: (json['review_comments_url'] as String?)!,
-    reviewCommentUrl: (json['review_comment_url'] as String?)!,
-    commentsUrl: (json['comments_url'] as String?)!,
-    statusesUrl: (json['statuses_url'] as String?)!,
-    number: ((json['number'] as num?)?.toInt())!,
-    state: (json['state'] as String?)!,
-    locked: (json['locked'] as bool?)!,
-    title: (json['title'] as String?)!,
-    user: json.containsKey('user') ? json['user'] != null ? NullableSimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'user', 'Required property is missing'),
-    body: json.containsKey('body') ? json['body'] as String? : throw ArgumentError.value(null, 'body', 'Required property is missing'),
-    labels: ((json['labels'] as List?)?.map((e) => PullRequestSimpleLabelsItem.fromJson(e as Map<String, dynamic>)).toList())!,
-    milestone: json.containsKey('milestone') ? json['milestone'] != null ? NullableMilestone.fromJson(json['milestone'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'milestone', 'Required property is missing'),
-    activeLockReason: json.containsKey('active_lock_reason') ? SdkPresent(json['active_lock_reason'] as String?) : const SdkOmitted(),
-    createdAt: (json['created_at'] as String?)!,
-    updatedAt: (json['updated_at'] as String?)!,
-    closedAt: json.containsKey('closed_at') ? json['closed_at'] as String? : throw ArgumentError.value(null, 'closed_at', 'Required property is missing'),
-    mergedAt: json.containsKey('merged_at') ? json['merged_at'] as String? : throw ArgumentError.value(null, 'merged_at', 'Required property is missing'),
-    mergeCommitSha: json.containsKey('merge_commit_sha') ? json['merge_commit_sha'] as String? : throw ArgumentError.value(null, 'merge_commit_sha', 'Required property is missing'),
-    assignee: json.containsKey('assignee') ? json['assignee'] != null ? NullableSimpleUser.fromJson(json['assignee'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'assignee', 'Required property is missing'),
-    assignees: json['assignees'] != null ? SdkPresent(((json['assignees'] as List?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-    requestedReviewers: json['requested_reviewers'] != null ? SdkPresent(((json['requested_reviewers'] as List?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-    requestedTeams: json['requested_teams'] != null ? SdkPresent(((json['requested_teams'] as List?)?.map((e) => Team.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-    head: (json['head'] != null ? PullRequestSimpleHead.fromJson(json['head'] as Map<String, dynamic>) : null)!,
-    base_: (json['base'] != null ? PullRequestSimpleBase.fromJson(json['base'] as Map<String, dynamic>) : null)!,
-    links: (json['_links'] != null ? PullRequestSimpleLinks.fromJson(json['_links'] as Map<String, dynamic>) : null)!,
-    authorAssociation: (json['author_association'] != null ? AuthorAssociation.fromJson(json['author_association'] as String) : null)!,
-    autoMerge: json.containsKey('auto_merge') ? json['auto_merge'] != null ? AutoMerge.fromJson(json['auto_merge'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'auto_merge', 'Required property is missing'),
-    stack: json.containsKey('stack') ? SdkPresent(json['stack'] != null ? PullRequestStack.fromJson(json['stack'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-    draft: json['draft'] != null ? SdkPresent((json['draft'] as bool?)!) : const SdkOmitted(),
+  factory PullRequestStackBase.fromJson(Map<String, dynamic> json) => PullRequestStackBase(
+    ref: (json['ref'] as String?)!,
+    sha: (json['sha'] as String?)!,
   );
 
   Map<String, dynamic> toJson() => {
-    'url': url,
-    'id': id,
-    'node_id': nodeId,
-    'html_url': htmlUrl,
-    'diff_url': diffUrl,
-    'patch_url': patchUrl,
-    'issue_url': issueUrl,
-    'commits_url': commitsUrl,
-    'review_comments_url': reviewCommentsUrl,
-    'review_comment_url': reviewCommentUrl,
-    'comments_url': commentsUrl,
-    'statuses_url': statusesUrl,
-    'number': number,
-    'state': state,
-    'locked': locked,
-    'title': title,
-    'user': user?.toJson(),
-    'body': body,
-    'labels': labels.map((item) => item.toJson()).toList(),
-    'milestone': milestone?.toJson(),
-    ...switch (activeLockReason) {
-      SdkPresent<String?>(value: final value) => {'active_lock_reason': value,},
-      _ => const <String, dynamic>{},
-    },
-    'created_at': createdAt,
-    'updated_at': updatedAt,
-    'closed_at': closedAt,
-    'merged_at': mergedAt,
-    'merge_commit_sha': mergeCommitSha,
-    'assignee': assignee?.toJson(),
-    ...switch (assignees) {
-      SdkPresent<List<SimpleUser>>(value: final value) => {'assignees': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (requestedReviewers) {
-      SdkPresent<List<SimpleUser>>(value: final value) => {'requested_reviewers': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (requestedTeams) {
-      SdkPresent<List<Team>>(value: final value) => {'requested_teams': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    'head': head.toJson(),
+    'ref': ref,
+    'sha': sha,
+  };
+}
+
+/// The stack information associated with a pull request.
+class PullRequestStack {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// Required object value serialized in the `base` wire field.
+  final PullRequestStackBase base_;
+  /// The total number of pull requests in the stack.
+  final SdkOptional<int> size;
+  /// The one-based position of this pull request within the stack, where 1 is the bottom of the stack.
+  final SdkOptional<int> position;
+  /// The ID of the stack that this pull request belongs to.
+  final SdkOptional<int> id;
+  /// The number of the stack that this pull request belongs to.
+  final SdkOptional<int> number;
+
+  const PullRequestStack({required this.base_, this.size = const SdkOmitted(), this.position = const SdkOmitted(), this.id = const SdkOmitted(), this.number = const SdkOmitted()});
+
+  PullRequestStack Function({PullRequestStackBase base_, SdkOptional<int> size, SdkOptional<int> position, SdkOptional<int> id, SdkOptional<int> number}) get copyWith => _copyWith;
+
+  PullRequestStack _copyWith({Object? base_ = sdkOmittedValue, Object? size = sdkOmittedValue, Object? position = sdkOmittedValue, Object? id = sdkOmittedValue, Object? number = sdkOmittedValue}) => PullRequestStack(
+    base_: identical(base_, sdkOmittedValue) ? this.base_ : base_ as PullRequestStackBase,
+    size: identical(size, sdkOmittedValue) ? this.size : size as SdkOptional<int>,
+    position: identical(position, sdkOmittedValue) ? this.position : position as SdkOptional<int>,
+    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+    number: identical(number, sdkOmittedValue) ? this.number : number as SdkOptional<int>,
+  );
+
+  factory PullRequestStack.fromJson(Map<String, dynamic> json) => PullRequestStack(
+    base_: (json['base'] != null ? PullRequestStackBase.fromJson(json['base'] as Map<String, dynamic>) : null)!,
+    size: json['size'] != null ? SdkPresent(((json['size'] as num?)?.toInt())!) : const SdkOmitted(),
+    position: json['position'] != null ? SdkPresent(((json['position'] as num?)?.toInt())!) : const SdkOmitted(),
+    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
+    number: json['number'] != null ? SdkPresent(((json['number'] as num?)?.toInt())!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
     'base': base_.toJson(),
-    '_links': links.toJson(),
-    'author_association': authorAssociation.toJson(),
-    'auto_merge': autoMerge?.toJson(),
-    ...switch (stack) {
-      SdkPresent<PullRequestStack?>(value: final value) => {'stack': value?.toJson(),},
+    ...switch (size) {
+      SdkPresent<int>(value: final value) => {'size': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (draft) {
-      SdkPresent<bool>(value: final value) => {'draft': value,},
+    ...switch (position) {
+      SdkPresent<int>(value: final value) => {'position': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (id) {
+      SdkPresent<int>(value: final value) => {'id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (number) {
+      SdkPresent<int>(value: final value) => {'number': value,},
       _ => const <String, dynamic>{},
     },
   };

@@ -1439,7 +1439,7 @@ class ActionsNamespace {
   }
 
   /// Generates a configuration that can be passed to the runner application at startup. The authenticated user must have admin access to the organization. OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
-  Future<SchemaSchemacee94e2c> generateRunnerJitconfigForOrg(
+  Future<ActionsRunnerJitconfig> generateRunnerJitconfigForOrg(
       {required String org,
       required String name,
       required int runnerGroupId,
@@ -1478,7 +1478,7 @@ class ActionsNamespace {
   }
 
   /// Lists all labels for a self-hosted runner configured in an organization. Authenticated users must have admin access to the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
-  Future<SchemaSchemac8266fdc> listLabelsForSelfHostedRunnerForOrg(
+  Future<ActionsRunnerLabels> listLabelsForSelfHostedRunnerForOrg(
       {required String org,
       required int runnerId,
       RequestOptions? requestOptions}) async {
@@ -1486,7 +1486,7 @@ class ActionsNamespace {
   }
 
   /// Adds custom labels to a self-hosted runner configured in an organization. Authenticated users must have admin access to the organization to use this endpoint. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
-  Future<SchemaSchemac8266fdc> addCustomLabelsToSelfHostedRunnerForOrg(
+  Future<ActionsRunnerLabels> addCustomLabelsToSelfHostedRunnerForOrg(
       {required String org,
       required int runnerId,
       required List<String> labels,
@@ -1495,7 +1495,7 @@ class ActionsNamespace {
   }
 
   /// Remove all previous custom labels and set the new custom labels for a specific self-hosted runner configured in an organization. Authenticated users must have admin access to the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
-  Future<SchemaSchemac8266fdc> setCustomLabelsForSelfHostedRunnerForOrg(
+  Future<ActionsRunnerLabels> setCustomLabelsForSelfHostedRunnerForOrg(
       {required String org,
       required int runnerId,
       required List<String> labels,
@@ -1504,7 +1504,7 @@ class ActionsNamespace {
   }
 
   /// Remove all custom labels from a self-hosted runner configured in an organization. Returns the remaining read-only labels from the runner. Authenticated users must have admin access to the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
-  Future<SchemaSchema328ddb88>
+  Future<ActionsRunnerLabelsReadonly>
       removeAllCustomLabelsFromSelfHostedRunnerForOrg(
           {required String org,
           required int runnerId,
@@ -1513,7 +1513,7 @@ class ActionsNamespace {
   }
 
   /// Remove a custom label from a self-hosted runner configured in an organization. Returns the remaining labels from the runner. This endpoint returns a `404 Not Found` status if the custom label is not present on the runner. Authenticated users must have admin access to the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
-  Future<SchemaSchemac8266fdc>
+  Future<ActionsRunnerLabels>
       removeCustomLabelFromSelfHostedRunnerForOrg(
           {required String org,
           required int runnerId,
@@ -2140,7 +2140,7 @@ class ActionsNamespace {
   }
 
   /// Generates a configuration that can be passed to the runner application at startup. The authenticated user must have admin access to the repository. OAuth tokens and personal access tokens (classic) need the`repo` scope to use this endpoint.
-  Future<SchemaSchemacee94e2c> generateRunnerJitconfigForRepo(
+  Future<ActionsRunnerJitconfig> generateRunnerJitconfigForRepo(
       {required String owner,
       required String repo,
       required String name,
@@ -2186,7 +2186,7 @@ class ActionsNamespace {
   }
 
   /// Lists all labels for a self-hosted runner configured in a repository. Authenticated users must have admin access to the repository to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
-  Future<SchemaSchemac8266fdc> listLabelsForSelfHostedRunnerForRepo(
+  Future<ActionsRunnerLabels> listLabelsForSelfHostedRunnerForRepo(
       {required String owner,
       required String repo,
       required int runnerId,
@@ -2195,7 +2195,7 @@ class ActionsNamespace {
   }
 
   /// Adds custom labels to a self-hosted runner configured in a repository. Authenticated users must have admin access to the organization to use this endpoint. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
-  Future<SchemaSchemac8266fdc> addCustomLabelsToSelfHostedRunnerForRepo(
+  Future<ActionsRunnerLabels> addCustomLabelsToSelfHostedRunnerForRepo(
       {required String owner,
       required String repo,
       required int runnerId,
@@ -2205,7 +2205,7 @@ class ActionsNamespace {
   }
 
   /// Remove all previous custom labels and set the new custom labels for a specific self-hosted runner configured in a repository. Authenticated users must have admin access to the repository to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
-  Future<SchemaSchemac8266fdc> setCustomLabelsForSelfHostedRunnerForRepo(
+  Future<ActionsRunnerLabels> setCustomLabelsForSelfHostedRunnerForRepo(
       {required String owner,
       required String repo,
       required int runnerId,
@@ -2215,7 +2215,7 @@ class ActionsNamespace {
   }
 
   /// Remove all custom labels from a self-hosted runner configured in a repository. Returns the remaining read-only labels from the runner. Authenticated users must have admin access to the repository to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
-  Future<SchemaSchema328ddb88>
+  Future<ActionsRunnerLabelsReadonly>
       removeAllCustomLabelsFromSelfHostedRunnerForRepo(
           {required String owner,
           required String repo,
@@ -2225,7 +2225,7 @@ class ActionsNamespace {
   }
 
   /// Remove a custom label from a self-hosted runner configured in a repository. Returns the remaining labels from the runner. This endpoint returns a `404 Not Found` status if the custom label is not present on the runner. Authenticated users must have admin access to the repository to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
-  Future<SchemaSchemac8266fdc>
+  Future<ActionsRunnerLabels>
       removeCustomLabelFromSelfHostedRunnerForRepo(
           {required String owner,
           required String repo,
@@ -4237,7 +4237,7 @@ class IssuesNamespace {
       SdkOptional<String> body = const SdkOmitted(),
       SdkOptional<String?> assignee = const SdkOmitted(),
       SdkOptional<dynamic> milestone = const SdkOmitted(),
-      SdkOptional<List<dynamic>> labels = const SdkOmitted(),
+      SdkOptional<List<IssuesCreateRequestLabelsItem>> labels = const SdkOmitted(),
       SdkOptional<List<String>> assignees = const SdkOmitted(),
       SdkOptional<List<IssuesCreateRequestBodyIssueFieldValuesItem>> issueFieldValues = const SdkOmitted(),
       SdkOptional<String?> type_ = const SdkOmitted(),
@@ -4357,10 +4357,10 @@ class IssuesNamespace {
       SdkOptional<IssuesUpdateRequestBodyStateReason?> stateReason = const SdkOmitted(),
       SdkOptional<int> duplicateIssueId = const SdkOmitted(),
       SdkOptional<dynamic> milestone = const SdkOmitted(),
-      SdkOptional<List<dynamic>> labels = const SdkOmitted(),
-      SdkOptional<List<dynamic>> assignees = const SdkOmitted(),
+      SdkOptional<List<IssuesUpdateRequestLabelsItem>> labels = const SdkOmitted(),
+      SdkOptional<List<IssuesUpdateRequestAssigneesItem>> assignees = const SdkOmitted(),
       SdkOptional<List<IssuesUpdateRequestBodyIssueFieldValuesItem>> issueFieldValues = const SdkOmitted(),
-      SdkOptional<dynamic> type_ = const SdkOmitted(),
+      SdkOptional<IssuesUpdateRequestType?> type_ = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
     return issues_methods.issuesUpdate(_config, owner: owner, repo: repo, issueNumber: issueNumber, title: title, body: body, assignee: assignee, state: state, stateReason: stateReason, duplicateIssueId: duplicateIssueId, milestone: milestone, labels: labels, assignees: assignees, issueFieldValues: issueFieldValues, type_: type_, requestOptions: requestOptions);
   }
@@ -4370,7 +4370,7 @@ class IssuesNamespace {
       {required String owner,
       required String repo,
       required int issueNumber,
-      SdkOptional<List<dynamic>> assignees = const SdkOmitted(),
+      SdkOptional<List<IssuesAddAssigneesRequestAssigneesItem>> assignees = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
     return issues_methods.issuesAddAssignees(_config, owner: owner, repo: repo, issueNumber: issueNumber, assignees: assignees, requestOptions: requestOptions);
   }
@@ -9651,7 +9651,7 @@ class ReposNamespace {
       SdkOptional<String> task = const SdkOmitted(),
       SdkOptional<bool> autoMerge = const SdkOmitted(),
       SdkOptional<List<String>> requiredContexts = const SdkOmitted(),
-      SdkOptional<dynamic> payload = const SdkOmitted(),
+      SdkOptional<ReposCreateDeploymentRequestPayload> payload = const SdkOmitted(),
       SdkOptional<String> environment = const SdkOmitted(),
       SdkOptional<String?> description = const SdkOmitted(),
       SdkOptional<bool> transientEnvironment = const SdkOmitted(),
@@ -10193,7 +10193,7 @@ class ReposNamespace {
       SdkOptional<String?> cname = const SdkOmitted(),
       SdkOptional<bool> httpsEnforced = const SdkOmitted(),
       SdkOptional<ReposUpdateInformationAboutPagesSiteRequestBodyBuildType> buildType = const SdkOmitted(),
-      SdkOptional<dynamic> source = const SdkOmitted(),
+      SdkOptional<ReposUpdateInformationAboutPagesSiteRequestSource> source = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
     return repos_methods.reposUpdateInformationAboutPagesSite(_config, owner: owner, repo: repo, cname: cname, httpsEnforced: httpsEnforced, buildType: buildType, source: source, requestOptions: requestOptions);
   }
@@ -11588,17 +11588,9 @@ class ChecksNamespace {
       {required String owner,
       required String repo,
       required int checkRunId,
-      SdkOptional<String> name = const SdkOmitted(),
-      SdkOptional<String> detailsUrl = const SdkOmitted(),
-      SdkOptional<String> externalId = const SdkOmitted(),
-      SdkOptional<String> startedAt = const SdkOmitted(),
-      SdkOptional<ChecksUpdateRequestBodyStatus> status = const SdkOmitted(),
-      SdkOptional<ChecksUpdateRequestBodyConclusion> conclusion = const SdkOmitted(),
-      SdkOptional<String> completedAt = const SdkOmitted(),
-      SdkOptional<ChecksUpdateRequestBodyOutput> output = const SdkOmitted(),
-      SdkOptional<List<ChecksUpdateRequestBodyActionsItem>> actions = const SdkOmitted(),
+      required dynamic body,
       RequestOptions? requestOptions}) async {
-    return checks_methods.checksUpdate(_config, owner: owner, repo: repo, checkRunId: checkRunId, name: name, detailsUrl: detailsUrl, externalId: externalId, startedAt: startedAt, status: status, conclusion: conclusion, completedAt: completedAt, output: output, actions: actions, requestOptions: requestOptions);
+    return checks_methods.checksUpdate(_config, owner: owner, repo: repo, checkRunId: checkRunId, body: body, requestOptions: requestOptions);
   }
 
   /// Lists annotations for a check run using the annotation `id`. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.

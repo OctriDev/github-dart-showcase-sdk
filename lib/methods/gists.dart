@@ -162,7 +162,7 @@ Future<GistSimple> gistsGet(ClientConfig config,
           operationId: 'gistsGet',
           fromJsonRaw: (value) => GistSimple.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'403': (value) => ForbiddenGist.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -283,7 +283,7 @@ Future<GistComment> gistsGetComment(ClientConfig config,
           operationId: 'gistsGetComment',
           fromJsonRaw: (value) => GistComment.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'403': (value) => ForbiddenGist.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 

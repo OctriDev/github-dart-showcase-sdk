@@ -4,102 +4,255 @@
 part of 'inline.dart';
 
 // Inline operation models (part 407)
-class ReposCreateOrgRulesetRequestBody {
+class ReactionsCreateForIssueCommentRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The name of the ruleset.
-  final String name;
-  /// The target of the ruleset
-  final SdkOptional<ReposCreateOrgRulesetRequestBodyTarget> target;
-  /// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
-  final RepositoryRuleEnforcement enforcement;
-  /// The actors that can bypass the rules in this ruleset
-  final SdkOptional<List<RepositoryRulesetBypassActor>> bypassActors;
-  /// Conditions for an organization ruleset. The branch and tag rulesets conditions object should contain both `repository_name` and `ref_name` properties, or both `repository_id` and `ref_name` properties, or both `repository_property` and `ref_name` properties. The push rulesets conditions object does not require the `ref_name` property. For repository policy rulesets, the conditions object should only contain the `repository_name`, the `repository_id`, or the `repository_property`.
-  final SdkOptional<OrgRulesetConditions> conditions;
-  /// An array of rules within the ruleset.
-  final SdkOptional<List<OrgRules>> rules;
+  /// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the issue comment.
+  final ReactionsCreateForIssueCommentRequestBodyContent content;
 
-  const ReposCreateOrgRulesetRequestBody({required this.name, this.target = const SdkOmitted(), required this.enforcement, this.bypassActors = const SdkOmitted(), this.conditions = const SdkOmitted(), this.rules = const SdkOmitted()});
+  const ReactionsCreateForIssueCommentRequestBody({required this.content});
 
-  ReposCreateOrgRulesetRequestBody Function({String name, SdkOptional<ReposCreateOrgRulesetRequestBodyTarget> target, RepositoryRuleEnforcement enforcement, SdkOptional<List<RepositoryRulesetBypassActor>> bypassActors, SdkOptional<OrgRulesetConditions> conditions, SdkOptional<List<OrgRules>> rules}) get copyWith => _copyWith;
+  ReactionsCreateForIssueCommentRequestBody Function({ReactionsCreateForIssueCommentRequestBodyContent content}) get copyWith => _copyWith;
 
-  ReposCreateOrgRulesetRequestBody _copyWith({Object? name = sdkOmittedValue, Object? target = sdkOmittedValue, Object? enforcement = sdkOmittedValue, Object? bypassActors = sdkOmittedValue, Object? conditions = sdkOmittedValue, Object? rules = sdkOmittedValue}) => ReposCreateOrgRulesetRequestBody(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    target: identical(target, sdkOmittedValue) ? this.target : target as SdkOptional<ReposCreateOrgRulesetRequestBodyTarget>,
-    enforcement: identical(enforcement, sdkOmittedValue) ? this.enforcement : enforcement as RepositoryRuleEnforcement,
-    bypassActors: identical(bypassActors, sdkOmittedValue) ? this.bypassActors : bypassActors as SdkOptional<List<RepositoryRulesetBypassActor>>,
-    conditions: identical(conditions, sdkOmittedValue) ? this.conditions : conditions as SdkOptional<OrgRulesetConditions>,
-    rules: identical(rules, sdkOmittedValue) ? this.rules : rules as SdkOptional<List<OrgRules>>,
+  ReactionsCreateForIssueCommentRequestBody _copyWith({Object? content = sdkOmittedValue}) => ReactionsCreateForIssueCommentRequestBody(
+    content: identical(content, sdkOmittedValue) ? this.content : content as ReactionsCreateForIssueCommentRequestBodyContent,
   );
 
-  factory ReposCreateOrgRulesetRequestBody.fromJson(Map<String, dynamic> json) => ReposCreateOrgRulesetRequestBody(
-    name: (json['name'] as String?)!,
-    target: json['target'] != null ? SdkPresent((json['target'] != null ? ReposCreateOrgRulesetRequestBodyTarget.fromJson(json['target'] as String) : null)!) : const SdkOmitted(),
-    enforcement: (json['enforcement'] != null ? RepositoryRuleEnforcement.fromJson(json['enforcement'] as String) : null)!,
-    bypassActors: json['bypass_actors'] != null ? SdkPresent(((json['bypass_actors'] as List?)?.map((e) => RepositoryRulesetBypassActor.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-    conditions: json['conditions'] != null ? SdkPresent((json['conditions'] != null ? OrgRulesetConditions.fromJson(json['conditions']) : null)!) : const SdkOmitted(),
-    rules: json['rules'] != null ? SdkPresent(((json['rules'] as List?)?.map((e) => OrgRules.fromJson(e)).toList())!) : const SdkOmitted(),
+  factory ReactionsCreateForIssueCommentRequestBody.fromJson(Map<String, dynamic> json) => ReactionsCreateForIssueCommentRequestBody(
+    content: (json['content'] != null ? ReactionsCreateForIssueCommentRequestBodyContent.fromJson(json['content'] as String) : null)!,
   );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    ...switch (target) {
-      SdkPresent<ReposCreateOrgRulesetRequestBodyTarget>(value: final value) => {'target': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'enforcement': enforcement.toJson(),
-    ...switch (bypassActors) {
-      SdkPresent<List<RepositoryRulesetBypassActor>>(value: final value) => {'bypass_actors': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (conditions) {
-      SdkPresent<OrgRulesetConditions>(value: final value) => {'conditions': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (rules) {
-      SdkPresent<List<OrgRules>>(value: final value) => {'rules': value.map((item) => item.toJson()).toList(),},
+    'content': content.toJson(),
+  };
+}
+
+class ReactionsCreateForIssueRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the issue.
+  final ReactionsCreateForIssueRequestBodyContent content;
+
+  const ReactionsCreateForIssueRequestBody({required this.content});
+
+  ReactionsCreateForIssueRequestBody Function({ReactionsCreateForIssueRequestBodyContent content}) get copyWith => _copyWith;
+
+  ReactionsCreateForIssueRequestBody _copyWith({Object? content = sdkOmittedValue}) => ReactionsCreateForIssueRequestBody(
+    content: identical(content, sdkOmittedValue) ? this.content : content as ReactionsCreateForIssueRequestBodyContent,
+  );
+
+  factory ReactionsCreateForIssueRequestBody.fromJson(Map<String, dynamic> json) => ReactionsCreateForIssueRequestBody(
+    content: (json['content'] != null ? ReactionsCreateForIssueRequestBodyContent.fromJson(json['content'] as String) : null)!,
+  );
+
+  Map<String, dynamic> toJson() => {
+    'content': content.toJson(),
+  };
+}
+
+class ReactionsCreateForPullRequestReviewCommentRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the pull request review comment.
+  final ReactionsCreateForPullRequestReviewCommentRequestBodyContent content;
+
+  const ReactionsCreateForPullRequestReviewCommentRequestBody({required this.content});
+
+  ReactionsCreateForPullRequestReviewCommentRequestBody Function({ReactionsCreateForPullRequestReviewCommentRequestBodyContent content}) get copyWith => _copyWith;
+
+  ReactionsCreateForPullRequestReviewCommentRequestBody _copyWith({Object? content = sdkOmittedValue}) => ReactionsCreateForPullRequestReviewCommentRequestBody(
+    content: identical(content, sdkOmittedValue) ? this.content : content as ReactionsCreateForPullRequestReviewCommentRequestBodyContent,
+  );
+
+  factory ReactionsCreateForPullRequestReviewCommentRequestBody.fromJson(Map<String, dynamic> json) => ReactionsCreateForPullRequestReviewCommentRequestBody(
+    content: (json['content'] != null ? ReactionsCreateForPullRequestReviewCommentRequestBodyContent.fromJson(json['content'] as String) : null)!,
+  );
+
+  Map<String, dynamic> toJson() => {
+    'content': content.toJson(),
+  };
+}
+
+class ReactionsCreateForReleaseRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the release.
+  final ReactionsCreateForReleaseRequestBodyContent content;
+
+  const ReactionsCreateForReleaseRequestBody({required this.content});
+
+  ReactionsCreateForReleaseRequestBody Function({ReactionsCreateForReleaseRequestBodyContent content}) get copyWith => _copyWith;
+
+  ReactionsCreateForReleaseRequestBody _copyWith({Object? content = sdkOmittedValue}) => ReactionsCreateForReleaseRequestBody(
+    content: identical(content, sdkOmittedValue) ? this.content : content as ReactionsCreateForReleaseRequestBodyContent,
+  );
+
+  factory ReactionsCreateForReleaseRequestBody.fromJson(Map<String, dynamic> json) => ReactionsCreateForReleaseRequestBody(
+    content: (json['content'] != null ? ReactionsCreateForReleaseRequestBodyContent.fromJson(json['content'] as String) : null)!,
+  );
+
+  Map<String, dynamic> toJson() => {
+    'content': content.toJson(),
+  };
+}
+
+class DependencyGraphGenerateSbomReportResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// URL to poll for the SBOM export result.
+  final SdkOptional<String> sbomUrl;
+
+  const DependencyGraphGenerateSbomReportResponse({this.sbomUrl = const SdkOmitted()});
+
+  DependencyGraphGenerateSbomReportResponse Function({SdkOptional<String> sbomUrl}) get copyWith => _copyWith;
+
+  DependencyGraphGenerateSbomReportResponse _copyWith({Object? sbomUrl = sdkOmittedValue}) => DependencyGraphGenerateSbomReportResponse(
+    sbomUrl: identical(sbomUrl, sdkOmittedValue) ? this.sbomUrl : sbomUrl as SdkOptional<String>,
+  );
+
+  factory DependencyGraphGenerateSbomReportResponse.fromJson(Map<String, dynamic> json) => DependencyGraphGenerateSbomReportResponse(
+    sbomUrl: json['sbom_url'] != null ? SdkPresent((json['sbom_url'] as String?)!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    ...switch (sbomUrl) {
+      SdkPresent<String>(value: final value) => {'sbom_url': value,},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-class ReposUpdateOrgRulesetRequestBody {
+class DependencyGraphCreateRepositorySnapshotResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The name of the ruleset.
-  final SdkOptional<String> name;
-  /// The target of the ruleset
-  final SdkOptional<ReposUpdateOrgRulesetRequestBodyTarget> target;
-  /// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
-  final SdkOptional<RepositoryRuleEnforcement> enforcement;
-  /// The actors that can bypass the rules in this ruleset
-  final SdkOptional<List<RepositoryRulesetBypassActor>> bypassActors;
-  /// Conditions for an organization ruleset. The branch and tag rulesets conditions object should contain both `repository_name` and `ref_name` properties, or both `repository_id` and `ref_name` properties, or both `repository_property` and `ref_name` properties. The push rulesets conditions object does not require the `ref_name` property. For repository policy rulesets, the conditions object should only contain the `repository_name`, the `repository_id`, or the `repository_property`.
-  final SdkOptional<OrgRulesetConditions> conditions;
-  /// An array of rules within the ruleset.
-  final SdkOptional<List<OrgRules>> rules;
+  /// ID of the created snapshot.
+  final int id;
+  /// The time at which the snapshot was created.
+  final String createdAt;
+  /// Either "SUCCESS", "ACCEPTED", or "INVALID". "SUCCESS" indicates that the snapshot was successfully created and the repository's dependencies were updated. "ACCEPTED" indicates that the snapshot was successfully created, but the repository's dependencies were not updated. "INVALID" indicates that the snapshot was malformed.
+  final String result;
+  /// A message providing further details about the result, such as why the dependencies were not updated.
+  final String message;
 
-  const ReposUpdateOrgRulesetRequestBody({this.name = const SdkOmitted(), this.target = const SdkOmitted(), this.enforcement = const SdkOmitted(), this.bypassActors = const SdkOmitted(), this.conditions = const SdkOmitted(), this.rules = const SdkOmitted()});
+  const DependencyGraphCreateRepositorySnapshotResponse({required this.id, required this.createdAt, required this.result, required this.message});
 
-  ReposUpdateOrgRulesetRequestBody Function({SdkOptional<String> name, SdkOptional<ReposUpdateOrgRulesetRequestBodyTarget> target, SdkOptional<RepositoryRuleEnforcement> enforcement, SdkOptional<List<RepositoryRulesetBypassActor>> bypassActors, SdkOptional<OrgRulesetConditions> conditions, SdkOptional<List<OrgRules>> rules}) get copyWith => _copyWith;
+  DependencyGraphCreateRepositorySnapshotResponse Function({int id, String createdAt, String result, String message}) get copyWith => _copyWith;
 
-  ReposUpdateOrgRulesetRequestBody _copyWith({Object? name = sdkOmittedValue, Object? target = sdkOmittedValue, Object? enforcement = sdkOmittedValue, Object? bypassActors = sdkOmittedValue, Object? conditions = sdkOmittedValue, Object? rules = sdkOmittedValue}) => ReposUpdateOrgRulesetRequestBody(
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    target: identical(target, sdkOmittedValue) ? this.target : target as SdkOptional<ReposUpdateOrgRulesetRequestBodyTarget>,
-    enforcement: identical(enforcement, sdkOmittedValue) ? this.enforcement : enforcement as SdkOptional<RepositoryRuleEnforcement>,
-    bypassActors: identical(bypassActors, sdkOmittedValue) ? this.bypassActors : bypassActors as SdkOptional<List<RepositoryRulesetBypassActor>>,
-    conditions: identical(conditions, sdkOmittedValue) ? this.conditions : conditions as SdkOptional<OrgRulesetConditions>,
-    rules: identical(rules, sdkOmittedValue) ? this.rules : rules as SdkOptional<List<OrgRules>>,
+  DependencyGraphCreateRepositorySnapshotResponse _copyWith({Object? id = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? result = sdkOmittedValue, Object? message = sdkOmittedValue}) => DependencyGraphCreateRepositorySnapshotResponse(
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    result: identical(result, sdkOmittedValue) ? this.result : result as String,
+    message: identical(message, sdkOmittedValue) ? this.message : message as String,
   );
 
-  factory ReposUpdateOrgRulesetRequestBody.fromJson(Map<String, dynamic> json) => ReposUpdateOrgRulesetRequestBody(
+  factory DependencyGraphCreateRepositorySnapshotResponse.fromJson(Map<String, dynamic> json) => DependencyGraphCreateRepositorySnapshotResponse(
+    id: ((json['id'] as num?)?.toInt())!,
+    createdAt: (json['created_at'] as String?)!,
+    result: (json['result'] as String?)!,
+    message: (json['message'] as String?)!,
+  );
+
+  Map<String, dynamic> toJson() => {
+    'id': id,
+    'created_at': createdAt,
+    'result': result,
+    'message': message,
+  };
+}
+
+class GitCreateBlobRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The new blob's content.
+  final String content;
+  /// The encoding used for `content`. Currently, `"utf-8"` and `"base64"` are supported.
+  final SdkOptional<String> encoding;
+
+  const GitCreateBlobRequestBody({required this.content, this.encoding = const SdkOmitted()});
+
+  GitCreateBlobRequestBody Function({String content, SdkOptional<String> encoding}) get copyWith => _copyWith;
+
+  GitCreateBlobRequestBody _copyWith({Object? content = sdkOmittedValue, Object? encoding = sdkOmittedValue}) => GitCreateBlobRequestBody(
+    content: identical(content, sdkOmittedValue) ? this.content : content as String,
+    encoding: identical(encoding, sdkOmittedValue) ? this.encoding : encoding as SdkOptional<String>,
+  );
+
+  factory GitCreateBlobRequestBody.fromJson(Map<String, dynamic> json) => GitCreateBlobRequestBody(
+    content: (json['content'] as String?)!,
+    encoding: json['encoding'] != null ? SdkPresent((json['encoding'] as String?)!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    'content': content,
+    ...switch (encoding) {
+      SdkPresent<String>(value: final value) => {'encoding': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
+}
+
+/// Information about the author of the commit. By default, the `author` will be the authenticated user and the current date. See the `author` and `committer` object below for details.
+class GitCreateCommitRequestBodyAuthor {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The name of the author (or committer) of the commit
+  final String name;
+  /// The email of the author (or committer) of the commit
+  final String email;
+  /// Indicates when this commit was authored (or committed). This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
+  final SdkOptional<String> date;
+
+  const GitCreateCommitRequestBodyAuthor({required this.name, required this.email, this.date = const SdkOmitted()});
+
+  GitCreateCommitRequestBodyAuthor Function({String name, String email, SdkOptional<String> date}) get copyWith => _copyWith;
+
+  GitCreateCommitRequestBodyAuthor _copyWith({Object? name = sdkOmittedValue, Object? email = sdkOmittedValue, Object? date = sdkOmittedValue}) => GitCreateCommitRequestBodyAuthor(
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    email: identical(email, sdkOmittedValue) ? this.email : email as String,
+    date: identical(date, sdkOmittedValue) ? this.date : date as SdkOptional<String>,
+  );
+
+  factory GitCreateCommitRequestBodyAuthor.fromJson(Map<String, dynamic> json) => GitCreateCommitRequestBodyAuthor(
+    name: (json['name'] as String?)!,
+    email: (json['email'] as String?)!,
+    date: json['date'] != null ? SdkPresent((json['date'] as String?)!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    'name': name,
+    'email': email,
+    ...switch (date) {
+      SdkPresent<String>(value: final value) => {'date': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
+}
+
+/// Information about the person who is making the commit. By default, `committer` will use the information set in `author`. See the `author` and `committer` object below for details.
+class GitCreateCommitRequestBodyCommitter {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The name of the author (or committer) of the commit
+  final SdkOptional<String> name;
+  /// The email of the author (or committer) of the commit
+  final SdkOptional<String> email;
+  /// Indicates when this commit was authored (or committed). This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
+  final SdkOptional<String> date;
+
+  const GitCreateCommitRequestBodyCommitter({this.name = const SdkOmitted(), this.email = const SdkOmitted(), this.date = const SdkOmitted()});
+
+  GitCreateCommitRequestBodyCommitter Function({SdkOptional<String> name, SdkOptional<String> email, SdkOptional<String> date}) get copyWith => _copyWith;
+
+  GitCreateCommitRequestBodyCommitter _copyWith({Object? name = sdkOmittedValue, Object? email = sdkOmittedValue, Object? date = sdkOmittedValue}) => GitCreateCommitRequestBodyCommitter(
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
+    email: identical(email, sdkOmittedValue) ? this.email : email as SdkOptional<String>,
+    date: identical(date, sdkOmittedValue) ? this.date : date as SdkOptional<String>,
+  );
+
+  factory GitCreateCommitRequestBodyCommitter.fromJson(Map<String, dynamic> json) => GitCreateCommitRequestBodyCommitter(
     name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    target: json['target'] != null ? SdkPresent((json['target'] != null ? ReposUpdateOrgRulesetRequestBodyTarget.fromJson(json['target'] as String) : null)!) : const SdkOmitted(),
-    enforcement: json['enforcement'] != null ? SdkPresent((json['enforcement'] != null ? RepositoryRuleEnforcement.fromJson(json['enforcement'] as String) : null)!) : const SdkOmitted(),
-    bypassActors: json['bypass_actors'] != null ? SdkPresent(((json['bypass_actors'] as List?)?.map((e) => RepositoryRulesetBypassActor.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-    conditions: json['conditions'] != null ? SdkPresent((json['conditions'] != null ? OrgRulesetConditions.fromJson(json['conditions']) : null)!) : const SdkOmitted(),
-    rules: json['rules'] != null ? SdkPresent(((json['rules'] as List?)?.map((e) => OrgRules.fromJson(e)).toList())!) : const SdkOmitted(),
+    email: json['email'] != null ? SdkPresent((json['email'] as String?)!) : const SdkOmitted(),
+    date: json['date'] != null ? SdkPresent((json['date'] as String?)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
@@ -107,186 +260,12 @@ class ReposUpdateOrgRulesetRequestBody {
       SdkPresent<String>(value: final value) => {'name': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (target) {
-      SdkPresent<ReposUpdateOrgRulesetRequestBodyTarget>(value: final value) => {'target': value.toJson(),},
+    ...switch (email) {
+      SdkPresent<String>(value: final value) => {'email': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (enforcement) {
-      SdkPresent<RepositoryRuleEnforcement>(value: final value) => {'enforcement': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (bypassActors) {
-      SdkPresent<List<RepositoryRulesetBypassActor>>(value: final value) => {'bypass_actors': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (conditions) {
-      SdkPresent<OrgRulesetConditions>(value: final value) => {'conditions': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (rules) {
-      SdkPresent<List<OrgRules>>(value: final value) => {'rules': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
-}
-
-/// Use the `status` property to enable or disable GitHub Advanced Security for this repository. For more information, see "About GitHub Advanced Security." For standalone Code Scanning or Secret Protection products, this parameter cannot be used.
-class ReposUpdateRequestBodySecurityAndAnalysisAdvancedSecurity {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// Can be `enabled` or `disabled`.
-  final SdkOptional<String> status;
-
-  const ReposUpdateRequestBodySecurityAndAnalysisAdvancedSecurity({this.status = const SdkOmitted()});
-
-  ReposUpdateRequestBodySecurityAndAnalysisAdvancedSecurity Function({SdkOptional<String> status}) get copyWith => _copyWith;
-
-  ReposUpdateRequestBodySecurityAndAnalysisAdvancedSecurity _copyWith({Object? status = sdkOmittedValue}) => ReposUpdateRequestBodySecurityAndAnalysisAdvancedSecurity(
-    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<String>,
-  );
-
-  factory ReposUpdateRequestBodySecurityAndAnalysisAdvancedSecurity.fromJson(Map<String, dynamic> json) => ReposUpdateRequestBodySecurityAndAnalysisAdvancedSecurity(
-    status: json['status'] != null ? SdkPresent((json['status'] as String?)!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    ...switch (status) {
-      SdkPresent<String>(value: final value) => {'status': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
-}
-
-/// Use the `status` property to enable or disable GitHub Code Security for this repository.
-class ReposUpdateRequestBodySecurityAndAnalysisCodeSecurity {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// Can be `enabled` or `disabled`.
-  final SdkOptional<String> status;
-
-  const ReposUpdateRequestBodySecurityAndAnalysisCodeSecurity({this.status = const SdkOmitted()});
-
-  ReposUpdateRequestBodySecurityAndAnalysisCodeSecurity Function({SdkOptional<String> status}) get copyWith => _copyWith;
-
-  ReposUpdateRequestBodySecurityAndAnalysisCodeSecurity _copyWith({Object? status = sdkOmittedValue}) => ReposUpdateRequestBodySecurityAndAnalysisCodeSecurity(
-    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<String>,
-  );
-
-  factory ReposUpdateRequestBodySecurityAndAnalysisCodeSecurity.fromJson(Map<String, dynamic> json) => ReposUpdateRequestBodySecurityAndAnalysisCodeSecurity(
-    status: json['status'] != null ? SdkPresent((json['status'] as String?)!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    ...switch (status) {
-      SdkPresent<String>(value: final value) => {'status': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
-}
-
-/// Use the `status` property to enable or disable secret scanning for this repository. For more information, see "About secret scanning."
-class ReposUpdateRequestBodySecurityAndAnalysisSecretScanning {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// Can be `enabled` or `disabled`.
-  final SdkOptional<String> status;
-
-  const ReposUpdateRequestBodySecurityAndAnalysisSecretScanning({this.status = const SdkOmitted()});
-
-  ReposUpdateRequestBodySecurityAndAnalysisSecretScanning Function({SdkOptional<String> status}) get copyWith => _copyWith;
-
-  ReposUpdateRequestBodySecurityAndAnalysisSecretScanning _copyWith({Object? status = sdkOmittedValue}) => ReposUpdateRequestBodySecurityAndAnalysisSecretScanning(
-    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<String>,
-  );
-
-  factory ReposUpdateRequestBodySecurityAndAnalysisSecretScanning.fromJson(Map<String, dynamic> json) => ReposUpdateRequestBodySecurityAndAnalysisSecretScanning(
-    status: json['status'] != null ? SdkPresent((json['status'] as String?)!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    ...switch (status) {
-      SdkPresent<String>(value: final value) => {'status': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
-}
-
-/// Use the `status` property to enable or disable secret scanning push protection for this repository. For more information, see "Protecting pushes with secret scanning."
-class ReposUpdateRequestBodySecurityAndAnalysisSecretScanningPushProtection {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// Can be `enabled` or `disabled`.
-  final SdkOptional<String> status;
-
-  const ReposUpdateRequestBodySecurityAndAnalysisSecretScanningPushProtection({this.status = const SdkOmitted()});
-
-  ReposUpdateRequestBodySecurityAndAnalysisSecretScanningPushProtection Function({SdkOptional<String> status}) get copyWith => _copyWith;
-
-  ReposUpdateRequestBodySecurityAndAnalysisSecretScanningPushProtection _copyWith({Object? status = sdkOmittedValue}) => ReposUpdateRequestBodySecurityAndAnalysisSecretScanningPushProtection(
-    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<String>,
-  );
-
-  factory ReposUpdateRequestBodySecurityAndAnalysisSecretScanningPushProtection.fromJson(Map<String, dynamic> json) => ReposUpdateRequestBodySecurityAndAnalysisSecretScanningPushProtection(
-    status: json['status'] != null ? SdkPresent((json['status'] as String?)!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    ...switch (status) {
-      SdkPresent<String>(value: final value) => {'status': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
-}
-
-/// Use the `status` property to enable or disable secret scanning AI detection for this repository. For more information, see "[Responsible detection of generic secrets with AI](https://docs.github.com/code-security/secret-scanning/using-advanced-secret-scanning-and-push-protection-features/generic-secret-detection/responsible-ai-generic-secrets)."
-class ReposUpdateRequestBodySecurityAndAnalysisSecretScanningAiDetection {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// Can be `enabled` or `disabled`.
-  final SdkOptional<String> status;
-
-  const ReposUpdateRequestBodySecurityAndAnalysisSecretScanningAiDetection({this.status = const SdkOmitted()});
-
-  ReposUpdateRequestBodySecurityAndAnalysisSecretScanningAiDetection Function({SdkOptional<String> status}) get copyWith => _copyWith;
-
-  ReposUpdateRequestBodySecurityAndAnalysisSecretScanningAiDetection _copyWith({Object? status = sdkOmittedValue}) => ReposUpdateRequestBodySecurityAndAnalysisSecretScanningAiDetection(
-    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<String>,
-  );
-
-  factory ReposUpdateRequestBodySecurityAndAnalysisSecretScanningAiDetection.fromJson(Map<String, dynamic> json) => ReposUpdateRequestBodySecurityAndAnalysisSecretScanningAiDetection(
-    status: json['status'] != null ? SdkPresent((json['status'] as String?)!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    ...switch (status) {
-      SdkPresent<String>(value: final value) => {'status': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
-}
-
-/// Use the `status` property to enable or disable secret scanning non-provider patterns for this repository. For more information, see "Supported secret scanning patterns."
-class ReposUpdateRequestBodySecurityAndAnalysisSecretScanningNonProviderPatterns {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// Can be `enabled` or `disabled`.
-  final SdkOptional<String> status;
-
-  const ReposUpdateRequestBodySecurityAndAnalysisSecretScanningNonProviderPatterns({this.status = const SdkOmitted()});
-
-  ReposUpdateRequestBodySecurityAndAnalysisSecretScanningNonProviderPatterns Function({SdkOptional<String> status}) get copyWith => _copyWith;
-
-  ReposUpdateRequestBodySecurityAndAnalysisSecretScanningNonProviderPatterns _copyWith({Object? status = sdkOmittedValue}) => ReposUpdateRequestBodySecurityAndAnalysisSecretScanningNonProviderPatterns(
-    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<String>,
-  );
-
-  factory ReposUpdateRequestBodySecurityAndAnalysisSecretScanningNonProviderPatterns.fromJson(Map<String, dynamic> json) => ReposUpdateRequestBodySecurityAndAnalysisSecretScanningNonProviderPatterns(
-    status: json['status'] != null ? SdkPresent((json['status'] as String?)!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    ...switch (status) {
-      SdkPresent<String>(value: final value) => {'status': value,},
+    ...switch (date) {
+      SdkPresent<String>(value: final value) => {'date': value,},
       _ => const <String, dynamic>{},
     },
   };

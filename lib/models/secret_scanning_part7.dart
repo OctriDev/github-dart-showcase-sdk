@@ -202,8 +202,69 @@ class SecretScanningCustomPatternToDelete {
   };
 }
 
-// SecretScanningCustomPatternToUpdate is a union type (dynamic | dynamic | dynamic | dynamic | dynamic)
-// Represented as: dynamic
+/// Fields to update on a custom pattern. At least one updatable field (`pattern`, `start_delimiter`, `end_delimiter`, `must_match`, or `must_not_match`) must also be provided. Only provided fields will be updated.
+class SecretScanningCustomPatternToUpdate {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The updated regular expression of the custom pattern.
+  final SdkOptional<String> pattern;
+  /// The updated start delimiter regex for the custom pattern.
+  final SdkOptional<String> startDelimiter;
+  /// The updated end delimiter regex for the custom pattern.
+  final SdkOptional<String> endDelimiter;
+  /// Updated list of regexes that the secret must match.
+  final SdkOptional<List<String>> mustMatch;
+  /// Updated list of regexes that the secret must not match.
+  final SdkOptional<List<String>> mustNotMatch;
+  /// The version of the entity. This is used to confirm you're updating the current version of the entity and mitigate unintentionally overriding someone else's update.
+  final String? customPatternVersion;
+
+  const SecretScanningCustomPatternToUpdate({this.pattern = const SdkOmitted(), this.startDelimiter = const SdkOmitted(), this.endDelimiter = const SdkOmitted(), this.mustMatch = const SdkOmitted(), this.mustNotMatch = const SdkOmitted(), required this.customPatternVersion});
+
+  SecretScanningCustomPatternToUpdate Function({SdkOptional<String> pattern, SdkOptional<String> startDelimiter, SdkOptional<String> endDelimiter, SdkOptional<List<String>> mustMatch, SdkOptional<List<String>> mustNotMatch, String? customPatternVersion}) get copyWith => _copyWith;
+
+  SecretScanningCustomPatternToUpdate _copyWith({Object? pattern = sdkOmittedValue, Object? startDelimiter = sdkOmittedValue, Object? endDelimiter = sdkOmittedValue, Object? mustMatch = sdkOmittedValue, Object? mustNotMatch = sdkOmittedValue, Object? customPatternVersion = sdkOmittedValue}) => SecretScanningCustomPatternToUpdate(
+    pattern: identical(pattern, sdkOmittedValue) ? this.pattern : pattern as SdkOptional<String>,
+    startDelimiter: identical(startDelimiter, sdkOmittedValue) ? this.startDelimiter : startDelimiter as SdkOptional<String>,
+    endDelimiter: identical(endDelimiter, sdkOmittedValue) ? this.endDelimiter : endDelimiter as SdkOptional<String>,
+    mustMatch: identical(mustMatch, sdkOmittedValue) ? this.mustMatch : mustMatch as SdkOptional<List<String>>,
+    mustNotMatch: identical(mustNotMatch, sdkOmittedValue) ? this.mustNotMatch : mustNotMatch as SdkOptional<List<String>>,
+    customPatternVersion: identical(customPatternVersion, sdkOmittedValue) ? this.customPatternVersion : customPatternVersion as String?,
+  );
+
+  factory SecretScanningCustomPatternToUpdate.fromJson(Map<String, dynamic> json) => SecretScanningCustomPatternToUpdate(
+    pattern: json['pattern'] != null ? SdkPresent((json['pattern'] as String?)!) : const SdkOmitted(),
+    startDelimiter: json['start_delimiter'] != null ? SdkPresent((json['start_delimiter'] as String?)!) : const SdkOmitted(),
+    endDelimiter: json['end_delimiter'] != null ? SdkPresent((json['end_delimiter'] as String?)!) : const SdkOmitted(),
+    mustMatch: json['must_match'] != null ? SdkPresent(((json['must_match'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    mustNotMatch: json['must_not_match'] != null ? SdkPresent(((json['must_not_match'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    customPatternVersion: json.containsKey('custom_pattern_version') ? json['custom_pattern_version'] as String? : throw ArgumentError.value(null, 'custom_pattern_version', 'Required property is missing'),
+  );
+
+  Map<String, dynamic> toJson() => {
+    ...switch (pattern) {
+      SdkPresent<String>(value: final value) => {'pattern': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (startDelimiter) {
+      SdkPresent<String>(value: final value) => {'start_delimiter': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (endDelimiter) {
+      SdkPresent<String>(value: final value) => {'end_delimiter': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (mustMatch) {
+      SdkPresent<List<String>>(value: final value) => {'must_match': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (mustNotMatch) {
+      SdkPresent<List<String>>(value: final value) => {'must_not_match': value,},
+      _ => const <String, dynamic>{},
+    },
+    'custom_pattern_version': customPatternVersion,
+  };
+}
 
 /// A validation error for a custom pattern in a batch operation.
 class SecretScanningCustomPatternValidationError {
@@ -235,41 +296,6 @@ class SecretScanningCustomPatternValidationError {
     },
     ...switch (message) {
       SdkPresent<String>(value: final value) => {'message': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
-}
-
-/// Typed representation of the `SecretScanningLocation` API schema.
-class SecretScanningLocation {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The location type. Because secrets may be found in different types of resources (ie. code, comments, issues, pull requests, discussions), this field identifies the type of resource where the secret was found.
-  final SdkOptional<SecretScanningLocationType> type_;
-  /// Optional API value serialized in the `details` wire field.
-  final SdkOptional<SecretScanningLocationDetails> details;
-
-  const SecretScanningLocation({this.type_ = const SdkOmitted(), this.details = const SdkOmitted()});
-
-  SecretScanningLocation Function({SdkOptional<SecretScanningLocationType> type_, SdkOptional<SecretScanningLocationDetails> details}) get copyWith => _copyWith;
-
-  SecretScanningLocation _copyWith({Object? type_ = sdkOmittedValue, Object? details = sdkOmittedValue}) => SecretScanningLocation(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<SecretScanningLocationType>,
-    details: identical(details, sdkOmittedValue) ? this.details : details as SdkOptional<SecretScanningLocationDetails>,
-  );
-
-  factory SecretScanningLocation.fromJson(Map<String, dynamic> json) => SecretScanningLocation(
-    type_: json['type'] != null ? SdkPresent((json['type'] != null ? SecretScanningLocationType.fromJson(json['type'] as String) : null)!) : const SdkOmitted(),
-    details: json['details'] != null ? SdkPresent((json['details'] != null ? SecretScanningLocationDetails.fromJson(json['details']) : null)!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    ...switch (type_) {
-      SdkPresent<SecretScanningLocationType>(value: final value) => {'type': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (details) {
-      SdkPresent<SecretScanningLocationDetails>(value: final value) => {'details': value.toJson(),},
       _ => const <String, dynamic>{},
     },
   };

@@ -8,8 +8,6 @@ import 'repos_branch.dart';
 import 'repos_nullable.dart';
 import 'shared.dart';
 import 'shared_nullable.dart';
-import 'shared_simple.dart';
-import 'shared_team.dart';
 
 part 'repos_part1.dart';
 part 'repos_part2.dart';

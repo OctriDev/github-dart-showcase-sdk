@@ -4,202 +4,283 @@
 part of 'inline.dart';
 
 // Inline operation models (part 400)
-class PrivateRegistriesCreateOrgPrivateRegistryRequestBody {
+class SecretScanningBulkCreateOrgCustomPatternsRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The registry type.
-  final PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType registryType;
-  /// The URL of the private registry.
-  final String url;
-  /// The username to use when authenticating with the private registry. This field should be omitted if the private registry does not require a username for authentication.
-  final SdkOptional<String?> username;
-  /// Whether this private registry should replace the base registry (e.g., npmjs.org for npm, rubygems.org for rubygems). When set to `true`, Dependabot will only use this registry and will not fall back to the public registry. When set to `false` (default), Dependabot will use this registry for scoped packages but may fall back to the public registry for other packages.
-  final SdkOptional<bool> replacesBase;
-  /// The value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get private registries public key for an organization](https://docs.github.com/rest/private-registries/organization-configurations#get-private-registries-public-key-for-an-organization) endpoint. Required when `auth_type` is `token` or `username_password`. Should be omitted for OIDC auth types.
-  final SdkOptional<String> encryptedValue;
-  /// The ID of the key you used to encrypt the secret. Required when `auth_type` is `token` or `username_password`. Should be omitted for OIDC auth types.
-  final SdkOptional<String> keyId;
-  /// Which type of organization repositories have access to the private registry. `selected` means only the repositories specified by `selected_repository_ids` can access the private registry.
-  final PrivateRegistriesCreateOrgPrivateRegistryRequestBodyVisibility visibility;
-  /// An array of repository IDs that can access the organization private registry. You can only provide a list of repository IDs when `visibility` is set to `selected`. You can manage the list of selected repositories using the [Update a private registry for an organization](https://docs.github.com/rest/private-registries/organization-configurations#update-a-private-registry-for-an-organization) endpoint. This field should be omitted if `visibility` is set to `all` or `private`.
-  final SdkOptional<List<int>> selectedRepositoryIds;
-  /// The authentication type for the private registry. Defaults to `token` if not specified. Use `oidc_azure`, `oidc_aws`, `oidc_jfrog`, `oidc_cloudsmith`, or `oidc_gcp` for OIDC authentication. Use `anonymous` for registries that do not require authentication; `username`, `encrypted_value`, and `key_id` must be omitted.
-  final SdkOptional<PrivateRegistriesCreateOrgPrivateRegistryRequestBodyAuthType> authType;
-  /// The tenant ID of the Azure AD application. Required when `auth_type` is `oidc_azure`.
-  final SdkOptional<String> tenantId;
-  /// The client ID of the Azure AD application. Required when `auth_type` is `oidc_azure`.
-  final SdkOptional<String> clientId;
-  /// The AWS region. Required when `auth_type` is `oidc_aws`.
-  final SdkOptional<String> awsRegion;
-  /// The AWS account ID. Required when `auth_type` is `oidc_aws`.
-  final SdkOptional<String> accountId;
-  /// The AWS IAM role name. Required when `auth_type` is `oidc_aws`.
-  final SdkOptional<String> roleName;
-  /// The CodeArtifact domain. Required when `auth_type` is `oidc_aws`.
-  final SdkOptional<String> domain;
-  /// The CodeArtifact domain owner (AWS account ID). Required when `auth_type` is `oidc_aws`.
-  final SdkOptional<String> domainOwner;
-  /// The JFrog OIDC provider name. Required when `auth_type` is `oidc_jfrog`.
-  final SdkOptional<String> jfrogOidcProviderName;
-  /// The OIDC audience. Optional for `oidc_aws`, `oidc_jfrog`, and `oidc_gcp`, and required for `oidc_cloudsmith` auth types.
-  final SdkOptional<String> audience;
-  /// The JFrog identity mapping name. Optional for `oidc_jfrog` auth type.
-  final SdkOptional<String> identityMappingName;
-  /// The Cloudsmith organization namespace. Required when `auth_type` is `oidc_cloudsmith`.
-  final SdkOptional<String> namespace;
-  /// The Cloudsmith service account slug. Required when `auth_type` is `oidc_cloudsmith`.
-  final SdkOptional<String> serviceSlug;
-  /// The Cloudsmith API host. Optional for `oidc_cloudsmith` auth type. If omitted, `api.cloudsmith.io` is used by default.
-  final SdkOptional<String> apiHost;
-  /// The full resource name of the GCP Workload Identity Provider (e.g. `projects/&lt;NUM&gt;/locations/global/workloadIdentityPools/&lt;POOL&gt;/providers/&lt;PROVIDER&gt;`). Required when `auth_type` is `oidc_gcp`.
-  final SdkOptional<String> workloadIdentityProvider;
-  /// The GCP service account email to impersonate. Optional for `oidc_gcp` auth type. If omitted, the federated token is used directly (direct WIF).
-  final SdkOptional<String> serviceAccount;
+  /// The list of custom patterns to create (maximum 100).
+  final List<SecretScanningCustomPatternToCreate> patterns;
 
-  const PrivateRegistriesCreateOrgPrivateRegistryRequestBody({required this.registryType, required this.url, this.username = const SdkOmitted(), this.replacesBase = const SdkOmitted(), this.encryptedValue = const SdkOmitted(), this.keyId = const SdkOmitted(), required this.visibility, this.selectedRepositoryIds = const SdkOmitted(), this.authType = const SdkOmitted(), this.tenantId = const SdkOmitted(), this.clientId = const SdkOmitted(), this.awsRegion = const SdkOmitted(), this.accountId = const SdkOmitted(), this.roleName = const SdkOmitted(), this.domain = const SdkOmitted(), this.domainOwner = const SdkOmitted(), this.jfrogOidcProviderName = const SdkOmitted(), this.audience = const SdkOmitted(), this.identityMappingName = const SdkOmitted(), this.namespace = const SdkOmitted(), this.serviceSlug = const SdkOmitted(), this.apiHost = const SdkOmitted(), this.workloadIdentityProvider = const SdkOmitted(), this.serviceAccount = const SdkOmitted()});
+  const SecretScanningBulkCreateOrgCustomPatternsRequestBody({required this.patterns});
 
-  PrivateRegistriesCreateOrgPrivateRegistryRequestBody Function({PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType registryType, String url, SdkOptional<String?> username, SdkOptional<bool> replacesBase, SdkOptional<String> encryptedValue, SdkOptional<String> keyId, PrivateRegistriesCreateOrgPrivateRegistryRequestBodyVisibility visibility, SdkOptional<List<int>> selectedRepositoryIds, SdkOptional<PrivateRegistriesCreateOrgPrivateRegistryRequestBodyAuthType> authType, SdkOptional<String> tenantId, SdkOptional<String> clientId, SdkOptional<String> awsRegion, SdkOptional<String> accountId, SdkOptional<String> roleName, SdkOptional<String> domain, SdkOptional<String> domainOwner, SdkOptional<String> jfrogOidcProviderName, SdkOptional<String> audience, SdkOptional<String> identityMappingName, SdkOptional<String> namespace, SdkOptional<String> serviceSlug, SdkOptional<String> apiHost, SdkOptional<String> workloadIdentityProvider, SdkOptional<String> serviceAccount}) get copyWith => _copyWith;
+  SecretScanningBulkCreateOrgCustomPatternsRequestBody Function({List<SecretScanningCustomPatternToCreate> patterns}) get copyWith => _copyWith;
 
-  PrivateRegistriesCreateOrgPrivateRegistryRequestBody _copyWith({Object? registryType = sdkOmittedValue, Object? url = sdkOmittedValue, Object? username = sdkOmittedValue, Object? replacesBase = sdkOmittedValue, Object? encryptedValue = sdkOmittedValue, Object? keyId = sdkOmittedValue, Object? visibility = sdkOmittedValue, Object? selectedRepositoryIds = sdkOmittedValue, Object? authType = sdkOmittedValue, Object? tenantId = sdkOmittedValue, Object? clientId = sdkOmittedValue, Object? awsRegion = sdkOmittedValue, Object? accountId = sdkOmittedValue, Object? roleName = sdkOmittedValue, Object? domain = sdkOmittedValue, Object? domainOwner = sdkOmittedValue, Object? jfrogOidcProviderName = sdkOmittedValue, Object? audience = sdkOmittedValue, Object? identityMappingName = sdkOmittedValue, Object? namespace = sdkOmittedValue, Object? serviceSlug = sdkOmittedValue, Object? apiHost = sdkOmittedValue, Object? workloadIdentityProvider = sdkOmittedValue, Object? serviceAccount = sdkOmittedValue}) => PrivateRegistriesCreateOrgPrivateRegistryRequestBody(
-    registryType: identical(registryType, sdkOmittedValue) ? this.registryType : registryType as PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    username: identical(username, sdkOmittedValue) ? this.username : username as SdkOptional<String?>,
-    replacesBase: identical(replacesBase, sdkOmittedValue) ? this.replacesBase : replacesBase as SdkOptional<bool>,
-    encryptedValue: identical(encryptedValue, sdkOmittedValue) ? this.encryptedValue : encryptedValue as SdkOptional<String>,
-    keyId: identical(keyId, sdkOmittedValue) ? this.keyId : keyId as SdkOptional<String>,
-    visibility: identical(visibility, sdkOmittedValue) ? this.visibility : visibility as PrivateRegistriesCreateOrgPrivateRegistryRequestBodyVisibility,
-    selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue) ? this.selectedRepositoryIds : selectedRepositoryIds as SdkOptional<List<int>>,
-    authType: identical(authType, sdkOmittedValue) ? this.authType : authType as SdkOptional<PrivateRegistriesCreateOrgPrivateRegistryRequestBodyAuthType>,
-    tenantId: identical(tenantId, sdkOmittedValue) ? this.tenantId : tenantId as SdkOptional<String>,
-    clientId: identical(clientId, sdkOmittedValue) ? this.clientId : clientId as SdkOptional<String>,
-    awsRegion: identical(awsRegion, sdkOmittedValue) ? this.awsRegion : awsRegion as SdkOptional<String>,
-    accountId: identical(accountId, sdkOmittedValue) ? this.accountId : accountId as SdkOptional<String>,
-    roleName: identical(roleName, sdkOmittedValue) ? this.roleName : roleName as SdkOptional<String>,
-    domain: identical(domain, sdkOmittedValue) ? this.domain : domain as SdkOptional<String>,
-    domainOwner: identical(domainOwner, sdkOmittedValue) ? this.domainOwner : domainOwner as SdkOptional<String>,
-    jfrogOidcProviderName: identical(jfrogOidcProviderName, sdkOmittedValue) ? this.jfrogOidcProviderName : jfrogOidcProviderName as SdkOptional<String>,
-    audience: identical(audience, sdkOmittedValue) ? this.audience : audience as SdkOptional<String>,
-    identityMappingName: identical(identityMappingName, sdkOmittedValue) ? this.identityMappingName : identityMappingName as SdkOptional<String>,
-    namespace: identical(namespace, sdkOmittedValue) ? this.namespace : namespace as SdkOptional<String>,
-    serviceSlug: identical(serviceSlug, sdkOmittedValue) ? this.serviceSlug : serviceSlug as SdkOptional<String>,
-    apiHost: identical(apiHost, sdkOmittedValue) ? this.apiHost : apiHost as SdkOptional<String>,
-    workloadIdentityProvider: identical(workloadIdentityProvider, sdkOmittedValue) ? this.workloadIdentityProvider : workloadIdentityProvider as SdkOptional<String>,
-    serviceAccount: identical(serviceAccount, sdkOmittedValue) ? this.serviceAccount : serviceAccount as SdkOptional<String>,
+  SecretScanningBulkCreateOrgCustomPatternsRequestBody _copyWith({Object? patterns = sdkOmittedValue}) => SecretScanningBulkCreateOrgCustomPatternsRequestBody(
+    patterns: identical(patterns, sdkOmittedValue) ? this.patterns : patterns as List<SecretScanningCustomPatternToCreate>,
   );
 
-  factory PrivateRegistriesCreateOrgPrivateRegistryRequestBody.fromJson(Map<String, dynamic> json) => PrivateRegistriesCreateOrgPrivateRegistryRequestBody(
-    registryType: (json['registry_type'] != null ? PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType.fromJson(json['registry_type'] as String) : null)!,
-    url: (json['url'] as String?)!,
-    username: json.containsKey('username') ? SdkPresent(json['username'] as String?) : const SdkOmitted(),
-    replacesBase: json['replaces_base'] != null ? SdkPresent((json['replaces_base'] as bool?)!) : const SdkOmitted(),
-    encryptedValue: json['encrypted_value'] != null ? SdkPresent((json['encrypted_value'] as String?)!) : const SdkOmitted(),
-    keyId: json['key_id'] != null ? SdkPresent((json['key_id'] as String?)!) : const SdkOmitted(),
-    visibility: (json['visibility'] != null ? PrivateRegistriesCreateOrgPrivateRegistryRequestBodyVisibility.fromJson(json['visibility'] as String) : null)!,
-    selectedRepositoryIds: json['selected_repository_ids'] != null ? SdkPresent(((json['selected_repository_ids'] as List?)?.map((e) => (e as num).toInt()).toList())!) : const SdkOmitted(),
-    authType: json['auth_type'] != null ? SdkPresent((json['auth_type'] != null ? PrivateRegistriesCreateOrgPrivateRegistryRequestBodyAuthType.fromJson(json['auth_type'] as String) : null)!) : const SdkOmitted(),
-    tenantId: json['tenant_id'] != null ? SdkPresent((json['tenant_id'] as String?)!) : const SdkOmitted(),
-    clientId: json['client_id'] != null ? SdkPresent((json['client_id'] as String?)!) : const SdkOmitted(),
-    awsRegion: json['aws_region'] != null ? SdkPresent((json['aws_region'] as String?)!) : const SdkOmitted(),
-    accountId: json['account_id'] != null ? SdkPresent((json['account_id'] as String?)!) : const SdkOmitted(),
-    roleName: json['role_name'] != null ? SdkPresent((json['role_name'] as String?)!) : const SdkOmitted(),
-    domain: json['domain'] != null ? SdkPresent((json['domain'] as String?)!) : const SdkOmitted(),
-    domainOwner: json['domain_owner'] != null ? SdkPresent((json['domain_owner'] as String?)!) : const SdkOmitted(),
-    jfrogOidcProviderName: json['jfrog_oidc_provider_name'] != null ? SdkPresent((json['jfrog_oidc_provider_name'] as String?)!) : const SdkOmitted(),
-    audience: json['audience'] != null ? SdkPresent((json['audience'] as String?)!) : const SdkOmitted(),
-    identityMappingName: json['identity_mapping_name'] != null ? SdkPresent((json['identity_mapping_name'] as String?)!) : const SdkOmitted(),
-    namespace: json['namespace'] != null ? SdkPresent((json['namespace'] as String?)!) : const SdkOmitted(),
-    serviceSlug: json['service_slug'] != null ? SdkPresent((json['service_slug'] as String?)!) : const SdkOmitted(),
-    apiHost: json['api_host'] != null ? SdkPresent((json['api_host'] as String?)!) : const SdkOmitted(),
-    workloadIdentityProvider: json['workload_identity_provider'] != null ? SdkPresent((json['workload_identity_provider'] as String?)!) : const SdkOmitted(),
-    serviceAccount: json['service_account'] != null ? SdkPresent((json['service_account'] as String?)!) : const SdkOmitted(),
+  factory SecretScanningBulkCreateOrgCustomPatternsRequestBody.fromJson(Map<String, dynamic> json) => SecretScanningBulkCreateOrgCustomPatternsRequestBody(
+    patterns: ((json['patterns'] as List?)?.map((e) => SecretScanningCustomPatternToCreate.fromJson(e as Map<String, dynamic>)).toList())!,
   );
 
   Map<String, dynamic> toJson() => {
-    'registry_type': registryType.toJson(),
-    'url': url,
-    ...switch (username) {
-      SdkPresent<String?>(value: final value) => {'username': value,},
+    'patterns': patterns.map((item) => item.toJson()).toList(),
+  };
+}
+
+class SecretScanningBulkCreateOrgCustomPatternsResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The list of successfully created custom patterns.
+  final SdkOptional<List<SecretScanningCustomPattern>> createdPatterns;
+
+  const SecretScanningBulkCreateOrgCustomPatternsResponse({this.createdPatterns = const SdkOmitted()});
+
+  SecretScanningBulkCreateOrgCustomPatternsResponse Function({SdkOptional<List<SecretScanningCustomPattern>> createdPatterns}) get copyWith => _copyWith;
+
+  SecretScanningBulkCreateOrgCustomPatternsResponse _copyWith({Object? createdPatterns = sdkOmittedValue}) => SecretScanningBulkCreateOrgCustomPatternsResponse(
+    createdPatterns: identical(createdPatterns, sdkOmittedValue) ? this.createdPatterns : createdPatterns as SdkOptional<List<SecretScanningCustomPattern>>,
+  );
+
+  factory SecretScanningBulkCreateOrgCustomPatternsResponse.fromJson(Map<String, dynamic> json) => SecretScanningBulkCreateOrgCustomPatternsResponse(
+    createdPatterns: json['created_patterns'] != null ? SdkPresent(((json['created_patterns'] as List?)?.map((e) => SecretScanningCustomPattern.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    ...switch (createdPatterns) {
+      SdkPresent<List<SecretScanningCustomPattern>>(value: final value) => {'created_patterns': value.map((item) => item.toJson()).toList(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (replacesBase) {
-      SdkPresent<bool>(value: final value) => {'replaces_base': value,},
+  };
+}
+
+class SecretScanningBulkDeleteOrgCustomPatternsRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The list of custom patterns to delete.
+  final List<SecretScanningCustomPatternToDelete> patterns;
+  /// What to do with alerts associated with the deleted patterns. `delete_alerts` permanently removes the alerts. `resolve_alerts` resolves the alerts as "pattern deleted". Defaults to `delete_alerts` when not specified.
+  final SdkOptional<SecretScanningBulkDeleteOrgCustomPatternsRequestBodyPostDeleteAction> postDeleteAction;
+
+  const SecretScanningBulkDeleteOrgCustomPatternsRequestBody({required this.patterns, this.postDeleteAction = const SdkOmitted()});
+
+  SecretScanningBulkDeleteOrgCustomPatternsRequestBody Function({List<SecretScanningCustomPatternToDelete> patterns, SdkOptional<SecretScanningBulkDeleteOrgCustomPatternsRequestBodyPostDeleteAction> postDeleteAction}) get copyWith => _copyWith;
+
+  SecretScanningBulkDeleteOrgCustomPatternsRequestBody _copyWith({Object? patterns = sdkOmittedValue, Object? postDeleteAction = sdkOmittedValue}) => SecretScanningBulkDeleteOrgCustomPatternsRequestBody(
+    patterns: identical(patterns, sdkOmittedValue) ? this.patterns : patterns as List<SecretScanningCustomPatternToDelete>,
+    postDeleteAction: identical(postDeleteAction, sdkOmittedValue) ? this.postDeleteAction : postDeleteAction as SdkOptional<SecretScanningBulkDeleteOrgCustomPatternsRequestBodyPostDeleteAction>,
+  );
+
+  factory SecretScanningBulkDeleteOrgCustomPatternsRequestBody.fromJson(Map<String, dynamic> json) => SecretScanningBulkDeleteOrgCustomPatternsRequestBody(
+    patterns: ((json['patterns'] as List?)?.map((e) => SecretScanningCustomPatternToDelete.fromJson(e as Map<String, dynamic>)).toList())!,
+    postDeleteAction: json['post_delete_action'] != null ? SdkPresent((json['post_delete_action'] != null ? SecretScanningBulkDeleteOrgCustomPatternsRequestBodyPostDeleteAction.fromJson(json['post_delete_action'] as String) : null)!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    'patterns': patterns.map((item) => item.toJson()).toList(),
+    ...switch (postDeleteAction) {
+      SdkPresent<SecretScanningBulkDeleteOrgCustomPatternsRequestBodyPostDeleteAction>(value: final value) => {'post_delete_action': value.toJson(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (encryptedValue) {
-      SdkPresent<String>(value: final value) => {'encrypted_value': value,},
+  };
+}
+
+class SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItem {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The ID of the pattern to configure.
+  final SdkOptional<String> tokenType;
+  /// Push protection setting to set for the pattern.
+  final SdkOptional<SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItemPushProtectionSetting> pushProtectionSetting;
+
+  const SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItem({this.tokenType = const SdkOmitted(), this.pushProtectionSetting = const SdkOmitted()});
+
+  SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItem Function({SdkOptional<String> tokenType, SdkOptional<SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItemPushProtectionSetting> pushProtectionSetting}) get copyWith => _copyWith;
+
+  SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItem _copyWith({Object? tokenType = sdkOmittedValue, Object? pushProtectionSetting = sdkOmittedValue}) => SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItem(
+    tokenType: identical(tokenType, sdkOmittedValue) ? this.tokenType : tokenType as SdkOptional<String>,
+    pushProtectionSetting: identical(pushProtectionSetting, sdkOmittedValue) ? this.pushProtectionSetting : pushProtectionSetting as SdkOptional<SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItemPushProtectionSetting>,
+  );
+
+  factory SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItem.fromJson(Map<String, dynamic> json) => SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItem(
+    tokenType: json['token_type'] != null ? SdkPresent((json['token_type'] as String?)!) : const SdkOmitted(),
+    pushProtectionSetting: json['push_protection_setting'] != null ? SdkPresent((json['push_protection_setting'] != null ? SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItemPushProtectionSetting.fromJson(json['push_protection_setting'] as String) : null)!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    ...switch (tokenType) {
+      SdkPresent<String>(value: final value) => {'token_type': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (keyId) {
-      SdkPresent<String>(value: final value) => {'key_id': value,},
+    ...switch (pushProtectionSetting) {
+      SdkPresent<SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItemPushProtectionSetting>(value: final value) => {'push_protection_setting': value.toJson(),},
       _ => const <String, dynamic>{},
     },
-    'visibility': visibility.toJson(),
-    ...switch (selectedRepositoryIds) {
-      SdkPresent<List<int>>(value: final value) => {'selected_repository_ids': value,},
+  };
+}
+
+class SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItem {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The ID of the pattern to configure.
+  final SdkOptional<String> tokenType;
+  /// The version of the entity. This is used to confirm you're updating the current version of the entity and mitigate unintentionally overriding someone else's update.
+  final SdkOptional<String?> customPatternVersion;
+  /// Push protection setting to set for the pattern.
+  final SdkOptional<SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItemPushProtectionSetting> pushProtectionSetting;
+
+  const SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItem({this.tokenType = const SdkOmitted(), this.customPatternVersion = const SdkOmitted(), this.pushProtectionSetting = const SdkOmitted()});
+
+  SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItem Function({SdkOptional<String> tokenType, SdkOptional<String?> customPatternVersion, SdkOptional<SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItemPushProtectionSetting> pushProtectionSetting}) get copyWith => _copyWith;
+
+  SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItem _copyWith({Object? tokenType = sdkOmittedValue, Object? customPatternVersion = sdkOmittedValue, Object? pushProtectionSetting = sdkOmittedValue}) => SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItem(
+    tokenType: identical(tokenType, sdkOmittedValue) ? this.tokenType : tokenType as SdkOptional<String>,
+    customPatternVersion: identical(customPatternVersion, sdkOmittedValue) ? this.customPatternVersion : customPatternVersion as SdkOptional<String?>,
+    pushProtectionSetting: identical(pushProtectionSetting, sdkOmittedValue) ? this.pushProtectionSetting : pushProtectionSetting as SdkOptional<SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItemPushProtectionSetting>,
+  );
+
+  factory SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItem.fromJson(Map<String, dynamic> json) => SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItem(
+    tokenType: json['token_type'] != null ? SdkPresent((json['token_type'] as String?)!) : const SdkOmitted(),
+    customPatternVersion: json.containsKey('custom_pattern_version') ? SdkPresent(json['custom_pattern_version'] as String?) : const SdkOmitted(),
+    pushProtectionSetting: json['push_protection_setting'] != null ? SdkPresent((json['push_protection_setting'] != null ? SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItemPushProtectionSetting.fromJson(json['push_protection_setting'] as String) : null)!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    ...switch (tokenType) {
+      SdkPresent<String>(value: final value) => {'token_type': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (authType) {
-      SdkPresent<PrivateRegistriesCreateOrgPrivateRegistryRequestBodyAuthType>(value: final value) => {'auth_type': value.toJson(),},
+    ...switch (customPatternVersion) {
+      SdkPresent<String?>(value: final value) => {'custom_pattern_version': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (tenantId) {
-      SdkPresent<String>(value: final value) => {'tenant_id': value,},
+    ...switch (pushProtectionSetting) {
+      SdkPresent<SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItemPushProtectionSetting>(value: final value) => {'push_protection_setting': value.toJson(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (clientId) {
-      SdkPresent<String>(value: final value) => {'client_id': value,},
+  };
+}
+
+class SecretScanningUpdateOrgPatternConfigsRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The version of the entity. This is used to confirm you're updating the current version of the entity and mitigate unintentionally overriding someone else's update.
+  final SdkOptional<String?> patternConfigVersion;
+  /// Pattern settings for provider patterns.
+  final SdkOptional<List<SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItem>> providerPatternSettings;
+  /// Pattern settings for custom patterns.
+  final SdkOptional<List<SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItem>> customPatternSettings;
+
+  const SecretScanningUpdateOrgPatternConfigsRequestBody({this.patternConfigVersion = const SdkOmitted(), this.providerPatternSettings = const SdkOmitted(), this.customPatternSettings = const SdkOmitted()});
+
+  SecretScanningUpdateOrgPatternConfigsRequestBody Function({SdkOptional<String?> patternConfigVersion, SdkOptional<List<SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItem>> providerPatternSettings, SdkOptional<List<SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItem>> customPatternSettings}) get copyWith => _copyWith;
+
+  SecretScanningUpdateOrgPatternConfigsRequestBody _copyWith({Object? patternConfigVersion = sdkOmittedValue, Object? providerPatternSettings = sdkOmittedValue, Object? customPatternSettings = sdkOmittedValue}) => SecretScanningUpdateOrgPatternConfigsRequestBody(
+    patternConfigVersion: identical(patternConfigVersion, sdkOmittedValue) ? this.patternConfigVersion : patternConfigVersion as SdkOptional<String?>,
+    providerPatternSettings: identical(providerPatternSettings, sdkOmittedValue) ? this.providerPatternSettings : providerPatternSettings as SdkOptional<List<SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItem>>,
+    customPatternSettings: identical(customPatternSettings, sdkOmittedValue) ? this.customPatternSettings : customPatternSettings as SdkOptional<List<SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItem>>,
+  );
+
+  factory SecretScanningUpdateOrgPatternConfigsRequestBody.fromJson(Map<String, dynamic> json) => SecretScanningUpdateOrgPatternConfigsRequestBody(
+    patternConfigVersion: json.containsKey('pattern_config_version') ? SdkPresent(json['pattern_config_version'] as String?) : const SdkOmitted(),
+    providerPatternSettings: json['provider_pattern_settings'] != null ? SdkPresent(((json['provider_pattern_settings'] as List?)?.map((e) => SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+    customPatternSettings: json['custom_pattern_settings'] != null ? SdkPresent(((json['custom_pattern_settings'] as List?)?.map((e) => SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    ...switch (patternConfigVersion) {
+      SdkPresent<String?>(value: final value) => {'pattern_config_version': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (awsRegion) {
-      SdkPresent<String>(value: final value) => {'aws_region': value,},
+    ...switch (providerPatternSettings) {
+      SdkPresent<List<SecretScanningUpdateOrgPatternConfigsRequestBodyProviderPatternSettingsItem>>(value: final value) => {'provider_pattern_settings': value.map((item) => item.toJson()).toList(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (accountId) {
-      SdkPresent<String>(value: final value) => {'account_id': value,},
+    ...switch (customPatternSettings) {
+      SdkPresent<List<SecretScanningUpdateOrgPatternConfigsRequestBodyCustomPatternSettingsItem>>(value: final value) => {'custom_pattern_settings': value.map((item) => item.toJson()).toList(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (roleName) {
-      SdkPresent<String>(value: final value) => {'role_name': value,},
+  };
+}
+
+class SecretScanningUpdateOrgPatternConfigsResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The updated pattern configuration version.
+  final SdkOptional<String> patternConfigVersion;
+
+  const SecretScanningUpdateOrgPatternConfigsResponse({this.patternConfigVersion = const SdkOmitted()});
+
+  SecretScanningUpdateOrgPatternConfigsResponse Function({SdkOptional<String> patternConfigVersion}) get copyWith => _copyWith;
+
+  SecretScanningUpdateOrgPatternConfigsResponse _copyWith({Object? patternConfigVersion = sdkOmittedValue}) => SecretScanningUpdateOrgPatternConfigsResponse(
+    patternConfigVersion: identical(patternConfigVersion, sdkOmittedValue) ? this.patternConfigVersion : patternConfigVersion as SdkOptional<String>,
+  );
+
+  factory SecretScanningUpdateOrgPatternConfigsResponse.fromJson(Map<String, dynamic> json) => SecretScanningUpdateOrgPatternConfigsResponse(
+    patternConfigVersion: json['pattern_config_version'] != null ? SdkPresent((json['pattern_config_version'] as String?)!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    ...switch (patternConfigVersion) {
+      SdkPresent<String>(value: final value) => {'pattern_config_version': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (domain) {
-      SdkPresent<String>(value: final value) => {'domain': value,},
+  };
+}
+
+class SecretScanningUpdateAlertRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// Sets the state of the secret scanning alert. You must provide `resolution` when you set the state to `resolved`.
+  final SdkOptional<SecretScanningAlertState> state;
+  /// **Required when the `state` is `resolved`.** The reason for resolving the alert.
+  final SdkOptional<SecretScanningAlertResolution?> resolution;
+  /// An optional comment when closing or reopening an alert. Cannot be updated or deleted.
+  final SdkOptional<String?> resolutionComment;
+  /// The username of the user to assign to the alert. Set to `null` to unassign the alert.
+  final SdkOptional<String?> assignee;
+  /// Sets the validity of the secret scanning alert. Can be `active`, `inactive`, or `null` to clear the override.
+  final SdkOptional<SecretScanningUpdateAlertRequestBodyValidity?> validity;
+
+  const SecretScanningUpdateAlertRequestBody({this.state = const SdkOmitted(), this.resolution = const SdkOmitted(), this.resolutionComment = const SdkOmitted(), this.assignee = const SdkOmitted(), this.validity = const SdkOmitted()});
+
+  SecretScanningUpdateAlertRequestBody Function({SdkOptional<SecretScanningAlertState> state, SdkOptional<SecretScanningAlertResolution?> resolution, SdkOptional<String?> resolutionComment, SdkOptional<String?> assignee, SdkOptional<SecretScanningUpdateAlertRequestBodyValidity?> validity}) get copyWith => _copyWith;
+
+  SecretScanningUpdateAlertRequestBody _copyWith({Object? state = sdkOmittedValue, Object? resolution = sdkOmittedValue, Object? resolutionComment = sdkOmittedValue, Object? assignee = sdkOmittedValue, Object? validity = sdkOmittedValue}) => SecretScanningUpdateAlertRequestBody(
+    state: identical(state, sdkOmittedValue) ? this.state : state as SdkOptional<SecretScanningAlertState>,
+    resolution: identical(resolution, sdkOmittedValue) ? this.resolution : resolution as SdkOptional<SecretScanningAlertResolution?>,
+    resolutionComment: identical(resolutionComment, sdkOmittedValue) ? this.resolutionComment : resolutionComment as SdkOptional<String?>,
+    assignee: identical(assignee, sdkOmittedValue) ? this.assignee : assignee as SdkOptional<String?>,
+    validity: identical(validity, sdkOmittedValue) ? this.validity : validity as SdkOptional<SecretScanningUpdateAlertRequestBodyValidity?>,
+  );
+
+  factory SecretScanningUpdateAlertRequestBody.fromJson(Map<String, dynamic> json) => SecretScanningUpdateAlertRequestBody(
+    state: json['state'] != null ? SdkPresent((json['state'] != null ? SecretScanningAlertState.fromJson(json['state'] as String) : null)!) : const SdkOmitted(),
+    resolution: json.containsKey('resolution') ? SdkPresent(json['resolution'] != null ? SecretScanningAlertResolution.fromJson(json['resolution'] as String) : null) : const SdkOmitted(),
+    resolutionComment: json.containsKey('resolution_comment') ? SdkPresent(json['resolution_comment'] as String?) : const SdkOmitted(),
+    assignee: json.containsKey('assignee') ? SdkPresent(json['assignee'] as String?) : const SdkOmitted(),
+    validity: json.containsKey('validity') ? SdkPresent(json['validity'] != null ? SecretScanningUpdateAlertRequestBodyValidity.fromJson(json['validity'] as String) : null) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    ...switch (state) {
+      SdkPresent<SecretScanningAlertState>(value: final value) => {'state': value.toJson(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (domainOwner) {
-      SdkPresent<String>(value: final value) => {'domain_owner': value,},
+    ...switch (resolution) {
+      SdkPresent<SecretScanningAlertResolution?>(value: final value) => {'resolution': value?.toJson(),},
       _ => const <String, dynamic>{},
     },
-    ...switch (jfrogOidcProviderName) {
-      SdkPresent<String>(value: final value) => {'jfrog_oidc_provider_name': value,},
+    ...switch (resolutionComment) {
+      SdkPresent<String?>(value: final value) => {'resolution_comment': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (audience) {
-      SdkPresent<String>(value: final value) => {'audience': value,},
+    ...switch (assignee) {
+      SdkPresent<String?>(value: final value) => {'assignee': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (identityMappingName) {
-      SdkPresent<String>(value: final value) => {'identity_mapping_name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (namespace) {
-      SdkPresent<String>(value: final value) => {'namespace': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (serviceSlug) {
-      SdkPresent<String>(value: final value) => {'service_slug': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (apiHost) {
-      SdkPresent<String>(value: final value) => {'api_host': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (workloadIdentityProvider) {
-      SdkPresent<String>(value: final value) => {'workload_identity_provider': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (serviceAccount) {
-      SdkPresent<String>(value: final value) => {'service_account': value,},
+    ...switch (validity) {
+      SdkPresent<SecretScanningUpdateAlertRequestBodyValidity?>(value: final value) => {'validity': value?.toJson(),},
       _ => const <String, dynamic>{},
     },
   };

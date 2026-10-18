@@ -265,7 +265,7 @@ Future<PullRequest> pullsGet(ClientConfig config,
           operationId: 'pullsGet',
           fromJsonRaw: (value) => PullRequest.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '406': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '406': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -549,7 +549,7 @@ Future<List<DiffEntry>> pullsListFiles(ClientConfig config,
           operationId: 'pullsListFiles',
           fromJsonRaw: (value) => (value as List).map((item) => DiffEntry.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {'422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -742,7 +742,7 @@ Future<PullRequestSimple> pullsRequestReviewers(ClientConfig config,
           operationId: 'pullsRequestReviewers',
           fromJsonRaw: (value) => PullRequestSimple.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 

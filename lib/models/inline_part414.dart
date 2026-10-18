@@ -4,238 +4,281 @@
 part of 'inline.dart';
 
 // Inline operation models (part 414)
-class ReposSetUserAccessRestrictionsRequestBody {
+class UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The username for users
-  final List<String> users;
+  /// Denotes whether an email is publicly visible.
+  final UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility visibility;
 
-  const ReposSetUserAccessRestrictionsRequestBody({required this.users});
+  const UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBody({required this.visibility});
 
-  ReposSetUserAccessRestrictionsRequestBody Function({List<String> users}) get copyWith => _copyWith;
+  UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBody Function({UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility visibility}) get copyWith => _copyWith;
 
-  ReposSetUserAccessRestrictionsRequestBody _copyWith({Object? users = sdkOmittedValue}) => ReposSetUserAccessRestrictionsRequestBody(
-    users: identical(users, sdkOmittedValue) ? this.users : users as List<String>,
+  UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBody _copyWith({Object? visibility = sdkOmittedValue}) => UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBody(
+    visibility: identical(visibility, sdkOmittedValue) ? this.visibility : visibility as UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility,
   );
 
-  factory ReposSetUserAccessRestrictionsRequestBody.fromJson(Map<String, dynamic> json) => ReposSetUserAccessRestrictionsRequestBody(
-    users: ((json['users'] as List?)?.map((e) => e as String).toList())!,
+  factory UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBody.fromJson(Map<String, dynamic> json) => UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBody(
+    visibility: (json['visibility'] != null ? UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility.fromJson(json['visibility'] as String) : null)!,
   );
 
   Map<String, dynamic> toJson() => {
-    'users': users,
+    'visibility': visibility.toJson(),
   };
 }
 
-class ReposRemoveUserAccessRestrictionsRequestBody {
+class UsersAddEmailForAuthenticatedUserRequestBodyVariant0 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The username for users
-  final List<String> users;
+  /// Adds one or more email addresses to your GitHub account. Must contain at least one email address. **Note:** Alternatively, you can pass a single email address or an `array` of emails addresses directly, but we recommend that you pass an object using the `emails` key.
+  final List<String> emails;
 
-  const ReposRemoveUserAccessRestrictionsRequestBody({required this.users});
+  const UsersAddEmailForAuthenticatedUserRequestBodyVariant0({required this.emails});
 
-  ReposRemoveUserAccessRestrictionsRequestBody Function({List<String> users}) get copyWith => _copyWith;
+  UsersAddEmailForAuthenticatedUserRequestBodyVariant0 Function({List<String> emails}) get copyWith => _copyWith;
 
-  ReposRemoveUserAccessRestrictionsRequestBody _copyWith({Object? users = sdkOmittedValue}) => ReposRemoveUserAccessRestrictionsRequestBody(
-    users: identical(users, sdkOmittedValue) ? this.users : users as List<String>,
+  UsersAddEmailForAuthenticatedUserRequestBodyVariant0 _copyWith({Object? emails = sdkOmittedValue}) => UsersAddEmailForAuthenticatedUserRequestBodyVariant0(
+    emails: identical(emails, sdkOmittedValue) ? this.emails : emails as List<String>,
   );
 
-  factory ReposRemoveUserAccessRestrictionsRequestBody.fromJson(Map<String, dynamic> json) => ReposRemoveUserAccessRestrictionsRequestBody(
-    users: ((json['users'] as List?)?.map((e) => e as String).toList())!,
+  factory UsersAddEmailForAuthenticatedUserRequestBodyVariant0.fromJson(Map<String, dynamic> json) => UsersAddEmailForAuthenticatedUserRequestBodyVariant0(
+    emails: ((json['emails'] as List?)?.map((e) => e as String).toList())!,
   );
 
   Map<String, dynamic> toJson() => {
-    'users': users,
+    'emails': emails,
   };
 }
 
-class ReposRenameBranchRequestBody {
+/// Deletes one or more email addresses from your GitHub account. Must contain at least one email address. **Note:** Alternatively, you can pass a single email address or an `array` of emails addresses directly, but we recommend that you pass an object using the `emails` key.
+class UsersDeleteEmailForAuthenticatedUserRequestBodyVariant0 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The new name of the branch.
-  final String newName;
+  /// Email addresses associated with the GitHub user account.
+  final List<String> emails;
 
-  const ReposRenameBranchRequestBody({required this.newName});
+  const UsersDeleteEmailForAuthenticatedUserRequestBodyVariant0({required this.emails});
 
-  ReposRenameBranchRequestBody Function({String newName}) get copyWith => _copyWith;
+  UsersDeleteEmailForAuthenticatedUserRequestBodyVariant0 Function({List<String> emails}) get copyWith => _copyWith;
 
-  ReposRenameBranchRequestBody _copyWith({Object? newName = sdkOmittedValue}) => ReposRenameBranchRequestBody(
-    newName: identical(newName, sdkOmittedValue) ? this.newName : newName as String,
+  UsersDeleteEmailForAuthenticatedUserRequestBodyVariant0 _copyWith({Object? emails = sdkOmittedValue}) => UsersDeleteEmailForAuthenticatedUserRequestBodyVariant0(
+    emails: identical(emails, sdkOmittedValue) ? this.emails : emails as List<String>,
   );
 
-  factory ReposRenameBranchRequestBody.fromJson(Map<String, dynamic> json) => ReposRenameBranchRequestBody(
-    newName: (json['new_name'] as String?)!,
+  factory UsersDeleteEmailForAuthenticatedUserRequestBodyVariant0.fromJson(Map<String, dynamic> json) => UsersDeleteEmailForAuthenticatedUserRequestBodyVariant0(
+    emails: ((json['emails'] as List?)?.map((e) => e as String).toList())!,
   );
 
   Map<String, dynamic> toJson() => {
-    'new_name': newName,
+    'emails': emails,
   };
 }
 
-class ReposAddCollaboratorRequestBody {
+class UsersCreateGpgKeyForAuthenticatedUserRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The permission to grant the collaborator. **Only valid on organization-owned repositories.** We accept the following permissions to be set: `pull`, `triage`, `triage_plus`, `push`, `maintain`, `admin` and you can also specify a custom repository role name, if the owning organization has defined any.
-  final SdkOptional<String> permission;
+  /// A descriptive name for the new key.
+  final SdkOptional<String> name;
+  /// A GPG key in ASCII-armored format.
+  final String armoredPublicKey;
 
-  const ReposAddCollaboratorRequestBody({this.permission = const SdkOmitted()});
+  const UsersCreateGpgKeyForAuthenticatedUserRequestBody({this.name = const SdkOmitted(), required this.armoredPublicKey});
 
-  ReposAddCollaboratorRequestBody Function({SdkOptional<String> permission}) get copyWith => _copyWith;
+  UsersCreateGpgKeyForAuthenticatedUserRequestBody Function({SdkOptional<String> name, String armoredPublicKey}) get copyWith => _copyWith;
 
-  ReposAddCollaboratorRequestBody _copyWith({Object? permission = sdkOmittedValue}) => ReposAddCollaboratorRequestBody(
-    permission: identical(permission, sdkOmittedValue) ? this.permission : permission as SdkOptional<String>,
+  UsersCreateGpgKeyForAuthenticatedUserRequestBody _copyWith({Object? name = sdkOmittedValue, Object? armoredPublicKey = sdkOmittedValue}) => UsersCreateGpgKeyForAuthenticatedUserRequestBody(
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
+    armoredPublicKey: identical(armoredPublicKey, sdkOmittedValue) ? this.armoredPublicKey : armoredPublicKey as String,
   );
 
-  factory ReposAddCollaboratorRequestBody.fromJson(Map<String, dynamic> json) => ReposAddCollaboratorRequestBody(
-    permission: json['permission'] != null ? SdkPresent((json['permission'] as String?)!) : const SdkOmitted(),
+  factory UsersCreateGpgKeyForAuthenticatedUserRequestBody.fromJson(Map<String, dynamic> json) => UsersCreateGpgKeyForAuthenticatedUserRequestBody(
+    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
+    armoredPublicKey: (json['armored_public_key'] as String?)!,
   );
 
   Map<String, dynamic> toJson() => {
-    ...switch (permission) {
-      SdkPresent<String>(value: final value) => {'permission': value,},
+    ...switch (name) {
+      SdkPresent<String>(value: final value) => {'name': value,},
+      _ => const <String, dynamic>{},
+    },
+    'armored_public_key': armoredPublicKey,
+  };
+}
+
+class UsersCreatePublicSshKeyForAuthenticatedUserRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// A descriptive name for the new key.
+  final SdkOptional<String> title;
+  /// The public SSH key to add to your GitHub account.
+  final String key;
+
+  const UsersCreatePublicSshKeyForAuthenticatedUserRequestBody({this.title = const SdkOmitted(), required this.key});
+
+  UsersCreatePublicSshKeyForAuthenticatedUserRequestBody Function({SdkOptional<String> title, String key}) get copyWith => _copyWith;
+
+  UsersCreatePublicSshKeyForAuthenticatedUserRequestBody _copyWith({Object? title = sdkOmittedValue, Object? key = sdkOmittedValue}) => UsersCreatePublicSshKeyForAuthenticatedUserRequestBody(
+    title: identical(title, sdkOmittedValue) ? this.title : title as SdkOptional<String>,
+    key: identical(key, sdkOmittedValue) ? this.key : key as String,
+  );
+
+  factory UsersCreatePublicSshKeyForAuthenticatedUserRequestBody.fromJson(Map<String, dynamic> json) => UsersCreatePublicSshKeyForAuthenticatedUserRequestBody(
+    title: json['title'] != null ? SdkPresent((json['title'] as String?)!) : const SdkOmitted(),
+    key: (json['key'] as String?)!,
+  );
+
+  Map<String, dynamic> toJson() => {
+    ...switch (title) {
+      SdkPresent<String>(value: final value) => {'title': value,},
+      _ => const <String, dynamic>{},
+    },
+    'key': key,
+  };
+}
+
+class UsersAddSocialAccountForAuthenticatedUserRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// Full URLs for the social media profiles to add.
+  final List<String> accountUrls;
+
+  const UsersAddSocialAccountForAuthenticatedUserRequestBody({required this.accountUrls});
+
+  UsersAddSocialAccountForAuthenticatedUserRequestBody Function({List<String> accountUrls}) get copyWith => _copyWith;
+
+  UsersAddSocialAccountForAuthenticatedUserRequestBody _copyWith({Object? accountUrls = sdkOmittedValue}) => UsersAddSocialAccountForAuthenticatedUserRequestBody(
+    accountUrls: identical(accountUrls, sdkOmittedValue) ? this.accountUrls : accountUrls as List<String>,
+  );
+
+  factory UsersAddSocialAccountForAuthenticatedUserRequestBody.fromJson(Map<String, dynamic> json) => UsersAddSocialAccountForAuthenticatedUserRequestBody(
+    accountUrls: ((json['account_urls'] as List?)?.map((e) => e as String).toList())!,
+  );
+
+  Map<String, dynamic> toJson() => {
+    'account_urls': accountUrls,
+  };
+}
+
+class UsersDeleteSocialAccountForAuthenticatedUserRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// Full URLs for the social media profiles to delete.
+  final List<String> accountUrls;
+
+  const UsersDeleteSocialAccountForAuthenticatedUserRequestBody({required this.accountUrls});
+
+  UsersDeleteSocialAccountForAuthenticatedUserRequestBody Function({List<String> accountUrls}) get copyWith => _copyWith;
+
+  UsersDeleteSocialAccountForAuthenticatedUserRequestBody _copyWith({Object? accountUrls = sdkOmittedValue}) => UsersDeleteSocialAccountForAuthenticatedUserRequestBody(
+    accountUrls: identical(accountUrls, sdkOmittedValue) ? this.accountUrls : accountUrls as List<String>,
+  );
+
+  factory UsersDeleteSocialAccountForAuthenticatedUserRequestBody.fromJson(Map<String, dynamic> json) => UsersDeleteSocialAccountForAuthenticatedUserRequestBody(
+    accountUrls: ((json['account_urls'] as List?)?.map((e) => e as String).toList())!,
+  );
+
+  Map<String, dynamic> toJson() => {
+    'account_urls': accountUrls,
+  };
+}
+
+class UsersCreateSshSigningKeyForAuthenticatedUserRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// A descriptive name for the new key.
+  final SdkOptional<String> title;
+  /// The public SSH key to add to your GitHub account. For more information, see "[Checking for existing SSH keys](https://docs.github.com/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys)."
+  final String key;
+
+  const UsersCreateSshSigningKeyForAuthenticatedUserRequestBody({this.title = const SdkOmitted(), required this.key});
+
+  UsersCreateSshSigningKeyForAuthenticatedUserRequestBody Function({SdkOptional<String> title, String key}) get copyWith => _copyWith;
+
+  UsersCreateSshSigningKeyForAuthenticatedUserRequestBody _copyWith({Object? title = sdkOmittedValue, Object? key = sdkOmittedValue}) => UsersCreateSshSigningKeyForAuthenticatedUserRequestBody(
+    title: identical(title, sdkOmittedValue) ? this.title : title as SdkOptional<String>,
+    key: identical(key, sdkOmittedValue) ? this.key : key as String,
+  );
+
+  factory UsersCreateSshSigningKeyForAuthenticatedUserRequestBody.fromJson(Map<String, dynamic> json) => UsersCreateSshSigningKeyForAuthenticatedUserRequestBody(
+    title: json['title'] != null ? SdkPresent((json['title'] as String?)!) : const SdkOmitted(),
+    key: (json['key'] as String?)!,
+  );
+
+  Map<String, dynamic> toJson() => {
+    ...switch (title) {
+      SdkPresent<String>(value: final value) => {'title': value,},
+      _ => const <String, dynamic>{},
+    },
+    'key': key,
+  };
+}
+
+class UsersListAttestationsBulkRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// List of subject digests to fetch attestations for.
+  final List<String> subjectDigests;
+  /// Optional filter for fetching attestations with a given predicate type. This option accepts `provenance`, `sbom`, `release`, or freeform text for custom predicate types.
+  final SdkOptional<String> predicateType;
+
+  const UsersListAttestationsBulkRequestBody({required this.subjectDigests, this.predicateType = const SdkOmitted()});
+
+  UsersListAttestationsBulkRequestBody Function({List<String> subjectDigests, SdkOptional<String> predicateType}) get copyWith => _copyWith;
+
+  UsersListAttestationsBulkRequestBody _copyWith({Object? subjectDigests = sdkOmittedValue, Object? predicateType = sdkOmittedValue}) => UsersListAttestationsBulkRequestBody(
+    subjectDigests: identical(subjectDigests, sdkOmittedValue) ? this.subjectDigests : subjectDigests as List<String>,
+    predicateType: identical(predicateType, sdkOmittedValue) ? this.predicateType : predicateType as SdkOptional<String>,
+  );
+
+  factory UsersListAttestationsBulkRequestBody.fromJson(Map<String, dynamic> json) => UsersListAttestationsBulkRequestBody(
+    subjectDigests: ((json['subject_digests'] as List?)?.map((e) => e as String).toList())!,
+    predicateType: json['predicate_type'] != null ? SdkPresent((json['predicate_type'] as String?)!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    'subject_digests': subjectDigests,
+    ...switch (predicateType) {
+      SdkPresent<String>(value: final value) => {'predicate_type': value,},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-class ReposUpdateCommitCommentRequestBody {
+/// The bundle of the attestation.
+class UsersListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The contents of the comment
-  final String body;
+  final SdkOptional<String> mediaType;
+  final SdkOptional<Map<String, Object?>> verificationMaterial;
+  final SdkOptional<Map<String, Object?>> dsseEnvelope;
 
-  const ReposUpdateCommitCommentRequestBody({required this.body});
+  const UsersListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle({this.mediaType = const SdkOmitted(), this.verificationMaterial = const SdkOmitted(), this.dsseEnvelope = const SdkOmitted()});
 
-  ReposUpdateCommitCommentRequestBody Function({String body}) get copyWith => _copyWith;
+  UsersListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle Function({SdkOptional<String> mediaType, SdkOptional<Map<String, Object?>> verificationMaterial, SdkOptional<Map<String, Object?>> dsseEnvelope}) get copyWith => _copyWith;
 
-  ReposUpdateCommitCommentRequestBody _copyWith({Object? body = sdkOmittedValue}) => ReposUpdateCommitCommentRequestBody(
-    body: identical(body, sdkOmittedValue) ? this.body : body as String,
+  UsersListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle _copyWith({Object? mediaType = sdkOmittedValue, Object? verificationMaterial = sdkOmittedValue, Object? dsseEnvelope = sdkOmittedValue}) => UsersListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle(
+    mediaType: identical(mediaType, sdkOmittedValue) ? this.mediaType : mediaType as SdkOptional<String>,
+    verificationMaterial: identical(verificationMaterial, sdkOmittedValue) ? this.verificationMaterial : verificationMaterial as SdkOptional<Map<String, Object?>>,
+    dsseEnvelope: identical(dsseEnvelope, sdkOmittedValue) ? this.dsseEnvelope : dsseEnvelope as SdkOptional<Map<String, Object?>>,
   );
 
-  factory ReposUpdateCommitCommentRequestBody.fromJson(Map<String, dynamic> json) => ReposUpdateCommitCommentRequestBody(
-    body: (json['body'] as String?)!,
+  factory UsersListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle.fromJson(Map<String, dynamic> json) => UsersListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle(
+    mediaType: json['mediaType'] != null ? SdkPresent((json['mediaType'] as String?)!) : const SdkOmitted(),
+    verificationMaterial: json['verificationMaterial'] != null ? SdkPresent((json['verificationMaterial'] == null ? null : Map<String, dynamic>.from(json['verificationMaterial'] as Map).map((key, value) => MapEntry(key, value)))!) : const SdkOmitted(),
+    dsseEnvelope: json['dsseEnvelope'] != null ? SdkPresent((json['dsseEnvelope'] == null ? null : Map<String, dynamic>.from(json['dsseEnvelope'] as Map).map((key, value) => MapEntry(key, value)))!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    'body': body,
-  };
-}
-
-class ReposCreateCommitCommentRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The contents of the comment.
-  final String body;
-  /// Relative path of the file to comment on.
-  final SdkOptional<String> path;
-  /// Line index in the diff to comment on.
-  final SdkOptional<int> position;
-  /// **Closing down notice**. Use **position** parameter instead. Line number in the file to comment on.
-  final SdkOptional<int> line;
-
-  const ReposCreateCommitCommentRequestBody({required this.body, this.path = const SdkOmitted(), this.position = const SdkOmitted(), this.line = const SdkOmitted()});
-
-  ReposCreateCommitCommentRequestBody Function({String body, SdkOptional<String> path, SdkOptional<int> position, SdkOptional<int> line}) get copyWith => _copyWith;
-
-  ReposCreateCommitCommentRequestBody _copyWith({Object? body = sdkOmittedValue, Object? path = sdkOmittedValue, Object? position = sdkOmittedValue, Object? line = sdkOmittedValue}) => ReposCreateCommitCommentRequestBody(
-    body: identical(body, sdkOmittedValue) ? this.body : body as String,
-    path: identical(path, sdkOmittedValue) ? this.path : path as SdkOptional<String>,
-    position: identical(position, sdkOmittedValue) ? this.position : position as SdkOptional<int>,
-    line: identical(line, sdkOmittedValue) ? this.line : line as SdkOptional<int>,
-  );
-
-  factory ReposCreateCommitCommentRequestBody.fromJson(Map<String, dynamic> json) => ReposCreateCommitCommentRequestBody(
-    body: (json['body'] as String?)!,
-    path: json['path'] != null ? SdkPresent((json['path'] as String?)!) : const SdkOmitted(),
-    position: json['position'] != null ? SdkPresent(((json['position'] as num?)?.toInt())!) : const SdkOmitted(),
-    line: json['line'] != null ? SdkPresent(((json['line'] as num?)?.toInt())!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    'body': body,
-    ...switch (path) {
-      SdkPresent<String>(value: final value) => {'path': value,},
+    ...switch (mediaType) {
+      SdkPresent<String>(value: final value) => {'mediaType': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (position) {
-      SdkPresent<int>(value: final value) => {'position': value,},
+    ...switch (verificationMaterial) {
+      SdkPresent<Map<String, Object?>>(value: final value) => {'verificationMaterial': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (line) {
-      SdkPresent<int>(value: final value) => {'line': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
-}
-
-/// The person that committed the file. Default: the authenticated user.
-class ReposCreateOrUpdateFileContentsRequestBodyCommitter {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The name of the author or committer of the commit. You'll receive a `422` status code if `name` is omitted.
-  final String name;
-  /// The email of the author or committer of the commit. You'll receive a `422` status code if `email` is omitted.
-  final String email;
-  final SdkOptional<String> date;
-
-  const ReposCreateOrUpdateFileContentsRequestBodyCommitter({required this.name, required this.email, this.date = const SdkOmitted()});
-
-  ReposCreateOrUpdateFileContentsRequestBodyCommitter Function({String name, String email, SdkOptional<String> date}) get copyWith => _copyWith;
-
-  ReposCreateOrUpdateFileContentsRequestBodyCommitter _copyWith({Object? name = sdkOmittedValue, Object? email = sdkOmittedValue, Object? date = sdkOmittedValue}) => ReposCreateOrUpdateFileContentsRequestBodyCommitter(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    email: identical(email, sdkOmittedValue) ? this.email : email as String,
-    date: identical(date, sdkOmittedValue) ? this.date : date as SdkOptional<String>,
-  );
-
-  factory ReposCreateOrUpdateFileContentsRequestBodyCommitter.fromJson(Map<String, dynamic> json) => ReposCreateOrUpdateFileContentsRequestBodyCommitter(
-    name: (json['name'] as String?)!,
-    email: (json['email'] as String?)!,
-    date: json['date'] != null ? SdkPresent((json['date'] as String?)!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    'name': name,
-    'email': email,
-    ...switch (date) {
-      SdkPresent<String>(value: final value) => {'date': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
-}
-
-/// The author of the file. Default: The `committer` or the authenticated user if you omit `committer`.
-class ReposCreateOrUpdateFileContentsRequestBodyAuthor {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// The name of the author or committer of the commit. You'll receive a `422` status code if `name` is omitted.
-  final String name;
-  /// The email of the author or committer of the commit. You'll receive a `422` status code if `email` is omitted.
-  final String email;
-  final SdkOptional<String> date;
-
-  const ReposCreateOrUpdateFileContentsRequestBodyAuthor({required this.name, required this.email, this.date = const SdkOmitted()});
-
-  ReposCreateOrUpdateFileContentsRequestBodyAuthor Function({String name, String email, SdkOptional<String> date}) get copyWith => _copyWith;
-
-  ReposCreateOrUpdateFileContentsRequestBodyAuthor _copyWith({Object? name = sdkOmittedValue, Object? email = sdkOmittedValue, Object? date = sdkOmittedValue}) => ReposCreateOrUpdateFileContentsRequestBodyAuthor(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    email: identical(email, sdkOmittedValue) ? this.email : email as String,
-    date: identical(date, sdkOmittedValue) ? this.date : date as SdkOptional<String>,
-  );
-
-  factory ReposCreateOrUpdateFileContentsRequestBodyAuthor.fromJson(Map<String, dynamic> json) => ReposCreateOrUpdateFileContentsRequestBodyAuthor(
-    name: (json['name'] as String?)!,
-    email: (json['email'] as String?)!,
-    date: json['date'] != null ? SdkPresent((json['date'] as String?)!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    'name': name,
-    'email': email,
-    ...switch (date) {
-      SdkPresent<String>(value: final value) => {'date': value,},
+    ...switch (dsseEnvelope) {
+      SdkPresent<Map<String, Object?>>(value: final value) => {'dsseEnvelope': value,},
       _ => const <String, dynamic>{},
     },
   };

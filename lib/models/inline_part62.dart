@@ -4,176 +4,6 @@
 part of 'inline.dart';
 
 // Inline operation models (part 62)
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhookDeploymentReviewApprovedWorkflowRunActorType {
-
-  final String value;
-
-  const WebhookDeploymentReviewApprovedWorkflowRunActorType._(this.value);
-
-  factory WebhookDeploymentReviewApprovedWorkflowRunActorType.fromJson(String value) => WebhookDeploymentReviewApprovedWorkflowRunActorType._(value);
-
-  static const bot = WebhookDeploymentReviewApprovedWorkflowRunActorType._('Bot');
-  static const user = WebhookDeploymentReviewApprovedWorkflowRunActorType._('User');
-  static const organization = WebhookDeploymentReviewApprovedWorkflowRunActorType._('Organization');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is WebhookDeploymentReviewApprovedWorkflowRunActorType && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// Required enumerated value serialized in the `conclusion` wire field.
-final class WebhookDeploymentReviewApprovedWorkflowRunConclusion {
-
-  final String value;
-
-  const WebhookDeploymentReviewApprovedWorkflowRunConclusion._(this.value);
-
-  factory WebhookDeploymentReviewApprovedWorkflowRunConclusion.fromJson(String value) => WebhookDeploymentReviewApprovedWorkflowRunConclusion._(value);
-
-  static const success = WebhookDeploymentReviewApprovedWorkflowRunConclusion._('success');
-  static const failure = WebhookDeploymentReviewApprovedWorkflowRunConclusion._('failure');
-  static const neutral = WebhookDeploymentReviewApprovedWorkflowRunConclusion._('neutral');
-  static const cancelled = WebhookDeploymentReviewApprovedWorkflowRunConclusion._('cancelled');
-  static const timedOut = WebhookDeploymentReviewApprovedWorkflowRunConclusion._('timed_out');
-  static const actionRequired = WebhookDeploymentReviewApprovedWorkflowRunConclusion._('action_required');
-  static const stale = WebhookDeploymentReviewApprovedWorkflowRunConclusion._('stale');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is WebhookDeploymentReviewApprovedWorkflowRunConclusion && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// Required enumerated value serialized in the `status` wire field.
-final class WebhookDeploymentReviewApprovedWorkflowRunStatus {
-
-  final String value;
-
-  const WebhookDeploymentReviewApprovedWorkflowRunStatus._(this.value);
-
-  factory WebhookDeploymentReviewApprovedWorkflowRunStatus.fromJson(String value) => WebhookDeploymentReviewApprovedWorkflowRunStatus._(value);
-
-  static const requested = WebhookDeploymentReviewApprovedWorkflowRunStatus._('requested');
-  static const inProgress = WebhookDeploymentReviewApprovedWorkflowRunStatus._('in_progress');
-  static const completed = WebhookDeploymentReviewApprovedWorkflowRunStatus._('completed');
-  static const queued = WebhookDeploymentReviewApprovedWorkflowRunStatus._('queued');
-  static const waiting = WebhookDeploymentReviewApprovedWorkflowRunStatus._('waiting');
-  static const pending = WebhookDeploymentReviewApprovedWorkflowRunStatus._('pending');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is WebhookDeploymentReviewApprovedWorkflowRunStatus && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhookDeploymentReviewApprovedWorkflowRunTriggeringActorType {
-
-  final String value;
-
-  const WebhookDeploymentReviewApprovedWorkflowRunTriggeringActorType._(this.value);
-
-  factory WebhookDeploymentReviewApprovedWorkflowRunTriggeringActorType.fromJson(String value) => WebhookDeploymentReviewApprovedWorkflowRunTriggeringActorType._(value);
-
-  static const bot = WebhookDeploymentReviewApprovedWorkflowRunTriggeringActorType._('Bot');
-  static const user = WebhookDeploymentReviewApprovedWorkflowRunTriggeringActorType._('User');
-  static const organization = WebhookDeploymentReviewApprovedWorkflowRunTriggeringActorType._('Organization');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is WebhookDeploymentReviewApprovedWorkflowRunTriggeringActorType && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookDeploymentReviewRejectedAction {
-
-  final String value;
-
-  const WebhookDeploymentReviewRejectedAction._(this.value);
-
-  factory WebhookDeploymentReviewRejectedAction.fromJson(String value) => WebhookDeploymentReviewRejectedAction._(value);
-
-  static const rejected = WebhookDeploymentReviewRejectedAction._('rejected');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is WebhookDeploymentReviewRejectedAction && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhookDeploymentReviewRejectedWorkflowRunActorType {
-
-  final String value;
-
-  const WebhookDeploymentReviewRejectedWorkflowRunActorType._(this.value);
-
-  factory WebhookDeploymentReviewRejectedWorkflowRunActorType.fromJson(String value) => WebhookDeploymentReviewRejectedWorkflowRunActorType._(value);
-
-  static const bot = WebhookDeploymentReviewRejectedWorkflowRunActorType._('Bot');
-  static const user = WebhookDeploymentReviewRejectedWorkflowRunActorType._('User');
-  static const organization = WebhookDeploymentReviewRejectedWorkflowRunActorType._('Organization');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is WebhookDeploymentReviewRejectedWorkflowRunActorType && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// Required enumerated value serialized in the `conclusion` wire field.
-final class WebhookDeploymentReviewRejectedWorkflowRunConclusion {
-
-  final String value;
-
-  const WebhookDeploymentReviewRejectedWorkflowRunConclusion._(this.value);
-
-  factory WebhookDeploymentReviewRejectedWorkflowRunConclusion.fromJson(String value) => WebhookDeploymentReviewRejectedWorkflowRunConclusion._(value);
-
-  static const success = WebhookDeploymentReviewRejectedWorkflowRunConclusion._('success');
-  static const failure = WebhookDeploymentReviewRejectedWorkflowRunConclusion._('failure');
-  static const neutral = WebhookDeploymentReviewRejectedWorkflowRunConclusion._('neutral');
-  static const cancelled = WebhookDeploymentReviewRejectedWorkflowRunConclusion._('cancelled');
-  static const timedOut = WebhookDeploymentReviewRejectedWorkflowRunConclusion._('timed_out');
-  static const actionRequired = WebhookDeploymentReviewRejectedWorkflowRunConclusion._('action_required');
-  static const stale = WebhookDeploymentReviewRejectedWorkflowRunConclusion._('stale');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is WebhookDeploymentReviewRejectedWorkflowRunConclusion && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
 /// Required enumerated value serialized in the `status` wire field.
 final class WebhookDeploymentReviewRejectedWorkflowRunStatus {
 
@@ -283,6 +113,179 @@ final class WebhookDeploymentReviewRequestedReviewersItemType {
   @override String toString() => value.toString();
 
   @override bool operator ==(Object other) => other is WebhookDeploymentReviewRequestedReviewersItemType && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// Optional enumerated value serialized in the `type` wire field.
+final class WebhookDeploymentReviewRequestedWorkflowRunActorType {
+
+  final String value;
+
+  const WebhookDeploymentReviewRequestedWorkflowRunActorType._(this.value);
+
+  factory WebhookDeploymentReviewRequestedWorkflowRunActorType.fromJson(String value) => WebhookDeploymentReviewRequestedWorkflowRunActorType._(value);
+
+  static const bot = WebhookDeploymentReviewRequestedWorkflowRunActorType._('Bot');
+  static const user = WebhookDeploymentReviewRequestedWorkflowRunActorType._('User');
+  static const organization = WebhookDeploymentReviewRequestedWorkflowRunActorType._('Organization');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is WebhookDeploymentReviewRequestedWorkflowRunActorType && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// Required enumerated value serialized in the `conclusion` wire field.
+final class WebhookDeploymentReviewRequestedWorkflowRunConclusion {
+
+  final String value;
+
+  const WebhookDeploymentReviewRequestedWorkflowRunConclusion._(this.value);
+
+  factory WebhookDeploymentReviewRequestedWorkflowRunConclusion.fromJson(String value) => WebhookDeploymentReviewRequestedWorkflowRunConclusion._(value);
+
+  static const success = WebhookDeploymentReviewRequestedWorkflowRunConclusion._('success');
+  static const failure = WebhookDeploymentReviewRequestedWorkflowRunConclusion._('failure');
+  static const neutral = WebhookDeploymentReviewRequestedWorkflowRunConclusion._('neutral');
+  static const cancelled = WebhookDeploymentReviewRequestedWorkflowRunConclusion._('cancelled');
+  static const timedOut = WebhookDeploymentReviewRequestedWorkflowRunConclusion._('timed_out');
+  static const actionRequired = WebhookDeploymentReviewRequestedWorkflowRunConclusion._('action_required');
+  static const stale = WebhookDeploymentReviewRequestedWorkflowRunConclusion._('stale');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is WebhookDeploymentReviewRequestedWorkflowRunConclusion && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// Required enumerated value serialized in the `status` wire field.
+final class WebhookDeploymentReviewRequestedWorkflowRunStatus {
+
+  final String value;
+
+  const WebhookDeploymentReviewRequestedWorkflowRunStatus._(this.value);
+
+  factory WebhookDeploymentReviewRequestedWorkflowRunStatus.fromJson(String value) => WebhookDeploymentReviewRequestedWorkflowRunStatus._(value);
+
+  static const requested = WebhookDeploymentReviewRequestedWorkflowRunStatus._('requested');
+  static const inProgress = WebhookDeploymentReviewRequestedWorkflowRunStatus._('in_progress');
+  static const completed = WebhookDeploymentReviewRequestedWorkflowRunStatus._('completed');
+  static const queued = WebhookDeploymentReviewRequestedWorkflowRunStatus._('queued');
+  static const waiting = WebhookDeploymentReviewRequestedWorkflowRunStatus._('waiting');
+  static const pending = WebhookDeploymentReviewRequestedWorkflowRunStatus._('pending');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is WebhookDeploymentReviewRequestedWorkflowRunStatus && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// Optional enumerated value serialized in the `type` wire field.
+final class WebhookDeploymentReviewRequestedWorkflowRunTriggeringActorType {
+
+  final String value;
+
+  const WebhookDeploymentReviewRequestedWorkflowRunTriggeringActorType._(this.value);
+
+  factory WebhookDeploymentReviewRequestedWorkflowRunTriggeringActorType.fromJson(String value) => WebhookDeploymentReviewRequestedWorkflowRunTriggeringActorType._(value);
+
+  static const bot = WebhookDeploymentReviewRequestedWorkflowRunTriggeringActorType._('Bot');
+  static const user = WebhookDeploymentReviewRequestedWorkflowRunTriggeringActorType._('User');
+  static const organization = WebhookDeploymentReviewRequestedWorkflowRunTriggeringActorType._('Organization');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is WebhookDeploymentReviewRequestedWorkflowRunTriggeringActorType && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// Required enumerated value serialized in the `action` wire field.
+final class WebhookDeploymentStatusCreatedAction {
+
+  final String value;
+
+  const WebhookDeploymentStatusCreatedAction._(this.value);
+
+  factory WebhookDeploymentStatusCreatedAction.fromJson(String value) => WebhookDeploymentStatusCreatedAction._(value);
+
+  static const created = WebhookDeploymentStatusCreatedAction._('created');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is WebhookDeploymentStatusCreatedAction && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// The result of the completed check run. This value will be `null` until the check run has completed.
+final class WebhookDeploymentStatusCreatedCheckRunConclusion {
+
+  final String value;
+
+  const WebhookDeploymentStatusCreatedCheckRunConclusion._(this.value);
+
+  factory WebhookDeploymentStatusCreatedCheckRunConclusion.fromJson(String value) => WebhookDeploymentStatusCreatedCheckRunConclusion._(value);
+
+  static const success = WebhookDeploymentStatusCreatedCheckRunConclusion._('success');
+  static const failure = WebhookDeploymentStatusCreatedCheckRunConclusion._('failure');
+  static const neutral = WebhookDeploymentStatusCreatedCheckRunConclusion._('neutral');
+  static const cancelled = WebhookDeploymentStatusCreatedCheckRunConclusion._('cancelled');
+  static const timedOut = WebhookDeploymentStatusCreatedCheckRunConclusion._('timed_out');
+  static const actionRequired = WebhookDeploymentStatusCreatedCheckRunConclusion._('action_required');
+  static const stale = WebhookDeploymentStatusCreatedCheckRunConclusion._('stale');
+  static const skipped = WebhookDeploymentStatusCreatedCheckRunConclusion._('skipped');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is WebhookDeploymentStatusCreatedCheckRunConclusion && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// The current status of the check run. Can be `queued`, `in_progress`, or `completed`.
+final class WebhookDeploymentStatusCreatedCheckRunStatus {
+
+  final String value;
+
+  const WebhookDeploymentStatusCreatedCheckRunStatus._(this.value);
+
+  factory WebhookDeploymentStatusCreatedCheckRunStatus.fromJson(String value) => WebhookDeploymentStatusCreatedCheckRunStatus._(value);
+
+  static const queued = WebhookDeploymentStatusCreatedCheckRunStatus._('queued');
+  static const inProgress = WebhookDeploymentStatusCreatedCheckRunStatus._('in_progress');
+  static const completed = WebhookDeploymentStatusCreatedCheckRunStatus._('completed');
+  static const waiting = WebhookDeploymentStatusCreatedCheckRunStatus._('waiting');
+  static const pending = WebhookDeploymentStatusCreatedCheckRunStatus._('pending');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is WebhookDeploymentStatusCreatedCheckRunStatus && other.value == value;
 
   @override int get hashCode => value.hashCode;
 

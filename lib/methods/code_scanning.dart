@@ -123,7 +123,7 @@ Future<List<CodeScanningOrganizationAlertItems>>
           operationId: 'codeScanningListAlertsForOrg',
           fromJsonRaw: (value) => (value as List).map((item) => CodeScanningOrganizationAlertItems.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -261,7 +261,7 @@ Future<List<CodeScanningAlertItems>>
           operationId: 'codeScanningListAlertsForRepo',
           fromJsonRaw: (value) => (value as List).map((item) => CodeScanningAlertItems.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -287,7 +287,7 @@ Future<CodeScanningAlert> codeScanningGetAlert(ClientConfig config,
           operationId: 'codeScanningGetAlert',
           fromJsonRaw: (value) => CodeScanningAlert.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -341,7 +341,7 @@ Future<CodeScanningAlert> codeScanningUpdateAlert(ClientConfig config,
           operationId: 'codeScanningUpdateAlert',
           fromJsonRaw: (value) => CodeScanningAlert.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -433,7 +433,7 @@ Future<CodeScanningAutofixCommitsResponse>
           operationId: 'codeScanningCommitAutofix',
           fromJsonRaw: (value) => CodeScanningAutofixCommitsResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -483,7 +483,7 @@ Future<List<CodeScanningAlertInstanceList>>
           operationId: 'codeScanningListAlertInstances',
           fromJsonRaw: (value) => (value as List).map((item) => CodeScanningAlertInstanceList.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -548,7 +548,7 @@ Future<List<CodeScanningAnalysis>>
           operationId: 'codeScanningListRecentAnalyses',
           fromJsonRaw: (value) => (value as List).map((item) => CodeScanningAnalysis.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -572,7 +572,7 @@ Future<CodeScanningAnalysis> codeScanningGetAnalysis(ClientConfig config,
           operationId: 'codeScanningGetAnalysis',
           fromJsonRaw: (value) => CodeScanningAnalysis.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -606,7 +606,7 @@ Future<CodeScanningAnalysisDeletion>
           operationId: 'codeScanningDeleteAnalysis',
           fromJsonRaw: (value) => CodeScanningAnalysisDeletion.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -628,7 +628,7 @@ Future<List<CodeScanningCodeqlDatabase>>
           operationId: 'codeScanningListCodeqlDatabases',
           fromJsonRaw: (value) => (value as List).map((item) => CodeScanningCodeqlDatabase.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -652,7 +652,7 @@ Future<CodeScanningCodeqlDatabase>
           operationId: 'codeScanningGetCodeqlDatabase',
           fromJsonRaw: (value) => CodeScanningCodeqlDatabase.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -674,7 +674,7 @@ Future<void> codeScanningDeleteCodeqlDatabase(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'codeScanningDeleteCodeqlDatabase',
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -727,7 +727,7 @@ Future<CodeScanningVariantAnalysis>
           operationId: 'codeScanningCreateVariantAnalysis',
           fromJsonRaw: (value) => CodeScanningVariantAnalysis.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -751,7 +751,7 @@ Future<CodeScanningVariantAnalysis>
           operationId: 'codeScanningGetVariantAnalysis',
           fromJsonRaw: (value) => CodeScanningVariantAnalysis.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -779,7 +779,7 @@ Future<CodeScanningVariantAnalysisRepoTask>
           operationId: 'codeScanningGetVariantAnalysisRepoTask',
           fromJsonRaw: (value) => CodeScanningVariantAnalysisRepoTask.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -801,7 +801,7 @@ Future<CodeScanningDefaultSetup>
           operationId: 'codeScanningGetDefaultSetup',
           fromJsonRaw: (value) => CodeScanningDefaultSetup.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -845,7 +845,7 @@ Future<Map<String, dynamic>> codeScanningUpdateDefaultSetup(ClientConfig config,
           operationId: 'codeScanningUpdateDefaultSetup',
           fromJsonRaw: (value) => value as Map<String, dynamic>,
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -920,7 +920,7 @@ Future<CodeScanningSarifsReceipt> codeScanningUploadSarif(ClientConfig config,
           operationId: 'codeScanningUploadSarif',
           fromJsonRaw: (value) => CodeScanningSarifsReceipt.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
 
@@ -943,6 +943,6 @@ Future<CodeScanningSarifsStatus> codeScanningGetSarif(ClientConfig config,
           operationId: 'codeScanningGetSarif',
           fromJsonRaw: (value) => CodeScanningSarifsStatus.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }

@@ -5,7 +5,6 @@
 import '../sdk_utils.dart';
 import 'inline.dart';
 import 'misc.dart';
-import 'pull_request.dart';
 import 'repository.dart';
 import 'shared_pull.dart';
 import 'shared_simple.dart';
@@ -56,3 +55,7 @@ part 'webhook_pull_request_review_request_removed_part42.dart';
 part 'webhook_pull_request_review_request_removed_part43.dart';
 part 'webhook_pull_request_review_request_removed_part44.dart';
 part 'webhook_pull_request_review_request_removed_part45.dart';
+part 'webhook_pull_request_review_request_removed_part46.dart';
+part 'webhook_pull_request_review_request_removed_part47.dart';
+part 'webhook_pull_request_review_request_removed_part48.dart';
+part 'webhook_pull_request_review_request_removed_part49.dart';

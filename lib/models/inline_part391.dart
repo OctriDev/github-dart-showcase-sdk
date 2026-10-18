@@ -4,208 +4,238 @@
 part of 'inline.dart';
 
 // Inline operation models (part 391)
-class CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponseDevcontainersItem {
+class ReposSetUserAccessRestrictionsRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final String path;
-  final SdkOptional<String> name;
-  final SdkOptional<String> displayName;
+  /// The username for users
+  final List<String> users;
 
-  const CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponseDevcontainersItem({required this.path, this.name = const SdkOmitted(), this.displayName = const SdkOmitted()});
+  const ReposSetUserAccessRestrictionsRequestBody({required this.users});
 
-  CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponseDevcontainersItem Function({String path, SdkOptional<String> name, SdkOptional<String> displayName}) get copyWith => _copyWith;
+  ReposSetUserAccessRestrictionsRequestBody Function({List<String> users}) get copyWith => _copyWith;
 
-  CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponseDevcontainersItem _copyWith({Object? path = sdkOmittedValue, Object? name = sdkOmittedValue, Object? displayName = sdkOmittedValue}) => CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponseDevcontainersItem(
-    path: identical(path, sdkOmittedValue) ? this.path : path as String,
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    displayName: identical(displayName, sdkOmittedValue) ? this.displayName : displayName as SdkOptional<String>,
+  ReposSetUserAccessRestrictionsRequestBody _copyWith({Object? users = sdkOmittedValue}) => ReposSetUserAccessRestrictionsRequestBody(
+    users: identical(users, sdkOmittedValue) ? this.users : users as List<String>,
   );
 
-  factory CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponseDevcontainersItem.fromJson(Map<String, dynamic> json) => CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponseDevcontainersItem(
-    path: (json['path'] as String?)!,
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    displayName: json['display_name'] != null ? SdkPresent((json['display_name'] as String?)!) : const SdkOmitted(),
+  factory ReposSetUserAccessRestrictionsRequestBody.fromJson(Map<String, dynamic> json) => ReposSetUserAccessRestrictionsRequestBody(
+    users: ((json['users'] as List?)?.map((e) => e as String).toList())!,
   );
 
   Map<String, dynamic> toJson() => {
-    'path': path,
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (displayName) {
-      SdkPresent<String>(value: final value) => {'display_name': value,},
-      _ => const <String, dynamic>{},
-    },
+    'users': users,
   };
 }
 
-class CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponse {
+class ReposRemoveUserAccessRestrictionsRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponseDevcontainersItem> devcontainers;
+  /// The username for users
+  final List<String> users;
 
-  const CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponse({required this.totalCount, required this.devcontainers});
+  const ReposRemoveUserAccessRestrictionsRequestBody({required this.users});
 
-  CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponse Function({int totalCount, List<CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponseDevcontainersItem> devcontainers}) get copyWith => _copyWith;
+  ReposRemoveUserAccessRestrictionsRequestBody Function({List<String> users}) get copyWith => _copyWith;
 
-  CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? devcontainers = sdkOmittedValue}) => CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    devcontainers: identical(devcontainers, sdkOmittedValue) ? this.devcontainers : devcontainers as List<CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponseDevcontainersItem>,
+  ReposRemoveUserAccessRestrictionsRequestBody _copyWith({Object? users = sdkOmittedValue}) => ReposRemoveUserAccessRestrictionsRequestBody(
+    users: identical(users, sdkOmittedValue) ? this.users : users as List<String>,
   );
 
-  factory CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponse.fromJson(Map<String, dynamic> json) => CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    devcontainers: ((json['devcontainers'] as List?)?.map((e) => CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponseDevcontainersItem.fromJson(e as Map<String, dynamic>)).toList())!,
+  factory ReposRemoveUserAccessRestrictionsRequestBody.fromJson(Map<String, dynamic> json) => ReposRemoveUserAccessRestrictionsRequestBody(
+    users: ((json['users'] as List?)?.map((e) => e as String).toList())!,
   );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'devcontainers': devcontainers.map((item) => item.toJson()).toList(),
+    'users': users,
   };
 }
 
-class CodespacesRepoMachinesForAuthenticatedUserResponse {
+class ReposRenameBranchRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<CodespaceMachine> machines;
+  /// The new name of the branch.
+  final String newName;
 
-  const CodespacesRepoMachinesForAuthenticatedUserResponse({required this.totalCount, required this.machines});
+  const ReposRenameBranchRequestBody({required this.newName});
 
-  CodespacesRepoMachinesForAuthenticatedUserResponse Function({int totalCount, List<CodespaceMachine> machines}) get copyWith => _copyWith;
+  ReposRenameBranchRequestBody Function({String newName}) get copyWith => _copyWith;
 
-  CodespacesRepoMachinesForAuthenticatedUserResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? machines = sdkOmittedValue}) => CodespacesRepoMachinesForAuthenticatedUserResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    machines: identical(machines, sdkOmittedValue) ? this.machines : machines as List<CodespaceMachine>,
+  ReposRenameBranchRequestBody _copyWith({Object? newName = sdkOmittedValue}) => ReposRenameBranchRequestBody(
+    newName: identical(newName, sdkOmittedValue) ? this.newName : newName as String,
   );
 
-  factory CodespacesRepoMachinesForAuthenticatedUserResponse.fromJson(Map<String, dynamic> json) => CodespacesRepoMachinesForAuthenticatedUserResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    machines: ((json['machines'] as List?)?.map((e) => CodespaceMachine.fromJson(e as Map<String, dynamic>)).toList())!,
+  factory ReposRenameBranchRequestBody.fromJson(Map<String, dynamic> json) => ReposRenameBranchRequestBody(
+    newName: (json['new_name'] as String?)!,
   );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'machines': machines.map((item) => item.toJson()).toList(),
+    'new_name': newName,
   };
 }
 
-class CodespacesPreFlightWithRepoForAuthenticatedUserResponseDefaults {
+class ReposAddCollaboratorRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final String location;
-  final String? devcontainerPath;
+  /// The permission to grant the collaborator. **Only valid on organization-owned repositories.** We accept the following permissions to be set: `pull`, `triage`, `triage_plus`, `push`, `maintain`, `admin` and you can also specify a custom repository role name, if the owning organization has defined any.
+  final SdkOptional<String> permission;
 
-  const CodespacesPreFlightWithRepoForAuthenticatedUserResponseDefaults({required this.location, required this.devcontainerPath});
+  const ReposAddCollaboratorRequestBody({this.permission = const SdkOmitted()});
 
-  CodespacesPreFlightWithRepoForAuthenticatedUserResponseDefaults Function({String location, String? devcontainerPath}) get copyWith => _copyWith;
+  ReposAddCollaboratorRequestBody Function({SdkOptional<String> permission}) get copyWith => _copyWith;
 
-  CodespacesPreFlightWithRepoForAuthenticatedUserResponseDefaults _copyWith({Object? location = sdkOmittedValue, Object? devcontainerPath = sdkOmittedValue}) => CodespacesPreFlightWithRepoForAuthenticatedUserResponseDefaults(
-    location: identical(location, sdkOmittedValue) ? this.location : location as String,
-    devcontainerPath: identical(devcontainerPath, sdkOmittedValue) ? this.devcontainerPath : devcontainerPath as String?,
+  ReposAddCollaboratorRequestBody _copyWith({Object? permission = sdkOmittedValue}) => ReposAddCollaboratorRequestBody(
+    permission: identical(permission, sdkOmittedValue) ? this.permission : permission as SdkOptional<String>,
   );
 
-  factory CodespacesPreFlightWithRepoForAuthenticatedUserResponseDefaults.fromJson(Map<String, dynamic> json) => CodespacesPreFlightWithRepoForAuthenticatedUserResponseDefaults(
-    location: (json['location'] as String?)!,
-    devcontainerPath: json.containsKey('devcontainer_path') ? json['devcontainer_path'] as String? : throw ArgumentError.value(null, 'devcontainer_path', 'Required property is missing'),
+  factory ReposAddCollaboratorRequestBody.fromJson(Map<String, dynamic> json) => ReposAddCollaboratorRequestBody(
+    permission: json['permission'] != null ? SdkPresent((json['permission'] as String?)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    'location': location,
-    'devcontainer_path': devcontainerPath,
-  };
-}
-
-class CodespacesPreFlightWithRepoForAuthenticatedUserResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// A GitHub user.
-  final SdkOptional<SimpleUser> billableOwner;
-  final SdkOptional<CodespacesPreFlightWithRepoForAuthenticatedUserResponseDefaults> defaults;
-
-  const CodespacesPreFlightWithRepoForAuthenticatedUserResponse({this.billableOwner = const SdkOmitted(), this.defaults = const SdkOmitted()});
-
-  CodespacesPreFlightWithRepoForAuthenticatedUserResponse Function({SdkOptional<SimpleUser> billableOwner, SdkOptional<CodespacesPreFlightWithRepoForAuthenticatedUserResponseDefaults> defaults}) get copyWith => _copyWith;
-
-  CodespacesPreFlightWithRepoForAuthenticatedUserResponse _copyWith({Object? billableOwner = sdkOmittedValue, Object? defaults = sdkOmittedValue}) => CodespacesPreFlightWithRepoForAuthenticatedUserResponse(
-    billableOwner: identical(billableOwner, sdkOmittedValue) ? this.billableOwner : billableOwner as SdkOptional<SimpleUser>,
-    defaults: identical(defaults, sdkOmittedValue) ? this.defaults : defaults as SdkOptional<CodespacesPreFlightWithRepoForAuthenticatedUserResponseDefaults>,
-  );
-
-  factory CodespacesPreFlightWithRepoForAuthenticatedUserResponse.fromJson(Map<String, dynamic> json) => CodespacesPreFlightWithRepoForAuthenticatedUserResponse(
-    billableOwner: json['billable_owner'] != null ? SdkPresent((json['billable_owner'] != null ? SimpleUser.fromJson(json['billable_owner'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    defaults: json['defaults'] != null ? SdkPresent((json['defaults'] != null ? CodespacesPreFlightWithRepoForAuthenticatedUserResponseDefaults.fromJson(json['defaults'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    ...switch (billableOwner) {
-      SdkPresent<SimpleUser>(value: final value) => {'billable_owner': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (defaults) {
-      SdkPresent<CodespacesPreFlightWithRepoForAuthenticatedUserResponseDefaults>(value: final value) => {'defaults': value.toJson(),},
+    ...switch (permission) {
+      SdkPresent<String>(value: final value) => {'permission': value,},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-class CodespacesListRepoSecretsResponse {
+class ReposUpdateCommitCommentRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<RepoCodespacesSecret> secrets;
+  /// The contents of the comment
+  final String body;
 
-  const CodespacesListRepoSecretsResponse({required this.totalCount, required this.secrets});
+  const ReposUpdateCommitCommentRequestBody({required this.body});
 
-  CodespacesListRepoSecretsResponse Function({int totalCount, List<RepoCodespacesSecret> secrets}) get copyWith => _copyWith;
+  ReposUpdateCommitCommentRequestBody Function({String body}) get copyWith => _copyWith;
 
-  CodespacesListRepoSecretsResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? secrets = sdkOmittedValue}) => CodespacesListRepoSecretsResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    secrets: identical(secrets, sdkOmittedValue) ? this.secrets : secrets as List<RepoCodespacesSecret>,
+  ReposUpdateCommitCommentRequestBody _copyWith({Object? body = sdkOmittedValue}) => ReposUpdateCommitCommentRequestBody(
+    body: identical(body, sdkOmittedValue) ? this.body : body as String,
   );
 
-  factory CodespacesListRepoSecretsResponse.fromJson(Map<String, dynamic> json) => CodespacesListRepoSecretsResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    secrets: ((json['secrets'] as List?)?.map((e) => RepoCodespacesSecret.fromJson(e as Map<String, dynamic>)).toList())!,
+  factory ReposUpdateCommitCommentRequestBody.fromJson(Map<String, dynamic> json) => ReposUpdateCommitCommentRequestBody(
+    body: (json['body'] as String?)!,
   );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'secrets': secrets.map((item) => item.toJson()).toList(),
+    'body': body,
   };
 }
 
-class CodespacesCreateOrUpdateRepoSecretRequestBody {
+class ReposCreateCommitCommentRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get a repository public key](https://docs.github.com/rest/codespaces/repository-secrets#get-a-repository-public-key) endpoint.
-  final SdkOptional<String> encryptedValue;
-  /// ID of the key you used to encrypt the secret.
-  final SdkOptional<String> keyId;
+  /// The contents of the comment.
+  final String body;
+  /// Relative path of the file to comment on.
+  final SdkOptional<String> path;
+  /// Line index in the diff to comment on.
+  final SdkOptional<int> position;
+  /// **Closing down notice**. Use **position** parameter instead. Line number in the file to comment on.
+  final SdkOptional<int> line;
 
-  const CodespacesCreateOrUpdateRepoSecretRequestBody({this.encryptedValue = const SdkOmitted(), this.keyId = const SdkOmitted()});
+  const ReposCreateCommitCommentRequestBody({required this.body, this.path = const SdkOmitted(), this.position = const SdkOmitted(), this.line = const SdkOmitted()});
 
-  CodespacesCreateOrUpdateRepoSecretRequestBody Function({SdkOptional<String> encryptedValue, SdkOptional<String> keyId}) get copyWith => _copyWith;
+  ReposCreateCommitCommentRequestBody Function({String body, SdkOptional<String> path, SdkOptional<int> position, SdkOptional<int> line}) get copyWith => _copyWith;
 
-  CodespacesCreateOrUpdateRepoSecretRequestBody _copyWith({Object? encryptedValue = sdkOmittedValue, Object? keyId = sdkOmittedValue}) => CodespacesCreateOrUpdateRepoSecretRequestBody(
-    encryptedValue: identical(encryptedValue, sdkOmittedValue) ? this.encryptedValue : encryptedValue as SdkOptional<String>,
-    keyId: identical(keyId, sdkOmittedValue) ? this.keyId : keyId as SdkOptional<String>,
+  ReposCreateCommitCommentRequestBody _copyWith({Object? body = sdkOmittedValue, Object? path = sdkOmittedValue, Object? position = sdkOmittedValue, Object? line = sdkOmittedValue}) => ReposCreateCommitCommentRequestBody(
+    body: identical(body, sdkOmittedValue) ? this.body : body as String,
+    path: identical(path, sdkOmittedValue) ? this.path : path as SdkOptional<String>,
+    position: identical(position, sdkOmittedValue) ? this.position : position as SdkOptional<int>,
+    line: identical(line, sdkOmittedValue) ? this.line : line as SdkOptional<int>,
   );
 
-  factory CodespacesCreateOrUpdateRepoSecretRequestBody.fromJson(Map<String, dynamic> json) => CodespacesCreateOrUpdateRepoSecretRequestBody(
-    encryptedValue: json['encrypted_value'] != null ? SdkPresent((json['encrypted_value'] as String?)!) : const SdkOmitted(),
-    keyId: json['key_id'] != null ? SdkPresent((json['key_id'] as String?)!) : const SdkOmitted(),
+  factory ReposCreateCommitCommentRequestBody.fromJson(Map<String, dynamic> json) => ReposCreateCommitCommentRequestBody(
+    body: (json['body'] as String?)!,
+    path: json['path'] != null ? SdkPresent((json['path'] as String?)!) : const SdkOmitted(),
+    position: json['position'] != null ? SdkPresent(((json['position'] as num?)?.toInt())!) : const SdkOmitted(),
+    line: json['line'] != null ? SdkPresent(((json['line'] as num?)?.toInt())!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    ...switch (encryptedValue) {
-      SdkPresent<String>(value: final value) => {'encrypted_value': value,},
+    'body': body,
+    ...switch (path) {
+      SdkPresent<String>(value: final value) => {'path': value,},
       _ => const <String, dynamic>{},
     },
-    ...switch (keyId) {
-      SdkPresent<String>(value: final value) => {'key_id': value,},
+    ...switch (position) {
+      SdkPresent<int>(value: final value) => {'position': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (line) {
+      SdkPresent<int>(value: final value) => {'line': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
+}
+
+/// The person that committed the file. Default: the authenticated user.
+class ReposCreateOrUpdateFileContentsRequestBodyCommitter {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The name of the author or committer of the commit. You'll receive a `422` status code if `name` is omitted.
+  final String name;
+  /// The email of the author or committer of the commit. You'll receive a `422` status code if `email` is omitted.
+  final String email;
+  final SdkOptional<String> date;
+
+  const ReposCreateOrUpdateFileContentsRequestBodyCommitter({required this.name, required this.email, this.date = const SdkOmitted()});
+
+  ReposCreateOrUpdateFileContentsRequestBodyCommitter Function({String name, String email, SdkOptional<String> date}) get copyWith => _copyWith;
+
+  ReposCreateOrUpdateFileContentsRequestBodyCommitter _copyWith({Object? name = sdkOmittedValue, Object? email = sdkOmittedValue, Object? date = sdkOmittedValue}) => ReposCreateOrUpdateFileContentsRequestBodyCommitter(
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    email: identical(email, sdkOmittedValue) ? this.email : email as String,
+    date: identical(date, sdkOmittedValue) ? this.date : date as SdkOptional<String>,
+  );
+
+  factory ReposCreateOrUpdateFileContentsRequestBodyCommitter.fromJson(Map<String, dynamic> json) => ReposCreateOrUpdateFileContentsRequestBodyCommitter(
+    name: (json['name'] as String?)!,
+    email: (json['email'] as String?)!,
+    date: json['date'] != null ? SdkPresent((json['date'] as String?)!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    'name': name,
+    'email': email,
+    ...switch (date) {
+      SdkPresent<String>(value: final value) => {'date': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
+}
+
+/// The author of the file. Default: The `committer` or the authenticated user if you omit `committer`.
+class ReposCreateOrUpdateFileContentsRequestBodyAuthor {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The name of the author or committer of the commit. You'll receive a `422` status code if `name` is omitted.
+  final String name;
+  /// The email of the author or committer of the commit. You'll receive a `422` status code if `email` is omitted.
+  final String email;
+  final SdkOptional<String> date;
+
+  const ReposCreateOrUpdateFileContentsRequestBodyAuthor({required this.name, required this.email, this.date = const SdkOmitted()});
+
+  ReposCreateOrUpdateFileContentsRequestBodyAuthor Function({String name, String email, SdkOptional<String> date}) get copyWith => _copyWith;
+
+  ReposCreateOrUpdateFileContentsRequestBodyAuthor _copyWith({Object? name = sdkOmittedValue, Object? email = sdkOmittedValue, Object? date = sdkOmittedValue}) => ReposCreateOrUpdateFileContentsRequestBodyAuthor(
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    email: identical(email, sdkOmittedValue) ? this.email : email as String,
+    date: identical(date, sdkOmittedValue) ? this.date : date as SdkOptional<String>,
+  );
+
+  factory ReposCreateOrUpdateFileContentsRequestBodyAuthor.fromJson(Map<String, dynamic> json) => ReposCreateOrUpdateFileContentsRequestBodyAuthor(
+    name: (json['name'] as String?)!,
+    email: (json['email'] as String?)!,
+    date: json['date'] != null ? SdkPresent((json['date'] as String?)!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    'name': name,
+    'email': email,
+    ...switch (date) {
+      SdkPresent<String>(value: final value) => {'date': value,},
       _ => const <String, dynamic>{},
     },
   };

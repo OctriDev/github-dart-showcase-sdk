@@ -4,6 +4,94 @@
 part of 'inline.dart';
 
 // Inline operation models (part 6)
+/// The level of permission to grant the access token to manage the followers belonging to a user.
+final class AppPermissionsFollowers {
+
+  final String value;
+
+  const AppPermissionsFollowers._(this.value);
+
+  factory AppPermissionsFollowers.fromJson(String value) => AppPermissionsFollowers._(value);
+
+  static const read = AppPermissionsFollowers._('read');
+  static const write = AppPermissionsFollowers._('write');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is AppPermissionsFollowers && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// The level of permission to grant the access token to manage git SSH keys.
+final class AppPermissionsGitSshKeys {
+
+  final String value;
+
+  const AppPermissionsGitSshKeys._(this.value);
+
+  factory AppPermissionsGitSshKeys.fromJson(String value) => AppPermissionsGitSshKeys._(value);
+
+  static const read = AppPermissionsGitSshKeys._('read');
+  static const write = AppPermissionsGitSshKeys._('write');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is AppPermissionsGitSshKeys && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// The level of permission to grant the access token to view and manage GPG keys belonging to a user.
+final class AppPermissionsGpgKeys {
+
+  final String value;
+
+  const AppPermissionsGpgKeys._(this.value);
+
+  factory AppPermissionsGpgKeys.fromJson(String value) => AppPermissionsGpgKeys._(value);
+
+  static const read = AppPermissionsGpgKeys._('read');
+  static const write = AppPermissionsGpgKeys._('write');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is AppPermissionsGpgKeys && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
+/// The level of permission to grant the access token to view and manage interaction limits on a repository.
+final class AppPermissionsInteractionLimits {
+
+  final String value;
+
+  const AppPermissionsInteractionLimits._(this.value);
+
+  factory AppPermissionsInteractionLimits.fromJson(String value) => AppPermissionsInteractionLimits._(value);
+
+  static const read = AppPermissionsInteractionLimits._('read');
+  static const write = AppPermissionsInteractionLimits._('write');
+
+  String toJson() => value;
+
+  @override String toString() => value.toString();
+
+  @override bool operator ==(Object other) => other is AppPermissionsInteractionLimits && other.value == value;
+
+  @override int get hashCode => value.hashCode;
+
+}
+
 /// The level of permission to grant the access token for issues and related comments, assignees, labels, and milestones.
 final class AppPermissionsIssues {
 
@@ -196,94 +284,6 @@ final class AppPermissionsOrganizationCopilotSeatManagement {
   @override String toString() => value.toString();
 
   @override bool operator ==(Object other) => other is AppPermissionsOrganizationCopilotSeatManagement && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The level of permission to grant the access token for custom organization roles management.
-final class AppPermissionsOrganizationCustomOrgRoles {
-
-  final String value;
-
-  const AppPermissionsOrganizationCustomOrgRoles._(this.value);
-
-  factory AppPermissionsOrganizationCustomOrgRoles.fromJson(String value) => AppPermissionsOrganizationCustomOrgRoles._(value);
-
-  static const read = AppPermissionsOrganizationCustomOrgRoles._('read');
-  static const write = AppPermissionsOrganizationCustomOrgRoles._('write');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is AppPermissionsOrganizationCustomOrgRoles && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The level of permission to grant the access token for repository custom properties management at the organization level.
-final class AppPermissionsOrganizationCustomProperties {
-
-  final String value;
-
-  const AppPermissionsOrganizationCustomProperties._(this.value);
-
-  factory AppPermissionsOrganizationCustomProperties.fromJson(String value) => AppPermissionsOrganizationCustomProperties._(value);
-
-  static const read = AppPermissionsOrganizationCustomProperties._('read');
-  static const write = AppPermissionsOrganizationCustomProperties._('write');
-  static const admin = AppPermissionsOrganizationCustomProperties._('admin');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is AppPermissionsOrganizationCustomProperties && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The level of permission to grant the access token for custom repository roles management.
-final class AppPermissionsOrganizationCustomRoles {
-
-  final String value;
-
-  const AppPermissionsOrganizationCustomRoles._(this.value);
-
-  factory AppPermissionsOrganizationCustomRoles.fromJson(String value) => AppPermissionsOrganizationCustomRoles._(value);
-
-  static const read = AppPermissionsOrganizationCustomRoles._('read');
-  static const write = AppPermissionsOrganizationCustomRoles._('write');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is AppPermissionsOrganizationCustomRoles && other.value == value;
-
-  @override int get hashCode => value.hashCode;
-
-}
-
-/// The level of permission to grant the access token to view events triggered by an activity in an organization.
-final class AppPermissionsOrganizationEvents {
-
-  final String value;
-
-  const AppPermissionsOrganizationEvents._(this.value);
-
-  factory AppPermissionsOrganizationEvents.fromJson(String value) => AppPermissionsOrganizationEvents._(value);
-
-  static const read = AppPermissionsOrganizationEvents._('read');
-
-  String toJson() => value;
-
-  @override String toString() => value.toString();
-
-  @override bool operator ==(Object other) => other is AppPermissionsOrganizationEvents && other.value == value;
 
   @override int get hashCode => value.hashCode;
 

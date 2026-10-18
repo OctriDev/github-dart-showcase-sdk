@@ -10,22 +10,30 @@ class RuleSuitePullRequest {
   static const String constructionSurface = 'named';
   /// The pull request associated with the rule evaluation.
   final SdkOptional<RuleSuitePullRequestPullRequest> pullRequest;
+  /// Optional enumerated value serialized in the `rule_type` wire field.
+  final SdkOptional<RuleSuitePullRequestRuleType> ruleType;
 
-  const RuleSuitePullRequest({this.pullRequest = const SdkOmitted()});
+  const RuleSuitePullRequest({this.pullRequest = const SdkOmitted(), this.ruleType = const SdkOmitted()});
 
-  RuleSuitePullRequest Function({SdkOptional<RuleSuitePullRequestPullRequest> pullRequest}) get copyWith => _copyWith;
+  RuleSuitePullRequest Function({SdkOptional<RuleSuitePullRequestPullRequest> pullRequest, SdkOptional<RuleSuitePullRequestRuleType> ruleType}) get copyWith => _copyWith;
 
-  RuleSuitePullRequest _copyWith({Object? pullRequest = sdkOmittedValue}) => RuleSuitePullRequest(
+  RuleSuitePullRequest _copyWith({Object? pullRequest = sdkOmittedValue, Object? ruleType = sdkOmittedValue}) => RuleSuitePullRequest(
     pullRequest: identical(pullRequest, sdkOmittedValue) ? this.pullRequest : pullRequest as SdkOptional<RuleSuitePullRequestPullRequest>,
+    ruleType: identical(ruleType, sdkOmittedValue) ? this.ruleType : ruleType as SdkOptional<RuleSuitePullRequestRuleType>,
   );
 
   factory RuleSuitePullRequest.fromJson(Map<String, dynamic> json) => RuleSuitePullRequest(
     pullRequest: json['pull_request'] != null ? SdkPresent((json['pull_request'] != null ? RuleSuitePullRequestPullRequest.fromJson(json['pull_request'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    ruleType: json['rule_type'] != null ? SdkPresent((json['rule_type'] != null ? RuleSuitePullRequestRuleType.fromJson(json['rule_type'] as String) : null)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
     ...switch (pullRequest) {
       SdkPresent<RuleSuitePullRequestPullRequest>(value: final value) => {'pull_request': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (ruleType) {
+      SdkPresent<RuleSuitePullRequestRuleType>(value: final value) => {'rule_type': value.toJson(),},
       _ => const <String, dynamic>{},
     },
   };
@@ -139,22 +147,30 @@ class RuleSuiteRequiredStatusChecks {
   static const String constructionSurface = 'named';
   /// The status checks associated with the rule evaluation.
   final SdkOptional<List<RuleSuiteRequiredStatusChecksChecksItem>> checks;
+  /// Optional enumerated value serialized in the `rule_type` wire field.
+  final SdkOptional<RuleSuiteRequiredStatusChecksRuleType> ruleType;
 
-  const RuleSuiteRequiredStatusChecks({this.checks = const SdkOmitted()});
+  const RuleSuiteRequiredStatusChecks({this.checks = const SdkOmitted(), this.ruleType = const SdkOmitted()});
 
-  RuleSuiteRequiredStatusChecks Function({SdkOptional<List<RuleSuiteRequiredStatusChecksChecksItem>> checks}) get copyWith => _copyWith;
+  RuleSuiteRequiredStatusChecks Function({SdkOptional<List<RuleSuiteRequiredStatusChecksChecksItem>> checks, SdkOptional<RuleSuiteRequiredStatusChecksRuleType> ruleType}) get copyWith => _copyWith;
 
-  RuleSuiteRequiredStatusChecks _copyWith({Object? checks = sdkOmittedValue}) => RuleSuiteRequiredStatusChecks(
+  RuleSuiteRequiredStatusChecks _copyWith({Object? checks = sdkOmittedValue, Object? ruleType = sdkOmittedValue}) => RuleSuiteRequiredStatusChecks(
     checks: identical(checks, sdkOmittedValue) ? this.checks : checks as SdkOptional<List<RuleSuiteRequiredStatusChecksChecksItem>>,
+    ruleType: identical(ruleType, sdkOmittedValue) ? this.ruleType : ruleType as SdkOptional<RuleSuiteRequiredStatusChecksRuleType>,
   );
 
   factory RuleSuiteRequiredStatusChecks.fromJson(Map<String, dynamic> json) => RuleSuiteRequiredStatusChecks(
     checks: json['checks'] != null ? SdkPresent(((json['checks'] as List?)?.map((e) => RuleSuiteRequiredStatusChecksChecksItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+    ruleType: json['rule_type'] != null ? SdkPresent((json['rule_type'] != null ? RuleSuiteRequiredStatusChecksRuleType.fromJson(json['rule_type'] as String) : null)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
     ...switch (checks) {
       SdkPresent<List<RuleSuiteRequiredStatusChecksChecksItem>>(value: final value) => {'checks': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (ruleType) {
+      SdkPresent<RuleSuiteRequiredStatusChecksRuleType>(value: final value) => {'rule_type': value.toJson(),},
       _ => const <String, dynamic>{},
     },
   };
@@ -165,6 +181,10 @@ sealed class RuleSuiteRuleEvaluationsItemMetadata {
   static const String constructionSurface = 'named';
   const RuleSuiteRuleEvaluationsItemMetadata();
   factory RuleSuiteRuleEvaluationsItemMetadata.fromJson(Object? json) {
+    if (json is Map<String, dynamic>) {
+      try { final value = RuleSuitePullRequest.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RuleSuiteRuleEvaluationsItemMetadataRuleSuitePullRequest(value); } } catch (_) {}
+      try { final value = RuleSuiteRequiredStatusChecks.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RuleSuiteRuleEvaluationsItemMetadataRuleSuiteRequiredStatusChecks(value); } } catch (_) {}
+    }
     try { return RuleSuiteRuleEvaluationsItemMetadataRuleSuitePullRequest(RuleSuitePullRequest.fromJson(json as Map<String, dynamic>)); } catch (_) {}
     try { return RuleSuiteRuleEvaluationsItemMetadataRuleSuiteRequiredStatusChecks(RuleSuiteRequiredStatusChecks.fromJson(json as Map<String, dynamic>)); } catch (_) {}
     if (json is Map<String, dynamic> && json["rule_type"] is String && !const {"pull_request", "required_status_checks"}.contains(json["rule_type"])) { return UnknownRuleSuiteRuleEvaluationsItemMetadata(json); }

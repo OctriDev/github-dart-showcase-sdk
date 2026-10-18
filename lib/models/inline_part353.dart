@@ -4,294 +4,285 @@
 part of 'inline.dart';
 
 // Inline operation models (part 353)
-class ActionsCreateOrgVariableRequestBody {
+class IssuesAddLabelsRequestBodyVariant2Item {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The name of the variable.
   final String name;
-  /// The value of the variable.
-  final String value;
-  /// The type of repositories in the organization that can access the variable. `selected` means only the repositories specified by `selected_repository_ids` can access the variable.
-  final ActionsCreateOrgVariableRequestBodyVisibility visibility;
-  /// An array of repository ids that can access the organization variable. You can only provide a list of repository ids when the `visibility` is set to `selected`.
-  final SdkOptional<List<int>> selectedRepositoryIds;
+  /// Optional reasoning for adding this label.
+  final SdkOptional<String> rationale;
+  /// If `true`, the label is stored as a pending suggestion for human review rather than applied directly.
+  final SdkOptional<bool> suggest;
+  /// The confidence level for this label choice.
+  final SdkOptional<IssuesAddLabelsRequestBodyVariant2ItemConfidence> confidence;
 
-  const ActionsCreateOrgVariableRequestBody({required this.name, required this.value, required this.visibility, this.selectedRepositoryIds = const SdkOmitted()});
+  const IssuesAddLabelsRequestBodyVariant2Item({required this.name, this.rationale = const SdkOmitted(), this.suggest = const SdkOmitted(), this.confidence = const SdkOmitted()});
 
-  ActionsCreateOrgVariableRequestBody Function({String name, String value, ActionsCreateOrgVariableRequestBodyVisibility visibility, SdkOptional<List<int>> selectedRepositoryIds}) get copyWith => _copyWith;
+  IssuesAddLabelsRequestBodyVariant2Item Function({String name, SdkOptional<String> rationale, SdkOptional<bool> suggest, SdkOptional<IssuesAddLabelsRequestBodyVariant2ItemConfidence> confidence}) get copyWith => _copyWith;
 
-  ActionsCreateOrgVariableRequestBody _copyWith({Object? name = sdkOmittedValue, Object? value = sdkOmittedValue, Object? visibility = sdkOmittedValue, Object? selectedRepositoryIds = sdkOmittedValue}) => ActionsCreateOrgVariableRequestBody(
+  IssuesAddLabelsRequestBodyVariant2Item _copyWith({Object? name = sdkOmittedValue, Object? rationale = sdkOmittedValue, Object? suggest = sdkOmittedValue, Object? confidence = sdkOmittedValue}) => IssuesAddLabelsRequestBodyVariant2Item(
     name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    value: identical(value, sdkOmittedValue) ? this.value : value as String,
-    visibility: identical(visibility, sdkOmittedValue) ? this.visibility : visibility as ActionsCreateOrgVariableRequestBodyVisibility,
-    selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue) ? this.selectedRepositoryIds : selectedRepositoryIds as SdkOptional<List<int>>,
+    rationale: identical(rationale, sdkOmittedValue) ? this.rationale : rationale as SdkOptional<String>,
+    suggest: identical(suggest, sdkOmittedValue) ? this.suggest : suggest as SdkOptional<bool>,
+    confidence: identical(confidence, sdkOmittedValue) ? this.confidence : confidence as SdkOptional<IssuesAddLabelsRequestBodyVariant2ItemConfidence>,
   );
 
-  factory ActionsCreateOrgVariableRequestBody.fromJson(Map<String, dynamic> json) => ActionsCreateOrgVariableRequestBody(
+  factory IssuesAddLabelsRequestBodyVariant2Item.fromJson(Map<String, dynamic> json) => IssuesAddLabelsRequestBodyVariant2Item(
     name: (json['name'] as String?)!,
-    value: (json['value'] as String?)!,
-    visibility: (json['visibility'] != null ? ActionsCreateOrgVariableRequestBodyVisibility.fromJson(json['visibility'] as String) : null)!,
-    selectedRepositoryIds: json['selected_repository_ids'] != null ? SdkPresent(((json['selected_repository_ids'] as List?)?.map((e) => (e as num).toInt()).toList())!) : const SdkOmitted(),
+    rationale: json['rationale'] != null ? SdkPresent((json['rationale'] as String?)!) : const SdkOmitted(),
+    suggest: json['suggest'] != null ? SdkPresent((json['suggest'] as bool?)!) : const SdkOmitted(),
+    confidence: json['confidence'] != null ? SdkPresent((json['confidence'] != null ? IssuesAddLabelsRequestBodyVariant2ItemConfidence.fromJson(json['confidence'] as String) : null)!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
     'name': name,
-    'value': value,
-    'visibility': visibility.toJson(),
-    ...switch (selectedRepositoryIds) {
-      SdkPresent<List<int>>(value: final value) => {'selected_repository_ids': value,},
+    ...switch (rationale) {
+      SdkPresent<String>(value: final value) => {'rationale': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (suggest) {
+      SdkPresent<bool>(value: final value) => {'suggest': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (confidence) {
+      SdkPresent<IssuesAddLabelsRequestBodyVariant2ItemConfidence>(value: final value) => {'confidence': value.toJson(),},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-class ActionsUpdateOrgVariableRequestBody {
+class IssuesSetLabelsRequestBodyVariant0 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The name of the variable.
-  final SdkOptional<String> name;
-  /// The value of the variable.
-  final SdkOptional<String> value;
-  /// The type of repositories in the organization that can access the variable. `selected` means only the repositories specified by `selected_repository_ids` can access the variable.
-  final SdkOptional<ActionsUpdateOrgVariableRequestBodyVisibility> visibility;
-  /// An array of repository ids that can access the organization variable. You can only provide a list of repository ids when the `visibility` is set to `selected`.
-  final SdkOptional<List<int>> selectedRepositoryIds;
+  /// The names of the labels to set for the issue. The labels you set replace any existing labels. You can pass an empty array to remove all labels. Alternatively, you can pass a single label as a `string` or an `array` of labels directly, but GitHub recommends passing an object with the `labels` key. You can also add labels to the existing labels for an issue. For more information, see "[Add labels to an issue](https://docs.github.com/rest/issues/labels#add-labels-to-an-issue)."
+  final SdkOptional<List<String>> labels;
 
-  const ActionsUpdateOrgVariableRequestBody({this.name = const SdkOmitted(), this.value = const SdkOmitted(), this.visibility = const SdkOmitted(), this.selectedRepositoryIds = const SdkOmitted()});
+  const IssuesSetLabelsRequestBodyVariant0({this.labels = const SdkOmitted()});
 
-  ActionsUpdateOrgVariableRequestBody Function({SdkOptional<String> name, SdkOptional<String> value, SdkOptional<ActionsUpdateOrgVariableRequestBodyVisibility> visibility, SdkOptional<List<int>> selectedRepositoryIds}) get copyWith => _copyWith;
+  IssuesSetLabelsRequestBodyVariant0 Function({SdkOptional<List<String>> labels}) get copyWith => _copyWith;
 
-  ActionsUpdateOrgVariableRequestBody _copyWith({Object? name = sdkOmittedValue, Object? value = sdkOmittedValue, Object? visibility = sdkOmittedValue, Object? selectedRepositoryIds = sdkOmittedValue}) => ActionsUpdateOrgVariableRequestBody(
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    value: identical(value, sdkOmittedValue) ? this.value : value as SdkOptional<String>,
-    visibility: identical(visibility, sdkOmittedValue) ? this.visibility : visibility as SdkOptional<ActionsUpdateOrgVariableRequestBodyVisibility>,
-    selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue) ? this.selectedRepositoryIds : selectedRepositoryIds as SdkOptional<List<int>>,
+  IssuesSetLabelsRequestBodyVariant0 _copyWith({Object? labels = sdkOmittedValue}) => IssuesSetLabelsRequestBodyVariant0(
+    labels: identical(labels, sdkOmittedValue) ? this.labels : labels as SdkOptional<List<String>>,
   );
 
-  factory ActionsUpdateOrgVariableRequestBody.fromJson(Map<String, dynamic> json) => ActionsUpdateOrgVariableRequestBody(
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    value: json['value'] != null ? SdkPresent((json['value'] as String?)!) : const SdkOmitted(),
-    visibility: json['visibility'] != null ? SdkPresent((json['visibility'] != null ? ActionsUpdateOrgVariableRequestBodyVisibility.fromJson(json['visibility'] as String) : null)!) : const SdkOmitted(),
-    selectedRepositoryIds: json['selected_repository_ids'] != null ? SdkPresent(((json['selected_repository_ids'] as List?)?.map((e) => (e as num).toInt()).toList())!) : const SdkOmitted(),
+  factory IssuesSetLabelsRequestBodyVariant0.fromJson(Map<String, dynamic> json) => IssuesSetLabelsRequestBodyVariant0(
+    labels: json['labels'] != null ? SdkPresent(((json['labels'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (value) {
-      SdkPresent<String>(value: final value) => {'value': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (visibility) {
-      SdkPresent<ActionsUpdateOrgVariableRequestBodyVisibility>(value: final value) => {'visibility': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (selectedRepositoryIds) {
-      SdkPresent<List<int>>(value: final value) => {'selected_repository_ids': value,},
+    ...switch (labels) {
+      SdkPresent<List<String>>(value: final value) => {'labels': value,},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-class ActionsListSelectedReposForOrgVariableResponse {
+class IssuesSetLabelsRequestBodyVariant2LabelsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<MinimalRepository> repositories;
+  final String name;
 
-  const ActionsListSelectedReposForOrgVariableResponse({required this.totalCount, required this.repositories});
+  const IssuesSetLabelsRequestBodyVariant2LabelsItem({required this.name});
 
-  ActionsListSelectedReposForOrgVariableResponse Function({int totalCount, List<MinimalRepository> repositories}) get copyWith => _copyWith;
+  IssuesSetLabelsRequestBodyVariant2LabelsItem Function({String name}) get copyWith => _copyWith;
 
-  ActionsListSelectedReposForOrgVariableResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? repositories = sdkOmittedValue}) => ActionsListSelectedReposForOrgVariableResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    repositories: identical(repositories, sdkOmittedValue) ? this.repositories : repositories as List<MinimalRepository>,
+  IssuesSetLabelsRequestBodyVariant2LabelsItem _copyWith({Object? name = sdkOmittedValue}) => IssuesSetLabelsRequestBodyVariant2LabelsItem(
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
   );
 
-  factory ActionsListSelectedReposForOrgVariableResponse.fromJson(Map<String, dynamic> json) => ActionsListSelectedReposForOrgVariableResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    repositories: ((json['repositories'] as List?)?.map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList())!,
+  factory IssuesSetLabelsRequestBodyVariant2LabelsItem.fromJson(Map<String, dynamic> json) => IssuesSetLabelsRequestBodyVariant2LabelsItem(
+    name: (json['name'] as String?)!,
   );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'repositories': repositories.map((item) => item.toJson()).toList(),
+    'name': name,
   };
 }
 
-class ActionsSetSelectedReposForOrgVariableRequestBody {
+class IssuesSetLabelsRequestBodyVariant2 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// The IDs of the repositories that can access the organization variable.
-  final List<int> selectedRepositoryIds;
+  final SdkOptional<List<IssuesSetLabelsRequestBodyVariant2LabelsItem>> labels;
 
-  const ActionsSetSelectedReposForOrgVariableRequestBody({required this.selectedRepositoryIds});
+  const IssuesSetLabelsRequestBodyVariant2({this.labels = const SdkOmitted()});
 
-  ActionsSetSelectedReposForOrgVariableRequestBody Function({List<int> selectedRepositoryIds}) get copyWith => _copyWith;
+  IssuesSetLabelsRequestBodyVariant2 Function({SdkOptional<List<IssuesSetLabelsRequestBodyVariant2LabelsItem>> labels}) get copyWith => _copyWith;
 
-  ActionsSetSelectedReposForOrgVariableRequestBody _copyWith({Object? selectedRepositoryIds = sdkOmittedValue}) => ActionsSetSelectedReposForOrgVariableRequestBody(
-    selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue) ? this.selectedRepositoryIds : selectedRepositoryIds as List<int>,
+  IssuesSetLabelsRequestBodyVariant2 _copyWith({Object? labels = sdkOmittedValue}) => IssuesSetLabelsRequestBodyVariant2(
+    labels: identical(labels, sdkOmittedValue) ? this.labels : labels as SdkOptional<List<IssuesSetLabelsRequestBodyVariant2LabelsItem>>,
   );
 
-  factory ActionsSetSelectedReposForOrgVariableRequestBody.fromJson(Map<String, dynamic> json) => ActionsSetSelectedReposForOrgVariableRequestBody(
-    selectedRepositoryIds: ((json['selected_repository_ids'] as List?)?.map((e) => (e as num).toInt()).toList())!,
+  factory IssuesSetLabelsRequestBodyVariant2.fromJson(Map<String, dynamic> json) => IssuesSetLabelsRequestBodyVariant2(
+    labels: json['labels'] != null ? SdkPresent(((json['labels'] as List?)?.map((e) => IssuesSetLabelsRequestBodyVariant2LabelsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
   );
 
   Map<String, dynamic> toJson() => {
-    'selected_repository_ids': selectedRepositoryIds,
-  };
-}
-
-class ActionsListArtifactsForRepoResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<Artifact> artifacts;
-
-  const ActionsListArtifactsForRepoResponse({required this.totalCount, required this.artifacts});
-
-  ActionsListArtifactsForRepoResponse Function({int totalCount, List<Artifact> artifacts}) get copyWith => _copyWith;
-
-  ActionsListArtifactsForRepoResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? artifacts = sdkOmittedValue}) => ActionsListArtifactsForRepoResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    artifacts: identical(artifacts, sdkOmittedValue) ? this.artifacts : artifacts as List<Artifact>,
-  );
-
-  factory ActionsListArtifactsForRepoResponse.fromJson(Map<String, dynamic> json) => ActionsListArtifactsForRepoResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    artifacts: ((json['artifacts'] as List?)?.map((e) => Artifact.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
-
-  Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'artifacts': artifacts.map((item) => item.toJson()).toList(),
-  };
-}
-
-class ActionsReRunJobForWorkflowRunRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  /// Whether to enable debug logging for the re-run.
-  final SdkOptional<bool> enableDebugLogging;
-  /// Whether to enable the debugger for the re-run of this job.
-  final SdkOptional<bool> enableDebugger;
-
-  const ActionsReRunJobForWorkflowRunRequestBody({this.enableDebugLogging = const SdkOmitted(), this.enableDebugger = const SdkOmitted()});
-
-  ActionsReRunJobForWorkflowRunRequestBody Function({SdkOptional<bool> enableDebugLogging, SdkOptional<bool> enableDebugger}) get copyWith => _copyWith;
-
-  ActionsReRunJobForWorkflowRunRequestBody _copyWith({Object? enableDebugLogging = sdkOmittedValue, Object? enableDebugger = sdkOmittedValue}) => ActionsReRunJobForWorkflowRunRequestBody(
-    enableDebugLogging: identical(enableDebugLogging, sdkOmittedValue) ? this.enableDebugLogging : enableDebugLogging as SdkOptional<bool>,
-    enableDebugger: identical(enableDebugger, sdkOmittedValue) ? this.enableDebugger : enableDebugger as SdkOptional<bool>,
-  );
-
-  factory ActionsReRunJobForWorkflowRunRequestBody.fromJson(Map<String, dynamic> json) => ActionsReRunJobForWorkflowRunRequestBody(
-    enableDebugLogging: json['enable_debug_logging'] != null ? SdkPresent((json['enable_debug_logging'] as bool?)!) : const SdkOmitted(),
-    enableDebugger: json['enable_debugger'] != null ? SdkPresent((json['enable_debugger'] as bool?)!) : const SdkOmitted(),
-  );
-
-  Map<String, dynamic> toJson() => {
-    ...switch (enableDebugLogging) {
-      SdkPresent<bool>(value: final value) => {'enable_debug_logging': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (enableDebugger) {
-      SdkPresent<bool>(value: final value) => {'enable_debugger': value,},
+    ...switch (labels) {
+      SdkPresent<List<IssuesSetLabelsRequestBodyVariant2LabelsItem>>(value: final value) => {'labels': value.map((item) => item.toJson()).toList(),},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-/// Actions OIDC subject customization for a repository
-class ActionsSetCustomOidcSubClaimForRepoRequestBody {
+class IssuesSetLabelsRequestBodyVariant3Item {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  /// Whether to use the default template or not. If `true`, the `include_claim_keys` field is ignored.
-  final bool useDefault;
-  /// Array of unique strings. Each claim key can only contain alphanumeric characters and underscores.
-  final SdkOptional<List<String>> includeClaimKeys;
-  /// Whether to opt in to the immutable OIDC subject claim format for this repository. When `true`, OIDC tokens will use a stable, repository-ID-based `sub` claim.
-  final SdkOptional<bool> useImmutableSubject;
+  final String name;
 
-  const ActionsSetCustomOidcSubClaimForRepoRequestBody({required this.useDefault, this.includeClaimKeys = const SdkOmitted(), this.useImmutableSubject = const SdkOmitted()});
+  const IssuesSetLabelsRequestBodyVariant3Item({required this.name});
 
-  ActionsSetCustomOidcSubClaimForRepoRequestBody Function({bool useDefault, SdkOptional<List<String>> includeClaimKeys, SdkOptional<bool> useImmutableSubject}) get copyWith => _copyWith;
+  IssuesSetLabelsRequestBodyVariant3Item Function({String name}) get copyWith => _copyWith;
 
-  ActionsSetCustomOidcSubClaimForRepoRequestBody _copyWith({Object? useDefault = sdkOmittedValue, Object? includeClaimKeys = sdkOmittedValue, Object? useImmutableSubject = sdkOmittedValue}) => ActionsSetCustomOidcSubClaimForRepoRequestBody(
-    useDefault: identical(useDefault, sdkOmittedValue) ? this.useDefault : useDefault as bool,
-    includeClaimKeys: identical(includeClaimKeys, sdkOmittedValue) ? this.includeClaimKeys : includeClaimKeys as SdkOptional<List<String>>,
-    useImmutableSubject: identical(useImmutableSubject, sdkOmittedValue) ? this.useImmutableSubject : useImmutableSubject as SdkOptional<bool>,
+  IssuesSetLabelsRequestBodyVariant3Item _copyWith({Object? name = sdkOmittedValue}) => IssuesSetLabelsRequestBodyVariant3Item(
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
   );
 
-  factory ActionsSetCustomOidcSubClaimForRepoRequestBody.fromJson(Map<String, dynamic> json) => ActionsSetCustomOidcSubClaimForRepoRequestBody(
-    useDefault: (json['use_default'] as bool?)!,
-    includeClaimKeys: json['include_claim_keys'] != null ? SdkPresent(((json['include_claim_keys'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    useImmutableSubject: json['use_immutable_subject'] != null ? SdkPresent((json['use_immutable_subject'] as bool?)!) : const SdkOmitted(),
+  factory IssuesSetLabelsRequestBodyVariant3Item.fromJson(Map<String, dynamic> json) => IssuesSetLabelsRequestBodyVariant3Item(
+    name: (json['name'] as String?)!,
   );
 
   Map<String, dynamic> toJson() => {
-    'use_default': useDefault,
-    ...switch (includeClaimKeys) {
-      SdkPresent<List<String>>(value: final value) => {'include_claim_keys': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (useImmutableSubject) {
-      SdkPresent<bool>(value: final value) => {'use_immutable_subject': value,},
+    'name': name,
+  };
+}
+
+class IssuesLockRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The reason for locking the issue or pull request conversation. Lock will fail if you don't use one of these reasons: * `off-topic` * `too heated` * `resolved` * `spam`
+  final SdkOptional<IssuesLockRequestBodyLockReason> lockReason;
+
+  const IssuesLockRequestBody({this.lockReason = const SdkOmitted()});
+
+  IssuesLockRequestBody Function({SdkOptional<IssuesLockRequestBodyLockReason> lockReason}) get copyWith => _copyWith;
+
+  IssuesLockRequestBody _copyWith({Object? lockReason = sdkOmittedValue}) => IssuesLockRequestBody(
+    lockReason: identical(lockReason, sdkOmittedValue) ? this.lockReason : lockReason as SdkOptional<IssuesLockRequestBodyLockReason>,
+  );
+
+  factory IssuesLockRequestBody.fromJson(Map<String, dynamic> json) => IssuesLockRequestBody(
+    lockReason: json['lock_reason'] != null ? SdkPresent((json['lock_reason'] != null ? IssuesLockRequestBodyLockReason.fromJson(json['lock_reason'] as String) : null)!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    ...switch (lockReason) {
+      SdkPresent<IssuesLockRequestBodyLockReason>(value: final value) => {'lock_reason': value.toJson(),},
       _ => const <String, dynamic>{},
     },
   };
 }
 
-class ActionsListRepoOrganizationSecretsResponse {
+class IssuesAddRelatesToRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<ActionsSecret> secrets;
+  /// The id of the issue to mark as related to the current issue
+  final int issueId;
 
-  const ActionsListRepoOrganizationSecretsResponse({required this.totalCount, required this.secrets});
+  const IssuesAddRelatesToRequestBody({required this.issueId});
 
-  ActionsListRepoOrganizationSecretsResponse Function({int totalCount, List<ActionsSecret> secrets}) get copyWith => _copyWith;
+  IssuesAddRelatesToRequestBody Function({int issueId}) get copyWith => _copyWith;
 
-  ActionsListRepoOrganizationSecretsResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? secrets = sdkOmittedValue}) => ActionsListRepoOrganizationSecretsResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    secrets: identical(secrets, sdkOmittedValue) ? this.secrets : secrets as List<ActionsSecret>,
+  IssuesAddRelatesToRequestBody _copyWith({Object? issueId = sdkOmittedValue}) => IssuesAddRelatesToRequestBody(
+    issueId: identical(issueId, sdkOmittedValue) ? this.issueId : issueId as int,
   );
 
-  factory ActionsListRepoOrganizationSecretsResponse.fromJson(Map<String, dynamic> json) => ActionsListRepoOrganizationSecretsResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    secrets: ((json['secrets'] as List?)?.map((e) => ActionsSecret.fromJson(e as Map<String, dynamic>)).toList())!,
+  factory IssuesAddRelatesToRequestBody.fromJson(Map<String, dynamic> json) => IssuesAddRelatesToRequestBody(
+    issueId: ((json['issue_id'] as num?)?.toInt())!,
   );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'secrets': secrets.map((item) => item.toJson()).toList(),
+    'issue_id': issueId,
   };
 }
 
-class ActionsListRepoOrganizationVariablesResponse {
+class IssuesRemoveSubIssueRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<ActionsVariable> variables;
+  /// The id of the sub-issue to remove
+  final int subIssueId;
 
-  const ActionsListRepoOrganizationVariablesResponse({required this.totalCount, required this.variables});
+  const IssuesRemoveSubIssueRequestBody({required this.subIssueId});
 
-  ActionsListRepoOrganizationVariablesResponse Function({int totalCount, List<ActionsVariable> variables}) get copyWith => _copyWith;
+  IssuesRemoveSubIssueRequestBody Function({int subIssueId}) get copyWith => _copyWith;
 
-  ActionsListRepoOrganizationVariablesResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? variables = sdkOmittedValue}) => ActionsListRepoOrganizationVariablesResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    variables: identical(variables, sdkOmittedValue) ? this.variables : variables as List<ActionsVariable>,
+  IssuesRemoveSubIssueRequestBody _copyWith({Object? subIssueId = sdkOmittedValue}) => IssuesRemoveSubIssueRequestBody(
+    subIssueId: identical(subIssueId, sdkOmittedValue) ? this.subIssueId : subIssueId as int,
   );
 
-  factory ActionsListRepoOrganizationVariablesResponse.fromJson(Map<String, dynamic> json) => ActionsListRepoOrganizationVariablesResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    variables: ((json['variables'] as List?)?.map((e) => ActionsVariable.fromJson(e as Map<String, dynamic>)).toList())!,
+  factory IssuesRemoveSubIssueRequestBody.fromJson(Map<String, dynamic> json) => IssuesRemoveSubIssueRequestBody(
+    subIssueId: ((json['sub_issue_id'] as num?)?.toInt())!,
   );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'variables': variables.map((item) => item.toJson()).toList(),
+    'sub_issue_id': subIssueId,
+  };
+}
+
+class IssuesAddSubIssueRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The id of the sub-issue to add. The sub-issue must belong to the same repository owner as the parent issue
+  final int subIssueId;
+  /// Option that, when true, instructs the operation to replace the sub-issues current parent issue
+  final SdkOptional<bool> replaceParent;
+
+  const IssuesAddSubIssueRequestBody({required this.subIssueId, this.replaceParent = const SdkOmitted()});
+
+  IssuesAddSubIssueRequestBody Function({int subIssueId, SdkOptional<bool> replaceParent}) get copyWith => _copyWith;
+
+  IssuesAddSubIssueRequestBody _copyWith({Object? subIssueId = sdkOmittedValue, Object? replaceParent = sdkOmittedValue}) => IssuesAddSubIssueRequestBody(
+    subIssueId: identical(subIssueId, sdkOmittedValue) ? this.subIssueId : subIssueId as int,
+    replaceParent: identical(replaceParent, sdkOmittedValue) ? this.replaceParent : replaceParent as SdkOptional<bool>,
+  );
+
+  factory IssuesAddSubIssueRequestBody.fromJson(Map<String, dynamic> json) => IssuesAddSubIssueRequestBody(
+    subIssueId: ((json['sub_issue_id'] as num?)?.toInt())!,
+    replaceParent: json['replace_parent'] != null ? SdkPresent((json['replace_parent'] as bool?)!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    'sub_issue_id': subIssueId,
+    ...switch (replaceParent) {
+      SdkPresent<bool>(value: final value) => {'replace_parent': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
+}
+
+class IssuesReprioritizeSubIssueRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  /// The id of the sub-issue to reprioritize
+  final int subIssueId;
+  /// The id of the sub-issue to be prioritized after (either positional argument after OR before should be specified).
+  final SdkOptional<int> afterId;
+  /// The id of the sub-issue to be prioritized before (either positional argument after OR before should be specified).
+  final SdkOptional<int> beforeId;
+
+  const IssuesReprioritizeSubIssueRequestBody({required this.subIssueId, this.afterId = const SdkOmitted(), this.beforeId = const SdkOmitted()});
+
+  IssuesReprioritizeSubIssueRequestBody Function({int subIssueId, SdkOptional<int> afterId, SdkOptional<int> beforeId}) get copyWith => _copyWith;
+
+  IssuesReprioritizeSubIssueRequestBody _copyWith({Object? subIssueId = sdkOmittedValue, Object? afterId = sdkOmittedValue, Object? beforeId = sdkOmittedValue}) => IssuesReprioritizeSubIssueRequestBody(
+    subIssueId: identical(subIssueId, sdkOmittedValue) ? this.subIssueId : subIssueId as int,
+    afterId: identical(afterId, sdkOmittedValue) ? this.afterId : afterId as SdkOptional<int>,
+    beforeId: identical(beforeId, sdkOmittedValue) ? this.beforeId : beforeId as SdkOptional<int>,
+  );
+
+  factory IssuesReprioritizeSubIssueRequestBody.fromJson(Map<String, dynamic> json) => IssuesReprioritizeSubIssueRequestBody(
+    subIssueId: ((json['sub_issue_id'] as num?)?.toInt())!,
+    afterId: json['after_id'] != null ? SdkPresent(((json['after_id'] as num?)?.toInt())!) : const SdkOmitted(),
+    beforeId: json['before_id'] != null ? SdkPresent(((json['before_id'] as num?)?.toInt())!) : const SdkOmitted(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    'sub_issue_id': subIssueId,
+    ...switch (afterId) {
+      SdkPresent<int>(value: final value) => {'after_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (beforeId) {
+      SdkPresent<int>(value: final value) => {'before_id': value,},
+      _ => const <String, dynamic>{},
+    },
   };
 }
