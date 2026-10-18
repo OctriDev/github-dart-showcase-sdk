@@ -4,92 +4,27 @@
 part of 'inline.dart';
 
 // Inline operation models (part 138)
-/// Optional enumerated value serialized in the `repository_projects` wire field.
-final class WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsRepositoryProjects {
+/// The default value for a squash merge commit message: - `PR_BODY` - default to the pull request's body. - `COMMIT_MESSAGES` - default to the branch's commit messages. - `BLANK` - default to a blank commit message.
+final class WebhookPullRequestLabeledPullRequestBaseRepoSquashMergeCommitMessage {
   final String value;
 
-  const WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsRepositoryProjects._(
+  const WebhookPullRequestLabeledPullRequestBaseRepoSquashMergeCommitMessage._(
       this.value);
 
-  factory WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsRepositoryProjects.fromJson(
+  factory WebhookPullRequestLabeledPullRequestBaseRepoSquashMergeCommitMessage.fromJson(
           String value) =>
-      WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsRepositoryProjects
-          ._(value);
-
-  static const read =
-      WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsRepositoryProjects
-          ._('read');
-  static const write =
-      WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsRepositoryProjects
-          ._('write');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsRepositoryProjects &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `secret_scanning_alerts` wire field.
-final class WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsSecretScanningAlerts {
-  final String value;
-
-  const WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsSecretScanningAlerts._(
-      this.value);
-
-  factory WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsSecretScanningAlerts.fromJson(
-          String value) =>
-      WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsSecretScanningAlerts
-          ._(value);
-
-  static const read =
-      WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsSecretScanningAlerts
-          ._('read');
-  static const write =
-      WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsSecretScanningAlerts
-          ._('write');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsSecretScanningAlerts &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `secrets` wire field.
-final class WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsSecrets {
-  final String value;
-
-  const WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsSecrets._(
-      this.value);
-
-  factory WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsSecrets.fromJson(
-          String value) =>
-      WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsSecrets._(
+      WebhookPullRequestLabeledPullRequestBaseRepoSquashMergeCommitMessage._(
           value);
 
-  static const read =
-      WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsSecrets._(
-          'read');
-  static const write =
-      WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsSecrets._(
-          'write');
+  static const prBody =
+      WebhookPullRequestLabeledPullRequestBaseRepoSquashMergeCommitMessage._(
+          'PR_BODY');
+  static const commitMessages =
+      WebhookPullRequestLabeledPullRequestBaseRepoSquashMergeCommitMessage._(
+          'COMMIT_MESSAGES');
+  static const blank =
+      WebhookPullRequestLabeledPullRequestBaseRepoSquashMergeCommitMessage._(
+          'BLANK');
 
   String toJson() => value;
 
@@ -99,99 +34,31 @@ final class WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsSecrets {
   @override
   bool operator ==(Object other) =>
       other
-          is WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsSecrets &&
+          is WebhookPullRequestLabeledPullRequestBaseRepoSquashMergeCommitMessage &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Optional enumerated value serialized in the `security_events` wire field.
-final class WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsSecurityEvents {
+/// The default value for a squash merge commit title: - `PR_TITLE` - default to the pull request's title. - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
+final class WebhookPullRequestLabeledPullRequestBaseRepoSquashMergeCommitTitle {
   final String value;
 
-  const WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsSecurityEvents._(
+  const WebhookPullRequestLabeledPullRequestBaseRepoSquashMergeCommitTitle._(
       this.value);
 
-  factory WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsSecurityEvents.fromJson(
+  factory WebhookPullRequestLabeledPullRequestBaseRepoSquashMergeCommitTitle.fromJson(
           String value) =>
-      WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsSecurityEvents
-          ._(value);
-
-  static const read =
-      WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsSecurityEvents
-          ._('read');
-  static const write =
-      WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsSecurityEvents
-          ._('write');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsSecurityEvents &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `security_scanning_alert` wire field.
-final class WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsSecurityScanningAlert {
-  final String value;
-
-  const WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsSecurityScanningAlert._(
-      this.value);
-
-  factory WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsSecurityScanningAlert.fromJson(
-          String value) =>
-      WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsSecurityScanningAlert
-          ._(value);
-
-  static const read =
-      WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsSecurityScanningAlert
-          ._('read');
-  static const write =
-      WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsSecurityScanningAlert
-          ._('write');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsSecurityScanningAlert &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `single_file` wire field.
-final class WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsSingleFile {
-  final String value;
-
-  const WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsSingleFile._(
-      this.value);
-
-  factory WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsSingleFile.fromJson(
-          String value) =>
-      WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsSingleFile._(
+      WebhookPullRequestLabeledPullRequestBaseRepoSquashMergeCommitTitle._(
           value);
 
-  static const read =
-      WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsSingleFile._(
-          'read');
-  static const write =
-      WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsSingleFile._(
-          'write');
+  static const prTitle =
+      WebhookPullRequestLabeledPullRequestBaseRepoSquashMergeCommitTitle._(
+          'PR_TITLE');
+  static const commitOrPrTitle =
+      WebhookPullRequestLabeledPullRequestBaseRepoSquashMergeCommitTitle._(
+          'COMMIT_OR_PR_TITLE');
 
   String toJson() => value;
 
@@ -201,31 +68,29 @@ final class WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsSingleFile
   @override
   bool operator ==(Object other) =>
       other
-          is WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsSingleFile &&
+          is WebhookPullRequestLabeledPullRequestBaseRepoSquashMergeCommitTitle &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Optional enumerated value serialized in the `statuses` wire field.
-final class WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsStatuses {
+/// Required enumerated value serialized in the `visibility` wire field.
+final class WebhookPullRequestLabeledPullRequestBaseRepoVisibility {
   final String value;
 
-  const WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsStatuses._(
-      this.value);
+  const WebhookPullRequestLabeledPullRequestBaseRepoVisibility._(this.value);
 
-  factory WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsStatuses.fromJson(
+  factory WebhookPullRequestLabeledPullRequestBaseRepoVisibility.fromJson(
           String value) =>
-      WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsStatuses._(
-          value);
+      WebhookPullRequestLabeledPullRequestBaseRepoVisibility._(value);
 
-  static const read =
-      WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsStatuses._(
-          'read');
-  static const write =
-      WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsStatuses._(
-          'write');
+  static const public =
+      WebhookPullRequestLabeledPullRequestBaseRepoVisibility._('public');
+  static const private =
+      WebhookPullRequestLabeledPullRequestBaseRepoVisibility._('private');
+  static const internal =
+      WebhookPullRequestLabeledPullRequestBaseRepoVisibility._('internal');
 
   String toJson() => value;
 
@@ -234,120 +99,28 @@ final class WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsStatuses {
 
   @override
   bool operator ==(Object other) =>
-      other
-          is WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsStatuses &&
+      other is WebhookPullRequestLabeledPullRequestBaseRepoVisibility &&
       other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `vulnerability_alerts` wire field.
-final class WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts {
-  final String value;
-
-  const WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts._(
-      this.value);
-
-  factory WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts.fromJson(
-          String value) =>
-      WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts
-          ._(value);
-
-  static const read =
-      WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts
-          ._('read');
-  static const write =
-      WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts
-          ._('write');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `workflows` wire field.
-final class WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsWorkflows {
-  final String value;
-
-  const WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsWorkflows._(
-      this.value);
-
-  factory WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsWorkflows.fromJson(
-          String value) =>
-      WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsWorkflows._(
-          value);
-
-  static const read =
-      WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsWorkflows._(
-          'read');
-  static const write =
-      WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsWorkflows._(
-          'write');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is WebhookIssuesUnlockedIssuePerformedViaGithubAppPermissionsWorkflows &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// State of the issue; either 'open' or 'closed'
-final class WebhookIssuesUnlockedIssueState {
-  final String value;
-
-  const WebhookIssuesUnlockedIssueState._(this.value);
-
-  factory WebhookIssuesUnlockedIssueState.fromJson(String value) =>
-      WebhookIssuesUnlockedIssueState._(value);
-
-  static const open = WebhookIssuesUnlockedIssueState._('open');
-  static const closed = WebhookIssuesUnlockedIssueState._('closed');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookIssuesUnlockedIssueState && other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
-final class WebhookIssuesUnlockedIssueUserType {
+final class WebhookPullRequestLabeledPullRequestBaseUserType {
   final String value;
 
-  const WebhookIssuesUnlockedIssueUserType._(this.value);
+  const WebhookPullRequestLabeledPullRequestBaseUserType._(this.value);
 
-  factory WebhookIssuesUnlockedIssueUserType.fromJson(String value) =>
-      WebhookIssuesUnlockedIssueUserType._(value);
+  factory WebhookPullRequestLabeledPullRequestBaseUserType.fromJson(
+          String value) =>
+      WebhookPullRequestLabeledPullRequestBaseUserType._(value);
 
-  static const bot = WebhookIssuesUnlockedIssueUserType._('Bot');
-  static const user = WebhookIssuesUnlockedIssueUserType._('User');
+  static const bot = WebhookPullRequestLabeledPullRequestBaseUserType._('Bot');
+  static const user =
+      WebhookPullRequestLabeledPullRequestBaseUserType._('User');
   static const organization =
-      WebhookIssuesUnlockedIssueUserType._('Organization');
+      WebhookPullRequestLabeledPullRequestBaseUserType._('Organization');
 
   String toJson() => value;
 
@@ -356,22 +129,32 @@ final class WebhookIssuesUnlockedIssueUserType {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookIssuesUnlockedIssueUserType && other.value == value;
+      other is WebhookPullRequestLabeledPullRequestBaseUserType &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookIssuesUnpinnedAction {
+/// The default value for a merge commit message. - `PR_TITLE` - default to the pull request's title. - `PR_BODY` - default to the pull request's body. - `BLANK` - default to a blank commit message.
+final class WebhookPullRequestLabeledPullRequestHeadRepoMergeCommitMessage {
   final String value;
 
-  const WebhookIssuesUnpinnedAction._(this.value);
+  const WebhookPullRequestLabeledPullRequestHeadRepoMergeCommitMessage._(
+      this.value);
 
-  factory WebhookIssuesUnpinnedAction.fromJson(String value) =>
-      WebhookIssuesUnpinnedAction._(value);
+  factory WebhookPullRequestLabeledPullRequestHeadRepoMergeCommitMessage.fromJson(
+          String value) =>
+      WebhookPullRequestLabeledPullRequestHeadRepoMergeCommitMessage._(value);
 
-  static const unpinned = WebhookIssuesUnpinnedAction._('unpinned');
+  static const prBody =
+      WebhookPullRequestLabeledPullRequestHeadRepoMergeCommitMessage._(
+          'PR_BODY');
+  static const prTitle =
+      WebhookPullRequestLabeledPullRequestHeadRepoMergeCommitMessage._(
+          'PR_TITLE');
+  static const blank =
+      WebhookPullRequestLabeledPullRequestHeadRepoMergeCommitMessage._('BLANK');
 
   String toJson() => value;
 
@@ -380,22 +163,30 @@ final class WebhookIssuesUnpinnedAction {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookIssuesUnpinnedAction && other.value == value;
+      other is WebhookPullRequestLabeledPullRequestHeadRepoMergeCommitMessage &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookIssuesUntypedAction {
+/// The default value for a merge commit title. - `PR_TITLE` - default to the pull request's title. - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
+final class WebhookPullRequestLabeledPullRequestHeadRepoMergeCommitTitle {
   final String value;
 
-  const WebhookIssuesUntypedAction._(this.value);
+  const WebhookPullRequestLabeledPullRequestHeadRepoMergeCommitTitle._(
+      this.value);
 
-  factory WebhookIssuesUntypedAction.fromJson(String value) =>
-      WebhookIssuesUntypedAction._(value);
+  factory WebhookPullRequestLabeledPullRequestHeadRepoMergeCommitTitle.fromJson(
+          String value) =>
+      WebhookPullRequestLabeledPullRequestHeadRepoMergeCommitTitle._(value);
 
-  static const untyped = WebhookIssuesUntypedAction._('untyped');
+  static const prTitle =
+      WebhookPullRequestLabeledPullRequestHeadRepoMergeCommitTitle._(
+          'PR_TITLE');
+  static const mergeMessage =
+      WebhookPullRequestLabeledPullRequestHeadRepoMergeCommitTitle._(
+          'MERGE_MESSAGE');
 
   String toJson() => value;
 
@@ -404,7 +195,205 @@ final class WebhookIssuesUntypedAction {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookIssuesUntypedAction && other.value == value;
+      other is WebhookPullRequestLabeledPullRequestHeadRepoMergeCommitTitle &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Optional enumerated value serialized in the `type` wire field.
+final class WebhookPullRequestLabeledPullRequestHeadRepoOwnerType {
+  final String value;
+
+  const WebhookPullRequestLabeledPullRequestHeadRepoOwnerType._(this.value);
+
+  factory WebhookPullRequestLabeledPullRequestHeadRepoOwnerType.fromJson(
+          String value) =>
+      WebhookPullRequestLabeledPullRequestHeadRepoOwnerType._(value);
+
+  static const bot =
+      WebhookPullRequestLabeledPullRequestHeadRepoOwnerType._('Bot');
+  static const user =
+      WebhookPullRequestLabeledPullRequestHeadRepoOwnerType._('User');
+  static const organization =
+      WebhookPullRequestLabeledPullRequestHeadRepoOwnerType._('Organization');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookPullRequestLabeledPullRequestHeadRepoOwnerType &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The policy controlling who can create pull requests: all or collaborators_only.
+final class WebhookPullRequestLabeledPullRequestHeadRepoPullRequestCreationPolicy {
+  final String value;
+
+  const WebhookPullRequestLabeledPullRequestHeadRepoPullRequestCreationPolicy._(
+      this.value);
+
+  factory WebhookPullRequestLabeledPullRequestHeadRepoPullRequestCreationPolicy.fromJson(
+          String value) =>
+      WebhookPullRequestLabeledPullRequestHeadRepoPullRequestCreationPolicy._(
+          value);
+
+  static const all =
+      WebhookPullRequestLabeledPullRequestHeadRepoPullRequestCreationPolicy._(
+          'all');
+  static const collaboratorsOnly =
+      WebhookPullRequestLabeledPullRequestHeadRepoPullRequestCreationPolicy._(
+          'collaborators_only');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookPullRequestLabeledPullRequestHeadRepoPullRequestCreationPolicy &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The default value for a squash merge commit message: - `PR_BODY` - default to the pull request's body. - `COMMIT_MESSAGES` - default to the branch's commit messages. - `BLANK` - default to a blank commit message.
+final class WebhookPullRequestLabeledPullRequestHeadRepoSquashMergeCommitMessage {
+  final String value;
+
+  const WebhookPullRequestLabeledPullRequestHeadRepoSquashMergeCommitMessage._(
+      this.value);
+
+  factory WebhookPullRequestLabeledPullRequestHeadRepoSquashMergeCommitMessage.fromJson(
+          String value) =>
+      WebhookPullRequestLabeledPullRequestHeadRepoSquashMergeCommitMessage._(
+          value);
+
+  static const prBody =
+      WebhookPullRequestLabeledPullRequestHeadRepoSquashMergeCommitMessage._(
+          'PR_BODY');
+  static const commitMessages =
+      WebhookPullRequestLabeledPullRequestHeadRepoSquashMergeCommitMessage._(
+          'COMMIT_MESSAGES');
+  static const blank =
+      WebhookPullRequestLabeledPullRequestHeadRepoSquashMergeCommitMessage._(
+          'BLANK');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookPullRequestLabeledPullRequestHeadRepoSquashMergeCommitMessage &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The default value for a squash merge commit title: - `PR_TITLE` - default to the pull request's title. - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
+final class WebhookPullRequestLabeledPullRequestHeadRepoSquashMergeCommitTitle {
+  final String value;
+
+  const WebhookPullRequestLabeledPullRequestHeadRepoSquashMergeCommitTitle._(
+      this.value);
+
+  factory WebhookPullRequestLabeledPullRequestHeadRepoSquashMergeCommitTitle.fromJson(
+          String value) =>
+      WebhookPullRequestLabeledPullRequestHeadRepoSquashMergeCommitTitle._(
+          value);
+
+  static const prTitle =
+      WebhookPullRequestLabeledPullRequestHeadRepoSquashMergeCommitTitle._(
+          'PR_TITLE');
+  static const commitOrPrTitle =
+      WebhookPullRequestLabeledPullRequestHeadRepoSquashMergeCommitTitle._(
+          'COMMIT_OR_PR_TITLE');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookPullRequestLabeledPullRequestHeadRepoSquashMergeCommitTitle &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Required enumerated value serialized in the `visibility` wire field.
+final class WebhookPullRequestLabeledPullRequestHeadRepoVisibility {
+  final String value;
+
+  const WebhookPullRequestLabeledPullRequestHeadRepoVisibility._(this.value);
+
+  factory WebhookPullRequestLabeledPullRequestHeadRepoVisibility.fromJson(
+          String value) =>
+      WebhookPullRequestLabeledPullRequestHeadRepoVisibility._(value);
+
+  static const public =
+      WebhookPullRequestLabeledPullRequestHeadRepoVisibility._('public');
+  static const private =
+      WebhookPullRequestLabeledPullRequestHeadRepoVisibility._('private');
+  static const internal =
+      WebhookPullRequestLabeledPullRequestHeadRepoVisibility._('internal');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookPullRequestLabeledPullRequestHeadRepoVisibility &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Optional enumerated value serialized in the `type` wire field.
+final class WebhookPullRequestLabeledPullRequestHeadUserType {
+  final String value;
+
+  const WebhookPullRequestLabeledPullRequestHeadUserType._(this.value);
+
+  factory WebhookPullRequestLabeledPullRequestHeadUserType.fromJson(
+          String value) =>
+      WebhookPullRequestLabeledPullRequestHeadUserType._(value);
+
+  static const bot = WebhookPullRequestLabeledPullRequestHeadUserType._('Bot');
+  static const user =
+      WebhookPullRequestLabeledPullRequestHeadUserType._('User');
+  static const organization =
+      WebhookPullRequestLabeledPullRequestHeadUserType._('Organization');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookPullRequestLabeledPullRequestHeadUserType &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;

@@ -17,4 +17,3 @@ part 'pulls_part3.dart';
 part 'pulls_part4.dart';
 part 'pulls_part5.dart';
 part 'pulls_part6.dart';
-part 'pulls_part7.dart';

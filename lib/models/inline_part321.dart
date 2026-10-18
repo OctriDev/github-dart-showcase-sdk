@@ -4,570 +4,540 @@
 part of 'inline.dart';
 
 // Inline operation models (part 321)
-class AgentAutomationsGetRepoAutomationResponseTriggersDiscussionUpdated {
+class AppsCreateFromManifestResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Discussion category names matched case-insensitively.
-  final SdkOptional<List<String>> categories;
+  /// Unique identifier of the GitHub app
+  final int id;
 
-  /// A case-insensitive substring matched against the event body.
-  final SdkOptional<String> bodySubstring;
+  /// The slug name of the GitHub app
+  final SdkOptional<String> slug;
 
-  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-  final SdkOptional<
-          AgentAutomationsGetRepoAutomationResponseTriggersDiscussionUpdatedWriteScope>
-      writeScope;
+  /// Required `string` value serialized in the `node_id` wire field.
+  final String nodeId;
+  final String clientId;
 
-  const AgentAutomationsGetRepoAutomationResponseTriggersDiscussionUpdated(
-      {this.categories = const SdkOmitted(),
-      this.bodySubstring = const SdkOmitted(),
-      this.writeScope = const SdkOmitted()});
+  /// Required API value serialized in the `owner` wire field.
+  final IntegrationOwner owner;
 
-  AgentAutomationsGetRepoAutomationResponseTriggersDiscussionUpdated Function(
-      {SdkOptional<List<String>> categories,
-      SdkOptional<String> bodySubstring,
-      SdkOptional<
-              AgentAutomationsGetRepoAutomationResponseTriggersDiscussionUpdatedWriteScope>
-          writeScope}) get copyWith => _copyWith;
+  /// The name of the GitHub app
+  final String name;
 
-  AgentAutomationsGetRepoAutomationResponseTriggersDiscussionUpdated _copyWith(
-          {Object? categories = sdkOmittedValue,
-          Object? bodySubstring = sdkOmittedValue,
-          Object? writeScope = sdkOmittedValue}) =>
-      AgentAutomationsGetRepoAutomationResponseTriggersDiscussionUpdated(
-        categories: identical(categories, sdkOmittedValue)
-            ? this.categories
-            : categories as SdkOptional<List<String>>,
-        bodySubstring: identical(bodySubstring, sdkOmittedValue)
-            ? this.bodySubstring
-            : bodySubstring as SdkOptional<String>,
-        writeScope: identical(writeScope, sdkOmittedValue)
-            ? this.writeScope
-            : writeScope as SdkOptional<
-                AgentAutomationsGetRepoAutomationResponseTriggersDiscussionUpdatedWriteScope>,
+  /// Required `string` value serialized in the `description` wire field.
+  final String? description;
+
+  /// Required `uri`-formatted value serialized in the `external_url` wire field.
+  final String externalUrl;
+
+  /// Required `uri`-formatted value serialized in the `html_url` wire field.
+  final String htmlUrl;
+
+  /// Required `date-time`-formatted value serialized in the `created_at` wire field.
+  final String createdAt;
+
+  /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
+  final String updatedAt;
+
+  /// The set of permissions for the GitHub app
+  final IntegrationPermissions permissions;
+
+  /// The list of events for the GitHub app. Note that the `installation_target`, `security_advisory`, and `meta` events are not included because they are global events and not specific to an installation.
+  final List<String> events;
+
+  /// The number of installations associated with the GitHub app. Only returned when the integration is requesting details about itself.
+  final SdkOptional<int> installationsCount;
+  final String clientSecret;
+  final String? webhookSecret;
+  final String pem;
+  final Map<String, dynamic> additionalProperties;
+
+  const AppsCreateFromManifestResponse(
+      {required this.id,
+      this.slug = const SdkOmitted(),
+      required this.nodeId,
+      required this.clientId,
+      required this.owner,
+      required this.name,
+      required this.description,
+      required this.externalUrl,
+      required this.htmlUrl,
+      required this.createdAt,
+      required this.updatedAt,
+      required this.permissions,
+      required this.events,
+      this.installationsCount = const SdkOmitted(),
+      required this.clientSecret,
+      required this.webhookSecret,
+      required this.pem,
+      this.additionalProperties = const <String, dynamic>{}});
+
+  AppsCreateFromManifestResponse Function(
+      {int id,
+      SdkOptional<String> slug,
+      String nodeId,
+      String clientId,
+      IntegrationOwner owner,
+      String name,
+      String? description,
+      String externalUrl,
+      String htmlUrl,
+      String createdAt,
+      String updatedAt,
+      IntegrationPermissions permissions,
+      List<String> events,
+      SdkOptional<int> installationsCount,
+      String clientSecret,
+      String? webhookSecret,
+      String pem}) get copyWith => _copyWith;
+
+  AppsCreateFromManifestResponse _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? slug = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? clientId = sdkOmittedValue,
+          Object? owner = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? externalUrl = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? permissions = sdkOmittedValue,
+          Object? events = sdkOmittedValue,
+          Object? installationsCount = sdkOmittedValue,
+          Object? clientSecret = sdkOmittedValue,
+          Object? webhookSecret = sdkOmittedValue,
+          Object? pem = sdkOmittedValue}) =>
+      AppsCreateFromManifestResponse(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        slug: identical(slug, sdkOmittedValue)
+            ? this.slug
+            : slug as SdkOptional<String>,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        clientId: identical(clientId, sdkOmittedValue)
+            ? this.clientId
+            : clientId as String,
+        owner: identical(owner, sdkOmittedValue)
+            ? this.owner
+            : owner as IntegrationOwner,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as String?,
+        externalUrl: identical(externalUrl, sdkOmittedValue)
+            ? this.externalUrl
+            : externalUrl as String,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as String,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+        permissions: identical(permissions, sdkOmittedValue)
+            ? this.permissions
+            : permissions as IntegrationPermissions,
+        events: identical(events, sdkOmittedValue)
+            ? this.events
+            : events as List<String>,
+        installationsCount: identical(installationsCount, sdkOmittedValue)
+            ? this.installationsCount
+            : installationsCount as SdkOptional<int>,
+        clientSecret: identical(clientSecret, sdkOmittedValue)
+            ? this.clientSecret
+            : clientSecret as String,
+        webhookSecret: identical(webhookSecret, sdkOmittedValue)
+            ? this.webhookSecret
+            : webhookSecret as String?,
+        pem: identical(pem, sdkOmittedValue) ? this.pem : pem as String,
+        additionalProperties: additionalProperties,
       );
 
-  factory AgentAutomationsGetRepoAutomationResponseTriggersDiscussionUpdated.fromJson(
+  factory AppsCreateFromManifestResponse.fromJson(Map<String, dynamic> json) =>
+      AppsCreateFromManifestResponse(
+        id: ((json['id'] as num?)?.toInt())!,
+        slug: json['slug'] != null
+            ? SdkPresent((json['slug'] as String?)!)
+            : const SdkOmitted(),
+        nodeId: (json['node_id'] as String?)!,
+        clientId: (json['client_id'] as String?)!,
+        owner: (json['owner'] != null
+            ? IntegrationOwner.fromJson(json['owner'])
+            : null)!,
+        name: (json['name'] as String?)!,
+        description: json.containsKey('description')
+            ? json['description'] as String?
+            : throw ArgumentError.value(
+                null, 'description', 'Required property is missing'),
+        externalUrl: (json['external_url'] as String?)!,
+        htmlUrl: (json['html_url'] as String?)!,
+        createdAt: (json['created_at'] as String?)!,
+        updatedAt: (json['updated_at'] as String?)!,
+        permissions: (json['permissions'] != null
+            ? IntegrationPermissions.fromJson(
+                json['permissions'] as Map<String, dynamic>)
+            : null)!,
+        events: ((json['events'] as List?)?.map((e) => e as String).toList())!,
+        installationsCount: json['installations_count'] != null
+            ? SdkPresent(((json['installations_count'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        clientSecret: (json['client_secret'] as String?)!,
+        webhookSecret: json.containsKey('webhook_secret')
+            ? json['webhook_secret'] as String?
+            : throw ArgumentError.value(
+                null, 'webhook_secret', 'Required property is missing'),
+        pem: (json['pem'] as String?)!,
+        additionalProperties: Map.of(json)
+          ..removeWhere((key, _) => const <String>{
+                'id',
+                'slug',
+                'node_id',
+                'client_id',
+                'owner',
+                'name',
+                'description',
+                'external_url',
+                'html_url',
+                'created_at',
+                'updated_at',
+                'permissions',
+                'events',
+                'installations_count',
+                'client_secret',
+                'webhook_secret',
+                'pem'
+              }.contains(key)),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...additionalProperties,
+        'id': id,
+        ...switch (slug) {
+          SdkPresent<String>(value: final value) => {
+              'slug': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'node_id': nodeId,
+        'client_id': clientId,
+        'owner': owner.toJson(),
+        'name': name,
+        'description': description,
+        'external_url': externalUrl,
+        'html_url': htmlUrl,
+        'created_at': createdAt,
+        'updated_at': updatedAt,
+        'permissions': permissions.toJson(),
+        'events': events,
+        ...switch (installationsCount) {
+          SdkPresent<int>(value: final value) => {
+              'installations_count': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'client_secret': clientSecret,
+        'webhook_secret': webhookSecret,
+        'pem': pem,
+      };
+}
+
+class AppsUpdateWebhookConfigForAppRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The URL to which the payloads will be delivered.
+  final SdkOptional<String> url;
+
+  /// The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.
+  final SdkOptional<String> contentType;
+
+  /// If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/webhooks/event-payloads/#delivery-headers).
+  final SdkOptional<String> secret;
+  final SdkOptional<WebhookConfigInsecureSsl> insecureSsl;
+
+  const AppsUpdateWebhookConfigForAppRequestBody(
+      {this.url = const SdkOmitted(),
+      this.contentType = const SdkOmitted(),
+      this.secret = const SdkOmitted(),
+      this.insecureSsl = const SdkOmitted()});
+
+  AppsUpdateWebhookConfigForAppRequestBody Function(
+          {SdkOptional<String> url,
+          SdkOptional<String> contentType,
+          SdkOptional<String> secret,
+          SdkOptional<WebhookConfigInsecureSsl> insecureSsl})
+      get copyWith => _copyWith;
+
+  AppsUpdateWebhookConfigForAppRequestBody _copyWith(
+          {Object? url = sdkOmittedValue,
+          Object? contentType = sdkOmittedValue,
+          Object? secret = sdkOmittedValue,
+          Object? insecureSsl = sdkOmittedValue}) =>
+      AppsUpdateWebhookConfigForAppRequestBody(
+        url: identical(url, sdkOmittedValue)
+            ? this.url
+            : url as SdkOptional<String>,
+        contentType: identical(contentType, sdkOmittedValue)
+            ? this.contentType
+            : contentType as SdkOptional<String>,
+        secret: identical(secret, sdkOmittedValue)
+            ? this.secret
+            : secret as SdkOptional<String>,
+        insecureSsl: identical(insecureSsl, sdkOmittedValue)
+            ? this.insecureSsl
+            : insecureSsl as SdkOptional<WebhookConfigInsecureSsl>,
+      );
+
+  factory AppsUpdateWebhookConfigForAppRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      AgentAutomationsGetRepoAutomationResponseTriggersDiscussionUpdated(
-        categories: json['categories'] != null
-            ? SdkPresent(((json['categories'] as List?)
+      AppsUpdateWebhookConfigForAppRequestBody(
+        url: json['url'] != null
+            ? SdkPresent((json['url'] as String?)!)
+            : const SdkOmitted(),
+        contentType: json['content_type'] != null
+            ? SdkPresent((json['content_type'] as String?)!)
+            : const SdkOmitted(),
+        secret: json['secret'] != null
+            ? SdkPresent((json['secret'] as String?)!)
+            : const SdkOmitted(),
+        insecureSsl: json['insecure_ssl'] != null
+            ? SdkPresent((json['insecure_ssl'] != null
+                ? WebhookConfigInsecureSsl.fromJson(json['insecure_ssl'])
+                : null)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (url) {
+          SdkPresent<String>(value: final value) => {
+              'url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (contentType) {
+          SdkPresent<String>(value: final value) => {
+              'content_type': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (secret) {
+          SdkPresent<String>(value: final value) => {
+              'secret': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (insecureSsl) {
+          SdkPresent<WebhookConfigInsecureSsl>(value: final value) => {
+              'insecure_ssl': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class AppsCreateInstallationAccessTokenRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// List of repository names that the token should have access to
+  final SdkOptional<List<String>> repositories;
+
+  /// List of repository IDs that the token should have access to
+  final SdkOptional<List<int>> repositoryIds;
+
+  /// The permissions granted to the fine-grained access token.
+  final SdkOptional<AppPermissions> permissions;
+
+  const AppsCreateInstallationAccessTokenRequestBody(
+      {this.repositories = const SdkOmitted(),
+      this.repositoryIds = const SdkOmitted(),
+      this.permissions = const SdkOmitted()});
+
+  AppsCreateInstallationAccessTokenRequestBody Function(
+      {SdkOptional<List<String>> repositories,
+      SdkOptional<List<int>> repositoryIds,
+      SdkOptional<AppPermissions> permissions}) get copyWith => _copyWith;
+
+  AppsCreateInstallationAccessTokenRequestBody _copyWith(
+          {Object? repositories = sdkOmittedValue,
+          Object? repositoryIds = sdkOmittedValue,
+          Object? permissions = sdkOmittedValue}) =>
+      AppsCreateInstallationAccessTokenRequestBody(
+        repositories: identical(repositories, sdkOmittedValue)
+            ? this.repositories
+            : repositories as SdkOptional<List<String>>,
+        repositoryIds: identical(repositoryIds, sdkOmittedValue)
+            ? this.repositoryIds
+            : repositoryIds as SdkOptional<List<int>>,
+        permissions: identical(permissions, sdkOmittedValue)
+            ? this.permissions
+            : permissions as SdkOptional<AppPermissions>,
+      );
+
+  factory AppsCreateInstallationAccessTokenRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      AppsCreateInstallationAccessTokenRequestBody(
+        repositories: json['repositories'] != null
+            ? SdkPresent(((json['repositories'] as List?)
                 ?.map((e) => e as String)
                 .toList())!)
             : const SdkOmitted(),
-        bodySubstring: json['body_substring'] != null
-            ? SdkPresent((json['body_substring'] as String?)!)
-            : const SdkOmitted(),
-        writeScope: json['write_scope'] != null
-            ? SdkPresent((json['write_scope'] != null
-                ? AgentAutomationsGetRepoAutomationResponseTriggersDiscussionUpdatedWriteScope
-                    .fromJson(json['write_scope'] as String)
-                : null)!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (categories) {
-          SdkPresent<List<String>>(value: final value) => {
-              'categories': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (bodySubstring) {
-          SdkPresent<String>(value: final value) => {
-              'body_substring': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (writeScope) {
-          SdkPresent<
-                AgentAutomationsGetRepoAutomationResponseTriggersDiscussionUpdatedWriteScope>(
-            value: final value
-          ) =>
-            {
-              'write_scope': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-class AgentAutomationsGetRepoAutomationResponseTriggersDiscussionComment {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Top-level discussion comments and replies to match. Omit to match both.
-  final SdkOptional<
-          List<
-              AgentAutomationsGetRepoAutomationResponseTriggersDiscussionCommentCommentTypesItem>>
-      commentTypes;
-
-  /// Discussion category names matched case-insensitively.
-  final SdkOptional<List<String>> categories;
-
-  /// A case-insensitive substring matched against the event body.
-  final SdkOptional<String> bodySubstring;
-
-  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-  final SdkOptional<
-          AgentAutomationsGetRepoAutomationResponseTriggersDiscussionCommentWriteScope>
-      writeScope;
-
-  const AgentAutomationsGetRepoAutomationResponseTriggersDiscussionComment(
-      {this.commentTypes = const SdkOmitted(),
-      this.categories = const SdkOmitted(),
-      this.bodySubstring = const SdkOmitted(),
-      this.writeScope = const SdkOmitted()});
-
-  AgentAutomationsGetRepoAutomationResponseTriggersDiscussionComment Function(
-      {SdkOptional<
-              List<
-                  AgentAutomationsGetRepoAutomationResponseTriggersDiscussionCommentCommentTypesItem>>
-          commentTypes,
-      SdkOptional<List<String>> categories,
-      SdkOptional<String> bodySubstring,
-      SdkOptional<
-              AgentAutomationsGetRepoAutomationResponseTriggersDiscussionCommentWriteScope>
-          writeScope}) get copyWith => _copyWith;
-
-  AgentAutomationsGetRepoAutomationResponseTriggersDiscussionComment _copyWith(
-          {Object? commentTypes = sdkOmittedValue,
-          Object? categories = sdkOmittedValue,
-          Object? bodySubstring = sdkOmittedValue,
-          Object? writeScope = sdkOmittedValue}) =>
-      AgentAutomationsGetRepoAutomationResponseTriggersDiscussionComment(
-        commentTypes: identical(commentTypes, sdkOmittedValue)
-            ? this.commentTypes
-            : commentTypes as SdkOptional<
-                List<
-                    AgentAutomationsGetRepoAutomationResponseTriggersDiscussionCommentCommentTypesItem>>,
-        categories: identical(categories, sdkOmittedValue)
-            ? this.categories
-            : categories as SdkOptional<List<String>>,
-        bodySubstring: identical(bodySubstring, sdkOmittedValue)
-            ? this.bodySubstring
-            : bodySubstring as SdkOptional<String>,
-        writeScope: identical(writeScope, sdkOmittedValue)
-            ? this.writeScope
-            : writeScope as SdkOptional<
-                AgentAutomationsGetRepoAutomationResponseTriggersDiscussionCommentWriteScope>,
-      );
-
-  factory AgentAutomationsGetRepoAutomationResponseTriggersDiscussionComment.fromJson(
-          Map<String, dynamic> json) =>
-      AgentAutomationsGetRepoAutomationResponseTriggersDiscussionComment(
-        commentTypes: json['comment_types'] != null
-            ? SdkPresent(((json['comment_types'] as List?)
-                ?.map((e) =>
-                    AgentAutomationsGetRepoAutomationResponseTriggersDiscussionCommentCommentTypesItem
-                        .fromJson(e as String))
+        repositoryIds: json['repository_ids'] != null
+            ? SdkPresent(((json['repository_ids'] as List?)
+                ?.map((e) => (e as num).toInt())
                 .toList())!)
             : const SdkOmitted(),
-        categories: json['categories'] != null
-            ? SdkPresent(((json['categories'] as List?)
-                ?.map((e) => e as String)
-                .toList())!)
-            : const SdkOmitted(),
-        bodySubstring: json['body_substring'] != null
-            ? SdkPresent((json['body_substring'] as String?)!)
-            : const SdkOmitted(),
-        writeScope: json['write_scope'] != null
-            ? SdkPresent((json['write_scope'] != null
-                ? AgentAutomationsGetRepoAutomationResponseTriggersDiscussionCommentWriteScope
-                    .fromJson(json['write_scope'] as String)
+        permissions: json['permissions'] != null
+            ? SdkPresent((json['permissions'] != null
+                ? AppPermissions.fromJson(
+                    json['permissions'] as Map<String, dynamic>)
                 : null)!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (commentTypes) {
-          SdkPresent<
-                List<
-                    AgentAutomationsGetRepoAutomationResponseTriggersDiscussionCommentCommentTypesItem>>(
-            value: final value
-          ) =>
-            {
-              'comment_types': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (categories) {
+        ...switch (repositories) {
           SdkPresent<List<String>>(value: final value) => {
-              'categories': value,
+              'repositories': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (bodySubstring) {
-          SdkPresent<String>(value: final value) => {
-              'body_substring': value,
+        ...switch (repositoryIds) {
+          SdkPresent<List<int>>(value: final value) => {
+              'repository_ids': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (writeScope) {
-          SdkPresent<
-                AgentAutomationsGetRepoAutomationResponseTriggersDiscussionCommentWriteScope>(
-            value: final value
-          ) =>
-            {
-              'write_scope': value.toJson(),
+        ...switch (permissions) {
+          SdkPresent<AppPermissions>(value: final value) => {
+              'permissions': value.toJson(),
             },
           _ => const <String, dynamic>{},
         },
       };
 }
 
-class AgentAutomationsGetRepoAutomationResponseTriggersIssueAssigned {
+class AppsDeleteAuthorizationRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// A GitHub issue or pull request search query.
-  final SdkOptional<String> query;
+  /// The OAuth access token used to authenticate to the GitHub API.
+  final String accessToken;
 
-  /// Affected assignee logins matched case-insensitively.
-  final SdkOptional<List<String>> assignees;
+  const AppsDeleteAuthorizationRequestBody({required this.accessToken});
 
-  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-  final SdkOptional<
-          AgentAutomationsGetRepoAutomationResponseTriggersIssueAssignedWriteScope>
-      writeScope;
+  AppsDeleteAuthorizationRequestBody Function({String accessToken})
+      get copyWith => _copyWith;
 
-  const AgentAutomationsGetRepoAutomationResponseTriggersIssueAssigned(
-      {this.query = const SdkOmitted(),
-      this.assignees = const SdkOmitted(),
-      this.writeScope = const SdkOmitted()});
-
-  AgentAutomationsGetRepoAutomationResponseTriggersIssueAssigned Function(
-      {SdkOptional<String> query,
-      SdkOptional<List<String>> assignees,
-      SdkOptional<
-              AgentAutomationsGetRepoAutomationResponseTriggersIssueAssignedWriteScope>
-          writeScope}) get copyWith => _copyWith;
-
-  AgentAutomationsGetRepoAutomationResponseTriggersIssueAssigned _copyWith(
-          {Object? query = sdkOmittedValue,
-          Object? assignees = sdkOmittedValue,
-          Object? writeScope = sdkOmittedValue}) =>
-      AgentAutomationsGetRepoAutomationResponseTriggersIssueAssigned(
-        query: identical(query, sdkOmittedValue)
-            ? this.query
-            : query as SdkOptional<String>,
-        assignees: identical(assignees, sdkOmittedValue)
-            ? this.assignees
-            : assignees as SdkOptional<List<String>>,
-        writeScope: identical(writeScope, sdkOmittedValue)
-            ? this.writeScope
-            : writeScope as SdkOptional<
-                AgentAutomationsGetRepoAutomationResponseTriggersIssueAssignedWriteScope>,
+  AppsDeleteAuthorizationRequestBody _copyWith(
+          {Object? accessToken = sdkOmittedValue}) =>
+      AppsDeleteAuthorizationRequestBody(
+        accessToken: identical(accessToken, sdkOmittedValue)
+            ? this.accessToken
+            : accessToken as String,
       );
 
-  factory AgentAutomationsGetRepoAutomationResponseTriggersIssueAssigned.fromJson(
+  factory AppsDeleteAuthorizationRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      AgentAutomationsGetRepoAutomationResponseTriggersIssueAssigned(
-        query: json['query'] != null
-            ? SdkPresent((json['query'] as String?)!)
-            : const SdkOmitted(),
-        assignees: json['assignees'] != null
-            ? SdkPresent(((json['assignees'] as List?)
-                ?.map((e) => e as String)
-                .toList())!)
-            : const SdkOmitted(),
-        writeScope: json['write_scope'] != null
-            ? SdkPresent((json['write_scope'] != null
-                ? AgentAutomationsGetRepoAutomationResponseTriggersIssueAssignedWriteScope
-                    .fromJson(json['write_scope'] as String)
-                : null)!)
-            : const SdkOmitted(),
+      AppsDeleteAuthorizationRequestBody(
+        accessToken: (json['access_token'] as String?)!,
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (query) {
-          SdkPresent<String>(value: final value) => {
-              'query': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (assignees) {
-          SdkPresent<List<String>>(value: final value) => {
-              'assignees': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (writeScope) {
-          SdkPresent<
-                AgentAutomationsGetRepoAutomationResponseTriggersIssueAssignedWriteScope>(
-            value: final value
-          ) =>
-            {
-              'write_scope': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
+        'access_token': accessToken,
       };
 }
 
-class AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssigned {
+class AppsCheckTokenRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// A GitHub issue or pull request search query.
-  final SdkOptional<String> query;
+  /// The access_token of the OAuth or GitHub application.
+  final String accessToken;
 
-  /// Gitignore-style changed-file path globs.
-  final SdkOptional<List<String>> paths;
+  const AppsCheckTokenRequestBody({required this.accessToken});
 
-  /// Affected assignee logins matched case-insensitively.
-  final SdkOptional<List<String>> assignees;
+  AppsCheckTokenRequestBody Function({String accessToken}) get copyWith =>
+      _copyWith;
 
-  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-  final SdkOptional<
-          AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssignedWriteScope>
-      writeScope;
+  AppsCheckTokenRequestBody _copyWith(
+          {Object? accessToken = sdkOmittedValue}) =>
+      AppsCheckTokenRequestBody(
+        accessToken: identical(accessToken, sdkOmittedValue)
+            ? this.accessToken
+            : accessToken as String,
+      );
 
-  const AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssigned(
-      {this.query = const SdkOmitted(),
-      this.paths = const SdkOmitted(),
-      this.assignees = const SdkOmitted(),
-      this.writeScope = const SdkOmitted()});
-
-  AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssigned Function(
-      {SdkOptional<String> query,
-      SdkOptional<List<String>> paths,
-      SdkOptional<List<String>> assignees,
-      SdkOptional<
-              AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssignedWriteScope>
-          writeScope}) get copyWith => _copyWith;
-
-  AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssigned
-      _copyWith(
-              {Object? query = sdkOmittedValue,
-              Object? paths = sdkOmittedValue,
-              Object? assignees = sdkOmittedValue,
-              Object? writeScope = sdkOmittedValue}) =>
-          AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssigned(
-            query: identical(query, sdkOmittedValue)
-                ? this.query
-                : query as SdkOptional<String>,
-            paths: identical(paths, sdkOmittedValue)
-                ? this.paths
-                : paths as SdkOptional<List<String>>,
-            assignees: identical(assignees, sdkOmittedValue)
-                ? this.assignees
-                : assignees as SdkOptional<List<String>>,
-            writeScope: identical(writeScope, sdkOmittedValue)
-                ? this.writeScope
-                : writeScope as SdkOptional<
-                    AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssignedWriteScope>,
-          );
-
-  factory AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssigned.fromJson(
-          Map<String, dynamic> json) =>
-      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssigned(
-        query: json['query'] != null
-            ? SdkPresent((json['query'] as String?)!)
-            : const SdkOmitted(),
-        paths: json['paths'] != null
-            ? SdkPresent(
-                ((json['paths'] as List?)?.map((e) => e as String).toList())!)
-            : const SdkOmitted(),
-        assignees: json['assignees'] != null
-            ? SdkPresent(((json['assignees'] as List?)
-                ?.map((e) => e as String)
-                .toList())!)
-            : const SdkOmitted(),
-        writeScope: json['write_scope'] != null
-            ? SdkPresent((json['write_scope'] != null
-                ? AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssignedWriteScope
-                    .fromJson(json['write_scope'] as String)
-                : null)!)
-            : const SdkOmitted(),
+  factory AppsCheckTokenRequestBody.fromJson(Map<String, dynamic> json) =>
+      AppsCheckTokenRequestBody(
+        accessToken: (json['access_token'] as String?)!,
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (query) {
-          SdkPresent<String>(value: final value) => {
-              'query': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (paths) {
-          SdkPresent<List<String>>(value: final value) => {
-              'paths': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (assignees) {
-          SdkPresent<List<String>>(value: final value) => {
-              'assignees': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (writeScope) {
-          SdkPresent<
-                AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssignedWriteScope>(
-            value: final value
-          ) =>
-            {
-              'write_scope': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
+        'access_token': accessToken,
       };
 }
 
-class AgentAutomationsGetRepoAutomationResponseTriggersSubIssueAdded {
+class AppsResetTokenRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// A GitHub issue or pull request search query.
-  final SdkOptional<String> query;
+  /// The access_token of the OAuth or GitHub application.
+  final String accessToken;
 
-  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-  final SdkOptional<
-          AgentAutomationsGetRepoAutomationResponseTriggersSubIssueAddedWriteScope>
-      writeScope;
+  const AppsResetTokenRequestBody({required this.accessToken});
 
-  const AgentAutomationsGetRepoAutomationResponseTriggersSubIssueAdded(
-      {this.query = const SdkOmitted(), this.writeScope = const SdkOmitted()});
+  AppsResetTokenRequestBody Function({String accessToken}) get copyWith =>
+      _copyWith;
 
-  AgentAutomationsGetRepoAutomationResponseTriggersSubIssueAdded Function(
-      {SdkOptional<String> query,
-      SdkOptional<
-              AgentAutomationsGetRepoAutomationResponseTriggersSubIssueAddedWriteScope>
-          writeScope}) get copyWith => _copyWith;
-
-  AgentAutomationsGetRepoAutomationResponseTriggersSubIssueAdded _copyWith(
-          {Object? query = sdkOmittedValue,
-          Object? writeScope = sdkOmittedValue}) =>
-      AgentAutomationsGetRepoAutomationResponseTriggersSubIssueAdded(
-        query: identical(query, sdkOmittedValue)
-            ? this.query
-            : query as SdkOptional<String>,
-        writeScope: identical(writeScope, sdkOmittedValue)
-            ? this.writeScope
-            : writeScope as SdkOptional<
-                AgentAutomationsGetRepoAutomationResponseTriggersSubIssueAddedWriteScope>,
+  AppsResetTokenRequestBody _copyWith(
+          {Object? accessToken = sdkOmittedValue}) =>
+      AppsResetTokenRequestBody(
+        accessToken: identical(accessToken, sdkOmittedValue)
+            ? this.accessToken
+            : accessToken as String,
       );
 
-  factory AgentAutomationsGetRepoAutomationResponseTriggersSubIssueAdded.fromJson(
-          Map<String, dynamic> json) =>
-      AgentAutomationsGetRepoAutomationResponseTriggersSubIssueAdded(
-        query: json['query'] != null
-            ? SdkPresent((json['query'] as String?)!)
-            : const SdkOmitted(),
-        writeScope: json['write_scope'] != null
-            ? SdkPresent((json['write_scope'] != null
-                ? AgentAutomationsGetRepoAutomationResponseTriggersSubIssueAddedWriteScope
-                    .fromJson(json['write_scope'] as String)
-                : null)!)
-            : const SdkOmitted(),
+  factory AppsResetTokenRequestBody.fromJson(Map<String, dynamic> json) =>
+      AppsResetTokenRequestBody(
+        accessToken: (json['access_token'] as String?)!,
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (query) {
-          SdkPresent<String>(value: final value) => {
-              'query': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (writeScope) {
-          SdkPresent<
-                AgentAutomationsGetRepoAutomationResponseTriggersSubIssueAddedWriteScope>(
-            value: final value
-          ) =>
-            {
-              'write_scope': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
+        'access_token': accessToken,
       };
 }
 
-class AgentAutomationsGetRepoAutomationResponseTriggersPullRequestReadyForReview {
+class AppsDeleteTokenRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// A GitHub issue or pull request search query.
-  final SdkOptional<String> query;
+  /// The OAuth access token used to authenticate to the GitHub API.
+  final String accessToken;
 
-  /// Gitignore-style changed-file path globs.
-  final SdkOptional<List<String>> paths;
+  const AppsDeleteTokenRequestBody({required this.accessToken});
 
-  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-  final SdkOptional<
-          AgentAutomationsGetRepoAutomationResponseTriggersPullRequestReadyForReviewWriteScope>
-      writeScope;
+  AppsDeleteTokenRequestBody Function({String accessToken}) get copyWith =>
+      _copyWith;
 
-  const AgentAutomationsGetRepoAutomationResponseTriggersPullRequestReadyForReview(
-      {this.query = const SdkOmitted(),
-      this.paths = const SdkOmitted(),
-      this.writeScope = const SdkOmitted()});
+  AppsDeleteTokenRequestBody _copyWith(
+          {Object? accessToken = sdkOmittedValue}) =>
+      AppsDeleteTokenRequestBody(
+        accessToken: identical(accessToken, sdkOmittedValue)
+            ? this.accessToken
+            : accessToken as String,
+      );
 
-  AgentAutomationsGetRepoAutomationResponseTriggersPullRequestReadyForReview Function(
-      {SdkOptional<String> query,
-      SdkOptional<List<String>> paths,
-      SdkOptional<
-              AgentAutomationsGetRepoAutomationResponseTriggersPullRequestReadyForReviewWriteScope>
-          writeScope}) get copyWith => _copyWith;
-
-  AgentAutomationsGetRepoAutomationResponseTriggersPullRequestReadyForReview
-      _copyWith(
-              {Object? query = sdkOmittedValue,
-              Object? paths = sdkOmittedValue,
-              Object? writeScope = sdkOmittedValue}) =>
-          AgentAutomationsGetRepoAutomationResponseTriggersPullRequestReadyForReview(
-            query: identical(query, sdkOmittedValue)
-                ? this.query
-                : query as SdkOptional<String>,
-            paths: identical(paths, sdkOmittedValue)
-                ? this.paths
-                : paths as SdkOptional<List<String>>,
-            writeScope: identical(writeScope, sdkOmittedValue)
-                ? this.writeScope
-                : writeScope as SdkOptional<
-                    AgentAutomationsGetRepoAutomationResponseTriggersPullRequestReadyForReviewWriteScope>,
-          );
-
-  factory AgentAutomationsGetRepoAutomationResponseTriggersPullRequestReadyForReview.fromJson(
-          Map<String, dynamic> json) =>
-      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestReadyForReview(
-        query: json['query'] != null
-            ? SdkPresent((json['query'] as String?)!)
-            : const SdkOmitted(),
-        paths: json['paths'] != null
-            ? SdkPresent(
-                ((json['paths'] as List?)?.map((e) => e as String).toList())!)
-            : const SdkOmitted(),
-        writeScope: json['write_scope'] != null
-            ? SdkPresent((json['write_scope'] != null
-                ? AgentAutomationsGetRepoAutomationResponseTriggersPullRequestReadyForReviewWriteScope
-                    .fromJson(json['write_scope'] as String)
-                : null)!)
-            : const SdkOmitted(),
+  factory AppsDeleteTokenRequestBody.fromJson(Map<String, dynamic> json) =>
+      AppsDeleteTokenRequestBody(
+        accessToken: (json['access_token'] as String?)!,
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (query) {
-          SdkPresent<String>(value: final value) => {
-              'query': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (paths) {
-          SdkPresent<List<String>>(value: final value) => {
-              'paths': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (writeScope) {
-          SdkPresent<
-                AgentAutomationsGetRepoAutomationResponseTriggersPullRequestReadyForReviewWriteScope>(
-            value: final value
-          ) =>
-            {
-              'write_scope': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
+        'access_token': accessToken,
       };
 }

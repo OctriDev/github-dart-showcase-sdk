@@ -4,311 +4,624 @@
 part of 'inline.dart';
 
 // Inline operation models (part 274)
-final class OrgsListPendingInvitationsInvitationSource {
-  final String value;
-
-  const OrgsListPendingInvitationsInvitationSource._(this.value);
-
-  factory OrgsListPendingInvitationsInvitationSource.fromJson(String value) =>
-      OrgsListPendingInvitationsInvitationSource._(value);
-
-  static const all = OrgsListPendingInvitationsInvitationSource._('all');
-  static const member = OrgsListPendingInvitationsInvitationSource._('member');
-  static const scim = OrgsListPendingInvitationsInvitationSource._('scim');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is OrgsListPendingInvitationsInvitationSource &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The role for the new member. * `admin` - Organization owners with full administrative rights to the organization and complete access to all repositories and teams. * `direct_member` - Non-owner organization members with ability to see other members and join teams by invitation. * `billing_manager` - Non-owner organization members with ability to manage the billing settings of your organization. * `reinstate` - The previous role assigned to the invitee before they were removed from your organization. Can be one of the roles listed above. Only works if the invitee was previously part of your organization.
-final class OrgsCreateInvitationRequestBodyRole {
-  final String value;
-
-  const OrgsCreateInvitationRequestBodyRole._(this.value);
-
-  factory OrgsCreateInvitationRequestBodyRole.fromJson(String value) =>
-      OrgsCreateInvitationRequestBodyRole._(value);
-
-  static const admin = OrgsCreateInvitationRequestBodyRole._('admin');
-  static const directMember =
-      OrgsCreateInvitationRequestBodyRole._('direct_member');
-  static const billingManager =
-      OrgsCreateInvitationRequestBodyRole._('billing_manager');
-  static const reinstate = OrgsCreateInvitationRequestBodyRole._('reinstate');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is OrgsCreateInvitationRequestBodyRole && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-final class IssuesListForOrgFilter {
-  final String value;
-
-  const IssuesListForOrgFilter._(this.value);
-
-  factory IssuesListForOrgFilter.fromJson(String value) =>
-      IssuesListForOrgFilter._(value);
-
-  static const assigned = IssuesListForOrgFilter._('assigned');
-  static const created = IssuesListForOrgFilter._('created');
-  static const mentioned = IssuesListForOrgFilter._('mentioned');
-  static const subscribed = IssuesListForOrgFilter._('subscribed');
-  static const repos = IssuesListForOrgFilter._('repos');
-  static const all = IssuesListForOrgFilter._('all');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is IssuesListForOrgFilter && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-final class IssuesListForOrgState {
-  final String value;
-
-  const IssuesListForOrgState._(this.value);
-
-  factory IssuesListForOrgState.fromJson(String value) =>
-      IssuesListForOrgState._(value);
-
-  static const open = IssuesListForOrgState._('open');
-  static const closed = IssuesListForOrgState._('closed');
-  static const all = IssuesListForOrgState._('all');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is IssuesListForOrgState && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-final class IssuesListForOrgSort {
-  final String value;
-
-  const IssuesListForOrgSort._(this.value);
-
-  factory IssuesListForOrgSort.fromJson(String value) =>
-      IssuesListForOrgSort._(value);
-
-  static const created = IssuesListForOrgSort._('created');
-  static const updated = IssuesListForOrgSort._('updated');
-  static const comments = IssuesListForOrgSort._('comments');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is IssuesListForOrgSort && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-final class OrgsListMembersFilter {
-  final String value;
-
-  const OrgsListMembersFilter._(this.value);
-
-  factory OrgsListMembersFilter.fromJson(String value) =>
-      OrgsListMembersFilter._(value);
-
-  static const v2faDisabled = OrgsListMembersFilter._('2fa_disabled');
-  static const v2faInsecure = OrgsListMembersFilter._('2fa_insecure');
-  static const all = OrgsListMembersFilter._('all');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is OrgsListMembersFilter && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-final class OrgsListMembersRole {
-  final String value;
-
-  const OrgsListMembersRole._(this.value);
-
-  factory OrgsListMembersRole.fromJson(String value) =>
-      OrgsListMembersRole._(value);
-
-  static const all = OrgsListMembersRole._('all');
-  static const admin = OrgsListMembersRole._('admin');
-  static const member = OrgsListMembersRole._('member');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is OrgsListMembersRole && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The role to give the user in the organization. Can be one of: * `admin` - The user will become an owner of the organization. * `member` - The user will become a non-owner member of the organization.
-final class OrgsSetMembershipForUserRequestBodyRole {
-  final String value;
-
-  const OrgsSetMembershipForUserRequestBodyRole._(this.value);
-
-  factory OrgsSetMembershipForUserRequestBodyRole.fromJson(String value) =>
-      OrgsSetMembershipForUserRequestBodyRole._(value);
-
-  static const admin = OrgsSetMembershipForUserRequestBodyRole._('admin');
-  static const member = OrgsSetMembershipForUserRequestBodyRole._('member');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is OrgsSetMembershipForUserRequestBodyRole && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Allowed values that can be passed to the exclude param.
-final class MigrationsListForOrgExcludeItem {
-  final String value;
-
-  const MigrationsListForOrgExcludeItem._(this.value);
-
-  factory MigrationsListForOrgExcludeItem.fromJson(String value) =>
-      MigrationsListForOrgExcludeItem._(value);
-
-  static const repositories = MigrationsListForOrgExcludeItem._('repositories');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is MigrationsListForOrgExcludeItem && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-final class MigrationsStartForOrgRequestBodyExcludeItem {
-  final String value;
-
-  const MigrationsStartForOrgRequestBodyExcludeItem._(this.value);
-
-  factory MigrationsStartForOrgRequestBodyExcludeItem.fromJson(String value) =>
-      MigrationsStartForOrgRequestBodyExcludeItem._(value);
-
-  static const repositories =
-      MigrationsStartForOrgRequestBodyExcludeItem._('repositories');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is MigrationsStartForOrgRequestBodyExcludeItem &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Allowed values that can be passed to the exclude param.
-final class MigrationsGetStatusForOrgExcludeItem {
-  final String value;
-
-  const MigrationsGetStatusForOrgExcludeItem._(this.value);
-
-  factory MigrationsGetStatusForOrgExcludeItem.fromJson(String value) =>
-      MigrationsGetStatusForOrgExcludeItem._(value);
-
-  static const repositories =
-      MigrationsGetStatusForOrgExcludeItem._('repositories');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is MigrationsGetStatusForOrgExcludeItem && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-final class OrgsListOutsideCollaboratorsFilter {
-  final String value;
-
-  const OrgsListOutsideCollaboratorsFilter._(this.value);
-
-  factory OrgsListOutsideCollaboratorsFilter.fromJson(String value) =>
-      OrgsListOutsideCollaboratorsFilter._(value);
-
-  static const v2faDisabled =
-      OrgsListOutsideCollaboratorsFilter._('2fa_disabled');
-  static const v2faInsecure =
-      OrgsListOutsideCollaboratorsFilter._('2fa_insecure');
-  static const all = OrgsListOutsideCollaboratorsFilter._('all');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is OrgsListOutsideCollaboratorsFilter && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
+/// Public trigger configuration keyed by stable public trigger identifier. Each trigger has a closed, trigger-specific configuration schema.
+class AgentAutomationsListAutomationsResponseItemTriggers {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  final SdkOptional<AgentAutomationsListAutomationsResponseItemTriggersInterval>
+      interval;
+  final SdkOptional<
+          AgentAutomationsListAutomationsResponseItemTriggersIssueOpened>
+      issueOpened;
+  final SdkOptional<
+          AgentAutomationsListAutomationsResponseItemTriggersIssueLabeled>
+      issueLabeled;
+  final SdkOptional<
+          AgentAutomationsListAutomationsResponseItemTriggersWorkflowRun>
+      workflowRun;
+  final SdkOptional<
+          AgentAutomationsListAutomationsResponseItemTriggersPullRequestOpened>
+      pullRequestOpened;
+  final SdkOptional<
+          AgentAutomationsListAutomationsResponseItemTriggersPullRequestSynchronize>
+      pullRequestSynchronize;
+  final SdkOptional<
+          AgentAutomationsListAutomationsResponseItemTriggersPullRequestMerged>
+      pullRequestMerged;
+  final SdkOptional<
+          AgentAutomationsListAutomationsResponseItemTriggersIssueComment>
+      issueComment;
+  final SdkOptional<
+          AgentAutomationsListAutomationsResponseItemTriggersPullRequestComment>
+      pullRequestComment;
+  final SdkOptional<
+          AgentAutomationsListAutomationsResponseItemTriggersDiscussionOpened>
+      discussionOpened;
+  final SdkOptional<
+          AgentAutomationsListAutomationsResponseItemTriggersDiscussionUpdated>
+      discussionUpdated;
+  final SdkOptional<
+          AgentAutomationsListAutomationsResponseItemTriggersDiscussionComment>
+      discussionComment;
+  final SdkOptional<
+          AgentAutomationsListAutomationsResponseItemTriggersIssueAssigned>
+      issueAssigned;
+  final SdkOptional<
+          AgentAutomationsListAutomationsResponseItemTriggersPullRequestAssigned>
+      pullRequestAssigned;
+  final SdkOptional<
+          AgentAutomationsListAutomationsResponseItemTriggersSubIssueAdded>
+      subIssueAdded;
+  final SdkOptional<
+          AgentAutomationsListAutomationsResponseItemTriggersPullRequestReadyForReview>
+      pullRequestReadyForReview;
+  final SdkOptional<
+          AgentAutomationsListAutomationsResponseItemTriggersPullRequestLabeled>
+      pullRequestLabeled;
+  final SdkOptional<
+          AgentAutomationsListAutomationsResponseItemTriggersPullRequestMergeConflict>
+      pullRequestMergeConflict;
+  final SdkOptional<
+          AgentAutomationsListAutomationsResponseItemTriggersPullRequestReviewSubmitted>
+      pullRequestReviewSubmitted;
+  final SdkOptional<
+          AgentAutomationsListAutomationsResponseItemTriggersPullRequestReviewRequested>
+      pullRequestReviewRequested;
+  final SdkOptional<
+          AgentAutomationsListAutomationsResponseItemTriggersAutomationCompleted>
+      automationCompleted;
+
+  const AgentAutomationsListAutomationsResponseItemTriggers(
+      {this.interval = const SdkOmitted(),
+      this.issueOpened = const SdkOmitted(),
+      this.issueLabeled = const SdkOmitted(),
+      this.workflowRun = const SdkOmitted(),
+      this.pullRequestOpened = const SdkOmitted(),
+      this.pullRequestSynchronize = const SdkOmitted(),
+      this.pullRequestMerged = const SdkOmitted(),
+      this.issueComment = const SdkOmitted(),
+      this.pullRequestComment = const SdkOmitted(),
+      this.discussionOpened = const SdkOmitted(),
+      this.discussionUpdated = const SdkOmitted(),
+      this.discussionComment = const SdkOmitted(),
+      this.issueAssigned = const SdkOmitted(),
+      this.pullRequestAssigned = const SdkOmitted(),
+      this.subIssueAdded = const SdkOmitted(),
+      this.pullRequestReadyForReview = const SdkOmitted(),
+      this.pullRequestLabeled = const SdkOmitted(),
+      this.pullRequestMergeConflict = const SdkOmitted(),
+      this.pullRequestReviewSubmitted = const SdkOmitted(),
+      this.pullRequestReviewRequested = const SdkOmitted(),
+      this.automationCompleted = const SdkOmitted()});
+
+  AgentAutomationsListAutomationsResponseItemTriggers Function(
+      {SdkOptional<AgentAutomationsListAutomationsResponseItemTriggersInterval>
+          interval,
+      SdkOptional<AgentAutomationsListAutomationsResponseItemTriggersIssueOpened>
+          issueOpened,
+      SdkOptional<AgentAutomationsListAutomationsResponseItemTriggersIssueLabeled>
+          issueLabeled,
+      SdkOptional<AgentAutomationsListAutomationsResponseItemTriggersWorkflowRun>
+          workflowRun,
+      SdkOptional<
+              AgentAutomationsListAutomationsResponseItemTriggersPullRequestOpened>
+          pullRequestOpened,
+      SdkOptional<
+              AgentAutomationsListAutomationsResponseItemTriggersPullRequestSynchronize>
+          pullRequestSynchronize,
+      SdkOptional<
+              AgentAutomationsListAutomationsResponseItemTriggersPullRequestMerged>
+          pullRequestMerged,
+      SdkOptional<AgentAutomationsListAutomationsResponseItemTriggersIssueComment>
+          issueComment,
+      SdkOptional<
+              AgentAutomationsListAutomationsResponseItemTriggersPullRequestComment>
+          pullRequestComment,
+      SdkOptional<
+              AgentAutomationsListAutomationsResponseItemTriggersDiscussionOpened>
+          discussionOpened,
+      SdkOptional<
+              AgentAutomationsListAutomationsResponseItemTriggersDiscussionUpdated>
+          discussionUpdated,
+      SdkOptional<
+              AgentAutomationsListAutomationsResponseItemTriggersDiscussionComment>
+          discussionComment,
+      SdkOptional<AgentAutomationsListAutomationsResponseItemTriggersIssueAssigned>
+          issueAssigned,
+      SdkOptional<
+              AgentAutomationsListAutomationsResponseItemTriggersPullRequestAssigned>
+          pullRequestAssigned,
+      SdkOptional<AgentAutomationsListAutomationsResponseItemTriggersSubIssueAdded>
+          subIssueAdded,
+      SdkOptional<
+              AgentAutomationsListAutomationsResponseItemTriggersPullRequestReadyForReview>
+          pullRequestReadyForReview,
+      SdkOptional<
+              AgentAutomationsListAutomationsResponseItemTriggersPullRequestLabeled>
+          pullRequestLabeled,
+      SdkOptional<
+              AgentAutomationsListAutomationsResponseItemTriggersPullRequestMergeConflict>
+          pullRequestMergeConflict,
+      SdkOptional<
+              AgentAutomationsListAutomationsResponseItemTriggersPullRequestReviewSubmitted>
+          pullRequestReviewSubmitted,
+      SdkOptional<
+              AgentAutomationsListAutomationsResponseItemTriggersPullRequestReviewRequested>
+          pullRequestReviewRequested,
+      SdkOptional<
+              AgentAutomationsListAutomationsResponseItemTriggersAutomationCompleted>
+          automationCompleted}) get copyWith => _copyWith;
+
+  AgentAutomationsListAutomationsResponseItemTriggers _copyWith(
+          {Object? interval = sdkOmittedValue,
+          Object? issueOpened = sdkOmittedValue,
+          Object? issueLabeled = sdkOmittedValue,
+          Object? workflowRun = sdkOmittedValue,
+          Object? pullRequestOpened = sdkOmittedValue,
+          Object? pullRequestSynchronize = sdkOmittedValue,
+          Object? pullRequestMerged = sdkOmittedValue,
+          Object? issueComment = sdkOmittedValue,
+          Object? pullRequestComment = sdkOmittedValue,
+          Object? discussionOpened = sdkOmittedValue,
+          Object? discussionUpdated = sdkOmittedValue,
+          Object? discussionComment = sdkOmittedValue,
+          Object? issueAssigned = sdkOmittedValue,
+          Object? pullRequestAssigned = sdkOmittedValue,
+          Object? subIssueAdded = sdkOmittedValue,
+          Object? pullRequestReadyForReview = sdkOmittedValue,
+          Object? pullRequestLabeled = sdkOmittedValue,
+          Object? pullRequestMergeConflict = sdkOmittedValue,
+          Object? pullRequestReviewSubmitted = sdkOmittedValue,
+          Object? pullRequestReviewRequested = sdkOmittedValue,
+          Object? automationCompleted = sdkOmittedValue}) =>
+      AgentAutomationsListAutomationsResponseItemTriggers(
+        interval: identical(interval, sdkOmittedValue)
+            ? this.interval
+            : interval as SdkOptional<
+                AgentAutomationsListAutomationsResponseItemTriggersInterval>,
+        issueOpened: identical(issueOpened, sdkOmittedValue)
+            ? this.issueOpened
+            : issueOpened as SdkOptional<
+                AgentAutomationsListAutomationsResponseItemTriggersIssueOpened>,
+        issueLabeled: identical(issueLabeled, sdkOmittedValue)
+            ? this.issueLabeled
+            : issueLabeled as SdkOptional<
+                AgentAutomationsListAutomationsResponseItemTriggersIssueLabeled>,
+        workflowRun: identical(workflowRun, sdkOmittedValue)
+            ? this.workflowRun
+            : workflowRun as SdkOptional<
+                AgentAutomationsListAutomationsResponseItemTriggersWorkflowRun>,
+        pullRequestOpened: identical(pullRequestOpened, sdkOmittedValue)
+            ? this.pullRequestOpened
+            : pullRequestOpened as SdkOptional<
+                AgentAutomationsListAutomationsResponseItemTriggersPullRequestOpened>,
+        pullRequestSynchronize: identical(
+                pullRequestSynchronize, sdkOmittedValue)
+            ? this.pullRequestSynchronize
+            : pullRequestSynchronize as SdkOptional<
+                AgentAutomationsListAutomationsResponseItemTriggersPullRequestSynchronize>,
+        pullRequestMerged: identical(pullRequestMerged, sdkOmittedValue)
+            ? this.pullRequestMerged
+            : pullRequestMerged as SdkOptional<
+                AgentAutomationsListAutomationsResponseItemTriggersPullRequestMerged>,
+        issueComment: identical(issueComment, sdkOmittedValue)
+            ? this.issueComment
+            : issueComment as SdkOptional<
+                AgentAutomationsListAutomationsResponseItemTriggersIssueComment>,
+        pullRequestComment: identical(pullRequestComment, sdkOmittedValue)
+            ? this.pullRequestComment
+            : pullRequestComment as SdkOptional<
+                AgentAutomationsListAutomationsResponseItemTriggersPullRequestComment>,
+        discussionOpened: identical(discussionOpened, sdkOmittedValue)
+            ? this.discussionOpened
+            : discussionOpened as SdkOptional<
+                AgentAutomationsListAutomationsResponseItemTriggersDiscussionOpened>,
+        discussionUpdated: identical(discussionUpdated, sdkOmittedValue)
+            ? this.discussionUpdated
+            : discussionUpdated as SdkOptional<
+                AgentAutomationsListAutomationsResponseItemTriggersDiscussionUpdated>,
+        discussionComment: identical(discussionComment, sdkOmittedValue)
+            ? this.discussionComment
+            : discussionComment as SdkOptional<
+                AgentAutomationsListAutomationsResponseItemTriggersDiscussionComment>,
+        issueAssigned: identical(issueAssigned, sdkOmittedValue)
+            ? this.issueAssigned
+            : issueAssigned as SdkOptional<
+                AgentAutomationsListAutomationsResponseItemTriggersIssueAssigned>,
+        pullRequestAssigned: identical(pullRequestAssigned, sdkOmittedValue)
+            ? this.pullRequestAssigned
+            : pullRequestAssigned as SdkOptional<
+                AgentAutomationsListAutomationsResponseItemTriggersPullRequestAssigned>,
+        subIssueAdded: identical(subIssueAdded, sdkOmittedValue)
+            ? this.subIssueAdded
+            : subIssueAdded as SdkOptional<
+                AgentAutomationsListAutomationsResponseItemTriggersSubIssueAdded>,
+        pullRequestReadyForReview: identical(
+                pullRequestReadyForReview, sdkOmittedValue)
+            ? this.pullRequestReadyForReview
+            : pullRequestReadyForReview as SdkOptional<
+                AgentAutomationsListAutomationsResponseItemTriggersPullRequestReadyForReview>,
+        pullRequestLabeled: identical(pullRequestLabeled, sdkOmittedValue)
+            ? this.pullRequestLabeled
+            : pullRequestLabeled as SdkOptional<
+                AgentAutomationsListAutomationsResponseItemTriggersPullRequestLabeled>,
+        pullRequestMergeConflict: identical(
+                pullRequestMergeConflict, sdkOmittedValue)
+            ? this.pullRequestMergeConflict
+            : pullRequestMergeConflict as SdkOptional<
+                AgentAutomationsListAutomationsResponseItemTriggersPullRequestMergeConflict>,
+        pullRequestReviewSubmitted: identical(
+                pullRequestReviewSubmitted, sdkOmittedValue)
+            ? this.pullRequestReviewSubmitted
+            : pullRequestReviewSubmitted as SdkOptional<
+                AgentAutomationsListAutomationsResponseItemTriggersPullRequestReviewSubmitted>,
+        pullRequestReviewRequested: identical(
+                pullRequestReviewRequested, sdkOmittedValue)
+            ? this.pullRequestReviewRequested
+            : pullRequestReviewRequested as SdkOptional<
+                AgentAutomationsListAutomationsResponseItemTriggersPullRequestReviewRequested>,
+        automationCompleted: identical(automationCompleted, sdkOmittedValue)
+            ? this.automationCompleted
+            : automationCompleted as SdkOptional<
+                AgentAutomationsListAutomationsResponseItemTriggersAutomationCompleted>,
+      );
+
+  factory AgentAutomationsListAutomationsResponseItemTriggers.fromJson(
+          Map<String, dynamic> json) =>
+      AgentAutomationsListAutomationsResponseItemTriggers(
+        interval: json['interval'] != null
+            ? SdkPresent((json['interval'] != null
+                ? AgentAutomationsListAutomationsResponseItemTriggersInterval
+                    .fromJson(json['interval'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        issueOpened: json['issue_opened'] != null
+            ? SdkPresent((json['issue_opened'] != null
+                ? AgentAutomationsListAutomationsResponseItemTriggersIssueOpened
+                    .fromJson(json['issue_opened'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        issueLabeled: json['issue_labeled'] != null
+            ? SdkPresent((json['issue_labeled'] != null
+                ? AgentAutomationsListAutomationsResponseItemTriggersIssueLabeled
+                    .fromJson(json['issue_labeled'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        workflowRun: json['workflow_run'] != null
+            ? SdkPresent((json['workflow_run'] != null
+                ? AgentAutomationsListAutomationsResponseItemTriggersWorkflowRun
+                    .fromJson(json['workflow_run'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        pullRequestOpened: json['pull_request_opened'] != null
+            ? SdkPresent((json['pull_request_opened'] != null
+                ? AgentAutomationsListAutomationsResponseItemTriggersPullRequestOpened
+                    .fromJson(
+                        json['pull_request_opened'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        pullRequestSynchronize: json['pull_request_synchronize'] != null
+            ? SdkPresent((json['pull_request_synchronize'] != null
+                ? AgentAutomationsListAutomationsResponseItemTriggersPullRequestSynchronize
+                    .fromJson(json['pull_request_synchronize']
+                        as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        pullRequestMerged: json['pull_request_merged'] != null
+            ? SdkPresent((json['pull_request_merged'] != null
+                ? AgentAutomationsListAutomationsResponseItemTriggersPullRequestMerged
+                    .fromJson(
+                        json['pull_request_merged'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        issueComment: json['issue_comment'] != null
+            ? SdkPresent((json['issue_comment'] != null
+                ? AgentAutomationsListAutomationsResponseItemTriggersIssueComment
+                    .fromJson(json['issue_comment'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        pullRequestComment: json['pull_request_comment'] != null
+            ? SdkPresent((json['pull_request_comment'] != null
+                ? AgentAutomationsListAutomationsResponseItemTriggersPullRequestComment
+                    .fromJson(
+                        json['pull_request_comment'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        discussionOpened: json['discussion_opened'] != null
+            ? SdkPresent((json['discussion_opened'] != null
+                ? AgentAutomationsListAutomationsResponseItemTriggersDiscussionOpened
+                    .fromJson(json['discussion_opened'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        discussionUpdated: json['discussion_updated'] != null
+            ? SdkPresent((json['discussion_updated'] != null
+                ? AgentAutomationsListAutomationsResponseItemTriggersDiscussionUpdated
+                    .fromJson(
+                        json['discussion_updated'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        discussionComment: json['discussion_comment'] != null
+            ? SdkPresent((json['discussion_comment'] != null
+                ? AgentAutomationsListAutomationsResponseItemTriggersDiscussionComment
+                    .fromJson(
+                        json['discussion_comment'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        issueAssigned: json['issue_assigned'] != null
+            ? SdkPresent((json['issue_assigned'] != null
+                ? AgentAutomationsListAutomationsResponseItemTriggersIssueAssigned
+                    .fromJson(json['issue_assigned'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        pullRequestAssigned: json['pull_request_assigned'] != null
+            ? SdkPresent((json['pull_request_assigned'] != null
+                ? AgentAutomationsListAutomationsResponseItemTriggersPullRequestAssigned
+                    .fromJson(
+                        json['pull_request_assigned'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        subIssueAdded: json['sub_issue_added'] != null
+            ? SdkPresent((json['sub_issue_added'] != null
+                ? AgentAutomationsListAutomationsResponseItemTriggersSubIssueAdded
+                    .fromJson(json['sub_issue_added'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        pullRequestReadyForReview: json['pull_request_ready_for_review'] != null
+            ? SdkPresent((json['pull_request_ready_for_review'] != null
+                ? AgentAutomationsListAutomationsResponseItemTriggersPullRequestReadyForReview
+                    .fromJson(json['pull_request_ready_for_review']
+                        as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        pullRequestLabeled: json['pull_request_labeled'] != null
+            ? SdkPresent((json['pull_request_labeled'] != null
+                ? AgentAutomationsListAutomationsResponseItemTriggersPullRequestLabeled
+                    .fromJson(
+                        json['pull_request_labeled'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        pullRequestMergeConflict: json['pull_request_merge_conflict'] != null
+            ? SdkPresent((json['pull_request_merge_conflict'] != null
+                ? AgentAutomationsListAutomationsResponseItemTriggersPullRequestMergeConflict
+                    .fromJson(json['pull_request_merge_conflict']
+                        as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        pullRequestReviewSubmitted: json['pull_request_review_submitted'] !=
+                null
+            ? SdkPresent((json['pull_request_review_submitted'] != null
+                ? AgentAutomationsListAutomationsResponseItemTriggersPullRequestReviewSubmitted
+                    .fromJson(json['pull_request_review_submitted']
+                        as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        pullRequestReviewRequested: json['pull_request_review_requested'] !=
+                null
+            ? SdkPresent((json['pull_request_review_requested'] != null
+                ? AgentAutomationsListAutomationsResponseItemTriggersPullRequestReviewRequested
+                    .fromJson(json['pull_request_review_requested']
+                        as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        automationCompleted: json['automation_completed'] != null
+            ? SdkPresent((json['automation_completed'] != null
+                ? AgentAutomationsListAutomationsResponseItemTriggersAutomationCompleted
+                    .fromJson(
+                        json['automation_completed'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (interval) {
+          SdkPresent<
+                AgentAutomationsListAutomationsResponseItemTriggersInterval>(
+            value: final value
+          ) =>
+            {
+              'interval': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (issueOpened) {
+          SdkPresent<
+                AgentAutomationsListAutomationsResponseItemTriggersIssueOpened>(
+            value: final value
+          ) =>
+            {
+              'issue_opened': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (issueLabeled) {
+          SdkPresent<
+                AgentAutomationsListAutomationsResponseItemTriggersIssueLabeled>(
+            value: final value
+          ) =>
+            {
+              'issue_labeled': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (workflowRun) {
+          SdkPresent<
+                AgentAutomationsListAutomationsResponseItemTriggersWorkflowRun>(
+            value: final value
+          ) =>
+            {
+              'workflow_run': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (pullRequestOpened) {
+          SdkPresent<
+                AgentAutomationsListAutomationsResponseItemTriggersPullRequestOpened>(
+            value: final value
+          ) =>
+            {
+              'pull_request_opened': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (pullRequestSynchronize) {
+          SdkPresent<
+                AgentAutomationsListAutomationsResponseItemTriggersPullRequestSynchronize>(
+            value: final value
+          ) =>
+            {
+              'pull_request_synchronize': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (pullRequestMerged) {
+          SdkPresent<
+                AgentAutomationsListAutomationsResponseItemTriggersPullRequestMerged>(
+            value: final value
+          ) =>
+            {
+              'pull_request_merged': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (issueComment) {
+          SdkPresent<
+                AgentAutomationsListAutomationsResponseItemTriggersIssueComment>(
+            value: final value
+          ) =>
+            {
+              'issue_comment': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (pullRequestComment) {
+          SdkPresent<
+                AgentAutomationsListAutomationsResponseItemTriggersPullRequestComment>(
+            value: final value
+          ) =>
+            {
+              'pull_request_comment': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (discussionOpened) {
+          SdkPresent<
+                AgentAutomationsListAutomationsResponseItemTriggersDiscussionOpened>(
+            value: final value
+          ) =>
+            {
+              'discussion_opened': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (discussionUpdated) {
+          SdkPresent<
+                AgentAutomationsListAutomationsResponseItemTriggersDiscussionUpdated>(
+            value: final value
+          ) =>
+            {
+              'discussion_updated': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (discussionComment) {
+          SdkPresent<
+                AgentAutomationsListAutomationsResponseItemTriggersDiscussionComment>(
+            value: final value
+          ) =>
+            {
+              'discussion_comment': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (issueAssigned) {
+          SdkPresent<
+                AgentAutomationsListAutomationsResponseItemTriggersIssueAssigned>(
+            value: final value
+          ) =>
+            {
+              'issue_assigned': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (pullRequestAssigned) {
+          SdkPresent<
+                AgentAutomationsListAutomationsResponseItemTriggersPullRequestAssigned>(
+            value: final value
+          ) =>
+            {
+              'pull_request_assigned': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (subIssueAdded) {
+          SdkPresent<
+                AgentAutomationsListAutomationsResponseItemTriggersSubIssueAdded>(
+            value: final value
+          ) =>
+            {
+              'sub_issue_added': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (pullRequestReadyForReview) {
+          SdkPresent<
+                AgentAutomationsListAutomationsResponseItemTriggersPullRequestReadyForReview>(
+            value: final value
+          ) =>
+            {
+              'pull_request_ready_for_review': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (pullRequestLabeled) {
+          SdkPresent<
+                AgentAutomationsListAutomationsResponseItemTriggersPullRequestLabeled>(
+            value: final value
+          ) =>
+            {
+              'pull_request_labeled': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (pullRequestMergeConflict) {
+          SdkPresent<
+                AgentAutomationsListAutomationsResponseItemTriggersPullRequestMergeConflict>(
+            value: final value
+          ) =>
+            {
+              'pull_request_merge_conflict': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (pullRequestReviewSubmitted) {
+          SdkPresent<
+                AgentAutomationsListAutomationsResponseItemTriggersPullRequestReviewSubmitted>(
+            value: final value
+          ) =>
+            {
+              'pull_request_review_submitted': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (pullRequestReviewRequested) {
+          SdkPresent<
+                AgentAutomationsListAutomationsResponseItemTriggersPullRequestReviewRequested>(
+            value: final value
+          ) =>
+            {
+              'pull_request_review_requested': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (automationCompleted) {
+          SdkPresent<
+                AgentAutomationsListAutomationsResponseItemTriggersAutomationCompleted>(
+            value: final value
+          ) =>
+            {
+              'automation_completed': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

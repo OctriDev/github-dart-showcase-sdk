@@ -4,26 +4,16 @@
 part of 'inline.dart';
 
 // Inline operation models (part 235)
-/// Required enumerated value serialized in the `status` wire field.
-final class WebhookWorkflowRunInProgressWorkflowRunStatus {
+final class AgentTasksListTasksForRepoDirection {
   final String value;
 
-  const WebhookWorkflowRunInProgressWorkflowRunStatus._(this.value);
+  const AgentTasksListTasksForRepoDirection._(this.value);
 
-  factory WebhookWorkflowRunInProgressWorkflowRunStatus.fromJson(
-          String value) =>
-      WebhookWorkflowRunInProgressWorkflowRunStatus._(value);
+  factory AgentTasksListTasksForRepoDirection.fromJson(String value) =>
+      AgentTasksListTasksForRepoDirection._(value);
 
-  static const requested =
-      WebhookWorkflowRunInProgressWorkflowRunStatus._('requested');
-  static const inProgress =
-      WebhookWorkflowRunInProgressWorkflowRunStatus._('in_progress');
-  static const completed =
-      WebhookWorkflowRunInProgressWorkflowRunStatus._('completed');
-  static const queued =
-      WebhookWorkflowRunInProgressWorkflowRunStatus._('queued');
-  static const pending =
-      WebhookWorkflowRunInProgressWorkflowRunStatus._('pending');
+  static const asc = AgentTasksListTasksForRepoDirection._('asc');
+  static const desc = AgentTasksListTasksForRepoDirection._('desc');
 
   String toJson() => value;
 
@@ -32,31 +22,86 @@ final class WebhookWorkflowRunInProgressWorkflowRunStatus {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookWorkflowRunInProgressWorkflowRunStatus &&
-      other.value == value;
+      other is AgentTasksListTasksForRepoDirection && other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhookWorkflowRunInProgressWorkflowRunTriggeringActorType {
+/// Provider namespace
+final class AgentTasksListTasksForRepoResponseTasksItemArtifactsItemProvider {
   final String value;
 
-  const WebhookWorkflowRunInProgressWorkflowRunTriggeringActorType._(
+  const AgentTasksListTasksForRepoResponseTasksItemArtifactsItemProvider._(
       this.value);
 
-  factory WebhookWorkflowRunInProgressWorkflowRunTriggeringActorType.fromJson(
+  factory AgentTasksListTasksForRepoResponseTasksItemArtifactsItemProvider.fromJson(
           String value) =>
-      WebhookWorkflowRunInProgressWorkflowRunTriggeringActorType._(value);
+      AgentTasksListTasksForRepoResponseTasksItemArtifactsItemProvider._(value);
 
-  static const bot =
-      WebhookWorkflowRunInProgressWorkflowRunTriggeringActorType._('Bot');
+  static const github =
+      AgentTasksListTasksForRepoResponseTasksItemArtifactsItemProvider._(
+          'github');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentTasksListTasksForRepoResponseTasksItemArtifactsItemProvider &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Type of artifact. Available Values: `pull`, `branch`.
+final class AgentTasksListTasksForRepoResponseTasksItemArtifactsItemType {
+  final String value;
+
+  const AgentTasksListTasksForRepoResponseTasksItemArtifactsItemType._(
+      this.value);
+
+  factory AgentTasksListTasksForRepoResponseTasksItemArtifactsItemType.fromJson(
+          String value) =>
+      AgentTasksListTasksForRepoResponseTasksItemArtifactsItemType._(value);
+
+  static const pull =
+      AgentTasksListTasksForRepoResponseTasksItemArtifactsItemType._('pull');
+  static const branch =
+      AgentTasksListTasksForRepoResponseTasksItemArtifactsItemType._('branch');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is AgentTasksListTasksForRepoResponseTasksItemArtifactsItemType &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Type of the task creator
+final class AgentTasksListTasksForRepoResponseTasksItemCreatorType {
+  final String value;
+
+  const AgentTasksListTasksForRepoResponseTasksItemCreatorType._(this.value);
+
+  factory AgentTasksListTasksForRepoResponseTasksItemCreatorType.fromJson(
+          String value) =>
+      AgentTasksListTasksForRepoResponseTasksItemCreatorType._(value);
+
   static const user =
-      WebhookWorkflowRunInProgressWorkflowRunTriggeringActorType._('User');
+      AgentTasksListTasksForRepoResponseTasksItemCreatorType._('user');
   static const organization =
-      WebhookWorkflowRunInProgressWorkflowRunTriggeringActorType._(
-          'Organization');
+      AgentTasksListTasksForRepoResponseTasksItemCreatorType._('organization');
 
   String toJson() => value;
 
@@ -65,94 +110,39 @@ final class WebhookWorkflowRunInProgressWorkflowRunTriggeringActorType {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookWorkflowRunInProgressWorkflowRunTriggeringActorType &&
+      other is AgentTasksListTasksForRepoResponseTasksItemCreatorType &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookWorkflowRunRequestedAction {
+/// Current state of the task, derived from its most recent session
+final class AgentTasksListTasksForRepoResponseTasksItemState {
   final String value;
 
-  const WebhookWorkflowRunRequestedAction._(this.value);
+  const AgentTasksListTasksForRepoResponseTasksItemState._(this.value);
 
-  factory WebhookWorkflowRunRequestedAction.fromJson(String value) =>
-      WebhookWorkflowRunRequestedAction._(value);
-
-  static const requested = WebhookWorkflowRunRequestedAction._('requested');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookWorkflowRunRequestedAction && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhookWorkflowRunRequestedWorkflowRunActorType {
-  final String value;
-
-  const WebhookWorkflowRunRequestedWorkflowRunActorType._(this.value);
-
-  factory WebhookWorkflowRunRequestedWorkflowRunActorType.fromJson(
+  factory AgentTasksListTasksForRepoResponseTasksItemState.fromJson(
           String value) =>
-      WebhookWorkflowRunRequestedWorkflowRunActorType._(value);
+      AgentTasksListTasksForRepoResponseTasksItemState._(value);
 
-  static const bot = WebhookWorkflowRunRequestedWorkflowRunActorType._('Bot');
-  static const user = WebhookWorkflowRunRequestedWorkflowRunActorType._('User');
-  static const organization =
-      WebhookWorkflowRunRequestedWorkflowRunActorType._('Organization');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookWorkflowRunRequestedWorkflowRunActorType &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `conclusion` wire field.
-final class WebhookWorkflowRunRequestedWorkflowRunConclusion {
-  final String value;
-
-  const WebhookWorkflowRunRequestedWorkflowRunConclusion._(this.value);
-
-  factory WebhookWorkflowRunRequestedWorkflowRunConclusion.fromJson(
-          String value) =>
-      WebhookWorkflowRunRequestedWorkflowRunConclusion._(value);
-
-  static const success =
-      WebhookWorkflowRunRequestedWorkflowRunConclusion._('success');
-  static const failure =
-      WebhookWorkflowRunRequestedWorkflowRunConclusion._('failure');
-  static const neutral =
-      WebhookWorkflowRunRequestedWorkflowRunConclusion._('neutral');
-  static const cancelled =
-      WebhookWorkflowRunRequestedWorkflowRunConclusion._('cancelled');
+  static const queued =
+      AgentTasksListTasksForRepoResponseTasksItemState._('queued');
+  static const inProgress =
+      AgentTasksListTasksForRepoResponseTasksItemState._('in_progress');
+  static const completed =
+      AgentTasksListTasksForRepoResponseTasksItemState._('completed');
+  static const failed =
+      AgentTasksListTasksForRepoResponseTasksItemState._('failed');
+  static const idle =
+      AgentTasksListTasksForRepoResponseTasksItemState._('idle');
+  static const waitingForUser =
+      AgentTasksListTasksForRepoResponseTasksItemState._('waiting_for_user');
   static const timedOut =
-      WebhookWorkflowRunRequestedWorkflowRunConclusion._('timed_out');
-  static const actionRequired =
-      WebhookWorkflowRunRequestedWorkflowRunConclusion._('action_required');
-  static const stale =
-      WebhookWorkflowRunRequestedWorkflowRunConclusion._('stale');
-  static const skipped =
-      WebhookWorkflowRunRequestedWorkflowRunConclusion._('skipped');
-  static const startupFailure =
-      WebhookWorkflowRunRequestedWorkflowRunConclusion._('startup_failure');
+      AgentTasksListTasksForRepoResponseTasksItemState._('timed_out');
+  static const cancelled =
+      AgentTasksListTasksForRepoResponseTasksItemState._('cancelled');
 
   String toJson() => value;
 
@@ -161,31 +151,35 @@ final class WebhookWorkflowRunRequestedWorkflowRunConclusion {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookWorkflowRunRequestedWorkflowRunConclusion &&
+      other is AgentTasksListTasksForRepoResponseTasksItemState &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhookWorkflowRunRequestedWorkflowRunHeadRepositoryOwnerType {
+/// Machine-readable error code
+final class AgentTasksListTasksForRepoResponseErrorsItemCode {
   final String value;
 
-  const WebhookWorkflowRunRequestedWorkflowRunHeadRepositoryOwnerType._(
-      this.value);
+  const AgentTasksListTasksForRepoResponseErrorsItemCode._(this.value);
 
-  factory WebhookWorkflowRunRequestedWorkflowRunHeadRepositoryOwnerType.fromJson(
+  factory AgentTasksListTasksForRepoResponseErrorsItemCode.fromJson(
           String value) =>
-      WebhookWorkflowRunRequestedWorkflowRunHeadRepositoryOwnerType._(value);
+      AgentTasksListTasksForRepoResponseErrorsItemCode._(value);
 
-  static const bot =
-      WebhookWorkflowRunRequestedWorkflowRunHeadRepositoryOwnerType._('Bot');
-  static const user =
-      WebhookWorkflowRunRequestedWorkflowRunHeadRepositoryOwnerType._('User');
-  static const organization =
-      WebhookWorkflowRunRequestedWorkflowRunHeadRepositoryOwnerType._(
-          'Organization');
+  static const missing =
+      AgentTasksListTasksForRepoResponseErrorsItemCode._('missing');
+  static const missingField =
+      AgentTasksListTasksForRepoResponseErrorsItemCode._('missing_field');
+  static const invalid =
+      AgentTasksListTasksForRepoResponseErrorsItemCode._('invalid');
+  static const alreadyExists =
+      AgentTasksListTasksForRepoResponseErrorsItemCode._('already_exists');
+  static const unprocessable =
+      AgentTasksListTasksForRepoResponseErrorsItemCode._('unprocessable');
+  static const custom =
+      AgentTasksListTasksForRepoResponseErrorsItemCode._('custom');
 
   String toJson() => value;
 
@@ -194,66 +188,38 @@ final class WebhookWorkflowRunRequestedWorkflowRunHeadRepositoryOwnerType {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookWorkflowRunRequestedWorkflowRunHeadRepositoryOwnerType &&
+      other is AgentTasksListTasksForRepoResponseErrorsItemCode &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhookWorkflowRunRequestedWorkflowRunRepositoryOwnerType {
+/// Machine-readable error code
+final class AgentTasksListTasksForRepoResponseErrorsItemCode8502b9a9 {
   final String value;
 
-  const WebhookWorkflowRunRequestedWorkflowRunRepositoryOwnerType._(this.value);
+  const AgentTasksListTasksForRepoResponseErrorsItemCode8502b9a9._(this.value);
 
-  factory WebhookWorkflowRunRequestedWorkflowRunRepositoryOwnerType.fromJson(
+  factory AgentTasksListTasksForRepoResponseErrorsItemCode8502b9a9.fromJson(
           String value) =>
-      WebhookWorkflowRunRequestedWorkflowRunRepositoryOwnerType._(value);
+      AgentTasksListTasksForRepoResponseErrorsItemCode8502b9a9._(value);
 
-  static const bot =
-      WebhookWorkflowRunRequestedWorkflowRunRepositoryOwnerType._('Bot');
-  static const user =
-      WebhookWorkflowRunRequestedWorkflowRunRepositoryOwnerType._('User');
-  static const organization =
-      WebhookWorkflowRunRequestedWorkflowRunRepositoryOwnerType._(
-          'Organization');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookWorkflowRunRequestedWorkflowRunRepositoryOwnerType &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `status` wire field.
-final class WebhookWorkflowRunRequestedWorkflowRunStatus {
-  final String value;
-
-  const WebhookWorkflowRunRequestedWorkflowRunStatus._(this.value);
-
-  factory WebhookWorkflowRunRequestedWorkflowRunStatus.fromJson(String value) =>
-      WebhookWorkflowRunRequestedWorkflowRunStatus._(value);
-
-  static const requested =
-      WebhookWorkflowRunRequestedWorkflowRunStatus._('requested');
-  static const inProgress =
-      WebhookWorkflowRunRequestedWorkflowRunStatus._('in_progress');
-  static const completed =
-      WebhookWorkflowRunRequestedWorkflowRunStatus._('completed');
-  static const queued =
-      WebhookWorkflowRunRequestedWorkflowRunStatus._('queued');
-  static const pending =
-      WebhookWorkflowRunRequestedWorkflowRunStatus._('pending');
-  static const waiting =
-      WebhookWorkflowRunRequestedWorkflowRunStatus._('waiting');
+  static const missing =
+      AgentTasksListTasksForRepoResponseErrorsItemCode8502b9a9._('missing');
+  static const missingField =
+      AgentTasksListTasksForRepoResponseErrorsItemCode8502b9a9._(
+          'missing_field');
+  static const invalid =
+      AgentTasksListTasksForRepoResponseErrorsItemCode8502b9a9._('invalid');
+  static const alreadyExists =
+      AgentTasksListTasksForRepoResponseErrorsItemCode8502b9a9._(
+          'already_exists');
+  static const unprocessable =
+      AgentTasksListTasksForRepoResponseErrorsItemCode8502b9a9._(
+          'unprocessable');
+  static const custom =
+      AgentTasksListTasksForRepoResponseErrorsItemCode8502b9a9._('custom');
 
   String toJson() => value;
 
@@ -262,30 +228,38 @@ final class WebhookWorkflowRunRequestedWorkflowRunStatus {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookWorkflowRunRequestedWorkflowRunStatus &&
+      other is AgentTasksListTasksForRepoResponseErrorsItemCode8502b9a9 &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhookWorkflowRunRequestedWorkflowRunTriggeringActorType {
+/// Machine-readable error code
+final class AgentTasksListTasksForRepoResponseErrorsItemCodec90f4e0b {
   final String value;
 
-  const WebhookWorkflowRunRequestedWorkflowRunTriggeringActorType._(this.value);
+  const AgentTasksListTasksForRepoResponseErrorsItemCodec90f4e0b._(this.value);
 
-  factory WebhookWorkflowRunRequestedWorkflowRunTriggeringActorType.fromJson(
+  factory AgentTasksListTasksForRepoResponseErrorsItemCodec90f4e0b.fromJson(
           String value) =>
-      WebhookWorkflowRunRequestedWorkflowRunTriggeringActorType._(value);
+      AgentTasksListTasksForRepoResponseErrorsItemCodec90f4e0b._(value);
 
-  static const bot =
-      WebhookWorkflowRunRequestedWorkflowRunTriggeringActorType._('Bot');
-  static const user =
-      WebhookWorkflowRunRequestedWorkflowRunTriggeringActorType._('User');
-  static const organization =
-      WebhookWorkflowRunRequestedWorkflowRunTriggeringActorType._(
-          'Organization');
+  static const missing =
+      AgentTasksListTasksForRepoResponseErrorsItemCodec90f4e0b._('missing');
+  static const missingField =
+      AgentTasksListTasksForRepoResponseErrorsItemCodec90f4e0b._(
+          'missing_field');
+  static const invalid =
+      AgentTasksListTasksForRepoResponseErrorsItemCodec90f4e0b._('invalid');
+  static const alreadyExists =
+      AgentTasksListTasksForRepoResponseErrorsItemCodec90f4e0b._(
+          'already_exists');
+  static const unprocessable =
+      AgentTasksListTasksForRepoResponseErrorsItemCodec90f4e0b._(
+          'unprocessable');
+  static const custom =
+      AgentTasksListTasksForRepoResponseErrorsItemCodec90f4e0b._('custom');
 
   String toJson() => value;
 
@@ -294,26 +268,38 @@ final class WebhookWorkflowRunRequestedWorkflowRunTriggeringActorType {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookWorkflowRunRequestedWorkflowRunTriggeringActorType &&
+      other is AgentTasksListTasksForRepoResponseErrorsItemCodec90f4e0b &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Required enumerated value serialized in the `state` wire field.
-final class WorkflowState {
+/// Machine-readable error code
+final class AgentTasksListTasksForRepoResponseErrorsItemCoded5362e73 {
   final String value;
 
-  const WorkflowState._(this.value);
+  const AgentTasksListTasksForRepoResponseErrorsItemCoded5362e73._(this.value);
 
-  factory WorkflowState.fromJson(String value) => WorkflowState._(value);
+  factory AgentTasksListTasksForRepoResponseErrorsItemCoded5362e73.fromJson(
+          String value) =>
+      AgentTasksListTasksForRepoResponseErrorsItemCoded5362e73._(value);
 
-  static const active = WorkflowState._('active');
-  static const deleted = WorkflowState._('deleted');
-  static const disabledFork = WorkflowState._('disabled_fork');
-  static const disabledInactivity = WorkflowState._('disabled_inactivity');
-  static const disabledManually = WorkflowState._('disabled_manually');
+  static const missing =
+      AgentTasksListTasksForRepoResponseErrorsItemCoded5362e73._('missing');
+  static const missingField =
+      AgentTasksListTasksForRepoResponseErrorsItemCoded5362e73._(
+          'missing_field');
+  static const invalid =
+      AgentTasksListTasksForRepoResponseErrorsItemCoded5362e73._('invalid');
+  static const alreadyExists =
+      AgentTasksListTasksForRepoResponseErrorsItemCoded5362e73._(
+          'already_exists');
+  static const unprocessable =
+      AgentTasksListTasksForRepoResponseErrorsItemCoded5362e73._(
+          'unprocessable');
+  static const custom =
+      AgentTasksListTasksForRepoResponseErrorsItemCoded5362e73._('custom');
 
   String toJson() => value;
 
@@ -322,57 +308,38 @@ final class WorkflowState {
 
   @override
   bool operator ==(Object other) =>
-      other is WorkflowState && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-final class SecurityAdvisoriesListGlobalAdvisoriesType {
-  final String value;
-
-  const SecurityAdvisoriesListGlobalAdvisoriesType._(this.value);
-
-  factory SecurityAdvisoriesListGlobalAdvisoriesType.fromJson(String value) =>
-      SecurityAdvisoriesListGlobalAdvisoriesType._(value);
-
-  static const reviewed =
-      SecurityAdvisoriesListGlobalAdvisoriesType._('reviewed');
-  static const malware =
-      SecurityAdvisoriesListGlobalAdvisoriesType._('malware');
-  static const unreviewed =
-      SecurityAdvisoriesListGlobalAdvisoriesType._('unreviewed');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is SecurityAdvisoriesListGlobalAdvisoriesType &&
+      other is AgentTasksListTasksForRepoResponseErrorsItemCoded5362e73 &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-final class SecurityAdvisoriesListGlobalAdvisoriesSort {
+/// Machine-readable error code
+final class AgentTasksListTasksForRepoResponseErrorsItemCode563cccfe {
   final String value;
 
-  const SecurityAdvisoriesListGlobalAdvisoriesSort._(this.value);
+  const AgentTasksListTasksForRepoResponseErrorsItemCode563cccfe._(this.value);
 
-  factory SecurityAdvisoriesListGlobalAdvisoriesSort.fromJson(String value) =>
-      SecurityAdvisoriesListGlobalAdvisoriesSort._(value);
+  factory AgentTasksListTasksForRepoResponseErrorsItemCode563cccfe.fromJson(
+          String value) =>
+      AgentTasksListTasksForRepoResponseErrorsItemCode563cccfe._(value);
 
-  static const updated =
-      SecurityAdvisoriesListGlobalAdvisoriesSort._('updated');
-  static const published =
-      SecurityAdvisoriesListGlobalAdvisoriesSort._('published');
-  static const epssPercentage =
-      SecurityAdvisoriesListGlobalAdvisoriesSort._('epss_percentage');
-  static const epssPercentile =
-      SecurityAdvisoriesListGlobalAdvisoriesSort._('epss_percentile');
+  static const missing =
+      AgentTasksListTasksForRepoResponseErrorsItemCode563cccfe._('missing');
+  static const missingField =
+      AgentTasksListTasksForRepoResponseErrorsItemCode563cccfe._(
+          'missing_field');
+  static const invalid =
+      AgentTasksListTasksForRepoResponseErrorsItemCode563cccfe._('invalid');
+  static const alreadyExists =
+      AgentTasksListTasksForRepoResponseErrorsItemCode563cccfe._(
+          'already_exists');
+  static const unprocessable =
+      AgentTasksListTasksForRepoResponseErrorsItemCode563cccfe._(
+          'unprocessable');
+  static const custom =
+      AgentTasksListTasksForRepoResponseErrorsItemCode563cccfe._('custom');
 
   String toJson() => value;
 
@@ -381,7 +348,63 @@ final class SecurityAdvisoriesListGlobalAdvisoriesSort {
 
   @override
   bool operator ==(Object other) =>
-      other is SecurityAdvisoriesListGlobalAdvisoriesSort &&
+      other is AgentTasksListTasksForRepoResponseErrorsItemCode563cccfe &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Provider namespace
+final class AgentTasksCreateTaskInRepoResponseArtifactsItemProvider {
+  final String value;
+
+  const AgentTasksCreateTaskInRepoResponseArtifactsItemProvider._(this.value);
+
+  factory AgentTasksCreateTaskInRepoResponseArtifactsItemProvider.fromJson(
+          String value) =>
+      AgentTasksCreateTaskInRepoResponseArtifactsItemProvider._(value);
+
+  static const github =
+      AgentTasksCreateTaskInRepoResponseArtifactsItemProvider._('github');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is AgentTasksCreateTaskInRepoResponseArtifactsItemProvider &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Type of artifact. Available Values: `pull`, `branch`.
+final class AgentTasksCreateTaskInRepoResponseArtifactsItemType {
+  final String value;
+
+  const AgentTasksCreateTaskInRepoResponseArtifactsItemType._(this.value);
+
+  factory AgentTasksCreateTaskInRepoResponseArtifactsItemType.fromJson(
+          String value) =>
+      AgentTasksCreateTaskInRepoResponseArtifactsItemType._(value);
+
+  static const pull =
+      AgentTasksCreateTaskInRepoResponseArtifactsItemType._('pull');
+  static const branch =
+      AgentTasksCreateTaskInRepoResponseArtifactsItemType._('branch');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is AgentTasksCreateTaskInRepoResponseArtifactsItemType &&
       other.value == value;
 
   @override

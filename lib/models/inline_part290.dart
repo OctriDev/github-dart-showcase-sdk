@@ -4,373 +4,460 @@
 part of 'inline.dart';
 
 // Inline operation models (part 290)
-final class ReposListForAuthenticatedUserVisibility {
-  final String value;
+class AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestLabeled {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
 
-  const ReposListForAuthenticatedUserVisibility._(this.value);
+  /// A GitHub issue or pull request search query.
+  final SdkOptional<String> query;
 
-  factory ReposListForAuthenticatedUserVisibility.fromJson(String value) =>
-      ReposListForAuthenticatedUserVisibility._(value);
+  /// Gitignore-style changed-file path globs.
+  final SdkOptional<List<String>> paths;
 
-  static const all = ReposListForAuthenticatedUserVisibility._('all');
-  static const public = ReposListForAuthenticatedUserVisibility._('public');
-  static const private = ReposListForAuthenticatedUserVisibility._('private');
+  /// Label names matched case-insensitively against the label added by the event. Omit or use an empty array to match every added label.
+  final SdkOptional<List<String>> labels;
 
-  String toJson() => value;
+  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+  final SdkOptional<
+          AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestLabeledWriteScope>
+      writeScope;
 
-  @override
-  String toString() => value.toString();
+  const AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestLabeled(
+      {this.query = const SdkOmitted(),
+      this.paths = const SdkOmitted(),
+      this.labels = const SdkOmitted(),
+      this.writeScope = const SdkOmitted()});
 
-  @override
-  bool operator ==(Object other) =>
-      other is ReposListForAuthenticatedUserVisibility && other.value == value;
+  AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestLabeled Function(
+      {SdkOptional<String> query,
+      SdkOptional<List<String>> paths,
+      SdkOptional<List<String>> labels,
+      SdkOptional<
+              AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestLabeledWriteScope>
+          writeScope}) get copyWith => _copyWith;
 
-  @override
-  int get hashCode => value.hashCode;
+  AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestLabeled
+      _copyWith(
+              {Object? query = sdkOmittedValue,
+              Object? paths = sdkOmittedValue,
+              Object? labels = sdkOmittedValue,
+              Object? writeScope = sdkOmittedValue}) =>
+          AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestLabeled(
+            query: identical(query, sdkOmittedValue)
+                ? this.query
+                : query as SdkOptional<String>,
+            paths: identical(paths, sdkOmittedValue)
+                ? this.paths
+                : paths as SdkOptional<List<String>>,
+            labels: identical(labels, sdkOmittedValue)
+                ? this.labels
+                : labels as SdkOptional<List<String>>,
+            writeScope: identical(writeScope, sdkOmittedValue)
+                ? this.writeScope
+                : writeScope as SdkOptional<
+                    AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestLabeledWriteScope>,
+          );
+
+  factory AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestLabeled.fromJson(
+          Map<String, dynamic> json) =>
+      AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestLabeled(
+        query: json['query'] != null
+            ? SdkPresent((json['query'] as String?)!)
+            : const SdkOmitted(),
+        paths: json['paths'] != null
+            ? SdkPresent(
+                ((json['paths'] as List?)?.map((e) => e as String).toList())!)
+            : const SdkOmitted(),
+        labels: json['labels'] != null
+            ? SdkPresent(
+                ((json['labels'] as List?)?.map((e) => e as String).toList())!)
+            : const SdkOmitted(),
+        writeScope: json['write_scope'] != null
+            ? SdkPresent((json['write_scope'] != null
+                ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestLabeledWriteScope
+                    .fromJson(json['write_scope'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (query) {
+          SdkPresent<String>(value: final value) => {
+              'query': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (paths) {
+          SdkPresent<List<String>>(value: final value) => {
+              'paths': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (labels) {
+          SdkPresent<List<String>>(value: final value) => {
+              'labels': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (writeScope) {
+          SdkPresent<
+                AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestLabeledWriteScope>(
+            value: final value
+          ) =>
+            {
+              'write_scope': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
-final class ReposListForAuthenticatedUserType {
-  final String value;
+class AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestMergeConflict {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
 
-  const ReposListForAuthenticatedUserType._(this.value);
+  /// A GitHub issue or pull request search query.
+  final SdkOptional<String> query;
 
-  factory ReposListForAuthenticatedUserType.fromJson(String value) =>
-      ReposListForAuthenticatedUserType._(value);
+  /// Gitignore-style changed-file path globs.
+  final SdkOptional<List<String>> paths;
 
-  static const all = ReposListForAuthenticatedUserType._('all');
-  static const owner = ReposListForAuthenticatedUserType._('owner');
-  static const public = ReposListForAuthenticatedUserType._('public');
-  static const private = ReposListForAuthenticatedUserType._('private');
-  static const member = ReposListForAuthenticatedUserType._('member');
+  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+  final SdkOptional<
+          AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestMergeConflictWriteScope>
+      writeScope;
 
-  String toJson() => value;
+  const AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestMergeConflict(
+      {this.query = const SdkOmitted(),
+      this.paths = const SdkOmitted(),
+      this.writeScope = const SdkOmitted()});
 
-  @override
-  String toString() => value.toString();
+  AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestMergeConflict Function(
+      {SdkOptional<String> query,
+      SdkOptional<List<String>> paths,
+      SdkOptional<
+              AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestMergeConflictWriteScope>
+          writeScope}) get copyWith => _copyWith;
 
-  @override
-  bool operator ==(Object other) =>
-      other is ReposListForAuthenticatedUserType && other.value == value;
+  AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestMergeConflict
+      _copyWith(
+              {Object? query = sdkOmittedValue,
+              Object? paths = sdkOmittedValue,
+              Object? writeScope = sdkOmittedValue}) =>
+          AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestMergeConflict(
+            query: identical(query, sdkOmittedValue)
+                ? this.query
+                : query as SdkOptional<String>,
+            paths: identical(paths, sdkOmittedValue)
+                ? this.paths
+                : paths as SdkOptional<List<String>>,
+            writeScope: identical(writeScope, sdkOmittedValue)
+                ? this.writeScope
+                : writeScope as SdkOptional<
+                    AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestMergeConflictWriteScope>,
+          );
 
-  @override
-  int get hashCode => value.hashCode;
+  factory AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestMergeConflict.fromJson(
+          Map<String, dynamic> json) =>
+      AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestMergeConflict(
+        query: json['query'] != null
+            ? SdkPresent((json['query'] as String?)!)
+            : const SdkOmitted(),
+        paths: json['paths'] != null
+            ? SdkPresent(
+                ((json['paths'] as List?)?.map((e) => e as String).toList())!)
+            : const SdkOmitted(),
+        writeScope: json['write_scope'] != null
+            ? SdkPresent((json['write_scope'] != null
+                ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestMergeConflictWriteScope
+                    .fromJson(json['write_scope'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (query) {
+          SdkPresent<String>(value: final value) => {
+              'query': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (paths) {
+          SdkPresent<List<String>>(value: final value) => {
+              'paths': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (writeScope) {
+          SdkPresent<
+                AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestMergeConflictWriteScope>(
+            value: final value
+          ) =>
+            {
+              'write_scope': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
-final class ReposListForAuthenticatedUserSort {
-  final String value;
+class AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewSubmitted {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
 
-  const ReposListForAuthenticatedUserSort._(this.value);
+  /// A GitHub issue or pull request search query.
+  final SdkOptional<String> query;
 
-  factory ReposListForAuthenticatedUserSort.fromJson(String value) =>
-      ReposListForAuthenticatedUserSort._(value);
+  /// Gitignore-style changed-file path globs.
+  final SdkOptional<List<String>> paths;
 
-  static const created = ReposListForAuthenticatedUserSort._('created');
-  static const updated = ReposListForAuthenticatedUserSort._('updated');
-  static const pushed = ReposListForAuthenticatedUserSort._('pushed');
-  static const fullName = ReposListForAuthenticatedUserSort._('full_name');
+  /// Submitted review states to match.
+  final List<
+          AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewSubmittedStatesItem>
+      states;
 
-  String toJson() => value;
+  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+  final SdkOptional<
+          AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewSubmittedWriteScope>
+      writeScope;
 
-  @override
-  String toString() => value.toString();
+  const AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewSubmitted(
+      {this.query = const SdkOmitted(),
+      this.paths = const SdkOmitted(),
+      required this.states,
+      this.writeScope = const SdkOmitted()});
 
-  @override
-  bool operator ==(Object other) =>
-      other is ReposListForAuthenticatedUserSort && other.value == value;
+  AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewSubmitted Function(
+      {SdkOptional<String> query,
+      SdkOptional<List<String>> paths,
+      List<AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewSubmittedStatesItem>
+          states,
+      SdkOptional<
+              AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewSubmittedWriteScope>
+          writeScope}) get copyWith => _copyWith;
 
-  @override
-  int get hashCode => value.hashCode;
+  AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewSubmitted
+      _copyWith(
+              {Object? query = sdkOmittedValue,
+              Object? paths = sdkOmittedValue,
+              Object? states = sdkOmittedValue,
+              Object? writeScope = sdkOmittedValue}) =>
+          AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewSubmitted(
+            query: identical(query, sdkOmittedValue)
+                ? this.query
+                : query as SdkOptional<String>,
+            paths: identical(paths, sdkOmittedValue)
+                ? this.paths
+                : paths as SdkOptional<List<String>>,
+            states: identical(states, sdkOmittedValue)
+                ? this.states
+                : states as List<
+                    AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewSubmittedStatesItem>,
+            writeScope: identical(writeScope, sdkOmittedValue)
+                ? this.writeScope
+                : writeScope as SdkOptional<
+                    AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewSubmittedWriteScope>,
+          );
+
+  factory AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewSubmitted.fromJson(
+          Map<String, dynamic> json) =>
+      AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewSubmitted(
+        query: json['query'] != null
+            ? SdkPresent((json['query'] as String?)!)
+            : const SdkOmitted(),
+        paths: json['paths'] != null
+            ? SdkPresent(
+                ((json['paths'] as List?)?.map((e) => e as String).toList())!)
+            : const SdkOmitted(),
+        states: ((json['states'] as List?)
+            ?.map((e) =>
+                AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewSubmittedStatesItem
+                    .fromJson(e as String))
+            .toList())!,
+        writeScope: json['write_scope'] != null
+            ? SdkPresent((json['write_scope'] != null
+                ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewSubmittedWriteScope
+                    .fromJson(json['write_scope'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (query) {
+          SdkPresent<String>(value: final value) => {
+              'query': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (paths) {
+          SdkPresent<List<String>>(value: final value) => {
+              'paths': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'states': states.map((item) => item.toJson()).toList(),
+        ...switch (writeScope) {
+          SdkPresent<
+                AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewSubmittedWriteScope>(
+            value: final value
+          ) =>
+            {
+              'write_scope': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
-final class ReposListForAuthenticatedUserDirection {
-  final String value;
+class AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewRequested {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
 
-  const ReposListForAuthenticatedUserDirection._(this.value);
+  /// A GitHub issue or pull request search query.
+  final SdkOptional<String> query;
 
-  factory ReposListForAuthenticatedUserDirection.fromJson(String value) =>
-      ReposListForAuthenticatedUserDirection._(value);
+  /// Gitignore-style changed-file path globs.
+  final SdkOptional<List<String>> paths;
 
-  static const asc = ReposListForAuthenticatedUserDirection._('asc');
-  static const desc = ReposListForAuthenticatedUserDirection._('desc');
+  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+  final SdkOptional<
+          AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewRequestedWriteScope>
+      writeScope;
 
-  String toJson() => value;
+  const AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewRequested(
+      {this.query = const SdkOmitted(),
+      this.paths = const SdkOmitted(),
+      this.writeScope = const SdkOmitted()});
 
-  @override
-  String toString() => value.toString();
+  AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewRequested Function(
+      {SdkOptional<String> query,
+      SdkOptional<List<String>> paths,
+      SdkOptional<
+              AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewRequestedWriteScope>
+          writeScope}) get copyWith => _copyWith;
 
-  @override
-  bool operator ==(Object other) =>
-      other is ReposListForAuthenticatedUserDirection && other.value == value;
+  AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewRequested
+      _copyWith(
+              {Object? query = sdkOmittedValue,
+              Object? paths = sdkOmittedValue,
+              Object? writeScope = sdkOmittedValue}) =>
+          AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewRequested(
+            query: identical(query, sdkOmittedValue)
+                ? this.query
+                : query as SdkOptional<String>,
+            paths: identical(paths, sdkOmittedValue)
+                ? this.paths
+                : paths as SdkOptional<List<String>>,
+            writeScope: identical(writeScope, sdkOmittedValue)
+                ? this.writeScope
+                : writeScope as SdkOptional<
+                    AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewRequestedWriteScope>,
+          );
 
-  @override
-  int get hashCode => value.hashCode;
+  factory AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewRequested.fromJson(
+          Map<String, dynamic> json) =>
+      AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewRequested(
+        query: json['query'] != null
+            ? SdkPresent((json['query'] as String?)!)
+            : const SdkOmitted(),
+        paths: json['paths'] != null
+            ? SdkPresent(
+                ((json['paths'] as List?)?.map((e) => e as String).toList())!)
+            : const SdkOmitted(),
+        writeScope: json['write_scope'] != null
+            ? SdkPresent((json['write_scope'] != null
+                ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewRequestedWriteScope
+                    .fromJson(json['write_scope'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (query) {
+          SdkPresent<String>(value: final value) => {
+              'query': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (paths) {
+          SdkPresent<List<String>>(value: final value) => {
+              'paths': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (writeScope) {
+          SdkPresent<
+                AgentAutomationsCreateRepoAutomationRequestBodyTriggersPullRequestReviewRequestedWriteScope>(
+            value: final value
+          ) =>
+            {
+              'write_scope': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
-/// The default value for a merge commit message. - `PR_TITLE` - default to the pull request's title. - `PR_BODY` - default to the pull request's body. - `BLANK` - default to a blank commit message.
-final class ReposCreateForAuthenticatedUserRequestBodyMergeCommitMessage {
-  final String value;
+class AgentAutomationsCreateRepoAutomationRequestBodyTriggersAutomationCompleted {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
 
-  const ReposCreateForAuthenticatedUserRequestBodyMergeCommitMessage._(
-      this.value);
+  /// Upstream Automation IDs in the same repository.
+  final List<String> automationIds;
 
-  factory ReposCreateForAuthenticatedUserRequestBodyMergeCommitMessage.fromJson(
-          String value) =>
-      ReposCreateForAuthenticatedUserRequestBodyMergeCommitMessage._(value);
+  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+  final SdkOptional<
+          AgentAutomationsCreateRepoAutomationRequestBodyTriggersAutomationCompletedWriteScope>
+      writeScope;
 
-  static const prBody =
-      ReposCreateForAuthenticatedUserRequestBodyMergeCommitMessage._('PR_BODY');
-  static const prTitle =
-      ReposCreateForAuthenticatedUserRequestBodyMergeCommitMessage._(
-          'PR_TITLE');
-  static const blank =
-      ReposCreateForAuthenticatedUserRequestBodyMergeCommitMessage._('BLANK');
+  const AgentAutomationsCreateRepoAutomationRequestBodyTriggersAutomationCompleted(
+      {required this.automationIds, this.writeScope = const SdkOmitted()});
 
-  String toJson() => value;
+  AgentAutomationsCreateRepoAutomationRequestBodyTriggersAutomationCompleted Function(
+      {List<String> automationIds,
+      SdkOptional<
+              AgentAutomationsCreateRepoAutomationRequestBodyTriggersAutomationCompletedWriteScope>
+          writeScope}) get copyWith => _copyWith;
 
-  @override
-  String toString() => value.toString();
+  AgentAutomationsCreateRepoAutomationRequestBodyTriggersAutomationCompleted
+      _copyWith(
+              {Object? automationIds = sdkOmittedValue,
+              Object? writeScope = sdkOmittedValue}) =>
+          AgentAutomationsCreateRepoAutomationRequestBodyTriggersAutomationCompleted(
+            automationIds: identical(automationIds, sdkOmittedValue)
+                ? this.automationIds
+                : automationIds as List<String>,
+            writeScope: identical(writeScope, sdkOmittedValue)
+                ? this.writeScope
+                : writeScope as SdkOptional<
+                    AgentAutomationsCreateRepoAutomationRequestBodyTriggersAutomationCompletedWriteScope>,
+          );
 
-  @override
-  bool operator ==(Object other) =>
-      other is ReposCreateForAuthenticatedUserRequestBodyMergeCommitMessage &&
-      other.value == value;
+  factory AgentAutomationsCreateRepoAutomationRequestBodyTriggersAutomationCompleted.fromJson(
+          Map<String, dynamic> json) =>
+      AgentAutomationsCreateRepoAutomationRequestBodyTriggersAutomationCompleted(
+        automationIds: ((json['automation_ids'] as List?)
+            ?.map((e) => e as String)
+            .toList())!,
+        writeScope: json['write_scope'] != null
+            ? SdkPresent((json['write_scope'] != null
+                ? AgentAutomationsCreateRepoAutomationRequestBodyTriggersAutomationCompletedWriteScope
+                    .fromJson(json['write_scope'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required when using `merge_commit_message`. The default value for a merge commit title. - `PR_TITLE` - default to the pull request's title. - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
-final class ReposCreateForAuthenticatedUserRequestBodyMergeCommitTitle {
-  final String value;
-
-  const ReposCreateForAuthenticatedUserRequestBodyMergeCommitTitle._(
-      this.value);
-
-  factory ReposCreateForAuthenticatedUserRequestBodyMergeCommitTitle.fromJson(
-          String value) =>
-      ReposCreateForAuthenticatedUserRequestBodyMergeCommitTitle._(value);
-
-  static const prTitle =
-      ReposCreateForAuthenticatedUserRequestBodyMergeCommitTitle._('PR_TITLE');
-  static const mergeMessage =
-      ReposCreateForAuthenticatedUserRequestBodyMergeCommitTitle._(
-          'MERGE_MESSAGE');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is ReposCreateForAuthenticatedUserRequestBodyMergeCommitTitle &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The default value for a squash merge commit message: - `PR_BODY` - default to the pull request's body. - `COMMIT_MESSAGES` - default to the branch's commit messages. - `BLANK` - default to a blank commit message.
-final class ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitMessage {
-  final String value;
-
-  const ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitMessage._(
-      this.value);
-
-  factory ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitMessage.fromJson(
-          String value) =>
-      ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitMessage._(
-          value);
-
-  static const prBody =
-      ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitMessage._(
-          'PR_BODY');
-  static const commitMessages =
-      ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitMessage._(
-          'COMMIT_MESSAGES');
-  static const blank =
-      ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitMessage._(
-          'BLANK');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitMessage &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required when using `squash_merge_commit_message`. The default value for a squash merge commit title: - `PR_TITLE` - default to the pull request's title. - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
-final class ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitTitle {
-  final String value;
-
-  const ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitTitle._(
-      this.value);
-
-  factory ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitTitle.fromJson(
-          String value) =>
-      ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitTitle._(value);
-
-  static const prTitle =
-      ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitTitle._(
-          'PR_TITLE');
-  static const commitOrPrTitle =
-      ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitTitle._(
-          'COMMIT_OR_PR_TITLE');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitTitle &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The layout of the view.
-final class ProjectsCreateViewForUserRequestBodyLayout {
-  final String value;
-
-  const ProjectsCreateViewForUserRequestBodyLayout._(this.value);
-
-  factory ProjectsCreateViewForUserRequestBodyLayout.fromJson(String value) =>
-      ProjectsCreateViewForUserRequestBodyLayout._(value);
-
-  static const table = ProjectsCreateViewForUserRequestBodyLayout._('table');
-  static const board = ProjectsCreateViewForUserRequestBodyLayout._('board');
-  static const roadmap =
-      ProjectsCreateViewForUserRequestBodyLayout._('roadmap');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is ProjectsCreateViewForUserRequestBodyLayout &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The base role that determines default permissions for the space. - `no_access`: No default access (default) - `reader`: Makes the space publicly readable Note: User spaces do not support writer or admin base roles.
-final class CopilotSpacesCreateForUserRequestBodyBaseRole {
-  final String value;
-
-  const CopilotSpacesCreateForUserRequestBodyBaseRole._(this.value);
-
-  factory CopilotSpacesCreateForUserRequestBodyBaseRole.fromJson(
-          String value) =>
-      CopilotSpacesCreateForUserRequestBodyBaseRole._(value);
-
-  static const reader =
-      CopilotSpacesCreateForUserRequestBodyBaseRole._('reader');
-  static const noAccess =
-      CopilotSpacesCreateForUserRequestBodyBaseRole._('no_access');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is CopilotSpacesCreateForUserRequestBodyBaseRole &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The type of resource.
-final class CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemResourceType {
-  final String value;
-
-  const CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemResourceType._(
-      this.value);
-
-  factory CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemResourceType.fromJson(
-          String value) =>
-      CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemResourceType
-          ._(value);
-
-  static const repository =
-      CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemResourceType
-          ._('repository');
-  static const githubFile =
-      CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemResourceType
-          ._('github_file');
-  static const freeText =
-      CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemResourceType
-          ._('free_text');
-  static const githubIssue =
-      CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemResourceType
-          ._('github_issue');
-  static const githubPullRequest =
-      CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemResourceType
-          ._('github_pull_request');
-  static const mediaContent =
-      CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemResourceType
-          ._('media_content');
-  static const uploadedTextFile =
-      CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemResourceType
-          ._('uploaded_text_file');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemResourceType &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The base role that determines default permissions for the space. Changing this field requires admin permissions. - `no_access`: No default access (default) - `reader`: Makes the space publicly readable Note: User spaces do not support writer or admin base roles.
-final class CopilotSpacesUpdateForUserRequestBodyBaseRole {
-  final String value;
-
-  const CopilotSpacesUpdateForUserRequestBodyBaseRole._(this.value);
-
-  factory CopilotSpacesUpdateForUserRequestBodyBaseRole.fromJson(
-          String value) =>
-      CopilotSpacesUpdateForUserRequestBodyBaseRole._(value);
-
-  static const reader =
-      CopilotSpacesUpdateForUserRequestBodyBaseRole._('reader');
-  static const noAccess =
-      CopilotSpacesUpdateForUserRequestBodyBaseRole._('no_access');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is CopilotSpacesUpdateForUserRequestBodyBaseRole &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
+  Map<String, dynamic> toJson() => {
+        'automation_ids': automationIds,
+        ...switch (writeScope) {
+          SdkPresent<
+                AgentAutomationsCreateRepoAutomationRequestBodyTriggersAutomationCompletedWriteScope>(
+            value: final value
+          ) =>
+            {
+              'write_scope': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

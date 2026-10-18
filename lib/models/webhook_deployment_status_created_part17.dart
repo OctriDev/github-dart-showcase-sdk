@@ -4,334 +4,549 @@
 part of 'webhook_deployment_status_created.dart';
 
 // webhook_deployment_status_created domain models (part 17)
-/// Required object value serialized in the `repo` wire field.
-class WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBaseRepo {
+/// Optional object value serialized in the `workflow_run` wire field.
+class WebhookDeploymentStatusCreatedWorkflowRun {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
+  /// Required object value serialized in the `actor` wire field.
+  final WebhookDeploymentStatusCreatedWorkflowRunActor? actor;
+
+  /// Optional `string` value serialized in the `artifacts_url` wire field.
+  final SdkOptional<String> artifactsUrl;
+
+  /// Optional `string` value serialized in the `cancel_url` wire field.
+  final SdkOptional<String> cancelUrl;
+
+  /// Required `integer` value serialized in the `check_suite_id` wire field.
+  final int checkSuiteId;
+
+  /// Required `string` value serialized in the `check_suite_node_id` wire field.
+  final String checkSuiteNodeId;
+
+  /// Optional `string` value serialized in the `check_suite_url` wire field.
+  final SdkOptional<String> checkSuiteUrl;
+
+  /// Required enumerated value serialized in the `conclusion` wire field.
+  final WebhookDeploymentStatusCreatedWorkflowRunConclusion? conclusion;
+
+  /// Required `date-time`-formatted value serialized in the `created_at` wire field.
+  final String createdAt;
+
+  /// Required `string` value serialized in the `display_title` wire field.
+  final String displayTitle;
+
+  /// Required `string` value serialized in the `event` wire field.
+  final String event;
+
+  /// Required `string` value serialized in the `head_branch` wire field.
+  final String headBranch;
+
+  /// Optional API value serialized in the `head_commit` wire field.
+  final SdkOptional<dynamic> headCommit;
+
+  /// Optional object value serialized in the `head_repository` wire field.
+  final SdkOptional<WebhookDeploymentStatusCreatedWorkflowRunHeadRepository>
+      headRepository;
+
+  /// Required `string` value serialized in the `head_sha` wire field.
+  final String headSha;
+
+  /// Required `uri`-formatted value serialized in the `html_url` wire field.
+  final String htmlUrl;
+
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
+
+  /// Optional `string` value serialized in the `jobs_url` wire field.
+  final SdkOptional<String> jobsUrl;
+
+  /// Optional `string` value serialized in the `logs_url` wire field.
+  final SdkOptional<String> logsUrl;
 
   /// Required `string` value serialized in the `name` wire field.
   final String name;
 
-  /// Required `uri`-formatted value serialized in the `url` wire field.
-  final String url;
-
-  const WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBaseRepo(
-      {required this.id, required this.name, required this.url});
-
-  WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBaseRepo Function(
-      {int id, String name, String url}) get copyWith => _copyWith;
-
-  WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBaseRepo _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? url = sdkOmittedValue}) =>
-      WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBaseRepo(
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-      );
-
-  factory WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBaseRepo.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBaseRepo(
-        id: ((json['id'] as num?)?.toInt())!,
-        name: (json['name'] as String?)!,
-        url: (json['url'] as String?)!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'id': id,
-        'name': name,
-        'url': url,
-      };
-}
-
-/// Required object value serialized in the `base` wire field.
-class WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBase {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Required `string` value serialized in the `ref` wire field.
-  final String ref;
-
-  /// Required object value serialized in the `repo` wire field.
-  final WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBaseRepo repo;
-
-  /// Required `string` value serialized in the `sha` wire field.
-  final String sha;
-
-  const WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBase(
-      {required this.ref, required this.repo, required this.sha});
-
-  WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBase Function(
-      {String ref,
-      WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBaseRepo repo,
-      String sha}) get copyWith => _copyWith;
-
-  WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBase _copyWith(
-          {Object? ref = sdkOmittedValue,
-          Object? repo = sdkOmittedValue,
-          Object? sha = sdkOmittedValue}) =>
-      WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBase(
-        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-        repo: identical(repo, sdkOmittedValue)
-            ? this.repo
-            : repo
-                as WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBaseRepo,
-        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-      );
-
-  factory WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBase.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBase(
-        ref: (json['ref'] as String?)!,
-        repo: (json['repo'] != null
-            ? WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBaseRepo
-                .fromJson(json['repo'] as Map<String, dynamic>)
-            : null)!,
-        sha: (json['sha'] as String?)!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'ref': ref,
-        'repo': repo.toJson(),
-        'sha': sha,
-      };
-}
-
-/// Required object value serialized in the `repo` wire field.
-class WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHeadRepo {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Required `integer` value serialized in the `id` wire field.
-  final int id;
-
-  /// Required `string` value serialized in the `name` wire field.
-  final String name;
-
-  /// Required `uri`-formatted value serialized in the `url` wire field.
-  final String url;
-
-  const WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHeadRepo(
-      {required this.id, required this.name, required this.url});
-
-  WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHeadRepo Function(
-      {int id, String name, String url}) get copyWith => _copyWith;
-
-  WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHeadRepo _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? url = sdkOmittedValue}) =>
-      WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHeadRepo(
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-      );
-
-  factory WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHeadRepo.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHeadRepo(
-        id: ((json['id'] as num?)?.toInt())!,
-        name: (json['name'] as String?)!,
-        url: (json['url'] as String?)!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'id': id,
-        'name': name,
-        'url': url,
-      };
-}
-
-/// Required object value serialized in the `head` wire field.
-class WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHead {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Required `string` value serialized in the `ref` wire field.
-  final String ref;
-
-  /// Required object value serialized in the `repo` wire field.
-  final WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHeadRepo repo;
-
-  /// Required `string` value serialized in the `sha` wire field.
-  final String sha;
-
-  const WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHead(
-      {required this.ref, required this.repo, required this.sha});
-
-  WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHead Function(
-      {String ref,
-      WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHeadRepo repo,
-      String sha}) get copyWith => _copyWith;
-
-  WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHead _copyWith(
-          {Object? ref = sdkOmittedValue,
-          Object? repo = sdkOmittedValue,
-          Object? sha = sdkOmittedValue}) =>
-      WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHead(
-        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-        repo: identical(repo, sdkOmittedValue)
-            ? this.repo
-            : repo
-                as WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHeadRepo,
-        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-      );
-
-  factory WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHead.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHead(
-        ref: (json['ref'] as String?)!,
-        repo: (json['repo'] != null
-            ? WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHeadRepo
-                .fromJson(json['repo'] as Map<String, dynamic>)
-            : null)!,
-        sha: (json['sha'] as String?)!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'ref': ref,
-        'repo': repo.toJson(),
-        'sha': sha,
-      };
-}
-
-/// Required object value serialized in the `pull_requests[]` wire field.
-class WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItem {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Required object value serialized in the `base` wire field.
-  final WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBase base_;
-
-  /// Required object value serialized in the `head` wire field.
-  final WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHead head;
-
-  /// Required `integer` value serialized in the `id` wire field.
-  final int id;
-
-  /// Required `integer` value serialized in the `number` wire field.
-  final int number;
-
-  /// Required `uri`-formatted value serialized in the `url` wire field.
-  final String url;
-
-  const WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItem(
-      {required this.base_,
-      required this.head,
-      required this.id,
-      required this.number,
-      required this.url});
-
-  WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItem Function(
-      {WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBase base_,
-      WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHead head,
-      int id,
-      int number,
-      String url}) get copyWith => _copyWith;
-
-  WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItem _copyWith(
-          {Object? base_ = sdkOmittedValue,
-          Object? head = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? number = sdkOmittedValue,
-          Object? url = sdkOmittedValue}) =>
-      WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItem(
-        base_: identical(base_, sdkOmittedValue)
-            ? this.base_
-            : base_
-                as WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBase,
-        head: identical(head, sdkOmittedValue)
-            ? this.head
-            : head
-                as WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHead,
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        number:
-            identical(number, sdkOmittedValue) ? this.number : number as int,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-      );
-
-  factory WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItem.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItem(
-        base_: (json['base'] != null
-            ? WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemBase
-                .fromJson(json['base'] as Map<String, dynamic>)
-            : null)!,
-        head: (json['head'] != null
-            ? WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItemHead
-                .fromJson(json['head'] as Map<String, dynamic>)
-            : null)!,
-        id: ((json['id'] as num?)?.toInt())!,
-        number: ((json['number'] as num?)?.toInt())!,
-        url: (json['url'] as String?)!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'base': base_.toJson(),
-        'head': head.toJson(),
-        'id': id,
-        'number': number,
-        'url': url,
-      };
-}
-
-/// Required object value serialized in the `referenced_workflows[]` wire field.
-class WebhookDeploymentStatusCreatedWorkflowRunReferencedWorkflowsItem {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
+  /// Required `string` value serialized in the `node_id` wire field.
+  final String nodeId;
 
   /// Required `string` value serialized in the `path` wire field.
   final String path;
 
-  /// Optional `string` value serialized in the `ref` wire field.
-  final SdkOptional<String> ref;
+  /// Optional API value serialized in the `previous_attempt_url` wire field.
+  final SdkOptional<dynamic> previousAttemptUrl;
 
-  /// Required `string` value serialized in the `sha` wire field.
-  final String sha;
+  /// Required array value serialized in the `pull_requests` wire field.
+  final List<WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItem>
+      pullRequests;
 
-  const WebhookDeploymentStatusCreatedWorkflowRunReferencedWorkflowsItem(
-      {required this.path, this.ref = const SdkOmitted(), required this.sha});
+  /// Optional array value serialized in the `referenced_workflows` wire field.
+  final SdkOptional<
+          List<
+              WebhookDeploymentStatusCreatedWorkflowRunReferencedWorkflowsItem>?>
+      referencedWorkflows;
 
-  WebhookDeploymentStatusCreatedWorkflowRunReferencedWorkflowsItem Function(
-      {String path,
-      SdkOptional<String> ref,
-      String sha}) get copyWith => _copyWith;
+  /// Optional object value serialized in the `repository` wire field.
+  final SdkOptional<WebhookDeploymentStatusCreatedWorkflowRunRepository>
+      repository;
 
-  WebhookDeploymentStatusCreatedWorkflowRunReferencedWorkflowsItem _copyWith(
-          {Object? path = sdkOmittedValue,
-          Object? ref = sdkOmittedValue,
-          Object? sha = sdkOmittedValue}) =>
-      WebhookDeploymentStatusCreatedWorkflowRunReferencedWorkflowsItem(
+  /// Optional `string` value serialized in the `rerun_url` wire field.
+  final SdkOptional<String> rerunUrl;
+
+  /// Required `integer` value serialized in the `run_attempt` wire field.
+  final int runAttempt;
+
+  /// Required `integer` value serialized in the `run_number` wire field.
+  final int runNumber;
+
+  /// Required `date-time`-formatted value serialized in the `run_started_at` wire field.
+  final String runStartedAt;
+
+  /// Required enumerated value serialized in the `status` wire field.
+  final WebhookDeploymentStatusCreatedWorkflowRunStatus status;
+
+  /// Required object value serialized in the `triggering_actor` wire field.
+  final WebhookDeploymentStatusCreatedWorkflowRunTriggeringActor?
+      triggeringActor;
+
+  /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
+  final String updatedAt;
+
+  /// Required `uri`-formatted value serialized in the `url` wire field.
+  final String url;
+
+  /// Required `integer` value serialized in the `workflow_id` wire field.
+  final int workflowId;
+
+  /// Optional `string` value serialized in the `workflow_url` wire field.
+  final SdkOptional<String> workflowUrl;
+
+  const WebhookDeploymentStatusCreatedWorkflowRun(
+      {required this.actor,
+      this.artifactsUrl = const SdkOmitted(),
+      this.cancelUrl = const SdkOmitted(),
+      required this.checkSuiteId,
+      required this.checkSuiteNodeId,
+      this.checkSuiteUrl = const SdkOmitted(),
+      required this.conclusion,
+      required this.createdAt,
+      required this.displayTitle,
+      required this.event,
+      required this.headBranch,
+      this.headCommit = const SdkOmitted(),
+      this.headRepository = const SdkOmitted(),
+      required this.headSha,
+      required this.htmlUrl,
+      required this.id,
+      this.jobsUrl = const SdkOmitted(),
+      this.logsUrl = const SdkOmitted(),
+      required this.name,
+      required this.nodeId,
+      required this.path,
+      this.previousAttemptUrl = const SdkOmitted(),
+      required this.pullRequests,
+      this.referencedWorkflows = const SdkOmitted(),
+      this.repository = const SdkOmitted(),
+      this.rerunUrl = const SdkOmitted(),
+      required this.runAttempt,
+      required this.runNumber,
+      required this.runStartedAt,
+      required this.status,
+      required this.triggeringActor,
+      required this.updatedAt,
+      required this.url,
+      required this.workflowId,
+      this.workflowUrl = const SdkOmitted()});
+
+  WebhookDeploymentStatusCreatedWorkflowRun Function(
+      {WebhookDeploymentStatusCreatedWorkflowRunActor? actor,
+      SdkOptional<String> artifactsUrl,
+      SdkOptional<String> cancelUrl,
+      int checkSuiteId,
+      String checkSuiteNodeId,
+      SdkOptional<String> checkSuiteUrl,
+      WebhookDeploymentStatusCreatedWorkflowRunConclusion? conclusion,
+      String createdAt,
+      String displayTitle,
+      String event,
+      String headBranch,
+      SdkOptional<dynamic> headCommit,
+      SdkOptional<WebhookDeploymentStatusCreatedWorkflowRunHeadRepository>
+          headRepository,
+      String headSha,
+      String htmlUrl,
+      int id,
+      SdkOptional<String> jobsUrl,
+      SdkOptional<String> logsUrl,
+      String name,
+      String nodeId,
+      String path,
+      SdkOptional<dynamic> previousAttemptUrl,
+      List<WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItem>
+          pullRequests,
+      SdkOptional<
+              List<
+                  WebhookDeploymentStatusCreatedWorkflowRunReferencedWorkflowsItem>?>
+          referencedWorkflows,
+      SdkOptional<WebhookDeploymentStatusCreatedWorkflowRunRepository>
+          repository,
+      SdkOptional<String> rerunUrl,
+      int runAttempt,
+      int runNumber,
+      String runStartedAt,
+      WebhookDeploymentStatusCreatedWorkflowRunStatus status,
+      WebhookDeploymentStatusCreatedWorkflowRunTriggeringActor? triggeringActor,
+      String updatedAt,
+      String url,
+      int workflowId,
+      SdkOptional<String> workflowUrl}) get copyWith => _copyWith;
+
+  WebhookDeploymentStatusCreatedWorkflowRun _copyWith(
+          {Object? actor = sdkOmittedValue,
+          Object? artifactsUrl = sdkOmittedValue,
+          Object? cancelUrl = sdkOmittedValue,
+          Object? checkSuiteId = sdkOmittedValue,
+          Object? checkSuiteNodeId = sdkOmittedValue,
+          Object? checkSuiteUrl = sdkOmittedValue,
+          Object? conclusion = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? displayTitle = sdkOmittedValue,
+          Object? event = sdkOmittedValue,
+          Object? headBranch = sdkOmittedValue,
+          Object? headCommit = sdkOmittedValue,
+          Object? headRepository = sdkOmittedValue,
+          Object? headSha = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? jobsUrl = sdkOmittedValue,
+          Object? logsUrl = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? path = sdkOmittedValue,
+          Object? previousAttemptUrl = sdkOmittedValue,
+          Object? pullRequests = sdkOmittedValue,
+          Object? referencedWorkflows = sdkOmittedValue,
+          Object? repository = sdkOmittedValue,
+          Object? rerunUrl = sdkOmittedValue,
+          Object? runAttempt = sdkOmittedValue,
+          Object? runNumber = sdkOmittedValue,
+          Object? runStartedAt = sdkOmittedValue,
+          Object? status = sdkOmittedValue,
+          Object? triggeringActor = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? workflowId = sdkOmittedValue,
+          Object? workflowUrl = sdkOmittedValue}) =>
+      WebhookDeploymentStatusCreatedWorkflowRun(
+        actor: identical(actor, sdkOmittedValue)
+            ? this.actor
+            : actor as WebhookDeploymentStatusCreatedWorkflowRunActor?,
+        artifactsUrl: identical(artifactsUrl, sdkOmittedValue)
+            ? this.artifactsUrl
+            : artifactsUrl as SdkOptional<String>,
+        cancelUrl: identical(cancelUrl, sdkOmittedValue)
+            ? this.cancelUrl
+            : cancelUrl as SdkOptional<String>,
+        checkSuiteId: identical(checkSuiteId, sdkOmittedValue)
+            ? this.checkSuiteId
+            : checkSuiteId as int,
+        checkSuiteNodeId: identical(checkSuiteNodeId, sdkOmittedValue)
+            ? this.checkSuiteNodeId
+            : checkSuiteNodeId as String,
+        checkSuiteUrl: identical(checkSuiteUrl, sdkOmittedValue)
+            ? this.checkSuiteUrl
+            : checkSuiteUrl as SdkOptional<String>,
+        conclusion: identical(conclusion, sdkOmittedValue)
+            ? this.conclusion
+            : conclusion
+                as WebhookDeploymentStatusCreatedWorkflowRunConclusion?,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        displayTitle: identical(displayTitle, sdkOmittedValue)
+            ? this.displayTitle
+            : displayTitle as String,
+        event: identical(event, sdkOmittedValue) ? this.event : event as String,
+        headBranch: identical(headBranch, sdkOmittedValue)
+            ? this.headBranch
+            : headBranch as String,
+        headCommit: identical(headCommit, sdkOmittedValue)
+            ? this.headCommit
+            : headCommit as SdkOptional<dynamic>,
+        headRepository: identical(headRepository, sdkOmittedValue)
+            ? this.headRepository
+            : headRepository as SdkOptional<
+                WebhookDeploymentStatusCreatedWorkflowRunHeadRepository>,
+        headSha: identical(headSha, sdkOmittedValue)
+            ? this.headSha
+            : headSha as String,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        jobsUrl: identical(jobsUrl, sdkOmittedValue)
+            ? this.jobsUrl
+            : jobsUrl as SdkOptional<String>,
+        logsUrl: identical(logsUrl, sdkOmittedValue)
+            ? this.logsUrl
+            : logsUrl as SdkOptional<String>,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
         path: identical(path, sdkOmittedValue) ? this.path : path as String,
-        ref: identical(ref, sdkOmittedValue)
-            ? this.ref
-            : ref as SdkOptional<String>,
-        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+        previousAttemptUrl: identical(previousAttemptUrl, sdkOmittedValue)
+            ? this.previousAttemptUrl
+            : previousAttemptUrl as SdkOptional<dynamic>,
+        pullRequests: identical(pullRequests, sdkOmittedValue)
+            ? this.pullRequests
+            : pullRequests as List<
+                WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItem>,
+        referencedWorkflows: identical(referencedWorkflows, sdkOmittedValue)
+            ? this.referencedWorkflows
+            : referencedWorkflows as SdkOptional<
+                List<
+                    WebhookDeploymentStatusCreatedWorkflowRunReferencedWorkflowsItem>?>,
+        repository: identical(repository, sdkOmittedValue)
+            ? this.repository
+            : repository as SdkOptional<
+                WebhookDeploymentStatusCreatedWorkflowRunRepository>,
+        rerunUrl: identical(rerunUrl, sdkOmittedValue)
+            ? this.rerunUrl
+            : rerunUrl as SdkOptional<String>,
+        runAttempt: identical(runAttempt, sdkOmittedValue)
+            ? this.runAttempt
+            : runAttempt as int,
+        runNumber: identical(runNumber, sdkOmittedValue)
+            ? this.runNumber
+            : runNumber as int,
+        runStartedAt: identical(runStartedAt, sdkOmittedValue)
+            ? this.runStartedAt
+            : runStartedAt as String,
+        status: identical(status, sdkOmittedValue)
+            ? this.status
+            : status as WebhookDeploymentStatusCreatedWorkflowRunStatus,
+        triggeringActor: identical(triggeringActor, sdkOmittedValue)
+            ? this.triggeringActor
+            : triggeringActor
+                as WebhookDeploymentStatusCreatedWorkflowRunTriggeringActor?,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        workflowId: identical(workflowId, sdkOmittedValue)
+            ? this.workflowId
+            : workflowId as int,
+        workflowUrl: identical(workflowUrl, sdkOmittedValue)
+            ? this.workflowUrl
+            : workflowUrl as SdkOptional<String>,
       );
 
-  factory WebhookDeploymentStatusCreatedWorkflowRunReferencedWorkflowsItem.fromJson(
+  factory WebhookDeploymentStatusCreatedWorkflowRun.fromJson(
           Map<String, dynamic> json) =>
-      WebhookDeploymentStatusCreatedWorkflowRunReferencedWorkflowsItem(
-        path: (json['path'] as String?)!,
-        ref: json['ref'] != null
-            ? SdkPresent((json['ref'] as String?)!)
+      WebhookDeploymentStatusCreatedWorkflowRun(
+        actor: json.containsKey('actor')
+            ? json['actor'] != null
+                ? WebhookDeploymentStatusCreatedWorkflowRunActor.fromJson(
+                    json['actor'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'actor', 'Required property is missing'),
+        artifactsUrl: json['artifacts_url'] != null
+            ? SdkPresent((json['artifacts_url'] as String?)!)
             : const SdkOmitted(),
-        sha: (json['sha'] as String?)!,
+        cancelUrl: json['cancel_url'] != null
+            ? SdkPresent((json['cancel_url'] as String?)!)
+            : const SdkOmitted(),
+        checkSuiteId: ((json['check_suite_id'] as num?)?.toInt())!,
+        checkSuiteNodeId: (json['check_suite_node_id'] as String?)!,
+        checkSuiteUrl: json['check_suite_url'] != null
+            ? SdkPresent((json['check_suite_url'] as String?)!)
+            : const SdkOmitted(),
+        conclusion: json.containsKey('conclusion')
+            ? json['conclusion'] != null
+                ? WebhookDeploymentStatusCreatedWorkflowRunConclusion.fromJson(
+                    json['conclusion'] as String)
+                : null
+            : throw ArgumentError.value(
+                null, 'conclusion', 'Required property is missing'),
+        createdAt: (json['created_at'] as String?)!,
+        displayTitle: (json['display_title'] as String?)!,
+        event: (json['event'] as String?)!,
+        headBranch: (json['head_branch'] as String?)!,
+        headCommit: json.containsKey('head_commit')
+            ? SdkPresent(json['head_commit'])
+            : const SdkOmitted(),
+        headRepository: json['head_repository'] != null
+            ? SdkPresent((json['head_repository'] != null
+                ? WebhookDeploymentStatusCreatedWorkflowRunHeadRepository
+                    .fromJson(json['head_repository'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        headSha: (json['head_sha'] as String?)!,
+        htmlUrl: (json['html_url'] as String?)!,
+        id: ((json['id'] as num?)?.toInt())!,
+        jobsUrl: json['jobs_url'] != null
+            ? SdkPresent((json['jobs_url'] as String?)!)
+            : const SdkOmitted(),
+        logsUrl: json['logs_url'] != null
+            ? SdkPresent((json['logs_url'] as String?)!)
+            : const SdkOmitted(),
+        name: (json['name'] as String?)!,
+        nodeId: (json['node_id'] as String?)!,
+        path: (json['path'] as String?)!,
+        previousAttemptUrl: json.containsKey('previous_attempt_url')
+            ? SdkPresent(json['previous_attempt_url'])
+            : const SdkOmitted(),
+        pullRequests: ((json['pull_requests'] as List?)
+            ?.map((e) =>
+                WebhookDeploymentStatusCreatedWorkflowRunPullRequestsItem
+                    .fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        referencedWorkflows: json.containsKey('referenced_workflows')
+            ? SdkPresent((json['referenced_workflows'] as List?)
+                ?.map((e) =>
+                    WebhookDeploymentStatusCreatedWorkflowRunReferencedWorkflowsItem
+                        .fromJson(e as Map<String, dynamic>))
+                .toList())
+            : const SdkOmitted(),
+        repository: json['repository'] != null
+            ? SdkPresent((json['repository'] != null
+                ? WebhookDeploymentStatusCreatedWorkflowRunRepository.fromJson(
+                    json['repository'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        rerunUrl: json['rerun_url'] != null
+            ? SdkPresent((json['rerun_url'] as String?)!)
+            : const SdkOmitted(),
+        runAttempt: ((json['run_attempt'] as num?)?.toInt())!,
+        runNumber: ((json['run_number'] as num?)?.toInt())!,
+        runStartedAt: (json['run_started_at'] as String?)!,
+        status: (json['status'] != null
+            ? WebhookDeploymentStatusCreatedWorkflowRunStatus.fromJson(
+                json['status'] as String)
+            : null)!,
+        triggeringActor: json.containsKey('triggering_actor')
+            ? json['triggering_actor'] != null
+                ? WebhookDeploymentStatusCreatedWorkflowRunTriggeringActor
+                    .fromJson(json['triggering_actor'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'triggering_actor', 'Required property is missing'),
+        updatedAt: (json['updated_at'] as String?)!,
+        url: (json['url'] as String?)!,
+        workflowId: ((json['workflow_id'] as num?)?.toInt())!,
+        workflowUrl: json['workflow_url'] != null
+            ? SdkPresent((json['workflow_url'] as String?)!)
+            : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        'path': path,
-        ...switch (ref) {
+        'actor': actor?.toJson(),
+        ...switch (artifactsUrl) {
           SdkPresent<String>(value: final value) => {
-              'ref': value,
+              'artifacts_url': value,
             },
           _ => const <String, dynamic>{},
         },
-        'sha': sha,
+        ...switch (cancelUrl) {
+          SdkPresent<String>(value: final value) => {
+              'cancel_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'check_suite_id': checkSuiteId,
+        'check_suite_node_id': checkSuiteNodeId,
+        ...switch (checkSuiteUrl) {
+          SdkPresent<String>(value: final value) => {
+              'check_suite_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'conclusion': conclusion?.toJson(),
+        'created_at': createdAt,
+        'display_title': displayTitle,
+        'event': event,
+        'head_branch': headBranch,
+        ...switch (headCommit) {
+          SdkPresent<dynamic>(value: final value) => {
+              'head_commit': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (headRepository) {
+          SdkPresent<WebhookDeploymentStatusCreatedWorkflowRunHeadRepository>(
+            value: final value
+          ) =>
+            {
+              'head_repository': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'head_sha': headSha,
+        'html_url': htmlUrl,
+        'id': id,
+        ...switch (jobsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'jobs_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (logsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'logs_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'name': name,
+        'node_id': nodeId,
+        'path': path,
+        ...switch (previousAttemptUrl) {
+          SdkPresent<dynamic>(value: final value) => {
+              'previous_attempt_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'pull_requests': pullRequests.map((item) => item.toJson()).toList(),
+        ...switch (referencedWorkflows) {
+          SdkPresent<
+                List<
+                    WebhookDeploymentStatusCreatedWorkflowRunReferencedWorkflowsItem>?>(
+            value: final value
+          ) =>
+            {
+              'referenced_workflows':
+                  value?.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (repository) {
+          SdkPresent<WebhookDeploymentStatusCreatedWorkflowRunRepository>(
+            value: final value
+          ) =>
+            {
+              'repository': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (rerunUrl) {
+          SdkPresent<String>(value: final value) => {
+              'rerun_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'run_attempt': runAttempt,
+        'run_number': runNumber,
+        'run_started_at': runStartedAt,
+        'status': status.toJson(),
+        'triggering_actor': triggeringActor?.toJson(),
+        'updated_at': updatedAt,
+        'url': url,
+        'workflow_id': workflowId,
+        ...switch (workflowUrl) {
+          SdkPresent<String>(value: final value) => {
+              'workflow_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
       };
 }

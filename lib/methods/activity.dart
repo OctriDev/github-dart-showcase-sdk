@@ -36,7 +36,10 @@ Future<List<Event>> activityListPublicEvents(ClientConfig config,
               .toList(),
           options: requestOptions,
           errors: {
-            '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
           }))
       .data;
 }

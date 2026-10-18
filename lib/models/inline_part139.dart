@@ -4,16 +4,23 @@
 part of 'inline.dart';
 
 // Inline operation models (part 139)
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookLabelArchivedAction {
+/// Optional enumerated value serialized in the `type` wire field.
+final class WebhookPullRequestLabeledPullRequestMergedByType {
   final String value;
 
-  const WebhookLabelArchivedAction._(this.value);
+  const WebhookPullRequestLabeledPullRequestMergedByType._(this.value);
 
-  factory WebhookLabelArchivedAction.fromJson(String value) =>
-      WebhookLabelArchivedAction._(value);
+  factory WebhookPullRequestLabeledPullRequestMergedByType.fromJson(
+          String value) =>
+      WebhookPullRequestLabeledPullRequestMergedByType._(value);
 
-  static const archived = WebhookLabelArchivedAction._('archived');
+  static const bot = WebhookPullRequestLabeledPullRequestMergedByType._('Bot');
+  static const user =
+      WebhookPullRequestLabeledPullRequestMergedByType._('User');
+  static const organization =
+      WebhookPullRequestLabeledPullRequestMergedByType._('Organization');
+  static const mannequin =
+      WebhookPullRequestLabeledPullRequestMergedByType._('Mannequin');
 
   String toJson() => value;
 
@@ -22,144 +29,32 @@ final class WebhookLabelArchivedAction {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookLabelArchivedAction && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookLabelCreatedAction {
-  final String value;
-
-  const WebhookLabelCreatedAction._(this.value);
-
-  factory WebhookLabelCreatedAction.fromJson(String value) =>
-      WebhookLabelCreatedAction._(value);
-
-  static const created = WebhookLabelCreatedAction._('created');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookLabelCreatedAction && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookLabelDeletedAction {
-  final String value;
-
-  const WebhookLabelDeletedAction._(this.value);
-
-  factory WebhookLabelDeletedAction.fromJson(String value) =>
-      WebhookLabelDeletedAction._(value);
-
-  static const deleted = WebhookLabelDeletedAction._('deleted');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookLabelDeletedAction && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookLabelEditedAction {
-  final String value;
-
-  const WebhookLabelEditedAction._(this.value);
-
-  factory WebhookLabelEditedAction.fromJson(String value) =>
-      WebhookLabelEditedAction._(value);
-
-  static const edited = WebhookLabelEditedAction._('edited');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookLabelEditedAction && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookLabelUnarchivedAction {
-  final String value;
-
-  const WebhookLabelUnarchivedAction._(this.value);
-
-  factory WebhookLabelUnarchivedAction.fromJson(String value) =>
-      WebhookLabelUnarchivedAction._(value);
-
-  static const unarchived = WebhookLabelUnarchivedAction._('unarchived');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookLabelUnarchivedAction && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookMarketplacePurchaseCancelledAction {
-  final String value;
-
-  const WebhookMarketplacePurchaseCancelledAction._(this.value);
-
-  factory WebhookMarketplacePurchaseCancelledAction.fromJson(String value) =>
-      WebhookMarketplacePurchaseCancelledAction._(value);
-
-  static const cancelled =
-      WebhookMarketplacePurchaseCancelledAction._('cancelled');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookMarketplacePurchaseCancelledAction &&
+      other is WebhookPullRequestLabeledPullRequestMergedByType &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookMarketplacePurchaseChangedAction {
+/// Optional enumerated value serialized in the `type` wire field.
+final class WebhookPullRequestLabeledPullRequestMilestoneCreatorType {
   final String value;
 
-  const WebhookMarketplacePurchaseChangedAction._(this.value);
+  const WebhookPullRequestLabeledPullRequestMilestoneCreatorType._(this.value);
 
-  factory WebhookMarketplacePurchaseChangedAction.fromJson(String value) =>
-      WebhookMarketplacePurchaseChangedAction._(value);
+  factory WebhookPullRequestLabeledPullRequestMilestoneCreatorType.fromJson(
+          String value) =>
+      WebhookPullRequestLabeledPullRequestMilestoneCreatorType._(value);
 
-  static const changed = WebhookMarketplacePurchaseChangedAction._('changed');
+  static const bot =
+      WebhookPullRequestLabeledPullRequestMilestoneCreatorType._('Bot');
+  static const user =
+      WebhookPullRequestLabeledPullRequestMilestoneCreatorType._('User');
+  static const organization =
+      WebhookPullRequestLabeledPullRequestMilestoneCreatorType._(
+          'Organization');
+  static const mannequin =
+      WebhookPullRequestLabeledPullRequestMilestoneCreatorType._('Mannequin');
 
   String toJson() => value;
 
@@ -168,33 +63,63 @@ final class WebhookMarketplacePurchaseChangedAction {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookMarketplacePurchaseChangedAction && other.value == value;
+      other is WebhookPullRequestLabeledPullRequestMilestoneCreatorType &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Required enumerated value serialized in the `price_model` wire field.
-final class WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel {
+/// The state of the milestone.
+final class WebhookPullRequestLabeledPullRequestMilestoneState {
   final String value;
 
-  const WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel._(
+  const WebhookPullRequestLabeledPullRequestMilestoneState._(this.value);
+
+  factory WebhookPullRequestLabeledPullRequestMilestoneState.fromJson(
+          String value) =>
+      WebhookPullRequestLabeledPullRequestMilestoneState._(value);
+
+  static const open =
+      WebhookPullRequestLabeledPullRequestMilestoneState._('open');
+  static const closed =
+      WebhookPullRequestLabeledPullRequestMilestoneState._('closed');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookPullRequestLabeledPullRequestMilestoneState &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Required enumerated value serialized in the `privacy` wire field.
+final class WebhookPullRequestLabeledPullRequestRequestedTeamsItemParentPrivacy {
+  final String value;
+
+  const WebhookPullRequestLabeledPullRequestRequestedTeamsItemParentPrivacy._(
       this.value);
 
-  factory WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel.fromJson(
+  factory WebhookPullRequestLabeledPullRequestRequestedTeamsItemParentPrivacy.fromJson(
           String value) =>
-      WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel
-          ._(value);
+      WebhookPullRequestLabeledPullRequestRequestedTeamsItemParentPrivacy._(
+          value);
 
-  static const free =
-      WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel
-          ._('FREE');
-  static const flatRate =
-      WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel
-          ._('FLAT_RATE');
-  static const perUnit =
-      WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel
-          ._('PER_UNIT');
+  static const open =
+      WebhookPullRequestLabeledPullRequestRequestedTeamsItemParentPrivacy._(
+          'open');
+  static const closed =
+      WebhookPullRequestLabeledPullRequestRequestedTeamsItemParentPrivacy._(
+          'closed');
+  static const secret =
+      WebhookPullRequestLabeledPullRequestRequestedTeamsItemParentPrivacy._(
+          'secret');
 
   String toJson() => value;
 
@@ -204,25 +129,30 @@ final class WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPric
   @override
   bool operator ==(Object other) =>
       other
-          is WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlanPriceModel &&
+          is WebhookPullRequestLabeledPullRequestRequestedTeamsItemParentPrivacy &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookMarketplacePurchasePendingChangeAction {
+/// Optional enumerated value serialized in the `privacy` wire field.
+final class WebhookPullRequestLabeledPullRequestRequestedTeamsItemPrivacy {
   final String value;
 
-  const WebhookMarketplacePurchasePendingChangeAction._(this.value);
+  const WebhookPullRequestLabeledPullRequestRequestedTeamsItemPrivacy._(
+      this.value);
 
-  factory WebhookMarketplacePurchasePendingChangeAction.fromJson(
+  factory WebhookPullRequestLabeledPullRequestRequestedTeamsItemPrivacy.fromJson(
           String value) =>
-      WebhookMarketplacePurchasePendingChangeAction._(value);
+      WebhookPullRequestLabeledPullRequestRequestedTeamsItemPrivacy._(value);
 
-  static const pendingChange =
-      WebhookMarketplacePurchasePendingChangeAction._('pending_change');
+  static const open =
+      WebhookPullRequestLabeledPullRequestRequestedTeamsItemPrivacy._('open');
+  static const closed =
+      WebhookPullRequestLabeledPullRequestRequestedTeamsItemPrivacy._('closed');
+  static const secret =
+      WebhookPullRequestLabeledPullRequestRequestedTeamsItemPrivacy._('secret');
 
   String toJson() => value;
 
@@ -231,34 +161,93 @@ final class WebhookMarketplacePurchasePendingChangeAction {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookMarketplacePurchasePendingChangeAction &&
+      other is WebhookPullRequestLabeledPullRequestRequestedTeamsItemPrivacy &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Required enumerated value serialized in the `price_model` wire field.
-final class WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchasePlanPriceModel {
+/// State of this Pull Request. Either `open` or `closed`.
+final class WebhookPullRequestLabeledPullRequestState {
   final String value;
 
-  const WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchasePlanPriceModel._(
+  const WebhookPullRequestLabeledPullRequestState._(this.value);
+
+  factory WebhookPullRequestLabeledPullRequestState.fromJson(String value) =>
+      WebhookPullRequestLabeledPullRequestState._(value);
+
+  static const open = WebhookPullRequestLabeledPullRequestState._('open');
+  static const closed = WebhookPullRequestLabeledPullRequestState._('closed');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookPullRequestLabeledPullRequestState &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Optional enumerated value serialized in the `type` wire field.
+final class WebhookPullRequestLabeledPullRequestUserType {
+  final String value;
+
+  const WebhookPullRequestLabeledPullRequestUserType._(this.value);
+
+  factory WebhookPullRequestLabeledPullRequestUserType.fromJson(String value) =>
+      WebhookPullRequestLabeledPullRequestUserType._(value);
+
+  static const bot = WebhookPullRequestLabeledPullRequestUserType._('Bot');
+  static const user = WebhookPullRequestLabeledPullRequestUserType._('User');
+  static const organization =
+      WebhookPullRequestLabeledPullRequestUserType._('Organization');
+  static const mannequin =
+      WebhookPullRequestLabeledPullRequestUserType._('Mannequin');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookPullRequestLabeledPullRequestUserType &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Optional enumerated value serialized in the `type` wire field.
+final class WebhookPullRequestLabeledPullRequestRequestedReviewersItemVariant0Type {
+  final String value;
+
+  const WebhookPullRequestLabeledPullRequestRequestedReviewersItemVariant0Type._(
       this.value);
 
-  factory WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchasePlanPriceModel.fromJson(
+  factory WebhookPullRequestLabeledPullRequestRequestedReviewersItemVariant0Type.fromJson(
           String value) =>
-      WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchasePlanPriceModel
-          ._(value);
+      WebhookPullRequestLabeledPullRequestRequestedReviewersItemVariant0Type._(
+          value);
 
-  static const free =
-      WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchasePlanPriceModel
-          ._('FREE');
-  static const flatRate =
-      WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchasePlanPriceModel
-          ._('FLAT_RATE');
-  static const perUnit =
-      WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchasePlanPriceModel
-          ._('PER_UNIT');
+  static const bot =
+      WebhookPullRequestLabeledPullRequestRequestedReviewersItemVariant0Type._(
+          'Bot');
+  static const user =
+      WebhookPullRequestLabeledPullRequestRequestedReviewersItemVariant0Type._(
+          'User');
+  static const organization =
+      WebhookPullRequestLabeledPullRequestRequestedReviewersItemVariant0Type._(
+          'Organization');
+  static const mannequin =
+      WebhookPullRequestLabeledPullRequestRequestedReviewersItemVariant0Type._(
+          'Mannequin');
 
   String toJson() => value;
 
@@ -268,62 +257,34 @@ final class WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchasePl
   @override
   bool operator ==(Object other) =>
       other
-          is WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchasePlanPriceModel &&
+          is WebhookPullRequestLabeledPullRequestRequestedReviewersItemVariant0Type &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookMarketplacePurchasePendingChangeCancelledAction {
+/// Required enumerated value serialized in the `privacy` wire field.
+final class WebhookPullRequestLabeledPullRequestRequestedReviewersItemVariant1ParentPrivacy {
   final String value;
 
-  const WebhookMarketplacePurchasePendingChangeCancelledAction._(this.value);
-
-  factory WebhookMarketplacePurchasePendingChangeCancelledAction.fromJson(
-          String value) =>
-      WebhookMarketplacePurchasePendingChangeCancelledAction._(value);
-
-  static const pendingChangeCancelled =
-      WebhookMarketplacePurchasePendingChangeCancelledAction._(
-          'pending_change_cancelled');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookMarketplacePurchasePendingChangeCancelledAction &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `price_model` wire field.
-final class WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModel {
-  final String value;
-
-  const WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModel._(
+  const WebhookPullRequestLabeledPullRequestRequestedReviewersItemVariant1ParentPrivacy._(
       this.value);
 
-  factory WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModel.fromJson(
+  factory WebhookPullRequestLabeledPullRequestRequestedReviewersItemVariant1ParentPrivacy.fromJson(
           String value) =>
-      WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModel
+      WebhookPullRequestLabeledPullRequestRequestedReviewersItemVariant1ParentPrivacy
           ._(value);
 
-  static const free =
-      WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModel
-          ._('FREE');
-  static const flatRate =
-      WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModel
-          ._('FLAT_RATE');
-  static const perUnit =
-      WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModel
-          ._('PER_UNIT');
+  static const open =
+      WebhookPullRequestLabeledPullRequestRequestedReviewersItemVariant1ParentPrivacy
+          ._('open');
+  static const closed =
+      WebhookPullRequestLabeledPullRequestRequestedReviewersItemVariant1ParentPrivacy
+          ._('closed');
+  static const secret =
+      WebhookPullRequestLabeledPullRequestRequestedReviewersItemVariant1ParentPrivacy
+          ._('secret');
 
   String toJson() => value;
 
@@ -333,24 +294,34 @@ final class WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchaseP
   @override
   bool operator ==(Object other) =>
       other
-          is WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModel &&
+          is WebhookPullRequestLabeledPullRequestRequestedReviewersItemVariant1ParentPrivacy &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookMarketplacePurchasePurchasedAction {
+/// Required enumerated value serialized in the `privacy` wire field.
+final class WebhookPullRequestLabeledPullRequestRequestedReviewersItemVariant1Privacy {
   final String value;
 
-  const WebhookMarketplacePurchasePurchasedAction._(this.value);
+  const WebhookPullRequestLabeledPullRequestRequestedReviewersItemVariant1Privacy._(
+      this.value);
 
-  factory WebhookMarketplacePurchasePurchasedAction.fromJson(String value) =>
-      WebhookMarketplacePurchasePurchasedAction._(value);
+  factory WebhookPullRequestLabeledPullRequestRequestedReviewersItemVariant1Privacy.fromJson(
+          String value) =>
+      WebhookPullRequestLabeledPullRequestRequestedReviewersItemVariant1Privacy
+          ._(value);
 
-  static const purchased =
-      WebhookMarketplacePurchasePurchasedAction._('purchased');
+  static const open =
+      WebhookPullRequestLabeledPullRequestRequestedReviewersItemVariant1Privacy
+          ._('open');
+  static const closed =
+      WebhookPullRequestLabeledPullRequestRequestedReviewersItemVariant1Privacy
+          ._('closed');
+  static const secret =
+      WebhookPullRequestLabeledPullRequestRequestedReviewersItemVariant1Privacy
+          ._('secret');
 
   String toJson() => value;
 
@@ -359,7 +330,65 @@ final class WebhookMarketplacePurchasePurchasedAction {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookMarketplacePurchasePurchasedAction &&
+      other
+          is WebhookPullRequestLabeledPullRequestRequestedReviewersItemVariant1Privacy &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Required enumerated value serialized in the `action` wire field.
+final class WebhookPullRequestLockedAction {
+  final String value;
+
+  const WebhookPullRequestLockedAction._(this.value);
+
+  factory WebhookPullRequestLockedAction.fromJson(String value) =>
+      WebhookPullRequestLockedAction._(value);
+
+  static const locked = WebhookPullRequestLockedAction._('locked');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookPullRequestLockedAction && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Required enumerated value serialized in the `active_lock_reason` wire field.
+final class WebhookPullRequestLockedPullRequestActiveLockReason {
+  final String value;
+
+  const WebhookPullRequestLockedPullRequestActiveLockReason._(this.value);
+
+  factory WebhookPullRequestLockedPullRequestActiveLockReason.fromJson(
+          String value) =>
+      WebhookPullRequestLockedPullRequestActiveLockReason._(value);
+
+  static const resolved =
+      WebhookPullRequestLockedPullRequestActiveLockReason._('resolved');
+  static const offTopic =
+      WebhookPullRequestLockedPullRequestActiveLockReason._('off-topic');
+  static const tooHeated =
+      WebhookPullRequestLockedPullRequestActiveLockReason._('too heated');
+  static const spam =
+      WebhookPullRequestLockedPullRequestActiveLockReason._('spam');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookPullRequestLockedPullRequestActiveLockReason &&
       other.value == value;
 
   @override

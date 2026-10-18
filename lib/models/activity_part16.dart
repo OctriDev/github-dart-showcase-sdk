@@ -12,7 +12,7 @@ class ReleaseEvent {
   /// Required `string` value serialized in the `action` wire field.
   final String action;
 
-  /// Required API value serialized in the `release` wire field.
+  /// Required object value serialized in the `release` wire field.
   final ReleaseEventRelease release;
 
   const ReleaseEvent({required this.action, required this.release});

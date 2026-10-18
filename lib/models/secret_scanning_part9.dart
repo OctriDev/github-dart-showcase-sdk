@@ -4,6 +4,88 @@
 part of 'secret_scanning.dart';
 
 // secret_scanning domain models (part 9)
+/// Represents a 'discussion_title' secret scanning location type. This location type shows that a secret was detected in the title of a discussion.
+class SecretScanningLocationDiscussionTitle {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The URL to the discussion where the secret was detected.
+  final String discussionTitleUrl;
+
+  const SecretScanningLocationDiscussionTitle(
+      {required this.discussionTitleUrl});
+
+  SecretScanningLocationDiscussionTitle Function({String discussionTitleUrl})
+      get copyWith => _copyWith;
+
+  SecretScanningLocationDiscussionTitle _copyWith(
+          {Object? discussionTitleUrl = sdkOmittedValue}) =>
+      SecretScanningLocationDiscussionTitle(
+        discussionTitleUrl: identical(discussionTitleUrl, sdkOmittedValue)
+            ? this.discussionTitleUrl
+            : discussionTitleUrl as String,
+      );
+
+  factory SecretScanningLocationDiscussionTitle.fromJson(
+          Map<String, dynamic> json) =>
+      SecretScanningLocationDiscussionTitle(
+        discussionTitleUrl: (json['discussion_title_url'] as String?)!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'discussion_title_url': discussionTitleUrl,
+      };
+}
+
+/// Represents an 'issue_body' secret scanning location type. This location type shows that a secret was detected in the body of an issue.
+class SecretScanningLocationIssueBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The API URL to get the issue where the secret was detected.
+  final String issueBodyUrl;
+
+  /// The GitHub URL for the issue where the secret was detected.
+  final SdkOptional<String> htmlUrl;
+
+  const SecretScanningLocationIssueBody(
+      {required this.issueBodyUrl, this.htmlUrl = const SdkOmitted()});
+
+  SecretScanningLocationIssueBody Function(
+      {String issueBodyUrl,
+      SdkOptional<String> htmlUrl}) get copyWith => _copyWith;
+
+  SecretScanningLocationIssueBody _copyWith(
+          {Object? issueBodyUrl = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue}) =>
+      SecretScanningLocationIssueBody(
+        issueBodyUrl: identical(issueBodyUrl, sdkOmittedValue)
+            ? this.issueBodyUrl
+            : issueBodyUrl as String,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as SdkOptional<String>,
+      );
+
+  factory SecretScanningLocationIssueBody.fromJson(Map<String, dynamic> json) =>
+      SecretScanningLocationIssueBody(
+        issueBodyUrl: (json['issue_body_url'] as String?)!,
+        htmlUrl: json['html_url'] != null
+            ? SdkPresent((json['html_url'] as String?)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        'issue_body_url': issueBodyUrl,
+        ...switch (htmlUrl) {
+          SdkPresent<String>(value: final value) => {
+              'html_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
 /// Represents an 'issue_comment' secret scanning location type. This location type shows that a secret was detected in a comment on an issue.
 class SecretScanningLocationIssueComment {
   /// This model is constructed from named fields in one call.
@@ -354,124 +436,5 @@ class SecretScanningLocationPullRequestTitle {
             },
           _ => const <String, dynamic>{},
         },
-      };
-}
-
-/// Represents a 'wiki_commit' secret scanning location type. This location type shows that a secret was detected inside a commit to a repository wiki.
-class SecretScanningLocationWikiCommit {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The file path of the wiki page
-  final String path;
-
-  /// Line number at which the secret starts in the file
-  final double startLine;
-
-  /// Line number at which the secret ends in the file
-  final double endLine;
-
-  /// The column at which the secret starts within the start line when the file is interpreted as 8-bit ASCII.
-  final double startColumn;
-
-  /// The column at which the secret ends within the end line when the file is interpreted as 8-bit ASCII.
-  final double endColumn;
-
-  /// SHA-1 hash ID of the associated blob
-  final String blobSha;
-
-  /// The GitHub URL to get the associated wiki page
-  final String pageUrl;
-
-  /// SHA-1 hash ID of the associated commit
-  final String commitSha;
-
-  /// The GitHub URL to get the associated wiki commit
-  final String commitUrl;
-
-  const SecretScanningLocationWikiCommit(
-      {required this.path,
-      required this.startLine,
-      required this.endLine,
-      required this.startColumn,
-      required this.endColumn,
-      required this.blobSha,
-      required this.pageUrl,
-      required this.commitSha,
-      required this.commitUrl});
-
-  SecretScanningLocationWikiCommit Function(
-      {String path,
-      double startLine,
-      double endLine,
-      double startColumn,
-      double endColumn,
-      String blobSha,
-      String pageUrl,
-      String commitSha,
-      String commitUrl}) get copyWith => _copyWith;
-
-  SecretScanningLocationWikiCommit _copyWith(
-          {Object? path = sdkOmittedValue,
-          Object? startLine = sdkOmittedValue,
-          Object? endLine = sdkOmittedValue,
-          Object? startColumn = sdkOmittedValue,
-          Object? endColumn = sdkOmittedValue,
-          Object? blobSha = sdkOmittedValue,
-          Object? pageUrl = sdkOmittedValue,
-          Object? commitSha = sdkOmittedValue,
-          Object? commitUrl = sdkOmittedValue}) =>
-      SecretScanningLocationWikiCommit(
-        path: identical(path, sdkOmittedValue) ? this.path : path as String,
-        startLine: identical(startLine, sdkOmittedValue)
-            ? this.startLine
-            : startLine as double,
-        endLine: identical(endLine, sdkOmittedValue)
-            ? this.endLine
-            : endLine as double,
-        startColumn: identical(startColumn, sdkOmittedValue)
-            ? this.startColumn
-            : startColumn as double,
-        endColumn: identical(endColumn, sdkOmittedValue)
-            ? this.endColumn
-            : endColumn as double,
-        blobSha: identical(blobSha, sdkOmittedValue)
-            ? this.blobSha
-            : blobSha as String,
-        pageUrl: identical(pageUrl, sdkOmittedValue)
-            ? this.pageUrl
-            : pageUrl as String,
-        commitSha: identical(commitSha, sdkOmittedValue)
-            ? this.commitSha
-            : commitSha as String,
-        commitUrl: identical(commitUrl, sdkOmittedValue)
-            ? this.commitUrl
-            : commitUrl as String,
-      );
-
-  factory SecretScanningLocationWikiCommit.fromJson(
-          Map<String, dynamic> json) =>
-      SecretScanningLocationWikiCommit(
-        path: (json['path'] as String?)!,
-        startLine: ((json['start_line'] as num?)?.toDouble())!,
-        endLine: ((json['end_line'] as num?)?.toDouble())!,
-        startColumn: ((json['start_column'] as num?)?.toDouble())!,
-        endColumn: ((json['end_column'] as num?)?.toDouble())!,
-        blobSha: (json['blob_sha'] as String?)!,
-        pageUrl: (json['page_url'] as String?)!,
-        commitSha: (json['commit_sha'] as String?)!,
-        commitUrl: (json['commit_url'] as String?)!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'path': path,
-        'start_line': startLine,
-        'end_line': endLine,
-        'start_column': startColumn,
-        'end_column': endColumn,
-        'blob_sha': blobSha,
-        'page_url': pageUrl,
-        'commit_sha': commitSha,
-        'commit_url': commitUrl,
       };
 }

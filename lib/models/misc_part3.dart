@@ -364,3 +364,207 @@ class PersonalAccessTokenRequest {
         'token_last_used_at': tokenLastUsedAt,
       };
 }
+
+/// Required object value serialized in the `pull_request` wire field.
+class PullRequestWebhookVariant1 {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// Whether to allow auto-merge for pull requests.
+  final SdkOptional<bool> allowAutoMerge;
+
+  /// Whether to allow updating the pull request's branch.
+  final SdkOptional<bool> allowUpdateBranch;
+
+  /// Whether to delete head branches when pull requests are merged.
+  final SdkOptional<bool> deleteBranchOnMerge;
+
+  /// The default value for a merge commit message. - `PR_TITLE` - default to the pull request's title. - `PR_BODY` - default to the pull request's body. - `BLANK` - default to a blank commit message.
+  final SdkOptional<PullRequestWebhookVariant1MergeCommitMessage>
+      mergeCommitMessage;
+
+  /// The default value for a merge commit title. - `PR_TITLE` - default to the pull request's title. - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., "Merge pull request #123 from branch-name").
+  final SdkOptional<PullRequestWebhookVariant1MergeCommitTitle>
+      mergeCommitTitle;
+
+  /// The default value for a squash merge commit message: - `PR_BODY` - default to the pull request's body. - `COMMIT_MESSAGES` - default to the branch's commit messages. - `BLANK` - default to a blank commit message.
+  final SdkOptional<PullRequestWebhookVariant1SquashMergeCommitMessage>
+      squashMergeCommitMessage;
+
+  /// The default value for a squash merge commit title: - `PR_TITLE` - default to the pull request's title. - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
+  final SdkOptional<PullRequestWebhookVariant1SquashMergeCommitTitle>
+      squashMergeCommitTitle;
+
+  /// Whether a squash merge commit can use the pull request title as default. **This property is closing down. Please use `squash_merge_commit_title` instead.**
+  final SdkOptional<bool> useSquashPrTitleAsDefault;
+
+  const PullRequestWebhookVariant1(
+      {this.allowAutoMerge = const SdkOmitted(),
+      this.allowUpdateBranch = const SdkOmitted(),
+      this.deleteBranchOnMerge = const SdkOmitted(),
+      this.mergeCommitMessage = const SdkOmitted(),
+      this.mergeCommitTitle = const SdkOmitted(),
+      this.squashMergeCommitMessage = const SdkOmitted(),
+      this.squashMergeCommitTitle = const SdkOmitted(),
+      this.useSquashPrTitleAsDefault = const SdkOmitted()});
+
+  PullRequestWebhookVariant1 Function(
+      {SdkOptional<bool> allowAutoMerge,
+      SdkOptional<bool> allowUpdateBranch,
+      SdkOptional<bool> deleteBranchOnMerge,
+      SdkOptional<PullRequestWebhookVariant1MergeCommitMessage>
+          mergeCommitMessage,
+      SdkOptional<PullRequestWebhookVariant1MergeCommitTitle> mergeCommitTitle,
+      SdkOptional<PullRequestWebhookVariant1SquashMergeCommitMessage>
+          squashMergeCommitMessage,
+      SdkOptional<PullRequestWebhookVariant1SquashMergeCommitTitle>
+          squashMergeCommitTitle,
+      SdkOptional<bool> useSquashPrTitleAsDefault}) get copyWith => _copyWith;
+
+  PullRequestWebhookVariant1 _copyWith(
+          {Object? allowAutoMerge = sdkOmittedValue,
+          Object? allowUpdateBranch = sdkOmittedValue,
+          Object? deleteBranchOnMerge = sdkOmittedValue,
+          Object? mergeCommitMessage = sdkOmittedValue,
+          Object? mergeCommitTitle = sdkOmittedValue,
+          Object? squashMergeCommitMessage = sdkOmittedValue,
+          Object? squashMergeCommitTitle = sdkOmittedValue,
+          Object? useSquashPrTitleAsDefault = sdkOmittedValue}) =>
+      PullRequestWebhookVariant1(
+        allowAutoMerge: identical(allowAutoMerge, sdkOmittedValue)
+            ? this.allowAutoMerge
+            : allowAutoMerge as SdkOptional<bool>,
+        allowUpdateBranch: identical(allowUpdateBranch, sdkOmittedValue)
+            ? this.allowUpdateBranch
+            : allowUpdateBranch as SdkOptional<bool>,
+        deleteBranchOnMerge: identical(deleteBranchOnMerge, sdkOmittedValue)
+            ? this.deleteBranchOnMerge
+            : deleteBranchOnMerge as SdkOptional<bool>,
+        mergeCommitMessage: identical(mergeCommitMessage, sdkOmittedValue)
+            ? this.mergeCommitMessage
+            : mergeCommitMessage
+                as SdkOptional<PullRequestWebhookVariant1MergeCommitMessage>,
+        mergeCommitTitle: identical(mergeCommitTitle, sdkOmittedValue)
+            ? this.mergeCommitTitle
+            : mergeCommitTitle
+                as SdkOptional<PullRequestWebhookVariant1MergeCommitTitle>,
+        squashMergeCommitMessage:
+            identical(squashMergeCommitMessage, sdkOmittedValue)
+                ? this.squashMergeCommitMessage
+                : squashMergeCommitMessage as SdkOptional<
+                    PullRequestWebhookVariant1SquashMergeCommitMessage>,
+        squashMergeCommitTitle:
+            identical(squashMergeCommitTitle, sdkOmittedValue)
+                ? this.squashMergeCommitTitle
+                : squashMergeCommitTitle as SdkOptional<
+                    PullRequestWebhookVariant1SquashMergeCommitTitle>,
+        useSquashPrTitleAsDefault:
+            identical(useSquashPrTitleAsDefault, sdkOmittedValue)
+                ? this.useSquashPrTitleAsDefault
+                : useSquashPrTitleAsDefault as SdkOptional<bool>,
+      );
+
+  factory PullRequestWebhookVariant1.fromJson(Map<String, dynamic> json) =>
+      PullRequestWebhookVariant1(
+        allowAutoMerge: json['allow_auto_merge'] != null
+            ? SdkPresent((json['allow_auto_merge'] as bool?)!)
+            : const SdkOmitted(),
+        allowUpdateBranch: json['allow_update_branch'] != null
+            ? SdkPresent((json['allow_update_branch'] as bool?)!)
+            : const SdkOmitted(),
+        deleteBranchOnMerge: json['delete_branch_on_merge'] != null
+            ? SdkPresent((json['delete_branch_on_merge'] as bool?)!)
+            : const SdkOmitted(),
+        mergeCommitMessage: json['merge_commit_message'] != null
+            ? SdkPresent((json['merge_commit_message'] != null
+                ? PullRequestWebhookVariant1MergeCommitMessage.fromJson(
+                    json['merge_commit_message'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        mergeCommitTitle: json['merge_commit_title'] != null
+            ? SdkPresent((json['merge_commit_title'] != null
+                ? PullRequestWebhookVariant1MergeCommitTitle.fromJson(
+                    json['merge_commit_title'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        squashMergeCommitMessage: json['squash_merge_commit_message'] != null
+            ? SdkPresent((json['squash_merge_commit_message'] != null
+                ? PullRequestWebhookVariant1SquashMergeCommitMessage.fromJson(
+                    json['squash_merge_commit_message'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        squashMergeCommitTitle: json['squash_merge_commit_title'] != null
+            ? SdkPresent((json['squash_merge_commit_title'] != null
+                ? PullRequestWebhookVariant1SquashMergeCommitTitle.fromJson(
+                    json['squash_merge_commit_title'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        useSquashPrTitleAsDefault:
+            json['use_squash_pr_title_as_default'] != null
+                ? SdkPresent((json['use_squash_pr_title_as_default'] as bool?)!)
+                : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (allowAutoMerge) {
+          SdkPresent<bool>(value: final value) => {
+              'allow_auto_merge': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (allowUpdateBranch) {
+          SdkPresent<bool>(value: final value) => {
+              'allow_update_branch': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (deleteBranchOnMerge) {
+          SdkPresent<bool>(value: final value) => {
+              'delete_branch_on_merge': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (mergeCommitMessage) {
+          SdkPresent<PullRequestWebhookVariant1MergeCommitMessage>(
+            value: final value
+          ) =>
+            {
+              'merge_commit_message': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (mergeCommitTitle) {
+          SdkPresent<PullRequestWebhookVariant1MergeCommitTitle>(
+            value: final value
+          ) =>
+            {
+              'merge_commit_title': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (squashMergeCommitMessage) {
+          SdkPresent<PullRequestWebhookVariant1SquashMergeCommitMessage>(
+            value: final value
+          ) =>
+            {
+              'squash_merge_commit_message': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (squashMergeCommitTitle) {
+          SdkPresent<PullRequestWebhookVariant1SquashMergeCommitTitle>(
+            value: final value
+          ) =>
+            {
+              'squash_merge_commit_title': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (useSquashPrTitleAsDefault) {
+          SdkPresent<bool>(value: final value) => {
+              'use_squash_pr_title_as_default': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}

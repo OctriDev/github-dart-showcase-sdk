@@ -4,31 +4,26 @@
 part of 'inline.dart';
 
 // Inline operation models (part 259)
-/// Machine-readable error code
-final class AgentTasksCreateTaskInRepoResponseErrorsItemCodea8cd34f8 {
+/// **Required when `state` is `dismissed`.** A reason for dismissing the alert.
+final class DependabotUpdateAlertRequestBodyDismissedReason {
   final String value;
 
-  const AgentTasksCreateTaskInRepoResponseErrorsItemCodea8cd34f8._(this.value);
+  const DependabotUpdateAlertRequestBodyDismissedReason._(this.value);
 
-  factory AgentTasksCreateTaskInRepoResponseErrorsItemCodea8cd34f8.fromJson(
+  factory DependabotUpdateAlertRequestBodyDismissedReason.fromJson(
           String value) =>
-      AgentTasksCreateTaskInRepoResponseErrorsItemCodea8cd34f8._(value);
+      DependabotUpdateAlertRequestBodyDismissedReason._(value);
 
-  static const missing =
-      AgentTasksCreateTaskInRepoResponseErrorsItemCodea8cd34f8._('missing');
-  static const missingField =
-      AgentTasksCreateTaskInRepoResponseErrorsItemCodea8cd34f8._(
-          'missing_field');
-  static const invalid =
-      AgentTasksCreateTaskInRepoResponseErrorsItemCodea8cd34f8._('invalid');
-  static const alreadyExists =
-      AgentTasksCreateTaskInRepoResponseErrorsItemCodea8cd34f8._(
-          'already_exists');
-  static const unprocessable =
-      AgentTasksCreateTaskInRepoResponseErrorsItemCodea8cd34f8._(
-          'unprocessable');
-  static const custom =
-      AgentTasksCreateTaskInRepoResponseErrorsItemCodea8cd34f8._('custom');
+  static const fixStarted =
+      DependabotUpdateAlertRequestBodyDismissedReason._('fix_started');
+  static const inaccurate =
+      DependabotUpdateAlertRequestBodyDismissedReason._('inaccurate');
+  static const noBandwidth =
+      DependabotUpdateAlertRequestBodyDismissedReason._('no_bandwidth');
+  static const notUsed =
+      DependabotUpdateAlertRequestBodyDismissedReason._('not_used');
+  static const tolerableRisk =
+      DependabotUpdateAlertRequestBodyDismissedReason._('tolerable_risk');
 
   String toJson() => value;
 
@@ -37,38 +32,24 @@ final class AgentTasksCreateTaskInRepoResponseErrorsItemCodea8cd34f8 {
 
   @override
   bool operator ==(Object other) =>
-      other is AgentTasksCreateTaskInRepoResponseErrorsItemCodea8cd34f8 &&
+      other is DependabotUpdateAlertRequestBodyDismissedReason &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Machine-readable error code
-final class AgentTasksCreateTaskInRepoResponseErrorsItemCode014abc01 {
+/// The state of the Dependabot alert. A `dismissed_reason` must be provided when setting the state to `dismissed`.
+final class DependabotUpdateAlertRequestBodyState {
   final String value;
 
-  const AgentTasksCreateTaskInRepoResponseErrorsItemCode014abc01._(this.value);
+  const DependabotUpdateAlertRequestBodyState._(this.value);
 
-  factory AgentTasksCreateTaskInRepoResponseErrorsItemCode014abc01.fromJson(
-          String value) =>
-      AgentTasksCreateTaskInRepoResponseErrorsItemCode014abc01._(value);
+  factory DependabotUpdateAlertRequestBodyState.fromJson(String value) =>
+      DependabotUpdateAlertRequestBodyState._(value);
 
-  static const missing =
-      AgentTasksCreateTaskInRepoResponseErrorsItemCode014abc01._('missing');
-  static const missingField =
-      AgentTasksCreateTaskInRepoResponseErrorsItemCode014abc01._(
-          'missing_field');
-  static const invalid =
-      AgentTasksCreateTaskInRepoResponseErrorsItemCode014abc01._('invalid');
-  static const alreadyExists =
-      AgentTasksCreateTaskInRepoResponseErrorsItemCode014abc01._(
-          'already_exists');
-  static const unprocessable =
-      AgentTasksCreateTaskInRepoResponseErrorsItemCode014abc01._(
-          'unprocessable');
-  static const custom =
-      AgentTasksCreateTaskInRepoResponseErrorsItemCode014abc01._('custom');
+  static const dismissed = DependabotUpdateAlertRequestBodyState._('dismissed');
+  static const open = DependabotUpdateAlertRequestBodyState._('open');
 
   String toJson() => value;
 
@@ -77,129 +58,33 @@ final class AgentTasksCreateTaskInRepoResponseErrorsItemCode014abc01 {
 
   @override
   bool operator ==(Object other) =>
-      other is AgentTasksCreateTaskInRepoResponseErrorsItemCode014abc01 &&
-      other.value == value;
+      other is DependabotUpdateAlertRequestBodyState && other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Provider namespace
-final class AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemProvider {
+/// The state of the status. When you set a transient deployment to `inactive`, the deployment will be shown as `destroyed` in GitHub.
+final class ReposCreateDeploymentStatusRequestBodyState {
   final String value;
 
-  const AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemProvider._(
-      this.value);
+  const ReposCreateDeploymentStatusRequestBodyState._(this.value);
 
-  factory AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemProvider.fromJson(
-          String value) =>
-      AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemProvider._(
-          value);
+  factory ReposCreateDeploymentStatusRequestBodyState.fromJson(String value) =>
+      ReposCreateDeploymentStatusRequestBodyState._(value);
 
-  static const github =
-      AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemProvider._(
-          'github');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemProvider &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Type of artifact. Available Values: `pull`, `branch`.
-final class AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemType {
-  final String value;
-
-  const AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemType._(
-      this.value);
-
-  factory AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemType.fromJson(
-          String value) =>
-      AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemType._(value);
-
-  static const pull =
-      AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemType._('pull');
-  static const branch =
-      AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemType._('branch');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemType &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Type of the task creator
-final class AgentTasksGetTaskByRepoAndIdResponseVariant0CreatorType {
-  final String value;
-
-  const AgentTasksGetTaskByRepoAndIdResponseVariant0CreatorType._(this.value);
-
-  factory AgentTasksGetTaskByRepoAndIdResponseVariant0CreatorType.fromJson(
-          String value) =>
-      AgentTasksGetTaskByRepoAndIdResponseVariant0CreatorType._(value);
-
-  static const user =
-      AgentTasksGetTaskByRepoAndIdResponseVariant0CreatorType._('user');
-  static const organization =
-      AgentTasksGetTaskByRepoAndIdResponseVariant0CreatorType._('organization');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is AgentTasksGetTaskByRepoAndIdResponseVariant0CreatorType &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Current state of the task, derived from its most recent session
-final class AgentTasksGetTaskByRepoAndIdResponseVariant0State {
-  final String value;
-
-  const AgentTasksGetTaskByRepoAndIdResponseVariant0State._(this.value);
-
-  factory AgentTasksGetTaskByRepoAndIdResponseVariant0State.fromJson(
-          String value) =>
-      AgentTasksGetTaskByRepoAndIdResponseVariant0State._(value);
-
-  static const queued =
-      AgentTasksGetTaskByRepoAndIdResponseVariant0State._('queued');
+  static const error = ReposCreateDeploymentStatusRequestBodyState._('error');
+  static const failure =
+      ReposCreateDeploymentStatusRequestBodyState._('failure');
+  static const inactive =
+      ReposCreateDeploymentStatusRequestBodyState._('inactive');
   static const inProgress =
-      AgentTasksGetTaskByRepoAndIdResponseVariant0State._('in_progress');
-  static const completed =
-      AgentTasksGetTaskByRepoAndIdResponseVariant0State._('completed');
-  static const failed =
-      AgentTasksGetTaskByRepoAndIdResponseVariant0State._('failed');
-  static const idle =
-      AgentTasksGetTaskByRepoAndIdResponseVariant0State._('idle');
-  static const waitingForUser =
-      AgentTasksGetTaskByRepoAndIdResponseVariant0State._('waiting_for_user');
-  static const timedOut =
-      AgentTasksGetTaskByRepoAndIdResponseVariant0State._('timed_out');
-  static const cancelled =
-      AgentTasksGetTaskByRepoAndIdResponseVariant0State._('cancelled');
+      ReposCreateDeploymentStatusRequestBodyState._('in_progress');
+  static const queued = ReposCreateDeploymentStatusRequestBodyState._('queued');
+  static const pending =
+      ReposCreateDeploymentStatusRequestBodyState._('pending');
+  static const success =
+      ReposCreateDeploymentStatusRequestBodyState._('success');
 
   String toJson() => value;
 
@@ -208,45 +93,25 @@ final class AgentTasksGetTaskByRepoAndIdResponseVariant0State {
 
   @override
   bool operator ==(Object other) =>
-      other is AgentTasksGetTaskByRepoAndIdResponseVariant0State &&
+      other is ReposCreateDeploymentStatusRequestBodyState &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Current state of a session
-final class AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemState {
+final class ReposListForksSort {
   final String value;
 
-  const AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemState._(
-      this.value);
+  const ReposListForksSort._(this.value);
 
-  factory AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemState.fromJson(
-          String value) =>
-      AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemState._(value);
+  factory ReposListForksSort.fromJson(String value) =>
+      ReposListForksSort._(value);
 
-  static const queued =
-      AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemState._('queued');
-  static const inProgress =
-      AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemState._(
-          'in_progress');
-  static const completed =
-      AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemState._(
-          'completed');
-  static const failed =
-      AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemState._('failed');
-  static const idle =
-      AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemState._('idle');
-  static const waitingForUser =
-      AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemState._(
-          'waiting_for_user');
-  static const timedOut =
-      AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemState._(
-          'timed_out');
-  static const cancelled =
-      AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemState._(
-          'cancelled');
+  static const newest = ReposListForksSort._('newest');
+  static const oldest = ReposListForksSort._('oldest');
+  static const stargazers = ReposListForksSort._('stargazers');
+  static const watchers = ReposListForksSort._('watchers');
 
   String toJson() => value;
 
@@ -255,31 +120,189 @@ final class AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemState {
 
   @override
   bool operator ==(Object other) =>
-      other is AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemState &&
+      other is ReposListForksSort && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The type of the object we're tagging. Normally this is a `commit` but it can also be a `tree` or a `blob`.
+final class GitCreateTagRequestBodyType {
+  final String value;
+
+  const GitCreateTagRequestBodyType._(this.value);
+
+  factory GitCreateTagRequestBodyType.fromJson(String value) =>
+      GitCreateTagRequestBodyType._(value);
+
+  static const commit = GitCreateTagRequestBodyType._('commit');
+  static const tree = GitCreateTagRequestBodyType._('tree');
+  static const blob = GitCreateTagRequestBodyType._('blob');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is GitCreateTagRequestBodyType && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The file mode; one of `100644` for file (blob), `100755` for executable (blob), `040000` for subdirectory (tree), `160000` for submodule (commit), or `120000` for a blob that specifies the path of a symlink.
+final class GitCreateTreeRequestBodyTreeItemMode {
+  final String value;
+
+  const GitCreateTreeRequestBodyTreeItemMode._(this.value);
+
+  factory GitCreateTreeRequestBodyTreeItemMode.fromJson(String value) =>
+      GitCreateTreeRequestBodyTreeItemMode._(value);
+
+  static const v100644 = GitCreateTreeRequestBodyTreeItemMode._('100644');
+  static const v100755 = GitCreateTreeRequestBodyTreeItemMode._('100755');
+  static const v040000 = GitCreateTreeRequestBodyTreeItemMode._('040000');
+  static const v160000 = GitCreateTreeRequestBodyTreeItemMode._('160000');
+  static const v120000 = GitCreateTreeRequestBodyTreeItemMode._('120000');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is GitCreateTreeRequestBodyTreeItemMode && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Either `blob`, `tree`, or `commit`.
+final class GitCreateTreeRequestBodyTreeItemType {
+  final String value;
+
+  const GitCreateTreeRequestBodyTreeItemType._(this.value);
+
+  factory GitCreateTreeRequestBodyTreeItemType.fromJson(String value) =>
+      GitCreateTreeRequestBodyTreeItemType._(value);
+
+  static const blob = GitCreateTreeRequestBodyTreeItemType._('blob');
+  static const tree = GitCreateTreeRequestBodyTreeItemType._('tree');
+  static const commit = GitCreateTreeRequestBodyTreeItemType._('commit');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is GitCreateTreeRequestBodyTreeItemType && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The type of version control system you are migrating from.
+final class MigrationsUpdateImportRequestBodyVcs {
+  final String value;
+
+  const MigrationsUpdateImportRequestBodyVcs._(this.value);
+
+  factory MigrationsUpdateImportRequestBodyVcs.fromJson(String value) =>
+      MigrationsUpdateImportRequestBodyVcs._(value);
+
+  static const subversion =
+      MigrationsUpdateImportRequestBodyVcs._('subversion');
+  static const tfvc = MigrationsUpdateImportRequestBodyVcs._('tfvc');
+  static const git = MigrationsUpdateImportRequestBodyVcs._('git');
+  static const mercurial = MigrationsUpdateImportRequestBodyVcs._('mercurial');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is MigrationsUpdateImportRequestBodyVcs && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The originating VCS type. Without this parameter, the import job will take additional time to detect the VCS type before beginning the import. This detection step will be reflected in the response.
+final class MigrationsStartImportRequestBodyVcs {
+  final String value;
+
+  const MigrationsStartImportRequestBodyVcs._(this.value);
+
+  factory MigrationsStartImportRequestBodyVcs.fromJson(String value) =>
+      MigrationsStartImportRequestBodyVcs._(value);
+
+  static const subversion = MigrationsStartImportRequestBodyVcs._('subversion');
+  static const git = MigrationsStartImportRequestBodyVcs._('git');
+  static const mercurial = MigrationsStartImportRequestBodyVcs._('mercurial');
+  static const tfvc = MigrationsStartImportRequestBodyVcs._('tfvc');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is MigrationsStartImportRequestBodyVcs && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Whether to store large files during the import. `opt_in` means large files will be stored using Git LFS. `opt_out` means large files will be removed during the import.
+final class MigrationsSetLfsPreferenceRequestBodyUseLfs {
+  final String value;
+
+  const MigrationsSetLfsPreferenceRequestBodyUseLfs._(this.value);
+
+  factory MigrationsSetLfsPreferenceRequestBodyUseLfs.fromJson(String value) =>
+      MigrationsSetLfsPreferenceRequestBodyUseLfs._(value);
+
+  static const optIn = MigrationsSetLfsPreferenceRequestBodyUseLfs._('opt_in');
+  static const optOut =
+      MigrationsSetLfsPreferenceRequestBodyUseLfs._('opt_out');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is MigrationsSetLfsPreferenceRequestBodyUseLfs &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Billing unit used for this session. New sessions since June 1, 2026 use `ai_credits`, but older sessions use `premium_requests`.
-final class AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUsageType {
+/// The permissions that the associated user will have on the repository. Valid values are `read`, `write`, `maintain`, `triage`, and `admin`.
+final class ReposUpdateInvitationRequestBodyPermissions {
   final String value;
 
-  const AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUsageType._(
-      this.value);
+  const ReposUpdateInvitationRequestBodyPermissions._(this.value);
 
-  factory AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUsageType.fromJson(
-          String value) =>
-      AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUsageType._(
-          value);
+  factory ReposUpdateInvitationRequestBodyPermissions.fromJson(String value) =>
+      ReposUpdateInvitationRequestBodyPermissions._(value);
 
-  static const aiCredits =
-      AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUsageType._(
-          'ai_credits');
-  static const premiumRequests =
-      AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUsageType._(
-          'premium_requests');
+  static const read = ReposUpdateInvitationRequestBodyPermissions._('read');
+  static const write = ReposUpdateInvitationRequestBodyPermissions._('write');
+  static const maintain =
+      ReposUpdateInvitationRequestBodyPermissions._('maintain');
+  static const triage = ReposUpdateInvitationRequestBodyPermissions._('triage');
+  static const admin = ReposUpdateInvitationRequestBodyPermissions._('admin');
 
   String toJson() => value;
 
@@ -288,36 +311,24 @@ final class AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUsageType {
 
   @override
   bool operator ==(Object other) =>
-      other
-          is AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUsageType &&
+      other is ReposUpdateInvitationRequestBodyPermissions &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Machine-readable error code
-final class AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode {
+final class IssuesListForRepoSort {
   final String value;
 
-  const AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode._(this.value);
+  const IssuesListForRepoSort._(this.value);
 
-  factory AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode.fromJson(
-          String value) =>
-      AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode._(value);
+  factory IssuesListForRepoSort.fromJson(String value) =>
+      IssuesListForRepoSort._(value);
 
-  static const missing =
-      AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode._('missing');
-  static const missingField =
-      AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode._('missing_field');
-  static const invalid =
-      AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode._('invalid');
-  static const alreadyExists =
-      AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode._('already_exists');
-  static const unprocessable =
-      AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode._('unprocessable');
-  static const custom =
-      AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode._('custom');
+  static const created = IssuesListForRepoSort._('created');
+  static const updated = IssuesListForRepoSort._('updated');
+  static const comments = IssuesListForRepoSort._('comments');
 
   String toJson() => value;
 
@@ -326,90 +337,7 @@ final class AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode {
 
   @override
   bool operator ==(Object other) =>
-      other is AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Machine-readable error code
-final class AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode24410078 {
-  final String value;
-
-  const AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode24410078._(
-      this.value);
-
-  factory AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode24410078.fromJson(
-          String value) =>
-      AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode24410078._(value);
-
-  static const missing =
-      AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode24410078._('missing');
-  static const missingField =
-      AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode24410078._(
-          'missing_field');
-  static const invalid =
-      AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode24410078._('invalid');
-  static const alreadyExists =
-      AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode24410078._(
-          'already_exists');
-  static const unprocessable =
-      AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode24410078._(
-          'unprocessable');
-  static const custom =
-      AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode24410078._('custom');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode24410078 &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Machine-readable error code
-final class AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode4a33f270 {
-  final String value;
-
-  const AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode4a33f270._(
-      this.value);
-
-  factory AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode4a33f270.fromJson(
-          String value) =>
-      AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode4a33f270._(value);
-
-  static const missing =
-      AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode4a33f270._('missing');
-  static const missingField =
-      AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode4a33f270._(
-          'missing_field');
-  static const invalid =
-      AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode4a33f270._('invalid');
-  static const alreadyExists =
-      AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode4a33f270._(
-          'already_exists');
-  static const unprocessable =
-      AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode4a33f270._(
-          'unprocessable');
-  static const custom =
-      AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode4a33f270._('custom');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode4a33f270 &&
-      other.value == value;
+      other is IssuesListForRepoSort && other.value == value;
 
   @override
   int get hashCode => value.hashCode;

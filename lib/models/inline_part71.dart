@@ -5,228 +5,6 @@ part of 'inline.dart';
 
 // Inline operation models (part 71)
 /// Required enumerated value serialized in the `action` wire field.
-final class WebhookDiscussionReopenedAction {
-  final String value;
-
-  const WebhookDiscussionReopenedAction._(this.value);
-
-  factory WebhookDiscussionReopenedAction.fromJson(String value) =>
-      WebhookDiscussionReopenedAction._(value);
-
-  static const reopened = WebhookDiscussionReopenedAction._('reopened');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookDiscussionReopenedAction && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookDiscussionTransferredAction {
-  final String value;
-
-  const WebhookDiscussionTransferredAction._(this.value);
-
-  factory WebhookDiscussionTransferredAction.fromJson(String value) =>
-      WebhookDiscussionTransferredAction._(value);
-
-  static const transferred =
-      WebhookDiscussionTransferredAction._('transferred');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookDiscussionTransferredAction && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookDiscussionUnansweredAction {
-  final String value;
-
-  const WebhookDiscussionUnansweredAction._(this.value);
-
-  factory WebhookDiscussionUnansweredAction.fromJson(String value) =>
-      WebhookDiscussionUnansweredAction._(value);
-
-  static const unanswered = WebhookDiscussionUnansweredAction._('unanswered');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookDiscussionUnansweredAction && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookDiscussionUnlabeledAction {
-  final String value;
-
-  const WebhookDiscussionUnlabeledAction._(this.value);
-
-  factory WebhookDiscussionUnlabeledAction.fromJson(String value) =>
-      WebhookDiscussionUnlabeledAction._(value);
-
-  static const unlabeled = WebhookDiscussionUnlabeledAction._('unlabeled');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookDiscussionUnlabeledAction && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookDiscussionUnlockedAction {
-  final String value;
-
-  const WebhookDiscussionUnlockedAction._(this.value);
-
-  factory WebhookDiscussionUnlockedAction.fromJson(String value) =>
-      WebhookDiscussionUnlockedAction._(value);
-
-  static const unlocked = WebhookDiscussionUnlockedAction._('unlocked');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookDiscussionUnlockedAction && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookDiscussionUnpinnedAction {
-  final String value;
-
-  const WebhookDiscussionUnpinnedAction._(this.value);
-
-  factory WebhookDiscussionUnpinnedAction.fromJson(String value) =>
-      WebhookDiscussionUnpinnedAction._(value);
-
-  static const unpinned = WebhookDiscussionUnpinnedAction._('unpinned');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookDiscussionUnpinnedAction && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhookForkForkeeVariant0OwnerType {
-  final String value;
-
-  const WebhookForkForkeeVariant0OwnerType._(this.value);
-
-  factory WebhookForkForkeeVariant0OwnerType.fromJson(String value) =>
-      WebhookForkForkeeVariant0OwnerType._(value);
-
-  static const bot = WebhookForkForkeeVariant0OwnerType._('Bot');
-  static const user = WebhookForkForkeeVariant0OwnerType._('User');
-  static const organization =
-      WebhookForkForkeeVariant0OwnerType._('Organization');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookForkForkeeVariant0OwnerType && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `visibility` wire field.
-final class WebhookForkForkeeVariant0Visibility {
-  final String value;
-
-  const WebhookForkForkeeVariant0Visibility._(this.value);
-
-  factory WebhookForkForkeeVariant0Visibility.fromJson(String value) =>
-      WebhookForkForkeeVariant0Visibility._(value);
-
-  static const public = WebhookForkForkeeVariant0Visibility._('public');
-  static const private = WebhookForkForkeeVariant0Visibility._('private');
-  static const internal = WebhookForkForkeeVariant0Visibility._('internal');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookForkForkeeVariant0Visibility && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `fork` wire field.
-final class WebhookForkForkeeVariant1Fork {
-  final bool value;
-
-  const WebhookForkForkeeVariant1Fork._(this.value);
-
-  factory WebhookForkForkeeVariant1Fork.fromJson(bool value) =>
-      WebhookForkForkeeVariant1Fork._(value);
-
-  static const true_ = WebhookForkForkeeVariant1Fork._(true);
-
-  bool toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookForkForkeeVariant1Fork && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `action` wire field.
 final class WebhookGithubAppAuthorizationRevokedAction {
   final String value;
 
@@ -320,6 +98,251 @@ final class WebhookInstallationDeletedAction {
   @override
   bool operator ==(Object other) =>
       other is WebhookInstallationDeletedAction && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Required enumerated value serialized in the `action` wire field.
+final class WebhookInstallationNewPermissionsAcceptedAction {
+  final String value;
+
+  const WebhookInstallationNewPermissionsAcceptedAction._(this.value);
+
+  factory WebhookInstallationNewPermissionsAcceptedAction.fromJson(
+          String value) =>
+      WebhookInstallationNewPermissionsAcceptedAction._(value);
+
+  static const newPermissionsAccepted =
+      WebhookInstallationNewPermissionsAcceptedAction._(
+          'new_permissions_accepted');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookInstallationNewPermissionsAcceptedAction &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Required enumerated value serialized in the `action` wire field.
+final class WebhookInstallationRepositoriesAddedAction {
+  final String value;
+
+  const WebhookInstallationRepositoriesAddedAction._(this.value);
+
+  factory WebhookInstallationRepositoriesAddedAction.fromJson(String value) =>
+      WebhookInstallationRepositoriesAddedAction._(value);
+
+  static const added = WebhookInstallationRepositoriesAddedAction._('added');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookInstallationRepositoriesAddedAction &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Required enumerated value serialized in the `action` wire field.
+final class WebhookInstallationRepositoriesRemovedAction {
+  final String value;
+
+  const WebhookInstallationRepositoriesRemovedAction._(this.value);
+
+  factory WebhookInstallationRepositoriesRemovedAction.fromJson(String value) =>
+      WebhookInstallationRepositoriesRemovedAction._(value);
+
+  static const removed =
+      WebhookInstallationRepositoriesRemovedAction._('removed');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookInstallationRepositoriesRemovedAction &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Required enumerated value serialized in the `action` wire field.
+final class WebhookInstallationSuspendAction {
+  final String value;
+
+  const WebhookInstallationSuspendAction._(this.value);
+
+  factory WebhookInstallationSuspendAction.fromJson(String value) =>
+      WebhookInstallationSuspendAction._(value);
+
+  static const suspend = WebhookInstallationSuspendAction._('suspend');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookInstallationSuspendAction && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Required enumerated value serialized in the `action` wire field.
+final class WebhookInstallationTargetRenamedAction {
+  final String value;
+
+  const WebhookInstallationTargetRenamedAction._(this.value);
+
+  factory WebhookInstallationTargetRenamedAction.fromJson(String value) =>
+      WebhookInstallationTargetRenamedAction._(value);
+
+  static const renamed = WebhookInstallationTargetRenamedAction._('renamed');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookInstallationTargetRenamedAction && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Required enumerated value serialized in the `action` wire field.
+final class WebhookInstallationUnsuspendAction {
+  final String value;
+
+  const WebhookInstallationUnsuspendAction._(this.value);
+
+  factory WebhookInstallationUnsuspendAction.fromJson(String value) =>
+      WebhookInstallationUnsuspendAction._(value);
+
+  static const unsuspend = WebhookInstallationUnsuspendAction._('unsuspend');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookInstallationUnsuspendAction && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Required enumerated value serialized in the `action` wire field.
+final class WebhookIssueCommentCreatedAction {
+  final String value;
+
+  const WebhookIssueCommentCreatedAction._(this.value);
+
+  factory WebhookIssueCommentCreatedAction.fromJson(String value) =>
+      WebhookIssueCommentCreatedAction._(value);
+
+  static const created = WebhookIssueCommentCreatedAction._('created');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookIssueCommentCreatedAction && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// How the author is associated with the repository.
+final class WebhookIssueCommentCreatedCommentAuthorAssociation {
+  final String value;
+
+  const WebhookIssueCommentCreatedCommentAuthorAssociation._(this.value);
+
+  factory WebhookIssueCommentCreatedCommentAuthorAssociation.fromJson(
+          String value) =>
+      WebhookIssueCommentCreatedCommentAuthorAssociation._(value);
+
+  static const collaborator =
+      WebhookIssueCommentCreatedCommentAuthorAssociation._('COLLABORATOR');
+  static const contributor =
+      WebhookIssueCommentCreatedCommentAuthorAssociation._('CONTRIBUTOR');
+  static const firstTimer =
+      WebhookIssueCommentCreatedCommentAuthorAssociation._('FIRST_TIMER');
+  static const firstTimeContributor =
+      WebhookIssueCommentCreatedCommentAuthorAssociation._(
+          'FIRST_TIME_CONTRIBUTOR');
+  static const mannequin =
+      WebhookIssueCommentCreatedCommentAuthorAssociation._('MANNEQUIN');
+  static const member =
+      WebhookIssueCommentCreatedCommentAuthorAssociation._('MEMBER');
+  static const none =
+      WebhookIssueCommentCreatedCommentAuthorAssociation._('NONE');
+  static const owner =
+      WebhookIssueCommentCreatedCommentAuthorAssociation._('OWNER');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookIssueCommentCreatedCommentAuthorAssociation &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Optional enumerated value serialized in the `type` wire field.
+final class WebhookIssueCommentCreatedCommentUserType {
+  final String value;
+
+  const WebhookIssueCommentCreatedCommentUserType._(this.value);
+
+  factory WebhookIssueCommentCreatedCommentUserType.fromJson(String value) =>
+      WebhookIssueCommentCreatedCommentUserType._(value);
+
+  static const bot = WebhookIssueCommentCreatedCommentUserType._('Bot');
+  static const user = WebhookIssueCommentCreatedCommentUserType._('User');
+  static const organization =
+      WebhookIssueCommentCreatedCommentUserType._('Organization');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookIssueCommentCreatedCommentUserType &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;

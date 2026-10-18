@@ -4,6 +4,37 @@
 part of 'inline.dart';
 
 // Inline operation models (part 23)
+/// The confidence level for this assignee choice.
+final class IssuesAddAssigneesRequestAssigneesItemVariant1Confidence {
+  final String value;
+
+  const IssuesAddAssigneesRequestAssigneesItemVariant1Confidence._(this.value);
+
+  factory IssuesAddAssigneesRequestAssigneesItemVariant1Confidence.fromJson(
+          String value) =>
+      IssuesAddAssigneesRequestAssigneesItemVariant1Confidence._(value);
+
+  static const low =
+      IssuesAddAssigneesRequestAssigneesItemVariant1Confidence._('low');
+  static const medium =
+      IssuesAddAssigneesRequestAssigneesItemVariant1Confidence._('medium');
+  static const high =
+      IssuesAddAssigneesRequestAssigneesItemVariant1Confidence._('high');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is IssuesAddAssigneesRequestAssigneesItemVariant1Confidence &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
 /// The kind of change proposed.
 final class IssueSuggestionAction {
   final String value;
@@ -82,6 +113,93 @@ final class IssueSuggestionState {
   @override
   bool operator ==(Object other) =>
       other is IssueSuggestionState && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The confidence level for this assignee choice.
+final class IssuesUpdateRequestAssigneesItemVariant1Confidence {
+  final String value;
+
+  const IssuesUpdateRequestAssigneesItemVariant1Confidence._(this.value);
+
+  factory IssuesUpdateRequestAssigneesItemVariant1Confidence.fromJson(
+          String value) =>
+      IssuesUpdateRequestAssigneesItemVariant1Confidence._(value);
+
+  static const low =
+      IssuesUpdateRequestAssigneesItemVariant1Confidence._('low');
+  static const medium =
+      IssuesUpdateRequestAssigneesItemVariant1Confidence._('medium');
+  static const high =
+      IssuesUpdateRequestAssigneesItemVariant1Confidence._('high');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is IssuesUpdateRequestAssigneesItemVariant1Confidence &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The confidence level for this label choice.
+final class IssuesUpdateRequestLabelsItemVariant1Confidence {
+  final String value;
+
+  const IssuesUpdateRequestLabelsItemVariant1Confidence._(this.value);
+
+  factory IssuesUpdateRequestLabelsItemVariant1Confidence.fromJson(
+          String value) =>
+      IssuesUpdateRequestLabelsItemVariant1Confidence._(value);
+
+  static const low = IssuesUpdateRequestLabelsItemVariant1Confidence._('low');
+  static const medium =
+      IssuesUpdateRequestLabelsItemVariant1Confidence._('medium');
+  static const high = IssuesUpdateRequestLabelsItemVariant1Confidence._('high');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is IssuesUpdateRequestLabelsItemVariant1Confidence &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The confidence level for this type choice.
+final class IssuesUpdateRequestTypeVariant1Confidence {
+  final String value;
+
+  const IssuesUpdateRequestTypeVariant1Confidence._(this.value);
+
+  factory IssuesUpdateRequestTypeVariant1Confidence.fromJson(String value) =>
+      IssuesUpdateRequestTypeVariant1Confidence._(value);
+
+  static const low = IssuesUpdateRequestTypeVariant1Confidence._('low');
+  static const medium = IssuesUpdateRequestTypeVariant1Confidence._('medium');
+  static const high = IssuesUpdateRequestTypeVariant1Confidence._('high');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is IssuesUpdateRequestTypeVariant1Confidence &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;
@@ -199,108 +317,6 @@ final class JobStatus {
 
   @override
   bool operator ==(Object other) => other is JobStatus && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The phase of the lifecycle that the job is currently in.
-final class JobStepsItemStatus {
-  final String value;
-
-  const JobStepsItemStatus._(this.value);
-
-  factory JobStepsItemStatus.fromJson(String value) =>
-      JobStepsItemStatus._(value);
-
-  static const queued = JobStepsItemStatus._('queued');
-  static const inProgress = JobStepsItemStatus._('in_progress');
-  static const completed = JobStepsItemStatus._('completed');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is JobStepsItemStatus && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `price_model` wire field.
-final class MarketplaceListingPlanPriceModel {
-  final String value;
-
-  const MarketplaceListingPlanPriceModel._(this.value);
-
-  factory MarketplaceListingPlanPriceModel.fromJson(String value) =>
-      MarketplaceListingPlanPriceModel._(value);
-
-  static const free = MarketplaceListingPlanPriceModel._('FREE');
-  static const flatRate = MarketplaceListingPlanPriceModel._('FLAT_RATE');
-  static const perUnit = MarketplaceListingPlanPriceModel._('PER_UNIT');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is MarketplaceListingPlanPriceModel && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `merge_type` wire field.
-final class MergedUpstreamMergeType {
-  final String value;
-
-  const MergedUpstreamMergeType._(this.value);
-
-  factory MergedUpstreamMergeType.fromJson(String value) =>
-      MergedUpstreamMergeType._(value);
-
-  static const merge = MergedUpstreamMergeType._('merge');
-  static const fastForward = MergedUpstreamMergeType._('fast-forward');
-  static const none = MergedUpstreamMergeType._('none');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is MergedUpstreamMergeType && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The state of the milestone.
-final class MilestoneState {
-  final String value;
-
-  const MilestoneState._(this.value);
-
-  factory MilestoneState.fromJson(String value) => MilestoneState._(value);
-
-  static const open = MilestoneState._('open');
-  static const closed = MilestoneState._('closed');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is MilestoneState && other.value == value;
 
   @override
   int get hashCode => value.hashCode;

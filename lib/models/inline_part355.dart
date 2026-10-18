@@ -4,400 +4,655 @@
 part of 'inline.dart';
 
 // Inline operation models (part 355)
-class ActionsSetCustomLabelsForSelfHostedRunnerForRepoRequestBody {
+class OrgsUpdateRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// The names of the custom labels to set for the runner. You can pass an empty array to remove all custom labels.
-  final List<String> labels;
+  /// Billing email address. This address is not publicized.
+  final SdkOptional<String> billingEmail;
 
-  const ActionsSetCustomLabelsForSelfHostedRunnerForRepoRequestBody(
-      {required this.labels});
+  /// The company name.
+  final SdkOptional<String> company;
 
-  ActionsSetCustomLabelsForSelfHostedRunnerForRepoRequestBody Function(
-      {List<String> labels}) get copyWith => _copyWith;
+  /// The publicly visible email address.
+  final SdkOptional<String> email;
 
-  ActionsSetCustomLabelsForSelfHostedRunnerForRepoRequestBody _copyWith(
-          {Object? labels = sdkOmittedValue}) =>
-      ActionsSetCustomLabelsForSelfHostedRunnerForRepoRequestBody(
-        labels: identical(labels, sdkOmittedValue)
-            ? this.labels
-            : labels as List<String>,
+  /// The Twitter username of the company.
+  final SdkOptional<String> twitterUsername;
+
+  /// The location.
+  final SdkOptional<String> location;
+
+  /// The shorthand name of the company.
+  final SdkOptional<String> name;
+
+  /// The description of the company. The maximum size is 160 characters.
+  final SdkOptional<String> description;
+
+  /// Whether an organization can use organization projects.
+  final SdkOptional<bool> hasOrganizationProjects;
+
+  /// Whether repositories that belong to the organization can use repository projects.
+  final SdkOptional<bool> hasRepositoryProjects;
+
+  /// Default permission level members have for organization repositories.
+  final SdkOptional<OrgsUpdateRequestBodyDefaultRepositoryPermission>
+      defaultRepositoryPermission;
+
+  /// Whether of non-admin organization members can create repositories. **Note:** A parameter can override this parameter. See `members_allowed_repository_creation_type` in this table for details.
+  final SdkOptional<bool> membersCanCreateRepositories;
+
+  /// Whether organization members can create internal repositories, which are visible to all enterprise members. You can only allow members to create internal repositories if your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+. For more information, see "[Restricting repository creation in your organization](https://docs.github.com/github/setting-up-and-managing-organizations-and-teams/restricting-repository-creation-in-your-organization)" in the GitHub Help documentation.
+  final SdkOptional<bool> membersCanCreateInternalRepositories;
+
+  /// Whether organization members can create private repositories, which are visible to organization members with permission. For more information, see "[Restricting repository creation in your organization](https://docs.github.com/github/setting-up-and-managing-organizations-and-teams/restricting-repository-creation-in-your-organization)" in the GitHub Help documentation.
+  final SdkOptional<bool> membersCanCreatePrivateRepositories;
+
+  /// Whether organization members can create public repositories, which are visible to anyone. For more information, see "[Restricting repository creation in your organization](https://docs.github.com/github/setting-up-and-managing-organizations-and-teams/restricting-repository-creation-in-your-organization)" in the GitHub Help documentation.
+  final SdkOptional<bool> membersCanCreatePublicRepositories;
+
+  /// Specifies which types of repositories non-admin organization members can create. `private` is only available to repositories that are part of an organization on GitHub Enterprise Cloud. **Note:** This parameter is closing down and will be removed in the future. Its return value ignores internal repositories. Using this parameter overrides values set in `members_can_create_repositories`. See the parameter deprecation notice in the operation description for details.
+  final SdkOptional<OrgsUpdateRequestBodyMembersAllowedRepositoryCreationType>
+      membersAllowedRepositoryCreationType;
+
+  /// Whether organization members can create GitHub Pages sites. Existing published sites will not be impacted.
+  final SdkOptional<bool> membersCanCreatePages;
+
+  /// Whether organization members can create public GitHub Pages sites. Existing published sites will not be impacted.
+  final SdkOptional<bool> membersCanCreatePublicPages;
+
+  /// Whether organization members can create private GitHub Pages sites. Existing published sites will not be impacted.
+  final SdkOptional<bool> membersCanCreatePrivatePages;
+
+  /// Whether organization members can fork private organization repositories.
+  final SdkOptional<bool> membersCanForkPrivateRepositories;
+
+  /// Whether contributors to organization repositories are required to sign off on commits they make through GitHub's web interface.
+  final SdkOptional<bool> webCommitSignoffRequired;
+  final SdkOptional<String> blog;
+
+  /// **Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead. Whether GitHub Advanced Security is automatically enabled for new repositories and repositories transferred to this organization. To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)." You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
+  final SdkOptional<bool> advancedSecurityEnabledForNewRepositories;
+
+  /// **Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead. Whether Dependabot alerts are automatically enabled for new repositories and repositories transferred to this organization. To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)." You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
+  final SdkOptional<bool> dependabotAlertsEnabledForNewRepositories;
+
+  /// **Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead. Whether Dependabot security updates are automatically enabled for new repositories and repositories transferred to this organization. To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)." You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
+  final SdkOptional<bool> dependabotSecurityUpdatesEnabledForNewRepositories;
+
+  /// **Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead. Whether dependency graph is automatically enabled for new repositories and repositories transferred to this organization. To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)." You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
+  final SdkOptional<bool> dependencyGraphEnabledForNewRepositories;
+
+  /// **Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead. Whether secret scanning is automatically enabled for new repositories and repositories transferred to this organization. To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)." You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
+  final SdkOptional<bool> secretScanningEnabledForNewRepositories;
+
+  /// **Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead. Whether secret scanning push protection is automatically enabled for new repositories and repositories transferred to this organization. To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)." You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
+  final SdkOptional<bool> secretScanningPushProtectionEnabledForNewRepositories;
+
+  /// Whether a custom link is shown to contributors who are blocked from pushing a secret by push protection.
+  final SdkOptional<bool> secretScanningPushProtectionCustomLinkEnabled;
+
+  /// If `secret_scanning_push_protection_custom_link_enabled` is true, the URL that will be displayed to contributors who are blocked from pushing a secret.
+  final SdkOptional<String> secretScanningPushProtectionCustomLink;
+
+  /// Controls whether or not deploy keys may be added and used for repositories in the organization.
+  final SdkOptional<bool> deployKeysEnabledForRepositories;
+
+  const OrgsUpdateRequestBody(
+      {this.billingEmail = const SdkOmitted(),
+      this.company = const SdkOmitted(),
+      this.email = const SdkOmitted(),
+      this.twitterUsername = const SdkOmitted(),
+      this.location = const SdkOmitted(),
+      this.name = const SdkOmitted(),
+      this.description = const SdkOmitted(),
+      this.hasOrganizationProjects = const SdkOmitted(),
+      this.hasRepositoryProjects = const SdkOmitted(),
+      this.defaultRepositoryPermission = const SdkOmitted(),
+      this.membersCanCreateRepositories = const SdkOmitted(),
+      this.membersCanCreateInternalRepositories = const SdkOmitted(),
+      this.membersCanCreatePrivateRepositories = const SdkOmitted(),
+      this.membersCanCreatePublicRepositories = const SdkOmitted(),
+      this.membersAllowedRepositoryCreationType = const SdkOmitted(),
+      this.membersCanCreatePages = const SdkOmitted(),
+      this.membersCanCreatePublicPages = const SdkOmitted(),
+      this.membersCanCreatePrivatePages = const SdkOmitted(),
+      this.membersCanForkPrivateRepositories = const SdkOmitted(),
+      this.webCommitSignoffRequired = const SdkOmitted(),
+      this.blog = const SdkOmitted(),
+      this.advancedSecurityEnabledForNewRepositories = const SdkOmitted(),
+      this.dependabotAlertsEnabledForNewRepositories = const SdkOmitted(),
+      this.dependabotSecurityUpdatesEnabledForNewRepositories =
+          const SdkOmitted(),
+      this.dependencyGraphEnabledForNewRepositories = const SdkOmitted(),
+      this.secretScanningEnabledForNewRepositories = const SdkOmitted(),
+      this.secretScanningPushProtectionEnabledForNewRepositories =
+          const SdkOmitted(),
+      this.secretScanningPushProtectionCustomLinkEnabled = const SdkOmitted(),
+      this.secretScanningPushProtectionCustomLink = const SdkOmitted(),
+      this.deployKeysEnabledForRepositories = const SdkOmitted()});
+
+  OrgsUpdateRequestBody Function(
+      {SdkOptional<String> billingEmail,
+      SdkOptional<String> company,
+      SdkOptional<String> email,
+      SdkOptional<String> twitterUsername,
+      SdkOptional<String> location,
+      SdkOptional<String> name,
+      SdkOptional<String> description,
+      SdkOptional<bool> hasOrganizationProjects,
+      SdkOptional<bool> hasRepositoryProjects,
+      SdkOptional<OrgsUpdateRequestBodyDefaultRepositoryPermission>
+          defaultRepositoryPermission,
+      SdkOptional<bool> membersCanCreateRepositories,
+      SdkOptional<bool> membersCanCreateInternalRepositories,
+      SdkOptional<bool> membersCanCreatePrivateRepositories,
+      SdkOptional<bool> membersCanCreatePublicRepositories,
+      SdkOptional<OrgsUpdateRequestBodyMembersAllowedRepositoryCreationType>
+          membersAllowedRepositoryCreationType,
+      SdkOptional<bool> membersCanCreatePages,
+      SdkOptional<bool> membersCanCreatePublicPages,
+      SdkOptional<bool> membersCanCreatePrivatePages,
+      SdkOptional<bool> membersCanForkPrivateRepositories,
+      SdkOptional<bool> webCommitSignoffRequired,
+      SdkOptional<String> blog,
+      SdkOptional<bool> advancedSecurityEnabledForNewRepositories,
+      SdkOptional<bool> dependabotAlertsEnabledForNewRepositories,
+      SdkOptional<bool> dependabotSecurityUpdatesEnabledForNewRepositories,
+      SdkOptional<bool> dependencyGraphEnabledForNewRepositories,
+      SdkOptional<bool> secretScanningEnabledForNewRepositories,
+      SdkOptional<bool> secretScanningPushProtectionEnabledForNewRepositories,
+      SdkOptional<bool> secretScanningPushProtectionCustomLinkEnabled,
+      SdkOptional<String> secretScanningPushProtectionCustomLink,
+      SdkOptional<bool>
+          deployKeysEnabledForRepositories}) get copyWith => _copyWith;
+
+  OrgsUpdateRequestBody _copyWith(
+          {Object? billingEmail = sdkOmittedValue,
+          Object? company = sdkOmittedValue,
+          Object? email = sdkOmittedValue,
+          Object? twitterUsername = sdkOmittedValue,
+          Object? location = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? hasOrganizationProjects = sdkOmittedValue,
+          Object? hasRepositoryProjects = sdkOmittedValue,
+          Object? defaultRepositoryPermission = sdkOmittedValue,
+          Object? membersCanCreateRepositories = sdkOmittedValue,
+          Object? membersCanCreateInternalRepositories = sdkOmittedValue,
+          Object? membersCanCreatePrivateRepositories = sdkOmittedValue,
+          Object? membersCanCreatePublicRepositories = sdkOmittedValue,
+          Object? membersAllowedRepositoryCreationType = sdkOmittedValue,
+          Object? membersCanCreatePages = sdkOmittedValue,
+          Object? membersCanCreatePublicPages = sdkOmittedValue,
+          Object? membersCanCreatePrivatePages = sdkOmittedValue,
+          Object? membersCanForkPrivateRepositories = sdkOmittedValue,
+          Object? webCommitSignoffRequired = sdkOmittedValue,
+          Object? blog = sdkOmittedValue,
+          Object? advancedSecurityEnabledForNewRepositories = sdkOmittedValue,
+          Object? dependabotAlertsEnabledForNewRepositories = sdkOmittedValue,
+          Object? dependabotSecurityUpdatesEnabledForNewRepositories =
+              sdkOmittedValue,
+          Object? dependencyGraphEnabledForNewRepositories = sdkOmittedValue,
+          Object? secretScanningEnabledForNewRepositories = sdkOmittedValue,
+          Object? secretScanningPushProtectionEnabledForNewRepositories =
+              sdkOmittedValue,
+          Object? secretScanningPushProtectionCustomLinkEnabled =
+              sdkOmittedValue,
+          Object? secretScanningPushProtectionCustomLink = sdkOmittedValue,
+          Object? deployKeysEnabledForRepositories = sdkOmittedValue}) =>
+      OrgsUpdateRequestBody(
+        billingEmail: identical(billingEmail, sdkOmittedValue)
+            ? this.billingEmail
+            : billingEmail as SdkOptional<String>,
+        company: identical(company, sdkOmittedValue)
+            ? this.company
+            : company as SdkOptional<String>,
+        email: identical(email, sdkOmittedValue)
+            ? this.email
+            : email as SdkOptional<String>,
+        twitterUsername: identical(twitterUsername, sdkOmittedValue)
+            ? this.twitterUsername
+            : twitterUsername as SdkOptional<String>,
+        location: identical(location, sdkOmittedValue)
+            ? this.location
+            : location as SdkOptional<String>,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as SdkOptional<String>,
+        hasOrganizationProjects:
+            identical(hasOrganizationProjects, sdkOmittedValue)
+                ? this.hasOrganizationProjects
+                : hasOrganizationProjects as SdkOptional<bool>,
+        hasRepositoryProjects: identical(hasRepositoryProjects, sdkOmittedValue)
+            ? this.hasRepositoryProjects
+            : hasRepositoryProjects as SdkOptional<bool>,
+        defaultRepositoryPermission:
+            identical(defaultRepositoryPermission, sdkOmittedValue)
+                ? this.defaultRepositoryPermission
+                : defaultRepositoryPermission as SdkOptional<
+                    OrgsUpdateRequestBodyDefaultRepositoryPermission>,
+        membersCanCreateRepositories:
+            identical(membersCanCreateRepositories, sdkOmittedValue)
+                ? this.membersCanCreateRepositories
+                : membersCanCreateRepositories as SdkOptional<bool>,
+        membersCanCreateInternalRepositories:
+            identical(membersCanCreateInternalRepositories, sdkOmittedValue)
+                ? this.membersCanCreateInternalRepositories
+                : membersCanCreateInternalRepositories as SdkOptional<bool>,
+        membersCanCreatePrivateRepositories:
+            identical(membersCanCreatePrivateRepositories, sdkOmittedValue)
+                ? this.membersCanCreatePrivateRepositories
+                : membersCanCreatePrivateRepositories as SdkOptional<bool>,
+        membersCanCreatePublicRepositories:
+            identical(membersCanCreatePublicRepositories, sdkOmittedValue)
+                ? this.membersCanCreatePublicRepositories
+                : membersCanCreatePublicRepositories as SdkOptional<bool>,
+        membersAllowedRepositoryCreationType:
+            identical(membersAllowedRepositoryCreationType, sdkOmittedValue)
+                ? this.membersAllowedRepositoryCreationType
+                : membersAllowedRepositoryCreationType as SdkOptional<
+                    OrgsUpdateRequestBodyMembersAllowedRepositoryCreationType>,
+        membersCanCreatePages: identical(membersCanCreatePages, sdkOmittedValue)
+            ? this.membersCanCreatePages
+            : membersCanCreatePages as SdkOptional<bool>,
+        membersCanCreatePublicPages:
+            identical(membersCanCreatePublicPages, sdkOmittedValue)
+                ? this.membersCanCreatePublicPages
+                : membersCanCreatePublicPages as SdkOptional<bool>,
+        membersCanCreatePrivatePages:
+            identical(membersCanCreatePrivatePages, sdkOmittedValue)
+                ? this.membersCanCreatePrivatePages
+                : membersCanCreatePrivatePages as SdkOptional<bool>,
+        membersCanForkPrivateRepositories:
+            identical(membersCanForkPrivateRepositories, sdkOmittedValue)
+                ? this.membersCanForkPrivateRepositories
+                : membersCanForkPrivateRepositories as SdkOptional<bool>,
+        webCommitSignoffRequired:
+            identical(webCommitSignoffRequired, sdkOmittedValue)
+                ? this.webCommitSignoffRequired
+                : webCommitSignoffRequired as SdkOptional<bool>,
+        blog: identical(blog, sdkOmittedValue)
+            ? this.blog
+            : blog as SdkOptional<String>,
+        advancedSecurityEnabledForNewRepositories: identical(
+                advancedSecurityEnabledForNewRepositories, sdkOmittedValue)
+            ? this.advancedSecurityEnabledForNewRepositories
+            : advancedSecurityEnabledForNewRepositories as SdkOptional<bool>,
+        dependabotAlertsEnabledForNewRepositories: identical(
+                dependabotAlertsEnabledForNewRepositories, sdkOmittedValue)
+            ? this.dependabotAlertsEnabledForNewRepositories
+            : dependabotAlertsEnabledForNewRepositories as SdkOptional<bool>,
+        dependabotSecurityUpdatesEnabledForNewRepositories: identical(
+                dependabotSecurityUpdatesEnabledForNewRepositories,
+                sdkOmittedValue)
+            ? this.dependabotSecurityUpdatesEnabledForNewRepositories
+            : dependabotSecurityUpdatesEnabledForNewRepositories
+                as SdkOptional<bool>,
+        dependencyGraphEnabledForNewRepositories:
+            identical(dependencyGraphEnabledForNewRepositories, sdkOmittedValue)
+                ? this.dependencyGraphEnabledForNewRepositories
+                : dependencyGraphEnabledForNewRepositories as SdkOptional<bool>,
+        secretScanningEnabledForNewRepositories:
+            identical(secretScanningEnabledForNewRepositories, sdkOmittedValue)
+                ? this.secretScanningEnabledForNewRepositories
+                : secretScanningEnabledForNewRepositories as SdkOptional<bool>,
+        secretScanningPushProtectionEnabledForNewRepositories: identical(
+                secretScanningPushProtectionEnabledForNewRepositories,
+                sdkOmittedValue)
+            ? this.secretScanningPushProtectionEnabledForNewRepositories
+            : secretScanningPushProtectionEnabledForNewRepositories
+                as SdkOptional<bool>,
+        secretScanningPushProtectionCustomLinkEnabled: identical(
+                secretScanningPushProtectionCustomLinkEnabled, sdkOmittedValue)
+            ? this.secretScanningPushProtectionCustomLinkEnabled
+            : secretScanningPushProtectionCustomLinkEnabled
+                as SdkOptional<bool>,
+        secretScanningPushProtectionCustomLink:
+            identical(secretScanningPushProtectionCustomLink, sdkOmittedValue)
+                ? this.secretScanningPushProtectionCustomLink
+                : secretScanningPushProtectionCustomLink as SdkOptional<String>,
+        deployKeysEnabledForRepositories:
+            identical(deployKeysEnabledForRepositories, sdkOmittedValue)
+                ? this.deployKeysEnabledForRepositories
+                : deployKeysEnabledForRepositories as SdkOptional<bool>,
       );
 
-  factory ActionsSetCustomLabelsForSelfHostedRunnerForRepoRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsSetCustomLabelsForSelfHostedRunnerForRepoRequestBody(
-        labels: ((json['labels'] as List?)?.map((e) => e as String).toList())!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'labels': labels,
-      };
-}
-
-class ActionsListWorkflowRunsForRepoResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<WorkflowRun> workflowRuns;
-
-  const ActionsListWorkflowRunsForRepoResponse(
-      {required this.totalCount, required this.workflowRuns});
-
-  ActionsListWorkflowRunsForRepoResponse Function(
-      {int totalCount,
-      List<WorkflowRun> workflowRuns}) get copyWith => _copyWith;
-
-  ActionsListWorkflowRunsForRepoResponse _copyWith(
-          {Object? totalCount = sdkOmittedValue,
-          Object? workflowRuns = sdkOmittedValue}) =>
-      ActionsListWorkflowRunsForRepoResponse(
-        totalCount: identical(totalCount, sdkOmittedValue)
-            ? this.totalCount
-            : totalCount as int,
-        workflowRuns: identical(workflowRuns, sdkOmittedValue)
-            ? this.workflowRuns
-            : workflowRuns as List<WorkflowRun>,
-      );
-
-  factory ActionsListWorkflowRunsForRepoResponse.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsListWorkflowRunsForRepoResponse(
-        totalCount: ((json['total_count'] as num?)?.toInt())!,
-        workflowRuns: ((json['workflow_runs'] as List?)
-            ?.map((e) => WorkflowRun.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'total_count': totalCount,
-        'workflow_runs': workflowRuns.map((item) => item.toJson()).toList(),
-      };
-}
-
-class ActionsListWorkflowRunArtifactsResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<Artifact> artifacts;
-
-  const ActionsListWorkflowRunArtifactsResponse(
-      {required this.totalCount, required this.artifacts});
-
-  ActionsListWorkflowRunArtifactsResponse Function(
-      {int totalCount, List<Artifact> artifacts}) get copyWith => _copyWith;
-
-  ActionsListWorkflowRunArtifactsResponse _copyWith(
-          {Object? totalCount = sdkOmittedValue,
-          Object? artifacts = sdkOmittedValue}) =>
-      ActionsListWorkflowRunArtifactsResponse(
-        totalCount: identical(totalCount, sdkOmittedValue)
-            ? this.totalCount
-            : totalCount as int,
-        artifacts: identical(artifacts, sdkOmittedValue)
-            ? this.artifacts
-            : artifacts as List<Artifact>,
-      );
-
-  factory ActionsListWorkflowRunArtifactsResponse.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsListWorkflowRunArtifactsResponse(
-        totalCount: ((json['total_count'] as num?)?.toInt())!,
-        artifacts: ((json['artifacts'] as List?)
-            ?.map((e) => Artifact.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'total_count': totalCount,
-        'artifacts': artifacts.map((item) => item.toJson()).toList(),
-      };
-}
-
-class ActionsListJobsForWorkflowRunAttemptResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<Job> jobs;
-
-  const ActionsListJobsForWorkflowRunAttemptResponse(
-      {required this.totalCount, required this.jobs});
-
-  ActionsListJobsForWorkflowRunAttemptResponse Function(
-      {int totalCount, List<Job> jobs}) get copyWith => _copyWith;
-
-  ActionsListJobsForWorkflowRunAttemptResponse _copyWith(
-          {Object? totalCount = sdkOmittedValue,
-          Object? jobs = sdkOmittedValue}) =>
-      ActionsListJobsForWorkflowRunAttemptResponse(
-        totalCount: identical(totalCount, sdkOmittedValue)
-            ? this.totalCount
-            : totalCount as int,
-        jobs: identical(jobs, sdkOmittedValue) ? this.jobs : jobs as List<Job>,
-      );
-
-  factory ActionsListJobsForWorkflowRunAttemptResponse.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsListJobsForWorkflowRunAttemptResponse(
-        totalCount: ((json['total_count'] as num?)?.toInt())!,
-        jobs: ((json['jobs'] as List?)
-            ?.map((e) => Job.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'total_count': totalCount,
-        'jobs': jobs.map((item) => item.toJson()).toList(),
-      };
-}
-
-class ActionsListJobsForWorkflowRunResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<Job> jobs;
-
-  const ActionsListJobsForWorkflowRunResponse(
-      {required this.totalCount, required this.jobs});
-
-  ActionsListJobsForWorkflowRunResponse Function(
-      {int totalCount, List<Job> jobs}) get copyWith => _copyWith;
-
-  ActionsListJobsForWorkflowRunResponse _copyWith(
-          {Object? totalCount = sdkOmittedValue,
-          Object? jobs = sdkOmittedValue}) =>
-      ActionsListJobsForWorkflowRunResponse(
-        totalCount: identical(totalCount, sdkOmittedValue)
-            ? this.totalCount
-            : totalCount as int,
-        jobs: identical(jobs, sdkOmittedValue) ? this.jobs : jobs as List<Job>,
-      );
-
-  factory ActionsListJobsForWorkflowRunResponse.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsListJobsForWorkflowRunResponse(
-        totalCount: ((json['total_count'] as num?)?.toInt())!,
-        jobs: ((json['jobs'] as List?)
-            ?.map((e) => Job.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'total_count': totalCount,
-        'jobs': jobs.map((item) => item.toJson()).toList(),
-      };
-}
-
-class ActionsReviewPendingDeploymentsForRunRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The list of environment ids to approve or reject
-  final List<int> environmentIds;
-
-  /// Whether to approve or reject deployment to the specified environments.
-  final ActionsReviewPendingDeploymentsForRunRequestBodyState state;
-
-  /// A comment to accompany the deployment review
-  final String comment;
-
-  const ActionsReviewPendingDeploymentsForRunRequestBody(
-      {required this.environmentIds,
-      required this.state,
-      required this.comment});
-
-  ActionsReviewPendingDeploymentsForRunRequestBody Function(
-      {List<int> environmentIds,
-      ActionsReviewPendingDeploymentsForRunRequestBodyState state,
-      String comment}) get copyWith => _copyWith;
-
-  ActionsReviewPendingDeploymentsForRunRequestBody _copyWith(
-          {Object? environmentIds = sdkOmittedValue,
-          Object? state = sdkOmittedValue,
-          Object? comment = sdkOmittedValue}) =>
-      ActionsReviewPendingDeploymentsForRunRequestBody(
-        environmentIds: identical(environmentIds, sdkOmittedValue)
-            ? this.environmentIds
-            : environmentIds as List<int>,
-        state: identical(state, sdkOmittedValue)
-            ? this.state
-            : state as ActionsReviewPendingDeploymentsForRunRequestBodyState,
-        comment: identical(comment, sdkOmittedValue)
-            ? this.comment
-            : comment as String,
-      );
-
-  factory ActionsReviewPendingDeploymentsForRunRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsReviewPendingDeploymentsForRunRequestBody(
-        environmentIds: ((json['environment_ids'] as List?)
-            ?.map((e) => (e as num).toInt())
-            .toList())!,
-        state: (json['state'] != null
-            ? ActionsReviewPendingDeploymentsForRunRequestBodyState.fromJson(
-                json['state'] as String)
-            : null)!,
-        comment: (json['comment'] as String?)!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'environment_ids': environmentIds,
-        'state': state.toJson(),
-        'comment': comment,
-      };
-}
-
-class ActionsReRunWorkflowRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Whether to enable debug logging for the re-run.
-  final SdkOptional<bool> enableDebugLogging;
-
-  const ActionsReRunWorkflowRequestBody(
-      {this.enableDebugLogging = const SdkOmitted()});
-
-  ActionsReRunWorkflowRequestBody Function(
-      {SdkOptional<bool> enableDebugLogging}) get copyWith => _copyWith;
-
-  ActionsReRunWorkflowRequestBody _copyWith(
-          {Object? enableDebugLogging = sdkOmittedValue}) =>
-      ActionsReRunWorkflowRequestBody(
-        enableDebugLogging: identical(enableDebugLogging, sdkOmittedValue)
-            ? this.enableDebugLogging
-            : enableDebugLogging as SdkOptional<bool>,
-      );
-
-  factory ActionsReRunWorkflowRequestBody.fromJson(Map<String, dynamic> json) =>
-      ActionsReRunWorkflowRequestBody(
-        enableDebugLogging: json['enable_debug_logging'] != null
-            ? SdkPresent((json['enable_debug_logging'] as bool?)!)
+  factory OrgsUpdateRequestBody.fromJson(Map<String, dynamic> json) =>
+      OrgsUpdateRequestBody(
+        billingEmail: json['billing_email'] != null
+            ? SdkPresent((json['billing_email'] as String?)!)
             : const SdkOmitted(),
+        company: json['company'] != null
+            ? SdkPresent((json['company'] as String?)!)
+            : const SdkOmitted(),
+        email: json['email'] != null
+            ? SdkPresent((json['email'] as String?)!)
+            : const SdkOmitted(),
+        twitterUsername: json['twitter_username'] != null
+            ? SdkPresent((json['twitter_username'] as String?)!)
+            : const SdkOmitted(),
+        location: json['location'] != null
+            ? SdkPresent((json['location'] as String?)!)
+            : const SdkOmitted(),
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+        description: json['description'] != null
+            ? SdkPresent((json['description'] as String?)!)
+            : const SdkOmitted(),
+        hasOrganizationProjects: json['has_organization_projects'] != null
+            ? SdkPresent((json['has_organization_projects'] as bool?)!)
+            : const SdkOmitted(),
+        hasRepositoryProjects: json['has_repository_projects'] != null
+            ? SdkPresent((json['has_repository_projects'] as bool?)!)
+            : const SdkOmitted(),
+        defaultRepositoryPermission:
+            json['default_repository_permission'] != null
+                ? SdkPresent((json['default_repository_permission'] != null
+                    ? OrgsUpdateRequestBodyDefaultRepositoryPermission.fromJson(
+                        json['default_repository_permission'] as String)
+                    : null)!)
+                : const SdkOmitted(),
+        membersCanCreateRepositories: json['members_can_create_repositories'] !=
+                null
+            ? SdkPresent((json['members_can_create_repositories'] as bool?)!)
+            : const SdkOmitted(),
+        membersCanCreateInternalRepositories:
+            json['members_can_create_internal_repositories'] != null
+                ? SdkPresent((json['members_can_create_internal_repositories']
+                    as bool?)!)
+                : const SdkOmitted(),
+        membersCanCreatePrivateRepositories:
+            json['members_can_create_private_repositories'] != null
+                ? SdkPresent(
+                    (json['members_can_create_private_repositories'] as bool?)!)
+                : const SdkOmitted(),
+        membersCanCreatePublicRepositories:
+            json['members_can_create_public_repositories'] != null
+                ? SdkPresent(
+                    (json['members_can_create_public_repositories'] as bool?)!)
+                : const SdkOmitted(),
+        membersAllowedRepositoryCreationType: json[
+                    'members_allowed_repository_creation_type'] !=
+                null
+            ? SdkPresent((json['members_allowed_repository_creation_type'] !=
+                    null
+                ? OrgsUpdateRequestBodyMembersAllowedRepositoryCreationType
+                    .fromJson(json['members_allowed_repository_creation_type']
+                        as String)
+                : null)!)
+            : const SdkOmitted(),
+        membersCanCreatePages: json['members_can_create_pages'] != null
+            ? SdkPresent((json['members_can_create_pages'] as bool?)!)
+            : const SdkOmitted(),
+        membersCanCreatePublicPages: json['members_can_create_public_pages'] !=
+                null
+            ? SdkPresent((json['members_can_create_public_pages'] as bool?)!)
+            : const SdkOmitted(),
+        membersCanCreatePrivatePages:
+            json['members_can_create_private_pages'] != null
+                ? SdkPresent(
+                    (json['members_can_create_private_pages'] as bool?)!)
+                : const SdkOmitted(),
+        membersCanForkPrivateRepositories:
+            json['members_can_fork_private_repositories'] != null
+                ? SdkPresent(
+                    (json['members_can_fork_private_repositories'] as bool?)!)
+                : const SdkOmitted(),
+        webCommitSignoffRequired: json['web_commit_signoff_required'] != null
+            ? SdkPresent((json['web_commit_signoff_required'] as bool?)!)
+            : const SdkOmitted(),
+        blog: json['blog'] != null
+            ? SdkPresent((json['blog'] as String?)!)
+            : const SdkOmitted(),
+        advancedSecurityEnabledForNewRepositories:
+            json['advanced_security_enabled_for_new_repositories'] != null
+                ? SdkPresent(
+                    (json['advanced_security_enabled_for_new_repositories']
+                        as bool?)!)
+                : const SdkOmitted(),
+        dependabotAlertsEnabledForNewRepositories:
+            json['dependabot_alerts_enabled_for_new_repositories'] != null
+                ? SdkPresent(
+                    (json['dependabot_alerts_enabled_for_new_repositories']
+                        as bool?)!)
+                : const SdkOmitted(),
+        dependabotSecurityUpdatesEnabledForNewRepositories: json[
+                    'dependabot_security_updates_enabled_for_new_repositories'] !=
+                null
+            ? SdkPresent((json[
+                    'dependabot_security_updates_enabled_for_new_repositories']
+                as bool?)!)
+            : const SdkOmitted(),
+        dependencyGraphEnabledForNewRepositories:
+            json['dependency_graph_enabled_for_new_repositories'] != null
+                ? SdkPresent(
+                    (json['dependency_graph_enabled_for_new_repositories']
+                        as bool?)!)
+                : const SdkOmitted(),
+        secretScanningEnabledForNewRepositories:
+            json['secret_scanning_enabled_for_new_repositories'] != null
+                ? SdkPresent(
+                    (json['secret_scanning_enabled_for_new_repositories']
+                        as bool?)!)
+                : const SdkOmitted(),
+        secretScanningPushProtectionEnabledForNewRepositories: json[
+                    'secret_scanning_push_protection_enabled_for_new_repositories'] !=
+                null
+            ? SdkPresent((json[
+                    'secret_scanning_push_protection_enabled_for_new_repositories']
+                as bool?)!)
+            : const SdkOmitted(),
+        secretScanningPushProtectionCustomLinkEnabled:
+            json['secret_scanning_push_protection_custom_link_enabled'] != null
+                ? SdkPresent(
+                    (json['secret_scanning_push_protection_custom_link_enabled']
+                        as bool?)!)
+                : const SdkOmitted(),
+        secretScanningPushProtectionCustomLink:
+            json['secret_scanning_push_protection_custom_link'] != null
+                ? SdkPresent(
+                    (json['secret_scanning_push_protection_custom_link']
+                        as String?)!)
+                : const SdkOmitted(),
+        deployKeysEnabledForRepositories:
+            json['deploy_keys_enabled_for_repositories'] != null
+                ? SdkPresent(
+                    (json['deploy_keys_enabled_for_repositories'] as bool?)!)
+                : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (enableDebugLogging) {
-          SdkPresent<bool>(value: final value) => {
-              'enable_debug_logging': value,
+        ...switch (billingEmail) {
+          SdkPresent<String>(value: final value) => {
+              'billing_email': value,
             },
           _ => const <String, dynamic>{},
         },
-      };
-}
-
-class ActionsReRunWorkflowFailedJobsRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Whether to enable debug logging for the re-run.
-  final SdkOptional<bool> enableDebugLogging;
-
-  const ActionsReRunWorkflowFailedJobsRequestBody(
-      {this.enableDebugLogging = const SdkOmitted()});
-
-  ActionsReRunWorkflowFailedJobsRequestBody Function(
-      {SdkOptional<bool> enableDebugLogging}) get copyWith => _copyWith;
-
-  ActionsReRunWorkflowFailedJobsRequestBody _copyWith(
-          {Object? enableDebugLogging = sdkOmittedValue}) =>
-      ActionsReRunWorkflowFailedJobsRequestBody(
-        enableDebugLogging: identical(enableDebugLogging, sdkOmittedValue)
-            ? this.enableDebugLogging
-            : enableDebugLogging as SdkOptional<bool>,
-      );
-
-  factory ActionsReRunWorkflowFailedJobsRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsReRunWorkflowFailedJobsRequestBody(
-        enableDebugLogging: json['enable_debug_logging'] != null
-            ? SdkPresent((json['enable_debug_logging'] as bool?)!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (enableDebugLogging) {
-          SdkPresent<bool>(value: final value) => {
-              'enable_debug_logging': value,
+        ...switch (company) {
+          SdkPresent<String>(value: final value) => {
+              'company': value,
             },
           _ => const <String, dynamic>{},
         },
-      };
-}
-
-class ActionsListRepoSecretsResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<ActionsSecret> secrets;
-
-  const ActionsListRepoSecretsResponse(
-      {required this.totalCount, required this.secrets});
-
-  ActionsListRepoSecretsResponse Function(
-      {int totalCount, List<ActionsSecret> secrets}) get copyWith => _copyWith;
-
-  ActionsListRepoSecretsResponse _copyWith(
-          {Object? totalCount = sdkOmittedValue,
-          Object? secrets = sdkOmittedValue}) =>
-      ActionsListRepoSecretsResponse(
-        totalCount: identical(totalCount, sdkOmittedValue)
-            ? this.totalCount
-            : totalCount as int,
-        secrets: identical(secrets, sdkOmittedValue)
-            ? this.secrets
-            : secrets as List<ActionsSecret>,
-      );
-
-  factory ActionsListRepoSecretsResponse.fromJson(Map<String, dynamic> json) =>
-      ActionsListRepoSecretsResponse(
-        totalCount: ((json['total_count'] as num?)?.toInt())!,
-        secrets: ((json['secrets'] as List?)
-            ?.map((e) => ActionsSecret.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'total_count': totalCount,
-        'secrets': secrets.map((item) => item.toJson()).toList(),
-      };
-}
-
-class ActionsCreateOrUpdateRepoSecretRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get a repository public key](https://docs.github.com/rest/actions/secrets#get-a-repository-public-key) endpoint.
-  final String encryptedValue;
-
-  /// ID of the key you used to encrypt the secret.
-  final String keyId;
-
-  const ActionsCreateOrUpdateRepoSecretRequestBody(
-      {required this.encryptedValue, required this.keyId});
-
-  ActionsCreateOrUpdateRepoSecretRequestBody Function(
-      {String encryptedValue, String keyId}) get copyWith => _copyWith;
-
-  ActionsCreateOrUpdateRepoSecretRequestBody _copyWith(
-          {Object? encryptedValue = sdkOmittedValue,
-          Object? keyId = sdkOmittedValue}) =>
-      ActionsCreateOrUpdateRepoSecretRequestBody(
-        encryptedValue: identical(encryptedValue, sdkOmittedValue)
-            ? this.encryptedValue
-            : encryptedValue as String,
-        keyId: identical(keyId, sdkOmittedValue) ? this.keyId : keyId as String,
-      );
-
-  factory ActionsCreateOrUpdateRepoSecretRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsCreateOrUpdateRepoSecretRequestBody(
-        encryptedValue: (json['encrypted_value'] as String?)!,
-        keyId: (json['key_id'] as String?)!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'encrypted_value': encryptedValue,
-        'key_id': keyId,
+        ...switch (email) {
+          SdkPresent<String>(value: final value) => {
+              'email': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (twitterUsername) {
+          SdkPresent<String>(value: final value) => {
+              'twitter_username': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (location) {
+          SdkPresent<String>(value: final value) => {
+              'location': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (description) {
+          SdkPresent<String>(value: final value) => {
+              'description': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (hasOrganizationProjects) {
+          SdkPresent<bool>(value: final value) => {
+              'has_organization_projects': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (hasRepositoryProjects) {
+          SdkPresent<bool>(value: final value) => {
+              'has_repository_projects': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (defaultRepositoryPermission) {
+          SdkPresent<OrgsUpdateRequestBodyDefaultRepositoryPermission>(
+            value: final value
+          ) =>
+            {
+              'default_repository_permission': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (membersCanCreateRepositories) {
+          SdkPresent<bool>(value: final value) => {
+              'members_can_create_repositories': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (membersCanCreateInternalRepositories) {
+          SdkPresent<bool>(value: final value) => {
+              'members_can_create_internal_repositories': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (membersCanCreatePrivateRepositories) {
+          SdkPresent<bool>(value: final value) => {
+              'members_can_create_private_repositories': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (membersCanCreatePublicRepositories) {
+          SdkPresent<bool>(value: final value) => {
+              'members_can_create_public_repositories': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (membersAllowedRepositoryCreationType) {
+          SdkPresent<OrgsUpdateRequestBodyMembersAllowedRepositoryCreationType>(
+            value: final value
+          ) =>
+            {
+              'members_allowed_repository_creation_type': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (membersCanCreatePages) {
+          SdkPresent<bool>(value: final value) => {
+              'members_can_create_pages': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (membersCanCreatePublicPages) {
+          SdkPresent<bool>(value: final value) => {
+              'members_can_create_public_pages': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (membersCanCreatePrivatePages) {
+          SdkPresent<bool>(value: final value) => {
+              'members_can_create_private_pages': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (membersCanForkPrivateRepositories) {
+          SdkPresent<bool>(value: final value) => {
+              'members_can_fork_private_repositories': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (webCommitSignoffRequired) {
+          SdkPresent<bool>(value: final value) => {
+              'web_commit_signoff_required': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (blog) {
+          SdkPresent<String>(value: final value) => {
+              'blog': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (advancedSecurityEnabledForNewRepositories) {
+          SdkPresent<bool>(value: final value) => {
+              'advanced_security_enabled_for_new_repositories': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (dependabotAlertsEnabledForNewRepositories) {
+          SdkPresent<bool>(value: final value) => {
+              'dependabot_alerts_enabled_for_new_repositories': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (dependabotSecurityUpdatesEnabledForNewRepositories) {
+          SdkPresent<bool>(value: final value) => {
+              'dependabot_security_updates_enabled_for_new_repositories': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (dependencyGraphEnabledForNewRepositories) {
+          SdkPresent<bool>(value: final value) => {
+              'dependency_graph_enabled_for_new_repositories': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (secretScanningEnabledForNewRepositories) {
+          SdkPresent<bool>(value: final value) => {
+              'secret_scanning_enabled_for_new_repositories': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (secretScanningPushProtectionEnabledForNewRepositories) {
+          SdkPresent<bool>(value: final value) => {
+              'secret_scanning_push_protection_enabled_for_new_repositories':
+                  value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (secretScanningPushProtectionCustomLinkEnabled) {
+          SdkPresent<bool>(value: final value) => {
+              'secret_scanning_push_protection_custom_link_enabled': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (secretScanningPushProtectionCustomLink) {
+          SdkPresent<String>(value: final value) => {
+              'secret_scanning_push_protection_custom_link': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (deployKeysEnabledForRepositories) {
+          SdkPresent<bool>(value: final value) => {
+              'deploy_keys_enabled_for_repositories': value,
+            },
+          _ => const <String, dynamic>{},
+        },
       };
 }

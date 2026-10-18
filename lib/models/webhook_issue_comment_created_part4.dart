@@ -4,8 +4,8 @@
 part of 'webhook_issue_comment_created.dart';
 
 // webhook_issue_comment_created domain models (part 4)
-/// Optional object value serialized in the `assignee` wire field.
-class WebhookIssueCommentCreatedIssueVariant0Assignee {
+/// Required object value serialized in the `assignee` wire field.
+class WebhookIssueCommentCreatedIssueAssignee {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
@@ -67,7 +67,7 @@ class WebhookIssueCommentCreatedIssueVariant0Assignee {
   final SdkOptional<String> subscriptionsUrl;
 
   /// Optional enumerated value serialized in the `type` wire field.
-  final SdkOptional<WebhookIssueCommentCreatedIssueVariant0AssigneeType> type_;
+  final SdkOptional<WebhookIssueCommentCreatedIssueAssigneeType> type_;
 
   /// Optional `uri`-formatted value serialized in the `url` wire field.
   final SdkOptional<String> url;
@@ -75,7 +75,7 @@ class WebhookIssueCommentCreatedIssueVariant0Assignee {
   /// Optional `string` value serialized in the `user_view_type` wire field.
   final SdkOptional<String> userViewType;
 
-  const WebhookIssueCommentCreatedIssueVariant0Assignee(
+  const WebhookIssueCommentCreatedIssueAssignee(
       {this.avatarUrl = const SdkOmitted(),
       this.deleted = const SdkOmitted(),
       this.email = const SdkOmitted(),
@@ -99,7 +99,7 @@ class WebhookIssueCommentCreatedIssueVariant0Assignee {
       this.url = const SdkOmitted(),
       this.userViewType = const SdkOmitted()});
 
-  WebhookIssueCommentCreatedIssueVariant0Assignee Function(
+  WebhookIssueCommentCreatedIssueAssignee Function(
       {SdkOptional<String> avatarUrl,
       SdkOptional<bool> deleted,
       SdkOptional<String?> email,
@@ -119,11 +119,11 @@ class WebhookIssueCommentCreatedIssueVariant0Assignee {
       SdkOptional<bool> siteAdmin,
       SdkOptional<String> starredUrl,
       SdkOptional<String> subscriptionsUrl,
-      SdkOptional<WebhookIssueCommentCreatedIssueVariant0AssigneeType> type_,
+      SdkOptional<WebhookIssueCommentCreatedIssueAssigneeType> type_,
       SdkOptional<String> url,
       SdkOptional<String> userViewType}) get copyWith => _copyWith;
 
-  WebhookIssueCommentCreatedIssueVariant0Assignee _copyWith(
+  WebhookIssueCommentCreatedIssueAssignee _copyWith(
           {Object? avatarUrl = sdkOmittedValue,
           Object? deleted = sdkOmittedValue,
           Object? email = sdkOmittedValue,
@@ -146,7 +146,7 @@ class WebhookIssueCommentCreatedIssueVariant0Assignee {
           Object? type_ = sdkOmittedValue,
           Object? url = sdkOmittedValue,
           Object? userViewType = sdkOmittedValue}) =>
-      WebhookIssueCommentCreatedIssueVariant0Assignee(
+      WebhookIssueCommentCreatedIssueAssignee(
         avatarUrl: identical(avatarUrl, sdkOmittedValue)
             ? this.avatarUrl
             : avatarUrl as SdkOptional<String>,
@@ -202,8 +202,7 @@ class WebhookIssueCommentCreatedIssueVariant0Assignee {
             : subscriptionsUrl as SdkOptional<String>,
         type_: identical(type_, sdkOmittedValue)
             ? this.type_
-            : type_ as SdkOptional<
-                WebhookIssueCommentCreatedIssueVariant0AssigneeType>,
+            : type_ as SdkOptional<WebhookIssueCommentCreatedIssueAssigneeType>,
         url: identical(url, sdkOmittedValue)
             ? this.url
             : url as SdkOptional<String>,
@@ -212,9 +211,9 @@ class WebhookIssueCommentCreatedIssueVariant0Assignee {
             : userViewType as SdkOptional<String>,
       );
 
-  factory WebhookIssueCommentCreatedIssueVariant0Assignee.fromJson(
+  factory WebhookIssueCommentCreatedIssueAssignee.fromJson(
           Map<String, dynamic> json) =>
-      WebhookIssueCommentCreatedIssueVariant0Assignee(
+      WebhookIssueCommentCreatedIssueAssignee(
         avatarUrl: json['avatar_url'] != null
             ? SdkPresent((json['avatar_url'] as String?)!)
             : const SdkOmitted(),
@@ -270,7 +269,7 @@ class WebhookIssueCommentCreatedIssueVariant0Assignee {
             : const SdkOmitted(),
         type_: json['type'] != null
             ? SdkPresent((json['type'] != null
-                ? WebhookIssueCommentCreatedIssueVariant0AssigneeType.fromJson(
+                ? WebhookIssueCommentCreatedIssueAssigneeType.fromJson(
                     json['type'] as String)
                 : null)!)
             : const SdkOmitted(),
@@ -388,7 +387,7 @@ class WebhookIssueCommentCreatedIssueVariant0Assignee {
           _ => const <String, dynamic>{},
         },
         ...switch (type_) {
-          SdkPresent<WebhookIssueCommentCreatedIssueVariant0AssigneeType>(
+          SdkPresent<WebhookIssueCommentCreatedIssueAssigneeType>(
             value: final value
           ) =>
             {

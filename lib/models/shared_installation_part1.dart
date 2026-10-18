@@ -310,6 +310,20 @@ sealed class InstallationAccount {
   static const String constructionSurface = 'named';
   const InstallationAccount();
   factory InstallationAccount.fromJson(Object? json) {
+    if (json is Map<String, dynamic>) {
+      try {
+        final value = SimpleUser.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return InstallationAccountSimpleUser(value);
+        }
+      } catch (_) {}
+      try {
+        final value = Enterprise.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return InstallationAccountEnterprise(value);
+        }
+      } catch (_) {}
+    }
     try {
       return InstallationAccountSimpleUser(
           SimpleUser.fromJson(json as Map<String, dynamic>));

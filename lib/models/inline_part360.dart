@@ -4,713 +4,517 @@
 part of 'inline.dart';
 
 // Inline operation models (part 360)
-class CodeSecurityUpdateEnterpriseConfigurationRequestBody {
+class OrgsListAttestationsResponseAttestationsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// The name of the code security configuration. Must be unique across the enterprise.
-  final SdkOptional<String> name;
+  /// The attestation's Sigstore Bundle. Refer to the [Sigstore Bundle Specification](https://github.com/sigstore/protobuf-specs/blob/main/protos/sigstore_bundle.proto) for more information.
+  final SdkOptional<OrgsListAttestationsResponseAttestationsItemBundle?> bundle;
+  final SdkOptional<int> repositoryId;
+  final SdkOptional<String> bundleUrl;
+  final SdkOptional<String> initiator;
 
-  /// A description of the code security configuration
-  final SdkOptional<String> description;
+  const OrgsListAttestationsResponseAttestationsItem(
+      {this.bundle = const SdkOmitted(),
+      this.repositoryId = const SdkOmitted(),
+      this.bundleUrl = const SdkOmitted(),
+      this.initiator = const SdkOmitted()});
 
-  /// The enablement status of GitHub Advanced Security features. `enabled` will enable both Code Security and Secret Protection features. &gt; [!WARNING] &gt; `code_security` and `secret_protection` are deprecated values for this field. Prefer the individual `code_security` and `secret_protection` fields to set the status of these features.
-  final SdkOptional<
-          CodeSecurityUpdateEnterpriseConfigurationRequestBodyAdvancedSecurity>
-      advancedSecurity;
+  OrgsListAttestationsResponseAttestationsItem Function(
+      {SdkOptional<OrgsListAttestationsResponseAttestationsItemBundle?> bundle,
+      SdkOptional<int> repositoryId,
+      SdkOptional<String> bundleUrl,
+      SdkOptional<String> initiator}) get copyWith => _copyWith;
 
-  /// The enablement status of GitHub Code Security features.
-  final SdkOptional<
-          CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeSecurity>
-      codeSecurity;
-
-  /// The enablement status of Dependency Graph
-  final SdkOptional<
-          CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraph>
-      dependencyGraph;
-
-  /// The enablement status of Automatic dependency submission
-  final SdkOptional<
-          CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitAction>
-      dependencyGraphAutosubmitAction;
-
-  /// Feature options for Automatic dependency submission
-  final SdkOptional<
-          CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitActionOptions>
-      dependencyGraphAutosubmitActionOptions;
-
-  /// The enablement status of Dependabot alerts
-  final SdkOptional<
-          CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotAlerts>
-      dependabotAlerts;
-
-  /// The enablement status of Dependabot security updates
-  final SdkOptional<
-          CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotSecurityUpdates>
-      dependabotSecurityUpdates;
-
-  /// The enablement status of code scanning default setup
-  final SdkOptional<
-          CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDefaultSetup>
-      codeScanningDefaultSetup;
-
-  /// Feature options for code scanning default setup
-  final SdkOptional<CodeScanningDefaultSetupOptions?>
-      codeScanningDefaultSetupOptions;
-
-  /// Security Configuration feature options for code scanning
-  final SdkOptional<CodeScanningOptions?> codeScanningOptions;
-
-  /// The enablement status of code scanning delegated alert dismissal
-  final SdkOptional<
-          CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDelegatedAlertDismissal>
-      codeScanningDelegatedAlertDismissal;
-
-  /// The enablement status of GitHub Secret Protection features.
-  final SdkOptional<
-          CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretProtection>
-      secretProtection;
-
-  /// The enablement status of secret scanning
-  final SdkOptional<
-          CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanning>
-      secretScanning;
-
-  /// The enablement status of secret scanning push protection
-  final SdkOptional<
-          CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningPushProtection>
-      secretScanningPushProtection;
-
-  /// The enablement status of secret scanning validity checks
-  final SdkOptional<
-          CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningValidityChecks>
-      secretScanningValidityChecks;
-
-  /// The enablement status of secret scanning non-provider patterns
-  final SdkOptional<
-          CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningNonProviderPatterns>
-      secretScanningNonProviderPatterns;
-
-  /// The enablement status of Copilot secret scanning
-  final SdkOptional<
-          CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningGenericSecrets>
-      secretScanningGenericSecrets;
-
-  /// The enablement status of secret scanning delegated alert dismissal
-  final SdkOptional<
-          CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningDelegatedAlertDismissal>
-      secretScanningDelegatedAlertDismissal;
-
-  /// The enablement status of secret scanning extended metadata
-  final SdkOptional<
-          CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningExtendedMetadata>
-      secretScanningExtendedMetadata;
-
-  /// The enablement status of private vulnerability reporting
-  final SdkOptional<
-          CodeSecurityUpdateEnterpriseConfigurationRequestBodyPrivateVulnerabilityReporting>
-      privateVulnerabilityReporting;
-
-  /// The enforcement status for a security configuration
-  final SdkOptional<
-          CodeSecurityUpdateEnterpriseConfigurationRequestBodyEnforcement>
-      enforcement;
-
-  const CodeSecurityUpdateEnterpriseConfigurationRequestBody(
-      {this.name = const SdkOmitted(),
-      this.description = const SdkOmitted(),
-      this.advancedSecurity = const SdkOmitted(),
-      this.codeSecurity = const SdkOmitted(),
-      this.dependencyGraph = const SdkOmitted(),
-      this.dependencyGraphAutosubmitAction = const SdkOmitted(),
-      this.dependencyGraphAutosubmitActionOptions = const SdkOmitted(),
-      this.dependabotAlerts = const SdkOmitted(),
-      this.dependabotSecurityUpdates = const SdkOmitted(),
-      this.codeScanningDefaultSetup = const SdkOmitted(),
-      this.codeScanningDefaultSetupOptions = const SdkOmitted(),
-      this.codeScanningOptions = const SdkOmitted(),
-      this.codeScanningDelegatedAlertDismissal = const SdkOmitted(),
-      this.secretProtection = const SdkOmitted(),
-      this.secretScanning = const SdkOmitted(),
-      this.secretScanningPushProtection = const SdkOmitted(),
-      this.secretScanningValidityChecks = const SdkOmitted(),
-      this.secretScanningNonProviderPatterns = const SdkOmitted(),
-      this.secretScanningGenericSecrets = const SdkOmitted(),
-      this.secretScanningDelegatedAlertDismissal = const SdkOmitted(),
-      this.secretScanningExtendedMetadata = const SdkOmitted(),
-      this.privateVulnerabilityReporting = const SdkOmitted(),
-      this.enforcement = const SdkOmitted()});
-
-  CodeSecurityUpdateEnterpriseConfigurationRequestBody Function(
-      {SdkOptional<String> name,
-      SdkOptional<String> description,
-      SdkOptional<
-              CodeSecurityUpdateEnterpriseConfigurationRequestBodyAdvancedSecurity>
-          advancedSecurity,
-      SdkOptional<
-              CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeSecurity>
-          codeSecurity,
-      SdkOptional<
-              CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraph>
-          dependencyGraph,
-      SdkOptional<
-              CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitAction>
-          dependencyGraphAutosubmitAction,
-      SdkOptional<
-              CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitActionOptions>
-          dependencyGraphAutosubmitActionOptions,
-      SdkOptional<
-              CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotAlerts>
-          dependabotAlerts,
-      SdkOptional<
-              CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotSecurityUpdates>
-          dependabotSecurityUpdates,
-      SdkOptional<
-              CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDefaultSetup>
-          codeScanningDefaultSetup,
-      SdkOptional<CodeScanningDefaultSetupOptions?>
-          codeScanningDefaultSetupOptions,
-      SdkOptional<CodeScanningOptions?> codeScanningOptions,
-      SdkOptional<
-              CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDelegatedAlertDismissal>
-          codeScanningDelegatedAlertDismissal,
-      SdkOptional<
-              CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretProtection>
-          secretProtection,
-      SdkOptional<
-              CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanning>
-          secretScanning,
-      SdkOptional<
-              CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningPushProtection>
-          secretScanningPushProtection,
-      SdkOptional<
-              CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningValidityChecks>
-          secretScanningValidityChecks,
-      SdkOptional<
-              CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningNonProviderPatterns>
-          secretScanningNonProviderPatterns,
-      SdkOptional<
-              CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningGenericSecrets>
-          secretScanningGenericSecrets,
-      SdkOptional<
-              CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningDelegatedAlertDismissal>
-          secretScanningDelegatedAlertDismissal,
-      SdkOptional<
-              CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningExtendedMetadata>
-          secretScanningExtendedMetadata,
-      SdkOptional<
-              CodeSecurityUpdateEnterpriseConfigurationRequestBodyPrivateVulnerabilityReporting>
-          privateVulnerabilityReporting,
-      SdkOptional<
-              CodeSecurityUpdateEnterpriseConfigurationRequestBodyEnforcement>
-          enforcement}) get copyWith => _copyWith;
-
-  CodeSecurityUpdateEnterpriseConfigurationRequestBody _copyWith(
-          {Object? name = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? advancedSecurity = sdkOmittedValue,
-          Object? codeSecurity = sdkOmittedValue,
-          Object? dependencyGraph = sdkOmittedValue,
-          Object? dependencyGraphAutosubmitAction = sdkOmittedValue,
-          Object? dependencyGraphAutosubmitActionOptions = sdkOmittedValue,
-          Object? dependabotAlerts = sdkOmittedValue,
-          Object? dependabotSecurityUpdates = sdkOmittedValue,
-          Object? codeScanningDefaultSetup = sdkOmittedValue,
-          Object? codeScanningDefaultSetupOptions = sdkOmittedValue,
-          Object? codeScanningOptions = sdkOmittedValue,
-          Object? codeScanningDelegatedAlertDismissal = sdkOmittedValue,
-          Object? secretProtection = sdkOmittedValue,
-          Object? secretScanning = sdkOmittedValue,
-          Object? secretScanningPushProtection = sdkOmittedValue,
-          Object? secretScanningValidityChecks = sdkOmittedValue,
-          Object? secretScanningNonProviderPatterns = sdkOmittedValue,
-          Object? secretScanningGenericSecrets = sdkOmittedValue,
-          Object? secretScanningDelegatedAlertDismissal = sdkOmittedValue,
-          Object? secretScanningExtendedMetadata = sdkOmittedValue,
-          Object? privateVulnerabilityReporting = sdkOmittedValue,
-          Object? enforcement = sdkOmittedValue}) =>
-      CodeSecurityUpdateEnterpriseConfigurationRequestBody(
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String>,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as SdkOptional<String>,
-        advancedSecurity: identical(advancedSecurity, sdkOmittedValue)
-            ? this.advancedSecurity
-            : advancedSecurity as SdkOptional<
-                CodeSecurityUpdateEnterpriseConfigurationRequestBodyAdvancedSecurity>,
-        codeSecurity: identical(codeSecurity, sdkOmittedValue)
-            ? this.codeSecurity
-            : codeSecurity as SdkOptional<
-                CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeSecurity>,
-        dependencyGraph: identical(dependencyGraph, sdkOmittedValue)
-            ? this.dependencyGraph
-            : dependencyGraph as SdkOptional<
-                CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraph>,
-        dependencyGraphAutosubmitAction: identical(
-                dependencyGraphAutosubmitAction, sdkOmittedValue)
-            ? this.dependencyGraphAutosubmitAction
-            : dependencyGraphAutosubmitAction as SdkOptional<
-                CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitAction>,
-        dependencyGraphAutosubmitActionOptions: identical(
-                dependencyGraphAutosubmitActionOptions, sdkOmittedValue)
-            ? this.dependencyGraphAutosubmitActionOptions
-            : dependencyGraphAutosubmitActionOptions as SdkOptional<
-                CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitActionOptions>,
-        dependabotAlerts: identical(dependabotAlerts, sdkOmittedValue)
-            ? this.dependabotAlerts
-            : dependabotAlerts as SdkOptional<
-                CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotAlerts>,
-        dependabotSecurityUpdates: identical(
-                dependabotSecurityUpdates, sdkOmittedValue)
-            ? this.dependabotSecurityUpdates
-            : dependabotSecurityUpdates as SdkOptional<
-                CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotSecurityUpdates>,
-        codeScanningDefaultSetup: identical(
-                codeScanningDefaultSetup, sdkOmittedValue)
-            ? this.codeScanningDefaultSetup
-            : codeScanningDefaultSetup as SdkOptional<
-                CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDefaultSetup>,
-        codeScanningDefaultSetupOptions:
-            identical(codeScanningDefaultSetupOptions, sdkOmittedValue)
-                ? this.codeScanningDefaultSetupOptions
-                : codeScanningDefaultSetupOptions
-                    as SdkOptional<CodeScanningDefaultSetupOptions?>,
-        codeScanningOptions: identical(codeScanningOptions, sdkOmittedValue)
-            ? this.codeScanningOptions
-            : codeScanningOptions as SdkOptional<CodeScanningOptions?>,
-        codeScanningDelegatedAlertDismissal: identical(
-                codeScanningDelegatedAlertDismissal, sdkOmittedValue)
-            ? this.codeScanningDelegatedAlertDismissal
-            : codeScanningDelegatedAlertDismissal as SdkOptional<
-                CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDelegatedAlertDismissal>,
-        secretProtection: identical(secretProtection, sdkOmittedValue)
-            ? this.secretProtection
-            : secretProtection as SdkOptional<
-                CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretProtection>,
-        secretScanning: identical(secretScanning, sdkOmittedValue)
-            ? this.secretScanning
-            : secretScanning as SdkOptional<
-                CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanning>,
-        secretScanningPushProtection: identical(
-                secretScanningPushProtection, sdkOmittedValue)
-            ? this.secretScanningPushProtection
-            : secretScanningPushProtection as SdkOptional<
-                CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningPushProtection>,
-        secretScanningValidityChecks: identical(
-                secretScanningValidityChecks, sdkOmittedValue)
-            ? this.secretScanningValidityChecks
-            : secretScanningValidityChecks as SdkOptional<
-                CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningValidityChecks>,
-        secretScanningNonProviderPatterns: identical(
-                secretScanningNonProviderPatterns, sdkOmittedValue)
-            ? this.secretScanningNonProviderPatterns
-            : secretScanningNonProviderPatterns as SdkOptional<
-                CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningNonProviderPatterns>,
-        secretScanningGenericSecrets: identical(
-                secretScanningGenericSecrets, sdkOmittedValue)
-            ? this.secretScanningGenericSecrets
-            : secretScanningGenericSecrets as SdkOptional<
-                CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningGenericSecrets>,
-        secretScanningDelegatedAlertDismissal: identical(
-                secretScanningDelegatedAlertDismissal, sdkOmittedValue)
-            ? this.secretScanningDelegatedAlertDismissal
-            : secretScanningDelegatedAlertDismissal as SdkOptional<
-                CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningDelegatedAlertDismissal>,
-        secretScanningExtendedMetadata: identical(
-                secretScanningExtendedMetadata, sdkOmittedValue)
-            ? this.secretScanningExtendedMetadata
-            : secretScanningExtendedMetadata as SdkOptional<
-                CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningExtendedMetadata>,
-        privateVulnerabilityReporting: identical(
-                privateVulnerabilityReporting, sdkOmittedValue)
-            ? this.privateVulnerabilityReporting
-            : privateVulnerabilityReporting as SdkOptional<
-                CodeSecurityUpdateEnterpriseConfigurationRequestBodyPrivateVulnerabilityReporting>,
-        enforcement: identical(enforcement, sdkOmittedValue)
-            ? this.enforcement
-            : enforcement as SdkOptional<
-                CodeSecurityUpdateEnterpriseConfigurationRequestBodyEnforcement>,
+  OrgsListAttestationsResponseAttestationsItem _copyWith(
+          {Object? bundle = sdkOmittedValue,
+          Object? repositoryId = sdkOmittedValue,
+          Object? bundleUrl = sdkOmittedValue,
+          Object? initiator = sdkOmittedValue}) =>
+      OrgsListAttestationsResponseAttestationsItem(
+        bundle: identical(bundle, sdkOmittedValue)
+            ? this.bundle
+            : bundle as SdkOptional<
+                OrgsListAttestationsResponseAttestationsItemBundle?>,
+        repositoryId: identical(repositoryId, sdkOmittedValue)
+            ? this.repositoryId
+            : repositoryId as SdkOptional<int>,
+        bundleUrl: identical(bundleUrl, sdkOmittedValue)
+            ? this.bundleUrl
+            : bundleUrl as SdkOptional<String>,
+        initiator: identical(initiator, sdkOmittedValue)
+            ? this.initiator
+            : initiator as SdkOptional<String>,
       );
 
-  factory CodeSecurityUpdateEnterpriseConfigurationRequestBody.fromJson(
+  factory OrgsListAttestationsResponseAttestationsItem.fromJson(
           Map<String, dynamic> json) =>
-      CodeSecurityUpdateEnterpriseConfigurationRequestBody(
-        name: json['name'] != null
-            ? SdkPresent((json['name'] as String?)!)
-            : const SdkOmitted(),
-        description: json['description'] != null
-            ? SdkPresent((json['description'] as String?)!)
-            : const SdkOmitted(),
-        advancedSecurity: json['advanced_security'] != null
-            ? SdkPresent((json['advanced_security'] != null
-                ? CodeSecurityUpdateEnterpriseConfigurationRequestBodyAdvancedSecurity
-                    .fromJson(json['advanced_security'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        codeSecurity: json['code_security'] != null
-            ? SdkPresent((json['code_security'] != null
-                ? CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeSecurity
-                    .fromJson(json['code_security'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        dependencyGraph: json['dependency_graph'] != null
-            ? SdkPresent((json['dependency_graph'] != null
-                ? CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraph
-                    .fromJson(json['dependency_graph'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        dependencyGraphAutosubmitAction: json[
-                    'dependency_graph_autosubmit_action'] !=
-                null
-            ? SdkPresent((json['dependency_graph_autosubmit_action'] != null
-                ? CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitAction
-                    .fromJson(
-                        json['dependency_graph_autosubmit_action'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        dependencyGraphAutosubmitActionOptions: json[
-                    'dependency_graph_autosubmit_action_options'] !=
-                null
-            ? SdkPresent((json['dependency_graph_autosubmit_action_options'] !=
-                    null
-                ? CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitActionOptions
-                    .fromJson(json['dependency_graph_autosubmit_action_options']
-                        as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        dependabotAlerts: json['dependabot_alerts'] != null
-            ? SdkPresent((json['dependabot_alerts'] != null
-                ? CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotAlerts
-                    .fromJson(json['dependabot_alerts'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        dependabotSecurityUpdates: json['dependabot_security_updates'] != null
-            ? SdkPresent((json['dependabot_security_updates'] != null
-                ? CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotSecurityUpdates
-                    .fromJson(json['dependabot_security_updates'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        codeScanningDefaultSetup: json['code_scanning_default_setup'] != null
-            ? SdkPresent((json['code_scanning_default_setup'] != null
-                ? CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDefaultSetup
-                    .fromJson(json['code_scanning_default_setup'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        codeScanningDefaultSetupOptions:
-            json.containsKey('code_scanning_default_setup_options')
-                ? SdkPresent(json['code_scanning_default_setup_options'] != null
-                    ? CodeScanningDefaultSetupOptions.fromJson(
-                        json['code_scanning_default_setup_options']
-                            as Map<String, dynamic>)
-                    : null)
-                : const SdkOmitted(),
-        codeScanningOptions: json.containsKey('code_scanning_options')
-            ? SdkPresent(json['code_scanning_options'] != null
-                ? CodeScanningOptions.fromJson(
-                    json['code_scanning_options'] as Map<String, dynamic>)
+      OrgsListAttestationsResponseAttestationsItem(
+        bundle: json.containsKey('bundle')
+            ? SdkPresent(json['bundle'] != null
+                ? OrgsListAttestationsResponseAttestationsItemBundle.fromJson(
+                    json['bundle'] as Map<String, dynamic>)
                 : null)
             : const SdkOmitted(),
-        codeScanningDelegatedAlertDismissal: json[
-                    'code_scanning_delegated_alert_dismissal'] !=
-                null
-            ? SdkPresent((json['code_scanning_delegated_alert_dismissal'] !=
-                    null
-                ? CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDelegatedAlertDismissal
-                    .fromJson(json['code_scanning_delegated_alert_dismissal']
-                        as String)
+        repositoryId: json['repository_id'] != null
+            ? SdkPresent(((json['repository_id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        bundleUrl: json['bundle_url'] != null
+            ? SdkPresent((json['bundle_url'] as String?)!)
+            : const SdkOmitted(),
+        initiator: json['initiator'] != null
+            ? SdkPresent((json['initiator'] as String?)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (bundle) {
+          SdkPresent<OrgsListAttestationsResponseAttestationsItemBundle?>(
+            value: final value
+          ) =>
+            {
+              'bundle': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (repositoryId) {
+          SdkPresent<int>(value: final value) => {
+              'repository_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (bundleUrl) {
+          SdkPresent<String>(value: final value) => {
+              'bundle_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (initiator) {
+          SdkPresent<String>(value: final value) => {
+              'initiator': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class OrgsListAttestationsResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  final SdkOptional<List<OrgsListAttestationsResponseAttestationsItem>>
+      attestations;
+
+  const OrgsListAttestationsResponse({this.attestations = const SdkOmitted()});
+
+  OrgsListAttestationsResponse Function(
+      {SdkOptional<List<OrgsListAttestationsResponseAttestationsItem>>
+          attestations}) get copyWith => _copyWith;
+
+  OrgsListAttestationsResponse _copyWith(
+          {Object? attestations = sdkOmittedValue}) =>
+      OrgsListAttestationsResponse(
+        attestations: identical(attestations, sdkOmittedValue)
+            ? this.attestations
+            : attestations as SdkOptional<
+                List<OrgsListAttestationsResponseAttestationsItem>>,
+      );
+
+  factory OrgsListAttestationsResponse.fromJson(Map<String, dynamic> json) =>
+      OrgsListAttestationsResponse(
+        attestations: json['attestations'] != null
+            ? SdkPresent(((json['attestations'] as List?)
+                ?.map((e) =>
+                    OrgsListAttestationsResponseAttestationsItem.fromJson(
+                        e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (attestations) {
+          SdkPresent<List<OrgsListAttestationsResponseAttestationsItem>>(
+            value: final value
+          ) =>
+            {
+              'attestations': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+/// Key/value pairs to provide settings for this webhook.
+class OrgsCreateWebhookRequestBodyConfig {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The URL to which the payloads will be delivered.
+  final String url;
+
+  /// The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.
+  final SdkOptional<String> contentType;
+
+  /// If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/webhooks/event-payloads/#delivery-headers).
+  final SdkOptional<String> secret;
+  final SdkOptional<WebhookConfigInsecureSsl> insecureSsl;
+  final SdkOptional<String> username;
+  final SdkOptional<String> password;
+
+  const OrgsCreateWebhookRequestBodyConfig(
+      {required this.url,
+      this.contentType = const SdkOmitted(),
+      this.secret = const SdkOmitted(),
+      this.insecureSsl = const SdkOmitted(),
+      this.username = const SdkOmitted(),
+      this.password = const SdkOmitted()});
+
+  OrgsCreateWebhookRequestBodyConfig Function(
+      {String url,
+      SdkOptional<String> contentType,
+      SdkOptional<String> secret,
+      SdkOptional<WebhookConfigInsecureSsl> insecureSsl,
+      SdkOptional<String> username,
+      SdkOptional<String> password}) get copyWith => _copyWith;
+
+  OrgsCreateWebhookRequestBodyConfig _copyWith(
+          {Object? url = sdkOmittedValue,
+          Object? contentType = sdkOmittedValue,
+          Object? secret = sdkOmittedValue,
+          Object? insecureSsl = sdkOmittedValue,
+          Object? username = sdkOmittedValue,
+          Object? password = sdkOmittedValue}) =>
+      OrgsCreateWebhookRequestBodyConfig(
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        contentType: identical(contentType, sdkOmittedValue)
+            ? this.contentType
+            : contentType as SdkOptional<String>,
+        secret: identical(secret, sdkOmittedValue)
+            ? this.secret
+            : secret as SdkOptional<String>,
+        insecureSsl: identical(insecureSsl, sdkOmittedValue)
+            ? this.insecureSsl
+            : insecureSsl as SdkOptional<WebhookConfigInsecureSsl>,
+        username: identical(username, sdkOmittedValue)
+            ? this.username
+            : username as SdkOptional<String>,
+        password: identical(password, sdkOmittedValue)
+            ? this.password
+            : password as SdkOptional<String>,
+      );
+
+  factory OrgsCreateWebhookRequestBodyConfig.fromJson(
+          Map<String, dynamic> json) =>
+      OrgsCreateWebhookRequestBodyConfig(
+        url: (json['url'] as String?)!,
+        contentType: json['content_type'] != null
+            ? SdkPresent((json['content_type'] as String?)!)
+            : const SdkOmitted(),
+        secret: json['secret'] != null
+            ? SdkPresent((json['secret'] as String?)!)
+            : const SdkOmitted(),
+        insecureSsl: json['insecure_ssl'] != null
+            ? SdkPresent((json['insecure_ssl'] != null
+                ? WebhookConfigInsecureSsl.fromJson(json['insecure_ssl'])
                 : null)!)
             : const SdkOmitted(),
-        secretProtection: json['secret_protection'] != null
-            ? SdkPresent((json['secret_protection'] != null
-                ? CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretProtection
-                    .fromJson(json['secret_protection'] as String)
-                : null)!)
+        username: json['username'] != null
+            ? SdkPresent((json['username'] as String?)!)
             : const SdkOmitted(),
-        secretScanning: json['secret_scanning'] != null
-            ? SdkPresent((json['secret_scanning'] != null
-                ? CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanning
-                    .fromJson(json['secret_scanning'] as String)
-                : null)!)
+        password: json['password'] != null
+            ? SdkPresent((json['password'] as String?)!)
             : const SdkOmitted(),
-        secretScanningPushProtection: json['secret_scanning_push_protection'] !=
-                null
-            ? SdkPresent((json['secret_scanning_push_protection'] != null
-                ? CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningPushProtection
-                    .fromJson(json['secret_scanning_push_protection'] as String)
-                : null)!)
+      );
+
+  Map<String, dynamic> toJson() => {
+        'url': url,
+        ...switch (contentType) {
+          SdkPresent<String>(value: final value) => {
+              'content_type': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (secret) {
+          SdkPresent<String>(value: final value) => {
+              'secret': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (insecureSsl) {
+          SdkPresent<WebhookConfigInsecureSsl>(value: final value) => {
+              'insecure_ssl': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (username) {
+          SdkPresent<String>(value: final value) => {
+              'username': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (password) {
+          SdkPresent<String>(value: final value) => {
+              'password': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class OrgsCreateWebhookRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// Must be passed as "web".
+  final String name;
+
+  /// Key/value pairs to provide settings for this webhook.
+  final OrgsCreateWebhookRequestBodyConfig config;
+
+  /// Determines what [events](https://docs.github.com/webhooks/event-payloads) the hook is triggered for. Set to `["*"]` to receive all possible events.
+  final SdkOptional<List<String>> events;
+
+  /// Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.
+  final SdkOptional<bool> active;
+
+  const OrgsCreateWebhookRequestBody(
+      {required this.name,
+      required this.config,
+      this.events = const SdkOmitted(),
+      this.active = const SdkOmitted()});
+
+  OrgsCreateWebhookRequestBody Function(
+      {String name,
+      OrgsCreateWebhookRequestBodyConfig config,
+      SdkOptional<List<String>> events,
+      SdkOptional<bool> active}) get copyWith => _copyWith;
+
+  OrgsCreateWebhookRequestBody _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? config = sdkOmittedValue,
+          Object? events = sdkOmittedValue,
+          Object? active = sdkOmittedValue}) =>
+      OrgsCreateWebhookRequestBody(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        config: identical(config, sdkOmittedValue)
+            ? this.config
+            : config as OrgsCreateWebhookRequestBodyConfig,
+        events: identical(events, sdkOmittedValue)
+            ? this.events
+            : events as SdkOptional<List<String>>,
+        active: identical(active, sdkOmittedValue)
+            ? this.active
+            : active as SdkOptional<bool>,
+      );
+
+  factory OrgsCreateWebhookRequestBody.fromJson(Map<String, dynamic> json) =>
+      OrgsCreateWebhookRequestBody(
+        name: (json['name'] as String?)!,
+        config: (json['config'] != null
+            ? OrgsCreateWebhookRequestBodyConfig.fromJson(
+                json['config'] as Map<String, dynamic>)
+            : null)!,
+        events: json['events'] != null
+            ? SdkPresent(
+                ((json['events'] as List?)?.map((e) => e as String).toList())!)
             : const SdkOmitted(),
-        secretScanningValidityChecks: json['secret_scanning_validity_checks'] !=
-                null
-            ? SdkPresent((json['secret_scanning_validity_checks'] != null
-                ? CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningValidityChecks
-                    .fromJson(json['secret_scanning_validity_checks'] as String)
-                : null)!)
+        active: json['active'] != null
+            ? SdkPresent((json['active'] as bool?)!)
             : const SdkOmitted(),
-        secretScanningNonProviderPatterns: json[
-                    'secret_scanning_non_provider_patterns'] !=
-                null
-            ? SdkPresent((json['secret_scanning_non_provider_patterns'] != null
-                ? CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningNonProviderPatterns
-                    .fromJson(
-                        json['secret_scanning_non_provider_patterns'] as String)
-                : null)!)
+      );
+
+  Map<String, dynamic> toJson() => {
+        'name': name,
+        'config': config.toJson(),
+        ...switch (events) {
+          SdkPresent<List<String>>(value: final value) => {
+              'events': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (active) {
+          SdkPresent<bool>(value: final value) => {
+              'active': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+/// Key/value pairs to provide settings for this webhook.
+class OrgsUpdateWebhookRequestBodyConfig {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The URL to which the payloads will be delivered.
+  final String url;
+
+  /// The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.
+  final SdkOptional<String> contentType;
+
+  /// If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/webhooks/event-payloads/#delivery-headers).
+  final SdkOptional<String> secret;
+  final SdkOptional<WebhookConfigInsecureSsl> insecureSsl;
+
+  const OrgsUpdateWebhookRequestBodyConfig(
+      {required this.url,
+      this.contentType = const SdkOmitted(),
+      this.secret = const SdkOmitted(),
+      this.insecureSsl = const SdkOmitted()});
+
+  OrgsUpdateWebhookRequestBodyConfig Function(
+          {String url,
+          SdkOptional<String> contentType,
+          SdkOptional<String> secret,
+          SdkOptional<WebhookConfigInsecureSsl> insecureSsl})
+      get copyWith => _copyWith;
+
+  OrgsUpdateWebhookRequestBodyConfig _copyWith(
+          {Object? url = sdkOmittedValue,
+          Object? contentType = sdkOmittedValue,
+          Object? secret = sdkOmittedValue,
+          Object? insecureSsl = sdkOmittedValue}) =>
+      OrgsUpdateWebhookRequestBodyConfig(
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        contentType: identical(contentType, sdkOmittedValue)
+            ? this.contentType
+            : contentType as SdkOptional<String>,
+        secret: identical(secret, sdkOmittedValue)
+            ? this.secret
+            : secret as SdkOptional<String>,
+        insecureSsl: identical(insecureSsl, sdkOmittedValue)
+            ? this.insecureSsl
+            : insecureSsl as SdkOptional<WebhookConfigInsecureSsl>,
+      );
+
+  factory OrgsUpdateWebhookRequestBodyConfig.fromJson(
+          Map<String, dynamic> json) =>
+      OrgsUpdateWebhookRequestBodyConfig(
+        url: (json['url'] as String?)!,
+        contentType: json['content_type'] != null
+            ? SdkPresent((json['content_type'] as String?)!)
             : const SdkOmitted(),
-        secretScanningGenericSecrets: json['secret_scanning_generic_secrets'] !=
-                null
-            ? SdkPresent((json['secret_scanning_generic_secrets'] != null
-                ? CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningGenericSecrets
-                    .fromJson(json['secret_scanning_generic_secrets'] as String)
-                : null)!)
+        secret: json['secret'] != null
+            ? SdkPresent((json['secret'] as String?)!)
             : const SdkOmitted(),
-        secretScanningDelegatedAlertDismissal: json[
-                    'secret_scanning_delegated_alert_dismissal'] !=
-                null
-            ? SdkPresent((json['secret_scanning_delegated_alert_dismissal'] !=
-                    null
-                ? CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningDelegatedAlertDismissal
-                    .fromJson(json['secret_scanning_delegated_alert_dismissal']
-                        as String)
-                : null)!)
-            : const SdkOmitted(),
-        secretScanningExtendedMetadata: json[
-                    'secret_scanning_extended_metadata'] !=
-                null
-            ? SdkPresent((json['secret_scanning_extended_metadata'] != null
-                ? CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningExtendedMetadata
-                    .fromJson(
-                        json['secret_scanning_extended_metadata'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        privateVulnerabilityReporting: json[
-                    'private_vulnerability_reporting'] !=
-                null
-            ? SdkPresent((json['private_vulnerability_reporting'] != null
-                ? CodeSecurityUpdateEnterpriseConfigurationRequestBodyPrivateVulnerabilityReporting
-                    .fromJson(json['private_vulnerability_reporting'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        enforcement: json['enforcement'] != null
-            ? SdkPresent((json['enforcement'] != null
-                ? CodeSecurityUpdateEnterpriseConfigurationRequestBodyEnforcement
-                    .fromJson(json['enforcement'] as String)
+        insecureSsl: json['insecure_ssl'] != null
+            ? SdkPresent((json['insecure_ssl'] != null
+                ? WebhookConfigInsecureSsl.fromJson(json['insecure_ssl'])
                 : null)!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
+        'url': url,
+        ...switch (contentType) {
+          SdkPresent<String>(value: final value) => {
+              'content_type': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (secret) {
+          SdkPresent<String>(value: final value) => {
+              'secret': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (insecureSsl) {
+          SdkPresent<WebhookConfigInsecureSsl>(value: final value) => {
+              'insecure_ssl': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class OrgsUpdateWebhookRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// Key/value pairs to provide settings for this webhook.
+  final SdkOptional<OrgsUpdateWebhookRequestBodyConfig> config;
+
+  /// Determines what [events](https://docs.github.com/webhooks/event-payloads) the hook is triggered for.
+  final SdkOptional<List<String>> events;
+
+  /// Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.
+  final SdkOptional<bool> active;
+  final SdkOptional<String> name;
+
+  const OrgsUpdateWebhookRequestBody(
+      {this.config = const SdkOmitted(),
+      this.events = const SdkOmitted(),
+      this.active = const SdkOmitted(),
+      this.name = const SdkOmitted()});
+
+  OrgsUpdateWebhookRequestBody Function(
+      {SdkOptional<OrgsUpdateWebhookRequestBodyConfig> config,
+      SdkOptional<List<String>> events,
+      SdkOptional<bool> active,
+      SdkOptional<String> name}) get copyWith => _copyWith;
+
+  OrgsUpdateWebhookRequestBody _copyWith(
+          {Object? config = sdkOmittedValue,
+          Object? events = sdkOmittedValue,
+          Object? active = sdkOmittedValue,
+          Object? name = sdkOmittedValue}) =>
+      OrgsUpdateWebhookRequestBody(
+        config: identical(config, sdkOmittedValue)
+            ? this.config
+            : config as SdkOptional<OrgsUpdateWebhookRequestBodyConfig>,
+        events: identical(events, sdkOmittedValue)
+            ? this.events
+            : events as SdkOptional<List<String>>,
+        active: identical(active, sdkOmittedValue)
+            ? this.active
+            : active as SdkOptional<bool>,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+      );
+
+  factory OrgsUpdateWebhookRequestBody.fromJson(Map<String, dynamic> json) =>
+      OrgsUpdateWebhookRequestBody(
+        config: json['config'] != null
+            ? SdkPresent((json['config'] != null
+                ? OrgsUpdateWebhookRequestBodyConfig.fromJson(
+                    json['config'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        events: json['events'] != null
+            ? SdkPresent(
+                ((json['events'] as List?)?.map((e) => e as String).toList())!)
+            : const SdkOmitted(),
+        active: json['active'] != null
+            ? SdkPresent((json['active'] as bool?)!)
+            : const SdkOmitted(),
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (config) {
+          SdkPresent<OrgsUpdateWebhookRequestBodyConfig>(value: final value) =>
+            {
+              'config': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (events) {
+          SdkPresent<List<String>>(value: final value) => {
+              'events': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (active) {
+          SdkPresent<bool>(value: final value) => {
+              'active': value,
+            },
+          _ => const <String, dynamic>{},
+        },
         ...switch (name) {
           SdkPresent<String>(value: final value) => {
               'name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (description) {
-          SdkPresent<String>(value: final value) => {
-              'description': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (advancedSecurity) {
-          SdkPresent<
-                CodeSecurityUpdateEnterpriseConfigurationRequestBodyAdvancedSecurity>(
-            value: final value
-          ) =>
-            {
-              'advanced_security': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (codeSecurity) {
-          SdkPresent<
-                CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeSecurity>(
-            value: final value
-          ) =>
-            {
-              'code_security': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (dependencyGraph) {
-          SdkPresent<
-                CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraph>(
-            value: final value
-          ) =>
-            {
-              'dependency_graph': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (dependencyGraphAutosubmitAction) {
-          SdkPresent<
-                CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitAction>(
-            value: final value
-          ) =>
-            {
-              'dependency_graph_autosubmit_action': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (dependencyGraphAutosubmitActionOptions) {
-          SdkPresent<
-                CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitActionOptions>(
-            value: final value
-          ) =>
-            {
-              'dependency_graph_autosubmit_action_options': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (dependabotAlerts) {
-          SdkPresent<
-                CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotAlerts>(
-            value: final value
-          ) =>
-            {
-              'dependabot_alerts': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (dependabotSecurityUpdates) {
-          SdkPresent<
-                CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotSecurityUpdates>(
-            value: final value
-          ) =>
-            {
-              'dependabot_security_updates': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (codeScanningDefaultSetup) {
-          SdkPresent<
-                CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDefaultSetup>(
-            value: final value
-          ) =>
-            {
-              'code_scanning_default_setup': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (codeScanningDefaultSetupOptions) {
-          SdkPresent<CodeScanningDefaultSetupOptions?>(value: final value) => {
-              'code_scanning_default_setup_options': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (codeScanningOptions) {
-          SdkPresent<CodeScanningOptions?>(value: final value) => {
-              'code_scanning_options': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (codeScanningDelegatedAlertDismissal) {
-          SdkPresent<
-                CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDelegatedAlertDismissal>(
-            value: final value
-          ) =>
-            {
-              'code_scanning_delegated_alert_dismissal': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (secretProtection) {
-          SdkPresent<
-                CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretProtection>(
-            value: final value
-          ) =>
-            {
-              'secret_protection': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (secretScanning) {
-          SdkPresent<
-                CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanning>(
-            value: final value
-          ) =>
-            {
-              'secret_scanning': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (secretScanningPushProtection) {
-          SdkPresent<
-                CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningPushProtection>(
-            value: final value
-          ) =>
-            {
-              'secret_scanning_push_protection': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (secretScanningValidityChecks) {
-          SdkPresent<
-                CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningValidityChecks>(
-            value: final value
-          ) =>
-            {
-              'secret_scanning_validity_checks': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (secretScanningNonProviderPatterns) {
-          SdkPresent<
-                CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningNonProviderPatterns>(
-            value: final value
-          ) =>
-            {
-              'secret_scanning_non_provider_patterns': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (secretScanningGenericSecrets) {
-          SdkPresent<
-                CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningGenericSecrets>(
-            value: final value
-          ) =>
-            {
-              'secret_scanning_generic_secrets': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (secretScanningDelegatedAlertDismissal) {
-          SdkPresent<
-                CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningDelegatedAlertDismissal>(
-            value: final value
-          ) =>
-            {
-              'secret_scanning_delegated_alert_dismissal': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (secretScanningExtendedMetadata) {
-          SdkPresent<
-                CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningExtendedMetadata>(
-            value: final value
-          ) =>
-            {
-              'secret_scanning_extended_metadata': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (privateVulnerabilityReporting) {
-          SdkPresent<
-                CodeSecurityUpdateEnterpriseConfigurationRequestBodyPrivateVulnerabilityReporting>(
-            value: final value
-          ) =>
-            {
-              'private_vulnerability_reporting': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (enforcement) {
-          SdkPresent<
-                CodeSecurityUpdateEnterpriseConfigurationRequestBodyEnforcement>(
-            value: final value
-          ) =>
-            {
-              'enforcement': value.toJson(),
             },
           _ => const <String, dynamic>{},
         },

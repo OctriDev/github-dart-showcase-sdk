@@ -4,6 +4,138 @@
 part of 'inline.dart';
 
 // Inline operation models (part 29)
+/// The status of the most recent build of the Page.
+final class PageStatus {
+  final String value;
+
+  const PageStatus._(this.value);
+
+  factory PageStatus.fromJson(String value) => PageStatus._(value);
+
+  static const built = PageStatus._('built');
+  static const building = PageStatus._('building');
+  static const errored = PageStatus._('errored');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) => other is PageStatus && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The current status of the deployment.
+final class PagesDeploymentStatusStatus {
+  final String value;
+
+  const PagesDeploymentStatusStatus._(this.value);
+
+  factory PagesDeploymentStatusStatus.fromJson(String value) =>
+      PagesDeploymentStatusStatus._(value);
+
+  static const deploymentInProgress =
+      PagesDeploymentStatusStatus._('deployment_in_progress');
+  static const syncingFiles = PagesDeploymentStatusStatus._('syncing_files');
+  static const finishedFileSync =
+      PagesDeploymentStatusStatus._('finished_file_sync');
+  static const updatingPages = PagesDeploymentStatusStatus._('updating_pages');
+  static const purgingCdn = PagesDeploymentStatusStatus._('purging_cdn');
+  static const deploymentCancelled =
+      PagesDeploymentStatusStatus._('deployment_cancelled');
+  static const deploymentFailed =
+      PagesDeploymentStatusStatus._('deployment_failed');
+  static const deploymentContentFailed =
+      PagesDeploymentStatusStatus._('deployment_content_failed');
+  static const deploymentAttemptError =
+      PagesDeploymentStatusStatus._('deployment_attempt_error');
+  static const deploymentLost =
+      PagesDeploymentStatusStatus._('deployment_lost');
+  static const succeed = PagesDeploymentStatusStatus._('succeed');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is PagesDeploymentStatusStatus && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Required enumerated value serialized in the `state` wire field.
+final class PagesHttpsCertificateState {
+  final String value;
+
+  const PagesHttpsCertificateState._(this.value);
+
+  factory PagesHttpsCertificateState.fromJson(String value) =>
+      PagesHttpsCertificateState._(value);
+
+  static const new_ = PagesHttpsCertificateState._('new');
+  static const authorizationCreated =
+      PagesHttpsCertificateState._('authorization_created');
+  static const authorizationPending =
+      PagesHttpsCertificateState._('authorization_pending');
+  static const authorized = PagesHttpsCertificateState._('authorized');
+  static const authorizationRevoked =
+      PagesHttpsCertificateState._('authorization_revoked');
+  static const issued = PagesHttpsCertificateState._('issued');
+  static const uploaded = PagesHttpsCertificateState._('uploaded');
+  static const approved = PagesHttpsCertificateState._('approved');
+  static const errored = PagesHttpsCertificateState._('errored');
+  static const badAuthz = PagesHttpsCertificateState._('bad_authz');
+  static const destroyPending = PagesHttpsCertificateState._('destroy_pending');
+  static const dnsChanged = PagesHttpsCertificateState._('dns_changed');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is PagesHttpsCertificateState && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Type of repository selection requested.
+final class PersonalAccessTokenRequestRepositorySelection {
+  final String value;
+
+  const PersonalAccessTokenRequestRepositorySelection._(this.value);
+
+  factory PersonalAccessTokenRequestRepositorySelection.fromJson(
+          String value) =>
+      PersonalAccessTokenRequestRepositorySelection._(value);
+
+  static const none = PersonalAccessTokenRequestRepositorySelection._('none');
+  static const all = PersonalAccessTokenRequestRepositorySelection._('all');
+  static const subset =
+      PersonalAccessTokenRequestRepositorySelection._('subset');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is PersonalAccessTokenRequestRepositorySelection &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
 /// The severity of the advisory. You must choose between setting this field or `cvss_vector_string`.
 final class PrivateVulnerabilityReportCreateSeverity {
   final String value;
@@ -200,125 +332,6 @@ final class PullRequestState {
   @override
   bool operator ==(Object other) =>
       other is PullRequestState && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `status` wire field.
-final class PullRequestMergeAsyncResultStatus {
-  final String value;
-
-  const PullRequestMergeAsyncResultStatus._(this.value);
-
-  factory PullRequestMergeAsyncResultStatus.fromJson(String value) =>
-      PullRequestMergeAsyncResultStatus._(value);
-
-  static const pending = PullRequestMergeAsyncResultStatus._('pending');
-  static const merged = PullRequestMergeAsyncResultStatus._('merged');
-  static const enqueued = PullRequestMergeAsyncResultStatus._('enqueued');
-  static const failed = PullRequestMergeAsyncResultStatus._('failed');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is PullRequestMergeAsyncResultStatus && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `merge_action` wire field.
-final class PullRequestMergeAsyncResultDetailsVariant0MergeAction {
-  final String value;
-
-  const PullRequestMergeAsyncResultDetailsVariant0MergeAction._(this.value);
-
-  factory PullRequestMergeAsyncResultDetailsVariant0MergeAction.fromJson(
-          String value) =>
-      PullRequestMergeAsyncResultDetailsVariant0MergeAction._(value);
-
-  static const default_ =
-      PullRequestMergeAsyncResultDetailsVariant0MergeAction._('default');
-  static const mergeQueue =
-      PullRequestMergeAsyncResultDetailsVariant0MergeAction._('merge_queue');
-  static const directMerge =
-      PullRequestMergeAsyncResultDetailsVariant0MergeAction._('direct_merge');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is PullRequestMergeAsyncResultDetailsVariant0MergeAction &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `merge_method` wire field.
-final class PullRequestMergeAsyncResultDetailsVariant0MergeMethod {
-  final String value;
-
-  const PullRequestMergeAsyncResultDetailsVariant0MergeMethod._(this.value);
-
-  factory PullRequestMergeAsyncResultDetailsVariant0MergeMethod.fromJson(
-          String value) =>
-      PullRequestMergeAsyncResultDetailsVariant0MergeMethod._(value);
-
-  static const default_ =
-      PullRequestMergeAsyncResultDetailsVariant0MergeMethod._('default');
-  static const merge =
-      PullRequestMergeAsyncResultDetailsVariant0MergeMethod._('merge');
-  static const squash =
-      PullRequestMergeAsyncResultDetailsVariant0MergeMethod._('squash');
-  static const rebase =
-      PullRequestMergeAsyncResultDetailsVariant0MergeMethod._('rebase');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is PullRequestMergeAsyncResultDetailsVariant0MergeMethod &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-final class PullRequestRequestedReviewersItemVariant0Type {
-  final String value;
-
-  const PullRequestRequestedReviewersItemVariant0Type._(this.value);
-
-  factory PullRequestRequestedReviewersItemVariant0Type.fromJson(
-          String value) =>
-      PullRequestRequestedReviewersItemVariant0Type._(value);
-
-  static const bot = PullRequestRequestedReviewersItemVariant0Type._('Bot');
-  static const user = PullRequestRequestedReviewersItemVariant0Type._('User');
-  static const organization =
-      PullRequestRequestedReviewersItemVariant0Type._('Organization');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is PullRequestRequestedReviewersItemVariant0Type &&
-      other.value == value;
 
   @override
   int get hashCode => value.hashCode;

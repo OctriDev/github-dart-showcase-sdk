@@ -228,167 +228,6 @@ final class WebhookPackagePublishedPackagePackageVersionNugetMetadataItemIdStrin
   Object? toJson() => value;
 }
 
-/// Optional object value serialized in the `value` wire field.
-class WebhookPackagePublishedPackagePackageVersionNugetMetadataItemValueVariant3 {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Optional `string` value serialized in the `url` wire field.
-  final SdkOptional<String> url;
-
-  /// Optional `string` value serialized in the `branch` wire field.
-  final SdkOptional<String> branch;
-
-  /// Optional `string` value serialized in the `commit` wire field.
-  final SdkOptional<String> commit;
-
-  /// Optional `string` value serialized in the `type` wire field.
-  final SdkOptional<String> type_;
-
-  const WebhookPackagePublishedPackagePackageVersionNugetMetadataItemValueVariant3(
-      {this.url = const SdkOmitted(),
-      this.branch = const SdkOmitted(),
-      this.commit = const SdkOmitted(),
-      this.type_ = const SdkOmitted()});
-
-  WebhookPackagePublishedPackagePackageVersionNugetMetadataItemValueVariant3 Function(
-      {SdkOptional<String> url,
-      SdkOptional<String> branch,
-      SdkOptional<String> commit,
-      SdkOptional<String> type_}) get copyWith => _copyWith;
-
-  WebhookPackagePublishedPackagePackageVersionNugetMetadataItemValueVariant3
-      _copyWith(
-              {Object? url = sdkOmittedValue,
-              Object? branch = sdkOmittedValue,
-              Object? commit = sdkOmittedValue,
-              Object? type_ = sdkOmittedValue}) =>
-          WebhookPackagePublishedPackagePackageVersionNugetMetadataItemValueVariant3(
-            url: identical(url, sdkOmittedValue)
-                ? this.url
-                : url as SdkOptional<String>,
-            branch: identical(branch, sdkOmittedValue)
-                ? this.branch
-                : branch as SdkOptional<String>,
-            commit: identical(commit, sdkOmittedValue)
-                ? this.commit
-                : commit as SdkOptional<String>,
-            type_: identical(type_, sdkOmittedValue)
-                ? this.type_
-                : type_ as SdkOptional<String>,
-          );
-
-  factory WebhookPackagePublishedPackagePackageVersionNugetMetadataItemValueVariant3.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPackagePublishedPackagePackageVersionNugetMetadataItemValueVariant3(
-        url: json['url'] != null
-            ? SdkPresent((json['url'] as String?)!)
-            : const SdkOmitted(),
-        branch: json['branch'] != null
-            ? SdkPresent((json['branch'] as String?)!)
-            : const SdkOmitted(),
-        commit: json['commit'] != null
-            ? SdkPresent((json['commit'] as String?)!)
-            : const SdkOmitted(),
-        type_: json['type'] != null
-            ? SdkPresent((json['type'] as String?)!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (url) {
-          SdkPresent<String>(value: final value) => {
-              'url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (branch) {
-          SdkPresent<String>(value: final value) => {
-              'branch': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (commit) {
-          SdkPresent<String>(value: final value) => {
-              'commit': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (type_) {
-          SdkPresent<String>(value: final value) => {
-              'type': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-sealed class WebhookPackagePublishedPackagePackageVersionNugetMetadataItemValue {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  const WebhookPackagePublishedPackagePackageVersionNugetMetadataItemValue();
-  factory WebhookPackagePublishedPackagePackageVersionNugetMetadataItemValue.fromJson(
-      Object? json) {
-    if (json is String) {
-      return WebhookPackagePublishedPackagePackageVersionNugetMetadataItemValueString(
-          json);
-    }
-    if (json is bool) {
-      return WebhookPackagePublishedPackagePackageVersionNugetMetadataItemValueBool(
-          json);
-    }
-    if (json is num) {
-      return WebhookPackagePublishedPackagePackageVersionNugetMetadataItemValueInt(
-          json.toInt());
-    }
-    try {
-      return WebhookPackagePublishedPackagePackageVersionNugetMetadataItemValueWebhookPackagePublishedPackagePackageVersionNugetMetadataItemValueVariant3(
-          WebhookPackagePublishedPackagePackageVersionNugetMetadataItemValueVariant3
-              .fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    throw FormatException(
-        "No variant matched for WebhookPackagePublishedPackagePackageVersionNugetMetadataItemValue");
-  }
-  Object? toJson();
-}
-
-final class WebhookPackagePublishedPackagePackageVersionNugetMetadataItemValueBool
-    extends WebhookPackagePublishedPackagePackageVersionNugetMetadataItemValue {
-  final bool value;
-  const WebhookPackagePublishedPackagePackageVersionNugetMetadataItemValueBool(
-      this.value);
-  @override
-  Object? toJson() => value;
-}
-
-final class WebhookPackagePublishedPackagePackageVersionNugetMetadataItemValueString
-    extends WebhookPackagePublishedPackagePackageVersionNugetMetadataItemValue {
-  final String value;
-  const WebhookPackagePublishedPackagePackageVersionNugetMetadataItemValueString(
-      this.value);
-  @override
-  Object? toJson() => value;
-}
-
-final class WebhookPackagePublishedPackagePackageVersionNugetMetadataItemValueInt
-    extends WebhookPackagePublishedPackagePackageVersionNugetMetadataItemValue {
-  final int value;
-  const WebhookPackagePublishedPackagePackageVersionNugetMetadataItemValueInt(
-      this.value);
-  @override
-  Object? toJson() => value;
-}
-
-final class WebhookPackagePublishedPackagePackageVersionNugetMetadataItemValueWebhookPackagePublishedPackagePackageVersionNugetMetadataItemValueVariant3
-    extends WebhookPackagePublishedPackagePackageVersionNugetMetadataItemValue {
-  final WebhookPackagePublishedPackagePackageVersionNugetMetadataItemValueVariant3
-      value;
-  const WebhookPackagePublishedPackagePackageVersionNugetMetadataItemValueWebhookPackagePublishedPackagePackageVersionNugetMetadataItemValueVariant3(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
-}
-
 /// Required object value serialized in the `nuget_metadata[]` wire field.
 class WebhookPackagePublishedPackagePackageVersionNugetMetadataItem {
   /// This model is constructed from named fields in one call.
@@ -401,7 +240,8 @@ class WebhookPackagePublishedPackagePackageVersionNugetMetadataItem {
   final SdkOptional<String> name;
 
   /// Optional API value serialized in the `value` wire field.
-  final SdkOptional<dynamic> value;
+  final SdkOptional<
+      WebhookPackagePublishedPackagePackageVersionNugetMetadataItemValue> value;
 
   const WebhookPackagePublishedPackagePackageVersionNugetMetadataItem(
       {this.id = const SdkOmitted(),
@@ -411,7 +251,9 @@ class WebhookPackagePublishedPackagePackageVersionNugetMetadataItem {
   WebhookPackagePublishedPackagePackageVersionNugetMetadataItem Function(
       {SdkOptional<dynamic> id,
       SdkOptional<String> name,
-      SdkOptional<dynamic> value}) get copyWith => _copyWith;
+      SdkOptional<
+              WebhookPackagePublishedPackagePackageVersionNugetMetadataItemValue>
+          value}) get copyWith => _copyWith;
 
   WebhookPackagePublishedPackagePackageVersionNugetMetadataItem _copyWith(
           {Object? id = sdkOmittedValue,
@@ -426,7 +268,8 @@ class WebhookPackagePublishedPackagePackageVersionNugetMetadataItem {
             : name as SdkOptional<String>,
         value: identical(value, sdkOmittedValue)
             ? this.value
-            : value as SdkOptional<dynamic>,
+            : value as SdkOptional<
+                WebhookPackagePublishedPackagePackageVersionNugetMetadataItemValue>,
       );
 
   factory WebhookPackagePublishedPackagePackageVersionNugetMetadataItem.fromJson(
@@ -437,7 +280,10 @@ class WebhookPackagePublishedPackagePackageVersionNugetMetadataItem {
             ? SdkPresent((json['name'] as String?)!)
             : const SdkOmitted(),
         value: json['value'] != null
-            ? SdkPresent((json['value'])!)
+            ? SdkPresent((json['value'] != null
+                ? WebhookPackagePublishedPackagePackageVersionNugetMetadataItemValue
+                    .fromJson(json['value'])
+                : null)!)
             : const SdkOmitted(),
       );
 
@@ -455,10 +301,158 @@ class WebhookPackagePublishedPackagePackageVersionNugetMetadataItem {
           _ => const <String, dynamic>{},
         },
         ...switch (value) {
-          SdkPresent<dynamic>(value: final value) => {
-              'value': value,
+          SdkPresent<
+                WebhookPackagePublishedPackagePackageVersionNugetMetadataItemValue>(
+            value: final value
+          ) =>
+            {
+              'value': value.toJson(),
             },
           _ => const <String, dynamic>{},
         },
+      };
+}
+
+/// Required object value serialized in the `package_files[]` wire field.
+class WebhookPackagePublishedPackagePackageVersionPackageFilesItem {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// Required `string` value serialized in the `content_type` wire field.
+  final String contentType;
+
+  /// Required `string` value serialized in the `created_at` wire field.
+  final String createdAt;
+
+  /// Required `uri`-formatted value serialized in the `download_url` wire field.
+  final String downloadUrl;
+
+  /// Required `integer` value serialized in the `id` wire field.
+  final int id;
+
+  /// Required `string` value serialized in the `md5` wire field.
+  final String? md5;
+
+  /// Required `string` value serialized in the `name` wire field.
+  final String name;
+
+  /// Required `string` value serialized in the `sha1` wire field.
+  final String? sha1;
+
+  /// Required `string` value serialized in the `sha256` wire field.
+  final String? sha256;
+
+  /// Required `integer` value serialized in the `size` wire field.
+  final int size;
+
+  /// Required `string` value serialized in the `state` wire field.
+  final String? state;
+
+  /// Required `string` value serialized in the `updated_at` wire field.
+  final String updatedAt;
+
+  const WebhookPackagePublishedPackagePackageVersionPackageFilesItem(
+      {required this.contentType,
+      required this.createdAt,
+      required this.downloadUrl,
+      required this.id,
+      required this.md5,
+      required this.name,
+      required this.sha1,
+      required this.sha256,
+      required this.size,
+      required this.state,
+      required this.updatedAt});
+
+  WebhookPackagePublishedPackagePackageVersionPackageFilesItem Function(
+      {String contentType,
+      String createdAt,
+      String downloadUrl,
+      int id,
+      String? md5,
+      String name,
+      String? sha1,
+      String? sha256,
+      int size,
+      String? state,
+      String updatedAt}) get copyWith => _copyWith;
+
+  WebhookPackagePublishedPackagePackageVersionPackageFilesItem _copyWith(
+          {Object? contentType = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? downloadUrl = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? md5 = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? sha1 = sdkOmittedValue,
+          Object? sha256 = sdkOmittedValue,
+          Object? size = sdkOmittedValue,
+          Object? state = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue}) =>
+      WebhookPackagePublishedPackagePackageVersionPackageFilesItem(
+        contentType: identical(contentType, sdkOmittedValue)
+            ? this.contentType
+            : contentType as String,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        downloadUrl: identical(downloadUrl, sdkOmittedValue)
+            ? this.downloadUrl
+            : downloadUrl as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        md5: identical(md5, sdkOmittedValue) ? this.md5 : md5 as String?,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        sha1: identical(sha1, sdkOmittedValue) ? this.sha1 : sha1 as String?,
+        sha256: identical(sha256, sdkOmittedValue)
+            ? this.sha256
+            : sha256 as String?,
+        size: identical(size, sdkOmittedValue) ? this.size : size as int,
+        state:
+            identical(state, sdkOmittedValue) ? this.state : state as String?,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+      );
+
+  factory WebhookPackagePublishedPackagePackageVersionPackageFilesItem.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPackagePublishedPackagePackageVersionPackageFilesItem(
+        contentType: (json['content_type'] as String?)!,
+        createdAt: (json['created_at'] as String?)!,
+        downloadUrl: (json['download_url'] as String?)!,
+        id: ((json['id'] as num?)?.toInt())!,
+        md5: json.containsKey('md5')
+            ? json['md5'] as String?
+            : throw ArgumentError.value(
+                null, 'md5', 'Required property is missing'),
+        name: (json['name'] as String?)!,
+        sha1: json.containsKey('sha1')
+            ? json['sha1'] as String?
+            : throw ArgumentError.value(
+                null, 'sha1', 'Required property is missing'),
+        sha256: json.containsKey('sha256')
+            ? json['sha256'] as String?
+            : throw ArgumentError.value(
+                null, 'sha256', 'Required property is missing'),
+        size: ((json['size'] as num?)?.toInt())!,
+        state: json.containsKey('state')
+            ? json['state'] as String?
+            : throw ArgumentError.value(
+                null, 'state', 'Required property is missing'),
+        updatedAt: (json['updated_at'] as String?)!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'content_type': contentType,
+        'created_at': createdAt,
+        'download_url': downloadUrl,
+        'id': id,
+        'md5': md5,
+        'name': name,
+        'sha1': sha1,
+        'sha256': sha256,
+        'size': size,
+        'state': state,
+        'updated_at': updatedAt,
       };
 }

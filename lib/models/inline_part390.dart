@@ -4,519 +4,406 @@
 part of 'inline.dart';
 
 // Inline operation models (part 390)
-class CodespacesListOrgSecretsResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<CodespacesOrgSecret> secrets;
-
-  const CodespacesListOrgSecretsResponse(
-      {required this.totalCount, required this.secrets});
-
-  CodespacesListOrgSecretsResponse Function(
-      {int totalCount,
-      List<CodespacesOrgSecret> secrets}) get copyWith => _copyWith;
-
-  CodespacesListOrgSecretsResponse _copyWith(
-          {Object? totalCount = sdkOmittedValue,
-          Object? secrets = sdkOmittedValue}) =>
-      CodespacesListOrgSecretsResponse(
-        totalCount: identical(totalCount, sdkOmittedValue)
-            ? this.totalCount
-            : totalCount as int,
-        secrets: identical(secrets, sdkOmittedValue)
-            ? this.secrets
-            : secrets as List<CodespacesOrgSecret>,
-      );
-
-  factory CodespacesListOrgSecretsResponse.fromJson(
-          Map<String, dynamic> json) =>
-      CodespacesListOrgSecretsResponse(
-        totalCount: ((json['total_count'] as num?)?.toInt())!,
-        secrets: ((json['secrets'] as List?)
-            ?.map(
-                (e) => CodespacesOrgSecret.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'total_count': totalCount,
-        'secrets': secrets.map((item) => item.toJson()).toList(),
-      };
-}
-
-class CodespacesCreateOrUpdateOrgSecretRequestBody {
+class ReposUpdateStatusCheckProtectionRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// The value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get an organization public key](https://docs.github.com/rest/codespaces/organization-secrets#get-an-organization-public-key) endpoint.
-  final SdkOptional<String> encryptedValue;
+  /// Require branches to be up to date before merging.
+  final SdkOptional<bool> strict;
 
-  /// The ID of the key you used to encrypt the secret.
-  final SdkOptional<String> keyId;
+  /// **Closing down notice**: The list of status checks to require in order to merge into this branch. If any of these checks have recently been set by a particular GitHub App, they will be required to come from that app in future for the branch to merge. Use `checks` instead of `contexts` for more fine-grained control.
+  final SdkOptional<List<String>> contexts;
 
-  /// Which type of organization repositories have access to the organization secret. `selected` means only the repositories specified by `selected_repository_ids` can access the secret.
-  final CodespacesCreateOrUpdateOrgSecretRequestBodyVisibility visibility;
+  /// The list of status checks to require in order to merge into this branch.
+  final SdkOptional<List<ReposUpdateStatusCheckProtectionRequestBodyChecksItem>>
+      checks;
 
-  /// An array of repository IDs that can access the organization secret. You can only provide a list of repository IDs when the `visibility` is set to `selected`. You can manage the list of selected repositories using the [List selected repositories for an organization secret](https://docs.github.com/rest/codespaces/organization-secrets#list-selected-repositories-for-an-organization-secret), [Set selected repositories for an organization secret](https://docs.github.com/rest/codespaces/organization-secrets#set-selected-repositories-for-an-organization-secret), and [Remove selected repository from an organization secret](https://docs.github.com/rest/codespaces/organization-secrets#remove-selected-repository-from-an-organization-secret) endpoints.
-  final SdkOptional<List<int>> selectedRepositoryIds;
+  const ReposUpdateStatusCheckProtectionRequestBody(
+      {this.strict = const SdkOmitted(),
+      this.contexts = const SdkOmitted(),
+      this.checks = const SdkOmitted()});
 
-  const CodespacesCreateOrUpdateOrgSecretRequestBody(
-      {this.encryptedValue = const SdkOmitted(),
-      this.keyId = const SdkOmitted(),
-      required this.visibility,
-      this.selectedRepositoryIds = const SdkOmitted()});
+  ReposUpdateStatusCheckProtectionRequestBody Function(
+      {SdkOptional<bool> strict,
+      SdkOptional<List<String>> contexts,
+      SdkOptional<List<ReposUpdateStatusCheckProtectionRequestBodyChecksItem>>
+          checks}) get copyWith => _copyWith;
 
-  CodespacesCreateOrUpdateOrgSecretRequestBody Function(
-      {SdkOptional<String> encryptedValue,
-      SdkOptional<String> keyId,
-      CodespacesCreateOrUpdateOrgSecretRequestBodyVisibility visibility,
-      SdkOptional<List<int>> selectedRepositoryIds}) get copyWith => _copyWith;
-
-  CodespacesCreateOrUpdateOrgSecretRequestBody _copyWith(
-          {Object? encryptedValue = sdkOmittedValue,
-          Object? keyId = sdkOmittedValue,
-          Object? visibility = sdkOmittedValue,
-          Object? selectedRepositoryIds = sdkOmittedValue}) =>
-      CodespacesCreateOrUpdateOrgSecretRequestBody(
-        encryptedValue: identical(encryptedValue, sdkOmittedValue)
-            ? this.encryptedValue
-            : encryptedValue as SdkOptional<String>,
-        keyId: identical(keyId, sdkOmittedValue)
-            ? this.keyId
-            : keyId as SdkOptional<String>,
-        visibility: identical(visibility, sdkOmittedValue)
-            ? this.visibility
-            : visibility
-                as CodespacesCreateOrUpdateOrgSecretRequestBodyVisibility,
-        selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue)
-            ? this.selectedRepositoryIds
-            : selectedRepositoryIds as SdkOptional<List<int>>,
+  ReposUpdateStatusCheckProtectionRequestBody _copyWith(
+          {Object? strict = sdkOmittedValue,
+          Object? contexts = sdkOmittedValue,
+          Object? checks = sdkOmittedValue}) =>
+      ReposUpdateStatusCheckProtectionRequestBody(
+        strict: identical(strict, sdkOmittedValue)
+            ? this.strict
+            : strict as SdkOptional<bool>,
+        contexts: identical(contexts, sdkOmittedValue)
+            ? this.contexts
+            : contexts as SdkOptional<List<String>>,
+        checks: identical(checks, sdkOmittedValue)
+            ? this.checks
+            : checks as SdkOptional<
+                List<ReposUpdateStatusCheckProtectionRequestBodyChecksItem>>,
       );
 
-  factory CodespacesCreateOrUpdateOrgSecretRequestBody.fromJson(
+  factory ReposUpdateStatusCheckProtectionRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      CodespacesCreateOrUpdateOrgSecretRequestBody(
-        encryptedValue: json['encrypted_value'] != null
-            ? SdkPresent((json['encrypted_value'] as String?)!)
+      ReposUpdateStatusCheckProtectionRequestBody(
+        strict: json['strict'] != null
+            ? SdkPresent((json['strict'] as bool?)!)
             : const SdkOmitted(),
-        keyId: json['key_id'] != null
-            ? SdkPresent((json['key_id'] as String?)!)
+        contexts: json['contexts'] != null
+            ? SdkPresent(((json['contexts'] as List?)
+                ?.map((e) => e as String)
+                .toList())!)
             : const SdkOmitted(),
-        visibility: (json['visibility'] != null
-            ? CodespacesCreateOrUpdateOrgSecretRequestBodyVisibility.fromJson(
-                json['visibility'] as String)
-            : null)!,
-        selectedRepositoryIds: json['selected_repository_ids'] != null
-            ? SdkPresent(((json['selected_repository_ids'] as List?)
-                ?.map((e) => (e as num).toInt())
+        checks: json['checks'] != null
+            ? SdkPresent(((json['checks'] as List?)
+                ?.map((e) =>
+                    ReposUpdateStatusCheckProtectionRequestBodyChecksItem
+                        .fromJson(e as Map<String, dynamic>))
                 .toList())!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (encryptedValue) {
-          SdkPresent<String>(value: final value) => {
-              'encrypted_value': value,
+        ...switch (strict) {
+          SdkPresent<bool>(value: final value) => {
+              'strict': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (keyId) {
-          SdkPresent<String>(value: final value) => {
-              'key_id': value,
+        ...switch (contexts) {
+          SdkPresent<List<String>>(value: final value) => {
+              'contexts': value,
             },
           _ => const <String, dynamic>{},
         },
-        'visibility': visibility.toJson(),
-        ...switch (selectedRepositoryIds) {
-          SdkPresent<List<int>>(value: final value) => {
-              'selected_repository_ids': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-class CodespacesListSelectedReposForOrgSecretResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<MinimalRepository> repositories;
-
-  const CodespacesListSelectedReposForOrgSecretResponse(
-      {required this.totalCount, required this.repositories});
-
-  CodespacesListSelectedReposForOrgSecretResponse Function(
-      {int totalCount,
-      List<MinimalRepository> repositories}) get copyWith => _copyWith;
-
-  CodespacesListSelectedReposForOrgSecretResponse _copyWith(
-          {Object? totalCount = sdkOmittedValue,
-          Object? repositories = sdkOmittedValue}) =>
-      CodespacesListSelectedReposForOrgSecretResponse(
-        totalCount: identical(totalCount, sdkOmittedValue)
-            ? this.totalCount
-            : totalCount as int,
-        repositories: identical(repositories, sdkOmittedValue)
-            ? this.repositories
-            : repositories as List<MinimalRepository>,
-      );
-
-  factory CodespacesListSelectedReposForOrgSecretResponse.fromJson(
-          Map<String, dynamic> json) =>
-      CodespacesListSelectedReposForOrgSecretResponse(
-        totalCount: ((json['total_count'] as num?)?.toInt())!,
-        repositories: ((json['repositories'] as List?)
-            ?.map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'total_count': totalCount,
-        'repositories': repositories.map((item) => item.toJson()).toList(),
-      };
-}
-
-class CodespacesSetSelectedReposForOrgSecretRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// An array of repository ids that can access the organization secret. You can only provide a list of repository ids when the `visibility` is set to `selected`. You can add and remove individual repositories using the [Set selected repositories for an organization secret](https://docs.github.com/rest/codespaces/organization-secrets#set-selected-repositories-for-an-organization-secret) and [Remove selected repository from an organization secret](https://docs.github.com/rest/codespaces/organization-secrets#remove-selected-repository-from-an-organization-secret) endpoints.
-  final List<int> selectedRepositoryIds;
-
-  const CodespacesSetSelectedReposForOrgSecretRequestBody(
-      {required this.selectedRepositoryIds});
-
-  CodespacesSetSelectedReposForOrgSecretRequestBody Function(
-      {List<int> selectedRepositoryIds}) get copyWith => _copyWith;
-
-  CodespacesSetSelectedReposForOrgSecretRequestBody _copyWith(
-          {Object? selectedRepositoryIds = sdkOmittedValue}) =>
-      CodespacesSetSelectedReposForOrgSecretRequestBody(
-        selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue)
-            ? this.selectedRepositoryIds
-            : selectedRepositoryIds as List<int>,
-      );
-
-  factory CodespacesSetSelectedReposForOrgSecretRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      CodespacesSetSelectedReposForOrgSecretRequestBody(
-        selectedRepositoryIds: ((json['selected_repository_ids'] as List?)
-            ?.map((e) => (e as num).toInt())
-            .toList())!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'selected_repository_ids': selectedRepositoryIds,
-      };
-}
-
-class CodespacesGetCodespacesForUserInOrgResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<Codespace> codespaces;
-
-  const CodespacesGetCodespacesForUserInOrgResponse(
-      {required this.totalCount, required this.codespaces});
-
-  CodespacesGetCodespacesForUserInOrgResponse Function(
-      {int totalCount, List<Codespace> codespaces}) get copyWith => _copyWith;
-
-  CodespacesGetCodespacesForUserInOrgResponse _copyWith(
-          {Object? totalCount = sdkOmittedValue,
-          Object? codespaces = sdkOmittedValue}) =>
-      CodespacesGetCodespacesForUserInOrgResponse(
-        totalCount: identical(totalCount, sdkOmittedValue)
-            ? this.totalCount
-            : totalCount as int,
-        codespaces: identical(codespaces, sdkOmittedValue)
-            ? this.codespaces
-            : codespaces as List<Codespace>,
-      );
-
-  factory CodespacesGetCodespacesForUserInOrgResponse.fromJson(
-          Map<String, dynamic> json) =>
-      CodespacesGetCodespacesForUserInOrgResponse(
-        totalCount: ((json['total_count'] as num?)?.toInt())!,
-        codespaces: ((json['codespaces'] as List?)
-            ?.map((e) => Codespace.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'total_count': totalCount,
-        'codespaces': codespaces.map((item) => item.toJson()).toList(),
-      };
-}
-
-class CodespacesListInRepositoryForAuthenticatedUserResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<Codespace> codespaces;
-
-  const CodespacesListInRepositoryForAuthenticatedUserResponse(
-      {required this.totalCount, required this.codespaces});
-
-  CodespacesListInRepositoryForAuthenticatedUserResponse Function(
-      {int totalCount, List<Codespace> codespaces}) get copyWith => _copyWith;
-
-  CodespacesListInRepositoryForAuthenticatedUserResponse _copyWith(
-          {Object? totalCount = sdkOmittedValue,
-          Object? codespaces = sdkOmittedValue}) =>
-      CodespacesListInRepositoryForAuthenticatedUserResponse(
-        totalCount: identical(totalCount, sdkOmittedValue)
-            ? this.totalCount
-            : totalCount as int,
-        codespaces: identical(codespaces, sdkOmittedValue)
-            ? this.codespaces
-            : codespaces as List<Codespace>,
-      );
-
-  factory CodespacesListInRepositoryForAuthenticatedUserResponse.fromJson(
-          Map<String, dynamic> json) =>
-      CodespacesListInRepositoryForAuthenticatedUserResponse(
-        totalCount: ((json['total_count'] as num?)?.toInt())!,
-        codespaces: ((json['codespaces'] as List?)
-            ?.map((e) => Codespace.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'total_count': totalCount,
-        'codespaces': codespaces.map((item) => item.toJson()).toList(),
-      };
-}
-
-class CodespacesCreateWithRepoForAuthenticatedUserRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Git ref (typically a branch name) for this codespace
-  final SdkOptional<String> ref;
-
-  /// The requested location for a new codespace. Best efforts are made to respect this upon creation. Assigned by IP if not provided.
-  final SdkOptional<String> location;
-
-  /// The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is closing down.
-  final SdkOptional<CodespacesCreateWithRepoForAuthenticatedUserRequestBodyGeo>
-      geo;
-
-  /// IP for location auto-detection when proxying a request
-  final SdkOptional<String> clientIp;
-
-  /// Machine type to use for this codespace
-  final SdkOptional<String> machine;
-
-  /// Path to devcontainer.json config to use for this codespace
-  final SdkOptional<String> devcontainerPath;
-
-  /// Whether to authorize requested permissions from devcontainer.json
-  final SdkOptional<bool> multiRepoPermissionsOptOut;
-
-  /// Working directory for this codespace
-  final SdkOptional<String> workingDirectory;
-
-  /// Time in minutes before codespace stops from inactivity
-  final SdkOptional<int> idleTimeoutMinutes;
-
-  /// Display name for this codespace
-  final SdkOptional<String> displayName;
-
-  /// Duration in minutes after codespace has gone idle in which it will be deleted. Must be integer minutes between 0 and 43200 (30 days).
-  final SdkOptional<int> retentionPeriodMinutes;
-
-  const CodespacesCreateWithRepoForAuthenticatedUserRequestBody(
-      {this.ref = const SdkOmitted(),
-      this.location = const SdkOmitted(),
-      this.geo = const SdkOmitted(),
-      this.clientIp = const SdkOmitted(),
-      this.machine = const SdkOmitted(),
-      this.devcontainerPath = const SdkOmitted(),
-      this.multiRepoPermissionsOptOut = const SdkOmitted(),
-      this.workingDirectory = const SdkOmitted(),
-      this.idleTimeoutMinutes = const SdkOmitted(),
-      this.displayName = const SdkOmitted(),
-      this.retentionPeriodMinutes = const SdkOmitted()});
-
-  CodespacesCreateWithRepoForAuthenticatedUserRequestBody Function(
-      {SdkOptional<String> ref,
-      SdkOptional<String> location,
-      SdkOptional<CodespacesCreateWithRepoForAuthenticatedUserRequestBodyGeo>
-          geo,
-      SdkOptional<String> clientIp,
-      SdkOptional<String> machine,
-      SdkOptional<String> devcontainerPath,
-      SdkOptional<bool> multiRepoPermissionsOptOut,
-      SdkOptional<String> workingDirectory,
-      SdkOptional<int> idleTimeoutMinutes,
-      SdkOptional<String> displayName,
-      SdkOptional<int> retentionPeriodMinutes}) get copyWith => _copyWith;
-
-  CodespacesCreateWithRepoForAuthenticatedUserRequestBody _copyWith(
-          {Object? ref = sdkOmittedValue,
-          Object? location = sdkOmittedValue,
-          Object? geo = sdkOmittedValue,
-          Object? clientIp = sdkOmittedValue,
-          Object? machine = sdkOmittedValue,
-          Object? devcontainerPath = sdkOmittedValue,
-          Object? multiRepoPermissionsOptOut = sdkOmittedValue,
-          Object? workingDirectory = sdkOmittedValue,
-          Object? idleTimeoutMinutes = sdkOmittedValue,
-          Object? displayName = sdkOmittedValue,
-          Object? retentionPeriodMinutes = sdkOmittedValue}) =>
-      CodespacesCreateWithRepoForAuthenticatedUserRequestBody(
-        ref: identical(ref, sdkOmittedValue)
-            ? this.ref
-            : ref as SdkOptional<String>,
-        location: identical(location, sdkOmittedValue)
-            ? this.location
-            : location as SdkOptional<String>,
-        geo: identical(geo, sdkOmittedValue)
-            ? this.geo
-            : geo as SdkOptional<
-                CodespacesCreateWithRepoForAuthenticatedUserRequestBodyGeo>,
-        clientIp: identical(clientIp, sdkOmittedValue)
-            ? this.clientIp
-            : clientIp as SdkOptional<String>,
-        machine: identical(machine, sdkOmittedValue)
-            ? this.machine
-            : machine as SdkOptional<String>,
-        devcontainerPath: identical(devcontainerPath, sdkOmittedValue)
-            ? this.devcontainerPath
-            : devcontainerPath as SdkOptional<String>,
-        multiRepoPermissionsOptOut:
-            identical(multiRepoPermissionsOptOut, sdkOmittedValue)
-                ? this.multiRepoPermissionsOptOut
-                : multiRepoPermissionsOptOut as SdkOptional<bool>,
-        workingDirectory: identical(workingDirectory, sdkOmittedValue)
-            ? this.workingDirectory
-            : workingDirectory as SdkOptional<String>,
-        idleTimeoutMinutes: identical(idleTimeoutMinutes, sdkOmittedValue)
-            ? this.idleTimeoutMinutes
-            : idleTimeoutMinutes as SdkOptional<int>,
-        displayName: identical(displayName, sdkOmittedValue)
-            ? this.displayName
-            : displayName as SdkOptional<String>,
-        retentionPeriodMinutes:
-            identical(retentionPeriodMinutes, sdkOmittedValue)
-                ? this.retentionPeriodMinutes
-                : retentionPeriodMinutes as SdkOptional<int>,
-      );
-
-  factory CodespacesCreateWithRepoForAuthenticatedUserRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      CodespacesCreateWithRepoForAuthenticatedUserRequestBody(
-        ref: json['ref'] != null
-            ? SdkPresent((json['ref'] as String?)!)
-            : const SdkOmitted(),
-        location: json['location'] != null
-            ? SdkPresent((json['location'] as String?)!)
-            : const SdkOmitted(),
-        geo: json['geo'] != null
-            ? SdkPresent((json['geo'] != null
-                ? CodespacesCreateWithRepoForAuthenticatedUserRequestBodyGeo
-                    .fromJson(json['geo'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        clientIp: json['client_ip'] != null
-            ? SdkPresent((json['client_ip'] as String?)!)
-            : const SdkOmitted(),
-        machine: json['machine'] != null
-            ? SdkPresent((json['machine'] as String?)!)
-            : const SdkOmitted(),
-        devcontainerPath: json['devcontainer_path'] != null
-            ? SdkPresent((json['devcontainer_path'] as String?)!)
-            : const SdkOmitted(),
-        multiRepoPermissionsOptOut:
-            json['multi_repo_permissions_opt_out'] != null
-                ? SdkPresent((json['multi_repo_permissions_opt_out'] as bool?)!)
-                : const SdkOmitted(),
-        workingDirectory: json['working_directory'] != null
-            ? SdkPresent((json['working_directory'] as String?)!)
-            : const SdkOmitted(),
-        idleTimeoutMinutes: json['idle_timeout_minutes'] != null
-            ? SdkPresent(((json['idle_timeout_minutes'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        displayName: json['display_name'] != null
-            ? SdkPresent((json['display_name'] as String?)!)
-            : const SdkOmitted(),
-        retentionPeriodMinutes: json['retention_period_minutes'] != null
-            ? SdkPresent(((json['retention_period_minutes'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (ref) {
-          SdkPresent<String>(value: final value) => {
-              'ref': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (location) {
-          SdkPresent<String>(value: final value) => {
-              'location': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (geo) {
+        ...switch (checks) {
           SdkPresent<
-                CodespacesCreateWithRepoForAuthenticatedUserRequestBodyGeo>(
+                List<ReposUpdateStatusCheckProtectionRequestBodyChecksItem>>(
             value: final value
           ) =>
             {
-              'geo': value.toJson(),
+              'checks': value.map((item) => item.toJson()).toList(),
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (clientIp) {
-          SdkPresent<String>(value: final value) => {
-              'client_ip': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (machine) {
-          SdkPresent<String>(value: final value) => {
-              'machine': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (devcontainerPath) {
-          SdkPresent<String>(value: final value) => {
-              'devcontainer_path': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (multiRepoPermissionsOptOut) {
-          SdkPresent<bool>(value: final value) => {
-              'multi_repo_permissions_opt_out': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (workingDirectory) {
-          SdkPresent<String>(value: final value) => {
-              'working_directory': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (idleTimeoutMinutes) {
-          SdkPresent<int>(value: final value) => {
-              'idle_timeout_minutes': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (displayName) {
-          SdkPresent<String>(value: final value) => {
-              'display_name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (retentionPeriodMinutes) {
-          SdkPresent<int>(value: final value) => {
-              'retention_period_minutes': value,
-            },
-          _ => const <String, dynamic>{},
-        },
+      };
+}
+
+class ReposAddStatusCheckContextsRequestBodyVariant0 {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The name of the status checks
+  final List<String> contexts;
+
+  const ReposAddStatusCheckContextsRequestBodyVariant0(
+      {required this.contexts});
+
+  ReposAddStatusCheckContextsRequestBodyVariant0 Function(
+      {List<String> contexts}) get copyWith => _copyWith;
+
+  ReposAddStatusCheckContextsRequestBodyVariant0 _copyWith(
+          {Object? contexts = sdkOmittedValue}) =>
+      ReposAddStatusCheckContextsRequestBodyVariant0(
+        contexts: identical(contexts, sdkOmittedValue)
+            ? this.contexts
+            : contexts as List<String>,
+      );
+
+  factory ReposAddStatusCheckContextsRequestBodyVariant0.fromJson(
+          Map<String, dynamic> json) =>
+      ReposAddStatusCheckContextsRequestBodyVariant0(
+        contexts:
+            ((json['contexts'] as List?)?.map((e) => e as String).toList())!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'contexts': contexts,
+      };
+}
+
+class ReposSetStatusCheckContextsRequestBodyVariant0 {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The name of the status checks
+  final List<String> contexts;
+
+  const ReposSetStatusCheckContextsRequestBodyVariant0(
+      {required this.contexts});
+
+  ReposSetStatusCheckContextsRequestBodyVariant0 Function(
+      {List<String> contexts}) get copyWith => _copyWith;
+
+  ReposSetStatusCheckContextsRequestBodyVariant0 _copyWith(
+          {Object? contexts = sdkOmittedValue}) =>
+      ReposSetStatusCheckContextsRequestBodyVariant0(
+        contexts: identical(contexts, sdkOmittedValue)
+            ? this.contexts
+            : contexts as List<String>,
+      );
+
+  factory ReposSetStatusCheckContextsRequestBodyVariant0.fromJson(
+          Map<String, dynamic> json) =>
+      ReposSetStatusCheckContextsRequestBodyVariant0(
+        contexts:
+            ((json['contexts'] as List?)?.map((e) => e as String).toList())!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'contexts': contexts,
+      };
+}
+
+class ReposRemoveStatusCheckContextsRequestBodyVariant0 {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The name of the status checks
+  final List<String> contexts;
+
+  const ReposRemoveStatusCheckContextsRequestBodyVariant0(
+      {required this.contexts});
+
+  ReposRemoveStatusCheckContextsRequestBodyVariant0 Function(
+      {List<String> contexts}) get copyWith => _copyWith;
+
+  ReposRemoveStatusCheckContextsRequestBodyVariant0 _copyWith(
+          {Object? contexts = sdkOmittedValue}) =>
+      ReposRemoveStatusCheckContextsRequestBodyVariant0(
+        contexts: identical(contexts, sdkOmittedValue)
+            ? this.contexts
+            : contexts as List<String>,
+      );
+
+  factory ReposRemoveStatusCheckContextsRequestBodyVariant0.fromJson(
+          Map<String, dynamic> json) =>
+      ReposRemoveStatusCheckContextsRequestBodyVariant0(
+        contexts:
+            ((json['contexts'] as List?)?.map((e) => e as String).toList())!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'contexts': contexts,
+      };
+}
+
+class ReposAddAppAccessRestrictionsRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The GitHub Apps that have push access to this branch. Use the slugified version of the app name. **Note**: The list of users, apps, and teams in total is limited to 100 items.
+  final List<String> apps;
+
+  const ReposAddAppAccessRestrictionsRequestBody({required this.apps});
+
+  ReposAddAppAccessRestrictionsRequestBody Function({List<String> apps})
+      get copyWith => _copyWith;
+
+  ReposAddAppAccessRestrictionsRequestBody _copyWith(
+          {Object? apps = sdkOmittedValue}) =>
+      ReposAddAppAccessRestrictionsRequestBody(
+        apps:
+            identical(apps, sdkOmittedValue) ? this.apps : apps as List<String>,
+      );
+
+  factory ReposAddAppAccessRestrictionsRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      ReposAddAppAccessRestrictionsRequestBody(
+        apps: ((json['apps'] as List?)?.map((e) => e as String).toList())!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'apps': apps,
+      };
+}
+
+class ReposSetAppAccessRestrictionsRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The GitHub Apps that have push access to this branch. Use the slugified version of the app name. **Note**: The list of users, apps, and teams in total is limited to 100 items.
+  final List<String> apps;
+
+  const ReposSetAppAccessRestrictionsRequestBody({required this.apps});
+
+  ReposSetAppAccessRestrictionsRequestBody Function({List<String> apps})
+      get copyWith => _copyWith;
+
+  ReposSetAppAccessRestrictionsRequestBody _copyWith(
+          {Object? apps = sdkOmittedValue}) =>
+      ReposSetAppAccessRestrictionsRequestBody(
+        apps:
+            identical(apps, sdkOmittedValue) ? this.apps : apps as List<String>,
+      );
+
+  factory ReposSetAppAccessRestrictionsRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      ReposSetAppAccessRestrictionsRequestBody(
+        apps: ((json['apps'] as List?)?.map((e) => e as String).toList())!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'apps': apps,
+      };
+}
+
+class ReposRemoveAppAccessRestrictionsRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The GitHub Apps that have push access to this branch. Use the slugified version of the app name. **Note**: The list of users, apps, and teams in total is limited to 100 items.
+  final List<String> apps;
+
+  const ReposRemoveAppAccessRestrictionsRequestBody({required this.apps});
+
+  ReposRemoveAppAccessRestrictionsRequestBody Function({List<String> apps})
+      get copyWith => _copyWith;
+
+  ReposRemoveAppAccessRestrictionsRequestBody _copyWith(
+          {Object? apps = sdkOmittedValue}) =>
+      ReposRemoveAppAccessRestrictionsRequestBody(
+        apps:
+            identical(apps, sdkOmittedValue) ? this.apps : apps as List<String>,
+      );
+
+  factory ReposRemoveAppAccessRestrictionsRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      ReposRemoveAppAccessRestrictionsRequestBody(
+        apps: ((json['apps'] as List?)?.map((e) => e as String).toList())!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'apps': apps,
+      };
+}
+
+class ReposAddTeamAccessRestrictionsRequestBodyVariant0 {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The slug values for teams
+  final List<String> teams;
+
+  const ReposAddTeamAccessRestrictionsRequestBodyVariant0(
+      {required this.teams});
+
+  ReposAddTeamAccessRestrictionsRequestBodyVariant0 Function(
+      {List<String> teams}) get copyWith => _copyWith;
+
+  ReposAddTeamAccessRestrictionsRequestBodyVariant0 _copyWith(
+          {Object? teams = sdkOmittedValue}) =>
+      ReposAddTeamAccessRestrictionsRequestBodyVariant0(
+        teams: identical(teams, sdkOmittedValue)
+            ? this.teams
+            : teams as List<String>,
+      );
+
+  factory ReposAddTeamAccessRestrictionsRequestBodyVariant0.fromJson(
+          Map<String, dynamic> json) =>
+      ReposAddTeamAccessRestrictionsRequestBodyVariant0(
+        teams: ((json['teams'] as List?)?.map((e) => e as String).toList())!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'teams': teams,
+      };
+}
+
+class ReposSetTeamAccessRestrictionsRequestBodyVariant0 {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The slug values for teams
+  final List<String> teams;
+
+  const ReposSetTeamAccessRestrictionsRequestBodyVariant0(
+      {required this.teams});
+
+  ReposSetTeamAccessRestrictionsRequestBodyVariant0 Function(
+      {List<String> teams}) get copyWith => _copyWith;
+
+  ReposSetTeamAccessRestrictionsRequestBodyVariant0 _copyWith(
+          {Object? teams = sdkOmittedValue}) =>
+      ReposSetTeamAccessRestrictionsRequestBodyVariant0(
+        teams: identical(teams, sdkOmittedValue)
+            ? this.teams
+            : teams as List<String>,
+      );
+
+  factory ReposSetTeamAccessRestrictionsRequestBodyVariant0.fromJson(
+          Map<String, dynamic> json) =>
+      ReposSetTeamAccessRestrictionsRequestBodyVariant0(
+        teams: ((json['teams'] as List?)?.map((e) => e as String).toList())!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'teams': teams,
+      };
+}
+
+class ReposRemoveTeamAccessRestrictionsRequestBodyVariant0 {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The slug values for teams
+  final List<String> teams;
+
+  const ReposRemoveTeamAccessRestrictionsRequestBodyVariant0(
+      {required this.teams});
+
+  ReposRemoveTeamAccessRestrictionsRequestBodyVariant0 Function(
+      {List<String> teams}) get copyWith => _copyWith;
+
+  ReposRemoveTeamAccessRestrictionsRequestBodyVariant0 _copyWith(
+          {Object? teams = sdkOmittedValue}) =>
+      ReposRemoveTeamAccessRestrictionsRequestBodyVariant0(
+        teams: identical(teams, sdkOmittedValue)
+            ? this.teams
+            : teams as List<String>,
+      );
+
+  factory ReposRemoveTeamAccessRestrictionsRequestBodyVariant0.fromJson(
+          Map<String, dynamic> json) =>
+      ReposRemoveTeamAccessRestrictionsRequestBodyVariant0(
+        teams: ((json['teams'] as List?)?.map((e) => e as String).toList())!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'teams': teams,
+      };
+}
+
+class ReposAddUserAccessRestrictionsRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The username for users
+  final List<String> users;
+
+  const ReposAddUserAccessRestrictionsRequestBody({required this.users});
+
+  ReposAddUserAccessRestrictionsRequestBody Function({List<String> users})
+      get copyWith => _copyWith;
+
+  ReposAddUserAccessRestrictionsRequestBody _copyWith(
+          {Object? users = sdkOmittedValue}) =>
+      ReposAddUserAccessRestrictionsRequestBody(
+        users: identical(users, sdkOmittedValue)
+            ? this.users
+            : users as List<String>,
+      );
+
+  factory ReposAddUserAccessRestrictionsRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      ReposAddUserAccessRestrictionsRequestBody(
+        users: ((json['users'] as List?)?.map((e) => e as String).toList())!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'users': users,
       };
 }

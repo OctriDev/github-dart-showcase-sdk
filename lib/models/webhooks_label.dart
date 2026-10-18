@@ -6,5 +6,3 @@ import '../sdk_utils.dart';
 import 'shared_simple.dart';
 
 part 'webhooks_label_part1.dart';
-part 'webhooks_label_part2.dart';
-part 'webhooks_label_part3.dart';

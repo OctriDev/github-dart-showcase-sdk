@@ -4,91 +4,23 @@
 part of 'inline.dart';
 
 // Inline operation models (part 99)
-/// Optional enumerated value serialized in the `organization_secrets` wire field.
-final class WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsOrganizationSecrets {
-  final String value;
-
-  const WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsOrganizationSecrets._(
-      this.value);
-
-  factory WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsOrganizationSecrets.fromJson(
-          String value) =>
-      WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsOrganizationSecrets
-          ._(value);
-
-  static const read =
-      WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsOrganizationSecrets
-          ._('read');
-  static const write =
-      WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsOrganizationSecrets
-          ._('write');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsOrganizationSecrets &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `organization_self_hosted_runners` wire field.
-final class WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsOrganizationSelfHostedRunners {
-  final String value;
-
-  const WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsOrganizationSelfHostedRunners._(
-      this.value);
-
-  factory WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsOrganizationSelfHostedRunners.fromJson(
-          String value) =>
-      WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsOrganizationSelfHostedRunners
-          ._(value);
-
-  static const read =
-      WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsOrganizationSelfHostedRunners
-          ._('read');
-  static const write =
-      WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsOrganizationSelfHostedRunners
-          ._('write');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsOrganizationSelfHostedRunners &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
 /// Optional enumerated value serialized in the `organization_user_blocking` wire field.
-final class WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking {
+final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking {
   final String value;
 
-  const WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking._(
+  const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking._(
       this.value);
 
-  factory WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking.fromJson(
+  factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking.fromJson(
           String value) =>
-      WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking
+      WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking
           ._(value);
 
   static const read =
-      WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking
+      WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking
           ._('read');
   static const write =
-      WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking
+      WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking
           ._('write');
 
   String toJson() => value;
@@ -99,7 +31,7 @@ final class WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsOrganizatio
   @override
   bool operator ==(Object other) =>
       other
-          is WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking &&
+          is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking &&
       other.value == value;
 
   @override
@@ -107,23 +39,23 @@ final class WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsOrganizatio
 }
 
 /// Optional enumerated value serialized in the `packages` wire field.
-final class WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsPackages {
+final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPackages {
   final String value;
 
-  const WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsPackages._(
+  const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPackages._(
       this.value);
 
-  factory WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsPackages.fromJson(
+  factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPackages.fromJson(
           String value) =>
-      WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsPackages._(
-          value);
+      WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPackages
+          ._(value);
 
   static const read =
-      WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsPackages._(
-          'read');
+      WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPackages
+          ._('read');
   static const write =
-      WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsPackages._(
-          'write');
+      WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPackages
+          ._('write');
 
   String toJson() => value;
 
@@ -133,7 +65,7 @@ final class WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsPackages {
   @override
   bool operator ==(Object other) =>
       other
-          is WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsPackages &&
+          is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPackages &&
       other.value == value;
 
   @override
@@ -141,20 +73,23 @@ final class WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsPackages {
 }
 
 /// Optional enumerated value serialized in the `pages` wire field.
-final class WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsPages {
+final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPages {
   final String value;
 
-  const WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsPages._(
+  const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPages._(
       this.value);
 
-  factory WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsPages.fromJson(
+  factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPages.fromJson(
           String value) =>
-      WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsPages._(value);
+      WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPages._(
+          value);
 
   static const read =
-      WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsPages._('read');
+      WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPages._(
+          'read');
   static const write =
-      WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsPages._('write');
+      WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPages._(
+          'write');
 
   String toJson() => value;
 
@@ -163,7 +98,8 @@ final class WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsPages {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsPages &&
+      other
+          is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPages &&
       other.value == value;
 
   @override
@@ -171,23 +107,23 @@ final class WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsPages {
 }
 
 /// Optional enumerated value serialized in the `pull_requests` wire field.
-final class WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsPullRequests {
+final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPullRequests {
   final String value;
 
-  const WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsPullRequests._(
+  const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPullRequests._(
       this.value);
 
-  factory WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsPullRequests.fromJson(
+  factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPullRequests.fromJson(
           String value) =>
-      WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsPullRequests._(
-          value);
+      WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPullRequests
+          ._(value);
 
   static const read =
-      WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsPullRequests._(
-          'read');
+      WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPullRequests
+          ._('read');
   static const write =
-      WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsPullRequests._(
-          'write');
+      WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPullRequests
+          ._('write');
 
   String toJson() => value;
 
@@ -197,7 +133,7 @@ final class WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsPullRequest
   @override
   bool operator ==(Object other) =>
       other
-          is WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsPullRequests &&
+          is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPullRequests &&
       other.value == value;
 
   @override
@@ -205,22 +141,22 @@ final class WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsPullRequest
 }
 
 /// Optional enumerated value serialized in the `repository_hooks` wire field.
-final class WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsRepositoryHooks {
+final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryHooks {
   final String value;
 
-  const WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsRepositoryHooks._(
+  const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryHooks._(
       this.value);
 
-  factory WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsRepositoryHooks.fromJson(
+  factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryHooks.fromJson(
           String value) =>
-      WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsRepositoryHooks
+      WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryHooks
           ._(value);
 
   static const read =
-      WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsRepositoryHooks
+      WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryHooks
           ._('read');
   static const write =
-      WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsRepositoryHooks
+      WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryHooks
           ._('write');
 
   String toJson() => value;
@@ -231,7 +167,7 @@ final class WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsRepositoryH
   @override
   bool operator ==(Object other) =>
       other
-          is WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsRepositoryHooks &&
+          is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryHooks &&
       other.value == value;
 
   @override
@@ -239,22 +175,22 @@ final class WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsRepositoryH
 }
 
 /// Optional enumerated value serialized in the `repository_projects` wire field.
-final class WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsRepositoryProjects {
+final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryProjects {
   final String value;
 
-  const WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsRepositoryProjects._(
+  const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryProjects._(
       this.value);
 
-  factory WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsRepositoryProjects.fromJson(
+  factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryProjects.fromJson(
           String value) =>
-      WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsRepositoryProjects
+      WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryProjects
           ._(value);
 
   static const read =
-      WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsRepositoryProjects
+      WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryProjects
           ._('read');
   static const write =
-      WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsRepositoryProjects
+      WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryProjects
           ._('write');
 
   String toJson() => value;
@@ -265,7 +201,7 @@ final class WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsRepositoryP
   @override
   bool operator ==(Object other) =>
       other
-          is WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsRepositoryProjects &&
+          is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryProjects &&
       other.value == value;
 
   @override
@@ -273,22 +209,22 @@ final class WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsRepositoryP
 }
 
 /// Optional enumerated value serialized in the `secret_scanning_alerts` wire field.
-final class WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsSecretScanningAlerts {
+final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecretScanningAlerts {
   final String value;
 
-  const WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsSecretScanningAlerts._(
+  const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecretScanningAlerts._(
       this.value);
 
-  factory WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsSecretScanningAlerts.fromJson(
+  factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecretScanningAlerts.fromJson(
           String value) =>
-      WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsSecretScanningAlerts
+      WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecretScanningAlerts
           ._(value);
 
   static const read =
-      WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsSecretScanningAlerts
+      WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecretScanningAlerts
           ._('read');
   static const write =
-      WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsSecretScanningAlerts
+      WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecretScanningAlerts
           ._('write');
 
   String toJson() => value;
@@ -299,7 +235,7 @@ final class WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsSecretScann
   @override
   bool operator ==(Object other) =>
       other
-          is WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsSecretScanningAlerts &&
+          is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecretScanningAlerts &&
       other.value == value;
 
   @override
@@ -307,89 +243,22 @@ final class WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsSecretScann
 }
 
 /// Optional enumerated value serialized in the `secrets` wire field.
-final class WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsSecrets {
+final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecrets {
   final String value;
 
-  const WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsSecrets._(
+  const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecrets._(
       this.value);
 
-  factory WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsSecrets.fromJson(
+  factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecrets.fromJson(
           String value) =>
-      WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsSecrets._(value);
-
-  static const read =
-      WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsSecrets._(
-          'read');
-  static const write =
-      WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsSecrets._(
-          'write');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsSecrets &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `security_events` wire field.
-final class WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsSecurityEvents {
-  final String value;
-
-  const WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsSecurityEvents._(
-      this.value);
-
-  factory WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsSecurityEvents.fromJson(
-          String value) =>
-      WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsSecurityEvents._(
-          value);
-
-  static const read =
-      WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsSecurityEvents._(
-          'read');
-  static const write =
-      WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsSecurityEvents._(
-          'write');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsSecurityEvents &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `security_scanning_alert` wire field.
-final class WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsSecurityScanningAlert {
-  final String value;
-
-  const WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsSecurityScanningAlert._(
-      this.value);
-
-  factory WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsSecurityScanningAlert.fromJson(
-          String value) =>
-      WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsSecurityScanningAlert
+      WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecrets
           ._(value);
 
   static const read =
-      WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsSecurityScanningAlert
+      WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecrets
           ._('read');
   static const write =
-      WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsSecurityScanningAlert
+      WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecrets
           ._('write');
 
   String toJson() => value;
@@ -400,31 +269,31 @@ final class WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsSecuritySca
   @override
   bool operator ==(Object other) =>
       other
-          is WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsSecurityScanningAlert &&
+          is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecrets &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Optional enumerated value serialized in the `single_file` wire field.
-final class WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsSingleFile {
+/// Optional enumerated value serialized in the `security_events` wire field.
+final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityEvents {
   final String value;
 
-  const WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsSingleFile._(
+  const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityEvents._(
       this.value);
 
-  factory WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsSingleFile.fromJson(
+  factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityEvents.fromJson(
           String value) =>
-      WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsSingleFile._(
-          value);
+      WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityEvents
+          ._(value);
 
   static const read =
-      WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsSingleFile._(
-          'read');
+      WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityEvents
+          ._('read');
   static const write =
-      WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsSingleFile._(
-          'write');
+      WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityEvents
+          ._('write');
 
   String toJson() => value;
 
@@ -434,7 +303,143 @@ final class WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsSingleFile 
   @override
   bool operator ==(Object other) =>
       other
-          is WebhookIssuesDeletedIssuePerformedViaGithubAppPermissionsSingleFile &&
+          is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityEvents &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Optional enumerated value serialized in the `security_scanning_alert` wire field.
+final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityScanningAlert {
+  final String value;
+
+  const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityScanningAlert._(
+      this.value);
+
+  factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityScanningAlert.fromJson(
+          String value) =>
+      WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityScanningAlert
+          ._(value);
+
+  static const read =
+      WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityScanningAlert
+          ._('read');
+  static const write =
+      WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityScanningAlert
+          ._('write');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityScanningAlert &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Optional enumerated value serialized in the `single_file` wire field.
+final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSingleFile {
+  final String value;
+
+  const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSingleFile._(
+      this.value);
+
+  factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSingleFile.fromJson(
+          String value) =>
+      WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSingleFile
+          ._(value);
+
+  static const read =
+      WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSingleFile
+          ._('read');
+  static const write =
+      WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSingleFile
+          ._('write');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSingleFile &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Optional enumerated value serialized in the `statuses` wire field.
+final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsStatuses {
+  final String value;
+
+  const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsStatuses._(
+      this.value);
+
+  factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsStatuses.fromJson(
+          String value) =>
+      WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsStatuses
+          ._(value);
+
+  static const read =
+      WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsStatuses
+          ._('read');
+  static const write =
+      WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsStatuses
+          ._('write');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsStatuses &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Optional enumerated value serialized in the `vulnerability_alerts` wire field.
+final class WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts {
+  final String value;
+
+  const WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts._(
+      this.value);
+
+  factory WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts.fromJson(
+          String value) =>
+      WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts
+          ._(value);
+
+  static const read =
+      WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts
+          ._('read');
+  static const write =
+      WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts
+          ._('write');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts &&
       other.value == value;
 
   @override

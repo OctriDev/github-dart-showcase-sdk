@@ -4,408 +4,551 @@
 part of 'inline.dart';
 
 // Inline operation models (part 369)
-class ActivityMarkNotificationsAsReadRequestBody {
+class CodespacesCreateOrUpdateRepoSecretRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Describes the last point that notifications were checked. Anything updated since this time will not be marked as read. If you omit this parameter, all notifications are marked as read. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp.
-  final SdkOptional<String> lastReadAt;
+  /// Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get a repository public key](https://docs.github.com/rest/codespaces/repository-secrets#get-a-repository-public-key) endpoint.
+  final SdkOptional<String> encryptedValue;
 
-  /// Whether the notification has been read.
-  final SdkOptional<bool> read;
+  /// ID of the key you used to encrypt the secret.
+  final SdkOptional<String> keyId;
 
-  const ActivityMarkNotificationsAsReadRequestBody(
-      {this.lastReadAt = const SdkOmitted(), this.read = const SdkOmitted()});
+  const CodespacesCreateOrUpdateRepoSecretRequestBody(
+      {this.encryptedValue = const SdkOmitted(),
+      this.keyId = const SdkOmitted()});
 
-  ActivityMarkNotificationsAsReadRequestBody Function(
-      {SdkOptional<String> lastReadAt,
-      SdkOptional<bool> read}) get copyWith => _copyWith;
+  CodespacesCreateOrUpdateRepoSecretRequestBody Function(
+      {SdkOptional<String> encryptedValue,
+      SdkOptional<String> keyId}) get copyWith => _copyWith;
 
-  ActivityMarkNotificationsAsReadRequestBody _copyWith(
-          {Object? lastReadAt = sdkOmittedValue,
-          Object? read = sdkOmittedValue}) =>
-      ActivityMarkNotificationsAsReadRequestBody(
-        lastReadAt: identical(lastReadAt, sdkOmittedValue)
-            ? this.lastReadAt
-            : lastReadAt as SdkOptional<String>,
-        read: identical(read, sdkOmittedValue)
-            ? this.read
-            : read as SdkOptional<bool>,
+  CodespacesCreateOrUpdateRepoSecretRequestBody _copyWith(
+          {Object? encryptedValue = sdkOmittedValue,
+          Object? keyId = sdkOmittedValue}) =>
+      CodespacesCreateOrUpdateRepoSecretRequestBody(
+        encryptedValue: identical(encryptedValue, sdkOmittedValue)
+            ? this.encryptedValue
+            : encryptedValue as SdkOptional<String>,
+        keyId: identical(keyId, sdkOmittedValue)
+            ? this.keyId
+            : keyId as SdkOptional<String>,
       );
 
-  factory ActivityMarkNotificationsAsReadRequestBody.fromJson(
+  factory CodespacesCreateOrUpdateRepoSecretRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      ActivityMarkNotificationsAsReadRequestBody(
-        lastReadAt: json['last_read_at'] != null
-            ? SdkPresent((json['last_read_at'] as String?)!)
+      CodespacesCreateOrUpdateRepoSecretRequestBody(
+        encryptedValue: json['encrypted_value'] != null
+            ? SdkPresent((json['encrypted_value'] as String?)!)
             : const SdkOmitted(),
-        read: json['read'] != null
-            ? SdkPresent((json['read'] as bool?)!)
+        keyId: json['key_id'] != null
+            ? SdkPresent((json['key_id'] as String?)!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (lastReadAt) {
+        ...switch (encryptedValue) {
           SdkPresent<String>(value: final value) => {
-              'last_read_at': value,
+              'encrypted_value': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (read) {
+        ...switch (keyId) {
+          SdkPresent<String>(value: final value) => {
+              'key_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class CodespacesCreateWithPrForAuthenticatedUserRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The requested location for a new codespace. Best efforts are made to respect this upon creation. Assigned by IP if not provided.
+  final SdkOptional<String> location;
+
+  /// The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is closing down.
+  final SdkOptional<CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo>
+      geo;
+
+  /// IP for location auto-detection when proxying a request
+  final SdkOptional<String> clientIp;
+
+  /// Machine type to use for this codespace
+  final SdkOptional<String> machine;
+
+  /// Path to devcontainer.json config to use for this codespace
+  final SdkOptional<String> devcontainerPath;
+
+  /// Whether to authorize requested permissions from devcontainer.json
+  final SdkOptional<bool> multiRepoPermissionsOptOut;
+
+  /// Working directory for this codespace
+  final SdkOptional<String> workingDirectory;
+
+  /// Time in minutes before codespace stops from inactivity
+  final SdkOptional<int> idleTimeoutMinutes;
+
+  /// Display name for this codespace
+  final SdkOptional<String> displayName;
+
+  /// Duration in minutes after codespace has gone idle in which it will be deleted. Must be integer minutes between 0 and 43200 (30 days).
+  final SdkOptional<int> retentionPeriodMinutes;
+
+  const CodespacesCreateWithPrForAuthenticatedUserRequestBody(
+      {this.location = const SdkOmitted(),
+      this.geo = const SdkOmitted(),
+      this.clientIp = const SdkOmitted(),
+      this.machine = const SdkOmitted(),
+      this.devcontainerPath = const SdkOmitted(),
+      this.multiRepoPermissionsOptOut = const SdkOmitted(),
+      this.workingDirectory = const SdkOmitted(),
+      this.idleTimeoutMinutes = const SdkOmitted(),
+      this.displayName = const SdkOmitted(),
+      this.retentionPeriodMinutes = const SdkOmitted()});
+
+  CodespacesCreateWithPrForAuthenticatedUserRequestBody Function(
+      {SdkOptional<String> location,
+      SdkOptional<CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo> geo,
+      SdkOptional<String> clientIp,
+      SdkOptional<String> machine,
+      SdkOptional<String> devcontainerPath,
+      SdkOptional<bool> multiRepoPermissionsOptOut,
+      SdkOptional<String> workingDirectory,
+      SdkOptional<int> idleTimeoutMinutes,
+      SdkOptional<String> displayName,
+      SdkOptional<int> retentionPeriodMinutes}) get copyWith => _copyWith;
+
+  CodespacesCreateWithPrForAuthenticatedUserRequestBody _copyWith(
+          {Object? location = sdkOmittedValue,
+          Object? geo = sdkOmittedValue,
+          Object? clientIp = sdkOmittedValue,
+          Object? machine = sdkOmittedValue,
+          Object? devcontainerPath = sdkOmittedValue,
+          Object? multiRepoPermissionsOptOut = sdkOmittedValue,
+          Object? workingDirectory = sdkOmittedValue,
+          Object? idleTimeoutMinutes = sdkOmittedValue,
+          Object? displayName = sdkOmittedValue,
+          Object? retentionPeriodMinutes = sdkOmittedValue}) =>
+      CodespacesCreateWithPrForAuthenticatedUserRequestBody(
+        location: identical(location, sdkOmittedValue)
+            ? this.location
+            : location as SdkOptional<String>,
+        geo: identical(geo, sdkOmittedValue)
+            ? this.geo
+            : geo as SdkOptional<
+                CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo>,
+        clientIp: identical(clientIp, sdkOmittedValue)
+            ? this.clientIp
+            : clientIp as SdkOptional<String>,
+        machine: identical(machine, sdkOmittedValue)
+            ? this.machine
+            : machine as SdkOptional<String>,
+        devcontainerPath: identical(devcontainerPath, sdkOmittedValue)
+            ? this.devcontainerPath
+            : devcontainerPath as SdkOptional<String>,
+        multiRepoPermissionsOptOut:
+            identical(multiRepoPermissionsOptOut, sdkOmittedValue)
+                ? this.multiRepoPermissionsOptOut
+                : multiRepoPermissionsOptOut as SdkOptional<bool>,
+        workingDirectory: identical(workingDirectory, sdkOmittedValue)
+            ? this.workingDirectory
+            : workingDirectory as SdkOptional<String>,
+        idleTimeoutMinutes: identical(idleTimeoutMinutes, sdkOmittedValue)
+            ? this.idleTimeoutMinutes
+            : idleTimeoutMinutes as SdkOptional<int>,
+        displayName: identical(displayName, sdkOmittedValue)
+            ? this.displayName
+            : displayName as SdkOptional<String>,
+        retentionPeriodMinutes:
+            identical(retentionPeriodMinutes, sdkOmittedValue)
+                ? this.retentionPeriodMinutes
+                : retentionPeriodMinutes as SdkOptional<int>,
+      );
+
+  factory CodespacesCreateWithPrForAuthenticatedUserRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      CodespacesCreateWithPrForAuthenticatedUserRequestBody(
+        location: json['location'] != null
+            ? SdkPresent((json['location'] as String?)!)
+            : const SdkOmitted(),
+        geo: json['geo'] != null
+            ? SdkPresent((json['geo'] != null
+                ? CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo
+                    .fromJson(json['geo'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        clientIp: json['client_ip'] != null
+            ? SdkPresent((json['client_ip'] as String?)!)
+            : const SdkOmitted(),
+        machine: json['machine'] != null
+            ? SdkPresent((json['machine'] as String?)!)
+            : const SdkOmitted(),
+        devcontainerPath: json['devcontainer_path'] != null
+            ? SdkPresent((json['devcontainer_path'] as String?)!)
+            : const SdkOmitted(),
+        multiRepoPermissionsOptOut:
+            json['multi_repo_permissions_opt_out'] != null
+                ? SdkPresent((json['multi_repo_permissions_opt_out'] as bool?)!)
+                : const SdkOmitted(),
+        workingDirectory: json['working_directory'] != null
+            ? SdkPresent((json['working_directory'] as String?)!)
+            : const SdkOmitted(),
+        idleTimeoutMinutes: json['idle_timeout_minutes'] != null
+            ? SdkPresent(((json['idle_timeout_minutes'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        displayName: json['display_name'] != null
+            ? SdkPresent((json['display_name'] as String?)!)
+            : const SdkOmitted(),
+        retentionPeriodMinutes: json['retention_period_minutes'] != null
+            ? SdkPresent(((json['retention_period_minutes'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (location) {
+          SdkPresent<String>(value: final value) => {
+              'location': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (geo) {
+          SdkPresent<CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo>(
+            value: final value
+          ) =>
+            {
+              'geo': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (clientIp) {
+          SdkPresent<String>(value: final value) => {
+              'client_ip': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (machine) {
+          SdkPresent<String>(value: final value) => {
+              'machine': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (devcontainerPath) {
+          SdkPresent<String>(value: final value) => {
+              'devcontainer_path': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (multiRepoPermissionsOptOut) {
           SdkPresent<bool>(value: final value) => {
-              'read': value,
+              'multi_repo_permissions_opt_out': value,
             },
           _ => const <String, dynamic>{},
         },
-      };
-}
-
-class ActivityMarkNotificationsAsReadResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final SdkOptional<String> message;
-
-  const ActivityMarkNotificationsAsReadResponse(
-      {this.message = const SdkOmitted()});
-
-  ActivityMarkNotificationsAsReadResponse Function(
-      {SdkOptional<String> message}) get copyWith => _copyWith;
-
-  ActivityMarkNotificationsAsReadResponse _copyWith(
-          {Object? message = sdkOmittedValue}) =>
-      ActivityMarkNotificationsAsReadResponse(
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as SdkOptional<String>,
-      );
-
-  factory ActivityMarkNotificationsAsReadResponse.fromJson(
-          Map<String, dynamic> json) =>
-      ActivityMarkNotificationsAsReadResponse(
-        message: json['message'] != null
-            ? SdkPresent((json['message'] as String?)!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (message) {
+        ...switch (workingDirectory) {
           SdkPresent<String>(value: final value) => {
-              'message': value,
+              'working_directory': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (idleTimeoutMinutes) {
+          SdkPresent<int>(value: final value) => {
+              'idle_timeout_minutes': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (displayName) {
+          SdkPresent<String>(value: final value) => {
+              'display_name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (retentionPeriodMinutes) {
+          SdkPresent<int>(value: final value) => {
+              'retention_period_minutes': value,
             },
           _ => const <String, dynamic>{},
         },
       };
 }
 
-class ActivitySetThreadSubscriptionRequestBody {
+class CodespacesListForAuthenticatedUserResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  final int totalCount;
+  final List<Codespace> codespaces;
+
+  const CodespacesListForAuthenticatedUserResponse(
+      {required this.totalCount, required this.codespaces});
+
+  CodespacesListForAuthenticatedUserResponse Function(
+      {int totalCount, List<Codespace> codespaces}) get copyWith => _copyWith;
+
+  CodespacesListForAuthenticatedUserResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? codespaces = sdkOmittedValue}) =>
+      CodespacesListForAuthenticatedUserResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        codespaces: identical(codespaces, sdkOmittedValue)
+            ? this.codespaces
+            : codespaces as List<Codespace>,
+      );
+
+  factory CodespacesListForAuthenticatedUserResponse.fromJson(
+          Map<String, dynamic> json) =>
+      CodespacesListForAuthenticatedUserResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        codespaces: ((json['codespaces'] as List?)
+            ?.map((e) => Codespace.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'total_count': totalCount,
+        'codespaces': codespaces.map((item) => item.toJson()).toList(),
+      };
+}
+
+class CodespacesCreateForAuthenticatedUserRequestBodyVariant0 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Whether to block all notifications from a thread.
-  final SdkOptional<bool> ignored;
+  /// Repository id for this codespace
+  final int repositoryId;
 
-  const ActivitySetThreadSubscriptionRequestBody(
-      {this.ignored = const SdkOmitted()});
+  /// Git ref (typically a branch name) for this codespace
+  final SdkOptional<String> ref;
 
-  ActivitySetThreadSubscriptionRequestBody Function({SdkOptional<bool> ignored})
-      get copyWith => _copyWith;
+  /// The requested location for a new codespace. Best efforts are made to respect this upon creation. Assigned by IP if not provided.
+  final SdkOptional<String> location;
 
-  ActivitySetThreadSubscriptionRequestBody _copyWith(
-          {Object? ignored = sdkOmittedValue}) =>
-      ActivitySetThreadSubscriptionRequestBody(
-        ignored: identical(ignored, sdkOmittedValue)
-            ? this.ignored
-            : ignored as SdkOptional<bool>,
+  /// The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is closing down.
+  final SdkOptional<CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo>
+      geo;
+
+  /// IP for location auto-detection when proxying a request
+  final SdkOptional<String> clientIp;
+
+  /// Machine type to use for this codespace
+  final SdkOptional<String> machine;
+
+  /// Path to devcontainer.json config to use for this codespace
+  final SdkOptional<String> devcontainerPath;
+
+  /// Whether to authorize requested permissions from devcontainer.json
+  final SdkOptional<bool> multiRepoPermissionsOptOut;
+
+  /// Working directory for this codespace
+  final SdkOptional<String> workingDirectory;
+
+  /// Time in minutes before codespace stops from inactivity
+  final SdkOptional<int> idleTimeoutMinutes;
+
+  /// Display name for this codespace
+  final SdkOptional<String> displayName;
+
+  /// Duration in minutes after codespace has gone idle in which it will be deleted. Must be integer minutes between 0 and 43200 (30 days).
+  final SdkOptional<int> retentionPeriodMinutes;
+
+  const CodespacesCreateForAuthenticatedUserRequestBodyVariant0(
+      {required this.repositoryId,
+      this.ref = const SdkOmitted(),
+      this.location = const SdkOmitted(),
+      this.geo = const SdkOmitted(),
+      this.clientIp = const SdkOmitted(),
+      this.machine = const SdkOmitted(),
+      this.devcontainerPath = const SdkOmitted(),
+      this.multiRepoPermissionsOptOut = const SdkOmitted(),
+      this.workingDirectory = const SdkOmitted(),
+      this.idleTimeoutMinutes = const SdkOmitted(),
+      this.displayName = const SdkOmitted(),
+      this.retentionPeriodMinutes = const SdkOmitted()});
+
+  CodespacesCreateForAuthenticatedUserRequestBodyVariant0 Function(
+      {int repositoryId,
+      SdkOptional<String> ref,
+      SdkOptional<String> location,
+      SdkOptional<CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo>
+          geo,
+      SdkOptional<String> clientIp,
+      SdkOptional<String> machine,
+      SdkOptional<String> devcontainerPath,
+      SdkOptional<bool> multiRepoPermissionsOptOut,
+      SdkOptional<String> workingDirectory,
+      SdkOptional<int> idleTimeoutMinutes,
+      SdkOptional<String> displayName,
+      SdkOptional<int> retentionPeriodMinutes}) get copyWith => _copyWith;
+
+  CodespacesCreateForAuthenticatedUserRequestBodyVariant0 _copyWith(
+          {Object? repositoryId = sdkOmittedValue,
+          Object? ref = sdkOmittedValue,
+          Object? location = sdkOmittedValue,
+          Object? geo = sdkOmittedValue,
+          Object? clientIp = sdkOmittedValue,
+          Object? machine = sdkOmittedValue,
+          Object? devcontainerPath = sdkOmittedValue,
+          Object? multiRepoPermissionsOptOut = sdkOmittedValue,
+          Object? workingDirectory = sdkOmittedValue,
+          Object? idleTimeoutMinutes = sdkOmittedValue,
+          Object? displayName = sdkOmittedValue,
+          Object? retentionPeriodMinutes = sdkOmittedValue}) =>
+      CodespacesCreateForAuthenticatedUserRequestBodyVariant0(
+        repositoryId: identical(repositoryId, sdkOmittedValue)
+            ? this.repositoryId
+            : repositoryId as int,
+        ref: identical(ref, sdkOmittedValue)
+            ? this.ref
+            : ref as SdkOptional<String>,
+        location: identical(location, sdkOmittedValue)
+            ? this.location
+            : location as SdkOptional<String>,
+        geo: identical(geo, sdkOmittedValue)
+            ? this.geo
+            : geo as SdkOptional<
+                CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo>,
+        clientIp: identical(clientIp, sdkOmittedValue)
+            ? this.clientIp
+            : clientIp as SdkOptional<String>,
+        machine: identical(machine, sdkOmittedValue)
+            ? this.machine
+            : machine as SdkOptional<String>,
+        devcontainerPath: identical(devcontainerPath, sdkOmittedValue)
+            ? this.devcontainerPath
+            : devcontainerPath as SdkOptional<String>,
+        multiRepoPermissionsOptOut:
+            identical(multiRepoPermissionsOptOut, sdkOmittedValue)
+                ? this.multiRepoPermissionsOptOut
+                : multiRepoPermissionsOptOut as SdkOptional<bool>,
+        workingDirectory: identical(workingDirectory, sdkOmittedValue)
+            ? this.workingDirectory
+            : workingDirectory as SdkOptional<String>,
+        idleTimeoutMinutes: identical(idleTimeoutMinutes, sdkOmittedValue)
+            ? this.idleTimeoutMinutes
+            : idleTimeoutMinutes as SdkOptional<int>,
+        displayName: identical(displayName, sdkOmittedValue)
+            ? this.displayName
+            : displayName as SdkOptional<String>,
+        retentionPeriodMinutes:
+            identical(retentionPeriodMinutes, sdkOmittedValue)
+                ? this.retentionPeriodMinutes
+                : retentionPeriodMinutes as SdkOptional<int>,
       );
 
-  factory ActivitySetThreadSubscriptionRequestBody.fromJson(
+  factory CodespacesCreateForAuthenticatedUserRequestBodyVariant0.fromJson(
           Map<String, dynamic> json) =>
-      ActivitySetThreadSubscriptionRequestBody(
-        ignored: json['ignored'] != null
-            ? SdkPresent((json['ignored'] as bool?)!)
+      CodespacesCreateForAuthenticatedUserRequestBodyVariant0(
+        repositoryId: ((json['repository_id'] as num?)?.toInt())!,
+        ref: json['ref'] != null
+            ? SdkPresent((json['ref'] as String?)!)
+            : const SdkOmitted(),
+        location: json['location'] != null
+            ? SdkPresent((json['location'] as String?)!)
+            : const SdkOmitted(),
+        geo: json['geo'] != null
+            ? SdkPresent((json['geo'] != null
+                ? CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo
+                    .fromJson(json['geo'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        clientIp: json['client_ip'] != null
+            ? SdkPresent((json['client_ip'] as String?)!)
+            : const SdkOmitted(),
+        machine: json['machine'] != null
+            ? SdkPresent((json['machine'] as String?)!)
+            : const SdkOmitted(),
+        devcontainerPath: json['devcontainer_path'] != null
+            ? SdkPresent((json['devcontainer_path'] as String?)!)
+            : const SdkOmitted(),
+        multiRepoPermissionsOptOut:
+            json['multi_repo_permissions_opt_out'] != null
+                ? SdkPresent((json['multi_repo_permissions_opt_out'] as bool?)!)
+                : const SdkOmitted(),
+        workingDirectory: json['working_directory'] != null
+            ? SdkPresent((json['working_directory'] as String?)!)
+            : const SdkOmitted(),
+        idleTimeoutMinutes: json['idle_timeout_minutes'] != null
+            ? SdkPresent(((json['idle_timeout_minutes'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        displayName: json['display_name'] != null
+            ? SdkPresent((json['display_name'] as String?)!)
+            : const SdkOmitted(),
+        retentionPeriodMinutes: json['retention_period_minutes'] != null
+            ? SdkPresent(((json['retention_period_minutes'] as num?)?.toInt())!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (ignored) {
+        'repository_id': repositoryId,
+        ...switch (ref) {
+          SdkPresent<String>(value: final value) => {
+              'ref': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (location) {
+          SdkPresent<String>(value: final value) => {
+              'location': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (geo) {
+          SdkPresent<
+                CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo>(
+            value: final value
+          ) =>
+            {
+              'geo': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (clientIp) {
+          SdkPresent<String>(value: final value) => {
+              'client_ip': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (machine) {
+          SdkPresent<String>(value: final value) => {
+              'machine': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (devcontainerPath) {
+          SdkPresent<String>(value: final value) => {
+              'devcontainer_path': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (multiRepoPermissionsOptOut) {
           SdkPresent<bool>(value: final value) => {
-              'ignored': value,
+              'multi_repo_permissions_opt_out': value,
             },
           _ => const <String, dynamic>{},
         },
-      };
-}
-
-class ActivityMarkRepoNotificationsAsReadRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Describes the last point that notifications were checked. Anything updated since this time will not be marked as read. If you omit this parameter, all notifications are marked as read. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp.
-  final SdkOptional<String> lastReadAt;
-
-  const ActivityMarkRepoNotificationsAsReadRequestBody(
-      {this.lastReadAt = const SdkOmitted()});
-
-  ActivityMarkRepoNotificationsAsReadRequestBody Function(
-      {SdkOptional<String> lastReadAt}) get copyWith => _copyWith;
-
-  ActivityMarkRepoNotificationsAsReadRequestBody _copyWith(
-          {Object? lastReadAt = sdkOmittedValue}) =>
-      ActivityMarkRepoNotificationsAsReadRequestBody(
-        lastReadAt: identical(lastReadAt, sdkOmittedValue)
-            ? this.lastReadAt
-            : lastReadAt as SdkOptional<String>,
-      );
-
-  factory ActivityMarkRepoNotificationsAsReadRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      ActivityMarkRepoNotificationsAsReadRequestBody(
-        lastReadAt: json['last_read_at'] != null
-            ? SdkPresent((json['last_read_at'] as String?)!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (lastReadAt) {
+        ...switch (workingDirectory) {
           SdkPresent<String>(value: final value) => {
-              'last_read_at': value,
+              'working_directory': value,
             },
           _ => const <String, dynamic>{},
         },
-      };
-}
-
-class ActivityMarkRepoNotificationsAsReadResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final SdkOptional<String> message;
-  final SdkOptional<String> url;
-
-  const ActivityMarkRepoNotificationsAsReadResponse(
-      {this.message = const SdkOmitted(), this.url = const SdkOmitted()});
-
-  ActivityMarkRepoNotificationsAsReadResponse Function(
-      {SdkOptional<String> message,
-      SdkOptional<String> url}) get copyWith => _copyWith;
-
-  ActivityMarkRepoNotificationsAsReadResponse _copyWith(
-          {Object? message = sdkOmittedValue, Object? url = sdkOmittedValue}) =>
-      ActivityMarkRepoNotificationsAsReadResponse(
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as SdkOptional<String>,
-        url: identical(url, sdkOmittedValue)
-            ? this.url
-            : url as SdkOptional<String>,
-      );
-
-  factory ActivityMarkRepoNotificationsAsReadResponse.fromJson(
-          Map<String, dynamic> json) =>
-      ActivityMarkRepoNotificationsAsReadResponse(
-        message: json['message'] != null
-            ? SdkPresent((json['message'] as String?)!)
-            : const SdkOmitted(),
-        url: json['url'] != null
-            ? SdkPresent((json['url'] as String?)!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (message) {
+        ...switch (idleTimeoutMinutes) {
+          SdkPresent<int>(value: final value) => {
+              'idle_timeout_minutes': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (displayName) {
           SdkPresent<String>(value: final value) => {
-              'message': value,
+              'display_name': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (url) {
-          SdkPresent<String>(value: final value) => {
-              'url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-class ActivityGetStargazerCountForRepoResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final int count;
-
-  const ActivityGetStargazerCountForRepoResponse({required this.count});
-
-  ActivityGetStargazerCountForRepoResponse Function({int count}) get copyWith =>
-      _copyWith;
-
-  ActivityGetStargazerCountForRepoResponse _copyWith(
-          {Object? count = sdkOmittedValue}) =>
-      ActivityGetStargazerCountForRepoResponse(
-        count: identical(count, sdkOmittedValue) ? this.count : count as int,
-      );
-
-  factory ActivityGetStargazerCountForRepoResponse.fromJson(
-          Map<String, dynamic> json) =>
-      ActivityGetStargazerCountForRepoResponse(
-        count: ((json['count'] as num?)?.toInt())!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'count': count,
-      };
-}
-
-class ActivitySetRepoSubscriptionRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Determines if notifications should be received from this repository.
-  final SdkOptional<bool> subscribed;
-
-  /// Determines if all notifications should be blocked from this repository.
-  final SdkOptional<bool> ignored;
-
-  const ActivitySetRepoSubscriptionRequestBody(
-      {this.subscribed = const SdkOmitted(),
-      this.ignored = const SdkOmitted()});
-
-  ActivitySetRepoSubscriptionRequestBody Function(
-      {SdkOptional<bool> subscribed,
-      SdkOptional<bool> ignored}) get copyWith => _copyWith;
-
-  ActivitySetRepoSubscriptionRequestBody _copyWith(
-          {Object? subscribed = sdkOmittedValue,
-          Object? ignored = sdkOmittedValue}) =>
-      ActivitySetRepoSubscriptionRequestBody(
-        subscribed: identical(subscribed, sdkOmittedValue)
-            ? this.subscribed
-            : subscribed as SdkOptional<bool>,
-        ignored: identical(ignored, sdkOmittedValue)
-            ? this.ignored
-            : ignored as SdkOptional<bool>,
-      );
-
-  factory ActivitySetRepoSubscriptionRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      ActivitySetRepoSubscriptionRequestBody(
-        subscribed: json['subscribed'] != null
-            ? SdkPresent((json['subscribed'] as bool?)!)
-            : const SdkOmitted(),
-        ignored: json['ignored'] != null
-            ? SdkPresent((json['ignored'] as bool?)!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (subscribed) {
-          SdkPresent<bool>(value: final value) => {
-              'subscribed': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (ignored) {
-          SdkPresent<bool>(value: final value) => {
-              'ignored': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-class GistsCreateRequestBodyFilesValue {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Content of the file
-  final String content;
-
-  const GistsCreateRequestBodyFilesValue({required this.content});
-
-  GistsCreateRequestBodyFilesValue Function({String content}) get copyWith =>
-      _copyWith;
-
-  GistsCreateRequestBodyFilesValue _copyWith(
-          {Object? content = sdkOmittedValue}) =>
-      GistsCreateRequestBodyFilesValue(
-        content: identical(content, sdkOmittedValue)
-            ? this.content
-            : content as String,
-      );
-
-  factory GistsCreateRequestBodyFilesValue.fromJson(
-          Map<String, dynamic> json) =>
-      GistsCreateRequestBodyFilesValue(
-        content: (json['content'] as String?)!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'content': content,
-      };
-}
-
-class GistsCreateRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Description of the gist
-  final SdkOptional<String> description;
-
-  /// Names and content for the files that make up the gist
-  final Map<String, GistsCreateRequestBodyFilesValue> files;
-  final SdkOptional<dynamic> public;
-
-  const GistsCreateRequestBody(
-      {this.description = const SdkOmitted(),
-      required this.files,
-      this.public = const SdkOmitted()});
-
-  GistsCreateRequestBody Function(
-      {SdkOptional<String> description,
-      Map<String, GistsCreateRequestBodyFilesValue> files,
-      SdkOptional<dynamic> public}) get copyWith => _copyWith;
-
-  GistsCreateRequestBody _copyWith(
-          {Object? description = sdkOmittedValue,
-          Object? files = sdkOmittedValue,
-          Object? public = sdkOmittedValue}) =>
-      GistsCreateRequestBody(
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as SdkOptional<String>,
-        files: identical(files, sdkOmittedValue)
-            ? this.files
-            : files as Map<String, GistsCreateRequestBodyFilesValue>,
-        public: identical(public, sdkOmittedValue)
-            ? this.public
-            : public as SdkOptional<dynamic>,
-      );
-
-  factory GistsCreateRequestBody.fromJson(Map<String, dynamic> json) =>
-      GistsCreateRequestBody(
-        description: json['description'] != null
-            ? SdkPresent((json['description'] as String?)!)
-            : const SdkOmitted(),
-        files: (json['files'] == null
-            ? null
-            : Map<String, dynamic>.from(json['files'] as Map).map(
-                (key, value) => MapEntry(
-                    key,
-                    GistsCreateRequestBodyFilesValue.fromJson(
-                        value as Map<String, dynamic>))))!,
-        public: json['public'] != null
-            ? SdkPresent((json['public'])!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (description) {
-          SdkPresent<String>(value: final value) => {
-              'description': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'files': files.map((key, value) => MapEntry(key, value.toJson())),
-        ...switch (public) {
-          SdkPresent<dynamic>(value: final value) => {
-              'public': value,
+        ...switch (retentionPeriodMinutes) {
+          SdkPresent<int>(value: final value) => {
+              'retention_period_minutes': value,
             },
           _ => const <String, dynamic>{},
         },

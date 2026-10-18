@@ -640,7 +640,10 @@ Future<Codespace> codespacesCreateWithRepoForAuthenticatedUser(
                 BasicError.fromJson(value as Map<String, dynamic>),
             '403': (value) =>
                 BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
           }))
       .data;
 }
@@ -830,7 +833,9 @@ Future<CodespacesPermissionsCheckForDevcontainer>
             '404': (value) =>
                 BasicError.fromJson(value as Map<String, dynamic>),
             '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
+                ValidationError.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
           }))
       .data;
 }
@@ -1039,7 +1044,10 @@ Future<Codespace> codespacesCreateWithPrForAuthenticatedUser(
                 BasicError.fromJson(value as Map<String, dynamic>),
             '403': (value) =>
                 BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
           }))
       .data;
 }
@@ -1108,7 +1116,9 @@ Future<Codespace> codespacesCreateForAuthenticatedUser(ClientConfig config,
           errors: {
         '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
         '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '503': (value) =>
+            ServiceUnavailable.fromJson(value as Map<String, dynamic>)
       }))
       .data;
 }

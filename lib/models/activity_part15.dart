@@ -4,7 +4,7 @@
 part of 'activity.dart';
 
 // activity domain models (part 15)
-/// Required API value serialized in the `release` wire field.
+/// Required object value serialized in the `release` wire field.
 class ReleaseEventRelease {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';

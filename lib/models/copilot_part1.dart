@@ -539,6 +539,20 @@ sealed class CopilotSeatDetailsAssigningTeam {
   static const String constructionSurface = 'named';
   const CopilotSeatDetailsAssigningTeam();
   factory CopilotSeatDetailsAssigningTeam.fromJson(Object? json) {
+    if (json is Map<String, dynamic>) {
+      try {
+        final value = Team.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return CopilotSeatDetailsAssigningTeamTeam(value);
+        }
+      } catch (_) {}
+      try {
+        final value = EnterpriseTeam.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return CopilotSeatDetailsAssigningTeamEnterpriseTeam(value);
+        }
+      } catch (_) {}
+    }
     try {
       return CopilotSeatDetailsAssigningTeamTeam(
           Team.fromJson(json as Map<String, dynamic>));

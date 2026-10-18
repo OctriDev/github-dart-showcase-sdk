@@ -346,6 +346,26 @@ sealed class WebhookPullRequestStackedPullRequestRequestedReviewersItem {
   const WebhookPullRequestStackedPullRequestRequestedReviewersItem();
   factory WebhookPullRequestStackedPullRequestRequestedReviewersItem.fromJson(
       Object? json) {
+    if (json is Map<String, dynamic>) {
+      try {
+        final value =
+            WebhookPullRequestStackedPullRequestRequestedReviewersItemVariant0
+                .fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return WebhookPullRequestStackedPullRequestRequestedReviewersItemWebhookPullRequestStackedPullRequestRequestedReviewersItemVariant0(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            WebhookPullRequestStackedPullRequestRequestedReviewersItemVariant1
+                .fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return WebhookPullRequestStackedPullRequestRequestedReviewersItemWebhookPullRequestStackedPullRequestRequestedReviewersItemVariant1(
+              value);
+        }
+      } catch (_) {}
+    }
     try {
       return WebhookPullRequestStackedPullRequestRequestedReviewersItemWebhookPullRequestStackedPullRequestRequestedReviewersItemVariant0(
           WebhookPullRequestStackedPullRequestRequestedReviewersItemVariant0

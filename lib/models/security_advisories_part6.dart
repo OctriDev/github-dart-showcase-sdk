@@ -4,427 +4,494 @@
 part of 'security_advisories.dart';
 
 // security_advisories domain models (part 6)
-/// A repository security advisory.
-class RepositoryAdvisory {
+/// Typed representation of the `RepositoryAdvisoryUpdate` API schema.
+class RepositoryAdvisoryUpdate {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// The GitHub Security Advisory ID.
-  final String ghsaId;
+  /// A short summary of the advisory.
+  final SdkOptional<String> summary;
+
+  /// A detailed description of what the advisory impacts.
+  final SdkOptional<String> description;
 
   /// The Common Vulnerabilities and Exposures (CVE) ID.
-  final String? cveId;
+  final SdkOptional<String?> cveId;
 
-  /// The API URL for the advisory.
-  final String url;
+  /// A product affected by the vulnerability detailed in a repository security advisory.
+  final SdkOptional<List<RepositoryAdvisoryUpdateVulnerabilitiesItem>>
+      vulnerabilities;
 
-  /// The URL for the advisory.
-  final String htmlUrl;
+  /// A list of Common Weakness Enumeration (CWE) IDs.
+  final SdkOptional<List<String>?> cweIds;
 
-  /// A short summary of the advisory.
-  final String summary;
+  /// A list of users receiving credit for their participation in the security advisory.
+  final SdkOptional<List<RepositoryAdvisoryUpdateCreditsItem>?> credits;
 
-  /// A detailed description of what the advisory entails.
-  final String? description;
+  /// The severity of the advisory. You must choose between setting this field or `cvss_vector_string`.
+  final SdkOptional<RepositoryAdvisoryUpdateSeverity?> severity;
 
-  /// The severity of the advisory.
-  final RepositoryAdvisorySeverity? severity;
-
-  /// The author of the advisory.
-  final SimpleUser? author;
-
-  /// The publisher of the advisory.
-  final SimpleUser? publisher;
-
-  /// Required array value serialized in the `identifiers` wire field.
-  final List<RepositoryAdvisoryIdentifiersItem> identifiers;
+  /// The CVSS vector that calculates the severity of the advisory. You must choose between setting this field or `severity`.
+  final SdkOptional<String?> cvssVectorString;
 
   /// The state of the advisory.
-  final RepositoryAdvisoryState state;
+  final SdkOptional<RepositoryAdvisoryUpdateState> state;
 
-  /// The date and time of when the advisory was created, in ISO 8601 format.
-  final String? createdAt;
+  /// A list of usernames who have been granted write access to the advisory.
+  final SdkOptional<List<String>?> collaboratingUsers;
 
-  /// The date and time of when the advisory was last updated, in ISO 8601 format.
-  final String? updatedAt;
+  /// A list of team slugs which have been granted write access to the advisory.
+  final SdkOptional<List<String>?> collaboratingTeams;
 
-  /// The date and time of when the advisory was published, in ISO 8601 format.
-  final String? publishedAt;
+  const RepositoryAdvisoryUpdate(
+      {this.summary = const SdkOmitted(),
+      this.description = const SdkOmitted(),
+      this.cveId = const SdkOmitted(),
+      this.vulnerabilities = const SdkOmitted(),
+      this.cweIds = const SdkOmitted(),
+      this.credits = const SdkOmitted(),
+      this.severity = const SdkOmitted(),
+      this.cvssVectorString = const SdkOmitted(),
+      this.state = const SdkOmitted(),
+      this.collaboratingUsers = const SdkOmitted(),
+      this.collaboratingTeams = const SdkOmitted()});
 
-  /// The date and time of when the advisory was closed, in ISO 8601 format.
-  final String? closedAt;
+  RepositoryAdvisoryUpdate Function(
+      {SdkOptional<String> summary,
+      SdkOptional<String> description,
+      SdkOptional<String?> cveId,
+      SdkOptional<List<RepositoryAdvisoryUpdateVulnerabilitiesItem>>
+          vulnerabilities,
+      SdkOptional<List<String>?> cweIds,
+      SdkOptional<List<RepositoryAdvisoryUpdateCreditsItem>?> credits,
+      SdkOptional<RepositoryAdvisoryUpdateSeverity?> severity,
+      SdkOptional<String?> cvssVectorString,
+      SdkOptional<RepositoryAdvisoryUpdateState> state,
+      SdkOptional<List<String>?> collaboratingUsers,
+      SdkOptional<List<String>?> collaboratingTeams}) get copyWith => _copyWith;
 
-  /// The date and time of when the advisory was withdrawn, in ISO 8601 format.
-  final String? withdrawnAt;
-
-  /// Required object value serialized in the `submission` wire field.
-  final RepositoryAdvisorySubmission? submission;
-
-  /// Required array value serialized in the `vulnerabilities` wire field.
-  final List<RepositoryAdvisoryVulnerability>? vulnerabilities;
-
-  /// Required object value serialized in the `cvss` wire field.
-  final RepositoryAdvisoryCvss? cvss;
-
-  /// Optional object value serialized in the `cvss_severities` wire field.
-  final SdkOptional<CvssSeverities?> cvssSeverities;
-
-  /// Required array value serialized in the `cwes` wire field.
-  final List<RepositoryAdvisoryCwesItem>? cwes;
-
-  /// A list of only the CWE IDs.
-  final List<String>? cweIds;
-
-  /// Required array value serialized in the `credits` wire field.
-  final List<RepositoryAdvisoryCreditsItem>? credits;
-
-  /// Required array value serialized in the `credits_detailed` wire field.
-  final List<RepositoryAdvisoryCredit>? creditsDetailed;
-
-  /// A list of users that collaborate on the advisory.
-  final List<SimpleUser>? collaboratingUsers;
-
-  /// A list of teams that collaborate on the advisory.
-  final List<Team>? collaboratingTeams;
-
-  /// A temporary private fork of the advisory's repository for collaborating on a fix.
-  final SimpleRepository? privateFork;
-
-  const RepositoryAdvisory(
-      {required this.ghsaId,
-      required this.cveId,
-      required this.url,
-      required this.htmlUrl,
-      required this.summary,
-      required this.description,
-      required this.severity,
-      required this.author,
-      required this.publisher,
-      required this.identifiers,
-      required this.state,
-      required this.createdAt,
-      required this.updatedAt,
-      required this.publishedAt,
-      required this.closedAt,
-      required this.withdrawnAt,
-      required this.submission,
-      required this.vulnerabilities,
-      required this.cvss,
-      this.cvssSeverities = const SdkOmitted(),
-      required this.cwes,
-      required this.cweIds,
-      required this.credits,
-      required this.creditsDetailed,
-      required this.collaboratingUsers,
-      required this.collaboratingTeams,
-      required this.privateFork});
-
-  RepositoryAdvisory Function(
-      {String ghsaId,
-      String? cveId,
-      String url,
-      String htmlUrl,
-      String summary,
-      String? description,
-      RepositoryAdvisorySeverity? severity,
-      SimpleUser? author,
-      SimpleUser? publisher,
-      List<RepositoryAdvisoryIdentifiersItem> identifiers,
-      RepositoryAdvisoryState state,
-      String? createdAt,
-      String? updatedAt,
-      String? publishedAt,
-      String? closedAt,
-      String? withdrawnAt,
-      RepositoryAdvisorySubmission? submission,
-      List<RepositoryAdvisoryVulnerability>? vulnerabilities,
-      RepositoryAdvisoryCvss? cvss,
-      SdkOptional<CvssSeverities?> cvssSeverities,
-      List<RepositoryAdvisoryCwesItem>? cwes,
-      List<String>? cweIds,
-      List<RepositoryAdvisoryCreditsItem>? credits,
-      List<RepositoryAdvisoryCredit>? creditsDetailed,
-      List<SimpleUser>? collaboratingUsers,
-      List<Team>? collaboratingTeams,
-      SimpleRepository? privateFork}) get copyWith => _copyWith;
-
-  RepositoryAdvisory _copyWith(
-          {Object? ghsaId = sdkOmittedValue,
-          Object? cveId = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? summary = sdkOmittedValue,
+  RepositoryAdvisoryUpdate _copyWith(
+          {Object? summary = sdkOmittedValue,
           Object? description = sdkOmittedValue,
-          Object? severity = sdkOmittedValue,
-          Object? author = sdkOmittedValue,
-          Object? publisher = sdkOmittedValue,
-          Object? identifiers = sdkOmittedValue,
-          Object? state = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue,
-          Object? publishedAt = sdkOmittedValue,
-          Object? closedAt = sdkOmittedValue,
-          Object? withdrawnAt = sdkOmittedValue,
-          Object? submission = sdkOmittedValue,
+          Object? cveId = sdkOmittedValue,
           Object? vulnerabilities = sdkOmittedValue,
-          Object? cvss = sdkOmittedValue,
-          Object? cvssSeverities = sdkOmittedValue,
-          Object? cwes = sdkOmittedValue,
           Object? cweIds = sdkOmittedValue,
           Object? credits = sdkOmittedValue,
-          Object? creditsDetailed = sdkOmittedValue,
+          Object? severity = sdkOmittedValue,
+          Object? cvssVectorString = sdkOmittedValue,
+          Object? state = sdkOmittedValue,
           Object? collaboratingUsers = sdkOmittedValue,
-          Object? collaboratingTeams = sdkOmittedValue,
-          Object? privateFork = sdkOmittedValue}) =>
-      RepositoryAdvisory(
-        ghsaId:
-            identical(ghsaId, sdkOmittedValue) ? this.ghsaId : ghsaId as String,
-        cveId:
-            identical(cveId, sdkOmittedValue) ? this.cveId : cveId as String?,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as String,
+          Object? collaboratingTeams = sdkOmittedValue}) =>
+      RepositoryAdvisoryUpdate(
         summary: identical(summary, sdkOmittedValue)
             ? this.summary
-            : summary as String,
+            : summary as SdkOptional<String>,
         description: identical(description, sdkOmittedValue)
             ? this.description
-            : description as String?,
-        severity: identical(severity, sdkOmittedValue)
-            ? this.severity
-            : severity as RepositoryAdvisorySeverity?,
-        author: identical(author, sdkOmittedValue)
-            ? this.author
-            : author as SimpleUser?,
-        publisher: identical(publisher, sdkOmittedValue)
-            ? this.publisher
-            : publisher as SimpleUser?,
-        identifiers: identical(identifiers, sdkOmittedValue)
-            ? this.identifiers
-            : identifiers as List<RepositoryAdvisoryIdentifiersItem>,
-        state: identical(state, sdkOmittedValue)
-            ? this.state
-            : state as RepositoryAdvisoryState,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String?,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String?,
-        publishedAt: identical(publishedAt, sdkOmittedValue)
-            ? this.publishedAt
-            : publishedAt as String?,
-        closedAt: identical(closedAt, sdkOmittedValue)
-            ? this.closedAt
-            : closedAt as String?,
-        withdrawnAt: identical(withdrawnAt, sdkOmittedValue)
-            ? this.withdrawnAt
-            : withdrawnAt as String?,
-        submission: identical(submission, sdkOmittedValue)
-            ? this.submission
-            : submission as RepositoryAdvisorySubmission?,
+            : description as SdkOptional<String>,
+        cveId: identical(cveId, sdkOmittedValue)
+            ? this.cveId
+            : cveId as SdkOptional<String?>,
         vulnerabilities: identical(vulnerabilities, sdkOmittedValue)
             ? this.vulnerabilities
-            : vulnerabilities as List<RepositoryAdvisoryVulnerability>?,
-        cvss: identical(cvss, sdkOmittedValue)
-            ? this.cvss
-            : cvss as RepositoryAdvisoryCvss?,
-        cvssSeverities: identical(cvssSeverities, sdkOmittedValue)
-            ? this.cvssSeverities
-            : cvssSeverities as SdkOptional<CvssSeverities?>,
-        cwes: identical(cwes, sdkOmittedValue)
-            ? this.cwes
-            : cwes as List<RepositoryAdvisoryCwesItem>?,
+            : vulnerabilities as SdkOptional<
+                List<RepositoryAdvisoryUpdateVulnerabilitiesItem>>,
         cweIds: identical(cweIds, sdkOmittedValue)
             ? this.cweIds
-            : cweIds as List<String>?,
+            : cweIds as SdkOptional<List<String>?>,
         credits: identical(credits, sdkOmittedValue)
             ? this.credits
-            : credits as List<RepositoryAdvisoryCreditsItem>?,
-        creditsDetailed: identical(creditsDetailed, sdkOmittedValue)
-            ? this.creditsDetailed
-            : creditsDetailed as List<RepositoryAdvisoryCredit>?,
+            : credits
+                as SdkOptional<List<RepositoryAdvisoryUpdateCreditsItem>?>,
+        severity: identical(severity, sdkOmittedValue)
+            ? this.severity
+            : severity as SdkOptional<RepositoryAdvisoryUpdateSeverity?>,
+        cvssVectorString: identical(cvssVectorString, sdkOmittedValue)
+            ? this.cvssVectorString
+            : cvssVectorString as SdkOptional<String?>,
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state as SdkOptional<RepositoryAdvisoryUpdateState>,
         collaboratingUsers: identical(collaboratingUsers, sdkOmittedValue)
             ? this.collaboratingUsers
-            : collaboratingUsers as List<SimpleUser>?,
+            : collaboratingUsers as SdkOptional<List<String>?>,
         collaboratingTeams: identical(collaboratingTeams, sdkOmittedValue)
             ? this.collaboratingTeams
-            : collaboratingTeams as List<Team>?,
-        privateFork: identical(privateFork, sdkOmittedValue)
-            ? this.privateFork
-            : privateFork as SimpleRepository?,
+            : collaboratingTeams as SdkOptional<List<String>?>,
       );
 
-  factory RepositoryAdvisory.fromJson(Map<String, dynamic> json) =>
-      RepositoryAdvisory(
-        ghsaId: (json['ghsa_id'] as String?)!,
+  factory RepositoryAdvisoryUpdate.fromJson(Map<String, dynamic> json) =>
+      RepositoryAdvisoryUpdate(
+        summary: json['summary'] != null
+            ? SdkPresent((json['summary'] as String?)!)
+            : const SdkOmitted(),
+        description: json['description'] != null
+            ? SdkPresent((json['description'] as String?)!)
+            : const SdkOmitted(),
         cveId: json.containsKey('cve_id')
-            ? json['cve_id'] as String?
-            : throw ArgumentError.value(
-                null, 'cve_id', 'Required property is missing'),
-        url: (json['url'] as String?)!,
-        htmlUrl: (json['html_url'] as String?)!,
-        summary: (json['summary'] as String?)!,
-        description: json.containsKey('description')
-            ? json['description'] as String?
-            : throw ArgumentError.value(
-                null, 'description', 'Required property is missing'),
-        severity: json.containsKey('severity')
-            ? json['severity'] != null
-                ? RepositoryAdvisorySeverity.fromJson(
-                    json['severity'] as String)
-                : null
-            : throw ArgumentError.value(
-                null, 'severity', 'Required property is missing'),
-        author: json.containsKey('author')
-            ? json['author'] != null
-                ? SimpleUser.fromJson(json['author'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'author', 'Required property is missing'),
-        publisher: json.containsKey('publisher')
-            ? json['publisher'] != null
-                ? SimpleUser.fromJson(json['publisher'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'publisher', 'Required property is missing'),
-        identifiers: ((json['identifiers'] as List?)
-            ?.map((e) => RepositoryAdvisoryIdentifiersItem.fromJson(
-                e as Map<String, dynamic>))
-            .toList())!,
-        state: (json['state'] != null
-            ? RepositoryAdvisoryState.fromJson(json['state'] as String)
-            : null)!,
-        createdAt: json.containsKey('created_at')
-            ? json['created_at'] as String?
-            : throw ArgumentError.value(
-                null, 'created_at', 'Required property is missing'),
-        updatedAt: json.containsKey('updated_at')
-            ? json['updated_at'] as String?
-            : throw ArgumentError.value(
-                null, 'updated_at', 'Required property is missing'),
-        publishedAt: json.containsKey('published_at')
-            ? json['published_at'] as String?
-            : throw ArgumentError.value(
-                null, 'published_at', 'Required property is missing'),
-        closedAt: json.containsKey('closed_at')
-            ? json['closed_at'] as String?
-            : throw ArgumentError.value(
-                null, 'closed_at', 'Required property is missing'),
-        withdrawnAt: json.containsKey('withdrawn_at')
-            ? json['withdrawn_at'] as String?
-            : throw ArgumentError.value(
-                null, 'withdrawn_at', 'Required property is missing'),
-        submission: json.containsKey('submission')
-            ? json['submission'] != null
-                ? RepositoryAdvisorySubmission.fromJson(
-                    json['submission'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'submission', 'Required property is missing'),
-        vulnerabilities: json.containsKey('vulnerabilities')
-            ? (json['vulnerabilities'] as List?)
-                ?.map((e) => RepositoryAdvisoryVulnerability.fromJson(
+            ? SdkPresent(json['cve_id'] as String?)
+            : const SdkOmitted(),
+        vulnerabilities: json['vulnerabilities'] != null
+            ? SdkPresent(((json['vulnerabilities'] as List?)
+                ?.map((e) =>
+                    RepositoryAdvisoryUpdateVulnerabilitiesItem.fromJson(
+                        e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+        cweIds: json.containsKey('cwe_ids')
+            ? SdkPresent(
+                (json['cwe_ids'] as List?)?.map((e) => e as String).toList())
+            : const SdkOmitted(),
+        credits: json.containsKey('credits')
+            ? SdkPresent((json['credits'] as List?)
+                ?.map((e) => RepositoryAdvisoryUpdateCreditsItem.fromJson(
                     e as Map<String, dynamic>))
-                .toList()
-            : throw ArgumentError.value(
-                null, 'vulnerabilities', 'Required property is missing'),
-        cvss: json.containsKey('cvss')
-            ? json['cvss'] != null
-                ? RepositoryAdvisoryCvss.fromJson(
-                    json['cvss'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'cvss', 'Required property is missing'),
-        cvssSeverities: json.containsKey('cvss_severities')
-            ? SdkPresent(json['cvss_severities'] != null
-                ? CvssSeverities.fromJson(
-                    json['cvss_severities'] as Map<String, dynamic>)
+                .toList())
+            : const SdkOmitted(),
+        severity: json.containsKey('severity')
+            ? SdkPresent(json['severity'] != null
+                ? RepositoryAdvisoryUpdateSeverity.fromJson(
+                    json['severity'] as String)
                 : null)
             : const SdkOmitted(),
-        cwes: json.containsKey('cwes')
-            ? (json['cwes'] as List?)
-                ?.map((e) => RepositoryAdvisoryCwesItem.fromJson(
-                    e as Map<String, dynamic>))
-                .toList()
-            : throw ArgumentError.value(
-                null, 'cwes', 'Required property is missing'),
-        cweIds: json.containsKey('cwe_ids')
-            ? (json['cwe_ids'] as List?)?.map((e) => e as String).toList()
-            : throw ArgumentError.value(
-                null, 'cwe_ids', 'Required property is missing'),
-        credits: json.containsKey('credits')
-            ? (json['credits'] as List?)
-                ?.map((e) => RepositoryAdvisoryCreditsItem.fromJson(
-                    e as Map<String, dynamic>))
-                .toList()
-            : throw ArgumentError.value(
-                null, 'credits', 'Required property is missing'),
-        creditsDetailed: json.containsKey('credits_detailed')
-            ? (json['credits_detailed'] as List?)
-                ?.map((e) => RepositoryAdvisoryCredit.fromJson(
-                    e as Map<String, dynamic>))
-                .toList()
-            : throw ArgumentError.value(
-                null, 'credits_detailed', 'Required property is missing'),
+        cvssVectorString: json.containsKey('cvss_vector_string')
+            ? SdkPresent(json['cvss_vector_string'] as String?)
+            : const SdkOmitted(),
+        state: json['state'] != null
+            ? SdkPresent((json['state'] != null
+                ? RepositoryAdvisoryUpdateState.fromJson(
+                    json['state'] as String)
+                : null)!)
+            : const SdkOmitted(),
         collaboratingUsers: json.containsKey('collaborating_users')
-            ? (json['collaborating_users'] as List?)
-                ?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>))
-                .toList()
-            : throw ArgumentError.value(
-                null, 'collaborating_users', 'Required property is missing'),
+            ? SdkPresent((json['collaborating_users'] as List?)
+                ?.map((e) => e as String)
+                .toList())
+            : const SdkOmitted(),
         collaboratingTeams: json.containsKey('collaborating_teams')
-            ? (json['collaborating_teams'] as List?)
-                ?.map((e) => Team.fromJson(e as Map<String, dynamic>))
-                .toList()
-            : throw ArgumentError.value(
-                null, 'collaborating_teams', 'Required property is missing'),
-        privateFork: json.containsKey('private_fork')
-            ? json['private_fork'] != null
-                ? SimpleRepository.fromJson(
-                    json['private_fork'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'private_fork', 'Required property is missing'),
+            ? SdkPresent((json['collaborating_teams'] as List?)
+                ?.map((e) => e as String)
+                .toList())
+            : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        'ghsa_id': ghsaId,
-        'cve_id': cveId,
-        'url': url,
-        'html_url': htmlUrl,
-        'summary': summary,
-        'description': description,
-        'severity': severity?.toJson(),
-        'author': author?.toJson(),
-        'publisher': publisher?.toJson(),
-        'identifiers': identifiers.map((item) => item.toJson()).toList(),
-        'state': state.toJson(),
-        'created_at': createdAt,
-        'updated_at': updatedAt,
-        'published_at': publishedAt,
-        'closed_at': closedAt,
-        'withdrawn_at': withdrawnAt,
-        'submission': submission?.toJson(),
-        'vulnerabilities':
-            vulnerabilities?.map((item) => item.toJson()).toList(),
-        'cvss': cvss?.toJson(),
-        ...switch (cvssSeverities) {
-          SdkPresent<CvssSeverities?>(value: final value) => {
-              'cvss_severities': value?.toJson(),
+        ...switch (summary) {
+          SdkPresent<String>(value: final value) => {
+              'summary': value,
             },
           _ => const <String, dynamic>{},
         },
-        'cwes': cwes?.map((item) => item.toJson()).toList(),
-        'cwe_ids': cweIds,
-        'credits': credits?.map((item) => item.toJson()).toList(),
-        'credits_detailed':
-            creditsDetailed?.map((item) => item.toJson()).toList(),
-        'collaborating_users':
-            collaboratingUsers?.map((item) => item.toJson()).toList(),
-        'collaborating_teams':
-            collaboratingTeams?.map((item) => item.toJson()).toList(),
-        'private_fork': privateFork?.toJson(),
+        ...switch (description) {
+          SdkPresent<String>(value: final value) => {
+              'description': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (cveId) {
+          SdkPresent<String?>(value: final value) => {
+              'cve_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (vulnerabilities) {
+          SdkPresent<List<RepositoryAdvisoryUpdateVulnerabilitiesItem>>(
+            value: final value
+          ) =>
+            {
+              'vulnerabilities': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (cweIds) {
+          SdkPresent<List<String>?>(value: final value) => {
+              'cwe_ids': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (credits) {
+          SdkPresent<List<RepositoryAdvisoryUpdateCreditsItem>?>(
+            value: final value
+          ) =>
+            {
+              'credits': value?.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (severity) {
+          SdkPresent<RepositoryAdvisoryUpdateSeverity?>(value: final value) => {
+              'severity': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (cvssVectorString) {
+          SdkPresent<String?>(value: final value) => {
+              'cvss_vector_string': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (state) {
+          SdkPresent<RepositoryAdvisoryUpdateState>(value: final value) => {
+              'state': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (collaboratingUsers) {
+          SdkPresent<List<String>?>(value: final value) => {
+              'collaborating_users': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (collaboratingTeams) {
+          SdkPresent<List<String>?>(value: final value) => {
+              'collaborating_teams': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+/// The name of the package affected by the vulnerability.
+class RepositoryAdvisoryVulnerabilityPackage {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The package's language or package management ecosystem.
+  final SecurityAdvisoryEcosystems ecosystem;
+
+  /// The unique package name within its ecosystem.
+  final String? name;
+
+  const RepositoryAdvisoryVulnerabilityPackage(
+      {required this.ecosystem, required this.name});
+
+  RepositoryAdvisoryVulnerabilityPackage Function(
+      {SecurityAdvisoryEcosystems ecosystem,
+      String? name}) get copyWith => _copyWith;
+
+  RepositoryAdvisoryVulnerabilityPackage _copyWith(
+          {Object? ecosystem = sdkOmittedValue,
+          Object? name = sdkOmittedValue}) =>
+      RepositoryAdvisoryVulnerabilityPackage(
+        ecosystem: identical(ecosystem, sdkOmittedValue)
+            ? this.ecosystem
+            : ecosystem as SecurityAdvisoryEcosystems,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String?,
+      );
+
+  factory RepositoryAdvisoryVulnerabilityPackage.fromJson(
+          Map<String, dynamic> json) =>
+      RepositoryAdvisoryVulnerabilityPackage(
+        ecosystem: (json['ecosystem'] != null
+            ? SecurityAdvisoryEcosystems.fromJson(json['ecosystem'] as String)
+            : null)!,
+        name: json.containsKey('name')
+            ? json['name'] as String?
+            : throw ArgumentError.value(
+                null, 'name', 'Required property is missing'),
+      );
+
+  Map<String, dynamic> toJson() => {
+        'ecosystem': ecosystem.toJson(),
+        'name': name,
+      };
+}
+
+/// A product affected by the vulnerability detailed in a repository security advisory.
+class RepositoryAdvisoryVulnerability {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The name of the package affected by the vulnerability.
+  final RepositoryAdvisoryVulnerabilityPackage? package;
+
+  /// The range of the package versions affected by the vulnerability.
+  final String? vulnerableVersionRange;
+
+  /// The package version(s) that resolve the vulnerability.
+  final String? patchedVersions;
+
+  /// The functions in the package that are affected.
+  final List<String>? vulnerableFunctions;
+
+  const RepositoryAdvisoryVulnerability(
+      {required this.package,
+      required this.vulnerableVersionRange,
+      required this.patchedVersions,
+      required this.vulnerableFunctions});
+
+  RepositoryAdvisoryVulnerability Function(
+      {RepositoryAdvisoryVulnerabilityPackage? package,
+      String? vulnerableVersionRange,
+      String? patchedVersions,
+      List<String>? vulnerableFunctions}) get copyWith => _copyWith;
+
+  RepositoryAdvisoryVulnerability _copyWith(
+          {Object? package = sdkOmittedValue,
+          Object? vulnerableVersionRange = sdkOmittedValue,
+          Object? patchedVersions = sdkOmittedValue,
+          Object? vulnerableFunctions = sdkOmittedValue}) =>
+      RepositoryAdvisoryVulnerability(
+        package: identical(package, sdkOmittedValue)
+            ? this.package
+            : package as RepositoryAdvisoryVulnerabilityPackage?,
+        vulnerableVersionRange:
+            identical(vulnerableVersionRange, sdkOmittedValue)
+                ? this.vulnerableVersionRange
+                : vulnerableVersionRange as String?,
+        patchedVersions: identical(patchedVersions, sdkOmittedValue)
+            ? this.patchedVersions
+            : patchedVersions as String?,
+        vulnerableFunctions: identical(vulnerableFunctions, sdkOmittedValue)
+            ? this.vulnerableFunctions
+            : vulnerableFunctions as List<String>?,
+      );
+
+  factory RepositoryAdvisoryVulnerability.fromJson(Map<String, dynamic> json) =>
+      RepositoryAdvisoryVulnerability(
+        package: json.containsKey('package')
+            ? json['package'] != null
+                ? RepositoryAdvisoryVulnerabilityPackage.fromJson(
+                    json['package'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'package', 'Required property is missing'),
+        vulnerableVersionRange: json.containsKey('vulnerable_version_range')
+            ? json['vulnerable_version_range'] as String?
+            : throw ArgumentError.value(null, 'vulnerable_version_range',
+                'Required property is missing'),
+        patchedVersions: json.containsKey('patched_versions')
+            ? json['patched_versions'] as String?
+            : throw ArgumentError.value(
+                null, 'patched_versions', 'Required property is missing'),
+        vulnerableFunctions: json.containsKey('vulnerable_functions')
+            ? (json['vulnerable_functions'] as List?)
+                ?.map((e) => e as String)
+                .toList()
+            : throw ArgumentError.value(
+                null, 'vulnerable_functions', 'Required property is missing'),
+      );
+
+  Map<String, dynamic> toJson() => {
+        'package': package?.toJson(),
+        'vulnerable_version_range': vulnerableVersionRange,
+        'patched_versions': patchedVersions,
+        'vulnerable_functions': vulnerableFunctions,
+      };
+}
+
+/// The type of credit the user is receiving.
+final class SecurityAdvisoryCreditTypes {
+  final String value;
+
+  const SecurityAdvisoryCreditTypes._(this.value);
+
+  factory SecurityAdvisoryCreditTypes.fromJson(String value) =>
+      SecurityAdvisoryCreditTypes._(value);
+
+  static const analyst = SecurityAdvisoryCreditTypes._('analyst');
+  static const finder = SecurityAdvisoryCreditTypes._('finder');
+  static const reporter = SecurityAdvisoryCreditTypes._('reporter');
+  static const coordinator = SecurityAdvisoryCreditTypes._('coordinator');
+  static const remediationDeveloper =
+      SecurityAdvisoryCreditTypes._('remediation_developer');
+  static const remediationReviewer =
+      SecurityAdvisoryCreditTypes._('remediation_reviewer');
+  static const remediationVerifier =
+      SecurityAdvisoryCreditTypes._('remediation_verifier');
+  static const tool = SecurityAdvisoryCreditTypes._('tool');
+  static const sponsor = SecurityAdvisoryCreditTypes._('sponsor');
+  static const other = SecurityAdvisoryCreditTypes._('other');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is SecurityAdvisoryCreditTypes && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The package's language or package management ecosystem.
+final class SecurityAdvisoryEcosystems {
+  final String value;
+
+  const SecurityAdvisoryEcosystems._(this.value);
+
+  factory SecurityAdvisoryEcosystems.fromJson(String value) =>
+      SecurityAdvisoryEcosystems._(value);
+
+  static const rubygems = SecurityAdvisoryEcosystems._('rubygems');
+  static const npm = SecurityAdvisoryEcosystems._('npm');
+  static const pip = SecurityAdvisoryEcosystems._('pip');
+  static const maven = SecurityAdvisoryEcosystems._('maven');
+  static const nuget = SecurityAdvisoryEcosystems._('nuget');
+  static const composer = SecurityAdvisoryEcosystems._('composer');
+  static const go = SecurityAdvisoryEcosystems._('go');
+  static const rust = SecurityAdvisoryEcosystems._('rust');
+  static const erlang = SecurityAdvisoryEcosystems._('erlang');
+  static const actions = SecurityAdvisoryEcosystems._('actions');
+  static const pub = SecurityAdvisoryEcosystems._('pub');
+  static const other = SecurityAdvisoryEcosystems._('other');
+  static const swift = SecurityAdvisoryEcosystems._('swift');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is SecurityAdvisoryEcosystems && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The name of the package affected by the vulnerability.
+class VulnerabilityPackage {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The package's language or package management ecosystem.
+  final SecurityAdvisoryEcosystems ecosystem;
+
+  /// The unique package name within its ecosystem.
+  final String? name;
+
+  const VulnerabilityPackage({required this.ecosystem, required this.name});
+
+  VulnerabilityPackage Function(
+      {SecurityAdvisoryEcosystems ecosystem,
+      String? name}) get copyWith => _copyWith;
+
+  VulnerabilityPackage _copyWith(
+          {Object? ecosystem = sdkOmittedValue,
+          Object? name = sdkOmittedValue}) =>
+      VulnerabilityPackage(
+        ecosystem: identical(ecosystem, sdkOmittedValue)
+            ? this.ecosystem
+            : ecosystem as SecurityAdvisoryEcosystems,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String?,
+      );
+
+  factory VulnerabilityPackage.fromJson(Map<String, dynamic> json) =>
+      VulnerabilityPackage(
+        ecosystem: (json['ecosystem'] != null
+            ? SecurityAdvisoryEcosystems.fromJson(json['ecosystem'] as String)
+            : null)!,
+        name: json.containsKey('name')
+            ? json['name'] as String?
+            : throw ArgumentError.value(
+                null, 'name', 'Required property is missing'),
+      );
+
+  Map<String, dynamic> toJson() => {
+        'ecosystem': ecosystem.toJson(),
+        'name': name,
       };
 }

@@ -3,8 +3,10 @@
 
 // repos_environment domain model library.
 import '../sdk_utils.dart';
-import 'repos.dart';
 import 'repos_deployment.dart';
 import 'shared_deployment.dart';
+import 'shared_simple.dart';
+import 'shared_team.dart';
 
 part 'repos_environment_part1.dart';
+part 'repos_environment_part2.dart';

@@ -4,632 +4,100 @@
 part of 'inline.dart';
 
 // Inline operation models (part 335)
-/// Custom agent metadata associated with this task
-class AgentTasksListTasksForRepoResponseTasksItemCustomAgent {
+/// Actions OIDC Subject customization
+class OidcUpdateOidcCustomSubTemplateForOrgRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// The custom agent's filename without the extension - for example, `performance-optimizer` for a `.github/agents/performance-optimizer.agent.md` custom agent.
-  final SdkOptional<String> id;
+  /// Array of unique strings. Each claim key can only contain alphanumeric characters and underscores.
+  final SdkOptional<List<String>> includeClaimKeys;
 
-  const AgentTasksListTasksForRepoResponseTasksItemCustomAgent(
-      {this.id = const SdkOmitted()});
+  /// Whether to opt in to the immutable OIDC subject claim format for the organization. When `true`, new OIDC tokens will use a stable, repository-ID-based `sub` claim instead of the name-based format.
+  final SdkOptional<bool> useImmutableSubject;
 
-  AgentTasksListTasksForRepoResponseTasksItemCustomAgent Function(
-      {SdkOptional<String> id}) get copyWith => _copyWith;
+  const OidcUpdateOidcCustomSubTemplateForOrgRequestBody(
+      {this.includeClaimKeys = const SdkOmitted(),
+      this.useImmutableSubject = const SdkOmitted()});
 
-  AgentTasksListTasksForRepoResponseTasksItemCustomAgent _copyWith(
-          {Object? id = sdkOmittedValue}) =>
-      AgentTasksListTasksForRepoResponseTasksItemCustomAgent(
-        id: identical(id, sdkOmittedValue)
-            ? this.id
-            : id as SdkOptional<String>,
+  OidcUpdateOidcCustomSubTemplateForOrgRequestBody Function(
+      {SdkOptional<List<String>> includeClaimKeys,
+      SdkOptional<bool> useImmutableSubject}) get copyWith => _copyWith;
+
+  OidcUpdateOidcCustomSubTemplateForOrgRequestBody _copyWith(
+          {Object? includeClaimKeys = sdkOmittedValue,
+          Object? useImmutableSubject = sdkOmittedValue}) =>
+      OidcUpdateOidcCustomSubTemplateForOrgRequestBody(
+        includeClaimKeys: identical(includeClaimKeys, sdkOmittedValue)
+            ? this.includeClaimKeys
+            : includeClaimKeys as SdkOptional<List<String>>,
+        useImmutableSubject: identical(useImmutableSubject, sdkOmittedValue)
+            ? this.useImmutableSubject
+            : useImmutableSubject as SdkOptional<bool>,
       );
 
-  factory AgentTasksListTasksForRepoResponseTasksItemCustomAgent.fromJson(
+  factory OidcUpdateOidcCustomSubTemplateForOrgRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      AgentTasksListTasksForRepoResponseTasksItemCustomAgent(
-        id: json['id'] != null
-            ? SdkPresent((json['id'] as String?)!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (id) {
-          SdkPresent<String>(value: final value) => {
-              'id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-class AgentTasksListTasksForRepoResponseTasksItem {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Unique task identifier
-  final String id;
-
-  /// API URL for this task
-  final SdkOptional<String> url;
-
-  /// Web URL for this task
-  final SdkOptional<String> htmlUrl;
-
-  /// Human-readable name derived from the task prompt
-  final SdkOptional<String> name;
-
-  /// The entity who created this task
-  final SdkOptional<AgentTasksListTasksForRepoResponseTasksItemCreatorVariant0>
-      creator;
-
-  /// Type of the task creator
-  final SdkOptional<AgentTasksListTasksForRepoResponseTasksItemCreatorType>
-      creatorType;
-
-  /// User objects of collaborators on this task
-  final SdkOptional<
-          List<
-              AgentTasksListTasksForRepoResponseTasksItemUserCollaboratorsItem>>
-      userCollaborators;
-
-  /// The owner of the repository
-  final SdkOptional<AgentTasksListTasksForRepoResponseTasksItemOwner> owner;
-
-  /// The repository this task belongs to
-  final SdkOptional<AgentTasksListTasksForRepoResponseTasksItemRepository>
-      repository;
-
-  /// Current state of the task, derived from its most recent session
-  final AgentTasksListTasksForRepoResponseTasksItemState state;
-
-  /// Number of sessions in this task
-  final SdkOptional<int> sessionCount;
-
-  /// Resources created by this task (PRs, branches, etc.)
-  final SdkOptional<
-      List<AgentTasksListTasksForRepoResponseTasksItemArtifactsItem>> artifacts;
-
-  /// Timestamp when the task was archived, null if not archived
-  final SdkOptional<String?> archivedAt;
-
-  /// Timestamp of the most recent update
-  final SdkOptional<String> updatedAt;
-
-  /// Timestamp when the task was created
-  final String createdAt;
-
-  /// Custom agent metadata associated with this task
-  final SdkOptional<AgentTasksListTasksForRepoResponseTasksItemCustomAgent>
-      customAgent;
-
-  const AgentTasksListTasksForRepoResponseTasksItem(
-      {required this.id,
-      this.url = const SdkOmitted(),
-      this.htmlUrl = const SdkOmitted(),
-      this.name = const SdkOmitted(),
-      this.creator = const SdkOmitted(),
-      this.creatorType = const SdkOmitted(),
-      this.userCollaborators = const SdkOmitted(),
-      this.owner = const SdkOmitted(),
-      this.repository = const SdkOmitted(),
-      required this.state,
-      this.sessionCount = const SdkOmitted(),
-      this.artifacts = const SdkOmitted(),
-      this.archivedAt = const SdkOmitted(),
-      this.updatedAt = const SdkOmitted(),
-      required this.createdAt,
-      this.customAgent = const SdkOmitted()});
-
-  AgentTasksListTasksForRepoResponseTasksItem Function(
-      {String id,
-      SdkOptional<String> url,
-      SdkOptional<String> htmlUrl,
-      SdkOptional<String> name,
-      SdkOptional<AgentTasksListTasksForRepoResponseTasksItemCreatorVariant0>
-          creator,
-      SdkOptional<AgentTasksListTasksForRepoResponseTasksItemCreatorType>
-          creatorType,
-      SdkOptional<
-              List<
-                  AgentTasksListTasksForRepoResponseTasksItemUserCollaboratorsItem>>
-          userCollaborators,
-      SdkOptional<AgentTasksListTasksForRepoResponseTasksItemOwner> owner,
-      SdkOptional<AgentTasksListTasksForRepoResponseTasksItemRepository>
-          repository,
-      AgentTasksListTasksForRepoResponseTasksItemState state,
-      SdkOptional<int> sessionCount,
-      SdkOptional<
-              List<AgentTasksListTasksForRepoResponseTasksItemArtifactsItem>>
-          artifacts,
-      SdkOptional<String?> archivedAt,
-      SdkOptional<String> updatedAt,
-      String createdAt,
-      SdkOptional<AgentTasksListTasksForRepoResponseTasksItemCustomAgent>
-          customAgent}) get copyWith => _copyWith;
-
-  AgentTasksListTasksForRepoResponseTasksItem _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? creator = sdkOmittedValue,
-          Object? creatorType = sdkOmittedValue,
-          Object? userCollaborators = sdkOmittedValue,
-          Object? owner = sdkOmittedValue,
-          Object? repository = sdkOmittedValue,
-          Object? state = sdkOmittedValue,
-          Object? sessionCount = sdkOmittedValue,
-          Object? artifacts = sdkOmittedValue,
-          Object? archivedAt = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? customAgent = sdkOmittedValue}) =>
-      AgentTasksListTasksForRepoResponseTasksItem(
-        id: identical(id, sdkOmittedValue) ? this.id : id as String,
-        url: identical(url, sdkOmittedValue)
-            ? this.url
-            : url as SdkOptional<String>,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as SdkOptional<String>,
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String>,
-        creator: identical(creator, sdkOmittedValue)
-            ? this.creator
-            : creator as SdkOptional<
-                AgentTasksListTasksForRepoResponseTasksItemCreatorVariant0>,
-        creatorType: identical(creatorType, sdkOmittedValue)
-            ? this.creatorType
-            : creatorType as SdkOptional<
-                AgentTasksListTasksForRepoResponseTasksItemCreatorType>,
-        userCollaborators: identical(userCollaborators, sdkOmittedValue)
-            ? this.userCollaborators
-            : userCollaborators as SdkOptional<
-                List<
-                    AgentTasksListTasksForRepoResponseTasksItemUserCollaboratorsItem>>,
-        owner: identical(owner, sdkOmittedValue)
-            ? this.owner
-            : owner as SdkOptional<
-                AgentTasksListTasksForRepoResponseTasksItemOwner>,
-        repository: identical(repository, sdkOmittedValue)
-            ? this.repository
-            : repository as SdkOptional<
-                AgentTasksListTasksForRepoResponseTasksItemRepository>,
-        state: identical(state, sdkOmittedValue)
-            ? this.state
-            : state as AgentTasksListTasksForRepoResponseTasksItemState,
-        sessionCount: identical(sessionCount, sdkOmittedValue)
-            ? this.sessionCount
-            : sessionCount as SdkOptional<int>,
-        artifacts: identical(artifacts, sdkOmittedValue)
-            ? this.artifacts
-            : artifacts as SdkOptional<
-                List<AgentTasksListTasksForRepoResponseTasksItemArtifactsItem>>,
-        archivedAt: identical(archivedAt, sdkOmittedValue)
-            ? this.archivedAt
-            : archivedAt as SdkOptional<String?>,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as SdkOptional<String>,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        customAgent: identical(customAgent, sdkOmittedValue)
-            ? this.customAgent
-            : customAgent as SdkOptional<
-                AgentTasksListTasksForRepoResponseTasksItemCustomAgent>,
-      );
-
-  factory AgentTasksListTasksForRepoResponseTasksItem.fromJson(
-          Map<String, dynamic> json) =>
-      AgentTasksListTasksForRepoResponseTasksItem(
-        id: (json['id'] as String?)!,
-        url: json['url'] != null
-            ? SdkPresent((json['url'] as String?)!)
-            : const SdkOmitted(),
-        htmlUrl: json['html_url'] != null
-            ? SdkPresent((json['html_url'] as String?)!)
-            : const SdkOmitted(),
-        name: json['name'] != null
-            ? SdkPresent((json['name'] as String?)!)
-            : const SdkOmitted(),
-        creator: json['creator'] != null
-            ? SdkPresent((json['creator'] != null
-                ? AgentTasksListTasksForRepoResponseTasksItemCreatorVariant0
-                    .fromJson(json['creator'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        creatorType: json['creator_type'] != null
-            ? SdkPresent((json['creator_type'] != null
-                ? AgentTasksListTasksForRepoResponseTasksItemCreatorType
-                    .fromJson(json['creator_type'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        userCollaborators: json['user_collaborators'] != null
-            ? SdkPresent(((json['user_collaborators'] as List?)
-                ?.map((e) =>
-                    AgentTasksListTasksForRepoResponseTasksItemUserCollaboratorsItem
-                        .fromJson(e as Map<String, dynamic>))
+      OidcUpdateOidcCustomSubTemplateForOrgRequestBody(
+        includeClaimKeys: json['include_claim_keys'] != null
+            ? SdkPresent(((json['include_claim_keys'] as List?)
+                ?.map((e) => e as String)
                 .toList())!)
             : const SdkOmitted(),
-        owner: json['owner'] != null
-            ? SdkPresent((json['owner'] != null
-                ? AgentTasksListTasksForRepoResponseTasksItemOwner.fromJson(
-                    json['owner'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        repository: json['repository'] != null
-            ? SdkPresent((json['repository'] != null
-                ? AgentTasksListTasksForRepoResponseTasksItemRepository
-                    .fromJson(json['repository'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        state: (json['state'] != null
-            ? AgentTasksListTasksForRepoResponseTasksItemState.fromJson(
-                json['state'] as String)
-            : null)!,
-        sessionCount: json['session_count'] != null
-            ? SdkPresent(((json['session_count'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        artifacts: json['artifacts'] != null
-            ? SdkPresent(((json['artifacts'] as List?)
-                ?.map((e) =>
-                    AgentTasksListTasksForRepoResponseTasksItemArtifactsItem
-                        .fromJson(e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-        archivedAt: json.containsKey('archived_at')
-            ? SdkPresent(json['archived_at'] as String?)
-            : const SdkOmitted(),
-        updatedAt: json['updated_at'] != null
-            ? SdkPresent((json['updated_at'] as String?)!)
-            : const SdkOmitted(),
-        createdAt: (json['created_at'] as String?)!,
-        customAgent: json['custom_agent'] != null
-            ? SdkPresent((json['custom_agent'] != null
-                ? AgentTasksListTasksForRepoResponseTasksItemCustomAgent
-                    .fromJson(json['custom_agent'] as Map<String, dynamic>)
-                : null)!)
+        useImmutableSubject: json['use_immutable_subject'] != null
+            ? SdkPresent((json['use_immutable_subject'] as bool?)!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        ...switch (url) {
-          SdkPresent<String>(value: final value) => {
-              'url': value,
+        ...switch (includeClaimKeys) {
+          SdkPresent<List<String>>(value: final value) => {
+              'include_claim_keys': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (htmlUrl) {
-          SdkPresent<String>(value: final value) => {
-              'html_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (name) {
-          SdkPresent<String>(value: final value) => {
-              'name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (creator) {
-          SdkPresent<
-                AgentTasksListTasksForRepoResponseTasksItemCreatorVariant0>(
-            value: final value
-          ) =>
-            {
-              'creator': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (creatorType) {
-          SdkPresent<AgentTasksListTasksForRepoResponseTasksItemCreatorType>(
-            value: final value
-          ) =>
-            {
-              'creator_type': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (userCollaborators) {
-          SdkPresent<
-                List<
-                    AgentTasksListTasksForRepoResponseTasksItemUserCollaboratorsItem>>(
-            value: final value
-          ) =>
-            {
-              'user_collaborators': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (owner) {
-          SdkPresent<AgentTasksListTasksForRepoResponseTasksItemOwner>(
-            value: final value
-          ) =>
-            {
-              'owner': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (repository) {
-          SdkPresent<AgentTasksListTasksForRepoResponseTasksItemRepository>(
-            value: final value
-          ) =>
-            {
-              'repository': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'state': state.toJson(),
-        ...switch (sessionCount) {
-          SdkPresent<int>(value: final value) => {
-              'session_count': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (artifacts) {
-          SdkPresent<
-                List<AgentTasksListTasksForRepoResponseTasksItemArtifactsItem>>(
-            value: final value
-          ) =>
-            {
-              'artifacts': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (archivedAt) {
-          SdkPresent<String?>(value: final value) => {
-              'archived_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (updatedAt) {
-          SdkPresent<String>(value: final value) => {
-              'updated_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'created_at': createdAt,
-        ...switch (customAgent) {
-          SdkPresent<AgentTasksListTasksForRepoResponseTasksItemCustomAgent>(
-            value: final value
-          ) =>
-            {
-              'custom_agent': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-class AgentTasksListTasksForRepoResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// List of tasks
-  final List<AgentTasksListTasksForRepoResponseTasksItem> tasks;
-
-  /// Total count of active (non-archived) tasks
-  final SdkOptional<int> totalActiveCount;
-
-  /// Total count of archived tasks
-  final SdkOptional<int> totalArchivedCount;
-
-  const AgentTasksListTasksForRepoResponse(
-      {required this.tasks,
-      this.totalActiveCount = const SdkOmitted(),
-      this.totalArchivedCount = const SdkOmitted()});
-
-  AgentTasksListTasksForRepoResponse Function(
-      {List<AgentTasksListTasksForRepoResponseTasksItem> tasks,
-      SdkOptional<int> totalActiveCount,
-      SdkOptional<int> totalArchivedCount}) get copyWith => _copyWith;
-
-  AgentTasksListTasksForRepoResponse _copyWith(
-          {Object? tasks = sdkOmittedValue,
-          Object? totalActiveCount = sdkOmittedValue,
-          Object? totalArchivedCount = sdkOmittedValue}) =>
-      AgentTasksListTasksForRepoResponse(
-        tasks: identical(tasks, sdkOmittedValue)
-            ? this.tasks
-            : tasks as List<AgentTasksListTasksForRepoResponseTasksItem>,
-        totalActiveCount: identical(totalActiveCount, sdkOmittedValue)
-            ? this.totalActiveCount
-            : totalActiveCount as SdkOptional<int>,
-        totalArchivedCount: identical(totalArchivedCount, sdkOmittedValue)
-            ? this.totalArchivedCount
-            : totalArchivedCount as SdkOptional<int>,
-      );
-
-  factory AgentTasksListTasksForRepoResponse.fromJson(
-          Map<String, dynamic> json) =>
-      AgentTasksListTasksForRepoResponse(
-        tasks: ((json['tasks'] as List?)
-            ?.map((e) => AgentTasksListTasksForRepoResponseTasksItem.fromJson(
-                e as Map<String, dynamic>))
-            .toList())!,
-        totalActiveCount: json['total_active_count'] != null
-            ? SdkPresent(((json['total_active_count'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        totalArchivedCount: json['total_archived_count'] != null
-            ? SdkPresent(((json['total_archived_count'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        'tasks': tasks.map((item) => item.toJson()).toList(),
-        ...switch (totalActiveCount) {
-          SdkPresent<int>(value: final value) => {
-              'total_active_count': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (totalArchivedCount) {
-          SdkPresent<int>(value: final value) => {
-              'total_archived_count': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-class AgentTasksCreateTaskInRepoRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The user's prompt for the agent
-  final String prompt;
-
-  /// The model to use for this task. The allowed models may change over time and depend on the user's GitHub Copilot plan and organization policies. Currently supported values: `claude-sonnet-4.6`, `claude-opus-4.6`, `gpt-5.2-codex`, `gpt-5.3-codex`, `gpt-5.4`, `claude-sonnet-4.5`, `claude-opus-4.5`
-  final SdkOptional<String> model;
-
-  /// Optional identifier for a custom agent to use for this task. Use the custom agent's filename without the extension - for example, for a `.github/agents/performance-optimizer.agent.md` custom agent, use `performance-optimizer`.
-  final SdkOptional<String> customAgent;
-
-  /// Whether to create a PR.
-  final SdkOptional<bool> createPullRequest;
-
-  /// Base ref for new branch/PR
-  final SdkOptional<String> baseRef;
-
-  /// Head ref for existing branch/PR. If provided with `base_ref`, the agent looks up open PR context for `head_ref` targeting `base_ref` and commits to `head_ref` instead of creating a new branch.
-  final SdkOptional<String> headRef;
-
-  const AgentTasksCreateTaskInRepoRequestBody(
-      {required this.prompt,
-      this.model = const SdkOmitted(),
-      this.customAgent = const SdkOmitted(),
-      this.createPullRequest = const SdkOmitted(),
-      this.baseRef = const SdkOmitted(),
-      this.headRef = const SdkOmitted()});
-
-  AgentTasksCreateTaskInRepoRequestBody Function(
-      {String prompt,
-      SdkOptional<String> model,
-      SdkOptional<String> customAgent,
-      SdkOptional<bool> createPullRequest,
-      SdkOptional<String> baseRef,
-      SdkOptional<String> headRef}) get copyWith => _copyWith;
-
-  AgentTasksCreateTaskInRepoRequestBody _copyWith(
-          {Object? prompt = sdkOmittedValue,
-          Object? model = sdkOmittedValue,
-          Object? customAgent = sdkOmittedValue,
-          Object? createPullRequest = sdkOmittedValue,
-          Object? baseRef = sdkOmittedValue,
-          Object? headRef = sdkOmittedValue}) =>
-      AgentTasksCreateTaskInRepoRequestBody(
-        prompt:
-            identical(prompt, sdkOmittedValue) ? this.prompt : prompt as String,
-        model: identical(model, sdkOmittedValue)
-            ? this.model
-            : model as SdkOptional<String>,
-        customAgent: identical(customAgent, sdkOmittedValue)
-            ? this.customAgent
-            : customAgent as SdkOptional<String>,
-        createPullRequest: identical(createPullRequest, sdkOmittedValue)
-            ? this.createPullRequest
-            : createPullRequest as SdkOptional<bool>,
-        baseRef: identical(baseRef, sdkOmittedValue)
-            ? this.baseRef
-            : baseRef as SdkOptional<String>,
-        headRef: identical(headRef, sdkOmittedValue)
-            ? this.headRef
-            : headRef as SdkOptional<String>,
-      );
-
-  factory AgentTasksCreateTaskInRepoRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      AgentTasksCreateTaskInRepoRequestBody(
-        prompt: (json['prompt'] as String?)!,
-        model: json['model'] != null
-            ? SdkPresent((json['model'] as String?)!)
-            : const SdkOmitted(),
-        customAgent: json['custom_agent'] != null
-            ? SdkPresent((json['custom_agent'] as String?)!)
-            : const SdkOmitted(),
-        createPullRequest: json['create_pull_request'] != null
-            ? SdkPresent((json['create_pull_request'] as bool?)!)
-            : const SdkOmitted(),
-        baseRef: json['base_ref'] != null
-            ? SdkPresent((json['base_ref'] as String?)!)
-            : const SdkOmitted(),
-        headRef: json['head_ref'] != null
-            ? SdkPresent((json['head_ref'] as String?)!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        'prompt': prompt,
-        ...switch (model) {
-          SdkPresent<String>(value: final value) => {
-              'model': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (customAgent) {
-          SdkPresent<String>(value: final value) => {
-              'custom_agent': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (createPullRequest) {
+        ...switch (useImmutableSubject) {
           SdkPresent<bool>(value: final value) => {
-              'create_pull_request': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (baseRef) {
-          SdkPresent<String>(value: final value) => {
-              'base_ref': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (headRef) {
-          SdkPresent<String>(value: final value) => {
-              'head_ref': value,
+              'use_immutable_subject': value,
             },
           _ => const <String, dynamic>{},
         },
       };
 }
 
-/// A GitHub user
-class AgentTasksCreateTaskInRepoResponseCreatorVariant0 {
+/// Feature options for Automatic dependency submission
+class CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraphAutosubmitActionOptions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// The unique identifier of the user
-  final SdkOptional<int> id;
+  /// Whether to use runners labeled with 'dependency-submission' or standard GitHub runners.
+  final SdkOptional<bool> labeledRunners;
 
-  const AgentTasksCreateTaskInRepoResponseCreatorVariant0(
-      {this.id = const SdkOmitted()});
+  const CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraphAutosubmitActionOptions(
+      {this.labeledRunners = const SdkOmitted()});
 
-  AgentTasksCreateTaskInRepoResponseCreatorVariant0 Function(
-      {SdkOptional<int> id}) get copyWith => _copyWith;
+  CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraphAutosubmitActionOptions
+      Function({SdkOptional<bool> labeledRunners}) get copyWith => _copyWith;
 
-  AgentTasksCreateTaskInRepoResponseCreatorVariant0 _copyWith(
-          {Object? id = sdkOmittedValue}) =>
-      AgentTasksCreateTaskInRepoResponseCreatorVariant0(
-        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-      );
+  CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraphAutosubmitActionOptions
+      _copyWith({Object? labeledRunners = sdkOmittedValue}) =>
+          CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraphAutosubmitActionOptions(
+            labeledRunners: identical(labeledRunners, sdkOmittedValue)
+                ? this.labeledRunners
+                : labeledRunners as SdkOptional<bool>,
+          );
 
-  factory AgentTasksCreateTaskInRepoResponseCreatorVariant0.fromJson(
+  factory CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraphAutosubmitActionOptions.fromJson(
           Map<String, dynamic> json) =>
-      AgentTasksCreateTaskInRepoResponseCreatorVariant0(
-        id: json['id'] != null
-            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraphAutosubmitActionOptions(
+        labeledRunners: json['labeled_runners'] != null
+            ? SdkPresent((json['labeled_runners'] as bool?)!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (id) {
-          SdkPresent<int>(value: final value) => {
-              'id': value,
+        ...switch (labeledRunners) {
+          SdkPresent<bool>(value: final value) => {
+              'labeled_runners': value,
             },
           _ => const <String, dynamic>{},
         },

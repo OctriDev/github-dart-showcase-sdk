@@ -9998,25 +9998,8 @@ void main() {
         owner: (jsonDecode("\"owner\"") as String),
         repo: (jsonDecode("\"repo\"") as String),
         checkRunId: (jsonDecode("1") as num).toInt(),
-        name: SdkPresent<String>((jsonDecode("\"mighty_readme\"") as String)),
-        detailsUrl: const SdkOmitted<String>(),
-        externalId: const SdkOmitted<String>(),
-        startedAt: SdkPresent<String>(
-            (jsonDecode("\"2018-05-04T01:14:52Z\"") as String)),
-        status: SdkPresent<ChecksUpdateRequestBodyStatus>(
-            ChecksUpdateRequestBodyStatus.fromJson(
-                jsonDecode("\"completed\"") as String)),
-        conclusion: SdkPresent<ChecksUpdateRequestBodyConclusion>(
-            ChecksUpdateRequestBodyConclusion.fromJson(
-                jsonDecode("\"success\"") as String)),
-        completedAt: SdkPresent<String>(
-            (jsonDecode("\"2018-05-04T01:14:52Z\"") as String)),
-        output: SdkPresent<ChecksUpdateRequestBodyOutput>(
-            ChecksUpdateRequestBodyOutput.fromJson((jsonDecode(
-                        "{\"title\":\"Mighty Readme report\",\"summary\":\"There are 0 failures, 2 warnings, and 1 notices.\",\"text\":\"You may have some misspelled words on lines 2 and 4. You also may want to add a section in your README about how to install your app.\",\"annotations\":[{\"path\":\"README.md\",\"annotation_level\":\"warning\",\"title\":\"Spell Checker\",\"message\":\"Check your spelling for 'banaas'.\",\"raw_details\":\"Do you mean 'bananas' or 'banana'?\",\"start_line\":2,\"end_line\":2},{\"path\":\"README.md\",\"annotation_level\":\"warning\",\"title\":\"Spell Checker\",\"message\":\"Check your spelling for 'aples'\",\"raw_details\":\"Do you mean 'apples' or 'Naples'\",\"start_line\":4,\"end_line\":4}],\"images\":[{\"alt\":\"Super bananas\",\"image_url\":\"http://example.com/images/42\"}]}")
-                    as Map)
-                .cast<String, dynamic>())),
-        actions: const SdkOmitted<List<ChecksUpdateRequestBodyActionsItem>>(),
+        body: jsonDecode(
+            "{\"name\":\"mighty_readme\",\"started_at\":\"2018-05-04T01:14:52Z\",\"status\":\"completed\",\"conclusion\":\"success\",\"completed_at\":\"2018-05-04T01:14:52Z\",\"output\":{\"title\":\"Mighty Readme report\",\"summary\":\"There are 0 failures, 2 warnings, and 1 notices.\",\"text\":\"You may have some misspelled words on lines 2 and 4. You also may want to add a section in your README about how to install your app.\",\"annotations\":[{\"path\":\"README.md\",\"annotation_level\":\"warning\",\"title\":\"Spell Checker\",\"message\":\"Check your spelling for 'banaas'.\",\"raw_details\":\"Do you mean 'bananas' or 'banana'?\",\"start_line\":2,\"end_line\":2},{\"path\":\"README.md\",\"annotation_level\":\"warning\",\"title\":\"Spell Checker\",\"message\":\"Check your spelling for 'aples'\",\"raw_details\":\"Do you mean 'apples' or 'Naples'\",\"start_line\":4,\"end_line\":4}],\"images\":[{\"alt\":\"Super bananas\",\"image_url\":\"http://example.com/images/42\"}]}}"),
       );
       expect(
         mismatch(
@@ -14466,7 +14449,7 @@ void main() {
           .codespacesSetRepositoriesForSecretForAuthenticatedUser(
         config,
         secretName: (jsonDecode("\"Example Name\"") as String),
-        selectedRepositoryIds: (jsonDecode("[1296269,1296280]") as List)
+        selectedRepositoryIds: (jsonDecode("[1,1]") as List)
             .map((element) => (element as num).toInt())
             .toList(),
       );
@@ -14483,7 +14466,7 @@ void main() {
             .codespacesSetRepositoriesForSecretForAuthenticatedUser(
           config,
           secretName: (jsonDecode("\"Example Name\"") as String),
-          selectedRepositoryIds: (jsonDecode("[1296269,1296280]") as List)
+          selectedRepositoryIds: (jsonDecode("[1,1]") as List)
               .map((element) => (element as num).toInt())
               .toList(),
         );
@@ -18889,8 +18872,8 @@ void main() {
       );
     });
 
-    test("gistsGet answers 404 with its declared error body", () async {
-      SdkConfig.getConfig().baseUrl = '$baseUrl/__mockStatus/404';
+    test("gistsGet answers 403 with its declared error body", () async {
+      SdkConfig.getConfig().baseUrl = '$baseUrl/__mockStatus/403';
       addTearDown(() => SdkConfig.getConfig().baseUrl = baseUrl);
       final SdkHttpError error;
       try {
@@ -18902,12 +18885,12 @@ void main() {
       } on SdkHttpError catch (caught) {
         error = caught;
       }
-      expect(error.statusCode, 404);
+      expect(error.statusCode, 403);
       expect(
         mismatch(
             normal(error.data),
             SdkUtils.decodeJson(
-                "{\"message\":\"example text\",\"documentation_url\":\"https://example.com\",\"url\":\"https://example.com\",\"status\":\"active\"}")),
+                "{\"block\":{\"reason\":\"reason\",\"created_at\":\"2024-01-01T00:00:00Z\",\"html_url\":\"https://example.com\"},\"message\":\"example text\",\"documentation_url\":\"https://example.com\"}")),
         isNull,
       );
     });
@@ -18928,8 +18911,8 @@ void main() {
       );
     });
 
-    test("gistsGetComment answers 404 with its declared error body", () async {
-      SdkConfig.getConfig().baseUrl = '$baseUrl/__mockStatus/404';
+    test("gistsGetComment answers 403 with its declared error body", () async {
+      SdkConfig.getConfig().baseUrl = '$baseUrl/__mockStatus/403';
       addTearDown(() => SdkConfig.getConfig().baseUrl = baseUrl);
       final SdkHttpError error;
       try {
@@ -18942,12 +18925,12 @@ void main() {
       } on SdkHttpError catch (caught) {
         error = caught;
       }
-      expect(error.statusCode, 404);
+      expect(error.statusCode, 403);
       expect(
         mismatch(
             normal(error.data),
             SdkUtils.decodeJson(
-                "{\"message\":\"example text\",\"documentation_url\":\"https://example.com\",\"url\":\"https://example.com\",\"status\":\"active\"}")),
+                "{\"block\":{\"reason\":\"reason\",\"created_at\":\"2024-01-01T00:00:00Z\",\"html_url\":\"https://example.com\"},\"message\":\"example text\",\"documentation_url\":\"https://example.com\"}")),
         isNull,
       );
     });
@@ -20775,9 +20758,11 @@ void main() {
         owner: (jsonDecode("\"owner\"") as String),
         repo: (jsonDecode("\"repo\"") as String),
         issueNumber: (jsonDecode("1") as num).toInt(),
-        assignees: SdkPresent<List<dynamic>>(
+        assignees: SdkPresent<List<IssuesAddAssigneesRequestAssigneesItem>>(
             (jsonDecode("[\"hubot\",\"other_user\"]") as List)
-                .map((element) => element)
+                .map((element) =>
+                    IssuesAddAssigneesRequestAssigneesItem.fromJson(
+                        element as String))
                 .toList()),
       );
       expect(
@@ -21173,9 +21158,11 @@ void main() {
             (jsonDecode("\"I'm having a problem with this.\"") as String)),
         assignee: const SdkOmitted<String?>(),
         milestone: SdkPresent<dynamic>(jsonDecode("1")),
-        labels: SdkPresent<List<dynamic>>((jsonDecode("[\"bug\"]") as List)
-            .map((element) => element)
-            .toList()),
+        labels: SdkPresent<List<IssuesCreateRequestLabelsItem>>(
+            (jsonDecode("[\"bug\"]") as List)
+                .map((element) =>
+                    IssuesCreateRequestLabelsItem.fromJson(element as String))
+                .toList()),
         assignees: SdkPresent<List<String>>(
             (jsonDecode("[\"octocat\"]") as List)
                 .map((element) => (element as String))
@@ -21209,9 +21196,11 @@ void main() {
               (jsonDecode("\"I'm having a problem with this.\"") as String)),
           assignee: const SdkOmitted<String?>(),
           milestone: SdkPresent<dynamic>(jsonDecode("1")),
-          labels: SdkPresent<List<dynamic>>((jsonDecode("[\"bug\"]") as List)
-              .map((element) => element)
-              .toList()),
+          labels: SdkPresent<List<IssuesCreateRequestLabelsItem>>(
+              (jsonDecode("[\"bug\"]") as List)
+                  .map((element) =>
+                      IssuesCreateRequestLabelsItem.fromJson(element as String))
+                  .toList()),
           assignees: SdkPresent<List<String>>(
               (jsonDecode("[\"octocat\"]") as List)
                   .map((element) => (element as String))
@@ -23429,16 +23418,19 @@ void main() {
         stateReason: const SdkOmitted<IssuesUpdateRequestBodyStateReason?>(),
         duplicateIssueId: const SdkOmitted<int>(),
         milestone: SdkPresent<dynamic>(jsonDecode("1")),
-        labels: SdkPresent<List<dynamic>>((jsonDecode("[\"bug\"]") as List)
-            .map((element) => element)
-            .toList()),
-        assignees: SdkPresent<List<dynamic>>(
+        labels: SdkPresent<List<IssuesUpdateRequestLabelsItem>>(
+            (jsonDecode("[\"bug\"]") as List)
+                .map((element) =>
+                    IssuesUpdateRequestLabelsItem.fromJson(element as String))
+                .toList()),
+        assignees: SdkPresent<List<IssuesUpdateRequestAssigneesItem>>(
             (jsonDecode("[\"octocat\"]") as List)
-                .map((element) => element)
+                .map((element) => IssuesUpdateRequestAssigneesItem.fromJson(
+                    element as String))
                 .toList()),
         issueFieldValues: const SdkOmitted<
             List<IssuesUpdateRequestBodyIssueFieldValuesItem>>(),
-        type_: const SdkOmitted<dynamic>(),
+        type_: const SdkOmitted<IssuesUpdateRequestType?>(),
       );
       expect(
         mismatch(
@@ -23470,16 +23462,19 @@ void main() {
           stateReason: const SdkOmitted<IssuesUpdateRequestBodyStateReason?>(),
           duplicateIssueId: const SdkOmitted<int>(),
           milestone: SdkPresent<dynamic>(jsonDecode("1")),
-          labels: SdkPresent<List<dynamic>>((jsonDecode("[\"bug\"]") as List)
-              .map((element) => element)
-              .toList()),
-          assignees: SdkPresent<List<dynamic>>(
+          labels: SdkPresent<List<IssuesUpdateRequestLabelsItem>>(
+              (jsonDecode("[\"bug\"]") as List)
+                  .map((element) =>
+                      IssuesUpdateRequestLabelsItem.fromJson(element as String))
+                  .toList()),
+          assignees: SdkPresent<List<IssuesUpdateRequestAssigneesItem>>(
               (jsonDecode("[\"octocat\"]") as List)
-                  .map((element) => element)
+                  .map((element) => IssuesUpdateRequestAssigneesItem.fromJson(
+                      element as String))
                   .toList()),
           issueFieldValues: const SdkOmitted<
               List<IssuesUpdateRequestBodyIssueFieldValuesItem>>(),
-          type_: const SdkOmitted<dynamic>(),
+          type_: const SdkOmitted<IssuesUpdateRequestType?>(),
         );
         fail('did not raise its declared error');
       } on SdkHttpError catch (caught) {
@@ -30281,8 +30276,7 @@ void main() {
         config,
         projectNumber: (jsonDecode("1") as num).toInt(),
         org: (jsonDecode("\"org\"") as String),
-        body: jsonDecode(
-            "{\"name\":\"Team notes\",\"data_type\":\"text\",\"issue_field_id\":1}"),
+        body: jsonDecode("{\"name\":\"Team notes\",\"data_type\":\"text\"}"),
       );
       expect(
         mismatch(
@@ -30304,8 +30298,7 @@ void main() {
           config,
           projectNumber: (jsonDecode("1") as num).toInt(),
           org: (jsonDecode("\"org\"") as String),
-          body: jsonDecode(
-              "{\"name\":\"Team notes\",\"data_type\":\"text\",\"issue_field_id\":1}"),
+          body: jsonDecode("{\"name\":\"Team notes\",\"data_type\":\"text\"}"),
         );
         fail('did not raise its declared error');
       } on SdkHttpError catch (caught) {
@@ -34476,7 +34469,10 @@ void main() {
         task: const SdkOmitted<String>(),
         autoMerge: const SdkOmitted<bool>(),
         requiredContexts: const SdkOmitted<List<String>>(),
-        payload: SdkPresent<dynamic>(jsonDecode("{\"deploy\":\"migrate\"}")),
+        payload: SdkPresent<ReposCreateDeploymentRequestPayload>(
+            ReposCreateDeploymentRequestPayload.fromJson(
+                (jsonDecode("{\"deploy\":\"migrate\"}") as Map)
+                    .cast<String, dynamic>())),
         environment: const SdkOmitted<String>(),
         description: SdkPresent<String?>(
             (jsonDecode("\"Deploy request from hubot\"") as String)),
@@ -34507,7 +34503,10 @@ void main() {
           task: const SdkOmitted<String>(),
           autoMerge: const SdkOmitted<bool>(),
           requiredContexts: const SdkOmitted<List<String>>(),
-          payload: SdkPresent<dynamic>(jsonDecode("{\"deploy\":\"migrate\"}")),
+          payload: SdkPresent<ReposCreateDeploymentRequestPayload>(
+              ReposCreateDeploymentRequestPayload.fromJson(
+                  (jsonDecode("{\"deploy\":\"migrate\"}") as Map)
+                      .cast<String, dynamic>())),
           environment: const SdkOmitted<String>(),
           description: SdkPresent<String?>(
               (jsonDecode("\"Deploy request from hubot\"") as String)),
@@ -41095,8 +41094,10 @@ void main() {
         httpsEnforced: const SdkOmitted<bool>(),
         buildType: const SdkOmitted<
             ReposUpdateInformationAboutPagesSiteRequestBodyBuildType>(),
-        source: SdkPresent<dynamic>(
-            jsonDecode("{\"branch\":\"main\",\"path\":\"/\"}")),
+        source: SdkPresent<ReposUpdateInformationAboutPagesSiteRequestSource>(
+            ReposUpdateInformationAboutPagesSiteRequestSource.fromJson(
+                (jsonDecode("{\"branch\":\"main\",\"path\":\"/\"}") as Map)
+                    .cast<String, dynamic>())),
       );
     });
 
@@ -41116,8 +41117,10 @@ void main() {
           httpsEnforced: const SdkOmitted<bool>(),
           buildType: const SdkOmitted<
               ReposUpdateInformationAboutPagesSiteRequestBodyBuildType>(),
-          source: SdkPresent<dynamic>(
-              jsonDecode("{\"branch\":\"main\",\"path\":\"/\"}")),
+          source: SdkPresent<ReposUpdateInformationAboutPagesSiteRequestSource>(
+              ReposUpdateInformationAboutPagesSiteRequestSource.fromJson(
+                  (jsonDecode("{\"branch\":\"main\",\"path\":\"/\"}") as Map)
+                      .cast<String, dynamic>())),
         );
         fail('did not raise its declared error');
       } on SdkHttpError catch (caught) {

@@ -4,6 +4,171 @@
 part of 'activity.dart';
 
 // activity domain models (part 6)
+sealed class EventPayload {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  const EventPayload();
+  factory EventPayload.fromJson(Object? json) {
+    if (json is Map) {
+      return EventPayloadMap(Map<String, dynamic>.from(json));
+    }
+    if (json is Map<String, dynamic>) {
+      try {
+        final value = CreateEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return EventPayloadCreateEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = DeleteEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return EventPayloadDeleteEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = DiscussionEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return EventPayloadDiscussionEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = IssuesEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return EventPayloadIssuesEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = IssueCommentEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return EventPayloadIssueCommentEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = ForkEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return EventPayloadForkEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = GollumEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return EventPayloadGollumEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = MemberEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return EventPayloadMemberEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = PushEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return EventPayloadPushEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = PullRequestEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return EventPayloadPullRequestEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = PullRequestReviewCommentEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return EventPayloadPullRequestReviewCommentEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = PullRequestReviewEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return EventPayloadPullRequestReviewEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = CommitCommentEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return EventPayloadCommitCommentEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = ReleaseEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return EventPayloadReleaseEvent(value);
+        }
+      } catch (_) {}
+      try {
+        final value = WatchEvent.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return EventPayloadWatchEvent(value);
+        }
+      } catch (_) {}
+    }
+    try {
+      return EventPayloadCreateEvent(
+          CreateEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return EventPayloadDeleteEvent(
+          DeleteEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return EventPayloadDiscussionEvent(
+          DiscussionEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return EventPayloadIssuesEvent(
+          IssuesEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return EventPayloadIssueCommentEvent(
+          IssueCommentEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return EventPayloadForkEvent(
+          ForkEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return EventPayloadGollumEvent(
+          GollumEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return EventPayloadMemberEvent(
+          MemberEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return EventPayloadPushEvent(
+          PushEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return EventPayloadPullRequestEvent(
+          PullRequestEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return EventPayloadPullRequestReviewCommentEvent(
+          PullRequestReviewCommentEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return EventPayloadPullRequestReviewEvent(
+          PullRequestReviewEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return EventPayloadCommitCommentEvent(
+          CommitCommentEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return EventPayloadReleaseEvent(
+          ReleaseEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return EventPayloadWatchEvent(
+          WatchEvent.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    throw FormatException("No variant matched for EventPayload");
+  }
+  Object? toJson();
+}
+
 final class EventPayloadCreateEvent extends EventPayload {
   final CreateEvent value;
   const EventPayloadCreateEvent(this.value);

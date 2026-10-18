@@ -4,338 +4,499 @@
 part of 'inline.dart';
 
 // Inline operation models (part 361)
-class CodeSecurityAttachEnterpriseConfigurationRequestBody {
+class OrgsUpdateWebhookConfigForOrgRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// The type of repositories to attach the configuration to.
-  final CodeSecurityAttachEnterpriseConfigurationRequestBodyScope scope;
+  /// The URL to which the payloads will be delivered.
+  final SdkOptional<String> url;
 
-  const CodeSecurityAttachEnterpriseConfigurationRequestBody(
-      {required this.scope});
+  /// The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.
+  final SdkOptional<String> contentType;
 
-  CodeSecurityAttachEnterpriseConfigurationRequestBody Function(
-          {CodeSecurityAttachEnterpriseConfigurationRequestBodyScope scope})
+  /// If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/webhooks/event-payloads/#delivery-headers).
+  final SdkOptional<String> secret;
+  final SdkOptional<WebhookConfigInsecureSsl> insecureSsl;
+
+  const OrgsUpdateWebhookConfigForOrgRequestBody(
+      {this.url = const SdkOmitted(),
+      this.contentType = const SdkOmitted(),
+      this.secret = const SdkOmitted(),
+      this.insecureSsl = const SdkOmitted()});
+
+  OrgsUpdateWebhookConfigForOrgRequestBody Function(
+          {SdkOptional<String> url,
+          SdkOptional<String> contentType,
+          SdkOptional<String> secret,
+          SdkOptional<WebhookConfigInsecureSsl> insecureSsl})
       get copyWith => _copyWith;
 
-  CodeSecurityAttachEnterpriseConfigurationRequestBody _copyWith(
-          {Object? scope = sdkOmittedValue}) =>
-      CodeSecurityAttachEnterpriseConfigurationRequestBody(
-        scope: identical(scope, sdkOmittedValue)
-            ? this.scope
-            : scope
-                as CodeSecurityAttachEnterpriseConfigurationRequestBodyScope,
+  OrgsUpdateWebhookConfigForOrgRequestBody _copyWith(
+          {Object? url = sdkOmittedValue,
+          Object? contentType = sdkOmittedValue,
+          Object? secret = sdkOmittedValue,
+          Object? insecureSsl = sdkOmittedValue}) =>
+      OrgsUpdateWebhookConfigForOrgRequestBody(
+        url: identical(url, sdkOmittedValue)
+            ? this.url
+            : url as SdkOptional<String>,
+        contentType: identical(contentType, sdkOmittedValue)
+            ? this.contentType
+            : contentType as SdkOptional<String>,
+        secret: identical(secret, sdkOmittedValue)
+            ? this.secret
+            : secret as SdkOptional<String>,
+        insecureSsl: identical(insecureSsl, sdkOmittedValue)
+            ? this.insecureSsl
+            : insecureSsl as SdkOptional<WebhookConfigInsecureSsl>,
       );
 
-  factory CodeSecurityAttachEnterpriseConfigurationRequestBody.fromJson(
+  factory OrgsUpdateWebhookConfigForOrgRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      CodeSecurityAttachEnterpriseConfigurationRequestBody(
-        scope: (json['scope'] != null
-            ? CodeSecurityAttachEnterpriseConfigurationRequestBodyScope
-                .fromJson(json['scope'] as String)
-            : null)!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'scope': scope.toJson(),
-      };
-}
-
-class CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Specify which types of repository this security configuration should be applied to by default.
-  final SdkOptional<
-          CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestBodyDefaultForNewRepos>
-      defaultForNewRepos;
-
-  const CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestBody(
-      {this.defaultForNewRepos = const SdkOmitted()});
-
-  CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestBody Function(
-      {SdkOptional<
-              CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestBodyDefaultForNewRepos>
-          defaultForNewRepos}) get copyWith => _copyWith;
-
-  CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestBody _copyWith(
-          {Object? defaultForNewRepos = sdkOmittedValue}) =>
-      CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestBody(
-        defaultForNewRepos: identical(defaultForNewRepos, sdkOmittedValue)
-            ? this.defaultForNewRepos
-            : defaultForNewRepos as SdkOptional<
-                CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestBodyDefaultForNewRepos>,
-      );
-
-  factory CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestBody(
-        defaultForNewRepos: json['default_for_new_repos'] != null
-            ? SdkPresent((json['default_for_new_repos'] != null
-                ? CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestBodyDefaultForNewRepos
-                    .fromJson(json['default_for_new_repos'] as String)
+      OrgsUpdateWebhookConfigForOrgRequestBody(
+        url: json['url'] != null
+            ? SdkPresent((json['url'] as String?)!)
+            : const SdkOmitted(),
+        contentType: json['content_type'] != null
+            ? SdkPresent((json['content_type'] as String?)!)
+            : const SdkOmitted(),
+        secret: json['secret'] != null
+            ? SdkPresent((json['secret'] as String?)!)
+            : const SdkOmitted(),
+        insecureSsl: json['insecure_ssl'] != null
+            ? SdkPresent((json['insecure_ssl'] != null
+                ? WebhookConfigInsecureSsl.fromJson(json['insecure_ssl'])
                 : null)!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (defaultForNewRepos) {
-          SdkPresent<
-                CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestBodyDefaultForNewRepos>(
-            value: final value
-          ) =>
-            {
-              'default_for_new_repos': value.toJson(),
+        ...switch (url) {
+          SdkPresent<String>(value: final value) => {
+              'url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (contentType) {
+          SdkPresent<String>(value: final value) => {
+              'content_type': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (secret) {
+          SdkPresent<String>(value: final value) => {
+              'secret': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (insecureSsl) {
+          SdkPresent<WebhookConfigInsecureSsl>(value: final value) => {
+              'insecure_ssl': value.toJson(),
             },
           _ => const <String, dynamic>{},
         },
       };
 }
 
-class CodeSecuritySetConfigurationAsDefaultForEnterpriseResponse {
+class OrgsListAppInstallationsResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+  final int totalCount;
+  final List<Installation> installations;
 
-  /// Specifies which types of repository this security configuration is applied to by default.
-  final SdkOptional<
-          CodeSecuritySetConfigurationAsDefaultForEnterpriseResponseDefaultForNewRepos>
-      defaultForNewRepos;
+  const OrgsListAppInstallationsResponse(
+      {required this.totalCount, required this.installations});
 
-  /// A code security configuration
-  final SdkOptional<CodeSecurityConfiguration> configuration;
+  OrgsListAppInstallationsResponse Function(
+      {int totalCount,
+      List<Installation> installations}) get copyWith => _copyWith;
 
-  const CodeSecuritySetConfigurationAsDefaultForEnterpriseResponse(
-      {this.defaultForNewRepos = const SdkOmitted(),
-      this.configuration = const SdkOmitted()});
-
-  CodeSecuritySetConfigurationAsDefaultForEnterpriseResponse Function(
-      {SdkOptional<
-              CodeSecuritySetConfigurationAsDefaultForEnterpriseResponseDefaultForNewRepos>
-          defaultForNewRepos,
-      SdkOptional<CodeSecurityConfiguration>
-          configuration}) get copyWith => _copyWith;
-
-  CodeSecuritySetConfigurationAsDefaultForEnterpriseResponse _copyWith(
-          {Object? defaultForNewRepos = sdkOmittedValue,
-          Object? configuration = sdkOmittedValue}) =>
-      CodeSecuritySetConfigurationAsDefaultForEnterpriseResponse(
-        defaultForNewRepos: identical(defaultForNewRepos, sdkOmittedValue)
-            ? this.defaultForNewRepos
-            : defaultForNewRepos as SdkOptional<
-                CodeSecuritySetConfigurationAsDefaultForEnterpriseResponseDefaultForNewRepos>,
-        configuration: identical(configuration, sdkOmittedValue)
-            ? this.configuration
-            : configuration as SdkOptional<CodeSecurityConfiguration>,
+  OrgsListAppInstallationsResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? installations = sdkOmittedValue}) =>
+      OrgsListAppInstallationsResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        installations: identical(installations, sdkOmittedValue)
+            ? this.installations
+            : installations as List<Installation>,
       );
 
-  factory CodeSecuritySetConfigurationAsDefaultForEnterpriseResponse.fromJson(
+  factory OrgsListAppInstallationsResponse.fromJson(
           Map<String, dynamic> json) =>
-      CodeSecuritySetConfigurationAsDefaultForEnterpriseResponse(
-        defaultForNewRepos: json['default_for_new_repos'] != null
-            ? SdkPresent((json['default_for_new_repos'] != null
-                ? CodeSecuritySetConfigurationAsDefaultForEnterpriseResponseDefaultForNewRepos
-                    .fromJson(json['default_for_new_repos'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        configuration: json['configuration'] != null
-            ? SdkPresent((json['configuration'] != null
-                ? CodeSecurityConfiguration.fromJson(
-                    json['configuration'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
+      OrgsListAppInstallationsResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        installations: ((json['installations'] as List?)
+            ?.map((e) => Installation.fromJson(e as Map<String, dynamic>))
+            .toList())!,
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (defaultForNewRepos) {
-          SdkPresent<
-                CodeSecuritySetConfigurationAsDefaultForEnterpriseResponseDefaultForNewRepos>(
-            value: final value
-          ) =>
-            {
-              'default_for_new_repos': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (configuration) {
-          SdkPresent<CodeSecurityConfiguration>(value: final value) => {
-              'configuration': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
+        'total_count': totalCount,
+        'installations': installations.map((item) => item.toJson()).toList(),
       };
 }
 
-/// Feature options for Automatic dependency submission
-class CodeSecurityCreateConfigurationRequestBodyDependencyGraphAutosubmitActionOptions {
+class OrgsCreateInvitationRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Whether to use runners labeled with 'dependency-submission' or standard GitHub runners.
-  final SdkOptional<bool> labeledRunners;
+  /// **Required unless you provide `email`**. GitHub user ID for the person you are inviting.
+  final SdkOptional<int> inviteeId;
 
-  const CodeSecurityCreateConfigurationRequestBodyDependencyGraphAutosubmitActionOptions(
-      {this.labeledRunners = const SdkOmitted()});
+  /// **Required unless you provide `invitee_id`**. Email address of the person you are inviting, which can be an existing GitHub user.
+  final SdkOptional<String> email;
 
-  CodeSecurityCreateConfigurationRequestBodyDependencyGraphAutosubmitActionOptions
-      Function({SdkOptional<bool> labeledRunners}) get copyWith => _copyWith;
+  /// The role for the new member. * `admin` - Organization owners with full administrative rights to the organization and complete access to all repositories and teams. * `direct_member` - Non-owner organization members with ability to see other members and join teams by invitation. * `billing_manager` - Non-owner organization members with ability to manage the billing settings of your organization. * `reinstate` - The previous role assigned to the invitee before they were removed from your organization. Can be one of the roles listed above. Only works if the invitee was previously part of your organization.
+  final SdkOptional<OrgsCreateInvitationRequestBodyRole> role;
 
-  CodeSecurityCreateConfigurationRequestBodyDependencyGraphAutosubmitActionOptions
-      _copyWith({Object? labeledRunners = sdkOmittedValue}) =>
-          CodeSecurityCreateConfigurationRequestBodyDependencyGraphAutosubmitActionOptions(
-            labeledRunners: identical(labeledRunners, sdkOmittedValue)
-                ? this.labeledRunners
-                : labeledRunners as SdkOptional<bool>,
-          );
+  /// Specify IDs for the teams you want to invite new members to.
+  final SdkOptional<List<int>> teamIds;
 
-  factory CodeSecurityCreateConfigurationRequestBodyDependencyGraphAutosubmitActionOptions.fromJson(
-          Map<String, dynamic> json) =>
-      CodeSecurityCreateConfigurationRequestBodyDependencyGraphAutosubmitActionOptions(
-        labeledRunners: json['labeled_runners'] != null
-            ? SdkPresent((json['labeled_runners'] as bool?)!)
-            : const SdkOmitted(),
+  const OrgsCreateInvitationRequestBody(
+      {this.inviteeId = const SdkOmitted(),
+      this.email = const SdkOmitted(),
+      this.role = const SdkOmitted(),
+      this.teamIds = const SdkOmitted()});
+
+  OrgsCreateInvitationRequestBody Function(
+      {SdkOptional<int> inviteeId,
+      SdkOptional<String> email,
+      SdkOptional<OrgsCreateInvitationRequestBodyRole> role,
+      SdkOptional<List<int>> teamIds}) get copyWith => _copyWith;
+
+  OrgsCreateInvitationRequestBody _copyWith(
+          {Object? inviteeId = sdkOmittedValue,
+          Object? email = sdkOmittedValue,
+          Object? role = sdkOmittedValue,
+          Object? teamIds = sdkOmittedValue}) =>
+      OrgsCreateInvitationRequestBody(
+        inviteeId: identical(inviteeId, sdkOmittedValue)
+            ? this.inviteeId
+            : inviteeId as SdkOptional<int>,
+        email: identical(email, sdkOmittedValue)
+            ? this.email
+            : email as SdkOptional<String>,
+        role: identical(role, sdkOmittedValue)
+            ? this.role
+            : role as SdkOptional<OrgsCreateInvitationRequestBodyRole>,
+        teamIds: identical(teamIds, sdkOmittedValue)
+            ? this.teamIds
+            : teamIds as SdkOptional<List<int>>,
       );
 
-  Map<String, dynamic> toJson() => {
-        ...switch (labeledRunners) {
-          SdkPresent<bool>(value: final value) => {
-              'labeled_runners': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-class CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The ID of the team or role selected as a bypass reviewer
-  final int reviewerId;
-
-  /// The type of the bypass reviewer
-  final CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemReviewerType
-      reviewerType;
-
-  /// The bypass mode for the reviewer
-  final SdkOptional<
-          CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemMode>
-      mode;
-
-  const CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem(
-      {required this.reviewerId,
-      required this.reviewerType,
-      this.mode = const SdkOmitted()});
-
-  CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem Function(
-      {int reviewerId,
-      CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemReviewerType
-          reviewerType,
-      SdkOptional<
-              CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemMode>
-          mode}) get copyWith => _copyWith;
-
-  CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem
-      _copyWith(
-              {Object? reviewerId = sdkOmittedValue,
-              Object? reviewerType = sdkOmittedValue,
-              Object? mode = sdkOmittedValue}) =>
-          CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem(
-            reviewerId: identical(reviewerId, sdkOmittedValue)
-                ? this.reviewerId
-                : reviewerId as int,
-            reviewerType: identical(reviewerType, sdkOmittedValue)
-                ? this.reviewerType
-                : reviewerType
-                    as CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemReviewerType,
-            mode: identical(mode, sdkOmittedValue)
-                ? this.mode
-                : mode as SdkOptional<
-                    CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemMode>,
-          );
-
-  factory CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem.fromJson(
-          Map<String, dynamic> json) =>
-      CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem(
-        reviewerId: ((json['reviewer_id'] as num?)?.toInt())!,
-        reviewerType: (json['reviewer_type'] != null
-            ? CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemReviewerType
-                .fromJson(json['reviewer_type'] as String)
-            : null)!,
-        mode: json['mode'] != null
-            ? SdkPresent((json['mode'] != null
-                ? CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemMode
-                    .fromJson(json['mode'] as String)
+  factory OrgsCreateInvitationRequestBody.fromJson(Map<String, dynamic> json) =>
+      OrgsCreateInvitationRequestBody(
+        inviteeId: json['invitee_id'] != null
+            ? SdkPresent(((json['invitee_id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        email: json['email'] != null
+            ? SdkPresent((json['email'] as String?)!)
+            : const SdkOmitted(),
+        role: json['role'] != null
+            ? SdkPresent((json['role'] != null
+                ? OrgsCreateInvitationRequestBodyRole.fromJson(
+                    json['role'] as String)
                 : null)!)
             : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        'reviewer_id': reviewerId,
-        'reviewer_type': reviewerType.toJson(),
-        ...switch (mode) {
-          SdkPresent<
-                CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemMode>(
-            value: final value
-          ) =>
-            {
-              'mode': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-/// Feature options for secret scanning delegated bypass
-class CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptions {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The bypass reviewers for secret scanning delegated bypass
-  final SdkOptional<
-          List<
-              CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem>>
-      reviewers;
-
-  const CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptions(
-      {this.reviewers = const SdkOmitted()});
-
-  CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptions Function(
-      {SdkOptional<
-              List<
-                  CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem>>
-          reviewers}) get copyWith => _copyWith;
-
-  CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptions
-      _copyWith({Object? reviewers = sdkOmittedValue}) =>
-          CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptions(
-            reviewers: identical(reviewers, sdkOmittedValue)
-                ? this.reviewers
-                : reviewers as SdkOptional<
-                    List<
-                        CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem>>,
-          );
-
-  factory CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptions.fromJson(
-          Map<String, dynamic> json) =>
-      CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptions(
-        reviewers: json['reviewers'] != null
-            ? SdkPresent(((json['reviewers'] as List?)
-                ?.map((e) =>
-                    CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem
-                        .fromJson(e as Map<String, dynamic>))
+        teamIds: json['team_ids'] != null
+            ? SdkPresent(((json['team_ids'] as List?)
+                ?.map((e) => (e as num).toInt())
                 .toList())!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (reviewers) {
-          SdkPresent<
-                List<
-                    CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem>>(
+        ...switch (inviteeId) {
+          SdkPresent<int>(value: final value) => {
+              'invitee_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (email) {
+          SdkPresent<String>(value: final value) => {
+              'email': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (role) {
+          SdkPresent<OrgsCreateInvitationRequestBodyRole>(value: final value) =>
+            {
+              'role': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (teamIds) {
+          SdkPresent<List<int>>(value: final value) => {
+              'team_ids': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class OrgsSetMembershipForUserRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The role to give the user in the organization. Can be one of: * `admin` - The user will become an owner of the organization. * `member` - The user will become a non-owner member of the organization.
+  final SdkOptional<OrgsSetMembershipForUserRequestBodyRole> role;
+
+  const OrgsSetMembershipForUserRequestBody({this.role = const SdkOmitted()});
+
+  OrgsSetMembershipForUserRequestBody Function(
+          {SdkOptional<OrgsSetMembershipForUserRequestBodyRole> role})
+      get copyWith => _copyWith;
+
+  OrgsSetMembershipForUserRequestBody _copyWith(
+          {Object? role = sdkOmittedValue}) =>
+      OrgsSetMembershipForUserRequestBody(
+        role: identical(role, sdkOmittedValue)
+            ? this.role
+            : role as SdkOptional<OrgsSetMembershipForUserRequestBodyRole>,
+      );
+
+  factory OrgsSetMembershipForUserRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      OrgsSetMembershipForUserRequestBody(
+        role: json['role'] != null
+            ? SdkPresent((json['role'] != null
+                ? OrgsSetMembershipForUserRequestBodyRole.fromJson(
+                    json['role'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (role) {
+          SdkPresent<OrgsSetMembershipForUserRequestBodyRole>(
             value: final value
           ) =>
             {
-              'reviewers': value.map((item) => item.toJson()).toList(),
+              'role': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class OrgsListOrgRolesResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The total number of organization roles available to the organization.
+  final SdkOptional<int> totalCount;
+
+  /// The list of organization roles available to the organization.
+  final SdkOptional<List<OrganizationRole>> roles;
+
+  const OrgsListOrgRolesResponse(
+      {this.totalCount = const SdkOmitted(), this.roles = const SdkOmitted()});
+
+  OrgsListOrgRolesResponse Function(
+      {SdkOptional<int> totalCount,
+      SdkOptional<List<OrganizationRole>> roles}) get copyWith => _copyWith;
+
+  OrgsListOrgRolesResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? roles = sdkOmittedValue}) =>
+      OrgsListOrgRolesResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as SdkOptional<int>,
+        roles: identical(roles, sdkOmittedValue)
+            ? this.roles
+            : roles as SdkOptional<List<OrganizationRole>>,
+      );
+
+  factory OrgsListOrgRolesResponse.fromJson(Map<String, dynamic> json) =>
+      OrgsListOrgRolesResponse(
+        totalCount: json['total_count'] != null
+            ? SdkPresent(((json['total_count'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        roles: json['roles'] != null
+            ? SdkPresent(((json['roles'] as List?)
+                ?.map(
+                    (e) => OrganizationRole.fromJson(e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (totalCount) {
+          SdkPresent<int>(value: final value) => {
+              'total_count': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (roles) {
+          SdkPresent<List<OrganizationRole>>(value: final value) => {
+              'roles': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class OrgsConvertMemberToOutsideCollaboratorRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// When set to `true`, the request will be performed asynchronously. Returns a 202 status code when the job is successfully queued.
+  final SdkOptional<bool> async_;
+
+  const OrgsConvertMemberToOutsideCollaboratorRequestBody(
+      {this.async_ = const SdkOmitted()});
+
+  OrgsConvertMemberToOutsideCollaboratorRequestBody Function(
+      {SdkOptional<bool> async_}) get copyWith => _copyWith;
+
+  OrgsConvertMemberToOutsideCollaboratorRequestBody _copyWith(
+          {Object? async_ = sdkOmittedValue}) =>
+      OrgsConvertMemberToOutsideCollaboratorRequestBody(
+        async_: identical(async_, sdkOmittedValue)
+            ? this.async_
+            : async_ as SdkOptional<bool>,
+      );
+
+  factory OrgsConvertMemberToOutsideCollaboratorRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      OrgsConvertMemberToOutsideCollaboratorRequestBody(
+        async_: json['async'] != null
+            ? SdkPresent((json['async'] as bool?)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (async_) {
+          SdkPresent<bool>(value: final value) => {
+              'async': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class OrgsReviewPatGrantRequestsInBulkRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// Unique identifiers of the requests for access via fine-grained personal access token. Must be formed of between 1 and 100 `pat_request_id` values.
+  final SdkOptional<List<int>> patRequestIds;
+
+  /// Action to apply to the requests.
+  final OrgsReviewPatGrantRequestsInBulkRequestBodyAction action;
+
+  /// Reason for approving or denying the requests. Max 1024 characters.
+  final SdkOptional<String?> reason;
+
+  const OrgsReviewPatGrantRequestsInBulkRequestBody(
+      {this.patRequestIds = const SdkOmitted(),
+      required this.action,
+      this.reason = const SdkOmitted()});
+
+  OrgsReviewPatGrantRequestsInBulkRequestBody Function(
+      {SdkOptional<List<int>> patRequestIds,
+      OrgsReviewPatGrantRequestsInBulkRequestBodyAction action,
+      SdkOptional<String?> reason}) get copyWith => _copyWith;
+
+  OrgsReviewPatGrantRequestsInBulkRequestBody _copyWith(
+          {Object? patRequestIds = sdkOmittedValue,
+          Object? action = sdkOmittedValue,
+          Object? reason = sdkOmittedValue}) =>
+      OrgsReviewPatGrantRequestsInBulkRequestBody(
+        patRequestIds: identical(patRequestIds, sdkOmittedValue)
+            ? this.patRequestIds
+            : patRequestIds as SdkOptional<List<int>>,
+        action: identical(action, sdkOmittedValue)
+            ? this.action
+            : action as OrgsReviewPatGrantRequestsInBulkRequestBodyAction,
+        reason: identical(reason, sdkOmittedValue)
+            ? this.reason
+            : reason as SdkOptional<String?>,
+      );
+
+  factory OrgsReviewPatGrantRequestsInBulkRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      OrgsReviewPatGrantRequestsInBulkRequestBody(
+        patRequestIds: json['pat_request_ids'] != null
+            ? SdkPresent(((json['pat_request_ids'] as List?)
+                ?.map((e) => (e as num).toInt())
+                .toList())!)
+            : const SdkOmitted(),
+        action: (json['action'] != null
+            ? OrgsReviewPatGrantRequestsInBulkRequestBodyAction.fromJson(
+                json['action'] as String)
+            : null)!,
+        reason: json.containsKey('reason')
+            ? SdkPresent(json['reason'] as String?)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (patRequestIds) {
+          SdkPresent<List<int>>(value: final value) => {
+              'pat_request_ids': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'action': action.toJson(),
+        ...switch (reason) {
+          SdkPresent<String?>(value: final value) => {
+              'reason': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class OrgsReviewPatGrantRequestRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// Action to apply to the request.
+  final OrgsReviewPatGrantRequestRequestBodyAction action;
+
+  /// Reason for approving or denying the request. Max 1024 characters.
+  final SdkOptional<String?> reason;
+
+  const OrgsReviewPatGrantRequestRequestBody(
+      {required this.action, this.reason = const SdkOmitted()});
+
+  OrgsReviewPatGrantRequestRequestBody Function(
+      {OrgsReviewPatGrantRequestRequestBodyAction action,
+      SdkOptional<String?> reason}) get copyWith => _copyWith;
+
+  OrgsReviewPatGrantRequestRequestBody _copyWith(
+          {Object? action = sdkOmittedValue,
+          Object? reason = sdkOmittedValue}) =>
+      OrgsReviewPatGrantRequestRequestBody(
+        action: identical(action, sdkOmittedValue)
+            ? this.action
+            : action as OrgsReviewPatGrantRequestRequestBodyAction,
+        reason: identical(reason, sdkOmittedValue)
+            ? this.reason
+            : reason as SdkOptional<String?>,
+      );
+
+  factory OrgsReviewPatGrantRequestRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      OrgsReviewPatGrantRequestRequestBody(
+        action: (json['action'] != null
+            ? OrgsReviewPatGrantRequestRequestBodyAction.fromJson(
+                json['action'] as String)
+            : null)!,
+        reason: json.containsKey('reason')
+            ? SdkPresent(json['reason'] as String?)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        'action': action.toJson(),
+        ...switch (reason) {
+          SdkPresent<String?>(value: final value) => {
+              'reason': value,
             },
           _ => const <String, dynamic>{},
         },

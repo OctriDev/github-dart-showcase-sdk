@@ -269,6 +269,20 @@ sealed class PendingDeploymentReviewersItemReviewer {
   static const String constructionSurface = 'named';
   const PendingDeploymentReviewersItemReviewer();
   factory PendingDeploymentReviewersItemReviewer.fromJson(Object? json) {
+    if (json is Map<String, dynamic>) {
+      try {
+        final value = SimpleUser.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return PendingDeploymentReviewersItemReviewerSimpleUser(value);
+        }
+      } catch (_) {}
+      try {
+        final value = Team.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return PendingDeploymentReviewersItemReviewerTeam(value);
+        }
+      } catch (_) {}
+    }
     try {
       return PendingDeploymentReviewersItemReviewerSimpleUser(
           SimpleUser.fromJson(json as Map<String, dynamic>));

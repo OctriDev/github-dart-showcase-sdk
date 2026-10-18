@@ -4,134 +4,188 @@
 part of 'inline.dart';
 
 // Inline operation models (part 371)
-class IssuesUpdateCommentRequestBody {
+class CodespacesPublishForAuthenticatedUserRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// The contents of the comment.
-  final String body;
-
-  const IssuesUpdateCommentRequestBody({required this.body});
-
-  IssuesUpdateCommentRequestBody Function({String body}) get copyWith =>
-      _copyWith;
-
-  IssuesUpdateCommentRequestBody _copyWith({Object? body = sdkOmittedValue}) =>
-      IssuesUpdateCommentRequestBody(
-        body: identical(body, sdkOmittedValue) ? this.body : body as String,
-      );
-
-  factory IssuesUpdateCommentRequestBody.fromJson(Map<String, dynamic> json) =>
-      IssuesUpdateCommentRequestBody(
-        body: (json['body'] as String?)!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'body': body,
-      };
-}
-
-class IssuesUpdateRequestBodyLabelsItemVariant1 {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final SdkOptional<int> id;
+  /// A name for the new repository.
   final SdkOptional<String> name;
-  final SdkOptional<String?> description;
-  final SdkOptional<String?> color;
 
-  /// Optional reasoning for selecting this label.
-  final SdkOptional<String> rationale;
+  /// Whether the new repository should be private.
+  final SdkOptional<bool> private;
 
-  /// If `true`, the change is stored as a pending suggestion for human review rather than applied directly.
-  final SdkOptional<bool> suggest;
+  const CodespacesPublishForAuthenticatedUserRequestBody(
+      {this.name = const SdkOmitted(), this.private = const SdkOmitted()});
 
-  /// The confidence level for this label choice.
-  final SdkOptional<IssuesUpdateRequestBodyLabelsItemVariant1Confidence>
-      confidence;
+  CodespacesPublishForAuthenticatedUserRequestBody Function(
+      {SdkOptional<String> name,
+      SdkOptional<bool> private}) get copyWith => _copyWith;
 
-  const IssuesUpdateRequestBodyLabelsItemVariant1(
-      {this.id = const SdkOmitted(),
-      this.name = const SdkOmitted(),
-      this.description = const SdkOmitted(),
-      this.color = const SdkOmitted(),
-      this.rationale = const SdkOmitted(),
-      this.suggest = const SdkOmitted(),
-      this.confidence = const SdkOmitted()});
-
-  IssuesUpdateRequestBodyLabelsItemVariant1 Function(
-      {SdkOptional<int> id,
-      SdkOptional<String> name,
-      SdkOptional<String?> description,
-      SdkOptional<String?> color,
-      SdkOptional<String> rationale,
-      SdkOptional<bool> suggest,
-      SdkOptional<IssuesUpdateRequestBodyLabelsItemVariant1Confidence>
-          confidence}) get copyWith => _copyWith;
-
-  IssuesUpdateRequestBodyLabelsItemVariant1 _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? color = sdkOmittedValue,
-          Object? rationale = sdkOmittedValue,
-          Object? suggest = sdkOmittedValue,
-          Object? confidence = sdkOmittedValue}) =>
-      IssuesUpdateRequestBodyLabelsItemVariant1(
-        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+  CodespacesPublishForAuthenticatedUserRequestBody _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? private = sdkOmittedValue}) =>
+      CodespacesPublishForAuthenticatedUserRequestBody(
         name: identical(name, sdkOmittedValue)
             ? this.name
             : name as SdkOptional<String>,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as SdkOptional<String?>,
-        color: identical(color, sdkOmittedValue)
-            ? this.color
-            : color as SdkOptional<String?>,
-        rationale: identical(rationale, sdkOmittedValue)
-            ? this.rationale
-            : rationale as SdkOptional<String>,
-        suggest: identical(suggest, sdkOmittedValue)
-            ? this.suggest
-            : suggest as SdkOptional<bool>,
-        confidence: identical(confidence, sdkOmittedValue)
-            ? this.confidence
-            : confidence as SdkOptional<
-                IssuesUpdateRequestBodyLabelsItemVariant1Confidence>,
+        private: identical(private, sdkOmittedValue)
+            ? this.private
+            : private as SdkOptional<bool>,
       );
 
-  factory IssuesUpdateRequestBodyLabelsItemVariant1.fromJson(
+  factory CodespacesPublishForAuthenticatedUserRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      IssuesUpdateRequestBodyLabelsItemVariant1(
-        id: json['id'] != null
-            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+      CodespacesPublishForAuthenticatedUserRequestBody(
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+        private: json['private'] != null
+            ? SdkPresent((json['private'] as bool?)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (private) {
+          SdkPresent<bool>(value: final value) => {
+              'private': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class CopilotSpacesListForOrgResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The list of Copilot Spaces on this page of results.
+  final List<CopilotSpace> spaces;
+
+  const CopilotSpacesListForOrgResponse({required this.spaces});
+
+  CopilotSpacesListForOrgResponse Function({List<CopilotSpace> spaces})
+      get copyWith => _copyWith;
+
+  CopilotSpacesListForOrgResponse _copyWith(
+          {Object? spaces = sdkOmittedValue}) =>
+      CopilotSpacesListForOrgResponse(
+        spaces: identical(spaces, sdkOmittedValue)
+            ? this.spaces
+            : spaces as List<CopilotSpace>,
+      );
+
+  factory CopilotSpacesListForOrgResponse.fromJson(Map<String, dynamic> json) =>
+      CopilotSpacesListForOrgResponse(
+        spaces: ((json['spaces'] as List?)
+            ?.map((e) => CopilotSpace.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'spaces': spaces.map((item) => item.toJson()).toList(),
+      };
+}
+
+/// Metadata specific to the resource type.
+class CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// Repository ID for repository or file resources.
+  final SdkOptional<int> repositoryId;
+
+  /// File path for file resources.
+  final SdkOptional<String> filePath;
+
+  /// Text content for free text resources.
+  final SdkOptional<String> text;
+
+  /// Name for the resource.
+  final SdkOptional<String> name;
+
+  /// Issue or PR number.
+  final SdkOptional<int> number;
+
+  const CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata(
+      {this.repositoryId = const SdkOmitted(),
+      this.filePath = const SdkOmitted(),
+      this.text = const SdkOmitted(),
+      this.name = const SdkOmitted(),
+      this.number = const SdkOmitted()});
+
+  CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata Function(
+      {SdkOptional<int> repositoryId,
+      SdkOptional<String> filePath,
+      SdkOptional<String> text,
+      SdkOptional<String> name,
+      SdkOptional<int> number}) get copyWith => _copyWith;
+
+  CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata _copyWith(
+          {Object? repositoryId = sdkOmittedValue,
+          Object? filePath = sdkOmittedValue,
+          Object? text = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? number = sdkOmittedValue}) =>
+      CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata(
+        repositoryId: identical(repositoryId, sdkOmittedValue)
+            ? this.repositoryId
+            : repositoryId as SdkOptional<int>,
+        filePath: identical(filePath, sdkOmittedValue)
+            ? this.filePath
+            : filePath as SdkOptional<String>,
+        text: identical(text, sdkOmittedValue)
+            ? this.text
+            : text as SdkOptional<String>,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        number: identical(number, sdkOmittedValue)
+            ? this.number
+            : number as SdkOptional<int>,
+      );
+
+  factory CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata.fromJson(
+          Map<String, dynamic> json) =>
+      CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata(
+        repositoryId: json['repository_id'] != null
+            ? SdkPresent(((json['repository_id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        filePath: json['file_path'] != null
+            ? SdkPresent((json['file_path'] as String?)!)
+            : const SdkOmitted(),
+        text: json['text'] != null
+            ? SdkPresent((json['text'] as String?)!)
             : const SdkOmitted(),
         name: json['name'] != null
             ? SdkPresent((json['name'] as String?)!)
             : const SdkOmitted(),
-        description: json.containsKey('description')
-            ? SdkPresent(json['description'] as String?)
-            : const SdkOmitted(),
-        color: json.containsKey('color')
-            ? SdkPresent(json['color'] as String?)
-            : const SdkOmitted(),
-        rationale: json['rationale'] != null
-            ? SdkPresent((json['rationale'] as String?)!)
-            : const SdkOmitted(),
-        suggest: json['suggest'] != null
-            ? SdkPresent((json['suggest'] as bool?)!)
-            : const SdkOmitted(),
-        confidence: json['confidence'] != null
-            ? SdkPresent((json['confidence'] != null
-                ? IssuesUpdateRequestBodyLabelsItemVariant1Confidence.fromJson(
-                    json['confidence'] as String)
-                : null)!)
+        number: json['number'] != null
+            ? SdkPresent(((json['number'] as num?)?.toInt())!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (id) {
+        ...switch (repositoryId) {
           SdkPresent<int>(value: final value) => {
-              'id': value,
+              'repository_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (filePath) {
+          SdkPresent<String>(value: final value) => {
+              'file_path': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (text) {
+          SdkPresent<String>(value: final value) => {
+              'text': value,
             },
           _ => const <String, dynamic>{},
         },
@@ -141,342 +195,327 @@ class IssuesUpdateRequestBodyLabelsItemVariant1 {
             },
           _ => const <String, dynamic>{},
         },
+        ...switch (number) {
+          SdkPresent<int>(value: final value) => {
+              'number': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The type of resource.
+  final SdkOptional<
+          CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType>
+      resourceType;
+
+  /// Metadata specific to the resource type.
+  final SdkOptional<
+          CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata>
+      metadata;
+
+  const CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem(
+      {this.resourceType = const SdkOmitted(),
+      this.metadata = const SdkOmitted()});
+
+  CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem Function(
+      {SdkOptional<
+              CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType>
+          resourceType,
+      SdkOptional<
+              CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata>
+          metadata}) get copyWith => _copyWith;
+
+  CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem _copyWith(
+          {Object? resourceType = sdkOmittedValue,
+          Object? metadata = sdkOmittedValue}) =>
+      CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem(
+        resourceType: identical(resourceType, sdkOmittedValue)
+            ? this.resourceType
+            : resourceType as SdkOptional<
+                CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType>,
+        metadata: identical(metadata, sdkOmittedValue)
+            ? this.metadata
+            : metadata as SdkOptional<
+                CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata>,
+      );
+
+  factory CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem.fromJson(
+          Map<String, dynamic> json) =>
+      CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem(
+        resourceType: json['resource_type'] != null
+            ? SdkPresent((json['resource_type'] != null
+                ? CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType
+                    .fromJson(json['resource_type'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        metadata: json['metadata'] != null
+            ? SdkPresent((json['metadata'] != null
+                ? CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata
+                    .fromJson(json['metadata'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (resourceType) {
+          SdkPresent<
+                CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType>(
+            value: final value
+          ) =>
+            {
+              'resource_type': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (metadata) {
+          SdkPresent<
+                CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata>(
+            value: final value
+          ) =>
+            {
+              'metadata': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class CopilotSpacesCreateForOrgRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The name of the Copilot Space.
+  final String name;
+
+  /// A description of the Copilot Space.
+  final SdkOptional<String> description;
+
+  /// General instructions for the Copilot Space.
+  final SdkOptional<String> generalInstructions;
+
+  /// The base role that determines default permissions for organization members. - `no_access`: No default access (default) - `reader`: Organization members can read the space - `writer`: Organization members can read and edit the space - `admin`: Organization members have full admin access to the space
+  final SdkOptional<CopilotSpacesCreateForOrgRequestBodyBaseRole> baseRole;
+
+  /// Resources to attach to the space.
+  final SdkOptional<
+          List<CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem>>
+      resourcesAttributes;
+
+  const CopilotSpacesCreateForOrgRequestBody(
+      {required this.name,
+      this.description = const SdkOmitted(),
+      this.generalInstructions = const SdkOmitted(),
+      this.baseRole = const SdkOmitted(),
+      this.resourcesAttributes = const SdkOmitted()});
+
+  CopilotSpacesCreateForOrgRequestBody Function(
+      {String name,
+      SdkOptional<String> description,
+      SdkOptional<String> generalInstructions,
+      SdkOptional<CopilotSpacesCreateForOrgRequestBodyBaseRole> baseRole,
+      SdkOptional<
+              List<CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem>>
+          resourcesAttributes}) get copyWith => _copyWith;
+
+  CopilotSpacesCreateForOrgRequestBody _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? generalInstructions = sdkOmittedValue,
+          Object? baseRole = sdkOmittedValue,
+          Object? resourcesAttributes = sdkOmittedValue}) =>
+      CopilotSpacesCreateForOrgRequestBody(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as SdkOptional<String>,
+        generalInstructions: identical(generalInstructions, sdkOmittedValue)
+            ? this.generalInstructions
+            : generalInstructions as SdkOptional<String>,
+        baseRole: identical(baseRole, sdkOmittedValue)
+            ? this.baseRole
+            : baseRole
+                as SdkOptional<CopilotSpacesCreateForOrgRequestBodyBaseRole>,
+        resourcesAttributes: identical(resourcesAttributes, sdkOmittedValue)
+            ? this.resourcesAttributes
+            : resourcesAttributes as SdkOptional<
+                List<
+                    CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem>>,
+      );
+
+  factory CopilotSpacesCreateForOrgRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      CopilotSpacesCreateForOrgRequestBody(
+        name: (json['name'] as String?)!,
+        description: json['description'] != null
+            ? SdkPresent((json['description'] as String?)!)
+            : const SdkOmitted(),
+        generalInstructions: json['general_instructions'] != null
+            ? SdkPresent((json['general_instructions'] as String?)!)
+            : const SdkOmitted(),
+        baseRole: json['base_role'] != null
+            ? SdkPresent((json['base_role'] != null
+                ? CopilotSpacesCreateForOrgRequestBodyBaseRole.fromJson(
+                    json['base_role'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        resourcesAttributes: json['resources_attributes'] != null
+            ? SdkPresent(((json['resources_attributes'] as List?)
+                ?.map((e) =>
+                    CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem
+                        .fromJson(e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        'name': name,
         ...switch (description) {
-          SdkPresent<String?>(value: final value) => {
+          SdkPresent<String>(value: final value) => {
               'description': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (color) {
-          SdkPresent<String?>(value: final value) => {
-              'color': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (rationale) {
+        ...switch (generalInstructions) {
           SdkPresent<String>(value: final value) => {
-              'rationale': value,
+              'general_instructions': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (suggest) {
-          SdkPresent<bool>(value: final value) => {
-              'suggest': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (confidence) {
-          SdkPresent<IssuesUpdateRequestBodyLabelsItemVariant1Confidence>(
+        ...switch (baseRole) {
+          SdkPresent<CopilotSpacesCreateForOrgRequestBodyBaseRole>(
             value: final value
           ) =>
             {
-              'confidence': value.toJson(),
+              'base_role': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (resourcesAttributes) {
+          SdkPresent<
+                List<
+                    CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem>>(
+            value: final value
+          ) =>
+            {
+              'resources_attributes':
+                  value.map((item) => item.toJson()).toList(),
             },
           _ => const <String, dynamic>{},
         },
       };
 }
 
-class IssuesUpdateRequestBodyAssigneesItemVariant1 {
+/// Metadata specific to the resource type.
+class CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemMetadata {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final SdkOptional<String> login;
 
-  /// Optional reasoning for selecting this assignee.
-  final SdkOptional<String> rationale;
+  /// Repository ID for repository or file resources.
+  final SdkOptional<int> repositoryId;
 
-  /// If `true`, the change is stored as a pending suggestion for human review rather than applied directly.
-  final SdkOptional<bool> suggest;
+  /// File path for file resources.
+  final SdkOptional<String> filePath;
 
-  /// The confidence level for this assignee choice.
-  final SdkOptional<IssuesUpdateRequestBodyAssigneesItemVariant1Confidence>
-      confidence;
+  /// Text content for free text resources.
+  final SdkOptional<String> text;
 
-  const IssuesUpdateRequestBodyAssigneesItemVariant1(
-      {this.login = const SdkOmitted(),
-      this.rationale = const SdkOmitted(),
-      this.suggest = const SdkOmitted(),
-      this.confidence = const SdkOmitted()});
+  /// Name for the resource.
+  final SdkOptional<String> name;
 
-  IssuesUpdateRequestBodyAssigneesItemVariant1 Function(
-      {SdkOptional<String> login,
-      SdkOptional<String> rationale,
-      SdkOptional<bool> suggest,
-      SdkOptional<IssuesUpdateRequestBodyAssigneesItemVariant1Confidence>
-          confidence}) get copyWith => _copyWith;
+  /// Issue or PR number.
+  final SdkOptional<int> number;
 
-  IssuesUpdateRequestBodyAssigneesItemVariant1 _copyWith(
-          {Object? login = sdkOmittedValue,
-          Object? rationale = sdkOmittedValue,
-          Object? suggest = sdkOmittedValue,
-          Object? confidence = sdkOmittedValue}) =>
-      IssuesUpdateRequestBodyAssigneesItemVariant1(
-        login: identical(login, sdkOmittedValue)
-            ? this.login
-            : login as SdkOptional<String>,
-        rationale: identical(rationale, sdkOmittedValue)
-            ? this.rationale
-            : rationale as SdkOptional<String>,
-        suggest: identical(suggest, sdkOmittedValue)
-            ? this.suggest
-            : suggest as SdkOptional<bool>,
-        confidence: identical(confidence, sdkOmittedValue)
-            ? this.confidence
-            : confidence as SdkOptional<
-                IssuesUpdateRequestBodyAssigneesItemVariant1Confidence>,
+  const CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemMetadata(
+      {this.repositoryId = const SdkOmitted(),
+      this.filePath = const SdkOmitted(),
+      this.text = const SdkOmitted(),
+      this.name = const SdkOmitted(),
+      this.number = const SdkOmitted()});
+
+  CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemMetadata Function(
+      {SdkOptional<int> repositoryId,
+      SdkOptional<String> filePath,
+      SdkOptional<String> text,
+      SdkOptional<String> name,
+      SdkOptional<int> number}) get copyWith => _copyWith;
+
+  CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemMetadata _copyWith(
+          {Object? repositoryId = sdkOmittedValue,
+          Object? filePath = sdkOmittedValue,
+          Object? text = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? number = sdkOmittedValue}) =>
+      CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemMetadata(
+        repositoryId: identical(repositoryId, sdkOmittedValue)
+            ? this.repositoryId
+            : repositoryId as SdkOptional<int>,
+        filePath: identical(filePath, sdkOmittedValue)
+            ? this.filePath
+            : filePath as SdkOptional<String>,
+        text: identical(text, sdkOmittedValue)
+            ? this.text
+            : text as SdkOptional<String>,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        number: identical(number, sdkOmittedValue)
+            ? this.number
+            : number as SdkOptional<int>,
       );
 
-  factory IssuesUpdateRequestBodyAssigneesItemVariant1.fromJson(
+  factory CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemMetadata.fromJson(
           Map<String, dynamic> json) =>
-      IssuesUpdateRequestBodyAssigneesItemVariant1(
-        login: json['login'] != null
-            ? SdkPresent((json['login'] as String?)!)
+      CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemMetadata(
+        repositoryId: json['repository_id'] != null
+            ? SdkPresent(((json['repository_id'] as num?)?.toInt())!)
             : const SdkOmitted(),
-        rationale: json['rationale'] != null
-            ? SdkPresent((json['rationale'] as String?)!)
+        filePath: json['file_path'] != null
+            ? SdkPresent((json['file_path'] as String?)!)
             : const SdkOmitted(),
-        suggest: json['suggest'] != null
-            ? SdkPresent((json['suggest'] as bool?)!)
+        text: json['text'] != null
+            ? SdkPresent((json['text'] as String?)!)
             : const SdkOmitted(),
-        confidence: json['confidence'] != null
-            ? SdkPresent((json['confidence'] != null
-                ? IssuesUpdateRequestBodyAssigneesItemVariant1Confidence
-                    .fromJson(json['confidence'] as String)
-                : null)!)
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+        number: json['number'] != null
+            ? SdkPresent(((json['number'] as num?)?.toInt())!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (login) {
+        ...switch (repositoryId) {
+          SdkPresent<int>(value: final value) => {
+              'repository_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (filePath) {
           SdkPresent<String>(value: final value) => {
-              'login': value,
+              'file_path': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (rationale) {
+        ...switch (text) {
           SdkPresent<String>(value: final value) => {
-              'rationale': value,
+              'text': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (suggest) {
-          SdkPresent<bool>(value: final value) => {
-              'suggest': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (confidence) {
-          SdkPresent<IssuesUpdateRequestBodyAssigneesItemVariant1Confidence>(
-            value: final value
-          ) =>
-            {
-              'confidence': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-class IssuesUpdateRequestBodyIssueFieldValuesItem {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The ID of the issue field to set
-  final int fieldId;
-
-  /// The value to set for the field. For multi-select fields, provide an array of option names.
-  final dynamic value;
-
-  /// Optional reasoning for setting this field value.
-  final SdkOptional<String> rationale;
-
-  /// If `true`, the change is stored as a pending suggestion for human review rather than applied directly.
-  final SdkOptional<bool> suggest;
-
-  /// The confidence level for this field value choice.
-  final SdkOptional<IssuesUpdateRequestBodyIssueFieldValuesItemConfidence>
-      confidence;
-
-  const IssuesUpdateRequestBodyIssueFieldValuesItem(
-      {required this.fieldId,
-      required this.value,
-      this.rationale = const SdkOmitted(),
-      this.suggest = const SdkOmitted(),
-      this.confidence = const SdkOmitted()});
-
-  IssuesUpdateRequestBodyIssueFieldValuesItem Function(
-      {int fieldId,
-      dynamic value,
-      SdkOptional<String> rationale,
-      SdkOptional<bool> suggest,
-      SdkOptional<IssuesUpdateRequestBodyIssueFieldValuesItemConfidence>
-          confidence}) get copyWith => _copyWith;
-
-  IssuesUpdateRequestBodyIssueFieldValuesItem _copyWith(
-          {Object? fieldId = sdkOmittedValue,
-          Object? value = sdkOmittedValue,
-          Object? rationale = sdkOmittedValue,
-          Object? suggest = sdkOmittedValue,
-          Object? confidence = sdkOmittedValue}) =>
-      IssuesUpdateRequestBodyIssueFieldValuesItem(
-        fieldId:
-            identical(fieldId, sdkOmittedValue) ? this.fieldId : fieldId as int,
-        value:
-            identical(value, sdkOmittedValue) ? this.value : value as dynamic,
-        rationale: identical(rationale, sdkOmittedValue)
-            ? this.rationale
-            : rationale as SdkOptional<String>,
-        suggest: identical(suggest, sdkOmittedValue)
-            ? this.suggest
-            : suggest as SdkOptional<bool>,
-        confidence: identical(confidence, sdkOmittedValue)
-            ? this.confidence
-            : confidence as SdkOptional<
-                IssuesUpdateRequestBodyIssueFieldValuesItemConfidence>,
-      );
-
-  factory IssuesUpdateRequestBodyIssueFieldValuesItem.fromJson(
-          Map<String, dynamic> json) =>
-      IssuesUpdateRequestBodyIssueFieldValuesItem(
-        fieldId: ((json['field_id'] as num?)?.toInt())!,
-        value: (json['value'])!,
-        rationale: json['rationale'] != null
-            ? SdkPresent((json['rationale'] as String?)!)
-            : const SdkOmitted(),
-        suggest: json['suggest'] != null
-            ? SdkPresent((json['suggest'] as bool?)!)
-            : const SdkOmitted(),
-        confidence: json['confidence'] != null
-            ? SdkPresent((json['confidence'] != null
-                ? IssuesUpdateRequestBodyIssueFieldValuesItemConfidence
-                    .fromJson(json['confidence'] as String)
-                : null)!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        'field_id': fieldId,
-        'value': value,
-        ...switch (rationale) {
+        ...switch (name) {
           SdkPresent<String>(value: final value) => {
-              'rationale': value,
+              'name': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (suggest) {
-          SdkPresent<bool>(value: final value) => {
-              'suggest': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (confidence) {
-          SdkPresent<IssuesUpdateRequestBodyIssueFieldValuesItemConfidence>(
-            value: final value
-          ) =>
-            {
-              'confidence': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-/// The issue type with optional metadata.
-class IssuesUpdateRequestBodyTypeVariant1 {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The name of the issue type to associate with this issue, or `null` to remove the current issue type.
-  final SdkOptional<String?> value;
-
-  /// Optional reasoning for selecting this type.
-  final SdkOptional<String> rationale;
-
-  /// If `true`, the change is stored as a pending suggestion for human review rather than applied directly.
-  final SdkOptional<bool> suggest;
-
-  /// The confidence level for this type choice.
-  final SdkOptional<IssuesUpdateRequestBodyTypeVariant1Confidence> confidence;
-
-  const IssuesUpdateRequestBodyTypeVariant1(
-      {this.value = const SdkOmitted(),
-      this.rationale = const SdkOmitted(),
-      this.suggest = const SdkOmitted(),
-      this.confidence = const SdkOmitted()});
-
-  IssuesUpdateRequestBodyTypeVariant1 Function(
-      {SdkOptional<String?> value,
-      SdkOptional<String> rationale,
-      SdkOptional<bool> suggest,
-      SdkOptional<IssuesUpdateRequestBodyTypeVariant1Confidence>
-          confidence}) get copyWith => _copyWith;
-
-  IssuesUpdateRequestBodyTypeVariant1 _copyWith(
-          {Object? value = sdkOmittedValue,
-          Object? rationale = sdkOmittedValue,
-          Object? suggest = sdkOmittedValue,
-          Object? confidence = sdkOmittedValue}) =>
-      IssuesUpdateRequestBodyTypeVariant1(
-        value: identical(value, sdkOmittedValue)
-            ? this.value
-            : value as SdkOptional<String?>,
-        rationale: identical(rationale, sdkOmittedValue)
-            ? this.rationale
-            : rationale as SdkOptional<String>,
-        suggest: identical(suggest, sdkOmittedValue)
-            ? this.suggest
-            : suggest as SdkOptional<bool>,
-        confidence: identical(confidence, sdkOmittedValue)
-            ? this.confidence
-            : confidence
-                as SdkOptional<IssuesUpdateRequestBodyTypeVariant1Confidence>,
-      );
-
-  factory IssuesUpdateRequestBodyTypeVariant1.fromJson(
-          Map<String, dynamic> json) =>
-      IssuesUpdateRequestBodyTypeVariant1(
-        value: json.containsKey('value')
-            ? SdkPresent(json['value'] as String?)
-            : const SdkOmitted(),
-        rationale: json['rationale'] != null
-            ? SdkPresent((json['rationale'] as String?)!)
-            : const SdkOmitted(),
-        suggest: json['suggest'] != null
-            ? SdkPresent((json['suggest'] as bool?)!)
-            : const SdkOmitted(),
-        confidence: json['confidence'] != null
-            ? SdkPresent((json['confidence'] != null
-                ? IssuesUpdateRequestBodyTypeVariant1Confidence.fromJson(
-                    json['confidence'] as String)
-                : null)!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (value) {
-          SdkPresent<String?>(value: final value) => {
-              'value': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (rationale) {
-          SdkPresent<String>(value: final value) => {
-              'rationale': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (suggest) {
-          SdkPresent<bool>(value: final value) => {
-              'suggest': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (confidence) {
-          SdkPresent<IssuesUpdateRequestBodyTypeVariant1Confidence>(
-            value: final value
-          ) =>
-            {
-              'confidence': value.toJson(),
+        ...switch (number) {
+          SdkPresent<int>(value: final value) => {
+              'number': value,
             },
           _ => const <String, dynamic>{},
         },

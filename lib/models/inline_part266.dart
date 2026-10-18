@@ -4,16 +4,17 @@
 part of 'inline.dart';
 
 // Inline operation models (part 266)
-final class AppsListAccountsForPlanStubbedDirection {
+/// The level of privacy this team should have. Editing teams without specifying this parameter leaves `privacy` intact. The options are: **For a non-nested team:** * `secret` - only visible to organization owners and members of this team. * `closed` - visible to all members of this organization. **For a parent or child team:** * `closed` - visible to all members of this organization.
+final class TeamsUpdateLegacyRequestBodyPrivacy {
   final String value;
 
-  const AppsListAccountsForPlanStubbedDirection._(this.value);
+  const TeamsUpdateLegacyRequestBodyPrivacy._(this.value);
 
-  factory AppsListAccountsForPlanStubbedDirection.fromJson(String value) =>
-      AppsListAccountsForPlanStubbedDirection._(value);
+  factory TeamsUpdateLegacyRequestBodyPrivacy.fromJson(String value) =>
+      TeamsUpdateLegacyRequestBodyPrivacy._(value);
 
-  static const asc = AppsListAccountsForPlanStubbedDirection._('asc');
-  static const desc = AppsListAccountsForPlanStubbedDirection._('desc');
+  static const secret = TeamsUpdateLegacyRequestBodyPrivacy._('secret');
+  static const closed = TeamsUpdateLegacyRequestBodyPrivacy._('closed');
 
   String toJson() => value;
 
@@ -22,27 +23,23 @@ final class AppsListAccountsForPlanStubbedDirection {
 
   @override
   bool operator ==(Object other) =>
-      other is AppsListAccountsForPlanStubbedDirection && other.value == value;
+      other is TeamsUpdateLegacyRequestBodyPrivacy && other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-final class BillingGetAllBudgetsOrgScope {
+final class TeamsListMembersLegacyRole {
   final String value;
 
-  const BillingGetAllBudgetsOrgScope._(this.value);
+  const TeamsListMembersLegacyRole._(this.value);
 
-  factory BillingGetAllBudgetsOrgScope.fromJson(String value) =>
-      BillingGetAllBudgetsOrgScope._(value);
+  factory TeamsListMembersLegacyRole.fromJson(String value) =>
+      TeamsListMembersLegacyRole._(value);
 
-  static const enterprise = BillingGetAllBudgetsOrgScope._('enterprise');
-  static const organization = BillingGetAllBudgetsOrgScope._('organization');
-  static const repository = BillingGetAllBudgetsOrgScope._('repository');
-  static const costCenter = BillingGetAllBudgetsOrgScope._('cost_center');
-  static const multiUserCustomer =
-      BillingGetAllBudgetsOrgScope._('multi_user_customer');
-  static const user = BillingGetAllBudgetsOrgScope._('user');
+  static const member = TeamsListMembersLegacyRole._('member');
+  static const maintainer = TeamsListMembersLegacyRole._('maintainer');
+  static const all = TeamsListMembersLegacyRole._('all');
 
   String toJson() => value;
 
@@ -51,31 +48,26 @@ final class BillingGetAllBudgetsOrgScope {
 
   @override
   bool operator ==(Object other) =>
-      other is BillingGetAllBudgetsOrgScope && other.value == value;
+      other is TeamsListMembersLegacyRole && other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// The scope of the budget for this organization. - `organization`: Apply the budget to the organization. - `repository`: Apply the budget to a specific repository in the organization. - `multi_user_customer`: Apply a universal budget to all users in the organization. - `user`: Apply the budget to a single user in the organization. `user` and `multi_user_customer` scopes are only supported when `budget_product_sku` is `ai_credits` or `premium_requests`.
-final class BillingCreateOrganizationBudgetRequestBodyBudgetScope {
+/// The role that this user should have in the team.
+final class TeamsAddOrUpdateMembershipForUserLegacyRequestBodyRole {
   final String value;
 
-  const BillingCreateOrganizationBudgetRequestBodyBudgetScope._(this.value);
+  const TeamsAddOrUpdateMembershipForUserLegacyRequestBodyRole._(this.value);
 
-  factory BillingCreateOrganizationBudgetRequestBodyBudgetScope.fromJson(
+  factory TeamsAddOrUpdateMembershipForUserLegacyRequestBodyRole.fromJson(
           String value) =>
-      BillingCreateOrganizationBudgetRequestBodyBudgetScope._(value);
+      TeamsAddOrUpdateMembershipForUserLegacyRequestBodyRole._(value);
 
-  static const organization =
-      BillingCreateOrganizationBudgetRequestBodyBudgetScope._('organization');
-  static const repository =
-      BillingCreateOrganizationBudgetRequestBodyBudgetScope._('repository');
-  static const multiUserCustomer =
-      BillingCreateOrganizationBudgetRequestBodyBudgetScope._(
-          'multi_user_customer');
-  static const user =
-      BillingCreateOrganizationBudgetRequestBodyBudgetScope._('user');
+  static const member =
+      TeamsAddOrUpdateMembershipForUserLegacyRequestBodyRole._('member');
+  static const maintainer =
+      TeamsAddOrUpdateMembershipForUserLegacyRequestBodyRole._('maintainer');
 
   String toJson() => value;
 
@@ -84,140 +76,30 @@ final class BillingCreateOrganizationBudgetRequestBodyBudgetScope {
 
   @override
   bool operator ==(Object other) =>
-      other is BillingCreateOrganizationBudgetRequestBodyBudgetScope &&
+      other is TeamsAddOrUpdateMembershipForUserLegacyRequestBodyRole &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-final class BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant0 {
+/// The permission to grant the team on this repository. If no permission is specified, the team's `permission` attribute will be used to determine what permission to grant the team on this repository.
+final class TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission {
   final String value;
 
-  const BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant0._(
+  const TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission._(
       this.value);
 
-  factory BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant0.fromJson(
+  factory TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission.fromJson(
           String value) =>
-      BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant0._(value);
+      TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission._(value);
 
-  static const bundlepricing =
-      BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant0._(
-          'BundlePricing');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant0 &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-final class BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant1 {
-  final String value;
-
-  const BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant1._(
-      this.value);
-
-  factory BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant1.fromJson(
-          String value) =>
-      BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant1._(value);
-
-  static const productpricing =
-      BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant1._(
-          'ProductPricing');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant1 &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-final class BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant2 {
-  final String value;
-
-  const BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant2._(
-      this.value);
-
-  factory BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant2.fromJson(
-          String value) =>
-      BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant2._(value);
-
-  static const skupricing =
-      BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant2._(
-          'SkuPricing');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant2 &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-final class BillingUpdateBudgetOrgRequestBodyExpiresAtVariant1 {
-  final int value;
-
-  const BillingUpdateBudgetOrgRequestBodyExpiresAtVariant1._(this.value);
-
-  factory BillingUpdateBudgetOrgRequestBodyExpiresAtVariant1.fromJson(
-          int value) =>
-      BillingUpdateBudgetOrgRequestBodyExpiresAtVariant1._(value);
-
-  static const v0 = BillingUpdateBudgetOrgRequestBodyExpiresAtVariant1._(0);
-
-  int toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is BillingUpdateBudgetOrgRequestBodyExpiresAtVariant1 &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Default permission level members have for organization repositories.
-final class OrgsUpdateRequestBodyDefaultRepositoryPermission {
-  final String value;
-
-  const OrgsUpdateRequestBodyDefaultRepositoryPermission._(this.value);
-
-  factory OrgsUpdateRequestBodyDefaultRepositoryPermission.fromJson(
-          String value) =>
-      OrgsUpdateRequestBodyDefaultRepositoryPermission._(value);
-
-  static const read =
-      OrgsUpdateRequestBodyDefaultRepositoryPermission._('read');
-  static const write =
-      OrgsUpdateRequestBodyDefaultRepositoryPermission._('write');
+  static const pull =
+      TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission._('pull');
+  static const push =
+      TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission._('push');
   static const admin =
-      OrgsUpdateRequestBodyDefaultRepositoryPermission._('admin');
-  static const none =
-      OrgsUpdateRequestBodyDefaultRepositoryPermission._('none');
+      TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission._('admin');
 
   String toJson() => value;
 
@@ -226,62 +108,103 @@ final class OrgsUpdateRequestBodyDefaultRepositoryPermission {
 
   @override
   bool operator ==(Object other) =>
-      other is OrgsUpdateRequestBodyDefaultRepositoryPermission &&
+      other is TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Specifies which types of repositories non-admin organization members can create. `private` is only available to repositories that are part of an organization on GitHub Enterprise Cloud. **Note:** This parameter is closing down and will be removed in the future. Its return value ignores internal repositories. Using this parameter overrides values set in `members_can_create_repositories`. See the parameter deprecation notice in the operation description for details.
-final class OrgsUpdateRequestBodyMembersAllowedRepositoryCreationType {
+/// The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is closing down.
+final class CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo {
   final String value;
 
-  const OrgsUpdateRequestBodyMembersAllowedRepositoryCreationType._(this.value);
-
-  factory OrgsUpdateRequestBodyMembersAllowedRepositoryCreationType.fromJson(
-          String value) =>
-      OrgsUpdateRequestBodyMembersAllowedRepositoryCreationType._(value);
-
-  static const all =
-      OrgsUpdateRequestBodyMembersAllowedRepositoryCreationType._('all');
-  static const private =
-      OrgsUpdateRequestBodyMembersAllowedRepositoryCreationType._('private');
-  static const none =
-      OrgsUpdateRequestBodyMembersAllowedRepositoryCreationType._('none');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is OrgsUpdateRequestBodyMembersAllowedRepositoryCreationType &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// CodeQL query suite to be used. If you specify the `query_suite` parameter, the default setup will be configured with this query suite only on all repositories that didn't have default setup already configured. It will not change the query suite on repositories that already have default setup configured. If you don't specify any `query_suite` in your request, the preferred query suite of the organization will be applied.
-final class OrgsEnableOrDisableSecurityProductOnAllOrgReposRequestBodyQuerySuite {
-  final String value;
-
-  const OrgsEnableOrDisableSecurityProductOnAllOrgReposRequestBodyQuerySuite._(
+  const CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo._(
       this.value);
 
-  factory OrgsEnableOrDisableSecurityProductOnAllOrgReposRequestBodyQuerySuite.fromJson(
+  factory CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo.fromJson(
           String value) =>
-      OrgsEnableOrDisableSecurityProductOnAllOrgReposRequestBodyQuerySuite._(
+      CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo._(value);
+
+  static const europewest =
+      CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo._(
+          'EuropeWest');
+  static const southeastasia =
+      CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo._(
+          'SoutheastAsia');
+  static const useast =
+      CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo._('UsEast');
+  static const uswest =
+      CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo._('UsWest');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is closing down.
+final class CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo {
+  final String value;
+
+  const CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo._(
+      this.value);
+
+  factory CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo.fromJson(
+          String value) =>
+      CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo._(value);
+
+  static const europewest =
+      CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo._(
+          'EuropeWest');
+  static const southeastasia =
+      CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo._(
+          'SoutheastAsia');
+  static const useast =
+      CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo._('UsEast');
+  static const uswest =
+      CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo._('UsWest');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Denotes whether an email is publicly visible.
+final class UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility {
+  final String value;
+
+  const UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility._(
+      this.value);
+
+  factory UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility.fromJson(
+          String value) =>
+      UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility._(
           value);
 
-  static const default_ =
-      OrgsEnableOrDisableSecurityProductOnAllOrgReposRequestBodyQuerySuite._(
-          'default');
-  static const extended =
-      OrgsEnableOrDisableSecurityProductOnAllOrgReposRequestBodyQuerySuite._(
-          'extended');
+  static const public =
+      UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility._(
+          'public');
+  static const private =
+      UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility._(
+          'private');
 
   String toJson() => value;
 
@@ -291,96 +214,102 @@ final class OrgsEnableOrDisableSecurityProductOnAllOrgReposRequestBodyQuerySuite
   @override
   bool operator ==(Object other) =>
       other
-          is OrgsEnableOrDisableSecurityProductOnAllOrgReposRequestBodyQuerySuite &&
+          is UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// The source of the runner image.
-final class ActionsCreateHostedRunnerForOrgRequestBodyImageSource {
+/// The default value for a merge commit message. - `PR_TITLE` - default to the pull request's title. - `PR_BODY` - default to the pull request's body. - `BLANK` - default to a blank commit message.
+final class AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitMessage {
   final String value;
 
-  const ActionsCreateHostedRunnerForOrgRequestBodyImageSource._(this.value);
-
-  factory ActionsCreateHostedRunnerForOrgRequestBodyImageSource.fromJson(
-          String value) =>
-      ActionsCreateHostedRunnerForOrgRequestBodyImageSource._(value);
-
-  static const github =
-      ActionsCreateHostedRunnerForOrgRequestBodyImageSource._('github');
-  static const partner =
-      ActionsCreateHostedRunnerForOrgRequestBodyImageSource._('partner');
-  static const custom =
-      ActionsCreateHostedRunnerForOrgRequestBodyImageSource._('custom');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is ActionsCreateHostedRunnerForOrgRequestBodyImageSource &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The source type of the runner image to use. Must match the source of the image specified by `image_id`. Can be one of `github`, `partner`, or `custom`.
-final class ActionsUpdateHostedRunnerForOrgRequestBodyImageSource {
-  final String value;
-
-  const ActionsUpdateHostedRunnerForOrgRequestBodyImageSource._(this.value);
-
-  factory ActionsUpdateHostedRunnerForOrgRequestBodyImageSource.fromJson(
-          String value) =>
-      ActionsUpdateHostedRunnerForOrgRequestBodyImageSource._(value);
-
-  static const github =
-      ActionsUpdateHostedRunnerForOrgRequestBodyImageSource._('github');
-  static const partner =
-      ActionsUpdateHostedRunnerForOrgRequestBodyImageSource._('partner');
-  static const custom =
-      ActionsUpdateHostedRunnerForOrgRequestBodyImageSource._('custom');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is ActionsUpdateHostedRunnerForOrgRequestBodyImageSource &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The policy that controls whether self-hosted runners can be used in the organization
-final class ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBodyEnabledRepositories {
-  final String value;
-
-  const ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBodyEnabledRepositories._(
+  const AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitMessage._(
       this.value);
 
-  factory ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBodyEnabledRepositories.fromJson(
+  factory AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitMessage.fromJson(
           String value) =>
-      ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBodyEnabledRepositories
+      AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitMessage
+          ._(value);
+
+  static const prBody =
+      AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitMessage
+          ._('PR_BODY');
+  static const prTitle =
+      AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitMessage
+          ._('PR_TITLE');
+  static const blank =
+      AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitMessage
+          ._('BLANK');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitMessage &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The default value for a merge commit title. - `PR_TITLE` - default to the pull request's title. - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
+final class AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitTitle {
+  final String value;
+
+  const AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitTitle._(
+      this.value);
+
+  factory AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitTitle.fromJson(
+          String value) =>
+      AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitTitle
+          ._(value);
+
+  static const prTitle =
+      AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitTitle
+          ._('PR_TITLE');
+  static const mergeMessage =
+      AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitTitle
+          ._('MERGE_MESSAGE');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemMergeCommitTitle &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The policy controlling who can create pull requests: all or collaborators_only.
+final class AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemPullRequestCreationPolicy {
+  final String value;
+
+  const AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemPullRequestCreationPolicy._(
+      this.value);
+
+  factory AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemPullRequestCreationPolicy.fromJson(
+          String value) =>
+      AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemPullRequestCreationPolicy
           ._(value);
 
   static const all =
-      ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBodyEnabledRepositories
+      AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemPullRequestCreationPolicy
           ._('all');
-  static const selected =
-      ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBodyEnabledRepositories
-          ._('selected');
-  static const none =
-      ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBodyEnabledRepositories
-          ._('none');
+  static const collaboratorsOnly =
+      AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemPullRequestCreationPolicy
+          ._('collaborators_only');
 
   String toJson() => value;
 
@@ -390,7 +319,78 @@ final class ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBodyEnabled
   @override
   bool operator ==(Object other) =>
       other
-          is ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBodyEnabledRepositories &&
+          is AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemPullRequestCreationPolicy &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The default value for a squash merge commit message: - `PR_BODY` - default to the pull request's body. - `COMMIT_MESSAGES` - default to the branch's commit messages. - `BLANK` - default to a blank commit message.
+final class AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitMessage {
+  final String value;
+
+  const AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitMessage._(
+      this.value);
+
+  factory AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitMessage.fromJson(
+          String value) =>
+      AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitMessage
+          ._(value);
+
+  static const prBody =
+      AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitMessage
+          ._('PR_BODY');
+  static const commitMessages =
+      AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitMessage
+          ._('COMMIT_MESSAGES');
+  static const blank =
+      AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitMessage
+          ._('BLANK');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitMessage &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The default value for a squash merge commit title: - `PR_TITLE` - default to the pull request's title. - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
+final class AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitTitle {
+  final String value;
+
+  const AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitTitle._(
+      this.value);
+
+  factory AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitTitle.fromJson(
+          String value) =>
+      AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitTitle
+          ._(value);
+
+  static const prTitle =
+      AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitTitle
+          ._('PR_TITLE');
+  static const commitOrPrTitle =
+      AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitTitle
+          ._('COMMIT_OR_PR_TITLE');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItemSquashMergeCommitTitle &&
       other.value == value;
 
   @override

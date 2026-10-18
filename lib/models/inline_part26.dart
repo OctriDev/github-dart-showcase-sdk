@@ -4,6 +4,137 @@
 part of 'inline.dart';
 
 // Inline operation models (part 26)
+/// The default value for a merge commit title. - `PR_TITLE` - default to the pull request's title. - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
+final class NullableRepositoryWebhooksTemplateRepositoryMergeCommitTitle {
+  final String value;
+
+  const NullableRepositoryWebhooksTemplateRepositoryMergeCommitTitle._(
+      this.value);
+
+  factory NullableRepositoryWebhooksTemplateRepositoryMergeCommitTitle.fromJson(
+          String value) =>
+      NullableRepositoryWebhooksTemplateRepositoryMergeCommitTitle._(value);
+
+  static const prTitle =
+      NullableRepositoryWebhooksTemplateRepositoryMergeCommitTitle._(
+          'PR_TITLE');
+  static const mergeMessage =
+      NullableRepositoryWebhooksTemplateRepositoryMergeCommitTitle._(
+          'MERGE_MESSAGE');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is NullableRepositoryWebhooksTemplateRepositoryMergeCommitTitle &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The default value for a squash merge commit message: - `PR_BODY` - default to the pull request's body. - `COMMIT_MESSAGES` - default to the branch's commit messages. - `BLANK` - default to a blank commit message.
+final class NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage {
+  final String value;
+
+  const NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage._(
+      this.value);
+
+  factory NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.fromJson(
+          String value) =>
+      NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage._(
+          value);
+
+  static const prBody =
+      NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage._(
+          'PR_BODY');
+  static const commitMessages =
+      NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage._(
+          'COMMIT_MESSAGES');
+  static const blank =
+      NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage._(
+          'BLANK');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitMessage &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The default value for a squash merge commit title: - `PR_TITLE` - default to the pull request's title. - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
+final class NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitTitle {
+  final String value;
+
+  const NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitTitle._(
+      this.value);
+
+  factory NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitTitle.fromJson(
+          String value) =>
+      NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitTitle._(
+          value);
+
+  static const prTitle =
+      NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitTitle._(
+          'PR_TITLE');
+  static const commitOrPrTitle =
+      NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitTitle._(
+          'COMMIT_OR_PR_TITLE');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is NullableRepositoryWebhooksTemplateRepositorySquashMergeCommitTitle &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Describe whether all repositories have been selected or there's a selection involved
+final class NullableScopedInstallationRepositorySelection {
+  final String value;
+
+  const NullableScopedInstallationRepositorySelection._(this.value);
+
+  factory NullableScopedInstallationRepositorySelection.fromJson(
+          String value) =>
+      NullableScopedInstallationRepositorySelection._(value);
+
+  static const all = NullableScopedInstallationRepositorySelection._('all');
+  static const selected =
+      NullableScopedInstallationRepositorySelection._('selected');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is NullableScopedInstallationRepositorySelection &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
 /// The ownership type of the team
 final class NullableTeamSimpleType {
   final String value;
@@ -226,123 +357,6 @@ final class OrganizationCreateIssueTypeColor {
   @override
   bool operator ==(Object other) =>
       other is OrganizationCreateIssueTypeColor && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Visibility of a secret
-final class OrganizationDependabotSecretVisibility {
-  final String value;
-
-  const OrganizationDependabotSecretVisibility._(this.value);
-
-  factory OrganizationDependabotSecretVisibility.fromJson(String value) =>
-      OrganizationDependabotSecretVisibility._(value);
-
-  static const all = OrganizationDependabotSecretVisibility._('all');
-  static const private = OrganizationDependabotSecretVisibility._('private');
-  static const selected = OrganizationDependabotSecretVisibility._('selected');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is OrganizationDependabotSecretVisibility && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Type of repository selection requested.
-final class OrganizationProgrammaticAccessGrantRepositorySelection {
-  final String value;
-
-  const OrganizationProgrammaticAccessGrantRepositorySelection._(this.value);
-
-  factory OrganizationProgrammaticAccessGrantRepositorySelection.fromJson(
-          String value) =>
-      OrganizationProgrammaticAccessGrantRepositorySelection._(value);
-
-  static const none =
-      OrganizationProgrammaticAccessGrantRepositorySelection._('none');
-  static const all =
-      OrganizationProgrammaticAccessGrantRepositorySelection._('all');
-  static const subset =
-      OrganizationProgrammaticAccessGrantRepositorySelection._('subset');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is OrganizationProgrammaticAccessGrantRepositorySelection &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Type of repository selection requested.
-final class OrganizationProgrammaticAccessGrantRequestRepositorySelection {
-  final String value;
-
-  const OrganizationProgrammaticAccessGrantRequestRepositorySelection._(
-      this.value);
-
-  factory OrganizationProgrammaticAccessGrantRequestRepositorySelection.fromJson(
-          String value) =>
-      OrganizationProgrammaticAccessGrantRequestRepositorySelection._(value);
-
-  static const none =
-      OrganizationProgrammaticAccessGrantRequestRepositorySelection._('none');
-  static const all =
-      OrganizationProgrammaticAccessGrantRequestRepositorySelection._('all');
-  static const subset =
-      OrganizationProgrammaticAccessGrantRequestRepositorySelection._('subset');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is OrganizationProgrammaticAccessGrantRequestRepositorySelection &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The system role from which this role inherits permissions.
-final class OrganizationRoleBaseRole {
-  final String value;
-
-  const OrganizationRoleBaseRole._(this.value);
-
-  factory OrganizationRoleBaseRole.fromJson(String value) =>
-      OrganizationRoleBaseRole._(value);
-
-  static const read = OrganizationRoleBaseRole._('read');
-  static const triage = OrganizationRoleBaseRole._('triage');
-  static const write = OrganizationRoleBaseRole._('write');
-  static const maintain = OrganizationRoleBaseRole._('maintain');
-  static const admin = OrganizationRoleBaseRole._('admin');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is OrganizationRoleBaseRole && other.value == value;
 
   @override
   int get hashCode => value.hashCode;

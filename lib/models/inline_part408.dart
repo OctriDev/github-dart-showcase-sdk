@@ -4,156 +4,438 @@
 part of 'inline.dart';
 
 // Inline operation models (part 408)
-/// Use the `status` property to enable or disable secret scanning delegated alert dismissal for this repository.
-class ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedAlertDismissal {
+class GitCreateCommitRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Can be `enabled` or `disabled`.
-  final SdkOptional<String> status;
+  /// The commit message
+  final String message;
 
-  const ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedAlertDismissal(
-      {this.status = const SdkOmitted()});
+  /// The SHA of the tree object this commit points to
+  final String tree;
 
-  ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedAlertDismissal
-      Function({SdkOptional<String> status}) get copyWith => _copyWith;
+  /// The full SHAs of the commits that were the parents of this commit. If omitted or empty, the commit will be written as a root commit. For a single parent, an array of one SHA should be provided; for a merge commit, an array of more than one should be provided.
+  final SdkOptional<List<String>> parents;
 
-  ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedAlertDismissal
-      _copyWith({Object? status = sdkOmittedValue}) =>
-          ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedAlertDismissal(
-            status: identical(status, sdkOmittedValue)
-                ? this.status
-                : status as SdkOptional<String>,
-          );
+  /// Information about the author of the commit. By default, the `author` will be the authenticated user and the current date. See the `author` and `committer` object below for details.
+  final SdkOptional<GitCreateCommitRequestBodyAuthor> author;
 
-  factory ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedAlertDismissal.fromJson(
-          Map<String, dynamic> json) =>
-      ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedAlertDismissal(
-        status: json['status'] != null
-            ? SdkPresent((json['status'] as String?)!)
+  /// Information about the person who is making the commit. By default, `committer` will use the information set in `author`. See the `author` and `committer` object below for details.
+  final SdkOptional<GitCreateCommitRequestBodyCommitter> committer;
+
+  /// The [PGP signature](https://en.wikipedia.org/wiki/Pretty_Good_Privacy) of the commit. GitHub adds the signature to the `gpgsig` header of the created commit. For a commit signature to be verifiable by Git or GitHub, it must be an ASCII-armored detached PGP signature over the string commit as it would be written to the object database. To pass a `signature` parameter, you need to first manually create a valid PGP signature, which can be complicated. You may find it easier to [use the command line](https://git-scm.com/book/id/v2/Git-Tools-Signing-Your-Work) to create signed commits.
+  final SdkOptional<String> signature;
+
+  const GitCreateCommitRequestBody(
+      {required this.message,
+      required this.tree,
+      this.parents = const SdkOmitted(),
+      this.author = const SdkOmitted(),
+      this.committer = const SdkOmitted(),
+      this.signature = const SdkOmitted()});
+
+  GitCreateCommitRequestBody Function(
+      {String message,
+      String tree,
+      SdkOptional<List<String>> parents,
+      SdkOptional<GitCreateCommitRequestBodyAuthor> author,
+      SdkOptional<GitCreateCommitRequestBodyCommitter> committer,
+      SdkOptional<String> signature}) get copyWith => _copyWith;
+
+  GitCreateCommitRequestBody _copyWith(
+          {Object? message = sdkOmittedValue,
+          Object? tree = sdkOmittedValue,
+          Object? parents = sdkOmittedValue,
+          Object? author = sdkOmittedValue,
+          Object? committer = sdkOmittedValue,
+          Object? signature = sdkOmittedValue}) =>
+      GitCreateCommitRequestBody(
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+        tree: identical(tree, sdkOmittedValue) ? this.tree : tree as String,
+        parents: identical(parents, sdkOmittedValue)
+            ? this.parents
+            : parents as SdkOptional<List<String>>,
+        author: identical(author, sdkOmittedValue)
+            ? this.author
+            : author as SdkOptional<GitCreateCommitRequestBodyAuthor>,
+        committer: identical(committer, sdkOmittedValue)
+            ? this.committer
+            : committer as SdkOptional<GitCreateCommitRequestBodyCommitter>,
+        signature: identical(signature, sdkOmittedValue)
+            ? this.signature
+            : signature as SdkOptional<String>,
+      );
+
+  factory GitCreateCommitRequestBody.fromJson(Map<String, dynamic> json) =>
+      GitCreateCommitRequestBody(
+        message: (json['message'] as String?)!,
+        tree: (json['tree'] as String?)!,
+        parents: json['parents'] != null
+            ? SdkPresent(
+                ((json['parents'] as List?)?.map((e) => e as String).toList())!)
+            : const SdkOmitted(),
+        author: json['author'] != null
+            ? SdkPresent((json['author'] != null
+                ? GitCreateCommitRequestBodyAuthor.fromJson(
+                    json['author'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        committer: json['committer'] != null
+            ? SdkPresent((json['committer'] != null
+                ? GitCreateCommitRequestBodyCommitter.fromJson(
+                    json['committer'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        signature: json['signature'] != null
+            ? SdkPresent((json['signature'] as String?)!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (status) {
+        'message': message,
+        'tree': tree,
+        ...switch (parents) {
+          SdkPresent<List<String>>(value: final value) => {
+              'parents': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (author) {
+          SdkPresent<GitCreateCommitRequestBodyAuthor>(value: final value) => {
+              'author': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (committer) {
+          SdkPresent<GitCreateCommitRequestBodyCommitter>(value: final value) =>
+            {
+              'committer': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (signature) {
           SdkPresent<String>(value: final value) => {
-              'status': value,
+              'signature': value,
             },
           _ => const <String, dynamic>{},
         },
       };
 }
 
-/// Use the `status` property to enable or disable secret scanning delegated bypass for this repository.
-class ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypass {
+class GitCreateRefRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Can be `enabled` or `disabled`.
-  final SdkOptional<String> status;
+  /// The name of the fully qualified reference (ie: `refs/heads/master`). If it doesn't start with 'refs' and have at least two slashes, it will be rejected.
+  final String ref;
 
-  const ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypass(
-      {this.status = const SdkOmitted()});
+  /// The SHA1 value for this reference.
+  final String sha;
 
-  ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypass
-      Function({SdkOptional<String> status}) get copyWith => _copyWith;
+  const GitCreateRefRequestBody({required this.ref, required this.sha});
 
-  ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypass
-      _copyWith({Object? status = sdkOmittedValue}) =>
-          ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypass(
-            status: identical(status, sdkOmittedValue)
-                ? this.status
-                : status as SdkOptional<String>,
-          );
+  GitCreateRefRequestBody Function({String ref, String sha}) get copyWith =>
+      _copyWith;
 
-  factory ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypass.fromJson(
-          Map<String, dynamic> json) =>
-      ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypass(
-        status: json['status'] != null
-            ? SdkPresent((json['status'] as String?)!)
+  GitCreateRefRequestBody _copyWith(
+          {Object? ref = sdkOmittedValue, Object? sha = sdkOmittedValue}) =>
+      GitCreateRefRequestBody(
+        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+      );
+
+  factory GitCreateRefRequestBody.fromJson(Map<String, dynamic> json) =>
+      GitCreateRefRequestBody(
+        ref: (json['ref'] as String?)!,
+        sha: (json['sha'] as String?)!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'ref': ref,
+        'sha': sha,
+      };
+}
+
+class GitUpdateRefRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The SHA1 value to set this reference to
+  final String sha;
+
+  /// Indicates whether to force the update or to make sure the update is a fast-forward update. Leaving this out or setting it to `false` will make sure you're not overwriting work.
+  final SdkOptional<bool> force;
+
+  const GitUpdateRefRequestBody(
+      {required this.sha, this.force = const SdkOmitted()});
+
+  GitUpdateRefRequestBody Function({String sha, SdkOptional<bool> force})
+      get copyWith => _copyWith;
+
+  GitUpdateRefRequestBody _copyWith(
+          {Object? sha = sdkOmittedValue, Object? force = sdkOmittedValue}) =>
+      GitUpdateRefRequestBody(
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+        force: identical(force, sdkOmittedValue)
+            ? this.force
+            : force as SdkOptional<bool>,
+      );
+
+  factory GitUpdateRefRequestBody.fromJson(Map<String, dynamic> json) =>
+      GitUpdateRefRequestBody(
+        sha: (json['sha'] as String?)!,
+        force: json['force'] != null
+            ? SdkPresent((json['force'] as bool?)!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (status) {
-          SdkPresent<String>(value: final value) => {
-              'status': value,
+        'sha': sha,
+        ...switch (force) {
+          SdkPresent<bool>(value: final value) => {
+              'force': value,
             },
           _ => const <String, dynamic>{},
         },
       };
 }
 
-class ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem {
+/// An object with information about the individual creating the tag.
+class GitCreateTagRequestBodyTagger {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// The ID of the team or role selected as a bypass reviewer
-  final int reviewerId;
+  /// The name of the author of the tag
+  final String name;
 
-  /// The type of the bypass reviewer
-  final ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemReviewerType
-      reviewerType;
+  /// The email of the author of the tag
+  final String email;
 
-  /// The bypass mode for the reviewer
-  final SdkOptional<
-          ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode>
-      mode;
+  /// When this object was tagged. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
+  final SdkOptional<String> date;
 
-  const ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem(
-      {required this.reviewerId,
-      required this.reviewerType,
-      this.mode = const SdkOmitted()});
+  const GitCreateTagRequestBodyTagger(
+      {required this.name,
+      required this.email,
+      this.date = const SdkOmitted()});
 
-  ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem Function(
-      {int reviewerId,
-      ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemReviewerType
-          reviewerType,
-      SdkOptional<
-              ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode>
-          mode}) get copyWith => _copyWith;
+  GitCreateTagRequestBodyTagger Function(
+      {String name,
+      String email,
+      SdkOptional<String> date}) get copyWith => _copyWith;
 
-  ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem
-      _copyWith(
-              {Object? reviewerId = sdkOmittedValue,
-              Object? reviewerType = sdkOmittedValue,
-              Object? mode = sdkOmittedValue}) =>
-          ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem(
-            reviewerId: identical(reviewerId, sdkOmittedValue)
-                ? this.reviewerId
-                : reviewerId as int,
-            reviewerType: identical(reviewerType, sdkOmittedValue)
-                ? this.reviewerType
-                : reviewerType
-                    as ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemReviewerType,
-            mode: identical(mode, sdkOmittedValue)
-                ? this.mode
-                : mode as SdkOptional<
-                    ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode>,
-          );
+  GitCreateTagRequestBodyTagger _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? email = sdkOmittedValue,
+          Object? date = sdkOmittedValue}) =>
+      GitCreateTagRequestBodyTagger(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        email: identical(email, sdkOmittedValue) ? this.email : email as String,
+        date: identical(date, sdkOmittedValue)
+            ? this.date
+            : date as SdkOptional<String>,
+      );
 
-  factory ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem.fromJson(
-          Map<String, dynamic> json) =>
-      ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem(
-        reviewerId: ((json['reviewer_id'] as num?)?.toInt())!,
-        reviewerType: (json['reviewer_type'] != null
-            ? ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemReviewerType
-                .fromJson(json['reviewer_type'] as String)
+  factory GitCreateTagRequestBodyTagger.fromJson(Map<String, dynamic> json) =>
+      GitCreateTagRequestBodyTagger(
+        name: (json['name'] as String?)!,
+        email: (json['email'] as String?)!,
+        date: json['date'] != null
+            ? SdkPresent((json['date'] as String?)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        'name': name,
+        'email': email,
+        ...switch (date) {
+          SdkPresent<String>(value: final value) => {
+              'date': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class GitCreateTagRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The tag's name. This is typically a version (e.g., "v0.0.1").
+  final String tag;
+
+  /// The tag message.
+  final String message;
+
+  /// The SHA of the git object this is tagging.
+  final String object;
+
+  /// The type of the object we're tagging. Normally this is a `commit` but it can also be a `tree` or a `blob`.
+  final GitCreateTagRequestBodyType type_;
+
+  /// An object with information about the individual creating the tag.
+  final SdkOptional<GitCreateTagRequestBodyTagger> tagger;
+
+  const GitCreateTagRequestBody(
+      {required this.tag,
+      required this.message,
+      required this.object,
+      required this.type_,
+      this.tagger = const SdkOmitted()});
+
+  GitCreateTagRequestBody Function(
+          {String tag,
+          String message,
+          String object,
+          GitCreateTagRequestBodyType type_,
+          SdkOptional<GitCreateTagRequestBodyTagger> tagger})
+      get copyWith => _copyWith;
+
+  GitCreateTagRequestBody _copyWith(
+          {Object? tag = sdkOmittedValue,
+          Object? message = sdkOmittedValue,
+          Object? object = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? tagger = sdkOmittedValue}) =>
+      GitCreateTagRequestBody(
+        tag: identical(tag, sdkOmittedValue) ? this.tag : tag as String,
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+        object:
+            identical(object, sdkOmittedValue) ? this.object : object as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as GitCreateTagRequestBodyType,
+        tagger: identical(tagger, sdkOmittedValue)
+            ? this.tagger
+            : tagger as SdkOptional<GitCreateTagRequestBodyTagger>,
+      );
+
+  factory GitCreateTagRequestBody.fromJson(Map<String, dynamic> json) =>
+      GitCreateTagRequestBody(
+        tag: (json['tag'] as String?)!,
+        message: (json['message'] as String?)!,
+        object: (json['object'] as String?)!,
+        type_: (json['type'] != null
+            ? GitCreateTagRequestBodyType.fromJson(json['type'] as String)
             : null)!,
-        mode: json['mode'] != null
-            ? SdkPresent((json['mode'] != null
-                ? ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode
-                    .fromJson(json['mode'] as String)
+        tagger: json['tagger'] != null
+            ? SdkPresent((json['tagger'] != null
+                ? GitCreateTagRequestBodyTagger.fromJson(
+                    json['tagger'] as Map<String, dynamic>)
                 : null)!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        'reviewer_id': reviewerId,
-        'reviewer_type': reviewerType.toJson(),
+        'tag': tag,
+        'message': message,
+        'object': object,
+        'type': type_.toJson(),
+        ...switch (tagger) {
+          SdkPresent<GitCreateTagRequestBodyTagger>(value: final value) => {
+              'tagger': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class GitCreateTreeRequestBodyTreeItem {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The file referenced in the tree.
+  final SdkOptional<String> path;
+
+  /// The file mode; one of `100644` for file (blob), `100755` for executable (blob), `040000` for subdirectory (tree), `160000` for submodule (commit), or `120000` for a blob that specifies the path of a symlink.
+  final SdkOptional<GitCreateTreeRequestBodyTreeItemMode> mode;
+
+  /// Either `blob`, `tree`, or `commit`.
+  final SdkOptional<GitCreateTreeRequestBodyTreeItemType> type_;
+
+  /// The SHA1 checksum ID of the object in the tree. Also called `tree.sha`. If the value is `null` then the file will be deleted. **Note:** Use either `tree.sha` or `content` to specify the contents of the entry. Using both `tree.sha` and `content` will return an error.
+  final SdkOptional<String?> sha;
+
+  /// The content you want this file to have. GitHub will write this blob out and use that SHA for this entry. Use either this, or `tree.sha`. **Note:** Use either `tree.sha` or `content` to specify the contents of the entry. Using both `tree.sha` and `content` will return an error.
+  final SdkOptional<String> content;
+
+  const GitCreateTreeRequestBodyTreeItem(
+      {this.path = const SdkOmitted(),
+      this.mode = const SdkOmitted(),
+      this.type_ = const SdkOmitted(),
+      this.sha = const SdkOmitted(),
+      this.content = const SdkOmitted()});
+
+  GitCreateTreeRequestBodyTreeItem Function(
+      {SdkOptional<String> path,
+      SdkOptional<GitCreateTreeRequestBodyTreeItemMode> mode,
+      SdkOptional<GitCreateTreeRequestBodyTreeItemType> type_,
+      SdkOptional<String?> sha,
+      SdkOptional<String> content}) get copyWith => _copyWith;
+
+  GitCreateTreeRequestBodyTreeItem _copyWith(
+          {Object? path = sdkOmittedValue,
+          Object? mode = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? sha = sdkOmittedValue,
+          Object? content = sdkOmittedValue}) =>
+      GitCreateTreeRequestBodyTreeItem(
+        path: identical(path, sdkOmittedValue)
+            ? this.path
+            : path as SdkOptional<String>,
+        mode: identical(mode, sdkOmittedValue)
+            ? this.mode
+            : mode as SdkOptional<GitCreateTreeRequestBodyTreeItemMode>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as SdkOptional<GitCreateTreeRequestBodyTreeItemType>,
+        sha: identical(sha, sdkOmittedValue)
+            ? this.sha
+            : sha as SdkOptional<String?>,
+        content: identical(content, sdkOmittedValue)
+            ? this.content
+            : content as SdkOptional<String>,
+      );
+
+  factory GitCreateTreeRequestBodyTreeItem.fromJson(
+          Map<String, dynamic> json) =>
+      GitCreateTreeRequestBodyTreeItem(
+        path: json['path'] != null
+            ? SdkPresent((json['path'] as String?)!)
+            : const SdkOmitted(),
+        mode: json['mode'] != null
+            ? SdkPresent((json['mode'] != null
+                ? GitCreateTreeRequestBodyTreeItemMode.fromJson(
+                    json['mode'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        type_: json['type'] != null
+            ? SdkPresent((json['type'] != null
+                ? GitCreateTreeRequestBodyTreeItemType.fromJson(
+                    json['type'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        sha: json.containsKey('sha')
+            ? SdkPresent(json['sha'] as String?)
+            : const SdkOmitted(),
+        content: json['content'] != null
+            ? SdkPresent((json['content'] as String?)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (path) {
+          SdkPresent<String>(value: final value) => {
+              'path': value,
+            },
+          _ => const <String, dynamic>{},
+        },
         ...switch (mode) {
-          SdkPresent<
-                ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItemMode>(
+          SdkPresent<GitCreateTreeRequestBodyTreeItemMode>(
             value: final value
           ) =>
             {
@@ -161,366 +443,75 @@ class ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOpti
             },
           _ => const <String, dynamic>{},
         },
-      };
-}
-
-/// Feature options for secret scanning delegated bypass. This object is only honored when `security_and_analysis.secret_scanning_delegated_bypass.status` is set to `enabled`. You can send this object in the same request as `secret_scanning_delegated_bypass`, or update just the options in a separate request.
-class ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptions {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The bypass reviewers for secret scanning delegated bypass. If you omit this field, the existing set of reviewers is unchanged.
-  final SdkOptional<
-          List<
-              ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem>>
-      reviewers;
-
-  const ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptions(
-      {this.reviewers = const SdkOmitted()});
-
-  ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptions Function(
-      {SdkOptional<
-              List<
-                  ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem>>
-          reviewers}) get copyWith => _copyWith;
-
-  ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptions
-      _copyWith({Object? reviewers = sdkOmittedValue}) =>
-          ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptions(
-            reviewers: identical(reviewers, sdkOmittedValue)
-                ? this.reviewers
-                : reviewers as SdkOptional<
-                    List<
-                        ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem>>,
-          );
-
-  factory ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptions.fromJson(
-          Map<String, dynamic> json) =>
-      ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptions(
-        reviewers: json['reviewers'] != null
-            ? SdkPresent(((json['reviewers'] as List?)
-                ?.map((e) =>
-                    ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem
-                        .fromJson(e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (reviewers) {
-          SdkPresent<
-                List<
-                    ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewersItem>>(
+        ...switch (type_) {
+          SdkPresent<GitCreateTreeRequestBodyTreeItemType>(
             value: final value
           ) =>
             {
-              'reviewers': value.map((item) => item.toJson()).toList(),
+              'type': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (sha) {
+          SdkPresent<String?>(value: final value) => {
+              'sha': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (content) {
+          SdkPresent<String>(value: final value) => {
+              'content': value,
             },
           _ => const <String, dynamic>{},
         },
       };
 }
 
-/// Specify which security and analysis features to enable or disable for the repository. To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)." For example, to enable GitHub Advanced Security, use this data in the body of the `PATCH` request: `{ "security_and_analysis": {"advanced_security": { "status": "enabled" } } }`. You can check which security and analysis features are currently enabled by using a `GET /repos/{owner}/{repo}` request.
-class ReposUpdateRequestBodySecurityAndAnalysis {
+class GitCreateTreeRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Use the `status` property to enable or disable GitHub Advanced Security for this repository. For more information, see "About GitHub Advanced Security." For standalone Code Scanning or Secret Protection products, this parameter cannot be used.
-  final SdkOptional<ReposUpdateRequestBodySecurityAndAnalysisAdvancedSecurity>
-      advancedSecurity;
+  /// Objects (of `path`, `mode`, `type`, and `sha`) specifying a tree structure.
+  final List<GitCreateTreeRequestBodyTreeItem> tree;
 
-  /// Use the `status` property to enable or disable GitHub Code Security for this repository.
-  final SdkOptional<ReposUpdateRequestBodySecurityAndAnalysisCodeSecurity>
-      codeSecurity;
+  /// The SHA1 of an existing Git tree object which will be used as the base for the new tree. If provided, a new Git tree object will be created from entries in the Git tree object pointed to by `base_tree` and entries defined in the `tree` parameter. Entries defined in the `tree` parameter will overwrite items from `base_tree` with the same `path`. If you're creating new changes on a branch, then normally you'd set `base_tree` to the SHA1 of the Git tree object of the current latest commit on the branch you're working on. If not provided, GitHub will create a new Git tree object from only the entries defined in the `tree` parameter. If you create a new commit pointing to such a tree, then all files which were a part of the parent commit's tree and were not defined in the `tree` parameter will be listed as deleted by the new commit.
+  final SdkOptional<String> baseTree;
 
-  /// Use the `status` property to enable or disable secret scanning for this repository. For more information, see "About secret scanning."
-  final SdkOptional<ReposUpdateRequestBodySecurityAndAnalysisSecretScanning>
-      secretScanning;
+  const GitCreateTreeRequestBody(
+      {required this.tree, this.baseTree = const SdkOmitted()});
 
-  /// Use the `status` property to enable or disable secret scanning push protection for this repository. For more information, see "Protecting pushes with secret scanning."
-  final SdkOptional<
-          ReposUpdateRequestBodySecurityAndAnalysisSecretScanningPushProtection>
-      secretScanningPushProtection;
+  GitCreateTreeRequestBody Function(
+      {List<GitCreateTreeRequestBodyTreeItem> tree,
+      SdkOptional<String> baseTree}) get copyWith => _copyWith;
 
-  /// Use the `status` property to enable or disable secret scanning AI detection for this repository. For more information, see "[Responsible detection of generic secrets with AI](https://docs.github.com/code-security/secret-scanning/using-advanced-secret-scanning-and-push-protection-features/generic-secret-detection/responsible-ai-generic-secrets)."
-  final SdkOptional<
-          ReposUpdateRequestBodySecurityAndAnalysisSecretScanningAiDetection>
-      secretScanningAiDetection;
-
-  /// Use the `status` property to enable or disable secret scanning non-provider patterns for this repository. For more information, see "Supported secret scanning patterns."
-  final SdkOptional<
-          ReposUpdateRequestBodySecurityAndAnalysisSecretScanningNonProviderPatterns>
-      secretScanningNonProviderPatterns;
-
-  /// Use the `status` property to enable or disable secret scanning delegated alert dismissal for this repository.
-  final SdkOptional<
-          ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedAlertDismissal>
-      secretScanningDelegatedAlertDismissal;
-
-  /// Use the `status` property to enable or disable secret scanning delegated bypass for this repository.
-  final SdkOptional<
-          ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypass>
-      secretScanningDelegatedBypass;
-
-  /// Feature options for secret scanning delegated bypass. This object is only honored when `security_and_analysis.secret_scanning_delegated_bypass.status` is set to `enabled`. You can send this object in the same request as `secret_scanning_delegated_bypass`, or update just the options in a separate request.
-  final SdkOptional<
-          ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptions>
-      secretScanningDelegatedBypassOptions;
-
-  const ReposUpdateRequestBodySecurityAndAnalysis(
-      {this.advancedSecurity = const SdkOmitted(),
-      this.codeSecurity = const SdkOmitted(),
-      this.secretScanning = const SdkOmitted(),
-      this.secretScanningPushProtection = const SdkOmitted(),
-      this.secretScanningAiDetection = const SdkOmitted(),
-      this.secretScanningNonProviderPatterns = const SdkOmitted(),
-      this.secretScanningDelegatedAlertDismissal = const SdkOmitted(),
-      this.secretScanningDelegatedBypass = const SdkOmitted(),
-      this.secretScanningDelegatedBypassOptions = const SdkOmitted()});
-
-  ReposUpdateRequestBodySecurityAndAnalysis Function(
-      {SdkOptional<ReposUpdateRequestBodySecurityAndAnalysisAdvancedSecurity>
-          advancedSecurity,
-      SdkOptional<ReposUpdateRequestBodySecurityAndAnalysisCodeSecurity>
-          codeSecurity,
-      SdkOptional<ReposUpdateRequestBodySecurityAndAnalysisSecretScanning>
-          secretScanning,
-      SdkOptional<
-              ReposUpdateRequestBodySecurityAndAnalysisSecretScanningPushProtection>
-          secretScanningPushProtection,
-      SdkOptional<
-              ReposUpdateRequestBodySecurityAndAnalysisSecretScanningAiDetection>
-          secretScanningAiDetection,
-      SdkOptional<
-              ReposUpdateRequestBodySecurityAndAnalysisSecretScanningNonProviderPatterns>
-          secretScanningNonProviderPatterns,
-      SdkOptional<
-              ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedAlertDismissal>
-          secretScanningDelegatedAlertDismissal,
-      SdkOptional<
-              ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypass>
-          secretScanningDelegatedBypass,
-      SdkOptional<
-              ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptions>
-          secretScanningDelegatedBypassOptions}) get copyWith => _copyWith;
-
-  ReposUpdateRequestBodySecurityAndAnalysis _copyWith(
-          {Object? advancedSecurity = sdkOmittedValue,
-          Object? codeSecurity = sdkOmittedValue,
-          Object? secretScanning = sdkOmittedValue,
-          Object? secretScanningPushProtection = sdkOmittedValue,
-          Object? secretScanningAiDetection = sdkOmittedValue,
-          Object? secretScanningNonProviderPatterns = sdkOmittedValue,
-          Object? secretScanningDelegatedAlertDismissal = sdkOmittedValue,
-          Object? secretScanningDelegatedBypass = sdkOmittedValue,
-          Object? secretScanningDelegatedBypassOptions = sdkOmittedValue}) =>
-      ReposUpdateRequestBodySecurityAndAnalysis(
-        advancedSecurity: identical(advancedSecurity, sdkOmittedValue)
-            ? this.advancedSecurity
-            : advancedSecurity as SdkOptional<
-                ReposUpdateRequestBodySecurityAndAnalysisAdvancedSecurity>,
-        codeSecurity: identical(codeSecurity, sdkOmittedValue)
-            ? this.codeSecurity
-            : codeSecurity as SdkOptional<
-                ReposUpdateRequestBodySecurityAndAnalysisCodeSecurity>,
-        secretScanning: identical(secretScanning, sdkOmittedValue)
-            ? this.secretScanning
-            : secretScanning as SdkOptional<
-                ReposUpdateRequestBodySecurityAndAnalysisSecretScanning>,
-        secretScanningPushProtection: identical(
-                secretScanningPushProtection, sdkOmittedValue)
-            ? this.secretScanningPushProtection
-            : secretScanningPushProtection as SdkOptional<
-                ReposUpdateRequestBodySecurityAndAnalysisSecretScanningPushProtection>,
-        secretScanningAiDetection: identical(
-                secretScanningAiDetection, sdkOmittedValue)
-            ? this.secretScanningAiDetection
-            : secretScanningAiDetection as SdkOptional<
-                ReposUpdateRequestBodySecurityAndAnalysisSecretScanningAiDetection>,
-        secretScanningNonProviderPatterns: identical(
-                secretScanningNonProviderPatterns, sdkOmittedValue)
-            ? this.secretScanningNonProviderPatterns
-            : secretScanningNonProviderPatterns as SdkOptional<
-                ReposUpdateRequestBodySecurityAndAnalysisSecretScanningNonProviderPatterns>,
-        secretScanningDelegatedAlertDismissal: identical(
-                secretScanningDelegatedAlertDismissal, sdkOmittedValue)
-            ? this.secretScanningDelegatedAlertDismissal
-            : secretScanningDelegatedAlertDismissal as SdkOptional<
-                ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedAlertDismissal>,
-        secretScanningDelegatedBypass: identical(
-                secretScanningDelegatedBypass, sdkOmittedValue)
-            ? this.secretScanningDelegatedBypass
-            : secretScanningDelegatedBypass as SdkOptional<
-                ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypass>,
-        secretScanningDelegatedBypassOptions: identical(
-                secretScanningDelegatedBypassOptions, sdkOmittedValue)
-            ? this.secretScanningDelegatedBypassOptions
-            : secretScanningDelegatedBypassOptions as SdkOptional<
-                ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptions>,
+  GitCreateTreeRequestBody _copyWith(
+          {Object? tree = sdkOmittedValue,
+          Object? baseTree = sdkOmittedValue}) =>
+      GitCreateTreeRequestBody(
+        tree: identical(tree, sdkOmittedValue)
+            ? this.tree
+            : tree as List<GitCreateTreeRequestBodyTreeItem>,
+        baseTree: identical(baseTree, sdkOmittedValue)
+            ? this.baseTree
+            : baseTree as SdkOptional<String>,
       );
 
-  factory ReposUpdateRequestBodySecurityAndAnalysis.fromJson(
-          Map<String, dynamic> json) =>
-      ReposUpdateRequestBodySecurityAndAnalysis(
-        advancedSecurity: json['advanced_security'] != null
-            ? SdkPresent((json['advanced_security'] != null
-                ? ReposUpdateRequestBodySecurityAndAnalysisAdvancedSecurity
-                    .fromJson(json['advanced_security'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        codeSecurity: json['code_security'] != null
-            ? SdkPresent((json['code_security'] != null
-                ? ReposUpdateRequestBodySecurityAndAnalysisCodeSecurity
-                    .fromJson(json['code_security'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        secretScanning: json['secret_scanning'] != null
-            ? SdkPresent((json['secret_scanning'] != null
-                ? ReposUpdateRequestBodySecurityAndAnalysisSecretScanning
-                    .fromJson(json['secret_scanning'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        secretScanningPushProtection: json['secret_scanning_push_protection'] !=
-                null
-            ? SdkPresent((json['secret_scanning_push_protection'] != null
-                ? ReposUpdateRequestBodySecurityAndAnalysisSecretScanningPushProtection
-                    .fromJson(json['secret_scanning_push_protection']
-                        as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        secretScanningAiDetection: json['secret_scanning_ai_detection'] != null
-            ? SdkPresent((json['secret_scanning_ai_detection'] != null
-                ? ReposUpdateRequestBodySecurityAndAnalysisSecretScanningAiDetection
-                    .fromJson(json['secret_scanning_ai_detection']
-                        as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        secretScanningNonProviderPatterns: json[
-                    'secret_scanning_non_provider_patterns'] !=
-                null
-            ? SdkPresent((json['secret_scanning_non_provider_patterns'] != null
-                ? ReposUpdateRequestBodySecurityAndAnalysisSecretScanningNonProviderPatterns
-                    .fromJson(json['secret_scanning_non_provider_patterns']
-                        as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        secretScanningDelegatedAlertDismissal: json[
-                    'secret_scanning_delegated_alert_dismissal'] !=
-                null
-            ? SdkPresent((json['secret_scanning_delegated_alert_dismissal'] !=
-                    null
-                ? ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedAlertDismissal
-                    .fromJson(json['secret_scanning_delegated_alert_dismissal']
-                        as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        secretScanningDelegatedBypass: json[
-                    'secret_scanning_delegated_bypass'] !=
-                null
-            ? SdkPresent((json['secret_scanning_delegated_bypass'] != null
-                ? ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypass
-                    .fromJson(json['secret_scanning_delegated_bypass']
-                        as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        secretScanningDelegatedBypassOptions: json[
-                    'secret_scanning_delegated_bypass_options'] !=
-                null
-            ? SdkPresent((json['secret_scanning_delegated_bypass_options'] !=
-                    null
-                ? ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptions
-                    .fromJson(json['secret_scanning_delegated_bypass_options']
-                        as Map<String, dynamic>)
-                : null)!)
+  factory GitCreateTreeRequestBody.fromJson(Map<String, dynamic> json) =>
+      GitCreateTreeRequestBody(
+        tree: ((json['tree'] as List?)
+            ?.map((e) => GitCreateTreeRequestBodyTreeItem.fromJson(
+                e as Map<String, dynamic>))
+            .toList())!,
+        baseTree: json['base_tree'] != null
+            ? SdkPresent((json['base_tree'] as String?)!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (advancedSecurity) {
-          SdkPresent<ReposUpdateRequestBodySecurityAndAnalysisAdvancedSecurity>(
-            value: final value
-          ) =>
-            {
-              'advanced_security': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (codeSecurity) {
-          SdkPresent<ReposUpdateRequestBodySecurityAndAnalysisCodeSecurity>(
-            value: final value
-          ) =>
-            {
-              'code_security': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (secretScanning) {
-          SdkPresent<ReposUpdateRequestBodySecurityAndAnalysisSecretScanning>(
-            value: final value
-          ) =>
-            {
-              'secret_scanning': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (secretScanningPushProtection) {
-          SdkPresent<
-                ReposUpdateRequestBodySecurityAndAnalysisSecretScanningPushProtection>(
-            value: final value
-          ) =>
-            {
-              'secret_scanning_push_protection': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (secretScanningAiDetection) {
-          SdkPresent<
-                ReposUpdateRequestBodySecurityAndAnalysisSecretScanningAiDetection>(
-            value: final value
-          ) =>
-            {
-              'secret_scanning_ai_detection': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (secretScanningNonProviderPatterns) {
-          SdkPresent<
-                ReposUpdateRequestBodySecurityAndAnalysisSecretScanningNonProviderPatterns>(
-            value: final value
-          ) =>
-            {
-              'secret_scanning_non_provider_patterns': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (secretScanningDelegatedAlertDismissal) {
-          SdkPresent<
-                ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedAlertDismissal>(
-            value: final value
-          ) =>
-            {
-              'secret_scanning_delegated_alert_dismissal': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (secretScanningDelegatedBypass) {
-          SdkPresent<
-                ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypass>(
-            value: final value
-          ) =>
-            {
-              'secret_scanning_delegated_bypass': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (secretScanningDelegatedBypassOptions) {
-          SdkPresent<
-                ReposUpdateRequestBodySecurityAndAnalysisSecretScanningDelegatedBypassOptions>(
-            value: final value
-          ) =>
-            {
-              'secret_scanning_delegated_bypass_options': value.toJson(),
+        'tree': tree.map((item) => item.toJson()).toList(),
+        ...switch (baseTree) {
+          SdkPresent<String>(value: final value) => {
+              'base_tree': value,
             },
           _ => const <String, dynamic>{},
         },

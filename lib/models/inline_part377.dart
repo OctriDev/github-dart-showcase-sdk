@@ -4,529 +4,454 @@
 part of 'inline.dart';
 
 // Inline operation models (part 377)
-class IssuesAddSubIssueRequestBody {
+class PrivateRegistriesCreateOrgPrivateRegistryRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// The id of the sub-issue to add. The sub-issue must belong to the same repository owner as the parent issue
-  final int subIssueId;
+  /// The registry type.
+  final PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType
+      registryType;
 
-  /// Option that, when true, instructs the operation to replace the sub-issues current parent issue
-  final SdkOptional<bool> replaceParent;
+  /// The URL of the private registry.
+  final String url;
 
-  const IssuesAddSubIssueRequestBody(
-      {required this.subIssueId, this.replaceParent = const SdkOmitted()});
+  /// The username to use when authenticating with the private registry. This field should be omitted if the private registry does not require a username for authentication.
+  final SdkOptional<String?> username;
 
-  IssuesAddSubIssueRequestBody Function(
-      {int subIssueId,
-      SdkOptional<bool> replaceParent}) get copyWith => _copyWith;
+  /// Whether this private registry should replace the base registry (e.g., npmjs.org for npm, rubygems.org for rubygems). When set to `true`, Dependabot will only use this registry and will not fall back to the public registry. When set to `false` (default), Dependabot will use this registry for scoped packages but may fall back to the public registry for other packages.
+  final SdkOptional<bool> replacesBase;
 
-  IssuesAddSubIssueRequestBody _copyWith(
-          {Object? subIssueId = sdkOmittedValue,
-          Object? replaceParent = sdkOmittedValue}) =>
-      IssuesAddSubIssueRequestBody(
-        subIssueId: identical(subIssueId, sdkOmittedValue)
-            ? this.subIssueId
-            : subIssueId as int,
-        replaceParent: identical(replaceParent, sdkOmittedValue)
-            ? this.replaceParent
-            : replaceParent as SdkOptional<bool>,
+  /// The value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get private registries public key for an organization](https://docs.github.com/rest/private-registries/organization-configurations#get-private-registries-public-key-for-an-organization) endpoint. Required when `auth_type` is `token` or `username_password`. Should be omitted for OIDC auth types.
+  final SdkOptional<String> encryptedValue;
+
+  /// The ID of the key you used to encrypt the secret. Required when `auth_type` is `token` or `username_password`. Should be omitted for OIDC auth types.
+  final SdkOptional<String> keyId;
+
+  /// Which type of organization repositories have access to the private registry. `selected` means only the repositories specified by `selected_repository_ids` can access the private registry.
+  final PrivateRegistriesCreateOrgPrivateRegistryRequestBodyVisibility
+      visibility;
+
+  /// An array of repository IDs that can access the organization private registry. You can only provide a list of repository IDs when `visibility` is set to `selected`. You can manage the list of selected repositories using the [Update a private registry for an organization](https://docs.github.com/rest/private-registries/organization-configurations#update-a-private-registry-for-an-organization) endpoint. This field should be omitted if `visibility` is set to `all` or `private`.
+  final SdkOptional<List<int>> selectedRepositoryIds;
+
+  /// The authentication type for the private registry. Defaults to `token` if not specified. Use `oidc_azure`, `oidc_aws`, `oidc_jfrog`, `oidc_cloudsmith`, or `oidc_gcp` for OIDC authentication. Use `anonymous` for registries that do not require authentication; `username`, `encrypted_value`, and `key_id` must be omitted.
+  final SdkOptional<
+      PrivateRegistriesCreateOrgPrivateRegistryRequestBodyAuthType> authType;
+
+  /// The tenant ID of the Azure AD application. Required when `auth_type` is `oidc_azure`.
+  final SdkOptional<String> tenantId;
+
+  /// The client ID of the Azure AD application. Required when `auth_type` is `oidc_azure`.
+  final SdkOptional<String> clientId;
+
+  /// The AWS region. Required when `auth_type` is `oidc_aws`.
+  final SdkOptional<String> awsRegion;
+
+  /// The AWS account ID. Required when `auth_type` is `oidc_aws`.
+  final SdkOptional<String> accountId;
+
+  /// The AWS IAM role name. Required when `auth_type` is `oidc_aws`.
+  final SdkOptional<String> roleName;
+
+  /// The CodeArtifact domain. Required when `auth_type` is `oidc_aws`.
+  final SdkOptional<String> domain;
+
+  /// The CodeArtifact domain owner (AWS account ID). Required when `auth_type` is `oidc_aws`.
+  final SdkOptional<String> domainOwner;
+
+  /// The JFrog OIDC provider name. Required when `auth_type` is `oidc_jfrog`.
+  final SdkOptional<String> jfrogOidcProviderName;
+
+  /// The OIDC audience. Optional for `oidc_aws`, `oidc_jfrog`, and `oidc_gcp`, and required for `oidc_cloudsmith` auth types.
+  final SdkOptional<String> audience;
+
+  /// The JFrog identity mapping name. Optional for `oidc_jfrog` auth type.
+  final SdkOptional<String> identityMappingName;
+
+  /// The Cloudsmith organization namespace. Required when `auth_type` is `oidc_cloudsmith`.
+  final SdkOptional<String> namespace;
+
+  /// The Cloudsmith service account slug. Required when `auth_type` is `oidc_cloudsmith`.
+  final SdkOptional<String> serviceSlug;
+
+  /// The Cloudsmith API host. Optional for `oidc_cloudsmith` auth type. If omitted, `api.cloudsmith.io` is used by default.
+  final SdkOptional<String> apiHost;
+
+  /// The full resource name of the GCP Workload Identity Provider (e.g. `projects/&lt;NUM&gt;/locations/global/workloadIdentityPools/&lt;POOL&gt;/providers/&lt;PROVIDER&gt;`). Required when `auth_type` is `oidc_gcp`.
+  final SdkOptional<String> workloadIdentityProvider;
+
+  /// The GCP service account email to impersonate. Optional for `oidc_gcp` auth type. If omitted, the federated token is used directly (direct WIF).
+  final SdkOptional<String> serviceAccount;
+
+  const PrivateRegistriesCreateOrgPrivateRegistryRequestBody(
+      {required this.registryType,
+      required this.url,
+      this.username = const SdkOmitted(),
+      this.replacesBase = const SdkOmitted(),
+      this.encryptedValue = const SdkOmitted(),
+      this.keyId = const SdkOmitted(),
+      required this.visibility,
+      this.selectedRepositoryIds = const SdkOmitted(),
+      this.authType = const SdkOmitted(),
+      this.tenantId = const SdkOmitted(),
+      this.clientId = const SdkOmitted(),
+      this.awsRegion = const SdkOmitted(),
+      this.accountId = const SdkOmitted(),
+      this.roleName = const SdkOmitted(),
+      this.domain = const SdkOmitted(),
+      this.domainOwner = const SdkOmitted(),
+      this.jfrogOidcProviderName = const SdkOmitted(),
+      this.audience = const SdkOmitted(),
+      this.identityMappingName = const SdkOmitted(),
+      this.namespace = const SdkOmitted(),
+      this.serviceSlug = const SdkOmitted(),
+      this.apiHost = const SdkOmitted(),
+      this.workloadIdentityProvider = const SdkOmitted(),
+      this.serviceAccount = const SdkOmitted()});
+
+  PrivateRegistriesCreateOrgPrivateRegistryRequestBody Function(
+      {PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType
+          registryType,
+      String url,
+      SdkOptional<String?> username,
+      SdkOptional<bool> replacesBase,
+      SdkOptional<String> encryptedValue,
+      SdkOptional<String> keyId,
+      PrivateRegistriesCreateOrgPrivateRegistryRequestBodyVisibility visibility,
+      SdkOptional<List<int>> selectedRepositoryIds,
+      SdkOptional<PrivateRegistriesCreateOrgPrivateRegistryRequestBodyAuthType>
+          authType,
+      SdkOptional<String> tenantId,
+      SdkOptional<String> clientId,
+      SdkOptional<String> awsRegion,
+      SdkOptional<String> accountId,
+      SdkOptional<String> roleName,
+      SdkOptional<String> domain,
+      SdkOptional<String> domainOwner,
+      SdkOptional<String> jfrogOidcProviderName,
+      SdkOptional<String> audience,
+      SdkOptional<String> identityMappingName,
+      SdkOptional<String> namespace,
+      SdkOptional<String> serviceSlug,
+      SdkOptional<String> apiHost,
+      SdkOptional<String> workloadIdentityProvider,
+      SdkOptional<String> serviceAccount}) get copyWith => _copyWith;
+
+  PrivateRegistriesCreateOrgPrivateRegistryRequestBody _copyWith(
+          {Object? registryType = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? username = sdkOmittedValue,
+          Object? replacesBase = sdkOmittedValue,
+          Object? encryptedValue = sdkOmittedValue,
+          Object? keyId = sdkOmittedValue,
+          Object? visibility = sdkOmittedValue,
+          Object? selectedRepositoryIds = sdkOmittedValue,
+          Object? authType = sdkOmittedValue,
+          Object? tenantId = sdkOmittedValue,
+          Object? clientId = sdkOmittedValue,
+          Object? awsRegion = sdkOmittedValue,
+          Object? accountId = sdkOmittedValue,
+          Object? roleName = sdkOmittedValue,
+          Object? domain = sdkOmittedValue,
+          Object? domainOwner = sdkOmittedValue,
+          Object? jfrogOidcProviderName = sdkOmittedValue,
+          Object? audience = sdkOmittedValue,
+          Object? identityMappingName = sdkOmittedValue,
+          Object? namespace = sdkOmittedValue,
+          Object? serviceSlug = sdkOmittedValue,
+          Object? apiHost = sdkOmittedValue,
+          Object? workloadIdentityProvider = sdkOmittedValue,
+          Object? serviceAccount = sdkOmittedValue}) =>
+      PrivateRegistriesCreateOrgPrivateRegistryRequestBody(
+        registryType: identical(registryType, sdkOmittedValue)
+            ? this.registryType
+            : registryType
+                as PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        username: identical(username, sdkOmittedValue)
+            ? this.username
+            : username as SdkOptional<String?>,
+        replacesBase: identical(replacesBase, sdkOmittedValue)
+            ? this.replacesBase
+            : replacesBase as SdkOptional<bool>,
+        encryptedValue: identical(encryptedValue, sdkOmittedValue)
+            ? this.encryptedValue
+            : encryptedValue as SdkOptional<String>,
+        keyId: identical(keyId, sdkOmittedValue)
+            ? this.keyId
+            : keyId as SdkOptional<String>,
+        visibility: identical(visibility, sdkOmittedValue)
+            ? this.visibility
+            : visibility
+                as PrivateRegistriesCreateOrgPrivateRegistryRequestBodyVisibility,
+        selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue)
+            ? this.selectedRepositoryIds
+            : selectedRepositoryIds as SdkOptional<List<int>>,
+        authType: identical(authType, sdkOmittedValue)
+            ? this.authType
+            : authType as SdkOptional<
+                PrivateRegistriesCreateOrgPrivateRegistryRequestBodyAuthType>,
+        tenantId: identical(tenantId, sdkOmittedValue)
+            ? this.tenantId
+            : tenantId as SdkOptional<String>,
+        clientId: identical(clientId, sdkOmittedValue)
+            ? this.clientId
+            : clientId as SdkOptional<String>,
+        awsRegion: identical(awsRegion, sdkOmittedValue)
+            ? this.awsRegion
+            : awsRegion as SdkOptional<String>,
+        accountId: identical(accountId, sdkOmittedValue)
+            ? this.accountId
+            : accountId as SdkOptional<String>,
+        roleName: identical(roleName, sdkOmittedValue)
+            ? this.roleName
+            : roleName as SdkOptional<String>,
+        domain: identical(domain, sdkOmittedValue)
+            ? this.domain
+            : domain as SdkOptional<String>,
+        domainOwner: identical(domainOwner, sdkOmittedValue)
+            ? this.domainOwner
+            : domainOwner as SdkOptional<String>,
+        jfrogOidcProviderName: identical(jfrogOidcProviderName, sdkOmittedValue)
+            ? this.jfrogOidcProviderName
+            : jfrogOidcProviderName as SdkOptional<String>,
+        audience: identical(audience, sdkOmittedValue)
+            ? this.audience
+            : audience as SdkOptional<String>,
+        identityMappingName: identical(identityMappingName, sdkOmittedValue)
+            ? this.identityMappingName
+            : identityMappingName as SdkOptional<String>,
+        namespace: identical(namespace, sdkOmittedValue)
+            ? this.namespace
+            : namespace as SdkOptional<String>,
+        serviceSlug: identical(serviceSlug, sdkOmittedValue)
+            ? this.serviceSlug
+            : serviceSlug as SdkOptional<String>,
+        apiHost: identical(apiHost, sdkOmittedValue)
+            ? this.apiHost
+            : apiHost as SdkOptional<String>,
+        workloadIdentityProvider:
+            identical(workloadIdentityProvider, sdkOmittedValue)
+                ? this.workloadIdentityProvider
+                : workloadIdentityProvider as SdkOptional<String>,
+        serviceAccount: identical(serviceAccount, sdkOmittedValue)
+            ? this.serviceAccount
+            : serviceAccount as SdkOptional<String>,
       );
 
-  factory IssuesAddSubIssueRequestBody.fromJson(Map<String, dynamic> json) =>
-      IssuesAddSubIssueRequestBody(
-        subIssueId: ((json['sub_issue_id'] as num?)?.toInt())!,
-        replaceParent: json['replace_parent'] != null
-            ? SdkPresent((json['replace_parent'] as bool?)!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        'sub_issue_id': subIssueId,
-        ...switch (replaceParent) {
-          SdkPresent<bool>(value: final value) => {
-              'replace_parent': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-class IssuesReprioritizeSubIssueRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The id of the sub-issue to reprioritize
-  final int subIssueId;
-
-  /// The id of the sub-issue to be prioritized after (either positional argument after OR before should be specified).
-  final SdkOptional<int> afterId;
-
-  /// The id of the sub-issue to be prioritized before (either positional argument after OR before should be specified).
-  final SdkOptional<int> beforeId;
-
-  const IssuesReprioritizeSubIssueRequestBody(
-      {required this.subIssueId,
-      this.afterId = const SdkOmitted(),
-      this.beforeId = const SdkOmitted()});
-
-  IssuesReprioritizeSubIssueRequestBody Function(
-      {int subIssueId,
-      SdkOptional<int> afterId,
-      SdkOptional<int> beforeId}) get copyWith => _copyWith;
-
-  IssuesReprioritizeSubIssueRequestBody _copyWith(
-          {Object? subIssueId = sdkOmittedValue,
-          Object? afterId = sdkOmittedValue,
-          Object? beforeId = sdkOmittedValue}) =>
-      IssuesReprioritizeSubIssueRequestBody(
-        subIssueId: identical(subIssueId, sdkOmittedValue)
-            ? this.subIssueId
-            : subIssueId as int,
-        afterId: identical(afterId, sdkOmittedValue)
-            ? this.afterId
-            : afterId as SdkOptional<int>,
-        beforeId: identical(beforeId, sdkOmittedValue)
-            ? this.beforeId
-            : beforeId as SdkOptional<int>,
-      );
-
-  factory IssuesReprioritizeSubIssueRequestBody.fromJson(
+  factory PrivateRegistriesCreateOrgPrivateRegistryRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      IssuesReprioritizeSubIssueRequestBody(
-        subIssueId: ((json['sub_issue_id'] as num?)?.toInt())!,
-        afterId: json['after_id'] != null
-            ? SdkPresent(((json['after_id'] as num?)?.toInt())!)
+      PrivateRegistriesCreateOrgPrivateRegistryRequestBody(
+        registryType: (json['registry_type'] != null
+            ? PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType
+                .fromJson(json['registry_type'] as String)
+            : null)!,
+        url: (json['url'] as String?)!,
+        username: json.containsKey('username')
+            ? SdkPresent(json['username'] as String?)
             : const SdkOmitted(),
-        beforeId: json['before_id'] != null
-            ? SdkPresent(((json['before_id'] as num?)?.toInt())!)
+        replacesBase: json['replaces_base'] != null
+            ? SdkPresent((json['replaces_base'] as bool?)!)
             : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        'sub_issue_id': subIssueId,
-        ...switch (afterId) {
-          SdkPresent<int>(value: final value) => {
-              'after_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (beforeId) {
-          SdkPresent<int>(value: final value) => {
-              'before_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-class IssuesCreateLabelRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The name of the label. Emoji can be added to label names, using either native emoji or colon-style markup. For example, typing `:strawberry:` will render the emoji ![:strawberry:](https://github.githubassets.com/images/icons/emoji/unicode/1f353.png ":strawberry:"). For a full list of available emoji and codes, see "[Emoji cheat sheet](https://github.com/ikatyang/emoji-cheat-sheet)."
-  final String name;
-
-  /// The [hexadecimal color code](http://www.color-hex.com/) for the label, without the leading `#`.
-  final SdkOptional<String> color;
-
-  /// A short description of the label. Must be 100 characters or fewer.
-  final SdkOptional<String> description;
-
-  const IssuesCreateLabelRequestBody(
-      {required this.name,
-      this.color = const SdkOmitted(),
-      this.description = const SdkOmitted()});
-
-  IssuesCreateLabelRequestBody Function(
-      {String name,
-      SdkOptional<String> color,
-      SdkOptional<String> description}) get copyWith => _copyWith;
-
-  IssuesCreateLabelRequestBody _copyWith(
-          {Object? name = sdkOmittedValue,
-          Object? color = sdkOmittedValue,
-          Object? description = sdkOmittedValue}) =>
-      IssuesCreateLabelRequestBody(
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        color: identical(color, sdkOmittedValue)
-            ? this.color
-            : color as SdkOptional<String>,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as SdkOptional<String>,
-      );
-
-  factory IssuesCreateLabelRequestBody.fromJson(Map<String, dynamic> json) =>
-      IssuesCreateLabelRequestBody(
-        name: (json['name'] as String?)!,
-        color: json['color'] != null
-            ? SdkPresent((json['color'] as String?)!)
+        encryptedValue: json['encrypted_value'] != null
+            ? SdkPresent((json['encrypted_value'] as String?)!)
             : const SdkOmitted(),
-        description: json['description'] != null
-            ? SdkPresent((json['description'] as String?)!)
+        keyId: json['key_id'] != null
+            ? SdkPresent((json['key_id'] as String?)!)
             : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        'name': name,
-        ...switch (color) {
-          SdkPresent<String>(value: final value) => {
-              'color': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (description) {
-          SdkPresent<String>(value: final value) => {
-              'description': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-class IssuesUpdateLabelRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The new name of the label. Emoji can be added to label names, using either native emoji or colon-style markup. For example, typing `:strawberry:` will render the emoji ![:strawberry:](https://github.githubassets.com/images/icons/emoji/unicode/1f353.png ":strawberry:"). For a full list of available emoji and codes, see "[Emoji cheat sheet](https://github.com/ikatyang/emoji-cheat-sheet)."
-  final SdkOptional<String> newName;
-
-  /// The [hexadecimal color code](http://www.color-hex.com/) for the label, without the leading `#`.
-  final SdkOptional<String> color;
-
-  /// A short description of the label. Must be 100 characters or fewer.
-  final SdkOptional<String> description;
-
-  /// Whether to archive or unarchive the label. Archived labels cannot be added to issues or pull requests. For more information, see "[Archiving labels](https://docs.github.com/issues/organizing-your-work-with-labels/managing-labels)."
-  final SdkOptional<bool> archived;
-
-  const IssuesUpdateLabelRequestBody(
-      {this.newName = const SdkOmitted(),
-      this.color = const SdkOmitted(),
-      this.description = const SdkOmitted(),
-      this.archived = const SdkOmitted()});
-
-  IssuesUpdateLabelRequestBody Function(
-      {SdkOptional<String> newName,
-      SdkOptional<String> color,
-      SdkOptional<String> description,
-      SdkOptional<bool> archived}) get copyWith => _copyWith;
-
-  IssuesUpdateLabelRequestBody _copyWith(
-          {Object? newName = sdkOmittedValue,
-          Object? color = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? archived = sdkOmittedValue}) =>
-      IssuesUpdateLabelRequestBody(
-        newName: identical(newName, sdkOmittedValue)
-            ? this.newName
-            : newName as SdkOptional<String>,
-        color: identical(color, sdkOmittedValue)
-            ? this.color
-            : color as SdkOptional<String>,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as SdkOptional<String>,
-        archived: identical(archived, sdkOmittedValue)
-            ? this.archived
-            : archived as SdkOptional<bool>,
-      );
-
-  factory IssuesUpdateLabelRequestBody.fromJson(Map<String, dynamic> json) =>
-      IssuesUpdateLabelRequestBody(
-        newName: json['new_name'] != null
-            ? SdkPresent((json['new_name'] as String?)!)
+        visibility: (json['visibility'] != null
+            ? PrivateRegistriesCreateOrgPrivateRegistryRequestBodyVisibility
+                .fromJson(json['visibility'] as String)
+            : null)!,
+        selectedRepositoryIds: json['selected_repository_ids'] != null
+            ? SdkPresent(((json['selected_repository_ids'] as List?)
+                ?.map((e) => (e as num).toInt())
+                .toList())!)
             : const SdkOmitted(),
-        color: json['color'] != null
-            ? SdkPresent((json['color'] as String?)!)
-            : const SdkOmitted(),
-        description: json['description'] != null
-            ? SdkPresent((json['description'] as String?)!)
-            : const SdkOmitted(),
-        archived: json['archived'] != null
-            ? SdkPresent((json['archived'] as bool?)!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (newName) {
-          SdkPresent<String>(value: final value) => {
-              'new_name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (color) {
-          SdkPresent<String>(value: final value) => {
-              'color': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (description) {
-          SdkPresent<String>(value: final value) => {
-              'description': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (archived) {
-          SdkPresent<bool>(value: final value) => {
-              'archived': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-class IssuesCreateMilestoneRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The title of the milestone.
-  final String title;
-
-  /// The state of the milestone. Either `open` or `closed`.
-  final SdkOptional<IssuesCreateMilestoneRequestBodyState> state;
-
-  /// A description of the milestone.
-  final SdkOptional<String> description;
-
-  /// The milestone due date. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
-  final SdkOptional<String> dueOn;
-
-  const IssuesCreateMilestoneRequestBody(
-      {required this.title,
-      this.state = const SdkOmitted(),
-      this.description = const SdkOmitted(),
-      this.dueOn = const SdkOmitted()});
-
-  IssuesCreateMilestoneRequestBody Function(
-      {String title,
-      SdkOptional<IssuesCreateMilestoneRequestBodyState> state,
-      SdkOptional<String> description,
-      SdkOptional<String> dueOn}) get copyWith => _copyWith;
-
-  IssuesCreateMilestoneRequestBody _copyWith(
-          {Object? title = sdkOmittedValue,
-          Object? state = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? dueOn = sdkOmittedValue}) =>
-      IssuesCreateMilestoneRequestBody(
-        title: identical(title, sdkOmittedValue) ? this.title : title as String,
-        state: identical(state, sdkOmittedValue)
-            ? this.state
-            : state as SdkOptional<IssuesCreateMilestoneRequestBodyState>,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as SdkOptional<String>,
-        dueOn: identical(dueOn, sdkOmittedValue)
-            ? this.dueOn
-            : dueOn as SdkOptional<String>,
-      );
-
-  factory IssuesCreateMilestoneRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      IssuesCreateMilestoneRequestBody(
-        title: (json['title'] as String?)!,
-        state: json['state'] != null
-            ? SdkPresent((json['state'] != null
-                ? IssuesCreateMilestoneRequestBodyState.fromJson(
-                    json['state'] as String)
+        authType: json['auth_type'] != null
+            ? SdkPresent((json['auth_type'] != null
+                ? PrivateRegistriesCreateOrgPrivateRegistryRequestBodyAuthType
+                    .fromJson(json['auth_type'] as String)
                 : null)!)
             : const SdkOmitted(),
-        description: json['description'] != null
-            ? SdkPresent((json['description'] as String?)!)
+        tenantId: json['tenant_id'] != null
+            ? SdkPresent((json['tenant_id'] as String?)!)
             : const SdkOmitted(),
-        dueOn: json['due_on'] != null
-            ? SdkPresent((json['due_on'] as String?)!)
+        clientId: json['client_id'] != null
+            ? SdkPresent((json['client_id'] as String?)!)
+            : const SdkOmitted(),
+        awsRegion: json['aws_region'] != null
+            ? SdkPresent((json['aws_region'] as String?)!)
+            : const SdkOmitted(),
+        accountId: json['account_id'] != null
+            ? SdkPresent((json['account_id'] as String?)!)
+            : const SdkOmitted(),
+        roleName: json['role_name'] != null
+            ? SdkPresent((json['role_name'] as String?)!)
+            : const SdkOmitted(),
+        domain: json['domain'] != null
+            ? SdkPresent((json['domain'] as String?)!)
+            : const SdkOmitted(),
+        domainOwner: json['domain_owner'] != null
+            ? SdkPresent((json['domain_owner'] as String?)!)
+            : const SdkOmitted(),
+        jfrogOidcProviderName: json['jfrog_oidc_provider_name'] != null
+            ? SdkPresent((json['jfrog_oidc_provider_name'] as String?)!)
+            : const SdkOmitted(),
+        audience: json['audience'] != null
+            ? SdkPresent((json['audience'] as String?)!)
+            : const SdkOmitted(),
+        identityMappingName: json['identity_mapping_name'] != null
+            ? SdkPresent((json['identity_mapping_name'] as String?)!)
+            : const SdkOmitted(),
+        namespace: json['namespace'] != null
+            ? SdkPresent((json['namespace'] as String?)!)
+            : const SdkOmitted(),
+        serviceSlug: json['service_slug'] != null
+            ? SdkPresent((json['service_slug'] as String?)!)
+            : const SdkOmitted(),
+        apiHost: json['api_host'] != null
+            ? SdkPresent((json['api_host'] as String?)!)
+            : const SdkOmitted(),
+        workloadIdentityProvider: json['workload_identity_provider'] != null
+            ? SdkPresent((json['workload_identity_provider'] as String?)!)
+            : const SdkOmitted(),
+        serviceAccount: json['service_account'] != null
+            ? SdkPresent((json['service_account'] as String?)!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        'title': title,
-        ...switch (state) {
-          SdkPresent<IssuesCreateMilestoneRequestBodyState>(
+        'registry_type': registryType.toJson(),
+        'url': url,
+        ...switch (username) {
+          SdkPresent<String?>(value: final value) => {
+              'username': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (replacesBase) {
+          SdkPresent<bool>(value: final value) => {
+              'replaces_base': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (encryptedValue) {
+          SdkPresent<String>(value: final value) => {
+              'encrypted_value': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (keyId) {
+          SdkPresent<String>(value: final value) => {
+              'key_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'visibility': visibility.toJson(),
+        ...switch (selectedRepositoryIds) {
+          SdkPresent<List<int>>(value: final value) => {
+              'selected_repository_ids': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (authType) {
+          SdkPresent<
+                PrivateRegistriesCreateOrgPrivateRegistryRequestBodyAuthType>(
             value: final value
           ) =>
             {
-              'state': value.toJson(),
+              'auth_type': value.toJson(),
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (description) {
+        ...switch (tenantId) {
           SdkPresent<String>(value: final value) => {
-              'description': value,
+              'tenant_id': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (dueOn) {
+        ...switch (clientId) {
           SdkPresent<String>(value: final value) => {
-              'due_on': value,
+              'client_id': value,
             },
           _ => const <String, dynamic>{},
         },
-      };
-}
-
-class IssuesUpdateMilestoneRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The title of the milestone.
-  final SdkOptional<String> title;
-
-  /// The state of the milestone. Either `open` or `closed`.
-  final SdkOptional<IssuesUpdateMilestoneRequestBodyState> state;
-
-  /// A description of the milestone.
-  final SdkOptional<String> description;
-
-  /// The milestone due date. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
-  final SdkOptional<String> dueOn;
-
-  const IssuesUpdateMilestoneRequestBody(
-      {this.title = const SdkOmitted(),
-      this.state = const SdkOmitted(),
-      this.description = const SdkOmitted(),
-      this.dueOn = const SdkOmitted()});
-
-  IssuesUpdateMilestoneRequestBody Function(
-      {SdkOptional<String> title,
-      SdkOptional<IssuesUpdateMilestoneRequestBodyState> state,
-      SdkOptional<String> description,
-      SdkOptional<String> dueOn}) get copyWith => _copyWith;
-
-  IssuesUpdateMilestoneRequestBody _copyWith(
-          {Object? title = sdkOmittedValue,
-          Object? state = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? dueOn = sdkOmittedValue}) =>
-      IssuesUpdateMilestoneRequestBody(
-        title: identical(title, sdkOmittedValue)
-            ? this.title
-            : title as SdkOptional<String>,
-        state: identical(state, sdkOmittedValue)
-            ? this.state
-            : state as SdkOptional<IssuesUpdateMilestoneRequestBodyState>,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as SdkOptional<String>,
-        dueOn: identical(dueOn, sdkOmittedValue)
-            ? this.dueOn
-            : dueOn as SdkOptional<String>,
-      );
-
-  factory IssuesUpdateMilestoneRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      IssuesUpdateMilestoneRequestBody(
-        title: json['title'] != null
-            ? SdkPresent((json['title'] as String?)!)
-            : const SdkOmitted(),
-        state: json['state'] != null
-            ? SdkPresent((json['state'] != null
-                ? IssuesUpdateMilestoneRequestBodyState.fromJson(
-                    json['state'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        description: json['description'] != null
-            ? SdkPresent((json['description'] as String?)!)
-            : const SdkOmitted(),
-        dueOn: json['due_on'] != null
-            ? SdkPresent((json['due_on'] as String?)!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (title) {
+        ...switch (awsRegion) {
           SdkPresent<String>(value: final value) => {
-              'title': value,
+              'aws_region': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (state) {
-          SdkPresent<IssuesUpdateMilestoneRequestBodyState>(
-            value: final value
-          ) =>
-            {
-              'state': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (description) {
+        ...switch (accountId) {
           SdkPresent<String>(value: final value) => {
-              'description': value,
+              'account_id': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (dueOn) {
+        ...switch (roleName) {
           SdkPresent<String>(value: final value) => {
-              'due_on': value,
+              'role_name': value,
             },
           _ => const <String, dynamic>{},
         },
-      };
-}
-
-class MarkdownRenderRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The Markdown text to render in HTML.
-  final String text;
-
-  /// The rendering mode.
-  final SdkOptional<MarkdownRenderRequestBodyMode> mode;
-
-  /// The repository context to use when creating references in `gfm` mode. For example, setting `context` to `octo-org/octo-repo` will change the text `#42` into an HTML link to issue 42 in the `octo-org/octo-repo` repository.
-  final SdkOptional<String> context;
-
-  const MarkdownRenderRequestBody(
-      {required this.text,
-      this.mode = const SdkOmitted(),
-      this.context = const SdkOmitted()});
-
-  MarkdownRenderRequestBody Function(
-      {String text,
-      SdkOptional<MarkdownRenderRequestBodyMode> mode,
-      SdkOptional<String> context}) get copyWith => _copyWith;
-
-  MarkdownRenderRequestBody _copyWith(
-          {Object? text = sdkOmittedValue,
-          Object? mode = sdkOmittedValue,
-          Object? context = sdkOmittedValue}) =>
-      MarkdownRenderRequestBody(
-        text: identical(text, sdkOmittedValue) ? this.text : text as String,
-        mode: identical(mode, sdkOmittedValue)
-            ? this.mode
-            : mode as SdkOptional<MarkdownRenderRequestBodyMode>,
-        context: identical(context, sdkOmittedValue)
-            ? this.context
-            : context as SdkOptional<String>,
-      );
-
-  factory MarkdownRenderRequestBody.fromJson(Map<String, dynamic> json) =>
-      MarkdownRenderRequestBody(
-        text: (json['text'] as String?)!,
-        mode: json['mode'] != null
-            ? SdkPresent((json['mode'] != null
-                ? MarkdownRenderRequestBodyMode.fromJson(json['mode'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        context: json['context'] != null
-            ? SdkPresent((json['context'] as String?)!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        'text': text,
-        ...switch (mode) {
-          SdkPresent<MarkdownRenderRequestBodyMode>(value: final value) => {
-              'mode': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (context) {
+        ...switch (domain) {
           SdkPresent<String>(value: final value) => {
-              'context': value,
+              'domain': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (domainOwner) {
+          SdkPresent<String>(value: final value) => {
+              'domain_owner': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (jfrogOidcProviderName) {
+          SdkPresent<String>(value: final value) => {
+              'jfrog_oidc_provider_name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (audience) {
+          SdkPresent<String>(value: final value) => {
+              'audience': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (identityMappingName) {
+          SdkPresent<String>(value: final value) => {
+              'identity_mapping_name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (namespace) {
+          SdkPresent<String>(value: final value) => {
+              'namespace': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (serviceSlug) {
+          SdkPresent<String>(value: final value) => {
+              'service_slug': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (apiHost) {
+          SdkPresent<String>(value: final value) => {
+              'api_host': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (workloadIdentityProvider) {
+          SdkPresent<String>(value: final value) => {
+              'workload_identity_provider': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (serviceAccount) {
+          SdkPresent<String>(value: final value) => {
+              'service_account': value,
             },
           _ => const <String, dynamic>{},
         },

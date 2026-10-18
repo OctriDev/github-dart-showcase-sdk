@@ -4,7 +4,7 @@
 part of 'webhook_pull_request_review_requested.dart';
 
 // webhook_pull_request_review_requested domain models (part 31)
-class WebhookPullRequestReviewRequestedVariant1PullRequestBaseUser {
+class WebhookPullRequestReviewRequestedVariant1PullRequestBaseRepoOwner {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   final SdkOptional<String> avatarUrl;
@@ -27,11 +27,12 @@ class WebhookPullRequestReviewRequestedVariant1PullRequestBaseUser {
   final SdkOptional<String> starredUrl;
   final SdkOptional<String> subscriptionsUrl;
   final SdkOptional<
-      WebhookPullRequestReviewRequestedVariant1PullRequestBaseUserType> type_;
+          WebhookPullRequestReviewRequestedVariant1PullRequestBaseRepoOwnerType>
+      type_;
   final SdkOptional<String> url;
   final SdkOptional<String> userViewType;
 
-  const WebhookPullRequestReviewRequestedVariant1PullRequestBaseUser(
+  const WebhookPullRequestReviewRequestedVariant1PullRequestBaseRepoOwner(
       {this.avatarUrl = const SdkOmitted(),
       this.deleted = const SdkOmitted(),
       this.email = const SdkOmitted(),
@@ -55,7 +56,7 @@ class WebhookPullRequestReviewRequestedVariant1PullRequestBaseUser {
       this.url = const SdkOmitted(),
       this.userViewType = const SdkOmitted()});
 
-  WebhookPullRequestReviewRequestedVariant1PullRequestBaseUser Function(
+  WebhookPullRequestReviewRequestedVariant1PullRequestBaseRepoOwner Function(
       {SdkOptional<String> avatarUrl,
       SdkOptional<bool> deleted,
       SdkOptional<String?> email,
@@ -76,12 +77,12 @@ class WebhookPullRequestReviewRequestedVariant1PullRequestBaseUser {
       SdkOptional<String> starredUrl,
       SdkOptional<String> subscriptionsUrl,
       SdkOptional<
-              WebhookPullRequestReviewRequestedVariant1PullRequestBaseUserType>
+              WebhookPullRequestReviewRequestedVariant1PullRequestBaseRepoOwnerType>
           type_,
       SdkOptional<String> url,
       SdkOptional<String> userViewType}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewRequestedVariant1PullRequestBaseUser _copyWith(
+  WebhookPullRequestReviewRequestedVariant1PullRequestBaseRepoOwner _copyWith(
           {Object? avatarUrl = sdkOmittedValue,
           Object? deleted = sdkOmittedValue,
           Object? email = sdkOmittedValue,
@@ -104,7 +105,7 @@ class WebhookPullRequestReviewRequestedVariant1PullRequestBaseUser {
           Object? type_ = sdkOmittedValue,
           Object? url = sdkOmittedValue,
           Object? userViewType = sdkOmittedValue}) =>
-      WebhookPullRequestReviewRequestedVariant1PullRequestBaseUser(
+      WebhookPullRequestReviewRequestedVariant1PullRequestBaseRepoOwner(
         avatarUrl: identical(avatarUrl, sdkOmittedValue)
             ? this.avatarUrl
             : avatarUrl as SdkOptional<String>,
@@ -161,7 +162,7 @@ class WebhookPullRequestReviewRequestedVariant1PullRequestBaseUser {
         type_: identical(type_, sdkOmittedValue)
             ? this.type_
             : type_ as SdkOptional<
-                WebhookPullRequestReviewRequestedVariant1PullRequestBaseUserType>,
+                WebhookPullRequestReviewRequestedVariant1PullRequestBaseRepoOwnerType>,
         url: identical(url, sdkOmittedValue)
             ? this.url
             : url as SdkOptional<String>,
@@ -170,9 +171,9 @@ class WebhookPullRequestReviewRequestedVariant1PullRequestBaseUser {
             : userViewType as SdkOptional<String>,
       );
 
-  factory WebhookPullRequestReviewRequestedVariant1PullRequestBaseUser.fromJson(
+  factory WebhookPullRequestReviewRequestedVariant1PullRequestBaseRepoOwner.fromJson(
           Map<String, dynamic> json) =>
-      WebhookPullRequestReviewRequestedVariant1PullRequestBaseUser(
+      WebhookPullRequestReviewRequestedVariant1PullRequestBaseRepoOwner(
         avatarUrl: json['avatar_url'] != null
             ? SdkPresent((json['avatar_url'] as String?)!)
             : const SdkOmitted(),
@@ -228,7 +229,7 @@ class WebhookPullRequestReviewRequestedVariant1PullRequestBaseUser {
             : const SdkOmitted(),
         type_: json['type'] != null
             ? SdkPresent((json['type'] != null
-                ? WebhookPullRequestReviewRequestedVariant1PullRequestBaseUserType
+                ? WebhookPullRequestReviewRequestedVariant1PullRequestBaseRepoOwnerType
                     .fromJson(json['type'] as String)
                 : null)!)
             : const SdkOmitted(),
@@ -347,7 +348,7 @@ class WebhookPullRequestReviewRequestedVariant1PullRequestBaseUser {
         },
         ...switch (type_) {
           SdkPresent<
-                WebhookPullRequestReviewRequestedVariant1PullRequestBaseUserType>(
+                WebhookPullRequestReviewRequestedVariant1PullRequestBaseRepoOwnerType>(
             value: final value
           ) =>
             {

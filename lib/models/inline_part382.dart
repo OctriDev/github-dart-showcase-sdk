@@ -4,575 +4,183 @@
 part of 'inline.dart';
 
 // Inline operation models (part 382)
-/// The bundle of the attestation.
-class OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final SdkOptional<String> mediaType;
-  final SdkOptional<Map<String, Object?>> verificationMaterial;
-  final SdkOptional<Map<String, Object?>> dsseEnvelope;
-
-  const OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle(
-      {this.mediaType = const SdkOmitted(),
-      this.verificationMaterial = const SdkOmitted(),
-      this.dsseEnvelope = const SdkOmitted()});
-
-  OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle Function(
-          {SdkOptional<String> mediaType,
-          SdkOptional<Map<String, Object?>> verificationMaterial,
-          SdkOptional<Map<String, Object?>> dsseEnvelope})
-      get copyWith => _copyWith;
-
-  OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle
-      _copyWith(
-              {Object? mediaType = sdkOmittedValue,
-              Object? verificationMaterial = sdkOmittedValue,
-              Object? dsseEnvelope = sdkOmittedValue}) =>
-          OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle(
-            mediaType: identical(mediaType, sdkOmittedValue)
-                ? this.mediaType
-                : mediaType as SdkOptional<String>,
-            verificationMaterial:
-                identical(verificationMaterial, sdkOmittedValue)
-                    ? this.verificationMaterial
-                    : verificationMaterial as SdkOptional<Map<String, Object?>>,
-            dsseEnvelope: identical(dsseEnvelope, sdkOmittedValue)
-                ? this.dsseEnvelope
-                : dsseEnvelope as SdkOptional<Map<String, Object?>>,
-          );
-
-  factory OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle.fromJson(
-          Map<String, dynamic> json) =>
-      OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle(
-        mediaType: json['mediaType'] != null
-            ? SdkPresent((json['mediaType'] as String?)!)
-            : const SdkOmitted(),
-        verificationMaterial: json['verificationMaterial'] != null
-            ? SdkPresent((json['verificationMaterial'] == null
-                ? null
-                : Map<String, dynamic>.from(json['verificationMaterial'] as Map)
-                    .map((key, value) => MapEntry(key, value)))!)
-            : const SdkOmitted(),
-        dsseEnvelope: json['dsseEnvelope'] != null
-            ? SdkPresent((json['dsseEnvelope'] == null
-                ? null
-                : Map<String, dynamic>.from(json['dsseEnvelope'] as Map)
-                    .map((key, value) => MapEntry(key, value)))!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (mediaType) {
-          SdkPresent<String>(value: final value) => {
-              'mediaType': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (verificationMaterial) {
-          SdkPresent<Map<String, Object?>>(value: final value) => {
-              'verificationMaterial': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (dsseEnvelope) {
-          SdkPresent<Map<String, Object?>>(value: final value) => {
-              'dsseEnvelope': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-class OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItem {
+class ProjectsAddItemForUserRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// The bundle of the attestation.
-  final SdkOptional<
-          OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle>
-      bundle;
-  final SdkOptional<int> repositoryId;
-  final SdkOptional<String> bundleUrl;
+  /// The type of item to add to the project. Must be either Issue or PullRequest.
+  final ProjectsAddItemForUserRequestBodyType type_;
 
-  const OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItem(
-      {this.bundle = const SdkOmitted(),
-      this.repositoryId = const SdkOmitted(),
-      this.bundleUrl = const SdkOmitted()});
-
-  OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItem Function(
-      {SdkOptional<
-              OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle>
-          bundle,
-      SdkOptional<int> repositoryId,
-      SdkOptional<String> bundleUrl}) get copyWith => _copyWith;
-
-  OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItem _copyWith(
-          {Object? bundle = sdkOmittedValue,
-          Object? repositoryId = sdkOmittedValue,
-          Object? bundleUrl = sdkOmittedValue}) =>
-      OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItem(
-        bundle: identical(bundle, sdkOmittedValue)
-            ? this.bundle
-            : bundle as SdkOptional<
-                OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle>,
-        repositoryId: identical(repositoryId, sdkOmittedValue)
-            ? this.repositoryId
-            : repositoryId as SdkOptional<int>,
-        bundleUrl: identical(bundleUrl, sdkOmittedValue)
-            ? this.bundleUrl
-            : bundleUrl as SdkOptional<String>,
-      );
-
-  factory OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItem.fromJson(
-          Map<String, dynamic> json) =>
-      OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItem(
-        bundle: json['bundle'] != null
-            ? SdkPresent((json['bundle'] != null
-                ? OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle
-                    .fromJson(json['bundle'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        repositoryId: json['repository_id'] != null
-            ? SdkPresent(((json['repository_id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        bundleUrl: json['bundle_url'] != null
-            ? SdkPresent((json['bundle_url'] as String?)!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (bundle) {
-          SdkPresent<
-                OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle>(
-            value: final value
-          ) =>
-            {
-              'bundle': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (repositoryId) {
-          SdkPresent<int>(value: final value) => {
-              'repository_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (bundleUrl) {
-          SdkPresent<String>(value: final value) => {
-              'bundle_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-/// Information about the current page.
-class OrgsListAttestationsBulkResponsePageInfo {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Indicates whether there is a next page.
-  final SdkOptional<bool> hasNext;
-
-  /// Indicates whether there is a previous page.
-  final SdkOptional<bool> hasPrevious;
-
-  /// The cursor to the next page.
-  final SdkOptional<String> next;
-
-  /// The cursor to the previous page.
-  final SdkOptional<String> previous;
-
-  const OrgsListAttestationsBulkResponsePageInfo(
-      {this.hasNext = const SdkOmitted(),
-      this.hasPrevious = const SdkOmitted(),
-      this.next = const SdkOmitted(),
-      this.previous = const SdkOmitted()});
-
-  OrgsListAttestationsBulkResponsePageInfo Function(
-      {SdkOptional<bool> hasNext,
-      SdkOptional<bool> hasPrevious,
-      SdkOptional<String> next,
-      SdkOptional<String> previous}) get copyWith => _copyWith;
-
-  OrgsListAttestationsBulkResponsePageInfo _copyWith(
-          {Object? hasNext = sdkOmittedValue,
-          Object? hasPrevious = sdkOmittedValue,
-          Object? next = sdkOmittedValue,
-          Object? previous = sdkOmittedValue}) =>
-      OrgsListAttestationsBulkResponsePageInfo(
-        hasNext: identical(hasNext, sdkOmittedValue)
-            ? this.hasNext
-            : hasNext as SdkOptional<bool>,
-        hasPrevious: identical(hasPrevious, sdkOmittedValue)
-            ? this.hasPrevious
-            : hasPrevious as SdkOptional<bool>,
-        next: identical(next, sdkOmittedValue)
-            ? this.next
-            : next as SdkOptional<String>,
-        previous: identical(previous, sdkOmittedValue)
-            ? this.previous
-            : previous as SdkOptional<String>,
-      );
-
-  factory OrgsListAttestationsBulkResponsePageInfo.fromJson(
-          Map<String, dynamic> json) =>
-      OrgsListAttestationsBulkResponsePageInfo(
-        hasNext: json['has_next'] != null
-            ? SdkPresent((json['has_next'] as bool?)!)
-            : const SdkOmitted(),
-        hasPrevious: json['has_previous'] != null
-            ? SdkPresent((json['has_previous'] as bool?)!)
-            : const SdkOmitted(),
-        next: json['next'] != null
-            ? SdkPresent((json['next'] as String?)!)
-            : const SdkOmitted(),
-        previous: json['previous'] != null
-            ? SdkPresent((json['previous'] as String?)!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (hasNext) {
-          SdkPresent<bool>(value: final value) => {
-              'has_next': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (hasPrevious) {
-          SdkPresent<bool>(value: final value) => {
-              'has_previous': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (next) {
-          SdkPresent<String>(value: final value) => {
-              'next': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (previous) {
-          SdkPresent<String>(value: final value) => {
-              'previous': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-class OrgsListAttestationsBulkResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Mapping of subject digest to bundles.
-  final SdkOptional<
-          Map<
-              String,
-              List<
-                  OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItem>>>
-      attestationsSubjectDigests;
-
-  /// Information about the current page.
-  final SdkOptional<OrgsListAttestationsBulkResponsePageInfo> pageInfo;
-
-  const OrgsListAttestationsBulkResponse(
-      {this.attestationsSubjectDigests = const SdkOmitted(),
-      this.pageInfo = const SdkOmitted()});
-
-  OrgsListAttestationsBulkResponse Function(
-      {SdkOptional<
-              Map<
-                  String,
-                  List<
-                      OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItem>>>
-          attestationsSubjectDigests,
-      SdkOptional<OrgsListAttestationsBulkResponsePageInfo>
-          pageInfo}) get copyWith => _copyWith;
-
-  OrgsListAttestationsBulkResponse _copyWith(
-          {Object? attestationsSubjectDigests = sdkOmittedValue,
-          Object? pageInfo = sdkOmittedValue}) =>
-      OrgsListAttestationsBulkResponse(
-        attestationsSubjectDigests: identical(
-                attestationsSubjectDigests, sdkOmittedValue)
-            ? this.attestationsSubjectDigests
-            : attestationsSubjectDigests as SdkOptional<
-                Map<
-                    String,
-                    List<
-                        OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItem>>>,
-        pageInfo: identical(pageInfo, sdkOmittedValue)
-            ? this.pageInfo
-            : pageInfo as SdkOptional<OrgsListAttestationsBulkResponsePageInfo>,
-      );
-
-  factory OrgsListAttestationsBulkResponse.fromJson(
-          Map<String, dynamic> json) =>
-      OrgsListAttestationsBulkResponse(
-        attestationsSubjectDigests: json['attestations_subject_digests'] != null
-            ? SdkPresent((json['attestations_subject_digests'] == null
-                ? null
-                : Map<String, dynamic>.from(
-                        json['attestations_subject_digests'] as Map)
-                    .map((key, value) => MapEntry(
-                        key,
-                        (value as List)
-                            .map((item) =>
-                                OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItem
-                                    .fromJson(item as Map<String, dynamic>))
-                            .toList())))!)
-            : const SdkOmitted(),
-        pageInfo: json['page_info'] != null
-            ? SdkPresent((json['page_info'] != null
-                ? OrgsListAttestationsBulkResponsePageInfo.fromJson(
-                    json['page_info'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (attestationsSubjectDigests) {
-          SdkPresent<
-                Map<
-                    String,
-                    List<
-                        OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueItem>>>(
-            value: final value
-          ) =>
-            {
-              'attestations_subject_digests': value.map((key, value) =>
-                  MapEntry(key, value.map((item) => item.toJson()).toList())),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pageInfo) {
-          SdkPresent<OrgsListAttestationsBulkResponsePageInfo>(
-            value: final value
-          ) =>
-            {
-              'page_info': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-class OrgsListAttestationRepositoriesResponseItem {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
+  /// The unique identifier of the issue or pull request to add to the project.
   final SdkOptional<int> id;
-  final SdkOptional<String> name;
 
-  const OrgsListAttestationRepositoriesResponseItem(
-      {this.id = const SdkOmitted(), this.name = const SdkOmitted()});
+  /// The repository owner login.
+  final SdkOptional<String> owner;
 
-  OrgsListAttestationRepositoriesResponseItem Function(
-      {SdkOptional<int> id,
-      SdkOptional<String> name}) get copyWith => _copyWith;
+  /// The repository name.
+  final SdkOptional<String> repo;
 
-  OrgsListAttestationRepositoriesResponseItem _copyWith(
-          {Object? id = sdkOmittedValue, Object? name = sdkOmittedValue}) =>
-      OrgsListAttestationRepositoriesResponseItem(
+  /// The issue or pull request number.
+  final SdkOptional<int> number;
+
+  const ProjectsAddItemForUserRequestBody(
+      {required this.type_,
+      this.id = const SdkOmitted(),
+      this.owner = const SdkOmitted(),
+      this.repo = const SdkOmitted(),
+      this.number = const SdkOmitted()});
+
+  ProjectsAddItemForUserRequestBody Function(
+      {ProjectsAddItemForUserRequestBodyType type_,
+      SdkOptional<int> id,
+      SdkOptional<String> owner,
+      SdkOptional<String> repo,
+      SdkOptional<int> number}) get copyWith => _copyWith;
+
+  ProjectsAddItemForUserRequestBody _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? owner = sdkOmittedValue,
+          Object? repo = sdkOmittedValue,
+          Object? number = sdkOmittedValue}) =>
+      ProjectsAddItemForUserRequestBody(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as ProjectsAddItemForUserRequestBodyType,
         id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String>,
+        owner: identical(owner, sdkOmittedValue)
+            ? this.owner
+            : owner as SdkOptional<String>,
+        repo: identical(repo, sdkOmittedValue)
+            ? this.repo
+            : repo as SdkOptional<String>,
+        number: identical(number, sdkOmittedValue)
+            ? this.number
+            : number as SdkOptional<int>,
       );
 
-  factory OrgsListAttestationRepositoriesResponseItem.fromJson(
+  factory ProjectsAddItemForUserRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      OrgsListAttestationRepositoriesResponseItem(
+      ProjectsAddItemForUserRequestBody(
+        type_: (json['type'] != null
+            ? ProjectsAddItemForUserRequestBodyType.fromJson(
+                json['type'] as String)
+            : null)!,
         id: json['id'] != null
             ? SdkPresent(((json['id'] as num?)?.toInt())!)
             : const SdkOmitted(),
-        name: json['name'] != null
-            ? SdkPresent((json['name'] as String?)!)
+        owner: json['owner'] != null
+            ? SdkPresent((json['owner'] as String?)!)
+            : const SdkOmitted(),
+        repo: json['repo'] != null
+            ? SdkPresent((json['repo'] as String?)!)
+            : const SdkOmitted(),
+        number: json['number'] != null
+            ? SdkPresent(((json['number'] as num?)?.toInt())!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
+        'type': type_.toJson(),
         ...switch (id) {
           SdkPresent<int>(value: final value) => {
               'id': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (name) {
+        ...switch (owner) {
           SdkPresent<String>(value: final value) => {
-              'name': value,
+              'owner': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (repo) {
+          SdkPresent<String>(value: final value) => {
+              'repo': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (number) {
+          SdkPresent<int>(value: final value) => {
+              'number': value,
             },
           _ => const <String, dynamic>{},
         },
       };
 }
 
-/// The attestation's Sigstore Bundle. Refer to the [Sigstore Bundle Specification](https://github.com/sigstore/protobuf-specs/blob/main/protos/sigstore_bundle.proto) for more information.
-class OrgsListAttestationsResponseAttestationsItemBundle {
+class ProjectsUpdateItemForUserRequestBodyFieldsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final SdkOptional<String> mediaType;
-  final SdkOptional<Map<String, Object?>> verificationMaterial;
-  final SdkOptional<Map<String, Object?>> dsseEnvelope;
 
-  const OrgsListAttestationsResponseAttestationsItemBundle(
-      {this.mediaType = const SdkOmitted(),
-      this.verificationMaterial = const SdkOmitted(),
-      this.dsseEnvelope = const SdkOmitted()});
+  /// The ID of the project field to update.
+  final int id;
 
-  OrgsListAttestationsResponseAttestationsItemBundle Function(
-          {SdkOptional<String> mediaType,
-          SdkOptional<Map<String, Object?>> verificationMaterial,
-          SdkOptional<Map<String, Object?>> dsseEnvelope})
+  /// The new value for the field: - For text, number, and date fields, provide the new value directly. - For single select and iteration fields, provide the ID of the option or iteration. - To clear the field, set this to null.
+  final dynamic value;
+
+  const ProjectsUpdateItemForUserRequestBodyFieldsItem(
+      {required this.id, required this.value});
+
+  ProjectsUpdateItemForUserRequestBodyFieldsItem Function(
+      {int id, dynamic value}) get copyWith => _copyWith;
+
+  ProjectsUpdateItemForUserRequestBodyFieldsItem _copyWith(
+          {Object? id = sdkOmittedValue, Object? value = sdkOmittedValue}) =>
+      ProjectsUpdateItemForUserRequestBodyFieldsItem(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        value:
+            identical(value, sdkOmittedValue) ? this.value : value as dynamic,
+      );
+
+  factory ProjectsUpdateItemForUserRequestBodyFieldsItem.fromJson(
+          Map<String, dynamic> json) =>
+      ProjectsUpdateItemForUserRequestBodyFieldsItem(
+        id: ((json['id'] as num?)?.toInt())!,
+        value: json.containsKey('value')
+            ? json['value']
+            : throw ArgumentError.value(
+                null, 'value', 'Required property is missing'),
+      );
+
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'value': value,
+      };
+}
+
+class ProjectsUpdateItemForUserRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// A list of field updates to apply.
+  final List<ProjectsUpdateItemForUserRequestBodyFieldsItem> fields;
+
+  const ProjectsUpdateItemForUserRequestBody({required this.fields});
+
+  ProjectsUpdateItemForUserRequestBody Function(
+          {List<ProjectsUpdateItemForUserRequestBodyFieldsItem> fields})
       get copyWith => _copyWith;
 
-  OrgsListAttestationsResponseAttestationsItemBundle _copyWith(
-          {Object? mediaType = sdkOmittedValue,
-          Object? verificationMaterial = sdkOmittedValue,
-          Object? dsseEnvelope = sdkOmittedValue}) =>
-      OrgsListAttestationsResponseAttestationsItemBundle(
-        mediaType: identical(mediaType, sdkOmittedValue)
-            ? this.mediaType
-            : mediaType as SdkOptional<String>,
-        verificationMaterial: identical(verificationMaterial, sdkOmittedValue)
-            ? this.verificationMaterial
-            : verificationMaterial as SdkOptional<Map<String, Object?>>,
-        dsseEnvelope: identical(dsseEnvelope, sdkOmittedValue)
-            ? this.dsseEnvelope
-            : dsseEnvelope as SdkOptional<Map<String, Object?>>,
+  ProjectsUpdateItemForUserRequestBody _copyWith(
+          {Object? fields = sdkOmittedValue}) =>
+      ProjectsUpdateItemForUserRequestBody(
+        fields: identical(fields, sdkOmittedValue)
+            ? this.fields
+            : fields as List<ProjectsUpdateItemForUserRequestBodyFieldsItem>,
       );
 
-  factory OrgsListAttestationsResponseAttestationsItemBundle.fromJson(
+  factory ProjectsUpdateItemForUserRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      OrgsListAttestationsResponseAttestationsItemBundle(
-        mediaType: json['mediaType'] != null
-            ? SdkPresent((json['mediaType'] as String?)!)
-            : const SdkOmitted(),
-        verificationMaterial: json['verificationMaterial'] != null
-            ? SdkPresent((json['verificationMaterial'] == null
-                ? null
-                : Map<String, dynamic>.from(json['verificationMaterial'] as Map)
-                    .map((key, value) => MapEntry(key, value)))!)
-            : const SdkOmitted(),
-        dsseEnvelope: json['dsseEnvelope'] != null
-            ? SdkPresent((json['dsseEnvelope'] == null
-                ? null
-                : Map<String, dynamic>.from(json['dsseEnvelope'] as Map)
-                    .map((key, value) => MapEntry(key, value)))!)
-            : const SdkOmitted(),
+      ProjectsUpdateItemForUserRequestBody(
+        fields: ((json['fields'] as List?)
+            ?.map((e) =>
+                ProjectsUpdateItemForUserRequestBodyFieldsItem.fromJson(
+                    e as Map<String, dynamic>))
+            .toList())!,
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (mediaType) {
-          SdkPresent<String>(value: final value) => {
-              'mediaType': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (verificationMaterial) {
-          SdkPresent<Map<String, Object?>>(value: final value) => {
-              'verificationMaterial': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (dsseEnvelope) {
-          SdkPresent<Map<String, Object?>>(value: final value) => {
-              'dsseEnvelope': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-class OrgsListAttestationsResponseAttestationsItem {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The attestation's Sigstore Bundle. Refer to the [Sigstore Bundle Specification](https://github.com/sigstore/protobuf-specs/blob/main/protos/sigstore_bundle.proto) for more information.
-  final SdkOptional<OrgsListAttestationsResponseAttestationsItemBundle?> bundle;
-  final SdkOptional<int> repositoryId;
-  final SdkOptional<String> bundleUrl;
-  final SdkOptional<String> initiator;
-
-  const OrgsListAttestationsResponseAttestationsItem(
-      {this.bundle = const SdkOmitted(),
-      this.repositoryId = const SdkOmitted(),
-      this.bundleUrl = const SdkOmitted(),
-      this.initiator = const SdkOmitted()});
-
-  OrgsListAttestationsResponseAttestationsItem Function(
-      {SdkOptional<OrgsListAttestationsResponseAttestationsItemBundle?> bundle,
-      SdkOptional<int> repositoryId,
-      SdkOptional<String> bundleUrl,
-      SdkOptional<String> initiator}) get copyWith => _copyWith;
-
-  OrgsListAttestationsResponseAttestationsItem _copyWith(
-          {Object? bundle = sdkOmittedValue,
-          Object? repositoryId = sdkOmittedValue,
-          Object? bundleUrl = sdkOmittedValue,
-          Object? initiator = sdkOmittedValue}) =>
-      OrgsListAttestationsResponseAttestationsItem(
-        bundle: identical(bundle, sdkOmittedValue)
-            ? this.bundle
-            : bundle as SdkOptional<
-                OrgsListAttestationsResponseAttestationsItemBundle?>,
-        repositoryId: identical(repositoryId, sdkOmittedValue)
-            ? this.repositoryId
-            : repositoryId as SdkOptional<int>,
-        bundleUrl: identical(bundleUrl, sdkOmittedValue)
-            ? this.bundleUrl
-            : bundleUrl as SdkOptional<String>,
-        initiator: identical(initiator, sdkOmittedValue)
-            ? this.initiator
-            : initiator as SdkOptional<String>,
-      );
-
-  factory OrgsListAttestationsResponseAttestationsItem.fromJson(
-          Map<String, dynamic> json) =>
-      OrgsListAttestationsResponseAttestationsItem(
-        bundle: json.containsKey('bundle')
-            ? SdkPresent(json['bundle'] != null
-                ? OrgsListAttestationsResponseAttestationsItemBundle.fromJson(
-                    json['bundle'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        repositoryId: json['repository_id'] != null
-            ? SdkPresent(((json['repository_id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        bundleUrl: json['bundle_url'] != null
-            ? SdkPresent((json['bundle_url'] as String?)!)
-            : const SdkOmitted(),
-        initiator: json['initiator'] != null
-            ? SdkPresent((json['initiator'] as String?)!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (bundle) {
-          SdkPresent<OrgsListAttestationsResponseAttestationsItemBundle?>(
-            value: final value
-          ) =>
-            {
-              'bundle': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (repositoryId) {
-          SdkPresent<int>(value: final value) => {
-              'repository_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (bundleUrl) {
-          SdkPresent<String>(value: final value) => {
-              'bundle_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (initiator) {
-          SdkPresent<String>(value: final value) => {
-              'initiator': value,
-            },
-          _ => const <String, dynamic>{},
-        },
+        'fields': fields.map((item) => item.toJson()).toList(),
       };
 }

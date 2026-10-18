@@ -5,32 +5,32 @@ part of 'webhook_project_card_moved.dart';
 
 // webhook_project_card_moved domain models (part 3)
 /// Required object value serialized in the `project_card` wire field.
-class WebhookProjectCardMovedProjectCardVariant0 {
+class WebhookProjectCardMovedProjectCard {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Optional `integer` value serialized in the `after_id` wire field.
-  final SdkOptional<int?> afterId;
+  /// Required `number` value serialized in the `after_id` wire field.
+  final double? afterId;
 
-  /// Whether or not the card is archived
+  /// Required `boolean` value serialized in the `archived` wire field.
   final bool archived;
 
   /// Required `integer` value serialized in the `column_id` wire field.
   final int columnId;
 
-  /// Required `uri`-formatted value serialized in the `column_url` wire field.
+  /// Required `string` value serialized in the `column_url` wire field.
   final String columnUrl;
 
   /// Optional `uri`-formatted value serialized in the `content_url` wire field.
   final SdkOptional<String> contentUrl;
 
-  /// Required `date-time`-formatted value serialized in the `created_at` wire field.
+  /// Required `string` value serialized in the `created_at` wire field.
   final String createdAt;
 
   /// Required object value serialized in the `creator` wire field.
-  final WebhookProjectCardMovedProjectCardVariant0Creator? creator;
+  final WebhookProjectCardMovedProjectCardCreator? creator;
 
-  /// The project card's ID
+  /// Required `integer` value serialized in the `id` wire field.
   final int id;
 
   /// Required `string` value serialized in the `node_id` wire field.
@@ -39,17 +39,17 @@ class WebhookProjectCardMovedProjectCardVariant0 {
   /// Required `string` value serialized in the `note` wire field.
   final String? note;
 
-  /// Required `uri`-formatted value serialized in the `project_url` wire field.
+  /// Required `string` value serialized in the `project_url` wire field.
   final String projectUrl;
 
-  /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
+  /// Required `string` value serialized in the `updated_at` wire field.
   final String updatedAt;
 
-  /// Required `uri`-formatted value serialized in the `url` wire field.
+  /// Required `string` value serialized in the `url` wire field.
   final String url;
 
-  const WebhookProjectCardMovedProjectCardVariant0(
-      {this.afterId = const SdkOmitted(),
+  const WebhookProjectCardMovedProjectCard(
+      {required this.afterId,
       required this.archived,
       required this.columnId,
       required this.columnUrl,
@@ -63,14 +63,14 @@ class WebhookProjectCardMovedProjectCardVariant0 {
       required this.updatedAt,
       required this.url});
 
-  WebhookProjectCardMovedProjectCardVariant0 Function(
-      {SdkOptional<int?> afterId,
+  WebhookProjectCardMovedProjectCard Function(
+      {double? afterId,
       bool archived,
       int columnId,
       String columnUrl,
       SdkOptional<String> contentUrl,
       String createdAt,
-      WebhookProjectCardMovedProjectCardVariant0Creator? creator,
+      WebhookProjectCardMovedProjectCardCreator? creator,
       int id,
       String nodeId,
       String? note,
@@ -78,7 +78,7 @@ class WebhookProjectCardMovedProjectCardVariant0 {
       String updatedAt,
       String url}) get copyWith => _copyWith;
 
-  WebhookProjectCardMovedProjectCardVariant0 _copyWith(
+  WebhookProjectCardMovedProjectCard _copyWith(
           {Object? afterId = sdkOmittedValue,
           Object? archived = sdkOmittedValue,
           Object? columnId = sdkOmittedValue,
@@ -92,10 +92,10 @@ class WebhookProjectCardMovedProjectCardVariant0 {
           Object? projectUrl = sdkOmittedValue,
           Object? updatedAt = sdkOmittedValue,
           Object? url = sdkOmittedValue}) =>
-      WebhookProjectCardMovedProjectCardVariant0(
+      WebhookProjectCardMovedProjectCard(
         afterId: identical(afterId, sdkOmittedValue)
             ? this.afterId
-            : afterId as SdkOptional<int?>,
+            : afterId as double?,
         archived: identical(archived, sdkOmittedValue)
             ? this.archived
             : archived as bool,
@@ -113,7 +113,7 @@ class WebhookProjectCardMovedProjectCardVariant0 {
             : createdAt as String,
         creator: identical(creator, sdkOmittedValue)
             ? this.creator
-            : creator as WebhookProjectCardMovedProjectCardVariant0Creator?,
+            : creator as WebhookProjectCardMovedProjectCardCreator?,
         id: identical(id, sdkOmittedValue) ? this.id : id as int,
         nodeId:
             identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
@@ -127,12 +127,13 @@ class WebhookProjectCardMovedProjectCardVariant0 {
         url: identical(url, sdkOmittedValue) ? this.url : url as String,
       );
 
-  factory WebhookProjectCardMovedProjectCardVariant0.fromJson(
+  factory WebhookProjectCardMovedProjectCard.fromJson(
           Map<String, dynamic> json) =>
-      WebhookProjectCardMovedProjectCardVariant0(
+      WebhookProjectCardMovedProjectCard(
         afterId: json.containsKey('after_id')
-            ? SdkPresent((json['after_id'] as num?)?.toInt())
-            : const SdkOmitted(),
+            ? (json['after_id'] as num?)?.toDouble()
+            : throw ArgumentError.value(
+                null, 'after_id', 'Required property is missing'),
         archived: (json['archived'] as bool?)!,
         columnId: ((json['column_id'] as num?)?.toInt())!,
         columnUrl: (json['column_url'] as String?)!,
@@ -142,7 +143,7 @@ class WebhookProjectCardMovedProjectCardVariant0 {
         createdAt: (json['created_at'] as String?)!,
         creator: json.containsKey('creator')
             ? json['creator'] != null
-                ? WebhookProjectCardMovedProjectCardVariant0Creator.fromJson(
+                ? WebhookProjectCardMovedProjectCardCreator.fromJson(
                     json['creator'] as Map<String, dynamic>)
                 : null
             : throw ArgumentError.value(
@@ -159,12 +160,7 @@ class WebhookProjectCardMovedProjectCardVariant0 {
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (afterId) {
-          SdkPresent<int?>(value: final value) => {
-              'after_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
+        'after_id': afterId,
         'archived': archived,
         'column_id': columnId,
         'column_url': columnUrl,
@@ -182,5 +178,171 @@ class WebhookProjectCardMovedProjectCardVariant0 {
         'project_url': projectUrl,
         'updated_at': updatedAt,
         'url': url,
+      };
+}
+
+/// Typed representation of the `WebhookProjectCardMoved` API schema.
+class WebhookProjectCardMoved {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// Required enumerated value serialized in the `action` wire field.
+  final WebhookProjectCardMovedAction action;
+
+  /// Optional object value serialized in the `changes` wire field.
+  final SdkOptional<WebhookProjectCardMovedChanges> changes;
+
+  /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured on an enterprise account or an organization that's part of an enterprise account. For more information, see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
+  final SdkOptional<EnterpriseWebhooks> enterprise;
+
+  /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured for and sent to a GitHub App. For more information, see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
+  final SdkOptional<SimpleInstallation> installation;
+
+  /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an organization, or when the event occurs from activity in a repository owned by an organization.
+  final SdkOptional<OrganizationSimpleWebhooks> organization;
+
+  /// Required object value serialized in the `project_card` wire field.
+  final WebhookProjectCardMovedProjectCard projectCard;
+
+  /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property when the event occurs from activity in a repository.
+  final SdkOptional<RepositoryWebhooks> repository;
+
+  /// A GitHub user.
+  final SimpleUser sender;
+
+  const WebhookProjectCardMoved(
+      {required this.action,
+      this.changes = const SdkOmitted(),
+      this.enterprise = const SdkOmitted(),
+      this.installation = const SdkOmitted(),
+      this.organization = const SdkOmitted(),
+      required this.projectCard,
+      this.repository = const SdkOmitted(),
+      required this.sender});
+
+  WebhookProjectCardMoved Function(
+      {WebhookProjectCardMovedAction action,
+      SdkOptional<WebhookProjectCardMovedChanges> changes,
+      SdkOptional<EnterpriseWebhooks> enterprise,
+      SdkOptional<SimpleInstallation> installation,
+      SdkOptional<OrganizationSimpleWebhooks> organization,
+      WebhookProjectCardMovedProjectCard projectCard,
+      SdkOptional<RepositoryWebhooks> repository,
+      SimpleUser sender}) get copyWith => _copyWith;
+
+  WebhookProjectCardMoved _copyWith(
+          {Object? action = sdkOmittedValue,
+          Object? changes = sdkOmittedValue,
+          Object? enterprise = sdkOmittedValue,
+          Object? installation = sdkOmittedValue,
+          Object? organization = sdkOmittedValue,
+          Object? projectCard = sdkOmittedValue,
+          Object? repository = sdkOmittedValue,
+          Object? sender = sdkOmittedValue}) =>
+      WebhookProjectCardMoved(
+        action: identical(action, sdkOmittedValue)
+            ? this.action
+            : action as WebhookProjectCardMovedAction,
+        changes: identical(changes, sdkOmittedValue)
+            ? this.changes
+            : changes as SdkOptional<WebhookProjectCardMovedChanges>,
+        enterprise: identical(enterprise, sdkOmittedValue)
+            ? this.enterprise
+            : enterprise as SdkOptional<EnterpriseWebhooks>,
+        installation: identical(installation, sdkOmittedValue)
+            ? this.installation
+            : installation as SdkOptional<SimpleInstallation>,
+        organization: identical(organization, sdkOmittedValue)
+            ? this.organization
+            : organization as SdkOptional<OrganizationSimpleWebhooks>,
+        projectCard: identical(projectCard, sdkOmittedValue)
+            ? this.projectCard
+            : projectCard as WebhookProjectCardMovedProjectCard,
+        repository: identical(repository, sdkOmittedValue)
+            ? this.repository
+            : repository as SdkOptional<RepositoryWebhooks>,
+        sender: identical(sender, sdkOmittedValue)
+            ? this.sender
+            : sender as SimpleUser,
+      );
+
+  factory WebhookProjectCardMoved.fromJson(Map<String, dynamic> json) =>
+      WebhookProjectCardMoved(
+        action: (json['action'] != null
+            ? WebhookProjectCardMovedAction.fromJson(json['action'] as String)
+            : null)!,
+        changes: json['changes'] != null
+            ? SdkPresent((json['changes'] != null
+                ? WebhookProjectCardMovedChanges.fromJson(
+                    json['changes'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        enterprise: json['enterprise'] != null
+            ? SdkPresent((json['enterprise'] != null
+                ? EnterpriseWebhooks.fromJson(
+                    json['enterprise'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        installation: json['installation'] != null
+            ? SdkPresent((json['installation'] != null
+                ? SimpleInstallation.fromJson(
+                    json['installation'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        organization: json['organization'] != null
+            ? SdkPresent((json['organization'] != null
+                ? OrganizationSimpleWebhooks.fromJson(
+                    json['organization'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        projectCard: (json['project_card'] != null
+            ? WebhookProjectCardMovedProjectCard.fromJson(
+                json['project_card'] as Map<String, dynamic>)
+            : null)!,
+        repository: json['repository'] != null
+            ? SdkPresent((json['repository'] != null
+                ? RepositoryWebhooks.fromJson(
+                    json['repository'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        sender: (json['sender'] != null
+            ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
+            : null)!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'action': action.toJson(),
+        ...switch (changes) {
+          SdkPresent<WebhookProjectCardMovedChanges>(value: final value) => {
+              'changes': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (enterprise) {
+          SdkPresent<EnterpriseWebhooks>(value: final value) => {
+              'enterprise': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (installation) {
+          SdkPresent<SimpleInstallation>(value: final value) => {
+              'installation': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (organization) {
+          SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {
+              'organization': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'project_card': projectCard.toJson(),
+        ...switch (repository) {
+          SdkPresent<RepositoryWebhooks>(value: final value) => {
+              'repository': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'sender': sender.toJson(),
       };
 }

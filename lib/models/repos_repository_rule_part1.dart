@@ -9,6 +9,158 @@ sealed class RepositoryRule {
   static const String constructionSurface = 'named';
   const RepositoryRule();
   factory RepositoryRule.fromJson(Object? json) {
+    if (json is Map<String, dynamic>) {
+      try {
+        final value = RepositoryRuleCreation.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleRepositoryRuleCreation(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleUpdate.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleRepositoryRuleUpdate(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleDeletion.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleRepositoryRuleDeletion(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleRequiredLinearHistory.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleRepositoryRuleRequiredLinearHistory(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleMergeQueue.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleRepositoryRuleMergeQueue(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleRequiredDeployments.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleRepositoryRuleRequiredDeployments(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleRequiredSignatures.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleRepositoryRuleRequiredSignatures(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRulePullRequest.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleRepositoryRulePullRequest(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleRequiredStatusChecks.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleRepositoryRuleRequiredStatusChecks(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleNonFastForward.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleRepositoryRuleNonFastForward(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleCommitMessagePattern.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleRepositoryRuleCommitMessagePattern(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleCommitAuthorEmailPattern.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleRepositoryRuleCommitAuthorEmailPattern(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleCommitterEmailPattern.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleRepositoryRuleCommitterEmailPattern(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleBranchNamePattern.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleRepositoryRuleBranchNamePattern(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleTagNamePattern.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleRepositoryRuleTagNamePattern(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleWorkflows.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleRepositoryRuleWorkflows(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleCodeScanning.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleRepositoryRuleCodeScanning(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleCodeQuality.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleRepositoryRuleCodeQuality(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleCodeCoverage.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleRepositoryRuleCodeCoverage(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleCopilotCodeReview.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleRepositoryRuleCopilotCodeReview(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleLicenseComplianceScanning.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleRepositoryRuleLicenseComplianceScanning(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleFilePathRestriction.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleRepositoryRuleFilePathRestriction(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleMaxFilePathLength.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleRepositoryRuleMaxFilePathLength(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleFileExtensionRestriction.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleRepositoryRuleFileExtensionRestriction(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleMaxFileSize.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleRepositoryRuleMaxFileSize(value);
+        }
+      } catch (_) {}
+    }
     try {
       return RepositoryRuleRepositoryRuleCreation(
           RepositoryRuleCreation.fromJson(json as Map<String, dynamic>));
@@ -434,65 +586,5 @@ class RepositoryRuleBranchNamePatternParameters {
         },
         'operator': operator_.toJson(),
         'pattern': pattern,
-      };
-}
-
-/// Parameters to be used for the branch_name_pattern rule
-class RepositoryRuleBranchNamePattern {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Required enumerated value serialized in the `type` wire field.
-  final RepositoryRuleBranchNamePatternType type_;
-
-  /// Optional object value serialized in the `parameters` wire field.
-  final SdkOptional<RepositoryRuleBranchNamePatternParameters> parameters;
-
-  const RepositoryRuleBranchNamePattern(
-      {required this.type_, this.parameters = const SdkOmitted()});
-
-  RepositoryRuleBranchNamePattern Function(
-          {RepositoryRuleBranchNamePatternType type_,
-          SdkOptional<RepositoryRuleBranchNamePatternParameters> parameters})
-      get copyWith => _copyWith;
-
-  RepositoryRuleBranchNamePattern _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? parameters = sdkOmittedValue}) =>
-      RepositoryRuleBranchNamePattern(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as RepositoryRuleBranchNamePatternType,
-        parameters: identical(parameters, sdkOmittedValue)
-            ? this.parameters
-            : parameters
-                as SdkOptional<RepositoryRuleBranchNamePatternParameters>,
-      );
-
-  factory RepositoryRuleBranchNamePattern.fromJson(Map<String, dynamic> json) =>
-      RepositoryRuleBranchNamePattern(
-        type_: (json['type'] != null
-            ? RepositoryRuleBranchNamePatternType.fromJson(
-                json['type'] as String)
-            : null)!,
-        parameters: json['parameters'] != null
-            ? SdkPresent((json['parameters'] != null
-                ? RepositoryRuleBranchNamePatternParameters.fromJson(
-                    json['parameters'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
-        ...switch (parameters) {
-          SdkPresent<RepositoryRuleBranchNamePatternParameters>(
-            value: final value
-          ) =>
-            {
-              'parameters': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
       };
 }

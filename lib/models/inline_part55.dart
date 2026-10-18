@@ -4,230 +4,6 @@
 part of 'inline.dart';
 
 // Inline operation models (part 55)
-/// State of a code scanning alert. Events for alerts found outside the default branch will return a `null` value until they are dismissed or fixed.
-final class WebhookCodeScanningAlertCreatedAlertState {
-  final String value;
-
-  const WebhookCodeScanningAlertCreatedAlertState._(this.value);
-
-  factory WebhookCodeScanningAlertCreatedAlertState.fromJson(String value) =>
-      WebhookCodeScanningAlertCreatedAlertState._(value);
-
-  static const open = WebhookCodeScanningAlertCreatedAlertState._('open');
-  static const dismissed =
-      WebhookCodeScanningAlertCreatedAlertState._('dismissed');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookCodeScanningAlertCreatedAlertState &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookCodeScanningAlertFixedAction {
-  final String value;
-
-  const WebhookCodeScanningAlertFixedAction._(this.value);
-
-  factory WebhookCodeScanningAlertFixedAction.fromJson(String value) =>
-      WebhookCodeScanningAlertFixedAction._(value);
-
-  static const fixed = WebhookCodeScanningAlertFixedAction._('fixed');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookCodeScanningAlertFixedAction && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhookCodeScanningAlertFixedAlertDismissedByType {
-  final String value;
-
-  const WebhookCodeScanningAlertFixedAlertDismissedByType._(this.value);
-
-  factory WebhookCodeScanningAlertFixedAlertDismissedByType.fromJson(
-          String value) =>
-      WebhookCodeScanningAlertFixedAlertDismissedByType._(value);
-
-  static const bot = WebhookCodeScanningAlertFixedAlertDismissedByType._('Bot');
-  static const user =
-      WebhookCodeScanningAlertFixedAlertDismissedByType._('User');
-  static const organization =
-      WebhookCodeScanningAlertFixedAlertDismissedByType._('Organization');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookCodeScanningAlertFixedAlertDismissedByType &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The reason for dismissing or closing the alert.
-final class WebhookCodeScanningAlertFixedAlertDismissedReason {
-  final String value;
-
-  const WebhookCodeScanningAlertFixedAlertDismissedReason._(this.value);
-
-  factory WebhookCodeScanningAlertFixedAlertDismissedReason.fromJson(
-          String value) =>
-      WebhookCodeScanningAlertFixedAlertDismissedReason._(value);
-
-  static const falsePositive =
-      WebhookCodeScanningAlertFixedAlertDismissedReason._('false positive');
-  static const wonTFix =
-      WebhookCodeScanningAlertFixedAlertDismissedReason._('won\'t fix');
-  static const usedInTests =
-      WebhookCodeScanningAlertFixedAlertDismissedReason._('used in tests');
-  static const mitigated =
-      WebhookCodeScanningAlertFixedAlertDismissedReason._('mitigated');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookCodeScanningAlertFixedAlertDismissedReason &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// State of a code scanning alert.
-final class WebhookCodeScanningAlertFixedAlertMostRecentInstanceState {
-  final String value;
-
-  const WebhookCodeScanningAlertFixedAlertMostRecentInstanceState._(this.value);
-
-  factory WebhookCodeScanningAlertFixedAlertMostRecentInstanceState.fromJson(
-          String value) =>
-      WebhookCodeScanningAlertFixedAlertMostRecentInstanceState._(value);
-
-  static const open =
-      WebhookCodeScanningAlertFixedAlertMostRecentInstanceState._('open');
-  static const dismissed =
-      WebhookCodeScanningAlertFixedAlertMostRecentInstanceState._('dismissed');
-  static const fixed =
-      WebhookCodeScanningAlertFixedAlertMostRecentInstanceState._('fixed');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookCodeScanningAlertFixedAlertMostRecentInstanceState &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The severity of the alert.
-final class WebhookCodeScanningAlertFixedAlertRuleSeverity {
-  final String value;
-
-  const WebhookCodeScanningAlertFixedAlertRuleSeverity._(this.value);
-
-  factory WebhookCodeScanningAlertFixedAlertRuleSeverity.fromJson(
-          String value) =>
-      WebhookCodeScanningAlertFixedAlertRuleSeverity._(value);
-
-  static const none = WebhookCodeScanningAlertFixedAlertRuleSeverity._('none');
-  static const note = WebhookCodeScanningAlertFixedAlertRuleSeverity._('note');
-  static const warning =
-      WebhookCodeScanningAlertFixedAlertRuleSeverity._('warning');
-  static const error =
-      WebhookCodeScanningAlertFixedAlertRuleSeverity._('error');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookCodeScanningAlertFixedAlertRuleSeverity &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// State of a code scanning alert. Events for alerts found outside the default branch will return a `null` value until they are dismissed or fixed.
-final class WebhookCodeScanningAlertFixedAlertState {
-  final String value;
-
-  const WebhookCodeScanningAlertFixedAlertState._(this.value);
-
-  factory WebhookCodeScanningAlertFixedAlertState.fromJson(String value) =>
-      WebhookCodeScanningAlertFixedAlertState._(value);
-
-  static const fixed = WebhookCodeScanningAlertFixedAlertState._('fixed');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookCodeScanningAlertFixedAlertState && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookCodeScanningAlertReopenedAction {
-  final String value;
-
-  const WebhookCodeScanningAlertReopenedAction._(this.value);
-
-  factory WebhookCodeScanningAlertReopenedAction.fromJson(String value) =>
-      WebhookCodeScanningAlertReopenedAction._(value);
-
-  static const reopened = WebhookCodeScanningAlertReopenedAction._('reopened');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookCodeScanningAlertReopenedAction && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
 /// State of a code scanning alert.
 final class WebhookCodeScanningAlertReopenedAlertMostRecentInstanceState {
   final String value;
@@ -342,6 +118,274 @@ final class WebhookCodeScanningAlertReopenedByUserAction {
   @override
   bool operator ==(Object other) =>
       other is WebhookCodeScanningAlertReopenedByUserAction &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// State of a code scanning alert.
+final class WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstanceState {
+  final String value;
+
+  const WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstanceState._(
+      this.value);
+
+  factory WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstanceState.fromJson(
+          String value) =>
+      WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstanceState._(
+          value);
+
+  static const open =
+      WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstanceState._(
+          'open');
+  static const dismissed =
+      WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstanceState._(
+          'dismissed');
+  static const fixed =
+      WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstanceState._(
+          'fixed');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstanceState &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The severity of the alert.
+final class WebhookCodeScanningAlertReopenedByUserAlertRuleSeverity {
+  final String value;
+
+  const WebhookCodeScanningAlertReopenedByUserAlertRuleSeverity._(this.value);
+
+  factory WebhookCodeScanningAlertReopenedByUserAlertRuleSeverity.fromJson(
+          String value) =>
+      WebhookCodeScanningAlertReopenedByUserAlertRuleSeverity._(value);
+
+  static const none =
+      WebhookCodeScanningAlertReopenedByUserAlertRuleSeverity._('none');
+  static const note =
+      WebhookCodeScanningAlertReopenedByUserAlertRuleSeverity._('note');
+  static const warning =
+      WebhookCodeScanningAlertReopenedByUserAlertRuleSeverity._('warning');
+  static const error =
+      WebhookCodeScanningAlertReopenedByUserAlertRuleSeverity._('error');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookCodeScanningAlertReopenedByUserAlertRuleSeverity &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// State of a code scanning alert. Events for alerts found outside the default branch will return a `null` value until they are dismissed or fixed.
+final class WebhookCodeScanningAlertReopenedByUserAlertState {
+  final String value;
+
+  const WebhookCodeScanningAlertReopenedByUserAlertState._(this.value);
+
+  factory WebhookCodeScanningAlertReopenedByUserAlertState.fromJson(
+          String value) =>
+      WebhookCodeScanningAlertReopenedByUserAlertState._(value);
+
+  static const open =
+      WebhookCodeScanningAlertReopenedByUserAlertState._('open');
+  static const fixed =
+      WebhookCodeScanningAlertReopenedByUserAlertState._('fixed');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookCodeScanningAlertReopenedByUserAlertState &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Required enumerated value serialized in the `action` wire field.
+final class WebhookCodeScanningAlertUpdatedAssignmentAction {
+  final String value;
+
+  const WebhookCodeScanningAlertUpdatedAssignmentAction._(this.value);
+
+  factory WebhookCodeScanningAlertUpdatedAssignmentAction.fromJson(
+          String value) =>
+      WebhookCodeScanningAlertUpdatedAssignmentAction._(value);
+
+  static const updatedAssignment =
+      WebhookCodeScanningAlertUpdatedAssignmentAction._('updated_assignment');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookCodeScanningAlertUpdatedAssignmentAction &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Optional enumerated value serialized in the `type` wire field.
+final class WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedByType {
+  final String value;
+
+  const WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedByType._(
+      this.value);
+
+  factory WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedByType.fromJson(
+          String value) =>
+      WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedByType._(value);
+
+  static const bot =
+      WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedByType._('Bot');
+  static const user =
+      WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedByType._('User');
+  static const organization =
+      WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedByType._(
+          'Organization');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedByType &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The reason for dismissing or closing the alert.
+final class WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason {
+  final String value;
+
+  const WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason._(
+      this.value);
+
+  factory WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason.fromJson(
+          String value) =>
+      WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason._(value);
+
+  static const falsePositive =
+      WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason._(
+          'false positive');
+  static const wonTFix =
+      WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason._(
+          'won\'t fix');
+  static const usedInTests =
+      WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason._(
+          'used in tests');
+  static const mitigated =
+      WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason._(
+          'mitigated');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// State of a code scanning alert.
+final class WebhookCodeScanningAlertUpdatedAssignmentAlertMostRecentInstanceState {
+  final String value;
+
+  const WebhookCodeScanningAlertUpdatedAssignmentAlertMostRecentInstanceState._(
+      this.value);
+
+  factory WebhookCodeScanningAlertUpdatedAssignmentAlertMostRecentInstanceState.fromJson(
+          String value) =>
+      WebhookCodeScanningAlertUpdatedAssignmentAlertMostRecentInstanceState._(
+          value);
+
+  static const open =
+      WebhookCodeScanningAlertUpdatedAssignmentAlertMostRecentInstanceState._(
+          'open');
+  static const dismissed =
+      WebhookCodeScanningAlertUpdatedAssignmentAlertMostRecentInstanceState._(
+          'dismissed');
+  static const fixed =
+      WebhookCodeScanningAlertUpdatedAssignmentAlertMostRecentInstanceState._(
+          'fixed');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookCodeScanningAlertUpdatedAssignmentAlertMostRecentInstanceState &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The severity of the alert.
+final class WebhookCodeScanningAlertUpdatedAssignmentAlertRuleSeverity {
+  final String value;
+
+  const WebhookCodeScanningAlertUpdatedAssignmentAlertRuleSeverity._(
+      this.value);
+
+  factory WebhookCodeScanningAlertUpdatedAssignmentAlertRuleSeverity.fromJson(
+          String value) =>
+      WebhookCodeScanningAlertUpdatedAssignmentAlertRuleSeverity._(value);
+
+  static const none =
+      WebhookCodeScanningAlertUpdatedAssignmentAlertRuleSeverity._('none');
+  static const note =
+      WebhookCodeScanningAlertUpdatedAssignmentAlertRuleSeverity._('note');
+  static const warning =
+      WebhookCodeScanningAlertUpdatedAssignmentAlertRuleSeverity._('warning');
+  static const error =
+      WebhookCodeScanningAlertUpdatedAssignmentAlertRuleSeverity._('error');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookCodeScanningAlertUpdatedAssignmentAlertRuleSeverity &&
       other.value == value;
 
   @override

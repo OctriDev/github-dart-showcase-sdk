@@ -4,577 +4,422 @@
 part of 'inline.dart';
 
 // Inline operation models (part 380)
-class OrgsCreateClusterDeploymentRecordsJobRequestBodyDeploymentsItem {
+class ProjectsCreateDraftItemForOrgRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// The name of the artifact.
-  final String name;
+  /// The title of the draft issue item to create in the project.
+  final String title;
 
-  /// The hex encoded digest of the artifact.
-  final String digest;
+  /// The body content of the draft issue item to create in the project.
+  final SdkOptional<String> body;
 
-  /// The artifact version.
-  final SdkOptional<String> version;
+  const ProjectsCreateDraftItemForOrgRequestBody(
+      {required this.title, this.body = const SdkOmitted()});
 
-  /// The deployment status of the artifact.
-  final SdkOptional<
-          OrgsCreateClusterDeploymentRecordsJobRequestBodyDeploymentsItemStatus>
-      status;
+  ProjectsCreateDraftItemForOrgRequestBody Function(
+      {String title, SdkOptional<String> body}) get copyWith => _copyWith;
 
-  /// The unique identifier for the deployment represented by the new record.
-  final String deploymentName;
-
-  /// The name of the GitHub repository associated with the artifact.
-  final SdkOptional<String> githubRepository;
-
-  /// Key-value pairs to tag the deployment record.
-  final SdkOptional<Map<String, String>> tags;
-
-  /// A list of runtime risks associated with the deployment.
-  final SdkOptional<
-          List<
-              OrgsCreateClusterDeploymentRecordsJobRequestBodyDeploymentsItemRuntimeRisksItem>>
-      runtimeRisks;
-
-  const OrgsCreateClusterDeploymentRecordsJobRequestBodyDeploymentsItem(
-      {required this.name,
-      required this.digest,
-      this.version = const SdkOmitted(),
-      this.status = const SdkOmitted(),
-      required this.deploymentName,
-      this.githubRepository = const SdkOmitted(),
-      this.tags = const SdkOmitted(),
-      this.runtimeRisks = const SdkOmitted()});
-
-  OrgsCreateClusterDeploymentRecordsJobRequestBodyDeploymentsItem Function(
-      {String name,
-      String digest,
-      SdkOptional<String> version,
-      SdkOptional<
-              OrgsCreateClusterDeploymentRecordsJobRequestBodyDeploymentsItemStatus>
-          status,
-      String deploymentName,
-      SdkOptional<String> githubRepository,
-      SdkOptional<Map<String, String>> tags,
-      SdkOptional<
-              List<
-                  OrgsCreateClusterDeploymentRecordsJobRequestBodyDeploymentsItemRuntimeRisksItem>>
-          runtimeRisks}) get copyWith => _copyWith;
-
-  OrgsCreateClusterDeploymentRecordsJobRequestBodyDeploymentsItem _copyWith(
-          {Object? name = sdkOmittedValue,
-          Object? digest = sdkOmittedValue,
-          Object? version = sdkOmittedValue,
-          Object? status = sdkOmittedValue,
-          Object? deploymentName = sdkOmittedValue,
-          Object? githubRepository = sdkOmittedValue,
-          Object? tags = sdkOmittedValue,
-          Object? runtimeRisks = sdkOmittedValue}) =>
-      OrgsCreateClusterDeploymentRecordsJobRequestBodyDeploymentsItem(
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        digest:
-            identical(digest, sdkOmittedValue) ? this.digest : digest as String,
-        version: identical(version, sdkOmittedValue)
-            ? this.version
-            : version as SdkOptional<String>,
-        status: identical(status, sdkOmittedValue)
-            ? this.status
-            : status as SdkOptional<
-                OrgsCreateClusterDeploymentRecordsJobRequestBodyDeploymentsItemStatus>,
-        deploymentName: identical(deploymentName, sdkOmittedValue)
-            ? this.deploymentName
-            : deploymentName as String,
-        githubRepository: identical(githubRepository, sdkOmittedValue)
-            ? this.githubRepository
-            : githubRepository as SdkOptional<String>,
-        tags: identical(tags, sdkOmittedValue)
-            ? this.tags
-            : tags as SdkOptional<Map<String, String>>,
-        runtimeRisks: identical(runtimeRisks, sdkOmittedValue)
-            ? this.runtimeRisks
-            : runtimeRisks as SdkOptional<
-                List<
-                    OrgsCreateClusterDeploymentRecordsJobRequestBodyDeploymentsItemRuntimeRisksItem>>,
+  ProjectsCreateDraftItemForOrgRequestBody _copyWith(
+          {Object? title = sdkOmittedValue, Object? body = sdkOmittedValue}) =>
+      ProjectsCreateDraftItemForOrgRequestBody(
+        title: identical(title, sdkOmittedValue) ? this.title : title as String,
+        body: identical(body, sdkOmittedValue)
+            ? this.body
+            : body as SdkOptional<String>,
       );
 
-  factory OrgsCreateClusterDeploymentRecordsJobRequestBodyDeploymentsItem.fromJson(
+  factory ProjectsCreateDraftItemForOrgRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      OrgsCreateClusterDeploymentRecordsJobRequestBodyDeploymentsItem(
-        name: (json['name'] as String?)!,
-        digest: (json['digest'] as String?)!,
-        version: json['version'] != null
-            ? SdkPresent((json['version'] as String?)!)
-            : const SdkOmitted(),
-        status: json['status'] != null
-            ? SdkPresent((json['status'] != null
-                ? OrgsCreateClusterDeploymentRecordsJobRequestBodyDeploymentsItemStatus
-                    .fromJson(json['status'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        deploymentName: (json['deployment_name'] as String?)!,
-        githubRepository: json['github_repository'] != null
-            ? SdkPresent((json['github_repository'] as String?)!)
-            : const SdkOmitted(),
-        tags: json['tags'] != null
-            ? SdkPresent((json['tags'] == null
-                ? null
-                : Map<String, dynamic>.from(json['tags'] as Map)
-                    .map((key, value) => MapEntry(key, value as String)))!)
-            : const SdkOmitted(),
-        runtimeRisks: json['runtime_risks'] != null
-            ? SdkPresent(((json['runtime_risks'] as List?)
-                ?.map((e) =>
-                    OrgsCreateClusterDeploymentRecordsJobRequestBodyDeploymentsItemRuntimeRisksItem
-                        .fromJson(e as String))
-                .toList())!)
+      ProjectsCreateDraftItemForOrgRequestBody(
+        title: (json['title'] as String?)!,
+        body: json['body'] != null
+            ? SdkPresent((json['body'] as String?)!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        'name': name,
-        'digest': digest,
-        ...switch (version) {
+        'title': title,
+        ...switch (body) {
           SdkPresent<String>(value: final value) => {
-              'version': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (status) {
-          SdkPresent<
-                OrgsCreateClusterDeploymentRecordsJobRequestBodyDeploymentsItemStatus>(
-            value: final value
-          ) =>
-            {
-              'status': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'deployment_name': deploymentName,
-        ...switch (githubRepository) {
-          SdkPresent<String>(value: final value) => {
-              'github_repository': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (tags) {
-          SdkPresent<Map<String, String>>(value: final value) => {
-              'tags': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (runtimeRisks) {
-          SdkPresent<
-                List<
-                    OrgsCreateClusterDeploymentRecordsJobRequestBodyDeploymentsItemRuntimeRisksItem>>(
-            value: final value
-          ) =>
-            {
-              'runtime_risks': value.map((item) => item.toJson()).toList(),
+              'body': value,
             },
           _ => const <String, dynamic>{},
         },
       };
 }
 
-class OrgsCreateClusterDeploymentRecordsJobRequestBody {
+class ProjectsAddFieldForOrgRequestBodyVariant0 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// The stage of the deployment.
-  final String logicalEnvironment;
+  /// The ID of the IssueField to create the field for.
+  final int issueFieldId;
 
-  /// The physical region of the deployment.
-  final SdkOptional<String> physicalEnvironment;
+  const ProjectsAddFieldForOrgRequestBodyVariant0({required this.issueFieldId});
 
-  /// The list of deployments to record.
-  final List<OrgsCreateClusterDeploymentRecordsJobRequestBodyDeploymentsItem>
-      deployments;
+  ProjectsAddFieldForOrgRequestBodyVariant0 Function({int issueFieldId})
+      get copyWith => _copyWith;
 
-  const OrgsCreateClusterDeploymentRecordsJobRequestBody(
-      {required this.logicalEnvironment,
-      this.physicalEnvironment = const SdkOmitted(),
-      required this.deployments});
-
-  OrgsCreateClusterDeploymentRecordsJobRequestBody Function(
-      {String logicalEnvironment,
-      SdkOptional<String> physicalEnvironment,
-      List<OrgsCreateClusterDeploymentRecordsJobRequestBodyDeploymentsItem>
-          deployments}) get copyWith => _copyWith;
-
-  OrgsCreateClusterDeploymentRecordsJobRequestBody _copyWith(
-          {Object? logicalEnvironment = sdkOmittedValue,
-          Object? physicalEnvironment = sdkOmittedValue,
-          Object? deployments = sdkOmittedValue}) =>
-      OrgsCreateClusterDeploymentRecordsJobRequestBody(
-        logicalEnvironment: identical(logicalEnvironment, sdkOmittedValue)
-            ? this.logicalEnvironment
-            : logicalEnvironment as String,
-        physicalEnvironment: identical(physicalEnvironment, sdkOmittedValue)
-            ? this.physicalEnvironment
-            : physicalEnvironment as SdkOptional<String>,
-        deployments: identical(deployments, sdkOmittedValue)
-            ? this.deployments
-            : deployments as List<
-                OrgsCreateClusterDeploymentRecordsJobRequestBodyDeploymentsItem>,
+  ProjectsAddFieldForOrgRequestBodyVariant0 _copyWith(
+          {Object? issueFieldId = sdkOmittedValue}) =>
+      ProjectsAddFieldForOrgRequestBodyVariant0(
+        issueFieldId: identical(issueFieldId, sdkOmittedValue)
+            ? this.issueFieldId
+            : issueFieldId as int,
       );
 
-  factory OrgsCreateClusterDeploymentRecordsJobRequestBody.fromJson(
+  factory ProjectsAddFieldForOrgRequestBodyVariant0.fromJson(
           Map<String, dynamic> json) =>
-      OrgsCreateClusterDeploymentRecordsJobRequestBody(
-        logicalEnvironment: (json['logical_environment'] as String?)!,
-        physicalEnvironment: json['physical_environment'] != null
-            ? SdkPresent((json['physical_environment'] as String?)!)
-            : const SdkOmitted(),
-        deployments: ((json['deployments'] as List?)
-            ?.map((e) =>
-                OrgsCreateClusterDeploymentRecordsJobRequestBodyDeploymentsItem
-                    .fromJson(e as Map<String, dynamic>))
+      ProjectsAddFieldForOrgRequestBodyVariant0(
+        issueFieldId: ((json['issue_field_id'] as num?)?.toInt())!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'issue_field_id': issueFieldId,
+      };
+}
+
+class ProjectsAddFieldForOrgRequestBodyVariant1 {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The name of the field.
+  final String name;
+
+  /// The field's data type.
+  final ProjectsAddFieldForOrgRequestBodyVariant1DataType dataType;
+
+  const ProjectsAddFieldForOrgRequestBodyVariant1(
+      {required this.name, required this.dataType});
+
+  ProjectsAddFieldForOrgRequestBodyVariant1 Function(
+          {String name,
+          ProjectsAddFieldForOrgRequestBodyVariant1DataType dataType})
+      get copyWith => _copyWith;
+
+  ProjectsAddFieldForOrgRequestBodyVariant1 _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? dataType = sdkOmittedValue}) =>
+      ProjectsAddFieldForOrgRequestBodyVariant1(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        dataType: identical(dataType, sdkOmittedValue)
+            ? this.dataType
+            : dataType as ProjectsAddFieldForOrgRequestBodyVariant1DataType,
+      );
+
+  factory ProjectsAddFieldForOrgRequestBodyVariant1.fromJson(
+          Map<String, dynamic> json) =>
+      ProjectsAddFieldForOrgRequestBodyVariant1(
+        name: (json['name'] as String?)!,
+        dataType: (json['data_type'] != null
+            ? ProjectsAddFieldForOrgRequestBodyVariant1DataType.fromJson(
+                json['data_type'] as String)
+            : null)!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'name': name,
+        'data_type': dataType.toJson(),
+      };
+}
+
+class ProjectsAddFieldForOrgRequestBodyVariant2 {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The name of the field.
+  final String name;
+
+  /// The field's data type.
+  final ProjectsAddFieldForOrgRequestBodyVariant2DataType dataType;
+
+  /// The options available for single select fields. At least one option must be provided when creating a single select field.
+  final List<ProjectsV2FieldSingleSelectOption> singleSelectOptions;
+
+  const ProjectsAddFieldForOrgRequestBodyVariant2(
+      {required this.name,
+      required this.dataType,
+      required this.singleSelectOptions});
+
+  ProjectsAddFieldForOrgRequestBodyVariant2 Function(
+          {String name,
+          ProjectsAddFieldForOrgRequestBodyVariant2DataType dataType,
+          List<ProjectsV2FieldSingleSelectOption> singleSelectOptions})
+      get copyWith => _copyWith;
+
+  ProjectsAddFieldForOrgRequestBodyVariant2 _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? dataType = sdkOmittedValue,
+          Object? singleSelectOptions = sdkOmittedValue}) =>
+      ProjectsAddFieldForOrgRequestBodyVariant2(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        dataType: identical(dataType, sdkOmittedValue)
+            ? this.dataType
+            : dataType as ProjectsAddFieldForOrgRequestBodyVariant2DataType,
+        singleSelectOptions: identical(singleSelectOptions, sdkOmittedValue)
+            ? this.singleSelectOptions
+            : singleSelectOptions as List<ProjectsV2FieldSingleSelectOption>,
+      );
+
+  factory ProjectsAddFieldForOrgRequestBodyVariant2.fromJson(
+          Map<String, dynamic> json) =>
+      ProjectsAddFieldForOrgRequestBodyVariant2(
+        name: (json['name'] as String?)!,
+        dataType: (json['data_type'] != null
+            ? ProjectsAddFieldForOrgRequestBodyVariant2DataType.fromJson(
+                json['data_type'] as String)
+            : null)!,
+        singleSelectOptions: ((json['single_select_options'] as List?)
+            ?.map((e) => ProjectsV2FieldSingleSelectOption.fromJson(
+                e as Map<String, dynamic>))
             .toList())!,
       );
 
   Map<String, dynamic> toJson() => {
-        'logical_environment': logicalEnvironment,
-        ...switch (physicalEnvironment) {
-          SdkPresent<String>(value: final value) => {
-              'physical_environment': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'deployments': deployments.map((item) => item.toJson()).toList(),
+        'name': name,
+        'data_type': dataType.toJson(),
+        'single_select_options':
+            singleSelectOptions.map((item) => item.toJson()).toList(),
       };
 }
 
-class OrgsCreateClusterDeploymentRecordsJobResponse {
+class ProjectsAddFieldForOrgRequestBodyVariant3 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// The ID of the created job.
-  final int jobId;
-
-  /// Deployments that were rejected during authorization.
-  final SdkOptional<List<Map<String, dynamic>>> errors;
-
-  const OrgsCreateClusterDeploymentRecordsJobResponse(
-      {required this.jobId, this.errors = const SdkOmitted()});
-
-  OrgsCreateClusterDeploymentRecordsJobResponse Function(
-          {int jobId, SdkOptional<List<Map<String, dynamic>>> errors})
-      get copyWith => _copyWith;
-
-  OrgsCreateClusterDeploymentRecordsJobResponse _copyWith(
-          {Object? jobId = sdkOmittedValue,
-          Object? errors = sdkOmittedValue}) =>
-      OrgsCreateClusterDeploymentRecordsJobResponse(
-        jobId: identical(jobId, sdkOmittedValue) ? this.jobId : jobId as int,
-        errors: identical(errors, sdkOmittedValue)
-            ? this.errors
-            : errors as SdkOptional<List<Map<String, dynamic>>>,
-      );
-
-  factory OrgsCreateClusterDeploymentRecordsJobResponse.fromJson(
-          Map<String, dynamic> json) =>
-      OrgsCreateClusterDeploymentRecordsJobResponse(
-        jobId: ((json['job_id'] as num?)?.toInt())!,
-        errors: json['errors'] != null
-            ? SdkPresent(((json['errors'] as List?)
-                ?.map((e) => e as Map<String, dynamic>)
-                .toList())!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        'job_id': jobId,
-        ...switch (errors) {
-          SdkPresent<List<Map<String, dynamic>>>(value: final value) => {
-              'errors': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-class OrgsGetClusterDeploymentRecordsJobResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The ID of the job.
-  final int jobId;
-
-  /// The current status of the job.
-  final OrgsGetClusterDeploymentRecordsJobResponseStatus status;
-
-  /// When the job started processing (only present when processing, completed, or failed).
-  final SdkOptional<String> startedAt;
-
-  /// The number of records successfully mutated (only present when completed).
-  final SdkOptional<int> totalCount;
-
-  /// Processing errors (only present when completed or failed).
-  final SdkOptional<List<Map<String, dynamic>>> errors;
-
-  const OrgsGetClusterDeploymentRecordsJobResponse(
-      {required this.jobId,
-      required this.status,
-      this.startedAt = const SdkOmitted(),
-      this.totalCount = const SdkOmitted(),
-      this.errors = const SdkOmitted()});
-
-  OrgsGetClusterDeploymentRecordsJobResponse Function(
-          {int jobId,
-          OrgsGetClusterDeploymentRecordsJobResponseStatus status,
-          SdkOptional<String> startedAt,
-          SdkOptional<int> totalCount,
-          SdkOptional<List<Map<String, dynamic>>> errors})
-      get copyWith => _copyWith;
-
-  OrgsGetClusterDeploymentRecordsJobResponse _copyWith(
-          {Object? jobId = sdkOmittedValue,
-          Object? status = sdkOmittedValue,
-          Object? startedAt = sdkOmittedValue,
-          Object? totalCount = sdkOmittedValue,
-          Object? errors = sdkOmittedValue}) =>
-      OrgsGetClusterDeploymentRecordsJobResponse(
-        jobId: identical(jobId, sdkOmittedValue) ? this.jobId : jobId as int,
-        status: identical(status, sdkOmittedValue)
-            ? this.status
-            : status as OrgsGetClusterDeploymentRecordsJobResponseStatus,
-        startedAt: identical(startedAt, sdkOmittedValue)
-            ? this.startedAt
-            : startedAt as SdkOptional<String>,
-        totalCount: identical(totalCount, sdkOmittedValue)
-            ? this.totalCount
-            : totalCount as SdkOptional<int>,
-        errors: identical(errors, sdkOmittedValue)
-            ? this.errors
-            : errors as SdkOptional<List<Map<String, dynamic>>>,
-      );
-
-  factory OrgsGetClusterDeploymentRecordsJobResponse.fromJson(
-          Map<String, dynamic> json) =>
-      OrgsGetClusterDeploymentRecordsJobResponse(
-        jobId: ((json['job_id'] as num?)?.toInt())!,
-        status: (json['status'] != null
-            ? OrgsGetClusterDeploymentRecordsJobResponseStatus.fromJson(
-                json['status'] as String)
-            : null)!,
-        startedAt: json['started_at'] != null
-            ? SdkPresent((json['started_at'] as String?)!)
-            : const SdkOmitted(),
-        totalCount: json['total_count'] != null
-            ? SdkPresent(((json['total_count'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        errors: json['errors'] != null
-            ? SdkPresent(((json['errors'] as List?)
-                ?.map((e) => e as Map<String, dynamic>)
-                .toList())!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        'job_id': jobId,
-        'status': status.toJson(),
-        ...switch (startedAt) {
-          SdkPresent<String>(value: final value) => {
-              'started_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (totalCount) {
-          SdkPresent<int>(value: final value) => {
-              'total_count': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (errors) {
-          SdkPresent<List<Map<String, dynamic>>>(value: final value) => {
-              'errors': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-class OrgsCreateArtifactStorageRecordRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The name of the artifact.
+  /// The name of the field.
   final String name;
 
-  /// The digest of the artifact (algorithm:hex-encoded-digest).
-  final String digest;
+  /// The field's data type.
+  final ProjectsAddFieldForOrgRequestBodyVariant3DataType dataType;
 
-  /// The artifact version.
-  final SdkOptional<String> version;
+  /// The configuration for iteration fields.
+  final ProjectsV2FieldIterationConfiguration iterationConfiguration;
 
-  /// The URL where the artifact is stored.
-  final SdkOptional<String> artifactUrl;
-
-  /// The path of the artifact.
-  final SdkOptional<String> path;
-
-  /// The base URL of the artifact registry.
-  final String registryUrl;
-
-  /// The repository name within the registry.
-  final SdkOptional<String> repository;
-
-  /// The status of the artifact (e.g., active, inactive).
-  final SdkOptional<OrgsCreateArtifactStorageRecordRequestBodyStatus> status;
-
-  /// The name of the GitHub repository associated with the artifact. This should be used when there are no provenance attestations available for the artifact. The repository must belong to the organization specified in the path parameter. If a provenance attestation is available for the artifact, the API will use the repository information from the attestation instead of this parameter.
-  final SdkOptional<String> githubRepository;
-
-  /// If true, the endpoint will return the created record in the response body.
-  final SdkOptional<bool> returnRecords;
-
-  const OrgsCreateArtifactStorageRecordRequestBody(
+  const ProjectsAddFieldForOrgRequestBodyVariant3(
       {required this.name,
-      required this.digest,
-      this.version = const SdkOmitted(),
-      this.artifactUrl = const SdkOmitted(),
-      this.path = const SdkOmitted(),
-      required this.registryUrl,
-      this.repository = const SdkOmitted(),
-      this.status = const SdkOmitted(),
-      this.githubRepository = const SdkOmitted(),
-      this.returnRecords = const SdkOmitted()});
+      required this.dataType,
+      required this.iterationConfiguration});
 
-  OrgsCreateArtifactStorageRecordRequestBody Function(
-      {String name,
-      String digest,
-      SdkOptional<String> version,
-      SdkOptional<String> artifactUrl,
-      SdkOptional<String> path,
-      String registryUrl,
-      SdkOptional<String> repository,
-      SdkOptional<OrgsCreateArtifactStorageRecordRequestBodyStatus> status,
-      SdkOptional<String> githubRepository,
-      SdkOptional<bool> returnRecords}) get copyWith => _copyWith;
+  ProjectsAddFieldForOrgRequestBodyVariant3 Function(
+          {String name,
+          ProjectsAddFieldForOrgRequestBodyVariant3DataType dataType,
+          ProjectsV2FieldIterationConfiguration iterationConfiguration})
+      get copyWith => _copyWith;
 
-  OrgsCreateArtifactStorageRecordRequestBody _copyWith(
+  ProjectsAddFieldForOrgRequestBodyVariant3 _copyWith(
           {Object? name = sdkOmittedValue,
-          Object? digest = sdkOmittedValue,
-          Object? version = sdkOmittedValue,
-          Object? artifactUrl = sdkOmittedValue,
-          Object? path = sdkOmittedValue,
-          Object? registryUrl = sdkOmittedValue,
-          Object? repository = sdkOmittedValue,
-          Object? status = sdkOmittedValue,
-          Object? githubRepository = sdkOmittedValue,
-          Object? returnRecords = sdkOmittedValue}) =>
-      OrgsCreateArtifactStorageRecordRequestBody(
+          Object? dataType = sdkOmittedValue,
+          Object? iterationConfiguration = sdkOmittedValue}) =>
+      ProjectsAddFieldForOrgRequestBodyVariant3(
         name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        digest:
-            identical(digest, sdkOmittedValue) ? this.digest : digest as String,
-        version: identical(version, sdkOmittedValue)
-            ? this.version
-            : version as SdkOptional<String>,
-        artifactUrl: identical(artifactUrl, sdkOmittedValue)
-            ? this.artifactUrl
-            : artifactUrl as SdkOptional<String>,
-        path: identical(path, sdkOmittedValue)
-            ? this.path
-            : path as SdkOptional<String>,
-        registryUrl: identical(registryUrl, sdkOmittedValue)
-            ? this.registryUrl
-            : registryUrl as String,
-        repository: identical(repository, sdkOmittedValue)
-            ? this.repository
-            : repository as SdkOptional<String>,
-        status: identical(status, sdkOmittedValue)
-            ? this.status
-            : status as SdkOptional<
-                OrgsCreateArtifactStorageRecordRequestBodyStatus>,
-        githubRepository: identical(githubRepository, sdkOmittedValue)
-            ? this.githubRepository
-            : githubRepository as SdkOptional<String>,
-        returnRecords: identical(returnRecords, sdkOmittedValue)
-            ? this.returnRecords
-            : returnRecords as SdkOptional<bool>,
+        dataType: identical(dataType, sdkOmittedValue)
+            ? this.dataType
+            : dataType as ProjectsAddFieldForOrgRequestBodyVariant3DataType,
+        iterationConfiguration: identical(
+                iterationConfiguration, sdkOmittedValue)
+            ? this.iterationConfiguration
+            : iterationConfiguration as ProjectsV2FieldIterationConfiguration,
       );
 
-  factory OrgsCreateArtifactStorageRecordRequestBody.fromJson(
+  factory ProjectsAddFieldForOrgRequestBodyVariant3.fromJson(
           Map<String, dynamic> json) =>
-      OrgsCreateArtifactStorageRecordRequestBody(
+      ProjectsAddFieldForOrgRequestBodyVariant3(
         name: (json['name'] as String?)!,
-        digest: (json['digest'] as String?)!,
-        version: json['version'] != null
-            ? SdkPresent((json['version'] as String?)!)
-            : const SdkOmitted(),
-        artifactUrl: json['artifact_url'] != null
-            ? SdkPresent((json['artifact_url'] as String?)!)
-            : const SdkOmitted(),
-        path: json['path'] != null
-            ? SdkPresent((json['path'] as String?)!)
-            : const SdkOmitted(),
-        registryUrl: (json['registry_url'] as String?)!,
-        repository: json['repository'] != null
-            ? SdkPresent((json['repository'] as String?)!)
-            : const SdkOmitted(),
-        status: json['status'] != null
-            ? SdkPresent((json['status'] != null
-                ? OrgsCreateArtifactStorageRecordRequestBodyStatus.fromJson(
-                    json['status'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        githubRepository: json['github_repository'] != null
-            ? SdkPresent((json['github_repository'] as String?)!)
-            : const SdkOmitted(),
-        returnRecords: json['return_records'] != null
-            ? SdkPresent((json['return_records'] as bool?)!)
-            : const SdkOmitted(),
+        dataType: (json['data_type'] != null
+            ? ProjectsAddFieldForOrgRequestBodyVariant3DataType.fromJson(
+                json['data_type'] as String)
+            : null)!,
+        iterationConfiguration: (json['iteration_configuration'] != null
+            ? ProjectsV2FieldIterationConfiguration.fromJson(
+                json['iteration_configuration'] as Map<String, dynamic>)
+            : null)!,
       );
 
   Map<String, dynamic> toJson() => {
         'name': name,
-        'digest': digest,
-        ...switch (version) {
+        'data_type': dataType.toJson(),
+        'iteration_configuration': iterationConfiguration.toJson(),
+      };
+}
+
+class ProjectsAddItemForOrgRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The type of item to add to the project. Must be either Issue or PullRequest.
+  final ProjectsAddItemForOrgRequestBodyType type_;
+
+  /// The unique identifier of the issue or pull request to add to the project.
+  final SdkOptional<int> id;
+
+  /// The repository owner login.
+  final SdkOptional<String> owner;
+
+  /// The repository name.
+  final SdkOptional<String> repo;
+
+  /// The issue or pull request number.
+  final SdkOptional<int> number;
+
+  const ProjectsAddItemForOrgRequestBody(
+      {required this.type_,
+      this.id = const SdkOmitted(),
+      this.owner = const SdkOmitted(),
+      this.repo = const SdkOmitted(),
+      this.number = const SdkOmitted()});
+
+  ProjectsAddItemForOrgRequestBody Function(
+      {ProjectsAddItemForOrgRequestBodyType type_,
+      SdkOptional<int> id,
+      SdkOptional<String> owner,
+      SdkOptional<String> repo,
+      SdkOptional<int> number}) get copyWith => _copyWith;
+
+  ProjectsAddItemForOrgRequestBody _copyWith(
+          {Object? type_ = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? owner = sdkOmittedValue,
+          Object? repo = sdkOmittedValue,
+          Object? number = sdkOmittedValue}) =>
+      ProjectsAddItemForOrgRequestBody(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as ProjectsAddItemForOrgRequestBodyType,
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+        owner: identical(owner, sdkOmittedValue)
+            ? this.owner
+            : owner as SdkOptional<String>,
+        repo: identical(repo, sdkOmittedValue)
+            ? this.repo
+            : repo as SdkOptional<String>,
+        number: identical(number, sdkOmittedValue)
+            ? this.number
+            : number as SdkOptional<int>,
+      );
+
+  factory ProjectsAddItemForOrgRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      ProjectsAddItemForOrgRequestBody(
+        type_: (json['type'] != null
+            ? ProjectsAddItemForOrgRequestBodyType.fromJson(
+                json['type'] as String)
+            : null)!,
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        owner: json['owner'] != null
+            ? SdkPresent((json['owner'] as String?)!)
+            : const SdkOmitted(),
+        repo: json['repo'] != null
+            ? SdkPresent((json['repo'] as String?)!)
+            : const SdkOmitted(),
+        number: json['number'] != null
+            ? SdkPresent(((json['number'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        'type': type_.toJson(),
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (owner) {
           SdkPresent<String>(value: final value) => {
-              'version': value,
+              'owner': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (artifactUrl) {
+        ...switch (repo) {
           SdkPresent<String>(value: final value) => {
-              'artifact_url': value,
+              'repo': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (path) {
-          SdkPresent<String>(value: final value) => {
-              'path': value,
+        ...switch (number) {
+          SdkPresent<int>(value: final value) => {
+              'number': value,
             },
           _ => const <String, dynamic>{},
         },
-        'registry_url': registryUrl,
-        ...switch (repository) {
-          SdkPresent<String>(value: final value) => {
-              'repository': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (status) {
-          SdkPresent<OrgsCreateArtifactStorageRecordRequestBodyStatus>(
-            value: final value
-          ) =>
-            {
-              'status': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (githubRepository) {
-          SdkPresent<String>(value: final value) => {
-              'github_repository': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (returnRecords) {
-          SdkPresent<bool>(value: final value) => {
-              'return_records': value,
-            },
-          _ => const <String, dynamic>{},
-        },
+      };
+}
+
+class ProjectsUpdateItemForOrgRequestBodyFieldsItem {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The ID of the project field to update.
+  final int id;
+
+  /// The new value for the field: - For text, number, and date fields, provide the new value directly. - For single select and iteration fields, provide the ID of the option or iteration. - To clear the field, set this to null.
+  final dynamic value;
+
+  const ProjectsUpdateItemForOrgRequestBodyFieldsItem(
+      {required this.id, required this.value});
+
+  ProjectsUpdateItemForOrgRequestBodyFieldsItem Function(
+      {int id, dynamic value}) get copyWith => _copyWith;
+
+  ProjectsUpdateItemForOrgRequestBodyFieldsItem _copyWith(
+          {Object? id = sdkOmittedValue, Object? value = sdkOmittedValue}) =>
+      ProjectsUpdateItemForOrgRequestBodyFieldsItem(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        value:
+            identical(value, sdkOmittedValue) ? this.value : value as dynamic,
+      );
+
+  factory ProjectsUpdateItemForOrgRequestBodyFieldsItem.fromJson(
+          Map<String, dynamic> json) =>
+      ProjectsUpdateItemForOrgRequestBodyFieldsItem(
+        id: ((json['id'] as num?)?.toInt())!,
+        value: json.containsKey('value')
+            ? json['value']
+            : throw ArgumentError.value(
+                null, 'value', 'Required property is missing'),
+      );
+
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'value': value,
+      };
+}
+
+class ProjectsUpdateItemForOrgRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// A list of field updates to apply.
+  final List<ProjectsUpdateItemForOrgRequestBodyFieldsItem> fields;
+
+  const ProjectsUpdateItemForOrgRequestBody({required this.fields});
+
+  ProjectsUpdateItemForOrgRequestBody Function(
+          {List<ProjectsUpdateItemForOrgRequestBodyFieldsItem> fields})
+      get copyWith => _copyWith;
+
+  ProjectsUpdateItemForOrgRequestBody _copyWith(
+          {Object? fields = sdkOmittedValue}) =>
+      ProjectsUpdateItemForOrgRequestBody(
+        fields: identical(fields, sdkOmittedValue)
+            ? this.fields
+            : fields as List<ProjectsUpdateItemForOrgRequestBodyFieldsItem>,
+      );
+
+  factory ProjectsUpdateItemForOrgRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      ProjectsUpdateItemForOrgRequestBody(
+        fields: ((json['fields'] as List?)
+            ?.map((e) => ProjectsUpdateItemForOrgRequestBodyFieldsItem.fromJson(
+                e as Map<String, dynamic>))
+            .toList())!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'fields': fields.map((item) => item.toJson()).toList(),
       };
 }

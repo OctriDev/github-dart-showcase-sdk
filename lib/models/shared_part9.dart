@@ -4,106 +4,160 @@
 part of 'shared.dart';
 
 // shared domain models (part 9)
-/// Public User
-class PublicUser {
+/// Typed representation of the `ReactionRollup` API schema.
+class ReactionRollup {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
-  /// Required `string` value serialized in the `login` wire field.
-  final String login;
-
-  /// Required `int64`-formatted value serialized in the `id` wire field.
-  final int id;
-
-  /// Optional `string` value serialized in the `user_view_type` wire field.
-  final SdkOptional<String> userViewType;
-
-  /// Required `string` value serialized in the `node_id` wire field.
-  final String nodeId;
-
-  /// Required `uri`-formatted value serialized in the `avatar_url` wire field.
-  final String avatarUrl;
-
-  /// Required `string` value serialized in the `gravatar_id` wire field.
-  final String? gravatarId;
 
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
 
-  /// Required `uri`-formatted value serialized in the `html_url` wire field.
-  final String htmlUrl;
+  /// Required `integer` value serialized in the `total_count` wire field.
+  final int totalCount;
 
-  /// Required `uri`-formatted value serialized in the `followers_url` wire field.
-  final String followersUrl;
+  /// Required `integer` value serialized in the `+1` wire field.
+  final int plus1;
 
-  /// Required `string` value serialized in the `following_url` wire field.
-  final String followingUrl;
+  /// Required `integer` value serialized in the `-1` wire field.
+  final int minus1;
 
-  /// Required `string` value serialized in the `gists_url` wire field.
-  final String gistsUrl;
+  /// Required `integer` value serialized in the `laugh` wire field.
+  final int laugh;
 
-  /// Required `string` value serialized in the `starred_url` wire field.
-  final String starredUrl;
+  /// Required `integer` value serialized in the `confused` wire field.
+  final int confused;
 
-  /// Required `uri`-formatted value serialized in the `subscriptions_url` wire field.
-  final String subscriptionsUrl;
+  /// Required `integer` value serialized in the `heart` wire field.
+  final int heart;
 
-  /// Required `uri`-formatted value serialized in the `organizations_url` wire field.
-  final String organizationsUrl;
+  /// Required `integer` value serialized in the `hooray` wire field.
+  final int hooray;
 
-  /// Required `uri`-formatted value serialized in the `repos_url` wire field.
-  final String reposUrl;
+  /// Required `integer` value serialized in the `eyes` wire field.
+  final int eyes;
 
-  /// Required `string` value serialized in the `events_url` wire field.
-  final String eventsUrl;
+  /// Required `integer` value serialized in the `rocket` wire field.
+  final int rocket;
 
-  /// Required `uri`-formatted value serialized in the `received_events_url` wire field.
-  final String receivedEventsUrl;
+  const ReactionRollup(
+      {required this.url,
+      required this.totalCount,
+      required this.plus1,
+      required this.minus1,
+      required this.laugh,
+      required this.confused,
+      required this.heart,
+      required this.hooray,
+      required this.eyes,
+      required this.rocket});
 
-  /// Required `string` value serialized in the `type` wire field.
-  final String type_;
+  ReactionRollup Function(
+      {String url,
+      int totalCount,
+      int plus1,
+      int minus1,
+      int laugh,
+      int confused,
+      int heart,
+      int hooray,
+      int eyes,
+      int rocket}) get copyWith => _copyWith;
 
-  /// Required `boolean` value serialized in the `site_admin` wire field.
-  final bool siteAdmin;
+  ReactionRollup _copyWith(
+          {Object? url = sdkOmittedValue,
+          Object? totalCount = sdkOmittedValue,
+          Object? plus1 = sdkOmittedValue,
+          Object? minus1 = sdkOmittedValue,
+          Object? laugh = sdkOmittedValue,
+          Object? confused = sdkOmittedValue,
+          Object? heart = sdkOmittedValue,
+          Object? hooray = sdkOmittedValue,
+          Object? eyes = sdkOmittedValue,
+          Object? rocket = sdkOmittedValue}) =>
+      ReactionRollup(
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        plus1: identical(plus1, sdkOmittedValue) ? this.plus1 : plus1 as int,
+        minus1:
+            identical(minus1, sdkOmittedValue) ? this.minus1 : minus1 as int,
+        laugh: identical(laugh, sdkOmittedValue) ? this.laugh : laugh as int,
+        confused: identical(confused, sdkOmittedValue)
+            ? this.confused
+            : confused as int,
+        heart: identical(heart, sdkOmittedValue) ? this.heart : heart as int,
+        hooray:
+            identical(hooray, sdkOmittedValue) ? this.hooray : hooray as int,
+        eyes: identical(eyes, sdkOmittedValue) ? this.eyes : eyes as int,
+        rocket:
+            identical(rocket, sdkOmittedValue) ? this.rocket : rocket as int,
+      );
 
-  /// Required `string` value serialized in the `name` wire field.
-  final String? name;
+  factory ReactionRollup.fromJson(Map<String, dynamic> json) => ReactionRollup(
+        url: (json['url'] as String?)!,
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        plus1: ((json['+1'] as num?)?.toInt())!,
+        minus1: ((json['-1'] as num?)?.toInt())!,
+        laugh: ((json['laugh'] as num?)?.toInt())!,
+        confused: ((json['confused'] as num?)?.toInt())!,
+        heart: ((json['heart'] as num?)?.toInt())!,
+        hooray: ((json['hooray'] as num?)?.toInt())!,
+        eyes: ((json['eyes'] as num?)?.toInt())!,
+        rocket: ((json['rocket'] as num?)?.toInt())!,
+      );
 
-  /// Required `string` value serialized in the `company` wire field.
-  final String? company;
+  Map<String, dynamic> toJson() => {
+        'url': url,
+        'total_count': totalCount,
+        '+1': plus1,
+        '-1': minus1,
+        'laugh': laugh,
+        'confused': confused,
+        'heart': heart,
+        'hooray': hooray,
+        'eyes': eyes,
+        'rocket': rocket,
+      };
+}
 
-  /// Required `string` value serialized in the `blog` wire field.
-  final String? blog;
+/// Data related to a release.
+class ReleaseAsset {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
 
-  /// Required `string` value serialized in the `location` wire field.
-  final String? location;
+  /// Required `uri`-formatted value serialized in the `url` wire field.
+  final String url;
 
-  /// Required `email`-formatted value serialized in the `email` wire field.
-  final String? email;
+  /// Required `uri`-formatted value serialized in the `browser_download_url` wire field.
+  final String browserDownloadUrl;
 
-  /// Optional `email`-formatted value serialized in the `notification_email` wire field.
-  final SdkOptional<String?> notificationEmail;
+  /// Required `integer` value serialized in the `id` wire field.
+  final int id;
 
-  /// Required `boolean` value serialized in the `hireable` wire field.
-  final bool? hireable;
+  /// Required `string` value serialized in the `node_id` wire field.
+  final String nodeId;
 
-  /// Required `string` value serialized in the `bio` wire field.
-  final String? bio;
+  /// The file name of the asset.
+  final String name;
 
-  /// Optional `string` value serialized in the `twitter_username` wire field.
-  final SdkOptional<String?> twitterUsername;
+  /// Required `string` value serialized in the `label` wire field.
+  final String? label;
 
-  /// Required `integer` value serialized in the `public_repos` wire field.
-  final int publicRepos;
+  /// State of the release asset.
+  final ReleaseAssetState state;
 
-  /// Required `integer` value serialized in the `public_gists` wire field.
-  final int publicGists;
+  /// Required `string` value serialized in the `content_type` wire field.
+  final String contentType;
 
-  /// Required `integer` value serialized in the `followers` wire field.
-  final int followers;
+  /// Required `integer` value serialized in the `size` wire field.
+  final int size;
 
-  /// Required `integer` value serialized in the `following` wire field.
-  final int following;
+  /// Required `string` value serialized in the `digest` wire field.
+  final String? digest;
+
+  /// Required `integer` value serialized in the `download_count` wire field.
+  final int downloadCount;
 
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String createdAt;
@@ -111,426 +165,340 @@ class PublicUser {
   /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
   final String updatedAt;
 
-  /// Optional object value serialized in the `plan` wire field.
-  final SdkOptional<PublicUserPlan> plan;
+  /// A GitHub user.
+  final NullableSimpleUser? uploader;
 
-  /// Optional `integer` value serialized in the `private_gists` wire field.
-  final SdkOptional<int> privateGists;
-
-  /// Optional `integer` value serialized in the `total_private_repos` wire field.
-  final SdkOptional<int> totalPrivateRepos;
-
-  /// Optional `integer` value serialized in the `owned_private_repos` wire field.
-  final SdkOptional<int> ownedPrivateRepos;
-
-  /// Optional `integer` value serialized in the `disk_usage` wire field.
-  final SdkOptional<int> diskUsage;
-
-  /// Optional `integer` value serialized in the `collaborators` wire field.
-  final SdkOptional<int> collaborators;
-
-  const PublicUser(
-      {required this.login,
+  const ReleaseAsset(
+      {required this.url,
+      required this.browserDownloadUrl,
       required this.id,
-      this.userViewType = const SdkOmitted(),
       required this.nodeId,
-      required this.avatarUrl,
-      required this.gravatarId,
-      required this.url,
-      required this.htmlUrl,
-      required this.followersUrl,
-      required this.followingUrl,
-      required this.gistsUrl,
-      required this.starredUrl,
-      required this.subscriptionsUrl,
-      required this.organizationsUrl,
-      required this.reposUrl,
-      required this.eventsUrl,
-      required this.receivedEventsUrl,
-      required this.type_,
-      required this.siteAdmin,
       required this.name,
-      required this.company,
-      required this.blog,
-      required this.location,
-      required this.email,
-      this.notificationEmail = const SdkOmitted(),
-      required this.hireable,
-      required this.bio,
-      this.twitterUsername = const SdkOmitted(),
-      required this.publicRepos,
-      required this.publicGists,
-      required this.followers,
-      required this.following,
+      required this.label,
+      required this.state,
+      required this.contentType,
+      required this.size,
+      required this.digest,
+      required this.downloadCount,
       required this.createdAt,
       required this.updatedAt,
-      this.plan = const SdkOmitted(),
-      this.privateGists = const SdkOmitted(),
-      this.totalPrivateRepos = const SdkOmitted(),
-      this.ownedPrivateRepos = const SdkOmitted(),
-      this.diskUsage = const SdkOmitted(),
-      this.collaborators = const SdkOmitted()});
+      required this.uploader});
 
-  PublicUser Function(
-      {String login,
+  ReleaseAsset Function(
+      {String url,
+      String browserDownloadUrl,
       int id,
-      SdkOptional<String> userViewType,
       String nodeId,
-      String avatarUrl,
-      String? gravatarId,
-      String url,
-      String htmlUrl,
-      String followersUrl,
-      String followingUrl,
-      String gistsUrl,
-      String starredUrl,
-      String subscriptionsUrl,
-      String organizationsUrl,
-      String reposUrl,
-      String eventsUrl,
-      String receivedEventsUrl,
-      String type_,
-      bool siteAdmin,
-      String? name,
-      String? company,
-      String? blog,
-      String? location,
-      String? email,
-      SdkOptional<String?> notificationEmail,
-      bool? hireable,
-      String? bio,
-      SdkOptional<String?> twitterUsername,
-      int publicRepos,
-      int publicGists,
-      int followers,
-      int following,
+      String name,
+      String? label,
+      ReleaseAssetState state,
+      String contentType,
+      int size,
+      String? digest,
+      int downloadCount,
       String createdAt,
       String updatedAt,
-      SdkOptional<PublicUserPlan> plan,
-      SdkOptional<int> privateGists,
-      SdkOptional<int> totalPrivateRepos,
-      SdkOptional<int> ownedPrivateRepos,
-      SdkOptional<int> diskUsage,
-      SdkOptional<int> collaborators}) get copyWith => _copyWith;
+      NullableSimpleUser? uploader}) get copyWith => _copyWith;
 
-  PublicUser _copyWith(
-          {Object? login = sdkOmittedValue,
+  ReleaseAsset _copyWith(
+          {Object? url = sdkOmittedValue,
+          Object? browserDownloadUrl = sdkOmittedValue,
           Object? id = sdkOmittedValue,
-          Object? userViewType = sdkOmittedValue,
           Object? nodeId = sdkOmittedValue,
-          Object? avatarUrl = sdkOmittedValue,
-          Object? gravatarId = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? followersUrl = sdkOmittedValue,
-          Object? followingUrl = sdkOmittedValue,
-          Object? gistsUrl = sdkOmittedValue,
-          Object? starredUrl = sdkOmittedValue,
-          Object? subscriptionsUrl = sdkOmittedValue,
-          Object? organizationsUrl = sdkOmittedValue,
-          Object? reposUrl = sdkOmittedValue,
-          Object? eventsUrl = sdkOmittedValue,
-          Object? receivedEventsUrl = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue,
-          Object? siteAdmin = sdkOmittedValue,
           Object? name = sdkOmittedValue,
-          Object? company = sdkOmittedValue,
-          Object? blog = sdkOmittedValue,
-          Object? location = sdkOmittedValue,
-          Object? email = sdkOmittedValue,
-          Object? notificationEmail = sdkOmittedValue,
-          Object? hireable = sdkOmittedValue,
-          Object? bio = sdkOmittedValue,
-          Object? twitterUsername = sdkOmittedValue,
-          Object? publicRepos = sdkOmittedValue,
-          Object? publicGists = sdkOmittedValue,
-          Object? followers = sdkOmittedValue,
-          Object? following = sdkOmittedValue,
+          Object? label = sdkOmittedValue,
+          Object? state = sdkOmittedValue,
+          Object? contentType = sdkOmittedValue,
+          Object? size = sdkOmittedValue,
+          Object? digest = sdkOmittedValue,
+          Object? downloadCount = sdkOmittedValue,
           Object? createdAt = sdkOmittedValue,
           Object? updatedAt = sdkOmittedValue,
-          Object? plan = sdkOmittedValue,
-          Object? privateGists = sdkOmittedValue,
-          Object? totalPrivateRepos = sdkOmittedValue,
-          Object? ownedPrivateRepos = sdkOmittedValue,
-          Object? diskUsage = sdkOmittedValue,
-          Object? collaborators = sdkOmittedValue}) =>
-      PublicUser(
-        login: identical(login, sdkOmittedValue) ? this.login : login as String,
+          Object? uploader = sdkOmittedValue}) =>
+      ReleaseAsset(
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        browserDownloadUrl: identical(browserDownloadUrl, sdkOmittedValue)
+            ? this.browserDownloadUrl
+            : browserDownloadUrl as String,
         id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        userViewType: identical(userViewType, sdkOmittedValue)
-            ? this.userViewType
-            : userViewType as SdkOptional<String>,
         nodeId:
             identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        avatarUrl: identical(avatarUrl, sdkOmittedValue)
-            ? this.avatarUrl
-            : avatarUrl as String,
-        gravatarId: identical(gravatarId, sdkOmittedValue)
-            ? this.gravatarId
-            : gravatarId as String?,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as String,
-        followersUrl: identical(followersUrl, sdkOmittedValue)
-            ? this.followersUrl
-            : followersUrl as String,
-        followingUrl: identical(followingUrl, sdkOmittedValue)
-            ? this.followingUrl
-            : followingUrl as String,
-        gistsUrl: identical(gistsUrl, sdkOmittedValue)
-            ? this.gistsUrl
-            : gistsUrl as String,
-        starredUrl: identical(starredUrl, sdkOmittedValue)
-            ? this.starredUrl
-            : starredUrl as String,
-        subscriptionsUrl: identical(subscriptionsUrl, sdkOmittedValue)
-            ? this.subscriptionsUrl
-            : subscriptionsUrl as String,
-        organizationsUrl: identical(organizationsUrl, sdkOmittedValue)
-            ? this.organizationsUrl
-            : organizationsUrl as String,
-        reposUrl: identical(reposUrl, sdkOmittedValue)
-            ? this.reposUrl
-            : reposUrl as String,
-        eventsUrl: identical(eventsUrl, sdkOmittedValue)
-            ? this.eventsUrl
-            : eventsUrl as String,
-        receivedEventsUrl: identical(receivedEventsUrl, sdkOmittedValue)
-            ? this.receivedEventsUrl
-            : receivedEventsUrl as String,
-        type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as String,
-        siteAdmin: identical(siteAdmin, sdkOmittedValue)
-            ? this.siteAdmin
-            : siteAdmin as bool,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String?,
-        company: identical(company, sdkOmittedValue)
-            ? this.company
-            : company as String?,
-        blog: identical(blog, sdkOmittedValue) ? this.blog : blog as String?,
-        location: identical(location, sdkOmittedValue)
-            ? this.location
-            : location as String?,
-        email:
-            identical(email, sdkOmittedValue) ? this.email : email as String?,
-        notificationEmail: identical(notificationEmail, sdkOmittedValue)
-            ? this.notificationEmail
-            : notificationEmail as SdkOptional<String?>,
-        hireable: identical(hireable, sdkOmittedValue)
-            ? this.hireable
-            : hireable as bool?,
-        bio: identical(bio, sdkOmittedValue) ? this.bio : bio as String?,
-        twitterUsername: identical(twitterUsername, sdkOmittedValue)
-            ? this.twitterUsername
-            : twitterUsername as SdkOptional<String?>,
-        publicRepos: identical(publicRepos, sdkOmittedValue)
-            ? this.publicRepos
-            : publicRepos as int,
-        publicGists: identical(publicGists, sdkOmittedValue)
-            ? this.publicGists
-            : publicGists as int,
-        followers: identical(followers, sdkOmittedValue)
-            ? this.followers
-            : followers as int,
-        following: identical(following, sdkOmittedValue)
-            ? this.following
-            : following as int,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        label:
+            identical(label, sdkOmittedValue) ? this.label : label as String?,
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state as ReleaseAssetState,
+        contentType: identical(contentType, sdkOmittedValue)
+            ? this.contentType
+            : contentType as String,
+        size: identical(size, sdkOmittedValue) ? this.size : size as int,
+        digest: identical(digest, sdkOmittedValue)
+            ? this.digest
+            : digest as String?,
+        downloadCount: identical(downloadCount, sdkOmittedValue)
+            ? this.downloadCount
+            : downloadCount as int,
         createdAt: identical(createdAt, sdkOmittedValue)
             ? this.createdAt
             : createdAt as String,
         updatedAt: identical(updatedAt, sdkOmittedValue)
             ? this.updatedAt
             : updatedAt as String,
-        plan: identical(plan, sdkOmittedValue)
-            ? this.plan
-            : plan as SdkOptional<PublicUserPlan>,
-        privateGists: identical(privateGists, sdkOmittedValue)
-            ? this.privateGists
-            : privateGists as SdkOptional<int>,
-        totalPrivateRepos: identical(totalPrivateRepos, sdkOmittedValue)
-            ? this.totalPrivateRepos
-            : totalPrivateRepos as SdkOptional<int>,
-        ownedPrivateRepos: identical(ownedPrivateRepos, sdkOmittedValue)
-            ? this.ownedPrivateRepos
-            : ownedPrivateRepos as SdkOptional<int>,
-        diskUsage: identical(diskUsage, sdkOmittedValue)
-            ? this.diskUsage
-            : diskUsage as SdkOptional<int>,
-        collaborators: identical(collaborators, sdkOmittedValue)
-            ? this.collaborators
-            : collaborators as SdkOptional<int>,
+        uploader: identical(uploader, sdkOmittedValue)
+            ? this.uploader
+            : uploader as NullableSimpleUser?,
       );
 
-  factory PublicUser.fromJson(Map<String, dynamic> json) => PublicUser(
-        login: (json['login'] as String?)!,
-        id: ((json['id'] as num?)?.toInt())!,
-        userViewType: json['user_view_type'] != null
-            ? SdkPresent((json['user_view_type'] as String?)!)
-            : const SdkOmitted(),
-        nodeId: (json['node_id'] as String?)!,
-        avatarUrl: (json['avatar_url'] as String?)!,
-        gravatarId: json.containsKey('gravatar_id')
-            ? json['gravatar_id'] as String?
-            : throw ArgumentError.value(
-                null, 'gravatar_id', 'Required property is missing'),
+  factory ReleaseAsset.fromJson(Map<String, dynamic> json) => ReleaseAsset(
         url: (json['url'] as String?)!,
-        htmlUrl: (json['html_url'] as String?)!,
-        followersUrl: (json['followers_url'] as String?)!,
-        followingUrl: (json['following_url'] as String?)!,
-        gistsUrl: (json['gists_url'] as String?)!,
-        starredUrl: (json['starred_url'] as String?)!,
-        subscriptionsUrl: (json['subscriptions_url'] as String?)!,
-        organizationsUrl: (json['organizations_url'] as String?)!,
-        reposUrl: (json['repos_url'] as String?)!,
-        eventsUrl: (json['events_url'] as String?)!,
-        receivedEventsUrl: (json['received_events_url'] as String?)!,
-        type_: (json['type'] as String?)!,
-        siteAdmin: (json['site_admin'] as bool?)!,
-        name: json.containsKey('name')
-            ? json['name'] as String?
+        browserDownloadUrl: (json['browser_download_url'] as String?)!,
+        id: ((json['id'] as num?)?.toInt())!,
+        nodeId: (json['node_id'] as String?)!,
+        name: (json['name'] as String?)!,
+        label: json.containsKey('label')
+            ? json['label'] as String?
             : throw ArgumentError.value(
-                null, 'name', 'Required property is missing'),
-        company: json.containsKey('company')
-            ? json['company'] as String?
+                null, 'label', 'Required property is missing'),
+        state: (json['state'] != null
+            ? ReleaseAssetState.fromJson(json['state'] as String)
+            : null)!,
+        contentType: (json['content_type'] as String?)!,
+        size: ((json['size'] as num?)?.toInt())!,
+        digest: json.containsKey('digest')
+            ? json['digest'] as String?
             : throw ArgumentError.value(
-                null, 'company', 'Required property is missing'),
-        blog: json.containsKey('blog')
-            ? json['blog'] as String?
-            : throw ArgumentError.value(
-                null, 'blog', 'Required property is missing'),
-        location: json.containsKey('location')
-            ? json['location'] as String?
-            : throw ArgumentError.value(
-                null, 'location', 'Required property is missing'),
-        email: json.containsKey('email')
-            ? json['email'] as String?
-            : throw ArgumentError.value(
-                null, 'email', 'Required property is missing'),
-        notificationEmail: json.containsKey('notification_email')
-            ? SdkPresent(json['notification_email'] as String?)
-            : const SdkOmitted(),
-        hireable: json.containsKey('hireable')
-            ? json['hireable'] as bool?
-            : throw ArgumentError.value(
-                null, 'hireable', 'Required property is missing'),
-        bio: json.containsKey('bio')
-            ? json['bio'] as String?
-            : throw ArgumentError.value(
-                null, 'bio', 'Required property is missing'),
-        twitterUsername: json.containsKey('twitter_username')
-            ? SdkPresent(json['twitter_username'] as String?)
-            : const SdkOmitted(),
-        publicRepos: ((json['public_repos'] as num?)?.toInt())!,
-        publicGists: ((json['public_gists'] as num?)?.toInt())!,
-        followers: ((json['followers'] as num?)?.toInt())!,
-        following: ((json['following'] as num?)?.toInt())!,
+                null, 'digest', 'Required property is missing'),
+        downloadCount: ((json['download_count'] as num?)?.toInt())!,
         createdAt: (json['created_at'] as String?)!,
         updatedAt: (json['updated_at'] as String?)!,
-        plan: json['plan'] != null
-            ? SdkPresent((json['plan'] != null
-                ? PublicUserPlan.fromJson(json['plan'] as Map<String, dynamic>)
-                : null)!)
+        uploader: json.containsKey('uploader')
+            ? json['uploader'] != null
+                ? NullableSimpleUser.fromJson(
+                    json['uploader'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'uploader', 'Required property is missing'),
+      );
+
+  Map<String, dynamic> toJson() => {
+        'url': url,
+        'browser_download_url': browserDownloadUrl,
+        'id': id,
+        'node_id': nodeId,
+        'name': name,
+        'label': label,
+        'state': state.toJson(),
+        'content_type': contentType,
+        'size': size,
+        'digest': digest,
+        'download_count': downloadCount,
+        'created_at': createdAt,
+        'updated_at': updatedAt,
+        'uploader': uploader?.toJson(),
+      };
+}
+
+/// Scim Error
+class ScimError {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// Optional `string` value serialized in the `message` wire field.
+  final SdkOptional<String?> message;
+
+  /// Optional `string` value serialized in the `documentation_url` wire field.
+  final SdkOptional<String?> documentationUrl;
+
+  /// Optional `string` value serialized in the `detail` wire field.
+  final SdkOptional<String?> detail;
+
+  /// Optional `integer` value serialized in the `status` wire field.
+  final SdkOptional<int> status;
+
+  /// Optional `string` value serialized in the `scimType` wire field.
+  final SdkOptional<String?> scimType;
+
+  /// Optional array value serialized in the `schemas` wire field.
+  final SdkOptional<List<String>> schemas;
+
+  const ScimError(
+      {this.message = const SdkOmitted(),
+      this.documentationUrl = const SdkOmitted(),
+      this.detail = const SdkOmitted(),
+      this.status = const SdkOmitted(),
+      this.scimType = const SdkOmitted(),
+      this.schemas = const SdkOmitted()});
+
+  ScimError Function(
+      {SdkOptional<String?> message,
+      SdkOptional<String?> documentationUrl,
+      SdkOptional<String?> detail,
+      SdkOptional<int> status,
+      SdkOptional<String?> scimType,
+      SdkOptional<List<String>> schemas}) get copyWith => _copyWith;
+
+  ScimError _copyWith(
+          {Object? message = sdkOmittedValue,
+          Object? documentationUrl = sdkOmittedValue,
+          Object? detail = sdkOmittedValue,
+          Object? status = sdkOmittedValue,
+          Object? scimType = sdkOmittedValue,
+          Object? schemas = sdkOmittedValue}) =>
+      ScimError(
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as SdkOptional<String?>,
+        documentationUrl: identical(documentationUrl, sdkOmittedValue)
+            ? this.documentationUrl
+            : documentationUrl as SdkOptional<String?>,
+        detail: identical(detail, sdkOmittedValue)
+            ? this.detail
+            : detail as SdkOptional<String?>,
+        status: identical(status, sdkOmittedValue)
+            ? this.status
+            : status as SdkOptional<int>,
+        scimType: identical(scimType, sdkOmittedValue)
+            ? this.scimType
+            : scimType as SdkOptional<String?>,
+        schemas: identical(schemas, sdkOmittedValue)
+            ? this.schemas
+            : schemas as SdkOptional<List<String>>,
+      );
+
+  factory ScimError.fromJson(Map<String, dynamic> json) => ScimError(
+        message: json.containsKey('message')
+            ? SdkPresent(json['message'] as String?)
             : const SdkOmitted(),
-        privateGists: json['private_gists'] != null
-            ? SdkPresent(((json['private_gists'] as num?)?.toInt())!)
+        documentationUrl: json.containsKey('documentation_url')
+            ? SdkPresent(json['documentation_url'] as String?)
             : const SdkOmitted(),
-        totalPrivateRepos: json['total_private_repos'] != null
-            ? SdkPresent(((json['total_private_repos'] as num?)?.toInt())!)
+        detail: json.containsKey('detail')
+            ? SdkPresent(json['detail'] as String?)
             : const SdkOmitted(),
-        ownedPrivateRepos: json['owned_private_repos'] != null
-            ? SdkPresent(((json['owned_private_repos'] as num?)?.toInt())!)
+        status: json['status'] != null
+            ? SdkPresent(((json['status'] as num?)?.toInt())!)
             : const SdkOmitted(),
-        diskUsage: json['disk_usage'] != null
-            ? SdkPresent(((json['disk_usage'] as num?)?.toInt())!)
+        scimType: json.containsKey('scimType')
+            ? SdkPresent(json['scimType'] as String?)
             : const SdkOmitted(),
-        collaborators: json['collaborators'] != null
-            ? SdkPresent(((json['collaborators'] as num?)?.toInt())!)
+        schemas: json['schemas'] != null
+            ? SdkPresent(
+                ((json['schemas'] as List?)?.map((e) => e as String).toList())!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        'login': login,
-        'id': id,
-        ...switch (userViewType) {
+        ...switch (message) {
+          SdkPresent<String?>(value: final value) => {
+              'message': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (documentationUrl) {
+          SdkPresent<String?>(value: final value) => {
+              'documentation_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (detail) {
+          SdkPresent<String?>(value: final value) => {
+              'detail': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (status) {
+          SdkPresent<int>(value: final value) => {
+              'status': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (scimType) {
+          SdkPresent<String?>(value: final value) => {
+              'scimType': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (schemas) {
+          SdkPresent<List<String>>(value: final value) => {
+              'schemas': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+// SecretScanningPushProtectionBypassPlaceholderId = String
+
+/// Typed representation of the `ServiceUnavailable` API schema.
+class ServiceUnavailable {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// Optional `string` value serialized in the `code` wire field.
+  final SdkOptional<String> code;
+
+  /// Optional `string` value serialized in the `message` wire field.
+  final SdkOptional<String> message;
+
+  /// Optional `string` value serialized in the `documentation_url` wire field.
+  final SdkOptional<String> documentationUrl;
+
+  const ServiceUnavailable(
+      {this.code = const SdkOmitted(),
+      this.message = const SdkOmitted(),
+      this.documentationUrl = const SdkOmitted()});
+
+  ServiceUnavailable Function(
+      {SdkOptional<String> code,
+      SdkOptional<String> message,
+      SdkOptional<String> documentationUrl}) get copyWith => _copyWith;
+
+  ServiceUnavailable _copyWith(
+          {Object? code = sdkOmittedValue,
+          Object? message = sdkOmittedValue,
+          Object? documentationUrl = sdkOmittedValue}) =>
+      ServiceUnavailable(
+        code: identical(code, sdkOmittedValue)
+            ? this.code
+            : code as SdkOptional<String>,
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as SdkOptional<String>,
+        documentationUrl: identical(documentationUrl, sdkOmittedValue)
+            ? this.documentationUrl
+            : documentationUrl as SdkOptional<String>,
+      );
+
+  factory ServiceUnavailable.fromJson(Map<String, dynamic> json) =>
+      ServiceUnavailable(
+        code: json['code'] != null
+            ? SdkPresent((json['code'] as String?)!)
+            : const SdkOmitted(),
+        message: json['message'] != null
+            ? SdkPresent((json['message'] as String?)!)
+            : const SdkOmitted(),
+        documentationUrl: json['documentation_url'] != null
+            ? SdkPresent((json['documentation_url'] as String?)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (code) {
           SdkPresent<String>(value: final value) => {
-              'user_view_type': value,
+              'code': value,
             },
           _ => const <String, dynamic>{},
         },
-        'node_id': nodeId,
-        'avatar_url': avatarUrl,
-        'gravatar_id': gravatarId,
-        'url': url,
-        'html_url': htmlUrl,
-        'followers_url': followersUrl,
-        'following_url': followingUrl,
-        'gists_url': gistsUrl,
-        'starred_url': starredUrl,
-        'subscriptions_url': subscriptionsUrl,
-        'organizations_url': organizationsUrl,
-        'repos_url': reposUrl,
-        'events_url': eventsUrl,
-        'received_events_url': receivedEventsUrl,
-        'type': type_,
-        'site_admin': siteAdmin,
-        'name': name,
-        'company': company,
-        'blog': blog,
-        'location': location,
-        'email': email,
-        ...switch (notificationEmail) {
-          SdkPresent<String?>(value: final value) => {
-              'notification_email': value,
+        ...switch (message) {
+          SdkPresent<String>(value: final value) => {
+              'message': value,
             },
           _ => const <String, dynamic>{},
         },
-        'hireable': hireable,
-        'bio': bio,
-        ...switch (twitterUsername) {
-          SdkPresent<String?>(value: final value) => {
-              'twitter_username': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'public_repos': publicRepos,
-        'public_gists': publicGists,
-        'followers': followers,
-        'following': following,
-        'created_at': createdAt,
-        'updated_at': updatedAt,
-        ...switch (plan) {
-          SdkPresent<PublicUserPlan>(value: final value) => {
-              'plan': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (privateGists) {
-          SdkPresent<int>(value: final value) => {
-              'private_gists': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (totalPrivateRepos) {
-          SdkPresent<int>(value: final value) => {
-              'total_private_repos': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (ownedPrivateRepos) {
-          SdkPresent<int>(value: final value) => {
-              'owned_private_repos': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (diskUsage) {
-          SdkPresent<int>(value: final value) => {
-              'disk_usage': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (collaborators) {
-          SdkPresent<int>(value: final value) => {
-              'collaborators': value,
+        ...switch (documentationUrl) {
+          SdkPresent<String>(value: final value) => {
+              'documentation_url': value,
             },
           _ => const <String, dynamic>{},
         },

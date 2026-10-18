@@ -4,6 +4,87 @@
 part of 'inline.dart';
 
 // Inline operation models (part 11)
+/// Required enumerated value serialized in the `languages[]` wire field.
+final class CodeQualitySetupUpdateLanguagesItem {
+  final String value;
+
+  const CodeQualitySetupUpdateLanguagesItem._(this.value);
+
+  factory CodeQualitySetupUpdateLanguagesItem.fromJson(String value) =>
+      CodeQualitySetupUpdateLanguagesItem._(value);
+
+  static const csharp = CodeQualitySetupUpdateLanguagesItem._('csharp');
+  static const go = CodeQualitySetupUpdateLanguagesItem._('go');
+  static const javaKotlin =
+      CodeQualitySetupUpdateLanguagesItem._('java-kotlin');
+  static const javascriptTypescript =
+      CodeQualitySetupUpdateLanguagesItem._('javascript-typescript');
+  static const python = CodeQualitySetupUpdateLanguagesItem._('python');
+  static const ruby = CodeQualitySetupUpdateLanguagesItem._('ruby');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is CodeQualitySetupUpdateLanguagesItem && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Runner type to be used.
+final class CodeQualitySetupUpdateRunnerType {
+  final String value;
+
+  const CodeQualitySetupUpdateRunnerType._(this.value);
+
+  factory CodeQualitySetupUpdateRunnerType.fromJson(String value) =>
+      CodeQualitySetupUpdateRunnerType._(value);
+
+  static const standard = CodeQualitySetupUpdateRunnerType._('standard');
+  static const labeled = CodeQualitySetupUpdateRunnerType._('labeled');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is CodeQualitySetupUpdateRunnerType && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The desired state of code quality setup.
+final class CodeQualitySetupUpdateState {
+  final String value;
+
+  const CodeQualitySetupUpdateState._(this.value);
+
+  factory CodeQualitySetupUpdateState.fromJson(String value) =>
+      CodeQualitySetupUpdateState._(value);
+
+  static const configured = CodeQualitySetupUpdateState._('configured');
+  static const notConfigured = CodeQualitySetupUpdateState._('not-configured');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is CodeQualitySetupUpdateState && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
 /// Whether AI Scan is enabled for the repository.
 final class CodeScanningAiScanEnablementPrScan {
   final String value;
@@ -256,80 +337,6 @@ final class CodeScanningDefaultSetupLanguagesItem {
   @override
   bool operator ==(Object other) =>
       other is CodeScanningDefaultSetupLanguagesItem && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// CodeQL query suite to be used.
-final class CodeScanningDefaultSetupQuerySuite {
-  final String value;
-
-  const CodeScanningDefaultSetupQuerySuite._(this.value);
-
-  factory CodeScanningDefaultSetupQuerySuite.fromJson(String value) =>
-      CodeScanningDefaultSetupQuerySuite._(value);
-
-  static const default_ = CodeScanningDefaultSetupQuerySuite._('default');
-  static const extended = CodeScanningDefaultSetupQuerySuite._('extended');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is CodeScanningDefaultSetupQuerySuite && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Runner type to be used.
-final class CodeScanningDefaultSetupRunnerType {
-  final String value;
-
-  const CodeScanningDefaultSetupRunnerType._(this.value);
-
-  factory CodeScanningDefaultSetupRunnerType.fromJson(String value) =>
-      CodeScanningDefaultSetupRunnerType._(value);
-
-  static const standard = CodeScanningDefaultSetupRunnerType._('standard');
-  static const labeled = CodeScanningDefaultSetupRunnerType._('labeled');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is CodeScanningDefaultSetupRunnerType && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The frequency of the periodic analysis.
-final class CodeScanningDefaultSetupSchedule {
-  final String value;
-
-  const CodeScanningDefaultSetupSchedule._(this.value);
-
-  factory CodeScanningDefaultSetupSchedule.fromJson(String value) =>
-      CodeScanningDefaultSetupSchedule._(value);
-
-  static const weekly = CodeScanningDefaultSetupSchedule._('weekly');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is CodeScanningDefaultSetupSchedule && other.value == value;
 
   @override
   int get hashCode => value.hashCode;

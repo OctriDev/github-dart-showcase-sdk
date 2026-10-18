@@ -46,7 +46,10 @@ Future<List<DependencyGraphDiffItem>> dependencyGraphDiffRange(
                 BasicError.fromJson(value as Map<String, dynamic>),
             '404': (value) =>
                 BasicError.fromJson(value as Map<String, dynamic>),
-            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+            '500': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
           }))
       .data;
 }

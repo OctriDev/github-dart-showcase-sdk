@@ -4,425 +4,527 @@
 part of 'inline.dart';
 
 // Inline operation models (part 395)
-class CopilotSpacesUpdateForOrgRequestBody {
+class ReposUpdateWebhookConfigForRepoRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// The name of the Copilot Space.
-  final SdkOptional<String> name;
+  /// The URL to which the payloads will be delivered.
+  final SdkOptional<String> url;
 
-  /// A description of the Copilot Space.
-  final SdkOptional<String> description;
+  /// The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.
+  final SdkOptional<String> contentType;
 
-  /// General instructions for the Copilot Space.
-  final SdkOptional<String> generalInstructions;
+  /// If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/webhooks/event-payloads/#delivery-headers).
+  final SdkOptional<String> secret;
+  final SdkOptional<WebhookConfigInsecureSsl> insecureSsl;
 
-  /// The base role that determines default permissions for organization members. Changing this field requires admin permissions. - `no_access`: No default access (default) - `reader`: Organization members can read the space - `writer`: Organization members can read and edit the space - `admin`: Organization members have full admin access to the space
-  final SdkOptional<CopilotSpacesUpdateForOrgRequestBodyBaseRole> baseRole;
+  const ReposUpdateWebhookConfigForRepoRequestBody(
+      {this.url = const SdkOmitted(),
+      this.contentType = const SdkOmitted(),
+      this.secret = const SdkOmitted(),
+      this.insecureSsl = const SdkOmitted()});
 
-  /// Resources to attach to the space.
-  final SdkOptional<
-          List<CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItem>>
-      resourcesAttributes;
+  ReposUpdateWebhookConfigForRepoRequestBody Function(
+          {SdkOptional<String> url,
+          SdkOptional<String> contentType,
+          SdkOptional<String> secret,
+          SdkOptional<WebhookConfigInsecureSsl> insecureSsl})
+      get copyWith => _copyWith;
 
-  const CopilotSpacesUpdateForOrgRequestBody(
-      {this.name = const SdkOmitted(),
-      this.description = const SdkOmitted(),
-      this.generalInstructions = const SdkOmitted(),
-      this.baseRole = const SdkOmitted(),
-      this.resourcesAttributes = const SdkOmitted()});
-
-  CopilotSpacesUpdateForOrgRequestBody Function(
-      {SdkOptional<String> name,
-      SdkOptional<String> description,
-      SdkOptional<String> generalInstructions,
-      SdkOptional<CopilotSpacesUpdateForOrgRequestBodyBaseRole> baseRole,
-      SdkOptional<
-              List<CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItem>>
-          resourcesAttributes}) get copyWith => _copyWith;
-
-  CopilotSpacesUpdateForOrgRequestBody _copyWith(
-          {Object? name = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? generalInstructions = sdkOmittedValue,
-          Object? baseRole = sdkOmittedValue,
-          Object? resourcesAttributes = sdkOmittedValue}) =>
-      CopilotSpacesUpdateForOrgRequestBody(
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String>,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as SdkOptional<String>,
-        generalInstructions: identical(generalInstructions, sdkOmittedValue)
-            ? this.generalInstructions
-            : generalInstructions as SdkOptional<String>,
-        baseRole: identical(baseRole, sdkOmittedValue)
-            ? this.baseRole
-            : baseRole
-                as SdkOptional<CopilotSpacesUpdateForOrgRequestBodyBaseRole>,
-        resourcesAttributes: identical(resourcesAttributes, sdkOmittedValue)
-            ? this.resourcesAttributes
-            : resourcesAttributes as SdkOptional<
-                List<
-                    CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItem>>,
+  ReposUpdateWebhookConfigForRepoRequestBody _copyWith(
+          {Object? url = sdkOmittedValue,
+          Object? contentType = sdkOmittedValue,
+          Object? secret = sdkOmittedValue,
+          Object? insecureSsl = sdkOmittedValue}) =>
+      ReposUpdateWebhookConfigForRepoRequestBody(
+        url: identical(url, sdkOmittedValue)
+            ? this.url
+            : url as SdkOptional<String>,
+        contentType: identical(contentType, sdkOmittedValue)
+            ? this.contentType
+            : contentType as SdkOptional<String>,
+        secret: identical(secret, sdkOmittedValue)
+            ? this.secret
+            : secret as SdkOptional<String>,
+        insecureSsl: identical(insecureSsl, sdkOmittedValue)
+            ? this.insecureSsl
+            : insecureSsl as SdkOptional<WebhookConfigInsecureSsl>,
       );
 
-  factory CopilotSpacesUpdateForOrgRequestBody.fromJson(
+  factory ReposUpdateWebhookConfigForRepoRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      CopilotSpacesUpdateForOrgRequestBody(
-        name: json['name'] != null
-            ? SdkPresent((json['name'] as String?)!)
+      ReposUpdateWebhookConfigForRepoRequestBody(
+        url: json['url'] != null
+            ? SdkPresent((json['url'] as String?)!)
             : const SdkOmitted(),
-        description: json['description'] != null
-            ? SdkPresent((json['description'] as String?)!)
+        contentType: json['content_type'] != null
+            ? SdkPresent((json['content_type'] as String?)!)
             : const SdkOmitted(),
-        generalInstructions: json['general_instructions'] != null
-            ? SdkPresent((json['general_instructions'] as String?)!)
+        secret: json['secret'] != null
+            ? SdkPresent((json['secret'] as String?)!)
             : const SdkOmitted(),
-        baseRole: json['base_role'] != null
-            ? SdkPresent((json['base_role'] != null
-                ? CopilotSpacesUpdateForOrgRequestBodyBaseRole.fromJson(
-                    json['base_role'] as String)
+        insecureSsl: json['insecure_ssl'] != null
+            ? SdkPresent((json['insecure_ssl'] != null
+                ? WebhookConfigInsecureSsl.fromJson(json['insecure_ssl'])
                 : null)!)
             : const SdkOmitted(),
-        resourcesAttributes: json['resources_attributes'] != null
-            ? SdkPresent(((json['resources_attributes'] as List?)
-                ?.map((e) =>
-                    CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItem
-                        .fromJson(e as Map<String, dynamic>))
-                .toList())!)
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (url) {
+          SdkPresent<String>(value: final value) => {
+              'url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (contentType) {
+          SdkPresent<String>(value: final value) => {
+              'content_type': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (secret) {
+          SdkPresent<String>(value: final value) => {
+              'secret': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (insecureSsl) {
+          SdkPresent<WebhookConfigInsecureSsl>(value: final value) => {
+              'insecure_ssl': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class ReposUpdateInvitationRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The permissions that the associated user will have on the repository. Valid values are `read`, `write`, `maintain`, `triage`, and `admin`.
+  final SdkOptional<ReposUpdateInvitationRequestBodyPermissions> permissions;
+
+  const ReposUpdateInvitationRequestBody(
+      {this.permissions = const SdkOmitted()});
+
+  ReposUpdateInvitationRequestBody Function(
+      {SdkOptional<ReposUpdateInvitationRequestBodyPermissions>
+          permissions}) get copyWith => _copyWith;
+
+  ReposUpdateInvitationRequestBody _copyWith(
+          {Object? permissions = sdkOmittedValue}) =>
+      ReposUpdateInvitationRequestBody(
+        permissions: identical(permissions, sdkOmittedValue)
+            ? this.permissions
+            : permissions
+                as SdkOptional<ReposUpdateInvitationRequestBodyPermissions>,
+      );
+
+  factory ReposUpdateInvitationRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      ReposUpdateInvitationRequestBody(
+        permissions: json['permissions'] != null
+            ? SdkPresent((json['permissions'] != null
+                ? ReposUpdateInvitationRequestBodyPermissions.fromJson(
+                    json['permissions'] as String)
+                : null)!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (name) {
-          SdkPresent<String>(value: final value) => {
-              'name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (description) {
-          SdkPresent<String>(value: final value) => {
-              'description': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (generalInstructions) {
-          SdkPresent<String>(value: final value) => {
-              'general_instructions': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (baseRole) {
-          SdkPresent<CopilotSpacesUpdateForOrgRequestBodyBaseRole>(
+        ...switch (permissions) {
+          SdkPresent<ReposUpdateInvitationRequestBodyPermissions>(
             value: final value
           ) =>
             {
-              'base_role': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (resourcesAttributes) {
-          SdkPresent<
-                List<
-                    CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItem>>(
-            value: final value
-          ) =>
-            {
-              'resources_attributes':
-                  value.map((item) => item.toJson()).toList(),
+              'permissions': value.toJson(),
             },
           _ => const <String, dynamic>{},
         },
       };
 }
 
-class CopilotSpacesListCollaboratorsForOrgResponse {
+class ReposCreateDeployKeyRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// The list of collaborators for this Copilot Space.
-  final List<CopilotSpaceCollaborator> collaborators;
+  /// A name for the key.
+  final SdkOptional<String> title;
 
-  const CopilotSpacesListCollaboratorsForOrgResponse(
-      {required this.collaborators});
+  /// The contents of the key.
+  final String key;
 
-  CopilotSpacesListCollaboratorsForOrgResponse Function(
-      {List<CopilotSpaceCollaborator> collaborators}) get copyWith => _copyWith;
+  /// If `true`, the key will only be able to read repository contents. Otherwise, the key will be able to read and write. Deploy keys with write access can perform the same actions as an organization member with admin access, or a collaborator on a personal repository. For more information, see "[Repository permission levels for an organization](https://docs.github.com/articles/repository-permission-levels-for-an-organization/)" and "[Permission levels for a user account repository](https://docs.github.com/articles/permission-levels-for-a-user-account-repository/)."
+  final SdkOptional<bool> readOnly;
 
-  CopilotSpacesListCollaboratorsForOrgResponse _copyWith(
-          {Object? collaborators = sdkOmittedValue}) =>
-      CopilotSpacesListCollaboratorsForOrgResponse(
-        collaborators: identical(collaborators, sdkOmittedValue)
-            ? this.collaborators
-            : collaborators as List<CopilotSpaceCollaborator>,
+  const ReposCreateDeployKeyRequestBody(
+      {this.title = const SdkOmitted(),
+      required this.key,
+      this.readOnly = const SdkOmitted()});
+
+  ReposCreateDeployKeyRequestBody Function(
+      {SdkOptional<String> title,
+      String key,
+      SdkOptional<bool> readOnly}) get copyWith => _copyWith;
+
+  ReposCreateDeployKeyRequestBody _copyWith(
+          {Object? title = sdkOmittedValue,
+          Object? key = sdkOmittedValue,
+          Object? readOnly = sdkOmittedValue}) =>
+      ReposCreateDeployKeyRequestBody(
+        title: identical(title, sdkOmittedValue)
+            ? this.title
+            : title as SdkOptional<String>,
+        key: identical(key, sdkOmittedValue) ? this.key : key as String,
+        readOnly: identical(readOnly, sdkOmittedValue)
+            ? this.readOnly
+            : readOnly as SdkOptional<bool>,
       );
 
-  factory CopilotSpacesListCollaboratorsForOrgResponse.fromJson(
-          Map<String, dynamic> json) =>
-      CopilotSpacesListCollaboratorsForOrgResponse(
-        collaborators: ((json['collaborators'] as List?)
-            ?.map((e) => CopilotSpaceCollaborator.fromJson(e))
-            .toList())!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'collaborators': collaborators.map((item) => item.toJson()).toList(),
-      };
-}
-
-class CopilotSpacesAddCollaboratorForOrgRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The type of actor (user or team).
-  final CopilotSpacesAddCollaboratorForOrgRequestBodyActorType actorType;
-
-  /// The username (for users) or team slug (for teams). The numeric ID of a user or team is also accepted.
-  final String actorIdentifier;
-
-  /// The role to grant to the collaborator.
-  final CopilotSpacesAddCollaboratorForOrgRequestBodyRole role;
-
-  const CopilotSpacesAddCollaboratorForOrgRequestBody(
-      {required this.actorType,
-      required this.actorIdentifier,
-      required this.role});
-
-  CopilotSpacesAddCollaboratorForOrgRequestBody Function(
-          {CopilotSpacesAddCollaboratorForOrgRequestBodyActorType actorType,
-          String actorIdentifier,
-          CopilotSpacesAddCollaboratorForOrgRequestBodyRole role})
-      get copyWith => _copyWith;
-
-  CopilotSpacesAddCollaboratorForOrgRequestBody _copyWith(
-          {Object? actorType = sdkOmittedValue,
-          Object? actorIdentifier = sdkOmittedValue,
-          Object? role = sdkOmittedValue}) =>
-      CopilotSpacesAddCollaboratorForOrgRequestBody(
-        actorType: identical(actorType, sdkOmittedValue)
-            ? this.actorType
-            : actorType
-                as CopilotSpacesAddCollaboratorForOrgRequestBodyActorType,
-        actorIdentifier: identical(actorIdentifier, sdkOmittedValue)
-            ? this.actorIdentifier
-            : actorIdentifier as String,
-        role: identical(role, sdkOmittedValue)
-            ? this.role
-            : role as CopilotSpacesAddCollaboratorForOrgRequestBodyRole,
-      );
-
-  factory CopilotSpacesAddCollaboratorForOrgRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      CopilotSpacesAddCollaboratorForOrgRequestBody(
-        actorType: (json['actor_type'] != null
-            ? CopilotSpacesAddCollaboratorForOrgRequestBodyActorType.fromJson(
-                json['actor_type'] as String)
-            : null)!,
-        actorIdentifier: (json['actor_identifier'] as String?)!,
-        role: (json['role'] != null
-            ? CopilotSpacesAddCollaboratorForOrgRequestBodyRole.fromJson(
-                json['role'] as String)
-            : null)!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'actor_type': actorType.toJson(),
-        'actor_identifier': actorIdentifier,
-        'role': role.toJson(),
-      };
-}
-
-class CopilotSpacesUpdateCollaboratorForOrgRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The new role to grant to the collaborator. Use `no_access` to remove the collaborator.
-  final CopilotSpacesUpdateCollaboratorForOrgRequestBodyRole role;
-
-  const CopilotSpacesUpdateCollaboratorForOrgRequestBody({required this.role});
-
-  CopilotSpacesUpdateCollaboratorForOrgRequestBody Function(
-          {CopilotSpacesUpdateCollaboratorForOrgRequestBodyRole role})
-      get copyWith => _copyWith;
-
-  CopilotSpacesUpdateCollaboratorForOrgRequestBody _copyWith(
-          {Object? role = sdkOmittedValue}) =>
-      CopilotSpacesUpdateCollaboratorForOrgRequestBody(
-        role: identical(role, sdkOmittedValue)
-            ? this.role
-            : role as CopilotSpacesUpdateCollaboratorForOrgRequestBodyRole,
-      );
-
-  factory CopilotSpacesUpdateCollaboratorForOrgRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      CopilotSpacesUpdateCollaboratorForOrgRequestBody(
-        role: (json['role'] != null
-            ? CopilotSpacesUpdateCollaboratorForOrgRequestBodyRole.fromJson(
-                json['role'] as String)
-            : null)!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'role': role.toJson(),
-      };
-}
-
-class CopilotSpacesListResourcesForOrgResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The list of resources attached to this Copilot Space.
-  final List<CopilotSpaceResource> resources;
-
-  const CopilotSpacesListResourcesForOrgResponse({required this.resources});
-
-  CopilotSpacesListResourcesForOrgResponse Function(
-      {List<CopilotSpaceResource> resources}) get copyWith => _copyWith;
-
-  CopilotSpacesListResourcesForOrgResponse _copyWith(
-          {Object? resources = sdkOmittedValue}) =>
-      CopilotSpacesListResourcesForOrgResponse(
-        resources: identical(resources, sdkOmittedValue)
-            ? this.resources
-            : resources as List<CopilotSpaceResource>,
-      );
-
-  factory CopilotSpacesListResourcesForOrgResponse.fromJson(
-          Map<String, dynamic> json) =>
-      CopilotSpacesListResourcesForOrgResponse(
-        resources: ((json['resources'] as List?)
-            ?.map(
-                (e) => CopilotSpaceResource.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'resources': resources.map((item) => item.toJson()).toList(),
-      };
-}
-
-class CopilotSpacesCreateResourceForOrgRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The type of resource to create.
-  final CopilotSpacesCreateResourceForOrgRequestBodyResourceType resourceType;
-
-  /// Resource-specific metadata.
-  final Map<String, Object?> metadata;
-
-  const CopilotSpacesCreateResourceForOrgRequestBody(
-      {required this.resourceType, required this.metadata});
-
-  CopilotSpacesCreateResourceForOrgRequestBody Function(
-      {CopilotSpacesCreateResourceForOrgRequestBodyResourceType resourceType,
-      Map<String, Object?> metadata}) get copyWith => _copyWith;
-
-  CopilotSpacesCreateResourceForOrgRequestBody _copyWith(
-          {Object? resourceType = sdkOmittedValue,
-          Object? metadata = sdkOmittedValue}) =>
-      CopilotSpacesCreateResourceForOrgRequestBody(
-        resourceType: identical(resourceType, sdkOmittedValue)
-            ? this.resourceType
-            : resourceType
-                as CopilotSpacesCreateResourceForOrgRequestBodyResourceType,
-        metadata: identical(metadata, sdkOmittedValue)
-            ? this.metadata
-            : metadata as Map<String, Object?>,
-      );
-
-  factory CopilotSpacesCreateResourceForOrgRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      CopilotSpacesCreateResourceForOrgRequestBody(
-        resourceType: (json['resource_type'] != null
-            ? CopilotSpacesCreateResourceForOrgRequestBodyResourceType.fromJson(
-                json['resource_type'] as String)
-            : null)!,
-        metadata: (json['metadata'] == null
-            ? null
-            : Map<String, dynamic>.from(json['metadata'] as Map)
-                .map((key, value) => MapEntry(key, value)))!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'resource_type': resourceType.toJson(),
-        'metadata': metadata,
-      };
-}
-
-class CopilotSpacesUpdateResourceForOrgRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Updated resource-specific metadata.
-  final SdkOptional<Map<String, Object?>> metadata;
-
-  const CopilotSpacesUpdateResourceForOrgRequestBody(
-      {this.metadata = const SdkOmitted()});
-
-  CopilotSpacesUpdateResourceForOrgRequestBody Function(
-      {SdkOptional<Map<String, Object?>> metadata}) get copyWith => _copyWith;
-
-  CopilotSpacesUpdateResourceForOrgRequestBody _copyWith(
-          {Object? metadata = sdkOmittedValue}) =>
-      CopilotSpacesUpdateResourceForOrgRequestBody(
-        metadata: identical(metadata, sdkOmittedValue)
-            ? this.metadata
-            : metadata as SdkOptional<Map<String, Object?>>,
-      );
-
-  factory CopilotSpacesUpdateResourceForOrgRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      CopilotSpacesUpdateResourceForOrgRequestBody(
-        metadata: json['metadata'] != null
-            ? SdkPresent((json['metadata'] == null
-                ? null
-                : Map<String, dynamic>.from(json['metadata'] as Map)
-                    .map((key, value) => MapEntry(key, value)))!)
+  factory ReposCreateDeployKeyRequestBody.fromJson(Map<String, dynamic> json) =>
+      ReposCreateDeployKeyRequestBody(
+        title: json['title'] != null
+            ? SdkPresent((json['title'] as String?)!)
+            : const SdkOmitted(),
+        key: (json['key'] as String?)!,
+        readOnly: json['read_only'] != null
+            ? SdkPresent((json['read_only'] as bool?)!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (metadata) {
-          SdkPresent<Map<String, Object?>>(value: final value) => {
-              'metadata': value,
+        ...switch (title) {
+          SdkPresent<String>(value: final value) => {
+              'title': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'key': key,
+        ...switch (readOnly) {
+          SdkPresent<bool>(value: final value) => {
+              'read_only': value,
             },
           _ => const <String, dynamic>{},
         },
       };
 }
 
-class CopilotSpacesListForUserResponse {
+class ReposMergeUpstreamRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// The list of Copilot Spaces on this page of results.
-  final List<CopilotSpace> spaces;
+  /// The name of the branch which should be updated to match upstream.
+  final String branch;
 
-  const CopilotSpacesListForUserResponse({required this.spaces});
+  const ReposMergeUpstreamRequestBody({required this.branch});
 
-  CopilotSpacesListForUserResponse Function({List<CopilotSpace> spaces})
-      get copyWith => _copyWith;
+  ReposMergeUpstreamRequestBody Function({String branch}) get copyWith =>
+      _copyWith;
 
-  CopilotSpacesListForUserResponse _copyWith(
-          {Object? spaces = sdkOmittedValue}) =>
-      CopilotSpacesListForUserResponse(
-        spaces: identical(spaces, sdkOmittedValue)
-            ? this.spaces
-            : spaces as List<CopilotSpace>,
+  ReposMergeUpstreamRequestBody _copyWith({Object? branch = sdkOmittedValue}) =>
+      ReposMergeUpstreamRequestBody(
+        branch:
+            identical(branch, sdkOmittedValue) ? this.branch : branch as String,
       );
 
-  factory CopilotSpacesListForUserResponse.fromJson(
-          Map<String, dynamic> json) =>
-      CopilotSpacesListForUserResponse(
-        spaces: ((json['spaces'] as List?)
-            ?.map((e) => CopilotSpace.fromJson(e as Map<String, dynamic>))
-            .toList())!,
+  factory ReposMergeUpstreamRequestBody.fromJson(Map<String, dynamic> json) =>
+      ReposMergeUpstreamRequestBody(
+        branch: (json['branch'] as String?)!,
       );
 
   Map<String, dynamic> toJson() => {
-        'spaces': spaces.map((item) => item.toJson()).toList(),
+        'branch': branch,
+      };
+}
+
+class ReposMergeRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The name of the base branch that the head will be merged into.
+  final String base_;
+
+  /// The head to merge. This can be a branch name or a commit SHA1.
+  final String head;
+
+  /// Commit message to use for the merge commit. If omitted, a default message will be used.
+  final SdkOptional<String> commitMessage;
+
+  const ReposMergeRequestBody(
+      {required this.base_,
+      required this.head,
+      this.commitMessage = const SdkOmitted()});
+
+  ReposMergeRequestBody Function(
+      {String base_,
+      String head,
+      SdkOptional<String> commitMessage}) get copyWith => _copyWith;
+
+  ReposMergeRequestBody _copyWith(
+          {Object? base_ = sdkOmittedValue,
+          Object? head = sdkOmittedValue,
+          Object? commitMessage = sdkOmittedValue}) =>
+      ReposMergeRequestBody(
+        base_: identical(base_, sdkOmittedValue) ? this.base_ : base_ as String,
+        head: identical(head, sdkOmittedValue) ? this.head : head as String,
+        commitMessage: identical(commitMessage, sdkOmittedValue)
+            ? this.commitMessage
+            : commitMessage as SdkOptional<String>,
+      );
+
+  factory ReposMergeRequestBody.fromJson(Map<String, dynamic> json) =>
+      ReposMergeRequestBody(
+        base_: (json['base'] as String?)!,
+        head: (json['head'] as String?)!,
+        commitMessage: json['commit_message'] != null
+            ? SdkPresent((json['commit_message'] as String?)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        'base': base_,
+        'head': head,
+        ...switch (commitMessage) {
+          SdkPresent<String>(value: final value) => {
+              'commit_message': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+/// The source branch and directory used to publish your Pages site.
+class ReposCreatePagesSiteRequestBodySource {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The repository branch used to publish your site's source files.
+  final String branch;
+
+  /// The repository directory that includes the source files for the Pages site. Allowed paths are `/` or `/docs`. Default: `/`
+  final SdkOptional<ReposCreatePagesSiteRequestBodySourcePath> path;
+
+  const ReposCreatePagesSiteRequestBodySource(
+      {required this.branch, this.path = const SdkOmitted()});
+
+  ReposCreatePagesSiteRequestBodySource Function(
+          {String branch,
+          SdkOptional<ReposCreatePagesSiteRequestBodySourcePath> path})
+      get copyWith => _copyWith;
+
+  ReposCreatePagesSiteRequestBodySource _copyWith(
+          {Object? branch = sdkOmittedValue, Object? path = sdkOmittedValue}) =>
+      ReposCreatePagesSiteRequestBodySource(
+        branch:
+            identical(branch, sdkOmittedValue) ? this.branch : branch as String,
+        path: identical(path, sdkOmittedValue)
+            ? this.path
+            : path as SdkOptional<ReposCreatePagesSiteRequestBodySourcePath>,
+      );
+
+  factory ReposCreatePagesSiteRequestBodySource.fromJson(
+          Map<String, dynamic> json) =>
+      ReposCreatePagesSiteRequestBodySource(
+        branch: (json['branch'] as String?)!,
+        path: json['path'] != null
+            ? SdkPresent((json['path'] != null
+                ? ReposCreatePagesSiteRequestBodySourcePath.fromJson(
+                    json['path'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        'branch': branch,
+        ...switch (path) {
+          SdkPresent<ReposCreatePagesSiteRequestBodySourcePath>(
+            value: final value
+          ) =>
+            {
+              'path': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+/// The source branch and directory used to publish your Pages site.
+class ReposCreatePagesSiteRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The process in which the Page will be built. Possible values are `"legacy"` and `"workflow"`.
+  final SdkOptional<ReposCreatePagesSiteRequestBodyBuildType> buildType;
+
+  /// The source branch and directory used to publish your Pages site.
+  final SdkOptional<ReposCreatePagesSiteRequestBodySource> source;
+
+  const ReposCreatePagesSiteRequestBody(
+      {this.buildType = const SdkOmitted(), this.source = const SdkOmitted()});
+
+  ReposCreatePagesSiteRequestBody Function(
+          {SdkOptional<ReposCreatePagesSiteRequestBodyBuildType> buildType,
+          SdkOptional<ReposCreatePagesSiteRequestBodySource> source})
+      get copyWith => _copyWith;
+
+  ReposCreatePagesSiteRequestBody _copyWith(
+          {Object? buildType = sdkOmittedValue,
+          Object? source = sdkOmittedValue}) =>
+      ReposCreatePagesSiteRequestBody(
+        buildType: identical(buildType, sdkOmittedValue)
+            ? this.buildType
+            : buildType
+                as SdkOptional<ReposCreatePagesSiteRequestBodyBuildType>,
+        source: identical(source, sdkOmittedValue)
+            ? this.source
+            : source as SdkOptional<ReposCreatePagesSiteRequestBodySource>,
+      );
+
+  factory ReposCreatePagesSiteRequestBody.fromJson(Map<String, dynamic> json) =>
+      ReposCreatePagesSiteRequestBody(
+        buildType: json['build_type'] != null
+            ? SdkPresent((json['build_type'] != null
+                ? ReposCreatePagesSiteRequestBodyBuildType.fromJson(
+                    json['build_type'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        source: json['source'] != null
+            ? SdkPresent((json['source'] != null
+                ? ReposCreatePagesSiteRequestBodySource.fromJson(
+                    json['source'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (buildType) {
+          SdkPresent<ReposCreatePagesSiteRequestBodyBuildType>(
+            value: final value
+          ) =>
+            {
+              'build_type': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (source) {
+          SdkPresent<ReposCreatePagesSiteRequestBodySource>(
+            value: final value
+          ) =>
+            {
+              'source': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class ReposUpdateInformationAboutPagesSiteRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// Specify a custom domain for the repository. Sending a `null` value will remove the custom domain. For more about custom domains, see "[Using a custom domain with GitHub Pages](https://docs.github.com/pages/configuring-a-custom-domain-for-your-github-pages-site)."
+  final SdkOptional<String?> cname;
+
+  /// Specify whether HTTPS should be enforced for the repository.
+  final SdkOptional<bool> httpsEnforced;
+
+  /// The process by which the GitHub Pages site will be built. `workflow` means that the site is built by a custom GitHub Actions workflow. `legacy` means that the site is built by GitHub when changes are pushed to a specific branch.
+  final SdkOptional<ReposUpdateInformationAboutPagesSiteRequestBodyBuildType>
+      buildType;
+
+  /// Typed representation of the `ReposUpdateInformationAboutPagesSiteRequestSource` API schema.
+  final SdkOptional<ReposUpdateInformationAboutPagesSiteRequestSource> source;
+
+  const ReposUpdateInformationAboutPagesSiteRequestBody(
+      {this.cname = const SdkOmitted(),
+      this.httpsEnforced = const SdkOmitted(),
+      this.buildType = const SdkOmitted(),
+      this.source = const SdkOmitted()});
+
+  ReposUpdateInformationAboutPagesSiteRequestBody Function(
+      {SdkOptional<String?> cname,
+      SdkOptional<bool> httpsEnforced,
+      SdkOptional<ReposUpdateInformationAboutPagesSiteRequestBodyBuildType>
+          buildType,
+      SdkOptional<ReposUpdateInformationAboutPagesSiteRequestSource>
+          source}) get copyWith => _copyWith;
+
+  ReposUpdateInformationAboutPagesSiteRequestBody _copyWith(
+          {Object? cname = sdkOmittedValue,
+          Object? httpsEnforced = sdkOmittedValue,
+          Object? buildType = sdkOmittedValue,
+          Object? source = sdkOmittedValue}) =>
+      ReposUpdateInformationAboutPagesSiteRequestBody(
+        cname: identical(cname, sdkOmittedValue)
+            ? this.cname
+            : cname as SdkOptional<String?>,
+        httpsEnforced: identical(httpsEnforced, sdkOmittedValue)
+            ? this.httpsEnforced
+            : httpsEnforced as SdkOptional<bool>,
+        buildType: identical(buildType, sdkOmittedValue)
+            ? this.buildType
+            : buildType as SdkOptional<
+                ReposUpdateInformationAboutPagesSiteRequestBodyBuildType>,
+        source: identical(source, sdkOmittedValue)
+            ? this.source
+            : source as SdkOptional<
+                ReposUpdateInformationAboutPagesSiteRequestSource>,
+      );
+
+  factory ReposUpdateInformationAboutPagesSiteRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      ReposUpdateInformationAboutPagesSiteRequestBody(
+        cname: json.containsKey('cname')
+            ? SdkPresent(json['cname'] as String?)
+            : const SdkOmitted(),
+        httpsEnforced: json['https_enforced'] != null
+            ? SdkPresent((json['https_enforced'] as bool?)!)
+            : const SdkOmitted(),
+        buildType: json['build_type'] != null
+            ? SdkPresent((json['build_type'] != null
+                ? ReposUpdateInformationAboutPagesSiteRequestBodyBuildType
+                    .fromJson(json['build_type'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        source: json['source'] != null
+            ? SdkPresent((json['source'] != null
+                ? ReposUpdateInformationAboutPagesSiteRequestSource.fromJson(
+                    json['source'])
+                : null)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (cname) {
+          SdkPresent<String?>(value: final value) => {
+              'cname': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (httpsEnforced) {
+          SdkPresent<bool>(value: final value) => {
+              'https_enforced': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (buildType) {
+          SdkPresent<ReposUpdateInformationAboutPagesSiteRequestBodyBuildType>(
+            value: final value
+          ) =>
+            {
+              'build_type': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (source) {
+          SdkPresent<ReposUpdateInformationAboutPagesSiteRequestSource>(
+            value: final value
+          ) =>
+            {
+              'source': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
       };
 }

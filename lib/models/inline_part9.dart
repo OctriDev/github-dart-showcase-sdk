@@ -4,6 +4,111 @@
 part of 'inline.dart';
 
 // Inline operation models (part 9)
+/// The level of permission to grant the access token for commit statuses.
+final class AppPermissionsStatuses {
+  final String value;
+
+  const AppPermissionsStatuses._(this.value);
+
+  factory AppPermissionsStatuses.fromJson(String value) =>
+      AppPermissionsStatuses._(value);
+
+  static const read = AppPermissionsStatuses._('read');
+  static const write = AppPermissionsStatuses._('write');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is AppPermissionsStatuses && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The level of permission to grant the access token to manage Dependabot alerts.
+final class AppPermissionsVulnerabilityAlerts {
+  final String value;
+
+  const AppPermissionsVulnerabilityAlerts._(this.value);
+
+  factory AppPermissionsVulnerabilityAlerts.fromJson(String value) =>
+      AppPermissionsVulnerabilityAlerts._(value);
+
+  static const read = AppPermissionsVulnerabilityAlerts._('read');
+  static const write = AppPermissionsVulnerabilityAlerts._('write');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is AppPermissionsVulnerabilityAlerts && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The level of permission to grant the access token to update GitHub Actions workflow files.
+final class AppPermissionsWorkflows {
+  final String value;
+
+  const AppPermissionsWorkflows._(this.value);
+
+  factory AppPermissionsWorkflows.fromJson(String value) =>
+      AppPermissionsWorkflows._(value);
+
+  static const write = AppPermissionsWorkflows._('write');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is AppPermissionsWorkflows && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Required enumerated value serialized in the `runtime_risks[]` wire field.
+final class ArtifactDeploymentRecordRuntimeRisksItem {
+  final String value;
+
+  const ArtifactDeploymentRecordRuntimeRisksItem._(this.value);
+
+  factory ArtifactDeploymentRecordRuntimeRisksItem.fromJson(String value) =>
+      ArtifactDeploymentRecordRuntimeRisksItem._(value);
+
+  static const criticalResource =
+      ArtifactDeploymentRecordRuntimeRisksItem._('critical-resource');
+  static const internetExposed =
+      ArtifactDeploymentRecordRuntimeRisksItem._('internet-exposed');
+  static const lateralMovement =
+      ArtifactDeploymentRecordRuntimeRisksItem._('lateral-movement');
+  static const sensitiveData =
+      ArtifactDeploymentRecordRuntimeRisksItem._('sensitive-data');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is ArtifactDeploymentRecordRuntimeRisksItem && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
 /// Describe whether all repositories have been selected or there's a selection involved
 final class AuthenticationTokenRepositorySelection {
   final String value;
@@ -224,93 +329,6 @@ final class CheckRunWithSimpleCheckSuiteConclusion {
   @override
   bool operator ==(Object other) =>
       other is CheckRunWithSimpleCheckSuiteConclusion && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The phase of the lifecycle that the check is currently in.
-final class CheckRunWithSimpleCheckSuiteStatus {
-  final String value;
-
-  const CheckRunWithSimpleCheckSuiteStatus._(this.value);
-
-  factory CheckRunWithSimpleCheckSuiteStatus.fromJson(String value) =>
-      CheckRunWithSimpleCheckSuiteStatus._(value);
-
-  static const queued = CheckRunWithSimpleCheckSuiteStatus._('queued');
-  static const inProgress = CheckRunWithSimpleCheckSuiteStatus._('in_progress');
-  static const completed = CheckRunWithSimpleCheckSuiteStatus._('completed');
-  static const pending = CheckRunWithSimpleCheckSuiteStatus._('pending');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is CheckRunWithSimpleCheckSuiteStatus && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `conclusion` wire field.
-final class CheckSuiteConclusion {
-  final String value;
-
-  const CheckSuiteConclusion._(this.value);
-
-  factory CheckSuiteConclusion.fromJson(String value) =>
-      CheckSuiteConclusion._(value);
-
-  static const success = CheckSuiteConclusion._('success');
-  static const failure = CheckSuiteConclusion._('failure');
-  static const neutral = CheckSuiteConclusion._('neutral');
-  static const cancelled = CheckSuiteConclusion._('cancelled');
-  static const skipped = CheckSuiteConclusion._('skipped');
-  static const timedOut = CheckSuiteConclusion._('timed_out');
-  static const actionRequired = CheckSuiteConclusion._('action_required');
-  static const startupFailure = CheckSuiteConclusion._('startup_failure');
-  static const stale = CheckSuiteConclusion._('stale');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is CheckSuiteConclusion && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The phase of the lifecycle that the check suite is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check suites.
-final class CheckSuiteStatus {
-  final String value;
-
-  const CheckSuiteStatus._(this.value);
-
-  factory CheckSuiteStatus.fromJson(String value) => CheckSuiteStatus._(value);
-
-  static const queued = CheckSuiteStatus._('queued');
-  static const inProgress = CheckSuiteStatus._('in_progress');
-  static const completed = CheckSuiteStatus._('completed');
-  static const waiting = CheckSuiteStatus._('waiting');
-  static const requested = CheckSuiteStatus._('requested');
-  static const pending = CheckSuiteStatus._('pending');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is CheckSuiteStatus && other.value == value;
 
   @override
   int get hashCode => value.hashCode;

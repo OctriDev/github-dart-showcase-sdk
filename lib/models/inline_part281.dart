@@ -4,327 +4,554 @@
 part of 'inline.dart';
 
 // Inline operation models (part 281)
-final class ReactionsListForCommitCommentContent {
-  final String value;
+/// A GitHub user
+class AgentAutomationsGetAutomationResponseCreatedBy {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
 
-  const ReactionsListForCommitCommentContent._(this.value);
+  /// The unique identifier of the user
+  final SdkOptional<int> id;
 
-  factory ReactionsListForCommitCommentContent.fromJson(String value) =>
-      ReactionsListForCommitCommentContent._(value);
+  const AgentAutomationsGetAutomationResponseCreatedBy(
+      {this.id = const SdkOmitted()});
 
-  static const plus1 = ReactionsListForCommitCommentContent._('+1');
-  static const minus1 = ReactionsListForCommitCommentContent._('-1');
-  static const laugh = ReactionsListForCommitCommentContent._('laugh');
-  static const confused = ReactionsListForCommitCommentContent._('confused');
-  static const heart = ReactionsListForCommitCommentContent._('heart');
-  static const hooray = ReactionsListForCommitCommentContent._('hooray');
-  static const rocket = ReactionsListForCommitCommentContent._('rocket');
-  static const eyes = ReactionsListForCommitCommentContent._('eyes');
+  AgentAutomationsGetAutomationResponseCreatedBy Function({SdkOptional<int> id})
+      get copyWith => _copyWith;
 
-  String toJson() => value;
+  AgentAutomationsGetAutomationResponseCreatedBy _copyWith(
+          {Object? id = sdkOmittedValue}) =>
+      AgentAutomationsGetAutomationResponseCreatedBy(
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+      );
 
-  @override
-  String toString() => value.toString();
+  factory AgentAutomationsGetAutomationResponseCreatedBy.fromJson(
+          Map<String, dynamic> json) =>
+      AgentAutomationsGetAutomationResponseCreatedBy(
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
 
-  @override
-  bool operator ==(Object other) =>
-      other is ReactionsListForCommitCommentContent && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
+  Map<String, dynamic> toJson() => {
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
-/// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the commit comment.
-final class ReactionsCreateForCommitCommentRequestBodyContent {
-  final String value;
+/// A full representation of an automation including all configuration fields and repository identity (used in cross-repository get responses).
+class AgentAutomationsGetAutomationResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
 
-  const ReactionsCreateForCommitCommentRequestBodyContent._(this.value);
+  /// The unique identifier of the automation.
+  final String id;
 
-  factory ReactionsCreateForCommitCommentRequestBodyContent.fromJson(
-          String value) =>
-      ReactionsCreateForCommitCommentRequestBodyContent._(value);
+  /// Repository identity for an automation in cross-repository list responses.
+  final AgentAutomationsGetAutomationResponseRepository repository;
 
-  static const plus1 =
-      ReactionsCreateForCommitCommentRequestBodyContent._('+1');
-  static const minus1 =
-      ReactionsCreateForCommitCommentRequestBodyContent._('-1');
-  static const laugh =
-      ReactionsCreateForCommitCommentRequestBodyContent._('laugh');
-  static const confused =
-      ReactionsCreateForCommitCommentRequestBodyContent._('confused');
-  static const heart =
-      ReactionsCreateForCommitCommentRequestBodyContent._('heart');
-  static const hooray =
-      ReactionsCreateForCommitCommentRequestBodyContent._('hooray');
-  static const rocket =
-      ReactionsCreateForCommitCommentRequestBodyContent._('rocket');
-  static const eyes =
-      ReactionsCreateForCommitCommentRequestBodyContent._('eyes');
+  /// The name of the automation.
+  final String name;
 
-  String toJson() => value;
+  /// Whether the automation is currently enabled.
+  final SdkOptional<bool> enabled;
 
-  @override
-  String toString() => value.toString();
+  /// Who owns the automation. `user` keeps it private to its creator and its runs act as that user. `repository` makes it belong to the repository, visible to anyone with read access to the repository, and its runs act as the Copilot app rather than as a person.
+  final SdkOptional<AgentAutomationsGetAutomationResponseOwnerType> ownerType;
 
-  @override
-  bool operator ==(Object other) =>
-      other is ReactionsCreateForCommitCommentRequestBodyContent &&
-      other.value == value;
+  /// Controls which repository resources a run may modify. `trigger` limits writes to the resource that started the run, when one exists, and resources created during the run; `repository` allows writes to any resource in the repository. Supported values: `trigger`, `repository`.
+  final SdkOptional<AgentAutomationsGetAutomationResponseWriteScope> writeScope;
 
-  @override
-  int get hashCode => value.hashCode;
+  /// When true, event-triggered runs require the event actor to have repo write permission, even when the org's allow_read_access_triggers policy is enabled. Does not apply to interval-scheduled runs, which always run as the automation owner.
+  final SdkOptional<bool> requireActorWritePermission;
+
+  /// Public trigger configuration keyed by stable public trigger identifier. Each trigger has a closed, trigger-specific configuration schema.
+  final SdkOptional<AgentAutomationsGetAutomationResponseTriggers> triggers;
+
+  /// The prompt template for the automation.
+  final String prompt;
+
+  /// The tools available to the automation.
+  final SdkOptional<List<String>> tools;
+
+  /// Custom agents (subagents) this automation is allowed to invoke.
+  final SdkOptional<List<String>> allowedCustomAgents;
+
+  /// The model to use for sessions triggered by this automation. Omit to use the platform default.
+  final SdkOptional<String> model;
+
+  /// The reasoning effort to use for sessions triggered by this automation. Omit or leave empty for no override. Currently supported values: `none`, `low`, `medium`, `high`, `xhigh`, `max`
+  final SdkOptional<String> reasoningEffort;
+
+  /// When the automation was created.
+  final String createdAt;
+
+  /// When the automation was last updated.
+  final String updatedAt;
+
+  /// A GitHub user
+  final AgentAutomationsGetAutomationResponseCreatedBy createdBy;
+
+  const AgentAutomationsGetAutomationResponse(
+      {required this.id,
+      required this.repository,
+      required this.name,
+      this.enabled = const SdkOmitted(),
+      this.ownerType = const SdkOmitted(),
+      this.writeScope = const SdkOmitted(),
+      this.requireActorWritePermission = const SdkOmitted(),
+      this.triggers = const SdkOmitted(),
+      required this.prompt,
+      this.tools = const SdkOmitted(),
+      this.allowedCustomAgents = const SdkOmitted(),
+      this.model = const SdkOmitted(),
+      this.reasoningEffort = const SdkOmitted(),
+      required this.createdAt,
+      required this.updatedAt,
+      required this.createdBy});
+
+  AgentAutomationsGetAutomationResponse Function(
+      {String id,
+      AgentAutomationsGetAutomationResponseRepository repository,
+      String name,
+      SdkOptional<bool> enabled,
+      SdkOptional<AgentAutomationsGetAutomationResponseOwnerType> ownerType,
+      SdkOptional<AgentAutomationsGetAutomationResponseWriteScope> writeScope,
+      SdkOptional<bool> requireActorWritePermission,
+      SdkOptional<AgentAutomationsGetAutomationResponseTriggers> triggers,
+      String prompt,
+      SdkOptional<List<String>> tools,
+      SdkOptional<List<String>> allowedCustomAgents,
+      SdkOptional<String> model,
+      SdkOptional<String> reasoningEffort,
+      String createdAt,
+      String updatedAt,
+      AgentAutomationsGetAutomationResponseCreatedBy
+          createdBy}) get copyWith => _copyWith;
+
+  AgentAutomationsGetAutomationResponse _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? repository = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? enabled = sdkOmittedValue,
+          Object? ownerType = sdkOmittedValue,
+          Object? writeScope = sdkOmittedValue,
+          Object? requireActorWritePermission = sdkOmittedValue,
+          Object? triggers = sdkOmittedValue,
+          Object? prompt = sdkOmittedValue,
+          Object? tools = sdkOmittedValue,
+          Object? allowedCustomAgents = sdkOmittedValue,
+          Object? model = sdkOmittedValue,
+          Object? reasoningEffort = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? createdBy = sdkOmittedValue}) =>
+      AgentAutomationsGetAutomationResponse(
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        repository: identical(repository, sdkOmittedValue)
+            ? this.repository
+            : repository as AgentAutomationsGetAutomationResponseRepository,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as SdkOptional<bool>,
+        ownerType: identical(ownerType, sdkOmittedValue)
+            ? this.ownerType
+            : ownerType
+                as SdkOptional<AgentAutomationsGetAutomationResponseOwnerType>,
+        writeScope: identical(writeScope, sdkOmittedValue)
+            ? this.writeScope
+            : writeScope
+                as SdkOptional<AgentAutomationsGetAutomationResponseWriteScope>,
+        requireActorWritePermission:
+            identical(requireActorWritePermission, sdkOmittedValue)
+                ? this.requireActorWritePermission
+                : requireActorWritePermission as SdkOptional<bool>,
+        triggers: identical(triggers, sdkOmittedValue)
+            ? this.triggers
+            : triggers
+                as SdkOptional<AgentAutomationsGetAutomationResponseTriggers>,
+        prompt:
+            identical(prompt, sdkOmittedValue) ? this.prompt : prompt as String,
+        tools: identical(tools, sdkOmittedValue)
+            ? this.tools
+            : tools as SdkOptional<List<String>>,
+        allowedCustomAgents: identical(allowedCustomAgents, sdkOmittedValue)
+            ? this.allowedCustomAgents
+            : allowedCustomAgents as SdkOptional<List<String>>,
+        model: identical(model, sdkOmittedValue)
+            ? this.model
+            : model as SdkOptional<String>,
+        reasoningEffort: identical(reasoningEffort, sdkOmittedValue)
+            ? this.reasoningEffort
+            : reasoningEffort as SdkOptional<String>,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+        createdBy: identical(createdBy, sdkOmittedValue)
+            ? this.createdBy
+            : createdBy as AgentAutomationsGetAutomationResponseCreatedBy,
+      );
+
+  factory AgentAutomationsGetAutomationResponse.fromJson(
+          Map<String, dynamic> json) =>
+      AgentAutomationsGetAutomationResponse(
+        id: (json['id'] as String?)!,
+        repository: (json['repository'] != null
+            ? AgentAutomationsGetAutomationResponseRepository.fromJson(
+                json['repository'] as Map<String, dynamic>)
+            : null)!,
+        name: (json['name'] as String?)!,
+        enabled: json['enabled'] != null
+            ? SdkPresent((json['enabled'] as bool?)!)
+            : const SdkOmitted(),
+        ownerType: json['owner_type'] != null
+            ? SdkPresent((json['owner_type'] != null
+                ? AgentAutomationsGetAutomationResponseOwnerType.fromJson(
+                    json['owner_type'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        writeScope: json['write_scope'] != null
+            ? SdkPresent((json['write_scope'] != null
+                ? AgentAutomationsGetAutomationResponseWriteScope.fromJson(
+                    json['write_scope'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        requireActorWritePermission:
+            json['require_actor_write_permission'] != null
+                ? SdkPresent((json['require_actor_write_permission'] as bool?)!)
+                : const SdkOmitted(),
+        triggers: json['triggers'] != null
+            ? SdkPresent((json['triggers'] != null
+                ? AgentAutomationsGetAutomationResponseTriggers.fromJson(
+                    json['triggers'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        prompt: (json['prompt'] as String?)!,
+        tools: json['tools'] != null
+            ? SdkPresent(
+                ((json['tools'] as List?)?.map((e) => e as String).toList())!)
+            : const SdkOmitted(),
+        allowedCustomAgents: json['allowed_custom_agents'] != null
+            ? SdkPresent(((json['allowed_custom_agents'] as List?)
+                ?.map((e) => e as String)
+                .toList())!)
+            : const SdkOmitted(),
+        model: json['model'] != null
+            ? SdkPresent((json['model'] as String?)!)
+            : const SdkOmitted(),
+        reasoningEffort: json['reasoning_effort'] != null
+            ? SdkPresent((json['reasoning_effort'] as String?)!)
+            : const SdkOmitted(),
+        createdAt: (json['created_at'] as String?)!,
+        updatedAt: (json['updated_at'] as String?)!,
+        createdBy: (json['created_by'] != null
+            ? AgentAutomationsGetAutomationResponseCreatedBy.fromJson(
+                json['created_by'] as Map<String, dynamic>)
+            : null)!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'repository': repository.toJson(),
+        'name': name,
+        ...switch (enabled) {
+          SdkPresent<bool>(value: final value) => {
+              'enabled': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (ownerType) {
+          SdkPresent<AgentAutomationsGetAutomationResponseOwnerType>(
+            value: final value
+          ) =>
+            {
+              'owner_type': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (writeScope) {
+          SdkPresent<AgentAutomationsGetAutomationResponseWriteScope>(
+            value: final value
+          ) =>
+            {
+              'write_scope': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (requireActorWritePermission) {
+          SdkPresent<bool>(value: final value) => {
+              'require_actor_write_permission': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (triggers) {
+          SdkPresent<AgentAutomationsGetAutomationResponseTriggers>(
+            value: final value
+          ) =>
+            {
+              'triggers': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'prompt': prompt,
+        ...switch (tools) {
+          SdkPresent<List<String>>(value: final value) => {
+              'tools': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (allowedCustomAgents) {
+          SdkPresent<List<String>>(value: final value) => {
+              'allowed_custom_agents': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (model) {
+          SdkPresent<String>(value: final value) => {
+              'model': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (reasoningEffort) {
+          SdkPresent<String>(value: final value) => {
+              'reasoning_effort': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'created_at': createdAt,
+        'updated_at': updatedAt,
+        'created_by': createdBy.toJson(),
+      };
 }
 
-final class ChecksListForRefFilter {
-  final String value;
+/// The entity who created this task
+class AgentAutomationsListAutomationTasksResponseTasksItemCreator {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
 
-  const ChecksListForRefFilter._(this.value);
+  /// The unique identifier of the user
+  final SdkOptional<int> id;
 
-  factory ChecksListForRefFilter.fromJson(String value) =>
-      ChecksListForRefFilter._(value);
+  const AgentAutomationsListAutomationTasksResponseTasksItemCreator(
+      {this.id = const SdkOmitted()});
 
-  static const latest = ChecksListForRefFilter._('latest');
-  static const all = ChecksListForRefFilter._('all');
+  AgentAutomationsListAutomationTasksResponseTasksItemCreator Function(
+      {SdkOptional<int> id}) get copyWith => _copyWith;
 
-  String toJson() => value;
+  AgentAutomationsListAutomationTasksResponseTasksItemCreator _copyWith(
+          {Object? id = sdkOmittedValue}) =>
+      AgentAutomationsListAutomationTasksResponseTasksItemCreator(
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+      );
 
-  @override
-  String toString() => value.toString();
+  factory AgentAutomationsListAutomationTasksResponseTasksItemCreator.fromJson(
+          Map<String, dynamic> json) =>
+      AgentAutomationsListAutomationTasksResponseTasksItemCreator(
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
 
-  @override
-  bool operator ==(Object other) =>
-      other is ChecksListForRefFilter && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
+  Map<String, dynamic> toJson() => {
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
-/// **Required when `state` is `dismissed`.** A reason for dismissing the alert.
-final class DependabotUpdateAlertRequestBodyDismissedReason {
-  final String value;
+/// A GitHub user
+class AgentAutomationsListAutomationTasksResponseTasksItemUserCollaboratorsItem {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
 
-  const DependabotUpdateAlertRequestBodyDismissedReason._(this.value);
+  /// The unique identifier of the user
+  final SdkOptional<int> id;
 
-  factory DependabotUpdateAlertRequestBodyDismissedReason.fromJson(
-          String value) =>
-      DependabotUpdateAlertRequestBodyDismissedReason._(value);
+  const AgentAutomationsListAutomationTasksResponseTasksItemUserCollaboratorsItem(
+      {this.id = const SdkOmitted()});
 
-  static const fixStarted =
-      DependabotUpdateAlertRequestBodyDismissedReason._('fix_started');
-  static const inaccurate =
-      DependabotUpdateAlertRequestBodyDismissedReason._('inaccurate');
-  static const noBandwidth =
-      DependabotUpdateAlertRequestBodyDismissedReason._('no_bandwidth');
-  static const notUsed =
-      DependabotUpdateAlertRequestBodyDismissedReason._('not_used');
-  static const tolerableRisk =
-      DependabotUpdateAlertRequestBodyDismissedReason._('tolerable_risk');
+  AgentAutomationsListAutomationTasksResponseTasksItemUserCollaboratorsItem
+      Function({SdkOptional<int> id}) get copyWith => _copyWith;
 
-  String toJson() => value;
+  AgentAutomationsListAutomationTasksResponseTasksItemUserCollaboratorsItem
+      _copyWith({Object? id = sdkOmittedValue}) =>
+          AgentAutomationsListAutomationTasksResponseTasksItemUserCollaboratorsItem(
+            id: identical(id, sdkOmittedValue)
+                ? this.id
+                : id as SdkOptional<int>,
+          );
 
-  @override
-  String toString() => value.toString();
+  factory AgentAutomationsListAutomationTasksResponseTasksItemUserCollaboratorsItem.fromJson(
+          Map<String, dynamic> json) =>
+      AgentAutomationsListAutomationTasksResponseTasksItemUserCollaboratorsItem(
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
 
-  @override
-  bool operator ==(Object other) =>
-      other is DependabotUpdateAlertRequestBodyDismissedReason &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
+  Map<String, dynamic> toJson() => {
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
-/// The state of the Dependabot alert. A `dismissed_reason` must be provided when setting the state to `dismissed`.
-final class DependabotUpdateAlertRequestBodyState {
-  final String value;
+/// The owner of the repository
+class AgentAutomationsListAutomationTasksResponseTasksItemOwner {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
 
-  const DependabotUpdateAlertRequestBodyState._(this.value);
+  /// The unique identifier of the user
+  final SdkOptional<int> id;
 
-  factory DependabotUpdateAlertRequestBodyState.fromJson(String value) =>
-      DependabotUpdateAlertRequestBodyState._(value);
+  const AgentAutomationsListAutomationTasksResponseTasksItemOwner(
+      {this.id = const SdkOmitted()});
 
-  static const dismissed = DependabotUpdateAlertRequestBodyState._('dismissed');
-  static const open = DependabotUpdateAlertRequestBodyState._('open');
+  AgentAutomationsListAutomationTasksResponseTasksItemOwner Function(
+      {SdkOptional<int> id}) get copyWith => _copyWith;
 
-  String toJson() => value;
+  AgentAutomationsListAutomationTasksResponseTasksItemOwner _copyWith(
+          {Object? id = sdkOmittedValue}) =>
+      AgentAutomationsListAutomationTasksResponseTasksItemOwner(
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+      );
 
-  @override
-  String toString() => value.toString();
+  factory AgentAutomationsListAutomationTasksResponseTasksItemOwner.fromJson(
+          Map<String, dynamic> json) =>
+      AgentAutomationsListAutomationTasksResponseTasksItemOwner(
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
 
-  @override
-  bool operator ==(Object other) =>
-      other is DependabotUpdateAlertRequestBodyState && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
+  Map<String, dynamic> toJson() => {
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
-/// The state of the status. When you set a transient deployment to `inactive`, the deployment will be shown as `destroyed` in GitHub.
-final class ReposCreateDeploymentStatusRequestBodyState {
-  final String value;
+/// The repository this task belongs to
+class AgentAutomationsListAutomationTasksResponseTasksItemRepository {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
 
-  const ReposCreateDeploymentStatusRequestBodyState._(this.value);
+  /// The unique identifier of the repository
+  final SdkOptional<int> id;
 
-  factory ReposCreateDeploymentStatusRequestBodyState.fromJson(String value) =>
-      ReposCreateDeploymentStatusRequestBodyState._(value);
+  const AgentAutomationsListAutomationTasksResponseTasksItemRepository(
+      {this.id = const SdkOmitted()});
 
-  static const error = ReposCreateDeploymentStatusRequestBodyState._('error');
-  static const failure =
-      ReposCreateDeploymentStatusRequestBodyState._('failure');
-  static const inactive =
-      ReposCreateDeploymentStatusRequestBodyState._('inactive');
-  static const inProgress =
-      ReposCreateDeploymentStatusRequestBodyState._('in_progress');
-  static const queued = ReposCreateDeploymentStatusRequestBodyState._('queued');
-  static const pending =
-      ReposCreateDeploymentStatusRequestBodyState._('pending');
-  static const success =
-      ReposCreateDeploymentStatusRequestBodyState._('success');
+  AgentAutomationsListAutomationTasksResponseTasksItemRepository Function(
+      {SdkOptional<int> id}) get copyWith => _copyWith;
 
-  String toJson() => value;
+  AgentAutomationsListAutomationTasksResponseTasksItemRepository _copyWith(
+          {Object? id = sdkOmittedValue}) =>
+      AgentAutomationsListAutomationTasksResponseTasksItemRepository(
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+      );
 
-  @override
-  String toString() => value.toString();
+  factory AgentAutomationsListAutomationTasksResponseTasksItemRepository.fromJson(
+          Map<String, dynamic> json) =>
+      AgentAutomationsListAutomationTasksResponseTasksItemRepository(
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
 
-  @override
-  bool operator ==(Object other) =>
-      other is ReposCreateDeploymentStatusRequestBodyState &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
+  Map<String, dynamic> toJson() => {
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
-final class ReposListForksSort {
-  final String value;
+/// A resource generated by the task
+class AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItem {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
 
-  const ReposListForksSort._(this.value);
+  /// Provider namespace
+  final AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemProvider
+      provider;
 
-  factory ReposListForksSort.fromJson(String value) =>
-      ReposListForksSort._(value);
+  /// Type of artifact. Available Values: `pull`, `branch`.
+  final AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemType
+      type_;
 
-  static const newest = ReposListForksSort._('newest');
-  static const oldest = ReposListForksSort._('oldest');
-  static const stargazers = ReposListForksSort._('stargazers');
-  static const watchers = ReposListForksSort._('watchers');
+  /// Resource data (shape depends on type)
+  final AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemData
+      data;
 
-  String toJson() => value;
+  const AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItem(
+      {required this.provider, required this.type_, required this.data});
 
-  @override
-  String toString() => value.toString();
+  AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItem Function(
+      {AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemProvider
+          provider,
+      AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemType
+          type_,
+      AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemData
+          data}) get copyWith => _copyWith;
 
-  @override
-  bool operator ==(Object other) =>
-      other is ReposListForksSort && other.value == value;
+  AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItem _copyWith(
+          {Object? provider = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? data = sdkOmittedValue}) =>
+      AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItem(
+        provider: identical(provider, sdkOmittedValue)
+            ? this.provider
+            : provider
+                as AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemProvider,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_
+                as AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemType,
+        data: identical(data, sdkOmittedValue)
+            ? this.data
+            : data
+                as AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemData,
+      );
 
-  @override
-  int get hashCode => value.hashCode;
-}
+  factory AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItem.fromJson(
+          Map<String, dynamic> json) =>
+      AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItem(
+        provider: (json['provider'] != null
+            ? AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemProvider
+                .fromJson(json['provider'] as String)
+            : null)!,
+        type_: (json['type'] != null
+            ? AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemType
+                .fromJson(json['type'] as String)
+            : null)!,
+        data: (json['data'] != null
+            ? AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemData
+                .fromJson(json['data'])
+            : null)!,
+      );
 
-/// The type of the object we're tagging. Normally this is a `commit` but it can also be a `tree` or a `blob`.
-final class GitCreateTagRequestBodyType {
-  final String value;
-
-  const GitCreateTagRequestBodyType._(this.value);
-
-  factory GitCreateTagRequestBodyType.fromJson(String value) =>
-      GitCreateTagRequestBodyType._(value);
-
-  static const commit = GitCreateTagRequestBodyType._('commit');
-  static const tree = GitCreateTagRequestBodyType._('tree');
-  static const blob = GitCreateTagRequestBodyType._('blob');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is GitCreateTagRequestBodyType && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The file mode; one of `100644` for file (blob), `100755` for executable (blob), `040000` for subdirectory (tree), `160000` for submodule (commit), or `120000` for a blob that specifies the path of a symlink.
-final class GitCreateTreeRequestBodyTreeItemMode {
-  final String value;
-
-  const GitCreateTreeRequestBodyTreeItemMode._(this.value);
-
-  factory GitCreateTreeRequestBodyTreeItemMode.fromJson(String value) =>
-      GitCreateTreeRequestBodyTreeItemMode._(value);
-
-  static const v100644 = GitCreateTreeRequestBodyTreeItemMode._('100644');
-  static const v100755 = GitCreateTreeRequestBodyTreeItemMode._('100755');
-  static const v040000 = GitCreateTreeRequestBodyTreeItemMode._('040000');
-  static const v160000 = GitCreateTreeRequestBodyTreeItemMode._('160000');
-  static const v120000 = GitCreateTreeRequestBodyTreeItemMode._('120000');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is GitCreateTreeRequestBodyTreeItemMode && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Either `blob`, `tree`, or `commit`.
-final class GitCreateTreeRequestBodyTreeItemType {
-  final String value;
-
-  const GitCreateTreeRequestBodyTreeItemType._(this.value);
-
-  factory GitCreateTreeRequestBodyTreeItemType.fromJson(String value) =>
-      GitCreateTreeRequestBodyTreeItemType._(value);
-
-  static const blob = GitCreateTreeRequestBodyTreeItemType._('blob');
-  static const tree = GitCreateTreeRequestBodyTreeItemType._('tree');
-  static const commit = GitCreateTreeRequestBodyTreeItemType._('commit');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is GitCreateTreeRequestBodyTreeItemType && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The type of version control system you are migrating from.
-final class MigrationsUpdateImportRequestBodyVcs {
-  final String value;
-
-  const MigrationsUpdateImportRequestBodyVcs._(this.value);
-
-  factory MigrationsUpdateImportRequestBodyVcs.fromJson(String value) =>
-      MigrationsUpdateImportRequestBodyVcs._(value);
-
-  static const subversion =
-      MigrationsUpdateImportRequestBodyVcs._('subversion');
-  static const tfvc = MigrationsUpdateImportRequestBodyVcs._('tfvc');
-  static const git = MigrationsUpdateImportRequestBodyVcs._('git');
-  static const mercurial = MigrationsUpdateImportRequestBodyVcs._('mercurial');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is MigrationsUpdateImportRequestBodyVcs && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
+  Map<String, dynamic> toJson() => {
+        'provider': provider.toJson(),
+        'type': type_.toJson(),
+        'data': data.toJson(),
+      };
 }

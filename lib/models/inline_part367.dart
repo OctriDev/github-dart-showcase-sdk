@@ -4,496 +4,409 @@
 part of 'inline.dart';
 
 // Inline operation models (part 367)
-class CopilotSetCopilotContentExclusionForOrganizationRequestBodyValueItemVariant1 {
+class CodespacesSetCodespacesAccessRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final List<String> ifAnyMatch;
 
-  const CopilotSetCopilotContentExclusionForOrganizationRequestBodyValueItemVariant1(
-      {required this.ifAnyMatch});
+  /// Which users can access codespaces in the organization. `disabled` means that no users can access codespaces in the organization.
+  final CodespacesSetCodespacesAccessRequestBodyVisibility visibility;
 
-  CopilotSetCopilotContentExclusionForOrganizationRequestBodyValueItemVariant1
-      Function({List<String> ifAnyMatch}) get copyWith => _copyWith;
+  /// The usernames of the organization members who should have access to codespaces in the organization. Required when `visibility` is `selected_members`. The provided list of usernames will replace any existing value.
+  final SdkOptional<List<String>> selectedUsernames;
 
-  CopilotSetCopilotContentExclusionForOrganizationRequestBodyValueItemVariant1
-      _copyWith({Object? ifAnyMatch = sdkOmittedValue}) =>
-          CopilotSetCopilotContentExclusionForOrganizationRequestBodyValueItemVariant1(
-            ifAnyMatch: identical(ifAnyMatch, sdkOmittedValue)
-                ? this.ifAnyMatch
-                : ifAnyMatch as List<String>,
-          );
+  const CodespacesSetCodespacesAccessRequestBody(
+      {required this.visibility, this.selectedUsernames = const SdkOmitted()});
 
-  factory CopilotSetCopilotContentExclusionForOrganizationRequestBodyValueItemVariant1.fromJson(
-          Map<String, dynamic> json) =>
-      CopilotSetCopilotContentExclusionForOrganizationRequestBodyValueItemVariant1(
-        ifAnyMatch:
-            ((json['ifAnyMatch'] as List?)?.map((e) => e as String).toList())!,
+  CodespacesSetCodespacesAccessRequestBody Function(
+      {CodespacesSetCodespacesAccessRequestBodyVisibility visibility,
+      SdkOptional<List<String>> selectedUsernames}) get copyWith => _copyWith;
+
+  CodespacesSetCodespacesAccessRequestBody _copyWith(
+          {Object? visibility = sdkOmittedValue,
+          Object? selectedUsernames = sdkOmittedValue}) =>
+      CodespacesSetCodespacesAccessRequestBody(
+        visibility: identical(visibility, sdkOmittedValue)
+            ? this.visibility
+            : visibility as CodespacesSetCodespacesAccessRequestBodyVisibility,
+        selectedUsernames: identical(selectedUsernames, sdkOmittedValue)
+            ? this.selectedUsernames
+            : selectedUsernames as SdkOptional<List<String>>,
       );
 
-  Map<String, dynamic> toJson() => {
-        'ifAnyMatch': ifAnyMatch,
-      };
-}
-
-class CopilotSetCopilotContentExclusionForOrganizationRequestBodyValueItemVariant2 {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final List<String> ifNoneMatch;
-
-  const CopilotSetCopilotContentExclusionForOrganizationRequestBodyValueItemVariant2(
-      {required this.ifNoneMatch});
-
-  CopilotSetCopilotContentExclusionForOrganizationRequestBodyValueItemVariant2
-      Function({List<String> ifNoneMatch}) get copyWith => _copyWith;
-
-  CopilotSetCopilotContentExclusionForOrganizationRequestBodyValueItemVariant2
-      _copyWith({Object? ifNoneMatch = sdkOmittedValue}) =>
-          CopilotSetCopilotContentExclusionForOrganizationRequestBodyValueItemVariant2(
-            ifNoneMatch: identical(ifNoneMatch, sdkOmittedValue)
-                ? this.ifNoneMatch
-                : ifNoneMatch as List<String>,
-          );
-
-  factory CopilotSetCopilotContentExclusionForOrganizationRequestBodyValueItemVariant2.fromJson(
+  factory CodespacesSetCodespacesAccessRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      CopilotSetCopilotContentExclusionForOrganizationRequestBodyValueItemVariant2(
-        ifNoneMatch:
-            ((json['ifNoneMatch'] as List?)?.map((e) => e as String).toList())!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'ifNoneMatch': ifNoneMatch,
-      };
-}
-
-class CopilotSetCopilotContentExclusionForOrganizationResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final SdkOptional<String> message;
-
-  const CopilotSetCopilotContentExclusionForOrganizationResponse(
-      {this.message = const SdkOmitted()});
-
-  CopilotSetCopilotContentExclusionForOrganizationResponse Function(
-      {SdkOptional<String> message}) get copyWith => _copyWith;
-
-  CopilotSetCopilotContentExclusionForOrganizationResponse _copyWith(
-          {Object? message = sdkOmittedValue}) =>
-      CopilotSetCopilotContentExclusionForOrganizationResponse(
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as SdkOptional<String>,
-      );
-
-  factory CopilotSetCopilotContentExclusionForOrganizationResponse.fromJson(
-          Map<String, dynamic> json) =>
-      CopilotSetCopilotContentExclusionForOrganizationResponse(
-        message: json['message'] != null
-            ? SdkPresent((json['message'] as String?)!)
+      CodespacesSetCodespacesAccessRequestBody(
+        visibility: (json['visibility'] != null
+            ? CodespacesSetCodespacesAccessRequestBodyVisibility.fromJson(
+                json['visibility'] as String)
+            : null)!,
+        selectedUsernames: json['selected_usernames'] != null
+            ? SdkPresent(((json['selected_usernames'] as List?)
+                ?.map((e) => e as String)
+                .toList())!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (message) {
-          SdkPresent<String>(value: final value) => {
-              'message': value,
+        'visibility': visibility.toJson(),
+        ...switch (selectedUsernames) {
+          SdkPresent<List<String>>(value: final value) => {
+              'selected_usernames': value,
             },
           _ => const <String, dynamic>{},
         },
       };
 }
 
-/// The enabled review tools for Copilot cloud agent.
-class CopilotGetCopilotCloudAgentConfigurationResponseEnabledTools {
+class CodespacesSetCodespacesAccessUsersRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Whether the CodeQL tool is enabled for the Copilot cloud agent.
-  final bool codeql;
+  /// The usernames of the organization members and outside collaborators whose codespaces should be billed to the organization.
+  final List<String> selectedUsernames;
 
-  /// Whether the Copilot code review tool is enabled for the Copilot cloud agent.
-  final bool copilotCodeReview;
+  const CodespacesSetCodespacesAccessUsersRequestBody(
+      {required this.selectedUsernames});
 
-  /// Whether the secret scanning tool is enabled for the Copilot cloud agent.
-  final bool secretScanning;
+  CodespacesSetCodespacesAccessUsersRequestBody Function(
+      {List<String> selectedUsernames}) get copyWith => _copyWith;
 
-  /// Whether the dependency vulnerability checks tool is enabled for the Copilot cloud agent.
-  final bool dependencyVulnerabilityChecks;
-
-  const CopilotGetCopilotCloudAgentConfigurationResponseEnabledTools(
-      {required this.codeql,
-      required this.copilotCodeReview,
-      required this.secretScanning,
-      required this.dependencyVulnerabilityChecks});
-
-  CopilotGetCopilotCloudAgentConfigurationResponseEnabledTools Function(
-      {bool codeql,
-      bool copilotCodeReview,
-      bool secretScanning,
-      bool dependencyVulnerabilityChecks}) get copyWith => _copyWith;
-
-  CopilotGetCopilotCloudAgentConfigurationResponseEnabledTools _copyWith(
-          {Object? codeql = sdkOmittedValue,
-          Object? copilotCodeReview = sdkOmittedValue,
-          Object? secretScanning = sdkOmittedValue,
-          Object? dependencyVulnerabilityChecks = sdkOmittedValue}) =>
-      CopilotGetCopilotCloudAgentConfigurationResponseEnabledTools(
-        codeql:
-            identical(codeql, sdkOmittedValue) ? this.codeql : codeql as bool,
-        copilotCodeReview: identical(copilotCodeReview, sdkOmittedValue)
-            ? this.copilotCodeReview
-            : copilotCodeReview as bool,
-        secretScanning: identical(secretScanning, sdkOmittedValue)
-            ? this.secretScanning
-            : secretScanning as bool,
-        dependencyVulnerabilityChecks:
-            identical(dependencyVulnerabilityChecks, sdkOmittedValue)
-                ? this.dependencyVulnerabilityChecks
-                : dependencyVulnerabilityChecks as bool,
+  CodespacesSetCodespacesAccessUsersRequestBody _copyWith(
+          {Object? selectedUsernames = sdkOmittedValue}) =>
+      CodespacesSetCodespacesAccessUsersRequestBody(
+        selectedUsernames: identical(selectedUsernames, sdkOmittedValue)
+            ? this.selectedUsernames
+            : selectedUsernames as List<String>,
       );
 
-  factory CopilotGetCopilotCloudAgentConfigurationResponseEnabledTools.fromJson(
+  factory CodespacesSetCodespacesAccessUsersRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      CopilotGetCopilotCloudAgentConfigurationResponseEnabledTools(
-        codeql: (json['codeql'] as bool?)!,
-        copilotCodeReview: (json['copilot_code_review'] as bool?)!,
-        secretScanning: (json['secret_scanning'] as bool?)!,
-        dependencyVulnerabilityChecks:
-            (json['dependency_vulnerability_checks'] as bool?)!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'codeql': codeql,
-        'copilot_code_review': copilotCodeReview,
-        'secret_scanning': secretScanning,
-        'dependency_vulnerability_checks': dependencyVulnerabilityChecks,
-      };
-}
-
-class CopilotGetCopilotCloudAgentConfigurationResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The user-supplied MCP server configuration for the repository, as a free-form JSON object. This will be set to `null` if no configuration has been set. The shape of a valid MCP configuration may evolve over time, so this property is intentionally not strictly typed. Clients should not assume a fixed schema.
-  final Map<String, Object?>? mcpConfiguration;
-
-  /// The enabled review tools for Copilot cloud agent.
-  final CopilotGetCopilotCloudAgentConfigurationResponseEnabledTools
-      enabledTools;
-
-  /// Whether Actions workflow approval is required for Copilot cloud agent pull requests.
-  final bool requireActionsWorkflowApproval;
-
-  /// Whether the firewall is enabled.
-  final bool isFirewallEnabled;
-
-  /// Whether the firewall recommended allowlist is enabled.
-  final bool isFirewallRecommendedAllowlistEnabled;
-
-  /// A list of custom allowlist entries, as hosts or URLs, that the firewall will allow the Copilot cloud agent to access.
-  final List<String> customAllowlist;
-
-  /// Whether automations are enabled in this repository. When true, users can create automations that automatically run agents on a schedule or in response to events like new issues or updated pull requests.
-  final bool isAutomationsEnabled;
-
-  /// Whether write access is required for automation triggers. When true, automations will only run if the user triggering the event has write access to the repository. When false, users can create automations that listen for events triggered by users without write access.
-  final bool requireWriteAccessForAutomationTriggers;
-
-  const CopilotGetCopilotCloudAgentConfigurationResponse(
-      {required this.mcpConfiguration,
-      required this.enabledTools,
-      required this.requireActionsWorkflowApproval,
-      required this.isFirewallEnabled,
-      required this.isFirewallRecommendedAllowlistEnabled,
-      required this.customAllowlist,
-      required this.isAutomationsEnabled,
-      required this.requireWriteAccessForAutomationTriggers});
-
-  CopilotGetCopilotCloudAgentConfigurationResponse Function(
-      {Map<String, Object?>? mcpConfiguration,
-      CopilotGetCopilotCloudAgentConfigurationResponseEnabledTools enabledTools,
-      bool requireActionsWorkflowApproval,
-      bool isFirewallEnabled,
-      bool isFirewallRecommendedAllowlistEnabled,
-      List<String> customAllowlist,
-      bool isAutomationsEnabled,
-      bool requireWriteAccessForAutomationTriggers}) get copyWith => _copyWith;
-
-  CopilotGetCopilotCloudAgentConfigurationResponse _copyWith(
-          {Object? mcpConfiguration = sdkOmittedValue,
-          Object? enabledTools = sdkOmittedValue,
-          Object? requireActionsWorkflowApproval = sdkOmittedValue,
-          Object? isFirewallEnabled = sdkOmittedValue,
-          Object? isFirewallRecommendedAllowlistEnabled = sdkOmittedValue,
-          Object? customAllowlist = sdkOmittedValue,
-          Object? isAutomationsEnabled = sdkOmittedValue,
-          Object? requireWriteAccessForAutomationTriggers = sdkOmittedValue}) =>
-      CopilotGetCopilotCloudAgentConfigurationResponse(
-        mcpConfiguration: identical(mcpConfiguration, sdkOmittedValue)
-            ? this.mcpConfiguration
-            : mcpConfiguration as Map<String, Object?>?,
-        enabledTools: identical(enabledTools, sdkOmittedValue)
-            ? this.enabledTools
-            : enabledTools
-                as CopilotGetCopilotCloudAgentConfigurationResponseEnabledTools,
-        requireActionsWorkflowApproval:
-            identical(requireActionsWorkflowApproval, sdkOmittedValue)
-                ? this.requireActionsWorkflowApproval
-                : requireActionsWorkflowApproval as bool,
-        isFirewallEnabled: identical(isFirewallEnabled, sdkOmittedValue)
-            ? this.isFirewallEnabled
-            : isFirewallEnabled as bool,
-        isFirewallRecommendedAllowlistEnabled:
-            identical(isFirewallRecommendedAllowlistEnabled, sdkOmittedValue)
-                ? this.isFirewallRecommendedAllowlistEnabled
-                : isFirewallRecommendedAllowlistEnabled as bool,
-        customAllowlist: identical(customAllowlist, sdkOmittedValue)
-            ? this.customAllowlist
-            : customAllowlist as List<String>,
-        isAutomationsEnabled: identical(isAutomationsEnabled, sdkOmittedValue)
-            ? this.isAutomationsEnabled
-            : isAutomationsEnabled as bool,
-        requireWriteAccessForAutomationTriggers:
-            identical(requireWriteAccessForAutomationTriggers, sdkOmittedValue)
-                ? this.requireWriteAccessForAutomationTriggers
-                : requireWriteAccessForAutomationTriggers as bool,
-      );
-
-  factory CopilotGetCopilotCloudAgentConfigurationResponse.fromJson(
-          Map<String, dynamic> json) =>
-      CopilotGetCopilotCloudAgentConfigurationResponse(
-        mcpConfiguration: json.containsKey('mcp_configuration')
-            ? json['mcp_configuration'] == null
-                ? null
-                : Map<String, dynamic>.from(json['mcp_configuration'] as Map)
-                    .map((key, value) => MapEntry(key, value))
-            : throw ArgumentError.value(
-                null, 'mcp_configuration', 'Required property is missing'),
-        enabledTools: (json['enabled_tools'] != null
-            ? CopilotGetCopilotCloudAgentConfigurationResponseEnabledTools
-                .fromJson(json['enabled_tools'] as Map<String, dynamic>)
-            : null)!,
-        requireActionsWorkflowApproval:
-            (json['require_actions_workflow_approval'] as bool?)!,
-        isFirewallEnabled: (json['is_firewall_enabled'] as bool?)!,
-        isFirewallRecommendedAllowlistEnabled:
-            (json['is_firewall_recommended_allowlist_enabled'] as bool?)!,
-        customAllowlist: ((json['custom_allowlist'] as List?)
+      CodespacesSetCodespacesAccessUsersRequestBody(
+        selectedUsernames: ((json['selected_usernames'] as List?)
             ?.map((e) => e as String)
             .toList())!,
-        isAutomationsEnabled: (json['is_automations_enabled'] as bool?)!,
-        requireWriteAccessForAutomationTriggers:
-            (json['require_write_access_for_automation_triggers'] as bool?)!,
       );
 
   Map<String, dynamic> toJson() => {
-        'mcp_configuration': mcpConfiguration,
-        'enabled_tools': enabledTools.toJson(),
-        'require_actions_workflow_approval': requireActionsWorkflowApproval,
-        'is_firewall_enabled': isFirewallEnabled,
-        'is_firewall_recommended_allowlist_enabled':
-            isFirewallRecommendedAllowlistEnabled,
-        'custom_allowlist': customAllowlist,
-        'is_automations_enabled': isAutomationsEnabled,
-        'require_write_access_for_automation_triggers':
-            requireWriteAccessForAutomationTriggers,
+        'selected_usernames': selectedUsernames,
       };
 }
 
-class DependabotUpdateRepositoryAccessForEnterpriseRequestBody {
+class CodespacesDeleteCodespacesAccessUsersRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// List of repository IDs to add.
-  final SdkOptional<List<int>> repositoryIdsToAdd;
+  /// The usernames of the organization members and outside collaborators whose codespaces should not be billed to the organization.
+  final List<String> selectedUsernames;
 
-  /// List of repository IDs to remove.
-  final SdkOptional<List<int>> repositoryIdsToRemove;
+  const CodespacesDeleteCodespacesAccessUsersRequestBody(
+      {required this.selectedUsernames});
 
-  const DependabotUpdateRepositoryAccessForEnterpriseRequestBody(
-      {this.repositoryIdsToAdd = const SdkOmitted(),
-      this.repositoryIdsToRemove = const SdkOmitted()});
+  CodespacesDeleteCodespacesAccessUsersRequestBody Function(
+      {List<String> selectedUsernames}) get copyWith => _copyWith;
 
-  DependabotUpdateRepositoryAccessForEnterpriseRequestBody Function(
-      {SdkOptional<List<int>> repositoryIdsToAdd,
-      SdkOptional<List<int>> repositoryIdsToRemove}) get copyWith => _copyWith;
-
-  DependabotUpdateRepositoryAccessForEnterpriseRequestBody _copyWith(
-          {Object? repositoryIdsToAdd = sdkOmittedValue,
-          Object? repositoryIdsToRemove = sdkOmittedValue}) =>
-      DependabotUpdateRepositoryAccessForEnterpriseRequestBody(
-        repositoryIdsToAdd: identical(repositoryIdsToAdd, sdkOmittedValue)
-            ? this.repositoryIdsToAdd
-            : repositoryIdsToAdd as SdkOptional<List<int>>,
-        repositoryIdsToRemove: identical(repositoryIdsToRemove, sdkOmittedValue)
-            ? this.repositoryIdsToRemove
-            : repositoryIdsToRemove as SdkOptional<List<int>>,
+  CodespacesDeleteCodespacesAccessUsersRequestBody _copyWith(
+          {Object? selectedUsernames = sdkOmittedValue}) =>
+      CodespacesDeleteCodespacesAccessUsersRequestBody(
+        selectedUsernames: identical(selectedUsernames, sdkOmittedValue)
+            ? this.selectedUsernames
+            : selectedUsernames as List<String>,
       );
 
-  factory DependabotUpdateRepositoryAccessForEnterpriseRequestBody.fromJson(
+  factory CodespacesDeleteCodespacesAccessUsersRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      DependabotUpdateRepositoryAccessForEnterpriseRequestBody(
-        repositoryIdsToAdd: json['repository_ids_to_add'] != null
-            ? SdkPresent(((json['repository_ids_to_add'] as List?)
-                ?.map((e) => (e as num).toInt())
-                .toList())!)
-            : const SdkOmitted(),
-        repositoryIdsToRemove: json['repository_ids_to_remove'] != null
-            ? SdkPresent(((json['repository_ids_to_remove'] as List?)
-                ?.map((e) => (e as num).toInt())
-                .toList())!)
-            : const SdkOmitted(),
+      CodespacesDeleteCodespacesAccessUsersRequestBody(
+        selectedUsernames: ((json['selected_usernames'] as List?)
+            ?.map((e) => e as String)
+            .toList())!,
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (repositoryIdsToAdd) {
-          SdkPresent<List<int>>(value: final value) => {
-              'repository_ids_to_add': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (repositoryIdsToRemove) {
-          SdkPresent<List<int>>(value: final value) => {
-              'repository_ids_to_remove': value,
-            },
-          _ => const <String, dynamic>{},
-        },
+        'selected_usernames': selectedUsernames,
       };
 }
 
-class DependabotSetRepositoryAccessDefaultLevelForEnterpriseRequestBody {
+class CodespacesListOrgSecretsResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  final int totalCount;
+  final List<CodespacesOrgSecret> secrets;
+
+  const CodespacesListOrgSecretsResponse(
+      {required this.totalCount, required this.secrets});
+
+  CodespacesListOrgSecretsResponse Function(
+      {int totalCount,
+      List<CodespacesOrgSecret> secrets}) get copyWith => _copyWith;
+
+  CodespacesListOrgSecretsResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? secrets = sdkOmittedValue}) =>
+      CodespacesListOrgSecretsResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        secrets: identical(secrets, sdkOmittedValue)
+            ? this.secrets
+            : secrets as List<CodespacesOrgSecret>,
+      );
+
+  factory CodespacesListOrgSecretsResponse.fromJson(
+          Map<String, dynamic> json) =>
+      CodespacesListOrgSecretsResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        secrets: ((json['secrets'] as List?)
+            ?.map(
+                (e) => CodespacesOrgSecret.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'total_count': totalCount,
+        'secrets': secrets.map((item) => item.toJson()).toList(),
+      };
+}
+
+class CodespacesCreateOrUpdateOrgSecretRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// The default repository access level for Dependabot updates.
-  final DependabotSetRepositoryAccessDefaultLevelForEnterpriseRequestBodyDefaultLevel
-      defaultLevel;
+  /// The value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get an organization public key](https://docs.github.com/rest/codespaces/organization-secrets#get-an-organization-public-key) endpoint.
+  final SdkOptional<String> encryptedValue;
 
-  const DependabotSetRepositoryAccessDefaultLevelForEnterpriseRequestBody(
-      {required this.defaultLevel});
+  /// The ID of the key you used to encrypt the secret.
+  final SdkOptional<String> keyId;
 
-  DependabotSetRepositoryAccessDefaultLevelForEnterpriseRequestBody Function(
-      {DependabotSetRepositoryAccessDefaultLevelForEnterpriseRequestBodyDefaultLevel
-          defaultLevel}) get copyWith => _copyWith;
+  /// Which type of organization repositories have access to the organization secret. `selected` means only the repositories specified by `selected_repository_ids` can access the secret.
+  final CodespacesCreateOrUpdateOrgSecretRequestBodyVisibility visibility;
 
-  DependabotSetRepositoryAccessDefaultLevelForEnterpriseRequestBody _copyWith(
-          {Object? defaultLevel = sdkOmittedValue}) =>
-      DependabotSetRepositoryAccessDefaultLevelForEnterpriseRequestBody(
-        defaultLevel: identical(defaultLevel, sdkOmittedValue)
-            ? this.defaultLevel
-            : defaultLevel
-                as DependabotSetRepositoryAccessDefaultLevelForEnterpriseRequestBodyDefaultLevel,
+  /// An array of repository IDs that can access the organization secret. You can only provide a list of repository IDs when the `visibility` is set to `selected`. You can manage the list of selected repositories using the [List selected repositories for an organization secret](https://docs.github.com/rest/codespaces/organization-secrets#list-selected-repositories-for-an-organization-secret), [Set selected repositories for an organization secret](https://docs.github.com/rest/codespaces/organization-secrets#set-selected-repositories-for-an-organization-secret), and [Remove selected repository from an organization secret](https://docs.github.com/rest/codespaces/organization-secrets#remove-selected-repository-from-an-organization-secret) endpoints.
+  final SdkOptional<List<int>> selectedRepositoryIds;
+
+  const CodespacesCreateOrUpdateOrgSecretRequestBody(
+      {this.encryptedValue = const SdkOmitted(),
+      this.keyId = const SdkOmitted(),
+      required this.visibility,
+      this.selectedRepositoryIds = const SdkOmitted()});
+
+  CodespacesCreateOrUpdateOrgSecretRequestBody Function(
+      {SdkOptional<String> encryptedValue,
+      SdkOptional<String> keyId,
+      CodespacesCreateOrUpdateOrgSecretRequestBodyVisibility visibility,
+      SdkOptional<List<int>> selectedRepositoryIds}) get copyWith => _copyWith;
+
+  CodespacesCreateOrUpdateOrgSecretRequestBody _copyWith(
+          {Object? encryptedValue = sdkOmittedValue,
+          Object? keyId = sdkOmittedValue,
+          Object? visibility = sdkOmittedValue,
+          Object? selectedRepositoryIds = sdkOmittedValue}) =>
+      CodespacesCreateOrUpdateOrgSecretRequestBody(
+        encryptedValue: identical(encryptedValue, sdkOmittedValue)
+            ? this.encryptedValue
+            : encryptedValue as SdkOptional<String>,
+        keyId: identical(keyId, sdkOmittedValue)
+            ? this.keyId
+            : keyId as SdkOptional<String>,
+        visibility: identical(visibility, sdkOmittedValue)
+            ? this.visibility
+            : visibility
+                as CodespacesCreateOrUpdateOrgSecretRequestBodyVisibility,
+        selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue)
+            ? this.selectedRepositoryIds
+            : selectedRepositoryIds as SdkOptional<List<int>>,
       );
 
-  factory DependabotSetRepositoryAccessDefaultLevelForEnterpriseRequestBody.fromJson(
+  factory CodespacesCreateOrUpdateOrgSecretRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      DependabotSetRepositoryAccessDefaultLevelForEnterpriseRequestBody(
-        defaultLevel: (json['default_level'] != null
-            ? DependabotSetRepositoryAccessDefaultLevelForEnterpriseRequestBodyDefaultLevel
-                .fromJson(json['default_level'] as String)
+      CodespacesCreateOrUpdateOrgSecretRequestBody(
+        encryptedValue: json['encrypted_value'] != null
+            ? SdkPresent((json['encrypted_value'] as String?)!)
+            : const SdkOmitted(),
+        keyId: json['key_id'] != null
+            ? SdkPresent((json['key_id'] as String?)!)
+            : const SdkOmitted(),
+        visibility: (json['visibility'] != null
+            ? CodespacesCreateOrUpdateOrgSecretRequestBodyVisibility.fromJson(
+                json['visibility'] as String)
             : null)!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'default_level': defaultLevel.toJson(),
-      };
-}
-
-class DependabotUpdateRepositoryAccessForOrgRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// List of repository IDs to add.
-  final SdkOptional<List<int>> repositoryIdsToAdd;
-
-  /// List of repository IDs to remove.
-  final SdkOptional<List<int>> repositoryIdsToRemove;
-
-  const DependabotUpdateRepositoryAccessForOrgRequestBody(
-      {this.repositoryIdsToAdd = const SdkOmitted(),
-      this.repositoryIdsToRemove = const SdkOmitted()});
-
-  DependabotUpdateRepositoryAccessForOrgRequestBody Function(
-      {SdkOptional<List<int>> repositoryIdsToAdd,
-      SdkOptional<List<int>> repositoryIdsToRemove}) get copyWith => _copyWith;
-
-  DependabotUpdateRepositoryAccessForOrgRequestBody _copyWith(
-          {Object? repositoryIdsToAdd = sdkOmittedValue,
-          Object? repositoryIdsToRemove = sdkOmittedValue}) =>
-      DependabotUpdateRepositoryAccessForOrgRequestBody(
-        repositoryIdsToAdd: identical(repositoryIdsToAdd, sdkOmittedValue)
-            ? this.repositoryIdsToAdd
-            : repositoryIdsToAdd as SdkOptional<List<int>>,
-        repositoryIdsToRemove: identical(repositoryIdsToRemove, sdkOmittedValue)
-            ? this.repositoryIdsToRemove
-            : repositoryIdsToRemove as SdkOptional<List<int>>,
-      );
-
-  factory DependabotUpdateRepositoryAccessForOrgRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      DependabotUpdateRepositoryAccessForOrgRequestBody(
-        repositoryIdsToAdd: json['repository_ids_to_add'] != null
-            ? SdkPresent(((json['repository_ids_to_add'] as List?)
-                ?.map((e) => (e as num).toInt())
-                .toList())!)
-            : const SdkOmitted(),
-        repositoryIdsToRemove: json['repository_ids_to_remove'] != null
-            ? SdkPresent(((json['repository_ids_to_remove'] as List?)
+        selectedRepositoryIds: json['selected_repository_ids'] != null
+            ? SdkPresent(((json['selected_repository_ids'] as List?)
                 ?.map((e) => (e as num).toInt())
                 .toList())!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (repositoryIdsToAdd) {
-          SdkPresent<List<int>>(value: final value) => {
-              'repository_ids_to_add': value,
+        ...switch (encryptedValue) {
+          SdkPresent<String>(value: final value) => {
+              'encrypted_value': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (repositoryIdsToRemove) {
+        ...switch (keyId) {
+          SdkPresent<String>(value: final value) => {
+              'key_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'visibility': visibility.toJson(),
+        ...switch (selectedRepositoryIds) {
           SdkPresent<List<int>>(value: final value) => {
-              'repository_ids_to_remove': value,
+              'selected_repository_ids': value,
             },
           _ => const <String, dynamic>{},
         },
       };
 }
 
-class DependabotSetRepositoryAccessDefaultLevelRequestBody {
+class CodespacesListSelectedReposForOrgSecretResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+  final int totalCount;
+  final List<MinimalRepository> repositories;
 
-  /// The default repository access level for Dependabot updates.
-  final DependabotSetRepositoryAccessDefaultLevelRequestBodyDefaultLevel
-      defaultLevel;
+  const CodespacesListSelectedReposForOrgSecretResponse(
+      {required this.totalCount, required this.repositories});
 
-  const DependabotSetRepositoryAccessDefaultLevelRequestBody(
-      {required this.defaultLevel});
+  CodespacesListSelectedReposForOrgSecretResponse Function(
+      {int totalCount,
+      List<MinimalRepository> repositories}) get copyWith => _copyWith;
 
-  DependabotSetRepositoryAccessDefaultLevelRequestBody Function(
-      {DependabotSetRepositoryAccessDefaultLevelRequestBodyDefaultLevel
-          defaultLevel}) get copyWith => _copyWith;
-
-  DependabotSetRepositoryAccessDefaultLevelRequestBody _copyWith(
-          {Object? defaultLevel = sdkOmittedValue}) =>
-      DependabotSetRepositoryAccessDefaultLevelRequestBody(
-        defaultLevel: identical(defaultLevel, sdkOmittedValue)
-            ? this.defaultLevel
-            : defaultLevel
-                as DependabotSetRepositoryAccessDefaultLevelRequestBodyDefaultLevel,
+  CodespacesListSelectedReposForOrgSecretResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? repositories = sdkOmittedValue}) =>
+      CodespacesListSelectedReposForOrgSecretResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        repositories: identical(repositories, sdkOmittedValue)
+            ? this.repositories
+            : repositories as List<MinimalRepository>,
       );
 
-  factory DependabotSetRepositoryAccessDefaultLevelRequestBody.fromJson(
+  factory CodespacesListSelectedReposForOrgSecretResponse.fromJson(
           Map<String, dynamic> json) =>
-      DependabotSetRepositoryAccessDefaultLevelRequestBody(
-        defaultLevel: (json['default_level'] != null
-            ? DependabotSetRepositoryAccessDefaultLevelRequestBodyDefaultLevel
-                .fromJson(json['default_level'] as String)
-            : null)!,
+      CodespacesListSelectedReposForOrgSecretResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        repositories: ((json['repositories'] as List?)
+            ?.map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>))
+            .toList())!,
       );
 
   Map<String, dynamic> toJson() => {
-        'default_level': defaultLevel.toJson(),
+        'total_count': totalCount,
+        'repositories': repositories.map((item) => item.toJson()).toList(),
+      };
+}
+
+class CodespacesSetSelectedReposForOrgSecretRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// An array of repository ids that can access the organization secret. You can only provide a list of repository ids when the `visibility` is set to `selected`. You can add and remove individual repositories using the [Set selected repositories for an organization secret](https://docs.github.com/rest/codespaces/organization-secrets#set-selected-repositories-for-an-organization-secret) and [Remove selected repository from an organization secret](https://docs.github.com/rest/codespaces/organization-secrets#remove-selected-repository-from-an-organization-secret) endpoints.
+  final List<int> selectedRepositoryIds;
+
+  const CodespacesSetSelectedReposForOrgSecretRequestBody(
+      {required this.selectedRepositoryIds});
+
+  CodespacesSetSelectedReposForOrgSecretRequestBody Function(
+      {List<int> selectedRepositoryIds}) get copyWith => _copyWith;
+
+  CodespacesSetSelectedReposForOrgSecretRequestBody _copyWith(
+          {Object? selectedRepositoryIds = sdkOmittedValue}) =>
+      CodespacesSetSelectedReposForOrgSecretRequestBody(
+        selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue)
+            ? this.selectedRepositoryIds
+            : selectedRepositoryIds as List<int>,
+      );
+
+  factory CodespacesSetSelectedReposForOrgSecretRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      CodespacesSetSelectedReposForOrgSecretRequestBody(
+        selectedRepositoryIds: ((json['selected_repository_ids'] as List?)
+            ?.map((e) => (e as num).toInt())
+            .toList())!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'selected_repository_ids': selectedRepositoryIds,
+      };
+}
+
+class CodespacesGetCodespacesForUserInOrgResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  final int totalCount;
+  final List<Codespace> codespaces;
+
+  const CodespacesGetCodespacesForUserInOrgResponse(
+      {required this.totalCount, required this.codespaces});
+
+  CodespacesGetCodespacesForUserInOrgResponse Function(
+      {int totalCount, List<Codespace> codespaces}) get copyWith => _copyWith;
+
+  CodespacesGetCodespacesForUserInOrgResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? codespaces = sdkOmittedValue}) =>
+      CodespacesGetCodespacesForUserInOrgResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        codespaces: identical(codespaces, sdkOmittedValue)
+            ? this.codespaces
+            : codespaces as List<Codespace>,
+      );
+
+  factory CodespacesGetCodespacesForUserInOrgResponse.fromJson(
+          Map<String, dynamic> json) =>
+      CodespacesGetCodespacesForUserInOrgResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        codespaces: ((json['codespaces'] as List?)
+            ?.map((e) => Codespace.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'total_count': totalCount,
+        'codespaces': codespaces.map((item) => item.toJson()).toList(),
+      };
+}
+
+class CodespacesListInRepositoryForAuthenticatedUserResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  final int totalCount;
+  final List<Codespace> codespaces;
+
+  const CodespacesListInRepositoryForAuthenticatedUserResponse(
+      {required this.totalCount, required this.codespaces});
+
+  CodespacesListInRepositoryForAuthenticatedUserResponse Function(
+      {int totalCount, List<Codespace> codespaces}) get copyWith => _copyWith;
+
+  CodespacesListInRepositoryForAuthenticatedUserResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? codespaces = sdkOmittedValue}) =>
+      CodespacesListInRepositoryForAuthenticatedUserResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        codespaces: identical(codespaces, sdkOmittedValue)
+            ? this.codespaces
+            : codespaces as List<Codespace>,
+      );
+
+  factory CodespacesListInRepositoryForAuthenticatedUserResponse.fromJson(
+          Map<String, dynamic> json) =>
+      CodespacesListInRepositoryForAuthenticatedUserResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        codespaces: ((json['codespaces'] as List?)
+            ?.map((e) => Codespace.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'total_count': totalCount,
+        'codespaces': codespaces.map((item) => item.toJson()).toList(),
       };
 }

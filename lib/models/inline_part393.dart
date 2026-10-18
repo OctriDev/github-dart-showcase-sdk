@@ -4,512 +4,524 @@
 part of 'inline.dart';
 
 // Inline operation models (part 393)
-class CodespacesCreateForAuthenticatedUserRequestBodyVariant1 {
+class ReposCreateDeploymentStatusRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Pull request number for this codespace
-  final CodespacesCreateForAuthenticatedUserRequestBodyVariant1PullRequest
-      pullRequest;
+  /// The state of the status. When you set a transient deployment to `inactive`, the deployment will be shown as `destroyed` in GitHub.
+  final ReposCreateDeploymentStatusRequestBodyState state;
 
-  /// The requested location for a new codespace. Best efforts are made to respect this upon creation. Assigned by IP if not provided.
-  final SdkOptional<String> location;
+  /// The target URL to associate with this status. This URL should contain output to keep the user updated while the task is running or serve as historical information for what happened in the deployment. &gt; [!NOTE] &gt; It's recommended to use the `log_url` parameter, which replaces `target_url`.
+  final SdkOptional<String> targetUrl;
 
-  /// The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is closing down.
-  final SdkOptional<CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo>
-      geo;
+  /// The full URL of the deployment's output. This parameter replaces `target_url`. We will continue to accept `target_url` to support legacy uses, but we recommend replacing `target_url` with `log_url`. Setting `log_url` will automatically set `target_url` to the same value. Default: `""`
+  final SdkOptional<String> logUrl;
 
-  /// Machine type to use for this codespace
-  final SdkOptional<String> machine;
+  /// A short description of the status. The maximum description length is 140 characters.
+  final SdkOptional<String> description;
 
-  /// Path to devcontainer.json config to use for this codespace
-  final SdkOptional<String> devcontainerPath;
+  /// Name for the target deployment environment, which can be changed when setting a deploy status. For example, `production`, `staging`, or `qa`. If not defined, the environment of the previous status on the deployment will be used, if it exists. Otherwise, the environment of the deployment will be used.
+  final SdkOptional<String> environment;
 
-  /// Working directory for this codespace
-  final SdkOptional<String> workingDirectory;
+  /// Sets the URL for accessing your environment. Default: `""`
+  final SdkOptional<String> environmentUrl;
 
-  /// Time in minutes before codespace stops from inactivity
-  final SdkOptional<int> idleTimeoutMinutes;
+  /// Adds a new `inactive` status to all prior non-transient, non-production environment deployments with the same repository and `environment` name as the created status's deployment. An `inactive` status is only added to deployments that had a `success` state. Default: `true`
+  final SdkOptional<bool> autoInactive;
 
-  const CodespacesCreateForAuthenticatedUserRequestBodyVariant1(
-      {required this.pullRequest,
-      this.location = const SdkOmitted(),
-      this.geo = const SdkOmitted(),
-      this.machine = const SdkOmitted(),
-      this.devcontainerPath = const SdkOmitted(),
-      this.workingDirectory = const SdkOmitted(),
-      this.idleTimeoutMinutes = const SdkOmitted()});
+  const ReposCreateDeploymentStatusRequestBody(
+      {required this.state,
+      this.targetUrl = const SdkOmitted(),
+      this.logUrl = const SdkOmitted(),
+      this.description = const SdkOmitted(),
+      this.environment = const SdkOmitted(),
+      this.environmentUrl = const SdkOmitted(),
+      this.autoInactive = const SdkOmitted()});
 
-  CodespacesCreateForAuthenticatedUserRequestBodyVariant1 Function(
-      {CodespacesCreateForAuthenticatedUserRequestBodyVariant1PullRequest
-          pullRequest,
-      SdkOptional<String> location,
-      SdkOptional<CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo>
-          geo,
-      SdkOptional<String> machine,
-      SdkOptional<String> devcontainerPath,
-      SdkOptional<String> workingDirectory,
-      SdkOptional<int> idleTimeoutMinutes}) get copyWith => _copyWith;
+  ReposCreateDeploymentStatusRequestBody Function(
+      {ReposCreateDeploymentStatusRequestBodyState state,
+      SdkOptional<String> targetUrl,
+      SdkOptional<String> logUrl,
+      SdkOptional<String> description,
+      SdkOptional<String> environment,
+      SdkOptional<String> environmentUrl,
+      SdkOptional<bool> autoInactive}) get copyWith => _copyWith;
 
-  CodespacesCreateForAuthenticatedUserRequestBodyVariant1 _copyWith(
-          {Object? pullRequest = sdkOmittedValue,
-          Object? location = sdkOmittedValue,
-          Object? geo = sdkOmittedValue,
-          Object? machine = sdkOmittedValue,
-          Object? devcontainerPath = sdkOmittedValue,
-          Object? workingDirectory = sdkOmittedValue,
-          Object? idleTimeoutMinutes = sdkOmittedValue}) =>
-      CodespacesCreateForAuthenticatedUserRequestBodyVariant1(
-        pullRequest: identical(pullRequest, sdkOmittedValue)
-            ? this.pullRequest
-            : pullRequest
-                as CodespacesCreateForAuthenticatedUserRequestBodyVariant1PullRequest,
-        location: identical(location, sdkOmittedValue)
-            ? this.location
-            : location as SdkOptional<String>,
-        geo: identical(geo, sdkOmittedValue)
-            ? this.geo
-            : geo as SdkOptional<
-                CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo>,
-        machine: identical(machine, sdkOmittedValue)
-            ? this.machine
-            : machine as SdkOptional<String>,
-        devcontainerPath: identical(devcontainerPath, sdkOmittedValue)
-            ? this.devcontainerPath
-            : devcontainerPath as SdkOptional<String>,
-        workingDirectory: identical(workingDirectory, sdkOmittedValue)
-            ? this.workingDirectory
-            : workingDirectory as SdkOptional<String>,
-        idleTimeoutMinutes: identical(idleTimeoutMinutes, sdkOmittedValue)
-            ? this.idleTimeoutMinutes
-            : idleTimeoutMinutes as SdkOptional<int>,
+  ReposCreateDeploymentStatusRequestBody _copyWith(
+          {Object? state = sdkOmittedValue,
+          Object? targetUrl = sdkOmittedValue,
+          Object? logUrl = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? environment = sdkOmittedValue,
+          Object? environmentUrl = sdkOmittedValue,
+          Object? autoInactive = sdkOmittedValue}) =>
+      ReposCreateDeploymentStatusRequestBody(
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state as ReposCreateDeploymentStatusRequestBodyState,
+        targetUrl: identical(targetUrl, sdkOmittedValue)
+            ? this.targetUrl
+            : targetUrl as SdkOptional<String>,
+        logUrl: identical(logUrl, sdkOmittedValue)
+            ? this.logUrl
+            : logUrl as SdkOptional<String>,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as SdkOptional<String>,
+        environment: identical(environment, sdkOmittedValue)
+            ? this.environment
+            : environment as SdkOptional<String>,
+        environmentUrl: identical(environmentUrl, sdkOmittedValue)
+            ? this.environmentUrl
+            : environmentUrl as SdkOptional<String>,
+        autoInactive: identical(autoInactive, sdkOmittedValue)
+            ? this.autoInactive
+            : autoInactive as SdkOptional<bool>,
       );
 
-  factory CodespacesCreateForAuthenticatedUserRequestBodyVariant1.fromJson(
+  factory ReposCreateDeploymentStatusRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      CodespacesCreateForAuthenticatedUserRequestBodyVariant1(
-        pullRequest: (json['pull_request'] != null
-            ? CodespacesCreateForAuthenticatedUserRequestBodyVariant1PullRequest
-                .fromJson(json['pull_request'] as Map<String, dynamic>)
+      ReposCreateDeploymentStatusRequestBody(
+        state: (json['state'] != null
+            ? ReposCreateDeploymentStatusRequestBodyState.fromJson(
+                json['state'] as String)
             : null)!,
-        location: json['location'] != null
-            ? SdkPresent((json['location'] as String?)!)
+        targetUrl: json['target_url'] != null
+            ? SdkPresent((json['target_url'] as String?)!)
             : const SdkOmitted(),
-        geo: json['geo'] != null
-            ? SdkPresent((json['geo'] != null
-                ? CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo
-                    .fromJson(json['geo'] as String)
-                : null)!)
+        logUrl: json['log_url'] != null
+            ? SdkPresent((json['log_url'] as String?)!)
             : const SdkOmitted(),
-        machine: json['machine'] != null
-            ? SdkPresent((json['machine'] as String?)!)
+        description: json['description'] != null
+            ? SdkPresent((json['description'] as String?)!)
             : const SdkOmitted(),
-        devcontainerPath: json['devcontainer_path'] != null
-            ? SdkPresent((json['devcontainer_path'] as String?)!)
+        environment: json['environment'] != null
+            ? SdkPresent((json['environment'] as String?)!)
             : const SdkOmitted(),
-        workingDirectory: json['working_directory'] != null
-            ? SdkPresent((json['working_directory'] as String?)!)
+        environmentUrl: json['environment_url'] != null
+            ? SdkPresent((json['environment_url'] as String?)!)
             : const SdkOmitted(),
-        idleTimeoutMinutes: json['idle_timeout_minutes'] != null
-            ? SdkPresent(((json['idle_timeout_minutes'] as num?)?.toInt())!)
+        autoInactive: json['auto_inactive'] != null
+            ? SdkPresent((json['auto_inactive'] as bool?)!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        'pull_request': pullRequest.toJson(),
-        ...switch (location) {
+        'state': state.toJson(),
+        ...switch (targetUrl) {
           SdkPresent<String>(value: final value) => {
-              'location': value,
+              'target_url': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (geo) {
+        ...switch (logUrl) {
+          SdkPresent<String>(value: final value) => {
+              'log_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (description) {
+          SdkPresent<String>(value: final value) => {
+              'description': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (environment) {
+          SdkPresent<String>(value: final value) => {
+              'environment': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (environmentUrl) {
+          SdkPresent<String>(value: final value) => {
+              'environment_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (autoInactive) {
+          SdkPresent<bool>(value: final value) => {
+              'auto_inactive': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class ReposCreateDispatchEventRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// A custom webhook event name. Must be 100 characters or fewer.
+  final String eventType;
+
+  /// JSON payload with extra information about the webhook event that your action or workflow may use. The maximum number of top-level properties is 10. The total size of the JSON payload must be less than 64KB.
+  final SdkOptional<Map<String, Object?>> clientPayload;
+
+  const ReposCreateDispatchEventRequestBody(
+      {required this.eventType, this.clientPayload = const SdkOmitted()});
+
+  ReposCreateDispatchEventRequestBody Function(
+          {String eventType, SdkOptional<Map<String, Object?>> clientPayload})
+      get copyWith => _copyWith;
+
+  ReposCreateDispatchEventRequestBody _copyWith(
+          {Object? eventType = sdkOmittedValue,
+          Object? clientPayload = sdkOmittedValue}) =>
+      ReposCreateDispatchEventRequestBody(
+        eventType: identical(eventType, sdkOmittedValue)
+            ? this.eventType
+            : eventType as String,
+        clientPayload: identical(clientPayload, sdkOmittedValue)
+            ? this.clientPayload
+            : clientPayload as SdkOptional<Map<String, Object?>>,
+      );
+
+  factory ReposCreateDispatchEventRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      ReposCreateDispatchEventRequestBody(
+        eventType: (json['event_type'] as String?)!,
+        clientPayload: json['client_payload'] != null
+            ? SdkPresent((json['client_payload'] == null
+                ? null
+                : Map<String, dynamic>.from(json['client_payload'] as Map)
+                    .map((key, value) => MapEntry(key, value)))!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        'event_type': eventType,
+        ...switch (clientPayload) {
+          SdkPresent<Map<String, Object?>>(value: final value) => {
+              'client_payload': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class ReposGetAllEnvironmentsResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The number of environments in this repository
+  final SdkOptional<int> totalCount;
+  final SdkOptional<List<Environment>> environments;
+
+  const ReposGetAllEnvironmentsResponse(
+      {this.totalCount = const SdkOmitted(),
+      this.environments = const SdkOmitted()});
+
+  ReposGetAllEnvironmentsResponse Function(
+      {SdkOptional<int> totalCount,
+      SdkOptional<List<Environment>> environments}) get copyWith => _copyWith;
+
+  ReposGetAllEnvironmentsResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? environments = sdkOmittedValue}) =>
+      ReposGetAllEnvironmentsResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as SdkOptional<int>,
+        environments: identical(environments, sdkOmittedValue)
+            ? this.environments
+            : environments as SdkOptional<List<Environment>>,
+      );
+
+  factory ReposGetAllEnvironmentsResponse.fromJson(Map<String, dynamic> json) =>
+      ReposGetAllEnvironmentsResponse(
+        totalCount: json['total_count'] != null
+            ? SdkPresent(((json['total_count'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        environments: json['environments'] != null
+            ? SdkPresent(((json['environments'] as List?)
+                ?.map((e) => Environment.fromJson(e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (totalCount) {
+          SdkPresent<int>(value: final value) => {
+              'total_count': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (environments) {
+          SdkPresent<List<Environment>>(value: final value) => {
+              'environments': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class ReposCreateOrUpdateEnvironmentRequestBodyReviewersItem {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The type of reviewer.
+  final SdkOptional<DeploymentReviewerType> type_;
+
+  /// The id of the user or team who can review the deployment
+  final SdkOptional<int> id;
+
+  const ReposCreateOrUpdateEnvironmentRequestBodyReviewersItem(
+      {this.type_ = const SdkOmitted(), this.id = const SdkOmitted()});
+
+  ReposCreateOrUpdateEnvironmentRequestBodyReviewersItem Function(
+      {SdkOptional<DeploymentReviewerType> type_,
+      SdkOptional<int> id}) get copyWith => _copyWith;
+
+  ReposCreateOrUpdateEnvironmentRequestBodyReviewersItem _copyWith(
+          {Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue}) =>
+      ReposCreateOrUpdateEnvironmentRequestBodyReviewersItem(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as SdkOptional<DeploymentReviewerType>,
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+      );
+
+  factory ReposCreateOrUpdateEnvironmentRequestBodyReviewersItem.fromJson(
+          Map<String, dynamic> json) =>
+      ReposCreateOrUpdateEnvironmentRequestBodyReviewersItem(
+        type_: json['type'] != null
+            ? SdkPresent((json['type'] != null
+                ? DeploymentReviewerType.fromJson(json['type'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (type_) {
+          SdkPresent<DeploymentReviewerType>(value: final value) => {
+              'type': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class ReposCreateOrUpdateEnvironmentRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The amount of time to delay a job after the job is initially triggered. The time (in minutes) must be an integer between 0 and 43,200 (30 days).
+  final SdkOptional<int> waitTimer;
+
+  /// Whether or not a user who created the job is prevented from approving their own job.
+  final SdkOptional<bool> preventSelfReview;
+
+  /// The people or teams that may review jobs that reference the environment. You can list up to six users or teams as reviewers. The reviewers must have at least read access to the repository. Only one of the required reviewers needs to approve the job for it to proceed.
+  final SdkOptional<
+      List<ReposCreateOrUpdateEnvironmentRequestBodyReviewersItem>?> reviewers;
+
+  /// The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.
+  final SdkOptional<DeploymentBranchPolicySettings?> deploymentBranchPolicy;
+
+  const ReposCreateOrUpdateEnvironmentRequestBody(
+      {this.waitTimer = const SdkOmitted(),
+      this.preventSelfReview = const SdkOmitted(),
+      this.reviewers = const SdkOmitted(),
+      this.deploymentBranchPolicy = const SdkOmitted()});
+
+  ReposCreateOrUpdateEnvironmentRequestBody Function(
+      {SdkOptional<int> waitTimer,
+      SdkOptional<bool> preventSelfReview,
+      SdkOptional<List<ReposCreateOrUpdateEnvironmentRequestBodyReviewersItem>?>
+          reviewers,
+      SdkOptional<DeploymentBranchPolicySettings?>
+          deploymentBranchPolicy}) get copyWith => _copyWith;
+
+  ReposCreateOrUpdateEnvironmentRequestBody _copyWith(
+          {Object? waitTimer = sdkOmittedValue,
+          Object? preventSelfReview = sdkOmittedValue,
+          Object? reviewers = sdkOmittedValue,
+          Object? deploymentBranchPolicy = sdkOmittedValue}) =>
+      ReposCreateOrUpdateEnvironmentRequestBody(
+        waitTimer: identical(waitTimer, sdkOmittedValue)
+            ? this.waitTimer
+            : waitTimer as SdkOptional<int>,
+        preventSelfReview: identical(preventSelfReview, sdkOmittedValue)
+            ? this.preventSelfReview
+            : preventSelfReview as SdkOptional<bool>,
+        reviewers: identical(reviewers, sdkOmittedValue)
+            ? this.reviewers
+            : reviewers as SdkOptional<
+                List<ReposCreateOrUpdateEnvironmentRequestBodyReviewersItem>?>,
+        deploymentBranchPolicy:
+            identical(deploymentBranchPolicy, sdkOmittedValue)
+                ? this.deploymentBranchPolicy
+                : deploymentBranchPolicy
+                    as SdkOptional<DeploymentBranchPolicySettings?>,
+      );
+
+  factory ReposCreateOrUpdateEnvironmentRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      ReposCreateOrUpdateEnvironmentRequestBody(
+        waitTimer: json['wait_timer'] != null
+            ? SdkPresent(((json['wait_timer'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        preventSelfReview: json['prevent_self_review'] != null
+            ? SdkPresent((json['prevent_self_review'] as bool?)!)
+            : const SdkOmitted(),
+        reviewers: json.containsKey('reviewers')
+            ? SdkPresent((json['reviewers'] as List?)
+                ?.map((e) =>
+                    ReposCreateOrUpdateEnvironmentRequestBodyReviewersItem
+                        .fromJson(e as Map<String, dynamic>))
+                .toList())
+            : const SdkOmitted(),
+        deploymentBranchPolicy: json.containsKey('deployment_branch_policy')
+            ? SdkPresent(json['deployment_branch_policy'] != null
+                ? DeploymentBranchPolicySettings.fromJson(
+                    json['deployment_branch_policy'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (waitTimer) {
+          SdkPresent<int>(value: final value) => {
+              'wait_timer': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (preventSelfReview) {
+          SdkPresent<bool>(value: final value) => {
+              'prevent_self_review': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (reviewers) {
           SdkPresent<
-                CodespacesCreateForAuthenticatedUserRequestBodyVariant1Geo>(
+                List<ReposCreateOrUpdateEnvironmentRequestBodyReviewersItem>?>(
             value: final value
           ) =>
             {
-              'geo': value.toJson(),
+              'reviewers': value?.map((item) => item.toJson()).toList(),
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (machine) {
-          SdkPresent<String>(value: final value) => {
-              'machine': value,
+        ...switch (deploymentBranchPolicy) {
+          SdkPresent<DeploymentBranchPolicySettings?>(value: final value) => {
+              'deployment_branch_policy': value?.toJson(),
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (devcontainerPath) {
-          SdkPresent<String>(value: final value) => {
-              'devcontainer_path': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (workingDirectory) {
-          SdkPresent<String>(value: final value) => {
-              'working_directory': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (idleTimeoutMinutes) {
+      };
+}
+
+class ReposListDeploymentBranchPoliciesResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The number of deployment branch policies for the environment.
+  final int totalCount;
+  final List<DeploymentBranchPolicy> branchPolicies;
+
+  const ReposListDeploymentBranchPoliciesResponse(
+      {required this.totalCount, required this.branchPolicies});
+
+  ReposListDeploymentBranchPoliciesResponse Function(
+      {int totalCount,
+      List<DeploymentBranchPolicy> branchPolicies}) get copyWith => _copyWith;
+
+  ReposListDeploymentBranchPoliciesResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? branchPolicies = sdkOmittedValue}) =>
+      ReposListDeploymentBranchPoliciesResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        branchPolicies: identical(branchPolicies, sdkOmittedValue)
+            ? this.branchPolicies
+            : branchPolicies as List<DeploymentBranchPolicy>,
+      );
+
+  factory ReposListDeploymentBranchPoliciesResponse.fromJson(
+          Map<String, dynamic> json) =>
+      ReposListDeploymentBranchPoliciesResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        branchPolicies: ((json['branch_policies'] as List?)
+            ?.map((e) =>
+                DeploymentBranchPolicy.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'total_count': totalCount,
+        'branch_policies': branchPolicies.map((item) => item.toJson()).toList(),
+      };
+}
+
+class ReposGetAllDeploymentProtectionRulesResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The number of enabled custom deployment protection rules for this environment
+  final SdkOptional<int> totalCount;
+  final SdkOptional<List<DeploymentProtectionRule>>
+      customDeploymentProtectionRules;
+
+  const ReposGetAllDeploymentProtectionRulesResponse(
+      {this.totalCount = const SdkOmitted(),
+      this.customDeploymentProtectionRules = const SdkOmitted()});
+
+  ReposGetAllDeploymentProtectionRulesResponse Function(
+      {SdkOptional<int> totalCount,
+      SdkOptional<List<DeploymentProtectionRule>>
+          customDeploymentProtectionRules}) get copyWith => _copyWith;
+
+  ReposGetAllDeploymentProtectionRulesResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? customDeploymentProtectionRules = sdkOmittedValue}) =>
+      ReposGetAllDeploymentProtectionRulesResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as SdkOptional<int>,
+        customDeploymentProtectionRules:
+            identical(customDeploymentProtectionRules, sdkOmittedValue)
+                ? this.customDeploymentProtectionRules
+                : customDeploymentProtectionRules
+                    as SdkOptional<List<DeploymentProtectionRule>>,
+      );
+
+  factory ReposGetAllDeploymentProtectionRulesResponse.fromJson(
+          Map<String, dynamic> json) =>
+      ReposGetAllDeploymentProtectionRulesResponse(
+        totalCount: json['total_count'] != null
+            ? SdkPresent(((json['total_count'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        customDeploymentProtectionRules:
+            json['custom_deployment_protection_rules'] != null
+                ? SdkPresent(
+                    ((json['custom_deployment_protection_rules'] as List?)
+                        ?.map((e) => DeploymentProtectionRule.fromJson(
+                            e as Map<String, dynamic>))
+                        .toList())!)
+                : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (totalCount) {
           SdkPresent<int>(value: final value) => {
-              'idle_timeout_minutes': value,
+              'total_count': value,
             },
           _ => const <String, dynamic>{},
         },
-      };
-}
-
-class CodespacesListSecretsForAuthenticatedUserResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<CodespacesSecret> secrets;
-
-  const CodespacesListSecretsForAuthenticatedUserResponse(
-      {required this.totalCount, required this.secrets});
-
-  CodespacesListSecretsForAuthenticatedUserResponse Function(
-      {int totalCount,
-      List<CodespacesSecret> secrets}) get copyWith => _copyWith;
-
-  CodespacesListSecretsForAuthenticatedUserResponse _copyWith(
-          {Object? totalCount = sdkOmittedValue,
-          Object? secrets = sdkOmittedValue}) =>
-      CodespacesListSecretsForAuthenticatedUserResponse(
-        totalCount: identical(totalCount, sdkOmittedValue)
-            ? this.totalCount
-            : totalCount as int,
-        secrets: identical(secrets, sdkOmittedValue)
-            ? this.secrets
-            : secrets as List<CodespacesSecret>,
-      );
-
-  factory CodespacesListSecretsForAuthenticatedUserResponse.fromJson(
-          Map<String, dynamic> json) =>
-      CodespacesListSecretsForAuthenticatedUserResponse(
-        totalCount: ((json['total_count'] as num?)?.toInt())!,
-        secrets: ((json['secrets'] as List?)
-            ?.map((e) => CodespacesSecret.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'total_count': totalCount,
-        'secrets': secrets.map((item) => item.toJson()).toList(),
-      };
-}
-
-class CodespacesCreateOrUpdateSecretForAuthenticatedUserRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get the public key for the authenticated user](https://docs.github.com/rest/codespaces/secrets#get-public-key-for-the-authenticated-user) endpoint.
-  final SdkOptional<String> encryptedValue;
-
-  /// ID of the key you used to encrypt the secret.
-  final String keyId;
-
-  /// An array of repository ids that can access the user secret. You can manage the list of selected repositories using the [List selected repositories for a user secret](https://docs.github.com/rest/codespaces/secrets#list-selected-repositories-for-a-user-secret), [Set selected repositories for a user secret](https://docs.github.com/rest/codespaces/secrets#set-selected-repositories-for-a-user-secret), and [Remove a selected repository from a user secret](https://docs.github.com/rest/codespaces/secrets#remove-a-selected-repository-from-a-user-secret) endpoints.
-  final SdkOptional<List<dynamic>> selectedRepositoryIds;
-
-  const CodespacesCreateOrUpdateSecretForAuthenticatedUserRequestBody(
-      {this.encryptedValue = const SdkOmitted(),
-      required this.keyId,
-      this.selectedRepositoryIds = const SdkOmitted()});
-
-  CodespacesCreateOrUpdateSecretForAuthenticatedUserRequestBody Function(
-          {SdkOptional<String> encryptedValue,
-          String keyId,
-          SdkOptional<List<dynamic>> selectedRepositoryIds})
-      get copyWith => _copyWith;
-
-  CodespacesCreateOrUpdateSecretForAuthenticatedUserRequestBody _copyWith(
-          {Object? encryptedValue = sdkOmittedValue,
-          Object? keyId = sdkOmittedValue,
-          Object? selectedRepositoryIds = sdkOmittedValue}) =>
-      CodespacesCreateOrUpdateSecretForAuthenticatedUserRequestBody(
-        encryptedValue: identical(encryptedValue, sdkOmittedValue)
-            ? this.encryptedValue
-            : encryptedValue as SdkOptional<String>,
-        keyId: identical(keyId, sdkOmittedValue) ? this.keyId : keyId as String,
-        selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue)
-            ? this.selectedRepositoryIds
-            : selectedRepositoryIds as SdkOptional<List<dynamic>>,
-      );
-
-  factory CodespacesCreateOrUpdateSecretForAuthenticatedUserRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      CodespacesCreateOrUpdateSecretForAuthenticatedUserRequestBody(
-        encryptedValue: json['encrypted_value'] != null
-            ? SdkPresent((json['encrypted_value'] as String?)!)
-            : const SdkOmitted(),
-        keyId: (json['key_id'] as String?)!,
-        selectedRepositoryIds: json['selected_repository_ids'] != null
-            ? SdkPresent(((json['selected_repository_ids'] as List?)
-                ?.map((e) => e)
-                .toList())!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (encryptedValue) {
-          SdkPresent<String>(value: final value) => {
-              'encrypted_value': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'key_id': keyId,
-        ...switch (selectedRepositoryIds) {
-          SdkPresent<List<dynamic>>(value: final value) => {
-              'selected_repository_ids': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-class CodespacesListRepositoriesForSecretForAuthenticatedUserResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<MinimalRepository> repositories;
-
-  const CodespacesListRepositoriesForSecretForAuthenticatedUserResponse(
-      {required this.totalCount, required this.repositories});
-
-  CodespacesListRepositoriesForSecretForAuthenticatedUserResponse Function(
-      {int totalCount,
-      List<MinimalRepository> repositories}) get copyWith => _copyWith;
-
-  CodespacesListRepositoriesForSecretForAuthenticatedUserResponse _copyWith(
-          {Object? totalCount = sdkOmittedValue,
-          Object? repositories = sdkOmittedValue}) =>
-      CodespacesListRepositoriesForSecretForAuthenticatedUserResponse(
-        totalCount: identical(totalCount, sdkOmittedValue)
-            ? this.totalCount
-            : totalCount as int,
-        repositories: identical(repositories, sdkOmittedValue)
-            ? this.repositories
-            : repositories as List<MinimalRepository>,
-      );
-
-  factory CodespacesListRepositoriesForSecretForAuthenticatedUserResponse.fromJson(
-          Map<String, dynamic> json) =>
-      CodespacesListRepositoriesForSecretForAuthenticatedUserResponse(
-        totalCount: ((json['total_count'] as num?)?.toInt())!,
-        repositories: ((json['repositories'] as List?)
-            ?.map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'total_count': totalCount,
-        'repositories': repositories.map((item) => item.toJson()).toList(),
-      };
-}
-
-class CodespacesSetRepositoriesForSecretForAuthenticatedUserRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// An array of repository ids for which a codespace can access the secret. You can manage the list of selected repositories using the [List selected repositories for a user secret](https://docs.github.com/rest/codespaces/secrets#list-selected-repositories-for-a-user-secret), [Add a selected repository to a user secret](https://docs.github.com/rest/codespaces/secrets#add-a-selected-repository-to-a-user-secret), and [Remove a selected repository from a user secret](https://docs.github.com/rest/codespaces/secrets#remove-a-selected-repository-from-a-user-secret) endpoints.
-  final List<int> selectedRepositoryIds;
-
-  const CodespacesSetRepositoriesForSecretForAuthenticatedUserRequestBody(
-      {required this.selectedRepositoryIds});
-
-  CodespacesSetRepositoriesForSecretForAuthenticatedUserRequestBody Function(
-      {List<int> selectedRepositoryIds}) get copyWith => _copyWith;
-
-  CodespacesSetRepositoriesForSecretForAuthenticatedUserRequestBody _copyWith(
-          {Object? selectedRepositoryIds = sdkOmittedValue}) =>
-      CodespacesSetRepositoriesForSecretForAuthenticatedUserRequestBody(
-        selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue)
-            ? this.selectedRepositoryIds
-            : selectedRepositoryIds as List<int>,
-      );
-
-  factory CodespacesSetRepositoriesForSecretForAuthenticatedUserRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      CodespacesSetRepositoriesForSecretForAuthenticatedUserRequestBody(
-        selectedRepositoryIds: ((json['selected_repository_ids'] as List?)
-            ?.map((e) => (e as num).toInt())
-            .toList())!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'selected_repository_ids': selectedRepositoryIds,
-      };
-}
-
-class CodespacesUpdateForAuthenticatedUserRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// A valid machine to transition this codespace to.
-  final SdkOptional<String> machine;
-
-  /// Display name for this codespace
-  final SdkOptional<String> displayName;
-
-  /// Recently opened folders inside the codespace. It is currently used by the clients to determine the folder path to load the codespace in.
-  final SdkOptional<List<String>> recentFolders;
-
-  const CodespacesUpdateForAuthenticatedUserRequestBody(
-      {this.machine = const SdkOmitted(),
-      this.displayName = const SdkOmitted(),
-      this.recentFolders = const SdkOmitted()});
-
-  CodespacesUpdateForAuthenticatedUserRequestBody Function(
-      {SdkOptional<String> machine,
-      SdkOptional<String> displayName,
-      SdkOptional<List<String>> recentFolders}) get copyWith => _copyWith;
-
-  CodespacesUpdateForAuthenticatedUserRequestBody _copyWith(
-          {Object? machine = sdkOmittedValue,
-          Object? displayName = sdkOmittedValue,
-          Object? recentFolders = sdkOmittedValue}) =>
-      CodespacesUpdateForAuthenticatedUserRequestBody(
-        machine: identical(machine, sdkOmittedValue)
-            ? this.machine
-            : machine as SdkOptional<String>,
-        displayName: identical(displayName, sdkOmittedValue)
-            ? this.displayName
-            : displayName as SdkOptional<String>,
-        recentFolders: identical(recentFolders, sdkOmittedValue)
-            ? this.recentFolders
-            : recentFolders as SdkOptional<List<String>>,
-      );
-
-  factory CodespacesUpdateForAuthenticatedUserRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      CodespacesUpdateForAuthenticatedUserRequestBody(
-        machine: json['machine'] != null
-            ? SdkPresent((json['machine'] as String?)!)
-            : const SdkOmitted(),
-        displayName: json['display_name'] != null
-            ? SdkPresent((json['display_name'] as String?)!)
-            : const SdkOmitted(),
-        recentFolders: json['recent_folders'] != null
-            ? SdkPresent(((json['recent_folders'] as List?)
-                ?.map((e) => e as String)
-                .toList())!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (machine) {
-          SdkPresent<String>(value: final value) => {
-              'machine': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (displayName) {
-          SdkPresent<String>(value: final value) => {
-              'display_name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (recentFolders) {
-          SdkPresent<List<String>>(value: final value) => {
-              'recent_folders': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-class CodespacesCodespaceMachinesForAuthenticatedUserResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<CodespaceMachine> machines;
-
-  const CodespacesCodespaceMachinesForAuthenticatedUserResponse(
-      {required this.totalCount, required this.machines});
-
-  CodespacesCodespaceMachinesForAuthenticatedUserResponse Function(
-      {int totalCount,
-      List<CodespaceMachine> machines}) get copyWith => _copyWith;
-
-  CodespacesCodespaceMachinesForAuthenticatedUserResponse _copyWith(
-          {Object? totalCount = sdkOmittedValue,
-          Object? machines = sdkOmittedValue}) =>
-      CodespacesCodespaceMachinesForAuthenticatedUserResponse(
-        totalCount: identical(totalCount, sdkOmittedValue)
-            ? this.totalCount
-            : totalCount as int,
-        machines: identical(machines, sdkOmittedValue)
-            ? this.machines
-            : machines as List<CodespaceMachine>,
-      );
-
-  factory CodespacesCodespaceMachinesForAuthenticatedUserResponse.fromJson(
-          Map<String, dynamic> json) =>
-      CodespacesCodespaceMachinesForAuthenticatedUserResponse(
-        totalCount: ((json['total_count'] as num?)?.toInt())!,
-        machines: ((json['machines'] as List?)
-            ?.map((e) => CodespaceMachine.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'total_count': totalCount,
-        'machines': machines.map((item) => item.toJson()).toList(),
-      };
-}
-
-class CodespacesPublishForAuthenticatedUserRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// A name for the new repository.
-  final SdkOptional<String> name;
-
-  /// Whether the new repository should be private.
-  final SdkOptional<bool> private;
-
-  const CodespacesPublishForAuthenticatedUserRequestBody(
-      {this.name = const SdkOmitted(), this.private = const SdkOmitted()});
-
-  CodespacesPublishForAuthenticatedUserRequestBody Function(
-      {SdkOptional<String> name,
-      SdkOptional<bool> private}) get copyWith => _copyWith;
-
-  CodespacesPublishForAuthenticatedUserRequestBody _copyWith(
-          {Object? name = sdkOmittedValue,
-          Object? private = sdkOmittedValue}) =>
-      CodespacesPublishForAuthenticatedUserRequestBody(
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String>,
-        private: identical(private, sdkOmittedValue)
-            ? this.private
-            : private as SdkOptional<bool>,
-      );
-
-  factory CodespacesPublishForAuthenticatedUserRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      CodespacesPublishForAuthenticatedUserRequestBody(
-        name: json['name'] != null
-            ? SdkPresent((json['name'] as String?)!)
-            : const SdkOmitted(),
-        private: json['private'] != null
-            ? SdkPresent((json['private'] as bool?)!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (name) {
-          SdkPresent<String>(value: final value) => {
-              'name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (private) {
-          SdkPresent<bool>(value: final value) => {
-              'private': value,
+        ...switch (customDeploymentProtectionRules) {
+          SdkPresent<List<DeploymentProtectionRule>>(value: final value) => {
+              'custom_deployment_protection_rules':
+                  value.map((item) => item.toJson()).toList(),
             },
           _ => const <String, dynamic>{},
         },

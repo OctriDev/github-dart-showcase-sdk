@@ -4,6 +4,46 @@
 part of 'issues_timeline.dart';
 
 // issues_timeline domain models (part 4)
+final class TimelineIssueEventsMovedColumnInProjectIssueEvent
+    extends TimelineIssueEvents {
+  final MovedColumnInProjectIssueEvent value;
+  const TimelineIssueEventsMovedColumnInProjectIssueEvent(this.value);
+  @override
+  Object? toJson() => value.toJson();
+}
+
+final class TimelineIssueEventsRemovedFromProjectIssueEvent
+    extends TimelineIssueEvents {
+  final RemovedFromProjectIssueEvent value;
+  const TimelineIssueEventsRemovedFromProjectIssueEvent(this.value);
+  @override
+  Object? toJson() => value.toJson();
+}
+
+final class TimelineIssueEventsConvertedNoteToIssueIssueEvent
+    extends TimelineIssueEvents {
+  final ConvertedNoteToIssueIssueEvent value;
+  const TimelineIssueEventsConvertedNoteToIssueIssueEvent(this.value);
+  @override
+  Object? toJson() => value.toJson();
+}
+
+final class TimelineIssueEventsTimelineCommentEvent
+    extends TimelineIssueEvents {
+  final TimelineCommentEvent value;
+  const TimelineIssueEventsTimelineCommentEvent(this.value);
+  @override
+  Object? toJson() => value.toJson();
+}
+
+final class TimelineIssueEventsTimelineCrossReferencedEvent
+    extends TimelineIssueEvents {
+  final TimelineCrossReferencedEvent value;
+  const TimelineIssueEventsTimelineCrossReferencedEvent(this.value);
+  @override
+  Object? toJson() => value.toJson();
+}
+
 final class TimelineIssueEventsTimelineCommittedEvent
     extends TimelineIssueEvents {
   final TimelineCommittedEvent value;

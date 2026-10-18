@@ -4,424 +4,432 @@
 part of 'pulls.dart';
 
 // pulls domain models (part 4)
-/// Pull Request Merge Async Result
-class PullRequestMergeAsyncResult {
+/// Required object value serialized in the `_links` wire field.
+class PullRequestReviewLinks {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Required enumerated value serialized in the `status` wire field.
-  final PullRequestMergeAsyncResultStatus status;
+  /// Required object value serialized in the `html` wire field.
+  final PullRequestReviewLinksHtml html;
 
-  /// Required API value serialized in the `details` wire field.
-  final PullRequestMergeAsyncResultDetails details;
+  /// Required object value serialized in the `pull_request` wire field.
+  final PullRequestReviewLinksPullRequest pullRequest;
 
-  const PullRequestMergeAsyncResult(
-      {required this.status, required this.details});
+  const PullRequestReviewLinks({required this.html, required this.pullRequest});
 
-  PullRequestMergeAsyncResult Function(
-      {PullRequestMergeAsyncResultStatus status,
-      PullRequestMergeAsyncResultDetails details}) get copyWith => _copyWith;
+  PullRequestReviewLinks Function(
+      {PullRequestReviewLinksHtml html,
+      PullRequestReviewLinksPullRequest pullRequest}) get copyWith => _copyWith;
 
-  PullRequestMergeAsyncResult _copyWith(
-          {Object? status = sdkOmittedValue,
-          Object? details = sdkOmittedValue}) =>
-      PullRequestMergeAsyncResult(
-        status: identical(status, sdkOmittedValue)
-            ? this.status
-            : status as PullRequestMergeAsyncResultStatus,
-        details: identical(details, sdkOmittedValue)
-            ? this.details
-            : details as PullRequestMergeAsyncResultDetails,
+  PullRequestReviewLinks _copyWith(
+          {Object? html = sdkOmittedValue,
+          Object? pullRequest = sdkOmittedValue}) =>
+      PullRequestReviewLinks(
+        html: identical(html, sdkOmittedValue)
+            ? this.html
+            : html as PullRequestReviewLinksHtml,
+        pullRequest: identical(pullRequest, sdkOmittedValue)
+            ? this.pullRequest
+            : pullRequest as PullRequestReviewLinksPullRequest,
       );
 
-  factory PullRequestMergeAsyncResult.fromJson(Map<String, dynamic> json) =>
-      PullRequestMergeAsyncResult(
-        status: (json['status'] != null
-            ? PullRequestMergeAsyncResultStatus.fromJson(
-                json['status'] as String)
+  factory PullRequestReviewLinks.fromJson(Map<String, dynamic> json) =>
+      PullRequestReviewLinks(
+        html: (json['html'] != null
+            ? PullRequestReviewLinksHtml.fromJson(
+                json['html'] as Map<String, dynamic>)
             : null)!,
-        details: (json['details'] != null
-            ? PullRequestMergeAsyncResultDetails.fromJson(json['details'])
+        pullRequest: (json['pull_request'] != null
+            ? PullRequestReviewLinksPullRequest.fromJson(
+                json['pull_request'] as Map<String, dynamic>)
             : null)!,
       );
 
   Map<String, dynamic> toJson() => {
-        'status': status.toJson(),
-        'details': details.toJson(),
+        'html': html.toJson(),
+        'pull_request': pullRequest.toJson(),
       };
 }
 
-/// When the asynchronous merge request is pending
-class PullRequestMergeAsyncResultDetailsVariant0 {
+/// Pull Request Reviews are reviews on pull requests.
+class PullRequestReview {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Required `string` value serialized in the `message` wire field.
-  final String message;
+  /// Unique identifier of the review
+  final int id;
 
-  /// Required `string` value serialized in the `uuid` wire field.
-  final String uuid;
+  /// Required `string` value serialized in the `node_id` wire field.
+  final String nodeId;
 
-  /// Required enumerated value serialized in the `merge_method` wire field.
-  final PullRequestMergeAsyncResultDetailsVariant0MergeMethod mergeMethod;
+  /// A GitHub user.
+  final NullableSimpleUser? user;
 
-  /// Required enumerated value serialized in the `merge_action` wire field.
-  final PullRequestMergeAsyncResultDetailsVariant0MergeAction mergeAction;
+  /// The text of the review.
+  final String body;
 
-  /// SHA that the pull request head must match for the enqueued merge to proceed.
-  final String expectedHeadSha;
+  /// Required `string` value serialized in the `state` wire field.
+  final String state;
 
-  /// Whether the asynchronous merge request will attempt to bypass repository rules that the authenticated actor is permitted to bypass.
-  final SdkOptional<bool> bypassRules;
+  /// Required `uri`-formatted value serialized in the `html_url` wire field.
+  final String htmlUrl;
 
-  const PullRequestMergeAsyncResultDetailsVariant0(
-      {required this.message,
-      required this.uuid,
-      required this.mergeMethod,
-      required this.mergeAction,
-      required this.expectedHeadSha,
-      this.bypassRules = const SdkOmitted()});
+  /// Required `uri`-formatted value serialized in the `pull_request_url` wire field.
+  final String pullRequestUrl;
 
-  PullRequestMergeAsyncResultDetailsVariant0 Function(
-      {String message,
-      String uuid,
-      PullRequestMergeAsyncResultDetailsVariant0MergeMethod mergeMethod,
-      PullRequestMergeAsyncResultDetailsVariant0MergeAction mergeAction,
-      String expectedHeadSha,
-      SdkOptional<bool> bypassRules}) get copyWith => _copyWith;
+  /// Required object value serialized in the `_links` wire field.
+  final PullRequestReviewLinks links;
 
-  PullRequestMergeAsyncResultDetailsVariant0 _copyWith(
-          {Object? message = sdkOmittedValue,
-          Object? uuid = sdkOmittedValue,
-          Object? mergeMethod = sdkOmittedValue,
-          Object? mergeAction = sdkOmittedValue,
-          Object? expectedHeadSha = sdkOmittedValue,
-          Object? bypassRules = sdkOmittedValue}) =>
-      PullRequestMergeAsyncResultDetailsVariant0(
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
-        uuid: identical(uuid, sdkOmittedValue) ? this.uuid : uuid as String,
-        mergeMethod: identical(mergeMethod, sdkOmittedValue)
-            ? this.mergeMethod
-            : mergeMethod
-                as PullRequestMergeAsyncResultDetailsVariant0MergeMethod,
-        mergeAction: identical(mergeAction, sdkOmittedValue)
-            ? this.mergeAction
-            : mergeAction
-                as PullRequestMergeAsyncResultDetailsVariant0MergeAction,
-        expectedHeadSha: identical(expectedHeadSha, sdkOmittedValue)
-            ? this.expectedHeadSha
-            : expectedHeadSha as String,
-        bypassRules: identical(bypassRules, sdkOmittedValue)
-            ? this.bypassRules
-            : bypassRules as SdkOptional<bool>,
+  /// Optional `date-time`-formatted value serialized in the `submitted_at` wire field.
+  final SdkOptional<String> submittedAt;
+
+  /// A commit SHA for the review. If the commit object was garbage collected or forcibly deleted, then it no longer exists in Git and this value will be `null`.
+  final String? commitId;
+
+  /// Optional `string` value serialized in the `body_html` wire field.
+  final SdkOptional<String> bodyHtml;
+
+  /// Optional `string` value serialized in the `body_text` wire field.
+  final SdkOptional<String> bodyText;
+
+  /// How the author is associated with the repository.
+  final AuthorAssociation authorAssociation;
+
+  const PullRequestReview(
+      {required this.id,
+      required this.nodeId,
+      required this.user,
+      required this.body,
+      required this.state,
+      required this.htmlUrl,
+      required this.pullRequestUrl,
+      required this.links,
+      this.submittedAt = const SdkOmitted(),
+      required this.commitId,
+      this.bodyHtml = const SdkOmitted(),
+      this.bodyText = const SdkOmitted(),
+      required this.authorAssociation});
+
+  PullRequestReview Function(
+      {int id,
+      String nodeId,
+      NullableSimpleUser? user,
+      String body,
+      String state,
+      String htmlUrl,
+      String pullRequestUrl,
+      PullRequestReviewLinks links,
+      SdkOptional<String> submittedAt,
+      String? commitId,
+      SdkOptional<String> bodyHtml,
+      SdkOptional<String> bodyText,
+      AuthorAssociation authorAssociation}) get copyWith => _copyWith;
+
+  PullRequestReview _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? user = sdkOmittedValue,
+          Object? body = sdkOmittedValue,
+          Object? state = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? pullRequestUrl = sdkOmittedValue,
+          Object? links = sdkOmittedValue,
+          Object? submittedAt = sdkOmittedValue,
+          Object? commitId = sdkOmittedValue,
+          Object? bodyHtml = sdkOmittedValue,
+          Object? bodyText = sdkOmittedValue,
+          Object? authorAssociation = sdkOmittedValue}) =>
+      PullRequestReview(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        user: identical(user, sdkOmittedValue)
+            ? this.user
+            : user as NullableSimpleUser?,
+        body: identical(body, sdkOmittedValue) ? this.body : body as String,
+        state: identical(state, sdkOmittedValue) ? this.state : state as String,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as String,
+        pullRequestUrl: identical(pullRequestUrl, sdkOmittedValue)
+            ? this.pullRequestUrl
+            : pullRequestUrl as String,
+        links: identical(links, sdkOmittedValue)
+            ? this.links
+            : links as PullRequestReviewLinks,
+        submittedAt: identical(submittedAt, sdkOmittedValue)
+            ? this.submittedAt
+            : submittedAt as SdkOptional<String>,
+        commitId: identical(commitId, sdkOmittedValue)
+            ? this.commitId
+            : commitId as String?,
+        bodyHtml: identical(bodyHtml, sdkOmittedValue)
+            ? this.bodyHtml
+            : bodyHtml as SdkOptional<String>,
+        bodyText: identical(bodyText, sdkOmittedValue)
+            ? this.bodyText
+            : bodyText as SdkOptional<String>,
+        authorAssociation: identical(authorAssociation, sdkOmittedValue)
+            ? this.authorAssociation
+            : authorAssociation as AuthorAssociation,
       );
 
-  factory PullRequestMergeAsyncResultDetailsVariant0.fromJson(
-          Map<String, dynamic> json) =>
-      PullRequestMergeAsyncResultDetailsVariant0(
-        message: (json['message'] as String?)!,
-        uuid: (json['uuid'] as String?)!,
-        mergeMethod: (json['merge_method'] != null
-            ? PullRequestMergeAsyncResultDetailsVariant0MergeMethod.fromJson(
-                json['merge_method'] as String)
+  factory PullRequestReview.fromJson(Map<String, dynamic> json) =>
+      PullRequestReview(
+        id: ((json['id'] as num?)?.toInt())!,
+        nodeId: (json['node_id'] as String?)!,
+        user: json.containsKey('user')
+            ? json['user'] != null
+                ? NullableSimpleUser.fromJson(
+                    json['user'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'user', 'Required property is missing'),
+        body: (json['body'] as String?)!,
+        state: (json['state'] as String?)!,
+        htmlUrl: (json['html_url'] as String?)!,
+        pullRequestUrl: (json['pull_request_url'] as String?)!,
+        links: (json['_links'] != null
+            ? PullRequestReviewLinks.fromJson(
+                json['_links'] as Map<String, dynamic>)
             : null)!,
-        mergeAction: (json['merge_action'] != null
-            ? PullRequestMergeAsyncResultDetailsVariant0MergeAction.fromJson(
-                json['merge_action'] as String)
-            : null)!,
-        expectedHeadSha: (json['expected_head_sha'] as String?)!,
-        bypassRules: json['bypass_rules'] != null
-            ? SdkPresent((json['bypass_rules'] as bool?)!)
+        submittedAt: json['submitted_at'] != null
+            ? SdkPresent((json['submitted_at'] as String?)!)
             : const SdkOmitted(),
+        commitId: json.containsKey('commit_id')
+            ? json['commit_id'] as String?
+            : throw ArgumentError.value(
+                null, 'commit_id', 'Required property is missing'),
+        bodyHtml: json['body_html'] != null
+            ? SdkPresent((json['body_html'] as String?)!)
+            : const SdkOmitted(),
+        bodyText: json['body_text'] != null
+            ? SdkPresent((json['body_text'] as String?)!)
+            : const SdkOmitted(),
+        authorAssociation: (json['author_association'] != null
+            ? AuthorAssociation.fromJson(json['author_association'] as String)
+            : null)!,
       );
 
   Map<String, dynamic> toJson() => {
-        'message': message,
-        'uuid': uuid,
-        'merge_method': mergeMethod.toJson(),
-        'merge_action': mergeAction.toJson(),
-        'expected_head_sha': expectedHeadSha,
-        ...switch (bypassRules) {
-          SdkPresent<bool>(value: final value) => {
-              'bypass_rules': value,
+        'id': id,
+        'node_id': nodeId,
+        'user': user?.toJson(),
+        'body': body,
+        'state': state,
+        'html_url': htmlUrl,
+        'pull_request_url': pullRequestUrl,
+        '_links': links.toJson(),
+        ...switch (submittedAt) {
+          SdkPresent<String>(value: final value) => {
+              'submitted_at': value,
             },
           _ => const <String, dynamic>{},
         },
+        'commit_id': commitId,
+        ...switch (bodyHtml) {
+          SdkPresent<String>(value: final value) => {
+              'body_html': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (bodyText) {
+          SdkPresent<String>(value: final value) => {
+              'body_text': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'author_association': authorAssociation.toJson(),
       };
 }
 
-/// When the pull request is in a merge queue
-class PullRequestMergeAsyncResultDetailsVariant1 {
+/// Pull Request Review Request
+class PullRequestReviewRequest {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Required `string` value serialized in the `message` wire field.
-  final String message;
+  /// Required array value serialized in the `users` wire field.
+  final List<SimpleUser> users;
 
-  const PullRequestMergeAsyncResultDetailsVariant1({required this.message});
+  /// Required array value serialized in the `teams` wire field.
+  final List<Team> teams;
 
-  PullRequestMergeAsyncResultDetailsVariant1 Function({String message})
+  const PullRequestReviewRequest({required this.users, required this.teams});
+
+  PullRequestReviewRequest Function({List<SimpleUser> users, List<Team> teams})
       get copyWith => _copyWith;
 
-  PullRequestMergeAsyncResultDetailsVariant1 _copyWith(
-          {Object? message = sdkOmittedValue}) =>
-      PullRequestMergeAsyncResultDetailsVariant1(
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
+  PullRequestReviewRequest _copyWith(
+          {Object? users = sdkOmittedValue, Object? teams = sdkOmittedValue}) =>
+      PullRequestReviewRequest(
+        users: identical(users, sdkOmittedValue)
+            ? this.users
+            : users as List<SimpleUser>,
+        teams: identical(teams, sdkOmittedValue)
+            ? this.teams
+            : teams as List<Team>,
       );
 
-  factory PullRequestMergeAsyncResultDetailsVariant1.fromJson(
-          Map<String, dynamic> json) =>
-      PullRequestMergeAsyncResultDetailsVariant1(
-        message: (json['message'] as String?)!,
+  factory PullRequestReviewRequest.fromJson(Map<String, dynamic> json) =>
+      PullRequestReviewRequest(
+        users: ((json['users'] as List?)
+            ?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        teams: ((json['teams'] as List?)
+            ?.map((e) => Team.fromJson(e as Map<String, dynamic>))
+            .toList())!,
       );
 
   Map<String, dynamic> toJson() => {
-        'message': message,
+        'users': users.map((item) => item.toJson()).toList(),
+        'teams': teams.map((item) => item.toJson()).toList(),
       };
 }
 
-/// When the asynchronous merge request failed
-class PullRequestMergeAsyncResultDetailsVariant2 {
+/// Required object value serialized in the `base` wire field.
+class PullRequestStackMinimalBase {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Required `string` value serialized in the `message` wire field.
-  final String message;
+  /// Required `string` value serialized in the `ref` wire field.
+  final String ref;
 
-  const PullRequestMergeAsyncResultDetailsVariant2({required this.message});
+  const PullRequestStackMinimalBase({required this.ref});
 
-  PullRequestMergeAsyncResultDetailsVariant2 Function({String message})
-      get copyWith => _copyWith;
+  PullRequestStackMinimalBase Function({String ref}) get copyWith => _copyWith;
 
-  PullRequestMergeAsyncResultDetailsVariant2 _copyWith(
-          {Object? message = sdkOmittedValue}) =>
-      PullRequestMergeAsyncResultDetailsVariant2(
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
+  PullRequestStackMinimalBase _copyWith({Object? ref = sdkOmittedValue}) =>
+      PullRequestStackMinimalBase(
+        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
       );
 
-  factory PullRequestMergeAsyncResultDetailsVariant2.fromJson(
-          Map<String, dynamic> json) =>
-      PullRequestMergeAsyncResultDetailsVariant2(
-        message: (json['message'] as String?)!,
+  factory PullRequestStackMinimalBase.fromJson(Map<String, dynamic> json) =>
+      PullRequestStackMinimalBase(
+        ref: (json['ref'] as String?)!,
       );
 
   Map<String, dynamic> toJson() => {
-        'message': message,
+        'ref': ref,
       };
 }
 
-/// When the pull request has been merged
-class PullRequestMergeAsyncResultDetailsVariant3 {
+/// Required object value serialized in the `head` wire field.
+class PullRequestStackMinimalPullRequestsItemHead {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Required `string` value serialized in the `message` wire field.
-  final String message;
+  /// Required `string` value serialized in the `ref` wire field.
+  final String ref;
 
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
 
-  const PullRequestMergeAsyncResultDetailsVariant3(
-      {required this.message, required this.sha});
+  const PullRequestStackMinimalPullRequestsItemHead(
+      {required this.ref, required this.sha});
 
-  PullRequestMergeAsyncResultDetailsVariant3 Function(
-      {String message, String sha}) get copyWith => _copyWith;
-
-  PullRequestMergeAsyncResultDetailsVariant3 _copyWith(
-          {Object? message = sdkOmittedValue, Object? sha = sdkOmittedValue}) =>
-      PullRequestMergeAsyncResultDetailsVariant3(
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
-        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-      );
-
-  factory PullRequestMergeAsyncResultDetailsVariant3.fromJson(
-          Map<String, dynamic> json) =>
-      PullRequestMergeAsyncResultDetailsVariant3(
-        message: (json['message'] as String?)!,
-        sha: (json['sha'] as String?)!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'message': message,
-        'sha': sha,
-      };
-}
-
-sealed class PullRequestMergeAsyncResultDetails {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  const PullRequestMergeAsyncResultDetails();
-  factory PullRequestMergeAsyncResultDetails.fromJson(Object? json) {
-    try {
-      return PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant0(
-          PullRequestMergeAsyncResultDetailsVariant0.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant1(
-          PullRequestMergeAsyncResultDetailsVariant1.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant2(
-          PullRequestMergeAsyncResultDetailsVariant2.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant3(
-          PullRequestMergeAsyncResultDetailsVariant3.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    throw FormatException(
-        "No variant matched for PullRequestMergeAsyncResultDetails");
-  }
-  Object? toJson();
-}
-
-final class PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant0
-    extends PullRequestMergeAsyncResultDetails {
-  final PullRequestMergeAsyncResultDetailsVariant0 value;
-  const PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant0(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
-}
-
-final class PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant1
-    extends PullRequestMergeAsyncResultDetails {
-  final PullRequestMergeAsyncResultDetailsVariant1 value;
-  const PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant1(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
-}
-
-final class PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant2
-    extends PullRequestMergeAsyncResultDetails {
-  final PullRequestMergeAsyncResultDetailsVariant2 value;
-  const PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant2(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
-}
-
-final class PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant3
-    extends PullRequestMergeAsyncResultDetails {
-  final PullRequestMergeAsyncResultDetailsVariant3 value;
-  const PullRequestMergeAsyncResultDetailsPullRequestMergeAsyncResultDetailsVariant3(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
-}
-
-/// Pull Request Merge Result
-class PullRequestMergeResult {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Required `string` value serialized in the `sha` wire field.
-  final String sha;
-
-  /// Required `boolean` value serialized in the `merged` wire field.
-  final bool merged;
-
-  /// Required `string` value serialized in the `message` wire field.
-  final String message;
-
-  const PullRequestMergeResult(
-      {required this.sha, required this.merged, required this.message});
-
-  PullRequestMergeResult Function({String sha, bool merged, String message})
+  PullRequestStackMinimalPullRequestsItemHead Function({String ref, String sha})
       get copyWith => _copyWith;
 
-  PullRequestMergeResult _copyWith(
-          {Object? sha = sdkOmittedValue,
-          Object? merged = sdkOmittedValue,
-          Object? message = sdkOmittedValue}) =>
-      PullRequestMergeResult(
+  PullRequestStackMinimalPullRequestsItemHead _copyWith(
+          {Object? ref = sdkOmittedValue, Object? sha = sdkOmittedValue}) =>
+      PullRequestStackMinimalPullRequestsItemHead(
+        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
         sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-        merged:
-            identical(merged, sdkOmittedValue) ? this.merged : merged as bool,
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
       );
 
-  factory PullRequestMergeResult.fromJson(Map<String, dynamic> json) =>
-      PullRequestMergeResult(
-        sha: (json['sha'] as String?)!,
-        merged: (json['merged'] as bool?)!,
-        message: (json['message'] as String?)!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'sha': sha,
-        'merged': merged,
-        'message': message,
-      };
-}
-
-/// Required object value serialized in the `html` wire field.
-class PullRequestReviewLinksHtml {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Required `string` value serialized in the `href` wire field.
-  final String href;
-
-  const PullRequestReviewLinksHtml({required this.href});
-
-  PullRequestReviewLinksHtml Function({String href}) get copyWith => _copyWith;
-
-  PullRequestReviewLinksHtml _copyWith({Object? href = sdkOmittedValue}) =>
-      PullRequestReviewLinksHtml(
-        href: identical(href, sdkOmittedValue) ? this.href : href as String,
-      );
-
-  factory PullRequestReviewLinksHtml.fromJson(Map<String, dynamic> json) =>
-      PullRequestReviewLinksHtml(
-        href: (json['href'] as String?)!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'href': href,
-      };
-}
-
-/// Required object value serialized in the `pull_request` wire field.
-class PullRequestReviewLinksPullRequest {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Required `string` value serialized in the `href` wire field.
-  final String href;
-
-  const PullRequestReviewLinksPullRequest({required this.href});
-
-  PullRequestReviewLinksPullRequest Function({String href}) get copyWith =>
-      _copyWith;
-
-  PullRequestReviewLinksPullRequest _copyWith(
-          {Object? href = sdkOmittedValue}) =>
-      PullRequestReviewLinksPullRequest(
-        href: identical(href, sdkOmittedValue) ? this.href : href as String,
-      );
-
-  factory PullRequestReviewLinksPullRequest.fromJson(
+  factory PullRequestStackMinimalPullRequestsItemHead.fromJson(
           Map<String, dynamic> json) =>
-      PullRequestReviewLinksPullRequest(
-        href: (json['href'] as String?)!,
+      PullRequestStackMinimalPullRequestsItemHead(
+        ref: (json['ref'] as String?)!,
+        sha: (json['sha'] as String?)!,
       );
 
   Map<String, dynamic> toJson() => {
-        'href': href,
+        'ref': ref,
+        'sha': sha,
+      };
+}
+
+/// Required object value serialized in the `pull_requests[]` wire field.
+class PullRequestStackMinimalPullRequestsItem {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// Required `integer` value serialized in the `number` wire field.
+  final int number;
+
+  /// Required enumerated value serialized in the `state` wire field.
+  final PullRequestStackMinimalPullRequestsItemState state;
+
+  /// Required `boolean` value serialized in the `draft` wire field.
+  final bool draft;
+
+  /// Required `date-time`-formatted value serialized in the `merged_at` wire field.
+  final String? mergedAt;
+
+  /// Required object value serialized in the `head` wire field.
+  final PullRequestStackMinimalPullRequestsItemHead head;
+
+  const PullRequestStackMinimalPullRequestsItem(
+      {required this.number,
+      required this.state,
+      required this.draft,
+      required this.mergedAt,
+      required this.head});
+
+  PullRequestStackMinimalPullRequestsItem Function(
+          {int number,
+          PullRequestStackMinimalPullRequestsItemState state,
+          bool draft,
+          String? mergedAt,
+          PullRequestStackMinimalPullRequestsItemHead head})
+      get copyWith => _copyWith;
+
+  PullRequestStackMinimalPullRequestsItem _copyWith(
+          {Object? number = sdkOmittedValue,
+          Object? state = sdkOmittedValue,
+          Object? draft = sdkOmittedValue,
+          Object? mergedAt = sdkOmittedValue,
+          Object? head = sdkOmittedValue}) =>
+      PullRequestStackMinimalPullRequestsItem(
+        number:
+            identical(number, sdkOmittedValue) ? this.number : number as int,
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state as PullRequestStackMinimalPullRequestsItemState,
+        draft: identical(draft, sdkOmittedValue) ? this.draft : draft as bool,
+        mergedAt: identical(mergedAt, sdkOmittedValue)
+            ? this.mergedAt
+            : mergedAt as String?,
+        head: identical(head, sdkOmittedValue)
+            ? this.head
+            : head as PullRequestStackMinimalPullRequestsItemHead,
+      );
+
+  factory PullRequestStackMinimalPullRequestsItem.fromJson(
+          Map<String, dynamic> json) =>
+      PullRequestStackMinimalPullRequestsItem(
+        number: ((json['number'] as num?)?.toInt())!,
+        state: (json['state'] != null
+            ? PullRequestStackMinimalPullRequestsItemState.fromJson(
+                json['state'] as String)
+            : null)!,
+        draft: (json['draft'] as bool?)!,
+        mergedAt: json.containsKey('merged_at')
+            ? json['merged_at'] as String?
+            : throw ArgumentError.value(
+                null, 'merged_at', 'Required property is missing'),
+        head: (json['head'] != null
+            ? PullRequestStackMinimalPullRequestsItemHead.fromJson(
+                json['head'] as Map<String, dynamic>)
+            : null)!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'number': number,
+        'state': state.toJson(),
+        'draft': draft,
+        'merged_at': mergedAt,
+        'head': head.toJson(),
       };
 }

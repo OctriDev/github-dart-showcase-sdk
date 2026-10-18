@@ -4,21 +4,19 @@
 part of 'inline.dart';
 
 // Inline operation models (part 30)
-final class PullRequestRequestedReviewersItemVariant1ParentPrivacy {
+/// Required enumerated value serialized in the `status` wire field.
+final class PullRequestMergeAsyncResultStatus {
   final String value;
 
-  const PullRequestRequestedReviewersItemVariant1ParentPrivacy._(this.value);
+  const PullRequestMergeAsyncResultStatus._(this.value);
 
-  factory PullRequestRequestedReviewersItemVariant1ParentPrivacy.fromJson(
-          String value) =>
-      PullRequestRequestedReviewersItemVariant1ParentPrivacy._(value);
+  factory PullRequestMergeAsyncResultStatus.fromJson(String value) =>
+      PullRequestMergeAsyncResultStatus._(value);
 
-  static const open =
-      PullRequestRequestedReviewersItemVariant1ParentPrivacy._('open');
-  static const closed =
-      PullRequestRequestedReviewersItemVariant1ParentPrivacy._('closed');
-  static const secret =
-      PullRequestRequestedReviewersItemVariant1ParentPrivacy._('secret');
+  static const pending = PullRequestMergeAsyncResultStatus._('pending');
+  static const merged = PullRequestMergeAsyncResultStatus._('merged');
+  static const enqueued = PullRequestMergeAsyncResultStatus._('enqueued');
+  static const failed = PullRequestMergeAsyncResultStatus._('failed');
 
   String toJson() => value;
 
@@ -27,28 +25,61 @@ final class PullRequestRequestedReviewersItemVariant1ParentPrivacy {
 
   @override
   bool operator ==(Object other) =>
-      other is PullRequestRequestedReviewersItemVariant1ParentPrivacy &&
+      other is PullRequestMergeAsyncResultStatus && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Required enumerated value serialized in the `merge_action` wire field.
+final class PullRequestMergeAsyncResultDetailsVariant0MergeAction {
+  final String value;
+
+  const PullRequestMergeAsyncResultDetailsVariant0MergeAction._(this.value);
+
+  factory PullRequestMergeAsyncResultDetailsVariant0MergeAction.fromJson(
+          String value) =>
+      PullRequestMergeAsyncResultDetailsVariant0MergeAction._(value);
+
+  static const default_ =
+      PullRequestMergeAsyncResultDetailsVariant0MergeAction._('default');
+  static const mergeQueue =
+      PullRequestMergeAsyncResultDetailsVariant0MergeAction._('merge_queue');
+  static const directMerge =
+      PullRequestMergeAsyncResultDetailsVariant0MergeAction._('direct_merge');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is PullRequestMergeAsyncResultDetailsVariant0MergeAction &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-final class PullRequestRequestedReviewersItemVariant1Privacy {
+/// Required enumerated value serialized in the `merge_method` wire field.
+final class PullRequestMergeAsyncResultDetailsVariant0MergeMethod {
   final String value;
 
-  const PullRequestRequestedReviewersItemVariant1Privacy._(this.value);
+  const PullRequestMergeAsyncResultDetailsVariant0MergeMethod._(this.value);
 
-  factory PullRequestRequestedReviewersItemVariant1Privacy.fromJson(
+  factory PullRequestMergeAsyncResultDetailsVariant0MergeMethod.fromJson(
           String value) =>
-      PullRequestRequestedReviewersItemVariant1Privacy._(value);
+      PullRequestMergeAsyncResultDetailsVariant0MergeMethod._(value);
 
-  static const open =
-      PullRequestRequestedReviewersItemVariant1Privacy._('open');
-  static const closed =
-      PullRequestRequestedReviewersItemVariant1Privacy._('closed');
-  static const secret =
-      PullRequestRequestedReviewersItemVariant1Privacy._('secret');
+  static const default_ =
+      PullRequestMergeAsyncResultDetailsVariant0MergeMethod._('default');
+  static const merge =
+      PullRequestMergeAsyncResultDetailsVariant0MergeMethod._('merge');
+  static const squash =
+      PullRequestMergeAsyncResultDetailsVariant0MergeMethod._('squash');
+  static const rebase =
+      PullRequestMergeAsyncResultDetailsVariant0MergeMethod._('rebase');
 
   String toJson() => value;
 
@@ -57,271 +88,7 @@ final class PullRequestRequestedReviewersItemVariant1Privacy {
 
   @override
   bool operator ==(Object other) =>
-      other is PullRequestRequestedReviewersItemVariant1Privacy &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-final class PullRequestRequestedReviewersItem2Variant0Type {
-  final String value;
-
-  const PullRequestRequestedReviewersItem2Variant0Type._(this.value);
-
-  factory PullRequestRequestedReviewersItem2Variant0Type.fromJson(
-          String value) =>
-      PullRequestRequestedReviewersItem2Variant0Type._(value);
-
-  static const bot = PullRequestRequestedReviewersItem2Variant0Type._('Bot');
-  static const user = PullRequestRequestedReviewersItem2Variant0Type._('User');
-  static const organization =
-      PullRequestRequestedReviewersItem2Variant0Type._('Organization');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is PullRequestRequestedReviewersItem2Variant0Type &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-final class PullRequestRequestedReviewersItem2Variant1ParentPrivacy {
-  final String value;
-
-  const PullRequestRequestedReviewersItem2Variant1ParentPrivacy._(this.value);
-
-  factory PullRequestRequestedReviewersItem2Variant1ParentPrivacy.fromJson(
-          String value) =>
-      PullRequestRequestedReviewersItem2Variant1ParentPrivacy._(value);
-
-  static const open =
-      PullRequestRequestedReviewersItem2Variant1ParentPrivacy._('open');
-  static const closed =
-      PullRequestRequestedReviewersItem2Variant1ParentPrivacy._('closed');
-  static const secret =
-      PullRequestRequestedReviewersItem2Variant1ParentPrivacy._('secret');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is PullRequestRequestedReviewersItem2Variant1ParentPrivacy &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-final class PullRequestRequestedReviewersItem2Variant1Privacy {
-  final String value;
-
-  const PullRequestRequestedReviewersItem2Variant1Privacy._(this.value);
-
-  factory PullRequestRequestedReviewersItem2Variant1Privacy.fromJson(
-          String value) =>
-      PullRequestRequestedReviewersItem2Variant1Privacy._(value);
-
-  static const open =
-      PullRequestRequestedReviewersItem2Variant1Privacy._('open');
-  static const closed =
-      PullRequestRequestedReviewersItem2Variant1Privacy._('closed');
-  static const secret =
-      PullRequestRequestedReviewersItem2Variant1Privacy._('secret');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is PullRequestRequestedReviewersItem2Variant1Privacy &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-final class PullRequestRequestedReviewersItem3Variant0Type {
-  final String value;
-
-  const PullRequestRequestedReviewersItem3Variant0Type._(this.value);
-
-  factory PullRequestRequestedReviewersItem3Variant0Type.fromJson(
-          String value) =>
-      PullRequestRequestedReviewersItem3Variant0Type._(value);
-
-  static const bot = PullRequestRequestedReviewersItem3Variant0Type._('Bot');
-  static const user = PullRequestRequestedReviewersItem3Variant0Type._('User');
-  static const organization =
-      PullRequestRequestedReviewersItem3Variant0Type._('Organization');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is PullRequestRequestedReviewersItem3Variant0Type &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-final class PullRequestRequestedReviewersItem3Variant1ParentPrivacy {
-  final String value;
-
-  const PullRequestRequestedReviewersItem3Variant1ParentPrivacy._(this.value);
-
-  factory PullRequestRequestedReviewersItem3Variant1ParentPrivacy.fromJson(
-          String value) =>
-      PullRequestRequestedReviewersItem3Variant1ParentPrivacy._(value);
-
-  static const open =
-      PullRequestRequestedReviewersItem3Variant1ParentPrivacy._('open');
-  static const closed =
-      PullRequestRequestedReviewersItem3Variant1ParentPrivacy._('closed');
-  static const secret =
-      PullRequestRequestedReviewersItem3Variant1ParentPrivacy._('secret');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is PullRequestRequestedReviewersItem3Variant1ParentPrivacy &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-final class PullRequestRequestedReviewersItem3Variant1Privacy {
-  final String value;
-
-  const PullRequestRequestedReviewersItem3Variant1Privacy._(this.value);
-
-  factory PullRequestRequestedReviewersItem3Variant1Privacy.fromJson(
-          String value) =>
-      PullRequestRequestedReviewersItem3Variant1Privacy._(value);
-
-  static const open =
-      PullRequestRequestedReviewersItem3Variant1Privacy._('open');
-  static const closed =
-      PullRequestRequestedReviewersItem3Variant1Privacy._('closed');
-  static const secret =
-      PullRequestRequestedReviewersItem3Variant1Privacy._('secret');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is PullRequestRequestedReviewersItem3Variant1Privacy &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-final class PullRequestRequestedReviewersItem4Variant0Type {
-  final String value;
-
-  const PullRequestRequestedReviewersItem4Variant0Type._(this.value);
-
-  factory PullRequestRequestedReviewersItem4Variant0Type.fromJson(
-          String value) =>
-      PullRequestRequestedReviewersItem4Variant0Type._(value);
-
-  static const bot = PullRequestRequestedReviewersItem4Variant0Type._('Bot');
-  static const user = PullRequestRequestedReviewersItem4Variant0Type._('User');
-  static const organization =
-      PullRequestRequestedReviewersItem4Variant0Type._('Organization');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is PullRequestRequestedReviewersItem4Variant0Type &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-final class PullRequestRequestedReviewersItem4Variant1ParentPrivacy {
-  final String value;
-
-  const PullRequestRequestedReviewersItem4Variant1ParentPrivacy._(this.value);
-
-  factory PullRequestRequestedReviewersItem4Variant1ParentPrivacy.fromJson(
-          String value) =>
-      PullRequestRequestedReviewersItem4Variant1ParentPrivacy._(value);
-
-  static const open =
-      PullRequestRequestedReviewersItem4Variant1ParentPrivacy._('open');
-  static const closed =
-      PullRequestRequestedReviewersItem4Variant1ParentPrivacy._('closed');
-  static const secret =
-      PullRequestRequestedReviewersItem4Variant1ParentPrivacy._('secret');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is PullRequestRequestedReviewersItem4Variant1ParentPrivacy &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-final class PullRequestRequestedReviewersItem4Variant1Privacy {
-  final String value;
-
-  const PullRequestRequestedReviewersItem4Variant1Privacy._(this.value);
-
-  factory PullRequestRequestedReviewersItem4Variant1Privacy.fromJson(
-          String value) =>
-      PullRequestRequestedReviewersItem4Variant1Privacy._(value);
-
-  static const open =
-      PullRequestRequestedReviewersItem4Variant1Privacy._('open');
-  static const closed =
-      PullRequestRequestedReviewersItem4Variant1Privacy._('closed');
-  static const secret =
-      PullRequestRequestedReviewersItem4Variant1Privacy._('secret');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is PullRequestRequestedReviewersItem4Variant1Privacy &&
+      other is PullRequestMergeAsyncResultDetailsVariant0MergeMethod &&
       other.value == value;
 
   @override
@@ -373,6 +140,198 @@ final class PullRequestReviewCommentStartSide {
   @override
   bool operator ==(Object other) =>
       other is PullRequestReviewCommentStartSide && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The level at which the comment is targeted, can be a diff line or a file.
+final class PullRequestReviewCommentSubjectType {
+  final String value;
+
+  const PullRequestReviewCommentSubjectType._(this.value);
+
+  factory PullRequestReviewCommentSubjectType.fromJson(String value) =>
+      PullRequestReviewCommentSubjectType._(value);
+
+  static const line = PullRequestReviewCommentSubjectType._('line');
+  static const file = PullRequestReviewCommentSubjectType._('file');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is PullRequestReviewCommentSubjectType && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Optional enumerated value serialized in the `type` wire field.
+final class PullRequestReviewCommentEventCommentUserType {
+  final String value;
+
+  const PullRequestReviewCommentEventCommentUserType._(this.value);
+
+  factory PullRequestReviewCommentEventCommentUserType.fromJson(String value) =>
+      PullRequestReviewCommentEventCommentUserType._(value);
+
+  static const bot = PullRequestReviewCommentEventCommentUserType._('Bot');
+  static const user = PullRequestReviewCommentEventCommentUserType._('User');
+  static const organization =
+      PullRequestReviewCommentEventCommentUserType._('Organization');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is PullRequestReviewCommentEventCommentUserType &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Required enumerated value serialized in the `state` wire field.
+final class PullRequestStackMinimalPullRequestsItemState {
+  final String value;
+
+  const PullRequestStackMinimalPullRequestsItemState._(this.value);
+
+  factory PullRequestStackMinimalPullRequestsItemState.fromJson(String value) =>
+      PullRequestStackMinimalPullRequestsItemState._(value);
+
+  static const open = PullRequestStackMinimalPullRequestsItemState._('open');
+  static const closed =
+      PullRequestStackMinimalPullRequestsItemState._('closed');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is PullRequestStackMinimalPullRequestsItemState &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+final class PullRequestStackPullRequestVariant1State {
+  final String value;
+
+  const PullRequestStackPullRequestVariant1State._(this.value);
+
+  factory PullRequestStackPullRequestVariant1State.fromJson(String value) =>
+      PullRequestStackPullRequestVariant1State._(value);
+
+  static const open = PullRequestStackPullRequestVariant1State._('open');
+  static const closed = PullRequestStackPullRequestVariant1State._('closed');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is PullRequestStackPullRequestVariant1State && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The default value for a merge commit message. - `PR_TITLE` - default to the pull request's title. - `PR_BODY` - default to the pull request's body. - `BLANK` - default to a blank commit message.
+final class PullRequestWebhookVariant1MergeCommitMessage {
+  final String value;
+
+  const PullRequestWebhookVariant1MergeCommitMessage._(this.value);
+
+  factory PullRequestWebhookVariant1MergeCommitMessage.fromJson(String value) =>
+      PullRequestWebhookVariant1MergeCommitMessage._(value);
+
+  static const prBody =
+      PullRequestWebhookVariant1MergeCommitMessage._('PR_BODY');
+  static const prTitle =
+      PullRequestWebhookVariant1MergeCommitMessage._('PR_TITLE');
+  static const blank = PullRequestWebhookVariant1MergeCommitMessage._('BLANK');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is PullRequestWebhookVariant1MergeCommitMessage &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The default value for a merge commit title. - `PR_TITLE` - default to the pull request's title. - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., "Merge pull request #123 from branch-name").
+final class PullRequestWebhookVariant1MergeCommitTitle {
+  final String value;
+
+  const PullRequestWebhookVariant1MergeCommitTitle._(this.value);
+
+  factory PullRequestWebhookVariant1MergeCommitTitle.fromJson(String value) =>
+      PullRequestWebhookVariant1MergeCommitTitle._(value);
+
+  static const prTitle =
+      PullRequestWebhookVariant1MergeCommitTitle._('PR_TITLE');
+  static const mergeMessage =
+      PullRequestWebhookVariant1MergeCommitTitle._('MERGE_MESSAGE');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is PullRequestWebhookVariant1MergeCommitTitle &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The default value for a squash merge commit message: - `PR_BODY` - default to the pull request's body. - `COMMIT_MESSAGES` - default to the branch's commit messages. - `BLANK` - default to a blank commit message.
+final class PullRequestWebhookVariant1SquashMergeCommitMessage {
+  final String value;
+
+  const PullRequestWebhookVariant1SquashMergeCommitMessage._(this.value);
+
+  factory PullRequestWebhookVariant1SquashMergeCommitMessage.fromJson(
+          String value) =>
+      PullRequestWebhookVariant1SquashMergeCommitMessage._(value);
+
+  static const prBody =
+      PullRequestWebhookVariant1SquashMergeCommitMessage._('PR_BODY');
+  static const commitMessages =
+      PullRequestWebhookVariant1SquashMergeCommitMessage._('COMMIT_MESSAGES');
+  static const blank =
+      PullRequestWebhookVariant1SquashMergeCommitMessage._('BLANK');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is PullRequestWebhookVariant1SquashMergeCommitMessage &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;

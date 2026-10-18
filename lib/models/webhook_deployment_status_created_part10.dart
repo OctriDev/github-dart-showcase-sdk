@@ -4,445 +4,409 @@
 part of 'webhook_deployment_status_created.dart';
 
 // webhook_deployment_status_created domain models (part 10)
-/// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-class WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubApp {
+/// Required object value serialized in the `actor` wire field.
+class WebhookDeploymentStatusCreatedWorkflowRunActor {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Required `date-time`-formatted value serialized in the `created_at` wire field.
-  final String? createdAt;
+  /// Optional `uri`-formatted value serialized in the `avatar_url` wire field.
+  final SdkOptional<String> avatarUrl;
 
-  /// Required `string` value serialized in the `description` wire field.
-  final String? description;
+  /// Optional `boolean` value serialized in the `deleted` wire field.
+  final SdkOptional<bool> deleted;
 
-  /// The list of events for the GitHub app
-  final SdkOptional<
-          List<
-              WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEventsItem>>
-      events;
+  /// Optional `string` value serialized in the `email` wire field.
+  final SdkOptional<String?> email;
 
-  /// Required `uri`-formatted value serialized in the `external_url` wire field.
-  final String? externalUrl;
+  /// Optional `uri-template`-formatted value serialized in the `events_url` wire field.
+  final SdkOptional<String> eventsUrl;
 
-  /// Required `uri`-formatted value serialized in the `html_url` wire field.
-  final String htmlUrl;
+  /// Optional `uri`-formatted value serialized in the `followers_url` wire field.
+  final SdkOptional<String> followersUrl;
 
-  /// Unique identifier of the GitHub app
-  final int? id;
+  /// Optional `uri-template`-formatted value serialized in the `following_url` wire field.
+  final SdkOptional<String> followingUrl;
 
-  /// The name of the GitHub app
-  final String name;
+  /// Optional `uri-template`-formatted value serialized in the `gists_url` wire field.
+  final SdkOptional<String> gistsUrl;
 
-  /// Required `string` value serialized in the `node_id` wire field.
-  final String nodeId;
+  /// Optional `string` value serialized in the `gravatar_id` wire field.
+  final SdkOptional<String> gravatarId;
 
-  /// Required object value serialized in the `owner` wire field.
-  final WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppOwner?
-      owner;
-
-  /// The set of permissions for the GitHub app
-  final SdkOptional<
-          WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppPermissions>
-      permissions;
-
-  /// The slug name of the GitHub app
-  final SdkOptional<String> slug;
-
-  /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
-  final String? updatedAt;
-
-  const WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubApp(
-      {required this.createdAt,
-      required this.description,
-      this.events = const SdkOmitted(),
-      required this.externalUrl,
-      required this.htmlUrl,
-      required this.id,
-      required this.name,
-      required this.nodeId,
-      required this.owner,
-      this.permissions = const SdkOmitted(),
-      this.slug = const SdkOmitted(),
-      required this.updatedAt});
-
-  WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubApp Function(
-      {String? createdAt,
-      String? description,
-      SdkOptional<
-              List<
-                  WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEventsItem>>
-          events,
-      String? externalUrl,
-      String htmlUrl,
-      int? id,
-      String name,
-      String nodeId,
-      WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppOwner?
-          owner,
-      SdkOptional<
-              WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppPermissions>
-          permissions,
-      SdkOptional<String> slug,
-      String? updatedAt}) get copyWith => _copyWith;
-
-  WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubApp _copyWith(
-          {Object? createdAt = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? events = sdkOmittedValue,
-          Object? externalUrl = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? owner = sdkOmittedValue,
-          Object? permissions = sdkOmittedValue,
-          Object? slug = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue}) =>
-      WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubApp(
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String?,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as String?,
-        events: identical(events, sdkOmittedValue)
-            ? this.events
-            : events as SdkOptional<
-                List<
-                    WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEventsItem>>,
-        externalUrl: identical(externalUrl, sdkOmittedValue)
-            ? this.externalUrl
-            : externalUrl as String?,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as String,
-        id: identical(id, sdkOmittedValue) ? this.id : id as int?,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        owner: identical(owner, sdkOmittedValue)
-            ? this.owner
-            : owner
-                as WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppOwner?,
-        permissions: identical(permissions, sdkOmittedValue)
-            ? this.permissions
-            : permissions as SdkOptional<
-                WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppPermissions>,
-        slug: identical(slug, sdkOmittedValue)
-            ? this.slug
-            : slug as SdkOptional<String>,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String?,
-      );
-
-  factory WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubApp.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubApp(
-        createdAt: json.containsKey('created_at')
-            ? json['created_at'] as String?
-            : throw ArgumentError.value(
-                null, 'created_at', 'Required property is missing'),
-        description: json.containsKey('description')
-            ? json['description'] as String?
-            : throw ArgumentError.value(
-                null, 'description', 'Required property is missing'),
-        events: json['events'] != null
-            ? SdkPresent(((json['events'] as List?)
-                ?.map((e) =>
-                    WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEventsItem
-                        .fromJson(e as String))
-                .toList())!)
-            : const SdkOmitted(),
-        externalUrl: json.containsKey('external_url')
-            ? json['external_url'] as String?
-            : throw ArgumentError.value(
-                null, 'external_url', 'Required property is missing'),
-        htmlUrl: (json['html_url'] as String?)!,
-        id: json.containsKey('id')
-            ? (json['id'] as num?)?.toInt()
-            : throw ArgumentError.value(
-                null, 'id', 'Required property is missing'),
-        name: (json['name'] as String?)!,
-        nodeId: (json['node_id'] as String?)!,
-        owner: json.containsKey('owner')
-            ? json['owner'] != null
-                ? WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppOwner
-                    .fromJson(json['owner'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'owner', 'Required property is missing'),
-        permissions: json['permissions'] != null
-            ? SdkPresent((json['permissions'] != null
-                ? WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppPermissions
-                    .fromJson(json['permissions'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        slug: json['slug'] != null
-            ? SdkPresent((json['slug'] as String?)!)
-            : const SdkOmitted(),
-        updatedAt: json.containsKey('updated_at')
-            ? json['updated_at'] as String?
-            : throw ArgumentError.value(
-                null, 'updated_at', 'Required property is missing'),
-      );
-
-  Map<String, dynamic> toJson() => {
-        'created_at': createdAt,
-        'description': description,
-        ...switch (events) {
-          SdkPresent<
-                List<
-                    WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppEventsItem>>(
-            value: final value
-          ) =>
-            {
-              'events': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'external_url': externalUrl,
-        'html_url': htmlUrl,
-        'id': id,
-        'name': name,
-        'node_id': nodeId,
-        'owner': owner?.toJson(),
-        ...switch (permissions) {
-          SdkPresent<
-                WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubAppPermissions>(
-            value: final value
-          ) =>
-            {
-              'permissions': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (slug) {
-          SdkPresent<String>(value: final value) => {
-              'slug': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'updated_at': updatedAt,
-      };
-}
-
-/// The [deployment status](https://docs.github.com/rest/deployments/statuses#list-deployment-statuses).
-class WebhookDeploymentStatusCreatedDeploymentStatus {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Required `string` value serialized in the `created_at` wire field.
-  final String createdAt;
-
-  /// Required object value serialized in the `creator` wire field.
-  final WebhookDeploymentStatusCreatedDeploymentStatusCreator? creator;
-
-  /// Required `uri`-formatted value serialized in the `deployment_url` wire field.
-  final String deploymentUrl;
-
-  /// The optional human-readable description added to the status.
-  final String description;
-
-  /// Required `string` value serialized in the `environment` wire field.
-  final String environment;
-
-  /// Optional `uri`-formatted value serialized in the `environment_url` wire field.
-  final SdkOptional<String> environmentUrl;
+  /// Optional `uri`-formatted value serialized in the `html_url` wire field.
+  final SdkOptional<String> htmlUrl;
 
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
 
-  /// Optional `uri`-formatted value serialized in the `log_url` wire field.
-  final SdkOptional<String> logUrl;
+  /// Required `string` value serialized in the `login` wire field.
+  final String login;
 
-  /// Required `string` value serialized in the `node_id` wire field.
-  final String nodeId;
+  /// Optional `string` value serialized in the `name` wire field.
+  final SdkOptional<String> name;
 
-  /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-  final SdkOptional<
-          WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubApp?>
-      performedViaGithubApp;
+  /// Optional `string` value serialized in the `node_id` wire field.
+  final SdkOptional<String> nodeId;
 
-  /// Required `uri`-formatted value serialized in the `repository_url` wire field.
-  final String repositoryUrl;
+  /// Optional `uri`-formatted value serialized in the `organizations_url` wire field.
+  final SdkOptional<String> organizationsUrl;
 
-  /// The new state. Can be `pending`, `success`, `failure`, or `error`.
-  final String state;
+  /// Optional `uri`-formatted value serialized in the `received_events_url` wire field.
+  final SdkOptional<String> receivedEventsUrl;
 
-  /// The optional link added to the status.
-  final String targetUrl;
+  /// Optional `uri`-formatted value serialized in the `repos_url` wire field.
+  final SdkOptional<String> reposUrl;
 
-  /// Required `string` value serialized in the `updated_at` wire field.
-  final String updatedAt;
+  /// Optional `boolean` value serialized in the `site_admin` wire field.
+  final SdkOptional<bool> siteAdmin;
 
-  /// Required `uri`-formatted value serialized in the `url` wire field.
-  final String url;
+  /// Optional `uri-template`-formatted value serialized in the `starred_url` wire field.
+  final SdkOptional<String> starredUrl;
 
-  const WebhookDeploymentStatusCreatedDeploymentStatus(
-      {required this.createdAt,
-      required this.creator,
-      required this.deploymentUrl,
-      required this.description,
-      required this.environment,
-      this.environmentUrl = const SdkOmitted(),
+  /// Optional `uri`-formatted value serialized in the `subscriptions_url` wire field.
+  final SdkOptional<String> subscriptionsUrl;
+
+  /// Optional enumerated value serialized in the `type` wire field.
+  final SdkOptional<WebhookDeploymentStatusCreatedWorkflowRunActorType> type_;
+
+  /// Optional `uri`-formatted value serialized in the `url` wire field.
+  final SdkOptional<String> url;
+
+  /// Optional `string` value serialized in the `user_view_type` wire field.
+  final SdkOptional<String> userViewType;
+
+  const WebhookDeploymentStatusCreatedWorkflowRunActor(
+      {this.avatarUrl = const SdkOmitted(),
+      this.deleted = const SdkOmitted(),
+      this.email = const SdkOmitted(),
+      this.eventsUrl = const SdkOmitted(),
+      this.followersUrl = const SdkOmitted(),
+      this.followingUrl = const SdkOmitted(),
+      this.gistsUrl = const SdkOmitted(),
+      this.gravatarId = const SdkOmitted(),
+      this.htmlUrl = const SdkOmitted(),
       required this.id,
-      this.logUrl = const SdkOmitted(),
-      required this.nodeId,
-      this.performedViaGithubApp = const SdkOmitted(),
-      required this.repositoryUrl,
-      required this.state,
-      required this.targetUrl,
-      required this.updatedAt,
-      required this.url});
+      required this.login,
+      this.name = const SdkOmitted(),
+      this.nodeId = const SdkOmitted(),
+      this.organizationsUrl = const SdkOmitted(),
+      this.receivedEventsUrl = const SdkOmitted(),
+      this.reposUrl = const SdkOmitted(),
+      this.siteAdmin = const SdkOmitted(),
+      this.starredUrl = const SdkOmitted(),
+      this.subscriptionsUrl = const SdkOmitted(),
+      this.type_ = const SdkOmitted(),
+      this.url = const SdkOmitted(),
+      this.userViewType = const SdkOmitted()});
 
-  WebhookDeploymentStatusCreatedDeploymentStatus Function(
-      {String createdAt,
-      WebhookDeploymentStatusCreatedDeploymentStatusCreator? creator,
-      String deploymentUrl,
-      String description,
-      String environment,
-      SdkOptional<String> environmentUrl,
+  WebhookDeploymentStatusCreatedWorkflowRunActor Function(
+      {SdkOptional<String> avatarUrl,
+      SdkOptional<bool> deleted,
+      SdkOptional<String?> email,
+      SdkOptional<String> eventsUrl,
+      SdkOptional<String> followersUrl,
+      SdkOptional<String> followingUrl,
+      SdkOptional<String> gistsUrl,
+      SdkOptional<String> gravatarId,
+      SdkOptional<String> htmlUrl,
       int id,
-      SdkOptional<String> logUrl,
-      String nodeId,
-      SdkOptional<
-              WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubApp?>
-          performedViaGithubApp,
-      String repositoryUrl,
-      String state,
-      String targetUrl,
-      String updatedAt,
-      String url}) get copyWith => _copyWith;
+      String login,
+      SdkOptional<String> name,
+      SdkOptional<String> nodeId,
+      SdkOptional<String> organizationsUrl,
+      SdkOptional<String> receivedEventsUrl,
+      SdkOptional<String> reposUrl,
+      SdkOptional<bool> siteAdmin,
+      SdkOptional<String> starredUrl,
+      SdkOptional<String> subscriptionsUrl,
+      SdkOptional<WebhookDeploymentStatusCreatedWorkflowRunActorType> type_,
+      SdkOptional<String> url,
+      SdkOptional<String> userViewType}) get copyWith => _copyWith;
 
-  WebhookDeploymentStatusCreatedDeploymentStatus _copyWith(
-          {Object? createdAt = sdkOmittedValue,
-          Object? creator = sdkOmittedValue,
-          Object? deploymentUrl = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? environment = sdkOmittedValue,
-          Object? environmentUrl = sdkOmittedValue,
+  WebhookDeploymentStatusCreatedWorkflowRunActor _copyWith(
+          {Object? avatarUrl = sdkOmittedValue,
+          Object? deleted = sdkOmittedValue,
+          Object? email = sdkOmittedValue,
+          Object? eventsUrl = sdkOmittedValue,
+          Object? followersUrl = sdkOmittedValue,
+          Object? followingUrl = sdkOmittedValue,
+          Object? gistsUrl = sdkOmittedValue,
+          Object? gravatarId = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
           Object? id = sdkOmittedValue,
-          Object? logUrl = sdkOmittedValue,
+          Object? login = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
           Object? nodeId = sdkOmittedValue,
-          Object? performedViaGithubApp = sdkOmittedValue,
-          Object? repositoryUrl = sdkOmittedValue,
-          Object? state = sdkOmittedValue,
-          Object? targetUrl = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue,
-          Object? url = sdkOmittedValue}) =>
-      WebhookDeploymentStatusCreatedDeploymentStatus(
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        creator: identical(creator, sdkOmittedValue)
-            ? this.creator
-            : creator as WebhookDeploymentStatusCreatedDeploymentStatusCreator?,
-        deploymentUrl: identical(deploymentUrl, sdkOmittedValue)
-            ? this.deploymentUrl
-            : deploymentUrl as String,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as String,
-        environment: identical(environment, sdkOmittedValue)
-            ? this.environment
-            : environment as String,
-        environmentUrl: identical(environmentUrl, sdkOmittedValue)
-            ? this.environmentUrl
-            : environmentUrl as SdkOptional<String>,
+          Object? organizationsUrl = sdkOmittedValue,
+          Object? receivedEventsUrl = sdkOmittedValue,
+          Object? reposUrl = sdkOmittedValue,
+          Object? siteAdmin = sdkOmittedValue,
+          Object? starredUrl = sdkOmittedValue,
+          Object? subscriptionsUrl = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? userViewType = sdkOmittedValue}) =>
+      WebhookDeploymentStatusCreatedWorkflowRunActor(
+        avatarUrl: identical(avatarUrl, sdkOmittedValue)
+            ? this.avatarUrl
+            : avatarUrl as SdkOptional<String>,
+        deleted: identical(deleted, sdkOmittedValue)
+            ? this.deleted
+            : deleted as SdkOptional<bool>,
+        email: identical(email, sdkOmittedValue)
+            ? this.email
+            : email as SdkOptional<String?>,
+        eventsUrl: identical(eventsUrl, sdkOmittedValue)
+            ? this.eventsUrl
+            : eventsUrl as SdkOptional<String>,
+        followersUrl: identical(followersUrl, sdkOmittedValue)
+            ? this.followersUrl
+            : followersUrl as SdkOptional<String>,
+        followingUrl: identical(followingUrl, sdkOmittedValue)
+            ? this.followingUrl
+            : followingUrl as SdkOptional<String>,
+        gistsUrl: identical(gistsUrl, sdkOmittedValue)
+            ? this.gistsUrl
+            : gistsUrl as SdkOptional<String>,
+        gravatarId: identical(gravatarId, sdkOmittedValue)
+            ? this.gravatarId
+            : gravatarId as SdkOptional<String>,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as SdkOptional<String>,
         id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        logUrl: identical(logUrl, sdkOmittedValue)
-            ? this.logUrl
-            : logUrl as SdkOptional<String>,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        performedViaGithubApp: identical(performedViaGithubApp, sdkOmittedValue)
-            ? this.performedViaGithubApp
-            : performedViaGithubApp as SdkOptional<
-                WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubApp?>,
-        repositoryUrl: identical(repositoryUrl, sdkOmittedValue)
-            ? this.repositoryUrl
-            : repositoryUrl as String,
-        state: identical(state, sdkOmittedValue) ? this.state : state as String,
-        targetUrl: identical(targetUrl, sdkOmittedValue)
-            ? this.targetUrl
-            : targetUrl as String,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        login: identical(login, sdkOmittedValue) ? this.login : login as String,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        nodeId: identical(nodeId, sdkOmittedValue)
+            ? this.nodeId
+            : nodeId as SdkOptional<String>,
+        organizationsUrl: identical(organizationsUrl, sdkOmittedValue)
+            ? this.organizationsUrl
+            : organizationsUrl as SdkOptional<String>,
+        receivedEventsUrl: identical(receivedEventsUrl, sdkOmittedValue)
+            ? this.receivedEventsUrl
+            : receivedEventsUrl as SdkOptional<String>,
+        reposUrl: identical(reposUrl, sdkOmittedValue)
+            ? this.reposUrl
+            : reposUrl as SdkOptional<String>,
+        siteAdmin: identical(siteAdmin, sdkOmittedValue)
+            ? this.siteAdmin
+            : siteAdmin as SdkOptional<bool>,
+        starredUrl: identical(starredUrl, sdkOmittedValue)
+            ? this.starredUrl
+            : starredUrl as SdkOptional<String>,
+        subscriptionsUrl: identical(subscriptionsUrl, sdkOmittedValue)
+            ? this.subscriptionsUrl
+            : subscriptionsUrl as SdkOptional<String>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as SdkOptional<
+                WebhookDeploymentStatusCreatedWorkflowRunActorType>,
+        url: identical(url, sdkOmittedValue)
+            ? this.url
+            : url as SdkOptional<String>,
+        userViewType: identical(userViewType, sdkOmittedValue)
+            ? this.userViewType
+            : userViewType as SdkOptional<String>,
       );
 
-  factory WebhookDeploymentStatusCreatedDeploymentStatus.fromJson(
+  factory WebhookDeploymentStatusCreatedWorkflowRunActor.fromJson(
           Map<String, dynamic> json) =>
-      WebhookDeploymentStatusCreatedDeploymentStatus(
-        createdAt: (json['created_at'] as String?)!,
-        creator: json.containsKey('creator')
-            ? json['creator'] != null
-                ? WebhookDeploymentStatusCreatedDeploymentStatusCreator
-                    .fromJson(json['creator'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'creator', 'Required property is missing'),
-        deploymentUrl: (json['deployment_url'] as String?)!,
-        description: (json['description'] as String?)!,
-        environment: (json['environment'] as String?)!,
-        environmentUrl: json['environment_url'] != null
-            ? SdkPresent((json['environment_url'] as String?)!)
+      WebhookDeploymentStatusCreatedWorkflowRunActor(
+        avatarUrl: json['avatar_url'] != null
+            ? SdkPresent((json['avatar_url'] as String?)!)
+            : const SdkOmitted(),
+        deleted: json['deleted'] != null
+            ? SdkPresent((json['deleted'] as bool?)!)
+            : const SdkOmitted(),
+        email: json.containsKey('email')
+            ? SdkPresent(json['email'] as String?)
+            : const SdkOmitted(),
+        eventsUrl: json['events_url'] != null
+            ? SdkPresent((json['events_url'] as String?)!)
+            : const SdkOmitted(),
+        followersUrl: json['followers_url'] != null
+            ? SdkPresent((json['followers_url'] as String?)!)
+            : const SdkOmitted(),
+        followingUrl: json['following_url'] != null
+            ? SdkPresent((json['following_url'] as String?)!)
+            : const SdkOmitted(),
+        gistsUrl: json['gists_url'] != null
+            ? SdkPresent((json['gists_url'] as String?)!)
+            : const SdkOmitted(),
+        gravatarId: json['gravatar_id'] != null
+            ? SdkPresent((json['gravatar_id'] as String?)!)
+            : const SdkOmitted(),
+        htmlUrl: json['html_url'] != null
+            ? SdkPresent((json['html_url'] as String?)!)
             : const SdkOmitted(),
         id: ((json['id'] as num?)?.toInt())!,
-        logUrl: json['log_url'] != null
-            ? SdkPresent((json['log_url'] as String?)!)
+        login: (json['login'] as String?)!,
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
             : const SdkOmitted(),
-        nodeId: (json['node_id'] as String?)!,
-        performedViaGithubApp: json.containsKey('performed_via_github_app')
-            ? SdkPresent(json['performed_via_github_app'] != null
-                ? WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubApp
-                    .fromJson(json['performed_via_github_app']
-                        as Map<String, dynamic>)
-                : null)
+        nodeId: json['node_id'] != null
+            ? SdkPresent((json['node_id'] as String?)!)
             : const SdkOmitted(),
-        repositoryUrl: (json['repository_url'] as String?)!,
-        state: (json['state'] as String?)!,
-        targetUrl: (json['target_url'] as String?)!,
-        updatedAt: (json['updated_at'] as String?)!,
-        url: (json['url'] as String?)!,
+        organizationsUrl: json['organizations_url'] != null
+            ? SdkPresent((json['organizations_url'] as String?)!)
+            : const SdkOmitted(),
+        receivedEventsUrl: json['received_events_url'] != null
+            ? SdkPresent((json['received_events_url'] as String?)!)
+            : const SdkOmitted(),
+        reposUrl: json['repos_url'] != null
+            ? SdkPresent((json['repos_url'] as String?)!)
+            : const SdkOmitted(),
+        siteAdmin: json['site_admin'] != null
+            ? SdkPresent((json['site_admin'] as bool?)!)
+            : const SdkOmitted(),
+        starredUrl: json['starred_url'] != null
+            ? SdkPresent((json['starred_url'] as String?)!)
+            : const SdkOmitted(),
+        subscriptionsUrl: json['subscriptions_url'] != null
+            ? SdkPresent((json['subscriptions_url'] as String?)!)
+            : const SdkOmitted(),
+        type_: json['type'] != null
+            ? SdkPresent((json['type'] != null
+                ? WebhookDeploymentStatusCreatedWorkflowRunActorType.fromJson(
+                    json['type'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        url: json['url'] != null
+            ? SdkPresent((json['url'] as String?)!)
+            : const SdkOmitted(),
+        userViewType: json['user_view_type'] != null
+            ? SdkPresent((json['user_view_type'] as String?)!)
+            : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        'created_at': createdAt,
-        'creator': creator?.toJson(),
-        'deployment_url': deploymentUrl,
-        'description': description,
-        'environment': environment,
-        ...switch (environmentUrl) {
+        ...switch (avatarUrl) {
           SdkPresent<String>(value: final value) => {
-              'environment_url': value,
+              'avatar_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (deleted) {
+          SdkPresent<bool>(value: final value) => {
+              'deleted': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (email) {
+          SdkPresent<String?>(value: final value) => {
+              'email': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (eventsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'events_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (followersUrl) {
+          SdkPresent<String>(value: final value) => {
+              'followers_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (followingUrl) {
+          SdkPresent<String>(value: final value) => {
+              'following_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (gistsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'gists_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (gravatarId) {
+          SdkPresent<String>(value: final value) => {
+              'gravatar_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (htmlUrl) {
+          SdkPresent<String>(value: final value) => {
+              'html_url': value,
             },
           _ => const <String, dynamic>{},
         },
         'id': id,
-        ...switch (logUrl) {
+        'login': login,
+        ...switch (name) {
           SdkPresent<String>(value: final value) => {
-              'log_url': value,
+              'name': value,
             },
           _ => const <String, dynamic>{},
         },
-        'node_id': nodeId,
-        ...switch (performedViaGithubApp) {
-          SdkPresent<
-                WebhookDeploymentStatusCreatedDeploymentStatusPerformedViaGithubApp?>(
+        ...switch (nodeId) {
+          SdkPresent<String>(value: final value) => {
+              'node_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (organizationsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'organizations_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (receivedEventsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'received_events_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (reposUrl) {
+          SdkPresent<String>(value: final value) => {
+              'repos_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (siteAdmin) {
+          SdkPresent<bool>(value: final value) => {
+              'site_admin': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (starredUrl) {
+          SdkPresent<String>(value: final value) => {
+              'starred_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (subscriptionsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'subscriptions_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (type_) {
+          SdkPresent<WebhookDeploymentStatusCreatedWorkflowRunActorType>(
             value: final value
           ) =>
             {
-              'performed_via_github_app': value?.toJson(),
+              'type': value.toJson(),
             },
           _ => const <String, dynamic>{},
         },
-        'repository_url': repositoryUrl,
-        'state': state,
-        'target_url': targetUrl,
-        'updated_at': updatedAt,
-        'url': url,
+        ...switch (url) {
+          SdkPresent<String>(value: final value) => {
+              'url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (userViewType) {
+          SdkPresent<String>(value: final value) => {
+              'user_view_type': value,
+            },
+          _ => const <String, dynamic>{},
+        },
       };
 }

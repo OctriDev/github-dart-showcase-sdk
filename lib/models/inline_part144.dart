@@ -4,16 +4,24 @@
 part of 'inline.dart';
 
 // Inline operation models (part 144)
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookProjectClosedAction {
+/// The default value for a merge commit title. - `PR_TITLE` - default to the pull request's title. - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
+final class WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoMergeCommitTitle {
   final String value;
 
-  const WebhookProjectClosedAction._(this.value);
+  const WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoMergeCommitTitle._(
+      this.value);
 
-  factory WebhookProjectClosedAction.fromJson(String value) =>
-      WebhookProjectClosedAction._(value);
+  factory WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoMergeCommitTitle.fromJson(
+          String value) =>
+      WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoMergeCommitTitle
+          ._(value);
 
-  static const closed = WebhookProjectClosedAction._('closed');
+  static const prTitle =
+      WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoMergeCommitTitle
+          ._('PR_TITLE');
+  static const mergeMessage =
+      WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoMergeCommitTitle
+          ._('MERGE_MESSAGE');
 
   String toJson() => value;
 
@@ -22,22 +30,35 @@ final class WebhookProjectClosedAction {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookProjectClosedAction && other.value == value;
+      other
+          is WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoMergeCommitTitle &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookProjectColumnCreatedAction {
+/// Optional enumerated value serialized in the `type` wire field.
+final class WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoOwnerType {
   final String value;
 
-  const WebhookProjectColumnCreatedAction._(this.value);
+  const WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoOwnerType._(
+      this.value);
 
-  factory WebhookProjectColumnCreatedAction.fromJson(String value) =>
-      WebhookProjectColumnCreatedAction._(value);
+  factory WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoOwnerType.fromJson(
+          String value) =>
+      WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoOwnerType._(
+          value);
 
-  static const created = WebhookProjectColumnCreatedAction._('created');
+  static const bot =
+      WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoOwnerType._(
+          'Bot');
+  static const user =
+      WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoOwnerType._(
+          'User');
+  static const organization =
+      WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoOwnerType._(
+          'Organization');
 
   String toJson() => value;
 
@@ -46,22 +67,32 @@ final class WebhookProjectColumnCreatedAction {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookProjectColumnCreatedAction && other.value == value;
+      other
+          is WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoOwnerType &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookProjectColumnDeletedAction {
+/// The policy controlling who can create pull requests: all or collaborators_only.
+final class WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoPullRequestCreationPolicy {
   final String value;
 
-  const WebhookProjectColumnDeletedAction._(this.value);
+  const WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoPullRequestCreationPolicy._(
+      this.value);
 
-  factory WebhookProjectColumnDeletedAction.fromJson(String value) =>
-      WebhookProjectColumnDeletedAction._(value);
+  factory WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoPullRequestCreationPolicy.fromJson(
+          String value) =>
+      WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoPullRequestCreationPolicy
+          ._(value);
 
-  static const deleted = WebhookProjectColumnDeletedAction._('deleted');
+  static const all =
+      WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoPullRequestCreationPolicy
+          ._('all');
+  static const collaboratorsOnly =
+      WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoPullRequestCreationPolicy
+          ._('collaborators_only');
 
   String toJson() => value;
 
@@ -70,22 +101,35 @@ final class WebhookProjectColumnDeletedAction {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookProjectColumnDeletedAction && other.value == value;
+      other
+          is WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoPullRequestCreationPolicy &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookProjectColumnEditedAction {
+/// The default value for a squash merge commit message: - `PR_BODY` - default to the pull request's body. - `COMMIT_MESSAGES` - default to the branch's commit messages. - `BLANK` - default to a blank commit message.
+final class WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoSquashMergeCommitMessage {
   final String value;
 
-  const WebhookProjectColumnEditedAction._(this.value);
+  const WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoSquashMergeCommitMessage._(
+      this.value);
 
-  factory WebhookProjectColumnEditedAction.fromJson(String value) =>
-      WebhookProjectColumnEditedAction._(value);
+  factory WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoSquashMergeCommitMessage.fromJson(
+          String value) =>
+      WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoSquashMergeCommitMessage
+          ._(value);
 
-  static const edited = WebhookProjectColumnEditedAction._('edited');
+  static const prBody =
+      WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoSquashMergeCommitMessage
+          ._('PR_BODY');
+  static const commitMessages =
+      WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoSquashMergeCommitMessage
+          ._('COMMIT_MESSAGES');
+  static const blank =
+      WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoSquashMergeCommitMessage
+          ._('BLANK');
 
   String toJson() => value;
 
@@ -94,22 +138,32 @@ final class WebhookProjectColumnEditedAction {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookProjectColumnEditedAction && other.value == value;
+      other
+          is WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoSquashMergeCommitMessage &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookProjectColumnMovedAction {
+/// The default value for a squash merge commit title: - `PR_TITLE` - default to the pull request's title. - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
+final class WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoSquashMergeCommitTitle {
   final String value;
 
-  const WebhookProjectColumnMovedAction._(this.value);
+  const WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoSquashMergeCommitTitle._(
+      this.value);
 
-  factory WebhookProjectColumnMovedAction.fromJson(String value) =>
-      WebhookProjectColumnMovedAction._(value);
+  factory WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoSquashMergeCommitTitle.fromJson(
+          String value) =>
+      WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoSquashMergeCommitTitle
+          ._(value);
 
-  static const moved = WebhookProjectColumnMovedAction._('moved');
+  static const prTitle =
+      WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoSquashMergeCommitTitle
+          ._('PR_TITLE');
+  static const commitOrPrTitle =
+      WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoSquashMergeCommitTitle
+          ._('COMMIT_OR_PR_TITLE');
 
   String toJson() => value;
 
@@ -118,22 +172,35 @@ final class WebhookProjectColumnMovedAction {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookProjectColumnMovedAction && other.value == value;
+      other
+          is WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoSquashMergeCommitTitle &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookProjectCreatedAction {
+/// Required enumerated value serialized in the `visibility` wire field.
+final class WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoVisibility {
   final String value;
 
-  const WebhookProjectCreatedAction._(this.value);
+  const WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoVisibility._(
+      this.value);
 
-  factory WebhookProjectCreatedAction.fromJson(String value) =>
-      WebhookProjectCreatedAction._(value);
+  factory WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoVisibility.fromJson(
+          String value) =>
+      WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoVisibility._(
+          value);
 
-  static const created = WebhookProjectCreatedAction._('created');
+  static const public =
+      WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoVisibility._(
+          'public');
+  static const private =
+      WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoVisibility._(
+          'private');
+  static const internal =
+      WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoVisibility._(
+          'internal');
 
   String toJson() => value;
 
@@ -142,22 +209,32 @@ final class WebhookProjectCreatedAction {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookProjectCreatedAction && other.value == value;
+      other
+          is WebhookPullRequestReviewCommentCreatedPullRequestBaseRepoVisibility &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookProjectDeletedAction {
+/// Optional enumerated value serialized in the `type` wire field.
+final class WebhookPullRequestReviewCommentCreatedPullRequestBaseUserType {
   final String value;
 
-  const WebhookProjectDeletedAction._(this.value);
+  const WebhookPullRequestReviewCommentCreatedPullRequestBaseUserType._(
+      this.value);
 
-  factory WebhookProjectDeletedAction.fromJson(String value) =>
-      WebhookProjectDeletedAction._(value);
+  factory WebhookPullRequestReviewCommentCreatedPullRequestBaseUserType.fromJson(
+          String value) =>
+      WebhookPullRequestReviewCommentCreatedPullRequestBaseUserType._(value);
 
-  static const deleted = WebhookProjectDeletedAction._('deleted');
+  static const bot =
+      WebhookPullRequestReviewCommentCreatedPullRequestBaseUserType._('Bot');
+  static const user =
+      WebhookPullRequestReviewCommentCreatedPullRequestBaseUserType._('User');
+  static const organization =
+      WebhookPullRequestReviewCommentCreatedPullRequestBaseUserType._(
+          'Organization');
 
   String toJson() => value;
 
@@ -166,22 +243,34 @@ final class WebhookProjectDeletedAction {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookProjectDeletedAction && other.value == value;
+      other is WebhookPullRequestReviewCommentCreatedPullRequestBaseUserType &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookProjectEditedAction {
+/// The default value for a merge commit message. - `PR_TITLE` - default to the pull request's title. - `PR_BODY` - default to the pull request's body. - `BLANK` - default to a blank commit message.
+final class WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoMergeCommitMessage {
   final String value;
 
-  const WebhookProjectEditedAction._(this.value);
+  const WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoMergeCommitMessage._(
+      this.value);
 
-  factory WebhookProjectEditedAction.fromJson(String value) =>
-      WebhookProjectEditedAction._(value);
+  factory WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoMergeCommitMessage.fromJson(
+          String value) =>
+      WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoMergeCommitMessage
+          ._(value);
 
-  static const edited = WebhookProjectEditedAction._('edited');
+  static const prBody =
+      WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoMergeCommitMessage
+          ._('PR_BODY');
+  static const prTitle =
+      WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoMergeCommitMessage
+          ._('PR_TITLE');
+  static const blank =
+      WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoMergeCommitMessage
+          ._('BLANK');
 
   String toJson() => value;
 
@@ -190,22 +279,32 @@ final class WebhookProjectEditedAction {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookProjectEditedAction && other.value == value;
+      other
+          is WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoMergeCommitMessage &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookProjectReopenedAction {
+/// The default value for a merge commit title. - `PR_TITLE` - default to the pull request's title. - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
+final class WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoMergeCommitTitle {
   final String value;
 
-  const WebhookProjectReopenedAction._(this.value);
+  const WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoMergeCommitTitle._(
+      this.value);
 
-  factory WebhookProjectReopenedAction.fromJson(String value) =>
-      WebhookProjectReopenedAction._(value);
+  factory WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoMergeCommitTitle.fromJson(
+          String value) =>
+      WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoMergeCommitTitle
+          ._(value);
 
-  static const reopened = WebhookProjectReopenedAction._('reopened');
+  static const prTitle =
+      WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoMergeCommitTitle
+          ._('PR_TITLE');
+  static const mergeMessage =
+      WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoMergeCommitTitle
+          ._('MERGE_MESSAGE');
 
   String toJson() => value;
 
@@ -214,22 +313,35 @@ final class WebhookProjectReopenedAction {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookProjectReopenedAction && other.value == value;
+      other
+          is WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoMergeCommitTitle &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookProjectsV2ItemArchivedAction {
+/// Optional enumerated value serialized in the `type` wire field.
+final class WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoOwnerType {
   final String value;
 
-  const WebhookProjectsV2ItemArchivedAction._(this.value);
+  const WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoOwnerType._(
+      this.value);
 
-  factory WebhookProjectsV2ItemArchivedAction.fromJson(String value) =>
-      WebhookProjectsV2ItemArchivedAction._(value);
+  factory WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoOwnerType.fromJson(
+          String value) =>
+      WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoOwnerType._(
+          value);
 
-  static const archived = WebhookProjectsV2ItemArchivedAction._('archived');
+  static const bot =
+      WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoOwnerType._(
+          'Bot');
+  static const user =
+      WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoOwnerType._(
+          'User');
+  static const organization =
+      WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoOwnerType._(
+          'Organization');
 
   String toJson() => value;
 
@@ -238,22 +350,32 @@ final class WebhookProjectsV2ItemArchivedAction {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookProjectsV2ItemArchivedAction && other.value == value;
+      other
+          is WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoOwnerType &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookProjectsV2ItemConvertedAction {
+/// The policy controlling who can create pull requests: all or collaborators_only.
+final class WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoPullRequestCreationPolicy {
   final String value;
 
-  const WebhookProjectsV2ItemConvertedAction._(this.value);
+  const WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoPullRequestCreationPolicy._(
+      this.value);
 
-  factory WebhookProjectsV2ItemConvertedAction.fromJson(String value) =>
-      WebhookProjectsV2ItemConvertedAction._(value);
+  factory WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoPullRequestCreationPolicy.fromJson(
+          String value) =>
+      WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoPullRequestCreationPolicy
+          ._(value);
 
-  static const converted = WebhookProjectsV2ItemConvertedAction._('converted');
+  static const all =
+      WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoPullRequestCreationPolicy
+          ._('all');
+  static const collaboratorsOnly =
+      WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoPullRequestCreationPolicy
+          ._('collaborators_only');
 
   String toJson() => value;
 
@@ -262,22 +384,35 @@ final class WebhookProjectsV2ItemConvertedAction {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookProjectsV2ItemConvertedAction && other.value == value;
+      other
+          is WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoPullRequestCreationPolicy &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookProjectsV2ItemCreatedAction {
+/// The default value for a squash merge commit message: - `PR_BODY` - default to the pull request's body. - `COMMIT_MESSAGES` - default to the branch's commit messages. - `BLANK` - default to a blank commit message.
+final class WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoSquashMergeCommitMessage {
   final String value;
 
-  const WebhookProjectsV2ItemCreatedAction._(this.value);
+  const WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoSquashMergeCommitMessage._(
+      this.value);
 
-  factory WebhookProjectsV2ItemCreatedAction.fromJson(String value) =>
-      WebhookProjectsV2ItemCreatedAction._(value);
+  factory WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoSquashMergeCommitMessage.fromJson(
+          String value) =>
+      WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoSquashMergeCommitMessage
+          ._(value);
 
-  static const created = WebhookProjectsV2ItemCreatedAction._('created');
+  static const prBody =
+      WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoSquashMergeCommitMessage
+          ._('PR_BODY');
+  static const commitMessages =
+      WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoSquashMergeCommitMessage
+          ._('COMMIT_MESSAGES');
+  static const blank =
+      WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoSquashMergeCommitMessage
+          ._('BLANK');
 
   String toJson() => value;
 
@@ -286,31 +421,9 @@ final class WebhookProjectsV2ItemCreatedAction {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookProjectsV2ItemCreatedAction && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookProjectsV2ItemDeletedAction {
-  final String value;
-
-  const WebhookProjectsV2ItemDeletedAction._(this.value);
-
-  factory WebhookProjectsV2ItemDeletedAction.fromJson(String value) =>
-      WebhookProjectsV2ItemDeletedAction._(value);
-
-  static const deleted = WebhookProjectsV2ItemDeletedAction._('deleted');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookProjectsV2ItemDeletedAction && other.value == value;
+      other
+          is WebhookPullRequestReviewCommentCreatedPullRequestHeadRepoSquashMergeCommitMessage &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;

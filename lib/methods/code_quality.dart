@@ -65,7 +65,10 @@ Future<List<CodeQualityFinding>> codeQualityListFindingsForRepo(
           errors: {
             '403': (value) =>
                 BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
           }))
       .data;
 }
@@ -91,7 +94,9 @@ Future<CodeQualityFinding> codeQualityGetFinding(ClientConfig config,
           options: requestOptions,
           errors: {
         '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '503': (value) =>
+            ServiceUnavailable.fromJson(value as Map<String, dynamic>)
       }))
       .data;
 }
@@ -115,7 +120,9 @@ Future<CodeQualitySetup> codeQualityGetSetup(ClientConfig config,
           options: requestOptions,
           errors: {
         '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '503': (value) =>
+            ServiceUnavailable.fromJson(value as Map<String, dynamic>)
       }))
       .data;
 }
@@ -164,7 +171,10 @@ Future<Map<String, dynamic>> codeQualityUpdateSetup(ClientConfig config,
                 BasicError.fromJson(value as Map<String, dynamic>),
             '409': (value) =>
                 BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+            '422': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
           }))
       .data;
 }

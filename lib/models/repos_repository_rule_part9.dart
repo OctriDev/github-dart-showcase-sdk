@@ -9,6 +9,158 @@ sealed class RepositoryRuleDetailed {
   static const String constructionSurface = 'named';
   const RepositoryRuleDetailed();
   factory RepositoryRuleDetailed.fromJson(Object? json) {
+    if (json is Map<String, dynamic>) {
+      try {
+        final value = RepositoryRuleDetailedVariant0.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleDetailedRepositoryRuleDetailedVariant0(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleDetailedVariant1.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleDetailedRepositoryRuleDetailedVariant1(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleDetailedVariant2.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleDetailedRepositoryRuleDetailedVariant2(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleDetailedVariant3.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleDetailedRepositoryRuleDetailedVariant3(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleDetailedVariant4.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleDetailedRepositoryRuleDetailedVariant4(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleDetailedVariant5.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleDetailedRepositoryRuleDetailedVariant5(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleDetailedVariant6.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleDetailedRepositoryRuleDetailedVariant6(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleDetailedVariant7.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleDetailedRepositoryRuleDetailedVariant7(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleDetailedVariant8.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleDetailedRepositoryRuleDetailedVariant8(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleDetailedVariant9.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleDetailedRepositoryRuleDetailedVariant9(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleDetailedVariant10.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleDetailedRepositoryRuleDetailedVariant10(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleDetailedVariant11.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleDetailedRepositoryRuleDetailedVariant11(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleDetailedVariant12.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleDetailedRepositoryRuleDetailedVariant12(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleDetailedVariant13.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleDetailedRepositoryRuleDetailedVariant13(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleDetailedVariant14.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleDetailedRepositoryRuleDetailedVariant14(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleDetailedVariant15.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleDetailedRepositoryRuleDetailedVariant15(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleDetailedVariant16.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleDetailedRepositoryRuleDetailedVariant16(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleDetailedVariant17.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleDetailedRepositoryRuleDetailedVariant17(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleDetailedVariant18.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleDetailedRepositoryRuleDetailedVariant18(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleDetailedVariant19.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleDetailedRepositoryRuleDetailedVariant19(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleDetailedVariant20.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleDetailedRepositoryRuleDetailedVariant20(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleDetailedVariant21.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleDetailedRepositoryRuleDetailedVariant21(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleDetailedVariant22.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleDetailedRepositoryRuleDetailedVariant22(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleDetailedVariant23.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleDetailedRepositoryRuleDetailedVariant23(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleDetailedVariant24.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return RepositoryRuleDetailedRepositoryRuleDetailedVariant24(value);
+        }
+      } catch (_) {}
+    }
     try {
       return RepositoryRuleDetailedRepositoryRuleDetailedVariant0(
           RepositoryRuleDetailedVariant0.fromJson(
@@ -434,40 +586,5 @@ class RepositoryRuleFileExtensionRestriction {
             },
           _ => const <String, dynamic>{},
         },
-      };
-}
-
-/// Optional object value serialized in the `parameters` wire field.
-class RepositoryRuleFilePathRestrictionParameters {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The file paths that are restricted from being pushed to the commit graph.
-  final List<String> restrictedFilePaths;
-
-  const RepositoryRuleFilePathRestrictionParameters(
-      {required this.restrictedFilePaths});
-
-  RepositoryRuleFilePathRestrictionParameters Function(
-      {List<String> restrictedFilePaths}) get copyWith => _copyWith;
-
-  RepositoryRuleFilePathRestrictionParameters _copyWith(
-          {Object? restrictedFilePaths = sdkOmittedValue}) =>
-      RepositoryRuleFilePathRestrictionParameters(
-        restrictedFilePaths: identical(restrictedFilePaths, sdkOmittedValue)
-            ? this.restrictedFilePaths
-            : restrictedFilePaths as List<String>,
-      );
-
-  factory RepositoryRuleFilePathRestrictionParameters.fromJson(
-          Map<String, dynamic> json) =>
-      RepositoryRuleFilePathRestrictionParameters(
-        restrictedFilePaths: ((json['restricted_file_paths'] as List?)
-            ?.map((e) => e as String)
-            .toList())!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'restricted_file_paths': restrictedFilePaths,
       };
 }

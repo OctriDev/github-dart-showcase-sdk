@@ -4,1165 +4,462 @@
 part of 'search.dart';
 
 // search domain models (part 6)
-/// Repo Search Result Item
-class RepoSearchResultItem {
+/// Required object value serialized in the `matches[]` wire field.
+class SearchResultTextMatchesItemMatchesItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Required `integer` value serialized in the `id` wire field.
-  final int id;
-
-  /// Required `string` value serialized in the `node_id` wire field.
-  final String nodeId;
-
-  /// Required `string` value serialized in the `name` wire field.
-  final String name;
-
-  /// Required `string` value serialized in the `full_name` wire field.
-  final String fullName;
-
-  /// A GitHub user.
-  final NullableSimpleUser? owner;
-
-  /// Required `boolean` value serialized in the `private` wire field.
-  final bool private;
-
-  /// Required `uri`-formatted value serialized in the `html_url` wire field.
-  final String htmlUrl;
-
-  /// Required `string` value serialized in the `description` wire field.
-  final String? description;
-
-  /// Required `boolean` value serialized in the `fork` wire field.
-  final bool fork;
-
-  /// Required `uri`-formatted value serialized in the `url` wire field.
-  final String url;
-
-  /// Required `date-time`-formatted value serialized in the `created_at` wire field.
-  final String createdAt;
-
-  /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
-  final String updatedAt;
-
-  /// Required `date-time`-formatted value serialized in the `pushed_at` wire field.
-  final String pushedAt;
-
-  /// Required `uri`-formatted value serialized in the `homepage` wire field.
-  final String? homepage;
-
-  /// Required `integer` value serialized in the `size` wire field.
-  final int size;
-
-  /// Required `integer` value serialized in the `stargazers_count` wire field.
-  final int stargazersCount;
-
-  /// Required `integer` value serialized in the `watchers_count` wire field.
-  final int watchersCount;
-
-  /// Required `string` value serialized in the `language` wire field.
-  final String? language;
-
-  /// Required `integer` value serialized in the `forks_count` wire field.
-  final int forksCount;
-
-  /// Required `integer` value serialized in the `open_issues_count` wire field.
-  final int openIssuesCount;
-
-  /// Optional `string` value serialized in the `master_branch` wire field.
-  final SdkOptional<String> masterBranch;
-
-  /// Required `string` value serialized in the `default_branch` wire field.
-  final String defaultBranch;
-
-  /// Required `number` value serialized in the `score` wire field.
-  final double score;
-
-  /// Required `uri`-formatted value serialized in the `forks_url` wire field.
-  final String forksUrl;
-
-  /// Required `string` value serialized in the `keys_url` wire field.
-  final String keysUrl;
-
-  /// Required `string` value serialized in the `collaborators_url` wire field.
-  final String collaboratorsUrl;
-
-  /// Required `uri`-formatted value serialized in the `teams_url` wire field.
-  final String teamsUrl;
-
-  /// Required `uri`-formatted value serialized in the `hooks_url` wire field.
-  final String hooksUrl;
-
-  /// Required `string` value serialized in the `issue_events_url` wire field.
-  final String issueEventsUrl;
-
-  /// Required `uri`-formatted value serialized in the `events_url` wire field.
-  final String eventsUrl;
-
-  /// Required `string` value serialized in the `assignees_url` wire field.
-  final String assigneesUrl;
-
-  /// Required `string` value serialized in the `branches_url` wire field.
-  final String branchesUrl;
-
-  /// Required `uri`-formatted value serialized in the `tags_url` wire field.
-  final String tagsUrl;
-
-  /// Required `string` value serialized in the `blobs_url` wire field.
-  final String blobsUrl;
-
-  /// Required `string` value serialized in the `git_tags_url` wire field.
-  final String gitTagsUrl;
-
-  /// Required `string` value serialized in the `git_refs_url` wire field.
-  final String gitRefsUrl;
-
-  /// Required `string` value serialized in the `trees_url` wire field.
-  final String treesUrl;
-
-  /// Required `string` value serialized in the `statuses_url` wire field.
-  final String statusesUrl;
-
-  /// Required `uri`-formatted value serialized in the `languages_url` wire field.
-  final String languagesUrl;
-
-  /// Required `uri`-formatted value serialized in the `stargazers_url` wire field.
-  final String stargazersUrl;
-
-  /// Required `uri`-formatted value serialized in the `contributors_url` wire field.
-  final String contributorsUrl;
-
-  /// Required `uri`-formatted value serialized in the `subscribers_url` wire field.
-  final String subscribersUrl;
-
-  /// Required `uri`-formatted value serialized in the `subscription_url` wire field.
-  final String subscriptionUrl;
-
-  /// Required `string` value serialized in the `commits_url` wire field.
-  final String commitsUrl;
-
-  /// Required `string` value serialized in the `git_commits_url` wire field.
-  final String gitCommitsUrl;
-
-  /// Required `string` value serialized in the `comments_url` wire field.
-  final String commentsUrl;
-
-  /// Required `string` value serialized in the `issue_comment_url` wire field.
-  final String issueCommentUrl;
-
-  /// Required `string` value serialized in the `contents_url` wire field.
-  final String contentsUrl;
-
-  /// Required `string` value serialized in the `compare_url` wire field.
-  final String compareUrl;
-
-  /// Required `uri`-formatted value serialized in the `merges_url` wire field.
-  final String mergesUrl;
-
-  /// Required `string` value serialized in the `archive_url` wire field.
-  final String archiveUrl;
-
-  /// Required `uri`-formatted value serialized in the `downloads_url` wire field.
-  final String downloadsUrl;
-
-  /// Required `string` value serialized in the `issues_url` wire field.
-  final String issuesUrl;
-
-  /// Required `string` value serialized in the `pulls_url` wire field.
-  final String pullsUrl;
-
-  /// Required `string` value serialized in the `milestones_url` wire field.
-  final String milestonesUrl;
-
-  /// Required `string` value serialized in the `notifications_url` wire field.
-  final String notificationsUrl;
-
-  /// Required `string` value serialized in the `labels_url` wire field.
-  final String labelsUrl;
-
-  /// Required `string` value serialized in the `releases_url` wire field.
-  final String releasesUrl;
-
-  /// Required `uri`-formatted value serialized in the `deployments_url` wire field.
-  final String deploymentsUrl;
-
-  /// Required `string` value serialized in the `git_url` wire field.
-  final String gitUrl;
-
-  /// Required `string` value serialized in the `ssh_url` wire field.
-  final String sshUrl;
-
-  /// Required `string` value serialized in the `clone_url` wire field.
-  final String cloneUrl;
-
-  /// Required `uri`-formatted value serialized in the `svn_url` wire field.
-  final String svnUrl;
-
-  /// Required `integer` value serialized in the `forks` wire field.
-  final int forks;
-
-  /// Required `integer` value serialized in the `open_issues` wire field.
-  final int openIssues;
-
-  /// Required `integer` value serialized in the `watchers` wire field.
-  final int watchers;
-
-  /// Optional array value serialized in the `topics` wire field.
-  final SdkOptional<List<String>> topics;
-
-  /// Required `uri`-formatted value serialized in the `mirror_url` wire field.
-  final String? mirrorUrl;
-
-  /// Required `boolean` value serialized in the `has_issues` wire field.
-  final bool hasIssues;
-
-  /// Required `boolean` value serialized in the `has_projects` wire field.
-  final bool hasProjects;
-
-  /// Required `boolean` value serialized in the `has_pages` wire field.
-  final bool hasPages;
-
-  /// Required `boolean` value serialized in the `has_wiki` wire field.
-  final bool hasWiki;
-
-  /// Required `boolean` value serialized in the `has_downloads` wire field.
-  final bool hasDownloads;
-
-  /// Optional `boolean` value serialized in the `has_discussions` wire field.
-  final SdkOptional<bool> hasDiscussions;
-
-  /// Optional `boolean` value serialized in the `has_pull_requests` wire field.
-  final SdkOptional<bool> hasPullRequests;
-
-  /// The policy controlling who can create pull requests: all or collaborators_only.
-  final SdkOptional<RepoSearchResultItemPullRequestCreationPolicy>
-      pullRequestCreationPolicy;
-
-  /// Required `boolean` value serialized in the `archived` wire field.
-  final bool archived;
-
-  /// Returns whether or not this repository disabled.
-  final bool disabled;
-
-  /// The repository visibility: public, private, or internal.
-  final SdkOptional<String> visibility;
-
-  /// License Simple
-  final NullableLicenseSimple? license;
-
-  /// Optional object value serialized in the `permissions` wire field.
-  final SdkOptional<RepoSearchResultItemPermissions> permissions;
-
-  /// Optional array value serialized in the `text_matches` wire field.
-  final SdkOptional<List<SearchResultTextMatchesItem>> textMatches;
-
-  /// Optional `string` value serialized in the `temp_clone_token` wire field.
-  final SdkOptional<String> tempCloneToken;
-
-  /// Optional `boolean` value serialized in the `allow_merge_commit` wire field.
-  final SdkOptional<bool> allowMergeCommit;
-
-  /// Optional `boolean` value serialized in the `allow_squash_merge` wire field.
-  final SdkOptional<bool> allowSquashMerge;
-
-  /// Optional `boolean` value serialized in the `allow_rebase_merge` wire field.
-  final SdkOptional<bool> allowRebaseMerge;
-
-  /// Optional `boolean` value serialized in the `allow_auto_merge` wire field.
-  final SdkOptional<bool> allowAutoMerge;
-
-  /// Optional `boolean` value serialized in the `delete_branch_on_merge` wire field.
-  final SdkOptional<bool> deleteBranchOnMerge;
-
-  /// Optional `boolean` value serialized in the `allow_forking` wire field.
-  final SdkOptional<bool> allowForking;
-
-  /// Optional `boolean` value serialized in the `is_template` wire field.
-  final SdkOptional<bool> isTemplate;
-
-  /// Optional `boolean` value serialized in the `web_commit_signoff_required` wire field.
-  final SdkOptional<bool> webCommitSignoffRequired;
-
-  const RepoSearchResultItem(
-      {required this.id,
-      required this.nodeId,
-      required this.name,
-      required this.fullName,
-      required this.owner,
-      required this.private,
-      required this.htmlUrl,
-      required this.description,
-      required this.fork,
-      required this.url,
-      required this.createdAt,
-      required this.updatedAt,
-      required this.pushedAt,
-      required this.homepage,
-      required this.size,
-      required this.stargazersCount,
-      required this.watchersCount,
-      required this.language,
-      required this.forksCount,
-      required this.openIssuesCount,
-      this.masterBranch = const SdkOmitted(),
-      required this.defaultBranch,
-      required this.score,
-      required this.forksUrl,
-      required this.keysUrl,
-      required this.collaboratorsUrl,
-      required this.teamsUrl,
-      required this.hooksUrl,
-      required this.issueEventsUrl,
-      required this.eventsUrl,
-      required this.assigneesUrl,
-      required this.branchesUrl,
-      required this.tagsUrl,
-      required this.blobsUrl,
-      required this.gitTagsUrl,
-      required this.gitRefsUrl,
-      required this.treesUrl,
-      required this.statusesUrl,
-      required this.languagesUrl,
-      required this.stargazersUrl,
-      required this.contributorsUrl,
-      required this.subscribersUrl,
-      required this.subscriptionUrl,
-      required this.commitsUrl,
-      required this.gitCommitsUrl,
-      required this.commentsUrl,
-      required this.issueCommentUrl,
-      required this.contentsUrl,
-      required this.compareUrl,
-      required this.mergesUrl,
-      required this.archiveUrl,
-      required this.downloadsUrl,
-      required this.issuesUrl,
-      required this.pullsUrl,
-      required this.milestonesUrl,
-      required this.notificationsUrl,
-      required this.labelsUrl,
-      required this.releasesUrl,
-      required this.deploymentsUrl,
-      required this.gitUrl,
-      required this.sshUrl,
-      required this.cloneUrl,
-      required this.svnUrl,
-      required this.forks,
-      required this.openIssues,
-      required this.watchers,
-      this.topics = const SdkOmitted(),
-      required this.mirrorUrl,
-      required this.hasIssues,
-      required this.hasProjects,
-      required this.hasPages,
-      required this.hasWiki,
-      required this.hasDownloads,
-      this.hasDiscussions = const SdkOmitted(),
-      this.hasPullRequests = const SdkOmitted(),
-      this.pullRequestCreationPolicy = const SdkOmitted(),
-      required this.archived,
-      required this.disabled,
-      this.visibility = const SdkOmitted(),
-      required this.license,
-      this.permissions = const SdkOmitted(),
-      this.textMatches = const SdkOmitted(),
-      this.tempCloneToken = const SdkOmitted(),
-      this.allowMergeCommit = const SdkOmitted(),
-      this.allowSquashMerge = const SdkOmitted(),
-      this.allowRebaseMerge = const SdkOmitted(),
-      this.allowAutoMerge = const SdkOmitted(),
-      this.deleteBranchOnMerge = const SdkOmitted(),
-      this.allowForking = const SdkOmitted(),
-      this.isTemplate = const SdkOmitted(),
-      this.webCommitSignoffRequired = const SdkOmitted()});
-
-  RepoSearchResultItem Function(
-      {int id,
-      String nodeId,
-      String name,
-      String fullName,
-      NullableSimpleUser? owner,
-      bool private,
-      String htmlUrl,
-      String? description,
-      bool fork,
-      String url,
-      String createdAt,
-      String updatedAt,
-      String pushedAt,
-      String? homepage,
-      int size,
-      int stargazersCount,
-      int watchersCount,
-      String? language,
-      int forksCount,
-      int openIssuesCount,
-      SdkOptional<String> masterBranch,
-      String defaultBranch,
-      double score,
-      String forksUrl,
-      String keysUrl,
-      String collaboratorsUrl,
-      String teamsUrl,
-      String hooksUrl,
-      String issueEventsUrl,
-      String eventsUrl,
-      String assigneesUrl,
-      String branchesUrl,
-      String tagsUrl,
-      String blobsUrl,
-      String gitTagsUrl,
-      String gitRefsUrl,
-      String treesUrl,
-      String statusesUrl,
-      String languagesUrl,
-      String stargazersUrl,
-      String contributorsUrl,
-      String subscribersUrl,
-      String subscriptionUrl,
-      String commitsUrl,
-      String gitCommitsUrl,
-      String commentsUrl,
-      String issueCommentUrl,
-      String contentsUrl,
-      String compareUrl,
-      String mergesUrl,
-      String archiveUrl,
-      String downloadsUrl,
-      String issuesUrl,
-      String pullsUrl,
-      String milestonesUrl,
-      String notificationsUrl,
-      String labelsUrl,
-      String releasesUrl,
-      String deploymentsUrl,
-      String gitUrl,
-      String sshUrl,
-      String cloneUrl,
-      String svnUrl,
-      int forks,
-      int openIssues,
-      int watchers,
-      SdkOptional<List<String>> topics,
-      String? mirrorUrl,
-      bool hasIssues,
-      bool hasProjects,
-      bool hasPages,
-      bool hasWiki,
-      bool hasDownloads,
-      SdkOptional<bool> hasDiscussions,
-      SdkOptional<bool> hasPullRequests,
-      SdkOptional<RepoSearchResultItemPullRequestCreationPolicy>
-          pullRequestCreationPolicy,
-      bool archived,
-      bool disabled,
-      SdkOptional<String> visibility,
-      NullableLicenseSimple? license,
-      SdkOptional<RepoSearchResultItemPermissions> permissions,
-      SdkOptional<List<SearchResultTextMatchesItem>> textMatches,
-      SdkOptional<String> tempCloneToken,
-      SdkOptional<bool> allowMergeCommit,
-      SdkOptional<bool> allowSquashMerge,
-      SdkOptional<bool> allowRebaseMerge,
-      SdkOptional<bool> allowAutoMerge,
-      SdkOptional<bool> deleteBranchOnMerge,
-      SdkOptional<bool> allowForking,
-      SdkOptional<bool> isTemplate,
-      SdkOptional<bool> webCommitSignoffRequired}) get copyWith => _copyWith;
-
-  RepoSearchResultItem _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? fullName = sdkOmittedValue,
-          Object? owner = sdkOmittedValue,
-          Object? private = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? fork = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue,
-          Object? pushedAt = sdkOmittedValue,
-          Object? homepage = sdkOmittedValue,
-          Object? size = sdkOmittedValue,
-          Object? stargazersCount = sdkOmittedValue,
-          Object? watchersCount = sdkOmittedValue,
-          Object? language = sdkOmittedValue,
-          Object? forksCount = sdkOmittedValue,
-          Object? openIssuesCount = sdkOmittedValue,
-          Object? masterBranch = sdkOmittedValue,
-          Object? defaultBranch = sdkOmittedValue,
-          Object? score = sdkOmittedValue,
-          Object? forksUrl = sdkOmittedValue,
-          Object? keysUrl = sdkOmittedValue,
-          Object? collaboratorsUrl = sdkOmittedValue,
-          Object? teamsUrl = sdkOmittedValue,
-          Object? hooksUrl = sdkOmittedValue,
-          Object? issueEventsUrl = sdkOmittedValue,
-          Object? eventsUrl = sdkOmittedValue,
-          Object? assigneesUrl = sdkOmittedValue,
-          Object? branchesUrl = sdkOmittedValue,
-          Object? tagsUrl = sdkOmittedValue,
-          Object? blobsUrl = sdkOmittedValue,
-          Object? gitTagsUrl = sdkOmittedValue,
-          Object? gitRefsUrl = sdkOmittedValue,
-          Object? treesUrl = sdkOmittedValue,
-          Object? statusesUrl = sdkOmittedValue,
-          Object? languagesUrl = sdkOmittedValue,
-          Object? stargazersUrl = sdkOmittedValue,
-          Object? contributorsUrl = sdkOmittedValue,
-          Object? subscribersUrl = sdkOmittedValue,
-          Object? subscriptionUrl = sdkOmittedValue,
-          Object? commitsUrl = sdkOmittedValue,
-          Object? gitCommitsUrl = sdkOmittedValue,
-          Object? commentsUrl = sdkOmittedValue,
-          Object? issueCommentUrl = sdkOmittedValue,
-          Object? contentsUrl = sdkOmittedValue,
-          Object? compareUrl = sdkOmittedValue,
-          Object? mergesUrl = sdkOmittedValue,
-          Object? archiveUrl = sdkOmittedValue,
-          Object? downloadsUrl = sdkOmittedValue,
-          Object? issuesUrl = sdkOmittedValue,
-          Object? pullsUrl = sdkOmittedValue,
-          Object? milestonesUrl = sdkOmittedValue,
-          Object? notificationsUrl = sdkOmittedValue,
-          Object? labelsUrl = sdkOmittedValue,
-          Object? releasesUrl = sdkOmittedValue,
-          Object? deploymentsUrl = sdkOmittedValue,
-          Object? gitUrl = sdkOmittedValue,
-          Object? sshUrl = sdkOmittedValue,
-          Object? cloneUrl = sdkOmittedValue,
-          Object? svnUrl = sdkOmittedValue,
-          Object? forks = sdkOmittedValue,
-          Object? openIssues = sdkOmittedValue,
-          Object? watchers = sdkOmittedValue,
-          Object? topics = sdkOmittedValue,
-          Object? mirrorUrl = sdkOmittedValue,
-          Object? hasIssues = sdkOmittedValue,
-          Object? hasProjects = sdkOmittedValue,
-          Object? hasPages = sdkOmittedValue,
-          Object? hasWiki = sdkOmittedValue,
-          Object? hasDownloads = sdkOmittedValue,
-          Object? hasDiscussions = sdkOmittedValue,
-          Object? hasPullRequests = sdkOmittedValue,
-          Object? pullRequestCreationPolicy = sdkOmittedValue,
-          Object? archived = sdkOmittedValue,
-          Object? disabled = sdkOmittedValue,
-          Object? visibility = sdkOmittedValue,
-          Object? license = sdkOmittedValue,
-          Object? permissions = sdkOmittedValue,
-          Object? textMatches = sdkOmittedValue,
-          Object? tempCloneToken = sdkOmittedValue,
-          Object? allowMergeCommit = sdkOmittedValue,
-          Object? allowSquashMerge = sdkOmittedValue,
-          Object? allowRebaseMerge = sdkOmittedValue,
-          Object? allowAutoMerge = sdkOmittedValue,
-          Object? deleteBranchOnMerge = sdkOmittedValue,
-          Object? allowForking = sdkOmittedValue,
-          Object? isTemplate = sdkOmittedValue,
-          Object? webCommitSignoffRequired = sdkOmittedValue}) =>
-      RepoSearchResultItem(
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        fullName: identical(fullName, sdkOmittedValue)
-            ? this.fullName
-            : fullName as String,
-        owner: identical(owner, sdkOmittedValue)
-            ? this.owner
-            : owner as NullableSimpleUser?,
-        private: identical(private, sdkOmittedValue)
-            ? this.private
-            : private as bool,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as String,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as String?,
-        fork: identical(fork, sdkOmittedValue) ? this.fork : fork as bool,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String,
-        pushedAt: identical(pushedAt, sdkOmittedValue)
-            ? this.pushedAt
-            : pushedAt as String,
-        homepage: identical(homepage, sdkOmittedValue)
-            ? this.homepage
-            : homepage as String?,
-        size: identical(size, sdkOmittedValue) ? this.size : size as int,
-        stargazersCount: identical(stargazersCount, sdkOmittedValue)
-            ? this.stargazersCount
-            : stargazersCount as int,
-        watchersCount: identical(watchersCount, sdkOmittedValue)
-            ? this.watchersCount
-            : watchersCount as int,
-        language: identical(language, sdkOmittedValue)
-            ? this.language
-            : language as String?,
-        forksCount: identical(forksCount, sdkOmittedValue)
-            ? this.forksCount
-            : forksCount as int,
-        openIssuesCount: identical(openIssuesCount, sdkOmittedValue)
-            ? this.openIssuesCount
-            : openIssuesCount as int,
-        masterBranch: identical(masterBranch, sdkOmittedValue)
-            ? this.masterBranch
-            : masterBranch as SdkOptional<String>,
-        defaultBranch: identical(defaultBranch, sdkOmittedValue)
-            ? this.defaultBranch
-            : defaultBranch as String,
-        score: identical(score, sdkOmittedValue) ? this.score : score as double,
-        forksUrl: identical(forksUrl, sdkOmittedValue)
-            ? this.forksUrl
-            : forksUrl as String,
-        keysUrl: identical(keysUrl, sdkOmittedValue)
-            ? this.keysUrl
-            : keysUrl as String,
-        collaboratorsUrl: identical(collaboratorsUrl, sdkOmittedValue)
-            ? this.collaboratorsUrl
-            : collaboratorsUrl as String,
-        teamsUrl: identical(teamsUrl, sdkOmittedValue)
-            ? this.teamsUrl
-            : teamsUrl as String,
-        hooksUrl: identical(hooksUrl, sdkOmittedValue)
-            ? this.hooksUrl
-            : hooksUrl as String,
-        issueEventsUrl: identical(issueEventsUrl, sdkOmittedValue)
-            ? this.issueEventsUrl
-            : issueEventsUrl as String,
-        eventsUrl: identical(eventsUrl, sdkOmittedValue)
-            ? this.eventsUrl
-            : eventsUrl as String,
-        assigneesUrl: identical(assigneesUrl, sdkOmittedValue)
-            ? this.assigneesUrl
-            : assigneesUrl as String,
-        branchesUrl: identical(branchesUrl, sdkOmittedValue)
-            ? this.branchesUrl
-            : branchesUrl as String,
-        tagsUrl: identical(tagsUrl, sdkOmittedValue)
-            ? this.tagsUrl
-            : tagsUrl as String,
-        blobsUrl: identical(blobsUrl, sdkOmittedValue)
-            ? this.blobsUrl
-            : blobsUrl as String,
-        gitTagsUrl: identical(gitTagsUrl, sdkOmittedValue)
-            ? this.gitTagsUrl
-            : gitTagsUrl as String,
-        gitRefsUrl: identical(gitRefsUrl, sdkOmittedValue)
-            ? this.gitRefsUrl
-            : gitRefsUrl as String,
-        treesUrl: identical(treesUrl, sdkOmittedValue)
-            ? this.treesUrl
-            : treesUrl as String,
-        statusesUrl: identical(statusesUrl, sdkOmittedValue)
-            ? this.statusesUrl
-            : statusesUrl as String,
-        languagesUrl: identical(languagesUrl, sdkOmittedValue)
-            ? this.languagesUrl
-            : languagesUrl as String,
-        stargazersUrl: identical(stargazersUrl, sdkOmittedValue)
-            ? this.stargazersUrl
-            : stargazersUrl as String,
-        contributorsUrl: identical(contributorsUrl, sdkOmittedValue)
-            ? this.contributorsUrl
-            : contributorsUrl as String,
-        subscribersUrl: identical(subscribersUrl, sdkOmittedValue)
-            ? this.subscribersUrl
-            : subscribersUrl as String,
-        subscriptionUrl: identical(subscriptionUrl, sdkOmittedValue)
-            ? this.subscriptionUrl
-            : subscriptionUrl as String,
-        commitsUrl: identical(commitsUrl, sdkOmittedValue)
-            ? this.commitsUrl
-            : commitsUrl as String,
-        gitCommitsUrl: identical(gitCommitsUrl, sdkOmittedValue)
-            ? this.gitCommitsUrl
-            : gitCommitsUrl as String,
-        commentsUrl: identical(commentsUrl, sdkOmittedValue)
-            ? this.commentsUrl
-            : commentsUrl as String,
-        issueCommentUrl: identical(issueCommentUrl, sdkOmittedValue)
-            ? this.issueCommentUrl
-            : issueCommentUrl as String,
-        contentsUrl: identical(contentsUrl, sdkOmittedValue)
-            ? this.contentsUrl
-            : contentsUrl as String,
-        compareUrl: identical(compareUrl, sdkOmittedValue)
-            ? this.compareUrl
-            : compareUrl as String,
-        mergesUrl: identical(mergesUrl, sdkOmittedValue)
-            ? this.mergesUrl
-            : mergesUrl as String,
-        archiveUrl: identical(archiveUrl, sdkOmittedValue)
-            ? this.archiveUrl
-            : archiveUrl as String,
-        downloadsUrl: identical(downloadsUrl, sdkOmittedValue)
-            ? this.downloadsUrl
-            : downloadsUrl as String,
-        issuesUrl: identical(issuesUrl, sdkOmittedValue)
-            ? this.issuesUrl
-            : issuesUrl as String,
-        pullsUrl: identical(pullsUrl, sdkOmittedValue)
-            ? this.pullsUrl
-            : pullsUrl as String,
-        milestonesUrl: identical(milestonesUrl, sdkOmittedValue)
-            ? this.milestonesUrl
-            : milestonesUrl as String,
-        notificationsUrl: identical(notificationsUrl, sdkOmittedValue)
-            ? this.notificationsUrl
-            : notificationsUrl as String,
-        labelsUrl: identical(labelsUrl, sdkOmittedValue)
-            ? this.labelsUrl
-            : labelsUrl as String,
-        releasesUrl: identical(releasesUrl, sdkOmittedValue)
-            ? this.releasesUrl
-            : releasesUrl as String,
-        deploymentsUrl: identical(deploymentsUrl, sdkOmittedValue)
-            ? this.deploymentsUrl
-            : deploymentsUrl as String,
-        gitUrl:
-            identical(gitUrl, sdkOmittedValue) ? this.gitUrl : gitUrl as String,
-        sshUrl:
-            identical(sshUrl, sdkOmittedValue) ? this.sshUrl : sshUrl as String,
-        cloneUrl: identical(cloneUrl, sdkOmittedValue)
-            ? this.cloneUrl
-            : cloneUrl as String,
-        svnUrl:
-            identical(svnUrl, sdkOmittedValue) ? this.svnUrl : svnUrl as String,
-        forks: identical(forks, sdkOmittedValue) ? this.forks : forks as int,
-        openIssues: identical(openIssues, sdkOmittedValue)
-            ? this.openIssues
-            : openIssues as int,
-        watchers: identical(watchers, sdkOmittedValue)
-            ? this.watchers
-            : watchers as int,
-        topics: identical(topics, sdkOmittedValue)
-            ? this.topics
-            : topics as SdkOptional<List<String>>,
-        mirrorUrl: identical(mirrorUrl, sdkOmittedValue)
-            ? this.mirrorUrl
-            : mirrorUrl as String?,
-        hasIssues: identical(hasIssues, sdkOmittedValue)
-            ? this.hasIssues
-            : hasIssues as bool,
-        hasProjects: identical(hasProjects, sdkOmittedValue)
-            ? this.hasProjects
-            : hasProjects as bool,
-        hasPages: identical(hasPages, sdkOmittedValue)
-            ? this.hasPages
-            : hasPages as bool,
-        hasWiki: identical(hasWiki, sdkOmittedValue)
-            ? this.hasWiki
-            : hasWiki as bool,
-        hasDownloads: identical(hasDownloads, sdkOmittedValue)
-            ? this.hasDownloads
-            : hasDownloads as bool,
-        hasDiscussions: identical(hasDiscussions, sdkOmittedValue)
-            ? this.hasDiscussions
-            : hasDiscussions as SdkOptional<bool>,
-        hasPullRequests: identical(hasPullRequests, sdkOmittedValue)
-            ? this.hasPullRequests
-            : hasPullRequests as SdkOptional<bool>,
-        pullRequestCreationPolicy: identical(
-                pullRequestCreationPolicy, sdkOmittedValue)
-            ? this.pullRequestCreationPolicy
-            : pullRequestCreationPolicy
-                as SdkOptional<RepoSearchResultItemPullRequestCreationPolicy>,
-        archived: identical(archived, sdkOmittedValue)
-            ? this.archived
-            : archived as bool,
-        disabled: identical(disabled, sdkOmittedValue)
-            ? this.disabled
-            : disabled as bool,
-        visibility: identical(visibility, sdkOmittedValue)
-            ? this.visibility
-            : visibility as SdkOptional<String>,
-        license: identical(license, sdkOmittedValue)
-            ? this.license
-            : license as NullableLicenseSimple?,
-        permissions: identical(permissions, sdkOmittedValue)
-            ? this.permissions
-            : permissions as SdkOptional<RepoSearchResultItemPermissions>,
-        textMatches: identical(textMatches, sdkOmittedValue)
-            ? this.textMatches
-            : textMatches as SdkOptional<List<SearchResultTextMatchesItem>>,
-        tempCloneToken: identical(tempCloneToken, sdkOmittedValue)
-            ? this.tempCloneToken
-            : tempCloneToken as SdkOptional<String>,
-        allowMergeCommit: identical(allowMergeCommit, sdkOmittedValue)
-            ? this.allowMergeCommit
-            : allowMergeCommit as SdkOptional<bool>,
-        allowSquashMerge: identical(allowSquashMerge, sdkOmittedValue)
-            ? this.allowSquashMerge
-            : allowSquashMerge as SdkOptional<bool>,
-        allowRebaseMerge: identical(allowRebaseMerge, sdkOmittedValue)
-            ? this.allowRebaseMerge
-            : allowRebaseMerge as SdkOptional<bool>,
-        allowAutoMerge: identical(allowAutoMerge, sdkOmittedValue)
-            ? this.allowAutoMerge
-            : allowAutoMerge as SdkOptional<bool>,
-        deleteBranchOnMerge: identical(deleteBranchOnMerge, sdkOmittedValue)
-            ? this.deleteBranchOnMerge
-            : deleteBranchOnMerge as SdkOptional<bool>,
-        allowForking: identical(allowForking, sdkOmittedValue)
-            ? this.allowForking
-            : allowForking as SdkOptional<bool>,
-        isTemplate: identical(isTemplate, sdkOmittedValue)
-            ? this.isTemplate
-            : isTemplate as SdkOptional<bool>,
-        webCommitSignoffRequired:
-            identical(webCommitSignoffRequired, sdkOmittedValue)
-                ? this.webCommitSignoffRequired
-                : webCommitSignoffRequired as SdkOptional<bool>,
+  /// Optional `string` value serialized in the `text` wire field.
+  final SdkOptional<String> text;
+
+  /// Optional array value serialized in the `indices` wire field.
+  final SdkOptional<List<int>> indices;
+
+  const SearchResultTextMatchesItemMatchesItem(
+      {this.text = const SdkOmitted(), this.indices = const SdkOmitted()});
+
+  SearchResultTextMatchesItemMatchesItem Function(
+      {SdkOptional<String> text,
+      SdkOptional<List<int>> indices}) get copyWith => _copyWith;
+
+  SearchResultTextMatchesItemMatchesItem _copyWith(
+          {Object? text = sdkOmittedValue,
+          Object? indices = sdkOmittedValue}) =>
+      SearchResultTextMatchesItemMatchesItem(
+        text: identical(text, sdkOmittedValue)
+            ? this.text
+            : text as SdkOptional<String>,
+        indices: identical(indices, sdkOmittedValue)
+            ? this.indices
+            : indices as SdkOptional<List<int>>,
       );
 
-  factory RepoSearchResultItem.fromJson(Map<String, dynamic> json) =>
-      RepoSearchResultItem(
-        id: ((json['id'] as num?)?.toInt())!,
-        nodeId: (json['node_id'] as String?)!,
-        name: (json['name'] as String?)!,
-        fullName: (json['full_name'] as String?)!,
-        owner: json.containsKey('owner')
-            ? json['owner'] != null
-                ? NullableSimpleUser.fromJson(
-                    json['owner'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'owner', 'Required property is missing'),
-        private: (json['private'] as bool?)!,
-        htmlUrl: (json['html_url'] as String?)!,
-        description: json.containsKey('description')
-            ? json['description'] as String?
-            : throw ArgumentError.value(
-                null, 'description', 'Required property is missing'),
-        fork: (json['fork'] as bool?)!,
-        url: (json['url'] as String?)!,
-        createdAt: (json['created_at'] as String?)!,
-        updatedAt: (json['updated_at'] as String?)!,
-        pushedAt: (json['pushed_at'] as String?)!,
-        homepage: json.containsKey('homepage')
-            ? json['homepage'] as String?
-            : throw ArgumentError.value(
-                null, 'homepage', 'Required property is missing'),
-        size: ((json['size'] as num?)?.toInt())!,
-        stargazersCount: ((json['stargazers_count'] as num?)?.toInt())!,
-        watchersCount: ((json['watchers_count'] as num?)?.toInt())!,
-        language: json.containsKey('language')
-            ? json['language'] as String?
-            : throw ArgumentError.value(
-                null, 'language', 'Required property is missing'),
-        forksCount: ((json['forks_count'] as num?)?.toInt())!,
-        openIssuesCount: ((json['open_issues_count'] as num?)?.toInt())!,
-        masterBranch: json['master_branch'] != null
-            ? SdkPresent((json['master_branch'] as String?)!)
+  factory SearchResultTextMatchesItemMatchesItem.fromJson(
+          Map<String, dynamic> json) =>
+      SearchResultTextMatchesItemMatchesItem(
+        text: json['text'] != null
+            ? SdkPresent((json['text'] as String?)!)
             : const SdkOmitted(),
-        defaultBranch: (json['default_branch'] as String?)!,
-        score: ((json['score'] as num?)?.toDouble())!,
-        forksUrl: (json['forks_url'] as String?)!,
-        keysUrl: (json['keys_url'] as String?)!,
-        collaboratorsUrl: (json['collaborators_url'] as String?)!,
-        teamsUrl: (json['teams_url'] as String?)!,
-        hooksUrl: (json['hooks_url'] as String?)!,
-        issueEventsUrl: (json['issue_events_url'] as String?)!,
-        eventsUrl: (json['events_url'] as String?)!,
-        assigneesUrl: (json['assignees_url'] as String?)!,
-        branchesUrl: (json['branches_url'] as String?)!,
-        tagsUrl: (json['tags_url'] as String?)!,
-        blobsUrl: (json['blobs_url'] as String?)!,
-        gitTagsUrl: (json['git_tags_url'] as String?)!,
-        gitRefsUrl: (json['git_refs_url'] as String?)!,
-        treesUrl: (json['trees_url'] as String?)!,
-        statusesUrl: (json['statuses_url'] as String?)!,
-        languagesUrl: (json['languages_url'] as String?)!,
-        stargazersUrl: (json['stargazers_url'] as String?)!,
-        contributorsUrl: (json['contributors_url'] as String?)!,
-        subscribersUrl: (json['subscribers_url'] as String?)!,
-        subscriptionUrl: (json['subscription_url'] as String?)!,
-        commitsUrl: (json['commits_url'] as String?)!,
-        gitCommitsUrl: (json['git_commits_url'] as String?)!,
-        commentsUrl: (json['comments_url'] as String?)!,
-        issueCommentUrl: (json['issue_comment_url'] as String?)!,
-        contentsUrl: (json['contents_url'] as String?)!,
-        compareUrl: (json['compare_url'] as String?)!,
-        mergesUrl: (json['merges_url'] as String?)!,
-        archiveUrl: (json['archive_url'] as String?)!,
-        downloadsUrl: (json['downloads_url'] as String?)!,
-        issuesUrl: (json['issues_url'] as String?)!,
-        pullsUrl: (json['pulls_url'] as String?)!,
-        milestonesUrl: (json['milestones_url'] as String?)!,
-        notificationsUrl: (json['notifications_url'] as String?)!,
-        labelsUrl: (json['labels_url'] as String?)!,
-        releasesUrl: (json['releases_url'] as String?)!,
-        deploymentsUrl: (json['deployments_url'] as String?)!,
-        gitUrl: (json['git_url'] as String?)!,
-        sshUrl: (json['ssh_url'] as String?)!,
-        cloneUrl: (json['clone_url'] as String?)!,
-        svnUrl: (json['svn_url'] as String?)!,
-        forks: ((json['forks'] as num?)?.toInt())!,
-        openIssues: ((json['open_issues'] as num?)?.toInt())!,
-        watchers: ((json['watchers'] as num?)?.toInt())!,
-        topics: json['topics'] != null
-            ? SdkPresent(
-                ((json['topics'] as List?)?.map((e) => e as String).toList())!)
-            : const SdkOmitted(),
-        mirrorUrl: json.containsKey('mirror_url')
-            ? json['mirror_url'] as String?
-            : throw ArgumentError.value(
-                null, 'mirror_url', 'Required property is missing'),
-        hasIssues: (json['has_issues'] as bool?)!,
-        hasProjects: (json['has_projects'] as bool?)!,
-        hasPages: (json['has_pages'] as bool?)!,
-        hasWiki: (json['has_wiki'] as bool?)!,
-        hasDownloads: (json['has_downloads'] as bool?)!,
-        hasDiscussions: json['has_discussions'] != null
-            ? SdkPresent((json['has_discussions'] as bool?)!)
-            : const SdkOmitted(),
-        hasPullRequests: json['has_pull_requests'] != null
-            ? SdkPresent((json['has_pull_requests'] as bool?)!)
-            : const SdkOmitted(),
-        pullRequestCreationPolicy: json['pull_request_creation_policy'] != null
-            ? SdkPresent((json['pull_request_creation_policy'] != null
-                ? RepoSearchResultItemPullRequestCreationPolicy.fromJson(
-                    json['pull_request_creation_policy'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        archived: (json['archived'] as bool?)!,
-        disabled: (json['disabled'] as bool?)!,
-        visibility: json['visibility'] != null
-            ? SdkPresent((json['visibility'] as String?)!)
-            : const SdkOmitted(),
-        license: json.containsKey('license')
-            ? json['license'] != null
-                ? NullableLicenseSimple.fromJson(
-                    json['license'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'license', 'Required property is missing'),
-        permissions: json['permissions'] != null
-            ? SdkPresent((json['permissions'] != null
-                ? RepoSearchResultItemPermissions.fromJson(
-                    json['permissions'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        textMatches: json['text_matches'] != null
-            ? SdkPresent(((json['text_matches'] as List?)
-                ?.map((e) => SearchResultTextMatchesItem.fromJson(
-                    e as Map<String, dynamic>))
+        indices: json['indices'] != null
+            ? SdkPresent(((json['indices'] as List?)
+                ?.map((e) => (e as num).toInt())
                 .toList())!)
-            : const SdkOmitted(),
-        tempCloneToken: json['temp_clone_token'] != null
-            ? SdkPresent((json['temp_clone_token'] as String?)!)
-            : const SdkOmitted(),
-        allowMergeCommit: json['allow_merge_commit'] != null
-            ? SdkPresent((json['allow_merge_commit'] as bool?)!)
-            : const SdkOmitted(),
-        allowSquashMerge: json['allow_squash_merge'] != null
-            ? SdkPresent((json['allow_squash_merge'] as bool?)!)
-            : const SdkOmitted(),
-        allowRebaseMerge: json['allow_rebase_merge'] != null
-            ? SdkPresent((json['allow_rebase_merge'] as bool?)!)
-            : const SdkOmitted(),
-        allowAutoMerge: json['allow_auto_merge'] != null
-            ? SdkPresent((json['allow_auto_merge'] as bool?)!)
-            : const SdkOmitted(),
-        deleteBranchOnMerge: json['delete_branch_on_merge'] != null
-            ? SdkPresent((json['delete_branch_on_merge'] as bool?)!)
-            : const SdkOmitted(),
-        allowForking: json['allow_forking'] != null
-            ? SdkPresent((json['allow_forking'] as bool?)!)
-            : const SdkOmitted(),
-        isTemplate: json['is_template'] != null
-            ? SdkPresent((json['is_template'] as bool?)!)
-            : const SdkOmitted(),
-        webCommitSignoffRequired: json['web_commit_signoff_required'] != null
-            ? SdkPresent((json['web_commit_signoff_required'] as bool?)!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'node_id': nodeId,
-        'name': name,
-        'full_name': fullName,
-        'owner': owner?.toJson(),
-        'private': private,
-        'html_url': htmlUrl,
-        'description': description,
-        'fork': fork,
-        'url': url,
-        'created_at': createdAt,
-        'updated_at': updatedAt,
-        'pushed_at': pushedAt,
-        'homepage': homepage,
-        'size': size,
-        'stargazers_count': stargazersCount,
-        'watchers_count': watchersCount,
-        'language': language,
-        'forks_count': forksCount,
-        'open_issues_count': openIssuesCount,
-        ...switch (masterBranch) {
+        ...switch (text) {
           SdkPresent<String>(value: final value) => {
-              'master_branch': value,
+              'text': value,
             },
           _ => const <String, dynamic>{},
         },
-        'default_branch': defaultBranch,
-        'score': score,
-        'forks_url': forksUrl,
-        'keys_url': keysUrl,
-        'collaborators_url': collaboratorsUrl,
-        'teams_url': teamsUrl,
-        'hooks_url': hooksUrl,
-        'issue_events_url': issueEventsUrl,
-        'events_url': eventsUrl,
-        'assignees_url': assigneesUrl,
-        'branches_url': branchesUrl,
-        'tags_url': tagsUrl,
-        'blobs_url': blobsUrl,
-        'git_tags_url': gitTagsUrl,
-        'git_refs_url': gitRefsUrl,
-        'trees_url': treesUrl,
-        'statuses_url': statusesUrl,
-        'languages_url': languagesUrl,
-        'stargazers_url': stargazersUrl,
-        'contributors_url': contributorsUrl,
-        'subscribers_url': subscribersUrl,
-        'subscription_url': subscriptionUrl,
-        'commits_url': commitsUrl,
-        'git_commits_url': gitCommitsUrl,
-        'comments_url': commentsUrl,
-        'issue_comment_url': issueCommentUrl,
-        'contents_url': contentsUrl,
-        'compare_url': compareUrl,
-        'merges_url': mergesUrl,
-        'archive_url': archiveUrl,
-        'downloads_url': downloadsUrl,
-        'issues_url': issuesUrl,
-        'pulls_url': pullsUrl,
-        'milestones_url': milestonesUrl,
-        'notifications_url': notificationsUrl,
-        'labels_url': labelsUrl,
-        'releases_url': releasesUrl,
-        'deployments_url': deploymentsUrl,
-        'git_url': gitUrl,
-        'ssh_url': sshUrl,
-        'clone_url': cloneUrl,
-        'svn_url': svnUrl,
-        'forks': forks,
-        'open_issues': openIssues,
-        'watchers': watchers,
-        ...switch (topics) {
-          SdkPresent<List<String>>(value: final value) => {
-              'topics': value,
+        ...switch (indices) {
+          SdkPresent<List<int>>(value: final value) => {
+              'indices': value,
             },
           _ => const <String, dynamic>{},
         },
-        'mirror_url': mirrorUrl,
-        'has_issues': hasIssues,
-        'has_projects': hasProjects,
-        'has_pages': hasPages,
-        'has_wiki': hasWiki,
-        'has_downloads': hasDownloads,
-        ...switch (hasDiscussions) {
-          SdkPresent<bool>(value: final value) => {
-              'has_discussions': value,
+      };
+}
+
+/// Required object value serialized in the `text_matches[]` wire field.
+class SearchResultTextMatchesItem {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// Optional `string` value serialized in the `object_url` wire field.
+  final SdkOptional<String> objectUrl;
+
+  /// Optional `string` value serialized in the `object_type` wire field.
+  final SdkOptional<String?> objectType;
+
+  /// Optional `string` value serialized in the `property` wire field.
+  final SdkOptional<String> property;
+
+  /// Optional `string` value serialized in the `fragment` wire field.
+  final SdkOptional<String> fragment;
+
+  /// Optional array value serialized in the `matches` wire field.
+  final SdkOptional<List<SearchResultTextMatchesItemMatchesItem>> matches;
+
+  const SearchResultTextMatchesItem(
+      {this.objectUrl = const SdkOmitted(),
+      this.objectType = const SdkOmitted(),
+      this.property = const SdkOmitted(),
+      this.fragment = const SdkOmitted(),
+      this.matches = const SdkOmitted()});
+
+  SearchResultTextMatchesItem Function(
+          {SdkOptional<String> objectUrl,
+          SdkOptional<String?> objectType,
+          SdkOptional<String> property,
+          SdkOptional<String> fragment,
+          SdkOptional<List<SearchResultTextMatchesItemMatchesItem>> matches})
+      get copyWith => _copyWith;
+
+  SearchResultTextMatchesItem _copyWith(
+          {Object? objectUrl = sdkOmittedValue,
+          Object? objectType = sdkOmittedValue,
+          Object? property = sdkOmittedValue,
+          Object? fragment = sdkOmittedValue,
+          Object? matches = sdkOmittedValue}) =>
+      SearchResultTextMatchesItem(
+        objectUrl: identical(objectUrl, sdkOmittedValue)
+            ? this.objectUrl
+            : objectUrl as SdkOptional<String>,
+        objectType: identical(objectType, sdkOmittedValue)
+            ? this.objectType
+            : objectType as SdkOptional<String?>,
+        property: identical(property, sdkOmittedValue)
+            ? this.property
+            : property as SdkOptional<String>,
+        fragment: identical(fragment, sdkOmittedValue)
+            ? this.fragment
+            : fragment as SdkOptional<String>,
+        matches: identical(matches, sdkOmittedValue)
+            ? this.matches
+            : matches
+                as SdkOptional<List<SearchResultTextMatchesItemMatchesItem>>,
+      );
+
+  factory SearchResultTextMatchesItem.fromJson(Map<String, dynamic> json) =>
+      SearchResultTextMatchesItem(
+        objectUrl: json['object_url'] != null
+            ? SdkPresent((json['object_url'] as String?)!)
+            : const SdkOmitted(),
+        objectType: json.containsKey('object_type')
+            ? SdkPresent(json['object_type'] as String?)
+            : const SdkOmitted(),
+        property: json['property'] != null
+            ? SdkPresent((json['property'] as String?)!)
+            : const SdkOmitted(),
+        fragment: json['fragment'] != null
+            ? SdkPresent((json['fragment'] as String?)!)
+            : const SdkOmitted(),
+        matches: json['matches'] != null
+            ? SdkPresent(((json['matches'] as List?)
+                ?.map((e) => SearchResultTextMatchesItemMatchesItem.fromJson(
+                    e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (objectUrl) {
+          SdkPresent<String>(value: final value) => {
+              'object_url': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (hasPullRequests) {
-          SdkPresent<bool>(value: final value) => {
-              'has_pull_requests': value,
+        ...switch (objectType) {
+          SdkPresent<String?>(value: final value) => {
+              'object_type': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (pullRequestCreationPolicy) {
-          SdkPresent<RepoSearchResultItemPullRequestCreationPolicy>(
+        ...switch (property) {
+          SdkPresent<String>(value: final value) => {
+              'property': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (fragment) {
+          SdkPresent<String>(value: final value) => {
+              'fragment': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (matches) {
+          SdkPresent<List<SearchResultTextMatchesItemMatchesItem>>(
             value: final value
           ) =>
             {
-              'pull_request_creation_policy': value.toJson(),
+              'matches': value.map((item) => item.toJson()).toList(),
             },
           _ => const <String, dynamic>{},
         },
-        'archived': archived,
-        'disabled': disabled,
-        ...switch (visibility) {
+      };
+}
+
+// SearchResultTextMatches = List<SearchResultTextMatchesItem>
+
+/// Optional object value serialized in the `topic_relation` wire field.
+class TopicSearchResultItemRelatedItemTopicRelation {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// Optional `integer` value serialized in the `id` wire field.
+  final SdkOptional<int> id;
+
+  /// Optional `string` value serialized in the `name` wire field.
+  final SdkOptional<String> name;
+
+  /// Optional `integer` value serialized in the `topic_id` wire field.
+  final SdkOptional<int> topicId;
+
+  /// Optional `string` value serialized in the `relation_type` wire field.
+  final SdkOptional<String> relationType;
+
+  const TopicSearchResultItemRelatedItemTopicRelation(
+      {this.id = const SdkOmitted(),
+      this.name = const SdkOmitted(),
+      this.topicId = const SdkOmitted(),
+      this.relationType = const SdkOmitted()});
+
+  TopicSearchResultItemRelatedItemTopicRelation Function(
+      {SdkOptional<int> id,
+      SdkOptional<String> name,
+      SdkOptional<int> topicId,
+      SdkOptional<String> relationType}) get copyWith => _copyWith;
+
+  TopicSearchResultItemRelatedItemTopicRelation _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? topicId = sdkOmittedValue,
+          Object? relationType = sdkOmittedValue}) =>
+      TopicSearchResultItemRelatedItemTopicRelation(
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        topicId: identical(topicId, sdkOmittedValue)
+            ? this.topicId
+            : topicId as SdkOptional<int>,
+        relationType: identical(relationType, sdkOmittedValue)
+            ? this.relationType
+            : relationType as SdkOptional<String>,
+      );
+
+  factory TopicSearchResultItemRelatedItemTopicRelation.fromJson(
+          Map<String, dynamic> json) =>
+      TopicSearchResultItemRelatedItemTopicRelation(
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+        topicId: json['topic_id'] != null
+            ? SdkPresent(((json['topic_id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        relationType: json['relation_type'] != null
+            ? SdkPresent((json['relation_type'] as String?)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (name) {
           SdkPresent<String>(value: final value) => {
-              'visibility': value,
+              'name': value,
             },
           _ => const <String, dynamic>{},
         },
-        'license': license?.toJson(),
-        ...switch (permissions) {
-          SdkPresent<RepoSearchResultItemPermissions>(value: final value) => {
-              'permissions': value.toJson(),
+        ...switch (topicId) {
+          SdkPresent<int>(value: final value) => {
+              'topic_id': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (textMatches) {
-          SdkPresent<List<SearchResultTextMatchesItem>>(value: final value) => {
-              'text_matches': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (tempCloneToken) {
+        ...switch (relationType) {
           SdkPresent<String>(value: final value) => {
-              'temp_clone_token': value,
+              'relation_type': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (allowMergeCommit) {
-          SdkPresent<bool>(value: final value) => {
-              'allow_merge_commit': value,
+      };
+}
+
+/// Required object value serialized in the `related[]` wire field.
+class TopicSearchResultItemRelatedItem {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// Optional object value serialized in the `topic_relation` wire field.
+  final SdkOptional<TopicSearchResultItemRelatedItemTopicRelation>
+      topicRelation;
+
+  const TopicSearchResultItemRelatedItem(
+      {this.topicRelation = const SdkOmitted()});
+
+  TopicSearchResultItemRelatedItem Function(
+      {SdkOptional<TopicSearchResultItemRelatedItemTopicRelation>
+          topicRelation}) get copyWith => _copyWith;
+
+  TopicSearchResultItemRelatedItem _copyWith(
+          {Object? topicRelation = sdkOmittedValue}) =>
+      TopicSearchResultItemRelatedItem(
+        topicRelation: identical(topicRelation, sdkOmittedValue)
+            ? this.topicRelation
+            : topicRelation
+                as SdkOptional<TopicSearchResultItemRelatedItemTopicRelation>,
+      );
+
+  factory TopicSearchResultItemRelatedItem.fromJson(
+          Map<String, dynamic> json) =>
+      TopicSearchResultItemRelatedItem(
+        topicRelation: json['topic_relation'] != null
+            ? SdkPresent((json['topic_relation'] != null
+                ? TopicSearchResultItemRelatedItemTopicRelation.fromJson(
+                    json['topic_relation'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (topicRelation) {
+          SdkPresent<TopicSearchResultItemRelatedItemTopicRelation>(
+            value: final value
+          ) =>
+            {
+              'topic_relation': value.toJson(),
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (allowSquashMerge) {
-          SdkPresent<bool>(value: final value) => {
-              'allow_squash_merge': value,
+      };
+}
+
+/// Optional object value serialized in the `topic_relation` wire field.
+class TopicSearchResultItemAliasesItemTopicRelation {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// Optional `integer` value serialized in the `id` wire field.
+  final SdkOptional<int> id;
+
+  /// Optional `string` value serialized in the `name` wire field.
+  final SdkOptional<String> name;
+
+  /// Optional `integer` value serialized in the `topic_id` wire field.
+  final SdkOptional<int> topicId;
+
+  /// Optional `string` value serialized in the `relation_type` wire field.
+  final SdkOptional<String> relationType;
+
+  const TopicSearchResultItemAliasesItemTopicRelation(
+      {this.id = const SdkOmitted(),
+      this.name = const SdkOmitted(),
+      this.topicId = const SdkOmitted(),
+      this.relationType = const SdkOmitted()});
+
+  TopicSearchResultItemAliasesItemTopicRelation Function(
+      {SdkOptional<int> id,
+      SdkOptional<String> name,
+      SdkOptional<int> topicId,
+      SdkOptional<String> relationType}) get copyWith => _copyWith;
+
+  TopicSearchResultItemAliasesItemTopicRelation _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? topicId = sdkOmittedValue,
+          Object? relationType = sdkOmittedValue}) =>
+      TopicSearchResultItemAliasesItemTopicRelation(
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        topicId: identical(topicId, sdkOmittedValue)
+            ? this.topicId
+            : topicId as SdkOptional<int>,
+        relationType: identical(relationType, sdkOmittedValue)
+            ? this.relationType
+            : relationType as SdkOptional<String>,
+      );
+
+  factory TopicSearchResultItemAliasesItemTopicRelation.fromJson(
+          Map<String, dynamic> json) =>
+      TopicSearchResultItemAliasesItemTopicRelation(
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+        topicId: json['topic_id'] != null
+            ? SdkPresent(((json['topic_id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        relationType: json['relation_type'] != null
+            ? SdkPresent((json['relation_type'] as String?)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (allowRebaseMerge) {
-          SdkPresent<bool>(value: final value) => {
-              'allow_rebase_merge': value,
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (allowAutoMerge) {
-          SdkPresent<bool>(value: final value) => {
-              'allow_auto_merge': value,
+        ...switch (topicId) {
+          SdkPresent<int>(value: final value) => {
+              'topic_id': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (deleteBranchOnMerge) {
-          SdkPresent<bool>(value: final value) => {
-              'delete_branch_on_merge': value,
+        ...switch (relationType) {
+          SdkPresent<String>(value: final value) => {
+              'relation_type': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (allowForking) {
-          SdkPresent<bool>(value: final value) => {
-              'allow_forking': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (isTemplate) {
-          SdkPresent<bool>(value: final value) => {
-              'is_template': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (webCommitSignoffRequired) {
-          SdkPresent<bool>(value: final value) => {
-              'web_commit_signoff_required': value,
+      };
+}
+
+/// Required object value serialized in the `aliases[]` wire field.
+class TopicSearchResultItemAliasesItem {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// Optional object value serialized in the `topic_relation` wire field.
+  final SdkOptional<TopicSearchResultItemAliasesItemTopicRelation>
+      topicRelation;
+
+  const TopicSearchResultItemAliasesItem(
+      {this.topicRelation = const SdkOmitted()});
+
+  TopicSearchResultItemAliasesItem Function(
+      {SdkOptional<TopicSearchResultItemAliasesItemTopicRelation>
+          topicRelation}) get copyWith => _copyWith;
+
+  TopicSearchResultItemAliasesItem _copyWith(
+          {Object? topicRelation = sdkOmittedValue}) =>
+      TopicSearchResultItemAliasesItem(
+        topicRelation: identical(topicRelation, sdkOmittedValue)
+            ? this.topicRelation
+            : topicRelation
+                as SdkOptional<TopicSearchResultItemAliasesItemTopicRelation>,
+      );
+
+  factory TopicSearchResultItemAliasesItem.fromJson(
+          Map<String, dynamic> json) =>
+      TopicSearchResultItemAliasesItem(
+        topicRelation: json['topic_relation'] != null
+            ? SdkPresent((json['topic_relation'] != null
+                ? TopicSearchResultItemAliasesItemTopicRelation.fromJson(
+                    json['topic_relation'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (topicRelation) {
+          SdkPresent<TopicSearchResultItemAliasesItemTopicRelation>(
+            value: final value
+          ) =>
+            {
+              'topic_relation': value.toJson(),
             },
           _ => const <String, dynamic>{},
         },

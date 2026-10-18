@@ -4,7 +4,7 @@
 part of 'webhook_pull_request_review_request_removed.dart';
 
 // webhook_pull_request_review_request_removed domain models (part 28)
-class WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoOwner {
+class WebhookPullRequestReviewRequestRemovedVariant1PullRequestAutoMergeEnabledBy {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   final SdkOptional<String> avatarUrl;
@@ -27,12 +27,12 @@ class WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoOwner {
   final SdkOptional<String> starredUrl;
   final SdkOptional<String> subscriptionsUrl;
   final SdkOptional<
-          WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoOwnerType>
+          WebhookPullRequestReviewRequestRemovedVariant1PullRequestAutoMergeEnabledByType>
       type_;
   final SdkOptional<String> url;
   final SdkOptional<String> userViewType;
 
-  const WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoOwner(
+  const WebhookPullRequestReviewRequestRemovedVariant1PullRequestAutoMergeEnabledBy(
       {this.avatarUrl = const SdkOmitted(),
       this.deleted = const SdkOmitted(),
       this.email = const SdkOmitted(),
@@ -56,7 +56,7 @@ class WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoOwner {
       this.url = const SdkOmitted(),
       this.userViewType = const SdkOmitted()});
 
-  WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoOwner Function(
+  WebhookPullRequestReviewRequestRemovedVariant1PullRequestAutoMergeEnabledBy Function(
       {SdkOptional<String> avatarUrl,
       SdkOptional<bool> deleted,
       SdkOptional<String?> email,
@@ -77,12 +77,12 @@ class WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoOwner {
       SdkOptional<String> starredUrl,
       SdkOptional<String> subscriptionsUrl,
       SdkOptional<
-              WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoOwnerType>
+              WebhookPullRequestReviewRequestRemovedVariant1PullRequestAutoMergeEnabledByType>
           type_,
       SdkOptional<String> url,
       SdkOptional<String> userViewType}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoOwner
+  WebhookPullRequestReviewRequestRemovedVariant1PullRequestAutoMergeEnabledBy
       _copyWith(
               {Object? avatarUrl = sdkOmittedValue,
               Object? deleted = sdkOmittedValue,
@@ -106,7 +106,7 @@ class WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoOwner {
               Object? type_ = sdkOmittedValue,
               Object? url = sdkOmittedValue,
               Object? userViewType = sdkOmittedValue}) =>
-          WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoOwner(
+          WebhookPullRequestReviewRequestRemovedVariant1PullRequestAutoMergeEnabledBy(
             avatarUrl: identical(avatarUrl, sdkOmittedValue)
                 ? this.avatarUrl
                 : avatarUrl as SdkOptional<String>,
@@ -165,7 +165,7 @@ class WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoOwner {
             type_: identical(type_, sdkOmittedValue)
                 ? this.type_
                 : type_ as SdkOptional<
-                    WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoOwnerType>,
+                    WebhookPullRequestReviewRequestRemovedVariant1PullRequestAutoMergeEnabledByType>,
             url: identical(url, sdkOmittedValue)
                 ? this.url
                 : url as SdkOptional<String>,
@@ -174,9 +174,9 @@ class WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoOwner {
                 : userViewType as SdkOptional<String>,
           );
 
-  factory WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoOwner.fromJson(
+  factory WebhookPullRequestReviewRequestRemovedVariant1PullRequestAutoMergeEnabledBy.fromJson(
           Map<String, dynamic> json) =>
-      WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoOwner(
+      WebhookPullRequestReviewRequestRemovedVariant1PullRequestAutoMergeEnabledBy(
         avatarUrl: json['avatar_url'] != null
             ? SdkPresent((json['avatar_url'] as String?)!)
             : const SdkOmitted(),
@@ -232,7 +232,7 @@ class WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoOwner {
             : const SdkOmitted(),
         type_: json['type'] != null
             ? SdkPresent((json['type'] != null
-                ? WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoOwnerType
+                ? WebhookPullRequestReviewRequestRemovedVariant1PullRequestAutoMergeEnabledByType
                     .fromJson(json['type'] as String)
                 : null)!)
             : const SdkOmitted(),
@@ -351,7 +351,7 @@ class WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoOwner {
         },
         ...switch (type_) {
           SdkPresent<
-                WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseRepoOwnerType>(
+                WebhookPullRequestReviewRequestRemovedVariant1PullRequestAutoMergeEnabledByType>(
             value: final value
           ) =>
             {

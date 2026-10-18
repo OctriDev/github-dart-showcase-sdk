@@ -4,601 +4,468 @@
 part of 'inline.dart';
 
 // Inline operation models (part 330)
-class AgentAutomationsEditRepoAutomationResponseTriggersPullRequestOpened {
+class ActionsAddCustomLabelsToSelfHostedRunnerForOrgRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// A GitHub issue or pull request search query.
-  final SdkOptional<String> query;
+  /// The names of the custom labels to add to the runner.
+  final List<String> labels;
 
-  /// Gitignore-style changed-file path globs.
-  final SdkOptional<List<String>> paths;
+  const ActionsAddCustomLabelsToSelfHostedRunnerForOrgRequestBody(
+      {required this.labels});
 
-  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-  final SdkOptional<
-          AgentAutomationsEditRepoAutomationResponseTriggersPullRequestOpenedWriteScope>
-      writeScope;
+  ActionsAddCustomLabelsToSelfHostedRunnerForOrgRequestBody Function(
+      {List<String> labels}) get copyWith => _copyWith;
 
-  const AgentAutomationsEditRepoAutomationResponseTriggersPullRequestOpened(
-      {this.query = const SdkOmitted(),
-      this.paths = const SdkOmitted(),
-      this.writeScope = const SdkOmitted()});
-
-  AgentAutomationsEditRepoAutomationResponseTriggersPullRequestOpened Function(
-      {SdkOptional<String> query,
-      SdkOptional<List<String>> paths,
-      SdkOptional<
-              AgentAutomationsEditRepoAutomationResponseTriggersPullRequestOpenedWriteScope>
-          writeScope}) get copyWith => _copyWith;
-
-  AgentAutomationsEditRepoAutomationResponseTriggersPullRequestOpened _copyWith(
-          {Object? query = sdkOmittedValue,
-          Object? paths = sdkOmittedValue,
-          Object? writeScope = sdkOmittedValue}) =>
-      AgentAutomationsEditRepoAutomationResponseTriggersPullRequestOpened(
-        query: identical(query, sdkOmittedValue)
-            ? this.query
-            : query as SdkOptional<String>,
-        paths: identical(paths, sdkOmittedValue)
-            ? this.paths
-            : paths as SdkOptional<List<String>>,
-        writeScope: identical(writeScope, sdkOmittedValue)
-            ? this.writeScope
-            : writeScope as SdkOptional<
-                AgentAutomationsEditRepoAutomationResponseTriggersPullRequestOpenedWriteScope>,
+  ActionsAddCustomLabelsToSelfHostedRunnerForOrgRequestBody _copyWith(
+          {Object? labels = sdkOmittedValue}) =>
+      ActionsAddCustomLabelsToSelfHostedRunnerForOrgRequestBody(
+        labels: identical(labels, sdkOmittedValue)
+            ? this.labels
+            : labels as List<String>,
       );
 
-  factory AgentAutomationsEditRepoAutomationResponseTriggersPullRequestOpened.fromJson(
+  factory ActionsAddCustomLabelsToSelfHostedRunnerForOrgRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      AgentAutomationsEditRepoAutomationResponseTriggersPullRequestOpened(
-        query: json['query'] != null
-            ? SdkPresent((json['query'] as String?)!)
-            : const SdkOmitted(),
-        paths: json['paths'] != null
-            ? SdkPresent(
-                ((json['paths'] as List?)?.map((e) => e as String).toList())!)
-            : const SdkOmitted(),
-        writeScope: json['write_scope'] != null
-            ? SdkPresent((json['write_scope'] != null
-                ? AgentAutomationsEditRepoAutomationResponseTriggersPullRequestOpenedWriteScope
-                    .fromJson(json['write_scope'] as String)
-                : null)!)
-            : const SdkOmitted(),
+      ActionsAddCustomLabelsToSelfHostedRunnerForOrgRequestBody(
+        labels: ((json['labels'] as List?)?.map((e) => e as String).toList())!,
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (query) {
-          SdkPresent<String>(value: final value) => {
-              'query': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (paths) {
-          SdkPresent<List<String>>(value: final value) => {
-              'paths': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (writeScope) {
-          SdkPresent<
-                AgentAutomationsEditRepoAutomationResponseTriggersPullRequestOpenedWriteScope>(
-            value: final value
-          ) =>
-            {
-              'write_scope': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
+        'labels': labels,
       };
 }
 
-class AgentAutomationsEditRepoAutomationResponseTriggersPullRequestSynchronize {
+class ActionsSetCustomLabelsForSelfHostedRunnerForOrgRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// A GitHub issue or pull request search query.
-  final SdkOptional<String> query;
+  /// The names of the custom labels to set for the runner. You can pass an empty array to remove all custom labels.
+  final List<String> labels;
 
-  /// Gitignore-style changed-file path globs.
-  final SdkOptional<List<String>> paths;
+  const ActionsSetCustomLabelsForSelfHostedRunnerForOrgRequestBody(
+      {required this.labels});
 
-  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-  final SdkOptional<
-          AgentAutomationsEditRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope>
-      writeScope;
+  ActionsSetCustomLabelsForSelfHostedRunnerForOrgRequestBody Function(
+      {List<String> labels}) get copyWith => _copyWith;
 
-  const AgentAutomationsEditRepoAutomationResponseTriggersPullRequestSynchronize(
-      {this.query = const SdkOmitted(),
-      this.paths = const SdkOmitted(),
-      this.writeScope = const SdkOmitted()});
+  ActionsSetCustomLabelsForSelfHostedRunnerForOrgRequestBody _copyWith(
+          {Object? labels = sdkOmittedValue}) =>
+      ActionsSetCustomLabelsForSelfHostedRunnerForOrgRequestBody(
+        labels: identical(labels, sdkOmittedValue)
+            ? this.labels
+            : labels as List<String>,
+      );
 
-  AgentAutomationsEditRepoAutomationResponseTriggersPullRequestSynchronize Function(
-      {SdkOptional<String> query,
-      SdkOptional<List<String>> paths,
-      SdkOptional<
-              AgentAutomationsEditRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope>
-          writeScope}) get copyWith => _copyWith;
-
-  AgentAutomationsEditRepoAutomationResponseTriggersPullRequestSynchronize
-      _copyWith(
-              {Object? query = sdkOmittedValue,
-              Object? paths = sdkOmittedValue,
-              Object? writeScope = sdkOmittedValue}) =>
-          AgentAutomationsEditRepoAutomationResponseTriggersPullRequestSynchronize(
-            query: identical(query, sdkOmittedValue)
-                ? this.query
-                : query as SdkOptional<String>,
-            paths: identical(paths, sdkOmittedValue)
-                ? this.paths
-                : paths as SdkOptional<List<String>>,
-            writeScope: identical(writeScope, sdkOmittedValue)
-                ? this.writeScope
-                : writeScope as SdkOptional<
-                    AgentAutomationsEditRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope>,
-          );
-
-  factory AgentAutomationsEditRepoAutomationResponseTriggersPullRequestSynchronize.fromJson(
+  factory ActionsSetCustomLabelsForSelfHostedRunnerForOrgRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      AgentAutomationsEditRepoAutomationResponseTriggersPullRequestSynchronize(
-        query: json['query'] != null
-            ? SdkPresent((json['query'] as String?)!)
-            : const SdkOmitted(),
-        paths: json['paths'] != null
-            ? SdkPresent(
-                ((json['paths'] as List?)?.map((e) => e as String).toList())!)
-            : const SdkOmitted(),
-        writeScope: json['write_scope'] != null
-            ? SdkPresent((json['write_scope'] != null
-                ? AgentAutomationsEditRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope
-                    .fromJson(json['write_scope'] as String)
-                : null)!)
-            : const SdkOmitted(),
+      ActionsSetCustomLabelsForSelfHostedRunnerForOrgRequestBody(
+        labels: ((json['labels'] as List?)?.map((e) => e as String).toList())!,
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (query) {
-          SdkPresent<String>(value: final value) => {
-              'query': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (paths) {
-          SdkPresent<List<String>>(value: final value) => {
-              'paths': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (writeScope) {
-          SdkPresent<
-                AgentAutomationsEditRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope>(
-            value: final value
-          ) =>
-            {
-              'write_scope': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
+        'labels': labels,
       };
 }
 
-class AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMerged {
+class ActionsListOrgSecretsResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+  final int totalCount;
+  final List<OrganizationActionsSecret> secrets;
 
-  /// A GitHub issue or pull request search query.
-  final SdkOptional<String> query;
+  const ActionsListOrgSecretsResponse(
+      {required this.totalCount, required this.secrets});
 
-  /// Gitignore-style changed-file path globs.
-  final SdkOptional<List<String>> paths;
+  ActionsListOrgSecretsResponse Function(
+      {int totalCount,
+      List<OrganizationActionsSecret> secrets}) get copyWith => _copyWith;
 
-  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-  final SdkOptional<
-          AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMergedWriteScope>
-      writeScope;
-
-  const AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMerged(
-      {this.query = const SdkOmitted(),
-      this.paths = const SdkOmitted(),
-      this.writeScope = const SdkOmitted()});
-
-  AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMerged Function(
-      {SdkOptional<String> query,
-      SdkOptional<List<String>> paths,
-      SdkOptional<
-              AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMergedWriteScope>
-          writeScope}) get copyWith => _copyWith;
-
-  AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMerged _copyWith(
-          {Object? query = sdkOmittedValue,
-          Object? paths = sdkOmittedValue,
-          Object? writeScope = sdkOmittedValue}) =>
-      AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMerged(
-        query: identical(query, sdkOmittedValue)
-            ? this.query
-            : query as SdkOptional<String>,
-        paths: identical(paths, sdkOmittedValue)
-            ? this.paths
-            : paths as SdkOptional<List<String>>,
-        writeScope: identical(writeScope, sdkOmittedValue)
-            ? this.writeScope
-            : writeScope as SdkOptional<
-                AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMergedWriteScope>,
+  ActionsListOrgSecretsResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? secrets = sdkOmittedValue}) =>
+      ActionsListOrgSecretsResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        secrets: identical(secrets, sdkOmittedValue)
+            ? this.secrets
+            : secrets as List<OrganizationActionsSecret>,
       );
 
-  factory AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMerged.fromJson(
-          Map<String, dynamic> json) =>
-      AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMerged(
-        query: json['query'] != null
-            ? SdkPresent((json['query'] as String?)!)
-            : const SdkOmitted(),
-        paths: json['paths'] != null
-            ? SdkPresent(
-                ((json['paths'] as List?)?.map((e) => e as String).toList())!)
-            : const SdkOmitted(),
-        writeScope: json['write_scope'] != null
-            ? SdkPresent((json['write_scope'] != null
-                ? AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMergedWriteScope
-                    .fromJson(json['write_scope'] as String)
-                : null)!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (query) {
-          SdkPresent<String>(value: final value) => {
-              'query': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (paths) {
-          SdkPresent<List<String>>(value: final value) => {
-              'paths': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (writeScope) {
-          SdkPresent<
-                AgentAutomationsEditRepoAutomationResponseTriggersPullRequestMergedWriteScope>(
-            value: final value
-          ) =>
-            {
-              'write_scope': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-class AgentAutomationsEditRepoAutomationResponseTriggersIssueComment {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// A case-insensitive substring matched against the event body.
-  final SdkOptional<String> bodySubstring;
-
-  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-  final SdkOptional<
-          AgentAutomationsEditRepoAutomationResponseTriggersIssueCommentWriteScope>
-      writeScope;
-
-  const AgentAutomationsEditRepoAutomationResponseTriggersIssueComment(
-      {this.bodySubstring = const SdkOmitted(),
-      this.writeScope = const SdkOmitted()});
-
-  AgentAutomationsEditRepoAutomationResponseTriggersIssueComment Function(
-      {SdkOptional<String> bodySubstring,
-      SdkOptional<
-              AgentAutomationsEditRepoAutomationResponseTriggersIssueCommentWriteScope>
-          writeScope}) get copyWith => _copyWith;
-
-  AgentAutomationsEditRepoAutomationResponseTriggersIssueComment _copyWith(
-          {Object? bodySubstring = sdkOmittedValue,
-          Object? writeScope = sdkOmittedValue}) =>
-      AgentAutomationsEditRepoAutomationResponseTriggersIssueComment(
-        bodySubstring: identical(bodySubstring, sdkOmittedValue)
-            ? this.bodySubstring
-            : bodySubstring as SdkOptional<String>,
-        writeScope: identical(writeScope, sdkOmittedValue)
-            ? this.writeScope
-            : writeScope as SdkOptional<
-                AgentAutomationsEditRepoAutomationResponseTriggersIssueCommentWriteScope>,
-      );
-
-  factory AgentAutomationsEditRepoAutomationResponseTriggersIssueComment.fromJson(
-          Map<String, dynamic> json) =>
-      AgentAutomationsEditRepoAutomationResponseTriggersIssueComment(
-        bodySubstring: json['body_substring'] != null
-            ? SdkPresent((json['body_substring'] as String?)!)
-            : const SdkOmitted(),
-        writeScope: json['write_scope'] != null
-            ? SdkPresent((json['write_scope'] != null
-                ? AgentAutomationsEditRepoAutomationResponseTriggersIssueCommentWriteScope
-                    .fromJson(json['write_scope'] as String)
-                : null)!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (bodySubstring) {
-          SdkPresent<String>(value: final value) => {
-              'body_substring': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (writeScope) {
-          SdkPresent<
-                AgentAutomationsEditRepoAutomationResponseTriggersIssueCommentWriteScope>(
-            value: final value
-          ) =>
-            {
-              'write_scope': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-class AgentAutomationsEditRepoAutomationResponseTriggersPullRequestComment {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Pull request conversation and inline review comment types to match.
-  final List<
-          AgentAutomationsEditRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem>
-      commentTypes;
-
-  /// A case-insensitive substring matched against the event body.
-  final SdkOptional<String> bodySubstring;
-
-  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-  final SdkOptional<
-          AgentAutomationsEditRepoAutomationResponseTriggersPullRequestCommentWriteScope>
-      writeScope;
-
-  const AgentAutomationsEditRepoAutomationResponseTriggersPullRequestComment(
-      {required this.commentTypes,
-      this.bodySubstring = const SdkOmitted(),
-      this.writeScope = const SdkOmitted()});
-
-  AgentAutomationsEditRepoAutomationResponseTriggersPullRequestComment Function(
-      {List<AgentAutomationsEditRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem>
-          commentTypes,
-      SdkOptional<String> bodySubstring,
-      SdkOptional<
-              AgentAutomationsEditRepoAutomationResponseTriggersPullRequestCommentWriteScope>
-          writeScope}) get copyWith => _copyWith;
-
-  AgentAutomationsEditRepoAutomationResponseTriggersPullRequestComment
-      _copyWith(
-              {Object? commentTypes = sdkOmittedValue,
-              Object? bodySubstring = sdkOmittedValue,
-              Object? writeScope = sdkOmittedValue}) =>
-          AgentAutomationsEditRepoAutomationResponseTriggersPullRequestComment(
-            commentTypes: identical(commentTypes, sdkOmittedValue)
-                ? this.commentTypes
-                : commentTypes as List<
-                    AgentAutomationsEditRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem>,
-            bodySubstring: identical(bodySubstring, sdkOmittedValue)
-                ? this.bodySubstring
-                : bodySubstring as SdkOptional<String>,
-            writeScope: identical(writeScope, sdkOmittedValue)
-                ? this.writeScope
-                : writeScope as SdkOptional<
-                    AgentAutomationsEditRepoAutomationResponseTriggersPullRequestCommentWriteScope>,
-          );
-
-  factory AgentAutomationsEditRepoAutomationResponseTriggersPullRequestComment.fromJson(
-          Map<String, dynamic> json) =>
-      AgentAutomationsEditRepoAutomationResponseTriggersPullRequestComment(
-        commentTypes: ((json['comment_types'] as List?)
+  factory ActionsListOrgSecretsResponse.fromJson(Map<String, dynamic> json) =>
+      ActionsListOrgSecretsResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        secrets: ((json['secrets'] as List?)
             ?.map((e) =>
-                AgentAutomationsEditRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem
-                    .fromJson(e as String))
+                OrganizationActionsSecret.fromJson(e as Map<String, dynamic>))
             .toList())!,
-        bodySubstring: json['body_substring'] != null
-            ? SdkPresent((json['body_substring'] as String?)!)
-            : const SdkOmitted(),
-        writeScope: json['write_scope'] != null
-            ? SdkPresent((json['write_scope'] != null
-                ? AgentAutomationsEditRepoAutomationResponseTriggersPullRequestCommentWriteScope
-                    .fromJson(json['write_scope'] as String)
-                : null)!)
+      );
+
+  Map<String, dynamic> toJson() => {
+        'total_count': totalCount,
+        'secrets': secrets.map((item) => item.toJson()).toList(),
+      };
+}
+
+class ActionsCreateOrUpdateOrgSecretRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get an organization public key](https://docs.github.com/rest/actions/secrets#get-an-organization-public-key) endpoint.
+  final String encryptedValue;
+
+  /// ID of the key you used to encrypt the secret.
+  final String keyId;
+
+  /// Which type of organization repositories have access to the organization secret. `selected` means only the repositories specified by `selected_repository_ids` can access the secret.
+  final ActionsCreateOrUpdateOrgSecretRequestBodyVisibility visibility;
+
+  /// An array of repository ids that can access the organization secret. You can only provide a list of repository ids when the `visibility` is set to `selected`. You can manage the list of selected repositories using the [List selected repositories for an organization secret](https://docs.github.com/rest/actions/secrets#list-selected-repositories-for-an-organization-secret), [Set selected repositories for an organization secret](https://docs.github.com/rest/actions/secrets#set-selected-repositories-for-an-organization-secret), and [Remove selected repository from an organization secret](https://docs.github.com/rest/actions/secrets#remove-selected-repository-from-an-organization-secret) endpoints.
+  final SdkOptional<List<int>> selectedRepositoryIds;
+
+  const ActionsCreateOrUpdateOrgSecretRequestBody(
+      {required this.encryptedValue,
+      required this.keyId,
+      required this.visibility,
+      this.selectedRepositoryIds = const SdkOmitted()});
+
+  ActionsCreateOrUpdateOrgSecretRequestBody Function(
+      {String encryptedValue,
+      String keyId,
+      ActionsCreateOrUpdateOrgSecretRequestBodyVisibility visibility,
+      SdkOptional<List<int>> selectedRepositoryIds}) get copyWith => _copyWith;
+
+  ActionsCreateOrUpdateOrgSecretRequestBody _copyWith(
+          {Object? encryptedValue = sdkOmittedValue,
+          Object? keyId = sdkOmittedValue,
+          Object? visibility = sdkOmittedValue,
+          Object? selectedRepositoryIds = sdkOmittedValue}) =>
+      ActionsCreateOrUpdateOrgSecretRequestBody(
+        encryptedValue: identical(encryptedValue, sdkOmittedValue)
+            ? this.encryptedValue
+            : encryptedValue as String,
+        keyId: identical(keyId, sdkOmittedValue) ? this.keyId : keyId as String,
+        visibility: identical(visibility, sdkOmittedValue)
+            ? this.visibility
+            : visibility as ActionsCreateOrUpdateOrgSecretRequestBodyVisibility,
+        selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue)
+            ? this.selectedRepositoryIds
+            : selectedRepositoryIds as SdkOptional<List<int>>,
+      );
+
+  factory ActionsCreateOrUpdateOrgSecretRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      ActionsCreateOrUpdateOrgSecretRequestBody(
+        encryptedValue: (json['encrypted_value'] as String?)!,
+        keyId: (json['key_id'] as String?)!,
+        visibility: (json['visibility'] != null
+            ? ActionsCreateOrUpdateOrgSecretRequestBodyVisibility.fromJson(
+                json['visibility'] as String)
+            : null)!,
+        selectedRepositoryIds: json['selected_repository_ids'] != null
+            ? SdkPresent(((json['selected_repository_ids'] as List?)
+                ?.map((e) => (e as num).toInt())
+                .toList())!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        'comment_types': commentTypes.map((item) => item.toJson()).toList(),
-        ...switch (bodySubstring) {
-          SdkPresent<String>(value: final value) => {
-              'body_substring': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (writeScope) {
-          SdkPresent<
-                AgentAutomationsEditRepoAutomationResponseTriggersPullRequestCommentWriteScope>(
-            value: final value
-          ) =>
-            {
-              'write_scope': value.toJson(),
+        'encrypted_value': encryptedValue,
+        'key_id': keyId,
+        'visibility': visibility.toJson(),
+        ...switch (selectedRepositoryIds) {
+          SdkPresent<List<int>>(value: final value) => {
+              'selected_repository_ids': value,
             },
           _ => const <String, dynamic>{},
         },
       };
 }
 
-class AgentAutomationsEditRepoAutomationResponseTriggersDiscussionOpened {
+class ActionsListSelectedReposForOrgSecretResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  final int totalCount;
+  final List<MinimalRepository> repositories;
+
+  const ActionsListSelectedReposForOrgSecretResponse(
+      {required this.totalCount, required this.repositories});
+
+  ActionsListSelectedReposForOrgSecretResponse Function(
+      {int totalCount,
+      List<MinimalRepository> repositories}) get copyWith => _copyWith;
+
+  ActionsListSelectedReposForOrgSecretResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? repositories = sdkOmittedValue}) =>
+      ActionsListSelectedReposForOrgSecretResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        repositories: identical(repositories, sdkOmittedValue)
+            ? this.repositories
+            : repositories as List<MinimalRepository>,
+      );
+
+  factory ActionsListSelectedReposForOrgSecretResponse.fromJson(
+          Map<String, dynamic> json) =>
+      ActionsListSelectedReposForOrgSecretResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        repositories: ((json['repositories'] as List?)
+            ?.map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'total_count': totalCount,
+        'repositories': repositories.map((item) => item.toJson()).toList(),
+      };
+}
+
+class ActionsSetSelectedReposForOrgSecretRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Discussion category names matched case-insensitively.
-  final SdkOptional<List<String>> categories;
+  /// An array of repository ids that can access the organization secret. You can only provide a list of repository ids when the `visibility` is set to `selected`. You can add and remove individual repositories using the [Add selected repository to an organization secret](https://docs.github.com/rest/actions/secrets#add-selected-repository-to-an-organization-secret) and [Remove selected repository from an organization secret](https://docs.github.com/rest/actions/secrets#remove-selected-repository-from-an-organization-secret) endpoints.
+  final List<int> selectedRepositoryIds;
 
-  /// A case-insensitive substring matched against the event body.
-  final SdkOptional<String> bodySubstring;
+  const ActionsSetSelectedReposForOrgSecretRequestBody(
+      {required this.selectedRepositoryIds});
 
-  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-  final SdkOptional<
-          AgentAutomationsEditRepoAutomationResponseTriggersDiscussionOpenedWriteScope>
-      writeScope;
+  ActionsSetSelectedReposForOrgSecretRequestBody Function(
+      {List<int> selectedRepositoryIds}) get copyWith => _copyWith;
 
-  const AgentAutomationsEditRepoAutomationResponseTriggersDiscussionOpened(
-      {this.categories = const SdkOmitted(),
-      this.bodySubstring = const SdkOmitted(),
-      this.writeScope = const SdkOmitted()});
-
-  AgentAutomationsEditRepoAutomationResponseTriggersDiscussionOpened Function(
-      {SdkOptional<List<String>> categories,
-      SdkOptional<String> bodySubstring,
-      SdkOptional<
-              AgentAutomationsEditRepoAutomationResponseTriggersDiscussionOpenedWriteScope>
-          writeScope}) get copyWith => _copyWith;
-
-  AgentAutomationsEditRepoAutomationResponseTriggersDiscussionOpened _copyWith(
-          {Object? categories = sdkOmittedValue,
-          Object? bodySubstring = sdkOmittedValue,
-          Object? writeScope = sdkOmittedValue}) =>
-      AgentAutomationsEditRepoAutomationResponseTriggersDiscussionOpened(
-        categories: identical(categories, sdkOmittedValue)
-            ? this.categories
-            : categories as SdkOptional<List<String>>,
-        bodySubstring: identical(bodySubstring, sdkOmittedValue)
-            ? this.bodySubstring
-            : bodySubstring as SdkOptional<String>,
-        writeScope: identical(writeScope, sdkOmittedValue)
-            ? this.writeScope
-            : writeScope as SdkOptional<
-                AgentAutomationsEditRepoAutomationResponseTriggersDiscussionOpenedWriteScope>,
+  ActionsSetSelectedReposForOrgSecretRequestBody _copyWith(
+          {Object? selectedRepositoryIds = sdkOmittedValue}) =>
+      ActionsSetSelectedReposForOrgSecretRequestBody(
+        selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue)
+            ? this.selectedRepositoryIds
+            : selectedRepositoryIds as List<int>,
       );
 
-  factory AgentAutomationsEditRepoAutomationResponseTriggersDiscussionOpened.fromJson(
+  factory ActionsSetSelectedReposForOrgSecretRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      AgentAutomationsEditRepoAutomationResponseTriggersDiscussionOpened(
-        categories: json['categories'] != null
-            ? SdkPresent(((json['categories'] as List?)
-                ?.map((e) => e as String)
+      ActionsSetSelectedReposForOrgSecretRequestBody(
+        selectedRepositoryIds: ((json['selected_repository_ids'] as List?)
+            ?.map((e) => (e as num).toInt())
+            .toList())!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'selected_repository_ids': selectedRepositoryIds,
+      };
+}
+
+class ActionsListOrgVariablesResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  final int totalCount;
+  final List<OrganizationActionsVariable> variables;
+
+  const ActionsListOrgVariablesResponse(
+      {required this.totalCount, required this.variables});
+
+  ActionsListOrgVariablesResponse Function(
+      {int totalCount,
+      List<OrganizationActionsVariable> variables}) get copyWith => _copyWith;
+
+  ActionsListOrgVariablesResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? variables = sdkOmittedValue}) =>
+      ActionsListOrgVariablesResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        variables: identical(variables, sdkOmittedValue)
+            ? this.variables
+            : variables as List<OrganizationActionsVariable>,
+      );
+
+  factory ActionsListOrgVariablesResponse.fromJson(Map<String, dynamic> json) =>
+      ActionsListOrgVariablesResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        variables: ((json['variables'] as List?)
+            ?.map((e) =>
+                OrganizationActionsVariable.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'total_count': totalCount,
+        'variables': variables.map((item) => item.toJson()).toList(),
+      };
+}
+
+class ActionsCreateOrgVariableRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The name of the variable.
+  final String name;
+
+  /// The value of the variable.
+  final String value;
+
+  /// The type of repositories in the organization that can access the variable. `selected` means only the repositories specified by `selected_repository_ids` can access the variable.
+  final ActionsCreateOrgVariableRequestBodyVisibility visibility;
+
+  /// An array of repository ids that can access the organization variable. You can only provide a list of repository ids when the `visibility` is set to `selected`.
+  final SdkOptional<List<int>> selectedRepositoryIds;
+
+  const ActionsCreateOrgVariableRequestBody(
+      {required this.name,
+      required this.value,
+      required this.visibility,
+      this.selectedRepositoryIds = const SdkOmitted()});
+
+  ActionsCreateOrgVariableRequestBody Function(
+      {String name,
+      String value,
+      ActionsCreateOrgVariableRequestBodyVisibility visibility,
+      SdkOptional<List<int>> selectedRepositoryIds}) get copyWith => _copyWith;
+
+  ActionsCreateOrgVariableRequestBody _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? value = sdkOmittedValue,
+          Object? visibility = sdkOmittedValue,
+          Object? selectedRepositoryIds = sdkOmittedValue}) =>
+      ActionsCreateOrgVariableRequestBody(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        value: identical(value, sdkOmittedValue) ? this.value : value as String,
+        visibility: identical(visibility, sdkOmittedValue)
+            ? this.visibility
+            : visibility as ActionsCreateOrgVariableRequestBodyVisibility,
+        selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue)
+            ? this.selectedRepositoryIds
+            : selectedRepositoryIds as SdkOptional<List<int>>,
+      );
+
+  factory ActionsCreateOrgVariableRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      ActionsCreateOrgVariableRequestBody(
+        name: (json['name'] as String?)!,
+        value: (json['value'] as String?)!,
+        visibility: (json['visibility'] != null
+            ? ActionsCreateOrgVariableRequestBodyVisibility.fromJson(
+                json['visibility'] as String)
+            : null)!,
+        selectedRepositoryIds: json['selected_repository_ids'] != null
+            ? SdkPresent(((json['selected_repository_ids'] as List?)
+                ?.map((e) => (e as num).toInt())
                 .toList())!)
-            : const SdkOmitted(),
-        bodySubstring: json['body_substring'] != null
-            ? SdkPresent((json['body_substring'] as String?)!)
-            : const SdkOmitted(),
-        writeScope: json['write_scope'] != null
-            ? SdkPresent((json['write_scope'] != null
-                ? AgentAutomationsEditRepoAutomationResponseTriggersDiscussionOpenedWriteScope
-                    .fromJson(json['write_scope'] as String)
-                : null)!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (categories) {
-          SdkPresent<List<String>>(value: final value) => {
-              'categories': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (bodySubstring) {
-          SdkPresent<String>(value: final value) => {
-              'body_substring': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (writeScope) {
-          SdkPresent<
-                AgentAutomationsEditRepoAutomationResponseTriggersDiscussionOpenedWriteScope>(
-            value: final value
-          ) =>
-            {
-              'write_scope': value.toJson(),
+        'name': name,
+        'value': value,
+        'visibility': visibility.toJson(),
+        ...switch (selectedRepositoryIds) {
+          SdkPresent<List<int>>(value: final value) => {
+              'selected_repository_ids': value,
             },
           _ => const <String, dynamic>{},
         },
       };
 }
 
-class AgentAutomationsEditRepoAutomationResponseTriggersDiscussionUpdated {
+class ActionsUpdateOrgVariableRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Discussion category names matched case-insensitively.
-  final SdkOptional<List<String>> categories;
+  /// The name of the variable.
+  final SdkOptional<String> name;
 
-  /// A case-insensitive substring matched against the event body.
-  final SdkOptional<String> bodySubstring;
+  /// The value of the variable.
+  final SdkOptional<String> value;
 
-  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-  final SdkOptional<
-          AgentAutomationsEditRepoAutomationResponseTriggersDiscussionUpdatedWriteScope>
-      writeScope;
+  /// The type of repositories in the organization that can access the variable. `selected` means only the repositories specified by `selected_repository_ids` can access the variable.
+  final SdkOptional<ActionsUpdateOrgVariableRequestBodyVisibility> visibility;
 
-  const AgentAutomationsEditRepoAutomationResponseTriggersDiscussionUpdated(
-      {this.categories = const SdkOmitted(),
-      this.bodySubstring = const SdkOmitted(),
-      this.writeScope = const SdkOmitted()});
+  /// An array of repository ids that can access the organization variable. You can only provide a list of repository ids when the `visibility` is set to `selected`.
+  final SdkOptional<List<int>> selectedRepositoryIds;
 
-  AgentAutomationsEditRepoAutomationResponseTriggersDiscussionUpdated Function(
-      {SdkOptional<List<String>> categories,
-      SdkOptional<String> bodySubstring,
-      SdkOptional<
-              AgentAutomationsEditRepoAutomationResponseTriggersDiscussionUpdatedWriteScope>
-          writeScope}) get copyWith => _copyWith;
+  const ActionsUpdateOrgVariableRequestBody(
+      {this.name = const SdkOmitted(),
+      this.value = const SdkOmitted(),
+      this.visibility = const SdkOmitted(),
+      this.selectedRepositoryIds = const SdkOmitted()});
 
-  AgentAutomationsEditRepoAutomationResponseTriggersDiscussionUpdated _copyWith(
-          {Object? categories = sdkOmittedValue,
-          Object? bodySubstring = sdkOmittedValue,
-          Object? writeScope = sdkOmittedValue}) =>
-      AgentAutomationsEditRepoAutomationResponseTriggersDiscussionUpdated(
-        categories: identical(categories, sdkOmittedValue)
-            ? this.categories
-            : categories as SdkOptional<List<String>>,
-        bodySubstring: identical(bodySubstring, sdkOmittedValue)
-            ? this.bodySubstring
-            : bodySubstring as SdkOptional<String>,
-        writeScope: identical(writeScope, sdkOmittedValue)
-            ? this.writeScope
-            : writeScope as SdkOptional<
-                AgentAutomationsEditRepoAutomationResponseTriggersDiscussionUpdatedWriteScope>,
+  ActionsUpdateOrgVariableRequestBody Function(
+      {SdkOptional<String> name,
+      SdkOptional<String> value,
+      SdkOptional<ActionsUpdateOrgVariableRequestBodyVisibility> visibility,
+      SdkOptional<List<int>> selectedRepositoryIds}) get copyWith => _copyWith;
+
+  ActionsUpdateOrgVariableRequestBody _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? value = sdkOmittedValue,
+          Object? visibility = sdkOmittedValue,
+          Object? selectedRepositoryIds = sdkOmittedValue}) =>
+      ActionsUpdateOrgVariableRequestBody(
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        value: identical(value, sdkOmittedValue)
+            ? this.value
+            : value as SdkOptional<String>,
+        visibility: identical(visibility, sdkOmittedValue)
+            ? this.visibility
+            : visibility
+                as SdkOptional<ActionsUpdateOrgVariableRequestBodyVisibility>,
+        selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue)
+            ? this.selectedRepositoryIds
+            : selectedRepositoryIds as SdkOptional<List<int>>,
       );
 
-  factory AgentAutomationsEditRepoAutomationResponseTriggersDiscussionUpdated.fromJson(
+  factory ActionsUpdateOrgVariableRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      AgentAutomationsEditRepoAutomationResponseTriggersDiscussionUpdated(
-        categories: json['categories'] != null
-            ? SdkPresent(((json['categories'] as List?)
-                ?.map((e) => e as String)
-                .toList())!)
+      ActionsUpdateOrgVariableRequestBody(
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
             : const SdkOmitted(),
-        bodySubstring: json['body_substring'] != null
-            ? SdkPresent((json['body_substring'] as String?)!)
+        value: json['value'] != null
+            ? SdkPresent((json['value'] as String?)!)
             : const SdkOmitted(),
-        writeScope: json['write_scope'] != null
-            ? SdkPresent((json['write_scope'] != null
-                ? AgentAutomationsEditRepoAutomationResponseTriggersDiscussionUpdatedWriteScope
-                    .fromJson(json['write_scope'] as String)
+        visibility: json['visibility'] != null
+            ? SdkPresent((json['visibility'] != null
+                ? ActionsUpdateOrgVariableRequestBodyVisibility.fromJson(
+                    json['visibility'] as String)
                 : null)!)
+            : const SdkOmitted(),
+        selectedRepositoryIds: json['selected_repository_ids'] != null
+            ? SdkPresent(((json['selected_repository_ids'] as List?)
+                ?.map((e) => (e as num).toInt())
+                .toList())!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (categories) {
-          SdkPresent<List<String>>(value: final value) => {
-              'categories': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (bodySubstring) {
+        ...switch (name) {
           SdkPresent<String>(value: final value) => {
-              'body_substring': value,
+              'name': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (writeScope) {
-          SdkPresent<
-                AgentAutomationsEditRepoAutomationResponseTriggersDiscussionUpdatedWriteScope>(
+        ...switch (value) {
+          SdkPresent<String>(value: final value) => {
+              'value': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (visibility) {
+          SdkPresent<ActionsUpdateOrgVariableRequestBodyVisibility>(
             value: final value
           ) =>
             {
-              'write_scope': value.toJson(),
+              'visibility': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (selectedRepositoryIds) {
+          SdkPresent<List<int>>(value: final value) => {
+              'selected_repository_ids': value,
             },
           _ => const <String, dynamic>{},
         },

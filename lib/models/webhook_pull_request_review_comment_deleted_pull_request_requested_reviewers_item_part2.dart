@@ -418,6 +418,26 @@ sealed class WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewers
   const WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItem();
   factory WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItem.fromJson(
       Object? json) {
+    if (json is Map<String, dynamic>) {
+      try {
+        final value =
+            WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant0
+                .fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemWebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant0(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1
+                .fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemWebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant1(
+              value);
+        }
+      } catch (_) {}
+    }
     try {
       return WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemWebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant0(
           WebhookPullRequestReviewCommentDeletedPullRequestRequestedReviewersItemVariant0

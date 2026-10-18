@@ -2868,7 +2868,10 @@ Future<Commit> reposGetCommit(ClientConfig config,
                 ValidationError.fromJson(value as Map<String, dynamic>),
             '429': (value) =>
                 BasicError.fromJson(value as Map<String, dynamic>),
-            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+            '500': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
           }))
       .data;
 }
@@ -3028,7 +3031,10 @@ Future<CommitComparison> reposCompareCommits(ClientConfig config,
                 BasicError.fromJson(value as Map<String, dynamic>),
             '422': (value) =>
                 ValidationError.fromJson(value as Map<String, dynamic>),
-            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+            '500': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
           }))
       .data;
 }
@@ -3165,7 +3171,9 @@ Future<FileCommit> reposDeleteFile(ClientConfig config,
             '409': (value) =>
                 BasicError.fromJson(value as Map<String, dynamic>),
             '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
+                ValidationError.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
           }))
       .data;
 }
@@ -3287,6 +3295,8 @@ Future<List<Deployment>> reposListDeployments(ClientConfig config,
 ///   against commit status checks. If you omit this parameter, GitHub verifies
 ///   all unique contexts before creating a deployment. To bypass checking
 ///   entirely, pass an empty array. Defaults to all unique contexts.
+/// [payload] Typed representation of the `ReposCreateDeploymentRequestPayload`
+///   API schema.
 /// [environment] Name for the target deployment environment (e.g.,
 ///   `production`, `staging`, `qa`).
 /// [description] Short description of the deployment.
@@ -3303,7 +3313,8 @@ Future<Deployment> reposCreateDeployment(ClientConfig config,
     SdkOptional<String> task = const SdkOmitted(),
     SdkOptional<bool> autoMerge = const SdkOmitted(),
     SdkOptional<List<String>> requiredContexts = const SdkOmitted(),
-    SdkOptional<dynamic> payload = const SdkOmitted(),
+    SdkOptional<ReposCreateDeploymentRequestPayload> payload =
+        const SdkOmitted(),
     SdkOptional<String> environment = const SdkOmitted(),
     SdkOptional<String?> description = const SdkOmitted(),
     SdkOptional<bool> transientEnvironment = const SdkOmitted(),
@@ -4971,6 +4982,8 @@ Future<Page> reposCreatePagesSite(ClientConfig config,
 ///   `workflow` means that the site is built by a custom GitHub Actions workflow.
 ///   `legacy` means that the site is built by GitHub when changes are pushed to a
 ///   specific branch.
+/// [source] Typed representation of the
+///   `ReposUpdateInformationAboutPagesSiteRequestSource` API schema.
 Future<void> reposUpdateInformationAboutPagesSite(ClientConfig config,
     {required String owner,
     required String repo,
@@ -4978,7 +4991,8 @@ Future<void> reposUpdateInformationAboutPagesSite(ClientConfig config,
     SdkOptional<bool> httpsEnforced = const SdkOmitted(),
     SdkOptional<ReposUpdateInformationAboutPagesSiteRequestBodyBuildType>
         buildType = const SdkOmitted(),
-    SdkOptional<dynamic> source = const SdkOmitted(),
+    SdkOptional<ReposUpdateInformationAboutPagesSiteRequestSource> source =
+        const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('PUT',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/pages',

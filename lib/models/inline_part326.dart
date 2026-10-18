@@ -4,572 +4,506 @@
 part of 'inline.dart';
 
 // Inline operation models (part 326)
-class AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdated {
+class AppsListInstallationReposForAuthenticatedUserResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  final int totalCount;
+  final SdkOptional<String> repositorySelection;
+  final List<
+          AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItem>
+      repositories;
+
+  const AppsListInstallationReposForAuthenticatedUserResponse(
+      {required this.totalCount,
+      this.repositorySelection = const SdkOmitted(),
+      required this.repositories});
+
+  AppsListInstallationReposForAuthenticatedUserResponse Function(
+      {int totalCount,
+      SdkOptional<String> repositorySelection,
+      List<AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItem>
+          repositories}) get copyWith => _copyWith;
+
+  AppsListInstallationReposForAuthenticatedUserResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? repositorySelection = sdkOmittedValue,
+          Object? repositories = sdkOmittedValue}) =>
+      AppsListInstallationReposForAuthenticatedUserResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        repositorySelection: identical(repositorySelection, sdkOmittedValue)
+            ? this.repositorySelection
+            : repositorySelection as SdkOptional<String>,
+        repositories: identical(repositories, sdkOmittedValue)
+            ? this.repositories
+            : repositories as List<
+                AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItem>,
+      );
+
+  factory AppsListInstallationReposForAuthenticatedUserResponse.fromJson(
+          Map<String, dynamic> json) =>
+      AppsListInstallationReposForAuthenticatedUserResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        repositorySelection: json['repository_selection'] != null
+            ? SdkPresent((json['repository_selection'] as String?)!)
+            : const SdkOmitted(),
+        repositories: ((json['repositories'] as List?)
+            ?.map((e) =>
+                AppsListInstallationReposForAuthenticatedUserResponseRepositoriesItem
+                    .fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'total_count': totalCount,
+        ...switch (repositorySelection) {
+          SdkPresent<String>(value: final value) => {
+              'repository_selection': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'repositories': repositories.map((item) => item.toJson()).toList(),
+      };
+}
+
+class CredentialsRevokeRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Discussion category names matched case-insensitively.
-  final SdkOptional<List<String>> categories;
+  /// A list of credentials to be revoked, up to 1000 per request.
+  final List<String> credentials;
 
-  /// A case-insensitive substring matched against the event body.
-  final SdkOptional<String> bodySubstring;
+  const CredentialsRevokeRequestBody({required this.credentials});
 
-  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-  final SdkOptional<
-          AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdatedWriteScope>
-      writeScope;
+  CredentialsRevokeRequestBody Function({List<String> credentials})
+      get copyWith => _copyWith;
 
-  const AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdated(
-      {this.categories = const SdkOmitted(),
-      this.bodySubstring = const SdkOmitted(),
-      this.writeScope = const SdkOmitted()});
+  CredentialsRevokeRequestBody _copyWith(
+          {Object? credentials = sdkOmittedValue}) =>
+      CredentialsRevokeRequestBody(
+        credentials: identical(credentials, sdkOmittedValue)
+            ? this.credentials
+            : credentials as List<String>,
+      );
 
-  AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdated Function(
-      {SdkOptional<List<String>> categories,
-      SdkOptional<String> bodySubstring,
-      SdkOptional<
-              AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdatedWriteScope>
-          writeScope}) get copyWith => _copyWith;
+  factory CredentialsRevokeRequestBody.fromJson(Map<String, dynamic> json) =>
+      CredentialsRevokeRequestBody(
+        credentials:
+            ((json['credentials'] as List?)?.map((e) => e as String).toList())!,
+      );
 
-  AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdated
-      _copyWith(
-              {Object? categories = sdkOmittedValue,
-              Object? bodySubstring = sdkOmittedValue,
-              Object? writeScope = sdkOmittedValue}) =>
-          AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdated(
-            categories: identical(categories, sdkOmittedValue)
-                ? this.categories
-                : categories as SdkOptional<List<String>>,
-            bodySubstring: identical(bodySubstring, sdkOmittedValue)
-                ? this.bodySubstring
-                : bodySubstring as SdkOptional<String>,
-            writeScope: identical(writeScope, sdkOmittedValue)
-                ? this.writeScope
-                : writeScope as SdkOptional<
-                    AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdatedWriteScope>,
-          );
+  Map<String, dynamic> toJson() => {
+        'credentials': credentials,
+      };
+}
 
-  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdated.fromJson(
+class ActionsGetActionsCacheUsageByRepoForOrgResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  final int totalCount;
+  final List<ActionsCacheUsageByRepository> repositoryCacheUsages;
+
+  const ActionsGetActionsCacheUsageByRepoForOrgResponse(
+      {required this.totalCount, required this.repositoryCacheUsages});
+
+  ActionsGetActionsCacheUsageByRepoForOrgResponse Function(
+          {int totalCount,
+          List<ActionsCacheUsageByRepository> repositoryCacheUsages})
+      get copyWith => _copyWith;
+
+  ActionsGetActionsCacheUsageByRepoForOrgResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? repositoryCacheUsages = sdkOmittedValue}) =>
+      ActionsGetActionsCacheUsageByRepoForOrgResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        repositoryCacheUsages: identical(repositoryCacheUsages, sdkOmittedValue)
+            ? this.repositoryCacheUsages
+            : repositoryCacheUsages as List<ActionsCacheUsageByRepository>,
+      );
+
+  factory ActionsGetActionsCacheUsageByRepoForOrgResponse.fromJson(
           Map<String, dynamic> json) =>
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdated(
-        categories: json['categories'] != null
-            ? SdkPresent(((json['categories'] as List?)
-                ?.map((e) => e as String)
-                .toList())!)
+      ActionsGetActionsCacheUsageByRepoForOrgResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        repositoryCacheUsages: ((json['repository_cache_usages'] as List?)
+            ?.map((e) => ActionsCacheUsageByRepository.fromJson(
+                e as Map<String, dynamic>))
+            .toList())!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'total_count': totalCount,
+        'repository_cache_usages':
+            repositoryCacheUsages.map((item) => item.toJson()).toList(),
+      };
+}
+
+class ActionsListHostedRunnersForOrgResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  final int totalCount;
+  final List<ActionsHostedRunner> runners;
+
+  const ActionsListHostedRunnersForOrgResponse(
+      {required this.totalCount, required this.runners});
+
+  ActionsListHostedRunnersForOrgResponse Function(
+      {int totalCount,
+      List<ActionsHostedRunner> runners}) get copyWith => _copyWith;
+
+  ActionsListHostedRunnersForOrgResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? runners = sdkOmittedValue}) =>
+      ActionsListHostedRunnersForOrgResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        runners: identical(runners, sdkOmittedValue)
+            ? this.runners
+            : runners as List<ActionsHostedRunner>,
+      );
+
+  factory ActionsListHostedRunnersForOrgResponse.fromJson(
+          Map<String, dynamic> json) =>
+      ActionsListHostedRunnersForOrgResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        runners: ((json['runners'] as List?)
+            ?.map(
+                (e) => ActionsHostedRunner.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'total_count': totalCount,
+        'runners': runners.map((item) => item.toJson()).toList(),
+      };
+}
+
+/// The image of runner. To list all available images, use `GET /actions/hosted-runners/images/github-owned` or `GET /actions/hosted-runners/images/partner`.
+class ActionsCreateHostedRunnerForOrgRequestBodyImage {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The unique identifier of the runner image.
+  final SdkOptional<String> id;
+
+  /// The source of the runner image.
+  final SdkOptional<ActionsCreateHostedRunnerForOrgRequestBodyImageSource>
+      source;
+
+  /// The version of the runner image to deploy. This is relevant only for runners using custom images.
+  final SdkOptional<String?> version;
+
+  const ActionsCreateHostedRunnerForOrgRequestBodyImage(
+      {this.id = const SdkOmitted(),
+      this.source = const SdkOmitted(),
+      this.version = const SdkOmitted()});
+
+  ActionsCreateHostedRunnerForOrgRequestBodyImage Function(
+      {SdkOptional<String> id,
+      SdkOptional<ActionsCreateHostedRunnerForOrgRequestBodyImageSource> source,
+      SdkOptional<String?> version}) get copyWith => _copyWith;
+
+  ActionsCreateHostedRunnerForOrgRequestBodyImage _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? source = sdkOmittedValue,
+          Object? version = sdkOmittedValue}) =>
+      ActionsCreateHostedRunnerForOrgRequestBodyImage(
+        id: identical(id, sdkOmittedValue)
+            ? this.id
+            : id as SdkOptional<String>,
+        source: identical(source, sdkOmittedValue)
+            ? this.source
+            : source as SdkOptional<
+                ActionsCreateHostedRunnerForOrgRequestBodyImageSource>,
+        version: identical(version, sdkOmittedValue)
+            ? this.version
+            : version as SdkOptional<String?>,
+      );
+
+  factory ActionsCreateHostedRunnerForOrgRequestBodyImage.fromJson(
+          Map<String, dynamic> json) =>
+      ActionsCreateHostedRunnerForOrgRequestBodyImage(
+        id: json['id'] != null
+            ? SdkPresent((json['id'] as String?)!)
             : const SdkOmitted(),
-        bodySubstring: json['body_substring'] != null
-            ? SdkPresent((json['body_substring'] as String?)!)
-            : const SdkOmitted(),
-        writeScope: json['write_scope'] != null
-            ? SdkPresent((json['write_scope'] != null
-                ? AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdatedWriteScope
-                    .fromJson(json['write_scope'] as String)
+        source: json['source'] != null
+            ? SdkPresent((json['source'] != null
+                ? ActionsCreateHostedRunnerForOrgRequestBodyImageSource
+                    .fromJson(json['source'] as String)
                 : null)!)
+            : const SdkOmitted(),
+        version: json.containsKey('version')
+            ? SdkPresent(json['version'] as String?)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (categories) {
-          SdkPresent<List<String>>(value: final value) => {
-              'categories': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (bodySubstring) {
+        ...switch (id) {
           SdkPresent<String>(value: final value) => {
-              'body_substring': value,
+              'id': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (writeScope) {
-          SdkPresent<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdatedWriteScope>(
+        ...switch (source) {
+          SdkPresent<ActionsCreateHostedRunnerForOrgRequestBodyImageSource>(
             value: final value
           ) =>
             {
-              'write_scope': value.toJson(),
+              'source': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (version) {
+          SdkPresent<String?>(value: final value) => {
+              'version': value,
             },
           _ => const <String, dynamic>{},
         },
       };
 }
 
-class AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionComment {
+class ActionsCreateHostedRunnerForOrgRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Top-level discussion comments and replies to match. Omit to match both.
-  final SdkOptional<
-          List<
-              AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionCommentCommentTypesItem>>
-      commentTypes;
+  /// Name of the runner. Must be between 1 and 64 characters and may only contain upper and lowercase letters a-z, numbers 0-9, '.', '-', and '_'.
+  final String name;
 
-  /// Discussion category names matched case-insensitively.
-  final SdkOptional<List<String>> categories;
+  /// The image of runner. To list all available images, use `GET /actions/hosted-runners/images/github-owned` or `GET /actions/hosted-runners/images/partner`.
+  final ActionsCreateHostedRunnerForOrgRequestBodyImage image;
 
-  /// A case-insensitive substring matched against the event body.
-  final SdkOptional<String> bodySubstring;
+  /// The machine size of the runner. To list available sizes, use `GET actions/hosted-runners/machine-sizes`
+  final String size;
 
-  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-  final SdkOptional<
-          AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionCommentWriteScope>
-      writeScope;
+  /// The existing runner group to add this runner to.
+  final int runnerGroupId;
 
-  const AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionComment(
-      {this.commentTypes = const SdkOmitted(),
-      this.categories = const SdkOmitted(),
-      this.bodySubstring = const SdkOmitted(),
-      this.writeScope = const SdkOmitted()});
+  /// The maximum amount of runners to scale up to. Runners will not auto-scale above this number. Use this setting to limit your cost.
+  final SdkOptional<int> maximumRunners;
 
-  AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionComment Function(
-      {SdkOptional<
-              List<
-                  AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionCommentCommentTypesItem>>
-          commentTypes,
-      SdkOptional<List<String>> categories,
-      SdkOptional<String> bodySubstring,
-      SdkOptional<
-              AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionCommentWriteScope>
-          writeScope}) get copyWith => _copyWith;
+  /// Whether this runner should be created with a static public IP. Note limit on account. To list limits on account, use `GET actions/hosted-runners/limits`
+  final SdkOptional<bool> enableStaticIp;
 
-  AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionComment
-      _copyWith(
-              {Object? commentTypes = sdkOmittedValue,
-              Object? categories = sdkOmittedValue,
-              Object? bodySubstring = sdkOmittedValue,
-              Object? writeScope = sdkOmittedValue}) =>
-          AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionComment(
-            commentTypes: identical(commentTypes, sdkOmittedValue)
-                ? this.commentTypes
-                : commentTypes as SdkOptional<
-                    List<
-                        AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionCommentCommentTypesItem>>,
-            categories: identical(categories, sdkOmittedValue)
-                ? this.categories
-                : categories as SdkOptional<List<String>>,
-            bodySubstring: identical(bodySubstring, sdkOmittedValue)
-                ? this.bodySubstring
-                : bodySubstring as SdkOptional<String>,
-            writeScope: identical(writeScope, sdkOmittedValue)
-                ? this.writeScope
-                : writeScope as SdkOptional<
-                    AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionCommentWriteScope>,
-          );
+  /// Whether this runner should be used to generate custom images.
+  final SdkOptional<bool> imageGen;
 
-  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionComment.fromJson(
+  const ActionsCreateHostedRunnerForOrgRequestBody(
+      {required this.name,
+      required this.image,
+      required this.size,
+      required this.runnerGroupId,
+      this.maximumRunners = const SdkOmitted(),
+      this.enableStaticIp = const SdkOmitted(),
+      this.imageGen = const SdkOmitted()});
+
+  ActionsCreateHostedRunnerForOrgRequestBody Function(
+      {String name,
+      ActionsCreateHostedRunnerForOrgRequestBodyImage image,
+      String size,
+      int runnerGroupId,
+      SdkOptional<int> maximumRunners,
+      SdkOptional<bool> enableStaticIp,
+      SdkOptional<bool> imageGen}) get copyWith => _copyWith;
+
+  ActionsCreateHostedRunnerForOrgRequestBody _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? image = sdkOmittedValue,
+          Object? size = sdkOmittedValue,
+          Object? runnerGroupId = sdkOmittedValue,
+          Object? maximumRunners = sdkOmittedValue,
+          Object? enableStaticIp = sdkOmittedValue,
+          Object? imageGen = sdkOmittedValue}) =>
+      ActionsCreateHostedRunnerForOrgRequestBody(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        image: identical(image, sdkOmittedValue)
+            ? this.image
+            : image as ActionsCreateHostedRunnerForOrgRequestBodyImage,
+        size: identical(size, sdkOmittedValue) ? this.size : size as String,
+        runnerGroupId: identical(runnerGroupId, sdkOmittedValue)
+            ? this.runnerGroupId
+            : runnerGroupId as int,
+        maximumRunners: identical(maximumRunners, sdkOmittedValue)
+            ? this.maximumRunners
+            : maximumRunners as SdkOptional<int>,
+        enableStaticIp: identical(enableStaticIp, sdkOmittedValue)
+            ? this.enableStaticIp
+            : enableStaticIp as SdkOptional<bool>,
+        imageGen: identical(imageGen, sdkOmittedValue)
+            ? this.imageGen
+            : imageGen as SdkOptional<bool>,
+      );
+
+  factory ActionsCreateHostedRunnerForOrgRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionComment(
-        commentTypes: json['comment_types'] != null
-            ? SdkPresent(((json['comment_types'] as List?)
-                ?.map((e) =>
-                    AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionCommentCommentTypesItem
-                        .fromJson(e as String))
-                .toList())!)
+      ActionsCreateHostedRunnerForOrgRequestBody(
+        name: (json['name'] as String?)!,
+        image: (json['image'] != null
+            ? ActionsCreateHostedRunnerForOrgRequestBodyImage.fromJson(
+                json['image'] as Map<String, dynamic>)
+            : null)!,
+        size: (json['size'] as String?)!,
+        runnerGroupId: ((json['runner_group_id'] as num?)?.toInt())!,
+        maximumRunners: json['maximum_runners'] != null
+            ? SdkPresent(((json['maximum_runners'] as num?)?.toInt())!)
             : const SdkOmitted(),
-        categories: json['categories'] != null
-            ? SdkPresent(((json['categories'] as List?)
-                ?.map((e) => e as String)
-                .toList())!)
+        enableStaticIp: json['enable_static_ip'] != null
+            ? SdkPresent((json['enable_static_ip'] as bool?)!)
             : const SdkOmitted(),
-        bodySubstring: json['body_substring'] != null
-            ? SdkPresent((json['body_substring'] as String?)!)
-            : const SdkOmitted(),
-        writeScope: json['write_scope'] != null
-            ? SdkPresent((json['write_scope'] != null
-                ? AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionCommentWriteScope
-                    .fromJson(json['write_scope'] as String)
-                : null)!)
+        imageGen: json['image_gen'] != null
+            ? SdkPresent((json['image_gen'] as bool?)!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (commentTypes) {
-          SdkPresent<
-                List<
-                    AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionCommentCommentTypesItem>>(
-            value: final value
-          ) =>
-            {
-              'comment_types': value.map((item) => item.toJson()).toList(),
+        'name': name,
+        'image': image.toJson(),
+        'size': size,
+        'runner_group_id': runnerGroupId,
+        ...switch (maximumRunners) {
+          SdkPresent<int>(value: final value) => {
+              'maximum_runners': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (categories) {
-          SdkPresent<List<String>>(value: final value) => {
-              'categories': value,
+        ...switch (enableStaticIp) {
+          SdkPresent<bool>(value: final value) => {
+              'enable_static_ip': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (bodySubstring) {
-          SdkPresent<String>(value: final value) => {
-              'body_substring': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (writeScope) {
-          SdkPresent<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionCommentWriteScope>(
-            value: final value
-          ) =>
-            {
-              'write_scope': value.toJson(),
+        ...switch (imageGen) {
+          SdkPresent<bool>(value: final value) => {
+              'image_gen': value,
             },
           _ => const <String, dynamic>{},
         },
       };
 }
 
-class AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssigned {
+class ActionsListCustomImagesForOrgResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+  final int totalCount;
+  final List<ActionsHostedRunnerCustomImage> images;
 
-  /// A GitHub issue or pull request search query.
-  final SdkOptional<String> query;
+  const ActionsListCustomImagesForOrgResponse(
+      {required this.totalCount, required this.images});
 
-  /// Affected assignee logins matched case-insensitively.
-  final SdkOptional<List<String>> assignees;
+  ActionsListCustomImagesForOrgResponse Function(
+      {int totalCount,
+      List<ActionsHostedRunnerCustomImage> images}) get copyWith => _copyWith;
 
-  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-  final SdkOptional<
-          AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssignedWriteScope>
-      writeScope;
-
-  const AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssigned(
-      {this.query = const SdkOmitted(),
-      this.assignees = const SdkOmitted(),
-      this.writeScope = const SdkOmitted()});
-
-  AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssigned Function(
-      {SdkOptional<String> query,
-      SdkOptional<List<String>> assignees,
-      SdkOptional<
-              AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssignedWriteScope>
-          writeScope}) get copyWith => _copyWith;
-
-  AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssigned _copyWith(
-          {Object? query = sdkOmittedValue,
-          Object? assignees = sdkOmittedValue,
-          Object? writeScope = sdkOmittedValue}) =>
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssigned(
-        query: identical(query, sdkOmittedValue)
-            ? this.query
-            : query as SdkOptional<String>,
-        assignees: identical(assignees, sdkOmittedValue)
-            ? this.assignees
-            : assignees as SdkOptional<List<String>>,
-        writeScope: identical(writeScope, sdkOmittedValue)
-            ? this.writeScope
-            : writeScope as SdkOptional<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssignedWriteScope>,
+  ActionsListCustomImagesForOrgResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? images = sdkOmittedValue}) =>
+      ActionsListCustomImagesForOrgResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        images: identical(images, sdkOmittedValue)
+            ? this.images
+            : images as List<ActionsHostedRunnerCustomImage>,
       );
 
-  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssigned.fromJson(
+  factory ActionsListCustomImagesForOrgResponse.fromJson(
           Map<String, dynamic> json) =>
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssigned(
-        query: json['query'] != null
-            ? SdkPresent((json['query'] as String?)!)
-            : const SdkOmitted(),
-        assignees: json['assignees'] != null
-            ? SdkPresent(((json['assignees'] as List?)
-                ?.map((e) => e as String)
-                .toList())!)
-            : const SdkOmitted(),
-        writeScope: json['write_scope'] != null
-            ? SdkPresent((json['write_scope'] != null
-                ? AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssignedWriteScope
-                    .fromJson(json['write_scope'] as String)
-                : null)!)
-            : const SdkOmitted(),
+      ActionsListCustomImagesForOrgResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        images: ((json['images'] as List?)
+            ?.map((e) => ActionsHostedRunnerCustomImage.fromJson(
+                e as Map<String, dynamic>))
+            .toList())!,
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (query) {
-          SdkPresent<String>(value: final value) => {
-              'query': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (assignees) {
-          SdkPresent<List<String>>(value: final value) => {
-              'assignees': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (writeScope) {
-          SdkPresent<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssignedWriteScope>(
-            value: final value
-          ) =>
-            {
-              'write_scope': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
+        'total_count': totalCount,
+        'images': images.map((item) => item.toJson()).toList(),
       };
 }
 
-class AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestAssigned {
+class ActionsListCustomImageVersionsForOrgResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+  final int totalCount;
+  final List<ActionsHostedRunnerCustomImageVersion> imageVersions;
 
-  /// A GitHub issue or pull request search query.
-  final SdkOptional<String> query;
+  const ActionsListCustomImageVersionsForOrgResponse(
+      {required this.totalCount, required this.imageVersions});
 
-  /// Gitignore-style changed-file path globs.
-  final SdkOptional<List<String>> paths;
+  ActionsListCustomImageVersionsForOrgResponse Function(
+          {int totalCount,
+          List<ActionsHostedRunnerCustomImageVersion> imageVersions})
+      get copyWith => _copyWith;
 
-  /// Affected assignee logins matched case-insensitively.
-  final SdkOptional<List<String>> assignees;
+  ActionsListCustomImageVersionsForOrgResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? imageVersions = sdkOmittedValue}) =>
+      ActionsListCustomImageVersionsForOrgResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        imageVersions: identical(imageVersions, sdkOmittedValue)
+            ? this.imageVersions
+            : imageVersions as List<ActionsHostedRunnerCustomImageVersion>,
+      );
 
-  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-  final SdkOptional<
-          AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestAssignedWriteScope>
-      writeScope;
-
-  const AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestAssigned(
-      {this.query = const SdkOmitted(),
-      this.paths = const SdkOmitted(),
-      this.assignees = const SdkOmitted(),
-      this.writeScope = const SdkOmitted()});
-
-  AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestAssigned Function(
-      {SdkOptional<String> query,
-      SdkOptional<List<String>> paths,
-      SdkOptional<List<String>> assignees,
-      SdkOptional<
-              AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestAssignedWriteScope>
-          writeScope}) get copyWith => _copyWith;
-
-  AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestAssigned
-      _copyWith(
-              {Object? query = sdkOmittedValue,
-              Object? paths = sdkOmittedValue,
-              Object? assignees = sdkOmittedValue,
-              Object? writeScope = sdkOmittedValue}) =>
-          AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestAssigned(
-            query: identical(query, sdkOmittedValue)
-                ? this.query
-                : query as SdkOptional<String>,
-            paths: identical(paths, sdkOmittedValue)
-                ? this.paths
-                : paths as SdkOptional<List<String>>,
-            assignees: identical(assignees, sdkOmittedValue)
-                ? this.assignees
-                : assignees as SdkOptional<List<String>>,
-            writeScope: identical(writeScope, sdkOmittedValue)
-                ? this.writeScope
-                : writeScope as SdkOptional<
-                    AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestAssignedWriteScope>,
-          );
-
-  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestAssigned.fromJson(
+  factory ActionsListCustomImageVersionsForOrgResponse.fromJson(
           Map<String, dynamic> json) =>
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestAssigned(
-        query: json['query'] != null
-            ? SdkPresent((json['query'] as String?)!)
-            : const SdkOmitted(),
-        paths: json['paths'] != null
-            ? SdkPresent(
-                ((json['paths'] as List?)?.map((e) => e as String).toList())!)
-            : const SdkOmitted(),
-        assignees: json['assignees'] != null
-            ? SdkPresent(((json['assignees'] as List?)
-                ?.map((e) => e as String)
-                .toList())!)
-            : const SdkOmitted(),
-        writeScope: json['write_scope'] != null
-            ? SdkPresent((json['write_scope'] != null
-                ? AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestAssignedWriteScope
-                    .fromJson(json['write_scope'] as String)
-                : null)!)
-            : const SdkOmitted(),
+      ActionsListCustomImageVersionsForOrgResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        imageVersions: ((json['image_versions'] as List?)
+            ?.map((e) => ActionsHostedRunnerCustomImageVersion.fromJson(
+                e as Map<String, dynamic>))
+            .toList())!,
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (query) {
-          SdkPresent<String>(value: final value) => {
-              'query': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (paths) {
-          SdkPresent<List<String>>(value: final value) => {
-              'paths': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (assignees) {
-          SdkPresent<List<String>>(value: final value) => {
-              'assignees': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (writeScope) {
-          SdkPresent<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestAssignedWriteScope>(
-            value: final value
-          ) =>
-            {
-              'write_scope': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
+        'total_count': totalCount,
+        'image_versions': imageVersions.map((item) => item.toJson()).toList(),
       };
 }
 
-class AgentAutomationsEditRepoAutomationRequestBodyTriggersSubIssueAdded {
+class ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+  final int totalCount;
+  final List<ActionsHostedRunnerCuratedImage> images;
 
-  /// A GitHub issue or pull request search query.
-  final SdkOptional<String> query;
+  const ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse(
+      {required this.totalCount, required this.images});
 
-  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-  final SdkOptional<
-          AgentAutomationsEditRepoAutomationRequestBodyTriggersSubIssueAddedWriteScope>
-      writeScope;
+  ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse Function(
+      {int totalCount,
+      List<ActionsHostedRunnerCuratedImage> images}) get copyWith => _copyWith;
 
-  const AgentAutomationsEditRepoAutomationRequestBodyTriggersSubIssueAdded(
-      {this.query = const SdkOmitted(), this.writeScope = const SdkOmitted()});
-
-  AgentAutomationsEditRepoAutomationRequestBodyTriggersSubIssueAdded Function(
-      {SdkOptional<String> query,
-      SdkOptional<
-              AgentAutomationsEditRepoAutomationRequestBodyTriggersSubIssueAddedWriteScope>
-          writeScope}) get copyWith => _copyWith;
-
-  AgentAutomationsEditRepoAutomationRequestBodyTriggersSubIssueAdded _copyWith(
-          {Object? query = sdkOmittedValue,
-          Object? writeScope = sdkOmittedValue}) =>
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersSubIssueAdded(
-        query: identical(query, sdkOmittedValue)
-            ? this.query
-            : query as SdkOptional<String>,
-        writeScope: identical(writeScope, sdkOmittedValue)
-            ? this.writeScope
-            : writeScope as SdkOptional<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersSubIssueAddedWriteScope>,
+  ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? images = sdkOmittedValue}) =>
+      ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        images: identical(images, sdkOmittedValue)
+            ? this.images
+            : images as List<ActionsHostedRunnerCuratedImage>,
       );
 
-  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersSubIssueAdded.fromJson(
+  factory ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse.fromJson(
           Map<String, dynamic> json) =>
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersSubIssueAdded(
-        query: json['query'] != null
-            ? SdkPresent((json['query'] as String?)!)
-            : const SdkOmitted(),
-        writeScope: json['write_scope'] != null
-            ? SdkPresent((json['write_scope'] != null
-                ? AgentAutomationsEditRepoAutomationRequestBodyTriggersSubIssueAddedWriteScope
-                    .fromJson(json['write_scope'] as String)
-                : null)!)
-            : const SdkOmitted(),
+      ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        images: ((json['images'] as List?)
+            ?.map((e) => ActionsHostedRunnerCuratedImage.fromJson(
+                e as Map<String, dynamic>))
+            .toList())!,
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (query) {
-          SdkPresent<String>(value: final value) => {
-              'query': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (writeScope) {
-          SdkPresent<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersSubIssueAddedWriteScope>(
-            value: final value
-          ) =>
-            {
-              'write_scope': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-class AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReadyForReview {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// A GitHub issue or pull request search query.
-  final SdkOptional<String> query;
-
-  /// Gitignore-style changed-file path globs.
-  final SdkOptional<List<String>> paths;
-
-  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-  final SdkOptional<
-          AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReadyForReviewWriteScope>
-      writeScope;
-
-  const AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReadyForReview(
-      {this.query = const SdkOmitted(),
-      this.paths = const SdkOmitted(),
-      this.writeScope = const SdkOmitted()});
-
-  AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReadyForReview Function(
-      {SdkOptional<String> query,
-      SdkOptional<List<String>> paths,
-      SdkOptional<
-              AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReadyForReviewWriteScope>
-          writeScope}) get copyWith => _copyWith;
-
-  AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReadyForReview
-      _copyWith(
-              {Object? query = sdkOmittedValue,
-              Object? paths = sdkOmittedValue,
-              Object? writeScope = sdkOmittedValue}) =>
-          AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReadyForReview(
-            query: identical(query, sdkOmittedValue)
-                ? this.query
-                : query as SdkOptional<String>,
-            paths: identical(paths, sdkOmittedValue)
-                ? this.paths
-                : paths as SdkOptional<List<String>>,
-            writeScope: identical(writeScope, sdkOmittedValue)
-                ? this.writeScope
-                : writeScope as SdkOptional<
-                    AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReadyForReviewWriteScope>,
-          );
-
-  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReadyForReview.fromJson(
-          Map<String, dynamic> json) =>
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReadyForReview(
-        query: json['query'] != null
-            ? SdkPresent((json['query'] as String?)!)
-            : const SdkOmitted(),
-        paths: json['paths'] != null
-            ? SdkPresent(
-                ((json['paths'] as List?)?.map((e) => e as String).toList())!)
-            : const SdkOmitted(),
-        writeScope: json['write_scope'] != null
-            ? SdkPresent((json['write_scope'] != null
-                ? AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReadyForReviewWriteScope
-                    .fromJson(json['write_scope'] as String)
-                : null)!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (query) {
-          SdkPresent<String>(value: final value) => {
-              'query': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (paths) {
-          SdkPresent<List<String>>(value: final value) => {
-              'paths': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (writeScope) {
-          SdkPresent<
-                AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReadyForReviewWriteScope>(
-            value: final value
-          ) =>
-            {
-              'write_scope': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
+        'total_count': totalCount,
+        'images': images.map((item) => item.toJson()).toList(),
       };
 }

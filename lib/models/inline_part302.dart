@@ -4,608 +4,608 @@
 part of 'inline.dart';
 
 // Inline operation models (part 302)
-/// Public trigger configuration keyed by stable public trigger identifier. Each trigger has a closed, trigger-specific configuration schema.
-class AgentAutomationsGetAutomationResponseTriggers {
+/// A GitHub user
+class AgentAutomationsGetRepoAutomationResponseCreatedBy {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final SdkOptional<AgentAutomationsGetAutomationResponseTriggersInterval>
-      interval;
-  final SdkOptional<AgentAutomationsGetAutomationResponseTriggersIssueOpened>
-      issueOpened;
-  final SdkOptional<AgentAutomationsGetAutomationResponseTriggersIssueLabeled>
-      issueLabeled;
-  final SdkOptional<AgentAutomationsGetAutomationResponseTriggersWorkflowRun>
-      workflowRun;
-  final SdkOptional<
-          AgentAutomationsGetAutomationResponseTriggersPullRequestOpened>
-      pullRequestOpened;
-  final SdkOptional<
-          AgentAutomationsGetAutomationResponseTriggersPullRequestSynchronize>
-      pullRequestSynchronize;
-  final SdkOptional<
-          AgentAutomationsGetAutomationResponseTriggersPullRequestMerged>
-      pullRequestMerged;
-  final SdkOptional<AgentAutomationsGetAutomationResponseTriggersIssueComment>
-      issueComment;
-  final SdkOptional<
-          AgentAutomationsGetAutomationResponseTriggersPullRequestComment>
-      pullRequestComment;
-  final SdkOptional<
-          AgentAutomationsGetAutomationResponseTriggersDiscussionOpened>
-      discussionOpened;
-  final SdkOptional<
-          AgentAutomationsGetAutomationResponseTriggersDiscussionUpdated>
-      discussionUpdated;
-  final SdkOptional<
-          AgentAutomationsGetAutomationResponseTriggersDiscussionComment>
-      discussionComment;
-  final SdkOptional<AgentAutomationsGetAutomationResponseTriggersIssueAssigned>
-      issueAssigned;
-  final SdkOptional<
-          AgentAutomationsGetAutomationResponseTriggersPullRequestAssigned>
-      pullRequestAssigned;
-  final SdkOptional<AgentAutomationsGetAutomationResponseTriggersSubIssueAdded>
-      subIssueAdded;
-  final SdkOptional<
-          AgentAutomationsGetAutomationResponseTriggersPullRequestReadyForReview>
-      pullRequestReadyForReview;
-  final SdkOptional<
-          AgentAutomationsGetAutomationResponseTriggersPullRequestLabeled>
-      pullRequestLabeled;
-  final SdkOptional<
-          AgentAutomationsGetAutomationResponseTriggersPullRequestMergeConflict>
-      pullRequestMergeConflict;
-  final SdkOptional<
-          AgentAutomationsGetAutomationResponseTriggersPullRequestReviewSubmitted>
-      pullRequestReviewSubmitted;
-  final SdkOptional<
-          AgentAutomationsGetAutomationResponseTriggersPullRequestReviewRequested>
-      pullRequestReviewRequested;
-  final SdkOptional<
-          AgentAutomationsGetAutomationResponseTriggersAutomationCompleted>
-      automationCompleted;
 
-  const AgentAutomationsGetAutomationResponseTriggers(
-      {this.interval = const SdkOmitted(),
-      this.issueOpened = const SdkOmitted(),
-      this.issueLabeled = const SdkOmitted(),
-      this.workflowRun = const SdkOmitted(),
-      this.pullRequestOpened = const SdkOmitted(),
-      this.pullRequestSynchronize = const SdkOmitted(),
-      this.pullRequestMerged = const SdkOmitted(),
-      this.issueComment = const SdkOmitted(),
-      this.pullRequestComment = const SdkOmitted(),
-      this.discussionOpened = const SdkOmitted(),
-      this.discussionUpdated = const SdkOmitted(),
-      this.discussionComment = const SdkOmitted(),
-      this.issueAssigned = const SdkOmitted(),
-      this.pullRequestAssigned = const SdkOmitted(),
-      this.subIssueAdded = const SdkOmitted(),
-      this.pullRequestReadyForReview = const SdkOmitted(),
-      this.pullRequestLabeled = const SdkOmitted(),
-      this.pullRequestMergeConflict = const SdkOmitted(),
-      this.pullRequestReviewSubmitted = const SdkOmitted(),
-      this.pullRequestReviewRequested = const SdkOmitted(),
-      this.automationCompleted = const SdkOmitted()});
+  /// The unique identifier of the user
+  final SdkOptional<int> id;
 
-  AgentAutomationsGetAutomationResponseTriggers Function(
-      {SdkOptional<AgentAutomationsGetAutomationResponseTriggersInterval>
-          interval,
-      SdkOptional<AgentAutomationsGetAutomationResponseTriggersIssueOpened>
-          issueOpened,
-      SdkOptional<AgentAutomationsGetAutomationResponseTriggersIssueLabeled>
-          issueLabeled,
-      SdkOptional<AgentAutomationsGetAutomationResponseTriggersWorkflowRun>
-          workflowRun,
-      SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestOpened>
-          pullRequestOpened,
-      SdkOptional<
-              AgentAutomationsGetAutomationResponseTriggersPullRequestSynchronize>
-          pullRequestSynchronize,
-      SdkOptional<AgentAutomationsGetAutomationResponseTriggersPullRequestMerged>
-          pullRequestMerged,
-      SdkOptional<AgentAutomationsGetAutomationResponseTriggersIssueComment>
-          issueComment,
-      SdkOptional<
-              AgentAutomationsGetAutomationResponseTriggersPullRequestComment>
-          pullRequestComment,
-      SdkOptional<AgentAutomationsGetAutomationResponseTriggersDiscussionOpened>
-          discussionOpened,
-      SdkOptional<
-              AgentAutomationsGetAutomationResponseTriggersDiscussionUpdated>
-          discussionUpdated,
-      SdkOptional<
-              AgentAutomationsGetAutomationResponseTriggersDiscussionComment>
-          discussionComment,
-      SdkOptional<AgentAutomationsGetAutomationResponseTriggersIssueAssigned>
-          issueAssigned,
-      SdkOptional<
-              AgentAutomationsGetAutomationResponseTriggersPullRequestAssigned>
-          pullRequestAssigned,
-      SdkOptional<AgentAutomationsGetAutomationResponseTriggersSubIssueAdded>
-          subIssueAdded,
-      SdkOptional<
-              AgentAutomationsGetAutomationResponseTriggersPullRequestReadyForReview>
-          pullRequestReadyForReview,
-      SdkOptional<
-              AgentAutomationsGetAutomationResponseTriggersPullRequestLabeled>
-          pullRequestLabeled,
-      SdkOptional<
-              AgentAutomationsGetAutomationResponseTriggersPullRequestMergeConflict>
-          pullRequestMergeConflict,
-      SdkOptional<
-              AgentAutomationsGetAutomationResponseTriggersPullRequestReviewSubmitted>
-          pullRequestReviewSubmitted,
-      SdkOptional<
-              AgentAutomationsGetAutomationResponseTriggersPullRequestReviewRequested>
-          pullRequestReviewRequested,
-      SdkOptional<
-              AgentAutomationsGetAutomationResponseTriggersAutomationCompleted>
-          automationCompleted}) get copyWith => _copyWith;
+  const AgentAutomationsGetRepoAutomationResponseCreatedBy(
+      {this.id = const SdkOmitted()});
 
-  AgentAutomationsGetAutomationResponseTriggers _copyWith(
-          {Object? interval = sdkOmittedValue,
-          Object? issueOpened = sdkOmittedValue,
-          Object? issueLabeled = sdkOmittedValue,
-          Object? workflowRun = sdkOmittedValue,
-          Object? pullRequestOpened = sdkOmittedValue,
-          Object? pullRequestSynchronize = sdkOmittedValue,
-          Object? pullRequestMerged = sdkOmittedValue,
-          Object? issueComment = sdkOmittedValue,
-          Object? pullRequestComment = sdkOmittedValue,
-          Object? discussionOpened = sdkOmittedValue,
-          Object? discussionUpdated = sdkOmittedValue,
-          Object? discussionComment = sdkOmittedValue,
-          Object? issueAssigned = sdkOmittedValue,
-          Object? pullRequestAssigned = sdkOmittedValue,
-          Object? subIssueAdded = sdkOmittedValue,
-          Object? pullRequestReadyForReview = sdkOmittedValue,
-          Object? pullRequestLabeled = sdkOmittedValue,
-          Object? pullRequestMergeConflict = sdkOmittedValue,
-          Object? pullRequestReviewSubmitted = sdkOmittedValue,
-          Object? pullRequestReviewRequested = sdkOmittedValue,
-          Object? automationCompleted = sdkOmittedValue}) =>
-      AgentAutomationsGetAutomationResponseTriggers(
-        interval: identical(interval, sdkOmittedValue)
-            ? this.interval
-            : interval as SdkOptional<
-                AgentAutomationsGetAutomationResponseTriggersInterval>,
-        issueOpened: identical(issueOpened, sdkOmittedValue)
-            ? this.issueOpened
-            : issueOpened as SdkOptional<
-                AgentAutomationsGetAutomationResponseTriggersIssueOpened>,
-        issueLabeled: identical(issueLabeled, sdkOmittedValue)
-            ? this.issueLabeled
-            : issueLabeled as SdkOptional<
-                AgentAutomationsGetAutomationResponseTriggersIssueLabeled>,
-        workflowRun: identical(workflowRun, sdkOmittedValue)
-            ? this.workflowRun
-            : workflowRun as SdkOptional<
-                AgentAutomationsGetAutomationResponseTriggersWorkflowRun>,
-        pullRequestOpened: identical(pullRequestOpened, sdkOmittedValue)
-            ? this.pullRequestOpened
-            : pullRequestOpened as SdkOptional<
-                AgentAutomationsGetAutomationResponseTriggersPullRequestOpened>,
-        pullRequestSynchronize: identical(
-                pullRequestSynchronize, sdkOmittedValue)
-            ? this.pullRequestSynchronize
-            : pullRequestSynchronize as SdkOptional<
-                AgentAutomationsGetAutomationResponseTriggersPullRequestSynchronize>,
-        pullRequestMerged: identical(pullRequestMerged, sdkOmittedValue)
-            ? this.pullRequestMerged
-            : pullRequestMerged as SdkOptional<
-                AgentAutomationsGetAutomationResponseTriggersPullRequestMerged>,
-        issueComment: identical(issueComment, sdkOmittedValue)
-            ? this.issueComment
-            : issueComment as SdkOptional<
-                AgentAutomationsGetAutomationResponseTriggersIssueComment>,
-        pullRequestComment: identical(pullRequestComment, sdkOmittedValue)
-            ? this.pullRequestComment
-            : pullRequestComment as SdkOptional<
-                AgentAutomationsGetAutomationResponseTriggersPullRequestComment>,
-        discussionOpened: identical(discussionOpened, sdkOmittedValue)
-            ? this.discussionOpened
-            : discussionOpened as SdkOptional<
-                AgentAutomationsGetAutomationResponseTriggersDiscussionOpened>,
-        discussionUpdated: identical(discussionUpdated, sdkOmittedValue)
-            ? this.discussionUpdated
-            : discussionUpdated as SdkOptional<
-                AgentAutomationsGetAutomationResponseTriggersDiscussionUpdated>,
-        discussionComment: identical(discussionComment, sdkOmittedValue)
-            ? this.discussionComment
-            : discussionComment as SdkOptional<
-                AgentAutomationsGetAutomationResponseTriggersDiscussionComment>,
-        issueAssigned: identical(issueAssigned, sdkOmittedValue)
-            ? this.issueAssigned
-            : issueAssigned as SdkOptional<
-                AgentAutomationsGetAutomationResponseTriggersIssueAssigned>,
-        pullRequestAssigned: identical(pullRequestAssigned, sdkOmittedValue)
-            ? this.pullRequestAssigned
-            : pullRequestAssigned as SdkOptional<
-                AgentAutomationsGetAutomationResponseTriggersPullRequestAssigned>,
-        subIssueAdded: identical(subIssueAdded, sdkOmittedValue)
-            ? this.subIssueAdded
-            : subIssueAdded as SdkOptional<
-                AgentAutomationsGetAutomationResponseTriggersSubIssueAdded>,
-        pullRequestReadyForReview: identical(
-                pullRequestReadyForReview, sdkOmittedValue)
-            ? this.pullRequestReadyForReview
-            : pullRequestReadyForReview as SdkOptional<
-                AgentAutomationsGetAutomationResponseTriggersPullRequestReadyForReview>,
-        pullRequestLabeled: identical(pullRequestLabeled, sdkOmittedValue)
-            ? this.pullRequestLabeled
-            : pullRequestLabeled as SdkOptional<
-                AgentAutomationsGetAutomationResponseTriggersPullRequestLabeled>,
-        pullRequestMergeConflict: identical(
-                pullRequestMergeConflict, sdkOmittedValue)
-            ? this.pullRequestMergeConflict
-            : pullRequestMergeConflict as SdkOptional<
-                AgentAutomationsGetAutomationResponseTriggersPullRequestMergeConflict>,
-        pullRequestReviewSubmitted: identical(
-                pullRequestReviewSubmitted, sdkOmittedValue)
-            ? this.pullRequestReviewSubmitted
-            : pullRequestReviewSubmitted as SdkOptional<
-                AgentAutomationsGetAutomationResponseTriggersPullRequestReviewSubmitted>,
-        pullRequestReviewRequested: identical(
-                pullRequestReviewRequested, sdkOmittedValue)
-            ? this.pullRequestReviewRequested
-            : pullRequestReviewRequested as SdkOptional<
-                AgentAutomationsGetAutomationResponseTriggersPullRequestReviewRequested>,
-        automationCompleted: identical(automationCompleted, sdkOmittedValue)
-            ? this.automationCompleted
-            : automationCompleted as SdkOptional<
-                AgentAutomationsGetAutomationResponseTriggersAutomationCompleted>,
+  AgentAutomationsGetRepoAutomationResponseCreatedBy Function(
+      {SdkOptional<int> id}) get copyWith => _copyWith;
+
+  AgentAutomationsGetRepoAutomationResponseCreatedBy _copyWith(
+          {Object? id = sdkOmittedValue}) =>
+      AgentAutomationsGetRepoAutomationResponseCreatedBy(
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
       );
 
-  factory AgentAutomationsGetAutomationResponseTriggers.fromJson(
+  factory AgentAutomationsGetRepoAutomationResponseCreatedBy.fromJson(
           Map<String, dynamic> json) =>
-      AgentAutomationsGetAutomationResponseTriggers(
-        interval: json['interval'] != null
-            ? SdkPresent((json['interval'] != null
-                ? AgentAutomationsGetAutomationResponseTriggersInterval
-                    .fromJson(json['interval'] as Map<String, dynamic>)
+      AgentAutomationsGetRepoAutomationResponseCreatedBy(
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+/// A full representation of an automation including all configuration fields.
+class AgentAutomationsGetRepoAutomationResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The unique identifier of the automation.
+  final String id;
+
+  /// The name of the automation.
+  final String name;
+
+  /// Whether the automation is currently enabled.
+  final SdkOptional<bool> enabled;
+
+  /// Who owns the automation. `user` keeps it private to its creator and its runs act as that user. `repository` makes it belong to the repository, visible to anyone with read access to the repository, and its runs act as the Copilot app rather than as a person.
+  final SdkOptional<AgentAutomationsGetRepoAutomationResponseOwnerType>
+      ownerType;
+
+  /// Controls which repository resources a run may modify. `trigger` limits writes to the resource that started the run, when one exists, and resources created during the run; `repository` allows writes to any resource in the repository. Supported values: `trigger`, `repository`.
+  final SdkOptional<AgentAutomationsGetRepoAutomationResponseWriteScope>
+      writeScope;
+
+  /// When true, event-triggered runs require the event actor to have repo write permission, even when the org's allow_read_access_triggers policy is enabled. Does not apply to interval-scheduled runs, which always run as the automation owner.
+  final SdkOptional<bool> requireActorWritePermission;
+
+  /// Public trigger configuration keyed by stable public trigger identifier. Each trigger has a closed, trigger-specific configuration schema.
+  final SdkOptional<AgentAutomationsGetRepoAutomationResponseTriggers> triggers;
+
+  /// The prompt template for the automation.
+  final String prompt;
+
+  /// The tools available to the automation.
+  final SdkOptional<List<String>> tools;
+
+  /// Custom agents (subagents) this automation is allowed to invoke.
+  final SdkOptional<List<String>> allowedCustomAgents;
+
+  /// The model to use for sessions triggered by this automation. Omit to use the platform default.
+  final SdkOptional<String> model;
+
+  /// The reasoning effort to use for sessions triggered by this automation. Omit or leave empty for no override. Currently supported values: `none`, `low`, `medium`, `high`, `xhigh`, `max`
+  final SdkOptional<String> reasoningEffort;
+
+  /// When the automation was created.
+  final String createdAt;
+
+  /// When the automation was last updated.
+  final String updatedAt;
+
+  /// A GitHub user
+  final AgentAutomationsGetRepoAutomationResponseCreatedBy createdBy;
+
+  const AgentAutomationsGetRepoAutomationResponse(
+      {required this.id,
+      required this.name,
+      this.enabled = const SdkOmitted(),
+      this.ownerType = const SdkOmitted(),
+      this.writeScope = const SdkOmitted(),
+      this.requireActorWritePermission = const SdkOmitted(),
+      this.triggers = const SdkOmitted(),
+      required this.prompt,
+      this.tools = const SdkOmitted(),
+      this.allowedCustomAgents = const SdkOmitted(),
+      this.model = const SdkOmitted(),
+      this.reasoningEffort = const SdkOmitted(),
+      required this.createdAt,
+      required this.updatedAt,
+      required this.createdBy});
+
+  AgentAutomationsGetRepoAutomationResponse Function(
+      {String id,
+      String name,
+      SdkOptional<bool> enabled,
+      SdkOptional<AgentAutomationsGetRepoAutomationResponseOwnerType> ownerType,
+      SdkOptional<AgentAutomationsGetRepoAutomationResponseWriteScope>
+          writeScope,
+      SdkOptional<bool> requireActorWritePermission,
+      SdkOptional<AgentAutomationsGetRepoAutomationResponseTriggers> triggers,
+      String prompt,
+      SdkOptional<List<String>> tools,
+      SdkOptional<List<String>> allowedCustomAgents,
+      SdkOptional<String> model,
+      SdkOptional<String> reasoningEffort,
+      String createdAt,
+      String updatedAt,
+      AgentAutomationsGetRepoAutomationResponseCreatedBy
+          createdBy}) get copyWith => _copyWith;
+
+  AgentAutomationsGetRepoAutomationResponse _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? enabled = sdkOmittedValue,
+          Object? ownerType = sdkOmittedValue,
+          Object? writeScope = sdkOmittedValue,
+          Object? requireActorWritePermission = sdkOmittedValue,
+          Object? triggers = sdkOmittedValue,
+          Object? prompt = sdkOmittedValue,
+          Object? tools = sdkOmittedValue,
+          Object? allowedCustomAgents = sdkOmittedValue,
+          Object? model = sdkOmittedValue,
+          Object? reasoningEffort = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? createdBy = sdkOmittedValue}) =>
+      AgentAutomationsGetRepoAutomationResponse(
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as SdkOptional<bool>,
+        ownerType: identical(ownerType, sdkOmittedValue)
+            ? this.ownerType
+            : ownerType as SdkOptional<
+                AgentAutomationsGetRepoAutomationResponseOwnerType>,
+        writeScope: identical(writeScope, sdkOmittedValue)
+            ? this.writeScope
+            : writeScope as SdkOptional<
+                AgentAutomationsGetRepoAutomationResponseWriteScope>,
+        requireActorWritePermission:
+            identical(requireActorWritePermission, sdkOmittedValue)
+                ? this.requireActorWritePermission
+                : requireActorWritePermission as SdkOptional<bool>,
+        triggers: identical(triggers, sdkOmittedValue)
+            ? this.triggers
+            : triggers as SdkOptional<
+                AgentAutomationsGetRepoAutomationResponseTriggers>,
+        prompt:
+            identical(prompt, sdkOmittedValue) ? this.prompt : prompt as String,
+        tools: identical(tools, sdkOmittedValue)
+            ? this.tools
+            : tools as SdkOptional<List<String>>,
+        allowedCustomAgents: identical(allowedCustomAgents, sdkOmittedValue)
+            ? this.allowedCustomAgents
+            : allowedCustomAgents as SdkOptional<List<String>>,
+        model: identical(model, sdkOmittedValue)
+            ? this.model
+            : model as SdkOptional<String>,
+        reasoningEffort: identical(reasoningEffort, sdkOmittedValue)
+            ? this.reasoningEffort
+            : reasoningEffort as SdkOptional<String>,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+        createdBy: identical(createdBy, sdkOmittedValue)
+            ? this.createdBy
+            : createdBy as AgentAutomationsGetRepoAutomationResponseCreatedBy,
+      );
+
+  factory AgentAutomationsGetRepoAutomationResponse.fromJson(
+          Map<String, dynamic> json) =>
+      AgentAutomationsGetRepoAutomationResponse(
+        id: (json['id'] as String?)!,
+        name: (json['name'] as String?)!,
+        enabled: json['enabled'] != null
+            ? SdkPresent((json['enabled'] as bool?)!)
+            : const SdkOmitted(),
+        ownerType: json['owner_type'] != null
+            ? SdkPresent((json['owner_type'] != null
+                ? AgentAutomationsGetRepoAutomationResponseOwnerType.fromJson(
+                    json['owner_type'] as String)
                 : null)!)
             : const SdkOmitted(),
-        issueOpened: json['issue_opened'] != null
-            ? SdkPresent((json['issue_opened'] != null
-                ? AgentAutomationsGetAutomationResponseTriggersIssueOpened
-                    .fromJson(json['issue_opened'] as Map<String, dynamic>)
+        writeScope: json['write_scope'] != null
+            ? SdkPresent((json['write_scope'] != null
+                ? AgentAutomationsGetRepoAutomationResponseWriteScope.fromJson(
+                    json['write_scope'] as String)
                 : null)!)
             : const SdkOmitted(),
-        issueLabeled: json['issue_labeled'] != null
-            ? SdkPresent((json['issue_labeled'] != null
-                ? AgentAutomationsGetAutomationResponseTriggersIssueLabeled
-                    .fromJson(json['issue_labeled'] as Map<String, dynamic>)
+        requireActorWritePermission:
+            json['require_actor_write_permission'] != null
+                ? SdkPresent((json['require_actor_write_permission'] as bool?)!)
+                : const SdkOmitted(),
+        triggers: json['triggers'] != null
+            ? SdkPresent((json['triggers'] != null
+                ? AgentAutomationsGetRepoAutomationResponseTriggers.fromJson(
+                    json['triggers'] as Map<String, dynamic>)
                 : null)!)
             : const SdkOmitted(),
-        workflowRun: json['workflow_run'] != null
-            ? SdkPresent((json['workflow_run'] != null
-                ? AgentAutomationsGetAutomationResponseTriggersWorkflowRun
-                    .fromJson(json['workflow_run'] as Map<String, dynamic>)
+        prompt: (json['prompt'] as String?)!,
+        tools: json['tools'] != null
+            ? SdkPresent(
+                ((json['tools'] as List?)?.map((e) => e as String).toList())!)
+            : const SdkOmitted(),
+        allowedCustomAgents: json['allowed_custom_agents'] != null
+            ? SdkPresent(((json['allowed_custom_agents'] as List?)
+                ?.map((e) => e as String)
+                .toList())!)
+            : const SdkOmitted(),
+        model: json['model'] != null
+            ? SdkPresent((json['model'] as String?)!)
+            : const SdkOmitted(),
+        reasoningEffort: json['reasoning_effort'] != null
+            ? SdkPresent((json['reasoning_effort'] as String?)!)
+            : const SdkOmitted(),
+        createdAt: (json['created_at'] as String?)!,
+        updatedAt: (json['updated_at'] as String?)!,
+        createdBy: (json['created_by'] != null
+            ? AgentAutomationsGetRepoAutomationResponseCreatedBy.fromJson(
+                json['created_by'] as Map<String, dynamic>)
+            : null)!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'name': name,
+        ...switch (enabled) {
+          SdkPresent<bool>(value: final value) => {
+              'enabled': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (ownerType) {
+          SdkPresent<AgentAutomationsGetRepoAutomationResponseOwnerType>(
+            value: final value
+          ) =>
+            {
+              'owner_type': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (writeScope) {
+          SdkPresent<AgentAutomationsGetRepoAutomationResponseWriteScope>(
+            value: final value
+          ) =>
+            {
+              'write_scope': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (requireActorWritePermission) {
+          SdkPresent<bool>(value: final value) => {
+              'require_actor_write_permission': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (triggers) {
+          SdkPresent<AgentAutomationsGetRepoAutomationResponseTriggers>(
+            value: final value
+          ) =>
+            {
+              'triggers': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'prompt': prompt,
+        ...switch (tools) {
+          SdkPresent<List<String>>(value: final value) => {
+              'tools': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (allowedCustomAgents) {
+          SdkPresent<List<String>>(value: final value) => {
+              'allowed_custom_agents': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (model) {
+          SdkPresent<String>(value: final value) => {
+              'model': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (reasoningEffort) {
+          SdkPresent<String>(value: final value) => {
+              'reasoning_effort': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'created_at': createdAt,
+        'updated_at': updatedAt,
+        'created_by': createdBy.toJson(),
+      };
+}
+
+class AgentAutomationsEditRepoAutomationRequestBodyTriggersInterval {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// One or more schedules on which the Automation runs.
+  final List<
+          AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalCadenceItem>
+      cadence;
+
+  /// UTC hour anchor (0 through 23) for daily and weekly schedules. Omitted daily and weekly values default to `0` (midnight UTC).
+  final SdkOptional<int> hourUtc;
+
+  /// UTC weekday anchor for weekly schedules, where `0` is Sunday and `6` is Saturday. Omitted weekly values default to Monday (`1`).
+  final SdkOptional<int> dayOfWeek;
+
+  /// UTC minute anchor for daily and weekly schedules. Omitted daily and weekly values default to `0`. Must be omitted whenever `cadence` includes `hourly`.
+  final SdkOptional<
+          AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalMinuteUtc>
+      minuteUtc;
+
+  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+  final SdkOptional<
+          AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalWriteScope>
+      writeScope;
+
+  const AgentAutomationsEditRepoAutomationRequestBodyTriggersInterval(
+      {required this.cadence,
+      this.hourUtc = const SdkOmitted(),
+      this.dayOfWeek = const SdkOmitted(),
+      this.minuteUtc = const SdkOmitted(),
+      this.writeScope = const SdkOmitted()});
+
+  AgentAutomationsEditRepoAutomationRequestBodyTriggersInterval Function(
+      {List<AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalCadenceItem>
+          cadence,
+      SdkOptional<int> hourUtc,
+      SdkOptional<int> dayOfWeek,
+      SdkOptional<
+              AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalMinuteUtc>
+          minuteUtc,
+      SdkOptional<
+              AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalWriteScope>
+          writeScope}) get copyWith => _copyWith;
+
+  AgentAutomationsEditRepoAutomationRequestBodyTriggersInterval _copyWith(
+          {Object? cadence = sdkOmittedValue,
+          Object? hourUtc = sdkOmittedValue,
+          Object? dayOfWeek = sdkOmittedValue,
+          Object? minuteUtc = sdkOmittedValue,
+          Object? writeScope = sdkOmittedValue}) =>
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersInterval(
+        cadence: identical(cadence, sdkOmittedValue)
+            ? this.cadence
+            : cadence as List<
+                AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalCadenceItem>,
+        hourUtc: identical(hourUtc, sdkOmittedValue)
+            ? this.hourUtc
+            : hourUtc as SdkOptional<int>,
+        dayOfWeek: identical(dayOfWeek, sdkOmittedValue)
+            ? this.dayOfWeek
+            : dayOfWeek as SdkOptional<int>,
+        minuteUtc: identical(minuteUtc, sdkOmittedValue)
+            ? this.minuteUtc
+            : minuteUtc as SdkOptional<
+                AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalMinuteUtc>,
+        writeScope: identical(writeScope, sdkOmittedValue)
+            ? this.writeScope
+            : writeScope as SdkOptional<
+                AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalWriteScope>,
+      );
+
+  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersInterval.fromJson(
+          Map<String, dynamic> json) =>
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersInterval(
+        cadence: ((json['cadence'] as List?)
+            ?.map((e) =>
+                AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalCadenceItem
+                    .fromJson(e as String))
+            .toList())!,
+        hourUtc: json['hour_utc'] != null
+            ? SdkPresent(((json['hour_utc'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        dayOfWeek: json['day_of_week'] != null
+            ? SdkPresent(((json['day_of_week'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        minuteUtc: json['minute_utc'] != null
+            ? SdkPresent((json['minute_utc'] != null
+                ? AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalMinuteUtc
+                    .fromJson((json['minute_utc'] as num).toInt())
                 : null)!)
             : const SdkOmitted(),
-        pullRequestOpened: json['pull_request_opened'] != null
-            ? SdkPresent((json['pull_request_opened'] != null
-                ? AgentAutomationsGetAutomationResponseTriggersPullRequestOpened
-                    .fromJson(
-                        json['pull_request_opened'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        pullRequestSynchronize: json['pull_request_synchronize'] != null
-            ? SdkPresent((json['pull_request_synchronize'] != null
-                ? AgentAutomationsGetAutomationResponseTriggersPullRequestSynchronize
-                    .fromJson(json['pull_request_synchronize']
-                        as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        pullRequestMerged: json['pull_request_merged'] != null
-            ? SdkPresent((json['pull_request_merged'] != null
-                ? AgentAutomationsGetAutomationResponseTriggersPullRequestMerged
-                    .fromJson(
-                        json['pull_request_merged'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        issueComment: json['issue_comment'] != null
-            ? SdkPresent((json['issue_comment'] != null
-                ? AgentAutomationsGetAutomationResponseTriggersIssueComment
-                    .fromJson(json['issue_comment'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        pullRequestComment: json['pull_request_comment'] != null
-            ? SdkPresent((json['pull_request_comment'] != null
-                ? AgentAutomationsGetAutomationResponseTriggersPullRequestComment
-                    .fromJson(
-                        json['pull_request_comment'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        discussionOpened: json['discussion_opened'] != null
-            ? SdkPresent((json['discussion_opened'] != null
-                ? AgentAutomationsGetAutomationResponseTriggersDiscussionOpened
-                    .fromJson(json['discussion_opened'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        discussionUpdated: json['discussion_updated'] != null
-            ? SdkPresent((json['discussion_updated'] != null
-                ? AgentAutomationsGetAutomationResponseTriggersDiscussionUpdated
-                    .fromJson(
-                        json['discussion_updated'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        discussionComment: json['discussion_comment'] != null
-            ? SdkPresent((json['discussion_comment'] != null
-                ? AgentAutomationsGetAutomationResponseTriggersDiscussionComment
-                    .fromJson(
-                        json['discussion_comment'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        issueAssigned: json['issue_assigned'] != null
-            ? SdkPresent((json['issue_assigned'] != null
-                ? AgentAutomationsGetAutomationResponseTriggersIssueAssigned
-                    .fromJson(json['issue_assigned'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        pullRequestAssigned: json['pull_request_assigned'] != null
-            ? SdkPresent((json['pull_request_assigned'] != null
-                ? AgentAutomationsGetAutomationResponseTriggersPullRequestAssigned
-                    .fromJson(
-                        json['pull_request_assigned'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        subIssueAdded: json['sub_issue_added'] != null
-            ? SdkPresent((json['sub_issue_added'] != null
-                ? AgentAutomationsGetAutomationResponseTriggersSubIssueAdded
-                    .fromJson(json['sub_issue_added'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        pullRequestReadyForReview: json['pull_request_ready_for_review'] != null
-            ? SdkPresent((json['pull_request_ready_for_review'] != null
-                ? AgentAutomationsGetAutomationResponseTriggersPullRequestReadyForReview
-                    .fromJson(json['pull_request_ready_for_review']
-                        as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        pullRequestLabeled: json['pull_request_labeled'] != null
-            ? SdkPresent((json['pull_request_labeled'] != null
-                ? AgentAutomationsGetAutomationResponseTriggersPullRequestLabeled
-                    .fromJson(
-                        json['pull_request_labeled'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        pullRequestMergeConflict: json['pull_request_merge_conflict'] != null
-            ? SdkPresent((json['pull_request_merge_conflict'] != null
-                ? AgentAutomationsGetAutomationResponseTriggersPullRequestMergeConflict
-                    .fromJson(json['pull_request_merge_conflict']
-                        as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        pullRequestReviewSubmitted: json['pull_request_review_submitted'] !=
-                null
-            ? SdkPresent((json['pull_request_review_submitted'] != null
-                ? AgentAutomationsGetAutomationResponseTriggersPullRequestReviewSubmitted
-                    .fromJson(json['pull_request_review_submitted']
-                        as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        pullRequestReviewRequested: json['pull_request_review_requested'] !=
-                null
-            ? SdkPresent((json['pull_request_review_requested'] != null
-                ? AgentAutomationsGetAutomationResponseTriggersPullRequestReviewRequested
-                    .fromJson(json['pull_request_review_requested']
-                        as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        automationCompleted: json['automation_completed'] != null
-            ? SdkPresent((json['automation_completed'] != null
-                ? AgentAutomationsGetAutomationResponseTriggersAutomationCompleted
-                    .fromJson(
-                        json['automation_completed'] as Map<String, dynamic>)
+        writeScope: json['write_scope'] != null
+            ? SdkPresent((json['write_scope'] != null
+                ? AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalWriteScope
+                    .fromJson(json['write_scope'] as String)
                 : null)!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (interval) {
-          SdkPresent<AgentAutomationsGetAutomationResponseTriggersInterval>(
-            value: final value
-          ) =>
-            {
-              'interval': value.toJson(),
+        'cadence': cadence.map((item) => item.toJson()).toList(),
+        ...switch (hourUtc) {
+          SdkPresent<int>(value: final value) => {
+              'hour_utc': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (issueOpened) {
-          SdkPresent<AgentAutomationsGetAutomationResponseTriggersIssueOpened>(
-            value: final value
-          ) =>
-            {
-              'issue_opened': value.toJson(),
+        ...switch (dayOfWeek) {
+          SdkPresent<int>(value: final value) => {
+              'day_of_week': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (issueLabeled) {
-          SdkPresent<AgentAutomationsGetAutomationResponseTriggersIssueLabeled>(
-            value: final value
-          ) =>
-            {
-              'issue_labeled': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (workflowRun) {
-          SdkPresent<AgentAutomationsGetAutomationResponseTriggersWorkflowRun>(
-            value: final value
-          ) =>
-            {
-              'workflow_run': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pullRequestOpened) {
+        ...switch (minuteUtc) {
           SdkPresent<
-                AgentAutomationsGetAutomationResponseTriggersPullRequestOpened>(
+                AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalMinuteUtc>(
             value: final value
           ) =>
             {
-              'pull_request_opened': value.toJson(),
+              'minute_utc': value.toJson(),
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (pullRequestSynchronize) {
+        ...switch (writeScope) {
           SdkPresent<
-                AgentAutomationsGetAutomationResponseTriggersPullRequestSynchronize>(
+                AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalWriteScope>(
             value: final value
           ) =>
             {
-              'pull_request_synchronize': value.toJson(),
+              'write_scope': value.toJson(),
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (pullRequestMerged) {
+      };
+}
+
+class AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueOpened {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// A GitHub issue or pull request search query.
+  final SdkOptional<String> query;
+
+  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+  final SdkOptional<
+          AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueOpenedWriteScope>
+      writeScope;
+
+  const AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueOpened(
+      {this.query = const SdkOmitted(), this.writeScope = const SdkOmitted()});
+
+  AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueOpened Function(
+      {SdkOptional<String> query,
+      SdkOptional<
+              AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueOpenedWriteScope>
+          writeScope}) get copyWith => _copyWith;
+
+  AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueOpened _copyWith(
+          {Object? query = sdkOmittedValue,
+          Object? writeScope = sdkOmittedValue}) =>
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueOpened(
+        query: identical(query, sdkOmittedValue)
+            ? this.query
+            : query as SdkOptional<String>,
+        writeScope: identical(writeScope, sdkOmittedValue)
+            ? this.writeScope
+            : writeScope as SdkOptional<
+                AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueOpenedWriteScope>,
+      );
+
+  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueOpened.fromJson(
+          Map<String, dynamic> json) =>
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueOpened(
+        query: json['query'] != null
+            ? SdkPresent((json['query'] as String?)!)
+            : const SdkOmitted(),
+        writeScope: json['write_scope'] != null
+            ? SdkPresent((json['write_scope'] != null
+                ? AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueOpenedWriteScope
+                    .fromJson(json['write_scope'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (query) {
+          SdkPresent<String>(value: final value) => {
+              'query': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (writeScope) {
           SdkPresent<
-                AgentAutomationsGetAutomationResponseTriggersPullRequestMerged>(
+                AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueOpenedWriteScope>(
             value: final value
           ) =>
             {
-              'pull_request_merged': value.toJson(),
+              'write_scope': value.toJson(),
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (issueComment) {
-          SdkPresent<AgentAutomationsGetAutomationResponseTriggersIssueComment>(
-            value: final value
-          ) =>
-            {
-              'issue_comment': value.toJson(),
+      };
+}
+
+class AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeled {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// A GitHub issue or pull request search query.
+  final SdkOptional<String> query;
+
+  /// Label names matched case-insensitively against the label added by the event. Omit or use an empty array to match every added label.
+  final SdkOptional<List<String>> labels;
+
+  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+  final SdkOptional<
+          AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeledWriteScope>
+      writeScope;
+
+  const AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeled(
+      {this.query = const SdkOmitted(),
+      this.labels = const SdkOmitted(),
+      this.writeScope = const SdkOmitted()});
+
+  AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeled Function(
+      {SdkOptional<String> query,
+      SdkOptional<List<String>> labels,
+      SdkOptional<
+              AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeledWriteScope>
+          writeScope}) get copyWith => _copyWith;
+
+  AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeled _copyWith(
+          {Object? query = sdkOmittedValue,
+          Object? labels = sdkOmittedValue,
+          Object? writeScope = sdkOmittedValue}) =>
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeled(
+        query: identical(query, sdkOmittedValue)
+            ? this.query
+            : query as SdkOptional<String>,
+        labels: identical(labels, sdkOmittedValue)
+            ? this.labels
+            : labels as SdkOptional<List<String>>,
+        writeScope: identical(writeScope, sdkOmittedValue)
+            ? this.writeScope
+            : writeScope as SdkOptional<
+                AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeledWriteScope>,
+      );
+
+  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeled.fromJson(
+          Map<String, dynamic> json) =>
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeled(
+        query: json['query'] != null
+            ? SdkPresent((json['query'] as String?)!)
+            : const SdkOmitted(),
+        labels: json['labels'] != null
+            ? SdkPresent(
+                ((json['labels'] as List?)?.map((e) => e as String).toList())!)
+            : const SdkOmitted(),
+        writeScope: json['write_scope'] != null
+            ? SdkPresent((json['write_scope'] != null
+                ? AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeledWriteScope
+                    .fromJson(json['write_scope'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (query) {
+          SdkPresent<String>(value: final value) => {
+              'query': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (pullRequestComment) {
+        ...switch (labels) {
+          SdkPresent<List<String>>(value: final value) => {
+              'labels': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (writeScope) {
           SdkPresent<
-                AgentAutomationsGetAutomationResponseTriggersPullRequestComment>(
+                AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeledWriteScope>(
             value: final value
           ) =>
             {
-              'pull_request_comment': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (discussionOpened) {
-          SdkPresent<
-                AgentAutomationsGetAutomationResponseTriggersDiscussionOpened>(
-            value: final value
-          ) =>
-            {
-              'discussion_opened': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (discussionUpdated) {
-          SdkPresent<
-                AgentAutomationsGetAutomationResponseTriggersDiscussionUpdated>(
-            value: final value
-          ) =>
-            {
-              'discussion_updated': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (discussionComment) {
-          SdkPresent<
-                AgentAutomationsGetAutomationResponseTriggersDiscussionComment>(
-            value: final value
-          ) =>
-            {
-              'discussion_comment': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (issueAssigned) {
-          SdkPresent<
-                AgentAutomationsGetAutomationResponseTriggersIssueAssigned>(
-            value: final value
-          ) =>
-            {
-              'issue_assigned': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pullRequestAssigned) {
-          SdkPresent<
-                AgentAutomationsGetAutomationResponseTriggersPullRequestAssigned>(
-            value: final value
-          ) =>
-            {
-              'pull_request_assigned': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (subIssueAdded) {
-          SdkPresent<
-                AgentAutomationsGetAutomationResponseTriggersSubIssueAdded>(
-            value: final value
-          ) =>
-            {
-              'sub_issue_added': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pullRequestReadyForReview) {
-          SdkPresent<
-                AgentAutomationsGetAutomationResponseTriggersPullRequestReadyForReview>(
-            value: final value
-          ) =>
-            {
-              'pull_request_ready_for_review': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pullRequestLabeled) {
-          SdkPresent<
-                AgentAutomationsGetAutomationResponseTriggersPullRequestLabeled>(
-            value: final value
-          ) =>
-            {
-              'pull_request_labeled': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pullRequestMergeConflict) {
-          SdkPresent<
-                AgentAutomationsGetAutomationResponseTriggersPullRequestMergeConflict>(
-            value: final value
-          ) =>
-            {
-              'pull_request_merge_conflict': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pullRequestReviewSubmitted) {
-          SdkPresent<
-                AgentAutomationsGetAutomationResponseTriggersPullRequestReviewSubmitted>(
-            value: final value
-          ) =>
-            {
-              'pull_request_review_submitted': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pullRequestReviewRequested) {
-          SdkPresent<
-                AgentAutomationsGetAutomationResponseTriggersPullRequestReviewRequested>(
-            value: final value
-          ) =>
-            {
-              'pull_request_review_requested': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (automationCompleted) {
-          SdkPresent<
-                AgentAutomationsGetAutomationResponseTriggersAutomationCompleted>(
-            value: final value
-          ) =>
-            {
-              'automation_completed': value.toJson(),
+              'write_scope': value.toJson(),
             },
           _ => const <String, dynamic>{},
         },

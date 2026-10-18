@@ -4,6 +4,106 @@
 part of 'inline.dart';
 
 // Inline operation models (part 5)
+/// The level of permission to grant the access token to create and retrieve build artifact metadata records.
+final class AppPermissionsArtifactMetadata {
+  final String value;
+
+  const AppPermissionsArtifactMetadata._(this.value);
+
+  factory AppPermissionsArtifactMetadata.fromJson(String value) =>
+      AppPermissionsArtifactMetadata._(value);
+
+  static const read = AppPermissionsArtifactMetadata._('read');
+  static const write = AppPermissionsArtifactMetadata._('write');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is AppPermissionsArtifactMetadata && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The level of permission to create and retrieve the access token for repository attestations.
+final class AppPermissionsAttestations {
+  final String value;
+
+  const AppPermissionsAttestations._(this.value);
+
+  factory AppPermissionsAttestations.fromJson(String value) =>
+      AppPermissionsAttestations._(value);
+
+  static const read = AppPermissionsAttestations._('read');
+  static const write = AppPermissionsAttestations._('write');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is AppPermissionsAttestations && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The level of permission to grant the access token for checks on code.
+final class AppPermissionsChecks {
+  final String value;
+
+  const AppPermissionsChecks._(this.value);
+
+  factory AppPermissionsChecks.fromJson(String value) =>
+      AppPermissionsChecks._(value);
+
+  static const read = AppPermissionsChecks._('read');
+  static const write = AppPermissionsChecks._('write');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is AppPermissionsChecks && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The level of permission to grant the access token to view and manage code quality data.
+final class AppPermissionsCodeQuality {
+  final String value;
+
+  const AppPermissionsCodeQuality._(this.value);
+
+  factory AppPermissionsCodeQuality.fromJson(String value) =>
+      AppPermissionsCodeQuality._(value);
+
+  static const read = AppPermissionsCodeQuality._('read');
+  static const write = AppPermissionsCodeQuality._('write');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is AppPermissionsCodeQuality && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
 /// The level of permission to grant the access token to create, edit, delete, and list Codespaces.
 final class AppPermissionsCodespaces {
   final String value;
@@ -233,106 +333,6 @@ final class AppPermissionsEnvironments {
   @override
   bool operator ==(Object other) =>
       other is AppPermissionsEnvironments && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The level of permission to grant the access token to manage the followers belonging to a user.
-final class AppPermissionsFollowers {
-  final String value;
-
-  const AppPermissionsFollowers._(this.value);
-
-  factory AppPermissionsFollowers.fromJson(String value) =>
-      AppPermissionsFollowers._(value);
-
-  static const read = AppPermissionsFollowers._('read');
-  static const write = AppPermissionsFollowers._('write');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is AppPermissionsFollowers && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The level of permission to grant the access token to manage git SSH keys.
-final class AppPermissionsGitSshKeys {
-  final String value;
-
-  const AppPermissionsGitSshKeys._(this.value);
-
-  factory AppPermissionsGitSshKeys.fromJson(String value) =>
-      AppPermissionsGitSshKeys._(value);
-
-  static const read = AppPermissionsGitSshKeys._('read');
-  static const write = AppPermissionsGitSshKeys._('write');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is AppPermissionsGitSshKeys && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The level of permission to grant the access token to view and manage GPG keys belonging to a user.
-final class AppPermissionsGpgKeys {
-  final String value;
-
-  const AppPermissionsGpgKeys._(this.value);
-
-  factory AppPermissionsGpgKeys.fromJson(String value) =>
-      AppPermissionsGpgKeys._(value);
-
-  static const read = AppPermissionsGpgKeys._('read');
-  static const write = AppPermissionsGpgKeys._('write');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is AppPermissionsGpgKeys && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The level of permission to grant the access token to view and manage interaction limits on a repository.
-final class AppPermissionsInteractionLimits {
-  final String value;
-
-  const AppPermissionsInteractionLimits._(this.value);
-
-  factory AppPermissionsInteractionLimits.fromJson(String value) =>
-      AppPermissionsInteractionLimits._(value);
-
-  static const read = AppPermissionsInteractionLimits._('read');
-  static const write = AppPermissionsInteractionLimits._('write');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is AppPermissionsInteractionLimits && other.value == value;
 
   @override
   int get hashCode => value.hashCode;

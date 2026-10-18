@@ -4,434 +4,601 @@
 part of 'inline.dart';
 
 // Inline operation models (part 356)
-class ActionsListRepoVariablesResponse {
+class OrgsCreateArtifactDeploymentRecordRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<ActionsVariable> variables;
 
-  const ActionsListRepoVariablesResponse(
-      {required this.totalCount, required this.variables});
+  /// The name of the artifact.
+  final String name;
 
-  ActionsListRepoVariablesResponse Function(
-      {int totalCount,
-      List<ActionsVariable> variables}) get copyWith => _copyWith;
+  /// The hex encoded digest of the artifact.
+  final String digest;
 
-  ActionsListRepoVariablesResponse _copyWith(
-          {Object? totalCount = sdkOmittedValue,
-          Object? variables = sdkOmittedValue}) =>
-      ActionsListRepoVariablesResponse(
-        totalCount: identical(totalCount, sdkOmittedValue)
-            ? this.totalCount
-            : totalCount as int,
-        variables: identical(variables, sdkOmittedValue)
-            ? this.variables
-            : variables as List<ActionsVariable>,
+  /// The artifact version.
+  final SdkOptional<String> version;
+
+  /// The status of the artifact. Can be either deployed or decommissioned.
+  final OrgsCreateArtifactDeploymentRecordRequestBodyStatus status;
+
+  /// The stage of the deployment.
+  final String logicalEnvironment;
+
+  /// The physical region of the deployment.
+  final SdkOptional<String> physicalEnvironment;
+
+  /// The deployment cluster.
+  final SdkOptional<String> cluster;
+
+  /// The unique identifier for the deployment represented by the new record. To accommodate differing containers and namespaces within a cluster, the following format is recommended: {namespaceName}-{deploymentName}-{containerName}.
+  final String deploymentName;
+
+  /// The tags associated with the deployment.
+  final SdkOptional<Map<String, String>> tags;
+
+  /// A list of runtime risks associated with the deployment.
+  final SdkOptional<
+          List<OrgsCreateArtifactDeploymentRecordRequestBodyRuntimeRisksItem>>
+      runtimeRisks;
+
+  /// The name of the GitHub repository associated with the artifact. This should be used when there are no provenance attestations available for the artifact. The repository must belong to the organization specified in the path parameter. If a provenance attestation is available for the artifact, the API will use the repository information from the attestation instead of this parameter.
+  final SdkOptional<String> githubRepository;
+
+  /// If true, the endpoint will return the created or updated record in the response body.
+  final SdkOptional<bool> returnRecords;
+
+  const OrgsCreateArtifactDeploymentRecordRequestBody(
+      {required this.name,
+      required this.digest,
+      this.version = const SdkOmitted(),
+      required this.status,
+      required this.logicalEnvironment,
+      this.physicalEnvironment = const SdkOmitted(),
+      this.cluster = const SdkOmitted(),
+      required this.deploymentName,
+      this.tags = const SdkOmitted(),
+      this.runtimeRisks = const SdkOmitted(),
+      this.githubRepository = const SdkOmitted(),
+      this.returnRecords = const SdkOmitted()});
+
+  OrgsCreateArtifactDeploymentRecordRequestBody Function(
+      {String name,
+      String digest,
+      SdkOptional<String> version,
+      OrgsCreateArtifactDeploymentRecordRequestBodyStatus status,
+      String logicalEnvironment,
+      SdkOptional<String> physicalEnvironment,
+      SdkOptional<String> cluster,
+      String deploymentName,
+      SdkOptional<Map<String, String>> tags,
+      SdkOptional<
+              List<
+                  OrgsCreateArtifactDeploymentRecordRequestBodyRuntimeRisksItem>>
+          runtimeRisks,
+      SdkOptional<String> githubRepository,
+      SdkOptional<bool> returnRecords}) get copyWith => _copyWith;
+
+  OrgsCreateArtifactDeploymentRecordRequestBody _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? digest = sdkOmittedValue,
+          Object? version = sdkOmittedValue,
+          Object? status = sdkOmittedValue,
+          Object? logicalEnvironment = sdkOmittedValue,
+          Object? physicalEnvironment = sdkOmittedValue,
+          Object? cluster = sdkOmittedValue,
+          Object? deploymentName = sdkOmittedValue,
+          Object? tags = sdkOmittedValue,
+          Object? runtimeRisks = sdkOmittedValue,
+          Object? githubRepository = sdkOmittedValue,
+          Object? returnRecords = sdkOmittedValue}) =>
+      OrgsCreateArtifactDeploymentRecordRequestBody(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        digest:
+            identical(digest, sdkOmittedValue) ? this.digest : digest as String,
+        version: identical(version, sdkOmittedValue)
+            ? this.version
+            : version as SdkOptional<String>,
+        status: identical(status, sdkOmittedValue)
+            ? this.status
+            : status as OrgsCreateArtifactDeploymentRecordRequestBodyStatus,
+        logicalEnvironment: identical(logicalEnvironment, sdkOmittedValue)
+            ? this.logicalEnvironment
+            : logicalEnvironment as String,
+        physicalEnvironment: identical(physicalEnvironment, sdkOmittedValue)
+            ? this.physicalEnvironment
+            : physicalEnvironment as SdkOptional<String>,
+        cluster: identical(cluster, sdkOmittedValue)
+            ? this.cluster
+            : cluster as SdkOptional<String>,
+        deploymentName: identical(deploymentName, sdkOmittedValue)
+            ? this.deploymentName
+            : deploymentName as String,
+        tags: identical(tags, sdkOmittedValue)
+            ? this.tags
+            : tags as SdkOptional<Map<String, String>>,
+        runtimeRisks: identical(runtimeRisks, sdkOmittedValue)
+            ? this.runtimeRisks
+            : runtimeRisks as SdkOptional<
+                List<
+                    OrgsCreateArtifactDeploymentRecordRequestBodyRuntimeRisksItem>>,
+        githubRepository: identical(githubRepository, sdkOmittedValue)
+            ? this.githubRepository
+            : githubRepository as SdkOptional<String>,
+        returnRecords: identical(returnRecords, sdkOmittedValue)
+            ? this.returnRecords
+            : returnRecords as SdkOptional<bool>,
       );
 
-  factory ActionsListRepoVariablesResponse.fromJson(
+  factory OrgsCreateArtifactDeploymentRecordRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      ActionsListRepoVariablesResponse(
-        totalCount: ((json['total_count'] as num?)?.toInt())!,
-        variables: ((json['variables'] as List?)
-            ?.map((e) => ActionsVariable.fromJson(e as Map<String, dynamic>))
-            .toList())!,
+      OrgsCreateArtifactDeploymentRecordRequestBody(
+        name: (json['name'] as String?)!,
+        digest: (json['digest'] as String?)!,
+        version: json['version'] != null
+            ? SdkPresent((json['version'] as String?)!)
+            : const SdkOmitted(),
+        status: (json['status'] != null
+            ? OrgsCreateArtifactDeploymentRecordRequestBodyStatus.fromJson(
+                json['status'] as String)
+            : null)!,
+        logicalEnvironment: (json['logical_environment'] as String?)!,
+        physicalEnvironment: json['physical_environment'] != null
+            ? SdkPresent((json['physical_environment'] as String?)!)
+            : const SdkOmitted(),
+        cluster: json['cluster'] != null
+            ? SdkPresent((json['cluster'] as String?)!)
+            : const SdkOmitted(),
+        deploymentName: (json['deployment_name'] as String?)!,
+        tags: json['tags'] != null
+            ? SdkPresent((json['tags'] == null
+                ? null
+                : Map<String, dynamic>.from(json['tags'] as Map)
+                    .map((key, value) => MapEntry(key, value as String)))!)
+            : const SdkOmitted(),
+        runtimeRisks: json['runtime_risks'] != null
+            ? SdkPresent(((json['runtime_risks'] as List?)
+                ?.map((e) =>
+                    OrgsCreateArtifactDeploymentRecordRequestBodyRuntimeRisksItem
+                        .fromJson(e as String))
+                .toList())!)
+            : const SdkOmitted(),
+        githubRepository: json['github_repository'] != null
+            ? SdkPresent((json['github_repository'] as String?)!)
+            : const SdkOmitted(),
+        returnRecords: json['return_records'] != null
+            ? SdkPresent((json['return_records'] as bool?)!)
+            : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        'total_count': totalCount,
-        'variables': variables.map((item) => item.toJson()).toList(),
+        'name': name,
+        'digest': digest,
+        ...switch (version) {
+          SdkPresent<String>(value: final value) => {
+              'version': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'status': status.toJson(),
+        'logical_environment': logicalEnvironment,
+        ...switch (physicalEnvironment) {
+          SdkPresent<String>(value: final value) => {
+              'physical_environment': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (cluster) {
+          SdkPresent<String>(value: final value) => {
+              'cluster': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'deployment_name': deploymentName,
+        ...switch (tags) {
+          SdkPresent<Map<String, String>>(value: final value) => {
+              'tags': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (runtimeRisks) {
+          SdkPresent<
+                List<
+                    OrgsCreateArtifactDeploymentRecordRequestBodyRuntimeRisksItem>>(
+            value: final value
+          ) =>
+            {
+              'runtime_risks': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (githubRepository) {
+          SdkPresent<String>(value: final value) => {
+              'github_repository': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (returnRecords) {
+          SdkPresent<bool>(value: final value) => {
+              'return_records': value,
+            },
+          _ => const <String, dynamic>{},
+        },
       };
 }
 
-class ActionsCreateRepoVariableRequestBody {
+class OrgsCreateArtifactDeploymentRecordResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// The name of the variable.
-  final String name;
+  /// The number of deployment records created
+  final int totalCount;
+  final SdkOptional<List<ArtifactDeploymentRecord>> deploymentRecords;
 
-  /// The value of the variable.
-  final String value;
+  const OrgsCreateArtifactDeploymentRecordResponse(
+      {required this.totalCount, this.deploymentRecords = const SdkOmitted()});
 
-  const ActionsCreateRepoVariableRequestBody(
-      {required this.name, required this.value});
-
-  ActionsCreateRepoVariableRequestBody Function({String name, String value})
+  OrgsCreateArtifactDeploymentRecordResponse Function(
+          {int totalCount,
+          SdkOptional<List<ArtifactDeploymentRecord>> deploymentRecords})
       get copyWith => _copyWith;
 
-  ActionsCreateRepoVariableRequestBody _copyWith(
-          {Object? name = sdkOmittedValue, Object? value = sdkOmittedValue}) =>
-      ActionsCreateRepoVariableRequestBody(
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        value: identical(value, sdkOmittedValue) ? this.value : value as String,
+  OrgsCreateArtifactDeploymentRecordResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? deploymentRecords = sdkOmittedValue}) =>
+      OrgsCreateArtifactDeploymentRecordResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        deploymentRecords: identical(deploymentRecords, sdkOmittedValue)
+            ? this.deploymentRecords
+            : deploymentRecords as SdkOptional<List<ArtifactDeploymentRecord>>,
       );
 
-  factory ActionsCreateRepoVariableRequestBody.fromJson(
+  factory OrgsCreateArtifactDeploymentRecordResponse.fromJson(
           Map<String, dynamic> json) =>
-      ActionsCreateRepoVariableRequestBody(
-        name: (json['name'] as String?)!,
-        value: (json['value'] as String?)!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'name': name,
-        'value': value,
-      };
-}
-
-class ActionsUpdateRepoVariableRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The name of the variable.
-  final SdkOptional<String> name;
-
-  /// The value of the variable.
-  final SdkOptional<String> value;
-
-  const ActionsUpdateRepoVariableRequestBody(
-      {this.name = const SdkOmitted(), this.value = const SdkOmitted()});
-
-  ActionsUpdateRepoVariableRequestBody Function(
-      {SdkOptional<String> name,
-      SdkOptional<String> value}) get copyWith => _copyWith;
-
-  ActionsUpdateRepoVariableRequestBody _copyWith(
-          {Object? name = sdkOmittedValue, Object? value = sdkOmittedValue}) =>
-      ActionsUpdateRepoVariableRequestBody(
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String>,
-        value: identical(value, sdkOmittedValue)
-            ? this.value
-            : value as SdkOptional<String>,
-      );
-
-  factory ActionsUpdateRepoVariableRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsUpdateRepoVariableRequestBody(
-        name: json['name'] != null
-            ? SdkPresent((json['name'] as String?)!)
-            : const SdkOmitted(),
-        value: json['value'] != null
-            ? SdkPresent((json['value'] as String?)!)
+      OrgsCreateArtifactDeploymentRecordResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        deploymentRecords: json['deployment_records'] != null
+            ? SdkPresent(((json['deployment_records'] as List?)
+                ?.map((e) => ArtifactDeploymentRecord.fromJson(
+                    e as Map<String, dynamic>))
+                .toList())!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (name) {
-          SdkPresent<String>(value: final value) => {
-              'name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (value) {
-          SdkPresent<String>(value: final value) => {
-              'value': value,
+        'total_count': totalCount,
+        ...switch (deploymentRecords) {
+          SdkPresent<List<ArtifactDeploymentRecord>>(value: final value) => {
+              'deployment_records': value.map((item) => item.toJson()).toList(),
             },
           _ => const <String, dynamic>{},
         },
       };
 }
 
-class ActionsListRepoWorkflowsResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<Workflow> workflows;
-
-  const ActionsListRepoWorkflowsResponse(
-      {required this.totalCount, required this.workflows});
-
-  ActionsListRepoWorkflowsResponse Function(
-      {int totalCount, List<Workflow> workflows}) get copyWith => _copyWith;
-
-  ActionsListRepoWorkflowsResponse _copyWith(
-          {Object? totalCount = sdkOmittedValue,
-          Object? workflows = sdkOmittedValue}) =>
-      ActionsListRepoWorkflowsResponse(
-        totalCount: identical(totalCount, sdkOmittedValue)
-            ? this.totalCount
-            : totalCount as int,
-        workflows: identical(workflows, sdkOmittedValue)
-            ? this.workflows
-            : workflows as List<Workflow>,
-      );
-
-  factory ActionsListRepoWorkflowsResponse.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsListRepoWorkflowsResponse(
-        totalCount: ((json['total_count'] as num?)?.toInt())!,
-        workflows: ((json['workflows'] as List?)
-            ?.map((e) => Workflow.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'total_count': totalCount,
-        'workflows': workflows.map((item) => item.toJson()).toList(),
-      };
-}
-
-class ActionsCreateWorkflowDispatchRequestBody {
+class OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// The git reference for the workflow. The reference can be a branch or tag name.
-  final String ref;
-
-  /// Input keys and values configured in the workflow file. The maximum number of properties is 25. Any default properties configured in the workflow file will be used when `inputs` are omitted.
-  final SdkOptional<Map<String, Object?>> inputs;
-
-  /// Whether the response should include the workflow run ID and URLs.
-  final SdkOptional<bool> returnRunDetails;
-
-  const ActionsCreateWorkflowDispatchRequestBody(
-      {required this.ref,
-      this.inputs = const SdkOmitted(),
-      this.returnRunDetails = const SdkOmitted()});
-
-  ActionsCreateWorkflowDispatchRequestBody Function(
-      {String ref,
-      SdkOptional<Map<String, Object?>> inputs,
-      SdkOptional<bool> returnRunDetails}) get copyWith => _copyWith;
-
-  ActionsCreateWorkflowDispatchRequestBody _copyWith(
-          {Object? ref = sdkOmittedValue,
-          Object? inputs = sdkOmittedValue,
-          Object? returnRunDetails = sdkOmittedValue}) =>
-      ActionsCreateWorkflowDispatchRequestBody(
-        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-        inputs: identical(inputs, sdkOmittedValue)
-            ? this.inputs
-            : inputs as SdkOptional<Map<String, Object?>>,
-        returnRunDetails: identical(returnRunDetails, sdkOmittedValue)
-            ? this.returnRunDetails
-            : returnRunDetails as SdkOptional<bool>,
-      );
-
-  factory ActionsCreateWorkflowDispatchRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsCreateWorkflowDispatchRequestBody(
-        ref: (json['ref'] as String?)!,
-        inputs: json['inputs'] != null
-            ? SdkPresent((json['inputs'] == null
-                ? null
-                : Map<String, dynamic>.from(json['inputs'] as Map)
-                    .map((key, value) => MapEntry(key, value)))!)
-            : const SdkOmitted(),
-        returnRunDetails: json['return_run_details'] != null
-            ? SdkPresent((json['return_run_details'] as bool?)!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        'ref': ref,
-        ...switch (inputs) {
-          SdkPresent<Map<String, Object?>>(value: final value) => {
-              'inputs': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (returnRunDetails) {
-          SdkPresent<bool>(value: final value) => {
-              'return_run_details': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-class ActionsListWorkflowRunsResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<WorkflowRun> workflowRuns;
-
-  const ActionsListWorkflowRunsResponse(
-      {required this.totalCount, required this.workflowRuns});
-
-  ActionsListWorkflowRunsResponse Function(
-      {int totalCount,
-      List<WorkflowRun> workflowRuns}) get copyWith => _copyWith;
-
-  ActionsListWorkflowRunsResponse _copyWith(
-          {Object? totalCount = sdkOmittedValue,
-          Object? workflowRuns = sdkOmittedValue}) =>
-      ActionsListWorkflowRunsResponse(
-        totalCount: identical(totalCount, sdkOmittedValue)
-            ? this.totalCount
-            : totalCount as int,
-        workflowRuns: identical(workflowRuns, sdkOmittedValue)
-            ? this.workflowRuns
-            : workflowRuns as List<WorkflowRun>,
-      );
-
-  factory ActionsListWorkflowRunsResponse.fromJson(Map<String, dynamic> json) =>
-      ActionsListWorkflowRunsResponse(
-        totalCount: ((json['total_count'] as num?)?.toInt())!,
-        workflowRuns: ((json['workflow_runs'] as List?)
-            ?.map((e) => WorkflowRun.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'total_count': totalCount,
-        'workflow_runs': workflowRuns.map((item) => item.toJson()).toList(),
-      };
-}
-
-class ActionsListEnvironmentSecretsResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<ActionsSecret> secrets;
-
-  const ActionsListEnvironmentSecretsResponse(
-      {required this.totalCount, required this.secrets});
-
-  ActionsListEnvironmentSecretsResponse Function(
-      {int totalCount, List<ActionsSecret> secrets}) get copyWith => _copyWith;
-
-  ActionsListEnvironmentSecretsResponse _copyWith(
-          {Object? totalCount = sdkOmittedValue,
-          Object? secrets = sdkOmittedValue}) =>
-      ActionsListEnvironmentSecretsResponse(
-        totalCount: identical(totalCount, sdkOmittedValue)
-            ? this.totalCount
-            : totalCount as int,
-        secrets: identical(secrets, sdkOmittedValue)
-            ? this.secrets
-            : secrets as List<ActionsSecret>,
-      );
-
-  factory ActionsListEnvironmentSecretsResponse.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsListEnvironmentSecretsResponse(
-        totalCount: ((json['total_count'] as num?)?.toInt())!,
-        secrets: ((json['secrets'] as List?)
-            ?.map((e) => ActionsSecret.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'total_count': totalCount,
-        'secrets': secrets.map((item) => item.toJson()).toList(),
-      };
-}
-
-class ActionsCreateOrUpdateEnvironmentSecretRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get an environment public key](https://docs.github.com/rest/actions/secrets#get-an-environment-public-key) endpoint.
-  final String encryptedValue;
-
-  /// ID of the key you used to encrypt the secret.
-  final String keyId;
-
-  const ActionsCreateOrUpdateEnvironmentSecretRequestBody(
-      {required this.encryptedValue, required this.keyId});
-
-  ActionsCreateOrUpdateEnvironmentSecretRequestBody Function(
-      {String encryptedValue, String keyId}) get copyWith => _copyWith;
-
-  ActionsCreateOrUpdateEnvironmentSecretRequestBody _copyWith(
-          {Object? encryptedValue = sdkOmittedValue,
-          Object? keyId = sdkOmittedValue}) =>
-      ActionsCreateOrUpdateEnvironmentSecretRequestBody(
-        encryptedValue: identical(encryptedValue, sdkOmittedValue)
-            ? this.encryptedValue
-            : encryptedValue as String,
-        keyId: identical(keyId, sdkOmittedValue) ? this.keyId : keyId as String,
-      );
-
-  factory ActionsCreateOrUpdateEnvironmentSecretRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsCreateOrUpdateEnvironmentSecretRequestBody(
-        encryptedValue: (json['encrypted_value'] as String?)!,
-        keyId: (json['key_id'] as String?)!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'encrypted_value': encryptedValue,
-        'key_id': keyId,
-      };
-}
-
-class ActionsListEnvironmentVariablesResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<ActionsVariable> variables;
-
-  const ActionsListEnvironmentVariablesResponse(
-      {required this.totalCount, required this.variables});
-
-  ActionsListEnvironmentVariablesResponse Function(
-      {int totalCount,
-      List<ActionsVariable> variables}) get copyWith => _copyWith;
-
-  ActionsListEnvironmentVariablesResponse _copyWith(
-          {Object? totalCount = sdkOmittedValue,
-          Object? variables = sdkOmittedValue}) =>
-      ActionsListEnvironmentVariablesResponse(
-        totalCount: identical(totalCount, sdkOmittedValue)
-            ? this.totalCount
-            : totalCount as int,
-        variables: identical(variables, sdkOmittedValue)
-            ? this.variables
-            : variables as List<ActionsVariable>,
-      );
-
-  factory ActionsListEnvironmentVariablesResponse.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsListEnvironmentVariablesResponse(
-        totalCount: ((json['total_count'] as num?)?.toInt())!,
-        variables: ((json['variables'] as List?)
-            ?.map((e) => ActionsVariable.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'total_count': totalCount,
-        'variables': variables.map((item) => item.toJson()).toList(),
-      };
-}
-
-class ActionsCreateEnvironmentVariableRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The name of the variable.
+  /// The name of the artifact.
   final String name;
 
-  /// The value of the variable.
-  final String value;
+  /// The hex encoded digest of the artifact.
+  final String digest;
 
-  const ActionsCreateEnvironmentVariableRequestBody(
-      {required this.name, required this.value});
+  /// The artifact version.
+  final SdkOptional<String> version;
 
-  ActionsCreateEnvironmentVariableRequestBody Function(
-      {String name, String value}) get copyWith => _copyWith;
+  /// The deployment status of the artifact.
+  final SdkOptional<
+      OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemStatus> status;
 
-  ActionsCreateEnvironmentVariableRequestBody _copyWith(
-          {Object? name = sdkOmittedValue, Object? value = sdkOmittedValue}) =>
-      ActionsCreateEnvironmentVariableRequestBody(
+  /// The unique identifier for the deployment represented by the new record. To accommodate differing containers and namespaces within a record set, the following format is recommended: {namespaceName}-{deploymentName}-{containerName}. The deployment_name must be unique across all entries in the deployments array.
+  final String deploymentName;
+
+  /// The name of the GitHub repository associated with the artifact. This should be used when there are no provenance attestations available for the artifact. The repository must belong to the organization specified in the path parameter. If a provenance attestation is available for the artifact, the API will use the repository information from the attestation instead of this parameter.
+  final SdkOptional<String> githubRepository;
+
+  /// Key-value pairs to tag the deployment record.
+  final SdkOptional<Map<String, String>> tags;
+
+  /// A list of runtime risks associated with the deployment.
+  final SdkOptional<
+          List<
+              OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemRuntimeRisksItem>>
+      runtimeRisks;
+
+  const OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItem(
+      {required this.name,
+      required this.digest,
+      this.version = const SdkOmitted(),
+      this.status = const SdkOmitted(),
+      required this.deploymentName,
+      this.githubRepository = const SdkOmitted(),
+      this.tags = const SdkOmitted(),
+      this.runtimeRisks = const SdkOmitted()});
+
+  OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItem Function(
+      {String name,
+      String digest,
+      SdkOptional<String> version,
+      SdkOptional<
+              OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemStatus>
+          status,
+      String deploymentName,
+      SdkOptional<String> githubRepository,
+      SdkOptional<Map<String, String>> tags,
+      SdkOptional<
+              List<
+                  OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemRuntimeRisksItem>>
+          runtimeRisks}) get copyWith => _copyWith;
+
+  OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItem _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? digest = sdkOmittedValue,
+          Object? version = sdkOmittedValue,
+          Object? status = sdkOmittedValue,
+          Object? deploymentName = sdkOmittedValue,
+          Object? githubRepository = sdkOmittedValue,
+          Object? tags = sdkOmittedValue,
+          Object? runtimeRisks = sdkOmittedValue}) =>
+      OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItem(
         name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        value: identical(value, sdkOmittedValue) ? this.value : value as String,
+        digest:
+            identical(digest, sdkOmittedValue) ? this.digest : digest as String,
+        version: identical(version, sdkOmittedValue)
+            ? this.version
+            : version as SdkOptional<String>,
+        status: identical(status, sdkOmittedValue)
+            ? this.status
+            : status as SdkOptional<
+                OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemStatus>,
+        deploymentName: identical(deploymentName, sdkOmittedValue)
+            ? this.deploymentName
+            : deploymentName as String,
+        githubRepository: identical(githubRepository, sdkOmittedValue)
+            ? this.githubRepository
+            : githubRepository as SdkOptional<String>,
+        tags: identical(tags, sdkOmittedValue)
+            ? this.tags
+            : tags as SdkOptional<Map<String, String>>,
+        runtimeRisks: identical(runtimeRisks, sdkOmittedValue)
+            ? this.runtimeRisks
+            : runtimeRisks as SdkOptional<
+                List<
+                    OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemRuntimeRisksItem>>,
       );
 
-  factory ActionsCreateEnvironmentVariableRequestBody.fromJson(
+  factory OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItem.fromJson(
           Map<String, dynamic> json) =>
-      ActionsCreateEnvironmentVariableRequestBody(
+      OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItem(
         name: (json['name'] as String?)!,
-        value: (json['value'] as String?)!,
+        digest: (json['digest'] as String?)!,
+        version: json['version'] != null
+            ? SdkPresent((json['version'] as String?)!)
+            : const SdkOmitted(),
+        status: json['status'] != null
+            ? SdkPresent((json['status'] != null
+                ? OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemStatus
+                    .fromJson(json['status'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        deploymentName: (json['deployment_name'] as String?)!,
+        githubRepository: json['github_repository'] != null
+            ? SdkPresent((json['github_repository'] as String?)!)
+            : const SdkOmitted(),
+        tags: json['tags'] != null
+            ? SdkPresent((json['tags'] == null
+                ? null
+                : Map<String, dynamic>.from(json['tags'] as Map)
+                    .map((key, value) => MapEntry(key, value as String)))!)
+            : const SdkOmitted(),
+        runtimeRisks: json['runtime_risks'] != null
+            ? SdkPresent(((json['runtime_risks'] as List?)
+                ?.map((e) =>
+                    OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemRuntimeRisksItem
+                        .fromJson(e as String))
+                .toList())!)
+            : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
         'name': name,
-        'value': value,
+        'digest': digest,
+        ...switch (version) {
+          SdkPresent<String>(value: final value) => {
+              'version': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (status) {
+          SdkPresent<
+                OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemStatus>(
+            value: final value
+          ) =>
+            {
+              'status': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'deployment_name': deploymentName,
+        ...switch (githubRepository) {
+          SdkPresent<String>(value: final value) => {
+              'github_repository': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (tags) {
+          SdkPresent<Map<String, String>>(value: final value) => {
+              'tags': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (runtimeRisks) {
+          SdkPresent<
+                List<
+                    OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItemRuntimeRisksItem>>(
+            value: final value
+          ) =>
+            {
+              'runtime_risks': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class OrgsSetClusterDeploymentRecordsRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The stage of the deployment.
+  final String logicalEnvironment;
+
+  /// The physical region of the deployment.
+  final SdkOptional<String> physicalEnvironment;
+
+  /// The list of deployments to record.
+  final List<OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItem>
+      deployments;
+
+  /// When enabled, deployments associated with repositories the actor can write to are processed while deployments associated with repositories that cannot be resolved or written to by the actor are skipped and reported in the `errors` array. When false (the default), the endpoint returns an error if any targeted repository cannot be resolved, the actor lacks write access, or no matching attestation can be found.
+  final SdkOptional<bool> partialSuccess;
+
+  /// If true, the endpoint will return the set records in the response body
+  final SdkOptional<bool> returnRecords;
+
+  const OrgsSetClusterDeploymentRecordsRequestBody(
+      {required this.logicalEnvironment,
+      this.physicalEnvironment = const SdkOmitted(),
+      required this.deployments,
+      this.partialSuccess = const SdkOmitted(),
+      this.returnRecords = const SdkOmitted()});
+
+  OrgsSetClusterDeploymentRecordsRequestBody Function(
+      {String logicalEnvironment,
+      SdkOptional<String> physicalEnvironment,
+      List<OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItem>
+          deployments,
+      SdkOptional<bool> partialSuccess,
+      SdkOptional<bool> returnRecords}) get copyWith => _copyWith;
+
+  OrgsSetClusterDeploymentRecordsRequestBody _copyWith(
+          {Object? logicalEnvironment = sdkOmittedValue,
+          Object? physicalEnvironment = sdkOmittedValue,
+          Object? deployments = sdkOmittedValue,
+          Object? partialSuccess = sdkOmittedValue,
+          Object? returnRecords = sdkOmittedValue}) =>
+      OrgsSetClusterDeploymentRecordsRequestBody(
+        logicalEnvironment: identical(logicalEnvironment, sdkOmittedValue)
+            ? this.logicalEnvironment
+            : logicalEnvironment as String,
+        physicalEnvironment: identical(physicalEnvironment, sdkOmittedValue)
+            ? this.physicalEnvironment
+            : physicalEnvironment as SdkOptional<String>,
+        deployments: identical(deployments, sdkOmittedValue)
+            ? this.deployments
+            : deployments as List<
+                OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItem>,
+        partialSuccess: identical(partialSuccess, sdkOmittedValue)
+            ? this.partialSuccess
+            : partialSuccess as SdkOptional<bool>,
+        returnRecords: identical(returnRecords, sdkOmittedValue)
+            ? this.returnRecords
+            : returnRecords as SdkOptional<bool>,
+      );
+
+  factory OrgsSetClusterDeploymentRecordsRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      OrgsSetClusterDeploymentRecordsRequestBody(
+        logicalEnvironment: (json['logical_environment'] as String?)!,
+        physicalEnvironment: json['physical_environment'] != null
+            ? SdkPresent((json['physical_environment'] as String?)!)
+            : const SdkOmitted(),
+        deployments: ((json['deployments'] as List?)
+            ?.map((e) =>
+                OrgsSetClusterDeploymentRecordsRequestBodyDeploymentsItem
+                    .fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        partialSuccess: json['partial_success'] != null
+            ? SdkPresent((json['partial_success'] as bool?)!)
+            : const SdkOmitted(),
+        returnRecords: json['return_records'] != null
+            ? SdkPresent((json['return_records'] as bool?)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        'logical_environment': logicalEnvironment,
+        ...switch (physicalEnvironment) {
+          SdkPresent<String>(value: final value) => {
+              'physical_environment': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'deployments': deployments.map((item) => item.toJson()).toList(),
+        ...switch (partialSuccess) {
+          SdkPresent<bool>(value: final value) => {
+              'partial_success': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (returnRecords) {
+          SdkPresent<bool>(value: final value) => {
+              'return_records': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class OrgsSetClusterDeploymentRecordsResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The number of deployment records created
+  final int totalCount;
+  final SdkOptional<List<ArtifactDeploymentRecord>> deploymentRecords;
+
+  const OrgsSetClusterDeploymentRecordsResponse(
+      {required this.totalCount, this.deploymentRecords = const SdkOmitted()});
+
+  OrgsSetClusterDeploymentRecordsResponse Function(
+          {int totalCount,
+          SdkOptional<List<ArtifactDeploymentRecord>> deploymentRecords})
+      get copyWith => _copyWith;
+
+  OrgsSetClusterDeploymentRecordsResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? deploymentRecords = sdkOmittedValue}) =>
+      OrgsSetClusterDeploymentRecordsResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        deploymentRecords: identical(deploymentRecords, sdkOmittedValue)
+            ? this.deploymentRecords
+            : deploymentRecords as SdkOptional<List<ArtifactDeploymentRecord>>,
+      );
+
+  factory OrgsSetClusterDeploymentRecordsResponse.fromJson(
+          Map<String, dynamic> json) =>
+      OrgsSetClusterDeploymentRecordsResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        deploymentRecords: json['deployment_records'] != null
+            ? SdkPresent(((json['deployment_records'] as List?)
+                ?.map((e) => ArtifactDeploymentRecord.fromJson(
+                    e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        'total_count': totalCount,
+        ...switch (deploymentRecords) {
+          SdkPresent<List<ArtifactDeploymentRecord>>(value: final value) => {
+              'deployment_records': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
       };
 }

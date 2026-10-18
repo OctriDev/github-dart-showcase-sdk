@@ -4,37 +4,197 @@
 part of 'agent_automations.dart';
 
 // agent_automations domain models
-class FieldsItemSchemaVariant0 {
+/// A GitHub resource (pull request, issue, etc.)
+class AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemDataVariant0 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final FieldsItemSchemaVariant0Type type_;
+
+  /// GitHub resource ID
+  final int id;
+
+  /// GraphQL global ID
+  final SdkOptional<String> globalId;
+
+  const AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemDataVariant0(
+      {required this.id, this.globalId = const SdkOmitted()});
+
+  AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemDataVariant0
+          Function({int id, SdkOptional<String> globalId})
+      get copyWith => _copyWith;
+
+  AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemDataVariant0
+      _copyWith(
+              {Object? id = sdkOmittedValue,
+              Object? globalId = sdkOmittedValue}) =>
+          AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemDataVariant0(
+            id: identical(id, sdkOmittedValue) ? this.id : id as int,
+            globalId: identical(globalId, sdkOmittedValue)
+                ? this.globalId
+                : globalId as SdkOptional<String>,
+          );
+
+  factory AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemDataVariant0.fromJson(
+          Map<String, dynamic> json) =>
+      AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemDataVariant0(
+        id: ((json['id'] as num?)?.toInt())!,
+        globalId: json['global_id'] != null
+            ? SdkPresent((json['global_id'] as String?)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        ...switch (globalId) {
+          SdkPresent<String>(value: final value) => {
+              'global_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+/// A Git branch reference
+class AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemDataVariant1 {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// Head branch name
+  final String headRef;
+
+  /// Base branch name
+  final String baseRef;
+
+  const AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemDataVariant1(
+      {required this.headRef, required this.baseRef});
+
+  AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemDataVariant1
+      Function({String headRef, String baseRef}) get copyWith => _copyWith;
+
+  AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemDataVariant1
+      _copyWith(
+              {Object? headRef = sdkOmittedValue,
+              Object? baseRef = sdkOmittedValue}) =>
+          AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemDataVariant1(
+            headRef: identical(headRef, sdkOmittedValue)
+                ? this.headRef
+                : headRef as String,
+            baseRef: identical(baseRef, sdkOmittedValue)
+                ? this.baseRef
+                : baseRef as String,
+          );
+
+  factory AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemDataVariant1.fromJson(
+          Map<String, dynamic> json) =>
+      AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemDataVariant1(
+        headRef: (json['head_ref'] as String?)!,
+        baseRef: (json['base_ref'] as String?)!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'head_ref': headRef,
+        'base_ref': baseRef,
+      };
+}
+
+sealed class AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemData {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  const AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemData();
+  factory AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemData.fromJson(
+      Object? json) {
+    if (json is Map<String, dynamic>) {
+      try {
+        final value =
+            AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemDataVariant0
+                .fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemDataAgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemDataVariant0(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemDataVariant1
+                .fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemDataAgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemDataVariant1(
+              value);
+        }
+      } catch (_) {}
+    }
+    try {
+      return AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemDataAgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemDataVariant0(
+          AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemDataVariant0
+              .fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemDataAgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemDataVariant1(
+          AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemDataVariant1
+              .fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    throw FormatException(
+        "No variant matched for AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemData");
+  }
+  Object? toJson();
+}
+
+final class AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemDataAgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemDataVariant0
+    extends AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemData {
+  final AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemDataVariant0
+      value;
+  const AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemDataAgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemDataVariant0(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
+}
+
+final class AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemDataAgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemDataVariant1
+    extends AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemData {
+  final AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemDataVariant1
+      value;
+  const AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemDataAgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemDataVariant1(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
+}
+
+class AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant0 {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  final AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant0Type
+      type_;
 
   /// The minimum accepted string length.
   final SdkOptional<int> minLength;
 
-  const FieldsItemSchemaVariant0(
+  const AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant0(
       {required this.type_, this.minLength = const SdkOmitted()});
 
-  FieldsItemSchemaVariant0 Function(
-      {FieldsItemSchemaVariant0Type type_,
+  AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant0 Function(
+      {AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant0Type
+          type_,
       SdkOptional<int> minLength}) get copyWith => _copyWith;
 
-  FieldsItemSchemaVariant0 _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? minLength = sdkOmittedValue}) =>
-      FieldsItemSchemaVariant0(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as FieldsItemSchemaVariant0Type,
-        minLength: identical(minLength, sdkOmittedValue)
-            ? this.minLength
-            : minLength as SdkOptional<int>,
-      );
+  AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant0
+      _copyWith(
+              {Object? type_ = sdkOmittedValue,
+              Object? minLength = sdkOmittedValue}) =>
+          AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant0(
+            type_: identical(type_, sdkOmittedValue)
+                ? this.type_
+                : type_
+                    as AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant0Type,
+            minLength: identical(minLength, sdkOmittedValue)
+                ? this.minLength
+                : minLength as SdkOptional<int>,
+          );
 
-  factory FieldsItemSchemaVariant0.fromJson(Map<String, dynamic> json) =>
-      FieldsItemSchemaVariant0(
+  factory AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant0.fromJson(
+          Map<String, dynamic> json) =>
+      AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant0(
         type_: (json['type'] != null
-            ? FieldsItemSchemaVariant0Type.fromJson(json['type'] as String)
+            ? AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant0Type
+                .fromJson(json['type'] as String)
             : null)!,
         minLength: json['minLength'] != null
             ? SdkPresent(((json['minLength'] as num?)?.toInt())!)
@@ -52,37 +212,43 @@ class FieldsItemSchemaVariant0 {
       };
 }
 
-class FieldsItemSchemaVariant1Items {
+class AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1Items {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final FieldsItemSchemaVariant1ItemsType type_;
+  final AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1ItemsType
+      type_;
 
   /// The minimum accepted string item length.
   final SdkOptional<int> minLength;
 
-  const FieldsItemSchemaVariant1Items(
+  const AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1Items(
       {required this.type_, this.minLength = const SdkOmitted()});
 
-  FieldsItemSchemaVariant1Items Function(
-      {FieldsItemSchemaVariant1ItemsType type_,
+  AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1Items Function(
+      {AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1ItemsType
+          type_,
       SdkOptional<int> minLength}) get copyWith => _copyWith;
 
-  FieldsItemSchemaVariant1Items _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? minLength = sdkOmittedValue}) =>
-      FieldsItemSchemaVariant1Items(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as FieldsItemSchemaVariant1ItemsType,
-        minLength: identical(minLength, sdkOmittedValue)
-            ? this.minLength
-            : minLength as SdkOptional<int>,
-      );
+  AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1Items
+      _copyWith(
+              {Object? type_ = sdkOmittedValue,
+              Object? minLength = sdkOmittedValue}) =>
+          AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1Items(
+            type_: identical(type_, sdkOmittedValue)
+                ? this.type_
+                : type_
+                    as AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1ItemsType,
+            minLength: identical(minLength, sdkOmittedValue)
+                ? this.minLength
+                : minLength as SdkOptional<int>,
+          );
 
-  factory FieldsItemSchemaVariant1Items.fromJson(Map<String, dynamic> json) =>
-      FieldsItemSchemaVariant1Items(
+  factory AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1Items.fromJson(
+          Map<String, dynamic> json) =>
+      AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1Items(
         type_: (json['type'] != null
-            ? FieldsItemSchemaVariant1ItemsType.fromJson(json['type'] as String)
+            ? AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1ItemsType
+                .fromJson(json['type'] as String)
             : null)!,
         minLength: json['minLength'] != null
             ? SdkPresent(((json['minLength'] as num?)?.toInt())!)
@@ -100,11 +266,13 @@ class FieldsItemSchemaVariant1Items {
       };
 }
 
-class FieldsItemSchemaVariant1 {
+class AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final FieldsItemSchemaVariant1Type type_;
-  final FieldsItemSchemaVariant1Items items;
+  final AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1Type
+      type_;
+  final AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1Items
+      items;
 
   /// The minimum accepted number of array items.
   final SdkOptional<int> minItems;
@@ -115,52 +283,59 @@ class FieldsItemSchemaVariant1 {
   /// Whether duplicate array items are rejected.
   final SdkOptional<bool> uniqueItems;
 
-  const FieldsItemSchemaVariant1(
+  const AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1(
       {required this.type_,
       required this.items,
       this.minItems = const SdkOmitted(),
       this.maxItems = const SdkOmitted(),
       this.uniqueItems = const SdkOmitted()});
 
-  FieldsItemSchemaVariant1 Function(
-      {FieldsItemSchemaVariant1Type type_,
-      FieldsItemSchemaVariant1Items items,
+  AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1 Function(
+      {AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1Type
+          type_,
+      AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1Items
+          items,
       SdkOptional<int> minItems,
       SdkOptional<int> maxItems,
       SdkOptional<bool> uniqueItems}) get copyWith => _copyWith;
 
-  FieldsItemSchemaVariant1 _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? items = sdkOmittedValue,
-          Object? minItems = sdkOmittedValue,
-          Object? maxItems = sdkOmittedValue,
-          Object? uniqueItems = sdkOmittedValue}) =>
-      FieldsItemSchemaVariant1(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as FieldsItemSchemaVariant1Type,
-        items: identical(items, sdkOmittedValue)
-            ? this.items
-            : items as FieldsItemSchemaVariant1Items,
-        minItems: identical(minItems, sdkOmittedValue)
-            ? this.minItems
-            : minItems as SdkOptional<int>,
-        maxItems: identical(maxItems, sdkOmittedValue)
-            ? this.maxItems
-            : maxItems as SdkOptional<int>,
-        uniqueItems: identical(uniqueItems, sdkOmittedValue)
-            ? this.uniqueItems
-            : uniqueItems as SdkOptional<bool>,
-      );
+  AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1
+      _copyWith(
+              {Object? type_ = sdkOmittedValue,
+              Object? items = sdkOmittedValue,
+              Object? minItems = sdkOmittedValue,
+              Object? maxItems = sdkOmittedValue,
+              Object? uniqueItems = sdkOmittedValue}) =>
+          AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1(
+            type_: identical(type_, sdkOmittedValue)
+                ? this.type_
+                : type_
+                    as AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1Type,
+            items: identical(items, sdkOmittedValue)
+                ? this.items
+                : items
+                    as AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1Items,
+            minItems: identical(minItems, sdkOmittedValue)
+                ? this.minItems
+                : minItems as SdkOptional<int>,
+            maxItems: identical(maxItems, sdkOmittedValue)
+                ? this.maxItems
+                : maxItems as SdkOptional<int>,
+            uniqueItems: identical(uniqueItems, sdkOmittedValue)
+                ? this.uniqueItems
+                : uniqueItems as SdkOptional<bool>,
+          );
 
-  factory FieldsItemSchemaVariant1.fromJson(Map<String, dynamic> json) =>
-      FieldsItemSchemaVariant1(
+  factory AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1.fromJson(
+          Map<String, dynamic> json) =>
+      AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1(
         type_: (json['type'] != null
-            ? FieldsItemSchemaVariant1Type.fromJson(json['type'] as String)
+            ? AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1Type
+                .fromJson(json['type'] as String)
             : null)!,
         items: (json['items'] != null
-            ? FieldsItemSchemaVariant1Items.fromJson(
-                json['items'] as Map<String, dynamic>)
+            ? AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1Items
+                .fromJson(json['items'] as Map<String, dynamic>)
             : null)!,
         minItems: json['minItems'] != null
             ? SdkPresent(((json['minItems'] as num?)?.toInt())!)
@@ -197,27 +372,34 @@ class FieldsItemSchemaVariant1 {
       };
 }
 
-class FieldsItemSchemaVariant2 {
+class AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant2 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final FieldsItemSchemaVariant2Type type_;
+  final AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant2Type
+      type_;
 
-  const FieldsItemSchemaVariant2({required this.type_});
+  const AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant2(
+      {required this.type_});
 
-  FieldsItemSchemaVariant2 Function({FieldsItemSchemaVariant2Type type_})
-      get copyWith => _copyWith;
+  AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant2 Function(
+      {AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant2Type
+          type_}) get copyWith => _copyWith;
 
-  FieldsItemSchemaVariant2 _copyWith({Object? type_ = sdkOmittedValue}) =>
-      FieldsItemSchemaVariant2(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as FieldsItemSchemaVariant2Type,
-      );
+  AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant2
+      _copyWith({Object? type_ = sdkOmittedValue}) =>
+          AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant2(
+            type_: identical(type_, sdkOmittedValue)
+                ? this.type_
+                : type_
+                    as AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant2Type,
+          );
 
-  factory FieldsItemSchemaVariant2.fromJson(Map<String, dynamic> json) =>
-      FieldsItemSchemaVariant2(
+  factory AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant2.fromJson(
+          Map<String, dynamic> json) =>
+      AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant2(
         type_: (json['type'] != null
-            ? FieldsItemSchemaVariant2Type.fromJson(json['type'] as String)
+            ? AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant2Type
+                .fromJson(json['type'] as String)
             : null)!,
       );
 
@@ -226,170 +408,87 @@ class FieldsItemSchemaVariant2 {
       };
 }
 
-sealed class FieldsItemSchema {
+sealed class AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchema {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  const FieldsItemSchema();
-  factory FieldsItemSchema.fromJson(Object? json) {
+  const AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchema();
+  factory AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchema.fromJson(
+      Object? json) {
+    if (json is Map<String, dynamic>) {
+      try {
+        final value =
+            AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant0
+                .fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaAgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant0(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1
+                .fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaAgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant2
+                .fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaAgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant2(
+              value);
+        }
+      } catch (_) {}
+    }
     try {
-      return FieldsItemSchemaFieldsItemSchemaVariant0(
-          FieldsItemSchemaVariant0.fromJson(json as Map<String, dynamic>));
+      return AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaAgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant0(
+          AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant0
+              .fromJson(json as Map<String, dynamic>));
     } catch (_) {}
     try {
-      return FieldsItemSchemaFieldsItemSchemaVariant1(
-          FieldsItemSchemaVariant1.fromJson(json as Map<String, dynamic>));
+      return AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaAgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1(
+          AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1
+              .fromJson(json as Map<String, dynamic>));
     } catch (_) {}
     try {
-      return FieldsItemSchemaFieldsItemSchemaVariant2(
-          FieldsItemSchemaVariant2.fromJson(json as Map<String, dynamic>));
+      return AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaAgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant2(
+          AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant2
+              .fromJson(json as Map<String, dynamic>));
     } catch (_) {}
-    throw FormatException("No variant matched for FieldsItemSchema");
+    throw FormatException(
+        "No variant matched for AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchema");
   }
   Object? toJson();
 }
 
-final class FieldsItemSchemaFieldsItemSchemaVariant0 extends FieldsItemSchema {
-  final FieldsItemSchemaVariant0 value;
-  const FieldsItemSchemaFieldsItemSchemaVariant0(this.value);
-  @override
-  Object? toJson() => value.toJson();
-}
-
-final class FieldsItemSchemaFieldsItemSchemaVariant1 extends FieldsItemSchema {
-  final FieldsItemSchemaVariant1 value;
-  const FieldsItemSchemaFieldsItemSchemaVariant1(this.value);
-  @override
-  Object? toJson() => value.toJson();
-}
-
-final class FieldsItemSchemaFieldsItemSchemaVariant2 extends FieldsItemSchema {
-  final FieldsItemSchemaVariant2 value;
-  const FieldsItemSchemaFieldsItemSchemaVariant2(this.value);
-  @override
-  Object? toJson() => value.toJson();
-}
-
-/// A GitHub resource (pull request, issue, etc.)
-class TasksItemArtifactsItemDataVariant0 {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// GitHub resource ID
-  final int id;
-
-  /// GraphQL global ID
-  final SdkOptional<String> globalId;
-
-  const TasksItemArtifactsItemDataVariant0(
-      {required this.id, this.globalId = const SdkOmitted()});
-
-  TasksItemArtifactsItemDataVariant0 Function(
-      {int id, SdkOptional<String> globalId}) get copyWith => _copyWith;
-
-  TasksItemArtifactsItemDataVariant0 _copyWith(
-          {Object? id = sdkOmittedValue, Object? globalId = sdkOmittedValue}) =>
-      TasksItemArtifactsItemDataVariant0(
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        globalId: identical(globalId, sdkOmittedValue)
-            ? this.globalId
-            : globalId as SdkOptional<String>,
-      );
-
-  factory TasksItemArtifactsItemDataVariant0.fromJson(
-          Map<String, dynamic> json) =>
-      TasksItemArtifactsItemDataVariant0(
-        id: ((json['id'] as num?)?.toInt())!,
-        globalId: json['global_id'] != null
-            ? SdkPresent((json['global_id'] as String?)!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        'id': id,
-        ...switch (globalId) {
-          SdkPresent<String>(value: final value) => {
-              'global_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-/// A Git branch reference
-class TasksItemArtifactsItemDataVariant1 {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Head branch name
-  final String headRef;
-
-  /// Base branch name
-  final String baseRef;
-
-  const TasksItemArtifactsItemDataVariant1(
-      {required this.headRef, required this.baseRef});
-
-  TasksItemArtifactsItemDataVariant1 Function({String headRef, String baseRef})
-      get copyWith => _copyWith;
-
-  TasksItemArtifactsItemDataVariant1 _copyWith(
-          {Object? headRef = sdkOmittedValue,
-          Object? baseRef = sdkOmittedValue}) =>
-      TasksItemArtifactsItemDataVariant1(
-        headRef: identical(headRef, sdkOmittedValue)
-            ? this.headRef
-            : headRef as String,
-        baseRef: identical(baseRef, sdkOmittedValue)
-            ? this.baseRef
-            : baseRef as String,
-      );
-
-  factory TasksItemArtifactsItemDataVariant1.fromJson(
-          Map<String, dynamic> json) =>
-      TasksItemArtifactsItemDataVariant1(
-        headRef: (json['head_ref'] as String?)!,
-        baseRef: (json['base_ref'] as String?)!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'head_ref': headRef,
-        'base_ref': baseRef,
-      };
-}
-
-sealed class TasksItemArtifactsItemData {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  const TasksItemArtifactsItemData();
-  factory TasksItemArtifactsItemData.fromJson(Object? json) {
-    try {
-      return TasksItemArtifactsItemDataTasksItemArtifactsItemDataVariant0(
-          TasksItemArtifactsItemDataVariant0.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return TasksItemArtifactsItemDataTasksItemArtifactsItemDataVariant1(
-          TasksItemArtifactsItemDataVariant1.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    throw FormatException("No variant matched for TasksItemArtifactsItemData");
-  }
-  Object? toJson();
-}
-
-final class TasksItemArtifactsItemDataTasksItemArtifactsItemDataVariant0
-    extends TasksItemArtifactsItemData {
-  final TasksItemArtifactsItemDataVariant0 value;
-  const TasksItemArtifactsItemDataTasksItemArtifactsItemDataVariant0(
+final class AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaAgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant0
+    extends AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchema {
+  final AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant0
+      value;
+  const AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaAgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant0(
       this.value);
   @override
   Object? toJson() => value.toJson();
 }
 
-final class TasksItemArtifactsItemDataTasksItemArtifactsItemDataVariant1
-    extends TasksItemArtifactsItemData {
-  final TasksItemArtifactsItemDataVariant1 value;
-  const TasksItemArtifactsItemDataTasksItemArtifactsItemDataVariant1(
+final class AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaAgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1
+    extends AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchema {
+  final AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1
+      value;
+  const AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaAgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant1(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
+}
+
+final class AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaAgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant2
+    extends AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchema {
+  final AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant2
+      value;
+  const AgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaAgentAutomationsListAvailableAutomationTriggersResponseItemFieldsItemSchemaVariant2(
       this.value);
   @override
   Object? toJson() => value.toJson();

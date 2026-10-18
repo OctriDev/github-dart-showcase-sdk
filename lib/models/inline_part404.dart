@@ -4,495 +4,439 @@
 part of 'inline.dart';
 
 // Inline operation models (part 404)
-class ProjectsCreateViewForOrgRequestBody {
+class ChecksCreateRequestBodyVariant1 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+  final SdkOptional<ChecksCreateRequestBodyVariant1Status> status;
+  final Map<String, dynamic> additionalProperties;
 
-  /// The name of the view.
-  final String name;
+  const ChecksCreateRequestBodyVariant1(
+      {this.status = const SdkOmitted(),
+      this.additionalProperties = const <String, dynamic>{}});
 
-  /// The layout of the view.
-  final ProjectsCreateViewForOrgRequestBodyLayout layout;
-
-  /// The filter query for the view. See [Filtering projects](https://docs.github.com/issues/planning-and-tracking-with-projects/customizing-views-in-your-project/filtering-projects) for more information.
-  final SdkOptional<String> filter;
-
-  /// `visible_fields` is not applicable to `roadmap` layout views. For `table` and `board` layouts, this represents the field IDs that should be visible in the view. If not provided, the default visible fields will be used.
-  final SdkOptional<List<int>> visibleFields;
-
-  /// Sorting configuration for the view. Each element is a two-element array of `[field_id, direction]` where `direction` is `"asc"` or `"desc"`. Supports multiple sort criteria applied in order.
-  final SdkOptional<List<List<dynamic>>> sortBy;
-
-  /// The field IDs to group items by (horizontal grouping). Supports a single field. The field must support grouping; fields such as `Title`, `Reviewers`, `Linked pull requests`, `Sub-issues progress`, `Tracked by`, and `Tracks` cannot be grouped on.
-  final SdkOptional<List<int>> groupBy;
-
-  /// The field IDs to use as columns in `board` layout (vertical grouping). Supports a single field. The field must support grouping; fields such as `Title`, `Reviewers`, `Linked pull requests`, `Sub-issues progress`, `Tracked by`, and `Tracks` cannot be grouped on.
-  final SdkOptional<List<int>> verticalGroupBy;
-
-  const ProjectsCreateViewForOrgRequestBody(
-      {required this.name,
-      required this.layout,
-      this.filter = const SdkOmitted(),
-      this.visibleFields = const SdkOmitted(),
-      this.sortBy = const SdkOmitted(),
-      this.groupBy = const SdkOmitted(),
-      this.verticalGroupBy = const SdkOmitted()});
-
-  ProjectsCreateViewForOrgRequestBody Function(
-      {String name,
-      ProjectsCreateViewForOrgRequestBodyLayout layout,
-      SdkOptional<String> filter,
-      SdkOptional<List<int>> visibleFields,
-      SdkOptional<List<List<dynamic>>> sortBy,
-      SdkOptional<List<int>> groupBy,
-      SdkOptional<List<int>> verticalGroupBy}) get copyWith => _copyWith;
-
-  ProjectsCreateViewForOrgRequestBody _copyWith(
-          {Object? name = sdkOmittedValue,
-          Object? layout = sdkOmittedValue,
-          Object? filter = sdkOmittedValue,
-          Object? visibleFields = sdkOmittedValue,
-          Object? sortBy = sdkOmittedValue,
-          Object? groupBy = sdkOmittedValue,
-          Object? verticalGroupBy = sdkOmittedValue}) =>
-      ProjectsCreateViewForOrgRequestBody(
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        layout: identical(layout, sdkOmittedValue)
-            ? this.layout
-            : layout as ProjectsCreateViewForOrgRequestBodyLayout,
-        filter: identical(filter, sdkOmittedValue)
-            ? this.filter
-            : filter as SdkOptional<String>,
-        visibleFields: identical(visibleFields, sdkOmittedValue)
-            ? this.visibleFields
-            : visibleFields as SdkOptional<List<int>>,
-        sortBy: identical(sortBy, sdkOmittedValue)
-            ? this.sortBy
-            : sortBy as SdkOptional<List<List<dynamic>>>,
-        groupBy: identical(groupBy, sdkOmittedValue)
-            ? this.groupBy
-            : groupBy as SdkOptional<List<int>>,
-        verticalGroupBy: identical(verticalGroupBy, sdkOmittedValue)
-            ? this.verticalGroupBy
-            : verticalGroupBy as SdkOptional<List<int>>,
-      );
-
-  factory ProjectsCreateViewForOrgRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      ProjectsCreateViewForOrgRequestBody(
-        name: (json['name'] as String?)!,
-        layout: (json['layout'] != null
-            ? ProjectsCreateViewForOrgRequestBodyLayout.fromJson(
-                json['layout'] as String)
-            : null)!,
-        filter: json['filter'] != null
-            ? SdkPresent((json['filter'] as String?)!)
-            : const SdkOmitted(),
-        visibleFields: json['visible_fields'] != null
-            ? SdkPresent(((json['visible_fields'] as List?)
-                ?.map((e) => (e as num).toInt())
-                .toList())!)
-            : const SdkOmitted(),
-        sortBy: json['sort_by'] != null
-            ? SdkPresent(((json['sort_by'] as List?)
-                ?.map((e) => (e as List).map((item) => item).toList())
-                .toList())!)
-            : const SdkOmitted(),
-        groupBy: json['group_by'] != null
-            ? SdkPresent(((json['group_by'] as List?)
-                ?.map((e) => (e as num).toInt())
-                .toList())!)
-            : const SdkOmitted(),
-        verticalGroupBy: json['vertical_group_by'] != null
-            ? SdkPresent(((json['vertical_group_by'] as List?)
-                ?.map((e) => (e as num).toInt())
-                .toList())!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        'name': name,
-        'layout': layout.toJson(),
-        ...switch (filter) {
-          SdkPresent<String>(value: final value) => {
-              'filter': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (visibleFields) {
-          SdkPresent<List<int>>(value: final value) => {
-              'visible_fields': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (sortBy) {
-          SdkPresent<List<List<dynamic>>>(value: final value) => {
-              'sort_by': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (groupBy) {
-          SdkPresent<List<int>>(value: final value) => {
-              'group_by': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (verticalGroupBy) {
-          SdkPresent<List<int>>(value: final value) => {
-              'vertical_group_by': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-class ProjectsCreateDraftItemForAuthenticatedUserRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The title of the draft issue item to create in the project.
-  final String title;
-
-  /// The body content of the draft issue item to create in the project.
-  final SdkOptional<String> body;
-
-  const ProjectsCreateDraftItemForAuthenticatedUserRequestBody(
-      {required this.title, this.body = const SdkOmitted()});
-
-  ProjectsCreateDraftItemForAuthenticatedUserRequestBody Function(
-      {String title, SdkOptional<String> body}) get copyWith => _copyWith;
-
-  ProjectsCreateDraftItemForAuthenticatedUserRequestBody _copyWith(
-          {Object? title = sdkOmittedValue, Object? body = sdkOmittedValue}) =>
-      ProjectsCreateDraftItemForAuthenticatedUserRequestBody(
-        title: identical(title, sdkOmittedValue) ? this.title : title as String,
-        body: identical(body, sdkOmittedValue)
-            ? this.body
-            : body as SdkOptional<String>,
-      );
-
-  factory ProjectsCreateDraftItemForAuthenticatedUserRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      ProjectsCreateDraftItemForAuthenticatedUserRequestBody(
-        title: (json['title'] as String?)!,
-        body: json['body'] != null
-            ? SdkPresent((json['body'] as String?)!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        'title': title,
-        ...switch (body) {
-          SdkPresent<String>(value: final value) => {
-              'body': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-class ProjectsCreateViewForUserRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The name of the view.
-  final String name;
-
-  /// The layout of the view.
-  final ProjectsCreateViewForUserRequestBodyLayout layout;
-
-  /// The filter query for the view. See [Filtering projects](https://docs.github.com/issues/planning-and-tracking-with-projects/customizing-views-in-your-project/filtering-projects) for more information.
-  final SdkOptional<String> filter;
-
-  /// `visible_fields` is not applicable to `roadmap` layout views. For `table` and `board` layouts, this represents the field IDs that should be visible in the view. If not provided, the default visible fields will be used.
-  final SdkOptional<List<int>> visibleFields;
-
-  /// Sorting configuration for the view. Each element is a two-element array of `[field_id, direction]` where `direction` is `"asc"` or `"desc"`. Supports multiple sort criteria applied in order.
-  final SdkOptional<List<List<dynamic>>> sortBy;
-
-  /// The field IDs to group items by (horizontal grouping). Supports a single field. The field must support grouping; fields such as `Title`, `Reviewers`, `Linked pull requests`, `Sub-issues progress`, `Tracked by`, and `Tracks` cannot be grouped on.
-  final SdkOptional<List<int>> groupBy;
-
-  /// The field IDs to use as columns in `board` layout (vertical grouping). Supports a single field. The field must support grouping; fields such as `Title`, `Reviewers`, `Linked pull requests`, `Sub-issues progress`, `Tracked by`, and `Tracks` cannot be grouped on.
-  final SdkOptional<List<int>> verticalGroupBy;
-
-  const ProjectsCreateViewForUserRequestBody(
-      {required this.name,
-      required this.layout,
-      this.filter = const SdkOmitted(),
-      this.visibleFields = const SdkOmitted(),
-      this.sortBy = const SdkOmitted(),
-      this.groupBy = const SdkOmitted(),
-      this.verticalGroupBy = const SdkOmitted()});
-
-  ProjectsCreateViewForUserRequestBody Function(
-      {String name,
-      ProjectsCreateViewForUserRequestBodyLayout layout,
-      SdkOptional<String> filter,
-      SdkOptional<List<int>> visibleFields,
-      SdkOptional<List<List<dynamic>>> sortBy,
-      SdkOptional<List<int>> groupBy,
-      SdkOptional<List<int>> verticalGroupBy}) get copyWith => _copyWith;
-
-  ProjectsCreateViewForUserRequestBody _copyWith(
-          {Object? name = sdkOmittedValue,
-          Object? layout = sdkOmittedValue,
-          Object? filter = sdkOmittedValue,
-          Object? visibleFields = sdkOmittedValue,
-          Object? sortBy = sdkOmittedValue,
-          Object? groupBy = sdkOmittedValue,
-          Object? verticalGroupBy = sdkOmittedValue}) =>
-      ProjectsCreateViewForUserRequestBody(
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        layout: identical(layout, sdkOmittedValue)
-            ? this.layout
-            : layout as ProjectsCreateViewForUserRequestBodyLayout,
-        filter: identical(filter, sdkOmittedValue)
-            ? this.filter
-            : filter as SdkOptional<String>,
-        visibleFields: identical(visibleFields, sdkOmittedValue)
-            ? this.visibleFields
-            : visibleFields as SdkOptional<List<int>>,
-        sortBy: identical(sortBy, sdkOmittedValue)
-            ? this.sortBy
-            : sortBy as SdkOptional<List<List<dynamic>>>,
-        groupBy: identical(groupBy, sdkOmittedValue)
-            ? this.groupBy
-            : groupBy as SdkOptional<List<int>>,
-        verticalGroupBy: identical(verticalGroupBy, sdkOmittedValue)
-            ? this.verticalGroupBy
-            : verticalGroupBy as SdkOptional<List<int>>,
-      );
-
-  factory ProjectsCreateViewForUserRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      ProjectsCreateViewForUserRequestBody(
-        name: (json['name'] as String?)!,
-        layout: (json['layout'] != null
-            ? ProjectsCreateViewForUserRequestBodyLayout.fromJson(
-                json['layout'] as String)
-            : null)!,
-        filter: json['filter'] != null
-            ? SdkPresent((json['filter'] as String?)!)
-            : const SdkOmitted(),
-        visibleFields: json['visible_fields'] != null
-            ? SdkPresent(((json['visible_fields'] as List?)
-                ?.map((e) => (e as num).toInt())
-                .toList())!)
-            : const SdkOmitted(),
-        sortBy: json['sort_by'] != null
-            ? SdkPresent(((json['sort_by'] as List?)
-                ?.map((e) => (e as List).map((item) => item).toList())
-                .toList())!)
-            : const SdkOmitted(),
-        groupBy: json['group_by'] != null
-            ? SdkPresent(((json['group_by'] as List?)
-                ?.map((e) => (e as num).toInt())
-                .toList())!)
-            : const SdkOmitted(),
-        verticalGroupBy: json['vertical_group_by'] != null
-            ? SdkPresent(((json['vertical_group_by'] as List?)
-                ?.map((e) => (e as num).toInt())
-                .toList())!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        'name': name,
-        'layout': layout.toJson(),
-        ...switch (filter) {
-          SdkPresent<String>(value: final value) => {
-              'filter': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (visibleFields) {
-          SdkPresent<List<int>>(value: final value) => {
-              'visible_fields': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (sortBy) {
-          SdkPresent<List<List<dynamic>>>(value: final value) => {
-              'sort_by': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (groupBy) {
-          SdkPresent<List<int>>(value: final value) => {
-              'group_by': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (verticalGroupBy) {
-          SdkPresent<List<int>>(value: final value) => {
-              'vertical_group_by': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-class ProjectsAddFieldForUserRequestBodyVariant0 {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The name of the field.
-  final String name;
-
-  /// The field's data type.
-  final ProjectsAddFieldForUserRequestBodyVariant0DataType dataType;
-
-  const ProjectsAddFieldForUserRequestBodyVariant0(
-      {required this.name, required this.dataType});
-
-  ProjectsAddFieldForUserRequestBodyVariant0 Function(
-          {String name,
-          ProjectsAddFieldForUserRequestBodyVariant0DataType dataType})
+  ChecksCreateRequestBodyVariant1 Function(
+          {SdkOptional<ChecksCreateRequestBodyVariant1Status> status})
       get copyWith => _copyWith;
 
-  ProjectsAddFieldForUserRequestBodyVariant0 _copyWith(
-          {Object? name = sdkOmittedValue,
-          Object? dataType = sdkOmittedValue}) =>
-      ProjectsAddFieldForUserRequestBodyVariant0(
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        dataType: identical(dataType, sdkOmittedValue)
-            ? this.dataType
-            : dataType as ProjectsAddFieldForUserRequestBodyVariant0DataType,
+  ChecksCreateRequestBodyVariant1 _copyWith(
+          {Object? status = sdkOmittedValue}) =>
+      ChecksCreateRequestBodyVariant1(
+        status: identical(status, sdkOmittedValue)
+            ? this.status
+            : status as SdkOptional<ChecksCreateRequestBodyVariant1Status>,
+        additionalProperties: additionalProperties,
       );
 
-  factory ProjectsAddFieldForUserRequestBodyVariant0.fromJson(
-          Map<String, dynamic> json) =>
-      ProjectsAddFieldForUserRequestBodyVariant0(
-        name: (json['name'] as String?)!,
-        dataType: (json['data_type'] != null
-            ? ProjectsAddFieldForUserRequestBodyVariant0DataType.fromJson(
-                json['data_type'] as String)
-            : null)!,
+  factory ChecksCreateRequestBodyVariant1.fromJson(Map<String, dynamic> json) =>
+      ChecksCreateRequestBodyVariant1(
+        status: json['status'] != null
+            ? SdkPresent((json['status'] != null
+                ? ChecksCreateRequestBodyVariant1Status.fromJson(
+                    json['status'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        additionalProperties: Map.of(json)
+          ..removeWhere((key, _) => const <String>{'status'}.contains(key)),
       );
 
   Map<String, dynamic> toJson() => {
-        'name': name,
-        'data_type': dataType.toJson(),
+        ...additionalProperties,
+        ...switch (status) {
+          SdkPresent<ChecksCreateRequestBodyVariant1Status>(
+            value: final value
+          ) =>
+            {
+              'status': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
       };
 }
 
-class ProjectsAddFieldForUserRequestBodyVariant1 {
+class ChecksUpdateRequestBodyVariant0OutputAnnotationsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// The name of the field.
-  final String name;
+  /// The path of the file to add an annotation to. For example, `assets/css/main.css`.
+  final String path;
 
-  /// The field's data type.
-  final ProjectsAddFieldForUserRequestBodyVariant1DataType dataType;
+  /// The start line of the annotation. Line numbers start at 1.
+  final int startLine;
 
-  /// The options available for single select fields. At least one option must be provided when creating a single select field.
-  final List<ProjectsV2FieldSingleSelectOption> singleSelectOptions;
+  /// The end line of the annotation.
+  final int endLine;
 
-  const ProjectsAddFieldForUserRequestBodyVariant1(
-      {required this.name,
-      required this.dataType,
-      required this.singleSelectOptions});
+  /// The start column of the annotation. Annotations only support `start_column` and `end_column` on the same line. Omit this parameter if `start_line` and `end_line` have different values. Column numbers start at 1.
+  final SdkOptional<int> startColumn;
 
-  ProjectsAddFieldForUserRequestBodyVariant1 Function(
-          {String name,
-          ProjectsAddFieldForUserRequestBodyVariant1DataType dataType,
-          List<ProjectsV2FieldSingleSelectOption> singleSelectOptions})
-      get copyWith => _copyWith;
+  /// The end column of the annotation. Annotations only support `start_column` and `end_column` on the same line. Omit this parameter if `start_line` and `end_line` have different values.
+  final SdkOptional<int> endColumn;
 
-  ProjectsAddFieldForUserRequestBodyVariant1 _copyWith(
-          {Object? name = sdkOmittedValue,
-          Object? dataType = sdkOmittedValue,
-          Object? singleSelectOptions = sdkOmittedValue}) =>
-      ProjectsAddFieldForUserRequestBodyVariant1(
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        dataType: identical(dataType, sdkOmittedValue)
-            ? this.dataType
-            : dataType as ProjectsAddFieldForUserRequestBodyVariant1DataType,
-        singleSelectOptions: identical(singleSelectOptions, sdkOmittedValue)
-            ? this.singleSelectOptions
-            : singleSelectOptions as List<ProjectsV2FieldSingleSelectOption>,
+  /// The level of the annotation.
+  final ChecksUpdateRequestBodyVariant0OutputAnnotationsItemAnnotationLevel
+      annotationLevel;
+
+  /// A short description of the feedback for these lines of code. The maximum size is 64 KB.
+  final String message;
+
+  /// The title that represents the annotation. The maximum size is 255 characters.
+  final SdkOptional<String> title;
+
+  /// Details about this annotation. The maximum size is 64 KB.
+  final SdkOptional<String> rawDetails;
+
+  const ChecksUpdateRequestBodyVariant0OutputAnnotationsItem(
+      {required this.path,
+      required this.startLine,
+      required this.endLine,
+      this.startColumn = const SdkOmitted(),
+      this.endColumn = const SdkOmitted(),
+      required this.annotationLevel,
+      required this.message,
+      this.title = const SdkOmitted(),
+      this.rawDetails = const SdkOmitted()});
+
+  ChecksUpdateRequestBodyVariant0OutputAnnotationsItem Function(
+      {String path,
+      int startLine,
+      int endLine,
+      SdkOptional<int> startColumn,
+      SdkOptional<int> endColumn,
+      ChecksUpdateRequestBodyVariant0OutputAnnotationsItemAnnotationLevel
+          annotationLevel,
+      String message,
+      SdkOptional<String> title,
+      SdkOptional<String> rawDetails}) get copyWith => _copyWith;
+
+  ChecksUpdateRequestBodyVariant0OutputAnnotationsItem _copyWith(
+          {Object? path = sdkOmittedValue,
+          Object? startLine = sdkOmittedValue,
+          Object? endLine = sdkOmittedValue,
+          Object? startColumn = sdkOmittedValue,
+          Object? endColumn = sdkOmittedValue,
+          Object? annotationLevel = sdkOmittedValue,
+          Object? message = sdkOmittedValue,
+          Object? title = sdkOmittedValue,
+          Object? rawDetails = sdkOmittedValue}) =>
+      ChecksUpdateRequestBodyVariant0OutputAnnotationsItem(
+        path: identical(path, sdkOmittedValue) ? this.path : path as String,
+        startLine: identical(startLine, sdkOmittedValue)
+            ? this.startLine
+            : startLine as int,
+        endLine:
+            identical(endLine, sdkOmittedValue) ? this.endLine : endLine as int,
+        startColumn: identical(startColumn, sdkOmittedValue)
+            ? this.startColumn
+            : startColumn as SdkOptional<int>,
+        endColumn: identical(endColumn, sdkOmittedValue)
+            ? this.endColumn
+            : endColumn as SdkOptional<int>,
+        annotationLevel: identical(annotationLevel, sdkOmittedValue)
+            ? this.annotationLevel
+            : annotationLevel
+                as ChecksUpdateRequestBodyVariant0OutputAnnotationsItemAnnotationLevel,
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+        title: identical(title, sdkOmittedValue)
+            ? this.title
+            : title as SdkOptional<String>,
+        rawDetails: identical(rawDetails, sdkOmittedValue)
+            ? this.rawDetails
+            : rawDetails as SdkOptional<String>,
       );
 
-  factory ProjectsAddFieldForUserRequestBodyVariant1.fromJson(
+  factory ChecksUpdateRequestBodyVariant0OutputAnnotationsItem.fromJson(
           Map<String, dynamic> json) =>
-      ProjectsAddFieldForUserRequestBodyVariant1(
-        name: (json['name'] as String?)!,
-        dataType: (json['data_type'] != null
-            ? ProjectsAddFieldForUserRequestBodyVariant1DataType.fromJson(
-                json['data_type'] as String)
+      ChecksUpdateRequestBodyVariant0OutputAnnotationsItem(
+        path: (json['path'] as String?)!,
+        startLine: ((json['start_line'] as num?)?.toInt())!,
+        endLine: ((json['end_line'] as num?)?.toInt())!,
+        startColumn: json['start_column'] != null
+            ? SdkPresent(((json['start_column'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        endColumn: json['end_column'] != null
+            ? SdkPresent(((json['end_column'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        annotationLevel: (json['annotation_level'] != null
+            ? ChecksUpdateRequestBodyVariant0OutputAnnotationsItemAnnotationLevel
+                .fromJson(json['annotation_level'] as String)
             : null)!,
-        singleSelectOptions: ((json['single_select_options'] as List?)
-            ?.map((e) => ProjectsV2FieldSingleSelectOption.fromJson(
-                e as Map<String, dynamic>))
-            .toList())!,
+        message: (json['message'] as String?)!,
+        title: json['title'] != null
+            ? SdkPresent((json['title'] as String?)!)
+            : const SdkOmitted(),
+        rawDetails: json['raw_details'] != null
+            ? SdkPresent((json['raw_details'] as String?)!)
+            : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        'name': name,
-        'data_type': dataType.toJson(),
-        'single_select_options':
-            singleSelectOptions.map((item) => item.toJson()).toList(),
+        'path': path,
+        'start_line': startLine,
+        'end_line': endLine,
+        ...switch (startColumn) {
+          SdkPresent<int>(value: final value) => {
+              'start_column': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (endColumn) {
+          SdkPresent<int>(value: final value) => {
+              'end_column': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'annotation_level': annotationLevel.toJson(),
+        'message': message,
+        ...switch (title) {
+          SdkPresent<String>(value: final value) => {
+              'title': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (rawDetails) {
+          SdkPresent<String>(value: final value) => {
+              'raw_details': value,
+            },
+          _ => const <String, dynamic>{},
+        },
       };
 }
 
-class ProjectsAddFieldForUserRequestBodyVariant2 {
+class ChecksUpdateRequestBodyVariant0OutputImagesItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// The name of the field.
-  final String name;
+  /// The alternative text for the image.
+  final String alt;
 
-  /// The field's data type.
-  final ProjectsAddFieldForUserRequestBodyVariant2DataType dataType;
+  /// The full URL of the image.
+  final String imageUrl;
 
-  /// The configuration for iteration fields.
-  final ProjectsV2FieldIterationConfiguration iterationConfiguration;
+  /// A short image description.
+  final SdkOptional<String> caption;
 
-  const ProjectsAddFieldForUserRequestBodyVariant2(
-      {required this.name,
-      required this.dataType,
-      required this.iterationConfiguration});
+  const ChecksUpdateRequestBodyVariant0OutputImagesItem(
+      {required this.alt,
+      required this.imageUrl,
+      this.caption = const SdkOmitted()});
 
-  ProjectsAddFieldForUserRequestBodyVariant2 Function(
-          {String name,
-          ProjectsAddFieldForUserRequestBodyVariant2DataType dataType,
-          ProjectsV2FieldIterationConfiguration iterationConfiguration})
-      get copyWith => _copyWith;
+  ChecksUpdateRequestBodyVariant0OutputImagesItem Function(
+      {String alt,
+      String imageUrl,
+      SdkOptional<String> caption}) get copyWith => _copyWith;
 
-  ProjectsAddFieldForUserRequestBodyVariant2 _copyWith(
-          {Object? name = sdkOmittedValue,
-          Object? dataType = sdkOmittedValue,
-          Object? iterationConfiguration = sdkOmittedValue}) =>
-      ProjectsAddFieldForUserRequestBodyVariant2(
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        dataType: identical(dataType, sdkOmittedValue)
-            ? this.dataType
-            : dataType as ProjectsAddFieldForUserRequestBodyVariant2DataType,
-        iterationConfiguration: identical(
-                iterationConfiguration, sdkOmittedValue)
-            ? this.iterationConfiguration
-            : iterationConfiguration as ProjectsV2FieldIterationConfiguration,
+  ChecksUpdateRequestBodyVariant0OutputImagesItem _copyWith(
+          {Object? alt = sdkOmittedValue,
+          Object? imageUrl = sdkOmittedValue,
+          Object? caption = sdkOmittedValue}) =>
+      ChecksUpdateRequestBodyVariant0OutputImagesItem(
+        alt: identical(alt, sdkOmittedValue) ? this.alt : alt as String,
+        imageUrl: identical(imageUrl, sdkOmittedValue)
+            ? this.imageUrl
+            : imageUrl as String,
+        caption: identical(caption, sdkOmittedValue)
+            ? this.caption
+            : caption as SdkOptional<String>,
       );
 
-  factory ProjectsAddFieldForUserRequestBodyVariant2.fromJson(
+  factory ChecksUpdateRequestBodyVariant0OutputImagesItem.fromJson(
           Map<String, dynamic> json) =>
-      ProjectsAddFieldForUserRequestBodyVariant2(
-        name: (json['name'] as String?)!,
-        dataType: (json['data_type'] != null
-            ? ProjectsAddFieldForUserRequestBodyVariant2DataType.fromJson(
-                json['data_type'] as String)
-            : null)!,
-        iterationConfiguration: (json['iteration_configuration'] != null
-            ? ProjectsV2FieldIterationConfiguration.fromJson(
-                json['iteration_configuration'] as Map<String, dynamic>)
-            : null)!,
+      ChecksUpdateRequestBodyVariant0OutputImagesItem(
+        alt: (json['alt'] as String?)!,
+        imageUrl: (json['image_url'] as String?)!,
+        caption: json['caption'] != null
+            ? SdkPresent((json['caption'] as String?)!)
+            : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        'name': name,
-        'data_type': dataType.toJson(),
-        'iteration_configuration': iterationConfiguration.toJson(),
+        'alt': alt,
+        'image_url': imageUrl,
+        ...switch (caption) {
+          SdkPresent<String>(value: final value) => {
+              'caption': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+/// Check runs can accept a variety of data in the `output` object, including a `title` and `summary` and can optionally provide descriptive details about the run.
+class ChecksUpdateRequestBodyVariant0Output {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// **Required**.
+  final SdkOptional<String> title;
+
+  /// Can contain Markdown.
+  final String summary;
+
+  /// Can contain Markdown.
+  final SdkOptional<String> text;
+
+  /// Adds information from your analysis to specific lines of code. Annotations are visible in GitHub's pull request UI. Annotations are visible in GitHub's pull request UI. The Checks API limits the number of annotations to a maximum of 50 per API request. To create more than 50 annotations, you have to make multiple requests to the [Update a check run](https://docs.github.com/rest/checks/runs#update-a-check-run) endpoint. Each time you update the check run, annotations are appended to the list of annotations that already exist for the check run. GitHub Actions are limited to 10 warning annotations and 10 error annotations per step. For details about annotations in the UI, see "[About status checks](https://docs.github.com/articles/about-status-checks#checks)".
+  final SdkOptional<List<ChecksUpdateRequestBodyVariant0OutputAnnotationsItem>>
+      annotations;
+
+  /// Adds images to the output displayed in the GitHub pull request UI.
+  final SdkOptional<List<ChecksUpdateRequestBodyVariant0OutputImagesItem>>
+      images;
+
+  const ChecksUpdateRequestBodyVariant0Output(
+      {this.title = const SdkOmitted(),
+      required this.summary,
+      this.text = const SdkOmitted(),
+      this.annotations = const SdkOmitted(),
+      this.images = const SdkOmitted()});
+
+  ChecksUpdateRequestBodyVariant0Output Function(
+      {SdkOptional<String> title,
+      String summary,
+      SdkOptional<String> text,
+      SdkOptional<List<ChecksUpdateRequestBodyVariant0OutputAnnotationsItem>>
+          annotations,
+      SdkOptional<List<ChecksUpdateRequestBodyVariant0OutputImagesItem>>
+          images}) get copyWith => _copyWith;
+
+  ChecksUpdateRequestBodyVariant0Output _copyWith(
+          {Object? title = sdkOmittedValue,
+          Object? summary = sdkOmittedValue,
+          Object? text = sdkOmittedValue,
+          Object? annotations = sdkOmittedValue,
+          Object? images = sdkOmittedValue}) =>
+      ChecksUpdateRequestBodyVariant0Output(
+        title: identical(title, sdkOmittedValue)
+            ? this.title
+            : title as SdkOptional<String>,
+        summary: identical(summary, sdkOmittedValue)
+            ? this.summary
+            : summary as String,
+        text: identical(text, sdkOmittedValue)
+            ? this.text
+            : text as SdkOptional<String>,
+        annotations: identical(annotations, sdkOmittedValue)
+            ? this.annotations
+            : annotations as SdkOptional<
+                List<ChecksUpdateRequestBodyVariant0OutputAnnotationsItem>>,
+        images: identical(images, sdkOmittedValue)
+            ? this.images
+            : images as SdkOptional<
+                List<ChecksUpdateRequestBodyVariant0OutputImagesItem>>,
+      );
+
+  factory ChecksUpdateRequestBodyVariant0Output.fromJson(
+          Map<String, dynamic> json) =>
+      ChecksUpdateRequestBodyVariant0Output(
+        title: json['title'] != null
+            ? SdkPresent((json['title'] as String?)!)
+            : const SdkOmitted(),
+        summary: (json['summary'] as String?)!,
+        text: json['text'] != null
+            ? SdkPresent((json['text'] as String?)!)
+            : const SdkOmitted(),
+        annotations: json['annotations'] != null
+            ? SdkPresent(((json['annotations'] as List?)
+                ?.map((e) =>
+                    ChecksUpdateRequestBodyVariant0OutputAnnotationsItem
+                        .fromJson(e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+        images: json['images'] != null
+            ? SdkPresent(((json['images'] as List?)
+                ?.map((e) =>
+                    ChecksUpdateRequestBodyVariant0OutputImagesItem.fromJson(
+                        e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (title) {
+          SdkPresent<String>(value: final value) => {
+              'title': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'summary': summary,
+        ...switch (text) {
+          SdkPresent<String>(value: final value) => {
+              'text': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (annotations) {
+          SdkPresent<
+                List<ChecksUpdateRequestBodyVariant0OutputAnnotationsItem>>(
+            value: final value
+          ) =>
+            {
+              'annotations': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (images) {
+          SdkPresent<List<ChecksUpdateRequestBodyVariant0OutputImagesItem>>(
+            value: final value
+          ) =>
+            {
+              'images': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class ChecksUpdateRequestBodyVariant0ActionsItem {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The text to be displayed on a button in the web UI. The maximum size is 20 characters.
+  final String label;
+
+  /// A short explanation of what this action would do. The maximum size is 40 characters.
+  final String description;
+
+  /// A reference for the action on the integrator's system. The maximum size is 20 characters.
+  final String identifier;
+
+  const ChecksUpdateRequestBodyVariant0ActionsItem(
+      {required this.label,
+      required this.description,
+      required this.identifier});
+
+  ChecksUpdateRequestBodyVariant0ActionsItem Function(
+      {String label,
+      String description,
+      String identifier}) get copyWith => _copyWith;
+
+  ChecksUpdateRequestBodyVariant0ActionsItem _copyWith(
+          {Object? label = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? identifier = sdkOmittedValue}) =>
+      ChecksUpdateRequestBodyVariant0ActionsItem(
+        label: identical(label, sdkOmittedValue) ? this.label : label as String,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as String,
+        identifier: identical(identifier, sdkOmittedValue)
+            ? this.identifier
+            : identifier as String,
+      );
+
+  factory ChecksUpdateRequestBodyVariant0ActionsItem.fromJson(
+          Map<String, dynamic> json) =>
+      ChecksUpdateRequestBodyVariant0ActionsItem(
+        label: (json['label'] as String?)!,
+        description: (json['description'] as String?)!,
+        identifier: (json['identifier'] as String?)!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'label': label,
+        'description': description,
+        'identifier': identifier,
       };
 }

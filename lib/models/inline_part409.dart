@@ -4,568 +4,515 @@
 part of 'inline.dart';
 
 // Inline operation models (part 409)
-class ReposUpdateRequestBody {
+class PullsCreateRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// The name of the repository.
-  final SdkOptional<String> name;
+  /// The title of the new pull request. Required unless `issue` is specified.
+  final SdkOptional<String> title;
 
-  /// A short description of the repository.
-  final SdkOptional<String> description;
+  /// The name of the branch where your changes are implemented. For cross-repository pull requests in the same network, namespace `head` with a user like this: `username:branch`.
+  final String head;
 
-  /// A URL with more information about the repository.
-  final SdkOptional<String> homepage;
+  /// The name of the repository where the changes in the pull request were made. This field is required for cross-repository pull requests if both repositories are owned by the same organization.
+  final SdkOptional<String> headRepo;
 
-  /// Either `true` to make the repository private or `false` to make it public. Default: `false`. **Note**: You will get a `422` error if the organization restricts [changing repository visibility](https://docs.github.com/articles/repository-permission-levels-for-an-organization#changing-the-visibility-of-repositories) to organization owners and a non-owner tries to change the value of private.
-  final SdkOptional<bool> private;
+  /// The name of the branch you want the changes pulled into. This should be an existing branch on the current repository. You cannot submit a pull request to one repository that requests a merge to a base of another repository.
+  final String base_;
 
-  /// The visibility of the repository.
-  final SdkOptional<ReposUpdateRequestBodyVisibility> visibility;
+  /// The contents of the pull request.
+  final SdkOptional<String> body;
 
-  /// Specify which security and analysis features to enable or disable for the repository. To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)." For example, to enable GitHub Advanced Security, use this data in the body of the `PATCH` request: `{ "security_and_analysis": {"advanced_security": { "status": "enabled" } } }`. You can check which security and analysis features are currently enabled by using a `GET /repos/{owner}/{repo}` request.
-  final SdkOptional<ReposUpdateRequestBodySecurityAndAnalysis?>
-      securityAndAnalysis;
+  /// Indicates whether [maintainers can modify](https://docs.github.com/articles/allowing-changes-to-a-pull-request-branch-created-from-a-fork/) the pull request.
+  final SdkOptional<bool> maintainerCanModify;
 
-  /// Either `true` to enable issues for this repository or `false` to disable them.
-  final SdkOptional<bool> hasIssues;
+  /// Indicates whether the pull request is a draft. See "[Draft Pull Requests](https://docs.github.com/articles/about-pull-requests#draft-pull-requests)" in the GitHub Help documentation to learn more.
+  final SdkOptional<bool> draft;
 
-  /// Either `true` to enable projects for this repository or `false` to disable them. **Note:** If you're creating a repository in an organization that has disabled repository projects, the default is `false`, and if you pass `true`, the API returns an error.
-  final SdkOptional<bool> hasProjects;
+  /// An issue in the repository to convert to a pull request. The issue title, body, and comments will become the title, body, and comments on the new pull request. Required unless `title` is specified.
+  final SdkOptional<int> issue;
 
-  /// Either `true` to enable the wiki for this repository or `false` to disable it.
-  final SdkOptional<bool> hasWiki;
+  const PullsCreateRequestBody(
+      {this.title = const SdkOmitted(),
+      required this.head,
+      this.headRepo = const SdkOmitted(),
+      required this.base_,
+      this.body = const SdkOmitted(),
+      this.maintainerCanModify = const SdkOmitted(),
+      this.draft = const SdkOmitted(),
+      this.issue = const SdkOmitted()});
 
-  /// Either `true` to allow pull requests for this repository or `false` to prevent pull requests.
-  final SdkOptional<bool> hasPullRequests;
+  PullsCreateRequestBody Function(
+      {SdkOptional<String> title,
+      String head,
+      SdkOptional<String> headRepo,
+      String base_,
+      SdkOptional<String> body,
+      SdkOptional<bool> maintainerCanModify,
+      SdkOptional<bool> draft,
+      SdkOptional<int> issue}) get copyWith => _copyWith;
 
-  /// The policy that controls who can create pull requests for this repository: `all` or `collaborators_only`.
-  final SdkOptional<ReposUpdateRequestBodyPullRequestCreationPolicy>
-      pullRequestCreationPolicy;
-
-  /// Either `true` to make this repo available as a template repository or `false` to prevent it.
-  final SdkOptional<bool> isTemplate;
-
-  /// Updates the default branch for this repository.
-  final SdkOptional<String> defaultBranch;
-
-  /// Either `true` to allow squash-merging pull requests, or `false` to prevent squash-merging.
-  final SdkOptional<bool> allowSquashMerge;
-
-  /// Either `true` to allow merging pull requests with a merge commit, or `false` to prevent merging pull requests with merge commits.
-  final SdkOptional<bool> allowMergeCommit;
-
-  /// Either `true` to allow rebase-merging pull requests, or `false` to prevent rebase-merging.
-  final SdkOptional<bool> allowRebaseMerge;
-
-  /// Either `true` to allow auto-merge on pull requests, or `false` to disallow auto-merge.
-  final SdkOptional<bool> allowAutoMerge;
-
-  /// Either `true` to allow automatically deleting head branches when pull requests are merged, or `false` to prevent automatic deletion.
-  final SdkOptional<bool> deleteBranchOnMerge;
-
-  /// Either `true` to always allow a pull request head branch that is behind its base branch to be updated even if it is not required to be up to date before merging, or false otherwise.
-  final SdkOptional<bool> allowUpdateBranch;
-
-  /// Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. **This property is closing down. Please use `squash_merge_commit_title` instead.
-  final SdkOptional<bool> useSquashPrTitleAsDefault;
-
-  /// Required when using `squash_merge_commit_message`. The default value for a squash merge commit title: - `PR_TITLE` - default to the pull request's title. - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
-  final SdkOptional<ReposUpdateRequestBodySquashMergeCommitTitle>
-      squashMergeCommitTitle;
-
-  /// The default value for a squash merge commit message: - `PR_BODY` - default to the pull request's body. - `COMMIT_MESSAGES` - default to the branch's commit messages. - `BLANK` - default to a blank commit message.
-  final SdkOptional<ReposUpdateRequestBodySquashMergeCommitMessage>
-      squashMergeCommitMessage;
-
-  /// Required when using `merge_commit_message`. The default value for a merge commit title. - `PR_TITLE` - default to the pull request's title. - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
-  final SdkOptional<ReposUpdateRequestBodyMergeCommitTitle> mergeCommitTitle;
-
-  /// The default value for a merge commit message. - `PR_TITLE` - default to the pull request's title. - `PR_BODY` - default to the pull request's body. - `BLANK` - default to a blank commit message.
-  final SdkOptional<ReposUpdateRequestBodyMergeCommitMessage>
-      mergeCommitMessage;
-
-  /// Whether to archive this repository. `false` will unarchive a previously archived repository.
-  final SdkOptional<bool> archived;
-
-  /// Either `true` to allow private forks, or `false` to prevent private forks.
-  final SdkOptional<bool> allowForking;
-
-  /// Either `true` to require contributors to sign off on web-based commits, or `false` to not require contributors to sign off on web-based commits.
-  final SdkOptional<bool> webCommitSignoffRequired;
-
-  const ReposUpdateRequestBody(
-      {this.name = const SdkOmitted(),
-      this.description = const SdkOmitted(),
-      this.homepage = const SdkOmitted(),
-      this.private = const SdkOmitted(),
-      this.visibility = const SdkOmitted(),
-      this.securityAndAnalysis = const SdkOmitted(),
-      this.hasIssues = const SdkOmitted(),
-      this.hasProjects = const SdkOmitted(),
-      this.hasWiki = const SdkOmitted(),
-      this.hasPullRequests = const SdkOmitted(),
-      this.pullRequestCreationPolicy = const SdkOmitted(),
-      this.isTemplate = const SdkOmitted(),
-      this.defaultBranch = const SdkOmitted(),
-      this.allowSquashMerge = const SdkOmitted(),
-      this.allowMergeCommit = const SdkOmitted(),
-      this.allowRebaseMerge = const SdkOmitted(),
-      this.allowAutoMerge = const SdkOmitted(),
-      this.deleteBranchOnMerge = const SdkOmitted(),
-      this.allowUpdateBranch = const SdkOmitted(),
-      this.useSquashPrTitleAsDefault = const SdkOmitted(),
-      this.squashMergeCommitTitle = const SdkOmitted(),
-      this.squashMergeCommitMessage = const SdkOmitted(),
-      this.mergeCommitTitle = const SdkOmitted(),
-      this.mergeCommitMessage = const SdkOmitted(),
-      this.archived = const SdkOmitted(),
-      this.allowForking = const SdkOmitted(),
-      this.webCommitSignoffRequired = const SdkOmitted()});
-
-  ReposUpdateRequestBody Function(
-      {SdkOptional<String> name,
-      SdkOptional<String> description,
-      SdkOptional<String> homepage,
-      SdkOptional<bool> private,
-      SdkOptional<ReposUpdateRequestBodyVisibility> visibility,
-      SdkOptional<ReposUpdateRequestBodySecurityAndAnalysis?>
-          securityAndAnalysis,
-      SdkOptional<bool> hasIssues,
-      SdkOptional<bool> hasProjects,
-      SdkOptional<bool> hasWiki,
-      SdkOptional<bool> hasPullRequests,
-      SdkOptional<ReposUpdateRequestBodyPullRequestCreationPolicy>
-          pullRequestCreationPolicy,
-      SdkOptional<bool> isTemplate,
-      SdkOptional<String> defaultBranch,
-      SdkOptional<bool> allowSquashMerge,
-      SdkOptional<bool> allowMergeCommit,
-      SdkOptional<bool> allowRebaseMerge,
-      SdkOptional<bool> allowAutoMerge,
-      SdkOptional<bool> deleteBranchOnMerge,
-      SdkOptional<bool> allowUpdateBranch,
-      SdkOptional<bool> useSquashPrTitleAsDefault,
-      SdkOptional<ReposUpdateRequestBodySquashMergeCommitTitle>
-          squashMergeCommitTitle,
-      SdkOptional<ReposUpdateRequestBodySquashMergeCommitMessage>
-          squashMergeCommitMessage,
-      SdkOptional<ReposUpdateRequestBodyMergeCommitTitle> mergeCommitTitle,
-      SdkOptional<ReposUpdateRequestBodyMergeCommitMessage> mergeCommitMessage,
-      SdkOptional<bool> archived,
-      SdkOptional<bool> allowForking,
-      SdkOptional<bool> webCommitSignoffRequired}) get copyWith => _copyWith;
-
-  ReposUpdateRequestBody _copyWith(
-          {Object? name = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? homepage = sdkOmittedValue,
-          Object? private = sdkOmittedValue,
-          Object? visibility = sdkOmittedValue,
-          Object? securityAndAnalysis = sdkOmittedValue,
-          Object? hasIssues = sdkOmittedValue,
-          Object? hasProjects = sdkOmittedValue,
-          Object? hasWiki = sdkOmittedValue,
-          Object? hasPullRequests = sdkOmittedValue,
-          Object? pullRequestCreationPolicy = sdkOmittedValue,
-          Object? isTemplate = sdkOmittedValue,
-          Object? defaultBranch = sdkOmittedValue,
-          Object? allowSquashMerge = sdkOmittedValue,
-          Object? allowMergeCommit = sdkOmittedValue,
-          Object? allowRebaseMerge = sdkOmittedValue,
-          Object? allowAutoMerge = sdkOmittedValue,
-          Object? deleteBranchOnMerge = sdkOmittedValue,
-          Object? allowUpdateBranch = sdkOmittedValue,
-          Object? useSquashPrTitleAsDefault = sdkOmittedValue,
-          Object? squashMergeCommitTitle = sdkOmittedValue,
-          Object? squashMergeCommitMessage = sdkOmittedValue,
-          Object? mergeCommitTitle = sdkOmittedValue,
-          Object? mergeCommitMessage = sdkOmittedValue,
-          Object? archived = sdkOmittedValue,
-          Object? allowForking = sdkOmittedValue,
-          Object? webCommitSignoffRequired = sdkOmittedValue}) =>
-      ReposUpdateRequestBody(
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String>,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as SdkOptional<String>,
-        homepage: identical(homepage, sdkOmittedValue)
-            ? this.homepage
-            : homepage as SdkOptional<String>,
-        private: identical(private, sdkOmittedValue)
-            ? this.private
-            : private as SdkOptional<bool>,
-        visibility: identical(visibility, sdkOmittedValue)
-            ? this.visibility
-            : visibility as SdkOptional<ReposUpdateRequestBodyVisibility>,
-        securityAndAnalysis: identical(securityAndAnalysis, sdkOmittedValue)
-            ? this.securityAndAnalysis
-            : securityAndAnalysis
-                as SdkOptional<ReposUpdateRequestBodySecurityAndAnalysis?>,
-        hasIssues: identical(hasIssues, sdkOmittedValue)
-            ? this.hasIssues
-            : hasIssues as SdkOptional<bool>,
-        hasProjects: identical(hasProjects, sdkOmittedValue)
-            ? this.hasProjects
-            : hasProjects as SdkOptional<bool>,
-        hasWiki: identical(hasWiki, sdkOmittedValue)
-            ? this.hasWiki
-            : hasWiki as SdkOptional<bool>,
-        hasPullRequests: identical(hasPullRequests, sdkOmittedValue)
-            ? this.hasPullRequests
-            : hasPullRequests as SdkOptional<bool>,
-        pullRequestCreationPolicy: identical(
-                pullRequestCreationPolicy, sdkOmittedValue)
-            ? this.pullRequestCreationPolicy
-            : pullRequestCreationPolicy
-                as SdkOptional<ReposUpdateRequestBodyPullRequestCreationPolicy>,
-        isTemplate: identical(isTemplate, sdkOmittedValue)
-            ? this.isTemplate
-            : isTemplate as SdkOptional<bool>,
-        defaultBranch: identical(defaultBranch, sdkOmittedValue)
-            ? this.defaultBranch
-            : defaultBranch as SdkOptional<String>,
-        allowSquashMerge: identical(allowSquashMerge, sdkOmittedValue)
-            ? this.allowSquashMerge
-            : allowSquashMerge as SdkOptional<bool>,
-        allowMergeCommit: identical(allowMergeCommit, sdkOmittedValue)
-            ? this.allowMergeCommit
-            : allowMergeCommit as SdkOptional<bool>,
-        allowRebaseMerge: identical(allowRebaseMerge, sdkOmittedValue)
-            ? this.allowRebaseMerge
-            : allowRebaseMerge as SdkOptional<bool>,
-        allowAutoMerge: identical(allowAutoMerge, sdkOmittedValue)
-            ? this.allowAutoMerge
-            : allowAutoMerge as SdkOptional<bool>,
-        deleteBranchOnMerge: identical(deleteBranchOnMerge, sdkOmittedValue)
-            ? this.deleteBranchOnMerge
-            : deleteBranchOnMerge as SdkOptional<bool>,
-        allowUpdateBranch: identical(allowUpdateBranch, sdkOmittedValue)
-            ? this.allowUpdateBranch
-            : allowUpdateBranch as SdkOptional<bool>,
-        useSquashPrTitleAsDefault:
-            identical(useSquashPrTitleAsDefault, sdkOmittedValue)
-                ? this.useSquashPrTitleAsDefault
-                : useSquashPrTitleAsDefault as SdkOptional<bool>,
-        squashMergeCommitTitle: identical(
-                squashMergeCommitTitle, sdkOmittedValue)
-            ? this.squashMergeCommitTitle
-            : squashMergeCommitTitle
-                as SdkOptional<ReposUpdateRequestBodySquashMergeCommitTitle>,
-        squashMergeCommitMessage: identical(
-                squashMergeCommitMessage, sdkOmittedValue)
-            ? this.squashMergeCommitMessage
-            : squashMergeCommitMessage
-                as SdkOptional<ReposUpdateRequestBodySquashMergeCommitMessage>,
-        mergeCommitTitle: identical(mergeCommitTitle, sdkOmittedValue)
-            ? this.mergeCommitTitle
-            : mergeCommitTitle
-                as SdkOptional<ReposUpdateRequestBodyMergeCommitTitle>,
-        mergeCommitMessage: identical(mergeCommitMessage, sdkOmittedValue)
-            ? this.mergeCommitMessage
-            : mergeCommitMessage
-                as SdkOptional<ReposUpdateRequestBodyMergeCommitMessage>,
-        archived: identical(archived, sdkOmittedValue)
-            ? this.archived
-            : archived as SdkOptional<bool>,
-        allowForking: identical(allowForking, sdkOmittedValue)
-            ? this.allowForking
-            : allowForking as SdkOptional<bool>,
-        webCommitSignoffRequired:
-            identical(webCommitSignoffRequired, sdkOmittedValue)
-                ? this.webCommitSignoffRequired
-                : webCommitSignoffRequired as SdkOptional<bool>,
+  PullsCreateRequestBody _copyWith(
+          {Object? title = sdkOmittedValue,
+          Object? head = sdkOmittedValue,
+          Object? headRepo = sdkOmittedValue,
+          Object? base_ = sdkOmittedValue,
+          Object? body = sdkOmittedValue,
+          Object? maintainerCanModify = sdkOmittedValue,
+          Object? draft = sdkOmittedValue,
+          Object? issue = sdkOmittedValue}) =>
+      PullsCreateRequestBody(
+        title: identical(title, sdkOmittedValue)
+            ? this.title
+            : title as SdkOptional<String>,
+        head: identical(head, sdkOmittedValue) ? this.head : head as String,
+        headRepo: identical(headRepo, sdkOmittedValue)
+            ? this.headRepo
+            : headRepo as SdkOptional<String>,
+        base_: identical(base_, sdkOmittedValue) ? this.base_ : base_ as String,
+        body: identical(body, sdkOmittedValue)
+            ? this.body
+            : body as SdkOptional<String>,
+        maintainerCanModify: identical(maintainerCanModify, sdkOmittedValue)
+            ? this.maintainerCanModify
+            : maintainerCanModify as SdkOptional<bool>,
+        draft: identical(draft, sdkOmittedValue)
+            ? this.draft
+            : draft as SdkOptional<bool>,
+        issue: identical(issue, sdkOmittedValue)
+            ? this.issue
+            : issue as SdkOptional<int>,
       );
 
-  factory ReposUpdateRequestBody.fromJson(Map<String, dynamic> json) =>
-      ReposUpdateRequestBody(
-        name: json['name'] != null
-            ? SdkPresent((json['name'] as String?)!)
+  factory PullsCreateRequestBody.fromJson(Map<String, dynamic> json) =>
+      PullsCreateRequestBody(
+        title: json['title'] != null
+            ? SdkPresent((json['title'] as String?)!)
             : const SdkOmitted(),
-        description: json['description'] != null
-            ? SdkPresent((json['description'] as String?)!)
+        head: (json['head'] as String?)!,
+        headRepo: json['head_repo'] != null
+            ? SdkPresent((json['head_repo'] as String?)!)
             : const SdkOmitted(),
-        homepage: json['homepage'] != null
-            ? SdkPresent((json['homepage'] as String?)!)
+        base_: (json['base'] as String?)!,
+        body: json['body'] != null
+            ? SdkPresent((json['body'] as String?)!)
             : const SdkOmitted(),
-        private: json['private'] != null
-            ? SdkPresent((json['private'] as bool?)!)
+        maintainerCanModify: json['maintainer_can_modify'] != null
+            ? SdkPresent((json['maintainer_can_modify'] as bool?)!)
             : const SdkOmitted(),
-        visibility: json['visibility'] != null
-            ? SdkPresent((json['visibility'] != null
-                ? ReposUpdateRequestBodyVisibility.fromJson(
-                    json['visibility'] as String)
-                : null)!)
+        draft: json['draft'] != null
+            ? SdkPresent((json['draft'] as bool?)!)
             : const SdkOmitted(),
-        securityAndAnalysis: json.containsKey('security_and_analysis')
-            ? SdkPresent(json['security_and_analysis'] != null
-                ? ReposUpdateRequestBodySecurityAndAnalysis.fromJson(
-                    json['security_and_analysis'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        hasIssues: json['has_issues'] != null
-            ? SdkPresent((json['has_issues'] as bool?)!)
-            : const SdkOmitted(),
-        hasProjects: json['has_projects'] != null
-            ? SdkPresent((json['has_projects'] as bool?)!)
-            : const SdkOmitted(),
-        hasWiki: json['has_wiki'] != null
-            ? SdkPresent((json['has_wiki'] as bool?)!)
-            : const SdkOmitted(),
-        hasPullRequests: json['has_pull_requests'] != null
-            ? SdkPresent((json['has_pull_requests'] as bool?)!)
-            : const SdkOmitted(),
-        pullRequestCreationPolicy: json['pull_request_creation_policy'] != null
-            ? SdkPresent((json['pull_request_creation_policy'] != null
-                ? ReposUpdateRequestBodyPullRequestCreationPolicy.fromJson(
-                    json['pull_request_creation_policy'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        isTemplate: json['is_template'] != null
-            ? SdkPresent((json['is_template'] as bool?)!)
-            : const SdkOmitted(),
-        defaultBranch: json['default_branch'] != null
-            ? SdkPresent((json['default_branch'] as String?)!)
-            : const SdkOmitted(),
-        allowSquashMerge: json['allow_squash_merge'] != null
-            ? SdkPresent((json['allow_squash_merge'] as bool?)!)
-            : const SdkOmitted(),
-        allowMergeCommit: json['allow_merge_commit'] != null
-            ? SdkPresent((json['allow_merge_commit'] as bool?)!)
-            : const SdkOmitted(),
-        allowRebaseMerge: json['allow_rebase_merge'] != null
-            ? SdkPresent((json['allow_rebase_merge'] as bool?)!)
-            : const SdkOmitted(),
-        allowAutoMerge: json['allow_auto_merge'] != null
-            ? SdkPresent((json['allow_auto_merge'] as bool?)!)
-            : const SdkOmitted(),
-        deleteBranchOnMerge: json['delete_branch_on_merge'] != null
-            ? SdkPresent((json['delete_branch_on_merge'] as bool?)!)
-            : const SdkOmitted(),
-        allowUpdateBranch: json['allow_update_branch'] != null
-            ? SdkPresent((json['allow_update_branch'] as bool?)!)
-            : const SdkOmitted(),
-        useSquashPrTitleAsDefault:
-            json['use_squash_pr_title_as_default'] != null
-                ? SdkPresent((json['use_squash_pr_title_as_default'] as bool?)!)
-                : const SdkOmitted(),
-        squashMergeCommitTitle: json['squash_merge_commit_title'] != null
-            ? SdkPresent((json['squash_merge_commit_title'] != null
-                ? ReposUpdateRequestBodySquashMergeCommitTitle.fromJson(
-                    json['squash_merge_commit_title'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        squashMergeCommitMessage: json['squash_merge_commit_message'] != null
-            ? SdkPresent((json['squash_merge_commit_message'] != null
-                ? ReposUpdateRequestBodySquashMergeCommitMessage.fromJson(
-                    json['squash_merge_commit_message'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        mergeCommitTitle: json['merge_commit_title'] != null
-            ? SdkPresent((json['merge_commit_title'] != null
-                ? ReposUpdateRequestBodyMergeCommitTitle.fromJson(
-                    json['merge_commit_title'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        mergeCommitMessage: json['merge_commit_message'] != null
-            ? SdkPresent((json['merge_commit_message'] != null
-                ? ReposUpdateRequestBodyMergeCommitMessage.fromJson(
-                    json['merge_commit_message'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        archived: json['archived'] != null
-            ? SdkPresent((json['archived'] as bool?)!)
-            : const SdkOmitted(),
-        allowForking: json['allow_forking'] != null
-            ? SdkPresent((json['allow_forking'] as bool?)!)
-            : const SdkOmitted(),
-        webCommitSignoffRequired: json['web_commit_signoff_required'] != null
-            ? SdkPresent((json['web_commit_signoff_required'] as bool?)!)
+        issue: json['issue'] != null
+            ? SdkPresent(((json['issue'] as num?)?.toInt())!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (name) {
+        ...switch (title) {
           SdkPresent<String>(value: final value) => {
-              'name': value,
+              'title': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (description) {
+        'head': head,
+        ...switch (headRepo) {
           SdkPresent<String>(value: final value) => {
-              'description': value,
+              'head_repo': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (homepage) {
+        'base': base_,
+        ...switch (body) {
           SdkPresent<String>(value: final value) => {
-              'homepage': value,
+              'body': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (private) {
+        ...switch (maintainerCanModify) {
           SdkPresent<bool>(value: final value) => {
-              'private': value,
+              'maintainer_can_modify': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (visibility) {
-          SdkPresent<ReposUpdateRequestBodyVisibility>(value: final value) => {
-              'visibility': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (securityAndAnalysis) {
-          SdkPresent<ReposUpdateRequestBodySecurityAndAnalysis?>(
-            value: final value
-          ) =>
-            {
-              'security_and_analysis': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (hasIssues) {
+        ...switch (draft) {
           SdkPresent<bool>(value: final value) => {
-              'has_issues': value,
+              'draft': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (hasProjects) {
-          SdkPresent<bool>(value: final value) => {
-              'has_projects': value,
+        ...switch (issue) {
+          SdkPresent<int>(value: final value) => {
+              'issue': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (hasWiki) {
-          SdkPresent<bool>(value: final value) => {
-              'has_wiki': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (hasPullRequests) {
-          SdkPresent<bool>(value: final value) => {
-              'has_pull_requests': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pullRequestCreationPolicy) {
-          SdkPresent<ReposUpdateRequestBodyPullRequestCreationPolicy>(
-            value: final value
-          ) =>
-            {
-              'pull_request_creation_policy': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (isTemplate) {
-          SdkPresent<bool>(value: final value) => {
-              'is_template': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (defaultBranch) {
+      };
+}
+
+class PullsUpdateReviewCommentRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The text of the reply to the review comment.
+  final String body;
+
+  const PullsUpdateReviewCommentRequestBody({required this.body});
+
+  PullsUpdateReviewCommentRequestBody Function({String body}) get copyWith =>
+      _copyWith;
+
+  PullsUpdateReviewCommentRequestBody _copyWith(
+          {Object? body = sdkOmittedValue}) =>
+      PullsUpdateReviewCommentRequestBody(
+        body: identical(body, sdkOmittedValue) ? this.body : body as String,
+      );
+
+  factory PullsUpdateReviewCommentRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      PullsUpdateReviewCommentRequestBody(
+        body: (json['body'] as String?)!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'body': body,
+      };
+}
+
+class PullsUpdateRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The title of the pull request.
+  final SdkOptional<String> title;
+
+  /// The contents of the pull request.
+  final SdkOptional<String> body;
+
+  /// State of this Pull Request. Either `open` or `closed`.
+  final SdkOptional<PullsUpdateRequestBodyState> state;
+
+  /// The name of the branch you want your changes pulled into. This should be an existing branch on the current repository. You cannot update the base branch on a pull request to point to another repository.
+  final SdkOptional<String> base_;
+
+  /// Indicates whether [maintainers can modify](https://docs.github.com/articles/allowing-changes-to-a-pull-request-branch-created-from-a-fork/) the pull request.
+  final SdkOptional<bool> maintainerCanModify;
+
+  const PullsUpdateRequestBody(
+      {this.title = const SdkOmitted(),
+      this.body = const SdkOmitted(),
+      this.state = const SdkOmitted(),
+      this.base_ = const SdkOmitted(),
+      this.maintainerCanModify = const SdkOmitted()});
+
+  PullsUpdateRequestBody Function(
+      {SdkOptional<String> title,
+      SdkOptional<String> body,
+      SdkOptional<PullsUpdateRequestBodyState> state,
+      SdkOptional<String> base_,
+      SdkOptional<bool> maintainerCanModify}) get copyWith => _copyWith;
+
+  PullsUpdateRequestBody _copyWith(
+          {Object? title = sdkOmittedValue,
+          Object? body = sdkOmittedValue,
+          Object? state = sdkOmittedValue,
+          Object? base_ = sdkOmittedValue,
+          Object? maintainerCanModify = sdkOmittedValue}) =>
+      PullsUpdateRequestBody(
+        title: identical(title, sdkOmittedValue)
+            ? this.title
+            : title as SdkOptional<String>,
+        body: identical(body, sdkOmittedValue)
+            ? this.body
+            : body as SdkOptional<String>,
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state as SdkOptional<PullsUpdateRequestBodyState>,
+        base_: identical(base_, sdkOmittedValue)
+            ? this.base_
+            : base_ as SdkOptional<String>,
+        maintainerCanModify: identical(maintainerCanModify, sdkOmittedValue)
+            ? this.maintainerCanModify
+            : maintainerCanModify as SdkOptional<bool>,
+      );
+
+  factory PullsUpdateRequestBody.fromJson(Map<String, dynamic> json) =>
+      PullsUpdateRequestBody(
+        title: json['title'] != null
+            ? SdkPresent((json['title'] as String?)!)
+            : const SdkOmitted(),
+        body: json['body'] != null
+            ? SdkPresent((json['body'] as String?)!)
+            : const SdkOmitted(),
+        state: json['state'] != null
+            ? SdkPresent((json['state'] != null
+                ? PullsUpdateRequestBodyState.fromJson(json['state'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        base_: json['base'] != null
+            ? SdkPresent((json['base'] as String?)!)
+            : const SdkOmitted(),
+        maintainerCanModify: json['maintainer_can_modify'] != null
+            ? SdkPresent((json['maintainer_can_modify'] as bool?)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (title) {
           SdkPresent<String>(value: final value) => {
-              'default_branch': value,
+              'title': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (allowSquashMerge) {
+        ...switch (body) {
+          SdkPresent<String>(value: final value) => {
+              'body': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (state) {
+          SdkPresent<PullsUpdateRequestBodyState>(value: final value) => {
+              'state': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (base_) {
+          SdkPresent<String>(value: final value) => {
+              'base': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (maintainerCanModify) {
           SdkPresent<bool>(value: final value) => {
-              'allow_squash_merge': value,
+              'maintainer_can_modify': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (allowMergeCommit) {
-          SdkPresent<bool>(value: final value) => {
-              'allow_merge_commit': value,
+      };
+}
+
+class PullsCreateReviewCommentRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The text of the review comment.
+  final String body;
+
+  /// The SHA of the commit needing a comment. Not using the latest commit SHA may render your comment outdated if a subsequent commit modifies the line you specify as the `position`.
+  final String commitId;
+
+  /// The relative path to the file that necessitates a comment.
+  final String path;
+
+  /// **This parameter is closing down. Use `line` instead**. The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. The position value equals the number of lines down from the first "@@" hunk header in the file you want to add a comment. The line just below the "@@" line is position 1, the next line is position 2, and so on. The position in the diff continues to increase through lines of whitespace and additional hunks until the beginning of a new file.
+  final SdkOptional<int> position;
+
+  /// In a split diff view, the side of the diff that the pull request's changes appear on. Can be `LEFT` or `RIGHT`. Use `LEFT` for deletions that appear in red. Use `RIGHT` for additions that appear in green or unchanged lines that appear in white and are shown for context. For a multi-line comment, side represents whether the last line of the comment range is a deletion or addition. For more information, see "[Diff view options](https://docs.github.com/articles/about-comparing-branches-in-pull-requests#diff-view-options)" in the GitHub Help documentation.
+  final SdkOptional<PullsCreateReviewCommentRequestBodySide> side;
+
+  /// **Required unless using `subject_type:file`**. The line of the blob in the pull request diff that the comment applies to. For a multi-line comment, the last line of the range that your comment applies to.
+  final SdkOptional<int> line;
+
+  /// **Required when using multi-line comments unless using `in_reply_to`**. The `start_line` is the first line in the pull request diff that your multi-line comment applies to. To learn more about multi-line comments, see "[Commenting on a pull request](https://docs.github.com/articles/commenting-on-a-pull-request#adding-line-comments-to-a-pull-request)" in the GitHub Help documentation.
+  final SdkOptional<int> startLine;
+
+  /// **Required when using multi-line comments unless using `in_reply_to`**. The `start_side` is the starting side of the diff that the comment applies to. Can be `LEFT` or `RIGHT`. To learn more about multi-line comments, see "[Commenting on a pull request](https://docs.github.com/articles/commenting-on-a-pull-request#adding-line-comments-to-a-pull-request)" in the GitHub Help documentation. See `side` in this table for additional context.
+  final SdkOptional<PullsCreateReviewCommentRequestBodyStartSide> startSide;
+
+  /// The ID of the review comment to reply to. To find the ID of a review comment with "List review comments on a pull request". When specified, all parameters other than `body` in the request body are ignored.
+  final SdkOptional<int> inReplyTo;
+
+  /// The level at which the comment is targeted.
+  final SdkOptional<PullsCreateReviewCommentRequestBodySubjectType> subjectType;
+
+  const PullsCreateReviewCommentRequestBody(
+      {required this.body,
+      required this.commitId,
+      required this.path,
+      this.position = const SdkOmitted(),
+      this.side = const SdkOmitted(),
+      this.line = const SdkOmitted(),
+      this.startLine = const SdkOmitted(),
+      this.startSide = const SdkOmitted(),
+      this.inReplyTo = const SdkOmitted(),
+      this.subjectType = const SdkOmitted()});
+
+  PullsCreateReviewCommentRequestBody Function(
+      {String body,
+      String commitId,
+      String path,
+      SdkOptional<int> position,
+      SdkOptional<PullsCreateReviewCommentRequestBodySide> side,
+      SdkOptional<int> line,
+      SdkOptional<int> startLine,
+      SdkOptional<PullsCreateReviewCommentRequestBodyStartSide> startSide,
+      SdkOptional<int> inReplyTo,
+      SdkOptional<PullsCreateReviewCommentRequestBodySubjectType>
+          subjectType}) get copyWith => _copyWith;
+
+  PullsCreateReviewCommentRequestBody _copyWith(
+          {Object? body = sdkOmittedValue,
+          Object? commitId = sdkOmittedValue,
+          Object? path = sdkOmittedValue,
+          Object? position = sdkOmittedValue,
+          Object? side = sdkOmittedValue,
+          Object? line = sdkOmittedValue,
+          Object? startLine = sdkOmittedValue,
+          Object? startSide = sdkOmittedValue,
+          Object? inReplyTo = sdkOmittedValue,
+          Object? subjectType = sdkOmittedValue}) =>
+      PullsCreateReviewCommentRequestBody(
+        body: identical(body, sdkOmittedValue) ? this.body : body as String,
+        commitId: identical(commitId, sdkOmittedValue)
+            ? this.commitId
+            : commitId as String,
+        path: identical(path, sdkOmittedValue) ? this.path : path as String,
+        position: identical(position, sdkOmittedValue)
+            ? this.position
+            : position as SdkOptional<int>,
+        side: identical(side, sdkOmittedValue)
+            ? this.side
+            : side as SdkOptional<PullsCreateReviewCommentRequestBodySide>,
+        line: identical(line, sdkOmittedValue)
+            ? this.line
+            : line as SdkOptional<int>,
+        startLine: identical(startLine, sdkOmittedValue)
+            ? this.startLine
+            : startLine as SdkOptional<int>,
+        startSide: identical(startSide, sdkOmittedValue)
+            ? this.startSide
+            : startSide
+                as SdkOptional<PullsCreateReviewCommentRequestBodyStartSide>,
+        inReplyTo: identical(inReplyTo, sdkOmittedValue)
+            ? this.inReplyTo
+            : inReplyTo as SdkOptional<int>,
+        subjectType: identical(subjectType, sdkOmittedValue)
+            ? this.subjectType
+            : subjectType
+                as SdkOptional<PullsCreateReviewCommentRequestBodySubjectType>,
+      );
+
+  factory PullsCreateReviewCommentRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      PullsCreateReviewCommentRequestBody(
+        body: (json['body'] as String?)!,
+        commitId: (json['commit_id'] as String?)!,
+        path: (json['path'] as String?)!,
+        position: json['position'] != null
+            ? SdkPresent(((json['position'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        side: json['side'] != null
+            ? SdkPresent((json['side'] != null
+                ? PullsCreateReviewCommentRequestBodySide.fromJson(
+                    json['side'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        line: json['line'] != null
+            ? SdkPresent(((json['line'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        startLine: json['start_line'] != null
+            ? SdkPresent(((json['start_line'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        startSide: json['start_side'] != null
+            ? SdkPresent((json['start_side'] != null
+                ? PullsCreateReviewCommentRequestBodyStartSide.fromJson(
+                    json['start_side'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        inReplyTo: json['in_reply_to'] != null
+            ? SdkPresent(((json['in_reply_to'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        subjectType: json['subject_type'] != null
+            ? SdkPresent((json['subject_type'] != null
+                ? PullsCreateReviewCommentRequestBodySubjectType.fromJson(
+                    json['subject_type'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        'body': body,
+        'commit_id': commitId,
+        'path': path,
+        ...switch (position) {
+          SdkPresent<int>(value: final value) => {
+              'position': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (allowRebaseMerge) {
-          SdkPresent<bool>(value: final value) => {
-              'allow_rebase_merge': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (allowAutoMerge) {
-          SdkPresent<bool>(value: final value) => {
-              'allow_auto_merge': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (deleteBranchOnMerge) {
-          SdkPresent<bool>(value: final value) => {
-              'delete_branch_on_merge': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (allowUpdateBranch) {
-          SdkPresent<bool>(value: final value) => {
-              'allow_update_branch': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (useSquashPrTitleAsDefault) {
-          SdkPresent<bool>(value: final value) => {
-              'use_squash_pr_title_as_default': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (squashMergeCommitTitle) {
-          SdkPresent<ReposUpdateRequestBodySquashMergeCommitTitle>(
+        ...switch (side) {
+          SdkPresent<PullsCreateReviewCommentRequestBodySide>(
             value: final value
           ) =>
             {
-              'squash_merge_commit_title': value.toJson(),
+              'side': value.toJson(),
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (squashMergeCommitMessage) {
-          SdkPresent<ReposUpdateRequestBodySquashMergeCommitMessage>(
+        ...switch (line) {
+          SdkPresent<int>(value: final value) => {
+              'line': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (startLine) {
+          SdkPresent<int>(value: final value) => {
+              'start_line': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (startSide) {
+          SdkPresent<PullsCreateReviewCommentRequestBodyStartSide>(
             value: final value
           ) =>
             {
-              'squash_merge_commit_message': value.toJson(),
+              'start_side': value.toJson(),
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (mergeCommitTitle) {
-          SdkPresent<ReposUpdateRequestBodyMergeCommitTitle>(
+        ...switch (inReplyTo) {
+          SdkPresent<int>(value: final value) => {
+              'in_reply_to': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (subjectType) {
+          SdkPresent<PullsCreateReviewCommentRequestBodySubjectType>(
             value: final value
           ) =>
             {
-              'merge_commit_title': value.toJson(),
+              'subject_type': value.toJson(),
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (mergeCommitMessage) {
-          SdkPresent<ReposUpdateRequestBodyMergeCommitMessage>(
-            value: final value
-          ) =>
-            {
-              'merge_commit_message': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (archived) {
-          SdkPresent<bool>(value: final value) => {
-              'archived': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (allowForking) {
-          SdkPresent<bool>(value: final value) => {
-              'allow_forking': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (webCommitSignoffRequired) {
-          SdkPresent<bool>(value: final value) => {
-              'web_commit_signoff_required': value,
-            },
-          _ => const <String, dynamic>{},
-        },
+      };
+}
+
+class PullsCreateReplyForReviewCommentRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The text of the review comment.
+  final String body;
+
+  const PullsCreateReplyForReviewCommentRequestBody({required this.body});
+
+  PullsCreateReplyForReviewCommentRequestBody Function({String body})
+      get copyWith => _copyWith;
+
+  PullsCreateReplyForReviewCommentRequestBody _copyWith(
+          {Object? body = sdkOmittedValue}) =>
+      PullsCreateReplyForReviewCommentRequestBody(
+        body: identical(body, sdkOmittedValue) ? this.body : body as String,
+      );
+
+  factory PullsCreateReplyForReviewCommentRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      PullsCreateReplyForReviewCommentRequestBody(
+        body: (json['body'] as String?)!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'body': body,
       };
 }

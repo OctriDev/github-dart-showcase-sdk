@@ -4,611 +4,340 @@
 part of 'inline.dart';
 
 // Inline operation models (part 339)
-class AgentTasksGetTaskByRepoAndIdResponse {
+class CodeSecurityAttachEnterpriseConfigurationRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Unique task identifier
-  final String id;
+  /// The type of repositories to attach the configuration to.
+  final CodeSecurityAttachEnterpriseConfigurationRequestBodyScope scope;
 
-  /// API URL for this task
-  final SdkOptional<String> url;
+  const CodeSecurityAttachEnterpriseConfigurationRequestBody(
+      {required this.scope});
 
-  /// Web URL for this task
-  final SdkOptional<String> htmlUrl;
+  CodeSecurityAttachEnterpriseConfigurationRequestBody Function(
+          {CodeSecurityAttachEnterpriseConfigurationRequestBodyScope scope})
+      get copyWith => _copyWith;
 
-  /// Human-readable name derived from the task prompt
-  final SdkOptional<String> name;
+  CodeSecurityAttachEnterpriseConfigurationRequestBody _copyWith(
+          {Object? scope = sdkOmittedValue}) =>
+      CodeSecurityAttachEnterpriseConfigurationRequestBody(
+        scope: identical(scope, sdkOmittedValue)
+            ? this.scope
+            : scope
+                as CodeSecurityAttachEnterpriseConfigurationRequestBodyScope,
+      );
 
-  /// The entity who created this task
-  final SdkOptional<AgentTasksGetTaskByRepoAndIdResponseVariant0CreatorVariant0>
-      creator;
+  factory CodeSecurityAttachEnterpriseConfigurationRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      CodeSecurityAttachEnterpriseConfigurationRequestBody(
+        scope: (json['scope'] != null
+            ? CodeSecurityAttachEnterpriseConfigurationRequestBodyScope
+                .fromJson(json['scope'] as String)
+            : null)!,
+      );
 
-  /// Type of the task creator
-  final SdkOptional<AgentTasksGetTaskByRepoAndIdResponseVariant0CreatorType>
-      creatorType;
+  Map<String, dynamic> toJson() => {
+        'scope': scope.toJson(),
+      };
+}
 
-  /// User objects of collaborators on this task
+class CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// Specify which types of repository this security configuration should be applied to by default.
+  final SdkOptional<
+          CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestBodyDefaultForNewRepos>
+      defaultForNewRepos;
+
+  const CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestBody(
+      {this.defaultForNewRepos = const SdkOmitted()});
+
+  CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestBody Function(
+      {SdkOptional<
+              CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestBodyDefaultForNewRepos>
+          defaultForNewRepos}) get copyWith => _copyWith;
+
+  CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestBody _copyWith(
+          {Object? defaultForNewRepos = sdkOmittedValue}) =>
+      CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestBody(
+        defaultForNewRepos: identical(defaultForNewRepos, sdkOmittedValue)
+            ? this.defaultForNewRepos
+            : defaultForNewRepos as SdkOptional<
+                CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestBodyDefaultForNewRepos>,
+      );
+
+  factory CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestBody(
+        defaultForNewRepos: json['default_for_new_repos'] != null
+            ? SdkPresent((json['default_for_new_repos'] != null
+                ? CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestBodyDefaultForNewRepos
+                    .fromJson(json['default_for_new_repos'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (defaultForNewRepos) {
+          SdkPresent<
+                CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestBodyDefaultForNewRepos>(
+            value: final value
+          ) =>
+            {
+              'default_for_new_repos': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class CodeSecuritySetConfigurationAsDefaultForEnterpriseResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// Specifies which types of repository this security configuration is applied to by default.
+  final SdkOptional<
+          CodeSecuritySetConfigurationAsDefaultForEnterpriseResponseDefaultForNewRepos>
+      defaultForNewRepos;
+
+  /// A code security configuration
+  final SdkOptional<CodeSecurityConfiguration> configuration;
+
+  const CodeSecuritySetConfigurationAsDefaultForEnterpriseResponse(
+      {this.defaultForNewRepos = const SdkOmitted(),
+      this.configuration = const SdkOmitted()});
+
+  CodeSecuritySetConfigurationAsDefaultForEnterpriseResponse Function(
+      {SdkOptional<
+              CodeSecuritySetConfigurationAsDefaultForEnterpriseResponseDefaultForNewRepos>
+          defaultForNewRepos,
+      SdkOptional<CodeSecurityConfiguration>
+          configuration}) get copyWith => _copyWith;
+
+  CodeSecuritySetConfigurationAsDefaultForEnterpriseResponse _copyWith(
+          {Object? defaultForNewRepos = sdkOmittedValue,
+          Object? configuration = sdkOmittedValue}) =>
+      CodeSecuritySetConfigurationAsDefaultForEnterpriseResponse(
+        defaultForNewRepos: identical(defaultForNewRepos, sdkOmittedValue)
+            ? this.defaultForNewRepos
+            : defaultForNewRepos as SdkOptional<
+                CodeSecuritySetConfigurationAsDefaultForEnterpriseResponseDefaultForNewRepos>,
+        configuration: identical(configuration, sdkOmittedValue)
+            ? this.configuration
+            : configuration as SdkOptional<CodeSecurityConfiguration>,
+      );
+
+  factory CodeSecuritySetConfigurationAsDefaultForEnterpriseResponse.fromJson(
+          Map<String, dynamic> json) =>
+      CodeSecuritySetConfigurationAsDefaultForEnterpriseResponse(
+        defaultForNewRepos: json['default_for_new_repos'] != null
+            ? SdkPresent((json['default_for_new_repos'] != null
+                ? CodeSecuritySetConfigurationAsDefaultForEnterpriseResponseDefaultForNewRepos
+                    .fromJson(json['default_for_new_repos'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        configuration: json['configuration'] != null
+            ? SdkPresent((json['configuration'] != null
+                ? CodeSecurityConfiguration.fromJson(
+                    json['configuration'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (defaultForNewRepos) {
+          SdkPresent<
+                CodeSecuritySetConfigurationAsDefaultForEnterpriseResponseDefaultForNewRepos>(
+            value: final value
+          ) =>
+            {
+              'default_for_new_repos': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (configuration) {
+          SdkPresent<CodeSecurityConfiguration>(value: final value) => {
+              'configuration': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+/// Feature options for Automatic dependency submission
+class CodeSecurityCreateConfigurationRequestBodyDependencyGraphAutosubmitActionOptions {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// Whether to use runners labeled with 'dependency-submission' or standard GitHub runners.
+  final SdkOptional<bool> labeledRunners;
+
+  const CodeSecurityCreateConfigurationRequestBodyDependencyGraphAutosubmitActionOptions(
+      {this.labeledRunners = const SdkOmitted()});
+
+  CodeSecurityCreateConfigurationRequestBodyDependencyGraphAutosubmitActionOptions
+      Function({SdkOptional<bool> labeledRunners}) get copyWith => _copyWith;
+
+  CodeSecurityCreateConfigurationRequestBodyDependencyGraphAutosubmitActionOptions
+      _copyWith({Object? labeledRunners = sdkOmittedValue}) =>
+          CodeSecurityCreateConfigurationRequestBodyDependencyGraphAutosubmitActionOptions(
+            labeledRunners: identical(labeledRunners, sdkOmittedValue)
+                ? this.labeledRunners
+                : labeledRunners as SdkOptional<bool>,
+          );
+
+  factory CodeSecurityCreateConfigurationRequestBodyDependencyGraphAutosubmitActionOptions.fromJson(
+          Map<String, dynamic> json) =>
+      CodeSecurityCreateConfigurationRequestBodyDependencyGraphAutosubmitActionOptions(
+        labeledRunners: json['labeled_runners'] != null
+            ? SdkPresent((json['labeled_runners'] as bool?)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (labeledRunners) {
+          SdkPresent<bool>(value: final value) => {
+              'labeled_runners': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The ID of the team or role selected as a bypass reviewer
+  final int reviewerId;
+
+  /// The type of the bypass reviewer
+  final CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemReviewerType
+      reviewerType;
+
+  /// The bypass mode for the reviewer
+  final SdkOptional<
+          CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemMode>
+      mode;
+
+  const CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem(
+      {required this.reviewerId,
+      required this.reviewerType,
+      this.mode = const SdkOmitted()});
+
+  CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem Function(
+      {int reviewerId,
+      CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemReviewerType
+          reviewerType,
+      SdkOptional<
+              CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemMode>
+          mode}) get copyWith => _copyWith;
+
+  CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem
+      _copyWith(
+              {Object? reviewerId = sdkOmittedValue,
+              Object? reviewerType = sdkOmittedValue,
+              Object? mode = sdkOmittedValue}) =>
+          CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem(
+            reviewerId: identical(reviewerId, sdkOmittedValue)
+                ? this.reviewerId
+                : reviewerId as int,
+            reviewerType: identical(reviewerType, sdkOmittedValue)
+                ? this.reviewerType
+                : reviewerType
+                    as CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemReviewerType,
+            mode: identical(mode, sdkOmittedValue)
+                ? this.mode
+                : mode as SdkOptional<
+                    CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemMode>,
+          );
+
+  factory CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem.fromJson(
+          Map<String, dynamic> json) =>
+      CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem(
+        reviewerId: ((json['reviewer_id'] as num?)?.toInt())!,
+        reviewerType: (json['reviewer_type'] != null
+            ? CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemReviewerType
+                .fromJson(json['reviewer_type'] as String)
+            : null)!,
+        mode: json['mode'] != null
+            ? SdkPresent((json['mode'] != null
+                ? CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemMode
+                    .fromJson(json['mode'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        'reviewer_id': reviewerId,
+        'reviewer_type': reviewerType.toJson(),
+        ...switch (mode) {
+          SdkPresent<
+                CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemMode>(
+            value: final value
+          ) =>
+            {
+              'mode': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+/// Feature options for secret scanning delegated bypass
+class CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptions {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The bypass reviewers for secret scanning delegated bypass
   final SdkOptional<
           List<
-              AgentTasksGetTaskByRepoAndIdResponseVariant0UserCollaboratorsItem>>
-      userCollaborators;
+              CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem>>
+      reviewers;
 
-  /// The owner of the repository
-  final SdkOptional<AgentTasksGetTaskByRepoAndIdResponseVariant0Owner> owner;
+  const CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptions(
+      {this.reviewers = const SdkOmitted()});
 
-  /// The repository this task belongs to
-  final SdkOptional<AgentTasksGetTaskByRepoAndIdResponseVariant0Repository>
-      repository;
-
-  /// Current state of the task, derived from its most recent session
-  final AgentTasksGetTaskByRepoAndIdResponseVariant0State state;
-
-  /// Number of sessions in this task
-  final SdkOptional<int> sessionCount;
-
-  /// Resources created by this task (PRs, branches, etc.)
-  final SdkOptional<
-          List<AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItem>>
-      artifacts;
-
-  /// Timestamp when the task was archived, null if not archived
-  final SdkOptional<String?> archivedAt;
-
-  /// Timestamp of the most recent update
-  final SdkOptional<String> updatedAt;
-
-  /// Timestamp when the task was created
-  final String createdAt;
-
-  /// Custom agent metadata associated with this task
-  final SdkOptional<AgentTasksGetTaskByRepoAndIdResponseVariant0CustomAgent>
-      customAgent;
-
-  /// Sessions associated with this task
-  final SdkOptional<
-      List<AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItem>> sessions;
-
-  const AgentTasksGetTaskByRepoAndIdResponse(
-      {required this.id,
-      this.url = const SdkOmitted(),
-      this.htmlUrl = const SdkOmitted(),
-      this.name = const SdkOmitted(),
-      this.creator = const SdkOmitted(),
-      this.creatorType = const SdkOmitted(),
-      this.userCollaborators = const SdkOmitted(),
-      this.owner = const SdkOmitted(),
-      this.repository = const SdkOmitted(),
-      required this.state,
-      this.sessionCount = const SdkOmitted(),
-      this.artifacts = const SdkOmitted(),
-      this.archivedAt = const SdkOmitted(),
-      this.updatedAt = const SdkOmitted(),
-      required this.createdAt,
-      this.customAgent = const SdkOmitted(),
-      this.sessions = const SdkOmitted()});
-
-  AgentTasksGetTaskByRepoAndIdResponse Function(
-      {String id,
-      SdkOptional<String> url,
-      SdkOptional<String> htmlUrl,
-      SdkOptional<String> name,
-      SdkOptional<AgentTasksGetTaskByRepoAndIdResponseVariant0CreatorVariant0>
-          creator,
-      SdkOptional<AgentTasksGetTaskByRepoAndIdResponseVariant0CreatorType>
-          creatorType,
-      SdkOptional<
+  CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptions Function(
+      {SdkOptional<
               List<
-                  AgentTasksGetTaskByRepoAndIdResponseVariant0UserCollaboratorsItem>>
-          userCollaborators,
-      SdkOptional<AgentTasksGetTaskByRepoAndIdResponseVariant0Owner> owner,
-      SdkOptional<AgentTasksGetTaskByRepoAndIdResponseVariant0Repository>
-          repository,
-      AgentTasksGetTaskByRepoAndIdResponseVariant0State state,
-      SdkOptional<int> sessionCount,
-      SdkOptional<
-              List<AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItem>>
-          artifacts,
-      SdkOptional<String?> archivedAt,
-      SdkOptional<String> updatedAt,
-      String createdAt,
-      SdkOptional<AgentTasksGetTaskByRepoAndIdResponseVariant0CustomAgent>
-          customAgent,
-      SdkOptional<
-              List<AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItem>>
-          sessions}) get copyWith => _copyWith;
+                  CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem>>
+          reviewers}) get copyWith => _copyWith;
 
-  AgentTasksGetTaskByRepoAndIdResponse _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? creator = sdkOmittedValue,
-          Object? creatorType = sdkOmittedValue,
-          Object? userCollaborators = sdkOmittedValue,
-          Object? owner = sdkOmittedValue,
-          Object? repository = sdkOmittedValue,
-          Object? state = sdkOmittedValue,
-          Object? sessionCount = sdkOmittedValue,
-          Object? artifacts = sdkOmittedValue,
-          Object? archivedAt = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? customAgent = sdkOmittedValue,
-          Object? sessions = sdkOmittedValue}) =>
-      AgentTasksGetTaskByRepoAndIdResponse(
-        id: identical(id, sdkOmittedValue) ? this.id : id as String,
-        url: identical(url, sdkOmittedValue)
-            ? this.url
-            : url as SdkOptional<String>,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as SdkOptional<String>,
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String>,
-        creator: identical(creator, sdkOmittedValue)
-            ? this.creator
-            : creator as SdkOptional<
-                AgentTasksGetTaskByRepoAndIdResponseVariant0CreatorVariant0>,
-        creatorType: identical(creatorType, sdkOmittedValue)
-            ? this.creatorType
-            : creatorType as SdkOptional<
-                AgentTasksGetTaskByRepoAndIdResponseVariant0CreatorType>,
-        userCollaborators: identical(userCollaborators, sdkOmittedValue)
-            ? this.userCollaborators
-            : userCollaborators as SdkOptional<
-                List<
-                    AgentTasksGetTaskByRepoAndIdResponseVariant0UserCollaboratorsItem>>,
-        owner: identical(owner, sdkOmittedValue)
-            ? this.owner
-            : owner as SdkOptional<
-                AgentTasksGetTaskByRepoAndIdResponseVariant0Owner>,
-        repository: identical(repository, sdkOmittedValue)
-            ? this.repository
-            : repository as SdkOptional<
-                AgentTasksGetTaskByRepoAndIdResponseVariant0Repository>,
-        state: identical(state, sdkOmittedValue)
-            ? this.state
-            : state as AgentTasksGetTaskByRepoAndIdResponseVariant0State,
-        sessionCount: identical(sessionCount, sdkOmittedValue)
-            ? this.sessionCount
-            : sessionCount as SdkOptional<int>,
-        artifacts: identical(artifacts, sdkOmittedValue)
-            ? this.artifacts
-            : artifacts as SdkOptional<
-                List<
-                    AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItem>>,
-        archivedAt: identical(archivedAt, sdkOmittedValue)
-            ? this.archivedAt
-            : archivedAt as SdkOptional<String?>,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as SdkOptional<String>,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        customAgent: identical(customAgent, sdkOmittedValue)
-            ? this.customAgent
-            : customAgent as SdkOptional<
-                AgentTasksGetTaskByRepoAndIdResponseVariant0CustomAgent>,
-        sessions: identical(sessions, sdkOmittedValue)
-            ? this.sessions
-            : sessions as SdkOptional<
-                List<AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItem>>,
-      );
+  CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptions
+      _copyWith({Object? reviewers = sdkOmittedValue}) =>
+          CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptions(
+            reviewers: identical(reviewers, sdkOmittedValue)
+                ? this.reviewers
+                : reviewers as SdkOptional<
+                    List<
+                        CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem>>,
+          );
 
-  factory AgentTasksGetTaskByRepoAndIdResponse.fromJson(
+  factory CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptions.fromJson(
           Map<String, dynamic> json) =>
-      AgentTasksGetTaskByRepoAndIdResponse(
-        id: (json['id'] as String?)!,
-        url: json['url'] != null
-            ? SdkPresent((json['url'] as String?)!)
-            : const SdkOmitted(),
-        htmlUrl: json['html_url'] != null
-            ? SdkPresent((json['html_url'] as String?)!)
-            : const SdkOmitted(),
-        name: json['name'] != null
-            ? SdkPresent((json['name'] as String?)!)
-            : const SdkOmitted(),
-        creator: json['creator'] != null
-            ? SdkPresent((json['creator'] != null
-                ? AgentTasksGetTaskByRepoAndIdResponseVariant0CreatorVariant0
-                    .fromJson(json['creator'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        creatorType: json['creator_type'] != null
-            ? SdkPresent((json['creator_type'] != null
-                ? AgentTasksGetTaskByRepoAndIdResponseVariant0CreatorType
-                    .fromJson(json['creator_type'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        userCollaborators: json['user_collaborators'] != null
-            ? SdkPresent(((json['user_collaborators'] as List?)
+      CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptions(
+        reviewers: json['reviewers'] != null
+            ? SdkPresent(((json['reviewers'] as List?)
                 ?.map((e) =>
-                    AgentTasksGetTaskByRepoAndIdResponseVariant0UserCollaboratorsItem
-                        .fromJson(e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-        owner: json['owner'] != null
-            ? SdkPresent((json['owner'] != null
-                ? AgentTasksGetTaskByRepoAndIdResponseVariant0Owner.fromJson(
-                    json['owner'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        repository: json['repository'] != null
-            ? SdkPresent((json['repository'] != null
-                ? AgentTasksGetTaskByRepoAndIdResponseVariant0Repository
-                    .fromJson(json['repository'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        state: (json['state'] != null
-            ? AgentTasksGetTaskByRepoAndIdResponseVariant0State.fromJson(
-                json['state'] as String)
-            : null)!,
-        sessionCount: json['session_count'] != null
-            ? SdkPresent(((json['session_count'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        artifacts: json['artifacts'] != null
-            ? SdkPresent(((json['artifacts'] as List?)
-                ?.map((e) =>
-                    AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItem
-                        .fromJson(e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-        archivedAt: json.containsKey('archived_at')
-            ? SdkPresent(json['archived_at'] as String?)
-            : const SdkOmitted(),
-        updatedAt: json['updated_at'] != null
-            ? SdkPresent((json['updated_at'] as String?)!)
-            : const SdkOmitted(),
-        createdAt: (json['created_at'] as String?)!,
-        customAgent: json['custom_agent'] != null
-            ? SdkPresent((json['custom_agent'] != null
-                ? AgentTasksGetTaskByRepoAndIdResponseVariant0CustomAgent
-                    .fromJson(json['custom_agent'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        sessions: json['sessions'] != null
-            ? SdkPresent(((json['sessions'] as List?)
-                ?.map((e) =>
-                    AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItem
+                    CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem
                         .fromJson(e as Map<String, dynamic>))
                 .toList())!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        ...switch (url) {
-          SdkPresent<String>(value: final value) => {
-              'url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (htmlUrl) {
-          SdkPresent<String>(value: final value) => {
-              'html_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (name) {
-          SdkPresent<String>(value: final value) => {
-              'name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (creator) {
-          SdkPresent<
-                AgentTasksGetTaskByRepoAndIdResponseVariant0CreatorVariant0>(
-            value: final value
-          ) =>
-            {
-              'creator': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (creatorType) {
-          SdkPresent<AgentTasksGetTaskByRepoAndIdResponseVariant0CreatorType>(
-            value: final value
-          ) =>
-            {
-              'creator_type': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (userCollaborators) {
+        ...switch (reviewers) {
           SdkPresent<
                 List<
-                    AgentTasksGetTaskByRepoAndIdResponseVariant0UserCollaboratorsItem>>(
+                    CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem>>(
             value: final value
           ) =>
             {
-              'user_collaborators': value.map((item) => item.toJson()).toList(),
+              'reviewers': value.map((item) => item.toJson()).toList(),
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (owner) {
-          SdkPresent<AgentTasksGetTaskByRepoAndIdResponseVariant0Owner>(
-            value: final value
-          ) =>
-            {
-              'owner': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (repository) {
-          SdkPresent<AgentTasksGetTaskByRepoAndIdResponseVariant0Repository>(
-            value: final value
-          ) =>
-            {
-              'repository': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'state': state.toJson(),
-        ...switch (sessionCount) {
-          SdkPresent<int>(value: final value) => {
-              'session_count': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (artifacts) {
-          SdkPresent<
-                List<
-                    AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItem>>(
-            value: final value
-          ) =>
-            {
-              'artifacts': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (archivedAt) {
-          SdkPresent<String?>(value: final value) => {
-              'archived_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (updatedAt) {
-          SdkPresent<String>(value: final value) => {
-              'updated_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'created_at': createdAt,
-        ...switch (customAgent) {
-          SdkPresent<AgentTasksGetTaskByRepoAndIdResponseVariant0CustomAgent>(
-            value: final value
-          ) =>
-            {
-              'custom_agent': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (sessions) {
-          SdkPresent<
-                List<AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItem>>(
-            value: final value
-          ) =>
-            {
-              'sessions': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-/// A GitHub user
-class AgentTasksListTasksResponseTasksItemCreatorVariant0 {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The unique identifier of the user
-  final SdkOptional<int> id;
-
-  const AgentTasksListTasksResponseTasksItemCreatorVariant0(
-      {this.id = const SdkOmitted()});
-
-  AgentTasksListTasksResponseTasksItemCreatorVariant0 Function(
-      {SdkOptional<int> id}) get copyWith => _copyWith;
-
-  AgentTasksListTasksResponseTasksItemCreatorVariant0 _copyWith(
-          {Object? id = sdkOmittedValue}) =>
-      AgentTasksListTasksResponseTasksItemCreatorVariant0(
-        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-      );
-
-  factory AgentTasksListTasksResponseTasksItemCreatorVariant0.fromJson(
-          Map<String, dynamic> json) =>
-      AgentTasksListTasksResponseTasksItemCreatorVariant0(
-        id: json['id'] != null
-            ? SdkPresent(((json['id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (id) {
-          SdkPresent<int>(value: final value) => {
-              'id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-/// A GitHub user
-class AgentTasksListTasksResponseTasksItemUserCollaboratorsItem {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The unique identifier of the user
-  final SdkOptional<int> id;
-
-  const AgentTasksListTasksResponseTasksItemUserCollaboratorsItem(
-      {this.id = const SdkOmitted()});
-
-  AgentTasksListTasksResponseTasksItemUserCollaboratorsItem Function(
-      {SdkOptional<int> id}) get copyWith => _copyWith;
-
-  AgentTasksListTasksResponseTasksItemUserCollaboratorsItem _copyWith(
-          {Object? id = sdkOmittedValue}) =>
-      AgentTasksListTasksResponseTasksItemUserCollaboratorsItem(
-        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-      );
-
-  factory AgentTasksListTasksResponseTasksItemUserCollaboratorsItem.fromJson(
-          Map<String, dynamic> json) =>
-      AgentTasksListTasksResponseTasksItemUserCollaboratorsItem(
-        id: json['id'] != null
-            ? SdkPresent(((json['id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (id) {
-          SdkPresent<int>(value: final value) => {
-              'id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-/// The owner of the repository
-class AgentTasksListTasksResponseTasksItemOwner {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The unique identifier of the user
-  final SdkOptional<int> id;
-
-  const AgentTasksListTasksResponseTasksItemOwner(
-      {this.id = const SdkOmitted()});
-
-  AgentTasksListTasksResponseTasksItemOwner Function({SdkOptional<int> id})
-      get copyWith => _copyWith;
-
-  AgentTasksListTasksResponseTasksItemOwner _copyWith(
-          {Object? id = sdkOmittedValue}) =>
-      AgentTasksListTasksResponseTasksItemOwner(
-        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-      );
-
-  factory AgentTasksListTasksResponseTasksItemOwner.fromJson(
-          Map<String, dynamic> json) =>
-      AgentTasksListTasksResponseTasksItemOwner(
-        id: json['id'] != null
-            ? SdkPresent(((json['id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (id) {
-          SdkPresent<int>(value: final value) => {
-              'id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-/// The repository this task belongs to
-class AgentTasksListTasksResponseTasksItemRepository {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The unique identifier of the repository
-  final SdkOptional<int> id;
-
-  const AgentTasksListTasksResponseTasksItemRepository(
-      {this.id = const SdkOmitted()});
-
-  AgentTasksListTasksResponseTasksItemRepository Function({SdkOptional<int> id})
-      get copyWith => _copyWith;
-
-  AgentTasksListTasksResponseTasksItemRepository _copyWith(
-          {Object? id = sdkOmittedValue}) =>
-      AgentTasksListTasksResponseTasksItemRepository(
-        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-      );
-
-  factory AgentTasksListTasksResponseTasksItemRepository.fromJson(
-          Map<String, dynamic> json) =>
-      AgentTasksListTasksResponseTasksItemRepository(
-        id: json['id'] != null
-            ? SdkPresent(((json['id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (id) {
-          SdkPresent<int>(value: final value) => {
-              'id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-/// A resource generated by the task
-class AgentTasksListTasksResponseTasksItemArtifactsItem {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Provider namespace
-  final AgentTasksListTasksResponseTasksItemArtifactsItemProvider provider;
-
-  /// Type of artifact. Available Values: `pull`, `branch`.
-  final AgentTasksListTasksResponseTasksItemArtifactsItemType type_;
-
-  /// Resource data (shape depends on type)
-  final TasksItemArtifactsItemData3 data;
-
-  const AgentTasksListTasksResponseTasksItemArtifactsItem(
-      {required this.provider, required this.type_, required this.data});
-
-  AgentTasksListTasksResponseTasksItemArtifactsItem Function(
-      {AgentTasksListTasksResponseTasksItemArtifactsItemProvider provider,
-      AgentTasksListTasksResponseTasksItemArtifactsItemType type_,
-      TasksItemArtifactsItemData3 data}) get copyWith => _copyWith;
-
-  AgentTasksListTasksResponseTasksItemArtifactsItem _copyWith(
-          {Object? provider = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue,
-          Object? data = sdkOmittedValue}) =>
-      AgentTasksListTasksResponseTasksItemArtifactsItem(
-        provider: identical(provider, sdkOmittedValue)
-            ? this.provider
-            : provider
-                as AgentTasksListTasksResponseTasksItemArtifactsItemProvider,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as AgentTasksListTasksResponseTasksItemArtifactsItemType,
-        data: identical(data, sdkOmittedValue)
-            ? this.data
-            : data as TasksItemArtifactsItemData3,
-      );
-
-  factory AgentTasksListTasksResponseTasksItemArtifactsItem.fromJson(
-          Map<String, dynamic> json) =>
-      AgentTasksListTasksResponseTasksItemArtifactsItem(
-        provider: (json['provider'] != null
-            ? AgentTasksListTasksResponseTasksItemArtifactsItemProvider
-                .fromJson(json['provider'] as String)
-            : null)!,
-        type_: (json['type'] != null
-            ? AgentTasksListTasksResponseTasksItemArtifactsItemType.fromJson(
-                json['type'] as String)
-            : null)!,
-        data: (json['data'] != null
-            ? TasksItemArtifactsItemData3.fromJson(json['data'])
-            : null)!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'provider': provider.toJson(),
-        'type': type_.toJson(),
-        'data': data.toJson(),
       };
 }

@@ -4,73 +4,41 @@
 part of 'inline.dart';
 
 // Inline operation models (part 149)
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhookPullRequestAutoMergeDisabledPullRequestAssigneesItemType {
-  final String value;
-
-  const WebhookPullRequestAutoMergeDisabledPullRequestAssigneesItemType._(
-      this.value);
-
-  factory WebhookPullRequestAutoMergeDisabledPullRequestAssigneesItemType.fromJson(
-          String value) =>
-      WebhookPullRequestAutoMergeDisabledPullRequestAssigneesItemType._(value);
-
-  static const bot =
-      WebhookPullRequestAutoMergeDisabledPullRequestAssigneesItemType._('Bot');
-  static const user =
-      WebhookPullRequestAutoMergeDisabledPullRequestAssigneesItemType._('User');
-  static const organization =
-      WebhookPullRequestAutoMergeDisabledPullRequestAssigneesItemType._(
-          'Organization');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is WebhookPullRequestAutoMergeDisabledPullRequestAssigneesItemType &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
 /// How the author is associated with the repository.
-final class WebhookPullRequestAutoMergeDisabledPullRequestAuthorAssociation {
+final class WebhookPullRequestReviewCommentEditedPullRequestAuthorAssociation {
   final String value;
 
-  const WebhookPullRequestAutoMergeDisabledPullRequestAuthorAssociation._(
+  const WebhookPullRequestReviewCommentEditedPullRequestAuthorAssociation._(
       this.value);
 
-  factory WebhookPullRequestAutoMergeDisabledPullRequestAuthorAssociation.fromJson(
+  factory WebhookPullRequestReviewCommentEditedPullRequestAuthorAssociation.fromJson(
           String value) =>
-      WebhookPullRequestAutoMergeDisabledPullRequestAuthorAssociation._(value);
+      WebhookPullRequestReviewCommentEditedPullRequestAuthorAssociation._(
+          value);
 
   static const collaborator =
-      WebhookPullRequestAutoMergeDisabledPullRequestAuthorAssociation._(
+      WebhookPullRequestReviewCommentEditedPullRequestAuthorAssociation._(
           'COLLABORATOR');
   static const contributor =
-      WebhookPullRequestAutoMergeDisabledPullRequestAuthorAssociation._(
+      WebhookPullRequestReviewCommentEditedPullRequestAuthorAssociation._(
           'CONTRIBUTOR');
   static const firstTimer =
-      WebhookPullRequestAutoMergeDisabledPullRequestAuthorAssociation._(
+      WebhookPullRequestReviewCommentEditedPullRequestAuthorAssociation._(
           'FIRST_TIMER');
   static const firstTimeContributor =
-      WebhookPullRequestAutoMergeDisabledPullRequestAuthorAssociation._(
+      WebhookPullRequestReviewCommentEditedPullRequestAuthorAssociation._(
           'FIRST_TIME_CONTRIBUTOR');
   static const mannequin =
-      WebhookPullRequestAutoMergeDisabledPullRequestAuthorAssociation._(
+      WebhookPullRequestReviewCommentEditedPullRequestAuthorAssociation._(
           'MANNEQUIN');
   static const member =
-      WebhookPullRequestAutoMergeDisabledPullRequestAuthorAssociation._(
+      WebhookPullRequestReviewCommentEditedPullRequestAuthorAssociation._(
           'MEMBER');
   static const none =
-      WebhookPullRequestAutoMergeDisabledPullRequestAuthorAssociation._('NONE');
+      WebhookPullRequestReviewCommentEditedPullRequestAuthorAssociation._(
+          'NONE');
   static const owner =
-      WebhookPullRequestAutoMergeDisabledPullRequestAuthorAssociation._(
+      WebhookPullRequestReviewCommentEditedPullRequestAuthorAssociation._(
           'OWNER');
 
   String toJson() => value;
@@ -81,7 +49,7 @@ final class WebhookPullRequestAutoMergeDisabledPullRequestAuthorAssociation {
   @override
   bool operator ==(Object other) =>
       other
-          is WebhookPullRequestAutoMergeDisabledPullRequestAuthorAssociation &&
+          is WebhookPullRequestReviewCommentEditedPullRequestAuthorAssociation &&
       other.value == value;
 
   @override
@@ -89,25 +57,25 @@ final class WebhookPullRequestAutoMergeDisabledPullRequestAuthorAssociation {
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
-final class WebhookPullRequestAutoMergeDisabledPullRequestAutoMergeEnabledByType {
+final class WebhookPullRequestReviewCommentEditedPullRequestAutoMergeEnabledByType {
   final String value;
 
-  const WebhookPullRequestAutoMergeDisabledPullRequestAutoMergeEnabledByType._(
+  const WebhookPullRequestReviewCommentEditedPullRequestAutoMergeEnabledByType._(
       this.value);
 
-  factory WebhookPullRequestAutoMergeDisabledPullRequestAutoMergeEnabledByType.fromJson(
+  factory WebhookPullRequestReviewCommentEditedPullRequestAutoMergeEnabledByType.fromJson(
           String value) =>
-      WebhookPullRequestAutoMergeDisabledPullRequestAutoMergeEnabledByType._(
+      WebhookPullRequestReviewCommentEditedPullRequestAutoMergeEnabledByType._(
           value);
 
   static const bot =
-      WebhookPullRequestAutoMergeDisabledPullRequestAutoMergeEnabledByType._(
+      WebhookPullRequestReviewCommentEditedPullRequestAutoMergeEnabledByType._(
           'Bot');
   static const user =
-      WebhookPullRequestAutoMergeDisabledPullRequestAutoMergeEnabledByType._(
+      WebhookPullRequestReviewCommentEditedPullRequestAutoMergeEnabledByType._(
           'User');
   static const organization =
-      WebhookPullRequestAutoMergeDisabledPullRequestAutoMergeEnabledByType._(
+      WebhookPullRequestReviewCommentEditedPullRequestAutoMergeEnabledByType._(
           'Organization');
 
   String toJson() => value;
@@ -118,7 +86,7 @@ final class WebhookPullRequestAutoMergeDisabledPullRequestAutoMergeEnabledByType
   @override
   bool operator ==(Object other) =>
       other
-          is WebhookPullRequestAutoMergeDisabledPullRequestAutoMergeEnabledByType &&
+          is WebhookPullRequestReviewCommentEditedPullRequestAutoMergeEnabledByType &&
       other.value == value;
 
   @override
@@ -126,25 +94,25 @@ final class WebhookPullRequestAutoMergeDisabledPullRequestAutoMergeEnabledByType
 }
 
 /// The merge method to use.
-final class WebhookPullRequestAutoMergeDisabledPullRequestAutoMergeMergeMethod {
+final class WebhookPullRequestReviewCommentEditedPullRequestAutoMergeMergeMethod {
   final String value;
 
-  const WebhookPullRequestAutoMergeDisabledPullRequestAutoMergeMergeMethod._(
+  const WebhookPullRequestReviewCommentEditedPullRequestAutoMergeMergeMethod._(
       this.value);
 
-  factory WebhookPullRequestAutoMergeDisabledPullRequestAutoMergeMergeMethod.fromJson(
+  factory WebhookPullRequestReviewCommentEditedPullRequestAutoMergeMergeMethod.fromJson(
           String value) =>
-      WebhookPullRequestAutoMergeDisabledPullRequestAutoMergeMergeMethod._(
+      WebhookPullRequestReviewCommentEditedPullRequestAutoMergeMergeMethod._(
           value);
 
   static const merge =
-      WebhookPullRequestAutoMergeDisabledPullRequestAutoMergeMergeMethod._(
+      WebhookPullRequestReviewCommentEditedPullRequestAutoMergeMergeMethod._(
           'merge');
   static const squash =
-      WebhookPullRequestAutoMergeDisabledPullRequestAutoMergeMergeMethod._(
+      WebhookPullRequestReviewCommentEditedPullRequestAutoMergeMergeMethod._(
           'squash');
   static const rebase =
-      WebhookPullRequestAutoMergeDisabledPullRequestAutoMergeMergeMethod._(
+      WebhookPullRequestReviewCommentEditedPullRequestAutoMergeMergeMethod._(
           'rebase');
 
   String toJson() => value;
@@ -155,7 +123,7 @@ final class WebhookPullRequestAutoMergeDisabledPullRequestAutoMergeMergeMethod {
   @override
   bool operator ==(Object other) =>
       other
-          is WebhookPullRequestAutoMergeDisabledPullRequestAutoMergeMergeMethod &&
+          is WebhookPullRequestReviewCommentEditedPullRequestAutoMergeMergeMethod &&
       other.value == value;
 
   @override
@@ -163,25 +131,25 @@ final class WebhookPullRequestAutoMergeDisabledPullRequestAutoMergeMergeMethod {
 }
 
 /// The default value for a merge commit message. - `PR_TITLE` - default to the pull request's title. - `PR_BODY` - default to the pull request's body. - `BLANK` - default to a blank commit message.
-final class WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoMergeCommitMessage {
+final class WebhookPullRequestReviewCommentEditedPullRequestBaseRepoMergeCommitMessage {
   final String value;
 
-  const WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoMergeCommitMessage._(
+  const WebhookPullRequestReviewCommentEditedPullRequestBaseRepoMergeCommitMessage._(
       this.value);
 
-  factory WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoMergeCommitMessage.fromJson(
+  factory WebhookPullRequestReviewCommentEditedPullRequestBaseRepoMergeCommitMessage.fromJson(
           String value) =>
-      WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoMergeCommitMessage
+      WebhookPullRequestReviewCommentEditedPullRequestBaseRepoMergeCommitMessage
           ._(value);
 
   static const prBody =
-      WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoMergeCommitMessage
+      WebhookPullRequestReviewCommentEditedPullRequestBaseRepoMergeCommitMessage
           ._('PR_BODY');
   static const prTitle =
-      WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoMergeCommitMessage
+      WebhookPullRequestReviewCommentEditedPullRequestBaseRepoMergeCommitMessage
           ._('PR_TITLE');
   static const blank =
-      WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoMergeCommitMessage
+      WebhookPullRequestReviewCommentEditedPullRequestBaseRepoMergeCommitMessage
           ._('BLANK');
 
   String toJson() => value;
@@ -192,7 +160,7 @@ final class WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoMergeCommitMes
   @override
   bool operator ==(Object other) =>
       other
-          is WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoMergeCommitMessage &&
+          is WebhookPullRequestReviewCommentEditedPullRequestBaseRepoMergeCommitMessage &&
       other.value == value;
 
   @override
@@ -200,23 +168,23 @@ final class WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoMergeCommitMes
 }
 
 /// The default value for a merge commit title. - `PR_TITLE` - default to the pull request's title. - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
-final class WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoMergeCommitTitle {
+final class WebhookPullRequestReviewCommentEditedPullRequestBaseRepoMergeCommitTitle {
   final String value;
 
-  const WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoMergeCommitTitle._(
+  const WebhookPullRequestReviewCommentEditedPullRequestBaseRepoMergeCommitTitle._(
       this.value);
 
-  factory WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoMergeCommitTitle.fromJson(
+  factory WebhookPullRequestReviewCommentEditedPullRequestBaseRepoMergeCommitTitle.fromJson(
           String value) =>
-      WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoMergeCommitTitle._(
-          value);
+      WebhookPullRequestReviewCommentEditedPullRequestBaseRepoMergeCommitTitle
+          ._(value);
 
   static const prTitle =
-      WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoMergeCommitTitle._(
-          'PR_TITLE');
+      WebhookPullRequestReviewCommentEditedPullRequestBaseRepoMergeCommitTitle
+          ._('PR_TITLE');
   static const mergeMessage =
-      WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoMergeCommitTitle._(
-          'MERGE_MESSAGE');
+      WebhookPullRequestReviewCommentEditedPullRequestBaseRepoMergeCommitTitle
+          ._('MERGE_MESSAGE');
 
   String toJson() => value;
 
@@ -226,7 +194,7 @@ final class WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoMergeCommitTit
   @override
   bool operator ==(Object other) =>
       other
-          is WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoMergeCommitTitle &&
+          is WebhookPullRequestReviewCommentEditedPullRequestBaseRepoMergeCommitTitle &&
       other.value == value;
 
   @override
@@ -234,22 +202,25 @@ final class WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoMergeCommitTit
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
-final class WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoOwnerType {
+final class WebhookPullRequestReviewCommentEditedPullRequestBaseRepoOwnerType {
   final String value;
 
-  const WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoOwnerType._(
+  const WebhookPullRequestReviewCommentEditedPullRequestBaseRepoOwnerType._(
       this.value);
 
-  factory WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoOwnerType.fromJson(
+  factory WebhookPullRequestReviewCommentEditedPullRequestBaseRepoOwnerType.fromJson(
           String value) =>
-      WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoOwnerType._(value);
+      WebhookPullRequestReviewCommentEditedPullRequestBaseRepoOwnerType._(
+          value);
 
   static const bot =
-      WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoOwnerType._('Bot');
+      WebhookPullRequestReviewCommentEditedPullRequestBaseRepoOwnerType._(
+          'Bot');
   static const user =
-      WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoOwnerType._('User');
+      WebhookPullRequestReviewCommentEditedPullRequestBaseRepoOwnerType._(
+          'User');
   static const organization =
-      WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoOwnerType._(
+      WebhookPullRequestReviewCommentEditedPullRequestBaseRepoOwnerType._(
           'Organization');
 
   String toJson() => value;
@@ -260,7 +231,7 @@ final class WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoOwnerType {
   @override
   bool operator ==(Object other) =>
       other
-          is WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoOwnerType &&
+          is WebhookPullRequestReviewCommentEditedPullRequestBaseRepoOwnerType &&
       other.value == value;
 
   @override
@@ -268,22 +239,22 @@ final class WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoOwnerType {
 }
 
 /// The policy controlling who can create pull requests: all or collaborators_only.
-final class WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoPullRequestCreationPolicy {
+final class WebhookPullRequestReviewCommentEditedPullRequestBaseRepoPullRequestCreationPolicy {
   final String value;
 
-  const WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoPullRequestCreationPolicy._(
+  const WebhookPullRequestReviewCommentEditedPullRequestBaseRepoPullRequestCreationPolicy._(
       this.value);
 
-  factory WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoPullRequestCreationPolicy.fromJson(
+  factory WebhookPullRequestReviewCommentEditedPullRequestBaseRepoPullRequestCreationPolicy.fromJson(
           String value) =>
-      WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoPullRequestCreationPolicy
+      WebhookPullRequestReviewCommentEditedPullRequestBaseRepoPullRequestCreationPolicy
           ._(value);
 
   static const all =
-      WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoPullRequestCreationPolicy
+      WebhookPullRequestReviewCommentEditedPullRequestBaseRepoPullRequestCreationPolicy
           ._('all');
   static const collaboratorsOnly =
-      WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoPullRequestCreationPolicy
+      WebhookPullRequestReviewCommentEditedPullRequestBaseRepoPullRequestCreationPolicy
           ._('collaborators_only');
 
   String toJson() => value;
@@ -294,7 +265,7 @@ final class WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoPullRequestCre
   @override
   bool operator ==(Object other) =>
       other
-          is WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoPullRequestCreationPolicy &&
+          is WebhookPullRequestReviewCommentEditedPullRequestBaseRepoPullRequestCreationPolicy &&
       other.value == value;
 
   @override
@@ -302,25 +273,25 @@ final class WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoPullRequestCre
 }
 
 /// The default value for a squash merge commit message: - `PR_BODY` - default to the pull request's body. - `COMMIT_MESSAGES` - default to the branch's commit messages. - `BLANK` - default to a blank commit message.
-final class WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCommitMessage {
+final class WebhookPullRequestReviewCommentEditedPullRequestBaseRepoSquashMergeCommitMessage {
   final String value;
 
-  const WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCommitMessage._(
+  const WebhookPullRequestReviewCommentEditedPullRequestBaseRepoSquashMergeCommitMessage._(
       this.value);
 
-  factory WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCommitMessage.fromJson(
+  factory WebhookPullRequestReviewCommentEditedPullRequestBaseRepoSquashMergeCommitMessage.fromJson(
           String value) =>
-      WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCommitMessage
+      WebhookPullRequestReviewCommentEditedPullRequestBaseRepoSquashMergeCommitMessage
           ._(value);
 
   static const prBody =
-      WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCommitMessage
+      WebhookPullRequestReviewCommentEditedPullRequestBaseRepoSquashMergeCommitMessage
           ._('PR_BODY');
   static const commitMessages =
-      WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCommitMessage
+      WebhookPullRequestReviewCommentEditedPullRequestBaseRepoSquashMergeCommitMessage
           ._('COMMIT_MESSAGES');
   static const blank =
-      WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCommitMessage
+      WebhookPullRequestReviewCommentEditedPullRequestBaseRepoSquashMergeCommitMessage
           ._('BLANK');
 
   String toJson() => value;
@@ -331,7 +302,7 @@ final class WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCom
   @override
   bool operator ==(Object other) =>
       other
-          is WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCommitMessage &&
+          is WebhookPullRequestReviewCommentEditedPullRequestBaseRepoSquashMergeCommitMessage &&
       other.value == value;
 
   @override
@@ -339,22 +310,22 @@ final class WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCom
 }
 
 /// The default value for a squash merge commit title: - `PR_TITLE` - default to the pull request's title. - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
-final class WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCommitTitle {
+final class WebhookPullRequestReviewCommentEditedPullRequestBaseRepoSquashMergeCommitTitle {
   final String value;
 
-  const WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCommitTitle._(
+  const WebhookPullRequestReviewCommentEditedPullRequestBaseRepoSquashMergeCommitTitle._(
       this.value);
 
-  factory WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCommitTitle.fromJson(
+  factory WebhookPullRequestReviewCommentEditedPullRequestBaseRepoSquashMergeCommitTitle.fromJson(
           String value) =>
-      WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCommitTitle
+      WebhookPullRequestReviewCommentEditedPullRequestBaseRepoSquashMergeCommitTitle
           ._(value);
 
   static const prTitle =
-      WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCommitTitle
+      WebhookPullRequestReviewCommentEditedPullRequestBaseRepoSquashMergeCommitTitle
           ._('PR_TITLE');
   static const commitOrPrTitle =
-      WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCommitTitle
+      WebhookPullRequestReviewCommentEditedPullRequestBaseRepoSquashMergeCommitTitle
           ._('COMMIT_OR_PR_TITLE');
 
   String toJson() => value;
@@ -365,7 +336,7 @@ final class WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCom
   @override
   bool operator ==(Object other) =>
       other
-          is WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCommitTitle &&
+          is WebhookPullRequestReviewCommentEditedPullRequestBaseRepoSquashMergeCommitTitle &&
       other.value == value;
 
   @override
@@ -373,24 +344,25 @@ final class WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoSquashMergeCom
 }
 
 /// Required enumerated value serialized in the `visibility` wire field.
-final class WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoVisibility {
+final class WebhookPullRequestReviewCommentEditedPullRequestBaseRepoVisibility {
   final String value;
 
-  const WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoVisibility._(
+  const WebhookPullRequestReviewCommentEditedPullRequestBaseRepoVisibility._(
       this.value);
 
-  factory WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoVisibility.fromJson(
+  factory WebhookPullRequestReviewCommentEditedPullRequestBaseRepoVisibility.fromJson(
           String value) =>
-      WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoVisibility._(value);
+      WebhookPullRequestReviewCommentEditedPullRequestBaseRepoVisibility._(
+          value);
 
   static const public =
-      WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoVisibility._(
+      WebhookPullRequestReviewCommentEditedPullRequestBaseRepoVisibility._(
           'public');
   static const private =
-      WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoVisibility._(
+      WebhookPullRequestReviewCommentEditedPullRequestBaseRepoVisibility._(
           'private');
   static const internal =
-      WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoVisibility._(
+      WebhookPullRequestReviewCommentEditedPullRequestBaseRepoVisibility._(
           'internal');
 
   String toJson() => value;
@@ -401,7 +373,7 @@ final class WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoVisibility {
   @override
   bool operator ==(Object other) =>
       other
-          is WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoVisibility &&
+          is WebhookPullRequestReviewCommentEditedPullRequestBaseRepoVisibility &&
       other.value == value;
 
   @override
@@ -409,22 +381,22 @@ final class WebhookPullRequestAutoMergeDisabledPullRequestBaseRepoVisibility {
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
-final class WebhookPullRequestAutoMergeDisabledPullRequestBaseUserType {
+final class WebhookPullRequestReviewCommentEditedPullRequestBaseUserType {
   final String value;
 
-  const WebhookPullRequestAutoMergeDisabledPullRequestBaseUserType._(
+  const WebhookPullRequestReviewCommentEditedPullRequestBaseUserType._(
       this.value);
 
-  factory WebhookPullRequestAutoMergeDisabledPullRequestBaseUserType.fromJson(
+  factory WebhookPullRequestReviewCommentEditedPullRequestBaseUserType.fromJson(
           String value) =>
-      WebhookPullRequestAutoMergeDisabledPullRequestBaseUserType._(value);
+      WebhookPullRequestReviewCommentEditedPullRequestBaseUserType._(value);
 
   static const bot =
-      WebhookPullRequestAutoMergeDisabledPullRequestBaseUserType._('Bot');
+      WebhookPullRequestReviewCommentEditedPullRequestBaseUserType._('Bot');
   static const user =
-      WebhookPullRequestAutoMergeDisabledPullRequestBaseUserType._('User');
+      WebhookPullRequestReviewCommentEditedPullRequestBaseUserType._('User');
   static const organization =
-      WebhookPullRequestAutoMergeDisabledPullRequestBaseUserType._(
+      WebhookPullRequestReviewCommentEditedPullRequestBaseUserType._(
           'Organization');
 
   String toJson() => value;
@@ -434,7 +406,44 @@ final class WebhookPullRequestAutoMergeDisabledPullRequestBaseUserType {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookPullRequestAutoMergeDisabledPullRequestBaseUserType &&
+      other is WebhookPullRequestReviewCommentEditedPullRequestBaseUserType &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The default value for a merge commit message. - `PR_TITLE` - default to the pull request's title. - `PR_BODY` - default to the pull request's body. - `BLANK` - default to a blank commit message.
+final class WebhookPullRequestReviewCommentEditedPullRequestHeadRepoMergeCommitMessage {
+  final String value;
+
+  const WebhookPullRequestReviewCommentEditedPullRequestHeadRepoMergeCommitMessage._(
+      this.value);
+
+  factory WebhookPullRequestReviewCommentEditedPullRequestHeadRepoMergeCommitMessage.fromJson(
+          String value) =>
+      WebhookPullRequestReviewCommentEditedPullRequestHeadRepoMergeCommitMessage
+          ._(value);
+
+  static const prBody =
+      WebhookPullRequestReviewCommentEditedPullRequestHeadRepoMergeCommitMessage
+          ._('PR_BODY');
+  static const prTitle =
+      WebhookPullRequestReviewCommentEditedPullRequestHeadRepoMergeCommitMessage
+          ._('PR_TITLE');
+  static const blank =
+      WebhookPullRequestReviewCommentEditedPullRequestHeadRepoMergeCommitMessage
+          ._('BLANK');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookPullRequestReviewCommentEditedPullRequestHeadRepoMergeCommitMessage &&
       other.value == value;
 
   @override

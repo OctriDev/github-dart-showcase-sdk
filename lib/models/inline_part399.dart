@@ -4,423 +4,475 @@
 part of 'inline.dart';
 
 // Inline operation models (part 399)
-class MigrationsUpdateImportRequestBody {
+class ReposCreateForAuthenticatedUserRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// The username to provide to the originating repository.
-  final SdkOptional<String> vcsUsername;
+  /// The name of the repository.
+  final String name;
 
-  /// The password to provide to the originating repository.
-  final SdkOptional<String> vcsPassword;
+  /// A short description of the repository.
+  final SdkOptional<String> description;
 
-  /// The type of version control system you are migrating from.
-  final SdkOptional<MigrationsUpdateImportRequestBodyVcs> vcs;
+  /// A URL with more information about the repository.
+  final SdkOptional<String> homepage;
 
-  /// For a tfvc import, the name of the project that is being imported.
-  final SdkOptional<String> tfvcProject;
+  /// Whether the repository is private.
+  final SdkOptional<bool> private;
 
-  const MigrationsUpdateImportRequestBody(
-      {this.vcsUsername = const SdkOmitted(),
-      this.vcsPassword = const SdkOmitted(),
-      this.vcs = const SdkOmitted(),
-      this.tfvcProject = const SdkOmitted()});
+  /// Whether issues are enabled.
+  final SdkOptional<bool> hasIssues;
 
-  MigrationsUpdateImportRequestBody Function(
-      {SdkOptional<String> vcsUsername,
-      SdkOptional<String> vcsPassword,
-      SdkOptional<MigrationsUpdateImportRequestBodyVcs> vcs,
-      SdkOptional<String> tfvcProject}) get copyWith => _copyWith;
+  /// Whether projects are enabled.
+  final SdkOptional<bool> hasProjects;
 
-  MigrationsUpdateImportRequestBody _copyWith(
-          {Object? vcsUsername = sdkOmittedValue,
-          Object? vcsPassword = sdkOmittedValue,
-          Object? vcs = sdkOmittedValue,
-          Object? tfvcProject = sdkOmittedValue}) =>
-      MigrationsUpdateImportRequestBody(
-        vcsUsername: identical(vcsUsername, sdkOmittedValue)
-            ? this.vcsUsername
-            : vcsUsername as SdkOptional<String>,
-        vcsPassword: identical(vcsPassword, sdkOmittedValue)
-            ? this.vcsPassword
-            : vcsPassword as SdkOptional<String>,
-        vcs: identical(vcs, sdkOmittedValue)
-            ? this.vcs
-            : vcs as SdkOptional<MigrationsUpdateImportRequestBodyVcs>,
-        tfvcProject: identical(tfvcProject, sdkOmittedValue)
-            ? this.tfvcProject
-            : tfvcProject as SdkOptional<String>,
+  /// Whether the wiki is enabled.
+  final SdkOptional<bool> hasWiki;
+
+  /// Whether discussions are enabled.
+  final SdkOptional<bool> hasDiscussions;
+
+  /// The id of the team that will be granted access to this repository. This is only valid when creating a repository in an organization.
+  final SdkOptional<int> teamId;
+
+  /// Whether the repository is initialized with a minimal README.
+  final SdkOptional<bool> autoInit;
+
+  /// The desired language or platform to apply to the .gitignore.
+  final SdkOptional<String> gitignoreTemplate;
+
+  /// The license keyword of the open source license for this repository.
+  final SdkOptional<String> licenseTemplate;
+
+  /// Whether to allow squash merges for pull requests.
+  final SdkOptional<bool> allowSquashMerge;
+
+  /// Whether to allow merge commits for pull requests.
+  final SdkOptional<bool> allowMergeCommit;
+
+  /// Whether to allow rebase merges for pull requests.
+  final SdkOptional<bool> allowRebaseMerge;
+
+  /// Whether to allow Auto-merge to be used on pull requests.
+  final SdkOptional<bool> allowAutoMerge;
+
+  /// Whether to delete head branches when pull requests are merged
+  final SdkOptional<bool> deleteBranchOnMerge;
+
+  /// Required when using `squash_merge_commit_message`. The default value for a squash merge commit title: - `PR_TITLE` - default to the pull request's title. - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
+  final SdkOptional<
+          ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitTitle>
+      squashMergeCommitTitle;
+
+  /// The default value for a squash merge commit message: - `PR_BODY` - default to the pull request's body. - `COMMIT_MESSAGES` - default to the branch's commit messages. - `BLANK` - default to a blank commit message.
+  final SdkOptional<
+          ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitMessage>
+      squashMergeCommitMessage;
+
+  /// Required when using `merge_commit_message`. The default value for a merge commit title. - `PR_TITLE` - default to the pull request's title. - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
+  final SdkOptional<ReposCreateForAuthenticatedUserRequestBodyMergeCommitTitle>
+      mergeCommitTitle;
+
+  /// The default value for a merge commit message. - `PR_TITLE` - default to the pull request's title. - `PR_BODY` - default to the pull request's body. - `BLANK` - default to a blank commit message.
+  final SdkOptional<
+          ReposCreateForAuthenticatedUserRequestBodyMergeCommitMessage>
+      mergeCommitMessage;
+
+  /// Whether downloads are enabled.
+  final SdkOptional<bool> hasDownloads;
+
+  /// Whether this repository acts as a template that can be used to generate new repositories.
+  final SdkOptional<bool> isTemplate;
+
+  const ReposCreateForAuthenticatedUserRequestBody(
+      {required this.name,
+      this.description = const SdkOmitted(),
+      this.homepage = const SdkOmitted(),
+      this.private = const SdkOmitted(),
+      this.hasIssues = const SdkOmitted(),
+      this.hasProjects = const SdkOmitted(),
+      this.hasWiki = const SdkOmitted(),
+      this.hasDiscussions = const SdkOmitted(),
+      this.teamId = const SdkOmitted(),
+      this.autoInit = const SdkOmitted(),
+      this.gitignoreTemplate = const SdkOmitted(),
+      this.licenseTemplate = const SdkOmitted(),
+      this.allowSquashMerge = const SdkOmitted(),
+      this.allowMergeCommit = const SdkOmitted(),
+      this.allowRebaseMerge = const SdkOmitted(),
+      this.allowAutoMerge = const SdkOmitted(),
+      this.deleteBranchOnMerge = const SdkOmitted(),
+      this.squashMergeCommitTitle = const SdkOmitted(),
+      this.squashMergeCommitMessage = const SdkOmitted(),
+      this.mergeCommitTitle = const SdkOmitted(),
+      this.mergeCommitMessage = const SdkOmitted(),
+      this.hasDownloads = const SdkOmitted(),
+      this.isTemplate = const SdkOmitted()});
+
+  ReposCreateForAuthenticatedUserRequestBody Function(
+      {String name,
+      SdkOptional<String> description,
+      SdkOptional<String> homepage,
+      SdkOptional<bool> private,
+      SdkOptional<bool> hasIssues,
+      SdkOptional<bool> hasProjects,
+      SdkOptional<bool> hasWiki,
+      SdkOptional<bool> hasDiscussions,
+      SdkOptional<int> teamId,
+      SdkOptional<bool> autoInit,
+      SdkOptional<String> gitignoreTemplate,
+      SdkOptional<String> licenseTemplate,
+      SdkOptional<bool> allowSquashMerge,
+      SdkOptional<bool> allowMergeCommit,
+      SdkOptional<bool> allowRebaseMerge,
+      SdkOptional<bool> allowAutoMerge,
+      SdkOptional<bool> deleteBranchOnMerge,
+      SdkOptional<
+              ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitTitle>
+          squashMergeCommitTitle,
+      SdkOptional<
+              ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitMessage>
+          squashMergeCommitMessage,
+      SdkOptional<ReposCreateForAuthenticatedUserRequestBodyMergeCommitTitle>
+          mergeCommitTitle,
+      SdkOptional<ReposCreateForAuthenticatedUserRequestBodyMergeCommitMessage>
+          mergeCommitMessage,
+      SdkOptional<bool> hasDownloads,
+      SdkOptional<bool> isTemplate}) get copyWith => _copyWith;
+
+  ReposCreateForAuthenticatedUserRequestBody _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? homepage = sdkOmittedValue,
+          Object? private = sdkOmittedValue,
+          Object? hasIssues = sdkOmittedValue,
+          Object? hasProjects = sdkOmittedValue,
+          Object? hasWiki = sdkOmittedValue,
+          Object? hasDiscussions = sdkOmittedValue,
+          Object? teamId = sdkOmittedValue,
+          Object? autoInit = sdkOmittedValue,
+          Object? gitignoreTemplate = sdkOmittedValue,
+          Object? licenseTemplate = sdkOmittedValue,
+          Object? allowSquashMerge = sdkOmittedValue,
+          Object? allowMergeCommit = sdkOmittedValue,
+          Object? allowRebaseMerge = sdkOmittedValue,
+          Object? allowAutoMerge = sdkOmittedValue,
+          Object? deleteBranchOnMerge = sdkOmittedValue,
+          Object? squashMergeCommitTitle = sdkOmittedValue,
+          Object? squashMergeCommitMessage = sdkOmittedValue,
+          Object? mergeCommitTitle = sdkOmittedValue,
+          Object? mergeCommitMessage = sdkOmittedValue,
+          Object? hasDownloads = sdkOmittedValue,
+          Object? isTemplate = sdkOmittedValue}) =>
+      ReposCreateForAuthenticatedUserRequestBody(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as SdkOptional<String>,
+        homepage: identical(homepage, sdkOmittedValue)
+            ? this.homepage
+            : homepage as SdkOptional<String>,
+        private: identical(private, sdkOmittedValue)
+            ? this.private
+            : private as SdkOptional<bool>,
+        hasIssues: identical(hasIssues, sdkOmittedValue)
+            ? this.hasIssues
+            : hasIssues as SdkOptional<bool>,
+        hasProjects: identical(hasProjects, sdkOmittedValue)
+            ? this.hasProjects
+            : hasProjects as SdkOptional<bool>,
+        hasWiki: identical(hasWiki, sdkOmittedValue)
+            ? this.hasWiki
+            : hasWiki as SdkOptional<bool>,
+        hasDiscussions: identical(hasDiscussions, sdkOmittedValue)
+            ? this.hasDiscussions
+            : hasDiscussions as SdkOptional<bool>,
+        teamId: identical(teamId, sdkOmittedValue)
+            ? this.teamId
+            : teamId as SdkOptional<int>,
+        autoInit: identical(autoInit, sdkOmittedValue)
+            ? this.autoInit
+            : autoInit as SdkOptional<bool>,
+        gitignoreTemplate: identical(gitignoreTemplate, sdkOmittedValue)
+            ? this.gitignoreTemplate
+            : gitignoreTemplate as SdkOptional<String>,
+        licenseTemplate: identical(licenseTemplate, sdkOmittedValue)
+            ? this.licenseTemplate
+            : licenseTemplate as SdkOptional<String>,
+        allowSquashMerge: identical(allowSquashMerge, sdkOmittedValue)
+            ? this.allowSquashMerge
+            : allowSquashMerge as SdkOptional<bool>,
+        allowMergeCommit: identical(allowMergeCommit, sdkOmittedValue)
+            ? this.allowMergeCommit
+            : allowMergeCommit as SdkOptional<bool>,
+        allowRebaseMerge: identical(allowRebaseMerge, sdkOmittedValue)
+            ? this.allowRebaseMerge
+            : allowRebaseMerge as SdkOptional<bool>,
+        allowAutoMerge: identical(allowAutoMerge, sdkOmittedValue)
+            ? this.allowAutoMerge
+            : allowAutoMerge as SdkOptional<bool>,
+        deleteBranchOnMerge: identical(deleteBranchOnMerge, sdkOmittedValue)
+            ? this.deleteBranchOnMerge
+            : deleteBranchOnMerge as SdkOptional<bool>,
+        squashMergeCommitTitle: identical(
+                squashMergeCommitTitle, sdkOmittedValue)
+            ? this.squashMergeCommitTitle
+            : squashMergeCommitTitle as SdkOptional<
+                ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitTitle>,
+        squashMergeCommitMessage: identical(
+                squashMergeCommitMessage, sdkOmittedValue)
+            ? this.squashMergeCommitMessage
+            : squashMergeCommitMessage as SdkOptional<
+                ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitMessage>,
+        mergeCommitTitle: identical(mergeCommitTitle, sdkOmittedValue)
+            ? this.mergeCommitTitle
+            : mergeCommitTitle as SdkOptional<
+                ReposCreateForAuthenticatedUserRequestBodyMergeCommitTitle>,
+        mergeCommitMessage: identical(mergeCommitMessage, sdkOmittedValue)
+            ? this.mergeCommitMessage
+            : mergeCommitMessage as SdkOptional<
+                ReposCreateForAuthenticatedUserRequestBodyMergeCommitMessage>,
+        hasDownloads: identical(hasDownloads, sdkOmittedValue)
+            ? this.hasDownloads
+            : hasDownloads as SdkOptional<bool>,
+        isTemplate: identical(isTemplate, sdkOmittedValue)
+            ? this.isTemplate
+            : isTemplate as SdkOptional<bool>,
       );
 
-  factory MigrationsUpdateImportRequestBody.fromJson(
+  factory ReposCreateForAuthenticatedUserRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      MigrationsUpdateImportRequestBody(
-        vcsUsername: json['vcs_username'] != null
-            ? SdkPresent((json['vcs_username'] as String?)!)
+      ReposCreateForAuthenticatedUserRequestBody(
+        name: (json['name'] as String?)!,
+        description: json['description'] != null
+            ? SdkPresent((json['description'] as String?)!)
             : const SdkOmitted(),
-        vcsPassword: json['vcs_password'] != null
-            ? SdkPresent((json['vcs_password'] as String?)!)
+        homepage: json['homepage'] != null
+            ? SdkPresent((json['homepage'] as String?)!)
             : const SdkOmitted(),
-        vcs: json['vcs'] != null
-            ? SdkPresent((json['vcs'] != null
-                ? MigrationsUpdateImportRequestBodyVcs.fromJson(
-                    json['vcs'] as String)
+        private: json['private'] != null
+            ? SdkPresent((json['private'] as bool?)!)
+            : const SdkOmitted(),
+        hasIssues: json['has_issues'] != null
+            ? SdkPresent((json['has_issues'] as bool?)!)
+            : const SdkOmitted(),
+        hasProjects: json['has_projects'] != null
+            ? SdkPresent((json['has_projects'] as bool?)!)
+            : const SdkOmitted(),
+        hasWiki: json['has_wiki'] != null
+            ? SdkPresent((json['has_wiki'] as bool?)!)
+            : const SdkOmitted(),
+        hasDiscussions: json['has_discussions'] != null
+            ? SdkPresent((json['has_discussions'] as bool?)!)
+            : const SdkOmitted(),
+        teamId: json['team_id'] != null
+            ? SdkPresent(((json['team_id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        autoInit: json['auto_init'] != null
+            ? SdkPresent((json['auto_init'] as bool?)!)
+            : const SdkOmitted(),
+        gitignoreTemplate: json['gitignore_template'] != null
+            ? SdkPresent((json['gitignore_template'] as String?)!)
+            : const SdkOmitted(),
+        licenseTemplate: json['license_template'] != null
+            ? SdkPresent((json['license_template'] as String?)!)
+            : const SdkOmitted(),
+        allowSquashMerge: json['allow_squash_merge'] != null
+            ? SdkPresent((json['allow_squash_merge'] as bool?)!)
+            : const SdkOmitted(),
+        allowMergeCommit: json['allow_merge_commit'] != null
+            ? SdkPresent((json['allow_merge_commit'] as bool?)!)
+            : const SdkOmitted(),
+        allowRebaseMerge: json['allow_rebase_merge'] != null
+            ? SdkPresent((json['allow_rebase_merge'] as bool?)!)
+            : const SdkOmitted(),
+        allowAutoMerge: json['allow_auto_merge'] != null
+            ? SdkPresent((json['allow_auto_merge'] as bool?)!)
+            : const SdkOmitted(),
+        deleteBranchOnMerge: json['delete_branch_on_merge'] != null
+            ? SdkPresent((json['delete_branch_on_merge'] as bool?)!)
+            : const SdkOmitted(),
+        squashMergeCommitTitle: json['squash_merge_commit_title'] != null
+            ? SdkPresent((json['squash_merge_commit_title'] != null
+                ? ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitTitle
+                    .fromJson(json['squash_merge_commit_title'] as String)
                 : null)!)
             : const SdkOmitted(),
-        tfvcProject: json['tfvc_project'] != null
-            ? SdkPresent((json['tfvc_project'] as String?)!)
+        squashMergeCommitMessage: json['squash_merge_commit_message'] != null
+            ? SdkPresent((json['squash_merge_commit_message'] != null
+                ? ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitMessage
+                    .fromJson(json['squash_merge_commit_message'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        mergeCommitTitle: json['merge_commit_title'] != null
+            ? SdkPresent((json['merge_commit_title'] != null
+                ? ReposCreateForAuthenticatedUserRequestBodyMergeCommitTitle
+                    .fromJson(json['merge_commit_title'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        mergeCommitMessage: json['merge_commit_message'] != null
+            ? SdkPresent((json['merge_commit_message'] != null
+                ? ReposCreateForAuthenticatedUserRequestBodyMergeCommitMessage
+                    .fromJson(json['merge_commit_message'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        hasDownloads: json['has_downloads'] != null
+            ? SdkPresent((json['has_downloads'] as bool?)!)
+            : const SdkOmitted(),
+        isTemplate: json['is_template'] != null
+            ? SdkPresent((json['is_template'] as bool?)!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (vcsUsername) {
+        'name': name,
+        ...switch (description) {
           SdkPresent<String>(value: final value) => {
-              'vcs_username': value,
+              'description': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (vcsPassword) {
+        ...switch (homepage) {
           SdkPresent<String>(value: final value) => {
-              'vcs_password': value,
+              'homepage': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (vcs) {
-          SdkPresent<MigrationsUpdateImportRequestBodyVcs>(
-            value: final value
-          ) =>
-            {
-              'vcs': value.toJson(),
+        ...switch (private) {
+          SdkPresent<bool>(value: final value) => {
+              'private': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (tfvcProject) {
+        ...switch (hasIssues) {
+          SdkPresent<bool>(value: final value) => {
+              'has_issues': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (hasProjects) {
+          SdkPresent<bool>(value: final value) => {
+              'has_projects': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (hasWiki) {
+          SdkPresent<bool>(value: final value) => {
+              'has_wiki': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (hasDiscussions) {
+          SdkPresent<bool>(value: final value) => {
+              'has_discussions': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (teamId) {
+          SdkPresent<int>(value: final value) => {
+              'team_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (autoInit) {
+          SdkPresent<bool>(value: final value) => {
+              'auto_init': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (gitignoreTemplate) {
           SdkPresent<String>(value: final value) => {
-              'tfvc_project': value,
+              'gitignore_template': value,
             },
           _ => const <String, dynamic>{},
         },
-      };
-}
-
-class MigrationsMapCommitAuthorRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The new Git author email.
-  final SdkOptional<String> email;
-
-  /// The new Git author name.
-  final SdkOptional<String> name;
-
-  const MigrationsMapCommitAuthorRequestBody(
-      {this.email = const SdkOmitted(), this.name = const SdkOmitted()});
-
-  MigrationsMapCommitAuthorRequestBody Function(
-      {SdkOptional<String> email,
-      SdkOptional<String> name}) get copyWith => _copyWith;
-
-  MigrationsMapCommitAuthorRequestBody _copyWith(
-          {Object? email = sdkOmittedValue, Object? name = sdkOmittedValue}) =>
-      MigrationsMapCommitAuthorRequestBody(
-        email: identical(email, sdkOmittedValue)
-            ? this.email
-            : email as SdkOptional<String>,
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String>,
-      );
-
-  factory MigrationsMapCommitAuthorRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      MigrationsMapCommitAuthorRequestBody(
-        email: json['email'] != null
-            ? SdkPresent((json['email'] as String?)!)
-            : const SdkOmitted(),
-        name: json['name'] != null
-            ? SdkPresent((json['name'] as String?)!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (email) {
+        ...switch (licenseTemplate) {
           SdkPresent<String>(value: final value) => {
-              'email': value,
+              'license_template': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (name) {
-          SdkPresent<String>(value: final value) => {
-              'name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-class MigrationsSetLfsPreferenceRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Whether to store large files during the import. `opt_in` means large files will be stored using Git LFS. `opt_out` means large files will be removed during the import.
-  final MigrationsSetLfsPreferenceRequestBodyUseLfs useLfs;
-
-  const MigrationsSetLfsPreferenceRequestBody({required this.useLfs});
-
-  MigrationsSetLfsPreferenceRequestBody Function(
-          {MigrationsSetLfsPreferenceRequestBodyUseLfs useLfs})
-      get copyWith => _copyWith;
-
-  MigrationsSetLfsPreferenceRequestBody _copyWith(
-          {Object? useLfs = sdkOmittedValue}) =>
-      MigrationsSetLfsPreferenceRequestBody(
-        useLfs: identical(useLfs, sdkOmittedValue)
-            ? this.useLfs
-            : useLfs as MigrationsSetLfsPreferenceRequestBodyUseLfs,
-      );
-
-  factory MigrationsSetLfsPreferenceRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      MigrationsSetLfsPreferenceRequestBody(
-        useLfs: (json['use_lfs'] != null
-            ? MigrationsSetLfsPreferenceRequestBodyUseLfs.fromJson(
-                json['use_lfs'] as String)
-            : null)!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'use_lfs': useLfs.toJson(),
-      };
-}
-
-class MigrationsStartForAuthenticatedUserRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Lock the repositories being migrated at the start of the migration
-  final SdkOptional<bool> lockRepositories;
-
-  /// Indicates whether metadata should be excluded and only git source should be included for the migration.
-  final SdkOptional<bool> excludeMetadata;
-
-  /// Indicates whether the repository git data should be excluded from the migration.
-  final SdkOptional<bool> excludeGitData;
-
-  /// Do not include attachments in the migration
-  final SdkOptional<bool> excludeAttachments;
-
-  /// Do not include releases in the migration
-  final SdkOptional<bool> excludeReleases;
-
-  /// Indicates whether projects owned by the organization or users should be excluded.
-  final SdkOptional<bool> excludeOwnerProjects;
-
-  /// Indicates whether this should only include organization metadata (repositories array should be empty and will ignore other flags).
-  final SdkOptional<bool> orgMetadataOnly;
-
-  /// Exclude attributes from the API response to improve performance
-  final SdkOptional<
-      List<MigrationsStartForAuthenticatedUserRequestBodyExcludeItem>> exclude;
-  final List<String> repositories;
-
-  const MigrationsStartForAuthenticatedUserRequestBody(
-      {this.lockRepositories = const SdkOmitted(),
-      this.excludeMetadata = const SdkOmitted(),
-      this.excludeGitData = const SdkOmitted(),
-      this.excludeAttachments = const SdkOmitted(),
-      this.excludeReleases = const SdkOmitted(),
-      this.excludeOwnerProjects = const SdkOmitted(),
-      this.orgMetadataOnly = const SdkOmitted(),
-      this.exclude = const SdkOmitted(),
-      required this.repositories});
-
-  MigrationsStartForAuthenticatedUserRequestBody Function(
-      {SdkOptional<bool> lockRepositories,
-      SdkOptional<bool> excludeMetadata,
-      SdkOptional<bool> excludeGitData,
-      SdkOptional<bool> excludeAttachments,
-      SdkOptional<bool> excludeReleases,
-      SdkOptional<bool> excludeOwnerProjects,
-      SdkOptional<bool> orgMetadataOnly,
-      SdkOptional<
-              List<MigrationsStartForAuthenticatedUserRequestBodyExcludeItem>>
-          exclude,
-      List<String> repositories}) get copyWith => _copyWith;
-
-  MigrationsStartForAuthenticatedUserRequestBody _copyWith(
-          {Object? lockRepositories = sdkOmittedValue,
-          Object? excludeMetadata = sdkOmittedValue,
-          Object? excludeGitData = sdkOmittedValue,
-          Object? excludeAttachments = sdkOmittedValue,
-          Object? excludeReleases = sdkOmittedValue,
-          Object? excludeOwnerProjects = sdkOmittedValue,
-          Object? orgMetadataOnly = sdkOmittedValue,
-          Object? exclude = sdkOmittedValue,
-          Object? repositories = sdkOmittedValue}) =>
-      MigrationsStartForAuthenticatedUserRequestBody(
-        lockRepositories: identical(lockRepositories, sdkOmittedValue)
-            ? this.lockRepositories
-            : lockRepositories as SdkOptional<bool>,
-        excludeMetadata: identical(excludeMetadata, sdkOmittedValue)
-            ? this.excludeMetadata
-            : excludeMetadata as SdkOptional<bool>,
-        excludeGitData: identical(excludeGitData, sdkOmittedValue)
-            ? this.excludeGitData
-            : excludeGitData as SdkOptional<bool>,
-        excludeAttachments: identical(excludeAttachments, sdkOmittedValue)
-            ? this.excludeAttachments
-            : excludeAttachments as SdkOptional<bool>,
-        excludeReleases: identical(excludeReleases, sdkOmittedValue)
-            ? this.excludeReleases
-            : excludeReleases as SdkOptional<bool>,
-        excludeOwnerProjects: identical(excludeOwnerProjects, sdkOmittedValue)
-            ? this.excludeOwnerProjects
-            : excludeOwnerProjects as SdkOptional<bool>,
-        orgMetadataOnly: identical(orgMetadataOnly, sdkOmittedValue)
-            ? this.orgMetadataOnly
-            : orgMetadataOnly as SdkOptional<bool>,
-        exclude: identical(exclude, sdkOmittedValue)
-            ? this.exclude
-            : exclude as SdkOptional<
-                List<
-                    MigrationsStartForAuthenticatedUserRequestBodyExcludeItem>>,
-        repositories: identical(repositories, sdkOmittedValue)
-            ? this.repositories
-            : repositories as List<String>,
-      );
-
-  factory MigrationsStartForAuthenticatedUserRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      MigrationsStartForAuthenticatedUserRequestBody(
-        lockRepositories: json['lock_repositories'] != null
-            ? SdkPresent((json['lock_repositories'] as bool?)!)
-            : const SdkOmitted(),
-        excludeMetadata: json['exclude_metadata'] != null
-            ? SdkPresent((json['exclude_metadata'] as bool?)!)
-            : const SdkOmitted(),
-        excludeGitData: json['exclude_git_data'] != null
-            ? SdkPresent((json['exclude_git_data'] as bool?)!)
-            : const SdkOmitted(),
-        excludeAttachments: json['exclude_attachments'] != null
-            ? SdkPresent((json['exclude_attachments'] as bool?)!)
-            : const SdkOmitted(),
-        excludeReleases: json['exclude_releases'] != null
-            ? SdkPresent((json['exclude_releases'] as bool?)!)
-            : const SdkOmitted(),
-        excludeOwnerProjects: json['exclude_owner_projects'] != null
-            ? SdkPresent((json['exclude_owner_projects'] as bool?)!)
-            : const SdkOmitted(),
-        orgMetadataOnly: json['org_metadata_only'] != null
-            ? SdkPresent((json['org_metadata_only'] as bool?)!)
-            : const SdkOmitted(),
-        exclude: json['exclude'] != null
-            ? SdkPresent(((json['exclude'] as List?)
-                ?.map((e) =>
-                    MigrationsStartForAuthenticatedUserRequestBodyExcludeItem
-                        .fromJson(e as String))
-                .toList())!)
-            : const SdkOmitted(),
-        repositories: ((json['repositories'] as List?)
-            ?.map((e) => e as String)
-            .toList())!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (lockRepositories) {
+        ...switch (allowSquashMerge) {
           SdkPresent<bool>(value: final value) => {
-              'lock_repositories': value,
+              'allow_squash_merge': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (excludeMetadata) {
+        ...switch (allowMergeCommit) {
           SdkPresent<bool>(value: final value) => {
-              'exclude_metadata': value,
+              'allow_merge_commit': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (excludeGitData) {
+        ...switch (allowRebaseMerge) {
           SdkPresent<bool>(value: final value) => {
-              'exclude_git_data': value,
+              'allow_rebase_merge': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (excludeAttachments) {
+        ...switch (allowAutoMerge) {
           SdkPresent<bool>(value: final value) => {
-              'exclude_attachments': value,
+              'allow_auto_merge': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (excludeReleases) {
+        ...switch (deleteBranchOnMerge) {
           SdkPresent<bool>(value: final value) => {
-              'exclude_releases': value,
+              'delete_branch_on_merge': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (excludeOwnerProjects) {
-          SdkPresent<bool>(value: final value) => {
-              'exclude_owner_projects': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (orgMetadataOnly) {
-          SdkPresent<bool>(value: final value) => {
-              'org_metadata_only': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (exclude) {
+        ...switch (squashMergeCommitTitle) {
           SdkPresent<
-                List<
-                    MigrationsStartForAuthenticatedUserRequestBodyExcludeItem>>(
+                ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitTitle>(
             value: final value
           ) =>
             {
-              'exclude': value.map((item) => item.toJson()).toList(),
+              'squash_merge_commit_title': value.toJson(),
             },
           _ => const <String, dynamic>{},
         },
-        'repositories': repositories,
-      };
-}
-
-class PrivateRegistriesListOrgPrivateRegistriesResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<OrgPrivateRegistryConfiguration> configurations;
-
-  const PrivateRegistriesListOrgPrivateRegistriesResponse(
-      {required this.totalCount, required this.configurations});
-
-  PrivateRegistriesListOrgPrivateRegistriesResponse Function(
-          {int totalCount,
-          List<OrgPrivateRegistryConfiguration> configurations})
-      get copyWith => _copyWith;
-
-  PrivateRegistriesListOrgPrivateRegistriesResponse _copyWith(
-          {Object? totalCount = sdkOmittedValue,
-          Object? configurations = sdkOmittedValue}) =>
-      PrivateRegistriesListOrgPrivateRegistriesResponse(
-        totalCount: identical(totalCount, sdkOmittedValue)
-            ? this.totalCount
-            : totalCount as int,
-        configurations: identical(configurations, sdkOmittedValue)
-            ? this.configurations
-            : configurations as List<OrgPrivateRegistryConfiguration>,
-      );
-
-  factory PrivateRegistriesListOrgPrivateRegistriesResponse.fromJson(
-          Map<String, dynamic> json) =>
-      PrivateRegistriesListOrgPrivateRegistriesResponse(
-        totalCount: ((json['total_count'] as num?)?.toInt())!,
-        configurations: ((json['configurations'] as List?)
-            ?.map((e) => OrgPrivateRegistryConfiguration.fromJson(
-                e as Map<String, dynamic>))
-            .toList())!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'total_count': totalCount,
-        'configurations': configurations.map((item) => item.toJson()).toList(),
+        ...switch (squashMergeCommitMessage) {
+          SdkPresent<
+                ReposCreateForAuthenticatedUserRequestBodySquashMergeCommitMessage>(
+            value: final value
+          ) =>
+            {
+              'squash_merge_commit_message': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (mergeCommitTitle) {
+          SdkPresent<
+                ReposCreateForAuthenticatedUserRequestBodyMergeCommitTitle>(
+            value: final value
+          ) =>
+            {
+              'merge_commit_title': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (mergeCommitMessage) {
+          SdkPresent<
+                ReposCreateForAuthenticatedUserRequestBodyMergeCommitMessage>(
+            value: final value
+          ) =>
+            {
+              'merge_commit_message': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (hasDownloads) {
+          SdkPresent<bool>(value: final value) => {
+              'has_downloads': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (isTemplate) {
+          SdkPresent<bool>(value: final value) => {
+              'is_template': value,
+            },
+          _ => const <String, dynamic>{},
+        },
       };
 }

@@ -4,501 +4,642 @@
 part of 'inline.dart';
 
 // Inline operation models (part 349)
-class ActionsGetHostedRunnersPartnerImagesForOrgResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<ActionsHostedRunnerCuratedImage> images;
-
-  const ActionsGetHostedRunnersPartnerImagesForOrgResponse(
-      {required this.totalCount, required this.images});
-
-  ActionsGetHostedRunnersPartnerImagesForOrgResponse Function(
-      {int totalCount,
-      List<ActionsHostedRunnerCuratedImage> images}) get copyWith => _copyWith;
-
-  ActionsGetHostedRunnersPartnerImagesForOrgResponse _copyWith(
-          {Object? totalCount = sdkOmittedValue,
-          Object? images = sdkOmittedValue}) =>
-      ActionsGetHostedRunnersPartnerImagesForOrgResponse(
-        totalCount: identical(totalCount, sdkOmittedValue)
-            ? this.totalCount
-            : totalCount as int,
-        images: identical(images, sdkOmittedValue)
-            ? this.images
-            : images as List<ActionsHostedRunnerCuratedImage>,
-      );
-
-  factory ActionsGetHostedRunnersPartnerImagesForOrgResponse.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsGetHostedRunnersPartnerImagesForOrgResponse(
-        totalCount: ((json['total_count'] as num?)?.toInt())!,
-        images: ((json['images'] as List?)
-            ?.map((e) => ActionsHostedRunnerCuratedImage.fromJson(
-                e as Map<String, dynamic>))
-            .toList())!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'total_count': totalCount,
-        'images': images.map((item) => item.toJson()).toList(),
-      };
-}
-
-class ActionsGetHostedRunnersMachineSpecsForOrgResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<ActionsHostedRunnerMachineSpec> machineSpecs;
-
-  const ActionsGetHostedRunnersMachineSpecsForOrgResponse(
-      {required this.totalCount, required this.machineSpecs});
-
-  ActionsGetHostedRunnersMachineSpecsForOrgResponse Function(
-          {int totalCount, List<ActionsHostedRunnerMachineSpec> machineSpecs})
-      get copyWith => _copyWith;
-
-  ActionsGetHostedRunnersMachineSpecsForOrgResponse _copyWith(
-          {Object? totalCount = sdkOmittedValue,
-          Object? machineSpecs = sdkOmittedValue}) =>
-      ActionsGetHostedRunnersMachineSpecsForOrgResponse(
-        totalCount: identical(totalCount, sdkOmittedValue)
-            ? this.totalCount
-            : totalCount as int,
-        machineSpecs: identical(machineSpecs, sdkOmittedValue)
-            ? this.machineSpecs
-            : machineSpecs as List<ActionsHostedRunnerMachineSpec>,
-      );
-
-  factory ActionsGetHostedRunnersMachineSpecsForOrgResponse.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsGetHostedRunnersMachineSpecsForOrgResponse(
-        totalCount: ((json['total_count'] as num?)?.toInt())!,
-        machineSpecs: ((json['machine_specs'] as List?)
-            ?.map((e) => ActionsHostedRunnerMachineSpec.fromJson(
-                e as Map<String, dynamic>))
-            .toList())!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'total_count': totalCount,
-        'machine_specs': machineSpecs.map((item) => item.toJson()).toList(),
-      };
-}
-
-class ActionsGetHostedRunnersPlatformsForOrgResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<String> platforms;
-
-  const ActionsGetHostedRunnersPlatformsForOrgResponse(
-      {required this.totalCount, required this.platforms});
-
-  ActionsGetHostedRunnersPlatformsForOrgResponse Function(
-      {int totalCount, List<String> platforms}) get copyWith => _copyWith;
-
-  ActionsGetHostedRunnersPlatformsForOrgResponse _copyWith(
-          {Object? totalCount = sdkOmittedValue,
-          Object? platforms = sdkOmittedValue}) =>
-      ActionsGetHostedRunnersPlatformsForOrgResponse(
-        totalCount: identical(totalCount, sdkOmittedValue)
-            ? this.totalCount
-            : totalCount as int,
-        platforms: identical(platforms, sdkOmittedValue)
-            ? this.platforms
-            : platforms as List<String>,
-      );
-
-  factory ActionsGetHostedRunnersPlatformsForOrgResponse.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsGetHostedRunnersPlatformsForOrgResponse(
-        totalCount: ((json['total_count'] as num?)?.toInt())!,
-        platforms:
-            ((json['platforms'] as List?)?.map((e) => e as String).toList())!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'total_count': totalCount,
-        'platforms': platforms,
-      };
-}
-
-class ActionsUpdateHostedRunnerForOrgRequestBody {
+class IssuesUpdateRequestBodyIssueFieldValuesItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Name of the runner. Must be between 1 and 64 characters and may only contain upper and lowercase letters a-z, numbers 0-9, '.', '-', and '_'.
-  final SdkOptional<String> name;
+  /// The ID of the issue field to set
+  final int fieldId;
 
-  /// The existing runner group to add this runner to.
-  final SdkOptional<int> runnerGroupId;
+  /// The value to set for the field. For multi-select fields, provide an array of option names.
+  final dynamic value;
 
-  /// The maximum amount of runners to scale up to. Runners will not auto-scale above this number. Use this setting to limit your cost.
-  final SdkOptional<int> maximumRunners;
+  /// Optional reasoning for setting this field value.
+  final SdkOptional<String> rationale;
 
-  /// Whether this runner should be updated with a static public IP. Note limit on account. To list limits on account, use `GET actions/hosted-runners/limits`
-  final SdkOptional<bool> enableStaticIp;
+  /// If `true`, the change is stored as a pending suggestion for human review rather than applied directly.
+  final SdkOptional<bool> suggest;
 
-  /// The machine size of the runner. To list available sizes, use `GET actions/hosted-runners/machine-sizes`
-  final SdkOptional<String> size;
+  /// The confidence level for this field value choice.
+  final SdkOptional<IssuesUpdateRequestBodyIssueFieldValuesItemConfidence>
+      confidence;
 
-  /// The source type of the runner image to use. Must match the source of the image specified by `image_id`. Can be one of `github`, `partner`, or `custom`.
-  final SdkOptional<ActionsUpdateHostedRunnerForOrgRequestBodyImageSource>
-      imageSource;
+  const IssuesUpdateRequestBodyIssueFieldValuesItem(
+      {required this.fieldId,
+      required this.value,
+      this.rationale = const SdkOmitted(),
+      this.suggest = const SdkOmitted(),
+      this.confidence = const SdkOmitted()});
 
-  /// The unique identifier of the runner image. To list available images, use `GET /actions/hosted-runners/images/github-owned`, `GET /actions/hosted-runners/images/partner`, or `GET /actions/hosted-runners/images/custom`.
-  final SdkOptional<String> imageId;
+  IssuesUpdateRequestBodyIssueFieldValuesItem Function(
+      {int fieldId,
+      dynamic value,
+      SdkOptional<String> rationale,
+      SdkOptional<bool> suggest,
+      SdkOptional<IssuesUpdateRequestBodyIssueFieldValuesItemConfidence>
+          confidence}) get copyWith => _copyWith;
 
-  /// The version of the runner image to deploy. This is relevant only for runners using custom images.
-  final SdkOptional<String?> imageVersion;
-
-  /// Whether to enable image generation for this runner pool. When enabled, the runner pool is used to build and publish custom runner images.
-  final SdkOptional<bool> imageGen;
-
-  const ActionsUpdateHostedRunnerForOrgRequestBody(
-      {this.name = const SdkOmitted(),
-      this.runnerGroupId = const SdkOmitted(),
-      this.maximumRunners = const SdkOmitted(),
-      this.enableStaticIp = const SdkOmitted(),
-      this.size = const SdkOmitted(),
-      this.imageSource = const SdkOmitted(),
-      this.imageId = const SdkOmitted(),
-      this.imageVersion = const SdkOmitted(),
-      this.imageGen = const SdkOmitted()});
-
-  ActionsUpdateHostedRunnerForOrgRequestBody Function(
-      {SdkOptional<String> name,
-      SdkOptional<int> runnerGroupId,
-      SdkOptional<int> maximumRunners,
-      SdkOptional<bool> enableStaticIp,
-      SdkOptional<String> size,
-      SdkOptional<ActionsUpdateHostedRunnerForOrgRequestBodyImageSource>
-          imageSource,
-      SdkOptional<String> imageId,
-      SdkOptional<String?> imageVersion,
-      SdkOptional<bool> imageGen}) get copyWith => _copyWith;
-
-  ActionsUpdateHostedRunnerForOrgRequestBody _copyWith(
-          {Object? name = sdkOmittedValue,
-          Object? runnerGroupId = sdkOmittedValue,
-          Object? maximumRunners = sdkOmittedValue,
-          Object? enableStaticIp = sdkOmittedValue,
-          Object? size = sdkOmittedValue,
-          Object? imageSource = sdkOmittedValue,
-          Object? imageId = sdkOmittedValue,
-          Object? imageVersion = sdkOmittedValue,
-          Object? imageGen = sdkOmittedValue}) =>
-      ActionsUpdateHostedRunnerForOrgRequestBody(
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String>,
-        runnerGroupId: identical(runnerGroupId, sdkOmittedValue)
-            ? this.runnerGroupId
-            : runnerGroupId as SdkOptional<int>,
-        maximumRunners: identical(maximumRunners, sdkOmittedValue)
-            ? this.maximumRunners
-            : maximumRunners as SdkOptional<int>,
-        enableStaticIp: identical(enableStaticIp, sdkOmittedValue)
-            ? this.enableStaticIp
-            : enableStaticIp as SdkOptional<bool>,
-        size: identical(size, sdkOmittedValue)
-            ? this.size
-            : size as SdkOptional<String>,
-        imageSource: identical(imageSource, sdkOmittedValue)
-            ? this.imageSource
-            : imageSource as SdkOptional<
-                ActionsUpdateHostedRunnerForOrgRequestBodyImageSource>,
-        imageId: identical(imageId, sdkOmittedValue)
-            ? this.imageId
-            : imageId as SdkOptional<String>,
-        imageVersion: identical(imageVersion, sdkOmittedValue)
-            ? this.imageVersion
-            : imageVersion as SdkOptional<String?>,
-        imageGen: identical(imageGen, sdkOmittedValue)
-            ? this.imageGen
-            : imageGen as SdkOptional<bool>,
+  IssuesUpdateRequestBodyIssueFieldValuesItem _copyWith(
+          {Object? fieldId = sdkOmittedValue,
+          Object? value = sdkOmittedValue,
+          Object? rationale = sdkOmittedValue,
+          Object? suggest = sdkOmittedValue,
+          Object? confidence = sdkOmittedValue}) =>
+      IssuesUpdateRequestBodyIssueFieldValuesItem(
+        fieldId:
+            identical(fieldId, sdkOmittedValue) ? this.fieldId : fieldId as int,
+        value:
+            identical(value, sdkOmittedValue) ? this.value : value as dynamic,
+        rationale: identical(rationale, sdkOmittedValue)
+            ? this.rationale
+            : rationale as SdkOptional<String>,
+        suggest: identical(suggest, sdkOmittedValue)
+            ? this.suggest
+            : suggest as SdkOptional<bool>,
+        confidence: identical(confidence, sdkOmittedValue)
+            ? this.confidence
+            : confidence as SdkOptional<
+                IssuesUpdateRequestBodyIssueFieldValuesItemConfidence>,
       );
 
-  factory ActionsUpdateHostedRunnerForOrgRequestBody.fromJson(
+  factory IssuesUpdateRequestBodyIssueFieldValuesItem.fromJson(
           Map<String, dynamic> json) =>
-      ActionsUpdateHostedRunnerForOrgRequestBody(
-        name: json['name'] != null
-            ? SdkPresent((json['name'] as String?)!)
+      IssuesUpdateRequestBodyIssueFieldValuesItem(
+        fieldId: ((json['field_id'] as num?)?.toInt())!,
+        value: (json['value'])!,
+        rationale: json['rationale'] != null
+            ? SdkPresent((json['rationale'] as String?)!)
             : const SdkOmitted(),
-        runnerGroupId: json['runner_group_id'] != null
-            ? SdkPresent(((json['runner_group_id'] as num?)?.toInt())!)
+        suggest: json['suggest'] != null
+            ? SdkPresent((json['suggest'] as bool?)!)
             : const SdkOmitted(),
-        maximumRunners: json['maximum_runners'] != null
-            ? SdkPresent(((json['maximum_runners'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        enableStaticIp: json['enable_static_ip'] != null
-            ? SdkPresent((json['enable_static_ip'] as bool?)!)
-            : const SdkOmitted(),
-        size: json['size'] != null
-            ? SdkPresent((json['size'] as String?)!)
-            : const SdkOmitted(),
-        imageSource: json['image_source'] != null
-            ? SdkPresent((json['image_source'] != null
-                ? ActionsUpdateHostedRunnerForOrgRequestBodyImageSource
-                    .fromJson(json['image_source'] as String)
+        confidence: json['confidence'] != null
+            ? SdkPresent((json['confidence'] != null
+                ? IssuesUpdateRequestBodyIssueFieldValuesItemConfidence
+                    .fromJson(json['confidence'] as String)
                 : null)!)
             : const SdkOmitted(),
-        imageId: json['image_id'] != null
-            ? SdkPresent((json['image_id'] as String?)!)
-            : const SdkOmitted(),
-        imageVersion: json.containsKey('image_version')
-            ? SdkPresent(json['image_version'] as String?)
-            : const SdkOmitted(),
-        imageGen: json['image_gen'] != null
-            ? SdkPresent((json['image_gen'] as bool?)!)
-            : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (name) {
+        'field_id': fieldId,
+        'value': value,
+        ...switch (rationale) {
           SdkPresent<String>(value: final value) => {
-              'name': value,
+              'rationale': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (runnerGroupId) {
-          SdkPresent<int>(value: final value) => {
-              'runner_group_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (maximumRunners) {
-          SdkPresent<int>(value: final value) => {
-              'maximum_runners': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (enableStaticIp) {
+        ...switch (suggest) {
           SdkPresent<bool>(value: final value) => {
-              'enable_static_ip': value,
+              'suggest': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (size) {
-          SdkPresent<String>(value: final value) => {
-              'size': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (imageSource) {
-          SdkPresent<ActionsUpdateHostedRunnerForOrgRequestBodyImageSource>(
+        ...switch (confidence) {
+          SdkPresent<IssuesUpdateRequestBodyIssueFieldValuesItemConfidence>(
             value: final value
           ) =>
             {
-              'image_source': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (imageId) {
-          SdkPresent<String>(value: final value) => {
-              'image_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (imageVersion) {
-          SdkPresent<String?>(value: final value) => {
-              'image_version': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (imageGen) {
-          SdkPresent<bool>(value: final value) => {
-              'image_gen': value,
+              'confidence': value.toJson(),
             },
           _ => const <String, dynamic>{},
         },
       };
 }
 
-class ActionsSetGithubActionsPermissionsOrganizationRequestBody {
+class IssuesUpdateRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// The policy that controls the repositories in the organization that are allowed to run GitHub Actions.
-  final EnabledRepositories enabledRepositories;
+  /// The title of the issue.
+  final SdkOptional<dynamic> title;
 
-  /// The permissions policy that controls the actions and reusable workflows that are allowed to run.
-  final SdkOptional<AllowedActions> allowedActions;
+  /// The contents of the issue.
+  final SdkOptional<String?> body;
 
-  /// Whether actions must be pinned to a full-length commit SHA.
-  final SdkOptional<bool> shaPinningRequired;
+  /// Username to assign to this issue. **This field is closing down.**
+  final SdkOptional<String?> assignee;
 
-  const ActionsSetGithubActionsPermissionsOrganizationRequestBody(
-      {required this.enabledRepositories,
-      this.allowedActions = const SdkOmitted(),
-      this.shaPinningRequired = const SdkOmitted()});
+  /// The open or closed state of the issue.
+  final SdkOptional<IssuesUpdateRequestBodyState> state;
 
-  ActionsSetGithubActionsPermissionsOrganizationRequestBody Function(
-      {EnabledRepositories enabledRepositories,
-      SdkOptional<AllowedActions> allowedActions,
-      SdkOptional<bool> shaPinningRequired}) get copyWith => _copyWith;
+  /// The reason for the state change. Ignored unless `state` is changed.
+  final SdkOptional<IssuesUpdateRequestBodyStateReason?> stateReason;
 
-  ActionsSetGithubActionsPermissionsOrganizationRequestBody _copyWith(
-          {Object? enabledRepositories = sdkOmittedValue,
-          Object? allowedActions = sdkOmittedValue,
-          Object? shaPinningRequired = sdkOmittedValue}) =>
-      ActionsSetGithubActionsPermissionsOrganizationRequestBody(
-        enabledRepositories: identical(enabledRepositories, sdkOmittedValue)
-            ? this.enabledRepositories
-            : enabledRepositories as EnabledRepositories,
-        allowedActions: identical(allowedActions, sdkOmittedValue)
-            ? this.allowedActions
-            : allowedActions as SdkOptional<AllowedActions>,
-        shaPinningRequired: identical(shaPinningRequired, sdkOmittedValue)
-            ? this.shaPinningRequired
-            : shaPinningRequired as SdkOptional<bool>,
+  /// The ID of the issue to mark as the canonical duplicate when `state_reason` is `duplicate`. The issue must exist and be accessible to the authenticated user. Ignored when `state_reason` is not `duplicate`.
+  final SdkOptional<int> duplicateIssueId;
+  final SdkOptional<dynamic> milestone;
+
+  /// Labels to associate with this issue. Pass one or more labels to _replace_ the set of labels on this issue. Send an empty array (`[]`) to clear all labels from the issue. Only users with push access can set labels for issues. Without push access to the repository, label changes are silently dropped.
+  final SdkOptional<List<IssuesUpdateRequestLabelsItem>> labels;
+
+  /// Usernames to assign to this issue. Pass one or more user logins to _replace_ the set of assignees on this issue. Send an empty array (`[]`) to clear all assignees from the issue. Only users with push access can set assignees for new issues. Without push access to the repository, assignee changes are silently dropped.
+  final SdkOptional<List<IssuesUpdateRequestAssigneesItem>> assignees;
+
+  /// An array of issue field values to set on this issue. Each field value must include the field ID and the value to set. Only users with push access can set field values for issues
+  final SdkOptional<List<IssuesUpdateRequestBodyIssueFieldValuesItem>>
+      issueFieldValues;
+
+  /// The issue type to associate with this issue. Only users with push access can set the type for issues. Without push access to the repository, type changes are silently dropped.
+  final SdkOptional<IssuesUpdateRequestType?> type_;
+
+  const IssuesUpdateRequestBody(
+      {this.title = const SdkOmitted(),
+      this.body = const SdkOmitted(),
+      this.assignee = const SdkOmitted(),
+      this.state = const SdkOmitted(),
+      this.stateReason = const SdkOmitted(),
+      this.duplicateIssueId = const SdkOmitted(),
+      this.milestone = const SdkOmitted(),
+      this.labels = const SdkOmitted(),
+      this.assignees = const SdkOmitted(),
+      this.issueFieldValues = const SdkOmitted(),
+      this.type_ = const SdkOmitted()});
+
+  IssuesUpdateRequestBody Function(
+      {SdkOptional<dynamic> title,
+      SdkOptional<String?> body,
+      SdkOptional<String?> assignee,
+      SdkOptional<IssuesUpdateRequestBodyState> state,
+      SdkOptional<IssuesUpdateRequestBodyStateReason?> stateReason,
+      SdkOptional<int> duplicateIssueId,
+      SdkOptional<dynamic> milestone,
+      SdkOptional<List<IssuesUpdateRequestLabelsItem>> labels,
+      SdkOptional<List<IssuesUpdateRequestAssigneesItem>> assignees,
+      SdkOptional<List<IssuesUpdateRequestBodyIssueFieldValuesItem>>
+          issueFieldValues,
+      SdkOptional<IssuesUpdateRequestType?> type_}) get copyWith => _copyWith;
+
+  IssuesUpdateRequestBody _copyWith(
+          {Object? title = sdkOmittedValue,
+          Object? body = sdkOmittedValue,
+          Object? assignee = sdkOmittedValue,
+          Object? state = sdkOmittedValue,
+          Object? stateReason = sdkOmittedValue,
+          Object? duplicateIssueId = sdkOmittedValue,
+          Object? milestone = sdkOmittedValue,
+          Object? labels = sdkOmittedValue,
+          Object? assignees = sdkOmittedValue,
+          Object? issueFieldValues = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      IssuesUpdateRequestBody(
+        title: identical(title, sdkOmittedValue)
+            ? this.title
+            : title as SdkOptional<dynamic>,
+        body: identical(body, sdkOmittedValue)
+            ? this.body
+            : body as SdkOptional<String?>,
+        assignee: identical(assignee, sdkOmittedValue)
+            ? this.assignee
+            : assignee as SdkOptional<String?>,
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state as SdkOptional<IssuesUpdateRequestBodyState>,
+        stateReason: identical(stateReason, sdkOmittedValue)
+            ? this.stateReason
+            : stateReason as SdkOptional<IssuesUpdateRequestBodyStateReason?>,
+        duplicateIssueId: identical(duplicateIssueId, sdkOmittedValue)
+            ? this.duplicateIssueId
+            : duplicateIssueId as SdkOptional<int>,
+        milestone: identical(milestone, sdkOmittedValue)
+            ? this.milestone
+            : milestone as SdkOptional<dynamic>,
+        labels: identical(labels, sdkOmittedValue)
+            ? this.labels
+            : labels as SdkOptional<List<IssuesUpdateRequestLabelsItem>>,
+        assignees: identical(assignees, sdkOmittedValue)
+            ? this.assignees
+            : assignees as SdkOptional<List<IssuesUpdateRequestAssigneesItem>>,
+        issueFieldValues: identical(issueFieldValues, sdkOmittedValue)
+            ? this.issueFieldValues
+            : issueFieldValues as SdkOptional<
+                List<IssuesUpdateRequestBodyIssueFieldValuesItem>>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as SdkOptional<IssuesUpdateRequestType?>,
       );
 
-  factory ActionsSetGithubActionsPermissionsOrganizationRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsSetGithubActionsPermissionsOrganizationRequestBody(
-        enabledRepositories: (json['enabled_repositories'] != null
-            ? EnabledRepositories.fromJson(
-                json['enabled_repositories'] as String)
-            : null)!,
-        allowedActions: json['allowed_actions'] != null
-            ? SdkPresent((json['allowed_actions'] != null
-                ? AllowedActions.fromJson(json['allowed_actions'] as String)
+  factory IssuesUpdateRequestBody.fromJson(Map<String, dynamic> json) =>
+      IssuesUpdateRequestBody(
+        title: json.containsKey('title')
+            ? SdkPresent(json['title'])
+            : const SdkOmitted(),
+        body: json.containsKey('body')
+            ? SdkPresent(json['body'] as String?)
+            : const SdkOmitted(),
+        assignee: json.containsKey('assignee')
+            ? SdkPresent(json['assignee'] as String?)
+            : const SdkOmitted(),
+        state: json['state'] != null
+            ? SdkPresent((json['state'] != null
+                ? IssuesUpdateRequestBodyState.fromJson(json['state'] as String)
                 : null)!)
             : const SdkOmitted(),
-        shaPinningRequired: json['sha_pinning_required'] != null
-            ? SdkPresent((json['sha_pinning_required'] as bool?)!)
+        stateReason: json.containsKey('state_reason')
+            ? SdkPresent(json['state_reason'] != null
+                ? IssuesUpdateRequestBodyStateReason.fromJson(
+                    json['state_reason'] as String)
+                : null)
+            : const SdkOmitted(),
+        duplicateIssueId: json['duplicate_issue_id'] != null
+            ? SdkPresent(((json['duplicate_issue_id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        milestone: json.containsKey('milestone')
+            ? SdkPresent(json['milestone'])
+            : const SdkOmitted(),
+        labels: json['labels'] != null
+            ? SdkPresent(((json['labels'] as List?)
+                ?.map((e) => IssuesUpdateRequestLabelsItem.fromJson(e))
+                .toList())!)
+            : const SdkOmitted(),
+        assignees: json['assignees'] != null
+            ? SdkPresent(((json['assignees'] as List?)
+                ?.map((e) => IssuesUpdateRequestAssigneesItem.fromJson(e))
+                .toList())!)
+            : const SdkOmitted(),
+        issueFieldValues: json['issue_field_values'] != null
+            ? SdkPresent(((json['issue_field_values'] as List?)
+                ?.map((e) =>
+                    IssuesUpdateRequestBodyIssueFieldValuesItem.fromJson(
+                        e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+        type_: json.containsKey('type')
+            ? SdkPresent(json['type'] != null
+                ? IssuesUpdateRequestType.fromJson(json['type'])
+                : null)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        'enabled_repositories': enabledRepositories.toJson(),
-        ...switch (allowedActions) {
-          SdkPresent<AllowedActions>(value: final value) => {
-              'allowed_actions': value.toJson(),
+        ...switch (title) {
+          SdkPresent<dynamic>(value: final value) => {
+              'title': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (shaPinningRequired) {
+        ...switch (body) {
+          SdkPresent<String?>(value: final value) => {
+              'body': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (assignee) {
+          SdkPresent<String?>(value: final value) => {
+              'assignee': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (state) {
+          SdkPresent<IssuesUpdateRequestBodyState>(value: final value) => {
+              'state': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (stateReason) {
+          SdkPresent<IssuesUpdateRequestBodyStateReason?>(value: final value) =>
+            {
+              'state_reason': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (duplicateIssueId) {
+          SdkPresent<int>(value: final value) => {
+              'duplicate_issue_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (milestone) {
+          SdkPresent<dynamic>(value: final value) => {
+              'milestone': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (labels) {
+          SdkPresent<List<IssuesUpdateRequestLabelsItem>>(value: final value) =>
+            {
+              'labels': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (assignees) {
+          SdkPresent<List<IssuesUpdateRequestAssigneesItem>>(
+            value: final value
+          ) =>
+            {
+              'assignees': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (issueFieldValues) {
+          SdkPresent<List<IssuesUpdateRequestBodyIssueFieldValuesItem>>(
+            value: final value
+          ) =>
+            {
+              'issue_field_values': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (type_) {
+          SdkPresent<IssuesUpdateRequestType?>(value: final value) => {
+              'type': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class IssuesUpdateResponseVariant1SuggestionsTypeItem {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  final SdkOptional<String> value;
+  final SdkOptional<String> rationale;
+  final SdkOptional<bool> suggest;
+  final SdkOptional<IssuesUpdateResponseVariant1SuggestionsTypeItemConfidence>
+      confidence;
+  final SdkOptional<bool> ignored;
+  final SdkOptional<
+          IssuesUpdateResponseVariant1SuggestionsTypeItemIgnoredReason>
+      ignoredReason;
+
+  const IssuesUpdateResponseVariant1SuggestionsTypeItem(
+      {this.value = const SdkOmitted(),
+      this.rationale = const SdkOmitted(),
+      this.suggest = const SdkOmitted(),
+      this.confidence = const SdkOmitted(),
+      this.ignored = const SdkOmitted(),
+      this.ignoredReason = const SdkOmitted()});
+
+  IssuesUpdateResponseVariant1SuggestionsTypeItem Function(
+      {SdkOptional<String> value,
+      SdkOptional<String> rationale,
+      SdkOptional<bool> suggest,
+      SdkOptional<IssuesUpdateResponseVariant1SuggestionsTypeItemConfidence>
+          confidence,
+      SdkOptional<bool> ignored,
+      SdkOptional<IssuesUpdateResponseVariant1SuggestionsTypeItemIgnoredReason>
+          ignoredReason}) get copyWith => _copyWith;
+
+  IssuesUpdateResponseVariant1SuggestionsTypeItem _copyWith(
+          {Object? value = sdkOmittedValue,
+          Object? rationale = sdkOmittedValue,
+          Object? suggest = sdkOmittedValue,
+          Object? confidence = sdkOmittedValue,
+          Object? ignored = sdkOmittedValue,
+          Object? ignoredReason = sdkOmittedValue}) =>
+      IssuesUpdateResponseVariant1SuggestionsTypeItem(
+        value: identical(value, sdkOmittedValue)
+            ? this.value
+            : value as SdkOptional<String>,
+        rationale: identical(rationale, sdkOmittedValue)
+            ? this.rationale
+            : rationale as SdkOptional<String>,
+        suggest: identical(suggest, sdkOmittedValue)
+            ? this.suggest
+            : suggest as SdkOptional<bool>,
+        confidence: identical(confidence, sdkOmittedValue)
+            ? this.confidence
+            : confidence as SdkOptional<
+                IssuesUpdateResponseVariant1SuggestionsTypeItemConfidence>,
+        ignored: identical(ignored, sdkOmittedValue)
+            ? this.ignored
+            : ignored as SdkOptional<bool>,
+        ignoredReason: identical(ignoredReason, sdkOmittedValue)
+            ? this.ignoredReason
+            : ignoredReason as SdkOptional<
+                IssuesUpdateResponseVariant1SuggestionsTypeItemIgnoredReason>,
+      );
+
+  factory IssuesUpdateResponseVariant1SuggestionsTypeItem.fromJson(
+          Map<String, dynamic> json) =>
+      IssuesUpdateResponseVariant1SuggestionsTypeItem(
+        value: json['value'] != null
+            ? SdkPresent((json['value'] as String?)!)
+            : const SdkOmitted(),
+        rationale: json['rationale'] != null
+            ? SdkPresent((json['rationale'] as String?)!)
+            : const SdkOmitted(),
+        suggest: json['suggest'] != null
+            ? SdkPresent((json['suggest'] as bool?)!)
+            : const SdkOmitted(),
+        confidence: json['confidence'] != null
+            ? SdkPresent((json['confidence'] != null
+                ? IssuesUpdateResponseVariant1SuggestionsTypeItemConfidence
+                    .fromJson(json['confidence'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        ignored: json['ignored'] != null
+            ? SdkPresent((json['ignored'] as bool?)!)
+            : const SdkOmitted(),
+        ignoredReason: json['ignored_reason'] != null
+            ? SdkPresent((json['ignored_reason'] != null
+                ? IssuesUpdateResponseVariant1SuggestionsTypeItemIgnoredReason
+                    .fromJson(json['ignored_reason'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (value) {
+          SdkPresent<String>(value: final value) => {
+              'value': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (rationale) {
+          SdkPresent<String>(value: final value) => {
+              'rationale': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (suggest) {
           SdkPresent<bool>(value: final value) => {
-              'sha_pinning_required': value,
+              'suggest': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (confidence) {
+          SdkPresent<IssuesUpdateResponseVariant1SuggestionsTypeItemConfidence>(
+            value: final value
+          ) =>
+            {
+              'confidence': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (ignored) {
+          SdkPresent<bool>(value: final value) => {
+              'ignored': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (ignoredReason) {
+          SdkPresent<
+                IssuesUpdateResponseVariant1SuggestionsTypeItemIgnoredReason>(
+            value: final value
+          ) =>
+            {
+              'ignored_reason': value.toJson(),
             },
           _ => const <String, dynamic>{},
         },
       };
 }
 
-class ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse {
+class IssuesUpdateResponseVariant1SuggestionsIssueFieldValuesItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final double totalCount;
-  final List<Repository> repositories;
+  final SdkOptional<int> fieldId;
+  final SdkOptional<dynamic> value;
+  final SdkOptional<String> rationale;
+  final SdkOptional<bool> suggest;
+  final SdkOptional<
+          IssuesUpdateResponseVariant1SuggestionsIssueFieldValuesItemConfidence>
+      confidence;
+  final SdkOptional<bool> ignored;
+  final SdkOptional<
+          IssuesUpdateResponseVariant1SuggestionsIssueFieldValuesItemIgnoredReason>
+      ignoredReason;
 
-  const ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse(
-      {required this.totalCount, required this.repositories});
+  const IssuesUpdateResponseVariant1SuggestionsIssueFieldValuesItem(
+      {this.fieldId = const SdkOmitted(),
+      this.value = const SdkOmitted(),
+      this.rationale = const SdkOmitted(),
+      this.suggest = const SdkOmitted(),
+      this.confidence = const SdkOmitted(),
+      this.ignored = const SdkOmitted(),
+      this.ignoredReason = const SdkOmitted()});
 
-  ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse
-          Function({double totalCount, List<Repository> repositories})
-      get copyWith => _copyWith;
+  IssuesUpdateResponseVariant1SuggestionsIssueFieldValuesItem Function(
+      {SdkOptional<int> fieldId,
+      SdkOptional<dynamic> value,
+      SdkOptional<String> rationale,
+      SdkOptional<bool> suggest,
+      SdkOptional<
+              IssuesUpdateResponseVariant1SuggestionsIssueFieldValuesItemConfidence>
+          confidence,
+      SdkOptional<bool> ignored,
+      SdkOptional<
+              IssuesUpdateResponseVariant1SuggestionsIssueFieldValuesItemIgnoredReason>
+          ignoredReason}) get copyWith => _copyWith;
 
-  ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse
-      _copyWith(
-              {Object? totalCount = sdkOmittedValue,
-              Object? repositories = sdkOmittedValue}) =>
-          ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse(
-            totalCount: identical(totalCount, sdkOmittedValue)
-                ? this.totalCount
-                : totalCount as double,
-            repositories: identical(repositories, sdkOmittedValue)
-                ? this.repositories
-                : repositories as List<Repository>,
-          );
+  IssuesUpdateResponseVariant1SuggestionsIssueFieldValuesItem _copyWith(
+          {Object? fieldId = sdkOmittedValue,
+          Object? value = sdkOmittedValue,
+          Object? rationale = sdkOmittedValue,
+          Object? suggest = sdkOmittedValue,
+          Object? confidence = sdkOmittedValue,
+          Object? ignored = sdkOmittedValue,
+          Object? ignoredReason = sdkOmittedValue}) =>
+      IssuesUpdateResponseVariant1SuggestionsIssueFieldValuesItem(
+        fieldId: identical(fieldId, sdkOmittedValue)
+            ? this.fieldId
+            : fieldId as SdkOptional<int>,
+        value: identical(value, sdkOmittedValue)
+            ? this.value
+            : value as SdkOptional<dynamic>,
+        rationale: identical(rationale, sdkOmittedValue)
+            ? this.rationale
+            : rationale as SdkOptional<String>,
+        suggest: identical(suggest, sdkOmittedValue)
+            ? this.suggest
+            : suggest as SdkOptional<bool>,
+        confidence: identical(confidence, sdkOmittedValue)
+            ? this.confidence
+            : confidence as SdkOptional<
+                IssuesUpdateResponseVariant1SuggestionsIssueFieldValuesItemConfidence>,
+        ignored: identical(ignored, sdkOmittedValue)
+            ? this.ignored
+            : ignored as SdkOptional<bool>,
+        ignoredReason: identical(ignoredReason, sdkOmittedValue)
+            ? this.ignoredReason
+            : ignoredReason as SdkOptional<
+                IssuesUpdateResponseVariant1SuggestionsIssueFieldValuesItemIgnoredReason>,
+      );
 
-  factory ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse.fromJson(
+  factory IssuesUpdateResponseVariant1SuggestionsIssueFieldValuesItem.fromJson(
           Map<String, dynamic> json) =>
-      ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse(
-        totalCount: ((json['total_count'] as num?)?.toDouble())!,
-        repositories: ((json['repositories'] as List?)
-            ?.map((e) => Repository.fromJson(e as Map<String, dynamic>))
-            .toList())!,
+      IssuesUpdateResponseVariant1SuggestionsIssueFieldValuesItem(
+        fieldId: json['field_id'] != null
+            ? SdkPresent(((json['field_id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        value: json['value'] != null
+            ? SdkPresent((json['value'])!)
+            : const SdkOmitted(),
+        rationale: json['rationale'] != null
+            ? SdkPresent((json['rationale'] as String?)!)
+            : const SdkOmitted(),
+        suggest: json['suggest'] != null
+            ? SdkPresent((json['suggest'] as bool?)!)
+            : const SdkOmitted(),
+        confidence: json['confidence'] != null
+            ? SdkPresent((json['confidence'] != null
+                ? IssuesUpdateResponseVariant1SuggestionsIssueFieldValuesItemConfidence
+                    .fromJson(json['confidence'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        ignored: json['ignored'] != null
+            ? SdkPresent((json['ignored'] as bool?)!)
+            : const SdkOmitted(),
+        ignoredReason: json['ignored_reason'] != null
+            ? SdkPresent((json['ignored_reason'] != null
+                ? IssuesUpdateResponseVariant1SuggestionsIssueFieldValuesItemIgnoredReason
+                    .fromJson(json['ignored_reason'] as String)
+                : null)!)
+            : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        'total_count': totalCount,
-        'repositories': repositories.map((item) => item.toJson()).toList(),
-      };
-}
-
-class ActionsSetSelectedRepositoriesEnabledGithubActionsOrganizationRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// List of repository IDs to enable for GitHub Actions.
-  final List<int> selectedRepositoryIds;
-
-  const ActionsSetSelectedRepositoriesEnabledGithubActionsOrganizationRequestBody(
-      {required this.selectedRepositoryIds});
-
-  ActionsSetSelectedRepositoriesEnabledGithubActionsOrganizationRequestBody
-      Function({List<int> selectedRepositoryIds}) get copyWith => _copyWith;
-
-  ActionsSetSelectedRepositoriesEnabledGithubActionsOrganizationRequestBody
-      _copyWith({Object? selectedRepositoryIds = sdkOmittedValue}) =>
-          ActionsSetSelectedRepositoriesEnabledGithubActionsOrganizationRequestBody(
-            selectedRepositoryIds:
-                identical(selectedRepositoryIds, sdkOmittedValue)
-                    ? this.selectedRepositoryIds
-                    : selectedRepositoryIds as List<int>,
-          );
-
-  factory ActionsSetSelectedRepositoriesEnabledGithubActionsOrganizationRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsSetSelectedRepositoriesEnabledGithubActionsOrganizationRequestBody(
-        selectedRepositoryIds: ((json['selected_repository_ids'] as List?)
-            ?.map((e) => (e as num).toInt())
-            .toList())!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'selected_repository_ids': selectedRepositoryIds,
-      };
-}
-
-class ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The policy that controls whether self-hosted runners can be used in the organization
-  final ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBodyEnabledRepositories
-      enabledRepositories;
-
-  const ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBody(
-      {required this.enabledRepositories});
-
-  ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBody Function(
-      {ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBodyEnabledRepositories
-          enabledRepositories}) get copyWith => _copyWith;
-
-  ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBody _copyWith(
-          {Object? enabledRepositories = sdkOmittedValue}) =>
-      ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBody(
-        enabledRepositories: identical(enabledRepositories, sdkOmittedValue)
-            ? this.enabledRepositories
-            : enabledRepositories
-                as ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBodyEnabledRepositories,
-      );
-
-  factory ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBody(
-        enabledRepositories: (json['enabled_repositories'] != null
-            ? ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBodyEnabledRepositories
-                .fromJson(json['enabled_repositories'] as String)
-            : null)!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'enabled_repositories': enabledRepositories.toJson(),
+        ...switch (fieldId) {
+          SdkPresent<int>(value: final value) => {
+              'field_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (value) {
+          SdkPresent<dynamic>(value: final value) => {
+              'value': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (rationale) {
+          SdkPresent<String>(value: final value) => {
+              'rationale': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (suggest) {
+          SdkPresent<bool>(value: final value) => {
+              'suggest': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (confidence) {
+          SdkPresent<
+                IssuesUpdateResponseVariant1SuggestionsIssueFieldValuesItemConfidence>(
+            value: final value
+          ) =>
+            {
+              'confidence': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (ignored) {
+          SdkPresent<bool>(value: final value) => {
+              'ignored': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (ignoredReason) {
+          SdkPresent<
+                IssuesUpdateResponseVariant1SuggestionsIssueFieldValuesItemIgnoredReason>(
+            value: final value
+          ) =>
+            {
+              'ignored_reason': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
       };
 }

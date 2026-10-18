@@ -4,36 +4,6 @@
 part of 'shared_deployment.dart';
 
 // shared_deployment domain models
-sealed class DeploymentPayload {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  const DeploymentPayload();
-  factory DeploymentPayload.fromJson(Object? json) {
-    if (json is String) {
-      return DeploymentPayloadString(json);
-    }
-    if (json is Map) {
-      return DeploymentPayloadMap(Map<String, Object?>.from(json));
-    }
-    throw FormatException("No variant matched for DeploymentPayload");
-  }
-  Object? toJson();
-}
-
-final class DeploymentPayloadMap extends DeploymentPayload {
-  final Map<String, Object?> value;
-  const DeploymentPayloadMap(this.value);
-  @override
-  Object? toJson() => value;
-}
-
-final class DeploymentPayloadString extends DeploymentPayload {
-  final String value;
-  const DeploymentPayloadString(this.value);
-  @override
-  Object? toJson() => value;
-}
-
 /// A request for a specific ref(branch,sha,tag) to be deployed
 class Deployment {
   /// This model is constructed from named fields in one call.
@@ -58,7 +28,7 @@ class Deployment {
   final String task;
 
   /// Required API value serialized in the `payload` wire field.
-  final dynamic payload;
+  final DeploymentPayload payload;
 
   /// Optional `string` value serialized in the `original_environment` wire field.
   final SdkOptional<String> originalEnvironment;
@@ -120,7 +90,7 @@ class Deployment {
           String sha,
           String ref,
           String task,
-          dynamic payload,
+          DeploymentPayload payload,
           SdkOptional<String> originalEnvironment,
           String environment,
           String? description,
@@ -163,7 +133,7 @@ class Deployment {
         task: identical(task, sdkOmittedValue) ? this.task : task as String,
         payload: identical(payload, sdkOmittedValue)
             ? this.payload
-            : payload as dynamic,
+            : payload as DeploymentPayload,
         originalEnvironment: identical(originalEnvironment, sdkOmittedValue)
             ? this.originalEnvironment
             : originalEnvironment as SdkOptional<String>,
@@ -206,7 +176,9 @@ class Deployment {
         sha: (json['sha'] as String?)!,
         ref: (json['ref'] as String?)!,
         task: (json['task'] as String?)!,
-        payload: (json['payload'])!,
+        payload: (json['payload'] != null
+            ? DeploymentPayload.fromJson(json['payload'])
+            : null)!,
         originalEnvironment: json['original_environment'] != null
             ? SdkPresent((json['original_environment'] as String?)!)
             : const SdkOmitted(),
@@ -247,7 +219,7 @@ class Deployment {
         'sha': sha,
         'ref': ref,
         'task': task,
-        'payload': payload,
+        'payload': payload.toJson(),
         ...switch (originalEnvironment) {
           SdkPresent<String>(value: final value) => {
               'original_environment': value,
@@ -280,6 +252,36 @@ class Deployment {
           _ => const <String, dynamic>{},
         },
       };
+}
+
+sealed class DeploymentPayload {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  const DeploymentPayload();
+  factory DeploymentPayload.fromJson(Object? json) {
+    if (json is String) {
+      return DeploymentPayloadString(json);
+    }
+    if (json is Map) {
+      return DeploymentPayloadMap(Map<String, Object?>.from(json));
+    }
+    throw FormatException("No variant matched for DeploymentPayload");
+  }
+  Object? toJson();
+}
+
+final class DeploymentPayloadMap extends DeploymentPayload {
+  final Map<String, Object?> value;
+  const DeploymentPayloadMap(this.value);
+  @override
+  Object? toJson() => value;
+}
+
+final class DeploymentPayloadString extends DeploymentPayload {
+  final String value;
+  const DeploymentPayloadString(this.value);
+  @override
+  Object? toJson() => value;
 }
 
 /// The type of reviewer.

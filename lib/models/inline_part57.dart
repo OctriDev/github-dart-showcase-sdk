@@ -4,232 +4,6 @@
 part of 'inline.dart';
 
 // Inline operation models (part 57)
-/// The type of Git ref object created in the repository.
-final class WebhookCreateRefType {
-  final String value;
-
-  const WebhookCreateRefType._(this.value);
-
-  factory WebhookCreateRefType.fromJson(String value) =>
-      WebhookCreateRefType._(value);
-
-  static const tag = WebhookCreateRefType._('tag');
-  static const branch = WebhookCreateRefType._('branch');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookCreateRefType && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookCustomPropertyCreatedAction {
-  final String value;
-
-  const WebhookCustomPropertyCreatedAction._(this.value);
-
-  factory WebhookCustomPropertyCreatedAction.fromJson(String value) =>
-      WebhookCustomPropertyCreatedAction._(value);
-
-  static const created = WebhookCustomPropertyCreatedAction._('created');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookCustomPropertyCreatedAction && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookCustomPropertyDeletedAction {
-  final String value;
-
-  const WebhookCustomPropertyDeletedAction._(this.value);
-
-  factory WebhookCustomPropertyDeletedAction.fromJson(String value) =>
-      WebhookCustomPropertyDeletedAction._(value);
-
-  static const deleted = WebhookCustomPropertyDeletedAction._('deleted');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookCustomPropertyDeletedAction && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookCustomPropertyPromotedToEnterpriseAction {
-  final String value;
-
-  const WebhookCustomPropertyPromotedToEnterpriseAction._(this.value);
-
-  factory WebhookCustomPropertyPromotedToEnterpriseAction.fromJson(
-          String value) =>
-      WebhookCustomPropertyPromotedToEnterpriseAction._(value);
-
-  static const promoteToEnterprise =
-      WebhookCustomPropertyPromotedToEnterpriseAction._(
-          'promote_to_enterprise');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookCustomPropertyPromotedToEnterpriseAction &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookCustomPropertyUpdatedAction {
-  final String value;
-
-  const WebhookCustomPropertyUpdatedAction._(this.value);
-
-  factory WebhookCustomPropertyUpdatedAction.fromJson(String value) =>
-      WebhookCustomPropertyUpdatedAction._(value);
-
-  static const updated = WebhookCustomPropertyUpdatedAction._('updated');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookCustomPropertyUpdatedAction && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookCustomPropertyValuesUpdatedAction {
-  final String value;
-
-  const WebhookCustomPropertyValuesUpdatedAction._(this.value);
-
-  factory WebhookCustomPropertyValuesUpdatedAction.fromJson(String value) =>
-      WebhookCustomPropertyValuesUpdatedAction._(value);
-
-  static const updated = WebhookCustomPropertyValuesUpdatedAction._('updated');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookCustomPropertyValuesUpdatedAction && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The type of Git ref object deleted in the repository.
-final class WebhookDeleteRefType {
-  final String value;
-
-  const WebhookDeleteRefType._(this.value);
-
-  factory WebhookDeleteRefType.fromJson(String value) =>
-      WebhookDeleteRefType._(value);
-
-  static const tag = WebhookDeleteRefType._('tag');
-  static const branch = WebhookDeleteRefType._('branch');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookDeleteRefType && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookDependabotAlertAssigneesChangedAction {
-  final String value;
-
-  const WebhookDependabotAlertAssigneesChangedAction._(this.value);
-
-  factory WebhookDependabotAlertAssigneesChangedAction.fromJson(String value) =>
-      WebhookDependabotAlertAssigneesChangedAction._(value);
-
-  static const assigneesChanged =
-      WebhookDependabotAlertAssigneesChangedAction._('assignees_changed');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookDependabotAlertAssigneesChangedAction &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookDependabotAlertAutoDismissedAction {
-  final String value;
-
-  const WebhookDependabotAlertAutoDismissedAction._(this.value);
-
-  factory WebhookDependabotAlertAutoDismissedAction.fromJson(String value) =>
-      WebhookDependabotAlertAutoDismissedAction._(value);
-
-  static const autoDismissed =
-      WebhookDependabotAlertAutoDismissedAction._('auto_dismissed');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookDependabotAlertAutoDismissedAction &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookDependabotAlertAutoReopenedAction {
   final String value;
@@ -322,6 +96,180 @@ final class WebhookDependabotAlertFixedAction {
   @override
   bool operator ==(Object other) =>
       other is WebhookDependabotAlertFixedAction && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Required enumerated value serialized in the `action` wire field.
+final class WebhookDependabotAlertReintroducedAction {
+  final String value;
+
+  const WebhookDependabotAlertReintroducedAction._(this.value);
+
+  factory WebhookDependabotAlertReintroducedAction.fromJson(String value) =>
+      WebhookDependabotAlertReintroducedAction._(value);
+
+  static const reintroduced =
+      WebhookDependabotAlertReintroducedAction._('reintroduced');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookDependabotAlertReintroducedAction && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Required enumerated value serialized in the `action` wire field.
+final class WebhookDependabotAlertReopenedAction {
+  final String value;
+
+  const WebhookDependabotAlertReopenedAction._(this.value);
+
+  factory WebhookDependabotAlertReopenedAction.fromJson(String value) =>
+      WebhookDependabotAlertReopenedAction._(value);
+
+  static const reopened = WebhookDependabotAlertReopenedAction._('reopened');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookDependabotAlertReopenedAction && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Required enumerated value serialized in the `action` wire field.
+final class WebhookDependabotAlertWithdrawnAction {
+  final String value;
+
+  const WebhookDependabotAlertWithdrawnAction._(this.value);
+
+  factory WebhookDependabotAlertWithdrawnAction.fromJson(String value) =>
+      WebhookDependabotAlertWithdrawnAction._(value);
+
+  static const withdrawn = WebhookDependabotAlertWithdrawnAction._('withdrawn');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookDependabotAlertWithdrawnAction && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Required enumerated value serialized in the `action` wire field.
+final class WebhookDeployKeyCreatedAction {
+  final String value;
+
+  const WebhookDeployKeyCreatedAction._(this.value);
+
+  factory WebhookDeployKeyCreatedAction.fromJson(String value) =>
+      WebhookDeployKeyCreatedAction._(value);
+
+  static const created = WebhookDeployKeyCreatedAction._('created');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookDeployKeyCreatedAction && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Required enumerated value serialized in the `action` wire field.
+final class WebhookDeployKeyDeletedAction {
+  final String value;
+
+  const WebhookDeployKeyDeletedAction._(this.value);
+
+  factory WebhookDeployKeyDeletedAction.fromJson(String value) =>
+      WebhookDeployKeyDeletedAction._(value);
+
+  static const deleted = WebhookDeployKeyDeletedAction._('deleted');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookDeployKeyDeletedAction && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Required enumerated value serialized in the `action` wire field.
+final class WebhookDeploymentCreatedAction {
+  final String value;
+
+  const WebhookDeploymentCreatedAction._(this.value);
+
+  factory WebhookDeploymentCreatedAction.fromJson(String value) =>
+      WebhookDeploymentCreatedAction._(value);
+
+  static const created = WebhookDeploymentCreatedAction._('created');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookDeploymentCreatedAction && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Optional enumerated value serialized in the `type` wire field.
+final class WebhookDeploymentCreatedDeploymentCreatorType {
+  final String value;
+
+  const WebhookDeploymentCreatedDeploymentCreatorType._(this.value);
+
+  factory WebhookDeploymentCreatedDeploymentCreatorType.fromJson(
+          String value) =>
+      WebhookDeploymentCreatedDeploymentCreatorType._(value);
+
+  static const bot = WebhookDeploymentCreatedDeploymentCreatorType._('Bot');
+  static const user = WebhookDeploymentCreatedDeploymentCreatorType._('User');
+  static const organization =
+      WebhookDeploymentCreatedDeploymentCreatorType._('Organization');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookDeploymentCreatedDeploymentCreatorType &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;

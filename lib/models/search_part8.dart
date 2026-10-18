@@ -4,193 +4,379 @@
 part of 'search.dart';
 
 // search domain models (part 8)
-/// Topic Search Result Item
-class TopicSearchResultItem {
+/// User Search Result Item
+class UserSearchResultItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Required `string` value serialized in the `name` wire field.
-  final String name;
+  /// Required `string` value serialized in the `login` wire field.
+  final String login;
 
-  /// Required `string` value serialized in the `display_name` wire field.
-  final String? displayName;
+  /// Required `int64`-formatted value serialized in the `id` wire field.
+  final int id;
 
-  /// Required `string` value serialized in the `short_description` wire field.
-  final String? shortDescription;
+  /// Required `string` value serialized in the `node_id` wire field.
+  final String nodeId;
 
-  /// Required `string` value serialized in the `description` wire field.
-  final String? description;
+  /// Required `uri`-formatted value serialized in the `avatar_url` wire field.
+  final String avatarUrl;
 
-  /// Required `string` value serialized in the `created_by` wire field.
-  final String? createdBy;
+  /// Required `string` value serialized in the `gravatar_id` wire field.
+  final String? gravatarId;
 
-  /// Required `string` value serialized in the `released` wire field.
-  final String? released;
+  /// Required `uri`-formatted value serialized in the `url` wire field.
+  final String url;
 
-  /// Required `date-time`-formatted value serialized in the `created_at` wire field.
-  final String createdAt;
+  /// Required `uri`-formatted value serialized in the `html_url` wire field.
+  final String htmlUrl;
 
-  /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
-  final String updatedAt;
+  /// Required `uri`-formatted value serialized in the `followers_url` wire field.
+  final String followersUrl;
 
-  /// Required `boolean` value serialized in the `featured` wire field.
-  final bool featured;
+  /// Required `uri`-formatted value serialized in the `subscriptions_url` wire field.
+  final String subscriptionsUrl;
 
-  /// Required `boolean` value serialized in the `curated` wire field.
-  final bool curated;
+  /// Required `uri`-formatted value serialized in the `organizations_url` wire field.
+  final String organizationsUrl;
+
+  /// Required `uri`-formatted value serialized in the `repos_url` wire field.
+  final String reposUrl;
+
+  /// Required `uri`-formatted value serialized in the `received_events_url` wire field.
+  final String receivedEventsUrl;
+
+  /// Required `string` value serialized in the `type` wire field.
+  final String type_;
 
   /// Required `number` value serialized in the `score` wire field.
   final double score;
 
-  /// Optional `integer` value serialized in the `repository_count` wire field.
-  final SdkOptional<int?> repositoryCount;
+  /// Required `string` value serialized in the `following_url` wire field.
+  final String followingUrl;
 
-  /// Optional `uri`-formatted value serialized in the `logo_url` wire field.
-  final SdkOptional<String?> logoUrl;
+  /// Required `string` value serialized in the `gists_url` wire field.
+  final String gistsUrl;
+
+  /// Required `string` value serialized in the `starred_url` wire field.
+  final String starredUrl;
+
+  /// Required `string` value serialized in the `events_url` wire field.
+  final String eventsUrl;
+
+  /// Optional `integer` value serialized in the `public_repos` wire field.
+  final SdkOptional<int> publicRepos;
+
+  /// Optional `integer` value serialized in the `public_gists` wire field.
+  final SdkOptional<int> publicGists;
+
+  /// Optional `integer` value serialized in the `followers` wire field.
+  final SdkOptional<int> followers;
+
+  /// Optional `integer` value serialized in the `following` wire field.
+  final SdkOptional<int> following;
+
+  /// Optional `date-time`-formatted value serialized in the `created_at` wire field.
+  final SdkOptional<String> createdAt;
+
+  /// Optional `date-time`-formatted value serialized in the `updated_at` wire field.
+  final SdkOptional<String> updatedAt;
+
+  /// Optional `string` value serialized in the `name` wire field.
+  final SdkOptional<String?> name;
+
+  /// Optional `string` value serialized in the `bio` wire field.
+  final SdkOptional<String?> bio;
+
+  /// Optional `email`-formatted value serialized in the `email` wire field.
+  final SdkOptional<String?> email;
+
+  /// Optional `string` value serialized in the `location` wire field.
+  final SdkOptional<String?> location;
+
+  /// Required `boolean` value serialized in the `site_admin` wire field.
+  final bool siteAdmin;
+
+  /// Optional `boolean` value serialized in the `hireable` wire field.
+  final SdkOptional<bool?> hireable;
 
   /// Optional array value serialized in the `text_matches` wire field.
   final SdkOptional<List<SearchResultTextMatchesItem>> textMatches;
 
-  /// Optional array value serialized in the `related` wire field.
-  final SdkOptional<List<TopicSearchResultItemRelatedItem>?> related;
+  /// Optional `string` value serialized in the `blog` wire field.
+  final SdkOptional<String?> blog;
 
-  /// Optional array value serialized in the `aliases` wire field.
-  final SdkOptional<List<TopicSearchResultItemAliasesItem>?> aliases;
+  /// Optional `string` value serialized in the `company` wire field.
+  final SdkOptional<String?> company;
 
-  const TopicSearchResultItem(
-      {required this.name,
-      required this.displayName,
-      required this.shortDescription,
-      required this.description,
-      required this.createdBy,
-      required this.released,
-      required this.createdAt,
-      required this.updatedAt,
-      required this.featured,
-      required this.curated,
+  /// Optional `date-time`-formatted value serialized in the `suspended_at` wire field.
+  final SdkOptional<String?> suspendedAt;
+
+  /// Optional `string` value serialized in the `user_view_type` wire field.
+  final SdkOptional<String> userViewType;
+
+  const UserSearchResultItem(
+      {required this.login,
+      required this.id,
+      required this.nodeId,
+      required this.avatarUrl,
+      required this.gravatarId,
+      required this.url,
+      required this.htmlUrl,
+      required this.followersUrl,
+      required this.subscriptionsUrl,
+      required this.organizationsUrl,
+      required this.reposUrl,
+      required this.receivedEventsUrl,
+      required this.type_,
       required this.score,
-      this.repositoryCount = const SdkOmitted(),
-      this.logoUrl = const SdkOmitted(),
+      required this.followingUrl,
+      required this.gistsUrl,
+      required this.starredUrl,
+      required this.eventsUrl,
+      this.publicRepos = const SdkOmitted(),
+      this.publicGists = const SdkOmitted(),
+      this.followers = const SdkOmitted(),
+      this.following = const SdkOmitted(),
+      this.createdAt = const SdkOmitted(),
+      this.updatedAt = const SdkOmitted(),
+      this.name = const SdkOmitted(),
+      this.bio = const SdkOmitted(),
+      this.email = const SdkOmitted(),
+      this.location = const SdkOmitted(),
+      required this.siteAdmin,
+      this.hireable = const SdkOmitted(),
       this.textMatches = const SdkOmitted(),
-      this.related = const SdkOmitted(),
-      this.aliases = const SdkOmitted()});
+      this.blog = const SdkOmitted(),
+      this.company = const SdkOmitted(),
+      this.suspendedAt = const SdkOmitted(),
+      this.userViewType = const SdkOmitted()});
 
-  TopicSearchResultItem Function(
-          {String name,
-          String? displayName,
-          String? shortDescription,
-          String? description,
-          String? createdBy,
-          String? released,
-          String createdAt,
-          String updatedAt,
-          bool featured,
-          bool curated,
-          double score,
-          SdkOptional<int?> repositoryCount,
-          SdkOptional<String?> logoUrl,
-          SdkOptional<List<SearchResultTextMatchesItem>> textMatches,
-          SdkOptional<List<TopicSearchResultItemRelatedItem>?> related,
-          SdkOptional<List<TopicSearchResultItemAliasesItem>?> aliases})
-      get copyWith => _copyWith;
+  UserSearchResultItem Function(
+      {String login,
+      int id,
+      String nodeId,
+      String avatarUrl,
+      String? gravatarId,
+      String url,
+      String htmlUrl,
+      String followersUrl,
+      String subscriptionsUrl,
+      String organizationsUrl,
+      String reposUrl,
+      String receivedEventsUrl,
+      String type_,
+      double score,
+      String followingUrl,
+      String gistsUrl,
+      String starredUrl,
+      String eventsUrl,
+      SdkOptional<int> publicRepos,
+      SdkOptional<int> publicGists,
+      SdkOptional<int> followers,
+      SdkOptional<int> following,
+      SdkOptional<String> createdAt,
+      SdkOptional<String> updatedAt,
+      SdkOptional<String?> name,
+      SdkOptional<String?> bio,
+      SdkOptional<String?> email,
+      SdkOptional<String?> location,
+      bool siteAdmin,
+      SdkOptional<bool?> hireable,
+      SdkOptional<List<SearchResultTextMatchesItem>> textMatches,
+      SdkOptional<String?> blog,
+      SdkOptional<String?> company,
+      SdkOptional<String?> suspendedAt,
+      SdkOptional<String> userViewType}) get copyWith => _copyWith;
 
-  TopicSearchResultItem _copyWith(
-          {Object? name = sdkOmittedValue,
-          Object? displayName = sdkOmittedValue,
-          Object? shortDescription = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? createdBy = sdkOmittedValue,
-          Object? released = sdkOmittedValue,
+  UserSearchResultItem _copyWith(
+          {Object? login = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? avatarUrl = sdkOmittedValue,
+          Object? gravatarId = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? followersUrl = sdkOmittedValue,
+          Object? subscriptionsUrl = sdkOmittedValue,
+          Object? organizationsUrl = sdkOmittedValue,
+          Object? reposUrl = sdkOmittedValue,
+          Object? receivedEventsUrl = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? score = sdkOmittedValue,
+          Object? followingUrl = sdkOmittedValue,
+          Object? gistsUrl = sdkOmittedValue,
+          Object? starredUrl = sdkOmittedValue,
+          Object? eventsUrl = sdkOmittedValue,
+          Object? publicRepos = sdkOmittedValue,
+          Object? publicGists = sdkOmittedValue,
+          Object? followers = sdkOmittedValue,
+          Object? following = sdkOmittedValue,
           Object? createdAt = sdkOmittedValue,
           Object? updatedAt = sdkOmittedValue,
-          Object? featured = sdkOmittedValue,
-          Object? curated = sdkOmittedValue,
-          Object? score = sdkOmittedValue,
-          Object? repositoryCount = sdkOmittedValue,
-          Object? logoUrl = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? bio = sdkOmittedValue,
+          Object? email = sdkOmittedValue,
+          Object? location = sdkOmittedValue,
+          Object? siteAdmin = sdkOmittedValue,
+          Object? hireable = sdkOmittedValue,
           Object? textMatches = sdkOmittedValue,
-          Object? related = sdkOmittedValue,
-          Object? aliases = sdkOmittedValue}) =>
-      TopicSearchResultItem(
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        displayName: identical(displayName, sdkOmittedValue)
-            ? this.displayName
-            : displayName as String?,
-        shortDescription: identical(shortDescription, sdkOmittedValue)
-            ? this.shortDescription
-            : shortDescription as String?,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as String?,
-        createdBy: identical(createdBy, sdkOmittedValue)
-            ? this.createdBy
-            : createdBy as String?,
-        released: identical(released, sdkOmittedValue)
-            ? this.released
-            : released as String?,
+          Object? blog = sdkOmittedValue,
+          Object? company = sdkOmittedValue,
+          Object? suspendedAt = sdkOmittedValue,
+          Object? userViewType = sdkOmittedValue}) =>
+      UserSearchResultItem(
+        login: identical(login, sdkOmittedValue) ? this.login : login as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        avatarUrl: identical(avatarUrl, sdkOmittedValue)
+            ? this.avatarUrl
+            : avatarUrl as String,
+        gravatarId: identical(gravatarId, sdkOmittedValue)
+            ? this.gravatarId
+            : gravatarId as String?,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as String,
+        followersUrl: identical(followersUrl, sdkOmittedValue)
+            ? this.followersUrl
+            : followersUrl as String,
+        subscriptionsUrl: identical(subscriptionsUrl, sdkOmittedValue)
+            ? this.subscriptionsUrl
+            : subscriptionsUrl as String,
+        organizationsUrl: identical(organizationsUrl, sdkOmittedValue)
+            ? this.organizationsUrl
+            : organizationsUrl as String,
+        reposUrl: identical(reposUrl, sdkOmittedValue)
+            ? this.reposUrl
+            : reposUrl as String,
+        receivedEventsUrl: identical(receivedEventsUrl, sdkOmittedValue)
+            ? this.receivedEventsUrl
+            : receivedEventsUrl as String,
+        type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as String,
+        score: identical(score, sdkOmittedValue) ? this.score : score as double,
+        followingUrl: identical(followingUrl, sdkOmittedValue)
+            ? this.followingUrl
+            : followingUrl as String,
+        gistsUrl: identical(gistsUrl, sdkOmittedValue)
+            ? this.gistsUrl
+            : gistsUrl as String,
+        starredUrl: identical(starredUrl, sdkOmittedValue)
+            ? this.starredUrl
+            : starredUrl as String,
+        eventsUrl: identical(eventsUrl, sdkOmittedValue)
+            ? this.eventsUrl
+            : eventsUrl as String,
+        publicRepos: identical(publicRepos, sdkOmittedValue)
+            ? this.publicRepos
+            : publicRepos as SdkOptional<int>,
+        publicGists: identical(publicGists, sdkOmittedValue)
+            ? this.publicGists
+            : publicGists as SdkOptional<int>,
+        followers: identical(followers, sdkOmittedValue)
+            ? this.followers
+            : followers as SdkOptional<int>,
+        following: identical(following, sdkOmittedValue)
+            ? this.following
+            : following as SdkOptional<int>,
         createdAt: identical(createdAt, sdkOmittedValue)
             ? this.createdAt
-            : createdAt as String,
+            : createdAt as SdkOptional<String>,
         updatedAt: identical(updatedAt, sdkOmittedValue)
             ? this.updatedAt
-            : updatedAt as String,
-        featured: identical(featured, sdkOmittedValue)
-            ? this.featured
-            : featured as bool,
-        curated: identical(curated, sdkOmittedValue)
-            ? this.curated
-            : curated as bool,
-        score: identical(score, sdkOmittedValue) ? this.score : score as double,
-        repositoryCount: identical(repositoryCount, sdkOmittedValue)
-            ? this.repositoryCount
-            : repositoryCount as SdkOptional<int?>,
-        logoUrl: identical(logoUrl, sdkOmittedValue)
-            ? this.logoUrl
-            : logoUrl as SdkOptional<String?>,
+            : updatedAt as SdkOptional<String>,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String?>,
+        bio: identical(bio, sdkOmittedValue)
+            ? this.bio
+            : bio as SdkOptional<String?>,
+        email: identical(email, sdkOmittedValue)
+            ? this.email
+            : email as SdkOptional<String?>,
+        location: identical(location, sdkOmittedValue)
+            ? this.location
+            : location as SdkOptional<String?>,
+        siteAdmin: identical(siteAdmin, sdkOmittedValue)
+            ? this.siteAdmin
+            : siteAdmin as bool,
+        hireable: identical(hireable, sdkOmittedValue)
+            ? this.hireable
+            : hireable as SdkOptional<bool?>,
         textMatches: identical(textMatches, sdkOmittedValue)
             ? this.textMatches
             : textMatches as SdkOptional<List<SearchResultTextMatchesItem>>,
-        related: identical(related, sdkOmittedValue)
-            ? this.related
-            : related as SdkOptional<List<TopicSearchResultItemRelatedItem>?>,
-        aliases: identical(aliases, sdkOmittedValue)
-            ? this.aliases
-            : aliases as SdkOptional<List<TopicSearchResultItemAliasesItem>?>,
+        blog: identical(blog, sdkOmittedValue)
+            ? this.blog
+            : blog as SdkOptional<String?>,
+        company: identical(company, sdkOmittedValue)
+            ? this.company
+            : company as SdkOptional<String?>,
+        suspendedAt: identical(suspendedAt, sdkOmittedValue)
+            ? this.suspendedAt
+            : suspendedAt as SdkOptional<String?>,
+        userViewType: identical(userViewType, sdkOmittedValue)
+            ? this.userViewType
+            : userViewType as SdkOptional<String>,
       );
 
-  factory TopicSearchResultItem.fromJson(Map<String, dynamic> json) =>
-      TopicSearchResultItem(
-        name: (json['name'] as String?)!,
-        displayName: json.containsKey('display_name')
-            ? json['display_name'] as String?
+  factory UserSearchResultItem.fromJson(Map<String, dynamic> json) =>
+      UserSearchResultItem(
+        login: (json['login'] as String?)!,
+        id: ((json['id'] as num?)?.toInt())!,
+        nodeId: (json['node_id'] as String?)!,
+        avatarUrl: (json['avatar_url'] as String?)!,
+        gravatarId: json.containsKey('gravatar_id')
+            ? json['gravatar_id'] as String?
             : throw ArgumentError.value(
-                null, 'display_name', 'Required property is missing'),
-        shortDescription: json.containsKey('short_description')
-            ? json['short_description'] as String?
-            : throw ArgumentError.value(
-                null, 'short_description', 'Required property is missing'),
-        description: json.containsKey('description')
-            ? json['description'] as String?
-            : throw ArgumentError.value(
-                null, 'description', 'Required property is missing'),
-        createdBy: json.containsKey('created_by')
-            ? json['created_by'] as String?
-            : throw ArgumentError.value(
-                null, 'created_by', 'Required property is missing'),
-        released: json.containsKey('released')
-            ? json['released'] as String?
-            : throw ArgumentError.value(
-                null, 'released', 'Required property is missing'),
-        createdAt: (json['created_at'] as String?)!,
-        updatedAt: (json['updated_at'] as String?)!,
-        featured: (json['featured'] as bool?)!,
-        curated: (json['curated'] as bool?)!,
+                null, 'gravatar_id', 'Required property is missing'),
+        url: (json['url'] as String?)!,
+        htmlUrl: (json['html_url'] as String?)!,
+        followersUrl: (json['followers_url'] as String?)!,
+        subscriptionsUrl: (json['subscriptions_url'] as String?)!,
+        organizationsUrl: (json['organizations_url'] as String?)!,
+        reposUrl: (json['repos_url'] as String?)!,
+        receivedEventsUrl: (json['received_events_url'] as String?)!,
+        type_: (json['type'] as String?)!,
         score: ((json['score'] as num?)?.toDouble())!,
-        repositoryCount: json.containsKey('repository_count')
-            ? SdkPresent((json['repository_count'] as num?)?.toInt())
+        followingUrl: (json['following_url'] as String?)!,
+        gistsUrl: (json['gists_url'] as String?)!,
+        starredUrl: (json['starred_url'] as String?)!,
+        eventsUrl: (json['events_url'] as String?)!,
+        publicRepos: json['public_repos'] != null
+            ? SdkPresent(((json['public_repos'] as num?)?.toInt())!)
             : const SdkOmitted(),
-        logoUrl: json.containsKey('logo_url')
-            ? SdkPresent(json['logo_url'] as String?)
+        publicGists: json['public_gists'] != null
+            ? SdkPresent(((json['public_gists'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        followers: json['followers'] != null
+            ? SdkPresent(((json['followers'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        following: json['following'] != null
+            ? SdkPresent(((json['following'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        createdAt: json['created_at'] != null
+            ? SdkPresent((json['created_at'] as String?)!)
+            : const SdkOmitted(),
+        updatedAt: json['updated_at'] != null
+            ? SdkPresent((json['updated_at'] as String?)!)
+            : const SdkOmitted(),
+        name: json.containsKey('name')
+            ? SdkPresent(json['name'] as String?)
+            : const SdkOmitted(),
+        bio: json.containsKey('bio')
+            ? SdkPresent(json['bio'] as String?)
+            : const SdkOmitted(),
+        email: json.containsKey('email')
+            ? SdkPresent(json['email'] as String?)
+            : const SdkOmitted(),
+        location: json.containsKey('location')
+            ? SdkPresent(json['location'] as String?)
+            : const SdkOmitted(),
+        siteAdmin: (json['site_admin'] as bool?)!,
+        hireable: json.containsKey('hireable')
+            ? SdkPresent(json['hireable'] as bool?)
             : const SdkOmitted(),
         textMatches: json['text_matches'] != null
             ? SdkPresent(((json['text_matches'] as List?)
@@ -198,41 +384,103 @@ class TopicSearchResultItem {
                     e as Map<String, dynamic>))
                 .toList())!)
             : const SdkOmitted(),
-        related: json.containsKey('related')
-            ? SdkPresent((json['related'] as List?)
-                ?.map((e) => TopicSearchResultItemRelatedItem.fromJson(
-                    e as Map<String, dynamic>))
-                .toList())
+        blog: json.containsKey('blog')
+            ? SdkPresent(json['blog'] as String?)
             : const SdkOmitted(),
-        aliases: json.containsKey('aliases')
-            ? SdkPresent((json['aliases'] as List?)
-                ?.map((e) => TopicSearchResultItemAliasesItem.fromJson(
-                    e as Map<String, dynamic>))
-                .toList())
+        company: json.containsKey('company')
+            ? SdkPresent(json['company'] as String?)
+            : const SdkOmitted(),
+        suspendedAt: json.containsKey('suspended_at')
+            ? SdkPresent(json['suspended_at'] as String?)
+            : const SdkOmitted(),
+        userViewType: json['user_view_type'] != null
+            ? SdkPresent((json['user_view_type'] as String?)!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        'name': name,
-        'display_name': displayName,
-        'short_description': shortDescription,
-        'description': description,
-        'created_by': createdBy,
-        'released': released,
-        'created_at': createdAt,
-        'updated_at': updatedAt,
-        'featured': featured,
-        'curated': curated,
+        'login': login,
+        'id': id,
+        'node_id': nodeId,
+        'avatar_url': avatarUrl,
+        'gravatar_id': gravatarId,
+        'url': url,
+        'html_url': htmlUrl,
+        'followers_url': followersUrl,
+        'subscriptions_url': subscriptionsUrl,
+        'organizations_url': organizationsUrl,
+        'repos_url': reposUrl,
+        'received_events_url': receivedEventsUrl,
+        'type': type_,
         'score': score,
-        ...switch (repositoryCount) {
-          SdkPresent<int?>(value: final value) => {
-              'repository_count': value,
+        'following_url': followingUrl,
+        'gists_url': gistsUrl,
+        'starred_url': starredUrl,
+        'events_url': eventsUrl,
+        ...switch (publicRepos) {
+          SdkPresent<int>(value: final value) => {
+              'public_repos': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (logoUrl) {
+        ...switch (publicGists) {
+          SdkPresent<int>(value: final value) => {
+              'public_gists': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (followers) {
+          SdkPresent<int>(value: final value) => {
+              'followers': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (following) {
+          SdkPresent<int>(value: final value) => {
+              'following': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (createdAt) {
+          SdkPresent<String>(value: final value) => {
+              'created_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (updatedAt) {
+          SdkPresent<String>(value: final value) => {
+              'updated_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (name) {
           SdkPresent<String?>(value: final value) => {
-              'logo_url': value,
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (bio) {
+          SdkPresent<String?>(value: final value) => {
+              'bio': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (email) {
+          SdkPresent<String?>(value: final value) => {
+              'email': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (location) {
+          SdkPresent<String?>(value: final value) => {
+              'location': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'site_admin': siteAdmin,
+        ...switch (hireable) {
+          SdkPresent<bool?>(value: final value) => {
+              'hireable': value,
             },
           _ => const <String, dynamic>{},
         },
@@ -242,21 +490,27 @@ class TopicSearchResultItem {
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (related) {
-          SdkPresent<List<TopicSearchResultItemRelatedItem>?>(
-            value: final value
-          ) =>
-            {
-              'related': value?.map((item) => item.toJson()).toList(),
+        ...switch (blog) {
+          SdkPresent<String?>(value: final value) => {
+              'blog': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (aliases) {
-          SdkPresent<List<TopicSearchResultItemAliasesItem>?>(
-            value: final value
-          ) =>
-            {
-              'aliases': value?.map((item) => item.toJson()).toList(),
+        ...switch (company) {
+          SdkPresent<String?>(value: final value) => {
+              'company': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (suspendedAt) {
+          SdkPresent<String?>(value: final value) => {
+              'suspended_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (userViewType) {
+          SdkPresent<String>(value: final value) => {
+              'user_view_type': value,
             },
           _ => const <String, dynamic>{},
         },

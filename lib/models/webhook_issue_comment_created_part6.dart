@@ -4,210 +4,346 @@
 part of 'webhook_issue_comment_created.dart';
 
 // webhook_issue_comment_created domain models (part 6)
-/// A collection of related issues and pull requests.
-class WebhookIssueCommentCreatedIssueVariant0Milestone {
+/// Required object value serialized in the `user` wire field.
+class WebhookIssueCommentCreatedIssueUser {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Required `date-time`-formatted value serialized in the `closed_at` wire field.
-  final String? closedAt;
+  /// Optional `string` value serialized in the `avatar_url` wire field.
+  final SdkOptional<String> avatarUrl;
 
-  /// Required `integer` value serialized in the `closed_issues` wire field.
-  final int closedIssues;
+  /// Optional `string` value serialized in the `events_url` wire field.
+  final SdkOptional<String> eventsUrl;
 
-  /// Required `date-time`-formatted value serialized in the `created_at` wire field.
-  final String createdAt;
+  /// Optional `string` value serialized in the `followers_url` wire field.
+  final SdkOptional<String> followersUrl;
 
-  /// Required object value serialized in the `creator` wire field.
-  final WebhookIssueCommentCreatedIssueVariant0MilestoneCreator? creator;
+  /// Optional `string` value serialized in the `following_url` wire field.
+  final SdkOptional<String> followingUrl;
 
-  /// Required `string` value serialized in the `description` wire field.
-  final String? description;
+  /// Optional `string` value serialized in the `gists_url` wire field.
+  final SdkOptional<String> gistsUrl;
 
-  /// Required `date-time`-formatted value serialized in the `due_on` wire field.
-  final String? dueOn;
+  /// Optional `string` value serialized in the `gravatar_id` wire field.
+  final SdkOptional<String> gravatarId;
 
-  /// Required `uri`-formatted value serialized in the `html_url` wire field.
-  final String htmlUrl;
+  /// Optional `string` value serialized in the `html_url` wire field.
+  final SdkOptional<String> htmlUrl;
 
-  /// Required `integer` value serialized in the `id` wire field.
-  final int id;
+  /// Optional `int64`-formatted value serialized in the `id` wire field.
+  final SdkOptional<int> id;
 
-  /// Required `uri`-formatted value serialized in the `labels_url` wire field.
-  final String labelsUrl;
+  /// Optional `string` value serialized in the `login` wire field.
+  final SdkOptional<String> login;
 
-  /// Required `string` value serialized in the `node_id` wire field.
-  final String nodeId;
+  /// Optional `string` value serialized in the `node_id` wire field.
+  final SdkOptional<String> nodeId;
 
-  /// The number of the milestone.
-  final int number;
+  /// Optional `string` value serialized in the `organizations_url` wire field.
+  final SdkOptional<String> organizationsUrl;
 
-  /// Required `integer` value serialized in the `open_issues` wire field.
-  final int openIssues;
+  /// Optional `string` value serialized in the `received_events_url` wire field.
+  final SdkOptional<String> receivedEventsUrl;
 
-  /// The state of the milestone.
-  final WebhookIssueCommentCreatedIssueVariant0MilestoneState state;
+  /// Optional `string` value serialized in the `repos_url` wire field.
+  final SdkOptional<String> reposUrl;
 
-  /// The title of the milestone.
-  final String title;
+  /// Optional `boolean` value serialized in the `site_admin` wire field.
+  final SdkOptional<bool> siteAdmin;
 
-  /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
-  final String updatedAt;
+  /// Optional `string` value serialized in the `starred_url` wire field.
+  final SdkOptional<String> starredUrl;
 
-  /// Required `uri`-formatted value serialized in the `url` wire field.
-  final String url;
+  /// Optional `string` value serialized in the `subscriptions_url` wire field.
+  final SdkOptional<String> subscriptionsUrl;
 
-  const WebhookIssueCommentCreatedIssueVariant0Milestone(
-      {required this.closedAt,
-      required this.closedIssues,
-      required this.createdAt,
-      required this.creator,
-      required this.description,
-      required this.dueOn,
-      required this.htmlUrl,
-      required this.id,
-      required this.labelsUrl,
-      required this.nodeId,
-      required this.number,
-      required this.openIssues,
-      required this.state,
-      required this.title,
-      required this.updatedAt,
-      required this.url});
+  /// Optional `string` value serialized in the `type` wire field.
+  final SdkOptional<String> type_;
 
-  WebhookIssueCommentCreatedIssueVariant0Milestone Function(
-      {String? closedAt,
-      int closedIssues,
-      String createdAt,
-      WebhookIssueCommentCreatedIssueVariant0MilestoneCreator? creator,
-      String? description,
-      String? dueOn,
-      String htmlUrl,
-      int id,
-      String labelsUrl,
-      String nodeId,
-      int number,
-      int openIssues,
-      WebhookIssueCommentCreatedIssueVariant0MilestoneState state,
-      String title,
-      String updatedAt,
-      String url}) get copyWith => _copyWith;
+  /// Optional `string` value serialized in the `url` wire field.
+  final SdkOptional<String> url;
 
-  WebhookIssueCommentCreatedIssueVariant0Milestone _copyWith(
-          {Object? closedAt = sdkOmittedValue,
-          Object? closedIssues = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? creator = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? dueOn = sdkOmittedValue,
+  const WebhookIssueCommentCreatedIssueUser(
+      {this.avatarUrl = const SdkOmitted(),
+      this.eventsUrl = const SdkOmitted(),
+      this.followersUrl = const SdkOmitted(),
+      this.followingUrl = const SdkOmitted(),
+      this.gistsUrl = const SdkOmitted(),
+      this.gravatarId = const SdkOmitted(),
+      this.htmlUrl = const SdkOmitted(),
+      this.id = const SdkOmitted(),
+      this.login = const SdkOmitted(),
+      this.nodeId = const SdkOmitted(),
+      this.organizationsUrl = const SdkOmitted(),
+      this.receivedEventsUrl = const SdkOmitted(),
+      this.reposUrl = const SdkOmitted(),
+      this.siteAdmin = const SdkOmitted(),
+      this.starredUrl = const SdkOmitted(),
+      this.subscriptionsUrl = const SdkOmitted(),
+      this.type_ = const SdkOmitted(),
+      this.url = const SdkOmitted()});
+
+  WebhookIssueCommentCreatedIssueUser Function(
+      {SdkOptional<String> avatarUrl,
+      SdkOptional<String> eventsUrl,
+      SdkOptional<String> followersUrl,
+      SdkOptional<String> followingUrl,
+      SdkOptional<String> gistsUrl,
+      SdkOptional<String> gravatarId,
+      SdkOptional<String> htmlUrl,
+      SdkOptional<int> id,
+      SdkOptional<String> login,
+      SdkOptional<String> nodeId,
+      SdkOptional<String> organizationsUrl,
+      SdkOptional<String> receivedEventsUrl,
+      SdkOptional<String> reposUrl,
+      SdkOptional<bool> siteAdmin,
+      SdkOptional<String> starredUrl,
+      SdkOptional<String> subscriptionsUrl,
+      SdkOptional<String> type_,
+      SdkOptional<String> url}) get copyWith => _copyWith;
+
+  WebhookIssueCommentCreatedIssueUser _copyWith(
+          {Object? avatarUrl = sdkOmittedValue,
+          Object? eventsUrl = sdkOmittedValue,
+          Object? followersUrl = sdkOmittedValue,
+          Object? followingUrl = sdkOmittedValue,
+          Object? gistsUrl = sdkOmittedValue,
+          Object? gravatarId = sdkOmittedValue,
           Object? htmlUrl = sdkOmittedValue,
           Object? id = sdkOmittedValue,
-          Object? labelsUrl = sdkOmittedValue,
+          Object? login = sdkOmittedValue,
           Object? nodeId = sdkOmittedValue,
-          Object? number = sdkOmittedValue,
-          Object? openIssues = sdkOmittedValue,
-          Object? state = sdkOmittedValue,
-          Object? title = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue,
+          Object? organizationsUrl = sdkOmittedValue,
+          Object? receivedEventsUrl = sdkOmittedValue,
+          Object? reposUrl = sdkOmittedValue,
+          Object? siteAdmin = sdkOmittedValue,
+          Object? starredUrl = sdkOmittedValue,
+          Object? subscriptionsUrl = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
           Object? url = sdkOmittedValue}) =>
-      WebhookIssueCommentCreatedIssueVariant0Milestone(
-        closedAt: identical(closedAt, sdkOmittedValue)
-            ? this.closedAt
-            : closedAt as String?,
-        closedIssues: identical(closedIssues, sdkOmittedValue)
-            ? this.closedIssues
-            : closedIssues as int,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        creator: identical(creator, sdkOmittedValue)
-            ? this.creator
-            : creator
-                as WebhookIssueCommentCreatedIssueVariant0MilestoneCreator?,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as String?,
-        dueOn:
-            identical(dueOn, sdkOmittedValue) ? this.dueOn : dueOn as String?,
+      WebhookIssueCommentCreatedIssueUser(
+        avatarUrl: identical(avatarUrl, sdkOmittedValue)
+            ? this.avatarUrl
+            : avatarUrl as SdkOptional<String>,
+        eventsUrl: identical(eventsUrl, sdkOmittedValue)
+            ? this.eventsUrl
+            : eventsUrl as SdkOptional<String>,
+        followersUrl: identical(followersUrl, sdkOmittedValue)
+            ? this.followersUrl
+            : followersUrl as SdkOptional<String>,
+        followingUrl: identical(followingUrl, sdkOmittedValue)
+            ? this.followingUrl
+            : followingUrl as SdkOptional<String>,
+        gistsUrl: identical(gistsUrl, sdkOmittedValue)
+            ? this.gistsUrl
+            : gistsUrl as SdkOptional<String>,
+        gravatarId: identical(gravatarId, sdkOmittedValue)
+            ? this.gravatarId
+            : gravatarId as SdkOptional<String>,
         htmlUrl: identical(htmlUrl, sdkOmittedValue)
             ? this.htmlUrl
-            : htmlUrl as String,
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        labelsUrl: identical(labelsUrl, sdkOmittedValue)
-            ? this.labelsUrl
-            : labelsUrl as String,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        number:
-            identical(number, sdkOmittedValue) ? this.number : number as int,
-        openIssues: identical(openIssues, sdkOmittedValue)
-            ? this.openIssues
-            : openIssues as int,
-        state: identical(state, sdkOmittedValue)
-            ? this.state
-            : state as WebhookIssueCommentCreatedIssueVariant0MilestoneState,
-        title: identical(title, sdkOmittedValue) ? this.title : title as String,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+            : htmlUrl as SdkOptional<String>,
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+        login: identical(login, sdkOmittedValue)
+            ? this.login
+            : login as SdkOptional<String>,
+        nodeId: identical(nodeId, sdkOmittedValue)
+            ? this.nodeId
+            : nodeId as SdkOptional<String>,
+        organizationsUrl: identical(organizationsUrl, sdkOmittedValue)
+            ? this.organizationsUrl
+            : organizationsUrl as SdkOptional<String>,
+        receivedEventsUrl: identical(receivedEventsUrl, sdkOmittedValue)
+            ? this.receivedEventsUrl
+            : receivedEventsUrl as SdkOptional<String>,
+        reposUrl: identical(reposUrl, sdkOmittedValue)
+            ? this.reposUrl
+            : reposUrl as SdkOptional<String>,
+        siteAdmin: identical(siteAdmin, sdkOmittedValue)
+            ? this.siteAdmin
+            : siteAdmin as SdkOptional<bool>,
+        starredUrl: identical(starredUrl, sdkOmittedValue)
+            ? this.starredUrl
+            : starredUrl as SdkOptional<String>,
+        subscriptionsUrl: identical(subscriptionsUrl, sdkOmittedValue)
+            ? this.subscriptionsUrl
+            : subscriptionsUrl as SdkOptional<String>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as SdkOptional<String>,
+        url: identical(url, sdkOmittedValue)
+            ? this.url
+            : url as SdkOptional<String>,
       );
 
-  factory WebhookIssueCommentCreatedIssueVariant0Milestone.fromJson(
+  factory WebhookIssueCommentCreatedIssueUser.fromJson(
           Map<String, dynamic> json) =>
-      WebhookIssueCommentCreatedIssueVariant0Milestone(
-        closedAt: json.containsKey('closed_at')
-            ? json['closed_at'] as String?
-            : throw ArgumentError.value(
-                null, 'closed_at', 'Required property is missing'),
-        closedIssues: ((json['closed_issues'] as num?)?.toInt())!,
-        createdAt: (json['created_at'] as String?)!,
-        creator: json.containsKey('creator')
-            ? json['creator'] != null
-                ? WebhookIssueCommentCreatedIssueVariant0MilestoneCreator
-                    .fromJson(json['creator'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'creator', 'Required property is missing'),
-        description: json.containsKey('description')
-            ? json['description'] as String?
-            : throw ArgumentError.value(
-                null, 'description', 'Required property is missing'),
-        dueOn: json.containsKey('due_on')
-            ? json['due_on'] as String?
-            : throw ArgumentError.value(
-                null, 'due_on', 'Required property is missing'),
-        htmlUrl: (json['html_url'] as String?)!,
-        id: ((json['id'] as num?)?.toInt())!,
-        labelsUrl: (json['labels_url'] as String?)!,
-        nodeId: (json['node_id'] as String?)!,
-        number: ((json['number'] as num?)?.toInt())!,
-        openIssues: ((json['open_issues'] as num?)?.toInt())!,
-        state: (json['state'] != null
-            ? WebhookIssueCommentCreatedIssueVariant0MilestoneState.fromJson(
-                json['state'] as String)
-            : null)!,
-        title: (json['title'] as String?)!,
-        updatedAt: (json['updated_at'] as String?)!,
-        url: (json['url'] as String?)!,
+      WebhookIssueCommentCreatedIssueUser(
+        avatarUrl: json['avatar_url'] != null
+            ? SdkPresent((json['avatar_url'] as String?)!)
+            : const SdkOmitted(),
+        eventsUrl: json['events_url'] != null
+            ? SdkPresent((json['events_url'] as String?)!)
+            : const SdkOmitted(),
+        followersUrl: json['followers_url'] != null
+            ? SdkPresent((json['followers_url'] as String?)!)
+            : const SdkOmitted(),
+        followingUrl: json['following_url'] != null
+            ? SdkPresent((json['following_url'] as String?)!)
+            : const SdkOmitted(),
+        gistsUrl: json['gists_url'] != null
+            ? SdkPresent((json['gists_url'] as String?)!)
+            : const SdkOmitted(),
+        gravatarId: json['gravatar_id'] != null
+            ? SdkPresent((json['gravatar_id'] as String?)!)
+            : const SdkOmitted(),
+        htmlUrl: json['html_url'] != null
+            ? SdkPresent((json['html_url'] as String?)!)
+            : const SdkOmitted(),
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        login: json['login'] != null
+            ? SdkPresent((json['login'] as String?)!)
+            : const SdkOmitted(),
+        nodeId: json['node_id'] != null
+            ? SdkPresent((json['node_id'] as String?)!)
+            : const SdkOmitted(),
+        organizationsUrl: json['organizations_url'] != null
+            ? SdkPresent((json['organizations_url'] as String?)!)
+            : const SdkOmitted(),
+        receivedEventsUrl: json['received_events_url'] != null
+            ? SdkPresent((json['received_events_url'] as String?)!)
+            : const SdkOmitted(),
+        reposUrl: json['repos_url'] != null
+            ? SdkPresent((json['repos_url'] as String?)!)
+            : const SdkOmitted(),
+        siteAdmin: json['site_admin'] != null
+            ? SdkPresent((json['site_admin'] as bool?)!)
+            : const SdkOmitted(),
+        starredUrl: json['starred_url'] != null
+            ? SdkPresent((json['starred_url'] as String?)!)
+            : const SdkOmitted(),
+        subscriptionsUrl: json['subscriptions_url'] != null
+            ? SdkPresent((json['subscriptions_url'] as String?)!)
+            : const SdkOmitted(),
+        type_: json['type'] != null
+            ? SdkPresent((json['type'] as String?)!)
+            : const SdkOmitted(),
+        url: json['url'] != null
+            ? SdkPresent((json['url'] as String?)!)
+            : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        'closed_at': closedAt,
-        'closed_issues': closedIssues,
-        'created_at': createdAt,
-        'creator': creator?.toJson(),
-        'description': description,
-        'due_on': dueOn,
-        'html_url': htmlUrl,
-        'id': id,
-        'labels_url': labelsUrl,
-        'node_id': nodeId,
-        'number': number,
-        'open_issues': openIssues,
-        'state': state.toJson(),
-        'title': title,
-        'updated_at': updatedAt,
-        'url': url,
+        ...switch (avatarUrl) {
+          SdkPresent<String>(value: final value) => {
+              'avatar_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (eventsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'events_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (followersUrl) {
+          SdkPresent<String>(value: final value) => {
+              'followers_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (followingUrl) {
+          SdkPresent<String>(value: final value) => {
+              'following_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (gistsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'gists_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (gravatarId) {
+          SdkPresent<String>(value: final value) => {
+              'gravatar_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (htmlUrl) {
+          SdkPresent<String>(value: final value) => {
+              'html_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (login) {
+          SdkPresent<String>(value: final value) => {
+              'login': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (nodeId) {
+          SdkPresent<String>(value: final value) => {
+              'node_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (organizationsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'organizations_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (receivedEventsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'received_events_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (reposUrl) {
+          SdkPresent<String>(value: final value) => {
+              'repos_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (siteAdmin) {
+          SdkPresent<bool>(value: final value) => {
+              'site_admin': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (starredUrl) {
+          SdkPresent<String>(value: final value) => {
+              'starred_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (subscriptionsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'subscriptions_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (type_) {
+          SdkPresent<String>(value: final value) => {
+              'type': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (url) {
+          SdkPresent<String>(value: final value) => {
+              'url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
       };
 }

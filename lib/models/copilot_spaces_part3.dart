@@ -9,6 +9,20 @@ sealed class CopilotSpaceOwner {
   static const String constructionSurface = 'named';
   const CopilotSpaceOwner();
   factory CopilotSpaceOwner.fromJson(Object? json) {
+    if (json is Map<String, dynamic>) {
+      try {
+        final value = SimpleUser.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return CopilotSpaceOwnerSimpleUser(value);
+        }
+      } catch (_) {}
+      try {
+        final value = OrganizationSimple.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return CopilotSpaceOwnerOrganizationSimple(value);
+        }
+      } catch (_) {}
+    }
     try {
       return CopilotSpaceOwnerSimpleUser(
           SimpleUser.fromJson(json as Map<String, dynamic>));

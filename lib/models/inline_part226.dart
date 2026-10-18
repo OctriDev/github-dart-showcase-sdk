@@ -4,251 +4,24 @@
 part of 'inline.dart';
 
 // Inline operation models (part 226)
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhooksPullRequest5MergedByType {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReadyForReviewWriteScope {
   final String value;
 
-  const WebhooksPullRequest5MergedByType._(this.value);
-
-  factory WebhooksPullRequest5MergedByType.fromJson(String value) =>
-      WebhooksPullRequest5MergedByType._(value);
-
-  static const bot = WebhooksPullRequest5MergedByType._('Bot');
-  static const user = WebhooksPullRequest5MergedByType._('User');
-  static const organization =
-      WebhooksPullRequest5MergedByType._('Organization');
-  static const mannequin = WebhooksPullRequest5MergedByType._('Mannequin');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhooksPullRequest5MergedByType && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhooksPullRequest5MilestoneCreatorType {
-  final String value;
-
-  const WebhooksPullRequest5MilestoneCreatorType._(this.value);
-
-  factory WebhooksPullRequest5MilestoneCreatorType.fromJson(String value) =>
-      WebhooksPullRequest5MilestoneCreatorType._(value);
-
-  static const bot = WebhooksPullRequest5MilestoneCreatorType._('Bot');
-  static const user = WebhooksPullRequest5MilestoneCreatorType._('User');
-  static const organization =
-      WebhooksPullRequest5MilestoneCreatorType._('Organization');
-  static const mannequin =
-      WebhooksPullRequest5MilestoneCreatorType._('Mannequin');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhooksPullRequest5MilestoneCreatorType && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The state of the milestone.
-final class WebhooksPullRequest5MilestoneState {
-  final String value;
-
-  const WebhooksPullRequest5MilestoneState._(this.value);
-
-  factory WebhooksPullRequest5MilestoneState.fromJson(String value) =>
-      WebhooksPullRequest5MilestoneState._(value);
-
-  static const open = WebhooksPullRequest5MilestoneState._('open');
-  static const closed = WebhooksPullRequest5MilestoneState._('closed');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhooksPullRequest5MilestoneState && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `privacy` wire field.
-final class WebhooksPullRequest5RequestedTeamsItemParentPrivacy {
-  final String value;
-
-  const WebhooksPullRequest5RequestedTeamsItemParentPrivacy._(this.value);
-
-  factory WebhooksPullRequest5RequestedTeamsItemParentPrivacy.fromJson(
-          String value) =>
-      WebhooksPullRequest5RequestedTeamsItemParentPrivacy._(value);
-
-  static const open =
-      WebhooksPullRequest5RequestedTeamsItemParentPrivacy._('open');
-  static const closed =
-      WebhooksPullRequest5RequestedTeamsItemParentPrivacy._('closed');
-  static const secret =
-      WebhooksPullRequest5RequestedTeamsItemParentPrivacy._('secret');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhooksPullRequest5RequestedTeamsItemParentPrivacy &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `privacy` wire field.
-final class WebhooksPullRequest5RequestedTeamsItemPrivacy {
-  final String value;
-
-  const WebhooksPullRequest5RequestedTeamsItemPrivacy._(this.value);
-
-  factory WebhooksPullRequest5RequestedTeamsItemPrivacy.fromJson(
-          String value) =>
-      WebhooksPullRequest5RequestedTeamsItemPrivacy._(value);
-
-  static const open = WebhooksPullRequest5RequestedTeamsItemPrivacy._('open');
-  static const closed =
-      WebhooksPullRequest5RequestedTeamsItemPrivacy._('closed');
-  static const secret =
-      WebhooksPullRequest5RequestedTeamsItemPrivacy._('secret');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhooksPullRequest5RequestedTeamsItemPrivacy &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// State of this Pull Request. Either `open` or `closed`.
-final class WebhooksPullRequest5State {
-  final String value;
-
-  const WebhooksPullRequest5State._(this.value);
-
-  factory WebhooksPullRequest5State.fromJson(String value) =>
-      WebhooksPullRequest5State._(value);
-
-  static const open = WebhooksPullRequest5State._('open');
-  static const closed = WebhooksPullRequest5State._('closed');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhooksPullRequest5State && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhooksPullRequest5UserType {
-  final String value;
-
-  const WebhooksPullRequest5UserType._(this.value);
-
-  factory WebhooksPullRequest5UserType.fromJson(String value) =>
-      WebhooksPullRequest5UserType._(value);
-
-  static const bot = WebhooksPullRequest5UserType._('Bot');
-  static const user = WebhooksPullRequest5UserType._('User');
-  static const organization = WebhooksPullRequest5UserType._('Organization');
-  static const mannequin = WebhooksPullRequest5UserType._('Mannequin');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhooksPullRequest5UserType && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhooksPullRequest5RequestedReviewersItemVariant0Type {
-  final String value;
-
-  const WebhooksPullRequest5RequestedReviewersItemVariant0Type._(this.value);
-
-  factory WebhooksPullRequest5RequestedReviewersItemVariant0Type.fromJson(
-          String value) =>
-      WebhooksPullRequest5RequestedReviewersItemVariant0Type._(value);
-
-  static const bot =
-      WebhooksPullRequest5RequestedReviewersItemVariant0Type._('Bot');
-  static const user =
-      WebhooksPullRequest5RequestedReviewersItemVariant0Type._('User');
-  static const organization =
-      WebhooksPullRequest5RequestedReviewersItemVariant0Type._('Organization');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhooksPullRequest5RequestedReviewersItemVariant0Type &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `privacy` wire field.
-final class WebhooksPullRequest5RequestedReviewersItemVariant1ParentPrivacy {
-  final String value;
-
-  const WebhooksPullRequest5RequestedReviewersItemVariant1ParentPrivacy._(
+  const AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReadyForReviewWriteScope._(
       this.value);
 
-  factory WebhooksPullRequest5RequestedReviewersItemVariant1ParentPrivacy.fromJson(
+  factory AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReadyForReviewWriteScope.fromJson(
           String value) =>
-      WebhooksPullRequest5RequestedReviewersItemVariant1ParentPrivacy._(value);
+      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReadyForReviewWriteScope
+          ._(value);
 
-  static const open =
-      WebhooksPullRequest5RequestedReviewersItemVariant1ParentPrivacy._('open');
-  static const closed =
-      WebhooksPullRequest5RequestedReviewersItemVariant1ParentPrivacy._(
-          'closed');
-  static const secret =
-      WebhooksPullRequest5RequestedReviewersItemVariant1ParentPrivacy._(
-          'secret');
+  static const trigger =
+      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReadyForReviewWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReadyForReviewWriteScope
+          ._('repository');
 
   String toJson() => value;
 
@@ -258,29 +31,31 @@ final class WebhooksPullRequest5RequestedReviewersItemVariant1ParentPrivacy {
   @override
   bool operator ==(Object other) =>
       other
-          is WebhooksPullRequest5RequestedReviewersItemVariant1ParentPrivacy &&
+          is AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReadyForReviewWriteScope &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Optional enumerated value serialized in the `privacy` wire field.
-final class WebhooksPullRequest5RequestedReviewersItemVariant1Privacy {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewRequestedWriteScope {
   final String value;
 
-  const WebhooksPullRequest5RequestedReviewersItemVariant1Privacy._(this.value);
+  const AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewRequestedWriteScope._(
+      this.value);
 
-  factory WebhooksPullRequest5RequestedReviewersItemVariant1Privacy.fromJson(
+  factory AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewRequestedWriteScope.fromJson(
           String value) =>
-      WebhooksPullRequest5RequestedReviewersItemVariant1Privacy._(value);
+      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewRequestedWriteScope
+          ._(value);
 
-  static const open =
-      WebhooksPullRequest5RequestedReviewersItemVariant1Privacy._('open');
-  static const closed =
-      WebhooksPullRequest5RequestedReviewersItemVariant1Privacy._('closed');
-  static const secret =
-      WebhooksPullRequest5RequestedReviewersItemVariant1Privacy._('secret');
+  static const trigger =
+      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewRequestedWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewRequestedWriteScope
+          ._('repository');
 
   String toJson() => value;
 
@@ -289,23 +64,34 @@ final class WebhooksPullRequest5RequestedReviewersItemVariant1Privacy {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhooksPullRequest5RequestedReviewersItemVariant1Privacy &&
+      other
+          is AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewRequestedWriteScope &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// State of the release asset.
-final class WebhooksReleaseAssetsItemState {
+final class AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewSubmittedStatesItem {
   final String value;
 
-  const WebhooksReleaseAssetsItemState._(this.value);
+  const AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewSubmittedStatesItem._(
+      this.value);
 
-  factory WebhooksReleaseAssetsItemState.fromJson(String value) =>
-      WebhooksReleaseAssetsItemState._(value);
+  factory AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewSubmittedStatesItem.fromJson(
+          String value) =>
+      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewSubmittedStatesItem
+          ._(value);
 
-  static const uploaded = WebhooksReleaseAssetsItemState._('uploaded');
+  static const approved =
+      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewSubmittedStatesItem
+          ._('approved');
+  static const changesRequested =
+      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewSubmittedStatesItem
+          ._('changes_requested');
+  static const commented =
+      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewSubmittedStatesItem
+          ._('commented');
 
   String toJson() => value;
 
@@ -314,25 +100,32 @@ final class WebhooksReleaseAssetsItemState {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhooksReleaseAssetsItemState && other.value == value;
+      other
+          is AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewSubmittedStatesItem &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhooksReleaseAssetsItemUploaderType {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewSubmittedWriteScope {
   final String value;
 
-  const WebhooksReleaseAssetsItemUploaderType._(this.value);
+  const AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewSubmittedWriteScope._(
+      this.value);
 
-  factory WebhooksReleaseAssetsItemUploaderType.fromJson(String value) =>
-      WebhooksReleaseAssetsItemUploaderType._(value);
+  factory AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewSubmittedWriteScope.fromJson(
+          String value) =>
+      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewSubmittedWriteScope
+          ._(value);
 
-  static const bot = WebhooksReleaseAssetsItemUploaderType._('Bot');
-  static const user = WebhooksReleaseAssetsItemUploaderType._('User');
-  static const organization =
-      WebhooksReleaseAssetsItemUploaderType._('Organization');
+  static const trigger =
+      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewSubmittedWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewSubmittedWriteScope
+          ._('repository');
 
   String toJson() => value;
 
@@ -341,7 +134,303 @@ final class WebhooksReleaseAssetsItemUploaderType {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhooksReleaseAssetsItemUploaderType && other.value == value;
+      other
+          is AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewSubmittedWriteScope &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope {
+  final String value;
+
+  const AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope._(
+      this.value);
+
+  factory AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope.fromJson(
+          String value) =>
+      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope
+          ._(value);
+
+  static const trigger =
+      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope
+          ._('repository');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsCreateRepoAutomationResponseTriggersSubIssueAddedWriteScope {
+  final String value;
+
+  const AgentAutomationsCreateRepoAutomationResponseTriggersSubIssueAddedWriteScope._(
+      this.value);
+
+  factory AgentAutomationsCreateRepoAutomationResponseTriggersSubIssueAddedWriteScope.fromJson(
+          String value) =>
+      AgentAutomationsCreateRepoAutomationResponseTriggersSubIssueAddedWriteScope
+          ._(value);
+
+  static const trigger =
+      AgentAutomationsCreateRepoAutomationResponseTriggersSubIssueAddedWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsCreateRepoAutomationResponseTriggersSubIssueAddedWriteScope
+          ._('repository');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentAutomationsCreateRepoAutomationResponseTriggersSubIssueAddedWriteScope &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+final class AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunConclusionsItem {
+  final String value;
+
+  const AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunConclusionsItem._(
+      this.value);
+
+  factory AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunConclusionsItem.fromJson(
+          String value) =>
+      AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunConclusionsItem
+          ._(value);
+
+  static const failure =
+      AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunConclusionsItem
+          ._('failure');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunConclusionsItem &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunWriteScope {
+  final String value;
+
+  const AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunWriteScope._(
+      this.value);
+
+  factory AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunWriteScope.fromJson(
+          String value) =>
+      AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunWriteScope
+          ._(value);
+
+  static const trigger =
+      AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunWriteScope
+          ._('repository');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunWriteScope &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Controls which repository resources a run may modify. `trigger` limits writes to the resource that started the run, when one exists, and resources created during the run; `repository` allows writes to any resource in the repository. Supported values: `trigger`, `repository`.
+final class AgentAutomationsCreateRepoAutomationResponseWriteScope {
+  final String value;
+
+  const AgentAutomationsCreateRepoAutomationResponseWriteScope._(this.value);
+
+  factory AgentAutomationsCreateRepoAutomationResponseWriteScope.fromJson(
+          String value) =>
+      AgentAutomationsCreateRepoAutomationResponseWriteScope._(value);
+
+  static const trigger =
+      AgentAutomationsCreateRepoAutomationResponseWriteScope._('trigger');
+  static const repository =
+      AgentAutomationsCreateRepoAutomationResponseWriteScope._('repository');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is AgentAutomationsCreateRepoAutomationResponseWriteScope &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Machine-readable error code
+final class AgentAutomationsCreateRepoAutomationResponseErrorsItemCode {
+  final String value;
+
+  const AgentAutomationsCreateRepoAutomationResponseErrorsItemCode._(
+      this.value);
+
+  factory AgentAutomationsCreateRepoAutomationResponseErrorsItemCode.fromJson(
+          String value) =>
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode._(value);
+
+  static const missing =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode._('missing');
+  static const missingField =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode._(
+          'missing_field');
+  static const invalid =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode._('invalid');
+  static const alreadyExists =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode._(
+          'already_exists');
+  static const unprocessable =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode._(
+          'unprocessable');
+  static const custom =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode._('custom');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is AgentAutomationsCreateRepoAutomationResponseErrorsItemCode &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Machine-readable error code
+final class AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3 {
+  final String value;
+
+  const AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3._(
+      this.value);
+
+  factory AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3.fromJson(
+          String value) =>
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3._(
+          value);
+
+  static const missing =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3._(
+          'missing');
+  static const missingField =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3._(
+          'missing_field');
+  static const invalid =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3._(
+          'invalid');
+  static const alreadyExists =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3._(
+          'already_exists');
+  static const unprocessable =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3._(
+          'unprocessable');
+  static const custom =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3._(
+          'custom');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeb3f4c2f3 &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Machine-readable error code
+final class AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235 {
+  final String value;
+
+  const AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235._(
+      this.value);
+
+  factory AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235.fromJson(
+          String value) =>
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235._(
+          value);
+
+  static const missing =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235._(
+          'missing');
+  static const missingField =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235._(
+          'missing_field');
+  static const invalid =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235._(
+          'invalid');
+  static const alreadyExists =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235._(
+          'already_exists');
+  static const unprocessable =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235._(
+          'unprocessable');
+  static const custom =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235._(
+          'custom');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentAutomationsCreateRepoAutomationResponseErrorsItemCode8f343235 &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;

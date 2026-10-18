@@ -4,32 +4,131 @@
 part of 'inline.dart';
 
 // Inline operation models (part 260)
-/// Machine-readable error code
-final class AgentTasksGetTaskByRepoAndIdResponseErrorsItemCodef2af2840 {
+final class IssuesListForRepoState {
   final String value;
 
-  const AgentTasksGetTaskByRepoAndIdResponseErrorsItemCodef2af2840._(
+  const IssuesListForRepoState._(this.value);
+
+  factory IssuesListForRepoState.fromJson(String value) =>
+      IssuesListForRepoState._(value);
+
+  static const open = IssuesListForRepoState._('open');
+  static const closed = IssuesListForRepoState._('closed');
+  static const all = IssuesListForRepoState._('all');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is IssuesListForRepoState && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The confidence level for this field value choice.
+final class IssuesUpdateRequestBodyIssueFieldValuesItemConfidence {
+  final String value;
+
+  const IssuesUpdateRequestBodyIssueFieldValuesItemConfidence._(this.value);
+
+  factory IssuesUpdateRequestBodyIssueFieldValuesItemConfidence.fromJson(
+          String value) =>
+      IssuesUpdateRequestBodyIssueFieldValuesItemConfidence._(value);
+
+  static const low =
+      IssuesUpdateRequestBodyIssueFieldValuesItemConfidence._('low');
+  static const medium =
+      IssuesUpdateRequestBodyIssueFieldValuesItemConfidence._('medium');
+  static const high =
+      IssuesUpdateRequestBodyIssueFieldValuesItemConfidence._('high');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is IssuesUpdateRequestBodyIssueFieldValuesItemConfidence &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The open or closed state of the issue.
+final class IssuesUpdateRequestBodyState {
+  final String value;
+
+  const IssuesUpdateRequestBodyState._(this.value);
+
+  factory IssuesUpdateRequestBodyState.fromJson(String value) =>
+      IssuesUpdateRequestBodyState._(value);
+
+  static const open = IssuesUpdateRequestBodyState._('open');
+  static const closed = IssuesUpdateRequestBodyState._('closed');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is IssuesUpdateRequestBodyState && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The reason for the state change. Ignored unless `state` is changed.
+final class IssuesUpdateRequestBodyStateReason {
+  final String value;
+
+  const IssuesUpdateRequestBodyStateReason._(this.value);
+
+  factory IssuesUpdateRequestBodyStateReason.fromJson(String value) =>
+      IssuesUpdateRequestBodyStateReason._(value);
+
+  static const completed = IssuesUpdateRequestBodyStateReason._('completed');
+  static const notPlanned = IssuesUpdateRequestBodyStateReason._('not_planned');
+  static const duplicate = IssuesUpdateRequestBodyStateReason._('duplicate');
+  static const reopened = IssuesUpdateRequestBodyStateReason._('reopened');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is IssuesUpdateRequestBodyStateReason && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+final class IssuesUpdateResponseVariant1SuggestionsAssigneesItemConfidence {
+  final String value;
+
+  const IssuesUpdateResponseVariant1SuggestionsAssigneesItemConfidence._(
       this.value);
 
-  factory AgentTasksGetTaskByRepoAndIdResponseErrorsItemCodef2af2840.fromJson(
+  factory IssuesUpdateResponseVariant1SuggestionsAssigneesItemConfidence.fromJson(
           String value) =>
-      AgentTasksGetTaskByRepoAndIdResponseErrorsItemCodef2af2840._(value);
+      IssuesUpdateResponseVariant1SuggestionsAssigneesItemConfidence._(value);
 
-  static const missing =
-      AgentTasksGetTaskByRepoAndIdResponseErrorsItemCodef2af2840._('missing');
-  static const missingField =
-      AgentTasksGetTaskByRepoAndIdResponseErrorsItemCodef2af2840._(
-          'missing_field');
-  static const invalid =
-      AgentTasksGetTaskByRepoAndIdResponseErrorsItemCodef2af2840._('invalid');
-  static const alreadyExists =
-      AgentTasksGetTaskByRepoAndIdResponseErrorsItemCodef2af2840._(
-          'already_exists');
-  static const unprocessable =
-      AgentTasksGetTaskByRepoAndIdResponseErrorsItemCodef2af2840._(
-          'unprocessable');
-  static const custom =
-      AgentTasksGetTaskByRepoAndIdResponseErrorsItemCodef2af2840._('custom');
+  static const low =
+      IssuesUpdateResponseVariant1SuggestionsAssigneesItemConfidence._('low');
+  static const medium =
+      IssuesUpdateResponseVariant1SuggestionsAssigneesItemConfidence._(
+          'medium');
+  static const high =
+      IssuesUpdateResponseVariant1SuggestionsAssigneesItemConfidence._('high');
 
   String toJson() => value;
 
@@ -38,39 +137,30 @@ final class AgentTasksGetTaskByRepoAndIdResponseErrorsItemCodef2af2840 {
 
   @override
   bool operator ==(Object other) =>
-      other is AgentTasksGetTaskByRepoAndIdResponseErrorsItemCodef2af2840 &&
+      other is IssuesUpdateResponseVariant1SuggestionsAssigneesItemConfidence &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Machine-readable error code
-final class AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode6309f1b9 {
+final class IssuesUpdateResponseVariant1SuggestionsAssigneesItemIgnoredReason {
   final String value;
 
-  const AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode6309f1b9._(
+  const IssuesUpdateResponseVariant1SuggestionsAssigneesItemIgnoredReason._(
       this.value);
 
-  factory AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode6309f1b9.fromJson(
+  factory IssuesUpdateResponseVariant1SuggestionsAssigneesItemIgnoredReason.fromJson(
           String value) =>
-      AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode6309f1b9._(value);
+      IssuesUpdateResponseVariant1SuggestionsAssigneesItemIgnoredReason._(
+          value);
 
-  static const missing =
-      AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode6309f1b9._('missing');
-  static const missingField =
-      AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode6309f1b9._(
-          'missing_field');
-  static const invalid =
-      AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode6309f1b9._('invalid');
-  static const alreadyExists =
-      AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode6309f1b9._(
-          'already_exists');
-  static const unprocessable =
-      AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode6309f1b9._(
-          'unprocessable');
-  static const custom =
-      AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode6309f1b9._('custom');
+  static const alreadyApplied =
+      IssuesUpdateResponseVariant1SuggestionsAssigneesItemIgnoredReason._(
+          'already_applied');
+  static const issueAlreadyClosed =
+      IssuesUpdateResponseVariant1SuggestionsAssigneesItemIgnoredReason._(
+          'issue_already_closed');
 
   String toJson() => value;
 
@@ -79,73 +169,34 @@ final class AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode6309f1b9 {
 
   @override
   bool operator ==(Object other) =>
-      other is AgentTasksGetTaskByRepoAndIdResponseErrorsItemCode6309f1b9 &&
+      other
+          is IssuesUpdateResponseVariant1SuggestionsAssigneesItemIgnoredReason &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-final class AgentTasksListTasksSort {
+final class IssuesUpdateResponseVariant1SuggestionsIssueFieldValuesItemConfidence {
   final String value;
 
-  const AgentTasksListTasksSort._(this.value);
+  const IssuesUpdateResponseVariant1SuggestionsIssueFieldValuesItemConfidence._(
+      this.value);
 
-  factory AgentTasksListTasksSort.fromJson(String value) =>
-      AgentTasksListTasksSort._(value);
-
-  static const updatedAt = AgentTasksListTasksSort._('updated_at');
-  static const createdAt = AgentTasksListTasksSort._('created_at');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is AgentTasksListTasksSort && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-final class AgentTasksListTasksDirection {
-  final String value;
-
-  const AgentTasksListTasksDirection._(this.value);
-
-  factory AgentTasksListTasksDirection.fromJson(String value) =>
-      AgentTasksListTasksDirection._(value);
-
-  static const asc = AgentTasksListTasksDirection._('asc');
-  static const desc = AgentTasksListTasksDirection._('desc');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is AgentTasksListTasksDirection && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Provider namespace
-final class AgentTasksListTasksResponseTasksItemArtifactsItemProvider {
-  final String value;
-
-  const AgentTasksListTasksResponseTasksItemArtifactsItemProvider._(this.value);
-
-  factory AgentTasksListTasksResponseTasksItemArtifactsItemProvider.fromJson(
+  factory IssuesUpdateResponseVariant1SuggestionsIssueFieldValuesItemConfidence.fromJson(
           String value) =>
-      AgentTasksListTasksResponseTasksItemArtifactsItemProvider._(value);
+      IssuesUpdateResponseVariant1SuggestionsIssueFieldValuesItemConfidence._(
+          value);
 
-  static const github =
-      AgentTasksListTasksResponseTasksItemArtifactsItemProvider._('github');
+  static const low =
+      IssuesUpdateResponseVariant1SuggestionsIssueFieldValuesItemConfidence._(
+          'low');
+  static const medium =
+      IssuesUpdateResponseVariant1SuggestionsIssueFieldValuesItemConfidence._(
+          'medium');
+  static const high =
+      IssuesUpdateResponseVariant1SuggestionsIssueFieldValuesItemConfidence._(
+          'high');
 
   String toJson() => value;
 
@@ -154,27 +205,31 @@ final class AgentTasksListTasksResponseTasksItemArtifactsItemProvider {
 
   @override
   bool operator ==(Object other) =>
-      other is AgentTasksListTasksResponseTasksItemArtifactsItemProvider &&
+      other
+          is IssuesUpdateResponseVariant1SuggestionsIssueFieldValuesItemConfidence &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Type of artifact. Available Values: `pull`, `branch`.
-final class AgentTasksListTasksResponseTasksItemArtifactsItemType {
+final class IssuesUpdateResponseVariant1SuggestionsIssueFieldValuesItemIgnoredReason {
   final String value;
 
-  const AgentTasksListTasksResponseTasksItemArtifactsItemType._(this.value);
+  const IssuesUpdateResponseVariant1SuggestionsIssueFieldValuesItemIgnoredReason._(
+      this.value);
 
-  factory AgentTasksListTasksResponseTasksItemArtifactsItemType.fromJson(
+  factory IssuesUpdateResponseVariant1SuggestionsIssueFieldValuesItemIgnoredReason.fromJson(
           String value) =>
-      AgentTasksListTasksResponseTasksItemArtifactsItemType._(value);
+      IssuesUpdateResponseVariant1SuggestionsIssueFieldValuesItemIgnoredReason
+          ._(value);
 
-  static const pull =
-      AgentTasksListTasksResponseTasksItemArtifactsItemType._('pull');
-  static const branch =
-      AgentTasksListTasksResponseTasksItemArtifactsItemType._('branch');
+  static const alreadyApplied =
+      IssuesUpdateResponseVariant1SuggestionsIssueFieldValuesItemIgnoredReason
+          ._('already_applied');
+  static const issueAlreadyClosed =
+      IssuesUpdateResponseVariant1SuggestionsIssueFieldValuesItemIgnoredReason
+          ._('issue_already_closed');
 
   String toJson() => value;
 
@@ -183,63 +238,30 @@ final class AgentTasksListTasksResponseTasksItemArtifactsItemType {
 
   @override
   bool operator ==(Object other) =>
-      other is AgentTasksListTasksResponseTasksItemArtifactsItemType &&
+      other
+          is IssuesUpdateResponseVariant1SuggestionsIssueFieldValuesItemIgnoredReason &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Type of the task creator
-final class AgentTasksListTasksResponseTasksItemCreatorType {
+final class IssuesUpdateResponseVariant1SuggestionsLabelsItemConfidence {
   final String value;
 
-  const AgentTasksListTasksResponseTasksItemCreatorType._(this.value);
+  const IssuesUpdateResponseVariant1SuggestionsLabelsItemConfidence._(
+      this.value);
 
-  factory AgentTasksListTasksResponseTasksItemCreatorType.fromJson(
+  factory IssuesUpdateResponseVariant1SuggestionsLabelsItemConfidence.fromJson(
           String value) =>
-      AgentTasksListTasksResponseTasksItemCreatorType._(value);
+      IssuesUpdateResponseVariant1SuggestionsLabelsItemConfidence._(value);
 
-  static const user = AgentTasksListTasksResponseTasksItemCreatorType._('user');
-  static const organization =
-      AgentTasksListTasksResponseTasksItemCreatorType._('organization');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is AgentTasksListTasksResponseTasksItemCreatorType &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Current state of the task, derived from its most recent session
-final class AgentTasksListTasksResponseTasksItemState {
-  final String value;
-
-  const AgentTasksListTasksResponseTasksItemState._(this.value);
-
-  factory AgentTasksListTasksResponseTasksItemState.fromJson(String value) =>
-      AgentTasksListTasksResponseTasksItemState._(value);
-
-  static const queued = AgentTasksListTasksResponseTasksItemState._('queued');
-  static const inProgress =
-      AgentTasksListTasksResponseTasksItemState._('in_progress');
-  static const completed =
-      AgentTasksListTasksResponseTasksItemState._('completed');
-  static const failed = AgentTasksListTasksResponseTasksItemState._('failed');
-  static const idle = AgentTasksListTasksResponseTasksItemState._('idle');
-  static const waitingForUser =
-      AgentTasksListTasksResponseTasksItemState._('waiting_for_user');
-  static const timedOut =
-      AgentTasksListTasksResponseTasksItemState._('timed_out');
-  static const cancelled =
-      AgentTasksListTasksResponseTasksItemState._('cancelled');
+  static const low =
+      IssuesUpdateResponseVariant1SuggestionsLabelsItemConfidence._('low');
+  static const medium =
+      IssuesUpdateResponseVariant1SuggestionsLabelsItemConfidence._('medium');
+  static const high =
+      IssuesUpdateResponseVariant1SuggestionsLabelsItemConfidence._('high');
 
   String toJson() => value;
 
@@ -248,68 +270,29 @@ final class AgentTasksListTasksResponseTasksItemState {
 
   @override
   bool operator ==(Object other) =>
-      other is AgentTasksListTasksResponseTasksItemState &&
+      other is IssuesUpdateResponseVariant1SuggestionsLabelsItemConfidence &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Machine-readable error code
-final class AgentTasksListTasksResponseErrorsItemCode {
+final class IssuesUpdateResponseVariant1SuggestionsLabelsItemIgnoredReason {
   final String value;
 
-  const AgentTasksListTasksResponseErrorsItemCode._(this.value);
+  const IssuesUpdateResponseVariant1SuggestionsLabelsItemIgnoredReason._(
+      this.value);
 
-  factory AgentTasksListTasksResponseErrorsItemCode.fromJson(String value) =>
-      AgentTasksListTasksResponseErrorsItemCode._(value);
-
-  static const missing = AgentTasksListTasksResponseErrorsItemCode._('missing');
-  static const missingField =
-      AgentTasksListTasksResponseErrorsItemCode._('missing_field');
-  static const invalid = AgentTasksListTasksResponseErrorsItemCode._('invalid');
-  static const alreadyExists =
-      AgentTasksListTasksResponseErrorsItemCode._('already_exists');
-  static const unprocessable =
-      AgentTasksListTasksResponseErrorsItemCode._('unprocessable');
-  static const custom = AgentTasksListTasksResponseErrorsItemCode._('custom');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is AgentTasksListTasksResponseErrorsItemCode &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Machine-readable error code
-final class AgentTasksListTasksResponseErrorsItemCodef891db39 {
-  final String value;
-
-  const AgentTasksListTasksResponseErrorsItemCodef891db39._(this.value);
-
-  factory AgentTasksListTasksResponseErrorsItemCodef891db39.fromJson(
+  factory IssuesUpdateResponseVariant1SuggestionsLabelsItemIgnoredReason.fromJson(
           String value) =>
-      AgentTasksListTasksResponseErrorsItemCodef891db39._(value);
+      IssuesUpdateResponseVariant1SuggestionsLabelsItemIgnoredReason._(value);
 
-  static const missing =
-      AgentTasksListTasksResponseErrorsItemCodef891db39._('missing');
-  static const missingField =
-      AgentTasksListTasksResponseErrorsItemCodef891db39._('missing_field');
-  static const invalid =
-      AgentTasksListTasksResponseErrorsItemCodef891db39._('invalid');
-  static const alreadyExists =
-      AgentTasksListTasksResponseErrorsItemCodef891db39._('already_exists');
-  static const unprocessable =
-      AgentTasksListTasksResponseErrorsItemCodef891db39._('unprocessable');
-  static const custom =
-      AgentTasksListTasksResponseErrorsItemCodef891db39._('custom');
+  static const alreadyApplied =
+      IssuesUpdateResponseVariant1SuggestionsLabelsItemIgnoredReason._(
+          'already_applied');
+  static const issueAlreadyClosed =
+      IssuesUpdateResponseVariant1SuggestionsLabelsItemIgnoredReason._(
+          'issue_already_closed');
 
   String toJson() => value;
 
@@ -318,35 +301,29 @@ final class AgentTasksListTasksResponseErrorsItemCodef891db39 {
 
   @override
   bool operator ==(Object other) =>
-      other is AgentTasksListTasksResponseErrorsItemCodef891db39 &&
+      other is IssuesUpdateResponseVariant1SuggestionsLabelsItemIgnoredReason &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Machine-readable error code
-final class AgentTasksListTasksResponseErrorsItemCode000b1114 {
+final class IssuesUpdateResponseVariant1SuggestionsStateItemConfidence {
   final String value;
 
-  const AgentTasksListTasksResponseErrorsItemCode000b1114._(this.value);
+  const IssuesUpdateResponseVariant1SuggestionsStateItemConfidence._(
+      this.value);
 
-  factory AgentTasksListTasksResponseErrorsItemCode000b1114.fromJson(
+  factory IssuesUpdateResponseVariant1SuggestionsStateItemConfidence.fromJson(
           String value) =>
-      AgentTasksListTasksResponseErrorsItemCode000b1114._(value);
+      IssuesUpdateResponseVariant1SuggestionsStateItemConfidence._(value);
 
-  static const missing =
-      AgentTasksListTasksResponseErrorsItemCode000b1114._('missing');
-  static const missingField =
-      AgentTasksListTasksResponseErrorsItemCode000b1114._('missing_field');
-  static const invalid =
-      AgentTasksListTasksResponseErrorsItemCode000b1114._('invalid');
-  static const alreadyExists =
-      AgentTasksListTasksResponseErrorsItemCode000b1114._('already_exists');
-  static const unprocessable =
-      AgentTasksListTasksResponseErrorsItemCode000b1114._('unprocessable');
-  static const custom =
-      AgentTasksListTasksResponseErrorsItemCode000b1114._('custom');
+  static const low =
+      IssuesUpdateResponseVariant1SuggestionsStateItemConfidence._('low');
+  static const medium =
+      IssuesUpdateResponseVariant1SuggestionsStateItemConfidence._('medium');
+  static const high =
+      IssuesUpdateResponseVariant1SuggestionsStateItemConfidence._('high');
 
   String toJson() => value;
 
@@ -355,7 +332,68 @@ final class AgentTasksListTasksResponseErrorsItemCode000b1114 {
 
   @override
   bool operator ==(Object other) =>
-      other is AgentTasksListTasksResponseErrorsItemCode000b1114 &&
+      other is IssuesUpdateResponseVariant1SuggestionsStateItemConfidence &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+final class IssuesUpdateResponseVariant1SuggestionsStateItemIgnoredReason {
+  final String value;
+
+  const IssuesUpdateResponseVariant1SuggestionsStateItemIgnoredReason._(
+      this.value);
+
+  factory IssuesUpdateResponseVariant1SuggestionsStateItemIgnoredReason.fromJson(
+          String value) =>
+      IssuesUpdateResponseVariant1SuggestionsStateItemIgnoredReason._(value);
+
+  static const alreadyApplied =
+      IssuesUpdateResponseVariant1SuggestionsStateItemIgnoredReason._(
+          'already_applied');
+  static const issueAlreadyClosed =
+      IssuesUpdateResponseVariant1SuggestionsStateItemIgnoredReason._(
+          'issue_already_closed');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is IssuesUpdateResponseVariant1SuggestionsStateItemIgnoredReason &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+final class IssuesUpdateResponseVariant1SuggestionsTypeItemConfidence {
+  final String value;
+
+  const IssuesUpdateResponseVariant1SuggestionsTypeItemConfidence._(this.value);
+
+  factory IssuesUpdateResponseVariant1SuggestionsTypeItemConfidence.fromJson(
+          String value) =>
+      IssuesUpdateResponseVariant1SuggestionsTypeItemConfidence._(value);
+
+  static const low =
+      IssuesUpdateResponseVariant1SuggestionsTypeItemConfidence._('low');
+  static const medium =
+      IssuesUpdateResponseVariant1SuggestionsTypeItemConfidence._('medium');
+  static const high =
+      IssuesUpdateResponseVariant1SuggestionsTypeItemConfidence._('high');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is IssuesUpdateResponseVariant1SuggestionsTypeItemConfidence &&
       other.value == value;
 
   @override

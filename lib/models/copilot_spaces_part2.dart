@@ -557,6 +557,22 @@ sealed class CopilotSpaceCollaborator {
   static const String constructionSurface = 'named';
   const CopilotSpaceCollaborator();
   factory CopilotSpaceCollaborator.fromJson(Object? json) {
+    if (json is Map<String, dynamic>) {
+      try {
+        final value = CopilotSpaceCollaboratorVariant0.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return CopilotSpaceCollaboratorCopilotSpaceCollaboratorVariant0(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = CopilotSpaceCollaboratorVariant1.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return CopilotSpaceCollaboratorCopilotSpaceCollaboratorVariant1(
+              value);
+        }
+      } catch (_) {}
+    }
     try {
       return CopilotSpaceCollaboratorCopilotSpaceCollaboratorVariant0(
           CopilotSpaceCollaboratorVariant0.fromJson(

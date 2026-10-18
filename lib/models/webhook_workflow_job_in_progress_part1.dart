@@ -5,16 +5,15 @@ part of 'webhook_workflow_job_in_progress.dart';
 
 // webhook_workflow_job_in_progress domain models
 /// Required object value serialized in the `steps[]` wire field.
-class WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItem {
+class WebhookWorkflowJobInProgressWorkflowJobStepsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
   /// Required `string` value serialized in the `completed_at` wire field.
   final String? completedAt;
 
-  /// Required enumerated value serialized in the `conclusion` wire field.
-  final WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItemConclusion?
-      conclusion;
+  /// Required `string` value serialized in the `conclusion` wire field.
+  final String? conclusion;
 
   /// Required `string` value serialized in the `name` wire field.
   final String name;
@@ -26,9 +25,9 @@ class WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItem {
   final String? startedAt;
 
   /// Required enumerated value serialized in the `status` wire field.
-  final WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItemStatus status;
+  final WebhookWorkflowJobInProgressWorkflowJobStepsItemStatus status;
 
-  const WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItem(
+  const WebhookWorkflowJobInProgressWorkflowJobStepsItem(
       {required this.completedAt,
       required this.conclusion,
       required this.name,
@@ -36,31 +35,29 @@ class WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItem {
       required this.startedAt,
       required this.status});
 
-  WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItem Function(
-      {String? completedAt,
-      WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItemConclusion?
-          conclusion,
-      String name,
-      int number,
-      String? startedAt,
-      WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItemStatus
-          status}) get copyWith => _copyWith;
+  WebhookWorkflowJobInProgressWorkflowJobStepsItem Function(
+          {String? completedAt,
+          String? conclusion,
+          String name,
+          int number,
+          String? startedAt,
+          WebhookWorkflowJobInProgressWorkflowJobStepsItemStatus status})
+      get copyWith => _copyWith;
 
-  WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItem _copyWith(
+  WebhookWorkflowJobInProgressWorkflowJobStepsItem _copyWith(
           {Object? completedAt = sdkOmittedValue,
           Object? conclusion = sdkOmittedValue,
           Object? name = sdkOmittedValue,
           Object? number = sdkOmittedValue,
           Object? startedAt = sdkOmittedValue,
           Object? status = sdkOmittedValue}) =>
-      WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItem(
+      WebhookWorkflowJobInProgressWorkflowJobStepsItem(
         completedAt: identical(completedAt, sdkOmittedValue)
             ? this.completedAt
             : completedAt as String?,
         conclusion: identical(conclusion, sdkOmittedValue)
             ? this.conclusion
-            : conclusion
-                as WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItemConclusion?,
+            : conclusion as String?,
         name: identical(name, sdkOmittedValue) ? this.name : name as String,
         number:
             identical(number, sdkOmittedValue) ? this.number : number as int,
@@ -69,22 +66,18 @@ class WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItem {
             : startedAt as String?,
         status: identical(status, sdkOmittedValue)
             ? this.status
-            : status
-                as WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItemStatus,
+            : status as WebhookWorkflowJobInProgressWorkflowJobStepsItemStatus,
       );
 
-  factory WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItem.fromJson(
+  factory WebhookWorkflowJobInProgressWorkflowJobStepsItem.fromJson(
           Map<String, dynamic> json) =>
-      WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItem(
+      WebhookWorkflowJobInProgressWorkflowJobStepsItem(
         completedAt: json.containsKey('completed_at')
             ? json['completed_at'] as String?
             : throw ArgumentError.value(
                 null, 'completed_at', 'Required property is missing'),
         conclusion: json.containsKey('conclusion')
-            ? json['conclusion'] != null
-                ? WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItemConclusion
-                    .fromJson(json['conclusion'] as String)
-                : null
+            ? json['conclusion'] as String?
             : throw ArgumentError.value(
                 null, 'conclusion', 'Required property is missing'),
         name: (json['name'] as String?)!,
@@ -94,14 +87,14 @@ class WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItem {
             : throw ArgumentError.value(
                 null, 'started_at', 'Required property is missing'),
         status: (json['status'] != null
-            ? WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItemStatus
-                .fromJson(json['status'] as String)
+            ? WebhookWorkflowJobInProgressWorkflowJobStepsItemStatus.fromJson(
+                json['status'] as String)
             : null)!,
       );
 
   Map<String, dynamic> toJson() => {
         'completed_at': completedAt,
-        'conclusion': conclusion?.toJson(),
+        'conclusion': conclusion,
         'name': name,
         'number': number,
         'started_at': startedAt,
@@ -109,19 +102,19 @@ class WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItem {
       };
 }
 
-/// The workflow job. Many `workflow_job` keys, such as `head_sha`, `conclusion`, and `started_at` are the same as those in a `check_run` object.
-class WebhookWorkflowJobInProgressWorkflowJobVariant0 {
+/// Required object value serialized in the `workflow_job` wire field.
+class WebhookWorkflowJobInProgressWorkflowJob {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Required `uri`-formatted value serialized in the `check_run_url` wire field.
+  /// Required `string` value serialized in the `check_run_url` wire field.
   final String checkRunUrl;
 
   /// Required `string` value serialized in the `completed_at` wire field.
   final String? completedAt;
 
-  /// Required enumerated value serialized in the `conclusion` wire field.
-  final WebhookWorkflowJobInProgressWorkflowJobVariant0Conclusion? conclusion;
+  /// Required `string` value serialized in the `conclusion` wire field.
+  final String? conclusion;
 
   /// The time that the job created.
   final String createdAt;
@@ -129,13 +122,13 @@ class WebhookWorkflowJobInProgressWorkflowJobVariant0 {
   /// Required `string` value serialized in the `head_sha` wire field.
   final String headSha;
 
-  /// Required `uri`-formatted value serialized in the `html_url` wire field.
+  /// Required `string` value serialized in the `html_url` wire field.
   final String htmlUrl;
 
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
 
-  /// Custom labels for the job. Specified by the [`"runs-on"` attribute](https://docs.github.com/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on) in the workflow YAML.
+  /// Required array value serialized in the `labels` wire field.
   final List<String> labels;
 
   /// Required `string` value serialized in the `name` wire field.
@@ -147,29 +140,29 @@ class WebhookWorkflowJobInProgressWorkflowJobVariant0 {
   /// Required `integer` value serialized in the `run_attempt` wire field.
   final int runAttempt;
 
-  /// Required `number` value serialized in the `run_id` wire field.
-  final double runId;
+  /// Required `integer` value serialized in the `run_id` wire field.
+  final int runId;
 
-  /// Required `uri`-formatted value serialized in the `run_url` wire field.
+  /// Required `string` value serialized in the `run_url` wire field.
   final String runUrl;
 
-  /// The ID of the runner group that is running this job. This will be `null` as long as `workflow_job[status]` is `queued`.
-  final int? runnerGroupId;
+  /// Required `number` value serialized in the `runner_group_id` wire field.
+  final double? runnerGroupId;
 
-  /// The name of the runner group that is running this job. This will be `null` as long as `workflow_job[status]` is `queued`.
+  /// Required `string` value serialized in the `runner_group_name` wire field.
   final String? runnerGroupName;
 
-  /// The ID of the runner that is running this job. This will be `null` as long as `workflow_job[status]` is `queued`.
-  final int? runnerId;
+  /// Required `number` value serialized in the `runner_id` wire field.
+  final double? runnerId;
 
-  /// The name of the runner that is running this job. This will be `null` as long as `workflow_job[status]` is `queued`.
+  /// Required `string` value serialized in the `runner_name` wire field.
   final String? runnerName;
 
   /// Required `string` value serialized in the `started_at` wire field.
   final String startedAt;
 
-  /// The current status of the job. Can be `queued`, `in_progress`, or `completed`.
-  final WebhookWorkflowJobInProgressWorkflowJobVariant0Status status;
+  /// Required enumerated value serialized in the `status` wire field.
+  final WebhookWorkflowJobInProgressWorkflowJobStatus status;
 
   /// The name of the current branch.
   final String? headBranch;
@@ -178,12 +171,12 @@ class WebhookWorkflowJobInProgressWorkflowJobVariant0 {
   final String? workflowName;
 
   /// Required array value serialized in the `steps` wire field.
-  final List<WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItem> steps;
+  final List<WebhookWorkflowJobInProgressWorkflowJobStepsItem> steps;
 
-  /// Required `uri`-formatted value serialized in the `url` wire field.
+  /// Required `string` value serialized in the `url` wire field.
   final String url;
 
-  const WebhookWorkflowJobInProgressWorkflowJobVariant0(
+  const WebhookWorkflowJobInProgressWorkflowJob(
       {required this.checkRunUrl,
       required this.completedAt,
       required this.conclusion,
@@ -208,10 +201,10 @@ class WebhookWorkflowJobInProgressWorkflowJobVariant0 {
       required this.steps,
       required this.url});
 
-  WebhookWorkflowJobInProgressWorkflowJobVariant0 Function(
+  WebhookWorkflowJobInProgressWorkflowJob Function(
       {String checkRunUrl,
       String? completedAt,
-      WebhookWorkflowJobInProgressWorkflowJobVariant0Conclusion? conclusion,
+      String? conclusion,
       String createdAt,
       String headSha,
       String htmlUrl,
@@ -220,20 +213,20 @@ class WebhookWorkflowJobInProgressWorkflowJobVariant0 {
       String name,
       String nodeId,
       int runAttempt,
-      double runId,
+      int runId,
       String runUrl,
-      int? runnerGroupId,
+      double? runnerGroupId,
       String? runnerGroupName,
-      int? runnerId,
+      double? runnerId,
       String? runnerName,
       String startedAt,
-      WebhookWorkflowJobInProgressWorkflowJobVariant0Status status,
+      WebhookWorkflowJobInProgressWorkflowJobStatus status,
       String? headBranch,
       String? workflowName,
-      List<WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItem> steps,
+      List<WebhookWorkflowJobInProgressWorkflowJobStepsItem> steps,
       String url}) get copyWith => _copyWith;
 
-  WebhookWorkflowJobInProgressWorkflowJobVariant0 _copyWith(
+  WebhookWorkflowJobInProgressWorkflowJob _copyWith(
           {Object? checkRunUrl = sdkOmittedValue,
           Object? completedAt = sdkOmittedValue,
           Object? conclusion = sdkOmittedValue,
@@ -257,7 +250,7 @@ class WebhookWorkflowJobInProgressWorkflowJobVariant0 {
           Object? workflowName = sdkOmittedValue,
           Object? steps = sdkOmittedValue,
           Object? url = sdkOmittedValue}) =>
-      WebhookWorkflowJobInProgressWorkflowJobVariant0(
+      WebhookWorkflowJobInProgressWorkflowJob(
         checkRunUrl: identical(checkRunUrl, sdkOmittedValue)
             ? this.checkRunUrl
             : checkRunUrl as String,
@@ -266,8 +259,7 @@ class WebhookWorkflowJobInProgressWorkflowJobVariant0 {
             : completedAt as String?,
         conclusion: identical(conclusion, sdkOmittedValue)
             ? this.conclusion
-            : conclusion
-                as WebhookWorkflowJobInProgressWorkflowJobVariant0Conclusion?,
+            : conclusion as String?,
         createdAt: identical(createdAt, sdkOmittedValue)
             ? this.createdAt
             : createdAt as String,
@@ -287,18 +279,18 @@ class WebhookWorkflowJobInProgressWorkflowJobVariant0 {
         runAttempt: identical(runAttempt, sdkOmittedValue)
             ? this.runAttempt
             : runAttempt as int,
-        runId: identical(runId, sdkOmittedValue) ? this.runId : runId as double,
+        runId: identical(runId, sdkOmittedValue) ? this.runId : runId as int,
         runUrl:
             identical(runUrl, sdkOmittedValue) ? this.runUrl : runUrl as String,
         runnerGroupId: identical(runnerGroupId, sdkOmittedValue)
             ? this.runnerGroupId
-            : runnerGroupId as int?,
+            : runnerGroupId as double?,
         runnerGroupName: identical(runnerGroupName, sdkOmittedValue)
             ? this.runnerGroupName
             : runnerGroupName as String?,
         runnerId: identical(runnerId, sdkOmittedValue)
             ? this.runnerId
-            : runnerId as int?,
+            : runnerId as double?,
         runnerName: identical(runnerName, sdkOmittedValue)
             ? this.runnerName
             : runnerName as String?,
@@ -307,7 +299,7 @@ class WebhookWorkflowJobInProgressWorkflowJobVariant0 {
             : startedAt as String,
         status: identical(status, sdkOmittedValue)
             ? this.status
-            : status as WebhookWorkflowJobInProgressWorkflowJobVariant0Status,
+            : status as WebhookWorkflowJobInProgressWorkflowJobStatus,
         headBranch: identical(headBranch, sdkOmittedValue)
             ? this.headBranch
             : headBranch as String?,
@@ -316,24 +308,20 @@ class WebhookWorkflowJobInProgressWorkflowJobVariant0 {
             : workflowName as String?,
         steps: identical(steps, sdkOmittedValue)
             ? this.steps
-            : steps as List<
-                WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItem>,
+            : steps as List<WebhookWorkflowJobInProgressWorkflowJobStepsItem>,
         url: identical(url, sdkOmittedValue) ? this.url : url as String,
       );
 
-  factory WebhookWorkflowJobInProgressWorkflowJobVariant0.fromJson(
+  factory WebhookWorkflowJobInProgressWorkflowJob.fromJson(
           Map<String, dynamic> json) =>
-      WebhookWorkflowJobInProgressWorkflowJobVariant0(
+      WebhookWorkflowJobInProgressWorkflowJob(
         checkRunUrl: (json['check_run_url'] as String?)!,
         completedAt: json.containsKey('completed_at')
             ? json['completed_at'] as String?
             : throw ArgumentError.value(
                 null, 'completed_at', 'Required property is missing'),
         conclusion: json.containsKey('conclusion')
-            ? json['conclusion'] != null
-                ? WebhookWorkflowJobInProgressWorkflowJobVariant0Conclusion
-                    .fromJson(json['conclusion'] as String)
-                : null
+            ? json['conclusion'] as String?
             : throw ArgumentError.value(
                 null, 'conclusion', 'Required property is missing'),
         createdAt: (json['created_at'] as String?)!,
@@ -344,10 +332,10 @@ class WebhookWorkflowJobInProgressWorkflowJobVariant0 {
         name: (json['name'] as String?)!,
         nodeId: (json['node_id'] as String?)!,
         runAttempt: ((json['run_attempt'] as num?)?.toInt())!,
-        runId: ((json['run_id'] as num?)?.toDouble())!,
+        runId: ((json['run_id'] as num?)?.toInt())!,
         runUrl: (json['run_url'] as String?)!,
         runnerGroupId: json.containsKey('runner_group_id')
-            ? (json['runner_group_id'] as num?)?.toInt()
+            ? (json['runner_group_id'] as num?)?.toDouble()
             : throw ArgumentError.value(
                 null, 'runner_group_id', 'Required property is missing'),
         runnerGroupName: json.containsKey('runner_group_name')
@@ -355,7 +343,7 @@ class WebhookWorkflowJobInProgressWorkflowJobVariant0 {
             : throw ArgumentError.value(
                 null, 'runner_group_name', 'Required property is missing'),
         runnerId: json.containsKey('runner_id')
-            ? (json['runner_id'] as num?)?.toInt()
+            ? (json['runner_id'] as num?)?.toDouble()
             : throw ArgumentError.value(
                 null, 'runner_id', 'Required property is missing'),
         runnerName: json.containsKey('runner_name')
@@ -364,7 +352,7 @@ class WebhookWorkflowJobInProgressWorkflowJobVariant0 {
                 null, 'runner_name', 'Required property is missing'),
         startedAt: (json['started_at'] as String?)!,
         status: (json['status'] != null
-            ? WebhookWorkflowJobInProgressWorkflowJobVariant0Status.fromJson(
+            ? WebhookWorkflowJobInProgressWorkflowJobStatus.fromJson(
                 json['status'] as String)
             : null)!,
         headBranch: json.containsKey('head_branch')
@@ -377,8 +365,8 @@ class WebhookWorkflowJobInProgressWorkflowJobVariant0 {
                 null, 'workflow_name', 'Required property is missing'),
         steps: ((json['steps'] as List?)
             ?.map((e) =>
-                WebhookWorkflowJobInProgressWorkflowJobVariant0StepsItem
-                    .fromJson(e as Map<String, dynamic>))
+                WebhookWorkflowJobInProgressWorkflowJobStepsItem.fromJson(
+                    e as Map<String, dynamic>))
             .toList())!,
         url: (json['url'] as String?)!,
       );
@@ -386,7 +374,7 @@ class WebhookWorkflowJobInProgressWorkflowJobVariant0 {
   Map<String, dynamic> toJson() => {
         'check_run_url': checkRunUrl,
         'completed_at': completedAt,
-        'conclusion': conclusion?.toJson(),
+        'conclusion': conclusion,
         'created_at': createdAt,
         'head_sha': headSha,
         'html_url': htmlUrl,
@@ -410,101 +398,162 @@ class WebhookWorkflowJobInProgressWorkflowJobVariant0 {
       };
 }
 
-/// Required object value serialized in the `steps[]` wire field.
-class WebhookWorkflowJobInProgressWorkflowJobVariant1StepsItem {
+/// Typed representation of the `WebhookWorkflowJobInProgress` API schema.
+class WebhookWorkflowJobInProgress {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Required `string` value serialized in the `completed_at` wire field.
-  final String? completedAt;
+  /// Required enumerated value serialized in the `action` wire field.
+  final WebhookWorkflowJobInProgressAction action;
 
-  /// Required `string` value serialized in the `conclusion` wire field.
-  final String? conclusion;
+  /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured on an enterprise account or an organization that's part of an enterprise account. For more information, see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
+  final SdkOptional<EnterpriseWebhooks> enterprise;
 
-  /// Required `string` value serialized in the `name` wire field.
-  final String name;
+  /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured for and sent to a GitHub App. For more information, see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
+  final SdkOptional<SimpleInstallation> installation;
 
-  /// Required `integer` value serialized in the `number` wire field.
-  final int number;
+  /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an organization, or when the event occurs from activity in a repository owned by an organization.
+  final SdkOptional<OrganizationSimpleWebhooks> organization;
 
-  /// Required `string` value serialized in the `started_at` wire field.
-  final String? startedAt;
+  /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property when the event occurs from activity in a repository.
+  final RepositoryWebhooks repository;
 
-  /// Required enumerated value serialized in the `status` wire field.
-  final WebhookWorkflowJobInProgressWorkflowJobVariant1StepsItemStatus status;
+  /// A GitHub user.
+  final SimpleUser sender;
 
-  const WebhookWorkflowJobInProgressWorkflowJobVariant1StepsItem(
-      {required this.completedAt,
-      required this.conclusion,
-      required this.name,
-      required this.number,
-      required this.startedAt,
-      required this.status});
+  /// Required object value serialized in the `workflow_job` wire field.
+  final WebhookWorkflowJobInProgressWorkflowJob workflowJob;
 
-  WebhookWorkflowJobInProgressWorkflowJobVariant1StepsItem Function(
-      {String? completedAt,
-      String? conclusion,
-      String name,
-      int number,
-      String? startedAt,
-      WebhookWorkflowJobInProgressWorkflowJobVariant1StepsItemStatus
-          status}) get copyWith => _copyWith;
+  /// A request for a specific ref(branch,sha,tag) to be deployed
+  final SdkOptional<Deployment> deployment;
 
-  WebhookWorkflowJobInProgressWorkflowJobVariant1StepsItem _copyWith(
-          {Object? completedAt = sdkOmittedValue,
-          Object? conclusion = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? number = sdkOmittedValue,
-          Object? startedAt = sdkOmittedValue,
-          Object? status = sdkOmittedValue}) =>
-      WebhookWorkflowJobInProgressWorkflowJobVariant1StepsItem(
-        completedAt: identical(completedAt, sdkOmittedValue)
-            ? this.completedAt
-            : completedAt as String?,
-        conclusion: identical(conclusion, sdkOmittedValue)
-            ? this.conclusion
-            : conclusion as String?,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        number:
-            identical(number, sdkOmittedValue) ? this.number : number as int,
-        startedAt: identical(startedAt, sdkOmittedValue)
-            ? this.startedAt
-            : startedAt as String?,
-        status: identical(status, sdkOmittedValue)
-            ? this.status
-            : status
-                as WebhookWorkflowJobInProgressWorkflowJobVariant1StepsItemStatus,
+  const WebhookWorkflowJobInProgress(
+      {required this.action,
+      this.enterprise = const SdkOmitted(),
+      this.installation = const SdkOmitted(),
+      this.organization = const SdkOmitted(),
+      required this.repository,
+      required this.sender,
+      required this.workflowJob,
+      this.deployment = const SdkOmitted()});
+
+  WebhookWorkflowJobInProgress Function(
+      {WebhookWorkflowJobInProgressAction action,
+      SdkOptional<EnterpriseWebhooks> enterprise,
+      SdkOptional<SimpleInstallation> installation,
+      SdkOptional<OrganizationSimpleWebhooks> organization,
+      RepositoryWebhooks repository,
+      SimpleUser sender,
+      WebhookWorkflowJobInProgressWorkflowJob workflowJob,
+      SdkOptional<Deployment> deployment}) get copyWith => _copyWith;
+
+  WebhookWorkflowJobInProgress _copyWith(
+          {Object? action = sdkOmittedValue,
+          Object? enterprise = sdkOmittedValue,
+          Object? installation = sdkOmittedValue,
+          Object? organization = sdkOmittedValue,
+          Object? repository = sdkOmittedValue,
+          Object? sender = sdkOmittedValue,
+          Object? workflowJob = sdkOmittedValue,
+          Object? deployment = sdkOmittedValue}) =>
+      WebhookWorkflowJobInProgress(
+        action: identical(action, sdkOmittedValue)
+            ? this.action
+            : action as WebhookWorkflowJobInProgressAction,
+        enterprise: identical(enterprise, sdkOmittedValue)
+            ? this.enterprise
+            : enterprise as SdkOptional<EnterpriseWebhooks>,
+        installation: identical(installation, sdkOmittedValue)
+            ? this.installation
+            : installation as SdkOptional<SimpleInstallation>,
+        organization: identical(organization, sdkOmittedValue)
+            ? this.organization
+            : organization as SdkOptional<OrganizationSimpleWebhooks>,
+        repository: identical(repository, sdkOmittedValue)
+            ? this.repository
+            : repository as RepositoryWebhooks,
+        sender: identical(sender, sdkOmittedValue)
+            ? this.sender
+            : sender as SimpleUser,
+        workflowJob: identical(workflowJob, sdkOmittedValue)
+            ? this.workflowJob
+            : workflowJob as WebhookWorkflowJobInProgressWorkflowJob,
+        deployment: identical(deployment, sdkOmittedValue)
+            ? this.deployment
+            : deployment as SdkOptional<Deployment>,
       );
 
-  factory WebhookWorkflowJobInProgressWorkflowJobVariant1StepsItem.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookWorkflowJobInProgressWorkflowJobVariant1StepsItem(
-        completedAt: json.containsKey('completed_at')
-            ? json['completed_at'] as String?
-            : throw ArgumentError.value(
-                null, 'completed_at', 'Required property is missing'),
-        conclusion: json.containsKey('conclusion')
-            ? json['conclusion'] as String?
-            : throw ArgumentError.value(
-                null, 'conclusion', 'Required property is missing'),
-        name: (json['name'] as String?)!,
-        number: ((json['number'] as num?)?.toInt())!,
-        startedAt: json.containsKey('started_at')
-            ? json['started_at'] as String?
-            : throw ArgumentError.value(
-                null, 'started_at', 'Required property is missing'),
-        status: (json['status'] != null
-            ? WebhookWorkflowJobInProgressWorkflowJobVariant1StepsItemStatus
-                .fromJson(json['status'] as String)
+  factory WebhookWorkflowJobInProgress.fromJson(Map<String, dynamic> json) =>
+      WebhookWorkflowJobInProgress(
+        action: (json['action'] != null
+            ? WebhookWorkflowJobInProgressAction.fromJson(
+                json['action'] as String)
             : null)!,
+        enterprise: json['enterprise'] != null
+            ? SdkPresent((json['enterprise'] != null
+                ? EnterpriseWebhooks.fromJson(
+                    json['enterprise'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        installation: json['installation'] != null
+            ? SdkPresent((json['installation'] != null
+                ? SimpleInstallation.fromJson(
+                    json['installation'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        organization: json['organization'] != null
+            ? SdkPresent((json['organization'] != null
+                ? OrganizationSimpleWebhooks.fromJson(
+                    json['organization'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        repository: (json['repository'] != null
+            ? RepositoryWebhooks.fromJson(
+                json['repository'] as Map<String, dynamic>)
+            : null)!,
+        sender: (json['sender'] != null
+            ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
+            : null)!,
+        workflowJob: (json['workflow_job'] != null
+            ? WebhookWorkflowJobInProgressWorkflowJob.fromJson(
+                json['workflow_job'] as Map<String, dynamic>)
+            : null)!,
+        deployment: json['deployment'] != null
+            ? SdkPresent((json['deployment'] != null
+                ? Deployment.fromJson(
+                    json['deployment'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        'completed_at': completedAt,
-        'conclusion': conclusion,
-        'name': name,
-        'number': number,
-        'started_at': startedAt,
-        'status': status.toJson(),
+        'action': action.toJson(),
+        ...switch (enterprise) {
+          SdkPresent<EnterpriseWebhooks>(value: final value) => {
+              'enterprise': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (installation) {
+          SdkPresent<SimpleInstallation>(value: final value) => {
+              'installation': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (organization) {
+          SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {
+              'organization': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'repository': repository.toJson(),
+        'sender': sender.toJson(),
+        'workflow_job': workflowJob.toJson(),
+        ...switch (deployment) {
+          SdkPresent<Deployment>(value: final value) => {
+              'deployment': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
       };
 }

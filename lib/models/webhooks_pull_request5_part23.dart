@@ -406,6 +406,24 @@ sealed class WebhooksPullRequest5RequestedReviewersItem {
   static const String constructionSurface = 'named';
   const WebhooksPullRequest5RequestedReviewersItem();
   factory WebhooksPullRequest5RequestedReviewersItem.fromJson(Object? json) {
+    if (json is Map<String, dynamic>) {
+      try {
+        final value =
+            WebhooksPullRequest5RequestedReviewersItemVariant0.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return WebhooksPullRequest5RequestedReviewersItemWebhooksPullRequest5RequestedReviewersItemVariant0(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value =
+            WebhooksPullRequest5RequestedReviewersItemVariant1.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return WebhooksPullRequest5RequestedReviewersItemWebhooksPullRequest5RequestedReviewersItemVariant1(
+              value);
+        }
+      } catch (_) {}
+    }
     try {
       return WebhooksPullRequest5RequestedReviewersItemWebhooksPullRequest5RequestedReviewersItemVariant0(
           WebhooksPullRequest5RequestedReviewersItemVariant0.fromJson(

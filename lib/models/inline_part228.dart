@@ -4,104 +4,60 @@
 part of 'inline.dart';
 
 // Inline operation models (part 228)
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhooksReviewersItemType {
-  final String value;
+/// UTC minute anchor for daily and weekly schedules. Omitted daily and weekly values default to `0`. Must be omitted whenever `cadence` includes `hourly`.
+final class AgentAutomationsGetRepoAutomationResponseTriggersIntervalMinuteUtc {
+  final int value;
 
-  const WebhooksReviewersItemType._(this.value);
+  const AgentAutomationsGetRepoAutomationResponseTriggersIntervalMinuteUtc._(
+      this.value);
 
-  factory WebhooksReviewersItemType.fromJson(String value) =>
-      WebhooksReviewersItemType._(value);
+  factory AgentAutomationsGetRepoAutomationResponseTriggersIntervalMinuteUtc.fromJson(
+          int value) =>
+      AgentAutomationsGetRepoAutomationResponseTriggersIntervalMinuteUtc._(
+          value);
 
-  static const user = WebhooksReviewersItemType._('User');
+  static const v0 =
+      AgentAutomationsGetRepoAutomationResponseTriggersIntervalMinuteUtc._(0);
+  static const v15 =
+      AgentAutomationsGetRepoAutomationResponseTriggersIntervalMinuteUtc._(15);
+  static const v30 =
+      AgentAutomationsGetRepoAutomationResponseTriggersIntervalMinuteUtc._(30);
+  static const v45 =
+      AgentAutomationsGetRepoAutomationResponseTriggersIntervalMinuteUtc._(45);
 
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhooksReviewersItemType && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `allow_deletions_enforcement_level` wire field.
-final class WebhooksRuleAllowDeletionsEnforcementLevel {
-  final String value;
-
-  const WebhooksRuleAllowDeletionsEnforcementLevel._(this.value);
-
-  factory WebhooksRuleAllowDeletionsEnforcementLevel.fromJson(String value) =>
-      WebhooksRuleAllowDeletionsEnforcementLevel._(value);
-
-  static const off = WebhooksRuleAllowDeletionsEnforcementLevel._('off');
-  static const nonAdmins =
-      WebhooksRuleAllowDeletionsEnforcementLevel._('non_admins');
-  static const everyone =
-      WebhooksRuleAllowDeletionsEnforcementLevel._('everyone');
-
-  String toJson() => value;
+  int toJson() => value;
 
   @override
   String toString() => value.toString();
 
   @override
   bool operator ==(Object other) =>
-      other is WebhooksRuleAllowDeletionsEnforcementLevel &&
+      other
+          is AgentAutomationsGetRepoAutomationResponseTriggersIntervalMinuteUtc &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Required enumerated value serialized in the `allow_force_pushes_enforcement_level` wire field.
-final class WebhooksRuleAllowForcePushesEnforcementLevel {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsGetRepoAutomationResponseTriggersIntervalWriteScope {
   final String value;
 
-  const WebhooksRuleAllowForcePushesEnforcementLevel._(this.value);
+  const AgentAutomationsGetRepoAutomationResponseTriggersIntervalWriteScope._(
+      this.value);
 
-  factory WebhooksRuleAllowForcePushesEnforcementLevel.fromJson(String value) =>
-      WebhooksRuleAllowForcePushesEnforcementLevel._(value);
-
-  static const off = WebhooksRuleAllowForcePushesEnforcementLevel._('off');
-  static const nonAdmins =
-      WebhooksRuleAllowForcePushesEnforcementLevel._('non_admins');
-  static const everyone =
-      WebhooksRuleAllowForcePushesEnforcementLevel._('everyone');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhooksRuleAllowForcePushesEnforcementLevel &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `linear_history_requirement_enforcement_level` wire field.
-final class WebhooksRuleLinearHistoryRequirementEnforcementLevel {
-  final String value;
-
-  const WebhooksRuleLinearHistoryRequirementEnforcementLevel._(this.value);
-
-  factory WebhooksRuleLinearHistoryRequirementEnforcementLevel.fromJson(
+  factory AgentAutomationsGetRepoAutomationResponseTriggersIntervalWriteScope.fromJson(
           String value) =>
-      WebhooksRuleLinearHistoryRequirementEnforcementLevel._(value);
+      AgentAutomationsGetRepoAutomationResponseTriggersIntervalWriteScope._(
+          value);
 
-  static const off =
-      WebhooksRuleLinearHistoryRequirementEnforcementLevel._('off');
-  static const nonAdmins =
-      WebhooksRuleLinearHistoryRequirementEnforcementLevel._('non_admins');
-  static const everyone =
-      WebhooksRuleLinearHistoryRequirementEnforcementLevel._('everyone');
+  static const trigger =
+      AgentAutomationsGetRepoAutomationResponseTriggersIntervalWriteScope._(
+          'trigger');
+  static const repository =
+      AgentAutomationsGetRepoAutomationResponseTriggersIntervalWriteScope._(
+          'repository');
 
   String toJson() => value;
 
@@ -110,82 +66,32 @@ final class WebhooksRuleLinearHistoryRequirementEnforcementLevel {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhooksRuleLinearHistoryRequirementEnforcementLevel &&
+      other
+          is AgentAutomationsGetRepoAutomationResponseTriggersIntervalWriteScope &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// The enforcement level of the branch lock setting. `off` means the branch is not locked, `non_admins` means the branch is read-only for non_admins, and `everyone` means the branch is read-only for everyone.
-final class WebhooksRuleLockBranchEnforcementLevel {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsGetRepoAutomationResponseTriggersIssueAssignedWriteScope {
   final String value;
 
-  const WebhooksRuleLockBranchEnforcementLevel._(this.value);
+  const AgentAutomationsGetRepoAutomationResponseTriggersIssueAssignedWriteScope._(
+      this.value);
 
-  factory WebhooksRuleLockBranchEnforcementLevel.fromJson(String value) =>
-      WebhooksRuleLockBranchEnforcementLevel._(value);
-
-  static const off = WebhooksRuleLockBranchEnforcementLevel._('off');
-  static const nonAdmins =
-      WebhooksRuleLockBranchEnforcementLevel._('non_admins');
-  static const everyone = WebhooksRuleLockBranchEnforcementLevel._('everyone');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhooksRuleLockBranchEnforcementLevel && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `merge_queue_enforcement_level` wire field.
-final class WebhooksRuleMergeQueueEnforcementLevel {
-  final String value;
-
-  const WebhooksRuleMergeQueueEnforcementLevel._(this.value);
-
-  factory WebhooksRuleMergeQueueEnforcementLevel.fromJson(String value) =>
-      WebhooksRuleMergeQueueEnforcementLevel._(value);
-
-  static const off = WebhooksRuleMergeQueueEnforcementLevel._('off');
-  static const nonAdmins =
-      WebhooksRuleMergeQueueEnforcementLevel._('non_admins');
-  static const everyone = WebhooksRuleMergeQueueEnforcementLevel._('everyone');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhooksRuleMergeQueueEnforcementLevel && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `pull_request_reviews_enforcement_level` wire field.
-final class WebhooksRulePullRequestReviewsEnforcementLevel {
-  final String value;
-
-  const WebhooksRulePullRequestReviewsEnforcementLevel._(this.value);
-
-  factory WebhooksRulePullRequestReviewsEnforcementLevel.fromJson(
+  factory AgentAutomationsGetRepoAutomationResponseTriggersIssueAssignedWriteScope.fromJson(
           String value) =>
-      WebhooksRulePullRequestReviewsEnforcementLevel._(value);
+      AgentAutomationsGetRepoAutomationResponseTriggersIssueAssignedWriteScope
+          ._(value);
 
-  static const off = WebhooksRulePullRequestReviewsEnforcementLevel._('off');
-  static const nonAdmins =
-      WebhooksRulePullRequestReviewsEnforcementLevel._('non_admins');
-  static const everyone =
-      WebhooksRulePullRequestReviewsEnforcementLevel._('everyone');
+  static const trigger =
+      AgentAutomationsGetRepoAutomationResponseTriggersIssueAssignedWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsGetRepoAutomationResponseTriggersIssueAssignedWriteScope
+          ._('repository');
 
   String toJson() => value;
 
@@ -194,28 +100,32 @@ final class WebhooksRulePullRequestReviewsEnforcementLevel {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhooksRulePullRequestReviewsEnforcementLevel &&
+      other
+          is AgentAutomationsGetRepoAutomationResponseTriggersIssueAssignedWriteScope &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Required enumerated value serialized in the `required_conversation_resolution_level` wire field.
-final class WebhooksRuleRequiredConversationResolutionLevel {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsGetRepoAutomationResponseTriggersIssueCommentWriteScope {
   final String value;
 
-  const WebhooksRuleRequiredConversationResolutionLevel._(this.value);
+  const AgentAutomationsGetRepoAutomationResponseTriggersIssueCommentWriteScope._(
+      this.value);
 
-  factory WebhooksRuleRequiredConversationResolutionLevel.fromJson(
+  factory AgentAutomationsGetRepoAutomationResponseTriggersIssueCommentWriteScope.fromJson(
           String value) =>
-      WebhooksRuleRequiredConversationResolutionLevel._(value);
+      AgentAutomationsGetRepoAutomationResponseTriggersIssueCommentWriteScope._(
+          value);
 
-  static const off = WebhooksRuleRequiredConversationResolutionLevel._('off');
-  static const nonAdmins =
-      WebhooksRuleRequiredConversationResolutionLevel._('non_admins');
-  static const everyone =
-      WebhooksRuleRequiredConversationResolutionLevel._('everyone');
+  static const trigger =
+      AgentAutomationsGetRepoAutomationResponseTriggersIssueCommentWriteScope._(
+          'trigger');
+  static const repository =
+      AgentAutomationsGetRepoAutomationResponseTriggersIssueCommentWriteScope._(
+          'repository');
 
   String toJson() => value;
 
@@ -224,28 +134,32 @@ final class WebhooksRuleRequiredConversationResolutionLevel {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhooksRuleRequiredConversationResolutionLevel &&
+      other
+          is AgentAutomationsGetRepoAutomationResponseTriggersIssueCommentWriteScope &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Required enumerated value serialized in the `required_deployments_enforcement_level` wire field.
-final class WebhooksRuleRequiredDeploymentsEnforcementLevel {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsGetRepoAutomationResponseTriggersIssueLabeledWriteScope {
   final String value;
 
-  const WebhooksRuleRequiredDeploymentsEnforcementLevel._(this.value);
+  const AgentAutomationsGetRepoAutomationResponseTriggersIssueLabeledWriteScope._(
+      this.value);
 
-  factory WebhooksRuleRequiredDeploymentsEnforcementLevel.fromJson(
+  factory AgentAutomationsGetRepoAutomationResponseTriggersIssueLabeledWriteScope.fromJson(
           String value) =>
-      WebhooksRuleRequiredDeploymentsEnforcementLevel._(value);
+      AgentAutomationsGetRepoAutomationResponseTriggersIssueLabeledWriteScope._(
+          value);
 
-  static const off = WebhooksRuleRequiredDeploymentsEnforcementLevel._('off');
-  static const nonAdmins =
-      WebhooksRuleRequiredDeploymentsEnforcementLevel._('non_admins');
-  static const everyone =
-      WebhooksRuleRequiredDeploymentsEnforcementLevel._('everyone');
+  static const trigger =
+      AgentAutomationsGetRepoAutomationResponseTriggersIssueLabeledWriteScope._(
+          'trigger');
+  static const repository =
+      AgentAutomationsGetRepoAutomationResponseTriggersIssueLabeledWriteScope._(
+          'repository');
 
   String toJson() => value;
 
@@ -254,28 +168,32 @@ final class WebhooksRuleRequiredDeploymentsEnforcementLevel {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhooksRuleRequiredDeploymentsEnforcementLevel &&
+      other
+          is AgentAutomationsGetRepoAutomationResponseTriggersIssueLabeledWriteScope &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Required enumerated value serialized in the `required_status_checks_enforcement_level` wire field.
-final class WebhooksRuleRequiredStatusChecksEnforcementLevel {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsGetRepoAutomationResponseTriggersIssueOpenedWriteScope {
   final String value;
 
-  const WebhooksRuleRequiredStatusChecksEnforcementLevel._(this.value);
+  const AgentAutomationsGetRepoAutomationResponseTriggersIssueOpenedWriteScope._(
+      this.value);
 
-  factory WebhooksRuleRequiredStatusChecksEnforcementLevel.fromJson(
+  factory AgentAutomationsGetRepoAutomationResponseTriggersIssueOpenedWriteScope.fromJson(
           String value) =>
-      WebhooksRuleRequiredStatusChecksEnforcementLevel._(value);
+      AgentAutomationsGetRepoAutomationResponseTriggersIssueOpenedWriteScope._(
+          value);
 
-  static const off = WebhooksRuleRequiredStatusChecksEnforcementLevel._('off');
-  static const nonAdmins =
-      WebhooksRuleRequiredStatusChecksEnforcementLevel._('non_admins');
-  static const everyone =
-      WebhooksRuleRequiredStatusChecksEnforcementLevel._('everyone');
+  static const trigger =
+      AgentAutomationsGetRepoAutomationResponseTriggersIssueOpenedWriteScope._(
+          'trigger');
+  static const repository =
+      AgentAutomationsGetRepoAutomationResponseTriggersIssueOpenedWriteScope._(
+          'repository');
 
   String toJson() => value;
 
@@ -284,28 +202,32 @@ final class WebhooksRuleRequiredStatusChecksEnforcementLevel {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhooksRuleRequiredStatusChecksEnforcementLevel &&
+      other
+          is AgentAutomationsGetRepoAutomationResponseTriggersIssueOpenedWriteScope &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Required enumerated value serialized in the `signature_requirement_enforcement_level` wire field.
-final class WebhooksRuleSignatureRequirementEnforcementLevel {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssignedWriteScope {
   final String value;
 
-  const WebhooksRuleSignatureRequirementEnforcementLevel._(this.value);
+  const AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssignedWriteScope._(
+      this.value);
 
-  factory WebhooksRuleSignatureRequirementEnforcementLevel.fromJson(
+  factory AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssignedWriteScope.fromJson(
           String value) =>
-      WebhooksRuleSignatureRequirementEnforcementLevel._(value);
+      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssignedWriteScope
+          ._(value);
 
-  static const off = WebhooksRuleSignatureRequirementEnforcementLevel._('off');
-  static const nonAdmins =
-      WebhooksRuleSignatureRequirementEnforcementLevel._('non_admins');
-  static const everyone =
-      WebhooksRuleSignatureRequirementEnforcementLevel._('everyone');
+  static const trigger =
+      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssignedWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssignedWriteScope
+          ._('repository');
 
   String toJson() => value;
 
@@ -314,25 +236,31 @@ final class WebhooksRuleSignatureRequirementEnforcementLevel {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhooksRuleSignatureRequirementEnforcementLevel &&
+      other
+          is AgentAutomationsGetRepoAutomationResponseTriggersPullRequestAssignedWriteScope &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhooksSponsorshipSponsorType {
+final class AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem {
   final String value;
 
-  const WebhooksSponsorshipSponsorType._(this.value);
+  const AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem._(
+      this.value);
 
-  factory WebhooksSponsorshipSponsorType.fromJson(String value) =>
-      WebhooksSponsorshipSponsorType._(value);
+  factory AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem.fromJson(
+          String value) =>
+      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem
+          ._(value);
 
-  static const bot = WebhooksSponsorshipSponsorType._('Bot');
-  static const user = WebhooksSponsorshipSponsorType._('User');
-  static const organization = WebhooksSponsorshipSponsorType._('Organization');
+  static const timelineComment =
+      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem
+          ._('timeline_comment');
+  static const reviewComment =
+      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem
+          ._('review_comment');
 
   String toJson() => value;
 
@@ -341,7 +269,179 @@ final class WebhooksSponsorshipSponsorType {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhooksSponsorshipSponsorType && other.value == value;
+      other
+          is AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentWriteScope {
+  final String value;
+
+  const AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentWriteScope._(
+      this.value);
+
+  factory AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentWriteScope.fromJson(
+          String value) =>
+      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentWriteScope
+          ._(value);
+
+  static const trigger =
+      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentWriteScope
+          ._('repository');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentAutomationsGetRepoAutomationResponseTriggersPullRequestCommentWriteScope &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsGetRepoAutomationResponseTriggersPullRequestLabeledWriteScope {
+  final String value;
+
+  const AgentAutomationsGetRepoAutomationResponseTriggersPullRequestLabeledWriteScope._(
+      this.value);
+
+  factory AgentAutomationsGetRepoAutomationResponseTriggersPullRequestLabeledWriteScope.fromJson(
+          String value) =>
+      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestLabeledWriteScope
+          ._(value);
+
+  static const trigger =
+      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestLabeledWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestLabeledWriteScope
+          ._('repository');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentAutomationsGetRepoAutomationResponseTriggersPullRequestLabeledWriteScope &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope {
+  final String value;
+
+  const AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope._(
+      this.value);
+
+  factory AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope.fromJson(
+          String value) =>
+      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope
+          ._(value);
+
+  static const trigger =
+      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope
+          ._('repository');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergedWriteScope {
+  final String value;
+
+  const AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergedWriteScope._(
+      this.value);
+
+  factory AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergedWriteScope.fromJson(
+          String value) =>
+      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergedWriteScope
+          ._(value);
+
+  static const trigger =
+      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergedWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergedWriteScope
+          ._('repository');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentAutomationsGetRepoAutomationResponseTriggersPullRequestMergedWriteScope &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsGetRepoAutomationResponseTriggersPullRequestOpenedWriteScope {
+  final String value;
+
+  const AgentAutomationsGetRepoAutomationResponseTriggersPullRequestOpenedWriteScope._(
+      this.value);
+
+  factory AgentAutomationsGetRepoAutomationResponseTriggersPullRequestOpenedWriteScope.fromJson(
+          String value) =>
+      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestOpenedWriteScope
+          ._(value);
+
+  static const trigger =
+      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestOpenedWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsGetRepoAutomationResponseTriggersPullRequestOpenedWriteScope
+          ._('repository');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentAutomationsGetRepoAutomationResponseTriggersPullRequestOpenedWriteScope &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;

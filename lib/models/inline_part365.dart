@@ -4,510 +4,451 @@
 part of 'inline.dart';
 
 // Inline operation models (part 365)
-class CodeSecurityAttachConfigurationRequestBody {
+class AgentsListRepoOrganizationVariablesResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+  final int totalCount;
+  final List<ActionsVariable> variables;
 
-  /// The type of repositories to attach the configuration to. `selected` means the configuration will be attached to only the repositories specified by `selected_repository_ids`
-  final CodeSecurityAttachConfigurationRequestBodyScope scope;
+  const AgentsListRepoOrganizationVariablesResponse(
+      {required this.totalCount, required this.variables});
 
-  /// An array of repository IDs to attach the configuration to. You can only provide a list of repository ids when the `scope` is set to `selected`.
-  final SdkOptional<List<int>> selectedRepositoryIds;
+  AgentsListRepoOrganizationVariablesResponse Function(
+      {int totalCount,
+      List<ActionsVariable> variables}) get copyWith => _copyWith;
 
-  const CodeSecurityAttachConfigurationRequestBody(
-      {required this.scope, this.selectedRepositoryIds = const SdkOmitted()});
-
-  CodeSecurityAttachConfigurationRequestBody Function(
-      {CodeSecurityAttachConfigurationRequestBodyScope scope,
-      SdkOptional<List<int>> selectedRepositoryIds}) get copyWith => _copyWith;
-
-  CodeSecurityAttachConfigurationRequestBody _copyWith(
-          {Object? scope = sdkOmittedValue,
-          Object? selectedRepositoryIds = sdkOmittedValue}) =>
-      CodeSecurityAttachConfigurationRequestBody(
-        scope: identical(scope, sdkOmittedValue)
-            ? this.scope
-            : scope as CodeSecurityAttachConfigurationRequestBodyScope,
-        selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue)
-            ? this.selectedRepositoryIds
-            : selectedRepositoryIds as SdkOptional<List<int>>,
+  AgentsListRepoOrganizationVariablesResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? variables = sdkOmittedValue}) =>
+      AgentsListRepoOrganizationVariablesResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        variables: identical(variables, sdkOmittedValue)
+            ? this.variables
+            : variables as List<ActionsVariable>,
       );
 
-  factory CodeSecurityAttachConfigurationRequestBody.fromJson(
+  factory AgentsListRepoOrganizationVariablesResponse.fromJson(
           Map<String, dynamic> json) =>
-      CodeSecurityAttachConfigurationRequestBody(
-        scope: (json['scope'] != null
-            ? CodeSecurityAttachConfigurationRequestBodyScope.fromJson(
-                json['scope'] as String)
-            : null)!,
-        selectedRepositoryIds: json['selected_repository_ids'] != null
-            ? SdkPresent(((json['selected_repository_ids'] as List?)
-                ?.map((e) => (e as num).toInt())
-                .toList())!)
-            : const SdkOmitted(),
+      AgentsListRepoOrganizationVariablesResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        variables: ((json['variables'] as List?)
+            ?.map((e) => ActionsVariable.fromJson(e as Map<String, dynamic>))
+            .toList())!,
       );
 
   Map<String, dynamic> toJson() => {
-        'scope': scope.toJson(),
-        ...switch (selectedRepositoryIds) {
-          SdkPresent<List<int>>(value: final value) => {
-              'selected_repository_ids': value,
-            },
-          _ => const <String, dynamic>{},
-        },
+        'total_count': totalCount,
+        'variables': variables.map((item) => item.toJson()).toList(),
       };
 }
 
-class CodeSecuritySetConfigurationAsDefaultRequestBody {
+class AgentsListRepoSecretsResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+  final int totalCount;
+  final List<ActionsSecret> secrets;
 
-  /// Specify which types of repository this security configuration should be applied to by default.
-  final SdkOptional<
-          CodeSecuritySetConfigurationAsDefaultRequestBodyDefaultForNewRepos>
-      defaultForNewRepos;
+  const AgentsListRepoSecretsResponse(
+      {required this.totalCount, required this.secrets});
 
-  const CodeSecuritySetConfigurationAsDefaultRequestBody(
-      {this.defaultForNewRepos = const SdkOmitted()});
+  AgentsListRepoSecretsResponse Function(
+      {int totalCount, List<ActionsSecret> secrets}) get copyWith => _copyWith;
 
-  CodeSecuritySetConfigurationAsDefaultRequestBody Function(
-      {SdkOptional<
-              CodeSecuritySetConfigurationAsDefaultRequestBodyDefaultForNewRepos>
-          defaultForNewRepos}) get copyWith => _copyWith;
-
-  CodeSecuritySetConfigurationAsDefaultRequestBody _copyWith(
-          {Object? defaultForNewRepos = sdkOmittedValue}) =>
-      CodeSecuritySetConfigurationAsDefaultRequestBody(
-        defaultForNewRepos: identical(defaultForNewRepos, sdkOmittedValue)
-            ? this.defaultForNewRepos
-            : defaultForNewRepos as SdkOptional<
-                CodeSecuritySetConfigurationAsDefaultRequestBodyDefaultForNewRepos>,
+  AgentsListRepoSecretsResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? secrets = sdkOmittedValue}) =>
+      AgentsListRepoSecretsResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        secrets: identical(secrets, sdkOmittedValue)
+            ? this.secrets
+            : secrets as List<ActionsSecret>,
       );
 
-  factory CodeSecuritySetConfigurationAsDefaultRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      CodeSecuritySetConfigurationAsDefaultRequestBody(
-        defaultForNewRepos: json['default_for_new_repos'] != null
-            ? SdkPresent((json['default_for_new_repos'] != null
-                ? CodeSecuritySetConfigurationAsDefaultRequestBodyDefaultForNewRepos
-                    .fromJson(json['default_for_new_repos'] as String)
-                : null)!)
-            : const SdkOmitted(),
+  factory AgentsListRepoSecretsResponse.fromJson(Map<String, dynamic> json) =>
+      AgentsListRepoSecretsResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        secrets: ((json['secrets'] as List?)
+            ?.map((e) => ActionsSecret.fromJson(e as Map<String, dynamic>))
+            .toList())!,
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (defaultForNewRepos) {
-          SdkPresent<
-                CodeSecuritySetConfigurationAsDefaultRequestBodyDefaultForNewRepos>(
-            value: final value
-          ) =>
-            {
-              'default_for_new_repos': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
+        'total_count': totalCount,
+        'secrets': secrets.map((item) => item.toJson()).toList(),
       };
 }
 
-class CodeSecuritySetConfigurationAsDefaultResponse {
+class AgentsCreateOrUpdateRepoSecretRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Specifies which types of repository this security configuration is applied to by default.
-  final SdkOptional<
-          CodeSecuritySetConfigurationAsDefaultResponseDefaultForNewRepos>
-      defaultForNewRepos;
+  /// Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get a repository public key](https://docs.github.com/rest/agents/secrets#get-a-repository-public-key) endpoint.
+  final String encryptedValue;
 
-  /// A code security configuration
-  final SdkOptional<CodeSecurityConfiguration> configuration;
+  /// ID of the key you used to encrypt the secret.
+  final String keyId;
 
-  const CodeSecuritySetConfigurationAsDefaultResponse(
-      {this.defaultForNewRepos = const SdkOmitted(),
-      this.configuration = const SdkOmitted()});
+  const AgentsCreateOrUpdateRepoSecretRequestBody(
+      {required this.encryptedValue, required this.keyId});
 
-  CodeSecuritySetConfigurationAsDefaultResponse Function(
-      {SdkOptional<
-              CodeSecuritySetConfigurationAsDefaultResponseDefaultForNewRepos>
-          defaultForNewRepos,
-      SdkOptional<CodeSecurityConfiguration>
-          configuration}) get copyWith => _copyWith;
+  AgentsCreateOrUpdateRepoSecretRequestBody Function(
+      {String encryptedValue, String keyId}) get copyWith => _copyWith;
 
-  CodeSecuritySetConfigurationAsDefaultResponse _copyWith(
-          {Object? defaultForNewRepos = sdkOmittedValue,
-          Object? configuration = sdkOmittedValue}) =>
-      CodeSecuritySetConfigurationAsDefaultResponse(
-        defaultForNewRepos: identical(defaultForNewRepos, sdkOmittedValue)
-            ? this.defaultForNewRepos
-            : defaultForNewRepos as SdkOptional<
-                CodeSecuritySetConfigurationAsDefaultResponseDefaultForNewRepos>,
-        configuration: identical(configuration, sdkOmittedValue)
-            ? this.configuration
-            : configuration as SdkOptional<CodeSecurityConfiguration>,
+  AgentsCreateOrUpdateRepoSecretRequestBody _copyWith(
+          {Object? encryptedValue = sdkOmittedValue,
+          Object? keyId = sdkOmittedValue}) =>
+      AgentsCreateOrUpdateRepoSecretRequestBody(
+        encryptedValue: identical(encryptedValue, sdkOmittedValue)
+            ? this.encryptedValue
+            : encryptedValue as String,
+        keyId: identical(keyId, sdkOmittedValue) ? this.keyId : keyId as String,
       );
 
-  factory CodeSecuritySetConfigurationAsDefaultResponse.fromJson(
+  factory AgentsCreateOrUpdateRepoSecretRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      CodeSecuritySetConfigurationAsDefaultResponse(
-        defaultForNewRepos: json['default_for_new_repos'] != null
-            ? SdkPresent((json['default_for_new_repos'] != null
-                ? CodeSecuritySetConfigurationAsDefaultResponseDefaultForNewRepos
-                    .fromJson(json['default_for_new_repos'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        configuration: json['configuration'] != null
-            ? SdkPresent((json['configuration'] != null
-                ? CodeSecurityConfiguration.fromJson(
-                    json['configuration'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
+      AgentsCreateOrUpdateRepoSecretRequestBody(
+        encryptedValue: (json['encrypted_value'] as String?)!,
+        keyId: (json['key_id'] as String?)!,
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (defaultForNewRepos) {
-          SdkPresent<
-                CodeSecuritySetConfigurationAsDefaultResponseDefaultForNewRepos>(
-            value: final value
-          ) =>
-            {
-              'default_for_new_repos': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (configuration) {
-          SdkPresent<CodeSecurityConfiguration>(value: final value) => {
-              'configuration': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
+        'encrypted_value': encryptedValue,
+        'key_id': keyId,
       };
 }
 
-class CopilotSetEnterpriseCodingAgentPolicyRequestBody {
+class AgentsListRepoVariablesResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+  final int totalCount;
+  final List<ActionsVariable> variables;
 
-  /// The policy state for Copilot cloud agent in the enterprise. Can be one of `enabled_for_all_orgs`, `disabled_for_all_orgs`, `enabled_for_selected_orgs`, or `configured_by_org_admins`.
-  final CopilotSetEnterpriseCodingAgentPolicyRequestBodyPolicyState policyState;
+  const AgentsListRepoVariablesResponse(
+      {required this.totalCount, required this.variables});
 
-  const CopilotSetEnterpriseCodingAgentPolicyRequestBody(
-      {required this.policyState});
+  AgentsListRepoVariablesResponse Function(
+      {int totalCount,
+      List<ActionsVariable> variables}) get copyWith => _copyWith;
 
-  CopilotSetEnterpriseCodingAgentPolicyRequestBody Function(
-      {CopilotSetEnterpriseCodingAgentPolicyRequestBodyPolicyState
-          policyState}) get copyWith => _copyWith;
-
-  CopilotSetEnterpriseCodingAgentPolicyRequestBody _copyWith(
-          {Object? policyState = sdkOmittedValue}) =>
-      CopilotSetEnterpriseCodingAgentPolicyRequestBody(
-        policyState: identical(policyState, sdkOmittedValue)
-            ? this.policyState
-            : policyState
-                as CopilotSetEnterpriseCodingAgentPolicyRequestBodyPolicyState,
+  AgentsListRepoVariablesResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? variables = sdkOmittedValue}) =>
+      AgentsListRepoVariablesResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        variables: identical(variables, sdkOmittedValue)
+            ? this.variables
+            : variables as List<ActionsVariable>,
       );
 
-  factory CopilotSetEnterpriseCodingAgentPolicyRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      CopilotSetEnterpriseCodingAgentPolicyRequestBody(
-        policyState: (json['policy_state'] != null
-            ? CopilotSetEnterpriseCodingAgentPolicyRequestBodyPolicyState
-                .fromJson(json['policy_state'] as String)
-            : null)!,
+  factory AgentsListRepoVariablesResponse.fromJson(Map<String, dynamic> json) =>
+      AgentsListRepoVariablesResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        variables: ((json['variables'] as List?)
+            ?.map((e) => ActionsVariable.fromJson(e as Map<String, dynamic>))
+            .toList())!,
       );
 
   Map<String, dynamic> toJson() => {
-        'policy_state': policyState.toJson(),
+        'total_count': totalCount,
+        'variables': variables.map((item) => item.toJson()).toList(),
       };
 }
 
-class CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem {
+class AgentsCreateRepoVariableRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// The name of the custom property to filter by.
-  final String propertyName;
+  /// The name of the variable.
+  final String name;
 
-  /// The values of the custom property to match.
-  final List<String> values;
+  /// The value of the variable.
+  final String value;
 
-  const CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem(
-      {required this.propertyName, required this.values});
+  const AgentsCreateRepoVariableRequestBody(
+      {required this.name, required this.value});
 
-  CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem
-          Function({String propertyName, List<String> values})
+  AgentsCreateRepoVariableRequestBody Function({String name, String value})
       get copyWith => _copyWith;
 
-  CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem
-      _copyWith(
-              {Object? propertyName = sdkOmittedValue,
-              Object? values = sdkOmittedValue}) =>
-          CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem(
-            propertyName: identical(propertyName, sdkOmittedValue)
-                ? this.propertyName
-                : propertyName as String,
-            values: identical(values, sdkOmittedValue)
-                ? this.values
-                : values as List<String>,
-          );
+  AgentsCreateRepoVariableRequestBody _copyWith(
+          {Object? name = sdkOmittedValue, Object? value = sdkOmittedValue}) =>
+      AgentsCreateRepoVariableRequestBody(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        value: identical(value, sdkOmittedValue) ? this.value : value as String,
+      );
 
-  factory CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem.fromJson(
+  factory AgentsCreateRepoVariableRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem(
-        propertyName: (json['property_name'] as String?)!,
-        values: ((json['values'] as List?)?.map((e) => e as String).toList())!,
+      AgentsCreateRepoVariableRequestBody(
+        name: (json['name'] as String?)!,
+        value: (json['value'] as String?)!,
       );
 
   Map<String, dynamic> toJson() => {
-        'property_name': propertyName,
-        'values': values,
+        'name': name,
+        'value': value,
       };
 }
 
-class CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBody {
+class AgentsUpdateRepoVariableRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// List of organization logins within the enterprise to enable Copilot cloud agent for.
-  final SdkOptional<List<String>> organizations;
+  /// The name of the variable.
+  final SdkOptional<String> name;
 
-  /// List of custom property filters to match organizations. Organizations matching any of the specified property name/value pairs will be included. This is a one-time operation, setting the property on an organization in the future will not automatically update its coding agent policy.
-  final SdkOptional<
-          List<
-              CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem>>
-      customProperties;
+  /// The value of the variable.
+  final SdkOptional<String> value;
 
-  const CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBody(
-      {this.organizations = const SdkOmitted(),
-      this.customProperties = const SdkOmitted()});
+  const AgentsUpdateRepoVariableRequestBody(
+      {this.name = const SdkOmitted(), this.value = const SdkOmitted()});
 
-  CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBody Function(
-      {SdkOptional<List<String>> organizations,
-      SdkOptional<
-              List<
-                  CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem>>
-          customProperties}) get copyWith => _copyWith;
+  AgentsUpdateRepoVariableRequestBody Function(
+      {SdkOptional<String> name,
+      SdkOptional<String> value}) get copyWith => _copyWith;
 
-  CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBody _copyWith(
-          {Object? organizations = sdkOmittedValue,
-          Object? customProperties = sdkOmittedValue}) =>
-      CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBody(
-        organizations: identical(organizations, sdkOmittedValue)
-            ? this.organizations
-            : organizations as SdkOptional<List<String>>,
-        customProperties: identical(customProperties, sdkOmittedValue)
-            ? this.customProperties
-            : customProperties as SdkOptional<
-                List<
-                    CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem>>,
+  AgentsUpdateRepoVariableRequestBody _copyWith(
+          {Object? name = sdkOmittedValue, Object? value = sdkOmittedValue}) =>
+      AgentsUpdateRepoVariableRequestBody(
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        value: identical(value, sdkOmittedValue)
+            ? this.value
+            : value as SdkOptional<String>,
       );
 
-  factory CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBody.fromJson(
+  factory AgentsUpdateRepoVariableRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBody(
-        organizations: json['organizations'] != null
-            ? SdkPresent(((json['organizations'] as List?)
+      AgentsUpdateRepoVariableRequestBody(
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+        value: json['value'] != null
+            ? SdkPresent((json['value'] as String?)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (value) {
+          SdkPresent<String>(value: final value) => {
+              'value': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class CampaignsCreateCampaignRequestBodyCodeScanningAlertsItem {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The repository id
+  final int repositoryId;
+
+  /// The alert numbers
+  final List<int> alertNumbers;
+
+  const CampaignsCreateCampaignRequestBodyCodeScanningAlertsItem(
+      {required this.repositoryId, required this.alertNumbers});
+
+  CampaignsCreateCampaignRequestBodyCodeScanningAlertsItem Function(
+      {int repositoryId, List<int> alertNumbers}) get copyWith => _copyWith;
+
+  CampaignsCreateCampaignRequestBodyCodeScanningAlertsItem _copyWith(
+          {Object? repositoryId = sdkOmittedValue,
+          Object? alertNumbers = sdkOmittedValue}) =>
+      CampaignsCreateCampaignRequestBodyCodeScanningAlertsItem(
+        repositoryId: identical(repositoryId, sdkOmittedValue)
+            ? this.repositoryId
+            : repositoryId as int,
+        alertNumbers: identical(alertNumbers, sdkOmittedValue)
+            ? this.alertNumbers
+            : alertNumbers as List<int>,
+      );
+
+  factory CampaignsCreateCampaignRequestBodyCodeScanningAlertsItem.fromJson(
+          Map<String, dynamic> json) =>
+      CampaignsCreateCampaignRequestBodyCodeScanningAlertsItem(
+        repositoryId: ((json['repository_id'] as num?)?.toInt())!,
+        alertNumbers: ((json['alert_numbers'] as List?)
+            ?.map((e) => (e as num).toInt())
+            .toList())!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'repository_id': repositoryId,
+        'alert_numbers': alertNumbers,
+      };
+}
+
+class CampaignsCreateCampaignRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The name of the campaign
+  final String name;
+
+  /// A description for the campaign
+  final String description;
+
+  /// The logins of the users to set as the campaign managers. At this time, only a single manager can be supplied.
+  final SdkOptional<List<String>> managers;
+
+  /// The slugs of the teams to set as the campaign managers.
+  final SdkOptional<List<String>> teamManagers;
+
+  /// The end date and time of the campaign. The date must be in the future.
+  final String endsAt;
+
+  /// The contact link of the campaign. Must be a URI.
+  final SdkOptional<String?> contactLink;
+
+  /// The code scanning alerts to include in this campaign
+  final SdkOptional<
+          List<CampaignsCreateCampaignRequestBodyCodeScanningAlertsItem>?>
+      codeScanningAlerts;
+
+  /// If true, will automatically generate issues for the campaign. The default is false.
+  final SdkOptional<bool> generateIssues;
+
+  const CampaignsCreateCampaignRequestBody(
+      {required this.name,
+      required this.description,
+      this.managers = const SdkOmitted(),
+      this.teamManagers = const SdkOmitted(),
+      required this.endsAt,
+      this.contactLink = const SdkOmitted(),
+      this.codeScanningAlerts = const SdkOmitted(),
+      this.generateIssues = const SdkOmitted()});
+
+  CampaignsCreateCampaignRequestBody Function(
+      {String name,
+      String description,
+      SdkOptional<List<String>> managers,
+      SdkOptional<List<String>> teamManagers,
+      String endsAt,
+      SdkOptional<String?> contactLink,
+      SdkOptional<
+              List<CampaignsCreateCampaignRequestBodyCodeScanningAlertsItem>?>
+          codeScanningAlerts,
+      SdkOptional<bool> generateIssues}) get copyWith => _copyWith;
+
+  CampaignsCreateCampaignRequestBody _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? managers = sdkOmittedValue,
+          Object? teamManagers = sdkOmittedValue,
+          Object? endsAt = sdkOmittedValue,
+          Object? contactLink = sdkOmittedValue,
+          Object? codeScanningAlerts = sdkOmittedValue,
+          Object? generateIssues = sdkOmittedValue}) =>
+      CampaignsCreateCampaignRequestBody(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as String,
+        managers: identical(managers, sdkOmittedValue)
+            ? this.managers
+            : managers as SdkOptional<List<String>>,
+        teamManagers: identical(teamManagers, sdkOmittedValue)
+            ? this.teamManagers
+            : teamManagers as SdkOptional<List<String>>,
+        endsAt:
+            identical(endsAt, sdkOmittedValue) ? this.endsAt : endsAt as String,
+        contactLink: identical(contactLink, sdkOmittedValue)
+            ? this.contactLink
+            : contactLink as SdkOptional<String?>,
+        codeScanningAlerts: identical(codeScanningAlerts, sdkOmittedValue)
+            ? this.codeScanningAlerts
+            : codeScanningAlerts as SdkOptional<
+                List<
+                    CampaignsCreateCampaignRequestBodyCodeScanningAlertsItem>?>,
+        generateIssues: identical(generateIssues, sdkOmittedValue)
+            ? this.generateIssues
+            : generateIssues as SdkOptional<bool>,
+      );
+
+  factory CampaignsCreateCampaignRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      CampaignsCreateCampaignRequestBody(
+        name: (json['name'] as String?)!,
+        description: (json['description'] as String?)!,
+        managers: json['managers'] != null
+            ? SdkPresent(((json['managers'] as List?)
                 ?.map((e) => e as String)
                 .toList())!)
             : const SdkOmitted(),
-        customProperties: json['custom_properties'] != null
-            ? SdkPresent(((json['custom_properties'] as List?)
-                ?.map((e) =>
-                    CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem
-                        .fromJson(e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (organizations) {
-          SdkPresent<List<String>>(value: final value) => {
-              'organizations': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (customProperties) {
-          SdkPresent<
-                List<
-                    CopilotAddOrganizationsToEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem>>(
-            value: final value
-          ) =>
-            {
-              'custom_properties': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-class CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The name of the custom property to filter by.
-  final String propertyName;
-
-  /// The values of the custom property to match.
-  final List<String> values;
-
-  const CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem(
-      {required this.propertyName, required this.values});
-
-  CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem
-          Function({String propertyName, List<String> values})
-      get copyWith => _copyWith;
-
-  CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem
-      _copyWith(
-              {Object? propertyName = sdkOmittedValue,
-              Object? values = sdkOmittedValue}) =>
-          CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem(
-            propertyName: identical(propertyName, sdkOmittedValue)
-                ? this.propertyName
-                : propertyName as String,
-            values: identical(values, sdkOmittedValue)
-                ? this.values
-                : values as List<String>,
-          );
-
-  factory CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem.fromJson(
-          Map<String, dynamic> json) =>
-      CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem(
-        propertyName: (json['property_name'] as String?)!,
-        values: ((json['values'] as List?)?.map((e) => e as String).toList())!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'property_name': propertyName,
-        'values': values,
-      };
-}
-
-class CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// List of organization logins within the enterprise to disable Copilot cloud agent for.
-  final SdkOptional<List<String>> organizations;
-
-  /// List of custom property filters to match organizations. Organizations matching any of the specified property name/value pairs will be included. This is a one-time operation, setting the property on an organization in the future will not automatically update its coding agent policy.
-  final SdkOptional<
-          List<
-              CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem>>
-      customProperties;
-
-  const CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBody(
-      {this.organizations = const SdkOmitted(),
-      this.customProperties = const SdkOmitted()});
-
-  CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBody Function(
-      {SdkOptional<List<String>> organizations,
-      SdkOptional<
-              List<
-                  CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem>>
-          customProperties}) get copyWith => _copyWith;
-
-  CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBody
-      _copyWith(
-              {Object? organizations = sdkOmittedValue,
-              Object? customProperties = sdkOmittedValue}) =>
-          CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBody(
-            organizations: identical(organizations, sdkOmittedValue)
-                ? this.organizations
-                : organizations as SdkOptional<List<String>>,
-            customProperties: identical(customProperties, sdkOmittedValue)
-                ? this.customProperties
-                : customProperties as SdkOptional<
-                    List<
-                        CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem>>,
-          );
-
-  factory CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBody(
-        organizations: json['organizations'] != null
-            ? SdkPresent(((json['organizations'] as List?)
+        teamManagers: json['team_managers'] != null
+            ? SdkPresent(((json['team_managers'] as List?)
                 ?.map((e) => e as String)
                 .toList())!)
             : const SdkOmitted(),
-        customProperties: json['custom_properties'] != null
-            ? SdkPresent(((json['custom_properties'] as List?)
+        endsAt: (json['ends_at'] as String?)!,
+        contactLink: json.containsKey('contact_link')
+            ? SdkPresent(json['contact_link'] as String?)
+            : const SdkOmitted(),
+        codeScanningAlerts: json.containsKey('code_scanning_alerts')
+            ? SdkPresent((json['code_scanning_alerts'] as List?)
                 ?.map((e) =>
-                    CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem
+                    CampaignsCreateCampaignRequestBodyCodeScanningAlertsItem
                         .fromJson(e as Map<String, dynamic>))
-                .toList())!)
+                .toList())
+            : const SdkOmitted(),
+        generateIssues: json['generate_issues'] != null
+            ? SdkPresent((json['generate_issues'] as bool?)!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (organizations) {
+        'name': name,
+        'description': description,
+        ...switch (managers) {
           SdkPresent<List<String>>(value: final value) => {
-              'organizations': value,
+              'managers': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (customProperties) {
+        ...switch (teamManagers) {
+          SdkPresent<List<String>>(value: final value) => {
+              'team_managers': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'ends_at': endsAt,
+        ...switch (contactLink) {
+          SdkPresent<String?>(value: final value) => {
+              'contact_link': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (codeScanningAlerts) {
           SdkPresent<
                 List<
-                    CopilotRemoveOrganizationsFromEnterpriseCodingAgentPolicyRequestBodyCustomPropertiesItem>>(
+                    CampaignsCreateCampaignRequestBodyCodeScanningAlertsItem>?>(
             value: final value
           ) =>
             {
-              'custom_properties': value.map((item) => item.toJson()).toList(),
+              'code_scanning_alerts':
+                  value?.map((item) => item.toJson()).toList(),
             },
           _ => const <String, dynamic>{},
         },
-      };
-}
-
-class CopilotListCopilotSeatsResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Total number of Copilot seats for the organization currently being billed.
-  final SdkOptional<int> totalSeats;
-  final SdkOptional<List<CopilotSeatDetails>> seats;
-
-  const CopilotListCopilotSeatsResponse(
-      {this.totalSeats = const SdkOmitted(), this.seats = const SdkOmitted()});
-
-  CopilotListCopilotSeatsResponse Function(
-      {SdkOptional<int> totalSeats,
-      SdkOptional<List<CopilotSeatDetails>> seats}) get copyWith => _copyWith;
-
-  CopilotListCopilotSeatsResponse _copyWith(
-          {Object? totalSeats = sdkOmittedValue,
-          Object? seats = sdkOmittedValue}) =>
-      CopilotListCopilotSeatsResponse(
-        totalSeats: identical(totalSeats, sdkOmittedValue)
-            ? this.totalSeats
-            : totalSeats as SdkOptional<int>,
-        seats: identical(seats, sdkOmittedValue)
-            ? this.seats
-            : seats as SdkOptional<List<CopilotSeatDetails>>,
-      );
-
-  factory CopilotListCopilotSeatsResponse.fromJson(Map<String, dynamic> json) =>
-      CopilotListCopilotSeatsResponse(
-        totalSeats: json['total_seats'] != null
-            ? SdkPresent(((json['total_seats'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        seats: json['seats'] != null
-            ? SdkPresent(((json['seats'] as List?)
-                ?.map((e) =>
-                    CopilotSeatDetails.fromJson(e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (totalSeats) {
-          SdkPresent<int>(value: final value) => {
-              'total_seats': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (seats) {
-          SdkPresent<List<CopilotSeatDetails>>(value: final value) => {
-              'seats': value.map((item) => item.toJson()).toList(),
+        ...switch (generateIssues) {
+          SdkPresent<bool>(value: final value) => {
+              'generate_issues': value,
             },
           _ => const <String, dynamic>{},
         },

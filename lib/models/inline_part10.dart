@@ -4,6 +4,93 @@
 part of 'inline.dart';
 
 // Inline operation models (part 10)
+/// The phase of the lifecycle that the check is currently in.
+final class CheckRunWithSimpleCheckSuiteStatus {
+  final String value;
+
+  const CheckRunWithSimpleCheckSuiteStatus._(this.value);
+
+  factory CheckRunWithSimpleCheckSuiteStatus.fromJson(String value) =>
+      CheckRunWithSimpleCheckSuiteStatus._(value);
+
+  static const queued = CheckRunWithSimpleCheckSuiteStatus._('queued');
+  static const inProgress = CheckRunWithSimpleCheckSuiteStatus._('in_progress');
+  static const completed = CheckRunWithSimpleCheckSuiteStatus._('completed');
+  static const pending = CheckRunWithSimpleCheckSuiteStatus._('pending');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is CheckRunWithSimpleCheckSuiteStatus && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Required enumerated value serialized in the `conclusion` wire field.
+final class CheckSuiteConclusion {
+  final String value;
+
+  const CheckSuiteConclusion._(this.value);
+
+  factory CheckSuiteConclusion.fromJson(String value) =>
+      CheckSuiteConclusion._(value);
+
+  static const success = CheckSuiteConclusion._('success');
+  static const failure = CheckSuiteConclusion._('failure');
+  static const neutral = CheckSuiteConclusion._('neutral');
+  static const cancelled = CheckSuiteConclusion._('cancelled');
+  static const skipped = CheckSuiteConclusion._('skipped');
+  static const timedOut = CheckSuiteConclusion._('timed_out');
+  static const actionRequired = CheckSuiteConclusion._('action_required');
+  static const startupFailure = CheckSuiteConclusion._('startup_failure');
+  static const stale = CheckSuiteConclusion._('stale');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is CheckSuiteConclusion && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The phase of the lifecycle that the check suite is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check suites.
+final class CheckSuiteStatus {
+  final String value;
+
+  const CheckSuiteStatus._(this.value);
+
+  factory CheckSuiteStatus.fromJson(String value) => CheckSuiteStatus._(value);
+
+  static const queued = CheckSuiteStatus._('queued');
+  static const inProgress = CheckSuiteStatus._('in_progress');
+  static const completed = CheckSuiteStatus._('completed');
+  static const waiting = CheckSuiteStatus._('waiting');
+  static const requested = CheckSuiteStatus._('requested');
+  static const pending = CheckSuiteStatus._('pending');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is CheckSuiteStatus && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
 /// State of the code quality finding.
 final class CodeQualityFindingState {
   final String value;
@@ -233,87 +320,6 @@ final class CodeQualitySetupUpdateAiFindingsOption {
   @override
   bool operator ==(Object other) =>
       other is CodeQualitySetupUpdateAiFindingsOption && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `languages[]` wire field.
-final class CodeQualitySetupUpdateLanguagesItem {
-  final String value;
-
-  const CodeQualitySetupUpdateLanguagesItem._(this.value);
-
-  factory CodeQualitySetupUpdateLanguagesItem.fromJson(String value) =>
-      CodeQualitySetupUpdateLanguagesItem._(value);
-
-  static const csharp = CodeQualitySetupUpdateLanguagesItem._('csharp');
-  static const go = CodeQualitySetupUpdateLanguagesItem._('go');
-  static const javaKotlin =
-      CodeQualitySetupUpdateLanguagesItem._('java-kotlin');
-  static const javascriptTypescript =
-      CodeQualitySetupUpdateLanguagesItem._('javascript-typescript');
-  static const python = CodeQualitySetupUpdateLanguagesItem._('python');
-  static const ruby = CodeQualitySetupUpdateLanguagesItem._('ruby');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is CodeQualitySetupUpdateLanguagesItem && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Runner type to be used.
-final class CodeQualitySetupUpdateRunnerType {
-  final String value;
-
-  const CodeQualitySetupUpdateRunnerType._(this.value);
-
-  factory CodeQualitySetupUpdateRunnerType.fromJson(String value) =>
-      CodeQualitySetupUpdateRunnerType._(value);
-
-  static const standard = CodeQualitySetupUpdateRunnerType._('standard');
-  static const labeled = CodeQualitySetupUpdateRunnerType._('labeled');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is CodeQualitySetupUpdateRunnerType && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The desired state of code quality setup.
-final class CodeQualitySetupUpdateState {
-  final String value;
-
-  const CodeQualitySetupUpdateState._(this.value);
-
-  factory CodeQualitySetupUpdateState.fromJson(String value) =>
-      CodeQualitySetupUpdateState._(value);
-
-  static const configured = CodeQualitySetupUpdateState._('configured');
-  static const notConfigured = CodeQualitySetupUpdateState._('not-configured');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is CodeQualitySetupUpdateState && other.value == value;
 
   @override
   int get hashCode => value.hashCode;

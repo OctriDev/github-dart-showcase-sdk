@@ -275,214 +275,249 @@ class WebhookRegistryPackagePublishedRegistryPackagePackageVersionDockerMetadata
       };
 }
 
-sealed class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemId {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  const WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemId();
-  factory WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemId.fromJson(
-      Object? json) {
-    if (json is String) {
-      return WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemIdString(
-          json);
-    }
-    if (json is num) {
-      return WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemIdInt(
-          json.toInt());
-    }
-    if (json is Map) {
-      return WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemIdMap(
-          Map<String, dynamic>.from(json));
-    }
-    throw FormatException(
-        "No variant matched for WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemId");
-  }
-  Object? toJson();
-}
-
-final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemIdString
-    extends WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemId {
-  final String value;
-  const WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemIdString(
-      this.value);
-  @override
-  Object? toJson() => value;
-}
-
-final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemIdMap
-    extends WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemId {
-  final Map<String, dynamic> value;
-  const WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemIdMap(
-      this.value);
-  @override
-  Object? toJson() => value;
-}
-
-final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemIdInt
-    extends WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemId {
-  final int value;
-  const WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemIdInt(
-      this.value);
-  @override
-  Object? toJson() => value;
-}
-
-/// Optional object value serialized in the `value` wire field.
-class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValueVariant3 {
+/// Required object value serialized in the `nuget_metadata[]` wire field.
+class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Optional `string` value serialized in the `url` wire field.
-  final SdkOptional<String> url;
+  /// Optional API value serialized in the `id` wire field.
+  final SdkOptional<
+      WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemId?> id;
 
-  /// Optional `string` value serialized in the `branch` wire field.
-  final SdkOptional<String> branch;
+  /// Optional `string` value serialized in the `name` wire field.
+  final SdkOptional<String> name;
 
-  /// Optional `string` value serialized in the `commit` wire field.
-  final SdkOptional<String> commit;
+  /// Optional API value serialized in the `value` wire field.
+  final SdkOptional<
+          WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValue>
+      value;
 
-  /// Optional `string` value serialized in the `type` wire field.
-  final SdkOptional<String> type_;
+  const WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItem(
+      {this.id = const SdkOmitted(),
+      this.name = const SdkOmitted(),
+      this.value = const SdkOmitted()});
 
-  const WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValueVariant3(
-      {this.url = const SdkOmitted(),
-      this.branch = const SdkOmitted(),
-      this.commit = const SdkOmitted(),
-      this.type_ = const SdkOmitted()});
+  WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItem Function(
+      {SdkOptional<
+              WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemId?>
+          id,
+      SdkOptional<String> name,
+      SdkOptional<
+              WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValue>
+          value}) get copyWith => _copyWith;
 
-  WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValueVariant3 Function(
-      {SdkOptional<String> url,
-      SdkOptional<String> branch,
-      SdkOptional<String> commit,
-      SdkOptional<String> type_}) get copyWith => _copyWith;
-
-  WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValueVariant3
+  WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItem
       _copyWith(
-              {Object? url = sdkOmittedValue,
-              Object? branch = sdkOmittedValue,
-              Object? commit = sdkOmittedValue,
-              Object? type_ = sdkOmittedValue}) =>
-          WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValueVariant3(
-            url: identical(url, sdkOmittedValue)
-                ? this.url
-                : url as SdkOptional<String>,
-            branch: identical(branch, sdkOmittedValue)
-                ? this.branch
-                : branch as SdkOptional<String>,
-            commit: identical(commit, sdkOmittedValue)
-                ? this.commit
-                : commit as SdkOptional<String>,
-            type_: identical(type_, sdkOmittedValue)
-                ? this.type_
-                : type_ as SdkOptional<String>,
+              {Object? id = sdkOmittedValue,
+              Object? name = sdkOmittedValue,
+              Object? value = sdkOmittedValue}) =>
+          WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItem(
+            id: identical(id, sdkOmittedValue)
+                ? this.id
+                : id as SdkOptional<
+                    WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemId?>,
+            name: identical(name, sdkOmittedValue)
+                ? this.name
+                : name as SdkOptional<String>,
+            value: identical(value, sdkOmittedValue)
+                ? this.value
+                : value as SdkOptional<
+                    WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValue>,
           );
 
-  factory WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValueVariant3.fromJson(
+  factory WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItem.fromJson(
           Map<String, dynamic> json) =>
-      WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValueVariant3(
-        url: json['url'] != null
-            ? SdkPresent((json['url'] as String?)!)
+      WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItem(
+        id: json.containsKey('id')
+            ? SdkPresent(json['id'] != null
+                ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemId
+                    .fromJson(json['id'])
+                : null)
             : const SdkOmitted(),
-        branch: json['branch'] != null
-            ? SdkPresent((json['branch'] as String?)!)
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
             : const SdkOmitted(),
-        commit: json['commit'] != null
-            ? SdkPresent((json['commit'] as String?)!)
-            : const SdkOmitted(),
-        type_: json['type'] != null
-            ? SdkPresent((json['type'] as String?)!)
+        value: json['value'] != null
+            ? SdkPresent((json['value'] != null
+                ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValue
+                    .fromJson(json['value'])
+                : null)!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (url) {
-          SdkPresent<String>(value: final value) => {
-              'url': value,
+        ...switch (id) {
+          SdkPresent<
+                WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemId?>(
+            value: final value
+          ) =>
+            {
+              'id': value?.toJson(),
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (branch) {
+        ...switch (name) {
           SdkPresent<String>(value: final value) => {
-              'branch': value,
+              'name': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (commit) {
-          SdkPresent<String>(value: final value) => {
-              'commit': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (type_) {
-          SdkPresent<String>(value: final value) => {
-              'type': value,
+        ...switch (value) {
+          SdkPresent<
+                WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValue>(
+            value: final value
+          ) =>
+            {
+              'value': value.toJson(),
             },
           _ => const <String, dynamic>{},
         },
       };
 }
 
-sealed class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValue {
+/// Required object value serialized in the `package_files[]` wire field.
+class WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFilesItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  const WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValue();
-  factory WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValue.fromJson(
-      Object? json) {
-    if (json is String) {
-      return WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValueString(
-          json);
-    }
-    if (json is bool) {
-      return WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValueBool(
-          json);
-    }
-    if (json is num) {
-      return WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValueInt(
-          json.toInt());
-    }
-    try {
-      return WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValueWebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValueVariant3(
-          WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValueVariant3
-              .fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    throw FormatException(
-        "No variant matched for WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValue");
-  }
-  Object? toJson();
-}
 
-final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValueBool
-    extends WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValue {
-  final bool value;
-  const WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValueBool(
-      this.value);
-  @override
-  Object? toJson() => value;
-}
+  /// Required `string` value serialized in the `content_type` wire field.
+  final String contentType;
 
-final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValueString
-    extends WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValue {
-  final String value;
-  const WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValueString(
-      this.value);
-  @override
-  Object? toJson() => value;
-}
+  /// Required `string` value serialized in the `created_at` wire field.
+  final String createdAt;
 
-final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValueInt
-    extends WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValue {
-  final int value;
-  const WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValueInt(
-      this.value);
-  @override
-  Object? toJson() => value;
-}
+  /// Required `string` value serialized in the `download_url` wire field.
+  final String downloadUrl;
 
-final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValueWebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValueVariant3
-    extends WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValue {
-  final WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValueVariant3
-      value;
-  const WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValueWebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValueVariant3(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  /// Required `integer` value serialized in the `id` wire field.
+  final int id;
+
+  /// Required `string` value serialized in the `md5` wire field.
+  final String? md5;
+
+  /// Required `string` value serialized in the `name` wire field.
+  final String name;
+
+  /// Required `string` value serialized in the `sha1` wire field.
+  final String? sha1;
+
+  /// Required `string` value serialized in the `sha256` wire field.
+  final String? sha256;
+
+  /// Required `integer` value serialized in the `size` wire field.
+  final int size;
+
+  /// Required `string` value serialized in the `state` wire field.
+  final String? state;
+
+  /// Required `string` value serialized in the `updated_at` wire field.
+  final String updatedAt;
+
+  const WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFilesItem(
+      {required this.contentType,
+      required this.createdAt,
+      required this.downloadUrl,
+      required this.id,
+      required this.md5,
+      required this.name,
+      required this.sha1,
+      required this.sha256,
+      required this.size,
+      required this.state,
+      required this.updatedAt});
+
+  WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFilesItem Function(
+      {String contentType,
+      String createdAt,
+      String downloadUrl,
+      int id,
+      String? md5,
+      String name,
+      String? sha1,
+      String? sha256,
+      int size,
+      String? state,
+      String updatedAt}) get copyWith => _copyWith;
+
+  WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFilesItem
+      _copyWith(
+              {Object? contentType = sdkOmittedValue,
+              Object? createdAt = sdkOmittedValue,
+              Object? downloadUrl = sdkOmittedValue,
+              Object? id = sdkOmittedValue,
+              Object? md5 = sdkOmittedValue,
+              Object? name = sdkOmittedValue,
+              Object? sha1 = sdkOmittedValue,
+              Object? sha256 = sdkOmittedValue,
+              Object? size = sdkOmittedValue,
+              Object? state = sdkOmittedValue,
+              Object? updatedAt = sdkOmittedValue}) =>
+          WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFilesItem(
+            contentType: identical(contentType, sdkOmittedValue)
+                ? this.contentType
+                : contentType as String,
+            createdAt: identical(createdAt, sdkOmittedValue)
+                ? this.createdAt
+                : createdAt as String,
+            downloadUrl: identical(downloadUrl, sdkOmittedValue)
+                ? this.downloadUrl
+                : downloadUrl as String,
+            id: identical(id, sdkOmittedValue) ? this.id : id as int,
+            md5: identical(md5, sdkOmittedValue) ? this.md5 : md5 as String?,
+            name: identical(name, sdkOmittedValue) ? this.name : name as String,
+            sha1:
+                identical(sha1, sdkOmittedValue) ? this.sha1 : sha1 as String?,
+            sha256: identical(sha256, sdkOmittedValue)
+                ? this.sha256
+                : sha256 as String?,
+            size: identical(size, sdkOmittedValue) ? this.size : size as int,
+            state: identical(state, sdkOmittedValue)
+                ? this.state
+                : state as String?,
+            updatedAt: identical(updatedAt, sdkOmittedValue)
+                ? this.updatedAt
+                : updatedAt as String,
+          );
+
+  factory WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFilesItem.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFilesItem(
+        contentType: (json['content_type'] as String?)!,
+        createdAt: (json['created_at'] as String?)!,
+        downloadUrl: (json['download_url'] as String?)!,
+        id: ((json['id'] as num?)?.toInt())!,
+        md5: json.containsKey('md5')
+            ? json['md5'] as String?
+            : throw ArgumentError.value(
+                null, 'md5', 'Required property is missing'),
+        name: (json['name'] as String?)!,
+        sha1: json.containsKey('sha1')
+            ? json['sha1'] as String?
+            : throw ArgumentError.value(
+                null, 'sha1', 'Required property is missing'),
+        sha256: json.containsKey('sha256')
+            ? json['sha256'] as String?
+            : throw ArgumentError.value(
+                null, 'sha256', 'Required property is missing'),
+        size: ((json['size'] as num?)?.toInt())!,
+        state: json.containsKey('state')
+            ? json['state'] as String?
+            : throw ArgumentError.value(
+                null, 'state', 'Required property is missing'),
+        updatedAt: (json['updated_at'] as String?)!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'content_type': contentType,
+        'created_at': createdAt,
+        'download_url': downloadUrl,
+        'id': id,
+        'md5': md5,
+        'name': name,
+        'sha1': sha1,
+        'sha256': sha256,
+        'size': size,
+        'state': state,
+        'updated_at': updatedAt,
+      };
 }

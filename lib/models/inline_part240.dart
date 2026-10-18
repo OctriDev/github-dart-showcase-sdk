@@ -4,264 +4,27 @@
 part of 'inline.dart';
 
 // Inline operation models (part 240)
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsGetAutomationResponseTriggersPullRequestMergedWriteScope {
+/// The enforcement status for a security configuration
+final class CodeSecurityCreateConfigurationForEnterpriseRequestBodyEnforcement {
   final String value;
 
-  const AgentAutomationsGetAutomationResponseTriggersPullRequestMergedWriteScope._(
+  const CodeSecurityCreateConfigurationForEnterpriseRequestBodyEnforcement._(
       this.value);
 
-  factory AgentAutomationsGetAutomationResponseTriggersPullRequestMergedWriteScope.fromJson(
+  factory CodeSecurityCreateConfigurationForEnterpriseRequestBodyEnforcement.fromJson(
           String value) =>
-      AgentAutomationsGetAutomationResponseTriggersPullRequestMergedWriteScope
-          ._(value);
-
-  static const trigger =
-      AgentAutomationsGetAutomationResponseTriggersPullRequestMergedWriteScope
-          ._('trigger');
-  static const repository =
-      AgentAutomationsGetAutomationResponseTriggersPullRequestMergedWriteScope
-          ._('repository');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AgentAutomationsGetAutomationResponseTriggersPullRequestMergedWriteScope &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsGetAutomationResponseTriggersPullRequestOpenedWriteScope {
-  final String value;
-
-  const AgentAutomationsGetAutomationResponseTriggersPullRequestOpenedWriteScope._(
-      this.value);
-
-  factory AgentAutomationsGetAutomationResponseTriggersPullRequestOpenedWriteScope.fromJson(
-          String value) =>
-      AgentAutomationsGetAutomationResponseTriggersPullRequestOpenedWriteScope
-          ._(value);
-
-  static const trigger =
-      AgentAutomationsGetAutomationResponseTriggersPullRequestOpenedWriteScope
-          ._('trigger');
-  static const repository =
-      AgentAutomationsGetAutomationResponseTriggersPullRequestOpenedWriteScope
-          ._('repository');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AgentAutomationsGetAutomationResponseTriggersPullRequestOpenedWriteScope &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsGetAutomationResponseTriggersPullRequestReadyForReviewWriteScope {
-  final String value;
-
-  const AgentAutomationsGetAutomationResponseTriggersPullRequestReadyForReviewWriteScope._(
-      this.value);
-
-  factory AgentAutomationsGetAutomationResponseTriggersPullRequestReadyForReviewWriteScope.fromJson(
-          String value) =>
-      AgentAutomationsGetAutomationResponseTriggersPullRequestReadyForReviewWriteScope
-          ._(value);
-
-  static const trigger =
-      AgentAutomationsGetAutomationResponseTriggersPullRequestReadyForReviewWriteScope
-          ._('trigger');
-  static const repository =
-      AgentAutomationsGetAutomationResponseTriggersPullRequestReadyForReviewWriteScope
-          ._('repository');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AgentAutomationsGetAutomationResponseTriggersPullRequestReadyForReviewWriteScope &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsGetAutomationResponseTriggersPullRequestReviewRequestedWriteScope {
-  final String value;
-
-  const AgentAutomationsGetAutomationResponseTriggersPullRequestReviewRequestedWriteScope._(
-      this.value);
-
-  factory AgentAutomationsGetAutomationResponseTriggersPullRequestReviewRequestedWriteScope.fromJson(
-          String value) =>
-      AgentAutomationsGetAutomationResponseTriggersPullRequestReviewRequestedWriteScope
-          ._(value);
-
-  static const trigger =
-      AgentAutomationsGetAutomationResponseTriggersPullRequestReviewRequestedWriteScope
-          ._('trigger');
-  static const repository =
-      AgentAutomationsGetAutomationResponseTriggersPullRequestReviewRequestedWriteScope
-          ._('repository');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AgentAutomationsGetAutomationResponseTriggersPullRequestReviewRequestedWriteScope &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-final class AgentAutomationsGetAutomationResponseTriggersPullRequestReviewSubmittedStatesItem {
-  final String value;
-
-  const AgentAutomationsGetAutomationResponseTriggersPullRequestReviewSubmittedStatesItem._(
-      this.value);
-
-  factory AgentAutomationsGetAutomationResponseTriggersPullRequestReviewSubmittedStatesItem.fromJson(
-          String value) =>
-      AgentAutomationsGetAutomationResponseTriggersPullRequestReviewSubmittedStatesItem
-          ._(value);
-
-  static const approved =
-      AgentAutomationsGetAutomationResponseTriggersPullRequestReviewSubmittedStatesItem
-          ._('approved');
-  static const changesRequested =
-      AgentAutomationsGetAutomationResponseTriggersPullRequestReviewSubmittedStatesItem
-          ._('changes_requested');
-  static const commented =
-      AgentAutomationsGetAutomationResponseTriggersPullRequestReviewSubmittedStatesItem
-          ._('commented');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AgentAutomationsGetAutomationResponseTriggersPullRequestReviewSubmittedStatesItem &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsGetAutomationResponseTriggersPullRequestReviewSubmittedWriteScope {
-  final String value;
-
-  const AgentAutomationsGetAutomationResponseTriggersPullRequestReviewSubmittedWriteScope._(
-      this.value);
-
-  factory AgentAutomationsGetAutomationResponseTriggersPullRequestReviewSubmittedWriteScope.fromJson(
-          String value) =>
-      AgentAutomationsGetAutomationResponseTriggersPullRequestReviewSubmittedWriteScope
-          ._(value);
-
-  static const trigger =
-      AgentAutomationsGetAutomationResponseTriggersPullRequestReviewSubmittedWriteScope
-          ._('trigger');
-  static const repository =
-      AgentAutomationsGetAutomationResponseTriggersPullRequestReviewSubmittedWriteScope
-          ._('repository');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AgentAutomationsGetAutomationResponseTriggersPullRequestReviewSubmittedWriteScope &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsGetAutomationResponseTriggersPullRequestSynchronizeWriteScope {
-  final String value;
-
-  const AgentAutomationsGetAutomationResponseTriggersPullRequestSynchronizeWriteScope._(
-      this.value);
-
-  factory AgentAutomationsGetAutomationResponseTriggersPullRequestSynchronizeWriteScope.fromJson(
-          String value) =>
-      AgentAutomationsGetAutomationResponseTriggersPullRequestSynchronizeWriteScope
-          ._(value);
-
-  static const trigger =
-      AgentAutomationsGetAutomationResponseTriggersPullRequestSynchronizeWriteScope
-          ._('trigger');
-  static const repository =
-      AgentAutomationsGetAutomationResponseTriggersPullRequestSynchronizeWriteScope
-          ._('repository');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AgentAutomationsGetAutomationResponseTriggersPullRequestSynchronizeWriteScope &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsGetAutomationResponseTriggersSubIssueAddedWriteScope {
-  final String value;
-
-  const AgentAutomationsGetAutomationResponseTriggersSubIssueAddedWriteScope._(
-      this.value);
-
-  factory AgentAutomationsGetAutomationResponseTriggersSubIssueAddedWriteScope.fromJson(
-          String value) =>
-      AgentAutomationsGetAutomationResponseTriggersSubIssueAddedWriteScope._(
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodyEnforcement._(
           value);
 
-  static const trigger =
-      AgentAutomationsGetAutomationResponseTriggersSubIssueAddedWriteScope._(
-          'trigger');
-  static const repository =
-      AgentAutomationsGetAutomationResponseTriggersSubIssueAddedWriteScope._(
-          'repository');
+  static const enforced =
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodyEnforcement._(
+          'enforced');
+  static const unenforced =
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodyEnforcement._(
+          'unenforced');
+  static const enterpriseEnforced =
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodyEnforcement._(
+          'enterprise_enforced');
 
   String toJson() => value;
 
@@ -271,27 +34,34 @@ final class AgentAutomationsGetAutomationResponseTriggersSubIssueAddedWriteScope
   @override
   bool operator ==(Object other) =>
       other
-          is AgentAutomationsGetAutomationResponseTriggersSubIssueAddedWriteScope &&
+          is CodeSecurityCreateConfigurationForEnterpriseRequestBodyEnforcement &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-final class AgentAutomationsGetAutomationResponseTriggersWorkflowRunConclusionsItem {
+/// The enablement status of private vulnerability reporting
+final class CodeSecurityCreateConfigurationForEnterpriseRequestBodyPrivateVulnerabilityReporting {
   final String value;
 
-  const AgentAutomationsGetAutomationResponseTriggersWorkflowRunConclusionsItem._(
+  const CodeSecurityCreateConfigurationForEnterpriseRequestBodyPrivateVulnerabilityReporting._(
       this.value);
 
-  factory AgentAutomationsGetAutomationResponseTriggersWorkflowRunConclusionsItem.fromJson(
+  factory CodeSecurityCreateConfigurationForEnterpriseRequestBodyPrivateVulnerabilityReporting.fromJson(
           String value) =>
-      AgentAutomationsGetAutomationResponseTriggersWorkflowRunConclusionsItem._(
-          value);
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodyPrivateVulnerabilityReporting
+          ._(value);
 
-  static const failure =
-      AgentAutomationsGetAutomationResponseTriggersWorkflowRunConclusionsItem._(
-          'failure');
+  static const enabled =
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodyPrivateVulnerabilityReporting
+          ._('enabled');
+  static const disabled =
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodyPrivateVulnerabilityReporting
+          ._('disabled');
+  static const notSet =
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodyPrivateVulnerabilityReporting
+          ._('not_set');
 
   String toJson() => value;
 
@@ -301,31 +71,34 @@ final class AgentAutomationsGetAutomationResponseTriggersWorkflowRunConclusionsI
   @override
   bool operator ==(Object other) =>
       other
-          is AgentAutomationsGetAutomationResponseTriggersWorkflowRunConclusionsItem &&
+          is CodeSecurityCreateConfigurationForEnterpriseRequestBodyPrivateVulnerabilityReporting &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsGetAutomationResponseTriggersWorkflowRunWriteScope {
+/// The enablement status of GitHub Secret Protection features.
+final class CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretProtection {
   final String value;
 
-  const AgentAutomationsGetAutomationResponseTriggersWorkflowRunWriteScope._(
+  const CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretProtection._(
       this.value);
 
-  factory AgentAutomationsGetAutomationResponseTriggersWorkflowRunWriteScope.fromJson(
+  factory CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretProtection.fromJson(
           String value) =>
-      AgentAutomationsGetAutomationResponseTriggersWorkflowRunWriteScope._(
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretProtection._(
           value);
 
-  static const trigger =
-      AgentAutomationsGetAutomationResponseTriggersWorkflowRunWriteScope._(
-          'trigger');
-  static const repository =
-      AgentAutomationsGetAutomationResponseTriggersWorkflowRunWriteScope._(
-          'repository');
+  static const enabled =
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretProtection._(
+          'enabled');
+  static const disabled =
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretProtection._(
+          'disabled');
+  static const notSet =
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretProtection._(
+          'not_set');
 
   String toJson() => value;
 
@@ -335,27 +108,34 @@ final class AgentAutomationsGetAutomationResponseTriggersWorkflowRunWriteScope {
   @override
   bool operator ==(Object other) =>
       other
-          is AgentAutomationsGetAutomationResponseTriggersWorkflowRunWriteScope &&
+          is CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretProtection &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Controls which repository resources a run may modify. `trigger` limits writes to the resource that started the run, when one exists, and resources created during the run; `repository` allows writes to any resource in the repository. Supported values: `trigger`, `repository`.
-final class AgentAutomationsGetAutomationResponseWriteScope {
+/// The enablement status of secret scanning
+final class CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanning {
   final String value;
 
-  const AgentAutomationsGetAutomationResponseWriteScope._(this.value);
+  const CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanning._(
+      this.value);
 
-  factory AgentAutomationsGetAutomationResponseWriteScope.fromJson(
+  factory CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanning.fromJson(
           String value) =>
-      AgentAutomationsGetAutomationResponseWriteScope._(value);
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanning._(
+          value);
 
-  static const trigger =
-      AgentAutomationsGetAutomationResponseWriteScope._('trigger');
-  static const repository =
-      AgentAutomationsGetAutomationResponseWriteScope._('repository');
+  static const enabled =
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanning._(
+          'enabled');
+  static const disabled =
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanning._(
+          'disabled');
+  static const notSet =
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanning._(
+          'not_set');
 
   String toJson() => value;
 
@@ -364,35 +144,35 @@ final class AgentAutomationsGetAutomationResponseWriteScope {
 
   @override
   bool operator ==(Object other) =>
-      other is AgentAutomationsGetAutomationResponseWriteScope &&
+      other
+          is CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanning &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Machine-readable error code
-final class AgentAutomationsGetAutomationResponseErrorsItemCode {
+/// The enablement status of secret scanning delegated alert dismissal
+final class CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningDelegatedAlertDismissal {
   final String value;
 
-  const AgentAutomationsGetAutomationResponseErrorsItemCode._(this.value);
+  const CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningDelegatedAlertDismissal._(
+      this.value);
 
-  factory AgentAutomationsGetAutomationResponseErrorsItemCode.fromJson(
+  factory CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningDelegatedAlertDismissal.fromJson(
           String value) =>
-      AgentAutomationsGetAutomationResponseErrorsItemCode._(value);
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningDelegatedAlertDismissal
+          ._(value);
 
-  static const missing =
-      AgentAutomationsGetAutomationResponseErrorsItemCode._('missing');
-  static const missingField =
-      AgentAutomationsGetAutomationResponseErrorsItemCode._('missing_field');
-  static const invalid =
-      AgentAutomationsGetAutomationResponseErrorsItemCode._('invalid');
-  static const alreadyExists =
-      AgentAutomationsGetAutomationResponseErrorsItemCode._('already_exists');
-  static const unprocessable =
-      AgentAutomationsGetAutomationResponseErrorsItemCode._('unprocessable');
-  static const custom =
-      AgentAutomationsGetAutomationResponseErrorsItemCode._('custom');
+  static const enabled =
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningDelegatedAlertDismissal
+          ._('enabled');
+  static const disabled =
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningDelegatedAlertDismissal
+          ._('disabled');
+  static const notSet =
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningDelegatedAlertDismissal
+          ._('not_set');
 
   String toJson() => value;
 
@@ -401,7 +181,270 @@ final class AgentAutomationsGetAutomationResponseErrorsItemCode {
 
   @override
   bool operator ==(Object other) =>
-      other is AgentAutomationsGetAutomationResponseErrorsItemCode &&
+      other
+          is CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningDelegatedAlertDismissal &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The enablement status of secret scanning extended metadata
+final class CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningExtendedMetadata {
+  final String value;
+
+  const CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningExtendedMetadata._(
+      this.value);
+
+  factory CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningExtendedMetadata.fromJson(
+          String value) =>
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningExtendedMetadata
+          ._(value);
+
+  static const enabled =
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningExtendedMetadata
+          ._('enabled');
+  static const disabled =
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningExtendedMetadata
+          ._('disabled');
+  static const notSet =
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningExtendedMetadata
+          ._('not_set');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningExtendedMetadata &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The enablement status of Copilot secret scanning
+final class CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningGenericSecrets {
+  final String value;
+
+  const CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningGenericSecrets._(
+      this.value);
+
+  factory CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningGenericSecrets.fromJson(
+          String value) =>
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningGenericSecrets
+          ._(value);
+
+  static const enabled =
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningGenericSecrets
+          ._('enabled');
+  static const disabled =
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningGenericSecrets
+          ._('disabled');
+  static const notSet =
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningGenericSecrets
+          ._('not_set');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningGenericSecrets &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The enablement status of secret scanning non provider patterns
+final class CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningNonProviderPatterns {
+  final String value;
+
+  const CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningNonProviderPatterns._(
+      this.value);
+
+  factory CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningNonProviderPatterns.fromJson(
+          String value) =>
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningNonProviderPatterns
+          ._(value);
+
+  static const enabled =
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningNonProviderPatterns
+          ._('enabled');
+  static const disabled =
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningNonProviderPatterns
+          ._('disabled');
+  static const notSet =
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningNonProviderPatterns
+          ._('not_set');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningNonProviderPatterns &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The enablement status of secret scanning push protection
+final class CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningPushProtection {
+  final String value;
+
+  const CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningPushProtection._(
+      this.value);
+
+  factory CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningPushProtection.fromJson(
+          String value) =>
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningPushProtection
+          ._(value);
+
+  static const enabled =
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningPushProtection
+          ._('enabled');
+  static const disabled =
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningPushProtection
+          ._('disabled');
+  static const notSet =
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningPushProtection
+          ._('not_set');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningPushProtection &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The enablement status of secret scanning validity checks
+final class CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningValidityChecks {
+  final String value;
+
+  const CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningValidityChecks._(
+      this.value);
+
+  factory CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningValidityChecks.fromJson(
+          String value) =>
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningValidityChecks
+          ._(value);
+
+  static const enabled =
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningValidityChecks
+          ._('enabled');
+  static const disabled =
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningValidityChecks
+          ._('disabled');
+  static const notSet =
+      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningValidityChecks
+          ._('not_set');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningValidityChecks &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The enablement status of GitHub Advanced Security features. `enabled` will enable both Code Security and Secret Protection features. &gt; [!WARNING] &gt; `code_security` and `secret_protection` are deprecated values for this field. Prefer the individual `code_security` and `secret_protection` fields to set the status of these features.
+final class CodeSecurityUpdateEnterpriseConfigurationRequestBodyAdvancedSecurity {
+  final String value;
+
+  const CodeSecurityUpdateEnterpriseConfigurationRequestBodyAdvancedSecurity._(
+      this.value);
+
+  factory CodeSecurityUpdateEnterpriseConfigurationRequestBodyAdvancedSecurity.fromJson(
+          String value) =>
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyAdvancedSecurity._(
+          value);
+
+  static const enabled =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyAdvancedSecurity._(
+          'enabled');
+  static const disabled =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyAdvancedSecurity._(
+          'disabled');
+  static const codeSecurity =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyAdvancedSecurity._(
+          'code_security');
+  static const secretProtection =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyAdvancedSecurity._(
+          'secret_protection');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is CodeSecurityUpdateEnterpriseConfigurationRequestBodyAdvancedSecurity &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The enablement status of code scanning default setup
+final class CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDefaultSetup {
+  final String value;
+
+  const CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDefaultSetup._(
+      this.value);
+
+  factory CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDefaultSetup.fromJson(
+          String value) =>
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDefaultSetup
+          ._(value);
+
+  static const enabled =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDefaultSetup
+          ._('enabled');
+  static const disabled =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDefaultSetup
+          ._('disabled');
+  static const notSet =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDefaultSetup
+          ._('not_set');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDefaultSetup &&
       other.value == value;
 
   @override

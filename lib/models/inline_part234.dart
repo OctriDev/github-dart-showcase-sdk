@@ -4,44 +4,26 @@
 part of 'inline.dart';
 
 // Inline operation models (part 234)
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookWorkflowRunCompletedAction {
+final class AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewSubmittedStatesItem {
   final String value;
 
-  const WebhookWorkflowRunCompletedAction._(this.value);
+  const AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewSubmittedStatesItem._(
+      this.value);
 
-  factory WebhookWorkflowRunCompletedAction.fromJson(String value) =>
-      WebhookWorkflowRunCompletedAction._(value);
-
-  static const completed = WebhookWorkflowRunCompletedAction._('completed');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookWorkflowRunCompletedAction && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhookWorkflowRunCompletedWorkflowRunActorType {
-  final String value;
-
-  const WebhookWorkflowRunCompletedWorkflowRunActorType._(this.value);
-
-  factory WebhookWorkflowRunCompletedWorkflowRunActorType.fromJson(
+  factory AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewSubmittedStatesItem.fromJson(
           String value) =>
-      WebhookWorkflowRunCompletedWorkflowRunActorType._(value);
+      AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewSubmittedStatesItem
+          ._(value);
 
-  static const bot = WebhookWorkflowRunCompletedWorkflowRunActorType._('Bot');
-  static const user = WebhookWorkflowRunCompletedWorkflowRunActorType._('User');
-  static const organization =
-      WebhookWorkflowRunCompletedWorkflowRunActorType._('Organization');
+  static const approved =
+      AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewSubmittedStatesItem
+          ._('approved');
+  static const changesRequested =
+      AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewSubmittedStatesItem
+          ._('changes_requested');
+  static const commented =
+      AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewSubmittedStatesItem
+          ._('commented');
 
   String toJson() => value;
 
@@ -50,41 +32,130 @@ final class WebhookWorkflowRunCompletedWorkflowRunActorType {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookWorkflowRunCompletedWorkflowRunActorType &&
+      other
+          is AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewSubmittedStatesItem &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Required enumerated value serialized in the `conclusion` wire field.
-final class WebhookWorkflowRunCompletedWorkflowRunConclusion {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewSubmittedWriteScope {
   final String value;
 
-  const WebhookWorkflowRunCompletedWorkflowRunConclusion._(this.value);
+  const AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewSubmittedWriteScope._(
+      this.value);
 
-  factory WebhookWorkflowRunCompletedWorkflowRunConclusion.fromJson(
+  factory AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewSubmittedWriteScope.fromJson(
           String value) =>
-      WebhookWorkflowRunCompletedWorkflowRunConclusion._(value);
+      AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewSubmittedWriteScope
+          ._(value);
 
-  static const actionRequired =
-      WebhookWorkflowRunCompletedWorkflowRunConclusion._('action_required');
-  static const cancelled =
-      WebhookWorkflowRunCompletedWorkflowRunConclusion._('cancelled');
+  static const trigger =
+      AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewSubmittedWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewSubmittedWriteScope
+          ._('repository');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentAutomationsEditRepoAutomationResponseTriggersPullRequestReviewSubmittedWriteScope &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsEditRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope {
+  final String value;
+
+  const AgentAutomationsEditRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope._(
+      this.value);
+
+  factory AgentAutomationsEditRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope.fromJson(
+          String value) =>
+      AgentAutomationsEditRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope
+          ._(value);
+
+  static const trigger =
+      AgentAutomationsEditRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsEditRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope
+          ._('repository');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentAutomationsEditRepoAutomationResponseTriggersPullRequestSynchronizeWriteScope &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsEditRepoAutomationResponseTriggersSubIssueAddedWriteScope {
+  final String value;
+
+  const AgentAutomationsEditRepoAutomationResponseTriggersSubIssueAddedWriteScope._(
+      this.value);
+
+  factory AgentAutomationsEditRepoAutomationResponseTriggersSubIssueAddedWriteScope.fromJson(
+          String value) =>
+      AgentAutomationsEditRepoAutomationResponseTriggersSubIssueAddedWriteScope
+          ._(value);
+
+  static const trigger =
+      AgentAutomationsEditRepoAutomationResponseTriggersSubIssueAddedWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsEditRepoAutomationResponseTriggersSubIssueAddedWriteScope
+          ._('repository');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentAutomationsEditRepoAutomationResponseTriggersSubIssueAddedWriteScope &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+final class AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRunConclusionsItem {
+  final String value;
+
+  const AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRunConclusionsItem._(
+      this.value);
+
+  factory AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRunConclusionsItem.fromJson(
+          String value) =>
+      AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRunConclusionsItem
+          ._(value);
+
   static const failure =
-      WebhookWorkflowRunCompletedWorkflowRunConclusion._('failure');
-  static const neutral =
-      WebhookWorkflowRunCompletedWorkflowRunConclusion._('neutral');
-  static const skipped =
-      WebhookWorkflowRunCompletedWorkflowRunConclusion._('skipped');
-  static const stale =
-      WebhookWorkflowRunCompletedWorkflowRunConclusion._('stale');
-  static const success =
-      WebhookWorkflowRunCompletedWorkflowRunConclusion._('success');
-  static const timedOut =
-      WebhookWorkflowRunCompletedWorkflowRunConclusion._('timed_out');
-  static const startupFailure =
-      WebhookWorkflowRunCompletedWorkflowRunConclusion._('startup_failure');
+      AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRunConclusionsItem
+          ._('failure');
 
   String toJson() => value;
 
@@ -93,31 +164,32 @@ final class WebhookWorkflowRunCompletedWorkflowRunConclusion {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookWorkflowRunCompletedWorkflowRunConclusion &&
+      other
+          is AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRunConclusionsItem &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhookWorkflowRunCompletedWorkflowRunHeadRepositoryOwnerType {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRunWriteScope {
   final String value;
 
-  const WebhookWorkflowRunCompletedWorkflowRunHeadRepositoryOwnerType._(
+  const AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRunWriteScope._(
       this.value);
 
-  factory WebhookWorkflowRunCompletedWorkflowRunHeadRepositoryOwnerType.fromJson(
+  factory AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRunWriteScope.fromJson(
           String value) =>
-      WebhookWorkflowRunCompletedWorkflowRunHeadRepositoryOwnerType._(value);
+      AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRunWriteScope._(
+          value);
 
-  static const bot =
-      WebhookWorkflowRunCompletedWorkflowRunHeadRepositoryOwnerType._('Bot');
-  static const user =
-      WebhookWorkflowRunCompletedWorkflowRunHeadRepositoryOwnerType._('User');
-  static const organization =
-      WebhookWorkflowRunCompletedWorkflowRunHeadRepositoryOwnerType._(
-          'Organization');
+  static const trigger =
+      AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRunWriteScope._(
+          'trigger');
+  static const repository =
+      AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRunWriteScope._(
+          'repository');
 
   String toJson() => value;
 
@@ -126,30 +198,28 @@ final class WebhookWorkflowRunCompletedWorkflowRunHeadRepositoryOwnerType {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookWorkflowRunCompletedWorkflowRunHeadRepositoryOwnerType &&
+      other
+          is AgentAutomationsEditRepoAutomationResponseTriggersWorkflowRunWriteScope &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhookWorkflowRunCompletedWorkflowRunRepositoryOwnerType {
+/// Controls which repository resources a run may modify. `trigger` limits writes to the resource that started the run, when one exists, and resources created during the run; `repository` allows writes to any resource in the repository. Supported values: `trigger`, `repository`.
+final class AgentAutomationsEditRepoAutomationResponseWriteScope {
   final String value;
 
-  const WebhookWorkflowRunCompletedWorkflowRunRepositoryOwnerType._(this.value);
+  const AgentAutomationsEditRepoAutomationResponseWriteScope._(this.value);
 
-  factory WebhookWorkflowRunCompletedWorkflowRunRepositoryOwnerType.fromJson(
+  factory AgentAutomationsEditRepoAutomationResponseWriteScope.fromJson(
           String value) =>
-      WebhookWorkflowRunCompletedWorkflowRunRepositoryOwnerType._(value);
+      AgentAutomationsEditRepoAutomationResponseWriteScope._(value);
 
-  static const bot =
-      WebhookWorkflowRunCompletedWorkflowRunRepositoryOwnerType._('Bot');
-  static const user =
-      WebhookWorkflowRunCompletedWorkflowRunRepositoryOwnerType._('User');
-  static const organization =
-      WebhookWorkflowRunCompletedWorkflowRunRepositoryOwnerType._(
-          'Organization');
+  static const trigger =
+      AgentAutomationsEditRepoAutomationResponseWriteScope._('trigger');
+  static const repository =
+      AgentAutomationsEditRepoAutomationResponseWriteScope._('repository');
 
   String toJson() => value;
 
@@ -158,66 +228,38 @@ final class WebhookWorkflowRunCompletedWorkflowRunRepositoryOwnerType {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookWorkflowRunCompletedWorkflowRunRepositoryOwnerType &&
+      other is AgentAutomationsEditRepoAutomationResponseWriteScope &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Required enumerated value serialized in the `status` wire field.
-final class WebhookWorkflowRunCompletedWorkflowRunStatus {
+/// Machine-readable error code
+final class AgentAutomationsEditRepoAutomationResponseErrorsItemCode {
   final String value;
 
-  const WebhookWorkflowRunCompletedWorkflowRunStatus._(this.value);
+  const AgentAutomationsEditRepoAutomationResponseErrorsItemCode._(this.value);
 
-  factory WebhookWorkflowRunCompletedWorkflowRunStatus.fromJson(String value) =>
-      WebhookWorkflowRunCompletedWorkflowRunStatus._(value);
-
-  static const requested =
-      WebhookWorkflowRunCompletedWorkflowRunStatus._('requested');
-  static const inProgress =
-      WebhookWorkflowRunCompletedWorkflowRunStatus._('in_progress');
-  static const completed =
-      WebhookWorkflowRunCompletedWorkflowRunStatus._('completed');
-  static const queued =
-      WebhookWorkflowRunCompletedWorkflowRunStatus._('queued');
-  static const pending =
-      WebhookWorkflowRunCompletedWorkflowRunStatus._('pending');
-  static const waiting =
-      WebhookWorkflowRunCompletedWorkflowRunStatus._('waiting');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookWorkflowRunCompletedWorkflowRunStatus &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhookWorkflowRunCompletedWorkflowRunTriggeringActorType {
-  final String value;
-
-  const WebhookWorkflowRunCompletedWorkflowRunTriggeringActorType._(this.value);
-
-  factory WebhookWorkflowRunCompletedWorkflowRunTriggeringActorType.fromJson(
+  factory AgentAutomationsEditRepoAutomationResponseErrorsItemCode.fromJson(
           String value) =>
-      WebhookWorkflowRunCompletedWorkflowRunTriggeringActorType._(value);
+      AgentAutomationsEditRepoAutomationResponseErrorsItemCode._(value);
 
-  static const bot =
-      WebhookWorkflowRunCompletedWorkflowRunTriggeringActorType._('Bot');
-  static const user =
-      WebhookWorkflowRunCompletedWorkflowRunTriggeringActorType._('User');
-  static const organization =
-      WebhookWorkflowRunCompletedWorkflowRunTriggeringActorType._(
-          'Organization');
+  static const missing =
+      AgentAutomationsEditRepoAutomationResponseErrorsItemCode._('missing');
+  static const missingField =
+      AgentAutomationsEditRepoAutomationResponseErrorsItemCode._(
+          'missing_field');
+  static const invalid =
+      AgentAutomationsEditRepoAutomationResponseErrorsItemCode._('invalid');
+  static const alreadyExists =
+      AgentAutomationsEditRepoAutomationResponseErrorsItemCode._(
+          'already_exists');
+  static const unprocessable =
+      AgentAutomationsEditRepoAutomationResponseErrorsItemCode._(
+          'unprocessable');
+  static const custom =
+      AgentAutomationsEditRepoAutomationResponseErrorsItemCode._('custom');
 
   String toJson() => value;
 
@@ -226,126 +268,42 @@ final class WebhookWorkflowRunCompletedWorkflowRunTriggeringActorType {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookWorkflowRunCompletedWorkflowRunTriggeringActorType &&
+      other is AgentAutomationsEditRepoAutomationResponseErrorsItemCode &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookWorkflowRunInProgressAction {
+/// Machine-readable error code
+final class AgentAutomationsEditRepoAutomationResponseErrorsItemCode7cb67728 {
   final String value;
 
-  const WebhookWorkflowRunInProgressAction._(this.value);
-
-  factory WebhookWorkflowRunInProgressAction.fromJson(String value) =>
-      WebhookWorkflowRunInProgressAction._(value);
-
-  static const inProgress = WebhookWorkflowRunInProgressAction._('in_progress');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookWorkflowRunInProgressAction && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhookWorkflowRunInProgressWorkflowRunActorType {
-  final String value;
-
-  const WebhookWorkflowRunInProgressWorkflowRunActorType._(this.value);
-
-  factory WebhookWorkflowRunInProgressWorkflowRunActorType.fromJson(
-          String value) =>
-      WebhookWorkflowRunInProgressWorkflowRunActorType._(value);
-
-  static const bot = WebhookWorkflowRunInProgressWorkflowRunActorType._('Bot');
-  static const user =
-      WebhookWorkflowRunInProgressWorkflowRunActorType._('User');
-  static const organization =
-      WebhookWorkflowRunInProgressWorkflowRunActorType._('Organization');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookWorkflowRunInProgressWorkflowRunActorType &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `conclusion` wire field.
-final class WebhookWorkflowRunInProgressWorkflowRunConclusion {
-  final String value;
-
-  const WebhookWorkflowRunInProgressWorkflowRunConclusion._(this.value);
-
-  factory WebhookWorkflowRunInProgressWorkflowRunConclusion.fromJson(
-          String value) =>
-      WebhookWorkflowRunInProgressWorkflowRunConclusion._(value);
-
-  static const actionRequired =
-      WebhookWorkflowRunInProgressWorkflowRunConclusion._('action_required');
-  static const cancelled =
-      WebhookWorkflowRunInProgressWorkflowRunConclusion._('cancelled');
-  static const failure =
-      WebhookWorkflowRunInProgressWorkflowRunConclusion._('failure');
-  static const neutral =
-      WebhookWorkflowRunInProgressWorkflowRunConclusion._('neutral');
-  static const skipped =
-      WebhookWorkflowRunInProgressWorkflowRunConclusion._('skipped');
-  static const stale =
-      WebhookWorkflowRunInProgressWorkflowRunConclusion._('stale');
-  static const success =
-      WebhookWorkflowRunInProgressWorkflowRunConclusion._('success');
-  static const timedOut =
-      WebhookWorkflowRunInProgressWorkflowRunConclusion._('timed_out');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookWorkflowRunInProgressWorkflowRunConclusion &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhookWorkflowRunInProgressWorkflowRunHeadRepositoryOwnerType {
-  final String value;
-
-  const WebhookWorkflowRunInProgressWorkflowRunHeadRepositoryOwnerType._(
+  const AgentAutomationsEditRepoAutomationResponseErrorsItemCode7cb67728._(
       this.value);
 
-  factory WebhookWorkflowRunInProgressWorkflowRunHeadRepositoryOwnerType.fromJson(
+  factory AgentAutomationsEditRepoAutomationResponseErrorsItemCode7cb67728.fromJson(
           String value) =>
-      WebhookWorkflowRunInProgressWorkflowRunHeadRepositoryOwnerType._(value);
+      AgentAutomationsEditRepoAutomationResponseErrorsItemCode7cb67728._(value);
 
-  static const bot =
-      WebhookWorkflowRunInProgressWorkflowRunHeadRepositoryOwnerType._('Bot');
-  static const user =
-      WebhookWorkflowRunInProgressWorkflowRunHeadRepositoryOwnerType._('User');
-  static const organization =
-      WebhookWorkflowRunInProgressWorkflowRunHeadRepositoryOwnerType._(
-          'Organization');
+  static const missing =
+      AgentAutomationsEditRepoAutomationResponseErrorsItemCode7cb67728._(
+          'missing');
+  static const missingField =
+      AgentAutomationsEditRepoAutomationResponseErrorsItemCode7cb67728._(
+          'missing_field');
+  static const invalid =
+      AgentAutomationsEditRepoAutomationResponseErrorsItemCode7cb67728._(
+          'invalid');
+  static const alreadyExists =
+      AgentAutomationsEditRepoAutomationResponseErrorsItemCode7cb67728._(
+          'already_exists');
+  static const unprocessable =
+      AgentAutomationsEditRepoAutomationResponseErrorsItemCode7cb67728._(
+          'unprocessable');
+  static const custom =
+      AgentAutomationsEditRepoAutomationResponseErrorsItemCode7cb67728._(
+          'custom');
 
   String toJson() => value;
 
@@ -354,31 +312,43 @@ final class WebhookWorkflowRunInProgressWorkflowRunHeadRepositoryOwnerType {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookWorkflowRunInProgressWorkflowRunHeadRepositoryOwnerType &&
+      other
+          is AgentAutomationsEditRepoAutomationResponseErrorsItemCode7cb67728 &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhookWorkflowRunInProgressWorkflowRunRepositoryOwnerType {
+/// Machine-readable error code
+final class AgentAutomationsEditRepoAutomationResponseErrorsItemCoded44f2d02 {
   final String value;
 
-  const WebhookWorkflowRunInProgressWorkflowRunRepositoryOwnerType._(
+  const AgentAutomationsEditRepoAutomationResponseErrorsItemCoded44f2d02._(
       this.value);
 
-  factory WebhookWorkflowRunInProgressWorkflowRunRepositoryOwnerType.fromJson(
+  factory AgentAutomationsEditRepoAutomationResponseErrorsItemCoded44f2d02.fromJson(
           String value) =>
-      WebhookWorkflowRunInProgressWorkflowRunRepositoryOwnerType._(value);
+      AgentAutomationsEditRepoAutomationResponseErrorsItemCoded44f2d02._(value);
 
-  static const bot =
-      WebhookWorkflowRunInProgressWorkflowRunRepositoryOwnerType._('Bot');
-  static const user =
-      WebhookWorkflowRunInProgressWorkflowRunRepositoryOwnerType._('User');
-  static const organization =
-      WebhookWorkflowRunInProgressWorkflowRunRepositoryOwnerType._(
-          'Organization');
+  static const missing =
+      AgentAutomationsEditRepoAutomationResponseErrorsItemCoded44f2d02._(
+          'missing');
+  static const missingField =
+      AgentAutomationsEditRepoAutomationResponseErrorsItemCoded44f2d02._(
+          'missing_field');
+  static const invalid =
+      AgentAutomationsEditRepoAutomationResponseErrorsItemCoded44f2d02._(
+          'invalid');
+  static const alreadyExists =
+      AgentAutomationsEditRepoAutomationResponseErrorsItemCoded44f2d02._(
+          'already_exists');
+  static const unprocessable =
+      AgentAutomationsEditRepoAutomationResponseErrorsItemCoded44f2d02._(
+          'unprocessable');
+  static const custom =
+      AgentAutomationsEditRepoAutomationResponseErrorsItemCoded44f2d02._(
+          'custom');
 
   String toJson() => value;
 
@@ -387,8 +357,78 @@ final class WebhookWorkflowRunInProgressWorkflowRunRepositoryOwnerType {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookWorkflowRunInProgressWorkflowRunRepositoryOwnerType &&
+      other
+          is AgentAutomationsEditRepoAutomationResponseErrorsItemCoded44f2d02 &&
       other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Machine-readable error code
+final class AgentAutomationsEditRepoAutomationResponseErrorsItemCodebc93f766 {
+  final String value;
+
+  const AgentAutomationsEditRepoAutomationResponseErrorsItemCodebc93f766._(
+      this.value);
+
+  factory AgentAutomationsEditRepoAutomationResponseErrorsItemCodebc93f766.fromJson(
+          String value) =>
+      AgentAutomationsEditRepoAutomationResponseErrorsItemCodebc93f766._(value);
+
+  static const missing =
+      AgentAutomationsEditRepoAutomationResponseErrorsItemCodebc93f766._(
+          'missing');
+  static const missingField =
+      AgentAutomationsEditRepoAutomationResponseErrorsItemCodebc93f766._(
+          'missing_field');
+  static const invalid =
+      AgentAutomationsEditRepoAutomationResponseErrorsItemCodebc93f766._(
+          'invalid');
+  static const alreadyExists =
+      AgentAutomationsEditRepoAutomationResponseErrorsItemCodebc93f766._(
+          'already_exists');
+  static const unprocessable =
+      AgentAutomationsEditRepoAutomationResponseErrorsItemCodebc93f766._(
+          'unprocessable');
+  static const custom =
+      AgentAutomationsEditRepoAutomationResponseErrorsItemCodebc93f766._(
+          'custom');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentAutomationsEditRepoAutomationResponseErrorsItemCodebc93f766 &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+final class AgentTasksListTasksForRepoSort {
+  final String value;
+
+  const AgentTasksListTasksForRepoSort._(this.value);
+
+  factory AgentTasksListTasksForRepoSort.fromJson(String value) =>
+      AgentTasksListTasksForRepoSort._(value);
+
+  static const updatedAt = AgentTasksListTasksForRepoSort._('updated_at');
+  static const createdAt = AgentTasksListTasksForRepoSort._('created_at');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is AgentTasksListTasksForRepoSort && other.value == value;
 
   @override
   int get hashCode => value.hashCode;

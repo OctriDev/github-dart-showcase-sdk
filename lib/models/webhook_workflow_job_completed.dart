@@ -11,5 +11,3 @@ import 'shared_simple.dart';
 import 'simple.dart';
 
 part 'webhook_workflow_job_completed_part1.dart';
-part 'webhook_workflow_job_completed_part2.dart';
-part 'webhook_workflow_job_completed_part3.dart';

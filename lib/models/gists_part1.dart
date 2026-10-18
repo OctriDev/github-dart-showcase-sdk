@@ -419,111 +419,154 @@ class BaseGist {
       };
 }
 
-/// A comment made to a gist.
-class GistComment {
+/// Optional object value serialized in the `block` wire field.
+class ForbiddenGistBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Required `integer` value serialized in the `id` wire field.
-  final int id;
+  /// Optional `string` value serialized in the `reason` wire field.
+  final SdkOptional<String> reason;
 
-  /// Required `string` value serialized in the `node_id` wire field.
-  final String nodeId;
+  /// Optional `string` value serialized in the `created_at` wire field.
+  final SdkOptional<String> createdAt;
 
-  /// Required `uri`-formatted value serialized in the `url` wire field.
-  final String url;
+  /// Optional `string` value serialized in the `html_url` wire field.
+  final SdkOptional<String?> htmlUrl;
 
-  /// The comment text.
-  final String body;
+  const ForbiddenGistBlock(
+      {this.reason = const SdkOmitted(),
+      this.createdAt = const SdkOmitted(),
+      this.htmlUrl = const SdkOmitted()});
 
-  /// A GitHub user.
-  final NullableSimpleUser? user;
+  ForbiddenGistBlock Function(
+      {SdkOptional<String> reason,
+      SdkOptional<String> createdAt,
+      SdkOptional<String?> htmlUrl}) get copyWith => _copyWith;
 
-  /// Required `date-time`-formatted value serialized in the `created_at` wire field.
-  final String createdAt;
-
-  /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
-  final String updatedAt;
-
-  /// How the author is associated with the repository.
-  final AuthorAssociation authorAssociation;
-
-  const GistComment(
-      {required this.id,
-      required this.nodeId,
-      required this.url,
-      required this.body,
-      required this.user,
-      required this.createdAt,
-      required this.updatedAt,
-      required this.authorAssociation});
-
-  GistComment Function(
-      {int id,
-      String nodeId,
-      String url,
-      String body,
-      NullableSimpleUser? user,
-      String createdAt,
-      String updatedAt,
-      AuthorAssociation authorAssociation}) get copyWith => _copyWith;
-
-  GistComment _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? body = sdkOmittedValue,
-          Object? user = sdkOmittedValue,
+  ForbiddenGistBlock _copyWith(
+          {Object? reason = sdkOmittedValue,
           Object? createdAt = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue,
-          Object? authorAssociation = sdkOmittedValue}) =>
-      GistComment(
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        body: identical(body, sdkOmittedValue) ? this.body : body as String,
-        user: identical(user, sdkOmittedValue)
-            ? this.user
-            : user as NullableSimpleUser?,
+          Object? htmlUrl = sdkOmittedValue}) =>
+      ForbiddenGistBlock(
+        reason: identical(reason, sdkOmittedValue)
+            ? this.reason
+            : reason as SdkOptional<String>,
         createdAt: identical(createdAt, sdkOmittedValue)
             ? this.createdAt
-            : createdAt as String,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String,
-        authorAssociation: identical(authorAssociation, sdkOmittedValue)
-            ? this.authorAssociation
-            : authorAssociation as AuthorAssociation,
+            : createdAt as SdkOptional<String>,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as SdkOptional<String?>,
       );
 
-  factory GistComment.fromJson(Map<String, dynamic> json) => GistComment(
-        id: ((json['id'] as num?)?.toInt())!,
-        nodeId: (json['node_id'] as String?)!,
-        url: (json['url'] as String?)!,
-        body: (json['body'] as String?)!,
-        user: json.containsKey('user')
-            ? json['user'] != null
-                ? NullableSimpleUser.fromJson(
-                    json['user'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'user', 'Required property is missing'),
-        createdAt: (json['created_at'] as String?)!,
-        updatedAt: (json['updated_at'] as String?)!,
-        authorAssociation: (json['author_association'] != null
-            ? AuthorAssociation.fromJson(json['author_association'] as String)
-            : null)!,
+  factory ForbiddenGistBlock.fromJson(Map<String, dynamic> json) =>
+      ForbiddenGistBlock(
+        reason: json['reason'] != null
+            ? SdkPresent((json['reason'] as String?)!)
+            : const SdkOmitted(),
+        createdAt: json['created_at'] != null
+            ? SdkPresent((json['created_at'] as String?)!)
+            : const SdkOmitted(),
+        htmlUrl: json.containsKey('html_url')
+            ? SdkPresent(json['html_url'] as String?)
+            : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'node_id': nodeId,
-        'url': url,
-        'body': body,
-        'user': user?.toJson(),
-        'created_at': createdAt,
-        'updated_at': updatedAt,
-        'author_association': authorAssociation.toJson(),
+        ...switch (reason) {
+          SdkPresent<String>(value: final value) => {
+              'reason': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (createdAt) {
+          SdkPresent<String>(value: final value) => {
+              'created_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (htmlUrl) {
+          SdkPresent<String?>(value: final value) => {
+              'html_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+/// Typed representation of the `ForbiddenGist` API schema.
+class ForbiddenGist {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// Optional object value serialized in the `block` wire field.
+  final SdkOptional<ForbiddenGistBlock> block;
+
+  /// Optional `string` value serialized in the `message` wire field.
+  final SdkOptional<String> message;
+
+  /// Optional `string` value serialized in the `documentation_url` wire field.
+  final SdkOptional<String> documentationUrl;
+
+  const ForbiddenGist(
+      {this.block = const SdkOmitted(),
+      this.message = const SdkOmitted(),
+      this.documentationUrl = const SdkOmitted()});
+
+  ForbiddenGist Function(
+      {SdkOptional<ForbiddenGistBlock> block,
+      SdkOptional<String> message,
+      SdkOptional<String> documentationUrl}) get copyWith => _copyWith;
+
+  ForbiddenGist _copyWith(
+          {Object? block = sdkOmittedValue,
+          Object? message = sdkOmittedValue,
+          Object? documentationUrl = sdkOmittedValue}) =>
+      ForbiddenGist(
+        block: identical(block, sdkOmittedValue)
+            ? this.block
+            : block as SdkOptional<ForbiddenGistBlock>,
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as SdkOptional<String>,
+        documentationUrl: identical(documentationUrl, sdkOmittedValue)
+            ? this.documentationUrl
+            : documentationUrl as SdkOptional<String>,
+      );
+
+  factory ForbiddenGist.fromJson(Map<String, dynamic> json) => ForbiddenGist(
+        block: json['block'] != null
+            ? SdkPresent((json['block'] != null
+                ? ForbiddenGistBlock.fromJson(
+                    json['block'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        message: json['message'] != null
+            ? SdkPresent((json['message'] as String?)!)
+            : const SdkOmitted(),
+        documentationUrl: json['documentation_url'] != null
+            ? SdkPresent((json['documentation_url'] as String?)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (block) {
+          SdkPresent<ForbiddenGistBlock>(value: final value) => {
+              'block': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (message) {
+          SdkPresent<String>(value: final value) => {
+              'message': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (documentationUrl) {
+          SdkPresent<String>(value: final value) => {
+              'documentation_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
       };
 }

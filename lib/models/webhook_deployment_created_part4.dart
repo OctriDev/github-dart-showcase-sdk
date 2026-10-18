@@ -4,1050 +4,475 @@
 part of 'webhook_deployment_created.dart';
 
 // webhook_deployment_created domain models (part 4)
-/// The set of permissions for the GitHub app
-class WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissions {
+/// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
+class WebhookDeploymentCreatedDeploymentPerformedViaGithubApp {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Optional enumerated value serialized in the `actions` wire field.
+  /// Required `date-time`-formatted value serialized in the `created_at` wire field.
+  final String? createdAt;
+
+  /// Required `string` value serialized in the `description` wire field.
+  final String? description;
+
+  /// The list of events for the GitHub app
   final SdkOptional<
-          WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsActions>
-      actions;
+          List<
+              WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem>>
+      events;
 
-  /// Optional enumerated value serialized in the `administration` wire field.
+  /// Required `uri`-formatted value serialized in the `external_url` wire field.
+  final String? externalUrl;
+
+  /// Required `uri`-formatted value serialized in the `html_url` wire field.
+  final String htmlUrl;
+
+  /// Unique identifier of the GitHub app
+  final int? id;
+
+  /// The name of the GitHub app
+  final String name;
+
+  /// Required `string` value serialized in the `node_id` wire field.
+  final String nodeId;
+
+  /// Required object value serialized in the `owner` wire field.
+  final WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwner? owner;
+
+  /// The set of permissions for the GitHub app
   final SdkOptional<
-          WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsAdministration>
-      administration;
+          WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissions>
+      permissions;
 
-  /// Optional enumerated value serialized in the `checks` wire field.
-  final SdkOptional<
-          WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsChecks>
-      checks;
+  /// The slug name of the GitHub app
+  final SdkOptional<String> slug;
 
-  /// Optional enumerated value serialized in the `content_references` wire field.
-  final SdkOptional<
-          WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsContentReferences>
-      contentReferences;
+  /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
+  final String? updatedAt;
 
-  /// Optional enumerated value serialized in the `contents` wire field.
-  final SdkOptional<
-          WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsContents>
-      contents;
+  const WebhookDeploymentCreatedDeploymentPerformedViaGithubApp(
+      {required this.createdAt,
+      required this.description,
+      this.events = const SdkOmitted(),
+      required this.externalUrl,
+      required this.htmlUrl,
+      required this.id,
+      required this.name,
+      required this.nodeId,
+      required this.owner,
+      this.permissions = const SdkOmitted(),
+      this.slug = const SdkOmitted(),
+      required this.updatedAt});
 
-  /// Optional enumerated value serialized in the `deployments` wire field.
-  final SdkOptional<
-          WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsDeployments>
-      deployments;
-
-  /// Optional enumerated value serialized in the `discussions` wire field.
-  final SdkOptional<
-          WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsDiscussions>
-      discussions;
-
-  /// Optional enumerated value serialized in the `emails` wire field.
-  final SdkOptional<
-          WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsEmails>
-      emails;
-
-  /// Optional enumerated value serialized in the `environments` wire field.
-  final SdkOptional<
-          WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsEnvironments>
-      environments;
-
-  /// Optional enumerated value serialized in the `issues` wire field.
-  final SdkOptional<
-          WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsIssues>
-      issues;
-
-  /// Optional enumerated value serialized in the `keys` wire field.
-  final SdkOptional<
-          WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsKeys>
-      keys;
-
-  /// Optional enumerated value serialized in the `members` wire field.
-  final SdkOptional<
-          WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsMembers>
-      members;
-
-  /// Optional enumerated value serialized in the `metadata` wire field.
-  final SdkOptional<
-          WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsMetadata>
-      metadata;
-
-  /// Optional enumerated value serialized in the `organization_administration` wire field.
-  final SdkOptional<
-          WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationAdministration>
-      organizationAdministration;
-
-  /// Optional enumerated value serialized in the `organization_hooks` wire field.
-  final SdkOptional<
-          WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationHooks>
-      organizationHooks;
-
-  /// Optional enumerated value serialized in the `organization_packages` wire field.
-  final SdkOptional<
-          WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationPackages>
-      organizationPackages;
-
-  /// Optional enumerated value serialized in the `organization_plan` wire field.
-  final SdkOptional<
-          WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationPlan>
-      organizationPlan;
-
-  /// Optional enumerated value serialized in the `organization_projects` wire field.
-  final SdkOptional<
-          WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationProjects>
-      organizationProjects;
-
-  /// Optional enumerated value serialized in the `organization_secrets` wire field.
-  final SdkOptional<
-          WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationSecrets>
-      organizationSecrets;
-
-  /// Optional enumerated value serialized in the `organization_self_hosted_runners` wire field.
-  final SdkOptional<
-          WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationSelfHostedRunners>
-      organizationSelfHostedRunners;
-
-  /// Optional enumerated value serialized in the `organization_user_blocking` wire field.
-  final SdkOptional<
-          WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationUserBlocking>
-      organizationUserBlocking;
-
-  /// Optional enumerated value serialized in the `packages` wire field.
-  final SdkOptional<
-          WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsPackages>
-      packages;
-
-  /// Optional enumerated value serialized in the `pages` wire field.
-  final SdkOptional<
-          WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsPages>
-      pages;
-
-  /// Optional enumerated value serialized in the `pull_requests` wire field.
-  final SdkOptional<
-          WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsPullRequests>
-      pullRequests;
-
-  /// Optional enumerated value serialized in the `repository_hooks` wire field.
-  final SdkOptional<
-          WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsRepositoryHooks>
-      repositoryHooks;
-
-  /// Optional enumerated value serialized in the `repository_projects` wire field.
-  final SdkOptional<
-          WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsRepositoryProjects>
-      repositoryProjects;
-
-  /// Optional enumerated value serialized in the `secret_scanning_alerts` wire field.
-  final SdkOptional<
-          WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsSecretScanningAlerts>
-      secretScanningAlerts;
-
-  /// Optional enumerated value serialized in the `secrets` wire field.
-  final SdkOptional<
-          WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsSecrets>
-      secrets;
-
-  /// Optional enumerated value serialized in the `security_events` wire field.
-  final SdkOptional<
-          WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsSecurityEvents>
-      securityEvents;
-
-  /// Optional enumerated value serialized in the `security_scanning_alert` wire field.
-  final SdkOptional<
-          WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsSecurityScanningAlert>
-      securityScanningAlert;
-
-  /// Optional enumerated value serialized in the `single_file` wire field.
-  final SdkOptional<
-          WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsSingleFile>
-      singleFile;
-
-  /// Optional enumerated value serialized in the `statuses` wire field.
-  final SdkOptional<
-          WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsStatuses>
-      statuses;
-
-  /// Optional enumerated value serialized in the `vulnerability_alerts` wire field.
-  final SdkOptional<
-          WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsVulnerabilityAlerts>
-      vulnerabilityAlerts;
-
-  /// Optional enumerated value serialized in the `workflows` wire field.
-  final SdkOptional<
-          WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsWorkflows>
-      workflows;
-
-  const WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissions(
-      {this.actions = const SdkOmitted(),
-      this.administration = const SdkOmitted(),
-      this.checks = const SdkOmitted(),
-      this.contentReferences = const SdkOmitted(),
-      this.contents = const SdkOmitted(),
-      this.deployments = const SdkOmitted(),
-      this.discussions = const SdkOmitted(),
-      this.emails = const SdkOmitted(),
-      this.environments = const SdkOmitted(),
-      this.issues = const SdkOmitted(),
-      this.keys = const SdkOmitted(),
-      this.members = const SdkOmitted(),
-      this.metadata = const SdkOmitted(),
-      this.organizationAdministration = const SdkOmitted(),
-      this.organizationHooks = const SdkOmitted(),
-      this.organizationPackages = const SdkOmitted(),
-      this.organizationPlan = const SdkOmitted(),
-      this.organizationProjects = const SdkOmitted(),
-      this.organizationSecrets = const SdkOmitted(),
-      this.organizationSelfHostedRunners = const SdkOmitted(),
-      this.organizationUserBlocking = const SdkOmitted(),
-      this.packages = const SdkOmitted(),
-      this.pages = const SdkOmitted(),
-      this.pullRequests = const SdkOmitted(),
-      this.repositoryHooks = const SdkOmitted(),
-      this.repositoryProjects = const SdkOmitted(),
-      this.secretScanningAlerts = const SdkOmitted(),
-      this.secrets = const SdkOmitted(),
-      this.securityEvents = const SdkOmitted(),
-      this.securityScanningAlert = const SdkOmitted(),
-      this.singleFile = const SdkOmitted(),
-      this.statuses = const SdkOmitted(),
-      this.vulnerabilityAlerts = const SdkOmitted(),
-      this.workflows = const SdkOmitted()});
-
-  WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissions Function(
-      {SdkOptional<
-              WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsActions>
-          actions,
+  WebhookDeploymentCreatedDeploymentPerformedViaGithubApp Function(
+      {String? createdAt,
+      String? description,
       SdkOptional<
-              WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsAdministration>
-          administration,
+              List<
+                  WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem>>
+          events,
+      String? externalUrl,
+      String htmlUrl,
+      int? id,
+      String name,
+      String nodeId,
+      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwner? owner,
       SdkOptional<
-              WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsChecks>
-          checks,
-      SdkOptional<
-              WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsContentReferences>
-          contentReferences,
-      SdkOptional<
-              WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsContents>
-          contents,
-      SdkOptional<
-              WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsDeployments>
-          deployments,
-      SdkOptional<
-              WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsDiscussions>
-          discussions,
-      SdkOptional<
-              WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsEmails>
-          emails,
-      SdkOptional<
-              WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsEnvironments>
-          environments,
-      SdkOptional<
-              WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsIssues>
-          issues,
-      SdkOptional<
-              WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsKeys>
-          keys,
-      SdkOptional<
-              WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsMembers>
-          members,
-      SdkOptional<
-              WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsMetadata>
-          metadata,
-      SdkOptional<
-              WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationAdministration>
-          organizationAdministration,
-      SdkOptional<
-              WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationHooks>
-          organizationHooks,
-      SdkOptional<
-              WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationPackages>
-          organizationPackages,
-      SdkOptional<
-              WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationPlan>
-          organizationPlan,
-      SdkOptional<
-              WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationProjects>
-          organizationProjects,
-      SdkOptional<
-              WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationSecrets>
-          organizationSecrets,
-      SdkOptional<
-              WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationSelfHostedRunners>
-          organizationSelfHostedRunners,
-      SdkOptional<
-              WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationUserBlocking>
-          organizationUserBlocking,
-      SdkOptional<
-              WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsPackages>
-          packages,
-      SdkOptional<
-              WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsPages>
-          pages,
-      SdkOptional<
-              WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsPullRequests>
-          pullRequests,
-      SdkOptional<
-              WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsRepositoryHooks>
-          repositoryHooks,
-      SdkOptional<
-              WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsRepositoryProjects>
-          repositoryProjects,
-      SdkOptional<
-              WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsSecretScanningAlerts>
-          secretScanningAlerts,
-      SdkOptional<
-              WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsSecrets>
-          secrets,
-      SdkOptional<
-              WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsSecurityEvents>
-          securityEvents,
-      SdkOptional<
-              WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsSecurityScanningAlert>
-          securityScanningAlert,
-      SdkOptional<
-              WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsSingleFile>
-          singleFile,
-      SdkOptional<
-              WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsStatuses>
-          statuses,
-      SdkOptional<
-              WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsVulnerabilityAlerts>
-          vulnerabilityAlerts,
-      SdkOptional<
-              WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsWorkflows>
-          workflows}) get copyWith => _copyWith;
+              WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissions>
+          permissions,
+      SdkOptional<String> slug,
+      String? updatedAt}) get copyWith => _copyWith;
 
-  WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissions _copyWith(
-          {Object? actions = sdkOmittedValue,
-          Object? administration = sdkOmittedValue,
-          Object? checks = sdkOmittedValue,
-          Object? contentReferences = sdkOmittedValue,
-          Object? contents = sdkOmittedValue,
-          Object? deployments = sdkOmittedValue,
-          Object? discussions = sdkOmittedValue,
-          Object? emails = sdkOmittedValue,
-          Object? environments = sdkOmittedValue,
-          Object? issues = sdkOmittedValue,
-          Object? keys = sdkOmittedValue,
-          Object? members = sdkOmittedValue,
-          Object? metadata = sdkOmittedValue,
-          Object? organizationAdministration = sdkOmittedValue,
-          Object? organizationHooks = sdkOmittedValue,
-          Object? organizationPackages = sdkOmittedValue,
-          Object? organizationPlan = sdkOmittedValue,
-          Object? organizationProjects = sdkOmittedValue,
-          Object? organizationSecrets = sdkOmittedValue,
-          Object? organizationSelfHostedRunners = sdkOmittedValue,
-          Object? organizationUserBlocking = sdkOmittedValue,
-          Object? packages = sdkOmittedValue,
-          Object? pages = sdkOmittedValue,
-          Object? pullRequests = sdkOmittedValue,
-          Object? repositoryHooks = sdkOmittedValue,
-          Object? repositoryProjects = sdkOmittedValue,
-          Object? secretScanningAlerts = sdkOmittedValue,
-          Object? secrets = sdkOmittedValue,
-          Object? securityEvents = sdkOmittedValue,
-          Object? securityScanningAlert = sdkOmittedValue,
-          Object? singleFile = sdkOmittedValue,
-          Object? statuses = sdkOmittedValue,
-          Object? vulnerabilityAlerts = sdkOmittedValue,
-          Object? workflows = sdkOmittedValue}) =>
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissions(
-        actions: identical(actions, sdkOmittedValue)
-            ? this.actions
-            : actions as SdkOptional<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsActions>,
-        administration: identical(administration, sdkOmittedValue)
-            ? this.administration
-            : administration as SdkOptional<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsAdministration>,
-        checks: identical(checks, sdkOmittedValue)
-            ? this.checks
-            : checks as SdkOptional<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsChecks>,
-        contentReferences: identical(contentReferences, sdkOmittedValue)
-            ? this.contentReferences
-            : contentReferences as SdkOptional<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsContentReferences>,
-        contents: identical(contents, sdkOmittedValue)
-            ? this.contents
-            : contents as SdkOptional<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsContents>,
-        deployments: identical(deployments, sdkOmittedValue)
-            ? this.deployments
-            : deployments as SdkOptional<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsDeployments>,
-        discussions: identical(discussions, sdkOmittedValue)
-            ? this.discussions
-            : discussions as SdkOptional<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsDiscussions>,
-        emails: identical(emails, sdkOmittedValue)
-            ? this.emails
-            : emails as SdkOptional<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsEmails>,
-        environments: identical(environments, sdkOmittedValue)
-            ? this.environments
-            : environments as SdkOptional<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsEnvironments>,
-        issues: identical(issues, sdkOmittedValue)
-            ? this.issues
-            : issues as SdkOptional<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsIssues>,
-        keys: identical(keys, sdkOmittedValue)
-            ? this.keys
-            : keys as SdkOptional<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsKeys>,
-        members: identical(members, sdkOmittedValue)
-            ? this.members
-            : members as SdkOptional<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsMembers>,
-        metadata: identical(metadata, sdkOmittedValue)
-            ? this.metadata
-            : metadata as SdkOptional<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsMetadata>,
-        organizationAdministration: identical(
-                organizationAdministration, sdkOmittedValue)
-            ? this.organizationAdministration
-            : organizationAdministration as SdkOptional<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationAdministration>,
-        organizationHooks: identical(organizationHooks, sdkOmittedValue)
-            ? this.organizationHooks
-            : organizationHooks as SdkOptional<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationHooks>,
-        organizationPackages: identical(organizationPackages, sdkOmittedValue)
-            ? this.organizationPackages
-            : organizationPackages as SdkOptional<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationPackages>,
-        organizationPlan: identical(organizationPlan, sdkOmittedValue)
-            ? this.organizationPlan
-            : organizationPlan as SdkOptional<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationPlan>,
-        organizationProjects: identical(organizationProjects, sdkOmittedValue)
-            ? this.organizationProjects
-            : organizationProjects as SdkOptional<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationProjects>,
-        organizationSecrets: identical(organizationSecrets, sdkOmittedValue)
-            ? this.organizationSecrets
-            : organizationSecrets as SdkOptional<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationSecrets>,
-        organizationSelfHostedRunners: identical(
-                organizationSelfHostedRunners, sdkOmittedValue)
-            ? this.organizationSelfHostedRunners
-            : organizationSelfHostedRunners as SdkOptional<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationSelfHostedRunners>,
-        organizationUserBlocking: identical(
-                organizationUserBlocking, sdkOmittedValue)
-            ? this.organizationUserBlocking
-            : organizationUserBlocking as SdkOptional<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationUserBlocking>,
-        packages: identical(packages, sdkOmittedValue)
-            ? this.packages
-            : packages as SdkOptional<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsPackages>,
-        pages: identical(pages, sdkOmittedValue)
-            ? this.pages
-            : pages as SdkOptional<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsPages>,
-        pullRequests: identical(pullRequests, sdkOmittedValue)
-            ? this.pullRequests
-            : pullRequests as SdkOptional<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsPullRequests>,
-        repositoryHooks: identical(repositoryHooks, sdkOmittedValue)
-            ? this.repositoryHooks
-            : repositoryHooks as SdkOptional<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsRepositoryHooks>,
-        repositoryProjects: identical(repositoryProjects, sdkOmittedValue)
-            ? this.repositoryProjects
-            : repositoryProjects as SdkOptional<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsRepositoryProjects>,
-        secretScanningAlerts: identical(secretScanningAlerts, sdkOmittedValue)
-            ? this.secretScanningAlerts
-            : secretScanningAlerts as SdkOptional<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsSecretScanningAlerts>,
-        secrets: identical(secrets, sdkOmittedValue)
-            ? this.secrets
-            : secrets as SdkOptional<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsSecrets>,
-        securityEvents: identical(securityEvents, sdkOmittedValue)
-            ? this.securityEvents
-            : securityEvents as SdkOptional<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsSecurityEvents>,
-        securityScanningAlert: identical(securityScanningAlert, sdkOmittedValue)
-            ? this.securityScanningAlert
-            : securityScanningAlert as SdkOptional<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsSecurityScanningAlert>,
-        singleFile: identical(singleFile, sdkOmittedValue)
-            ? this.singleFile
-            : singleFile as SdkOptional<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsSingleFile>,
-        statuses: identical(statuses, sdkOmittedValue)
-            ? this.statuses
-            : statuses as SdkOptional<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsStatuses>,
-        vulnerabilityAlerts: identical(vulnerabilityAlerts, sdkOmittedValue)
-            ? this.vulnerabilityAlerts
-            : vulnerabilityAlerts as SdkOptional<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsVulnerabilityAlerts>,
-        workflows: identical(workflows, sdkOmittedValue)
-            ? this.workflows
-            : workflows as SdkOptional<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsWorkflows>,
+  WebhookDeploymentCreatedDeploymentPerformedViaGithubApp _copyWith(
+          {Object? createdAt = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? events = sdkOmittedValue,
+          Object? externalUrl = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? owner = sdkOmittedValue,
+          Object? permissions = sdkOmittedValue,
+          Object? slug = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue}) =>
+      WebhookDeploymentCreatedDeploymentPerformedViaGithubApp(
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String?,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as String?,
+        events: identical(events, sdkOmittedValue)
+            ? this.events
+            : events as SdkOptional<
+                List<
+                    WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem>>,
+        externalUrl: identical(externalUrl, sdkOmittedValue)
+            ? this.externalUrl
+            : externalUrl as String?,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int?,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        owner: identical(owner, sdkOmittedValue)
+            ? this.owner
+            : owner
+                as WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwner?,
+        permissions: identical(permissions, sdkOmittedValue)
+            ? this.permissions
+            : permissions as SdkOptional<
+                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissions>,
+        slug: identical(slug, sdkOmittedValue)
+            ? this.slug
+            : slug as SdkOptional<String>,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String?,
       );
 
-  factory WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissions.fromJson(
+  factory WebhookDeploymentCreatedDeploymentPerformedViaGithubApp.fromJson(
           Map<String, dynamic> json) =>
-      WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissions(
-        actions: json['actions'] != null
-            ? SdkPresent((json['actions'] != null
-                ? WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsActions
-                    .fromJson(json['actions'] as String)
+      WebhookDeploymentCreatedDeploymentPerformedViaGithubApp(
+        createdAt: json.containsKey('created_at')
+            ? json['created_at'] as String?
+            : throw ArgumentError.value(
+                null, 'created_at', 'Required property is missing'),
+        description: json.containsKey('description')
+            ? json['description'] as String?
+            : throw ArgumentError.value(
+                null, 'description', 'Required property is missing'),
+        events: json['events'] != null
+            ? SdkPresent(((json['events'] as List?)
+                ?.map((e) =>
+                    WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem
+                        .fromJson(e as String))
+                .toList())!)
+            : const SdkOmitted(),
+        externalUrl: json.containsKey('external_url')
+            ? json['external_url'] as String?
+            : throw ArgumentError.value(
+                null, 'external_url', 'Required property is missing'),
+        htmlUrl: (json['html_url'] as String?)!,
+        id: json.containsKey('id')
+            ? (json['id'] as num?)?.toInt()
+            : throw ArgumentError.value(
+                null, 'id', 'Required property is missing'),
+        name: (json['name'] as String?)!,
+        nodeId: (json['node_id'] as String?)!,
+        owner: json.containsKey('owner')
+            ? json['owner'] != null
+                ? WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwner
+                    .fromJson(json['owner'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'owner', 'Required property is missing'),
+        permissions: json['permissions'] != null
+            ? SdkPresent((json['permissions'] != null
+                ? WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissions
+                    .fromJson(json['permissions'] as Map<String, dynamic>)
                 : null)!)
             : const SdkOmitted(),
-        administration: json['administration'] != null
-            ? SdkPresent((json['administration'] != null
-                ? WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsAdministration
-                    .fromJson(json['administration'] as String)
-                : null)!)
+        slug: json['slug'] != null
+            ? SdkPresent((json['slug'] as String?)!)
             : const SdkOmitted(),
-        checks: json['checks'] != null
-            ? SdkPresent((json['checks'] != null
-                ? WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsChecks
-                    .fromJson(json['checks'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        contentReferences: json['content_references'] != null
-            ? SdkPresent((json['content_references'] != null
-                ? WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsContentReferences
-                    .fromJson(json['content_references'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        contents: json['contents'] != null
-            ? SdkPresent((json['contents'] != null
-                ? WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsContents
-                    .fromJson(json['contents'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        deployments: json['deployments'] != null
-            ? SdkPresent((json['deployments'] != null
-                ? WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsDeployments
-                    .fromJson(json['deployments'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        discussions: json['discussions'] != null
-            ? SdkPresent((json['discussions'] != null
-                ? WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsDiscussions
-                    .fromJson(json['discussions'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        emails: json['emails'] != null
-            ? SdkPresent((json['emails'] != null
-                ? WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsEmails
-                    .fromJson(json['emails'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        environments: json['environments'] != null
-            ? SdkPresent((json['environments'] != null
-                ? WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsEnvironments
-                    .fromJson(json['environments'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        issues: json['issues'] != null
-            ? SdkPresent((json['issues'] != null
-                ? WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsIssues
-                    .fromJson(json['issues'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        keys: json['keys'] != null
-            ? SdkPresent((json['keys'] != null
-                ? WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsKeys
-                    .fromJson(json['keys'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        members: json['members'] != null
-            ? SdkPresent((json['members'] != null
-                ? WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsMembers
-                    .fromJson(json['members'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        metadata: json['metadata'] != null
-            ? SdkPresent((json['metadata'] != null
-                ? WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsMetadata
-                    .fromJson(json['metadata'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        organizationAdministration: json['organization_administration'] != null
-            ? SdkPresent((json['organization_administration'] != null
-                ? WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationAdministration
-                    .fromJson(json['organization_administration'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        organizationHooks: json['organization_hooks'] != null
-            ? SdkPresent((json['organization_hooks'] != null
-                ? WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationHooks
-                    .fromJson(json['organization_hooks'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        organizationPackages: json['organization_packages'] != null
-            ? SdkPresent((json['organization_packages'] != null
-                ? WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationPackages
-                    .fromJson(json['organization_packages'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        organizationPlan: json['organization_plan'] != null
-            ? SdkPresent((json['organization_plan'] != null
-                ? WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationPlan
-                    .fromJson(json['organization_plan'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        organizationProjects: json['organization_projects'] != null
-            ? SdkPresent((json['organization_projects'] != null
-                ? WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationProjects
-                    .fromJson(json['organization_projects'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        organizationSecrets: json['organization_secrets'] != null
-            ? SdkPresent((json['organization_secrets'] != null
-                ? WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationSecrets
-                    .fromJson(json['organization_secrets'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        organizationSelfHostedRunners: json[
-                    'organization_self_hosted_runners'] !=
-                null
-            ? SdkPresent((json['organization_self_hosted_runners'] != null
-                ? WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationSelfHostedRunners
-                    .fromJson(
-                        json['organization_self_hosted_runners'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        organizationUserBlocking: json['organization_user_blocking'] != null
-            ? SdkPresent((json['organization_user_blocking'] != null
-                ? WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationUserBlocking
-                    .fromJson(json['organization_user_blocking'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        packages: json['packages'] != null
-            ? SdkPresent((json['packages'] != null
-                ? WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsPackages
-                    .fromJson(json['packages'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        pages: json['pages'] != null
-            ? SdkPresent((json['pages'] != null
-                ? WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsPages
-                    .fromJson(json['pages'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        pullRequests: json['pull_requests'] != null
-            ? SdkPresent((json['pull_requests'] != null
-                ? WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsPullRequests
-                    .fromJson(json['pull_requests'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        repositoryHooks: json['repository_hooks'] != null
-            ? SdkPresent((json['repository_hooks'] != null
-                ? WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsRepositoryHooks
-                    .fromJson(json['repository_hooks'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        repositoryProjects: json['repository_projects'] != null
-            ? SdkPresent((json['repository_projects'] != null
-                ? WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsRepositoryProjects
-                    .fromJson(json['repository_projects'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        secretScanningAlerts: json['secret_scanning_alerts'] != null
-            ? SdkPresent((json['secret_scanning_alerts'] != null
-                ? WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsSecretScanningAlerts
-                    .fromJson(json['secret_scanning_alerts'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        secrets: json['secrets'] != null
-            ? SdkPresent((json['secrets'] != null
-                ? WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsSecrets
-                    .fromJson(json['secrets'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        securityEvents: json['security_events'] != null
-            ? SdkPresent((json['security_events'] != null
-                ? WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsSecurityEvents
-                    .fromJson(json['security_events'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        securityScanningAlert: json['security_scanning_alert'] != null
-            ? SdkPresent((json['security_scanning_alert'] != null
-                ? WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsSecurityScanningAlert
-                    .fromJson(json['security_scanning_alert'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        singleFile: json['single_file'] != null
-            ? SdkPresent((json['single_file'] != null
-                ? WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsSingleFile
-                    .fromJson(json['single_file'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        statuses: json['statuses'] != null
-            ? SdkPresent((json['statuses'] != null
-                ? WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsStatuses
-                    .fromJson(json['statuses'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        vulnerabilityAlerts: json['vulnerability_alerts'] != null
-            ? SdkPresent((json['vulnerability_alerts'] != null
-                ? WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsVulnerabilityAlerts
-                    .fromJson(json['vulnerability_alerts'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        workflows: json['workflows'] != null
-            ? SdkPresent((json['workflows'] != null
-                ? WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsWorkflows
-                    .fromJson(json['workflows'] as String)
-                : null)!)
-            : const SdkOmitted(),
+        updatedAt: json.containsKey('updated_at')
+            ? json['updated_at'] as String?
+            : throw ArgumentError.value(
+                null, 'updated_at', 'Required property is missing'),
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (actions) {
+        'created_at': createdAt,
+        'description': description,
+        ...switch (events) {
           SdkPresent<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsActions>(
+                List<
+                    WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEventsItem>>(
             value: final value
           ) =>
             {
-              'actions': value.toJson(),
+              'events': value.map((item) => item.toJson()).toList(),
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (administration) {
+        'external_url': externalUrl,
+        'html_url': htmlUrl,
+        'id': id,
+        'name': name,
+        'node_id': nodeId,
+        'owner': owner?.toJson(),
+        ...switch (permissions) {
           SdkPresent<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsAdministration>(
+                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissions>(
             value: final value
           ) =>
             {
-              'administration': value.toJson(),
+              'permissions': value.toJson(),
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (checks) {
-          SdkPresent<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsChecks>(
+        ...switch (slug) {
+          SdkPresent<String>(value: final value) => {
+              'slug': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'updated_at': updatedAt,
+      };
+}
+
+/// The [deployment](https://docs.github.com/rest/deployments/deployments#list-deployments).
+class WebhookDeploymentCreatedDeployment {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// Required `string` value serialized in the `created_at` wire field.
+  final String createdAt;
+
+  /// Required object value serialized in the `creator` wire field.
+  final WebhookDeploymentCreatedDeploymentCreator? creator;
+
+  /// Required `string` value serialized in the `description` wire field.
+  final String? description;
+
+  /// Required `string` value serialized in the `environment` wire field.
+  final String environment;
+
+  /// Required `integer` value serialized in the `id` wire field.
+  final int id;
+
+  /// Required `string` value serialized in the `node_id` wire field.
+  final String nodeId;
+
+  /// Required `string` value serialized in the `original_environment` wire field.
+  final String originalEnvironment;
+
+  /// Required API value serialized in the `payload` wire field.
+  final WebhookDeploymentCreatedDeploymentPayload payload;
+
+  /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
+  final SdkOptional<WebhookDeploymentCreatedDeploymentPerformedViaGithubApp?>
+      performedViaGithubApp;
+
+  /// Optional `boolean` value serialized in the `production_environment` wire field.
+  final SdkOptional<bool> productionEnvironment;
+
+  /// Required `string` value serialized in the `ref` wire field.
+  final String ref;
+
+  /// Required `uri`-formatted value serialized in the `repository_url` wire field.
+  final String repositoryUrl;
+
+  /// Required `string` value serialized in the `sha` wire field.
+  final String sha;
+
+  /// Required `uri`-formatted value serialized in the `statuses_url` wire field.
+  final String statusesUrl;
+
+  /// Required `string` value serialized in the `task` wire field.
+  final String task;
+
+  /// Optional `boolean` value serialized in the `transient_environment` wire field.
+  final SdkOptional<bool> transientEnvironment;
+
+  /// Required `string` value serialized in the `updated_at` wire field.
+  final String updatedAt;
+
+  /// Required `uri`-formatted value serialized in the `url` wire field.
+  final String url;
+
+  const WebhookDeploymentCreatedDeployment(
+      {required this.createdAt,
+      required this.creator,
+      required this.description,
+      required this.environment,
+      required this.id,
+      required this.nodeId,
+      required this.originalEnvironment,
+      required this.payload,
+      this.performedViaGithubApp = const SdkOmitted(),
+      this.productionEnvironment = const SdkOmitted(),
+      required this.ref,
+      required this.repositoryUrl,
+      required this.sha,
+      required this.statusesUrl,
+      required this.task,
+      this.transientEnvironment = const SdkOmitted(),
+      required this.updatedAt,
+      required this.url});
+
+  WebhookDeploymentCreatedDeployment Function(
+      {String createdAt,
+      WebhookDeploymentCreatedDeploymentCreator? creator,
+      String? description,
+      String environment,
+      int id,
+      String nodeId,
+      String originalEnvironment,
+      WebhookDeploymentCreatedDeploymentPayload payload,
+      SdkOptional<WebhookDeploymentCreatedDeploymentPerformedViaGithubApp?>
+          performedViaGithubApp,
+      SdkOptional<bool> productionEnvironment,
+      String ref,
+      String repositoryUrl,
+      String sha,
+      String statusesUrl,
+      String task,
+      SdkOptional<bool> transientEnvironment,
+      String updatedAt,
+      String url}) get copyWith => _copyWith;
+
+  WebhookDeploymentCreatedDeployment _copyWith(
+          {Object? createdAt = sdkOmittedValue,
+          Object? creator = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? environment = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? originalEnvironment = sdkOmittedValue,
+          Object? payload = sdkOmittedValue,
+          Object? performedViaGithubApp = sdkOmittedValue,
+          Object? productionEnvironment = sdkOmittedValue,
+          Object? ref = sdkOmittedValue,
+          Object? repositoryUrl = sdkOmittedValue,
+          Object? sha = sdkOmittedValue,
+          Object? statusesUrl = sdkOmittedValue,
+          Object? task = sdkOmittedValue,
+          Object? transientEnvironment = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? url = sdkOmittedValue}) =>
+      WebhookDeploymentCreatedDeployment(
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        creator: identical(creator, sdkOmittedValue)
+            ? this.creator
+            : creator as WebhookDeploymentCreatedDeploymentCreator?,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as String?,
+        environment: identical(environment, sdkOmittedValue)
+            ? this.environment
+            : environment as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        originalEnvironment: identical(originalEnvironment, sdkOmittedValue)
+            ? this.originalEnvironment
+            : originalEnvironment as String,
+        payload: identical(payload, sdkOmittedValue)
+            ? this.payload
+            : payload as WebhookDeploymentCreatedDeploymentPayload,
+        performedViaGithubApp: identical(performedViaGithubApp, sdkOmittedValue)
+            ? this.performedViaGithubApp
+            : performedViaGithubApp as SdkOptional<
+                WebhookDeploymentCreatedDeploymentPerformedViaGithubApp?>,
+        productionEnvironment: identical(productionEnvironment, sdkOmittedValue)
+            ? this.productionEnvironment
+            : productionEnvironment as SdkOptional<bool>,
+        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+        repositoryUrl: identical(repositoryUrl, sdkOmittedValue)
+            ? this.repositoryUrl
+            : repositoryUrl as String,
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+        statusesUrl: identical(statusesUrl, sdkOmittedValue)
+            ? this.statusesUrl
+            : statusesUrl as String,
+        task: identical(task, sdkOmittedValue) ? this.task : task as String,
+        transientEnvironment: identical(transientEnvironment, sdkOmittedValue)
+            ? this.transientEnvironment
+            : transientEnvironment as SdkOptional<bool>,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
+
+  factory WebhookDeploymentCreatedDeployment.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookDeploymentCreatedDeployment(
+        createdAt: (json['created_at'] as String?)!,
+        creator: json.containsKey('creator')
+            ? json['creator'] != null
+                ? WebhookDeploymentCreatedDeploymentCreator.fromJson(
+                    json['creator'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'creator', 'Required property is missing'),
+        description: json.containsKey('description')
+            ? json['description'] as String?
+            : throw ArgumentError.value(
+                null, 'description', 'Required property is missing'),
+        environment: (json['environment'] as String?)!,
+        id: ((json['id'] as num?)?.toInt())!,
+        nodeId: (json['node_id'] as String?)!,
+        originalEnvironment: (json['original_environment'] as String?)!,
+        payload: (json['payload'] != null
+            ? WebhookDeploymentCreatedDeploymentPayload.fromJson(
+                json['payload'])
+            : null)!,
+        performedViaGithubApp: json.containsKey('performed_via_github_app')
+            ? SdkPresent(json['performed_via_github_app'] != null
+                ? WebhookDeploymentCreatedDeploymentPerformedViaGithubApp
+                    .fromJson(json['performed_via_github_app']
+                        as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        productionEnvironment: json['production_environment'] != null
+            ? SdkPresent((json['production_environment'] as bool?)!)
+            : const SdkOmitted(),
+        ref: (json['ref'] as String?)!,
+        repositoryUrl: (json['repository_url'] as String?)!,
+        sha: (json['sha'] as String?)!,
+        statusesUrl: (json['statuses_url'] as String?)!,
+        task: (json['task'] as String?)!,
+        transientEnvironment: json['transient_environment'] != null
+            ? SdkPresent((json['transient_environment'] as bool?)!)
+            : const SdkOmitted(),
+        updatedAt: (json['updated_at'] as String?)!,
+        url: (json['url'] as String?)!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'created_at': createdAt,
+        'creator': creator?.toJson(),
+        'description': description,
+        'environment': environment,
+        'id': id,
+        'node_id': nodeId,
+        'original_environment': originalEnvironment,
+        'payload': payload.toJson(),
+        ...switch (performedViaGithubApp) {
+          SdkPresent<WebhookDeploymentCreatedDeploymentPerformedViaGithubApp?>(
             value: final value
           ) =>
             {
-              'checks': value.toJson(),
+              'performed_via_github_app': value?.toJson(),
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (contentReferences) {
-          SdkPresent<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsContentReferences>(
-            value: final value
-          ) =>
-            {
-              'content_references': value.toJson(),
+        ...switch (productionEnvironment) {
+          SdkPresent<bool>(value: final value) => {
+              'production_environment': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (contents) {
-          SdkPresent<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsContents>(
-            value: final value
-          ) =>
-            {
-              'contents': value.toJson(),
+        'ref': ref,
+        'repository_url': repositoryUrl,
+        'sha': sha,
+        'statuses_url': statusesUrl,
+        'task': task,
+        ...switch (transientEnvironment) {
+          SdkPresent<bool>(value: final value) => {
+              'transient_environment': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (deployments) {
-          SdkPresent<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsDeployments>(
-            value: final value
-          ) =>
-            {
-              'deployments': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (discussions) {
-          SdkPresent<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsDiscussions>(
-            value: final value
-          ) =>
-            {
-              'discussions': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (emails) {
-          SdkPresent<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsEmails>(
-            value: final value
-          ) =>
-            {
-              'emails': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (environments) {
-          SdkPresent<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsEnvironments>(
-            value: final value
-          ) =>
-            {
-              'environments': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (issues) {
-          SdkPresent<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsIssues>(
-            value: final value
-          ) =>
-            {
-              'issues': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (keys) {
-          SdkPresent<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsKeys>(
-            value: final value
-          ) =>
-            {
-              'keys': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (members) {
-          SdkPresent<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsMembers>(
-            value: final value
-          ) =>
-            {
-              'members': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (metadata) {
-          SdkPresent<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsMetadata>(
-            value: final value
-          ) =>
-            {
-              'metadata': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (organizationAdministration) {
-          SdkPresent<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationAdministration>(
-            value: final value
-          ) =>
-            {
-              'organization_administration': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (organizationHooks) {
-          SdkPresent<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationHooks>(
-            value: final value
-          ) =>
-            {
-              'organization_hooks': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (organizationPackages) {
-          SdkPresent<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationPackages>(
-            value: final value
-          ) =>
-            {
-              'organization_packages': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (organizationPlan) {
-          SdkPresent<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationPlan>(
-            value: final value
-          ) =>
-            {
-              'organization_plan': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (organizationProjects) {
-          SdkPresent<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationProjects>(
-            value: final value
-          ) =>
-            {
-              'organization_projects': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (organizationSecrets) {
-          SdkPresent<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationSecrets>(
-            value: final value
-          ) =>
-            {
-              'organization_secrets': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (organizationSelfHostedRunners) {
-          SdkPresent<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationSelfHostedRunners>(
-            value: final value
-          ) =>
-            {
-              'organization_self_hosted_runners': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (organizationUserBlocking) {
-          SdkPresent<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsOrganizationUserBlocking>(
-            value: final value
-          ) =>
-            {
-              'organization_user_blocking': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (packages) {
-          SdkPresent<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsPackages>(
-            value: final value
-          ) =>
-            {
-              'packages': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pages) {
-          SdkPresent<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsPages>(
-            value: final value
-          ) =>
-            {
-              'pages': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pullRequests) {
-          SdkPresent<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsPullRequests>(
-            value: final value
-          ) =>
-            {
-              'pull_requests': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (repositoryHooks) {
-          SdkPresent<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsRepositoryHooks>(
-            value: final value
-          ) =>
-            {
-              'repository_hooks': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (repositoryProjects) {
-          SdkPresent<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsRepositoryProjects>(
-            value: final value
-          ) =>
-            {
-              'repository_projects': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (secretScanningAlerts) {
-          SdkPresent<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsSecretScanningAlerts>(
-            value: final value
-          ) =>
-            {
-              'secret_scanning_alerts': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (secrets) {
-          SdkPresent<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsSecrets>(
-            value: final value
-          ) =>
-            {
-              'secrets': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (securityEvents) {
-          SdkPresent<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsSecurityEvents>(
-            value: final value
-          ) =>
-            {
-              'security_events': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (securityScanningAlert) {
-          SdkPresent<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsSecurityScanningAlert>(
-            value: final value
-          ) =>
-            {
-              'security_scanning_alert': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (singleFile) {
-          SdkPresent<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsSingleFile>(
-            value: final value
-          ) =>
-            {
-              'single_file': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (statuses) {
-          SdkPresent<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsStatuses>(
-            value: final value
-          ) =>
-            {
-              'statuses': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (vulnerabilityAlerts) {
-          SdkPresent<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsVulnerabilityAlerts>(
-            value: final value
-          ) =>
-            {
-              'vulnerability_alerts': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (workflows) {
-          SdkPresent<
-                WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissionsWorkflows>(
-            value: final value
-          ) =>
-            {
-              'workflows': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
+        'updated_at': updatedAt,
+        'url': url,
       };
 }

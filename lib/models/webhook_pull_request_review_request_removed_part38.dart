@@ -4,7 +4,7 @@
 part of 'webhook_pull_request_review_request_removed.dart';
 
 // webhook_pull_request_review_request_removed domain models (part 38)
-class WebhookPullRequestReviewRequestRemovedVariant1PullRequestMergedBy {
+class WebhookPullRequestReviewRequestRemovedVariant1PullRequestHeadUser {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   final SdkOptional<String> avatarUrl;
@@ -27,12 +27,12 @@ class WebhookPullRequestReviewRequestRemovedVariant1PullRequestMergedBy {
   final SdkOptional<String> starredUrl;
   final SdkOptional<String> subscriptionsUrl;
   final SdkOptional<
-          WebhookPullRequestReviewRequestRemovedVariant1PullRequestMergedByType>
+          WebhookPullRequestReviewRequestRemovedVariant1PullRequestHeadUserType>
       type_;
   final SdkOptional<String> url;
   final SdkOptional<String> userViewType;
 
-  const WebhookPullRequestReviewRequestRemovedVariant1PullRequestMergedBy(
+  const WebhookPullRequestReviewRequestRemovedVariant1PullRequestHeadUser(
       {this.avatarUrl = const SdkOmitted(),
       this.deleted = const SdkOmitted(),
       this.email = const SdkOmitted(),
@@ -56,7 +56,7 @@ class WebhookPullRequestReviewRequestRemovedVariant1PullRequestMergedBy {
       this.url = const SdkOmitted(),
       this.userViewType = const SdkOmitted()});
 
-  WebhookPullRequestReviewRequestRemovedVariant1PullRequestMergedBy Function(
+  WebhookPullRequestReviewRequestRemovedVariant1PullRequestHeadUser Function(
       {SdkOptional<String> avatarUrl,
       SdkOptional<bool> deleted,
       SdkOptional<String?> email,
@@ -77,12 +77,12 @@ class WebhookPullRequestReviewRequestRemovedVariant1PullRequestMergedBy {
       SdkOptional<String> starredUrl,
       SdkOptional<String> subscriptionsUrl,
       SdkOptional<
-              WebhookPullRequestReviewRequestRemovedVariant1PullRequestMergedByType>
+              WebhookPullRequestReviewRequestRemovedVariant1PullRequestHeadUserType>
           type_,
       SdkOptional<String> url,
       SdkOptional<String> userViewType}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewRequestRemovedVariant1PullRequestMergedBy _copyWith(
+  WebhookPullRequestReviewRequestRemovedVariant1PullRequestHeadUser _copyWith(
           {Object? avatarUrl = sdkOmittedValue,
           Object? deleted = sdkOmittedValue,
           Object? email = sdkOmittedValue,
@@ -105,7 +105,7 @@ class WebhookPullRequestReviewRequestRemovedVariant1PullRequestMergedBy {
           Object? type_ = sdkOmittedValue,
           Object? url = sdkOmittedValue,
           Object? userViewType = sdkOmittedValue}) =>
-      WebhookPullRequestReviewRequestRemovedVariant1PullRequestMergedBy(
+      WebhookPullRequestReviewRequestRemovedVariant1PullRequestHeadUser(
         avatarUrl: identical(avatarUrl, sdkOmittedValue)
             ? this.avatarUrl
             : avatarUrl as SdkOptional<String>,
@@ -162,7 +162,7 @@ class WebhookPullRequestReviewRequestRemovedVariant1PullRequestMergedBy {
         type_: identical(type_, sdkOmittedValue)
             ? this.type_
             : type_ as SdkOptional<
-                WebhookPullRequestReviewRequestRemovedVariant1PullRequestMergedByType>,
+                WebhookPullRequestReviewRequestRemovedVariant1PullRequestHeadUserType>,
         url: identical(url, sdkOmittedValue)
             ? this.url
             : url as SdkOptional<String>,
@@ -171,9 +171,9 @@ class WebhookPullRequestReviewRequestRemovedVariant1PullRequestMergedBy {
             : userViewType as SdkOptional<String>,
       );
 
-  factory WebhookPullRequestReviewRequestRemovedVariant1PullRequestMergedBy.fromJson(
+  factory WebhookPullRequestReviewRequestRemovedVariant1PullRequestHeadUser.fromJson(
           Map<String, dynamic> json) =>
-      WebhookPullRequestReviewRequestRemovedVariant1PullRequestMergedBy(
+      WebhookPullRequestReviewRequestRemovedVariant1PullRequestHeadUser(
         avatarUrl: json['avatar_url'] != null
             ? SdkPresent((json['avatar_url'] as String?)!)
             : const SdkOmitted(),
@@ -229,7 +229,7 @@ class WebhookPullRequestReviewRequestRemovedVariant1PullRequestMergedBy {
             : const SdkOmitted(),
         type_: json['type'] != null
             ? SdkPresent((json['type'] != null
-                ? WebhookPullRequestReviewRequestRemovedVariant1PullRequestMergedByType
+                ? WebhookPullRequestReviewRequestRemovedVariant1PullRequestHeadUserType
                     .fromJson(json['type'] as String)
                 : null)!)
             : const SdkOmitted(),
@@ -348,7 +348,7 @@ class WebhookPullRequestReviewRequestRemovedVariant1PullRequestMergedBy {
         },
         ...switch (type_) {
           SdkPresent<
-                WebhookPullRequestReviewRequestRemovedVariant1PullRequestMergedByType>(
+                WebhookPullRequestReviewRequestRemovedVariant1PullRequestHeadUserType>(
             value: final value
           ) =>
             {

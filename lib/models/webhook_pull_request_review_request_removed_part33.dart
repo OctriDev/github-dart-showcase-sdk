@@ -4,7 +4,7 @@
 part of 'webhook_pull_request_review_request_removed.dart';
 
 // webhook_pull_request_review_request_removed domain models (part 33)
-class WebhookPullRequestReviewRequestRemovedVariant1PullRequestHeadRepoOwner {
+class WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseUser {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   final SdkOptional<String> avatarUrl;
@@ -27,12 +27,12 @@ class WebhookPullRequestReviewRequestRemovedVariant1PullRequestHeadRepoOwner {
   final SdkOptional<String> starredUrl;
   final SdkOptional<String> subscriptionsUrl;
   final SdkOptional<
-          WebhookPullRequestReviewRequestRemovedVariant1PullRequestHeadRepoOwnerType>
+          WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseUserType>
       type_;
   final SdkOptional<String> url;
   final SdkOptional<String> userViewType;
 
-  const WebhookPullRequestReviewRequestRemovedVariant1PullRequestHeadRepoOwner(
+  const WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseUser(
       {this.avatarUrl = const SdkOmitted(),
       this.deleted = const SdkOmitted(),
       this.email = const SdkOmitted(),
@@ -56,7 +56,7 @@ class WebhookPullRequestReviewRequestRemovedVariant1PullRequestHeadRepoOwner {
       this.url = const SdkOmitted(),
       this.userViewType = const SdkOmitted()});
 
-  WebhookPullRequestReviewRequestRemovedVariant1PullRequestHeadRepoOwner Function(
+  WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseUser Function(
       {SdkOptional<String> avatarUrl,
       SdkOptional<bool> deleted,
       SdkOptional<String?> email,
@@ -77,106 +77,103 @@ class WebhookPullRequestReviewRequestRemovedVariant1PullRequestHeadRepoOwner {
       SdkOptional<String> starredUrl,
       SdkOptional<String> subscriptionsUrl,
       SdkOptional<
-              WebhookPullRequestReviewRequestRemovedVariant1PullRequestHeadRepoOwnerType>
+              WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseUserType>
           type_,
       SdkOptional<String> url,
       SdkOptional<String> userViewType}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewRequestRemovedVariant1PullRequestHeadRepoOwner
-      _copyWith(
-              {Object? avatarUrl = sdkOmittedValue,
-              Object? deleted = sdkOmittedValue,
-              Object? email = sdkOmittedValue,
-              Object? eventsUrl = sdkOmittedValue,
-              Object? followersUrl = sdkOmittedValue,
-              Object? followingUrl = sdkOmittedValue,
-              Object? gistsUrl = sdkOmittedValue,
-              Object? gravatarId = sdkOmittedValue,
-              Object? htmlUrl = sdkOmittedValue,
-              Object? id = sdkOmittedValue,
-              Object? login = sdkOmittedValue,
-              Object? name = sdkOmittedValue,
-              Object? nodeId = sdkOmittedValue,
-              Object? organizationsUrl = sdkOmittedValue,
-              Object? receivedEventsUrl = sdkOmittedValue,
-              Object? reposUrl = sdkOmittedValue,
-              Object? siteAdmin = sdkOmittedValue,
-              Object? starredUrl = sdkOmittedValue,
-              Object? subscriptionsUrl = sdkOmittedValue,
-              Object? type_ = sdkOmittedValue,
-              Object? url = sdkOmittedValue,
-              Object? userViewType = sdkOmittedValue}) =>
-          WebhookPullRequestReviewRequestRemovedVariant1PullRequestHeadRepoOwner(
-            avatarUrl: identical(avatarUrl, sdkOmittedValue)
-                ? this.avatarUrl
-                : avatarUrl as SdkOptional<String>,
-            deleted: identical(deleted, sdkOmittedValue)
-                ? this.deleted
-                : deleted as SdkOptional<bool>,
-            email: identical(email, sdkOmittedValue)
-                ? this.email
-                : email as SdkOptional<String?>,
-            eventsUrl: identical(eventsUrl, sdkOmittedValue)
-                ? this.eventsUrl
-                : eventsUrl as SdkOptional<String>,
-            followersUrl: identical(followersUrl, sdkOmittedValue)
-                ? this.followersUrl
-                : followersUrl as SdkOptional<String>,
-            followingUrl: identical(followingUrl, sdkOmittedValue)
-                ? this.followingUrl
-                : followingUrl as SdkOptional<String>,
-            gistsUrl: identical(gistsUrl, sdkOmittedValue)
-                ? this.gistsUrl
-                : gistsUrl as SdkOptional<String>,
-            gravatarId: identical(gravatarId, sdkOmittedValue)
-                ? this.gravatarId
-                : gravatarId as SdkOptional<String>,
-            htmlUrl: identical(htmlUrl, sdkOmittedValue)
-                ? this.htmlUrl
-                : htmlUrl as SdkOptional<String>,
-            id: identical(id, sdkOmittedValue) ? this.id : id as int,
-            login: identical(login, sdkOmittedValue)
-                ? this.login
-                : login as String,
-            name: identical(name, sdkOmittedValue)
-                ? this.name
-                : name as SdkOptional<String>,
-            nodeId: identical(nodeId, sdkOmittedValue)
-                ? this.nodeId
-                : nodeId as SdkOptional<String>,
-            organizationsUrl: identical(organizationsUrl, sdkOmittedValue)
-                ? this.organizationsUrl
-                : organizationsUrl as SdkOptional<String>,
-            receivedEventsUrl: identical(receivedEventsUrl, sdkOmittedValue)
-                ? this.receivedEventsUrl
-                : receivedEventsUrl as SdkOptional<String>,
-            reposUrl: identical(reposUrl, sdkOmittedValue)
-                ? this.reposUrl
-                : reposUrl as SdkOptional<String>,
-            siteAdmin: identical(siteAdmin, sdkOmittedValue)
-                ? this.siteAdmin
-                : siteAdmin as SdkOptional<bool>,
-            starredUrl: identical(starredUrl, sdkOmittedValue)
-                ? this.starredUrl
-                : starredUrl as SdkOptional<String>,
-            subscriptionsUrl: identical(subscriptionsUrl, sdkOmittedValue)
-                ? this.subscriptionsUrl
-                : subscriptionsUrl as SdkOptional<String>,
-            type_: identical(type_, sdkOmittedValue)
-                ? this.type_
-                : type_ as SdkOptional<
-                    WebhookPullRequestReviewRequestRemovedVariant1PullRequestHeadRepoOwnerType>,
-            url: identical(url, sdkOmittedValue)
-                ? this.url
-                : url as SdkOptional<String>,
-            userViewType: identical(userViewType, sdkOmittedValue)
-                ? this.userViewType
-                : userViewType as SdkOptional<String>,
-          );
+  WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseUser _copyWith(
+          {Object? avatarUrl = sdkOmittedValue,
+          Object? deleted = sdkOmittedValue,
+          Object? email = sdkOmittedValue,
+          Object? eventsUrl = sdkOmittedValue,
+          Object? followersUrl = sdkOmittedValue,
+          Object? followingUrl = sdkOmittedValue,
+          Object? gistsUrl = sdkOmittedValue,
+          Object? gravatarId = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? login = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? organizationsUrl = sdkOmittedValue,
+          Object? receivedEventsUrl = sdkOmittedValue,
+          Object? reposUrl = sdkOmittedValue,
+          Object? siteAdmin = sdkOmittedValue,
+          Object? starredUrl = sdkOmittedValue,
+          Object? subscriptionsUrl = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? userViewType = sdkOmittedValue}) =>
+      WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseUser(
+        avatarUrl: identical(avatarUrl, sdkOmittedValue)
+            ? this.avatarUrl
+            : avatarUrl as SdkOptional<String>,
+        deleted: identical(deleted, sdkOmittedValue)
+            ? this.deleted
+            : deleted as SdkOptional<bool>,
+        email: identical(email, sdkOmittedValue)
+            ? this.email
+            : email as SdkOptional<String?>,
+        eventsUrl: identical(eventsUrl, sdkOmittedValue)
+            ? this.eventsUrl
+            : eventsUrl as SdkOptional<String>,
+        followersUrl: identical(followersUrl, sdkOmittedValue)
+            ? this.followersUrl
+            : followersUrl as SdkOptional<String>,
+        followingUrl: identical(followingUrl, sdkOmittedValue)
+            ? this.followingUrl
+            : followingUrl as SdkOptional<String>,
+        gistsUrl: identical(gistsUrl, sdkOmittedValue)
+            ? this.gistsUrl
+            : gistsUrl as SdkOptional<String>,
+        gravatarId: identical(gravatarId, sdkOmittedValue)
+            ? this.gravatarId
+            : gravatarId as SdkOptional<String>,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as SdkOptional<String>,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        login: identical(login, sdkOmittedValue) ? this.login : login as String,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        nodeId: identical(nodeId, sdkOmittedValue)
+            ? this.nodeId
+            : nodeId as SdkOptional<String>,
+        organizationsUrl: identical(organizationsUrl, sdkOmittedValue)
+            ? this.organizationsUrl
+            : organizationsUrl as SdkOptional<String>,
+        receivedEventsUrl: identical(receivedEventsUrl, sdkOmittedValue)
+            ? this.receivedEventsUrl
+            : receivedEventsUrl as SdkOptional<String>,
+        reposUrl: identical(reposUrl, sdkOmittedValue)
+            ? this.reposUrl
+            : reposUrl as SdkOptional<String>,
+        siteAdmin: identical(siteAdmin, sdkOmittedValue)
+            ? this.siteAdmin
+            : siteAdmin as SdkOptional<bool>,
+        starredUrl: identical(starredUrl, sdkOmittedValue)
+            ? this.starredUrl
+            : starredUrl as SdkOptional<String>,
+        subscriptionsUrl: identical(subscriptionsUrl, sdkOmittedValue)
+            ? this.subscriptionsUrl
+            : subscriptionsUrl as SdkOptional<String>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as SdkOptional<
+                WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseUserType>,
+        url: identical(url, sdkOmittedValue)
+            ? this.url
+            : url as SdkOptional<String>,
+        userViewType: identical(userViewType, sdkOmittedValue)
+            ? this.userViewType
+            : userViewType as SdkOptional<String>,
+      );
 
-  factory WebhookPullRequestReviewRequestRemovedVariant1PullRequestHeadRepoOwner.fromJson(
+  factory WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseUser.fromJson(
           Map<String, dynamic> json) =>
-      WebhookPullRequestReviewRequestRemovedVariant1PullRequestHeadRepoOwner(
+      WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseUser(
         avatarUrl: json['avatar_url'] != null
             ? SdkPresent((json['avatar_url'] as String?)!)
             : const SdkOmitted(),
@@ -232,7 +229,7 @@ class WebhookPullRequestReviewRequestRemovedVariant1PullRequestHeadRepoOwner {
             : const SdkOmitted(),
         type_: json['type'] != null
             ? SdkPresent((json['type'] != null
-                ? WebhookPullRequestReviewRequestRemovedVariant1PullRequestHeadRepoOwnerType
+                ? WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseUserType
                     .fromJson(json['type'] as String)
                 : null)!)
             : const SdkOmitted(),
@@ -351,7 +348,7 @@ class WebhookPullRequestReviewRequestRemovedVariant1PullRequestHeadRepoOwner {
         },
         ...switch (type_) {
           SdkPresent<
-                WebhookPullRequestReviewRequestRemovedVariant1PullRequestHeadRepoOwnerType>(
+                WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseUserType>(
             value: final value
           ) =>
             {

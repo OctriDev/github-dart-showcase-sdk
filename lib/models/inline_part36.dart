@@ -4,232 +4,6 @@
 part of 'inline.dart';
 
 // Inline operation models (part 36)
-/// The bypass type of the user making the API request for this ruleset. This field is only returned when querying the repository-level endpoint.
-final class RepositoryRulesetCurrentUserCanBypass {
-  final String value;
-
-  const RepositoryRulesetCurrentUserCanBypass._(this.value);
-
-  factory RepositoryRulesetCurrentUserCanBypass.fromJson(String value) =>
-      RepositoryRulesetCurrentUserCanBypass._(value);
-
-  static const always = RepositoryRulesetCurrentUserCanBypass._('always');
-  static const pullRequestsOnly =
-      RepositoryRulesetCurrentUserCanBypass._('pull_requests_only');
-  static const never = RepositoryRulesetCurrentUserCanBypass._('never');
-  static const exempt = RepositoryRulesetCurrentUserCanBypass._('exempt');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is RepositoryRulesetCurrentUserCanBypass && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The type of the source of the ruleset
-final class RepositoryRulesetSourceType {
-  final String value;
-
-  const RepositoryRulesetSourceType._(this.value);
-
-  factory RepositoryRulesetSourceType.fromJson(String value) =>
-      RepositoryRulesetSourceType._(value);
-
-  static const repository = RepositoryRulesetSourceType._('Repository');
-  static const organization = RepositoryRulesetSourceType._('Organization');
-  static const enterprise = RepositoryRulesetSourceType._('Enterprise');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is RepositoryRulesetSourceType && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The target of the ruleset
-final class RepositoryRulesetTarget {
-  final String value;
-
-  const RepositoryRulesetTarget._(this.value);
-
-  factory RepositoryRulesetTarget.fromJson(String value) =>
-      RepositoryRulesetTarget._(value);
-
-  static const branch = RepositoryRulesetTarget._('branch');
-  static const tag = RepositoryRulesetTarget._('tag');
-  static const push = RepositoryRulesetTarget._('push');
-  static const repository = RepositoryRulesetTarget._('repository');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is RepositoryRulesetTarget && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The type of actor that can bypass a ruleset.
-final class RepositoryRulesetBypassActorActorType {
-  final String value;
-
-  const RepositoryRulesetBypassActorActorType._(this.value);
-
-  factory RepositoryRulesetBypassActorActorType.fromJson(String value) =>
-      RepositoryRulesetBypassActorActorType._(value);
-
-  static const integration =
-      RepositoryRulesetBypassActorActorType._('Integration');
-  static const organizationadmin =
-      RepositoryRulesetBypassActorActorType._('OrganizationAdmin');
-  static const repositoryrole =
-      RepositoryRulesetBypassActorActorType._('RepositoryRole');
-  static const team = RepositoryRulesetBypassActorActorType._('Team');
-  static const deploykey = RepositoryRulesetBypassActorActorType._('DeployKey');
-  static const user = RepositoryRulesetBypassActorActorType._('User');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is RepositoryRulesetBypassActorActorType && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests. `pull_request` is not applicable for the `DeployKey` actor type. Also, `pull_request` is only applicable to branch rulesets. When `bypass_mode` is `exempt`, rules will not be run for that actor and a bypass audit entry will not be created.
-final class RepositoryRulesetBypassActorBypassMode {
-  final String value;
-
-  const RepositoryRulesetBypassActorBypassMode._(this.value);
-
-  factory RepositoryRulesetBypassActorBypassMode.fromJson(String value) =>
-      RepositoryRulesetBypassActorBypassMode._(value);
-
-  static const always = RepositoryRulesetBypassActorBypassMode._('always');
-  static const pullRequest =
-      RepositoryRulesetBypassActorBypassMode._('pull_request');
-  static const exempt = RepositoryRulesetBypassActorBypassMode._('exempt');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is RepositoryRulesetBypassActorBypassMode && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The source of the repository property. Defaults to 'custom' if not specified.
-final class RepositoryRulesetConditionsRepositoryPropertySpecSource {
-  final String value;
-
-  const RepositoryRulesetConditionsRepositoryPropertySpecSource._(this.value);
-
-  factory RepositoryRulesetConditionsRepositoryPropertySpecSource.fromJson(
-          String value) =>
-      RepositoryRulesetConditionsRepositoryPropertySpecSource._(value);
-
-  static const custom =
-      RepositoryRulesetConditionsRepositoryPropertySpecSource._('custom');
-  static const system =
-      RepositoryRulesetConditionsRepositoryPropertySpecSource._('system');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is RepositoryRulesetConditionsRepositoryPropertySpecSource &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The operator to use for matching.
-final class RepositoryRuleTagNamePatternParametersOperator {
-  final String value;
-
-  const RepositoryRuleTagNamePatternParametersOperator._(this.value);
-
-  factory RepositoryRuleTagNamePatternParametersOperator.fromJson(
-          String value) =>
-      RepositoryRuleTagNamePatternParametersOperator._(value);
-
-  static const startsWith =
-      RepositoryRuleTagNamePatternParametersOperator._('starts_with');
-  static const endsWith =
-      RepositoryRuleTagNamePatternParametersOperator._('ends_with');
-  static const contains =
-      RepositoryRuleTagNamePatternParametersOperator._('contains');
-  static const regex =
-      RepositoryRuleTagNamePatternParametersOperator._('regex');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is RepositoryRuleTagNamePatternParametersOperator &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `type` wire field.
-enum RepositoryRuleTagNamePatternType {
-  tagNamePattern;
-
-  static RepositoryRuleTagNamePatternType fromJson(String value) {
-    switch (value) {
-      case 'tag_name_pattern':
-        return RepositoryRuleTagNamePatternType.tagNamePattern;
-      default:
-        throw ArgumentError('Unknown RepositoryRuleTagNamePatternType: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case RepositoryRuleTagNamePatternType.tagNamePattern:
-        return 'tag_name_pattern';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
 /// Required enumerated value serialized in the `type` wire field.
 enum RepositoryRuleUpdateType {
   update;
@@ -325,6 +99,273 @@ final class RepositoryWebhooksMergeCommitTitle {
   @override
   bool operator ==(Object other) =>
       other is RepositoryWebhooksMergeCommitTitle && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The policy controlling who can create pull requests: all or collaborators_only.
+final class RepositoryWebhooksPullRequestCreationPolicy {
+  final String value;
+
+  const RepositoryWebhooksPullRequestCreationPolicy._(this.value);
+
+  factory RepositoryWebhooksPullRequestCreationPolicy.fromJson(String value) =>
+      RepositoryWebhooksPullRequestCreationPolicy._(value);
+
+  static const all = RepositoryWebhooksPullRequestCreationPolicy._('all');
+  static const collaboratorsOnly =
+      RepositoryWebhooksPullRequestCreationPolicy._('collaborators_only');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is RepositoryWebhooksPullRequestCreationPolicy &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The default value for a squash merge commit message: - `PR_BODY` - default to the pull request's body. - `COMMIT_MESSAGES` - default to the branch's commit messages. - `BLANK` - default to a blank commit message.
+final class RepositoryWebhooksSquashMergeCommitMessage {
+  final String value;
+
+  const RepositoryWebhooksSquashMergeCommitMessage._(this.value);
+
+  factory RepositoryWebhooksSquashMergeCommitMessage.fromJson(String value) =>
+      RepositoryWebhooksSquashMergeCommitMessage._(value);
+
+  static const prBody = RepositoryWebhooksSquashMergeCommitMessage._('PR_BODY');
+  static const commitMessages =
+      RepositoryWebhooksSquashMergeCommitMessage._('COMMIT_MESSAGES');
+  static const blank = RepositoryWebhooksSquashMergeCommitMessage._('BLANK');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is RepositoryWebhooksSquashMergeCommitMessage &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The default value for a squash merge commit title: - `PR_TITLE` - default to the pull request's title. - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
+final class RepositoryWebhooksSquashMergeCommitTitle {
+  final String value;
+
+  const RepositoryWebhooksSquashMergeCommitTitle._(this.value);
+
+  factory RepositoryWebhooksSquashMergeCommitTitle.fromJson(String value) =>
+      RepositoryWebhooksSquashMergeCommitTitle._(value);
+
+  static const prTitle = RepositoryWebhooksSquashMergeCommitTitle._('PR_TITLE');
+  static const commitOrPrTitle =
+      RepositoryWebhooksSquashMergeCommitTitle._('COMMIT_OR_PR_TITLE');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is RepositoryWebhooksSquashMergeCommitTitle && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The default value for a merge commit message. - `PR_TITLE` - default to the pull request's title. - `PR_BODY` - default to the pull request's body. - `BLANK` - default to a blank commit message.
+final class RepositoryWebhooksTemplateRepositoryMergeCommitMessage {
+  final String value;
+
+  const RepositoryWebhooksTemplateRepositoryMergeCommitMessage._(this.value);
+
+  factory RepositoryWebhooksTemplateRepositoryMergeCommitMessage.fromJson(
+          String value) =>
+      RepositoryWebhooksTemplateRepositoryMergeCommitMessage._(value);
+
+  static const prBody =
+      RepositoryWebhooksTemplateRepositoryMergeCommitMessage._('PR_BODY');
+  static const prTitle =
+      RepositoryWebhooksTemplateRepositoryMergeCommitMessage._('PR_TITLE');
+  static const blank =
+      RepositoryWebhooksTemplateRepositoryMergeCommitMessage._('BLANK');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is RepositoryWebhooksTemplateRepositoryMergeCommitMessage &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The default value for a merge commit title. - `PR_TITLE` - default to the pull request's title. - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
+final class RepositoryWebhooksTemplateRepositoryMergeCommitTitle {
+  final String value;
+
+  const RepositoryWebhooksTemplateRepositoryMergeCommitTitle._(this.value);
+
+  factory RepositoryWebhooksTemplateRepositoryMergeCommitTitle.fromJson(
+          String value) =>
+      RepositoryWebhooksTemplateRepositoryMergeCommitTitle._(value);
+
+  static const prTitle =
+      RepositoryWebhooksTemplateRepositoryMergeCommitTitle._('PR_TITLE');
+  static const mergeMessage =
+      RepositoryWebhooksTemplateRepositoryMergeCommitTitle._('MERGE_MESSAGE');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is RepositoryWebhooksTemplateRepositoryMergeCommitTitle &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The default value for a squash merge commit message: - `PR_BODY` - default to the pull request's body. - `COMMIT_MESSAGES` - default to the branch's commit messages. - `BLANK` - default to a blank commit message.
+final class RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage {
+  final String value;
+
+  const RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage._(
+      this.value);
+
+  factory RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.fromJson(
+          String value) =>
+      RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage._(value);
+
+  static const prBody =
+      RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage._('PR_BODY');
+  static const commitMessages =
+      RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage._(
+          'COMMIT_MESSAGES');
+  static const blank =
+      RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage._('BLANK');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The default value for a squash merge commit title: - `PR_TITLE` - default to the pull request's title. - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
+final class RepositoryWebhooksTemplateRepositorySquashMergeCommitTitle {
+  final String value;
+
+  const RepositoryWebhooksTemplateRepositorySquashMergeCommitTitle._(
+      this.value);
+
+  factory RepositoryWebhooksTemplateRepositorySquashMergeCommitTitle.fromJson(
+          String value) =>
+      RepositoryWebhooksTemplateRepositorySquashMergeCommitTitle._(value);
+
+  static const prTitle =
+      RepositoryWebhooksTemplateRepositorySquashMergeCommitTitle._('PR_TITLE');
+  static const commitOrPrTitle =
+      RepositoryWebhooksTemplateRepositorySquashMergeCommitTitle._(
+          'COMMIT_OR_PR_TITLE');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is RepositoryWebhooksTemplateRepositorySquashMergeCommitTitle &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Update the source for the repository. Must include the branch name, and may optionally specify the subdirectory `/docs`. Possible values are `"gh-pages"`, `"master"`, and `"master /docs"`.
+final class ReposUpdateInformationAboutPagesSiteRequestSourceVariant0 {
+  final String value;
+
+  const ReposUpdateInformationAboutPagesSiteRequestSourceVariant0._(this.value);
+
+  factory ReposUpdateInformationAboutPagesSiteRequestSourceVariant0.fromJson(
+          String value) =>
+      ReposUpdateInformationAboutPagesSiteRequestSourceVariant0._(value);
+
+  static const ghPages =
+      ReposUpdateInformationAboutPagesSiteRequestSourceVariant0._('gh-pages');
+  static const master =
+      ReposUpdateInformationAboutPagesSiteRequestSourceVariant0._('master');
+  static const masterDocs =
+      ReposUpdateInformationAboutPagesSiteRequestSourceVariant0._(
+          'master /docs');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is ReposUpdateInformationAboutPagesSiteRequestSourceVariant0 &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The repository directory that includes the source files for the Pages site. Allowed paths are `/` or `/docs`.
+final class ReposUpdateInformationAboutPagesSiteRequestSourceVariant1Path {
+  final String value;
+
+  const ReposUpdateInformationAboutPagesSiteRequestSourceVariant1Path._(
+      this.value);
+
+  factory ReposUpdateInformationAboutPagesSiteRequestSourceVariant1Path.fromJson(
+          String value) =>
+      ReposUpdateInformationAboutPagesSiteRequestSourceVariant1Path._(value);
+
+  static const unknown =
+      ReposUpdateInformationAboutPagesSiteRequestSourceVariant1Path._('/');
+  static const docs =
+      ReposUpdateInformationAboutPagesSiteRequestSourceVariant1Path._('/docs');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is ReposUpdateInformationAboutPagesSiteRequestSourceVariant1Path &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;

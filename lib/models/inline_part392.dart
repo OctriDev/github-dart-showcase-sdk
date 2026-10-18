@@ -4,538 +4,527 @@
 part of 'inline.dart';
 
 // Inline operation models (part 392)
-class CodespacesCreateWithPrForAuthenticatedUserRequestBody {
+class ReposCreateOrUpdateFileContentsRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// The requested location for a new codespace. Best efforts are made to respect this upon creation. Assigned by IP if not provided.
-  final SdkOptional<String> location;
+  /// The commit message.
+  final String message;
 
-  /// The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is closing down.
-  final SdkOptional<CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo>
-      geo;
+  /// The new file content, using Base64 encoding.
+  final String content;
 
-  /// IP for location auto-detection when proxying a request
-  final SdkOptional<String> clientIp;
+  /// **Required if you are updating a file**. The blob SHA of the file being replaced.
+  final SdkOptional<String> sha;
 
-  /// Machine type to use for this codespace
-  final SdkOptional<String> machine;
+  /// The branch name. Default: the repository’s default branch.
+  final SdkOptional<String> branch;
 
-  /// Path to devcontainer.json config to use for this codespace
-  final SdkOptional<String> devcontainerPath;
+  /// The person that committed the file. Default: the authenticated user.
+  final SdkOptional<ReposCreateOrUpdateFileContentsRequestBodyCommitter>
+      committer;
 
-  /// Whether to authorize requested permissions from devcontainer.json
-  final SdkOptional<bool> multiRepoPermissionsOptOut;
+  /// The author of the file. Default: The `committer` or the authenticated user if you omit `committer`.
+  final SdkOptional<ReposCreateOrUpdateFileContentsRequestBodyAuthor> author;
 
-  /// Working directory for this codespace
-  final SdkOptional<String> workingDirectory;
+  const ReposCreateOrUpdateFileContentsRequestBody(
+      {required this.message,
+      required this.content,
+      this.sha = const SdkOmitted(),
+      this.branch = const SdkOmitted(),
+      this.committer = const SdkOmitted(),
+      this.author = const SdkOmitted()});
 
-  /// Time in minutes before codespace stops from inactivity
-  final SdkOptional<int> idleTimeoutMinutes;
+  ReposCreateOrUpdateFileContentsRequestBody Function(
+          {String message,
+          String content,
+          SdkOptional<String> sha,
+          SdkOptional<String> branch,
+          SdkOptional<ReposCreateOrUpdateFileContentsRequestBodyCommitter>
+              committer,
+          SdkOptional<ReposCreateOrUpdateFileContentsRequestBodyAuthor> author})
+      get copyWith => _copyWith;
 
-  /// Display name for this codespace
-  final SdkOptional<String> displayName;
-
-  /// Duration in minutes after codespace has gone idle in which it will be deleted. Must be integer minutes between 0 and 43200 (30 days).
-  final SdkOptional<int> retentionPeriodMinutes;
-
-  const CodespacesCreateWithPrForAuthenticatedUserRequestBody(
-      {this.location = const SdkOmitted(),
-      this.geo = const SdkOmitted(),
-      this.clientIp = const SdkOmitted(),
-      this.machine = const SdkOmitted(),
-      this.devcontainerPath = const SdkOmitted(),
-      this.multiRepoPermissionsOptOut = const SdkOmitted(),
-      this.workingDirectory = const SdkOmitted(),
-      this.idleTimeoutMinutes = const SdkOmitted(),
-      this.displayName = const SdkOmitted(),
-      this.retentionPeriodMinutes = const SdkOmitted()});
-
-  CodespacesCreateWithPrForAuthenticatedUserRequestBody Function(
-      {SdkOptional<String> location,
-      SdkOptional<CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo> geo,
-      SdkOptional<String> clientIp,
-      SdkOptional<String> machine,
-      SdkOptional<String> devcontainerPath,
-      SdkOptional<bool> multiRepoPermissionsOptOut,
-      SdkOptional<String> workingDirectory,
-      SdkOptional<int> idleTimeoutMinutes,
-      SdkOptional<String> displayName,
-      SdkOptional<int> retentionPeriodMinutes}) get copyWith => _copyWith;
-
-  CodespacesCreateWithPrForAuthenticatedUserRequestBody _copyWith(
-          {Object? location = sdkOmittedValue,
-          Object? geo = sdkOmittedValue,
-          Object? clientIp = sdkOmittedValue,
-          Object? machine = sdkOmittedValue,
-          Object? devcontainerPath = sdkOmittedValue,
-          Object? multiRepoPermissionsOptOut = sdkOmittedValue,
-          Object? workingDirectory = sdkOmittedValue,
-          Object? idleTimeoutMinutes = sdkOmittedValue,
-          Object? displayName = sdkOmittedValue,
-          Object? retentionPeriodMinutes = sdkOmittedValue}) =>
-      CodespacesCreateWithPrForAuthenticatedUserRequestBody(
-        location: identical(location, sdkOmittedValue)
-            ? this.location
-            : location as SdkOptional<String>,
-        geo: identical(geo, sdkOmittedValue)
-            ? this.geo
-            : geo as SdkOptional<
-                CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo>,
-        clientIp: identical(clientIp, sdkOmittedValue)
-            ? this.clientIp
-            : clientIp as SdkOptional<String>,
-        machine: identical(machine, sdkOmittedValue)
-            ? this.machine
-            : machine as SdkOptional<String>,
-        devcontainerPath: identical(devcontainerPath, sdkOmittedValue)
-            ? this.devcontainerPath
-            : devcontainerPath as SdkOptional<String>,
-        multiRepoPermissionsOptOut:
-            identical(multiRepoPermissionsOptOut, sdkOmittedValue)
-                ? this.multiRepoPermissionsOptOut
-                : multiRepoPermissionsOptOut as SdkOptional<bool>,
-        workingDirectory: identical(workingDirectory, sdkOmittedValue)
-            ? this.workingDirectory
-            : workingDirectory as SdkOptional<String>,
-        idleTimeoutMinutes: identical(idleTimeoutMinutes, sdkOmittedValue)
-            ? this.idleTimeoutMinutes
-            : idleTimeoutMinutes as SdkOptional<int>,
-        displayName: identical(displayName, sdkOmittedValue)
-            ? this.displayName
-            : displayName as SdkOptional<String>,
-        retentionPeriodMinutes:
-            identical(retentionPeriodMinutes, sdkOmittedValue)
-                ? this.retentionPeriodMinutes
-                : retentionPeriodMinutes as SdkOptional<int>,
+  ReposCreateOrUpdateFileContentsRequestBody _copyWith(
+          {Object? message = sdkOmittedValue,
+          Object? content = sdkOmittedValue,
+          Object? sha = sdkOmittedValue,
+          Object? branch = sdkOmittedValue,
+          Object? committer = sdkOmittedValue,
+          Object? author = sdkOmittedValue}) =>
+      ReposCreateOrUpdateFileContentsRequestBody(
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+        content: identical(content, sdkOmittedValue)
+            ? this.content
+            : content as String,
+        sha: identical(sha, sdkOmittedValue)
+            ? this.sha
+            : sha as SdkOptional<String>,
+        branch: identical(branch, sdkOmittedValue)
+            ? this.branch
+            : branch as SdkOptional<String>,
+        committer: identical(committer, sdkOmittedValue)
+            ? this.committer
+            : committer as SdkOptional<
+                ReposCreateOrUpdateFileContentsRequestBodyCommitter>,
+        author: identical(author, sdkOmittedValue)
+            ? this.author
+            : author as SdkOptional<
+                ReposCreateOrUpdateFileContentsRequestBodyAuthor>,
       );
 
-  factory CodespacesCreateWithPrForAuthenticatedUserRequestBody.fromJson(
+  factory ReposCreateOrUpdateFileContentsRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      CodespacesCreateWithPrForAuthenticatedUserRequestBody(
-        location: json['location'] != null
-            ? SdkPresent((json['location'] as String?)!)
+      ReposCreateOrUpdateFileContentsRequestBody(
+        message: (json['message'] as String?)!,
+        content: (json['content'] as String?)!,
+        sha: json['sha'] != null
+            ? SdkPresent((json['sha'] as String?)!)
             : const SdkOmitted(),
-        geo: json['geo'] != null
-            ? SdkPresent((json['geo'] != null
-                ? CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo
-                    .fromJson(json['geo'] as String)
+        branch: json['branch'] != null
+            ? SdkPresent((json['branch'] as String?)!)
+            : const SdkOmitted(),
+        committer: json['committer'] != null
+            ? SdkPresent((json['committer'] != null
+                ? ReposCreateOrUpdateFileContentsRequestBodyCommitter.fromJson(
+                    json['committer'] as Map<String, dynamic>)
                 : null)!)
             : const SdkOmitted(),
-        clientIp: json['client_ip'] != null
-            ? SdkPresent((json['client_ip'] as String?)!)
-            : const SdkOmitted(),
-        machine: json['machine'] != null
-            ? SdkPresent((json['machine'] as String?)!)
-            : const SdkOmitted(),
-        devcontainerPath: json['devcontainer_path'] != null
-            ? SdkPresent((json['devcontainer_path'] as String?)!)
-            : const SdkOmitted(),
-        multiRepoPermissionsOptOut:
-            json['multi_repo_permissions_opt_out'] != null
-                ? SdkPresent((json['multi_repo_permissions_opt_out'] as bool?)!)
-                : const SdkOmitted(),
-        workingDirectory: json['working_directory'] != null
-            ? SdkPresent((json['working_directory'] as String?)!)
-            : const SdkOmitted(),
-        idleTimeoutMinutes: json['idle_timeout_minutes'] != null
-            ? SdkPresent(((json['idle_timeout_minutes'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        displayName: json['display_name'] != null
-            ? SdkPresent((json['display_name'] as String?)!)
-            : const SdkOmitted(),
-        retentionPeriodMinutes: json['retention_period_minutes'] != null
-            ? SdkPresent(((json['retention_period_minutes'] as num?)?.toInt())!)
+        author: json['author'] != null
+            ? SdkPresent((json['author'] != null
+                ? ReposCreateOrUpdateFileContentsRequestBodyAuthor.fromJson(
+                    json['author'] as Map<String, dynamic>)
+                : null)!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (location) {
+        'message': message,
+        'content': content,
+        ...switch (sha) {
           SdkPresent<String>(value: final value) => {
-              'location': value,
+              'sha': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (geo) {
-          SdkPresent<CodespacesCreateWithPrForAuthenticatedUserRequestBodyGeo>(
+        ...switch (branch) {
+          SdkPresent<String>(value: final value) => {
+              'branch': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (committer) {
+          SdkPresent<ReposCreateOrUpdateFileContentsRequestBodyCommitter>(
             value: final value
           ) =>
             {
-              'geo': value.toJson(),
+              'committer': value.toJson(),
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (clientIp) {
-          SdkPresent<String>(value: final value) => {
-              'client_ip': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (machine) {
-          SdkPresent<String>(value: final value) => {
-              'machine': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (devcontainerPath) {
-          SdkPresent<String>(value: final value) => {
-              'devcontainer_path': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (multiRepoPermissionsOptOut) {
-          SdkPresent<bool>(value: final value) => {
-              'multi_repo_permissions_opt_out': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (workingDirectory) {
-          SdkPresent<String>(value: final value) => {
-              'working_directory': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (idleTimeoutMinutes) {
-          SdkPresent<int>(value: final value) => {
-              'idle_timeout_minutes': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (displayName) {
-          SdkPresent<String>(value: final value) => {
-              'display_name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (retentionPeriodMinutes) {
-          SdkPresent<int>(value: final value) => {
-              'retention_period_minutes': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-class CodespacesListForAuthenticatedUserResponse {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final int totalCount;
-  final List<Codespace> codespaces;
-
-  const CodespacesListForAuthenticatedUserResponse(
-      {required this.totalCount, required this.codespaces});
-
-  CodespacesListForAuthenticatedUserResponse Function(
-      {int totalCount, List<Codespace> codespaces}) get copyWith => _copyWith;
-
-  CodespacesListForAuthenticatedUserResponse _copyWith(
-          {Object? totalCount = sdkOmittedValue,
-          Object? codespaces = sdkOmittedValue}) =>
-      CodespacesListForAuthenticatedUserResponse(
-        totalCount: identical(totalCount, sdkOmittedValue)
-            ? this.totalCount
-            : totalCount as int,
-        codespaces: identical(codespaces, sdkOmittedValue)
-            ? this.codespaces
-            : codespaces as List<Codespace>,
-      );
-
-  factory CodespacesListForAuthenticatedUserResponse.fromJson(
-          Map<String, dynamic> json) =>
-      CodespacesListForAuthenticatedUserResponse(
-        totalCount: ((json['total_count'] as num?)?.toInt())!,
-        codespaces: ((json['codespaces'] as List?)
-            ?.map((e) => Codespace.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'total_count': totalCount,
-        'codespaces': codespaces.map((item) => item.toJson()).toList(),
-      };
-}
-
-class CodespacesCreateForAuthenticatedUserRequestBodyVariant0 {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Repository id for this codespace
-  final int repositoryId;
-
-  /// Git ref (typically a branch name) for this codespace
-  final SdkOptional<String> ref;
-
-  /// The requested location for a new codespace. Best efforts are made to respect this upon creation. Assigned by IP if not provided.
-  final SdkOptional<String> location;
-
-  /// The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is closing down.
-  final SdkOptional<CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo>
-      geo;
-
-  /// IP for location auto-detection when proxying a request
-  final SdkOptional<String> clientIp;
-
-  /// Machine type to use for this codespace
-  final SdkOptional<String> machine;
-
-  /// Path to devcontainer.json config to use for this codespace
-  final SdkOptional<String> devcontainerPath;
-
-  /// Whether to authorize requested permissions from devcontainer.json
-  final SdkOptional<bool> multiRepoPermissionsOptOut;
-
-  /// Working directory for this codespace
-  final SdkOptional<String> workingDirectory;
-
-  /// Time in minutes before codespace stops from inactivity
-  final SdkOptional<int> idleTimeoutMinutes;
-
-  /// Display name for this codespace
-  final SdkOptional<String> displayName;
-
-  /// Duration in minutes after codespace has gone idle in which it will be deleted. Must be integer minutes between 0 and 43200 (30 days).
-  final SdkOptional<int> retentionPeriodMinutes;
-
-  const CodespacesCreateForAuthenticatedUserRequestBodyVariant0(
-      {required this.repositoryId,
-      this.ref = const SdkOmitted(),
-      this.location = const SdkOmitted(),
-      this.geo = const SdkOmitted(),
-      this.clientIp = const SdkOmitted(),
-      this.machine = const SdkOmitted(),
-      this.devcontainerPath = const SdkOmitted(),
-      this.multiRepoPermissionsOptOut = const SdkOmitted(),
-      this.workingDirectory = const SdkOmitted(),
-      this.idleTimeoutMinutes = const SdkOmitted(),
-      this.displayName = const SdkOmitted(),
-      this.retentionPeriodMinutes = const SdkOmitted()});
-
-  CodespacesCreateForAuthenticatedUserRequestBodyVariant0 Function(
-      {int repositoryId,
-      SdkOptional<String> ref,
-      SdkOptional<String> location,
-      SdkOptional<CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo>
-          geo,
-      SdkOptional<String> clientIp,
-      SdkOptional<String> machine,
-      SdkOptional<String> devcontainerPath,
-      SdkOptional<bool> multiRepoPermissionsOptOut,
-      SdkOptional<String> workingDirectory,
-      SdkOptional<int> idleTimeoutMinutes,
-      SdkOptional<String> displayName,
-      SdkOptional<int> retentionPeriodMinutes}) get copyWith => _copyWith;
-
-  CodespacesCreateForAuthenticatedUserRequestBodyVariant0 _copyWith(
-          {Object? repositoryId = sdkOmittedValue,
-          Object? ref = sdkOmittedValue,
-          Object? location = sdkOmittedValue,
-          Object? geo = sdkOmittedValue,
-          Object? clientIp = sdkOmittedValue,
-          Object? machine = sdkOmittedValue,
-          Object? devcontainerPath = sdkOmittedValue,
-          Object? multiRepoPermissionsOptOut = sdkOmittedValue,
-          Object? workingDirectory = sdkOmittedValue,
-          Object? idleTimeoutMinutes = sdkOmittedValue,
-          Object? displayName = sdkOmittedValue,
-          Object? retentionPeriodMinutes = sdkOmittedValue}) =>
-      CodespacesCreateForAuthenticatedUserRequestBodyVariant0(
-        repositoryId: identical(repositoryId, sdkOmittedValue)
-            ? this.repositoryId
-            : repositoryId as int,
-        ref: identical(ref, sdkOmittedValue)
-            ? this.ref
-            : ref as SdkOptional<String>,
-        location: identical(location, sdkOmittedValue)
-            ? this.location
-            : location as SdkOptional<String>,
-        geo: identical(geo, sdkOmittedValue)
-            ? this.geo
-            : geo as SdkOptional<
-                CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo>,
-        clientIp: identical(clientIp, sdkOmittedValue)
-            ? this.clientIp
-            : clientIp as SdkOptional<String>,
-        machine: identical(machine, sdkOmittedValue)
-            ? this.machine
-            : machine as SdkOptional<String>,
-        devcontainerPath: identical(devcontainerPath, sdkOmittedValue)
-            ? this.devcontainerPath
-            : devcontainerPath as SdkOptional<String>,
-        multiRepoPermissionsOptOut:
-            identical(multiRepoPermissionsOptOut, sdkOmittedValue)
-                ? this.multiRepoPermissionsOptOut
-                : multiRepoPermissionsOptOut as SdkOptional<bool>,
-        workingDirectory: identical(workingDirectory, sdkOmittedValue)
-            ? this.workingDirectory
-            : workingDirectory as SdkOptional<String>,
-        idleTimeoutMinutes: identical(idleTimeoutMinutes, sdkOmittedValue)
-            ? this.idleTimeoutMinutes
-            : idleTimeoutMinutes as SdkOptional<int>,
-        displayName: identical(displayName, sdkOmittedValue)
-            ? this.displayName
-            : displayName as SdkOptional<String>,
-        retentionPeriodMinutes:
-            identical(retentionPeriodMinutes, sdkOmittedValue)
-                ? this.retentionPeriodMinutes
-                : retentionPeriodMinutes as SdkOptional<int>,
-      );
-
-  factory CodespacesCreateForAuthenticatedUserRequestBodyVariant0.fromJson(
-          Map<String, dynamic> json) =>
-      CodespacesCreateForAuthenticatedUserRequestBodyVariant0(
-        repositoryId: ((json['repository_id'] as num?)?.toInt())!,
-        ref: json['ref'] != null
-            ? SdkPresent((json['ref'] as String?)!)
-            : const SdkOmitted(),
-        location: json['location'] != null
-            ? SdkPresent((json['location'] as String?)!)
-            : const SdkOmitted(),
-        geo: json['geo'] != null
-            ? SdkPresent((json['geo'] != null
-                ? CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo
-                    .fromJson(json['geo'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        clientIp: json['client_ip'] != null
-            ? SdkPresent((json['client_ip'] as String?)!)
-            : const SdkOmitted(),
-        machine: json['machine'] != null
-            ? SdkPresent((json['machine'] as String?)!)
-            : const SdkOmitted(),
-        devcontainerPath: json['devcontainer_path'] != null
-            ? SdkPresent((json['devcontainer_path'] as String?)!)
-            : const SdkOmitted(),
-        multiRepoPermissionsOptOut:
-            json['multi_repo_permissions_opt_out'] != null
-                ? SdkPresent((json['multi_repo_permissions_opt_out'] as bool?)!)
-                : const SdkOmitted(),
-        workingDirectory: json['working_directory'] != null
-            ? SdkPresent((json['working_directory'] as String?)!)
-            : const SdkOmitted(),
-        idleTimeoutMinutes: json['idle_timeout_minutes'] != null
-            ? SdkPresent(((json['idle_timeout_minutes'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        displayName: json['display_name'] != null
-            ? SdkPresent((json['display_name'] as String?)!)
-            : const SdkOmitted(),
-        retentionPeriodMinutes: json['retention_period_minutes'] != null
-            ? SdkPresent(((json['retention_period_minutes'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        'repository_id': repositoryId,
-        ...switch (ref) {
-          SdkPresent<String>(value: final value) => {
-              'ref': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (location) {
-          SdkPresent<String>(value: final value) => {
-              'location': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (geo) {
-          SdkPresent<
-                CodespacesCreateForAuthenticatedUserRequestBodyVariant0Geo>(
+        ...switch (author) {
+          SdkPresent<ReposCreateOrUpdateFileContentsRequestBodyAuthor>(
             value: final value
           ) =>
             {
-              'geo': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (clientIp) {
-          SdkPresent<String>(value: final value) => {
-              'client_ip': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (machine) {
-          SdkPresent<String>(value: final value) => {
-              'machine': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (devcontainerPath) {
-          SdkPresent<String>(value: final value) => {
-              'devcontainer_path': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (multiRepoPermissionsOptOut) {
-          SdkPresent<bool>(value: final value) => {
-              'multi_repo_permissions_opt_out': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (workingDirectory) {
-          SdkPresent<String>(value: final value) => {
-              'working_directory': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (idleTimeoutMinutes) {
-          SdkPresent<int>(value: final value) => {
-              'idle_timeout_minutes': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (displayName) {
-          SdkPresent<String>(value: final value) => {
-              'display_name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (retentionPeriodMinutes) {
-          SdkPresent<int>(value: final value) => {
-              'retention_period_minutes': value,
+              'author': value.toJson(),
             },
           _ => const <String, dynamic>{},
         },
       };
 }
 
-/// Pull request number for this codespace
-class CodespacesCreateForAuthenticatedUserRequestBodyVariant1PullRequest {
+/// object containing information about the committer.
+class ReposDeleteFileRequestBodyCommitter {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Pull request number
-  final int pullRequestNumber;
+  /// The name of the author (or committer) of the commit
+  final SdkOptional<String> name;
 
-  /// Repository id for this codespace
-  final int repositoryId;
+  /// The email of the author (or committer) of the commit
+  final SdkOptional<String> email;
 
-  const CodespacesCreateForAuthenticatedUserRequestBodyVariant1PullRequest(
-      {required this.pullRequestNumber, required this.repositoryId});
+  const ReposDeleteFileRequestBodyCommitter(
+      {this.name = const SdkOmitted(), this.email = const SdkOmitted()});
 
-  CodespacesCreateForAuthenticatedUserRequestBodyVariant1PullRequest Function(
-      {int pullRequestNumber, int repositoryId}) get copyWith => _copyWith;
+  ReposDeleteFileRequestBodyCommitter Function(
+      {SdkOptional<String> name,
+      SdkOptional<String> email}) get copyWith => _copyWith;
 
-  CodespacesCreateForAuthenticatedUserRequestBodyVariant1PullRequest _copyWith(
-          {Object? pullRequestNumber = sdkOmittedValue,
-          Object? repositoryId = sdkOmittedValue}) =>
-      CodespacesCreateForAuthenticatedUserRequestBodyVariant1PullRequest(
-        pullRequestNumber: identical(pullRequestNumber, sdkOmittedValue)
-            ? this.pullRequestNumber
-            : pullRequestNumber as int,
-        repositoryId: identical(repositoryId, sdkOmittedValue)
-            ? this.repositoryId
-            : repositoryId as int,
+  ReposDeleteFileRequestBodyCommitter _copyWith(
+          {Object? name = sdkOmittedValue, Object? email = sdkOmittedValue}) =>
+      ReposDeleteFileRequestBodyCommitter(
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        email: identical(email, sdkOmittedValue)
+            ? this.email
+            : email as SdkOptional<String>,
       );
 
-  factory CodespacesCreateForAuthenticatedUserRequestBodyVariant1PullRequest.fromJson(
+  factory ReposDeleteFileRequestBodyCommitter.fromJson(
           Map<String, dynamic> json) =>
-      CodespacesCreateForAuthenticatedUserRequestBodyVariant1PullRequest(
-        pullRequestNumber: ((json['pull_request_number'] as num?)?.toInt())!,
-        repositoryId: ((json['repository_id'] as num?)?.toInt())!,
+      ReposDeleteFileRequestBodyCommitter(
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+        email: json['email'] != null
+            ? SdkPresent((json['email'] as String?)!)
+            : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        'pull_request_number': pullRequestNumber,
-        'repository_id': repositoryId,
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (email) {
+          SdkPresent<String>(value: final value) => {
+              'email': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+/// object containing information about the author.
+class ReposDeleteFileRequestBodyAuthor {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The name of the author (or committer) of the commit
+  final SdkOptional<String> name;
+
+  /// The email of the author (or committer) of the commit
+  final SdkOptional<String> email;
+
+  const ReposDeleteFileRequestBodyAuthor(
+      {this.name = const SdkOmitted(), this.email = const SdkOmitted()});
+
+  ReposDeleteFileRequestBodyAuthor Function(
+      {SdkOptional<String> name,
+      SdkOptional<String> email}) get copyWith => _copyWith;
+
+  ReposDeleteFileRequestBodyAuthor _copyWith(
+          {Object? name = sdkOmittedValue, Object? email = sdkOmittedValue}) =>
+      ReposDeleteFileRequestBodyAuthor(
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        email: identical(email, sdkOmittedValue)
+            ? this.email
+            : email as SdkOptional<String>,
+      );
+
+  factory ReposDeleteFileRequestBodyAuthor.fromJson(
+          Map<String, dynamic> json) =>
+      ReposDeleteFileRequestBodyAuthor(
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+        email: json['email'] != null
+            ? SdkPresent((json['email'] as String?)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (email) {
+          SdkPresent<String>(value: final value) => {
+              'email': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class ReposDeleteFileRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The commit message.
+  final String message;
+
+  /// The blob SHA of the file being deleted.
+  final String sha;
+
+  /// The branch name. Default: the repository’s default branch
+  final SdkOptional<String> branch;
+
+  /// object containing information about the committer.
+  final SdkOptional<ReposDeleteFileRequestBodyCommitter> committer;
+
+  /// object containing information about the author.
+  final SdkOptional<ReposDeleteFileRequestBodyAuthor> author;
+
+  const ReposDeleteFileRequestBody(
+      {required this.message,
+      required this.sha,
+      this.branch = const SdkOmitted(),
+      this.committer = const SdkOmitted(),
+      this.author = const SdkOmitted()});
+
+  ReposDeleteFileRequestBody Function(
+          {String message,
+          String sha,
+          SdkOptional<String> branch,
+          SdkOptional<ReposDeleteFileRequestBodyCommitter> committer,
+          SdkOptional<ReposDeleteFileRequestBodyAuthor> author})
+      get copyWith => _copyWith;
+
+  ReposDeleteFileRequestBody _copyWith(
+          {Object? message = sdkOmittedValue,
+          Object? sha = sdkOmittedValue,
+          Object? branch = sdkOmittedValue,
+          Object? committer = sdkOmittedValue,
+          Object? author = sdkOmittedValue}) =>
+      ReposDeleteFileRequestBody(
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+        branch: identical(branch, sdkOmittedValue)
+            ? this.branch
+            : branch as SdkOptional<String>,
+        committer: identical(committer, sdkOmittedValue)
+            ? this.committer
+            : committer as SdkOptional<ReposDeleteFileRequestBodyCommitter>,
+        author: identical(author, sdkOmittedValue)
+            ? this.author
+            : author as SdkOptional<ReposDeleteFileRequestBodyAuthor>,
+      );
+
+  factory ReposDeleteFileRequestBody.fromJson(Map<String, dynamic> json) =>
+      ReposDeleteFileRequestBody(
+        message: (json['message'] as String?)!,
+        sha: (json['sha'] as String?)!,
+        branch: json['branch'] != null
+            ? SdkPresent((json['branch'] as String?)!)
+            : const SdkOmitted(),
+        committer: json['committer'] != null
+            ? SdkPresent((json['committer'] != null
+                ? ReposDeleteFileRequestBodyCommitter.fromJson(
+                    json['committer'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        author: json['author'] != null
+            ? SdkPresent((json['author'] != null
+                ? ReposDeleteFileRequestBodyAuthor.fromJson(
+                    json['author'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        'message': message,
+        'sha': sha,
+        ...switch (branch) {
+          SdkPresent<String>(value: final value) => {
+              'branch': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (committer) {
+          SdkPresent<ReposDeleteFileRequestBodyCommitter>(value: final value) =>
+            {
+              'committer': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (author) {
+          SdkPresent<ReposDeleteFileRequestBodyAuthor>(value: final value) => {
+              'author': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class ReposCreateDeploymentRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The ref to deploy. This can be a branch, tag, or SHA.
+  final String ref;
+
+  /// Specifies a task to execute (e.g., `deploy` or `deploy:migrations`).
+  final SdkOptional<String> task;
+
+  /// Attempts to automatically merge the default branch into the requested ref, if it's behind the default branch.
+  final SdkOptional<bool> autoMerge;
+
+  /// The [status](https://docs.github.com/rest/commits/statuses) contexts to verify against commit status checks. If you omit this parameter, GitHub verifies all unique contexts before creating a deployment. To bypass checking entirely, pass an empty array. Defaults to all unique contexts.
+  final SdkOptional<List<String>> requiredContexts;
+
+  /// Typed representation of the `ReposCreateDeploymentRequestPayload` API schema.
+  final SdkOptional<ReposCreateDeploymentRequestPayload> payload;
+
+  /// Name for the target deployment environment (e.g., `production`, `staging`, `qa`).
+  final SdkOptional<String> environment;
+
+  /// Short description of the deployment.
+  final SdkOptional<String?> description;
+
+  /// Specifies if the given environment is specific to the deployment and will no longer exist at some point in the future. Default: `false`
+  final SdkOptional<bool> transientEnvironment;
+
+  /// Specifies if the given environment is one that end-users directly interact with. Default: `true` when `environment` is `production` and `false` otherwise.
+  final SdkOptional<bool> productionEnvironment;
+
+  const ReposCreateDeploymentRequestBody(
+      {required this.ref,
+      this.task = const SdkOmitted(),
+      this.autoMerge = const SdkOmitted(),
+      this.requiredContexts = const SdkOmitted(),
+      this.payload = const SdkOmitted(),
+      this.environment = const SdkOmitted(),
+      this.description = const SdkOmitted(),
+      this.transientEnvironment = const SdkOmitted(),
+      this.productionEnvironment = const SdkOmitted()});
+
+  ReposCreateDeploymentRequestBody Function(
+      {String ref,
+      SdkOptional<String> task,
+      SdkOptional<bool> autoMerge,
+      SdkOptional<List<String>> requiredContexts,
+      SdkOptional<ReposCreateDeploymentRequestPayload> payload,
+      SdkOptional<String> environment,
+      SdkOptional<String?> description,
+      SdkOptional<bool> transientEnvironment,
+      SdkOptional<bool> productionEnvironment}) get copyWith => _copyWith;
+
+  ReposCreateDeploymentRequestBody _copyWith(
+          {Object? ref = sdkOmittedValue,
+          Object? task = sdkOmittedValue,
+          Object? autoMerge = sdkOmittedValue,
+          Object? requiredContexts = sdkOmittedValue,
+          Object? payload = sdkOmittedValue,
+          Object? environment = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? transientEnvironment = sdkOmittedValue,
+          Object? productionEnvironment = sdkOmittedValue}) =>
+      ReposCreateDeploymentRequestBody(
+        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+        task: identical(task, sdkOmittedValue)
+            ? this.task
+            : task as SdkOptional<String>,
+        autoMerge: identical(autoMerge, sdkOmittedValue)
+            ? this.autoMerge
+            : autoMerge as SdkOptional<bool>,
+        requiredContexts: identical(requiredContexts, sdkOmittedValue)
+            ? this.requiredContexts
+            : requiredContexts as SdkOptional<List<String>>,
+        payload: identical(payload, sdkOmittedValue)
+            ? this.payload
+            : payload as SdkOptional<ReposCreateDeploymentRequestPayload>,
+        environment: identical(environment, sdkOmittedValue)
+            ? this.environment
+            : environment as SdkOptional<String>,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as SdkOptional<String?>,
+        transientEnvironment: identical(transientEnvironment, sdkOmittedValue)
+            ? this.transientEnvironment
+            : transientEnvironment as SdkOptional<bool>,
+        productionEnvironment: identical(productionEnvironment, sdkOmittedValue)
+            ? this.productionEnvironment
+            : productionEnvironment as SdkOptional<bool>,
+      );
+
+  factory ReposCreateDeploymentRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      ReposCreateDeploymentRequestBody(
+        ref: (json['ref'] as String?)!,
+        task: json['task'] != null
+            ? SdkPresent((json['task'] as String?)!)
+            : const SdkOmitted(),
+        autoMerge: json['auto_merge'] != null
+            ? SdkPresent((json['auto_merge'] as bool?)!)
+            : const SdkOmitted(),
+        requiredContexts: json['required_contexts'] != null
+            ? SdkPresent(((json['required_contexts'] as List?)
+                ?.map((e) => e as String)
+                .toList())!)
+            : const SdkOmitted(),
+        payload: json['payload'] != null
+            ? SdkPresent((json['payload'] != null
+                ? ReposCreateDeploymentRequestPayload.fromJson(json['payload'])
+                : null)!)
+            : const SdkOmitted(),
+        environment: json['environment'] != null
+            ? SdkPresent((json['environment'] as String?)!)
+            : const SdkOmitted(),
+        description: json.containsKey('description')
+            ? SdkPresent(json['description'] as String?)
+            : const SdkOmitted(),
+        transientEnvironment: json['transient_environment'] != null
+            ? SdkPresent((json['transient_environment'] as bool?)!)
+            : const SdkOmitted(),
+        productionEnvironment: json['production_environment'] != null
+            ? SdkPresent((json['production_environment'] as bool?)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        'ref': ref,
+        ...switch (task) {
+          SdkPresent<String>(value: final value) => {
+              'task': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (autoMerge) {
+          SdkPresent<bool>(value: final value) => {
+              'auto_merge': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (requiredContexts) {
+          SdkPresent<List<String>>(value: final value) => {
+              'required_contexts': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (payload) {
+          SdkPresent<ReposCreateDeploymentRequestPayload>(value: final value) =>
+            {
+              'payload': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (environment) {
+          SdkPresent<String>(value: final value) => {
+              'environment': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (description) {
+          SdkPresent<String?>(value: final value) => {
+              'description': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (transientEnvironment) {
+          SdkPresent<bool>(value: final value) => {
+              'transient_environment': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (productionEnvironment) {
+          SdkPresent<bool>(value: final value) => {
+              'production_environment': value,
+            },
+          _ => const <String, dynamic>{},
+        },
       };
 }

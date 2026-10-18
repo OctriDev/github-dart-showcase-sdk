@@ -4,45 +4,24 @@
 part of 'inline.dart';
 
 // Inline operation models (part 231)
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookTeamAddedToRepositoryAction {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueOpenedWriteScope {
   final String value;
 
-  const WebhookTeamAddedToRepositoryAction._(this.value);
+  const AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueOpenedWriteScope._(
+      this.value);
 
-  factory WebhookTeamAddedToRepositoryAction.fromJson(String value) =>
-      WebhookTeamAddedToRepositoryAction._(value);
-
-  static const addedToRepository =
-      WebhookTeamAddedToRepositoryAction._('added_to_repository');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookTeamAddedToRepositoryAction && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhookTeamAddedToRepositoryRepositoryOwnerType {
-  final String value;
-
-  const WebhookTeamAddedToRepositoryRepositoryOwnerType._(this.value);
-
-  factory WebhookTeamAddedToRepositoryRepositoryOwnerType.fromJson(
+  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueOpenedWriteScope.fromJson(
           String value) =>
-      WebhookTeamAddedToRepositoryRepositoryOwnerType._(value);
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueOpenedWriteScope
+          ._(value);
 
-  static const bot = WebhookTeamAddedToRepositoryRepositoryOwnerType._('Bot');
-  static const user = WebhookTeamAddedToRepositoryRepositoryOwnerType._('User');
-  static const organization =
-      WebhookTeamAddedToRepositoryRepositoryOwnerType._('Organization');
+  static const trigger =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueOpenedWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueOpenedWriteScope
+          ._('repository');
 
   String toJson() => value;
 
@@ -51,29 +30,32 @@ final class WebhookTeamAddedToRepositoryRepositoryOwnerType {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookTeamAddedToRepositoryRepositoryOwnerType &&
+      other
+          is AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueOpenedWriteScope &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Required enumerated value serialized in the `visibility` wire field.
-final class WebhookTeamAddedToRepositoryRepositoryVisibility {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestAssignedWriteScope {
   final String value;
 
-  const WebhookTeamAddedToRepositoryRepositoryVisibility._(this.value);
+  const AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestAssignedWriteScope._(
+      this.value);
 
-  factory WebhookTeamAddedToRepositoryRepositoryVisibility.fromJson(
+  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestAssignedWriteScope.fromJson(
           String value) =>
-      WebhookTeamAddedToRepositoryRepositoryVisibility._(value);
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestAssignedWriteScope
+          ._(value);
 
-  static const public =
-      WebhookTeamAddedToRepositoryRepositoryVisibility._('public');
-  static const private =
-      WebhookTeamAddedToRepositoryRepositoryVisibility._('private');
-  static const internal =
-      WebhookTeamAddedToRepositoryRepositoryVisibility._('internal');
+  static const trigger =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestAssignedWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestAssignedWriteScope
+          ._('repository');
 
   String toJson() => value;
 
@@ -82,23 +64,31 @@ final class WebhookTeamAddedToRepositoryRepositoryVisibility {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookTeamAddedToRepositoryRepositoryVisibility &&
+      other
+          is AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestAssignedWriteScope &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookTeamCreatedAction {
+final class AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestCommentCommentTypesItem {
   final String value;
 
-  const WebhookTeamCreatedAction._(this.value);
+  const AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestCommentCommentTypesItem._(
+      this.value);
 
-  factory WebhookTeamCreatedAction.fromJson(String value) =>
-      WebhookTeamCreatedAction._(value);
+  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestCommentCommentTypesItem.fromJson(
+          String value) =>
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestCommentCommentTypesItem
+          ._(value);
 
-  static const created = WebhookTeamCreatedAction._('created');
+  static const timelineComment =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestCommentCommentTypesItem
+          ._('timeline_comment');
+  static const reviewComment =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestCommentCommentTypesItem
+          ._('review_comment');
 
   String toJson() => value;
 
@@ -107,25 +97,32 @@ final class WebhookTeamCreatedAction {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookTeamCreatedAction && other.value == value;
+      other
+          is AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestCommentCommentTypesItem &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhookTeamCreatedRepositoryOwnerType {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestCommentWriteScope {
   final String value;
 
-  const WebhookTeamCreatedRepositoryOwnerType._(this.value);
+  const AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestCommentWriteScope._(
+      this.value);
 
-  factory WebhookTeamCreatedRepositoryOwnerType.fromJson(String value) =>
-      WebhookTeamCreatedRepositoryOwnerType._(value);
+  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestCommentWriteScope.fromJson(
+          String value) =>
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestCommentWriteScope
+          ._(value);
 
-  static const bot = WebhookTeamCreatedRepositoryOwnerType._('Bot');
-  static const user = WebhookTeamCreatedRepositoryOwnerType._('User');
-  static const organization =
-      WebhookTeamCreatedRepositoryOwnerType._('Organization');
+  static const trigger =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestCommentWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestCommentWriteScope
+          ._('repository');
 
   String toJson() => value;
 
@@ -134,24 +131,32 @@ final class WebhookTeamCreatedRepositoryOwnerType {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookTeamCreatedRepositoryOwnerType && other.value == value;
+      other
+          is AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestCommentWriteScope &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Required enumerated value serialized in the `visibility` wire field.
-final class WebhookTeamCreatedRepositoryVisibility {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestLabeledWriteScope {
   final String value;
 
-  const WebhookTeamCreatedRepositoryVisibility._(this.value);
+  const AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestLabeledWriteScope._(
+      this.value);
 
-  factory WebhookTeamCreatedRepositoryVisibility.fromJson(String value) =>
-      WebhookTeamCreatedRepositoryVisibility._(value);
+  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestLabeledWriteScope.fromJson(
+          String value) =>
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestLabeledWriteScope
+          ._(value);
 
-  static const public = WebhookTeamCreatedRepositoryVisibility._('public');
-  static const private = WebhookTeamCreatedRepositoryVisibility._('private');
-  static const internal = WebhookTeamCreatedRepositoryVisibility._('internal');
+  static const trigger =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestLabeledWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestLabeledWriteScope
+          ._('repository');
 
   String toJson() => value;
 
@@ -160,22 +165,32 @@ final class WebhookTeamCreatedRepositoryVisibility {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookTeamCreatedRepositoryVisibility && other.value == value;
+      other
+          is AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestLabeledWriteScope &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookTeamDeletedAction {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestMergeConflictWriteScope {
   final String value;
 
-  const WebhookTeamDeletedAction._(this.value);
+  const AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestMergeConflictWriteScope._(
+      this.value);
 
-  factory WebhookTeamDeletedAction.fromJson(String value) =>
-      WebhookTeamDeletedAction._(value);
+  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestMergeConflictWriteScope.fromJson(
+          String value) =>
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestMergeConflictWriteScope
+          ._(value);
 
-  static const deleted = WebhookTeamDeletedAction._('deleted');
+  static const trigger =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestMergeConflictWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestMergeConflictWriteScope
+          ._('repository');
 
   String toJson() => value;
 
@@ -184,25 +199,32 @@ final class WebhookTeamDeletedAction {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookTeamDeletedAction && other.value == value;
+      other
+          is AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestMergeConflictWriteScope &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhookTeamDeletedRepositoryOwnerType {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestMergedWriteScope {
   final String value;
 
-  const WebhookTeamDeletedRepositoryOwnerType._(this.value);
+  const AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestMergedWriteScope._(
+      this.value);
 
-  factory WebhookTeamDeletedRepositoryOwnerType.fromJson(String value) =>
-      WebhookTeamDeletedRepositoryOwnerType._(value);
+  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestMergedWriteScope.fromJson(
+          String value) =>
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestMergedWriteScope
+          ._(value);
 
-  static const bot = WebhookTeamDeletedRepositoryOwnerType._('Bot');
-  static const user = WebhookTeamDeletedRepositoryOwnerType._('User');
-  static const organization =
-      WebhookTeamDeletedRepositoryOwnerType._('Organization');
+  static const trigger =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestMergedWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestMergedWriteScope
+          ._('repository');
 
   String toJson() => value;
 
@@ -211,24 +233,32 @@ final class WebhookTeamDeletedRepositoryOwnerType {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookTeamDeletedRepositoryOwnerType && other.value == value;
+      other
+          is AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestMergedWriteScope &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Required enumerated value serialized in the `visibility` wire field.
-final class WebhookTeamDeletedRepositoryVisibility {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestOpenedWriteScope {
   final String value;
 
-  const WebhookTeamDeletedRepositoryVisibility._(this.value);
+  const AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestOpenedWriteScope._(
+      this.value);
 
-  factory WebhookTeamDeletedRepositoryVisibility.fromJson(String value) =>
-      WebhookTeamDeletedRepositoryVisibility._(value);
+  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestOpenedWriteScope.fromJson(
+          String value) =>
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestOpenedWriteScope
+          ._(value);
 
-  static const public = WebhookTeamDeletedRepositoryVisibility._('public');
-  static const private = WebhookTeamDeletedRepositoryVisibility._('private');
-  static const internal = WebhookTeamDeletedRepositoryVisibility._('internal');
+  static const trigger =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestOpenedWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestOpenedWriteScope
+          ._('repository');
 
   String toJson() => value;
 
@@ -237,22 +267,32 @@ final class WebhookTeamDeletedRepositoryVisibility {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookTeamDeletedRepositoryVisibility && other.value == value;
+      other
+          is AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestOpenedWriteScope &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookTeamEditedAction {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReadyForReviewWriteScope {
   final String value;
 
-  const WebhookTeamEditedAction._(this.value);
+  const AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReadyForReviewWriteScope._(
+      this.value);
 
-  factory WebhookTeamEditedAction.fromJson(String value) =>
-      WebhookTeamEditedAction._(value);
+  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReadyForReviewWriteScope.fromJson(
+          String value) =>
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReadyForReviewWriteScope
+          ._(value);
 
-  static const edited = WebhookTeamEditedAction._('edited');
+  static const trigger =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReadyForReviewWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReadyForReviewWriteScope
+          ._('repository');
 
   String toJson() => value;
 
@@ -261,25 +301,32 @@ final class WebhookTeamEditedAction {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookTeamEditedAction && other.value == value;
+      other
+          is AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReadyForReviewWriteScope &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhookTeamEditedRepositoryOwnerType {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewRequestedWriteScope {
   final String value;
 
-  const WebhookTeamEditedRepositoryOwnerType._(this.value);
+  const AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewRequestedWriteScope._(
+      this.value);
 
-  factory WebhookTeamEditedRepositoryOwnerType.fromJson(String value) =>
-      WebhookTeamEditedRepositoryOwnerType._(value);
+  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewRequestedWriteScope.fromJson(
+          String value) =>
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewRequestedWriteScope
+          ._(value);
 
-  static const bot = WebhookTeamEditedRepositoryOwnerType._('Bot');
-  static const user = WebhookTeamEditedRepositoryOwnerType._('User');
-  static const organization =
-      WebhookTeamEditedRepositoryOwnerType._('Organization');
+  static const trigger =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewRequestedWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewRequestedWriteScope
+          ._('repository');
 
   String toJson() => value;
 
@@ -288,24 +335,34 @@ final class WebhookTeamEditedRepositoryOwnerType {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookTeamEditedRepositoryOwnerType && other.value == value;
+      other
+          is AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewRequestedWriteScope &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Required enumerated value serialized in the `visibility` wire field.
-final class WebhookTeamEditedRepositoryVisibility {
+final class AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewSubmittedStatesItem {
   final String value;
 
-  const WebhookTeamEditedRepositoryVisibility._(this.value);
+  const AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewSubmittedStatesItem._(
+      this.value);
 
-  factory WebhookTeamEditedRepositoryVisibility.fromJson(String value) =>
-      WebhookTeamEditedRepositoryVisibility._(value);
+  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewSubmittedStatesItem.fromJson(
+          String value) =>
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewSubmittedStatesItem
+          ._(value);
 
-  static const public = WebhookTeamEditedRepositoryVisibility._('public');
-  static const private = WebhookTeamEditedRepositoryVisibility._('private');
-  static const internal = WebhookTeamEditedRepositoryVisibility._('internal');
+  static const approved =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewSubmittedStatesItem
+          ._('approved');
+  static const changesRequested =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewSubmittedStatesItem
+          ._('changes_requested');
+  static const commented =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewSubmittedStatesItem
+          ._('commented');
 
   String toJson() => value;
 
@@ -314,23 +371,32 @@ final class WebhookTeamEditedRepositoryVisibility {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookTeamEditedRepositoryVisibility && other.value == value;
+      other
+          is AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewSubmittedStatesItem &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Required enumerated value serialized in the `action` wire field.
-final class WebhookTeamRemovedFromRepositoryAction {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewSubmittedWriteScope {
   final String value;
 
-  const WebhookTeamRemovedFromRepositoryAction._(this.value);
+  const AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewSubmittedWriteScope._(
+      this.value);
 
-  factory WebhookTeamRemovedFromRepositoryAction.fromJson(String value) =>
-      WebhookTeamRemovedFromRepositoryAction._(value);
+  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewSubmittedWriteScope.fromJson(
+          String value) =>
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewSubmittedWriteScope
+          ._(value);
 
-  static const removedFromRepository =
-      WebhookTeamRemovedFromRepositoryAction._('removed_from_repository');
+  static const trigger =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewSubmittedWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewSubmittedWriteScope
+          ._('repository');
 
   String toJson() => value;
 
@@ -339,7 +405,43 @@ final class WebhookTeamRemovedFromRepositoryAction {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhookTeamRemovedFromRepositoryAction && other.value == value;
+      other
+          is AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestReviewSubmittedWriteScope &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestSynchronizeWriteScope {
+  final String value;
+
+  const AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestSynchronizeWriteScope._(
+      this.value);
+
+  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestSynchronizeWriteScope.fromJson(
+          String value) =>
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestSynchronizeWriteScope
+          ._(value);
+
+  static const trigger =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestSynchronizeWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestSynchronizeWriteScope
+          ._('repository');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestSynchronizeWriteScope &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;

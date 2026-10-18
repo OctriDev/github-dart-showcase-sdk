@@ -4,90 +4,78 @@
 part of 'webhook_issues_closed.dart';
 
 // webhook_issues_closed domain models (part 2)
-/// Required object value serialized in the `creator` wire field.
-class WebhookIssuesClosedIssueVariant0MilestoneCreator {
+/// Required object value serialized in the `user` wire field.
+class WebhookIssuesClosedIssueUser {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Optional `uri`-formatted value serialized in the `avatar_url` wire field.
+  /// Optional `string` value serialized in the `avatar_url` wire field.
   final SdkOptional<String> avatarUrl;
 
-  /// Optional `boolean` value serialized in the `deleted` wire field.
-  final SdkOptional<bool> deleted;
-
-  /// Optional `string` value serialized in the `email` wire field.
-  final SdkOptional<String?> email;
-
-  /// Optional `uri-template`-formatted value serialized in the `events_url` wire field.
+  /// Optional `string` value serialized in the `events_url` wire field.
   final SdkOptional<String> eventsUrl;
 
-  /// Optional `uri`-formatted value serialized in the `followers_url` wire field.
+  /// Optional `string` value serialized in the `followers_url` wire field.
   final SdkOptional<String> followersUrl;
 
-  /// Optional `uri-template`-formatted value serialized in the `following_url` wire field.
+  /// Optional `string` value serialized in the `following_url` wire field.
   final SdkOptional<String> followingUrl;
 
-  /// Optional `uri-template`-formatted value serialized in the `gists_url` wire field.
+  /// Optional `string` value serialized in the `gists_url` wire field.
   final SdkOptional<String> gistsUrl;
 
   /// Optional `string` value serialized in the `gravatar_id` wire field.
   final SdkOptional<String> gravatarId;
 
-  /// Optional `uri`-formatted value serialized in the `html_url` wire field.
+  /// Optional `string` value serialized in the `html_url` wire field.
   final SdkOptional<String> htmlUrl;
 
-  /// Required `integer` value serialized in the `id` wire field.
-  final int id;
+  /// Optional `int64`-formatted value serialized in the `id` wire field.
+  final SdkOptional<int> id;
 
-  /// Required `string` value serialized in the `login` wire field.
-  final String login;
-
-  /// Optional `string` value serialized in the `name` wire field.
-  final SdkOptional<String> name;
+  /// Optional `string` value serialized in the `login` wire field.
+  final SdkOptional<String> login;
 
   /// Optional `string` value serialized in the `node_id` wire field.
   final SdkOptional<String> nodeId;
 
-  /// Optional `uri`-formatted value serialized in the `organizations_url` wire field.
+  /// Optional `string` value serialized in the `organizations_url` wire field.
   final SdkOptional<String> organizationsUrl;
 
-  /// Optional `uri`-formatted value serialized in the `received_events_url` wire field.
+  /// Optional `string` value serialized in the `received_events_url` wire field.
   final SdkOptional<String> receivedEventsUrl;
 
-  /// Optional `uri`-formatted value serialized in the `repos_url` wire field.
+  /// Optional `string` value serialized in the `repos_url` wire field.
   final SdkOptional<String> reposUrl;
 
   /// Optional `boolean` value serialized in the `site_admin` wire field.
   final SdkOptional<bool> siteAdmin;
 
-  /// Optional `uri-template`-formatted value serialized in the `starred_url` wire field.
+  /// Optional `string` value serialized in the `starred_url` wire field.
   final SdkOptional<String> starredUrl;
 
-  /// Optional `uri`-formatted value serialized in the `subscriptions_url` wire field.
+  /// Optional `string` value serialized in the `subscriptions_url` wire field.
   final SdkOptional<String> subscriptionsUrl;
 
-  /// Optional enumerated value serialized in the `type` wire field.
-  final SdkOptional<WebhookIssuesClosedIssueVariant0MilestoneCreatorType> type_;
+  /// Optional `string` value serialized in the `type` wire field.
+  final SdkOptional<String> type_;
 
-  /// Optional `uri`-formatted value serialized in the `url` wire field.
+  /// Optional `string` value serialized in the `url` wire field.
   final SdkOptional<String> url;
 
   /// Optional `string` value serialized in the `user_view_type` wire field.
   final SdkOptional<String> userViewType;
 
-  const WebhookIssuesClosedIssueVariant0MilestoneCreator(
+  const WebhookIssuesClosedIssueUser(
       {this.avatarUrl = const SdkOmitted(),
-      this.deleted = const SdkOmitted(),
-      this.email = const SdkOmitted(),
       this.eventsUrl = const SdkOmitted(),
       this.followersUrl = const SdkOmitted(),
       this.followingUrl = const SdkOmitted(),
       this.gistsUrl = const SdkOmitted(),
       this.gravatarId = const SdkOmitted(),
       this.htmlUrl = const SdkOmitted(),
-      required this.id,
-      required this.login,
-      this.name = const SdkOmitted(),
+      this.id = const SdkOmitted(),
+      this.login = const SdkOmitted(),
       this.nodeId = const SdkOmitted(),
       this.organizationsUrl = const SdkOmitted(),
       this.receivedEventsUrl = const SdkOmitted(),
@@ -99,19 +87,16 @@ class WebhookIssuesClosedIssueVariant0MilestoneCreator {
       this.url = const SdkOmitted(),
       this.userViewType = const SdkOmitted()});
 
-  WebhookIssuesClosedIssueVariant0MilestoneCreator Function(
+  WebhookIssuesClosedIssueUser Function(
       {SdkOptional<String> avatarUrl,
-      SdkOptional<bool> deleted,
-      SdkOptional<String?> email,
       SdkOptional<String> eventsUrl,
       SdkOptional<String> followersUrl,
       SdkOptional<String> followingUrl,
       SdkOptional<String> gistsUrl,
       SdkOptional<String> gravatarId,
       SdkOptional<String> htmlUrl,
-      int id,
-      String login,
-      SdkOptional<String> name,
+      SdkOptional<int> id,
+      SdkOptional<String> login,
       SdkOptional<String> nodeId,
       SdkOptional<String> organizationsUrl,
       SdkOptional<String> receivedEventsUrl,
@@ -119,14 +104,12 @@ class WebhookIssuesClosedIssueVariant0MilestoneCreator {
       SdkOptional<bool> siteAdmin,
       SdkOptional<String> starredUrl,
       SdkOptional<String> subscriptionsUrl,
-      SdkOptional<WebhookIssuesClosedIssueVariant0MilestoneCreatorType> type_,
+      SdkOptional<String> type_,
       SdkOptional<String> url,
       SdkOptional<String> userViewType}) get copyWith => _copyWith;
 
-  WebhookIssuesClosedIssueVariant0MilestoneCreator _copyWith(
+  WebhookIssuesClosedIssueUser _copyWith(
           {Object? avatarUrl = sdkOmittedValue,
-          Object? deleted = sdkOmittedValue,
-          Object? email = sdkOmittedValue,
           Object? eventsUrl = sdkOmittedValue,
           Object? followersUrl = sdkOmittedValue,
           Object? followingUrl = sdkOmittedValue,
@@ -135,7 +118,6 @@ class WebhookIssuesClosedIssueVariant0MilestoneCreator {
           Object? htmlUrl = sdkOmittedValue,
           Object? id = sdkOmittedValue,
           Object? login = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
           Object? nodeId = sdkOmittedValue,
           Object? organizationsUrl = sdkOmittedValue,
           Object? receivedEventsUrl = sdkOmittedValue,
@@ -146,16 +128,10 @@ class WebhookIssuesClosedIssueVariant0MilestoneCreator {
           Object? type_ = sdkOmittedValue,
           Object? url = sdkOmittedValue,
           Object? userViewType = sdkOmittedValue}) =>
-      WebhookIssuesClosedIssueVariant0MilestoneCreator(
+      WebhookIssuesClosedIssueUser(
         avatarUrl: identical(avatarUrl, sdkOmittedValue)
             ? this.avatarUrl
             : avatarUrl as SdkOptional<String>,
-        deleted: identical(deleted, sdkOmittedValue)
-            ? this.deleted
-            : deleted as SdkOptional<bool>,
-        email: identical(email, sdkOmittedValue)
-            ? this.email
-            : email as SdkOptional<String?>,
         eventsUrl: identical(eventsUrl, sdkOmittedValue)
             ? this.eventsUrl
             : eventsUrl as SdkOptional<String>,
@@ -174,11 +150,10 @@ class WebhookIssuesClosedIssueVariant0MilestoneCreator {
         htmlUrl: identical(htmlUrl, sdkOmittedValue)
             ? this.htmlUrl
             : htmlUrl as SdkOptional<String>,
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        login: identical(login, sdkOmittedValue) ? this.login : login as String,
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String>,
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+        login: identical(login, sdkOmittedValue)
+            ? this.login
+            : login as SdkOptional<String>,
         nodeId: identical(nodeId, sdkOmittedValue)
             ? this.nodeId
             : nodeId as SdkOptional<String>,
@@ -202,8 +177,7 @@ class WebhookIssuesClosedIssueVariant0MilestoneCreator {
             : subscriptionsUrl as SdkOptional<String>,
         type_: identical(type_, sdkOmittedValue)
             ? this.type_
-            : type_ as SdkOptional<
-                WebhookIssuesClosedIssueVariant0MilestoneCreatorType>,
+            : type_ as SdkOptional<String>,
         url: identical(url, sdkOmittedValue)
             ? this.url
             : url as SdkOptional<String>,
@@ -212,17 +186,10 @@ class WebhookIssuesClosedIssueVariant0MilestoneCreator {
             : userViewType as SdkOptional<String>,
       );
 
-  factory WebhookIssuesClosedIssueVariant0MilestoneCreator.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookIssuesClosedIssueVariant0MilestoneCreator(
+  factory WebhookIssuesClosedIssueUser.fromJson(Map<String, dynamic> json) =>
+      WebhookIssuesClosedIssueUser(
         avatarUrl: json['avatar_url'] != null
             ? SdkPresent((json['avatar_url'] as String?)!)
-            : const SdkOmitted(),
-        deleted: json['deleted'] != null
-            ? SdkPresent((json['deleted'] as bool?)!)
-            : const SdkOmitted(),
-        email: json.containsKey('email')
-            ? SdkPresent(json['email'] as String?)
             : const SdkOmitted(),
         eventsUrl: json['events_url'] != null
             ? SdkPresent((json['events_url'] as String?)!)
@@ -242,10 +209,11 @@ class WebhookIssuesClosedIssueVariant0MilestoneCreator {
         htmlUrl: json['html_url'] != null
             ? SdkPresent((json['html_url'] as String?)!)
             : const SdkOmitted(),
-        id: ((json['id'] as num?)?.toInt())!,
-        login: (json['login'] as String?)!,
-        name: json['name'] != null
-            ? SdkPresent((json['name'] as String?)!)
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        login: json['login'] != null
+            ? SdkPresent((json['login'] as String?)!)
             : const SdkOmitted(),
         nodeId: json['node_id'] != null
             ? SdkPresent((json['node_id'] as String?)!)
@@ -269,10 +237,7 @@ class WebhookIssuesClosedIssueVariant0MilestoneCreator {
             ? SdkPresent((json['subscriptions_url'] as String?)!)
             : const SdkOmitted(),
         type_: json['type'] != null
-            ? SdkPresent((json['type'] != null
-                ? WebhookIssuesClosedIssueVariant0MilestoneCreatorType.fromJson(
-                    json['type'] as String)
-                : null)!)
+            ? SdkPresent((json['type'] as String?)!)
             : const SdkOmitted(),
         url: json['url'] != null
             ? SdkPresent((json['url'] as String?)!)
@@ -286,18 +251,6 @@ class WebhookIssuesClosedIssueVariant0MilestoneCreator {
         ...switch (avatarUrl) {
           SdkPresent<String>(value: final value) => {
               'avatar_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (deleted) {
-          SdkPresent<bool>(value: final value) => {
-              'deleted': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (email) {
-          SdkPresent<String?>(value: final value) => {
-              'email': value,
             },
           _ => const <String, dynamic>{},
         },
@@ -337,11 +290,15 @@ class WebhookIssuesClosedIssueVariant0MilestoneCreator {
             },
           _ => const <String, dynamic>{},
         },
-        'id': id,
-        'login': login,
-        ...switch (name) {
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (login) {
           SdkPresent<String>(value: final value) => {
-              'name': value,
+              'login': value,
             },
           _ => const <String, dynamic>{},
         },
@@ -388,11 +345,8 @@ class WebhookIssuesClosedIssueVariant0MilestoneCreator {
           _ => const <String, dynamic>{},
         },
         ...switch (type_) {
-          SdkPresent<WebhookIssuesClosedIssueVariant0MilestoneCreatorType>(
-            value: final value
-          ) =>
-            {
-              'type': value.toJson(),
+          SdkPresent<String>(value: final value) => {
+              'type': value,
             },
           _ => const <String, dynamic>{},
         },

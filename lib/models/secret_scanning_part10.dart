@@ -4,6 +4,125 @@
 part of 'secret_scanning.dart';
 
 // secret_scanning domain models (part 10)
+/// Represents a 'wiki_commit' secret scanning location type. This location type shows that a secret was detected inside a commit to a repository wiki.
+class SecretScanningLocationWikiCommit {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The file path of the wiki page
+  final String path;
+
+  /// Line number at which the secret starts in the file
+  final double startLine;
+
+  /// Line number at which the secret ends in the file
+  final double endLine;
+
+  /// The column at which the secret starts within the start line when the file is interpreted as 8-bit ASCII.
+  final double startColumn;
+
+  /// The column at which the secret ends within the end line when the file is interpreted as 8-bit ASCII.
+  final double endColumn;
+
+  /// SHA-1 hash ID of the associated blob
+  final String blobSha;
+
+  /// The GitHub URL to get the associated wiki page
+  final String pageUrl;
+
+  /// SHA-1 hash ID of the associated commit
+  final String commitSha;
+
+  /// The GitHub URL to get the associated wiki commit
+  final String commitUrl;
+
+  const SecretScanningLocationWikiCommit(
+      {required this.path,
+      required this.startLine,
+      required this.endLine,
+      required this.startColumn,
+      required this.endColumn,
+      required this.blobSha,
+      required this.pageUrl,
+      required this.commitSha,
+      required this.commitUrl});
+
+  SecretScanningLocationWikiCommit Function(
+      {String path,
+      double startLine,
+      double endLine,
+      double startColumn,
+      double endColumn,
+      String blobSha,
+      String pageUrl,
+      String commitSha,
+      String commitUrl}) get copyWith => _copyWith;
+
+  SecretScanningLocationWikiCommit _copyWith(
+          {Object? path = sdkOmittedValue,
+          Object? startLine = sdkOmittedValue,
+          Object? endLine = sdkOmittedValue,
+          Object? startColumn = sdkOmittedValue,
+          Object? endColumn = sdkOmittedValue,
+          Object? blobSha = sdkOmittedValue,
+          Object? pageUrl = sdkOmittedValue,
+          Object? commitSha = sdkOmittedValue,
+          Object? commitUrl = sdkOmittedValue}) =>
+      SecretScanningLocationWikiCommit(
+        path: identical(path, sdkOmittedValue) ? this.path : path as String,
+        startLine: identical(startLine, sdkOmittedValue)
+            ? this.startLine
+            : startLine as double,
+        endLine: identical(endLine, sdkOmittedValue)
+            ? this.endLine
+            : endLine as double,
+        startColumn: identical(startColumn, sdkOmittedValue)
+            ? this.startColumn
+            : startColumn as double,
+        endColumn: identical(endColumn, sdkOmittedValue)
+            ? this.endColumn
+            : endColumn as double,
+        blobSha: identical(blobSha, sdkOmittedValue)
+            ? this.blobSha
+            : blobSha as String,
+        pageUrl: identical(pageUrl, sdkOmittedValue)
+            ? this.pageUrl
+            : pageUrl as String,
+        commitSha: identical(commitSha, sdkOmittedValue)
+            ? this.commitSha
+            : commitSha as String,
+        commitUrl: identical(commitUrl, sdkOmittedValue)
+            ? this.commitUrl
+            : commitUrl as String,
+      );
+
+  factory SecretScanningLocationWikiCommit.fromJson(
+          Map<String, dynamic> json) =>
+      SecretScanningLocationWikiCommit(
+        path: (json['path'] as String?)!,
+        startLine: ((json['start_line'] as num?)?.toDouble())!,
+        endLine: ((json['end_line'] as num?)?.toDouble())!,
+        startColumn: ((json['start_column'] as num?)?.toDouble())!,
+        endColumn: ((json['end_column'] as num?)?.toDouble())!,
+        blobSha: (json['blob_sha'] as String?)!,
+        pageUrl: (json['page_url'] as String?)!,
+        commitSha: (json['commit_sha'] as String?)!,
+        commitUrl: (json['commit_url'] as String?)!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'path': path,
+        'start_line': startLine,
+        'end_line': endLine,
+        'start_column': startColumn,
+        'end_column': endColumn,
+        'blob_sha': blobSha,
+        'page_url': pageUrl,
+        'commit_sha': commitSha,
+        'commit_url': commitUrl,
+      };
+}
+
 /// A collection of secret scanning patterns and their settings related to push protection.
 class SecretScanningPatternConfiguration {
   /// This model is constructed from named fields in one call.
@@ -468,96 +587,3 @@ final class SecretScanningPushProtectionBypassReason {
 }
 
 // SecretScanningRowVersion = String
-
-/// Information on a single scan performed by secret scanning on the repository
-class SecretScanningScan {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The type of scan
-  final SdkOptional<String> type_;
-
-  /// The state of the scan. Either "completed", "running", "pending", "failed", or "unknown". "failed": this scan type has hit its retry limit and has been marked permanently failed. This usually resolves on its own at the next scheduled scan attempt. If "failed" persists, contact Support. "unknown": the scan is in an unrecognized or currently unhandled state.
-  final SdkOptional<String> status;
-
-  /// The time that the scan was completed. Empty if the scan is running
-  final SdkOptional<String?> completedAt;
-
-  /// The time that the scan was started. Empty if the scan is pending
-  final SdkOptional<String?> startedAt;
-
-  const SecretScanningScan(
-      {this.type_ = const SdkOmitted(),
-      this.status = const SdkOmitted(),
-      this.completedAt = const SdkOmitted(),
-      this.startedAt = const SdkOmitted()});
-
-  SecretScanningScan Function(
-      {SdkOptional<String> type_,
-      SdkOptional<String> status,
-      SdkOptional<String?> completedAt,
-      SdkOptional<String?> startedAt}) get copyWith => _copyWith;
-
-  SecretScanningScan _copyWith(
-          {Object? type_ = sdkOmittedValue,
-          Object? status = sdkOmittedValue,
-          Object? completedAt = sdkOmittedValue,
-          Object? startedAt = sdkOmittedValue}) =>
-      SecretScanningScan(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as SdkOptional<String>,
-        status: identical(status, sdkOmittedValue)
-            ? this.status
-            : status as SdkOptional<String>,
-        completedAt: identical(completedAt, sdkOmittedValue)
-            ? this.completedAt
-            : completedAt as SdkOptional<String?>,
-        startedAt: identical(startedAt, sdkOmittedValue)
-            ? this.startedAt
-            : startedAt as SdkOptional<String?>,
-      );
-
-  factory SecretScanningScan.fromJson(Map<String, dynamic> json) =>
-      SecretScanningScan(
-        type_: json['type'] != null
-            ? SdkPresent((json['type'] as String?)!)
-            : const SdkOmitted(),
-        status: json['status'] != null
-            ? SdkPresent((json['status'] as String?)!)
-            : const SdkOmitted(),
-        completedAt: json.containsKey('completed_at')
-            ? SdkPresent(json['completed_at'] as String?)
-            : const SdkOmitted(),
-        startedAt: json.containsKey('started_at')
-            ? SdkPresent(json['started_at'] as String?)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (type_) {
-          SdkPresent<String>(value: final value) => {
-              'type': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (status) {
-          SdkPresent<String>(value: final value) => {
-              'status': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (completedAt) {
-          SdkPresent<String?>(value: final value) => {
-              'completed_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (startedAt) {
-          SdkPresent<String?>(value: final value) => {
-              'started_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}

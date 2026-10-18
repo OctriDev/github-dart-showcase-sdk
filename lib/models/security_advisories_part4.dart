@@ -4,525 +4,475 @@
 part of 'security_advisories.dart';
 
 // security_advisories domain models (part 4)
-/// A temporary private fork of the advisory's repository for collaborating on a fix.
-class RepositoryAdvisoryPrivateFork {
+/// The name of the package affected by the vulnerability.
+class RepositoryAdvisoryCreateVulnerabilitiesItemPackage {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// A unique identifier of the repository.
-  final int id;
+  /// The package's language or package management ecosystem.
+  final SecurityAdvisoryEcosystems ecosystem;
 
-  /// The GraphQL identifier of the repository.
-  final String nodeId;
+  /// The unique package name within its ecosystem.
+  final SdkOptional<String?> name;
 
-  /// The name of the repository.
-  final String name;
+  const RepositoryAdvisoryCreateVulnerabilitiesItemPackage(
+      {required this.ecosystem, this.name = const SdkOmitted()});
 
-  /// The full, globally unique, name of the repository.
-  final String fullName;
+  RepositoryAdvisoryCreateVulnerabilitiesItemPackage Function(
+      {SecurityAdvisoryEcosystems ecosystem,
+      SdkOptional<String?> name}) get copyWith => _copyWith;
 
-  /// A GitHub user.
-  final SimpleUser owner;
-
-  /// Whether the repository is private.
-  final bool private;
-
-  /// The URL to view the repository on GitHub.com.
-  final String htmlUrl;
-
-  /// The repository description.
-  final String? description;
-
-  /// Whether the repository is a fork.
-  final bool fork;
-
-  /// The URL to get more information about the repository from the GitHub API.
-  final String url;
-
-  /// A template for the API URL to download the repository as an archive.
-  final String archiveUrl;
-
-  /// A template for the API URL to list the available assignees for issues in the repository.
-  final String assigneesUrl;
-
-  /// A template for the API URL to create or retrieve a raw Git blob in the repository.
-  final String blobsUrl;
-
-  /// A template for the API URL to get information about branches in the repository.
-  final String branchesUrl;
-
-  /// A template for the API URL to get information about collaborators of the repository.
-  final String collaboratorsUrl;
-
-  /// A template for the API URL to get information about comments on the repository.
-  final String commentsUrl;
-
-  /// A template for the API URL to get information about commits on the repository.
-  final String commitsUrl;
-
-  /// A template for the API URL to compare two commits or refs.
-  final String compareUrl;
-
-  /// A template for the API URL to get the contents of the repository.
-  final String contentsUrl;
-
-  /// A template for the API URL to list the contributors to the repository.
-  final String contributorsUrl;
-
-  /// The API URL to list the deployments of the repository.
-  final String deploymentsUrl;
-
-  /// The API URL to list the downloads on the repository.
-  final String downloadsUrl;
-
-  /// The API URL to list the events of the repository.
-  final String eventsUrl;
-
-  /// The API URL to list the forks of the repository.
-  final String forksUrl;
-
-  /// A template for the API URL to get information about Git commits of the repository.
-  final String gitCommitsUrl;
-
-  /// A template for the API URL to get information about Git refs of the repository.
-  final String gitRefsUrl;
-
-  /// A template for the API URL to get information about Git tags of the repository.
-  final String gitTagsUrl;
-
-  /// A template for the API URL to get information about issue comments on the repository.
-  final String issueCommentUrl;
-
-  /// A template for the API URL to get information about issue events on the repository.
-  final String issueEventsUrl;
-
-  /// A template for the API URL to get information about issues on the repository.
-  final String issuesUrl;
-
-  /// A template for the API URL to get information about deploy keys on the repository.
-  final String keysUrl;
-
-  /// A template for the API URL to get information about labels of the repository.
-  final String labelsUrl;
-
-  /// The API URL to get information about the languages of the repository.
-  final String languagesUrl;
-
-  /// The API URL to merge branches in the repository.
-  final String mergesUrl;
-
-  /// A template for the API URL to get information about milestones of the repository.
-  final String milestonesUrl;
-
-  /// A template for the API URL to get information about notifications on the repository.
-  final String notificationsUrl;
-
-  /// A template for the API URL to get information about pull requests on the repository.
-  final String pullsUrl;
-
-  /// A template for the API URL to get information about releases on the repository.
-  final String releasesUrl;
-
-  /// The API URL to list the stargazers on the repository.
-  final String stargazersUrl;
-
-  /// A template for the API URL to get information about statuses of a commit.
-  final String statusesUrl;
-
-  /// The API URL to list the subscribers on the repository.
-  final String subscribersUrl;
-
-  /// The API URL to subscribe to notifications for this repository.
-  final String subscriptionUrl;
-
-  /// The API URL to get information about tags on the repository.
-  final String tagsUrl;
-
-  /// The API URL to list the teams on the repository.
-  final String teamsUrl;
-
-  /// A template for the API URL to create or retrieve a raw Git tree of the repository.
-  final String treesUrl;
-
-  /// The API URL to list the hooks on the repository.
-  final String hooksUrl;
-
-  const RepositoryAdvisoryPrivateFork(
-      {required this.id,
-      required this.nodeId,
-      required this.name,
-      required this.fullName,
-      required this.owner,
-      required this.private,
-      required this.htmlUrl,
-      required this.description,
-      required this.fork,
-      required this.url,
-      required this.archiveUrl,
-      required this.assigneesUrl,
-      required this.blobsUrl,
-      required this.branchesUrl,
-      required this.collaboratorsUrl,
-      required this.commentsUrl,
-      required this.commitsUrl,
-      required this.compareUrl,
-      required this.contentsUrl,
-      required this.contributorsUrl,
-      required this.deploymentsUrl,
-      required this.downloadsUrl,
-      required this.eventsUrl,
-      required this.forksUrl,
-      required this.gitCommitsUrl,
-      required this.gitRefsUrl,
-      required this.gitTagsUrl,
-      required this.issueCommentUrl,
-      required this.issueEventsUrl,
-      required this.issuesUrl,
-      required this.keysUrl,
-      required this.labelsUrl,
-      required this.languagesUrl,
-      required this.mergesUrl,
-      required this.milestonesUrl,
-      required this.notificationsUrl,
-      required this.pullsUrl,
-      required this.releasesUrl,
-      required this.stargazersUrl,
-      required this.statusesUrl,
-      required this.subscribersUrl,
-      required this.subscriptionUrl,
-      required this.tagsUrl,
-      required this.teamsUrl,
-      required this.treesUrl,
-      required this.hooksUrl});
-
-  RepositoryAdvisoryPrivateFork Function(
-      {int id,
-      String nodeId,
-      String name,
-      String fullName,
-      SimpleUser owner,
-      bool private,
-      String htmlUrl,
-      String? description,
-      bool fork,
-      String url,
-      String archiveUrl,
-      String assigneesUrl,
-      String blobsUrl,
-      String branchesUrl,
-      String collaboratorsUrl,
-      String commentsUrl,
-      String commitsUrl,
-      String compareUrl,
-      String contentsUrl,
-      String contributorsUrl,
-      String deploymentsUrl,
-      String downloadsUrl,
-      String eventsUrl,
-      String forksUrl,
-      String gitCommitsUrl,
-      String gitRefsUrl,
-      String gitTagsUrl,
-      String issueCommentUrl,
-      String issueEventsUrl,
-      String issuesUrl,
-      String keysUrl,
-      String labelsUrl,
-      String languagesUrl,
-      String mergesUrl,
-      String milestonesUrl,
-      String notificationsUrl,
-      String pullsUrl,
-      String releasesUrl,
-      String stargazersUrl,
-      String statusesUrl,
-      String subscribersUrl,
-      String subscriptionUrl,
-      String tagsUrl,
-      String teamsUrl,
-      String treesUrl,
-      String hooksUrl}) get copyWith => _copyWith;
-
-  RepositoryAdvisoryPrivateFork _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? fullName = sdkOmittedValue,
-          Object? owner = sdkOmittedValue,
-          Object? private = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? fork = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? archiveUrl = sdkOmittedValue,
-          Object? assigneesUrl = sdkOmittedValue,
-          Object? blobsUrl = sdkOmittedValue,
-          Object? branchesUrl = sdkOmittedValue,
-          Object? collaboratorsUrl = sdkOmittedValue,
-          Object? commentsUrl = sdkOmittedValue,
-          Object? commitsUrl = sdkOmittedValue,
-          Object? compareUrl = sdkOmittedValue,
-          Object? contentsUrl = sdkOmittedValue,
-          Object? contributorsUrl = sdkOmittedValue,
-          Object? deploymentsUrl = sdkOmittedValue,
-          Object? downloadsUrl = sdkOmittedValue,
-          Object? eventsUrl = sdkOmittedValue,
-          Object? forksUrl = sdkOmittedValue,
-          Object? gitCommitsUrl = sdkOmittedValue,
-          Object? gitRefsUrl = sdkOmittedValue,
-          Object? gitTagsUrl = sdkOmittedValue,
-          Object? issueCommentUrl = sdkOmittedValue,
-          Object? issueEventsUrl = sdkOmittedValue,
-          Object? issuesUrl = sdkOmittedValue,
-          Object? keysUrl = sdkOmittedValue,
-          Object? labelsUrl = sdkOmittedValue,
-          Object? languagesUrl = sdkOmittedValue,
-          Object? mergesUrl = sdkOmittedValue,
-          Object? milestonesUrl = sdkOmittedValue,
-          Object? notificationsUrl = sdkOmittedValue,
-          Object? pullsUrl = sdkOmittedValue,
-          Object? releasesUrl = sdkOmittedValue,
-          Object? stargazersUrl = sdkOmittedValue,
-          Object? statusesUrl = sdkOmittedValue,
-          Object? subscribersUrl = sdkOmittedValue,
-          Object? subscriptionUrl = sdkOmittedValue,
-          Object? tagsUrl = sdkOmittedValue,
-          Object? teamsUrl = sdkOmittedValue,
-          Object? treesUrl = sdkOmittedValue,
-          Object? hooksUrl = sdkOmittedValue}) =>
-      RepositoryAdvisoryPrivateFork(
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        fullName: identical(fullName, sdkOmittedValue)
-            ? this.fullName
-            : fullName as String,
-        owner: identical(owner, sdkOmittedValue)
-            ? this.owner
-            : owner as SimpleUser,
-        private: identical(private, sdkOmittedValue)
-            ? this.private
-            : private as bool,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as String,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as String?,
-        fork: identical(fork, sdkOmittedValue) ? this.fork : fork as bool,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        archiveUrl: identical(archiveUrl, sdkOmittedValue)
-            ? this.archiveUrl
-            : archiveUrl as String,
-        assigneesUrl: identical(assigneesUrl, sdkOmittedValue)
-            ? this.assigneesUrl
-            : assigneesUrl as String,
-        blobsUrl: identical(blobsUrl, sdkOmittedValue)
-            ? this.blobsUrl
-            : blobsUrl as String,
-        branchesUrl: identical(branchesUrl, sdkOmittedValue)
-            ? this.branchesUrl
-            : branchesUrl as String,
-        collaboratorsUrl: identical(collaboratorsUrl, sdkOmittedValue)
-            ? this.collaboratorsUrl
-            : collaboratorsUrl as String,
-        commentsUrl: identical(commentsUrl, sdkOmittedValue)
-            ? this.commentsUrl
-            : commentsUrl as String,
-        commitsUrl: identical(commitsUrl, sdkOmittedValue)
-            ? this.commitsUrl
-            : commitsUrl as String,
-        compareUrl: identical(compareUrl, sdkOmittedValue)
-            ? this.compareUrl
-            : compareUrl as String,
-        contentsUrl: identical(contentsUrl, sdkOmittedValue)
-            ? this.contentsUrl
-            : contentsUrl as String,
-        contributorsUrl: identical(contributorsUrl, sdkOmittedValue)
-            ? this.contributorsUrl
-            : contributorsUrl as String,
-        deploymentsUrl: identical(deploymentsUrl, sdkOmittedValue)
-            ? this.deploymentsUrl
-            : deploymentsUrl as String,
-        downloadsUrl: identical(downloadsUrl, sdkOmittedValue)
-            ? this.downloadsUrl
-            : downloadsUrl as String,
-        eventsUrl: identical(eventsUrl, sdkOmittedValue)
-            ? this.eventsUrl
-            : eventsUrl as String,
-        forksUrl: identical(forksUrl, sdkOmittedValue)
-            ? this.forksUrl
-            : forksUrl as String,
-        gitCommitsUrl: identical(gitCommitsUrl, sdkOmittedValue)
-            ? this.gitCommitsUrl
-            : gitCommitsUrl as String,
-        gitRefsUrl: identical(gitRefsUrl, sdkOmittedValue)
-            ? this.gitRefsUrl
-            : gitRefsUrl as String,
-        gitTagsUrl: identical(gitTagsUrl, sdkOmittedValue)
-            ? this.gitTagsUrl
-            : gitTagsUrl as String,
-        issueCommentUrl: identical(issueCommentUrl, sdkOmittedValue)
-            ? this.issueCommentUrl
-            : issueCommentUrl as String,
-        issueEventsUrl: identical(issueEventsUrl, sdkOmittedValue)
-            ? this.issueEventsUrl
-            : issueEventsUrl as String,
-        issuesUrl: identical(issuesUrl, sdkOmittedValue)
-            ? this.issuesUrl
-            : issuesUrl as String,
-        keysUrl: identical(keysUrl, sdkOmittedValue)
-            ? this.keysUrl
-            : keysUrl as String,
-        labelsUrl: identical(labelsUrl, sdkOmittedValue)
-            ? this.labelsUrl
-            : labelsUrl as String,
-        languagesUrl: identical(languagesUrl, sdkOmittedValue)
-            ? this.languagesUrl
-            : languagesUrl as String,
-        mergesUrl: identical(mergesUrl, sdkOmittedValue)
-            ? this.mergesUrl
-            : mergesUrl as String,
-        milestonesUrl: identical(milestonesUrl, sdkOmittedValue)
-            ? this.milestonesUrl
-            : milestonesUrl as String,
-        notificationsUrl: identical(notificationsUrl, sdkOmittedValue)
-            ? this.notificationsUrl
-            : notificationsUrl as String,
-        pullsUrl: identical(pullsUrl, sdkOmittedValue)
-            ? this.pullsUrl
-            : pullsUrl as String,
-        releasesUrl: identical(releasesUrl, sdkOmittedValue)
-            ? this.releasesUrl
-            : releasesUrl as String,
-        stargazersUrl: identical(stargazersUrl, sdkOmittedValue)
-            ? this.stargazersUrl
-            : stargazersUrl as String,
-        statusesUrl: identical(statusesUrl, sdkOmittedValue)
-            ? this.statusesUrl
-            : statusesUrl as String,
-        subscribersUrl: identical(subscribersUrl, sdkOmittedValue)
-            ? this.subscribersUrl
-            : subscribersUrl as String,
-        subscriptionUrl: identical(subscriptionUrl, sdkOmittedValue)
-            ? this.subscriptionUrl
-            : subscriptionUrl as String,
-        tagsUrl: identical(tagsUrl, sdkOmittedValue)
-            ? this.tagsUrl
-            : tagsUrl as String,
-        teamsUrl: identical(teamsUrl, sdkOmittedValue)
-            ? this.teamsUrl
-            : teamsUrl as String,
-        treesUrl: identical(treesUrl, sdkOmittedValue)
-            ? this.treesUrl
-            : treesUrl as String,
-        hooksUrl: identical(hooksUrl, sdkOmittedValue)
-            ? this.hooksUrl
-            : hooksUrl as String,
+  RepositoryAdvisoryCreateVulnerabilitiesItemPackage _copyWith(
+          {Object? ecosystem = sdkOmittedValue,
+          Object? name = sdkOmittedValue}) =>
+      RepositoryAdvisoryCreateVulnerabilitiesItemPackage(
+        ecosystem: identical(ecosystem, sdkOmittedValue)
+            ? this.ecosystem
+            : ecosystem as SecurityAdvisoryEcosystems,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String?>,
       );
 
-  factory RepositoryAdvisoryPrivateFork.fromJson(Map<String, dynamic> json) =>
-      RepositoryAdvisoryPrivateFork(
-        id: ((json['id'] as num?)?.toInt())!,
-        nodeId: (json['node_id'] as String?)!,
-        name: (json['name'] as String?)!,
-        fullName: (json['full_name'] as String?)!,
-        owner: (json['owner'] != null
-            ? SimpleUser.fromJson(json['owner'] as Map<String, dynamic>)
+  factory RepositoryAdvisoryCreateVulnerabilitiesItemPackage.fromJson(
+          Map<String, dynamic> json) =>
+      RepositoryAdvisoryCreateVulnerabilitiesItemPackage(
+        ecosystem: (json['ecosystem'] != null
+            ? SecurityAdvisoryEcosystems.fromJson(json['ecosystem'] as String)
             : null)!,
-        private: (json['private'] as bool?)!,
-        htmlUrl: (json['html_url'] as String?)!,
-        description: json.containsKey('description')
-            ? json['description'] as String?
-            : throw ArgumentError.value(
-                null, 'description', 'Required property is missing'),
-        fork: (json['fork'] as bool?)!,
-        url: (json['url'] as String?)!,
-        archiveUrl: (json['archive_url'] as String?)!,
-        assigneesUrl: (json['assignees_url'] as String?)!,
-        blobsUrl: (json['blobs_url'] as String?)!,
-        branchesUrl: (json['branches_url'] as String?)!,
-        collaboratorsUrl: (json['collaborators_url'] as String?)!,
-        commentsUrl: (json['comments_url'] as String?)!,
-        commitsUrl: (json['commits_url'] as String?)!,
-        compareUrl: (json['compare_url'] as String?)!,
-        contentsUrl: (json['contents_url'] as String?)!,
-        contributorsUrl: (json['contributors_url'] as String?)!,
-        deploymentsUrl: (json['deployments_url'] as String?)!,
-        downloadsUrl: (json['downloads_url'] as String?)!,
-        eventsUrl: (json['events_url'] as String?)!,
-        forksUrl: (json['forks_url'] as String?)!,
-        gitCommitsUrl: (json['git_commits_url'] as String?)!,
-        gitRefsUrl: (json['git_refs_url'] as String?)!,
-        gitTagsUrl: (json['git_tags_url'] as String?)!,
-        issueCommentUrl: (json['issue_comment_url'] as String?)!,
-        issueEventsUrl: (json['issue_events_url'] as String?)!,
-        issuesUrl: (json['issues_url'] as String?)!,
-        keysUrl: (json['keys_url'] as String?)!,
-        labelsUrl: (json['labels_url'] as String?)!,
-        languagesUrl: (json['languages_url'] as String?)!,
-        mergesUrl: (json['merges_url'] as String?)!,
-        milestonesUrl: (json['milestones_url'] as String?)!,
-        notificationsUrl: (json['notifications_url'] as String?)!,
-        pullsUrl: (json['pulls_url'] as String?)!,
-        releasesUrl: (json['releases_url'] as String?)!,
-        stargazersUrl: (json['stargazers_url'] as String?)!,
-        statusesUrl: (json['statuses_url'] as String?)!,
-        subscribersUrl: (json['subscribers_url'] as String?)!,
-        subscriptionUrl: (json['subscription_url'] as String?)!,
-        tagsUrl: (json['tags_url'] as String?)!,
-        teamsUrl: (json['teams_url'] as String?)!,
-        treesUrl: (json['trees_url'] as String?)!,
-        hooksUrl: (json['hooks_url'] as String?)!,
+        name: json.containsKey('name')
+            ? SdkPresent(json['name'] as String?)
+            : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'node_id': nodeId,
-        'name': name,
-        'full_name': fullName,
-        'owner': owner.toJson(),
-        'private': private,
-        'html_url': htmlUrl,
-        'description': description,
-        'fork': fork,
-        'url': url,
-        'archive_url': archiveUrl,
-        'assignees_url': assigneesUrl,
-        'blobs_url': blobsUrl,
-        'branches_url': branchesUrl,
-        'collaborators_url': collaboratorsUrl,
-        'comments_url': commentsUrl,
-        'commits_url': commitsUrl,
-        'compare_url': compareUrl,
-        'contents_url': contentsUrl,
-        'contributors_url': contributorsUrl,
-        'deployments_url': deploymentsUrl,
-        'downloads_url': downloadsUrl,
-        'events_url': eventsUrl,
-        'forks_url': forksUrl,
-        'git_commits_url': gitCommitsUrl,
-        'git_refs_url': gitRefsUrl,
-        'git_tags_url': gitTagsUrl,
-        'issue_comment_url': issueCommentUrl,
-        'issue_events_url': issueEventsUrl,
-        'issues_url': issuesUrl,
-        'keys_url': keysUrl,
-        'labels_url': labelsUrl,
-        'languages_url': languagesUrl,
-        'merges_url': mergesUrl,
-        'milestones_url': milestonesUrl,
-        'notifications_url': notificationsUrl,
-        'pulls_url': pullsUrl,
-        'releases_url': releasesUrl,
-        'stargazers_url': stargazersUrl,
-        'statuses_url': statusesUrl,
-        'subscribers_url': subscribersUrl,
-        'subscription_url': subscriptionUrl,
-        'tags_url': tagsUrl,
-        'teams_url': teamsUrl,
-        'trees_url': treesUrl,
-        'hooks_url': hooksUrl,
+        'ecosystem': ecosystem.toJson(),
+        ...switch (name) {
+          SdkPresent<String?>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
       };
+}
+
+/// Required object value serialized in the `vulnerabilities[]` wire field.
+class RepositoryAdvisoryCreateVulnerabilitiesItem {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The name of the package affected by the vulnerability.
+  final RepositoryAdvisoryCreateVulnerabilitiesItemPackage package;
+
+  /// The range of the package versions affected by the vulnerability.
+  final SdkOptional<String?> vulnerableVersionRange;
+
+  /// The package version(s) that resolve the vulnerability.
+  final SdkOptional<String?> patchedVersions;
+
+  /// The functions in the package that are affected.
+  final SdkOptional<List<String>?> vulnerableFunctions;
+
+  const RepositoryAdvisoryCreateVulnerabilitiesItem(
+      {required this.package,
+      this.vulnerableVersionRange = const SdkOmitted(),
+      this.patchedVersions = const SdkOmitted(),
+      this.vulnerableFunctions = const SdkOmitted()});
+
+  RepositoryAdvisoryCreateVulnerabilitiesItem Function(
+          {RepositoryAdvisoryCreateVulnerabilitiesItemPackage package,
+          SdkOptional<String?> vulnerableVersionRange,
+          SdkOptional<String?> patchedVersions,
+          SdkOptional<List<String>?> vulnerableFunctions})
+      get copyWith => _copyWith;
+
+  RepositoryAdvisoryCreateVulnerabilitiesItem _copyWith(
+          {Object? package = sdkOmittedValue,
+          Object? vulnerableVersionRange = sdkOmittedValue,
+          Object? patchedVersions = sdkOmittedValue,
+          Object? vulnerableFunctions = sdkOmittedValue}) =>
+      RepositoryAdvisoryCreateVulnerabilitiesItem(
+        package: identical(package, sdkOmittedValue)
+            ? this.package
+            : package as RepositoryAdvisoryCreateVulnerabilitiesItemPackage,
+        vulnerableVersionRange:
+            identical(vulnerableVersionRange, sdkOmittedValue)
+                ? this.vulnerableVersionRange
+                : vulnerableVersionRange as SdkOptional<String?>,
+        patchedVersions: identical(patchedVersions, sdkOmittedValue)
+            ? this.patchedVersions
+            : patchedVersions as SdkOptional<String?>,
+        vulnerableFunctions: identical(vulnerableFunctions, sdkOmittedValue)
+            ? this.vulnerableFunctions
+            : vulnerableFunctions as SdkOptional<List<String>?>,
+      );
+
+  factory RepositoryAdvisoryCreateVulnerabilitiesItem.fromJson(
+          Map<String, dynamic> json) =>
+      RepositoryAdvisoryCreateVulnerabilitiesItem(
+        package: (json['package'] != null
+            ? RepositoryAdvisoryCreateVulnerabilitiesItemPackage.fromJson(
+                json['package'] as Map<String, dynamic>)
+            : null)!,
+        vulnerableVersionRange: json.containsKey('vulnerable_version_range')
+            ? SdkPresent(json['vulnerable_version_range'] as String?)
+            : const SdkOmitted(),
+        patchedVersions: json.containsKey('patched_versions')
+            ? SdkPresent(json['patched_versions'] as String?)
+            : const SdkOmitted(),
+        vulnerableFunctions: json.containsKey('vulnerable_functions')
+            ? SdkPresent((json['vulnerable_functions'] as List?)
+                ?.map((e) => e as String)
+                .toList())
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        'package': package.toJson(),
+        ...switch (vulnerableVersionRange) {
+          SdkPresent<String?>(value: final value) => {
+              'vulnerable_version_range': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (patchedVersions) {
+          SdkPresent<String?>(value: final value) => {
+              'patched_versions': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (vulnerableFunctions) {
+          SdkPresent<List<String>?>(value: final value) => {
+              'vulnerable_functions': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+/// Required object value serialized in the `credits[]` wire field.
+class RepositoryAdvisoryCreateCreditsItem {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The username of the user credited.
+  final String login;
+
+  /// The type of credit the user is receiving.
+  final SecurityAdvisoryCreditTypes type_;
+
+  const RepositoryAdvisoryCreateCreditsItem(
+      {required this.login, required this.type_});
+
+  RepositoryAdvisoryCreateCreditsItem Function(
+      {String login,
+      SecurityAdvisoryCreditTypes type_}) get copyWith => _copyWith;
+
+  RepositoryAdvisoryCreateCreditsItem _copyWith(
+          {Object? login = sdkOmittedValue, Object? type_ = sdkOmittedValue}) =>
+      RepositoryAdvisoryCreateCreditsItem(
+        login: identical(login, sdkOmittedValue) ? this.login : login as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as SecurityAdvisoryCreditTypes,
+      );
+
+  factory RepositoryAdvisoryCreateCreditsItem.fromJson(
+          Map<String, dynamic> json) =>
+      RepositoryAdvisoryCreateCreditsItem(
+        login: (json['login'] as String?)!,
+        type_: (json['type'] != null
+            ? SecurityAdvisoryCreditTypes.fromJson(json['type'] as String)
+            : null)!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'login': login,
+        'type': type_.toJson(),
+      };
+}
+
+/// Typed representation of the `RepositoryAdvisoryCreate` API schema.
+class RepositoryAdvisoryCreate {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// A short summary of the advisory.
+  final String summary;
+
+  /// A detailed description of what the advisory impacts.
+  final String description;
+
+  /// The Common Vulnerabilities and Exposures (CVE) ID.
+  final SdkOptional<String?> cveId;
+
+  /// A product affected by the vulnerability detailed in a repository security advisory.
+  final List<RepositoryAdvisoryCreateVulnerabilitiesItem> vulnerabilities;
+
+  /// A list of Common Weakness Enumeration (CWE) IDs.
+  final SdkOptional<List<String>?> cweIds;
+
+  /// A list of users receiving credit for their participation in the security advisory.
+  final SdkOptional<List<RepositoryAdvisoryCreateCreditsItem>?> credits;
+
+  /// The severity of the advisory. You must choose between setting this field or `cvss_vector_string`.
+  final SdkOptional<RepositoryAdvisoryCreateSeverity?> severity;
+
+  /// The CVSS vector that calculates the severity of the advisory. You must choose between setting this field or `severity`.
+  final SdkOptional<String?> cvssVectorString;
+
+  /// Whether to create a temporary private fork of the repository to collaborate on a fix.
+  final SdkOptional<bool> startPrivateFork;
+
+  const RepositoryAdvisoryCreate(
+      {required this.summary,
+      required this.description,
+      this.cveId = const SdkOmitted(),
+      required this.vulnerabilities,
+      this.cweIds = const SdkOmitted(),
+      this.credits = const SdkOmitted(),
+      this.severity = const SdkOmitted(),
+      this.cvssVectorString = const SdkOmitted(),
+      this.startPrivateFork = const SdkOmitted()});
+
+  RepositoryAdvisoryCreate Function(
+      {String summary,
+      String description,
+      SdkOptional<String?> cveId,
+      List<RepositoryAdvisoryCreateVulnerabilitiesItem> vulnerabilities,
+      SdkOptional<List<String>?> cweIds,
+      SdkOptional<List<RepositoryAdvisoryCreateCreditsItem>?> credits,
+      SdkOptional<RepositoryAdvisoryCreateSeverity?> severity,
+      SdkOptional<String?> cvssVectorString,
+      SdkOptional<bool> startPrivateFork}) get copyWith => _copyWith;
+
+  RepositoryAdvisoryCreate _copyWith(
+          {Object? summary = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? cveId = sdkOmittedValue,
+          Object? vulnerabilities = sdkOmittedValue,
+          Object? cweIds = sdkOmittedValue,
+          Object? credits = sdkOmittedValue,
+          Object? severity = sdkOmittedValue,
+          Object? cvssVectorString = sdkOmittedValue,
+          Object? startPrivateFork = sdkOmittedValue}) =>
+      RepositoryAdvisoryCreate(
+        summary: identical(summary, sdkOmittedValue)
+            ? this.summary
+            : summary as String,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as String,
+        cveId: identical(cveId, sdkOmittedValue)
+            ? this.cveId
+            : cveId as SdkOptional<String?>,
+        vulnerabilities: identical(vulnerabilities, sdkOmittedValue)
+            ? this.vulnerabilities
+            : vulnerabilities
+                as List<RepositoryAdvisoryCreateVulnerabilitiesItem>,
+        cweIds: identical(cweIds, sdkOmittedValue)
+            ? this.cweIds
+            : cweIds as SdkOptional<List<String>?>,
+        credits: identical(credits, sdkOmittedValue)
+            ? this.credits
+            : credits
+                as SdkOptional<List<RepositoryAdvisoryCreateCreditsItem>?>,
+        severity: identical(severity, sdkOmittedValue)
+            ? this.severity
+            : severity as SdkOptional<RepositoryAdvisoryCreateSeverity?>,
+        cvssVectorString: identical(cvssVectorString, sdkOmittedValue)
+            ? this.cvssVectorString
+            : cvssVectorString as SdkOptional<String?>,
+        startPrivateFork: identical(startPrivateFork, sdkOmittedValue)
+            ? this.startPrivateFork
+            : startPrivateFork as SdkOptional<bool>,
+      );
+
+  factory RepositoryAdvisoryCreate.fromJson(Map<String, dynamic> json) =>
+      RepositoryAdvisoryCreate(
+        summary: (json['summary'] as String?)!,
+        description: (json['description'] as String?)!,
+        cveId: json.containsKey('cve_id')
+            ? SdkPresent(json['cve_id'] as String?)
+            : const SdkOmitted(),
+        vulnerabilities: ((json['vulnerabilities'] as List?)
+            ?.map((e) => RepositoryAdvisoryCreateVulnerabilitiesItem.fromJson(
+                e as Map<String, dynamic>))
+            .toList())!,
+        cweIds: json.containsKey('cwe_ids')
+            ? SdkPresent(
+                (json['cwe_ids'] as List?)?.map((e) => e as String).toList())
+            : const SdkOmitted(),
+        credits: json.containsKey('credits')
+            ? SdkPresent((json['credits'] as List?)
+                ?.map((e) => RepositoryAdvisoryCreateCreditsItem.fromJson(
+                    e as Map<String, dynamic>))
+                .toList())
+            : const SdkOmitted(),
+        severity: json.containsKey('severity')
+            ? SdkPresent(json['severity'] != null
+                ? RepositoryAdvisoryCreateSeverity.fromJson(
+                    json['severity'] as String)
+                : null)
+            : const SdkOmitted(),
+        cvssVectorString: json.containsKey('cvss_vector_string')
+            ? SdkPresent(json['cvss_vector_string'] as String?)
+            : const SdkOmitted(),
+        startPrivateFork: json['start_private_fork'] != null
+            ? SdkPresent((json['start_private_fork'] as bool?)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        'summary': summary,
+        'description': description,
+        ...switch (cveId) {
+          SdkPresent<String?>(value: final value) => {
+              'cve_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'vulnerabilities':
+            vulnerabilities.map((item) => item.toJson()).toList(),
+        ...switch (cweIds) {
+          SdkPresent<List<String>?>(value: final value) => {
+              'cwe_ids': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (credits) {
+          SdkPresent<List<RepositoryAdvisoryCreateCreditsItem>?>(
+            value: final value
+          ) =>
+            {
+              'credits': value?.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (severity) {
+          SdkPresent<RepositoryAdvisoryCreateSeverity?>(value: final value) => {
+              'severity': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (cvssVectorString) {
+          SdkPresent<String?>(value: final value) => {
+              'cvss_vector_string': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (startPrivateFork) {
+          SdkPresent<bool>(value: final value) => {
+              'start_private_fork': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+/// A credit given to a user for a repository security advisory.
+class RepositoryAdvisoryCredit {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// A GitHub user.
+  final SimpleUser user;
+
+  /// The type of credit the user is receiving.
+  final SecurityAdvisoryCreditTypes type_;
+
+  /// The state of the user's acceptance of the credit.
+  final RepositoryAdvisoryCreditState state;
+
+  const RepositoryAdvisoryCredit(
+      {required this.user, required this.type_, required this.state});
+
+  RepositoryAdvisoryCredit Function(
+      {SimpleUser user,
+      SecurityAdvisoryCreditTypes type_,
+      RepositoryAdvisoryCreditState state}) get copyWith => _copyWith;
+
+  RepositoryAdvisoryCredit _copyWith(
+          {Object? user = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? state = sdkOmittedValue}) =>
+      RepositoryAdvisoryCredit(
+        user: identical(user, sdkOmittedValue) ? this.user : user as SimpleUser,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as SecurityAdvisoryCreditTypes,
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state as RepositoryAdvisoryCreditState,
+      );
+
+  factory RepositoryAdvisoryCredit.fromJson(Map<String, dynamic> json) =>
+      RepositoryAdvisoryCredit(
+        user: (json['user'] != null
+            ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>)
+            : null)!,
+        type_: (json['type'] != null
+            ? SecurityAdvisoryCreditTypes.fromJson(json['type'] as String)
+            : null)!,
+        state: (json['state'] != null
+            ? RepositoryAdvisoryCreditState.fromJson(json['state'] as String)
+            : null)!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'user': user.toJson(),
+        'type': type_.toJson(),
+        'state': state.toJson(),
+      };
+}
+
+sealed class RepositoryAdvisoryDescriptionValidationErrorErrorsItemValue {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  const RepositoryAdvisoryDescriptionValidationErrorErrorsItemValue();
+  factory RepositoryAdvisoryDescriptionValidationErrorErrorsItemValue.fromJson(
+      Object? json) {
+    if (json is String) {
+      return RepositoryAdvisoryDescriptionValidationErrorErrorsItemValueString(
+          json);
+    }
+    if (json is num) {
+      return RepositoryAdvisoryDescriptionValidationErrorErrorsItemValueInt(
+          json.toInt());
+    }
+    if (json is List) {
+      return RepositoryAdvisoryDescriptionValidationErrorErrorsItemValueListString(
+          json.map((e) => e as String).toList().cast<String>());
+    }
+    throw FormatException(
+        "No variant matched for RepositoryAdvisoryDescriptionValidationErrorErrorsItemValue");
+  }
+  Object? toJson();
+}
+
+final class RepositoryAdvisoryDescriptionValidationErrorErrorsItemValueString
+    extends RepositoryAdvisoryDescriptionValidationErrorErrorsItemValue {
+  final String value;
+  const RepositoryAdvisoryDescriptionValidationErrorErrorsItemValueString(
+      this.value);
+  @override
+  Object? toJson() => value;
+}
+
+final class RepositoryAdvisoryDescriptionValidationErrorErrorsItemValueInt
+    extends RepositoryAdvisoryDescriptionValidationErrorErrorsItemValue {
+  final int value;
+  const RepositoryAdvisoryDescriptionValidationErrorErrorsItemValueInt(
+      this.value);
+  @override
+  Object? toJson() => value;
+}
+
+final class RepositoryAdvisoryDescriptionValidationErrorErrorsItemValueListString
+    extends RepositoryAdvisoryDescriptionValidationErrorErrorsItemValue {
+  final List<String> value;
+  const RepositoryAdvisoryDescriptionValidationErrorErrorsItemValueListString(
+      this.value);
+  @override
+  Object? toJson() => value;
 }

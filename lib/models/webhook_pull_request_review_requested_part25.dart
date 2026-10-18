@@ -4,7 +4,7 @@
 part of 'webhook_pull_request_review_requested.dart';
 
 // webhook_pull_request_review_requested domain models (part 25)
-class WebhookPullRequestReviewRequestedVariant1PullRequestAssignee {
+class WebhookPullRequestReviewRequestedVariant0RequestedReviewer {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   final SdkOptional<String> avatarUrl;
@@ -27,11 +27,11 @@ class WebhookPullRequestReviewRequestedVariant1PullRequestAssignee {
   final SdkOptional<String> starredUrl;
   final SdkOptional<String> subscriptionsUrl;
   final SdkOptional<
-      WebhookPullRequestReviewRequestedVariant1PullRequestAssigneeType> type_;
+      WebhookPullRequestReviewRequestedVariant0RequestedReviewerType> type_;
   final SdkOptional<String> url;
   final SdkOptional<String> userViewType;
 
-  const WebhookPullRequestReviewRequestedVariant1PullRequestAssignee(
+  const WebhookPullRequestReviewRequestedVariant0RequestedReviewer(
       {this.avatarUrl = const SdkOmitted(),
       this.deleted = const SdkOmitted(),
       this.email = const SdkOmitted(),
@@ -55,7 +55,7 @@ class WebhookPullRequestReviewRequestedVariant1PullRequestAssignee {
       this.url = const SdkOmitted(),
       this.userViewType = const SdkOmitted()});
 
-  WebhookPullRequestReviewRequestedVariant1PullRequestAssignee Function(
+  WebhookPullRequestReviewRequestedVariant0RequestedReviewer Function(
       {SdkOptional<String> avatarUrl,
       SdkOptional<bool> deleted,
       SdkOptional<String?> email,
@@ -76,12 +76,12 @@ class WebhookPullRequestReviewRequestedVariant1PullRequestAssignee {
       SdkOptional<String> starredUrl,
       SdkOptional<String> subscriptionsUrl,
       SdkOptional<
-              WebhookPullRequestReviewRequestedVariant1PullRequestAssigneeType>
+              WebhookPullRequestReviewRequestedVariant0RequestedReviewerType>
           type_,
       SdkOptional<String> url,
       SdkOptional<String> userViewType}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewRequestedVariant1PullRequestAssignee _copyWith(
+  WebhookPullRequestReviewRequestedVariant0RequestedReviewer _copyWith(
           {Object? avatarUrl = sdkOmittedValue,
           Object? deleted = sdkOmittedValue,
           Object? email = sdkOmittedValue,
@@ -104,7 +104,7 @@ class WebhookPullRequestReviewRequestedVariant1PullRequestAssignee {
           Object? type_ = sdkOmittedValue,
           Object? url = sdkOmittedValue,
           Object? userViewType = sdkOmittedValue}) =>
-      WebhookPullRequestReviewRequestedVariant1PullRequestAssignee(
+      WebhookPullRequestReviewRequestedVariant0RequestedReviewer(
         avatarUrl: identical(avatarUrl, sdkOmittedValue)
             ? this.avatarUrl
             : avatarUrl as SdkOptional<String>,
@@ -161,7 +161,7 @@ class WebhookPullRequestReviewRequestedVariant1PullRequestAssignee {
         type_: identical(type_, sdkOmittedValue)
             ? this.type_
             : type_ as SdkOptional<
-                WebhookPullRequestReviewRequestedVariant1PullRequestAssigneeType>,
+                WebhookPullRequestReviewRequestedVariant0RequestedReviewerType>,
         url: identical(url, sdkOmittedValue)
             ? this.url
             : url as SdkOptional<String>,
@@ -170,9 +170,9 @@ class WebhookPullRequestReviewRequestedVariant1PullRequestAssignee {
             : userViewType as SdkOptional<String>,
       );
 
-  factory WebhookPullRequestReviewRequestedVariant1PullRequestAssignee.fromJson(
+  factory WebhookPullRequestReviewRequestedVariant0RequestedReviewer.fromJson(
           Map<String, dynamic> json) =>
-      WebhookPullRequestReviewRequestedVariant1PullRequestAssignee(
+      WebhookPullRequestReviewRequestedVariant0RequestedReviewer(
         avatarUrl: json['avatar_url'] != null
             ? SdkPresent((json['avatar_url'] as String?)!)
             : const SdkOmitted(),
@@ -228,7 +228,7 @@ class WebhookPullRequestReviewRequestedVariant1PullRequestAssignee {
             : const SdkOmitted(),
         type_: json['type'] != null
             ? SdkPresent((json['type'] != null
-                ? WebhookPullRequestReviewRequestedVariant1PullRequestAssigneeType
+                ? WebhookPullRequestReviewRequestedVariant0RequestedReviewerType
                     .fromJson(json['type'] as String)
                 : null)!)
             : const SdkOmitted(),
@@ -347,7 +347,7 @@ class WebhookPullRequestReviewRequestedVariant1PullRequestAssignee {
         },
         ...switch (type_) {
           SdkPresent<
-                WebhookPullRequestReviewRequestedVariant1PullRequestAssigneeType>(
+                WebhookPullRequestReviewRequestedVariant0RequestedReviewerType>(
             value: final value
           ) =>
             {

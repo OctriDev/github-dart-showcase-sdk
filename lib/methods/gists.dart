@@ -194,6 +194,7 @@ Future<GistSimple> gistsGet(ClientConfig config,
               GistSimple.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
           errors: {
+        '403': (value) => ForbiddenGist.fromJson(value as Map<String, dynamic>),
         '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
       }))
       .data;
@@ -332,9 +333,11 @@ Future<GistComment> gistsGetComment(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'gistsGetComment',
-          fromJsonRaw: (value) => GistComment.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              GistComment.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
           errors: {
+        '403': (value) => ForbiddenGist.fromJson(value as Map<String, dynamic>),
         '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
       }))
       .data;

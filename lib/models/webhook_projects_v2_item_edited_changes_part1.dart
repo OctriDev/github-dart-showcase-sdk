@@ -18,6 +18,22 @@ sealed class WebhookProjectsV2ItemEditedChangesVariant0FieldValueFrom {
       return WebhookProjectsV2ItemEditedChangesVariant0FieldValueFromInt(
           json.toInt());
     }
+    if (json is Map<String, dynamic>) {
+      try {
+        final value = ProjectsV2SingleSelectOption.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return WebhookProjectsV2ItemEditedChangesVariant0FieldValueFromProjectsV2SingleSelectOption(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = ProjectsV2IterationSetting.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return WebhookProjectsV2ItemEditedChangesVariant0FieldValueFromProjectsV2IterationSetting(
+              value);
+        }
+      } catch (_) {}
+    }
     try {
       return WebhookProjectsV2ItemEditedChangesVariant0FieldValueFromProjectsV2SingleSelectOption(
           ProjectsV2SingleSelectOption.fromJson(json as Map<String, dynamic>));
@@ -79,6 +95,22 @@ sealed class WebhookProjectsV2ItemEditedChangesVariant0FieldValueTo {
     if (json is num) {
       return WebhookProjectsV2ItemEditedChangesVariant0FieldValueToInt(
           json.toInt());
+    }
+    if (json is Map<String, dynamic>) {
+      try {
+        final value = ProjectsV2SingleSelectOption.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return WebhookProjectsV2ItemEditedChangesVariant0FieldValueToProjectsV2SingleSelectOption(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = ProjectsV2IterationSetting.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return WebhookProjectsV2ItemEditedChangesVariant0FieldValueToProjectsV2IterationSetting(
+              value);
+        }
+      } catch (_) {}
     }
     try {
       return WebhookProjectsV2ItemEditedChangesVariant0FieldValueToProjectsV2SingleSelectOption(
@@ -399,6 +431,22 @@ sealed class WebhookProjectsV2ItemEditedChanges {
   static const String constructionSurface = 'named';
   const WebhookProjectsV2ItemEditedChanges();
   factory WebhookProjectsV2ItemEditedChanges.fromJson(Object? json) {
+    if (json is Map<String, dynamic>) {
+      try {
+        final value = WebhookProjectsV2ItemEditedChangesVariant0.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return WebhookProjectsV2ItemEditedChangesWebhookProjectsV2ItemEditedChangesVariant0(
+              value);
+        }
+      } catch (_) {}
+      try {
+        final value = WebhookProjectsV2ItemEditedChangesVariant1.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return WebhookProjectsV2ItemEditedChangesWebhookProjectsV2ItemEditedChangesVariant1(
+              value);
+        }
+      } catch (_) {}
+    }
     try {
       return WebhookProjectsV2ItemEditedChangesWebhookProjectsV2ItemEditedChangesVariant0(
           WebhookProjectsV2ItemEditedChangesVariant0.fromJson(

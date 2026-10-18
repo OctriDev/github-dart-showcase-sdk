@@ -4,23 +4,17 @@
 part of 'inline.dart';
 
 // Inline operation models (part 269)
-/// The enablement status of Dependabot alerts
-final class CodeSecurityCreateConfigurationRequestBodyDependabotAlerts {
+final class CopilotSpacesUpdateCollaboratorForUserActorType {
   final String value;
 
-  const CodeSecurityCreateConfigurationRequestBodyDependabotAlerts._(
-      this.value);
+  const CopilotSpacesUpdateCollaboratorForUserActorType._(this.value);
 
-  factory CodeSecurityCreateConfigurationRequestBodyDependabotAlerts.fromJson(
+  factory CopilotSpacesUpdateCollaboratorForUserActorType.fromJson(
           String value) =>
-      CodeSecurityCreateConfigurationRequestBodyDependabotAlerts._(value);
+      CopilotSpacesUpdateCollaboratorForUserActorType._(value);
 
-  static const enabled =
-      CodeSecurityCreateConfigurationRequestBodyDependabotAlerts._('enabled');
-  static const disabled =
-      CodeSecurityCreateConfigurationRequestBodyDependabotAlerts._('disabled');
-  static const notSet =
-      CodeSecurityCreateConfigurationRequestBodyDependabotAlerts._('not_set');
+  static const user = CopilotSpacesUpdateCollaboratorForUserActorType._('User');
+  static const team = CopilotSpacesUpdateCollaboratorForUserActorType._('Team');
 
   String toJson() => value;
 
@@ -29,34 +23,31 @@ final class CodeSecurityCreateConfigurationRequestBodyDependabotAlerts {
 
   @override
   bool operator ==(Object other) =>
-      other is CodeSecurityCreateConfigurationRequestBodyDependabotAlerts &&
+      other is CopilotSpacesUpdateCollaboratorForUserActorType &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// The enablement status of Dependabot delegated alert dismissal. Requires Dependabot alerts to be enabled.
-final class CodeSecurityCreateConfigurationRequestBodyDependabotDelegatedAlertDismissal {
+/// The new role to grant to the collaborator. Use `no_access` to remove the collaborator.
+final class CopilotSpacesUpdateCollaboratorForUserRequestBodyRole {
   final String value;
 
-  const CodeSecurityCreateConfigurationRequestBodyDependabotDelegatedAlertDismissal._(
-      this.value);
+  const CopilotSpacesUpdateCollaboratorForUserRequestBodyRole._(this.value);
 
-  factory CodeSecurityCreateConfigurationRequestBodyDependabotDelegatedAlertDismissal.fromJson(
+  factory CopilotSpacesUpdateCollaboratorForUserRequestBodyRole.fromJson(
           String value) =>
-      CodeSecurityCreateConfigurationRequestBodyDependabotDelegatedAlertDismissal
-          ._(value);
+      CopilotSpacesUpdateCollaboratorForUserRequestBodyRole._(value);
 
-  static const enabled =
-      CodeSecurityCreateConfigurationRequestBodyDependabotDelegatedAlertDismissal
-          ._('enabled');
-  static const disabled =
-      CodeSecurityCreateConfigurationRequestBodyDependabotDelegatedAlertDismissal
-          ._('disabled');
-  static const notSet =
-      CodeSecurityCreateConfigurationRequestBodyDependabotDelegatedAlertDismissal
-          ._('not_set');
+  static const reader =
+      CopilotSpacesUpdateCollaboratorForUserRequestBodyRole._('reader');
+  static const writer =
+      CopilotSpacesUpdateCollaboratorForUserRequestBodyRole._('writer');
+  static const admin =
+      CopilotSpacesUpdateCollaboratorForUserRequestBodyRole._('admin');
+  static const noAccess =
+      CopilotSpacesUpdateCollaboratorForUserRequestBodyRole._('no_access');
 
   String toJson() => value;
 
@@ -65,35 +56,36 @@ final class CodeSecurityCreateConfigurationRequestBodyDependabotDelegatedAlertDi
 
   @override
   bool operator ==(Object other) =>
-      other
-          is CodeSecurityCreateConfigurationRequestBodyDependabotDelegatedAlertDismissal &&
+      other is CopilotSpacesUpdateCollaboratorForUserRequestBodyRole &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// The enablement status of Dependabot security updates
-final class CodeSecurityCreateConfigurationRequestBodyDependabotSecurityUpdates {
+/// The type of resource to create.
+final class CopilotSpacesCreateResourceForUserRequestBodyResourceType {
   final String value;
 
-  const CodeSecurityCreateConfigurationRequestBodyDependabotSecurityUpdates._(
-      this.value);
+  const CopilotSpacesCreateResourceForUserRequestBodyResourceType._(this.value);
 
-  factory CodeSecurityCreateConfigurationRequestBodyDependabotSecurityUpdates.fromJson(
+  factory CopilotSpacesCreateResourceForUserRequestBodyResourceType.fromJson(
           String value) =>
-      CodeSecurityCreateConfigurationRequestBodyDependabotSecurityUpdates._(
-          value);
+      CopilotSpacesCreateResourceForUserRequestBodyResourceType._(value);
 
-  static const enabled =
-      CodeSecurityCreateConfigurationRequestBodyDependabotSecurityUpdates._(
-          'enabled');
-  static const disabled =
-      CodeSecurityCreateConfigurationRequestBodyDependabotSecurityUpdates._(
-          'disabled');
-  static const notSet =
-      CodeSecurityCreateConfigurationRequestBodyDependabotSecurityUpdates._(
-          'not_set');
+  static const repository =
+      CopilotSpacesCreateResourceForUserRequestBodyResourceType._('repository');
+  static const githubFile =
+      CopilotSpacesCreateResourceForUserRequestBodyResourceType._(
+          'github_file');
+  static const freeText =
+      CopilotSpacesCreateResourceForUserRequestBodyResourceType._('free_text');
+  static const githubIssue =
+      CopilotSpacesCreateResourceForUserRequestBodyResourceType._(
+          'github_issue');
+  static const githubPullRequest =
+      CopilotSpacesCreateResourceForUserRequestBodyResourceType._(
+          'github_pull_request');
 
   String toJson() => value;
 
@@ -102,30 +94,27 @@ final class CodeSecurityCreateConfigurationRequestBodyDependabotSecurityUpdates 
 
   @override
   bool operator ==(Object other) =>
-      other
-          is CodeSecurityCreateConfigurationRequestBodyDependabotSecurityUpdates &&
+      other is CopilotSpacesCreateResourceForUserRequestBodyResourceType &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// The enablement status of Dependency Graph
-final class CodeSecurityCreateConfigurationRequestBodyDependencyGraph {
+final class UsersGetContextForUserSubjectType {
   final String value;
 
-  const CodeSecurityCreateConfigurationRequestBodyDependencyGraph._(this.value);
+  const UsersGetContextForUserSubjectType._(this.value);
 
-  factory CodeSecurityCreateConfigurationRequestBodyDependencyGraph.fromJson(
-          String value) =>
-      CodeSecurityCreateConfigurationRequestBodyDependencyGraph._(value);
+  factory UsersGetContextForUserSubjectType.fromJson(String value) =>
+      UsersGetContextForUserSubjectType._(value);
 
-  static const enabled =
-      CodeSecurityCreateConfigurationRequestBodyDependencyGraph._('enabled');
-  static const disabled =
-      CodeSecurityCreateConfigurationRequestBodyDependencyGraph._('disabled');
-  static const notSet =
-      CodeSecurityCreateConfigurationRequestBodyDependencyGraph._('not_set');
+  static const organization =
+      UsersGetContextForUserSubjectType._('organization');
+  static const repository = UsersGetContextForUserSubjectType._('repository');
+  static const issue = UsersGetContextForUserSubjectType._('issue');
+  static const pullRequest =
+      UsersGetContextForUserSubjectType._('pull_request');
 
   String toJson() => value;
 
@@ -134,34 +123,84 @@ final class CodeSecurityCreateConfigurationRequestBodyDependencyGraph {
 
   @override
   bool operator ==(Object other) =>
-      other is CodeSecurityCreateConfigurationRequestBodyDependencyGraph &&
+      other is UsersGetContextForUserSubjectType && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+final class PackagesListPackagesForUserPackageType {
+  final String value;
+
+  const PackagesListPackagesForUserPackageType._(this.value);
+
+  factory PackagesListPackagesForUserPackageType.fromJson(String value) =>
+      PackagesListPackagesForUserPackageType._(value);
+
+  static const npm = PackagesListPackagesForUserPackageType._('npm');
+  static const maven = PackagesListPackagesForUserPackageType._('maven');
+  static const rubygems = PackagesListPackagesForUserPackageType._('rubygems');
+  static const docker = PackagesListPackagesForUserPackageType._('docker');
+  static const nuget = PackagesListPackagesForUserPackageType._('nuget');
+  static const container =
+      PackagesListPackagesForUserPackageType._('container');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is PackagesListPackagesForUserPackageType && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The field's data type.
+final class ProjectsAddFieldForUserRequestBodyVariant0DataType {
+  final String value;
+
+  const ProjectsAddFieldForUserRequestBodyVariant0DataType._(this.value);
+
+  factory ProjectsAddFieldForUserRequestBodyVariant0DataType.fromJson(
+          String value) =>
+      ProjectsAddFieldForUserRequestBodyVariant0DataType._(value);
+
+  static const text =
+      ProjectsAddFieldForUserRequestBodyVariant0DataType._('text');
+  static const number =
+      ProjectsAddFieldForUserRequestBodyVariant0DataType._('number');
+  static const date =
+      ProjectsAddFieldForUserRequestBodyVariant0DataType._('date');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is ProjectsAddFieldForUserRequestBodyVariant0DataType &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// The enablement status of Automatic dependency submission
-final class CodeSecurityCreateConfigurationRequestBodyDependencyGraphAutosubmitAction {
+/// The field's data type.
+final class ProjectsAddFieldForUserRequestBodyVariant1DataType {
   final String value;
 
-  const CodeSecurityCreateConfigurationRequestBodyDependencyGraphAutosubmitAction._(
-      this.value);
+  const ProjectsAddFieldForUserRequestBodyVariant1DataType._(this.value);
 
-  factory CodeSecurityCreateConfigurationRequestBodyDependencyGraphAutosubmitAction.fromJson(
+  factory ProjectsAddFieldForUserRequestBodyVariant1DataType.fromJson(
           String value) =>
-      CodeSecurityCreateConfigurationRequestBodyDependencyGraphAutosubmitAction
-          ._(value);
+      ProjectsAddFieldForUserRequestBodyVariant1DataType._(value);
 
-  static const enabled =
-      CodeSecurityCreateConfigurationRequestBodyDependencyGraphAutosubmitAction
-          ._('enabled');
-  static const disabled =
-      CodeSecurityCreateConfigurationRequestBodyDependencyGraphAutosubmitAction
-          ._('disabled');
-  static const notSet =
-      CodeSecurityCreateConfigurationRequestBodyDependencyGraphAutosubmitAction
-          ._('not_set');
+  static const singleSelect =
+      ProjectsAddFieldForUserRequestBodyVariant1DataType._('single_select');
 
   String toJson() => value;
 
@@ -170,28 +209,25 @@ final class CodeSecurityCreateConfigurationRequestBodyDependencyGraphAutosubmitA
 
   @override
   bool operator ==(Object other) =>
-      other
-          is CodeSecurityCreateConfigurationRequestBodyDependencyGraphAutosubmitAction &&
+      other is ProjectsAddFieldForUserRequestBodyVariant1DataType &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// The enforcement status for a security configuration
-final class CodeSecurityCreateConfigurationRequestBodyEnforcement {
+/// The field's data type.
+final class ProjectsAddFieldForUserRequestBodyVariant2DataType {
   final String value;
 
-  const CodeSecurityCreateConfigurationRequestBodyEnforcement._(this.value);
+  const ProjectsAddFieldForUserRequestBodyVariant2DataType._(this.value);
 
-  factory CodeSecurityCreateConfigurationRequestBodyEnforcement.fromJson(
+  factory ProjectsAddFieldForUserRequestBodyVariant2DataType.fromJson(
           String value) =>
-      CodeSecurityCreateConfigurationRequestBodyEnforcement._(value);
+      ProjectsAddFieldForUserRequestBodyVariant2DataType._(value);
 
-  static const enforced =
-      CodeSecurityCreateConfigurationRequestBodyEnforcement._('enforced');
-  static const unenforced =
-      CodeSecurityCreateConfigurationRequestBodyEnforcement._('unenforced');
+  static const iteration =
+      ProjectsAddFieldForUserRequestBodyVariant2DataType._('iteration');
 
   String toJson() => value;
 
@@ -200,34 +236,25 @@ final class CodeSecurityCreateConfigurationRequestBodyEnforcement {
 
   @override
   bool operator ==(Object other) =>
-      other is CodeSecurityCreateConfigurationRequestBodyEnforcement &&
+      other is ProjectsAddFieldForUserRequestBodyVariant2DataType &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// The enablement status of private vulnerability reporting
-final class CodeSecurityCreateConfigurationRequestBodyPrivateVulnerabilityReporting {
+/// The type of item to add to the project. Must be either Issue or PullRequest.
+final class ProjectsAddItemForUserRequestBodyType {
   final String value;
 
-  const CodeSecurityCreateConfigurationRequestBodyPrivateVulnerabilityReporting._(
-      this.value);
+  const ProjectsAddItemForUserRequestBodyType._(this.value);
 
-  factory CodeSecurityCreateConfigurationRequestBodyPrivateVulnerabilityReporting.fromJson(
-          String value) =>
-      CodeSecurityCreateConfigurationRequestBodyPrivateVulnerabilityReporting._(
-          value);
+  factory ProjectsAddItemForUserRequestBodyType.fromJson(String value) =>
+      ProjectsAddItemForUserRequestBodyType._(value);
 
-  static const enabled =
-      CodeSecurityCreateConfigurationRequestBodyPrivateVulnerabilityReporting._(
-          'enabled');
-  static const disabled =
-      CodeSecurityCreateConfigurationRequestBodyPrivateVulnerabilityReporting._(
-          'disabled');
-  static const notSet =
-      CodeSecurityCreateConfigurationRequestBodyPrivateVulnerabilityReporting._(
-          'not_set');
+  static const issue = ProjectsAddItemForUserRequestBodyType._('Issue');
+  static const pullrequest =
+      ProjectsAddItemForUserRequestBodyType._('PullRequest');
 
   String toJson() => value;
 
@@ -236,31 +263,23 @@ final class CodeSecurityCreateConfigurationRequestBodyPrivateVulnerabilityReport
 
   @override
   bool operator ==(Object other) =>
-      other
-          is CodeSecurityCreateConfigurationRequestBodyPrivateVulnerabilityReporting &&
-      other.value == value;
+      other is ProjectsAddItemForUserRequestBodyType && other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// The enablement status of GitHub Secret Protection features.
-final class CodeSecurityCreateConfigurationRequestBodySecretProtection {
+final class ReposListForUserType {
   final String value;
 
-  const CodeSecurityCreateConfigurationRequestBodySecretProtection._(
-      this.value);
+  const ReposListForUserType._(this.value);
 
-  factory CodeSecurityCreateConfigurationRequestBodySecretProtection.fromJson(
-          String value) =>
-      CodeSecurityCreateConfigurationRequestBodySecretProtection._(value);
+  factory ReposListForUserType.fromJson(String value) =>
+      ReposListForUserType._(value);
 
-  static const enabled =
-      CodeSecurityCreateConfigurationRequestBodySecretProtection._('enabled');
-  static const disabled =
-      CodeSecurityCreateConfigurationRequestBodySecretProtection._('disabled');
-  static const notSet =
-      CodeSecurityCreateConfigurationRequestBodySecretProtection._('not_set');
+  static const all = ReposListForUserType._('all');
+  static const owner = ReposListForUserType._('owner');
+  static const member = ReposListForUserType._('member');
 
   String toJson() => value;
 
@@ -269,29 +288,24 @@ final class CodeSecurityCreateConfigurationRequestBodySecretProtection {
 
   @override
   bool operator ==(Object other) =>
-      other is CodeSecurityCreateConfigurationRequestBodySecretProtection &&
-      other.value == value;
+      other is ReposListForUserType && other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// The enablement status of secret scanning
-final class CodeSecurityCreateConfigurationRequestBodySecretScanning {
+final class ReposListForUserSort {
   final String value;
 
-  const CodeSecurityCreateConfigurationRequestBodySecretScanning._(this.value);
+  const ReposListForUserSort._(this.value);
 
-  factory CodeSecurityCreateConfigurationRequestBodySecretScanning.fromJson(
-          String value) =>
-      CodeSecurityCreateConfigurationRequestBodySecretScanning._(value);
+  factory ReposListForUserSort.fromJson(String value) =>
+      ReposListForUserSort._(value);
 
-  static const enabled =
-      CodeSecurityCreateConfigurationRequestBodySecretScanning._('enabled');
-  static const disabled =
-      CodeSecurityCreateConfigurationRequestBodySecretScanning._('disabled');
-  static const notSet =
-      CodeSecurityCreateConfigurationRequestBodySecretScanning._('not_set');
+  static const created = ReposListForUserSort._('created');
+  static const updated = ReposListForUserSort._('updated');
+  static const pushed = ReposListForUserSort._('pushed');
+  static const fullName = ReposListForUserSort._('full_name');
 
   String toJson() => value;
 
@@ -300,34 +314,22 @@ final class CodeSecurityCreateConfigurationRequestBodySecretScanning {
 
   @override
   bool operator ==(Object other) =>
-      other is CodeSecurityCreateConfigurationRequestBodySecretScanning &&
-      other.value == value;
+      other is ReposListForUserSort && other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// The enablement status of secret scanning delegated alert dismissal
-final class CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedAlertDismissal {
+final class ReposListForUserDirection {
   final String value;
 
-  const CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedAlertDismissal._(
-      this.value);
+  const ReposListForUserDirection._(this.value);
 
-  factory CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedAlertDismissal.fromJson(
-          String value) =>
-      CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedAlertDismissal
-          ._(value);
+  factory ReposListForUserDirection.fromJson(String value) =>
+      ReposListForUserDirection._(value);
 
-  static const enabled =
-      CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedAlertDismissal
-          ._('enabled');
-  static const disabled =
-      CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedAlertDismissal
-          ._('disabled');
-  static const notSet =
-      CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedAlertDismissal
-          ._('not_set');
+  static const asc = ReposListForUserDirection._('asc');
+  static const desc = ReposListForUserDirection._('desc');
 
   String toJson() => value;
 
@@ -336,80 +338,7 @@ final class CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedAle
 
   @override
   bool operator ==(Object other) =>
-      other
-          is CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedAlertDismissal &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The enablement status of secret scanning delegated bypass
-final class CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypass {
-  final String value;
-
-  const CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypass._(
-      this.value);
-
-  factory CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypass.fromJson(
-          String value) =>
-      CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypass._(
-          value);
-
-  static const enabled =
-      CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypass._(
-          'enabled');
-  static const disabled =
-      CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypass._(
-          'disabled');
-  static const notSet =
-      CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypass._(
-          'not_set');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypass &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The bypass mode for the reviewer
-final class CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemMode {
-  final String value;
-
-  const CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemMode._(
-      this.value);
-
-  factory CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemMode.fromJson(
-          String value) =>
-      CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemMode
-          ._(value);
-
-  static const always =
-      CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemMode
-          ._('ALWAYS');
-  static const exempt =
-      CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemMode
-          ._('EXEMPT');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemMode &&
-      other.value == value;
+      other is ReposListForUserDirection && other.value == value;
 
   @override
   int get hashCode => value.hashCode;

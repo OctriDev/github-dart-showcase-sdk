@@ -4,6 +4,98 @@
 part of 'inline.dart';
 
 // Inline operation models (part 14)
+/// The enablement status of private vulnerability reporting
+final class CodeSecurityConfigurationPrivateVulnerabilityReporting {
+  final String value;
+
+  const CodeSecurityConfigurationPrivateVulnerabilityReporting._(this.value);
+
+  factory CodeSecurityConfigurationPrivateVulnerabilityReporting.fromJson(
+          String value) =>
+      CodeSecurityConfigurationPrivateVulnerabilityReporting._(value);
+
+  static const enabled =
+      CodeSecurityConfigurationPrivateVulnerabilityReporting._('enabled');
+  static const disabled =
+      CodeSecurityConfigurationPrivateVulnerabilityReporting._('disabled');
+  static const notSet =
+      CodeSecurityConfigurationPrivateVulnerabilityReporting._('not_set');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is CodeSecurityConfigurationPrivateVulnerabilityReporting &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The enablement status of secret scanning
+final class CodeSecurityConfigurationSecretScanning {
+  final String value;
+
+  const CodeSecurityConfigurationSecretScanning._(this.value);
+
+  factory CodeSecurityConfigurationSecretScanning.fromJson(String value) =>
+      CodeSecurityConfigurationSecretScanning._(value);
+
+  static const enabled = CodeSecurityConfigurationSecretScanning._('enabled');
+  static const disabled = CodeSecurityConfigurationSecretScanning._('disabled');
+  static const notSet = CodeSecurityConfigurationSecretScanning._('not_set');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is CodeSecurityConfigurationSecretScanning && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The enablement status of secret scanning delegated alert dismissal
+final class CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal {
+  final String value;
+
+  const CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal._(
+      this.value);
+
+  factory CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal.fromJson(
+          String value) =>
+      CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal._(value);
+
+  static const enabled =
+      CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal._(
+          'enabled');
+  static const disabled =
+      CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal._(
+          'disabled');
+  static const notSet =
+      CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal._(
+          'not_set');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
 /// The enablement status of secret scanning delegated bypass
 final class CodeSecurityConfigurationSecretScanningDelegatedBypass {
   final String value;
@@ -281,121 +373,6 @@ final class CodeSecurityConfigurationTargetType {
   @override
   bool operator ==(Object other) =>
       other is CodeSecurityConfigurationTargetType && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The attachment status of the code security configuration on the repository.
-final class CodeSecurityConfigurationForRepositoryStatus {
-  final String value;
-
-  const CodeSecurityConfigurationForRepositoryStatus._(this.value);
-
-  factory CodeSecurityConfigurationForRepositoryStatus.fromJson(String value) =>
-      CodeSecurityConfigurationForRepositoryStatus._(value);
-
-  static const attached =
-      CodeSecurityConfigurationForRepositoryStatus._('attached');
-  static const attaching =
-      CodeSecurityConfigurationForRepositoryStatus._('attaching');
-  static const detached =
-      CodeSecurityConfigurationForRepositoryStatus._('detached');
-  static const removed =
-      CodeSecurityConfigurationForRepositoryStatus._('removed');
-  static const enforced =
-      CodeSecurityConfigurationForRepositoryStatus._('enforced');
-  static const failed =
-      CodeSecurityConfigurationForRepositoryStatus._('failed');
-  static const updating =
-      CodeSecurityConfigurationForRepositoryStatus._('updating');
-  static const removedByEnterprise =
-      CodeSecurityConfigurationForRepositoryStatus._('removed_by_enterprise');
-  static const enterpriseEnforced =
-      CodeSecurityConfigurationForRepositoryStatus._('enterprise_enforced');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is CodeSecurityConfigurationForRepositoryStatus &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The attachment status of the code security configuration on the repository.
-final class CodeSecurityConfigurationRepositoriesStatus {
-  final String value;
-
-  const CodeSecurityConfigurationRepositoriesStatus._(this.value);
-
-  factory CodeSecurityConfigurationRepositoriesStatus.fromJson(String value) =>
-      CodeSecurityConfigurationRepositoriesStatus._(value);
-
-  static const attached =
-      CodeSecurityConfigurationRepositoriesStatus._('attached');
-  static const attaching =
-      CodeSecurityConfigurationRepositoriesStatus._('attaching');
-  static const detached =
-      CodeSecurityConfigurationRepositoriesStatus._('detached');
-  static const removed =
-      CodeSecurityConfigurationRepositoriesStatus._('removed');
-  static const enforced =
-      CodeSecurityConfigurationRepositoriesStatus._('enforced');
-  static const failed = CodeSecurityConfigurationRepositoriesStatus._('failed');
-  static const updating =
-      CodeSecurityConfigurationRepositoriesStatus._('updating');
-  static const removedByEnterprise =
-      CodeSecurityConfigurationRepositoriesStatus._('removed_by_enterprise');
-  static const enterpriseEnforced =
-      CodeSecurityConfigurationRepositoriesStatus._('enterprise_enforced');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is CodeSecurityConfigurationRepositoriesStatus &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The visibility of newly created repositories for which the code security configuration will be applied to by default
-final class CodeSecurityDefaultConfigurationsItemDefaultForNewRepos {
-  final String value;
-
-  const CodeSecurityDefaultConfigurationsItemDefaultForNewRepos._(this.value);
-
-  factory CodeSecurityDefaultConfigurationsItemDefaultForNewRepos.fromJson(
-          String value) =>
-      CodeSecurityDefaultConfigurationsItemDefaultForNewRepos._(value);
-
-  static const public =
-      CodeSecurityDefaultConfigurationsItemDefaultForNewRepos._('public');
-  static const privateAndInternal =
-      CodeSecurityDefaultConfigurationsItemDefaultForNewRepos._(
-          'private_and_internal');
-  static const all =
-      CodeSecurityDefaultConfigurationsItemDefaultForNewRepos._('all');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is CodeSecurityDefaultConfigurationsItemDefaultForNewRepos &&
-      other.value == value;
 
   @override
   int get hashCode => value.hashCode;

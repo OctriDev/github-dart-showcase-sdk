@@ -8,6 +8,8 @@ import 'misc.dart';
 import 'repository.dart';
 import 'shared_simple.dart';
 import 'simple.dart';
+import 'webhook_package_published_package_package_version_body.dart';
+import 'webhook_package_published_package_package_version_nuget_metadata_item_value.dart';
 import 'webhook_rubygems_metadata.dart';
 
 part 'webhook_package_published_part1.dart';
@@ -18,4 +20,3 @@ part 'webhook_package_published_part5.dart';
 part 'webhook_package_published_part6.dart';
 part 'webhook_package_published_part7.dart';
 part 'webhook_package_published_part8.dart';
-part 'webhook_package_published_part9.dart';

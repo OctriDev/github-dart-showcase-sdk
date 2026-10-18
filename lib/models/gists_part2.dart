@@ -4,6 +4,115 @@
 part of 'gists.dart';
 
 // gists domain models (part 2)
+/// A comment made to a gist.
+class GistComment {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// Required `integer` value serialized in the `id` wire field.
+  final int id;
+
+  /// Required `string` value serialized in the `node_id` wire field.
+  final String nodeId;
+
+  /// Required `uri`-formatted value serialized in the `url` wire field.
+  final String url;
+
+  /// The comment text.
+  final String body;
+
+  /// A GitHub user.
+  final NullableSimpleUser? user;
+
+  /// Required `date-time`-formatted value serialized in the `created_at` wire field.
+  final String createdAt;
+
+  /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
+  final String updatedAt;
+
+  /// How the author is associated with the repository.
+  final AuthorAssociation authorAssociation;
+
+  const GistComment(
+      {required this.id,
+      required this.nodeId,
+      required this.url,
+      required this.body,
+      required this.user,
+      required this.createdAt,
+      required this.updatedAt,
+      required this.authorAssociation});
+
+  GistComment Function(
+      {int id,
+      String nodeId,
+      String url,
+      String body,
+      NullableSimpleUser? user,
+      String createdAt,
+      String updatedAt,
+      AuthorAssociation authorAssociation}) get copyWith => _copyWith;
+
+  GistComment _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? body = sdkOmittedValue,
+          Object? user = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? authorAssociation = sdkOmittedValue}) =>
+      GistComment(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        body: identical(body, sdkOmittedValue) ? this.body : body as String,
+        user: identical(user, sdkOmittedValue)
+            ? this.user
+            : user as NullableSimpleUser?,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+        authorAssociation: identical(authorAssociation, sdkOmittedValue)
+            ? this.authorAssociation
+            : authorAssociation as AuthorAssociation,
+      );
+
+  factory GistComment.fromJson(Map<String, dynamic> json) => GistComment(
+        id: ((json['id'] as num?)?.toInt())!,
+        nodeId: (json['node_id'] as String?)!,
+        url: (json['url'] as String?)!,
+        body: (json['body'] as String?)!,
+        user: json.containsKey('user')
+            ? json['user'] != null
+                ? NullableSimpleUser.fromJson(
+                    json['user'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'user', 'Required property is missing'),
+        createdAt: (json['created_at'] as String?)!,
+        updatedAt: (json['updated_at'] as String?)!,
+        authorAssociation: (json['author_association'] != null
+            ? AuthorAssociation.fromJson(json['author_association'] as String)
+            : null)!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'node_id': nodeId,
+        'url': url,
+        'body': body,
+        'user': user?.toJson(),
+        'created_at': createdAt,
+        'updated_at': updatedAt,
+        'author_association': authorAssociation.toJson(),
+      };
+}
+
 /// Required object value serialized in the `change_status` wire field.
 class GistCommitChangeStatus {
   /// This model is constructed from named fields in one call.
@@ -346,106 +455,6 @@ class GistHistory {
         ...switch (url) {
           SdkPresent<String>(value: final value) => {
               'url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-class GistSimpleForkOfFilesValue {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final SdkOptional<String> filename;
-  final SdkOptional<String> type_;
-  final SdkOptional<String> language;
-  final SdkOptional<String> rawUrl;
-  final SdkOptional<int> size;
-
-  const GistSimpleForkOfFilesValue(
-      {this.filename = const SdkOmitted(),
-      this.type_ = const SdkOmitted(),
-      this.language = const SdkOmitted(),
-      this.rawUrl = const SdkOmitted(),
-      this.size = const SdkOmitted()});
-
-  GistSimpleForkOfFilesValue Function(
-      {SdkOptional<String> filename,
-      SdkOptional<String> type_,
-      SdkOptional<String> language,
-      SdkOptional<String> rawUrl,
-      SdkOptional<int> size}) get copyWith => _copyWith;
-
-  GistSimpleForkOfFilesValue _copyWith(
-          {Object? filename = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue,
-          Object? language = sdkOmittedValue,
-          Object? rawUrl = sdkOmittedValue,
-          Object? size = sdkOmittedValue}) =>
-      GistSimpleForkOfFilesValue(
-        filename: identical(filename, sdkOmittedValue)
-            ? this.filename
-            : filename as SdkOptional<String>,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as SdkOptional<String>,
-        language: identical(language, sdkOmittedValue)
-            ? this.language
-            : language as SdkOptional<String>,
-        rawUrl: identical(rawUrl, sdkOmittedValue)
-            ? this.rawUrl
-            : rawUrl as SdkOptional<String>,
-        size: identical(size, sdkOmittedValue)
-            ? this.size
-            : size as SdkOptional<int>,
-      );
-
-  factory GistSimpleForkOfFilesValue.fromJson(Map<String, dynamic> json) =>
-      GistSimpleForkOfFilesValue(
-        filename: json['filename'] != null
-            ? SdkPresent((json['filename'] as String?)!)
-            : const SdkOmitted(),
-        type_: json['type'] != null
-            ? SdkPresent((json['type'] as String?)!)
-            : const SdkOmitted(),
-        language: json['language'] != null
-            ? SdkPresent((json['language'] as String?)!)
-            : const SdkOmitted(),
-        rawUrl: json['raw_url'] != null
-            ? SdkPresent((json['raw_url'] as String?)!)
-            : const SdkOmitted(),
-        size: json['size'] != null
-            ? SdkPresent(((json['size'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (filename) {
-          SdkPresent<String>(value: final value) => {
-              'filename': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (type_) {
-          SdkPresent<String>(value: final value) => {
-              'type': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (language) {
-          SdkPresent<String>(value: final value) => {
-              'language': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (rawUrl) {
-          SdkPresent<String>(value: final value) => {
-              'raw_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (size) {
-          SdkPresent<int>(value: final value) => {
-              'size': value,
             },
           _ => const <String, dynamic>{},
         },

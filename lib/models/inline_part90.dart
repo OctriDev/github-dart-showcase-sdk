@@ -4,23 +4,150 @@
 part of 'inline.dart';
 
 // Inline operation models (part 90)
-/// Optional enumerated value serialized in the `issues` wire field.
-final class WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsIssues {
+/// Optional enumerated value serialized in the `type` wire field.
+final class WebhookIssuesLockedIssuePerformedViaGithubAppOwnerType {
   final String value;
 
-  const WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsIssues._(
+  const WebhookIssuesLockedIssuePerformedViaGithubAppOwnerType._(this.value);
+
+  factory WebhookIssuesLockedIssuePerformedViaGithubAppOwnerType.fromJson(
+          String value) =>
+      WebhookIssuesLockedIssuePerformedViaGithubAppOwnerType._(value);
+
+  static const bot =
+      WebhookIssuesLockedIssuePerformedViaGithubAppOwnerType._('Bot');
+  static const user =
+      WebhookIssuesLockedIssuePerformedViaGithubAppOwnerType._('User');
+  static const organization =
+      WebhookIssuesLockedIssuePerformedViaGithubAppOwnerType._('Organization');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookIssuesLockedIssuePerformedViaGithubAppOwnerType &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Optional enumerated value serialized in the `actions` wire field.
+final class WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsActions {
+  final String value;
+
+  const WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsActions._(
       this.value);
 
-  factory WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsIssues.fromJson(
+  factory WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsActions.fromJson(
           String value) =>
-      WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsIssues
+      WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsActions._(value);
+
+  static const read =
+      WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsActions._('read');
+  static const write =
+      WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsActions._(
+          'write');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsActions &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Optional enumerated value serialized in the `administration` wire field.
+final class WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsAdministration {
+  final String value;
+
+  const WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsAdministration._(
+      this.value);
+
+  factory WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsAdministration.fromJson(
+          String value) =>
+      WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsAdministration._(
+          value);
+
+  static const read =
+      WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsAdministration._(
+          'read');
+  static const write =
+      WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsAdministration._(
+          'write');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsAdministration &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Optional enumerated value serialized in the `checks` wire field.
+final class WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsChecks {
+  final String value;
+
+  const WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsChecks._(
+      this.value);
+
+  factory WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsChecks.fromJson(
+          String value) =>
+      WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsChecks._(value);
+
+  static const read =
+      WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsChecks._('read');
+  static const write =
+      WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsChecks._('write');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsChecks &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Optional enumerated value serialized in the `content_references` wire field.
+final class WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsContentReferences {
+  final String value;
+
+  const WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsContentReferences._(
+      this.value);
+
+  factory WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsContentReferences.fromJson(
+          String value) =>
+      WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsContentReferences
           ._(value);
 
   static const read =
-      WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsIssues
+      WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsContentReferences
           ._('read');
   static const write =
-      WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsIssues
+      WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsContentReferences
           ._('write');
 
   String toJson() => value;
@@ -31,7 +158,202 @@ final class WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermiss
   @override
   bool operator ==(Object other) =>
       other
-          is WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsIssues &&
+          is WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsContentReferences &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Optional enumerated value serialized in the `contents` wire field.
+final class WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsContents {
+  final String value;
+
+  const WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsContents._(
+      this.value);
+
+  factory WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsContents.fromJson(
+          String value) =>
+      WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsContents._(value);
+
+  static const read =
+      WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsContents._(
+          'read');
+  static const write =
+      WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsContents._(
+          'write');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsContents &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Optional enumerated value serialized in the `deployments` wire field.
+final class WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsDeployments {
+  final String value;
+
+  const WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsDeployments._(
+      this.value);
+
+  factory WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsDeployments.fromJson(
+          String value) =>
+      WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsDeployments._(
+          value);
+
+  static const read =
+      WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsDeployments._(
+          'read');
+  static const write =
+      WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsDeployments._(
+          'write');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsDeployments &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Optional enumerated value serialized in the `discussions` wire field.
+final class WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsDiscussions {
+  final String value;
+
+  const WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsDiscussions._(
+      this.value);
+
+  factory WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsDiscussions.fromJson(
+          String value) =>
+      WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsDiscussions._(
+          value);
+
+  static const read =
+      WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsDiscussions._(
+          'read');
+  static const write =
+      WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsDiscussions._(
+          'write');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsDiscussions &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Optional enumerated value serialized in the `emails` wire field.
+final class WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsEmails {
+  final String value;
+
+  const WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsEmails._(
+      this.value);
+
+  factory WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsEmails.fromJson(
+          String value) =>
+      WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsEmails._(value);
+
+  static const read =
+      WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsEmails._('read');
+  static const write =
+      WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsEmails._('write');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsEmails &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Optional enumerated value serialized in the `environments` wire field.
+final class WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsEnvironments {
+  final String value;
+
+  const WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsEnvironments._(
+      this.value);
+
+  factory WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsEnvironments.fromJson(
+          String value) =>
+      WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsEnvironments._(
+          value);
+
+  static const read =
+      WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsEnvironments._(
+          'read');
+  static const write =
+      WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsEnvironments._(
+          'write');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsEnvironments &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Optional enumerated value serialized in the `issues` wire field.
+final class WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsIssues {
+  final String value;
+
+  const WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsIssues._(
+      this.value);
+
+  factory WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsIssues.fromJson(
+          String value) =>
+      WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsIssues._(value);
+
+  static const read =
+      WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsIssues._('read');
+  static const write =
+      WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsIssues._('write');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsIssues &&
       other.value == value;
 
   @override
@@ -39,23 +361,20 @@ final class WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermiss
 }
 
 /// Optional enumerated value serialized in the `keys` wire field.
-final class WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsKeys {
+final class WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsKeys {
   final String value;
 
-  const WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsKeys._(
+  const WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsKeys._(
       this.value);
 
-  factory WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsKeys.fromJson(
+  factory WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsKeys.fromJson(
           String value) =>
-      WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsKeys
-          ._(value);
+      WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsKeys._(value);
 
   static const read =
-      WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsKeys
-          ._('read');
+      WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsKeys._('read');
   static const write =
-      WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsKeys
-          ._('write');
+      WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsKeys._('write');
 
   String toJson() => value;
 
@@ -64,8 +383,7 @@ final class WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermiss
 
   @override
   bool operator ==(Object other) =>
-      other
-          is WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsKeys &&
+      other is WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsKeys &&
       other.value == value;
 
   @override
@@ -73,23 +391,21 @@ final class WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermiss
 }
 
 /// Optional enumerated value serialized in the `members` wire field.
-final class WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsMembers {
+final class WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsMembers {
   final String value;
 
-  const WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsMembers._(
+  const WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsMembers._(
       this.value);
 
-  factory WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsMembers.fromJson(
+  factory WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsMembers.fromJson(
           String value) =>
-      WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsMembers
-          ._(value);
+      WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsMembers._(value);
 
   static const read =
-      WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsMembers
-          ._('read');
+      WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsMembers._('read');
   static const write =
-      WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsMembers
-          ._('write');
+      WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsMembers._(
+          'write');
 
   String toJson() => value;
 
@@ -99,347 +415,7 @@ final class WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermiss
   @override
   bool operator ==(Object other) =>
       other
-          is WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsMembers &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `metadata` wire field.
-final class WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsMetadata {
-  final String value;
-
-  const WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsMetadata._(
-      this.value);
-
-  factory WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsMetadata.fromJson(
-          String value) =>
-      WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsMetadata
-          ._(value);
-
-  static const read =
-      WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsMetadata
-          ._('read');
-  static const write =
-      WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsMetadata
-          ._('write');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsMetadata &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `organization_administration` wire field.
-final class WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationAdministration {
-  final String value;
-
-  const WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationAdministration._(
-      this.value);
-
-  factory WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationAdministration.fromJson(
-          String value) =>
-      WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationAdministration
-          ._(value);
-
-  static const read =
-      WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationAdministration
-          ._('read');
-  static const write =
-      WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationAdministration
-          ._('write');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationAdministration &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `organization_hooks` wire field.
-final class WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationHooks {
-  final String value;
-
-  const WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationHooks._(
-      this.value);
-
-  factory WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationHooks.fromJson(
-          String value) =>
-      WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationHooks
-          ._(value);
-
-  static const read =
-      WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationHooks
-          ._('read');
-  static const write =
-      WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationHooks
-          ._('write');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationHooks &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `organization_packages` wire field.
-final class WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationPackages {
-  final String value;
-
-  const WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationPackages._(
-      this.value);
-
-  factory WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationPackages.fromJson(
-          String value) =>
-      WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationPackages
-          ._(value);
-
-  static const read =
-      WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationPackages
-          ._('read');
-  static const write =
-      WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationPackages
-          ._('write');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationPackages &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `organization_plan` wire field.
-final class WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationPlan {
-  final String value;
-
-  const WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationPlan._(
-      this.value);
-
-  factory WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationPlan.fromJson(
-          String value) =>
-      WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationPlan
-          ._(value);
-
-  static const read =
-      WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationPlan
-          ._('read');
-  static const write =
-      WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationPlan
-          ._('write');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationPlan &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `organization_projects` wire field.
-final class WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationProjects {
-  final String value;
-
-  const WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationProjects._(
-      this.value);
-
-  factory WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationProjects.fromJson(
-          String value) =>
-      WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationProjects
-          ._(value);
-
-  static const read =
-      WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationProjects
-          ._('read');
-  static const write =
-      WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationProjects
-          ._('write');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationProjects &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `organization_secrets` wire field.
-final class WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationSecrets {
-  final String value;
-
-  const WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationSecrets._(
-      this.value);
-
-  factory WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationSecrets.fromJson(
-          String value) =>
-      WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationSecrets
-          ._(value);
-
-  static const read =
-      WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationSecrets
-          ._('read');
-  static const write =
-      WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationSecrets
-          ._('write');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationSecrets &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `organization_self_hosted_runners` wire field.
-final class WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationSelfHostedRunners {
-  final String value;
-
-  const WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationSelfHostedRunners._(
-      this.value);
-
-  factory WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationSelfHostedRunners.fromJson(
-          String value) =>
-      WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationSelfHostedRunners
-          ._(value);
-
-  static const read =
-      WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationSelfHostedRunners
-          ._('read');
-  static const write =
-      WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationSelfHostedRunners
-          ._('write');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationSelfHostedRunners &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `organization_user_blocking` wire field.
-final class WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationUserBlocking {
-  final String value;
-
-  const WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationUserBlocking._(
-      this.value);
-
-  factory WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationUserBlocking.fromJson(
-          String value) =>
-      WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationUserBlocking
-          ._(value);
-
-  static const read =
-      WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationUserBlocking
-          ._('read');
-  static const write =
-      WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationUserBlocking
-          ._('write');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsOrganizationUserBlocking &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `packages` wire field.
-final class WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsPackages {
-  final String value;
-
-  const WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsPackages._(
-      this.value);
-
-  factory WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsPackages.fromJson(
-          String value) =>
-      WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsPackages
-          ._(value);
-
-  static const read =
-      WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsPackages
-          ._('read');
-  static const write =
-      WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsPackages
-          ._('write');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is WebhookIssueCommentUnpinnedIssueVariant0PerformedViaGithubAppPermissionsPackages &&
+          is WebhookIssuesLockedIssuePerformedViaGithubAppPermissionsMembers &&
       other.value == value;
 
   @override

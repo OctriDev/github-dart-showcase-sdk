@@ -9,6 +9,134 @@ sealed class OrgRules {
   static const String constructionSurface = 'named';
   const OrgRules();
   factory OrgRules.fromJson(Object? json) {
+    if (json is Map<String, dynamic>) {
+      try {
+        final value = RepositoryRuleCreation.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return OrgRulesRepositoryRuleCreation(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleUpdate.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return OrgRulesRepositoryRuleUpdate(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleDeletion.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return OrgRulesRepositoryRuleDeletion(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleRequiredLinearHistory.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return OrgRulesRepositoryRuleRequiredLinearHistory(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleRequiredDeployments.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return OrgRulesRepositoryRuleRequiredDeployments(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleRequiredSignatures.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return OrgRulesRepositoryRuleRequiredSignatures(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRulePullRequest.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return OrgRulesRepositoryRulePullRequest(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleRequiredStatusChecks.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return OrgRulesRepositoryRuleRequiredStatusChecks(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleNonFastForward.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return OrgRulesRepositoryRuleNonFastForward(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleCommitMessagePattern.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return OrgRulesRepositoryRuleCommitMessagePattern(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleCommitAuthorEmailPattern.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return OrgRulesRepositoryRuleCommitAuthorEmailPattern(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleCommitterEmailPattern.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return OrgRulesRepositoryRuleCommitterEmailPattern(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleBranchNamePattern.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return OrgRulesRepositoryRuleBranchNamePattern(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleTagNamePattern.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return OrgRulesRepositoryRuleTagNamePattern(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleFilePathRestriction.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return OrgRulesRepositoryRuleFilePathRestriction(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleMaxFilePathLength.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return OrgRulesRepositoryRuleMaxFilePathLength(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleFileExtensionRestriction.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return OrgRulesRepositoryRuleFileExtensionRestriction(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleMaxFileSize.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return OrgRulesRepositoryRuleMaxFileSize(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleWorkflows.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return OrgRulesRepositoryRuleWorkflows(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleCodeScanning.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return OrgRulesRepositoryRuleCodeScanning(value);
+        }
+      } catch (_) {}
+      try {
+        final value = RepositoryRuleCopilotCodeReview.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return OrgRulesRepositoryRuleCopilotCodeReview(value);
+        }
+      } catch (_) {}
+    }
     try {
       return OrgRulesRepositoryRuleCreation(
           RepositoryRuleCreation.fromJson(json as Map<String, dynamic>));
@@ -407,85 +535,4 @@ class OrgRulesetConditionsVariant1 {
         },
         'repository_id': repositoryId.toJson(),
       };
-}
-
-/// Conditions to target repositories by property and refs by name
-class OrgRulesetConditionsVariant2 {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Optional object value serialized in the `ref_name` wire field.
-  final SdkOptional<RepositoryRulesetConditionsRefName> refName;
-
-  /// Required object value serialized in the `repository_property` wire field.
-  final RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty
-      repositoryProperty;
-
-  const OrgRulesetConditionsVariant2(
-      {this.refName = const SdkOmitted(), required this.repositoryProperty});
-
-  OrgRulesetConditionsVariant2 Function(
-      {SdkOptional<RepositoryRulesetConditionsRefName> refName,
-      RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty
-          repositoryProperty}) get copyWith => _copyWith;
-
-  OrgRulesetConditionsVariant2 _copyWith(
-          {Object? refName = sdkOmittedValue,
-          Object? repositoryProperty = sdkOmittedValue}) =>
-      OrgRulesetConditionsVariant2(
-        refName: identical(refName, sdkOmittedValue)
-            ? this.refName
-            : refName as SdkOptional<RepositoryRulesetConditionsRefName>,
-        repositoryProperty: identical(repositoryProperty, sdkOmittedValue)
-            ? this.repositoryProperty
-            : repositoryProperty
-                as RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty,
-      );
-
-  factory OrgRulesetConditionsVariant2.fromJson(Map<String, dynamic> json) =>
-      OrgRulesetConditionsVariant2(
-        refName: json['ref_name'] != null
-            ? SdkPresent((json['ref_name'] != null
-                ? RepositoryRulesetConditionsRefName.fromJson(
-                    json['ref_name'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        repositoryProperty: (json['repository_property'] != null
-            ? RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty
-                .fromJson(json['repository_property'] as Map<String, dynamic>)
-            : null)!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (refName) {
-          SdkPresent<RepositoryRulesetConditionsRefName>(value: final value) =>
-            {
-              'ref_name': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'repository_property': repositoryProperty.toJson(),
-      };
-}
-
-sealed class OrgRulesetConditions {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  const OrgRulesetConditions();
-  factory OrgRulesetConditions.fromJson(Object? json) {
-    try {
-      return OrgRulesetConditionsOrgRulesetConditionsVariant0(
-          OrgRulesetConditionsVariant0.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return OrgRulesetConditionsOrgRulesetConditionsVariant1(
-          OrgRulesetConditionsVariant1.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return OrgRulesetConditionsOrgRulesetConditionsVariant2(
-          OrgRulesetConditionsVariant2.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    throw FormatException("No variant matched for OrgRulesetConditions");
-  }
-  Object? toJson();
 }

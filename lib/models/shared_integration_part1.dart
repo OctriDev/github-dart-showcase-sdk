@@ -330,6 +330,20 @@ sealed class IntegrationOwner {
   static const String constructionSurface = 'named';
   const IntegrationOwner();
   factory IntegrationOwner.fromJson(Object? json) {
+    if (json is Map<String, dynamic>) {
+      try {
+        final value = SimpleUser.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return IntegrationOwnerSimpleUser(value);
+        }
+      } catch (_) {}
+      try {
+        final value = Enterprise.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return IntegrationOwnerEnterprise(value);
+        }
+      } catch (_) {}
+    }
     try {
       return IntegrationOwnerSimpleUser(
           SimpleUser.fromJson(json as Map<String, dynamic>));

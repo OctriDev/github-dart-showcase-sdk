@@ -4,6 +4,80 @@
 part of 'inline.dart';
 
 // Inline operation models (part 12)
+/// CodeQL query suite to be used.
+final class CodeScanningDefaultSetupQuerySuite {
+  final String value;
+
+  const CodeScanningDefaultSetupQuerySuite._(this.value);
+
+  factory CodeScanningDefaultSetupQuerySuite.fromJson(String value) =>
+      CodeScanningDefaultSetupQuerySuite._(value);
+
+  static const default_ = CodeScanningDefaultSetupQuerySuite._('default');
+  static const extended = CodeScanningDefaultSetupQuerySuite._('extended');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is CodeScanningDefaultSetupQuerySuite && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Runner type to be used.
+final class CodeScanningDefaultSetupRunnerType {
+  final String value;
+
+  const CodeScanningDefaultSetupRunnerType._(this.value);
+
+  factory CodeScanningDefaultSetupRunnerType.fromJson(String value) =>
+      CodeScanningDefaultSetupRunnerType._(value);
+
+  static const standard = CodeScanningDefaultSetupRunnerType._('standard');
+  static const labeled = CodeScanningDefaultSetupRunnerType._('labeled');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is CodeScanningDefaultSetupRunnerType && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The frequency of the periodic analysis.
+final class CodeScanningDefaultSetupSchedule {
+  final String value;
+
+  const CodeScanningDefaultSetupSchedule._(this.value);
+
+  factory CodeScanningDefaultSetupSchedule.fromJson(String value) =>
+      CodeScanningDefaultSetupSchedule._(value);
+
+  static const weekly = CodeScanningDefaultSetupSchedule._('weekly');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is CodeScanningDefaultSetupSchedule && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
 /// Code scanning default setup has been configured or not.
 final class CodeScanningDefaultSetupState {
   final String value;
@@ -247,97 +321,6 @@ final class CodeScanningSarifsStatusProcessingStatus {
   @override
   bool operator ==(Object other) =>
       other is CodeScanningSarifsStatusProcessingStatus && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The reason for a failure of the variant analysis. This is only available if the variant analysis has failed.
-final class CodeScanningVariantAnalysisFailureReason {
-  final String value;
-
-  const CodeScanningVariantAnalysisFailureReason._(this.value);
-
-  factory CodeScanningVariantAnalysisFailureReason.fromJson(String value) =>
-      CodeScanningVariantAnalysisFailureReason._(value);
-
-  static const noReposQueried =
-      CodeScanningVariantAnalysisFailureReason._('no_repos_queried');
-  static const actionsWorkflowRunFailed =
-      CodeScanningVariantAnalysisFailureReason._('actions_workflow_run_failed');
-  static const internalError =
-      CodeScanningVariantAnalysisFailureReason._('internal_error');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is CodeScanningVariantAnalysisFailureReason && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Required enumerated value serialized in the `status` wire field.
-final class CodeScanningVariantAnalysisStatusb8ae78f8 {
-  final String value;
-
-  const CodeScanningVariantAnalysisStatusb8ae78f8._(this.value);
-
-  factory CodeScanningVariantAnalysisStatusb8ae78f8.fromJson(String value) =>
-      CodeScanningVariantAnalysisStatusb8ae78f8._(value);
-
-  static const inProgress =
-      CodeScanningVariantAnalysisStatusb8ae78f8._('in_progress');
-  static const succeeded =
-      CodeScanningVariantAnalysisStatusb8ae78f8._('succeeded');
-  static const failed = CodeScanningVariantAnalysisStatusb8ae78f8._('failed');
-  static const cancelled =
-      CodeScanningVariantAnalysisStatusb8ae78f8._('cancelled');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is CodeScanningVariantAnalysisStatusb8ae78f8 &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The enablement status of GitHub Advanced Security
-final class CodeSecurityConfigurationAdvancedSecurity {
-  final String value;
-
-  const CodeSecurityConfigurationAdvancedSecurity._(this.value);
-
-  factory CodeSecurityConfigurationAdvancedSecurity.fromJson(String value) =>
-      CodeSecurityConfigurationAdvancedSecurity._(value);
-
-  static const enabled = CodeSecurityConfigurationAdvancedSecurity._('enabled');
-  static const disabled =
-      CodeSecurityConfigurationAdvancedSecurity._('disabled');
-  static const codeSecurity =
-      CodeSecurityConfigurationAdvancedSecurity._('code_security');
-  static const secretProtection =
-      CodeSecurityConfigurationAdvancedSecurity._('secret_protection');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is CodeSecurityConfigurationAdvancedSecurity &&
-      other.value == value;
 
   @override
   int get hashCode => value.hashCode;

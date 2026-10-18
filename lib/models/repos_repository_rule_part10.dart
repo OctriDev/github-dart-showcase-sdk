@@ -4,6 +4,41 @@
 part of 'repos_repository_rule.dart';
 
 // repos_repository_rule domain models (part 10)
+/// Optional object value serialized in the `parameters` wire field.
+class RepositoryRuleFilePathRestrictionParameters {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The file paths that are restricted from being pushed to the commit graph.
+  final List<String> restrictedFilePaths;
+
+  const RepositoryRuleFilePathRestrictionParameters(
+      {required this.restrictedFilePaths});
+
+  RepositoryRuleFilePathRestrictionParameters Function(
+      {List<String> restrictedFilePaths}) get copyWith => _copyWith;
+
+  RepositoryRuleFilePathRestrictionParameters _copyWith(
+          {Object? restrictedFilePaths = sdkOmittedValue}) =>
+      RepositoryRuleFilePathRestrictionParameters(
+        restrictedFilePaths: identical(restrictedFilePaths, sdkOmittedValue)
+            ? this.restrictedFilePaths
+            : restrictedFilePaths as List<String>,
+      );
+
+  factory RepositoryRuleFilePathRestrictionParameters.fromJson(
+          Map<String, dynamic> json) =>
+      RepositoryRuleFilePathRestrictionParameters(
+        restrictedFilePaths: ((json['restricted_file_paths'] as List?)
+            ?.map((e) => e as String)
+            .toList())!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'restricted_file_paths': restrictedFilePaths,
+      };
+}
+
 /// Prevent commits that include changes in specified file and folder paths from being pushed to the commit graph. This includes absolute paths that contain file names.
 class RepositoryRuleFilePathRestriction {
   /// This model is constructed from named fields in one call.
@@ -445,37 +480,5 @@ class RepositoryRuleMergeQueue {
             },
           _ => const <String, dynamic>{},
         },
-      };
-}
-
-/// Prevent users with push access from force pushing to refs.
-class RepositoryRuleNonFastForward {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Required enumerated value serialized in the `type` wire field.
-  final RepositoryRuleNonFastForwardType type_;
-
-  const RepositoryRuleNonFastForward({required this.type_});
-
-  RepositoryRuleNonFastForward Function(
-      {RepositoryRuleNonFastForwardType type_}) get copyWith => _copyWith;
-
-  RepositoryRuleNonFastForward _copyWith({Object? type_ = sdkOmittedValue}) =>
-      RepositoryRuleNonFastForward(
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as RepositoryRuleNonFastForwardType,
-      );
-
-  factory RepositoryRuleNonFastForward.fromJson(Map<String, dynamic> json) =>
-      RepositoryRuleNonFastForward(
-        type_: (json['type'] != null
-            ? RepositoryRuleNonFastForwardType.fromJson(json['type'] as String)
-            : null)!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'type': type_.toJson(),
       };
 }

@@ -4,24 +4,135 @@
 part of 'inline.dart';
 
 // Inline operation models (part 253)
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionOpenedWriteScope {
+/// Action to apply to the fine-grained personal access token.
+final class OrgsUpdatePatAccessRequestBodyAction {
   final String value;
 
-  const AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionOpenedWriteScope._(
+  const OrgsUpdatePatAccessRequestBodyAction._(this.value);
+
+  factory OrgsUpdatePatAccessRequestBodyAction.fromJson(String value) =>
+      OrgsUpdatePatAccessRequestBodyAction._(value);
+
+  static const revoke = OrgsUpdatePatAccessRequestBodyAction._('revoke');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is OrgsUpdatePatAccessRequestBodyAction && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The authentication type for the private registry. Defaults to `token` if not specified. Use `oidc_azure`, `oidc_aws`, `oidc_jfrog`, `oidc_cloudsmith`, or `oidc_gcp` for OIDC authentication. Use `anonymous` for registries that do not require authentication; `username`, `encrypted_value`, and `key_id` must be omitted.
+final class PrivateRegistriesCreateOrgPrivateRegistryRequestBodyAuthType {
+  final String value;
+
+  const PrivateRegistriesCreateOrgPrivateRegistryRequestBodyAuthType._(
       this.value);
 
-  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionOpenedWriteScope.fromJson(
+  factory PrivateRegistriesCreateOrgPrivateRegistryRequestBodyAuthType.fromJson(
           String value) =>
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionOpenedWriteScope
-          ._(value);
+      PrivateRegistriesCreateOrgPrivateRegistryRequestBodyAuthType._(value);
 
-  static const trigger =
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionOpenedWriteScope
-          ._('trigger');
-  static const repository =
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionOpenedWriteScope
-          ._('repository');
+  static const token =
+      PrivateRegistriesCreateOrgPrivateRegistryRequestBodyAuthType._('token');
+  static const usernamePassword =
+      PrivateRegistriesCreateOrgPrivateRegistryRequestBodyAuthType._(
+          'username_password');
+  static const oidcAzure =
+      PrivateRegistriesCreateOrgPrivateRegistryRequestBodyAuthType._(
+          'oidc_azure');
+  static const oidcAws =
+      PrivateRegistriesCreateOrgPrivateRegistryRequestBodyAuthType._(
+          'oidc_aws');
+  static const oidcJfrog =
+      PrivateRegistriesCreateOrgPrivateRegistryRequestBodyAuthType._(
+          'oidc_jfrog');
+  static const oidcCloudsmith =
+      PrivateRegistriesCreateOrgPrivateRegistryRequestBodyAuthType._(
+          'oidc_cloudsmith');
+  static const oidcGcp =
+      PrivateRegistriesCreateOrgPrivateRegistryRequestBodyAuthType._(
+          'oidc_gcp');
+  static const anonymous =
+      PrivateRegistriesCreateOrgPrivateRegistryRequestBodyAuthType._(
+          'anonymous');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is PrivateRegistriesCreateOrgPrivateRegistryRequestBodyAuthType &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The registry type.
+final class PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType {
+  final String value;
+
+  const PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType._(
+      this.value);
+
+  factory PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType.fromJson(
+          String value) =>
+      PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType._(value);
+
+  static const mavenRepository =
+      PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType._(
+          'maven_repository');
+  static const nugetFeed =
+      PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType._(
+          'nuget_feed');
+  static const goproxyServer =
+      PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType._(
+          'goproxy_server');
+  static const npmRegistry =
+      PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType._(
+          'npm_registry');
+  static const rubygemsServer =
+      PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType._(
+          'rubygems_server');
+  static const cargoRegistry =
+      PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType._(
+          'cargo_registry');
+  static const composerRepository =
+      PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType._(
+          'composer_repository');
+  static const dockerRegistry =
+      PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType._(
+          'docker_registry');
+  static const gitSource =
+      PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType._(
+          'git_source');
+  static const helmRegistry =
+      PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType._(
+          'helm_registry');
+  static const hexOrganization =
+      PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType._(
+          'hex_organization');
+  static const hexRepository =
+      PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType._(
+          'hex_repository');
+  static const pubRepository =
+      PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType._(
+          'pub_repository');
+  static const pythonIndex =
+      PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType._(
+          'python_index');
+  static const terraformRegistry =
+      PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType._(
+          'terraform_registry');
 
   String toJson() => value;
 
@@ -31,31 +142,152 @@ final class AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionOpene
   @override
   bool operator ==(Object other) =>
       other
-          is AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionOpenedWriteScope &&
+          is PrivateRegistriesCreateOrgPrivateRegistryRequestBodyRegistryType &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdatedWriteScope {
+/// Which type of organization repositories have access to the private registry. `selected` means only the repositories specified by `selected_repository_ids` can access the private registry.
+final class PrivateRegistriesCreateOrgPrivateRegistryRequestBodyVisibility {
   final String value;
 
-  const AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdatedWriteScope._(
+  const PrivateRegistriesCreateOrgPrivateRegistryRequestBodyVisibility._(
       this.value);
 
-  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdatedWriteScope.fromJson(
+  factory PrivateRegistriesCreateOrgPrivateRegistryRequestBodyVisibility.fromJson(
           String value) =>
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdatedWriteScope
-          ._(value);
+      PrivateRegistriesCreateOrgPrivateRegistryRequestBodyVisibility._(value);
 
-  static const trigger =
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdatedWriteScope
-          ._('trigger');
-  static const repository =
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdatedWriteScope
-          ._('repository');
+  static const all =
+      PrivateRegistriesCreateOrgPrivateRegistryRequestBodyVisibility._('all');
+  static const private =
+      PrivateRegistriesCreateOrgPrivateRegistryRequestBodyVisibility._(
+          'private');
+  static const selected =
+      PrivateRegistriesCreateOrgPrivateRegistryRequestBodyVisibility._(
+          'selected');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is PrivateRegistriesCreateOrgPrivateRegistryRequestBodyVisibility &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The authentication type for the private registry. This field cannot be changed after creation. If provided, it must match the existing `auth_type` of the configuration. To change the authentication type, delete and recreate the configuration.
+final class PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyAuthType {
+  final String value;
+
+  const PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyAuthType._(
+      this.value);
+
+  factory PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyAuthType.fromJson(
+          String value) =>
+      PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyAuthType._(value);
+
+  static const token =
+      PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyAuthType._('token');
+  static const usernamePassword =
+      PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyAuthType._(
+          'username_password');
+  static const oidcAzure =
+      PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyAuthType._(
+          'oidc_azure');
+  static const oidcAws =
+      PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyAuthType._(
+          'oidc_aws');
+  static const oidcJfrog =
+      PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyAuthType._(
+          'oidc_jfrog');
+  static const oidcCloudsmith =
+      PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyAuthType._(
+          'oidc_cloudsmith');
+  static const oidcGcp =
+      PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyAuthType._(
+          'oidc_gcp');
+  static const anonymous =
+      PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyAuthType._(
+          'anonymous');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyAuthType &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The registry type.
+final class PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType {
+  final String value;
+
+  const PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType._(
+      this.value);
+
+  factory PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType.fromJson(
+          String value) =>
+      PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType._(value);
+
+  static const mavenRepository =
+      PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType._(
+          'maven_repository');
+  static const nugetFeed =
+      PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType._(
+          'nuget_feed');
+  static const goproxyServer =
+      PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType._(
+          'goproxy_server');
+  static const npmRegistry =
+      PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType._(
+          'npm_registry');
+  static const rubygemsServer =
+      PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType._(
+          'rubygems_server');
+  static const cargoRegistry =
+      PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType._(
+          'cargo_registry');
+  static const composerRepository =
+      PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType._(
+          'composer_repository');
+  static const dockerRegistry =
+      PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType._(
+          'docker_registry');
+  static const gitSource =
+      PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType._(
+          'git_source');
+  static const helmRegistry =
+      PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType._(
+          'helm_registry');
+  static const hexOrganization =
+      PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType._(
+          'hex_organization');
+  static const hexRepository =
+      PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType._(
+          'hex_repository');
+  static const pubRepository =
+      PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType._(
+          'pub_repository');
+  static const pythonIndex =
+      PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType._(
+          'python_index');
+  static const terraformRegistry =
+      PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType._(
+          'terraform_registry');
 
   String toJson() => value;
 
@@ -65,33 +297,32 @@ final class AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdat
   @override
   bool operator ==(Object other) =>
       other
-          is AgentAutomationsEditRepoAutomationRequestBodyTriggersDiscussionUpdatedWriteScope &&
+          is PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyRegistryType &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-final class AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalCadenceItem {
+/// Which type of organization repositories have access to the private registry. `selected` means only the repositories specified by `selected_repository_ids` can access the private registry.
+final class PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyVisibility {
   final String value;
 
-  const AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalCadenceItem._(
+  const PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyVisibility._(
       this.value);
 
-  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalCadenceItem.fromJson(
+  factory PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyVisibility.fromJson(
           String value) =>
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalCadenceItem
-          ._(value);
+      PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyVisibility._(value);
 
-  static const hourly =
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalCadenceItem
-          ._('hourly');
-  static const daily =
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalCadenceItem
-          ._('daily');
-  static const weekly =
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalCadenceItem
-          ._('weekly');
+  static const all =
+      PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyVisibility._('all');
+  static const private =
+      PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyVisibility._(
+          'private');
+  static const selected =
+      PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyVisibility._(
+          'selected');
 
   String toJson() => value;
 
@@ -100,72 +331,29 @@ final class AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalCadence
 
   @override
   bool operator ==(Object other) =>
-      other
-          is AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalCadenceItem &&
+      other is PrivateRegistriesUpdateOrgPrivateRegistryRequestBodyVisibility &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// UTC minute anchor for daily and weekly schedules. Omitted daily and weekly values default to `0`. Must be omitted whenever `cadence` includes `hourly`.
-final class AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalMinuteUtc {
-  final int value;
-
-  const AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalMinuteUtc._(
-      this.value);
-
-  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalMinuteUtc.fromJson(
-          int value) =>
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalMinuteUtc._(
-          value);
-
-  static const v0 =
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalMinuteUtc._(
-          0);
-  static const v15 =
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalMinuteUtc._(
-          15);
-  static const v30 =
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalMinuteUtc._(
-          30);
-  static const v45 =
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalMinuteUtc._(
-          45);
-
-  int toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalMinuteUtc &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalWriteScope {
+/// The field's data type.
+final class ProjectsAddFieldForOrgRequestBodyVariant1DataType {
   final String value;
 
-  const AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalWriteScope._(
-      this.value);
+  const ProjectsAddFieldForOrgRequestBodyVariant1DataType._(this.value);
 
-  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalWriteScope.fromJson(
+  factory ProjectsAddFieldForOrgRequestBodyVariant1DataType.fromJson(
           String value) =>
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalWriteScope._(
-          value);
+      ProjectsAddFieldForOrgRequestBodyVariant1DataType._(value);
 
-  static const trigger =
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalWriteScope._(
-          'trigger');
-  static const repository =
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalWriteScope._(
-          'repository');
+  static const text =
+      ProjectsAddFieldForOrgRequestBodyVariant1DataType._('text');
+  static const number =
+      ProjectsAddFieldForOrgRequestBodyVariant1DataType._('number');
+  static const date =
+      ProjectsAddFieldForOrgRequestBodyVariant1DataType._('date');
 
   String toJson() => value;
 
@@ -174,32 +362,25 @@ final class AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalWriteSc
 
   @override
   bool operator ==(Object other) =>
-      other
-          is AgentAutomationsEditRepoAutomationRequestBodyTriggersIntervalWriteScope &&
+      other is ProjectsAddFieldForOrgRequestBodyVariant1DataType &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssignedWriteScope {
+/// The field's data type.
+final class ProjectsAddFieldForOrgRequestBodyVariant2DataType {
   final String value;
 
-  const AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssignedWriteScope._(
-      this.value);
+  const ProjectsAddFieldForOrgRequestBodyVariant2DataType._(this.value);
 
-  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssignedWriteScope.fromJson(
+  factory ProjectsAddFieldForOrgRequestBodyVariant2DataType.fromJson(
           String value) =>
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssignedWriteScope
-          ._(value);
+      ProjectsAddFieldForOrgRequestBodyVariant2DataType._(value);
 
-  static const trigger =
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssignedWriteScope
-          ._('trigger');
-  static const repository =
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssignedWriteScope
-          ._('repository');
+  static const singleSelect =
+      ProjectsAddFieldForOrgRequestBodyVariant2DataType._('single_select');
 
   String toJson() => value;
 
@@ -208,32 +389,25 @@ final class AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssignedWr
 
   @override
   bool operator ==(Object other) =>
-      other
-          is AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueAssignedWriteScope &&
+      other is ProjectsAddFieldForOrgRequestBodyVariant2DataType &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueCommentWriteScope {
+/// The field's data type.
+final class ProjectsAddFieldForOrgRequestBodyVariant3DataType {
   final String value;
 
-  const AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueCommentWriteScope._(
-      this.value);
+  const ProjectsAddFieldForOrgRequestBodyVariant3DataType._(this.value);
 
-  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueCommentWriteScope.fromJson(
+  factory ProjectsAddFieldForOrgRequestBodyVariant3DataType.fromJson(
           String value) =>
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueCommentWriteScope
-          ._(value);
+      ProjectsAddFieldForOrgRequestBodyVariant3DataType._(value);
 
-  static const trigger =
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueCommentWriteScope
-          ._('trigger');
-  static const repository =
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueCommentWriteScope
-          ._('repository');
+  static const iteration =
+      ProjectsAddFieldForOrgRequestBodyVariant3DataType._('iteration');
 
   String toJson() => value;
 
@@ -242,32 +416,25 @@ final class AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueCommentWri
 
   @override
   bool operator ==(Object other) =>
-      other
-          is AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueCommentWriteScope &&
+      other is ProjectsAddFieldForOrgRequestBodyVariant3DataType &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeledWriteScope {
+/// The type of item to add to the project. Must be either Issue or PullRequest.
+final class ProjectsAddItemForOrgRequestBodyType {
   final String value;
 
-  const AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeledWriteScope._(
-      this.value);
+  const ProjectsAddItemForOrgRequestBodyType._(this.value);
 
-  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeledWriteScope.fromJson(
-          String value) =>
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeledWriteScope
-          ._(value);
+  factory ProjectsAddItemForOrgRequestBodyType.fromJson(String value) =>
+      ProjectsAddItemForOrgRequestBodyType._(value);
 
-  static const trigger =
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeledWriteScope
-          ._('trigger');
-  static const repository =
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeledWriteScope
-          ._('repository');
+  static const issue = ProjectsAddItemForOrgRequestBodyType._('Issue');
+  static const pullrequest =
+      ProjectsAddItemForOrgRequestBodyType._('PullRequest');
 
   String toJson() => value;
 
@@ -276,178 +443,7 @@ final class AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeledWri
 
   @override
   bool operator ==(Object other) =>
-      other
-          is AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueLabeledWriteScope &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueOpenedWriteScope {
-  final String value;
-
-  const AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueOpenedWriteScope._(
-      this.value);
-
-  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueOpenedWriteScope.fromJson(
-          String value) =>
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueOpenedWriteScope
-          ._(value);
-
-  static const trigger =
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueOpenedWriteScope
-          ._('trigger');
-  static const repository =
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueOpenedWriteScope
-          ._('repository');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AgentAutomationsEditRepoAutomationRequestBodyTriggersIssueOpenedWriteScope &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestAssignedWriteScope {
-  final String value;
-
-  const AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestAssignedWriteScope._(
-      this.value);
-
-  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestAssignedWriteScope.fromJson(
-          String value) =>
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestAssignedWriteScope
-          ._(value);
-
-  static const trigger =
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestAssignedWriteScope
-          ._('trigger');
-  static const repository =
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestAssignedWriteScope
-          ._('repository');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestAssignedWriteScope &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-final class AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestCommentCommentTypesItem {
-  final String value;
-
-  const AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestCommentCommentTypesItem._(
-      this.value);
-
-  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestCommentCommentTypesItem.fromJson(
-          String value) =>
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestCommentCommentTypesItem
-          ._(value);
-
-  static const timelineComment =
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestCommentCommentTypesItem
-          ._('timeline_comment');
-  static const reviewComment =
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestCommentCommentTypesItem
-          ._('review_comment');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestCommentCommentTypesItem &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestCommentWriteScope {
-  final String value;
-
-  const AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestCommentWriteScope._(
-      this.value);
-
-  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestCommentWriteScope.fromJson(
-          String value) =>
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestCommentWriteScope
-          ._(value);
-
-  static const trigger =
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestCommentWriteScope
-          ._('trigger');
-  static const repository =
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestCommentWriteScope
-          ._('repository');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestCommentWriteScope &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestLabeledWriteScope {
-  final String value;
-
-  const AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestLabeledWriteScope._(
-      this.value);
-
-  factory AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestLabeledWriteScope.fromJson(
-          String value) =>
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestLabeledWriteScope
-          ._(value);
-
-  static const trigger =
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestLabeledWriteScope
-          ._('trigger');
-  static const repository =
-      AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestLabeledWriteScope
-          ._('repository');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AgentAutomationsEditRepoAutomationRequestBodyTriggersPullRequestLabeledWriteScope &&
-      other.value == value;
+      other is ProjectsAddItemForOrgRequestBodyType && other.value == value;
 
   @override
   int get hashCode => value.hashCode;

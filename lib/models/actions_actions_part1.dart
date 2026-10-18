@@ -4,461 +4,385 @@
 part of 'actions_actions.dart';
 
 // actions_actions domain models
-/// Typed representation of the `ActionsArtifactAndLogRetention` API schema.
-class ActionsArtifactAndLogRetention {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
+// ActionsCanApprovePullRequestReviews = bool
 
-  /// The number of days to retain checks, workflow runs, commit statuses, artifacts, and logs
-  final int days;
+/// The default workflow permissions granted to the GITHUB_TOKEN when running workflows.
+final class ActionsDefaultWorkflowPermissions {
+  final String value;
 
-  const ActionsArtifactAndLogRetention({required this.days});
+  const ActionsDefaultWorkflowPermissions._(this.value);
 
-  ActionsArtifactAndLogRetention Function({int days}) get copyWith => _copyWith;
+  factory ActionsDefaultWorkflowPermissions.fromJson(String value) =>
+      ActionsDefaultWorkflowPermissions._(value);
 
-  ActionsArtifactAndLogRetention _copyWith({Object? days = sdkOmittedValue}) =>
-      ActionsArtifactAndLogRetention(
-        days: identical(days, sdkOmittedValue) ? this.days : days as int,
-      );
+  static const read = ActionsDefaultWorkflowPermissions._('read');
+  static const write = ActionsDefaultWorkflowPermissions._('write');
 
-  factory ActionsArtifactAndLogRetention.fromJson(Map<String, dynamic> json) =>
-      ActionsArtifactAndLogRetention(
-        days: ((json['days'] as num?)?.toInt())!,
-      );
+  String toJson() => value;
 
-  Map<String, dynamic> toJson() => {
-        'days': days,
-      };
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is ActionsDefaultWorkflowPermissions && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
 }
 
-/// Typed representation of the `ActionsArtifactAndLogRetentionResponse` API schema.
-class ActionsArtifactAndLogRetentionResponse {
+// ActionsEnabled = bool
+
+/// Typed representation of the `ActionsGetDefaultWorkflowPermissions` API schema.
+class ActionsGetDefaultWorkflowPermissions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// The number of days checks, workflow runs, commit statuses, artifacts, and logs are retained
-  final int days;
+  /// The default workflow permissions granted to the GITHUB_TOKEN when running workflows.
+  final ActionsDefaultWorkflowPermissions defaultWorkflowPermissions;
 
-  /// The maximum number of days that can be configured
-  final int maximumAllowedDays;
+  /// Whether GitHub Actions can approve pull requests. Enabling this can be a security risk.
+  final bool canApprovePullRequestReviews;
 
-  const ActionsArtifactAndLogRetentionResponse(
-      {required this.days, required this.maximumAllowedDays});
+  const ActionsGetDefaultWorkflowPermissions(
+      {required this.defaultWorkflowPermissions,
+      required this.canApprovePullRequestReviews});
 
-  ActionsArtifactAndLogRetentionResponse Function(
-      {int days, int maximumAllowedDays}) get copyWith => _copyWith;
+  ActionsGetDefaultWorkflowPermissions Function(
+      {ActionsDefaultWorkflowPermissions defaultWorkflowPermissions,
+      bool canApprovePullRequestReviews}) get copyWith => _copyWith;
 
-  ActionsArtifactAndLogRetentionResponse _copyWith(
-          {Object? days = sdkOmittedValue,
-          Object? maximumAllowedDays = sdkOmittedValue}) =>
-      ActionsArtifactAndLogRetentionResponse(
-        days: identical(days, sdkOmittedValue) ? this.days : days as int,
-        maximumAllowedDays: identical(maximumAllowedDays, sdkOmittedValue)
-            ? this.maximumAllowedDays
-            : maximumAllowedDays as int,
+  ActionsGetDefaultWorkflowPermissions _copyWith(
+          {Object? defaultWorkflowPermissions = sdkOmittedValue,
+          Object? canApprovePullRequestReviews = sdkOmittedValue}) =>
+      ActionsGetDefaultWorkflowPermissions(
+        defaultWorkflowPermissions: identical(
+                defaultWorkflowPermissions, sdkOmittedValue)
+            ? this.defaultWorkflowPermissions
+            : defaultWorkflowPermissions as ActionsDefaultWorkflowPermissions,
+        canApprovePullRequestReviews:
+            identical(canApprovePullRequestReviews, sdkOmittedValue)
+                ? this.canApprovePullRequestReviews
+                : canApprovePullRequestReviews as bool,
       );
 
-  factory ActionsArtifactAndLogRetentionResponse.fromJson(
+  factory ActionsGetDefaultWorkflowPermissions.fromJson(
           Map<String, dynamic> json) =>
-      ActionsArtifactAndLogRetentionResponse(
-        days: ((json['days'] as num?)?.toInt())!,
-        maximumAllowedDays: ((json['maximum_allowed_days'] as num?)?.toInt())!,
+      ActionsGetDefaultWorkflowPermissions(
+        defaultWorkflowPermissions:
+            (json['default_workflow_permissions'] != null
+                ? ActionsDefaultWorkflowPermissions.fromJson(
+                    json['default_workflow_permissions'] as String)
+                : null)!,
+        canApprovePullRequestReviews:
+            (json['can_approve_pull_request_reviews'] as bool?)!,
       );
 
   Map<String, dynamic> toJson() => {
-        'days': days,
-        'maximum_allowed_days': maximumAllowedDays,
+        'default_workflow_permissions': defaultWorkflowPermissions.toJson(),
+        'can_approve_pull_request_reviews': canApprovePullRequestReviews,
       };
 }
 
-/// Required object value serialized in the `actions_caches[]` wire field.
-class ActionsCacheListActionsCachesItem {
+/// Typed representation of the `ActionsOrganizationPermissions` API schema.
+class ActionsOrganizationPermissions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Optional `integer` value serialized in the `id` wire field.
-  final SdkOptional<int> id;
+  /// The policy that controls the repositories in the organization that are allowed to run GitHub Actions.
+  final EnabledRepositories enabledRepositories;
 
-  /// Optional `string` value serialized in the `ref` wire field.
-  final SdkOptional<String> ref;
+  /// The API URL to use to get or set the selected repositories that are allowed to run GitHub Actions, when `enabled_repositories` is set to `selected`.
+  final SdkOptional<String> selectedRepositoriesUrl;
 
-  /// Optional `string` value serialized in the `key` wire field.
-  final SdkOptional<String> key;
+  /// The permissions policy that controls the actions and reusable workflows that are allowed to run.
+  final SdkOptional<AllowedActions> allowedActions;
 
-  /// Optional `string` value serialized in the `version` wire field.
-  final SdkOptional<String> version;
+  /// The API URL to use to get or set the actions and reusable workflows that are allowed to run, when `allowed_actions` is set to `selected`.
+  final SdkOptional<String> selectedActionsUrl;
 
-  /// Optional `date-time`-formatted value serialized in the `last_accessed_at` wire field.
-  final SdkOptional<String> lastAccessedAt;
+  /// Whether actions must be pinned to a full-length commit SHA.
+  final SdkOptional<bool> shaPinningRequired;
 
-  /// Optional `date-time`-formatted value serialized in the `created_at` wire field.
-  final SdkOptional<String> createdAt;
+  const ActionsOrganizationPermissions(
+      {required this.enabledRepositories,
+      this.selectedRepositoriesUrl = const SdkOmitted(),
+      this.allowedActions = const SdkOmitted(),
+      this.selectedActionsUrl = const SdkOmitted(),
+      this.shaPinningRequired = const SdkOmitted()});
 
-  /// Optional `integer` value serialized in the `size_in_bytes` wire field.
-  final SdkOptional<int> sizeInBytes;
+  ActionsOrganizationPermissions Function(
+      {EnabledRepositories enabledRepositories,
+      SdkOptional<String> selectedRepositoriesUrl,
+      SdkOptional<AllowedActions> allowedActions,
+      SdkOptional<String> selectedActionsUrl,
+      SdkOptional<bool> shaPinningRequired}) get copyWith => _copyWith;
 
-  const ActionsCacheListActionsCachesItem(
-      {this.id = const SdkOmitted(),
-      this.ref = const SdkOmitted(),
-      this.key = const SdkOmitted(),
-      this.version = const SdkOmitted(),
-      this.lastAccessedAt = const SdkOmitted(),
-      this.createdAt = const SdkOmitted(),
-      this.sizeInBytes = const SdkOmitted()});
-
-  ActionsCacheListActionsCachesItem Function(
-      {SdkOptional<int> id,
-      SdkOptional<String> ref,
-      SdkOptional<String> key,
-      SdkOptional<String> version,
-      SdkOptional<String> lastAccessedAt,
-      SdkOptional<String> createdAt,
-      SdkOptional<int> sizeInBytes}) get copyWith => _copyWith;
-
-  ActionsCacheListActionsCachesItem _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? ref = sdkOmittedValue,
-          Object? key = sdkOmittedValue,
-          Object? version = sdkOmittedValue,
-          Object? lastAccessedAt = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? sizeInBytes = sdkOmittedValue}) =>
-      ActionsCacheListActionsCachesItem(
-        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-        ref: identical(ref, sdkOmittedValue)
-            ? this.ref
-            : ref as SdkOptional<String>,
-        key: identical(key, sdkOmittedValue)
-            ? this.key
-            : key as SdkOptional<String>,
-        version: identical(version, sdkOmittedValue)
-            ? this.version
-            : version as SdkOptional<String>,
-        lastAccessedAt: identical(lastAccessedAt, sdkOmittedValue)
-            ? this.lastAccessedAt
-            : lastAccessedAt as SdkOptional<String>,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as SdkOptional<String>,
-        sizeInBytes: identical(sizeInBytes, sdkOmittedValue)
-            ? this.sizeInBytes
-            : sizeInBytes as SdkOptional<int>,
+  ActionsOrganizationPermissions _copyWith(
+          {Object? enabledRepositories = sdkOmittedValue,
+          Object? selectedRepositoriesUrl = sdkOmittedValue,
+          Object? allowedActions = sdkOmittedValue,
+          Object? selectedActionsUrl = sdkOmittedValue,
+          Object? shaPinningRequired = sdkOmittedValue}) =>
+      ActionsOrganizationPermissions(
+        enabledRepositories: identical(enabledRepositories, sdkOmittedValue)
+            ? this.enabledRepositories
+            : enabledRepositories as EnabledRepositories,
+        selectedRepositoriesUrl:
+            identical(selectedRepositoriesUrl, sdkOmittedValue)
+                ? this.selectedRepositoriesUrl
+                : selectedRepositoriesUrl as SdkOptional<String>,
+        allowedActions: identical(allowedActions, sdkOmittedValue)
+            ? this.allowedActions
+            : allowedActions as SdkOptional<AllowedActions>,
+        selectedActionsUrl: identical(selectedActionsUrl, sdkOmittedValue)
+            ? this.selectedActionsUrl
+            : selectedActionsUrl as SdkOptional<String>,
+        shaPinningRequired: identical(shaPinningRequired, sdkOmittedValue)
+            ? this.shaPinningRequired
+            : shaPinningRequired as SdkOptional<bool>,
       );
 
-  factory ActionsCacheListActionsCachesItem.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsCacheListActionsCachesItem(
-        id: json['id'] != null
-            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+  factory ActionsOrganizationPermissions.fromJson(Map<String, dynamic> json) =>
+      ActionsOrganizationPermissions(
+        enabledRepositories: (json['enabled_repositories'] != null
+            ? EnabledRepositories.fromJson(
+                json['enabled_repositories'] as String)
+            : null)!,
+        selectedRepositoriesUrl: json['selected_repositories_url'] != null
+            ? SdkPresent((json['selected_repositories_url'] as String?)!)
             : const SdkOmitted(),
-        ref: json['ref'] != null
-            ? SdkPresent((json['ref'] as String?)!)
+        allowedActions: json['allowed_actions'] != null
+            ? SdkPresent((json['allowed_actions'] != null
+                ? AllowedActions.fromJson(json['allowed_actions'] as String)
+                : null)!)
             : const SdkOmitted(),
-        key: json['key'] != null
-            ? SdkPresent((json['key'] as String?)!)
+        selectedActionsUrl: json['selected_actions_url'] != null
+            ? SdkPresent((json['selected_actions_url'] as String?)!)
             : const SdkOmitted(),
-        version: json['version'] != null
-            ? SdkPresent((json['version'] as String?)!)
-            : const SdkOmitted(),
-        lastAccessedAt: json['last_accessed_at'] != null
-            ? SdkPresent((json['last_accessed_at'] as String?)!)
-            : const SdkOmitted(),
-        createdAt: json['created_at'] != null
-            ? SdkPresent((json['created_at'] as String?)!)
-            : const SdkOmitted(),
-        sizeInBytes: json['size_in_bytes'] != null
-            ? SdkPresent(((json['size_in_bytes'] as num?)?.toInt())!)
+        shaPinningRequired: json['sha_pinning_required'] != null
+            ? SdkPresent((json['sha_pinning_required'] as bool?)!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (id) {
-          SdkPresent<int>(value: final value) => {
-              'id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (ref) {
+        'enabled_repositories': enabledRepositories.toJson(),
+        ...switch (selectedRepositoriesUrl) {
           SdkPresent<String>(value: final value) => {
-              'ref': value,
+              'selected_repositories_url': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (key) {
+        ...switch (allowedActions) {
+          SdkPresent<AllowedActions>(value: final value) => {
+              'allowed_actions': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (selectedActionsUrl) {
           SdkPresent<String>(value: final value) => {
-              'key': value,
+              'selected_actions_url': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (version) {
-          SdkPresent<String>(value: final value) => {
-              'version': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (lastAccessedAt) {
-          SdkPresent<String>(value: final value) => {
-              'last_accessed_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (createdAt) {
-          SdkPresent<String>(value: final value) => {
-              'created_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (sizeInBytes) {
-          SdkPresent<int>(value: final value) => {
-              'size_in_bytes': value,
+        ...switch (shaPinningRequired) {
+          SdkPresent<bool>(value: final value) => {
+              'sha_pinning_required': value,
             },
           _ => const <String, dynamic>{},
         },
       };
 }
 
-/// Repository actions caches
-class ActionsCacheList {
+/// Typed representation of the `ActionsRepositoryPermissions` API schema.
+class ActionsRepositoryPermissions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Total number of caches
-  final int totalCount;
+  /// Whether GitHub Actions is enabled on the repository.
+  final bool enabled;
 
-  /// Array of caches
-  final List<ActionsCacheListActionsCachesItem> actionsCaches;
+  /// The permissions policy that controls the actions and reusable workflows that are allowed to run.
+  final SdkOptional<AllowedActions> allowedActions;
 
-  const ActionsCacheList(
-      {required this.totalCount, required this.actionsCaches});
+  /// The API URL to use to get or set the actions and reusable workflows that are allowed to run, when `allowed_actions` is set to `selected`.
+  final SdkOptional<String> selectedActionsUrl;
 
-  ActionsCacheList Function(
-          {int totalCount,
-          List<ActionsCacheListActionsCachesItem> actionsCaches})
+  /// Whether actions must be pinned to a full-length commit SHA.
+  final SdkOptional<bool> shaPinningRequired;
+
+  const ActionsRepositoryPermissions(
+      {required this.enabled,
+      this.allowedActions = const SdkOmitted(),
+      this.selectedActionsUrl = const SdkOmitted(),
+      this.shaPinningRequired = const SdkOmitted()});
+
+  ActionsRepositoryPermissions Function(
+      {bool enabled,
+      SdkOptional<AllowedActions> allowedActions,
+      SdkOptional<String> selectedActionsUrl,
+      SdkOptional<bool> shaPinningRequired}) get copyWith => _copyWith;
+
+  ActionsRepositoryPermissions _copyWith(
+          {Object? enabled = sdkOmittedValue,
+          Object? allowedActions = sdkOmittedValue,
+          Object? selectedActionsUrl = sdkOmittedValue,
+          Object? shaPinningRequired = sdkOmittedValue}) =>
+      ActionsRepositoryPermissions(
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as bool,
+        allowedActions: identical(allowedActions, sdkOmittedValue)
+            ? this.allowedActions
+            : allowedActions as SdkOptional<AllowedActions>,
+        selectedActionsUrl: identical(selectedActionsUrl, sdkOmittedValue)
+            ? this.selectedActionsUrl
+            : selectedActionsUrl as SdkOptional<String>,
+        shaPinningRequired: identical(shaPinningRequired, sdkOmittedValue)
+            ? this.shaPinningRequired
+            : shaPinningRequired as SdkOptional<bool>,
+      );
+
+  factory ActionsRepositoryPermissions.fromJson(Map<String, dynamic> json) =>
+      ActionsRepositoryPermissions(
+        enabled: (json['enabled'] as bool?)!,
+        allowedActions: json['allowed_actions'] != null
+            ? SdkPresent((json['allowed_actions'] != null
+                ? AllowedActions.fromJson(json['allowed_actions'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        selectedActionsUrl: json['selected_actions_url'] != null
+            ? SdkPresent((json['selected_actions_url'] as String?)!)
+            : const SdkOmitted(),
+        shaPinningRequired: json['sha_pinning_required'] != null
+            ? SdkPresent((json['sha_pinning_required'] as bool?)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        'enabled': enabled,
+        ...switch (allowedActions) {
+          SdkPresent<AllowedActions>(value: final value) => {
+              'allowed_actions': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (selectedActionsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'selected_actions_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (shaPinningRequired) {
+          SdkPresent<bool>(value: final value) => {
+              'sha_pinning_required': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+/// Typed representation of the `ActionsSetDefaultWorkflowPermissions` API schema.
+class ActionsSetDefaultWorkflowPermissions {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The default workflow permissions granted to the GITHUB_TOKEN when running workflows.
+  final SdkOptional<ActionsDefaultWorkflowPermissions>
+      defaultWorkflowPermissions;
+
+  /// Whether GitHub Actions can approve pull requests. Enabling this can be a security risk.
+  final SdkOptional<bool> canApprovePullRequestReviews;
+
+  const ActionsSetDefaultWorkflowPermissions(
+      {this.defaultWorkflowPermissions = const SdkOmitted(),
+      this.canApprovePullRequestReviews = const SdkOmitted()});
+
+  ActionsSetDefaultWorkflowPermissions Function(
+          {SdkOptional<ActionsDefaultWorkflowPermissions>
+              defaultWorkflowPermissions,
+          SdkOptional<bool> canApprovePullRequestReviews})
       get copyWith => _copyWith;
 
-  ActionsCacheList _copyWith(
-          {Object? totalCount = sdkOmittedValue,
-          Object? actionsCaches = sdkOmittedValue}) =>
-      ActionsCacheList(
-        totalCount: identical(totalCount, sdkOmittedValue)
-            ? this.totalCount
-            : totalCount as int,
-        actionsCaches: identical(actionsCaches, sdkOmittedValue)
-            ? this.actionsCaches
-            : actionsCaches as List<ActionsCacheListActionsCachesItem>,
+  ActionsSetDefaultWorkflowPermissions _copyWith(
+          {Object? defaultWorkflowPermissions = sdkOmittedValue,
+          Object? canApprovePullRequestReviews = sdkOmittedValue}) =>
+      ActionsSetDefaultWorkflowPermissions(
+        defaultWorkflowPermissions:
+            identical(defaultWorkflowPermissions, sdkOmittedValue)
+                ? this.defaultWorkflowPermissions
+                : defaultWorkflowPermissions
+                    as SdkOptional<ActionsDefaultWorkflowPermissions>,
+        canApprovePullRequestReviews:
+            identical(canApprovePullRequestReviews, sdkOmittedValue)
+                ? this.canApprovePullRequestReviews
+                : canApprovePullRequestReviews as SdkOptional<bool>,
       );
 
-  factory ActionsCacheList.fromJson(Map<String, dynamic> json) =>
-      ActionsCacheList(
-        totalCount: ((json['total_count'] as num?)?.toInt())!,
-        actionsCaches: ((json['actions_caches'] as List?)
-            ?.map((e) => ActionsCacheListActionsCachesItem.fromJson(
-                e as Map<String, dynamic>))
-            .toList())!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'total_count': totalCount,
-        'actions_caches': actionsCaches.map((item) => item.toJson()).toList(),
-      };
-}
-
-/// GitHub Actions cache retention policy for an enterprise.
-class ActionsCacheRetentionLimitForEnterprise {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// For repositories & organizations in an enterprise, the maximum duration, in days, for which caches in a repository may be retained.
-  final SdkOptional<int> maxCacheRetentionDays;
-
-  const ActionsCacheRetentionLimitForEnterprise(
-      {this.maxCacheRetentionDays = const SdkOmitted()});
-
-  ActionsCacheRetentionLimitForEnterprise Function(
-      {SdkOptional<int> maxCacheRetentionDays}) get copyWith => _copyWith;
-
-  ActionsCacheRetentionLimitForEnterprise _copyWith(
-          {Object? maxCacheRetentionDays = sdkOmittedValue}) =>
-      ActionsCacheRetentionLimitForEnterprise(
-        maxCacheRetentionDays: identical(maxCacheRetentionDays, sdkOmittedValue)
-            ? this.maxCacheRetentionDays
-            : maxCacheRetentionDays as SdkOptional<int>,
-      );
-
-  factory ActionsCacheRetentionLimitForEnterprise.fromJson(
+  factory ActionsSetDefaultWorkflowPermissions.fromJson(
           Map<String, dynamic> json) =>
-      ActionsCacheRetentionLimitForEnterprise(
-        maxCacheRetentionDays: json['max_cache_retention_days'] != null
-            ? SdkPresent(((json['max_cache_retention_days'] as num?)?.toInt())!)
+      ActionsSetDefaultWorkflowPermissions(
+        defaultWorkflowPermissions: json['default_workflow_permissions'] != null
+            ? SdkPresent((json['default_workflow_permissions'] != null
+                ? ActionsDefaultWorkflowPermissions.fromJson(
+                    json['default_workflow_permissions'] as String)
+                : null)!)
             : const SdkOmitted(),
+        canApprovePullRequestReviews:
+            json['can_approve_pull_request_reviews'] != null
+                ? SdkPresent(
+                    (json['can_approve_pull_request_reviews'] as bool?)!)
+                : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (maxCacheRetentionDays) {
-          SdkPresent<int>(value: final value) => {
-              'max_cache_retention_days': value,
+        ...switch (defaultWorkflowPermissions) {
+          SdkPresent<ActionsDefaultWorkflowPermissions>(value: final value) => {
+              'default_workflow_permissions': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (canApprovePullRequestReviews) {
+          SdkPresent<bool>(value: final value) => {
+              'can_approve_pull_request_reviews': value,
             },
           _ => const <String, dynamic>{},
         },
       };
 }
 
-/// GitHub Actions cache retention policy for an organization.
-class ActionsCacheRetentionLimitForOrganization {
+/// Typed representation of the `ActionsWorkflowAccessToRepository` API schema.
+class ActionsWorkflowAccessToRepository {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// For repositories in this organization, the maximum duration, in days, for which caches in a repository may be retained.
-  final SdkOptional<int> maxCacheRetentionDays;
+  /// Defines the level of access that workflows outside of the repository have to actions and reusable workflows within the repository. `none` means the access is only possible from workflows in this repository. `user` level access allows sharing across user owned private repositories only. `organization` level access allows sharing across the organization.
+  final ActionsWorkflowAccessToRepositoryAccessLevel accessLevel;
 
-  const ActionsCacheRetentionLimitForOrganization(
-      {this.maxCacheRetentionDays = const SdkOmitted()});
+  const ActionsWorkflowAccessToRepository({required this.accessLevel});
 
-  ActionsCacheRetentionLimitForOrganization Function(
-      {SdkOptional<int> maxCacheRetentionDays}) get copyWith => _copyWith;
+  ActionsWorkflowAccessToRepository Function(
+          {ActionsWorkflowAccessToRepositoryAccessLevel accessLevel})
+      get copyWith => _copyWith;
 
-  ActionsCacheRetentionLimitForOrganization _copyWith(
-          {Object? maxCacheRetentionDays = sdkOmittedValue}) =>
-      ActionsCacheRetentionLimitForOrganization(
-        maxCacheRetentionDays: identical(maxCacheRetentionDays, sdkOmittedValue)
-            ? this.maxCacheRetentionDays
-            : maxCacheRetentionDays as SdkOptional<int>,
+  ActionsWorkflowAccessToRepository _copyWith(
+          {Object? accessLevel = sdkOmittedValue}) =>
+      ActionsWorkflowAccessToRepository(
+        accessLevel: identical(accessLevel, sdkOmittedValue)
+            ? this.accessLevel
+            : accessLevel as ActionsWorkflowAccessToRepositoryAccessLevel,
       );
 
-  factory ActionsCacheRetentionLimitForOrganization.fromJson(
+  factory ActionsWorkflowAccessToRepository.fromJson(
           Map<String, dynamic> json) =>
-      ActionsCacheRetentionLimitForOrganization(
-        maxCacheRetentionDays: json['max_cache_retention_days'] != null
-            ? SdkPresent(((json['max_cache_retention_days'] as num?)?.toInt())!)
-            : const SdkOmitted(),
+      ActionsWorkflowAccessToRepository(
+        accessLevel: (json['access_level'] != null
+            ? ActionsWorkflowAccessToRepositoryAccessLevel.fromJson(
+                json['access_level'] as String)
+            : null)!,
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (maxCacheRetentionDays) {
-          SdkPresent<int>(value: final value) => {
-              'max_cache_retention_days': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-/// GitHub Actions cache retention policy for a repository.
-class ActionsCacheRetentionLimitForRepository {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The maximum number of days to keep caches in this repository.
-  final SdkOptional<int> maxCacheRetentionDays;
-
-  const ActionsCacheRetentionLimitForRepository(
-      {this.maxCacheRetentionDays = const SdkOmitted()});
-
-  ActionsCacheRetentionLimitForRepository Function(
-      {SdkOptional<int> maxCacheRetentionDays}) get copyWith => _copyWith;
-
-  ActionsCacheRetentionLimitForRepository _copyWith(
-          {Object? maxCacheRetentionDays = sdkOmittedValue}) =>
-      ActionsCacheRetentionLimitForRepository(
-        maxCacheRetentionDays: identical(maxCacheRetentionDays, sdkOmittedValue)
-            ? this.maxCacheRetentionDays
-            : maxCacheRetentionDays as SdkOptional<int>,
-      );
-
-  factory ActionsCacheRetentionLimitForRepository.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsCacheRetentionLimitForRepository(
-        maxCacheRetentionDays: json['max_cache_retention_days'] != null
-            ? SdkPresent(((json['max_cache_retention_days'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (maxCacheRetentionDays) {
-          SdkPresent<int>(value: final value) => {
-              'max_cache_retention_days': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-/// GitHub Actions cache storage policy for an enterprise.
-class ActionsCacheStorageLimitForEnterprise {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// For repositories & organizations in an enterprise, the maximum size limit for the sum of all caches in a repository, in gigabytes.
-  final SdkOptional<int> maxCacheSizeGb;
-
-  const ActionsCacheStorageLimitForEnterprise(
-      {this.maxCacheSizeGb = const SdkOmitted()});
-
-  ActionsCacheStorageLimitForEnterprise Function(
-      {SdkOptional<int> maxCacheSizeGb}) get copyWith => _copyWith;
-
-  ActionsCacheStorageLimitForEnterprise _copyWith(
-          {Object? maxCacheSizeGb = sdkOmittedValue}) =>
-      ActionsCacheStorageLimitForEnterprise(
-        maxCacheSizeGb: identical(maxCacheSizeGb, sdkOmittedValue)
-            ? this.maxCacheSizeGb
-            : maxCacheSizeGb as SdkOptional<int>,
-      );
-
-  factory ActionsCacheStorageLimitForEnterprise.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsCacheStorageLimitForEnterprise(
-        maxCacheSizeGb: json['max_cache_size_gb'] != null
-            ? SdkPresent(((json['max_cache_size_gb'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (maxCacheSizeGb) {
-          SdkPresent<int>(value: final value) => {
-              'max_cache_size_gb': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-/// GitHub Actions cache storage policy for an organization.
-class ActionsCacheStorageLimitForOrganization {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// For repositories in the organization, the maximum size limit for the sum of all caches in a repository, in gigabytes.
-  final SdkOptional<int> maxCacheSizeGb;
-
-  const ActionsCacheStorageLimitForOrganization(
-      {this.maxCacheSizeGb = const SdkOmitted()});
-
-  ActionsCacheStorageLimitForOrganization Function(
-      {SdkOptional<int> maxCacheSizeGb}) get copyWith => _copyWith;
-
-  ActionsCacheStorageLimitForOrganization _copyWith(
-          {Object? maxCacheSizeGb = sdkOmittedValue}) =>
-      ActionsCacheStorageLimitForOrganization(
-        maxCacheSizeGb: identical(maxCacheSizeGb, sdkOmittedValue)
-            ? this.maxCacheSizeGb
-            : maxCacheSizeGb as SdkOptional<int>,
-      );
-
-  factory ActionsCacheStorageLimitForOrganization.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsCacheStorageLimitForOrganization(
-        maxCacheSizeGb: json['max_cache_size_gb'] != null
-            ? SdkPresent(((json['max_cache_size_gb'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (maxCacheSizeGb) {
-          SdkPresent<int>(value: final value) => {
-              'max_cache_size_gb': value,
-            },
-          _ => const <String, dynamic>{},
-        },
+        'access_level': accessLevel.toJson(),
       };
 }

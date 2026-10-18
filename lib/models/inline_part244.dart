@@ -4,26 +4,19 @@
 part of 'inline.dart';
 
 // Inline operation models (part 244)
-final class AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReviewSubmittedStatesItem {
+final class BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant2 {
   final String value;
 
-  const AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReviewSubmittedStatesItem._(
+  const BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant2._(
       this.value);
 
-  factory AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReviewSubmittedStatesItem.fromJson(
+  factory BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant2.fromJson(
           String value) =>
-      AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReviewSubmittedStatesItem
-          ._(value);
+      BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant2._(value);
 
-  static const approved =
-      AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReviewSubmittedStatesItem
-          ._('approved');
-  static const changesRequested =
-      AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReviewSubmittedStatesItem
-          ._('changes_requested');
-  static const commented =
-      AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReviewSubmittedStatesItem
-          ._('commented');
+  static const skupricing =
+      BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant2._(
+          'SkuPricing');
 
   String toJson() => value;
 
@@ -32,404 +25,120 @@ final class AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPu
 
   @override
   bool operator ==(Object other) =>
-      other
-          is AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReviewSubmittedStatesItem &&
+      other is BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant2 &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReviewSubmittedWriteScope {
-  final String value;
+final class BillingUpdateBudgetOrgRequestBodyExpiresAtVariant1 {
+  final int value;
 
-  const AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReviewSubmittedWriteScope._(
-      this.value);
+  const BillingUpdateBudgetOrgRequestBodyExpiresAtVariant1._(this.value);
 
-  factory AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReviewSubmittedWriteScope.fromJson(
-          String value) =>
-      AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReviewSubmittedWriteScope
-          ._(value);
+  factory BillingUpdateBudgetOrgRequestBodyExpiresAtVariant1.fromJson(
+          int value) =>
+      BillingUpdateBudgetOrgRequestBodyExpiresAtVariant1._(value);
 
-  static const trigger =
-      AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReviewSubmittedWriteScope
-          ._('trigger');
-  static const repository =
-      AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReviewSubmittedWriteScope
-          ._('repository');
+  static const v0 = BillingUpdateBudgetOrgRequestBodyExpiresAtVariant1._(0);
 
-  String toJson() => value;
+  int toJson() => value;
 
   @override
   String toString() => value.toString();
 
   @override
   bool operator ==(Object other) =>
-      other
-          is AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestReviewSubmittedWriteScope &&
+      other is BillingUpdateBudgetOrgRequestBodyExpiresAtVariant1 &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestSynchronizeWriteScope {
+/// Default permission level members have for organization repositories.
+final class OrgsUpdateRequestBodyDefaultRepositoryPermission {
   final String value;
 
-  const AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestSynchronizeWriteScope._(
-      this.value);
+  const OrgsUpdateRequestBodyDefaultRepositoryPermission._(this.value);
 
-  factory AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestSynchronizeWriteScope.fromJson(
+  factory OrgsUpdateRequestBodyDefaultRepositoryPermission.fromJson(
           String value) =>
-      AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestSynchronizeWriteScope
-          ._(value);
-
-  static const trigger =
-      AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestSynchronizeWriteScope
-          ._('trigger');
-  static const repository =
-      AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestSynchronizeWriteScope
-          ._('repository');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersPullRequestSynchronizeWriteScope &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersSubIssueAddedWriteScope {
-  final String value;
-
-  const AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersSubIssueAddedWriteScope._(
-      this.value);
-
-  factory AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersSubIssueAddedWriteScope.fromJson(
-          String value) =>
-      AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersSubIssueAddedWriteScope
-          ._(value);
-
-  static const trigger =
-      AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersSubIssueAddedWriteScope
-          ._('trigger');
-  static const repository =
-      AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersSubIssueAddedWriteScope
-          ._('repository');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersSubIssueAddedWriteScope &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-final class AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersWorkflowRunConclusionsItem {
-  final String value;
-
-  const AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersWorkflowRunConclusionsItem._(
-      this.value);
-
-  factory AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersWorkflowRunConclusionsItem.fromJson(
-          String value) =>
-      AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersWorkflowRunConclusionsItem
-          ._(value);
-
-  static const failure =
-      AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersWorkflowRunConclusionsItem
-          ._('failure');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersWorkflowRunConclusionsItem &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersWorkflowRunWriteScope {
-  final String value;
-
-  const AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersWorkflowRunWriteScope._(
-      this.value);
-
-  factory AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersWorkflowRunWriteScope.fromJson(
-          String value) =>
-      AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersWorkflowRunWriteScope
-          ._(value);
-
-  static const trigger =
-      AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersWorkflowRunWriteScope
-          ._('trigger');
-  static const repository =
-      AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersWorkflowRunWriteScope
-          ._('repository');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AgentAutomationsListRepoAutomationsResponseAutomationsItemTriggersWorkflowRunWriteScope &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Controls which repository resources a run may modify. `trigger` limits writes to the resource that started the run, when one exists, and resources created during the run; `repository` allows writes to any resource in the repository. Supported values: `trigger`, `repository`.
-final class AgentAutomationsListRepoAutomationsResponseAutomationsItemWriteScope {
-  final String value;
-
-  const AgentAutomationsListRepoAutomationsResponseAutomationsItemWriteScope._(
-      this.value);
-
-  factory AgentAutomationsListRepoAutomationsResponseAutomationsItemWriteScope.fromJson(
-          String value) =>
-      AgentAutomationsListRepoAutomationsResponseAutomationsItemWriteScope._(
-          value);
-
-  static const trigger =
-      AgentAutomationsListRepoAutomationsResponseAutomationsItemWriteScope._(
-          'trigger');
-  static const repository =
-      AgentAutomationsListRepoAutomationsResponseAutomationsItemWriteScope._(
-          'repository');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AgentAutomationsListRepoAutomationsResponseAutomationsItemWriteScope &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Machine-readable error code
-final class AgentAutomationsListRepoAutomationsResponseErrorsItemCode {
-  final String value;
-
-  const AgentAutomationsListRepoAutomationsResponseErrorsItemCode._(this.value);
-
-  factory AgentAutomationsListRepoAutomationsResponseErrorsItemCode.fromJson(
-          String value) =>
-      AgentAutomationsListRepoAutomationsResponseErrorsItemCode._(value);
-
-  static const missing =
-      AgentAutomationsListRepoAutomationsResponseErrorsItemCode._('missing');
-  static const missingField =
-      AgentAutomationsListRepoAutomationsResponseErrorsItemCode._(
-          'missing_field');
-  static const invalid =
-      AgentAutomationsListRepoAutomationsResponseErrorsItemCode._('invalid');
-  static const alreadyExists =
-      AgentAutomationsListRepoAutomationsResponseErrorsItemCode._(
-          'already_exists');
-  static const unprocessable =
-      AgentAutomationsListRepoAutomationsResponseErrorsItemCode._(
-          'unprocessable');
-  static const custom =
-      AgentAutomationsListRepoAutomationsResponseErrorsItemCode._('custom');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is AgentAutomationsListRepoAutomationsResponseErrorsItemCode &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Machine-readable error code
-final class AgentAutomationsListRepoAutomationsResponseErrorsItemCodea38a3998 {
-  final String value;
-
-  const AgentAutomationsListRepoAutomationsResponseErrorsItemCodea38a3998._(
-      this.value);
-
-  factory AgentAutomationsListRepoAutomationsResponseErrorsItemCodea38a3998.fromJson(
-          String value) =>
-      AgentAutomationsListRepoAutomationsResponseErrorsItemCodea38a3998._(
-          value);
-
-  static const missing =
-      AgentAutomationsListRepoAutomationsResponseErrorsItemCodea38a3998._(
-          'missing');
-  static const missingField =
-      AgentAutomationsListRepoAutomationsResponseErrorsItemCodea38a3998._(
-          'missing_field');
-  static const invalid =
-      AgentAutomationsListRepoAutomationsResponseErrorsItemCodea38a3998._(
-          'invalid');
-  static const alreadyExists =
-      AgentAutomationsListRepoAutomationsResponseErrorsItemCodea38a3998._(
-          'already_exists');
-  static const unprocessable =
-      AgentAutomationsListRepoAutomationsResponseErrorsItemCodea38a3998._(
-          'unprocessable');
-  static const custom =
-      AgentAutomationsListRepoAutomationsResponseErrorsItemCodea38a3998._(
-          'custom');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AgentAutomationsListRepoAutomationsResponseErrorsItemCodea38a3998 &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Machine-readable error code
-final class AgentAutomationsListRepoAutomationsResponseErrorsItemCode9ea78c76 {
-  final String value;
-
-  const AgentAutomationsListRepoAutomationsResponseErrorsItemCode9ea78c76._(
-      this.value);
-
-  factory AgentAutomationsListRepoAutomationsResponseErrorsItemCode9ea78c76.fromJson(
-          String value) =>
-      AgentAutomationsListRepoAutomationsResponseErrorsItemCode9ea78c76._(
-          value);
-
-  static const missing =
-      AgentAutomationsListRepoAutomationsResponseErrorsItemCode9ea78c76._(
-          'missing');
-  static const missingField =
-      AgentAutomationsListRepoAutomationsResponseErrorsItemCode9ea78c76._(
-          'missing_field');
-  static const invalid =
-      AgentAutomationsListRepoAutomationsResponseErrorsItemCode9ea78c76._(
-          'invalid');
-  static const alreadyExists =
-      AgentAutomationsListRepoAutomationsResponseErrorsItemCode9ea78c76._(
-          'already_exists');
-  static const unprocessable =
-      AgentAutomationsListRepoAutomationsResponseErrorsItemCode9ea78c76._(
-          'unprocessable');
-  static const custom =
-      AgentAutomationsListRepoAutomationsResponseErrorsItemCode9ea78c76._(
-          'custom');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AgentAutomationsListRepoAutomationsResponseErrorsItemCode9ea78c76 &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Who owns the automation, fixed at creation. `user` keeps it private to its creator and its runs act as that user. `repository` makes it belong to the repository, visible to anyone with read access to the repository and maintainable by anyone with write access to the repository, and its runs act as the Copilot app rather than as a person. `repository` is rejected when repository ownership is not available for the repository. Supported values: `user`, `repository`. Defaults to `user`.
-final class AgentAutomationsCreateRepoAutomationRequestBodyOwnerType {
-  final String value;
-
-  const AgentAutomationsCreateRepoAutomationRequestBodyOwnerType._(this.value);
-
-  factory AgentAutomationsCreateRepoAutomationRequestBodyOwnerType.fromJson(
-          String value) =>
-      AgentAutomationsCreateRepoAutomationRequestBodyOwnerType._(value);
-
-  static const user =
-      AgentAutomationsCreateRepoAutomationRequestBodyOwnerType._('user');
-  static const repository =
-      AgentAutomationsCreateRepoAutomationRequestBodyOwnerType._('repository');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is AgentAutomationsCreateRepoAutomationRequestBodyOwnerType &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-final class AgentAutomationsCreateRepoAutomationRequestBodyReasoningEffortVariant1 {
-  final String value;
-
-  const AgentAutomationsCreateRepoAutomationRequestBodyReasoningEffortVariant1._(
-      this.value);
-
-  factory AgentAutomationsCreateRepoAutomationRequestBodyReasoningEffortVariant1.fromJson(
-          String value) =>
-      AgentAutomationsCreateRepoAutomationRequestBodyReasoningEffortVariant1._(
-          value);
-
+      OrgsUpdateRequestBodyDefaultRepositoryPermission._(value);
+
+  static const read =
+      OrgsUpdateRequestBodyDefaultRepositoryPermission._('read');
+  static const write =
+      OrgsUpdateRequestBodyDefaultRepositoryPermission._('write');
+  static const admin =
+      OrgsUpdateRequestBodyDefaultRepositoryPermission._('admin');
   static const none =
-      AgentAutomationsCreateRepoAutomationRequestBodyReasoningEffortVariant1._(
-          'none');
-  static const low =
-      AgentAutomationsCreateRepoAutomationRequestBodyReasoningEffortVariant1._(
-          'low');
-  static const medium =
-      AgentAutomationsCreateRepoAutomationRequestBodyReasoningEffortVariant1._(
-          'medium');
-  static const high =
-      AgentAutomationsCreateRepoAutomationRequestBodyReasoningEffortVariant1._(
-          'high');
-  static const xhigh =
-      AgentAutomationsCreateRepoAutomationRequestBodyReasoningEffortVariant1._(
-          'xhigh');
-  static const max =
-      AgentAutomationsCreateRepoAutomationRequestBodyReasoningEffortVariant1._(
-          'max');
+      OrgsUpdateRequestBodyDefaultRepositoryPermission._('none');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is OrgsUpdateRequestBodyDefaultRepositoryPermission &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Specifies which types of repositories non-admin organization members can create. `private` is only available to repositories that are part of an organization on GitHub Enterprise Cloud. **Note:** This parameter is closing down and will be removed in the future. Its return value ignores internal repositories. Using this parameter overrides values set in `members_can_create_repositories`. See the parameter deprecation notice in the operation description for details.
+final class OrgsUpdateRequestBodyMembersAllowedRepositoryCreationType {
+  final String value;
+
+  const OrgsUpdateRequestBodyMembersAllowedRepositoryCreationType._(this.value);
+
+  factory OrgsUpdateRequestBodyMembersAllowedRepositoryCreationType.fromJson(
+          String value) =>
+      OrgsUpdateRequestBodyMembersAllowedRepositoryCreationType._(value);
+
+  static const all =
+      OrgsUpdateRequestBodyMembersAllowedRepositoryCreationType._('all');
+  static const private =
+      OrgsUpdateRequestBodyMembersAllowedRepositoryCreationType._('private');
+  static const none =
+      OrgsUpdateRequestBodyMembersAllowedRepositoryCreationType._('none');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is OrgsUpdateRequestBodyMembersAllowedRepositoryCreationType &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// CodeQL query suite to be used. If you specify the `query_suite` parameter, the default setup will be configured with this query suite only on all repositories that didn't have default setup already configured. It will not change the query suite on repositories that already have default setup configured. If you don't specify any `query_suite` in your request, the preferred query suite of the organization will be applied.
+final class OrgsEnableOrDisableSecurityProductOnAllOrgReposRequestBodyQuerySuite {
+  final String value;
+
+  const OrgsEnableOrDisableSecurityProductOnAllOrgReposRequestBodyQuerySuite._(
+      this.value);
+
+  factory OrgsEnableOrDisableSecurityProductOnAllOrgReposRequestBodyQuerySuite.fromJson(
+          String value) =>
+      OrgsEnableOrDisableSecurityProductOnAllOrgReposRequestBodyQuerySuite._(
+          value);
+
+  static const default_ =
+      OrgsEnableOrDisableSecurityProductOnAllOrgReposRequestBodyQuerySuite._(
+          'default');
+  static const extended =
+      OrgsEnableOrDisableSecurityProductOnAllOrgReposRequestBodyQuerySuite._(
+          'extended');
 
   String toJson() => value;
 
@@ -439,7 +148,235 @@ final class AgentAutomationsCreateRepoAutomationRequestBodyReasoningEffortVarian
   @override
   bool operator ==(Object other) =>
       other
-          is AgentAutomationsCreateRepoAutomationRequestBodyReasoningEffortVariant1 &&
+          is OrgsEnableOrDisableSecurityProductOnAllOrgReposRequestBodyQuerySuite &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The source of the runner image.
+final class ActionsCreateHostedRunnerForOrgRequestBodyImageSource {
+  final String value;
+
+  const ActionsCreateHostedRunnerForOrgRequestBodyImageSource._(this.value);
+
+  factory ActionsCreateHostedRunnerForOrgRequestBodyImageSource.fromJson(
+          String value) =>
+      ActionsCreateHostedRunnerForOrgRequestBodyImageSource._(value);
+
+  static const github =
+      ActionsCreateHostedRunnerForOrgRequestBodyImageSource._('github');
+  static const partner =
+      ActionsCreateHostedRunnerForOrgRequestBodyImageSource._('partner');
+  static const custom =
+      ActionsCreateHostedRunnerForOrgRequestBodyImageSource._('custom');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is ActionsCreateHostedRunnerForOrgRequestBodyImageSource &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The source type of the runner image to use. Must match the source of the image specified by `image_id`. Can be one of `github`, `partner`, or `custom`.
+final class ActionsUpdateHostedRunnerForOrgRequestBodyImageSource {
+  final String value;
+
+  const ActionsUpdateHostedRunnerForOrgRequestBodyImageSource._(this.value);
+
+  factory ActionsUpdateHostedRunnerForOrgRequestBodyImageSource.fromJson(
+          String value) =>
+      ActionsUpdateHostedRunnerForOrgRequestBodyImageSource._(value);
+
+  static const github =
+      ActionsUpdateHostedRunnerForOrgRequestBodyImageSource._('github');
+  static const partner =
+      ActionsUpdateHostedRunnerForOrgRequestBodyImageSource._('partner');
+  static const custom =
+      ActionsUpdateHostedRunnerForOrgRequestBodyImageSource._('custom');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is ActionsUpdateHostedRunnerForOrgRequestBodyImageSource &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The policy that controls whether self-hosted runners can be used in the organization
+final class ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBodyEnabledRepositories {
+  final String value;
+
+  const ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBodyEnabledRepositories._(
+      this.value);
+
+  factory ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBodyEnabledRepositories.fromJson(
+          String value) =>
+      ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBodyEnabledRepositories
+          ._(value);
+
+  static const all =
+      ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBodyEnabledRepositories
+          ._('all');
+  static const selected =
+      ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBodyEnabledRepositories
+          ._('selected');
+  static const none =
+      ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBodyEnabledRepositories
+          ._('none');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is ActionsSetSelfHostedRunnersPermissionsOrganizationRequestBodyEnabledRepositories &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Visibility of a runner group. You can select all repositories, select individual repositories, or limit access to private repositories.
+final class ActionsCreateSelfHostedRunnerGroupForOrgRequestBodyVisibility {
+  final String value;
+
+  const ActionsCreateSelfHostedRunnerGroupForOrgRequestBodyVisibility._(
+      this.value);
+
+  factory ActionsCreateSelfHostedRunnerGroupForOrgRequestBodyVisibility.fromJson(
+          String value) =>
+      ActionsCreateSelfHostedRunnerGroupForOrgRequestBodyVisibility._(value);
+
+  static const selected =
+      ActionsCreateSelfHostedRunnerGroupForOrgRequestBodyVisibility._(
+          'selected');
+  static const all =
+      ActionsCreateSelfHostedRunnerGroupForOrgRequestBodyVisibility._('all');
+  static const private =
+      ActionsCreateSelfHostedRunnerGroupForOrgRequestBodyVisibility._(
+          'private');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is ActionsCreateSelfHostedRunnerGroupForOrgRequestBodyVisibility &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Visibility of a runner group. You can select all repositories, select individual repositories, or all private repositories.
+final class ActionsUpdateSelfHostedRunnerGroupForOrgRequestBodyVisibility {
+  final String value;
+
+  const ActionsUpdateSelfHostedRunnerGroupForOrgRequestBodyVisibility._(
+      this.value);
+
+  factory ActionsUpdateSelfHostedRunnerGroupForOrgRequestBodyVisibility.fromJson(
+          String value) =>
+      ActionsUpdateSelfHostedRunnerGroupForOrgRequestBodyVisibility._(value);
+
+  static const selected =
+      ActionsUpdateSelfHostedRunnerGroupForOrgRequestBodyVisibility._(
+          'selected');
+  static const all =
+      ActionsUpdateSelfHostedRunnerGroupForOrgRequestBodyVisibility._('all');
+  static const private =
+      ActionsUpdateSelfHostedRunnerGroupForOrgRequestBodyVisibility._(
+          'private');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is ActionsUpdateSelfHostedRunnerGroupForOrgRequestBodyVisibility &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Which type of organization repositories have access to the organization secret. `selected` means only the repositories specified by `selected_repository_ids` can access the secret.
+final class ActionsCreateOrUpdateOrgSecretRequestBodyVisibility {
+  final String value;
+
+  const ActionsCreateOrUpdateOrgSecretRequestBodyVisibility._(this.value);
+
+  factory ActionsCreateOrUpdateOrgSecretRequestBodyVisibility.fromJson(
+          String value) =>
+      ActionsCreateOrUpdateOrgSecretRequestBodyVisibility._(value);
+
+  static const all =
+      ActionsCreateOrUpdateOrgSecretRequestBodyVisibility._('all');
+  static const private =
+      ActionsCreateOrUpdateOrgSecretRequestBodyVisibility._('private');
+  static const selected =
+      ActionsCreateOrUpdateOrgSecretRequestBodyVisibility._('selected');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is ActionsCreateOrUpdateOrgSecretRequestBodyVisibility &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The type of repositories in the organization that can access the variable. `selected` means only the repositories specified by `selected_repository_ids` can access the variable.
+final class ActionsCreateOrgVariableRequestBodyVisibility {
+  final String value;
+
+  const ActionsCreateOrgVariableRequestBodyVisibility._(this.value);
+
+  factory ActionsCreateOrgVariableRequestBodyVisibility.fromJson(
+          String value) =>
+      ActionsCreateOrgVariableRequestBodyVisibility._(value);
+
+  static const all = ActionsCreateOrgVariableRequestBodyVisibility._('all');
+  static const private =
+      ActionsCreateOrgVariableRequestBodyVisibility._('private');
+  static const selected =
+      ActionsCreateOrgVariableRequestBodyVisibility._('selected');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is ActionsCreateOrgVariableRequestBodyVisibility &&
       other.value == value;
 
   @override

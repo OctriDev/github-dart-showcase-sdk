@@ -4,154 +4,27 @@
 part of 'inline.dart';
 
 // Inline operation models (part 241)
-/// Machine-readable error code
-final class AgentAutomationsGetAutomationResponseErrorsItemCode394f9f49 {
+/// The enablement status of code scanning delegated alert dismissal
+final class CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDelegatedAlertDismissal {
   final String value;
 
-  const AgentAutomationsGetAutomationResponseErrorsItemCode394f9f49._(
+  const CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDelegatedAlertDismissal._(
       this.value);
 
-  factory AgentAutomationsGetAutomationResponseErrorsItemCode394f9f49.fromJson(
+  factory CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDelegatedAlertDismissal.fromJson(
           String value) =>
-      AgentAutomationsGetAutomationResponseErrorsItemCode394f9f49._(value);
-
-  static const missing =
-      AgentAutomationsGetAutomationResponseErrorsItemCode394f9f49._('missing');
-  static const missingField =
-      AgentAutomationsGetAutomationResponseErrorsItemCode394f9f49._(
-          'missing_field');
-  static const invalid =
-      AgentAutomationsGetAutomationResponseErrorsItemCode394f9f49._('invalid');
-  static const alreadyExists =
-      AgentAutomationsGetAutomationResponseErrorsItemCode394f9f49._(
-          'already_exists');
-  static const unprocessable =
-      AgentAutomationsGetAutomationResponseErrorsItemCode394f9f49._(
-          'unprocessable');
-  static const custom =
-      AgentAutomationsGetAutomationResponseErrorsItemCode394f9f49._('custom');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is AgentAutomationsGetAutomationResponseErrorsItemCode394f9f49 &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Machine-readable error code
-final class AgentAutomationsGetAutomationResponseErrorsItemCode464137ad {
-  final String value;
-
-  const AgentAutomationsGetAutomationResponseErrorsItemCode464137ad._(
-      this.value);
-
-  factory AgentAutomationsGetAutomationResponseErrorsItemCode464137ad.fromJson(
-          String value) =>
-      AgentAutomationsGetAutomationResponseErrorsItemCode464137ad._(value);
-
-  static const missing =
-      AgentAutomationsGetAutomationResponseErrorsItemCode464137ad._('missing');
-  static const missingField =
-      AgentAutomationsGetAutomationResponseErrorsItemCode464137ad._(
-          'missing_field');
-  static const invalid =
-      AgentAutomationsGetAutomationResponseErrorsItemCode464137ad._('invalid');
-  static const alreadyExists =
-      AgentAutomationsGetAutomationResponseErrorsItemCode464137ad._(
-          'already_exists');
-  static const unprocessable =
-      AgentAutomationsGetAutomationResponseErrorsItemCode464137ad._(
-          'unprocessable');
-  static const custom =
-      AgentAutomationsGetAutomationResponseErrorsItemCode464137ad._('custom');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is AgentAutomationsGetAutomationResponseErrorsItemCode464137ad &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-final class AgentAutomationsListAutomationTasksSort {
-  final String value;
-
-  const AgentAutomationsListAutomationTasksSort._(this.value);
-
-  factory AgentAutomationsListAutomationTasksSort.fromJson(String value) =>
-      AgentAutomationsListAutomationTasksSort._(value);
-
-  static const updatedAt =
-      AgentAutomationsListAutomationTasksSort._('updated_at');
-  static const createdAt =
-      AgentAutomationsListAutomationTasksSort._('created_at');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is AgentAutomationsListAutomationTasksSort && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-final class AgentAutomationsListAutomationTasksDirection {
-  final String value;
-
-  const AgentAutomationsListAutomationTasksDirection._(this.value);
-
-  factory AgentAutomationsListAutomationTasksDirection.fromJson(String value) =>
-      AgentAutomationsListAutomationTasksDirection._(value);
-
-  static const asc = AgentAutomationsListAutomationTasksDirection._('asc');
-  static const desc = AgentAutomationsListAutomationTasksDirection._('desc');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is AgentAutomationsListAutomationTasksDirection &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Provider namespace
-final class AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemProvider {
-  final String value;
-
-  const AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemProvider._(
-      this.value);
-
-  factory AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemProvider.fromJson(
-          String value) =>
-      AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemProvider
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDelegatedAlertDismissal
           ._(value);
 
-  static const github =
-      AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemProvider
-          ._('github');
+  static const enabled =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDelegatedAlertDismissal
+          ._('enabled');
+  static const disabled =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDelegatedAlertDismissal
+          ._('disabled');
+  static const notSet =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDelegatedAlertDismissal
+          ._('not_set');
 
   String toJson() => value;
 
@@ -161,31 +34,70 @@ final class AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemPro
   @override
   bool operator ==(Object other) =>
       other
-          is AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemProvider &&
+          is CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDelegatedAlertDismissal &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Type of artifact. Available Values: `pull`, `branch`.
-final class AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemType {
+/// The enablement status of GitHub Code Security features.
+final class CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeSecurity {
   final String value;
 
-  const AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemType._(
+  const CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeSecurity._(
       this.value);
 
-  factory AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemType.fromJson(
+  factory CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeSecurity.fromJson(
           String value) =>
-      AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemType._(
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeSecurity._(value);
+
+  static const enabled =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeSecurity._(
+          'enabled');
+  static const disabled =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeSecurity._(
+          'disabled');
+  static const notSet =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeSecurity._(
+          'not_set');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeSecurity &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The enablement status of Dependabot alerts
+final class CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotAlerts {
+  final String value;
+
+  const CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotAlerts._(
+      this.value);
+
+  factory CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotAlerts.fromJson(
+          String value) =>
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotAlerts._(
           value);
 
-  static const pull =
-      AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemType._(
-          'pull');
-  static const branch =
-      AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemType._(
-          'branch');
+  static const enabled =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotAlerts._(
+          'enabled');
+  static const disabled =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotAlerts._(
+          'disabled');
+  static const notSet =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotAlerts._(
+          'not_set');
 
   String toJson() => value;
 
@@ -195,29 +107,34 @@ final class AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemTyp
   @override
   bool operator ==(Object other) =>
       other
-          is AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemType &&
+          is CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotAlerts &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Type of the task creator
-final class AgentAutomationsListAutomationTasksResponseTasksItemCreatorType {
+/// The enablement status of Dependabot security updates
+final class CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotSecurityUpdates {
   final String value;
 
-  const AgentAutomationsListAutomationTasksResponseTasksItemCreatorType._(
+  const CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotSecurityUpdates._(
       this.value);
 
-  factory AgentAutomationsListAutomationTasksResponseTasksItemCreatorType.fromJson(
+  factory CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotSecurityUpdates.fromJson(
           String value) =>
-      AgentAutomationsListAutomationTasksResponseTasksItemCreatorType._(value);
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotSecurityUpdates
+          ._(value);
 
-  static const user =
-      AgentAutomationsListAutomationTasksResponseTasksItemCreatorType._('user');
-  static const organization =
-      AgentAutomationsListAutomationTasksResponseTasksItemCreatorType._(
-          'organization');
+  static const enabled =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotSecurityUpdates
+          ._('enabled');
+  static const disabled =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotSecurityUpdates
+          ._('disabled');
+  static const notSet =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotSecurityUpdates
+          ._('not_set');
 
   String toJson() => value;
 
@@ -227,126 +144,34 @@ final class AgentAutomationsListAutomationTasksResponseTasksItemCreatorType {
   @override
   bool operator ==(Object other) =>
       other
-          is AgentAutomationsListAutomationTasksResponseTasksItemCreatorType &&
+          is CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotSecurityUpdates &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Current state of the task, derived from its most recent session
-final class AgentAutomationsListAutomationTasksResponseTasksItemState {
+/// The enablement status of Dependency Graph
+final class CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraph {
   final String value;
 
-  const AgentAutomationsListAutomationTasksResponseTasksItemState._(this.value);
-
-  factory AgentAutomationsListAutomationTasksResponseTasksItemState.fromJson(
-          String value) =>
-      AgentAutomationsListAutomationTasksResponseTasksItemState._(value);
-
-  static const queued =
-      AgentAutomationsListAutomationTasksResponseTasksItemState._('queued');
-  static const inProgress =
-      AgentAutomationsListAutomationTasksResponseTasksItemState._(
-          'in_progress');
-  static const completed =
-      AgentAutomationsListAutomationTasksResponseTasksItemState._('completed');
-  static const failed =
-      AgentAutomationsListAutomationTasksResponseTasksItemState._('failed');
-  static const idle =
-      AgentAutomationsListAutomationTasksResponseTasksItemState._('idle');
-  static const waitingForUser =
-      AgentAutomationsListAutomationTasksResponseTasksItemState._(
-          'waiting_for_user');
-  static const timedOut =
-      AgentAutomationsListAutomationTasksResponseTasksItemState._('timed_out');
-  static const cancelled =
-      AgentAutomationsListAutomationTasksResponseTasksItemState._('cancelled');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is AgentAutomationsListAutomationTasksResponseTasksItemState &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Machine-readable error code
-final class AgentAutomationsListAutomationTasksResponseErrorsItemCode {
-  final String value;
-
-  const AgentAutomationsListAutomationTasksResponseErrorsItemCode._(this.value);
-
-  factory AgentAutomationsListAutomationTasksResponseErrorsItemCode.fromJson(
-          String value) =>
-      AgentAutomationsListAutomationTasksResponseErrorsItemCode._(value);
-
-  static const missing =
-      AgentAutomationsListAutomationTasksResponseErrorsItemCode._('missing');
-  static const missingField =
-      AgentAutomationsListAutomationTasksResponseErrorsItemCode._(
-          'missing_field');
-  static const invalid =
-      AgentAutomationsListAutomationTasksResponseErrorsItemCode._('invalid');
-  static const alreadyExists =
-      AgentAutomationsListAutomationTasksResponseErrorsItemCode._(
-          'already_exists');
-  static const unprocessable =
-      AgentAutomationsListAutomationTasksResponseErrorsItemCode._(
-          'unprocessable');
-  static const custom =
-      AgentAutomationsListAutomationTasksResponseErrorsItemCode._('custom');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is AgentAutomationsListAutomationTasksResponseErrorsItemCode &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Machine-readable error code
-final class AgentAutomationsListAutomationTasksResponseErrorsItemCode5b4e04b2 {
-  final String value;
-
-  const AgentAutomationsListAutomationTasksResponseErrorsItemCode5b4e04b2._(
+  const CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraph._(
       this.value);
 
-  factory AgentAutomationsListAutomationTasksResponseErrorsItemCode5b4e04b2.fromJson(
+  factory CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraph.fromJson(
           String value) =>
-      AgentAutomationsListAutomationTasksResponseErrorsItemCode5b4e04b2._(
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraph._(
           value);
 
-  static const missing =
-      AgentAutomationsListAutomationTasksResponseErrorsItemCode5b4e04b2._(
-          'missing');
-  static const missingField =
-      AgentAutomationsListAutomationTasksResponseErrorsItemCode5b4e04b2._(
-          'missing_field');
-  static const invalid =
-      AgentAutomationsListAutomationTasksResponseErrorsItemCode5b4e04b2._(
-          'invalid');
-  static const alreadyExists =
-      AgentAutomationsListAutomationTasksResponseErrorsItemCode5b4e04b2._(
-          'already_exists');
-  static const unprocessable =
-      AgentAutomationsListAutomationTasksResponseErrorsItemCode5b4e04b2._(
-          'unprocessable');
-  static const custom =
-      AgentAutomationsListAutomationTasksResponseErrorsItemCode5b4e04b2._(
-          'custom');
+  static const enabled =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraph._(
+          'enabled');
+  static const disabled =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraph._(
+          'disabled');
+  static const notSet =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraph._(
+          'not_set');
 
   String toJson() => value;
 
@@ -356,43 +181,34 @@ final class AgentAutomationsListAutomationTasksResponseErrorsItemCode5b4e04b2 {
   @override
   bool operator ==(Object other) =>
       other
-          is AgentAutomationsListAutomationTasksResponseErrorsItemCode5b4e04b2 &&
+          is CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraph &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Machine-readable error code
-final class AgentAutomationsListAutomationTasksResponseErrorsItemCodeaa92f63b {
+/// The enablement status of Automatic dependency submission
+final class CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitAction {
   final String value;
 
-  const AgentAutomationsListAutomationTasksResponseErrorsItemCodeaa92f63b._(
+  const CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitAction._(
       this.value);
 
-  factory AgentAutomationsListAutomationTasksResponseErrorsItemCodeaa92f63b.fromJson(
+  factory CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitAction.fromJson(
           String value) =>
-      AgentAutomationsListAutomationTasksResponseErrorsItemCodeaa92f63b._(
-          value);
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitAction
+          ._(value);
 
-  static const missing =
-      AgentAutomationsListAutomationTasksResponseErrorsItemCodeaa92f63b._(
-          'missing');
-  static const missingField =
-      AgentAutomationsListAutomationTasksResponseErrorsItemCodeaa92f63b._(
-          'missing_field');
-  static const invalid =
-      AgentAutomationsListAutomationTasksResponseErrorsItemCodeaa92f63b._(
-          'invalid');
-  static const alreadyExists =
-      AgentAutomationsListAutomationTasksResponseErrorsItemCodeaa92f63b._(
-          'already_exists');
-  static const unprocessable =
-      AgentAutomationsListAutomationTasksResponseErrorsItemCodeaa92f63b._(
-          'unprocessable');
-  static const custom =
-      AgentAutomationsListAutomationTasksResponseErrorsItemCodeaa92f63b._(
-          'custom');
+  static const enabled =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitAction
+          ._('enabled');
+  static const disabled =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitAction
+          ._('disabled');
+  static const notSet =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitAction
+          ._('not_set');
 
   String toJson() => value;
 
@@ -402,31 +218,33 @@ final class AgentAutomationsListAutomationTasksResponseErrorsItemCodeaa92f63b {
   @override
   bool operator ==(Object other) =>
       other
-          is AgentAutomationsListAutomationTasksResponseErrorsItemCodeaa92f63b &&
+          is CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitAction &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// The tool's behavior level. `read` tools only retrieve data. `write` tools can change data. This describes tool behavior, not a specific GitHub token permission.
-final class AgentAutomationsListAvailableAutomationToolsResponseItemToolsItemScope {
+/// The enforcement status for a security configuration
+final class CodeSecurityUpdateEnterpriseConfigurationRequestBodyEnforcement {
   final String value;
 
-  const AgentAutomationsListAvailableAutomationToolsResponseItemToolsItemScope._(
+  const CodeSecurityUpdateEnterpriseConfigurationRequestBodyEnforcement._(
       this.value);
 
-  factory AgentAutomationsListAvailableAutomationToolsResponseItemToolsItemScope.fromJson(
+  factory CodeSecurityUpdateEnterpriseConfigurationRequestBodyEnforcement.fromJson(
           String value) =>
-      AgentAutomationsListAvailableAutomationToolsResponseItemToolsItemScope._(
-          value);
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyEnforcement._(value);
 
-  static const read =
-      AgentAutomationsListAvailableAutomationToolsResponseItemToolsItemScope._(
-          'read');
-  static const write =
-      AgentAutomationsListAvailableAutomationToolsResponseItemToolsItemScope._(
-          'write');
+  static const enforced =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyEnforcement._(
+          'enforced');
+  static const unenforced =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyEnforcement._(
+          'unenforced');
+  static const enterpriseEnforced =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyEnforcement._(
+          'enterprise_enforced');
 
   String toJson() => value;
 
@@ -436,7 +254,192 @@ final class AgentAutomationsListAvailableAutomationToolsResponseItemToolsItemSco
   @override
   bool operator ==(Object other) =>
       other
-          is AgentAutomationsListAvailableAutomationToolsResponseItemToolsItemScope &&
+          is CodeSecurityUpdateEnterpriseConfigurationRequestBodyEnforcement &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The enablement status of private vulnerability reporting
+final class CodeSecurityUpdateEnterpriseConfigurationRequestBodyPrivateVulnerabilityReporting {
+  final String value;
+
+  const CodeSecurityUpdateEnterpriseConfigurationRequestBodyPrivateVulnerabilityReporting._(
+      this.value);
+
+  factory CodeSecurityUpdateEnterpriseConfigurationRequestBodyPrivateVulnerabilityReporting.fromJson(
+          String value) =>
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyPrivateVulnerabilityReporting
+          ._(value);
+
+  static const enabled =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyPrivateVulnerabilityReporting
+          ._('enabled');
+  static const disabled =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyPrivateVulnerabilityReporting
+          ._('disabled');
+  static const notSet =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyPrivateVulnerabilityReporting
+          ._('not_set');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is CodeSecurityUpdateEnterpriseConfigurationRequestBodyPrivateVulnerabilityReporting &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The enablement status of GitHub Secret Protection features.
+final class CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretProtection {
+  final String value;
+
+  const CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretProtection._(
+      this.value);
+
+  factory CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretProtection.fromJson(
+          String value) =>
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretProtection._(
+          value);
+
+  static const enabled =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretProtection._(
+          'enabled');
+  static const disabled =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretProtection._(
+          'disabled');
+  static const notSet =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretProtection._(
+          'not_set');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretProtection &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The enablement status of secret scanning
+final class CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanning {
+  final String value;
+
+  const CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanning._(
+      this.value);
+
+  factory CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanning.fromJson(
+          String value) =>
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanning._(
+          value);
+
+  static const enabled =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanning._(
+          'enabled');
+  static const disabled =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanning._(
+          'disabled');
+  static const notSet =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanning._(
+          'not_set');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanning &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The enablement status of secret scanning delegated alert dismissal
+final class CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningDelegatedAlertDismissal {
+  final String value;
+
+  const CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningDelegatedAlertDismissal._(
+      this.value);
+
+  factory CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningDelegatedAlertDismissal.fromJson(
+          String value) =>
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningDelegatedAlertDismissal
+          ._(value);
+
+  static const enabled =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningDelegatedAlertDismissal
+          ._('enabled');
+  static const disabled =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningDelegatedAlertDismissal
+          ._('disabled');
+  static const notSet =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningDelegatedAlertDismissal
+          ._('not_set');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningDelegatedAlertDismissal &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// The enablement status of secret scanning extended metadata
+final class CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningExtendedMetadata {
+  final String value;
+
+  const CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningExtendedMetadata._(
+      this.value);
+
+  factory CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningExtendedMetadata.fromJson(
+          String value) =>
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningExtendedMetadata
+          ._(value);
+
+  static const enabled =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningExtendedMetadata
+          ._('enabled');
+  static const disabled =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningExtendedMetadata
+          ._('disabled');
+  static const notSet =
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningExtendedMetadata
+          ._('not_set');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningExtendedMetadata &&
       other.value == value;
 
   @override

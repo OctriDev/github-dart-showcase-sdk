@@ -4,627 +4,562 @@
 part of 'inline.dart';
 
 // Inline operation models (part 314)
-/// Request body for creating an automation.
-class AgentAutomationsCreateRepoAutomationRequestBody {
+/// A GitHub user
+class AgentTasksCreateTaskInRepoResponseUserCollaboratorsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// The name of the automation.
-  final String name;
+  /// The unique identifier of the user
+  final SdkOptional<int> id;
 
-  /// Public trigger configuration keyed by stable public trigger identifier. Each trigger has a closed, trigger-specific configuration schema.
-  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggers>
-      triggers;
+  const AgentTasksCreateTaskInRepoResponseUserCollaboratorsItem(
+      {this.id = const SdkOmitted()});
 
-  /// The prompt template for the automation.
-  final String prompt;
+  AgentTasksCreateTaskInRepoResponseUserCollaboratorsItem Function(
+      {SdkOptional<int> id}) get copyWith => _copyWith;
 
-  /// The model to use for sessions triggered by this automation. Omit to use the platform default.
-  final SdkOptional<String> model;
-
-  /// The reasoning effort to use for sessions triggered by this automation. Omit or leave empty for no override. Currently supported values: `none`, `low`, `medium`, `high`, `xhigh`, `max`
-  final SdkOptional<String> reasoningEffort;
-
-  /// The tools available to the automation.
-  final SdkOptional<List<String>> tools;
-
-  /// Custom agents (subagents) this automation is allowed to invoke.
-  final SdkOptional<List<String>> allowedCustomAgents;
-
-  /// Whether the automation should be created enabled. Defaults to true when omitted.
-  final SdkOptional<bool> enabled;
-
-  /// Who owns the automation, fixed at creation. `user` keeps it private to its creator and its runs act as that user. `repository` makes it belong to the repository, visible to anyone with read access to the repository and maintainable by anyone with write access to the repository, and its runs act as the Copilot app rather than as a person. `repository` is rejected when repository ownership is not available for the repository. Supported values: `user`, `repository`. Defaults to `user`.
-  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyOwnerType>
-      ownerType;
-
-  /// Controls which repository resources a run may modify. `trigger` limits writes to the resource that started the run, when one exists, and resources created during the run; `repository` allows writes to any resource in the repository. Supported values: `trigger`, `repository`.
-  final SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyWriteScope>
-      writeScope;
-
-  /// When true, event-triggered runs require the event actor to have repo write permission, even when the org's allow_read_access_triggers policy is enabled. Does not apply to interval-scheduled runs, which always run as the automation owner. Defaults to false.
-  final SdkOptional<bool> requireActorWritePermission;
-
-  const AgentAutomationsCreateRepoAutomationRequestBody(
-      {required this.name,
-      this.triggers = const SdkOmitted(),
-      required this.prompt,
-      this.model = const SdkOmitted(),
-      this.reasoningEffort = const SdkOmitted(),
-      this.tools = const SdkOmitted(),
-      this.allowedCustomAgents = const SdkOmitted(),
-      this.enabled = const SdkOmitted(),
-      this.ownerType = const SdkOmitted(),
-      this.writeScope = const SdkOmitted(),
-      this.requireActorWritePermission = const SdkOmitted()});
-
-  AgentAutomationsCreateRepoAutomationRequestBody Function(
-      {String name,
-      SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyTriggers>
-          triggers,
-      String prompt,
-      SdkOptional<String> model,
-      SdkOptional<String> reasoningEffort,
-      SdkOptional<List<String>> tools,
-      SdkOptional<List<String>> allowedCustomAgents,
-      SdkOptional<bool> enabled,
-      SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyOwnerType>
-          ownerType,
-      SdkOptional<AgentAutomationsCreateRepoAutomationRequestBodyWriteScope>
-          writeScope,
-      SdkOptional<bool> requireActorWritePermission}) get copyWith => _copyWith;
-
-  AgentAutomationsCreateRepoAutomationRequestBody _copyWith(
-          {Object? name = sdkOmittedValue,
-          Object? triggers = sdkOmittedValue,
-          Object? prompt = sdkOmittedValue,
-          Object? model = sdkOmittedValue,
-          Object? reasoningEffort = sdkOmittedValue,
-          Object? tools = sdkOmittedValue,
-          Object? allowedCustomAgents = sdkOmittedValue,
-          Object? enabled = sdkOmittedValue,
-          Object? ownerType = sdkOmittedValue,
-          Object? writeScope = sdkOmittedValue,
-          Object? requireActorWritePermission = sdkOmittedValue}) =>
-      AgentAutomationsCreateRepoAutomationRequestBody(
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        triggers: identical(triggers, sdkOmittedValue)
-            ? this.triggers
-            : triggers as SdkOptional<
-                AgentAutomationsCreateRepoAutomationRequestBodyTriggers>,
-        prompt:
-            identical(prompt, sdkOmittedValue) ? this.prompt : prompt as String,
-        model: identical(model, sdkOmittedValue)
-            ? this.model
-            : model as SdkOptional<String>,
-        reasoningEffort: identical(reasoningEffort, sdkOmittedValue)
-            ? this.reasoningEffort
-            : reasoningEffort as SdkOptional<String>,
-        tools: identical(tools, sdkOmittedValue)
-            ? this.tools
-            : tools as SdkOptional<List<String>>,
-        allowedCustomAgents: identical(allowedCustomAgents, sdkOmittedValue)
-            ? this.allowedCustomAgents
-            : allowedCustomAgents as SdkOptional<List<String>>,
-        enabled: identical(enabled, sdkOmittedValue)
-            ? this.enabled
-            : enabled as SdkOptional<bool>,
-        ownerType: identical(ownerType, sdkOmittedValue)
-            ? this.ownerType
-            : ownerType as SdkOptional<
-                AgentAutomationsCreateRepoAutomationRequestBodyOwnerType>,
-        writeScope: identical(writeScope, sdkOmittedValue)
-            ? this.writeScope
-            : writeScope as SdkOptional<
-                AgentAutomationsCreateRepoAutomationRequestBodyWriteScope>,
-        requireActorWritePermission:
-            identical(requireActorWritePermission, sdkOmittedValue)
-                ? this.requireActorWritePermission
-                : requireActorWritePermission as SdkOptional<bool>,
+  AgentTasksCreateTaskInRepoResponseUserCollaboratorsItem _copyWith(
+          {Object? id = sdkOmittedValue}) =>
+      AgentTasksCreateTaskInRepoResponseUserCollaboratorsItem(
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
       );
 
-  factory AgentAutomationsCreateRepoAutomationRequestBody.fromJson(
+  factory AgentTasksCreateTaskInRepoResponseUserCollaboratorsItem.fromJson(
           Map<String, dynamic> json) =>
-      AgentAutomationsCreateRepoAutomationRequestBody(
-        name: (json['name'] as String?)!,
-        triggers: json['triggers'] != null
-            ? SdkPresent((json['triggers'] != null
-                ? AgentAutomationsCreateRepoAutomationRequestBodyTriggers
-                    .fromJson(json['triggers'] as Map<String, dynamic>)
+      AgentTasksCreateTaskInRepoResponseUserCollaboratorsItem(
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+/// The owner of the repository
+class AgentTasksCreateTaskInRepoResponseOwner {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The unique identifier of the user
+  final SdkOptional<int> id;
+
+  const AgentTasksCreateTaskInRepoResponseOwner({this.id = const SdkOmitted()});
+
+  AgentTasksCreateTaskInRepoResponseOwner Function({SdkOptional<int> id})
+      get copyWith => _copyWith;
+
+  AgentTasksCreateTaskInRepoResponseOwner _copyWith(
+          {Object? id = sdkOmittedValue}) =>
+      AgentTasksCreateTaskInRepoResponseOwner(
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+      );
+
+  factory AgentTasksCreateTaskInRepoResponseOwner.fromJson(
+          Map<String, dynamic> json) =>
+      AgentTasksCreateTaskInRepoResponseOwner(
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+/// The repository this task belongs to
+class AgentTasksCreateTaskInRepoResponseRepository {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The unique identifier of the repository
+  final SdkOptional<int> id;
+
+  const AgentTasksCreateTaskInRepoResponseRepository(
+      {this.id = const SdkOmitted()});
+
+  AgentTasksCreateTaskInRepoResponseRepository Function({SdkOptional<int> id})
+      get copyWith => _copyWith;
+
+  AgentTasksCreateTaskInRepoResponseRepository _copyWith(
+          {Object? id = sdkOmittedValue}) =>
+      AgentTasksCreateTaskInRepoResponseRepository(
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+      );
+
+  factory AgentTasksCreateTaskInRepoResponseRepository.fromJson(
+          Map<String, dynamic> json) =>
+      AgentTasksCreateTaskInRepoResponseRepository(
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+/// A resource generated by the task
+class AgentTasksCreateTaskInRepoResponseArtifactsItem {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// Provider namespace
+  final AgentTasksCreateTaskInRepoResponseArtifactsItemProvider provider;
+
+  /// Type of artifact. Available Values: `pull`, `branch`.
+  final AgentTasksCreateTaskInRepoResponseArtifactsItemType type_;
+
+  /// Resource data (shape depends on type)
+  final AgentTasksCreateTaskInRepoResponseArtifactsItemData data;
+
+  const AgentTasksCreateTaskInRepoResponseArtifactsItem(
+      {required this.provider, required this.type_, required this.data});
+
+  AgentTasksCreateTaskInRepoResponseArtifactsItem Function(
+          {AgentTasksCreateTaskInRepoResponseArtifactsItemProvider provider,
+          AgentTasksCreateTaskInRepoResponseArtifactsItemType type_,
+          AgentTasksCreateTaskInRepoResponseArtifactsItemData data})
+      get copyWith => _copyWith;
+
+  AgentTasksCreateTaskInRepoResponseArtifactsItem _copyWith(
+          {Object? provider = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? data = sdkOmittedValue}) =>
+      AgentTasksCreateTaskInRepoResponseArtifactsItem(
+        provider: identical(provider, sdkOmittedValue)
+            ? this.provider
+            : provider
+                as AgentTasksCreateTaskInRepoResponseArtifactsItemProvider,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as AgentTasksCreateTaskInRepoResponseArtifactsItemType,
+        data: identical(data, sdkOmittedValue)
+            ? this.data
+            : data as AgentTasksCreateTaskInRepoResponseArtifactsItemData,
+      );
+
+  factory AgentTasksCreateTaskInRepoResponseArtifactsItem.fromJson(
+          Map<String, dynamic> json) =>
+      AgentTasksCreateTaskInRepoResponseArtifactsItem(
+        provider: (json['provider'] != null
+            ? AgentTasksCreateTaskInRepoResponseArtifactsItemProvider.fromJson(
+                json['provider'] as String)
+            : null)!,
+        type_: (json['type'] != null
+            ? AgentTasksCreateTaskInRepoResponseArtifactsItemType.fromJson(
+                json['type'] as String)
+            : null)!,
+        data: (json['data'] != null
+            ? AgentTasksCreateTaskInRepoResponseArtifactsItemData.fromJson(
+                json['data'])
+            : null)!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'provider': provider.toJson(),
+        'type': type_.toJson(),
+        'data': data.toJson(),
+      };
+}
+
+/// Custom agent metadata associated with this task
+class AgentTasksCreateTaskInRepoResponseCustomAgent {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The custom agent's filename without the extension - for example, `performance-optimizer` for a `.github/agents/performance-optimizer.agent.md` custom agent.
+  final SdkOptional<String> id;
+
+  const AgentTasksCreateTaskInRepoResponseCustomAgent(
+      {this.id = const SdkOmitted()});
+
+  AgentTasksCreateTaskInRepoResponseCustomAgent Function(
+      {SdkOptional<String> id}) get copyWith => _copyWith;
+
+  AgentTasksCreateTaskInRepoResponseCustomAgent _copyWith(
+          {Object? id = sdkOmittedValue}) =>
+      AgentTasksCreateTaskInRepoResponseCustomAgent(
+        id: identical(id, sdkOmittedValue)
+            ? this.id
+            : id as SdkOptional<String>,
+      );
+
+  factory AgentTasksCreateTaskInRepoResponseCustomAgent.fromJson(
+          Map<String, dynamic> json) =>
+      AgentTasksCreateTaskInRepoResponseCustomAgent(
+        id: json['id'] != null
+            ? SdkPresent((json['id'] as String?)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (id) {
+          SdkPresent<String>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class AgentTasksCreateTaskInRepoResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// Unique task identifier
+  final String id;
+
+  /// API URL for this task
+  final SdkOptional<String> url;
+
+  /// Web URL for this task
+  final SdkOptional<String> htmlUrl;
+
+  /// Human-readable name derived from the task prompt
+  final SdkOptional<String> name;
+
+  /// The entity who created this task
+  final SdkOptional<AgentTasksCreateTaskInRepoResponseCreator> creator;
+
+  /// Type of the task creator
+  final SdkOptional<AgentTasksCreateTaskInRepoResponseCreatorType> creatorType;
+
+  /// User objects of collaborators on this task
+  final SdkOptional<
+          List<AgentTasksCreateTaskInRepoResponseUserCollaboratorsItem>>
+      userCollaborators;
+
+  /// The owner of the repository
+  final SdkOptional<AgentTasksCreateTaskInRepoResponseOwner> owner;
+
+  /// The repository this task belongs to
+  final SdkOptional<AgentTasksCreateTaskInRepoResponseRepository> repository;
+
+  /// Current state of the task, derived from its most recent session
+  final AgentTasksCreateTaskInRepoResponseState state;
+
+  /// Number of sessions in this task
+  final SdkOptional<int> sessionCount;
+
+  /// Resources created by this task (PRs, branches, etc.)
+  final SdkOptional<List<AgentTasksCreateTaskInRepoResponseArtifactsItem>>
+      artifacts;
+
+  /// Timestamp when the task was archived, null if not archived
+  final SdkOptional<String?> archivedAt;
+
+  /// Timestamp of the most recent update
+  final SdkOptional<String> updatedAt;
+
+  /// Timestamp when the task was created
+  final String createdAt;
+
+  /// Custom agent metadata associated with this task
+  final SdkOptional<AgentTasksCreateTaskInRepoResponseCustomAgent> customAgent;
+
+  const AgentTasksCreateTaskInRepoResponse(
+      {required this.id,
+      this.url = const SdkOmitted(),
+      this.htmlUrl = const SdkOmitted(),
+      this.name = const SdkOmitted(),
+      this.creator = const SdkOmitted(),
+      this.creatorType = const SdkOmitted(),
+      this.userCollaborators = const SdkOmitted(),
+      this.owner = const SdkOmitted(),
+      this.repository = const SdkOmitted(),
+      required this.state,
+      this.sessionCount = const SdkOmitted(),
+      this.artifacts = const SdkOmitted(),
+      this.archivedAt = const SdkOmitted(),
+      this.updatedAt = const SdkOmitted(),
+      required this.createdAt,
+      this.customAgent = const SdkOmitted()});
+
+  AgentTasksCreateTaskInRepoResponse Function(
+      {String id,
+      SdkOptional<String> url,
+      SdkOptional<String> htmlUrl,
+      SdkOptional<String> name,
+      SdkOptional<AgentTasksCreateTaskInRepoResponseCreator> creator,
+      SdkOptional<AgentTasksCreateTaskInRepoResponseCreatorType> creatorType,
+      SdkOptional<List<AgentTasksCreateTaskInRepoResponseUserCollaboratorsItem>>
+          userCollaborators,
+      SdkOptional<AgentTasksCreateTaskInRepoResponseOwner> owner,
+      SdkOptional<AgentTasksCreateTaskInRepoResponseRepository> repository,
+      AgentTasksCreateTaskInRepoResponseState state,
+      SdkOptional<int> sessionCount,
+      SdkOptional<List<AgentTasksCreateTaskInRepoResponseArtifactsItem>>
+          artifacts,
+      SdkOptional<String?> archivedAt,
+      SdkOptional<String> updatedAt,
+      String createdAt,
+      SdkOptional<AgentTasksCreateTaskInRepoResponseCustomAgent>
+          customAgent}) get copyWith => _copyWith;
+
+  AgentTasksCreateTaskInRepoResponse _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? creator = sdkOmittedValue,
+          Object? creatorType = sdkOmittedValue,
+          Object? userCollaborators = sdkOmittedValue,
+          Object? owner = sdkOmittedValue,
+          Object? repository = sdkOmittedValue,
+          Object? state = sdkOmittedValue,
+          Object? sessionCount = sdkOmittedValue,
+          Object? artifacts = sdkOmittedValue,
+          Object? archivedAt = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? customAgent = sdkOmittedValue}) =>
+      AgentTasksCreateTaskInRepoResponse(
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        url: identical(url, sdkOmittedValue)
+            ? this.url
+            : url as SdkOptional<String>,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as SdkOptional<String>,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        creator: identical(creator, sdkOmittedValue)
+            ? this.creator
+            : creator as SdkOptional<AgentTasksCreateTaskInRepoResponseCreator>,
+        creatorType: identical(creatorType, sdkOmittedValue)
+            ? this.creatorType
+            : creatorType
+                as SdkOptional<AgentTasksCreateTaskInRepoResponseCreatorType>,
+        userCollaborators: identical(userCollaborators, sdkOmittedValue)
+            ? this.userCollaborators
+            : userCollaborators as SdkOptional<
+                List<AgentTasksCreateTaskInRepoResponseUserCollaboratorsItem>>,
+        owner: identical(owner, sdkOmittedValue)
+            ? this.owner
+            : owner as SdkOptional<AgentTasksCreateTaskInRepoResponseOwner>,
+        repository: identical(repository, sdkOmittedValue)
+            ? this.repository
+            : repository
+                as SdkOptional<AgentTasksCreateTaskInRepoResponseRepository>,
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state as AgentTasksCreateTaskInRepoResponseState,
+        sessionCount: identical(sessionCount, sdkOmittedValue)
+            ? this.sessionCount
+            : sessionCount as SdkOptional<int>,
+        artifacts: identical(artifacts, sdkOmittedValue)
+            ? this.artifacts
+            : artifacts as SdkOptional<
+                List<AgentTasksCreateTaskInRepoResponseArtifactsItem>>,
+        archivedAt: identical(archivedAt, sdkOmittedValue)
+            ? this.archivedAt
+            : archivedAt as SdkOptional<String?>,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as SdkOptional<String>,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        customAgent: identical(customAgent, sdkOmittedValue)
+            ? this.customAgent
+            : customAgent
+                as SdkOptional<AgentTasksCreateTaskInRepoResponseCustomAgent>,
+      );
+
+  factory AgentTasksCreateTaskInRepoResponse.fromJson(
+          Map<String, dynamic> json) =>
+      AgentTasksCreateTaskInRepoResponse(
+        id: (json['id'] as String?)!,
+        url: json['url'] != null
+            ? SdkPresent((json['url'] as String?)!)
+            : const SdkOmitted(),
+        htmlUrl: json['html_url'] != null
+            ? SdkPresent((json['html_url'] as String?)!)
+            : const SdkOmitted(),
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+        creator: json['creator'] != null
+            ? SdkPresent((json['creator'] != null
+                ? AgentTasksCreateTaskInRepoResponseCreator.fromJson(
+                    json['creator'] as Map<String, dynamic>)
                 : null)!)
             : const SdkOmitted(),
-        prompt: (json['prompt'] as String?)!,
-        model: json['model'] != null
-            ? SdkPresent((json['model'] as String?)!)
+        creatorType: json['creator_type'] != null
+            ? SdkPresent((json['creator_type'] != null
+                ? AgentTasksCreateTaskInRepoResponseCreatorType.fromJson(
+                    json['creator_type'] as String)
+                : null)!)
             : const SdkOmitted(),
-        reasoningEffort: json['reasoning_effort'] != null
-            ? SdkPresent((json['reasoning_effort'] as String?)!)
-            : const SdkOmitted(),
-        tools: json['tools'] != null
-            ? SdkPresent(
-                ((json['tools'] as List?)?.map((e) => e as String).toList())!)
-            : const SdkOmitted(),
-        allowedCustomAgents: json['allowed_custom_agents'] != null
-            ? SdkPresent(((json['allowed_custom_agents'] as List?)
-                ?.map((e) => e as String)
+        userCollaborators: json['user_collaborators'] != null
+            ? SdkPresent(((json['user_collaborators'] as List?)
+                ?.map((e) =>
+                    AgentTasksCreateTaskInRepoResponseUserCollaboratorsItem
+                        .fromJson(e as Map<String, dynamic>))
                 .toList())!)
             : const SdkOmitted(),
-        enabled: json['enabled'] != null
-            ? SdkPresent((json['enabled'] as bool?)!)
-            : const SdkOmitted(),
-        ownerType: json['owner_type'] != null
-            ? SdkPresent((json['owner_type'] != null
-                ? AgentAutomationsCreateRepoAutomationRequestBodyOwnerType
-                    .fromJson(json['owner_type'] as String)
+        owner: json['owner'] != null
+            ? SdkPresent((json['owner'] != null
+                ? AgentTasksCreateTaskInRepoResponseOwner.fromJson(
+                    json['owner'] as Map<String, dynamic>)
                 : null)!)
             : const SdkOmitted(),
-        writeScope: json['write_scope'] != null
-            ? SdkPresent((json['write_scope'] != null
-                ? AgentAutomationsCreateRepoAutomationRequestBodyWriteScope
-                    .fromJson(json['write_scope'] as String)
+        repository: json['repository'] != null
+            ? SdkPresent((json['repository'] != null
+                ? AgentTasksCreateTaskInRepoResponseRepository.fromJson(
+                    json['repository'] as Map<String, dynamic>)
                 : null)!)
             : const SdkOmitted(),
-        requireActorWritePermission:
-            json['require_actor_write_permission'] != null
-                ? SdkPresent((json['require_actor_write_permission'] as bool?)!)
-                : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        'name': name,
-        ...switch (triggers) {
-          SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyTriggers>(
-            value: final value
-          ) =>
-            {
-              'triggers': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'prompt': prompt,
-        ...switch (model) {
-          SdkPresent<String>(value: final value) => {
-              'model': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (reasoningEffort) {
-          SdkPresent<String>(value: final value) => {
-              'reasoning_effort': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (tools) {
-          SdkPresent<List<String>>(value: final value) => {
-              'tools': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (allowedCustomAgents) {
-          SdkPresent<List<String>>(value: final value) => {
-              'allowed_custom_agents': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (enabled) {
-          SdkPresent<bool>(value: final value) => {
-              'enabled': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (ownerType) {
-          SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyOwnerType>(
-            value: final value
-          ) =>
-            {
-              'owner_type': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (writeScope) {
-          SdkPresent<AgentAutomationsCreateRepoAutomationRequestBodyWriteScope>(
-            value: final value
-          ) =>
-            {
-              'write_scope': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (requireActorWritePermission) {
-          SdkPresent<bool>(value: final value) => {
-              'require_actor_write_permission': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-class AgentAutomationsCreateRepoAutomationResponseTriggersInterval {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// One or more schedules on which the Automation runs.
-  final List<
-          AgentAutomationsCreateRepoAutomationResponseTriggersIntervalCadenceItem>
-      cadence;
-
-  /// UTC hour anchor (0 through 23) for daily and weekly schedules. Omitted daily and weekly values default to `0` (midnight UTC).
-  final SdkOptional<int> hourUtc;
-
-  /// UTC weekday anchor for weekly schedules, where `0` is Sunday and `6` is Saturday. Omitted weekly values default to Monday (`1`).
-  final SdkOptional<int> dayOfWeek;
-
-  /// UTC minute anchor for daily and weekly schedules. Omitted daily and weekly values default to `0`. Must be omitted whenever `cadence` includes `hourly`.
-  final SdkOptional<
-          AgentAutomationsCreateRepoAutomationResponseTriggersIntervalMinuteUtc>
-      minuteUtc;
-
-  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-  final SdkOptional<
-          AgentAutomationsCreateRepoAutomationResponseTriggersIntervalWriteScope>
-      writeScope;
-
-  const AgentAutomationsCreateRepoAutomationResponseTriggersInterval(
-      {required this.cadence,
-      this.hourUtc = const SdkOmitted(),
-      this.dayOfWeek = const SdkOmitted(),
-      this.minuteUtc = const SdkOmitted(),
-      this.writeScope = const SdkOmitted()});
-
-  AgentAutomationsCreateRepoAutomationResponseTriggersInterval Function(
-      {List<AgentAutomationsCreateRepoAutomationResponseTriggersIntervalCadenceItem>
-          cadence,
-      SdkOptional<int> hourUtc,
-      SdkOptional<int> dayOfWeek,
-      SdkOptional<
-              AgentAutomationsCreateRepoAutomationResponseTriggersIntervalMinuteUtc>
-          minuteUtc,
-      SdkOptional<
-              AgentAutomationsCreateRepoAutomationResponseTriggersIntervalWriteScope>
-          writeScope}) get copyWith => _copyWith;
-
-  AgentAutomationsCreateRepoAutomationResponseTriggersInterval _copyWith(
-          {Object? cadence = sdkOmittedValue,
-          Object? hourUtc = sdkOmittedValue,
-          Object? dayOfWeek = sdkOmittedValue,
-          Object? minuteUtc = sdkOmittedValue,
-          Object? writeScope = sdkOmittedValue}) =>
-      AgentAutomationsCreateRepoAutomationResponseTriggersInterval(
-        cadence: identical(cadence, sdkOmittedValue)
-            ? this.cadence
-            : cadence as List<
-                AgentAutomationsCreateRepoAutomationResponseTriggersIntervalCadenceItem>,
-        hourUtc: identical(hourUtc, sdkOmittedValue)
-            ? this.hourUtc
-            : hourUtc as SdkOptional<int>,
-        dayOfWeek: identical(dayOfWeek, sdkOmittedValue)
-            ? this.dayOfWeek
-            : dayOfWeek as SdkOptional<int>,
-        minuteUtc: identical(minuteUtc, sdkOmittedValue)
-            ? this.minuteUtc
-            : minuteUtc as SdkOptional<
-                AgentAutomationsCreateRepoAutomationResponseTriggersIntervalMinuteUtc>,
-        writeScope: identical(writeScope, sdkOmittedValue)
-            ? this.writeScope
-            : writeScope as SdkOptional<
-                AgentAutomationsCreateRepoAutomationResponseTriggersIntervalWriteScope>,
-      );
-
-  factory AgentAutomationsCreateRepoAutomationResponseTriggersInterval.fromJson(
-          Map<String, dynamic> json) =>
-      AgentAutomationsCreateRepoAutomationResponseTriggersInterval(
-        cadence: ((json['cadence'] as List?)
-            ?.map((e) =>
-                AgentAutomationsCreateRepoAutomationResponseTriggersIntervalCadenceItem
-                    .fromJson(e as String))
-            .toList())!,
-        hourUtc: json['hour_utc'] != null
-            ? SdkPresent(((json['hour_utc'] as num?)?.toInt())!)
+        state: (json['state'] != null
+            ? AgentTasksCreateTaskInRepoResponseState.fromJson(
+                json['state'] as String)
+            : null)!,
+        sessionCount: json['session_count'] != null
+            ? SdkPresent(((json['session_count'] as num?)?.toInt())!)
             : const SdkOmitted(),
-        dayOfWeek: json['day_of_week'] != null
-            ? SdkPresent(((json['day_of_week'] as num?)?.toInt())!)
+        artifacts: json['artifacts'] != null
+            ? SdkPresent(((json['artifacts'] as List?)
+                ?.map((e) =>
+                    AgentTasksCreateTaskInRepoResponseArtifactsItem.fromJson(
+                        e as Map<String, dynamic>))
+                .toList())!)
             : const SdkOmitted(),
-        minuteUtc: json['minute_utc'] != null
-            ? SdkPresent((json['minute_utc'] != null
-                ? AgentAutomationsCreateRepoAutomationResponseTriggersIntervalMinuteUtc
-                    .fromJson((json['minute_utc'] as num).toInt())
-                : null)!)
+        archivedAt: json.containsKey('archived_at')
+            ? SdkPresent(json['archived_at'] as String?)
             : const SdkOmitted(),
-        writeScope: json['write_scope'] != null
-            ? SdkPresent((json['write_scope'] != null
-                ? AgentAutomationsCreateRepoAutomationResponseTriggersIntervalWriteScope
-                    .fromJson(json['write_scope'] as String)
+        updatedAt: json['updated_at'] != null
+            ? SdkPresent((json['updated_at'] as String?)!)
+            : const SdkOmitted(),
+        createdAt: (json['created_at'] as String?)!,
+        customAgent: json['custom_agent'] != null
+            ? SdkPresent((json['custom_agent'] != null
+                ? AgentTasksCreateTaskInRepoResponseCustomAgent.fromJson(
+                    json['custom_agent'] as Map<String, dynamic>)
                 : null)!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        'cadence': cadence.map((item) => item.toJson()).toList(),
-        ...switch (hourUtc) {
+        'id': id,
+        ...switch (url) {
+          SdkPresent<String>(value: final value) => {
+              'url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (htmlUrl) {
+          SdkPresent<String>(value: final value) => {
+              'html_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (creator) {
+          SdkPresent<AgentTasksCreateTaskInRepoResponseCreator>(
+            value: final value
+          ) =>
+            {
+              'creator': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (creatorType) {
+          SdkPresent<AgentTasksCreateTaskInRepoResponseCreatorType>(
+            value: final value
+          ) =>
+            {
+              'creator_type': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (userCollaborators) {
+          SdkPresent<
+                List<AgentTasksCreateTaskInRepoResponseUserCollaboratorsItem>>(
+            value: final value
+          ) =>
+            {
+              'user_collaborators': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (owner) {
+          SdkPresent<AgentTasksCreateTaskInRepoResponseOwner>(
+            value: final value
+          ) =>
+            {
+              'owner': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (repository) {
+          SdkPresent<AgentTasksCreateTaskInRepoResponseRepository>(
+            value: final value
+          ) =>
+            {
+              'repository': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'state': state.toJson(),
+        ...switch (sessionCount) {
           SdkPresent<int>(value: final value) => {
-              'hour_utc': value,
+              'session_count': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (dayOfWeek) {
-          SdkPresent<int>(value: final value) => {
-              'day_of_week': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (minuteUtc) {
-          SdkPresent<
-                AgentAutomationsCreateRepoAutomationResponseTriggersIntervalMinuteUtc>(
+        ...switch (artifacts) {
+          SdkPresent<List<AgentTasksCreateTaskInRepoResponseArtifactsItem>>(
             value: final value
           ) =>
             {
-              'minute_utc': value.toJson(),
+              'artifacts': value.map((item) => item.toJson()).toList(),
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (writeScope) {
-          SdkPresent<
-                AgentAutomationsCreateRepoAutomationResponseTriggersIntervalWriteScope>(
-            value: final value
-          ) =>
-            {
-              'write_scope': value.toJson(),
+        ...switch (archivedAt) {
+          SdkPresent<String?>(value: final value) => {
+              'archived_at': value,
             },
           _ => const <String, dynamic>{},
         },
-      };
-}
-
-class AgentAutomationsCreateRepoAutomationResponseTriggersIssueOpened {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// A GitHub issue or pull request search query.
-  final SdkOptional<String> query;
-
-  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-  final SdkOptional<
-          AgentAutomationsCreateRepoAutomationResponseTriggersIssueOpenedWriteScope>
-      writeScope;
-
-  const AgentAutomationsCreateRepoAutomationResponseTriggersIssueOpened(
-      {this.query = const SdkOmitted(), this.writeScope = const SdkOmitted()});
-
-  AgentAutomationsCreateRepoAutomationResponseTriggersIssueOpened Function(
-      {SdkOptional<String> query,
-      SdkOptional<
-              AgentAutomationsCreateRepoAutomationResponseTriggersIssueOpenedWriteScope>
-          writeScope}) get copyWith => _copyWith;
-
-  AgentAutomationsCreateRepoAutomationResponseTriggersIssueOpened _copyWith(
-          {Object? query = sdkOmittedValue,
-          Object? writeScope = sdkOmittedValue}) =>
-      AgentAutomationsCreateRepoAutomationResponseTriggersIssueOpened(
-        query: identical(query, sdkOmittedValue)
-            ? this.query
-            : query as SdkOptional<String>,
-        writeScope: identical(writeScope, sdkOmittedValue)
-            ? this.writeScope
-            : writeScope as SdkOptional<
-                AgentAutomationsCreateRepoAutomationResponseTriggersIssueOpenedWriteScope>,
-      );
-
-  factory AgentAutomationsCreateRepoAutomationResponseTriggersIssueOpened.fromJson(
-          Map<String, dynamic> json) =>
-      AgentAutomationsCreateRepoAutomationResponseTriggersIssueOpened(
-        query: json['query'] != null
-            ? SdkPresent((json['query'] as String?)!)
-            : const SdkOmitted(),
-        writeScope: json['write_scope'] != null
-            ? SdkPresent((json['write_scope'] != null
-                ? AgentAutomationsCreateRepoAutomationResponseTriggersIssueOpenedWriteScope
-                    .fromJson(json['write_scope'] as String)
-                : null)!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (query) {
+        ...switch (updatedAt) {
           SdkPresent<String>(value: final value) => {
-              'query': value,
+              'updated_at': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (writeScope) {
-          SdkPresent<
-                AgentAutomationsCreateRepoAutomationResponseTriggersIssueOpenedWriteScope>(
+        'created_at': createdAt,
+        ...switch (customAgent) {
+          SdkPresent<AgentTasksCreateTaskInRepoResponseCustomAgent>(
             value: final value
           ) =>
             {
-              'write_scope': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-class AgentAutomationsCreateRepoAutomationResponseTriggersIssueLabeled {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// A GitHub issue or pull request search query.
-  final SdkOptional<String> query;
-
-  /// Label names matched case-insensitively against the label added by the event. Omit or use an empty array to match every added label.
-  final SdkOptional<List<String>> labels;
-
-  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-  final SdkOptional<
-          AgentAutomationsCreateRepoAutomationResponseTriggersIssueLabeledWriteScope>
-      writeScope;
-
-  const AgentAutomationsCreateRepoAutomationResponseTriggersIssueLabeled(
-      {this.query = const SdkOmitted(),
-      this.labels = const SdkOmitted(),
-      this.writeScope = const SdkOmitted()});
-
-  AgentAutomationsCreateRepoAutomationResponseTriggersIssueLabeled Function(
-      {SdkOptional<String> query,
-      SdkOptional<List<String>> labels,
-      SdkOptional<
-              AgentAutomationsCreateRepoAutomationResponseTriggersIssueLabeledWriteScope>
-          writeScope}) get copyWith => _copyWith;
-
-  AgentAutomationsCreateRepoAutomationResponseTriggersIssueLabeled _copyWith(
-          {Object? query = sdkOmittedValue,
-          Object? labels = sdkOmittedValue,
-          Object? writeScope = sdkOmittedValue}) =>
-      AgentAutomationsCreateRepoAutomationResponseTriggersIssueLabeled(
-        query: identical(query, sdkOmittedValue)
-            ? this.query
-            : query as SdkOptional<String>,
-        labels: identical(labels, sdkOmittedValue)
-            ? this.labels
-            : labels as SdkOptional<List<String>>,
-        writeScope: identical(writeScope, sdkOmittedValue)
-            ? this.writeScope
-            : writeScope as SdkOptional<
-                AgentAutomationsCreateRepoAutomationResponseTriggersIssueLabeledWriteScope>,
-      );
-
-  factory AgentAutomationsCreateRepoAutomationResponseTriggersIssueLabeled.fromJson(
-          Map<String, dynamic> json) =>
-      AgentAutomationsCreateRepoAutomationResponseTriggersIssueLabeled(
-        query: json['query'] != null
-            ? SdkPresent((json['query'] as String?)!)
-            : const SdkOmitted(),
-        labels: json['labels'] != null
-            ? SdkPresent(
-                ((json['labels'] as List?)?.map((e) => e as String).toList())!)
-            : const SdkOmitted(),
-        writeScope: json['write_scope'] != null
-            ? SdkPresent((json['write_scope'] != null
-                ? AgentAutomationsCreateRepoAutomationResponseTriggersIssueLabeledWriteScope
-                    .fromJson(json['write_scope'] as String)
-                : null)!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (query) {
-          SdkPresent<String>(value: final value) => {
-              'query': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (labels) {
-          SdkPresent<List<String>>(value: final value) => {
-              'labels': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (writeScope) {
-          SdkPresent<
-                AgentAutomationsCreateRepoAutomationResponseTriggersIssueLabeledWriteScope>(
-            value: final value
-          ) =>
-            {
-              'write_scope': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-class AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRun {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Workflow names matched against the name in each workflow YAML file.
-  final List<String> workflows;
-
-  /// Workflow conclusions to match. The current trigger supports failure.
-  final List<
-          AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunConclusionsItem>
-      conclusions;
-
-  /// A GitHub issue or pull request search query.
-  final SdkOptional<String> query;
-
-  /// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-  final SdkOptional<
-          AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunWriteScope>
-      writeScope;
-
-  const AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRun(
-      {required this.workflows,
-      required this.conclusions,
-      this.query = const SdkOmitted(),
-      this.writeScope = const SdkOmitted()});
-
-  AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRun Function(
-      {List<String> workflows,
-      List<AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunConclusionsItem>
-          conclusions,
-      SdkOptional<String> query,
-      SdkOptional<
-              AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunWriteScope>
-          writeScope}) get copyWith => _copyWith;
-
-  AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRun _copyWith(
-          {Object? workflows = sdkOmittedValue,
-          Object? conclusions = sdkOmittedValue,
-          Object? query = sdkOmittedValue,
-          Object? writeScope = sdkOmittedValue}) =>
-      AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRun(
-        workflows: identical(workflows, sdkOmittedValue)
-            ? this.workflows
-            : workflows as List<String>,
-        conclusions: identical(conclusions, sdkOmittedValue)
-            ? this.conclusions
-            : conclusions as List<
-                AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunConclusionsItem>,
-        query: identical(query, sdkOmittedValue)
-            ? this.query
-            : query as SdkOptional<String>,
-        writeScope: identical(writeScope, sdkOmittedValue)
-            ? this.writeScope
-            : writeScope as SdkOptional<
-                AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunWriteScope>,
-      );
-
-  factory AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRun.fromJson(
-          Map<String, dynamic> json) =>
-      AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRun(
-        workflows:
-            ((json['workflows'] as List?)?.map((e) => e as String).toList())!,
-        conclusions: ((json['conclusions'] as List?)
-            ?.map((e) =>
-                AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunConclusionsItem
-                    .fromJson(e as String))
-            .toList())!,
-        query: json['query'] != null
-            ? SdkPresent((json['query'] as String?)!)
-            : const SdkOmitted(),
-        writeScope: json['write_scope'] != null
-            ? SdkPresent((json['write_scope'] != null
-                ? AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunWriteScope
-                    .fromJson(json['write_scope'] as String)
-                : null)!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        'workflows': workflows,
-        'conclusions': conclusions.map((item) => item.toJson()).toList(),
-        ...switch (query) {
-          SdkPresent<String>(value: final value) => {
-              'query': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (writeScope) {
-          SdkPresent<
-                AgentAutomationsCreateRepoAutomationResponseTriggersWorkflowRunWriteScope>(
-            value: final value
-          ) =>
-            {
-              'write_scope': value.toJson(),
+              'custom_agent': value.toJson(),
             },
           _ => const <String, dynamic>{},
         },

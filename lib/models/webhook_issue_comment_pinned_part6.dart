@@ -4,454 +4,154 @@
 part of 'webhook_issue_comment_pinned.dart';
 
 // webhook_issue_comment_pinned domain models (part 6)
-/// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-class WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubApp {
+/// Typed representation of the `WebhookIssueCommentPinned` API schema.
+class WebhookIssueCommentPinned {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Required `date-time`-formatted value serialized in the `created_at` wire field.
-  final String? createdAt;
+  /// Required enumerated value serialized in the `action` wire field.
+  final WebhookIssueCommentPinnedAction action;
 
-  /// Required `string` value serialized in the `description` wire field.
-  final String? description;
+  /// The [comment](https://docs.github.com/rest/issues/comments#get-an-issue-comment) itself.
+  final WebhooksIssueComment comment;
 
-  /// The list of events for the GitHub app
-  final SdkOptional<
-          List<
-              WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppEventsItem>>
-      events;
+  /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured on an enterprise account or an organization that's part of an enterprise account. For more information, see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
+  final SdkOptional<EnterpriseWebhooks> enterprise;
 
-  /// Required `uri`-formatted value serialized in the `external_url` wire field.
-  final String? externalUrl;
+  /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured for and sent to a GitHub App. For more information, see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
+  final SdkOptional<SimpleInstallation> installation;
 
-  /// Required `uri`-formatted value serialized in the `html_url` wire field.
-  final String htmlUrl;
+  /// The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) the comment belongs to.
+  final WebhookIssueCommentPinnedIssue issue;
 
-  /// Unique identifier of the GitHub app
-  final int? id;
+  /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an organization, or when the event occurs from activity in a repository owned by an organization.
+  final SdkOptional<OrganizationSimpleWebhooks> organization;
 
-  /// The name of the GitHub app
-  final String name;
+  /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property when the event occurs from activity in a repository.
+  final RepositoryWebhooks repository;
 
-  /// Required `string` value serialized in the `node_id` wire field.
-  final String nodeId;
+  /// A GitHub user.
+  final SimpleUser sender;
 
-  /// Required object value serialized in the `owner` wire field.
-  final WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppOwner? owner;
+  const WebhookIssueCommentPinned(
+      {required this.action,
+      required this.comment,
+      this.enterprise = const SdkOmitted(),
+      this.installation = const SdkOmitted(),
+      required this.issue,
+      this.organization = const SdkOmitted(),
+      required this.repository,
+      required this.sender});
 
-  /// The set of permissions for the GitHub app
-  final SdkOptional<
-          WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissions>
-      permissions;
+  WebhookIssueCommentPinned Function(
+      {WebhookIssueCommentPinnedAction action,
+      WebhooksIssueComment comment,
+      SdkOptional<EnterpriseWebhooks> enterprise,
+      SdkOptional<SimpleInstallation> installation,
+      WebhookIssueCommentPinnedIssue issue,
+      SdkOptional<OrganizationSimpleWebhooks> organization,
+      RepositoryWebhooks repository,
+      SimpleUser sender}) get copyWith => _copyWith;
 
-  /// The slug name of the GitHub app
-  final SdkOptional<String> slug;
-
-  /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
-  final String? updatedAt;
-
-  const WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubApp(
-      {required this.createdAt,
-      required this.description,
-      this.events = const SdkOmitted(),
-      required this.externalUrl,
-      required this.htmlUrl,
-      required this.id,
-      required this.name,
-      required this.nodeId,
-      required this.owner,
-      this.permissions = const SdkOmitted(),
-      this.slug = const SdkOmitted(),
-      required this.updatedAt});
-
-  WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubApp Function(
-      {String? createdAt,
-      String? description,
-      SdkOptional<
-              List<
-                  WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppEventsItem>>
-          events,
-      String? externalUrl,
-      String htmlUrl,
-      int? id,
-      String name,
-      String nodeId,
-      WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppOwner? owner,
-      SdkOptional<
-              WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissions>
-          permissions,
-      SdkOptional<String> slug,
-      String? updatedAt}) get copyWith => _copyWith;
-
-  WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubApp _copyWith(
-          {Object? createdAt = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? events = sdkOmittedValue,
-          Object? externalUrl = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? owner = sdkOmittedValue,
-          Object? permissions = sdkOmittedValue,
-          Object? slug = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue}) =>
-      WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubApp(
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String?,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as String?,
-        events: identical(events, sdkOmittedValue)
-            ? this.events
-            : events as SdkOptional<
-                List<
-                    WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppEventsItem>>,
-        externalUrl: identical(externalUrl, sdkOmittedValue)
-            ? this.externalUrl
-            : externalUrl as String?,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as String,
-        id: identical(id, sdkOmittedValue) ? this.id : id as int?,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        owner: identical(owner, sdkOmittedValue)
-            ? this.owner
-            : owner
-                as WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppOwner?,
-        permissions: identical(permissions, sdkOmittedValue)
-            ? this.permissions
-            : permissions as SdkOptional<
-                WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissions>,
-        slug: identical(slug, sdkOmittedValue)
-            ? this.slug
-            : slug as SdkOptional<String>,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String?,
+  WebhookIssueCommentPinned _copyWith(
+          {Object? action = sdkOmittedValue,
+          Object? comment = sdkOmittedValue,
+          Object? enterprise = sdkOmittedValue,
+          Object? installation = sdkOmittedValue,
+          Object? issue = sdkOmittedValue,
+          Object? organization = sdkOmittedValue,
+          Object? repository = sdkOmittedValue,
+          Object? sender = sdkOmittedValue}) =>
+      WebhookIssueCommentPinned(
+        action: identical(action, sdkOmittedValue)
+            ? this.action
+            : action as WebhookIssueCommentPinnedAction,
+        comment: identical(comment, sdkOmittedValue)
+            ? this.comment
+            : comment as WebhooksIssueComment,
+        enterprise: identical(enterprise, sdkOmittedValue)
+            ? this.enterprise
+            : enterprise as SdkOptional<EnterpriseWebhooks>,
+        installation: identical(installation, sdkOmittedValue)
+            ? this.installation
+            : installation as SdkOptional<SimpleInstallation>,
+        issue: identical(issue, sdkOmittedValue)
+            ? this.issue
+            : issue as WebhookIssueCommentPinnedIssue,
+        organization: identical(organization, sdkOmittedValue)
+            ? this.organization
+            : organization as SdkOptional<OrganizationSimpleWebhooks>,
+        repository: identical(repository, sdkOmittedValue)
+            ? this.repository
+            : repository as RepositoryWebhooks,
+        sender: identical(sender, sdkOmittedValue)
+            ? this.sender
+            : sender as SimpleUser,
       );
 
-  factory WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubApp.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubApp(
-        createdAt: json.containsKey('created_at')
-            ? json['created_at'] as String?
-            : throw ArgumentError.value(
-                null, 'created_at', 'Required property is missing'),
-        description: json.containsKey('description')
-            ? json['description'] as String?
-            : throw ArgumentError.value(
-                null, 'description', 'Required property is missing'),
-        events: json['events'] != null
-            ? SdkPresent(((json['events'] as List?)
-                ?.map((e) =>
-                    WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppEventsItem
-                        .fromJson(e as String))
-                .toList())!)
-            : const SdkOmitted(),
-        externalUrl: json.containsKey('external_url')
-            ? json['external_url'] as String?
-            : throw ArgumentError.value(
-                null, 'external_url', 'Required property is missing'),
-        htmlUrl: (json['html_url'] as String?)!,
-        id: json.containsKey('id')
-            ? (json['id'] as num?)?.toInt()
-            : throw ArgumentError.value(
-                null, 'id', 'Required property is missing'),
-        name: (json['name'] as String?)!,
-        nodeId: (json['node_id'] as String?)!,
-        owner: json.containsKey('owner')
-            ? json['owner'] != null
-                ? WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppOwner
-                    .fromJson(json['owner'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'owner', 'Required property is missing'),
-        permissions: json['permissions'] != null
-            ? SdkPresent((json['permissions'] != null
-                ? WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissions
-                    .fromJson(json['permissions'] as Map<String, dynamic>)
+  factory WebhookIssueCommentPinned.fromJson(Map<String, dynamic> json) =>
+      WebhookIssueCommentPinned(
+        action: (json['action'] != null
+            ? WebhookIssueCommentPinnedAction.fromJson(json['action'] as String)
+            : null)!,
+        comment: (json['comment'] != null
+            ? WebhooksIssueComment.fromJson(
+                json['comment'] as Map<String, dynamic>)
+            : null)!,
+        enterprise: json['enterprise'] != null
+            ? SdkPresent((json['enterprise'] != null
+                ? EnterpriseWebhooks.fromJson(
+                    json['enterprise'] as Map<String, dynamic>)
                 : null)!)
             : const SdkOmitted(),
-        slug: json['slug'] != null
-            ? SdkPresent((json['slug'] as String?)!)
+        installation: json['installation'] != null
+            ? SdkPresent((json['installation'] != null
+                ? SimpleInstallation.fromJson(
+                    json['installation'] as Map<String, dynamic>)
+                : null)!)
             : const SdkOmitted(),
-        updatedAt: json.containsKey('updated_at')
-            ? json['updated_at'] as String?
-            : throw ArgumentError.value(
-                null, 'updated_at', 'Required property is missing'),
+        issue: (json['issue'] != null
+            ? WebhookIssueCommentPinnedIssue.fromJson(
+                json['issue'] as Map<String, dynamic>)
+            : null)!,
+        organization: json['organization'] != null
+            ? SdkPresent((json['organization'] != null
+                ? OrganizationSimpleWebhooks.fromJson(
+                    json['organization'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        repository: (json['repository'] != null
+            ? RepositoryWebhooks.fromJson(
+                json['repository'] as Map<String, dynamic>)
+            : null)!,
+        sender: (json['sender'] != null
+            ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
+            : null)!,
       );
 
   Map<String, dynamic> toJson() => {
-        'created_at': createdAt,
-        'description': description,
-        ...switch (events) {
-          SdkPresent<
-                List<
-                    WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppEventsItem>>(
-            value: final value
-          ) =>
-            {
-              'events': value.map((item) => item.toJson()).toList(),
+        'action': action.toJson(),
+        'comment': comment.toJson(),
+        ...switch (enterprise) {
+          SdkPresent<EnterpriseWebhooks>(value: final value) => {
+              'enterprise': value.toJson(),
             },
           _ => const <String, dynamic>{},
         },
-        'external_url': externalUrl,
-        'html_url': htmlUrl,
-        'id': id,
-        'name': name,
-        'node_id': nodeId,
-        'owner': owner?.toJson(),
-        ...switch (permissions) {
-          SdkPresent<
-                WebhookIssueCommentPinnedIssueVariant0PerformedViaGithubAppPermissions>(
-            value: final value
-          ) =>
-            {
-              'permissions': value.toJson(),
+        ...switch (installation) {
+          SdkPresent<SimpleInstallation>(value: final value) => {
+              'installation': value.toJson(),
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (slug) {
-          SdkPresent<String>(value: final value) => {
-              'slug': value,
+        'issue': issue.toJson(),
+        ...switch (organization) {
+          SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {
+              'organization': value.toJson(),
             },
           _ => const <String, dynamic>{},
         },
-        'updated_at': updatedAt,
-      };
-}
-
-/// Optional object value serialized in the `pull_request` wire field.
-class WebhookIssueCommentPinnedIssueVariant0PullRequest {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Optional `uri`-formatted value serialized in the `diff_url` wire field.
-  final SdkOptional<String> diffUrl;
-
-  /// Optional `uri`-formatted value serialized in the `html_url` wire field.
-  final SdkOptional<String> htmlUrl;
-
-  /// Optional `date-time`-formatted value serialized in the `merged_at` wire field.
-  final SdkOptional<String?> mergedAt;
-
-  /// Optional `uri`-formatted value serialized in the `patch_url` wire field.
-  final SdkOptional<String> patchUrl;
-
-  /// Optional `uri`-formatted value serialized in the `url` wire field.
-  final SdkOptional<String> url;
-
-  const WebhookIssueCommentPinnedIssueVariant0PullRequest(
-      {this.diffUrl = const SdkOmitted(),
-      this.htmlUrl = const SdkOmitted(),
-      this.mergedAt = const SdkOmitted(),
-      this.patchUrl = const SdkOmitted(),
-      this.url = const SdkOmitted()});
-
-  WebhookIssueCommentPinnedIssueVariant0PullRequest Function(
-      {SdkOptional<String> diffUrl,
-      SdkOptional<String> htmlUrl,
-      SdkOptional<String?> mergedAt,
-      SdkOptional<String> patchUrl,
-      SdkOptional<String> url}) get copyWith => _copyWith;
-
-  WebhookIssueCommentPinnedIssueVariant0PullRequest _copyWith(
-          {Object? diffUrl = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? mergedAt = sdkOmittedValue,
-          Object? patchUrl = sdkOmittedValue,
-          Object? url = sdkOmittedValue}) =>
-      WebhookIssueCommentPinnedIssueVariant0PullRequest(
-        diffUrl: identical(diffUrl, sdkOmittedValue)
-            ? this.diffUrl
-            : diffUrl as SdkOptional<String>,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as SdkOptional<String>,
-        mergedAt: identical(mergedAt, sdkOmittedValue)
-            ? this.mergedAt
-            : mergedAt as SdkOptional<String?>,
-        patchUrl: identical(patchUrl, sdkOmittedValue)
-            ? this.patchUrl
-            : patchUrl as SdkOptional<String>,
-        url: identical(url, sdkOmittedValue)
-            ? this.url
-            : url as SdkOptional<String>,
-      );
-
-  factory WebhookIssueCommentPinnedIssueVariant0PullRequest.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookIssueCommentPinnedIssueVariant0PullRequest(
-        diffUrl: json['diff_url'] != null
-            ? SdkPresent((json['diff_url'] as String?)!)
-            : const SdkOmitted(),
-        htmlUrl: json['html_url'] != null
-            ? SdkPresent((json['html_url'] as String?)!)
-            : const SdkOmitted(),
-        mergedAt: json.containsKey('merged_at')
-            ? SdkPresent(json['merged_at'] as String?)
-            : const SdkOmitted(),
-        patchUrl: json['patch_url'] != null
-            ? SdkPresent((json['patch_url'] as String?)!)
-            : const SdkOmitted(),
-        url: json['url'] != null
-            ? SdkPresent((json['url'] as String?)!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (diffUrl) {
-          SdkPresent<String>(value: final value) => {
-              'diff_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (htmlUrl) {
-          SdkPresent<String>(value: final value) => {
-              'html_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (mergedAt) {
-          SdkPresent<String?>(value: final value) => {
-              'merged_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (patchUrl) {
-          SdkPresent<String>(value: final value) => {
-              'patch_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (url) {
-          SdkPresent<String>(value: final value) => {
-              'url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-/// Required object value serialized in the `reactions` wire field.
-class WebhookIssueCommentPinnedIssueVariant0Reactions {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Required `integer` value serialized in the `+1` wire field.
-  final int plus1;
-
-  /// Required `integer` value serialized in the `-1` wire field.
-  final int minus1;
-
-  /// Required `integer` value serialized in the `confused` wire field.
-  final int confused;
-
-  /// Required `integer` value serialized in the `eyes` wire field.
-  final int eyes;
-
-  /// Required `integer` value serialized in the `heart` wire field.
-  final int heart;
-
-  /// Required `integer` value serialized in the `hooray` wire field.
-  final int hooray;
-
-  /// Required `integer` value serialized in the `laugh` wire field.
-  final int laugh;
-
-  /// Required `integer` value serialized in the `rocket` wire field.
-  final int rocket;
-
-  /// Required `integer` value serialized in the `total_count` wire field.
-  final int totalCount;
-
-  /// Required `uri`-formatted value serialized in the `url` wire field.
-  final String url;
-
-  const WebhookIssueCommentPinnedIssueVariant0Reactions(
-      {required this.plus1,
-      required this.minus1,
-      required this.confused,
-      required this.eyes,
-      required this.heart,
-      required this.hooray,
-      required this.laugh,
-      required this.rocket,
-      required this.totalCount,
-      required this.url});
-
-  WebhookIssueCommentPinnedIssueVariant0Reactions Function(
-      {int plus1,
-      int minus1,
-      int confused,
-      int eyes,
-      int heart,
-      int hooray,
-      int laugh,
-      int rocket,
-      int totalCount,
-      String url}) get copyWith => _copyWith;
-
-  WebhookIssueCommentPinnedIssueVariant0Reactions _copyWith(
-          {Object? plus1 = sdkOmittedValue,
-          Object? minus1 = sdkOmittedValue,
-          Object? confused = sdkOmittedValue,
-          Object? eyes = sdkOmittedValue,
-          Object? heart = sdkOmittedValue,
-          Object? hooray = sdkOmittedValue,
-          Object? laugh = sdkOmittedValue,
-          Object? rocket = sdkOmittedValue,
-          Object? totalCount = sdkOmittedValue,
-          Object? url = sdkOmittedValue}) =>
-      WebhookIssueCommentPinnedIssueVariant0Reactions(
-        plus1: identical(plus1, sdkOmittedValue) ? this.plus1 : plus1 as int,
-        minus1:
-            identical(minus1, sdkOmittedValue) ? this.minus1 : minus1 as int,
-        confused: identical(confused, sdkOmittedValue)
-            ? this.confused
-            : confused as int,
-        eyes: identical(eyes, sdkOmittedValue) ? this.eyes : eyes as int,
-        heart: identical(heart, sdkOmittedValue) ? this.heart : heart as int,
-        hooray:
-            identical(hooray, sdkOmittedValue) ? this.hooray : hooray as int,
-        laugh: identical(laugh, sdkOmittedValue) ? this.laugh : laugh as int,
-        rocket:
-            identical(rocket, sdkOmittedValue) ? this.rocket : rocket as int,
-        totalCount: identical(totalCount, sdkOmittedValue)
-            ? this.totalCount
-            : totalCount as int,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-      );
-
-  factory WebhookIssueCommentPinnedIssueVariant0Reactions.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookIssueCommentPinnedIssueVariant0Reactions(
-        plus1: ((json['+1'] as num?)?.toInt())!,
-        minus1: ((json['-1'] as num?)?.toInt())!,
-        confused: ((json['confused'] as num?)?.toInt())!,
-        eyes: ((json['eyes'] as num?)?.toInt())!,
-        heart: ((json['heart'] as num?)?.toInt())!,
-        hooray: ((json['hooray'] as num?)?.toInt())!,
-        laugh: ((json['laugh'] as num?)?.toInt())!,
-        rocket: ((json['rocket'] as num?)?.toInt())!,
-        totalCount: ((json['total_count'] as num?)?.toInt())!,
-        url: (json['url'] as String?)!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        '+1': plus1,
-        '-1': minus1,
-        'confused': confused,
-        'eyes': eyes,
-        'heart': heart,
-        'hooray': hooray,
-        'laugh': laugh,
-        'rocket': rocket,
-        'total_count': totalCount,
-        'url': url,
+        'repository': repository.toJson(),
+        'sender': sender.toJson(),
       };
 }

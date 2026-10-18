@@ -4,213 +4,505 @@
 part of 'inline.dart';
 
 // Inline operation models (part 363)
-class CodeSecurityDetachConfigurationRequestBody {
+class OrgsUpdateMembershipForAuthenticatedUserRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// An array of repository IDs to detach from configurations. Up to 250 IDs can be provided.
-  final List<int> selectedRepositoryIds;
+  /// The state that the membership should be in. Only `"active"` will be accepted.
+  final OrgsUpdateMembershipForAuthenticatedUserRequestBodyState state;
 
-  const CodeSecurityDetachConfigurationRequestBody(
-      {required this.selectedRepositoryIds});
+  const OrgsUpdateMembershipForAuthenticatedUserRequestBody(
+      {required this.state});
 
-  CodeSecurityDetachConfigurationRequestBody Function(
-      {List<int> selectedRepositoryIds}) get copyWith => _copyWith;
+  OrgsUpdateMembershipForAuthenticatedUserRequestBody Function(
+          {OrgsUpdateMembershipForAuthenticatedUserRequestBodyState state})
+      get copyWith => _copyWith;
 
-  CodeSecurityDetachConfigurationRequestBody _copyWith(
-          {Object? selectedRepositoryIds = sdkOmittedValue}) =>
-      CodeSecurityDetachConfigurationRequestBody(
-        selectedRepositoryIds: identical(selectedRepositoryIds, sdkOmittedValue)
-            ? this.selectedRepositoryIds
-            : selectedRepositoryIds as List<int>,
+  OrgsUpdateMembershipForAuthenticatedUserRequestBody _copyWith(
+          {Object? state = sdkOmittedValue}) =>
+      OrgsUpdateMembershipForAuthenticatedUserRequestBody(
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state as OrgsUpdateMembershipForAuthenticatedUserRequestBodyState,
       );
 
-  factory CodeSecurityDetachConfigurationRequestBody.fromJson(
+  factory OrgsUpdateMembershipForAuthenticatedUserRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      CodeSecurityDetachConfigurationRequestBody(
-        selectedRepositoryIds: ((json['selected_repository_ids'] as List?)
-            ?.map((e) => (e as num).toInt())
-            .toList())!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'selected_repository_ids': selectedRepositoryIds,
-      };
-}
-
-/// Feature options for Automatic dependency submission
-class CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitActionOptions {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Whether to use runners labeled with 'dependency-submission' or standard GitHub runners.
-  final SdkOptional<bool> labeledRunners;
-
-  const CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitActionOptions(
-      {this.labeledRunners = const SdkOmitted()});
-
-  CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitActionOptions
-      Function({SdkOptional<bool> labeledRunners}) get copyWith => _copyWith;
-
-  CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitActionOptions
-      _copyWith({Object? labeledRunners = sdkOmittedValue}) =>
-          CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitActionOptions(
-            labeledRunners: identical(labeledRunners, sdkOmittedValue)
-                ? this.labeledRunners
-                : labeledRunners as SdkOptional<bool>,
-          );
-
-  factory CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitActionOptions.fromJson(
-          Map<String, dynamic> json) =>
-      CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitActionOptions(
-        labeledRunners: json['labeled_runners'] != null
-            ? SdkPresent((json['labeled_runners'] as bool?)!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (labeledRunners) {
-          SdkPresent<bool>(value: final value) => {
-              'labeled_runners': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-class CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The ID of the team or role selected as a bypass reviewer
-  final int reviewerId;
-
-  /// The type of the bypass reviewer
-  final CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemReviewerType
-      reviewerType;
-
-  /// The bypass mode for the reviewer
-  final SdkOptional<
-          CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemMode>
-      mode;
-
-  const CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem(
-      {required this.reviewerId,
-      required this.reviewerType,
-      this.mode = const SdkOmitted()});
-
-  CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem Function(
-      {int reviewerId,
-      CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemReviewerType
-          reviewerType,
-      SdkOptional<
-              CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemMode>
-          mode}) get copyWith => _copyWith;
-
-  CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem
-      _copyWith(
-              {Object? reviewerId = sdkOmittedValue,
-              Object? reviewerType = sdkOmittedValue,
-              Object? mode = sdkOmittedValue}) =>
-          CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem(
-            reviewerId: identical(reviewerId, sdkOmittedValue)
-                ? this.reviewerId
-                : reviewerId as int,
-            reviewerType: identical(reviewerType, sdkOmittedValue)
-                ? this.reviewerType
-                : reviewerType
-                    as CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemReviewerType,
-            mode: identical(mode, sdkOmittedValue)
-                ? this.mode
-                : mode as SdkOptional<
-                    CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemMode>,
-          );
-
-  factory CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem.fromJson(
-          Map<String, dynamic> json) =>
-      CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem(
-        reviewerId: ((json['reviewer_id'] as num?)?.toInt())!,
-        reviewerType: (json['reviewer_type'] != null
-            ? CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemReviewerType
-                .fromJson(json['reviewer_type'] as String)
+      OrgsUpdateMembershipForAuthenticatedUserRequestBody(
+        state: (json['state'] != null
+            ? OrgsUpdateMembershipForAuthenticatedUserRequestBodyState.fromJson(
+                json['state'] as String)
             : null)!,
-        mode: json['mode'] != null
-            ? SdkPresent((json['mode'] != null
-                ? CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemMode
-                    .fromJson(json['mode'] as String)
-                : null)!)
-            : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        'reviewer_id': reviewerId,
-        'reviewer_type': reviewerType.toJson(),
-        ...switch (mode) {
-          SdkPresent<
-                CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItemMode>(
-            value: final value
-          ) =>
-            {
-              'mode': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
+        'state': state.toJson(),
       };
 }
 
-/// Feature options for secret scanning delegated bypass
-class CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptions {
+class BillingCreateOrganizationBudgetRequestBodyBudgetAlerting {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// The bypass reviewers for secret scanning delegated bypass
-  final SdkOptional<
-          List<
-              CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem>>
-      reviewers;
+  /// Whether alerts are enabled for this budget. Rejected for user-scope as alerting is always disabled for them.
+  final SdkOptional<bool> willAlert;
 
-  const CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptions(
-      {this.reviewers = const SdkOmitted()});
+  /// Array of user login names who will receive alerts. Rejected for user-scope as alerting is always disabled for them.
+  final SdkOptional<List<String>> alertRecipients;
 
-  CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptions Function(
-      {SdkOptional<
-              List<
-                  CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem>>
-          reviewers}) get copyWith => _copyWith;
+  const BillingCreateOrganizationBudgetRequestBodyBudgetAlerting(
+      {this.willAlert = const SdkOmitted(),
+      this.alertRecipients = const SdkOmitted()});
 
-  CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptions
-      _copyWith({Object? reviewers = sdkOmittedValue}) =>
-          CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptions(
-            reviewers: identical(reviewers, sdkOmittedValue)
-                ? this.reviewers
-                : reviewers as SdkOptional<
-                    List<
-                        CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem>>,
-          );
+  BillingCreateOrganizationBudgetRequestBodyBudgetAlerting Function(
+      {SdkOptional<bool> willAlert,
+      SdkOptional<List<String>> alertRecipients}) get copyWith => _copyWith;
 
-  factory CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptions.fromJson(
+  BillingCreateOrganizationBudgetRequestBodyBudgetAlerting _copyWith(
+          {Object? willAlert = sdkOmittedValue,
+          Object? alertRecipients = sdkOmittedValue}) =>
+      BillingCreateOrganizationBudgetRequestBodyBudgetAlerting(
+        willAlert: identical(willAlert, sdkOmittedValue)
+            ? this.willAlert
+            : willAlert as SdkOptional<bool>,
+        alertRecipients: identical(alertRecipients, sdkOmittedValue)
+            ? this.alertRecipients
+            : alertRecipients as SdkOptional<List<String>>,
+      );
+
+  factory BillingCreateOrganizationBudgetRequestBodyBudgetAlerting.fromJson(
           Map<String, dynamic> json) =>
-      CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptions(
-        reviewers: json['reviewers'] != null
-            ? SdkPresent(((json['reviewers'] as List?)
-                ?.map((e) =>
-                    CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem
-                        .fromJson(e as Map<String, dynamic>))
+      BillingCreateOrganizationBudgetRequestBodyBudgetAlerting(
+        willAlert: json['will_alert'] != null
+            ? SdkPresent((json['will_alert'] as bool?)!)
+            : const SdkOmitted(),
+        alertRecipients: json['alert_recipients'] != null
+            ? SdkPresent(((json['alert_recipients'] as List?)
+                ?.map((e) => e as String)
                 .toList())!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (reviewers) {
-          SdkPresent<
-                List<
-                    CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptionsReviewersItem>>(
-            value: final value
-          ) =>
-            {
-              'reviewers': value.map((item) => item.toJson()).toList(),
+        ...switch (willAlert) {
+          SdkPresent<bool>(value: final value) => {
+              'will_alert': value,
             },
           _ => const <String, dynamic>{},
         },
+        ...switch (alertRecipients) {
+          SdkPresent<List<String>>(value: final value) => {
+              'alert_recipients': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class BillingCreateOrganizationBudgetRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The budget amount in whole dollars. For license-based products, this represents the number of licenses.
+  final SdkOptional<int> budgetAmount;
+
+  /// Whether to prevent additional spending once the budget is exceeded. For `user` and `multi_user_customer` scopes, this must be `true`.
+  final SdkOptional<bool> preventFurtherUsage;
+  final SdkOptional<BillingCreateOrganizationBudgetRequestBodyBudgetAlerting>
+      budgetAlerting;
+
+  /// The scope of the budget for this organization. - `organization`: Apply the budget to the organization. - `repository`: Apply the budget to a specific repository in the organization. - `multi_user_customer`: Apply a universal budget to all users in the organization. - `user`: Apply the budget to a single user in the organization. `user` and `multi_user_customer` scopes are only supported when `budget_product_sku` is `ai_credits` or `premium_requests`.
+  final SdkOptional<BillingCreateOrganizationBudgetRequestBodyBudgetScope>
+      budgetScope;
+
+  /// The name of the entity to apply the budget to
+  final SdkOptional<String> budgetEntityName;
+
+  /// The type of pricing model used by the budget. Determines how `budget_product_sku` is interpreted. - `BundlePricing`: Covers all AI credit SKUs. Set `budget_product_sku` to `ai_credits`. - `ProductPricing`: Covers all SKUs that belong to a product. Set `budget_product_sku` to a product such as `actions` or `packages`. - `SkuPricing`: Covers a single, specific SKU. Set `budget_product_sku` to a SKU such as `actions_linux`.
+  final SdkOptional<
+      BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant0> budgetType;
+
+  /// A single product or SKU that will be covered in the budget
+  final SdkOptional<String> budgetProductSku;
+
+  /// The username of the user for `user` scope budgets. This field is required when `budget_scope` is `user`.
+  final SdkOptional<String> user;
+
+  /// The date the budget will expire in `YYYY-MM-DD` format. Only dates in the future are accepted. If not provided, the budget will not expire. Only supported for budgets with `budget_scope` of `user`
+  final SdkOptional<String> expiresAt;
+
+  const BillingCreateOrganizationBudgetRequestBody(
+      {this.budgetAmount = const SdkOmitted(),
+      this.preventFurtherUsage = const SdkOmitted(),
+      this.budgetAlerting = const SdkOmitted(),
+      this.budgetScope = const SdkOmitted(),
+      this.budgetEntityName = const SdkOmitted(),
+      this.budgetType = const SdkOmitted(),
+      this.budgetProductSku = const SdkOmitted(),
+      this.user = const SdkOmitted(),
+      this.expiresAt = const SdkOmitted()});
+
+  BillingCreateOrganizationBudgetRequestBody Function(
+      {SdkOptional<int> budgetAmount,
+      SdkOptional<bool> preventFurtherUsage,
+      SdkOptional<BillingCreateOrganizationBudgetRequestBodyBudgetAlerting>
+          budgetAlerting,
+      SdkOptional<BillingCreateOrganizationBudgetRequestBodyBudgetScope>
+          budgetScope,
+      SdkOptional<String> budgetEntityName,
+      SdkOptional<BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant0>
+          budgetType,
+      SdkOptional<String> budgetProductSku,
+      SdkOptional<String> user,
+      SdkOptional<String> expiresAt}) get copyWith => _copyWith;
+
+  BillingCreateOrganizationBudgetRequestBody _copyWith(
+          {Object? budgetAmount = sdkOmittedValue,
+          Object? preventFurtherUsage = sdkOmittedValue,
+          Object? budgetAlerting = sdkOmittedValue,
+          Object? budgetScope = sdkOmittedValue,
+          Object? budgetEntityName = sdkOmittedValue,
+          Object? budgetType = sdkOmittedValue,
+          Object? budgetProductSku = sdkOmittedValue,
+          Object? user = sdkOmittedValue,
+          Object? expiresAt = sdkOmittedValue}) =>
+      BillingCreateOrganizationBudgetRequestBody(
+        budgetAmount: identical(budgetAmount, sdkOmittedValue)
+            ? this.budgetAmount
+            : budgetAmount as SdkOptional<int>,
+        preventFurtherUsage: identical(preventFurtherUsage, sdkOmittedValue)
+            ? this.preventFurtherUsage
+            : preventFurtherUsage as SdkOptional<bool>,
+        budgetAlerting: identical(budgetAlerting, sdkOmittedValue)
+            ? this.budgetAlerting
+            : budgetAlerting as SdkOptional<
+                BillingCreateOrganizationBudgetRequestBodyBudgetAlerting>,
+        budgetScope: identical(budgetScope, sdkOmittedValue)
+            ? this.budgetScope
+            : budgetScope as SdkOptional<
+                BillingCreateOrganizationBudgetRequestBodyBudgetScope>,
+        budgetEntityName: identical(budgetEntityName, sdkOmittedValue)
+            ? this.budgetEntityName
+            : budgetEntityName as SdkOptional<String>,
+        budgetType: identical(budgetType, sdkOmittedValue)
+            ? this.budgetType
+            : budgetType as SdkOptional<
+                BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant0>,
+        budgetProductSku: identical(budgetProductSku, sdkOmittedValue)
+            ? this.budgetProductSku
+            : budgetProductSku as SdkOptional<String>,
+        user: identical(user, sdkOmittedValue)
+            ? this.user
+            : user as SdkOptional<String>,
+        expiresAt: identical(expiresAt, sdkOmittedValue)
+            ? this.expiresAt
+            : expiresAt as SdkOptional<String>,
+      );
+
+  factory BillingCreateOrganizationBudgetRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      BillingCreateOrganizationBudgetRequestBody(
+        budgetAmount: json['budget_amount'] != null
+            ? SdkPresent(((json['budget_amount'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        preventFurtherUsage: json['prevent_further_usage'] != null
+            ? SdkPresent((json['prevent_further_usage'] as bool?)!)
+            : const SdkOmitted(),
+        budgetAlerting: json['budget_alerting'] != null
+            ? SdkPresent((json['budget_alerting'] != null
+                ? BillingCreateOrganizationBudgetRequestBodyBudgetAlerting
+                    .fromJson(json['budget_alerting'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        budgetScope: json['budget_scope'] != null
+            ? SdkPresent((json['budget_scope'] != null
+                ? BillingCreateOrganizationBudgetRequestBodyBudgetScope
+                    .fromJson(json['budget_scope'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        budgetEntityName: json['budget_entity_name'] != null
+            ? SdkPresent((json['budget_entity_name'] as String?)!)
+            : const SdkOmitted(),
+        budgetType: json['budget_type'] != null
+            ? SdkPresent((json['budget_type'] != null
+                ? BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant0
+                    .fromJson(json['budget_type'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        budgetProductSku: json['budget_product_sku'] != null
+            ? SdkPresent((json['budget_product_sku'] as String?)!)
+            : const SdkOmitted(),
+        user: json['user'] != null
+            ? SdkPresent((json['user'] as String?)!)
+            : const SdkOmitted(),
+        expiresAt: json['expires_at'] != null
+            ? SdkPresent((json['expires_at'] as String?)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (budgetAmount) {
+          SdkPresent<int>(value: final value) => {
+              'budget_amount': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (preventFurtherUsage) {
+          SdkPresent<bool>(value: final value) => {
+              'prevent_further_usage': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (budgetAlerting) {
+          SdkPresent<BillingCreateOrganizationBudgetRequestBodyBudgetAlerting>(
+            value: final value
+          ) =>
+            {
+              'budget_alerting': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (budgetScope) {
+          SdkPresent<BillingCreateOrganizationBudgetRequestBodyBudgetScope>(
+            value: final value
+          ) =>
+            {
+              'budget_scope': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (budgetEntityName) {
+          SdkPresent<String>(value: final value) => {
+              'budget_entity_name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (budgetType) {
+          SdkPresent<
+                BillingCreateOrganizationBudgetRequestBodyBudgetTypeVariant0>(
+            value: final value
+          ) =>
+            {
+              'budget_type': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (budgetProductSku) {
+          SdkPresent<String>(value: final value) => {
+              'budget_product_sku': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (user) {
+          SdkPresent<String>(value: final value) => {
+              'user': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (expiresAt) {
+          SdkPresent<String>(value: final value) => {
+              'expires_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class BillingUpdateBudgetOrgRequestBodyBudgetAlerting {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// Whether alerts are enabled for this budget. Ignored for user-scopes as alerting is always disabled for them.
+  final SdkOptional<bool> willAlert;
+
+  /// Array of user login names who will receive alerts. Ignored for user-scopes as alerting is always disabled for them.
+  final SdkOptional<List<String>> alertRecipients;
+
+  const BillingUpdateBudgetOrgRequestBodyBudgetAlerting(
+      {this.willAlert = const SdkOmitted(),
+      this.alertRecipients = const SdkOmitted()});
+
+  BillingUpdateBudgetOrgRequestBodyBudgetAlerting Function(
+      {SdkOptional<bool> willAlert,
+      SdkOptional<List<String>> alertRecipients}) get copyWith => _copyWith;
+
+  BillingUpdateBudgetOrgRequestBodyBudgetAlerting _copyWith(
+          {Object? willAlert = sdkOmittedValue,
+          Object? alertRecipients = sdkOmittedValue}) =>
+      BillingUpdateBudgetOrgRequestBodyBudgetAlerting(
+        willAlert: identical(willAlert, sdkOmittedValue)
+            ? this.willAlert
+            : willAlert as SdkOptional<bool>,
+        alertRecipients: identical(alertRecipients, sdkOmittedValue)
+            ? this.alertRecipients
+            : alertRecipients as SdkOptional<List<String>>,
+      );
+
+  factory BillingUpdateBudgetOrgRequestBodyBudgetAlerting.fromJson(
+          Map<String, dynamic> json) =>
+      BillingUpdateBudgetOrgRequestBodyBudgetAlerting(
+        willAlert: json['will_alert'] != null
+            ? SdkPresent((json['will_alert'] as bool?)!)
+            : const SdkOmitted(),
+        alertRecipients: json['alert_recipients'] != null
+            ? SdkPresent(((json['alert_recipients'] as List?)
+                ?.map((e) => e as String)
+                .toList())!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (willAlert) {
+          SdkPresent<bool>(value: final value) => {
+              'will_alert': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (alertRecipients) {
+          SdkPresent<List<String>>(value: final value) => {
+              'alert_recipients': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class BillingUpdateBudgetOrgRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The budget amount in whole dollars. For license-based products, this represents the number of licenses.
+  final SdkOptional<int> budgetAmount;
+
+  /// Whether to prevent additional spending once the budget is exceeded. For budgets with `user` or `multi_user_customer` scope, this must remain `true`.
+  final SdkOptional<bool> preventFurtherUsage;
+  final SdkOptional<BillingUpdateBudgetOrgRequestBodyBudgetAlerting>
+      budgetAlerting;
+
+  /// The date the budget will expire in `YYYY-MM-DD` format. Only dates in the future are accepted. If not set, the budget will not expire. Setting to `null` or `0` will remove the expiration date from a budget if set. Only supported for existing user-scoped budgets.
+  final SdkOptional<dynamic> expiresAt;
+
+  const BillingUpdateBudgetOrgRequestBody(
+      {this.budgetAmount = const SdkOmitted(),
+      this.preventFurtherUsage = const SdkOmitted(),
+      this.budgetAlerting = const SdkOmitted(),
+      this.expiresAt = const SdkOmitted()});
+
+  BillingUpdateBudgetOrgRequestBody Function(
+      {SdkOptional<int> budgetAmount,
+      SdkOptional<bool> preventFurtherUsage,
+      SdkOptional<BillingUpdateBudgetOrgRequestBodyBudgetAlerting>
+          budgetAlerting,
+      SdkOptional<dynamic> expiresAt}) get copyWith => _copyWith;
+
+  BillingUpdateBudgetOrgRequestBody _copyWith(
+          {Object? budgetAmount = sdkOmittedValue,
+          Object? preventFurtherUsage = sdkOmittedValue,
+          Object? budgetAlerting = sdkOmittedValue,
+          Object? expiresAt = sdkOmittedValue}) =>
+      BillingUpdateBudgetOrgRequestBody(
+        budgetAmount: identical(budgetAmount, sdkOmittedValue)
+            ? this.budgetAmount
+            : budgetAmount as SdkOptional<int>,
+        preventFurtherUsage: identical(preventFurtherUsage, sdkOmittedValue)
+            ? this.preventFurtherUsage
+            : preventFurtherUsage as SdkOptional<bool>,
+        budgetAlerting: identical(budgetAlerting, sdkOmittedValue)
+            ? this.budgetAlerting
+            : budgetAlerting
+                as SdkOptional<BillingUpdateBudgetOrgRequestBodyBudgetAlerting>,
+        expiresAt: identical(expiresAt, sdkOmittedValue)
+            ? this.expiresAt
+            : expiresAt as SdkOptional<dynamic>,
+      );
+
+  factory BillingUpdateBudgetOrgRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      BillingUpdateBudgetOrgRequestBody(
+        budgetAmount: json['budget_amount'] != null
+            ? SdkPresent(((json['budget_amount'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        preventFurtherUsage: json['prevent_further_usage'] != null
+            ? SdkPresent((json['prevent_further_usage'] as bool?)!)
+            : const SdkOmitted(),
+        budgetAlerting: json['budget_alerting'] != null
+            ? SdkPresent((json['budget_alerting'] != null
+                ? BillingUpdateBudgetOrgRequestBodyBudgetAlerting.fromJson(
+                    json['budget_alerting'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        expiresAt: json.containsKey('expires_at')
+            ? SdkPresent(json['expires_at'])
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (budgetAmount) {
+          SdkPresent<int>(value: final value) => {
+              'budget_amount': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (preventFurtherUsage) {
+          SdkPresent<bool>(value: final value) => {
+              'prevent_further_usage': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (budgetAlerting) {
+          SdkPresent<BillingUpdateBudgetOrgRequestBodyBudgetAlerting>(
+            value: final value
+          ) =>
+            {
+              'budget_alerting': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (expiresAt) {
+          SdkPresent<dynamic>(value: final value) => {
+              'expires_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class AgentsListOrgSecretsResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  final int totalCount;
+  final List<OrganizationActionsSecret> secrets;
+
+  const AgentsListOrgSecretsResponse(
+      {required this.totalCount, required this.secrets});
+
+  AgentsListOrgSecretsResponse Function(
+      {int totalCount,
+      List<OrganizationActionsSecret> secrets}) get copyWith => _copyWith;
+
+  AgentsListOrgSecretsResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? secrets = sdkOmittedValue}) =>
+      AgentsListOrgSecretsResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        secrets: identical(secrets, sdkOmittedValue)
+            ? this.secrets
+            : secrets as List<OrganizationActionsSecret>,
+      );
+
+  factory AgentsListOrgSecretsResponse.fromJson(Map<String, dynamic> json) =>
+      AgentsListOrgSecretsResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        secrets: ((json['secrets'] as List?)
+            ?.map((e) =>
+                OrganizationActionsSecret.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'total_count': totalCount,
+        'secrets': secrets.map((item) => item.toJson()).toList(),
       };
 }

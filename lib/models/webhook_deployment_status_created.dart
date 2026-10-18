@@ -8,6 +8,7 @@ import 'misc.dart';
 import 'repository.dart';
 import 'shared_simple.dart';
 import 'simple.dart';
+import 'webhook_deployment_status_created_deployment_payload.dart';
 import 'webhooks_workflow.dart';
 
 part 'webhook_deployment_status_created_part1.dart';
@@ -28,4 +29,3 @@ part 'webhook_deployment_status_created_part15.dart';
 part 'webhook_deployment_status_created_part16.dart';
 part 'webhook_deployment_status_created_part17.dart';
 part 'webhook_deployment_status_created_part18.dart';
-part 'webhook_deployment_status_created_part19.dart';

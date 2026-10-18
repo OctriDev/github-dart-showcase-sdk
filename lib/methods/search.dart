@@ -60,7 +60,9 @@ Future<SearchCodeResponse> searchCode(ClientConfig config,
             '403': (value) =>
                 BasicError.fromJson(value as Map<String, dynamic>),
             '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
+                ValidationError.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
           }))
       .data;
 }
@@ -193,7 +195,9 @@ Future<SearchIssuesAndPullRequestsResponse> searchIssuesAndPullRequests(
             '403': (value) =>
                 BasicError.fromJson(value as Map<String, dynamic>),
             '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
+                ValidationError.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
           }))
       .data;
 }
@@ -311,7 +315,9 @@ Future<SearchReposResponse> searchRepos(ClientConfig config,
           options: requestOptions,
           errors: {
             '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
+                ValidationError.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
           }))
       .data;
 }
@@ -405,7 +411,9 @@ Future<SearchUsersResponse> searchUsers(ClientConfig config,
           options: requestOptions,
           errors: {
             '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
+                ValidationError.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
           }))
       .data;
 }

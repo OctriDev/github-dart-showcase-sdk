@@ -4,391 +4,679 @@
 part of 'webhook_pull_request_review_request_removed.dart';
 
 // webhook_pull_request_review_request_removed domain models (part 23)
-class WebhookPullRequestReviewRequestRemovedVariant0 {
+class WebhookPullRequestReviewRequestRemovedVariant0PullRequest {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-  final WebhookPullRequestReviewRequestRemovedVariant0Action action;
+  final WebhookPullRequestReviewRequestRemovedVariant0PullRequestLinks links;
+  final WebhookPullRequestReviewRequestRemovedVariant0PullRequestActiveLockReason?
+      activeLockReason;
+  final SdkOptional<int> additions;
+  final WebhookPullRequestReviewRequestRemovedVariant0PullRequestAssignee?
+      assignee;
+  final List<
+          WebhookPullRequestReviewRequestRemovedVariant0PullRequestAssigneesItem?>
+      assignees;
 
-  /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured on an enterprise account or an organization that's part of an enterprise account. For more information, see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
-  final SdkOptional<EnterpriseWebhooks> enterprise;
+  /// How the author is associated with the repository.
+  final WebhookPullRequestReviewRequestRemovedVariant0PullRequestAuthorAssociation
+      authorAssociation;
 
-  /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured for and sent to a GitHub App. For more information, see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
-  final SdkOptional<SimpleInstallation> installation;
+  /// The status of auto merging a pull request.
+  final WebhookPullRequestReviewRequestRemovedVariant0PullRequestAutoMerge?
+      autoMerge;
+  final WebhookPullRequestReviewRequestRemovedVariant0PullRequestBase base_;
+  final String? body;
+  final SdkOptional<int> changedFiles;
+  final String? closedAt;
+  final SdkOptional<int> comments;
+  final String commentsUrl;
+  final SdkOptional<int> commits;
+  final String commitsUrl;
+  final String createdAt;
+  final SdkOptional<int> deletions;
+  final String diffUrl;
 
-  /// The pull request number.
+  /// Indicates whether or not the pull request is a draft.
+  final bool draft;
+  final WebhookPullRequestReviewRequestRemovedVariant0PullRequestHead head;
+  final String htmlUrl;
+  final int id;
+  final String issueUrl;
+  final List<
+          WebhookPullRequestReviewRequestRemovedVariant0PullRequestLabelsItem>
+      labels;
+  final bool locked;
+
+  /// Indicates whether maintainers can modify the pull request.
+  final SdkOptional<bool> maintainerCanModify;
+  final String? mergeCommitSha;
+  final SdkOptional<bool?> mergeable;
+  final SdkOptional<String> mergeableState;
+  final SdkOptional<bool?> merged;
+  final String? mergedAt;
+  final SdkOptional<
+          WebhookPullRequestReviewRequestRemovedVariant0PullRequestMergedBy?>
+      mergedBy;
+
+  /// A collection of related issues and pull requests.
+  final WebhookPullRequestReviewRequestRemovedVariant0PullRequestMilestone?
+      milestone;
+  final String nodeId;
+
+  /// Number uniquely identifying the pull request within its repository.
   final int number;
+  final String patchUrl;
+  final SdkOptional<bool?> rebaseable;
+  final List<dynamic> requestedReviewers;
+  final List<
+          WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItem>
+      requestedTeams;
+  final String reviewCommentUrl;
+  final SdkOptional<int> reviewComments;
+  final String reviewCommentsUrl;
 
-  /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an organization, or when the event occurs from activity in a repository owned by an organization.
-  final SdkOptional<OrganizationSimpleWebhooks> organization;
-  final WebhookPullRequestReviewRequestRemovedVariant0PullRequest pullRequest;
+  /// The stack information associated with a pull request.
+  final SdkOptional<PullRequestStack?> stack;
 
-  /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property when the event occurs from activity in a repository.
-  final RepositoryWebhooks repository;
-  final WebhookPullRequestReviewRequestRemovedVariant0RequestedReviewer?
-      requestedReviewer;
+  /// State of this Pull Request. Either `open` or `closed`.
+  final WebhookPullRequestReviewRequestRemovedVariant0PullRequestState state;
+  final String statusesUrl;
 
-  /// A GitHub user.
-  final SimpleUser sender;
+  /// The title of the pull request.
+  final String title;
+  final String updatedAt;
+  final String url;
+  final WebhookPullRequestReviewRequestRemovedVariant0PullRequestUser? user;
 
-  const WebhookPullRequestReviewRequestRemovedVariant0(
-      {required this.action,
-      this.enterprise = const SdkOmitted(),
-      this.installation = const SdkOmitted(),
+  const WebhookPullRequestReviewRequestRemovedVariant0PullRequest(
+      {required this.links,
+      required this.activeLockReason,
+      this.additions = const SdkOmitted(),
+      required this.assignee,
+      required this.assignees,
+      required this.authorAssociation,
+      required this.autoMerge,
+      required this.base_,
+      required this.body,
+      this.changedFiles = const SdkOmitted(),
+      required this.closedAt,
+      this.comments = const SdkOmitted(),
+      required this.commentsUrl,
+      this.commits = const SdkOmitted(),
+      required this.commitsUrl,
+      required this.createdAt,
+      this.deletions = const SdkOmitted(),
+      required this.diffUrl,
+      required this.draft,
+      required this.head,
+      required this.htmlUrl,
+      required this.id,
+      required this.issueUrl,
+      required this.labels,
+      required this.locked,
+      this.maintainerCanModify = const SdkOmitted(),
+      required this.mergeCommitSha,
+      this.mergeable = const SdkOmitted(),
+      this.mergeableState = const SdkOmitted(),
+      this.merged = const SdkOmitted(),
+      required this.mergedAt,
+      this.mergedBy = const SdkOmitted(),
+      required this.milestone,
+      required this.nodeId,
       required this.number,
-      this.organization = const SdkOmitted(),
-      required this.pullRequest,
-      required this.repository,
-      required this.requestedReviewer,
-      required this.sender});
+      required this.patchUrl,
+      this.rebaseable = const SdkOmitted(),
+      required this.requestedReviewers,
+      required this.requestedTeams,
+      required this.reviewCommentUrl,
+      this.reviewComments = const SdkOmitted(),
+      required this.reviewCommentsUrl,
+      this.stack = const SdkOmitted(),
+      required this.state,
+      required this.statusesUrl,
+      required this.title,
+      required this.updatedAt,
+      required this.url,
+      required this.user});
 
-  WebhookPullRequestReviewRequestRemovedVariant0 Function(
-      {WebhookPullRequestReviewRequestRemovedVariant0Action action,
-      SdkOptional<EnterpriseWebhooks> enterprise,
-      SdkOptional<SimpleInstallation> installation,
+  WebhookPullRequestReviewRequestRemovedVariant0PullRequest Function(
+      {WebhookPullRequestReviewRequestRemovedVariant0PullRequestLinks links,
+      WebhookPullRequestReviewRequestRemovedVariant0PullRequestActiveLockReason?
+          activeLockReason,
+      SdkOptional<int> additions,
+      WebhookPullRequestReviewRequestRemovedVariant0PullRequestAssignee?
+          assignee,
+      List<WebhookPullRequestReviewRequestRemovedVariant0PullRequestAssigneesItem?>
+          assignees,
+      WebhookPullRequestReviewRequestRemovedVariant0PullRequestAuthorAssociation
+          authorAssociation,
+      WebhookPullRequestReviewRequestRemovedVariant0PullRequestAutoMerge?
+          autoMerge,
+      WebhookPullRequestReviewRequestRemovedVariant0PullRequestBase base_,
+      String? body,
+      SdkOptional<int> changedFiles,
+      String? closedAt,
+      SdkOptional<int> comments,
+      String commentsUrl,
+      SdkOptional<int> commits,
+      String commitsUrl,
+      String createdAt,
+      SdkOptional<int> deletions,
+      String diffUrl,
+      bool draft,
+      WebhookPullRequestReviewRequestRemovedVariant0PullRequestHead head,
+      String htmlUrl,
+      int id,
+      String issueUrl,
+      List<WebhookPullRequestReviewRequestRemovedVariant0PullRequestLabelsItem>
+          labels,
+      bool locked,
+      SdkOptional<bool> maintainerCanModify,
+      String? mergeCommitSha,
+      SdkOptional<bool?> mergeable,
+      SdkOptional<String> mergeableState,
+      SdkOptional<bool?> merged,
+      String? mergedAt,
+      SdkOptional<
+              WebhookPullRequestReviewRequestRemovedVariant0PullRequestMergedBy?>
+          mergedBy,
+      WebhookPullRequestReviewRequestRemovedVariant0PullRequestMilestone?
+          milestone,
+      String nodeId,
       int number,
-      SdkOptional<OrganizationSimpleWebhooks> organization,
-      WebhookPullRequestReviewRequestRemovedVariant0PullRequest pullRequest,
-      RepositoryWebhooks repository,
-      WebhookPullRequestReviewRequestRemovedVariant0RequestedReviewer?
-          requestedReviewer,
-      SimpleUser sender}) get copyWith => _copyWith;
+      String patchUrl,
+      SdkOptional<bool?> rebaseable,
+      List<dynamic> requestedReviewers,
+      List<WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItem>
+          requestedTeams,
+      String reviewCommentUrl,
+      SdkOptional<int> reviewComments,
+      String reviewCommentsUrl,
+      SdkOptional<PullRequestStack?> stack,
+      WebhookPullRequestReviewRequestRemovedVariant0PullRequestState state,
+      String statusesUrl,
+      String title,
+      String updatedAt,
+      String url,
+      WebhookPullRequestReviewRequestRemovedVariant0PullRequestUser?
+          user}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewRequestRemovedVariant0 _copyWith(
-          {Object? action = sdkOmittedValue,
-          Object? enterprise = sdkOmittedValue,
-          Object? installation = sdkOmittedValue,
+  WebhookPullRequestReviewRequestRemovedVariant0PullRequest _copyWith(
+          {Object? links = sdkOmittedValue,
+          Object? activeLockReason = sdkOmittedValue,
+          Object? additions = sdkOmittedValue,
+          Object? assignee = sdkOmittedValue,
+          Object? assignees = sdkOmittedValue,
+          Object? authorAssociation = sdkOmittedValue,
+          Object? autoMerge = sdkOmittedValue,
+          Object? base_ = sdkOmittedValue,
+          Object? body = sdkOmittedValue,
+          Object? changedFiles = sdkOmittedValue,
+          Object? closedAt = sdkOmittedValue,
+          Object? comments = sdkOmittedValue,
+          Object? commentsUrl = sdkOmittedValue,
+          Object? commits = sdkOmittedValue,
+          Object? commitsUrl = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? deletions = sdkOmittedValue,
+          Object? diffUrl = sdkOmittedValue,
+          Object? draft = sdkOmittedValue,
+          Object? head = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? issueUrl = sdkOmittedValue,
+          Object? labels = sdkOmittedValue,
+          Object? locked = sdkOmittedValue,
+          Object? maintainerCanModify = sdkOmittedValue,
+          Object? mergeCommitSha = sdkOmittedValue,
+          Object? mergeable = sdkOmittedValue,
+          Object? mergeableState = sdkOmittedValue,
+          Object? merged = sdkOmittedValue,
+          Object? mergedAt = sdkOmittedValue,
+          Object? mergedBy = sdkOmittedValue,
+          Object? milestone = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
           Object? number = sdkOmittedValue,
-          Object? organization = sdkOmittedValue,
-          Object? pullRequest = sdkOmittedValue,
-          Object? repository = sdkOmittedValue,
-          Object? requestedReviewer = sdkOmittedValue,
-          Object? sender = sdkOmittedValue}) =>
-      WebhookPullRequestReviewRequestRemovedVariant0(
-        action: identical(action, sdkOmittedValue)
-            ? this.action
-            : action as WebhookPullRequestReviewRequestRemovedVariant0Action,
-        enterprise: identical(enterprise, sdkOmittedValue)
-            ? this.enterprise
-            : enterprise as SdkOptional<EnterpriseWebhooks>,
-        installation: identical(installation, sdkOmittedValue)
-            ? this.installation
-            : installation as SdkOptional<SimpleInstallation>,
+          Object? patchUrl = sdkOmittedValue,
+          Object? rebaseable = sdkOmittedValue,
+          Object? requestedReviewers = sdkOmittedValue,
+          Object? requestedTeams = sdkOmittedValue,
+          Object? reviewCommentUrl = sdkOmittedValue,
+          Object? reviewComments = sdkOmittedValue,
+          Object? reviewCommentsUrl = sdkOmittedValue,
+          Object? stack = sdkOmittedValue,
+          Object? state = sdkOmittedValue,
+          Object? statusesUrl = sdkOmittedValue,
+          Object? title = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? user = sdkOmittedValue}) =>
+      WebhookPullRequestReviewRequestRemovedVariant0PullRequest(
+        links: identical(links, sdkOmittedValue)
+            ? this.links
+            : links
+                as WebhookPullRequestReviewRequestRemovedVariant0PullRequestLinks,
+        activeLockReason: identical(activeLockReason, sdkOmittedValue)
+            ? this.activeLockReason
+            : activeLockReason
+                as WebhookPullRequestReviewRequestRemovedVariant0PullRequestActiveLockReason?,
+        additions: identical(additions, sdkOmittedValue)
+            ? this.additions
+            : additions as SdkOptional<int>,
+        assignee: identical(assignee, sdkOmittedValue)
+            ? this.assignee
+            : assignee
+                as WebhookPullRequestReviewRequestRemovedVariant0PullRequestAssignee?,
+        assignees: identical(assignees, sdkOmittedValue)
+            ? this.assignees
+            : assignees as List<
+                WebhookPullRequestReviewRequestRemovedVariant0PullRequestAssigneesItem?>,
+        authorAssociation: identical(authorAssociation, sdkOmittedValue)
+            ? this.authorAssociation
+            : authorAssociation
+                as WebhookPullRequestReviewRequestRemovedVariant0PullRequestAuthorAssociation,
+        autoMerge: identical(autoMerge, sdkOmittedValue)
+            ? this.autoMerge
+            : autoMerge
+                as WebhookPullRequestReviewRequestRemovedVariant0PullRequestAutoMerge?,
+        base_: identical(base_, sdkOmittedValue)
+            ? this.base_
+            : base_
+                as WebhookPullRequestReviewRequestRemovedVariant0PullRequestBase,
+        body: identical(body, sdkOmittedValue) ? this.body : body as String?,
+        changedFiles: identical(changedFiles, sdkOmittedValue)
+            ? this.changedFiles
+            : changedFiles as SdkOptional<int>,
+        closedAt: identical(closedAt, sdkOmittedValue)
+            ? this.closedAt
+            : closedAt as String?,
+        comments: identical(comments, sdkOmittedValue)
+            ? this.comments
+            : comments as SdkOptional<int>,
+        commentsUrl: identical(commentsUrl, sdkOmittedValue)
+            ? this.commentsUrl
+            : commentsUrl as String,
+        commits: identical(commits, sdkOmittedValue)
+            ? this.commits
+            : commits as SdkOptional<int>,
+        commitsUrl: identical(commitsUrl, sdkOmittedValue)
+            ? this.commitsUrl
+            : commitsUrl as String,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        deletions: identical(deletions, sdkOmittedValue)
+            ? this.deletions
+            : deletions as SdkOptional<int>,
+        diffUrl: identical(diffUrl, sdkOmittedValue)
+            ? this.diffUrl
+            : diffUrl as String,
+        draft: identical(draft, sdkOmittedValue) ? this.draft : draft as bool,
+        head: identical(head, sdkOmittedValue)
+            ? this.head
+            : head
+                as WebhookPullRequestReviewRequestRemovedVariant0PullRequestHead,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        issueUrl: identical(issueUrl, sdkOmittedValue)
+            ? this.issueUrl
+            : issueUrl as String,
+        labels: identical(labels, sdkOmittedValue)
+            ? this.labels
+            : labels as List<
+                WebhookPullRequestReviewRequestRemovedVariant0PullRequestLabelsItem>,
+        locked:
+            identical(locked, sdkOmittedValue) ? this.locked : locked as bool,
+        maintainerCanModify: identical(maintainerCanModify, sdkOmittedValue)
+            ? this.maintainerCanModify
+            : maintainerCanModify as SdkOptional<bool>,
+        mergeCommitSha: identical(mergeCommitSha, sdkOmittedValue)
+            ? this.mergeCommitSha
+            : mergeCommitSha as String?,
+        mergeable: identical(mergeable, sdkOmittedValue)
+            ? this.mergeable
+            : mergeable as SdkOptional<bool?>,
+        mergeableState: identical(mergeableState, sdkOmittedValue)
+            ? this.mergeableState
+            : mergeableState as SdkOptional<String>,
+        merged: identical(merged, sdkOmittedValue)
+            ? this.merged
+            : merged as SdkOptional<bool?>,
+        mergedAt: identical(mergedAt, sdkOmittedValue)
+            ? this.mergedAt
+            : mergedAt as String?,
+        mergedBy: identical(mergedBy, sdkOmittedValue)
+            ? this.mergedBy
+            : mergedBy as SdkOptional<
+                WebhookPullRequestReviewRequestRemovedVariant0PullRequestMergedBy?>,
+        milestone: identical(milestone, sdkOmittedValue)
+            ? this.milestone
+            : milestone
+                as WebhookPullRequestReviewRequestRemovedVariant0PullRequestMilestone?,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
         number:
             identical(number, sdkOmittedValue) ? this.number : number as int,
-        organization: identical(organization, sdkOmittedValue)
-            ? this.organization
-            : organization as SdkOptional<OrganizationSimpleWebhooks>,
-        pullRequest: identical(pullRequest, sdkOmittedValue)
-            ? this.pullRequest
-            : pullRequest
-                as WebhookPullRequestReviewRequestRemovedVariant0PullRequest,
-        repository: identical(repository, sdkOmittedValue)
-            ? this.repository
-            : repository as RepositoryWebhooks,
-        requestedReviewer: identical(requestedReviewer, sdkOmittedValue)
-            ? this.requestedReviewer
-            : requestedReviewer
-                as WebhookPullRequestReviewRequestRemovedVariant0RequestedReviewer?,
-        sender: identical(sender, sdkOmittedValue)
-            ? this.sender
-            : sender as SimpleUser,
+        patchUrl: identical(patchUrl, sdkOmittedValue)
+            ? this.patchUrl
+            : patchUrl as String,
+        rebaseable: identical(rebaseable, sdkOmittedValue)
+            ? this.rebaseable
+            : rebaseable as SdkOptional<bool?>,
+        requestedReviewers: identical(requestedReviewers, sdkOmittedValue)
+            ? this.requestedReviewers
+            : requestedReviewers as List<dynamic>,
+        requestedTeams: identical(requestedTeams, sdkOmittedValue)
+            ? this.requestedTeams
+            : requestedTeams as List<
+                WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItem>,
+        reviewCommentUrl: identical(reviewCommentUrl, sdkOmittedValue)
+            ? this.reviewCommentUrl
+            : reviewCommentUrl as String,
+        reviewComments: identical(reviewComments, sdkOmittedValue)
+            ? this.reviewComments
+            : reviewComments as SdkOptional<int>,
+        reviewCommentsUrl: identical(reviewCommentsUrl, sdkOmittedValue)
+            ? this.reviewCommentsUrl
+            : reviewCommentsUrl as String,
+        stack: identical(stack, sdkOmittedValue)
+            ? this.stack
+            : stack as SdkOptional<PullRequestStack?>,
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state
+                as WebhookPullRequestReviewRequestRemovedVariant0PullRequestState,
+        statusesUrl: identical(statusesUrl, sdkOmittedValue)
+            ? this.statusesUrl
+            : statusesUrl as String,
+        title: identical(title, sdkOmittedValue) ? this.title : title as String,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        user: identical(user, sdkOmittedValue)
+            ? this.user
+            : user
+                as WebhookPullRequestReviewRequestRemovedVariant0PullRequestUser?,
       );
 
-  factory WebhookPullRequestReviewRequestRemovedVariant0.fromJson(
+  factory WebhookPullRequestReviewRequestRemovedVariant0PullRequest.fromJson(
           Map<String, dynamic> json) =>
-      WebhookPullRequestReviewRequestRemovedVariant0(
-        action: (json['action'] != null
-            ? WebhookPullRequestReviewRequestRemovedVariant0Action.fromJson(
-                json['action'] as String)
+      WebhookPullRequestReviewRequestRemovedVariant0PullRequest(
+        links: (json['_links'] != null
+            ? WebhookPullRequestReviewRequestRemovedVariant0PullRequestLinks
+                .fromJson(json['_links'] as Map<String, dynamic>)
             : null)!,
-        enterprise: json['enterprise'] != null
-            ? SdkPresent((json['enterprise'] != null
-                ? EnterpriseWebhooks.fromJson(
-                    json['enterprise'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        installation: json['installation'] != null
-            ? SdkPresent((json['installation'] != null
-                ? SimpleInstallation.fromJson(
-                    json['installation'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        number: ((json['number'] as num?)?.toInt())!,
-        organization: json['organization'] != null
-            ? SdkPresent((json['organization'] != null
-                ? OrganizationSimpleWebhooks.fromJson(
-                    json['organization'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        pullRequest: (json['pull_request'] != null
-            ? WebhookPullRequestReviewRequestRemovedVariant0PullRequest
-                .fromJson(json['pull_request'] as Map<String, dynamic>)
-            : null)!,
-        repository: (json['repository'] != null
-            ? RepositoryWebhooks.fromJson(
-                json['repository'] as Map<String, dynamic>)
-            : null)!,
-        requestedReviewer: json.containsKey('requested_reviewer')
-            ? json['requested_reviewer'] != null
-                ? WebhookPullRequestReviewRequestRemovedVariant0RequestedReviewer
-                    .fromJson(
-                        json['requested_reviewer'] as Map<String, dynamic>)
+        activeLockReason: json.containsKey('active_lock_reason')
+            ? json['active_lock_reason'] != null
+                ? WebhookPullRequestReviewRequestRemovedVariant0PullRequestActiveLockReason
+                    .fromJson(json['active_lock_reason'] as String)
                 : null
             : throw ArgumentError.value(
-                null, 'requested_reviewer', 'Required property is missing'),
-        sender: (json['sender'] != null
-            ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
+                null, 'active_lock_reason', 'Required property is missing'),
+        additions: json['additions'] != null
+            ? SdkPresent(((json['additions'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        assignee: json.containsKey('assignee')
+            ? json['assignee'] != null
+                ? WebhookPullRequestReviewRequestRemovedVariant0PullRequestAssignee
+                    .fromJson(json['assignee'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'assignee', 'Required property is missing'),
+        assignees: ((json['assignees'] as List?)
+            ?.map((e) => e == null
+                ? null
+                : WebhookPullRequestReviewRequestRemovedVariant0PullRequestAssigneesItem
+                    .fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        authorAssociation: (json['author_association'] != null
+            ? WebhookPullRequestReviewRequestRemovedVariant0PullRequestAuthorAssociation
+                .fromJson(json['author_association'] as String)
             : null)!,
+        autoMerge: json.containsKey('auto_merge')
+            ? json['auto_merge'] != null
+                ? WebhookPullRequestReviewRequestRemovedVariant0PullRequestAutoMerge
+                    .fromJson(json['auto_merge'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'auto_merge', 'Required property is missing'),
+        base_: (json['base'] != null
+            ? WebhookPullRequestReviewRequestRemovedVariant0PullRequestBase
+                .fromJson(json['base'] as Map<String, dynamic>)
+            : null)!,
+        body: json.containsKey('body')
+            ? json['body'] as String?
+            : throw ArgumentError.value(
+                null, 'body', 'Required property is missing'),
+        changedFiles: json['changed_files'] != null
+            ? SdkPresent(((json['changed_files'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        closedAt: json.containsKey('closed_at')
+            ? json['closed_at'] as String?
+            : throw ArgumentError.value(
+                null, 'closed_at', 'Required property is missing'),
+        comments: json['comments'] != null
+            ? SdkPresent(((json['comments'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        commentsUrl: (json['comments_url'] as String?)!,
+        commits: json['commits'] != null
+            ? SdkPresent(((json['commits'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        commitsUrl: (json['commits_url'] as String?)!,
+        createdAt: (json['created_at'] as String?)!,
+        deletions: json['deletions'] != null
+            ? SdkPresent(((json['deletions'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        diffUrl: (json['diff_url'] as String?)!,
+        draft: (json['draft'] as bool?)!,
+        head: (json['head'] != null
+            ? WebhookPullRequestReviewRequestRemovedVariant0PullRequestHead
+                .fromJson(json['head'] as Map<String, dynamic>)
+            : null)!,
+        htmlUrl: (json['html_url'] as String?)!,
+        id: ((json['id'] as num?)?.toInt())!,
+        issueUrl: (json['issue_url'] as String?)!,
+        labels: ((json['labels'] as List?)
+            ?.map((e) =>
+                WebhookPullRequestReviewRequestRemovedVariant0PullRequestLabelsItem
+                    .fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        locked: (json['locked'] as bool?)!,
+        maintainerCanModify: json['maintainer_can_modify'] != null
+            ? SdkPresent((json['maintainer_can_modify'] as bool?)!)
+            : const SdkOmitted(),
+        mergeCommitSha: json.containsKey('merge_commit_sha')
+            ? json['merge_commit_sha'] as String?
+            : throw ArgumentError.value(
+                null, 'merge_commit_sha', 'Required property is missing'),
+        mergeable: json.containsKey('mergeable')
+            ? SdkPresent(json['mergeable'] as bool?)
+            : const SdkOmitted(),
+        mergeableState: json['mergeable_state'] != null
+            ? SdkPresent((json['mergeable_state'] as String?)!)
+            : const SdkOmitted(),
+        merged: json.containsKey('merged')
+            ? SdkPresent(json['merged'] as bool?)
+            : const SdkOmitted(),
+        mergedAt: json.containsKey('merged_at')
+            ? json['merged_at'] as String?
+            : throw ArgumentError.value(
+                null, 'merged_at', 'Required property is missing'),
+        mergedBy: json.containsKey('merged_by')
+            ? SdkPresent(json['merged_by'] != null
+                ? WebhookPullRequestReviewRequestRemovedVariant0PullRequestMergedBy
+                    .fromJson(json['merged_by'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        milestone: json.containsKey('milestone')
+            ? json['milestone'] != null
+                ? WebhookPullRequestReviewRequestRemovedVariant0PullRequestMilestone
+                    .fromJson(json['milestone'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'milestone', 'Required property is missing'),
+        nodeId: (json['node_id'] as String?)!,
+        number: ((json['number'] as num?)?.toInt())!,
+        patchUrl: (json['patch_url'] as String?)!,
+        rebaseable: json.containsKey('rebaseable')
+            ? SdkPresent(json['rebaseable'] as bool?)
+            : const SdkOmitted(),
+        requestedReviewers:
+            ((json['requested_reviewers'] as List?)?.map((e) => e).toList())!,
+        requestedTeams: ((json['requested_teams'] as List?)
+            ?.map((e) =>
+                WebhookPullRequestReviewRequestRemovedVariant0PullRequestRequestedTeamsItem
+                    .fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        reviewCommentUrl: (json['review_comment_url'] as String?)!,
+        reviewComments: json['review_comments'] != null
+            ? SdkPresent(((json['review_comments'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        reviewCommentsUrl: (json['review_comments_url'] as String?)!,
+        stack: json.containsKey('stack')
+            ? SdkPresent(json['stack'] != null
+                ? PullRequestStack.fromJson(
+                    json['stack'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        state: (json['state'] != null
+            ? WebhookPullRequestReviewRequestRemovedVariant0PullRequestState
+                .fromJson(json['state'] as String)
+            : null)!,
+        statusesUrl: (json['statuses_url'] as String?)!,
+        title: (json['title'] as String?)!,
+        updatedAt: (json['updated_at'] as String?)!,
+        url: (json['url'] as String?)!,
+        user: json.containsKey('user')
+            ? json['user'] != null
+                ? WebhookPullRequestReviewRequestRemovedVariant0PullRequestUser
+                    .fromJson(json['user'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'user', 'Required property is missing'),
       );
 
   Map<String, dynamic> toJson() => {
-        'action': action.toJson(),
-        ...switch (enterprise) {
-          SdkPresent<EnterpriseWebhooks>(value: final value) => {
-              'enterprise': value.toJson(),
+        '_links': links.toJson(),
+        'active_lock_reason': activeLockReason?.toJson(),
+        ...switch (additions) {
+          SdkPresent<int>(value: final value) => {
+              'additions': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (installation) {
-          SdkPresent<SimpleInstallation>(value: final value) => {
-              'installation': value.toJson(),
+        'assignee': assignee?.toJson(),
+        'assignees': assignees.map((item) => item?.toJson()).toList(),
+        'author_association': authorAssociation.toJson(),
+        'auto_merge': autoMerge?.toJson(),
+        'base': base_.toJson(),
+        'body': body,
+        ...switch (changedFiles) {
+          SdkPresent<int>(value: final value) => {
+              'changed_files': value,
             },
           _ => const <String, dynamic>{},
         },
+        'closed_at': closedAt,
+        ...switch (comments) {
+          SdkPresent<int>(value: final value) => {
+              'comments': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'comments_url': commentsUrl,
+        ...switch (commits) {
+          SdkPresent<int>(value: final value) => {
+              'commits': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'commits_url': commitsUrl,
+        'created_at': createdAt,
+        ...switch (deletions) {
+          SdkPresent<int>(value: final value) => {
+              'deletions': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'diff_url': diffUrl,
+        'draft': draft,
+        'head': head.toJson(),
+        'html_url': htmlUrl,
+        'id': id,
+        'issue_url': issueUrl,
+        'labels': labels.map((item) => item.toJson()).toList(),
+        'locked': locked,
+        ...switch (maintainerCanModify) {
+          SdkPresent<bool>(value: final value) => {
+              'maintainer_can_modify': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'merge_commit_sha': mergeCommitSha,
+        ...switch (mergeable) {
+          SdkPresent<bool?>(value: final value) => {
+              'mergeable': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (mergeableState) {
+          SdkPresent<String>(value: final value) => {
+              'mergeable_state': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (merged) {
+          SdkPresent<bool?>(value: final value) => {
+              'merged': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'merged_at': mergedAt,
+        ...switch (mergedBy) {
+          SdkPresent<
+                WebhookPullRequestReviewRequestRemovedVariant0PullRequestMergedBy?>(
+            value: final value
+          ) =>
+            {
+              'merged_by': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'milestone': milestone?.toJson(),
+        'node_id': nodeId,
         'number': number,
-        ...switch (organization) {
-          SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {
-              'organization': value.toJson(),
+        'patch_url': patchUrl,
+        ...switch (rebaseable) {
+          SdkPresent<bool?>(value: final value) => {
+              'rebaseable': value,
             },
           _ => const <String, dynamic>{},
         },
-        'pull_request': pullRequest.toJson(),
-        'repository': repository.toJson(),
-        'requested_reviewer': requestedReviewer?.toJson(),
-        'sender': sender.toJson(),
-      };
-}
-
-class WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksComments {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final String href;
-
-  const WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksComments(
-      {required this.href});
-
-  WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksComments
-      Function({String href}) get copyWith => _copyWith;
-
-  WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksComments
-      _copyWith({Object? href = sdkOmittedValue}) =>
-          WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksComments(
-            href: identical(href, sdkOmittedValue) ? this.href : href as String,
-          );
-
-  factory WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksComments.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksComments(
-        href: (json['href'] as String?)!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'href': href,
-      };
-}
-
-class WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksCommits {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final String href;
-
-  const WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksCommits(
-      {required this.href});
-
-  WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksCommits
-      Function({String href}) get copyWith => _copyWith;
-
-  WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksCommits
-      _copyWith({Object? href = sdkOmittedValue}) =>
-          WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksCommits(
-            href: identical(href, sdkOmittedValue) ? this.href : href as String,
-          );
-
-  factory WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksCommits.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksCommits(
-        href: (json['href'] as String?)!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'href': href,
-      };
-}
-
-class WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksHtml {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final String href;
-
-  const WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksHtml(
-      {required this.href});
-
-  WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksHtml Function(
-      {String href}) get copyWith => _copyWith;
-
-  WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksHtml _copyWith(
-          {Object? href = sdkOmittedValue}) =>
-      WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksHtml(
-        href: identical(href, sdkOmittedValue) ? this.href : href as String,
-      );
-
-  factory WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksHtml.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksHtml(
-        href: (json['href'] as String?)!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'href': href,
-      };
-}
-
-class WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksIssue {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final String href;
-
-  const WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksIssue(
-      {required this.href});
-
-  WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksIssue Function(
-      {String href}) get copyWith => _copyWith;
-
-  WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksIssue _copyWith(
-          {Object? href = sdkOmittedValue}) =>
-      WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksIssue(
-        href: identical(href, sdkOmittedValue) ? this.href : href as String,
-      );
-
-  factory WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksIssue.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksIssue(
-        href: (json['href'] as String?)!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'href': href,
-      };
-}
-
-class WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksReviewComment {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final String href;
-
-  const WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksReviewComment(
-      {required this.href});
-
-  WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksReviewComment
-      Function({String href}) get copyWith => _copyWith;
-
-  WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksReviewComment
-      _copyWith({Object? href = sdkOmittedValue}) =>
-          WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksReviewComment(
-            href: identical(href, sdkOmittedValue) ? this.href : href as String,
-          );
-
-  factory WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksReviewComment.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksReviewComment(
-        href: (json['href'] as String?)!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'href': href,
-      };
-}
-
-class WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksReviewComments {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final String href;
-
-  const WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksReviewComments(
-      {required this.href});
-
-  WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksReviewComments
-      Function({String href}) get copyWith => _copyWith;
-
-  WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksReviewComments
-      _copyWith({Object? href = sdkOmittedValue}) =>
-          WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksReviewComments(
-            href: identical(href, sdkOmittedValue) ? this.href : href as String,
-          );
-
-  factory WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksReviewComments.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksReviewComments(
-        href: (json['href'] as String?)!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'href': href,
-      };
-}
-
-class WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksSelf {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final String href;
-
-  const WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksSelf(
-      {required this.href});
-
-  WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksSelf Function(
-      {String href}) get copyWith => _copyWith;
-
-  WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksSelf _copyWith(
-          {Object? href = sdkOmittedValue}) =>
-      WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksSelf(
-        href: identical(href, sdkOmittedValue) ? this.href : href as String,
-      );
-
-  factory WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksSelf.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksSelf(
-        href: (json['href'] as String?)!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'href': href,
-      };
-}
-
-class WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksStatuses {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-  final String href;
-
-  const WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksStatuses(
-      {required this.href});
-
-  WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksStatuses
-      Function({String href}) get copyWith => _copyWith;
-
-  WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksStatuses
-      _copyWith({Object? href = sdkOmittedValue}) =>
-          WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksStatuses(
-            href: identical(href, sdkOmittedValue) ? this.href : href as String,
-          );
-
-  factory WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksStatuses.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinksStatuses(
-        href: (json['href'] as String?)!,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'href': href,
+        'requested_reviewers': requestedReviewers,
+        'requested_teams': requestedTeams.map((item) => item.toJson()).toList(),
+        'review_comment_url': reviewCommentUrl,
+        ...switch (reviewComments) {
+          SdkPresent<int>(value: final value) => {
+              'review_comments': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'review_comments_url': reviewCommentsUrl,
+        ...switch (stack) {
+          SdkPresent<PullRequestStack?>(value: final value) => {
+              'stack': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'state': state.toJson(),
+        'statuses_url': statusesUrl,
+        'title': title,
+        'updated_at': updatedAt,
+        'url': url,
+        'user': user?.toJson(),
       };
 }

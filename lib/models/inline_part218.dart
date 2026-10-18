@@ -4,144 +4,24 @@
 part of 'inline.dart';
 
 // Inline operation models (part 218)
-/// Optional enumerated value serialized in the `pages` wire field.
-final class WebhooksIssuePerformedViaGithubAppPermissionsPages {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsGetAutomationResponseTriggersWorkflowRunWriteScope {
   final String value;
 
-  const WebhooksIssuePerformedViaGithubAppPermissionsPages._(this.value);
-
-  factory WebhooksIssuePerformedViaGithubAppPermissionsPages.fromJson(
-          String value) =>
-      WebhooksIssuePerformedViaGithubAppPermissionsPages._(value);
-
-  static const read =
-      WebhooksIssuePerformedViaGithubAppPermissionsPages._('read');
-  static const write =
-      WebhooksIssuePerformedViaGithubAppPermissionsPages._('write');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhooksIssuePerformedViaGithubAppPermissionsPages &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `pull_requests` wire field.
-final class WebhooksIssuePerformedViaGithubAppPermissionsPullRequests {
-  final String value;
-
-  const WebhooksIssuePerformedViaGithubAppPermissionsPullRequests._(this.value);
-
-  factory WebhooksIssuePerformedViaGithubAppPermissionsPullRequests.fromJson(
-          String value) =>
-      WebhooksIssuePerformedViaGithubAppPermissionsPullRequests._(value);
-
-  static const read =
-      WebhooksIssuePerformedViaGithubAppPermissionsPullRequests._('read');
-  static const write =
-      WebhooksIssuePerformedViaGithubAppPermissionsPullRequests._('write');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhooksIssuePerformedViaGithubAppPermissionsPullRequests &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `repository_hooks` wire field.
-final class WebhooksIssuePerformedViaGithubAppPermissionsRepositoryHooks {
-  final String value;
-
-  const WebhooksIssuePerformedViaGithubAppPermissionsRepositoryHooks._(
+  const AgentAutomationsGetAutomationResponseTriggersWorkflowRunWriteScope._(
       this.value);
 
-  factory WebhooksIssuePerformedViaGithubAppPermissionsRepositoryHooks.fromJson(
+  factory AgentAutomationsGetAutomationResponseTriggersWorkflowRunWriteScope.fromJson(
           String value) =>
-      WebhooksIssuePerformedViaGithubAppPermissionsRepositoryHooks._(value);
-
-  static const read =
-      WebhooksIssuePerformedViaGithubAppPermissionsRepositoryHooks._('read');
-  static const write =
-      WebhooksIssuePerformedViaGithubAppPermissionsRepositoryHooks._('write');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhooksIssuePerformedViaGithubAppPermissionsRepositoryHooks &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `repository_projects` wire field.
-final class WebhooksIssuePerformedViaGithubAppPermissionsRepositoryProjects {
-  final String value;
-
-  const WebhooksIssuePerformedViaGithubAppPermissionsRepositoryProjects._(
-      this.value);
-
-  factory WebhooksIssuePerformedViaGithubAppPermissionsRepositoryProjects.fromJson(
-          String value) =>
-      WebhooksIssuePerformedViaGithubAppPermissionsRepositoryProjects._(value);
-
-  static const read =
-      WebhooksIssuePerformedViaGithubAppPermissionsRepositoryProjects._('read');
-  static const write =
-      WebhooksIssuePerformedViaGithubAppPermissionsRepositoryProjects._(
-          'write');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is WebhooksIssuePerformedViaGithubAppPermissionsRepositoryProjects &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `secret_scanning_alerts` wire field.
-final class WebhooksIssuePerformedViaGithubAppPermissionsSecretScanningAlerts {
-  final String value;
-
-  const WebhooksIssuePerformedViaGithubAppPermissionsSecretScanningAlerts._(
-      this.value);
-
-  factory WebhooksIssuePerformedViaGithubAppPermissionsSecretScanningAlerts.fromJson(
-          String value) =>
-      WebhooksIssuePerformedViaGithubAppPermissionsSecretScanningAlerts._(
+      AgentAutomationsGetAutomationResponseTriggersWorkflowRunWriteScope._(
           value);
 
-  static const read =
-      WebhooksIssuePerformedViaGithubAppPermissionsSecretScanningAlerts._(
-          'read');
-  static const write =
-      WebhooksIssuePerformedViaGithubAppPermissionsSecretScanningAlerts._(
-          'write');
+  static const trigger =
+      AgentAutomationsGetAutomationResponseTriggersWorkflowRunWriteScope._(
+          'trigger');
+  static const repository =
+      AgentAutomationsGetAutomationResponseTriggersWorkflowRunWriteScope._(
+          'repository');
 
   String toJson() => value;
 
@@ -151,27 +31,27 @@ final class WebhooksIssuePerformedViaGithubAppPermissionsSecretScanningAlerts {
   @override
   bool operator ==(Object other) =>
       other
-          is WebhooksIssuePerformedViaGithubAppPermissionsSecretScanningAlerts &&
+          is AgentAutomationsGetAutomationResponseTriggersWorkflowRunWriteScope &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Optional enumerated value serialized in the `secrets` wire field.
-final class WebhooksIssuePerformedViaGithubAppPermissionsSecrets {
+/// Controls which repository resources a run may modify. `trigger` limits writes to the resource that started the run, when one exists, and resources created during the run; `repository` allows writes to any resource in the repository. Supported values: `trigger`, `repository`.
+final class AgentAutomationsGetAutomationResponseWriteScope {
   final String value;
 
-  const WebhooksIssuePerformedViaGithubAppPermissionsSecrets._(this.value);
+  const AgentAutomationsGetAutomationResponseWriteScope._(this.value);
 
-  factory WebhooksIssuePerformedViaGithubAppPermissionsSecrets.fromJson(
+  factory AgentAutomationsGetAutomationResponseWriteScope.fromJson(
           String value) =>
-      WebhooksIssuePerformedViaGithubAppPermissionsSecrets._(value);
+      AgentAutomationsGetAutomationResponseWriteScope._(value);
 
-  static const read =
-      WebhooksIssuePerformedViaGithubAppPermissionsSecrets._('read');
-  static const write =
-      WebhooksIssuePerformedViaGithubAppPermissionsSecrets._('write');
+  static const trigger =
+      AgentAutomationsGetAutomationResponseWriteScope._('trigger');
+  static const repository =
+      AgentAutomationsGetAutomationResponseWriteScope._('repository');
 
   String toJson() => value;
 
@@ -180,28 +60,35 @@ final class WebhooksIssuePerformedViaGithubAppPermissionsSecrets {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhooksIssuePerformedViaGithubAppPermissionsSecrets &&
+      other is AgentAutomationsGetAutomationResponseWriteScope &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Optional enumerated value serialized in the `security_events` wire field.
-final class WebhooksIssuePerformedViaGithubAppPermissionsSecurityEvents {
+/// Machine-readable error code
+final class AgentAutomationsGetAutomationResponseErrorsItemCode {
   final String value;
 
-  const WebhooksIssuePerformedViaGithubAppPermissionsSecurityEvents._(
-      this.value);
+  const AgentAutomationsGetAutomationResponseErrorsItemCode._(this.value);
 
-  factory WebhooksIssuePerformedViaGithubAppPermissionsSecurityEvents.fromJson(
+  factory AgentAutomationsGetAutomationResponseErrorsItemCode.fromJson(
           String value) =>
-      WebhooksIssuePerformedViaGithubAppPermissionsSecurityEvents._(value);
+      AgentAutomationsGetAutomationResponseErrorsItemCode._(value);
 
-  static const read =
-      WebhooksIssuePerformedViaGithubAppPermissionsSecurityEvents._('read');
-  static const write =
-      WebhooksIssuePerformedViaGithubAppPermissionsSecurityEvents._('write');
+  static const missing =
+      AgentAutomationsGetAutomationResponseErrorsItemCode._('missing');
+  static const missingField =
+      AgentAutomationsGetAutomationResponseErrorsItemCode._('missing_field');
+  static const invalid =
+      AgentAutomationsGetAutomationResponseErrorsItemCode._('invalid');
+  static const alreadyExists =
+      AgentAutomationsGetAutomationResponseErrorsItemCode._('already_exists');
+  static const unprocessable =
+      AgentAutomationsGetAutomationResponseErrorsItemCode._('unprocessable');
+  static const custom =
+      AgentAutomationsGetAutomationResponseErrorsItemCode._('custom');
 
   String toJson() => value;
 
@@ -210,31 +97,195 @@ final class WebhooksIssuePerformedViaGithubAppPermissionsSecurityEvents {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhooksIssuePerformedViaGithubAppPermissionsSecurityEvents &&
+      other is AgentAutomationsGetAutomationResponseErrorsItemCode &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Optional enumerated value serialized in the `security_scanning_alert` wire field.
-final class WebhooksIssuePerformedViaGithubAppPermissionsSecurityScanningAlert {
+/// Machine-readable error code
+final class AgentAutomationsGetAutomationResponseErrorsItemCode394f9f49 {
   final String value;
 
-  const WebhooksIssuePerformedViaGithubAppPermissionsSecurityScanningAlert._(
+  const AgentAutomationsGetAutomationResponseErrorsItemCode394f9f49._(
       this.value);
 
-  factory WebhooksIssuePerformedViaGithubAppPermissionsSecurityScanningAlert.fromJson(
+  factory AgentAutomationsGetAutomationResponseErrorsItemCode394f9f49.fromJson(
           String value) =>
-      WebhooksIssuePerformedViaGithubAppPermissionsSecurityScanningAlert._(
+      AgentAutomationsGetAutomationResponseErrorsItemCode394f9f49._(value);
+
+  static const missing =
+      AgentAutomationsGetAutomationResponseErrorsItemCode394f9f49._('missing');
+  static const missingField =
+      AgentAutomationsGetAutomationResponseErrorsItemCode394f9f49._(
+          'missing_field');
+  static const invalid =
+      AgentAutomationsGetAutomationResponseErrorsItemCode394f9f49._('invalid');
+  static const alreadyExists =
+      AgentAutomationsGetAutomationResponseErrorsItemCode394f9f49._(
+          'already_exists');
+  static const unprocessable =
+      AgentAutomationsGetAutomationResponseErrorsItemCode394f9f49._(
+          'unprocessable');
+  static const custom =
+      AgentAutomationsGetAutomationResponseErrorsItemCode394f9f49._('custom');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is AgentAutomationsGetAutomationResponseErrorsItemCode394f9f49 &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Machine-readable error code
+final class AgentAutomationsGetAutomationResponseErrorsItemCode464137ad {
+  final String value;
+
+  const AgentAutomationsGetAutomationResponseErrorsItemCode464137ad._(
+      this.value);
+
+  factory AgentAutomationsGetAutomationResponseErrorsItemCode464137ad.fromJson(
+          String value) =>
+      AgentAutomationsGetAutomationResponseErrorsItemCode464137ad._(value);
+
+  static const missing =
+      AgentAutomationsGetAutomationResponseErrorsItemCode464137ad._('missing');
+  static const missingField =
+      AgentAutomationsGetAutomationResponseErrorsItemCode464137ad._(
+          'missing_field');
+  static const invalid =
+      AgentAutomationsGetAutomationResponseErrorsItemCode464137ad._('invalid');
+  static const alreadyExists =
+      AgentAutomationsGetAutomationResponseErrorsItemCode464137ad._(
+          'already_exists');
+  static const unprocessable =
+      AgentAutomationsGetAutomationResponseErrorsItemCode464137ad._(
+          'unprocessable');
+  static const custom =
+      AgentAutomationsGetAutomationResponseErrorsItemCode464137ad._('custom');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is AgentAutomationsGetAutomationResponseErrorsItemCode464137ad &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+final class AgentAutomationsListAutomationTasksSort {
+  final String value;
+
+  const AgentAutomationsListAutomationTasksSort._(this.value);
+
+  factory AgentAutomationsListAutomationTasksSort.fromJson(String value) =>
+      AgentAutomationsListAutomationTasksSort._(value);
+
+  static const updatedAt =
+      AgentAutomationsListAutomationTasksSort._('updated_at');
+  static const createdAt =
+      AgentAutomationsListAutomationTasksSort._('created_at');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is AgentAutomationsListAutomationTasksSort && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+final class AgentAutomationsListAutomationTasksDirection {
+  final String value;
+
+  const AgentAutomationsListAutomationTasksDirection._(this.value);
+
+  factory AgentAutomationsListAutomationTasksDirection.fromJson(String value) =>
+      AgentAutomationsListAutomationTasksDirection._(value);
+
+  static const asc = AgentAutomationsListAutomationTasksDirection._('asc');
+  static const desc = AgentAutomationsListAutomationTasksDirection._('desc');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is AgentAutomationsListAutomationTasksDirection &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Provider namespace
+final class AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemProvider {
+  final String value;
+
+  const AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemProvider._(
+      this.value);
+
+  factory AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemProvider.fromJson(
+          String value) =>
+      AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemProvider
+          ._(value);
+
+  static const github =
+      AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemProvider
+          ._('github');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemProvider &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Type of artifact. Available Values: `pull`, `branch`.
+final class AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemType {
+  final String value;
+
+  const AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemType._(
+      this.value);
+
+  factory AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemType.fromJson(
+          String value) =>
+      AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemType._(
           value);
 
-  static const read =
-      WebhooksIssuePerformedViaGithubAppPermissionsSecurityScanningAlert._(
-          'read');
-  static const write =
-      WebhooksIssuePerformedViaGithubAppPermissionsSecurityScanningAlert._(
-          'write');
+  static const pull =
+      AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemType._(
+          'pull');
+  static const branch =
+      AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemType._(
+          'branch');
 
   String toJson() => value;
 
@@ -244,88 +295,29 @@ final class WebhooksIssuePerformedViaGithubAppPermissionsSecurityScanningAlert {
   @override
   bool operator ==(Object other) =>
       other
-          is WebhooksIssuePerformedViaGithubAppPermissionsSecurityScanningAlert &&
+          is AgentAutomationsListAutomationTasksResponseTasksItemArtifactsItemType &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Optional enumerated value serialized in the `single_file` wire field.
-final class WebhooksIssuePerformedViaGithubAppPermissionsSingleFile {
+/// Type of the task creator
+final class AgentAutomationsListAutomationTasksResponseTasksItemCreatorType {
   final String value;
 
-  const WebhooksIssuePerformedViaGithubAppPermissionsSingleFile._(this.value);
-
-  factory WebhooksIssuePerformedViaGithubAppPermissionsSingleFile.fromJson(
-          String value) =>
-      WebhooksIssuePerformedViaGithubAppPermissionsSingleFile._(value);
-
-  static const read =
-      WebhooksIssuePerformedViaGithubAppPermissionsSingleFile._('read');
-  static const write =
-      WebhooksIssuePerformedViaGithubAppPermissionsSingleFile._('write');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhooksIssuePerformedViaGithubAppPermissionsSingleFile &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `statuses` wire field.
-final class WebhooksIssuePerformedViaGithubAppPermissionsStatuses {
-  final String value;
-
-  const WebhooksIssuePerformedViaGithubAppPermissionsStatuses._(this.value);
-
-  factory WebhooksIssuePerformedViaGithubAppPermissionsStatuses.fromJson(
-          String value) =>
-      WebhooksIssuePerformedViaGithubAppPermissionsStatuses._(value);
-
-  static const read =
-      WebhooksIssuePerformedViaGithubAppPermissionsStatuses._('read');
-  static const write =
-      WebhooksIssuePerformedViaGithubAppPermissionsStatuses._('write');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhooksIssuePerformedViaGithubAppPermissionsStatuses &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `vulnerability_alerts` wire field.
-final class WebhooksIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts {
-  final String value;
-
-  const WebhooksIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts._(
+  const AgentAutomationsListAutomationTasksResponseTasksItemCreatorType._(
       this.value);
 
-  factory WebhooksIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts.fromJson(
+  factory AgentAutomationsListAutomationTasksResponseTasksItemCreatorType.fromJson(
           String value) =>
-      WebhooksIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts._(value);
+      AgentAutomationsListAutomationTasksResponseTasksItemCreatorType._(value);
 
-  static const read =
-      WebhooksIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts._(
-          'read');
-  static const write =
-      WebhooksIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts._(
-          'write');
+  static const user =
+      AgentAutomationsListAutomationTasksResponseTasksItemCreatorType._('user');
+  static const organization =
+      AgentAutomationsListAutomationTasksResponseTasksItemCreatorType._(
+          'organization');
 
   String toJson() => value;
 
@@ -335,27 +327,41 @@ final class WebhooksIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts {
   @override
   bool operator ==(Object other) =>
       other
-          is WebhooksIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts &&
+          is AgentAutomationsListAutomationTasksResponseTasksItemCreatorType &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Optional enumerated value serialized in the `workflows` wire field.
-final class WebhooksIssuePerformedViaGithubAppPermissionsWorkflows {
+/// Current state of the task, derived from its most recent session
+final class AgentAutomationsListAutomationTasksResponseTasksItemState {
   final String value;
 
-  const WebhooksIssuePerformedViaGithubAppPermissionsWorkflows._(this.value);
+  const AgentAutomationsListAutomationTasksResponseTasksItemState._(this.value);
 
-  factory WebhooksIssuePerformedViaGithubAppPermissionsWorkflows.fromJson(
+  factory AgentAutomationsListAutomationTasksResponseTasksItemState.fromJson(
           String value) =>
-      WebhooksIssuePerformedViaGithubAppPermissionsWorkflows._(value);
+      AgentAutomationsListAutomationTasksResponseTasksItemState._(value);
 
-  static const read =
-      WebhooksIssuePerformedViaGithubAppPermissionsWorkflows._('read');
-  static const write =
-      WebhooksIssuePerformedViaGithubAppPermissionsWorkflows._('write');
+  static const queued =
+      AgentAutomationsListAutomationTasksResponseTasksItemState._('queued');
+  static const inProgress =
+      AgentAutomationsListAutomationTasksResponseTasksItemState._(
+          'in_progress');
+  static const completed =
+      AgentAutomationsListAutomationTasksResponseTasksItemState._('completed');
+  static const failed =
+      AgentAutomationsListAutomationTasksResponseTasksItemState._('failed');
+  static const idle =
+      AgentAutomationsListAutomationTasksResponseTasksItemState._('idle');
+  static const waitingForUser =
+      AgentAutomationsListAutomationTasksResponseTasksItemState._(
+          'waiting_for_user');
+  static const timedOut =
+      AgentAutomationsListAutomationTasksResponseTasksItemState._('timed_out');
+  static const cancelled =
+      AgentAutomationsListAutomationTasksResponseTasksItemState._('cancelled');
 
   String toJson() => value;
 
@@ -364,24 +370,38 @@ final class WebhooksIssuePerformedViaGithubAppPermissionsWorkflows {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhooksIssuePerformedViaGithubAppPermissionsWorkflows &&
+      other is AgentAutomationsListAutomationTasksResponseTasksItemState &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// State of the issue; either 'open' or 'closed'
-final class WebhooksIssueState {
+/// Machine-readable error code
+final class AgentAutomationsListAutomationTasksResponseErrorsItemCode {
   final String value;
 
-  const WebhooksIssueState._(this.value);
+  const AgentAutomationsListAutomationTasksResponseErrorsItemCode._(this.value);
 
-  factory WebhooksIssueState.fromJson(String value) =>
-      WebhooksIssueState._(value);
+  factory AgentAutomationsListAutomationTasksResponseErrorsItemCode.fromJson(
+          String value) =>
+      AgentAutomationsListAutomationTasksResponseErrorsItemCode._(value);
 
-  static const open = WebhooksIssueState._('open');
-  static const closed = WebhooksIssueState._('closed');
+  static const missing =
+      AgentAutomationsListAutomationTasksResponseErrorsItemCode._('missing');
+  static const missingField =
+      AgentAutomationsListAutomationTasksResponseErrorsItemCode._(
+          'missing_field');
+  static const invalid =
+      AgentAutomationsListAutomationTasksResponseErrorsItemCode._('invalid');
+  static const alreadyExists =
+      AgentAutomationsListAutomationTasksResponseErrorsItemCode._(
+          'already_exists');
+  static const unprocessable =
+      AgentAutomationsListAutomationTasksResponseErrorsItemCode._(
+          'unprocessable');
+  static const custom =
+      AgentAutomationsListAutomationTasksResponseErrorsItemCode._('custom');
 
   String toJson() => value;
 
@@ -390,7 +410,8 @@ final class WebhooksIssueState {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhooksIssueState && other.value == value;
+      other is AgentAutomationsListAutomationTasksResponseErrorsItemCode &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;

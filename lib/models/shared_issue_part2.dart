@@ -52,7 +52,7 @@ class Issue {
   final NullableSimpleUser? user;
 
   /// Labels to associate with this issue; pass one or more label names to replace the set of labels on this issue; send an empty array to clear all labels from the issue; note that the labels are silently dropped for users without push access to the repository
-  final List<dynamic> labels;
+  final List<IssueLabelsItem> labels;
 
   /// A GitHub user.
   final NullableSimpleUser? assignee;
@@ -186,7 +186,7 @@ class Issue {
           String title,
           SdkOptional<String?> body,
           NullableSimpleUser? user,
-          List<dynamic> labels,
+          List<IssueLabelsItem> labels,
           NullableSimpleUser? assignee,
           SdkOptional<List<SimpleUser>> assignees,
           NullableMilestone? milestone,
@@ -290,7 +290,7 @@ class Issue {
             : user as NullableSimpleUser?,
         labels: identical(labels, sdkOmittedValue)
             ? this.labels
-            : labels as List<dynamic>,
+            : labels as List<IssueLabelsItem>,
         assignee: identical(assignee, sdkOmittedValue)
             ? this.assignee
             : assignee as NullableSimpleUser?,
@@ -395,7 +395,9 @@ class Issue {
                 : null
             : throw ArgumentError.value(
                 null, 'user', 'Required property is missing'),
-        labels: ((json['labels'] as List?)?.map((e) => e).toList())!,
+        labels: ((json['labels'] as List?)
+            ?.map((e) => IssueLabelsItem.fromJson(e))
+            .toList())!,
         assignee: json.containsKey('assignee')
             ? json['assignee'] != null
                 ? NullableSimpleUser.fromJson(
@@ -533,7 +535,7 @@ class Issue {
           _ => const <String, dynamic>{},
         },
         'user': user?.toJson(),
-        'labels': labels,
+        'labels': labels.map((item) => item.toJson()).toList(),
         'assignee': assignee?.toJson(),
         ...switch (assignees) {
           SdkPresent<List<SimpleUser>>(value: final value) => {

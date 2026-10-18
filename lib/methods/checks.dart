@@ -122,72 +122,16 @@ Future<CheckRun> checksGet(ClientConfig config,
 /// [repo] The name of the repository without the `.git` extension. The name is
 ///   not case sensitive.
 /// [checkRunId] The unique identifier of the check run.
-/// [name] The name of the check. For example, "code-coverage".
-/// [detailsUrl] The URL of the integrator's site that has the full details of
-///   the check.
-/// [externalId] A reference for the run on the integrator's system.
-/// [startedAt] This is a timestamp in [ISO
-///   8601](https://en.wikipedia.org/wiki/ISO_8601) format:
-///   `YYYY-MM-DDTHH:MM:SSZ`.
-/// [status] The current status of the check run. Only GitHub Actions can set a
-///   status of `waiting`, `pending`, or `requested`.
-/// [conclusion] **Required if you provide `completed_at` or a `status` of
-///   `completed`**. The final conclusion of the check. **Note:** Providing
-///   `conclusion` will automatically set the `status` parameter to `completed`.
-///   You cannot change a check run conclusion to `stale`, only GitHub can set
-///   this.
-/// [completedAt] The time the check completed. This is a timestamp in [ISO
-///   8601](https://en.wikipedia.org/wiki/ISO_8601) format:
-///   `YYYY-MM-DDTHH:MM:SSZ`.
-/// [output] Check runs can accept a variety of data in the `output` object,
-///   including a `title` and `summary` and can optionally provide descriptive
-///   details about the run.
-/// [actions] Possible further actions the integrator can perform, which a user
-///   may trigger. Each action includes a `label`, `identifier` and `description`.
-///   A maximum of three actions are accepted. To learn more about check runs and
-///   requested actions, see "[Check runs and requested
-///   actions](https://docs.github.com/rest/guides/using-the-rest-api-to-interact-
-///   with-checks#check-runs-and-requested-actions)."
 Future<CheckRun> checksUpdate(ClientConfig config,
     {required String owner,
     required String repo,
     required int checkRunId,
-    SdkOptional<String> name = const SdkOmitted(),
-    SdkOptional<String> detailsUrl = const SdkOmitted(),
-    SdkOptional<String> externalId = const SdkOmitted(),
-    SdkOptional<String> startedAt = const SdkOmitted(),
-    SdkOptional<ChecksUpdateRequestBodyStatus> status = const SdkOmitted(),
-    SdkOptional<ChecksUpdateRequestBodyConclusion> conclusion =
-        const SdkOmitted(),
-    SdkOptional<String> completedAt = const SdkOmitted(),
-    SdkOptional<ChecksUpdateRequestBodyOutput> output = const SdkOmitted(),
-    SdkOptional<List<ChecksUpdateRequestBodyActionsItem>> actions =
-        const SdkOmitted(),
+    required dynamic body,
     RequestOptions? requestOptions}) async {
-  if (startedAt is SdkPresent<String>) {
-    sdkValidateDateTime('started_at', startedAt.value);
-  }
-  if (completedAt is SdkPresent<String>) {
-    sdkValidateDateTime('completed_at', completedAt.value);
-  }
-  if (actions is SdkPresent<List<ChecksUpdateRequestBodyActionsItem>>) {
-    validateItems('actions', actions.value, max: 3);
-  }
-
   return (await sdkRequest<CheckRun>('PATCH',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/check-runs/${Uri.encodeComponent(checkRunId.toString())}',
           config: config,
-          body: {
-            'name': SdkUtils.unwrapOptional(name),
-            'details_url': SdkUtils.unwrapOptional(detailsUrl),
-            'external_id': SdkUtils.unwrapOptional(externalId),
-            'started_at': SdkUtils.unwrapOptional(startedAt),
-            'status': SdkUtils.unwrapOptional(status),
-            'conclusion': SdkUtils.unwrapOptional(conclusion),
-            'completed_at': SdkUtils.unwrapOptional(completedAt),
-            'output': SdkUtils.unwrapOptional(output),
-            'actions': SdkUtils.unwrapOptional(actions)
-          },
+          body: body,
           decoder: SdkResponseDecoder.json,
           operationId: 'checksUpdate',
           fromJsonRaw: (value) =>

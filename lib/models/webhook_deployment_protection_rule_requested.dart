@@ -5,7 +5,7 @@
 import '../sdk_utils.dart';
 import 'inline.dart';
 import 'misc.dart';
-import 'nullable.dart';
+import 'nullable_deployment.dart';
 import 'pulls.dart';
 import 'repository.dart';
 import 'shared_simple.dart';

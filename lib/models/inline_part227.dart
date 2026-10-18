@@ -4,18 +4,36 @@
 part of 'inline.dart';
 
 // Inline operation models (part 227)
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhooksReleaseAuthorType {
+/// Machine-readable error code
+final class AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce {
   final String value;
 
-  const WebhooksReleaseAuthorType._(this.value);
+  const AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce._(
+      this.value);
 
-  factory WebhooksReleaseAuthorType.fromJson(String value) =>
-      WebhooksReleaseAuthorType._(value);
+  factory AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce.fromJson(
+          String value) =>
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce._(
+          value);
 
-  static const bot = WebhooksReleaseAuthorType._('Bot');
-  static const user = WebhooksReleaseAuthorType._('User');
-  static const organization = WebhooksReleaseAuthorType._('Organization');
+  static const missing =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce._(
+          'missing');
+  static const missingField =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce._(
+          'missing_field');
+  static const invalid =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce._(
+          'invalid');
+  static const alreadyExists =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce._(
+          'already_exists');
+  static const unprocessable =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce._(
+          'unprocessable');
+  static const custom =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce._(
+          'custom');
 
   String toJson() => value;
 
@@ -24,22 +42,44 @@ final class WebhooksReleaseAuthorType {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhooksReleaseAuthorType && other.value == value;
+      other
+          is AgentAutomationsCreateRepoAutomationResponseErrorsItemCode728a08ce &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// State of the release asset.
-final class WebhooksRelease1AssetsItemState {
+/// Machine-readable error code
+final class AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0 {
   final String value;
 
-  const WebhooksRelease1AssetsItemState._(this.value);
+  const AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0._(
+      this.value);
 
-  factory WebhooksRelease1AssetsItemState.fromJson(String value) =>
-      WebhooksRelease1AssetsItemState._(value);
+  factory AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0.fromJson(
+          String value) =>
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0._(
+          value);
 
-  static const uploaded = WebhooksRelease1AssetsItemState._('uploaded');
+  static const missing =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0._(
+          'missing');
+  static const missingField =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0._(
+          'missing_field');
+  static const invalid =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0._(
+          'invalid');
+  static const alreadyExists =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0._(
+          'already_exists');
+  static const unprocessable =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0._(
+          'unprocessable');
+  static const custom =
+      AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0._(
+          'custom');
 
   String toJson() => value;
 
@@ -48,25 +88,40 @@ final class WebhooksRelease1AssetsItemState {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhooksRelease1AssetsItemState && other.value == value;
+      other
+          is AgentAutomationsCreateRepoAutomationResponseErrorsItemCodeecb3a4f0 &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhooksRelease1AssetsItemUploaderType {
+/// Machine-readable error code
+final class AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode {
   final String value;
 
-  const WebhooksRelease1AssetsItemUploaderType._(this.value);
+  const AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode._(
+      this.value);
 
-  factory WebhooksRelease1AssetsItemUploaderType.fromJson(String value) =>
-      WebhooksRelease1AssetsItemUploaderType._(value);
+  factory AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode.fromJson(
+          String value) =>
+      AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode._(value);
 
-  static const bot = WebhooksRelease1AssetsItemUploaderType._('Bot');
-  static const user = WebhooksRelease1AssetsItemUploaderType._('User');
-  static const organization =
-      WebhooksRelease1AssetsItemUploaderType._('Organization');
+  static const missing =
+      AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode._('missing');
+  static const missingField =
+      AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode._(
+          'missing_field');
+  static const invalid =
+      AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode._('invalid');
+  static const alreadyExists =
+      AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode._(
+          'already_exists');
+  static const unprocessable =
+      AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode._(
+          'unprocessable');
+  static const custom =
+      AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode._('custom');
 
   String toJson() => value;
 
@@ -75,24 +130,43 @@ final class WebhooksRelease1AssetsItemUploaderType {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhooksRelease1AssetsItemUploaderType && other.value == value;
+      other is AgentAutomationsDeleteRepoAutomationResponseErrorsItemCode &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhooksRelease1AuthorType {
+/// Machine-readable error code
+final class AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b {
   final String value;
 
-  const WebhooksRelease1AuthorType._(this.value);
+  const AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b._(
+      this.value);
 
-  factory WebhooksRelease1AuthorType.fromJson(String value) =>
-      WebhooksRelease1AuthorType._(value);
+  factory AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b.fromJson(
+          String value) =>
+      AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b._(
+          value);
 
-  static const bot = WebhooksRelease1AuthorType._('Bot');
-  static const user = WebhooksRelease1AuthorType._('User');
-  static const organization = WebhooksRelease1AuthorType._('Organization');
+  static const missing =
+      AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b._(
+          'missing');
+  static const missingField =
+      AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b._(
+          'missing_field');
+  static const invalid =
+      AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b._(
+          'invalid');
+  static const alreadyExists =
+      AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b._(
+          'already_exists');
+  static const unprocessable =
+      AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b._(
+          'unprocessable');
+  static const custom =
+      AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b._(
+          'custom');
 
   String toJson() => value;
 
@@ -101,30 +175,44 @@ final class WebhooksRelease1AuthorType {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhooksRelease1AuthorType && other.value == value;
+      other
+          is AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodeb963a39b &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// How the author is associated with the repository.
-final class WebhooksReviewAuthorAssociation {
+/// Machine-readable error code
+final class AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodea11359d5 {
   final String value;
 
-  const WebhooksReviewAuthorAssociation._(this.value);
+  const AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodea11359d5._(
+      this.value);
 
-  factory WebhooksReviewAuthorAssociation.fromJson(String value) =>
-      WebhooksReviewAuthorAssociation._(value);
+  factory AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodea11359d5.fromJson(
+          String value) =>
+      AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodea11359d5._(
+          value);
 
-  static const collaborator = WebhooksReviewAuthorAssociation._('COLLABORATOR');
-  static const contributor = WebhooksReviewAuthorAssociation._('CONTRIBUTOR');
-  static const firstTimer = WebhooksReviewAuthorAssociation._('FIRST_TIMER');
-  static const firstTimeContributor =
-      WebhooksReviewAuthorAssociation._('FIRST_TIME_CONTRIBUTOR');
-  static const mannequin = WebhooksReviewAuthorAssociation._('MANNEQUIN');
-  static const member = WebhooksReviewAuthorAssociation._('MEMBER');
-  static const none = WebhooksReviewAuthorAssociation._('NONE');
-  static const owner = WebhooksReviewAuthorAssociation._('OWNER');
+  static const missing =
+      AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodea11359d5._(
+          'missing');
+  static const missingField =
+      AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodea11359d5._(
+          'missing_field');
+  static const invalid =
+      AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodea11359d5._(
+          'invalid');
+  static const alreadyExists =
+      AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodea11359d5._(
+          'already_exists');
+  static const unprocessable =
+      AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodea11359d5._(
+          'unprocessable');
+  static const custom =
+      AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodea11359d5._(
+          'custom');
 
   String toJson() => value;
 
@@ -133,24 +221,28 @@ final class WebhooksReviewAuthorAssociation {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhooksReviewAuthorAssociation && other.value == value;
+      other
+          is AgentAutomationsDeleteRepoAutomationResponseErrorsItemCodea11359d5 &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhooksReviewUserType {
+/// Who owns the automation. `user` keeps it private to its creator and its runs act as that user. `repository` makes it belong to the repository, visible to anyone with read access to the repository, and its runs act as the Copilot app rather than as a person.
+final class AgentAutomationsGetRepoAutomationResponseOwnerType {
   final String value;
 
-  const WebhooksReviewUserType._(this.value);
+  const AgentAutomationsGetRepoAutomationResponseOwnerType._(this.value);
 
-  factory WebhooksReviewUserType.fromJson(String value) =>
-      WebhooksReviewUserType._(value);
+  factory AgentAutomationsGetRepoAutomationResponseOwnerType.fromJson(
+          String value) =>
+      AgentAutomationsGetRepoAutomationResponseOwnerType._(value);
 
-  static const bot = WebhooksReviewUserType._('Bot');
-  static const user = WebhooksReviewUserType._('User');
-  static const organization = WebhooksReviewUserType._('Organization');
+  static const user =
+      AgentAutomationsGetRepoAutomationResponseOwnerType._('user');
+  static const repository =
+      AgentAutomationsGetRepoAutomationResponseOwnerType._('repository');
 
   String toJson() => value;
 
@@ -159,34 +251,31 @@ final class WebhooksReviewUserType {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhooksReviewUserType && other.value == value;
+      other is AgentAutomationsGetRepoAutomationResponseOwnerType &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// How the author is associated with the repository.
-final class WebhooksReviewCommentAuthorAssociation {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsGetRepoAutomationResponseTriggersAutomationCompletedWriteScope {
   final String value;
 
-  const WebhooksReviewCommentAuthorAssociation._(this.value);
+  const AgentAutomationsGetRepoAutomationResponseTriggersAutomationCompletedWriteScope._(
+      this.value);
 
-  factory WebhooksReviewCommentAuthorAssociation.fromJson(String value) =>
-      WebhooksReviewCommentAuthorAssociation._(value);
+  factory AgentAutomationsGetRepoAutomationResponseTriggersAutomationCompletedWriteScope.fromJson(
+          String value) =>
+      AgentAutomationsGetRepoAutomationResponseTriggersAutomationCompletedWriteScope
+          ._(value);
 
-  static const collaborator =
-      WebhooksReviewCommentAuthorAssociation._('COLLABORATOR');
-  static const contributor =
-      WebhooksReviewCommentAuthorAssociation._('CONTRIBUTOR');
-  static const firstTimer =
-      WebhooksReviewCommentAuthorAssociation._('FIRST_TIMER');
-  static const firstTimeContributor =
-      WebhooksReviewCommentAuthorAssociation._('FIRST_TIME_CONTRIBUTOR');
-  static const mannequin =
-      WebhooksReviewCommentAuthorAssociation._('MANNEQUIN');
-  static const member = WebhooksReviewCommentAuthorAssociation._('MEMBER');
-  static const none = WebhooksReviewCommentAuthorAssociation._('NONE');
-  static const owner = WebhooksReviewCommentAuthorAssociation._('OWNER');
+  static const trigger =
+      AgentAutomationsGetRepoAutomationResponseTriggersAutomationCompletedWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsGetRepoAutomationResponseTriggersAutomationCompletedWriteScope
+          ._('repository');
 
   String toJson() => value;
 
@@ -195,23 +284,31 @@ final class WebhooksReviewCommentAuthorAssociation {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhooksReviewCommentAuthorAssociation && other.value == value;
+      other
+          is AgentAutomationsGetRepoAutomationResponseTriggersAutomationCompletedWriteScope &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// The side of the first line of the range for a multi-line comment.
-final class WebhooksReviewCommentSide {
+final class AgentAutomationsGetRepoAutomationResponseTriggersDiscussionCommentCommentTypesItem {
   final String value;
 
-  const WebhooksReviewCommentSide._(this.value);
+  const AgentAutomationsGetRepoAutomationResponseTriggersDiscussionCommentCommentTypesItem._(
+      this.value);
 
-  factory WebhooksReviewCommentSide.fromJson(String value) =>
-      WebhooksReviewCommentSide._(value);
+  factory AgentAutomationsGetRepoAutomationResponseTriggersDiscussionCommentCommentTypesItem.fromJson(
+          String value) =>
+      AgentAutomationsGetRepoAutomationResponseTriggersDiscussionCommentCommentTypesItem
+          ._(value);
 
-  static const left = WebhooksReviewCommentSide._('LEFT');
-  static const right = WebhooksReviewCommentSide._('RIGHT');
+  static const comment =
+      AgentAutomationsGetRepoAutomationResponseTriggersDiscussionCommentCommentTypesItem
+          ._('comment');
+  static const reply =
+      AgentAutomationsGetRepoAutomationResponseTriggersDiscussionCommentCommentTypesItem
+          ._('reply');
 
   String toJson() => value;
 
@@ -220,23 +317,32 @@ final class WebhooksReviewCommentSide {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhooksReviewCommentSide && other.value == value;
+      other
+          is AgentAutomationsGetRepoAutomationResponseTriggersDiscussionCommentCommentTypesItem &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// The side of the first line of the range for a multi-line comment.
-final class WebhooksReviewCommentStartSide {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsGetRepoAutomationResponseTriggersDiscussionCommentWriteScope {
   final String value;
 
-  const WebhooksReviewCommentStartSide._(this.value);
+  const AgentAutomationsGetRepoAutomationResponseTriggersDiscussionCommentWriteScope._(
+      this.value);
 
-  factory WebhooksReviewCommentStartSide.fromJson(String value) =>
-      WebhooksReviewCommentStartSide._(value);
+  factory AgentAutomationsGetRepoAutomationResponseTriggersDiscussionCommentWriteScope.fromJson(
+          String value) =>
+      AgentAutomationsGetRepoAutomationResponseTriggersDiscussionCommentWriteScope
+          ._(value);
 
-  static const left = WebhooksReviewCommentStartSide._('LEFT');
-  static const right = WebhooksReviewCommentStartSide._('RIGHT');
+  static const trigger =
+      AgentAutomationsGetRepoAutomationResponseTriggersDiscussionCommentWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsGetRepoAutomationResponseTriggersDiscussionCommentWriteScope
+          ._('repository');
 
   String toJson() => value;
 
@@ -245,23 +351,32 @@ final class WebhooksReviewCommentStartSide {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhooksReviewCommentStartSide && other.value == value;
+      other
+          is AgentAutomationsGetRepoAutomationResponseTriggersDiscussionCommentWriteScope &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// The level at which the comment is targeted, can be a diff line or a file.
-final class WebhooksReviewCommentSubjectType {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsGetRepoAutomationResponseTriggersDiscussionOpenedWriteScope {
   final String value;
 
-  const WebhooksReviewCommentSubjectType._(this.value);
+  const AgentAutomationsGetRepoAutomationResponseTriggersDiscussionOpenedWriteScope._(
+      this.value);
 
-  factory WebhooksReviewCommentSubjectType.fromJson(String value) =>
-      WebhooksReviewCommentSubjectType._(value);
+  factory AgentAutomationsGetRepoAutomationResponseTriggersDiscussionOpenedWriteScope.fromJson(
+          String value) =>
+      AgentAutomationsGetRepoAutomationResponseTriggersDiscussionOpenedWriteScope
+          ._(value);
 
-  static const line = WebhooksReviewCommentSubjectType._('line');
-  static const file = WebhooksReviewCommentSubjectType._('file');
+  static const trigger =
+      AgentAutomationsGetRepoAutomationResponseTriggersDiscussionOpenedWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsGetRepoAutomationResponseTriggersDiscussionOpenedWriteScope
+          ._('repository');
 
   String toJson() => value;
 
@@ -270,24 +385,32 @@ final class WebhooksReviewCommentSubjectType {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhooksReviewCommentSubjectType && other.value == value;
+      other
+          is AgentAutomationsGetRepoAutomationResponseTriggersDiscussionOpenedWriteScope &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhooksReviewCommentUserType {
+/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
+final class AgentAutomationsGetRepoAutomationResponseTriggersDiscussionUpdatedWriteScope {
   final String value;
 
-  const WebhooksReviewCommentUserType._(this.value);
+  const AgentAutomationsGetRepoAutomationResponseTriggersDiscussionUpdatedWriteScope._(
+      this.value);
 
-  factory WebhooksReviewCommentUserType.fromJson(String value) =>
-      WebhooksReviewCommentUserType._(value);
+  factory AgentAutomationsGetRepoAutomationResponseTriggersDiscussionUpdatedWriteScope.fromJson(
+          String value) =>
+      AgentAutomationsGetRepoAutomationResponseTriggersDiscussionUpdatedWriteScope
+          ._(value);
 
-  static const bot = WebhooksReviewCommentUserType._('Bot');
-  static const user = WebhooksReviewCommentUserType._('User');
-  static const organization = WebhooksReviewCommentUserType._('Organization');
+  static const trigger =
+      AgentAutomationsGetRepoAutomationResponseTriggersDiscussionUpdatedWriteScope
+          ._('trigger');
+  static const repository =
+      AgentAutomationsGetRepoAutomationResponseTriggersDiscussionUpdatedWriteScope
+          ._('repository');
 
   String toJson() => value;
 
@@ -296,25 +419,34 @@ final class WebhooksReviewCommentUserType {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhooksReviewCommentUserType && other.value == value;
+      other
+          is AgentAutomationsGetRepoAutomationResponseTriggersDiscussionUpdatedWriteScope &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhooksReviewersItemReviewerType {
+final class AgentAutomationsGetRepoAutomationResponseTriggersIntervalCadenceItem {
   final String value;
 
-  const WebhooksReviewersItemReviewerType._(this.value);
+  const AgentAutomationsGetRepoAutomationResponseTriggersIntervalCadenceItem._(
+      this.value);
 
-  factory WebhooksReviewersItemReviewerType.fromJson(String value) =>
-      WebhooksReviewersItemReviewerType._(value);
+  factory AgentAutomationsGetRepoAutomationResponseTriggersIntervalCadenceItem.fromJson(
+          String value) =>
+      AgentAutomationsGetRepoAutomationResponseTriggersIntervalCadenceItem._(
+          value);
 
-  static const bot = WebhooksReviewersItemReviewerType._('Bot');
-  static const user = WebhooksReviewersItemReviewerType._('User');
-  static const organization =
-      WebhooksReviewersItemReviewerType._('Organization');
+  static const hourly =
+      AgentAutomationsGetRepoAutomationResponseTriggersIntervalCadenceItem._(
+          'hourly');
+  static const daily =
+      AgentAutomationsGetRepoAutomationResponseTriggersIntervalCadenceItem._(
+          'daily');
+  static const weekly =
+      AgentAutomationsGetRepoAutomationResponseTriggersIntervalCadenceItem._(
+          'weekly');
 
   String toJson() => value;
 
@@ -323,7 +455,9 @@ final class WebhooksReviewersItemReviewerType {
 
   @override
   bool operator ==(Object other) =>
-      other is WebhooksReviewersItemReviewerType && other.value == value;
+      other
+          is AgentAutomationsGetRepoAutomationResponseTriggersIntervalCadenceItem &&
+      other.value == value;
 
   @override
   int get hashCode => value.hashCode;

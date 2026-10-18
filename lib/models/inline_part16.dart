@@ -4,6 +4,119 @@
 part of 'inline.dart';
 
 // Inline operation models (part 16)
+/// Required enumerated value serialized in the `status` wire field.
+final class CommitComparisonStatus {
+  final String value;
+
+  const CommitComparisonStatus._(this.value);
+
+  factory CommitComparisonStatus.fromJson(String value) =>
+      CommitComparisonStatus._(value);
+
+  static const diverged = CommitComparisonStatus._('diverged');
+  static const ahead = CommitComparisonStatus._('ahead');
+  static const behind = CommitComparisonStatus._('behind');
+  static const identical = CommitComparisonStatus._('identical');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is CommitComparisonStatus && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Required enumerated value serialized in the `status` wire field.
+final class ConcurrencyGroupGroupMembersItemStatus {
+  final String value;
+
+  const ConcurrencyGroupGroupMembersItemStatus._(this.value);
+
+  factory ConcurrencyGroupGroupMembersItemStatus.fromJson(String value) =>
+      ConcurrencyGroupGroupMembersItemStatus._(value);
+
+  static const inProgress =
+      ConcurrencyGroupGroupMembersItemStatus._('in_progress');
+  static const pending = ConcurrencyGroupGroupMembersItemStatus._('pending');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is ConcurrencyGroupGroupMembersItemStatus && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Required enumerated value serialized in the `status` wire field.
+final class ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItemStatus {
+  final String value;
+
+  const ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItemStatus._(
+      this.value);
+
+  factory ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItemStatus.fromJson(
+          String value) =>
+      ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItemStatus._(
+          value);
+
+  static const inProgress =
+      ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItemStatus._(
+          'in_progress');
+  static const pending =
+      ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItemStatus._(
+          'pending');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItemStatus &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+final class ContentDirectoryItemType {
+  final String value;
+
+  const ContentDirectoryItemType._(this.value);
+
+  factory ContentDirectoryItemType.fromJson(String value) =>
+      ContentDirectoryItemType._(value);
+
+  static const dir = ContentDirectoryItemType._('dir');
+  static const file = ContentDirectoryItemType._('file');
+  static const submodule = ContentDirectoryItemType._('submodule');
+  static const symlink = ContentDirectoryItemType._('symlink');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is ContentDirectoryItemType && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
 /// Required enumerated value serialized in the `type` wire field.
 enum ContentFileType {
   file;
@@ -206,131 +319,6 @@ final class CopilotOrganizationDetailsPublicCodeSuggestions {
   @override
   bool operator ==(Object other) =>
       other is CopilotOrganizationDetailsPublicCodeSuggestions &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The mode of assigning new seats.
-final class CopilotOrganizationDetailsSeatManagementSetting {
-  final String value;
-
-  const CopilotOrganizationDetailsSeatManagementSetting._(this.value);
-
-  factory CopilotOrganizationDetailsSeatManagementSetting.fromJson(
-          String value) =>
-      CopilotOrganizationDetailsSeatManagementSetting._(value);
-
-  static const assignAll =
-      CopilotOrganizationDetailsSeatManagementSetting._('assign_all');
-  static const assignSelected =
-      CopilotOrganizationDetailsSeatManagementSetting._('assign_selected');
-  static const disabled =
-      CopilotOrganizationDetailsSeatManagementSetting._('disabled');
-  static const unconfigured =
-      CopilotOrganizationDetailsSeatManagementSetting._('unconfigured');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is CopilotOrganizationDetailsSeatManagementSetting &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The Copilot plan of the organization, or the parent enterprise, when applicable.
-final class CopilotSeatDetailsPlanType {
-  final String value;
-
-  const CopilotSeatDetailsPlanType._(this.value);
-
-  factory CopilotSeatDetailsPlanType.fromJson(String value) =>
-      CopilotSeatDetailsPlanType._(value);
-
-  static const business = CopilotSeatDetailsPlanType._('business');
-  static const enterprise = CopilotSeatDetailsPlanType._('enterprise');
-  static const unknown = CopilotSeatDetailsPlanType._('unknown');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is CopilotSeatDetailsPlanType && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The base role that determines default permissions. - `no_access`: No default access - `reader`: Default read permissions - `writer`: Default write permissions (organization spaces only) - `admin`: Default admin permissions (organization spaces only)
-final class CopilotSpaceBaseRole {
-  final String value;
-
-  const CopilotSpaceBaseRole._(this.value);
-
-  factory CopilotSpaceBaseRole.fromJson(String value) =>
-      CopilotSpaceBaseRole._(value);
-
-  static const reader = CopilotSpaceBaseRole._('reader');
-  static const writer = CopilotSpaceBaseRole._('writer');
-  static const admin = CopilotSpaceBaseRole._('admin');
-  static const noAccess = CopilotSpaceBaseRole._('no_access');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is CopilotSpaceBaseRole && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The type of resource.
-final class CopilotSpaceResourcesAttributesItemResourceType {
-  final String value;
-
-  const CopilotSpaceResourcesAttributesItemResourceType._(this.value);
-
-  factory CopilotSpaceResourcesAttributesItemResourceType.fromJson(
-          String value) =>
-      CopilotSpaceResourcesAttributesItemResourceType._(value);
-
-  static const repository =
-      CopilotSpaceResourcesAttributesItemResourceType._('repository');
-  static const githubFile =
-      CopilotSpaceResourcesAttributesItemResourceType._('github_file');
-  static const freeText =
-      CopilotSpaceResourcesAttributesItemResourceType._('free_text');
-  static const githubIssue =
-      CopilotSpaceResourcesAttributesItemResourceType._('github_issue');
-  static const githubPullRequest =
-      CopilotSpaceResourcesAttributesItemResourceType._('github_pull_request');
-  static const mediaContent =
-      CopilotSpaceResourcesAttributesItemResourceType._('media_content');
-  static const uploadedTextFile =
-      CopilotSpaceResourcesAttributesItemResourceType._('uploaded_text_file');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is CopilotSpaceResourcesAttributesItemResourceType &&
       other.value == value;
 
   @override

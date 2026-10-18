@@ -4,103 +4,43 @@
 part of 'webhook_deployment_status_created.dart';
 
 // webhook_deployment_status_created domain models (part 15)
-/// Optional object value serialized in the `repository` wire field.
-class WebhookDeploymentStatusCreatedWorkflowRunRepository {
+/// Required object value serialized in the `triggering_actor` wire field.
+class WebhookDeploymentStatusCreatedWorkflowRunTriggeringActor {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Optional `string` value serialized in the `archive_url` wire field.
-  final SdkOptional<String> archiveUrl;
+  /// Optional `uri`-formatted value serialized in the `avatar_url` wire field.
+  final SdkOptional<String> avatarUrl;
 
-  /// Optional `string` value serialized in the `assignees_url` wire field.
-  final SdkOptional<String> assigneesUrl;
+  /// Optional `boolean` value serialized in the `deleted` wire field.
+  final SdkOptional<bool> deleted;
 
-  /// Optional `string` value serialized in the `blobs_url` wire field.
-  final SdkOptional<String> blobsUrl;
+  /// Optional `string` value serialized in the `email` wire field.
+  final SdkOptional<String?> email;
 
-  /// Optional `string` value serialized in the `branches_url` wire field.
-  final SdkOptional<String> branchesUrl;
-
-  /// Optional `string` value serialized in the `collaborators_url` wire field.
-  final SdkOptional<String> collaboratorsUrl;
-
-  /// Optional `string` value serialized in the `comments_url` wire field.
-  final SdkOptional<String> commentsUrl;
-
-  /// Optional `string` value serialized in the `commits_url` wire field.
-  final SdkOptional<String> commitsUrl;
-
-  /// Optional `string` value serialized in the `compare_url` wire field.
-  final SdkOptional<String> compareUrl;
-
-  /// Optional `string` value serialized in the `contents_url` wire field.
-  final SdkOptional<String> contentsUrl;
-
-  /// Optional `string` value serialized in the `contributors_url` wire field.
-  final SdkOptional<String> contributorsUrl;
-
-  /// Optional `string` value serialized in the `deployments_url` wire field.
-  final SdkOptional<String> deploymentsUrl;
-
-  /// Optional API value serialized in the `description` wire field.
-  final SdkOptional<dynamic> description;
-
-  /// Optional `string` value serialized in the `downloads_url` wire field.
-  final SdkOptional<String> downloadsUrl;
-
-  /// Optional `string` value serialized in the `events_url` wire field.
+  /// Optional `uri-template`-formatted value serialized in the `events_url` wire field.
   final SdkOptional<String> eventsUrl;
 
-  /// Optional `boolean` value serialized in the `fork` wire field.
-  final SdkOptional<bool> fork;
+  /// Optional `uri`-formatted value serialized in the `followers_url` wire field.
+  final SdkOptional<String> followersUrl;
 
-  /// Optional `string` value serialized in the `forks_url` wire field.
-  final SdkOptional<String> forksUrl;
+  /// Optional `uri-template`-formatted value serialized in the `following_url` wire field.
+  final SdkOptional<String> followingUrl;
 
-  /// Optional `string` value serialized in the `full_name` wire field.
-  final SdkOptional<String> fullName;
+  /// Optional `uri-template`-formatted value serialized in the `gists_url` wire field.
+  final SdkOptional<String> gistsUrl;
 
-  /// Optional `string` value serialized in the `git_commits_url` wire field.
-  final SdkOptional<String> gitCommitsUrl;
+  /// Optional `string` value serialized in the `gravatar_id` wire field.
+  final SdkOptional<String> gravatarId;
 
-  /// Optional `string` value serialized in the `git_refs_url` wire field.
-  final SdkOptional<String> gitRefsUrl;
-
-  /// Optional `string` value serialized in the `git_tags_url` wire field.
-  final SdkOptional<String> gitTagsUrl;
-
-  /// Optional `string` value serialized in the `hooks_url` wire field.
-  final SdkOptional<String> hooksUrl;
-
-  /// Optional `string` value serialized in the `html_url` wire field.
+  /// Optional `uri`-formatted value serialized in the `html_url` wire field.
   final SdkOptional<String> htmlUrl;
 
-  /// Optional `integer` value serialized in the `id` wire field.
-  final SdkOptional<int> id;
+  /// Required `integer` value serialized in the `id` wire field.
+  final int id;
 
-  /// Optional `string` value serialized in the `issue_comment_url` wire field.
-  final SdkOptional<String> issueCommentUrl;
-
-  /// Optional `string` value serialized in the `issue_events_url` wire field.
-  final SdkOptional<String> issueEventsUrl;
-
-  /// Optional `string` value serialized in the `issues_url` wire field.
-  final SdkOptional<String> issuesUrl;
-
-  /// Optional `string` value serialized in the `keys_url` wire field.
-  final SdkOptional<String> keysUrl;
-
-  /// Optional `string` value serialized in the `labels_url` wire field.
-  final SdkOptional<String> labelsUrl;
-
-  /// Optional `string` value serialized in the `languages_url` wire field.
-  final SdkOptional<String> languagesUrl;
-
-  /// Optional `string` value serialized in the `merges_url` wire field.
-  final SdkOptional<String> mergesUrl;
-
-  /// Optional `string` value serialized in the `milestones_url` wire field.
-  final SdkOptional<String> milestonesUrl;
+  /// Required `string` value serialized in the `login` wire field.
+  final String login;
 
   /// Optional `string` value serialized in the `name` wire field.
   final SdkOptional<String> name;
@@ -108,552 +48,258 @@ class WebhookDeploymentStatusCreatedWorkflowRunRepository {
   /// Optional `string` value serialized in the `node_id` wire field.
   final SdkOptional<String> nodeId;
 
-  /// Optional `string` value serialized in the `notifications_url` wire field.
-  final SdkOptional<String> notificationsUrl;
+  /// Optional `uri`-formatted value serialized in the `organizations_url` wire field.
+  final SdkOptional<String> organizationsUrl;
 
-  /// Optional object value serialized in the `owner` wire field.
-  final SdkOptional<WebhookDeploymentStatusCreatedWorkflowRunRepositoryOwner>
-      owner;
+  /// Optional `uri`-formatted value serialized in the `received_events_url` wire field.
+  final SdkOptional<String> receivedEventsUrl;
 
-  /// Optional `boolean` value serialized in the `private` wire field.
-  final SdkOptional<bool> private;
+  /// Optional `uri`-formatted value serialized in the `repos_url` wire field.
+  final SdkOptional<String> reposUrl;
 
-  /// Optional `string` value serialized in the `pulls_url` wire field.
-  final SdkOptional<String> pullsUrl;
+  /// Optional `boolean` value serialized in the `site_admin` wire field.
+  final SdkOptional<bool> siteAdmin;
 
-  /// Optional `string` value serialized in the `releases_url` wire field.
-  final SdkOptional<String> releasesUrl;
+  /// Optional `uri-template`-formatted value serialized in the `starred_url` wire field.
+  final SdkOptional<String> starredUrl;
 
-  /// Optional `string` value serialized in the `stargazers_url` wire field.
-  final SdkOptional<String> stargazersUrl;
+  /// Optional `uri`-formatted value serialized in the `subscriptions_url` wire field.
+  final SdkOptional<String> subscriptionsUrl;
 
-  /// Optional `string` value serialized in the `statuses_url` wire field.
-  final SdkOptional<String> statusesUrl;
+  /// Optional enumerated value serialized in the `type` wire field.
+  final SdkOptional<
+      WebhookDeploymentStatusCreatedWorkflowRunTriggeringActorType> type_;
 
-  /// Optional `string` value serialized in the `subscribers_url` wire field.
-  final SdkOptional<String> subscribersUrl;
-
-  /// Optional `string` value serialized in the `subscription_url` wire field.
-  final SdkOptional<String> subscriptionUrl;
-
-  /// Optional `string` value serialized in the `tags_url` wire field.
-  final SdkOptional<String> tagsUrl;
-
-  /// Optional `string` value serialized in the `teams_url` wire field.
-  final SdkOptional<String> teamsUrl;
-
-  /// Optional `string` value serialized in the `trees_url` wire field.
-  final SdkOptional<String> treesUrl;
-
-  /// Optional `string` value serialized in the `url` wire field.
+  /// Optional `uri`-formatted value serialized in the `url` wire field.
   final SdkOptional<String> url;
 
-  const WebhookDeploymentStatusCreatedWorkflowRunRepository(
-      {this.archiveUrl = const SdkOmitted(),
-      this.assigneesUrl = const SdkOmitted(),
-      this.blobsUrl = const SdkOmitted(),
-      this.branchesUrl = const SdkOmitted(),
-      this.collaboratorsUrl = const SdkOmitted(),
-      this.commentsUrl = const SdkOmitted(),
-      this.commitsUrl = const SdkOmitted(),
-      this.compareUrl = const SdkOmitted(),
-      this.contentsUrl = const SdkOmitted(),
-      this.contributorsUrl = const SdkOmitted(),
-      this.deploymentsUrl = const SdkOmitted(),
-      this.description = const SdkOmitted(),
-      this.downloadsUrl = const SdkOmitted(),
+  /// Optional `string` value serialized in the `user_view_type` wire field.
+  final SdkOptional<String> userViewType;
+
+  const WebhookDeploymentStatusCreatedWorkflowRunTriggeringActor(
+      {this.avatarUrl = const SdkOmitted(),
+      this.deleted = const SdkOmitted(),
+      this.email = const SdkOmitted(),
       this.eventsUrl = const SdkOmitted(),
-      this.fork = const SdkOmitted(),
-      this.forksUrl = const SdkOmitted(),
-      this.fullName = const SdkOmitted(),
-      this.gitCommitsUrl = const SdkOmitted(),
-      this.gitRefsUrl = const SdkOmitted(),
-      this.gitTagsUrl = const SdkOmitted(),
-      this.hooksUrl = const SdkOmitted(),
+      this.followersUrl = const SdkOmitted(),
+      this.followingUrl = const SdkOmitted(),
+      this.gistsUrl = const SdkOmitted(),
+      this.gravatarId = const SdkOmitted(),
       this.htmlUrl = const SdkOmitted(),
-      this.id = const SdkOmitted(),
-      this.issueCommentUrl = const SdkOmitted(),
-      this.issueEventsUrl = const SdkOmitted(),
-      this.issuesUrl = const SdkOmitted(),
-      this.keysUrl = const SdkOmitted(),
-      this.labelsUrl = const SdkOmitted(),
-      this.languagesUrl = const SdkOmitted(),
-      this.mergesUrl = const SdkOmitted(),
-      this.milestonesUrl = const SdkOmitted(),
+      required this.id,
+      required this.login,
       this.name = const SdkOmitted(),
       this.nodeId = const SdkOmitted(),
-      this.notificationsUrl = const SdkOmitted(),
-      this.owner = const SdkOmitted(),
-      this.private = const SdkOmitted(),
-      this.pullsUrl = const SdkOmitted(),
-      this.releasesUrl = const SdkOmitted(),
-      this.stargazersUrl = const SdkOmitted(),
-      this.statusesUrl = const SdkOmitted(),
-      this.subscribersUrl = const SdkOmitted(),
-      this.subscriptionUrl = const SdkOmitted(),
-      this.tagsUrl = const SdkOmitted(),
-      this.teamsUrl = const SdkOmitted(),
-      this.treesUrl = const SdkOmitted(),
-      this.url = const SdkOmitted()});
+      this.organizationsUrl = const SdkOmitted(),
+      this.receivedEventsUrl = const SdkOmitted(),
+      this.reposUrl = const SdkOmitted(),
+      this.siteAdmin = const SdkOmitted(),
+      this.starredUrl = const SdkOmitted(),
+      this.subscriptionsUrl = const SdkOmitted(),
+      this.type_ = const SdkOmitted(),
+      this.url = const SdkOmitted(),
+      this.userViewType = const SdkOmitted()});
 
-  WebhookDeploymentStatusCreatedWorkflowRunRepository Function(
-      {SdkOptional<String> archiveUrl,
-      SdkOptional<String> assigneesUrl,
-      SdkOptional<String> blobsUrl,
-      SdkOptional<String> branchesUrl,
-      SdkOptional<String> collaboratorsUrl,
-      SdkOptional<String> commentsUrl,
-      SdkOptional<String> commitsUrl,
-      SdkOptional<String> compareUrl,
-      SdkOptional<String> contentsUrl,
-      SdkOptional<String> contributorsUrl,
-      SdkOptional<String> deploymentsUrl,
-      SdkOptional<dynamic> description,
-      SdkOptional<String> downloadsUrl,
+  WebhookDeploymentStatusCreatedWorkflowRunTriggeringActor Function(
+      {SdkOptional<String> avatarUrl,
+      SdkOptional<bool> deleted,
+      SdkOptional<String?> email,
       SdkOptional<String> eventsUrl,
-      SdkOptional<bool> fork,
-      SdkOptional<String> forksUrl,
-      SdkOptional<String> fullName,
-      SdkOptional<String> gitCommitsUrl,
-      SdkOptional<String> gitRefsUrl,
-      SdkOptional<String> gitTagsUrl,
-      SdkOptional<String> hooksUrl,
+      SdkOptional<String> followersUrl,
+      SdkOptional<String> followingUrl,
+      SdkOptional<String> gistsUrl,
+      SdkOptional<String> gravatarId,
       SdkOptional<String> htmlUrl,
-      SdkOptional<int> id,
-      SdkOptional<String> issueCommentUrl,
-      SdkOptional<String> issueEventsUrl,
-      SdkOptional<String> issuesUrl,
-      SdkOptional<String> keysUrl,
-      SdkOptional<String> labelsUrl,
-      SdkOptional<String> languagesUrl,
-      SdkOptional<String> mergesUrl,
-      SdkOptional<String> milestonesUrl,
+      int id,
+      String login,
       SdkOptional<String> name,
       SdkOptional<String> nodeId,
-      SdkOptional<String> notificationsUrl,
-      SdkOptional<WebhookDeploymentStatusCreatedWorkflowRunRepositoryOwner>
-          owner,
-      SdkOptional<bool> private,
-      SdkOptional<String> pullsUrl,
-      SdkOptional<String> releasesUrl,
-      SdkOptional<String> stargazersUrl,
-      SdkOptional<String> statusesUrl,
-      SdkOptional<String> subscribersUrl,
-      SdkOptional<String> subscriptionUrl,
-      SdkOptional<String> tagsUrl,
-      SdkOptional<String> teamsUrl,
-      SdkOptional<String> treesUrl,
-      SdkOptional<String> url}) get copyWith => _copyWith;
+      SdkOptional<String> organizationsUrl,
+      SdkOptional<String> receivedEventsUrl,
+      SdkOptional<String> reposUrl,
+      SdkOptional<bool> siteAdmin,
+      SdkOptional<String> starredUrl,
+      SdkOptional<String> subscriptionsUrl,
+      SdkOptional<WebhookDeploymentStatusCreatedWorkflowRunTriggeringActorType>
+          type_,
+      SdkOptional<String> url,
+      SdkOptional<String> userViewType}) get copyWith => _copyWith;
 
-  WebhookDeploymentStatusCreatedWorkflowRunRepository _copyWith(
-          {Object? archiveUrl = sdkOmittedValue,
-          Object? assigneesUrl = sdkOmittedValue,
-          Object? blobsUrl = sdkOmittedValue,
-          Object? branchesUrl = sdkOmittedValue,
-          Object? collaboratorsUrl = sdkOmittedValue,
-          Object? commentsUrl = sdkOmittedValue,
-          Object? commitsUrl = sdkOmittedValue,
-          Object? compareUrl = sdkOmittedValue,
-          Object? contentsUrl = sdkOmittedValue,
-          Object? contributorsUrl = sdkOmittedValue,
-          Object? deploymentsUrl = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? downloadsUrl = sdkOmittedValue,
+  WebhookDeploymentStatusCreatedWorkflowRunTriggeringActor _copyWith(
+          {Object? avatarUrl = sdkOmittedValue,
+          Object? deleted = sdkOmittedValue,
+          Object? email = sdkOmittedValue,
           Object? eventsUrl = sdkOmittedValue,
-          Object? fork = sdkOmittedValue,
-          Object? forksUrl = sdkOmittedValue,
-          Object? fullName = sdkOmittedValue,
-          Object? gitCommitsUrl = sdkOmittedValue,
-          Object? gitRefsUrl = sdkOmittedValue,
-          Object? gitTagsUrl = sdkOmittedValue,
-          Object? hooksUrl = sdkOmittedValue,
+          Object? followersUrl = sdkOmittedValue,
+          Object? followingUrl = sdkOmittedValue,
+          Object? gistsUrl = sdkOmittedValue,
+          Object? gravatarId = sdkOmittedValue,
           Object? htmlUrl = sdkOmittedValue,
           Object? id = sdkOmittedValue,
-          Object? issueCommentUrl = sdkOmittedValue,
-          Object? issueEventsUrl = sdkOmittedValue,
-          Object? issuesUrl = sdkOmittedValue,
-          Object? keysUrl = sdkOmittedValue,
-          Object? labelsUrl = sdkOmittedValue,
-          Object? languagesUrl = sdkOmittedValue,
-          Object? mergesUrl = sdkOmittedValue,
-          Object? milestonesUrl = sdkOmittedValue,
+          Object? login = sdkOmittedValue,
           Object? name = sdkOmittedValue,
           Object? nodeId = sdkOmittedValue,
-          Object? notificationsUrl = sdkOmittedValue,
-          Object? owner = sdkOmittedValue,
-          Object? private = sdkOmittedValue,
-          Object? pullsUrl = sdkOmittedValue,
-          Object? releasesUrl = sdkOmittedValue,
-          Object? stargazersUrl = sdkOmittedValue,
-          Object? statusesUrl = sdkOmittedValue,
-          Object? subscribersUrl = sdkOmittedValue,
-          Object? subscriptionUrl = sdkOmittedValue,
-          Object? tagsUrl = sdkOmittedValue,
-          Object? teamsUrl = sdkOmittedValue,
-          Object? treesUrl = sdkOmittedValue,
-          Object? url = sdkOmittedValue}) =>
-      WebhookDeploymentStatusCreatedWorkflowRunRepository(
-        archiveUrl: identical(archiveUrl, sdkOmittedValue)
-            ? this.archiveUrl
-            : archiveUrl as SdkOptional<String>,
-        assigneesUrl: identical(assigneesUrl, sdkOmittedValue)
-            ? this.assigneesUrl
-            : assigneesUrl as SdkOptional<String>,
-        blobsUrl: identical(blobsUrl, sdkOmittedValue)
-            ? this.blobsUrl
-            : blobsUrl as SdkOptional<String>,
-        branchesUrl: identical(branchesUrl, sdkOmittedValue)
-            ? this.branchesUrl
-            : branchesUrl as SdkOptional<String>,
-        collaboratorsUrl: identical(collaboratorsUrl, sdkOmittedValue)
-            ? this.collaboratorsUrl
-            : collaboratorsUrl as SdkOptional<String>,
-        commentsUrl: identical(commentsUrl, sdkOmittedValue)
-            ? this.commentsUrl
-            : commentsUrl as SdkOptional<String>,
-        commitsUrl: identical(commitsUrl, sdkOmittedValue)
-            ? this.commitsUrl
-            : commitsUrl as SdkOptional<String>,
-        compareUrl: identical(compareUrl, sdkOmittedValue)
-            ? this.compareUrl
-            : compareUrl as SdkOptional<String>,
-        contentsUrl: identical(contentsUrl, sdkOmittedValue)
-            ? this.contentsUrl
-            : contentsUrl as SdkOptional<String>,
-        contributorsUrl: identical(contributorsUrl, sdkOmittedValue)
-            ? this.contributorsUrl
-            : contributorsUrl as SdkOptional<String>,
-        deploymentsUrl: identical(deploymentsUrl, sdkOmittedValue)
-            ? this.deploymentsUrl
-            : deploymentsUrl as SdkOptional<String>,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as SdkOptional<dynamic>,
-        downloadsUrl: identical(downloadsUrl, sdkOmittedValue)
-            ? this.downloadsUrl
-            : downloadsUrl as SdkOptional<String>,
+          Object? organizationsUrl = sdkOmittedValue,
+          Object? receivedEventsUrl = sdkOmittedValue,
+          Object? reposUrl = sdkOmittedValue,
+          Object? siteAdmin = sdkOmittedValue,
+          Object? starredUrl = sdkOmittedValue,
+          Object? subscriptionsUrl = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? userViewType = sdkOmittedValue}) =>
+      WebhookDeploymentStatusCreatedWorkflowRunTriggeringActor(
+        avatarUrl: identical(avatarUrl, sdkOmittedValue)
+            ? this.avatarUrl
+            : avatarUrl as SdkOptional<String>,
+        deleted: identical(deleted, sdkOmittedValue)
+            ? this.deleted
+            : deleted as SdkOptional<bool>,
+        email: identical(email, sdkOmittedValue)
+            ? this.email
+            : email as SdkOptional<String?>,
         eventsUrl: identical(eventsUrl, sdkOmittedValue)
             ? this.eventsUrl
             : eventsUrl as SdkOptional<String>,
-        fork: identical(fork, sdkOmittedValue)
-            ? this.fork
-            : fork as SdkOptional<bool>,
-        forksUrl: identical(forksUrl, sdkOmittedValue)
-            ? this.forksUrl
-            : forksUrl as SdkOptional<String>,
-        fullName: identical(fullName, sdkOmittedValue)
-            ? this.fullName
-            : fullName as SdkOptional<String>,
-        gitCommitsUrl: identical(gitCommitsUrl, sdkOmittedValue)
-            ? this.gitCommitsUrl
-            : gitCommitsUrl as SdkOptional<String>,
-        gitRefsUrl: identical(gitRefsUrl, sdkOmittedValue)
-            ? this.gitRefsUrl
-            : gitRefsUrl as SdkOptional<String>,
-        gitTagsUrl: identical(gitTagsUrl, sdkOmittedValue)
-            ? this.gitTagsUrl
-            : gitTagsUrl as SdkOptional<String>,
-        hooksUrl: identical(hooksUrl, sdkOmittedValue)
-            ? this.hooksUrl
-            : hooksUrl as SdkOptional<String>,
+        followersUrl: identical(followersUrl, sdkOmittedValue)
+            ? this.followersUrl
+            : followersUrl as SdkOptional<String>,
+        followingUrl: identical(followingUrl, sdkOmittedValue)
+            ? this.followingUrl
+            : followingUrl as SdkOptional<String>,
+        gistsUrl: identical(gistsUrl, sdkOmittedValue)
+            ? this.gistsUrl
+            : gistsUrl as SdkOptional<String>,
+        gravatarId: identical(gravatarId, sdkOmittedValue)
+            ? this.gravatarId
+            : gravatarId as SdkOptional<String>,
         htmlUrl: identical(htmlUrl, sdkOmittedValue)
             ? this.htmlUrl
             : htmlUrl as SdkOptional<String>,
-        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-        issueCommentUrl: identical(issueCommentUrl, sdkOmittedValue)
-            ? this.issueCommentUrl
-            : issueCommentUrl as SdkOptional<String>,
-        issueEventsUrl: identical(issueEventsUrl, sdkOmittedValue)
-            ? this.issueEventsUrl
-            : issueEventsUrl as SdkOptional<String>,
-        issuesUrl: identical(issuesUrl, sdkOmittedValue)
-            ? this.issuesUrl
-            : issuesUrl as SdkOptional<String>,
-        keysUrl: identical(keysUrl, sdkOmittedValue)
-            ? this.keysUrl
-            : keysUrl as SdkOptional<String>,
-        labelsUrl: identical(labelsUrl, sdkOmittedValue)
-            ? this.labelsUrl
-            : labelsUrl as SdkOptional<String>,
-        languagesUrl: identical(languagesUrl, sdkOmittedValue)
-            ? this.languagesUrl
-            : languagesUrl as SdkOptional<String>,
-        mergesUrl: identical(mergesUrl, sdkOmittedValue)
-            ? this.mergesUrl
-            : mergesUrl as SdkOptional<String>,
-        milestonesUrl: identical(milestonesUrl, sdkOmittedValue)
-            ? this.milestonesUrl
-            : milestonesUrl as SdkOptional<String>,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        login: identical(login, sdkOmittedValue) ? this.login : login as String,
         name: identical(name, sdkOmittedValue)
             ? this.name
             : name as SdkOptional<String>,
         nodeId: identical(nodeId, sdkOmittedValue)
             ? this.nodeId
             : nodeId as SdkOptional<String>,
-        notificationsUrl: identical(notificationsUrl, sdkOmittedValue)
-            ? this.notificationsUrl
-            : notificationsUrl as SdkOptional<String>,
-        owner: identical(owner, sdkOmittedValue)
-            ? this.owner
-            : owner as SdkOptional<
-                WebhookDeploymentStatusCreatedWorkflowRunRepositoryOwner>,
-        private: identical(private, sdkOmittedValue)
-            ? this.private
-            : private as SdkOptional<bool>,
-        pullsUrl: identical(pullsUrl, sdkOmittedValue)
-            ? this.pullsUrl
-            : pullsUrl as SdkOptional<String>,
-        releasesUrl: identical(releasesUrl, sdkOmittedValue)
-            ? this.releasesUrl
-            : releasesUrl as SdkOptional<String>,
-        stargazersUrl: identical(stargazersUrl, sdkOmittedValue)
-            ? this.stargazersUrl
-            : stargazersUrl as SdkOptional<String>,
-        statusesUrl: identical(statusesUrl, sdkOmittedValue)
-            ? this.statusesUrl
-            : statusesUrl as SdkOptional<String>,
-        subscribersUrl: identical(subscribersUrl, sdkOmittedValue)
-            ? this.subscribersUrl
-            : subscribersUrl as SdkOptional<String>,
-        subscriptionUrl: identical(subscriptionUrl, sdkOmittedValue)
-            ? this.subscriptionUrl
-            : subscriptionUrl as SdkOptional<String>,
-        tagsUrl: identical(tagsUrl, sdkOmittedValue)
-            ? this.tagsUrl
-            : tagsUrl as SdkOptional<String>,
-        teamsUrl: identical(teamsUrl, sdkOmittedValue)
-            ? this.teamsUrl
-            : teamsUrl as SdkOptional<String>,
-        treesUrl: identical(treesUrl, sdkOmittedValue)
-            ? this.treesUrl
-            : treesUrl as SdkOptional<String>,
+        organizationsUrl: identical(organizationsUrl, sdkOmittedValue)
+            ? this.organizationsUrl
+            : organizationsUrl as SdkOptional<String>,
+        receivedEventsUrl: identical(receivedEventsUrl, sdkOmittedValue)
+            ? this.receivedEventsUrl
+            : receivedEventsUrl as SdkOptional<String>,
+        reposUrl: identical(reposUrl, sdkOmittedValue)
+            ? this.reposUrl
+            : reposUrl as SdkOptional<String>,
+        siteAdmin: identical(siteAdmin, sdkOmittedValue)
+            ? this.siteAdmin
+            : siteAdmin as SdkOptional<bool>,
+        starredUrl: identical(starredUrl, sdkOmittedValue)
+            ? this.starredUrl
+            : starredUrl as SdkOptional<String>,
+        subscriptionsUrl: identical(subscriptionsUrl, sdkOmittedValue)
+            ? this.subscriptionsUrl
+            : subscriptionsUrl as SdkOptional<String>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as SdkOptional<
+                WebhookDeploymentStatusCreatedWorkflowRunTriggeringActorType>,
         url: identical(url, sdkOmittedValue)
             ? this.url
             : url as SdkOptional<String>,
+        userViewType: identical(userViewType, sdkOmittedValue)
+            ? this.userViewType
+            : userViewType as SdkOptional<String>,
       );
 
-  factory WebhookDeploymentStatusCreatedWorkflowRunRepository.fromJson(
+  factory WebhookDeploymentStatusCreatedWorkflowRunTriggeringActor.fromJson(
           Map<String, dynamic> json) =>
-      WebhookDeploymentStatusCreatedWorkflowRunRepository(
-        archiveUrl: json['archive_url'] != null
-            ? SdkPresent((json['archive_url'] as String?)!)
+      WebhookDeploymentStatusCreatedWorkflowRunTriggeringActor(
+        avatarUrl: json['avatar_url'] != null
+            ? SdkPresent((json['avatar_url'] as String?)!)
             : const SdkOmitted(),
-        assigneesUrl: json['assignees_url'] != null
-            ? SdkPresent((json['assignees_url'] as String?)!)
+        deleted: json['deleted'] != null
+            ? SdkPresent((json['deleted'] as bool?)!)
             : const SdkOmitted(),
-        blobsUrl: json['blobs_url'] != null
-            ? SdkPresent((json['blobs_url'] as String?)!)
-            : const SdkOmitted(),
-        branchesUrl: json['branches_url'] != null
-            ? SdkPresent((json['branches_url'] as String?)!)
-            : const SdkOmitted(),
-        collaboratorsUrl: json['collaborators_url'] != null
-            ? SdkPresent((json['collaborators_url'] as String?)!)
-            : const SdkOmitted(),
-        commentsUrl: json['comments_url'] != null
-            ? SdkPresent((json['comments_url'] as String?)!)
-            : const SdkOmitted(),
-        commitsUrl: json['commits_url'] != null
-            ? SdkPresent((json['commits_url'] as String?)!)
-            : const SdkOmitted(),
-        compareUrl: json['compare_url'] != null
-            ? SdkPresent((json['compare_url'] as String?)!)
-            : const SdkOmitted(),
-        contentsUrl: json['contents_url'] != null
-            ? SdkPresent((json['contents_url'] as String?)!)
-            : const SdkOmitted(),
-        contributorsUrl: json['contributors_url'] != null
-            ? SdkPresent((json['contributors_url'] as String?)!)
-            : const SdkOmitted(),
-        deploymentsUrl: json['deployments_url'] != null
-            ? SdkPresent((json['deployments_url'] as String?)!)
-            : const SdkOmitted(),
-        description: json.containsKey('description')
-            ? SdkPresent(json['description'])
-            : const SdkOmitted(),
-        downloadsUrl: json['downloads_url'] != null
-            ? SdkPresent((json['downloads_url'] as String?)!)
+        email: json.containsKey('email')
+            ? SdkPresent(json['email'] as String?)
             : const SdkOmitted(),
         eventsUrl: json['events_url'] != null
             ? SdkPresent((json['events_url'] as String?)!)
             : const SdkOmitted(),
-        fork: json['fork'] != null
-            ? SdkPresent((json['fork'] as bool?)!)
+        followersUrl: json['followers_url'] != null
+            ? SdkPresent((json['followers_url'] as String?)!)
             : const SdkOmitted(),
-        forksUrl: json['forks_url'] != null
-            ? SdkPresent((json['forks_url'] as String?)!)
+        followingUrl: json['following_url'] != null
+            ? SdkPresent((json['following_url'] as String?)!)
             : const SdkOmitted(),
-        fullName: json['full_name'] != null
-            ? SdkPresent((json['full_name'] as String?)!)
+        gistsUrl: json['gists_url'] != null
+            ? SdkPresent((json['gists_url'] as String?)!)
             : const SdkOmitted(),
-        gitCommitsUrl: json['git_commits_url'] != null
-            ? SdkPresent((json['git_commits_url'] as String?)!)
-            : const SdkOmitted(),
-        gitRefsUrl: json['git_refs_url'] != null
-            ? SdkPresent((json['git_refs_url'] as String?)!)
-            : const SdkOmitted(),
-        gitTagsUrl: json['git_tags_url'] != null
-            ? SdkPresent((json['git_tags_url'] as String?)!)
-            : const SdkOmitted(),
-        hooksUrl: json['hooks_url'] != null
-            ? SdkPresent((json['hooks_url'] as String?)!)
+        gravatarId: json['gravatar_id'] != null
+            ? SdkPresent((json['gravatar_id'] as String?)!)
             : const SdkOmitted(),
         htmlUrl: json['html_url'] != null
             ? SdkPresent((json['html_url'] as String?)!)
             : const SdkOmitted(),
-        id: json['id'] != null
-            ? SdkPresent(((json['id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        issueCommentUrl: json['issue_comment_url'] != null
-            ? SdkPresent((json['issue_comment_url'] as String?)!)
-            : const SdkOmitted(),
-        issueEventsUrl: json['issue_events_url'] != null
-            ? SdkPresent((json['issue_events_url'] as String?)!)
-            : const SdkOmitted(),
-        issuesUrl: json['issues_url'] != null
-            ? SdkPresent((json['issues_url'] as String?)!)
-            : const SdkOmitted(),
-        keysUrl: json['keys_url'] != null
-            ? SdkPresent((json['keys_url'] as String?)!)
-            : const SdkOmitted(),
-        labelsUrl: json['labels_url'] != null
-            ? SdkPresent((json['labels_url'] as String?)!)
-            : const SdkOmitted(),
-        languagesUrl: json['languages_url'] != null
-            ? SdkPresent((json['languages_url'] as String?)!)
-            : const SdkOmitted(),
-        mergesUrl: json['merges_url'] != null
-            ? SdkPresent((json['merges_url'] as String?)!)
-            : const SdkOmitted(),
-        milestonesUrl: json['milestones_url'] != null
-            ? SdkPresent((json['milestones_url'] as String?)!)
-            : const SdkOmitted(),
+        id: ((json['id'] as num?)?.toInt())!,
+        login: (json['login'] as String?)!,
         name: json['name'] != null
             ? SdkPresent((json['name'] as String?)!)
             : const SdkOmitted(),
         nodeId: json['node_id'] != null
             ? SdkPresent((json['node_id'] as String?)!)
             : const SdkOmitted(),
-        notificationsUrl: json['notifications_url'] != null
-            ? SdkPresent((json['notifications_url'] as String?)!)
+        organizationsUrl: json['organizations_url'] != null
+            ? SdkPresent((json['organizations_url'] as String?)!)
             : const SdkOmitted(),
-        owner: json['owner'] != null
-            ? SdkPresent((json['owner'] != null
-                ? WebhookDeploymentStatusCreatedWorkflowRunRepositoryOwner
-                    .fromJson(json['owner'] as Map<String, dynamic>)
+        receivedEventsUrl: json['received_events_url'] != null
+            ? SdkPresent((json['received_events_url'] as String?)!)
+            : const SdkOmitted(),
+        reposUrl: json['repos_url'] != null
+            ? SdkPresent((json['repos_url'] as String?)!)
+            : const SdkOmitted(),
+        siteAdmin: json['site_admin'] != null
+            ? SdkPresent((json['site_admin'] as bool?)!)
+            : const SdkOmitted(),
+        starredUrl: json['starred_url'] != null
+            ? SdkPresent((json['starred_url'] as String?)!)
+            : const SdkOmitted(),
+        subscriptionsUrl: json['subscriptions_url'] != null
+            ? SdkPresent((json['subscriptions_url'] as String?)!)
+            : const SdkOmitted(),
+        type_: json['type'] != null
+            ? SdkPresent((json['type'] != null
+                ? WebhookDeploymentStatusCreatedWorkflowRunTriggeringActorType
+                    .fromJson(json['type'] as String)
                 : null)!)
-            : const SdkOmitted(),
-        private: json['private'] != null
-            ? SdkPresent((json['private'] as bool?)!)
-            : const SdkOmitted(),
-        pullsUrl: json['pulls_url'] != null
-            ? SdkPresent((json['pulls_url'] as String?)!)
-            : const SdkOmitted(),
-        releasesUrl: json['releases_url'] != null
-            ? SdkPresent((json['releases_url'] as String?)!)
-            : const SdkOmitted(),
-        stargazersUrl: json['stargazers_url'] != null
-            ? SdkPresent((json['stargazers_url'] as String?)!)
-            : const SdkOmitted(),
-        statusesUrl: json['statuses_url'] != null
-            ? SdkPresent((json['statuses_url'] as String?)!)
-            : const SdkOmitted(),
-        subscribersUrl: json['subscribers_url'] != null
-            ? SdkPresent((json['subscribers_url'] as String?)!)
-            : const SdkOmitted(),
-        subscriptionUrl: json['subscription_url'] != null
-            ? SdkPresent((json['subscription_url'] as String?)!)
-            : const SdkOmitted(),
-        tagsUrl: json['tags_url'] != null
-            ? SdkPresent((json['tags_url'] as String?)!)
-            : const SdkOmitted(),
-        teamsUrl: json['teams_url'] != null
-            ? SdkPresent((json['teams_url'] as String?)!)
-            : const SdkOmitted(),
-        treesUrl: json['trees_url'] != null
-            ? SdkPresent((json['trees_url'] as String?)!)
             : const SdkOmitted(),
         url: json['url'] != null
             ? SdkPresent((json['url'] as String?)!)
             : const SdkOmitted(),
+        userViewType: json['user_view_type'] != null
+            ? SdkPresent((json['user_view_type'] as String?)!)
+            : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (archiveUrl) {
+        ...switch (avatarUrl) {
           SdkPresent<String>(value: final value) => {
-              'archive_url': value,
+              'avatar_url': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (assigneesUrl) {
-          SdkPresent<String>(value: final value) => {
-              'assignees_url': value,
+        ...switch (deleted) {
+          SdkPresent<bool>(value: final value) => {
+              'deleted': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (blobsUrl) {
-          SdkPresent<String>(value: final value) => {
-              'blobs_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (branchesUrl) {
-          SdkPresent<String>(value: final value) => {
-              'branches_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (collaboratorsUrl) {
-          SdkPresent<String>(value: final value) => {
-              'collaborators_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (commentsUrl) {
-          SdkPresent<String>(value: final value) => {
-              'comments_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (commitsUrl) {
-          SdkPresent<String>(value: final value) => {
-              'commits_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (compareUrl) {
-          SdkPresent<String>(value: final value) => {
-              'compare_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (contentsUrl) {
-          SdkPresent<String>(value: final value) => {
-              'contents_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (contributorsUrl) {
-          SdkPresent<String>(value: final value) => {
-              'contributors_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (deploymentsUrl) {
-          SdkPresent<String>(value: final value) => {
-              'deployments_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (description) {
-          SdkPresent<dynamic>(value: final value) => {
-              'description': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (downloadsUrl) {
-          SdkPresent<String>(value: final value) => {
-              'downloads_url': value,
+        ...switch (email) {
+          SdkPresent<String?>(value: final value) => {
+              'email': value,
             },
           _ => const <String, dynamic>{},
         },
@@ -663,45 +309,27 @@ class WebhookDeploymentStatusCreatedWorkflowRunRepository {
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (fork) {
-          SdkPresent<bool>(value: final value) => {
-              'fork': value,
+        ...switch (followersUrl) {
+          SdkPresent<String>(value: final value) => {
+              'followers_url': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (forksUrl) {
+        ...switch (followingUrl) {
           SdkPresent<String>(value: final value) => {
-              'forks_url': value,
+              'following_url': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (fullName) {
+        ...switch (gistsUrl) {
           SdkPresent<String>(value: final value) => {
-              'full_name': value,
+              'gists_url': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (gitCommitsUrl) {
+        ...switch (gravatarId) {
           SdkPresent<String>(value: final value) => {
-              'git_commits_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (gitRefsUrl) {
-          SdkPresent<String>(value: final value) => {
-              'git_refs_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (gitTagsUrl) {
-          SdkPresent<String>(value: final value) => {
-              'git_tags_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (hooksUrl) {
-          SdkPresent<String>(value: final value) => {
-              'hooks_url': value,
+              'gravatar_id': value,
             },
           _ => const <String, dynamic>{},
         },
@@ -711,60 +339,8 @@ class WebhookDeploymentStatusCreatedWorkflowRunRepository {
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (id) {
-          SdkPresent<int>(value: final value) => {
-              'id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (issueCommentUrl) {
-          SdkPresent<String>(value: final value) => {
-              'issue_comment_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (issueEventsUrl) {
-          SdkPresent<String>(value: final value) => {
-              'issue_events_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (issuesUrl) {
-          SdkPresent<String>(value: final value) => {
-              'issues_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (keysUrl) {
-          SdkPresent<String>(value: final value) => {
-              'keys_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (labelsUrl) {
-          SdkPresent<String>(value: final value) => {
-              'labels_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (languagesUrl) {
-          SdkPresent<String>(value: final value) => {
-              'languages_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (mergesUrl) {
-          SdkPresent<String>(value: final value) => {
-              'merges_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (milestonesUrl) {
-          SdkPresent<String>(value: final value) => {
-              'milestones_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
+        'id': id,
+        'login': login,
         ...switch (name) {
           SdkPresent<String>(value: final value) => {
               'name': value,
@@ -777,84 +353,61 @@ class WebhookDeploymentStatusCreatedWorkflowRunRepository {
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (notificationsUrl) {
+        ...switch (organizationsUrl) {
           SdkPresent<String>(value: final value) => {
-              'notifications_url': value,
+              'organizations_url': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (owner) {
-          SdkPresent<WebhookDeploymentStatusCreatedWorkflowRunRepositoryOwner>(
+        ...switch (receivedEventsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'received_events_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (reposUrl) {
+          SdkPresent<String>(value: final value) => {
+              'repos_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (siteAdmin) {
+          SdkPresent<bool>(value: final value) => {
+              'site_admin': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (starredUrl) {
+          SdkPresent<String>(value: final value) => {
+              'starred_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (subscriptionsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'subscriptions_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (type_) {
+          SdkPresent<
+                WebhookDeploymentStatusCreatedWorkflowRunTriggeringActorType>(
             value: final value
           ) =>
             {
-              'owner': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (private) {
-          SdkPresent<bool>(value: final value) => {
-              'private': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pullsUrl) {
-          SdkPresent<String>(value: final value) => {
-              'pulls_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (releasesUrl) {
-          SdkPresent<String>(value: final value) => {
-              'releases_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (stargazersUrl) {
-          SdkPresent<String>(value: final value) => {
-              'stargazers_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (statusesUrl) {
-          SdkPresent<String>(value: final value) => {
-              'statuses_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (subscribersUrl) {
-          SdkPresent<String>(value: final value) => {
-              'subscribers_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (subscriptionUrl) {
-          SdkPresent<String>(value: final value) => {
-              'subscription_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (tagsUrl) {
-          SdkPresent<String>(value: final value) => {
-              'tags_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (teamsUrl) {
-          SdkPresent<String>(value: final value) => {
-              'teams_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (treesUrl) {
-          SdkPresent<String>(value: final value) => {
-              'trees_url': value,
+              'type': value.toJson(),
             },
           _ => const <String, dynamic>{},
         },
         ...switch (url) {
           SdkPresent<String>(value: final value) => {
               'url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (userViewType) {
+          SdkPresent<String>(value: final value) => {
+              'user_view_type': value,
             },
           _ => const <String, dynamic>{},
         },

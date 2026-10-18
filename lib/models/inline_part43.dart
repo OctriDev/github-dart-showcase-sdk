@@ -4,191 +4,6 @@
 part of 'inline.dart';
 
 // Inline operation models (part 43)
-/// Optional enumerated value serialized in the `type` wire field.
-final class WebhookCheckSuiteCompletedCheckSuiteAppOwnerType {
-  final String value;
-
-  const WebhookCheckSuiteCompletedCheckSuiteAppOwnerType._(this.value);
-
-  factory WebhookCheckSuiteCompletedCheckSuiteAppOwnerType.fromJson(
-          String value) =>
-      WebhookCheckSuiteCompletedCheckSuiteAppOwnerType._(value);
-
-  static const bot = WebhookCheckSuiteCompletedCheckSuiteAppOwnerType._('Bot');
-  static const user =
-      WebhookCheckSuiteCompletedCheckSuiteAppOwnerType._('User');
-  static const organization =
-      WebhookCheckSuiteCompletedCheckSuiteAppOwnerType._('Organization');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookCheckSuiteCompletedCheckSuiteAppOwnerType &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `actions` wire field.
-final class WebhookCheckSuiteCompletedCheckSuiteAppPermissionsActions {
-  final String value;
-
-  const WebhookCheckSuiteCompletedCheckSuiteAppPermissionsActions._(this.value);
-
-  factory WebhookCheckSuiteCompletedCheckSuiteAppPermissionsActions.fromJson(
-          String value) =>
-      WebhookCheckSuiteCompletedCheckSuiteAppPermissionsActions._(value);
-
-  static const read =
-      WebhookCheckSuiteCompletedCheckSuiteAppPermissionsActions._('read');
-  static const write =
-      WebhookCheckSuiteCompletedCheckSuiteAppPermissionsActions._('write');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookCheckSuiteCompletedCheckSuiteAppPermissionsActions &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `administration` wire field.
-final class WebhookCheckSuiteCompletedCheckSuiteAppPermissionsAdministration {
-  final String value;
-
-  const WebhookCheckSuiteCompletedCheckSuiteAppPermissionsAdministration._(
-      this.value);
-
-  factory WebhookCheckSuiteCompletedCheckSuiteAppPermissionsAdministration.fromJson(
-          String value) =>
-      WebhookCheckSuiteCompletedCheckSuiteAppPermissionsAdministration._(value);
-
-  static const read =
-      WebhookCheckSuiteCompletedCheckSuiteAppPermissionsAdministration._(
-          'read');
-  static const write =
-      WebhookCheckSuiteCompletedCheckSuiteAppPermissionsAdministration._(
-          'write');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is WebhookCheckSuiteCompletedCheckSuiteAppPermissionsAdministration &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `checks` wire field.
-final class WebhookCheckSuiteCompletedCheckSuiteAppPermissionsChecks {
-  final String value;
-
-  const WebhookCheckSuiteCompletedCheckSuiteAppPermissionsChecks._(this.value);
-
-  factory WebhookCheckSuiteCompletedCheckSuiteAppPermissionsChecks.fromJson(
-          String value) =>
-      WebhookCheckSuiteCompletedCheckSuiteAppPermissionsChecks._(value);
-
-  static const read =
-      WebhookCheckSuiteCompletedCheckSuiteAppPermissionsChecks._('read');
-  static const write =
-      WebhookCheckSuiteCompletedCheckSuiteAppPermissionsChecks._('write');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookCheckSuiteCompletedCheckSuiteAppPermissionsChecks &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `content_references` wire field.
-final class WebhookCheckSuiteCompletedCheckSuiteAppPermissionsContentReferences {
-  final String value;
-
-  const WebhookCheckSuiteCompletedCheckSuiteAppPermissionsContentReferences._(
-      this.value);
-
-  factory WebhookCheckSuiteCompletedCheckSuiteAppPermissionsContentReferences.fromJson(
-          String value) =>
-      WebhookCheckSuiteCompletedCheckSuiteAppPermissionsContentReferences._(
-          value);
-
-  static const read =
-      WebhookCheckSuiteCompletedCheckSuiteAppPermissionsContentReferences._(
-          'read');
-  static const write =
-      WebhookCheckSuiteCompletedCheckSuiteAppPermissionsContentReferences._(
-          'write');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is WebhookCheckSuiteCompletedCheckSuiteAppPermissionsContentReferences &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Optional enumerated value serialized in the `contents` wire field.
-final class WebhookCheckSuiteCompletedCheckSuiteAppPermissionsContents {
-  final String value;
-
-  const WebhookCheckSuiteCompletedCheckSuiteAppPermissionsContents._(
-      this.value);
-
-  factory WebhookCheckSuiteCompletedCheckSuiteAppPermissionsContents.fromJson(
-          String value) =>
-      WebhookCheckSuiteCompletedCheckSuiteAppPermissionsContents._(value);
-
-  static const read =
-      WebhookCheckSuiteCompletedCheckSuiteAppPermissionsContents._('read');
-  static const write =
-      WebhookCheckSuiteCompletedCheckSuiteAppPermissionsContents._('write');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookCheckSuiteCompletedCheckSuiteAppPermissionsContents &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
 /// Optional enumerated value serialized in the `deployments` wire field.
 final class WebhookCheckSuiteCompletedCheckSuiteAppPermissionsDeployments {
   final String value;
@@ -389,6 +204,209 @@ final class WebhookCheckSuiteCompletedCheckSuiteAppPermissionsMembers {
   @override
   bool operator ==(Object other) =>
       other is WebhookCheckSuiteCompletedCheckSuiteAppPermissionsMembers &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Optional enumerated value serialized in the `metadata` wire field.
+final class WebhookCheckSuiteCompletedCheckSuiteAppPermissionsMetadata {
+  final String value;
+
+  const WebhookCheckSuiteCompletedCheckSuiteAppPermissionsMetadata._(
+      this.value);
+
+  factory WebhookCheckSuiteCompletedCheckSuiteAppPermissionsMetadata.fromJson(
+          String value) =>
+      WebhookCheckSuiteCompletedCheckSuiteAppPermissionsMetadata._(value);
+
+  static const read =
+      WebhookCheckSuiteCompletedCheckSuiteAppPermissionsMetadata._('read');
+  static const write =
+      WebhookCheckSuiteCompletedCheckSuiteAppPermissionsMetadata._('write');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookCheckSuiteCompletedCheckSuiteAppPermissionsMetadata &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Optional enumerated value serialized in the `organization_administration` wire field.
+final class WebhookCheckSuiteCompletedCheckSuiteAppPermissionsOrganizationAdministration {
+  final String value;
+
+  const WebhookCheckSuiteCompletedCheckSuiteAppPermissionsOrganizationAdministration._(
+      this.value);
+
+  factory WebhookCheckSuiteCompletedCheckSuiteAppPermissionsOrganizationAdministration.fromJson(
+          String value) =>
+      WebhookCheckSuiteCompletedCheckSuiteAppPermissionsOrganizationAdministration
+          ._(value);
+
+  static const read =
+      WebhookCheckSuiteCompletedCheckSuiteAppPermissionsOrganizationAdministration
+          ._('read');
+  static const write =
+      WebhookCheckSuiteCompletedCheckSuiteAppPermissionsOrganizationAdministration
+          ._('write');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookCheckSuiteCompletedCheckSuiteAppPermissionsOrganizationAdministration &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Optional enumerated value serialized in the `organization_hooks` wire field.
+final class WebhookCheckSuiteCompletedCheckSuiteAppPermissionsOrganizationHooks {
+  final String value;
+
+  const WebhookCheckSuiteCompletedCheckSuiteAppPermissionsOrganizationHooks._(
+      this.value);
+
+  factory WebhookCheckSuiteCompletedCheckSuiteAppPermissionsOrganizationHooks.fromJson(
+          String value) =>
+      WebhookCheckSuiteCompletedCheckSuiteAppPermissionsOrganizationHooks._(
+          value);
+
+  static const read =
+      WebhookCheckSuiteCompletedCheckSuiteAppPermissionsOrganizationHooks._(
+          'read');
+  static const write =
+      WebhookCheckSuiteCompletedCheckSuiteAppPermissionsOrganizationHooks._(
+          'write');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookCheckSuiteCompletedCheckSuiteAppPermissionsOrganizationHooks &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Optional enumerated value serialized in the `organization_packages` wire field.
+final class WebhookCheckSuiteCompletedCheckSuiteAppPermissionsOrganizationPackages {
+  final String value;
+
+  const WebhookCheckSuiteCompletedCheckSuiteAppPermissionsOrganizationPackages._(
+      this.value);
+
+  factory WebhookCheckSuiteCompletedCheckSuiteAppPermissionsOrganizationPackages.fromJson(
+          String value) =>
+      WebhookCheckSuiteCompletedCheckSuiteAppPermissionsOrganizationPackages._(
+          value);
+
+  static const read =
+      WebhookCheckSuiteCompletedCheckSuiteAppPermissionsOrganizationPackages._(
+          'read');
+  static const write =
+      WebhookCheckSuiteCompletedCheckSuiteAppPermissionsOrganizationPackages._(
+          'write');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookCheckSuiteCompletedCheckSuiteAppPermissionsOrganizationPackages &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Optional enumerated value serialized in the `organization_plan` wire field.
+final class WebhookCheckSuiteCompletedCheckSuiteAppPermissionsOrganizationPlan {
+  final String value;
+
+  const WebhookCheckSuiteCompletedCheckSuiteAppPermissionsOrganizationPlan._(
+      this.value);
+
+  factory WebhookCheckSuiteCompletedCheckSuiteAppPermissionsOrganizationPlan.fromJson(
+          String value) =>
+      WebhookCheckSuiteCompletedCheckSuiteAppPermissionsOrganizationPlan._(
+          value);
+
+  static const read =
+      WebhookCheckSuiteCompletedCheckSuiteAppPermissionsOrganizationPlan._(
+          'read');
+  static const write =
+      WebhookCheckSuiteCompletedCheckSuiteAppPermissionsOrganizationPlan._(
+          'write');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookCheckSuiteCompletedCheckSuiteAppPermissionsOrganizationPlan &&
+      other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Optional enumerated value serialized in the `organization_projects` wire field.
+final class WebhookCheckSuiteCompletedCheckSuiteAppPermissionsOrganizationProjects {
+  final String value;
+
+  const WebhookCheckSuiteCompletedCheckSuiteAppPermissionsOrganizationProjects._(
+      this.value);
+
+  factory WebhookCheckSuiteCompletedCheckSuiteAppPermissionsOrganizationProjects.fromJson(
+          String value) =>
+      WebhookCheckSuiteCompletedCheckSuiteAppPermissionsOrganizationProjects._(
+          value);
+
+  static const read =
+      WebhookCheckSuiteCompletedCheckSuiteAppPermissionsOrganizationProjects._(
+          'read');
+  static const write =
+      WebhookCheckSuiteCompletedCheckSuiteAppPermissionsOrganizationProjects._(
+          'write');
+  static const admin =
+      WebhookCheckSuiteCompletedCheckSuiteAppPermissionsOrganizationProjects._(
+          'admin');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other
+          is WebhookCheckSuiteCompletedCheckSuiteAppPermissionsOrganizationProjects &&
       other.value == value;
 
   @override

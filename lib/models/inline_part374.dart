@@ -4,673 +4,521 @@
 part of 'inline.dart';
 
 // Inline operation models (part 374)
-class IssuesUpdateResponse {
+class CopilotSpacesUpdateForUserRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Required `int64`-formatted value serialized in the `id` wire field.
-  final int id;
+  /// The name of the Copilot Space.
+  final SdkOptional<String> name;
 
-  /// Required `string` value serialized in the `node_id` wire field.
-  final String nodeId;
+  /// A description of the Copilot Space.
+  final SdkOptional<String> description;
 
-  /// URL for the issue
-  final String url;
+  /// General instructions for the Copilot Space.
+  final SdkOptional<String> generalInstructions;
 
-  /// Required `uri`-formatted value serialized in the `repository_url` wire field.
-  final String repositoryUrl;
+  /// The base role that determines default permissions for the space. Changing this field requires admin permissions. - `no_access`: No default access (default) - `reader`: Makes the space publicly readable Note: User spaces do not support writer or admin base roles.
+  final SdkOptional<CopilotSpacesUpdateForUserRequestBodyBaseRole> baseRole;
 
-  /// Required `string` value serialized in the `labels_url` wire field.
-  final String labelsUrl;
+  /// Resources to attach to the space.
+  final SdkOptional<
+          List<CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItem>>
+      resourcesAttributes;
 
-  /// Required `uri`-formatted value serialized in the `comments_url` wire field.
-  final String commentsUrl;
+  const CopilotSpacesUpdateForUserRequestBody(
+      {this.name = const SdkOmitted(),
+      this.description = const SdkOmitted(),
+      this.generalInstructions = const SdkOmitted(),
+      this.baseRole = const SdkOmitted(),
+      this.resourcesAttributes = const SdkOmitted()});
 
-  /// Required `uri`-formatted value serialized in the `events_url` wire field.
-  final String eventsUrl;
+  CopilotSpacesUpdateForUserRequestBody Function(
+      {SdkOptional<String> name,
+      SdkOptional<String> description,
+      SdkOptional<String> generalInstructions,
+      SdkOptional<CopilotSpacesUpdateForUserRequestBodyBaseRole> baseRole,
+      SdkOptional<
+              List<
+                  CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItem>>
+          resourcesAttributes}) get copyWith => _copyWith;
 
-  /// Required `uri`-formatted value serialized in the `html_url` wire field.
-  final String htmlUrl;
-
-  /// Number uniquely identifying the issue within its repository
-  final int number;
-
-  /// State of the issue; either 'open' or 'closed'
-  final String state;
-
-  /// The reason for the current state
-  final SdkOptional<IssueStateReason?> stateReason;
-
-  /// Title of the issue
-  final String title;
-
-  /// Contents of the issue
-  final SdkOptional<String?> body;
-
-  /// A GitHub user.
-  final NullableSimpleUser? user;
-
-  /// Labels to associate with this issue; pass one or more label names to replace the set of labels on this issue; send an empty array to clear all labels from the issue; note that the labels are silently dropped for users without push access to the repository
-  final List<dynamic> labels;
-
-  /// A GitHub user.
-  final NullableSimpleUser? assignee;
-
-  /// Optional array value serialized in the `assignees` wire field.
-  final SdkOptional<List<SimpleUser>> assignees;
-
-  /// A collection of related issues and pull requests.
-  final NullableMilestone? milestone;
-
-  /// Required `boolean` value serialized in the `locked` wire field.
-  final bool locked;
-
-  /// Optional `string` value serialized in the `active_lock_reason` wire field.
-  final SdkOptional<String?> activeLockReason;
-
-  /// Required `integer` value serialized in the `comments` wire field.
-  final int comments;
-
-  /// Optional object value serialized in the `pull_request` wire field.
-  final SdkOptional<IssuePullRequest> pullRequest;
-
-  /// Required `date-time`-formatted value serialized in the `closed_at` wire field.
-  final String? closedAt;
-
-  /// Required `date-time`-formatted value serialized in the `created_at` wire field.
-  final String createdAt;
-
-  /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
-  final String updatedAt;
-
-  /// Optional `boolean` value serialized in the `draft` wire field.
-  final SdkOptional<bool> draft;
-
-  /// A GitHub user.
-  final SdkOptional<NullableSimpleUser?> closedBy;
-
-  /// Optional `string` value serialized in the `body_html` wire field.
-  final SdkOptional<String> bodyHtml;
-
-  /// Optional `string` value serialized in the `body_text` wire field.
-  final SdkOptional<String> bodyText;
-
-  /// Optional `uri`-formatted value serialized in the `timeline_url` wire field.
-  final SdkOptional<String> timelineUrl;
-
-  /// The type assigned to the issue. This is only present for issues in repositories where issue types are supported.
-  final SdkOptional<IssueType?> type_;
-
-  /// A repository on GitHub.
-  final SdkOptional<Repository> repository;
-
-  /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-  final SdkOptional<NullableIntegration?> performedViaGithubApp;
-
-  /// How the author is associated with the repository.
-  final SdkOptional<AuthorAssociation> authorAssociation;
-
-  /// Optional object value serialized in the `reactions` wire field.
-  final SdkOptional<ReactionRollup> reactions;
-
-  /// Optional object value serialized in the `sub_issues_summary` wire field.
-  final SdkOptional<SubIssuesSummary> subIssuesSummary;
-
-  /// URL to get the parent issue of this issue, if it is a sub-issue
-  final SdkOptional<String?> parentIssueUrl;
-
-  /// Comments provide a way for people to collaborate on an issue.
-  final SdkOptional<NullableIssueComment?> pinnedComment;
-
-  /// Optional object value serialized in the `issue_dependencies_summary` wire field.
-  final SdkOptional<IssueDependenciesSummary> issueDependenciesSummary;
-
-  /// Optional array value serialized in the `issue_field_values` wire field.
-  final SdkOptional<List<IssueFieldValue>> issueFieldValues;
-
-  /// Pending suggestions for each suggestible field (`type`, `issue_field_values`, `labels`, `assignees`, `state`) the request touched. Omitted for fields not in the request or with no pending or ignored suggestions. Items tagged `ignored` are echoes of the current request's inputs that were not persisted as pending suggestions.
-  final SdkOptional<IssuesUpdateResponseVariant1Suggestions> suggestions;
-
-  const IssuesUpdateResponse(
-      {required this.id,
-      required this.nodeId,
-      required this.url,
-      required this.repositoryUrl,
-      required this.labelsUrl,
-      required this.commentsUrl,
-      required this.eventsUrl,
-      required this.htmlUrl,
-      required this.number,
-      required this.state,
-      this.stateReason = const SdkOmitted(),
-      required this.title,
-      this.body = const SdkOmitted(),
-      required this.user,
-      required this.labels,
-      required this.assignee,
-      this.assignees = const SdkOmitted(),
-      required this.milestone,
-      required this.locked,
-      this.activeLockReason = const SdkOmitted(),
-      required this.comments,
-      this.pullRequest = const SdkOmitted(),
-      required this.closedAt,
-      required this.createdAt,
-      required this.updatedAt,
-      this.draft = const SdkOmitted(),
-      this.closedBy = const SdkOmitted(),
-      this.bodyHtml = const SdkOmitted(),
-      this.bodyText = const SdkOmitted(),
-      this.timelineUrl = const SdkOmitted(),
-      this.type_ = const SdkOmitted(),
-      this.repository = const SdkOmitted(),
-      this.performedViaGithubApp = const SdkOmitted(),
-      this.authorAssociation = const SdkOmitted(),
-      this.reactions = const SdkOmitted(),
-      this.subIssuesSummary = const SdkOmitted(),
-      this.parentIssueUrl = const SdkOmitted(),
-      this.pinnedComment = const SdkOmitted(),
-      this.issueDependenciesSummary = const SdkOmitted(),
-      this.issueFieldValues = const SdkOmitted(),
-      this.suggestions = const SdkOmitted()});
-
-  IssuesUpdateResponse Function(
-          {int id,
-          String nodeId,
-          String url,
-          String repositoryUrl,
-          String labelsUrl,
-          String commentsUrl,
-          String eventsUrl,
-          String htmlUrl,
-          int number,
-          String state,
-          SdkOptional<IssueStateReason?> stateReason,
-          String title,
-          SdkOptional<String?> body,
-          NullableSimpleUser? user,
-          List<dynamic> labels,
-          NullableSimpleUser? assignee,
-          SdkOptional<List<SimpleUser>> assignees,
-          NullableMilestone? milestone,
-          bool locked,
-          SdkOptional<String?> activeLockReason,
-          int comments,
-          SdkOptional<IssuePullRequest> pullRequest,
-          String? closedAt,
-          String createdAt,
-          String updatedAt,
-          SdkOptional<bool> draft,
-          SdkOptional<NullableSimpleUser?> closedBy,
-          SdkOptional<String> bodyHtml,
-          SdkOptional<String> bodyText,
-          SdkOptional<String> timelineUrl,
-          SdkOptional<IssueType?> type_,
-          SdkOptional<Repository> repository,
-          SdkOptional<NullableIntegration?> performedViaGithubApp,
-          SdkOptional<AuthorAssociation> authorAssociation,
-          SdkOptional<ReactionRollup> reactions,
-          SdkOptional<SubIssuesSummary> subIssuesSummary,
-          SdkOptional<String?> parentIssueUrl,
-          SdkOptional<NullableIssueComment?> pinnedComment,
-          SdkOptional<IssueDependenciesSummary> issueDependenciesSummary,
-          SdkOptional<List<IssueFieldValue>> issueFieldValues,
-          SdkOptional<IssuesUpdateResponseVariant1Suggestions> suggestions})
-      get copyWith => _copyWith;
-
-  IssuesUpdateResponse _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? repositoryUrl = sdkOmittedValue,
-          Object? labelsUrl = sdkOmittedValue,
-          Object? commentsUrl = sdkOmittedValue,
-          Object? eventsUrl = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? number = sdkOmittedValue,
-          Object? state = sdkOmittedValue,
-          Object? stateReason = sdkOmittedValue,
-          Object? title = sdkOmittedValue,
-          Object? body = sdkOmittedValue,
-          Object? user = sdkOmittedValue,
-          Object? labels = sdkOmittedValue,
-          Object? assignee = sdkOmittedValue,
-          Object? assignees = sdkOmittedValue,
-          Object? milestone = sdkOmittedValue,
-          Object? locked = sdkOmittedValue,
-          Object? activeLockReason = sdkOmittedValue,
-          Object? comments = sdkOmittedValue,
-          Object? pullRequest = sdkOmittedValue,
-          Object? closedAt = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue,
-          Object? draft = sdkOmittedValue,
-          Object? closedBy = sdkOmittedValue,
-          Object? bodyHtml = sdkOmittedValue,
-          Object? bodyText = sdkOmittedValue,
-          Object? timelineUrl = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue,
-          Object? repository = sdkOmittedValue,
-          Object? performedViaGithubApp = sdkOmittedValue,
-          Object? authorAssociation = sdkOmittedValue,
-          Object? reactions = sdkOmittedValue,
-          Object? subIssuesSummary = sdkOmittedValue,
-          Object? parentIssueUrl = sdkOmittedValue,
-          Object? pinnedComment = sdkOmittedValue,
-          Object? issueDependenciesSummary = sdkOmittedValue,
-          Object? issueFieldValues = sdkOmittedValue,
-          Object? suggestions = sdkOmittedValue}) =>
-      IssuesUpdateResponse(
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        repositoryUrl: identical(repositoryUrl, sdkOmittedValue)
-            ? this.repositoryUrl
-            : repositoryUrl as String,
-        labelsUrl: identical(labelsUrl, sdkOmittedValue)
-            ? this.labelsUrl
-            : labelsUrl as String,
-        commentsUrl: identical(commentsUrl, sdkOmittedValue)
-            ? this.commentsUrl
-            : commentsUrl as String,
-        eventsUrl: identical(eventsUrl, sdkOmittedValue)
-            ? this.eventsUrl
-            : eventsUrl as String,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as String,
-        number:
-            identical(number, sdkOmittedValue) ? this.number : number as int,
-        state: identical(state, sdkOmittedValue) ? this.state : state as String,
-        stateReason: identical(stateReason, sdkOmittedValue)
-            ? this.stateReason
-            : stateReason as SdkOptional<IssueStateReason?>,
-        title: identical(title, sdkOmittedValue) ? this.title : title as String,
-        body: identical(body, sdkOmittedValue)
-            ? this.body
-            : body as SdkOptional<String?>,
-        user: identical(user, sdkOmittedValue)
-            ? this.user
-            : user as NullableSimpleUser?,
-        labels: identical(labels, sdkOmittedValue)
-            ? this.labels
-            : labels as List<dynamic>,
-        assignee: identical(assignee, sdkOmittedValue)
-            ? this.assignee
-            : assignee as NullableSimpleUser?,
-        assignees: identical(assignees, sdkOmittedValue)
-            ? this.assignees
-            : assignees as SdkOptional<List<SimpleUser>>,
-        milestone: identical(milestone, sdkOmittedValue)
-            ? this.milestone
-            : milestone as NullableMilestone?,
-        locked:
-            identical(locked, sdkOmittedValue) ? this.locked : locked as bool,
-        activeLockReason: identical(activeLockReason, sdkOmittedValue)
-            ? this.activeLockReason
-            : activeLockReason as SdkOptional<String?>,
-        comments: identical(comments, sdkOmittedValue)
-            ? this.comments
-            : comments as int,
-        pullRequest: identical(pullRequest, sdkOmittedValue)
-            ? this.pullRequest
-            : pullRequest as SdkOptional<IssuePullRequest>,
-        closedAt: identical(closedAt, sdkOmittedValue)
-            ? this.closedAt
-            : closedAt as String?,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String,
-        draft: identical(draft, sdkOmittedValue)
-            ? this.draft
-            : draft as SdkOptional<bool>,
-        closedBy: identical(closedBy, sdkOmittedValue)
-            ? this.closedBy
-            : closedBy as SdkOptional<NullableSimpleUser?>,
-        bodyHtml: identical(bodyHtml, sdkOmittedValue)
-            ? this.bodyHtml
-            : bodyHtml as SdkOptional<String>,
-        bodyText: identical(bodyText, sdkOmittedValue)
-            ? this.bodyText
-            : bodyText as SdkOptional<String>,
-        timelineUrl: identical(timelineUrl, sdkOmittedValue)
-            ? this.timelineUrl
-            : timelineUrl as SdkOptional<String>,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as SdkOptional<IssueType?>,
-        repository: identical(repository, sdkOmittedValue)
-            ? this.repository
-            : repository as SdkOptional<Repository>,
-        performedViaGithubApp: identical(performedViaGithubApp, sdkOmittedValue)
-            ? this.performedViaGithubApp
-            : performedViaGithubApp as SdkOptional<NullableIntegration?>,
-        authorAssociation: identical(authorAssociation, sdkOmittedValue)
-            ? this.authorAssociation
-            : authorAssociation as SdkOptional<AuthorAssociation>,
-        reactions: identical(reactions, sdkOmittedValue)
-            ? this.reactions
-            : reactions as SdkOptional<ReactionRollup>,
-        subIssuesSummary: identical(subIssuesSummary, sdkOmittedValue)
-            ? this.subIssuesSummary
-            : subIssuesSummary as SdkOptional<SubIssuesSummary>,
-        parentIssueUrl: identical(parentIssueUrl, sdkOmittedValue)
-            ? this.parentIssueUrl
-            : parentIssueUrl as SdkOptional<String?>,
-        pinnedComment: identical(pinnedComment, sdkOmittedValue)
-            ? this.pinnedComment
-            : pinnedComment as SdkOptional<NullableIssueComment?>,
-        issueDependenciesSummary: identical(
-                issueDependenciesSummary, sdkOmittedValue)
-            ? this.issueDependenciesSummary
-            : issueDependenciesSummary as SdkOptional<IssueDependenciesSummary>,
-        issueFieldValues: identical(issueFieldValues, sdkOmittedValue)
-            ? this.issueFieldValues
-            : issueFieldValues as SdkOptional<List<IssueFieldValue>>,
-        suggestions: identical(suggestions, sdkOmittedValue)
-            ? this.suggestions
-            : suggestions
-                as SdkOptional<IssuesUpdateResponseVariant1Suggestions>,
+  CopilotSpacesUpdateForUserRequestBody _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? generalInstructions = sdkOmittedValue,
+          Object? baseRole = sdkOmittedValue,
+          Object? resourcesAttributes = sdkOmittedValue}) =>
+      CopilotSpacesUpdateForUserRequestBody(
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as SdkOptional<String>,
+        generalInstructions: identical(generalInstructions, sdkOmittedValue)
+            ? this.generalInstructions
+            : generalInstructions as SdkOptional<String>,
+        baseRole: identical(baseRole, sdkOmittedValue)
+            ? this.baseRole
+            : baseRole
+                as SdkOptional<CopilotSpacesUpdateForUserRequestBodyBaseRole>,
+        resourcesAttributes: identical(resourcesAttributes, sdkOmittedValue)
+            ? this.resourcesAttributes
+            : resourcesAttributes as SdkOptional<
+                List<
+                    CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItem>>,
       );
 
-  factory IssuesUpdateResponse.fromJson(Map<String, dynamic> json) =>
-      IssuesUpdateResponse(
-        id: ((json['id'] as num?)?.toInt())!,
-        nodeId: (json['node_id'] as String?)!,
-        url: (json['url'] as String?)!,
-        repositoryUrl: (json['repository_url'] as String?)!,
-        labelsUrl: (json['labels_url'] as String?)!,
-        commentsUrl: (json['comments_url'] as String?)!,
-        eventsUrl: (json['events_url'] as String?)!,
-        htmlUrl: (json['html_url'] as String?)!,
-        number: ((json['number'] as num?)?.toInt())!,
-        state: (json['state'] as String?)!,
-        stateReason: json.containsKey('state_reason')
-            ? SdkPresent(json['state_reason'] != null
-                ? IssueStateReason.fromJson(json['state_reason'] as String)
-                : null)
+  factory CopilotSpacesUpdateForUserRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      CopilotSpacesUpdateForUserRequestBody(
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
             : const SdkOmitted(),
-        title: (json['title'] as String?)!,
-        body: json.containsKey('body')
-            ? SdkPresent(json['body'] as String?)
+        description: json['description'] != null
+            ? SdkPresent((json['description'] as String?)!)
             : const SdkOmitted(),
-        user: json.containsKey('user')
-            ? json['user'] != null
-                ? NullableSimpleUser.fromJson(
-                    json['user'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'user', 'Required property is missing'),
-        labels: ((json['labels'] as List?)?.map((e) => e).toList())!,
-        assignee: json.containsKey('assignee')
-            ? json['assignee'] != null
-                ? NullableSimpleUser.fromJson(
-                    json['assignee'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'assignee', 'Required property is missing'),
-        assignees: json['assignees'] != null
-            ? SdkPresent(((json['assignees'] as List?)
-                ?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>))
+        generalInstructions: json['general_instructions'] != null
+            ? SdkPresent((json['general_instructions'] as String?)!)
+            : const SdkOmitted(),
+        baseRole: json['base_role'] != null
+            ? SdkPresent((json['base_role'] != null
+                ? CopilotSpacesUpdateForUserRequestBodyBaseRole.fromJson(
+                    json['base_role'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        resourcesAttributes: json['resources_attributes'] != null
+            ? SdkPresent(((json['resources_attributes'] as List?)
+                ?.map((e) =>
+                    CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItem
+                        .fromJson(e as Map<String, dynamic>))
                 .toList())!)
-            : const SdkOmitted(),
-        milestone: json.containsKey('milestone')
-            ? json['milestone'] != null
-                ? NullableMilestone.fromJson(
-                    json['milestone'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'milestone', 'Required property is missing'),
-        locked: (json['locked'] as bool?)!,
-        activeLockReason: json.containsKey('active_lock_reason')
-            ? SdkPresent(json['active_lock_reason'] as String?)
-            : const SdkOmitted(),
-        comments: ((json['comments'] as num?)?.toInt())!,
-        pullRequest: json['pull_request'] != null
-            ? SdkPresent((json['pull_request'] != null
-                ? IssuePullRequest.fromJson(
-                    json['pull_request'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        closedAt: json.containsKey('closed_at')
-            ? json['closed_at'] as String?
-            : throw ArgumentError.value(
-                null, 'closed_at', 'Required property is missing'),
-        createdAt: (json['created_at'] as String?)!,
-        updatedAt: (json['updated_at'] as String?)!,
-        draft: json['draft'] != null
-            ? SdkPresent((json['draft'] as bool?)!)
-            : const SdkOmitted(),
-        closedBy: json.containsKey('closed_by')
-            ? SdkPresent(json['closed_by'] != null
-                ? NullableSimpleUser.fromJson(
-                    json['closed_by'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        bodyHtml: json['body_html'] != null
-            ? SdkPresent((json['body_html'] as String?)!)
-            : const SdkOmitted(),
-        bodyText: json['body_text'] != null
-            ? SdkPresent((json['body_text'] as String?)!)
-            : const SdkOmitted(),
-        timelineUrl: json['timeline_url'] != null
-            ? SdkPresent((json['timeline_url'] as String?)!)
-            : const SdkOmitted(),
-        type_: json.containsKey('type')
-            ? SdkPresent(json['type'] != null
-                ? IssueType.fromJson(json['type'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        repository: json['repository'] != null
-            ? SdkPresent((json['repository'] != null
-                ? Repository.fromJson(
-                    json['repository'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        performedViaGithubApp: json.containsKey('performed_via_github_app')
-            ? SdkPresent(json['performed_via_github_app'] != null
-                ? NullableIntegration.fromJson(
-                    json['performed_via_github_app'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        authorAssociation: json['author_association'] != null
-            ? SdkPresent((json['author_association'] != null
-                ? AuthorAssociation.fromJson(
-                    json['author_association'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        reactions: json['reactions'] != null
-            ? SdkPresent((json['reactions'] != null
-                ? ReactionRollup.fromJson(
-                    json['reactions'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        subIssuesSummary: json['sub_issues_summary'] != null
-            ? SdkPresent((json['sub_issues_summary'] != null
-                ? SubIssuesSummary.fromJson(
-                    json['sub_issues_summary'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        parentIssueUrl: json.containsKey('parent_issue_url')
-            ? SdkPresent(json['parent_issue_url'] as String?)
-            : const SdkOmitted(),
-        pinnedComment: json.containsKey('pinned_comment')
-            ? SdkPresent(json['pinned_comment'] != null
-                ? NullableIssueComment.fromJson(
-                    json['pinned_comment'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        issueDependenciesSummary: json['issue_dependencies_summary'] != null
-            ? SdkPresent((json['issue_dependencies_summary'] != null
-                ? IssueDependenciesSummary.fromJson(
-                    json['issue_dependencies_summary'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        issueFieldValues: json['issue_field_values'] != null
-            ? SdkPresent(((json['issue_field_values'] as List?)
-                ?.map(
-                    (e) => IssueFieldValue.fromJson(e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-        suggestions: json['suggestions'] != null
-            ? SdkPresent((json['suggestions'] != null
-                ? IssuesUpdateResponseVariant1Suggestions.fromJson(
-                    json['suggestions'] as Map<String, dynamic>)
-                : null)!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'node_id': nodeId,
-        'url': url,
-        'repository_url': repositoryUrl,
-        'labels_url': labelsUrl,
-        'comments_url': commentsUrl,
-        'events_url': eventsUrl,
-        'html_url': htmlUrl,
-        'number': number,
-        'state': state,
-        ...switch (stateReason) {
-          SdkPresent<IssueStateReason?>(value: final value) => {
-              'state_reason': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'title': title,
-        ...switch (body) {
-          SdkPresent<String?>(value: final value) => {
-              'body': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'user': user?.toJson(),
-        'labels': labels,
-        'assignee': assignee?.toJson(),
-        ...switch (assignees) {
-          SdkPresent<List<SimpleUser>>(value: final value) => {
-              'assignees': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'milestone': milestone?.toJson(),
-        'locked': locked,
-        ...switch (activeLockReason) {
-          SdkPresent<String?>(value: final value) => {
-              'active_lock_reason': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'comments': comments,
-        ...switch (pullRequest) {
-          SdkPresent<IssuePullRequest>(value: final value) => {
-              'pull_request': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'closed_at': closedAt,
-        'created_at': createdAt,
-        'updated_at': updatedAt,
-        ...switch (draft) {
-          SdkPresent<bool>(value: final value) => {
-              'draft': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (closedBy) {
-          SdkPresent<NullableSimpleUser?>(value: final value) => {
-              'closed_by': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (bodyHtml) {
+        ...switch (name) {
           SdkPresent<String>(value: final value) => {
-              'body_html': value,
+              'name': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (bodyText) {
+        ...switch (description) {
           SdkPresent<String>(value: final value) => {
-              'body_text': value,
+              'description': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (timelineUrl) {
+        ...switch (generalInstructions) {
           SdkPresent<String>(value: final value) => {
-              'timeline_url': value,
+              'general_instructions': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (type_) {
-          SdkPresent<IssueType?>(value: final value) => {
-              'type': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (repository) {
-          SdkPresent<Repository>(value: final value) => {
-              'repository': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (performedViaGithubApp) {
-          SdkPresent<NullableIntegration?>(value: final value) => {
-              'performed_via_github_app': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (authorAssociation) {
-          SdkPresent<AuthorAssociation>(value: final value) => {
-              'author_association': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (reactions) {
-          SdkPresent<ReactionRollup>(value: final value) => {
-              'reactions': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (subIssuesSummary) {
-          SdkPresent<SubIssuesSummary>(value: final value) => {
-              'sub_issues_summary': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (parentIssueUrl) {
-          SdkPresent<String?>(value: final value) => {
-              'parent_issue_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pinnedComment) {
-          SdkPresent<NullableIssueComment?>(value: final value) => {
-              'pinned_comment': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (issueDependenciesSummary) {
-          SdkPresent<IssueDependenciesSummary>(value: final value) => {
-              'issue_dependencies_summary': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (issueFieldValues) {
-          SdkPresent<List<IssueFieldValue>>(value: final value) => {
-              'issue_field_values': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (suggestions) {
-          SdkPresent<IssuesUpdateResponseVariant1Suggestions>(
+        ...switch (baseRole) {
+          SdkPresent<CopilotSpacesUpdateForUserRequestBodyBaseRole>(
             value: final value
           ) =>
             {
-              'suggestions': value.toJson(),
+              'base_role': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (resourcesAttributes) {
+          SdkPresent<
+                List<
+                    CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItem>>(
+            value: final value
+          ) =>
+            {
+              'resources_attributes':
+                  value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class CopilotSpacesListCollaboratorsForUserResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The list of collaborators for this Copilot Space.
+  final List<CopilotSpaceCollaborator> collaborators;
+
+  const CopilotSpacesListCollaboratorsForUserResponse(
+      {required this.collaborators});
+
+  CopilotSpacesListCollaboratorsForUserResponse Function(
+      {List<CopilotSpaceCollaborator> collaborators}) get copyWith => _copyWith;
+
+  CopilotSpacesListCollaboratorsForUserResponse _copyWith(
+          {Object? collaborators = sdkOmittedValue}) =>
+      CopilotSpacesListCollaboratorsForUserResponse(
+        collaborators: identical(collaborators, sdkOmittedValue)
+            ? this.collaborators
+            : collaborators as List<CopilotSpaceCollaborator>,
+      );
+
+  factory CopilotSpacesListCollaboratorsForUserResponse.fromJson(
+          Map<String, dynamic> json) =>
+      CopilotSpacesListCollaboratorsForUserResponse(
+        collaborators: ((json['collaborators'] as List?)
+            ?.map((e) => CopilotSpaceCollaborator.fromJson(e))
+            .toList())!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'collaborators': collaborators.map((item) => item.toJson()).toList(),
+      };
+}
+
+class CopilotSpacesAddCollaboratorForUserRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The type of actor (must be `User` for user-owned spaces; `Team` will be rejected).
+  final CopilotSpacesAddCollaboratorForUserRequestBodyActorType actorType;
+
+  /// The username of the collaborator. The numeric user ID is also accepted.
+  final String actorIdentifier;
+
+  /// The role to grant to the collaborator.
+  final CopilotSpacesAddCollaboratorForUserRequestBodyRole role;
+
+  const CopilotSpacesAddCollaboratorForUserRequestBody(
+      {required this.actorType,
+      required this.actorIdentifier,
+      required this.role});
+
+  CopilotSpacesAddCollaboratorForUserRequestBody Function(
+          {CopilotSpacesAddCollaboratorForUserRequestBodyActorType actorType,
+          String actorIdentifier,
+          CopilotSpacesAddCollaboratorForUserRequestBodyRole role})
+      get copyWith => _copyWith;
+
+  CopilotSpacesAddCollaboratorForUserRequestBody _copyWith(
+          {Object? actorType = sdkOmittedValue,
+          Object? actorIdentifier = sdkOmittedValue,
+          Object? role = sdkOmittedValue}) =>
+      CopilotSpacesAddCollaboratorForUserRequestBody(
+        actorType: identical(actorType, sdkOmittedValue)
+            ? this.actorType
+            : actorType
+                as CopilotSpacesAddCollaboratorForUserRequestBodyActorType,
+        actorIdentifier: identical(actorIdentifier, sdkOmittedValue)
+            ? this.actorIdentifier
+            : actorIdentifier as String,
+        role: identical(role, sdkOmittedValue)
+            ? this.role
+            : role as CopilotSpacesAddCollaboratorForUserRequestBodyRole,
+      );
+
+  factory CopilotSpacesAddCollaboratorForUserRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      CopilotSpacesAddCollaboratorForUserRequestBody(
+        actorType: (json['actor_type'] != null
+            ? CopilotSpacesAddCollaboratorForUserRequestBodyActorType.fromJson(
+                json['actor_type'] as String)
+            : null)!,
+        actorIdentifier: (json['actor_identifier'] as String?)!,
+        role: (json['role'] != null
+            ? CopilotSpacesAddCollaboratorForUserRequestBodyRole.fromJson(
+                json['role'] as String)
+            : null)!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'actor_type': actorType.toJson(),
+        'actor_identifier': actorIdentifier,
+        'role': role.toJson(),
+      };
+}
+
+class CopilotSpacesUpdateCollaboratorForUserRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The new role to grant to the collaborator. Use `no_access` to remove the collaborator.
+  final CopilotSpacesUpdateCollaboratorForUserRequestBodyRole role;
+
+  const CopilotSpacesUpdateCollaboratorForUserRequestBody({required this.role});
+
+  CopilotSpacesUpdateCollaboratorForUserRequestBody Function(
+          {CopilotSpacesUpdateCollaboratorForUserRequestBodyRole role})
+      get copyWith => _copyWith;
+
+  CopilotSpacesUpdateCollaboratorForUserRequestBody _copyWith(
+          {Object? role = sdkOmittedValue}) =>
+      CopilotSpacesUpdateCollaboratorForUserRequestBody(
+        role: identical(role, sdkOmittedValue)
+            ? this.role
+            : role as CopilotSpacesUpdateCollaboratorForUserRequestBodyRole,
+      );
+
+  factory CopilotSpacesUpdateCollaboratorForUserRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      CopilotSpacesUpdateCollaboratorForUserRequestBody(
+        role: (json['role'] != null
+            ? CopilotSpacesUpdateCollaboratorForUserRequestBodyRole.fromJson(
+                json['role'] as String)
+            : null)!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'role': role.toJson(),
+      };
+}
+
+class CopilotSpacesListResourcesForUserResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The list of resources attached to this Copilot Space.
+  final List<CopilotSpaceResource> resources;
+
+  const CopilotSpacesListResourcesForUserResponse({required this.resources});
+
+  CopilotSpacesListResourcesForUserResponse Function(
+      {List<CopilotSpaceResource> resources}) get copyWith => _copyWith;
+
+  CopilotSpacesListResourcesForUserResponse _copyWith(
+          {Object? resources = sdkOmittedValue}) =>
+      CopilotSpacesListResourcesForUserResponse(
+        resources: identical(resources, sdkOmittedValue)
+            ? this.resources
+            : resources as List<CopilotSpaceResource>,
+      );
+
+  factory CopilotSpacesListResourcesForUserResponse.fromJson(
+          Map<String, dynamic> json) =>
+      CopilotSpacesListResourcesForUserResponse(
+        resources: ((json['resources'] as List?)
+            ?.map(
+                (e) => CopilotSpaceResource.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'resources': resources.map((item) => item.toJson()).toList(),
+      };
+}
+
+class CopilotSpacesCreateResourceForUserRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The type of resource to create.
+  final CopilotSpacesCreateResourceForUserRequestBodyResourceType resourceType;
+
+  /// Resource-specific metadata.
+  final Map<String, Object?> metadata;
+
+  const CopilotSpacesCreateResourceForUserRequestBody(
+      {required this.resourceType, required this.metadata});
+
+  CopilotSpacesCreateResourceForUserRequestBody Function(
+      {CopilotSpacesCreateResourceForUserRequestBodyResourceType resourceType,
+      Map<String, Object?> metadata}) get copyWith => _copyWith;
+
+  CopilotSpacesCreateResourceForUserRequestBody _copyWith(
+          {Object? resourceType = sdkOmittedValue,
+          Object? metadata = sdkOmittedValue}) =>
+      CopilotSpacesCreateResourceForUserRequestBody(
+        resourceType: identical(resourceType, sdkOmittedValue)
+            ? this.resourceType
+            : resourceType
+                as CopilotSpacesCreateResourceForUserRequestBodyResourceType,
+        metadata: identical(metadata, sdkOmittedValue)
+            ? this.metadata
+            : metadata as Map<String, Object?>,
+      );
+
+  factory CopilotSpacesCreateResourceForUserRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      CopilotSpacesCreateResourceForUserRequestBody(
+        resourceType: (json['resource_type'] != null
+            ? CopilotSpacesCreateResourceForUserRequestBodyResourceType
+                .fromJson(json['resource_type'] as String)
+            : null)!,
+        metadata: (json['metadata'] == null
+            ? null
+            : Map<String, dynamic>.from(json['metadata'] as Map)
+                .map((key, value) => MapEntry(key, value)))!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'resource_type': resourceType.toJson(),
+        'metadata': metadata,
+      };
+}
+
+class CopilotSpacesUpdateResourceForUserRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// Updated resource-specific metadata.
+  final SdkOptional<Map<String, Object?>> metadata;
+
+  const CopilotSpacesUpdateResourceForUserRequestBody(
+      {this.metadata = const SdkOmitted()});
+
+  CopilotSpacesUpdateResourceForUserRequestBody Function(
+      {SdkOptional<Map<String, Object?>> metadata}) get copyWith => _copyWith;
+
+  CopilotSpacesUpdateResourceForUserRequestBody _copyWith(
+          {Object? metadata = sdkOmittedValue}) =>
+      CopilotSpacesUpdateResourceForUserRequestBody(
+        metadata: identical(metadata, sdkOmittedValue)
+            ? this.metadata
+            : metadata as SdkOptional<Map<String, Object?>>,
+      );
+
+  factory CopilotSpacesUpdateResourceForUserRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      CopilotSpacesUpdateResourceForUserRequestBody(
+        metadata: json['metadata'] != null
+            ? SdkPresent((json['metadata'] == null
+                ? null
+                : Map<String, dynamic>.from(json['metadata'] as Map)
+                    .map((key, value) => MapEntry(key, value)))!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (metadata) {
+          SdkPresent<Map<String, Object?>>(value: final value) => {
+              'metadata': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class InteractionsGetPullRequestCreationCapForOrgResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// Whether the pull request creation cap is enabled
+  final bool enabled;
+
+  /// The maximum number of open pull requests a user can have at one time
+  final int maxOpenPullRequests;
+
+  /// Whether draft pull requests count toward the pull request creation cap
+  final SdkOptional<bool> includeDrafts;
+
+  const InteractionsGetPullRequestCreationCapForOrgResponse(
+      {required this.enabled,
+      required this.maxOpenPullRequests,
+      this.includeDrafts = const SdkOmitted()});
+
+  InteractionsGetPullRequestCreationCapForOrgResponse Function(
+      {bool enabled,
+      int maxOpenPullRequests,
+      SdkOptional<bool> includeDrafts}) get copyWith => _copyWith;
+
+  InteractionsGetPullRequestCreationCapForOrgResponse _copyWith(
+          {Object? enabled = sdkOmittedValue,
+          Object? maxOpenPullRequests = sdkOmittedValue,
+          Object? includeDrafts = sdkOmittedValue}) =>
+      InteractionsGetPullRequestCreationCapForOrgResponse(
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as bool,
+        maxOpenPullRequests: identical(maxOpenPullRequests, sdkOmittedValue)
+            ? this.maxOpenPullRequests
+            : maxOpenPullRequests as int,
+        includeDrafts: identical(includeDrafts, sdkOmittedValue)
+            ? this.includeDrafts
+            : includeDrafts as SdkOptional<bool>,
+      );
+
+  factory InteractionsGetPullRequestCreationCapForOrgResponse.fromJson(
+          Map<String, dynamic> json) =>
+      InteractionsGetPullRequestCreationCapForOrgResponse(
+        enabled: (json['enabled'] as bool?)!,
+        maxOpenPullRequests:
+            ((json['max_open_pull_requests'] as num?)?.toInt())!,
+        includeDrafts: json['include_drafts'] != null
+            ? SdkPresent((json['include_drafts'] as bool?)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        'enabled': enabled,
+        'max_open_pull_requests': maxOpenPullRequests,
+        ...switch (includeDrafts) {
+          SdkPresent<bool>(value: final value) => {
+              'include_drafts': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class InteractionsUpdatePullRequestCreationCapForOrgRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// Whether the pull request creation cap is enabled
+  final bool enabled;
+
+  /// The maximum number of open pull requests a user can have at one time
+  final SdkOptional<int> maxOpenPullRequests;
+
+  /// Whether draft pull requests count toward the pull request creation cap
+  final SdkOptional<bool> includeDrafts;
+
+  const InteractionsUpdatePullRequestCreationCapForOrgRequestBody(
+      {required this.enabled,
+      this.maxOpenPullRequests = const SdkOmitted(),
+      this.includeDrafts = const SdkOmitted()});
+
+  InteractionsUpdatePullRequestCreationCapForOrgRequestBody Function(
+      {bool enabled,
+      SdkOptional<int> maxOpenPullRequests,
+      SdkOptional<bool> includeDrafts}) get copyWith => _copyWith;
+
+  InteractionsUpdatePullRequestCreationCapForOrgRequestBody _copyWith(
+          {Object? enabled = sdkOmittedValue,
+          Object? maxOpenPullRequests = sdkOmittedValue,
+          Object? includeDrafts = sdkOmittedValue}) =>
+      InteractionsUpdatePullRequestCreationCapForOrgRequestBody(
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as bool,
+        maxOpenPullRequests: identical(maxOpenPullRequests, sdkOmittedValue)
+            ? this.maxOpenPullRequests
+            : maxOpenPullRequests as SdkOptional<int>,
+        includeDrafts: identical(includeDrafts, sdkOmittedValue)
+            ? this.includeDrafts
+            : includeDrafts as SdkOptional<bool>,
+      );
+
+  factory InteractionsUpdatePullRequestCreationCapForOrgRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      InteractionsUpdatePullRequestCreationCapForOrgRequestBody(
+        enabled: (json['enabled'] as bool?)!,
+        maxOpenPullRequests: json['max_open_pull_requests'] != null
+            ? SdkPresent(((json['max_open_pull_requests'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        includeDrafts: json['include_drafts'] != null
+            ? SdkPresent((json['include_drafts'] as bool?)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        'enabled': enabled,
+        ...switch (maxOpenPullRequests) {
+          SdkPresent<int>(value: final value) => {
+              'max_open_pull_requests': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (includeDrafts) {
+          SdkPresent<bool>(value: final value) => {
+              'include_drafts': value,
             },
           _ => const <String, dynamic>{},
         },

@@ -4,101 +4,305 @@
 part of 'inline.dart';
 
 // Inline operation models (part 396)
-/// Metadata specific to the resource type.
-class CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemMetadata {
+/// The object used to create GitHub Pages deployment
+class ReposCreatePagesDeploymentRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Repository ID for repository or file resources.
-  final SdkOptional<int> repositoryId;
+  /// The ID of an artifact that contains the .zip or .tar of static assets to deploy. The artifact belongs to the repository. Either `artifact_id` or `artifact_url` are required.
+  final SdkOptional<double> artifactId;
 
-  /// File path for file resources.
-  final SdkOptional<String> filePath;
+  /// The URL of an artifact that contains the .zip or .tar of static assets to deploy. The artifact belongs to the repository. Either `artifact_id` or `artifact_url` are required.
+  final SdkOptional<String> artifactUrl;
 
-  /// Text content for free text resources.
-  final SdkOptional<String> text;
+  /// The target environment for this GitHub Pages deployment.
+  final SdkOptional<String> environment;
 
-  /// Name for the resource.
-  final SdkOptional<String> name;
+  /// A unique string that represents the version of the build for this deployment.
+  final String pagesBuildVersion;
 
-  /// Issue or PR number.
-  final SdkOptional<int> number;
+  /// The OIDC token issued by GitHub Actions certifying the origin of the deployment.
+  final String oidcToken;
 
-  const CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemMetadata(
-      {this.repositoryId = const SdkOmitted(),
-      this.filePath = const SdkOmitted(),
-      this.text = const SdkOmitted(),
-      this.name = const SdkOmitted(),
-      this.number = const SdkOmitted()});
+  const ReposCreatePagesDeploymentRequestBody(
+      {this.artifactId = const SdkOmitted(),
+      this.artifactUrl = const SdkOmitted(),
+      this.environment = const SdkOmitted(),
+      required this.pagesBuildVersion,
+      required this.oidcToken});
 
-  CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemMetadata Function(
-      {SdkOptional<int> repositoryId,
-      SdkOptional<String> filePath,
-      SdkOptional<String> text,
-      SdkOptional<String> name,
-      SdkOptional<int> number}) get copyWith => _copyWith;
+  ReposCreatePagesDeploymentRequestBody Function(
+      {SdkOptional<double> artifactId,
+      SdkOptional<String> artifactUrl,
+      SdkOptional<String> environment,
+      String pagesBuildVersion,
+      String oidcToken}) get copyWith => _copyWith;
 
-  CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemMetadata
-      _copyWith(
-              {Object? repositoryId = sdkOmittedValue,
-              Object? filePath = sdkOmittedValue,
-              Object? text = sdkOmittedValue,
-              Object? name = sdkOmittedValue,
-              Object? number = sdkOmittedValue}) =>
-          CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemMetadata(
-            repositoryId: identical(repositoryId, sdkOmittedValue)
-                ? this.repositoryId
-                : repositoryId as SdkOptional<int>,
-            filePath: identical(filePath, sdkOmittedValue)
-                ? this.filePath
-                : filePath as SdkOptional<String>,
-            text: identical(text, sdkOmittedValue)
-                ? this.text
-                : text as SdkOptional<String>,
-            name: identical(name, sdkOmittedValue)
-                ? this.name
-                : name as SdkOptional<String>,
-            number: identical(number, sdkOmittedValue)
-                ? this.number
-                : number as SdkOptional<int>,
+  ReposCreatePagesDeploymentRequestBody _copyWith(
+          {Object? artifactId = sdkOmittedValue,
+          Object? artifactUrl = sdkOmittedValue,
+          Object? environment = sdkOmittedValue,
+          Object? pagesBuildVersion = sdkOmittedValue,
+          Object? oidcToken = sdkOmittedValue}) =>
+      ReposCreatePagesDeploymentRequestBody(
+        artifactId: identical(artifactId, sdkOmittedValue)
+            ? this.artifactId
+            : artifactId as SdkOptional<double>,
+        artifactUrl: identical(artifactUrl, sdkOmittedValue)
+            ? this.artifactUrl
+            : artifactUrl as SdkOptional<String>,
+        environment: identical(environment, sdkOmittedValue)
+            ? this.environment
+            : environment as SdkOptional<String>,
+        pagesBuildVersion: identical(pagesBuildVersion, sdkOmittedValue)
+            ? this.pagesBuildVersion
+            : pagesBuildVersion as String,
+        oidcToken: identical(oidcToken, sdkOmittedValue)
+            ? this.oidcToken
+            : oidcToken as String,
+      );
+
+  factory ReposCreatePagesDeploymentRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      ReposCreatePagesDeploymentRequestBody(
+        artifactId: json['artifact_id'] != null
+            ? SdkPresent(((json['artifact_id'] as num?)?.toDouble())!)
+            : const SdkOmitted(),
+        artifactUrl: json['artifact_url'] != null
+            ? SdkPresent((json['artifact_url'] as String?)!)
+            : const SdkOmitted(),
+        environment: json['environment'] != null
+            ? SdkPresent((json['environment'] as String?)!)
+            : const SdkOmitted(),
+        pagesBuildVersion: (json['pages_build_version'] as String?)!,
+        oidcToken: (json['oidc_token'] as String?)!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (artifactId) {
+          SdkPresent<double>(value: final value) => {
+              'artifact_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (artifactUrl) {
+          SdkPresent<String>(value: final value) => {
+              'artifact_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (environment) {
+          SdkPresent<String>(value: final value) => {
+              'environment': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'pages_build_version': pagesBuildVersion,
+        'oidc_token': oidcToken,
+      };
+}
+
+class ReposCheckPrivateVulnerabilityReportingResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// Whether or not private vulnerability reporting is enabled for the repository.
+  final bool enabled;
+
+  const ReposCheckPrivateVulnerabilityReportingResponse(
+      {required this.enabled});
+
+  ReposCheckPrivateVulnerabilityReportingResponse Function({bool enabled})
+      get copyWith => _copyWith;
+
+  ReposCheckPrivateVulnerabilityReportingResponse _copyWith(
+          {Object? enabled = sdkOmittedValue}) =>
+      ReposCheckPrivateVulnerabilityReportingResponse(
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as bool,
+      );
+
+  factory ReposCheckPrivateVulnerabilityReportingResponse.fromJson(
+          Map<String, dynamic> json) =>
+      ReposCheckPrivateVulnerabilityReportingResponse(
+        enabled: (json['enabled'] as bool?)!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'enabled': enabled,
+      };
+}
+
+class ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// A list of custom property names and associated values to apply to the repositories.
+  final List<CustomPropertyValue> properties;
+
+  const ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesRequestBody(
+      {required this.properties});
+
+  ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesRequestBody
+          Function({List<CustomPropertyValue> properties})
+      get copyWith => _copyWith;
+
+  ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesRequestBody
+      _copyWith({Object? properties = sdkOmittedValue}) =>
+          ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesRequestBody(
+            properties: identical(properties, sdkOmittedValue)
+                ? this.properties
+                : properties as List<CustomPropertyValue>,
           );
 
-  factory CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemMetadata.fromJson(
+  factory ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemMetadata(
-        repositoryId: json['repository_id'] != null
-            ? SdkPresent(((json['repository_id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        filePath: json['file_path'] != null
-            ? SdkPresent((json['file_path'] as String?)!)
-            : const SdkOmitted(),
-        text: json['text'] != null
-            ? SdkPresent((json['text'] as String?)!)
+      ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesRequestBody(
+        properties: ((json['properties'] as List?)
+            ?.map(
+                (e) => CustomPropertyValue.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'properties': properties.map((item) => item.toJson()).toList(),
+      };
+}
+
+class ReposCreateReleaseRequestBody {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// The name of the tag.
+  final String tagName;
+
+  /// Specifies the commitish value that determines where the Git tag is created from. Can be any branch or commit SHA. Unused if the Git tag already exists. Default: the repository's default branch.
+  final SdkOptional<String> targetCommitish;
+
+  /// The name of the release.
+  final SdkOptional<String> name;
+
+  /// Text describing the contents of the tag.
+  final SdkOptional<String> body;
+
+  /// `true` to create a draft (unpublished) release, `false` to create a published one.
+  final SdkOptional<bool> draft;
+
+  /// `true` to identify the release as a prerelease. `false` to identify the release as a full release.
+  final SdkOptional<bool> prerelease;
+
+  /// If specified, a discussion of the specified category is created and linked to the release. The value must be a category that already exists in the repository. For more information, see "[Managing categories for discussions in your repository](https://docs.github.com/discussions/managing-discussions-for-your-community/managing-categories-for-discussions-in-your-repository)."
+  final SdkOptional<String> discussionCategoryName;
+
+  /// Whether to automatically generate the name and body for this release. If `name` is specified, the specified name will be used; otherwise, a name will be automatically generated. If `body` is specified, the body will be pre-pended to the automatically generated notes.
+  final SdkOptional<bool> generateReleaseNotes;
+
+  /// Specifies whether this release should be set as the latest release for the repository. Drafts and prereleases cannot be set as latest. Defaults to `true` for newly published releases. `legacy` specifies that the latest release should be determined based on the release creation date and higher semantic version.
+  final SdkOptional<ReposCreateReleaseRequestBodyMakeLatest> makeLatest;
+
+  const ReposCreateReleaseRequestBody(
+      {required this.tagName,
+      this.targetCommitish = const SdkOmitted(),
+      this.name = const SdkOmitted(),
+      this.body = const SdkOmitted(),
+      this.draft = const SdkOmitted(),
+      this.prerelease = const SdkOmitted(),
+      this.discussionCategoryName = const SdkOmitted(),
+      this.generateReleaseNotes = const SdkOmitted(),
+      this.makeLatest = const SdkOmitted()});
+
+  ReposCreateReleaseRequestBody Function(
+          {String tagName,
+          SdkOptional<String> targetCommitish,
+          SdkOptional<String> name,
+          SdkOptional<String> body,
+          SdkOptional<bool> draft,
+          SdkOptional<bool> prerelease,
+          SdkOptional<String> discussionCategoryName,
+          SdkOptional<bool> generateReleaseNotes,
+          SdkOptional<ReposCreateReleaseRequestBodyMakeLatest> makeLatest})
+      get copyWith => _copyWith;
+
+  ReposCreateReleaseRequestBody _copyWith(
+          {Object? tagName = sdkOmittedValue,
+          Object? targetCommitish = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? body = sdkOmittedValue,
+          Object? draft = sdkOmittedValue,
+          Object? prerelease = sdkOmittedValue,
+          Object? discussionCategoryName = sdkOmittedValue,
+          Object? generateReleaseNotes = sdkOmittedValue,
+          Object? makeLatest = sdkOmittedValue}) =>
+      ReposCreateReleaseRequestBody(
+        tagName: identical(tagName, sdkOmittedValue)
+            ? this.tagName
+            : tagName as String,
+        targetCommitish: identical(targetCommitish, sdkOmittedValue)
+            ? this.targetCommitish
+            : targetCommitish as SdkOptional<String>,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        body: identical(body, sdkOmittedValue)
+            ? this.body
+            : body as SdkOptional<String>,
+        draft: identical(draft, sdkOmittedValue)
+            ? this.draft
+            : draft as SdkOptional<bool>,
+        prerelease: identical(prerelease, sdkOmittedValue)
+            ? this.prerelease
+            : prerelease as SdkOptional<bool>,
+        discussionCategoryName:
+            identical(discussionCategoryName, sdkOmittedValue)
+                ? this.discussionCategoryName
+                : discussionCategoryName as SdkOptional<String>,
+        generateReleaseNotes: identical(generateReleaseNotes, sdkOmittedValue)
+            ? this.generateReleaseNotes
+            : generateReleaseNotes as SdkOptional<bool>,
+        makeLatest: identical(makeLatest, sdkOmittedValue)
+            ? this.makeLatest
+            : makeLatest
+                as SdkOptional<ReposCreateReleaseRequestBodyMakeLatest>,
+      );
+
+  factory ReposCreateReleaseRequestBody.fromJson(Map<String, dynamic> json) =>
+      ReposCreateReleaseRequestBody(
+        tagName: (json['tag_name'] as String?)!,
+        targetCommitish: json['target_commitish'] != null
+            ? SdkPresent((json['target_commitish'] as String?)!)
             : const SdkOmitted(),
         name: json['name'] != null
             ? SdkPresent((json['name'] as String?)!)
             : const SdkOmitted(),
-        number: json['number'] != null
-            ? SdkPresent(((json['number'] as num?)?.toInt())!)
+        body: json['body'] != null
+            ? SdkPresent((json['body'] as String?)!)
+            : const SdkOmitted(),
+        draft: json['draft'] != null
+            ? SdkPresent((json['draft'] as bool?)!)
+            : const SdkOmitted(),
+        prerelease: json['prerelease'] != null
+            ? SdkPresent((json['prerelease'] as bool?)!)
+            : const SdkOmitted(),
+        discussionCategoryName: json['discussion_category_name'] != null
+            ? SdkPresent((json['discussion_category_name'] as String?)!)
+            : const SdkOmitted(),
+        generateReleaseNotes: json['generate_release_notes'] != null
+            ? SdkPresent((json['generate_release_notes'] as bool?)!)
+            : const SdkOmitted(),
+        makeLatest: json['make_latest'] != null
+            ? SdkPresent((json['make_latest'] != null
+                ? ReposCreateReleaseRequestBodyMakeLatest.fromJson(
+                    json['make_latest'] as String)
+                : null)!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (repositoryId) {
-          SdkPresent<int>(value: final value) => {
-              'repository_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (filePath) {
+        'tag_name': tagName,
+        ...switch (targetCommitish) {
           SdkPresent<String>(value: final value) => {
-              'file_path': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (text) {
-          SdkPresent<String>(value: final value) => {
-              'text': value,
+              'target_commitish': value,
             },
           _ => const <String, dynamic>{},
         },
@@ -108,410 +312,201 @@ class CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemMetadata {
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (number) {
-          SdkPresent<int>(value: final value) => {
-              'number': value,
+        ...switch (body) {
+          SdkPresent<String>(value: final value) => {
+              'body': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (draft) {
+          SdkPresent<bool>(value: final value) => {
+              'draft': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (prerelease) {
+          SdkPresent<bool>(value: final value) => {
+              'prerelease': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (discussionCategoryName) {
+          SdkPresent<String>(value: final value) => {
+              'discussion_category_name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (generateReleaseNotes) {
+          SdkPresent<bool>(value: final value) => {
+              'generate_release_notes': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (makeLatest) {
+          SdkPresent<ReposCreateReleaseRequestBodyMakeLatest>(
+            value: final value
+          ) =>
+            {
+              'make_latest': value.toJson(),
             },
           _ => const <String, dynamic>{},
         },
       };
 }
 
-class CopilotSpacesCreateForUserRequestBodyResourcesAttributesItem {
+class ReposUpdateReleaseAssetRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// The type of resource.
-  final SdkOptional<
-          CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemResourceType>
-      resourceType;
+  /// The file name of the asset.
+  final SdkOptional<String> name;
 
-  /// Metadata specific to the resource type.
-  final SdkOptional<
-          CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemMetadata>
-      metadata;
+  /// An alternate short description of the asset. Used in place of the filename.
+  final SdkOptional<String> label;
+  final SdkOptional<String> state;
 
-  const CopilotSpacesCreateForUserRequestBodyResourcesAttributesItem(
-      {this.resourceType = const SdkOmitted(),
-      this.metadata = const SdkOmitted()});
+  const ReposUpdateReleaseAssetRequestBody(
+      {this.name = const SdkOmitted(),
+      this.label = const SdkOmitted(),
+      this.state = const SdkOmitted()});
 
-  CopilotSpacesCreateForUserRequestBodyResourcesAttributesItem Function(
-      {SdkOptional<
-              CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemResourceType>
-          resourceType,
-      SdkOptional<
-              CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemMetadata>
-          metadata}) get copyWith => _copyWith;
+  ReposUpdateReleaseAssetRequestBody Function(
+      {SdkOptional<String> name,
+      SdkOptional<String> label,
+      SdkOptional<String> state}) get copyWith => _copyWith;
 
-  CopilotSpacesCreateForUserRequestBodyResourcesAttributesItem _copyWith(
-          {Object? resourceType = sdkOmittedValue,
-          Object? metadata = sdkOmittedValue}) =>
-      CopilotSpacesCreateForUserRequestBodyResourcesAttributesItem(
-        resourceType: identical(resourceType, sdkOmittedValue)
-            ? this.resourceType
-            : resourceType as SdkOptional<
-                CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemResourceType>,
-        metadata: identical(metadata, sdkOmittedValue)
-            ? this.metadata
-            : metadata as SdkOptional<
-                CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemMetadata>,
-      );
-
-  factory CopilotSpacesCreateForUserRequestBodyResourcesAttributesItem.fromJson(
-          Map<String, dynamic> json) =>
-      CopilotSpacesCreateForUserRequestBodyResourcesAttributesItem(
-        resourceType: json['resource_type'] != null
-            ? SdkPresent((json['resource_type'] != null
-                ? CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemResourceType
-                    .fromJson(json['resource_type'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        metadata: json['metadata'] != null
-            ? SdkPresent((json['metadata'] != null
-                ? CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemMetadata
-                    .fromJson(json['metadata'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        ...switch (resourceType) {
-          SdkPresent<
-                CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemResourceType>(
-            value: final value
-          ) =>
-            {
-              'resource_type': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (metadata) {
-          SdkPresent<
-                CopilotSpacesCreateForUserRequestBodyResourcesAttributesItemMetadata>(
-            value: final value
-          ) =>
-            {
-              'metadata': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-class CopilotSpacesCreateForUserRequestBody {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The name of the Copilot Space.
-  final String name;
-
-  /// A description of the Copilot Space.
-  final SdkOptional<String> description;
-
-  /// General instructions for the Copilot Space.
-  final SdkOptional<String> generalInstructions;
-
-  /// The base role that determines default permissions for the space. - `no_access`: No default access (default) - `reader`: Makes the space publicly readable Note: User spaces do not support writer or admin base roles.
-  final SdkOptional<CopilotSpacesCreateForUserRequestBodyBaseRole> baseRole;
-
-  /// Resources to attach to the space.
-  final SdkOptional<
-          List<CopilotSpacesCreateForUserRequestBodyResourcesAttributesItem>>
-      resourcesAttributes;
-
-  const CopilotSpacesCreateForUserRequestBody(
-      {required this.name,
-      this.description = const SdkOmitted(),
-      this.generalInstructions = const SdkOmitted(),
-      this.baseRole = const SdkOmitted(),
-      this.resourcesAttributes = const SdkOmitted()});
-
-  CopilotSpacesCreateForUserRequestBody Function(
-      {String name,
-      SdkOptional<String> description,
-      SdkOptional<String> generalInstructions,
-      SdkOptional<CopilotSpacesCreateForUserRequestBodyBaseRole> baseRole,
-      SdkOptional<
-              List<
-                  CopilotSpacesCreateForUserRequestBodyResourcesAttributesItem>>
-          resourcesAttributes}) get copyWith => _copyWith;
-
-  CopilotSpacesCreateForUserRequestBody _copyWith(
+  ReposUpdateReleaseAssetRequestBody _copyWith(
           {Object? name = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? generalInstructions = sdkOmittedValue,
-          Object? baseRole = sdkOmittedValue,
-          Object? resourcesAttributes = sdkOmittedValue}) =>
-      CopilotSpacesCreateForUserRequestBody(
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as SdkOptional<String>,
-        generalInstructions: identical(generalInstructions, sdkOmittedValue)
-            ? this.generalInstructions
-            : generalInstructions as SdkOptional<String>,
-        baseRole: identical(baseRole, sdkOmittedValue)
-            ? this.baseRole
-            : baseRole
-                as SdkOptional<CopilotSpacesCreateForUserRequestBodyBaseRole>,
-        resourcesAttributes: identical(resourcesAttributes, sdkOmittedValue)
-            ? this.resourcesAttributes
-            : resourcesAttributes as SdkOptional<
-                List<
-                    CopilotSpacesCreateForUserRequestBodyResourcesAttributesItem>>,
+          Object? label = sdkOmittedValue,
+          Object? state = sdkOmittedValue}) =>
+      ReposUpdateReleaseAssetRequestBody(
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        label: identical(label, sdkOmittedValue)
+            ? this.label
+            : label as SdkOptional<String>,
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state as SdkOptional<String>,
       );
 
-  factory CopilotSpacesCreateForUserRequestBody.fromJson(
+  factory ReposUpdateReleaseAssetRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      CopilotSpacesCreateForUserRequestBody(
-        name: (json['name'] as String?)!,
-        description: json['description'] != null
-            ? SdkPresent((json['description'] as String?)!)
-            : const SdkOmitted(),
-        generalInstructions: json['general_instructions'] != null
-            ? SdkPresent((json['general_instructions'] as String?)!)
-            : const SdkOmitted(),
-        baseRole: json['base_role'] != null
-            ? SdkPresent((json['base_role'] != null
-                ? CopilotSpacesCreateForUserRequestBodyBaseRole.fromJson(
-                    json['base_role'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        resourcesAttributes: json['resources_attributes'] != null
-            ? SdkPresent(((json['resources_attributes'] as List?)
-                ?.map((e) =>
-                    CopilotSpacesCreateForUserRequestBodyResourcesAttributesItem
-                        .fromJson(e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        'name': name,
-        ...switch (description) {
-          SdkPresent<String>(value: final value) => {
-              'description': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (generalInstructions) {
-          SdkPresent<String>(value: final value) => {
-              'general_instructions': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (baseRole) {
-          SdkPresent<CopilotSpacesCreateForUserRequestBodyBaseRole>(
-            value: final value
-          ) =>
-            {
-              'base_role': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (resourcesAttributes) {
-          SdkPresent<
-                List<
-                    CopilotSpacesCreateForUserRequestBodyResourcesAttributesItem>>(
-            value: final value
-          ) =>
-            {
-              'resources_attributes':
-                  value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
-/// Metadata specific to the resource type.
-class CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemMetadata {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// Repository ID for repository or file resources.
-  final SdkOptional<int> repositoryId;
-
-  /// File path for file resources.
-  final SdkOptional<String> filePath;
-
-  /// Text content for free text resources.
-  final SdkOptional<String> text;
-
-  /// Name for the resource.
-  final SdkOptional<String> name;
-
-  /// Issue or PR number.
-  final SdkOptional<int> number;
-
-  const CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemMetadata(
-      {this.repositoryId = const SdkOmitted(),
-      this.filePath = const SdkOmitted(),
-      this.text = const SdkOmitted(),
-      this.name = const SdkOmitted(),
-      this.number = const SdkOmitted()});
-
-  CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemMetadata Function(
-      {SdkOptional<int> repositoryId,
-      SdkOptional<String> filePath,
-      SdkOptional<String> text,
-      SdkOptional<String> name,
-      SdkOptional<int> number}) get copyWith => _copyWith;
-
-  CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemMetadata
-      _copyWith(
-              {Object? repositoryId = sdkOmittedValue,
-              Object? filePath = sdkOmittedValue,
-              Object? text = sdkOmittedValue,
-              Object? name = sdkOmittedValue,
-              Object? number = sdkOmittedValue}) =>
-          CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemMetadata(
-            repositoryId: identical(repositoryId, sdkOmittedValue)
-                ? this.repositoryId
-                : repositoryId as SdkOptional<int>,
-            filePath: identical(filePath, sdkOmittedValue)
-                ? this.filePath
-                : filePath as SdkOptional<String>,
-            text: identical(text, sdkOmittedValue)
-                ? this.text
-                : text as SdkOptional<String>,
-            name: identical(name, sdkOmittedValue)
-                ? this.name
-                : name as SdkOptional<String>,
-            number: identical(number, sdkOmittedValue)
-                ? this.number
-                : number as SdkOptional<int>,
-          );
-
-  factory CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemMetadata.fromJson(
-          Map<String, dynamic> json) =>
-      CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemMetadata(
-        repositoryId: json['repository_id'] != null
-            ? SdkPresent(((json['repository_id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        filePath: json['file_path'] != null
-            ? SdkPresent((json['file_path'] as String?)!)
-            : const SdkOmitted(),
-        text: json['text'] != null
-            ? SdkPresent((json['text'] as String?)!)
-            : const SdkOmitted(),
+      ReposUpdateReleaseAssetRequestBody(
         name: json['name'] != null
             ? SdkPresent((json['name'] as String?)!)
             : const SdkOmitted(),
-        number: json['number'] != null
-            ? SdkPresent(((json['number'] as num?)?.toInt())!)
+        label: json['label'] != null
+            ? SdkPresent((json['label'] as String?)!)
+            : const SdkOmitted(),
+        state: json['state'] != null
+            ? SdkPresent((json['state'] as String?)!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (repositoryId) {
-          SdkPresent<int>(value: final value) => {
-              'repository_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (filePath) {
-          SdkPresent<String>(value: final value) => {
-              'file_path': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (text) {
-          SdkPresent<String>(value: final value) => {
-              'text': value,
-            },
-          _ => const <String, dynamic>{},
-        },
         ...switch (name) {
           SdkPresent<String>(value: final value) => {
               'name': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (number) {
-          SdkPresent<int>(value: final value) => {
-              'number': value,
+        ...switch (label) {
+          SdkPresent<String>(value: final value) => {
+              'label': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (state) {
+          SdkPresent<String>(value: final value) => {
+              'state': value,
             },
           _ => const <String, dynamic>{},
         },
       };
 }
 
-class CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItem {
+class ReposGenerateReleaseNotesRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// The type of resource.
-  final SdkOptional<
-          CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType>
-      resourceType;
+  /// The tag name for the release. This can be an existing tag or a new one.
+  final String tagName;
 
-  /// Metadata specific to the resource type.
-  final SdkOptional<
-          CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemMetadata>
-      metadata;
+  /// Specifies the commitish value that will be the target for the release's tag. Required if the supplied tag_name does not reference an existing tag. Ignored if the tag_name already exists.
+  final SdkOptional<String> targetCommitish;
 
-  const CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItem(
-      {this.resourceType = const SdkOmitted(),
-      this.metadata = const SdkOmitted()});
+  /// The name of the previous tag to use as the starting point for the release notes. Use to manually specify the range for the set of changes considered as part this release.
+  final SdkOptional<String> previousTagName;
 
-  CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItem Function(
-      {SdkOptional<
-              CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType>
-          resourceType,
-      SdkOptional<
-              CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemMetadata>
-          metadata}) get copyWith => _copyWith;
+  /// Specifies a path to a file in the repository containing configuration settings used for generating the release notes. If unspecified, the configuration file located in the repository at '.github/release.yml' or '.github/release.yaml' will be used. If that is not present, the default configuration will be used.
+  final SdkOptional<String> configurationFilePath;
 
-  CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItem _copyWith(
-          {Object? resourceType = sdkOmittedValue,
-          Object? metadata = sdkOmittedValue}) =>
-      CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItem(
-        resourceType: identical(resourceType, sdkOmittedValue)
-            ? this.resourceType
-            : resourceType as SdkOptional<
-                CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType>,
-        metadata: identical(metadata, sdkOmittedValue)
-            ? this.metadata
-            : metadata as SdkOptional<
-                CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemMetadata>,
+  const ReposGenerateReleaseNotesRequestBody(
+      {required this.tagName,
+      this.targetCommitish = const SdkOmitted(),
+      this.previousTagName = const SdkOmitted(),
+      this.configurationFilePath = const SdkOmitted()});
+
+  ReposGenerateReleaseNotesRequestBody Function(
+      {String tagName,
+      SdkOptional<String> targetCommitish,
+      SdkOptional<String> previousTagName,
+      SdkOptional<String> configurationFilePath}) get copyWith => _copyWith;
+
+  ReposGenerateReleaseNotesRequestBody _copyWith(
+          {Object? tagName = sdkOmittedValue,
+          Object? targetCommitish = sdkOmittedValue,
+          Object? previousTagName = sdkOmittedValue,
+          Object? configurationFilePath = sdkOmittedValue}) =>
+      ReposGenerateReleaseNotesRequestBody(
+        tagName: identical(tagName, sdkOmittedValue)
+            ? this.tagName
+            : tagName as String,
+        targetCommitish: identical(targetCommitish, sdkOmittedValue)
+            ? this.targetCommitish
+            : targetCommitish as SdkOptional<String>,
+        previousTagName: identical(previousTagName, sdkOmittedValue)
+            ? this.previousTagName
+            : previousTagName as SdkOptional<String>,
+        configurationFilePath: identical(configurationFilePath, sdkOmittedValue)
+            ? this.configurationFilePath
+            : configurationFilePath as SdkOptional<String>,
       );
 
-  factory CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItem.fromJson(
+  factory ReposGenerateReleaseNotesRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItem(
-        resourceType: json['resource_type'] != null
-            ? SdkPresent((json['resource_type'] != null
-                ? CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType
-                    .fromJson(json['resource_type'] as String)
-                : null)!)
+      ReposGenerateReleaseNotesRequestBody(
+        tagName: (json['tag_name'] as String?)!,
+        targetCommitish: json['target_commitish'] != null
+            ? SdkPresent((json['target_commitish'] as String?)!)
             : const SdkOmitted(),
-        metadata: json['metadata'] != null
-            ? SdkPresent((json['metadata'] != null
-                ? CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemMetadata
-                    .fromJson(json['metadata'] as Map<String, dynamic>)
-                : null)!)
+        previousTagName: json['previous_tag_name'] != null
+            ? SdkPresent((json['previous_tag_name'] as String?)!)
+            : const SdkOmitted(),
+        configurationFilePath: json['configuration_file_path'] != null
+            ? SdkPresent((json['configuration_file_path'] as String?)!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (resourceType) {
-          SdkPresent<
-                CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemResourceType>(
-            value: final value
-          ) =>
-            {
-              'resource_type': value.toJson(),
+        'tag_name': tagName,
+        ...switch (targetCommitish) {
+          SdkPresent<String>(value: final value) => {
+              'target_commitish': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (metadata) {
-          SdkPresent<
-                CopilotSpacesUpdateForUserRequestBodyResourcesAttributesItemMetadata>(
-            value: final value
-          ) =>
-            {
-              'metadata': value.toJson(),
+        ...switch (previousTagName) {
+          SdkPresent<String>(value: final value) => {
+              'previous_tag_name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (configurationFilePath) {
+          SdkPresent<String>(value: final value) => {
+              'configuration_file_path': value,
             },
           _ => const <String, dynamic>{},
         },

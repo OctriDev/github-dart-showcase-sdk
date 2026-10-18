@@ -129,8 +129,8 @@ class ValidationErrorErrorsItem {
         index: json['index'] != null
             ? SdkPresent(((json['index'] as num?)?.toInt())!)
             : const SdkOmitted(),
-        value: json['value'] != null
-            ? SdkPresent((json['value'])!)
+        value: json.containsKey('value')
+            ? SdkPresent(json['value'])
             : const SdkOmitted(),
       );
 

@@ -4,634 +4,240 @@
 part of 'search.dart';
 
 // search domain models (part 4)
-/// Issue Search Result Item
-class IssueSearchResultItem {
+/// Label Search Result Item
+class LabelSearchResultItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// Required `uri`-formatted value serialized in the `url` wire field.
-  final String url;
-
-  /// Required `uri`-formatted value serialized in the `repository_url` wire field.
-  final String repositoryUrl;
-
-  /// Required `string` value serialized in the `labels_url` wire field.
-  final String labelsUrl;
-
-  /// Required `uri`-formatted value serialized in the `comments_url` wire field.
-  final String commentsUrl;
-
-  /// Required `uri`-formatted value serialized in the `events_url` wire field.
-  final String eventsUrl;
-
-  /// Required `uri`-formatted value serialized in the `html_url` wire field.
-  final String htmlUrl;
-
-  /// Required `int64`-formatted value serialized in the `id` wire field.
+  /// Required `integer` value serialized in the `id` wire field.
   final int id;
 
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
 
-  /// Required `integer` value serialized in the `number` wire field.
-  final int number;
+  /// Required `uri`-formatted value serialized in the `url` wire field.
+  final String url;
 
-  /// Required `string` value serialized in the `title` wire field.
-  final String title;
+  /// Required `string` value serialized in the `name` wire field.
+  final String name;
 
-  /// Required `boolean` value serialized in the `locked` wire field.
-  final bool locked;
+  /// Required `string` value serialized in the `color` wire field.
+  final String color;
 
-  /// Optional `string` value serialized in the `active_lock_reason` wire field.
-  final SdkOptional<String?> activeLockReason;
+  /// Required `boolean` value serialized in the `default` wire field.
+  final bool default_;
 
-  /// Optional array value serialized in the `assignees` wire field.
-  final SdkOptional<List<SimpleUser>?> assignees;
+  /// Required `string` value serialized in the `description` wire field.
+  final String? description;
 
-  /// A GitHub user.
-  final NullableSimpleUser? user;
+  /// Timestamp indicating when the label was archived, or `null` if it has not been archived.
+  final String? archivedAt;
 
-  /// Required array value serialized in the `labels` wire field.
-  final List<IssueSearchResultItemLabelsItem> labels;
-
-  /// Optional object value serialized in the `sub_issues_summary` wire field.
-  final SdkOptional<SubIssuesSummary> subIssuesSummary;
-
-  /// Optional object value serialized in the `issue_dependencies_summary` wire field.
-  final SdkOptional<IssueDependenciesSummary> issueDependenciesSummary;
-
-  /// Optional array value serialized in the `issue_field_values` wire field.
-  final SdkOptional<List<IssueFieldValue>> issueFieldValues;
-
-  /// Required `string` value serialized in the `state` wire field.
-  final String state;
-
-  /// Optional `string` value serialized in the `state_reason` wire field.
-  final SdkOptional<String?> stateReason;
-
-  /// A GitHub user.
-  final NullableSimpleUser? assignee;
-
-  /// A collection of related issues and pull requests.
-  final NullableMilestone? milestone;
-
-  /// Required `integer` value serialized in the `comments` wire field.
-  final int comments;
-
-  /// Required `date-time`-formatted value serialized in the `created_at` wire field.
-  final String createdAt;
-
-  /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
-  final String updatedAt;
-
-  /// Required `date-time`-formatted value serialized in the `closed_at` wire field.
-  final String? closedAt;
-
-  /// Optional array value serialized in the `text_matches` wire field.
-  final SdkOptional<List<SearchResultTextMatchesItem>> textMatches;
-
-  /// Optional object value serialized in the `pull_request` wire field.
-  final SdkOptional<IssueSearchResultItemPullRequest> pullRequest;
-
-  /// Optional `string` value serialized in the `body` wire field.
-  final SdkOptional<String> body;
+  /// The user who archived the label, or `null` if it has not been archived.
+  final SimpleUser? archivedBy;
 
   /// Required `number` value serialized in the `score` wire field.
   final double score;
 
-  /// How the author is associated with the repository.
-  final AuthorAssociation authorAssociation;
+  /// Optional array value serialized in the `text_matches` wire field.
+  final SdkOptional<List<SearchResultTextMatchesItem>> textMatches;
 
-  /// Optional `boolean` value serialized in the `draft` wire field.
-  final SdkOptional<bool> draft;
-
-  /// A repository on GitHub.
-  final SdkOptional<Repository> repository;
-
-  /// Optional `string` value serialized in the `body_html` wire field.
-  final SdkOptional<String> bodyHtml;
-
-  /// Optional `string` value serialized in the `body_text` wire field.
-  final SdkOptional<String> bodyText;
-
-  /// Optional `uri`-formatted value serialized in the `timeline_url` wire field.
-  final SdkOptional<String> timelineUrl;
-
-  /// The type assigned to the issue. This is only present for issues in repositories where issue types are supported.
-  final SdkOptional<IssueType?> type_;
-
-  /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-  final SdkOptional<NullableIntegration?> performedViaGithubApp;
-
-  /// Comments provide a way for people to collaborate on an issue.
-  final SdkOptional<NullableIssueComment?> pinnedComment;
-
-  /// Optional object value serialized in the `reactions` wire field.
-  final SdkOptional<ReactionRollup> reactions;
-
-  const IssueSearchResultItem(
-      {required this.url,
-      required this.repositoryUrl,
-      required this.labelsUrl,
-      required this.commentsUrl,
-      required this.eventsUrl,
-      required this.htmlUrl,
-      required this.id,
+  const LabelSearchResultItem(
+      {required this.id,
       required this.nodeId,
-      required this.number,
-      required this.title,
-      required this.locked,
-      this.activeLockReason = const SdkOmitted(),
-      this.assignees = const SdkOmitted(),
-      required this.user,
-      required this.labels,
-      this.subIssuesSummary = const SdkOmitted(),
-      this.issueDependenciesSummary = const SdkOmitted(),
-      this.issueFieldValues = const SdkOmitted(),
-      required this.state,
-      this.stateReason = const SdkOmitted(),
-      required this.assignee,
-      required this.milestone,
-      required this.comments,
-      required this.createdAt,
-      required this.updatedAt,
-      required this.closedAt,
-      this.textMatches = const SdkOmitted(),
-      this.pullRequest = const SdkOmitted(),
-      this.body = const SdkOmitted(),
+      required this.url,
+      required this.name,
+      required this.color,
+      required this.default_,
+      required this.description,
+      required this.archivedAt,
+      required this.archivedBy,
       required this.score,
-      required this.authorAssociation,
-      this.draft = const SdkOmitted(),
-      this.repository = const SdkOmitted(),
-      this.bodyHtml = const SdkOmitted(),
-      this.bodyText = const SdkOmitted(),
-      this.timelineUrl = const SdkOmitted(),
-      this.type_ = const SdkOmitted(),
-      this.performedViaGithubApp = const SdkOmitted(),
-      this.pinnedComment = const SdkOmitted(),
-      this.reactions = const SdkOmitted()});
+      this.textMatches = const SdkOmitted()});
 
-  IssueSearchResultItem Function(
-      {String url,
-      String repositoryUrl,
-      String labelsUrl,
-      String commentsUrl,
-      String eventsUrl,
-      String htmlUrl,
-      int id,
-      String nodeId,
-      int number,
-      String title,
-      bool locked,
-      SdkOptional<String?> activeLockReason,
-      SdkOptional<List<SimpleUser>?> assignees,
-      NullableSimpleUser? user,
-      List<IssueSearchResultItemLabelsItem> labels,
-      SdkOptional<SubIssuesSummary> subIssuesSummary,
-      SdkOptional<IssueDependenciesSummary> issueDependenciesSummary,
-      SdkOptional<List<IssueFieldValue>> issueFieldValues,
-      String state,
-      SdkOptional<String?> stateReason,
-      NullableSimpleUser? assignee,
-      NullableMilestone? milestone,
-      int comments,
-      String createdAt,
-      String updatedAt,
-      String? closedAt,
-      SdkOptional<List<SearchResultTextMatchesItem>> textMatches,
-      SdkOptional<IssueSearchResultItemPullRequest> pullRequest,
-      SdkOptional<String> body,
-      double score,
-      AuthorAssociation authorAssociation,
-      SdkOptional<bool> draft,
-      SdkOptional<Repository> repository,
-      SdkOptional<String> bodyHtml,
-      SdkOptional<String> bodyText,
-      SdkOptional<String> timelineUrl,
-      SdkOptional<IssueType?> type_,
-      SdkOptional<NullableIntegration?> performedViaGithubApp,
-      SdkOptional<NullableIssueComment?> pinnedComment,
-      SdkOptional<ReactionRollup> reactions}) get copyWith => _copyWith;
+  LabelSearchResultItem Function(
+          {int id,
+          String nodeId,
+          String url,
+          String name,
+          String color,
+          bool default_,
+          String? description,
+          String? archivedAt,
+          SimpleUser? archivedBy,
+          double score,
+          SdkOptional<List<SearchResultTextMatchesItem>> textMatches})
+      get copyWith => _copyWith;
 
-  IssueSearchResultItem _copyWith(
-          {Object? url = sdkOmittedValue,
-          Object? repositoryUrl = sdkOmittedValue,
-          Object? labelsUrl = sdkOmittedValue,
-          Object? commentsUrl = sdkOmittedValue,
-          Object? eventsUrl = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? id = sdkOmittedValue,
+  LabelSearchResultItem _copyWith(
+          {Object? id = sdkOmittedValue,
           Object? nodeId = sdkOmittedValue,
-          Object? number = sdkOmittedValue,
-          Object? title = sdkOmittedValue,
-          Object? locked = sdkOmittedValue,
-          Object? activeLockReason = sdkOmittedValue,
-          Object? assignees = sdkOmittedValue,
-          Object? user = sdkOmittedValue,
-          Object? labels = sdkOmittedValue,
-          Object? subIssuesSummary = sdkOmittedValue,
-          Object? issueDependenciesSummary = sdkOmittedValue,
-          Object? issueFieldValues = sdkOmittedValue,
-          Object? state = sdkOmittedValue,
-          Object? stateReason = sdkOmittedValue,
-          Object? assignee = sdkOmittedValue,
-          Object? milestone = sdkOmittedValue,
-          Object? comments = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue,
-          Object? closedAt = sdkOmittedValue,
-          Object? textMatches = sdkOmittedValue,
-          Object? pullRequest = sdkOmittedValue,
-          Object? body = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? color = sdkOmittedValue,
+          Object? default_ = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? archivedAt = sdkOmittedValue,
+          Object? archivedBy = sdkOmittedValue,
           Object? score = sdkOmittedValue,
-          Object? authorAssociation = sdkOmittedValue,
-          Object? draft = sdkOmittedValue,
-          Object? repository = sdkOmittedValue,
-          Object? bodyHtml = sdkOmittedValue,
-          Object? bodyText = sdkOmittedValue,
-          Object? timelineUrl = sdkOmittedValue,
-          Object? type_ = sdkOmittedValue,
-          Object? performedViaGithubApp = sdkOmittedValue,
-          Object? pinnedComment = sdkOmittedValue,
-          Object? reactions = sdkOmittedValue}) =>
-      IssueSearchResultItem(
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        repositoryUrl: identical(repositoryUrl, sdkOmittedValue)
-            ? this.repositoryUrl
-            : repositoryUrl as String,
-        labelsUrl: identical(labelsUrl, sdkOmittedValue)
-            ? this.labelsUrl
-            : labelsUrl as String,
-        commentsUrl: identical(commentsUrl, sdkOmittedValue)
-            ? this.commentsUrl
-            : commentsUrl as String,
-        eventsUrl: identical(eventsUrl, sdkOmittedValue)
-            ? this.eventsUrl
-            : eventsUrl as String,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as String,
+          Object? textMatches = sdkOmittedValue}) =>
+      LabelSearchResultItem(
         id: identical(id, sdkOmittedValue) ? this.id : id as int,
         nodeId:
             identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        number:
-            identical(number, sdkOmittedValue) ? this.number : number as int,
-        title: identical(title, sdkOmittedValue) ? this.title : title as String,
-        locked:
-            identical(locked, sdkOmittedValue) ? this.locked : locked as bool,
-        activeLockReason: identical(activeLockReason, sdkOmittedValue)
-            ? this.activeLockReason
-            : activeLockReason as SdkOptional<String?>,
-        assignees: identical(assignees, sdkOmittedValue)
-            ? this.assignees
-            : assignees as SdkOptional<List<SimpleUser>?>,
-        user: identical(user, sdkOmittedValue)
-            ? this.user
-            : user as NullableSimpleUser?,
-        labels: identical(labels, sdkOmittedValue)
-            ? this.labels
-            : labels as List<IssueSearchResultItemLabelsItem>,
-        subIssuesSummary: identical(subIssuesSummary, sdkOmittedValue)
-            ? this.subIssuesSummary
-            : subIssuesSummary as SdkOptional<SubIssuesSummary>,
-        issueDependenciesSummary: identical(
-                issueDependenciesSummary, sdkOmittedValue)
-            ? this.issueDependenciesSummary
-            : issueDependenciesSummary as SdkOptional<IssueDependenciesSummary>,
-        issueFieldValues: identical(issueFieldValues, sdkOmittedValue)
-            ? this.issueFieldValues
-            : issueFieldValues as SdkOptional<List<IssueFieldValue>>,
-        state: identical(state, sdkOmittedValue) ? this.state : state as String,
-        stateReason: identical(stateReason, sdkOmittedValue)
-            ? this.stateReason
-            : stateReason as SdkOptional<String?>,
-        assignee: identical(assignee, sdkOmittedValue)
-            ? this.assignee
-            : assignee as NullableSimpleUser?,
-        milestone: identical(milestone, sdkOmittedValue)
-            ? this.milestone
-            : milestone as NullableMilestone?,
-        comments: identical(comments, sdkOmittedValue)
-            ? this.comments
-            : comments as int,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String,
-        closedAt: identical(closedAt, sdkOmittedValue)
-            ? this.closedAt
-            : closedAt as String?,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        color: identical(color, sdkOmittedValue) ? this.color : color as String,
+        default_: identical(default_, sdkOmittedValue)
+            ? this.default_
+            : default_ as bool,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as String?,
+        archivedAt: identical(archivedAt, sdkOmittedValue)
+            ? this.archivedAt
+            : archivedAt as String?,
+        archivedBy: identical(archivedBy, sdkOmittedValue)
+            ? this.archivedBy
+            : archivedBy as SimpleUser?,
+        score: identical(score, sdkOmittedValue) ? this.score : score as double,
         textMatches: identical(textMatches, sdkOmittedValue)
             ? this.textMatches
             : textMatches as SdkOptional<List<SearchResultTextMatchesItem>>,
-        pullRequest: identical(pullRequest, sdkOmittedValue)
-            ? this.pullRequest
-            : pullRequest as SdkOptional<IssueSearchResultItemPullRequest>,
-        body: identical(body, sdkOmittedValue)
-            ? this.body
-            : body as SdkOptional<String>,
-        score: identical(score, sdkOmittedValue) ? this.score : score as double,
-        authorAssociation: identical(authorAssociation, sdkOmittedValue)
-            ? this.authorAssociation
-            : authorAssociation as AuthorAssociation,
-        draft: identical(draft, sdkOmittedValue)
-            ? this.draft
-            : draft as SdkOptional<bool>,
-        repository: identical(repository, sdkOmittedValue)
-            ? this.repository
-            : repository as SdkOptional<Repository>,
-        bodyHtml: identical(bodyHtml, sdkOmittedValue)
-            ? this.bodyHtml
-            : bodyHtml as SdkOptional<String>,
-        bodyText: identical(bodyText, sdkOmittedValue)
-            ? this.bodyText
-            : bodyText as SdkOptional<String>,
-        timelineUrl: identical(timelineUrl, sdkOmittedValue)
-            ? this.timelineUrl
-            : timelineUrl as SdkOptional<String>,
-        type_: identical(type_, sdkOmittedValue)
-            ? this.type_
-            : type_ as SdkOptional<IssueType?>,
-        performedViaGithubApp: identical(performedViaGithubApp, sdkOmittedValue)
-            ? this.performedViaGithubApp
-            : performedViaGithubApp as SdkOptional<NullableIntegration?>,
-        pinnedComment: identical(pinnedComment, sdkOmittedValue)
-            ? this.pinnedComment
-            : pinnedComment as SdkOptional<NullableIssueComment?>,
-        reactions: identical(reactions, sdkOmittedValue)
-            ? this.reactions
-            : reactions as SdkOptional<ReactionRollup>,
       );
 
-  factory IssueSearchResultItem.fromJson(Map<String, dynamic> json) =>
-      IssueSearchResultItem(
-        url: (json['url'] as String?)!,
-        repositoryUrl: (json['repository_url'] as String?)!,
-        labelsUrl: (json['labels_url'] as String?)!,
-        commentsUrl: (json['comments_url'] as String?)!,
-        eventsUrl: (json['events_url'] as String?)!,
-        htmlUrl: (json['html_url'] as String?)!,
+  factory LabelSearchResultItem.fromJson(Map<String, dynamic> json) =>
+      LabelSearchResultItem(
         id: ((json['id'] as num?)?.toInt())!,
         nodeId: (json['node_id'] as String?)!,
-        number: ((json['number'] as num?)?.toInt())!,
-        title: (json['title'] as String?)!,
-        locked: (json['locked'] as bool?)!,
-        activeLockReason: json.containsKey('active_lock_reason')
-            ? SdkPresent(json['active_lock_reason'] as String?)
-            : const SdkOmitted(),
-        assignees: json.containsKey('assignees')
-            ? SdkPresent((json['assignees'] as List?)
-                ?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>))
-                .toList())
-            : const SdkOmitted(),
-        user: json.containsKey('user')
-            ? json['user'] != null
-                ? NullableSimpleUser.fromJson(
-                    json['user'] as Map<String, dynamic>)
+        url: (json['url'] as String?)!,
+        name: (json['name'] as String?)!,
+        color: (json['color'] as String?)!,
+        default_: (json['default'] as bool?)!,
+        description: json.containsKey('description')
+            ? json['description'] as String?
+            : throw ArgumentError.value(
+                null, 'description', 'Required property is missing'),
+        archivedAt: json.containsKey('archived_at')
+            ? json['archived_at'] as String?
+            : throw ArgumentError.value(
+                null, 'archived_at', 'Required property is missing'),
+        archivedBy: json.containsKey('archived_by')
+            ? json['archived_by'] != null
+                ? SimpleUser.fromJson(
+                    json['archived_by'] as Map<String, dynamic>)
                 : null
             : throw ArgumentError.value(
-                null, 'user', 'Required property is missing'),
-        labels: ((json['labels'] as List?)
-            ?.map((e) => IssueSearchResultItemLabelsItem.fromJson(
-                e as Map<String, dynamic>))
-            .toList())!,
-        subIssuesSummary: json['sub_issues_summary'] != null
-            ? SdkPresent((json['sub_issues_summary'] != null
-                ? SubIssuesSummary.fromJson(
-                    json['sub_issues_summary'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        issueDependenciesSummary: json['issue_dependencies_summary'] != null
-            ? SdkPresent((json['issue_dependencies_summary'] != null
-                ? IssueDependenciesSummary.fromJson(
-                    json['issue_dependencies_summary'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        issueFieldValues: json['issue_field_values'] != null
-            ? SdkPresent(((json['issue_field_values'] as List?)
-                ?.map(
-                    (e) => IssueFieldValue.fromJson(e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-        state: (json['state'] as String?)!,
-        stateReason: json.containsKey('state_reason')
-            ? SdkPresent(json['state_reason'] as String?)
-            : const SdkOmitted(),
-        assignee: json.containsKey('assignee')
-            ? json['assignee'] != null
-                ? NullableSimpleUser.fromJson(
-                    json['assignee'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'assignee', 'Required property is missing'),
-        milestone: json.containsKey('milestone')
-            ? json['milestone'] != null
-                ? NullableMilestone.fromJson(
-                    json['milestone'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'milestone', 'Required property is missing'),
-        comments: ((json['comments'] as num?)?.toInt())!,
-        createdAt: (json['created_at'] as String?)!,
-        updatedAt: (json['updated_at'] as String?)!,
-        closedAt: json.containsKey('closed_at')
-            ? json['closed_at'] as String?
-            : throw ArgumentError.value(
-                null, 'closed_at', 'Required property is missing'),
+                null, 'archived_by', 'Required property is missing'),
+        score: ((json['score'] as num?)?.toDouble())!,
         textMatches: json['text_matches'] != null
             ? SdkPresent(((json['text_matches'] as List?)
                 ?.map((e) => SearchResultTextMatchesItem.fromJson(
                     e as Map<String, dynamic>))
                 .toList())!)
             : const SdkOmitted(),
-        pullRequest: json['pull_request'] != null
-            ? SdkPresent((json['pull_request'] != null
-                ? IssueSearchResultItemPullRequest.fromJson(
-                    json['pull_request'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        body: json['body'] != null
-            ? SdkPresent((json['body'] as String?)!)
-            : const SdkOmitted(),
-        score: ((json['score'] as num?)?.toDouble())!,
-        authorAssociation: (json['author_association'] != null
-            ? AuthorAssociation.fromJson(json['author_association'] as String)
-            : null)!,
-        draft: json['draft'] != null
-            ? SdkPresent((json['draft'] as bool?)!)
-            : const SdkOmitted(),
-        repository: json['repository'] != null
-            ? SdkPresent((json['repository'] != null
-                ? Repository.fromJson(
-                    json['repository'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        bodyHtml: json['body_html'] != null
-            ? SdkPresent((json['body_html'] as String?)!)
-            : const SdkOmitted(),
-        bodyText: json['body_text'] != null
-            ? SdkPresent((json['body_text'] as String?)!)
-            : const SdkOmitted(),
-        timelineUrl: json['timeline_url'] != null
-            ? SdkPresent((json['timeline_url'] as String?)!)
-            : const SdkOmitted(),
-        type_: json.containsKey('type')
-            ? SdkPresent(json['type'] != null
-                ? IssueType.fromJson(json['type'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        performedViaGithubApp: json.containsKey('performed_via_github_app')
-            ? SdkPresent(json['performed_via_github_app'] != null
-                ? NullableIntegration.fromJson(
-                    json['performed_via_github_app'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        pinnedComment: json.containsKey('pinned_comment')
-            ? SdkPresent(json['pinned_comment'] != null
-                ? NullableIssueComment.fromJson(
-                    json['pinned_comment'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        reactions: json['reactions'] != null
-            ? SdkPresent((json['reactions'] != null
-                ? ReactionRollup.fromJson(
-                    json['reactions'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        'url': url,
-        'repository_url': repositoryUrl,
-        'labels_url': labelsUrl,
-        'comments_url': commentsUrl,
-        'events_url': eventsUrl,
-        'html_url': htmlUrl,
         'id': id,
         'node_id': nodeId,
-        'number': number,
-        'title': title,
-        'locked': locked,
-        ...switch (activeLockReason) {
-          SdkPresent<String?>(value: final value) => {
-              'active_lock_reason': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (assignees) {
-          SdkPresent<List<SimpleUser>?>(value: final value) => {
-              'assignees': value?.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'user': user?.toJson(),
-        'labels': labels.map((item) => item.toJson()).toList(),
-        ...switch (subIssuesSummary) {
-          SdkPresent<SubIssuesSummary>(value: final value) => {
-              'sub_issues_summary': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (issueDependenciesSummary) {
-          SdkPresent<IssueDependenciesSummary>(value: final value) => {
-              'issue_dependencies_summary': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (issueFieldValues) {
-          SdkPresent<List<IssueFieldValue>>(value: final value) => {
-              'issue_field_values': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'state': state,
-        ...switch (stateReason) {
-          SdkPresent<String?>(value: final value) => {
-              'state_reason': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'assignee': assignee?.toJson(),
-        'milestone': milestone?.toJson(),
-        'comments': comments,
-        'created_at': createdAt,
-        'updated_at': updatedAt,
-        'closed_at': closedAt,
+        'url': url,
+        'name': name,
+        'color': color,
+        'default': default_,
+        'description': description,
+        'archived_at': archivedAt,
+        'archived_by': archivedBy?.toJson(),
+        'score': score,
         ...switch (textMatches) {
           SdkPresent<List<SearchResultTextMatchesItem>>(value: final value) => {
               'text_matches': value.map((item) => item.toJson()).toList(),
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (pullRequest) {
-          SdkPresent<IssueSearchResultItemPullRequest>(value: final value) => {
-              'pull_request': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (body) {
-          SdkPresent<String>(value: final value) => {
-              'body': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'score': score,
-        'author_association': authorAssociation.toJson(),
-        ...switch (draft) {
+      };
+}
+
+/// Optional object value serialized in the `permissions` wire field.
+class RepoSearchResultItemPermissions {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// Required `boolean` value serialized in the `admin` wire field.
+  final bool admin;
+
+  /// Optional `boolean` value serialized in the `maintain` wire field.
+  final SdkOptional<bool> maintain;
+
+  /// Required `boolean` value serialized in the `push` wire field.
+  final bool push;
+
+  /// Optional `boolean` value serialized in the `triage` wire field.
+  final SdkOptional<bool> triage;
+
+  /// Required `boolean` value serialized in the `pull` wire field.
+  final bool pull;
+
+  const RepoSearchResultItemPermissions(
+      {required this.admin,
+      this.maintain = const SdkOmitted(),
+      required this.push,
+      this.triage = const SdkOmitted(),
+      required this.pull});
+
+  RepoSearchResultItemPermissions Function(
+      {bool admin,
+      SdkOptional<bool> maintain,
+      bool push,
+      SdkOptional<bool> triage,
+      bool pull}) get copyWith => _copyWith;
+
+  RepoSearchResultItemPermissions _copyWith(
+          {Object? admin = sdkOmittedValue,
+          Object? maintain = sdkOmittedValue,
+          Object? push = sdkOmittedValue,
+          Object? triage = sdkOmittedValue,
+          Object? pull = sdkOmittedValue}) =>
+      RepoSearchResultItemPermissions(
+        admin: identical(admin, sdkOmittedValue) ? this.admin : admin as bool,
+        maintain: identical(maintain, sdkOmittedValue)
+            ? this.maintain
+            : maintain as SdkOptional<bool>,
+        push: identical(push, sdkOmittedValue) ? this.push : push as bool,
+        triage: identical(triage, sdkOmittedValue)
+            ? this.triage
+            : triage as SdkOptional<bool>,
+        pull: identical(pull, sdkOmittedValue) ? this.pull : pull as bool,
+      );
+
+  factory RepoSearchResultItemPermissions.fromJson(Map<String, dynamic> json) =>
+      RepoSearchResultItemPermissions(
+        admin: (json['admin'] as bool?)!,
+        maintain: json['maintain'] != null
+            ? SdkPresent((json['maintain'] as bool?)!)
+            : const SdkOmitted(),
+        push: (json['push'] as bool?)!,
+        triage: json['triage'] != null
+            ? SdkPresent((json['triage'] as bool?)!)
+            : const SdkOmitted(),
+        pull: (json['pull'] as bool?)!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'admin': admin,
+        ...switch (maintain) {
           SdkPresent<bool>(value: final value) => {
-              'draft': value,
+              'maintain': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (repository) {
-          SdkPresent<Repository>(value: final value) => {
-              'repository': value.toJson(),
+        'push': push,
+        ...switch (triage) {
+          SdkPresent<bool>(value: final value) => {
+              'triage': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (bodyHtml) {
-          SdkPresent<String>(value: final value) => {
-              'body_html': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (bodyText) {
-          SdkPresent<String>(value: final value) => {
-              'body_text': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (timelineUrl) {
-          SdkPresent<String>(value: final value) => {
-              'timeline_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (type_) {
-          SdkPresent<IssueType?>(value: final value) => {
-              'type': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (performedViaGithubApp) {
-          SdkPresent<NullableIntegration?>(value: final value) => {
-              'performed_via_github_app': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pinnedComment) {
-          SdkPresent<NullableIssueComment?>(value: final value) => {
-              'pinned_comment': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (reactions) {
-          SdkPresent<ReactionRollup>(value: final value) => {
-              'reactions': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
+        'pull': pull,
       };
 }

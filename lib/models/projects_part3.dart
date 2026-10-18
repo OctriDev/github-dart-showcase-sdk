@@ -353,6 +353,26 @@ sealed class ProjectsV2ItemSimpleContent {
   static const String constructionSurface = 'named';
   const ProjectsV2ItemSimpleContent();
   factory ProjectsV2ItemSimpleContent.fromJson(Object? json) {
+    if (json is Map<String, dynamic>) {
+      try {
+        final value = Issue.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return ProjectsV2ItemSimpleContentIssue(value);
+        }
+      } catch (_) {}
+      try {
+        final value = PullRequestSimple.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return ProjectsV2ItemSimpleContentPullRequestSimple(value);
+        }
+      } catch (_) {}
+      try {
+        final value = ProjectsV2DraftIssue.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return ProjectsV2ItemSimpleContentProjectsV2DraftIssue(value);
+        }
+      } catch (_) {}
+    }
     try {
       return ProjectsV2ItemSimpleContentIssue(
           Issue.fromJson(json as Map<String, dynamic>));

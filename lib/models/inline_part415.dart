@@ -4,520 +4,560 @@
 part of 'inline.dart';
 
 // Inline operation models (part 415)
-class ReposCreateOrUpdateFileContentsRequestBody {
+class UsersListAttestationsBulkResponseAttestationsSubjectDigestsValueItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// The commit message.
-  final String message;
+  /// The bundle of the attestation.
+  final SdkOptional<
+          UsersListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle>
+      bundle;
+  final SdkOptional<int> repositoryId;
+  final SdkOptional<String> bundleUrl;
 
-  /// The new file content, using Base64 encoding.
-  final String content;
+  const UsersListAttestationsBulkResponseAttestationsSubjectDigestsValueItem(
+      {this.bundle = const SdkOmitted(),
+      this.repositoryId = const SdkOmitted(),
+      this.bundleUrl = const SdkOmitted()});
 
-  /// **Required if you are updating a file**. The blob SHA of the file being replaced.
-  final SdkOptional<String> sha;
+  UsersListAttestationsBulkResponseAttestationsSubjectDigestsValueItem Function(
+      {SdkOptional<
+              UsersListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle>
+          bundle,
+      SdkOptional<int> repositoryId,
+      SdkOptional<String> bundleUrl}) get copyWith => _copyWith;
 
-  /// The branch name. Default: the repository’s default branch.
-  final SdkOptional<String> branch;
+  UsersListAttestationsBulkResponseAttestationsSubjectDigestsValueItem
+      _copyWith(
+              {Object? bundle = sdkOmittedValue,
+              Object? repositoryId = sdkOmittedValue,
+              Object? bundleUrl = sdkOmittedValue}) =>
+          UsersListAttestationsBulkResponseAttestationsSubjectDigestsValueItem(
+            bundle: identical(bundle, sdkOmittedValue)
+                ? this.bundle
+                : bundle as SdkOptional<
+                    UsersListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle>,
+            repositoryId: identical(repositoryId, sdkOmittedValue)
+                ? this.repositoryId
+                : repositoryId as SdkOptional<int>,
+            bundleUrl: identical(bundleUrl, sdkOmittedValue)
+                ? this.bundleUrl
+                : bundleUrl as SdkOptional<String>,
+          );
 
-  /// The person that committed the file. Default: the authenticated user.
-  final SdkOptional<ReposCreateOrUpdateFileContentsRequestBodyCommitter>
-      committer;
-
-  /// The author of the file. Default: The `committer` or the authenticated user if you omit `committer`.
-  final SdkOptional<ReposCreateOrUpdateFileContentsRequestBodyAuthor> author;
-
-  const ReposCreateOrUpdateFileContentsRequestBody(
-      {required this.message,
-      required this.content,
-      this.sha = const SdkOmitted(),
-      this.branch = const SdkOmitted(),
-      this.committer = const SdkOmitted(),
-      this.author = const SdkOmitted()});
-
-  ReposCreateOrUpdateFileContentsRequestBody Function(
-          {String message,
-          String content,
-          SdkOptional<String> sha,
-          SdkOptional<String> branch,
-          SdkOptional<ReposCreateOrUpdateFileContentsRequestBodyCommitter>
-              committer,
-          SdkOptional<ReposCreateOrUpdateFileContentsRequestBodyAuthor> author})
-      get copyWith => _copyWith;
-
-  ReposCreateOrUpdateFileContentsRequestBody _copyWith(
-          {Object? message = sdkOmittedValue,
-          Object? content = sdkOmittedValue,
-          Object? sha = sdkOmittedValue,
-          Object? branch = sdkOmittedValue,
-          Object? committer = sdkOmittedValue,
-          Object? author = sdkOmittedValue}) =>
-      ReposCreateOrUpdateFileContentsRequestBody(
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
-        content: identical(content, sdkOmittedValue)
-            ? this.content
-            : content as String,
-        sha: identical(sha, sdkOmittedValue)
-            ? this.sha
-            : sha as SdkOptional<String>,
-        branch: identical(branch, sdkOmittedValue)
-            ? this.branch
-            : branch as SdkOptional<String>,
-        committer: identical(committer, sdkOmittedValue)
-            ? this.committer
-            : committer as SdkOptional<
-                ReposCreateOrUpdateFileContentsRequestBodyCommitter>,
-        author: identical(author, sdkOmittedValue)
-            ? this.author
-            : author as SdkOptional<
-                ReposCreateOrUpdateFileContentsRequestBodyAuthor>,
-      );
-
-  factory ReposCreateOrUpdateFileContentsRequestBody.fromJson(
+  factory UsersListAttestationsBulkResponseAttestationsSubjectDigestsValueItem.fromJson(
           Map<String, dynamic> json) =>
-      ReposCreateOrUpdateFileContentsRequestBody(
-        message: (json['message'] as String?)!,
-        content: (json['content'] as String?)!,
-        sha: json['sha'] != null
-            ? SdkPresent((json['sha'] as String?)!)
-            : const SdkOmitted(),
-        branch: json['branch'] != null
-            ? SdkPresent((json['branch'] as String?)!)
-            : const SdkOmitted(),
-        committer: json['committer'] != null
-            ? SdkPresent((json['committer'] != null
-                ? ReposCreateOrUpdateFileContentsRequestBodyCommitter.fromJson(
-                    json['committer'] as Map<String, dynamic>)
+      UsersListAttestationsBulkResponseAttestationsSubjectDigestsValueItem(
+        bundle: json['bundle'] != null
+            ? SdkPresent((json['bundle'] != null
+                ? UsersListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle
+                    .fromJson(json['bundle'] as Map<String, dynamic>)
                 : null)!)
             : const SdkOmitted(),
-        author: json['author'] != null
-            ? SdkPresent((json['author'] != null
-                ? ReposCreateOrUpdateFileContentsRequestBodyAuthor.fromJson(
-                    json['author'] as Map<String, dynamic>)
-                : null)!)
+        repositoryId: json['repository_id'] != null
+            ? SdkPresent(((json['repository_id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        bundleUrl: json['bundle_url'] != null
+            ? SdkPresent((json['bundle_url'] as String?)!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        'message': message,
-        'content': content,
-        ...switch (sha) {
-          SdkPresent<String>(value: final value) => {
-              'sha': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (branch) {
-          SdkPresent<String>(value: final value) => {
-              'branch': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (committer) {
-          SdkPresent<ReposCreateOrUpdateFileContentsRequestBodyCommitter>(
+        ...switch (bundle) {
+          SdkPresent<
+                UsersListAttestationsBulkResponseAttestationsSubjectDigestsValueItemBundle>(
             value: final value
           ) =>
             {
-              'committer': value.toJson(),
+              'bundle': value.toJson(),
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (author) {
-          SdkPresent<ReposCreateOrUpdateFileContentsRequestBodyAuthor>(
+        ...switch (repositoryId) {
+          SdkPresent<int>(value: final value) => {
+              'repository_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (bundleUrl) {
+          SdkPresent<String>(value: final value) => {
+              'bundle_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+/// Information about the current page.
+class UsersListAttestationsBulkResponsePageInfo {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// Indicates whether there is a next page.
+  final SdkOptional<bool> hasNext;
+
+  /// Indicates whether there is a previous page.
+  final SdkOptional<bool> hasPrevious;
+
+  /// The cursor to the next page.
+  final SdkOptional<String> next;
+
+  /// The cursor to the previous page.
+  final SdkOptional<String> previous;
+
+  const UsersListAttestationsBulkResponsePageInfo(
+      {this.hasNext = const SdkOmitted(),
+      this.hasPrevious = const SdkOmitted(),
+      this.next = const SdkOmitted(),
+      this.previous = const SdkOmitted()});
+
+  UsersListAttestationsBulkResponsePageInfo Function(
+      {SdkOptional<bool> hasNext,
+      SdkOptional<bool> hasPrevious,
+      SdkOptional<String> next,
+      SdkOptional<String> previous}) get copyWith => _copyWith;
+
+  UsersListAttestationsBulkResponsePageInfo _copyWith(
+          {Object? hasNext = sdkOmittedValue,
+          Object? hasPrevious = sdkOmittedValue,
+          Object? next = sdkOmittedValue,
+          Object? previous = sdkOmittedValue}) =>
+      UsersListAttestationsBulkResponsePageInfo(
+        hasNext: identical(hasNext, sdkOmittedValue)
+            ? this.hasNext
+            : hasNext as SdkOptional<bool>,
+        hasPrevious: identical(hasPrevious, sdkOmittedValue)
+            ? this.hasPrevious
+            : hasPrevious as SdkOptional<bool>,
+        next: identical(next, sdkOmittedValue)
+            ? this.next
+            : next as SdkOptional<String>,
+        previous: identical(previous, sdkOmittedValue)
+            ? this.previous
+            : previous as SdkOptional<String>,
+      );
+
+  factory UsersListAttestationsBulkResponsePageInfo.fromJson(
+          Map<String, dynamic> json) =>
+      UsersListAttestationsBulkResponsePageInfo(
+        hasNext: json['has_next'] != null
+            ? SdkPresent((json['has_next'] as bool?)!)
+            : const SdkOmitted(),
+        hasPrevious: json['has_previous'] != null
+            ? SdkPresent((json['has_previous'] as bool?)!)
+            : const SdkOmitted(),
+        next: json['next'] != null
+            ? SdkPresent((json['next'] as String?)!)
+            : const SdkOmitted(),
+        previous: json['previous'] != null
+            ? SdkPresent((json['previous'] as String?)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (hasNext) {
+          SdkPresent<bool>(value: final value) => {
+              'has_next': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (hasPrevious) {
+          SdkPresent<bool>(value: final value) => {
+              'has_previous': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (next) {
+          SdkPresent<String>(value: final value) => {
+              'next': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (previous) {
+          SdkPresent<String>(value: final value) => {
+              'previous': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class UsersListAttestationsBulkResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// Mapping of subject digest to bundles.
+  final SdkOptional<
+          Map<
+              String,
+              List<
+                  UsersListAttestationsBulkResponseAttestationsSubjectDigestsValueItem>>>
+      attestationsSubjectDigests;
+
+  /// Information about the current page.
+  final SdkOptional<UsersListAttestationsBulkResponsePageInfo> pageInfo;
+
+  const UsersListAttestationsBulkResponse(
+      {this.attestationsSubjectDigests = const SdkOmitted(),
+      this.pageInfo = const SdkOmitted()});
+
+  UsersListAttestationsBulkResponse Function(
+      {SdkOptional<
+              Map<
+                  String,
+                  List<
+                      UsersListAttestationsBulkResponseAttestationsSubjectDigestsValueItem>>>
+          attestationsSubjectDigests,
+      SdkOptional<UsersListAttestationsBulkResponsePageInfo>
+          pageInfo}) get copyWith => _copyWith;
+
+  UsersListAttestationsBulkResponse _copyWith(
+          {Object? attestationsSubjectDigests = sdkOmittedValue,
+          Object? pageInfo = sdkOmittedValue}) =>
+      UsersListAttestationsBulkResponse(
+        attestationsSubjectDigests: identical(
+                attestationsSubjectDigests, sdkOmittedValue)
+            ? this.attestationsSubjectDigests
+            : attestationsSubjectDigests as SdkOptional<
+                Map<
+                    String,
+                    List<
+                        UsersListAttestationsBulkResponseAttestationsSubjectDigestsValueItem>>>,
+        pageInfo: identical(pageInfo, sdkOmittedValue)
+            ? this.pageInfo
+            : pageInfo
+                as SdkOptional<UsersListAttestationsBulkResponsePageInfo>,
+      );
+
+  factory UsersListAttestationsBulkResponse.fromJson(
+          Map<String, dynamic> json) =>
+      UsersListAttestationsBulkResponse(
+        attestationsSubjectDigests: json['attestations_subject_digests'] != null
+            ? SdkPresent((json['attestations_subject_digests'] == null
+                ? null
+                : Map<String, dynamic>.from(
+                        json['attestations_subject_digests'] as Map)
+                    .map((key, value) => MapEntry(
+                        key,
+                        (value as List)
+                            .map((item) =>
+                                UsersListAttestationsBulkResponseAttestationsSubjectDigestsValueItem
+                                    .fromJson(item as Map<String, dynamic>))
+                            .toList())))!)
+            : const SdkOmitted(),
+        pageInfo: json['page_info'] != null
+            ? SdkPresent((json['page_info'] != null
+                ? UsersListAttestationsBulkResponsePageInfo.fromJson(
+                    json['page_info'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (attestationsSubjectDigests) {
+          SdkPresent<
+                Map<
+                    String,
+                    List<
+                        UsersListAttestationsBulkResponseAttestationsSubjectDigestsValueItem>>>(
             value: final value
           ) =>
             {
-              'author': value.toJson(),
+              'attestations_subject_digests': value.map((key, value) =>
+                  MapEntry(key, value.map((item) => item.toJson()).toList())),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (pageInfo) {
+          SdkPresent<UsersListAttestationsBulkResponsePageInfo>(
+            value: final value
+          ) =>
+            {
+              'page_info': value.toJson(),
             },
           _ => const <String, dynamic>{},
         },
       };
 }
 
-/// object containing information about the committer.
-class ReposDeleteFileRequestBodyCommitter {
+class UsersDeleteAttestationsBulkRequestBodyVariant0 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// The name of the author (or committer) of the commit
-  final SdkOptional<String> name;
+  /// List of subject digests associated with the artifact attestations to delete.
+  final List<String> subjectDigests;
 
-  /// The email of the author (or committer) of the commit
-  final SdkOptional<String> email;
+  const UsersDeleteAttestationsBulkRequestBodyVariant0(
+      {required this.subjectDigests});
 
-  const ReposDeleteFileRequestBodyCommitter(
-      {this.name = const SdkOmitted(), this.email = const SdkOmitted()});
+  UsersDeleteAttestationsBulkRequestBodyVariant0 Function(
+      {List<String> subjectDigests}) get copyWith => _copyWith;
 
-  ReposDeleteFileRequestBodyCommitter Function(
-      {SdkOptional<String> name,
-      SdkOptional<String> email}) get copyWith => _copyWith;
-
-  ReposDeleteFileRequestBodyCommitter _copyWith(
-          {Object? name = sdkOmittedValue, Object? email = sdkOmittedValue}) =>
-      ReposDeleteFileRequestBodyCommitter(
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String>,
-        email: identical(email, sdkOmittedValue)
-            ? this.email
-            : email as SdkOptional<String>,
+  UsersDeleteAttestationsBulkRequestBodyVariant0 _copyWith(
+          {Object? subjectDigests = sdkOmittedValue}) =>
+      UsersDeleteAttestationsBulkRequestBodyVariant0(
+        subjectDigests: identical(subjectDigests, sdkOmittedValue)
+            ? this.subjectDigests
+            : subjectDigests as List<String>,
       );
 
-  factory ReposDeleteFileRequestBodyCommitter.fromJson(
+  factory UsersDeleteAttestationsBulkRequestBodyVariant0.fromJson(
           Map<String, dynamic> json) =>
-      ReposDeleteFileRequestBodyCommitter(
-        name: json['name'] != null
-            ? SdkPresent((json['name'] as String?)!)
-            : const SdkOmitted(),
-        email: json['email'] != null
-            ? SdkPresent((json['email'] as String?)!)
-            : const SdkOmitted(),
+      UsersDeleteAttestationsBulkRequestBodyVariant0(
+        subjectDigests: ((json['subject_digests'] as List?)
+            ?.map((e) => e as String)
+            .toList())!,
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (name) {
-          SdkPresent<String>(value: final value) => {
-              'name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (email) {
-          SdkPresent<String>(value: final value) => {
-              'email': value,
-            },
-          _ => const <String, dynamic>{},
-        },
+        'subject_digests': subjectDigests,
       };
 }
 
-/// object containing information about the author.
-class ReposDeleteFileRequestBodyAuthor {
+class UsersDeleteAttestationsBulkRequestBodyVariant1 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// The name of the author (or committer) of the commit
-  final SdkOptional<String> name;
+  /// List of unique IDs associated with the artifact attestations to delete.
+  final List<int> attestationIds;
 
-  /// The email of the author (or committer) of the commit
-  final SdkOptional<String> email;
+  const UsersDeleteAttestationsBulkRequestBodyVariant1(
+      {required this.attestationIds});
 
-  const ReposDeleteFileRequestBodyAuthor(
-      {this.name = const SdkOmitted(), this.email = const SdkOmitted()});
+  UsersDeleteAttestationsBulkRequestBodyVariant1 Function(
+      {List<int> attestationIds}) get copyWith => _copyWith;
 
-  ReposDeleteFileRequestBodyAuthor Function(
-      {SdkOptional<String> name,
-      SdkOptional<String> email}) get copyWith => _copyWith;
-
-  ReposDeleteFileRequestBodyAuthor _copyWith(
-          {Object? name = sdkOmittedValue, Object? email = sdkOmittedValue}) =>
-      ReposDeleteFileRequestBodyAuthor(
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String>,
-        email: identical(email, sdkOmittedValue)
-            ? this.email
-            : email as SdkOptional<String>,
+  UsersDeleteAttestationsBulkRequestBodyVariant1 _copyWith(
+          {Object? attestationIds = sdkOmittedValue}) =>
+      UsersDeleteAttestationsBulkRequestBodyVariant1(
+        attestationIds: identical(attestationIds, sdkOmittedValue)
+            ? this.attestationIds
+            : attestationIds as List<int>,
       );
 
-  factory ReposDeleteFileRequestBodyAuthor.fromJson(
+  factory UsersDeleteAttestationsBulkRequestBodyVariant1.fromJson(
           Map<String, dynamic> json) =>
-      ReposDeleteFileRequestBodyAuthor(
-        name: json['name'] != null
-            ? SdkPresent((json['name'] as String?)!)
-            : const SdkOmitted(),
-        email: json['email'] != null
-            ? SdkPresent((json['email'] as String?)!)
-            : const SdkOmitted(),
+      UsersDeleteAttestationsBulkRequestBodyVariant1(
+        attestationIds: ((json['attestation_ids'] as List?)
+            ?.map((e) => (e as num).toInt())
+            .toList())!,
       );
 
   Map<String, dynamic> toJson() => {
-        ...switch (name) {
-          SdkPresent<String>(value: final value) => {
-              'name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (email) {
-          SdkPresent<String>(value: final value) => {
-              'email': value,
-            },
-          _ => const <String, dynamic>{},
-        },
+        'attestation_ids': attestationIds,
       };
 }
 
-class ReposDeleteFileRequestBody {
+/// The attestation's Sigstore Bundle. Refer to the [Sigstore Bundle Specification](https://github.com/sigstore/protobuf-specs/blob/main/protos/sigstore_bundle.proto) for more information.
+class UsersListAttestationsResponseAttestationsItemBundle {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+  final SdkOptional<String> mediaType;
+  final SdkOptional<Map<String, Object?>> verificationMaterial;
+  final SdkOptional<Map<String, Object?>> dsseEnvelope;
 
-  /// The commit message.
-  final String message;
+  const UsersListAttestationsResponseAttestationsItemBundle(
+      {this.mediaType = const SdkOmitted(),
+      this.verificationMaterial = const SdkOmitted(),
+      this.dsseEnvelope = const SdkOmitted()});
 
-  /// The blob SHA of the file being deleted.
-  final String sha;
-
-  /// The branch name. Default: the repository’s default branch
-  final SdkOptional<String> branch;
-
-  /// object containing information about the committer.
-  final SdkOptional<ReposDeleteFileRequestBodyCommitter> committer;
-
-  /// object containing information about the author.
-  final SdkOptional<ReposDeleteFileRequestBodyAuthor> author;
-
-  const ReposDeleteFileRequestBody(
-      {required this.message,
-      required this.sha,
-      this.branch = const SdkOmitted(),
-      this.committer = const SdkOmitted(),
-      this.author = const SdkOmitted()});
-
-  ReposDeleteFileRequestBody Function(
-          {String message,
-          String sha,
-          SdkOptional<String> branch,
-          SdkOptional<ReposDeleteFileRequestBodyCommitter> committer,
-          SdkOptional<ReposDeleteFileRequestBodyAuthor> author})
+  UsersListAttestationsResponseAttestationsItemBundle Function(
+          {SdkOptional<String> mediaType,
+          SdkOptional<Map<String, Object?>> verificationMaterial,
+          SdkOptional<Map<String, Object?>> dsseEnvelope})
       get copyWith => _copyWith;
 
-  ReposDeleteFileRequestBody _copyWith(
-          {Object? message = sdkOmittedValue,
-          Object? sha = sdkOmittedValue,
-          Object? branch = sdkOmittedValue,
-          Object? committer = sdkOmittedValue,
-          Object? author = sdkOmittedValue}) =>
-      ReposDeleteFileRequestBody(
-        message: identical(message, sdkOmittedValue)
-            ? this.message
-            : message as String,
-        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-        branch: identical(branch, sdkOmittedValue)
-            ? this.branch
-            : branch as SdkOptional<String>,
-        committer: identical(committer, sdkOmittedValue)
-            ? this.committer
-            : committer as SdkOptional<ReposDeleteFileRequestBodyCommitter>,
-        author: identical(author, sdkOmittedValue)
-            ? this.author
-            : author as SdkOptional<ReposDeleteFileRequestBodyAuthor>,
+  UsersListAttestationsResponseAttestationsItemBundle _copyWith(
+          {Object? mediaType = sdkOmittedValue,
+          Object? verificationMaterial = sdkOmittedValue,
+          Object? dsseEnvelope = sdkOmittedValue}) =>
+      UsersListAttestationsResponseAttestationsItemBundle(
+        mediaType: identical(mediaType, sdkOmittedValue)
+            ? this.mediaType
+            : mediaType as SdkOptional<String>,
+        verificationMaterial: identical(verificationMaterial, sdkOmittedValue)
+            ? this.verificationMaterial
+            : verificationMaterial as SdkOptional<Map<String, Object?>>,
+        dsseEnvelope: identical(dsseEnvelope, sdkOmittedValue)
+            ? this.dsseEnvelope
+            : dsseEnvelope as SdkOptional<Map<String, Object?>>,
       );
 
-  factory ReposDeleteFileRequestBody.fromJson(Map<String, dynamic> json) =>
-      ReposDeleteFileRequestBody(
-        message: (json['message'] as String?)!,
-        sha: (json['sha'] as String?)!,
-        branch: json['branch'] != null
-            ? SdkPresent((json['branch'] as String?)!)
+  factory UsersListAttestationsResponseAttestationsItemBundle.fromJson(
+          Map<String, dynamic> json) =>
+      UsersListAttestationsResponseAttestationsItemBundle(
+        mediaType: json['mediaType'] != null
+            ? SdkPresent((json['mediaType'] as String?)!)
             : const SdkOmitted(),
-        committer: json['committer'] != null
-            ? SdkPresent((json['committer'] != null
-                ? ReposDeleteFileRequestBodyCommitter.fromJson(
-                    json['committer'] as Map<String, dynamic>)
-                : null)!)
+        verificationMaterial: json['verificationMaterial'] != null
+            ? SdkPresent((json['verificationMaterial'] == null
+                ? null
+                : Map<String, dynamic>.from(json['verificationMaterial'] as Map)
+                    .map((key, value) => MapEntry(key, value)))!)
             : const SdkOmitted(),
-        author: json['author'] != null
-            ? SdkPresent((json['author'] != null
-                ? ReposDeleteFileRequestBodyAuthor.fromJson(
-                    json['author'] as Map<String, dynamic>)
-                : null)!)
+        dsseEnvelope: json['dsseEnvelope'] != null
+            ? SdkPresent((json['dsseEnvelope'] == null
+                ? null
+                : Map<String, dynamic>.from(json['dsseEnvelope'] as Map)
+                    .map((key, value) => MapEntry(key, value)))!)
             : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        'message': message,
-        'sha': sha,
-        ...switch (branch) {
+        ...switch (mediaType) {
           SdkPresent<String>(value: final value) => {
-              'branch': value,
+              'mediaType': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (committer) {
-          SdkPresent<ReposDeleteFileRequestBodyCommitter>(value: final value) =>
-            {
-              'committer': value.toJson(),
+        ...switch (verificationMaterial) {
+          SdkPresent<Map<String, Object?>>(value: final value) => {
+              'verificationMaterial': value,
             },
           _ => const <String, dynamic>{},
         },
-        ...switch (author) {
-          SdkPresent<ReposDeleteFileRequestBodyAuthor>(value: final value) => {
-              'author': value.toJson(),
+        ...switch (dsseEnvelope) {
+          SdkPresent<Map<String, Object?>>(value: final value) => {
+              'dsseEnvelope': value,
             },
           _ => const <String, dynamic>{},
         },
       };
 }
 
-class ReposCreateDeploymentRequestBody {
+class UsersListAttestationsResponseAttestationsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
 
-  /// The ref to deploy. This can be a branch, tag, or SHA.
-  final String ref;
+  /// The attestation's Sigstore Bundle. Refer to the [Sigstore Bundle Specification](https://github.com/sigstore/protobuf-specs/blob/main/protos/sigstore_bundle.proto) for more information.
+  final SdkOptional<UsersListAttestationsResponseAttestationsItemBundle> bundle;
+  final SdkOptional<int> repositoryId;
+  final SdkOptional<String> bundleUrl;
+  final SdkOptional<String> initiator;
 
-  /// Specifies a task to execute (e.g., `deploy` or `deploy:migrations`).
-  final SdkOptional<String> task;
+  const UsersListAttestationsResponseAttestationsItem(
+      {this.bundle = const SdkOmitted(),
+      this.repositoryId = const SdkOmitted(),
+      this.bundleUrl = const SdkOmitted(),
+      this.initiator = const SdkOmitted()});
 
-  /// Attempts to automatically merge the default branch into the requested ref, if it's behind the default branch.
-  final SdkOptional<bool> autoMerge;
+  UsersListAttestationsResponseAttestationsItem Function(
+      {SdkOptional<UsersListAttestationsResponseAttestationsItemBundle> bundle,
+      SdkOptional<int> repositoryId,
+      SdkOptional<String> bundleUrl,
+      SdkOptional<String> initiator}) get copyWith => _copyWith;
 
-  /// The [status](https://docs.github.com/rest/commits/statuses) contexts to verify against commit status checks. If you omit this parameter, GitHub verifies all unique contexts before creating a deployment. To bypass checking entirely, pass an empty array. Defaults to all unique contexts.
-  final SdkOptional<List<String>> requiredContexts;
-  final SdkOptional<dynamic> payload;
-
-  /// Name for the target deployment environment (e.g., `production`, `staging`, `qa`).
-  final SdkOptional<String> environment;
-
-  /// Short description of the deployment.
-  final SdkOptional<String?> description;
-
-  /// Specifies if the given environment is specific to the deployment and will no longer exist at some point in the future. Default: `false`
-  final SdkOptional<bool> transientEnvironment;
-
-  /// Specifies if the given environment is one that end-users directly interact with. Default: `true` when `environment` is `production` and `false` otherwise.
-  final SdkOptional<bool> productionEnvironment;
-
-  const ReposCreateDeploymentRequestBody(
-      {required this.ref,
-      this.task = const SdkOmitted(),
-      this.autoMerge = const SdkOmitted(),
-      this.requiredContexts = const SdkOmitted(),
-      this.payload = const SdkOmitted(),
-      this.environment = const SdkOmitted(),
-      this.description = const SdkOmitted(),
-      this.transientEnvironment = const SdkOmitted(),
-      this.productionEnvironment = const SdkOmitted()});
-
-  ReposCreateDeploymentRequestBody Function(
-      {String ref,
-      SdkOptional<String> task,
-      SdkOptional<bool> autoMerge,
-      SdkOptional<List<String>> requiredContexts,
-      SdkOptional<dynamic> payload,
-      SdkOptional<String> environment,
-      SdkOptional<String?> description,
-      SdkOptional<bool> transientEnvironment,
-      SdkOptional<bool> productionEnvironment}) get copyWith => _copyWith;
-
-  ReposCreateDeploymentRequestBody _copyWith(
-          {Object? ref = sdkOmittedValue,
-          Object? task = sdkOmittedValue,
-          Object? autoMerge = sdkOmittedValue,
-          Object? requiredContexts = sdkOmittedValue,
-          Object? payload = sdkOmittedValue,
-          Object? environment = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? transientEnvironment = sdkOmittedValue,
-          Object? productionEnvironment = sdkOmittedValue}) =>
-      ReposCreateDeploymentRequestBody(
-        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-        task: identical(task, sdkOmittedValue)
-            ? this.task
-            : task as SdkOptional<String>,
-        autoMerge: identical(autoMerge, sdkOmittedValue)
-            ? this.autoMerge
-            : autoMerge as SdkOptional<bool>,
-        requiredContexts: identical(requiredContexts, sdkOmittedValue)
-            ? this.requiredContexts
-            : requiredContexts as SdkOptional<List<String>>,
-        payload: identical(payload, sdkOmittedValue)
-            ? this.payload
-            : payload as SdkOptional<dynamic>,
-        environment: identical(environment, sdkOmittedValue)
-            ? this.environment
-            : environment as SdkOptional<String>,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as SdkOptional<String?>,
-        transientEnvironment: identical(transientEnvironment, sdkOmittedValue)
-            ? this.transientEnvironment
-            : transientEnvironment as SdkOptional<bool>,
-        productionEnvironment: identical(productionEnvironment, sdkOmittedValue)
-            ? this.productionEnvironment
-            : productionEnvironment as SdkOptional<bool>,
+  UsersListAttestationsResponseAttestationsItem _copyWith(
+          {Object? bundle = sdkOmittedValue,
+          Object? repositoryId = sdkOmittedValue,
+          Object? bundleUrl = sdkOmittedValue,
+          Object? initiator = sdkOmittedValue}) =>
+      UsersListAttestationsResponseAttestationsItem(
+        bundle: identical(bundle, sdkOmittedValue)
+            ? this.bundle
+            : bundle as SdkOptional<
+                UsersListAttestationsResponseAttestationsItemBundle>,
+        repositoryId: identical(repositoryId, sdkOmittedValue)
+            ? this.repositoryId
+            : repositoryId as SdkOptional<int>,
+        bundleUrl: identical(bundleUrl, sdkOmittedValue)
+            ? this.bundleUrl
+            : bundleUrl as SdkOptional<String>,
+        initiator: identical(initiator, sdkOmittedValue)
+            ? this.initiator
+            : initiator as SdkOptional<String>,
       );
 
-  factory ReposCreateDeploymentRequestBody.fromJson(
+  factory UsersListAttestationsResponseAttestationsItem.fromJson(
           Map<String, dynamic> json) =>
-      ReposCreateDeploymentRequestBody(
-        ref: (json['ref'] as String?)!,
-        task: json['task'] != null
-            ? SdkPresent((json['task'] as String?)!)
+      UsersListAttestationsResponseAttestationsItem(
+        bundle: json['bundle'] != null
+            ? SdkPresent((json['bundle'] != null
+                ? UsersListAttestationsResponseAttestationsItemBundle.fromJson(
+                    json['bundle'] as Map<String, dynamic>)
+                : null)!)
             : const SdkOmitted(),
-        autoMerge: json['auto_merge'] != null
-            ? SdkPresent((json['auto_merge'] as bool?)!)
+        repositoryId: json['repository_id'] != null
+            ? SdkPresent(((json['repository_id'] as num?)?.toInt())!)
             : const SdkOmitted(),
-        requiredContexts: json['required_contexts'] != null
-            ? SdkPresent(((json['required_contexts'] as List?)
-                ?.map((e) => e as String)
+        bundleUrl: json['bundle_url'] != null
+            ? SdkPresent((json['bundle_url'] as String?)!)
+            : const SdkOmitted(),
+        initiator: json['initiator'] != null
+            ? SdkPresent((json['initiator'] as String?)!)
+            : const SdkOmitted(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        ...switch (bundle) {
+          SdkPresent<UsersListAttestationsResponseAttestationsItemBundle>(
+            value: final value
+          ) =>
+            {
+              'bundle': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (repositoryId) {
+          SdkPresent<int>(value: final value) => {
+              'repository_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (bundleUrl) {
+          SdkPresent<String>(value: final value) => {
+              'bundle_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (initiator) {
+          SdkPresent<String>(value: final value) => {
+              'initiator': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
+}
+
+class UsersListAttestationsResponse {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+  final SdkOptional<List<UsersListAttestationsResponseAttestationsItem>>
+      attestations;
+
+  const UsersListAttestationsResponse({this.attestations = const SdkOmitted()});
+
+  UsersListAttestationsResponse Function(
+      {SdkOptional<List<UsersListAttestationsResponseAttestationsItem>>
+          attestations}) get copyWith => _copyWith;
+
+  UsersListAttestationsResponse _copyWith(
+          {Object? attestations = sdkOmittedValue}) =>
+      UsersListAttestationsResponse(
+        attestations: identical(attestations, sdkOmittedValue)
+            ? this.attestations
+            : attestations as SdkOptional<
+                List<UsersListAttestationsResponseAttestationsItem>>,
+      );
+
+  factory UsersListAttestationsResponse.fromJson(Map<String, dynamic> json) =>
+      UsersListAttestationsResponse(
+        attestations: json['attestations'] != null
+            ? SdkPresent(((json['attestations'] as List?)
+                ?.map((e) =>
+                    UsersListAttestationsResponseAttestationsItem.fromJson(
+                        e as Map<String, dynamic>))
                 .toList())!)
             : const SdkOmitted(),
-        payload: json['payload'] != null
-            ? SdkPresent((json['payload'])!)
-            : const SdkOmitted(),
-        environment: json['environment'] != null
-            ? SdkPresent((json['environment'] as String?)!)
-            : const SdkOmitted(),
-        description: json.containsKey('description')
-            ? SdkPresent(json['description'] as String?)
-            : const SdkOmitted(),
-        transientEnvironment: json['transient_environment'] != null
-            ? SdkPresent((json['transient_environment'] as bool?)!)
-            : const SdkOmitted(),
-        productionEnvironment: json['production_environment'] != null
-            ? SdkPresent((json['production_environment'] as bool?)!)
-            : const SdkOmitted(),
       );
 
   Map<String, dynamic> toJson() => {
-        'ref': ref,
-        ...switch (task) {
-          SdkPresent<String>(value: final value) => {
-              'task': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (autoMerge) {
-          SdkPresent<bool>(value: final value) => {
-              'auto_merge': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (requiredContexts) {
-          SdkPresent<List<String>>(value: final value) => {
-              'required_contexts': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (payload) {
-          SdkPresent<dynamic>(value: final value) => {
-              'payload': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (environment) {
-          SdkPresent<String>(value: final value) => {
-              'environment': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (description) {
-          SdkPresent<String?>(value: final value) => {
-              'description': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (transientEnvironment) {
-          SdkPresent<bool>(value: final value) => {
-              'transient_environment': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (productionEnvironment) {
-          SdkPresent<bool>(value: final value) => {
-              'production_environment': value,
+        ...switch (attestations) {
+          SdkPresent<List<UsersListAttestationsResponseAttestationsItem>>(
+            value: final value
+          ) =>
+            {
+              'attestations': value.map((item) => item.toJson()).toList(),
             },
           _ => const <String, dynamic>{},
         },

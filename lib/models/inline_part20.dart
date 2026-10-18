@@ -4,6 +4,105 @@
 part of 'inline.dart';
 
 // Inline operation models (part 20)
+/// A notation of whether the dependency is required for the primary build artifact (runtime) or is only used for development. Future versions of this specification may allow for more granular scopes.
+final class DependencyScope {
+  final String value;
+
+  const DependencyScope._(this.value);
+
+  factory DependencyScope.fromJson(String value) => DependencyScope._(value);
+
+  static const runtime = DependencyScope._('runtime');
+  static const development = DependencyScope._('development');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is DependencyScope && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+final class DependencyGraphDiffItemChangeType {
+  final String value;
+
+  const DependencyGraphDiffItemChangeType._(this.value);
+
+  factory DependencyGraphDiffItemChangeType.fromJson(String value) =>
+      DependencyGraphDiffItemChangeType._(value);
+
+  static const added = DependencyGraphDiffItemChangeType._('added');
+  static const removed = DependencyGraphDiffItemChangeType._('removed');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is DependencyGraphDiffItemChangeType && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Where the dependency is utilized. `development` means that the dependency is only utilized in the development environment. `runtime` means that the dependency is utilized at runtime and in the development environment.
+final class DependencyGraphDiffItemScope {
+  final String value;
+
+  const DependencyGraphDiffItemScope._(this.value);
+
+  factory DependencyGraphDiffItemScope.fromJson(String value) =>
+      DependencyGraphDiffItemScope._(value);
+
+  static const unknown = DependencyGraphDiffItemScope._('unknown');
+  static const runtime = DependencyGraphDiffItemScope._('runtime');
+  static const development = DependencyGraphDiffItemScope._('development');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is DependencyGraphDiffItemScope && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// Whether this rule targets a branch or tag.
+final class DeploymentBranchPolicyType {
+  final String value;
+
+  const DeploymentBranchPolicyType._(this.value);
+
+  factory DeploymentBranchPolicyType.fromJson(String value) =>
+      DeploymentBranchPolicyType._(value);
+
+  static const branch = DeploymentBranchPolicyType._('branch');
+  static const tag = DeploymentBranchPolicyType._('tag');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is DeploymentBranchPolicyType && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
 /// Whether this rule targets a branch or tag
 final class DeploymentBranchPolicyNamePatternWithTypeType {
   final String value;
@@ -224,105 +323,6 @@ final class DiscussionUserType {
   @override
   bool operator ==(Object other) =>
       other is DiscussionUserType && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Whether team members will receive notifications when the team is mentioned.
-final class EnterpriseTeamNotificationSetting {
-  final String value;
-
-  const EnterpriseTeamNotificationSetting._(this.value);
-
-  factory EnterpriseTeamNotificationSetting.fromJson(String value) =>
-      EnterpriseTeamNotificationSetting._(value);
-
-  static const notificationsEnabled =
-      EnterpriseTeamNotificationSetting._('notifications_enabled');
-  static const notificationsDisabled =
-      EnterpriseTeamNotificationSetting._('notifications_disabled');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is EnterpriseTeamNotificationSetting && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Whether deployment to the environment(s) was approved or rejected or pending (with comments)
-final class EnvironmentApprovalsState {
-  final String value;
-
-  const EnvironmentApprovalsState._(this.value);
-
-  factory EnvironmentApprovalsState.fromJson(String value) =>
-      EnvironmentApprovalsState._(value);
-
-  static const approved = EnvironmentApprovalsState._('approved');
-  static const rejected = EnvironmentApprovalsState._('rejected');
-  static const pending = EnvironmentApprovalsState._('pending');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is EnvironmentApprovalsState && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-enum FieldsItemSchemaVariant0Type {
-  string;
-
-  static FieldsItemSchemaVariant0Type fromJson(String value) {
-    switch (value) {
-      case 'string':
-        return FieldsItemSchemaVariant0Type.string;
-      default:
-        throw ArgumentError('Unknown FieldsItemSchemaVariant0Type: $value');
-    }
-  }
-
-  String toJson() {
-    switch (this) {
-      case FieldsItemSchemaVariant0Type.string:
-        return 'string';
-    }
-  }
-
-  @override
-  String toString() => toJson();
-}
-
-final class FieldsItemSchemaVariant1ItemsType {
-  final String value;
-
-  const FieldsItemSchemaVariant1ItemsType._(this.value);
-
-  factory FieldsItemSchemaVariant1ItemsType.fromJson(String value) =>
-      FieldsItemSchemaVariant1ItemsType._(value);
-
-  static const string = FieldsItemSchemaVariant1ItemsType._('string');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other is FieldsItemSchemaVariant1ItemsType && other.value == value;
 
   @override
   int get hashCode => value.hashCode;

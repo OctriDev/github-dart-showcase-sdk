@@ -4,27 +4,16 @@
 part of 'inline.dart';
 
 // Inline operation models (part 263)
-/// The enablement status of secret scanning
-final class CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanning {
+final class PullsListReviewCommentsDirection {
   final String value;
 
-  const CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanning._(
-      this.value);
+  const PullsListReviewCommentsDirection._(this.value);
 
-  factory CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanning.fromJson(
-          String value) =>
-      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanning._(
-          value);
+  factory PullsListReviewCommentsDirection.fromJson(String value) =>
+      PullsListReviewCommentsDirection._(value);
 
-  static const enabled =
-      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanning._(
-          'enabled');
-  static const disabled =
-      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanning._(
-          'disabled');
-  static const notSet =
-      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanning._(
-          'not_set');
+  static const asc = PullsListReviewCommentsDirection._('asc');
+  static const desc = PullsListReviewCommentsDirection._('desc');
 
   String toJson() => value;
 
@@ -33,35 +22,76 @@ final class CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScannin
 
   @override
   bool operator ==(Object other) =>
-      other
-          is CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanning &&
+      other is PullsListReviewCommentsDirection && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// In a split diff view, the side of the diff that the pull request's changes appear on. Can be `LEFT` or `RIGHT`. Use `LEFT` for deletions that appear in red. Use `RIGHT` for additions that appear in green or unchanged lines that appear in white and are shown for context. For a multi-line comment, side represents whether the last line of the comment range is a deletion or addition. For more information, see "[Diff view options](https://docs.github.com/articles/about-comparing-branches-in-pull-requests#diff-view-options)" in the GitHub Help documentation.
+final class PullsCreateReviewCommentRequestBodySide {
+  final String value;
+
+  const PullsCreateReviewCommentRequestBodySide._(this.value);
+
+  factory PullsCreateReviewCommentRequestBodySide.fromJson(String value) =>
+      PullsCreateReviewCommentRequestBodySide._(value);
+
+  static const left = PullsCreateReviewCommentRequestBodySide._('LEFT');
+  static const right = PullsCreateReviewCommentRequestBodySide._('RIGHT');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is PullsCreateReviewCommentRequestBodySide && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+/// **Required when using multi-line comments unless using `in_reply_to`**. The `start_side` is the starting side of the diff that the comment applies to. Can be `LEFT` or `RIGHT`. To learn more about multi-line comments, see "[Commenting on a pull request](https://docs.github.com/articles/commenting-on-a-pull-request#adding-line-comments-to-a-pull-request)" in the GitHub Help documentation. See `side` in this table for additional context.
+final class PullsCreateReviewCommentRequestBodyStartSide {
+  final String value;
+
+  const PullsCreateReviewCommentRequestBodyStartSide._(this.value);
+
+  factory PullsCreateReviewCommentRequestBodyStartSide.fromJson(String value) =>
+      PullsCreateReviewCommentRequestBodyStartSide._(value);
+
+  static const left = PullsCreateReviewCommentRequestBodyStartSide._('LEFT');
+  static const right = PullsCreateReviewCommentRequestBodyStartSide._('RIGHT');
+  static const side = PullsCreateReviewCommentRequestBodyStartSide._('side');
+
+  String toJson() => value;
+
+  @override
+  String toString() => value.toString();
+
+  @override
+  bool operator ==(Object other) =>
+      other is PullsCreateReviewCommentRequestBodyStartSide &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// The enablement status of secret scanning delegated alert dismissal
-final class CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningDelegatedAlertDismissal {
+/// The level at which the comment is targeted.
+final class PullsCreateReviewCommentRequestBodySubjectType {
   final String value;
 
-  const CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningDelegatedAlertDismissal._(
-      this.value);
+  const PullsCreateReviewCommentRequestBodySubjectType._(this.value);
 
-  factory CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningDelegatedAlertDismissal.fromJson(
+  factory PullsCreateReviewCommentRequestBodySubjectType.fromJson(
           String value) =>
-      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningDelegatedAlertDismissal
-          ._(value);
+      PullsCreateReviewCommentRequestBodySubjectType._(value);
 
-  static const enabled =
-      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningDelegatedAlertDismissal
-          ._('enabled');
-  static const disabled =
-      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningDelegatedAlertDismissal
-          ._('disabled');
-  static const notSet =
-      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningDelegatedAlertDismissal
-          ._('not_set');
+  static const line = PullsCreateReviewCommentRequestBodySubjectType._('line');
+  static const file = PullsCreateReviewCommentRequestBodySubjectType._('file');
 
   String toJson() => value;
 
@@ -70,35 +100,27 @@ final class CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScannin
 
   @override
   bool operator ==(Object other) =>
-      other
-          is CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningDelegatedAlertDismissal &&
+      other is PullsCreateReviewCommentRequestBodySubjectType &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// The enablement status of secret scanning extended metadata
-final class CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningExtendedMetadata {
+/// The action that will be taken to merge the pull request. `direct_merge` merges the pull request directly without using a merge queue; `merge_queue` adds the pull request to a merge queue; `default` uses a merge queue if one is configured for the target branch, or merges directly otherwise. If omitted, defaults to `default`.
+final class PullsMergeAsyncRequestBodyMergeAction {
   final String value;
 
-  const CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningExtendedMetadata._(
-      this.value);
+  const PullsMergeAsyncRequestBodyMergeAction._(this.value);
 
-  factory CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningExtendedMetadata.fromJson(
-          String value) =>
-      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningExtendedMetadata
-          ._(value);
+  factory PullsMergeAsyncRequestBodyMergeAction.fromJson(String value) =>
+      PullsMergeAsyncRequestBodyMergeAction._(value);
 
-  static const enabled =
-      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningExtendedMetadata
-          ._('enabled');
-  static const disabled =
-      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningExtendedMetadata
-          ._('disabled');
-  static const notSet =
-      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningExtendedMetadata
-          ._('not_set');
+  static const default_ = PullsMergeAsyncRequestBodyMergeAction._('default');
+  static const directMerge =
+      PullsMergeAsyncRequestBodyMergeAction._('direct_merge');
+  static const mergeQueue =
+      PullsMergeAsyncRequestBodyMergeAction._('merge_queue');
 
   String toJson() => value;
 
@@ -107,35 +129,24 @@ final class CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScannin
 
   @override
   bool operator ==(Object other) =>
-      other
-          is CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningExtendedMetadata &&
-      other.value == value;
+      other is PullsMergeAsyncRequestBodyMergeAction && other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// The enablement status of Copilot secret scanning
-final class CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningGenericSecrets {
+/// The merge method to use for a direct merge. Only supported for direct merges.
+final class PullsMergeAsyncRequestBodyMergeMethod {
   final String value;
 
-  const CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningGenericSecrets._(
-      this.value);
+  const PullsMergeAsyncRequestBodyMergeMethod._(this.value);
 
-  factory CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningGenericSecrets.fromJson(
-          String value) =>
-      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningGenericSecrets
-          ._(value);
+  factory PullsMergeAsyncRequestBodyMergeMethod.fromJson(String value) =>
+      PullsMergeAsyncRequestBodyMergeMethod._(value);
 
-  static const enabled =
-      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningGenericSecrets
-          ._('enabled');
-  static const disabled =
-      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningGenericSecrets
-          ._('disabled');
-  static const notSet =
-      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningGenericSecrets
-          ._('not_set');
+  static const merge = PullsMergeAsyncRequestBodyMergeMethod._('merge');
+  static const squash = PullsMergeAsyncRequestBodyMergeMethod._('squash');
+  static const rebase = PullsMergeAsyncRequestBodyMergeMethod._('rebase');
 
   String toJson() => value;
 
@@ -144,35 +155,24 @@ final class CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScannin
 
   @override
   bool operator ==(Object other) =>
-      other
-          is CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningGenericSecrets &&
-      other.value == value;
+      other is PullsMergeAsyncRequestBodyMergeMethod && other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// The enablement status of secret scanning non provider patterns
-final class CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningNonProviderPatterns {
+/// The merge method to use.
+final class PullsMergeRequestBodyMergeMethod {
   final String value;
 
-  const CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningNonProviderPatterns._(
-      this.value);
+  const PullsMergeRequestBodyMergeMethod._(this.value);
 
-  factory CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningNonProviderPatterns.fromJson(
-          String value) =>
-      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningNonProviderPatterns
-          ._(value);
+  factory PullsMergeRequestBodyMergeMethod.fromJson(String value) =>
+      PullsMergeRequestBodyMergeMethod._(value);
 
-  static const enabled =
-      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningNonProviderPatterns
-          ._('enabled');
-  static const disabled =
-      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningNonProviderPatterns
-          ._('disabled');
-  static const notSet =
-      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningNonProviderPatterns
-          ._('not_set');
+  static const merge = PullsMergeRequestBodyMergeMethod._('merge');
+  static const squash = PullsMergeRequestBodyMergeMethod._('squash');
+  static const rebase = PullsMergeRequestBodyMergeMethod._('rebase');
 
   String toJson() => value;
 
@@ -181,35 +181,25 @@ final class CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScannin
 
   @override
   bool operator ==(Object other) =>
-      other
-          is CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningNonProviderPatterns &&
-      other.value == value;
+      other is PullsMergeRequestBodyMergeMethod && other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// The enablement status of secret scanning push protection
-final class CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningPushProtection {
+/// The review action you want to perform. The review actions include: `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. By leaving this blank, you set the review action state to `PENDING`, which means you will need to [submit the pull request review](https://docs.github.com/rest/pulls/reviews#submit-a-review-for-a-pull-request) when you are ready.
+final class PullsCreateReviewRequestBodyEvent {
   final String value;
 
-  const CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningPushProtection._(
-      this.value);
+  const PullsCreateReviewRequestBodyEvent._(this.value);
 
-  factory CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningPushProtection.fromJson(
-          String value) =>
-      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningPushProtection
-          ._(value);
+  factory PullsCreateReviewRequestBodyEvent.fromJson(String value) =>
+      PullsCreateReviewRequestBodyEvent._(value);
 
-  static const enabled =
-      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningPushProtection
-          ._('enabled');
-  static const disabled =
-      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningPushProtection
-          ._('disabled');
-  static const notSet =
-      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningPushProtection
-          ._('not_set');
+  static const approve = PullsCreateReviewRequestBodyEvent._('APPROVE');
+  static const requestChanges =
+      PullsCreateReviewRequestBodyEvent._('REQUEST_CHANGES');
+  static const comment = PullsCreateReviewRequestBodyEvent._('COMMENT');
 
   String toJson() => value;
 
@@ -218,35 +208,21 @@ final class CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScannin
 
   @override
   bool operator ==(Object other) =>
-      other
-          is CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningPushProtection &&
-      other.value == value;
+      other is PullsCreateReviewRequestBodyEvent && other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// The enablement status of secret scanning validity checks
-final class CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningValidityChecks {
+final class PullsDismissReviewRequestBodyEvent {
   final String value;
 
-  const CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningValidityChecks._(
-      this.value);
+  const PullsDismissReviewRequestBodyEvent._(this.value);
 
-  factory CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningValidityChecks.fromJson(
-          String value) =>
-      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningValidityChecks
-          ._(value);
+  factory PullsDismissReviewRequestBodyEvent.fromJson(String value) =>
+      PullsDismissReviewRequestBodyEvent._(value);
 
-  static const enabled =
-      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningValidityChecks
-          ._('enabled');
-  static const disabled =
-      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningValidityChecks
-          ._('disabled');
-  static const notSet =
-      CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningValidityChecks
-          ._('not_set');
+  static const dismiss = PullsDismissReviewRequestBodyEvent._('DISMISS');
 
   String toJson() => value;
 
@@ -255,38 +231,25 @@ final class CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScannin
 
   @override
   bool operator ==(Object other) =>
-      other
-          is CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningValidityChecks &&
-      other.value == value;
+      other is PullsDismissReviewRequestBodyEvent && other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// The enablement status of GitHub Advanced Security features. `enabled` will enable both Code Security and Secret Protection features. &gt; [!WARNING] &gt; `code_security` and `secret_protection` are deprecated values for this field. Prefer the individual `code_security` and `secret_protection` fields to set the status of these features.
-final class CodeSecurityUpdateEnterpriseConfigurationRequestBodyAdvancedSecurity {
+/// The review action you want to perform. The review actions include: `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. When you leave this blank, the API returns _HTTP 422 (Unrecognizable entity)_ and sets the review action state to `PENDING`, which means you will need to re-submit the pull request review using a review action.
+final class PullsSubmitReviewRequestBodyEvent {
   final String value;
 
-  const CodeSecurityUpdateEnterpriseConfigurationRequestBodyAdvancedSecurity._(
-      this.value);
+  const PullsSubmitReviewRequestBodyEvent._(this.value);
 
-  factory CodeSecurityUpdateEnterpriseConfigurationRequestBodyAdvancedSecurity.fromJson(
-          String value) =>
-      CodeSecurityUpdateEnterpriseConfigurationRequestBodyAdvancedSecurity._(
-          value);
+  factory PullsSubmitReviewRequestBodyEvent.fromJson(String value) =>
+      PullsSubmitReviewRequestBodyEvent._(value);
 
-  static const enabled =
-      CodeSecurityUpdateEnterpriseConfigurationRequestBodyAdvancedSecurity._(
-          'enabled');
-  static const disabled =
-      CodeSecurityUpdateEnterpriseConfigurationRequestBodyAdvancedSecurity._(
-          'disabled');
-  static const codeSecurity =
-      CodeSecurityUpdateEnterpriseConfigurationRequestBodyAdvancedSecurity._(
-          'code_security');
-  static const secretProtection =
-      CodeSecurityUpdateEnterpriseConfigurationRequestBodyAdvancedSecurity._(
-          'secret_protection');
+  static const approve = PullsSubmitReviewRequestBodyEvent._('APPROVE');
+  static const requestChanges =
+      PullsSubmitReviewRequestBodyEvent._('REQUEST_CHANGES');
+  static const comment = PullsSubmitReviewRequestBodyEvent._('COMMENT');
 
   String toJson() => value;
 
@@ -295,35 +258,23 @@ final class CodeSecurityUpdateEnterpriseConfigurationRequestBodyAdvancedSecurity
 
   @override
   bool operator ==(Object other) =>
-      other
-          is CodeSecurityUpdateEnterpriseConfigurationRequestBodyAdvancedSecurity &&
-      other.value == value;
+      other is PullsSubmitReviewRequestBodyEvent && other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// The enablement status of code scanning default setup
-final class CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDefaultSetup {
+final class PullsListReviewCommentsForRepoSort {
   final String value;
 
-  const CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDefaultSetup._(
-      this.value);
+  const PullsListReviewCommentsForRepoSort._(this.value);
 
-  factory CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDefaultSetup.fromJson(
-          String value) =>
-      CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDefaultSetup
-          ._(value);
+  factory PullsListReviewCommentsForRepoSort.fromJson(String value) =>
+      PullsListReviewCommentsForRepoSort._(value);
 
-  static const enabled =
-      CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDefaultSetup
-          ._('enabled');
-  static const disabled =
-      CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDefaultSetup
-          ._('disabled');
-  static const notSet =
-      CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDefaultSetup
-          ._('not_set');
+  static const created = PullsListReviewCommentsForRepoSort._('created');
+  static const updated = PullsListReviewCommentsForRepoSort._('updated');
+  static const createdAt = PullsListReviewCommentsForRepoSort._('created_at');
 
   String toJson() => value;
 
@@ -332,35 +283,22 @@ final class CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDefa
 
   @override
   bool operator ==(Object other) =>
-      other
-          is CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDefaultSetup &&
-      other.value == value;
+      other is PullsListReviewCommentsForRepoSort && other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// The enablement status of code scanning delegated alert dismissal
-final class CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDelegatedAlertDismissal {
+final class PullsListReviewCommentsForRepoDirection {
   final String value;
 
-  const CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDelegatedAlertDismissal._(
-      this.value);
+  const PullsListReviewCommentsForRepoDirection._(this.value);
 
-  factory CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDelegatedAlertDismissal.fromJson(
-          String value) =>
-      CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDelegatedAlertDismissal
-          ._(value);
+  factory PullsListReviewCommentsForRepoDirection.fromJson(String value) =>
+      PullsListReviewCommentsForRepoDirection._(value);
 
-  static const enabled =
-      CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDelegatedAlertDismissal
-          ._('enabled');
-  static const disabled =
-      CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDelegatedAlertDismissal
-          ._('disabled');
-  static const notSet =
-      CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDelegatedAlertDismissal
-          ._('not_set');
+  static const asc = PullsListReviewCommentsForRepoDirection._('asc');
+  static const desc = PullsListReviewCommentsForRepoDirection._('desc');
 
   String toJson() => value;
 
@@ -369,82 +307,7 @@ final class CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDele
 
   @override
   bool operator ==(Object other) =>
-      other
-          is CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDelegatedAlertDismissal &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The enablement status of GitHub Code Security features.
-final class CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeSecurity {
-  final String value;
-
-  const CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeSecurity._(
-      this.value);
-
-  factory CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeSecurity.fromJson(
-          String value) =>
-      CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeSecurity._(value);
-
-  static const enabled =
-      CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeSecurity._(
-          'enabled');
-  static const disabled =
-      CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeSecurity._(
-          'disabled');
-  static const notSet =
-      CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeSecurity._(
-          'not_set');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeSecurity &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// The enablement status of Dependabot alerts
-final class CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotAlerts {
-  final String value;
-
-  const CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotAlerts._(
-      this.value);
-
-  factory CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotAlerts.fromJson(
-          String value) =>
-      CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotAlerts._(
-          value);
-
-  static const enabled =
-      CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotAlerts._(
-          'enabled');
-  static const disabled =
-      CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotAlerts._(
-          'disabled');
-  static const notSet =
-      CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotAlerts._(
-          'not_set');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotAlerts &&
-      other.value == value;
+      other is PullsListReviewCommentsForRepoDirection && other.value == value;
 
   @override
   int get hashCode => value.hashCode;

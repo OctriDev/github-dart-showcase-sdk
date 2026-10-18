@@ -4,24 +4,27 @@
 part of 'inline.dart';
 
 // Inline operation models (part 248)
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsCreateRepoAutomationResponseTriggersIssueLabeledWriteScope {
+/// The enablement status of secret scanning push protection
+final class CodeSecurityCreateConfigurationRequestBodySecretScanningPushProtection {
   final String value;
 
-  const AgentAutomationsCreateRepoAutomationResponseTriggersIssueLabeledWriteScope._(
+  const CodeSecurityCreateConfigurationRequestBodySecretScanningPushProtection._(
       this.value);
 
-  factory AgentAutomationsCreateRepoAutomationResponseTriggersIssueLabeledWriteScope.fromJson(
+  factory CodeSecurityCreateConfigurationRequestBodySecretScanningPushProtection.fromJson(
           String value) =>
-      AgentAutomationsCreateRepoAutomationResponseTriggersIssueLabeledWriteScope
-          ._(value);
+      CodeSecurityCreateConfigurationRequestBodySecretScanningPushProtection._(
+          value);
 
-  static const trigger =
-      AgentAutomationsCreateRepoAutomationResponseTriggersIssueLabeledWriteScope
-          ._('trigger');
-  static const repository =
-      AgentAutomationsCreateRepoAutomationResponseTriggersIssueLabeledWriteScope
-          ._('repository');
+  static const enabled =
+      CodeSecurityCreateConfigurationRequestBodySecretScanningPushProtection._(
+          'enabled');
+  static const disabled =
+      CodeSecurityCreateConfigurationRequestBodySecretScanningPushProtection._(
+          'disabled');
+  static const notSet =
+      CodeSecurityCreateConfigurationRequestBodySecretScanningPushProtection._(
+          'not_set');
 
   String toJson() => value;
 
@@ -31,31 +34,34 @@ final class AgentAutomationsCreateRepoAutomationResponseTriggersIssueLabeledWrit
   @override
   bool operator ==(Object other) =>
       other
-          is AgentAutomationsCreateRepoAutomationResponseTriggersIssueLabeledWriteScope &&
+          is CodeSecurityCreateConfigurationRequestBodySecretScanningPushProtection &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsCreateRepoAutomationResponseTriggersIssueOpenedWriteScope {
+/// The enablement status of secret scanning validity checks
+final class CodeSecurityCreateConfigurationRequestBodySecretScanningValidityChecks {
   final String value;
 
-  const AgentAutomationsCreateRepoAutomationResponseTriggersIssueOpenedWriteScope._(
+  const CodeSecurityCreateConfigurationRequestBodySecretScanningValidityChecks._(
       this.value);
 
-  factory AgentAutomationsCreateRepoAutomationResponseTriggersIssueOpenedWriteScope.fromJson(
+  factory CodeSecurityCreateConfigurationRequestBodySecretScanningValidityChecks.fromJson(
           String value) =>
-      AgentAutomationsCreateRepoAutomationResponseTriggersIssueOpenedWriteScope
-          ._(value);
+      CodeSecurityCreateConfigurationRequestBodySecretScanningValidityChecks._(
+          value);
 
-  static const trigger =
-      AgentAutomationsCreateRepoAutomationResponseTriggersIssueOpenedWriteScope
-          ._('trigger');
-  static const repository =
-      AgentAutomationsCreateRepoAutomationResponseTriggersIssueOpenedWriteScope
-          ._('repository');
+  static const enabled =
+      CodeSecurityCreateConfigurationRequestBodySecretScanningValidityChecks._(
+          'enabled');
+  static const disabled =
+      CodeSecurityCreateConfigurationRequestBodySecretScanningValidityChecks._(
+          'disabled');
+  static const notSet =
+      CodeSecurityCreateConfigurationRequestBodySecretScanningValidityChecks._(
+          'not_set');
 
   String toJson() => value;
 
@@ -65,31 +71,34 @@ final class AgentAutomationsCreateRepoAutomationResponseTriggersIssueOpenedWrite
   @override
   bool operator ==(Object other) =>
       other
-          is AgentAutomationsCreateRepoAutomationResponseTriggersIssueOpenedWriteScope &&
+          is CodeSecurityCreateConfigurationRequestBodySecretScanningValidityChecks &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestAssignedWriteScope {
+/// The enablement status of GitHub Advanced Security features. `enabled` will enable both Code Security and Secret Protection features. &gt; [!WARNING] &gt; `code_security` and `secret_protection` are deprecated values for this field. Prefer the individual `code_security` and `secret_protection` fields to set the status of these features.
+final class CodeSecurityUpdateConfigurationRequestBodyAdvancedSecurity {
   final String value;
 
-  const AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestAssignedWriteScope._(
+  const CodeSecurityUpdateConfigurationRequestBodyAdvancedSecurity._(
       this.value);
 
-  factory AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestAssignedWriteScope.fromJson(
+  factory CodeSecurityUpdateConfigurationRequestBodyAdvancedSecurity.fromJson(
           String value) =>
-      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestAssignedWriteScope
-          ._(value);
+      CodeSecurityUpdateConfigurationRequestBodyAdvancedSecurity._(value);
 
-  static const trigger =
-      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestAssignedWriteScope
-          ._('trigger');
-  static const repository =
-      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestAssignedWriteScope
-          ._('repository');
+  static const enabled =
+      CodeSecurityUpdateConfigurationRequestBodyAdvancedSecurity._('enabled');
+  static const disabled =
+      CodeSecurityUpdateConfigurationRequestBodyAdvancedSecurity._('disabled');
+  static const codeSecurity =
+      CodeSecurityUpdateConfigurationRequestBodyAdvancedSecurity._(
+          'code_security');
+  static const secretProtection =
+      CodeSecurityUpdateConfigurationRequestBodyAdvancedSecurity._(
+          'secret_protection');
 
   String toJson() => value;
 
@@ -98,31 +107,34 @@ final class AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestAssig
 
   @override
   bool operator ==(Object other) =>
-      other
-          is AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestAssignedWriteScope &&
+      other is CodeSecurityUpdateConfigurationRequestBodyAdvancedSecurity &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-final class AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem {
+/// The enablement status of code scanning default setup
+final class CodeSecurityUpdateConfigurationRequestBodyCodeScanningDefaultSetup {
   final String value;
 
-  const AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem._(
+  const CodeSecurityUpdateConfigurationRequestBodyCodeScanningDefaultSetup._(
       this.value);
 
-  factory AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem.fromJson(
+  factory CodeSecurityUpdateConfigurationRequestBodyCodeScanningDefaultSetup.fromJson(
           String value) =>
-      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem
-          ._(value);
+      CodeSecurityUpdateConfigurationRequestBodyCodeScanningDefaultSetup._(
+          value);
 
-  static const timelineComment =
-      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem
-          ._('timeline_comment');
-  static const reviewComment =
-      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem
-          ._('review_comment');
+  static const enabled =
+      CodeSecurityUpdateConfigurationRequestBodyCodeScanningDefaultSetup._(
+          'enabled');
+  static const disabled =
+      CodeSecurityUpdateConfigurationRequestBodyCodeScanningDefaultSetup._(
+          'disabled');
+  static const notSet =
+      CodeSecurityUpdateConfigurationRequestBodyCodeScanningDefaultSetup._(
+          'not_set');
 
   String toJson() => value;
 
@@ -132,31 +144,34 @@ final class AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestComme
   @override
   bool operator ==(Object other) =>
       other
-          is AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestCommentCommentTypesItem &&
+          is CodeSecurityUpdateConfigurationRequestBodyCodeScanningDefaultSetup &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestCommentWriteScope {
+/// The enablement status of code scanning delegated alert dismissal
+final class CodeSecurityUpdateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal {
   final String value;
 
-  const AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestCommentWriteScope._(
+  const CodeSecurityUpdateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal._(
       this.value);
 
-  factory AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestCommentWriteScope.fromJson(
+  factory CodeSecurityUpdateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal.fromJson(
           String value) =>
-      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestCommentWriteScope
+      CodeSecurityUpdateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal
           ._(value);
 
-  static const trigger =
-      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestCommentWriteScope
-          ._('trigger');
-  static const repository =
-      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestCommentWriteScope
-          ._('repository');
+  static const enabled =
+      CodeSecurityUpdateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal
+          ._('enabled');
+  static const disabled =
+      CodeSecurityUpdateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal
+          ._('disabled');
+  static const notSet =
+      CodeSecurityUpdateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal
+          ._('not_set');
 
   String toJson() => value;
 
@@ -166,31 +181,29 @@ final class AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestComme
   @override
   bool operator ==(Object other) =>
       other
-          is AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestCommentWriteScope &&
+          is CodeSecurityUpdateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestLabeledWriteScope {
+/// The enablement status of GitHub Code Security features.
+final class CodeSecurityUpdateConfigurationRequestBodyCodeSecurity {
   final String value;
 
-  const AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestLabeledWriteScope._(
-      this.value);
+  const CodeSecurityUpdateConfigurationRequestBodyCodeSecurity._(this.value);
 
-  factory AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestLabeledWriteScope.fromJson(
+  factory CodeSecurityUpdateConfigurationRequestBodyCodeSecurity.fromJson(
           String value) =>
-      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestLabeledWriteScope
-          ._(value);
+      CodeSecurityUpdateConfigurationRequestBodyCodeSecurity._(value);
 
-  static const trigger =
-      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestLabeledWriteScope
-          ._('trigger');
-  static const repository =
-      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestLabeledWriteScope
-          ._('repository');
+  static const enabled =
+      CodeSecurityUpdateConfigurationRequestBodyCodeSecurity._('enabled');
+  static const disabled =
+      CodeSecurityUpdateConfigurationRequestBodyCodeSecurity._('disabled');
+  static const notSet =
+      CodeSecurityUpdateConfigurationRequestBodyCodeSecurity._('not_set');
 
   String toJson() => value;
 
@@ -199,32 +212,30 @@ final class AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestLabel
 
   @override
   bool operator ==(Object other) =>
-      other
-          is AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestLabeledWriteScope &&
+      other is CodeSecurityUpdateConfigurationRequestBodyCodeSecurity &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope {
+/// The enablement status of Dependabot alerts
+final class CodeSecurityUpdateConfigurationRequestBodyDependabotAlerts {
   final String value;
 
-  const AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope._(
+  const CodeSecurityUpdateConfigurationRequestBodyDependabotAlerts._(
       this.value);
 
-  factory AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope.fromJson(
+  factory CodeSecurityUpdateConfigurationRequestBodyDependabotAlerts.fromJson(
           String value) =>
-      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope
-          ._(value);
+      CodeSecurityUpdateConfigurationRequestBodyDependabotAlerts._(value);
 
-  static const trigger =
-      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope
-          ._('trigger');
-  static const repository =
-      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope
-          ._('repository');
+  static const enabled =
+      CodeSecurityUpdateConfigurationRequestBodyDependabotAlerts._('enabled');
+  static const disabled =
+      CodeSecurityUpdateConfigurationRequestBodyDependabotAlerts._('disabled');
+  static const notSet =
+      CodeSecurityUpdateConfigurationRequestBodyDependabotAlerts._('not_set');
 
   String toJson() => value;
 
@@ -233,32 +244,34 @@ final class AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestMerge
 
   @override
   bool operator ==(Object other) =>
-      other
-          is AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestMergeConflictWriteScope &&
+      other is CodeSecurityUpdateConfigurationRequestBodyDependabotAlerts &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestMergedWriteScope {
+/// The enablement status of Dependabot delegated alert dismissal. Requires Dependabot alerts to be enabled.
+final class CodeSecurityUpdateConfigurationRequestBodyDependabotDelegatedAlertDismissal {
   final String value;
 
-  const AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestMergedWriteScope._(
+  const CodeSecurityUpdateConfigurationRequestBodyDependabotDelegatedAlertDismissal._(
       this.value);
 
-  factory AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestMergedWriteScope.fromJson(
+  factory CodeSecurityUpdateConfigurationRequestBodyDependabotDelegatedAlertDismissal.fromJson(
           String value) =>
-      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestMergedWriteScope
+      CodeSecurityUpdateConfigurationRequestBodyDependabotDelegatedAlertDismissal
           ._(value);
 
-  static const trigger =
-      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestMergedWriteScope
-          ._('trigger');
-  static const repository =
-      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestMergedWriteScope
-          ._('repository');
+  static const enabled =
+      CodeSecurityUpdateConfigurationRequestBodyDependabotDelegatedAlertDismissal
+          ._('enabled');
+  static const disabled =
+      CodeSecurityUpdateConfigurationRequestBodyDependabotDelegatedAlertDismissal
+          ._('disabled');
+  static const notSet =
+      CodeSecurityUpdateConfigurationRequestBodyDependabotDelegatedAlertDismissal
+          ._('not_set');
 
   String toJson() => value;
 
@@ -268,31 +281,34 @@ final class AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestMerge
   @override
   bool operator ==(Object other) =>
       other
-          is AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestMergedWriteScope &&
+          is CodeSecurityUpdateConfigurationRequestBodyDependabotDelegatedAlertDismissal &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestOpenedWriteScope {
+/// The enablement status of Dependabot security updates
+final class CodeSecurityUpdateConfigurationRequestBodyDependabotSecurityUpdates {
   final String value;
 
-  const AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestOpenedWriteScope._(
+  const CodeSecurityUpdateConfigurationRequestBodyDependabotSecurityUpdates._(
       this.value);
 
-  factory AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestOpenedWriteScope.fromJson(
+  factory CodeSecurityUpdateConfigurationRequestBodyDependabotSecurityUpdates.fromJson(
           String value) =>
-      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestOpenedWriteScope
-          ._(value);
+      CodeSecurityUpdateConfigurationRequestBodyDependabotSecurityUpdates._(
+          value);
 
-  static const trigger =
-      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestOpenedWriteScope
-          ._('trigger');
-  static const repository =
-      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestOpenedWriteScope
-          ._('repository');
+  static const enabled =
+      CodeSecurityUpdateConfigurationRequestBodyDependabotSecurityUpdates._(
+          'enabled');
+  static const disabled =
+      CodeSecurityUpdateConfigurationRequestBodyDependabotSecurityUpdates._(
+          'disabled');
+  static const notSet =
+      CodeSecurityUpdateConfigurationRequestBodyDependabotSecurityUpdates._(
+          'not_set');
 
   String toJson() => value;
 
@@ -302,31 +318,29 @@ final class AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestOpene
   @override
   bool operator ==(Object other) =>
       other
-          is AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestOpenedWriteScope &&
+          is CodeSecurityUpdateConfigurationRequestBodyDependabotSecurityUpdates &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReadyForReviewWriteScope {
+/// The enablement status of Dependency Graph
+final class CodeSecurityUpdateConfigurationRequestBodyDependencyGraph {
   final String value;
 
-  const AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReadyForReviewWriteScope._(
-      this.value);
+  const CodeSecurityUpdateConfigurationRequestBodyDependencyGraph._(this.value);
 
-  factory AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReadyForReviewWriteScope.fromJson(
+  factory CodeSecurityUpdateConfigurationRequestBodyDependencyGraph.fromJson(
           String value) =>
-      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReadyForReviewWriteScope
-          ._(value);
+      CodeSecurityUpdateConfigurationRequestBodyDependencyGraph._(value);
 
-  static const trigger =
-      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReadyForReviewWriteScope
-          ._('trigger');
-  static const repository =
-      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReadyForReviewWriteScope
-          ._('repository');
+  static const enabled =
+      CodeSecurityUpdateConfigurationRequestBodyDependencyGraph._('enabled');
+  static const disabled =
+      CodeSecurityUpdateConfigurationRequestBodyDependencyGraph._('disabled');
+  static const notSet =
+      CodeSecurityUpdateConfigurationRequestBodyDependencyGraph._('not_set');
 
   String toJson() => value;
 
@@ -335,32 +349,34 @@ final class AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReady
 
   @override
   bool operator ==(Object other) =>
-      other
-          is AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReadyForReviewWriteScope &&
+      other is CodeSecurityUpdateConfigurationRequestBodyDependencyGraph &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewRequestedWriteScope {
+/// The enablement status of Automatic dependency submission
+final class CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitAction {
   final String value;
 
-  const AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewRequestedWriteScope._(
+  const CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitAction._(
       this.value);
 
-  factory AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewRequestedWriteScope.fromJson(
+  factory CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitAction.fromJson(
           String value) =>
-      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewRequestedWriteScope
+      CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitAction
           ._(value);
 
-  static const trigger =
-      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewRequestedWriteScope
-          ._('trigger');
-  static const repository =
-      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewRequestedWriteScope
-          ._('repository');
+  static const enabled =
+      CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitAction
+          ._('enabled');
+  static const disabled =
+      CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitAction
+          ._('disabled');
+  static const notSet =
+      CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitAction
+          ._('not_set');
 
   String toJson() => value;
 
@@ -370,33 +386,27 @@ final class AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestRevie
   @override
   bool operator ==(Object other) =>
       other
-          is AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewRequestedWriteScope &&
+          is CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitAction &&
       other.value == value;
 
   @override
   int get hashCode => value.hashCode;
 }
 
-final class AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewSubmittedStatesItem {
+/// The enforcement status for a security configuration
+final class CodeSecurityUpdateConfigurationRequestBodyEnforcement {
   final String value;
 
-  const AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewSubmittedStatesItem._(
-      this.value);
+  const CodeSecurityUpdateConfigurationRequestBodyEnforcement._(this.value);
 
-  factory AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewSubmittedStatesItem.fromJson(
+  factory CodeSecurityUpdateConfigurationRequestBodyEnforcement.fromJson(
           String value) =>
-      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewSubmittedStatesItem
-          ._(value);
+      CodeSecurityUpdateConfigurationRequestBodyEnforcement._(value);
 
-  static const approved =
-      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewSubmittedStatesItem
-          ._('approved');
-  static const changesRequested =
-      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewSubmittedStatesItem
-          ._('changes_requested');
-  static const commented =
-      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewSubmittedStatesItem
-          ._('commented');
+  static const enforced =
+      CodeSecurityUpdateConfigurationRequestBodyEnforcement._('enforced');
+  static const unenforced =
+      CodeSecurityUpdateConfigurationRequestBodyEnforcement._('unenforced');
 
   String toJson() => value;
 
@@ -405,42 +415,7 @@ final class AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestRevie
 
   @override
   bool operator ==(Object other) =>
-      other
-          is AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewSubmittedStatesItem &&
-      other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
-}
-
-/// Override the Automation `write_scope` for runs started by this trigger. If omitted, the automation's `write_scope` is used. Organization or repository policy may restrict the effective scope to `trigger`.
-final class AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewSubmittedWriteScope {
-  final String value;
-
-  const AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewSubmittedWriteScope._(
-      this.value);
-
-  factory AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewSubmittedWriteScope.fromJson(
-          String value) =>
-      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewSubmittedWriteScope
-          ._(value);
-
-  static const trigger =
-      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewSubmittedWriteScope
-          ._('trigger');
-  static const repository =
-      AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewSubmittedWriteScope
-          ._('repository');
-
-  String toJson() => value;
-
-  @override
-  String toString() => value.toString();
-
-  @override
-  bool operator ==(Object other) =>
-      other
-          is AgentAutomationsCreateRepoAutomationResponseTriggersPullRequestReviewSubmittedWriteScope &&
+      other is CodeSecurityUpdateConfigurationRequestBodyEnforcement &&
       other.value == value;
 
   @override

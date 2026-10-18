@@ -406,6 +406,20 @@ sealed class NullableIntegrationOwner {
   static const String constructionSurface = 'named';
   const NullableIntegrationOwner();
   factory NullableIntegrationOwner.fromJson(Object? json) {
+    if (json is Map<String, dynamic>) {
+      try {
+        final value = SimpleUser.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return NullableIntegrationOwnerSimpleUser(value);
+        }
+      } catch (_) {}
+      try {
+        final value = Enterprise.fromJson(json);
+        if (sdkKeepsEveryKey(json, value.toJson())) {
+          return NullableIntegrationOwnerEnterprise(value);
+        }
+      } catch (_) {}
+    }
     try {
       return NullableIntegrationOwnerSimpleUser(
           SimpleUser.fromJson(json as Map<String, dynamic>));

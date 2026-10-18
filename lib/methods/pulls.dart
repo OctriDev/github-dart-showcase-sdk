@@ -299,7 +299,9 @@ Future<PullRequest> pullsGet(ClientConfig config,
         '406': (value) => BasicError.fromJson(value as Map<String, dynamic>),
         '422': (value) =>
             ValidationError.fromJson(value as Map<String, dynamic>),
-        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '503': (value) =>
+            ServiceUnavailable.fromJson(value as Map<String, dynamic>)
       }))
       .data;
 }
@@ -617,7 +619,10 @@ Future<List<DiffEntry>> pullsListFiles(ClientConfig config,
           errors: {
             '422': (value) =>
                 ValidationError.fromJson(value as Map<String, dynamic>),
-            '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+            '500': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
           }))
       .data;
 }
@@ -835,7 +840,10 @@ Future<PullRequestSimple> pullsRequestReviewers(ClientConfig config,
               PullRequestSimple.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
           errors: {
-            '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
           }))
       .data;
 }
