@@ -8,205 +8,524 @@ part of 'webhook_pull_request_review_thread_unresolved.dart';
 class WebhookPullRequestReviewThreadUnresolvedPullRequest {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required object value serialized in the `_links` wire field.
   final WebhookPullRequestReviewThreadUnresolvedPullRequestLinks links;
+
   /// Required enumerated value serialized in the `active_lock_reason` wire field.
-  final WebhookPullRequestReviewThreadUnresolvedPullRequestActiveLockReason? activeLockReason;
+  final WebhookPullRequestReviewThreadUnresolvedPullRequestActiveLockReason?
+      activeLockReason;
+
   /// Required object value serialized in the `assignee` wire field.
   final WebhookPullRequestReviewThreadUnresolvedPullRequestAssignee? assignee;
+
   /// Required array value serialized in the `assignees` wire field.
-  final List<WebhookPullRequestReviewThreadUnresolvedPullRequestAssigneesItem?> assignees;
+  final List<WebhookPullRequestReviewThreadUnresolvedPullRequestAssigneesItem?>
+      assignees;
+
   /// How the author is associated with the repository.
-  final WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation authorAssociation;
+  final WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation
+      authorAssociation;
+
   /// The status of auto merging a pull request.
   final WebhookPullRequestReviewThreadUnresolvedPullRequestAutoMerge? autoMerge;
+
   /// Required object value serialized in the `base` wire field.
   final WebhookPullRequestReviewThreadUnresolvedPullRequestBase base_;
+
   /// Required `string` value serialized in the `body` wire field.
   final String? body;
+
   /// Required `string` value serialized in the `closed_at` wire field.
   final String? closedAt;
+
   /// Required `uri`-formatted value serialized in the `comments_url` wire field.
   final String commentsUrl;
+
   /// Required `uri`-formatted value serialized in the `commits_url` wire field.
   final String commitsUrl;
+
   /// Required `string` value serialized in the `created_at` wire field.
   final String createdAt;
+
   /// Required `uri`-formatted value serialized in the `diff_url` wire field.
   final String diffUrl;
+
   /// Required `boolean` value serialized in the `draft` wire field.
   final bool draft;
+
   /// Required object value serialized in the `head` wire field.
   final WebhookPullRequestReviewThreadUnresolvedPullRequestHead head;
+
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String htmlUrl;
+
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
+
   /// Required `uri`-formatted value serialized in the `issue_url` wire field.
   final String issueUrl;
+
   /// Required array value serialized in the `labels` wire field.
-  final List<WebhookPullRequestReviewThreadUnresolvedPullRequestLabelsItem> labels;
+  final List<WebhookPullRequestReviewThreadUnresolvedPullRequestLabelsItem>
+      labels;
+
   /// Required `boolean` value serialized in the `locked` wire field.
   final bool locked;
+
   /// Required `string` value serialized in the `merge_commit_sha` wire field.
   final String? mergeCommitSha;
+
   /// Required `string` value serialized in the `merged_at` wire field.
   final String? mergedAt;
+
   /// A collection of related issues and pull requests.
   final WebhookPullRequestReviewThreadUnresolvedPullRequestMilestone? milestone;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// Required `integer` value serialized in the `number` wire field.
   final int number;
+
   /// Required `uri`-formatted value serialized in the `patch_url` wire field.
   final String patchUrl;
+
   /// Required array value serialized in the `requested_reviewers` wire field.
-  final List<WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewersItem?> requestedReviewers;
+  final List<
+          WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewersItem?>
+      requestedReviewers;
+
   /// Required array value serialized in the `requested_teams` wire field.
-  final List<WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedTeamsItem> requestedTeams;
+  final List<
+          WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedTeamsItem>
+      requestedTeams;
+
   /// Required `uri-template`-formatted value serialized in the `review_comment_url` wire field.
   final String reviewCommentUrl;
+
   /// Required `uri`-formatted value serialized in the `review_comments_url` wire field.
   final String reviewCommentsUrl;
+
   /// The stack information associated with a pull request.
   final SdkOptional<PullRequestStack?> stack;
+
   /// Required enumerated value serialized in the `state` wire field.
   final WebhookPullRequestReviewThreadUnresolvedPullRequestState state;
+
   /// Required `uri`-formatted value serialized in the `statuses_url` wire field.
   final String statusesUrl;
+
   /// Required `string` value serialized in the `title` wire field.
   final String title;
+
   /// Required `string` value serialized in the `updated_at` wire field.
   final String updatedAt;
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
+
   /// Required object value serialized in the `user` wire field.
   final WebhookPullRequestReviewThreadUnresolvedPullRequestUser? user;
 
-  const WebhookPullRequestReviewThreadUnresolvedPullRequest({required this.links, required this.activeLockReason, required this.assignee, required this.assignees, required this.authorAssociation, required this.autoMerge, required this.base_, required this.body, required this.closedAt, required this.commentsUrl, required this.commitsUrl, required this.createdAt, required this.diffUrl, required this.draft, required this.head, required this.htmlUrl, required this.id, required this.issueUrl, required this.labels, required this.locked, required this.mergeCommitSha, required this.mergedAt, required this.milestone, required this.nodeId, required this.number, required this.patchUrl, required this.requestedReviewers, required this.requestedTeams, required this.reviewCommentUrl, required this.reviewCommentsUrl, this.stack = const SdkOmitted(), required this.state, required this.statusesUrl, required this.title, required this.updatedAt, required this.url, required this.user});
+  const WebhookPullRequestReviewThreadUnresolvedPullRequest(
+      {required this.links,
+      required this.activeLockReason,
+      required this.assignee,
+      required this.assignees,
+      required this.authorAssociation,
+      required this.autoMerge,
+      required this.base_,
+      required this.body,
+      required this.closedAt,
+      required this.commentsUrl,
+      required this.commitsUrl,
+      required this.createdAt,
+      required this.diffUrl,
+      required this.draft,
+      required this.head,
+      required this.htmlUrl,
+      required this.id,
+      required this.issueUrl,
+      required this.labels,
+      required this.locked,
+      required this.mergeCommitSha,
+      required this.mergedAt,
+      required this.milestone,
+      required this.nodeId,
+      required this.number,
+      required this.patchUrl,
+      required this.requestedReviewers,
+      required this.requestedTeams,
+      required this.reviewCommentUrl,
+      required this.reviewCommentsUrl,
+      this.stack = const SdkOmitted(),
+      required this.state,
+      required this.statusesUrl,
+      required this.title,
+      required this.updatedAt,
+      required this.url,
+      required this.user});
 
-  WebhookPullRequestReviewThreadUnresolvedPullRequest Function({WebhookPullRequestReviewThreadUnresolvedPullRequestLinks links, WebhookPullRequestReviewThreadUnresolvedPullRequestActiveLockReason? activeLockReason, WebhookPullRequestReviewThreadUnresolvedPullRequestAssignee? assignee, List<WebhookPullRequestReviewThreadUnresolvedPullRequestAssigneesItem?> assignees, WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation authorAssociation, WebhookPullRequestReviewThreadUnresolvedPullRequestAutoMerge? autoMerge, WebhookPullRequestReviewThreadUnresolvedPullRequestBase base_, String? body, String? closedAt, String commentsUrl, String commitsUrl, String createdAt, String diffUrl, bool draft, WebhookPullRequestReviewThreadUnresolvedPullRequestHead head, String htmlUrl, int id, String issueUrl, List<WebhookPullRequestReviewThreadUnresolvedPullRequestLabelsItem> labels, bool locked, String? mergeCommitSha, String? mergedAt, WebhookPullRequestReviewThreadUnresolvedPullRequestMilestone? milestone, String nodeId, int number, String patchUrl, List<WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewersItem?> requestedReviewers, List<WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedTeamsItem> requestedTeams, String reviewCommentUrl, String reviewCommentsUrl, SdkOptional<PullRequestStack?> stack, WebhookPullRequestReviewThreadUnresolvedPullRequestState state, String statusesUrl, String title, String updatedAt, String url, WebhookPullRequestReviewThreadUnresolvedPullRequestUser? user}) get copyWith => _copyWith;
+  WebhookPullRequestReviewThreadUnresolvedPullRequest Function(
+      {WebhookPullRequestReviewThreadUnresolvedPullRequestLinks links,
+      WebhookPullRequestReviewThreadUnresolvedPullRequestActiveLockReason?
+          activeLockReason,
+      WebhookPullRequestReviewThreadUnresolvedPullRequestAssignee? assignee,
+      List<WebhookPullRequestReviewThreadUnresolvedPullRequestAssigneesItem?>
+          assignees,
+      WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation
+          authorAssociation,
+      WebhookPullRequestReviewThreadUnresolvedPullRequestAutoMerge? autoMerge,
+      WebhookPullRequestReviewThreadUnresolvedPullRequestBase base_,
+      String? body,
+      String? closedAt,
+      String commentsUrl,
+      String commitsUrl,
+      String createdAt,
+      String diffUrl,
+      bool draft,
+      WebhookPullRequestReviewThreadUnresolvedPullRequestHead head,
+      String htmlUrl,
+      int id,
+      String issueUrl,
+      List<WebhookPullRequestReviewThreadUnresolvedPullRequestLabelsItem>
+          labels,
+      bool locked,
+      String? mergeCommitSha,
+      String? mergedAt,
+      WebhookPullRequestReviewThreadUnresolvedPullRequestMilestone? milestone,
+      String nodeId,
+      int number,
+      String patchUrl,
+      List<WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewersItem?>
+          requestedReviewers,
+      List<WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedTeamsItem>
+          requestedTeams,
+      String reviewCommentUrl,
+      String reviewCommentsUrl,
+      SdkOptional<PullRequestStack?> stack,
+      WebhookPullRequestReviewThreadUnresolvedPullRequestState state,
+      String statusesUrl,
+      String title,
+      String updatedAt,
+      String url,
+      WebhookPullRequestReviewThreadUnresolvedPullRequestUser?
+          user}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewThreadUnresolvedPullRequest _copyWith({Object? links = sdkOmittedValue, Object? activeLockReason = sdkOmittedValue, Object? assignee = sdkOmittedValue, Object? assignees = sdkOmittedValue, Object? authorAssociation = sdkOmittedValue, Object? autoMerge = sdkOmittedValue, Object? base_ = sdkOmittedValue, Object? body = sdkOmittedValue, Object? closedAt = sdkOmittedValue, Object? commentsUrl = sdkOmittedValue, Object? commitsUrl = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? diffUrl = sdkOmittedValue, Object? draft = sdkOmittedValue, Object? head = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? id = sdkOmittedValue, Object? issueUrl = sdkOmittedValue, Object? labels = sdkOmittedValue, Object? locked = sdkOmittedValue, Object? mergeCommitSha = sdkOmittedValue, Object? mergedAt = sdkOmittedValue, Object? milestone = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? number = sdkOmittedValue, Object? patchUrl = sdkOmittedValue, Object? requestedReviewers = sdkOmittedValue, Object? requestedTeams = sdkOmittedValue, Object? reviewCommentUrl = sdkOmittedValue, Object? reviewCommentsUrl = sdkOmittedValue, Object? stack = sdkOmittedValue, Object? state = sdkOmittedValue, Object? statusesUrl = sdkOmittedValue, Object? title = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? url = sdkOmittedValue, Object? user = sdkOmittedValue}) => WebhookPullRequestReviewThreadUnresolvedPullRequest(
-    links: identical(links, sdkOmittedValue) ? this.links : links as WebhookPullRequestReviewThreadUnresolvedPullRequestLinks,
-    activeLockReason: identical(activeLockReason, sdkOmittedValue) ? this.activeLockReason : activeLockReason as WebhookPullRequestReviewThreadUnresolvedPullRequestActiveLockReason?,
-    assignee: identical(assignee, sdkOmittedValue) ? this.assignee : assignee as WebhookPullRequestReviewThreadUnresolvedPullRequestAssignee?,
-    assignees: identical(assignees, sdkOmittedValue) ? this.assignees : assignees as List<WebhookPullRequestReviewThreadUnresolvedPullRequestAssigneesItem?>,
-    authorAssociation: identical(authorAssociation, sdkOmittedValue) ? this.authorAssociation : authorAssociation as WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation,
-    autoMerge: identical(autoMerge, sdkOmittedValue) ? this.autoMerge : autoMerge as WebhookPullRequestReviewThreadUnresolvedPullRequestAutoMerge?,
-    base_: identical(base_, sdkOmittedValue) ? this.base_ : base_ as WebhookPullRequestReviewThreadUnresolvedPullRequestBase,
-    body: identical(body, sdkOmittedValue) ? this.body : body as String?,
-    closedAt: identical(closedAt, sdkOmittedValue) ? this.closedAt : closedAt as String?,
-    commentsUrl: identical(commentsUrl, sdkOmittedValue) ? this.commentsUrl : commentsUrl as String,
-    commitsUrl: identical(commitsUrl, sdkOmittedValue) ? this.commitsUrl : commitsUrl as String,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    diffUrl: identical(diffUrl, sdkOmittedValue) ? this.diffUrl : diffUrl as String,
-    draft: identical(draft, sdkOmittedValue) ? this.draft : draft as bool,
-    head: identical(head, sdkOmittedValue) ? this.head : head as WebhookPullRequestReviewThreadUnresolvedPullRequestHead,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    issueUrl: identical(issueUrl, sdkOmittedValue) ? this.issueUrl : issueUrl as String,
-    labels: identical(labels, sdkOmittedValue) ? this.labels : labels as List<WebhookPullRequestReviewThreadUnresolvedPullRequestLabelsItem>,
-    locked: identical(locked, sdkOmittedValue) ? this.locked : locked as bool,
-    mergeCommitSha: identical(mergeCommitSha, sdkOmittedValue) ? this.mergeCommitSha : mergeCommitSha as String?,
-    mergedAt: identical(mergedAt, sdkOmittedValue) ? this.mergedAt : mergedAt as String?,
-    milestone: identical(milestone, sdkOmittedValue) ? this.milestone : milestone as WebhookPullRequestReviewThreadUnresolvedPullRequestMilestone?,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    number: identical(number, sdkOmittedValue) ? this.number : number as int,
-    patchUrl: identical(patchUrl, sdkOmittedValue) ? this.patchUrl : patchUrl as String,
-    requestedReviewers: identical(requestedReviewers, sdkOmittedValue) ? this.requestedReviewers : requestedReviewers as List<WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewersItem?>,
-    requestedTeams: identical(requestedTeams, sdkOmittedValue) ? this.requestedTeams : requestedTeams as List<WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedTeamsItem>,
-    reviewCommentUrl: identical(reviewCommentUrl, sdkOmittedValue) ? this.reviewCommentUrl : reviewCommentUrl as String,
-    reviewCommentsUrl: identical(reviewCommentsUrl, sdkOmittedValue) ? this.reviewCommentsUrl : reviewCommentsUrl as String,
-    stack: identical(stack, sdkOmittedValue) ? this.stack : stack as SdkOptional<PullRequestStack?>,
-    state: identical(state, sdkOmittedValue) ? this.state : state as WebhookPullRequestReviewThreadUnresolvedPullRequestState,
-    statusesUrl: identical(statusesUrl, sdkOmittedValue) ? this.statusesUrl : statusesUrl as String,
-    title: identical(title, sdkOmittedValue) ? this.title : title as String,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    user: identical(user, sdkOmittedValue) ? this.user : user as WebhookPullRequestReviewThreadUnresolvedPullRequestUser?,
-  );
+  WebhookPullRequestReviewThreadUnresolvedPullRequest _copyWith(
+          {Object? links = sdkOmittedValue,
+          Object? activeLockReason = sdkOmittedValue,
+          Object? assignee = sdkOmittedValue,
+          Object? assignees = sdkOmittedValue,
+          Object? authorAssociation = sdkOmittedValue,
+          Object? autoMerge = sdkOmittedValue,
+          Object? base_ = sdkOmittedValue,
+          Object? body = sdkOmittedValue,
+          Object? closedAt = sdkOmittedValue,
+          Object? commentsUrl = sdkOmittedValue,
+          Object? commitsUrl = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? diffUrl = sdkOmittedValue,
+          Object? draft = sdkOmittedValue,
+          Object? head = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? issueUrl = sdkOmittedValue,
+          Object? labels = sdkOmittedValue,
+          Object? locked = sdkOmittedValue,
+          Object? mergeCommitSha = sdkOmittedValue,
+          Object? mergedAt = sdkOmittedValue,
+          Object? milestone = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? number = sdkOmittedValue,
+          Object? patchUrl = sdkOmittedValue,
+          Object? requestedReviewers = sdkOmittedValue,
+          Object? requestedTeams = sdkOmittedValue,
+          Object? reviewCommentUrl = sdkOmittedValue,
+          Object? reviewCommentsUrl = sdkOmittedValue,
+          Object? stack = sdkOmittedValue,
+          Object? state = sdkOmittedValue,
+          Object? statusesUrl = sdkOmittedValue,
+          Object? title = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? user = sdkOmittedValue}) =>
+      WebhookPullRequestReviewThreadUnresolvedPullRequest(
+        links: identical(links, sdkOmittedValue)
+            ? this.links
+            : links as WebhookPullRequestReviewThreadUnresolvedPullRequestLinks,
+        activeLockReason: identical(activeLockReason, sdkOmittedValue)
+            ? this.activeLockReason
+            : activeLockReason
+                as WebhookPullRequestReviewThreadUnresolvedPullRequestActiveLockReason?,
+        assignee: identical(assignee, sdkOmittedValue)
+            ? this.assignee
+            : assignee
+                as WebhookPullRequestReviewThreadUnresolvedPullRequestAssignee?,
+        assignees: identical(assignees, sdkOmittedValue)
+            ? this.assignees
+            : assignees as List<
+                WebhookPullRequestReviewThreadUnresolvedPullRequestAssigneesItem?>,
+        authorAssociation: identical(authorAssociation, sdkOmittedValue)
+            ? this.authorAssociation
+            : authorAssociation
+                as WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation,
+        autoMerge: identical(autoMerge, sdkOmittedValue)
+            ? this.autoMerge
+            : autoMerge
+                as WebhookPullRequestReviewThreadUnresolvedPullRequestAutoMerge?,
+        base_: identical(base_, sdkOmittedValue)
+            ? this.base_
+            : base_ as WebhookPullRequestReviewThreadUnresolvedPullRequestBase,
+        body: identical(body, sdkOmittedValue) ? this.body : body as String?,
+        closedAt: identical(closedAt, sdkOmittedValue)
+            ? this.closedAt
+            : closedAt as String?,
+        commentsUrl: identical(commentsUrl, sdkOmittedValue)
+            ? this.commentsUrl
+            : commentsUrl as String,
+        commitsUrl: identical(commitsUrl, sdkOmittedValue)
+            ? this.commitsUrl
+            : commitsUrl as String,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        diffUrl: identical(diffUrl, sdkOmittedValue)
+            ? this.diffUrl
+            : diffUrl as String,
+        draft: identical(draft, sdkOmittedValue) ? this.draft : draft as bool,
+        head: identical(head, sdkOmittedValue)
+            ? this.head
+            : head as WebhookPullRequestReviewThreadUnresolvedPullRequestHead,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        issueUrl: identical(issueUrl, sdkOmittedValue)
+            ? this.issueUrl
+            : issueUrl as String,
+        labels: identical(labels, sdkOmittedValue)
+            ? this.labels
+            : labels as List<
+                WebhookPullRequestReviewThreadUnresolvedPullRequestLabelsItem>,
+        locked:
+            identical(locked, sdkOmittedValue) ? this.locked : locked as bool,
+        mergeCommitSha: identical(mergeCommitSha, sdkOmittedValue)
+            ? this.mergeCommitSha
+            : mergeCommitSha as String?,
+        mergedAt: identical(mergedAt, sdkOmittedValue)
+            ? this.mergedAt
+            : mergedAt as String?,
+        milestone: identical(milestone, sdkOmittedValue)
+            ? this.milestone
+            : milestone
+                as WebhookPullRequestReviewThreadUnresolvedPullRequestMilestone?,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        number:
+            identical(number, sdkOmittedValue) ? this.number : number as int,
+        patchUrl: identical(patchUrl, sdkOmittedValue)
+            ? this.patchUrl
+            : patchUrl as String,
+        requestedReviewers: identical(requestedReviewers, sdkOmittedValue)
+            ? this.requestedReviewers
+            : requestedReviewers as List<
+                WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewersItem?>,
+        requestedTeams: identical(requestedTeams, sdkOmittedValue)
+            ? this.requestedTeams
+            : requestedTeams as List<
+                WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedTeamsItem>,
+        reviewCommentUrl: identical(reviewCommentUrl, sdkOmittedValue)
+            ? this.reviewCommentUrl
+            : reviewCommentUrl as String,
+        reviewCommentsUrl: identical(reviewCommentsUrl, sdkOmittedValue)
+            ? this.reviewCommentsUrl
+            : reviewCommentsUrl as String,
+        stack: identical(stack, sdkOmittedValue)
+            ? this.stack
+            : stack as SdkOptional<PullRequestStack?>,
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state as WebhookPullRequestReviewThreadUnresolvedPullRequestState,
+        statusesUrl: identical(statusesUrl, sdkOmittedValue)
+            ? this.statusesUrl
+            : statusesUrl as String,
+        title: identical(title, sdkOmittedValue) ? this.title : title as String,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        user: identical(user, sdkOmittedValue)
+            ? this.user
+            : user as WebhookPullRequestReviewThreadUnresolvedPullRequestUser?,
+      );
 
-  factory WebhookPullRequestReviewThreadUnresolvedPullRequest.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewThreadUnresolvedPullRequest(
-    links: (json['_links'] != null ? WebhookPullRequestReviewThreadUnresolvedPullRequestLinks.fromJson(json['_links'] as Map<String, dynamic>) : null)!,
-    activeLockReason: json.containsKey('active_lock_reason') ? json['active_lock_reason'] != null ? WebhookPullRequestReviewThreadUnresolvedPullRequestActiveLockReason.fromJson(json['active_lock_reason'] as String) : null : throw ArgumentError.value(null, 'active_lock_reason', 'Required property is missing'),
-    assignee: json.containsKey('assignee') ? json['assignee'] != null ? WebhookPullRequestReviewThreadUnresolvedPullRequestAssignee.fromJson(json['assignee'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'assignee', 'Required property is missing'),
-    assignees: ((json['assignees'] as List?)?.map((e) => e == null ? null : WebhookPullRequestReviewThreadUnresolvedPullRequestAssigneesItem.fromJson(e as Map<String, dynamic>)).toList())!,
-    authorAssociation: (json['author_association'] != null ? WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation.fromJson(json['author_association'] as String) : null)!,
-    autoMerge: json.containsKey('auto_merge') ? json['auto_merge'] != null ? WebhookPullRequestReviewThreadUnresolvedPullRequestAutoMerge.fromJson(json['auto_merge'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'auto_merge', 'Required property is missing'),
-    base_: (json['base'] != null ? WebhookPullRequestReviewThreadUnresolvedPullRequestBase.fromJson(json['base'] as Map<String, dynamic>) : null)!,
-    body: json.containsKey('body') ? json['body'] as String? : throw ArgumentError.value(null, 'body', 'Required property is missing'),
-    closedAt: json.containsKey('closed_at') ? json['closed_at'] as String? : throw ArgumentError.value(null, 'closed_at', 'Required property is missing'),
-    commentsUrl: (json['comments_url'] as String?)!,
-    commitsUrl: (json['commits_url'] as String?)!,
-    createdAt: (json['created_at'] as String?)!,
-    diffUrl: (json['diff_url'] as String?)!,
-    draft: (json['draft'] as bool?)!,
-    head: (json['head'] != null ? WebhookPullRequestReviewThreadUnresolvedPullRequestHead.fromJson(json['head'] as Map<String, dynamic>) : null)!,
-    htmlUrl: (json['html_url'] as String?)!,
-    id: ((json['id'] as num?)?.toInt())!,
-    issueUrl: (json['issue_url'] as String?)!,
-    labels: ((json['labels'] as List?)?.map((e) => WebhookPullRequestReviewThreadUnresolvedPullRequestLabelsItem.fromJson(e as Map<String, dynamic>)).toList())!,
-    locked: (json['locked'] as bool?)!,
-    mergeCommitSha: json.containsKey('merge_commit_sha') ? json['merge_commit_sha'] as String? : throw ArgumentError.value(null, 'merge_commit_sha', 'Required property is missing'),
-    mergedAt: json.containsKey('merged_at') ? json['merged_at'] as String? : throw ArgumentError.value(null, 'merged_at', 'Required property is missing'),
-    milestone: json.containsKey('milestone') ? json['milestone'] != null ? WebhookPullRequestReviewThreadUnresolvedPullRequestMilestone.fromJson(json['milestone'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'milestone', 'Required property is missing'),
-    nodeId: (json['node_id'] as String?)!,
-    number: ((json['number'] as num?)?.toInt())!,
-    patchUrl: (json['patch_url'] as String?)!,
-    requestedReviewers: ((json['requested_reviewers'] as List?)?.map((e) => e == null ? null : WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewersItem.fromJson(e)).toList())!,
-    requestedTeams: ((json['requested_teams'] as List?)?.map((e) => WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedTeamsItem.fromJson(e as Map<String, dynamic>)).toList())!,
-    reviewCommentUrl: (json['review_comment_url'] as String?)!,
-    reviewCommentsUrl: (json['review_comments_url'] as String?)!,
-    stack: json.containsKey('stack') ? SdkPresent(json['stack'] != null ? PullRequestStack.fromJson(json['stack'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-    state: (json['state'] != null ? WebhookPullRequestReviewThreadUnresolvedPullRequestState.fromJson(json['state'] as String) : null)!,
-    statusesUrl: (json['statuses_url'] as String?)!,
-    title: (json['title'] as String?)!,
-    updatedAt: (json['updated_at'] as String?)!,
-    url: (json['url'] as String?)!,
-    user: json.containsKey('user') ? json['user'] != null ? WebhookPullRequestReviewThreadUnresolvedPullRequestUser.fromJson(json['user'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'user', 'Required property is missing'),
-  );
+  factory WebhookPullRequestReviewThreadUnresolvedPullRequest.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPullRequestReviewThreadUnresolvedPullRequest(
+        links: (json['_links'] != null
+            ? WebhookPullRequestReviewThreadUnresolvedPullRequestLinks.fromJson(
+                json['_links'] as Map<String, dynamic>)
+            : null)!,
+        activeLockReason: json.containsKey('active_lock_reason')
+            ? json['active_lock_reason'] != null
+                ? WebhookPullRequestReviewThreadUnresolvedPullRequestActiveLockReason
+                    .fromJson(json['active_lock_reason'] as String)
+                : null
+            : throw ArgumentError.value(
+                null, 'active_lock_reason', 'Required property is missing'),
+        assignee: json.containsKey('assignee')
+            ? json['assignee'] != null
+                ? WebhookPullRequestReviewThreadUnresolvedPullRequestAssignee
+                    .fromJson(json['assignee'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'assignee', 'Required property is missing'),
+        assignees: ((json['assignees'] as List?)
+            ?.map((e) => e == null
+                ? null
+                : WebhookPullRequestReviewThreadUnresolvedPullRequestAssigneesItem
+                    .fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        authorAssociation: (json['author_association'] != null
+            ? WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation
+                .fromJson(json['author_association'] as String)
+            : null)!,
+        autoMerge: json.containsKey('auto_merge')
+            ? json['auto_merge'] != null
+                ? WebhookPullRequestReviewThreadUnresolvedPullRequestAutoMerge
+                    .fromJson(json['auto_merge'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'auto_merge', 'Required property is missing'),
+        base_: (json['base'] != null
+            ? WebhookPullRequestReviewThreadUnresolvedPullRequestBase.fromJson(
+                json['base'] as Map<String, dynamic>)
+            : null)!,
+        body: json.containsKey('body')
+            ? json['body'] as String?
+            : throw ArgumentError.value(
+                null, 'body', 'Required property is missing'),
+        closedAt: json.containsKey('closed_at')
+            ? json['closed_at'] as String?
+            : throw ArgumentError.value(
+                null, 'closed_at', 'Required property is missing'),
+        commentsUrl: (json['comments_url'] as String?)!,
+        commitsUrl: (json['commits_url'] as String?)!,
+        createdAt: (json['created_at'] as String?)!,
+        diffUrl: (json['diff_url'] as String?)!,
+        draft: (json['draft'] as bool?)!,
+        head: (json['head'] != null
+            ? WebhookPullRequestReviewThreadUnresolvedPullRequestHead.fromJson(
+                json['head'] as Map<String, dynamic>)
+            : null)!,
+        htmlUrl: (json['html_url'] as String?)!,
+        id: ((json['id'] as num?)?.toInt())!,
+        issueUrl: (json['issue_url'] as String?)!,
+        labels: ((json['labels'] as List?)
+            ?.map((e) =>
+                WebhookPullRequestReviewThreadUnresolvedPullRequestLabelsItem
+                    .fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        locked: (json['locked'] as bool?)!,
+        mergeCommitSha: json.containsKey('merge_commit_sha')
+            ? json['merge_commit_sha'] as String?
+            : throw ArgumentError.value(
+                null, 'merge_commit_sha', 'Required property is missing'),
+        mergedAt: json.containsKey('merged_at')
+            ? json['merged_at'] as String?
+            : throw ArgumentError.value(
+                null, 'merged_at', 'Required property is missing'),
+        milestone: json.containsKey('milestone')
+            ? json['milestone'] != null
+                ? WebhookPullRequestReviewThreadUnresolvedPullRequestMilestone
+                    .fromJson(json['milestone'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'milestone', 'Required property is missing'),
+        nodeId: (json['node_id'] as String?)!,
+        number: ((json['number'] as num?)?.toInt())!,
+        patchUrl: (json['patch_url'] as String?)!,
+        requestedReviewers: ((json['requested_reviewers'] as List?)
+            ?.map((e) => e == null
+                ? null
+                : WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedReviewersItem
+                    .fromJson(e))
+            .toList())!,
+        requestedTeams: ((json['requested_teams'] as List?)
+            ?.map((e) =>
+                WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedTeamsItem
+                    .fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        reviewCommentUrl: (json['review_comment_url'] as String?)!,
+        reviewCommentsUrl: (json['review_comments_url'] as String?)!,
+        stack: json.containsKey('stack')
+            ? SdkPresent(json['stack'] != null
+                ? PullRequestStack.fromJson(
+                    json['stack'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        state: (json['state'] != null
+            ? WebhookPullRequestReviewThreadUnresolvedPullRequestState.fromJson(
+                json['state'] as String)
+            : null)!,
+        statusesUrl: (json['statuses_url'] as String?)!,
+        title: (json['title'] as String?)!,
+        updatedAt: (json['updated_at'] as String?)!,
+        url: (json['url'] as String?)!,
+        user: json.containsKey('user')
+            ? json['user'] != null
+                ? WebhookPullRequestReviewThreadUnresolvedPullRequestUser
+                    .fromJson(json['user'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'user', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    '_links': links.toJson(),
-    'active_lock_reason': activeLockReason?.toJson(),
-    'assignee': assignee?.toJson(),
-    'assignees': assignees.map((item) => item?.toJson()).toList(),
-    'author_association': authorAssociation.toJson(),
-    'auto_merge': autoMerge?.toJson(),
-    'base': base_.toJson(),
-    'body': body,
-    'closed_at': closedAt,
-    'comments_url': commentsUrl,
-    'commits_url': commitsUrl,
-    'created_at': createdAt,
-    'diff_url': diffUrl,
-    'draft': draft,
-    'head': head.toJson(),
-    'html_url': htmlUrl,
-    'id': id,
-    'issue_url': issueUrl,
-    'labels': labels.map((item) => item.toJson()).toList(),
-    'locked': locked,
-    'merge_commit_sha': mergeCommitSha,
-    'merged_at': mergedAt,
-    'milestone': milestone?.toJson(),
-    'node_id': nodeId,
-    'number': number,
-    'patch_url': patchUrl,
-    'requested_reviewers': requestedReviewers.map((item) => item?.toJson()).toList(),
-    'requested_teams': requestedTeams.map((item) => item.toJson()).toList(),
-    'review_comment_url': reviewCommentUrl,
-    'review_comments_url': reviewCommentsUrl,
-    ...switch (stack) {
-      SdkPresent<PullRequestStack?>(value: final value) => {'stack': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'state': state.toJson(),
-    'statuses_url': statusesUrl,
-    'title': title,
-    'updated_at': updatedAt,
-    'url': url,
-    'user': user?.toJson(),
-  };
+        '_links': links.toJson(),
+        'active_lock_reason': activeLockReason?.toJson(),
+        'assignee': assignee?.toJson(),
+        'assignees': assignees.map((item) => item?.toJson()).toList(),
+        'author_association': authorAssociation.toJson(),
+        'auto_merge': autoMerge?.toJson(),
+        'base': base_.toJson(),
+        'body': body,
+        'closed_at': closedAt,
+        'comments_url': commentsUrl,
+        'commits_url': commitsUrl,
+        'created_at': createdAt,
+        'diff_url': diffUrl,
+        'draft': draft,
+        'head': head.toJson(),
+        'html_url': htmlUrl,
+        'id': id,
+        'issue_url': issueUrl,
+        'labels': labels.map((item) => item.toJson()).toList(),
+        'locked': locked,
+        'merge_commit_sha': mergeCommitSha,
+        'merged_at': mergedAt,
+        'milestone': milestone?.toJson(),
+        'node_id': nodeId,
+        'number': number,
+        'patch_url': patchUrl,
+        'requested_reviewers':
+            requestedReviewers.map((item) => item?.toJson()).toList(),
+        'requested_teams': requestedTeams.map((item) => item.toJson()).toList(),
+        'review_comment_url': reviewCommentUrl,
+        'review_comments_url': reviewCommentsUrl,
+        ...switch (stack) {
+          SdkPresent<PullRequestStack?>(value: final value) => {
+              'stack': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'state': state.toJson(),
+        'statuses_url': statusesUrl,
+        'title': title,
+        'updated_at': updatedAt,
+        'url': url,
+        'user': user?.toJson(),
+      };
 }

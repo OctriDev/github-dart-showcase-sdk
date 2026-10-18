@@ -8,286 +8,560 @@ part of 'security_advisories.dart';
 class GlobalAdvisoryCvss {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The CVSS vector.
   final String? vectorString;
+
   /// The CVSS score.
   final double? score;
 
   const GlobalAdvisoryCvss({required this.vectorString, required this.score});
 
-  GlobalAdvisoryCvss Function({String? vectorString, double? score}) get copyWith => _copyWith;
+  GlobalAdvisoryCvss Function({String? vectorString, double? score})
+      get copyWith => _copyWith;
 
-  GlobalAdvisoryCvss _copyWith({Object? vectorString = sdkOmittedValue, Object? score = sdkOmittedValue}) => GlobalAdvisoryCvss(
-    vectorString: identical(vectorString, sdkOmittedValue) ? this.vectorString : vectorString as String?,
-    score: identical(score, sdkOmittedValue) ? this.score : score as double?,
-  );
+  GlobalAdvisoryCvss _copyWith(
+          {Object? vectorString = sdkOmittedValue,
+          Object? score = sdkOmittedValue}) =>
+      GlobalAdvisoryCvss(
+        vectorString: identical(vectorString, sdkOmittedValue)
+            ? this.vectorString
+            : vectorString as String?,
+        score:
+            identical(score, sdkOmittedValue) ? this.score : score as double?,
+      );
 
-  factory GlobalAdvisoryCvss.fromJson(Map<String, dynamic> json) => GlobalAdvisoryCvss(
-    vectorString: json.containsKey('vector_string') ? json['vector_string'] as String? : throw ArgumentError.value(null, 'vector_string', 'Required property is missing'),
-    score: json.containsKey('score') ? (json['score'] as num?)?.toDouble() : throw ArgumentError.value(null, 'score', 'Required property is missing'),
-  );
+  factory GlobalAdvisoryCvss.fromJson(Map<String, dynamic> json) =>
+      GlobalAdvisoryCvss(
+        vectorString: json.containsKey('vector_string')
+            ? json['vector_string'] as String?
+            : throw ArgumentError.value(
+                null, 'vector_string', 'Required property is missing'),
+        score: json.containsKey('score')
+            ? (json['score'] as num?)?.toDouble()
+            : throw ArgumentError.value(
+                null, 'score', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'vector_string': vectorString,
-    'score': score,
-  };
+        'vector_string': vectorString,
+        'score': score,
+      };
 }
 
 /// Required object value serialized in the `identifiers[]` wire field.
 class GlobalAdvisoryIdentifiersItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The type of identifier.
   final GlobalAdvisoryIdentifiersItemType type_;
+
   /// The identifier value.
   final String value;
 
-  const GlobalAdvisoryIdentifiersItem({required this.type_, required this.value});
+  const GlobalAdvisoryIdentifiersItem(
+      {required this.type_, required this.value});
 
-  GlobalAdvisoryIdentifiersItem Function({GlobalAdvisoryIdentifiersItemType type_, String value}) get copyWith => _copyWith;
+  GlobalAdvisoryIdentifiersItem Function(
+      {GlobalAdvisoryIdentifiersItemType type_,
+      String value}) get copyWith => _copyWith;
 
-  GlobalAdvisoryIdentifiersItem _copyWith({Object? type_ = sdkOmittedValue, Object? value = sdkOmittedValue}) => GlobalAdvisoryIdentifiersItem(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as GlobalAdvisoryIdentifiersItemType,
-    value: identical(value, sdkOmittedValue) ? this.value : value as String,
-  );
+  GlobalAdvisoryIdentifiersItem _copyWith(
+          {Object? type_ = sdkOmittedValue, Object? value = sdkOmittedValue}) =>
+      GlobalAdvisoryIdentifiersItem(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as GlobalAdvisoryIdentifiersItemType,
+        value: identical(value, sdkOmittedValue) ? this.value : value as String,
+      );
 
-  factory GlobalAdvisoryIdentifiersItem.fromJson(Map<String, dynamic> json) => GlobalAdvisoryIdentifiersItem(
-    type_: (json['type'] != null ? GlobalAdvisoryIdentifiersItemType.fromJson(json['type'] as String) : null)!,
-    value: (json['value'] as String?)!,
-  );
+  factory GlobalAdvisoryIdentifiersItem.fromJson(Map<String, dynamic> json) =>
+      GlobalAdvisoryIdentifiersItem(
+        type_: (json['type'] != null
+            ? GlobalAdvisoryIdentifiersItemType.fromJson(json['type'] as String)
+            : null)!,
+        value: (json['value'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'type': type_.toJson(),
-    'value': value,
-  };
+        'type': type_.toJson(),
+        'value': value,
+      };
 }
 
 /// Required object value serialized in the `cwes[]` wire field.
 class GlobalAdvisoryCwesItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The Common Weakness Enumeration (CWE) identifier.
   final String cweId;
+
   /// The name of the CWE.
   final String name;
 
   const GlobalAdvisoryCwesItem({required this.cweId, required this.name});
 
-  GlobalAdvisoryCwesItem Function({String cweId, String name}) get copyWith => _copyWith;
+  GlobalAdvisoryCwesItem Function({String cweId, String name}) get copyWith =>
+      _copyWith;
 
-  GlobalAdvisoryCwesItem _copyWith({Object? cweId = sdkOmittedValue, Object? name = sdkOmittedValue}) => GlobalAdvisoryCwesItem(
-    cweId: identical(cweId, sdkOmittedValue) ? this.cweId : cweId as String,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-  );
+  GlobalAdvisoryCwesItem _copyWith(
+          {Object? cweId = sdkOmittedValue, Object? name = sdkOmittedValue}) =>
+      GlobalAdvisoryCwesItem(
+        cweId: identical(cweId, sdkOmittedValue) ? this.cweId : cweId as String,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+      );
 
-  factory GlobalAdvisoryCwesItem.fromJson(Map<String, dynamic> json) => GlobalAdvisoryCwesItem(
-    cweId: (json['cwe_id'] as String?)!,
-    name: (json['name'] as String?)!,
-  );
+  factory GlobalAdvisoryCwesItem.fromJson(Map<String, dynamic> json) =>
+      GlobalAdvisoryCwesItem(
+        cweId: (json['cwe_id'] as String?)!,
+        name: (json['name'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'cwe_id': cweId,
-    'name': name,
-  };
+        'cwe_id': cweId,
+        'name': name,
+      };
 }
 
 /// Required object value serialized in the `credits[]` wire field.
 class GlobalAdvisoryCreditsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// A GitHub user.
   final SimpleUser user;
+
   /// The type of credit the user is receiving.
   final SecurityAdvisoryCreditTypes type_;
 
   const GlobalAdvisoryCreditsItem({required this.user, required this.type_});
 
-  GlobalAdvisoryCreditsItem Function({SimpleUser user, SecurityAdvisoryCreditTypes type_}) get copyWith => _copyWith;
+  GlobalAdvisoryCreditsItem Function(
+      {SimpleUser user,
+      SecurityAdvisoryCreditTypes type_}) get copyWith => _copyWith;
 
-  GlobalAdvisoryCreditsItem _copyWith({Object? user = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => GlobalAdvisoryCreditsItem(
-    user: identical(user, sdkOmittedValue) ? this.user : user as SimpleUser,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SecurityAdvisoryCreditTypes,
-  );
+  GlobalAdvisoryCreditsItem _copyWith(
+          {Object? user = sdkOmittedValue, Object? type_ = sdkOmittedValue}) =>
+      GlobalAdvisoryCreditsItem(
+        user: identical(user, sdkOmittedValue) ? this.user : user as SimpleUser,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as SecurityAdvisoryCreditTypes,
+      );
 
-  factory GlobalAdvisoryCreditsItem.fromJson(Map<String, dynamic> json) => GlobalAdvisoryCreditsItem(
-    user: (json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null)!,
-    type_: (json['type'] != null ? SecurityAdvisoryCreditTypes.fromJson(json['type'] as String) : null)!,
-  );
+  factory GlobalAdvisoryCreditsItem.fromJson(Map<String, dynamic> json) =>
+      GlobalAdvisoryCreditsItem(
+        user: (json['user'] != null
+            ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>)
+            : null)!,
+        type_: (json['type'] != null
+            ? SecurityAdvisoryCreditTypes.fromJson(json['type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'user': user.toJson(),
-    'type': type_.toJson(),
-  };
+        'user': user.toJson(),
+        'type': type_.toJson(),
+      };
 }
 
 /// A GitHub Security Advisory.
 class GlobalAdvisory {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The GitHub Security Advisory ID.
   final String ghsaId;
+
   /// The Common Vulnerabilities and Exposures (CVE) ID.
   final String? cveId;
+
   /// The API URL for the advisory.
   final String url;
+
   /// The URL for the advisory.
   final String htmlUrl;
+
   /// The API URL for the repository advisory.
   final String? repositoryAdvisoryUrl;
+
   /// A short summary of the advisory.
   final String summary;
+
   /// A detailed description of what the advisory entails.
   final String? description;
+
   /// The type of advisory.
   final GlobalAdvisoryType type_;
+
   /// The severity of the advisory.
   final GlobalAdvisorySeverity severity;
+
   /// The URL of the advisory's source code.
   final String? sourceCodeLocation;
+
   /// Required array value serialized in the `identifiers` wire field.
   final List<GlobalAdvisoryIdentifiersItem>? identifiers;
+
   /// Required array value serialized in the `references` wire field.
   final List<String>? references;
+
   /// The date and time of when the advisory was published, in ISO 8601 format.
   final String publishedAt;
+
   /// The date and time of when the advisory was last updated, in ISO 8601 format.
   final String updatedAt;
+
   /// The date and time of when the advisory was reviewed by GitHub, in ISO 8601 format.
   final String? githubReviewedAt;
+
   /// The date and time when the advisory was published in the National Vulnerability Database, in ISO 8601 format. This field is only populated when the advisory is imported from the National Vulnerability Database.
   final String? nvdPublishedAt;
+
   /// The date and time of when the advisory was withdrawn, in ISO 8601 format.
   final String? withdrawnAt;
+
   /// The products and respective version ranges affected by the advisory.
   final List<Vulnerability>? vulnerabilities;
+
   /// Required object value serialized in the `cvss` wire field.
   final GlobalAdvisoryCvss? cvss;
+
   /// Optional object value serialized in the `cvss_severities` wire field.
   final SdkOptional<CvssSeverities?> cvssSeverities;
+
   /// The EPSS scores as calculated by the [Exploit Prediction Scoring System](https://www.first.org/epss).
   final SdkOptional<SecurityAdvisoryEpss?> epss;
+
   /// Required array value serialized in the `cwes` wire field.
   final List<GlobalAdvisoryCwesItem>? cwes;
+
   /// The users who contributed to the advisory.
   final List<GlobalAdvisoryCreditsItem>? credits;
 
-  const GlobalAdvisory({required this.ghsaId, required this.cveId, required this.url, required this.htmlUrl, required this.repositoryAdvisoryUrl, required this.summary, required this.description, required this.type_, required this.severity, required this.sourceCodeLocation, required this.identifiers, required this.references, required this.publishedAt, required this.updatedAt, required this.githubReviewedAt, required this.nvdPublishedAt, required this.withdrawnAt, required this.vulnerabilities, required this.cvss, this.cvssSeverities = const SdkOmitted(), this.epss = const SdkOmitted(), required this.cwes, required this.credits});
+  const GlobalAdvisory(
+      {required this.ghsaId,
+      required this.cveId,
+      required this.url,
+      required this.htmlUrl,
+      required this.repositoryAdvisoryUrl,
+      required this.summary,
+      required this.description,
+      required this.type_,
+      required this.severity,
+      required this.sourceCodeLocation,
+      required this.identifiers,
+      required this.references,
+      required this.publishedAt,
+      required this.updatedAt,
+      required this.githubReviewedAt,
+      required this.nvdPublishedAt,
+      required this.withdrawnAt,
+      required this.vulnerabilities,
+      required this.cvss,
+      this.cvssSeverities = const SdkOmitted(),
+      this.epss = const SdkOmitted(),
+      required this.cwes,
+      required this.credits});
 
-  GlobalAdvisory Function({String ghsaId, String? cveId, String url, String htmlUrl, String? repositoryAdvisoryUrl, String summary, String? description, GlobalAdvisoryType type_, GlobalAdvisorySeverity severity, String? sourceCodeLocation, List<GlobalAdvisoryIdentifiersItem>? identifiers, List<String>? references, String publishedAt, String updatedAt, String? githubReviewedAt, String? nvdPublishedAt, String? withdrawnAt, List<Vulnerability>? vulnerabilities, GlobalAdvisoryCvss? cvss, SdkOptional<CvssSeverities?> cvssSeverities, SdkOptional<SecurityAdvisoryEpss?> epss, List<GlobalAdvisoryCwesItem>? cwes, List<GlobalAdvisoryCreditsItem>? credits}) get copyWith => _copyWith;
+  GlobalAdvisory Function(
+      {String ghsaId,
+      String? cveId,
+      String url,
+      String htmlUrl,
+      String? repositoryAdvisoryUrl,
+      String summary,
+      String? description,
+      GlobalAdvisoryType type_,
+      GlobalAdvisorySeverity severity,
+      String? sourceCodeLocation,
+      List<GlobalAdvisoryIdentifiersItem>? identifiers,
+      List<String>? references,
+      String publishedAt,
+      String updatedAt,
+      String? githubReviewedAt,
+      String? nvdPublishedAt,
+      String? withdrawnAt,
+      List<Vulnerability>? vulnerabilities,
+      GlobalAdvisoryCvss? cvss,
+      SdkOptional<CvssSeverities?> cvssSeverities,
+      SdkOptional<SecurityAdvisoryEpss?> epss,
+      List<GlobalAdvisoryCwesItem>? cwes,
+      List<GlobalAdvisoryCreditsItem>? credits}) get copyWith => _copyWith;
 
-  GlobalAdvisory _copyWith({Object? ghsaId = sdkOmittedValue, Object? cveId = sdkOmittedValue, Object? url = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? repositoryAdvisoryUrl = sdkOmittedValue, Object? summary = sdkOmittedValue, Object? description = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? severity = sdkOmittedValue, Object? sourceCodeLocation = sdkOmittedValue, Object? identifiers = sdkOmittedValue, Object? references = sdkOmittedValue, Object? publishedAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? githubReviewedAt = sdkOmittedValue, Object? nvdPublishedAt = sdkOmittedValue, Object? withdrawnAt = sdkOmittedValue, Object? vulnerabilities = sdkOmittedValue, Object? cvss = sdkOmittedValue, Object? cvssSeverities = sdkOmittedValue, Object? epss = sdkOmittedValue, Object? cwes = sdkOmittedValue, Object? credits = sdkOmittedValue}) => GlobalAdvisory(
-    ghsaId: identical(ghsaId, sdkOmittedValue) ? this.ghsaId : ghsaId as String,
-    cveId: identical(cveId, sdkOmittedValue) ? this.cveId : cveId as String?,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
-    repositoryAdvisoryUrl: identical(repositoryAdvisoryUrl, sdkOmittedValue) ? this.repositoryAdvisoryUrl : repositoryAdvisoryUrl as String?,
-    summary: identical(summary, sdkOmittedValue) ? this.summary : summary as String,
-    description: identical(description, sdkOmittedValue) ? this.description : description as String?,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as GlobalAdvisoryType,
-    severity: identical(severity, sdkOmittedValue) ? this.severity : severity as GlobalAdvisorySeverity,
-    sourceCodeLocation: identical(sourceCodeLocation, sdkOmittedValue) ? this.sourceCodeLocation : sourceCodeLocation as String?,
-    identifiers: identical(identifiers, sdkOmittedValue) ? this.identifiers : identifiers as List<GlobalAdvisoryIdentifiersItem>?,
-    references: identical(references, sdkOmittedValue) ? this.references : references as List<String>?,
-    publishedAt: identical(publishedAt, sdkOmittedValue) ? this.publishedAt : publishedAt as String,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
-    githubReviewedAt: identical(githubReviewedAt, sdkOmittedValue) ? this.githubReviewedAt : githubReviewedAt as String?,
-    nvdPublishedAt: identical(nvdPublishedAt, sdkOmittedValue) ? this.nvdPublishedAt : nvdPublishedAt as String?,
-    withdrawnAt: identical(withdrawnAt, sdkOmittedValue) ? this.withdrawnAt : withdrawnAt as String?,
-    vulnerabilities: identical(vulnerabilities, sdkOmittedValue) ? this.vulnerabilities : vulnerabilities as List<Vulnerability>?,
-    cvss: identical(cvss, sdkOmittedValue) ? this.cvss : cvss as GlobalAdvisoryCvss?,
-    cvssSeverities: identical(cvssSeverities, sdkOmittedValue) ? this.cvssSeverities : cvssSeverities as SdkOptional<CvssSeverities?>,
-    epss: identical(epss, sdkOmittedValue) ? this.epss : epss as SdkOptional<SecurityAdvisoryEpss?>,
-    cwes: identical(cwes, sdkOmittedValue) ? this.cwes : cwes as List<GlobalAdvisoryCwesItem>?,
-    credits: identical(credits, sdkOmittedValue) ? this.credits : credits as List<GlobalAdvisoryCreditsItem>?,
-  );
+  GlobalAdvisory _copyWith(
+          {Object? ghsaId = sdkOmittedValue,
+          Object? cveId = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? repositoryAdvisoryUrl = sdkOmittedValue,
+          Object? summary = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? severity = sdkOmittedValue,
+          Object? sourceCodeLocation = sdkOmittedValue,
+          Object? identifiers = sdkOmittedValue,
+          Object? references = sdkOmittedValue,
+          Object? publishedAt = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? githubReviewedAt = sdkOmittedValue,
+          Object? nvdPublishedAt = sdkOmittedValue,
+          Object? withdrawnAt = sdkOmittedValue,
+          Object? vulnerabilities = sdkOmittedValue,
+          Object? cvss = sdkOmittedValue,
+          Object? cvssSeverities = sdkOmittedValue,
+          Object? epss = sdkOmittedValue,
+          Object? cwes = sdkOmittedValue,
+          Object? credits = sdkOmittedValue}) =>
+      GlobalAdvisory(
+        ghsaId:
+            identical(ghsaId, sdkOmittedValue) ? this.ghsaId : ghsaId as String,
+        cveId:
+            identical(cveId, sdkOmittedValue) ? this.cveId : cveId as String?,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as String,
+        repositoryAdvisoryUrl: identical(repositoryAdvisoryUrl, sdkOmittedValue)
+            ? this.repositoryAdvisoryUrl
+            : repositoryAdvisoryUrl as String?,
+        summary: identical(summary, sdkOmittedValue)
+            ? this.summary
+            : summary as String,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as String?,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as GlobalAdvisoryType,
+        severity: identical(severity, sdkOmittedValue)
+            ? this.severity
+            : severity as GlobalAdvisorySeverity,
+        sourceCodeLocation: identical(sourceCodeLocation, sdkOmittedValue)
+            ? this.sourceCodeLocation
+            : sourceCodeLocation as String?,
+        identifiers: identical(identifiers, sdkOmittedValue)
+            ? this.identifiers
+            : identifiers as List<GlobalAdvisoryIdentifiersItem>?,
+        references: identical(references, sdkOmittedValue)
+            ? this.references
+            : references as List<String>?,
+        publishedAt: identical(publishedAt, sdkOmittedValue)
+            ? this.publishedAt
+            : publishedAt as String,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+        githubReviewedAt: identical(githubReviewedAt, sdkOmittedValue)
+            ? this.githubReviewedAt
+            : githubReviewedAt as String?,
+        nvdPublishedAt: identical(nvdPublishedAt, sdkOmittedValue)
+            ? this.nvdPublishedAt
+            : nvdPublishedAt as String?,
+        withdrawnAt: identical(withdrawnAt, sdkOmittedValue)
+            ? this.withdrawnAt
+            : withdrawnAt as String?,
+        vulnerabilities: identical(vulnerabilities, sdkOmittedValue)
+            ? this.vulnerabilities
+            : vulnerabilities as List<Vulnerability>?,
+        cvss: identical(cvss, sdkOmittedValue)
+            ? this.cvss
+            : cvss as GlobalAdvisoryCvss?,
+        cvssSeverities: identical(cvssSeverities, sdkOmittedValue)
+            ? this.cvssSeverities
+            : cvssSeverities as SdkOptional<CvssSeverities?>,
+        epss: identical(epss, sdkOmittedValue)
+            ? this.epss
+            : epss as SdkOptional<SecurityAdvisoryEpss?>,
+        cwes: identical(cwes, sdkOmittedValue)
+            ? this.cwes
+            : cwes as List<GlobalAdvisoryCwesItem>?,
+        credits: identical(credits, sdkOmittedValue)
+            ? this.credits
+            : credits as List<GlobalAdvisoryCreditsItem>?,
+      );
 
   factory GlobalAdvisory.fromJson(Map<String, dynamic> json) => GlobalAdvisory(
-    ghsaId: (json['ghsa_id'] as String?)!,
-    cveId: json.containsKey('cve_id') ? json['cve_id'] as String? : throw ArgumentError.value(null, 'cve_id', 'Required property is missing'),
-    url: (json['url'] as String?)!,
-    htmlUrl: (json['html_url'] as String?)!,
-    repositoryAdvisoryUrl: json.containsKey('repository_advisory_url') ? json['repository_advisory_url'] as String? : throw ArgumentError.value(null, 'repository_advisory_url', 'Required property is missing'),
-    summary: (json['summary'] as String?)!,
-    description: json.containsKey('description') ? json['description'] as String? : throw ArgumentError.value(null, 'description', 'Required property is missing'),
-    type_: (json['type'] != null ? GlobalAdvisoryType.fromJson(json['type'] as String) : null)!,
-    severity: (json['severity'] != null ? GlobalAdvisorySeverity.fromJson(json['severity'] as String) : null)!,
-    sourceCodeLocation: json.containsKey('source_code_location') ? json['source_code_location'] as String? : throw ArgumentError.value(null, 'source_code_location', 'Required property is missing'),
-    identifiers: json.containsKey('identifiers') ? (json['identifiers'] as List?)?.map((e) => GlobalAdvisoryIdentifiersItem.fromJson(e as Map<String, dynamic>)).toList() : throw ArgumentError.value(null, 'identifiers', 'Required property is missing'),
-    references: json.containsKey('references') ? (json['references'] as List?)?.map((e) => e as String).toList() : throw ArgumentError.value(null, 'references', 'Required property is missing'),
-    publishedAt: (json['published_at'] as String?)!,
-    updatedAt: (json['updated_at'] as String?)!,
-    githubReviewedAt: json.containsKey('github_reviewed_at') ? json['github_reviewed_at'] as String? : throw ArgumentError.value(null, 'github_reviewed_at', 'Required property is missing'),
-    nvdPublishedAt: json.containsKey('nvd_published_at') ? json['nvd_published_at'] as String? : throw ArgumentError.value(null, 'nvd_published_at', 'Required property is missing'),
-    withdrawnAt: json.containsKey('withdrawn_at') ? json['withdrawn_at'] as String? : throw ArgumentError.value(null, 'withdrawn_at', 'Required property is missing'),
-    vulnerabilities: json.containsKey('vulnerabilities') ? (json['vulnerabilities'] as List?)?.map((e) => Vulnerability.fromJson(e as Map<String, dynamic>)).toList() : throw ArgumentError.value(null, 'vulnerabilities', 'Required property is missing'),
-    cvss: json.containsKey('cvss') ? json['cvss'] != null ? GlobalAdvisoryCvss.fromJson(json['cvss'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'cvss', 'Required property is missing'),
-    cvssSeverities: json.containsKey('cvss_severities') ? SdkPresent(json['cvss_severities'] != null ? CvssSeverities.fromJson(json['cvss_severities'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-    epss: json.containsKey('epss') ? SdkPresent(json['epss'] != null ? SecurityAdvisoryEpss.fromJson(json['epss'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-    cwes: json.containsKey('cwes') ? (json['cwes'] as List?)?.map((e) => GlobalAdvisoryCwesItem.fromJson(e as Map<String, dynamic>)).toList() : throw ArgumentError.value(null, 'cwes', 'Required property is missing'),
-    credits: json.containsKey('credits') ? (json['credits'] as List?)?.map((e) => GlobalAdvisoryCreditsItem.fromJson(e as Map<String, dynamic>)).toList() : throw ArgumentError.value(null, 'credits', 'Required property is missing'),
-  );
+        ghsaId: (json['ghsa_id'] as String?)!,
+        cveId: json.containsKey('cve_id')
+            ? json['cve_id'] as String?
+            : throw ArgumentError.value(
+                null, 'cve_id', 'Required property is missing'),
+        url: (json['url'] as String?)!,
+        htmlUrl: (json['html_url'] as String?)!,
+        repositoryAdvisoryUrl: json.containsKey('repository_advisory_url')
+            ? json['repository_advisory_url'] as String?
+            : throw ArgumentError.value(null, 'repository_advisory_url',
+                'Required property is missing'),
+        summary: (json['summary'] as String?)!,
+        description: json.containsKey('description')
+            ? json['description'] as String?
+            : throw ArgumentError.value(
+                null, 'description', 'Required property is missing'),
+        type_: (json['type'] != null
+            ? GlobalAdvisoryType.fromJson(json['type'] as String)
+            : null)!,
+        severity: (json['severity'] != null
+            ? GlobalAdvisorySeverity.fromJson(json['severity'] as String)
+            : null)!,
+        sourceCodeLocation: json.containsKey('source_code_location')
+            ? json['source_code_location'] as String?
+            : throw ArgumentError.value(
+                null, 'source_code_location', 'Required property is missing'),
+        identifiers: json.containsKey('identifiers')
+            ? (json['identifiers'] as List?)
+                ?.map((e) => GlobalAdvisoryIdentifiersItem.fromJson(
+                    e as Map<String, dynamic>))
+                .toList()
+            : throw ArgumentError.value(
+                null, 'identifiers', 'Required property is missing'),
+        references: json.containsKey('references')
+            ? (json['references'] as List?)?.map((e) => e as String).toList()
+            : throw ArgumentError.value(
+                null, 'references', 'Required property is missing'),
+        publishedAt: (json['published_at'] as String?)!,
+        updatedAt: (json['updated_at'] as String?)!,
+        githubReviewedAt: json.containsKey('github_reviewed_at')
+            ? json['github_reviewed_at'] as String?
+            : throw ArgumentError.value(
+                null, 'github_reviewed_at', 'Required property is missing'),
+        nvdPublishedAt: json.containsKey('nvd_published_at')
+            ? json['nvd_published_at'] as String?
+            : throw ArgumentError.value(
+                null, 'nvd_published_at', 'Required property is missing'),
+        withdrawnAt: json.containsKey('withdrawn_at')
+            ? json['withdrawn_at'] as String?
+            : throw ArgumentError.value(
+                null, 'withdrawn_at', 'Required property is missing'),
+        vulnerabilities: json.containsKey('vulnerabilities')
+            ? (json['vulnerabilities'] as List?)
+                ?.map((e) => Vulnerability.fromJson(e as Map<String, dynamic>))
+                .toList()
+            : throw ArgumentError.value(
+                null, 'vulnerabilities', 'Required property is missing'),
+        cvss: json.containsKey('cvss')
+            ? json['cvss'] != null
+                ? GlobalAdvisoryCvss.fromJson(
+                    json['cvss'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'cvss', 'Required property is missing'),
+        cvssSeverities: json.containsKey('cvss_severities')
+            ? SdkPresent(json['cvss_severities'] != null
+                ? CvssSeverities.fromJson(
+                    json['cvss_severities'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        epss: json.containsKey('epss')
+            ? SdkPresent(json['epss'] != null
+                ? SecurityAdvisoryEpss.fromJson(
+                    json['epss'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        cwes: json.containsKey('cwes')
+            ? (json['cwes'] as List?)
+                ?.map((e) =>
+                    GlobalAdvisoryCwesItem.fromJson(e as Map<String, dynamic>))
+                .toList()
+            : throw ArgumentError.value(
+                null, 'cwes', 'Required property is missing'),
+        credits: json.containsKey('credits')
+            ? (json['credits'] as List?)
+                ?.map((e) => GlobalAdvisoryCreditsItem.fromJson(
+                    e as Map<String, dynamic>))
+                .toList()
+            : throw ArgumentError.value(
+                null, 'credits', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'ghsa_id': ghsaId,
-    'cve_id': cveId,
-    'url': url,
-    'html_url': htmlUrl,
-    'repository_advisory_url': repositoryAdvisoryUrl,
-    'summary': summary,
-    'description': description,
-    'type': type_.toJson(),
-    'severity': severity.toJson(),
-    'source_code_location': sourceCodeLocation,
-    'identifiers': identifiers?.map((item) => item.toJson()).toList(),
-    'references': references,
-    'published_at': publishedAt,
-    'updated_at': updatedAt,
-    'github_reviewed_at': githubReviewedAt,
-    'nvd_published_at': nvdPublishedAt,
-    'withdrawn_at': withdrawnAt,
-    'vulnerabilities': vulnerabilities?.map((item) => item.toJson()).toList(),
-    'cvss': cvss?.toJson(),
-    ...switch (cvssSeverities) {
-      SdkPresent<CvssSeverities?>(value: final value) => {'cvss_severities': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (epss) {
-      SdkPresent<SecurityAdvisoryEpss?>(value: final value) => {'epss': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'cwes': cwes?.map((item) => item.toJson()).toList(),
-    'credits': credits?.map((item) => item.toJson()).toList(),
-  };
+        'ghsa_id': ghsaId,
+        'cve_id': cveId,
+        'url': url,
+        'html_url': htmlUrl,
+        'repository_advisory_url': repositoryAdvisoryUrl,
+        'summary': summary,
+        'description': description,
+        'type': type_.toJson(),
+        'severity': severity.toJson(),
+        'source_code_location': sourceCodeLocation,
+        'identifiers': identifiers?.map((item) => item.toJson()).toList(),
+        'references': references,
+        'published_at': publishedAt,
+        'updated_at': updatedAt,
+        'github_reviewed_at': githubReviewedAt,
+        'nvd_published_at': nvdPublishedAt,
+        'withdrawn_at': withdrawnAt,
+        'vulnerabilities':
+            vulnerabilities?.map((item) => item.toJson()).toList(),
+        'cvss': cvss?.toJson(),
+        ...switch (cvssSeverities) {
+          SdkPresent<CvssSeverities?>(value: final value) => {
+              'cvss_severities': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (epss) {
+          SdkPresent<SecurityAdvisoryEpss?>(value: final value) => {
+              'epss': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'cwes': cwes?.map((item) => item.toJson()).toList(),
+        'credits': credits?.map((item) => item.toJson()).toList(),
+      };
 }
 
 /// The name of the package affected by the vulnerability.
 class PrivateVulnerabilityReportCreateVulnerabilitiesItemPackage {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The package's language or package management ecosystem.
   final SecurityAdvisoryEcosystems ecosystem;
+
   /// The unique package name within its ecosystem.
   final SdkOptional<String?> name;
 
-  const PrivateVulnerabilityReportCreateVulnerabilitiesItemPackage({required this.ecosystem, this.name = const SdkOmitted()});
+  const PrivateVulnerabilityReportCreateVulnerabilitiesItemPackage(
+      {required this.ecosystem, this.name = const SdkOmitted()});
 
-  PrivateVulnerabilityReportCreateVulnerabilitiesItemPackage Function({SecurityAdvisoryEcosystems ecosystem, SdkOptional<String?> name}) get copyWith => _copyWith;
+  PrivateVulnerabilityReportCreateVulnerabilitiesItemPackage Function(
+      {SecurityAdvisoryEcosystems ecosystem,
+      SdkOptional<String?> name}) get copyWith => _copyWith;
 
-  PrivateVulnerabilityReportCreateVulnerabilitiesItemPackage _copyWith({Object? ecosystem = sdkOmittedValue, Object? name = sdkOmittedValue}) => PrivateVulnerabilityReportCreateVulnerabilitiesItemPackage(
-    ecosystem: identical(ecosystem, sdkOmittedValue) ? this.ecosystem : ecosystem as SecurityAdvisoryEcosystems,
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String?>,
-  );
+  PrivateVulnerabilityReportCreateVulnerabilitiesItemPackage _copyWith(
+          {Object? ecosystem = sdkOmittedValue,
+          Object? name = sdkOmittedValue}) =>
+      PrivateVulnerabilityReportCreateVulnerabilitiesItemPackage(
+        ecosystem: identical(ecosystem, sdkOmittedValue)
+            ? this.ecosystem
+            : ecosystem as SecurityAdvisoryEcosystems,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String?>,
+      );
 
-  factory PrivateVulnerabilityReportCreateVulnerabilitiesItemPackage.fromJson(Map<String, dynamic> json) => PrivateVulnerabilityReportCreateVulnerabilitiesItemPackage(
-    ecosystem: (json['ecosystem'] != null ? SecurityAdvisoryEcosystems.fromJson(json['ecosystem'] as String) : null)!,
-    name: json.containsKey('name') ? SdkPresent(json['name'] as String?) : const SdkOmitted(),
-  );
+  factory PrivateVulnerabilityReportCreateVulnerabilitiesItemPackage.fromJson(
+          Map<String, dynamic> json) =>
+      PrivateVulnerabilityReportCreateVulnerabilitiesItemPackage(
+        ecosystem: (json['ecosystem'] != null
+            ? SecurityAdvisoryEcosystems.fromJson(json['ecosystem'] as String)
+            : null)!,
+        name: json.containsKey('name')
+            ? SdkPresent(json['name'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'ecosystem': ecosystem.toJson(),
-    ...switch (name) {
-      SdkPresent<String?>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'ecosystem': ecosystem.toJson(),
+        ...switch (name) {
+          SdkPresent<String?>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

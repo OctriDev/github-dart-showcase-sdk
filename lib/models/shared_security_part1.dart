@@ -8,276 +8,487 @@ part of 'shared_security.dart';
 class SecurityAdvisoryEpss {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `number` value serialized in the `percentage` wire field.
   final SdkOptional<double> percentage;
+
   /// Optional `number` value serialized in the `percentile` wire field.
   final SdkOptional<double> percentile;
 
-  const SecurityAdvisoryEpss({this.percentage = const SdkOmitted(), this.percentile = const SdkOmitted()});
+  const SecurityAdvisoryEpss(
+      {this.percentage = const SdkOmitted(),
+      this.percentile = const SdkOmitted()});
 
-  SecurityAdvisoryEpss Function({SdkOptional<double> percentage, SdkOptional<double> percentile}) get copyWith => _copyWith;
+  SecurityAdvisoryEpss Function(
+      {SdkOptional<double> percentage,
+      SdkOptional<double> percentile}) get copyWith => _copyWith;
 
-  SecurityAdvisoryEpss _copyWith({Object? percentage = sdkOmittedValue, Object? percentile = sdkOmittedValue}) => SecurityAdvisoryEpss(
-    percentage: identical(percentage, sdkOmittedValue) ? this.percentage : percentage as SdkOptional<double>,
-    percentile: identical(percentile, sdkOmittedValue) ? this.percentile : percentile as SdkOptional<double>,
-  );
+  SecurityAdvisoryEpss _copyWith(
+          {Object? percentage = sdkOmittedValue,
+          Object? percentile = sdkOmittedValue}) =>
+      SecurityAdvisoryEpss(
+        percentage: identical(percentage, sdkOmittedValue)
+            ? this.percentage
+            : percentage as SdkOptional<double>,
+        percentile: identical(percentile, sdkOmittedValue)
+            ? this.percentile
+            : percentile as SdkOptional<double>,
+      );
 
-  factory SecurityAdvisoryEpss.fromJson(Map<String, dynamic> json) => SecurityAdvisoryEpss(
-    percentage: json['percentage'] != null ? SdkPresent(((json['percentage'] as num?)?.toDouble())!) : const SdkOmitted(),
-    percentile: json['percentile'] != null ? SdkPresent(((json['percentile'] as num?)?.toDouble())!) : const SdkOmitted(),
-  );
+  factory SecurityAdvisoryEpss.fromJson(Map<String, dynamic> json) =>
+      SecurityAdvisoryEpss(
+        percentage: json['percentage'] != null
+            ? SdkPresent(((json['percentage'] as num?)?.toDouble())!)
+            : const SdkOmitted(),
+        percentile: json['percentile'] != null
+            ? SdkPresent(((json['percentile'] as num?)?.toDouble())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (percentage) {
-      SdkPresent<double>(value: final value) => {'percentage': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (percentile) {
-      SdkPresent<double>(value: final value) => {'percentile': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (percentage) {
+          SdkPresent<double>(value: final value) => {
+              'percentage': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (percentile) {
+          SdkPresent<double>(value: final value) => {
+              'percentile': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Enable or disable GitHub Advanced Security for the repository. For standalone Code Scanning or Secret Protection products, this parameter cannot be used.
 class SecurityAndAnalysisAdvancedSecurity {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional enumerated value serialized in the `status` wire field.
   final SdkOptional<SecurityAndAnalysisAdvancedSecurityStatus> status;
 
   const SecurityAndAnalysisAdvancedSecurity({this.status = const SdkOmitted()});
 
-  SecurityAndAnalysisAdvancedSecurity Function({SdkOptional<SecurityAndAnalysisAdvancedSecurityStatus> status}) get copyWith => _copyWith;
+  SecurityAndAnalysisAdvancedSecurity Function(
+          {SdkOptional<SecurityAndAnalysisAdvancedSecurityStatus> status})
+      get copyWith => _copyWith;
 
-  SecurityAndAnalysisAdvancedSecurity _copyWith({Object? status = sdkOmittedValue}) => SecurityAndAnalysisAdvancedSecurity(
-    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<SecurityAndAnalysisAdvancedSecurityStatus>,
-  );
+  SecurityAndAnalysisAdvancedSecurity _copyWith(
+          {Object? status = sdkOmittedValue}) =>
+      SecurityAndAnalysisAdvancedSecurity(
+        status: identical(status, sdkOmittedValue)
+            ? this.status
+            : status as SdkOptional<SecurityAndAnalysisAdvancedSecurityStatus>,
+      );
 
-  factory SecurityAndAnalysisAdvancedSecurity.fromJson(Map<String, dynamic> json) => SecurityAndAnalysisAdvancedSecurity(
-    status: json['status'] != null ? SdkPresent((json['status'] != null ? SecurityAndAnalysisAdvancedSecurityStatus.fromJson(json['status'] as String) : null)!) : const SdkOmitted(),
-  );
+  factory SecurityAndAnalysisAdvancedSecurity.fromJson(
+          Map<String, dynamic> json) =>
+      SecurityAndAnalysisAdvancedSecurity(
+        status: json['status'] != null
+            ? SdkPresent((json['status'] != null
+                ? SecurityAndAnalysisAdvancedSecurityStatus.fromJson(
+                    json['status'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (status) {
-      SdkPresent<SecurityAndAnalysisAdvancedSecurityStatus>(value: final value) => {'status': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (status) {
+          SdkPresent<SecurityAndAnalysisAdvancedSecurityStatus>(
+            value: final value
+          ) =>
+            {
+              'status': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Optional object value serialized in the `code_security` wire field.
 class SecurityAndAnalysisCodeSecurity {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional enumerated value serialized in the `status` wire field.
   final SdkOptional<SecurityAndAnalysisCodeSecurityStatus> status;
 
   const SecurityAndAnalysisCodeSecurity({this.status = const SdkOmitted()});
 
-  SecurityAndAnalysisCodeSecurity Function({SdkOptional<SecurityAndAnalysisCodeSecurityStatus> status}) get copyWith => _copyWith;
+  SecurityAndAnalysisCodeSecurity Function(
+          {SdkOptional<SecurityAndAnalysisCodeSecurityStatus> status})
+      get copyWith => _copyWith;
 
-  SecurityAndAnalysisCodeSecurity _copyWith({Object? status = sdkOmittedValue}) => SecurityAndAnalysisCodeSecurity(
-    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<SecurityAndAnalysisCodeSecurityStatus>,
-  );
+  SecurityAndAnalysisCodeSecurity _copyWith(
+          {Object? status = sdkOmittedValue}) =>
+      SecurityAndAnalysisCodeSecurity(
+        status: identical(status, sdkOmittedValue)
+            ? this.status
+            : status as SdkOptional<SecurityAndAnalysisCodeSecurityStatus>,
+      );
 
-  factory SecurityAndAnalysisCodeSecurity.fromJson(Map<String, dynamic> json) => SecurityAndAnalysisCodeSecurity(
-    status: json['status'] != null ? SdkPresent((json['status'] != null ? SecurityAndAnalysisCodeSecurityStatus.fromJson(json['status'] as String) : null)!) : const SdkOmitted(),
-  );
+  factory SecurityAndAnalysisCodeSecurity.fromJson(Map<String, dynamic> json) =>
+      SecurityAndAnalysisCodeSecurity(
+        status: json['status'] != null
+            ? SdkPresent((json['status'] != null
+                ? SecurityAndAnalysisCodeSecurityStatus.fromJson(
+                    json['status'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (status) {
-      SdkPresent<SecurityAndAnalysisCodeSecurityStatus>(value: final value) => {'status': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (status) {
+          SdkPresent<SecurityAndAnalysisCodeSecurityStatus>(
+            value: final value
+          ) =>
+            {
+              'status': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Enable or disable Dependabot security updates for the repository.
 class SecurityAndAnalysisDependabotSecurityUpdates {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The enablement status of Dependabot security updates for the repository.
   final SdkOptional<SecurityAndAnalysisDependabotSecurityUpdatesStatus> status;
 
-  const SecurityAndAnalysisDependabotSecurityUpdates({this.status = const SdkOmitted()});
+  const SecurityAndAnalysisDependabotSecurityUpdates(
+      {this.status = const SdkOmitted()});
 
-  SecurityAndAnalysisDependabotSecurityUpdates Function({SdkOptional<SecurityAndAnalysisDependabotSecurityUpdatesStatus> status}) get copyWith => _copyWith;
+  SecurityAndAnalysisDependabotSecurityUpdates Function(
+      {SdkOptional<SecurityAndAnalysisDependabotSecurityUpdatesStatus>
+          status}) get copyWith => _copyWith;
 
-  SecurityAndAnalysisDependabotSecurityUpdates _copyWith({Object? status = sdkOmittedValue}) => SecurityAndAnalysisDependabotSecurityUpdates(
-    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<SecurityAndAnalysisDependabotSecurityUpdatesStatus>,
-  );
+  SecurityAndAnalysisDependabotSecurityUpdates _copyWith(
+          {Object? status = sdkOmittedValue}) =>
+      SecurityAndAnalysisDependabotSecurityUpdates(
+        status: identical(status, sdkOmittedValue)
+            ? this.status
+            : status as SdkOptional<
+                SecurityAndAnalysisDependabotSecurityUpdatesStatus>,
+      );
 
-  factory SecurityAndAnalysisDependabotSecurityUpdates.fromJson(Map<String, dynamic> json) => SecurityAndAnalysisDependabotSecurityUpdates(
-    status: json['status'] != null ? SdkPresent((json['status'] != null ? SecurityAndAnalysisDependabotSecurityUpdatesStatus.fromJson(json['status'] as String) : null)!) : const SdkOmitted(),
-  );
+  factory SecurityAndAnalysisDependabotSecurityUpdates.fromJson(
+          Map<String, dynamic> json) =>
+      SecurityAndAnalysisDependabotSecurityUpdates(
+        status: json['status'] != null
+            ? SdkPresent((json['status'] != null
+                ? SecurityAndAnalysisDependabotSecurityUpdatesStatus.fromJson(
+                    json['status'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (status) {
-      SdkPresent<SecurityAndAnalysisDependabotSecurityUpdatesStatus>(value: final value) => {'status': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (status) {
+          SdkPresent<SecurityAndAnalysisDependabotSecurityUpdatesStatus>(
+            value: final value
+          ) =>
+            {
+              'status': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Optional object value serialized in the `secret_scanning` wire field.
 class SecurityAndAnalysisSecretScanning {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional enumerated value serialized in the `status` wire field.
   final SdkOptional<SecurityAndAnalysisSecretScanningStatus> status;
 
   const SecurityAndAnalysisSecretScanning({this.status = const SdkOmitted()});
 
-  SecurityAndAnalysisSecretScanning Function({SdkOptional<SecurityAndAnalysisSecretScanningStatus> status}) get copyWith => _copyWith;
+  SecurityAndAnalysisSecretScanning Function(
+          {SdkOptional<SecurityAndAnalysisSecretScanningStatus> status})
+      get copyWith => _copyWith;
 
-  SecurityAndAnalysisSecretScanning _copyWith({Object? status = sdkOmittedValue}) => SecurityAndAnalysisSecretScanning(
-    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<SecurityAndAnalysisSecretScanningStatus>,
-  );
+  SecurityAndAnalysisSecretScanning _copyWith(
+          {Object? status = sdkOmittedValue}) =>
+      SecurityAndAnalysisSecretScanning(
+        status: identical(status, sdkOmittedValue)
+            ? this.status
+            : status as SdkOptional<SecurityAndAnalysisSecretScanningStatus>,
+      );
 
-  factory SecurityAndAnalysisSecretScanning.fromJson(Map<String, dynamic> json) => SecurityAndAnalysisSecretScanning(
-    status: json['status'] != null ? SdkPresent((json['status'] != null ? SecurityAndAnalysisSecretScanningStatus.fromJson(json['status'] as String) : null)!) : const SdkOmitted(),
-  );
+  factory SecurityAndAnalysisSecretScanning.fromJson(
+          Map<String, dynamic> json) =>
+      SecurityAndAnalysisSecretScanning(
+        status: json['status'] != null
+            ? SdkPresent((json['status'] != null
+                ? SecurityAndAnalysisSecretScanningStatus.fromJson(
+                    json['status'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (status) {
-      SdkPresent<SecurityAndAnalysisSecretScanningStatus>(value: final value) => {'status': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (status) {
+          SdkPresent<SecurityAndAnalysisSecretScanningStatus>(
+            value: final value
+          ) =>
+            {
+              'status': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Optional object value serialized in the `secret_scanning_push_protection` wire field.
 class SecurityAndAnalysisSecretScanningPushProtection {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional enumerated value serialized in the `status` wire field.
-  final SdkOptional<SecurityAndAnalysisSecretScanningPushProtectionStatus> status;
+  final SdkOptional<SecurityAndAnalysisSecretScanningPushProtectionStatus>
+      status;
 
-  const SecurityAndAnalysisSecretScanningPushProtection({this.status = const SdkOmitted()});
+  const SecurityAndAnalysisSecretScanningPushProtection(
+      {this.status = const SdkOmitted()});
 
-  SecurityAndAnalysisSecretScanningPushProtection Function({SdkOptional<SecurityAndAnalysisSecretScanningPushProtectionStatus> status}) get copyWith => _copyWith;
+  SecurityAndAnalysisSecretScanningPushProtection Function(
+      {SdkOptional<SecurityAndAnalysisSecretScanningPushProtectionStatus>
+          status}) get copyWith => _copyWith;
 
-  SecurityAndAnalysisSecretScanningPushProtection _copyWith({Object? status = sdkOmittedValue}) => SecurityAndAnalysisSecretScanningPushProtection(
-    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<SecurityAndAnalysisSecretScanningPushProtectionStatus>,
-  );
+  SecurityAndAnalysisSecretScanningPushProtection _copyWith(
+          {Object? status = sdkOmittedValue}) =>
+      SecurityAndAnalysisSecretScanningPushProtection(
+        status: identical(status, sdkOmittedValue)
+            ? this.status
+            : status as SdkOptional<
+                SecurityAndAnalysisSecretScanningPushProtectionStatus>,
+      );
 
-  factory SecurityAndAnalysisSecretScanningPushProtection.fromJson(Map<String, dynamic> json) => SecurityAndAnalysisSecretScanningPushProtection(
-    status: json['status'] != null ? SdkPresent((json['status'] != null ? SecurityAndAnalysisSecretScanningPushProtectionStatus.fromJson(json['status'] as String) : null)!) : const SdkOmitted(),
-  );
+  factory SecurityAndAnalysisSecretScanningPushProtection.fromJson(
+          Map<String, dynamic> json) =>
+      SecurityAndAnalysisSecretScanningPushProtection(
+        status: json['status'] != null
+            ? SdkPresent((json['status'] != null
+                ? SecurityAndAnalysisSecretScanningPushProtectionStatus
+                    .fromJson(json['status'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (status) {
-      SdkPresent<SecurityAndAnalysisSecretScanningPushProtectionStatus>(value: final value) => {'status': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (status) {
+          SdkPresent<SecurityAndAnalysisSecretScanningPushProtectionStatus>(
+            value: final value
+          ) =>
+            {
+              'status': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Optional object value serialized in the `secret_scanning_non_provider_patterns` wire field.
 class SecurityAndAnalysisSecretScanningNonProviderPatterns {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional enumerated value serialized in the `status` wire field.
-  final SdkOptional<SecurityAndAnalysisSecretScanningNonProviderPatternsStatus> status;
+  final SdkOptional<SecurityAndAnalysisSecretScanningNonProviderPatternsStatus>
+      status;
 
-  const SecurityAndAnalysisSecretScanningNonProviderPatterns({this.status = const SdkOmitted()});
+  const SecurityAndAnalysisSecretScanningNonProviderPatterns(
+      {this.status = const SdkOmitted()});
 
-  SecurityAndAnalysisSecretScanningNonProviderPatterns Function({SdkOptional<SecurityAndAnalysisSecretScanningNonProviderPatternsStatus> status}) get copyWith => _copyWith;
+  SecurityAndAnalysisSecretScanningNonProviderPatterns Function(
+      {SdkOptional<SecurityAndAnalysisSecretScanningNonProviderPatternsStatus>
+          status}) get copyWith => _copyWith;
 
-  SecurityAndAnalysisSecretScanningNonProviderPatterns _copyWith({Object? status = sdkOmittedValue}) => SecurityAndAnalysisSecretScanningNonProviderPatterns(
-    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<SecurityAndAnalysisSecretScanningNonProviderPatternsStatus>,
-  );
+  SecurityAndAnalysisSecretScanningNonProviderPatterns _copyWith(
+          {Object? status = sdkOmittedValue}) =>
+      SecurityAndAnalysisSecretScanningNonProviderPatterns(
+        status: identical(status, sdkOmittedValue)
+            ? this.status
+            : status as SdkOptional<
+                SecurityAndAnalysisSecretScanningNonProviderPatternsStatus>,
+      );
 
-  factory SecurityAndAnalysisSecretScanningNonProviderPatterns.fromJson(Map<String, dynamic> json) => SecurityAndAnalysisSecretScanningNonProviderPatterns(
-    status: json['status'] != null ? SdkPresent((json['status'] != null ? SecurityAndAnalysisSecretScanningNonProviderPatternsStatus.fromJson(json['status'] as String) : null)!) : const SdkOmitted(),
-  );
+  factory SecurityAndAnalysisSecretScanningNonProviderPatterns.fromJson(
+          Map<String, dynamic> json) =>
+      SecurityAndAnalysisSecretScanningNonProviderPatterns(
+        status: json['status'] != null
+            ? SdkPresent((json['status'] != null
+                ? SecurityAndAnalysisSecretScanningNonProviderPatternsStatus
+                    .fromJson(json['status'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (status) {
-      SdkPresent<SecurityAndAnalysisSecretScanningNonProviderPatternsStatus>(value: final value) => {'status': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (status) {
+          SdkPresent<
+                SecurityAndAnalysisSecretScanningNonProviderPatternsStatus>(
+            value: final value
+          ) =>
+            {
+              'status': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Optional object value serialized in the `secret_scanning_ai_detection` wire field.
 class SecurityAndAnalysisSecretScanningAiDetection {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional enumerated value serialized in the `status` wire field.
   final SdkOptional<SecurityAndAnalysisSecretScanningAiDetectionStatus> status;
 
-  const SecurityAndAnalysisSecretScanningAiDetection({this.status = const SdkOmitted()});
+  const SecurityAndAnalysisSecretScanningAiDetection(
+      {this.status = const SdkOmitted()});
 
-  SecurityAndAnalysisSecretScanningAiDetection Function({SdkOptional<SecurityAndAnalysisSecretScanningAiDetectionStatus> status}) get copyWith => _copyWith;
+  SecurityAndAnalysisSecretScanningAiDetection Function(
+      {SdkOptional<SecurityAndAnalysisSecretScanningAiDetectionStatus>
+          status}) get copyWith => _copyWith;
 
-  SecurityAndAnalysisSecretScanningAiDetection _copyWith({Object? status = sdkOmittedValue}) => SecurityAndAnalysisSecretScanningAiDetection(
-    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<SecurityAndAnalysisSecretScanningAiDetectionStatus>,
-  );
+  SecurityAndAnalysisSecretScanningAiDetection _copyWith(
+          {Object? status = sdkOmittedValue}) =>
+      SecurityAndAnalysisSecretScanningAiDetection(
+        status: identical(status, sdkOmittedValue)
+            ? this.status
+            : status as SdkOptional<
+                SecurityAndAnalysisSecretScanningAiDetectionStatus>,
+      );
 
-  factory SecurityAndAnalysisSecretScanningAiDetection.fromJson(Map<String, dynamic> json) => SecurityAndAnalysisSecretScanningAiDetection(
-    status: json['status'] != null ? SdkPresent((json['status'] != null ? SecurityAndAnalysisSecretScanningAiDetectionStatus.fromJson(json['status'] as String) : null)!) : const SdkOmitted(),
-  );
+  factory SecurityAndAnalysisSecretScanningAiDetection.fromJson(
+          Map<String, dynamic> json) =>
+      SecurityAndAnalysisSecretScanningAiDetection(
+        status: json['status'] != null
+            ? SdkPresent((json['status'] != null
+                ? SecurityAndAnalysisSecretScanningAiDetectionStatus.fromJson(
+                    json['status'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (status) {
-      SdkPresent<SecurityAndAnalysisSecretScanningAiDetectionStatus>(value: final value) => {'status': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (status) {
+          SdkPresent<SecurityAndAnalysisSecretScanningAiDetectionStatus>(
+            value: final value
+          ) =>
+            {
+              'status': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Optional object value serialized in the `secret_scanning_delegated_alert_dismissal` wire field.
 class SecurityAndAnalysisSecretScanningDelegatedAlertDismissal {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional enumerated value serialized in the `status` wire field.
-  final SdkOptional<SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus> status;
+  final SdkOptional<
+      SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus> status;
 
-  const SecurityAndAnalysisSecretScanningDelegatedAlertDismissal({this.status = const SdkOmitted()});
+  const SecurityAndAnalysisSecretScanningDelegatedAlertDismissal(
+      {this.status = const SdkOmitted()});
 
-  SecurityAndAnalysisSecretScanningDelegatedAlertDismissal Function({SdkOptional<SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus> status}) get copyWith => _copyWith;
+  SecurityAndAnalysisSecretScanningDelegatedAlertDismissal Function(
+      {SdkOptional<
+              SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus>
+          status}) get copyWith => _copyWith;
 
-  SecurityAndAnalysisSecretScanningDelegatedAlertDismissal _copyWith({Object? status = sdkOmittedValue}) => SecurityAndAnalysisSecretScanningDelegatedAlertDismissal(
-    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus>,
-  );
+  SecurityAndAnalysisSecretScanningDelegatedAlertDismissal _copyWith(
+          {Object? status = sdkOmittedValue}) =>
+      SecurityAndAnalysisSecretScanningDelegatedAlertDismissal(
+        status: identical(status, sdkOmittedValue)
+            ? this.status
+            : status as SdkOptional<
+                SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus>,
+      );
 
-  factory SecurityAndAnalysisSecretScanningDelegatedAlertDismissal.fromJson(Map<String, dynamic> json) => SecurityAndAnalysisSecretScanningDelegatedAlertDismissal(
-    status: json['status'] != null ? SdkPresent((json['status'] != null ? SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus.fromJson(json['status'] as String) : null)!) : const SdkOmitted(),
-  );
+  factory SecurityAndAnalysisSecretScanningDelegatedAlertDismissal.fromJson(
+          Map<String, dynamic> json) =>
+      SecurityAndAnalysisSecretScanningDelegatedAlertDismissal(
+        status: json['status'] != null
+            ? SdkPresent((json['status'] != null
+                ? SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus
+                    .fromJson(json['status'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (status) {
-      SdkPresent<SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus>(value: final value) => {'status': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (status) {
+          SdkPresent<
+                SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus>(
+            value: final value
+          ) =>
+            {
+              'status': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Optional object value serialized in the `secret_scanning_delegated_bypass` wire field.
 class SecurityAndAnalysisSecretScanningDelegatedBypass {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional enumerated value serialized in the `status` wire field.
-  final SdkOptional<SecurityAndAnalysisSecretScanningDelegatedBypassStatus> status;
+  final SdkOptional<SecurityAndAnalysisSecretScanningDelegatedBypassStatus>
+      status;
 
-  const SecurityAndAnalysisSecretScanningDelegatedBypass({this.status = const SdkOmitted()});
+  const SecurityAndAnalysisSecretScanningDelegatedBypass(
+      {this.status = const SdkOmitted()});
 
-  SecurityAndAnalysisSecretScanningDelegatedBypass Function({SdkOptional<SecurityAndAnalysisSecretScanningDelegatedBypassStatus> status}) get copyWith => _copyWith;
+  SecurityAndAnalysisSecretScanningDelegatedBypass Function(
+      {SdkOptional<SecurityAndAnalysisSecretScanningDelegatedBypassStatus>
+          status}) get copyWith => _copyWith;
 
-  SecurityAndAnalysisSecretScanningDelegatedBypass _copyWith({Object? status = sdkOmittedValue}) => SecurityAndAnalysisSecretScanningDelegatedBypass(
-    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<SecurityAndAnalysisSecretScanningDelegatedBypassStatus>,
-  );
+  SecurityAndAnalysisSecretScanningDelegatedBypass _copyWith(
+          {Object? status = sdkOmittedValue}) =>
+      SecurityAndAnalysisSecretScanningDelegatedBypass(
+        status: identical(status, sdkOmittedValue)
+            ? this.status
+            : status as SdkOptional<
+                SecurityAndAnalysisSecretScanningDelegatedBypassStatus>,
+      );
 
-  factory SecurityAndAnalysisSecretScanningDelegatedBypass.fromJson(Map<String, dynamic> json) => SecurityAndAnalysisSecretScanningDelegatedBypass(
-    status: json['status'] != null ? SdkPresent((json['status'] != null ? SecurityAndAnalysisSecretScanningDelegatedBypassStatus.fromJson(json['status'] as String) : null)!) : const SdkOmitted(),
-  );
+  factory SecurityAndAnalysisSecretScanningDelegatedBypass.fromJson(
+          Map<String, dynamic> json) =>
+      SecurityAndAnalysisSecretScanningDelegatedBypass(
+        status: json['status'] != null
+            ? SdkPresent((json['status'] != null
+                ? SecurityAndAnalysisSecretScanningDelegatedBypassStatus
+                    .fromJson(json['status'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (status) {
-      SdkPresent<SecurityAndAnalysisSecretScanningDelegatedBypassStatus>(value: final value) => {'status': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (status) {
+          SdkPresent<SecurityAndAnalysisSecretScanningDelegatedBypassStatus>(
+            value: final value
+          ) =>
+            {
+              'status': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

@@ -8,276 +8,526 @@ part of 'actions_runner.dart';
 class Runner {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The ID of the runner.
   final int id;
+
   /// The ID of the runner group.
   final SdkOptional<int> runnerGroupId;
+
   /// The name of the runner.
   final String name;
+
   /// The Operating System of the runner.
   final String os;
+
   /// The status of the runner.
   final String status;
+
   /// Required `boolean` value serialized in the `busy` wire field.
   final bool busy;
+
   /// Required array value serialized in the `labels` wire field.
   final List<RunnerLabel> labels;
+
   /// Optional `boolean` value serialized in the `ephemeral` wire field.
   final SdkOptional<bool> ephemeral;
+
   /// The version of the GitHub Actions Runner software. This is only set if the runner has connected to the service at least once.
   final SdkOptional<String?> version;
 
-  const Runner({required this.id, this.runnerGroupId = const SdkOmitted(), required this.name, required this.os, required this.status, required this.busy, required this.labels, this.ephemeral = const SdkOmitted(), this.version = const SdkOmitted()});
+  const Runner(
+      {required this.id,
+      this.runnerGroupId = const SdkOmitted(),
+      required this.name,
+      required this.os,
+      required this.status,
+      required this.busy,
+      required this.labels,
+      this.ephemeral = const SdkOmitted(),
+      this.version = const SdkOmitted()});
 
-  Runner Function({int id, SdkOptional<int> runnerGroupId, String name, String os, String status, bool busy, List<RunnerLabel> labels, SdkOptional<bool> ephemeral, SdkOptional<String?> version}) get copyWith => _copyWith;
+  Runner Function(
+      {int id,
+      SdkOptional<int> runnerGroupId,
+      String name,
+      String os,
+      String status,
+      bool busy,
+      List<RunnerLabel> labels,
+      SdkOptional<bool> ephemeral,
+      SdkOptional<String?> version}) get copyWith => _copyWith;
 
-  Runner _copyWith({Object? id = sdkOmittedValue, Object? runnerGroupId = sdkOmittedValue, Object? name = sdkOmittedValue, Object? os = sdkOmittedValue, Object? status = sdkOmittedValue, Object? busy = sdkOmittedValue, Object? labels = sdkOmittedValue, Object? ephemeral = sdkOmittedValue, Object? version = sdkOmittedValue}) => Runner(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    runnerGroupId: identical(runnerGroupId, sdkOmittedValue) ? this.runnerGroupId : runnerGroupId as SdkOptional<int>,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    os: identical(os, sdkOmittedValue) ? this.os : os as String,
-    status: identical(status, sdkOmittedValue) ? this.status : status as String,
-    busy: identical(busy, sdkOmittedValue) ? this.busy : busy as bool,
-    labels: identical(labels, sdkOmittedValue) ? this.labels : labels as List<RunnerLabel>,
-    ephemeral: identical(ephemeral, sdkOmittedValue) ? this.ephemeral : ephemeral as SdkOptional<bool>,
-    version: identical(version, sdkOmittedValue) ? this.version : version as SdkOptional<String?>,
-  );
+  Runner _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? runnerGroupId = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? os = sdkOmittedValue,
+          Object? status = sdkOmittedValue,
+          Object? busy = sdkOmittedValue,
+          Object? labels = sdkOmittedValue,
+          Object? ephemeral = sdkOmittedValue,
+          Object? version = sdkOmittedValue}) =>
+      Runner(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        runnerGroupId: identical(runnerGroupId, sdkOmittedValue)
+            ? this.runnerGroupId
+            : runnerGroupId as SdkOptional<int>,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        os: identical(os, sdkOmittedValue) ? this.os : os as String,
+        status:
+            identical(status, sdkOmittedValue) ? this.status : status as String,
+        busy: identical(busy, sdkOmittedValue) ? this.busy : busy as bool,
+        labels: identical(labels, sdkOmittedValue)
+            ? this.labels
+            : labels as List<RunnerLabel>,
+        ephemeral: identical(ephemeral, sdkOmittedValue)
+            ? this.ephemeral
+            : ephemeral as SdkOptional<bool>,
+        version: identical(version, sdkOmittedValue)
+            ? this.version
+            : version as SdkOptional<String?>,
+      );
 
   factory Runner.fromJson(Map<String, dynamic> json) => Runner(
-    id: ((json['id'] as num?)?.toInt())!,
-    runnerGroupId: json['runner_group_id'] != null ? SdkPresent(((json['runner_group_id'] as num?)?.toInt())!) : const SdkOmitted(),
-    name: (json['name'] as String?)!,
-    os: (json['os'] as String?)!,
-    status: (json['status'] as String?)!,
-    busy: (json['busy'] as bool?)!,
-    labels: ((json['labels'] as List?)?.map((e) => RunnerLabel.fromJson(e as Map<String, dynamic>)).toList())!,
-    ephemeral: json['ephemeral'] != null ? SdkPresent((json['ephemeral'] as bool?)!) : const SdkOmitted(),
-    version: json.containsKey('version') ? SdkPresent(json['version'] as String?) : const SdkOmitted(),
-  );
+        id: ((json['id'] as num?)?.toInt())!,
+        runnerGroupId: json['runner_group_id'] != null
+            ? SdkPresent(((json['runner_group_id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        name: (json['name'] as String?)!,
+        os: (json['os'] as String?)!,
+        status: (json['status'] as String?)!,
+        busy: (json['busy'] as bool?)!,
+        labels: ((json['labels'] as List?)
+            ?.map((e) => RunnerLabel.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        ephemeral: json['ephemeral'] != null
+            ? SdkPresent((json['ephemeral'] as bool?)!)
+            : const SdkOmitted(),
+        version: json.containsKey('version')
+            ? SdkPresent(json['version'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    ...switch (runnerGroupId) {
-      SdkPresent<int>(value: final value) => {'runner_group_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    'name': name,
-    'os': os,
-    'status': status,
-    'busy': busy,
-    'labels': labels.map((item) => item.toJson()).toList(),
-    ...switch (ephemeral) {
-      SdkPresent<bool>(value: final value) => {'ephemeral': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (version) {
-      SdkPresent<String?>(value: final value) => {'version': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'id': id,
+        ...switch (runnerGroupId) {
+          SdkPresent<int>(value: final value) => {
+              'runner_group_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'name': name,
+        'os': os,
+        'status': status,
+        'busy': busy,
+        'labels': labels.map((item) => item.toJson()).toList(),
+        ...switch (ephemeral) {
+          SdkPresent<bool>(value: final value) => {
+              'ephemeral': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (version) {
+          SdkPresent<String?>(value: final value) => {
+              'version': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Runner Application
 class RunnerApplication {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `os` wire field.
   final String os;
+
   /// Required `string` value serialized in the `architecture` wire field.
   final String architecture;
+
   /// Required `string` value serialized in the `download_url` wire field.
   final String downloadUrl;
+
   /// Required `string` value serialized in the `filename` wire field.
   final String filename;
+
   /// A short lived bearer token used to download the runner, if needed.
   final SdkOptional<String> tempDownloadToken;
+
   /// Optional `string` value serialized in the `sha256_checksum` wire field.
   final SdkOptional<String> sha256Checksum;
 
-  const RunnerApplication({required this.os, required this.architecture, required this.downloadUrl, required this.filename, this.tempDownloadToken = const SdkOmitted(), this.sha256Checksum = const SdkOmitted()});
+  const RunnerApplication(
+      {required this.os,
+      required this.architecture,
+      required this.downloadUrl,
+      required this.filename,
+      this.tempDownloadToken = const SdkOmitted(),
+      this.sha256Checksum = const SdkOmitted()});
 
-  RunnerApplication Function({String os, String architecture, String downloadUrl, String filename, SdkOptional<String> tempDownloadToken, SdkOptional<String> sha256Checksum}) get copyWith => _copyWith;
+  RunnerApplication Function(
+      {String os,
+      String architecture,
+      String downloadUrl,
+      String filename,
+      SdkOptional<String> tempDownloadToken,
+      SdkOptional<String> sha256Checksum}) get copyWith => _copyWith;
 
-  RunnerApplication _copyWith({Object? os = sdkOmittedValue, Object? architecture = sdkOmittedValue, Object? downloadUrl = sdkOmittedValue, Object? filename = sdkOmittedValue, Object? tempDownloadToken = sdkOmittedValue, Object? sha256Checksum = sdkOmittedValue}) => RunnerApplication(
-    os: identical(os, sdkOmittedValue) ? this.os : os as String,
-    architecture: identical(architecture, sdkOmittedValue) ? this.architecture : architecture as String,
-    downloadUrl: identical(downloadUrl, sdkOmittedValue) ? this.downloadUrl : downloadUrl as String,
-    filename: identical(filename, sdkOmittedValue) ? this.filename : filename as String,
-    tempDownloadToken: identical(tempDownloadToken, sdkOmittedValue) ? this.tempDownloadToken : tempDownloadToken as SdkOptional<String>,
-    sha256Checksum: identical(sha256Checksum, sdkOmittedValue) ? this.sha256Checksum : sha256Checksum as SdkOptional<String>,
-  );
+  RunnerApplication _copyWith(
+          {Object? os = sdkOmittedValue,
+          Object? architecture = sdkOmittedValue,
+          Object? downloadUrl = sdkOmittedValue,
+          Object? filename = sdkOmittedValue,
+          Object? tempDownloadToken = sdkOmittedValue,
+          Object? sha256Checksum = sdkOmittedValue}) =>
+      RunnerApplication(
+        os: identical(os, sdkOmittedValue) ? this.os : os as String,
+        architecture: identical(architecture, sdkOmittedValue)
+            ? this.architecture
+            : architecture as String,
+        downloadUrl: identical(downloadUrl, sdkOmittedValue)
+            ? this.downloadUrl
+            : downloadUrl as String,
+        filename: identical(filename, sdkOmittedValue)
+            ? this.filename
+            : filename as String,
+        tempDownloadToken: identical(tempDownloadToken, sdkOmittedValue)
+            ? this.tempDownloadToken
+            : tempDownloadToken as SdkOptional<String>,
+        sha256Checksum: identical(sha256Checksum, sdkOmittedValue)
+            ? this.sha256Checksum
+            : sha256Checksum as SdkOptional<String>,
+      );
 
-  factory RunnerApplication.fromJson(Map<String, dynamic> json) => RunnerApplication(
-    os: (json['os'] as String?)!,
-    architecture: (json['architecture'] as String?)!,
-    downloadUrl: (json['download_url'] as String?)!,
-    filename: (json['filename'] as String?)!,
-    tempDownloadToken: json['temp_download_token'] != null ? SdkPresent((json['temp_download_token'] as String?)!) : const SdkOmitted(),
-    sha256Checksum: json['sha256_checksum'] != null ? SdkPresent((json['sha256_checksum'] as String?)!) : const SdkOmitted(),
-  );
+  factory RunnerApplication.fromJson(Map<String, dynamic> json) =>
+      RunnerApplication(
+        os: (json['os'] as String?)!,
+        architecture: (json['architecture'] as String?)!,
+        downloadUrl: (json['download_url'] as String?)!,
+        filename: (json['filename'] as String?)!,
+        tempDownloadToken: json['temp_download_token'] != null
+            ? SdkPresent((json['temp_download_token'] as String?)!)
+            : const SdkOmitted(),
+        sha256Checksum: json['sha256_checksum'] != null
+            ? SdkPresent((json['sha256_checksum'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'os': os,
-    'architecture': architecture,
-    'download_url': downloadUrl,
-    'filename': filename,
-    ...switch (tempDownloadToken) {
-      SdkPresent<String>(value: final value) => {'temp_download_token': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (sha256Checksum) {
-      SdkPresent<String>(value: final value) => {'sha256_checksum': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'os': os,
+        'architecture': architecture,
+        'download_url': downloadUrl,
+        'filename': filename,
+        ...switch (tempDownloadToken) {
+          SdkPresent<String>(value: final value) => {
+              'temp_download_token': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (sha256Checksum) {
+          SdkPresent<String>(value: final value) => {
+              'sha256_checksum': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Typed representation of the `RunnerGroupsOrg` API schema.
 class RunnerGroupsOrg {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `number` value serialized in the `id` wire field.
   final double id;
+
   /// Required `string` value serialized in the `name` wire field.
   final String name;
+
   /// Required `string` value serialized in the `visibility` wire field.
   final String visibility;
+
   /// Required `boolean` value serialized in the `default` wire field.
   final bool default_;
+
   /// Link to the selected repositories resource for this runner group. Not present unless visibility was set to `selected`
   final SdkOptional<String> selectedRepositoriesUrl;
+
   /// Required `string` value serialized in the `runners_url` wire field.
   final String runnersUrl;
+
   /// Optional `string` value serialized in the `hosted_runners_url` wire field.
   final SdkOptional<String> hostedRunnersUrl;
+
   /// The identifier of a hosted compute network configuration.
   final SdkOptional<String> networkConfigurationId;
+
   /// Required `boolean` value serialized in the `inherited` wire field.
   final bool inherited;
+
   /// Optional `boolean` value serialized in the `inherited_allows_public_repositories` wire field.
   final SdkOptional<bool> inheritedAllowsPublicRepositories;
+
   /// Required `boolean` value serialized in the `allows_public_repositories` wire field.
   final bool allowsPublicRepositories;
+
   /// If `true`, the `restricted_to_workflows` and `selected_workflows` fields cannot be modified.
   final SdkOptional<bool> workflowRestrictionsReadOnly;
+
   /// If `true`, the runner group will be restricted to running only the workflows specified in the `selected_workflows` array.
   final SdkOptional<bool> restrictedToWorkflows;
+
   /// List of workflows the runner group should be allowed to run. This setting will be ignored unless `restricted_to_workflows` is set to `true`.
   final SdkOptional<List<String>> selectedWorkflows;
 
-  const RunnerGroupsOrg({required this.id, required this.name, required this.visibility, required this.default_, this.selectedRepositoriesUrl = const SdkOmitted(), required this.runnersUrl, this.hostedRunnersUrl = const SdkOmitted(), this.networkConfigurationId = const SdkOmitted(), required this.inherited, this.inheritedAllowsPublicRepositories = const SdkOmitted(), required this.allowsPublicRepositories, this.workflowRestrictionsReadOnly = const SdkOmitted(), this.restrictedToWorkflows = const SdkOmitted(), this.selectedWorkflows = const SdkOmitted()});
+  const RunnerGroupsOrg(
+      {required this.id,
+      required this.name,
+      required this.visibility,
+      required this.default_,
+      this.selectedRepositoriesUrl = const SdkOmitted(),
+      required this.runnersUrl,
+      this.hostedRunnersUrl = const SdkOmitted(),
+      this.networkConfigurationId = const SdkOmitted(),
+      required this.inherited,
+      this.inheritedAllowsPublicRepositories = const SdkOmitted(),
+      required this.allowsPublicRepositories,
+      this.workflowRestrictionsReadOnly = const SdkOmitted(),
+      this.restrictedToWorkflows = const SdkOmitted(),
+      this.selectedWorkflows = const SdkOmitted()});
 
-  RunnerGroupsOrg Function({double id, String name, String visibility, bool default_, SdkOptional<String> selectedRepositoriesUrl, String runnersUrl, SdkOptional<String> hostedRunnersUrl, SdkOptional<String> networkConfigurationId, bool inherited, SdkOptional<bool> inheritedAllowsPublicRepositories, bool allowsPublicRepositories, SdkOptional<bool> workflowRestrictionsReadOnly, SdkOptional<bool> restrictedToWorkflows, SdkOptional<List<String>> selectedWorkflows}) get copyWith => _copyWith;
+  RunnerGroupsOrg Function(
+      {double id,
+      String name,
+      String visibility,
+      bool default_,
+      SdkOptional<String> selectedRepositoriesUrl,
+      String runnersUrl,
+      SdkOptional<String> hostedRunnersUrl,
+      SdkOptional<String> networkConfigurationId,
+      bool inherited,
+      SdkOptional<bool> inheritedAllowsPublicRepositories,
+      bool allowsPublicRepositories,
+      SdkOptional<bool> workflowRestrictionsReadOnly,
+      SdkOptional<bool> restrictedToWorkflows,
+      SdkOptional<List<String>> selectedWorkflows}) get copyWith => _copyWith;
 
-  RunnerGroupsOrg _copyWith({Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? visibility = sdkOmittedValue, Object? default_ = sdkOmittedValue, Object? selectedRepositoriesUrl = sdkOmittedValue, Object? runnersUrl = sdkOmittedValue, Object? hostedRunnersUrl = sdkOmittedValue, Object? networkConfigurationId = sdkOmittedValue, Object? inherited = sdkOmittedValue, Object? inheritedAllowsPublicRepositories = sdkOmittedValue, Object? allowsPublicRepositories = sdkOmittedValue, Object? workflowRestrictionsReadOnly = sdkOmittedValue, Object? restrictedToWorkflows = sdkOmittedValue, Object? selectedWorkflows = sdkOmittedValue}) => RunnerGroupsOrg(
-    id: identical(id, sdkOmittedValue) ? this.id : id as double,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    visibility: identical(visibility, sdkOmittedValue) ? this.visibility : visibility as String,
-    default_: identical(default_, sdkOmittedValue) ? this.default_ : default_ as bool,
-    selectedRepositoriesUrl: identical(selectedRepositoriesUrl, sdkOmittedValue) ? this.selectedRepositoriesUrl : selectedRepositoriesUrl as SdkOptional<String>,
-    runnersUrl: identical(runnersUrl, sdkOmittedValue) ? this.runnersUrl : runnersUrl as String,
-    hostedRunnersUrl: identical(hostedRunnersUrl, sdkOmittedValue) ? this.hostedRunnersUrl : hostedRunnersUrl as SdkOptional<String>,
-    networkConfigurationId: identical(networkConfigurationId, sdkOmittedValue) ? this.networkConfigurationId : networkConfigurationId as SdkOptional<String>,
-    inherited: identical(inherited, sdkOmittedValue) ? this.inherited : inherited as bool,
-    inheritedAllowsPublicRepositories: identical(inheritedAllowsPublicRepositories, sdkOmittedValue) ? this.inheritedAllowsPublicRepositories : inheritedAllowsPublicRepositories as SdkOptional<bool>,
-    allowsPublicRepositories: identical(allowsPublicRepositories, sdkOmittedValue) ? this.allowsPublicRepositories : allowsPublicRepositories as bool,
-    workflowRestrictionsReadOnly: identical(workflowRestrictionsReadOnly, sdkOmittedValue) ? this.workflowRestrictionsReadOnly : workflowRestrictionsReadOnly as SdkOptional<bool>,
-    restrictedToWorkflows: identical(restrictedToWorkflows, sdkOmittedValue) ? this.restrictedToWorkflows : restrictedToWorkflows as SdkOptional<bool>,
-    selectedWorkflows: identical(selectedWorkflows, sdkOmittedValue) ? this.selectedWorkflows : selectedWorkflows as SdkOptional<List<String>>,
-  );
+  RunnerGroupsOrg _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? visibility = sdkOmittedValue,
+          Object? default_ = sdkOmittedValue,
+          Object? selectedRepositoriesUrl = sdkOmittedValue,
+          Object? runnersUrl = sdkOmittedValue,
+          Object? hostedRunnersUrl = sdkOmittedValue,
+          Object? networkConfigurationId = sdkOmittedValue,
+          Object? inherited = sdkOmittedValue,
+          Object? inheritedAllowsPublicRepositories = sdkOmittedValue,
+          Object? allowsPublicRepositories = sdkOmittedValue,
+          Object? workflowRestrictionsReadOnly = sdkOmittedValue,
+          Object? restrictedToWorkflows = sdkOmittedValue,
+          Object? selectedWorkflows = sdkOmittedValue}) =>
+      RunnerGroupsOrg(
+        id: identical(id, sdkOmittedValue) ? this.id : id as double,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        visibility: identical(visibility, sdkOmittedValue)
+            ? this.visibility
+            : visibility as String,
+        default_: identical(default_, sdkOmittedValue)
+            ? this.default_
+            : default_ as bool,
+        selectedRepositoriesUrl:
+            identical(selectedRepositoriesUrl, sdkOmittedValue)
+                ? this.selectedRepositoriesUrl
+                : selectedRepositoriesUrl as SdkOptional<String>,
+        runnersUrl: identical(runnersUrl, sdkOmittedValue)
+            ? this.runnersUrl
+            : runnersUrl as String,
+        hostedRunnersUrl: identical(hostedRunnersUrl, sdkOmittedValue)
+            ? this.hostedRunnersUrl
+            : hostedRunnersUrl as SdkOptional<String>,
+        networkConfigurationId:
+            identical(networkConfigurationId, sdkOmittedValue)
+                ? this.networkConfigurationId
+                : networkConfigurationId as SdkOptional<String>,
+        inherited: identical(inherited, sdkOmittedValue)
+            ? this.inherited
+            : inherited as bool,
+        inheritedAllowsPublicRepositories:
+            identical(inheritedAllowsPublicRepositories, sdkOmittedValue)
+                ? this.inheritedAllowsPublicRepositories
+                : inheritedAllowsPublicRepositories as SdkOptional<bool>,
+        allowsPublicRepositories:
+            identical(allowsPublicRepositories, sdkOmittedValue)
+                ? this.allowsPublicRepositories
+                : allowsPublicRepositories as bool,
+        workflowRestrictionsReadOnly:
+            identical(workflowRestrictionsReadOnly, sdkOmittedValue)
+                ? this.workflowRestrictionsReadOnly
+                : workflowRestrictionsReadOnly as SdkOptional<bool>,
+        restrictedToWorkflows: identical(restrictedToWorkflows, sdkOmittedValue)
+            ? this.restrictedToWorkflows
+            : restrictedToWorkflows as SdkOptional<bool>,
+        selectedWorkflows: identical(selectedWorkflows, sdkOmittedValue)
+            ? this.selectedWorkflows
+            : selectedWorkflows as SdkOptional<List<String>>,
+      );
 
-  factory RunnerGroupsOrg.fromJson(Map<String, dynamic> json) => RunnerGroupsOrg(
-    id: ((json['id'] as num?)?.toDouble())!,
-    name: (json['name'] as String?)!,
-    visibility: (json['visibility'] as String?)!,
-    default_: (json['default'] as bool?)!,
-    selectedRepositoriesUrl: json['selected_repositories_url'] != null ? SdkPresent((json['selected_repositories_url'] as String?)!) : const SdkOmitted(),
-    runnersUrl: (json['runners_url'] as String?)!,
-    hostedRunnersUrl: json['hosted_runners_url'] != null ? SdkPresent((json['hosted_runners_url'] as String?)!) : const SdkOmitted(),
-    networkConfigurationId: json['network_configuration_id'] != null ? SdkPresent((json['network_configuration_id'] as String?)!) : const SdkOmitted(),
-    inherited: (json['inherited'] as bool?)!,
-    inheritedAllowsPublicRepositories: json['inherited_allows_public_repositories'] != null ? SdkPresent((json['inherited_allows_public_repositories'] as bool?)!) : const SdkOmitted(),
-    allowsPublicRepositories: (json['allows_public_repositories'] as bool?)!,
-    workflowRestrictionsReadOnly: json['workflow_restrictions_read_only'] != null ? SdkPresent((json['workflow_restrictions_read_only'] as bool?)!) : const SdkOmitted(),
-    restrictedToWorkflows: json['restricted_to_workflows'] != null ? SdkPresent((json['restricted_to_workflows'] as bool?)!) : const SdkOmitted(),
-    selectedWorkflows: json['selected_workflows'] != null ? SdkPresent(((json['selected_workflows'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-  );
+  factory RunnerGroupsOrg.fromJson(Map<String, dynamic> json) =>
+      RunnerGroupsOrg(
+        id: ((json['id'] as num?)?.toDouble())!,
+        name: (json['name'] as String?)!,
+        visibility: (json['visibility'] as String?)!,
+        default_: (json['default'] as bool?)!,
+        selectedRepositoriesUrl: json['selected_repositories_url'] != null
+            ? SdkPresent((json['selected_repositories_url'] as String?)!)
+            : const SdkOmitted(),
+        runnersUrl: (json['runners_url'] as String?)!,
+        hostedRunnersUrl: json['hosted_runners_url'] != null
+            ? SdkPresent((json['hosted_runners_url'] as String?)!)
+            : const SdkOmitted(),
+        networkConfigurationId: json['network_configuration_id'] != null
+            ? SdkPresent((json['network_configuration_id'] as String?)!)
+            : const SdkOmitted(),
+        inherited: (json['inherited'] as bool?)!,
+        inheritedAllowsPublicRepositories:
+            json['inherited_allows_public_repositories'] != null
+                ? SdkPresent(
+                    (json['inherited_allows_public_repositories'] as bool?)!)
+                : const SdkOmitted(),
+        allowsPublicRepositories:
+            (json['allows_public_repositories'] as bool?)!,
+        workflowRestrictionsReadOnly: json['workflow_restrictions_read_only'] !=
+                null
+            ? SdkPresent((json['workflow_restrictions_read_only'] as bool?)!)
+            : const SdkOmitted(),
+        restrictedToWorkflows: json['restricted_to_workflows'] != null
+            ? SdkPresent((json['restricted_to_workflows'] as bool?)!)
+            : const SdkOmitted(),
+        selectedWorkflows: json['selected_workflows'] != null
+            ? SdkPresent(((json['selected_workflows'] as List?)
+                ?.map((e) => e as String)
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'name': name,
-    'visibility': visibility,
-    'default': default_,
-    ...switch (selectedRepositoriesUrl) {
-      SdkPresent<String>(value: final value) => {'selected_repositories_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    'runners_url': runnersUrl,
-    ...switch (hostedRunnersUrl) {
-      SdkPresent<String>(value: final value) => {'hosted_runners_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (networkConfigurationId) {
-      SdkPresent<String>(value: final value) => {'network_configuration_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    'inherited': inherited,
-    ...switch (inheritedAllowsPublicRepositories) {
-      SdkPresent<bool>(value: final value) => {'inherited_allows_public_repositories': value,},
-      _ => const <String, dynamic>{},
-    },
-    'allows_public_repositories': allowsPublicRepositories,
-    ...switch (workflowRestrictionsReadOnly) {
-      SdkPresent<bool>(value: final value) => {'workflow_restrictions_read_only': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (restrictedToWorkflows) {
-      SdkPresent<bool>(value: final value) => {'restricted_to_workflows': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (selectedWorkflows) {
-      SdkPresent<List<String>>(value: final value) => {'selected_workflows': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'id': id,
+        'name': name,
+        'visibility': visibility,
+        'default': default_,
+        ...switch (selectedRepositoriesUrl) {
+          SdkPresent<String>(value: final value) => {
+              'selected_repositories_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'runners_url': runnersUrl,
+        ...switch (hostedRunnersUrl) {
+          SdkPresent<String>(value: final value) => {
+              'hosted_runners_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (networkConfigurationId) {
+          SdkPresent<String>(value: final value) => {
+              'network_configuration_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'inherited': inherited,
+        ...switch (inheritedAllowsPublicRepositories) {
+          SdkPresent<bool>(value: final value) => {
+              'inherited_allows_public_repositories': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'allows_public_repositories': allowsPublicRepositories,
+        ...switch (workflowRestrictionsReadOnly) {
+          SdkPresent<bool>(value: final value) => {
+              'workflow_restrictions_read_only': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (restrictedToWorkflows) {
+          SdkPresent<bool>(value: final value) => {
+              'restricted_to_workflows': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (selectedWorkflows) {
+          SdkPresent<List<String>>(value: final value) => {
+              'selected_workflows': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// A label for a self hosted runner
 class RunnerLabel {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Unique identifier of the label.
   final SdkOptional<int> id;
+
   /// Name of the label.
   final String name;
+
   /// The type of label. Read-only labels are applied automatically when the runner is configured.
   final SdkOptional<RunnerLabelType> type_;
 
-  const RunnerLabel({this.id = const SdkOmitted(), required this.name, this.type_ = const SdkOmitted()});
+  const RunnerLabel(
+      {this.id = const SdkOmitted(),
+      required this.name,
+      this.type_ = const SdkOmitted()});
 
-  RunnerLabel Function({SdkOptional<int> id, String name, SdkOptional<RunnerLabelType> type_}) get copyWith => _copyWith;
+  RunnerLabel Function(
+      {SdkOptional<int> id,
+      String name,
+      SdkOptional<RunnerLabelType> type_}) get copyWith => _copyWith;
 
-  RunnerLabel _copyWith({Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => RunnerLabel(
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<RunnerLabelType>,
-  );
+  RunnerLabel _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      RunnerLabel(
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as SdkOptional<RunnerLabelType>,
+      );
 
   factory RunnerLabel.fromJson(Map<String, dynamic> json) => RunnerLabel(
-    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
-    name: (json['name'] as String?)!,
-    type_: json['type'] != null ? SdkPresent((json['type'] != null ? RunnerLabelType.fromJson(json['type'] as String) : null)!) : const SdkOmitted(),
-  );
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        name: (json['name'] as String?)!,
+        type_: json['type'] != null
+            ? SdkPresent((json['type'] != null
+                ? RunnerLabelType.fromJson(json['type'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (id) {
-      SdkPresent<int>(value: final value) => {'id': value,},
-      _ => const <String, dynamic>{},
-    },
-    'name': name,
-    ...switch (type_) {
-      SdkPresent<RunnerLabelType>(value: final value) => {'type': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'name': name,
+        ...switch (type_) {
+          SdkPresent<RunnerLabelType>(value: final value) => {
+              'type': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

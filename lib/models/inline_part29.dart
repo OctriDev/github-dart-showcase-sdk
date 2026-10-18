@@ -6,7 +6,6 @@ part of 'inline.dart';
 // Inline operation models (part 29)
 /// The status of the most recent build of the Page.
 final class PageStatus {
-
   final String value;
 
   const PageStatus._(this.value);
@@ -19,59 +18,74 @@ final class PageStatus {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PageStatus && other.value == value;
+  @override
+  bool operator ==(Object other) => other is PageStatus && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The current status of the deployment.
 final class PagesDeploymentStatusStatus {
-
   final String value;
 
   const PagesDeploymentStatusStatus._(this.value);
 
-  factory PagesDeploymentStatusStatus.fromJson(String value) => PagesDeploymentStatusStatus._(value);
+  factory PagesDeploymentStatusStatus.fromJson(String value) =>
+      PagesDeploymentStatusStatus._(value);
 
-  static const deploymentInProgress = PagesDeploymentStatusStatus._('deployment_in_progress');
+  static const deploymentInProgress =
+      PagesDeploymentStatusStatus._('deployment_in_progress');
   static const syncingFiles = PagesDeploymentStatusStatus._('syncing_files');
-  static const finishedFileSync = PagesDeploymentStatusStatus._('finished_file_sync');
+  static const finishedFileSync =
+      PagesDeploymentStatusStatus._('finished_file_sync');
   static const updatingPages = PagesDeploymentStatusStatus._('updating_pages');
   static const purgingCdn = PagesDeploymentStatusStatus._('purging_cdn');
-  static const deploymentCancelled = PagesDeploymentStatusStatus._('deployment_cancelled');
-  static const deploymentFailed = PagesDeploymentStatusStatus._('deployment_failed');
-  static const deploymentContentFailed = PagesDeploymentStatusStatus._('deployment_content_failed');
-  static const deploymentAttemptError = PagesDeploymentStatusStatus._('deployment_attempt_error');
-  static const deploymentLost = PagesDeploymentStatusStatus._('deployment_lost');
+  static const deploymentCancelled =
+      PagesDeploymentStatusStatus._('deployment_cancelled');
+  static const deploymentFailed =
+      PagesDeploymentStatusStatus._('deployment_failed');
+  static const deploymentContentFailed =
+      PagesDeploymentStatusStatus._('deployment_content_failed');
+  static const deploymentAttemptError =
+      PagesDeploymentStatusStatus._('deployment_attempt_error');
+  static const deploymentLost =
+      PagesDeploymentStatusStatus._('deployment_lost');
   static const succeed = PagesDeploymentStatusStatus._('succeed');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PagesDeploymentStatusStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PagesDeploymentStatusStatus && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `state` wire field.
 final class PagesHttpsCertificateState {
-
   final String value;
 
   const PagesHttpsCertificateState._(this.value);
 
-  factory PagesHttpsCertificateState.fromJson(String value) => PagesHttpsCertificateState._(value);
+  factory PagesHttpsCertificateState.fromJson(String value) =>
+      PagesHttpsCertificateState._(value);
 
   static const new_ = PagesHttpsCertificateState._('new');
-  static const authorizationCreated = PagesHttpsCertificateState._('authorization_created');
-  static const authorizationPending = PagesHttpsCertificateState._('authorization_pending');
+  static const authorizationCreated =
+      PagesHttpsCertificateState._('authorization_created');
+  static const authorizationPending =
+      PagesHttpsCertificateState._('authorization_pending');
   static const authorized = PagesHttpsCertificateState._('authorized');
-  static const authorizationRevoked = PagesHttpsCertificateState._('authorization_revoked');
+  static const authorizationRevoked =
+      PagesHttpsCertificateState._('authorization_revoked');
   static const issued = PagesHttpsCertificateState._('issued');
   static const uploaded = PagesHttpsCertificateState._('uploaded');
   static const approved = PagesHttpsCertificateState._('approved');
@@ -82,64 +96,76 @@ final class PagesHttpsCertificateState {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PagesHttpsCertificateState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PagesHttpsCertificateState && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Type of repository selection requested.
 final class PersonalAccessTokenRequestRepositorySelection {
-
   final String value;
 
   const PersonalAccessTokenRequestRepositorySelection._(this.value);
 
-  factory PersonalAccessTokenRequestRepositorySelection.fromJson(String value) => PersonalAccessTokenRequestRepositorySelection._(value);
+  factory PersonalAccessTokenRequestRepositorySelection.fromJson(
+          String value) =>
+      PersonalAccessTokenRequestRepositorySelection._(value);
 
   static const none = PersonalAccessTokenRequestRepositorySelection._('none');
   static const all = PersonalAccessTokenRequestRepositorySelection._('all');
-  static const subset = PersonalAccessTokenRequestRepositorySelection._('subset');
+  static const subset =
+      PersonalAccessTokenRequestRepositorySelection._('subset');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PersonalAccessTokenRequestRepositorySelection && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PersonalAccessTokenRequestRepositorySelection &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The severity of the advisory. You must choose between setting this field or `cvss_vector_string`.
 final class PrivateVulnerabilityReportCreateSeverity {
-
   final String value;
 
   const PrivateVulnerabilityReportCreateSeverity._(this.value);
 
-  factory PrivateVulnerabilityReportCreateSeverity.fromJson(String value) => PrivateVulnerabilityReportCreateSeverity._(value);
+  factory PrivateVulnerabilityReportCreateSeverity.fromJson(String value) =>
+      PrivateVulnerabilityReportCreateSeverity._(value);
 
-  static const critical = PrivateVulnerabilityReportCreateSeverity._('critical');
+  static const critical =
+      PrivateVulnerabilityReportCreateSeverity._('critical');
   static const high = PrivateVulnerabilityReportCreateSeverity._('high');
   static const medium = PrivateVulnerabilityReportCreateSeverity._('medium');
   static const low = PrivateVulnerabilityReportCreateSeverity._('low');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PrivateVulnerabilityReportCreateSeverity && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PrivateVulnerabilityReportCreateSeverity && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The current state of the project.
 final class ProjectsV2State {
-
   final String value;
 
   const ProjectsV2State._(this.value);
@@ -151,25 +177,29 @@ final class ProjectsV2State {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ProjectsV2State && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ProjectsV2State && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The field's data type.
 final class ProjectsV2FieldDataType {
-
   final String value;
 
   const ProjectsV2FieldDataType._(this.value);
 
-  factory ProjectsV2FieldDataType.fromJson(String value) => ProjectsV2FieldDataType._(value);
+  factory ProjectsV2FieldDataType.fromJson(String value) =>
+      ProjectsV2FieldDataType._(value);
 
   static const assignees = ProjectsV2FieldDataType._('assignees');
-  static const linkedPullRequests = ProjectsV2FieldDataType._('linked_pull_requests');
+  static const linkedPullRequests =
+      ProjectsV2FieldDataType._('linked_pull_requests');
   static const reviewers = ProjectsV2FieldDataType._('reviewers');
   static const labels = ProjectsV2FieldDataType._('labels');
   static const milestone = ProjectsV2FieldDataType._('milestone');
@@ -182,26 +212,30 @@ final class ProjectsV2FieldDataType {
   static const iteration = ProjectsV2FieldDataType._('iteration');
   static const issueType = ProjectsV2FieldDataType._('issue_type');
   static const parentIssue = ProjectsV2FieldDataType._('parent_issue');
-  static const subIssuesProgress = ProjectsV2FieldDataType._('sub_issues_progress');
+  static const subIssuesProgress =
+      ProjectsV2FieldDataType._('sub_issues_progress');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ProjectsV2FieldDataType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ProjectsV2FieldDataType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The color associated with the option.
 final class ProjectsV2FieldSingleSelectOptionColor {
-
   final String value;
 
   const ProjectsV2FieldSingleSelectOptionColor._(this.value);
 
-  factory ProjectsV2FieldSingleSelectOptionColor.fromJson(String value) => ProjectsV2FieldSingleSelectOptionColor._(value);
+  factory ProjectsV2FieldSingleSelectOptionColor.fromJson(String value) =>
+      ProjectsV2FieldSingleSelectOptionColor._(value);
 
   static const blue = ProjectsV2FieldSingleSelectOptionColor._('BLUE');
   static const gray = ProjectsV2FieldSingleSelectOptionColor._('GRAY');
@@ -214,22 +248,25 @@ final class ProjectsV2FieldSingleSelectOptionColor {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ProjectsV2FieldSingleSelectOptionColor && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ProjectsV2FieldSingleSelectOptionColor && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The current status.
 final class ProjectsV2StatusUpdateStatus {
-
   final String value;
 
   const ProjectsV2StatusUpdateStatus._(this.value);
 
-  factory ProjectsV2StatusUpdateStatus.fromJson(String value) => ProjectsV2StatusUpdateStatus._(value);
+  factory ProjectsV2StatusUpdateStatus.fromJson(String value) =>
+      ProjectsV2StatusUpdateStatus._(value);
 
   static const inactive = ProjectsV2StatusUpdateStatus._('INACTIVE');
   static const onTrack = ProjectsV2StatusUpdateStatus._('ON_TRACK');
@@ -239,22 +276,25 @@ final class ProjectsV2StatusUpdateStatus {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ProjectsV2StatusUpdateStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ProjectsV2StatusUpdateStatus && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The layout of the view.
 final class ProjectsV2ViewLayout {
-
   final String value;
 
   const ProjectsV2ViewLayout._(this.value);
 
-  factory ProjectsV2ViewLayout.fromJson(String value) => ProjectsV2ViewLayout._(value);
+  factory ProjectsV2ViewLayout.fromJson(String value) =>
+      ProjectsV2ViewLayout._(value);
 
   static const table = ProjectsV2ViewLayout._('table');
   static const board = ProjectsV2ViewLayout._('board');
@@ -262,17 +302,19 @@ final class ProjectsV2ViewLayout {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ProjectsV2ViewLayout && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ProjectsV2ViewLayout && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// State of this Pull Request. Either `open` or `closed`.
 final class PullRequestState {
-
   final String value;
 
   const PullRequestState._(this.value);
@@ -284,10 +326,13 @@ final class PullRequestState {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is PullRequestState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is PullRequestState && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

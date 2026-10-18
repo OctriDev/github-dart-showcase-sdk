@@ -8,105 +8,195 @@ part of 'webhook_pull_request_review_comment_deleted.dart';
 class WebhookPullRequestReviewCommentDeletedPullRequestAutoMerge {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Commit message for the merge commit.
   final String? commitMessage;
+
   /// Title for the merge commit message.
   final String? commitTitle;
+
   /// Required object value serialized in the `enabled_by` wire field.
-  final WebhookPullRequestReviewCommentDeletedPullRequestAutoMergeEnabledBy? enabledBy;
+  final WebhookPullRequestReviewCommentDeletedPullRequestAutoMergeEnabledBy?
+      enabledBy;
+
   /// The merge method to use.
-  final WebhookPullRequestReviewCommentDeletedPullRequestAutoMergeMergeMethod mergeMethod;
+  final WebhookPullRequestReviewCommentDeletedPullRequestAutoMergeMergeMethod
+      mergeMethod;
 
-  const WebhookPullRequestReviewCommentDeletedPullRequestAutoMerge({required this.commitMessage, required this.commitTitle, required this.enabledBy, required this.mergeMethod});
+  const WebhookPullRequestReviewCommentDeletedPullRequestAutoMerge(
+      {required this.commitMessage,
+      required this.commitTitle,
+      required this.enabledBy,
+      required this.mergeMethod});
 
-  WebhookPullRequestReviewCommentDeletedPullRequestAutoMerge Function({String? commitMessage, String? commitTitle, WebhookPullRequestReviewCommentDeletedPullRequestAutoMergeEnabledBy? enabledBy, WebhookPullRequestReviewCommentDeletedPullRequestAutoMergeMergeMethod mergeMethod}) get copyWith => _copyWith;
+  WebhookPullRequestReviewCommentDeletedPullRequestAutoMerge Function(
+      {String? commitMessage,
+      String? commitTitle,
+      WebhookPullRequestReviewCommentDeletedPullRequestAutoMergeEnabledBy?
+          enabledBy,
+      WebhookPullRequestReviewCommentDeletedPullRequestAutoMergeMergeMethod
+          mergeMethod}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewCommentDeletedPullRequestAutoMerge _copyWith({Object? commitMessage = sdkOmittedValue, Object? commitTitle = sdkOmittedValue, Object? enabledBy = sdkOmittedValue, Object? mergeMethod = sdkOmittedValue}) => WebhookPullRequestReviewCommentDeletedPullRequestAutoMerge(
-    commitMessage: identical(commitMessage, sdkOmittedValue) ? this.commitMessage : commitMessage as String?,
-    commitTitle: identical(commitTitle, sdkOmittedValue) ? this.commitTitle : commitTitle as String?,
-    enabledBy: identical(enabledBy, sdkOmittedValue) ? this.enabledBy : enabledBy as WebhookPullRequestReviewCommentDeletedPullRequestAutoMergeEnabledBy?,
-    mergeMethod: identical(mergeMethod, sdkOmittedValue) ? this.mergeMethod : mergeMethod as WebhookPullRequestReviewCommentDeletedPullRequestAutoMergeMergeMethod,
-  );
+  WebhookPullRequestReviewCommentDeletedPullRequestAutoMerge _copyWith(
+          {Object? commitMessage = sdkOmittedValue,
+          Object? commitTitle = sdkOmittedValue,
+          Object? enabledBy = sdkOmittedValue,
+          Object? mergeMethod = sdkOmittedValue}) =>
+      WebhookPullRequestReviewCommentDeletedPullRequestAutoMerge(
+        commitMessage: identical(commitMessage, sdkOmittedValue)
+            ? this.commitMessage
+            : commitMessage as String?,
+        commitTitle: identical(commitTitle, sdkOmittedValue)
+            ? this.commitTitle
+            : commitTitle as String?,
+        enabledBy: identical(enabledBy, sdkOmittedValue)
+            ? this.enabledBy
+            : enabledBy
+                as WebhookPullRequestReviewCommentDeletedPullRequestAutoMergeEnabledBy?,
+        mergeMethod: identical(mergeMethod, sdkOmittedValue)
+            ? this.mergeMethod
+            : mergeMethod
+                as WebhookPullRequestReviewCommentDeletedPullRequestAutoMergeMergeMethod,
+      );
 
-  factory WebhookPullRequestReviewCommentDeletedPullRequestAutoMerge.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewCommentDeletedPullRequestAutoMerge(
-    commitMessage: json.containsKey('commit_message') ? json['commit_message'] as String? : throw ArgumentError.value(null, 'commit_message', 'Required property is missing'),
-    commitTitle: json.containsKey('commit_title') ? json['commit_title'] as String? : throw ArgumentError.value(null, 'commit_title', 'Required property is missing'),
-    enabledBy: json.containsKey('enabled_by') ? json['enabled_by'] != null ? WebhookPullRequestReviewCommentDeletedPullRequestAutoMergeEnabledBy.fromJson(json['enabled_by'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'enabled_by', 'Required property is missing'),
-    mergeMethod: (json['merge_method'] != null ? WebhookPullRequestReviewCommentDeletedPullRequestAutoMergeMergeMethod.fromJson(json['merge_method'] as String) : null)!,
-  );
+  factory WebhookPullRequestReviewCommentDeletedPullRequestAutoMerge.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPullRequestReviewCommentDeletedPullRequestAutoMerge(
+        commitMessage: json.containsKey('commit_message')
+            ? json['commit_message'] as String?
+            : throw ArgumentError.value(
+                null, 'commit_message', 'Required property is missing'),
+        commitTitle: json.containsKey('commit_title')
+            ? json['commit_title'] as String?
+            : throw ArgumentError.value(
+                null, 'commit_title', 'Required property is missing'),
+        enabledBy: json.containsKey('enabled_by')
+            ? json['enabled_by'] != null
+                ? WebhookPullRequestReviewCommentDeletedPullRequestAutoMergeEnabledBy
+                    .fromJson(json['enabled_by'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'enabled_by', 'Required property is missing'),
+        mergeMethod: (json['merge_method'] != null
+            ? WebhookPullRequestReviewCommentDeletedPullRequestAutoMergeMergeMethod
+                .fromJson(json['merge_method'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'commit_message': commitMessage,
-    'commit_title': commitTitle,
-    'enabled_by': enabledBy?.toJson(),
-    'merge_method': mergeMethod.toJson(),
-  };
+        'commit_message': commitMessage,
+        'commit_title': commitTitle,
+        'enabled_by': enabledBy?.toJson(),
+        'merge_method': mergeMethod.toJson(),
+      };
 }
 
 sealed class WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoCreatedAt {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoCreatedAt();
-  factory WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoCreatedAt.fromJson(Object? json) {
-    if (json is String) { return WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoCreatedAtString(json); }
-    if (json is num) { return WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoCreatedAtInt(json.toInt()); }
-    throw FormatException("No variant matched for WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoCreatedAt");
+  factory WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoCreatedAt.fromJson(
+      Object? json) {
+    if (json is String) {
+      return WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoCreatedAtString(
+          json);
+    }
+    if (json is num) {
+      return WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoCreatedAtInt(
+          json.toInt());
+    }
+    throw FormatException(
+        "No variant matched for WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoCreatedAt");
   }
   Object? toJson();
 }
 
-final class WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoCreatedAtInt extends WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoCreatedAt {
+final class WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoCreatedAtInt
+    extends WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoCreatedAt {
   final int value;
-  const WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoCreatedAtInt(this.value);
-  @override Object? toJson() => value;
+  const WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoCreatedAtInt(
+      this.value);
+  @override
+  Object? toJson() => value;
 }
 
-final class WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoCreatedAtString extends WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoCreatedAt {
+final class WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoCreatedAtString
+    extends WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoCreatedAt {
   final String value;
-  const WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoCreatedAtString(this.value);
-  @override Object? toJson() => value;
+  const WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoCreatedAtString(
+      this.value);
+  @override
+  Object? toJson() => value;
 }
 
 /// Required object value serialized in the `license` wire field.
 class WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoLicense {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `key` wire field.
   final String key;
+
   /// Required `string` value serialized in the `name` wire field.
   final String name;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// Required `string` value serialized in the `spdx_id` wire field.
   final String spdxId;
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String? url;
 
-  const WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoLicense({required this.key, required this.name, required this.nodeId, required this.spdxId, required this.url});
+  const WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoLicense(
+      {required this.key,
+      required this.name,
+      required this.nodeId,
+      required this.spdxId,
+      required this.url});
 
-  WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoLicense Function({String key, String name, String nodeId, String spdxId, String? url}) get copyWith => _copyWith;
+  WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoLicense Function(
+      {String key,
+      String name,
+      String nodeId,
+      String spdxId,
+      String? url}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoLicense _copyWith({Object? key = sdkOmittedValue, Object? name = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? spdxId = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoLicense(
-    key: identical(key, sdkOmittedValue) ? this.key : key as String,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    spdxId: identical(spdxId, sdkOmittedValue) ? this.spdxId : spdxId as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String?,
-  );
+  WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoLicense _copyWith(
+          {Object? key = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? spdxId = sdkOmittedValue,
+          Object? url = sdkOmittedValue}) =>
+      WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoLicense(
+        key: identical(key, sdkOmittedValue) ? this.key : key as String,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        spdxId:
+            identical(spdxId, sdkOmittedValue) ? this.spdxId : spdxId as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String?,
+      );
 
-  factory WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoLicense.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoLicense(
-    key: (json['key'] as String?)!,
-    name: (json['name'] as String?)!,
-    nodeId: (json['node_id'] as String?)!,
-    spdxId: (json['spdx_id'] as String?)!,
-    url: json.containsKey('url') ? json['url'] as String? : throw ArgumentError.value(null, 'url', 'Required property is missing'),
-  );
+  factory WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoLicense.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPullRequestReviewCommentDeletedPullRequestBaseRepoLicense(
+        key: (json['key'] as String?)!,
+        name: (json['name'] as String?)!,
+        nodeId: (json['node_id'] as String?)!,
+        spdxId: (json['spdx_id'] as String?)!,
+        url: json.containsKey('url')
+            ? json['url'] as String?
+            : throw ArgumentError.value(
+                null, 'url', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'key': key,
-    'name': name,
-    'node_id': nodeId,
-    'spdx_id': spdxId,
-    'url': url,
-  };
+        'key': key,
+        'name': name,
+        'node_id': nodeId,
+        'spdx_id': spdxId,
+        'url': url,
+      };
 }

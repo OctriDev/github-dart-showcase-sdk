@@ -8,245 +8,502 @@ part of 'code_scanning_code_scanning_alert.dart';
 class CodeScanningAlertInstance {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The Git reference, formatted as `refs/pull/&lt;number&gt;/merge`, `refs/pull/&lt;number&gt;/head`, `refs/heads/&lt;branch name&gt;` or simply `&lt;branch name&gt;`.
   final SdkOptional<String> ref;
+
   /// Identifies the configuration under which the analysis was executed. For example, in GitHub Actions this includes the workflow filename and job name.
   final SdkOptional<String> analysisKey;
+
   /// Identifies the variable values associated with the environment in which the analysis that generated this alert instance was performed, such as the language that was analyzed.
   final SdkOptional<String> environment;
+
   /// Identifies the configuration under which the analysis was executed. Used to distinguish between multiple analyses for the same tool and commit, but performed on different languages or different parts of the code.
   final SdkOptional<String> category;
+
   /// State of a code scanning alert.
   final SdkOptional<CodeScanningAlertState?> state;
+
   /// Optional `string` value serialized in the `commit_sha` wire field.
   final SdkOptional<String> commitSha;
+
   /// Optional object value serialized in the `message` wire field.
   final SdkOptional<CodeScanningAlertInstanceMessage> message;
+
   /// Describe a region within a file for the alert.
   final SdkOptional<CodeScanningAlertLocation> location;
+
   /// Optional `string` value serialized in the `html_url` wire field.
   final SdkOptional<String> htmlUrl;
+
   /// Classifications that have been applied to the file that triggered the alert. For example identifying it as documentation, or a generated file.
   final SdkOptional<List<CodeScanningAlertClassification?>> classifications;
 
-  const CodeScanningAlertInstance({this.ref = const SdkOmitted(), this.analysisKey = const SdkOmitted(), this.environment = const SdkOmitted(), this.category = const SdkOmitted(), this.state = const SdkOmitted(), this.commitSha = const SdkOmitted(), this.message = const SdkOmitted(), this.location = const SdkOmitted(), this.htmlUrl = const SdkOmitted(), this.classifications = const SdkOmitted()});
+  const CodeScanningAlertInstance(
+      {this.ref = const SdkOmitted(),
+      this.analysisKey = const SdkOmitted(),
+      this.environment = const SdkOmitted(),
+      this.category = const SdkOmitted(),
+      this.state = const SdkOmitted(),
+      this.commitSha = const SdkOmitted(),
+      this.message = const SdkOmitted(),
+      this.location = const SdkOmitted(),
+      this.htmlUrl = const SdkOmitted(),
+      this.classifications = const SdkOmitted()});
 
-  CodeScanningAlertInstance Function({SdkOptional<String> ref, SdkOptional<String> analysisKey, SdkOptional<String> environment, SdkOptional<String> category, SdkOptional<CodeScanningAlertState?> state, SdkOptional<String> commitSha, SdkOptional<CodeScanningAlertInstanceMessage> message, SdkOptional<CodeScanningAlertLocation> location, SdkOptional<String> htmlUrl, SdkOptional<List<CodeScanningAlertClassification?>> classifications}) get copyWith => _copyWith;
+  CodeScanningAlertInstance Function(
+          {SdkOptional<String> ref,
+          SdkOptional<String> analysisKey,
+          SdkOptional<String> environment,
+          SdkOptional<String> category,
+          SdkOptional<CodeScanningAlertState?> state,
+          SdkOptional<String> commitSha,
+          SdkOptional<CodeScanningAlertInstanceMessage> message,
+          SdkOptional<CodeScanningAlertLocation> location,
+          SdkOptional<String> htmlUrl,
+          SdkOptional<List<CodeScanningAlertClassification?>> classifications})
+      get copyWith => _copyWith;
 
-  CodeScanningAlertInstance _copyWith({Object? ref = sdkOmittedValue, Object? analysisKey = sdkOmittedValue, Object? environment = sdkOmittedValue, Object? category = sdkOmittedValue, Object? state = sdkOmittedValue, Object? commitSha = sdkOmittedValue, Object? message = sdkOmittedValue, Object? location = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? classifications = sdkOmittedValue}) => CodeScanningAlertInstance(
-    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as SdkOptional<String>,
-    analysisKey: identical(analysisKey, sdkOmittedValue) ? this.analysisKey : analysisKey as SdkOptional<String>,
-    environment: identical(environment, sdkOmittedValue) ? this.environment : environment as SdkOptional<String>,
-    category: identical(category, sdkOmittedValue) ? this.category : category as SdkOptional<String>,
-    state: identical(state, sdkOmittedValue) ? this.state : state as SdkOptional<CodeScanningAlertState?>,
-    commitSha: identical(commitSha, sdkOmittedValue) ? this.commitSha : commitSha as SdkOptional<String>,
-    message: identical(message, sdkOmittedValue) ? this.message : message as SdkOptional<CodeScanningAlertInstanceMessage>,
-    location: identical(location, sdkOmittedValue) ? this.location : location as SdkOptional<CodeScanningAlertLocation>,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String>,
-    classifications: identical(classifications, sdkOmittedValue) ? this.classifications : classifications as SdkOptional<List<CodeScanningAlertClassification?>>,
-  );
+  CodeScanningAlertInstance _copyWith(
+          {Object? ref = sdkOmittedValue,
+          Object? analysisKey = sdkOmittedValue,
+          Object? environment = sdkOmittedValue,
+          Object? category = sdkOmittedValue,
+          Object? state = sdkOmittedValue,
+          Object? commitSha = sdkOmittedValue,
+          Object? message = sdkOmittedValue,
+          Object? location = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? classifications = sdkOmittedValue}) =>
+      CodeScanningAlertInstance(
+        ref: identical(ref, sdkOmittedValue)
+            ? this.ref
+            : ref as SdkOptional<String>,
+        analysisKey: identical(analysisKey, sdkOmittedValue)
+            ? this.analysisKey
+            : analysisKey as SdkOptional<String>,
+        environment: identical(environment, sdkOmittedValue)
+            ? this.environment
+            : environment as SdkOptional<String>,
+        category: identical(category, sdkOmittedValue)
+            ? this.category
+            : category as SdkOptional<String>,
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state as SdkOptional<CodeScanningAlertState?>,
+        commitSha: identical(commitSha, sdkOmittedValue)
+            ? this.commitSha
+            : commitSha as SdkOptional<String>,
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as SdkOptional<CodeScanningAlertInstanceMessage>,
+        location: identical(location, sdkOmittedValue)
+            ? this.location
+            : location as SdkOptional<CodeScanningAlertLocation>,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as SdkOptional<String>,
+        classifications: identical(classifications, sdkOmittedValue)
+            ? this.classifications
+            : classifications
+                as SdkOptional<List<CodeScanningAlertClassification?>>,
+      );
 
-  factory CodeScanningAlertInstance.fromJson(Map<String, dynamic> json) => CodeScanningAlertInstance(
-    ref: json['ref'] != null ? SdkPresent((json['ref'] as String?)!) : const SdkOmitted(),
-    analysisKey: json['analysis_key'] != null ? SdkPresent((json['analysis_key'] as String?)!) : const SdkOmitted(),
-    environment: json['environment'] != null ? SdkPresent((json['environment'] as String?)!) : const SdkOmitted(),
-    category: json['category'] != null ? SdkPresent((json['category'] as String?)!) : const SdkOmitted(),
-    state: json.containsKey('state') ? SdkPresent(json['state'] != null ? CodeScanningAlertState.fromJson(json['state'] as String) : null) : const SdkOmitted(),
-    commitSha: json['commit_sha'] != null ? SdkPresent((json['commit_sha'] as String?)!) : const SdkOmitted(),
-    message: json['message'] != null ? SdkPresent((json['message'] != null ? CodeScanningAlertInstanceMessage.fromJson(json['message'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    location: json['location'] != null ? SdkPresent((json['location'] != null ? CodeScanningAlertLocation.fromJson(json['location'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    htmlUrl: json['html_url'] != null ? SdkPresent((json['html_url'] as String?)!) : const SdkOmitted(),
-    classifications: json['classifications'] != null ? SdkPresent(((json['classifications'] as List?)?.map((e) => e == null ? null : CodeScanningAlertClassification.fromJson(e as String)).toList())!) : const SdkOmitted(),
-  );
+  factory CodeScanningAlertInstance.fromJson(Map<String, dynamic> json) =>
+      CodeScanningAlertInstance(
+        ref: json['ref'] != null
+            ? SdkPresent((json['ref'] as String?)!)
+            : const SdkOmitted(),
+        analysisKey: json['analysis_key'] != null
+            ? SdkPresent((json['analysis_key'] as String?)!)
+            : const SdkOmitted(),
+        environment: json['environment'] != null
+            ? SdkPresent((json['environment'] as String?)!)
+            : const SdkOmitted(),
+        category: json['category'] != null
+            ? SdkPresent((json['category'] as String?)!)
+            : const SdkOmitted(),
+        state: json.containsKey('state')
+            ? SdkPresent(json['state'] != null
+                ? CodeScanningAlertState.fromJson(json['state'] as String)
+                : null)
+            : const SdkOmitted(),
+        commitSha: json['commit_sha'] != null
+            ? SdkPresent((json['commit_sha'] as String?)!)
+            : const SdkOmitted(),
+        message: json['message'] != null
+            ? SdkPresent((json['message'] != null
+                ? CodeScanningAlertInstanceMessage.fromJson(
+                    json['message'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        location: json['location'] != null
+            ? SdkPresent((json['location'] != null
+                ? CodeScanningAlertLocation.fromJson(
+                    json['location'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        htmlUrl: json['html_url'] != null
+            ? SdkPresent((json['html_url'] as String?)!)
+            : const SdkOmitted(),
+        classifications: json['classifications'] != null
+            ? SdkPresent(((json['classifications'] as List?)
+                ?.map((e) => e == null
+                    ? null
+                    : CodeScanningAlertClassification.fromJson(e as String))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (ref) {
-      SdkPresent<String>(value: final value) => {'ref': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (analysisKey) {
-      SdkPresent<String>(value: final value) => {'analysis_key': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (environment) {
-      SdkPresent<String>(value: final value) => {'environment': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (category) {
-      SdkPresent<String>(value: final value) => {'category': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (state) {
-      SdkPresent<CodeScanningAlertState?>(value: final value) => {'state': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (commitSha) {
-      SdkPresent<String>(value: final value) => {'commit_sha': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (message) {
-      SdkPresent<CodeScanningAlertInstanceMessage>(value: final value) => {'message': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (location) {
-      SdkPresent<CodeScanningAlertLocation>(value: final value) => {'location': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (htmlUrl) {
-      SdkPresent<String>(value: final value) => {'html_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (classifications) {
-      SdkPresent<List<CodeScanningAlertClassification?>>(value: final value) => {'classifications': value.map((item) => item?.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (ref) {
+          SdkPresent<String>(value: final value) => {
+              'ref': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (analysisKey) {
+          SdkPresent<String>(value: final value) => {
+              'analysis_key': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (environment) {
+          SdkPresent<String>(value: final value) => {
+              'environment': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (category) {
+          SdkPresent<String>(value: final value) => {
+              'category': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (state) {
+          SdkPresent<CodeScanningAlertState?>(value: final value) => {
+              'state': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (commitSha) {
+          SdkPresent<String>(value: final value) => {
+              'commit_sha': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (message) {
+          SdkPresent<CodeScanningAlertInstanceMessage>(value: final value) => {
+              'message': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (location) {
+          SdkPresent<CodeScanningAlertLocation>(value: final value) => {
+              'location': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (htmlUrl) {
+          SdkPresent<String>(value: final value) => {
+              'html_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (classifications) {
+          SdkPresent<List<CodeScanningAlertClassification?>>(
+            value: final value
+          ) =>
+            {
+              'classifications': value.map((item) => item?.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Optional object value serialized in the `message` wire field.
 class CodeScanningAlertInstanceListMessage {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `string` value serialized in the `text` wire field.
   final SdkOptional<String> text;
 
   const CodeScanningAlertInstanceListMessage({this.text = const SdkOmitted()});
 
-  CodeScanningAlertInstanceListMessage Function({SdkOptional<String> text}) get copyWith => _copyWith;
+  CodeScanningAlertInstanceListMessage Function({SdkOptional<String> text})
+      get copyWith => _copyWith;
 
-  CodeScanningAlertInstanceListMessage _copyWith({Object? text = sdkOmittedValue}) => CodeScanningAlertInstanceListMessage(
-    text: identical(text, sdkOmittedValue) ? this.text : text as SdkOptional<String>,
-  );
+  CodeScanningAlertInstanceListMessage _copyWith(
+          {Object? text = sdkOmittedValue}) =>
+      CodeScanningAlertInstanceListMessage(
+        text: identical(text, sdkOmittedValue)
+            ? this.text
+            : text as SdkOptional<String>,
+      );
 
-  factory CodeScanningAlertInstanceListMessage.fromJson(Map<String, dynamic> json) => CodeScanningAlertInstanceListMessage(
-    text: json['text'] != null ? SdkPresent((json['text'] as String?)!) : const SdkOmitted(),
-  );
+  factory CodeScanningAlertInstanceListMessage.fromJson(
+          Map<String, dynamic> json) =>
+      CodeScanningAlertInstanceListMessage(
+        text: json['text'] != null
+            ? SdkPresent((json['text'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (text) {
-      SdkPresent<String>(value: final value) => {'text': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (text) {
+          SdkPresent<String>(value: final value) => {
+              'text': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Typed representation of the `CodeScanningAlertInstanceList` API schema.
 class CodeScanningAlertInstanceList {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The Git reference, formatted as `refs/pull/&lt;number&gt;/merge`, `refs/pull/&lt;number&gt;/head`, `refs/heads/&lt;branch name&gt;` or simply `&lt;branch name&gt;`.
   final SdkOptional<String> ref;
+
   /// Identifies the configuration under which the analysis was executed. For example, in GitHub Actions this includes the workflow filename and job name.
   final SdkOptional<String> analysisKey;
+
   /// Identifies the variable values associated with the environment in which the analysis that generated this alert instance was performed, such as the language that was analyzed.
   final SdkOptional<String> environment;
+
   /// Identifies the configuration under which the analysis was executed. Used to distinguish between multiple analyses for the same tool and commit, but performed on different languages or different parts of the code.
   final SdkOptional<String> category;
+
   /// State of a code scanning alert instance.
   final SdkOptional<CodeScanningAlertInstanceState?> state;
+
   /// Optional `string` value serialized in the `commit_sha` wire field.
   final SdkOptional<String> commitSha;
+
   /// Optional object value serialized in the `message` wire field.
   final SdkOptional<CodeScanningAlertInstanceListMessage> message;
+
   /// Describe a region within a file for the alert.
   final SdkOptional<CodeScanningAlertLocation> location;
+
   /// Optional `string` value serialized in the `html_url` wire field.
   final SdkOptional<String> htmlUrl;
+
   /// Classifications that have been applied to the file that triggered the alert. For example identifying it as documentation, or a generated file.
   final SdkOptional<List<CodeScanningAlertClassification?>> classifications;
 
-  const CodeScanningAlertInstanceList({this.ref = const SdkOmitted(), this.analysisKey = const SdkOmitted(), this.environment = const SdkOmitted(), this.category = const SdkOmitted(), this.state = const SdkOmitted(), this.commitSha = const SdkOmitted(), this.message = const SdkOmitted(), this.location = const SdkOmitted(), this.htmlUrl = const SdkOmitted(), this.classifications = const SdkOmitted()});
+  const CodeScanningAlertInstanceList(
+      {this.ref = const SdkOmitted(),
+      this.analysisKey = const SdkOmitted(),
+      this.environment = const SdkOmitted(),
+      this.category = const SdkOmitted(),
+      this.state = const SdkOmitted(),
+      this.commitSha = const SdkOmitted(),
+      this.message = const SdkOmitted(),
+      this.location = const SdkOmitted(),
+      this.htmlUrl = const SdkOmitted(),
+      this.classifications = const SdkOmitted()});
 
-  CodeScanningAlertInstanceList Function({SdkOptional<String> ref, SdkOptional<String> analysisKey, SdkOptional<String> environment, SdkOptional<String> category, SdkOptional<CodeScanningAlertInstanceState?> state, SdkOptional<String> commitSha, SdkOptional<CodeScanningAlertInstanceListMessage> message, SdkOptional<CodeScanningAlertLocation> location, SdkOptional<String> htmlUrl, SdkOptional<List<CodeScanningAlertClassification?>> classifications}) get copyWith => _copyWith;
+  CodeScanningAlertInstanceList Function(
+          {SdkOptional<String> ref,
+          SdkOptional<String> analysisKey,
+          SdkOptional<String> environment,
+          SdkOptional<String> category,
+          SdkOptional<CodeScanningAlertInstanceState?> state,
+          SdkOptional<String> commitSha,
+          SdkOptional<CodeScanningAlertInstanceListMessage> message,
+          SdkOptional<CodeScanningAlertLocation> location,
+          SdkOptional<String> htmlUrl,
+          SdkOptional<List<CodeScanningAlertClassification?>> classifications})
+      get copyWith => _copyWith;
 
-  CodeScanningAlertInstanceList _copyWith({Object? ref = sdkOmittedValue, Object? analysisKey = sdkOmittedValue, Object? environment = sdkOmittedValue, Object? category = sdkOmittedValue, Object? state = sdkOmittedValue, Object? commitSha = sdkOmittedValue, Object? message = sdkOmittedValue, Object? location = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? classifications = sdkOmittedValue}) => CodeScanningAlertInstanceList(
-    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as SdkOptional<String>,
-    analysisKey: identical(analysisKey, sdkOmittedValue) ? this.analysisKey : analysisKey as SdkOptional<String>,
-    environment: identical(environment, sdkOmittedValue) ? this.environment : environment as SdkOptional<String>,
-    category: identical(category, sdkOmittedValue) ? this.category : category as SdkOptional<String>,
-    state: identical(state, sdkOmittedValue) ? this.state : state as SdkOptional<CodeScanningAlertInstanceState?>,
-    commitSha: identical(commitSha, sdkOmittedValue) ? this.commitSha : commitSha as SdkOptional<String>,
-    message: identical(message, sdkOmittedValue) ? this.message : message as SdkOptional<CodeScanningAlertInstanceListMessage>,
-    location: identical(location, sdkOmittedValue) ? this.location : location as SdkOptional<CodeScanningAlertLocation>,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String>,
-    classifications: identical(classifications, sdkOmittedValue) ? this.classifications : classifications as SdkOptional<List<CodeScanningAlertClassification?>>,
-  );
+  CodeScanningAlertInstanceList _copyWith(
+          {Object? ref = sdkOmittedValue,
+          Object? analysisKey = sdkOmittedValue,
+          Object? environment = sdkOmittedValue,
+          Object? category = sdkOmittedValue,
+          Object? state = sdkOmittedValue,
+          Object? commitSha = sdkOmittedValue,
+          Object? message = sdkOmittedValue,
+          Object? location = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? classifications = sdkOmittedValue}) =>
+      CodeScanningAlertInstanceList(
+        ref: identical(ref, sdkOmittedValue)
+            ? this.ref
+            : ref as SdkOptional<String>,
+        analysisKey: identical(analysisKey, sdkOmittedValue)
+            ? this.analysisKey
+            : analysisKey as SdkOptional<String>,
+        environment: identical(environment, sdkOmittedValue)
+            ? this.environment
+            : environment as SdkOptional<String>,
+        category: identical(category, sdkOmittedValue)
+            ? this.category
+            : category as SdkOptional<String>,
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state as SdkOptional<CodeScanningAlertInstanceState?>,
+        commitSha: identical(commitSha, sdkOmittedValue)
+            ? this.commitSha
+            : commitSha as SdkOptional<String>,
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as SdkOptional<CodeScanningAlertInstanceListMessage>,
+        location: identical(location, sdkOmittedValue)
+            ? this.location
+            : location as SdkOptional<CodeScanningAlertLocation>,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as SdkOptional<String>,
+        classifications: identical(classifications, sdkOmittedValue)
+            ? this.classifications
+            : classifications
+                as SdkOptional<List<CodeScanningAlertClassification?>>,
+      );
 
-  factory CodeScanningAlertInstanceList.fromJson(Map<String, dynamic> json) => CodeScanningAlertInstanceList(
-    ref: json['ref'] != null ? SdkPresent((json['ref'] as String?)!) : const SdkOmitted(),
-    analysisKey: json['analysis_key'] != null ? SdkPresent((json['analysis_key'] as String?)!) : const SdkOmitted(),
-    environment: json['environment'] != null ? SdkPresent((json['environment'] as String?)!) : const SdkOmitted(),
-    category: json['category'] != null ? SdkPresent((json['category'] as String?)!) : const SdkOmitted(),
-    state: json.containsKey('state') ? SdkPresent(json['state'] != null ? CodeScanningAlertInstanceState.fromJson(json['state'] as String) : null) : const SdkOmitted(),
-    commitSha: json['commit_sha'] != null ? SdkPresent((json['commit_sha'] as String?)!) : const SdkOmitted(),
-    message: json['message'] != null ? SdkPresent((json['message'] != null ? CodeScanningAlertInstanceListMessage.fromJson(json['message'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    location: json['location'] != null ? SdkPresent((json['location'] != null ? CodeScanningAlertLocation.fromJson(json['location'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    htmlUrl: json['html_url'] != null ? SdkPresent((json['html_url'] as String?)!) : const SdkOmitted(),
-    classifications: json['classifications'] != null ? SdkPresent(((json['classifications'] as List?)?.map((e) => e == null ? null : CodeScanningAlertClassification.fromJson(e as String)).toList())!) : const SdkOmitted(),
-  );
+  factory CodeScanningAlertInstanceList.fromJson(Map<String, dynamic> json) =>
+      CodeScanningAlertInstanceList(
+        ref: json['ref'] != null
+            ? SdkPresent((json['ref'] as String?)!)
+            : const SdkOmitted(),
+        analysisKey: json['analysis_key'] != null
+            ? SdkPresent((json['analysis_key'] as String?)!)
+            : const SdkOmitted(),
+        environment: json['environment'] != null
+            ? SdkPresent((json['environment'] as String?)!)
+            : const SdkOmitted(),
+        category: json['category'] != null
+            ? SdkPresent((json['category'] as String?)!)
+            : const SdkOmitted(),
+        state: json.containsKey('state')
+            ? SdkPresent(json['state'] != null
+                ? CodeScanningAlertInstanceState.fromJson(
+                    json['state'] as String)
+                : null)
+            : const SdkOmitted(),
+        commitSha: json['commit_sha'] != null
+            ? SdkPresent((json['commit_sha'] as String?)!)
+            : const SdkOmitted(),
+        message: json['message'] != null
+            ? SdkPresent((json['message'] != null
+                ? CodeScanningAlertInstanceListMessage.fromJson(
+                    json['message'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        location: json['location'] != null
+            ? SdkPresent((json['location'] != null
+                ? CodeScanningAlertLocation.fromJson(
+                    json['location'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        htmlUrl: json['html_url'] != null
+            ? SdkPresent((json['html_url'] as String?)!)
+            : const SdkOmitted(),
+        classifications: json['classifications'] != null
+            ? SdkPresent(((json['classifications'] as List?)
+                ?.map((e) => e == null
+                    ? null
+                    : CodeScanningAlertClassification.fromJson(e as String))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (ref) {
-      SdkPresent<String>(value: final value) => {'ref': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (analysisKey) {
-      SdkPresent<String>(value: final value) => {'analysis_key': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (environment) {
-      SdkPresent<String>(value: final value) => {'environment': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (category) {
-      SdkPresent<String>(value: final value) => {'category': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (state) {
-      SdkPresent<CodeScanningAlertInstanceState?>(value: final value) => {'state': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (commitSha) {
-      SdkPresent<String>(value: final value) => {'commit_sha': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (message) {
-      SdkPresent<CodeScanningAlertInstanceListMessage>(value: final value) => {'message': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (location) {
-      SdkPresent<CodeScanningAlertLocation>(value: final value) => {'location': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (htmlUrl) {
-      SdkPresent<String>(value: final value) => {'html_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (classifications) {
-      SdkPresent<List<CodeScanningAlertClassification?>>(value: final value) => {'classifications': value.map((item) => item?.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (ref) {
+          SdkPresent<String>(value: final value) => {
+              'ref': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (analysisKey) {
+          SdkPresent<String>(value: final value) => {
+              'analysis_key': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (environment) {
+          SdkPresent<String>(value: final value) => {
+              'environment': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (category) {
+          SdkPresent<String>(value: final value) => {
+              'category': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (state) {
+          SdkPresent<CodeScanningAlertInstanceState?>(value: final value) => {
+              'state': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (commitSha) {
+          SdkPresent<String>(value: final value) => {
+              'commit_sha': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (message) {
+          SdkPresent<CodeScanningAlertInstanceListMessage>(
+            value: final value
+          ) =>
+            {
+              'message': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (location) {
+          SdkPresent<CodeScanningAlertLocation>(value: final value) => {
+              'location': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (htmlUrl) {
+          SdkPresent<String>(value: final value) => {
+              'html_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (classifications) {
+          SdkPresent<List<CodeScanningAlertClassification?>>(
+            value: final value
+          ) =>
+            {
+              'classifications': value.map((item) => item?.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// State of a code scanning alert instance.
 final class CodeScanningAlertInstanceState {
-
   final String value;
 
   const CodeScanningAlertInstanceState._(this.value);
 
-  factory CodeScanningAlertInstanceState.fromJson(String value) => CodeScanningAlertInstanceState._(value);
+  factory CodeScanningAlertInstanceState.fromJson(String value) =>
+      CodeScanningAlertInstanceState._(value);
 
   static const open = CodeScanningAlertInstanceState._('open');
   static const fixed = CodeScanningAlertInstanceState._('fixed');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeScanningAlertInstanceState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodeScanningAlertInstanceState && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

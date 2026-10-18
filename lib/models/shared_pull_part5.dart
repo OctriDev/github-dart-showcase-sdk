@@ -8,83 +8,138 @@ part of 'shared_pull.dart';
 class PullRequestStackBase {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The base ref of the stack this pull request belongs to.
   final String ref;
+
   /// The base SHA of the stack this pull request belongs to.
   final String sha;
 
   const PullRequestStackBase({required this.ref, required this.sha});
 
-  PullRequestStackBase Function({String ref, String sha}) get copyWith => _copyWith;
+  PullRequestStackBase Function({String ref, String sha}) get copyWith =>
+      _copyWith;
 
-  PullRequestStackBase _copyWith({Object? ref = sdkOmittedValue, Object? sha = sdkOmittedValue}) => PullRequestStackBase(
-    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-  );
+  PullRequestStackBase _copyWith(
+          {Object? ref = sdkOmittedValue, Object? sha = sdkOmittedValue}) =>
+      PullRequestStackBase(
+        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+      );
 
-  factory PullRequestStackBase.fromJson(Map<String, dynamic> json) => PullRequestStackBase(
-    ref: (json['ref'] as String?)!,
-    sha: (json['sha'] as String?)!,
-  );
+  factory PullRequestStackBase.fromJson(Map<String, dynamic> json) =>
+      PullRequestStackBase(
+        ref: (json['ref'] as String?)!,
+        sha: (json['sha'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'ref': ref,
-    'sha': sha,
-  };
+        'ref': ref,
+        'sha': sha,
+      };
 }
 
 /// The stack information associated with a pull request.
 class PullRequestStack {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required object value serialized in the `base` wire field.
   final PullRequestStackBase base_;
+
   /// The total number of pull requests in the stack.
   final SdkOptional<int> size;
+
   /// The one-based position of this pull request within the stack, where 1 is the bottom of the stack.
   final SdkOptional<int> position;
+
   /// The ID of the stack that this pull request belongs to.
   final SdkOptional<int> id;
+
   /// The number of the stack that this pull request belongs to.
   final SdkOptional<int> number;
 
-  const PullRequestStack({required this.base_, this.size = const SdkOmitted(), this.position = const SdkOmitted(), this.id = const SdkOmitted(), this.number = const SdkOmitted()});
+  const PullRequestStack(
+      {required this.base_,
+      this.size = const SdkOmitted(),
+      this.position = const SdkOmitted(),
+      this.id = const SdkOmitted(),
+      this.number = const SdkOmitted()});
 
-  PullRequestStack Function({PullRequestStackBase base_, SdkOptional<int> size, SdkOptional<int> position, SdkOptional<int> id, SdkOptional<int> number}) get copyWith => _copyWith;
+  PullRequestStack Function(
+      {PullRequestStackBase base_,
+      SdkOptional<int> size,
+      SdkOptional<int> position,
+      SdkOptional<int> id,
+      SdkOptional<int> number}) get copyWith => _copyWith;
 
-  PullRequestStack _copyWith({Object? base_ = sdkOmittedValue, Object? size = sdkOmittedValue, Object? position = sdkOmittedValue, Object? id = sdkOmittedValue, Object? number = sdkOmittedValue}) => PullRequestStack(
-    base_: identical(base_, sdkOmittedValue) ? this.base_ : base_ as PullRequestStackBase,
-    size: identical(size, sdkOmittedValue) ? this.size : size as SdkOptional<int>,
-    position: identical(position, sdkOmittedValue) ? this.position : position as SdkOptional<int>,
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-    number: identical(number, sdkOmittedValue) ? this.number : number as SdkOptional<int>,
-  );
+  PullRequestStack _copyWith(
+          {Object? base_ = sdkOmittedValue,
+          Object? size = sdkOmittedValue,
+          Object? position = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? number = sdkOmittedValue}) =>
+      PullRequestStack(
+        base_: identical(base_, sdkOmittedValue)
+            ? this.base_
+            : base_ as PullRequestStackBase,
+        size: identical(size, sdkOmittedValue)
+            ? this.size
+            : size as SdkOptional<int>,
+        position: identical(position, sdkOmittedValue)
+            ? this.position
+            : position as SdkOptional<int>,
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+        number: identical(number, sdkOmittedValue)
+            ? this.number
+            : number as SdkOptional<int>,
+      );
 
-  factory PullRequestStack.fromJson(Map<String, dynamic> json) => PullRequestStack(
-    base_: (json['base'] != null ? PullRequestStackBase.fromJson(json['base'] as Map<String, dynamic>) : null)!,
-    size: json['size'] != null ? SdkPresent(((json['size'] as num?)?.toInt())!) : const SdkOmitted(),
-    position: json['position'] != null ? SdkPresent(((json['position'] as num?)?.toInt())!) : const SdkOmitted(),
-    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
-    number: json['number'] != null ? SdkPresent(((json['number'] as num?)?.toInt())!) : const SdkOmitted(),
-  );
+  factory PullRequestStack.fromJson(Map<String, dynamic> json) =>
+      PullRequestStack(
+        base_: (json['base'] != null
+            ? PullRequestStackBase.fromJson(
+                json['base'] as Map<String, dynamic>)
+            : null)!,
+        size: json['size'] != null
+            ? SdkPresent(((json['size'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        position: json['position'] != null
+            ? SdkPresent(((json['position'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        number: json['number'] != null
+            ? SdkPresent(((json['number'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'base': base_.toJson(),
-    ...switch (size) {
-      SdkPresent<int>(value: final value) => {'size': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (position) {
-      SdkPresent<int>(value: final value) => {'position': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (id) {
-      SdkPresent<int>(value: final value) => {'id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (number) {
-      SdkPresent<int>(value: final value) => {'number': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'base': base_.toJson(),
+        ...switch (size) {
+          SdkPresent<int>(value: final value) => {
+              'size': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (position) {
+          SdkPresent<int>(value: final value) => {
+              'position': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (number) {
+          SdkPresent<int>(value: final value) => {
+              'number': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

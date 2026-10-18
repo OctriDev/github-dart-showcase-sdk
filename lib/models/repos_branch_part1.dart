@@ -8,216 +8,308 @@ part of 'repos_branch.dart';
 class BranchProtectionRequiredLinearHistory {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `boolean` value serialized in the `enabled` wire field.
   final SdkOptional<bool> enabled;
 
-  const BranchProtectionRequiredLinearHistory({this.enabled = const SdkOmitted()});
+  const BranchProtectionRequiredLinearHistory(
+      {this.enabled = const SdkOmitted()});
 
-  BranchProtectionRequiredLinearHistory Function({SdkOptional<bool> enabled}) get copyWith => _copyWith;
+  BranchProtectionRequiredLinearHistory Function({SdkOptional<bool> enabled})
+      get copyWith => _copyWith;
 
-  BranchProtectionRequiredLinearHistory _copyWith({Object? enabled = sdkOmittedValue}) => BranchProtectionRequiredLinearHistory(
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as SdkOptional<bool>,
-  );
+  BranchProtectionRequiredLinearHistory _copyWith(
+          {Object? enabled = sdkOmittedValue}) =>
+      BranchProtectionRequiredLinearHistory(
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as SdkOptional<bool>,
+      );
 
-  factory BranchProtectionRequiredLinearHistory.fromJson(Map<String, dynamic> json) => BranchProtectionRequiredLinearHistory(
-    enabled: json['enabled'] != null ? SdkPresent((json['enabled'] as bool?)!) : const SdkOmitted(),
-  );
+  factory BranchProtectionRequiredLinearHistory.fromJson(
+          Map<String, dynamic> json) =>
+      BranchProtectionRequiredLinearHistory(
+        enabled: json['enabled'] != null
+            ? SdkPresent((json['enabled'] as bool?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (enabled) {
-      SdkPresent<bool>(value: final value) => {'enabled': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (enabled) {
+          SdkPresent<bool>(value: final value) => {
+              'enabled': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Optional object value serialized in the `allow_force_pushes` wire field.
 class BranchProtectionAllowForcePushes {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `boolean` value serialized in the `enabled` wire field.
   final SdkOptional<bool> enabled;
 
   const BranchProtectionAllowForcePushes({this.enabled = const SdkOmitted()});
 
-  BranchProtectionAllowForcePushes Function({SdkOptional<bool> enabled}) get copyWith => _copyWith;
+  BranchProtectionAllowForcePushes Function({SdkOptional<bool> enabled})
+      get copyWith => _copyWith;
 
-  BranchProtectionAllowForcePushes _copyWith({Object? enabled = sdkOmittedValue}) => BranchProtectionAllowForcePushes(
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as SdkOptional<bool>,
-  );
+  BranchProtectionAllowForcePushes _copyWith(
+          {Object? enabled = sdkOmittedValue}) =>
+      BranchProtectionAllowForcePushes(
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as SdkOptional<bool>,
+      );
 
-  factory BranchProtectionAllowForcePushes.fromJson(Map<String, dynamic> json) => BranchProtectionAllowForcePushes(
-    enabled: json['enabled'] != null ? SdkPresent((json['enabled'] as bool?)!) : const SdkOmitted(),
-  );
+  factory BranchProtectionAllowForcePushes.fromJson(
+          Map<String, dynamic> json) =>
+      BranchProtectionAllowForcePushes(
+        enabled: json['enabled'] != null
+            ? SdkPresent((json['enabled'] as bool?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (enabled) {
-      SdkPresent<bool>(value: final value) => {'enabled': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (enabled) {
+          SdkPresent<bool>(value: final value) => {
+              'enabled': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Optional object value serialized in the `allow_deletions` wire field.
 class BranchProtectionAllowDeletions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `boolean` value serialized in the `enabled` wire field.
   final SdkOptional<bool> enabled;
 
   const BranchProtectionAllowDeletions({this.enabled = const SdkOmitted()});
 
-  BranchProtectionAllowDeletions Function({SdkOptional<bool> enabled}) get copyWith => _copyWith;
+  BranchProtectionAllowDeletions Function({SdkOptional<bool> enabled})
+      get copyWith => _copyWith;
 
-  BranchProtectionAllowDeletions _copyWith({Object? enabled = sdkOmittedValue}) => BranchProtectionAllowDeletions(
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as SdkOptional<bool>,
-  );
+  BranchProtectionAllowDeletions _copyWith(
+          {Object? enabled = sdkOmittedValue}) =>
+      BranchProtectionAllowDeletions(
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as SdkOptional<bool>,
+      );
 
-  factory BranchProtectionAllowDeletions.fromJson(Map<String, dynamic> json) => BranchProtectionAllowDeletions(
-    enabled: json['enabled'] != null ? SdkPresent((json['enabled'] as bool?)!) : const SdkOmitted(),
-  );
+  factory BranchProtectionAllowDeletions.fromJson(Map<String, dynamic> json) =>
+      BranchProtectionAllowDeletions(
+        enabled: json['enabled'] != null
+            ? SdkPresent((json['enabled'] as bool?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (enabled) {
-      SdkPresent<bool>(value: final value) => {'enabled': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (enabled) {
+          SdkPresent<bool>(value: final value) => {
+              'enabled': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Optional object value serialized in the `block_creations` wire field.
 class BranchProtectionBlockCreations {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `boolean` value serialized in the `enabled` wire field.
   final SdkOptional<bool> enabled;
 
   const BranchProtectionBlockCreations({this.enabled = const SdkOmitted()});
 
-  BranchProtectionBlockCreations Function({SdkOptional<bool> enabled}) get copyWith => _copyWith;
+  BranchProtectionBlockCreations Function({SdkOptional<bool> enabled})
+      get copyWith => _copyWith;
 
-  BranchProtectionBlockCreations _copyWith({Object? enabled = sdkOmittedValue}) => BranchProtectionBlockCreations(
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as SdkOptional<bool>,
-  );
+  BranchProtectionBlockCreations _copyWith(
+          {Object? enabled = sdkOmittedValue}) =>
+      BranchProtectionBlockCreations(
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as SdkOptional<bool>,
+      );
 
-  factory BranchProtectionBlockCreations.fromJson(Map<String, dynamic> json) => BranchProtectionBlockCreations(
-    enabled: json['enabled'] != null ? SdkPresent((json['enabled'] as bool?)!) : const SdkOmitted(),
-  );
+  factory BranchProtectionBlockCreations.fromJson(Map<String, dynamic> json) =>
+      BranchProtectionBlockCreations(
+        enabled: json['enabled'] != null
+            ? SdkPresent((json['enabled'] as bool?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (enabled) {
-      SdkPresent<bool>(value: final value) => {'enabled': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (enabled) {
+          SdkPresent<bool>(value: final value) => {
+              'enabled': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Optional object value serialized in the `required_conversation_resolution` wire field.
 class BranchProtectionRequiredConversationResolution {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `boolean` value serialized in the `enabled` wire field.
   final SdkOptional<bool> enabled;
 
-  const BranchProtectionRequiredConversationResolution({this.enabled = const SdkOmitted()});
+  const BranchProtectionRequiredConversationResolution(
+      {this.enabled = const SdkOmitted()});
 
-  BranchProtectionRequiredConversationResolution Function({SdkOptional<bool> enabled}) get copyWith => _copyWith;
+  BranchProtectionRequiredConversationResolution Function(
+      {SdkOptional<bool> enabled}) get copyWith => _copyWith;
 
-  BranchProtectionRequiredConversationResolution _copyWith({Object? enabled = sdkOmittedValue}) => BranchProtectionRequiredConversationResolution(
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as SdkOptional<bool>,
-  );
+  BranchProtectionRequiredConversationResolution _copyWith(
+          {Object? enabled = sdkOmittedValue}) =>
+      BranchProtectionRequiredConversationResolution(
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as SdkOptional<bool>,
+      );
 
-  factory BranchProtectionRequiredConversationResolution.fromJson(Map<String, dynamic> json) => BranchProtectionRequiredConversationResolution(
-    enabled: json['enabled'] != null ? SdkPresent((json['enabled'] as bool?)!) : const SdkOmitted(),
-  );
+  factory BranchProtectionRequiredConversationResolution.fromJson(
+          Map<String, dynamic> json) =>
+      BranchProtectionRequiredConversationResolution(
+        enabled: json['enabled'] != null
+            ? SdkPresent((json['enabled'] as bool?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (enabled) {
-      SdkPresent<bool>(value: final value) => {'enabled': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (enabled) {
+          SdkPresent<bool>(value: final value) => {
+              'enabled': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Optional object value serialized in the `required_signatures` wire field.
 class BranchProtectionRequiredSignatures {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
+
   /// Required `boolean` value serialized in the `enabled` wire field.
   final bool enabled;
 
-  const BranchProtectionRequiredSignatures({required this.url, required this.enabled});
+  const BranchProtectionRequiredSignatures(
+      {required this.url, required this.enabled});
 
-  BranchProtectionRequiredSignatures Function({String url, bool enabled}) get copyWith => _copyWith;
+  BranchProtectionRequiredSignatures Function({String url, bool enabled})
+      get copyWith => _copyWith;
 
-  BranchProtectionRequiredSignatures _copyWith({Object? url = sdkOmittedValue, Object? enabled = sdkOmittedValue}) => BranchProtectionRequiredSignatures(
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as bool,
-  );
+  BranchProtectionRequiredSignatures _copyWith(
+          {Object? url = sdkOmittedValue, Object? enabled = sdkOmittedValue}) =>
+      BranchProtectionRequiredSignatures(
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as bool,
+      );
 
-  factory BranchProtectionRequiredSignatures.fromJson(Map<String, dynamic> json) => BranchProtectionRequiredSignatures(
-    url: (json['url'] as String?)!,
-    enabled: (json['enabled'] as bool?)!,
-  );
+  factory BranchProtectionRequiredSignatures.fromJson(
+          Map<String, dynamic> json) =>
+      BranchProtectionRequiredSignatures(
+        url: (json['url'] as String?)!,
+        enabled: (json['enabled'] as bool?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'url': url,
-    'enabled': enabled,
-  };
+        'url': url,
+        'enabled': enabled,
+      };
 }
 
 /// Whether to set the branch as read-only. If this is true, users will not be able to push to the branch.
 class BranchProtectionLockBranch {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `boolean` value serialized in the `enabled` wire field.
   final SdkOptional<bool> enabled;
 
   const BranchProtectionLockBranch({this.enabled = const SdkOmitted()});
 
-  BranchProtectionLockBranch Function({SdkOptional<bool> enabled}) get copyWith => _copyWith;
+  BranchProtectionLockBranch Function({SdkOptional<bool> enabled})
+      get copyWith => _copyWith;
 
-  BranchProtectionLockBranch _copyWith({Object? enabled = sdkOmittedValue}) => BranchProtectionLockBranch(
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as SdkOptional<bool>,
-  );
+  BranchProtectionLockBranch _copyWith({Object? enabled = sdkOmittedValue}) =>
+      BranchProtectionLockBranch(
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as SdkOptional<bool>,
+      );
 
-  factory BranchProtectionLockBranch.fromJson(Map<String, dynamic> json) => BranchProtectionLockBranch(
-    enabled: json['enabled'] != null ? SdkPresent((json['enabled'] as bool?)!) : const SdkOmitted(),
-  );
+  factory BranchProtectionLockBranch.fromJson(Map<String, dynamic> json) =>
+      BranchProtectionLockBranch(
+        enabled: json['enabled'] != null
+            ? SdkPresent((json['enabled'] as bool?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (enabled) {
-      SdkPresent<bool>(value: final value) => {'enabled': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (enabled) {
+          SdkPresent<bool>(value: final value) => {
+              'enabled': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Whether users can pull changes from upstream when the branch is locked. Set to `true` to allow fork syncing. Set to `false` to prevent fork syncing.
 class BranchProtectionAllowForkSyncing {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `boolean` value serialized in the `enabled` wire field.
   final SdkOptional<bool> enabled;
 
   const BranchProtectionAllowForkSyncing({this.enabled = const SdkOmitted()});
 
-  BranchProtectionAllowForkSyncing Function({SdkOptional<bool> enabled}) get copyWith => _copyWith;
+  BranchProtectionAllowForkSyncing Function({SdkOptional<bool> enabled})
+      get copyWith => _copyWith;
 
-  BranchProtectionAllowForkSyncing _copyWith({Object? enabled = sdkOmittedValue}) => BranchProtectionAllowForkSyncing(
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as SdkOptional<bool>,
-  );
+  BranchProtectionAllowForkSyncing _copyWith(
+          {Object? enabled = sdkOmittedValue}) =>
+      BranchProtectionAllowForkSyncing(
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as SdkOptional<bool>,
+      );
 
-  factory BranchProtectionAllowForkSyncing.fromJson(Map<String, dynamic> json) => BranchProtectionAllowForkSyncing(
-    enabled: json['enabled'] != null ? SdkPresent((json['enabled'] as bool?)!) : const SdkOmitted(),
-  );
+  factory BranchProtectionAllowForkSyncing.fromJson(
+          Map<String, dynamic> json) =>
+      BranchProtectionAllowForkSyncing(
+        enabled: json['enabled'] != null
+            ? SdkPresent((json['enabled'] as bool?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (enabled) {
-      SdkPresent<bool>(value: final value) => {'enabled': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (enabled) {
+          SdkPresent<bool>(value: final value) => {
+              'enabled': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

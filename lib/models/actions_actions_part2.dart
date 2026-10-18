@@ -8,114 +8,170 @@ part of 'actions_actions.dart';
 class ActionsCacheStorageLimitForRepository {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The maximum total cache size for this repository, in gigabytes.
   final SdkOptional<int> maxCacheSizeGb;
 
-  const ActionsCacheStorageLimitForRepository({this.maxCacheSizeGb = const SdkOmitted()});
+  const ActionsCacheStorageLimitForRepository(
+      {this.maxCacheSizeGb = const SdkOmitted()});
 
-  ActionsCacheStorageLimitForRepository Function({SdkOptional<int> maxCacheSizeGb}) get copyWith => _copyWith;
+  ActionsCacheStorageLimitForRepository Function(
+      {SdkOptional<int> maxCacheSizeGb}) get copyWith => _copyWith;
 
-  ActionsCacheStorageLimitForRepository _copyWith({Object? maxCacheSizeGb = sdkOmittedValue}) => ActionsCacheStorageLimitForRepository(
-    maxCacheSizeGb: identical(maxCacheSizeGb, sdkOmittedValue) ? this.maxCacheSizeGb : maxCacheSizeGb as SdkOptional<int>,
-  );
+  ActionsCacheStorageLimitForRepository _copyWith(
+          {Object? maxCacheSizeGb = sdkOmittedValue}) =>
+      ActionsCacheStorageLimitForRepository(
+        maxCacheSizeGb: identical(maxCacheSizeGb, sdkOmittedValue)
+            ? this.maxCacheSizeGb
+            : maxCacheSizeGb as SdkOptional<int>,
+      );
 
-  factory ActionsCacheStorageLimitForRepository.fromJson(Map<String, dynamic> json) => ActionsCacheStorageLimitForRepository(
-    maxCacheSizeGb: json['max_cache_size_gb'] != null ? SdkPresent(((json['max_cache_size_gb'] as num?)?.toInt())!) : const SdkOmitted(),
-  );
+  factory ActionsCacheStorageLimitForRepository.fromJson(
+          Map<String, dynamic> json) =>
+      ActionsCacheStorageLimitForRepository(
+        maxCacheSizeGb: json['max_cache_size_gb'] != null
+            ? SdkPresent(((json['max_cache_size_gb'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (maxCacheSizeGb) {
-      SdkPresent<int>(value: final value) => {'max_cache_size_gb': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (maxCacheSizeGb) {
+          SdkPresent<int>(value: final value) => {
+              'max_cache_size_gb': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// GitHub Actions Cache Usage by repository.
 class ActionsCacheUsageByRepository {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The repository owner and name for the cache usage being shown.
   final String fullName;
+
   /// The sum of the size in bytes of all the active cache items in the repository.
   final int activeCachesSizeInBytes;
+
   /// The number of active caches in the repository.
   final int activeCachesCount;
 
-  const ActionsCacheUsageByRepository({required this.fullName, required this.activeCachesSizeInBytes, required this.activeCachesCount});
+  const ActionsCacheUsageByRepository(
+      {required this.fullName,
+      required this.activeCachesSizeInBytes,
+      required this.activeCachesCount});
 
-  ActionsCacheUsageByRepository Function({String fullName, int activeCachesSizeInBytes, int activeCachesCount}) get copyWith => _copyWith;
+  ActionsCacheUsageByRepository Function(
+      {String fullName,
+      int activeCachesSizeInBytes,
+      int activeCachesCount}) get copyWith => _copyWith;
 
-  ActionsCacheUsageByRepository _copyWith({Object? fullName = sdkOmittedValue, Object? activeCachesSizeInBytes = sdkOmittedValue, Object? activeCachesCount = sdkOmittedValue}) => ActionsCacheUsageByRepository(
-    fullName: identical(fullName, sdkOmittedValue) ? this.fullName : fullName as String,
-    activeCachesSizeInBytes: identical(activeCachesSizeInBytes, sdkOmittedValue) ? this.activeCachesSizeInBytes : activeCachesSizeInBytes as int,
-    activeCachesCount: identical(activeCachesCount, sdkOmittedValue) ? this.activeCachesCount : activeCachesCount as int,
-  );
+  ActionsCacheUsageByRepository _copyWith(
+          {Object? fullName = sdkOmittedValue,
+          Object? activeCachesSizeInBytes = sdkOmittedValue,
+          Object? activeCachesCount = sdkOmittedValue}) =>
+      ActionsCacheUsageByRepository(
+        fullName: identical(fullName, sdkOmittedValue)
+            ? this.fullName
+            : fullName as String,
+        activeCachesSizeInBytes:
+            identical(activeCachesSizeInBytes, sdkOmittedValue)
+                ? this.activeCachesSizeInBytes
+                : activeCachesSizeInBytes as int,
+        activeCachesCount: identical(activeCachesCount, sdkOmittedValue)
+            ? this.activeCachesCount
+            : activeCachesCount as int,
+      );
 
-  factory ActionsCacheUsageByRepository.fromJson(Map<String, dynamic> json) => ActionsCacheUsageByRepository(
-    fullName: (json['full_name'] as String?)!,
-    activeCachesSizeInBytes: ((json['active_caches_size_in_bytes'] as num?)?.toInt())!,
-    activeCachesCount: ((json['active_caches_count'] as num?)?.toInt())!,
-  );
+  factory ActionsCacheUsageByRepository.fromJson(Map<String, dynamic> json) =>
+      ActionsCacheUsageByRepository(
+        fullName: (json['full_name'] as String?)!,
+        activeCachesSizeInBytes:
+            ((json['active_caches_size_in_bytes'] as num?)?.toInt())!,
+        activeCachesCount: ((json['active_caches_count'] as num?)?.toInt())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'full_name': fullName,
-    'active_caches_size_in_bytes': activeCachesSizeInBytes,
-    'active_caches_count': activeCachesCount,
-  };
+        'full_name': fullName,
+        'active_caches_size_in_bytes': activeCachesSizeInBytes,
+        'active_caches_count': activeCachesCount,
+      };
 }
 
 /// Typed representation of the `ActionsCacheUsageOrgEnterprise` API schema.
 class ActionsCacheUsageOrgEnterprise {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The count of active caches across all repositories of an enterprise or an organization.
   final int totalActiveCachesCount;
+
   /// The total size in bytes of all active cache items across all repositories of an enterprise or an organization.
   final int totalActiveCachesSizeInBytes;
 
-  const ActionsCacheUsageOrgEnterprise({required this.totalActiveCachesCount, required this.totalActiveCachesSizeInBytes});
+  const ActionsCacheUsageOrgEnterprise(
+      {required this.totalActiveCachesCount,
+      required this.totalActiveCachesSizeInBytes});
 
-  ActionsCacheUsageOrgEnterprise Function({int totalActiveCachesCount, int totalActiveCachesSizeInBytes}) get copyWith => _copyWith;
+  ActionsCacheUsageOrgEnterprise Function(
+      {int totalActiveCachesCount,
+      int totalActiveCachesSizeInBytes}) get copyWith => _copyWith;
 
-  ActionsCacheUsageOrgEnterprise _copyWith({Object? totalActiveCachesCount = sdkOmittedValue, Object? totalActiveCachesSizeInBytes = sdkOmittedValue}) => ActionsCacheUsageOrgEnterprise(
-    totalActiveCachesCount: identical(totalActiveCachesCount, sdkOmittedValue) ? this.totalActiveCachesCount : totalActiveCachesCount as int,
-    totalActiveCachesSizeInBytes: identical(totalActiveCachesSizeInBytes, sdkOmittedValue) ? this.totalActiveCachesSizeInBytes : totalActiveCachesSizeInBytes as int,
-  );
+  ActionsCacheUsageOrgEnterprise _copyWith(
+          {Object? totalActiveCachesCount = sdkOmittedValue,
+          Object? totalActiveCachesSizeInBytes = sdkOmittedValue}) =>
+      ActionsCacheUsageOrgEnterprise(
+        totalActiveCachesCount:
+            identical(totalActiveCachesCount, sdkOmittedValue)
+                ? this.totalActiveCachesCount
+                : totalActiveCachesCount as int,
+        totalActiveCachesSizeInBytes:
+            identical(totalActiveCachesSizeInBytes, sdkOmittedValue)
+                ? this.totalActiveCachesSizeInBytes
+                : totalActiveCachesSizeInBytes as int,
+      );
 
-  factory ActionsCacheUsageOrgEnterprise.fromJson(Map<String, dynamic> json) => ActionsCacheUsageOrgEnterprise(
-    totalActiveCachesCount: ((json['total_active_caches_count'] as num?)?.toInt())!,
-    totalActiveCachesSizeInBytes: ((json['total_active_caches_size_in_bytes'] as num?)?.toInt())!,
-  );
+  factory ActionsCacheUsageOrgEnterprise.fromJson(Map<String, dynamic> json) =>
+      ActionsCacheUsageOrgEnterprise(
+        totalActiveCachesCount:
+            ((json['total_active_caches_count'] as num?)?.toInt())!,
+        totalActiveCachesSizeInBytes:
+            ((json['total_active_caches_size_in_bytes'] as num?)?.toInt())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'total_active_caches_count': totalActiveCachesCount,
-    'total_active_caches_size_in_bytes': totalActiveCachesSizeInBytes,
-  };
+        'total_active_caches_count': totalActiveCachesCount,
+        'total_active_caches_size_in_bytes': totalActiveCachesSizeInBytes,
+      };
 }
 
 // ActionsCanApprovePullRequestReviews = bool
 
 /// The default workflow permissions granted to the GITHUB_TOKEN when running workflows.
 final class ActionsDefaultWorkflowPermissions {
-
   final String value;
 
   const ActionsDefaultWorkflowPermissions._(this.value);
 
-  factory ActionsDefaultWorkflowPermissions.fromJson(String value) => ActionsDefaultWorkflowPermissions._(value);
+  factory ActionsDefaultWorkflowPermissions.fromJson(String value) =>
+      ActionsDefaultWorkflowPermissions._(value);
 
   static const read = ActionsDefaultWorkflowPermissions._('read');
   static const write = ActionsDefaultWorkflowPermissions._('write');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ActionsDefaultWorkflowPermissions && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ActionsDefaultWorkflowPermissions && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 // ActionsEnabled = bool
@@ -124,138 +180,257 @@ final class ActionsDefaultWorkflowPermissions {
 class ActionsForkPrContributorApproval {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The policy that controls when fork PR workflows require approval from a maintainer.
   final ActionsForkPrContributorApprovalApprovalPolicy approvalPolicy;
 
   const ActionsForkPrContributorApproval({required this.approvalPolicy});
 
-  ActionsForkPrContributorApproval Function({ActionsForkPrContributorApprovalApprovalPolicy approvalPolicy}) get copyWith => _copyWith;
+  ActionsForkPrContributorApproval Function(
+          {ActionsForkPrContributorApprovalApprovalPolicy approvalPolicy})
+      get copyWith => _copyWith;
 
-  ActionsForkPrContributorApproval _copyWith({Object? approvalPolicy = sdkOmittedValue}) => ActionsForkPrContributorApproval(
-    approvalPolicy: identical(approvalPolicy, sdkOmittedValue) ? this.approvalPolicy : approvalPolicy as ActionsForkPrContributorApprovalApprovalPolicy,
-  );
+  ActionsForkPrContributorApproval _copyWith(
+          {Object? approvalPolicy = sdkOmittedValue}) =>
+      ActionsForkPrContributorApproval(
+        approvalPolicy: identical(approvalPolicy, sdkOmittedValue)
+            ? this.approvalPolicy
+            : approvalPolicy as ActionsForkPrContributorApprovalApprovalPolicy,
+      );
 
-  factory ActionsForkPrContributorApproval.fromJson(Map<String, dynamic> json) => ActionsForkPrContributorApproval(
-    approvalPolicy: (json['approval_policy'] != null ? ActionsForkPrContributorApprovalApprovalPolicy.fromJson(json['approval_policy'] as String) : null)!,
-  );
+  factory ActionsForkPrContributorApproval.fromJson(
+          Map<String, dynamic> json) =>
+      ActionsForkPrContributorApproval(
+        approvalPolicy: (json['approval_policy'] != null
+            ? ActionsForkPrContributorApprovalApprovalPolicy.fromJson(
+                json['approval_policy'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'approval_policy': approvalPolicy.toJson(),
-  };
+        'approval_policy': approvalPolicy.toJson(),
+      };
 }
 
 /// Typed representation of the `ActionsForkPrWorkflowsPrivateRepos` API schema.
 class ActionsForkPrWorkflowsPrivateRepos {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Whether workflows triggered by pull requests from forks are allowed to run on private repositories.
   final bool runWorkflowsFromForkPullRequests;
+
   /// Whether GitHub Actions can create pull requests or submit approving pull request reviews from a workflow triggered by a fork pull request.
   final bool sendWriteTokensToWorkflows;
+
   /// Whether to make secrets and variables available to workflows triggered by pull requests from forks.
   final bool sendSecretsAndVariables;
+
   /// Whether workflows triggered by pull requests from forks require approval from a repository administrator to run.
   final bool requireApprovalForForkPrWorkflows;
 
-  const ActionsForkPrWorkflowsPrivateRepos({required this.runWorkflowsFromForkPullRequests, required this.sendWriteTokensToWorkflows, required this.sendSecretsAndVariables, required this.requireApprovalForForkPrWorkflows});
+  const ActionsForkPrWorkflowsPrivateRepos(
+      {required this.runWorkflowsFromForkPullRequests,
+      required this.sendWriteTokensToWorkflows,
+      required this.sendSecretsAndVariables,
+      required this.requireApprovalForForkPrWorkflows});
 
-  ActionsForkPrWorkflowsPrivateRepos Function({bool runWorkflowsFromForkPullRequests, bool sendWriteTokensToWorkflows, bool sendSecretsAndVariables, bool requireApprovalForForkPrWorkflows}) get copyWith => _copyWith;
+  ActionsForkPrWorkflowsPrivateRepos Function(
+      {bool runWorkflowsFromForkPullRequests,
+      bool sendWriteTokensToWorkflows,
+      bool sendSecretsAndVariables,
+      bool requireApprovalForForkPrWorkflows}) get copyWith => _copyWith;
 
-  ActionsForkPrWorkflowsPrivateRepos _copyWith({Object? runWorkflowsFromForkPullRequests = sdkOmittedValue, Object? sendWriteTokensToWorkflows = sdkOmittedValue, Object? sendSecretsAndVariables = sdkOmittedValue, Object? requireApprovalForForkPrWorkflows = sdkOmittedValue}) => ActionsForkPrWorkflowsPrivateRepos(
-    runWorkflowsFromForkPullRequests: identical(runWorkflowsFromForkPullRequests, sdkOmittedValue) ? this.runWorkflowsFromForkPullRequests : runWorkflowsFromForkPullRequests as bool,
-    sendWriteTokensToWorkflows: identical(sendWriteTokensToWorkflows, sdkOmittedValue) ? this.sendWriteTokensToWorkflows : sendWriteTokensToWorkflows as bool,
-    sendSecretsAndVariables: identical(sendSecretsAndVariables, sdkOmittedValue) ? this.sendSecretsAndVariables : sendSecretsAndVariables as bool,
-    requireApprovalForForkPrWorkflows: identical(requireApprovalForForkPrWorkflows, sdkOmittedValue) ? this.requireApprovalForForkPrWorkflows : requireApprovalForForkPrWorkflows as bool,
-  );
+  ActionsForkPrWorkflowsPrivateRepos _copyWith(
+          {Object? runWorkflowsFromForkPullRequests = sdkOmittedValue,
+          Object? sendWriteTokensToWorkflows = sdkOmittedValue,
+          Object? sendSecretsAndVariables = sdkOmittedValue,
+          Object? requireApprovalForForkPrWorkflows = sdkOmittedValue}) =>
+      ActionsForkPrWorkflowsPrivateRepos(
+        runWorkflowsFromForkPullRequests:
+            identical(runWorkflowsFromForkPullRequests, sdkOmittedValue)
+                ? this.runWorkflowsFromForkPullRequests
+                : runWorkflowsFromForkPullRequests as bool,
+        sendWriteTokensToWorkflows:
+            identical(sendWriteTokensToWorkflows, sdkOmittedValue)
+                ? this.sendWriteTokensToWorkflows
+                : sendWriteTokensToWorkflows as bool,
+        sendSecretsAndVariables:
+            identical(sendSecretsAndVariables, sdkOmittedValue)
+                ? this.sendSecretsAndVariables
+                : sendSecretsAndVariables as bool,
+        requireApprovalForForkPrWorkflows:
+            identical(requireApprovalForForkPrWorkflows, sdkOmittedValue)
+                ? this.requireApprovalForForkPrWorkflows
+                : requireApprovalForForkPrWorkflows as bool,
+      );
 
-  factory ActionsForkPrWorkflowsPrivateRepos.fromJson(Map<String, dynamic> json) => ActionsForkPrWorkflowsPrivateRepos(
-    runWorkflowsFromForkPullRequests: (json['run_workflows_from_fork_pull_requests'] as bool?)!,
-    sendWriteTokensToWorkflows: (json['send_write_tokens_to_workflows'] as bool?)!,
-    sendSecretsAndVariables: (json['send_secrets_and_variables'] as bool?)!,
-    requireApprovalForForkPrWorkflows: (json['require_approval_for_fork_pr_workflows'] as bool?)!,
-  );
+  factory ActionsForkPrWorkflowsPrivateRepos.fromJson(
+          Map<String, dynamic> json) =>
+      ActionsForkPrWorkflowsPrivateRepos(
+        runWorkflowsFromForkPullRequests:
+            (json['run_workflows_from_fork_pull_requests'] as bool?)!,
+        sendWriteTokensToWorkflows:
+            (json['send_write_tokens_to_workflows'] as bool?)!,
+        sendSecretsAndVariables: (json['send_secrets_and_variables'] as bool?)!,
+        requireApprovalForForkPrWorkflows:
+            (json['require_approval_for_fork_pr_workflows'] as bool?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'run_workflows_from_fork_pull_requests': runWorkflowsFromForkPullRequests,
-    'send_write_tokens_to_workflows': sendWriteTokensToWorkflows,
-    'send_secrets_and_variables': sendSecretsAndVariables,
-    'require_approval_for_fork_pr_workflows': requireApprovalForForkPrWorkflows,
-  };
+        'run_workflows_from_fork_pull_requests':
+            runWorkflowsFromForkPullRequests,
+        'send_write_tokens_to_workflows': sendWriteTokensToWorkflows,
+        'send_secrets_and_variables': sendSecretsAndVariables,
+        'require_approval_for_fork_pr_workflows':
+            requireApprovalForForkPrWorkflows,
+      };
 }
 
 /// Typed representation of the `ActionsForkPrWorkflowsPrivateReposRequest` API schema.
 class ActionsForkPrWorkflowsPrivateReposRequest {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Whether workflows triggered by pull requests from forks are allowed to run on private repositories.
   final bool runWorkflowsFromForkPullRequests;
+
   /// Whether GitHub Actions can create pull requests or submit approving pull request reviews from a workflow triggered by a fork pull request.
   final SdkOptional<bool> sendWriteTokensToWorkflows;
+
   /// Whether to make secrets and variables available to workflows triggered by pull requests from forks.
   final SdkOptional<bool> sendSecretsAndVariables;
+
   /// Whether workflows triggered by pull requests from forks require approval from a repository administrator to run.
   final SdkOptional<bool> requireApprovalForForkPrWorkflows;
 
-  const ActionsForkPrWorkflowsPrivateReposRequest({required this.runWorkflowsFromForkPullRequests, this.sendWriteTokensToWorkflows = const SdkOmitted(), this.sendSecretsAndVariables = const SdkOmitted(), this.requireApprovalForForkPrWorkflows = const SdkOmitted()});
+  const ActionsForkPrWorkflowsPrivateReposRequest(
+      {required this.runWorkflowsFromForkPullRequests,
+      this.sendWriteTokensToWorkflows = const SdkOmitted(),
+      this.sendSecretsAndVariables = const SdkOmitted(),
+      this.requireApprovalForForkPrWorkflows = const SdkOmitted()});
 
-  ActionsForkPrWorkflowsPrivateReposRequest Function({bool runWorkflowsFromForkPullRequests, SdkOptional<bool> sendWriteTokensToWorkflows, SdkOptional<bool> sendSecretsAndVariables, SdkOptional<bool> requireApprovalForForkPrWorkflows}) get copyWith => _copyWith;
+  ActionsForkPrWorkflowsPrivateReposRequest Function(
+          {bool runWorkflowsFromForkPullRequests,
+          SdkOptional<bool> sendWriteTokensToWorkflows,
+          SdkOptional<bool> sendSecretsAndVariables,
+          SdkOptional<bool> requireApprovalForForkPrWorkflows})
+      get copyWith => _copyWith;
 
-  ActionsForkPrWorkflowsPrivateReposRequest _copyWith({Object? runWorkflowsFromForkPullRequests = sdkOmittedValue, Object? sendWriteTokensToWorkflows = sdkOmittedValue, Object? sendSecretsAndVariables = sdkOmittedValue, Object? requireApprovalForForkPrWorkflows = sdkOmittedValue}) => ActionsForkPrWorkflowsPrivateReposRequest(
-    runWorkflowsFromForkPullRequests: identical(runWorkflowsFromForkPullRequests, sdkOmittedValue) ? this.runWorkflowsFromForkPullRequests : runWorkflowsFromForkPullRequests as bool,
-    sendWriteTokensToWorkflows: identical(sendWriteTokensToWorkflows, sdkOmittedValue) ? this.sendWriteTokensToWorkflows : sendWriteTokensToWorkflows as SdkOptional<bool>,
-    sendSecretsAndVariables: identical(sendSecretsAndVariables, sdkOmittedValue) ? this.sendSecretsAndVariables : sendSecretsAndVariables as SdkOptional<bool>,
-    requireApprovalForForkPrWorkflows: identical(requireApprovalForForkPrWorkflows, sdkOmittedValue) ? this.requireApprovalForForkPrWorkflows : requireApprovalForForkPrWorkflows as SdkOptional<bool>,
-  );
+  ActionsForkPrWorkflowsPrivateReposRequest _copyWith(
+          {Object? runWorkflowsFromForkPullRequests = sdkOmittedValue,
+          Object? sendWriteTokensToWorkflows = sdkOmittedValue,
+          Object? sendSecretsAndVariables = sdkOmittedValue,
+          Object? requireApprovalForForkPrWorkflows = sdkOmittedValue}) =>
+      ActionsForkPrWorkflowsPrivateReposRequest(
+        runWorkflowsFromForkPullRequests:
+            identical(runWorkflowsFromForkPullRequests, sdkOmittedValue)
+                ? this.runWorkflowsFromForkPullRequests
+                : runWorkflowsFromForkPullRequests as bool,
+        sendWriteTokensToWorkflows:
+            identical(sendWriteTokensToWorkflows, sdkOmittedValue)
+                ? this.sendWriteTokensToWorkflows
+                : sendWriteTokensToWorkflows as SdkOptional<bool>,
+        sendSecretsAndVariables:
+            identical(sendSecretsAndVariables, sdkOmittedValue)
+                ? this.sendSecretsAndVariables
+                : sendSecretsAndVariables as SdkOptional<bool>,
+        requireApprovalForForkPrWorkflows:
+            identical(requireApprovalForForkPrWorkflows, sdkOmittedValue)
+                ? this.requireApprovalForForkPrWorkflows
+                : requireApprovalForForkPrWorkflows as SdkOptional<bool>,
+      );
 
-  factory ActionsForkPrWorkflowsPrivateReposRequest.fromJson(Map<String, dynamic> json) => ActionsForkPrWorkflowsPrivateReposRequest(
-    runWorkflowsFromForkPullRequests: (json['run_workflows_from_fork_pull_requests'] as bool?)!,
-    sendWriteTokensToWorkflows: json['send_write_tokens_to_workflows'] != null ? SdkPresent((json['send_write_tokens_to_workflows'] as bool?)!) : const SdkOmitted(),
-    sendSecretsAndVariables: json['send_secrets_and_variables'] != null ? SdkPresent((json['send_secrets_and_variables'] as bool?)!) : const SdkOmitted(),
-    requireApprovalForForkPrWorkflows: json['require_approval_for_fork_pr_workflows'] != null ? SdkPresent((json['require_approval_for_fork_pr_workflows'] as bool?)!) : const SdkOmitted(),
-  );
+  factory ActionsForkPrWorkflowsPrivateReposRequest.fromJson(
+          Map<String, dynamic> json) =>
+      ActionsForkPrWorkflowsPrivateReposRequest(
+        runWorkflowsFromForkPullRequests:
+            (json['run_workflows_from_fork_pull_requests'] as bool?)!,
+        sendWriteTokensToWorkflows:
+            json['send_write_tokens_to_workflows'] != null
+                ? SdkPresent((json['send_write_tokens_to_workflows'] as bool?)!)
+                : const SdkOmitted(),
+        sendSecretsAndVariables: json['send_secrets_and_variables'] != null
+            ? SdkPresent((json['send_secrets_and_variables'] as bool?)!)
+            : const SdkOmitted(),
+        requireApprovalForForkPrWorkflows:
+            json['require_approval_for_fork_pr_workflows'] != null
+                ? SdkPresent(
+                    (json['require_approval_for_fork_pr_workflows'] as bool?)!)
+                : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'run_workflows_from_fork_pull_requests': runWorkflowsFromForkPullRequests,
-    ...switch (sendWriteTokensToWorkflows) {
-      SdkPresent<bool>(value: final value) => {'send_write_tokens_to_workflows': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (sendSecretsAndVariables) {
-      SdkPresent<bool>(value: final value) => {'send_secrets_and_variables': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (requireApprovalForForkPrWorkflows) {
-      SdkPresent<bool>(value: final value) => {'require_approval_for_fork_pr_workflows': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'run_workflows_from_fork_pull_requests':
+            runWorkflowsFromForkPullRequests,
+        ...switch (sendWriteTokensToWorkflows) {
+          SdkPresent<bool>(value: final value) => {
+              'send_write_tokens_to_workflows': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (sendSecretsAndVariables) {
+          SdkPresent<bool>(value: final value) => {
+              'send_secrets_and_variables': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (requireApprovalForForkPrWorkflows) {
+          SdkPresent<bool>(value: final value) => {
+              'require_approval_for_fork_pr_workflows': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Typed representation of the `ActionsGetDefaultWorkflowPermissions` API schema.
 class ActionsGetDefaultWorkflowPermissions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The default workflow permissions granted to the GITHUB_TOKEN when running workflows.
   final ActionsDefaultWorkflowPermissions defaultWorkflowPermissions;
+
   /// Whether GitHub Actions can approve pull requests. Enabling this can be a security risk.
   final bool canApprovePullRequestReviews;
 
-  const ActionsGetDefaultWorkflowPermissions({required this.defaultWorkflowPermissions, required this.canApprovePullRequestReviews});
+  const ActionsGetDefaultWorkflowPermissions(
+      {required this.defaultWorkflowPermissions,
+      required this.canApprovePullRequestReviews});
 
-  ActionsGetDefaultWorkflowPermissions Function({ActionsDefaultWorkflowPermissions defaultWorkflowPermissions, bool canApprovePullRequestReviews}) get copyWith => _copyWith;
+  ActionsGetDefaultWorkflowPermissions Function(
+      {ActionsDefaultWorkflowPermissions defaultWorkflowPermissions,
+      bool canApprovePullRequestReviews}) get copyWith => _copyWith;
 
-  ActionsGetDefaultWorkflowPermissions _copyWith({Object? defaultWorkflowPermissions = sdkOmittedValue, Object? canApprovePullRequestReviews = sdkOmittedValue}) => ActionsGetDefaultWorkflowPermissions(
-    defaultWorkflowPermissions: identical(defaultWorkflowPermissions, sdkOmittedValue) ? this.defaultWorkflowPermissions : defaultWorkflowPermissions as ActionsDefaultWorkflowPermissions,
-    canApprovePullRequestReviews: identical(canApprovePullRequestReviews, sdkOmittedValue) ? this.canApprovePullRequestReviews : canApprovePullRequestReviews as bool,
-  );
+  ActionsGetDefaultWorkflowPermissions _copyWith(
+          {Object? defaultWorkflowPermissions = sdkOmittedValue,
+          Object? canApprovePullRequestReviews = sdkOmittedValue}) =>
+      ActionsGetDefaultWorkflowPermissions(
+        defaultWorkflowPermissions: identical(
+                defaultWorkflowPermissions, sdkOmittedValue)
+            ? this.defaultWorkflowPermissions
+            : defaultWorkflowPermissions as ActionsDefaultWorkflowPermissions,
+        canApprovePullRequestReviews:
+            identical(canApprovePullRequestReviews, sdkOmittedValue)
+                ? this.canApprovePullRequestReviews
+                : canApprovePullRequestReviews as bool,
+      );
 
-  factory ActionsGetDefaultWorkflowPermissions.fromJson(Map<String, dynamic> json) => ActionsGetDefaultWorkflowPermissions(
-    defaultWorkflowPermissions: (json['default_workflow_permissions'] != null ? ActionsDefaultWorkflowPermissions.fromJson(json['default_workflow_permissions'] as String) : null)!,
-    canApprovePullRequestReviews: (json['can_approve_pull_request_reviews'] as bool?)!,
-  );
+  factory ActionsGetDefaultWorkflowPermissions.fromJson(
+          Map<String, dynamic> json) =>
+      ActionsGetDefaultWorkflowPermissions(
+        defaultWorkflowPermissions:
+            (json['default_workflow_permissions'] != null
+                ? ActionsDefaultWorkflowPermissions.fromJson(
+                    json['default_workflow_permissions'] as String)
+                : null)!,
+        canApprovePullRequestReviews:
+            (json['can_approve_pull_request_reviews'] as bool?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'default_workflow_permissions': defaultWorkflowPermissions.toJson(),
-    'can_approve_pull_request_reviews': canApprovePullRequestReviews,
-  };
+        'default_workflow_permissions': defaultWorkflowPermissions.toJson(),
+        'can_approve_pull_request_reviews': canApprovePullRequestReviews,
+      };
 }

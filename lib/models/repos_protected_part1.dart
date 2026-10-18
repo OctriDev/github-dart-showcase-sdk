@@ -8,289 +8,513 @@ part of 'repos_protected.dart';
 class ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
+
   /// Required `uri`-formatted value serialized in the `users_url` wire field.
   final String usersUrl;
+
   /// Required `uri`-formatted value serialized in the `teams_url` wire field.
   final String teamsUrl;
+
   /// Required array value serialized in the `users` wire field.
   final List<SimpleUser> users;
+
   /// Required array value serialized in the `teams` wire field.
   final List<Team> teams;
+
   /// Optional array value serialized in the `apps` wire field.
   final SdkOptional<List<Integration?>> apps;
 
-  const ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions({required this.url, required this.usersUrl, required this.teamsUrl, required this.users, required this.teams, this.apps = const SdkOmitted()});
+  const ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions(
+      {required this.url,
+      required this.usersUrl,
+      required this.teamsUrl,
+      required this.users,
+      required this.teams,
+      this.apps = const SdkOmitted()});
 
-  ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions Function({String url, String usersUrl, String teamsUrl, List<SimpleUser> users, List<Team> teams, SdkOptional<List<Integration?>> apps}) get copyWith => _copyWith;
+  ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions Function(
+      {String url,
+      String usersUrl,
+      String teamsUrl,
+      List<SimpleUser> users,
+      List<Team> teams,
+      SdkOptional<List<Integration?>> apps}) get copyWith => _copyWith;
 
-  ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions _copyWith({Object? url = sdkOmittedValue, Object? usersUrl = sdkOmittedValue, Object? teamsUrl = sdkOmittedValue, Object? users = sdkOmittedValue, Object? teams = sdkOmittedValue, Object? apps = sdkOmittedValue}) => ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions(
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    usersUrl: identical(usersUrl, sdkOmittedValue) ? this.usersUrl : usersUrl as String,
-    teamsUrl: identical(teamsUrl, sdkOmittedValue) ? this.teamsUrl : teamsUrl as String,
-    users: identical(users, sdkOmittedValue) ? this.users : users as List<SimpleUser>,
-    teams: identical(teams, sdkOmittedValue) ? this.teams : teams as List<Team>,
-    apps: identical(apps, sdkOmittedValue) ? this.apps : apps as SdkOptional<List<Integration?>>,
-  );
+  ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions _copyWith(
+          {Object? url = sdkOmittedValue,
+          Object? usersUrl = sdkOmittedValue,
+          Object? teamsUrl = sdkOmittedValue,
+          Object? users = sdkOmittedValue,
+          Object? teams = sdkOmittedValue,
+          Object? apps = sdkOmittedValue}) =>
+      ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions(
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        usersUrl: identical(usersUrl, sdkOmittedValue)
+            ? this.usersUrl
+            : usersUrl as String,
+        teamsUrl: identical(teamsUrl, sdkOmittedValue)
+            ? this.teamsUrl
+            : teamsUrl as String,
+        users: identical(users, sdkOmittedValue)
+            ? this.users
+            : users as List<SimpleUser>,
+        teams: identical(teams, sdkOmittedValue)
+            ? this.teams
+            : teams as List<Team>,
+        apps: identical(apps, sdkOmittedValue)
+            ? this.apps
+            : apps as SdkOptional<List<Integration?>>,
+      );
 
-  factory ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions.fromJson(Map<String, dynamic> json) => ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions(
-    url: (json['url'] as String?)!,
-    usersUrl: (json['users_url'] as String?)!,
-    teamsUrl: (json['teams_url'] as String?)!,
-    users: ((json['users'] as List?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList())!,
-    teams: ((json['teams'] as List?)?.map((e) => Team.fromJson(e as Map<String, dynamic>)).toList())!,
-    apps: json['apps'] != null ? SdkPresent(((json['apps'] as List?)?.map((e) => e == null ? null : Integration.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
+  factory ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions.fromJson(
+          Map<String, dynamic> json) =>
+      ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions(
+        url: (json['url'] as String?)!,
+        usersUrl: (json['users_url'] as String?)!,
+        teamsUrl: (json['teams_url'] as String?)!,
+        users: ((json['users'] as List?)
+            ?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        teams: ((json['teams'] as List?)
+            ?.map((e) => Team.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        apps: json['apps'] != null
+            ? SdkPresent(((json['apps'] as List?)
+                ?.map((e) => e == null
+                    ? null
+                    : Integration.fromJson(e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'url': url,
-    'users_url': usersUrl,
-    'teams_url': teamsUrl,
-    'users': users.map((item) => item.toJson()).toList(),
-    'teams': teams.map((item) => item.toJson()).toList(),
-    ...switch (apps) {
-      SdkPresent<List<Integration?>>(value: final value) => {'apps': value.map((item) => item?.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'url': url,
+        'users_url': usersUrl,
+        'teams_url': teamsUrl,
+        'users': users.map((item) => item.toJson()).toList(),
+        'teams': teams.map((item) => item.toJson()).toList(),
+        ...switch (apps) {
+          SdkPresent<List<Integration?>>(value: final value) => {
+              'apps': value.map((item) => item?.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Optional object value serialized in the `bypass_pull_request_allowances` wire field.
 class ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required array value serialized in the `users` wire field.
   final List<SimpleUser> users;
+
   /// Required array value serialized in the `teams` wire field.
   final List<Team> teams;
+
   /// Optional array value serialized in the `apps` wire field.
   final SdkOptional<List<Integration?>> apps;
 
-  const ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances({required this.users, required this.teams, this.apps = const SdkOmitted()});
+  const ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances(
+      {required this.users,
+      required this.teams,
+      this.apps = const SdkOmitted()});
 
-  ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances Function({List<SimpleUser> users, List<Team> teams, SdkOptional<List<Integration?>> apps}) get copyWith => _copyWith;
+  ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances Function(
+      {List<SimpleUser> users,
+      List<Team> teams,
+      SdkOptional<List<Integration?>> apps}) get copyWith => _copyWith;
 
-  ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances _copyWith({Object? users = sdkOmittedValue, Object? teams = sdkOmittedValue, Object? apps = sdkOmittedValue}) => ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances(
-    users: identical(users, sdkOmittedValue) ? this.users : users as List<SimpleUser>,
-    teams: identical(teams, sdkOmittedValue) ? this.teams : teams as List<Team>,
-    apps: identical(apps, sdkOmittedValue) ? this.apps : apps as SdkOptional<List<Integration?>>,
-  );
+  ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances
+      _copyWith(
+              {Object? users = sdkOmittedValue,
+              Object? teams = sdkOmittedValue,
+              Object? apps = sdkOmittedValue}) =>
+          ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances(
+            users: identical(users, sdkOmittedValue)
+                ? this.users
+                : users as List<SimpleUser>,
+            teams: identical(teams, sdkOmittedValue)
+                ? this.teams
+                : teams as List<Team>,
+            apps: identical(apps, sdkOmittedValue)
+                ? this.apps
+                : apps as SdkOptional<List<Integration?>>,
+          );
 
-  factory ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances.fromJson(Map<String, dynamic> json) => ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances(
-    users: ((json['users'] as List?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList())!,
-    teams: ((json['teams'] as List?)?.map((e) => Team.fromJson(e as Map<String, dynamic>)).toList())!,
-    apps: json['apps'] != null ? SdkPresent(((json['apps'] as List?)?.map((e) => e == null ? null : Integration.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
+  factory ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances.fromJson(
+          Map<String, dynamic> json) =>
+      ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances(
+        users: ((json['users'] as List?)
+            ?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        teams: ((json['teams'] as List?)
+            ?.map((e) => Team.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        apps: json['apps'] != null
+            ? SdkPresent(((json['apps'] as List?)
+                ?.map((e) => e == null
+                    ? null
+                    : Integration.fromJson(e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'users': users.map((item) => item.toJson()).toList(),
-    'teams': teams.map((item) => item.toJson()).toList(),
-    ...switch (apps) {
-      SdkPresent<List<Integration?>>(value: final value) => {'apps': value.map((item) => item?.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'users': users.map((item) => item.toJson()).toList(),
+        'teams': teams.map((item) => item.toJson()).toList(),
+        ...switch (apps) {
+          SdkPresent<List<Integration?>>(value: final value) => {
+              'apps': value.map((item) => item?.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Optional object value serialized in the `required_pull_request_reviews` wire field.
 class ProtectedBranchRequiredPullRequestReviews {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
+
   /// Optional `boolean` value serialized in the `dismiss_stale_reviews` wire field.
   final SdkOptional<bool> dismissStaleReviews;
+
   /// Optional `boolean` value serialized in the `require_code_owner_reviews` wire field.
   final SdkOptional<bool> requireCodeOwnerReviews;
+
   /// Optional `integer` value serialized in the `required_approving_review_count` wire field.
   final SdkOptional<int> requiredApprovingReviewCount;
+
   /// Whether the most recent push must be approved by someone other than the person who pushed it.
   final SdkOptional<bool> requireLastPushApproval;
+
   /// Optional object value serialized in the `dismissal_restrictions` wire field.
-  final SdkOptional<ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions> dismissalRestrictions;
+  final SdkOptional<
+          ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions>
+      dismissalRestrictions;
+
   /// Optional object value serialized in the `bypass_pull_request_allowances` wire field.
-  final SdkOptional<ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances> bypassPullRequestAllowances;
+  final SdkOptional<
+          ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances>
+      bypassPullRequestAllowances;
 
-  const ProtectedBranchRequiredPullRequestReviews({required this.url, this.dismissStaleReviews = const SdkOmitted(), this.requireCodeOwnerReviews = const SdkOmitted(), this.requiredApprovingReviewCount = const SdkOmitted(), this.requireLastPushApproval = const SdkOmitted(), this.dismissalRestrictions = const SdkOmitted(), this.bypassPullRequestAllowances = const SdkOmitted()});
+  const ProtectedBranchRequiredPullRequestReviews(
+      {required this.url,
+      this.dismissStaleReviews = const SdkOmitted(),
+      this.requireCodeOwnerReviews = const SdkOmitted(),
+      this.requiredApprovingReviewCount = const SdkOmitted(),
+      this.requireLastPushApproval = const SdkOmitted(),
+      this.dismissalRestrictions = const SdkOmitted(),
+      this.bypassPullRequestAllowances = const SdkOmitted()});
 
-  ProtectedBranchRequiredPullRequestReviews Function({String url, SdkOptional<bool> dismissStaleReviews, SdkOptional<bool> requireCodeOwnerReviews, SdkOptional<int> requiredApprovingReviewCount, SdkOptional<bool> requireLastPushApproval, SdkOptional<ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions> dismissalRestrictions, SdkOptional<ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances> bypassPullRequestAllowances}) get copyWith => _copyWith;
+  ProtectedBranchRequiredPullRequestReviews Function(
+      {String url,
+      SdkOptional<bool> dismissStaleReviews,
+      SdkOptional<bool> requireCodeOwnerReviews,
+      SdkOptional<int> requiredApprovingReviewCount,
+      SdkOptional<bool> requireLastPushApproval,
+      SdkOptional<
+              ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions>
+          dismissalRestrictions,
+      SdkOptional<
+              ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances>
+          bypassPullRequestAllowances}) get copyWith => _copyWith;
 
-  ProtectedBranchRequiredPullRequestReviews _copyWith({Object? url = sdkOmittedValue, Object? dismissStaleReviews = sdkOmittedValue, Object? requireCodeOwnerReviews = sdkOmittedValue, Object? requiredApprovingReviewCount = sdkOmittedValue, Object? requireLastPushApproval = sdkOmittedValue, Object? dismissalRestrictions = sdkOmittedValue, Object? bypassPullRequestAllowances = sdkOmittedValue}) => ProtectedBranchRequiredPullRequestReviews(
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    dismissStaleReviews: identical(dismissStaleReviews, sdkOmittedValue) ? this.dismissStaleReviews : dismissStaleReviews as SdkOptional<bool>,
-    requireCodeOwnerReviews: identical(requireCodeOwnerReviews, sdkOmittedValue) ? this.requireCodeOwnerReviews : requireCodeOwnerReviews as SdkOptional<bool>,
-    requiredApprovingReviewCount: identical(requiredApprovingReviewCount, sdkOmittedValue) ? this.requiredApprovingReviewCount : requiredApprovingReviewCount as SdkOptional<int>,
-    requireLastPushApproval: identical(requireLastPushApproval, sdkOmittedValue) ? this.requireLastPushApproval : requireLastPushApproval as SdkOptional<bool>,
-    dismissalRestrictions: identical(dismissalRestrictions, sdkOmittedValue) ? this.dismissalRestrictions : dismissalRestrictions as SdkOptional<ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions>,
-    bypassPullRequestAllowances: identical(bypassPullRequestAllowances, sdkOmittedValue) ? this.bypassPullRequestAllowances : bypassPullRequestAllowances as SdkOptional<ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances>,
-  );
+  ProtectedBranchRequiredPullRequestReviews _copyWith(
+          {Object? url = sdkOmittedValue,
+          Object? dismissStaleReviews = sdkOmittedValue,
+          Object? requireCodeOwnerReviews = sdkOmittedValue,
+          Object? requiredApprovingReviewCount = sdkOmittedValue,
+          Object? requireLastPushApproval = sdkOmittedValue,
+          Object? dismissalRestrictions = sdkOmittedValue,
+          Object? bypassPullRequestAllowances = sdkOmittedValue}) =>
+      ProtectedBranchRequiredPullRequestReviews(
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        dismissStaleReviews: identical(dismissStaleReviews, sdkOmittedValue)
+            ? this.dismissStaleReviews
+            : dismissStaleReviews as SdkOptional<bool>,
+        requireCodeOwnerReviews:
+            identical(requireCodeOwnerReviews, sdkOmittedValue)
+                ? this.requireCodeOwnerReviews
+                : requireCodeOwnerReviews as SdkOptional<bool>,
+        requiredApprovingReviewCount:
+            identical(requiredApprovingReviewCount, sdkOmittedValue)
+                ? this.requiredApprovingReviewCount
+                : requiredApprovingReviewCount as SdkOptional<int>,
+        requireLastPushApproval:
+            identical(requireLastPushApproval, sdkOmittedValue)
+                ? this.requireLastPushApproval
+                : requireLastPushApproval as SdkOptional<bool>,
+        dismissalRestrictions: identical(dismissalRestrictions, sdkOmittedValue)
+            ? this.dismissalRestrictions
+            : dismissalRestrictions as SdkOptional<
+                ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions>,
+        bypassPullRequestAllowances: identical(
+                bypassPullRequestAllowances, sdkOmittedValue)
+            ? this.bypassPullRequestAllowances
+            : bypassPullRequestAllowances as SdkOptional<
+                ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances>,
+      );
 
-  factory ProtectedBranchRequiredPullRequestReviews.fromJson(Map<String, dynamic> json) => ProtectedBranchRequiredPullRequestReviews(
-    url: (json['url'] as String?)!,
-    dismissStaleReviews: json['dismiss_stale_reviews'] != null ? SdkPresent((json['dismiss_stale_reviews'] as bool?)!) : const SdkOmitted(),
-    requireCodeOwnerReviews: json['require_code_owner_reviews'] != null ? SdkPresent((json['require_code_owner_reviews'] as bool?)!) : const SdkOmitted(),
-    requiredApprovingReviewCount: json['required_approving_review_count'] != null ? SdkPresent(((json['required_approving_review_count'] as num?)?.toInt())!) : const SdkOmitted(),
-    requireLastPushApproval: json['require_last_push_approval'] != null ? SdkPresent((json['require_last_push_approval'] as bool?)!) : const SdkOmitted(),
-    dismissalRestrictions: json['dismissal_restrictions'] != null ? SdkPresent((json['dismissal_restrictions'] != null ? ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions.fromJson(json['dismissal_restrictions'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    bypassPullRequestAllowances: json['bypass_pull_request_allowances'] != null ? SdkPresent((json['bypass_pull_request_allowances'] != null ? ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances.fromJson(json['bypass_pull_request_allowances'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-  );
+  factory ProtectedBranchRequiredPullRequestReviews.fromJson(
+          Map<String, dynamic> json) =>
+      ProtectedBranchRequiredPullRequestReviews(
+        url: (json['url'] as String?)!,
+        dismissStaleReviews: json['dismiss_stale_reviews'] != null
+            ? SdkPresent((json['dismiss_stale_reviews'] as bool?)!)
+            : const SdkOmitted(),
+        requireCodeOwnerReviews: json['require_code_owner_reviews'] != null
+            ? SdkPresent((json['require_code_owner_reviews'] as bool?)!)
+            : const SdkOmitted(),
+        requiredApprovingReviewCount: json['required_approving_review_count'] !=
+                null
+            ? SdkPresent(
+                ((json['required_approving_review_count'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        requireLastPushApproval: json['require_last_push_approval'] != null
+            ? SdkPresent((json['require_last_push_approval'] as bool?)!)
+            : const SdkOmitted(),
+        dismissalRestrictions: json['dismissal_restrictions'] != null
+            ? SdkPresent((json['dismissal_restrictions'] != null
+                ? ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions
+                    .fromJson(
+                        json['dismissal_restrictions'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        bypassPullRequestAllowances: json['bypass_pull_request_allowances'] !=
+                null
+            ? SdkPresent((json['bypass_pull_request_allowances'] != null
+                ? ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances
+                    .fromJson(json['bypass_pull_request_allowances']
+                        as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'url': url,
-    ...switch (dismissStaleReviews) {
-      SdkPresent<bool>(value: final value) => {'dismiss_stale_reviews': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (requireCodeOwnerReviews) {
-      SdkPresent<bool>(value: final value) => {'require_code_owner_reviews': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (requiredApprovingReviewCount) {
-      SdkPresent<int>(value: final value) => {'required_approving_review_count': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (requireLastPushApproval) {
-      SdkPresent<bool>(value: final value) => {'require_last_push_approval': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (dismissalRestrictions) {
-      SdkPresent<ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions>(value: final value) => {'dismissal_restrictions': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (bypassPullRequestAllowances) {
-      SdkPresent<ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances>(value: final value) => {'bypass_pull_request_allowances': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'url': url,
+        ...switch (dismissStaleReviews) {
+          SdkPresent<bool>(value: final value) => {
+              'dismiss_stale_reviews': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (requireCodeOwnerReviews) {
+          SdkPresent<bool>(value: final value) => {
+              'require_code_owner_reviews': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (requiredApprovingReviewCount) {
+          SdkPresent<int>(value: final value) => {
+              'required_approving_review_count': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (requireLastPushApproval) {
+          SdkPresent<bool>(value: final value) => {
+              'require_last_push_approval': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (dismissalRestrictions) {
+          SdkPresent<
+                ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions>(
+            value: final value
+          ) =>
+            {
+              'dismissal_restrictions': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (bypassPullRequestAllowances) {
+          SdkPresent<
+                ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances>(
+            value: final value
+          ) =>
+            {
+              'bypass_pull_request_allowances': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Optional object value serialized in the `required_signatures` wire field.
 class ProtectedBranchRequiredSignatures {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
+
   /// Required `boolean` value serialized in the `enabled` wire field.
   final bool enabled;
 
-  const ProtectedBranchRequiredSignatures({required this.url, required this.enabled});
+  const ProtectedBranchRequiredSignatures(
+      {required this.url, required this.enabled});
 
-  ProtectedBranchRequiredSignatures Function({String url, bool enabled}) get copyWith => _copyWith;
+  ProtectedBranchRequiredSignatures Function({String url, bool enabled})
+      get copyWith => _copyWith;
 
-  ProtectedBranchRequiredSignatures _copyWith({Object? url = sdkOmittedValue, Object? enabled = sdkOmittedValue}) => ProtectedBranchRequiredSignatures(
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as bool,
-  );
+  ProtectedBranchRequiredSignatures _copyWith(
+          {Object? url = sdkOmittedValue, Object? enabled = sdkOmittedValue}) =>
+      ProtectedBranchRequiredSignatures(
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as bool,
+      );
 
-  factory ProtectedBranchRequiredSignatures.fromJson(Map<String, dynamic> json) => ProtectedBranchRequiredSignatures(
-    url: (json['url'] as String?)!,
-    enabled: (json['enabled'] as bool?)!,
-  );
+  factory ProtectedBranchRequiredSignatures.fromJson(
+          Map<String, dynamic> json) =>
+      ProtectedBranchRequiredSignatures(
+        url: (json['url'] as String?)!,
+        enabled: (json['enabled'] as bool?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'url': url,
-    'enabled': enabled,
-  };
+        'url': url,
+        'enabled': enabled,
+      };
 }
 
 /// Optional object value serialized in the `enforce_admins` wire field.
 class ProtectedBranchEnforceAdmins {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
+
   /// Required `boolean` value serialized in the `enabled` wire field.
   final bool enabled;
 
-  const ProtectedBranchEnforceAdmins({required this.url, required this.enabled});
+  const ProtectedBranchEnforceAdmins(
+      {required this.url, required this.enabled});
 
-  ProtectedBranchEnforceAdmins Function({String url, bool enabled}) get copyWith => _copyWith;
+  ProtectedBranchEnforceAdmins Function({String url, bool enabled})
+      get copyWith => _copyWith;
 
-  ProtectedBranchEnforceAdmins _copyWith({Object? url = sdkOmittedValue, Object? enabled = sdkOmittedValue}) => ProtectedBranchEnforceAdmins(
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as bool,
-  );
+  ProtectedBranchEnforceAdmins _copyWith(
+          {Object? url = sdkOmittedValue, Object? enabled = sdkOmittedValue}) =>
+      ProtectedBranchEnforceAdmins(
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as bool,
+      );
 
-  factory ProtectedBranchEnforceAdmins.fromJson(Map<String, dynamic> json) => ProtectedBranchEnforceAdmins(
-    url: (json['url'] as String?)!,
-    enabled: (json['enabled'] as bool?)!,
-  );
+  factory ProtectedBranchEnforceAdmins.fromJson(Map<String, dynamic> json) =>
+      ProtectedBranchEnforceAdmins(
+        url: (json['url'] as String?)!,
+        enabled: (json['enabled'] as bool?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'url': url,
-    'enabled': enabled,
-  };
+        'url': url,
+        'enabled': enabled,
+      };
 }
 
 /// Optional object value serialized in the `required_linear_history` wire field.
 class ProtectedBranchRequiredLinearHistory {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `boolean` value serialized in the `enabled` wire field.
   final bool enabled;
 
   const ProtectedBranchRequiredLinearHistory({required this.enabled});
 
-  ProtectedBranchRequiredLinearHistory Function({bool enabled}) get copyWith => _copyWith;
+  ProtectedBranchRequiredLinearHistory Function({bool enabled}) get copyWith =>
+      _copyWith;
 
-  ProtectedBranchRequiredLinearHistory _copyWith({Object? enabled = sdkOmittedValue}) => ProtectedBranchRequiredLinearHistory(
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as bool,
-  );
+  ProtectedBranchRequiredLinearHistory _copyWith(
+          {Object? enabled = sdkOmittedValue}) =>
+      ProtectedBranchRequiredLinearHistory(
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as bool,
+      );
 
-  factory ProtectedBranchRequiredLinearHistory.fromJson(Map<String, dynamic> json) => ProtectedBranchRequiredLinearHistory(
-    enabled: (json['enabled'] as bool?)!,
-  );
+  factory ProtectedBranchRequiredLinearHistory.fromJson(
+          Map<String, dynamic> json) =>
+      ProtectedBranchRequiredLinearHistory(
+        enabled: (json['enabled'] as bool?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'enabled': enabled,
-  };
+        'enabled': enabled,
+      };
 }
 
 /// Optional object value serialized in the `allow_force_pushes` wire field.
 class ProtectedBranchAllowForcePushes {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `boolean` value serialized in the `enabled` wire field.
   final bool enabled;
 
   const ProtectedBranchAllowForcePushes({required this.enabled});
 
-  ProtectedBranchAllowForcePushes Function({bool enabled}) get copyWith => _copyWith;
+  ProtectedBranchAllowForcePushes Function({bool enabled}) get copyWith =>
+      _copyWith;
 
-  ProtectedBranchAllowForcePushes _copyWith({Object? enabled = sdkOmittedValue}) => ProtectedBranchAllowForcePushes(
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as bool,
-  );
+  ProtectedBranchAllowForcePushes _copyWith(
+          {Object? enabled = sdkOmittedValue}) =>
+      ProtectedBranchAllowForcePushes(
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as bool,
+      );
 
-  factory ProtectedBranchAllowForcePushes.fromJson(Map<String, dynamic> json) => ProtectedBranchAllowForcePushes(
-    enabled: (json['enabled'] as bool?)!,
-  );
+  factory ProtectedBranchAllowForcePushes.fromJson(Map<String, dynamic> json) =>
+      ProtectedBranchAllowForcePushes(
+        enabled: (json['enabled'] as bool?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'enabled': enabled,
-  };
+        'enabled': enabled,
+      };
 }
 
 /// Optional object value serialized in the `allow_deletions` wire field.
 class ProtectedBranchAllowDeletions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `boolean` value serialized in the `enabled` wire field.
   final bool enabled;
 
   const ProtectedBranchAllowDeletions({required this.enabled});
 
-  ProtectedBranchAllowDeletions Function({bool enabled}) get copyWith => _copyWith;
+  ProtectedBranchAllowDeletions Function({bool enabled}) get copyWith =>
+      _copyWith;
 
-  ProtectedBranchAllowDeletions _copyWith({Object? enabled = sdkOmittedValue}) => ProtectedBranchAllowDeletions(
-    enabled: identical(enabled, sdkOmittedValue) ? this.enabled : enabled as bool,
-  );
+  ProtectedBranchAllowDeletions _copyWith(
+          {Object? enabled = sdkOmittedValue}) =>
+      ProtectedBranchAllowDeletions(
+        enabled: identical(enabled, sdkOmittedValue)
+            ? this.enabled
+            : enabled as bool,
+      );
 
-  factory ProtectedBranchAllowDeletions.fromJson(Map<String, dynamic> json) => ProtectedBranchAllowDeletions(
-    enabled: (json['enabled'] as bool?)!,
-  );
+  factory ProtectedBranchAllowDeletions.fromJson(Map<String, dynamic> json) =>
+      ProtectedBranchAllowDeletions(
+        enabled: (json['enabled'] as bool?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'enabled': enabled,
-  };
+        'enabled': enabled,
+      };
 }

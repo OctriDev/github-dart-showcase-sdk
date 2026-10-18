@@ -8,92 +8,185 @@ part of 'code_quality.dart';
 class CodeQualitySetupUpdate {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The desired state of code quality setup.
   final SdkOptional<CodeQualitySetupUpdateState> state;
+
   /// Runner type to be used.
   final SdkOptional<CodeQualitySetupUpdateRunnerType> runnerType;
+
   /// Runner label to be used if the runner type is labeled.
   final SdkOptional<String?> runnerLabel;
+
   /// Languages to be analyzed.
   final SdkOptional<List<CodeQualitySetupUpdateLanguagesItem>> languages;
+
   /// Whether AI findings run for Code Quality on this repository.
   final SdkOptional<CodeQualitySetupUpdateAiFindingsOption> aiFindingsOption;
 
-  const CodeQualitySetupUpdate({this.state = const SdkOmitted(), this.runnerType = const SdkOmitted(), this.runnerLabel = const SdkOmitted(), this.languages = const SdkOmitted(), this.aiFindingsOption = const SdkOmitted()});
+  const CodeQualitySetupUpdate(
+      {this.state = const SdkOmitted(),
+      this.runnerType = const SdkOmitted(),
+      this.runnerLabel = const SdkOmitted(),
+      this.languages = const SdkOmitted(),
+      this.aiFindingsOption = const SdkOmitted()});
 
-  CodeQualitySetupUpdate Function({SdkOptional<CodeQualitySetupUpdateState> state, SdkOptional<CodeQualitySetupUpdateRunnerType> runnerType, SdkOptional<String?> runnerLabel, SdkOptional<List<CodeQualitySetupUpdateLanguagesItem>> languages, SdkOptional<CodeQualitySetupUpdateAiFindingsOption> aiFindingsOption}) get copyWith => _copyWith;
+  CodeQualitySetupUpdate Function(
+          {SdkOptional<CodeQualitySetupUpdateState> state,
+          SdkOptional<CodeQualitySetupUpdateRunnerType> runnerType,
+          SdkOptional<String?> runnerLabel,
+          SdkOptional<List<CodeQualitySetupUpdateLanguagesItem>> languages,
+          SdkOptional<CodeQualitySetupUpdateAiFindingsOption> aiFindingsOption})
+      get copyWith => _copyWith;
 
-  CodeQualitySetupUpdate _copyWith({Object? state = sdkOmittedValue, Object? runnerType = sdkOmittedValue, Object? runnerLabel = sdkOmittedValue, Object? languages = sdkOmittedValue, Object? aiFindingsOption = sdkOmittedValue}) => CodeQualitySetupUpdate(
-    state: identical(state, sdkOmittedValue) ? this.state : state as SdkOptional<CodeQualitySetupUpdateState>,
-    runnerType: identical(runnerType, sdkOmittedValue) ? this.runnerType : runnerType as SdkOptional<CodeQualitySetupUpdateRunnerType>,
-    runnerLabel: identical(runnerLabel, sdkOmittedValue) ? this.runnerLabel : runnerLabel as SdkOptional<String?>,
-    languages: identical(languages, sdkOmittedValue) ? this.languages : languages as SdkOptional<List<CodeQualitySetupUpdateLanguagesItem>>,
-    aiFindingsOption: identical(aiFindingsOption, sdkOmittedValue) ? this.aiFindingsOption : aiFindingsOption as SdkOptional<CodeQualitySetupUpdateAiFindingsOption>,
-  );
+  CodeQualitySetupUpdate _copyWith(
+          {Object? state = sdkOmittedValue,
+          Object? runnerType = sdkOmittedValue,
+          Object? runnerLabel = sdkOmittedValue,
+          Object? languages = sdkOmittedValue,
+          Object? aiFindingsOption = sdkOmittedValue}) =>
+      CodeQualitySetupUpdate(
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state as SdkOptional<CodeQualitySetupUpdateState>,
+        runnerType: identical(runnerType, sdkOmittedValue)
+            ? this.runnerType
+            : runnerType as SdkOptional<CodeQualitySetupUpdateRunnerType>,
+        runnerLabel: identical(runnerLabel, sdkOmittedValue)
+            ? this.runnerLabel
+            : runnerLabel as SdkOptional<String?>,
+        languages: identical(languages, sdkOmittedValue)
+            ? this.languages
+            : languages
+                as SdkOptional<List<CodeQualitySetupUpdateLanguagesItem>>,
+        aiFindingsOption: identical(aiFindingsOption, sdkOmittedValue)
+            ? this.aiFindingsOption
+            : aiFindingsOption
+                as SdkOptional<CodeQualitySetupUpdateAiFindingsOption>,
+      );
 
-  factory CodeQualitySetupUpdate.fromJson(Map<String, dynamic> json) => CodeQualitySetupUpdate(
-    state: json['state'] != null ? SdkPresent((json['state'] != null ? CodeQualitySetupUpdateState.fromJson(json['state'] as String) : null)!) : const SdkOmitted(),
-    runnerType: json['runner_type'] != null ? SdkPresent((json['runner_type'] != null ? CodeQualitySetupUpdateRunnerType.fromJson(json['runner_type'] as String) : null)!) : const SdkOmitted(),
-    runnerLabel: json.containsKey('runner_label') ? SdkPresent(json['runner_label'] as String?) : const SdkOmitted(),
-    languages: json['languages'] != null ? SdkPresent(((json['languages'] as List?)?.map((e) => CodeQualitySetupUpdateLanguagesItem.fromJson(e as String)).toList())!) : const SdkOmitted(),
-    aiFindingsOption: json['ai_findings_option'] != null ? SdkPresent((json['ai_findings_option'] != null ? CodeQualitySetupUpdateAiFindingsOption.fromJson(json['ai_findings_option'] as String) : null)!) : const SdkOmitted(),
-  );
+  factory CodeQualitySetupUpdate.fromJson(Map<String, dynamic> json) =>
+      CodeQualitySetupUpdate(
+        state: json['state'] != null
+            ? SdkPresent((json['state'] != null
+                ? CodeQualitySetupUpdateState.fromJson(json['state'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        runnerType: json['runner_type'] != null
+            ? SdkPresent((json['runner_type'] != null
+                ? CodeQualitySetupUpdateRunnerType.fromJson(
+                    json['runner_type'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        runnerLabel: json.containsKey('runner_label')
+            ? SdkPresent(json['runner_label'] as String?)
+            : const SdkOmitted(),
+        languages: json['languages'] != null
+            ? SdkPresent(((json['languages'] as List?)
+                ?.map((e) =>
+                    CodeQualitySetupUpdateLanguagesItem.fromJson(e as String))
+                .toList())!)
+            : const SdkOmitted(),
+        aiFindingsOption: json['ai_findings_option'] != null
+            ? SdkPresent((json['ai_findings_option'] != null
+                ? CodeQualitySetupUpdateAiFindingsOption.fromJson(
+                    json['ai_findings_option'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (state) {
-      SdkPresent<CodeQualitySetupUpdateState>(value: final value) => {'state': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (runnerType) {
-      SdkPresent<CodeQualitySetupUpdateRunnerType>(value: final value) => {'runner_type': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (runnerLabel) {
-      SdkPresent<String?>(value: final value) => {'runner_label': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (languages) {
-      SdkPresent<List<CodeQualitySetupUpdateLanguagesItem>>(value: final value) => {'languages': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (aiFindingsOption) {
-      SdkPresent<CodeQualitySetupUpdateAiFindingsOption>(value: final value) => {'ai_findings_option': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (state) {
+          SdkPresent<CodeQualitySetupUpdateState>(value: final value) => {
+              'state': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (runnerType) {
+          SdkPresent<CodeQualitySetupUpdateRunnerType>(value: final value) => {
+              'runner_type': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (runnerLabel) {
+          SdkPresent<String?>(value: final value) => {
+              'runner_label': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (languages) {
+          SdkPresent<List<CodeQualitySetupUpdateLanguagesItem>>(
+            value: final value
+          ) =>
+            {
+              'languages': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (aiFindingsOption) {
+          SdkPresent<CodeQualitySetupUpdateAiFindingsOption>(
+            value: final value
+          ) =>
+            {
+              'ai_findings_option': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// You can use `run_url` to track the status of the run. This includes a property status and conclusion. You should not rely on this always being an actions workflow run object.
 class CodeQualitySetupUpdateResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// ID of the corresponding run.
   final SdkOptional<int> runId;
+
   /// URL of the corresponding run.
   final SdkOptional<String> runUrl;
 
-  const CodeQualitySetupUpdateResponse({this.runId = const SdkOmitted(), this.runUrl = const SdkOmitted()});
+  const CodeQualitySetupUpdateResponse(
+      {this.runId = const SdkOmitted(), this.runUrl = const SdkOmitted()});
 
-  CodeQualitySetupUpdateResponse Function({SdkOptional<int> runId, SdkOptional<String> runUrl}) get copyWith => _copyWith;
+  CodeQualitySetupUpdateResponse Function(
+      {SdkOptional<int> runId,
+      SdkOptional<String> runUrl}) get copyWith => _copyWith;
 
-  CodeQualitySetupUpdateResponse _copyWith({Object? runId = sdkOmittedValue, Object? runUrl = sdkOmittedValue}) => CodeQualitySetupUpdateResponse(
-    runId: identical(runId, sdkOmittedValue) ? this.runId : runId as SdkOptional<int>,
-    runUrl: identical(runUrl, sdkOmittedValue) ? this.runUrl : runUrl as SdkOptional<String>,
-  );
+  CodeQualitySetupUpdateResponse _copyWith(
+          {Object? runId = sdkOmittedValue,
+          Object? runUrl = sdkOmittedValue}) =>
+      CodeQualitySetupUpdateResponse(
+        runId: identical(runId, sdkOmittedValue)
+            ? this.runId
+            : runId as SdkOptional<int>,
+        runUrl: identical(runUrl, sdkOmittedValue)
+            ? this.runUrl
+            : runUrl as SdkOptional<String>,
+      );
 
-  factory CodeQualitySetupUpdateResponse.fromJson(Map<String, dynamic> json) => CodeQualitySetupUpdateResponse(
-    runId: json['run_id'] != null ? SdkPresent(((json['run_id'] as num?)?.toInt())!) : const SdkOmitted(),
-    runUrl: json['run_url'] != null ? SdkPresent((json['run_url'] as String?)!) : const SdkOmitted(),
-  );
+  factory CodeQualitySetupUpdateResponse.fromJson(Map<String, dynamic> json) =>
+      CodeQualitySetupUpdateResponse(
+        runId: json['run_id'] != null
+            ? SdkPresent(((json['run_id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        runUrl: json['run_url'] != null
+            ? SdkPresent((json['run_url'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (runId) {
-      SdkPresent<int>(value: final value) => {'run_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (runUrl) {
-      SdkPresent<String>(value: final value) => {'run_url': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (runId) {
+          SdkPresent<int>(value: final value) => {
+              'run_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (runUrl) {
+          SdkPresent<String>(value: final value) => {
+              'run_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

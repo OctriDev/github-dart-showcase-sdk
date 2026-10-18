@@ -8,27 +8,42 @@ part of 'repos_repository_ruleset.dart';
 class RepositoryRulesetConditions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional object value serialized in the `ref_name` wire field.
   final SdkOptional<RepositoryRulesetConditionsRefName> refName;
 
   const RepositoryRulesetConditions({this.refName = const SdkOmitted()});
 
-  RepositoryRulesetConditions Function({SdkOptional<RepositoryRulesetConditionsRefName> refName}) get copyWith => _copyWith;
+  RepositoryRulesetConditions Function(
+          {SdkOptional<RepositoryRulesetConditionsRefName> refName})
+      get copyWith => _copyWith;
 
-  RepositoryRulesetConditions _copyWith({Object? refName = sdkOmittedValue}) => RepositoryRulesetConditions(
-    refName: identical(refName, sdkOmittedValue) ? this.refName : refName as SdkOptional<RepositoryRulesetConditionsRefName>,
-  );
+  RepositoryRulesetConditions _copyWith({Object? refName = sdkOmittedValue}) =>
+      RepositoryRulesetConditions(
+        refName: identical(refName, sdkOmittedValue)
+            ? this.refName
+            : refName as SdkOptional<RepositoryRulesetConditionsRefName>,
+      );
 
-  factory RepositoryRulesetConditions.fromJson(Map<String, dynamic> json) => RepositoryRulesetConditions(
-    refName: json['ref_name'] != null ? SdkPresent((json['ref_name'] != null ? RepositoryRulesetConditionsRefName.fromJson(json['ref_name'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-  );
+  factory RepositoryRulesetConditions.fromJson(Map<String, dynamic> json) =>
+      RepositoryRulesetConditions(
+        refName: json['ref_name'] != null
+            ? SdkPresent((json['ref_name'] != null
+                ? RepositoryRulesetConditionsRefName.fromJson(
+                    json['ref_name'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (refName) {
-      SdkPresent<RepositoryRulesetConditionsRefName>(value: final value) => {'ref_name': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (refName) {
+          SdkPresent<RepositoryRulesetConditionsRefName>(value: final value) =>
+            {
+              'ref_name': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 sealed class RepositoryRulesetConditions2 {
@@ -36,21 +51,32 @@ sealed class RepositoryRulesetConditions2 {
   static const String constructionSurface = 'named';
   const RepositoryRulesetConditions2();
   factory RepositoryRulesetConditions2.fromJson(Object? json) {
-    try { return RepositoryRulesetConditions2RepositoryRulesetConditions(RepositoryRulesetConditions.fromJson(json as Map<String, dynamic>)); } catch (_) {}
-    try { return RepositoryRulesetConditions2OrgRulesetConditions(OrgRulesetConditions.fromJson(json)); } catch (_) {}
-    throw FormatException("No variant matched for RepositoryRulesetConditions2");
+    try {
+      return RepositoryRulesetConditions2RepositoryRulesetConditions(
+          RepositoryRulesetConditions.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
+    try {
+      return RepositoryRulesetConditions2OrgRulesetConditions(
+          OrgRulesetConditions.fromJson(json));
+    } catch (_) {}
+    throw FormatException(
+        "No variant matched for RepositoryRulesetConditions2");
   }
   Object? toJson();
 }
 
-final class RepositoryRulesetConditions2RepositoryRulesetConditions extends RepositoryRulesetConditions2 {
+final class RepositoryRulesetConditions2RepositoryRulesetConditions
+    extends RepositoryRulesetConditions2 {
   final RepositoryRulesetConditions value;
   const RepositoryRulesetConditions2RepositoryRulesetConditions(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
-final class RepositoryRulesetConditions2OrgRulesetConditions extends RepositoryRulesetConditions2 {
+final class RepositoryRulesetConditions2OrgRulesetConditions
+    extends RepositoryRulesetConditions2 {
   final OrgRulesetConditions value;
   const RepositoryRulesetConditions2OrgRulesetConditions(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
