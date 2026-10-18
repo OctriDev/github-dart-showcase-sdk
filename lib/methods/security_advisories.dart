@@ -70,30 +70,27 @@ import '../types.dart';
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
 /// [sort] The property to sort the results by.
-Future<List<GlobalAdvisory>> securityAdvisoriesListGlobalAdvisories(
-    ClientConfig config,
-    {SdkOptional<String> ghsaId = const SdkOmitted(),
-    SdkOptional<SecurityAdvisoriesListGlobalAdvisoriesType> type_ =
-        const SdkOmitted(),
-    SdkOptional<String> cveId = const SdkOmitted(),
-    SdkOptional<SecurityAdvisoryEcosystems> ecosystem = const SdkOmitted(),
-    SdkOptional<SecurityAdvisoriesListGlobalAdvisoriesSeverity> severity =
-        const SdkOmitted(),
-    SdkOptional<dynamic> cwes = const SdkOmitted(),
-    SdkOptional<bool> isWithdrawn = const SdkOmitted(),
-    SdkOptional<dynamic> affects = const SdkOmitted(),
-    SdkOptional<String> published = const SdkOmitted(),
-    SdkOptional<String> updated = const SdkOmitted(),
-    SdkOptional<String> modified = const SdkOmitted(),
-    SdkOptional<String> epssPercentage = const SdkOmitted(),
-    SdkOptional<String> epssPercentile = const SdkOmitted(),
-    SdkOptional<String> before = const SdkOmitted(),
-    SdkOptional<String> after = const SdkOmitted(),
-    SdkOptional<SchemaSchema0df64690> direction = const SdkOmitted(),
-    SdkOptional<int> perPage = const SdkOmitted(),
-    SdkOptional<SecurityAdvisoriesListGlobalAdvisoriesSort> sort =
-        const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<List<GlobalAdvisory>>
+    securityAdvisoriesListGlobalAdvisories(ClientConfig config,
+        {SdkOptional<String> ghsaId = const SdkOmitted(),
+        SdkOptional<SecurityAdvisoriesListGlobalAdvisoriesType> type_ = const SdkOmitted(),
+        SdkOptional<String> cveId = const SdkOmitted(),
+        SdkOptional<SecurityAdvisoryEcosystems> ecosystem = const SdkOmitted(),
+        SdkOptional<SecurityAdvisoriesListGlobalAdvisoriesSeverity> severity = const SdkOmitted(),
+        SdkOptional<dynamic> cwes = const SdkOmitted(),
+        SdkOptional<bool> isWithdrawn = const SdkOmitted(),
+        SdkOptional<dynamic> affects = const SdkOmitted(),
+        SdkOptional<String> published = const SdkOmitted(),
+        SdkOptional<String> updated = const SdkOmitted(),
+        SdkOptional<String> modified = const SdkOmitted(),
+        SdkOptional<String> epssPercentage = const SdkOmitted(),
+        SdkOptional<String> epssPercentile = const SdkOmitted(),
+        SdkOptional<String> before = const SdkOmitted(),
+        SdkOptional<String> after = const SdkOmitted(),
+        SdkOptional<SchemaSchema0df64690> direction = const SdkOmitted(),
+        SdkOptional<int> perPage = const SdkOmitted(),
+        SdkOptional<SecurityAdvisoriesListGlobalAdvisoriesSort> sort = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   if (perPage is SdkPresent<int>) {
     validateRange('per_page', perPage.value, min: 1, max: 100);
   }
@@ -101,61 +98,33 @@ Future<List<GlobalAdvisory>> securityAdvisoriesListGlobalAdvisories(
   return (await sdkRequest<List<GlobalAdvisory>>('GET', '/advisories',
           config: config,
           query: {
-            'ghsa_id': SdkQueryValue(SdkUtils.unwrapOptional(ghsaId),
-                style: 'form', explode: true),
-            'type': SdkQueryValue(SdkUtils.unwrapOptional(type_),
-                style: 'form', explode: true),
-            'cve_id': SdkQueryValue(SdkUtils.unwrapOptional(cveId),
-                style: 'form', explode: true),
-            'ecosystem': SdkQueryValue(SdkUtils.unwrapOptional(ecosystem),
-                style: 'form', explode: true),
-            'severity': SdkQueryValue(SdkUtils.unwrapOptional(severity),
-                style: 'form', explode: true),
-            'cwes': SdkQueryValue(SdkUtils.unwrapOptional(cwes),
-                style: 'form', explode: true),
-            'is_withdrawn': SdkQueryValue(SdkUtils.unwrapOptional(isWithdrawn),
-                style: 'form', explode: true),
-            'affects': SdkQueryValue(SdkUtils.unwrapOptional(affects),
-                style: 'form', explode: true),
-            'published': SdkQueryValue(SdkUtils.unwrapOptional(published),
-                style: 'form', explode: true),
-            'updated': SdkQueryValue(SdkUtils.unwrapOptional(updated),
-                style: 'form', explode: true),
-            'modified': SdkQueryValue(SdkUtils.unwrapOptional(modified),
-                style: 'form', explode: true),
-            'epss_percentage': SdkQueryValue(
-                SdkUtils.unwrapOptional(epssPercentage),
-                style: 'form',
-                explode: true),
-            'epss_percentile': SdkQueryValue(
-                SdkUtils.unwrapOptional(epssPercentile),
-                style: 'form',
-                explode: true),
-            'before': SdkQueryValue(SdkUtils.unwrapOptional(before),
-                style: 'form', explode: true),
-            'after': SdkQueryValue(SdkUtils.unwrapOptional(after),
-                style: 'form', explode: true),
-            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
-                style: 'form', explode: true)
+            'ghsa_id': SdkQueryValue(SdkUtils.unwrapOptional(ghsaId), style: 'form', explode: true),
+            'type': SdkQueryValue(SdkUtils.unwrapOptional(type_), style: 'form', explode: true),
+            'cve_id': SdkQueryValue(SdkUtils.unwrapOptional(cveId), style: 'form', explode: true),
+            'ecosystem': SdkQueryValue(SdkUtils.unwrapOptional(ecosystem), style: 'form', explode: true),
+            'severity': SdkQueryValue(SdkUtils.unwrapOptional(severity), style: 'form', explode: true),
+            'cwes': SdkQueryValue(SdkUtils.unwrapOptional(cwes), style: 'form', explode: true),
+            'is_withdrawn': SdkQueryValue(SdkUtils.unwrapOptional(isWithdrawn), style: 'form', explode: true),
+            'affects': SdkQueryValue(SdkUtils.unwrapOptional(affects), style: 'form', explode: true),
+            'published': SdkQueryValue(SdkUtils.unwrapOptional(published), style: 'form', explode: true),
+            'updated': SdkQueryValue(SdkUtils.unwrapOptional(updated), style: 'form', explode: true),
+            'modified': SdkQueryValue(SdkUtils.unwrapOptional(modified), style: 'form', explode: true),
+            'epss_percentage': SdkQueryValue(SdkUtils.unwrapOptional(epssPercentage), style: 'form', explode: true),
+            'epss_percentile': SdkQueryValue(SdkUtils.unwrapOptional(epssPercentile), style: 'form', explode: true),
+            'before': SdkQueryValue(SdkUtils.unwrapOptional(before), style: 'form', explode: true),
+            'after': SdkQueryValue(SdkUtils.unwrapOptional(after), style: 'form', explode: true),
+            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'securityAdvisoriesListGlobalAdvisories',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  GlobalAdvisory.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => GlobalAdvisory.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '422': (value) =>
-                ValidationErrorSimple.fromJson(value as Map<String, dynamic>),
-            '429': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>), '429': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Gets a global security advisory using its GitHub Security Advisory (GHSA) identifier.
 ///
@@ -167,14 +136,12 @@ Future<GlobalAdvisory> securityAdvisoriesGetGlobalAdvisory(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'securityAdvisoriesGetGlobalAdvisory',
-          fromJsonRaw: (value) =>
-              GlobalAdvisory.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => GlobalAdvisory.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists repository security advisories for an organization. The authenticated user must be an owner or security manager for the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` or `repository_advisories:write` scope to use this endpoint.
 ///
@@ -199,18 +166,16 @@ Future<GlobalAdvisory> securityAdvisoriesGetGlobalAdvisory(ClientConfig config,
 ///   -rest-api)."
 /// [state] Filter by the state of the repository advisories. Only advisories of
 ///   this state will be returned.
-Future<List<RepositoryAdvisory>> securityAdvisoriesListOrgRepositoryAdvisories(
-    ClientConfig config,
-    {required String org,
-    SdkOptional<SchemaSchema0df64690> direction = const SdkOmitted(),
-    SdkOptional<SecurityAdvisoriesListOrgRepositoryAdvisoriesSort> sort =
-        const SdkOmitted(),
-    SdkOptional<String> before = const SdkOmitted(),
-    SdkOptional<String> after = const SdkOmitted(),
-    SdkOptional<int> perPage = const SdkOmitted(),
-    SdkOptional<SecurityAdvisoriesListOrgRepositoryAdvisoriesState> state =
-        const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<List<RepositoryAdvisory>>
+    securityAdvisoriesListOrgRepositoryAdvisories(ClientConfig config,
+        {required String org,
+        SdkOptional<SchemaSchema0df64690> direction = const SdkOmitted(),
+        SdkOptional<SecurityAdvisoriesListOrgRepositoryAdvisoriesSort> sort = const SdkOmitted(),
+        SdkOptional<String> before = const SdkOmitted(),
+        SdkOptional<String> after = const SdkOmitted(),
+        SdkOptional<int> perPage = const SdkOmitted(),
+        SdkOptional<SecurityAdvisoriesListOrgRepositoryAdvisoriesState> state = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   if (perPage is SdkPresent<int>) {
     validateRange('per_page', perPage.value, min: 1, max: 100);
   }
@@ -219,33 +184,21 @@ Future<List<RepositoryAdvisory>> securityAdvisoriesListOrgRepositoryAdvisories(
           '/orgs/${Uri.encodeComponent(org.toString())}/security-advisories',
           config: config,
           query: {
-            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction),
-                style: 'form', explode: true),
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
-                style: 'form', explode: true),
-            'before': SdkQueryValue(SdkUtils.unwrapOptional(before),
-                style: 'form', explode: true),
-            'after': SdkQueryValue(SdkUtils.unwrapOptional(after),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'state': SdkQueryValue(SdkUtils.unwrapOptional(state),
-                style: 'form', explode: true)
+            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction), style: 'form', explode: true),
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true),
+            'before': SdkQueryValue(SdkUtils.unwrapOptional(before), style: 'form', explode: true),
+            'after': SdkQueryValue(SdkUtils.unwrapOptional(after), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'state': SdkQueryValue(SdkUtils.unwrapOptional(state), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'securityAdvisoriesListOrgRepositoryAdvisories',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  RepositoryAdvisory.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => RepositoryAdvisory.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists security advisories in a repository. The authenticated user can access unpublished security advisories from a repository if they are a security manager or administrator of that repository, or if they are a collaborator on any security advisory. OAuth app tokens and personal access tokens (classic) need the `repo` or `repository_advisories:read` scope to to get a published security advisory in a private repository, or any unpublished security advisory that the authenticated user has access to.
 ///
@@ -272,19 +225,17 @@ Future<List<RepositoryAdvisory>> securityAdvisoriesListOrgRepositoryAdvisories(
 ///   -rest-api)."
 /// [state] Filter by state of the repository advisories. Only advisories of
 ///   this state will be returned.
-Future<List<RepositoryAdvisory>> securityAdvisoriesListRepositoryAdvisories(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    SdkOptional<SchemaSchema0df64690> direction = const SdkOmitted(),
-    SdkOptional<SecurityAdvisoriesListRepositoryAdvisoriesSort> sort =
-        const SdkOmitted(),
-    SdkOptional<String> before = const SdkOmitted(),
-    SdkOptional<String> after = const SdkOmitted(),
-    SdkOptional<int> perPage = const SdkOmitted(),
-    SdkOptional<SecurityAdvisoriesListRepositoryAdvisoriesState> state =
-        const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<List<RepositoryAdvisory>>
+    securityAdvisoriesListRepositoryAdvisories(ClientConfig config,
+        {required String owner,
+        required String repo,
+        SdkOptional<SchemaSchema0df64690> direction = const SdkOmitted(),
+        SdkOptional<SecurityAdvisoriesListRepositoryAdvisoriesSort> sort = const SdkOmitted(),
+        SdkOptional<String> before = const SdkOmitted(),
+        SdkOptional<String> after = const SdkOmitted(),
+        SdkOptional<int> perPage = const SdkOmitted(),
+        SdkOptional<SecurityAdvisoriesListRepositoryAdvisoriesState> state = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   if (perPage is SdkPresent<int>) {
     validateRange('per_page', perPage.value, min: 1, max: 100);
   }
@@ -293,33 +244,21 @@ Future<List<RepositoryAdvisory>> securityAdvisoriesListRepositoryAdvisories(
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/security-advisories',
           config: config,
           query: {
-            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction),
-                style: 'form', explode: true),
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
-                style: 'form', explode: true),
-            'before': SdkQueryValue(SdkUtils.unwrapOptional(before),
-                style: 'form', explode: true),
-            'after': SdkQueryValue(SdkUtils.unwrapOptional(after),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'state': SdkQueryValue(SdkUtils.unwrapOptional(state),
-                style: 'form', explode: true)
+            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction), style: 'form', explode: true),
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true),
+            'before': SdkQueryValue(SdkUtils.unwrapOptional(before), style: 'form', explode: true),
+            'after': SdkQueryValue(SdkUtils.unwrapOptional(after), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'state': SdkQueryValue(SdkUtils.unwrapOptional(state), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'securityAdvisoriesListRepositoryAdvisories',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  RepositoryAdvisory.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => RepositoryAdvisory.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Creates a new repository security advisory. In order to create a draft repository security advisory, the authenticated user must be a security manager or administrator of that repository. OAuth app tokens and personal access tokens (classic) need the `repo` or `repository_advisories:write` scope to use this endpoint.
 ///
@@ -340,22 +279,20 @@ Future<List<RepositoryAdvisory>> securityAdvisoriesListRepositoryAdvisories(
 ///   advisory. You must choose between setting this field or `severity`.
 /// [startPrivateFork] Whether to create a temporary private fork of the
 ///   repository to collaborate on a fix.
-Future<RepositoryAdvisory> securityAdvisoriesCreateRepositoryAdvisory(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    required String summary,
-    required String description,
-    required List<RepositoryAdvisoryCreateVulnerabilitiesItem> vulnerabilities,
-    SdkOptional<String?> cveId = const SdkOmitted(),
-    SdkOptional<List<String>?> cweIds = const SdkOmitted(),
-    SdkOptional<List<RepositoryAdvisoryCreateCreditsItem>?> credits =
-        const SdkOmitted(),
-    SdkOptional<RepositoryAdvisoryCreateSeverity?> severity =
-        const SdkOmitted(),
-    SdkOptional<String?> cvssVectorString = const SdkOmitted(),
-    SdkOptional<bool> startPrivateFork = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<RepositoryAdvisory>
+    securityAdvisoriesCreateRepositoryAdvisory(ClientConfig config,
+        {required String owner,
+        required String repo,
+        required String summary,
+        required String description,
+        required List<RepositoryAdvisoryCreateVulnerabilitiesItem> vulnerabilities,
+        SdkOptional<String?> cveId = const SdkOmitted(),
+        SdkOptional<List<String>?> cweIds = const SdkOmitted(),
+        SdkOptional<List<RepositoryAdvisoryCreateCreditsItem>?> credits = const SdkOmitted(),
+        SdkOptional<RepositoryAdvisoryCreateSeverity?> severity = const SdkOmitted(),
+        SdkOptional<String?> cvssVectorString = const SdkOmitted(),
+        SdkOptional<bool> startPrivateFork = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   validateLength('summary', summary, max: 1024);
   validateLength('description', description, max: 65535);
 
@@ -375,20 +312,12 @@ Future<RepositoryAdvisory> securityAdvisoriesCreateRepositoryAdvisory(
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'securityAdvisoriesCreateRepositoryAdvisory',
-          fromJsonRaw: (value) =>
-              RepositoryAdvisory.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => RepositoryAdvisory.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                RepositoryAdvisoryDescriptionValidationError.fromJson(
-                    value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => RepositoryAdvisoryDescriptionValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Report a security vulnerability to the maintainers of the repository. See "[Privately reporting a security vulnerability](https://docs.github.com/code-security/security-advisories/guidance-on-reporting-and-writing/privately-reporting-a-security-vulnerability)" for more information about private vulnerability reporting.
 ///
@@ -408,20 +337,18 @@ Future<RepositoryAdvisory> securityAdvisoriesCreateRepositoryAdvisory(
 ///   repository to collaborate on a fix. The fork is created only if you are
 ///   permitted to create one; otherwise, this parameter is ignored and the report
 ///   is still created.
-Future<RepositoryAdvisory> securityAdvisoriesCreatePrivateVulnerabilityReport(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    required String summary,
-    required String description,
-    SdkOptional<List<PrivateVulnerabilityReportCreateVulnerabilitiesItem>?>
-        vulnerabilities = const SdkOmitted(),
-    SdkOptional<List<String>?> cweIds = const SdkOmitted(),
-    SdkOptional<PrivateVulnerabilityReportCreateSeverity?> severity =
-        const SdkOmitted(),
-    SdkOptional<String?> cvssVectorString = const SdkOmitted(),
-    SdkOptional<bool> startPrivateFork = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<RepositoryAdvisory>
+    securityAdvisoriesCreatePrivateVulnerabilityReport(ClientConfig config,
+        {required String owner,
+        required String repo,
+        required String summary,
+        required String description,
+        SdkOptional<List<PrivateVulnerabilityReportCreateVulnerabilitiesItem>?> vulnerabilities = const SdkOmitted(),
+        SdkOptional<List<String>?> cweIds = const SdkOmitted(),
+        SdkOptional<PrivateVulnerabilityReportCreateSeverity?> severity = const SdkOmitted(),
+        SdkOptional<String?> cvssVectorString = const SdkOmitted(),
+        SdkOptional<bool> startPrivateFork = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   validateLength('summary', summary, max: 1024);
   validateLength('description', description, max: 65535);
 
@@ -439,20 +366,12 @@ Future<RepositoryAdvisory> securityAdvisoriesCreatePrivateVulnerabilityReport(
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'securityAdvisoriesCreatePrivateVulnerabilityReport',
-          fromJsonRaw: (value) =>
-              RepositoryAdvisory.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => RepositoryAdvisory.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                RepositoryAdvisoryDescriptionValidationError.fromJson(
-                    value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => RepositoryAdvisoryDescriptionValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Get a repository security advisory using its GitHub Security Advisory (GHSA) identifier. Anyone can access any published security advisory on a public repository. The authenticated user can access an unpublished security advisory from a repository if they are a security manager or administrator of that repository, or if they are a collaborator on the security advisory. OAuth app tokens and personal access tokens (classic) need the `repo` or `repository_advisories:read` scope to to get a published security advisory in a private repository, or any unpublished security advisory that the authenticated user has access to.
 ///
@@ -460,26 +379,23 @@ Future<RepositoryAdvisory> securityAdvisoriesCreatePrivateVulnerabilityReport(
 /// [repo] The name of the repository without the `.git` extension. The name is
 ///   not case sensitive.
 /// [ghsaId] The GHSA (GitHub Security Advisory) identifier of the advisory.
-Future<RepositoryAdvisory> securityAdvisoriesGetRepositoryAdvisory(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    required String ghsaId,
-    RequestOptions? requestOptions}) async {
+Future<RepositoryAdvisory>
+    securityAdvisoriesGetRepositoryAdvisory(ClientConfig config,
+        {required String owner,
+        required String repo,
+        required String ghsaId,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<RepositoryAdvisory>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/security-advisories/${Uri.encodeComponent(ghsaId.toString())}',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'securityAdvisoriesGetRepositoryAdvisory',
-          fromJsonRaw: (value) =>
-              RepositoryAdvisory.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => RepositoryAdvisory.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Update a repository security advisory using its GitHub Security Advisory (GHSA) identifier. In order to update any security advisory, the authenticated user must be a security manager or administrator of that repository, or a collaborator on the repository security advisory. OAuth app tokens and personal access tokens (classic) need the `repo` or `repository_advisories:write` scope to use this endpoint.
 ///
@@ -504,26 +420,23 @@ Future<RepositoryAdvisory> securityAdvisoriesGetRepositoryAdvisory(
 ///   to the advisory.
 /// [collaboratingTeams] A list of team slugs which have been granted write
 ///   access to the advisory.
-Future<RepositoryAdvisory> securityAdvisoriesUpdateRepositoryAdvisory(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    required String ghsaId,
-    SdkOptional<String> summary = const SdkOmitted(),
-    SdkOptional<String> description = const SdkOmitted(),
-    SdkOptional<String?> cveId = const SdkOmitted(),
-    SdkOptional<List<RepositoryAdvisoryUpdateVulnerabilitiesItem>>
-        vulnerabilities = const SdkOmitted(),
-    SdkOptional<List<String>?> cweIds = const SdkOmitted(),
-    SdkOptional<List<RepositoryAdvisoryUpdateCreditsItem>?> credits =
-        const SdkOmitted(),
-    SdkOptional<RepositoryAdvisoryUpdateSeverity?> severity =
-        const SdkOmitted(),
-    SdkOptional<String?> cvssVectorString = const SdkOmitted(),
-    SdkOptional<RepositoryAdvisoryUpdateState> state = const SdkOmitted(),
-    SdkOptional<List<String>?> collaboratingUsers = const SdkOmitted(),
-    SdkOptional<List<String>?> collaboratingTeams = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<RepositoryAdvisory>
+    securityAdvisoriesUpdateRepositoryAdvisory(ClientConfig config,
+        {required String owner,
+        required String repo,
+        required String ghsaId,
+        SdkOptional<String> summary = const SdkOmitted(),
+        SdkOptional<String> description = const SdkOmitted(),
+        SdkOptional<String?> cveId = const SdkOmitted(),
+        SdkOptional<List<RepositoryAdvisoryUpdateVulnerabilitiesItem>> vulnerabilities = const SdkOmitted(),
+        SdkOptional<List<String>?> cweIds = const SdkOmitted(),
+        SdkOptional<List<RepositoryAdvisoryUpdateCreditsItem>?> credits = const SdkOmitted(),
+        SdkOptional<RepositoryAdvisoryUpdateSeverity?> severity = const SdkOmitted(),
+        SdkOptional<String?> cvssVectorString = const SdkOmitted(),
+        SdkOptional<RepositoryAdvisoryUpdateState> state = const SdkOmitted(),
+        SdkOptional<List<String>?> collaboratingUsers = const SdkOmitted(),
+        SdkOptional<List<String>?> collaboratingTeams = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   if (summary is SdkPresent<String>) {
     validateLength('summary', summary.value, max: 1024);
   }
@@ -549,19 +462,12 @@ Future<RepositoryAdvisory> securityAdvisoriesUpdateRepositoryAdvisory(
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'securityAdvisoriesUpdateRepositoryAdvisory',
-          fromJsonRaw: (value) =>
-              RepositoryAdvisory.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => RepositoryAdvisory.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// If you want a CVE identification number for the security vulnerability in your project, and don't already have one, you can request a CVE identification number from GitHub. For more information see "[Requesting a CVE identification number](https://docs.github.com/code-security/security-advisories/repository-security-advisories/publishing-a-repository-security-advisory#requesting-a-cve-identification-number-optional)." You may request a CVE for public repositories, but cannot do so for private repositories. In order to request a CVE for a repository security advisory, the authenticated user must be a security manager or administrator of that repository. OAuth app tokens and personal access tokens (classic) need the `repo` or `repository_advisories:write` scope to use this endpoint.
 ///
@@ -582,15 +488,10 @@ Future<Map<String, dynamic>>
           operationId: 'securityAdvisoriesCreateRepositoryAdvisoryCveRequest',
           fromJsonRaw: (value) => value as Map<String, dynamic>,
           options: requestOptions,
-          errors: {
-        '400': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '422': (value) =>
-            ValidationError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Create a temporary private fork to collaborate on fixing a security vulnerability in a repository. Repository administrators, organization owners, and security managers can create a temporary private fork. The original reporter of a privately reported vulnerability can also create one while they remain a collaborator on the security advisory. &gt; [!NOTE] &gt; Forking a repository happens asynchronously. You may have to wait up to 5 minutes before you can access the fork.
 ///
@@ -608,15 +509,8 @@ Future<FullRepository> securityAdvisoriesCreateFork(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'securityAdvisoriesCreateFork',
-          fromJsonRaw: (value) =>
-              FullRepository.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => FullRepository.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '400': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '422': (value) =>
-            ValidationError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }

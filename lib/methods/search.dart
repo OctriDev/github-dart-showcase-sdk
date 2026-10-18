@@ -42,30 +42,19 @@ Future<SearchCodeResponse> searchCode(ClientConfig config,
           config: config,
           query: {
             'q': SdkQueryValue(q, style: 'form', explode: true),
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
-                style: 'form', explode: true),
-            'order': SdkQueryValue(SdkUtils.unwrapOptional(order),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true),
+            'order': SdkQueryValue(SdkUtils.unwrapOptional(order), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'searchCode',
-          fromJsonRaw: (value) =>
-              SearchCodeResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => SearchCodeResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Find commits via various criteria on the default branch (usually `main`). This method returns up to 100 results [per page](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api). When searching for commits, you can get text match metadata for the **message** field when you provide the `text-match` media type. For more details about how to receive highlighted search results, see [Text match metadata](https://docs.github.com/rest/search/search#text-match-metadata). For example, if you want to find commits related to CSS in the [octocat/Spoon-Knife](https://github.com/octocat/Spoon-Knife) repository. Your query would look something like this: `q=repo:octocat/Spoon-Knife+css`
 ///
@@ -102,22 +91,18 @@ Future<SearchCommitsResponse> searchCommits(ClientConfig config,
           config: config,
           query: {
             'q': SdkQueryValue(q, style: 'form', explode: true),
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
-                style: 'form', explode: true),
-            'order': SdkQueryValue(SdkUtils.unwrapOptional(order),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true),
+            'order': SdkQueryValue(SdkUtils.unwrapOptional(order), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'searchCommits',
-          fromJsonRaw: (value) =>
-              SearchCommitsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => SearchCommitsResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Find issues by state and keyword. This method returns up to 100 results [per page](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api). When searching for issues, you can get text match metadata for the issue **title**, issue **body**, and issue **comment body** fields when you pass the `text-match` media type. For more details about how to receive highlighted search results, see [Text match metadata](https://docs.github.com/rest/search/search#text-match-metadata). For example, if you want to find the oldest unresolved Python bugs on Windows. Your query might look something like this. `q=windows+label:bug+language:python+state:open&sort=created&order=asc` This query searches for the keyword `windows`, within any open issue that is labeled as `bug`. The search runs across repositories whose primary language is Python. The results are sorted by creation date in ascending order, which means the oldest issues appear first in the search results. &gt; [!NOTE] &gt; For requests made by GitHub Apps with a user access token, you can't retrieve a combination of issues and pull requests in a single query. Requests that don't include the `is:issue` or `is:pull-request` qualifier will receive an HTTP `422 Unprocessable Entity` response. To get results for both issues and pull requests, you must send separate queries for issues and pull requests. For more information about the `is` qualifier, see "[Searching only issues or pull requests](https://docs.github.com/github/searching-for-information-on-github/searching-issues-and-pull-requests#search-only-issues-or-pull-requests)."
 ///
@@ -154,53 +139,36 @@ Future<SearchCommitsResponse> searchCommits(ClientConfig config,
 ///   semantic search with lexical search for best results. Semantic and hybrid
 ///   search require authentication and are rate limited to 10 requests per
 ///   minute. Only applies to issue searches (`/search/issues`).
-Future<SearchIssuesAndPullRequestsResponse> searchIssuesAndPullRequests(
-    ClientConfig config,
-    {required String q,
-    SdkOptional<SearchIssuesAndPullRequestsSort> sort = const SdkOmitted(),
-    SdkOptional<SchemaSchema8674e2c0> order = const SdkOmitted(),
-    SdkOptional<int> perPage = const SdkOmitted(),
-    SdkOptional<int> page = const SdkOmitted(),
-    SdkOptional<String> advancedSearch = const SdkOmitted(),
-    SdkOptional<SchemaSchemadfca6a72> searchType = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<SearchIssuesAndPullRequestsResponse>
+    searchIssuesAndPullRequests(ClientConfig config,
+        {required String q,
+        SdkOptional<SearchIssuesAndPullRequestsSort> sort = const SdkOmitted(),
+        SdkOptional<SchemaSchema8674e2c0> order = const SdkOmitted(),
+        SdkOptional<int> perPage = const SdkOmitted(),
+        SdkOptional<int> page = const SdkOmitted(),
+        SdkOptional<String> advancedSearch = const SdkOmitted(),
+        SdkOptional<SchemaSchemadfca6a72> searchType = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<SearchIssuesAndPullRequestsResponse>(
           'GET', '/search/issues',
           config: config,
           query: {
             'q': SdkQueryValue(q, style: 'form', explode: true),
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
-                style: 'form', explode: true),
-            'order': SdkQueryValue(SdkUtils.unwrapOptional(order),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'advanced_search': SdkQueryValue(
-                SdkUtils.unwrapOptional(advancedSearch),
-                style: 'form',
-                explode: true),
-            'search_type': SdkQueryValue(SdkUtils.unwrapOptional(searchType),
-                style: 'form', explode: true)
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true),
+            'order': SdkQueryValue(SdkUtils.unwrapOptional(order), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'advanced_search': SdkQueryValue(SdkUtils.unwrapOptional(advancedSearch), style: 'form', explode: true),
+            'search_type': SdkQueryValue(SdkUtils.unwrapOptional(searchType), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'searchIssuesAndPullRequests',
-          fromJsonRaw: (value) => SearchIssuesAndPullRequestsResponse.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => SearchIssuesAndPullRequestsResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Find labels in a repository with names or descriptions that match search keywords. Returns up to 100 results [per page](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api). When searching for labels, you can get text match metadata for the label **name** and **description** fields when you pass the `text-match` media type. For more details about how to receive highlighted search results, see [Text match metadata](https://docs.github.com/rest/search/search#text-match-metadata). For example, if you want to find labels in the `linguist` repository that match `bug`, `defect`, or `enhancement`. Your query might look like this: `q=bug+defect+enhancement&repository_id=64778136` The labels that best match the query appear first in the search results.
 ///
@@ -235,33 +203,21 @@ Future<SearchLabelsResponse> searchLabels(ClientConfig config,
   return (await sdkRequest<SearchLabelsResponse>('GET', '/search/labels',
           config: config,
           query: {
-            'repository_id':
-                SdkQueryValue(repositoryId, style: 'form', explode: true),
+            'repository_id': SdkQueryValue(repositoryId, style: 'form', explode: true),
             'q': SdkQueryValue(q, style: 'form', explode: true),
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
-                style: 'form', explode: true),
-            'order': SdkQueryValue(SdkUtils.unwrapOptional(order),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true),
+            'order': SdkQueryValue(SdkUtils.unwrapOptional(order), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'searchLabels',
-          fromJsonRaw: (value) =>
-              SearchLabelsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => SearchLabelsResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Find repositories via various criteria. This method returns up to 100 results [per page](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api). When searching for repositories, you can get text match metadata for the **name** and **description** fields when you pass the `text-match` media type. For more details about how to receive highlighted search results, see [Text match metadata](https://docs.github.com/rest/search/search#text-match-metadata). For example, if you want to search for popular Tetris repositories written in assembly code, your query might look like this: `q=tetris+language:assembly&sort=stars&order=desc` This query searches for repositories with the word `tetris` in the name, the description, or the README. The results are limited to repositories where the primary language is assembly. The results are sorted by stars in descending order, so that the most popular repositories appear first in the search results.
 ///
@@ -299,28 +255,19 @@ Future<SearchReposResponse> searchRepos(ClientConfig config,
           config: config,
           query: {
             'q': SdkQueryValue(q, style: 'form', explode: true),
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
-                style: 'form', explode: true),
-            'order': SdkQueryValue(SdkUtils.unwrapOptional(order),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true),
+            'order': SdkQueryValue(SdkUtils.unwrapOptional(order), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'searchRepos',
-          fromJsonRaw: (value) =>
-              SearchReposResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => SearchReposResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Find topics via various criteria. Results are sorted by best match. This method returns up to 100 results [per page](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api). See "[Searching topics](https://docs.github.com/articles/searching-topics/)" for a detailed list of qualifiers. When searching for topics, you can get text match metadata for the topic's **short\_description**, **description**, **name**, or **display\_name** field when you pass the `text-match` media type. For more details about how to receive highlighted search results, see [Text match metadata](https://docs.github.com/rest/search/search#text-match-metadata). For example, if you want to search for topics related to Ruby that are featured on https://github.com/topics. Your query might look like this: `q=ruby+is:featured` This query searches for topics with the keyword `ruby` and limits the results to find only topics that are featured. The topics that are the best match for the query appear first in the search results.
 ///
@@ -347,18 +294,16 @@ Future<SearchTopicsResponse> searchTopics(ClientConfig config,
           config: config,
           query: {
             'q': SdkQueryValue(q, style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'searchTopics',
-          fromJsonRaw: (value) =>
-              SearchTopicsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => SearchTopicsResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Find users via various criteria. This method returns up to 100 results [per page](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api). When searching for users, you can get text match metadata for the issue **login**, public **email**, and **name** fields when you pass the `text-match` media type. For more details about highlighting search results, see [Text match metadata](https://docs.github.com/rest/search/search#text-match-metadata). For more details about how to receive highlighted search results, see [Text match metadata](https://docs.github.com/rest/search/search#text-match-metadata). For example, if you're looking for a list of popular users, you might try this query: `q=tom+repos:%3E42+followers:%3E1000` This query searches for users with the name `tom`. The results are restricted to users with more than 42 repositories and over 1,000 followers. This endpoint does not accept authentication and will only include publicly visible users. As an alternative, you can use the GraphQL API. The GraphQL API requires authentication and will return private users, including Enterprise Managed Users (EMUs), that you are authorized to view. For more information, see "[GraphQL Queries](https://docs.github.com/graphql/reference/queries#search)."
 ///
@@ -395,25 +340,15 @@ Future<SearchUsersResponse> searchUsers(ClientConfig config,
           config: config,
           query: {
             'q': SdkQueryValue(q, style: 'form', explode: true),
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
-                style: 'form', explode: true),
-            'order': SdkQueryValue(SdkUtils.unwrapOptional(order),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true),
+            'order': SdkQueryValue(SdkUtils.unwrapOptional(order), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'searchUsers',
-          fromJsonRaw: (value) =>
-              SearchUsersResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => SearchUsersResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }

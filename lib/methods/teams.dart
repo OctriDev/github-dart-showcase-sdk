@@ -31,24 +31,18 @@ Future<List<Team>> teamsList(ClientConfig config,
           'GET', '/orgs/${Uri.encodeComponent(org.toString())}/teams',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'team_type': SdkQueryValue(SdkUtils.unwrapOptional(teamType),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'team_type': SdkQueryValue(SdkUtils.unwrapOptional(teamType), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'teamsList',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => Team.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => Team.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// To create a team, the authenticated user must be a member or owner of `{org}`. By default, organization members can create teams. Organization owners can limit team creation to organization owners. For more information, see "[Setting team creation permissions](https://docs.github.com/articles/setting-team-creation-permissions-in-your-organization)." When you create a new team, you automatically become a team maintainer without explicitly adding yourself to the optional array of `maintainers`. For more information, see "[About teams](https://docs.github.com/github/setting-up-and-managing-organizations-and-teams/about-teams)".
 ///
@@ -81,10 +75,8 @@ Future<TeamFull> teamsCreate(ClientConfig config,
     SdkOptional<List<String>> maintainers = const SdkOmitted(),
     SdkOptional<List<String>> repoNames = const SdkOmitted(),
     SdkOptional<TeamsCreateRequestBodyPrivacy> privacy = const SdkOmitted(),
-    SdkOptional<TeamsCreateRequestBodyNotificationSetting> notificationSetting =
-        const SdkOmitted(),
-    SdkOptional<TeamsCreateRequestBodyPermission> permission =
-        const SdkOmitted(),
+    SdkOptional<TeamsCreateRequestBodyNotificationSetting> notificationSetting = const SdkOmitted(),
+    SdkOptional<TeamsCreateRequestBodyPermission> permission = const SdkOmitted(),
     SdkOptional<int> parentTeamId = const SdkOmitted(),
     SdkOptional<String> parentTeamSlug = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
@@ -97,25 +89,19 @@ Future<TeamFull> teamsCreate(ClientConfig config,
             'maintainers': SdkUtils.unwrapOptional(maintainers),
             'repo_names': SdkUtils.unwrapOptional(repoNames),
             'privacy': SdkUtils.unwrapOptional(privacy),
-            'notification_setting':
-                SdkUtils.unwrapOptional(notificationSetting),
+            'notification_setting': SdkUtils.unwrapOptional(notificationSetting),
             'permission': SdkUtils.unwrapOptional(permission),
             'parent_team_id': SdkUtils.unwrapOptional(parentTeamId),
             'parent_team_slug': SdkUtils.unwrapOptional(parentTeamSlug)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'teamsCreate',
-          fromJsonRaw: (value) =>
-              TeamFull.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => TeamFull.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Gets a team using the team's `slug`. To create the `slug`, GitHub replaces special characters in the `name` string, changes all words to lowercase, and replaces spaces with a `-` separator. For example, `"My TEam Näme"` would become `my-team-name`. &gt; [!NOTE] &gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}`.
 ///
@@ -132,11 +118,10 @@ Future<TeamFull> teamsGetByName(ClientConfig config,
           operationId: 'teamsGetByName',
           fromJsonRaw: (value) => TeamFull.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// To edit a team, the authenticated user must either be an organization owner or a team maintainer. &gt; [!NOTE] &gt; You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/{org_id}/team/{team_id}`.
 ///
@@ -166,12 +151,9 @@ Future<TeamFull> teamsUpdateInOrg(ClientConfig config,
     required String teamSlug,
     SdkOptional<String> name = const SdkOmitted(),
     SdkOptional<String> description = const SdkOmitted(),
-    SdkOptional<TeamsUpdateInOrgRequestBodyPrivacy> privacy =
-        const SdkOmitted(),
-    SdkOptional<TeamsUpdateInOrgRequestBodyNotificationSetting>
-        notificationSetting = const SdkOmitted(),
-    SdkOptional<TeamsUpdateInOrgRequestBodyPermission> permission =
-        const SdkOmitted(),
+    SdkOptional<TeamsUpdateInOrgRequestBodyPrivacy> privacy = const SdkOmitted(),
+    SdkOptional<TeamsUpdateInOrgRequestBodyNotificationSetting> notificationSetting = const SdkOmitted(),
+    SdkOptional<TeamsUpdateInOrgRequestBodyPermission> permission = const SdkOmitted(),
     SdkOptional<int?> parentTeamId = const SdkOmitted(),
     SdkOptional<String?> parentTeamSlug = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
@@ -182,27 +164,19 @@ Future<TeamFull> teamsUpdateInOrg(ClientConfig config,
             'name': SdkUtils.unwrapOptional(name),
             'description': SdkUtils.unwrapOptional(description),
             'privacy': SdkUtils.unwrapOptional(privacy),
-            'notification_setting':
-                SdkUtils.unwrapOptional(notificationSetting),
+            'notification_setting': SdkUtils.unwrapOptional(notificationSetting),
             'permission': SdkUtils.unwrapOptional(permission),
             'parent_team_id': SdkUtils.unwrapOptional(parentTeamId),
             'parent_team_slug': SdkUtils.unwrapOptional(parentTeamSlug)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'teamsUpdateInOrg',
-          fromJsonRaw: (value) =>
-              TeamFull.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => TeamFull.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// To delete a team, the authenticated user must be an organization owner or team maintainer. If you are an organization owner, deleting a parent team will delete all of its child teams as well. &gt; [!NOTE] &gt; You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}`.
 ///
@@ -221,6 +195,7 @@ Future<void> teamsDeleteInOrg(ClientConfig config,
       .data;
 }
 
+
 /// The return hash contains a `role` field which refers to the Organization Invitation role and will be one of the following values: `direct_member`, `admin`, `billing_manager`, `hiring_manager`, or `reinstate`. If the invitee is not a GitHub member, the `login` field in the return hash will be `null`. &gt; [!NOTE] &gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/invitations`.
 ///
 /// [org] The organization name. The name is not case sensitive.
@@ -233,31 +208,27 @@ Future<void> teamsDeleteInOrg(ClientConfig config,
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<List<OrganizationInvitation>> teamsListPendingInvitationsInOrg(
-    ClientConfig config,
-    {required String org,
-    required String teamSlug,
-    SdkOptional<int> perPage = const SdkOmitted(),
-    SdkOptional<int> page = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<List<OrganizationInvitation>>
+    teamsListPendingInvitationsInOrg(ClientConfig config,
+        {required String org,
+        required String teamSlug,
+        SdkOptional<int> perPage = const SdkOmitted(),
+        SdkOptional<int> page = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<OrganizationInvitation>>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/teams/${Uri.encodeComponent(teamSlug.toString())}/invitations',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'teamsListPendingInvitationsInOrg',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  OrganizationInvitation.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => OrganizationInvitation.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// Team members will include the members of child teams. Each member includes their `role` on the team (`member` or `maintainer`) and an `inherited` flag indicating whether the membership is inherited from a child team (`true`) or is a direct membership (`false`). These fields let you read a member's role and direct/inherited status without additional requests. To list members in a team, the team must be visible to the authenticated user. &gt; [!NOTE] &gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/members`.
 ///
@@ -283,21 +254,17 @@ Future<List<TeamMember>> teamsListMembersInOrg(ClientConfig config,
           '/orgs/${Uri.encodeComponent(org.toString())}/teams/${Uri.encodeComponent(teamSlug.toString())}/members',
           config: config,
           query: {
-            'role': SdkQueryValue(SdkUtils.unwrapOptional(role),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'role': SdkQueryValue(SdkUtils.unwrapOptional(role), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'teamsListMembersInOrg',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => TeamMember.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => TeamMember.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// Team members will include the members of child teams. To get a user's membership with a team, the team must be visible to the authenticated user. &gt; [!NOTE] &gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/memberships/{username}`. &gt; [!NOTE] &gt; The response contains the `state` of the membership and the member's `role`. The `role` for organization owners is set to `maintainer`. For more information about `maintainer` roles, see [Create a team](https://docs.github.com/rest/teams/teams#create-a-team).
 ///
@@ -314,11 +281,11 @@ Future<TeamMembership> teamsGetMembershipForUserInOrg(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'teamsGetMembershipForUserInOrg',
-          fromJsonRaw: (value) =>
-              TeamMembership.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => TeamMembership.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Adds an organization member to a team. An authenticated organization owner or team maintainer can add organization members to a team. Team synchronization is available for organizations using GitHub Enterprise Cloud. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation. &gt; [!NOTE] &gt; When you have team synchronization set up for a team with your organization's identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team's membership. If you have access to manage group membership in your IdP, you can manage GitHub team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see "[Synchronizing teams between your identity provider and GitHub](https://docs.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/)." An organization owner can add someone who is not part of the team's organization to a team. When an organization owner adds someone to a team who is not an organization member, this endpoint will send an invitation to the person via email. This newly-created membership will be in the "pending" state until the person accepts the invitation, at which point the membership will transition to the "active" state and the user will be added as a member of the team. If the user is already a member of the team, this endpoint will update the role of the team member's role. To update the membership of a team member, the authenticated user must be an organization owner or a team maintainer. &gt; [!NOTE] &gt; You can also specify a team by `org_id` and `team_id` using the route `PUT /organizations/{org_id}/team/{team_id}/memberships/{username}`.
 ///
@@ -326,25 +293,24 @@ Future<TeamMembership> teamsGetMembershipForUserInOrg(ClientConfig config,
 /// [teamSlug] The slug of the team name.
 /// [username] The handle for the GitHub user account.
 /// [role] The role that this user should have in the team.
-Future<TeamMembership> teamsAddOrUpdateMembershipForUserInOrg(
-    ClientConfig config,
-    {required String org,
-    required String teamSlug,
-    required String username,
-    SdkOptional<TeamsAddOrUpdateMembershipForUserInOrgRequestBodyRole> role =
-        const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<TeamMembership>
+    teamsAddOrUpdateMembershipForUserInOrg(ClientConfig config,
+        {required String org,
+        required String teamSlug,
+        required String username,
+        SdkOptional<TeamsAddOrUpdateMembershipForUserInOrgRequestBodyRole> role = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<TeamMembership>('PUT',
           '/orgs/${Uri.encodeComponent(org.toString())}/teams/${Uri.encodeComponent(teamSlug.toString())}/memberships/${Uri.encodeComponent(username.toString())}',
           config: config,
           body: {'role': SdkUtils.unwrapOptional(role)},
           decoder: SdkResponseDecoder.json,
           operationId: 'teamsAddOrUpdateMembershipForUserInOrg',
-          fromJsonRaw: (value) =>
-              TeamMembership.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => TeamMembership.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// To remove a membership between a user and a team, the authenticated user must have 'admin' permissions to the team or be an owner of the organization that the team is associated with. Removing team membership does not delete the user, it just removes their membership from the team. Team synchronization is available for organizations using GitHub Enterprise Cloud. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation. &gt; [!NOTE] &gt; When you have team synchronization set up for a team with your organization's identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team's membership. If you have access to manage group membership in your IdP, you can manage GitHub team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see "[Synchronizing teams between your identity provider and GitHub](https://docs.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/)." &gt; [!NOTE] &gt; You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}/memberships/{username}`.
 ///
@@ -364,6 +330,7 @@ Future<void> teamsRemoveMembershipForUserInOrg(ClientConfig config,
           options: requestOptions))
       .data;
 }
+
 
 /// Lists a team's repositories visible to the authenticated user. OAuth app tokens and personal access tokens (classic) need the `read:org` or `repo` scope to use this endpoint. &gt; [!NOTE] &gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/repos`.
 ///
@@ -387,20 +354,16 @@ Future<List<MinimalRepository>> teamsListReposInOrg(ClientConfig config,
           '/orgs/${Uri.encodeComponent(org.toString())}/teams/${Uri.encodeComponent(teamSlug.toString())}/repos',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'teamsListReposInOrg',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  MinimalRepository.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => MinimalRepository.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// Checks whether a team has `admin`, `push`, `maintain`, `triage`, or `pull` permission for a repository. Repositories inherited through a parent team will also be checked. You can also get information about the specified repository, including what permissions the team grants on it, by passing the following custom [media type](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types/) via the `application/vnd.github.v3.repository+json` accept header. If a team doesn't have permission for the repository, you will receive a `404 Not Found` response status. If the repository is private, you must have at least `read` permission for that repository, and your token must have the `repo` or `admin:org` scope. Otherwise, you will receive a `404 Not Found` response status. &gt; [!NOTE] &gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/repos/{owner}/{repo}`.
 ///
@@ -420,11 +383,11 @@ Future<TeamRepository> teamsCheckPermissionsForRepoInOrg(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'teamsCheckPermissionsForRepoInOrg',
-          fromJsonRaw: (value) =>
-              TeamRepository.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => TeamRepository.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// To add a repository to a team or update the team's permission on a repository, the authenticated user must have admin access to the repository, and must be able to see the team. The repository must be owned by the organization, or a direct fork of a repository owned by the organization. You will get a `422 Unprocessable Entity` status if you attempt to add a repository to a team that is not owned by the organization. Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP method](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method)." &gt; [!NOTE] &gt; You can also specify a team by `org_id` and `team_id` using the route `PUT /organizations/{org_id}/team/{team_id}/repos/{owner}/{repo}`. For more information about the permission levels, see "[Repository permission levels for an organization](https://docs.github.com/github/setting-up-and-managing-organizations-and-teams/repository-permission-levels-for-an-organization#permission-levels-for-repositories-owned-by-an-organization)".
 ///
@@ -456,6 +419,7 @@ Future<void> teamsAddOrUpdateRepoPermissionsInOrg(ClientConfig config,
       .data;
 }
 
+
 /// If the authenticated user is an organization owner or a team maintainer, they can remove any repositories from the team. To remove a repository from a team as an organization member, the authenticated user must have admin access to the repository and must be able to see the team. This does not delete the repository, it just removes it from the team. &gt; [!NOTE] &gt; You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}/repos/{owner}/{repo}`.
 ///
 /// [org] The organization name. The name is not case sensitive.
@@ -477,6 +441,7 @@ Future<void> teamsRemoveRepoInOrg(ClientConfig config,
           options: requestOptions))
       .data;
 }
+
 
 /// Lists the child teams of the team specified by `{team_slug}`. &gt; [!NOTE] &gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/teams`.
 ///
@@ -500,19 +465,16 @@ Future<List<Team>> teamsListChildInOrg(ClientConfig config,
           '/orgs/${Uri.encodeComponent(org.toString())}/teams/${Uri.encodeComponent(teamSlug.toString())}/teams',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'teamsListChildInOrg',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => Team.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => Team.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// &gt; [!WARNING] &gt; **Endpoint closing down notice:** This endpoint route is closing down and will be removed from the Teams API. We recommend migrating your existing code to use the [Get a team by name](https://docs.github.com/rest/teams/teams#get-a-team-by-name) endpoint.
 ///
@@ -526,14 +488,12 @@ Future<TeamFull> teamsGetLegacy(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'teamsGetLegacy',
-          fromJsonRaw: (value) =>
-              TeamFull.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => TeamFull.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// &gt; [!WARNING] &gt; **Endpoint closing down notice:** This endpoint route is closing down and will be removed from the Teams API. We recommend migrating your existing code to use the new [Update a team](https://docs.github.com/rest/teams/teams#update-a-team) endpoint. To edit a team, the authenticated user must either be an organization owner or a team maintainer. &gt; [!NOTE] &gt; With nested teams, the `privacy` for parent teams cannot be `secret`.
 ///
@@ -562,12 +522,9 @@ Future<TeamFull> teamsUpdateLegacy(ClientConfig config,
     {required int teamId,
     required String name,
     SdkOptional<String> description = const SdkOmitted(),
-    SdkOptional<TeamsUpdateLegacyRequestBodyPrivacy> privacy =
-        const SdkOmitted(),
-    SdkOptional<TeamsUpdateLegacyRequestBodyNotificationSetting>
-        notificationSetting = const SdkOmitted(),
-    SdkOptional<TeamsUpdateLegacyRequestBodyPermission> permission =
-        const SdkOmitted(),
+    SdkOptional<TeamsUpdateLegacyRequestBodyPrivacy> privacy = const SdkOmitted(),
+    SdkOptional<TeamsUpdateLegacyRequestBodyNotificationSetting> notificationSetting = const SdkOmitted(),
+    SdkOptional<TeamsUpdateLegacyRequestBodyPermission> permission = const SdkOmitted(),
     SdkOptional<int?> parentTeamId = const SdkOmitted(),
     SdkOptional<String?> parentTeamSlug = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
@@ -578,27 +535,19 @@ Future<TeamFull> teamsUpdateLegacy(ClientConfig config,
             'name': name,
             'description': SdkUtils.unwrapOptional(description),
             'privacy': SdkUtils.unwrapOptional(privacy),
-            'notification_setting':
-                SdkUtils.unwrapOptional(notificationSetting),
+            'notification_setting': SdkUtils.unwrapOptional(notificationSetting),
             'permission': SdkUtils.unwrapOptional(permission),
             'parent_team_id': SdkUtils.unwrapOptional(parentTeamId),
             'parent_team_slug': SdkUtils.unwrapOptional(parentTeamSlug)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'teamsUpdateLegacy',
-          fromJsonRaw: (value) =>
-              TeamFull.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => TeamFull.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// &gt; [!WARNING] &gt; **Endpoint closing down notice:** This endpoint route is closing down and will be removed from the Teams API. We recommend migrating your existing code to use the new [Delete a team](https://docs.github.com/rest/teams/teams#delete-a-team) endpoint. To delete a team, the authenticated user must be an organization owner or team maintainer. If you are an organization owner, deleting a parent team will delete all of its child teams as well.
 ///
@@ -613,13 +562,10 @@ Future<void> teamsDeleteLegacy(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'teamsDeleteLegacy',
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '422': (value) =>
-            ValidationError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// &gt; [!WARNING] &gt; **Endpoint closing down notice:** This endpoint route is closing down and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List pending team invitations`](https://docs.github.com/rest/teams/members#list-pending-team-invitations) endpoint. The return hash contains a `role` field which refers to the Organization Invitation role and will be one of the following values: `direct_member`, `admin`, `billing_manager`, `hiring_manager`, or `reinstate`. If the invitee is not a GitHub member, the `login` field in the return hash will be `null`.
 ///
@@ -634,30 +580,26 @@ Future<void> teamsDeleteLegacy(ClientConfig config,
 ///   -rest-api)."
 ///
 /// **Deprecated:** this operation is deprecated and may be removed in a future release.
-Future<List<OrganizationInvitation>> teamsListPendingInvitationsLegacy(
-    ClientConfig config,
-    {required int teamId,
-    SdkOptional<int> perPage = const SdkOmitted(),
-    SdkOptional<int> page = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<List<OrganizationInvitation>>
+    teamsListPendingInvitationsLegacy(ClientConfig config,
+        {required int teamId,
+        SdkOptional<int> perPage = const SdkOmitted(),
+        SdkOptional<int> page = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<OrganizationInvitation>>(
           'GET', '/teams/${Uri.encodeComponent(teamId.toString())}/invitations',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'teamsListPendingInvitationsLegacy',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  OrganizationInvitation.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => OrganizationInvitation.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// &gt; [!WARNING] &gt; **Endpoint closing down notice:** This endpoint route is closing down and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List team members`](https://docs.github.com/rest/teams/members#list-team-members) endpoint. Team members will include the members of child teams. Each member includes their `role` on the team (`member` or `maintainer`) and an `inherited` flag indicating whether the membership is inherited from a child team (`true`) or is a direct membership (`false`).
 ///
@@ -683,24 +625,18 @@ Future<List<TeamMember>> teamsListMembersLegacy(ClientConfig config,
           'GET', '/teams/${Uri.encodeComponent(teamId.toString())}/members',
           config: config,
           query: {
-            'role': SdkQueryValue(SdkUtils.unwrapOptional(role),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'role': SdkQueryValue(SdkUtils.unwrapOptional(role), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'teamsListMembersLegacy',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => TeamMember.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => TeamMember.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// The "Get team member" endpoint (described below) is closing down. We recommend using the [Get team membership for a user](https://docs.github.com/rest/teams/members#get-team-membership-for-a-user) endpoint instead. It allows you to get both active and pending memberships. To list members in a team, the team must be visible to the authenticated user.
 ///
@@ -721,6 +657,7 @@ Future<void> teamsGetMemberLegacy(ClientConfig config,
       .data;
 }
 
+
 /// The "Add team member" endpoint (described below) is closing down. We recommend using the [Add or update team membership for a user](https://docs.github.com/rest/teams/members#add-or-update-team-membership-for-a-user) endpoint instead. It allows you to invite new organization members to your teams. Team synchronization is available for organizations using GitHub Enterprise Cloud. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation. To add someone to a team, the authenticated user must be an organization owner or a team maintainer in the team they're changing. The person being added to the team must be a member of the team's organization. &gt; [!NOTE] &gt; When you have team synchronization set up for a team with your organization's identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team's membership. If you have access to manage group membership in your IdP, you can manage GitHub team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see "[Synchronizing teams between your identity provider and GitHub](https://docs.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/)." Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP method](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method)."
 ///
 /// [teamId] The unique identifier of the team.
@@ -737,11 +674,10 @@ Future<void> teamsAddMemberLegacy(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'teamsAddMemberLegacy',
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// The "Remove team member" endpoint (described below) is closing down. We recommend using the [Remove team membership for a user](https://docs.github.com/rest/teams/members#remove-team-membership-for-a-user) endpoint instead. It allows you to remove both active and pending memberships. Team synchronization is available for organizations using GitHub Enterprise Cloud. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation. To remove a team member, the authenticated user must have 'admin' permissions to the team or be an owner of the org that the team is associated with. Removing a team member does not delete the user, it just removes them from the team. &gt; [!NOTE] &gt; When you have team synchronization set up for a team with your organization's identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team's membership. If you have access to manage group membership in your IdP, you can manage GitHub team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see "[Synchronizing teams between your identity provider and GitHub](https://docs.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/)."
 ///
@@ -762,6 +698,7 @@ Future<void> teamsRemoveMemberLegacy(ClientConfig config,
       .data;
 }
 
+
 /// &gt; [!WARNING] &gt; **Endpoint closing down notice:** This endpoint route is closing down and will be removed from the Teams API. We recommend migrating your existing code to use the new [Get team membership for a user](https://docs.github.com/rest/teams/members#get-team-membership-for-a-user) endpoint. Team members will include the members of child teams. To get a user's membership with a team, the team must be visible to the authenticated user. **Note:** The response contains the `state` of the membership and the member's `role`. The `role` for organization owners is set to `maintainer`. For more information about `maintainer` roles, see [Create a team](https://docs.github.com/rest/teams/teams#create-a-team).
 ///
 /// [teamId] The unique identifier of the team.
@@ -779,11 +716,10 @@ Future<TeamMembership> teamsGetMembershipForUserLegacy(ClientConfig config,
           operationId: 'teamsGetMembershipForUserLegacy',
           fromJsonRaw: (value) => TeamMembership.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// &gt; [!WARNING] &gt; **Endpoint closing down notice:** This endpoint route is closing down and will be removed from the Teams API. We recommend migrating your existing code to use the new [Add or update team membership for a user](https://docs.github.com/rest/teams/members#add-or-update-team-membership-for-a-user) endpoint. Team synchronization is available for organizations using GitHub Enterprise Cloud. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation. If the user is already a member of the team's organization, this endpoint will add the user to the team. To add a membership between an organization member and a team, the authenticated user must be an organization owner or a team maintainer. &gt; [!NOTE] &gt; When you have team synchronization set up for a team with your organization's identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team's membership. If you have access to manage group membership in your IdP, you can manage GitHub team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see "[Synchronizing teams between your identity provider and GitHub](https://docs.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/)." If the user is unaffiliated with the team's organization, this endpoint will send an invitation to the user via email. This newly-created membership will be in the "pending" state until the user accepts the invitation, at which point the membership will transition to the "active" state and the user will be added as a member of the team. To add a membership between an unaffiliated user and a team, the authenticated user must be an organization owner. If the user is already a member of the team, this endpoint will update the role of the team member's role. To update the membership of a team…
 ///
@@ -792,27 +728,24 @@ Future<TeamMembership> teamsGetMembershipForUserLegacy(ClientConfig config,
 /// [role] The role that this user should have in the team.
 ///
 /// **Deprecated:** this operation is deprecated and may be removed in a future release.
-Future<TeamMembership> teamsAddOrUpdateMembershipForUserLegacy(
-    ClientConfig config,
-    {required int teamId,
-    required String username,
-    SdkOptional<TeamsAddOrUpdateMembershipForUserLegacyRequestBodyRole> role =
-        const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<TeamMembership>
+    teamsAddOrUpdateMembershipForUserLegacy(ClientConfig config,
+        {required int teamId,
+        required String username,
+        SdkOptional<TeamsAddOrUpdateMembershipForUserLegacyRequestBodyRole> role = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<TeamMembership>('PUT',
           '/teams/${Uri.encodeComponent(teamId.toString())}/memberships/${Uri.encodeComponent(username.toString())}',
           config: config,
           body: {'role': SdkUtils.unwrapOptional(role)},
           decoder: SdkResponseDecoder.json,
           operationId: 'teamsAddOrUpdateMembershipForUserLegacy',
-          fromJsonRaw: (value) =>
-              TeamMembership.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => TeamMembership.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// &gt; [!WARNING] &gt; **Endpoint closing down notice:** This endpoint route is closing down and will be removed from the Teams API. We recommend migrating your existing code to use the new [Remove team membership for a user](https://docs.github.com/rest/teams/members#remove-team-membership-for-a-user) endpoint. Team synchronization is available for organizations using GitHub Enterprise Cloud. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation. To remove a membership between a user and a team, the authenticated user must have 'admin' permissions to the team or be an owner of the organization that the team is associated with. Removing team membership does not delete the user, it just removes their membership from the team. &gt; [!NOTE] &gt; When you have team synchronization set up for a team with your organization's identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team's membership. If you have access to manage group membership in your IdP, you can manage GitHub team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see "[Synchronizing teams between your identity provider and GitHub](https://docs.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/)."
 ///
@@ -832,6 +765,7 @@ Future<void> teamsRemoveMembershipForUserLegacy(ClientConfig config,
           options: requestOptions))
       .data;
 }
+
 
 /// &gt; [!WARNING] &gt; **Endpoint closing down notice:** This endpoint route is closing down and will be removed from the Teams API. We recommend migrating your existing code to use the new [List team repositories](https://docs.github.com/rest/teams/teams#list-team-repositories) endpoint.
 ///
@@ -855,23 +789,17 @@ Future<List<MinimalRepository>> teamsListReposLegacy(ClientConfig config,
           'GET', '/teams/${Uri.encodeComponent(teamId.toString())}/repos',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'teamsListReposLegacy',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  MinimalRepository.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => MinimalRepository.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// &gt; [!WARNING] &gt; **Endpoint closing down notice:** This endpoint route is closing down and will be removed from the Teams API. We recommend migrating your existing code to use the new [Check team permissions for a repository](https://docs.github.com/rest/teams/teams#check-team-permissions-for-a-repository) endpoint. &gt; [!NOTE] &gt; Repositories inherited through a parent team will also be checked. You can also get information about the specified repository, including what permissions the team grants on it, by passing the following custom [media type](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types/) via the `Accept` header:
 ///
@@ -891,11 +819,11 @@ Future<TeamRepository> teamsCheckPermissionsForRepoLegacy(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'teamsCheckPermissionsForRepoLegacy',
-          fromJsonRaw: (value) =>
-              TeamRepository.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => TeamRepository.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// &gt; [!WARNING] &gt; **Endpoint closing down notice:** This endpoint route is closing down and will be removed from the Teams API. We recommend migrating your existing code to use the new "[Add or update team repository permissions](https://docs.github.com/rest/teams/teams#add-or-update-team-repository-permissions)" endpoint. To add a repository to a team or update the team's permission on a repository, the authenticated user must have admin access to the repository, and must be able to see the team. The repository must be owned by the organization, or a direct fork of a repository owned by the organization. You will get a `422 Unprocessable Entity` status if you attempt to add a repository to a team that is not owned by the organization. Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP method](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method)."
 ///
@@ -912,8 +840,7 @@ Future<void> teamsAddOrUpdateRepoPermissionsLegacy(ClientConfig config,
     {required int teamId,
     required String owner,
     required String repo,
-    SdkOptional<TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission>
-        permission = const SdkOmitted(),
+    SdkOptional<TeamsAddOrUpdateRepoPermissionsLegacyRequestBodyPermission> permission = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('PUT',
           '/teams/${Uri.encodeComponent(teamId.toString())}/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}',
@@ -922,14 +849,10 @@ Future<void> teamsAddOrUpdateRepoPermissionsLegacy(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'teamsAddOrUpdateRepoPermissionsLegacy',
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// &gt; [!WARNING] &gt; **Endpoint closing down notice:** This endpoint route is closing down and will be removed from the Teams API. We recommend migrating your existing code to use the new [Remove a repository from a team](https://docs.github.com/rest/teams/teams#remove-a-repository-from-a-team) endpoint. If the authenticated user is an organization owner or a team maintainer, they can remove any repositories from the team. To remove a repository from a team as an organization member, the authenticated user must have admin access to the repository and must be able to see the team. NOTE: This does not delete the repository, it just removes it from the team.
 ///
@@ -953,6 +876,7 @@ Future<void> teamsRemoveRepoLegacy(ClientConfig config,
       .data;
 }
 
+
 /// &gt; [!WARNING] &gt; **Endpoint closing down notice:** This endpoint route is closing down and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List child teams`](https://docs.github.com/rest/teams/teams#list-child-teams) endpoint.
 ///
 /// [teamId] The unique identifier of the team.
@@ -975,27 +899,17 @@ Future<List<Team>> teamsListChildLegacy(ClientConfig config,
           'GET', '/teams/${Uri.encodeComponent(teamId.toString())}/teams',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'teamsListChildLegacy',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => Team.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => Team.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// List all of the teams across all of the organizations to which the authenticated user belongs. OAuth app tokens and personal access tokens (classic) need the `user`, `repo`, or `read:org` scope to use this endpoint. When using a fine-grained personal access token, the resource owner of the token must be a single organization, and the response will only include the teams from that organization.
 ///
@@ -1014,21 +928,13 @@ Future<List<TeamFull>> teamsListForAuthenticatedUser(ClientConfig config,
   return (await sdkRequest<List<TeamFull>>('GET', '/user/teams',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'teamsListForAuthenticatedUser',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => TeamFull.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => TeamFull.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }

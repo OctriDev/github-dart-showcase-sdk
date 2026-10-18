@@ -7,512 +7,268 @@ part of 'inline.dart';
 class PullsCreateRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The title of the new pull request. Required unless `issue` is specified.
   final SdkOptional<String> title;
-
   /// The name of the branch where your changes are implemented. For cross-repository pull requests in the same network, namespace `head` with a user like this: `username:branch`.
   final String head;
-
   /// The name of the repository where the changes in the pull request were made. This field is required for cross-repository pull requests if both repositories are owned by the same organization.
   final SdkOptional<String> headRepo;
-
   /// The name of the branch you want the changes pulled into. This should be an existing branch on the current repository. You cannot submit a pull request to one repository that requests a merge to a base of another repository.
   final String base_;
-
   /// The contents of the pull request.
   final SdkOptional<String> body;
-
   /// Indicates whether [maintainers can modify](https://docs.github.com/articles/allowing-changes-to-a-pull-request-branch-created-from-a-fork/) the pull request.
   final SdkOptional<bool> maintainerCanModify;
-
   /// Indicates whether the pull request is a draft. See "[Draft Pull Requests](https://docs.github.com/articles/about-pull-requests#draft-pull-requests)" in the GitHub Help documentation to learn more.
   final SdkOptional<bool> draft;
-
   /// An issue in the repository to convert to a pull request. The issue title, body, and comments will become the title, body, and comments on the new pull request. Required unless `title` is specified.
   final SdkOptional<int> issue;
 
-  const PullsCreateRequestBody(
-      {this.title = const SdkOmitted(),
-      required this.head,
-      this.headRepo = const SdkOmitted(),
-      required this.base_,
-      this.body = const SdkOmitted(),
-      this.maintainerCanModify = const SdkOmitted(),
-      this.draft = const SdkOmitted(),
-      this.issue = const SdkOmitted()});
+  const PullsCreateRequestBody({this.title = const SdkOmitted(), required this.head, this.headRepo = const SdkOmitted(), required this.base_, this.body = const SdkOmitted(), this.maintainerCanModify = const SdkOmitted(), this.draft = const SdkOmitted(), this.issue = const SdkOmitted()});
 
-  PullsCreateRequestBody Function(
-      {SdkOptional<String> title,
-      String head,
-      SdkOptional<String> headRepo,
-      String base_,
-      SdkOptional<String> body,
-      SdkOptional<bool> maintainerCanModify,
-      SdkOptional<bool> draft,
-      SdkOptional<int> issue}) get copyWith => _copyWith;
+  PullsCreateRequestBody Function({SdkOptional<String> title, String head, SdkOptional<String> headRepo, String base_, SdkOptional<String> body, SdkOptional<bool> maintainerCanModify, SdkOptional<bool> draft, SdkOptional<int> issue}) get copyWith => _copyWith;
 
-  PullsCreateRequestBody _copyWith(
-          {Object? title = sdkOmittedValue,
-          Object? head = sdkOmittedValue,
-          Object? headRepo = sdkOmittedValue,
-          Object? base_ = sdkOmittedValue,
-          Object? body = sdkOmittedValue,
-          Object? maintainerCanModify = sdkOmittedValue,
-          Object? draft = sdkOmittedValue,
-          Object? issue = sdkOmittedValue}) =>
-      PullsCreateRequestBody(
-        title: identical(title, sdkOmittedValue)
-            ? this.title
-            : title as SdkOptional<String>,
-        head: identical(head, sdkOmittedValue) ? this.head : head as String,
-        headRepo: identical(headRepo, sdkOmittedValue)
-            ? this.headRepo
-            : headRepo as SdkOptional<String>,
-        base_: identical(base_, sdkOmittedValue) ? this.base_ : base_ as String,
-        body: identical(body, sdkOmittedValue)
-            ? this.body
-            : body as SdkOptional<String>,
-        maintainerCanModify: identical(maintainerCanModify, sdkOmittedValue)
-            ? this.maintainerCanModify
-            : maintainerCanModify as SdkOptional<bool>,
-        draft: identical(draft, sdkOmittedValue)
-            ? this.draft
-            : draft as SdkOptional<bool>,
-        issue: identical(issue, sdkOmittedValue)
-            ? this.issue
-            : issue as SdkOptional<int>,
-      );
+  PullsCreateRequestBody _copyWith({Object? title = sdkOmittedValue, Object? head = sdkOmittedValue, Object? headRepo = sdkOmittedValue, Object? base_ = sdkOmittedValue, Object? body = sdkOmittedValue, Object? maintainerCanModify = sdkOmittedValue, Object? draft = sdkOmittedValue, Object? issue = sdkOmittedValue}) => PullsCreateRequestBody(
+    title: identical(title, sdkOmittedValue) ? this.title : title as SdkOptional<String>,
+    head: identical(head, sdkOmittedValue) ? this.head : head as String,
+    headRepo: identical(headRepo, sdkOmittedValue) ? this.headRepo : headRepo as SdkOptional<String>,
+    base_: identical(base_, sdkOmittedValue) ? this.base_ : base_ as String,
+    body: identical(body, sdkOmittedValue) ? this.body : body as SdkOptional<String>,
+    maintainerCanModify: identical(maintainerCanModify, sdkOmittedValue) ? this.maintainerCanModify : maintainerCanModify as SdkOptional<bool>,
+    draft: identical(draft, sdkOmittedValue) ? this.draft : draft as SdkOptional<bool>,
+    issue: identical(issue, sdkOmittedValue) ? this.issue : issue as SdkOptional<int>,
+  );
 
-  factory PullsCreateRequestBody.fromJson(Map<String, dynamic> json) =>
-      PullsCreateRequestBody(
-        title: json['title'] != null
-            ? SdkPresent((json['title'] as String?)!)
-            : const SdkOmitted(),
-        head: (json['head'] as String?)!,
-        headRepo: json['head_repo'] != null
-            ? SdkPresent((json['head_repo'] as String?)!)
-            : const SdkOmitted(),
-        base_: (json['base'] as String?)!,
-        body: json['body'] != null
-            ? SdkPresent((json['body'] as String?)!)
-            : const SdkOmitted(),
-        maintainerCanModify: json['maintainer_can_modify'] != null
-            ? SdkPresent((json['maintainer_can_modify'] as bool?)!)
-            : const SdkOmitted(),
-        draft: json['draft'] != null
-            ? SdkPresent((json['draft'] as bool?)!)
-            : const SdkOmitted(),
-        issue: json['issue'] != null
-            ? SdkPresent(((json['issue'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-      );
+  factory PullsCreateRequestBody.fromJson(Map<String, dynamic> json) => PullsCreateRequestBody(
+    title: json['title'] != null ? SdkPresent((json['title'] as String?)!) : const SdkOmitted(),
+    head: (json['head'] as String?)!,
+    headRepo: json['head_repo'] != null ? SdkPresent((json['head_repo'] as String?)!) : const SdkOmitted(),
+    base_: (json['base'] as String?)!,
+    body: json['body'] != null ? SdkPresent((json['body'] as String?)!) : const SdkOmitted(),
+    maintainerCanModify: json['maintainer_can_modify'] != null ? SdkPresent((json['maintainer_can_modify'] as bool?)!) : const SdkOmitted(),
+    draft: json['draft'] != null ? SdkPresent((json['draft'] as bool?)!) : const SdkOmitted(),
+    issue: json['issue'] != null ? SdkPresent(((json['issue'] as num?)?.toInt())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (title) {
-          SdkPresent<String>(value: final value) => {
-              'title': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'head': head,
-        ...switch (headRepo) {
-          SdkPresent<String>(value: final value) => {
-              'head_repo': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'base': base_,
-        ...switch (body) {
-          SdkPresent<String>(value: final value) => {
-              'body': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (maintainerCanModify) {
-          SdkPresent<bool>(value: final value) => {
-              'maintainer_can_modify': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (draft) {
-          SdkPresent<bool>(value: final value) => {
-              'draft': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (issue) {
-          SdkPresent<int>(value: final value) => {
-              'issue': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (title) {
+      SdkPresent<String>(value: final value) => {'title': value,},
+      _ => const <String, dynamic>{},
+    },
+    'head': head,
+    ...switch (headRepo) {
+      SdkPresent<String>(value: final value) => {'head_repo': value,},
+      _ => const <String, dynamic>{},
+    },
+    'base': base_,
+    ...switch (body) {
+      SdkPresent<String>(value: final value) => {'body': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (maintainerCanModify) {
+      SdkPresent<bool>(value: final value) => {'maintainer_can_modify': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (draft) {
+      SdkPresent<bool>(value: final value) => {'draft': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (issue) {
+      SdkPresent<int>(value: final value) => {'issue': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 class PullsUpdateReviewCommentRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The text of the reply to the review comment.
   final String body;
 
   const PullsUpdateReviewCommentRequestBody({required this.body});
 
-  PullsUpdateReviewCommentRequestBody Function({String body}) get copyWith =>
-      _copyWith;
+  PullsUpdateReviewCommentRequestBody Function({String body}) get copyWith => _copyWith;
 
-  PullsUpdateReviewCommentRequestBody _copyWith(
-          {Object? body = sdkOmittedValue}) =>
-      PullsUpdateReviewCommentRequestBody(
-        body: identical(body, sdkOmittedValue) ? this.body : body as String,
-      );
+  PullsUpdateReviewCommentRequestBody _copyWith({Object? body = sdkOmittedValue}) => PullsUpdateReviewCommentRequestBody(
+    body: identical(body, sdkOmittedValue) ? this.body : body as String,
+  );
 
-  factory PullsUpdateReviewCommentRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      PullsUpdateReviewCommentRequestBody(
-        body: (json['body'] as String?)!,
-      );
+  factory PullsUpdateReviewCommentRequestBody.fromJson(Map<String, dynamic> json) => PullsUpdateReviewCommentRequestBody(
+    body: (json['body'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'body': body,
-      };
+    'body': body,
+  };
 }
 
 class PullsUpdateRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The title of the pull request.
   final SdkOptional<String> title;
-
   /// The contents of the pull request.
   final SdkOptional<String> body;
-
   /// State of this Pull Request. Either `open` or `closed`.
   final SdkOptional<PullsUpdateRequestBodyState> state;
-
   /// The name of the branch you want your changes pulled into. This should be an existing branch on the current repository. You cannot update the base branch on a pull request to point to another repository.
   final SdkOptional<String> base_;
-
   /// Indicates whether [maintainers can modify](https://docs.github.com/articles/allowing-changes-to-a-pull-request-branch-created-from-a-fork/) the pull request.
   final SdkOptional<bool> maintainerCanModify;
 
-  const PullsUpdateRequestBody(
-      {this.title = const SdkOmitted(),
-      this.body = const SdkOmitted(),
-      this.state = const SdkOmitted(),
-      this.base_ = const SdkOmitted(),
-      this.maintainerCanModify = const SdkOmitted()});
+  const PullsUpdateRequestBody({this.title = const SdkOmitted(), this.body = const SdkOmitted(), this.state = const SdkOmitted(), this.base_ = const SdkOmitted(), this.maintainerCanModify = const SdkOmitted()});
 
-  PullsUpdateRequestBody Function(
-      {SdkOptional<String> title,
-      SdkOptional<String> body,
-      SdkOptional<PullsUpdateRequestBodyState> state,
-      SdkOptional<String> base_,
-      SdkOptional<bool> maintainerCanModify}) get copyWith => _copyWith;
+  PullsUpdateRequestBody Function({SdkOptional<String> title, SdkOptional<String> body, SdkOptional<PullsUpdateRequestBodyState> state, SdkOptional<String> base_, SdkOptional<bool> maintainerCanModify}) get copyWith => _copyWith;
 
-  PullsUpdateRequestBody _copyWith(
-          {Object? title = sdkOmittedValue,
-          Object? body = sdkOmittedValue,
-          Object? state = sdkOmittedValue,
-          Object? base_ = sdkOmittedValue,
-          Object? maintainerCanModify = sdkOmittedValue}) =>
-      PullsUpdateRequestBody(
-        title: identical(title, sdkOmittedValue)
-            ? this.title
-            : title as SdkOptional<String>,
-        body: identical(body, sdkOmittedValue)
-            ? this.body
-            : body as SdkOptional<String>,
-        state: identical(state, sdkOmittedValue)
-            ? this.state
-            : state as SdkOptional<PullsUpdateRequestBodyState>,
-        base_: identical(base_, sdkOmittedValue)
-            ? this.base_
-            : base_ as SdkOptional<String>,
-        maintainerCanModify: identical(maintainerCanModify, sdkOmittedValue)
-            ? this.maintainerCanModify
-            : maintainerCanModify as SdkOptional<bool>,
-      );
+  PullsUpdateRequestBody _copyWith({Object? title = sdkOmittedValue, Object? body = sdkOmittedValue, Object? state = sdkOmittedValue, Object? base_ = sdkOmittedValue, Object? maintainerCanModify = sdkOmittedValue}) => PullsUpdateRequestBody(
+    title: identical(title, sdkOmittedValue) ? this.title : title as SdkOptional<String>,
+    body: identical(body, sdkOmittedValue) ? this.body : body as SdkOptional<String>,
+    state: identical(state, sdkOmittedValue) ? this.state : state as SdkOptional<PullsUpdateRequestBodyState>,
+    base_: identical(base_, sdkOmittedValue) ? this.base_ : base_ as SdkOptional<String>,
+    maintainerCanModify: identical(maintainerCanModify, sdkOmittedValue) ? this.maintainerCanModify : maintainerCanModify as SdkOptional<bool>,
+  );
 
-  factory PullsUpdateRequestBody.fromJson(Map<String, dynamic> json) =>
-      PullsUpdateRequestBody(
-        title: json['title'] != null
-            ? SdkPresent((json['title'] as String?)!)
-            : const SdkOmitted(),
-        body: json['body'] != null
-            ? SdkPresent((json['body'] as String?)!)
-            : const SdkOmitted(),
-        state: json['state'] != null
-            ? SdkPresent((json['state'] != null
-                ? PullsUpdateRequestBodyState.fromJson(json['state'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        base_: json['base'] != null
-            ? SdkPresent((json['base'] as String?)!)
-            : const SdkOmitted(),
-        maintainerCanModify: json['maintainer_can_modify'] != null
-            ? SdkPresent((json['maintainer_can_modify'] as bool?)!)
-            : const SdkOmitted(),
-      );
+  factory PullsUpdateRequestBody.fromJson(Map<String, dynamic> json) => PullsUpdateRequestBody(
+    title: json['title'] != null ? SdkPresent((json['title'] as String?)!) : const SdkOmitted(),
+    body: json['body'] != null ? SdkPresent((json['body'] as String?)!) : const SdkOmitted(),
+    state: json['state'] != null ? SdkPresent((json['state'] != null ? PullsUpdateRequestBodyState.fromJson(json['state'] as String) : null)!) : const SdkOmitted(),
+    base_: json['base'] != null ? SdkPresent((json['base'] as String?)!) : const SdkOmitted(),
+    maintainerCanModify: json['maintainer_can_modify'] != null ? SdkPresent((json['maintainer_can_modify'] as bool?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (title) {
-          SdkPresent<String>(value: final value) => {
-              'title': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (body) {
-          SdkPresent<String>(value: final value) => {
-              'body': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (state) {
-          SdkPresent<PullsUpdateRequestBodyState>(value: final value) => {
-              'state': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (base_) {
-          SdkPresent<String>(value: final value) => {
-              'base': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (maintainerCanModify) {
-          SdkPresent<bool>(value: final value) => {
-              'maintainer_can_modify': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (title) {
+      SdkPresent<String>(value: final value) => {'title': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (body) {
+      SdkPresent<String>(value: final value) => {'body': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (state) {
+      SdkPresent<PullsUpdateRequestBodyState>(value: final value) => {'state': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (base_) {
+      SdkPresent<String>(value: final value) => {'base': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (maintainerCanModify) {
+      SdkPresent<bool>(value: final value) => {'maintainer_can_modify': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 class PullsCreateReviewCommentRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The text of the review comment.
   final String body;
-
   /// The SHA of the commit needing a comment. Not using the latest commit SHA may render your comment outdated if a subsequent commit modifies the line you specify as the `position`.
   final String commitId;
-
   /// The relative path to the file that necessitates a comment.
   final String path;
-
   /// **This parameter is closing down. Use `line` instead**. The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. The position value equals the number of lines down from the first "@@" hunk header in the file you want to add a comment. The line just below the "@@" line is position 1, the next line is position 2, and so on. The position in the diff continues to increase through lines of whitespace and additional hunks until the beginning of a new file.
   final SdkOptional<int> position;
-
   /// In a split diff view, the side of the diff that the pull request's changes appear on. Can be `LEFT` or `RIGHT`. Use `LEFT` for deletions that appear in red. Use `RIGHT` for additions that appear in green or unchanged lines that appear in white and are shown for context. For a multi-line comment, side represents whether the last line of the comment range is a deletion or addition. For more information, see "[Diff view options](https://docs.github.com/articles/about-comparing-branches-in-pull-requests#diff-view-options)" in the GitHub Help documentation.
   final SdkOptional<PullsCreateReviewCommentRequestBodySide> side;
-
   /// **Required unless using `subject_type:file`**. The line of the blob in the pull request diff that the comment applies to. For a multi-line comment, the last line of the range that your comment applies to.
   final SdkOptional<int> line;
-
   /// **Required when using multi-line comments unless using `in_reply_to`**. The `start_line` is the first line in the pull request diff that your multi-line comment applies to. To learn more about multi-line comments, see "[Commenting on a pull request](https://docs.github.com/articles/commenting-on-a-pull-request#adding-line-comments-to-a-pull-request)" in the GitHub Help documentation.
   final SdkOptional<int> startLine;
-
   /// **Required when using multi-line comments unless using `in_reply_to`**. The `start_side` is the starting side of the diff that the comment applies to. Can be `LEFT` or `RIGHT`. To learn more about multi-line comments, see "[Commenting on a pull request](https://docs.github.com/articles/commenting-on-a-pull-request#adding-line-comments-to-a-pull-request)" in the GitHub Help documentation. See `side` in this table for additional context.
   final SdkOptional<PullsCreateReviewCommentRequestBodyStartSide> startSide;
-
   /// The ID of the review comment to reply to. To find the ID of a review comment with "List review comments on a pull request". When specified, all parameters other than `body` in the request body are ignored.
   final SdkOptional<int> inReplyTo;
-
   /// The level at which the comment is targeted.
   final SdkOptional<PullsCreateReviewCommentRequestBodySubjectType> subjectType;
 
-  const PullsCreateReviewCommentRequestBody(
-      {required this.body,
-      required this.commitId,
-      required this.path,
-      this.position = const SdkOmitted(),
-      this.side = const SdkOmitted(),
-      this.line = const SdkOmitted(),
-      this.startLine = const SdkOmitted(),
-      this.startSide = const SdkOmitted(),
-      this.inReplyTo = const SdkOmitted(),
-      this.subjectType = const SdkOmitted()});
+  const PullsCreateReviewCommentRequestBody({required this.body, required this.commitId, required this.path, this.position = const SdkOmitted(), this.side = const SdkOmitted(), this.line = const SdkOmitted(), this.startLine = const SdkOmitted(), this.startSide = const SdkOmitted(), this.inReplyTo = const SdkOmitted(), this.subjectType = const SdkOmitted()});
 
-  PullsCreateReviewCommentRequestBody Function(
-      {String body,
-      String commitId,
-      String path,
-      SdkOptional<int> position,
-      SdkOptional<PullsCreateReviewCommentRequestBodySide> side,
-      SdkOptional<int> line,
-      SdkOptional<int> startLine,
-      SdkOptional<PullsCreateReviewCommentRequestBodyStartSide> startSide,
-      SdkOptional<int> inReplyTo,
-      SdkOptional<PullsCreateReviewCommentRequestBodySubjectType>
-          subjectType}) get copyWith => _copyWith;
+  PullsCreateReviewCommentRequestBody Function({String body, String commitId, String path, SdkOptional<int> position, SdkOptional<PullsCreateReviewCommentRequestBodySide> side, SdkOptional<int> line, SdkOptional<int> startLine, SdkOptional<PullsCreateReviewCommentRequestBodyStartSide> startSide, SdkOptional<int> inReplyTo, SdkOptional<PullsCreateReviewCommentRequestBodySubjectType> subjectType}) get copyWith => _copyWith;
 
-  PullsCreateReviewCommentRequestBody _copyWith(
-          {Object? body = sdkOmittedValue,
-          Object? commitId = sdkOmittedValue,
-          Object? path = sdkOmittedValue,
-          Object? position = sdkOmittedValue,
-          Object? side = sdkOmittedValue,
-          Object? line = sdkOmittedValue,
-          Object? startLine = sdkOmittedValue,
-          Object? startSide = sdkOmittedValue,
-          Object? inReplyTo = sdkOmittedValue,
-          Object? subjectType = sdkOmittedValue}) =>
-      PullsCreateReviewCommentRequestBody(
-        body: identical(body, sdkOmittedValue) ? this.body : body as String,
-        commitId: identical(commitId, sdkOmittedValue)
-            ? this.commitId
-            : commitId as String,
-        path: identical(path, sdkOmittedValue) ? this.path : path as String,
-        position: identical(position, sdkOmittedValue)
-            ? this.position
-            : position as SdkOptional<int>,
-        side: identical(side, sdkOmittedValue)
-            ? this.side
-            : side as SdkOptional<PullsCreateReviewCommentRequestBodySide>,
-        line: identical(line, sdkOmittedValue)
-            ? this.line
-            : line as SdkOptional<int>,
-        startLine: identical(startLine, sdkOmittedValue)
-            ? this.startLine
-            : startLine as SdkOptional<int>,
-        startSide: identical(startSide, sdkOmittedValue)
-            ? this.startSide
-            : startSide
-                as SdkOptional<PullsCreateReviewCommentRequestBodyStartSide>,
-        inReplyTo: identical(inReplyTo, sdkOmittedValue)
-            ? this.inReplyTo
-            : inReplyTo as SdkOptional<int>,
-        subjectType: identical(subjectType, sdkOmittedValue)
-            ? this.subjectType
-            : subjectType
-                as SdkOptional<PullsCreateReviewCommentRequestBodySubjectType>,
-      );
+  PullsCreateReviewCommentRequestBody _copyWith({Object? body = sdkOmittedValue, Object? commitId = sdkOmittedValue, Object? path = sdkOmittedValue, Object? position = sdkOmittedValue, Object? side = sdkOmittedValue, Object? line = sdkOmittedValue, Object? startLine = sdkOmittedValue, Object? startSide = sdkOmittedValue, Object? inReplyTo = sdkOmittedValue, Object? subjectType = sdkOmittedValue}) => PullsCreateReviewCommentRequestBody(
+    body: identical(body, sdkOmittedValue) ? this.body : body as String,
+    commitId: identical(commitId, sdkOmittedValue) ? this.commitId : commitId as String,
+    path: identical(path, sdkOmittedValue) ? this.path : path as String,
+    position: identical(position, sdkOmittedValue) ? this.position : position as SdkOptional<int>,
+    side: identical(side, sdkOmittedValue) ? this.side : side as SdkOptional<PullsCreateReviewCommentRequestBodySide>,
+    line: identical(line, sdkOmittedValue) ? this.line : line as SdkOptional<int>,
+    startLine: identical(startLine, sdkOmittedValue) ? this.startLine : startLine as SdkOptional<int>,
+    startSide: identical(startSide, sdkOmittedValue) ? this.startSide : startSide as SdkOptional<PullsCreateReviewCommentRequestBodyStartSide>,
+    inReplyTo: identical(inReplyTo, sdkOmittedValue) ? this.inReplyTo : inReplyTo as SdkOptional<int>,
+    subjectType: identical(subjectType, sdkOmittedValue) ? this.subjectType : subjectType as SdkOptional<PullsCreateReviewCommentRequestBodySubjectType>,
+  );
 
-  factory PullsCreateReviewCommentRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      PullsCreateReviewCommentRequestBody(
-        body: (json['body'] as String?)!,
-        commitId: (json['commit_id'] as String?)!,
-        path: (json['path'] as String?)!,
-        position: json['position'] != null
-            ? SdkPresent(((json['position'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        side: json['side'] != null
-            ? SdkPresent((json['side'] != null
-                ? PullsCreateReviewCommentRequestBodySide.fromJson(
-                    json['side'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        line: json['line'] != null
-            ? SdkPresent(((json['line'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        startLine: json['start_line'] != null
-            ? SdkPresent(((json['start_line'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        startSide: json['start_side'] != null
-            ? SdkPresent((json['start_side'] != null
-                ? PullsCreateReviewCommentRequestBodyStartSide.fromJson(
-                    json['start_side'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        inReplyTo: json['in_reply_to'] != null
-            ? SdkPresent(((json['in_reply_to'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        subjectType: json['subject_type'] != null
-            ? SdkPresent((json['subject_type'] != null
-                ? PullsCreateReviewCommentRequestBodySubjectType.fromJson(
-                    json['subject_type'] as String)
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory PullsCreateReviewCommentRequestBody.fromJson(Map<String, dynamic> json) => PullsCreateReviewCommentRequestBody(
+    body: (json['body'] as String?)!,
+    commitId: (json['commit_id'] as String?)!,
+    path: (json['path'] as String?)!,
+    position: json['position'] != null ? SdkPresent(((json['position'] as num?)?.toInt())!) : const SdkOmitted(),
+    side: json['side'] != null ? SdkPresent((json['side'] != null ? PullsCreateReviewCommentRequestBodySide.fromJson(json['side'] as String) : null)!) : const SdkOmitted(),
+    line: json['line'] != null ? SdkPresent(((json['line'] as num?)?.toInt())!) : const SdkOmitted(),
+    startLine: json['start_line'] != null ? SdkPresent(((json['start_line'] as num?)?.toInt())!) : const SdkOmitted(),
+    startSide: json['start_side'] != null ? SdkPresent((json['start_side'] != null ? PullsCreateReviewCommentRequestBodyStartSide.fromJson(json['start_side'] as String) : null)!) : const SdkOmitted(),
+    inReplyTo: json['in_reply_to'] != null ? SdkPresent(((json['in_reply_to'] as num?)?.toInt())!) : const SdkOmitted(),
+    subjectType: json['subject_type'] != null ? SdkPresent((json['subject_type'] != null ? PullsCreateReviewCommentRequestBodySubjectType.fromJson(json['subject_type'] as String) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'body': body,
-        'commit_id': commitId,
-        'path': path,
-        ...switch (position) {
-          SdkPresent<int>(value: final value) => {
-              'position': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (side) {
-          SdkPresent<PullsCreateReviewCommentRequestBodySide>(
-            value: final value
-          ) =>
-            {
-              'side': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (line) {
-          SdkPresent<int>(value: final value) => {
-              'line': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (startLine) {
-          SdkPresent<int>(value: final value) => {
-              'start_line': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (startSide) {
-          SdkPresent<PullsCreateReviewCommentRequestBodyStartSide>(
-            value: final value
-          ) =>
-            {
-              'start_side': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (inReplyTo) {
-          SdkPresent<int>(value: final value) => {
-              'in_reply_to': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (subjectType) {
-          SdkPresent<PullsCreateReviewCommentRequestBodySubjectType>(
-            value: final value
-          ) =>
-            {
-              'subject_type': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'body': body,
+    'commit_id': commitId,
+    'path': path,
+    ...switch (position) {
+      SdkPresent<int>(value: final value) => {'position': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (side) {
+      SdkPresent<PullsCreateReviewCommentRequestBodySide>(value: final value) => {'side': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (line) {
+      SdkPresent<int>(value: final value) => {'line': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (startLine) {
+      SdkPresent<int>(value: final value) => {'start_line': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (startSide) {
+      SdkPresent<PullsCreateReviewCommentRequestBodyStartSide>(value: final value) => {'start_side': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (inReplyTo) {
+      SdkPresent<int>(value: final value) => {'in_reply_to': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (subjectType) {
+      SdkPresent<PullsCreateReviewCommentRequestBodySubjectType>(value: final value) => {'subject_type': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 class PullsCreateReplyForReviewCommentRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The text of the review comment.
   final String body;
 
   const PullsCreateReplyForReviewCommentRequestBody({required this.body});
 
-  PullsCreateReplyForReviewCommentRequestBody Function({String body})
-      get copyWith => _copyWith;
+  PullsCreateReplyForReviewCommentRequestBody Function({String body}) get copyWith => _copyWith;
 
-  PullsCreateReplyForReviewCommentRequestBody _copyWith(
-          {Object? body = sdkOmittedValue}) =>
-      PullsCreateReplyForReviewCommentRequestBody(
-        body: identical(body, sdkOmittedValue) ? this.body : body as String,
-      );
+  PullsCreateReplyForReviewCommentRequestBody _copyWith({Object? body = sdkOmittedValue}) => PullsCreateReplyForReviewCommentRequestBody(
+    body: identical(body, sdkOmittedValue) ? this.body : body as String,
+  );
 
-  factory PullsCreateReplyForReviewCommentRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      PullsCreateReplyForReviewCommentRequestBody(
-        body: (json['body'] as String?)!,
-      );
+  factory PullsCreateReplyForReviewCommentRequestBody.fromJson(Map<String, dynamic> json) => PullsCreateReplyForReviewCommentRequestBody(
+    body: (json['body'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'body': body,
-      };
+    'body': body,
+  };
 }

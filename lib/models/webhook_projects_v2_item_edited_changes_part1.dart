@@ -8,422 +8,234 @@ sealed class WebhookProjectsV2ItemEditedChangesVariant0FieldValueFrom {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const WebhookProjectsV2ItemEditedChangesVariant0FieldValueFrom();
-  factory WebhookProjectsV2ItemEditedChangesVariant0FieldValueFrom.fromJson(
-      Object? json) {
-    if (json is String) {
-      return WebhookProjectsV2ItemEditedChangesVariant0FieldValueFromString(
-          json);
-    }
-    if (json is num) {
-      return WebhookProjectsV2ItemEditedChangesVariant0FieldValueFromInt(
-          json.toInt());
-    }
+  factory WebhookProjectsV2ItemEditedChangesVariant0FieldValueFrom.fromJson(Object? json) {
+    if (json is String) { return WebhookProjectsV2ItemEditedChangesVariant0FieldValueFromString(json); }
+    if (json is num) { return WebhookProjectsV2ItemEditedChangesVariant0FieldValueFromInt(json.toInt()); }
     if (json is Map<String, dynamic>) {
-      try {
-        final value = ProjectsV2SingleSelectOption.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return WebhookProjectsV2ItemEditedChangesVariant0FieldValueFromProjectsV2SingleSelectOption(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = ProjectsV2IterationSetting.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return WebhookProjectsV2ItemEditedChangesVariant0FieldValueFromProjectsV2IterationSetting(
-              value);
-        }
-      } catch (_) {}
+      try { final value = ProjectsV2SingleSelectOption.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return WebhookProjectsV2ItemEditedChangesVariant0FieldValueFromProjectsV2SingleSelectOption(value); } } catch (_) {}
+      try { final value = ProjectsV2IterationSetting.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return WebhookProjectsV2ItemEditedChangesVariant0FieldValueFromProjectsV2IterationSetting(value); } } catch (_) {}
     }
-    try {
-      return WebhookProjectsV2ItemEditedChangesVariant0FieldValueFromProjectsV2SingleSelectOption(
-          ProjectsV2SingleSelectOption.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return WebhookProjectsV2ItemEditedChangesVariant0FieldValueFromProjectsV2IterationSetting(
-          ProjectsV2IterationSetting.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    throw FormatException(
-        "No variant matched for WebhookProjectsV2ItemEditedChangesVariant0FieldValueFrom");
+    try { return WebhookProjectsV2ItemEditedChangesVariant0FieldValueFromProjectsV2SingleSelectOption(ProjectsV2SingleSelectOption.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return WebhookProjectsV2ItemEditedChangesVariant0FieldValueFromProjectsV2IterationSetting(ProjectsV2IterationSetting.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    throw FormatException("No variant matched for WebhookProjectsV2ItemEditedChangesVariant0FieldValueFrom");
   }
   Object? toJson();
 }
 
-final class WebhookProjectsV2ItemEditedChangesVariant0FieldValueFromString
-    extends WebhookProjectsV2ItemEditedChangesVariant0FieldValueFrom {
+final class WebhookProjectsV2ItemEditedChangesVariant0FieldValueFromString extends WebhookProjectsV2ItemEditedChangesVariant0FieldValueFrom {
   final String value;
-  const WebhookProjectsV2ItemEditedChangesVariant0FieldValueFromString(
-      this.value);
-  @override
-  Object? toJson() => value;
+  const WebhookProjectsV2ItemEditedChangesVariant0FieldValueFromString(this.value);
+  @override Object? toJson() => value;
 }
 
-final class WebhookProjectsV2ItemEditedChangesVariant0FieldValueFromInt
-    extends WebhookProjectsV2ItemEditedChangesVariant0FieldValueFrom {
+final class WebhookProjectsV2ItemEditedChangesVariant0FieldValueFromInt extends WebhookProjectsV2ItemEditedChangesVariant0FieldValueFrom {
   final int value;
   const WebhookProjectsV2ItemEditedChangesVariant0FieldValueFromInt(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
-final class WebhookProjectsV2ItemEditedChangesVariant0FieldValueFromProjectsV2SingleSelectOption
-    extends WebhookProjectsV2ItemEditedChangesVariant0FieldValueFrom {
+final class WebhookProjectsV2ItemEditedChangesVariant0FieldValueFromProjectsV2SingleSelectOption extends WebhookProjectsV2ItemEditedChangesVariant0FieldValueFrom {
   final ProjectsV2SingleSelectOption value;
-  const WebhookProjectsV2ItemEditedChangesVariant0FieldValueFromProjectsV2SingleSelectOption(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const WebhookProjectsV2ItemEditedChangesVariant0FieldValueFromProjectsV2SingleSelectOption(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class WebhookProjectsV2ItemEditedChangesVariant0FieldValueFromProjectsV2IterationSetting
-    extends WebhookProjectsV2ItemEditedChangesVariant0FieldValueFrom {
+final class WebhookProjectsV2ItemEditedChangesVariant0FieldValueFromProjectsV2IterationSetting extends WebhookProjectsV2ItemEditedChangesVariant0FieldValueFrom {
   final ProjectsV2IterationSetting value;
-  const WebhookProjectsV2ItemEditedChangesVariant0FieldValueFromProjectsV2IterationSetting(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const WebhookProjectsV2ItemEditedChangesVariant0FieldValueFromProjectsV2IterationSetting(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 sealed class WebhookProjectsV2ItemEditedChangesVariant0FieldValueTo {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const WebhookProjectsV2ItemEditedChangesVariant0FieldValueTo();
-  factory WebhookProjectsV2ItemEditedChangesVariant0FieldValueTo.fromJson(
-      Object? json) {
-    if (json is String) {
-      return WebhookProjectsV2ItemEditedChangesVariant0FieldValueToString(json);
-    }
-    if (json is num) {
-      return WebhookProjectsV2ItemEditedChangesVariant0FieldValueToInt(
-          json.toInt());
-    }
+  factory WebhookProjectsV2ItemEditedChangesVariant0FieldValueTo.fromJson(Object? json) {
+    if (json is String) { return WebhookProjectsV2ItemEditedChangesVariant0FieldValueToString(json); }
+    if (json is num) { return WebhookProjectsV2ItemEditedChangesVariant0FieldValueToInt(json.toInt()); }
     if (json is Map<String, dynamic>) {
-      try {
-        final value = ProjectsV2SingleSelectOption.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return WebhookProjectsV2ItemEditedChangesVariant0FieldValueToProjectsV2SingleSelectOption(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = ProjectsV2IterationSetting.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return WebhookProjectsV2ItemEditedChangesVariant0FieldValueToProjectsV2IterationSetting(
-              value);
-        }
-      } catch (_) {}
+      try { final value = ProjectsV2SingleSelectOption.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return WebhookProjectsV2ItemEditedChangesVariant0FieldValueToProjectsV2SingleSelectOption(value); } } catch (_) {}
+      try { final value = ProjectsV2IterationSetting.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return WebhookProjectsV2ItemEditedChangesVariant0FieldValueToProjectsV2IterationSetting(value); } } catch (_) {}
     }
-    try {
-      return WebhookProjectsV2ItemEditedChangesVariant0FieldValueToProjectsV2SingleSelectOption(
-          ProjectsV2SingleSelectOption.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return WebhookProjectsV2ItemEditedChangesVariant0FieldValueToProjectsV2IterationSetting(
-          ProjectsV2IterationSetting.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    throw FormatException(
-        "No variant matched for WebhookProjectsV2ItemEditedChangesVariant0FieldValueTo");
+    try { return WebhookProjectsV2ItemEditedChangesVariant0FieldValueToProjectsV2SingleSelectOption(ProjectsV2SingleSelectOption.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return WebhookProjectsV2ItemEditedChangesVariant0FieldValueToProjectsV2IterationSetting(ProjectsV2IterationSetting.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    throw FormatException("No variant matched for WebhookProjectsV2ItemEditedChangesVariant0FieldValueTo");
   }
   Object? toJson();
 }
 
-final class WebhookProjectsV2ItemEditedChangesVariant0FieldValueToString
-    extends WebhookProjectsV2ItemEditedChangesVariant0FieldValueTo {
+final class WebhookProjectsV2ItemEditedChangesVariant0FieldValueToString extends WebhookProjectsV2ItemEditedChangesVariant0FieldValueTo {
   final String value;
-  const WebhookProjectsV2ItemEditedChangesVariant0FieldValueToString(
-      this.value);
-  @override
-  Object? toJson() => value;
+  const WebhookProjectsV2ItemEditedChangesVariant0FieldValueToString(this.value);
+  @override Object? toJson() => value;
 }
 
-final class WebhookProjectsV2ItemEditedChangesVariant0FieldValueToInt
-    extends WebhookProjectsV2ItemEditedChangesVariant0FieldValueTo {
+final class WebhookProjectsV2ItemEditedChangesVariant0FieldValueToInt extends WebhookProjectsV2ItemEditedChangesVariant0FieldValueTo {
   final int value;
   const WebhookProjectsV2ItemEditedChangesVariant0FieldValueToInt(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
-final class WebhookProjectsV2ItemEditedChangesVariant0FieldValueToProjectsV2SingleSelectOption
-    extends WebhookProjectsV2ItemEditedChangesVariant0FieldValueTo {
+final class WebhookProjectsV2ItemEditedChangesVariant0FieldValueToProjectsV2SingleSelectOption extends WebhookProjectsV2ItemEditedChangesVariant0FieldValueTo {
   final ProjectsV2SingleSelectOption value;
-  const WebhookProjectsV2ItemEditedChangesVariant0FieldValueToProjectsV2SingleSelectOption(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const WebhookProjectsV2ItemEditedChangesVariant0FieldValueToProjectsV2SingleSelectOption(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class WebhookProjectsV2ItemEditedChangesVariant0FieldValueToProjectsV2IterationSetting
-    extends WebhookProjectsV2ItemEditedChangesVariant0FieldValueTo {
+final class WebhookProjectsV2ItemEditedChangesVariant0FieldValueToProjectsV2IterationSetting extends WebhookProjectsV2ItemEditedChangesVariant0FieldValueTo {
   final ProjectsV2IterationSetting value;
-  const WebhookProjectsV2ItemEditedChangesVariant0FieldValueToProjectsV2IterationSetting(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const WebhookProjectsV2ItemEditedChangesVariant0FieldValueToProjectsV2IterationSetting(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// Required object value serialized in the `field_value` wire field.
 class WebhookProjectsV2ItemEditedChangesVariant0FieldValue {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `string` value serialized in the `field_node_id` wire field.
   final SdkOptional<String> fieldNodeId;
-
   /// Optional `string` value serialized in the `field_type` wire field.
   final SdkOptional<String> fieldType;
-
   /// Optional `string` value serialized in the `field_name` wire field.
   final SdkOptional<String> fieldName;
-
   /// Optional `integer` value serialized in the `project_number` wire field.
   final SdkOptional<int> projectNumber;
-
   /// Optional API value serialized in the `from` wire field.
   final SdkOptional<dynamic> from;
-
   /// Optional API value serialized in the `to` wire field.
   final SdkOptional<dynamic> to;
 
-  const WebhookProjectsV2ItemEditedChangesVariant0FieldValue(
-      {this.fieldNodeId = const SdkOmitted(),
-      this.fieldType = const SdkOmitted(),
-      this.fieldName = const SdkOmitted(),
-      this.projectNumber = const SdkOmitted(),
-      this.from = const SdkOmitted(),
-      this.to = const SdkOmitted()});
+  const WebhookProjectsV2ItemEditedChangesVariant0FieldValue({this.fieldNodeId = const SdkOmitted(), this.fieldType = const SdkOmitted(), this.fieldName = const SdkOmitted(), this.projectNumber = const SdkOmitted(), this.from = const SdkOmitted(), this.to = const SdkOmitted()});
 
-  WebhookProjectsV2ItemEditedChangesVariant0FieldValue Function(
-      {SdkOptional<String> fieldNodeId,
-      SdkOptional<String> fieldType,
-      SdkOptional<String> fieldName,
-      SdkOptional<int> projectNumber,
-      SdkOptional<dynamic> from,
-      SdkOptional<dynamic> to}) get copyWith => _copyWith;
+  WebhookProjectsV2ItemEditedChangesVariant0FieldValue Function({SdkOptional<String> fieldNodeId, SdkOptional<String> fieldType, SdkOptional<String> fieldName, SdkOptional<int> projectNumber, SdkOptional<dynamic> from, SdkOptional<dynamic> to}) get copyWith => _copyWith;
 
-  WebhookProjectsV2ItemEditedChangesVariant0FieldValue _copyWith(
-          {Object? fieldNodeId = sdkOmittedValue,
-          Object? fieldType = sdkOmittedValue,
-          Object? fieldName = sdkOmittedValue,
-          Object? projectNumber = sdkOmittedValue,
-          Object? from = sdkOmittedValue,
-          Object? to = sdkOmittedValue}) =>
-      WebhookProjectsV2ItemEditedChangesVariant0FieldValue(
-        fieldNodeId: identical(fieldNodeId, sdkOmittedValue)
-            ? this.fieldNodeId
-            : fieldNodeId as SdkOptional<String>,
-        fieldType: identical(fieldType, sdkOmittedValue)
-            ? this.fieldType
-            : fieldType as SdkOptional<String>,
-        fieldName: identical(fieldName, sdkOmittedValue)
-            ? this.fieldName
-            : fieldName as SdkOptional<String>,
-        projectNumber: identical(projectNumber, sdkOmittedValue)
-            ? this.projectNumber
-            : projectNumber as SdkOptional<int>,
-        from: identical(from, sdkOmittedValue)
-            ? this.from
-            : from as SdkOptional<dynamic>,
-        to: identical(to, sdkOmittedValue)
-            ? this.to
-            : to as SdkOptional<dynamic>,
-      );
+  WebhookProjectsV2ItemEditedChangesVariant0FieldValue _copyWith({Object? fieldNodeId = sdkOmittedValue, Object? fieldType = sdkOmittedValue, Object? fieldName = sdkOmittedValue, Object? projectNumber = sdkOmittedValue, Object? from = sdkOmittedValue, Object? to = sdkOmittedValue}) => WebhookProjectsV2ItemEditedChangesVariant0FieldValue(
+    fieldNodeId: identical(fieldNodeId, sdkOmittedValue) ? this.fieldNodeId : fieldNodeId as SdkOptional<String>,
+    fieldType: identical(fieldType, sdkOmittedValue) ? this.fieldType : fieldType as SdkOptional<String>,
+    fieldName: identical(fieldName, sdkOmittedValue) ? this.fieldName : fieldName as SdkOptional<String>,
+    projectNumber: identical(projectNumber, sdkOmittedValue) ? this.projectNumber : projectNumber as SdkOptional<int>,
+    from: identical(from, sdkOmittedValue) ? this.from : from as SdkOptional<dynamic>,
+    to: identical(to, sdkOmittedValue) ? this.to : to as SdkOptional<dynamic>,
+  );
 
-  factory WebhookProjectsV2ItemEditedChangesVariant0FieldValue.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookProjectsV2ItemEditedChangesVariant0FieldValue(
-        fieldNodeId: json['field_node_id'] != null
-            ? SdkPresent((json['field_node_id'] as String?)!)
-            : const SdkOmitted(),
-        fieldType: json['field_type'] != null
-            ? SdkPresent((json['field_type'] as String?)!)
-            : const SdkOmitted(),
-        fieldName: json['field_name'] != null
-            ? SdkPresent((json['field_name'] as String?)!)
-            : const SdkOmitted(),
-        projectNumber: json['project_number'] != null
-            ? SdkPresent(((json['project_number'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        from: json.containsKey('from')
-            ? SdkPresent(SdkUtils.unionBranch(json['from'], [
-                ProjectsV2SingleSelectOption.fromJson,
-                ProjectsV2IterationSetting.fromJson
-              ]))
-            : const SdkOmitted(),
-        to: json.containsKey('to')
-            ? SdkPresent(SdkUtils.unionBranch(json['to'], [
-                ProjectsV2SingleSelectOption.fromJson,
-                ProjectsV2IterationSetting.fromJson
-              ]))
-            : const SdkOmitted(),
-      );
+  factory WebhookProjectsV2ItemEditedChangesVariant0FieldValue.fromJson(Map<String, dynamic> json) => WebhookProjectsV2ItemEditedChangesVariant0FieldValue(
+    fieldNodeId: json['field_node_id'] != null ? SdkPresent((json['field_node_id'] as String?)!) : const SdkOmitted(),
+    fieldType: json['field_type'] != null ? SdkPresent((json['field_type'] as String?)!) : const SdkOmitted(),
+    fieldName: json['field_name'] != null ? SdkPresent((json['field_name'] as String?)!) : const SdkOmitted(),
+    projectNumber: json['project_number'] != null ? SdkPresent(((json['project_number'] as num?)?.toInt())!) : const SdkOmitted(),
+    from: json.containsKey('from') ? SdkPresent(SdkUtils.unionBranch(json['from'], [ProjectsV2SingleSelectOption.fromJson, ProjectsV2IterationSetting.fromJson])) : const SdkOmitted(),
+    to: json.containsKey('to') ? SdkPresent(SdkUtils.unionBranch(json['to'], [ProjectsV2SingleSelectOption.fromJson, ProjectsV2IterationSetting.fromJson])) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (fieldNodeId) {
-          SdkPresent<String>(value: final value) => {
-              'field_node_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (fieldType) {
-          SdkPresent<String>(value: final value) => {
-              'field_type': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (fieldName) {
-          SdkPresent<String>(value: final value) => {
-              'field_name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (projectNumber) {
-          SdkPresent<int>(value: final value) => {
-              'project_number': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (from) {
-          SdkPresent<dynamic>(value: final value) => {
-              'from': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (to) {
-          SdkPresent<dynamic>(value: final value) => {
-              'to': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (fieldNodeId) {
+      SdkPresent<String>(value: final value) => {'field_node_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (fieldType) {
+      SdkPresent<String>(value: final value) => {'field_type': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (fieldName) {
+      SdkPresent<String>(value: final value) => {'field_name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (projectNumber) {
+      SdkPresent<int>(value: final value) => {'project_number': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (from) {
+      SdkPresent<dynamic>(value: final value) => {'from': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (to) {
+      SdkPresent<dynamic>(value: final value) => {'to': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Optional object value serialized in the `changes` wire field.
 class WebhookProjectsV2ItemEditedChangesVariant0 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required object value serialized in the `field_value` wire field.
   final WebhookProjectsV2ItemEditedChangesVariant0FieldValue fieldValue;
 
   const WebhookProjectsV2ItemEditedChangesVariant0({required this.fieldValue});
 
-  WebhookProjectsV2ItemEditedChangesVariant0 Function(
-          {WebhookProjectsV2ItemEditedChangesVariant0FieldValue fieldValue})
-      get copyWith => _copyWith;
+  WebhookProjectsV2ItemEditedChangesVariant0 Function({WebhookProjectsV2ItemEditedChangesVariant0FieldValue fieldValue}) get copyWith => _copyWith;
 
-  WebhookProjectsV2ItemEditedChangesVariant0 _copyWith(
-          {Object? fieldValue = sdkOmittedValue}) =>
-      WebhookProjectsV2ItemEditedChangesVariant0(
-        fieldValue: identical(fieldValue, sdkOmittedValue)
-            ? this.fieldValue
-            : fieldValue
-                as WebhookProjectsV2ItemEditedChangesVariant0FieldValue,
-      );
+  WebhookProjectsV2ItemEditedChangesVariant0 _copyWith({Object? fieldValue = sdkOmittedValue}) => WebhookProjectsV2ItemEditedChangesVariant0(
+    fieldValue: identical(fieldValue, sdkOmittedValue) ? this.fieldValue : fieldValue as WebhookProjectsV2ItemEditedChangesVariant0FieldValue,
+  );
 
-  factory WebhookProjectsV2ItemEditedChangesVariant0.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookProjectsV2ItemEditedChangesVariant0(
-        fieldValue: (json['field_value'] != null
-            ? WebhookProjectsV2ItemEditedChangesVariant0FieldValue.fromJson(
-                json['field_value'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory WebhookProjectsV2ItemEditedChangesVariant0.fromJson(Map<String, dynamic> json) => WebhookProjectsV2ItemEditedChangesVariant0(
+    fieldValue: (json['field_value'] != null ? WebhookProjectsV2ItemEditedChangesVariant0FieldValue.fromJson(json['field_value'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'field_value': fieldValue.toJson(),
-      };
+    'field_value': fieldValue.toJson(),
+  };
 }
 
 /// Required object value serialized in the `body` wire field.
 class WebhookProjectsV2ItemEditedChangesVariant1Body {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `string` value serialized in the `from` wire field.
   final SdkOptional<String?> from;
-
   /// Optional `string` value serialized in the `to` wire field.
   final SdkOptional<String?> to;
 
-  const WebhookProjectsV2ItemEditedChangesVariant1Body(
-      {this.from = const SdkOmitted(), this.to = const SdkOmitted()});
+  const WebhookProjectsV2ItemEditedChangesVariant1Body({this.from = const SdkOmitted(), this.to = const SdkOmitted()});
 
-  WebhookProjectsV2ItemEditedChangesVariant1Body Function(
-      {SdkOptional<String?> from,
-      SdkOptional<String?> to}) get copyWith => _copyWith;
+  WebhookProjectsV2ItemEditedChangesVariant1Body Function({SdkOptional<String?> from, SdkOptional<String?> to}) get copyWith => _copyWith;
 
-  WebhookProjectsV2ItemEditedChangesVariant1Body _copyWith(
-          {Object? from = sdkOmittedValue, Object? to = sdkOmittedValue}) =>
-      WebhookProjectsV2ItemEditedChangesVariant1Body(
-        from: identical(from, sdkOmittedValue)
-            ? this.from
-            : from as SdkOptional<String?>,
-        to: identical(to, sdkOmittedValue)
-            ? this.to
-            : to as SdkOptional<String?>,
-      );
+  WebhookProjectsV2ItemEditedChangesVariant1Body _copyWith({Object? from = sdkOmittedValue, Object? to = sdkOmittedValue}) => WebhookProjectsV2ItemEditedChangesVariant1Body(
+    from: identical(from, sdkOmittedValue) ? this.from : from as SdkOptional<String?>,
+    to: identical(to, sdkOmittedValue) ? this.to : to as SdkOptional<String?>,
+  );
 
-  factory WebhookProjectsV2ItemEditedChangesVariant1Body.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookProjectsV2ItemEditedChangesVariant1Body(
-        from: json.containsKey('from')
-            ? SdkPresent(json['from'] as String?)
-            : const SdkOmitted(),
-        to: json.containsKey('to')
-            ? SdkPresent(json['to'] as String?)
-            : const SdkOmitted(),
-      );
+  factory WebhookProjectsV2ItemEditedChangesVariant1Body.fromJson(Map<String, dynamic> json) => WebhookProjectsV2ItemEditedChangesVariant1Body(
+    from: json.containsKey('from') ? SdkPresent(json['from'] as String?) : const SdkOmitted(),
+    to: json.containsKey('to') ? SdkPresent(json['to'] as String?) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (from) {
-          SdkPresent<String?>(value: final value) => {
-              'from': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (to) {
-          SdkPresent<String?>(value: final value) => {
-              'to': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (from) {
+      SdkPresent<String?>(value: final value) => {'from': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (to) {
+      SdkPresent<String?>(value: final value) => {'to': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Optional object value serialized in the `changes` wire field.
 class WebhookProjectsV2ItemEditedChangesVariant1 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required object value serialized in the `body` wire field.
   final WebhookProjectsV2ItemEditedChangesVariant1Body body;
 
   const WebhookProjectsV2ItemEditedChangesVariant1({required this.body});
 
-  WebhookProjectsV2ItemEditedChangesVariant1 Function(
-          {WebhookProjectsV2ItemEditedChangesVariant1Body body})
-      get copyWith => _copyWith;
+  WebhookProjectsV2ItemEditedChangesVariant1 Function({WebhookProjectsV2ItemEditedChangesVariant1Body body}) get copyWith => _copyWith;
 
-  WebhookProjectsV2ItemEditedChangesVariant1 _copyWith(
-          {Object? body = sdkOmittedValue}) =>
-      WebhookProjectsV2ItemEditedChangesVariant1(
-        body: identical(body, sdkOmittedValue)
-            ? this.body
-            : body as WebhookProjectsV2ItemEditedChangesVariant1Body,
-      );
+  WebhookProjectsV2ItemEditedChangesVariant1 _copyWith({Object? body = sdkOmittedValue}) => WebhookProjectsV2ItemEditedChangesVariant1(
+    body: identical(body, sdkOmittedValue) ? this.body : body as WebhookProjectsV2ItemEditedChangesVariant1Body,
+  );
 
-  factory WebhookProjectsV2ItemEditedChangesVariant1.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookProjectsV2ItemEditedChangesVariant1(
-        body: (json['body'] != null
-            ? WebhookProjectsV2ItemEditedChangesVariant1Body.fromJson(
-                json['body'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory WebhookProjectsV2ItemEditedChangesVariant1.fromJson(Map<String, dynamic> json) => WebhookProjectsV2ItemEditedChangesVariant1(
+    body: (json['body'] != null ? WebhookProjectsV2ItemEditedChangesVariant1Body.fromJson(json['body'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'body': body.toJson(),
-      };
+    'body': body.toJson(),
+  };
 }
 
 sealed class WebhookProjectsV2ItemEditedChanges {
@@ -432,51 +244,24 @@ sealed class WebhookProjectsV2ItemEditedChanges {
   const WebhookProjectsV2ItemEditedChanges();
   factory WebhookProjectsV2ItemEditedChanges.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = WebhookProjectsV2ItemEditedChangesVariant0.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return WebhookProjectsV2ItemEditedChangesWebhookProjectsV2ItemEditedChangesVariant0(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = WebhookProjectsV2ItemEditedChangesVariant1.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return WebhookProjectsV2ItemEditedChangesWebhookProjectsV2ItemEditedChangesVariant1(
-              value);
-        }
-      } catch (_) {}
+      try { final value = WebhookProjectsV2ItemEditedChangesVariant0.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return WebhookProjectsV2ItemEditedChangesWebhookProjectsV2ItemEditedChangesVariant0(value); } } catch (_) {}
+      try { final value = WebhookProjectsV2ItemEditedChangesVariant1.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return WebhookProjectsV2ItemEditedChangesWebhookProjectsV2ItemEditedChangesVariant1(value); } } catch (_) {}
     }
-    try {
-      return WebhookProjectsV2ItemEditedChangesWebhookProjectsV2ItemEditedChangesVariant0(
-          WebhookProjectsV2ItemEditedChangesVariant0.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return WebhookProjectsV2ItemEditedChangesWebhookProjectsV2ItemEditedChangesVariant1(
-          WebhookProjectsV2ItemEditedChangesVariant1.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    throw FormatException(
-        "No variant matched for WebhookProjectsV2ItemEditedChanges");
+    try { return WebhookProjectsV2ItemEditedChangesWebhookProjectsV2ItemEditedChangesVariant0(WebhookProjectsV2ItemEditedChangesVariant0.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return WebhookProjectsV2ItemEditedChangesWebhookProjectsV2ItemEditedChangesVariant1(WebhookProjectsV2ItemEditedChangesVariant1.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    throw FormatException("No variant matched for WebhookProjectsV2ItemEditedChanges");
   }
   Object? toJson();
 }
 
-final class WebhookProjectsV2ItemEditedChangesWebhookProjectsV2ItemEditedChangesVariant0
-    extends WebhookProjectsV2ItemEditedChanges {
+final class WebhookProjectsV2ItemEditedChangesWebhookProjectsV2ItemEditedChangesVariant0 extends WebhookProjectsV2ItemEditedChanges {
   final WebhookProjectsV2ItemEditedChangesVariant0 value;
-  const WebhookProjectsV2ItemEditedChangesWebhookProjectsV2ItemEditedChangesVariant0(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const WebhookProjectsV2ItemEditedChangesWebhookProjectsV2ItemEditedChangesVariant0(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class WebhookProjectsV2ItemEditedChangesWebhookProjectsV2ItemEditedChangesVariant1
-    extends WebhookProjectsV2ItemEditedChanges {
+final class WebhookProjectsV2ItemEditedChangesWebhookProjectsV2ItemEditedChangesVariant1 extends WebhookProjectsV2ItemEditedChanges {
   final WebhookProjectsV2ItemEditedChangesVariant1 value;
-  const WebhookProjectsV2ItemEditedChangesWebhookProjectsV2ItemEditedChangesVariant1(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const WebhookProjectsV2ItemEditedChangesWebhookProjectsV2ItemEditedChangesVariant1(this.value);
+  @override Object? toJson() => value.toJson();
 }

@@ -8,155 +8,83 @@ part of 'projects.dart';
 class ProjectsV2Item {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The unique identifier of the project item.
   final double id;
-
   /// The node ID of the project item.
   final SdkOptional<String> nodeId;
-
   /// The node ID of the project that contains this item.
   final SdkOptional<String> projectNodeId;
-
   /// The node ID of the content represented by this item.
   final String contentNodeId;
-
   /// The type of content tracked in a project item
   final ProjectsV2ItemContentType contentType;
-
   /// A GitHub user.
   final SdkOptional<SimpleUser> creator;
-
   /// The time when the item was created.
   final String createdAt;
-
   /// The time when the item was last updated.
   final String updatedAt;
-
   /// The time when the item was archived.
   final String? archivedAt;
 
-  const ProjectsV2Item(
-      {required this.id,
-      this.nodeId = const SdkOmitted(),
-      this.projectNodeId = const SdkOmitted(),
-      required this.contentNodeId,
-      required this.contentType,
-      this.creator = const SdkOmitted(),
-      required this.createdAt,
-      required this.updatedAt,
-      required this.archivedAt});
+  const ProjectsV2Item({required this.id, this.nodeId = const SdkOmitted(), this.projectNodeId = const SdkOmitted(), required this.contentNodeId, required this.contentType, this.creator = const SdkOmitted(), required this.createdAt, required this.updatedAt, required this.archivedAt});
 
-  ProjectsV2Item Function(
-      {double id,
-      SdkOptional<String> nodeId,
-      SdkOptional<String> projectNodeId,
-      String contentNodeId,
-      ProjectsV2ItemContentType contentType,
-      SdkOptional<SimpleUser> creator,
-      String createdAt,
-      String updatedAt,
-      String? archivedAt}) get copyWith => _copyWith;
+  ProjectsV2Item Function({double id, SdkOptional<String> nodeId, SdkOptional<String> projectNodeId, String contentNodeId, ProjectsV2ItemContentType contentType, SdkOptional<SimpleUser> creator, String createdAt, String updatedAt, String? archivedAt}) get copyWith => _copyWith;
 
-  ProjectsV2Item _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? projectNodeId = sdkOmittedValue,
-          Object? contentNodeId = sdkOmittedValue,
-          Object? contentType = sdkOmittedValue,
-          Object? creator = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue,
-          Object? archivedAt = sdkOmittedValue}) =>
-      ProjectsV2Item(
-        id: identical(id, sdkOmittedValue) ? this.id : id as double,
-        nodeId: identical(nodeId, sdkOmittedValue)
-            ? this.nodeId
-            : nodeId as SdkOptional<String>,
-        projectNodeId: identical(projectNodeId, sdkOmittedValue)
-            ? this.projectNodeId
-            : projectNodeId as SdkOptional<String>,
-        contentNodeId: identical(contentNodeId, sdkOmittedValue)
-            ? this.contentNodeId
-            : contentNodeId as String,
-        contentType: identical(contentType, sdkOmittedValue)
-            ? this.contentType
-            : contentType as ProjectsV2ItemContentType,
-        creator: identical(creator, sdkOmittedValue)
-            ? this.creator
-            : creator as SdkOptional<SimpleUser>,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String,
-        archivedAt: identical(archivedAt, sdkOmittedValue)
-            ? this.archivedAt
-            : archivedAt as String?,
-      );
+  ProjectsV2Item _copyWith({Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? projectNodeId = sdkOmittedValue, Object? contentNodeId = sdkOmittedValue, Object? contentType = sdkOmittedValue, Object? creator = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? archivedAt = sdkOmittedValue}) => ProjectsV2Item(
+    id: identical(id, sdkOmittedValue) ? this.id : id as double,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as SdkOptional<String>,
+    projectNodeId: identical(projectNodeId, sdkOmittedValue) ? this.projectNodeId : projectNodeId as SdkOptional<String>,
+    contentNodeId: identical(contentNodeId, sdkOmittedValue) ? this.contentNodeId : contentNodeId as String,
+    contentType: identical(contentType, sdkOmittedValue) ? this.contentType : contentType as ProjectsV2ItemContentType,
+    creator: identical(creator, sdkOmittedValue) ? this.creator : creator as SdkOptional<SimpleUser>,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
+    archivedAt: identical(archivedAt, sdkOmittedValue) ? this.archivedAt : archivedAt as String?,
+  );
 
   factory ProjectsV2Item.fromJson(Map<String, dynamic> json) => ProjectsV2Item(
-        id: ((json['id'] as num?)?.toDouble())!,
-        nodeId: json['node_id'] != null
-            ? SdkPresent((json['node_id'] as String?)!)
-            : const SdkOmitted(),
-        projectNodeId: json['project_node_id'] != null
-            ? SdkPresent((json['project_node_id'] as String?)!)
-            : const SdkOmitted(),
-        contentNodeId: (json['content_node_id'] as String?)!,
-        contentType: (json['content_type'] != null
-            ? ProjectsV2ItemContentType.fromJson(json['content_type'] as String)
-            : null)!,
-        creator: json['creator'] != null
-            ? SdkPresent((json['creator'] != null
-                ? SimpleUser.fromJson(json['creator'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        createdAt: (json['created_at'] as String?)!,
-        updatedAt: (json['updated_at'] as String?)!,
-        archivedAt: json.containsKey('archived_at')
-            ? json['archived_at'] as String?
-            : throw ArgumentError.value(
-                null, 'archived_at', 'Required property is missing'),
-      );
+    id: ((json['id'] as num?)?.toDouble())!,
+    nodeId: json['node_id'] != null ? SdkPresent((json['node_id'] as String?)!) : const SdkOmitted(),
+    projectNodeId: json['project_node_id'] != null ? SdkPresent((json['project_node_id'] as String?)!) : const SdkOmitted(),
+    contentNodeId: (json['content_node_id'] as String?)!,
+    contentType: (json['content_type'] != null ? ProjectsV2ItemContentType.fromJson(json['content_type'] as String) : null)!,
+    creator: json['creator'] != null ? SdkPresent((json['creator'] != null ? SimpleUser.fromJson(json['creator'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    createdAt: (json['created_at'] as String?)!,
+    updatedAt: (json['updated_at'] as String?)!,
+    archivedAt: json.containsKey('archived_at') ? json['archived_at'] as String? : throw ArgumentError.value(null, 'archived_at', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        ...switch (nodeId) {
-          SdkPresent<String>(value: final value) => {
-              'node_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (projectNodeId) {
-          SdkPresent<String>(value: final value) => {
-              'project_node_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'content_node_id': contentNodeId,
-        'content_type': contentType.toJson(),
-        ...switch (creator) {
-          SdkPresent<SimpleUser>(value: final value) => {
-              'creator': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'created_at': createdAt,
-        'updated_at': updatedAt,
-        'archived_at': archivedAt,
-      };
+    'id': id,
+    ...switch (nodeId) {
+      SdkPresent<String>(value: final value) => {'node_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (projectNodeId) {
+      SdkPresent<String>(value: final value) => {'project_node_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    'content_node_id': contentNodeId,
+    'content_type': contentType.toJson(),
+    ...switch (creator) {
+      SdkPresent<SimpleUser>(value: final value) => {'creator': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'created_at': createdAt,
+    'updated_at': updatedAt,
+    'archived_at': archivedAt,
+  };
 }
 
 /// The type of content tracked in a project item
 final class ProjectsV2ItemContentType {
+
   final String value;
 
   const ProjectsV2ItemContentType._(this.value);
 
-  factory ProjectsV2ItemContentType.fromJson(String value) =>
-      ProjectsV2ItemContentType._(value);
+  factory ProjectsV2ItemContentType.fromJson(String value) => ProjectsV2ItemContentType._(value);
 
   static const issue = ProjectsV2ItemContentType._('Issue');
   static const pullrequest = ProjectsV2ItemContentType._('PullRequest');
@@ -164,188 +92,96 @@ final class ProjectsV2ItemContentType {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is ProjectsV2ItemContentType && other.value == value;
+  @override bool operator ==(Object other) => other is ProjectsV2ItemContentType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// An item belonging to a project
 class ProjectsV2ItemSimple {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The unique identifier of the project item.
   final double id;
-
   /// The node ID of the project item.
   final SdkOptional<String> nodeId;
-
   /// The content represented by the item.
   final SdkOptional<ProjectsV2ItemSimpleContent> content;
-
   /// The type of content tracked in a project item
   final ProjectsV2ItemContentType contentType;
-
   /// A GitHub user.
   final SdkOptional<SimpleUser> creator;
-
   /// The time when the item was created.
   final String createdAt;
-
   /// The time when the item was last updated.
   final String updatedAt;
-
   /// The time when the item was archived.
   final String? archivedAt;
-
   /// The URL of the project this item belongs to.
   final SdkOptional<String> projectUrl;
-
   /// The URL of the item in the project.
   final SdkOptional<String> itemUrl;
 
-  const ProjectsV2ItemSimple(
-      {required this.id,
-      this.nodeId = const SdkOmitted(),
-      this.content = const SdkOmitted(),
-      required this.contentType,
-      this.creator = const SdkOmitted(),
-      required this.createdAt,
-      required this.updatedAt,
-      required this.archivedAt,
-      this.projectUrl = const SdkOmitted(),
-      this.itemUrl = const SdkOmitted()});
+  const ProjectsV2ItemSimple({required this.id, this.nodeId = const SdkOmitted(), this.content = const SdkOmitted(), required this.contentType, this.creator = const SdkOmitted(), required this.createdAt, required this.updatedAt, required this.archivedAt, this.projectUrl = const SdkOmitted(), this.itemUrl = const SdkOmitted()});
 
-  ProjectsV2ItemSimple Function(
-      {double id,
-      SdkOptional<String> nodeId,
-      SdkOptional<ProjectsV2ItemSimpleContent> content,
-      ProjectsV2ItemContentType contentType,
-      SdkOptional<SimpleUser> creator,
-      String createdAt,
-      String updatedAt,
-      String? archivedAt,
-      SdkOptional<String> projectUrl,
-      SdkOptional<String> itemUrl}) get copyWith => _copyWith;
+  ProjectsV2ItemSimple Function({double id, SdkOptional<String> nodeId, SdkOptional<ProjectsV2ItemSimpleContent> content, ProjectsV2ItemContentType contentType, SdkOptional<SimpleUser> creator, String createdAt, String updatedAt, String? archivedAt, SdkOptional<String> projectUrl, SdkOptional<String> itemUrl}) get copyWith => _copyWith;
 
-  ProjectsV2ItemSimple _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? content = sdkOmittedValue,
-          Object? contentType = sdkOmittedValue,
-          Object? creator = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue,
-          Object? archivedAt = sdkOmittedValue,
-          Object? projectUrl = sdkOmittedValue,
-          Object? itemUrl = sdkOmittedValue}) =>
-      ProjectsV2ItemSimple(
-        id: identical(id, sdkOmittedValue) ? this.id : id as double,
-        nodeId: identical(nodeId, sdkOmittedValue)
-            ? this.nodeId
-            : nodeId as SdkOptional<String>,
-        content: identical(content, sdkOmittedValue)
-            ? this.content
-            : content as SdkOptional<ProjectsV2ItemSimpleContent>,
-        contentType: identical(contentType, sdkOmittedValue)
-            ? this.contentType
-            : contentType as ProjectsV2ItemContentType,
-        creator: identical(creator, sdkOmittedValue)
-            ? this.creator
-            : creator as SdkOptional<SimpleUser>,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String,
-        archivedAt: identical(archivedAt, sdkOmittedValue)
-            ? this.archivedAt
-            : archivedAt as String?,
-        projectUrl: identical(projectUrl, sdkOmittedValue)
-            ? this.projectUrl
-            : projectUrl as SdkOptional<String>,
-        itemUrl: identical(itemUrl, sdkOmittedValue)
-            ? this.itemUrl
-            : itemUrl as SdkOptional<String>,
-      );
+  ProjectsV2ItemSimple _copyWith({Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? content = sdkOmittedValue, Object? contentType = sdkOmittedValue, Object? creator = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? archivedAt = sdkOmittedValue, Object? projectUrl = sdkOmittedValue, Object? itemUrl = sdkOmittedValue}) => ProjectsV2ItemSimple(
+    id: identical(id, sdkOmittedValue) ? this.id : id as double,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as SdkOptional<String>,
+    content: identical(content, sdkOmittedValue) ? this.content : content as SdkOptional<ProjectsV2ItemSimpleContent>,
+    contentType: identical(contentType, sdkOmittedValue) ? this.contentType : contentType as ProjectsV2ItemContentType,
+    creator: identical(creator, sdkOmittedValue) ? this.creator : creator as SdkOptional<SimpleUser>,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
+    archivedAt: identical(archivedAt, sdkOmittedValue) ? this.archivedAt : archivedAt as String?,
+    projectUrl: identical(projectUrl, sdkOmittedValue) ? this.projectUrl : projectUrl as SdkOptional<String>,
+    itemUrl: identical(itemUrl, sdkOmittedValue) ? this.itemUrl : itemUrl as SdkOptional<String>,
+  );
 
-  factory ProjectsV2ItemSimple.fromJson(Map<String, dynamic> json) =>
-      ProjectsV2ItemSimple(
-        id: ((json['id'] as num?)?.toDouble())!,
-        nodeId: json['node_id'] != null
-            ? SdkPresent((json['node_id'] as String?)!)
-            : const SdkOmitted(),
-        content: json['content'] != null
-            ? SdkPresent((json['content'] != null
-                ? ProjectsV2ItemSimpleContent.fromJson(json['content'])
-                : null)!)
-            : const SdkOmitted(),
-        contentType: (json['content_type'] != null
-            ? ProjectsV2ItemContentType.fromJson(json['content_type'] as String)
-            : null)!,
-        creator: json['creator'] != null
-            ? SdkPresent((json['creator'] != null
-                ? SimpleUser.fromJson(json['creator'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        createdAt: (json['created_at'] as String?)!,
-        updatedAt: (json['updated_at'] as String?)!,
-        archivedAt: json.containsKey('archived_at')
-            ? json['archived_at'] as String?
-            : throw ArgumentError.value(
-                null, 'archived_at', 'Required property is missing'),
-        projectUrl: json['project_url'] != null
-            ? SdkPresent((json['project_url'] as String?)!)
-            : const SdkOmitted(),
-        itemUrl: json['item_url'] != null
-            ? SdkPresent((json['item_url'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory ProjectsV2ItemSimple.fromJson(Map<String, dynamic> json) => ProjectsV2ItemSimple(
+    id: ((json['id'] as num?)?.toDouble())!,
+    nodeId: json['node_id'] != null ? SdkPresent((json['node_id'] as String?)!) : const SdkOmitted(),
+    content: json['content'] != null ? SdkPresent((json['content'] != null ? ProjectsV2ItemSimpleContent.fromJson(json['content']) : null)!) : const SdkOmitted(),
+    contentType: (json['content_type'] != null ? ProjectsV2ItemContentType.fromJson(json['content_type'] as String) : null)!,
+    creator: json['creator'] != null ? SdkPresent((json['creator'] != null ? SimpleUser.fromJson(json['creator'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    createdAt: (json['created_at'] as String?)!,
+    updatedAt: (json['updated_at'] as String?)!,
+    archivedAt: json.containsKey('archived_at') ? json['archived_at'] as String? : throw ArgumentError.value(null, 'archived_at', 'Required property is missing'),
+    projectUrl: json['project_url'] != null ? SdkPresent((json['project_url'] as String?)!) : const SdkOmitted(),
+    itemUrl: json['item_url'] != null ? SdkPresent((json['item_url'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        ...switch (nodeId) {
-          SdkPresent<String>(value: final value) => {
-              'node_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (content) {
-          SdkPresent<ProjectsV2ItemSimpleContent>(value: final value) => {
-              'content': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'content_type': contentType.toJson(),
-        ...switch (creator) {
-          SdkPresent<SimpleUser>(value: final value) => {
-              'creator': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'created_at': createdAt,
-        'updated_at': updatedAt,
-        'archived_at': archivedAt,
-        ...switch (projectUrl) {
-          SdkPresent<String>(value: final value) => {
-              'project_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (itemUrl) {
-          SdkPresent<String>(value: final value) => {
-              'item_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'id': id,
+    ...switch (nodeId) {
+      SdkPresent<String>(value: final value) => {'node_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (content) {
+      SdkPresent<ProjectsV2ItemSimpleContent>(value: final value) => {'content': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'content_type': contentType.toJson(),
+    ...switch (creator) {
+      SdkPresent<SimpleUser>(value: final value) => {'creator': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'created_at': createdAt,
+    'updated_at': updatedAt,
+    'archived_at': archivedAt,
+    ...switch (projectUrl) {
+      SdkPresent<String>(value: final value) => {'project_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (itemUrl) {
+      SdkPresent<String>(value: final value) => {'item_url': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 sealed class ProjectsV2ItemSimpleContent {
@@ -354,62 +190,32 @@ sealed class ProjectsV2ItemSimpleContent {
   const ProjectsV2ItemSimpleContent();
   factory ProjectsV2ItemSimpleContent.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = Issue.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return ProjectsV2ItemSimpleContentIssue(value);
-        }
-      } catch (_) {}
-      try {
-        final value = PullRequestSimple.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return ProjectsV2ItemSimpleContentPullRequestSimple(value);
-        }
-      } catch (_) {}
-      try {
-        final value = ProjectsV2DraftIssue.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return ProjectsV2ItemSimpleContentProjectsV2DraftIssue(value);
-        }
-      } catch (_) {}
+      try { final value = Issue.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ProjectsV2ItemSimpleContentIssue(value); } } catch (_) {}
+      try { final value = PullRequestSimple.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ProjectsV2ItemSimpleContentPullRequestSimple(value); } } catch (_) {}
+      try { final value = ProjectsV2DraftIssue.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ProjectsV2ItemSimpleContentProjectsV2DraftIssue(value); } } catch (_) {}
     }
-    try {
-      return ProjectsV2ItemSimpleContentIssue(
-          Issue.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return ProjectsV2ItemSimpleContentPullRequestSimple(
-          PullRequestSimple.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return ProjectsV2ItemSimpleContentProjectsV2DraftIssue(
-          ProjectsV2DraftIssue.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
+    try { return ProjectsV2ItemSimpleContentIssue(Issue.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return ProjectsV2ItemSimpleContentPullRequestSimple(PullRequestSimple.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return ProjectsV2ItemSimpleContentProjectsV2DraftIssue(ProjectsV2DraftIssue.fromJson(json as Map<String, dynamic>)); } catch (_) {}
     throw FormatException("No variant matched for ProjectsV2ItemSimpleContent");
   }
   Object? toJson();
 }
 
-final class ProjectsV2ItemSimpleContentIssue
-    extends ProjectsV2ItemSimpleContent {
+final class ProjectsV2ItemSimpleContentIssue extends ProjectsV2ItemSimpleContent {
   final Issue value;
   const ProjectsV2ItemSimpleContentIssue(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class ProjectsV2ItemSimpleContentPullRequestSimple
-    extends ProjectsV2ItemSimpleContent {
+final class ProjectsV2ItemSimpleContentPullRequestSimple extends ProjectsV2ItemSimpleContent {
   final PullRequestSimple value;
   const ProjectsV2ItemSimpleContentPullRequestSimple(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class ProjectsV2ItemSimpleContentProjectsV2DraftIssue
-    extends ProjectsV2ItemSimpleContent {
+final class ProjectsV2ItemSimpleContentProjectsV2DraftIssue extends ProjectsV2ItemSimpleContent {
   final ProjectsV2DraftIssue value;
   const ProjectsV2ItemSimpleContentProjectsV2DraftIssue(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }

@@ -8,117 +8,58 @@ part of 'webhooks.dart';
 class WebhooksMembership {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `uri`-formatted value serialized in the `organization_url` wire field.
   final String organizationUrl;
-
   /// Required `string` value serialized in the `role` wire field.
   final String role;
-
   /// Whether the user has direct membership in the organization.
   final SdkOptional<bool> directMembership;
-
   /// The slugs of the enterprise teams providing the user with indirect membership in the organization. A limit of 100 enterprise team slugs is returned.
   final SdkOptional<List<String>> enterpriseTeamsProvidingIndirectMembership;
-
   /// Required `string` value serialized in the `state` wire field.
   final String state;
-
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
-
   /// Required object value serialized in the `user` wire field.
   final WebhooksMembershipUser? user;
 
-  const WebhooksMembership(
-      {required this.organizationUrl,
-      required this.role,
-      this.directMembership = const SdkOmitted(),
-      this.enterpriseTeamsProvidingIndirectMembership = const SdkOmitted(),
-      required this.state,
-      required this.url,
-      required this.user});
+  const WebhooksMembership({required this.organizationUrl, required this.role, this.directMembership = const SdkOmitted(), this.enterpriseTeamsProvidingIndirectMembership = const SdkOmitted(), required this.state, required this.url, required this.user});
 
-  WebhooksMembership Function(
-      {String organizationUrl,
-      String role,
-      SdkOptional<bool> directMembership,
-      SdkOptional<List<String>> enterpriseTeamsProvidingIndirectMembership,
-      String state,
-      String url,
-      WebhooksMembershipUser? user}) get copyWith => _copyWith;
+  WebhooksMembership Function({String organizationUrl, String role, SdkOptional<bool> directMembership, SdkOptional<List<String>> enterpriseTeamsProvidingIndirectMembership, String state, String url, WebhooksMembershipUser? user}) get copyWith => _copyWith;
 
-  WebhooksMembership _copyWith(
-          {Object? organizationUrl = sdkOmittedValue,
-          Object? role = sdkOmittedValue,
-          Object? directMembership = sdkOmittedValue,
-          Object? enterpriseTeamsProvidingIndirectMembership = sdkOmittedValue,
-          Object? state = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? user = sdkOmittedValue}) =>
-      WebhooksMembership(
-        organizationUrl: identical(organizationUrl, sdkOmittedValue)
-            ? this.organizationUrl
-            : organizationUrl as String,
-        role: identical(role, sdkOmittedValue) ? this.role : role as String,
-        directMembership: identical(directMembership, sdkOmittedValue)
-            ? this.directMembership
-            : directMembership as SdkOptional<bool>,
-        enterpriseTeamsProvidingIndirectMembership: identical(
-                enterpriseTeamsProvidingIndirectMembership, sdkOmittedValue)
-            ? this.enterpriseTeamsProvidingIndirectMembership
-            : enterpriseTeamsProvidingIndirectMembership
-                as SdkOptional<List<String>>,
-        state: identical(state, sdkOmittedValue) ? this.state : state as String,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        user: identical(user, sdkOmittedValue)
-            ? this.user
-            : user as WebhooksMembershipUser?,
-      );
+  WebhooksMembership _copyWith({Object? organizationUrl = sdkOmittedValue, Object? role = sdkOmittedValue, Object? directMembership = sdkOmittedValue, Object? enterpriseTeamsProvidingIndirectMembership = sdkOmittedValue, Object? state = sdkOmittedValue, Object? url = sdkOmittedValue, Object? user = sdkOmittedValue}) => WebhooksMembership(
+    organizationUrl: identical(organizationUrl, sdkOmittedValue) ? this.organizationUrl : organizationUrl as String,
+    role: identical(role, sdkOmittedValue) ? this.role : role as String,
+    directMembership: identical(directMembership, sdkOmittedValue) ? this.directMembership : directMembership as SdkOptional<bool>,
+    enterpriseTeamsProvidingIndirectMembership: identical(enterpriseTeamsProvidingIndirectMembership, sdkOmittedValue) ? this.enterpriseTeamsProvidingIndirectMembership : enterpriseTeamsProvidingIndirectMembership as SdkOptional<List<String>>,
+    state: identical(state, sdkOmittedValue) ? this.state : state as String,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+    user: identical(user, sdkOmittedValue) ? this.user : user as WebhooksMembershipUser?,
+  );
 
-  factory WebhooksMembership.fromJson(Map<String, dynamic> json) =>
-      WebhooksMembership(
-        organizationUrl: (json['organization_url'] as String?)!,
-        role: (json['role'] as String?)!,
-        directMembership: json['direct_membership'] != null
-            ? SdkPresent((json['direct_membership'] as bool?)!)
-            : const SdkOmitted(),
-        enterpriseTeamsProvidingIndirectMembership:
-            json['enterprise_teams_providing_indirect_membership'] != null
-                ? SdkPresent(
-                    ((json['enterprise_teams_providing_indirect_membership']
-                            as List?)
-                        ?.map((e) => e as String)
-                        .toList())!)
-                : const SdkOmitted(),
-        state: (json['state'] as String?)!,
-        url: (json['url'] as String?)!,
-        user: json.containsKey('user')
-            ? json['user'] != null
-                ? WebhooksMembershipUser.fromJson(
-                    json['user'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'user', 'Required property is missing'),
-      );
+  factory WebhooksMembership.fromJson(Map<String, dynamic> json) => WebhooksMembership(
+    organizationUrl: (json['organization_url'] as String?)!,
+    role: (json['role'] as String?)!,
+    directMembership: json['direct_membership'] != null ? SdkPresent((json['direct_membership'] as bool?)!) : const SdkOmitted(),
+    enterpriseTeamsProvidingIndirectMembership: json['enterprise_teams_providing_indirect_membership'] != null ? SdkPresent(((json['enterprise_teams_providing_indirect_membership'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    state: (json['state'] as String?)!,
+    url: (json['url'] as String?)!,
+    user: json.containsKey('user') ? json['user'] != null ? WebhooksMembershipUser.fromJson(json['user'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'user', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'organization_url': organizationUrl,
-        'role': role,
-        ...switch (directMembership) {
-          SdkPresent<bool>(value: final value) => {
-              'direct_membership': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (enterpriseTeamsProvidingIndirectMembership) {
-          SdkPresent<List<String>>(value: final value) => {
-              'enterprise_teams_providing_indirect_membership': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'state': state,
-        'url': url,
-        'user': user?.toJson(),
-      };
+    'organization_url': organizationUrl,
+    'role': role,
+    ...switch (directMembership) {
+      SdkPresent<bool>(value: final value) => {'direct_membership': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (enterpriseTeamsProvidingIndirectMembership) {
+      SdkPresent<List<String>>(value: final value) => {'enterprise_teams_providing_indirect_membership': value,},
+      _ => const <String, dynamic>{},
+    },
+    'state': state,
+    'url': url,
+    'user': user?.toJson(),
+  };
 }

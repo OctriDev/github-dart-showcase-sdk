@@ -8,36 +8,22 @@ sealed class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMeta
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDirectories();
-  factory WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDirectories.fromJson(
-      Object? json) {
-    if (json is String) {
-      return WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDirectoriesString(
-          json);
-    }
-    if (json is Map) {
-      return WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDirectoriesMap(
-          Map<String, dynamic>.from(json));
-    }
-    throw FormatException(
-        "No variant matched for WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDirectories");
+  factory WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDirectories.fromJson(Object? json) {
+    if (json is String) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDirectoriesString(json); }
+    if (json is Map) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDirectoriesMap(Map<String, dynamic>.from(json)); }
+    throw FormatException("No variant matched for WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDirectories");
   }
   Object? toJson();
 }
 
-final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDirectoriesString
-    extends WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDirectories {
+final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDirectoriesString extends WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDirectories {
   final String value;
-  const WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDirectoriesString(
-      this.value);
-  @override
-  Object? toJson() => value;
+  const WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDirectoriesString(this.value);
+  @override Object? toJson() => value;
 }
 
-final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDirectoriesMap
-    extends WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDirectories {
+final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDirectoriesMap extends WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDirectories {
   final Map<String, dynamic> value;
-  const WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDirectoriesMap(
-      this.value);
-  @override
-  Object? toJson() => value;
+  const WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadataDirectoriesMap(this.value);
+  @override Object? toJson() => value;
 }

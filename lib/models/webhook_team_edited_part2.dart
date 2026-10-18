@@ -8,70 +8,42 @@ part of 'webhook_team_edited.dart';
 class WebhookTeamEditedRepositoryLicense {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `key` wire field.
   final String key;
-
   /// Required `string` value serialized in the `name` wire field.
   final String name;
-
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
-
   /// Required `string` value serialized in the `spdx_id` wire field.
   final String spdxId;
-
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String? url;
 
-  const WebhookTeamEditedRepositoryLicense(
-      {required this.key,
-      required this.name,
-      required this.nodeId,
-      required this.spdxId,
-      required this.url});
+  const WebhookTeamEditedRepositoryLicense({required this.key, required this.name, required this.nodeId, required this.spdxId, required this.url});
 
-  WebhookTeamEditedRepositoryLicense Function(
-      {String key,
-      String name,
-      String nodeId,
-      String spdxId,
-      String? url}) get copyWith => _copyWith;
+  WebhookTeamEditedRepositoryLicense Function({String key, String name, String nodeId, String spdxId, String? url}) get copyWith => _copyWith;
 
-  WebhookTeamEditedRepositoryLicense _copyWith(
-          {Object? key = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? spdxId = sdkOmittedValue,
-          Object? url = sdkOmittedValue}) =>
-      WebhookTeamEditedRepositoryLicense(
-        key: identical(key, sdkOmittedValue) ? this.key : key as String,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        spdxId:
-            identical(spdxId, sdkOmittedValue) ? this.spdxId : spdxId as String,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String?,
-      );
+  WebhookTeamEditedRepositoryLicense _copyWith({Object? key = sdkOmittedValue, Object? name = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? spdxId = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookTeamEditedRepositoryLicense(
+    key: identical(key, sdkOmittedValue) ? this.key : key as String,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+    spdxId: identical(spdxId, sdkOmittedValue) ? this.spdxId : spdxId as String,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String?,
+  );
 
-  factory WebhookTeamEditedRepositoryLicense.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookTeamEditedRepositoryLicense(
-        key: (json['key'] as String?)!,
-        name: (json['name'] as String?)!,
-        nodeId: (json['node_id'] as String?)!,
-        spdxId: (json['spdx_id'] as String?)!,
-        url: json.containsKey('url')
-            ? json['url'] as String?
-            : throw ArgumentError.value(
-                null, 'url', 'Required property is missing'),
-      );
+  factory WebhookTeamEditedRepositoryLicense.fromJson(Map<String, dynamic> json) => WebhookTeamEditedRepositoryLicense(
+    key: (json['key'] as String?)!,
+    name: (json['name'] as String?)!,
+    nodeId: (json['node_id'] as String?)!,
+    spdxId: (json['spdx_id'] as String?)!,
+    url: json.containsKey('url') ? json['url'] as String? : throw ArgumentError.value(null, 'url', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'key': key,
-        'name': name,
-        'node_id': nodeId,
-        'spdx_id': spdxId,
-        'url': url,
-      };
+    'key': key,
+    'name': name,
+    'node_id': nodeId,
+    'spdx_id': spdxId,
+    'url': url,
+  };
 }

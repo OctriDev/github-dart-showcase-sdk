@@ -8,425 +8,226 @@ part of 'billing.dart';
 class BillingPremiumRequestUsageReportUserUsageItemsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Product name.
   final String product;
-
   /// SKU name.
   final String sku;
-
   /// Model name.
   final String model;
-
   /// Unit type of the usage line item.
   final String unitType;
-
   /// Price per unit of the usage line item.
   final double pricePerUnit;
-
   /// Gross quantity of the usage line item.
   final double grossQuantity;
-
   /// Gross amount of the usage line item.
   final double grossAmount;
-
   /// Discount quantity of the usage line item.
   final double discountQuantity;
-
   /// Discount amount of the usage line item.
   final double discountAmount;
-
   /// Net quantity of the usage line item.
   final double netQuantity;
-
   /// Net amount of the usage line item.
   final double netAmount;
 
-  const BillingPremiumRequestUsageReportUserUsageItemsItem(
-      {required this.product,
-      required this.sku,
-      required this.model,
-      required this.unitType,
-      required this.pricePerUnit,
-      required this.grossQuantity,
-      required this.grossAmount,
-      required this.discountQuantity,
-      required this.discountAmount,
-      required this.netQuantity,
-      required this.netAmount});
+  const BillingPremiumRequestUsageReportUserUsageItemsItem({required this.product, required this.sku, required this.model, required this.unitType, required this.pricePerUnit, required this.grossQuantity, required this.grossAmount, required this.discountQuantity, required this.discountAmount, required this.netQuantity, required this.netAmount});
 
-  BillingPremiumRequestUsageReportUserUsageItemsItem Function(
-      {String product,
-      String sku,
-      String model,
-      String unitType,
-      double pricePerUnit,
-      double grossQuantity,
-      double grossAmount,
-      double discountQuantity,
-      double discountAmount,
-      double netQuantity,
-      double netAmount}) get copyWith => _copyWith;
+  BillingPremiumRequestUsageReportUserUsageItemsItem Function({String product, String sku, String model, String unitType, double pricePerUnit, double grossQuantity, double grossAmount, double discountQuantity, double discountAmount, double netQuantity, double netAmount}) get copyWith => _copyWith;
 
-  BillingPremiumRequestUsageReportUserUsageItemsItem _copyWith(
-          {Object? product = sdkOmittedValue,
-          Object? sku = sdkOmittedValue,
-          Object? model = sdkOmittedValue,
-          Object? unitType = sdkOmittedValue,
-          Object? pricePerUnit = sdkOmittedValue,
-          Object? grossQuantity = sdkOmittedValue,
-          Object? grossAmount = sdkOmittedValue,
-          Object? discountQuantity = sdkOmittedValue,
-          Object? discountAmount = sdkOmittedValue,
-          Object? netQuantity = sdkOmittedValue,
-          Object? netAmount = sdkOmittedValue}) =>
-      BillingPremiumRequestUsageReportUserUsageItemsItem(
-        product: identical(product, sdkOmittedValue)
-            ? this.product
-            : product as String,
-        sku: identical(sku, sdkOmittedValue) ? this.sku : sku as String,
-        model: identical(model, sdkOmittedValue) ? this.model : model as String,
-        unitType: identical(unitType, sdkOmittedValue)
-            ? this.unitType
-            : unitType as String,
-        pricePerUnit: identical(pricePerUnit, sdkOmittedValue)
-            ? this.pricePerUnit
-            : pricePerUnit as double,
-        grossQuantity: identical(grossQuantity, sdkOmittedValue)
-            ? this.grossQuantity
-            : grossQuantity as double,
-        grossAmount: identical(grossAmount, sdkOmittedValue)
-            ? this.grossAmount
-            : grossAmount as double,
-        discountQuantity: identical(discountQuantity, sdkOmittedValue)
-            ? this.discountQuantity
-            : discountQuantity as double,
-        discountAmount: identical(discountAmount, sdkOmittedValue)
-            ? this.discountAmount
-            : discountAmount as double,
-        netQuantity: identical(netQuantity, sdkOmittedValue)
-            ? this.netQuantity
-            : netQuantity as double,
-        netAmount: identical(netAmount, sdkOmittedValue)
-            ? this.netAmount
-            : netAmount as double,
-      );
+  BillingPremiumRequestUsageReportUserUsageItemsItem _copyWith({Object? product = sdkOmittedValue, Object? sku = sdkOmittedValue, Object? model = sdkOmittedValue, Object? unitType = sdkOmittedValue, Object? pricePerUnit = sdkOmittedValue, Object? grossQuantity = sdkOmittedValue, Object? grossAmount = sdkOmittedValue, Object? discountQuantity = sdkOmittedValue, Object? discountAmount = sdkOmittedValue, Object? netQuantity = sdkOmittedValue, Object? netAmount = sdkOmittedValue}) => BillingPremiumRequestUsageReportUserUsageItemsItem(
+    product: identical(product, sdkOmittedValue) ? this.product : product as String,
+    sku: identical(sku, sdkOmittedValue) ? this.sku : sku as String,
+    model: identical(model, sdkOmittedValue) ? this.model : model as String,
+    unitType: identical(unitType, sdkOmittedValue) ? this.unitType : unitType as String,
+    pricePerUnit: identical(pricePerUnit, sdkOmittedValue) ? this.pricePerUnit : pricePerUnit as double,
+    grossQuantity: identical(grossQuantity, sdkOmittedValue) ? this.grossQuantity : grossQuantity as double,
+    grossAmount: identical(grossAmount, sdkOmittedValue) ? this.grossAmount : grossAmount as double,
+    discountQuantity: identical(discountQuantity, sdkOmittedValue) ? this.discountQuantity : discountQuantity as double,
+    discountAmount: identical(discountAmount, sdkOmittedValue) ? this.discountAmount : discountAmount as double,
+    netQuantity: identical(netQuantity, sdkOmittedValue) ? this.netQuantity : netQuantity as double,
+    netAmount: identical(netAmount, sdkOmittedValue) ? this.netAmount : netAmount as double,
+  );
 
-  factory BillingPremiumRequestUsageReportUserUsageItemsItem.fromJson(
-          Map<String, dynamic> json) =>
-      BillingPremiumRequestUsageReportUserUsageItemsItem(
-        product: (json['product'] as String?)!,
-        sku: (json['sku'] as String?)!,
-        model: (json['model'] as String?)!,
-        unitType: (json['unitType'] as String?)!,
-        pricePerUnit: ((json['pricePerUnit'] as num?)?.toDouble())!,
-        grossQuantity: ((json['grossQuantity'] as num?)?.toDouble())!,
-        grossAmount: ((json['grossAmount'] as num?)?.toDouble())!,
-        discountQuantity: ((json['discountQuantity'] as num?)?.toDouble())!,
-        discountAmount: ((json['discountAmount'] as num?)?.toDouble())!,
-        netQuantity: ((json['netQuantity'] as num?)?.toDouble())!,
-        netAmount: ((json['netAmount'] as num?)?.toDouble())!,
-      );
+  factory BillingPremiumRequestUsageReportUserUsageItemsItem.fromJson(Map<String, dynamic> json) => BillingPremiumRequestUsageReportUserUsageItemsItem(
+    product: (json['product'] as String?)!,
+    sku: (json['sku'] as String?)!,
+    model: (json['model'] as String?)!,
+    unitType: (json['unitType'] as String?)!,
+    pricePerUnit: ((json['pricePerUnit'] as num?)?.toDouble())!,
+    grossQuantity: ((json['grossQuantity'] as num?)?.toDouble())!,
+    grossAmount: ((json['grossAmount'] as num?)?.toDouble())!,
+    discountQuantity: ((json['discountQuantity'] as num?)?.toDouble())!,
+    discountAmount: ((json['discountAmount'] as num?)?.toDouble())!,
+    netQuantity: ((json['netQuantity'] as num?)?.toDouble())!,
+    netAmount: ((json['netAmount'] as num?)?.toDouble())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'product': product,
-        'sku': sku,
-        'model': model,
-        'unitType': unitType,
-        'pricePerUnit': pricePerUnit,
-        'grossQuantity': grossQuantity,
-        'grossAmount': grossAmount,
-        'discountQuantity': discountQuantity,
-        'discountAmount': discountAmount,
-        'netQuantity': netQuantity,
-        'netAmount': netAmount,
-      };
+    'product': product,
+    'sku': sku,
+    'model': model,
+    'unitType': unitType,
+    'pricePerUnit': pricePerUnit,
+    'grossQuantity': grossQuantity,
+    'grossAmount': grossAmount,
+    'discountQuantity': discountQuantity,
+    'discountAmount': discountAmount,
+    'netQuantity': netQuantity,
+    'netAmount': netAmount,
+  };
 }
 
 /// Typed representation of the `BillingPremiumRequestUsageReportUser` API schema.
 class BillingPremiumRequestUsageReportUser {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required object value serialized in the `timePeriod` wire field.
   final BillingPremiumRequestUsageReportUserTimePeriod timePeriod;
-
   /// The unique identifier of the user.
   final String user;
-
   /// The product for the usage report.
   final SdkOptional<String> product;
-
   /// The model for the usage report.
   final SdkOptional<String> model;
-
   /// Required array value serialized in the `usageItems` wire field.
   final List<BillingPremiumRequestUsageReportUserUsageItemsItem> usageItems;
 
-  const BillingPremiumRequestUsageReportUser(
-      {required this.timePeriod,
-      required this.user,
-      this.product = const SdkOmitted(),
-      this.model = const SdkOmitted(),
-      required this.usageItems});
+  const BillingPremiumRequestUsageReportUser({required this.timePeriod, required this.user, this.product = const SdkOmitted(), this.model = const SdkOmitted(), required this.usageItems});
 
-  BillingPremiumRequestUsageReportUser Function(
-          {BillingPremiumRequestUsageReportUserTimePeriod timePeriod,
-          String user,
-          SdkOptional<String> product,
-          SdkOptional<String> model,
-          List<BillingPremiumRequestUsageReportUserUsageItemsItem> usageItems})
-      get copyWith => _copyWith;
+  BillingPremiumRequestUsageReportUser Function({BillingPremiumRequestUsageReportUserTimePeriod timePeriod, String user, SdkOptional<String> product, SdkOptional<String> model, List<BillingPremiumRequestUsageReportUserUsageItemsItem> usageItems}) get copyWith => _copyWith;
 
-  BillingPremiumRequestUsageReportUser _copyWith(
-          {Object? timePeriod = sdkOmittedValue,
-          Object? user = sdkOmittedValue,
-          Object? product = sdkOmittedValue,
-          Object? model = sdkOmittedValue,
-          Object? usageItems = sdkOmittedValue}) =>
-      BillingPremiumRequestUsageReportUser(
-        timePeriod: identical(timePeriod, sdkOmittedValue)
-            ? this.timePeriod
-            : timePeriod as BillingPremiumRequestUsageReportUserTimePeriod,
-        user: identical(user, sdkOmittedValue) ? this.user : user as String,
-        product: identical(product, sdkOmittedValue)
-            ? this.product
-            : product as SdkOptional<String>,
-        model: identical(model, sdkOmittedValue)
-            ? this.model
-            : model as SdkOptional<String>,
-        usageItems: identical(usageItems, sdkOmittedValue)
-            ? this.usageItems
-            : usageItems
-                as List<BillingPremiumRequestUsageReportUserUsageItemsItem>,
-      );
+  BillingPremiumRequestUsageReportUser _copyWith({Object? timePeriod = sdkOmittedValue, Object? user = sdkOmittedValue, Object? product = sdkOmittedValue, Object? model = sdkOmittedValue, Object? usageItems = sdkOmittedValue}) => BillingPremiumRequestUsageReportUser(
+    timePeriod: identical(timePeriod, sdkOmittedValue) ? this.timePeriod : timePeriod as BillingPremiumRequestUsageReportUserTimePeriod,
+    user: identical(user, sdkOmittedValue) ? this.user : user as String,
+    product: identical(product, sdkOmittedValue) ? this.product : product as SdkOptional<String>,
+    model: identical(model, sdkOmittedValue) ? this.model : model as SdkOptional<String>,
+    usageItems: identical(usageItems, sdkOmittedValue) ? this.usageItems : usageItems as List<BillingPremiumRequestUsageReportUserUsageItemsItem>,
+  );
 
-  factory BillingPremiumRequestUsageReportUser.fromJson(
-          Map<String, dynamic> json) =>
-      BillingPremiumRequestUsageReportUser(
-        timePeriod: (json['timePeriod'] != null
-            ? BillingPremiumRequestUsageReportUserTimePeriod.fromJson(
-                json['timePeriod'] as Map<String, dynamic>)
-            : null)!,
-        user: (json['user'] as String?)!,
-        product: json['product'] != null
-            ? SdkPresent((json['product'] as String?)!)
-            : const SdkOmitted(),
-        model: json['model'] != null
-            ? SdkPresent((json['model'] as String?)!)
-            : const SdkOmitted(),
-        usageItems: ((json['usageItems'] as List?)
-            ?.map((e) =>
-                BillingPremiumRequestUsageReportUserUsageItemsItem.fromJson(
-                    e as Map<String, dynamic>))
-            .toList())!,
-      );
+  factory BillingPremiumRequestUsageReportUser.fromJson(Map<String, dynamic> json) => BillingPremiumRequestUsageReportUser(
+    timePeriod: (json['timePeriod'] != null ? BillingPremiumRequestUsageReportUserTimePeriod.fromJson(json['timePeriod'] as Map<String, dynamic>) : null)!,
+    user: (json['user'] as String?)!,
+    product: json['product'] != null ? SdkPresent((json['product'] as String?)!) : const SdkOmitted(),
+    model: json['model'] != null ? SdkPresent((json['model'] as String?)!) : const SdkOmitted(),
+    usageItems: ((json['usageItems'] as List?)?.map((e) => BillingPremiumRequestUsageReportUserUsageItemsItem.fromJson(e as Map<String, dynamic>)).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'timePeriod': timePeriod.toJson(),
-        'user': user,
-        ...switch (product) {
-          SdkPresent<String>(value: final value) => {
-              'product': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (model) {
-          SdkPresent<String>(value: final value) => {
-              'model': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'usageItems': usageItems.map((item) => item.toJson()).toList(),
-      };
+    'timePeriod': timePeriod.toJson(),
+    'user': user,
+    ...switch (product) {
+      SdkPresent<String>(value: final value) => {'product': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (model) {
+      SdkPresent<String>(value: final value) => {'model': value,},
+      _ => const <String, dynamic>{},
+    },
+    'usageItems': usageItems.map((item) => item.toJson()).toList(),
+  };
 }
 
 /// Required object value serialized in the `usageItems[]` wire field.
 class BillingUsageReportUsageItemsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Date of the usage line item.
   final String date;
-
   /// Product name.
   final String product;
-
   /// SKU name.
   final String sku;
-
   /// Quantity of the usage line item.
   final int quantity;
-
   /// Unit type of the usage line item.
   final String unitType;
-
   /// Price per unit of the usage line item.
   final double pricePerUnit;
-
   /// Gross amount of the usage line item.
   final double grossAmount;
-
   /// Discount amount of the usage line item.
   final double discountAmount;
-
   /// Net amount of the usage line item.
   final double netAmount;
-
   /// Name of the organization.
   final String organizationName;
-
   /// Name of the repository.
   final SdkOptional<String> repositoryName;
 
-  const BillingUsageReportUsageItemsItem(
-      {required this.date,
-      required this.product,
-      required this.sku,
-      required this.quantity,
-      required this.unitType,
-      required this.pricePerUnit,
-      required this.grossAmount,
-      required this.discountAmount,
-      required this.netAmount,
-      required this.organizationName,
-      this.repositoryName = const SdkOmitted()});
+  const BillingUsageReportUsageItemsItem({required this.date, required this.product, required this.sku, required this.quantity, required this.unitType, required this.pricePerUnit, required this.grossAmount, required this.discountAmount, required this.netAmount, required this.organizationName, this.repositoryName = const SdkOmitted()});
 
-  BillingUsageReportUsageItemsItem Function(
-      {String date,
-      String product,
-      String sku,
-      int quantity,
-      String unitType,
-      double pricePerUnit,
-      double grossAmount,
-      double discountAmount,
-      double netAmount,
-      String organizationName,
-      SdkOptional<String> repositoryName}) get copyWith => _copyWith;
+  BillingUsageReportUsageItemsItem Function({String date, String product, String sku, int quantity, String unitType, double pricePerUnit, double grossAmount, double discountAmount, double netAmount, String organizationName, SdkOptional<String> repositoryName}) get copyWith => _copyWith;
 
-  BillingUsageReportUsageItemsItem _copyWith(
-          {Object? date = sdkOmittedValue,
-          Object? product = sdkOmittedValue,
-          Object? sku = sdkOmittedValue,
-          Object? quantity = sdkOmittedValue,
-          Object? unitType = sdkOmittedValue,
-          Object? pricePerUnit = sdkOmittedValue,
-          Object? grossAmount = sdkOmittedValue,
-          Object? discountAmount = sdkOmittedValue,
-          Object? netAmount = sdkOmittedValue,
-          Object? organizationName = sdkOmittedValue,
-          Object? repositoryName = sdkOmittedValue}) =>
-      BillingUsageReportUsageItemsItem(
-        date: identical(date, sdkOmittedValue) ? this.date : date as String,
-        product: identical(product, sdkOmittedValue)
-            ? this.product
-            : product as String,
-        sku: identical(sku, sdkOmittedValue) ? this.sku : sku as String,
-        quantity: identical(quantity, sdkOmittedValue)
-            ? this.quantity
-            : quantity as int,
-        unitType: identical(unitType, sdkOmittedValue)
-            ? this.unitType
-            : unitType as String,
-        pricePerUnit: identical(pricePerUnit, sdkOmittedValue)
-            ? this.pricePerUnit
-            : pricePerUnit as double,
-        grossAmount: identical(grossAmount, sdkOmittedValue)
-            ? this.grossAmount
-            : grossAmount as double,
-        discountAmount: identical(discountAmount, sdkOmittedValue)
-            ? this.discountAmount
-            : discountAmount as double,
-        netAmount: identical(netAmount, sdkOmittedValue)
-            ? this.netAmount
-            : netAmount as double,
-        organizationName: identical(organizationName, sdkOmittedValue)
-            ? this.organizationName
-            : organizationName as String,
-        repositoryName: identical(repositoryName, sdkOmittedValue)
-            ? this.repositoryName
-            : repositoryName as SdkOptional<String>,
-      );
+  BillingUsageReportUsageItemsItem _copyWith({Object? date = sdkOmittedValue, Object? product = sdkOmittedValue, Object? sku = sdkOmittedValue, Object? quantity = sdkOmittedValue, Object? unitType = sdkOmittedValue, Object? pricePerUnit = sdkOmittedValue, Object? grossAmount = sdkOmittedValue, Object? discountAmount = sdkOmittedValue, Object? netAmount = sdkOmittedValue, Object? organizationName = sdkOmittedValue, Object? repositoryName = sdkOmittedValue}) => BillingUsageReportUsageItemsItem(
+    date: identical(date, sdkOmittedValue) ? this.date : date as String,
+    product: identical(product, sdkOmittedValue) ? this.product : product as String,
+    sku: identical(sku, sdkOmittedValue) ? this.sku : sku as String,
+    quantity: identical(quantity, sdkOmittedValue) ? this.quantity : quantity as int,
+    unitType: identical(unitType, sdkOmittedValue) ? this.unitType : unitType as String,
+    pricePerUnit: identical(pricePerUnit, sdkOmittedValue) ? this.pricePerUnit : pricePerUnit as double,
+    grossAmount: identical(grossAmount, sdkOmittedValue) ? this.grossAmount : grossAmount as double,
+    discountAmount: identical(discountAmount, sdkOmittedValue) ? this.discountAmount : discountAmount as double,
+    netAmount: identical(netAmount, sdkOmittedValue) ? this.netAmount : netAmount as double,
+    organizationName: identical(organizationName, sdkOmittedValue) ? this.organizationName : organizationName as String,
+    repositoryName: identical(repositoryName, sdkOmittedValue) ? this.repositoryName : repositoryName as SdkOptional<String>,
+  );
 
-  factory BillingUsageReportUsageItemsItem.fromJson(
-          Map<String, dynamic> json) =>
-      BillingUsageReportUsageItemsItem(
-        date: (json['date'] as String?)!,
-        product: (json['product'] as String?)!,
-        sku: (json['sku'] as String?)!,
-        quantity: ((json['quantity'] as num?)?.toInt())!,
-        unitType: (json['unitType'] as String?)!,
-        pricePerUnit: ((json['pricePerUnit'] as num?)?.toDouble())!,
-        grossAmount: ((json['grossAmount'] as num?)?.toDouble())!,
-        discountAmount: ((json['discountAmount'] as num?)?.toDouble())!,
-        netAmount: ((json['netAmount'] as num?)?.toDouble())!,
-        organizationName: (json['organizationName'] as String?)!,
-        repositoryName: json['repositoryName'] != null
-            ? SdkPresent((json['repositoryName'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory BillingUsageReportUsageItemsItem.fromJson(Map<String, dynamic> json) => BillingUsageReportUsageItemsItem(
+    date: (json['date'] as String?)!,
+    product: (json['product'] as String?)!,
+    sku: (json['sku'] as String?)!,
+    quantity: ((json['quantity'] as num?)?.toInt())!,
+    unitType: (json['unitType'] as String?)!,
+    pricePerUnit: ((json['pricePerUnit'] as num?)?.toDouble())!,
+    grossAmount: ((json['grossAmount'] as num?)?.toDouble())!,
+    discountAmount: ((json['discountAmount'] as num?)?.toDouble())!,
+    netAmount: ((json['netAmount'] as num?)?.toDouble())!,
+    organizationName: (json['organizationName'] as String?)!,
+    repositoryName: json['repositoryName'] != null ? SdkPresent((json['repositoryName'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'date': date,
-        'product': product,
-        'sku': sku,
-        'quantity': quantity,
-        'unitType': unitType,
-        'pricePerUnit': pricePerUnit,
-        'grossAmount': grossAmount,
-        'discountAmount': discountAmount,
-        'netAmount': netAmount,
-        'organizationName': organizationName,
-        ...switch (repositoryName) {
-          SdkPresent<String>(value: final value) => {
-              'repositoryName': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'date': date,
+    'product': product,
+    'sku': sku,
+    'quantity': quantity,
+    'unitType': unitType,
+    'pricePerUnit': pricePerUnit,
+    'grossAmount': grossAmount,
+    'discountAmount': discountAmount,
+    'netAmount': netAmount,
+    'organizationName': organizationName,
+    ...switch (repositoryName) {
+      SdkPresent<String>(value: final value) => {'repositoryName': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Typed representation of the `BillingUsageReport` API schema.
 class BillingUsageReport {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional array value serialized in the `usageItems` wire field.
   final SdkOptional<List<BillingUsageReportUsageItemsItem>> usageItems;
 
   const BillingUsageReport({this.usageItems = const SdkOmitted()});
 
-  BillingUsageReport Function(
-          {SdkOptional<List<BillingUsageReportUsageItemsItem>> usageItems})
-      get copyWith => _copyWith;
+  BillingUsageReport Function({SdkOptional<List<BillingUsageReportUsageItemsItem>> usageItems}) get copyWith => _copyWith;
 
-  BillingUsageReport _copyWith({Object? usageItems = sdkOmittedValue}) =>
-      BillingUsageReport(
-        usageItems: identical(usageItems, sdkOmittedValue)
-            ? this.usageItems
-            : usageItems as SdkOptional<List<BillingUsageReportUsageItemsItem>>,
-      );
+  BillingUsageReport _copyWith({Object? usageItems = sdkOmittedValue}) => BillingUsageReport(
+    usageItems: identical(usageItems, sdkOmittedValue) ? this.usageItems : usageItems as SdkOptional<List<BillingUsageReportUsageItemsItem>>,
+  );
 
-  factory BillingUsageReport.fromJson(Map<String, dynamic> json) =>
-      BillingUsageReport(
-        usageItems: json['usageItems'] != null
-            ? SdkPresent(((json['usageItems'] as List?)
-                ?.map((e) => BillingUsageReportUsageItemsItem.fromJson(
-                    e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory BillingUsageReport.fromJson(Map<String, dynamic> json) => BillingUsageReport(
+    usageItems: json['usageItems'] != null ? SdkPresent(((json['usageItems'] as List?)?.map((e) => BillingUsageReportUsageItemsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (usageItems) {
-          SdkPresent<List<BillingUsageReportUsageItemsItem>>(
-            value: final value
-          ) =>
-            {
-              'usageItems': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (usageItems) {
+      SdkPresent<List<BillingUsageReportUsageItemsItem>>(value: final value) => {'usageItems': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

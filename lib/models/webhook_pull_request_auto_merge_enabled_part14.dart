@@ -8,79 +8,42 @@ part of 'webhook_pull_request_auto_merge_enabled.dart';
 class WebhookPullRequestAutoMergeEnabledPullRequestHead {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `label` wire field.
   final String label;
-
   /// Required `string` value serialized in the `ref` wire field.
   final String ref;
-
   /// A git repository
   final WebhookPullRequestAutoMergeEnabledPullRequestHeadRepo repo;
-
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
-
   /// Required object value serialized in the `user` wire field.
   final WebhookPullRequestAutoMergeEnabledPullRequestHeadUser? user;
 
-  const WebhookPullRequestAutoMergeEnabledPullRequestHead(
-      {required this.label,
-      required this.ref,
-      required this.repo,
-      required this.sha,
-      required this.user});
+  const WebhookPullRequestAutoMergeEnabledPullRequestHead({required this.label, required this.ref, required this.repo, required this.sha, required this.user});
 
-  WebhookPullRequestAutoMergeEnabledPullRequestHead Function(
-          {String label,
-          String ref,
-          WebhookPullRequestAutoMergeEnabledPullRequestHeadRepo repo,
-          String sha,
-          WebhookPullRequestAutoMergeEnabledPullRequestHeadUser? user})
-      get copyWith => _copyWith;
+  WebhookPullRequestAutoMergeEnabledPullRequestHead Function({String label, String ref, WebhookPullRequestAutoMergeEnabledPullRequestHeadRepo repo, String sha, WebhookPullRequestAutoMergeEnabledPullRequestHeadUser? user}) get copyWith => _copyWith;
 
-  WebhookPullRequestAutoMergeEnabledPullRequestHead _copyWith(
-          {Object? label = sdkOmittedValue,
-          Object? ref = sdkOmittedValue,
-          Object? repo = sdkOmittedValue,
-          Object? sha = sdkOmittedValue,
-          Object? user = sdkOmittedValue}) =>
-      WebhookPullRequestAutoMergeEnabledPullRequestHead(
-        label: identical(label, sdkOmittedValue) ? this.label : label as String,
-        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-        repo: identical(repo, sdkOmittedValue)
-            ? this.repo
-            : repo as WebhookPullRequestAutoMergeEnabledPullRequestHeadRepo,
-        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-        user: identical(user, sdkOmittedValue)
-            ? this.user
-            : user as WebhookPullRequestAutoMergeEnabledPullRequestHeadUser?,
-      );
+  WebhookPullRequestAutoMergeEnabledPullRequestHead _copyWith({Object? label = sdkOmittedValue, Object? ref = sdkOmittedValue, Object? repo = sdkOmittedValue, Object? sha = sdkOmittedValue, Object? user = sdkOmittedValue}) => WebhookPullRequestAutoMergeEnabledPullRequestHead(
+    label: identical(label, sdkOmittedValue) ? this.label : label as String,
+    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+    repo: identical(repo, sdkOmittedValue) ? this.repo : repo as WebhookPullRequestAutoMergeEnabledPullRequestHeadRepo,
+    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+    user: identical(user, sdkOmittedValue) ? this.user : user as WebhookPullRequestAutoMergeEnabledPullRequestHeadUser?,
+  );
 
-  factory WebhookPullRequestAutoMergeEnabledPullRequestHead.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestAutoMergeEnabledPullRequestHead(
-        label: (json['label'] as String?)!,
-        ref: (json['ref'] as String?)!,
-        repo: (json['repo'] != null
-            ? WebhookPullRequestAutoMergeEnabledPullRequestHeadRepo.fromJson(
-                json['repo'] as Map<String, dynamic>)
-            : null)!,
-        sha: (json['sha'] as String?)!,
-        user: json.containsKey('user')
-            ? json['user'] != null
-                ? WebhookPullRequestAutoMergeEnabledPullRequestHeadUser
-                    .fromJson(json['user'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'user', 'Required property is missing'),
-      );
+  factory WebhookPullRequestAutoMergeEnabledPullRequestHead.fromJson(Map<String, dynamic> json) => WebhookPullRequestAutoMergeEnabledPullRequestHead(
+    label: (json['label'] as String?)!,
+    ref: (json['ref'] as String?)!,
+    repo: (json['repo'] != null ? WebhookPullRequestAutoMergeEnabledPullRequestHeadRepo.fromJson(json['repo'] as Map<String, dynamic>) : null)!,
+    sha: (json['sha'] as String?)!,
+    user: json.containsKey('user') ? json['user'] != null ? WebhookPullRequestAutoMergeEnabledPullRequestHeadUser.fromJson(json['user'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'user', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'label': label,
-        'ref': ref,
-        'repo': repo.toJson(),
-        'sha': sha,
-        'user': user?.toJson(),
-      };
+    'label': label,
+    'ref': ref,
+    'repo': repo.toJson(),
+    'sha': sha,
+    'user': user?.toJson(),
+  };
 }

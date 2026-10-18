@@ -8,332 +8,148 @@ part of 'actions_actions_policy.dart';
 class ActionsPolicyEnterpriseConditionsVariant2 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required object value serialized in the `organization_id` wire field.
-  final EnterpriseRulesetConditionsOrganizationIdTargetOrganizationId
-      organizationId;
-
+  final EnterpriseRulesetConditionsOrganizationIdTargetOrganizationId organizationId;
   /// Required object value serialized in the `repository_name` wire field.
-  final RepositoryRulesetConditionsRepositoryNameTargetRepositoryName
-      repositoryName;
-
+  final RepositoryRulesetConditionsRepositoryNameTargetRepositoryName repositoryName;
   /// Optional object value serialized in the `workflow_path` wire field.
-  final SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath>
-      workflowPath;
+  final SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath> workflowPath;
 
-  const ActionsPolicyEnterpriseConditionsVariant2(
-      {required this.organizationId,
-      required this.repositoryName,
-      this.workflowPath = const SdkOmitted()});
+  const ActionsPolicyEnterpriseConditionsVariant2({required this.organizationId, required this.repositoryName, this.workflowPath = const SdkOmitted()});
 
-  ActionsPolicyEnterpriseConditionsVariant2 Function(
-      {EnterpriseRulesetConditionsOrganizationIdTargetOrganizationId
-          organizationId,
-      RepositoryRulesetConditionsRepositoryNameTargetRepositoryName
-          repositoryName,
-      SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath>
-          workflowPath}) get copyWith => _copyWith;
+  ActionsPolicyEnterpriseConditionsVariant2 Function({EnterpriseRulesetConditionsOrganizationIdTargetOrganizationId organizationId, RepositoryRulesetConditionsRepositoryNameTargetRepositoryName repositoryName, SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath> workflowPath}) get copyWith => _copyWith;
 
-  ActionsPolicyEnterpriseConditionsVariant2 _copyWith(
-          {Object? organizationId = sdkOmittedValue,
-          Object? repositoryName = sdkOmittedValue,
-          Object? workflowPath = sdkOmittedValue}) =>
-      ActionsPolicyEnterpriseConditionsVariant2(
-        organizationId: identical(organizationId, sdkOmittedValue)
-            ? this.organizationId
-            : organizationId
-                as EnterpriseRulesetConditionsOrganizationIdTargetOrganizationId,
-        repositoryName: identical(repositoryName, sdkOmittedValue)
-            ? this.repositoryName
-            : repositoryName
-                as RepositoryRulesetConditionsRepositoryNameTargetRepositoryName,
-        workflowPath: identical(workflowPath, sdkOmittedValue)
-            ? this.workflowPath
-            : workflowPath
-                as SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath>,
-      );
+  ActionsPolicyEnterpriseConditionsVariant2 _copyWith({Object? organizationId = sdkOmittedValue, Object? repositoryName = sdkOmittedValue, Object? workflowPath = sdkOmittedValue}) => ActionsPolicyEnterpriseConditionsVariant2(
+    organizationId: identical(organizationId, sdkOmittedValue) ? this.organizationId : organizationId as EnterpriseRulesetConditionsOrganizationIdTargetOrganizationId,
+    repositoryName: identical(repositoryName, sdkOmittedValue) ? this.repositoryName : repositoryName as RepositoryRulesetConditionsRepositoryNameTargetRepositoryName,
+    workflowPath: identical(workflowPath, sdkOmittedValue) ? this.workflowPath : workflowPath as SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath>,
+  );
 
-  factory ActionsPolicyEnterpriseConditionsVariant2.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsPolicyEnterpriseConditionsVariant2(
-        organizationId: (json['organization_id'] != null
-            ? EnterpriseRulesetConditionsOrganizationIdTargetOrganizationId
-                .fromJson(json['organization_id'] as Map<String, dynamic>)
-            : null)!,
-        repositoryName: (json['repository_name'] != null
-            ? RepositoryRulesetConditionsRepositoryNameTargetRepositoryName
-                .fromJson(json['repository_name'] as Map<String, dynamic>)
-            : null)!,
-        workflowPath: json['workflow_path'] != null
-            ? SdkPresent((json['workflow_path'] != null
-                ? ActionsPolicyWorkflowPathConditionWorkflowPath.fromJson(
-                    json['workflow_path'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory ActionsPolicyEnterpriseConditionsVariant2.fromJson(Map<String, dynamic> json) => ActionsPolicyEnterpriseConditionsVariant2(
+    organizationId: (json['organization_id'] != null ? EnterpriseRulesetConditionsOrganizationIdTargetOrganizationId.fromJson(json['organization_id'] as Map<String, dynamic>) : null)!,
+    repositoryName: (json['repository_name'] != null ? RepositoryRulesetConditionsRepositoryNameTargetRepositoryName.fromJson(json['repository_name'] as Map<String, dynamic>) : null)!,
+    workflowPath: json['workflow_path'] != null ? SdkPresent((json['workflow_path'] != null ? ActionsPolicyWorkflowPathConditionWorkflowPath.fromJson(json['workflow_path'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'organization_id': organizationId.toJson(),
-        'repository_name': repositoryName.toJson(),
-        ...switch (workflowPath) {
-          SdkPresent<ActionsPolicyWorkflowPathConditionWorkflowPath>(
-            value: final value
-          ) =>
-            {
-              'workflow_path': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'organization_id': organizationId.toJson(),
+    'repository_name': repositoryName.toJson(),
+    ...switch (workflowPath) {
+      SdkPresent<ActionsPolicyWorkflowPathConditionWorkflowPath>(value: final value) => {'workflow_path': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Conditions to target organizations by id and repositories by property
 class ActionsPolicyEnterpriseConditionsVariant3 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required object value serialized in the `organization_id` wire field.
-  final EnterpriseRulesetConditionsOrganizationIdTargetOrganizationId
-      organizationId;
-
+  final EnterpriseRulesetConditionsOrganizationIdTargetOrganizationId organizationId;
   /// Required object value serialized in the `repository_property` wire field.
-  final RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty
-      repositoryProperty;
-
+  final RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty repositoryProperty;
   /// Optional object value serialized in the `workflow_path` wire field.
-  final SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath>
-      workflowPath;
+  final SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath> workflowPath;
 
-  const ActionsPolicyEnterpriseConditionsVariant3(
-      {required this.organizationId,
-      required this.repositoryProperty,
-      this.workflowPath = const SdkOmitted()});
+  const ActionsPolicyEnterpriseConditionsVariant3({required this.organizationId, required this.repositoryProperty, this.workflowPath = const SdkOmitted()});
 
-  ActionsPolicyEnterpriseConditionsVariant3 Function(
-      {EnterpriseRulesetConditionsOrganizationIdTargetOrganizationId
-          organizationId,
-      RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty
-          repositoryProperty,
-      SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath>
-          workflowPath}) get copyWith => _copyWith;
+  ActionsPolicyEnterpriseConditionsVariant3 Function({EnterpriseRulesetConditionsOrganizationIdTargetOrganizationId organizationId, RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty repositoryProperty, SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath> workflowPath}) get copyWith => _copyWith;
 
-  ActionsPolicyEnterpriseConditionsVariant3 _copyWith(
-          {Object? organizationId = sdkOmittedValue,
-          Object? repositoryProperty = sdkOmittedValue,
-          Object? workflowPath = sdkOmittedValue}) =>
-      ActionsPolicyEnterpriseConditionsVariant3(
-        organizationId: identical(organizationId, sdkOmittedValue)
-            ? this.organizationId
-            : organizationId
-                as EnterpriseRulesetConditionsOrganizationIdTargetOrganizationId,
-        repositoryProperty: identical(repositoryProperty, sdkOmittedValue)
-            ? this.repositoryProperty
-            : repositoryProperty
-                as RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty,
-        workflowPath: identical(workflowPath, sdkOmittedValue)
-            ? this.workflowPath
-            : workflowPath
-                as SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath>,
-      );
+  ActionsPolicyEnterpriseConditionsVariant3 _copyWith({Object? organizationId = sdkOmittedValue, Object? repositoryProperty = sdkOmittedValue, Object? workflowPath = sdkOmittedValue}) => ActionsPolicyEnterpriseConditionsVariant3(
+    organizationId: identical(organizationId, sdkOmittedValue) ? this.organizationId : organizationId as EnterpriseRulesetConditionsOrganizationIdTargetOrganizationId,
+    repositoryProperty: identical(repositoryProperty, sdkOmittedValue) ? this.repositoryProperty : repositoryProperty as RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty,
+    workflowPath: identical(workflowPath, sdkOmittedValue) ? this.workflowPath : workflowPath as SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath>,
+  );
 
-  factory ActionsPolicyEnterpriseConditionsVariant3.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsPolicyEnterpriseConditionsVariant3(
-        organizationId: (json['organization_id'] != null
-            ? EnterpriseRulesetConditionsOrganizationIdTargetOrganizationId
-                .fromJson(json['organization_id'] as Map<String, dynamic>)
-            : null)!,
-        repositoryProperty: (json['repository_property'] != null
-            ? RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty
-                .fromJson(json['repository_property'] as Map<String, dynamic>)
-            : null)!,
-        workflowPath: json['workflow_path'] != null
-            ? SdkPresent((json['workflow_path'] != null
-                ? ActionsPolicyWorkflowPathConditionWorkflowPath.fromJson(
-                    json['workflow_path'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory ActionsPolicyEnterpriseConditionsVariant3.fromJson(Map<String, dynamic> json) => ActionsPolicyEnterpriseConditionsVariant3(
+    organizationId: (json['organization_id'] != null ? EnterpriseRulesetConditionsOrganizationIdTargetOrganizationId.fromJson(json['organization_id'] as Map<String, dynamic>) : null)!,
+    repositoryProperty: (json['repository_property'] != null ? RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty.fromJson(json['repository_property'] as Map<String, dynamic>) : null)!,
+    workflowPath: json['workflow_path'] != null ? SdkPresent((json['workflow_path'] != null ? ActionsPolicyWorkflowPathConditionWorkflowPath.fromJson(json['workflow_path'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'organization_id': organizationId.toJson(),
-        'repository_property': repositoryProperty.toJson(),
-        ...switch (workflowPath) {
-          SdkPresent<ActionsPolicyWorkflowPathConditionWorkflowPath>(
-            value: final value
-          ) =>
-            {
-              'workflow_path': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'organization_id': organizationId.toJson(),
+    'repository_property': repositoryProperty.toJson(),
+    ...switch (workflowPath) {
+      SdkPresent<ActionsPolicyWorkflowPathConditionWorkflowPath>(value: final value) => {'workflow_path': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Conditions to target organizations by property and repositories by name
 class ActionsPolicyEnterpriseConditionsVariant4 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required object value serialized in the `organization_property` wire field.
-  final EnterpriseRulesetConditionsOrganizationPropertyTargetOrganizationProperty
-      organizationProperty;
-
+  final EnterpriseRulesetConditionsOrganizationPropertyTargetOrganizationProperty organizationProperty;
   /// Required object value serialized in the `repository_name` wire field.
-  final RepositoryRulesetConditionsRepositoryNameTargetRepositoryName
-      repositoryName;
-
+  final RepositoryRulesetConditionsRepositoryNameTargetRepositoryName repositoryName;
   /// Optional object value serialized in the `workflow_path` wire field.
-  final SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath>
-      workflowPath;
+  final SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath> workflowPath;
 
-  const ActionsPolicyEnterpriseConditionsVariant4(
-      {required this.organizationProperty,
-      required this.repositoryName,
-      this.workflowPath = const SdkOmitted()});
+  const ActionsPolicyEnterpriseConditionsVariant4({required this.organizationProperty, required this.repositoryName, this.workflowPath = const SdkOmitted()});
 
-  ActionsPolicyEnterpriseConditionsVariant4 Function(
-      {EnterpriseRulesetConditionsOrganizationPropertyTargetOrganizationProperty
-          organizationProperty,
-      RepositoryRulesetConditionsRepositoryNameTargetRepositoryName
-          repositoryName,
-      SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath>
-          workflowPath}) get copyWith => _copyWith;
+  ActionsPolicyEnterpriseConditionsVariant4 Function({EnterpriseRulesetConditionsOrganizationPropertyTargetOrganizationProperty organizationProperty, RepositoryRulesetConditionsRepositoryNameTargetRepositoryName repositoryName, SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath> workflowPath}) get copyWith => _copyWith;
 
-  ActionsPolicyEnterpriseConditionsVariant4 _copyWith(
-          {Object? organizationProperty = sdkOmittedValue,
-          Object? repositoryName = sdkOmittedValue,
-          Object? workflowPath = sdkOmittedValue}) =>
-      ActionsPolicyEnterpriseConditionsVariant4(
-        organizationProperty: identical(organizationProperty, sdkOmittedValue)
-            ? this.organizationProperty
-            : organizationProperty
-                as EnterpriseRulesetConditionsOrganizationPropertyTargetOrganizationProperty,
-        repositoryName: identical(repositoryName, sdkOmittedValue)
-            ? this.repositoryName
-            : repositoryName
-                as RepositoryRulesetConditionsRepositoryNameTargetRepositoryName,
-        workflowPath: identical(workflowPath, sdkOmittedValue)
-            ? this.workflowPath
-            : workflowPath
-                as SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath>,
-      );
+  ActionsPolicyEnterpriseConditionsVariant4 _copyWith({Object? organizationProperty = sdkOmittedValue, Object? repositoryName = sdkOmittedValue, Object? workflowPath = sdkOmittedValue}) => ActionsPolicyEnterpriseConditionsVariant4(
+    organizationProperty: identical(organizationProperty, sdkOmittedValue) ? this.organizationProperty : organizationProperty as EnterpriseRulesetConditionsOrganizationPropertyTargetOrganizationProperty,
+    repositoryName: identical(repositoryName, sdkOmittedValue) ? this.repositoryName : repositoryName as RepositoryRulesetConditionsRepositoryNameTargetRepositoryName,
+    workflowPath: identical(workflowPath, sdkOmittedValue) ? this.workflowPath : workflowPath as SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath>,
+  );
 
-  factory ActionsPolicyEnterpriseConditionsVariant4.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsPolicyEnterpriseConditionsVariant4(
-        organizationProperty: (json['organization_property'] != null
-            ? EnterpriseRulesetConditionsOrganizationPropertyTargetOrganizationProperty
-                .fromJson(json['organization_property'] as Map<String, dynamic>)
-            : null)!,
-        repositoryName: (json['repository_name'] != null
-            ? RepositoryRulesetConditionsRepositoryNameTargetRepositoryName
-                .fromJson(json['repository_name'] as Map<String, dynamic>)
-            : null)!,
-        workflowPath: json['workflow_path'] != null
-            ? SdkPresent((json['workflow_path'] != null
-                ? ActionsPolicyWorkflowPathConditionWorkflowPath.fromJson(
-                    json['workflow_path'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory ActionsPolicyEnterpriseConditionsVariant4.fromJson(Map<String, dynamic> json) => ActionsPolicyEnterpriseConditionsVariant4(
+    organizationProperty: (json['organization_property'] != null ? EnterpriseRulesetConditionsOrganizationPropertyTargetOrganizationProperty.fromJson(json['organization_property'] as Map<String, dynamic>) : null)!,
+    repositoryName: (json['repository_name'] != null ? RepositoryRulesetConditionsRepositoryNameTargetRepositoryName.fromJson(json['repository_name'] as Map<String, dynamic>) : null)!,
+    workflowPath: json['workflow_path'] != null ? SdkPresent((json['workflow_path'] != null ? ActionsPolicyWorkflowPathConditionWorkflowPath.fromJson(json['workflow_path'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'organization_property': organizationProperty.toJson(),
-        'repository_name': repositoryName.toJson(),
-        ...switch (workflowPath) {
-          SdkPresent<ActionsPolicyWorkflowPathConditionWorkflowPath>(
-            value: final value
-          ) =>
-            {
-              'workflow_path': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'organization_property': organizationProperty.toJson(),
+    'repository_name': repositoryName.toJson(),
+    ...switch (workflowPath) {
+      SdkPresent<ActionsPolicyWorkflowPathConditionWorkflowPath>(value: final value) => {'workflow_path': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Conditions to target organizations by property and repositories by property
 class ActionsPolicyEnterpriseConditionsVariant5 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required object value serialized in the `organization_property` wire field.
-  final EnterpriseRulesetConditionsOrganizationPropertyTargetOrganizationProperty
-      organizationProperty;
-
+  final EnterpriseRulesetConditionsOrganizationPropertyTargetOrganizationProperty organizationProperty;
   /// Required object value serialized in the `repository_property` wire field.
-  final RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty
-      repositoryProperty;
-
+  final RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty repositoryProperty;
   /// Optional object value serialized in the `workflow_path` wire field.
-  final SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath>
-      workflowPath;
+  final SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath> workflowPath;
 
-  const ActionsPolicyEnterpriseConditionsVariant5(
-      {required this.organizationProperty,
-      required this.repositoryProperty,
-      this.workflowPath = const SdkOmitted()});
+  const ActionsPolicyEnterpriseConditionsVariant5({required this.organizationProperty, required this.repositoryProperty, this.workflowPath = const SdkOmitted()});
 
-  ActionsPolicyEnterpriseConditionsVariant5 Function(
-      {EnterpriseRulesetConditionsOrganizationPropertyTargetOrganizationProperty
-          organizationProperty,
-      RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty
-          repositoryProperty,
-      SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath>
-          workflowPath}) get copyWith => _copyWith;
+  ActionsPolicyEnterpriseConditionsVariant5 Function({EnterpriseRulesetConditionsOrganizationPropertyTargetOrganizationProperty organizationProperty, RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty repositoryProperty, SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath> workflowPath}) get copyWith => _copyWith;
 
-  ActionsPolicyEnterpriseConditionsVariant5 _copyWith(
-          {Object? organizationProperty = sdkOmittedValue,
-          Object? repositoryProperty = sdkOmittedValue,
-          Object? workflowPath = sdkOmittedValue}) =>
-      ActionsPolicyEnterpriseConditionsVariant5(
-        organizationProperty: identical(organizationProperty, sdkOmittedValue)
-            ? this.organizationProperty
-            : organizationProperty
-                as EnterpriseRulesetConditionsOrganizationPropertyTargetOrganizationProperty,
-        repositoryProperty: identical(repositoryProperty, sdkOmittedValue)
-            ? this.repositoryProperty
-            : repositoryProperty
-                as RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty,
-        workflowPath: identical(workflowPath, sdkOmittedValue)
-            ? this.workflowPath
-            : workflowPath
-                as SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath>,
-      );
+  ActionsPolicyEnterpriseConditionsVariant5 _copyWith({Object? organizationProperty = sdkOmittedValue, Object? repositoryProperty = sdkOmittedValue, Object? workflowPath = sdkOmittedValue}) => ActionsPolicyEnterpriseConditionsVariant5(
+    organizationProperty: identical(organizationProperty, sdkOmittedValue) ? this.organizationProperty : organizationProperty as EnterpriseRulesetConditionsOrganizationPropertyTargetOrganizationProperty,
+    repositoryProperty: identical(repositoryProperty, sdkOmittedValue) ? this.repositoryProperty : repositoryProperty as RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty,
+    workflowPath: identical(workflowPath, sdkOmittedValue) ? this.workflowPath : workflowPath as SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath>,
+  );
 
-  factory ActionsPolicyEnterpriseConditionsVariant5.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsPolicyEnterpriseConditionsVariant5(
-        organizationProperty: (json['organization_property'] != null
-            ? EnterpriseRulesetConditionsOrganizationPropertyTargetOrganizationProperty
-                .fromJson(json['organization_property'] as Map<String, dynamic>)
-            : null)!,
-        repositoryProperty: (json['repository_property'] != null
-            ? RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty
-                .fromJson(json['repository_property'] as Map<String, dynamic>)
-            : null)!,
-        workflowPath: json['workflow_path'] != null
-            ? SdkPresent((json['workflow_path'] != null
-                ? ActionsPolicyWorkflowPathConditionWorkflowPath.fromJson(
-                    json['workflow_path'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory ActionsPolicyEnterpriseConditionsVariant5.fromJson(Map<String, dynamic> json) => ActionsPolicyEnterpriseConditionsVariant5(
+    organizationProperty: (json['organization_property'] != null ? EnterpriseRulesetConditionsOrganizationPropertyTargetOrganizationProperty.fromJson(json['organization_property'] as Map<String, dynamic>) : null)!,
+    repositoryProperty: (json['repository_property'] != null ? RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty.fromJson(json['repository_property'] as Map<String, dynamic>) : null)!,
+    workflowPath: json['workflow_path'] != null ? SdkPresent((json['workflow_path'] != null ? ActionsPolicyWorkflowPathConditionWorkflowPath.fromJson(json['workflow_path'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'organization_property': organizationProperty.toJson(),
-        'repository_property': repositoryProperty.toJson(),
-        ...switch (workflowPath) {
-          SdkPresent<ActionsPolicyWorkflowPathConditionWorkflowPath>(
-            value: final value
-          ) =>
-            {
-              'workflow_path': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'organization_property': organizationProperty.toJson(),
+    'repository_property': repositoryProperty.toJson(),
+    ...switch (workflowPath) {
+      SdkPresent<ActionsPolicyWorkflowPathConditionWorkflowPath>(value: final value) => {'workflow_path': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 sealed class ActionsPolicyEnterpriseConditions {
@@ -342,263 +158,120 @@ sealed class ActionsPolicyEnterpriseConditions {
   const ActionsPolicyEnterpriseConditions();
   factory ActionsPolicyEnterpriseConditions.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = ActionsPolicyEnterpriseConditionsVariant0.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant0(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = ActionsPolicyEnterpriseConditionsVariant1.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant1(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = ActionsPolicyEnterpriseConditionsVariant2.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant2(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = ActionsPolicyEnterpriseConditionsVariant3.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant3(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = ActionsPolicyEnterpriseConditionsVariant4.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant4(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value = ActionsPolicyEnterpriseConditionsVariant5.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant5(
-              value);
-        }
-      } catch (_) {}
+      try { final value = ActionsPolicyEnterpriseConditionsVariant0.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant0(value); } } catch (_) {}
+      try { final value = ActionsPolicyEnterpriseConditionsVariant1.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant1(value); } } catch (_) {}
+      try { final value = ActionsPolicyEnterpriseConditionsVariant2.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant2(value); } } catch (_) {}
+      try { final value = ActionsPolicyEnterpriseConditionsVariant3.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant3(value); } } catch (_) {}
+      try { final value = ActionsPolicyEnterpriseConditionsVariant4.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant4(value); } } catch (_) {}
+      try { final value = ActionsPolicyEnterpriseConditionsVariant5.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant5(value); } } catch (_) {}
     }
-    try {
-      return ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant0(
-          ActionsPolicyEnterpriseConditionsVariant0.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant1(
-          ActionsPolicyEnterpriseConditionsVariant1.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant2(
-          ActionsPolicyEnterpriseConditionsVariant2.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant3(
-          ActionsPolicyEnterpriseConditionsVariant3.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant4(
-          ActionsPolicyEnterpriseConditionsVariant4.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant5(
-          ActionsPolicyEnterpriseConditionsVariant5.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    throw FormatException(
-        "No variant matched for ActionsPolicyEnterpriseConditions");
+    try { return ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant0(ActionsPolicyEnterpriseConditionsVariant0.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant1(ActionsPolicyEnterpriseConditionsVariant1.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant2(ActionsPolicyEnterpriseConditionsVariant2.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant3(ActionsPolicyEnterpriseConditionsVariant3.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant4(ActionsPolicyEnterpriseConditionsVariant4.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant5(ActionsPolicyEnterpriseConditionsVariant5.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    throw FormatException("No variant matched for ActionsPolicyEnterpriseConditions");
   }
   Object? toJson();
 }
 
-final class ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant0
-    extends ActionsPolicyEnterpriseConditions {
+final class ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant0 extends ActionsPolicyEnterpriseConditions {
   final ActionsPolicyEnterpriseConditionsVariant0 value;
-  const ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant0(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant0(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant1
-    extends ActionsPolicyEnterpriseConditions {
+final class ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant1 extends ActionsPolicyEnterpriseConditions {
   final ActionsPolicyEnterpriseConditionsVariant1 value;
-  const ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant1(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant1(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant2
-    extends ActionsPolicyEnterpriseConditions {
+final class ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant2 extends ActionsPolicyEnterpriseConditions {
   final ActionsPolicyEnterpriseConditionsVariant2 value;
-  const ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant2(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant2(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant3
-    extends ActionsPolicyEnterpriseConditions {
+final class ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant3 extends ActionsPolicyEnterpriseConditions {
   final ActionsPolicyEnterpriseConditionsVariant3 value;
-  const ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant3(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant3(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant4
-    extends ActionsPolicyEnterpriseConditions {
+final class ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant4 extends ActionsPolicyEnterpriseConditions {
   final ActionsPolicyEnterpriseConditionsVariant4 value;
-  const ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant4(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant4(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant5
-    extends ActionsPolicyEnterpriseConditions {
+final class ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant5 extends ActionsPolicyEnterpriseConditions {
   final ActionsPolicyEnterpriseConditionsVariant5 value;
-  const ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant5(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const ActionsPolicyEnterpriseConditionsActionsPolicyEnterpriseConditionsVariant5(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// Optional API value serialized in the `conditions` wire field.
 class ActionsPolicyOrgConditionsVariant0 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required object value serialized in the `repository_name` wire field.
-  final RepositoryRulesetConditionsRepositoryNameTargetRepositoryName
-      repositoryName;
-
+  final RepositoryRulesetConditionsRepositoryNameTargetRepositoryName repositoryName;
   /// Optional object value serialized in the `workflow_path` wire field.
-  final SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath>
-      workflowPath;
+  final SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath> workflowPath;
 
-  const ActionsPolicyOrgConditionsVariant0(
-      {required this.repositoryName, this.workflowPath = const SdkOmitted()});
+  const ActionsPolicyOrgConditionsVariant0({required this.repositoryName, this.workflowPath = const SdkOmitted()});
 
-  ActionsPolicyOrgConditionsVariant0 Function(
-      {RepositoryRulesetConditionsRepositoryNameTargetRepositoryName
-          repositoryName,
-      SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath>
-          workflowPath}) get copyWith => _copyWith;
+  ActionsPolicyOrgConditionsVariant0 Function({RepositoryRulesetConditionsRepositoryNameTargetRepositoryName repositoryName, SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath> workflowPath}) get copyWith => _copyWith;
 
-  ActionsPolicyOrgConditionsVariant0 _copyWith(
-          {Object? repositoryName = sdkOmittedValue,
-          Object? workflowPath = sdkOmittedValue}) =>
-      ActionsPolicyOrgConditionsVariant0(
-        repositoryName: identical(repositoryName, sdkOmittedValue)
-            ? this.repositoryName
-            : repositoryName
-                as RepositoryRulesetConditionsRepositoryNameTargetRepositoryName,
-        workflowPath: identical(workflowPath, sdkOmittedValue)
-            ? this.workflowPath
-            : workflowPath
-                as SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath>,
-      );
+  ActionsPolicyOrgConditionsVariant0 _copyWith({Object? repositoryName = sdkOmittedValue, Object? workflowPath = sdkOmittedValue}) => ActionsPolicyOrgConditionsVariant0(
+    repositoryName: identical(repositoryName, sdkOmittedValue) ? this.repositoryName : repositoryName as RepositoryRulesetConditionsRepositoryNameTargetRepositoryName,
+    workflowPath: identical(workflowPath, sdkOmittedValue) ? this.workflowPath : workflowPath as SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath>,
+  );
 
-  factory ActionsPolicyOrgConditionsVariant0.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsPolicyOrgConditionsVariant0(
-        repositoryName: (json['repository_name'] != null
-            ? RepositoryRulesetConditionsRepositoryNameTargetRepositoryName
-                .fromJson(json['repository_name'] as Map<String, dynamic>)
-            : null)!,
-        workflowPath: json['workflow_path'] != null
-            ? SdkPresent((json['workflow_path'] != null
-                ? ActionsPolicyWorkflowPathConditionWorkflowPath.fromJson(
-                    json['workflow_path'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory ActionsPolicyOrgConditionsVariant0.fromJson(Map<String, dynamic> json) => ActionsPolicyOrgConditionsVariant0(
+    repositoryName: (json['repository_name'] != null ? RepositoryRulesetConditionsRepositoryNameTargetRepositoryName.fromJson(json['repository_name'] as Map<String, dynamic>) : null)!,
+    workflowPath: json['workflow_path'] != null ? SdkPresent((json['workflow_path'] != null ? ActionsPolicyWorkflowPathConditionWorkflowPath.fromJson(json['workflow_path'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'repository_name': repositoryName.toJson(),
-        ...switch (workflowPath) {
-          SdkPresent<ActionsPolicyWorkflowPathConditionWorkflowPath>(
-            value: final value
-          ) =>
-            {
-              'workflow_path': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'repository_name': repositoryName.toJson(),
+    ...switch (workflowPath) {
+      SdkPresent<ActionsPolicyWorkflowPathConditionWorkflowPath>(value: final value) => {'workflow_path': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Optional API value serialized in the `conditions` wire field.
 class ActionsPolicyOrgConditionsVariant1 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required object value serialized in the `repository_id` wire field.
   final RepositoryRulesetConditionsRepositoryIdTargetRepositoryId repositoryId;
-
   /// Optional object value serialized in the `workflow_path` wire field.
-  final SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath>
-      workflowPath;
+  final SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath> workflowPath;
 
-  const ActionsPolicyOrgConditionsVariant1(
-      {required this.repositoryId, this.workflowPath = const SdkOmitted()});
+  const ActionsPolicyOrgConditionsVariant1({required this.repositoryId, this.workflowPath = const SdkOmitted()});
 
-  ActionsPolicyOrgConditionsVariant1 Function(
-      {RepositoryRulesetConditionsRepositoryIdTargetRepositoryId repositoryId,
-      SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath>
-          workflowPath}) get copyWith => _copyWith;
+  ActionsPolicyOrgConditionsVariant1 Function({RepositoryRulesetConditionsRepositoryIdTargetRepositoryId repositoryId, SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath> workflowPath}) get copyWith => _copyWith;
 
-  ActionsPolicyOrgConditionsVariant1 _copyWith(
-          {Object? repositoryId = sdkOmittedValue,
-          Object? workflowPath = sdkOmittedValue}) =>
-      ActionsPolicyOrgConditionsVariant1(
-        repositoryId: identical(repositoryId, sdkOmittedValue)
-            ? this.repositoryId
-            : repositoryId
-                as RepositoryRulesetConditionsRepositoryIdTargetRepositoryId,
-        workflowPath: identical(workflowPath, sdkOmittedValue)
-            ? this.workflowPath
-            : workflowPath
-                as SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath>,
-      );
+  ActionsPolicyOrgConditionsVariant1 _copyWith({Object? repositoryId = sdkOmittedValue, Object? workflowPath = sdkOmittedValue}) => ActionsPolicyOrgConditionsVariant1(
+    repositoryId: identical(repositoryId, sdkOmittedValue) ? this.repositoryId : repositoryId as RepositoryRulesetConditionsRepositoryIdTargetRepositoryId,
+    workflowPath: identical(workflowPath, sdkOmittedValue) ? this.workflowPath : workflowPath as SdkOptional<ActionsPolicyWorkflowPathConditionWorkflowPath>,
+  );
 
-  factory ActionsPolicyOrgConditionsVariant1.fromJson(
-          Map<String, dynamic> json) =>
-      ActionsPolicyOrgConditionsVariant1(
-        repositoryId: (json['repository_id'] != null
-            ? RepositoryRulesetConditionsRepositoryIdTargetRepositoryId
-                .fromJson(json['repository_id'] as Map<String, dynamic>)
-            : null)!,
-        workflowPath: json['workflow_path'] != null
-            ? SdkPresent((json['workflow_path'] != null
-                ? ActionsPolicyWorkflowPathConditionWorkflowPath.fromJson(
-                    json['workflow_path'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory ActionsPolicyOrgConditionsVariant1.fromJson(Map<String, dynamic> json) => ActionsPolicyOrgConditionsVariant1(
+    repositoryId: (json['repository_id'] != null ? RepositoryRulesetConditionsRepositoryIdTargetRepositoryId.fromJson(json['repository_id'] as Map<String, dynamic>) : null)!,
+    workflowPath: json['workflow_path'] != null ? SdkPresent((json['workflow_path'] != null ? ActionsPolicyWorkflowPathConditionWorkflowPath.fromJson(json['workflow_path'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'repository_id': repositoryId.toJson(),
-        ...switch (workflowPath) {
-          SdkPresent<ActionsPolicyWorkflowPathConditionWorkflowPath>(
-            value: final value
-          ) =>
-            {
-              'workflow_path': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'repository_id': repositoryId.toJson(),
+    ...switch (workflowPath) {
+      SdkPresent<ActionsPolicyWorkflowPathConditionWorkflowPath>(value: final value) => {'workflow_path': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

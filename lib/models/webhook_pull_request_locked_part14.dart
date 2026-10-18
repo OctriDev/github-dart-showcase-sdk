@@ -8,86 +8,42 @@ part of 'webhook_pull_request_locked.dart';
 class WebhookPullRequestLockedPullRequestHead {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `label` wire field.
   final String? label;
-
   /// Required `string` value serialized in the `ref` wire field.
   final String ref;
-
   /// A git repository
   final WebhookPullRequestLockedPullRequestHeadRepo? repo;
-
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
-
   /// Required object value serialized in the `user` wire field.
   final WebhookPullRequestLockedPullRequestHeadUser? user;
 
-  const WebhookPullRequestLockedPullRequestHead(
-      {required this.label,
-      required this.ref,
-      required this.repo,
-      required this.sha,
-      required this.user});
+  const WebhookPullRequestLockedPullRequestHead({required this.label, required this.ref, required this.repo, required this.sha, required this.user});
 
-  WebhookPullRequestLockedPullRequestHead Function(
-          {String? label,
-          String ref,
-          WebhookPullRequestLockedPullRequestHeadRepo? repo,
-          String sha,
-          WebhookPullRequestLockedPullRequestHeadUser? user})
-      get copyWith => _copyWith;
+  WebhookPullRequestLockedPullRequestHead Function({String? label, String ref, WebhookPullRequestLockedPullRequestHeadRepo? repo, String sha, WebhookPullRequestLockedPullRequestHeadUser? user}) get copyWith => _copyWith;
 
-  WebhookPullRequestLockedPullRequestHead _copyWith(
-          {Object? label = sdkOmittedValue,
-          Object? ref = sdkOmittedValue,
-          Object? repo = sdkOmittedValue,
-          Object? sha = sdkOmittedValue,
-          Object? user = sdkOmittedValue}) =>
-      WebhookPullRequestLockedPullRequestHead(
-        label:
-            identical(label, sdkOmittedValue) ? this.label : label as String?,
-        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-        repo: identical(repo, sdkOmittedValue)
-            ? this.repo
-            : repo as WebhookPullRequestLockedPullRequestHeadRepo?,
-        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-        user: identical(user, sdkOmittedValue)
-            ? this.user
-            : user as WebhookPullRequestLockedPullRequestHeadUser?,
-      );
+  WebhookPullRequestLockedPullRequestHead _copyWith({Object? label = sdkOmittedValue, Object? ref = sdkOmittedValue, Object? repo = sdkOmittedValue, Object? sha = sdkOmittedValue, Object? user = sdkOmittedValue}) => WebhookPullRequestLockedPullRequestHead(
+    label: identical(label, sdkOmittedValue) ? this.label : label as String?,
+    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+    repo: identical(repo, sdkOmittedValue) ? this.repo : repo as WebhookPullRequestLockedPullRequestHeadRepo?,
+    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+    user: identical(user, sdkOmittedValue) ? this.user : user as WebhookPullRequestLockedPullRequestHeadUser?,
+  );
 
-  factory WebhookPullRequestLockedPullRequestHead.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestLockedPullRequestHead(
-        label: json.containsKey('label')
-            ? json['label'] as String?
-            : throw ArgumentError.value(
-                null, 'label', 'Required property is missing'),
-        ref: (json['ref'] as String?)!,
-        repo: json.containsKey('repo')
-            ? json['repo'] != null
-                ? WebhookPullRequestLockedPullRequestHeadRepo.fromJson(
-                    json['repo'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'repo', 'Required property is missing'),
-        sha: (json['sha'] as String?)!,
-        user: json.containsKey('user')
-            ? json['user'] != null
-                ? WebhookPullRequestLockedPullRequestHeadUser.fromJson(
-                    json['user'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'user', 'Required property is missing'),
-      );
+  factory WebhookPullRequestLockedPullRequestHead.fromJson(Map<String, dynamic> json) => WebhookPullRequestLockedPullRequestHead(
+    label: json.containsKey('label') ? json['label'] as String? : throw ArgumentError.value(null, 'label', 'Required property is missing'),
+    ref: (json['ref'] as String?)!,
+    repo: json.containsKey('repo') ? json['repo'] != null ? WebhookPullRequestLockedPullRequestHeadRepo.fromJson(json['repo'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'repo', 'Required property is missing'),
+    sha: (json['sha'] as String?)!,
+    user: json.containsKey('user') ? json['user'] != null ? WebhookPullRequestLockedPullRequestHeadUser.fromJson(json['user'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'user', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'label': label,
-        'ref': ref,
-        'repo': repo?.toJson(),
-        'sha': sha,
-        'user': user?.toJson(),
-      };
+    'label': label,
+    'ref': ref,
+    'repo': repo?.toJson(),
+    'sha': sha,
+    'user': user?.toJson(),
+  };
 }

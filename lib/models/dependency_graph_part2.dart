@@ -8,504 +8,261 @@ part of 'dependency_graph.dart';
 class DependencyGraphSpdxSbomSbomPackagesItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// A unique SPDX identifier for the package.
   final SdkOptional<String> spdxid;
-
   /// The name of the package.
   final SdkOptional<String> name;
-
   /// The version of the package. If the package does not have an exact version specified, a version range is given.
   final SdkOptional<String> versionInfo;
-
   /// The location where the package can be downloaded, or NOASSERTION if this has not been determined.
   final SdkOptional<String> downloadLocation;
-
   /// Whether the package's file content has been subjected to analysis during the creation of the SPDX document.
   final SdkOptional<bool> filesAnalyzed;
-
   /// The license of the package as determined while creating the SPDX document.
   final SdkOptional<String> licenseConcluded;
-
   /// The license of the package as declared by its author, or NOASSERTION if this information was not available when the SPDX document was created.
   final SdkOptional<String> licenseDeclared;
-
   /// The distribution source of this package, or NOASSERTION if this was not determined.
   final SdkOptional<String> supplier;
-
   /// The copyright holders of the package, and any dates present with those notices, if available.
   final SdkOptional<String> copyrightText;
-
   /// Optional array value serialized in the `externalRefs` wire field.
-  final SdkOptional<
-          List<DependencyGraphSpdxSbomSbomPackagesItemExternalRefsItem>>
-      externalRefs;
+  final SdkOptional<List<DependencyGraphSpdxSbomSbomPackagesItemExternalRefsItem>> externalRefs;
 
-  const DependencyGraphSpdxSbomSbomPackagesItem(
-      {this.spdxid = const SdkOmitted(),
-      this.name = const SdkOmitted(),
-      this.versionInfo = const SdkOmitted(),
-      this.downloadLocation = const SdkOmitted(),
-      this.filesAnalyzed = const SdkOmitted(),
-      this.licenseConcluded = const SdkOmitted(),
-      this.licenseDeclared = const SdkOmitted(),
-      this.supplier = const SdkOmitted(),
-      this.copyrightText = const SdkOmitted(),
-      this.externalRefs = const SdkOmitted()});
+  const DependencyGraphSpdxSbomSbomPackagesItem({this.spdxid = const SdkOmitted(), this.name = const SdkOmitted(), this.versionInfo = const SdkOmitted(), this.downloadLocation = const SdkOmitted(), this.filesAnalyzed = const SdkOmitted(), this.licenseConcluded = const SdkOmitted(), this.licenseDeclared = const SdkOmitted(), this.supplier = const SdkOmitted(), this.copyrightText = const SdkOmitted(), this.externalRefs = const SdkOmitted()});
 
-  DependencyGraphSpdxSbomSbomPackagesItem Function(
-      {SdkOptional<String> spdxid,
-      SdkOptional<String> name,
-      SdkOptional<String> versionInfo,
-      SdkOptional<String> downloadLocation,
-      SdkOptional<bool> filesAnalyzed,
-      SdkOptional<String> licenseConcluded,
-      SdkOptional<String> licenseDeclared,
-      SdkOptional<String> supplier,
-      SdkOptional<String> copyrightText,
-      SdkOptional<List<DependencyGraphSpdxSbomSbomPackagesItemExternalRefsItem>>
-          externalRefs}) get copyWith => _copyWith;
+  DependencyGraphSpdxSbomSbomPackagesItem Function({SdkOptional<String> spdxid, SdkOptional<String> name, SdkOptional<String> versionInfo, SdkOptional<String> downloadLocation, SdkOptional<bool> filesAnalyzed, SdkOptional<String> licenseConcluded, SdkOptional<String> licenseDeclared, SdkOptional<String> supplier, SdkOptional<String> copyrightText, SdkOptional<List<DependencyGraphSpdxSbomSbomPackagesItemExternalRefsItem>> externalRefs}) get copyWith => _copyWith;
 
-  DependencyGraphSpdxSbomSbomPackagesItem _copyWith(
-          {Object? spdxid = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? versionInfo = sdkOmittedValue,
-          Object? downloadLocation = sdkOmittedValue,
-          Object? filesAnalyzed = sdkOmittedValue,
-          Object? licenseConcluded = sdkOmittedValue,
-          Object? licenseDeclared = sdkOmittedValue,
-          Object? supplier = sdkOmittedValue,
-          Object? copyrightText = sdkOmittedValue,
-          Object? externalRefs = sdkOmittedValue}) =>
-      DependencyGraphSpdxSbomSbomPackagesItem(
-        spdxid: identical(spdxid, sdkOmittedValue)
-            ? this.spdxid
-            : spdxid as SdkOptional<String>,
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String>,
-        versionInfo: identical(versionInfo, sdkOmittedValue)
-            ? this.versionInfo
-            : versionInfo as SdkOptional<String>,
-        downloadLocation: identical(downloadLocation, sdkOmittedValue)
-            ? this.downloadLocation
-            : downloadLocation as SdkOptional<String>,
-        filesAnalyzed: identical(filesAnalyzed, sdkOmittedValue)
-            ? this.filesAnalyzed
-            : filesAnalyzed as SdkOptional<bool>,
-        licenseConcluded: identical(licenseConcluded, sdkOmittedValue)
-            ? this.licenseConcluded
-            : licenseConcluded as SdkOptional<String>,
-        licenseDeclared: identical(licenseDeclared, sdkOmittedValue)
-            ? this.licenseDeclared
-            : licenseDeclared as SdkOptional<String>,
-        supplier: identical(supplier, sdkOmittedValue)
-            ? this.supplier
-            : supplier as SdkOptional<String>,
-        copyrightText: identical(copyrightText, sdkOmittedValue)
-            ? this.copyrightText
-            : copyrightText as SdkOptional<String>,
-        externalRefs: identical(externalRefs, sdkOmittedValue)
-            ? this.externalRefs
-            : externalRefs as SdkOptional<
-                List<DependencyGraphSpdxSbomSbomPackagesItemExternalRefsItem>>,
-      );
+  DependencyGraphSpdxSbomSbomPackagesItem _copyWith({Object? spdxid = sdkOmittedValue, Object? name = sdkOmittedValue, Object? versionInfo = sdkOmittedValue, Object? downloadLocation = sdkOmittedValue, Object? filesAnalyzed = sdkOmittedValue, Object? licenseConcluded = sdkOmittedValue, Object? licenseDeclared = sdkOmittedValue, Object? supplier = sdkOmittedValue, Object? copyrightText = sdkOmittedValue, Object? externalRefs = sdkOmittedValue}) => DependencyGraphSpdxSbomSbomPackagesItem(
+    spdxid: identical(spdxid, sdkOmittedValue) ? this.spdxid : spdxid as SdkOptional<String>,
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
+    versionInfo: identical(versionInfo, sdkOmittedValue) ? this.versionInfo : versionInfo as SdkOptional<String>,
+    downloadLocation: identical(downloadLocation, sdkOmittedValue) ? this.downloadLocation : downloadLocation as SdkOptional<String>,
+    filesAnalyzed: identical(filesAnalyzed, sdkOmittedValue) ? this.filesAnalyzed : filesAnalyzed as SdkOptional<bool>,
+    licenseConcluded: identical(licenseConcluded, sdkOmittedValue) ? this.licenseConcluded : licenseConcluded as SdkOptional<String>,
+    licenseDeclared: identical(licenseDeclared, sdkOmittedValue) ? this.licenseDeclared : licenseDeclared as SdkOptional<String>,
+    supplier: identical(supplier, sdkOmittedValue) ? this.supplier : supplier as SdkOptional<String>,
+    copyrightText: identical(copyrightText, sdkOmittedValue) ? this.copyrightText : copyrightText as SdkOptional<String>,
+    externalRefs: identical(externalRefs, sdkOmittedValue) ? this.externalRefs : externalRefs as SdkOptional<List<DependencyGraphSpdxSbomSbomPackagesItemExternalRefsItem>>,
+  );
 
-  factory DependencyGraphSpdxSbomSbomPackagesItem.fromJson(
-          Map<String, dynamic> json) =>
-      DependencyGraphSpdxSbomSbomPackagesItem(
-        spdxid: json['SPDXID'] != null
-            ? SdkPresent((json['SPDXID'] as String?)!)
-            : const SdkOmitted(),
-        name: json['name'] != null
-            ? SdkPresent((json['name'] as String?)!)
-            : const SdkOmitted(),
-        versionInfo: json['versionInfo'] != null
-            ? SdkPresent((json['versionInfo'] as String?)!)
-            : const SdkOmitted(),
-        downloadLocation: json['downloadLocation'] != null
-            ? SdkPresent((json['downloadLocation'] as String?)!)
-            : const SdkOmitted(),
-        filesAnalyzed: json['filesAnalyzed'] != null
-            ? SdkPresent((json['filesAnalyzed'] as bool?)!)
-            : const SdkOmitted(),
-        licenseConcluded: json['licenseConcluded'] != null
-            ? SdkPresent((json['licenseConcluded'] as String?)!)
-            : const SdkOmitted(),
-        licenseDeclared: json['licenseDeclared'] != null
-            ? SdkPresent((json['licenseDeclared'] as String?)!)
-            : const SdkOmitted(),
-        supplier: json['supplier'] != null
-            ? SdkPresent((json['supplier'] as String?)!)
-            : const SdkOmitted(),
-        copyrightText: json['copyrightText'] != null
-            ? SdkPresent((json['copyrightText'] as String?)!)
-            : const SdkOmitted(),
-        externalRefs: json['externalRefs'] != null
-            ? SdkPresent(((json['externalRefs'] as List?)
-                ?.map((e) =>
-                    DependencyGraphSpdxSbomSbomPackagesItemExternalRefsItem
-                        .fromJson(e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory DependencyGraphSpdxSbomSbomPackagesItem.fromJson(Map<String, dynamic> json) => DependencyGraphSpdxSbomSbomPackagesItem(
+    spdxid: json['SPDXID'] != null ? SdkPresent((json['SPDXID'] as String?)!) : const SdkOmitted(),
+    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
+    versionInfo: json['versionInfo'] != null ? SdkPresent((json['versionInfo'] as String?)!) : const SdkOmitted(),
+    downloadLocation: json['downloadLocation'] != null ? SdkPresent((json['downloadLocation'] as String?)!) : const SdkOmitted(),
+    filesAnalyzed: json['filesAnalyzed'] != null ? SdkPresent((json['filesAnalyzed'] as bool?)!) : const SdkOmitted(),
+    licenseConcluded: json['licenseConcluded'] != null ? SdkPresent((json['licenseConcluded'] as String?)!) : const SdkOmitted(),
+    licenseDeclared: json['licenseDeclared'] != null ? SdkPresent((json['licenseDeclared'] as String?)!) : const SdkOmitted(),
+    supplier: json['supplier'] != null ? SdkPresent((json['supplier'] as String?)!) : const SdkOmitted(),
+    copyrightText: json['copyrightText'] != null ? SdkPresent((json['copyrightText'] as String?)!) : const SdkOmitted(),
+    externalRefs: json['externalRefs'] != null ? SdkPresent(((json['externalRefs'] as List?)?.map((e) => DependencyGraphSpdxSbomSbomPackagesItemExternalRefsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (spdxid) {
-          SdkPresent<String>(value: final value) => {
-              'SPDXID': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (name) {
-          SdkPresent<String>(value: final value) => {
-              'name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (versionInfo) {
-          SdkPresent<String>(value: final value) => {
-              'versionInfo': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (downloadLocation) {
-          SdkPresent<String>(value: final value) => {
-              'downloadLocation': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (filesAnalyzed) {
-          SdkPresent<bool>(value: final value) => {
-              'filesAnalyzed': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (licenseConcluded) {
-          SdkPresent<String>(value: final value) => {
-              'licenseConcluded': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (licenseDeclared) {
-          SdkPresent<String>(value: final value) => {
-              'licenseDeclared': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (supplier) {
-          SdkPresent<String>(value: final value) => {
-              'supplier': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (copyrightText) {
-          SdkPresent<String>(value: final value) => {
-              'copyrightText': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (externalRefs) {
-          SdkPresent<
-                List<DependencyGraphSpdxSbomSbomPackagesItemExternalRefsItem>>(
-            value: final value
-          ) =>
-            {
-              'externalRefs': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (spdxid) {
+      SdkPresent<String>(value: final value) => {'SPDXID': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (name) {
+      SdkPresent<String>(value: final value) => {'name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (versionInfo) {
+      SdkPresent<String>(value: final value) => {'versionInfo': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (downloadLocation) {
+      SdkPresent<String>(value: final value) => {'downloadLocation': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (filesAnalyzed) {
+      SdkPresent<bool>(value: final value) => {'filesAnalyzed': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (licenseConcluded) {
+      SdkPresent<String>(value: final value) => {'licenseConcluded': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (licenseDeclared) {
+      SdkPresent<String>(value: final value) => {'licenseDeclared': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (supplier) {
+      SdkPresent<String>(value: final value) => {'supplier': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (copyrightText) {
+      SdkPresent<String>(value: final value) => {'copyrightText': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (externalRefs) {
+      SdkPresent<List<DependencyGraphSpdxSbomSbomPackagesItemExternalRefsItem>>(value: final value) => {'externalRefs': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Required object value serialized in the `relationships[]` wire field.
 class DependencyGraphSpdxSbomSbomRelationshipsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The type of relationship between the two SPDX elements.
   final SdkOptional<String> relationshipType;
-
   /// The SPDX identifier of the package that is the source of the relationship.
   final SdkOptional<String> spdxElementId;
-
   /// The SPDX identifier of the package that is the target of the relationship.
   final SdkOptional<String> relatedSpdxElement;
 
-  const DependencyGraphSpdxSbomSbomRelationshipsItem(
-      {this.relationshipType = const SdkOmitted(),
-      this.spdxElementId = const SdkOmitted(),
-      this.relatedSpdxElement = const SdkOmitted()});
+  const DependencyGraphSpdxSbomSbomRelationshipsItem({this.relationshipType = const SdkOmitted(), this.spdxElementId = const SdkOmitted(), this.relatedSpdxElement = const SdkOmitted()});
 
-  DependencyGraphSpdxSbomSbomRelationshipsItem Function(
-      {SdkOptional<String> relationshipType,
-      SdkOptional<String> spdxElementId,
-      SdkOptional<String> relatedSpdxElement}) get copyWith => _copyWith;
+  DependencyGraphSpdxSbomSbomRelationshipsItem Function({SdkOptional<String> relationshipType, SdkOptional<String> spdxElementId, SdkOptional<String> relatedSpdxElement}) get copyWith => _copyWith;
 
-  DependencyGraphSpdxSbomSbomRelationshipsItem _copyWith(
-          {Object? relationshipType = sdkOmittedValue,
-          Object? spdxElementId = sdkOmittedValue,
-          Object? relatedSpdxElement = sdkOmittedValue}) =>
-      DependencyGraphSpdxSbomSbomRelationshipsItem(
-        relationshipType: identical(relationshipType, sdkOmittedValue)
-            ? this.relationshipType
-            : relationshipType as SdkOptional<String>,
-        spdxElementId: identical(spdxElementId, sdkOmittedValue)
-            ? this.spdxElementId
-            : spdxElementId as SdkOptional<String>,
-        relatedSpdxElement: identical(relatedSpdxElement, sdkOmittedValue)
-            ? this.relatedSpdxElement
-            : relatedSpdxElement as SdkOptional<String>,
-      );
+  DependencyGraphSpdxSbomSbomRelationshipsItem _copyWith({Object? relationshipType = sdkOmittedValue, Object? spdxElementId = sdkOmittedValue, Object? relatedSpdxElement = sdkOmittedValue}) => DependencyGraphSpdxSbomSbomRelationshipsItem(
+    relationshipType: identical(relationshipType, sdkOmittedValue) ? this.relationshipType : relationshipType as SdkOptional<String>,
+    spdxElementId: identical(spdxElementId, sdkOmittedValue) ? this.spdxElementId : spdxElementId as SdkOptional<String>,
+    relatedSpdxElement: identical(relatedSpdxElement, sdkOmittedValue) ? this.relatedSpdxElement : relatedSpdxElement as SdkOptional<String>,
+  );
 
-  factory DependencyGraphSpdxSbomSbomRelationshipsItem.fromJson(
-          Map<String, dynamic> json) =>
-      DependencyGraphSpdxSbomSbomRelationshipsItem(
-        relationshipType: json['relationshipType'] != null
-            ? SdkPresent((json['relationshipType'] as String?)!)
-            : const SdkOmitted(),
-        spdxElementId: json['spdxElementId'] != null
-            ? SdkPresent((json['spdxElementId'] as String?)!)
-            : const SdkOmitted(),
-        relatedSpdxElement: json['relatedSpdxElement'] != null
-            ? SdkPresent((json['relatedSpdxElement'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory DependencyGraphSpdxSbomSbomRelationshipsItem.fromJson(Map<String, dynamic> json) => DependencyGraphSpdxSbomSbomRelationshipsItem(
+    relationshipType: json['relationshipType'] != null ? SdkPresent((json['relationshipType'] as String?)!) : const SdkOmitted(),
+    spdxElementId: json['spdxElementId'] != null ? SdkPresent((json['spdxElementId'] as String?)!) : const SdkOmitted(),
+    relatedSpdxElement: json['relatedSpdxElement'] != null ? SdkPresent((json['relatedSpdxElement'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (relationshipType) {
-          SdkPresent<String>(value: final value) => {
-              'relationshipType': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (spdxElementId) {
-          SdkPresent<String>(value: final value) => {
-              'spdxElementId': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (relatedSpdxElement) {
-          SdkPresent<String>(value: final value) => {
-              'relatedSpdxElement': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (relationshipType) {
+      SdkPresent<String>(value: final value) => {'relationshipType': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (spdxElementId) {
+      SdkPresent<String>(value: final value) => {'spdxElementId': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (relatedSpdxElement) {
+      SdkPresent<String>(value: final value) => {'relatedSpdxElement': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Required object value serialized in the `sbom` wire field.
 class DependencyGraphSpdxSbomSbom {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The SPDX identifier for the SPDX document.
   final String spdxid;
-
   /// The version of the SPDX specification that this document conforms to.
   final String spdxVersion;
-
   /// An optional comment about the SPDX document.
   final SdkOptional<String> comment;
-
   /// Required object value serialized in the `creationInfo` wire field.
   final DependencyGraphSpdxSbomSbomCreationInfo creationInfo;
-
   /// The name of the SPDX document.
   final String name;
-
   /// The license under which the SPDX document is licensed.
   final String dataLicense;
-
   /// The namespace for the SPDX document.
   final String documentNamespace;
-
   /// Required array value serialized in the `packages` wire field.
   final List<DependencyGraphSpdxSbomSbomPackagesItem> packages;
-
   /// Optional array value serialized in the `relationships` wire field.
-  final SdkOptional<List<DependencyGraphSpdxSbomSbomRelationshipsItem>>
-      relationships;
+  final SdkOptional<List<DependencyGraphSpdxSbomSbomRelationshipsItem>> relationships;
 
-  const DependencyGraphSpdxSbomSbom(
-      {required this.spdxid,
-      required this.spdxVersion,
-      this.comment = const SdkOmitted(),
-      required this.creationInfo,
-      required this.name,
-      required this.dataLicense,
-      required this.documentNamespace,
-      required this.packages,
-      this.relationships = const SdkOmitted()});
+  const DependencyGraphSpdxSbomSbom({required this.spdxid, required this.spdxVersion, this.comment = const SdkOmitted(), required this.creationInfo, required this.name, required this.dataLicense, required this.documentNamespace, required this.packages, this.relationships = const SdkOmitted()});
 
-  DependencyGraphSpdxSbomSbom Function(
-      {String spdxid,
-      String spdxVersion,
-      SdkOptional<String> comment,
-      DependencyGraphSpdxSbomSbomCreationInfo creationInfo,
-      String name,
-      String dataLicense,
-      String documentNamespace,
-      List<DependencyGraphSpdxSbomSbomPackagesItem> packages,
-      SdkOptional<List<DependencyGraphSpdxSbomSbomRelationshipsItem>>
-          relationships}) get copyWith => _copyWith;
+  DependencyGraphSpdxSbomSbom Function({String spdxid, String spdxVersion, SdkOptional<String> comment, DependencyGraphSpdxSbomSbomCreationInfo creationInfo, String name, String dataLicense, String documentNamespace, List<DependencyGraphSpdxSbomSbomPackagesItem> packages, SdkOptional<List<DependencyGraphSpdxSbomSbomRelationshipsItem>> relationships}) get copyWith => _copyWith;
 
-  DependencyGraphSpdxSbomSbom _copyWith(
-          {Object? spdxid = sdkOmittedValue,
-          Object? spdxVersion = sdkOmittedValue,
-          Object? comment = sdkOmittedValue,
-          Object? creationInfo = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? dataLicense = sdkOmittedValue,
-          Object? documentNamespace = sdkOmittedValue,
-          Object? packages = sdkOmittedValue,
-          Object? relationships = sdkOmittedValue}) =>
-      DependencyGraphSpdxSbomSbom(
-        spdxid:
-            identical(spdxid, sdkOmittedValue) ? this.spdxid : spdxid as String,
-        spdxVersion: identical(spdxVersion, sdkOmittedValue)
-            ? this.spdxVersion
-            : spdxVersion as String,
-        comment: identical(comment, sdkOmittedValue)
-            ? this.comment
-            : comment as SdkOptional<String>,
-        creationInfo: identical(creationInfo, sdkOmittedValue)
-            ? this.creationInfo
-            : creationInfo as DependencyGraphSpdxSbomSbomCreationInfo,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        dataLicense: identical(dataLicense, sdkOmittedValue)
-            ? this.dataLicense
-            : dataLicense as String,
-        documentNamespace: identical(documentNamespace, sdkOmittedValue)
-            ? this.documentNamespace
-            : documentNamespace as String,
-        packages: identical(packages, sdkOmittedValue)
-            ? this.packages
-            : packages as List<DependencyGraphSpdxSbomSbomPackagesItem>,
-        relationships: identical(relationships, sdkOmittedValue)
-            ? this.relationships
-            : relationships as SdkOptional<
-                List<DependencyGraphSpdxSbomSbomRelationshipsItem>>,
-      );
+  DependencyGraphSpdxSbomSbom _copyWith({Object? spdxid = sdkOmittedValue, Object? spdxVersion = sdkOmittedValue, Object? comment = sdkOmittedValue, Object? creationInfo = sdkOmittedValue, Object? name = sdkOmittedValue, Object? dataLicense = sdkOmittedValue, Object? documentNamespace = sdkOmittedValue, Object? packages = sdkOmittedValue, Object? relationships = sdkOmittedValue}) => DependencyGraphSpdxSbomSbom(
+    spdxid: identical(spdxid, sdkOmittedValue) ? this.spdxid : spdxid as String,
+    spdxVersion: identical(spdxVersion, sdkOmittedValue) ? this.spdxVersion : spdxVersion as String,
+    comment: identical(comment, sdkOmittedValue) ? this.comment : comment as SdkOptional<String>,
+    creationInfo: identical(creationInfo, sdkOmittedValue) ? this.creationInfo : creationInfo as DependencyGraphSpdxSbomSbomCreationInfo,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    dataLicense: identical(dataLicense, sdkOmittedValue) ? this.dataLicense : dataLicense as String,
+    documentNamespace: identical(documentNamespace, sdkOmittedValue) ? this.documentNamespace : documentNamespace as String,
+    packages: identical(packages, sdkOmittedValue) ? this.packages : packages as List<DependencyGraphSpdxSbomSbomPackagesItem>,
+    relationships: identical(relationships, sdkOmittedValue) ? this.relationships : relationships as SdkOptional<List<DependencyGraphSpdxSbomSbomRelationshipsItem>>,
+  );
 
-  factory DependencyGraphSpdxSbomSbom.fromJson(Map<String, dynamic> json) =>
-      DependencyGraphSpdxSbomSbom(
-        spdxid: (json['SPDXID'] as String?)!,
-        spdxVersion: (json['spdxVersion'] as String?)!,
-        comment: json['comment'] != null
-            ? SdkPresent((json['comment'] as String?)!)
-            : const SdkOmitted(),
-        creationInfo: (json['creationInfo'] != null
-            ? DependencyGraphSpdxSbomSbomCreationInfo.fromJson(
-                json['creationInfo'] as Map<String, dynamic>)
-            : null)!,
-        name: (json['name'] as String?)!,
-        dataLicense: (json['dataLicense'] as String?)!,
-        documentNamespace: (json['documentNamespace'] as String?)!,
-        packages: ((json['packages'] as List?)
-            ?.map((e) => DependencyGraphSpdxSbomSbomPackagesItem.fromJson(
-                e as Map<String, dynamic>))
-            .toList())!,
-        relationships: json['relationships'] != null
-            ? SdkPresent(((json['relationships'] as List?)
-                ?.map((e) =>
-                    DependencyGraphSpdxSbomSbomRelationshipsItem.fromJson(
-                        e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory DependencyGraphSpdxSbomSbom.fromJson(Map<String, dynamic> json) => DependencyGraphSpdxSbomSbom(
+    spdxid: (json['SPDXID'] as String?)!,
+    spdxVersion: (json['spdxVersion'] as String?)!,
+    comment: json['comment'] != null ? SdkPresent((json['comment'] as String?)!) : const SdkOmitted(),
+    creationInfo: (json['creationInfo'] != null ? DependencyGraphSpdxSbomSbomCreationInfo.fromJson(json['creationInfo'] as Map<String, dynamic>) : null)!,
+    name: (json['name'] as String?)!,
+    dataLicense: (json['dataLicense'] as String?)!,
+    documentNamespace: (json['documentNamespace'] as String?)!,
+    packages: ((json['packages'] as List?)?.map((e) => DependencyGraphSpdxSbomSbomPackagesItem.fromJson(e as Map<String, dynamic>)).toList())!,
+    relationships: json['relationships'] != null ? SdkPresent(((json['relationships'] as List?)?.map((e) => DependencyGraphSpdxSbomSbomRelationshipsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'SPDXID': spdxid,
-        'spdxVersion': spdxVersion,
-        ...switch (comment) {
-          SdkPresent<String>(value: final value) => {
-              'comment': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'creationInfo': creationInfo.toJson(),
-        'name': name,
-        'dataLicense': dataLicense,
-        'documentNamespace': documentNamespace,
-        'packages': packages.map((item) => item.toJson()).toList(),
-        ...switch (relationships) {
-          SdkPresent<List<DependencyGraphSpdxSbomSbomRelationshipsItem>>(
-            value: final value
-          ) =>
-            {
-              'relationships': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'SPDXID': spdxid,
+    'spdxVersion': spdxVersion,
+    ...switch (comment) {
+      SdkPresent<String>(value: final value) => {'comment': value,},
+      _ => const <String, dynamic>{},
+    },
+    'creationInfo': creationInfo.toJson(),
+    'name': name,
+    'dataLicense': dataLicense,
+    'documentNamespace': documentNamespace,
+    'packages': packages.map((item) => item.toJson()).toList(),
+    ...switch (relationships) {
+      SdkPresent<List<DependencyGraphSpdxSbomSbomRelationshipsItem>>(value: final value) => {'relationships': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// A schema for the SPDX JSON format returned by the Dependency Graph.
 class DependencyGraphSpdxSbom {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required object value serialized in the `sbom` wire field.
   final DependencyGraphSpdxSbomSbom sbom;
 
   const DependencyGraphSpdxSbom({required this.sbom});
 
-  DependencyGraphSpdxSbom Function({DependencyGraphSpdxSbomSbom sbom})
-      get copyWith => _copyWith;
+  DependencyGraphSpdxSbom Function({DependencyGraphSpdxSbomSbom sbom}) get copyWith => _copyWith;
 
-  DependencyGraphSpdxSbom _copyWith({Object? sbom = sdkOmittedValue}) =>
-      DependencyGraphSpdxSbom(
-        sbom: identical(sbom, sdkOmittedValue)
-            ? this.sbom
-            : sbom as DependencyGraphSpdxSbomSbom,
-      );
+  DependencyGraphSpdxSbom _copyWith({Object? sbom = sdkOmittedValue}) => DependencyGraphSpdxSbom(
+    sbom: identical(sbom, sdkOmittedValue) ? this.sbom : sbom as DependencyGraphSpdxSbomSbom,
+  );
 
-  factory DependencyGraphSpdxSbom.fromJson(Map<String, dynamic> json) =>
-      DependencyGraphSpdxSbom(
-        sbom: (json['sbom'] != null
-            ? DependencyGraphSpdxSbomSbom.fromJson(
-                json['sbom'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory DependencyGraphSpdxSbom.fromJson(Map<String, dynamic> json) => DependencyGraphSpdxSbom(
+    sbom: (json['sbom'] != null ? DependencyGraphSpdxSbomSbom.fromJson(json['sbom'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'sbom': sbom.toJson(),
-      };
+    'sbom': sbom.toJson(),
+  };
 }
 
 /// Optional object value serialized in the `file` wire field.
 class ManifestFile {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The path of the manifest file relative to the root of the Git repository.
   final SdkOptional<String> sourceLocation;
 
   const ManifestFile({this.sourceLocation = const SdkOmitted()});
 
-  ManifestFile Function({SdkOptional<String> sourceLocation}) get copyWith =>
-      _copyWith;
+  ManifestFile Function({SdkOptional<String> sourceLocation}) get copyWith => _copyWith;
 
-  ManifestFile _copyWith({Object? sourceLocation = sdkOmittedValue}) =>
-      ManifestFile(
-        sourceLocation: identical(sourceLocation, sdkOmittedValue)
-            ? this.sourceLocation
-            : sourceLocation as SdkOptional<String>,
-      );
+  ManifestFile _copyWith({Object? sourceLocation = sdkOmittedValue}) => ManifestFile(
+    sourceLocation: identical(sourceLocation, sdkOmittedValue) ? this.sourceLocation : sourceLocation as SdkOptional<String>,
+  );
 
   factory ManifestFile.fromJson(Map<String, dynamic> json) => ManifestFile(
-        sourceLocation: json['source_location'] != null
-            ? SdkPresent((json['source_location'] as String?)!)
-            : const SdkOmitted(),
-      );
+    sourceLocation: json['source_location'] != null ? SdkPresent((json['source_location'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (sourceLocation) {
-          SdkPresent<String>(value: final value) => {
-              'source_location': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (sourceLocation) {
+      SdkPresent<String>(value: final value) => {'source_location': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

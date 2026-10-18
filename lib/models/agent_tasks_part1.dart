@@ -8,447 +8,265 @@ part of 'agent_tasks.dart';
 class AgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant0 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// GitHub resource ID
   final int id;
-
   /// GraphQL global ID
   final SdkOptional<String> globalId;
 
-  const AgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant0(
-      {required this.id, this.globalId = const SdkOmitted()});
+  const AgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant0({required this.id, this.globalId = const SdkOmitted()});
 
-  AgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant0 Function(
-      {int id, SdkOptional<String> globalId}) get copyWith => _copyWith;
+  AgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant0 Function({int id, SdkOptional<String> globalId}) get copyWith => _copyWith;
 
-  AgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant0 _copyWith(
-          {Object? id = sdkOmittedValue, Object? globalId = sdkOmittedValue}) =>
-      AgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant0(
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        globalId: identical(globalId, sdkOmittedValue)
-            ? this.globalId
-            : globalId as SdkOptional<String>,
-      );
+  AgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant0 _copyWith({Object? id = sdkOmittedValue, Object? globalId = sdkOmittedValue}) => AgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant0(
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    globalId: identical(globalId, sdkOmittedValue) ? this.globalId : globalId as SdkOptional<String>,
+  );
 
-  factory AgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant0.fromJson(
-          Map<String, dynamic> json) =>
-      AgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant0(
-        id: ((json['id'] as num?)?.toInt())!,
-        globalId: json['global_id'] != null
-            ? SdkPresent((json['global_id'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory AgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant0.fromJson(Map<String, dynamic> json) => AgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant0(
+    id: ((json['id'] as num?)?.toInt())!,
+    globalId: json['global_id'] != null ? SdkPresent((json['global_id'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        ...switch (globalId) {
-          SdkPresent<String>(value: final value) => {
-              'global_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'id': id,
+    ...switch (globalId) {
+      SdkPresent<String>(value: final value) => {'global_id': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// A Git branch reference
 class AgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant1 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Head branch name
   final String headRef;
-
   /// Base branch name
   final String baseRef;
 
-  const AgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant1(
-      {required this.headRef, required this.baseRef});
+  const AgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant1({required this.headRef, required this.baseRef});
 
-  AgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant1 Function(
-      {String headRef, String baseRef}) get copyWith => _copyWith;
+  AgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant1 Function({String headRef, String baseRef}) get copyWith => _copyWith;
 
-  AgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant1 _copyWith(
-          {Object? headRef = sdkOmittedValue,
-          Object? baseRef = sdkOmittedValue}) =>
-      AgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant1(
-        headRef: identical(headRef, sdkOmittedValue)
-            ? this.headRef
-            : headRef as String,
-        baseRef: identical(baseRef, sdkOmittedValue)
-            ? this.baseRef
-            : baseRef as String,
-      );
+  AgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant1 _copyWith({Object? headRef = sdkOmittedValue, Object? baseRef = sdkOmittedValue}) => AgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant1(
+    headRef: identical(headRef, sdkOmittedValue) ? this.headRef : headRef as String,
+    baseRef: identical(baseRef, sdkOmittedValue) ? this.baseRef : baseRef as String,
+  );
 
-  factory AgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant1.fromJson(
-          Map<String, dynamic> json) =>
-      AgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant1(
-        headRef: (json['head_ref'] as String?)!,
-        baseRef: (json['base_ref'] as String?)!,
-      );
+  factory AgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant1.fromJson(Map<String, dynamic> json) => AgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant1(
+    headRef: (json['head_ref'] as String?)!,
+    baseRef: (json['base_ref'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'head_ref': headRef,
-        'base_ref': baseRef,
-      };
+    'head_ref': headRef,
+    'base_ref': baseRef,
+  };
 }
 
 sealed class AgentTasksCreateTaskInRepoResponseArtifactsItemData {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const AgentTasksCreateTaskInRepoResponseArtifactsItemData();
-  factory AgentTasksCreateTaskInRepoResponseArtifactsItemData.fromJson(
-      Object? json) {
+  factory AgentTasksCreateTaskInRepoResponseArtifactsItemData.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value =
-            AgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant0
-                .fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return AgentTasksCreateTaskInRepoResponseArtifactsItemDataAgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant0(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value =
-            AgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant1
-                .fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return AgentTasksCreateTaskInRepoResponseArtifactsItemDataAgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant1(
-              value);
-        }
-      } catch (_) {}
+      try { final value = AgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant0.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return AgentTasksCreateTaskInRepoResponseArtifactsItemDataAgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant0(value); } } catch (_) {}
+      try { final value = AgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant1.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return AgentTasksCreateTaskInRepoResponseArtifactsItemDataAgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant1(value); } } catch (_) {}
     }
-    try {
-      return AgentTasksCreateTaskInRepoResponseArtifactsItemDataAgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant0(
-          AgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant0.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return AgentTasksCreateTaskInRepoResponseArtifactsItemDataAgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant1(
-          AgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant1.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    throw FormatException(
-        "No variant matched for AgentTasksCreateTaskInRepoResponseArtifactsItemData");
+    try { return AgentTasksCreateTaskInRepoResponseArtifactsItemDataAgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant0(AgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant0.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return AgentTasksCreateTaskInRepoResponseArtifactsItemDataAgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant1(AgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant1.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    throw FormatException("No variant matched for AgentTasksCreateTaskInRepoResponseArtifactsItemData");
   }
   Object? toJson();
 }
 
-final class AgentTasksCreateTaskInRepoResponseArtifactsItemDataAgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant0
-    extends AgentTasksCreateTaskInRepoResponseArtifactsItemData {
+final class AgentTasksCreateTaskInRepoResponseArtifactsItemDataAgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant0 extends AgentTasksCreateTaskInRepoResponseArtifactsItemData {
   final AgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant0 value;
-  const AgentTasksCreateTaskInRepoResponseArtifactsItemDataAgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant0(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const AgentTasksCreateTaskInRepoResponseArtifactsItemDataAgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant0(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class AgentTasksCreateTaskInRepoResponseArtifactsItemDataAgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant1
-    extends AgentTasksCreateTaskInRepoResponseArtifactsItemData {
+final class AgentTasksCreateTaskInRepoResponseArtifactsItemDataAgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant1 extends AgentTasksCreateTaskInRepoResponseArtifactsItemData {
   final AgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant1 value;
-  const AgentTasksCreateTaskInRepoResponseArtifactsItemDataAgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant1(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const AgentTasksCreateTaskInRepoResponseArtifactsItemDataAgentTasksCreateTaskInRepoResponseArtifactsItemDataVariant1(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A GitHub resource (pull request, issue, etc.)
 class AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant0 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// GitHub resource ID
   final int id;
-
   /// GraphQL global ID
   final SdkOptional<String> globalId;
 
-  const AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant0(
-      {required this.id, this.globalId = const SdkOmitted()});
+  const AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant0({required this.id, this.globalId = const SdkOmitted()});
 
-  AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant0 Function(
-      {int id, SdkOptional<String> globalId}) get copyWith => _copyWith;
+  AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant0 Function({int id, SdkOptional<String> globalId}) get copyWith => _copyWith;
 
-  AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant0
-      _copyWith(
-              {Object? id = sdkOmittedValue,
-              Object? globalId = sdkOmittedValue}) =>
-          AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant0(
-            id: identical(id, sdkOmittedValue) ? this.id : id as int,
-            globalId: identical(globalId, sdkOmittedValue)
-                ? this.globalId
-                : globalId as SdkOptional<String>,
-          );
+  AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant0 _copyWith({Object? id = sdkOmittedValue, Object? globalId = sdkOmittedValue}) => AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant0(
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    globalId: identical(globalId, sdkOmittedValue) ? this.globalId : globalId as SdkOptional<String>,
+  );
 
-  factory AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant0.fromJson(
-          Map<String, dynamic> json) =>
-      AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant0(
-        id: ((json['id'] as num?)?.toInt())!,
-        globalId: json['global_id'] != null
-            ? SdkPresent((json['global_id'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant0.fromJson(Map<String, dynamic> json) => AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant0(
+    id: ((json['id'] as num?)?.toInt())!,
+    globalId: json['global_id'] != null ? SdkPresent((json['global_id'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        ...switch (globalId) {
-          SdkPresent<String>(value: final value) => {
-              'global_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'id': id,
+    ...switch (globalId) {
+      SdkPresent<String>(value: final value) => {'global_id': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// A Git branch reference
 class AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant1 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Head branch name
   final String headRef;
-
   /// Base branch name
   final String baseRef;
 
-  const AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant1(
-      {required this.headRef, required this.baseRef});
+  const AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant1({required this.headRef, required this.baseRef});
 
-  AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant1 Function(
-      {String headRef, String baseRef}) get copyWith => _copyWith;
+  AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant1 Function({String headRef, String baseRef}) get copyWith => _copyWith;
 
-  AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant1
-      _copyWith(
-              {Object? headRef = sdkOmittedValue,
-              Object? baseRef = sdkOmittedValue}) =>
-          AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant1(
-            headRef: identical(headRef, sdkOmittedValue)
-                ? this.headRef
-                : headRef as String,
-            baseRef: identical(baseRef, sdkOmittedValue)
-                ? this.baseRef
-                : baseRef as String,
-          );
+  AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant1 _copyWith({Object? headRef = sdkOmittedValue, Object? baseRef = sdkOmittedValue}) => AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant1(
+    headRef: identical(headRef, sdkOmittedValue) ? this.headRef : headRef as String,
+    baseRef: identical(baseRef, sdkOmittedValue) ? this.baseRef : baseRef as String,
+  );
 
-  factory AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant1.fromJson(
-          Map<String, dynamic> json) =>
-      AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant1(
-        headRef: (json['head_ref'] as String?)!,
-        baseRef: (json['base_ref'] as String?)!,
-      );
+  factory AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant1.fromJson(Map<String, dynamic> json) => AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant1(
+    headRef: (json['head_ref'] as String?)!,
+    baseRef: (json['base_ref'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'head_ref': headRef,
-        'base_ref': baseRef,
-      };
+    'head_ref': headRef,
+    'base_ref': baseRef,
+  };
 }
 
 sealed class AgentTasksListTasksForRepoResponseTasksItemArtifactsItemData {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const AgentTasksListTasksForRepoResponseTasksItemArtifactsItemData();
-  factory AgentTasksListTasksForRepoResponseTasksItemArtifactsItemData.fromJson(
-      Object? json) {
+  factory AgentTasksListTasksForRepoResponseTasksItemArtifactsItemData.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value =
-            AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant0
-                .fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataAgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant0(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value =
-            AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant1
-                .fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataAgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant1(
-              value);
-        }
-      } catch (_) {}
+      try { final value = AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant0.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataAgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant0(value); } } catch (_) {}
+      try { final value = AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant1.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataAgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant1(value); } } catch (_) {}
     }
-    try {
-      return AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataAgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant0(
-          AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant0
-              .fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataAgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant1(
-          AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant1
-              .fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    throw FormatException(
-        "No variant matched for AgentTasksListTasksForRepoResponseTasksItemArtifactsItemData");
+    try { return AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataAgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant0(AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant0.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataAgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant1(AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant1.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    throw FormatException("No variant matched for AgentTasksListTasksForRepoResponseTasksItemArtifactsItemData");
   }
   Object? toJson();
 }
 
-final class AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataAgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant0
-    extends AgentTasksListTasksForRepoResponseTasksItemArtifactsItemData {
-  final AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant0
-      value;
-  const AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataAgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant0(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+final class AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataAgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant0 extends AgentTasksListTasksForRepoResponseTasksItemArtifactsItemData {
+  final AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant0 value;
+  const AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataAgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant0(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataAgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant1
-    extends AgentTasksListTasksForRepoResponseTasksItemArtifactsItemData {
-  final AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant1
-      value;
-  const AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataAgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant1(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+final class AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataAgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant1 extends AgentTasksListTasksForRepoResponseTasksItemArtifactsItemData {
+  final AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant1 value;
+  const AgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataAgentTasksListTasksForRepoResponseTasksItemArtifactsItemDataVariant1(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
 /// A GitHub resource (pull request, issue, etc.)
 class AgentTasksListTasksResponseTasksItemArtifactsItemDataVariant0 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// GitHub resource ID
   final int id;
-
   /// GraphQL global ID
   final SdkOptional<String> globalId;
 
-  const AgentTasksListTasksResponseTasksItemArtifactsItemDataVariant0(
-      {required this.id, this.globalId = const SdkOmitted()});
+  const AgentTasksListTasksResponseTasksItemArtifactsItemDataVariant0({required this.id, this.globalId = const SdkOmitted()});
 
-  AgentTasksListTasksResponseTasksItemArtifactsItemDataVariant0 Function(
-      {int id, SdkOptional<String> globalId}) get copyWith => _copyWith;
+  AgentTasksListTasksResponseTasksItemArtifactsItemDataVariant0 Function({int id, SdkOptional<String> globalId}) get copyWith => _copyWith;
 
-  AgentTasksListTasksResponseTasksItemArtifactsItemDataVariant0 _copyWith(
-          {Object? id = sdkOmittedValue, Object? globalId = sdkOmittedValue}) =>
-      AgentTasksListTasksResponseTasksItemArtifactsItemDataVariant0(
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        globalId: identical(globalId, sdkOmittedValue)
-            ? this.globalId
-            : globalId as SdkOptional<String>,
-      );
+  AgentTasksListTasksResponseTasksItemArtifactsItemDataVariant0 _copyWith({Object? id = sdkOmittedValue, Object? globalId = sdkOmittedValue}) => AgentTasksListTasksResponseTasksItemArtifactsItemDataVariant0(
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    globalId: identical(globalId, sdkOmittedValue) ? this.globalId : globalId as SdkOptional<String>,
+  );
 
-  factory AgentTasksListTasksResponseTasksItemArtifactsItemDataVariant0.fromJson(
-          Map<String, dynamic> json) =>
-      AgentTasksListTasksResponseTasksItemArtifactsItemDataVariant0(
-        id: ((json['id'] as num?)?.toInt())!,
-        globalId: json['global_id'] != null
-            ? SdkPresent((json['global_id'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory AgentTasksListTasksResponseTasksItemArtifactsItemDataVariant0.fromJson(Map<String, dynamic> json) => AgentTasksListTasksResponseTasksItemArtifactsItemDataVariant0(
+    id: ((json['id'] as num?)?.toInt())!,
+    globalId: json['global_id'] != null ? SdkPresent((json['global_id'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        ...switch (globalId) {
-          SdkPresent<String>(value: final value) => {
-              'global_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'id': id,
+    ...switch (globalId) {
+      SdkPresent<String>(value: final value) => {'global_id': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// A Git branch reference
 class AgentTasksListTasksResponseTasksItemArtifactsItemDataVariant1 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Head branch name
   final String headRef;
-
   /// Base branch name
   final String baseRef;
 
-  const AgentTasksListTasksResponseTasksItemArtifactsItemDataVariant1(
-      {required this.headRef, required this.baseRef});
+  const AgentTasksListTasksResponseTasksItemArtifactsItemDataVariant1({required this.headRef, required this.baseRef});
 
-  AgentTasksListTasksResponseTasksItemArtifactsItemDataVariant1 Function(
-      {String headRef, String baseRef}) get copyWith => _copyWith;
+  AgentTasksListTasksResponseTasksItemArtifactsItemDataVariant1 Function({String headRef, String baseRef}) get copyWith => _copyWith;
 
-  AgentTasksListTasksResponseTasksItemArtifactsItemDataVariant1 _copyWith(
-          {Object? headRef = sdkOmittedValue,
-          Object? baseRef = sdkOmittedValue}) =>
-      AgentTasksListTasksResponseTasksItemArtifactsItemDataVariant1(
-        headRef: identical(headRef, sdkOmittedValue)
-            ? this.headRef
-            : headRef as String,
-        baseRef: identical(baseRef, sdkOmittedValue)
-            ? this.baseRef
-            : baseRef as String,
-      );
+  AgentTasksListTasksResponseTasksItemArtifactsItemDataVariant1 _copyWith({Object? headRef = sdkOmittedValue, Object? baseRef = sdkOmittedValue}) => AgentTasksListTasksResponseTasksItemArtifactsItemDataVariant1(
+    headRef: identical(headRef, sdkOmittedValue) ? this.headRef : headRef as String,
+    baseRef: identical(baseRef, sdkOmittedValue) ? this.baseRef : baseRef as String,
+  );
 
-  factory AgentTasksListTasksResponseTasksItemArtifactsItemDataVariant1.fromJson(
-          Map<String, dynamic> json) =>
-      AgentTasksListTasksResponseTasksItemArtifactsItemDataVariant1(
-        headRef: (json['head_ref'] as String?)!,
-        baseRef: (json['base_ref'] as String?)!,
-      );
+  factory AgentTasksListTasksResponseTasksItemArtifactsItemDataVariant1.fromJson(Map<String, dynamic> json) => AgentTasksListTasksResponseTasksItemArtifactsItemDataVariant1(
+    headRef: (json['head_ref'] as String?)!,
+    baseRef: (json['base_ref'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'head_ref': headRef,
-        'base_ref': baseRef,
-      };
+    'head_ref': headRef,
+    'base_ref': baseRef,
+  };
 }
 
 sealed class AgentTasksListTasksResponseTasksItemArtifactsItemData {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const AgentTasksListTasksResponseTasksItemArtifactsItemData();
-  factory AgentTasksListTasksResponseTasksItemArtifactsItemData.fromJson(
-      Object? json) {
+  factory AgentTasksListTasksResponseTasksItemArtifactsItemData.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value =
-            AgentTasksListTasksResponseTasksItemArtifactsItemDataVariant0
-                .fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return AgentTasksListTasksResponseTasksItemArtifactsItemDataAgentTasksListTasksResponseTasksItemArtifactsItemDataVariant0(
-              value);
-        }
-      } catch (_) {}
-      try {
-        final value =
-            AgentTasksListTasksResponseTasksItemArtifactsItemDataVariant1
-                .fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return AgentTasksListTasksResponseTasksItemArtifactsItemDataAgentTasksListTasksResponseTasksItemArtifactsItemDataVariant1(
-              value);
-        }
-      } catch (_) {}
+      try { final value = AgentTasksListTasksResponseTasksItemArtifactsItemDataVariant0.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return AgentTasksListTasksResponseTasksItemArtifactsItemDataAgentTasksListTasksResponseTasksItemArtifactsItemDataVariant0(value); } } catch (_) {}
+      try { final value = AgentTasksListTasksResponseTasksItemArtifactsItemDataVariant1.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return AgentTasksListTasksResponseTasksItemArtifactsItemDataAgentTasksListTasksResponseTasksItemArtifactsItemDataVariant1(value); } } catch (_) {}
     }
-    try {
-      return AgentTasksListTasksResponseTasksItemArtifactsItemDataAgentTasksListTasksResponseTasksItemArtifactsItemDataVariant0(
-          AgentTasksListTasksResponseTasksItemArtifactsItemDataVariant0
-              .fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return AgentTasksListTasksResponseTasksItemArtifactsItemDataAgentTasksListTasksResponseTasksItemArtifactsItemDataVariant1(
-          AgentTasksListTasksResponseTasksItemArtifactsItemDataVariant1
-              .fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    throw FormatException(
-        "No variant matched for AgentTasksListTasksResponseTasksItemArtifactsItemData");
+    try { return AgentTasksListTasksResponseTasksItemArtifactsItemDataAgentTasksListTasksResponseTasksItemArtifactsItemDataVariant0(AgentTasksListTasksResponseTasksItemArtifactsItemDataVariant0.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return AgentTasksListTasksResponseTasksItemArtifactsItemDataAgentTasksListTasksResponseTasksItemArtifactsItemDataVariant1(AgentTasksListTasksResponseTasksItemArtifactsItemDataVariant1.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    throw FormatException("No variant matched for AgentTasksListTasksResponseTasksItemArtifactsItemData");
   }
   Object? toJson();
 }
 
-final class AgentTasksListTasksResponseTasksItemArtifactsItemDataAgentTasksListTasksResponseTasksItemArtifactsItemDataVariant0
-    extends AgentTasksListTasksResponseTasksItemArtifactsItemData {
+final class AgentTasksListTasksResponseTasksItemArtifactsItemDataAgentTasksListTasksResponseTasksItemArtifactsItemDataVariant0 extends AgentTasksListTasksResponseTasksItemArtifactsItemData {
   final AgentTasksListTasksResponseTasksItemArtifactsItemDataVariant0 value;
-  const AgentTasksListTasksResponseTasksItemArtifactsItemDataAgentTasksListTasksResponseTasksItemArtifactsItemDataVariant0(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const AgentTasksListTasksResponseTasksItemArtifactsItemDataAgentTasksListTasksResponseTasksItemArtifactsItemDataVariant0(this.value);
+  @override Object? toJson() => value.toJson();
 }
 
-final class AgentTasksListTasksResponseTasksItemArtifactsItemDataAgentTasksListTasksResponseTasksItemArtifactsItemDataVariant1
-    extends AgentTasksListTasksResponseTasksItemArtifactsItemData {
+final class AgentTasksListTasksResponseTasksItemArtifactsItemDataAgentTasksListTasksResponseTasksItemArtifactsItemDataVariant1 extends AgentTasksListTasksResponseTasksItemArtifactsItemData {
   final AgentTasksListTasksResponseTasksItemArtifactsItemDataVariant1 value;
-  const AgentTasksListTasksResponseTasksItemArtifactsItemDataAgentTasksListTasksResponseTasksItemArtifactsItemDataVariant1(
-      this.value);
-  @override
-  Object? toJson() => value.toJson();
+  const AgentTasksListTasksResponseTasksItemArtifactsItemDataAgentTasksListTasksResponseTasksItemArtifactsItemDataVariant1(this.value);
+  @override Object? toJson() => value.toJson();
 }

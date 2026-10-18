@@ -8,280 +8,173 @@ part of 'webhook_pull_request_review_thread_unresolved.dart';
 class WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksHtml {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `uri-template`-formatted value serialized in the `href` wire field.
   final String href;
 
-  const WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksHtml(
-      {required this.href});
+  const WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksHtml({required this.href});
 
-  WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksHtml Function(
-      {String href}) get copyWith => _copyWith;
+  WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksHtml Function({String href}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksHtml _copyWith(
-          {Object? href = sdkOmittedValue}) =>
-      WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksHtml(
-        href: identical(href, sdkOmittedValue) ? this.href : href as String,
-      );
+  WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksHtml _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksHtml(
+    href: identical(href, sdkOmittedValue) ? this.href : href as String,
+  );
 
-  factory WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksHtml.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksHtml(
-        href: (json['href'] as String?)!,
-      );
+  factory WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksHtml.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksHtml(
+    href: (json['href'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'href': href,
-      };
+    'href': href,
+  };
 }
 
 /// Required object value serialized in the `pull_request` wire field.
 class WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksPullRequest {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `uri-template`-formatted value serialized in the `href` wire field.
   final String href;
 
-  const WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksPullRequest(
-      {required this.href});
+  const WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksPullRequest({required this.href});
 
-  WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksPullRequest
-      Function({String href}) get copyWith => _copyWith;
+  WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksPullRequest Function({String href}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksPullRequest
-      _copyWith({Object? href = sdkOmittedValue}) =>
-          WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksPullRequest(
-            href: identical(href, sdkOmittedValue) ? this.href : href as String,
-          );
+  WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksPullRequest _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksPullRequest(
+    href: identical(href, sdkOmittedValue) ? this.href : href as String,
+  );
 
-  factory WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksPullRequest.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksPullRequest(
-        href: (json['href'] as String?)!,
-      );
+  factory WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksPullRequest.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksPullRequest(
+    href: (json['href'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'href': href,
-      };
+    'href': href,
+  };
 }
 
 /// Required object value serialized in the `self` wire field.
 class WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksSelf {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `uri-template`-formatted value serialized in the `href` wire field.
   final String href;
 
-  const WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksSelf(
-      {required this.href});
+  const WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksSelf({required this.href});
 
-  WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksSelf Function(
-      {String href}) get copyWith => _copyWith;
+  WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksSelf Function({String href}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksSelf _copyWith(
-          {Object? href = sdkOmittedValue}) =>
-      WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksSelf(
-        href: identical(href, sdkOmittedValue) ? this.href : href as String,
-      );
+  WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksSelf _copyWith({Object? href = sdkOmittedValue}) => WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksSelf(
+    href: identical(href, sdkOmittedValue) ? this.href : href as String,
+  );
 
-  factory WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksSelf.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksSelf(
-        href: (json['href'] as String?)!,
-      );
+  factory WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksSelf.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksSelf(
+    href: (json['href'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'href': href,
-      };
+    'href': href,
+  };
 }
 
 /// Required object value serialized in the `_links` wire field.
 class WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinks {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required object value serialized in the `html` wire field.
-  final WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksHtml
-      html;
-
+  final WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksHtml html;
   /// Required object value serialized in the `pull_request` wire field.
-  final WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksPullRequest
-      pullRequest;
-
+  final WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksPullRequest pullRequest;
   /// Required object value serialized in the `self` wire field.
-  final WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksSelf
-      self;
+  final WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksSelf self;
 
-  const WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinks(
-      {required this.html, required this.pullRequest, required this.self});
+  const WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinks({required this.html, required this.pullRequest, required this.self});
 
-  WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinks Function(
-      {WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksHtml html,
-      WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksPullRequest
-          pullRequest,
-      WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksSelf
-          self}) get copyWith => _copyWith;
+  WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinks Function({WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksHtml html, WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksPullRequest pullRequest, WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksSelf self}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinks _copyWith(
-          {Object? html = sdkOmittedValue,
-          Object? pullRequest = sdkOmittedValue,
-          Object? self = sdkOmittedValue}) =>
-      WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinks(
-        html: identical(html, sdkOmittedValue)
-            ? this.html
-            : html
-                as WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksHtml,
-        pullRequest: identical(pullRequest, sdkOmittedValue)
-            ? this.pullRequest
-            : pullRequest
-                as WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksPullRequest,
-        self: identical(self, sdkOmittedValue)
-            ? this.self
-            : self
-                as WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksSelf,
-      );
+  WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinks _copyWith({Object? html = sdkOmittedValue, Object? pullRequest = sdkOmittedValue, Object? self = sdkOmittedValue}) => WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinks(
+    html: identical(html, sdkOmittedValue) ? this.html : html as WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksHtml,
+    pullRequest: identical(pullRequest, sdkOmittedValue) ? this.pullRequest : pullRequest as WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksPullRequest,
+    self: identical(self, sdkOmittedValue) ? this.self : self as WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksSelf,
+  );
 
-  factory WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinks.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinks(
-        html: (json['html'] != null
-            ? WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksHtml
-                .fromJson(json['html'] as Map<String, dynamic>)
-            : null)!,
-        pullRequest: (json['pull_request'] != null
-            ? WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksPullRequest
-                .fromJson(json['pull_request'] as Map<String, dynamic>)
-            : null)!,
-        self: (json['self'] != null
-            ? WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksSelf
-                .fromJson(json['self'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinks.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinks(
+    html: (json['html'] != null ? WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksHtml.fromJson(json['html'] as Map<String, dynamic>) : null)!,
+    pullRequest: (json['pull_request'] != null ? WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksPullRequest.fromJson(json['pull_request'] as Map<String, dynamic>) : null)!,
+    self: (json['self'] != null ? WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemLinksSelf.fromJson(json['self'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'html': html.toJson(),
-        'pull_request': pullRequest.toJson(),
-        'self': self.toJson(),
-      };
+    'html': html.toJson(),
+    'pull_request': pullRequest.toJson(),
+    'self': self.toJson(),
+  };
 }
 
 /// Required object value serialized in the `reactions` wire field.
 class WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemReactions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `integer` value serialized in the `+1` wire field.
   final int plus1;
-
   /// Required `integer` value serialized in the `-1` wire field.
   final int minus1;
-
   /// Required `integer` value serialized in the `confused` wire field.
   final int confused;
-
   /// Required `integer` value serialized in the `eyes` wire field.
   final int eyes;
-
   /// Required `integer` value serialized in the `heart` wire field.
   final int heart;
-
   /// Required `integer` value serialized in the `hooray` wire field.
   final int hooray;
-
   /// Required `integer` value serialized in the `laugh` wire field.
   final int laugh;
-
   /// Required `integer` value serialized in the `rocket` wire field.
   final int rocket;
-
   /// Required `integer` value serialized in the `total_count` wire field.
   final int totalCount;
-
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
 
-  const WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemReactions(
-      {required this.plus1,
-      required this.minus1,
-      required this.confused,
-      required this.eyes,
-      required this.heart,
-      required this.hooray,
-      required this.laugh,
-      required this.rocket,
-      required this.totalCount,
-      required this.url});
+  const WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemReactions({required this.plus1, required this.minus1, required this.confused, required this.eyes, required this.heart, required this.hooray, required this.laugh, required this.rocket, required this.totalCount, required this.url});
 
-  WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemReactions Function(
-      {int plus1,
-      int minus1,
-      int confused,
-      int eyes,
-      int heart,
-      int hooray,
-      int laugh,
-      int rocket,
-      int totalCount,
-      String url}) get copyWith => _copyWith;
+  WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemReactions Function({int plus1, int minus1, int confused, int eyes, int heart, int hooray, int laugh, int rocket, int totalCount, String url}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemReactions _copyWith(
-          {Object? plus1 = sdkOmittedValue,
-          Object? minus1 = sdkOmittedValue,
-          Object? confused = sdkOmittedValue,
-          Object? eyes = sdkOmittedValue,
-          Object? heart = sdkOmittedValue,
-          Object? hooray = sdkOmittedValue,
-          Object? laugh = sdkOmittedValue,
-          Object? rocket = sdkOmittedValue,
-          Object? totalCount = sdkOmittedValue,
-          Object? url = sdkOmittedValue}) =>
-      WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemReactions(
-        plus1: identical(plus1, sdkOmittedValue) ? this.plus1 : plus1 as int,
-        minus1:
-            identical(minus1, sdkOmittedValue) ? this.minus1 : minus1 as int,
-        confused: identical(confused, sdkOmittedValue)
-            ? this.confused
-            : confused as int,
-        eyes: identical(eyes, sdkOmittedValue) ? this.eyes : eyes as int,
-        heart: identical(heart, sdkOmittedValue) ? this.heart : heart as int,
-        hooray:
-            identical(hooray, sdkOmittedValue) ? this.hooray : hooray as int,
-        laugh: identical(laugh, sdkOmittedValue) ? this.laugh : laugh as int,
-        rocket:
-            identical(rocket, sdkOmittedValue) ? this.rocket : rocket as int,
-        totalCount: identical(totalCount, sdkOmittedValue)
-            ? this.totalCount
-            : totalCount as int,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-      );
+  WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemReactions _copyWith({Object? plus1 = sdkOmittedValue, Object? minus1 = sdkOmittedValue, Object? confused = sdkOmittedValue, Object? eyes = sdkOmittedValue, Object? heart = sdkOmittedValue, Object? hooray = sdkOmittedValue, Object? laugh = sdkOmittedValue, Object? rocket = sdkOmittedValue, Object? totalCount = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemReactions(
+    plus1: identical(plus1, sdkOmittedValue) ? this.plus1 : plus1 as int,
+    minus1: identical(minus1, sdkOmittedValue) ? this.minus1 : minus1 as int,
+    confused: identical(confused, sdkOmittedValue) ? this.confused : confused as int,
+    eyes: identical(eyes, sdkOmittedValue) ? this.eyes : eyes as int,
+    heart: identical(heart, sdkOmittedValue) ? this.heart : heart as int,
+    hooray: identical(hooray, sdkOmittedValue) ? this.hooray : hooray as int,
+    laugh: identical(laugh, sdkOmittedValue) ? this.laugh : laugh as int,
+    rocket: identical(rocket, sdkOmittedValue) ? this.rocket : rocket as int,
+    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+  );
 
-  factory WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemReactions.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemReactions(
-        plus1: ((json['+1'] as num?)?.toInt())!,
-        minus1: ((json['-1'] as num?)?.toInt())!,
-        confused: ((json['confused'] as num?)?.toInt())!,
-        eyes: ((json['eyes'] as num?)?.toInt())!,
-        heart: ((json['heart'] as num?)?.toInt())!,
-        hooray: ((json['hooray'] as num?)?.toInt())!,
-        laugh: ((json['laugh'] as num?)?.toInt())!,
-        rocket: ((json['rocket'] as num?)?.toInt())!,
-        totalCount: ((json['total_count'] as num?)?.toInt())!,
-        url: (json['url'] as String?)!,
-      );
+  factory WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemReactions.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewThreadUnresolvedThreadCommentsItemReactions(
+    plus1: ((json['+1'] as num?)?.toInt())!,
+    minus1: ((json['-1'] as num?)?.toInt())!,
+    confused: ((json['confused'] as num?)?.toInt())!,
+    eyes: ((json['eyes'] as num?)?.toInt())!,
+    heart: ((json['heart'] as num?)?.toInt())!,
+    hooray: ((json['hooray'] as num?)?.toInt())!,
+    laugh: ((json['laugh'] as num?)?.toInt())!,
+    rocket: ((json['rocket'] as num?)?.toInt())!,
+    totalCount: ((json['total_count'] as num?)?.toInt())!,
+    url: (json['url'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        '+1': plus1,
-        '-1': minus1,
-        'confused': confused,
-        'eyes': eyes,
-        'heart': heart,
-        'hooray': hooray,
-        'laugh': laugh,
-        'rocket': rocket,
-        'total_count': totalCount,
-        'url': url,
-      };
+    '+1': plus1,
+    '-1': minus1,
+    'confused': confused,
+    'eyes': eyes,
+    'heart': heart,
+    'hooray': hooray,
+    'laugh': laugh,
+    'rocket': rocket,
+    'total_count': totalCount,
+    'url': url,
+  };
 }

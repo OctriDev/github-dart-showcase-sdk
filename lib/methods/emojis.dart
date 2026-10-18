@@ -13,8 +13,7 @@ Future<Map<String, String>> emojisGet(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'emojisGet',
-          fromJsonRaw: (value) => Map<String, dynamic>.from(value as Map)
-              .map((key, value) => MapEntry(key, value as String)),
+          fromJsonRaw: (value) => Map<String, dynamic>.from(value as Map).map((key, value) => MapEntry(key, value as String)),
           options: requestOptions))
       .data;
 }

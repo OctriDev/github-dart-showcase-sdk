@@ -10,124 +10,103 @@ part of 'secret_scanning.dart';
 class SecretScanningAlertMetadataItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The metadata key.
   final String key;
-
   /// The metadata value.
   final String value;
 
-  const SecretScanningAlertMetadataItem(
-      {required this.key, required this.value});
+  const SecretScanningAlertMetadataItem({required this.key, required this.value});
 
-  SecretScanningAlertMetadataItem Function({String key, String value})
-      get copyWith => _copyWith;
+  SecretScanningAlertMetadataItem Function({String key, String value}) get copyWith => _copyWith;
 
-  SecretScanningAlertMetadataItem _copyWith(
-          {Object? key = sdkOmittedValue, Object? value = sdkOmittedValue}) =>
-      SecretScanningAlertMetadataItem(
-        key: identical(key, sdkOmittedValue) ? this.key : key as String,
-        value: identical(value, sdkOmittedValue) ? this.value : value as String,
-      );
+  SecretScanningAlertMetadataItem _copyWith({Object? key = sdkOmittedValue, Object? value = sdkOmittedValue}) => SecretScanningAlertMetadataItem(
+    key: identical(key, sdkOmittedValue) ? this.key : key as String,
+    value: identical(value, sdkOmittedValue) ? this.value : value as String,
+  );
 
-  factory SecretScanningAlertMetadataItem.fromJson(Map<String, dynamic> json) =>
-      SecretScanningAlertMetadataItem(
-        key: (json['key'] as String?)!,
-        value: (json['value'] as String?)!,
-      );
+  factory SecretScanningAlertMetadataItem.fromJson(Map<String, dynamic> json) => SecretScanningAlertMetadataItem(
+    key: (json['key'] as String?)!,
+    value: (json['value'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'key': key,
-        'value': value,
-      };
+    'key': key,
+    'value': value,
+  };
 }
 
 // SecretScanningAlertMetadata = List<SecretScanningAlertMetadataItem>
 
 /// **Required when the `state` is `resolved`.** The reason for resolving the alert.
 final class SecretScanningAlertResolution {
+
   final String value;
 
   const SecretScanningAlertResolution._(this.value);
 
-  factory SecretScanningAlertResolution.fromJson(String value) =>
-      SecretScanningAlertResolution._(value);
+  factory SecretScanningAlertResolution.fromJson(String value) => SecretScanningAlertResolution._(value);
 
-  static const falsePositive =
-      SecretScanningAlertResolution._('false_positive');
+  static const falsePositive = SecretScanningAlertResolution._('false_positive');
   static const wontFix = SecretScanningAlertResolution._('wont_fix');
   static const revoked = SecretScanningAlertResolution._('revoked');
   static const usedInTests = SecretScanningAlertResolution._('used_in_tests');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SecretScanningAlertResolution && other.value == value;
+  @override bool operator ==(Object other) => other is SecretScanningAlertResolution && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 // SecretScanningAlertResolutionComment = String
 
 /// The reason for resolving the alert.
 final class SecretScanningAlertResolutionWebhook {
+
   final String value;
 
   const SecretScanningAlertResolutionWebhook._(this.value);
 
-  factory SecretScanningAlertResolutionWebhook.fromJson(String value) =>
-      SecretScanningAlertResolutionWebhook._(value);
+  factory SecretScanningAlertResolutionWebhook.fromJson(String value) => SecretScanningAlertResolutionWebhook._(value);
 
-  static const falsePositive =
-      SecretScanningAlertResolutionWebhook._('false_positive');
+  static const falsePositive = SecretScanningAlertResolutionWebhook._('false_positive');
   static const wontFix = SecretScanningAlertResolutionWebhook._('wont_fix');
   static const revoked = SecretScanningAlertResolutionWebhook._('revoked');
-  static const usedInTests =
-      SecretScanningAlertResolutionWebhook._('used_in_tests');
-  static const patternDeleted =
-      SecretScanningAlertResolutionWebhook._('pattern_deleted');
-  static const patternEdited =
-      SecretScanningAlertResolutionWebhook._('pattern_edited');
+  static const usedInTests = SecretScanningAlertResolutionWebhook._('used_in_tests');
+  static const patternDeleted = SecretScanningAlertResolutionWebhook._('pattern_deleted');
+  static const patternEdited = SecretScanningAlertResolutionWebhook._('pattern_edited');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SecretScanningAlertResolutionWebhook && other.value == value;
+  @override bool operator ==(Object other) => other is SecretScanningAlertResolutionWebhook && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Sets the state of the secret scanning alert. You must provide `resolution` when you set the state to `resolved`.
 final class SecretScanningAlertState {
+
   final String value;
 
   const SecretScanningAlertState._(this.value);
 
-  factory SecretScanningAlertState.fromJson(String value) =>
-      SecretScanningAlertState._(value);
+  factory SecretScanningAlertState.fromJson(String value) => SecretScanningAlertState._(value);
 
   static const open = SecretScanningAlertState._('open');
   static const resolved = SecretScanningAlertState._('resolved');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SecretScanningAlertState && other.value == value;
+  @override bool operator ==(Object other) => other is SecretScanningAlertState && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

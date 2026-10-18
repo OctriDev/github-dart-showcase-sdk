@@ -18,6 +18,7 @@ Future<Root> metaRoot(ClientConfig config,
       .data;
 }
 
+
 /// Returns meta information about GitHub, including a list of GitHub's IP addresses. For more information, see "[About GitHub's IP addresses](https://docs.github.com/articles/about-github-s-ip-addresses/)." The API's response also includes a list of GitHub's domain names, and the public keys used by GitHub to sign commits made through the web UI. The values shown in the documentation's response are example values. You must always query the API directly to get the latest values. &gt; [!NOTE] &gt; This endpoint returns both IPv4 and IPv6 addresses. However, not all features support IPv6. You should refer to the specific documentation for each feature to determine if IPv6 is supported.
 Future<ApiOverview> metaGet(ClientConfig config,
     {RequestOptions? requestOptions}) async {
@@ -25,11 +26,11 @@ Future<ApiOverview> metaGet(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'metaGet',
-          fromJsonRaw: (value) =>
-              ApiOverview.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiOverview.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Returns Octocat as ASCII art. Supply the optional `s` query parameter to set the words in Octocat's speech bubble.
 ///
@@ -42,14 +43,14 @@ Future<String> metaGetOctocat(ClientConfig config,
   return (await sdkRequest<String>('GET', '/octocat',
           config: config,
           query: {
-            's': SdkQueryValue(SdkUtils.unwrapOptional(s),
-                style: 'form', explode: true)
+            's': SdkQueryValue(SdkUtils.unwrapOptional(s), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.text,
           operationId: 'metaGetOctocat',
           options: requestOptions))
       .data;
 }
+
 
 /// Lists the API versions supported by the service. Use this endpoint to discover the version strings available for API requests; each value is formatted as a date.
 ///
@@ -60,14 +61,12 @@ Future<List<String>> metaGetAllVersions(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'metaGetAllVersions',
-          fromJsonRaw: (value) =>
-              (value as List).map((item) => item as String).toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => item as String).toList(),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Returns a random sentence from the Zen of GitHub. Use it when you want a brief, randomly selected phrase; the response is plain text.
 ///

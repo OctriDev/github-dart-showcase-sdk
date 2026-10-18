@@ -8,300 +8,157 @@ part of 'webhook_installation_target_renamed.dart';
 class WebhookInstallationTargetRenamedChangesLogin {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `from` wire field.
   final String from;
 
   const WebhookInstallationTargetRenamedChangesLogin({required this.from});
 
-  WebhookInstallationTargetRenamedChangesLogin Function({String from})
-      get copyWith => _copyWith;
+  WebhookInstallationTargetRenamedChangesLogin Function({String from}) get copyWith => _copyWith;
 
-  WebhookInstallationTargetRenamedChangesLogin _copyWith(
-          {Object? from = sdkOmittedValue}) =>
-      WebhookInstallationTargetRenamedChangesLogin(
-        from: identical(from, sdkOmittedValue) ? this.from : from as String,
-      );
+  WebhookInstallationTargetRenamedChangesLogin _copyWith({Object? from = sdkOmittedValue}) => WebhookInstallationTargetRenamedChangesLogin(
+    from: identical(from, sdkOmittedValue) ? this.from : from as String,
+  );
 
-  factory WebhookInstallationTargetRenamedChangesLogin.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookInstallationTargetRenamedChangesLogin(
-        from: (json['from'] as String?)!,
-      );
+  factory WebhookInstallationTargetRenamedChangesLogin.fromJson(Map<String, dynamic> json) => WebhookInstallationTargetRenamedChangesLogin(
+    from: (json['from'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'from': from,
-      };
+    'from': from,
+  };
 }
 
 /// Optional object value serialized in the `slug` wire field.
 class WebhookInstallationTargetRenamedChangesSlug {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `from` wire field.
   final String from;
 
   const WebhookInstallationTargetRenamedChangesSlug({required this.from});
 
-  WebhookInstallationTargetRenamedChangesSlug Function({String from})
-      get copyWith => _copyWith;
+  WebhookInstallationTargetRenamedChangesSlug Function({String from}) get copyWith => _copyWith;
 
-  WebhookInstallationTargetRenamedChangesSlug _copyWith(
-          {Object? from = sdkOmittedValue}) =>
-      WebhookInstallationTargetRenamedChangesSlug(
-        from: identical(from, sdkOmittedValue) ? this.from : from as String,
-      );
+  WebhookInstallationTargetRenamedChangesSlug _copyWith({Object? from = sdkOmittedValue}) => WebhookInstallationTargetRenamedChangesSlug(
+    from: identical(from, sdkOmittedValue) ? this.from : from as String,
+  );
 
-  factory WebhookInstallationTargetRenamedChangesSlug.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookInstallationTargetRenamedChangesSlug(
-        from: (json['from'] as String?)!,
-      );
+  factory WebhookInstallationTargetRenamedChangesSlug.fromJson(Map<String, dynamic> json) => WebhookInstallationTargetRenamedChangesSlug(
+    from: (json['from'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'from': from,
-      };
+    'from': from,
+  };
 }
 
 /// Required object value serialized in the `changes` wire field.
 class WebhookInstallationTargetRenamedChanges {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional object value serialized in the `login` wire field.
   final SdkOptional<WebhookInstallationTargetRenamedChangesLogin> login;
-
   /// Optional object value serialized in the `slug` wire field.
   final SdkOptional<WebhookInstallationTargetRenamedChangesSlug> slug;
 
-  const WebhookInstallationTargetRenamedChanges(
-      {this.login = const SdkOmitted(), this.slug = const SdkOmitted()});
+  const WebhookInstallationTargetRenamedChanges({this.login = const SdkOmitted(), this.slug = const SdkOmitted()});
 
-  WebhookInstallationTargetRenamedChanges Function(
-          {SdkOptional<WebhookInstallationTargetRenamedChangesLogin> login,
-          SdkOptional<WebhookInstallationTargetRenamedChangesSlug> slug})
-      get copyWith => _copyWith;
+  WebhookInstallationTargetRenamedChanges Function({SdkOptional<WebhookInstallationTargetRenamedChangesLogin> login, SdkOptional<WebhookInstallationTargetRenamedChangesSlug> slug}) get copyWith => _copyWith;
 
-  WebhookInstallationTargetRenamedChanges _copyWith(
-          {Object? login = sdkOmittedValue, Object? slug = sdkOmittedValue}) =>
-      WebhookInstallationTargetRenamedChanges(
-        login: identical(login, sdkOmittedValue)
-            ? this.login
-            : login
-                as SdkOptional<WebhookInstallationTargetRenamedChangesLogin>,
-        slug: identical(slug, sdkOmittedValue)
-            ? this.slug
-            : slug as SdkOptional<WebhookInstallationTargetRenamedChangesSlug>,
-      );
+  WebhookInstallationTargetRenamedChanges _copyWith({Object? login = sdkOmittedValue, Object? slug = sdkOmittedValue}) => WebhookInstallationTargetRenamedChanges(
+    login: identical(login, sdkOmittedValue) ? this.login : login as SdkOptional<WebhookInstallationTargetRenamedChangesLogin>,
+    slug: identical(slug, sdkOmittedValue) ? this.slug : slug as SdkOptional<WebhookInstallationTargetRenamedChangesSlug>,
+  );
 
-  factory WebhookInstallationTargetRenamedChanges.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookInstallationTargetRenamedChanges(
-        login: json['login'] != null
-            ? SdkPresent((json['login'] != null
-                ? WebhookInstallationTargetRenamedChangesLogin.fromJson(
-                    json['login'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        slug: json['slug'] != null
-            ? SdkPresent((json['slug'] != null
-                ? WebhookInstallationTargetRenamedChangesSlug.fromJson(
-                    json['slug'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory WebhookInstallationTargetRenamedChanges.fromJson(Map<String, dynamic> json) => WebhookInstallationTargetRenamedChanges(
+    login: json['login'] != null ? SdkPresent((json['login'] != null ? WebhookInstallationTargetRenamedChangesLogin.fromJson(json['login'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    slug: json['slug'] != null ? SdkPresent((json['slug'] != null ? WebhookInstallationTargetRenamedChangesSlug.fromJson(json['slug'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (login) {
-          SdkPresent<WebhookInstallationTargetRenamedChangesLogin>(
-            value: final value
-          ) =>
-            {
-              'login': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (slug) {
-          SdkPresent<WebhookInstallationTargetRenamedChangesSlug>(
-            value: final value
-          ) =>
-            {
-              'slug': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (login) {
+      SdkPresent<WebhookInstallationTargetRenamedChangesLogin>(value: final value) => {'login': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (slug) {
+      SdkPresent<WebhookInstallationTargetRenamedChangesSlug>(value: final value) => {'slug': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Typed representation of the `WebhookInstallationTargetRenamed` API schema.
 class WebhookInstallationTargetRenamed {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required object value serialized in the `account` wire field.
   final WebhookInstallationTargetRenamedAccount account;
-
   /// Required enumerated value serialized in the `action` wire field.
   final WebhookInstallationTargetRenamedAction action;
-
   /// Required object value serialized in the `changes` wire field.
   final WebhookInstallationTargetRenamedChanges changes;
-
   /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured on an enterprise account or an organization that's part of an enterprise account. For more information, see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
   final SdkOptional<EnterpriseWebhooks> enterprise;
-
   /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured for and sent to a GitHub App. For more information, see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
   final SimpleInstallation installation;
-
   /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an organization, or when the event occurs from activity in a repository owned by an organization.
   final SdkOptional<OrganizationSimpleWebhooks> organization;
-
   /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property when the event occurs from activity in a repository.
   final SdkOptional<RepositoryWebhooks> repository;
-
   /// A GitHub user.
   final SdkOptional<SimpleUser> sender;
-
   /// Required `string` value serialized in the `target_type` wire field.
   final String targetType;
 
-  const WebhookInstallationTargetRenamed(
-      {required this.account,
-      required this.action,
-      required this.changes,
-      this.enterprise = const SdkOmitted(),
-      required this.installation,
-      this.organization = const SdkOmitted(),
-      this.repository = const SdkOmitted(),
-      this.sender = const SdkOmitted(),
-      required this.targetType});
+  const WebhookInstallationTargetRenamed({required this.account, required this.action, required this.changes, this.enterprise = const SdkOmitted(), required this.installation, this.organization = const SdkOmitted(), this.repository = const SdkOmitted(), this.sender = const SdkOmitted(), required this.targetType});
 
-  WebhookInstallationTargetRenamed Function(
-      {WebhookInstallationTargetRenamedAccount account,
-      WebhookInstallationTargetRenamedAction action,
-      WebhookInstallationTargetRenamedChanges changes,
-      SdkOptional<EnterpriseWebhooks> enterprise,
-      SimpleInstallation installation,
-      SdkOptional<OrganizationSimpleWebhooks> organization,
-      SdkOptional<RepositoryWebhooks> repository,
-      SdkOptional<SimpleUser> sender,
-      String targetType}) get copyWith => _copyWith;
+  WebhookInstallationTargetRenamed Function({WebhookInstallationTargetRenamedAccount account, WebhookInstallationTargetRenamedAction action, WebhookInstallationTargetRenamedChanges changes, SdkOptional<EnterpriseWebhooks> enterprise, SimpleInstallation installation, SdkOptional<OrganizationSimpleWebhooks> organization, SdkOptional<RepositoryWebhooks> repository, SdkOptional<SimpleUser> sender, String targetType}) get copyWith => _copyWith;
 
-  WebhookInstallationTargetRenamed _copyWith(
-          {Object? account = sdkOmittedValue,
-          Object? action = sdkOmittedValue,
-          Object? changes = sdkOmittedValue,
-          Object? enterprise = sdkOmittedValue,
-          Object? installation = sdkOmittedValue,
-          Object? organization = sdkOmittedValue,
-          Object? repository = sdkOmittedValue,
-          Object? sender = sdkOmittedValue,
-          Object? targetType = sdkOmittedValue}) =>
-      WebhookInstallationTargetRenamed(
-        account: identical(account, sdkOmittedValue)
-            ? this.account
-            : account as WebhookInstallationTargetRenamedAccount,
-        action: identical(action, sdkOmittedValue)
-            ? this.action
-            : action as WebhookInstallationTargetRenamedAction,
-        changes: identical(changes, sdkOmittedValue)
-            ? this.changes
-            : changes as WebhookInstallationTargetRenamedChanges,
-        enterprise: identical(enterprise, sdkOmittedValue)
-            ? this.enterprise
-            : enterprise as SdkOptional<EnterpriseWebhooks>,
-        installation: identical(installation, sdkOmittedValue)
-            ? this.installation
-            : installation as SimpleInstallation,
-        organization: identical(organization, sdkOmittedValue)
-            ? this.organization
-            : organization as SdkOptional<OrganizationSimpleWebhooks>,
-        repository: identical(repository, sdkOmittedValue)
-            ? this.repository
-            : repository as SdkOptional<RepositoryWebhooks>,
-        sender: identical(sender, sdkOmittedValue)
-            ? this.sender
-            : sender as SdkOptional<SimpleUser>,
-        targetType: identical(targetType, sdkOmittedValue)
-            ? this.targetType
-            : targetType as String,
-      );
+  WebhookInstallationTargetRenamed _copyWith({Object? account = sdkOmittedValue, Object? action = sdkOmittedValue, Object? changes = sdkOmittedValue, Object? enterprise = sdkOmittedValue, Object? installation = sdkOmittedValue, Object? organization = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? sender = sdkOmittedValue, Object? targetType = sdkOmittedValue}) => WebhookInstallationTargetRenamed(
+    account: identical(account, sdkOmittedValue) ? this.account : account as WebhookInstallationTargetRenamedAccount,
+    action: identical(action, sdkOmittedValue) ? this.action : action as WebhookInstallationTargetRenamedAction,
+    changes: identical(changes, sdkOmittedValue) ? this.changes : changes as WebhookInstallationTargetRenamedChanges,
+    enterprise: identical(enterprise, sdkOmittedValue) ? this.enterprise : enterprise as SdkOptional<EnterpriseWebhooks>,
+    installation: identical(installation, sdkOmittedValue) ? this.installation : installation as SimpleInstallation,
+    organization: identical(organization, sdkOmittedValue) ? this.organization : organization as SdkOptional<OrganizationSimpleWebhooks>,
+    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as SdkOptional<RepositoryWebhooks>,
+    sender: identical(sender, sdkOmittedValue) ? this.sender : sender as SdkOptional<SimpleUser>,
+    targetType: identical(targetType, sdkOmittedValue) ? this.targetType : targetType as String,
+  );
 
-  factory WebhookInstallationTargetRenamed.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookInstallationTargetRenamed(
-        account: (json['account'] != null
-            ? WebhookInstallationTargetRenamedAccount.fromJson(
-                json['account'] as Map<String, dynamic>)
-            : null)!,
-        action: (json['action'] != null
-            ? WebhookInstallationTargetRenamedAction.fromJson(
-                json['action'] as String)
-            : null)!,
-        changes: (json['changes'] != null
-            ? WebhookInstallationTargetRenamedChanges.fromJson(
-                json['changes'] as Map<String, dynamic>)
-            : null)!,
-        enterprise: json['enterprise'] != null
-            ? SdkPresent((json['enterprise'] != null
-                ? EnterpriseWebhooks.fromJson(
-                    json['enterprise'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        installation: (json['installation'] != null
-            ? SimpleInstallation.fromJson(
-                json['installation'] as Map<String, dynamic>)
-            : null)!,
-        organization: json['organization'] != null
-            ? SdkPresent((json['organization'] != null
-                ? OrganizationSimpleWebhooks.fromJson(
-                    json['organization'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        repository: json['repository'] != null
-            ? SdkPresent((json['repository'] != null
-                ? RepositoryWebhooks.fromJson(
-                    json['repository'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        sender: json['sender'] != null
-            ? SdkPresent((json['sender'] != null
-                ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        targetType: (json['target_type'] as String?)!,
-      );
+  factory WebhookInstallationTargetRenamed.fromJson(Map<String, dynamic> json) => WebhookInstallationTargetRenamed(
+    account: (json['account'] != null ? WebhookInstallationTargetRenamedAccount.fromJson(json['account'] as Map<String, dynamic>) : null)!,
+    action: (json['action'] != null ? WebhookInstallationTargetRenamedAction.fromJson(json['action'] as String) : null)!,
+    changes: (json['changes'] != null ? WebhookInstallationTargetRenamedChanges.fromJson(json['changes'] as Map<String, dynamic>) : null)!,
+    enterprise: json['enterprise'] != null ? SdkPresent((json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    installation: (json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null)!,
+    organization: json['organization'] != null ? SdkPresent((json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    repository: json['repository'] != null ? SdkPresent((json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    sender: json['sender'] != null ? SdkPresent((json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    targetType: (json['target_type'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'account': account.toJson(),
-        'action': action.toJson(),
-        'changes': changes.toJson(),
-        ...switch (enterprise) {
-          SdkPresent<EnterpriseWebhooks>(value: final value) => {
-              'enterprise': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'installation': installation.toJson(),
-        ...switch (organization) {
-          SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {
-              'organization': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (repository) {
-          SdkPresent<RepositoryWebhooks>(value: final value) => {
-              'repository': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (sender) {
-          SdkPresent<SimpleUser>(value: final value) => {
-              'sender': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'target_type': targetType,
-      };
+    'account': account.toJson(),
+    'action': action.toJson(),
+    'changes': changes.toJson(),
+    ...switch (enterprise) {
+      SdkPresent<EnterpriseWebhooks>(value: final value) => {'enterprise': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'installation': installation.toJson(),
+    ...switch (organization) {
+      SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {'organization': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (repository) {
+      SdkPresent<RepositoryWebhooks>(value: final value) => {'repository': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (sender) {
+      SdkPresent<SimpleUser>(value: final value) => {'sender': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'target_type': targetType,
+  };
 }

@@ -8,188 +8,110 @@ part of 'webhook_pull_request_unlabeled.dart';
 class WebhookPullRequestUnlabeledPullRequestBase {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `label` wire field.
   final String label;
-
   /// Required `string` value serialized in the `ref` wire field.
   final String ref;
-
   /// A git repository
   final WebhookPullRequestUnlabeledPullRequestBaseRepo repo;
-
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
-
   /// Required object value serialized in the `user` wire field.
   final WebhookPullRequestUnlabeledPullRequestBaseUser? user;
 
-  const WebhookPullRequestUnlabeledPullRequestBase(
-      {required this.label,
-      required this.ref,
-      required this.repo,
-      required this.sha,
-      required this.user});
+  const WebhookPullRequestUnlabeledPullRequestBase({required this.label, required this.ref, required this.repo, required this.sha, required this.user});
 
-  WebhookPullRequestUnlabeledPullRequestBase Function(
-          {String label,
-          String ref,
-          WebhookPullRequestUnlabeledPullRequestBaseRepo repo,
-          String sha,
-          WebhookPullRequestUnlabeledPullRequestBaseUser? user})
-      get copyWith => _copyWith;
+  WebhookPullRequestUnlabeledPullRequestBase Function({String label, String ref, WebhookPullRequestUnlabeledPullRequestBaseRepo repo, String sha, WebhookPullRequestUnlabeledPullRequestBaseUser? user}) get copyWith => _copyWith;
 
-  WebhookPullRequestUnlabeledPullRequestBase _copyWith(
-          {Object? label = sdkOmittedValue,
-          Object? ref = sdkOmittedValue,
-          Object? repo = sdkOmittedValue,
-          Object? sha = sdkOmittedValue,
-          Object? user = sdkOmittedValue}) =>
-      WebhookPullRequestUnlabeledPullRequestBase(
-        label: identical(label, sdkOmittedValue) ? this.label : label as String,
-        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-        repo: identical(repo, sdkOmittedValue)
-            ? this.repo
-            : repo as WebhookPullRequestUnlabeledPullRequestBaseRepo,
-        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-        user: identical(user, sdkOmittedValue)
-            ? this.user
-            : user as WebhookPullRequestUnlabeledPullRequestBaseUser?,
-      );
+  WebhookPullRequestUnlabeledPullRequestBase _copyWith({Object? label = sdkOmittedValue, Object? ref = sdkOmittedValue, Object? repo = sdkOmittedValue, Object? sha = sdkOmittedValue, Object? user = sdkOmittedValue}) => WebhookPullRequestUnlabeledPullRequestBase(
+    label: identical(label, sdkOmittedValue) ? this.label : label as String,
+    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+    repo: identical(repo, sdkOmittedValue) ? this.repo : repo as WebhookPullRequestUnlabeledPullRequestBaseRepo,
+    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+    user: identical(user, sdkOmittedValue) ? this.user : user as WebhookPullRequestUnlabeledPullRequestBaseUser?,
+  );
 
-  factory WebhookPullRequestUnlabeledPullRequestBase.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestUnlabeledPullRequestBase(
-        label: (json['label'] as String?)!,
-        ref: (json['ref'] as String?)!,
-        repo: (json['repo'] != null
-            ? WebhookPullRequestUnlabeledPullRequestBaseRepo.fromJson(
-                json['repo'] as Map<String, dynamic>)
-            : null)!,
-        sha: (json['sha'] as String?)!,
-        user: json.containsKey('user')
-            ? json['user'] != null
-                ? WebhookPullRequestUnlabeledPullRequestBaseUser.fromJson(
-                    json['user'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'user', 'Required property is missing'),
-      );
+  factory WebhookPullRequestUnlabeledPullRequestBase.fromJson(Map<String, dynamic> json) => WebhookPullRequestUnlabeledPullRequestBase(
+    label: (json['label'] as String?)!,
+    ref: (json['ref'] as String?)!,
+    repo: (json['repo'] != null ? WebhookPullRequestUnlabeledPullRequestBaseRepo.fromJson(json['repo'] as Map<String, dynamic>) : null)!,
+    sha: (json['sha'] as String?)!,
+    user: json.containsKey('user') ? json['user'] != null ? WebhookPullRequestUnlabeledPullRequestBaseUser.fromJson(json['user'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'user', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'label': label,
-        'ref': ref,
-        'repo': repo.toJson(),
-        'sha': sha,
-        'user': user?.toJson(),
-      };
+    'label': label,
+    'ref': ref,
+    'repo': repo.toJson(),
+    'sha': sha,
+    'user': user?.toJson(),
+  };
 }
 
 sealed class WebhookPullRequestUnlabeledPullRequestHeadRepoCreatedAt {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const WebhookPullRequestUnlabeledPullRequestHeadRepoCreatedAt();
-  factory WebhookPullRequestUnlabeledPullRequestHeadRepoCreatedAt.fromJson(
-      Object? json) {
-    if (json is String) {
-      return WebhookPullRequestUnlabeledPullRequestHeadRepoCreatedAtString(
-          json);
-    }
-    if (json is num) {
-      return WebhookPullRequestUnlabeledPullRequestHeadRepoCreatedAtInt(
-          json.toInt());
-    }
-    throw FormatException(
-        "No variant matched for WebhookPullRequestUnlabeledPullRequestHeadRepoCreatedAt");
+  factory WebhookPullRequestUnlabeledPullRequestHeadRepoCreatedAt.fromJson(Object? json) {
+    if (json is String) { return WebhookPullRequestUnlabeledPullRequestHeadRepoCreatedAtString(json); }
+    if (json is num) { return WebhookPullRequestUnlabeledPullRequestHeadRepoCreatedAtInt(json.toInt()); }
+    throw FormatException("No variant matched for WebhookPullRequestUnlabeledPullRequestHeadRepoCreatedAt");
   }
   Object? toJson();
 }
 
-final class WebhookPullRequestUnlabeledPullRequestHeadRepoCreatedAtInt
-    extends WebhookPullRequestUnlabeledPullRequestHeadRepoCreatedAt {
+final class WebhookPullRequestUnlabeledPullRequestHeadRepoCreatedAtInt extends WebhookPullRequestUnlabeledPullRequestHeadRepoCreatedAt {
   final int value;
   const WebhookPullRequestUnlabeledPullRequestHeadRepoCreatedAtInt(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
-final class WebhookPullRequestUnlabeledPullRequestHeadRepoCreatedAtString
-    extends WebhookPullRequestUnlabeledPullRequestHeadRepoCreatedAt {
+final class WebhookPullRequestUnlabeledPullRequestHeadRepoCreatedAtString extends WebhookPullRequestUnlabeledPullRequestHeadRepoCreatedAt {
   final String value;
-  const WebhookPullRequestUnlabeledPullRequestHeadRepoCreatedAtString(
-      this.value);
-  @override
-  Object? toJson() => value;
+  const WebhookPullRequestUnlabeledPullRequestHeadRepoCreatedAtString(this.value);
+  @override Object? toJson() => value;
 }
 
 /// Required object value serialized in the `license` wire field.
 class WebhookPullRequestUnlabeledPullRequestHeadRepoLicense {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `key` wire field.
   final String key;
-
   /// Required `string` value serialized in the `name` wire field.
   final String name;
-
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
-
   /// Required `string` value serialized in the `spdx_id` wire field.
   final String spdxId;
-
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String? url;
 
-  const WebhookPullRequestUnlabeledPullRequestHeadRepoLicense(
-      {required this.key,
-      required this.name,
-      required this.nodeId,
-      required this.spdxId,
-      required this.url});
+  const WebhookPullRequestUnlabeledPullRequestHeadRepoLicense({required this.key, required this.name, required this.nodeId, required this.spdxId, required this.url});
 
-  WebhookPullRequestUnlabeledPullRequestHeadRepoLicense Function(
-      {String key,
-      String name,
-      String nodeId,
-      String spdxId,
-      String? url}) get copyWith => _copyWith;
+  WebhookPullRequestUnlabeledPullRequestHeadRepoLicense Function({String key, String name, String nodeId, String spdxId, String? url}) get copyWith => _copyWith;
 
-  WebhookPullRequestUnlabeledPullRequestHeadRepoLicense _copyWith(
-          {Object? key = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? spdxId = sdkOmittedValue,
-          Object? url = sdkOmittedValue}) =>
-      WebhookPullRequestUnlabeledPullRequestHeadRepoLicense(
-        key: identical(key, sdkOmittedValue) ? this.key : key as String,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        spdxId:
-            identical(spdxId, sdkOmittedValue) ? this.spdxId : spdxId as String,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String?,
-      );
+  WebhookPullRequestUnlabeledPullRequestHeadRepoLicense _copyWith({Object? key = sdkOmittedValue, Object? name = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? spdxId = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookPullRequestUnlabeledPullRequestHeadRepoLicense(
+    key: identical(key, sdkOmittedValue) ? this.key : key as String,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+    spdxId: identical(spdxId, sdkOmittedValue) ? this.spdxId : spdxId as String,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String?,
+  );
 
-  factory WebhookPullRequestUnlabeledPullRequestHeadRepoLicense.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestUnlabeledPullRequestHeadRepoLicense(
-        key: (json['key'] as String?)!,
-        name: (json['name'] as String?)!,
-        nodeId: (json['node_id'] as String?)!,
-        spdxId: (json['spdx_id'] as String?)!,
-        url: json.containsKey('url')
-            ? json['url'] as String?
-            : throw ArgumentError.value(
-                null, 'url', 'Required property is missing'),
-      );
+  factory WebhookPullRequestUnlabeledPullRequestHeadRepoLicense.fromJson(Map<String, dynamic> json) => WebhookPullRequestUnlabeledPullRequestHeadRepoLicense(
+    key: (json['key'] as String?)!,
+    name: (json['name'] as String?)!,
+    nodeId: (json['node_id'] as String?)!,
+    spdxId: (json['spdx_id'] as String?)!,
+    url: json.containsKey('url') ? json['url'] as String? : throw ArgumentError.value(null, 'url', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'key': key,
-        'name': name,
-        'node_id': nodeId,
-        'spdx_id': spdxId,
-        'url': url,
-      };
+    'key': key,
+    'name': name,
+    'node_id': nodeId,
+    'spdx_id': spdxId,
+    'url': url,
+  };
 }

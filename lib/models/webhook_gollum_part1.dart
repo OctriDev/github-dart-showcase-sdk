@@ -8,210 +8,105 @@ part of 'webhook_gollum.dart';
 class WebhookGollumPagesItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The action that was performed on the page. Can be `created` or `edited`.
   final WebhookGollumPagesItemAction action;
-
   /// Points to the HTML wiki page.
   final String htmlUrl;
-
   /// The name of the page.
   final String pageName;
-
   /// The latest commit SHA of the page.
   final String sha;
-
   /// Required `string` value serialized in the `summary` wire field.
   final String? summary;
-
   /// The current page title.
   final String title;
 
-  const WebhookGollumPagesItem(
-      {required this.action,
-      required this.htmlUrl,
-      required this.pageName,
-      required this.sha,
-      required this.summary,
-      required this.title});
+  const WebhookGollumPagesItem({required this.action, required this.htmlUrl, required this.pageName, required this.sha, required this.summary, required this.title});
 
-  WebhookGollumPagesItem Function(
-      {WebhookGollumPagesItemAction action,
-      String htmlUrl,
-      String pageName,
-      String sha,
-      String? summary,
-      String title}) get copyWith => _copyWith;
+  WebhookGollumPagesItem Function({WebhookGollumPagesItemAction action, String htmlUrl, String pageName, String sha, String? summary, String title}) get copyWith => _copyWith;
 
-  WebhookGollumPagesItem _copyWith(
-          {Object? action = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? pageName = sdkOmittedValue,
-          Object? sha = sdkOmittedValue,
-          Object? summary = sdkOmittedValue,
-          Object? title = sdkOmittedValue}) =>
-      WebhookGollumPagesItem(
-        action: identical(action, sdkOmittedValue)
-            ? this.action
-            : action as WebhookGollumPagesItemAction,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as String,
-        pageName: identical(pageName, sdkOmittedValue)
-            ? this.pageName
-            : pageName as String,
-        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-        summary: identical(summary, sdkOmittedValue)
-            ? this.summary
-            : summary as String?,
-        title: identical(title, sdkOmittedValue) ? this.title : title as String,
-      );
+  WebhookGollumPagesItem _copyWith({Object? action = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? pageName = sdkOmittedValue, Object? sha = sdkOmittedValue, Object? summary = sdkOmittedValue, Object? title = sdkOmittedValue}) => WebhookGollumPagesItem(
+    action: identical(action, sdkOmittedValue) ? this.action : action as WebhookGollumPagesItemAction,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
+    pageName: identical(pageName, sdkOmittedValue) ? this.pageName : pageName as String,
+    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+    summary: identical(summary, sdkOmittedValue) ? this.summary : summary as String?,
+    title: identical(title, sdkOmittedValue) ? this.title : title as String,
+  );
 
-  factory WebhookGollumPagesItem.fromJson(Map<String, dynamic> json) =>
-      WebhookGollumPagesItem(
-        action: (json['action'] != null
-            ? WebhookGollumPagesItemAction.fromJson(json['action'] as String)
-            : null)!,
-        htmlUrl: (json['html_url'] as String?)!,
-        pageName: (json['page_name'] as String?)!,
-        sha: (json['sha'] as String?)!,
-        summary: json.containsKey('summary')
-            ? json['summary'] as String?
-            : throw ArgumentError.value(
-                null, 'summary', 'Required property is missing'),
-        title: (json['title'] as String?)!,
-      );
+  factory WebhookGollumPagesItem.fromJson(Map<String, dynamic> json) => WebhookGollumPagesItem(
+    action: (json['action'] != null ? WebhookGollumPagesItemAction.fromJson(json['action'] as String) : null)!,
+    htmlUrl: (json['html_url'] as String?)!,
+    pageName: (json['page_name'] as String?)!,
+    sha: (json['sha'] as String?)!,
+    summary: json.containsKey('summary') ? json['summary'] as String? : throw ArgumentError.value(null, 'summary', 'Required property is missing'),
+    title: (json['title'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'action': action.toJson(),
-        'html_url': htmlUrl,
-        'page_name': pageName,
-        'sha': sha,
-        'summary': summary,
-        'title': title,
-      };
+    'action': action.toJson(),
+    'html_url': htmlUrl,
+    'page_name': pageName,
+    'sha': sha,
+    'summary': summary,
+    'title': title,
+  };
 }
 
 /// Typed representation of the `WebhookGollum` API schema.
 class WebhookGollum {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured on an enterprise account or an organization that's part of an enterprise account. For more information, see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
   final SdkOptional<EnterpriseWebhooks> enterprise;
-
   /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured for and sent to a GitHub App. For more information, see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
   final SdkOptional<SimpleInstallation> installation;
-
   /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an organization, or when the event occurs from activity in a repository owned by an organization.
   final SdkOptional<OrganizationSimpleWebhooks> organization;
-
   /// The pages that were updated.
   final List<WebhookGollumPagesItem> pages;
-
   /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property when the event occurs from activity in a repository.
   final RepositoryWebhooks repository;
-
   /// A GitHub user.
   final SimpleUser sender;
 
-  const WebhookGollum(
-      {this.enterprise = const SdkOmitted(),
-      this.installation = const SdkOmitted(),
-      this.organization = const SdkOmitted(),
-      required this.pages,
-      required this.repository,
-      required this.sender});
+  const WebhookGollum({this.enterprise = const SdkOmitted(), this.installation = const SdkOmitted(), this.organization = const SdkOmitted(), required this.pages, required this.repository, required this.sender});
 
-  WebhookGollum Function(
-      {SdkOptional<EnterpriseWebhooks> enterprise,
-      SdkOptional<SimpleInstallation> installation,
-      SdkOptional<OrganizationSimpleWebhooks> organization,
-      List<WebhookGollumPagesItem> pages,
-      RepositoryWebhooks repository,
-      SimpleUser sender}) get copyWith => _copyWith;
+  WebhookGollum Function({SdkOptional<EnterpriseWebhooks> enterprise, SdkOptional<SimpleInstallation> installation, SdkOptional<OrganizationSimpleWebhooks> organization, List<WebhookGollumPagesItem> pages, RepositoryWebhooks repository, SimpleUser sender}) get copyWith => _copyWith;
 
-  WebhookGollum _copyWith(
-          {Object? enterprise = sdkOmittedValue,
-          Object? installation = sdkOmittedValue,
-          Object? organization = sdkOmittedValue,
-          Object? pages = sdkOmittedValue,
-          Object? repository = sdkOmittedValue,
-          Object? sender = sdkOmittedValue}) =>
-      WebhookGollum(
-        enterprise: identical(enterprise, sdkOmittedValue)
-            ? this.enterprise
-            : enterprise as SdkOptional<EnterpriseWebhooks>,
-        installation: identical(installation, sdkOmittedValue)
-            ? this.installation
-            : installation as SdkOptional<SimpleInstallation>,
-        organization: identical(organization, sdkOmittedValue)
-            ? this.organization
-            : organization as SdkOptional<OrganizationSimpleWebhooks>,
-        pages: identical(pages, sdkOmittedValue)
-            ? this.pages
-            : pages as List<WebhookGollumPagesItem>,
-        repository: identical(repository, sdkOmittedValue)
-            ? this.repository
-            : repository as RepositoryWebhooks,
-        sender: identical(sender, sdkOmittedValue)
-            ? this.sender
-            : sender as SimpleUser,
-      );
+  WebhookGollum _copyWith({Object? enterprise = sdkOmittedValue, Object? installation = sdkOmittedValue, Object? organization = sdkOmittedValue, Object? pages = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? sender = sdkOmittedValue}) => WebhookGollum(
+    enterprise: identical(enterprise, sdkOmittedValue) ? this.enterprise : enterprise as SdkOptional<EnterpriseWebhooks>,
+    installation: identical(installation, sdkOmittedValue) ? this.installation : installation as SdkOptional<SimpleInstallation>,
+    organization: identical(organization, sdkOmittedValue) ? this.organization : organization as SdkOptional<OrganizationSimpleWebhooks>,
+    pages: identical(pages, sdkOmittedValue) ? this.pages : pages as List<WebhookGollumPagesItem>,
+    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as RepositoryWebhooks,
+    sender: identical(sender, sdkOmittedValue) ? this.sender : sender as SimpleUser,
+  );
 
   factory WebhookGollum.fromJson(Map<String, dynamic> json) => WebhookGollum(
-        enterprise: json['enterprise'] != null
-            ? SdkPresent((json['enterprise'] != null
-                ? EnterpriseWebhooks.fromJson(
-                    json['enterprise'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        installation: json['installation'] != null
-            ? SdkPresent((json['installation'] != null
-                ? SimpleInstallation.fromJson(
-                    json['installation'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        organization: json['organization'] != null
-            ? SdkPresent((json['organization'] != null
-                ? OrganizationSimpleWebhooks.fromJson(
-                    json['organization'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        pages: ((json['pages'] as List?)
-            ?.map((e) =>
-                WebhookGollumPagesItem.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-        repository: (json['repository'] != null
-            ? RepositoryWebhooks.fromJson(
-                json['repository'] as Map<String, dynamic>)
-            : null)!,
-        sender: (json['sender'] != null
-            ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
-            : null)!,
-      );
+    enterprise: json['enterprise'] != null ? SdkPresent((json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    installation: json['installation'] != null ? SdkPresent((json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    organization: json['organization'] != null ? SdkPresent((json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    pages: ((json['pages'] as List?)?.map((e) => WebhookGollumPagesItem.fromJson(e as Map<String, dynamic>)).toList())!,
+    repository: (json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null)!,
+    sender: (json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (enterprise) {
-          SdkPresent<EnterpriseWebhooks>(value: final value) => {
-              'enterprise': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (installation) {
-          SdkPresent<SimpleInstallation>(value: final value) => {
-              'installation': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (organization) {
-          SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {
-              'organization': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'pages': pages.map((item) => item.toJson()).toList(),
-        'repository': repository.toJson(),
-        'sender': sender.toJson(),
-      };
+    ...switch (enterprise) {
+      SdkPresent<EnterpriseWebhooks>(value: final value) => {'enterprise': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (installation) {
+      SdkPresent<SimpleInstallation>(value: final value) => {'installation': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (organization) {
+      SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {'organization': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'pages': pages.map((item) => item.toJson()).toList(),
+    'repository': repository.toJson(),
+    'sender': sender.toJson(),
+  };
 }

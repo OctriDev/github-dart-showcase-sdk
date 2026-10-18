@@ -8,375 +8,206 @@ part of 'migrations.dart';
 class Migration {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `int64`-formatted value serialized in the `id` wire field.
   final int id;
-
   /// A GitHub user.
   final NullableSimpleUser? owner;
-
   /// Required `string` value serialized in the `guid` wire field.
   final String guid;
-
   /// Required `string` value serialized in the `state` wire field.
   final String state;
-
   /// Required `boolean` value serialized in the `lock_repositories` wire field.
   final bool lockRepositories;
-
   /// Required `boolean` value serialized in the `exclude_metadata` wire field.
   final bool excludeMetadata;
-
   /// Required `boolean` value serialized in the `exclude_git_data` wire field.
   final bool excludeGitData;
-
   /// Required `boolean` value serialized in the `exclude_attachments` wire field.
   final bool excludeAttachments;
-
   /// Required `boolean` value serialized in the `exclude_releases` wire field.
   final bool excludeReleases;
-
   /// Required `boolean` value serialized in the `exclude_owner_projects` wire field.
   final bool excludeOwnerProjects;
-
   /// Required `boolean` value serialized in the `org_metadata_only` wire field.
   final bool orgMetadataOnly;
-
   /// The repositories included in the migration. Only returned for export migrations.
   final List<Repository> repositories;
-
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
-
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String createdAt;
-
   /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
   final String updatedAt;
-
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
-
   /// Optional `uri`-formatted value serialized in the `archive_url` wire field.
   final SdkOptional<String> archiveUrl;
-
   /// Exclude related items from being returned in the response in order to improve performance of the request. The array can include any of: `"repositories"`.
   final SdkOptional<List<String>> exclude;
 
-  const Migration(
-      {required this.id,
-      required this.owner,
-      required this.guid,
-      required this.state,
-      required this.lockRepositories,
-      required this.excludeMetadata,
-      required this.excludeGitData,
-      required this.excludeAttachments,
-      required this.excludeReleases,
-      required this.excludeOwnerProjects,
-      required this.orgMetadataOnly,
-      required this.repositories,
-      required this.url,
-      required this.createdAt,
-      required this.updatedAt,
-      required this.nodeId,
-      this.archiveUrl = const SdkOmitted(),
-      this.exclude = const SdkOmitted()});
+  const Migration({required this.id, required this.owner, required this.guid, required this.state, required this.lockRepositories, required this.excludeMetadata, required this.excludeGitData, required this.excludeAttachments, required this.excludeReleases, required this.excludeOwnerProjects, required this.orgMetadataOnly, required this.repositories, required this.url, required this.createdAt, required this.updatedAt, required this.nodeId, this.archiveUrl = const SdkOmitted(), this.exclude = const SdkOmitted()});
 
-  Migration Function(
-      {int id,
-      NullableSimpleUser? owner,
-      String guid,
-      String state,
-      bool lockRepositories,
-      bool excludeMetadata,
-      bool excludeGitData,
-      bool excludeAttachments,
-      bool excludeReleases,
-      bool excludeOwnerProjects,
-      bool orgMetadataOnly,
-      List<Repository> repositories,
-      String url,
-      String createdAt,
-      String updatedAt,
-      String nodeId,
-      SdkOptional<String> archiveUrl,
-      SdkOptional<List<String>> exclude}) get copyWith => _copyWith;
+  Migration Function({int id, NullableSimpleUser? owner, String guid, String state, bool lockRepositories, bool excludeMetadata, bool excludeGitData, bool excludeAttachments, bool excludeReleases, bool excludeOwnerProjects, bool orgMetadataOnly, List<Repository> repositories, String url, String createdAt, String updatedAt, String nodeId, SdkOptional<String> archiveUrl, SdkOptional<List<String>> exclude}) get copyWith => _copyWith;
 
-  Migration _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? owner = sdkOmittedValue,
-          Object? guid = sdkOmittedValue,
-          Object? state = sdkOmittedValue,
-          Object? lockRepositories = sdkOmittedValue,
-          Object? excludeMetadata = sdkOmittedValue,
-          Object? excludeGitData = sdkOmittedValue,
-          Object? excludeAttachments = sdkOmittedValue,
-          Object? excludeReleases = sdkOmittedValue,
-          Object? excludeOwnerProjects = sdkOmittedValue,
-          Object? orgMetadataOnly = sdkOmittedValue,
-          Object? repositories = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? archiveUrl = sdkOmittedValue,
-          Object? exclude = sdkOmittedValue}) =>
-      Migration(
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        owner: identical(owner, sdkOmittedValue)
-            ? this.owner
-            : owner as NullableSimpleUser?,
-        guid: identical(guid, sdkOmittedValue) ? this.guid : guid as String,
-        state: identical(state, sdkOmittedValue) ? this.state : state as String,
-        lockRepositories: identical(lockRepositories, sdkOmittedValue)
-            ? this.lockRepositories
-            : lockRepositories as bool,
-        excludeMetadata: identical(excludeMetadata, sdkOmittedValue)
-            ? this.excludeMetadata
-            : excludeMetadata as bool,
-        excludeGitData: identical(excludeGitData, sdkOmittedValue)
-            ? this.excludeGitData
-            : excludeGitData as bool,
-        excludeAttachments: identical(excludeAttachments, sdkOmittedValue)
-            ? this.excludeAttachments
-            : excludeAttachments as bool,
-        excludeReleases: identical(excludeReleases, sdkOmittedValue)
-            ? this.excludeReleases
-            : excludeReleases as bool,
-        excludeOwnerProjects: identical(excludeOwnerProjects, sdkOmittedValue)
-            ? this.excludeOwnerProjects
-            : excludeOwnerProjects as bool,
-        orgMetadataOnly: identical(orgMetadataOnly, sdkOmittedValue)
-            ? this.orgMetadataOnly
-            : orgMetadataOnly as bool,
-        repositories: identical(repositories, sdkOmittedValue)
-            ? this.repositories
-            : repositories as List<Repository>,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as String,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as String,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        archiveUrl: identical(archiveUrl, sdkOmittedValue)
-            ? this.archiveUrl
-            : archiveUrl as SdkOptional<String>,
-        exclude: identical(exclude, sdkOmittedValue)
-            ? this.exclude
-            : exclude as SdkOptional<List<String>>,
-      );
+  Migration _copyWith({Object? id = sdkOmittedValue, Object? owner = sdkOmittedValue, Object? guid = sdkOmittedValue, Object? state = sdkOmittedValue, Object? lockRepositories = sdkOmittedValue, Object? excludeMetadata = sdkOmittedValue, Object? excludeGitData = sdkOmittedValue, Object? excludeAttachments = sdkOmittedValue, Object? excludeReleases = sdkOmittedValue, Object? excludeOwnerProjects = sdkOmittedValue, Object? orgMetadataOnly = sdkOmittedValue, Object? repositories = sdkOmittedValue, Object? url = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? archiveUrl = sdkOmittedValue, Object? exclude = sdkOmittedValue}) => Migration(
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    owner: identical(owner, sdkOmittedValue) ? this.owner : owner as NullableSimpleUser?,
+    guid: identical(guid, sdkOmittedValue) ? this.guid : guid as String,
+    state: identical(state, sdkOmittedValue) ? this.state : state as String,
+    lockRepositories: identical(lockRepositories, sdkOmittedValue) ? this.lockRepositories : lockRepositories as bool,
+    excludeMetadata: identical(excludeMetadata, sdkOmittedValue) ? this.excludeMetadata : excludeMetadata as bool,
+    excludeGitData: identical(excludeGitData, sdkOmittedValue) ? this.excludeGitData : excludeGitData as bool,
+    excludeAttachments: identical(excludeAttachments, sdkOmittedValue) ? this.excludeAttachments : excludeAttachments as bool,
+    excludeReleases: identical(excludeReleases, sdkOmittedValue) ? this.excludeReleases : excludeReleases as bool,
+    excludeOwnerProjects: identical(excludeOwnerProjects, sdkOmittedValue) ? this.excludeOwnerProjects : excludeOwnerProjects as bool,
+    orgMetadataOnly: identical(orgMetadataOnly, sdkOmittedValue) ? this.orgMetadataOnly : orgMetadataOnly as bool,
+    repositories: identical(repositories, sdkOmittedValue) ? this.repositories : repositories as List<Repository>,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+    archiveUrl: identical(archiveUrl, sdkOmittedValue) ? this.archiveUrl : archiveUrl as SdkOptional<String>,
+    exclude: identical(exclude, sdkOmittedValue) ? this.exclude : exclude as SdkOptional<List<String>>,
+  );
 
   factory Migration.fromJson(Map<String, dynamic> json) => Migration(
-        id: ((json['id'] as num?)?.toInt())!,
-        owner: json.containsKey('owner')
-            ? json['owner'] != null
-                ? NullableSimpleUser.fromJson(
-                    json['owner'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'owner', 'Required property is missing'),
-        guid: (json['guid'] as String?)!,
-        state: (json['state'] as String?)!,
-        lockRepositories: (json['lock_repositories'] as bool?)!,
-        excludeMetadata: (json['exclude_metadata'] as bool?)!,
-        excludeGitData: (json['exclude_git_data'] as bool?)!,
-        excludeAttachments: (json['exclude_attachments'] as bool?)!,
-        excludeReleases: (json['exclude_releases'] as bool?)!,
-        excludeOwnerProjects: (json['exclude_owner_projects'] as bool?)!,
-        orgMetadataOnly: (json['org_metadata_only'] as bool?)!,
-        repositories: ((json['repositories'] as List?)
-            ?.map((e) => Repository.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-        url: (json['url'] as String?)!,
-        createdAt: (json['created_at'] as String?)!,
-        updatedAt: (json['updated_at'] as String?)!,
-        nodeId: (json['node_id'] as String?)!,
-        archiveUrl: json['archive_url'] != null
-            ? SdkPresent((json['archive_url'] as String?)!)
-            : const SdkOmitted(),
-        exclude: json['exclude'] != null
-            ? SdkPresent(
-                ((json['exclude'] as List?)?.map((e) => e as String).toList())!)
-            : const SdkOmitted(),
-      );
+    id: ((json['id'] as num?)?.toInt())!,
+    owner: json.containsKey('owner') ? json['owner'] != null ? NullableSimpleUser.fromJson(json['owner'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'owner', 'Required property is missing'),
+    guid: (json['guid'] as String?)!,
+    state: (json['state'] as String?)!,
+    lockRepositories: (json['lock_repositories'] as bool?)!,
+    excludeMetadata: (json['exclude_metadata'] as bool?)!,
+    excludeGitData: (json['exclude_git_data'] as bool?)!,
+    excludeAttachments: (json['exclude_attachments'] as bool?)!,
+    excludeReleases: (json['exclude_releases'] as bool?)!,
+    excludeOwnerProjects: (json['exclude_owner_projects'] as bool?)!,
+    orgMetadataOnly: (json['org_metadata_only'] as bool?)!,
+    repositories: ((json['repositories'] as List?)?.map((e) => Repository.fromJson(e as Map<String, dynamic>)).toList())!,
+    url: (json['url'] as String?)!,
+    createdAt: (json['created_at'] as String?)!,
+    updatedAt: (json['updated_at'] as String?)!,
+    nodeId: (json['node_id'] as String?)!,
+    archiveUrl: json['archive_url'] != null ? SdkPresent((json['archive_url'] as String?)!) : const SdkOmitted(),
+    exclude: json['exclude'] != null ? SdkPresent(((json['exclude'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'owner': owner?.toJson(),
-        'guid': guid,
-        'state': state,
-        'lock_repositories': lockRepositories,
-        'exclude_metadata': excludeMetadata,
-        'exclude_git_data': excludeGitData,
-        'exclude_attachments': excludeAttachments,
-        'exclude_releases': excludeReleases,
-        'exclude_owner_projects': excludeOwnerProjects,
-        'org_metadata_only': orgMetadataOnly,
-        'repositories': repositories.map((item) => item.toJson()).toList(),
-        'url': url,
-        'created_at': createdAt,
-        'updated_at': updatedAt,
-        'node_id': nodeId,
-        ...switch (archiveUrl) {
-          SdkPresent<String>(value: final value) => {
-              'archive_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (exclude) {
-          SdkPresent<List<String>>(value: final value) => {
-              'exclude': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'id': id,
+    'owner': owner?.toJson(),
+    'guid': guid,
+    'state': state,
+    'lock_repositories': lockRepositories,
+    'exclude_metadata': excludeMetadata,
+    'exclude_git_data': excludeGitData,
+    'exclude_attachments': excludeAttachments,
+    'exclude_releases': excludeReleases,
+    'exclude_owner_projects': excludeOwnerProjects,
+    'org_metadata_only': orgMetadataOnly,
+    'repositories': repositories.map((item) => item.toJson()).toList(),
+    'url': url,
+    'created_at': createdAt,
+    'updated_at': updatedAt,
+    'node_id': nodeId,
+    ...switch (archiveUrl) {
+      SdkPresent<String>(value: final value) => {'archive_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (exclude) {
+      SdkPresent<List<String>>(value: final value) => {'exclude': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Porter Author
 class PorterAuthor {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
-
   /// Required `string` value serialized in the `remote_id` wire field.
   final String remoteId;
-
   /// Required `string` value serialized in the `remote_name` wire field.
   final String remoteName;
-
   /// Required `string` value serialized in the `email` wire field.
   final String email;
-
   /// Required `string` value serialized in the `name` wire field.
   final String name;
-
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
-
   /// Required `uri`-formatted value serialized in the `import_url` wire field.
   final String importUrl;
 
-  const PorterAuthor(
-      {required this.id,
-      required this.remoteId,
-      required this.remoteName,
-      required this.email,
-      required this.name,
-      required this.url,
-      required this.importUrl});
+  const PorterAuthor({required this.id, required this.remoteId, required this.remoteName, required this.email, required this.name, required this.url, required this.importUrl});
 
-  PorterAuthor Function(
-      {int id,
-      String remoteId,
-      String remoteName,
-      String email,
-      String name,
-      String url,
-      String importUrl}) get copyWith => _copyWith;
+  PorterAuthor Function({int id, String remoteId, String remoteName, String email, String name, String url, String importUrl}) get copyWith => _copyWith;
 
-  PorterAuthor _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? remoteId = sdkOmittedValue,
-          Object? remoteName = sdkOmittedValue,
-          Object? email = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? importUrl = sdkOmittedValue}) =>
-      PorterAuthor(
-        id: identical(id, sdkOmittedValue) ? this.id : id as int,
-        remoteId: identical(remoteId, sdkOmittedValue)
-            ? this.remoteId
-            : remoteId as String,
-        remoteName: identical(remoteName, sdkOmittedValue)
-            ? this.remoteName
-            : remoteName as String,
-        email: identical(email, sdkOmittedValue) ? this.email : email as String,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String,
-        importUrl: identical(importUrl, sdkOmittedValue)
-            ? this.importUrl
-            : importUrl as String,
-      );
+  PorterAuthor _copyWith({Object? id = sdkOmittedValue, Object? remoteId = sdkOmittedValue, Object? remoteName = sdkOmittedValue, Object? email = sdkOmittedValue, Object? name = sdkOmittedValue, Object? url = sdkOmittedValue, Object? importUrl = sdkOmittedValue}) => PorterAuthor(
+    id: identical(id, sdkOmittedValue) ? this.id : id as int,
+    remoteId: identical(remoteId, sdkOmittedValue) ? this.remoteId : remoteId as String,
+    remoteName: identical(remoteName, sdkOmittedValue) ? this.remoteName : remoteName as String,
+    email: identical(email, sdkOmittedValue) ? this.email : email as String,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String,
+    importUrl: identical(importUrl, sdkOmittedValue) ? this.importUrl : importUrl as String,
+  );
 
   factory PorterAuthor.fromJson(Map<String, dynamic> json) => PorterAuthor(
-        id: ((json['id'] as num?)?.toInt())!,
-        remoteId: (json['remote_id'] as String?)!,
-        remoteName: (json['remote_name'] as String?)!,
-        email: (json['email'] as String?)!,
-        name: (json['name'] as String?)!,
-        url: (json['url'] as String?)!,
-        importUrl: (json['import_url'] as String?)!,
-      );
+    id: ((json['id'] as num?)?.toInt())!,
+    remoteId: (json['remote_id'] as String?)!,
+    remoteName: (json['remote_name'] as String?)!,
+    email: (json['email'] as String?)!,
+    name: (json['name'] as String?)!,
+    url: (json['url'] as String?)!,
+    importUrl: (json['import_url'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'remote_id': remoteId,
-        'remote_name': remoteName,
-        'email': email,
-        'name': name,
-        'url': url,
-        'import_url': importUrl,
-      };
+    'id': id,
+    'remote_id': remoteId,
+    'remote_name': remoteName,
+    'email': email,
+    'name': name,
+    'url': url,
+    'import_url': importUrl,
+  };
 }
 
 /// Porter Large File
 class PorterLargeFile {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `ref_name` wire field.
   final String refName;
-
   /// Required `string` value serialized in the `path` wire field.
   final String path;
-
   /// Required `string` value serialized in the `oid` wire field.
   final String oid;
-
   /// Required `integer` value serialized in the `size` wire field.
   final int size;
 
-  const PorterLargeFile(
-      {required this.refName,
-      required this.path,
-      required this.oid,
-      required this.size});
+  const PorterLargeFile({required this.refName, required this.path, required this.oid, required this.size});
 
-  PorterLargeFile Function({String refName, String path, String oid, int size})
-      get copyWith => _copyWith;
+  PorterLargeFile Function({String refName, String path, String oid, int size}) get copyWith => _copyWith;
 
-  PorterLargeFile _copyWith(
-          {Object? refName = sdkOmittedValue,
-          Object? path = sdkOmittedValue,
-          Object? oid = sdkOmittedValue,
-          Object? size = sdkOmittedValue}) =>
-      PorterLargeFile(
-        refName: identical(refName, sdkOmittedValue)
-            ? this.refName
-            : refName as String,
-        path: identical(path, sdkOmittedValue) ? this.path : path as String,
-        oid: identical(oid, sdkOmittedValue) ? this.oid : oid as String,
-        size: identical(size, sdkOmittedValue) ? this.size : size as int,
-      );
+  PorterLargeFile _copyWith({Object? refName = sdkOmittedValue, Object? path = sdkOmittedValue, Object? oid = sdkOmittedValue, Object? size = sdkOmittedValue}) => PorterLargeFile(
+    refName: identical(refName, sdkOmittedValue) ? this.refName : refName as String,
+    path: identical(path, sdkOmittedValue) ? this.path : path as String,
+    oid: identical(oid, sdkOmittedValue) ? this.oid : oid as String,
+    size: identical(size, sdkOmittedValue) ? this.size : size as int,
+  );
 
-  factory PorterLargeFile.fromJson(Map<String, dynamic> json) =>
-      PorterLargeFile(
-        refName: (json['ref_name'] as String?)!,
-        path: (json['path'] as String?)!,
-        oid: (json['oid'] as String?)!,
-        size: ((json['size'] as num?)?.toInt())!,
-      );
+  factory PorterLargeFile.fromJson(Map<String, dynamic> json) => PorterLargeFile(
+    refName: (json['ref_name'] as String?)!,
+    path: (json['path'] as String?)!,
+    oid: (json['oid'] as String?)!,
+    size: ((json['size'] as num?)?.toInt())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'ref_name': refName,
-        'path': path,
-        'oid': oid,
-        'size': size,
-      };
+    'ref_name': refName,
+    'path': path,
+    'oid': oid,
+    'size': size,
+  };
 }

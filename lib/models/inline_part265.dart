@@ -6,12 +6,12 @@ part of 'inline.dart';
 // Inline operation models (part 265)
 /// The state of the status.
 final class ReposCreateCommitStatusRequestBodyState {
+
   final String value;
 
   const ReposCreateCommitStatusRequestBodyState._(this.value);
 
-  factory ReposCreateCommitStatusRequestBodyState.fromJson(String value) =>
-      ReposCreateCommitStatusRequestBodyState._(value);
+  factory ReposCreateCommitStatusRequestBodyState.fromJson(String value) => ReposCreateCommitStatusRequestBodyState._(value);
 
   static const error = ReposCreateCommitStatusRequestBodyState._('error');
   static const failure = ReposCreateCommitStatusRequestBodyState._('failure');
@@ -20,18 +20,16 @@ final class ReposCreateCommitStatusRequestBodyState {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is ReposCreateCommitStatusRequestBodyState && other.value == value;
+  @override bool operator ==(Object other) => other is ReposCreateCommitStatusRequestBodyState && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 final class SearchCodeSort {
+
   final String value;
 
   const SearchCodeSort._(this.value);
@@ -42,18 +40,16 @@ final class SearchCodeSort {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SearchCodeSort && other.value == value;
+  @override bool operator ==(Object other) => other is SearchCodeSort && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 final class SearchCodeOrder {
+
   final String value;
 
   const SearchCodeOrder._(this.value);
@@ -65,161 +61,117 @@ final class SearchCodeOrder {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SearchCodeOrder && other.value == value;
+  @override bool operator ==(Object other) => other is SearchCodeOrder && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 final class SearchCommitsSort {
+
   final String value;
 
   const SearchCommitsSort._(this.value);
 
-  factory SearchCommitsSort.fromJson(String value) =>
-      SearchCommitsSort._(value);
+  factory SearchCommitsSort.fromJson(String value) => SearchCommitsSort._(value);
 
   static const authorDate = SearchCommitsSort._('author-date');
   static const committerDate = SearchCommitsSort._('committer-date');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SearchCommitsSort && other.value == value;
+  @override bool operator ==(Object other) => other is SearchCommitsSort && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 final class SearchIssuesAndPullRequestsSort {
+
   final String value;
 
   const SearchIssuesAndPullRequestsSort._(this.value);
 
-  factory SearchIssuesAndPullRequestsSort.fromJson(String value) =>
-      SearchIssuesAndPullRequestsSort._(value);
+  factory SearchIssuesAndPullRequestsSort.fromJson(String value) => SearchIssuesAndPullRequestsSort._(value);
 
   static const comments = SearchIssuesAndPullRequestsSort._('comments');
   static const reactions = SearchIssuesAndPullRequestsSort._('reactions');
-  static const reactionsPlus1 =
-      SearchIssuesAndPullRequestsSort._('reactions-+1');
-  static const reactionsMinus1 =
-      SearchIssuesAndPullRequestsSort._('reactions--1');
-  static const reactionsSmile =
-      SearchIssuesAndPullRequestsSort._('reactions-smile');
-  static const reactionsThinkingFace =
-      SearchIssuesAndPullRequestsSort._('reactions-thinking_face');
-  static const reactionsHeart =
-      SearchIssuesAndPullRequestsSort._('reactions-heart');
-  static const reactionsTada =
-      SearchIssuesAndPullRequestsSort._('reactions-tada');
+  static const reactionsPlus1 = SearchIssuesAndPullRequestsSort._('reactions-+1');
+  static const reactionsMinus1 = SearchIssuesAndPullRequestsSort._('reactions--1');
+  static const reactionsSmile = SearchIssuesAndPullRequestsSort._('reactions-smile');
+  static const reactionsThinkingFace = SearchIssuesAndPullRequestsSort._('reactions-thinking_face');
+  static const reactionsHeart = SearchIssuesAndPullRequestsSort._('reactions-heart');
+  static const reactionsTada = SearchIssuesAndPullRequestsSort._('reactions-tada');
   static const interactions = SearchIssuesAndPullRequestsSort._('interactions');
   static const created = SearchIssuesAndPullRequestsSort._('created');
   static const updated = SearchIssuesAndPullRequestsSort._('updated');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SearchIssuesAndPullRequestsSort && other.value == value;
+  @override bool operator ==(Object other) => other is SearchIssuesAndPullRequestsSort && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 final class SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem {
+
   final String value;
 
-  const SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem._(
-      this.value);
+  const SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem._(this.value);
 
-  factory SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem.fromJson(
-          String value) =>
-      SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem._(value);
+  factory SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem.fromJson(String value) => SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem._(value);
 
-  static const noTextTerms =
-      SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem._(
-          'no_text_terms');
-  static const quotedText =
-      SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem._(
-          'quoted_text');
-  static const nonIssueTarget =
-      SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem._(
-          'non_issue_target');
-  static const orBooleanNotSupported =
-      SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem._(
-          'or_boolean_not_supported');
-  static const noAccessibleRepos =
-      SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem._(
-          'no_accessible_repos');
-  static const serverError =
-      SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem._(
-          'server_error');
-  static const onlyNonSemanticFieldsRequested =
-      SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem._(
-          'only_non_semantic_fields_requested');
-  static const serviceUnavailable =
-      SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem._(
-          'service_unavailable');
+  static const noTextTerms = SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem._('no_text_terms');
+  static const quotedText = SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem._('quoted_text');
+  static const nonIssueTarget = SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem._('non_issue_target');
+  static const orBooleanNotSupported = SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem._('or_boolean_not_supported');
+  static const noAccessibleRepos = SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem._('no_accessible_repos');
+  static const serverError = SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem._('server_error');
+  static const onlyNonSemanticFieldsRequested = SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem._('only_non_semantic_fields_requested');
+  static const serviceUnavailable = SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem._('service_unavailable');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The type of search that was performed. Possible values are `lexical`, `semantic`, or `hybrid`.
 final class SearchIssuesAndPullRequestsResponseSearchType {
+
   final String value;
 
   const SearchIssuesAndPullRequestsResponseSearchType._(this.value);
 
-  factory SearchIssuesAndPullRequestsResponseSearchType.fromJson(
-          String value) =>
-      SearchIssuesAndPullRequestsResponseSearchType._(value);
+  factory SearchIssuesAndPullRequestsResponseSearchType.fromJson(String value) => SearchIssuesAndPullRequestsResponseSearchType._(value);
 
-  static const lexical =
-      SearchIssuesAndPullRequestsResponseSearchType._('lexical');
-  static const semantic =
-      SearchIssuesAndPullRequestsResponseSearchType._('semantic');
-  static const hybrid =
-      SearchIssuesAndPullRequestsResponseSearchType._('hybrid');
+  static const lexical = SearchIssuesAndPullRequestsResponseSearchType._('lexical');
+  static const semantic = SearchIssuesAndPullRequestsResponseSearchType._('semantic');
+  static const hybrid = SearchIssuesAndPullRequestsResponseSearchType._('hybrid');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SearchIssuesAndPullRequestsResponseSearchType &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is SearchIssuesAndPullRequestsResponseSearchType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 final class SearchLabelsSort {
+
   final String value;
 
   const SearchLabelsSort._(this.value);
@@ -231,18 +183,16 @@ final class SearchLabelsSort {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SearchLabelsSort && other.value == value;
+  @override bool operator ==(Object other) => other is SearchLabelsSort && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 final class SearchReposSort {
+
   final String value;
 
   const SearchReposSort._(this.value);
@@ -256,18 +206,16 @@ final class SearchReposSort {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SearchReposSort && other.value == value;
+  @override bool operator ==(Object other) => other is SearchReposSort && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 final class SearchUsersSort {
+
   final String value;
 
   const SearchUsersSort._(this.value);
@@ -280,56 +228,44 @@ final class SearchUsersSort {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SearchUsersSort && other.value == value;
+  @override bool operator ==(Object other) => other is SearchUsersSort && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The notification setting the team has chosen. Editing teams without specifying this parameter leaves `notification_setting` intact. The options are: * `notifications_enabled` - team members receive notifications when the team is @mentioned. * `notifications_disabled` - no one receives notifications.
 final class TeamsUpdateLegacyRequestBodyNotificationSetting {
+
   final String value;
 
   const TeamsUpdateLegacyRequestBodyNotificationSetting._(this.value);
 
-  factory TeamsUpdateLegacyRequestBodyNotificationSetting.fromJson(
-          String value) =>
-      TeamsUpdateLegacyRequestBodyNotificationSetting._(value);
+  factory TeamsUpdateLegacyRequestBodyNotificationSetting.fromJson(String value) => TeamsUpdateLegacyRequestBodyNotificationSetting._(value);
 
-  static const notificationsEnabled =
-      TeamsUpdateLegacyRequestBodyNotificationSetting._(
-          'notifications_enabled');
-  static const notificationsDisabled =
-      TeamsUpdateLegacyRequestBodyNotificationSetting._(
-          'notifications_disabled');
+  static const notificationsEnabled = TeamsUpdateLegacyRequestBodyNotificationSetting._('notifications_enabled');
+  static const notificationsDisabled = TeamsUpdateLegacyRequestBodyNotificationSetting._('notifications_disabled');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is TeamsUpdateLegacyRequestBodyNotificationSetting &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is TeamsUpdateLegacyRequestBodyNotificationSetting && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// **Closing down notice**. The permission that new repositories will be added to the team with when none is specified.
 final class TeamsUpdateLegacyRequestBodyPermission {
+
   final String value;
 
   const TeamsUpdateLegacyRequestBodyPermission._(this.value);
 
-  factory TeamsUpdateLegacyRequestBodyPermission.fromJson(String value) =>
-      TeamsUpdateLegacyRequestBodyPermission._(value);
+  factory TeamsUpdateLegacyRequestBodyPermission.fromJson(String value) => TeamsUpdateLegacyRequestBodyPermission._(value);
 
   static const pull = TeamsUpdateLegacyRequestBodyPermission._('pull');
   static const push = TeamsUpdateLegacyRequestBodyPermission._('push');
@@ -337,13 +273,10 @@ final class TeamsUpdateLegacyRequestBodyPermission {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is TeamsUpdateLegacyRequestBodyPermission && other.value == value;
+  @override bool operator ==(Object other) => other is TeamsUpdateLegacyRequestBodyPermission && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

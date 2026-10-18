@@ -10,301 +10,58 @@ sealed class RepositoryRule {
   const RepositoryRule();
   factory RepositoryRule.fromJson(Object? json) {
     if (json is Map<String, dynamic>) {
-      try {
-        final value = RepositoryRuleCreation.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RepositoryRuleRepositoryRuleCreation(value);
-        }
-      } catch (_) {}
-      try {
-        final value = RepositoryRuleUpdate.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RepositoryRuleRepositoryRuleUpdate(value);
-        }
-      } catch (_) {}
-      try {
-        final value = RepositoryRuleDeletion.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RepositoryRuleRepositoryRuleDeletion(value);
-        }
-      } catch (_) {}
-      try {
-        final value = RepositoryRuleRequiredLinearHistory.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RepositoryRuleRepositoryRuleRequiredLinearHistory(value);
-        }
-      } catch (_) {}
-      try {
-        final value = RepositoryRuleMergeQueue.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RepositoryRuleRepositoryRuleMergeQueue(value);
-        }
-      } catch (_) {}
-      try {
-        final value = RepositoryRuleRequiredDeployments.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RepositoryRuleRepositoryRuleRequiredDeployments(value);
-        }
-      } catch (_) {}
-      try {
-        final value = RepositoryRuleRequiredSignatures.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RepositoryRuleRepositoryRuleRequiredSignatures(value);
-        }
-      } catch (_) {}
-      try {
-        final value = RepositoryRulePullRequest.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RepositoryRuleRepositoryRulePullRequest(value);
-        }
-      } catch (_) {}
-      try {
-        final value = RepositoryRuleRequiredStatusChecks.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RepositoryRuleRepositoryRuleRequiredStatusChecks(value);
-        }
-      } catch (_) {}
-      try {
-        final value = RepositoryRuleNonFastForward.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RepositoryRuleRepositoryRuleNonFastForward(value);
-        }
-      } catch (_) {}
-      try {
-        final value = RepositoryRuleCommitMessagePattern.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RepositoryRuleRepositoryRuleCommitMessagePattern(value);
-        }
-      } catch (_) {}
-      try {
-        final value = RepositoryRuleCommitAuthorEmailPattern.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RepositoryRuleRepositoryRuleCommitAuthorEmailPattern(value);
-        }
-      } catch (_) {}
-      try {
-        final value = RepositoryRuleCommitterEmailPattern.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RepositoryRuleRepositoryRuleCommitterEmailPattern(value);
-        }
-      } catch (_) {}
-      try {
-        final value = RepositoryRuleBranchNamePattern.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RepositoryRuleRepositoryRuleBranchNamePattern(value);
-        }
-      } catch (_) {}
-      try {
-        final value = RepositoryRuleTagNamePattern.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RepositoryRuleRepositoryRuleTagNamePattern(value);
-        }
-      } catch (_) {}
-      try {
-        final value = RepositoryRuleWorkflows.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RepositoryRuleRepositoryRuleWorkflows(value);
-        }
-      } catch (_) {}
-      try {
-        final value = RepositoryRuleCodeScanning.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RepositoryRuleRepositoryRuleCodeScanning(value);
-        }
-      } catch (_) {}
-      try {
-        final value = RepositoryRuleCodeQuality.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RepositoryRuleRepositoryRuleCodeQuality(value);
-        }
-      } catch (_) {}
-      try {
-        final value = RepositoryRuleCodeCoverage.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RepositoryRuleRepositoryRuleCodeCoverage(value);
-        }
-      } catch (_) {}
-      try {
-        final value = RepositoryRuleCopilotCodeReview.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RepositoryRuleRepositoryRuleCopilotCodeReview(value);
-        }
-      } catch (_) {}
-      try {
-        final value = RepositoryRuleLicenseComplianceScanning.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RepositoryRuleRepositoryRuleLicenseComplianceScanning(value);
-        }
-      } catch (_) {}
-      try {
-        final value = RepositoryRuleFilePathRestriction.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RepositoryRuleRepositoryRuleFilePathRestriction(value);
-        }
-      } catch (_) {}
-      try {
-        final value = RepositoryRuleMaxFilePathLength.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RepositoryRuleRepositoryRuleMaxFilePathLength(value);
-        }
-      } catch (_) {}
-      try {
-        final value = RepositoryRuleFileExtensionRestriction.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RepositoryRuleRepositoryRuleFileExtensionRestriction(value);
-        }
-      } catch (_) {}
-      try {
-        final value = RepositoryRuleMaxFileSize.fromJson(json);
-        if (sdkKeepsEveryKey(json, value.toJson())) {
-          return RepositoryRuleRepositoryRuleMaxFileSize(value);
-        }
-      } catch (_) {}
+      try { final value = RepositoryRuleCreation.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RepositoryRuleRepositoryRuleCreation(value); } } catch (_) {}
+      try { final value = RepositoryRuleUpdate.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RepositoryRuleRepositoryRuleUpdate(value); } } catch (_) {}
+      try { final value = RepositoryRuleDeletion.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RepositoryRuleRepositoryRuleDeletion(value); } } catch (_) {}
+      try { final value = RepositoryRuleRequiredLinearHistory.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RepositoryRuleRepositoryRuleRequiredLinearHistory(value); } } catch (_) {}
+      try { final value = RepositoryRuleMergeQueue.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RepositoryRuleRepositoryRuleMergeQueue(value); } } catch (_) {}
+      try { final value = RepositoryRuleRequiredDeployments.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RepositoryRuleRepositoryRuleRequiredDeployments(value); } } catch (_) {}
+      try { final value = RepositoryRuleRequiredSignatures.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RepositoryRuleRepositoryRuleRequiredSignatures(value); } } catch (_) {}
+      try { final value = RepositoryRulePullRequest.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RepositoryRuleRepositoryRulePullRequest(value); } } catch (_) {}
+      try { final value = RepositoryRuleRequiredStatusChecks.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RepositoryRuleRepositoryRuleRequiredStatusChecks(value); } } catch (_) {}
+      try { final value = RepositoryRuleNonFastForward.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RepositoryRuleRepositoryRuleNonFastForward(value); } } catch (_) {}
+      try { final value = RepositoryRuleCommitMessagePattern.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RepositoryRuleRepositoryRuleCommitMessagePattern(value); } } catch (_) {}
+      try { final value = RepositoryRuleCommitAuthorEmailPattern.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RepositoryRuleRepositoryRuleCommitAuthorEmailPattern(value); } } catch (_) {}
+      try { final value = RepositoryRuleCommitterEmailPattern.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RepositoryRuleRepositoryRuleCommitterEmailPattern(value); } } catch (_) {}
+      try { final value = RepositoryRuleBranchNamePattern.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RepositoryRuleRepositoryRuleBranchNamePattern(value); } } catch (_) {}
+      try { final value = RepositoryRuleTagNamePattern.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RepositoryRuleRepositoryRuleTagNamePattern(value); } } catch (_) {}
+      try { final value = RepositoryRuleWorkflows.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RepositoryRuleRepositoryRuleWorkflows(value); } } catch (_) {}
+      try { final value = RepositoryRuleCodeScanning.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RepositoryRuleRepositoryRuleCodeScanning(value); } } catch (_) {}
+      try { final value = RepositoryRuleCodeQuality.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RepositoryRuleRepositoryRuleCodeQuality(value); } } catch (_) {}
+      try { final value = RepositoryRuleCodeCoverage.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RepositoryRuleRepositoryRuleCodeCoverage(value); } } catch (_) {}
+      try { final value = RepositoryRuleCopilotCodeReview.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RepositoryRuleRepositoryRuleCopilotCodeReview(value); } } catch (_) {}
+      try { final value = RepositoryRuleLicenseComplianceScanning.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RepositoryRuleRepositoryRuleLicenseComplianceScanning(value); } } catch (_) {}
+      try { final value = RepositoryRuleFilePathRestriction.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RepositoryRuleRepositoryRuleFilePathRestriction(value); } } catch (_) {}
+      try { final value = RepositoryRuleMaxFilePathLength.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RepositoryRuleRepositoryRuleMaxFilePathLength(value); } } catch (_) {}
+      try { final value = RepositoryRuleFileExtensionRestriction.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RepositoryRuleRepositoryRuleFileExtensionRestriction(value); } } catch (_) {}
+      try { final value = RepositoryRuleMaxFileSize.fromJson(json); if (sdkKeepsEveryKey(json, value.toJson())) { return RepositoryRuleRepositoryRuleMaxFileSize(value); } } catch (_) {}
     }
-    try {
-      return RepositoryRuleRepositoryRuleCreation(
-          RepositoryRuleCreation.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return RepositoryRuleRepositoryRuleUpdate(
-          RepositoryRuleUpdate.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return RepositoryRuleRepositoryRuleDeletion(
-          RepositoryRuleDeletion.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return RepositoryRuleRepositoryRuleRequiredLinearHistory(
-          RepositoryRuleRequiredLinearHistory.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return RepositoryRuleRepositoryRuleMergeQueue(
-          RepositoryRuleMergeQueue.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return RepositoryRuleRepositoryRuleRequiredDeployments(
-          RepositoryRuleRequiredDeployments.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return RepositoryRuleRepositoryRuleRequiredSignatures(
-          RepositoryRuleRequiredSignatures.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return RepositoryRuleRepositoryRulePullRequest(
-          RepositoryRulePullRequest.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return RepositoryRuleRepositoryRuleRequiredStatusChecks(
-          RepositoryRuleRequiredStatusChecks.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return RepositoryRuleRepositoryRuleNonFastForward(
-          RepositoryRuleNonFastForward.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return RepositoryRuleRepositoryRuleCommitMessagePattern(
-          RepositoryRuleCommitMessagePattern.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return RepositoryRuleRepositoryRuleCommitAuthorEmailPattern(
-          RepositoryRuleCommitAuthorEmailPattern.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return RepositoryRuleRepositoryRuleCommitterEmailPattern(
-          RepositoryRuleCommitterEmailPattern.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return RepositoryRuleRepositoryRuleBranchNamePattern(
-          RepositoryRuleBranchNamePattern.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return RepositoryRuleRepositoryRuleTagNamePattern(
-          RepositoryRuleTagNamePattern.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return RepositoryRuleRepositoryRuleWorkflows(
-          RepositoryRuleWorkflows.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return RepositoryRuleRepositoryRuleCodeScanning(
-          RepositoryRuleCodeScanning.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return RepositoryRuleRepositoryRuleCodeQuality(
-          RepositoryRuleCodeQuality.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return RepositoryRuleRepositoryRuleCodeCoverage(
-          RepositoryRuleCodeCoverage.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return RepositoryRuleRepositoryRuleCopilotCodeReview(
-          RepositoryRuleCopilotCodeReview.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return RepositoryRuleRepositoryRuleLicenseComplianceScanning(
-          RepositoryRuleLicenseComplianceScanning.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return RepositoryRuleRepositoryRuleFilePathRestriction(
-          RepositoryRuleFilePathRestriction.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return RepositoryRuleRepositoryRuleMaxFilePathLength(
-          RepositoryRuleMaxFilePathLength.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return RepositoryRuleRepositoryRuleFileExtensionRestriction(
-          RepositoryRuleFileExtensionRestriction.fromJson(
-              json as Map<String, dynamic>));
-    } catch (_) {}
-    try {
-      return RepositoryRuleRepositoryRuleMaxFileSize(
-          RepositoryRuleMaxFileSize.fromJson(json as Map<String, dynamic>));
-    } catch (_) {}
-    if (json is Map<String, dynamic> &&
-        json["type"] is String &&
-        !const {
-          "creation",
-          "update",
-          "deletion",
-          "required_linear_history",
-          "merge_queue",
-          "required_deployments",
-          "required_signatures",
-          "pull_request",
-          "required_status_checks",
-          "non_fast_forward",
-          "commit_message_pattern",
-          "commit_author_email_pattern",
-          "committer_email_pattern",
-          "branch_name_pattern",
-          "tag_name_pattern",
-          "workflows",
-          "code_scanning",
-          "code_quality",
-          "code_coverage",
-          "copilot_code_review",
-          "license_compliance_scanning",
-          "file_path_restriction",
-          "max_file_path_length",
-          "file_extension_restriction",
-          "max_file_size"
-        }.contains(json["type"])) {
-      return UnknownRepositoryRule(json);
-    }
+    try { return RepositoryRuleRepositoryRuleCreation(RepositoryRuleCreation.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return RepositoryRuleRepositoryRuleUpdate(RepositoryRuleUpdate.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return RepositoryRuleRepositoryRuleDeletion(RepositoryRuleDeletion.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return RepositoryRuleRepositoryRuleRequiredLinearHistory(RepositoryRuleRequiredLinearHistory.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return RepositoryRuleRepositoryRuleMergeQueue(RepositoryRuleMergeQueue.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return RepositoryRuleRepositoryRuleRequiredDeployments(RepositoryRuleRequiredDeployments.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return RepositoryRuleRepositoryRuleRequiredSignatures(RepositoryRuleRequiredSignatures.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return RepositoryRuleRepositoryRulePullRequest(RepositoryRulePullRequest.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return RepositoryRuleRepositoryRuleRequiredStatusChecks(RepositoryRuleRequiredStatusChecks.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return RepositoryRuleRepositoryRuleNonFastForward(RepositoryRuleNonFastForward.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return RepositoryRuleRepositoryRuleCommitMessagePattern(RepositoryRuleCommitMessagePattern.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return RepositoryRuleRepositoryRuleCommitAuthorEmailPattern(RepositoryRuleCommitAuthorEmailPattern.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return RepositoryRuleRepositoryRuleCommitterEmailPattern(RepositoryRuleCommitterEmailPattern.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return RepositoryRuleRepositoryRuleBranchNamePattern(RepositoryRuleBranchNamePattern.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return RepositoryRuleRepositoryRuleTagNamePattern(RepositoryRuleTagNamePattern.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return RepositoryRuleRepositoryRuleWorkflows(RepositoryRuleWorkflows.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return RepositoryRuleRepositoryRuleCodeScanning(RepositoryRuleCodeScanning.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return RepositoryRuleRepositoryRuleCodeQuality(RepositoryRuleCodeQuality.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return RepositoryRuleRepositoryRuleCodeCoverage(RepositoryRuleCodeCoverage.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return RepositoryRuleRepositoryRuleCopilotCodeReview(RepositoryRuleCopilotCodeReview.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return RepositoryRuleRepositoryRuleLicenseComplianceScanning(RepositoryRuleLicenseComplianceScanning.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return RepositoryRuleRepositoryRuleFilePathRestriction(RepositoryRuleFilePathRestriction.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return RepositoryRuleRepositoryRuleMaxFilePathLength(RepositoryRuleMaxFilePathLength.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return RepositoryRuleRepositoryRuleFileExtensionRestriction(RepositoryRuleFileExtensionRestriction.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    try { return RepositoryRuleRepositoryRuleMaxFileSize(RepositoryRuleMaxFileSize.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map<String, dynamic> && json["type"] is String && !const {"creation", "update", "deletion", "required_linear_history", "merge_queue", "required_deployments", "required_signatures", "pull_request", "required_status_checks", "non_fast_forward", "commit_message_pattern", "commit_author_email_pattern", "committer_email_pattern", "branch_name_pattern", "tag_name_pattern", "workflows", "code_scanning", "code_quality", "code_coverage", "copilot_code_review", "license_compliance_scanning", "file_path_restriction", "max_file_path_length", "file_extension_restriction", "max_file_size"}.contains(json["type"])) { return UnknownRepositoryRule(json); }
     throw FormatException("No variant matched for RepositoryRule");
   }
   Object? toJson();
@@ -313,278 +70,201 @@ sealed class RepositoryRule {
 final class RepositoryRuleRepositoryRuleCreation extends RepositoryRule {
   final RepositoryRuleCreation value;
   const RepositoryRuleRepositoryRuleCreation(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class RepositoryRuleRepositoryRuleUpdate extends RepositoryRule {
   final RepositoryRuleUpdate value;
   const RepositoryRuleRepositoryRuleUpdate(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class RepositoryRuleRepositoryRuleDeletion extends RepositoryRule {
   final RepositoryRuleDeletion value;
   const RepositoryRuleRepositoryRuleDeletion(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class RepositoryRuleRepositoryRuleRequiredLinearHistory
-    extends RepositoryRule {
+final class RepositoryRuleRepositoryRuleRequiredLinearHistory extends RepositoryRule {
   final RepositoryRuleRequiredLinearHistory value;
   const RepositoryRuleRepositoryRuleRequiredLinearHistory(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class RepositoryRuleRepositoryRuleMergeQueue extends RepositoryRule {
   final RepositoryRuleMergeQueue value;
   const RepositoryRuleRepositoryRuleMergeQueue(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class RepositoryRuleRepositoryRuleRequiredDeployments
-    extends RepositoryRule {
+final class RepositoryRuleRepositoryRuleRequiredDeployments extends RepositoryRule {
   final RepositoryRuleRequiredDeployments value;
   const RepositoryRuleRepositoryRuleRequiredDeployments(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class RepositoryRuleRepositoryRuleRequiredSignatures
-    extends RepositoryRule {
+final class RepositoryRuleRepositoryRuleRequiredSignatures extends RepositoryRule {
   final RepositoryRuleRequiredSignatures value;
   const RepositoryRuleRepositoryRuleRequiredSignatures(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class RepositoryRuleRepositoryRulePullRequest extends RepositoryRule {
   final RepositoryRulePullRequest value;
   const RepositoryRuleRepositoryRulePullRequest(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class RepositoryRuleRepositoryRuleRequiredStatusChecks
-    extends RepositoryRule {
+final class RepositoryRuleRepositoryRuleRequiredStatusChecks extends RepositoryRule {
   final RepositoryRuleRequiredStatusChecks value;
   const RepositoryRuleRepositoryRuleRequiredStatusChecks(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class RepositoryRuleRepositoryRuleNonFastForward extends RepositoryRule {
   final RepositoryRuleNonFastForward value;
   const RepositoryRuleRepositoryRuleNonFastForward(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class RepositoryRuleRepositoryRuleCommitMessagePattern
-    extends RepositoryRule {
+final class RepositoryRuleRepositoryRuleCommitMessagePattern extends RepositoryRule {
   final RepositoryRuleCommitMessagePattern value;
   const RepositoryRuleRepositoryRuleCommitMessagePattern(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class RepositoryRuleRepositoryRuleCommitAuthorEmailPattern
-    extends RepositoryRule {
+final class RepositoryRuleRepositoryRuleCommitAuthorEmailPattern extends RepositoryRule {
   final RepositoryRuleCommitAuthorEmailPattern value;
   const RepositoryRuleRepositoryRuleCommitAuthorEmailPattern(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class RepositoryRuleRepositoryRuleCommitterEmailPattern
-    extends RepositoryRule {
+final class RepositoryRuleRepositoryRuleCommitterEmailPattern extends RepositoryRule {
   final RepositoryRuleCommitterEmailPattern value;
   const RepositoryRuleRepositoryRuleCommitterEmailPattern(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class RepositoryRuleRepositoryRuleBranchNamePattern
-    extends RepositoryRule {
+final class RepositoryRuleRepositoryRuleBranchNamePattern extends RepositoryRule {
   final RepositoryRuleBranchNamePattern value;
   const RepositoryRuleRepositoryRuleBranchNamePattern(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class RepositoryRuleRepositoryRuleTagNamePattern extends RepositoryRule {
   final RepositoryRuleTagNamePattern value;
   const RepositoryRuleRepositoryRuleTagNamePattern(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class RepositoryRuleRepositoryRuleWorkflows extends RepositoryRule {
   final RepositoryRuleWorkflows value;
   const RepositoryRuleRepositoryRuleWorkflows(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class RepositoryRuleRepositoryRuleCodeScanning extends RepositoryRule {
   final RepositoryRuleCodeScanning value;
   const RepositoryRuleRepositoryRuleCodeScanning(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class RepositoryRuleRepositoryRuleCodeQuality extends RepositoryRule {
   final RepositoryRuleCodeQuality value;
   const RepositoryRuleRepositoryRuleCodeQuality(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class RepositoryRuleRepositoryRuleCodeCoverage extends RepositoryRule {
   final RepositoryRuleCodeCoverage value;
   const RepositoryRuleRepositoryRuleCodeCoverage(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class RepositoryRuleRepositoryRuleCopilotCodeReview
-    extends RepositoryRule {
+final class RepositoryRuleRepositoryRuleCopilotCodeReview extends RepositoryRule {
   final RepositoryRuleCopilotCodeReview value;
   const RepositoryRuleRepositoryRuleCopilotCodeReview(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class RepositoryRuleRepositoryRuleLicenseComplianceScanning
-    extends RepositoryRule {
+final class RepositoryRuleRepositoryRuleLicenseComplianceScanning extends RepositoryRule {
   final RepositoryRuleLicenseComplianceScanning value;
   const RepositoryRuleRepositoryRuleLicenseComplianceScanning(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class RepositoryRuleRepositoryRuleFilePathRestriction
-    extends RepositoryRule {
+final class RepositoryRuleRepositoryRuleFilePathRestriction extends RepositoryRule {
   final RepositoryRuleFilePathRestriction value;
   const RepositoryRuleRepositoryRuleFilePathRestriction(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class RepositoryRuleRepositoryRuleMaxFilePathLength
-    extends RepositoryRule {
+final class RepositoryRuleRepositoryRuleMaxFilePathLength extends RepositoryRule {
   final RepositoryRuleMaxFilePathLength value;
   const RepositoryRuleRepositoryRuleMaxFilePathLength(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
-final class RepositoryRuleRepositoryRuleFileExtensionRestriction
-    extends RepositoryRule {
+final class RepositoryRuleRepositoryRuleFileExtensionRestriction extends RepositoryRule {
   final RepositoryRuleFileExtensionRestriction value;
   const RepositoryRuleRepositoryRuleFileExtensionRestriction(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 final class RepositoryRuleRepositoryRuleMaxFileSize extends RepositoryRule {
   final RepositoryRuleMaxFileSize value;
   const RepositoryRuleRepositoryRuleMaxFileSize(this.value);
-  @override
-  Object? toJson() => value.toJson();
+  @override Object? toJson() => value.toJson();
 }
 
 /// A [RepositoryRule] whose `type` names no branch this SDK knows, kept as received.
 final class UnknownRepositoryRule extends RepositoryRule {
   final Map<String, dynamic> raw;
   const UnknownRepositoryRule(this.raw);
-  @override
-  Object? toJson() => raw;
+  @override Object? toJson() => raw;
 }
 
 /// Optional object value serialized in the `parameters` wire field.
 class RepositoryRuleBranchNamePatternParameters {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// How this rule appears when configuring it.
   final SdkOptional<String> name;
-
   /// If true, the rule will fail if the pattern matches.
   final SdkOptional<bool> negate;
-
   /// The operator to use for matching.
   final RepositoryRuleBranchNamePatternParametersOperator operator_;
-
   /// The pattern to match with.
   final String pattern;
 
-  const RepositoryRuleBranchNamePatternParameters(
-      {this.name = const SdkOmitted(),
-      this.negate = const SdkOmitted(),
-      required this.operator_,
-      required this.pattern});
+  const RepositoryRuleBranchNamePatternParameters({this.name = const SdkOmitted(), this.negate = const SdkOmitted(), required this.operator_, required this.pattern});
 
-  RepositoryRuleBranchNamePatternParameters Function(
-      {SdkOptional<String> name,
-      SdkOptional<bool> negate,
-      RepositoryRuleBranchNamePatternParametersOperator operator_,
-      String pattern}) get copyWith => _copyWith;
+  RepositoryRuleBranchNamePatternParameters Function({SdkOptional<String> name, SdkOptional<bool> negate, RepositoryRuleBranchNamePatternParametersOperator operator_, String pattern}) get copyWith => _copyWith;
 
-  RepositoryRuleBranchNamePatternParameters _copyWith(
-          {Object? name = sdkOmittedValue,
-          Object? negate = sdkOmittedValue,
-          Object? operator_ = sdkOmittedValue,
-          Object? pattern = sdkOmittedValue}) =>
-      RepositoryRuleBranchNamePatternParameters(
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String>,
-        negate: identical(negate, sdkOmittedValue)
-            ? this.negate
-            : negate as SdkOptional<bool>,
-        operator_: identical(operator_, sdkOmittedValue)
-            ? this.operator_
-            : operator_ as RepositoryRuleBranchNamePatternParametersOperator,
-        pattern: identical(pattern, sdkOmittedValue)
-            ? this.pattern
-            : pattern as String,
-      );
+  RepositoryRuleBranchNamePatternParameters _copyWith({Object? name = sdkOmittedValue, Object? negate = sdkOmittedValue, Object? operator_ = sdkOmittedValue, Object? pattern = sdkOmittedValue}) => RepositoryRuleBranchNamePatternParameters(
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
+    negate: identical(negate, sdkOmittedValue) ? this.negate : negate as SdkOptional<bool>,
+    operator_: identical(operator_, sdkOmittedValue) ? this.operator_ : operator_ as RepositoryRuleBranchNamePatternParametersOperator,
+    pattern: identical(pattern, sdkOmittedValue) ? this.pattern : pattern as String,
+  );
 
-  factory RepositoryRuleBranchNamePatternParameters.fromJson(
-          Map<String, dynamic> json) =>
-      RepositoryRuleBranchNamePatternParameters(
-        name: json['name'] != null
-            ? SdkPresent((json['name'] as String?)!)
-            : const SdkOmitted(),
-        negate: json['negate'] != null
-            ? SdkPresent((json['negate'] as bool?)!)
-            : const SdkOmitted(),
-        operator_: (json['operator'] != null
-            ? RepositoryRuleBranchNamePatternParametersOperator.fromJson(
-                json['operator'] as String)
-            : null)!,
-        pattern: (json['pattern'] as String?)!,
-      );
+  factory RepositoryRuleBranchNamePatternParameters.fromJson(Map<String, dynamic> json) => RepositoryRuleBranchNamePatternParameters(
+    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
+    negate: json['negate'] != null ? SdkPresent((json['negate'] as bool?)!) : const SdkOmitted(),
+    operator_: (json['operator'] != null ? RepositoryRuleBranchNamePatternParametersOperator.fromJson(json['operator'] as String) : null)!,
+    pattern: (json['pattern'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (name) {
-          SdkPresent<String>(value: final value) => {
-              'name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (negate) {
-          SdkPresent<bool>(value: final value) => {
-              'negate': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'operator': operator_.toJson(),
-        'pattern': pattern,
-      };
+    ...switch (name) {
+      SdkPresent<String>(value: final value) => {'name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (negate) {
+      SdkPresent<bool>(value: final value) => {'negate': value,},
+      _ => const <String, dynamic>{},
+    },
+    'operator': operator_.toJson(),
+    'pattern': pattern,
+  };
 }

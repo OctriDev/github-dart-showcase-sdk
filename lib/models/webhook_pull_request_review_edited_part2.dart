@@ -8,140 +8,57 @@ part of 'webhook_pull_request_review_edited.dart';
 class WebhookPullRequestReviewEditedPullRequestLinks {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required object value serialized in the `comments` wire field.
   final WebhookPullRequestReviewEditedPullRequestLinksComments comments;
-
   /// Required object value serialized in the `commits` wire field.
   final WebhookPullRequestReviewEditedPullRequestLinksCommits commits;
-
   /// Required object value serialized in the `html` wire field.
   final WebhookPullRequestReviewEditedPullRequestLinksHtml html;
-
   /// Required object value serialized in the `issue` wire field.
   final WebhookPullRequestReviewEditedPullRequestLinksIssue issue;
-
   /// Required object value serialized in the `review_comment` wire field.
-  final WebhookPullRequestReviewEditedPullRequestLinksReviewComment
-      reviewComment;
-
+  final WebhookPullRequestReviewEditedPullRequestLinksReviewComment reviewComment;
   /// Required object value serialized in the `review_comments` wire field.
-  final WebhookPullRequestReviewEditedPullRequestLinksReviewComments
-      reviewComments;
-
+  final WebhookPullRequestReviewEditedPullRequestLinksReviewComments reviewComments;
   /// Required object value serialized in the `self` wire field.
   final WebhookPullRequestReviewEditedPullRequestLinksSelf self;
-
   /// Required object value serialized in the `statuses` wire field.
   final WebhookPullRequestReviewEditedPullRequestLinksStatuses statuses;
 
-  const WebhookPullRequestReviewEditedPullRequestLinks(
-      {required this.comments,
-      required this.commits,
-      required this.html,
-      required this.issue,
-      required this.reviewComment,
-      required this.reviewComments,
-      required this.self,
-      required this.statuses});
+  const WebhookPullRequestReviewEditedPullRequestLinks({required this.comments, required this.commits, required this.html, required this.issue, required this.reviewComment, required this.reviewComments, required this.self, required this.statuses});
 
-  WebhookPullRequestReviewEditedPullRequestLinks Function(
-      {WebhookPullRequestReviewEditedPullRequestLinksComments comments,
-      WebhookPullRequestReviewEditedPullRequestLinksCommits commits,
-      WebhookPullRequestReviewEditedPullRequestLinksHtml html,
-      WebhookPullRequestReviewEditedPullRequestLinksIssue issue,
-      WebhookPullRequestReviewEditedPullRequestLinksReviewComment reviewComment,
-      WebhookPullRequestReviewEditedPullRequestLinksReviewComments
-          reviewComments,
-      WebhookPullRequestReviewEditedPullRequestLinksSelf self,
-      WebhookPullRequestReviewEditedPullRequestLinksStatuses
-          statuses}) get copyWith => _copyWith;
+  WebhookPullRequestReviewEditedPullRequestLinks Function({WebhookPullRequestReviewEditedPullRequestLinksComments comments, WebhookPullRequestReviewEditedPullRequestLinksCommits commits, WebhookPullRequestReviewEditedPullRequestLinksHtml html, WebhookPullRequestReviewEditedPullRequestLinksIssue issue, WebhookPullRequestReviewEditedPullRequestLinksReviewComment reviewComment, WebhookPullRequestReviewEditedPullRequestLinksReviewComments reviewComments, WebhookPullRequestReviewEditedPullRequestLinksSelf self, WebhookPullRequestReviewEditedPullRequestLinksStatuses statuses}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewEditedPullRequestLinks _copyWith(
-          {Object? comments = sdkOmittedValue,
-          Object? commits = sdkOmittedValue,
-          Object? html = sdkOmittedValue,
-          Object? issue = sdkOmittedValue,
-          Object? reviewComment = sdkOmittedValue,
-          Object? reviewComments = sdkOmittedValue,
-          Object? self = sdkOmittedValue,
-          Object? statuses = sdkOmittedValue}) =>
-      WebhookPullRequestReviewEditedPullRequestLinks(
-        comments: identical(comments, sdkOmittedValue)
-            ? this.comments
-            : comments
-                as WebhookPullRequestReviewEditedPullRequestLinksComments,
-        commits: identical(commits, sdkOmittedValue)
-            ? this.commits
-            : commits as WebhookPullRequestReviewEditedPullRequestLinksCommits,
-        html: identical(html, sdkOmittedValue)
-            ? this.html
-            : html as WebhookPullRequestReviewEditedPullRequestLinksHtml,
-        issue: identical(issue, sdkOmittedValue)
-            ? this.issue
-            : issue as WebhookPullRequestReviewEditedPullRequestLinksIssue,
-        reviewComment: identical(reviewComment, sdkOmittedValue)
-            ? this.reviewComment
-            : reviewComment
-                as WebhookPullRequestReviewEditedPullRequestLinksReviewComment,
-        reviewComments: identical(reviewComments, sdkOmittedValue)
-            ? this.reviewComments
-            : reviewComments
-                as WebhookPullRequestReviewEditedPullRequestLinksReviewComments,
-        self: identical(self, sdkOmittedValue)
-            ? this.self
-            : self as WebhookPullRequestReviewEditedPullRequestLinksSelf,
-        statuses: identical(statuses, sdkOmittedValue)
-            ? this.statuses
-            : statuses
-                as WebhookPullRequestReviewEditedPullRequestLinksStatuses,
-      );
+  WebhookPullRequestReviewEditedPullRequestLinks _copyWith({Object? comments = sdkOmittedValue, Object? commits = sdkOmittedValue, Object? html = sdkOmittedValue, Object? issue = sdkOmittedValue, Object? reviewComment = sdkOmittedValue, Object? reviewComments = sdkOmittedValue, Object? self = sdkOmittedValue, Object? statuses = sdkOmittedValue}) => WebhookPullRequestReviewEditedPullRequestLinks(
+    comments: identical(comments, sdkOmittedValue) ? this.comments : comments as WebhookPullRequestReviewEditedPullRequestLinksComments,
+    commits: identical(commits, sdkOmittedValue) ? this.commits : commits as WebhookPullRequestReviewEditedPullRequestLinksCommits,
+    html: identical(html, sdkOmittedValue) ? this.html : html as WebhookPullRequestReviewEditedPullRequestLinksHtml,
+    issue: identical(issue, sdkOmittedValue) ? this.issue : issue as WebhookPullRequestReviewEditedPullRequestLinksIssue,
+    reviewComment: identical(reviewComment, sdkOmittedValue) ? this.reviewComment : reviewComment as WebhookPullRequestReviewEditedPullRequestLinksReviewComment,
+    reviewComments: identical(reviewComments, sdkOmittedValue) ? this.reviewComments : reviewComments as WebhookPullRequestReviewEditedPullRequestLinksReviewComments,
+    self: identical(self, sdkOmittedValue) ? this.self : self as WebhookPullRequestReviewEditedPullRequestLinksSelf,
+    statuses: identical(statuses, sdkOmittedValue) ? this.statuses : statuses as WebhookPullRequestReviewEditedPullRequestLinksStatuses,
+  );
 
-  factory WebhookPullRequestReviewEditedPullRequestLinks.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestReviewEditedPullRequestLinks(
-        comments: (json['comments'] != null
-            ? WebhookPullRequestReviewEditedPullRequestLinksComments.fromJson(
-                json['comments'] as Map<String, dynamic>)
-            : null)!,
-        commits: (json['commits'] != null
-            ? WebhookPullRequestReviewEditedPullRequestLinksCommits.fromJson(
-                json['commits'] as Map<String, dynamic>)
-            : null)!,
-        html: (json['html'] != null
-            ? WebhookPullRequestReviewEditedPullRequestLinksHtml.fromJson(
-                json['html'] as Map<String, dynamic>)
-            : null)!,
-        issue: (json['issue'] != null
-            ? WebhookPullRequestReviewEditedPullRequestLinksIssue.fromJson(
-                json['issue'] as Map<String, dynamic>)
-            : null)!,
-        reviewComment: (json['review_comment'] != null
-            ? WebhookPullRequestReviewEditedPullRequestLinksReviewComment
-                .fromJson(json['review_comment'] as Map<String, dynamic>)
-            : null)!,
-        reviewComments: (json['review_comments'] != null
-            ? WebhookPullRequestReviewEditedPullRequestLinksReviewComments
-                .fromJson(json['review_comments'] as Map<String, dynamic>)
-            : null)!,
-        self: (json['self'] != null
-            ? WebhookPullRequestReviewEditedPullRequestLinksSelf.fromJson(
-                json['self'] as Map<String, dynamic>)
-            : null)!,
-        statuses: (json['statuses'] != null
-            ? WebhookPullRequestReviewEditedPullRequestLinksStatuses.fromJson(
-                json['statuses'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory WebhookPullRequestReviewEditedPullRequestLinks.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewEditedPullRequestLinks(
+    comments: (json['comments'] != null ? WebhookPullRequestReviewEditedPullRequestLinksComments.fromJson(json['comments'] as Map<String, dynamic>) : null)!,
+    commits: (json['commits'] != null ? WebhookPullRequestReviewEditedPullRequestLinksCommits.fromJson(json['commits'] as Map<String, dynamic>) : null)!,
+    html: (json['html'] != null ? WebhookPullRequestReviewEditedPullRequestLinksHtml.fromJson(json['html'] as Map<String, dynamic>) : null)!,
+    issue: (json['issue'] != null ? WebhookPullRequestReviewEditedPullRequestLinksIssue.fromJson(json['issue'] as Map<String, dynamic>) : null)!,
+    reviewComment: (json['review_comment'] != null ? WebhookPullRequestReviewEditedPullRequestLinksReviewComment.fromJson(json['review_comment'] as Map<String, dynamic>) : null)!,
+    reviewComments: (json['review_comments'] != null ? WebhookPullRequestReviewEditedPullRequestLinksReviewComments.fromJson(json['review_comments'] as Map<String, dynamic>) : null)!,
+    self: (json['self'] != null ? WebhookPullRequestReviewEditedPullRequestLinksSelf.fromJson(json['self'] as Map<String, dynamic>) : null)!,
+    statuses: (json['statuses'] != null ? WebhookPullRequestReviewEditedPullRequestLinksStatuses.fromJson(json['statuses'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'comments': comments.toJson(),
-        'commits': commits.toJson(),
-        'html': html.toJson(),
-        'issue': issue.toJson(),
-        'review_comment': reviewComment.toJson(),
-        'review_comments': reviewComments.toJson(),
-        'self': self.toJson(),
-        'statuses': statuses.toJson(),
-      };
+    'comments': comments.toJson(),
+    'commits': commits.toJson(),
+    'html': html.toJson(),
+    'issue': issue.toJson(),
+    'review_comment': reviewComment.toJson(),
+    'review_comments': reviewComments.toJson(),
+    'self': self.toJson(),
+    'statuses': statuses.toJson(),
+  };
 }

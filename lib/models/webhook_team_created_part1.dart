@@ -9,102 +9,65 @@ sealed class WebhookTeamCreatedRepositoryCreatedAt {
   static const String constructionSurface = 'named';
   const WebhookTeamCreatedRepositoryCreatedAt();
   factory WebhookTeamCreatedRepositoryCreatedAt.fromJson(Object? json) {
-    if (json is String) {
-      return WebhookTeamCreatedRepositoryCreatedAtString(json);
-    }
-    if (json is num) {
-      return WebhookTeamCreatedRepositoryCreatedAtInt(json.toInt());
-    }
-    throw FormatException(
-        "No variant matched for WebhookTeamCreatedRepositoryCreatedAt");
+    if (json is String) { return WebhookTeamCreatedRepositoryCreatedAtString(json); }
+    if (json is num) { return WebhookTeamCreatedRepositoryCreatedAtInt(json.toInt()); }
+    throw FormatException("No variant matched for WebhookTeamCreatedRepositoryCreatedAt");
   }
   Object? toJson();
 }
 
-final class WebhookTeamCreatedRepositoryCreatedAtInt
-    extends WebhookTeamCreatedRepositoryCreatedAt {
+final class WebhookTeamCreatedRepositoryCreatedAtInt extends WebhookTeamCreatedRepositoryCreatedAt {
   final int value;
   const WebhookTeamCreatedRepositoryCreatedAtInt(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
-final class WebhookTeamCreatedRepositoryCreatedAtString
-    extends WebhookTeamCreatedRepositoryCreatedAt {
+final class WebhookTeamCreatedRepositoryCreatedAtString extends WebhookTeamCreatedRepositoryCreatedAt {
   final String value;
   const WebhookTeamCreatedRepositoryCreatedAtString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
 /// Required object value serialized in the `license` wire field.
 class WebhookTeamCreatedRepositoryLicense {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `key` wire field.
   final String key;
-
   /// Required `string` value serialized in the `name` wire field.
   final String name;
-
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
-
   /// Required `string` value serialized in the `spdx_id` wire field.
   final String spdxId;
-
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String? url;
 
-  const WebhookTeamCreatedRepositoryLicense(
-      {required this.key,
-      required this.name,
-      required this.nodeId,
-      required this.spdxId,
-      required this.url});
+  const WebhookTeamCreatedRepositoryLicense({required this.key, required this.name, required this.nodeId, required this.spdxId, required this.url});
 
-  WebhookTeamCreatedRepositoryLicense Function(
-      {String key,
-      String name,
-      String nodeId,
-      String spdxId,
-      String? url}) get copyWith => _copyWith;
+  WebhookTeamCreatedRepositoryLicense Function({String key, String name, String nodeId, String spdxId, String? url}) get copyWith => _copyWith;
 
-  WebhookTeamCreatedRepositoryLicense _copyWith(
-          {Object? key = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? spdxId = sdkOmittedValue,
-          Object? url = sdkOmittedValue}) =>
-      WebhookTeamCreatedRepositoryLicense(
-        key: identical(key, sdkOmittedValue) ? this.key : key as String,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        nodeId:
-            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-        spdxId:
-            identical(spdxId, sdkOmittedValue) ? this.spdxId : spdxId as String,
-        url: identical(url, sdkOmittedValue) ? this.url : url as String?,
-      );
+  WebhookTeamCreatedRepositoryLicense _copyWith({Object? key = sdkOmittedValue, Object? name = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? spdxId = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookTeamCreatedRepositoryLicense(
+    key: identical(key, sdkOmittedValue) ? this.key : key as String,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+    spdxId: identical(spdxId, sdkOmittedValue) ? this.spdxId : spdxId as String,
+    url: identical(url, sdkOmittedValue) ? this.url : url as String?,
+  );
 
-  factory WebhookTeamCreatedRepositoryLicense.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookTeamCreatedRepositoryLicense(
-        key: (json['key'] as String?)!,
-        name: (json['name'] as String?)!,
-        nodeId: (json['node_id'] as String?)!,
-        spdxId: (json['spdx_id'] as String?)!,
-        url: json.containsKey('url')
-            ? json['url'] as String?
-            : throw ArgumentError.value(
-                null, 'url', 'Required property is missing'),
-      );
+  factory WebhookTeamCreatedRepositoryLicense.fromJson(Map<String, dynamic> json) => WebhookTeamCreatedRepositoryLicense(
+    key: (json['key'] as String?)!,
+    name: (json['name'] as String?)!,
+    nodeId: (json['node_id'] as String?)!,
+    spdxId: (json['spdx_id'] as String?)!,
+    url: json.containsKey('url') ? json['url'] as String? : throw ArgumentError.value(null, 'url', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'key': key,
-        'name': name,
-        'node_id': nodeId,
-        'spdx_id': spdxId,
-        'url': url,
-      };
+    'key': key,
+    'name': name,
+    'node_id': nodeId,
+    'spdx_id': spdxId,
+    'url': url,
+  };
 }

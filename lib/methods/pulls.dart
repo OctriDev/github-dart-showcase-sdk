@@ -46,34 +46,22 @@ Future<List<PullRequestSimple>> pullsList(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/pulls',
           config: config,
           query: {
-            'state': SdkQueryValue(SdkUtils.unwrapOptional(state),
-                style: 'form', explode: true),
-            'head': SdkQueryValue(SdkUtils.unwrapOptional(head),
-                style: 'form', explode: true),
-            'base': SdkQueryValue(SdkUtils.unwrapOptional(base_),
-                style: 'form', explode: true),
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
-                style: 'form', explode: true),
-            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'state': SdkQueryValue(SdkUtils.unwrapOptional(state), style: 'form', explode: true),
+            'head': SdkQueryValue(SdkUtils.unwrapOptional(head), style: 'form', explode: true),
+            'base': SdkQueryValue(SdkUtils.unwrapOptional(base_), style: 'form', explode: true),
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true),
+            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'pullsList',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  PullRequestSimple.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => PullRequestSimple.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Draft pull requests are available in public repositories with GitHub Free and GitHub Free for organizations, GitHub Pro, and legacy per-repository billing plans, and in public and private repositories with GitHub Team and GitHub Enterprise Cloud. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation. To open or update a pull request in a public repository, you must have write access to the head or the source branch. For organization-owned repositories, you must be a member of the organization that owns the repository to open or update a pull request. This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see "[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)" and "[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api)." This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)." - **`application/vnd.github.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type. - **`application/vnd.github.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`. - **`application/vnd.github.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`. - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
@@ -123,24 +111,18 @@ Future<PullRequest> pullsCreate(ClientConfig config,
             'title': SdkUtils.unwrapOptional(title),
             'head_repo': SdkUtils.unwrapOptional(headRepo),
             'body': SdkUtils.unwrapOptional(body),
-            'maintainer_can_modify':
-                SdkUtils.unwrapOptional(maintainerCanModify),
+            'maintainer_can_modify': SdkUtils.unwrapOptional(maintainerCanModify),
             'draft': SdkUtils.unwrapOptional(draft),
             'issue': SdkUtils.unwrapOptional(issue)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'pullsCreate',
-          fromJsonRaw: (value) =>
-              PullRequest.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => PullRequest.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists review comments across all pull requests in a repository, ordered by ID in ascending order by default. Use `sort`, `direction`, and `since` to control the results, and select a custom media type to receive the comment body as raw Markdown, plain text, rendered HTML, or all three. Use `page` and `per_page` to paginate the results.
 ///
@@ -161,17 +143,16 @@ Future<PullRequest> pullsCreate(ClientConfig config,
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<List<PullRequestReviewComment>> pullsListReviewCommentsForRepo(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    SdkOptional<PullsListReviewCommentsForRepoSort> sort = const SdkOmitted(),
-    SdkOptional<PullsListReviewCommentsForRepoDirection> direction =
-        const SdkOmitted(),
-    SdkOptional<String> since = const SdkOmitted(),
-    SdkOptional<int> perPage = const SdkOmitted(),
-    SdkOptional<int> page = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<List<PullRequestReviewComment>>
+    pullsListReviewCommentsForRepo(ClientConfig config,
+        {required String owner,
+        required String repo,
+        SdkOptional<PullsListReviewCommentsForRepoSort> sort = const SdkOmitted(),
+        SdkOptional<PullsListReviewCommentsForRepoDirection> direction = const SdkOmitted(),
+        SdkOptional<String> since = const SdkOmitted(),
+        SdkOptional<int> perPage = const SdkOmitted(),
+        SdkOptional<int> page = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   if (since is SdkPresent<String>) {
     sdkValidateDateTime('since', since.value);
   }
@@ -180,26 +161,19 @@ Future<List<PullRequestReviewComment>> pullsListReviewCommentsForRepo(
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/pulls/comments',
           config: config,
           query: {
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
-                style: 'form', explode: true),
-            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction),
-                style: 'form', explode: true),
-            'since': SdkQueryValue(SdkUtils.unwrapOptional(since),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true),
+            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction), style: 'form', explode: true),
+            'since': SdkQueryValue(SdkUtils.unwrapOptional(since), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'pullsListReviewCommentsForRepo',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => PullRequestReviewComment.fromJson(
-                  item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => PullRequestReviewComment.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// Provides details for a specified review comment. This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)." - **`application/vnd.github-commitcomment.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type. - **`application/vnd.github-commitcomment.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`. - **`application/vnd.github-commitcomment.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`. - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
@@ -219,11 +193,10 @@ Future<PullRequestReviewComment> pullsGetReviewComment(ClientConfig config,
           operationId: 'pullsGetReviewComment',
           fromJsonRaw: (value) => PullRequestReviewComment.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Edits the content of a specified review comment. This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)." - **`application/vnd.github-commitcomment.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type. - **`application/vnd.github-commitcomment.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`. - **`application/vnd.github-commitcomment.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`. - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
@@ -244,11 +217,11 @@ Future<PullRequestReviewComment> pullsUpdateReviewComment(ClientConfig config,
           body: {'body': body},
           decoder: SdkResponseDecoder.json,
           operationId: 'pullsUpdateReviewComment',
-          fromJsonRaw: (value) =>
-              PullRequestReviewComment.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => PullRequestReviewComment.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Deletes a review comment from a pull request in a repository. Supply `owner` and `repo` to identify the repository and `comment_id` to select the comment. A 204 response confirms deletion without returning a response body.
 ///
@@ -269,11 +242,10 @@ Future<void> pullsDeleteReviewComment(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'pullsDeleteReviewComment',
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Draft pull requests are available in public repositories with GitHub Free and GitHub Free for organizations, GitHub Pro, and legacy per-repository billing plans, and in public and private repositories with GitHub Team and GitHub Enterprise Cloud. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation. Lists details of a pull request by providing its number. When you get, [create](https://docs.github.com/rest/pulls/pulls/#create-a-pull-request), or [edit](https://docs.github.com/rest/pulls/pulls#update-a-pull-request) a pull request, GitHub creates a merge commit to test whether the pull request can be automatically merged into the base branch. This test commit is not added to the base branch or the head branch. You can review the status of the test commit using the `mergeable` key. For more information, see "[Checking mergeability of pull requests](https://docs.github.com/rest/guides/getting-started-with-the-git-database-api#checking-mergeability-of-pull-requests)". The value of the `mergeable` attribute can be `true`, `false`, or `null`. If the value is `null`, then GitHub has started a background job to compute the mergeability. After giving the job time to complete, resubmit the request. When the job finishes, you will see a non-`null` value for the `mergeable` attribute in the response. If `mergeable` is `true`, then `merge_commit_sha` will be the SHA of the _test_ merge commit. The value of the `merge_commit_sha` attribute changes depending on the state of the pull request. Before merging a pull request, the `merge_commit_sha` attribute holds the SHA of the _test_ merge commit. After merging a pull request, the `merge_commit_sha` attribute changes depending on how you merged the pull request: * If merged as a [merge commit](https://docs.github.com/articles/about-merge-methods-on-github/), `merge_commit_sha` represents the SHA of the merge commit. * If merged…
 ///
@@ -291,20 +263,12 @@ Future<PullRequest> pullsGet(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'pullsGet',
-          fromJsonRaw: (value) =>
-              PullRequest.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => PullRequest.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '406': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '422': (value) =>
-            ValidationError.fromJson(value as Map<String, dynamic>),
-        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '503': (value) =>
-            ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '406': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Draft pull requests are available in public repositories with GitHub Free and GitHub Free for organizations, GitHub Pro, and legacy per-repository billing plans, and in public and private repositories with GitHub Team and GitHub Enterprise Cloud. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation. To open or update a pull request in a public repository, you must have write access to the head or the source branch. For organization-owned repositories, you must be a member of the organization that owns the repository to open or update a pull request. This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)." - **`application/vnd.github.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type. - **`application/vnd.github.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`. - **`application/vnd.github.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`. - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
@@ -339,22 +303,16 @@ Future<PullRequest> pullsUpdate(ClientConfig config,
             'body': SdkUtils.unwrapOptional(body),
             'state': SdkUtils.unwrapOptional(state),
             'base': SdkUtils.unwrapOptional(base_),
-            'maintainer_can_modify':
-                SdkUtils.unwrapOptional(maintainerCanModify)
+            'maintainer_can_modify': SdkUtils.unwrapOptional(maintainerCanModify)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'pullsUpdate',
-          fromJsonRaw: (value) =>
-              PullRequest.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => PullRequest.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists all review comments for a specified pull request. By default, review comments are in ascending order by ID. This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)." - **`application/vnd.github-commitcomment.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type. - **`application/vnd.github-commitcomment.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`. - **`application/vnd.github-commitcomment.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`. - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
@@ -375,18 +333,17 @@ Future<PullRequest> pullsUpdate(ClientConfig config,
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<List<PullRequestReviewComment>> pullsListReviewComments(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    required int pullNumber,
-    SdkOptional<SchemaSchema2e5fa964> sort = const SdkOmitted(),
-    SdkOptional<PullsListReviewCommentsDirection> direction =
-        const SdkOmitted(),
-    SdkOptional<String> since = const SdkOmitted(),
-    SdkOptional<int> perPage = const SdkOmitted(),
-    SdkOptional<int> page = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<List<PullRequestReviewComment>>
+    pullsListReviewComments(ClientConfig config,
+        {required String owner,
+        required String repo,
+        required int pullNumber,
+        SdkOptional<SchemaSchema2e5fa964> sort = const SdkOmitted(),
+        SdkOptional<PullsListReviewCommentsDirection> direction = const SdkOmitted(),
+        SdkOptional<String> since = const SdkOmitted(),
+        SdkOptional<int> perPage = const SdkOmitted(),
+        SdkOptional<int> page = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   if (since is SdkPresent<String>) {
     sdkValidateDateTime('since', since.value);
   }
@@ -395,26 +352,19 @@ Future<List<PullRequestReviewComment>> pullsListReviewComments(
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/pulls/${Uri.encodeComponent(pullNumber.toString())}/comments',
           config: config,
           query: {
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
-                style: 'form', explode: true),
-            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction),
-                style: 'form', explode: true),
-            'since': SdkQueryValue(SdkUtils.unwrapOptional(since),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true),
+            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction), style: 'form', explode: true),
+            'since': SdkQueryValue(SdkUtils.unwrapOptional(since), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'pullsListReviewComments',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => PullRequestReviewComment.fromJson(
-                  item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => PullRequestReviewComment.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// Creates a review comment on the diff of a specified pull request. To add a regular comment to a pull request timeline, see "[Create an issue comment](https://docs.github.com/rest/issues/comments#create-an-issue-comment)." If your comment applies to more than one line in the pull request diff, you should use the parameters `line`, `side`, and optionally `start_line` and `start_side` in your request. The `position` parameter is closing down. If you use `position`, the `line`, `side`, `start_line`, and `start_side` parameters are not required. This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see "[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)" and "[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api)." This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)." - **`application/vnd.github-commitcomment.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type. - **`application/vnd.github-commitcomment.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`. - **`application/vnd.github-commitcomment.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`. - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
@@ -471,15 +421,12 @@ Future<PullRequestReviewComment> pullsCreateReviewComment(ClientConfig config,
     required String commitId,
     required String path,
     SdkOptional<int> position = const SdkOmitted(),
-    SdkOptional<PullsCreateReviewCommentRequestBodySide> side =
-        const SdkOmitted(),
+    SdkOptional<PullsCreateReviewCommentRequestBodySide> side = const SdkOmitted(),
     SdkOptional<int> line = const SdkOmitted(),
     SdkOptional<int> startLine = const SdkOmitted(),
-    SdkOptional<PullsCreateReviewCommentRequestBodyStartSide> startSide =
-        const SdkOmitted(),
+    SdkOptional<PullsCreateReviewCommentRequestBodyStartSide> startSide = const SdkOmitted(),
     SdkOptional<int> inReplyTo = const SdkOmitted(),
-    SdkOptional<PullsCreateReviewCommentRequestBodySubjectType> subjectType =
-        const SdkOmitted(),
+    SdkOptional<PullsCreateReviewCommentRequestBodySubjectType> subjectType = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<PullRequestReviewComment>('POST',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/pulls/${Uri.encodeComponent(pullNumber.toString())}/comments',
@@ -498,17 +445,12 @@ Future<PullRequestReviewComment> pullsCreateReviewComment(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'pullsCreateReviewComment',
-          fromJsonRaw: (value) =>
-              PullRequestReviewComment.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => PullRequestReviewComment.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Creates a reply to a review comment for a pull request. For the `comment_id`, provide the ID of the review comment you are replying to. This must be the ID of a _top-level review comment_, not a reply to that comment. Replies to replies are not supported. This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see "[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)" and "[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api)." This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)." - **`application/vnd.github-commitcomment.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type. - **`application/vnd.github-commitcomment.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`. - **`application/vnd.github-commitcomment.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`. - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
@@ -518,28 +460,26 @@ Future<PullRequestReviewComment> pullsCreateReviewComment(ClientConfig config,
 /// [pullNumber] The number that identifies the pull request.
 /// [commentId] The unique identifier of the comment.
 /// [body] The text of the review comment.
-Future<PullRequestReviewComment> pullsCreateReplyForReviewComment(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    required int pullNumber,
-    required int commentId,
-    required String body,
-    RequestOptions? requestOptions}) async {
+Future<PullRequestReviewComment>
+    pullsCreateReplyForReviewComment(ClientConfig config,
+        {required String owner,
+        required String repo,
+        required int pullNumber,
+        required int commentId,
+        required String body,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<PullRequestReviewComment>('POST',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/pulls/${Uri.encodeComponent(pullNumber.toString())}/comments/${Uri.encodeComponent(commentId.toString())}/replies',
           config: config,
           body: {'body': body},
           decoder: SdkResponseDecoder.json,
           operationId: 'pullsCreateReplyForReviewComment',
-          fromJsonRaw: (value) =>
-              PullRequestReviewComment.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => PullRequestReviewComment.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists a maximum of 250 commits for a pull request. To receive a complete commit list for pull requests with more than 250 commits, use the [List commits](https://docs.github.com/rest/commits/commits#list-commits) endpoint. This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)." - **`application/vnd.github.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type. - **`application/vnd.github.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`. - **`application/vnd.github.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`. - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
@@ -566,19 +506,16 @@ Future<List<Commit>> pullsListCommits(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/pulls/${Uri.encodeComponent(pullNumber.toString())}/commits',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'pullsListCommits',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => Commit.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => Commit.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// Lists the files in a specified pull request. &gt; [!NOTE] &gt; Responses include a maximum of 3000 files. The paginated response returns 30 files per page by default. This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)." - **`application/vnd.github.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type. - **`application/vnd.github.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`. - **`application/vnd.github.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`. - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
@@ -605,27 +542,17 @@ Future<List<DiffEntry>> pullsListFiles(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/pulls/${Uri.encodeComponent(pullNumber.toString())}/files',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'pullsListFiles',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => DiffEntry.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => DiffEntry.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>),
-            '500': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'422': (value) => ValidationError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Checks if a pull request has been merged into the base branch. The HTTP status of the response indicates whether or not the pull request has been merged; the response body is empty.
 ///
@@ -647,6 +574,7 @@ Future<void> pullsCheckIfMerged(ClientConfig config,
       .data;
 }
 
+
 /// &gt; [!NOTE] &gt; We recommend using the [asynchronous merge API](https://docs.github.com/rest/pulls/pulls#merge-a-pull-request-asynchronously) instead. This endpoint does not support stacked pull requests or merging with a merge queue. Merges a pull request into the base branch. This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see "[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)" and "[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api)."
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
@@ -664,8 +592,7 @@ Future<PullRequestMergeResult> pullsMerge(ClientConfig config,
     SdkOptional<String> commitTitle = const SdkOmitted(),
     SdkOptional<String> commitMessage = const SdkOmitted(),
     SdkOptional<String> sha = const SdkOmitted(),
-    SdkOptional<PullsMergeRequestBodyMergeMethod> mergeMethod =
-        const SdkOmitted(),
+    SdkOptional<PullsMergeRequestBodyMergeMethod> mergeMethod = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<PullRequestMergeResult>('PUT',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/pulls/${Uri.encodeComponent(pullNumber.toString())}/merge',
@@ -678,19 +605,12 @@ Future<PullRequestMergeResult> pullsMerge(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'pullsMerge',
-          fromJsonRaw: (value) =>
-              PullRequestMergeResult.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => PullRequestMergeResult.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Merges a pull request into the base branch in the background or adds it to a merge queue. Background processing allows certain types of errors to be retried and reduces the risk of timeouts for complex merges. This is the required API for merging stacked pull requests. For a stacked pull request, the operation includes all open downstack pull requests. A new asynchronous merge request returns a `202` response with a UUID that can be used to [fetch the result of the merge](https://docs.github.com/rest/pulls/pulls#get-the-result-of-an-asynchronous-merge). If another asynchronous merge request is already pending for this pull request, a `409` response returns that request's UUID and merge options instead. If the pull request is already merged or already in a merge queue, a `200` response is returned immediately. A `merged` result includes the merge commit OID. An `enqueued` result means the pull request was added to the merge queue, not that it has merged. If the pull request cannot be merged (e.g. because it is closed, or still a draft) this result will be returned immediately with a `400` response status. Branch protection rules and repository rules are not run at this stage, only basic pull request state checks are performed.
 ///
@@ -722,10 +642,8 @@ Future<PullRequestMergeAsyncResult> pullsMergeAsync(ClientConfig config,
     SdkOptional<String> commitTitle = const SdkOmitted(),
     SdkOptional<String> commitMessage = const SdkOmitted(),
     SdkOptional<String> sha = const SdkOmitted(),
-    SdkOptional<PullsMergeAsyncRequestBodyMergeMethod> mergeMethod =
-        const SdkOmitted(),
-    SdkOptional<PullsMergeAsyncRequestBodyMergeAction> mergeAction =
-        const SdkOmitted(),
+    SdkOptional<PullsMergeAsyncRequestBodyMergeMethod> mergeMethod = const SdkOmitted(),
+    SdkOptional<PullsMergeAsyncRequestBodyMergeAction> mergeAction = const SdkOmitted(),
     SdkOptional<bool> bypassRules = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<PullRequestMergeAsyncResult>('PUT',
@@ -741,23 +659,12 @@ Future<PullRequestMergeAsyncResult> pullsMergeAsync(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'pullsMergeAsync',
-          fromJsonRaw: (value) => PullRequestMergeAsyncResult.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => PullRequestMergeAsyncResult.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) => PullRequestMergeAsyncResult.fromJson(
-                value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '409': (value) => PullRequestMergeAsyncResult.fromJson(
-                value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => PullRequestMergeAsyncResult.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => PullRequestMergeAsyncResult.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Fetches the current result of an asynchronous merge request, identified by the UUID that was returned when the merge was requested. While the request's status is `pending`, the response includes the UUID, merge method, merge action, and expected head SHA of the request. Once the asynchronous request completes, its status is one of: - `merged`: The pull request was merged into the base branch. The response includes the merge commit OID. - `enqueued`: The pull request was added to a merge queue. - `failed`: The request failed. The response includes a message describing the failure. An `enqueued` result is final for the merge queue requests and does not mean the pull request has merged. This result does not change when the merge queue later merges the pull request. To get the eventual merge status, [check if a pull request has been merged](https://docs.github.com/rest/pulls/pulls#check-if-a-pull-request-has-been-merged). The result of an asynchronous merge request is retained for 24 hours after its most recent update. After this window the request expires and this endpoint returns a `404` response for its UUID.
 ///
@@ -767,27 +674,24 @@ Future<PullRequestMergeAsyncResult> pullsMergeAsync(ClientConfig config,
 /// [pullNumber] The number that identifies the pull request.
 /// [uuid] The UUID of the asynchronous merge request, as returned when the
 ///   merge was requested.
-Future<PullRequestMergeAsyncResult> pullsGetMergeAsyncResult(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    required int pullNumber,
-    required String uuid,
-    RequestOptions? requestOptions}) async {
+Future<PullRequestMergeAsyncResult>
+    pullsGetMergeAsyncResult(ClientConfig config,
+        {required String owner,
+        required String repo,
+        required int pullNumber,
+        required String uuid,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<PullRequestMergeAsyncResult>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/pulls/${Uri.encodeComponent(pullNumber.toString())}/merge-async/${Uri.encodeComponent(uuid.toString())}',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'pullsGetMergeAsyncResult',
-          fromJsonRaw: (value) => PullRequestMergeAsyncResult.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => PullRequestMergeAsyncResult.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Gets the users or teams whose review is requested for a pull request. Once a requested reviewer submits a review, they are no longer considered a requested reviewer. Their review will instead be returned by the [List reviews for a pull request](https://docs.github.com/rest/pulls/reviews#list-reviews-for-a-pull-request) operation.
 ///
@@ -795,22 +699,22 @@ Future<PullRequestMergeAsyncResult> pullsGetMergeAsyncResult(
 /// [repo] The name of the repository without the `.git` extension. The name is
 ///   not case sensitive.
 /// [pullNumber] The number that identifies the pull request.
-Future<PullRequestReviewRequest> pullsListRequestedReviewers(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    required int pullNumber,
-    RequestOptions? requestOptions}) async {
+Future<PullRequestReviewRequest>
+    pullsListRequestedReviewers(ClientConfig config,
+        {required String owner,
+        required String repo,
+        required int pullNumber,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<PullRequestReviewRequest>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/pulls/${Uri.encodeComponent(pullNumber.toString())}/requested_reviewers',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'pullsListRequestedReviewers',
-          fromJsonRaw: (value) =>
-              PullRequestReviewRequest.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => PullRequestReviewRequest.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Requests reviews for a pull request from a given set of users and/or teams. This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see "[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)" and "[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api)."
 ///
@@ -836,17 +740,12 @@ Future<PullRequestSimple> pullsRequestReviewers(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'pullsRequestReviewers',
-          fromJsonRaw: (value) =>
-              PullRequestSimple.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => PullRequestSimple.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Removes review requests from a pull request for a given set of users and/or teams.
 ///
@@ -872,15 +771,12 @@ Future<PullRequestSimple> pullsRemoveRequestedReviewers(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'pullsRemoveRequestedReviewers',
-          fromJsonRaw: (value) =>
-              PullRequestSimple.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => PullRequestSimple.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Rerequests reviews for a pull request from a given set of users and/or teams. This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see "[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)" and "[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api)."
 ///
@@ -906,14 +802,12 @@ Future<PullRequestSimple> pullsRerequestReviewers(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'pullsRerequestReviewers',
-          fromJsonRaw: (value) =>
-              PullRequestSimple.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => PullRequestSimple.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists all reviews for a specified pull request. The list of reviews returns in chronological order. This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)." - **`application/vnd.github-commitcomment.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type. - **`application/vnd.github-commitcomment.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`. - **`application/vnd.github-commitcomment.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`. - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
@@ -940,20 +834,16 @@ Future<List<PullRequestReview>> pullsListReviews(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/pulls/${Uri.encodeComponent(pullNumber.toString())}/reviews',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'pullsListReviews',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  PullRequestReview.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => PullRequestReview.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// Creates a review on a specified pull request. This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see "[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)" and "[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api)." Pull request reviews created in the `PENDING` state are not submitted and therefore do not include the `submitted_at` property in the response. To create a pending review for a pull request, leave the `event` parameter blank. For more information about submitting a `PENDING` review, see "[Submit a review for a pull request](https://docs.github.com/rest/pulls/reviews#submit-a-review-for-a-pull-request)." &gt; [!NOTE] &gt; To comment on a specific line in a file, you need to first determine the position of that line in the diff. To see a pull request diff, add the `application/vnd.github.v3.diff` media type to the `Accept` header of a call to the [Get a pull request](https://docs.github.com/rest/pulls/pulls#get-a-pull-request) endpoint. The `position` value equals the number of lines down from the first "@@" hunk header in the file you want to add a comment. The line just below the "@@" line is position 1, the next line is position 2, and so on. The position in the diff continues to increase through lines of whitespace and additional hunks until the beginning of a new file. This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)." - **`application/vnd.github-commitcomment.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any…
 ///
@@ -982,8 +872,7 @@ Future<PullRequestReview> pullsCreateReview(ClientConfig config,
     SdkOptional<String> commitId = const SdkOmitted(),
     SdkOptional<String> body = const SdkOmitted(),
     SdkOptional<PullsCreateReviewRequestBodyEvent> event = const SdkOmitted(),
-    SdkOptional<List<PullsCreateReviewRequestBodyCommentsItem>> comments =
-        const SdkOmitted(),
+    SdkOptional<List<PullsCreateReviewRequestBodyCommentsItem>> comments = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<PullRequestReview>('POST',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/pulls/${Uri.encodeComponent(pullNumber.toString())}/reviews',
@@ -996,17 +885,12 @@ Future<PullRequestReview> pullsCreateReview(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'pullsCreateReview',
-          fromJsonRaw: (value) =>
-              PullRequestReview.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => PullRequestReview.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Retrieves a pull request review by its ID. This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)." - **`application/vnd.github-commitcomment.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type. - **`application/vnd.github-commitcomment.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`. - **`application/vnd.github-commitcomment.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`. - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
@@ -1028,11 +912,10 @@ Future<PullRequestReview> pullsGetReview(ClientConfig config,
           operationId: 'pullsGetReview',
           fromJsonRaw: (value) => PullRequestReview.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Updates the contents of a specified review summary comment. This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)." - **`application/vnd.github-commitcomment.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type. - **`application/vnd.github-commitcomment.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`. - **`application/vnd.github-commitcomment.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`. - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
@@ -1055,15 +938,12 @@ Future<PullRequestReview> pullsUpdateReview(ClientConfig config,
           body: {'body': body},
           decoder: SdkResponseDecoder.json,
           operationId: 'pullsUpdateReview',
-          fromJsonRaw: (value) =>
-              PullRequestReview.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => PullRequestReview.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '422': (value) =>
-                ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Deletes a pull request review that has not been submitted. Submitted reviews cannot be deleted. This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)." - **`application/vnd.github-commitcomment.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type. - **`application/vnd.github-commitcomment.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`. - **`application/vnd.github-commitcomment.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`. - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
@@ -1083,16 +963,12 @@ Future<PullRequestReview> pullsDeletePendingReview(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'pullsDeletePendingReview',
-          fromJsonRaw: (value) =>
-              PullRequestReview.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => PullRequestReview.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '422': (value) =>
-            ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists comments for a specific pull request review. This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)." - **`application/vnd.github-commitcomment.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type. - **`application/vnd.github-commitcomment.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`. - **`application/vnd.github-commitcomment.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`. - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
@@ -1121,23 +997,17 @@ Future<List<ReviewComment>> pullsListCommentsForReview(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/pulls/${Uri.encodeComponent(pullNumber.toString())}/reviews/${Uri.encodeComponent(reviewId.toString())}/comments',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'pullsListCommentsForReview',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  ReviewComment.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => ReviewComment.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Submits a dismissal for a specified review on a pull request in a repository. Provide the required `message`; `event` can only be `DISMISS` and is optional. For protected branches, you must be a repository administrator or be included in the people or teams allowed to dismiss reviews; a successful response returns the dismissed review.
 ///
@@ -1163,17 +1033,12 @@ Future<PullRequestReview> pullsDismissReview(ClientConfig config,
           body: {'message': message, 'event': SdkUtils.unwrapOptional(event)},
           decoder: SdkResponseDecoder.json,
           operationId: 'pullsDismissReview',
-          fromJsonRaw: (value) =>
-              PullRequestReview.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => PullRequestReview.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Submits a pending review for a pull request. For more information about creating a pending review for a pull request, see "[Create a review for a pull request](https://docs.github.com/rest/pulls/reviews#create-a-review-for-a-pull-request)." This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)." - **`application/vnd.github-commitcomment.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type. - **`application/vnd.github-commitcomment.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`. - **`application/vnd.github-commitcomment.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`. - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
@@ -1202,19 +1067,12 @@ Future<PullRequestReview> pullsSubmitReview(ClientConfig config,
           body: {'event': event, 'body': SdkUtils.unwrapOptional(body)},
           decoder: SdkResponseDecoder.json,
           operationId: 'pullsSubmitReview',
-          fromJsonRaw: (value) =>
-              PullRequestReview.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => PullRequestReview.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Updates the pull request branch with the latest upstream changes by merging HEAD from the base branch into the pull request branch. Note: If making a request on behalf of a GitHub App you must also have permissions to write the contents of the head repository.
 ///
@@ -1241,17 +1099,12 @@ Future<PullsUpdateBranchResponse> pullsUpdateBranch(ClientConfig config,
           body: {'expected_head_sha': SdkUtils.unwrapOptional(expectedHeadSha)},
           decoder: SdkResponseDecoder.json,
           operationId: 'pullsUpdateBranch',
-          fromJsonRaw: (value) =>
-              PullsUpdateBranchResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => PullsUpdateBranchResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists pull request stacks in a repository. Use `pull_request` to filter for the stack containing a specific pull request, and use `page` and `per_page` to paginate the results.
 ///
@@ -1281,28 +1134,18 @@ Future<List<PullRequestStackMinimal>> pullRequestStacksList(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/stacks',
           config: config,
           query: {
-            'pull_request': SdkQueryValue(SdkUtils.unwrapOptional(pullRequest),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'pull_request': SdkQueryValue(SdkUtils.unwrapOptional(pullRequest), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'pullRequestStacksList',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => PullRequestStackMinimal.fromJson(
-                  item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => PullRequestStackMinimal.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Creates a stack from an ordered list of pull request numbers. Provide the pull request numbers from the bottom of the stack to the top. Each pull request's base ref must match the previous pull request's head ref.
 ///
@@ -1311,12 +1154,12 @@ Future<List<PullRequestStackMinimal>> pullRequestStacksList(ClientConfig config,
 ///   not case sensitive.
 /// [pullRequests] An ordered list of pull request numbers forming the stack
 ///   from bottom to top.
-Future<PullRequestStacksCreateResponse> pullRequestStacksCreate(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    required List<int> pullRequests,
-    RequestOptions? requestOptions}) async {
+Future<PullRequestStacksCreateResponse>
+    pullRequestStacksCreate(ClientConfig config,
+        {required String owner,
+        required String repo,
+        required List<int> pullRequests,
+        RequestOptions? requestOptions}) async {
   validateItems('pull_requests', pullRequests, min: 2, max: 100);
 
   return (await sdkRequest<PullRequestStacksCreateResponse>('POST',
@@ -1325,14 +1168,12 @@ Future<PullRequestStacksCreateResponse> pullRequestStacksCreate(
           body: {'pull_requests': pullRequests},
           decoder: SdkResponseDecoder.json,
           operationId: 'pullRequestStacksCreate',
-          fromJsonRaw: (value) => PullRequestStacksCreateResponse.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => PullRequestStacksCreateResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Gets a pull request stack by providing its stack number.
 ///
@@ -1352,11 +1193,10 @@ Future<PullRequestStacksGetResponse> pullRequestStacksGet(ClientConfig config,
           operationId: 'pullRequestStacksGet',
           fromJsonRaw: (value) => PullRequestStacksGetResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Appends an ordered list of pull request numbers onto the top of an existing stack. Provide only the pull requests you want to add, from the current top of the stack upward. The first new pull request's base ref must match the current top pull request's head ref.
 ///
@@ -1380,16 +1220,12 @@ Future<PullRequestStacksAddResponse> pullRequestStacksAdd(ClientConfig config,
           body: {'pull_requests': pullRequests},
           decoder: SdkResponseDecoder.json,
           operationId: 'pullRequestStacksAdd',
-          fromJsonRaw: (value) => PullRequestStacksAddResponse.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => PullRequestStacksAddResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '409': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Removes the unmerged pull requests from a stack. Pull requests that cannot be unstacked (for example, those that are queued for merge) are left in place. When pull requests remain in the stack, the updated stack is returned with a `200`. When no pull requests remain, the stack is dissolved and a `204` is returned.
 ///
@@ -1397,25 +1233,19 @@ Future<PullRequestStacksAddResponse> pullRequestStacksAdd(ClientConfig config,
 /// [repo] The name of the repository without the `.git` extension. The name is
 ///   not case sensitive.
 /// [stackNumber] The number that identifies the pull request stack.
-Future<PullRequestStacksUnstackResponse> pullRequestStacksUnstack(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    required int stackNumber,
-    RequestOptions? requestOptions}) async {
+Future<PullRequestStacksUnstackResponse>
+    pullRequestStacksUnstack(ClientConfig config,
+        {required String owner,
+        required String repo,
+        required int stackNumber,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<PullRequestStacksUnstackResponse>('POST',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/stacks/${Uri.encodeComponent(stackNumber.toString())}/unstack',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'pullRequestStacksUnstack',
-          fromJsonRaw: (value) => PullRequestStacksUnstackResponse.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => PullRequestStacksUnstackResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '409': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '422': (value) =>
-            ValidationError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }

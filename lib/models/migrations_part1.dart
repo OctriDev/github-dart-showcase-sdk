@@ -8,73 +8,41 @@ part of 'migrations.dart';
 class ImportProjectChoicesItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `string` value serialized in the `vcs` wire field.
   final SdkOptional<String> vcs;
-
   /// Optional `string` value serialized in the `tfvc_project` wire field.
   final SdkOptional<String> tfvcProject;
-
   /// Optional `string` value serialized in the `human_name` wire field.
   final SdkOptional<String> humanName;
 
-  const ImportProjectChoicesItem(
-      {this.vcs = const SdkOmitted(),
-      this.tfvcProject = const SdkOmitted(),
-      this.humanName = const SdkOmitted()});
+  const ImportProjectChoicesItem({this.vcs = const SdkOmitted(), this.tfvcProject = const SdkOmitted(), this.humanName = const SdkOmitted()});
 
-  ImportProjectChoicesItem Function(
-      {SdkOptional<String> vcs,
-      SdkOptional<String> tfvcProject,
-      SdkOptional<String> humanName}) get copyWith => _copyWith;
+  ImportProjectChoicesItem Function({SdkOptional<String> vcs, SdkOptional<String> tfvcProject, SdkOptional<String> humanName}) get copyWith => _copyWith;
 
-  ImportProjectChoicesItem _copyWith(
-          {Object? vcs = sdkOmittedValue,
-          Object? tfvcProject = sdkOmittedValue,
-          Object? humanName = sdkOmittedValue}) =>
-      ImportProjectChoicesItem(
-        vcs: identical(vcs, sdkOmittedValue)
-            ? this.vcs
-            : vcs as SdkOptional<String>,
-        tfvcProject: identical(tfvcProject, sdkOmittedValue)
-            ? this.tfvcProject
-            : tfvcProject as SdkOptional<String>,
-        humanName: identical(humanName, sdkOmittedValue)
-            ? this.humanName
-            : humanName as SdkOptional<String>,
-      );
+  ImportProjectChoicesItem _copyWith({Object? vcs = sdkOmittedValue, Object? tfvcProject = sdkOmittedValue, Object? humanName = sdkOmittedValue}) => ImportProjectChoicesItem(
+    vcs: identical(vcs, sdkOmittedValue) ? this.vcs : vcs as SdkOptional<String>,
+    tfvcProject: identical(tfvcProject, sdkOmittedValue) ? this.tfvcProject : tfvcProject as SdkOptional<String>,
+    humanName: identical(humanName, sdkOmittedValue) ? this.humanName : humanName as SdkOptional<String>,
+  );
 
-  factory ImportProjectChoicesItem.fromJson(Map<String, dynamic> json) =>
-      ImportProjectChoicesItem(
-        vcs: json['vcs'] != null
-            ? SdkPresent((json['vcs'] as String?)!)
-            : const SdkOmitted(),
-        tfvcProject: json['tfvc_project'] != null
-            ? SdkPresent((json['tfvc_project'] as String?)!)
-            : const SdkOmitted(),
-        humanName: json['human_name'] != null
-            ? SdkPresent((json['human_name'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory ImportProjectChoicesItem.fromJson(Map<String, dynamic> json) => ImportProjectChoicesItem(
+    vcs: json['vcs'] != null ? SdkPresent((json['vcs'] as String?)!) : const SdkOmitted(),
+    tfvcProject: json['tfvc_project'] != null ? SdkPresent((json['tfvc_project'] as String?)!) : const SdkOmitted(),
+    humanName: json['human_name'] != null ? SdkPresent((json['human_name'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (vcs) {
-          SdkPresent<String>(value: final value) => {
-              'vcs': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (tfvcProject) {
-          SdkPresent<String>(value: final value) => {
-              'tfvc_project': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (humanName) {
-          SdkPresent<String>(value: final value) => {
-              'human_name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (vcs) {
+      SdkPresent<String>(value: final value) => {'vcs': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (tfvcProject) {
+      SdkPresent<String>(value: final value) => {'tfvc_project': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (humanName) {
+      SdkPresent<String>(value: final value) => {'human_name': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

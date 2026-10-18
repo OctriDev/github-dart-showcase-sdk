@@ -9,71 +9,36 @@ class WebhookPullRequestReviewRequestedVariant1PullRequestHead {
   static const String constructionSurface = 'named';
   final String label;
   final String ref;
-
   /// A git repository
   final WebhookPullRequestReviewRequestedVariant1PullRequestHeadRepo repo;
   final String sha;
   final WebhookPullRequestReviewRequestedVariant1PullRequestHeadUser? user;
 
-  const WebhookPullRequestReviewRequestedVariant1PullRequestHead(
-      {required this.label,
-      required this.ref,
-      required this.repo,
-      required this.sha,
-      required this.user});
+  const WebhookPullRequestReviewRequestedVariant1PullRequestHead({required this.label, required this.ref, required this.repo, required this.sha, required this.user});
 
-  WebhookPullRequestReviewRequestedVariant1PullRequestHead Function(
-          {String label,
-          String ref,
-          WebhookPullRequestReviewRequestedVariant1PullRequestHeadRepo repo,
-          String sha,
-          WebhookPullRequestReviewRequestedVariant1PullRequestHeadUser? user})
-      get copyWith => _copyWith;
+  WebhookPullRequestReviewRequestedVariant1PullRequestHead Function({String label, String ref, WebhookPullRequestReviewRequestedVariant1PullRequestHeadRepo repo, String sha, WebhookPullRequestReviewRequestedVariant1PullRequestHeadUser? user}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewRequestedVariant1PullRequestHead _copyWith(
-          {Object? label = sdkOmittedValue,
-          Object? ref = sdkOmittedValue,
-          Object? repo = sdkOmittedValue,
-          Object? sha = sdkOmittedValue,
-          Object? user = sdkOmittedValue}) =>
-      WebhookPullRequestReviewRequestedVariant1PullRequestHead(
-        label: identical(label, sdkOmittedValue) ? this.label : label as String,
-        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-        repo: identical(repo, sdkOmittedValue)
-            ? this.repo
-            : repo
-                as WebhookPullRequestReviewRequestedVariant1PullRequestHeadRepo,
-        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-        user: identical(user, sdkOmittedValue)
-            ? this.user
-            : user
-                as WebhookPullRequestReviewRequestedVariant1PullRequestHeadUser?,
-      );
+  WebhookPullRequestReviewRequestedVariant1PullRequestHead _copyWith({Object? label = sdkOmittedValue, Object? ref = sdkOmittedValue, Object? repo = sdkOmittedValue, Object? sha = sdkOmittedValue, Object? user = sdkOmittedValue}) => WebhookPullRequestReviewRequestedVariant1PullRequestHead(
+    label: identical(label, sdkOmittedValue) ? this.label : label as String,
+    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+    repo: identical(repo, sdkOmittedValue) ? this.repo : repo as WebhookPullRequestReviewRequestedVariant1PullRequestHeadRepo,
+    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+    user: identical(user, sdkOmittedValue) ? this.user : user as WebhookPullRequestReviewRequestedVariant1PullRequestHeadUser?,
+  );
 
-  factory WebhookPullRequestReviewRequestedVariant1PullRequestHead.fromJson(
-          Map<String, dynamic> json) =>
-      WebhookPullRequestReviewRequestedVariant1PullRequestHead(
-        label: (json['label'] as String?)!,
-        ref: (json['ref'] as String?)!,
-        repo: (json['repo'] != null
-            ? WebhookPullRequestReviewRequestedVariant1PullRequestHeadRepo
-                .fromJson(json['repo'] as Map<String, dynamic>)
-            : null)!,
-        sha: (json['sha'] as String?)!,
-        user: json.containsKey('user')
-            ? json['user'] != null
-                ? WebhookPullRequestReviewRequestedVariant1PullRequestHeadUser
-                    .fromJson(json['user'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'user', 'Required property is missing'),
-      );
+  factory WebhookPullRequestReviewRequestedVariant1PullRequestHead.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewRequestedVariant1PullRequestHead(
+    label: (json['label'] as String?)!,
+    ref: (json['ref'] as String?)!,
+    repo: (json['repo'] != null ? WebhookPullRequestReviewRequestedVariant1PullRequestHeadRepo.fromJson(json['repo'] as Map<String, dynamic>) : null)!,
+    sha: (json['sha'] as String?)!,
+    user: json.containsKey('user') ? json['user'] != null ? WebhookPullRequestReviewRequestedVariant1PullRequestHeadUser.fromJson(json['user'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'user', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'label': label,
-        'ref': ref,
-        'repo': repo.toJson(),
-        'sha': sha,
-        'user': user?.toJson(),
-      };
+    'label': label,
+    'ref': ref,
+    'repo': repo.toJson(),
+    'sha': sha,
+    'user': user?.toJson(),
+  };
 }

@@ -6,43 +6,35 @@ part of 'inline.dart';
 // Inline operation models (part 23)
 /// The confidence level for this assignee choice.
 final class IssuesAddAssigneesRequestAssigneesItemVariant1Confidence {
+
   final String value;
 
   const IssuesAddAssigneesRequestAssigneesItemVariant1Confidence._(this.value);
 
-  factory IssuesAddAssigneesRequestAssigneesItemVariant1Confidence.fromJson(
-          String value) =>
-      IssuesAddAssigneesRequestAssigneesItemVariant1Confidence._(value);
+  factory IssuesAddAssigneesRequestAssigneesItemVariant1Confidence.fromJson(String value) => IssuesAddAssigneesRequestAssigneesItemVariant1Confidence._(value);
 
-  static const low =
-      IssuesAddAssigneesRequestAssigneesItemVariant1Confidence._('low');
-  static const medium =
-      IssuesAddAssigneesRequestAssigneesItemVariant1Confidence._('medium');
-  static const high =
-      IssuesAddAssigneesRequestAssigneesItemVariant1Confidence._('high');
+  static const low = IssuesAddAssigneesRequestAssigneesItemVariant1Confidence._('low');
+  static const medium = IssuesAddAssigneesRequestAssigneesItemVariant1Confidence._('medium');
+  static const high = IssuesAddAssigneesRequestAssigneesItemVariant1Confidence._('high');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is IssuesAddAssigneesRequestAssigneesItemVariant1Confidence &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is IssuesAddAssigneesRequestAssigneesItemVariant1Confidence && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The kind of change proposed.
 final class IssueSuggestionAction {
+
   final String value;
 
   const IssueSuggestionAction._(this.value);
 
-  factory IssueSuggestionAction.fromJson(String value) =>
-      IssueSuggestionAction._(value);
+  factory IssueSuggestionAction.fromJson(String value) => IssueSuggestionAction._(value);
 
   static const setType = IssueSuggestionAction._('set_type');
   static const addLabel = IssueSuggestionAction._('add_label');
@@ -52,25 +44,22 @@ final class IssueSuggestionAction {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is IssueSuggestionAction && other.value == value;
+  @override bool operator ==(Object other) => other is IssueSuggestionAction && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The actor's confidence level in the suggestion.
 final class IssueSuggestionConfidence {
+
   final String value;
 
   const IssueSuggestionConfidence._(this.value);
 
-  factory IssueSuggestionConfidence.fromJson(String value) =>
-      IssueSuggestionConfidence._(value);
+  factory IssueSuggestionConfidence.fromJson(String value) => IssueSuggestionConfidence._(value);
 
   static const low = IssueSuggestionConfidence._('LOW');
   static const medium = IssueSuggestionConfidence._('MEDIUM');
@@ -78,25 +67,22 @@ final class IssueSuggestionConfidence {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is IssueSuggestionConfidence && other.value == value;
+  @override bool operator ==(Object other) => other is IssueSuggestionConfidence && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The suggestion's lifecycle state.
 final class IssueSuggestionState {
+
   final String value;
 
   const IssueSuggestionState._(this.value);
 
-  factory IssueSuggestionState.fromJson(String value) =>
-      IssueSuggestionState._(value);
+  factory IssueSuggestionState.fromJson(String value) => IssueSuggestionState._(value);
 
   static const pending = IssueSuggestionState._('pending');
   static const applied = IssueSuggestionState._('applied');
@@ -107,85 +93,68 @@ final class IssueSuggestionState {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is IssueSuggestionState && other.value == value;
+  @override bool operator ==(Object other) => other is IssueSuggestionState && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The confidence level for this assignee choice.
 final class IssuesUpdateRequestAssigneesItemVariant1Confidence {
+
   final String value;
 
   const IssuesUpdateRequestAssigneesItemVariant1Confidence._(this.value);
 
-  factory IssuesUpdateRequestAssigneesItemVariant1Confidence.fromJson(
-          String value) =>
-      IssuesUpdateRequestAssigneesItemVariant1Confidence._(value);
+  factory IssuesUpdateRequestAssigneesItemVariant1Confidence.fromJson(String value) => IssuesUpdateRequestAssigneesItemVariant1Confidence._(value);
 
-  static const low =
-      IssuesUpdateRequestAssigneesItemVariant1Confidence._('low');
-  static const medium =
-      IssuesUpdateRequestAssigneesItemVariant1Confidence._('medium');
-  static const high =
-      IssuesUpdateRequestAssigneesItemVariant1Confidence._('high');
+  static const low = IssuesUpdateRequestAssigneesItemVariant1Confidence._('low');
+  static const medium = IssuesUpdateRequestAssigneesItemVariant1Confidence._('medium');
+  static const high = IssuesUpdateRequestAssigneesItemVariant1Confidence._('high');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is IssuesUpdateRequestAssigneesItemVariant1Confidence &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is IssuesUpdateRequestAssigneesItemVariant1Confidence && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The confidence level for this label choice.
 final class IssuesUpdateRequestLabelsItemVariant1Confidence {
+
   final String value;
 
   const IssuesUpdateRequestLabelsItemVariant1Confidence._(this.value);
 
-  factory IssuesUpdateRequestLabelsItemVariant1Confidence.fromJson(
-          String value) =>
-      IssuesUpdateRequestLabelsItemVariant1Confidence._(value);
+  factory IssuesUpdateRequestLabelsItemVariant1Confidence.fromJson(String value) => IssuesUpdateRequestLabelsItemVariant1Confidence._(value);
 
   static const low = IssuesUpdateRequestLabelsItemVariant1Confidence._('low');
-  static const medium =
-      IssuesUpdateRequestLabelsItemVariant1Confidence._('medium');
+  static const medium = IssuesUpdateRequestLabelsItemVariant1Confidence._('medium');
   static const high = IssuesUpdateRequestLabelsItemVariant1Confidence._('high');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is IssuesUpdateRequestLabelsItemVariant1Confidence &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is IssuesUpdateRequestLabelsItemVariant1Confidence && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The confidence level for this type choice.
 final class IssuesUpdateRequestTypeVariant1Confidence {
+
   final String value;
 
   const IssuesUpdateRequestTypeVariant1Confidence._(this.value);
 
-  factory IssuesUpdateRequestTypeVariant1Confidence.fromJson(String value) =>
-      IssuesUpdateRequestTypeVariant1Confidence._(value);
+  factory IssuesUpdateRequestTypeVariant1Confidence.fromJson(String value) => IssuesUpdateRequestTypeVariant1Confidence._(value);
 
   static const low = IssuesUpdateRequestTypeVariant1Confidence._('low');
   static const medium = IssuesUpdateRequestTypeVariant1Confidence._('medium');
@@ -193,20 +162,17 @@ final class IssuesUpdateRequestTypeVariant1Confidence {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is IssuesUpdateRequestTypeVariant1Confidence &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is IssuesUpdateRequestTypeVariant1Confidence && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The color of the issue type.
 final class IssueTypeColor {
+
   final String value;
 
   const IssueTypeColor._(this.value);
@@ -224,25 +190,22 @@ final class IssueTypeColor {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is IssueTypeColor && other.value == value;
+  @override bool operator ==(Object other) => other is IssueTypeColor && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The color of the issue type.
 final class IssueTypeWebhookColor {
+
   final String value;
 
   const IssueTypeWebhookColor._(this.value);
 
-  factory IssueTypeWebhookColor.fromJson(String value) =>
-      IssueTypeWebhookColor._(value);
+  factory IssueTypeWebhookColor.fromJson(String value) => IssueTypeWebhookColor._(value);
 
   static const gray = IssueTypeWebhookColor._('gray');
   static const blue = IssueTypeWebhookColor._('blue');
@@ -255,19 +218,17 @@ final class IssueTypeWebhookColor {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is IssueTypeWebhookColor && other.value == value;
+  @override bool operator ==(Object other) => other is IssueTypeWebhookColor && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The outcome of the job.
 final class JobConclusion {
+
   final String value;
 
   const JobConclusion._(this.value);
@@ -284,19 +245,17 @@ final class JobConclusion {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is JobConclusion && other.value == value;
+  @override bool operator ==(Object other) => other is JobConclusion && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The phase of the lifecycle that the job is currently in.
 final class JobStatus {
+
   final String value;
 
   const JobStatus._(this.value);
@@ -312,12 +271,10 @@ final class JobStatus {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) => other is JobStatus && other.value == value;
+  @override bool operator ==(Object other) => other is JobStatus && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

@@ -7,517 +7,263 @@ part of 'inline.dart';
 class CodespacesPublishForAuthenticatedUserRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// A name for the new repository.
   final SdkOptional<String> name;
-
   /// Whether the new repository should be private.
   final SdkOptional<bool> private;
 
-  const CodespacesPublishForAuthenticatedUserRequestBody(
-      {this.name = const SdkOmitted(), this.private = const SdkOmitted()});
+  const CodespacesPublishForAuthenticatedUserRequestBody({this.name = const SdkOmitted(), this.private = const SdkOmitted()});
 
-  CodespacesPublishForAuthenticatedUserRequestBody Function(
-      {SdkOptional<String> name,
-      SdkOptional<bool> private}) get copyWith => _copyWith;
+  CodespacesPublishForAuthenticatedUserRequestBody Function({SdkOptional<String> name, SdkOptional<bool> private}) get copyWith => _copyWith;
 
-  CodespacesPublishForAuthenticatedUserRequestBody _copyWith(
-          {Object? name = sdkOmittedValue,
-          Object? private = sdkOmittedValue}) =>
-      CodespacesPublishForAuthenticatedUserRequestBody(
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String>,
-        private: identical(private, sdkOmittedValue)
-            ? this.private
-            : private as SdkOptional<bool>,
-      );
+  CodespacesPublishForAuthenticatedUserRequestBody _copyWith({Object? name = sdkOmittedValue, Object? private = sdkOmittedValue}) => CodespacesPublishForAuthenticatedUserRequestBody(
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
+    private: identical(private, sdkOmittedValue) ? this.private : private as SdkOptional<bool>,
+  );
 
-  factory CodespacesPublishForAuthenticatedUserRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      CodespacesPublishForAuthenticatedUserRequestBody(
-        name: json['name'] != null
-            ? SdkPresent((json['name'] as String?)!)
-            : const SdkOmitted(),
-        private: json['private'] != null
-            ? SdkPresent((json['private'] as bool?)!)
-            : const SdkOmitted(),
-      );
+  factory CodespacesPublishForAuthenticatedUserRequestBody.fromJson(Map<String, dynamic> json) => CodespacesPublishForAuthenticatedUserRequestBody(
+    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
+    private: json['private'] != null ? SdkPresent((json['private'] as bool?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (name) {
-          SdkPresent<String>(value: final value) => {
-              'name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (private) {
-          SdkPresent<bool>(value: final value) => {
-              'private': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (name) {
+      SdkPresent<String>(value: final value) => {'name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (private) {
+      SdkPresent<bool>(value: final value) => {'private': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 class CopilotSpacesListForOrgResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The list of Copilot Spaces on this page of results.
   final List<CopilotSpace> spaces;
 
   const CopilotSpacesListForOrgResponse({required this.spaces});
 
-  CopilotSpacesListForOrgResponse Function({List<CopilotSpace> spaces})
-      get copyWith => _copyWith;
+  CopilotSpacesListForOrgResponse Function({List<CopilotSpace> spaces}) get copyWith => _copyWith;
 
-  CopilotSpacesListForOrgResponse _copyWith(
-          {Object? spaces = sdkOmittedValue}) =>
-      CopilotSpacesListForOrgResponse(
-        spaces: identical(spaces, sdkOmittedValue)
-            ? this.spaces
-            : spaces as List<CopilotSpace>,
-      );
+  CopilotSpacesListForOrgResponse _copyWith({Object? spaces = sdkOmittedValue}) => CopilotSpacesListForOrgResponse(
+    spaces: identical(spaces, sdkOmittedValue) ? this.spaces : spaces as List<CopilotSpace>,
+  );
 
-  factory CopilotSpacesListForOrgResponse.fromJson(Map<String, dynamic> json) =>
-      CopilotSpacesListForOrgResponse(
-        spaces: ((json['spaces'] as List?)
-            ?.map((e) => CopilotSpace.fromJson(e as Map<String, dynamic>))
-            .toList())!,
-      );
+  factory CopilotSpacesListForOrgResponse.fromJson(Map<String, dynamic> json) => CopilotSpacesListForOrgResponse(
+    spaces: ((json['spaces'] as List?)?.map((e) => CopilotSpace.fromJson(e as Map<String, dynamic>)).toList())!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'spaces': spaces.map((item) => item.toJson()).toList(),
-      };
+    'spaces': spaces.map((item) => item.toJson()).toList(),
+  };
 }
 
 /// Metadata specific to the resource type.
 class CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Repository ID for repository or file resources.
   final SdkOptional<int> repositoryId;
-
   /// File path for file resources.
   final SdkOptional<String> filePath;
-
   /// Text content for free text resources.
   final SdkOptional<String> text;
-
   /// Name for the resource.
   final SdkOptional<String> name;
-
   /// Issue or PR number.
   final SdkOptional<int> number;
 
-  const CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata(
-      {this.repositoryId = const SdkOmitted(),
-      this.filePath = const SdkOmitted(),
-      this.text = const SdkOmitted(),
-      this.name = const SdkOmitted(),
-      this.number = const SdkOmitted()});
+  const CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata({this.repositoryId = const SdkOmitted(), this.filePath = const SdkOmitted(), this.text = const SdkOmitted(), this.name = const SdkOmitted(), this.number = const SdkOmitted()});
 
-  CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata Function(
-      {SdkOptional<int> repositoryId,
-      SdkOptional<String> filePath,
-      SdkOptional<String> text,
-      SdkOptional<String> name,
-      SdkOptional<int> number}) get copyWith => _copyWith;
+  CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata Function({SdkOptional<int> repositoryId, SdkOptional<String> filePath, SdkOptional<String> text, SdkOptional<String> name, SdkOptional<int> number}) get copyWith => _copyWith;
 
-  CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata _copyWith(
-          {Object? repositoryId = sdkOmittedValue,
-          Object? filePath = sdkOmittedValue,
-          Object? text = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? number = sdkOmittedValue}) =>
-      CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata(
-        repositoryId: identical(repositoryId, sdkOmittedValue)
-            ? this.repositoryId
-            : repositoryId as SdkOptional<int>,
-        filePath: identical(filePath, sdkOmittedValue)
-            ? this.filePath
-            : filePath as SdkOptional<String>,
-        text: identical(text, sdkOmittedValue)
-            ? this.text
-            : text as SdkOptional<String>,
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String>,
-        number: identical(number, sdkOmittedValue)
-            ? this.number
-            : number as SdkOptional<int>,
-      );
+  CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata _copyWith({Object? repositoryId = sdkOmittedValue, Object? filePath = sdkOmittedValue, Object? text = sdkOmittedValue, Object? name = sdkOmittedValue, Object? number = sdkOmittedValue}) => CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata(
+    repositoryId: identical(repositoryId, sdkOmittedValue) ? this.repositoryId : repositoryId as SdkOptional<int>,
+    filePath: identical(filePath, sdkOmittedValue) ? this.filePath : filePath as SdkOptional<String>,
+    text: identical(text, sdkOmittedValue) ? this.text : text as SdkOptional<String>,
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
+    number: identical(number, sdkOmittedValue) ? this.number : number as SdkOptional<int>,
+  );
 
-  factory CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata.fromJson(
-          Map<String, dynamic> json) =>
-      CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata(
-        repositoryId: json['repository_id'] != null
-            ? SdkPresent(((json['repository_id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        filePath: json['file_path'] != null
-            ? SdkPresent((json['file_path'] as String?)!)
-            : const SdkOmitted(),
-        text: json['text'] != null
-            ? SdkPresent((json['text'] as String?)!)
-            : const SdkOmitted(),
-        name: json['name'] != null
-            ? SdkPresent((json['name'] as String?)!)
-            : const SdkOmitted(),
-        number: json['number'] != null
-            ? SdkPresent(((json['number'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-      );
+  factory CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata.fromJson(Map<String, dynamic> json) => CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata(
+    repositoryId: json['repository_id'] != null ? SdkPresent(((json['repository_id'] as num?)?.toInt())!) : const SdkOmitted(),
+    filePath: json['file_path'] != null ? SdkPresent((json['file_path'] as String?)!) : const SdkOmitted(),
+    text: json['text'] != null ? SdkPresent((json['text'] as String?)!) : const SdkOmitted(),
+    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
+    number: json['number'] != null ? SdkPresent(((json['number'] as num?)?.toInt())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (repositoryId) {
-          SdkPresent<int>(value: final value) => {
-              'repository_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (filePath) {
-          SdkPresent<String>(value: final value) => {
-              'file_path': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (text) {
-          SdkPresent<String>(value: final value) => {
-              'text': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (name) {
-          SdkPresent<String>(value: final value) => {
-              'name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (number) {
-          SdkPresent<int>(value: final value) => {
-              'number': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (repositoryId) {
+      SdkPresent<int>(value: final value) => {'repository_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (filePath) {
+      SdkPresent<String>(value: final value) => {'file_path': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (text) {
+      SdkPresent<String>(value: final value) => {'text': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (name) {
+      SdkPresent<String>(value: final value) => {'name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (number) {
+      SdkPresent<int>(value: final value) => {'number': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 class CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The type of resource.
-  final SdkOptional<
-          CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType>
-      resourceType;
-
+  final SdkOptional<CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType> resourceType;
   /// Metadata specific to the resource type.
-  final SdkOptional<
-          CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata>
-      metadata;
+  final SdkOptional<CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata> metadata;
 
-  const CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem(
-      {this.resourceType = const SdkOmitted(),
-      this.metadata = const SdkOmitted()});
+  const CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem({this.resourceType = const SdkOmitted(), this.metadata = const SdkOmitted()});
 
-  CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem Function(
-      {SdkOptional<
-              CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType>
-          resourceType,
-      SdkOptional<
-              CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata>
-          metadata}) get copyWith => _copyWith;
+  CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem Function({SdkOptional<CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType> resourceType, SdkOptional<CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata> metadata}) get copyWith => _copyWith;
 
-  CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem _copyWith(
-          {Object? resourceType = sdkOmittedValue,
-          Object? metadata = sdkOmittedValue}) =>
-      CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem(
-        resourceType: identical(resourceType, sdkOmittedValue)
-            ? this.resourceType
-            : resourceType as SdkOptional<
-                CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType>,
-        metadata: identical(metadata, sdkOmittedValue)
-            ? this.metadata
-            : metadata as SdkOptional<
-                CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata>,
-      );
+  CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem _copyWith({Object? resourceType = sdkOmittedValue, Object? metadata = sdkOmittedValue}) => CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem(
+    resourceType: identical(resourceType, sdkOmittedValue) ? this.resourceType : resourceType as SdkOptional<CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType>,
+    metadata: identical(metadata, sdkOmittedValue) ? this.metadata : metadata as SdkOptional<CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata>,
+  );
 
-  factory CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem.fromJson(
-          Map<String, dynamic> json) =>
-      CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem(
-        resourceType: json['resource_type'] != null
-            ? SdkPresent((json['resource_type'] != null
-                ? CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType
-                    .fromJson(json['resource_type'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        metadata: json['metadata'] != null
-            ? SdkPresent((json['metadata'] != null
-                ? CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata
-                    .fromJson(json['metadata'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem.fromJson(Map<String, dynamic> json) => CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem(
+    resourceType: json['resource_type'] != null ? SdkPresent((json['resource_type'] != null ? CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType.fromJson(json['resource_type'] as String) : null)!) : const SdkOmitted(),
+    metadata: json['metadata'] != null ? SdkPresent((json['metadata'] != null ? CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (resourceType) {
-          SdkPresent<
-                CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType>(
-            value: final value
-          ) =>
-            {
-              'resource_type': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (metadata) {
-          SdkPresent<
-                CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata>(
-            value: final value
-          ) =>
-            {
-              'metadata': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (resourceType) {
+      SdkPresent<CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType>(value: final value) => {'resource_type': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (metadata) {
+      SdkPresent<CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemMetadata>(value: final value) => {'metadata': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 class CopilotSpacesCreateForOrgRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The name of the Copilot Space.
   final String name;
-
   /// A description of the Copilot Space.
   final SdkOptional<String> description;
-
   /// General instructions for the Copilot Space.
   final SdkOptional<String> generalInstructions;
-
   /// The base role that determines default permissions for organization members. - `no_access`: No default access (default) - `reader`: Organization members can read the space - `writer`: Organization members can read and edit the space - `admin`: Organization members have full admin access to the space
   final SdkOptional<CopilotSpacesCreateForOrgRequestBodyBaseRole> baseRole;
-
   /// Resources to attach to the space.
-  final SdkOptional<
-          List<CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem>>
-      resourcesAttributes;
+  final SdkOptional<List<CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem>> resourcesAttributes;
 
-  const CopilotSpacesCreateForOrgRequestBody(
-      {required this.name,
-      this.description = const SdkOmitted(),
-      this.generalInstructions = const SdkOmitted(),
-      this.baseRole = const SdkOmitted(),
-      this.resourcesAttributes = const SdkOmitted()});
+  const CopilotSpacesCreateForOrgRequestBody({required this.name, this.description = const SdkOmitted(), this.generalInstructions = const SdkOmitted(), this.baseRole = const SdkOmitted(), this.resourcesAttributes = const SdkOmitted()});
 
-  CopilotSpacesCreateForOrgRequestBody Function(
-      {String name,
-      SdkOptional<String> description,
-      SdkOptional<String> generalInstructions,
-      SdkOptional<CopilotSpacesCreateForOrgRequestBodyBaseRole> baseRole,
-      SdkOptional<
-              List<CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem>>
-          resourcesAttributes}) get copyWith => _copyWith;
+  CopilotSpacesCreateForOrgRequestBody Function({String name, SdkOptional<String> description, SdkOptional<String> generalInstructions, SdkOptional<CopilotSpacesCreateForOrgRequestBodyBaseRole> baseRole, SdkOptional<List<CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem>> resourcesAttributes}) get copyWith => _copyWith;
 
-  CopilotSpacesCreateForOrgRequestBody _copyWith(
-          {Object? name = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? generalInstructions = sdkOmittedValue,
-          Object? baseRole = sdkOmittedValue,
-          Object? resourcesAttributes = sdkOmittedValue}) =>
-      CopilotSpacesCreateForOrgRequestBody(
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as SdkOptional<String>,
-        generalInstructions: identical(generalInstructions, sdkOmittedValue)
-            ? this.generalInstructions
-            : generalInstructions as SdkOptional<String>,
-        baseRole: identical(baseRole, sdkOmittedValue)
-            ? this.baseRole
-            : baseRole
-                as SdkOptional<CopilotSpacesCreateForOrgRequestBodyBaseRole>,
-        resourcesAttributes: identical(resourcesAttributes, sdkOmittedValue)
-            ? this.resourcesAttributes
-            : resourcesAttributes as SdkOptional<
-                List<
-                    CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem>>,
-      );
+  CopilotSpacesCreateForOrgRequestBody _copyWith({Object? name = sdkOmittedValue, Object? description = sdkOmittedValue, Object? generalInstructions = sdkOmittedValue, Object? baseRole = sdkOmittedValue, Object? resourcesAttributes = sdkOmittedValue}) => CopilotSpacesCreateForOrgRequestBody(
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String>,
+    generalInstructions: identical(generalInstructions, sdkOmittedValue) ? this.generalInstructions : generalInstructions as SdkOptional<String>,
+    baseRole: identical(baseRole, sdkOmittedValue) ? this.baseRole : baseRole as SdkOptional<CopilotSpacesCreateForOrgRequestBodyBaseRole>,
+    resourcesAttributes: identical(resourcesAttributes, sdkOmittedValue) ? this.resourcesAttributes : resourcesAttributes as SdkOptional<List<CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem>>,
+  );
 
-  factory CopilotSpacesCreateForOrgRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      CopilotSpacesCreateForOrgRequestBody(
-        name: (json['name'] as String?)!,
-        description: json['description'] != null
-            ? SdkPresent((json['description'] as String?)!)
-            : const SdkOmitted(),
-        generalInstructions: json['general_instructions'] != null
-            ? SdkPresent((json['general_instructions'] as String?)!)
-            : const SdkOmitted(),
-        baseRole: json['base_role'] != null
-            ? SdkPresent((json['base_role'] != null
-                ? CopilotSpacesCreateForOrgRequestBodyBaseRole.fromJson(
-                    json['base_role'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        resourcesAttributes: json['resources_attributes'] != null
-            ? SdkPresent(((json['resources_attributes'] as List?)
-                ?.map((e) =>
-                    CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem
-                        .fromJson(e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory CopilotSpacesCreateForOrgRequestBody.fromJson(Map<String, dynamic> json) => CopilotSpacesCreateForOrgRequestBody(
+    name: (json['name'] as String?)!,
+    description: json['description'] != null ? SdkPresent((json['description'] as String?)!) : const SdkOmitted(),
+    generalInstructions: json['general_instructions'] != null ? SdkPresent((json['general_instructions'] as String?)!) : const SdkOmitted(),
+    baseRole: json['base_role'] != null ? SdkPresent((json['base_role'] != null ? CopilotSpacesCreateForOrgRequestBodyBaseRole.fromJson(json['base_role'] as String) : null)!) : const SdkOmitted(),
+    resourcesAttributes: json['resources_attributes'] != null ? SdkPresent(((json['resources_attributes'] as List?)?.map((e) => CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'name': name,
-        ...switch (description) {
-          SdkPresent<String>(value: final value) => {
-              'description': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (generalInstructions) {
-          SdkPresent<String>(value: final value) => {
-              'general_instructions': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (baseRole) {
-          SdkPresent<CopilotSpacesCreateForOrgRequestBodyBaseRole>(
-            value: final value
-          ) =>
-            {
-              'base_role': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (resourcesAttributes) {
-          SdkPresent<
-                List<
-                    CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem>>(
-            value: final value
-          ) =>
-            {
-              'resources_attributes':
-                  value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'name': name,
+    ...switch (description) {
+      SdkPresent<String>(value: final value) => {'description': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (generalInstructions) {
+      SdkPresent<String>(value: final value) => {'general_instructions': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (baseRole) {
+      SdkPresent<CopilotSpacesCreateForOrgRequestBodyBaseRole>(value: final value) => {'base_role': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (resourcesAttributes) {
+      SdkPresent<List<CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItem>>(value: final value) => {'resources_attributes': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Metadata specific to the resource type.
 class CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemMetadata {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Repository ID for repository or file resources.
   final SdkOptional<int> repositoryId;
-
   /// File path for file resources.
   final SdkOptional<String> filePath;
-
   /// Text content for free text resources.
   final SdkOptional<String> text;
-
   /// Name for the resource.
   final SdkOptional<String> name;
-
   /// Issue or PR number.
   final SdkOptional<int> number;
 
-  const CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemMetadata(
-      {this.repositoryId = const SdkOmitted(),
-      this.filePath = const SdkOmitted(),
-      this.text = const SdkOmitted(),
-      this.name = const SdkOmitted(),
-      this.number = const SdkOmitted()});
+  const CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemMetadata({this.repositoryId = const SdkOmitted(), this.filePath = const SdkOmitted(), this.text = const SdkOmitted(), this.name = const SdkOmitted(), this.number = const SdkOmitted()});
 
-  CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemMetadata Function(
-      {SdkOptional<int> repositoryId,
-      SdkOptional<String> filePath,
-      SdkOptional<String> text,
-      SdkOptional<String> name,
-      SdkOptional<int> number}) get copyWith => _copyWith;
+  CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemMetadata Function({SdkOptional<int> repositoryId, SdkOptional<String> filePath, SdkOptional<String> text, SdkOptional<String> name, SdkOptional<int> number}) get copyWith => _copyWith;
 
-  CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemMetadata _copyWith(
-          {Object? repositoryId = sdkOmittedValue,
-          Object? filePath = sdkOmittedValue,
-          Object? text = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? number = sdkOmittedValue}) =>
-      CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemMetadata(
-        repositoryId: identical(repositoryId, sdkOmittedValue)
-            ? this.repositoryId
-            : repositoryId as SdkOptional<int>,
-        filePath: identical(filePath, sdkOmittedValue)
-            ? this.filePath
-            : filePath as SdkOptional<String>,
-        text: identical(text, sdkOmittedValue)
-            ? this.text
-            : text as SdkOptional<String>,
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String>,
-        number: identical(number, sdkOmittedValue)
-            ? this.number
-            : number as SdkOptional<int>,
-      );
+  CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemMetadata _copyWith({Object? repositoryId = sdkOmittedValue, Object? filePath = sdkOmittedValue, Object? text = sdkOmittedValue, Object? name = sdkOmittedValue, Object? number = sdkOmittedValue}) => CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemMetadata(
+    repositoryId: identical(repositoryId, sdkOmittedValue) ? this.repositoryId : repositoryId as SdkOptional<int>,
+    filePath: identical(filePath, sdkOmittedValue) ? this.filePath : filePath as SdkOptional<String>,
+    text: identical(text, sdkOmittedValue) ? this.text : text as SdkOptional<String>,
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
+    number: identical(number, sdkOmittedValue) ? this.number : number as SdkOptional<int>,
+  );
 
-  factory CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemMetadata.fromJson(
-          Map<String, dynamic> json) =>
-      CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemMetadata(
-        repositoryId: json['repository_id'] != null
-            ? SdkPresent(((json['repository_id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        filePath: json['file_path'] != null
-            ? SdkPresent((json['file_path'] as String?)!)
-            : const SdkOmitted(),
-        text: json['text'] != null
-            ? SdkPresent((json['text'] as String?)!)
-            : const SdkOmitted(),
-        name: json['name'] != null
-            ? SdkPresent((json['name'] as String?)!)
-            : const SdkOmitted(),
-        number: json['number'] != null
-            ? SdkPresent(((json['number'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-      );
+  factory CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemMetadata.fromJson(Map<String, dynamic> json) => CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemMetadata(
+    repositoryId: json['repository_id'] != null ? SdkPresent(((json['repository_id'] as num?)?.toInt())!) : const SdkOmitted(),
+    filePath: json['file_path'] != null ? SdkPresent((json['file_path'] as String?)!) : const SdkOmitted(),
+    text: json['text'] != null ? SdkPresent((json['text'] as String?)!) : const SdkOmitted(),
+    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
+    number: json['number'] != null ? SdkPresent(((json['number'] as num?)?.toInt())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (repositoryId) {
-          SdkPresent<int>(value: final value) => {
-              'repository_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (filePath) {
-          SdkPresent<String>(value: final value) => {
-              'file_path': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (text) {
-          SdkPresent<String>(value: final value) => {
-              'text': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (name) {
-          SdkPresent<String>(value: final value) => {
-              'name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (number) {
-          SdkPresent<int>(value: final value) => {
-              'number': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (repositoryId) {
+      SdkPresent<int>(value: final value) => {'repository_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (filePath) {
+      SdkPresent<String>(value: final value) => {'file_path': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (text) {
+      SdkPresent<String>(value: final value) => {'text': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (name) {
+      SdkPresent<String>(value: final value) => {'name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (number) {
+      SdkPresent<int>(value: final value) => {'number': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

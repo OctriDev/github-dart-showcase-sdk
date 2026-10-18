@@ -33,32 +33,20 @@ Future<List<CampaignSummary>> campaignsListOrgCampaigns(ClientConfig config,
           'GET', '/orgs/${Uri.encodeComponent(org.toString())}/campaigns',
           config: config,
           query: {
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction),
-                style: 'form', explode: true),
-            'state': SdkQueryValue(SdkUtils.unwrapOptional(state),
-                style: 'form', explode: true),
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
-                style: 'form', explode: true)
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction), style: 'form', explode: true),
+            'state': SdkQueryValue(SdkUtils.unwrapOptional(state), style: 'form', explode: true),
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'campaignsListOrgCampaigns',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  CampaignSummary.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => CampaignSummary.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Create a campaign for an organization. The authenticated user must be an owner or security manager for the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint. Fine-grained tokens must have the "Code scanning alerts" repository permissions (read) on all repositories included in the campaign.
 ///
@@ -82,8 +70,7 @@ Future<CampaignSummary> campaignsCreateCampaign(ClientConfig config,
     SdkOptional<List<String>> managers = const SdkOmitted(),
     SdkOptional<List<String>> teamManagers = const SdkOmitted(),
     SdkOptional<String?> contactLink = const SdkOmitted(),
-    SdkOptional<List<CampaignsCreateCampaignRequestBodyCodeScanningAlertsItem>?>
-        codeScanningAlerts = const SdkOmitted(),
+    SdkOptional<List<CampaignsCreateCampaignRequestBodyCodeScanningAlertsItem>?> codeScanningAlerts = const SdkOmitted(),
     SdkOptional<bool> generateIssues = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   validateLength('name', name, min: 1, max: 50);
@@ -101,8 +88,7 @@ Future<CampaignSummary> campaignsCreateCampaign(ClientConfig config,
       sdkValidateUri('contact_link', contactLinkValue);
     }
   }
-  if (codeScanningAlerts is SdkPresent<
-      List<CampaignsCreateCampaignRequestBodyCodeScanningAlertsItem>?>) {
+  if (codeScanningAlerts is SdkPresent<List<CampaignsCreateCampaignRequestBodyCodeScanningAlertsItem>?>) {
     final codeScanningAlertsValue = codeScanningAlerts.value;
     if (codeScanningAlertsValue != null) {
       validateItems('code_scanning_alerts', codeScanningAlertsValue, min: 1);
@@ -124,21 +110,12 @@ Future<CampaignSummary> campaignsCreateCampaign(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'campaignsCreateCampaign',
-          fromJsonRaw: (value) =>
-              CampaignSummary.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CampaignSummary.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Gets a campaign for an organization. The authenticated user must be an owner or security manager for the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint.
 ///
@@ -153,17 +130,12 @@ Future<CampaignSummary> campaignsGetCampaignSummary(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'campaignsGetCampaignSummary',
-          fromJsonRaw: (value) =>
-              CampaignSummary.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CampaignSummary.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '422': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '503': (value) =>
-            ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Updates a campaign in an organization. The authenticated user must be an owner or security manager for the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint.
 ///
@@ -225,21 +197,12 @@ Future<CampaignSummary> campaignsUpdateCampaign(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'campaignsUpdateCampaign',
-          fromJsonRaw: (value) =>
-              CampaignSummary.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CampaignSummary.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Deletes a campaign in an organization. The authenticated user must be an owner or security manager for the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint.
 ///
@@ -255,10 +218,6 @@ Future<void> campaignsDeleteCampaign(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'campaignsDeleteCampaign',
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '503': (value) =>
-            ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }

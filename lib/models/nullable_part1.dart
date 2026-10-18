@@ -8,83 +8,48 @@ part of 'nullable.dart';
 class NullableRepositoryWebhooksPermissions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `boolean` value serialized in the `admin` wire field.
   final bool admin;
-
   /// Required `boolean` value serialized in the `pull` wire field.
   final bool pull;
-
   /// Optional `boolean` value serialized in the `triage` wire field.
   final SdkOptional<bool> triage;
-
   /// Required `boolean` value serialized in the `push` wire field.
   final bool push;
-
   /// Optional `boolean` value serialized in the `maintain` wire field.
   final SdkOptional<bool> maintain;
 
-  const NullableRepositoryWebhooksPermissions(
-      {required this.admin,
-      required this.pull,
-      this.triage = const SdkOmitted(),
-      required this.push,
-      this.maintain = const SdkOmitted()});
+  const NullableRepositoryWebhooksPermissions({required this.admin, required this.pull, this.triage = const SdkOmitted(), required this.push, this.maintain = const SdkOmitted()});
 
-  NullableRepositoryWebhooksPermissions Function(
-      {bool admin,
-      bool pull,
-      SdkOptional<bool> triage,
-      bool push,
-      SdkOptional<bool> maintain}) get copyWith => _copyWith;
+  NullableRepositoryWebhooksPermissions Function({bool admin, bool pull, SdkOptional<bool> triage, bool push, SdkOptional<bool> maintain}) get copyWith => _copyWith;
 
-  NullableRepositoryWebhooksPermissions _copyWith(
-          {Object? admin = sdkOmittedValue,
-          Object? pull = sdkOmittedValue,
-          Object? triage = sdkOmittedValue,
-          Object? push = sdkOmittedValue,
-          Object? maintain = sdkOmittedValue}) =>
-      NullableRepositoryWebhooksPermissions(
-        admin: identical(admin, sdkOmittedValue) ? this.admin : admin as bool,
-        pull: identical(pull, sdkOmittedValue) ? this.pull : pull as bool,
-        triage: identical(triage, sdkOmittedValue)
-            ? this.triage
-            : triage as SdkOptional<bool>,
-        push: identical(push, sdkOmittedValue) ? this.push : push as bool,
-        maintain: identical(maintain, sdkOmittedValue)
-            ? this.maintain
-            : maintain as SdkOptional<bool>,
-      );
+  NullableRepositoryWebhooksPermissions _copyWith({Object? admin = sdkOmittedValue, Object? pull = sdkOmittedValue, Object? triage = sdkOmittedValue, Object? push = sdkOmittedValue, Object? maintain = sdkOmittedValue}) => NullableRepositoryWebhooksPermissions(
+    admin: identical(admin, sdkOmittedValue) ? this.admin : admin as bool,
+    pull: identical(pull, sdkOmittedValue) ? this.pull : pull as bool,
+    triage: identical(triage, sdkOmittedValue) ? this.triage : triage as SdkOptional<bool>,
+    push: identical(push, sdkOmittedValue) ? this.push : push as bool,
+    maintain: identical(maintain, sdkOmittedValue) ? this.maintain : maintain as SdkOptional<bool>,
+  );
 
-  factory NullableRepositoryWebhooksPermissions.fromJson(
-          Map<String, dynamic> json) =>
-      NullableRepositoryWebhooksPermissions(
-        admin: (json['admin'] as bool?)!,
-        pull: (json['pull'] as bool?)!,
-        triage: json['triage'] != null
-            ? SdkPresent((json['triage'] as bool?)!)
-            : const SdkOmitted(),
-        push: (json['push'] as bool?)!,
-        maintain: json['maintain'] != null
-            ? SdkPresent((json['maintain'] as bool?)!)
-            : const SdkOmitted(),
-      );
+  factory NullableRepositoryWebhooksPermissions.fromJson(Map<String, dynamic> json) => NullableRepositoryWebhooksPermissions(
+    admin: (json['admin'] as bool?)!,
+    pull: (json['pull'] as bool?)!,
+    triage: json['triage'] != null ? SdkPresent((json['triage'] as bool?)!) : const SdkOmitted(),
+    push: (json['push'] as bool?)!,
+    maintain: json['maintain'] != null ? SdkPresent((json['maintain'] as bool?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'admin': admin,
-        'pull': pull,
-        ...switch (triage) {
-          SdkPresent<bool>(value: final value) => {
-              'triage': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        'push': push,
-        ...switch (maintain) {
-          SdkPresent<bool>(value: final value) => {
-              'maintain': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'admin': admin,
+    'pull': pull,
+    ...switch (triage) {
+      SdkPresent<bool>(value: final value) => {'triage': value,},
+      _ => const <String, dynamic>{},
+    },
+    'push': push,
+    ...switch (maintain) {
+      SdkPresent<bool>(value: final value) => {'maintain': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

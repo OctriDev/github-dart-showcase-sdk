@@ -8,228 +8,107 @@ part of 'orgs.dart';
 class ArtifactDeploymentRecord {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `integer` value serialized in the `id` wire field.
   final SdkOptional<int> id;
-
   /// Optional `string` value serialized in the `digest` wire field.
   final SdkOptional<String> digest;
-
   /// Optional `string` value serialized in the `logical_environment` wire field.
   final SdkOptional<String> logicalEnvironment;
-
   /// Optional `string` value serialized in the `physical_environment` wire field.
   final SdkOptional<String> physicalEnvironment;
-
   /// Optional `string` value serialized in the `cluster` wire field.
   final SdkOptional<String> cluster;
-
   /// Optional `string` value serialized in the `deployment_name` wire field.
   final SdkOptional<String> deploymentName;
-
   /// Optional object value serialized in the `tags` wire field.
   final SdkOptional<Map<String, String>> tags;
-
   /// A list of runtime risks associated with the deployment.
-  final SdkOptional<List<ArtifactDeploymentRecordRuntimeRisksItem>>
-      runtimeRisks;
-
+  final SdkOptional<List<ArtifactDeploymentRecordRuntimeRisksItem>> runtimeRisks;
   /// Optional `string` value serialized in the `created_at` wire field.
   final SdkOptional<String> createdAt;
-
   /// Optional `string` value serialized in the `updated_at` wire field.
   final SdkOptional<String> updatedAt;
-
   /// The ID of the provenance attestation associated with the deployment record.
   final SdkOptional<int?> attestationId;
 
-  const ArtifactDeploymentRecord(
-      {this.id = const SdkOmitted(),
-      this.digest = const SdkOmitted(),
-      this.logicalEnvironment = const SdkOmitted(),
-      this.physicalEnvironment = const SdkOmitted(),
-      this.cluster = const SdkOmitted(),
-      this.deploymentName = const SdkOmitted(),
-      this.tags = const SdkOmitted(),
-      this.runtimeRisks = const SdkOmitted(),
-      this.createdAt = const SdkOmitted(),
-      this.updatedAt = const SdkOmitted(),
-      this.attestationId = const SdkOmitted()});
+  const ArtifactDeploymentRecord({this.id = const SdkOmitted(), this.digest = const SdkOmitted(), this.logicalEnvironment = const SdkOmitted(), this.physicalEnvironment = const SdkOmitted(), this.cluster = const SdkOmitted(), this.deploymentName = const SdkOmitted(), this.tags = const SdkOmitted(), this.runtimeRisks = const SdkOmitted(), this.createdAt = const SdkOmitted(), this.updatedAt = const SdkOmitted(), this.attestationId = const SdkOmitted()});
 
-  ArtifactDeploymentRecord Function(
-      {SdkOptional<int> id,
-      SdkOptional<String> digest,
-      SdkOptional<String> logicalEnvironment,
-      SdkOptional<String> physicalEnvironment,
-      SdkOptional<String> cluster,
-      SdkOptional<String> deploymentName,
-      SdkOptional<Map<String, String>> tags,
-      SdkOptional<List<ArtifactDeploymentRecordRuntimeRisksItem>> runtimeRisks,
-      SdkOptional<String> createdAt,
-      SdkOptional<String> updatedAt,
-      SdkOptional<int?> attestationId}) get copyWith => _copyWith;
+  ArtifactDeploymentRecord Function({SdkOptional<int> id, SdkOptional<String> digest, SdkOptional<String> logicalEnvironment, SdkOptional<String> physicalEnvironment, SdkOptional<String> cluster, SdkOptional<String> deploymentName, SdkOptional<Map<String, String>> tags, SdkOptional<List<ArtifactDeploymentRecordRuntimeRisksItem>> runtimeRisks, SdkOptional<String> createdAt, SdkOptional<String> updatedAt, SdkOptional<int?> attestationId}) get copyWith => _copyWith;
 
-  ArtifactDeploymentRecord _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? digest = sdkOmittedValue,
-          Object? logicalEnvironment = sdkOmittedValue,
-          Object? physicalEnvironment = sdkOmittedValue,
-          Object? cluster = sdkOmittedValue,
-          Object? deploymentName = sdkOmittedValue,
-          Object? tags = sdkOmittedValue,
-          Object? runtimeRisks = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue,
-          Object? attestationId = sdkOmittedValue}) =>
-      ArtifactDeploymentRecord(
-        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-        digest: identical(digest, sdkOmittedValue)
-            ? this.digest
-            : digest as SdkOptional<String>,
-        logicalEnvironment: identical(logicalEnvironment, sdkOmittedValue)
-            ? this.logicalEnvironment
-            : logicalEnvironment as SdkOptional<String>,
-        physicalEnvironment: identical(physicalEnvironment, sdkOmittedValue)
-            ? this.physicalEnvironment
-            : physicalEnvironment as SdkOptional<String>,
-        cluster: identical(cluster, sdkOmittedValue)
-            ? this.cluster
-            : cluster as SdkOptional<String>,
-        deploymentName: identical(deploymentName, sdkOmittedValue)
-            ? this.deploymentName
-            : deploymentName as SdkOptional<String>,
-        tags: identical(tags, sdkOmittedValue)
-            ? this.tags
-            : tags as SdkOptional<Map<String, String>>,
-        runtimeRisks: identical(runtimeRisks, sdkOmittedValue)
-            ? this.runtimeRisks
-            : runtimeRisks
-                as SdkOptional<List<ArtifactDeploymentRecordRuntimeRisksItem>>,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as SdkOptional<String>,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as SdkOptional<String>,
-        attestationId: identical(attestationId, sdkOmittedValue)
-            ? this.attestationId
-            : attestationId as SdkOptional<int?>,
-      );
+  ArtifactDeploymentRecord _copyWith({Object? id = sdkOmittedValue, Object? digest = sdkOmittedValue, Object? logicalEnvironment = sdkOmittedValue, Object? physicalEnvironment = sdkOmittedValue, Object? cluster = sdkOmittedValue, Object? deploymentName = sdkOmittedValue, Object? tags = sdkOmittedValue, Object? runtimeRisks = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? attestationId = sdkOmittedValue}) => ArtifactDeploymentRecord(
+    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+    digest: identical(digest, sdkOmittedValue) ? this.digest : digest as SdkOptional<String>,
+    logicalEnvironment: identical(logicalEnvironment, sdkOmittedValue) ? this.logicalEnvironment : logicalEnvironment as SdkOptional<String>,
+    physicalEnvironment: identical(physicalEnvironment, sdkOmittedValue) ? this.physicalEnvironment : physicalEnvironment as SdkOptional<String>,
+    cluster: identical(cluster, sdkOmittedValue) ? this.cluster : cluster as SdkOptional<String>,
+    deploymentName: identical(deploymentName, sdkOmittedValue) ? this.deploymentName : deploymentName as SdkOptional<String>,
+    tags: identical(tags, sdkOmittedValue) ? this.tags : tags as SdkOptional<Map<String, String>>,
+    runtimeRisks: identical(runtimeRisks, sdkOmittedValue) ? this.runtimeRisks : runtimeRisks as SdkOptional<List<ArtifactDeploymentRecordRuntimeRisksItem>>,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as SdkOptional<String>,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as SdkOptional<String>,
+    attestationId: identical(attestationId, sdkOmittedValue) ? this.attestationId : attestationId as SdkOptional<int?>,
+  );
 
-  factory ArtifactDeploymentRecord.fromJson(Map<String, dynamic> json) =>
-      ArtifactDeploymentRecord(
-        id: json['id'] != null
-            ? SdkPresent(((json['id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        digest: json['digest'] != null
-            ? SdkPresent((json['digest'] as String?)!)
-            : const SdkOmitted(),
-        logicalEnvironment: json['logical_environment'] != null
-            ? SdkPresent((json['logical_environment'] as String?)!)
-            : const SdkOmitted(),
-        physicalEnvironment: json['physical_environment'] != null
-            ? SdkPresent((json['physical_environment'] as String?)!)
-            : const SdkOmitted(),
-        cluster: json['cluster'] != null
-            ? SdkPresent((json['cluster'] as String?)!)
-            : const SdkOmitted(),
-        deploymentName: json['deployment_name'] != null
-            ? SdkPresent((json['deployment_name'] as String?)!)
-            : const SdkOmitted(),
-        tags: json['tags'] != null
-            ? SdkPresent((json['tags'] == null
-                ? null
-                : Map<String, dynamic>.from(json['tags'] as Map)
-                    .map((key, value) => MapEntry(key, value as String)))!)
-            : const SdkOmitted(),
-        runtimeRisks: json['runtime_risks'] != null
-            ? SdkPresent(((json['runtime_risks'] as List?)
-                ?.map((e) => ArtifactDeploymentRecordRuntimeRisksItem.fromJson(
-                    e as String))
-                .toList())!)
-            : const SdkOmitted(),
-        createdAt: json['created_at'] != null
-            ? SdkPresent((json['created_at'] as String?)!)
-            : const SdkOmitted(),
-        updatedAt: json['updated_at'] != null
-            ? SdkPresent((json['updated_at'] as String?)!)
-            : const SdkOmitted(),
-        attestationId: json.containsKey('attestation_id')
-            ? SdkPresent((json['attestation_id'] as num?)?.toInt())
-            : const SdkOmitted(),
-      );
+  factory ArtifactDeploymentRecord.fromJson(Map<String, dynamic> json) => ArtifactDeploymentRecord(
+    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
+    digest: json['digest'] != null ? SdkPresent((json['digest'] as String?)!) : const SdkOmitted(),
+    logicalEnvironment: json['logical_environment'] != null ? SdkPresent((json['logical_environment'] as String?)!) : const SdkOmitted(),
+    physicalEnvironment: json['physical_environment'] != null ? SdkPresent((json['physical_environment'] as String?)!) : const SdkOmitted(),
+    cluster: json['cluster'] != null ? SdkPresent((json['cluster'] as String?)!) : const SdkOmitted(),
+    deploymentName: json['deployment_name'] != null ? SdkPresent((json['deployment_name'] as String?)!) : const SdkOmitted(),
+    tags: json['tags'] != null ? SdkPresent((json['tags'] == null ? null : Map<String, dynamic>.from(json['tags'] as Map).map((key, value) => MapEntry(key, value as String)))!) : const SdkOmitted(),
+    runtimeRisks: json['runtime_risks'] != null ? SdkPresent(((json['runtime_risks'] as List?)?.map((e) => ArtifactDeploymentRecordRuntimeRisksItem.fromJson(e as String)).toList())!) : const SdkOmitted(),
+    createdAt: json['created_at'] != null ? SdkPresent((json['created_at'] as String?)!) : const SdkOmitted(),
+    updatedAt: json['updated_at'] != null ? SdkPresent((json['updated_at'] as String?)!) : const SdkOmitted(),
+    attestationId: json.containsKey('attestation_id') ? SdkPresent((json['attestation_id'] as num?)?.toInt()) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (id) {
-          SdkPresent<int>(value: final value) => {
-              'id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (digest) {
-          SdkPresent<String>(value: final value) => {
-              'digest': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (logicalEnvironment) {
-          SdkPresent<String>(value: final value) => {
-              'logical_environment': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (physicalEnvironment) {
-          SdkPresent<String>(value: final value) => {
-              'physical_environment': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (cluster) {
-          SdkPresent<String>(value: final value) => {
-              'cluster': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (deploymentName) {
-          SdkPresent<String>(value: final value) => {
-              'deployment_name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (tags) {
-          SdkPresent<Map<String, String>>(value: final value) => {
-              'tags': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (runtimeRisks) {
-          SdkPresent<List<ArtifactDeploymentRecordRuntimeRisksItem>>(
-            value: final value
-          ) =>
-            {
-              'runtime_risks': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (createdAt) {
-          SdkPresent<String>(value: final value) => {
-              'created_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (updatedAt) {
-          SdkPresent<String>(value: final value) => {
-              'updated_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (attestationId) {
-          SdkPresent<int?>(value: final value) => {
-              'attestation_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (id) {
+      SdkPresent<int>(value: final value) => {'id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (digest) {
+      SdkPresent<String>(value: final value) => {'digest': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (logicalEnvironment) {
+      SdkPresent<String>(value: final value) => {'logical_environment': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (physicalEnvironment) {
+      SdkPresent<String>(value: final value) => {'physical_environment': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (cluster) {
+      SdkPresent<String>(value: final value) => {'cluster': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (deploymentName) {
+      SdkPresent<String>(value: final value) => {'deployment_name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (tags) {
+      SdkPresent<Map<String, String>>(value: final value) => {'tags': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (runtimeRisks) {
+      SdkPresent<List<ArtifactDeploymentRecordRuntimeRisksItem>>(value: final value) => {'runtime_risks': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (createdAt) {
+      SdkPresent<String>(value: final value) => {'created_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (updatedAt) {
+      SdkPresent<String>(value: final value) => {'updated_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (attestationId) {
+      SdkPresent<int?>(value: final value) => {'attestation_id': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 sealed class CustomPropertyDefaultValue {
@@ -237,228 +116,116 @@ sealed class CustomPropertyDefaultValue {
   static const String constructionSurface = 'named';
   const CustomPropertyDefaultValue();
   factory CustomPropertyDefaultValue.fromJson(Object? json) {
-    if (json is String) {
-      return CustomPropertyDefaultValueString(json);
-    }
-    if (json is List) {
-      return CustomPropertyDefaultValueListString(
-          json.map((e) => e as String).toList().cast<String>());
-    }
+    if (json is String) { return CustomPropertyDefaultValueString(json); }
+    if (json is List) { return CustomPropertyDefaultValueListString(json.map((e) => e as String).toList().cast<String>()); }
     throw FormatException("No variant matched for CustomPropertyDefaultValue");
   }
   Object? toJson();
 }
 
-final class CustomPropertyDefaultValueString
-    extends CustomPropertyDefaultValue {
+final class CustomPropertyDefaultValueString extends CustomPropertyDefaultValue {
   final String value;
   const CustomPropertyDefaultValueString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
-final class CustomPropertyDefaultValueListString
-    extends CustomPropertyDefaultValue {
+final class CustomPropertyDefaultValueListString extends CustomPropertyDefaultValue {
   final List<String> value;
   const CustomPropertyDefaultValueListString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
 /// Custom property defined on an organization
 class CustomProperty {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The name of the property
   final String propertyName;
-
   /// The URL that can be used to fetch, update, or delete info about this property via the API.
   final SdkOptional<String> url;
-
   /// The source type of the property
   final SdkOptional<CustomPropertySourceType> sourceType;
-
   /// The type of the value for the property
   final CustomPropertyValueType valueType;
-
   /// Whether the property is required.
   final SdkOptional<bool> required_;
-
   /// Default value of the property
   final SdkOptional<dynamic> defaultValue;
-
   /// Short description of the property
   final SdkOptional<String?> description;
-
   /// An ordered list of the allowed values of the property. The property can have up to 200 allowed values.
   final SdkOptional<List<String>?> allowedValues;
-
   /// Who can edit the values of the property
   final SdkOptional<CustomPropertyValuesEditableBy?> valuesEditableBy;
-
   /// Whether setting properties values is mandatory
   final SdkOptional<bool> requireExplicitValues;
 
-  const CustomProperty(
-      {required this.propertyName,
-      this.url = const SdkOmitted(),
-      this.sourceType = const SdkOmitted(),
-      required this.valueType,
-      this.required_ = const SdkOmitted(),
-      this.defaultValue = const SdkOmitted(),
-      this.description = const SdkOmitted(),
-      this.allowedValues = const SdkOmitted(),
-      this.valuesEditableBy = const SdkOmitted(),
-      this.requireExplicitValues = const SdkOmitted()});
+  const CustomProperty({required this.propertyName, this.url = const SdkOmitted(), this.sourceType = const SdkOmitted(), required this.valueType, this.required_ = const SdkOmitted(), this.defaultValue = const SdkOmitted(), this.description = const SdkOmitted(), this.allowedValues = const SdkOmitted(), this.valuesEditableBy = const SdkOmitted(), this.requireExplicitValues = const SdkOmitted()});
 
-  CustomProperty Function(
-      {String propertyName,
-      SdkOptional<String> url,
-      SdkOptional<CustomPropertySourceType> sourceType,
-      CustomPropertyValueType valueType,
-      SdkOptional<bool> required_,
-      SdkOptional<dynamic> defaultValue,
-      SdkOptional<String?> description,
-      SdkOptional<List<String>?> allowedValues,
-      SdkOptional<CustomPropertyValuesEditableBy?> valuesEditableBy,
-      SdkOptional<bool> requireExplicitValues}) get copyWith => _copyWith;
+  CustomProperty Function({String propertyName, SdkOptional<String> url, SdkOptional<CustomPropertySourceType> sourceType, CustomPropertyValueType valueType, SdkOptional<bool> required_, SdkOptional<dynamic> defaultValue, SdkOptional<String?> description, SdkOptional<List<String>?> allowedValues, SdkOptional<CustomPropertyValuesEditableBy?> valuesEditableBy, SdkOptional<bool> requireExplicitValues}) get copyWith => _copyWith;
 
-  CustomProperty _copyWith(
-          {Object? propertyName = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? sourceType = sdkOmittedValue,
-          Object? valueType = sdkOmittedValue,
-          Object? required_ = sdkOmittedValue,
-          Object? defaultValue = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? allowedValues = sdkOmittedValue,
-          Object? valuesEditableBy = sdkOmittedValue,
-          Object? requireExplicitValues = sdkOmittedValue}) =>
-      CustomProperty(
-        propertyName: identical(propertyName, sdkOmittedValue)
-            ? this.propertyName
-            : propertyName as String,
-        url: identical(url, sdkOmittedValue)
-            ? this.url
-            : url as SdkOptional<String>,
-        sourceType: identical(sourceType, sdkOmittedValue)
-            ? this.sourceType
-            : sourceType as SdkOptional<CustomPropertySourceType>,
-        valueType: identical(valueType, sdkOmittedValue)
-            ? this.valueType
-            : valueType as CustomPropertyValueType,
-        required_: identical(required_, sdkOmittedValue)
-            ? this.required_
-            : required_ as SdkOptional<bool>,
-        defaultValue: identical(defaultValue, sdkOmittedValue)
-            ? this.defaultValue
-            : defaultValue as SdkOptional<dynamic>,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as SdkOptional<String?>,
-        allowedValues: identical(allowedValues, sdkOmittedValue)
-            ? this.allowedValues
-            : allowedValues as SdkOptional<List<String>?>,
-        valuesEditableBy: identical(valuesEditableBy, sdkOmittedValue)
-            ? this.valuesEditableBy
-            : valuesEditableBy as SdkOptional<CustomPropertyValuesEditableBy?>,
-        requireExplicitValues: identical(requireExplicitValues, sdkOmittedValue)
-            ? this.requireExplicitValues
-            : requireExplicitValues as SdkOptional<bool>,
-      );
+  CustomProperty _copyWith({Object? propertyName = sdkOmittedValue, Object? url = sdkOmittedValue, Object? sourceType = sdkOmittedValue, Object? valueType = sdkOmittedValue, Object? required_ = sdkOmittedValue, Object? defaultValue = sdkOmittedValue, Object? description = sdkOmittedValue, Object? allowedValues = sdkOmittedValue, Object? valuesEditableBy = sdkOmittedValue, Object? requireExplicitValues = sdkOmittedValue}) => CustomProperty(
+    propertyName: identical(propertyName, sdkOmittedValue) ? this.propertyName : propertyName as String,
+    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
+    sourceType: identical(sourceType, sdkOmittedValue) ? this.sourceType : sourceType as SdkOptional<CustomPropertySourceType>,
+    valueType: identical(valueType, sdkOmittedValue) ? this.valueType : valueType as CustomPropertyValueType,
+    required_: identical(required_, sdkOmittedValue) ? this.required_ : required_ as SdkOptional<bool>,
+    defaultValue: identical(defaultValue, sdkOmittedValue) ? this.defaultValue : defaultValue as SdkOptional<dynamic>,
+    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String?>,
+    allowedValues: identical(allowedValues, sdkOmittedValue) ? this.allowedValues : allowedValues as SdkOptional<List<String>?>,
+    valuesEditableBy: identical(valuesEditableBy, sdkOmittedValue) ? this.valuesEditableBy : valuesEditableBy as SdkOptional<CustomPropertyValuesEditableBy?>,
+    requireExplicitValues: identical(requireExplicitValues, sdkOmittedValue) ? this.requireExplicitValues : requireExplicitValues as SdkOptional<bool>,
+  );
 
   factory CustomProperty.fromJson(Map<String, dynamic> json) => CustomProperty(
-        propertyName: (json['property_name'] as String?)!,
-        url: json['url'] != null
-            ? SdkPresent((json['url'] as String?)!)
-            : const SdkOmitted(),
-        sourceType: json['source_type'] != null
-            ? SdkPresent((json['source_type'] != null
-                ? CustomPropertySourceType.fromJson(
-                    json['source_type'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        valueType: (json['value_type'] != null
-            ? CustomPropertyValueType.fromJson(json['value_type'] as String)
-            : null)!,
-        required_: json['required'] != null
-            ? SdkPresent((json['required'] as bool?)!)
-            : const SdkOmitted(),
-        defaultValue: json.containsKey('default_value')
-            ? SdkPresent(json['default_value'])
-            : const SdkOmitted(),
-        description: json.containsKey('description')
-            ? SdkPresent(json['description'] as String?)
-            : const SdkOmitted(),
-        allowedValues: json.containsKey('allowed_values')
-            ? SdkPresent((json['allowed_values'] as List?)
-                ?.map((e) => e as String)
-                .toList())
-            : const SdkOmitted(),
-        valuesEditableBy: json.containsKey('values_editable_by')
-            ? SdkPresent(json['values_editable_by'] != null
-                ? CustomPropertyValuesEditableBy.fromJson(
-                    json['values_editable_by'] as String)
-                : null)
-            : const SdkOmitted(),
-        requireExplicitValues: json['require_explicit_values'] != null
-            ? SdkPresent((json['require_explicit_values'] as bool?)!)
-            : const SdkOmitted(),
-      );
+    propertyName: (json['property_name'] as String?)!,
+    url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
+    sourceType: json['source_type'] != null ? SdkPresent((json['source_type'] != null ? CustomPropertySourceType.fromJson(json['source_type'] as String) : null)!) : const SdkOmitted(),
+    valueType: (json['value_type'] != null ? CustomPropertyValueType.fromJson(json['value_type'] as String) : null)!,
+    required_: json['required'] != null ? SdkPresent((json['required'] as bool?)!) : const SdkOmitted(),
+    defaultValue: json.containsKey('default_value') ? SdkPresent(json['default_value']) : const SdkOmitted(),
+    description: json.containsKey('description') ? SdkPresent(json['description'] as String?) : const SdkOmitted(),
+    allowedValues: json.containsKey('allowed_values') ? SdkPresent((json['allowed_values'] as List?)?.map((e) => e as String).toList()) : const SdkOmitted(),
+    valuesEditableBy: json.containsKey('values_editable_by') ? SdkPresent(json['values_editable_by'] != null ? CustomPropertyValuesEditableBy.fromJson(json['values_editable_by'] as String) : null) : const SdkOmitted(),
+    requireExplicitValues: json['require_explicit_values'] != null ? SdkPresent((json['require_explicit_values'] as bool?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'property_name': propertyName,
-        ...switch (url) {
-          SdkPresent<String>(value: final value) => {
-              'url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (sourceType) {
-          SdkPresent<CustomPropertySourceType>(value: final value) => {
-              'source_type': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'value_type': valueType.toJson(),
-        ...switch (required_) {
-          SdkPresent<bool>(value: final value) => {
-              'required': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (defaultValue) {
-          SdkPresent<dynamic>(value: final value) => {
-              'default_value': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (description) {
-          SdkPresent<String?>(value: final value) => {
-              'description': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (allowedValues) {
-          SdkPresent<List<String>?>(value: final value) => {
-              'allowed_values': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (valuesEditableBy) {
-          SdkPresent<CustomPropertyValuesEditableBy?>(value: final value) => {
-              'values_editable_by': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (requireExplicitValues) {
-          SdkPresent<bool>(value: final value) => {
-              'require_explicit_values': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'property_name': propertyName,
+    ...switch (url) {
+      SdkPresent<String>(value: final value) => {'url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (sourceType) {
+      SdkPresent<CustomPropertySourceType>(value: final value) => {'source_type': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'value_type': valueType.toJson(),
+    ...switch (required_) {
+      SdkPresent<bool>(value: final value) => {'required': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (defaultValue) {
+      SdkPresent<dynamic>(value: final value) => {'default_value': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (description) {
+      SdkPresent<String?>(value: final value) => {'description': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (allowedValues) {
+      SdkPresent<List<String>?>(value: final value) => {'allowed_values': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (valuesEditableBy) {
+      SdkPresent<CustomPropertyValuesEditableBy?>(value: final value) => {'values_editable_by': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (requireExplicitValues) {
+      SdkPresent<bool>(value: final value) => {'require_explicit_values': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 sealed class CustomPropertySetPayloadDefaultValue {
@@ -466,31 +233,21 @@ sealed class CustomPropertySetPayloadDefaultValue {
   static const String constructionSurface = 'named';
   const CustomPropertySetPayloadDefaultValue();
   factory CustomPropertySetPayloadDefaultValue.fromJson(Object? json) {
-    if (json is String) {
-      return CustomPropertySetPayloadDefaultValueString(json);
-    }
-    if (json is List) {
-      return CustomPropertySetPayloadDefaultValueListString(
-          json.map((e) => e as String).toList().cast<String>());
-    }
-    throw FormatException(
-        "No variant matched for CustomPropertySetPayloadDefaultValue");
+    if (json is String) { return CustomPropertySetPayloadDefaultValueString(json); }
+    if (json is List) { return CustomPropertySetPayloadDefaultValueListString(json.map((e) => e as String).toList().cast<String>()); }
+    throw FormatException("No variant matched for CustomPropertySetPayloadDefaultValue");
   }
   Object? toJson();
 }
 
-final class CustomPropertySetPayloadDefaultValueString
-    extends CustomPropertySetPayloadDefaultValue {
+final class CustomPropertySetPayloadDefaultValueString extends CustomPropertySetPayloadDefaultValue {
   final String value;
   const CustomPropertySetPayloadDefaultValueString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }
 
-final class CustomPropertySetPayloadDefaultValueListString
-    extends CustomPropertySetPayloadDefaultValue {
+final class CustomPropertySetPayloadDefaultValueListString extends CustomPropertySetPayloadDefaultValue {
   final List<String> value;
   const CustomPropertySetPayloadDefaultValueListString(this.value);
-  @override
-  Object? toJson() => value;
+  @override Object? toJson() => value;
 }

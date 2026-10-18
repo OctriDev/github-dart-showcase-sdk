@@ -8,316 +8,167 @@ part of 'actions.dart';
 class EnvironmentApprovalsEnvironmentsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The id of the environment.
   final SdkOptional<int> id;
-
   /// Optional `string` value serialized in the `node_id` wire field.
   final SdkOptional<String> nodeId;
-
   /// The name of the environment.
   final SdkOptional<String> name;
-
   /// Optional `string` value serialized in the `url` wire field.
   final SdkOptional<String> url;
-
   /// Optional `string` value serialized in the `html_url` wire field.
   final SdkOptional<String> htmlUrl;
-
   /// The time that the environment was created, in ISO 8601 format.
   final SdkOptional<String> createdAt;
-
   /// The time that the environment was last updated, in ISO 8601 format.
   final SdkOptional<String> updatedAt;
 
-  const EnvironmentApprovalsEnvironmentsItem(
-      {this.id = const SdkOmitted(),
-      this.nodeId = const SdkOmitted(),
-      this.name = const SdkOmitted(),
-      this.url = const SdkOmitted(),
-      this.htmlUrl = const SdkOmitted(),
-      this.createdAt = const SdkOmitted(),
-      this.updatedAt = const SdkOmitted()});
+  const EnvironmentApprovalsEnvironmentsItem({this.id = const SdkOmitted(), this.nodeId = const SdkOmitted(), this.name = const SdkOmitted(), this.url = const SdkOmitted(), this.htmlUrl = const SdkOmitted(), this.createdAt = const SdkOmitted(), this.updatedAt = const SdkOmitted()});
 
-  EnvironmentApprovalsEnvironmentsItem Function(
-      {SdkOptional<int> id,
-      SdkOptional<String> nodeId,
-      SdkOptional<String> name,
-      SdkOptional<String> url,
-      SdkOptional<String> htmlUrl,
-      SdkOptional<String> createdAt,
-      SdkOptional<String> updatedAt}) get copyWith => _copyWith;
+  EnvironmentApprovalsEnvironmentsItem Function({SdkOptional<int> id, SdkOptional<String> nodeId, SdkOptional<String> name, SdkOptional<String> url, SdkOptional<String> htmlUrl, SdkOptional<String> createdAt, SdkOptional<String> updatedAt}) get copyWith => _copyWith;
 
-  EnvironmentApprovalsEnvironmentsItem _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? nodeId = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? url = sdkOmittedValue,
-          Object? htmlUrl = sdkOmittedValue,
-          Object? createdAt = sdkOmittedValue,
-          Object? updatedAt = sdkOmittedValue}) =>
-      EnvironmentApprovalsEnvironmentsItem(
-        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-        nodeId: identical(nodeId, sdkOmittedValue)
-            ? this.nodeId
-            : nodeId as SdkOptional<String>,
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String>,
-        url: identical(url, sdkOmittedValue)
-            ? this.url
-            : url as SdkOptional<String>,
-        htmlUrl: identical(htmlUrl, sdkOmittedValue)
-            ? this.htmlUrl
-            : htmlUrl as SdkOptional<String>,
-        createdAt: identical(createdAt, sdkOmittedValue)
-            ? this.createdAt
-            : createdAt as SdkOptional<String>,
-        updatedAt: identical(updatedAt, sdkOmittedValue)
-            ? this.updatedAt
-            : updatedAt as SdkOptional<String>,
-      );
+  EnvironmentApprovalsEnvironmentsItem _copyWith({Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? name = sdkOmittedValue, Object? url = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue}) => EnvironmentApprovalsEnvironmentsItem(
+    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as SdkOptional<String>,
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
+    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
+    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String>,
+    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as SdkOptional<String>,
+    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as SdkOptional<String>,
+  );
 
-  factory EnvironmentApprovalsEnvironmentsItem.fromJson(
-          Map<String, dynamic> json) =>
-      EnvironmentApprovalsEnvironmentsItem(
-        id: json['id'] != null
-            ? SdkPresent(((json['id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        nodeId: json['node_id'] != null
-            ? SdkPresent((json['node_id'] as String?)!)
-            : const SdkOmitted(),
-        name: json['name'] != null
-            ? SdkPresent((json['name'] as String?)!)
-            : const SdkOmitted(),
-        url: json['url'] != null
-            ? SdkPresent((json['url'] as String?)!)
-            : const SdkOmitted(),
-        htmlUrl: json['html_url'] != null
-            ? SdkPresent((json['html_url'] as String?)!)
-            : const SdkOmitted(),
-        createdAt: json['created_at'] != null
-            ? SdkPresent((json['created_at'] as String?)!)
-            : const SdkOmitted(),
-        updatedAt: json['updated_at'] != null
-            ? SdkPresent((json['updated_at'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory EnvironmentApprovalsEnvironmentsItem.fromJson(Map<String, dynamic> json) => EnvironmentApprovalsEnvironmentsItem(
+    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
+    nodeId: json['node_id'] != null ? SdkPresent((json['node_id'] as String?)!) : const SdkOmitted(),
+    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
+    url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
+    htmlUrl: json['html_url'] != null ? SdkPresent((json['html_url'] as String?)!) : const SdkOmitted(),
+    createdAt: json['created_at'] != null ? SdkPresent((json['created_at'] as String?)!) : const SdkOmitted(),
+    updatedAt: json['updated_at'] != null ? SdkPresent((json['updated_at'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (id) {
-          SdkPresent<int>(value: final value) => {
-              'id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (nodeId) {
-          SdkPresent<String>(value: final value) => {
-              'node_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (name) {
-          SdkPresent<String>(value: final value) => {
-              'name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (url) {
-          SdkPresent<String>(value: final value) => {
-              'url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (htmlUrl) {
-          SdkPresent<String>(value: final value) => {
-              'html_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (createdAt) {
-          SdkPresent<String>(value: final value) => {
-              'created_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (updatedAt) {
-          SdkPresent<String>(value: final value) => {
-              'updated_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (id) {
+      SdkPresent<int>(value: final value) => {'id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (nodeId) {
+      SdkPresent<String>(value: final value) => {'node_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (name) {
+      SdkPresent<String>(value: final value) => {'name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (url) {
+      SdkPresent<String>(value: final value) => {'url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (htmlUrl) {
+      SdkPresent<String>(value: final value) => {'html_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (createdAt) {
+      SdkPresent<String>(value: final value) => {'created_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (updatedAt) {
+      SdkPresent<String>(value: final value) => {'updated_at': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// An entry in the reviews log for environment deployments
 class EnvironmentApprovals {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The list of environments that were approved or rejected
   final List<EnvironmentApprovalsEnvironmentsItem> environments;
-
   /// Whether deployment to the environment(s) was approved or rejected or pending (with comments)
   final EnvironmentApprovalsState state;
-
   /// A GitHub user.
   final SimpleUser user;
-
   /// The comment submitted with the deployment review
   final String comment;
 
-  const EnvironmentApprovals(
-      {required this.environments,
-      required this.state,
-      required this.user,
-      required this.comment});
+  const EnvironmentApprovals({required this.environments, required this.state, required this.user, required this.comment});
 
-  EnvironmentApprovals Function(
-      {List<EnvironmentApprovalsEnvironmentsItem> environments,
-      EnvironmentApprovalsState state,
-      SimpleUser user,
-      String comment}) get copyWith => _copyWith;
+  EnvironmentApprovals Function({List<EnvironmentApprovalsEnvironmentsItem> environments, EnvironmentApprovalsState state, SimpleUser user, String comment}) get copyWith => _copyWith;
 
-  EnvironmentApprovals _copyWith(
-          {Object? environments = sdkOmittedValue,
-          Object? state = sdkOmittedValue,
-          Object? user = sdkOmittedValue,
-          Object? comment = sdkOmittedValue}) =>
-      EnvironmentApprovals(
-        environments: identical(environments, sdkOmittedValue)
-            ? this.environments
-            : environments as List<EnvironmentApprovalsEnvironmentsItem>,
-        state: identical(state, sdkOmittedValue)
-            ? this.state
-            : state as EnvironmentApprovalsState,
-        user: identical(user, sdkOmittedValue) ? this.user : user as SimpleUser,
-        comment: identical(comment, sdkOmittedValue)
-            ? this.comment
-            : comment as String,
-      );
+  EnvironmentApprovals _copyWith({Object? environments = sdkOmittedValue, Object? state = sdkOmittedValue, Object? user = sdkOmittedValue, Object? comment = sdkOmittedValue}) => EnvironmentApprovals(
+    environments: identical(environments, sdkOmittedValue) ? this.environments : environments as List<EnvironmentApprovalsEnvironmentsItem>,
+    state: identical(state, sdkOmittedValue) ? this.state : state as EnvironmentApprovalsState,
+    user: identical(user, sdkOmittedValue) ? this.user : user as SimpleUser,
+    comment: identical(comment, sdkOmittedValue) ? this.comment : comment as String,
+  );
 
-  factory EnvironmentApprovals.fromJson(Map<String, dynamic> json) =>
-      EnvironmentApprovals(
-        environments: ((json['environments'] as List?)
-            ?.map((e) => EnvironmentApprovalsEnvironmentsItem.fromJson(
-                e as Map<String, dynamic>))
-            .toList())!,
-        state: (json['state'] != null
-            ? EnvironmentApprovalsState.fromJson(json['state'] as String)
-            : null)!,
-        user: (json['user'] != null
-            ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>)
-            : null)!,
-        comment: (json['comment'] as String?)!,
-      );
+  factory EnvironmentApprovals.fromJson(Map<String, dynamic> json) => EnvironmentApprovals(
+    environments: ((json['environments'] as List?)?.map((e) => EnvironmentApprovalsEnvironmentsItem.fromJson(e as Map<String, dynamic>)).toList())!,
+    state: (json['state'] != null ? EnvironmentApprovalsState.fromJson(json['state'] as String) : null)!,
+    user: (json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null)!,
+    comment: (json['comment'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'environments': environments.map((item) => item.toJson()).toList(),
-        'state': state.toJson(),
-        'user': user.toJson(),
-        'comment': comment,
-      };
+    'environments': environments.map((item) => item.toJson()).toList(),
+    'state': state.toJson(),
+    'user': user.toJson(),
+    'comment': comment,
+  };
 }
 
 /// Required object value serialized in the `steps[]` wire field.
 class JobStepsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The phase of the lifecycle that the job is currently in.
   final JobStepsItemStatus status;
-
   /// The outcome of the job.
   final String? conclusion;
-
   /// The name of the job.
   final String name;
-
   /// Required `integer` value serialized in the `number` wire field.
   final int number;
-
   /// The time that the step started, in ISO 8601 format.
   final SdkOptional<String?> startedAt;
-
   /// The time that the job finished, in ISO 8601 format.
   final SdkOptional<String?> completedAt;
 
-  const JobStepsItem(
-      {required this.status,
-      required this.conclusion,
-      required this.name,
-      required this.number,
-      this.startedAt = const SdkOmitted(),
-      this.completedAt = const SdkOmitted()});
+  const JobStepsItem({required this.status, required this.conclusion, required this.name, required this.number, this.startedAt = const SdkOmitted(), this.completedAt = const SdkOmitted()});
 
-  JobStepsItem Function(
-      {JobStepsItemStatus status,
-      String? conclusion,
-      String name,
-      int number,
-      SdkOptional<String?> startedAt,
-      SdkOptional<String?> completedAt}) get copyWith => _copyWith;
+  JobStepsItem Function({JobStepsItemStatus status, String? conclusion, String name, int number, SdkOptional<String?> startedAt, SdkOptional<String?> completedAt}) get copyWith => _copyWith;
 
-  JobStepsItem _copyWith(
-          {Object? status = sdkOmittedValue,
-          Object? conclusion = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? number = sdkOmittedValue,
-          Object? startedAt = sdkOmittedValue,
-          Object? completedAt = sdkOmittedValue}) =>
-      JobStepsItem(
-        status: identical(status, sdkOmittedValue)
-            ? this.status
-            : status as JobStepsItemStatus,
-        conclusion: identical(conclusion, sdkOmittedValue)
-            ? this.conclusion
-            : conclusion as String?,
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        number:
-            identical(number, sdkOmittedValue) ? this.number : number as int,
-        startedAt: identical(startedAt, sdkOmittedValue)
-            ? this.startedAt
-            : startedAt as SdkOptional<String?>,
-        completedAt: identical(completedAt, sdkOmittedValue)
-            ? this.completedAt
-            : completedAt as SdkOptional<String?>,
-      );
+  JobStepsItem _copyWith({Object? status = sdkOmittedValue, Object? conclusion = sdkOmittedValue, Object? name = sdkOmittedValue, Object? number = sdkOmittedValue, Object? startedAt = sdkOmittedValue, Object? completedAt = sdkOmittedValue}) => JobStepsItem(
+    status: identical(status, sdkOmittedValue) ? this.status : status as JobStepsItemStatus,
+    conclusion: identical(conclusion, sdkOmittedValue) ? this.conclusion : conclusion as String?,
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    number: identical(number, sdkOmittedValue) ? this.number : number as int,
+    startedAt: identical(startedAt, sdkOmittedValue) ? this.startedAt : startedAt as SdkOptional<String?>,
+    completedAt: identical(completedAt, sdkOmittedValue) ? this.completedAt : completedAt as SdkOptional<String?>,
+  );
 
   factory JobStepsItem.fromJson(Map<String, dynamic> json) => JobStepsItem(
-        status: (json['status'] != null
-            ? JobStepsItemStatus.fromJson(json['status'] as String)
-            : null)!,
-        conclusion: json.containsKey('conclusion')
-            ? json['conclusion'] as String?
-            : throw ArgumentError.value(
-                null, 'conclusion', 'Required property is missing'),
-        name: (json['name'] as String?)!,
-        number: ((json['number'] as num?)?.toInt())!,
-        startedAt: json.containsKey('started_at')
-            ? SdkPresent(json['started_at'] as String?)
-            : const SdkOmitted(),
-        completedAt: json.containsKey('completed_at')
-            ? SdkPresent(json['completed_at'] as String?)
-            : const SdkOmitted(),
-      );
+    status: (json['status'] != null ? JobStepsItemStatus.fromJson(json['status'] as String) : null)!,
+    conclusion: json.containsKey('conclusion') ? json['conclusion'] as String? : throw ArgumentError.value(null, 'conclusion', 'Required property is missing'),
+    name: (json['name'] as String?)!,
+    number: ((json['number'] as num?)?.toInt())!,
+    startedAt: json.containsKey('started_at') ? SdkPresent(json['started_at'] as String?) : const SdkOmitted(),
+    completedAt: json.containsKey('completed_at') ? SdkPresent(json['completed_at'] as String?) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'status': status.toJson(),
-        'conclusion': conclusion,
-        'name': name,
-        'number': number,
-        ...switch (startedAt) {
-          SdkPresent<String?>(value: final value) => {
-              'started_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (completedAt) {
-          SdkPresent<String?>(value: final value) => {
-              'completed_at': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'status': status.toJson(),
+    'conclusion': conclusion,
+    'name': name,
+    'number': number,
+    ...switch (startedAt) {
+      SdkPresent<String?>(value: final value) => {'started_at': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (completedAt) {
+      SdkPresent<String?>(value: final value) => {'completed_at': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

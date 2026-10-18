@@ -8,178 +8,94 @@ part of 'search.dart';
 class SearchResultTextMatchesItemMatchesItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `string` value serialized in the `text` wire field.
   final SdkOptional<String> text;
-
   /// Optional array value serialized in the `indices` wire field.
   final SdkOptional<List<int>> indices;
 
-  const SearchResultTextMatchesItemMatchesItem(
-      {this.text = const SdkOmitted(), this.indices = const SdkOmitted()});
+  const SearchResultTextMatchesItemMatchesItem({this.text = const SdkOmitted(), this.indices = const SdkOmitted()});
 
-  SearchResultTextMatchesItemMatchesItem Function(
-      {SdkOptional<String> text,
-      SdkOptional<List<int>> indices}) get copyWith => _copyWith;
+  SearchResultTextMatchesItemMatchesItem Function({SdkOptional<String> text, SdkOptional<List<int>> indices}) get copyWith => _copyWith;
 
-  SearchResultTextMatchesItemMatchesItem _copyWith(
-          {Object? text = sdkOmittedValue,
-          Object? indices = sdkOmittedValue}) =>
-      SearchResultTextMatchesItemMatchesItem(
-        text: identical(text, sdkOmittedValue)
-            ? this.text
-            : text as SdkOptional<String>,
-        indices: identical(indices, sdkOmittedValue)
-            ? this.indices
-            : indices as SdkOptional<List<int>>,
-      );
+  SearchResultTextMatchesItemMatchesItem _copyWith({Object? text = sdkOmittedValue, Object? indices = sdkOmittedValue}) => SearchResultTextMatchesItemMatchesItem(
+    text: identical(text, sdkOmittedValue) ? this.text : text as SdkOptional<String>,
+    indices: identical(indices, sdkOmittedValue) ? this.indices : indices as SdkOptional<List<int>>,
+  );
 
-  factory SearchResultTextMatchesItemMatchesItem.fromJson(
-          Map<String, dynamic> json) =>
-      SearchResultTextMatchesItemMatchesItem(
-        text: json['text'] != null
-            ? SdkPresent((json['text'] as String?)!)
-            : const SdkOmitted(),
-        indices: json['indices'] != null
-            ? SdkPresent(((json['indices'] as List?)
-                ?.map((e) => (e as num).toInt())
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory SearchResultTextMatchesItemMatchesItem.fromJson(Map<String, dynamic> json) => SearchResultTextMatchesItemMatchesItem(
+    text: json['text'] != null ? SdkPresent((json['text'] as String?)!) : const SdkOmitted(),
+    indices: json['indices'] != null ? SdkPresent(((json['indices'] as List?)?.map((e) => (e as num).toInt()).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (text) {
-          SdkPresent<String>(value: final value) => {
-              'text': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (indices) {
-          SdkPresent<List<int>>(value: final value) => {
-              'indices': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (text) {
+      SdkPresent<String>(value: final value) => {'text': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (indices) {
+      SdkPresent<List<int>>(value: final value) => {'indices': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Required object value serialized in the `text_matches[]` wire field.
 class SearchResultTextMatchesItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `string` value serialized in the `object_url` wire field.
   final SdkOptional<String> objectUrl;
-
   /// Optional `string` value serialized in the `object_type` wire field.
   final SdkOptional<String?> objectType;
-
   /// Optional `string` value serialized in the `property` wire field.
   final SdkOptional<String> property;
-
   /// Optional `string` value serialized in the `fragment` wire field.
   final SdkOptional<String> fragment;
-
   /// Optional array value serialized in the `matches` wire field.
   final SdkOptional<List<SearchResultTextMatchesItemMatchesItem>> matches;
 
-  const SearchResultTextMatchesItem(
-      {this.objectUrl = const SdkOmitted(),
-      this.objectType = const SdkOmitted(),
-      this.property = const SdkOmitted(),
-      this.fragment = const SdkOmitted(),
-      this.matches = const SdkOmitted()});
+  const SearchResultTextMatchesItem({this.objectUrl = const SdkOmitted(), this.objectType = const SdkOmitted(), this.property = const SdkOmitted(), this.fragment = const SdkOmitted(), this.matches = const SdkOmitted()});
 
-  SearchResultTextMatchesItem Function(
-          {SdkOptional<String> objectUrl,
-          SdkOptional<String?> objectType,
-          SdkOptional<String> property,
-          SdkOptional<String> fragment,
-          SdkOptional<List<SearchResultTextMatchesItemMatchesItem>> matches})
-      get copyWith => _copyWith;
+  SearchResultTextMatchesItem Function({SdkOptional<String> objectUrl, SdkOptional<String?> objectType, SdkOptional<String> property, SdkOptional<String> fragment, SdkOptional<List<SearchResultTextMatchesItemMatchesItem>> matches}) get copyWith => _copyWith;
 
-  SearchResultTextMatchesItem _copyWith(
-          {Object? objectUrl = sdkOmittedValue,
-          Object? objectType = sdkOmittedValue,
-          Object? property = sdkOmittedValue,
-          Object? fragment = sdkOmittedValue,
-          Object? matches = sdkOmittedValue}) =>
-      SearchResultTextMatchesItem(
-        objectUrl: identical(objectUrl, sdkOmittedValue)
-            ? this.objectUrl
-            : objectUrl as SdkOptional<String>,
-        objectType: identical(objectType, sdkOmittedValue)
-            ? this.objectType
-            : objectType as SdkOptional<String?>,
-        property: identical(property, sdkOmittedValue)
-            ? this.property
-            : property as SdkOptional<String>,
-        fragment: identical(fragment, sdkOmittedValue)
-            ? this.fragment
-            : fragment as SdkOptional<String>,
-        matches: identical(matches, sdkOmittedValue)
-            ? this.matches
-            : matches
-                as SdkOptional<List<SearchResultTextMatchesItemMatchesItem>>,
-      );
+  SearchResultTextMatchesItem _copyWith({Object? objectUrl = sdkOmittedValue, Object? objectType = sdkOmittedValue, Object? property = sdkOmittedValue, Object? fragment = sdkOmittedValue, Object? matches = sdkOmittedValue}) => SearchResultTextMatchesItem(
+    objectUrl: identical(objectUrl, sdkOmittedValue) ? this.objectUrl : objectUrl as SdkOptional<String>,
+    objectType: identical(objectType, sdkOmittedValue) ? this.objectType : objectType as SdkOptional<String?>,
+    property: identical(property, sdkOmittedValue) ? this.property : property as SdkOptional<String>,
+    fragment: identical(fragment, sdkOmittedValue) ? this.fragment : fragment as SdkOptional<String>,
+    matches: identical(matches, sdkOmittedValue) ? this.matches : matches as SdkOptional<List<SearchResultTextMatchesItemMatchesItem>>,
+  );
 
-  factory SearchResultTextMatchesItem.fromJson(Map<String, dynamic> json) =>
-      SearchResultTextMatchesItem(
-        objectUrl: json['object_url'] != null
-            ? SdkPresent((json['object_url'] as String?)!)
-            : const SdkOmitted(),
-        objectType: json.containsKey('object_type')
-            ? SdkPresent(json['object_type'] as String?)
-            : const SdkOmitted(),
-        property: json['property'] != null
-            ? SdkPresent((json['property'] as String?)!)
-            : const SdkOmitted(),
-        fragment: json['fragment'] != null
-            ? SdkPresent((json['fragment'] as String?)!)
-            : const SdkOmitted(),
-        matches: json['matches'] != null
-            ? SdkPresent(((json['matches'] as List?)
-                ?.map((e) => SearchResultTextMatchesItemMatchesItem.fromJson(
-                    e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory SearchResultTextMatchesItem.fromJson(Map<String, dynamic> json) => SearchResultTextMatchesItem(
+    objectUrl: json['object_url'] != null ? SdkPresent((json['object_url'] as String?)!) : const SdkOmitted(),
+    objectType: json.containsKey('object_type') ? SdkPresent(json['object_type'] as String?) : const SdkOmitted(),
+    property: json['property'] != null ? SdkPresent((json['property'] as String?)!) : const SdkOmitted(),
+    fragment: json['fragment'] != null ? SdkPresent((json['fragment'] as String?)!) : const SdkOmitted(),
+    matches: json['matches'] != null ? SdkPresent(((json['matches'] as List?)?.map((e) => SearchResultTextMatchesItemMatchesItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (objectUrl) {
-          SdkPresent<String>(value: final value) => {
-              'object_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (objectType) {
-          SdkPresent<String?>(value: final value) => {
-              'object_type': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (property) {
-          SdkPresent<String>(value: final value) => {
-              'property': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (fragment) {
-          SdkPresent<String>(value: final value) => {
-              'fragment': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (matches) {
-          SdkPresent<List<SearchResultTextMatchesItemMatchesItem>>(
-            value: final value
-          ) =>
-            {
-              'matches': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (objectUrl) {
+      SdkPresent<String>(value: final value) => {'object_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (objectType) {
+      SdkPresent<String?>(value: final value) => {'object_type': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (property) {
+      SdkPresent<String>(value: final value) => {'property': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (fragment) {
+      SdkPresent<String>(value: final value) => {'fragment': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (matches) {
+      SdkPresent<List<SearchResultTextMatchesItemMatchesItem>>(value: final value) => {'matches': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 // SearchResultTextMatches = List<SearchResultTextMatchesItem>
@@ -188,280 +104,154 @@ class SearchResultTextMatchesItem {
 class TopicSearchResultItemRelatedItemTopicRelation {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `integer` value serialized in the `id` wire field.
   final SdkOptional<int> id;
-
   /// Optional `string` value serialized in the `name` wire field.
   final SdkOptional<String> name;
-
   /// Optional `integer` value serialized in the `topic_id` wire field.
   final SdkOptional<int> topicId;
-
   /// Optional `string` value serialized in the `relation_type` wire field.
   final SdkOptional<String> relationType;
 
-  const TopicSearchResultItemRelatedItemTopicRelation(
-      {this.id = const SdkOmitted(),
-      this.name = const SdkOmitted(),
-      this.topicId = const SdkOmitted(),
-      this.relationType = const SdkOmitted()});
+  const TopicSearchResultItemRelatedItemTopicRelation({this.id = const SdkOmitted(), this.name = const SdkOmitted(), this.topicId = const SdkOmitted(), this.relationType = const SdkOmitted()});
 
-  TopicSearchResultItemRelatedItemTopicRelation Function(
-      {SdkOptional<int> id,
-      SdkOptional<String> name,
-      SdkOptional<int> topicId,
-      SdkOptional<String> relationType}) get copyWith => _copyWith;
+  TopicSearchResultItemRelatedItemTopicRelation Function({SdkOptional<int> id, SdkOptional<String> name, SdkOptional<int> topicId, SdkOptional<String> relationType}) get copyWith => _copyWith;
 
-  TopicSearchResultItemRelatedItemTopicRelation _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? topicId = sdkOmittedValue,
-          Object? relationType = sdkOmittedValue}) =>
-      TopicSearchResultItemRelatedItemTopicRelation(
-        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String>,
-        topicId: identical(topicId, sdkOmittedValue)
-            ? this.topicId
-            : topicId as SdkOptional<int>,
-        relationType: identical(relationType, sdkOmittedValue)
-            ? this.relationType
-            : relationType as SdkOptional<String>,
-      );
+  TopicSearchResultItemRelatedItemTopicRelation _copyWith({Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? topicId = sdkOmittedValue, Object? relationType = sdkOmittedValue}) => TopicSearchResultItemRelatedItemTopicRelation(
+    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
+    topicId: identical(topicId, sdkOmittedValue) ? this.topicId : topicId as SdkOptional<int>,
+    relationType: identical(relationType, sdkOmittedValue) ? this.relationType : relationType as SdkOptional<String>,
+  );
 
-  factory TopicSearchResultItemRelatedItemTopicRelation.fromJson(
-          Map<String, dynamic> json) =>
-      TopicSearchResultItemRelatedItemTopicRelation(
-        id: json['id'] != null
-            ? SdkPresent(((json['id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        name: json['name'] != null
-            ? SdkPresent((json['name'] as String?)!)
-            : const SdkOmitted(),
-        topicId: json['topic_id'] != null
-            ? SdkPresent(((json['topic_id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        relationType: json['relation_type'] != null
-            ? SdkPresent((json['relation_type'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory TopicSearchResultItemRelatedItemTopicRelation.fromJson(Map<String, dynamic> json) => TopicSearchResultItemRelatedItemTopicRelation(
+    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
+    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
+    topicId: json['topic_id'] != null ? SdkPresent(((json['topic_id'] as num?)?.toInt())!) : const SdkOmitted(),
+    relationType: json['relation_type'] != null ? SdkPresent((json['relation_type'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (id) {
-          SdkPresent<int>(value: final value) => {
-              'id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (name) {
-          SdkPresent<String>(value: final value) => {
-              'name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (topicId) {
-          SdkPresent<int>(value: final value) => {
-              'topic_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (relationType) {
-          SdkPresent<String>(value: final value) => {
-              'relation_type': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (id) {
+      SdkPresent<int>(value: final value) => {'id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (name) {
+      SdkPresent<String>(value: final value) => {'name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (topicId) {
+      SdkPresent<int>(value: final value) => {'topic_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (relationType) {
+      SdkPresent<String>(value: final value) => {'relation_type': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Required object value serialized in the `related[]` wire field.
 class TopicSearchResultItemRelatedItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional object value serialized in the `topic_relation` wire field.
-  final SdkOptional<TopicSearchResultItemRelatedItemTopicRelation>
-      topicRelation;
+  final SdkOptional<TopicSearchResultItemRelatedItemTopicRelation> topicRelation;
 
-  const TopicSearchResultItemRelatedItem(
-      {this.topicRelation = const SdkOmitted()});
+  const TopicSearchResultItemRelatedItem({this.topicRelation = const SdkOmitted()});
 
-  TopicSearchResultItemRelatedItem Function(
-      {SdkOptional<TopicSearchResultItemRelatedItemTopicRelation>
-          topicRelation}) get copyWith => _copyWith;
+  TopicSearchResultItemRelatedItem Function({SdkOptional<TopicSearchResultItemRelatedItemTopicRelation> topicRelation}) get copyWith => _copyWith;
 
-  TopicSearchResultItemRelatedItem _copyWith(
-          {Object? topicRelation = sdkOmittedValue}) =>
-      TopicSearchResultItemRelatedItem(
-        topicRelation: identical(topicRelation, sdkOmittedValue)
-            ? this.topicRelation
-            : topicRelation
-                as SdkOptional<TopicSearchResultItemRelatedItemTopicRelation>,
-      );
+  TopicSearchResultItemRelatedItem _copyWith({Object? topicRelation = sdkOmittedValue}) => TopicSearchResultItemRelatedItem(
+    topicRelation: identical(topicRelation, sdkOmittedValue) ? this.topicRelation : topicRelation as SdkOptional<TopicSearchResultItemRelatedItemTopicRelation>,
+  );
 
-  factory TopicSearchResultItemRelatedItem.fromJson(
-          Map<String, dynamic> json) =>
-      TopicSearchResultItemRelatedItem(
-        topicRelation: json['topic_relation'] != null
-            ? SdkPresent((json['topic_relation'] != null
-                ? TopicSearchResultItemRelatedItemTopicRelation.fromJson(
-                    json['topic_relation'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory TopicSearchResultItemRelatedItem.fromJson(Map<String, dynamic> json) => TopicSearchResultItemRelatedItem(
+    topicRelation: json['topic_relation'] != null ? SdkPresent((json['topic_relation'] != null ? TopicSearchResultItemRelatedItemTopicRelation.fromJson(json['topic_relation'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (topicRelation) {
-          SdkPresent<TopicSearchResultItemRelatedItemTopicRelation>(
-            value: final value
-          ) =>
-            {
-              'topic_relation': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (topicRelation) {
+      SdkPresent<TopicSearchResultItemRelatedItemTopicRelation>(value: final value) => {'topic_relation': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Optional object value serialized in the `topic_relation` wire field.
 class TopicSearchResultItemAliasesItemTopicRelation {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `integer` value serialized in the `id` wire field.
   final SdkOptional<int> id;
-
   /// Optional `string` value serialized in the `name` wire field.
   final SdkOptional<String> name;
-
   /// Optional `integer` value serialized in the `topic_id` wire field.
   final SdkOptional<int> topicId;
-
   /// Optional `string` value serialized in the `relation_type` wire field.
   final SdkOptional<String> relationType;
 
-  const TopicSearchResultItemAliasesItemTopicRelation(
-      {this.id = const SdkOmitted(),
-      this.name = const SdkOmitted(),
-      this.topicId = const SdkOmitted(),
-      this.relationType = const SdkOmitted()});
+  const TopicSearchResultItemAliasesItemTopicRelation({this.id = const SdkOmitted(), this.name = const SdkOmitted(), this.topicId = const SdkOmitted(), this.relationType = const SdkOmitted()});
 
-  TopicSearchResultItemAliasesItemTopicRelation Function(
-      {SdkOptional<int> id,
-      SdkOptional<String> name,
-      SdkOptional<int> topicId,
-      SdkOptional<String> relationType}) get copyWith => _copyWith;
+  TopicSearchResultItemAliasesItemTopicRelation Function({SdkOptional<int> id, SdkOptional<String> name, SdkOptional<int> topicId, SdkOptional<String> relationType}) get copyWith => _copyWith;
 
-  TopicSearchResultItemAliasesItemTopicRelation _copyWith(
-          {Object? id = sdkOmittedValue,
-          Object? name = sdkOmittedValue,
-          Object? topicId = sdkOmittedValue,
-          Object? relationType = sdkOmittedValue}) =>
-      TopicSearchResultItemAliasesItemTopicRelation(
-        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String>,
-        topicId: identical(topicId, sdkOmittedValue)
-            ? this.topicId
-            : topicId as SdkOptional<int>,
-        relationType: identical(relationType, sdkOmittedValue)
-            ? this.relationType
-            : relationType as SdkOptional<String>,
-      );
+  TopicSearchResultItemAliasesItemTopicRelation _copyWith({Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? topicId = sdkOmittedValue, Object? relationType = sdkOmittedValue}) => TopicSearchResultItemAliasesItemTopicRelation(
+    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
+    topicId: identical(topicId, sdkOmittedValue) ? this.topicId : topicId as SdkOptional<int>,
+    relationType: identical(relationType, sdkOmittedValue) ? this.relationType : relationType as SdkOptional<String>,
+  );
 
-  factory TopicSearchResultItemAliasesItemTopicRelation.fromJson(
-          Map<String, dynamic> json) =>
-      TopicSearchResultItemAliasesItemTopicRelation(
-        id: json['id'] != null
-            ? SdkPresent(((json['id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        name: json['name'] != null
-            ? SdkPresent((json['name'] as String?)!)
-            : const SdkOmitted(),
-        topicId: json['topic_id'] != null
-            ? SdkPresent(((json['topic_id'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        relationType: json['relation_type'] != null
-            ? SdkPresent((json['relation_type'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory TopicSearchResultItemAliasesItemTopicRelation.fromJson(Map<String, dynamic> json) => TopicSearchResultItemAliasesItemTopicRelation(
+    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
+    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
+    topicId: json['topic_id'] != null ? SdkPresent(((json['topic_id'] as num?)?.toInt())!) : const SdkOmitted(),
+    relationType: json['relation_type'] != null ? SdkPresent((json['relation_type'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (id) {
-          SdkPresent<int>(value: final value) => {
-              'id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (name) {
-          SdkPresent<String>(value: final value) => {
-              'name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (topicId) {
-          SdkPresent<int>(value: final value) => {
-              'topic_id': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (relationType) {
-          SdkPresent<String>(value: final value) => {
-              'relation_type': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (id) {
+      SdkPresent<int>(value: final value) => {'id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (name) {
+      SdkPresent<String>(value: final value) => {'name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (topicId) {
+      SdkPresent<int>(value: final value) => {'topic_id': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (relationType) {
+      SdkPresent<String>(value: final value) => {'relation_type': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Required object value serialized in the `aliases[]` wire field.
 class TopicSearchResultItemAliasesItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional object value serialized in the `topic_relation` wire field.
-  final SdkOptional<TopicSearchResultItemAliasesItemTopicRelation>
-      topicRelation;
+  final SdkOptional<TopicSearchResultItemAliasesItemTopicRelation> topicRelation;
 
-  const TopicSearchResultItemAliasesItem(
-      {this.topicRelation = const SdkOmitted()});
+  const TopicSearchResultItemAliasesItem({this.topicRelation = const SdkOmitted()});
 
-  TopicSearchResultItemAliasesItem Function(
-      {SdkOptional<TopicSearchResultItemAliasesItemTopicRelation>
-          topicRelation}) get copyWith => _copyWith;
+  TopicSearchResultItemAliasesItem Function({SdkOptional<TopicSearchResultItemAliasesItemTopicRelation> topicRelation}) get copyWith => _copyWith;
 
-  TopicSearchResultItemAliasesItem _copyWith(
-          {Object? topicRelation = sdkOmittedValue}) =>
-      TopicSearchResultItemAliasesItem(
-        topicRelation: identical(topicRelation, sdkOmittedValue)
-            ? this.topicRelation
-            : topicRelation
-                as SdkOptional<TopicSearchResultItemAliasesItemTopicRelation>,
-      );
+  TopicSearchResultItemAliasesItem _copyWith({Object? topicRelation = sdkOmittedValue}) => TopicSearchResultItemAliasesItem(
+    topicRelation: identical(topicRelation, sdkOmittedValue) ? this.topicRelation : topicRelation as SdkOptional<TopicSearchResultItemAliasesItemTopicRelation>,
+  );
 
-  factory TopicSearchResultItemAliasesItem.fromJson(
-          Map<String, dynamic> json) =>
-      TopicSearchResultItemAliasesItem(
-        topicRelation: json['topic_relation'] != null
-            ? SdkPresent((json['topic_relation'] != null
-                ? TopicSearchResultItemAliasesItemTopicRelation.fromJson(
-                    json['topic_relation'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-      );
+  factory TopicSearchResultItemAliasesItem.fromJson(Map<String, dynamic> json) => TopicSearchResultItemAliasesItem(
+    topicRelation: json['topic_relation'] != null ? SdkPresent((json['topic_relation'] != null ? TopicSearchResultItemAliasesItemTopicRelation.fromJson(json['topic_relation'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (topicRelation) {
-          SdkPresent<TopicSearchResultItemAliasesItemTopicRelation>(
-            value: final value
-          ) =>
-            {
-              'topic_relation': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (topicRelation) {
+      SdkPresent<TopicSearchResultItemAliasesItemTopicRelation>(value: final value) => {'topic_relation': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

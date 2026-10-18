@@ -32,24 +32,18 @@ Future<List<BaseGist>> gistsList(ClientConfig config,
   return (await sdkRequest<List<BaseGist>>('GET', '/gists',
           config: config,
           query: {
-            'since': SdkQueryValue(SdkUtils.unwrapOptional(since),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'since': SdkQueryValue(SdkUtils.unwrapOptional(since), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'gistsList',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => BaseGist.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => BaseGist.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Creates a new gist containing one or more files. Supply file names and their `content` in `files`; `public` defaults to false when omitted. Avoid names that match Gist’s automatic `gistfile` numbering pattern.
 ///
@@ -71,19 +65,12 @@ Future<GistSimple> gistsCreate(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'gistsCreate',
-          fromJsonRaw: (value) =>
-              GistSimple.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => GistSimple.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// List public gists sorted by most recently updated to least recently updated. Note: With [pagination](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api), you can fetch up to 3000 gists. For example, you can fetch 100 pages with 30 gists per page or 30 pages with 100 gists per page.
 ///
@@ -110,27 +97,18 @@ Future<List<BaseGist>> gistsListPublic(ClientConfig config,
   return (await sdkRequest<List<BaseGist>>('GET', '/gists/public',
           config: config,
           query: {
-            'since': SdkQueryValue(SdkUtils.unwrapOptional(since),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'since': SdkQueryValue(SdkUtils.unwrapOptional(since), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'gistsListPublic',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => BaseGist.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => BaseGist.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists gists starred by the authenticated user. Use `since` to filter by the last-updated timestamp and `page` with `per_page` to paginate the results.
 ///
@@ -159,26 +137,18 @@ Future<List<BaseGist>> gistsListStarred(ClientConfig config,
   return (await sdkRequest<List<BaseGist>>('GET', '/gists/starred',
           config: config,
           query: {
-            'since': SdkQueryValue(SdkUtils.unwrapOptional(since),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'since': SdkQueryValue(SdkUtils.unwrapOptional(since), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'gistsListStarred',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => BaseGist.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => BaseGist.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Gets a specified gist. This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)." - **`application/vnd.github.raw+json`**: Returns the raw markdown. This is the default if you do not pass any specific media type.
 ///
@@ -190,15 +160,12 @@ Future<GistSimple> gistsGet(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'gistsGet',
-          fromJsonRaw: (value) =>
-              GistSimple.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => GistSimple.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '403': (value) => ForbiddenGist.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => ForbiddenGist.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Allows you to update a gist's description and to update, delete, or rename gist files. Files from the previous version of the gist that aren't explicitly changed during an edit are unchanged. At least one of `description` or `files` is required. This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)." - **`application/vnd.github.raw+json`**: Returns the raw markdown. This is the default if you do not pass any specific media type.
 ///
@@ -212,8 +179,7 @@ Future<GistSimple> gistsGet(ClientConfig config,
 Future<GistSimple> gistsUpdate(ClientConfig config,
     {required String gistId,
     SdkOptional<String> description = const SdkOmitted(),
-    SdkOptional<Map<String, GistsUpdateRequestBodyFilesValue>> files =
-        const SdkOmitted(),
+    SdkOptional<Map<String, GistsUpdateRequestBodyFilesValue>> files = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<GistSimple>(
           'PATCH', '/gists/${Uri.encodeComponent(gistId.toString())}',
@@ -224,17 +190,12 @@ Future<GistSimple> gistsUpdate(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'gistsUpdate',
-          fromJsonRaw: (value) =>
-              GistSimple.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => GistSimple.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Deletes a specific gist. Use `gist_id` to identify the gist you want to remove; the operation returns no response body when deletion completes.
 ///
@@ -247,12 +208,10 @@ Future<void> gistsDelete(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'gistsDelete',
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists the comments on a gist. This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)." - **`application/vnd.github.raw+json`**: Returns the raw markdown. This is the default if you do not pass any specific media type.
 ///
@@ -274,24 +233,17 @@ Future<List<GistComment>> gistsListComments(ClientConfig config,
           'GET', '/gists/${Uri.encodeComponent(gistId.toString())}/comments',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'gistsListComments',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => GistComment.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => GistComment.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Creates a comment on a gist. This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)." - **`application/vnd.github.raw+json`**: Returns the raw markdown. This is the default if you do not pass any specific media type.
 ///
@@ -309,16 +261,12 @@ Future<GistComment> gistsCreateComment(ClientConfig config,
           body: {'body': body},
           decoder: SdkResponseDecoder.json,
           operationId: 'gistsCreateComment',
-          fromJsonRaw: (value) =>
-              GistComment.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => GistComment.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Gets a comment on a gist. This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)." - **`application/vnd.github.raw+json`**: Returns the raw markdown. This is the default if you do not pass any specific media type.
 ///
@@ -333,15 +281,12 @@ Future<GistComment> gistsGetComment(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'gistsGetComment',
-          fromJsonRaw: (value) =>
-              GistComment.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => GistComment.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '403': (value) => ForbiddenGist.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => ForbiddenGist.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Updates a comment on a gist. This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)." - **`application/vnd.github.raw+json`**: Returns the raw markdown. This is the default if you do not pass any specific media type.
 ///
@@ -361,14 +306,12 @@ Future<GistComment> gistsUpdateComment(ClientConfig config,
           body: {'body': body},
           decoder: SdkResponseDecoder.json,
           operationId: 'gistsUpdateComment',
-          fromJsonRaw: (value) =>
-              GistComment.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => GistComment.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Removes a specific comment from a gist. Use `gist_id` and `comment_id` to identify the gist-comment pair; the operation returns no content when the comment is deleted.
 ///
@@ -384,12 +327,10 @@ Future<void> gistsDeleteComment(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'gistsDeleteComment',
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists commits in a gist, including each commit's version, author, timestamp, and change counts. Use `page` and `per_page` to paginate the results.
 ///
@@ -411,24 +352,17 @@ Future<List<GistCommit>> gistsListCommits(ClientConfig config,
           'GET', '/gists/${Uri.encodeComponent(gistId.toString())}/commits',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'gistsListCommits',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => GistCommit.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => GistCommit.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists forks of a gist, returning the forked gist objects. Use `page` and `per_page` to paginate the results.
 ///
@@ -450,24 +384,17 @@ Future<List<GistSimple>> gistsListForks(ClientConfig config,
           'GET', '/gists/${Uri.encodeComponent(gistId.toString())}/forks',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'gistsListForks',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => GistSimple.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => GistSimple.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Creates a fork of a gist for the authenticated user. Supply the gist identifier to select the gist to fork; the response contains the created fork.
 ///
@@ -479,17 +406,12 @@ Future<BaseGist> gistsFork(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'gistsFork',
-          fromJsonRaw: (value) =>
-              BaseGist.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => BaseGist.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '422': (value) =>
-            ValidationError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Checks whether the authenticated user has starred a gist. Use `gist_id` to identify the gist; a 204 response indicates that it is starred.
 ///
@@ -502,11 +424,10 @@ Future<void> gistsCheckIsStarred(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'gistsCheckIsStarred',
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP method](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method)."
 ///
@@ -519,12 +440,10 @@ Future<void> gistsStar(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'gistsStar',
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Removes the authenticated user's star from a gist. Supply `gist_id` to identify the gist whose star you want to remove; the operation returns no content.
 ///
@@ -537,12 +456,10 @@ Future<void> gistsUnstar(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'gistsUnstar',
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Retrieves a specified revision of a gist. Supply `gist_id` and `sha` to identify the gist and revision; the `application/vnd.github.raw+json` media type returns the raw Markdown and is the default when you do not specify a media type.
 ///
@@ -558,17 +475,12 @@ Future<GistSimple> gistsGetRevision(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'gistsGetRevision',
-          fromJsonRaw: (value) =>
-              GistSimple.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => GistSimple.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '422': (value) =>
-            ValidationError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists public gists for the specified user. Use `since` to filter by last-updated time, and use `page` and `per_page` to paginate the results. `per_page` accepts up to 100 results per page.
 ///
@@ -600,22 +512,14 @@ Future<List<BaseGist>> gistsListForUser(ClientConfig config,
           'GET', '/users/${Uri.encodeComponent(username.toString())}/gists',
           config: config,
           query: {
-            'since': SdkQueryValue(SdkUtils.unwrapOptional(since),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'since': SdkQueryValue(SdkUtils.unwrapOptional(since), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'gistsListForUser',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => BaseGist.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => BaseGist.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }

@@ -27,18 +27,16 @@ Future<AgentsListOrgSecretsResponse> agentsListOrgSecrets(ClientConfig config,
           'GET', '/orgs/${Uri.encodeComponent(org.toString())}/agents/secrets',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'agentsListOrgSecrets',
-          fromJsonRaw: (value) => AgentsListOrgSecretsResponse.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => AgentsListOrgSecretsResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Gets your public key, which you need to encrypt secrets. You need to encrypt a secret before you can create or update secrets. Authenticated users must have collaborator access to a repository to create, update, or read secrets. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
@@ -50,11 +48,11 @@ Future<ActionsPublicKey> agentsGetOrgPublicKey(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'agentsGetOrgPublicKey',
-          fromJsonRaw: (value) =>
-              ActionsPublicKey.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ActionsPublicKey.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Gets a single organization secret without revealing its encrypted value. The authenticated user must have collaborator access to a repository to create, update, or read secrets. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -69,11 +67,11 @@ Future<OrganizationActionsSecret> agentsGetOrgSecret(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'agentsGetOrgSecret',
-          fromJsonRaw: (value) =>
-              OrganizationActionsSecret.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => OrganizationActionsSecret.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Creates or updates an organization secret with an encrypted value. Encrypt your secret using [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see "[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api)." Authenticated users must have collaborator access to a repository to create, update, or read secrets. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -108,8 +106,7 @@ Future<Map<String, dynamic>> agentsCreateOrUpdateOrgSecret(ClientConfig config,
     required AgentsCreateOrUpdateOrgSecretRequestBodyVisibility visibility,
     SdkOptional<List<int>> selectedRepositoryIds = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
-  sdkValidatePattern('encrypted_value', encryptedValue,
-      '^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})\$');
+  sdkValidatePattern('encrypted_value', encryptedValue, '^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})\$');
 
   return (await sdkRequest<Map<String, dynamic>>('PUT',
           '/orgs/${Uri.encodeComponent(org.toString())}/agents/secrets/${Uri.encodeComponent(secretName.toString())}',
@@ -118,8 +115,7 @@ Future<Map<String, dynamic>> agentsCreateOrUpdateOrgSecret(ClientConfig config,
             'encrypted_value': encryptedValue,
             'key_id': keyId,
             'visibility': visibility,
-            'selected_repository_ids':
-                SdkUtils.unwrapOptional(selectedRepositoryIds)
+            'selected_repository_ids': SdkUtils.unwrapOptional(selectedRepositoryIds)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'agentsCreateOrUpdateOrgSecret',
@@ -127,6 +123,7 @@ Future<Map<String, dynamic>> agentsCreateOrUpdateOrgSecret(ClientConfig config,
           options: requestOptions))
       .data;
 }
+
 
 /// Deletes a secret in an organization using the secret name. Authenticated users must have collaborator access to a repository to create, update, or read secrets. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -144,6 +141,7 @@ Future<void> agentsDeleteOrgSecret(ClientConfig config,
           options: requestOptions))
       .data;
 }
+
 
 /// Lists all repositories that have been selected when the `visibility` for repository access to a secret is set to `selected`. Authenticated users must have collaborator access to a repository to create, update, or read secrets. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
@@ -168,19 +166,16 @@ Future<AgentsListSelectedReposForOrgSecretResponse>
           '/orgs/${Uri.encodeComponent(org.toString())}/agents/secrets/${Uri.encodeComponent(secretName.toString())}/repositories',
           config: config,
           query: {
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true)
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'agentsListSelectedReposForOrgSecret',
-          fromJsonRaw: (value) =>
-              AgentsListSelectedReposForOrgSecretResponse.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => AgentsListSelectedReposForOrgSecretResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Replaces all repositories for an organization secret when the `visibility` for repository access is set to `selected`. The visibility is set when you [Create or update an organization secret](https://docs.github.com/rest/agents/secrets#create-or-update-an-organization-secret). Authenticated users must have collaborator access to a repository to create, update, or read secrets. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
@@ -210,6 +205,7 @@ Future<void> agentsSetSelectedReposForOrgSecret(ClientConfig config,
       .data;
 }
 
+
 /// Adds a repository to an organization secret's selected repository list. Use this operation when the secret's `visibility` is set to `selected`; the authenticated user must have collaborator access to the repository. OAuth tokens and personal access tokens (classic) require the `admin:org` scope, and private repositories also require the `repo` scope.
 ///
 /// Adds a repository to an organization secret when the `visibility` for repository access is set to `selected`. For more information about setting the visibility, see [Create or update an organization secret](https://docs.github.com/rest/agents/secrets#create-or-update-an-organization-secret). Authenticated users must have collaborator access to a repository to create, update, or read secrets. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
@@ -229,6 +225,7 @@ Future<void> agentsAddSelectedRepoToOrgSecret(ClientConfig config,
           options: requestOptions))
       .data;
 }
+
 
 /// Removes a repository from an organization secret's selected repository list. Use this operation when the secret's `visibility` is set to `selected`; the authenticated user must have collaborator access to the repository. OAuth app tokens and personal access tokens (classic) require the `admin:org` scope, and private repositories also require the `repo` scope.
 ///
@@ -250,6 +247,7 @@ Future<void> agentsRemoveSelectedRepoFromOrgSecret(ClientConfig config,
       .data;
 }
 
+
 /// Lists all agent variables available in an organization. Returned variables include their values. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
 /// [org] The organization name. The name is not case sensitive.
@@ -261,28 +259,26 @@ Future<void> agentsRemoveSelectedRepoFromOrgSecret(ClientConfig config,
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<AgentsListOrgVariablesResponse> agentsListOrgVariables(
-    ClientConfig config,
-    {required String org,
-    SdkOptional<int> perPage = const SdkOmitted(),
-    SdkOptional<int> page = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<AgentsListOrgVariablesResponse>
+    agentsListOrgVariables(ClientConfig config,
+        {required String org,
+        SdkOptional<int> perPage = const SdkOmitted(),
+        SdkOptional<int> page = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<AgentsListOrgVariablesResponse>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/agents/variables',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'agentsListOrgVariables',
-          fromJsonRaw: (value) => AgentsListOrgVariablesResponse.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => AgentsListOrgVariablesResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Creates an organization agent variable that you can reference in a GitHub Actions workflow. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -309,8 +305,7 @@ Future<Map<String, dynamic>> agentsCreateOrgVariable(ClientConfig config,
             'name': name,
             'value': value_,
             'visibility': visibility,
-            'selected_repository_ids':
-                SdkUtils.unwrapOptional(selectedRepositoryIds)
+            'selected_repository_ids': SdkUtils.unwrapOptional(selectedRepositoryIds)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'agentsCreateOrgVariable',
@@ -318,6 +313,7 @@ Future<Map<String, dynamic>> agentsCreateOrgVariable(ClientConfig config,
           options: requestOptions))
       .data;
 }
+
 
 /// Gets a specific agent variable in an organization. The authenticated user must have collaborator access to a repository to create, update, or read variables. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -332,11 +328,11 @@ Future<OrganizationActionsVariable> agentsGetOrgVariable(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'agentsGetOrgVariable',
-          fromJsonRaw: (value) => OrganizationActionsVariable.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => OrganizationActionsVariable.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Updates an organization agent variable that you can reference in a GitHub Actions workflow. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
@@ -355,8 +351,7 @@ Future<void> agentsUpdateOrgVariable(ClientConfig config,
     required String name,
     SdkOptional<String> name_2 = const SdkOmitted(),
     SdkOptional<String> value_ = const SdkOmitted(),
-    SdkOptional<AgentsUpdateOrgVariableRequestBodyVisibility> visibility =
-        const SdkOmitted(),
+    SdkOptional<AgentsUpdateOrgVariableRequestBodyVisibility> visibility = const SdkOmitted(),
     SdkOptional<List<int>> selectedRepositoryIds = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<void>('PATCH',
@@ -366,14 +361,14 @@ Future<void> agentsUpdateOrgVariable(ClientConfig config,
             'name': SdkUtils.unwrapOptional(name_2),
             'value': SdkUtils.unwrapOptional(value_),
             'visibility': SdkUtils.unwrapOptional(visibility),
-            'selected_repository_ids':
-                SdkUtils.unwrapOptional(selectedRepositoryIds)
+            'selected_repository_ids': SdkUtils.unwrapOptional(selectedRepositoryIds)
           },
           decoder: SdkResponseDecoder.empty,
           operationId: 'agentsUpdateOrgVariable',
           options: requestOptions))
       .data;
 }
+
 
 /// Deletes an organization agent variable using the variable name. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -391,6 +386,7 @@ Future<void> agentsDeleteOrgVariable(ClientConfig config,
           options: requestOptions))
       .data;
 }
+
 
 /// Lists all repositories that can access an organization agent variable that is available to selected repositories. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
@@ -415,19 +411,16 @@ Future<AgentsListSelectedReposForOrgVariableResponse>
           '/orgs/${Uri.encodeComponent(org.toString())}/agents/variables/${Uri.encodeComponent(name.toString())}/repositories',
           config: config,
           query: {
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true)
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'agentsListSelectedReposForOrgVariable',
-          fromJsonRaw: (value) =>
-              AgentsListSelectedReposForOrgVariableResponse.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => AgentsListSelectedReposForOrgVariableResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Replaces all repositories for an organization agent variable that is available to selected repositories. Organization variables that are available to selected repositories have their `visibility` field set to `selected`. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
@@ -450,6 +443,7 @@ Future<void> agentsSetSelectedReposForOrgVariable(ClientConfig config,
       .data;
 }
 
+
 /// Adds a repository to an organization agent variable's selected repository access list. Use this operation when the variable's `visibility` is set to `selected`. The authenticated user needs collaborator access to the repository, and OAuth tokens and personal access tokens (classic) need the `admin:org` scope; private repositories also require the `repo` scope.
 ///
 /// Adds a repository to an organization agent variable that is available to selected repositories. Organization variables that are available to selected repositories have their `visibility` field set to `selected`. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
@@ -470,6 +464,7 @@ Future<void> agentsAddSelectedRepoToOrgVariable(ClientConfig config,
       .data;
 }
 
+
 /// Removes a repository from an organization agent variable's selected repository access list. Use this operation when the variable's `visibility` is set to `selected`. The authenticated user needs collaborator access to the repository, and OAuth app tokens and personal access tokens (classic) need the `admin:org` scope; private repositories also require the `repo` scope.
 ///
 /// Removes a repository from an organization agent variable that is available to selected repositories. Organization variables that are available to selected repositories have their `visibility` field set to `selected`. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
@@ -489,6 +484,7 @@ Future<void> agentsRemoveSelectedRepoFromOrgVariable(ClientConfig config,
           options: requestOptions))
       .data;
 }
+
 
 /// Lists all organization secrets shared with a repository without revealing their encrypted values. Authenticated users must have collaborator access to a repository to create, update, or read secrets. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -514,19 +510,16 @@ Future<AgentsListRepoOrganizationSecretsResponse>
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/agents/organization-secrets',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'agentsListRepoOrganizationSecrets',
-          fromJsonRaw: (value) =>
-              AgentsListRepoOrganizationSecretsResponse.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => AgentsListRepoOrganizationSecretsResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Lists all organization variables shared with a repository. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -552,19 +545,16 @@ Future<AgentsListRepoOrganizationVariablesResponse>
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/agents/organization-variables',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'agentsListRepoOrganizationVariables',
-          fromJsonRaw: (value) =>
-              AgentsListRepoOrganizationVariablesResponse.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => AgentsListRepoOrganizationVariablesResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Lists all secrets available in a repository without revealing their encrypted values. Authenticated users must have collaborator access to a repository to create, update, or read secrets. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -589,18 +579,16 @@ Future<AgentsListRepoSecretsResponse> agentsListRepoSecrets(ClientConfig config,
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/agents/secrets',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'agentsListRepoSecrets',
-          fromJsonRaw: (value) => AgentsListRepoSecretsResponse.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => AgentsListRepoSecretsResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Gets your public key, which you need to encrypt secrets. You need to encrypt a secret before you can create or update secrets. Anyone with read access to the repository can use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -616,11 +604,11 @@ Future<ActionsPublicKey> agentsGetRepoPublicKey(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'agentsGetRepoPublicKey',
-          fromJsonRaw: (value) =>
-              ActionsPublicKey.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ActionsPublicKey.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Gets a single repository secret without revealing its encrypted value. The authenticated user must have collaborator access to the repository to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -638,11 +626,11 @@ Future<ActionsSecret> agentsGetRepoSecret(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'agentsGetRepoSecret',
-          fromJsonRaw: (value) =>
-              ActionsSecret.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ActionsSecret.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Creates or updates a repository secret with an encrypted value. Encrypt your secret using [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see "[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api)." Authenticated users must have collaborator access to a repository to create, update, or read secrets. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -663,8 +651,7 @@ Future<Map<String, dynamic>> agentsCreateOrUpdateRepoSecret(ClientConfig config,
     required String encryptedValue,
     required String keyId,
     RequestOptions? requestOptions}) async {
-  sdkValidatePattern('encrypted_value', encryptedValue,
-      '^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})\$');
+  sdkValidatePattern('encrypted_value', encryptedValue, '^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})\$');
 
   return (await sdkRequest<Map<String, dynamic>>('PUT',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/agents/secrets/${Uri.encodeComponent(secretName.toString())}',
@@ -676,6 +663,7 @@ Future<Map<String, dynamic>> agentsCreateOrUpdateRepoSecret(ClientConfig config,
           options: requestOptions))
       .data;
 }
+
 
 /// Deletes a secret in a repository using the secret name. Authenticated users must have collaborator access to a repository to create, update, or read secrets. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -697,6 +685,7 @@ Future<void> agentsDeleteRepoSecret(ClientConfig config,
       .data;
 }
 
+
 /// Lists all repository variables. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
@@ -710,29 +699,27 @@ Future<void> agentsDeleteRepoSecret(ClientConfig config,
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<AgentsListRepoVariablesResponse> agentsListRepoVariables(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    SdkOptional<int> perPage = const SdkOmitted(),
-    SdkOptional<int> page = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<AgentsListRepoVariablesResponse>
+    agentsListRepoVariables(ClientConfig config,
+        {required String owner,
+        required String repo,
+        SdkOptional<int> perPage = const SdkOmitted(),
+        SdkOptional<int> page = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<AgentsListRepoVariablesResponse>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/agents/variables',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'agentsListRepoVariables',
-          fromJsonRaw: (value) => AgentsListRepoVariablesResponse.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => AgentsListRepoVariablesResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Creates a repository variable that you can reference in a GitHub Actions workflow. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -758,6 +745,7 @@ Future<Map<String, dynamic>> agentsCreateRepoVariable(ClientConfig config,
       .data;
 }
 
+
 /// Gets a specific variable in a repository. The authenticated user must have collaborator access to the repository to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
@@ -774,11 +762,11 @@ Future<ActionsVariable> agentsGetRepoVariable(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'agentsGetRepoVariable',
-          fromJsonRaw: (value) =>
-              ActionsVariable.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ActionsVariable.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Updates a repository variable that you can reference in a GitHub Actions workflow. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -807,6 +795,7 @@ Future<void> agentsUpdateRepoVariable(ClientConfig config,
           options: requestOptions))
       .data;
 }
+
 
 /// Deletes a repository variable using the variable name. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///

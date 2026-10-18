@@ -7,514 +7,287 @@ part of 'inline.dart';
 class ReposCreateOrgRulesetRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The name of the ruleset.
   final String name;
-
   /// The target of the ruleset
   final SdkOptional<ReposCreateOrgRulesetRequestBodyTarget> target;
-
   /// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
   final RepositoryRuleEnforcement enforcement;
-
   /// The actors that can bypass the rules in this ruleset
   final SdkOptional<List<RepositoryRulesetBypassActor>> bypassActors;
-
   /// Conditions for an organization ruleset. The branch and tag rulesets conditions object should contain both `repository_name` and `ref_name` properties, or both `repository_id` and `ref_name` properties, or both `repository_property` and `ref_name` properties. The push rulesets conditions object does not require the `ref_name` property. For repository policy rulesets, the conditions object should only contain the `repository_name`, the `repository_id`, or the `repository_property`.
   final SdkOptional<OrgRulesetConditions> conditions;
-
   /// An array of rules within the ruleset.
   final SdkOptional<List<OrgRules>> rules;
 
-  const ReposCreateOrgRulesetRequestBody(
-      {required this.name,
-      this.target = const SdkOmitted(),
-      required this.enforcement,
-      this.bypassActors = const SdkOmitted(),
-      this.conditions = const SdkOmitted(),
-      this.rules = const SdkOmitted()});
+  const ReposCreateOrgRulesetRequestBody({required this.name, this.target = const SdkOmitted(), required this.enforcement, this.bypassActors = const SdkOmitted(), this.conditions = const SdkOmitted(), this.rules = const SdkOmitted()});
 
-  ReposCreateOrgRulesetRequestBody Function(
-      {String name,
-      SdkOptional<ReposCreateOrgRulesetRequestBodyTarget> target,
-      RepositoryRuleEnforcement enforcement,
-      SdkOptional<List<RepositoryRulesetBypassActor>> bypassActors,
-      SdkOptional<OrgRulesetConditions> conditions,
-      SdkOptional<List<OrgRules>> rules}) get copyWith => _copyWith;
+  ReposCreateOrgRulesetRequestBody Function({String name, SdkOptional<ReposCreateOrgRulesetRequestBodyTarget> target, RepositoryRuleEnforcement enforcement, SdkOptional<List<RepositoryRulesetBypassActor>> bypassActors, SdkOptional<OrgRulesetConditions> conditions, SdkOptional<List<OrgRules>> rules}) get copyWith => _copyWith;
 
-  ReposCreateOrgRulesetRequestBody _copyWith(
-          {Object? name = sdkOmittedValue,
-          Object? target = sdkOmittedValue,
-          Object? enforcement = sdkOmittedValue,
-          Object? bypassActors = sdkOmittedValue,
-          Object? conditions = sdkOmittedValue,
-          Object? rules = sdkOmittedValue}) =>
-      ReposCreateOrgRulesetRequestBody(
-        name: identical(name, sdkOmittedValue) ? this.name : name as String,
-        target: identical(target, sdkOmittedValue)
-            ? this.target
-            : target as SdkOptional<ReposCreateOrgRulesetRequestBodyTarget>,
-        enforcement: identical(enforcement, sdkOmittedValue)
-            ? this.enforcement
-            : enforcement as RepositoryRuleEnforcement,
-        bypassActors: identical(bypassActors, sdkOmittedValue)
-            ? this.bypassActors
-            : bypassActors as SdkOptional<List<RepositoryRulesetBypassActor>>,
-        conditions: identical(conditions, sdkOmittedValue)
-            ? this.conditions
-            : conditions as SdkOptional<OrgRulesetConditions>,
-        rules: identical(rules, sdkOmittedValue)
-            ? this.rules
-            : rules as SdkOptional<List<OrgRules>>,
-      );
+  ReposCreateOrgRulesetRequestBody _copyWith({Object? name = sdkOmittedValue, Object? target = sdkOmittedValue, Object? enforcement = sdkOmittedValue, Object? bypassActors = sdkOmittedValue, Object? conditions = sdkOmittedValue, Object? rules = sdkOmittedValue}) => ReposCreateOrgRulesetRequestBody(
+    name: identical(name, sdkOmittedValue) ? this.name : name as String,
+    target: identical(target, sdkOmittedValue) ? this.target : target as SdkOptional<ReposCreateOrgRulesetRequestBodyTarget>,
+    enforcement: identical(enforcement, sdkOmittedValue) ? this.enforcement : enforcement as RepositoryRuleEnforcement,
+    bypassActors: identical(bypassActors, sdkOmittedValue) ? this.bypassActors : bypassActors as SdkOptional<List<RepositoryRulesetBypassActor>>,
+    conditions: identical(conditions, sdkOmittedValue) ? this.conditions : conditions as SdkOptional<OrgRulesetConditions>,
+    rules: identical(rules, sdkOmittedValue) ? this.rules : rules as SdkOptional<List<OrgRules>>,
+  );
 
-  factory ReposCreateOrgRulesetRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      ReposCreateOrgRulesetRequestBody(
-        name: (json['name'] as String?)!,
-        target: json['target'] != null
-            ? SdkPresent((json['target'] != null
-                ? ReposCreateOrgRulesetRequestBodyTarget.fromJson(
-                    json['target'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        enforcement: (json['enforcement'] != null
-            ? RepositoryRuleEnforcement.fromJson(json['enforcement'] as String)
-            : null)!,
-        bypassActors: json['bypass_actors'] != null
-            ? SdkPresent(((json['bypass_actors'] as List?)
-                ?.map((e) => RepositoryRulesetBypassActor.fromJson(
-                    e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-        conditions: json['conditions'] != null
-            ? SdkPresent((json['conditions'] != null
-                ? OrgRulesetConditions.fromJson(json['conditions'])
-                : null)!)
-            : const SdkOmitted(),
-        rules: json['rules'] != null
-            ? SdkPresent(((json['rules'] as List?)
-                ?.map((e) => OrgRules.fromJson(e))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory ReposCreateOrgRulesetRequestBody.fromJson(Map<String, dynamic> json) => ReposCreateOrgRulesetRequestBody(
+    name: (json['name'] as String?)!,
+    target: json['target'] != null ? SdkPresent((json['target'] != null ? ReposCreateOrgRulesetRequestBodyTarget.fromJson(json['target'] as String) : null)!) : const SdkOmitted(),
+    enforcement: (json['enforcement'] != null ? RepositoryRuleEnforcement.fromJson(json['enforcement'] as String) : null)!,
+    bypassActors: json['bypass_actors'] != null ? SdkPresent(((json['bypass_actors'] as List?)?.map((e) => RepositoryRulesetBypassActor.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+    conditions: json['conditions'] != null ? SdkPresent((json['conditions'] != null ? OrgRulesetConditions.fromJson(json['conditions']) : null)!) : const SdkOmitted(),
+    rules: json['rules'] != null ? SdkPresent(((json['rules'] as List?)?.map((e) => OrgRules.fromJson(e)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'name': name,
-        ...switch (target) {
-          SdkPresent<ReposCreateOrgRulesetRequestBodyTarget>(
-            value: final value
-          ) =>
-            {
-              'target': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'enforcement': enforcement.toJson(),
-        ...switch (bypassActors) {
-          SdkPresent<List<RepositoryRulesetBypassActor>>(value: final value) =>
-            {
-              'bypass_actors': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (conditions) {
-          SdkPresent<OrgRulesetConditions>(value: final value) => {
-              'conditions': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (rules) {
-          SdkPresent<List<OrgRules>>(value: final value) => {
-              'rules': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'name': name,
+    ...switch (target) {
+      SdkPresent<ReposCreateOrgRulesetRequestBodyTarget>(value: final value) => {'target': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'enforcement': enforcement.toJson(),
+    ...switch (bypassActors) {
+      SdkPresent<List<RepositoryRulesetBypassActor>>(value: final value) => {'bypass_actors': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (conditions) {
+      SdkPresent<OrgRulesetConditions>(value: final value) => {'conditions': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (rules) {
+      SdkPresent<List<OrgRules>>(value: final value) => {'rules': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 class ReposUpdateOrgRulesetRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The name of the ruleset.
   final SdkOptional<String> name;
-
   /// The target of the ruleset
   final SdkOptional<ReposUpdateOrgRulesetRequestBodyTarget> target;
-
   /// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
   final SdkOptional<RepositoryRuleEnforcement> enforcement;
-
   /// The actors that can bypass the rules in this ruleset
   final SdkOptional<List<RepositoryRulesetBypassActor>> bypassActors;
-
   /// Conditions for an organization ruleset. The branch and tag rulesets conditions object should contain both `repository_name` and `ref_name` properties, or both `repository_id` and `ref_name` properties, or both `repository_property` and `ref_name` properties. The push rulesets conditions object does not require the `ref_name` property. For repository policy rulesets, the conditions object should only contain the `repository_name`, the `repository_id`, or the `repository_property`.
   final SdkOptional<OrgRulesetConditions> conditions;
-
   /// An array of rules within the ruleset.
   final SdkOptional<List<OrgRules>> rules;
 
-  const ReposUpdateOrgRulesetRequestBody(
-      {this.name = const SdkOmitted(),
-      this.target = const SdkOmitted(),
-      this.enforcement = const SdkOmitted(),
-      this.bypassActors = const SdkOmitted(),
-      this.conditions = const SdkOmitted(),
-      this.rules = const SdkOmitted()});
+  const ReposUpdateOrgRulesetRequestBody({this.name = const SdkOmitted(), this.target = const SdkOmitted(), this.enforcement = const SdkOmitted(), this.bypassActors = const SdkOmitted(), this.conditions = const SdkOmitted(), this.rules = const SdkOmitted()});
 
-  ReposUpdateOrgRulesetRequestBody Function(
-      {SdkOptional<String> name,
-      SdkOptional<ReposUpdateOrgRulesetRequestBodyTarget> target,
-      SdkOptional<RepositoryRuleEnforcement> enforcement,
-      SdkOptional<List<RepositoryRulesetBypassActor>> bypassActors,
-      SdkOptional<OrgRulesetConditions> conditions,
-      SdkOptional<List<OrgRules>> rules}) get copyWith => _copyWith;
+  ReposUpdateOrgRulesetRequestBody Function({SdkOptional<String> name, SdkOptional<ReposUpdateOrgRulesetRequestBodyTarget> target, SdkOptional<RepositoryRuleEnforcement> enforcement, SdkOptional<List<RepositoryRulesetBypassActor>> bypassActors, SdkOptional<OrgRulesetConditions> conditions, SdkOptional<List<OrgRules>> rules}) get copyWith => _copyWith;
 
-  ReposUpdateOrgRulesetRequestBody _copyWith(
-          {Object? name = sdkOmittedValue,
-          Object? target = sdkOmittedValue,
-          Object? enforcement = sdkOmittedValue,
-          Object? bypassActors = sdkOmittedValue,
-          Object? conditions = sdkOmittedValue,
-          Object? rules = sdkOmittedValue}) =>
-      ReposUpdateOrgRulesetRequestBody(
-        name: identical(name, sdkOmittedValue)
-            ? this.name
-            : name as SdkOptional<String>,
-        target: identical(target, sdkOmittedValue)
-            ? this.target
-            : target as SdkOptional<ReposUpdateOrgRulesetRequestBodyTarget>,
-        enforcement: identical(enforcement, sdkOmittedValue)
-            ? this.enforcement
-            : enforcement as SdkOptional<RepositoryRuleEnforcement>,
-        bypassActors: identical(bypassActors, sdkOmittedValue)
-            ? this.bypassActors
-            : bypassActors as SdkOptional<List<RepositoryRulesetBypassActor>>,
-        conditions: identical(conditions, sdkOmittedValue)
-            ? this.conditions
-            : conditions as SdkOptional<OrgRulesetConditions>,
-        rules: identical(rules, sdkOmittedValue)
-            ? this.rules
-            : rules as SdkOptional<List<OrgRules>>,
-      );
+  ReposUpdateOrgRulesetRequestBody _copyWith({Object? name = sdkOmittedValue, Object? target = sdkOmittedValue, Object? enforcement = sdkOmittedValue, Object? bypassActors = sdkOmittedValue, Object? conditions = sdkOmittedValue, Object? rules = sdkOmittedValue}) => ReposUpdateOrgRulesetRequestBody(
+    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
+    target: identical(target, sdkOmittedValue) ? this.target : target as SdkOptional<ReposUpdateOrgRulesetRequestBodyTarget>,
+    enforcement: identical(enforcement, sdkOmittedValue) ? this.enforcement : enforcement as SdkOptional<RepositoryRuleEnforcement>,
+    bypassActors: identical(bypassActors, sdkOmittedValue) ? this.bypassActors : bypassActors as SdkOptional<List<RepositoryRulesetBypassActor>>,
+    conditions: identical(conditions, sdkOmittedValue) ? this.conditions : conditions as SdkOptional<OrgRulesetConditions>,
+    rules: identical(rules, sdkOmittedValue) ? this.rules : rules as SdkOptional<List<OrgRules>>,
+  );
 
-  factory ReposUpdateOrgRulesetRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      ReposUpdateOrgRulesetRequestBody(
-        name: json['name'] != null
-            ? SdkPresent((json['name'] as String?)!)
-            : const SdkOmitted(),
-        target: json['target'] != null
-            ? SdkPresent((json['target'] != null
-                ? ReposUpdateOrgRulesetRequestBodyTarget.fromJson(
-                    json['target'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        enforcement: json['enforcement'] != null
-            ? SdkPresent((json['enforcement'] != null
-                ? RepositoryRuleEnforcement.fromJson(
-                    json['enforcement'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        bypassActors: json['bypass_actors'] != null
-            ? SdkPresent(((json['bypass_actors'] as List?)
-                ?.map((e) => RepositoryRulesetBypassActor.fromJson(
-                    e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-        conditions: json['conditions'] != null
-            ? SdkPresent((json['conditions'] != null
-                ? OrgRulesetConditions.fromJson(json['conditions'])
-                : null)!)
-            : const SdkOmitted(),
-        rules: json['rules'] != null
-            ? SdkPresent(((json['rules'] as List?)
-                ?.map((e) => OrgRules.fromJson(e))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory ReposUpdateOrgRulesetRequestBody.fromJson(Map<String, dynamic> json) => ReposUpdateOrgRulesetRequestBody(
+    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
+    target: json['target'] != null ? SdkPresent((json['target'] != null ? ReposUpdateOrgRulesetRequestBodyTarget.fromJson(json['target'] as String) : null)!) : const SdkOmitted(),
+    enforcement: json['enforcement'] != null ? SdkPresent((json['enforcement'] != null ? RepositoryRuleEnforcement.fromJson(json['enforcement'] as String) : null)!) : const SdkOmitted(),
+    bypassActors: json['bypass_actors'] != null ? SdkPresent(((json['bypass_actors'] as List?)?.map((e) => RepositoryRulesetBypassActor.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+    conditions: json['conditions'] != null ? SdkPresent((json['conditions'] != null ? OrgRulesetConditions.fromJson(json['conditions']) : null)!) : const SdkOmitted(),
+    rules: json['rules'] != null ? SdkPresent(((json['rules'] as List?)?.map((e) => OrgRules.fromJson(e)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (name) {
-          SdkPresent<String>(value: final value) => {
-              'name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (target) {
-          SdkPresent<ReposUpdateOrgRulesetRequestBodyTarget>(
-            value: final value
-          ) =>
-            {
-              'target': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (enforcement) {
-          SdkPresent<RepositoryRuleEnforcement>(value: final value) => {
-              'enforcement': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (bypassActors) {
-          SdkPresent<List<RepositoryRulesetBypassActor>>(value: final value) =>
-            {
-              'bypass_actors': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (conditions) {
-          SdkPresent<OrgRulesetConditions>(value: final value) => {
-              'conditions': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (rules) {
-          SdkPresent<List<OrgRules>>(value: final value) => {
-              'rules': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (name) {
+      SdkPresent<String>(value: final value) => {'name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (target) {
+      SdkPresent<ReposUpdateOrgRulesetRequestBodyTarget>(value: final value) => {'target': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (enforcement) {
+      SdkPresent<RepositoryRuleEnforcement>(value: final value) => {'enforcement': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (bypassActors) {
+      SdkPresent<List<RepositoryRulesetBypassActor>>(value: final value) => {'bypass_actors': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (conditions) {
+      SdkPresent<OrgRulesetConditions>(value: final value) => {'conditions': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (rules) {
+      SdkPresent<List<OrgRules>>(value: final value) => {'rules': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Use the `status` property to enable or disable GitHub Advanced Security for this repository. For more information, see "About GitHub Advanced Security." For standalone Code Scanning or Secret Protection products, this parameter cannot be used.
 class ReposUpdateRequestBodySecurityAndAnalysisAdvancedSecurity {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Can be `enabled` or `disabled`.
   final SdkOptional<String> status;
 
-  const ReposUpdateRequestBodySecurityAndAnalysisAdvancedSecurity(
-      {this.status = const SdkOmitted()});
+  const ReposUpdateRequestBodySecurityAndAnalysisAdvancedSecurity({this.status = const SdkOmitted()});
 
-  ReposUpdateRequestBodySecurityAndAnalysisAdvancedSecurity Function(
-      {SdkOptional<String> status}) get copyWith => _copyWith;
+  ReposUpdateRequestBodySecurityAndAnalysisAdvancedSecurity Function({SdkOptional<String> status}) get copyWith => _copyWith;
 
-  ReposUpdateRequestBodySecurityAndAnalysisAdvancedSecurity _copyWith(
-          {Object? status = sdkOmittedValue}) =>
-      ReposUpdateRequestBodySecurityAndAnalysisAdvancedSecurity(
-        status: identical(status, sdkOmittedValue)
-            ? this.status
-            : status as SdkOptional<String>,
-      );
+  ReposUpdateRequestBodySecurityAndAnalysisAdvancedSecurity _copyWith({Object? status = sdkOmittedValue}) => ReposUpdateRequestBodySecurityAndAnalysisAdvancedSecurity(
+    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<String>,
+  );
 
-  factory ReposUpdateRequestBodySecurityAndAnalysisAdvancedSecurity.fromJson(
-          Map<String, dynamic> json) =>
-      ReposUpdateRequestBodySecurityAndAnalysisAdvancedSecurity(
-        status: json['status'] != null
-            ? SdkPresent((json['status'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory ReposUpdateRequestBodySecurityAndAnalysisAdvancedSecurity.fromJson(Map<String, dynamic> json) => ReposUpdateRequestBodySecurityAndAnalysisAdvancedSecurity(
+    status: json['status'] != null ? SdkPresent((json['status'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (status) {
-          SdkPresent<String>(value: final value) => {
-              'status': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (status) {
+      SdkPresent<String>(value: final value) => {'status': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Use the `status` property to enable or disable GitHub Code Security for this repository.
 class ReposUpdateRequestBodySecurityAndAnalysisCodeSecurity {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Can be `enabled` or `disabled`.
   final SdkOptional<String> status;
 
-  const ReposUpdateRequestBodySecurityAndAnalysisCodeSecurity(
-      {this.status = const SdkOmitted()});
+  const ReposUpdateRequestBodySecurityAndAnalysisCodeSecurity({this.status = const SdkOmitted()});
 
-  ReposUpdateRequestBodySecurityAndAnalysisCodeSecurity Function(
-      {SdkOptional<String> status}) get copyWith => _copyWith;
+  ReposUpdateRequestBodySecurityAndAnalysisCodeSecurity Function({SdkOptional<String> status}) get copyWith => _copyWith;
 
-  ReposUpdateRequestBodySecurityAndAnalysisCodeSecurity _copyWith(
-          {Object? status = sdkOmittedValue}) =>
-      ReposUpdateRequestBodySecurityAndAnalysisCodeSecurity(
-        status: identical(status, sdkOmittedValue)
-            ? this.status
-            : status as SdkOptional<String>,
-      );
+  ReposUpdateRequestBodySecurityAndAnalysisCodeSecurity _copyWith({Object? status = sdkOmittedValue}) => ReposUpdateRequestBodySecurityAndAnalysisCodeSecurity(
+    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<String>,
+  );
 
-  factory ReposUpdateRequestBodySecurityAndAnalysisCodeSecurity.fromJson(
-          Map<String, dynamic> json) =>
-      ReposUpdateRequestBodySecurityAndAnalysisCodeSecurity(
-        status: json['status'] != null
-            ? SdkPresent((json['status'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory ReposUpdateRequestBodySecurityAndAnalysisCodeSecurity.fromJson(Map<String, dynamic> json) => ReposUpdateRequestBodySecurityAndAnalysisCodeSecurity(
+    status: json['status'] != null ? SdkPresent((json['status'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (status) {
-          SdkPresent<String>(value: final value) => {
-              'status': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (status) {
+      SdkPresent<String>(value: final value) => {'status': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Use the `status` property to enable or disable secret scanning for this repository. For more information, see "About secret scanning."
 class ReposUpdateRequestBodySecurityAndAnalysisSecretScanning {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Can be `enabled` or `disabled`.
   final SdkOptional<String> status;
 
-  const ReposUpdateRequestBodySecurityAndAnalysisSecretScanning(
-      {this.status = const SdkOmitted()});
+  const ReposUpdateRequestBodySecurityAndAnalysisSecretScanning({this.status = const SdkOmitted()});
 
-  ReposUpdateRequestBodySecurityAndAnalysisSecretScanning Function(
-      {SdkOptional<String> status}) get copyWith => _copyWith;
+  ReposUpdateRequestBodySecurityAndAnalysisSecretScanning Function({SdkOptional<String> status}) get copyWith => _copyWith;
 
-  ReposUpdateRequestBodySecurityAndAnalysisSecretScanning _copyWith(
-          {Object? status = sdkOmittedValue}) =>
-      ReposUpdateRequestBodySecurityAndAnalysisSecretScanning(
-        status: identical(status, sdkOmittedValue)
-            ? this.status
-            : status as SdkOptional<String>,
-      );
+  ReposUpdateRequestBodySecurityAndAnalysisSecretScanning _copyWith({Object? status = sdkOmittedValue}) => ReposUpdateRequestBodySecurityAndAnalysisSecretScanning(
+    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<String>,
+  );
 
-  factory ReposUpdateRequestBodySecurityAndAnalysisSecretScanning.fromJson(
-          Map<String, dynamic> json) =>
-      ReposUpdateRequestBodySecurityAndAnalysisSecretScanning(
-        status: json['status'] != null
-            ? SdkPresent((json['status'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory ReposUpdateRequestBodySecurityAndAnalysisSecretScanning.fromJson(Map<String, dynamic> json) => ReposUpdateRequestBodySecurityAndAnalysisSecretScanning(
+    status: json['status'] != null ? SdkPresent((json['status'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (status) {
-          SdkPresent<String>(value: final value) => {
-              'status': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (status) {
+      SdkPresent<String>(value: final value) => {'status': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Use the `status` property to enable or disable secret scanning push protection for this repository. For more information, see "Protecting pushes with secret scanning."
 class ReposUpdateRequestBodySecurityAndAnalysisSecretScanningPushProtection {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Can be `enabled` or `disabled`.
   final SdkOptional<String> status;
 
-  const ReposUpdateRequestBodySecurityAndAnalysisSecretScanningPushProtection(
-      {this.status = const SdkOmitted()});
+  const ReposUpdateRequestBodySecurityAndAnalysisSecretScanningPushProtection({this.status = const SdkOmitted()});
 
-  ReposUpdateRequestBodySecurityAndAnalysisSecretScanningPushProtection
-      Function({SdkOptional<String> status}) get copyWith => _copyWith;
+  ReposUpdateRequestBodySecurityAndAnalysisSecretScanningPushProtection Function({SdkOptional<String> status}) get copyWith => _copyWith;
 
-  ReposUpdateRequestBodySecurityAndAnalysisSecretScanningPushProtection
-      _copyWith({Object? status = sdkOmittedValue}) =>
-          ReposUpdateRequestBodySecurityAndAnalysisSecretScanningPushProtection(
-            status: identical(status, sdkOmittedValue)
-                ? this.status
-                : status as SdkOptional<String>,
-          );
+  ReposUpdateRequestBodySecurityAndAnalysisSecretScanningPushProtection _copyWith({Object? status = sdkOmittedValue}) => ReposUpdateRequestBodySecurityAndAnalysisSecretScanningPushProtection(
+    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<String>,
+  );
 
-  factory ReposUpdateRequestBodySecurityAndAnalysisSecretScanningPushProtection.fromJson(
-          Map<String, dynamic> json) =>
-      ReposUpdateRequestBodySecurityAndAnalysisSecretScanningPushProtection(
-        status: json['status'] != null
-            ? SdkPresent((json['status'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory ReposUpdateRequestBodySecurityAndAnalysisSecretScanningPushProtection.fromJson(Map<String, dynamic> json) => ReposUpdateRequestBodySecurityAndAnalysisSecretScanningPushProtection(
+    status: json['status'] != null ? SdkPresent((json['status'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (status) {
-          SdkPresent<String>(value: final value) => {
-              'status': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (status) {
+      SdkPresent<String>(value: final value) => {'status': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Use the `status` property to enable or disable secret scanning AI detection for this repository. For more information, see "[Responsible detection of generic secrets with AI](https://docs.github.com/code-security/secret-scanning/using-advanced-secret-scanning-and-push-protection-features/generic-secret-detection/responsible-ai-generic-secrets)."
 class ReposUpdateRequestBodySecurityAndAnalysisSecretScanningAiDetection {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Can be `enabled` or `disabled`.
   final SdkOptional<String> status;
 
-  const ReposUpdateRequestBodySecurityAndAnalysisSecretScanningAiDetection(
-      {this.status = const SdkOmitted()});
+  const ReposUpdateRequestBodySecurityAndAnalysisSecretScanningAiDetection({this.status = const SdkOmitted()});
 
-  ReposUpdateRequestBodySecurityAndAnalysisSecretScanningAiDetection Function(
-      {SdkOptional<String> status}) get copyWith => _copyWith;
+  ReposUpdateRequestBodySecurityAndAnalysisSecretScanningAiDetection Function({SdkOptional<String> status}) get copyWith => _copyWith;
 
-  ReposUpdateRequestBodySecurityAndAnalysisSecretScanningAiDetection _copyWith(
-          {Object? status = sdkOmittedValue}) =>
-      ReposUpdateRequestBodySecurityAndAnalysisSecretScanningAiDetection(
-        status: identical(status, sdkOmittedValue)
-            ? this.status
-            : status as SdkOptional<String>,
-      );
+  ReposUpdateRequestBodySecurityAndAnalysisSecretScanningAiDetection _copyWith({Object? status = sdkOmittedValue}) => ReposUpdateRequestBodySecurityAndAnalysisSecretScanningAiDetection(
+    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<String>,
+  );
 
-  factory ReposUpdateRequestBodySecurityAndAnalysisSecretScanningAiDetection.fromJson(
-          Map<String, dynamic> json) =>
-      ReposUpdateRequestBodySecurityAndAnalysisSecretScanningAiDetection(
-        status: json['status'] != null
-            ? SdkPresent((json['status'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory ReposUpdateRequestBodySecurityAndAnalysisSecretScanningAiDetection.fromJson(Map<String, dynamic> json) => ReposUpdateRequestBodySecurityAndAnalysisSecretScanningAiDetection(
+    status: json['status'] != null ? SdkPresent((json['status'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (status) {
-          SdkPresent<String>(value: final value) => {
-              'status': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (status) {
+      SdkPresent<String>(value: final value) => {'status': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Use the `status` property to enable or disable secret scanning non-provider patterns for this repository. For more information, see "Supported secret scanning patterns."
 class ReposUpdateRequestBodySecurityAndAnalysisSecretScanningNonProviderPatterns {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Can be `enabled` or `disabled`.
   final SdkOptional<String> status;
 
-  const ReposUpdateRequestBodySecurityAndAnalysisSecretScanningNonProviderPatterns(
-      {this.status = const SdkOmitted()});
+  const ReposUpdateRequestBodySecurityAndAnalysisSecretScanningNonProviderPatterns({this.status = const SdkOmitted()});
 
-  ReposUpdateRequestBodySecurityAndAnalysisSecretScanningNonProviderPatterns
-      Function({SdkOptional<String> status}) get copyWith => _copyWith;
+  ReposUpdateRequestBodySecurityAndAnalysisSecretScanningNonProviderPatterns Function({SdkOptional<String> status}) get copyWith => _copyWith;
 
-  ReposUpdateRequestBodySecurityAndAnalysisSecretScanningNonProviderPatterns
-      _copyWith({Object? status = sdkOmittedValue}) =>
-          ReposUpdateRequestBodySecurityAndAnalysisSecretScanningNonProviderPatterns(
-            status: identical(status, sdkOmittedValue)
-                ? this.status
-                : status as SdkOptional<String>,
-          );
+  ReposUpdateRequestBodySecurityAndAnalysisSecretScanningNonProviderPatterns _copyWith({Object? status = sdkOmittedValue}) => ReposUpdateRequestBodySecurityAndAnalysisSecretScanningNonProviderPatterns(
+    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<String>,
+  );
 
-  factory ReposUpdateRequestBodySecurityAndAnalysisSecretScanningNonProviderPatterns.fromJson(
-          Map<String, dynamic> json) =>
-      ReposUpdateRequestBodySecurityAndAnalysisSecretScanningNonProviderPatterns(
-        status: json['status'] != null
-            ? SdkPresent((json['status'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory ReposUpdateRequestBodySecurityAndAnalysisSecretScanningNonProviderPatterns.fromJson(Map<String, dynamic> json) => ReposUpdateRequestBodySecurityAndAnalysisSecretScanningNonProviderPatterns(
+    status: json['status'] != null ? SdkPresent((json['status'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (status) {
-          SdkPresent<String>(value: final value) => {
-              'status': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (status) {
+      SdkPresent<String>(value: final value) => {'status': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

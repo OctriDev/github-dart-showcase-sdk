@@ -6,36 +6,33 @@ part of 'inline.dart';
 // Inline operation models (part 207)
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookStarDeletedAction {
+
   final String value;
 
   const WebhookStarDeletedAction._(this.value);
 
-  factory WebhookStarDeletedAction.fromJson(String value) =>
-      WebhookStarDeletedAction._(value);
+  factory WebhookStarDeletedAction.fromJson(String value) => WebhookStarDeletedAction._(value);
 
   static const deleted = WebhookStarDeletedAction._('deleted');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookStarDeletedAction && other.value == value;
+  @override bool operator ==(Object other) => other is WebhookStarDeletedAction && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhookStatusCommitAuthorType {
+
   final String value;
 
   const WebhookStatusCommitAuthorType._(this.value);
 
-  factory WebhookStatusCommitAuthorType.fromJson(String value) =>
-      WebhookStatusCommitAuthorType._(value);
+  factory WebhookStatusCommitAuthorType.fromJson(String value) => WebhookStatusCommitAuthorType._(value);
 
   static const bot = WebhookStatusCommitAuthorType._('Bot');
   static const user = WebhookStatusCommitAuthorType._('User');
@@ -43,105 +40,80 @@ final class WebhookStatusCommitAuthorType {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookStatusCommitAuthorType && other.value == value;
+  @override bool operator ==(Object other) => other is WebhookStatusCommitAuthorType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Required enumerated value serialized in the `reason` wire field.
 final class WebhookStatusCommitCommitVerificationReason {
+
   final String value;
 
   const WebhookStatusCommitCommitVerificationReason._(this.value);
 
-  factory WebhookStatusCommitCommitVerificationReason.fromJson(String value) =>
-      WebhookStatusCommitCommitVerificationReason._(value);
+  factory WebhookStatusCommitCommitVerificationReason.fromJson(String value) => WebhookStatusCommitCommitVerificationReason._(value);
 
-  static const expiredKey =
-      WebhookStatusCommitCommitVerificationReason._('expired_key');
-  static const notSigningKey =
-      WebhookStatusCommitCommitVerificationReason._('not_signing_key');
-  static const gpgverifyError =
-      WebhookStatusCommitCommitVerificationReason._('gpgverify_error');
-  static const gpgverifyUnavailable =
-      WebhookStatusCommitCommitVerificationReason._('gpgverify_unavailable');
-  static const unsigned =
-      WebhookStatusCommitCommitVerificationReason._('unsigned');
-  static const unknownSignatureType =
-      WebhookStatusCommitCommitVerificationReason._('unknown_signature_type');
-  static const noUser =
-      WebhookStatusCommitCommitVerificationReason._('no_user');
-  static const unverifiedEmail =
-      WebhookStatusCommitCommitVerificationReason._('unverified_email');
-  static const badEmail =
-      WebhookStatusCommitCommitVerificationReason._('bad_email');
-  static const unknownKey =
-      WebhookStatusCommitCommitVerificationReason._('unknown_key');
-  static const malformedSignature =
-      WebhookStatusCommitCommitVerificationReason._('malformed_signature');
-  static const invalid =
-      WebhookStatusCommitCommitVerificationReason._('invalid');
+  static const expiredKey = WebhookStatusCommitCommitVerificationReason._('expired_key');
+  static const notSigningKey = WebhookStatusCommitCommitVerificationReason._('not_signing_key');
+  static const gpgverifyError = WebhookStatusCommitCommitVerificationReason._('gpgverify_error');
+  static const gpgverifyUnavailable = WebhookStatusCommitCommitVerificationReason._('gpgverify_unavailable');
+  static const unsigned = WebhookStatusCommitCommitVerificationReason._('unsigned');
+  static const unknownSignatureType = WebhookStatusCommitCommitVerificationReason._('unknown_signature_type');
+  static const noUser = WebhookStatusCommitCommitVerificationReason._('no_user');
+  static const unverifiedEmail = WebhookStatusCommitCommitVerificationReason._('unverified_email');
+  static const badEmail = WebhookStatusCommitCommitVerificationReason._('bad_email');
+  static const unknownKey = WebhookStatusCommitCommitVerificationReason._('unknown_key');
+  static const malformedSignature = WebhookStatusCommitCommitVerificationReason._('malformed_signature');
+  static const invalid = WebhookStatusCommitCommitVerificationReason._('invalid');
   static const valid = WebhookStatusCommitCommitVerificationReason._('valid');
-  static const badCert =
-      WebhookStatusCommitCommitVerificationReason._('bad_cert');
-  static const ocspPending =
-      WebhookStatusCommitCommitVerificationReason._('ocsp_pending');
+  static const badCert = WebhookStatusCommitCommitVerificationReason._('bad_cert');
+  static const ocspPending = WebhookStatusCommitCommitVerificationReason._('ocsp_pending');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookStatusCommitCommitVerificationReason &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is WebhookStatusCommitCommitVerificationReason && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhookStatusCommitCommitterType {
+
   final String value;
 
   const WebhookStatusCommitCommitterType._(this.value);
 
-  factory WebhookStatusCommitCommitterType.fromJson(String value) =>
-      WebhookStatusCommitCommitterType._(value);
+  factory WebhookStatusCommitCommitterType.fromJson(String value) => WebhookStatusCommitCommitterType._(value);
 
   static const bot = WebhookStatusCommitCommitterType._('Bot');
   static const user = WebhookStatusCommitCommitterType._('User');
-  static const organization =
-      WebhookStatusCommitCommitterType._('Organization');
+  static const organization = WebhookStatusCommitCommitterType._('Organization');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookStatusCommitCommitterType && other.value == value;
+  @override bool operator ==(Object other) => other is WebhookStatusCommitCommitterType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The new state. Can be `pending`, `success`, `failure`, or `error`.
 final class WebhookStatusState {
+
   final String value;
 
   const WebhookStatusState._(this.value);
 
-  factory WebhookStatusState.fromJson(String value) =>
-      WebhookStatusState._(value);
+  factory WebhookStatusState.fromJson(String value) => WebhookStatusState._(value);
 
   static const pending = WebhookStatusState._('pending');
   static const success = WebhookStatusState._('success');
@@ -150,79 +122,66 @@ final class WebhookStatusState {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhookStatusState && other.value == value;
+  @override bool operator ==(Object other) => other is WebhookStatusState && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Optional enumerated value serialized in the `notification_setting` wire field.
 final class WebhooksTeamNotificationSetting {
+
   final String value;
 
   const WebhooksTeamNotificationSetting._(this.value);
 
-  factory WebhooksTeamNotificationSetting.fromJson(String value) =>
-      WebhooksTeamNotificationSetting._(value);
+  factory WebhooksTeamNotificationSetting.fromJson(String value) => WebhooksTeamNotificationSetting._(value);
 
-  static const notificationsEnabled =
-      WebhooksTeamNotificationSetting._('notifications_enabled');
-  static const notificationsDisabled =
-      WebhooksTeamNotificationSetting._('notifications_disabled');
+  static const notificationsEnabled = WebhooksTeamNotificationSetting._('notifications_enabled');
+  static const notificationsDisabled = WebhooksTeamNotificationSetting._('notifications_disabled');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhooksTeamNotificationSetting && other.value == value;
+  @override bool operator ==(Object other) => other is WebhooksTeamNotificationSetting && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Whether team members will receive notifications when their team is @mentioned
 final class WebhooksTeamParentNotificationSetting {
+
   final String value;
 
   const WebhooksTeamParentNotificationSetting._(this.value);
 
-  factory WebhooksTeamParentNotificationSetting.fromJson(String value) =>
-      WebhooksTeamParentNotificationSetting._(value);
+  factory WebhooksTeamParentNotificationSetting.fromJson(String value) => WebhooksTeamParentNotificationSetting._(value);
 
-  static const notificationsEnabled =
-      WebhooksTeamParentNotificationSetting._('notifications_enabled');
-  static const notificationsDisabled =
-      WebhooksTeamParentNotificationSetting._('notifications_disabled');
+  static const notificationsEnabled = WebhooksTeamParentNotificationSetting._('notifications_enabled');
+  static const notificationsDisabled = WebhooksTeamParentNotificationSetting._('notifications_disabled');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhooksTeamParentNotificationSetting && other.value == value;
+  @override bool operator ==(Object other) => other is WebhooksTeamParentNotificationSetting && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Required enumerated value serialized in the `privacy` wire field.
 final class WebhooksTeamParentPrivacy {
+
   final String value;
 
   const WebhooksTeamParentPrivacy._(this.value);
 
-  factory WebhooksTeamParentPrivacy.fromJson(String value) =>
-      WebhooksTeamParentPrivacy._(value);
+  factory WebhooksTeamParentPrivacy.fromJson(String value) => WebhooksTeamParentPrivacy._(value);
 
   static const open = WebhooksTeamParentPrivacy._('open');
   static const closed = WebhooksTeamParentPrivacy._('closed');
@@ -230,50 +189,44 @@ final class WebhooksTeamParentPrivacy {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhooksTeamParentPrivacy && other.value == value;
+  @override bool operator ==(Object other) => other is WebhooksTeamParentPrivacy && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The ownership type of the team
 final class WebhooksTeamParentType {
+
   final String value;
 
   const WebhooksTeamParentType._(this.value);
 
-  factory WebhooksTeamParentType.fromJson(String value) =>
-      WebhooksTeamParentType._(value);
+  factory WebhooksTeamParentType.fromJson(String value) => WebhooksTeamParentType._(value);
 
   static const enterprise = WebhooksTeamParentType._('enterprise');
   static const organization = WebhooksTeamParentType._('organization');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhooksTeamParentType && other.value == value;
+  @override bool operator ==(Object other) => other is WebhooksTeamParentType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Optional enumerated value serialized in the `privacy` wire field.
 final class WebhooksTeamPrivacy {
+
   final String value;
 
   const WebhooksTeamPrivacy._(this.value);
 
-  factory WebhooksTeamPrivacy.fromJson(String value) =>
-      WebhooksTeamPrivacy._(value);
+  factory WebhooksTeamPrivacy.fromJson(String value) => WebhooksTeamPrivacy._(value);
 
   static const open = WebhooksTeamPrivacy._('open');
   static const closed = WebhooksTeamPrivacy._('closed');
@@ -281,19 +234,17 @@ final class WebhooksTeamPrivacy {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhooksTeamPrivacy && other.value == value;
+  @override bool operator ==(Object other) => other is WebhooksTeamPrivacy && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The ownership type of the team
 final class WebhooksTeamType {
+
   final String value;
 
   const WebhooksTeamType._(this.value);
@@ -305,40 +256,32 @@ final class WebhooksTeamType {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhooksTeamType && other.value == value;
+  @override bool operator ==(Object other) => other is WebhooksTeamType && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Whether team members will receive notifications when their team is @mentioned
 final class WebhooksTeam1NotificationSetting {
+
   final String value;
 
   const WebhooksTeam1NotificationSetting._(this.value);
 
-  factory WebhooksTeam1NotificationSetting.fromJson(String value) =>
-      WebhooksTeam1NotificationSetting._(value);
+  factory WebhooksTeam1NotificationSetting.fromJson(String value) => WebhooksTeam1NotificationSetting._(value);
 
-  static const notificationsEnabled =
-      WebhooksTeam1NotificationSetting._('notifications_enabled');
-  static const notificationsDisabled =
-      WebhooksTeam1NotificationSetting._('notifications_disabled');
+  static const notificationsEnabled = WebhooksTeam1NotificationSetting._('notifications_enabled');
+  static const notificationsDisabled = WebhooksTeam1NotificationSetting._('notifications_disabled');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is WebhooksTeam1NotificationSetting && other.value == value;
+  @override bool operator ==(Object other) => other is WebhooksTeam1NotificationSetting && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

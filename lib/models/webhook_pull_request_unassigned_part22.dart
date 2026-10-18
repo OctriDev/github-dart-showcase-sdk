@@ -8,168 +8,74 @@ part of 'webhook_pull_request_unassigned.dart';
 class WebhookPullRequestUnassigned {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `action` wire field.
   final WebhookPullRequestUnassignedAction action;
-
   /// Optional object value serialized in the `assignee` wire field.
   final SdkOptional<WebhooksUserMannequin?> assignee;
-
   /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured on an enterprise account or an organization that's part of an enterprise account. For more information, see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
   final SdkOptional<EnterpriseWebhooks> enterprise;
-
   /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured for and sent to a GitHub App. For more information, see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
   final SdkOptional<SimpleInstallation> installation;
-
   /// The pull request number.
   final int number;
-
   /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an organization, or when the event occurs from activity in a repository owned by an organization.
   final SdkOptional<OrganizationSimpleWebhooks> organization;
-
   /// Required object value serialized in the `pull_request` wire field.
   final WebhookPullRequestUnassignedPullRequest pullRequest;
-
   /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property when the event occurs from activity in a repository.
   final RepositoryWebhooks repository;
-
   /// A GitHub user.
   final SimpleUser sender;
 
-  const WebhookPullRequestUnassigned(
-      {required this.action,
-      this.assignee = const SdkOmitted(),
-      this.enterprise = const SdkOmitted(),
-      this.installation = const SdkOmitted(),
-      required this.number,
-      this.organization = const SdkOmitted(),
-      required this.pullRequest,
-      required this.repository,
-      required this.sender});
+  const WebhookPullRequestUnassigned({required this.action, this.assignee = const SdkOmitted(), this.enterprise = const SdkOmitted(), this.installation = const SdkOmitted(), required this.number, this.organization = const SdkOmitted(), required this.pullRequest, required this.repository, required this.sender});
 
-  WebhookPullRequestUnassigned Function(
-      {WebhookPullRequestUnassignedAction action,
-      SdkOptional<WebhooksUserMannequin?> assignee,
-      SdkOptional<EnterpriseWebhooks> enterprise,
-      SdkOptional<SimpleInstallation> installation,
-      int number,
-      SdkOptional<OrganizationSimpleWebhooks> organization,
-      WebhookPullRequestUnassignedPullRequest pullRequest,
-      RepositoryWebhooks repository,
-      SimpleUser sender}) get copyWith => _copyWith;
+  WebhookPullRequestUnassigned Function({WebhookPullRequestUnassignedAction action, SdkOptional<WebhooksUserMannequin?> assignee, SdkOptional<EnterpriseWebhooks> enterprise, SdkOptional<SimpleInstallation> installation, int number, SdkOptional<OrganizationSimpleWebhooks> organization, WebhookPullRequestUnassignedPullRequest pullRequest, RepositoryWebhooks repository, SimpleUser sender}) get copyWith => _copyWith;
 
-  WebhookPullRequestUnassigned _copyWith(
-          {Object? action = sdkOmittedValue,
-          Object? assignee = sdkOmittedValue,
-          Object? enterprise = sdkOmittedValue,
-          Object? installation = sdkOmittedValue,
-          Object? number = sdkOmittedValue,
-          Object? organization = sdkOmittedValue,
-          Object? pullRequest = sdkOmittedValue,
-          Object? repository = sdkOmittedValue,
-          Object? sender = sdkOmittedValue}) =>
-      WebhookPullRequestUnassigned(
-        action: identical(action, sdkOmittedValue)
-            ? this.action
-            : action as WebhookPullRequestUnassignedAction,
-        assignee: identical(assignee, sdkOmittedValue)
-            ? this.assignee
-            : assignee as SdkOptional<WebhooksUserMannequin?>,
-        enterprise: identical(enterprise, sdkOmittedValue)
-            ? this.enterprise
-            : enterprise as SdkOptional<EnterpriseWebhooks>,
-        installation: identical(installation, sdkOmittedValue)
-            ? this.installation
-            : installation as SdkOptional<SimpleInstallation>,
-        number:
-            identical(number, sdkOmittedValue) ? this.number : number as int,
-        organization: identical(organization, sdkOmittedValue)
-            ? this.organization
-            : organization as SdkOptional<OrganizationSimpleWebhooks>,
-        pullRequest: identical(pullRequest, sdkOmittedValue)
-            ? this.pullRequest
-            : pullRequest as WebhookPullRequestUnassignedPullRequest,
-        repository: identical(repository, sdkOmittedValue)
-            ? this.repository
-            : repository as RepositoryWebhooks,
-        sender: identical(sender, sdkOmittedValue)
-            ? this.sender
-            : sender as SimpleUser,
-      );
+  WebhookPullRequestUnassigned _copyWith({Object? action = sdkOmittedValue, Object? assignee = sdkOmittedValue, Object? enterprise = sdkOmittedValue, Object? installation = sdkOmittedValue, Object? number = sdkOmittedValue, Object? organization = sdkOmittedValue, Object? pullRequest = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? sender = sdkOmittedValue}) => WebhookPullRequestUnassigned(
+    action: identical(action, sdkOmittedValue) ? this.action : action as WebhookPullRequestUnassignedAction,
+    assignee: identical(assignee, sdkOmittedValue) ? this.assignee : assignee as SdkOptional<WebhooksUserMannequin?>,
+    enterprise: identical(enterprise, sdkOmittedValue) ? this.enterprise : enterprise as SdkOptional<EnterpriseWebhooks>,
+    installation: identical(installation, sdkOmittedValue) ? this.installation : installation as SdkOptional<SimpleInstallation>,
+    number: identical(number, sdkOmittedValue) ? this.number : number as int,
+    organization: identical(organization, sdkOmittedValue) ? this.organization : organization as SdkOptional<OrganizationSimpleWebhooks>,
+    pullRequest: identical(pullRequest, sdkOmittedValue) ? this.pullRequest : pullRequest as WebhookPullRequestUnassignedPullRequest,
+    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as RepositoryWebhooks,
+    sender: identical(sender, sdkOmittedValue) ? this.sender : sender as SimpleUser,
+  );
 
-  factory WebhookPullRequestUnassigned.fromJson(Map<String, dynamic> json) =>
-      WebhookPullRequestUnassigned(
-        action: (json['action'] != null
-            ? WebhookPullRequestUnassignedAction.fromJson(
-                json['action'] as String)
-            : null)!,
-        assignee: json.containsKey('assignee')
-            ? SdkPresent(json['assignee'] != null
-                ? WebhooksUserMannequin.fromJson(
-                    json['assignee'] as Map<String, dynamic>)
-                : null)
-            : const SdkOmitted(),
-        enterprise: json['enterprise'] != null
-            ? SdkPresent((json['enterprise'] != null
-                ? EnterpriseWebhooks.fromJson(
-                    json['enterprise'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        installation: json['installation'] != null
-            ? SdkPresent((json['installation'] != null
-                ? SimpleInstallation.fromJson(
-                    json['installation'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        number: ((json['number'] as num?)?.toInt())!,
-        organization: json['organization'] != null
-            ? SdkPresent((json['organization'] != null
-                ? OrganizationSimpleWebhooks.fromJson(
-                    json['organization'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        pullRequest: (json['pull_request'] != null
-            ? WebhookPullRequestUnassignedPullRequest.fromJson(
-                json['pull_request'] as Map<String, dynamic>)
-            : null)!,
-        repository: (json['repository'] != null
-            ? RepositoryWebhooks.fromJson(
-                json['repository'] as Map<String, dynamic>)
-            : null)!,
-        sender: (json['sender'] != null
-            ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory WebhookPullRequestUnassigned.fromJson(Map<String, dynamic> json) => WebhookPullRequestUnassigned(
+    action: (json['action'] != null ? WebhookPullRequestUnassignedAction.fromJson(json['action'] as String) : null)!,
+    assignee: json.containsKey('assignee') ? SdkPresent(json['assignee'] != null ? WebhooksUserMannequin.fromJson(json['assignee'] as Map<String, dynamic>) : null) : const SdkOmitted(),
+    enterprise: json['enterprise'] != null ? SdkPresent((json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    installation: json['installation'] != null ? SdkPresent((json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    number: ((json['number'] as num?)?.toInt())!,
+    organization: json['organization'] != null ? SdkPresent((json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    pullRequest: (json['pull_request'] != null ? WebhookPullRequestUnassignedPullRequest.fromJson(json['pull_request'] as Map<String, dynamic>) : null)!,
+    repository: (json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null)!,
+    sender: (json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'action': action.toJson(),
-        ...switch (assignee) {
-          SdkPresent<WebhooksUserMannequin?>(value: final value) => {
-              'assignee': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (enterprise) {
-          SdkPresent<EnterpriseWebhooks>(value: final value) => {
-              'enterprise': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (installation) {
-          SdkPresent<SimpleInstallation>(value: final value) => {
-              'installation': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'number': number,
-        ...switch (organization) {
-          SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {
-              'organization': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'pull_request': pullRequest.toJson(),
-        'repository': repository.toJson(),
-        'sender': sender.toJson(),
-      };
+    'action': action.toJson(),
+    ...switch (assignee) {
+      SdkPresent<WebhooksUserMannequin?>(value: final value) => {'assignee': value?.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (enterprise) {
+      SdkPresent<EnterpriseWebhooks>(value: final value) => {'enterprise': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (installation) {
+      SdkPresent<SimpleInstallation>(value: final value) => {'installation': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'number': number,
+    ...switch (organization) {
+      SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {'organization': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'pull_request': pullRequest.toJson(),
+    'repository': repository.toJson(),
+    'sender': sender.toJson(),
+  };
 }

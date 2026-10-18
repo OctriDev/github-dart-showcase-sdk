@@ -8,109 +8,50 @@ part of 'webhook_projects_v2_item_restored.dart';
 class WebhookProjectsV2ItemRestored {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required enumerated value serialized in the `action` wire field.
   final WebhookProjectsV2ItemRestoredAction action;
-
   /// Required object value serialized in the `changes` wire field.
   final WebhooksProjectChanges changes;
-
   /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured for and sent to a GitHub App. For more information, see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
   final SdkOptional<SimpleInstallation> installation;
-
   /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an organization, or when the event occurs from activity in a repository owned by an organization.
   final OrganizationSimpleWebhooks organization;
-
   /// An item belonging to a project
   final ProjectsV2Item projectsV2Item;
-
   /// A GitHub user.
   final SimpleUser sender;
 
-  const WebhookProjectsV2ItemRestored(
-      {required this.action,
-      required this.changes,
-      this.installation = const SdkOmitted(),
-      required this.organization,
-      required this.projectsV2Item,
-      required this.sender});
+  const WebhookProjectsV2ItemRestored({required this.action, required this.changes, this.installation = const SdkOmitted(), required this.organization, required this.projectsV2Item, required this.sender});
 
-  WebhookProjectsV2ItemRestored Function(
-      {WebhookProjectsV2ItemRestoredAction action,
-      WebhooksProjectChanges changes,
-      SdkOptional<SimpleInstallation> installation,
-      OrganizationSimpleWebhooks organization,
-      ProjectsV2Item projectsV2Item,
-      SimpleUser sender}) get copyWith => _copyWith;
+  WebhookProjectsV2ItemRestored Function({WebhookProjectsV2ItemRestoredAction action, WebhooksProjectChanges changes, SdkOptional<SimpleInstallation> installation, OrganizationSimpleWebhooks organization, ProjectsV2Item projectsV2Item, SimpleUser sender}) get copyWith => _copyWith;
 
-  WebhookProjectsV2ItemRestored _copyWith(
-          {Object? action = sdkOmittedValue,
-          Object? changes = sdkOmittedValue,
-          Object? installation = sdkOmittedValue,
-          Object? organization = sdkOmittedValue,
-          Object? projectsV2Item = sdkOmittedValue,
-          Object? sender = sdkOmittedValue}) =>
-      WebhookProjectsV2ItemRestored(
-        action: identical(action, sdkOmittedValue)
-            ? this.action
-            : action as WebhookProjectsV2ItemRestoredAction,
-        changes: identical(changes, sdkOmittedValue)
-            ? this.changes
-            : changes as WebhooksProjectChanges,
-        installation: identical(installation, sdkOmittedValue)
-            ? this.installation
-            : installation as SdkOptional<SimpleInstallation>,
-        organization: identical(organization, sdkOmittedValue)
-            ? this.organization
-            : organization as OrganizationSimpleWebhooks,
-        projectsV2Item: identical(projectsV2Item, sdkOmittedValue)
-            ? this.projectsV2Item
-            : projectsV2Item as ProjectsV2Item,
-        sender: identical(sender, sdkOmittedValue)
-            ? this.sender
-            : sender as SimpleUser,
-      );
+  WebhookProjectsV2ItemRestored _copyWith({Object? action = sdkOmittedValue, Object? changes = sdkOmittedValue, Object? installation = sdkOmittedValue, Object? organization = sdkOmittedValue, Object? projectsV2Item = sdkOmittedValue, Object? sender = sdkOmittedValue}) => WebhookProjectsV2ItemRestored(
+    action: identical(action, sdkOmittedValue) ? this.action : action as WebhookProjectsV2ItemRestoredAction,
+    changes: identical(changes, sdkOmittedValue) ? this.changes : changes as WebhooksProjectChanges,
+    installation: identical(installation, sdkOmittedValue) ? this.installation : installation as SdkOptional<SimpleInstallation>,
+    organization: identical(organization, sdkOmittedValue) ? this.organization : organization as OrganizationSimpleWebhooks,
+    projectsV2Item: identical(projectsV2Item, sdkOmittedValue) ? this.projectsV2Item : projectsV2Item as ProjectsV2Item,
+    sender: identical(sender, sdkOmittedValue) ? this.sender : sender as SimpleUser,
+  );
 
-  factory WebhookProjectsV2ItemRestored.fromJson(Map<String, dynamic> json) =>
-      WebhookProjectsV2ItemRestored(
-        action: (json['action'] != null
-            ? WebhookProjectsV2ItemRestoredAction.fromJson(
-                json['action'] as String)
-            : null)!,
-        changes: (json['changes'] != null
-            ? WebhooksProjectChanges.fromJson(
-                json['changes'] as Map<String, dynamic>)
-            : null)!,
-        installation: json['installation'] != null
-            ? SdkPresent((json['installation'] != null
-                ? SimpleInstallation.fromJson(
-                    json['installation'] as Map<String, dynamic>)
-                : null)!)
-            : const SdkOmitted(),
-        organization: (json['organization'] != null
-            ? OrganizationSimpleWebhooks.fromJson(
-                json['organization'] as Map<String, dynamic>)
-            : null)!,
-        projectsV2Item: (json['projects_v2_item'] != null
-            ? ProjectsV2Item.fromJson(
-                json['projects_v2_item'] as Map<String, dynamic>)
-            : null)!,
-        sender: (json['sender'] != null
-            ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
-            : null)!,
-      );
+  factory WebhookProjectsV2ItemRestored.fromJson(Map<String, dynamic> json) => WebhookProjectsV2ItemRestored(
+    action: (json['action'] != null ? WebhookProjectsV2ItemRestoredAction.fromJson(json['action'] as String) : null)!,
+    changes: (json['changes'] != null ? WebhooksProjectChanges.fromJson(json['changes'] as Map<String, dynamic>) : null)!,
+    installation: json['installation'] != null ? SdkPresent((json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
+    organization: (json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null)!,
+    projectsV2Item: (json['projects_v2_item'] != null ? ProjectsV2Item.fromJson(json['projects_v2_item'] as Map<String, dynamic>) : null)!,
+    sender: (json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'action': action.toJson(),
-        'changes': changes.toJson(),
-        ...switch (installation) {
-          SdkPresent<SimpleInstallation>(value: final value) => {
-              'installation': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        'organization': organization.toJson(),
-        'projects_v2_item': projectsV2Item.toJson(),
-        'sender': sender.toJson(),
-      };
+    'action': action.toJson(),
+    'changes': changes.toJson(),
+    ...switch (installation) {
+      SdkPresent<SimpleInstallation>(value: final value) => {'installation': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    'organization': organization.toJson(),
+    'projects_v2_item': projectsV2Item.toJson(),
+    'sender': sender.toJson(),
+  };
 }

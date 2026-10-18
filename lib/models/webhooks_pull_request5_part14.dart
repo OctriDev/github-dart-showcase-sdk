@@ -8,77 +8,42 @@ part of 'webhooks_pull_request5.dart';
 class WebhooksPullRequest5Head {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Required `string` value serialized in the `label` wire field.
   final String label;
-
   /// Required `string` value serialized in the `ref` wire field.
   final String ref;
-
   /// A git repository
   final WebhooksPullRequest5HeadRepo repo;
-
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
-
   /// Required object value serialized in the `user` wire field.
   final WebhooksPullRequest5HeadUser? user;
 
-  const WebhooksPullRequest5Head(
-      {required this.label,
-      required this.ref,
-      required this.repo,
-      required this.sha,
-      required this.user});
+  const WebhooksPullRequest5Head({required this.label, required this.ref, required this.repo, required this.sha, required this.user});
 
-  WebhooksPullRequest5Head Function(
-      {String label,
-      String ref,
-      WebhooksPullRequest5HeadRepo repo,
-      String sha,
-      WebhooksPullRequest5HeadUser? user}) get copyWith => _copyWith;
+  WebhooksPullRequest5Head Function({String label, String ref, WebhooksPullRequest5HeadRepo repo, String sha, WebhooksPullRequest5HeadUser? user}) get copyWith => _copyWith;
 
-  WebhooksPullRequest5Head _copyWith(
-          {Object? label = sdkOmittedValue,
-          Object? ref = sdkOmittedValue,
-          Object? repo = sdkOmittedValue,
-          Object? sha = sdkOmittedValue,
-          Object? user = sdkOmittedValue}) =>
-      WebhooksPullRequest5Head(
-        label: identical(label, sdkOmittedValue) ? this.label : label as String,
-        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-        repo: identical(repo, sdkOmittedValue)
-            ? this.repo
-            : repo as WebhooksPullRequest5HeadRepo,
-        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-        user: identical(user, sdkOmittedValue)
-            ? this.user
-            : user as WebhooksPullRequest5HeadUser?,
-      );
+  WebhooksPullRequest5Head _copyWith({Object? label = sdkOmittedValue, Object? ref = sdkOmittedValue, Object? repo = sdkOmittedValue, Object? sha = sdkOmittedValue, Object? user = sdkOmittedValue}) => WebhooksPullRequest5Head(
+    label: identical(label, sdkOmittedValue) ? this.label : label as String,
+    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+    repo: identical(repo, sdkOmittedValue) ? this.repo : repo as WebhooksPullRequest5HeadRepo,
+    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+    user: identical(user, sdkOmittedValue) ? this.user : user as WebhooksPullRequest5HeadUser?,
+  );
 
-  factory WebhooksPullRequest5Head.fromJson(Map<String, dynamic> json) =>
-      WebhooksPullRequest5Head(
-        label: (json['label'] as String?)!,
-        ref: (json['ref'] as String?)!,
-        repo: (json['repo'] != null
-            ? WebhooksPullRequest5HeadRepo.fromJson(
-                json['repo'] as Map<String, dynamic>)
-            : null)!,
-        sha: (json['sha'] as String?)!,
-        user: json.containsKey('user')
-            ? json['user'] != null
-                ? WebhooksPullRequest5HeadUser.fromJson(
-                    json['user'] as Map<String, dynamic>)
-                : null
-            : throw ArgumentError.value(
-                null, 'user', 'Required property is missing'),
-      );
+  factory WebhooksPullRequest5Head.fromJson(Map<String, dynamic> json) => WebhooksPullRequest5Head(
+    label: (json['label'] as String?)!,
+    ref: (json['ref'] as String?)!,
+    repo: (json['repo'] != null ? WebhooksPullRequest5HeadRepo.fromJson(json['repo'] as Map<String, dynamic>) : null)!,
+    sha: (json['sha'] as String?)!,
+    user: json.containsKey('user') ? json['user'] != null ? WebhooksPullRequest5HeadUser.fromJson(json['user'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'user', 'Required property is missing'),
+  );
 
   Map<String, dynamic> toJson() => {
-        'label': label,
-        'ref': ref,
-        'repo': repo.toJson(),
-        'sha': sha,
-        'user': user?.toJson(),
-      };
+    'label': label,
+    'ref': ref,
+    'repo': repo.toJson(),
+    'sha': sha,
+    'user': user?.toJson(),
+  };
 }

@@ -16,12 +16,10 @@ Future<dynamic> usersGetAuthenticated(ClientConfig config,
           operationId: 'usersGetAuthenticated',
           fromJsonRaw: (value) => value,
           options: requestOptions,
-          errors: {
-        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// **Note:** If your email is set to private and you send an `email` parameter as part of this request to update your profile, your privacy settings are still enforced: the email address will not be displayed on your public profile or via the API.
 ///
@@ -57,21 +55,12 @@ Future<PrivateUser> usersUpdateAuthenticated(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'usersUpdateAuthenticated',
-          fromJsonRaw: (value) =>
-              PrivateUser.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => PrivateUser.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// List the users you've blocked on your personal account.
 ///
@@ -83,34 +72,25 @@ Future<PrivateUser> usersUpdateAuthenticated(ClientConfig config,
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<List<SimpleUser>> usersListBlockedByAuthenticatedUser(
-    ClientConfig config,
-    {SdkOptional<int> perPage = const SdkOmitted(),
-    SdkOptional<int> page = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<List<SimpleUser>>
+    usersListBlockedByAuthenticatedUser(ClientConfig config,
+        {SdkOptional<int> perPage = const SdkOmitted(),
+        SdkOptional<int> page = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<SimpleUser>>('GET', '/user/blocks',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'usersListBlockedByAuthenticatedUser',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => SimpleUser.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => SimpleUser.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Returns a 204 if the given user is blocked by the authenticated user. Returns a 404 if the given user is not blocked by the authenticated user, or if the given user account has been identified as spam by GitHub.
 ///
@@ -123,13 +103,10 @@ Future<void> usersCheckBlocked(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'usersCheckBlocked',
           options: requestOptions,
-          errors: {
-        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Blocks the given user and returns a 204. If the authenticated user cannot block the given user a 422 is returned.
 ///
@@ -142,15 +119,10 @@ Future<void> usersBlock(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'usersBlock',
           options: requestOptions,
-          errors: {
-        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '422': (value) =>
-            ValidationError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Removes a user from the authenticated user's block list. Use `username` to identify the account to unblock; the request returns no content when the removal succeeds.
 ///
@@ -165,43 +137,29 @@ Future<void> usersUnblock(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'usersUnblock',
           options: requestOptions,
-          errors: {
-        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Sets the visibility for your primary email addresses.
 ///
 /// [visibility] Denotes whether an email is publicly visible.
-Future<List<Email>> usersSetPrimaryEmailVisibilityForAuthenticatedUser(
-    ClientConfig config,
-    {required UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility
-        visibility,
-    RequestOptions? requestOptions}) async {
+Future<List<Email>>
+    usersSetPrimaryEmailVisibilityForAuthenticatedUser(ClientConfig config,
+        {required UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestBodyVisibility visibility,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<Email>>('PATCH', '/user/email/visibility',
           config: config,
           body: {'visibility': visibility},
           decoder: SdkResponseDecoder.json,
           operationId: 'usersSetPrimaryEmailVisibilityForAuthenticatedUser',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => Email.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => Email.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists all of your email addresses, and specifies which one is visible to the public. OAuth app tokens and personal access tokens (classic) need the `user:email` scope to use this endpoint.
 ///
@@ -220,26 +178,17 @@ Future<List<Email>> usersListEmailsForAuthenticatedUser(ClientConfig config,
   return (await sdkRequest<List<Email>>('GET', '/user/emails',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'usersListEmailsForAuthenticatedUser',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => Email.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => Email.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Adds one or more email addresses to the authenticated user's account. Supply at least one address in `emails`; the request can also be a direct email string or array instead of an object. OAuth app tokens and personal access tokens (classic) need the `user` scope.
 ///
@@ -252,19 +201,12 @@ Future<List<Email>> usersAddEmailForAuthenticatedUser(ClientConfig config,
           body: SdkUtils.unwrapOptional(body),
           decoder: SdkResponseDecoder.json,
           operationId: 'usersAddEmailForAuthenticatedUser',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => Email.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => Email.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '422': (value) =>
-            ValidationError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Removes one or more email addresses from the authenticated user's account. Supply at least one address in `emails`; the request can also be a direct email string or array instead of an object. OAuth app tokens and personal access tokens (classic) need the `user` scope.
 ///
@@ -278,15 +220,10 @@ Future<void> usersDeleteEmailForAuthenticatedUser(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'usersDeleteEmailForAuthenticatedUser',
           options: requestOptions,
-          errors: {
-        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '422': (value) =>
-            ValidationError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists the people following the authenticated user.
 ///
@@ -298,32 +235,25 @@ Future<void> usersDeleteEmailForAuthenticatedUser(ClientConfig config,
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<List<SimpleUser>> usersListFollowersForAuthenticatedUser(
-    ClientConfig config,
-    {SdkOptional<int> perPage = const SdkOmitted(),
-    SdkOptional<int> page = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<List<SimpleUser>>
+    usersListFollowersForAuthenticatedUser(ClientConfig config,
+        {SdkOptional<int> perPage = const SdkOmitted(),
+        SdkOptional<int> page = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<SimpleUser>>('GET', '/user/followers',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'usersListFollowersForAuthenticatedUser',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => SimpleUser.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => SimpleUser.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists the people who the authenticated user follows.
 ///
@@ -335,32 +265,25 @@ Future<List<SimpleUser>> usersListFollowersForAuthenticatedUser(
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<List<SimpleUser>> usersListFollowedByAuthenticatedUser(
-    ClientConfig config,
-    {SdkOptional<int> perPage = const SdkOmitted(),
-    SdkOptional<int> page = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<List<SimpleUser>>
+    usersListFollowedByAuthenticatedUser(ClientConfig config,
+        {SdkOptional<int> perPage = const SdkOmitted(),
+        SdkOptional<int> page = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<SimpleUser>>('GET', '/user/following',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'usersListFollowedByAuthenticatedUser',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => SimpleUser.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => SimpleUser.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Verifies whether the authenticated user follows a specified GitHub user account. Use `username` to identify the account whose follow status you want to check; the response distinguishes followed from not followed.
 ///
@@ -373,13 +296,10 @@ Future<void> usersCheckPersonIsFollowedByAuthenticated(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'usersCheckPersonIsFollowedByAuthenticated',
           options: requestOptions,
-          errors: {
-        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method)." OAuth app tokens and personal access tokens (classic) need the `user:follow` scope to use this endpoint.
 ///
@@ -392,15 +312,10 @@ Future<void> usersFollow(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'usersFollow',
           options: requestOptions,
-          errors: {
-        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '422': (value) =>
-            ValidationError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// OAuth app tokens and personal access tokens (classic) need the `user:follow` scope to use this endpoint.
 ///
@@ -413,13 +328,10 @@ Future<void> usersUnfollow(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'usersUnfollow',
           options: requestOptions,
-          errors: {
-        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists the current user's GPG keys. OAuth app tokens and personal access tokens (classic) need the `read:gpg_key` scope to use this endpoint.
 ///
@@ -438,26 +350,17 @@ Future<List<GpgKey>> usersListGpgKeysForAuthenticatedUser(ClientConfig config,
   return (await sdkRequest<List<GpgKey>>('GET', '/user/gpg_keys',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'usersListGpgKeysForAuthenticatedUser',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => GpgKey.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => GpgKey.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Adds a GPG key to the authenticated user's GitHub account. OAuth app tokens and personal access tokens (classic) need the `write:gpg_key` scope to use this endpoint.
 ///
@@ -475,21 +378,12 @@ Future<GpgKey> usersCreateGpgKeyForAuthenticatedUser(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'usersCreateGpgKeyForAuthenticatedUser',
-          fromJsonRaw: (value) =>
-              GpgKey.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => GpgKey.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// View extended details for a single GPG key. OAuth app tokens and personal access tokens (classic) need the `read:gpg_key` scope to use this endpoint.
 ///
@@ -501,16 +395,12 @@ Future<GpgKey> usersGetGpgKeyForAuthenticatedUser(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'usersGetGpgKeyForAuthenticatedUser',
-          fromJsonRaw: (value) =>
-              GpgKey.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => GpgKey.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Removes a GPG key from the authenticated user's GitHub account. OAuth app tokens and personal access tokens (classic) need the `admin:gpg_key` scope to use this endpoint.
 ///
@@ -523,15 +413,10 @@ Future<void> usersDeleteGpgKeyForAuthenticatedUser(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'usersDeleteGpgKeyForAuthenticatedUser',
           options: requestOptions,
-          errors: {
-        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '422': (value) =>
-            ValidationError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists the public SSH keys for the authenticated user's GitHub account. OAuth app tokens and personal access tokens (classic) need the `read:public_key` scope to use this endpoint.
 ///
@@ -543,34 +428,25 @@ Future<void> usersDeleteGpgKeyForAuthenticatedUser(ClientConfig config,
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<List<Key>> usersListPublicSshKeysForAuthenticatedUser(
-    ClientConfig config,
-    {SdkOptional<int> perPage = const SdkOmitted(),
-    SdkOptional<int> page = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<List<Key>>
+    usersListPublicSshKeysForAuthenticatedUser(ClientConfig config,
+        {SdkOptional<int> perPage = const SdkOmitted(),
+        SdkOptional<int> page = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<Key>>('GET', '/user/keys',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'usersListPublicSshKeysForAuthenticatedUser',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => Key.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => Key.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Adds a public SSH key to the authenticated user's GitHub account. OAuth app tokens and personal access tokens (classic) need the `write:public_key` scope to use this endpoint.
 ///
@@ -580,8 +456,7 @@ Future<Key> usersCreatePublicSshKeyForAuthenticatedUser(ClientConfig config,
     {required String key,
     SdkOptional<String> title = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
-  sdkValidatePattern(
-      'key', key, '^ssh-(rsa|dss|ed25519) |^ecdsa-sha2-nistp(256|384|521) ');
+  sdkValidatePattern('key', key, '^ssh-(rsa|dss|ed25519) |^ecdsa-sha2-nistp(256|384|521) ');
 
   return (await sdkRequest<Key>('POST', '/user/keys',
           config: config,
@@ -590,18 +465,10 @@ Future<Key> usersCreatePublicSshKeyForAuthenticatedUser(ClientConfig config,
           operationId: 'usersCreatePublicSshKeyForAuthenticatedUser',
           fromJsonRaw: (value) => Key.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// View extended details for a single public SSH key. OAuth app tokens and personal access tokens (classic) need the `read:public_key` scope to use this endpoint.
 ///
@@ -615,13 +482,10 @@ Future<Key> usersGetPublicSshKeyForAuthenticatedUser(ClientConfig config,
           operationId: 'usersGetPublicSshKeyForAuthenticatedUser',
           fromJsonRaw: (value) => Key.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Removes a public SSH key from the authenticated user's GitHub account. OAuth app tokens and personal access tokens (classic) need the `admin:public_key` scope to use this endpoint.
 ///
@@ -634,13 +498,10 @@ Future<void> usersDeletePublicSshKeyForAuthenticatedUser(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'usersDeletePublicSshKeyForAuthenticatedUser',
           options: requestOptions,
-          errors: {
-        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists your publicly visible email address, which you can set with the [Set primary email visibility for the authenticated user](https://docs.github.com/rest/users/emails#set-primary-email-visibility-for-the-authenticated-user) endpoint. OAuth app tokens and personal access tokens (classic) need the `user:email` scope to use this endpoint.
 ///
@@ -652,34 +513,25 @@ Future<void> usersDeletePublicSshKeyForAuthenticatedUser(ClientConfig config,
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<List<Email>> usersListPublicEmailsForAuthenticatedUser(
-    ClientConfig config,
-    {SdkOptional<int> perPage = const SdkOmitted(),
-    SdkOptional<int> page = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<List<Email>>
+    usersListPublicEmailsForAuthenticatedUser(ClientConfig config,
+        {SdkOptional<int> perPage = const SdkOmitted(),
+        SdkOptional<int> page = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<Email>>('GET', '/user/public_emails',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'usersListPublicEmailsForAuthenticatedUser',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => Email.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => Email.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists the social accounts linked to the authenticated user. Use `page` and `per_page` to paginate the results.
 ///
@@ -693,65 +545,42 @@ Future<List<Email>> usersListPublicEmailsForAuthenticatedUser(
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<List<SocialAccount>> usersListSocialAccountsForAuthenticatedUser(
-    ClientConfig config,
-    {SdkOptional<int> perPage = const SdkOmitted(),
-    SdkOptional<int> page = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<List<SocialAccount>>
+    usersListSocialAccountsForAuthenticatedUser(ClientConfig config,
+        {SdkOptional<int> perPage = const SdkOmitted(),
+        SdkOptional<int> page = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<SocialAccount>>('GET', '/user/social_accounts',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'usersListSocialAccountsForAuthenticatedUser',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  SocialAccount.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => SocialAccount.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Add one or more social accounts to the authenticated user's profile. OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
 ///
 /// [accountUrls] Full URLs for the social media profiles to add.
-Future<List<SocialAccount>> usersAddSocialAccountForAuthenticatedUser(
-    ClientConfig config,
-    {required List<String> accountUrls,
-    RequestOptions? requestOptions}) async {
+Future<List<SocialAccount>> usersAddSocialAccountForAuthenticatedUser(ClientConfig config,
+    {required List<String> accountUrls, RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<SocialAccount>>('POST', '/user/social_accounts',
           config: config,
           body: {'account_urls': accountUrls},
           decoder: SdkResponseDecoder.json,
           operationId: 'usersAddSocialAccountForAuthenticatedUser',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  SocialAccount.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => SocialAccount.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Deletes one or more social accounts from the authenticated user's profile. OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
 ///
@@ -764,18 +593,10 @@ Future<void> usersDeleteSocialAccountForAuthenticatedUser(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'usersDeleteSocialAccountForAuthenticatedUser',
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists the SSH signing keys for the authenticated user's GitHub account. OAuth app tokens and personal access tokens (classic) need the `read:ssh_signing_key` scope to use this endpoint.
 ///
@@ -787,35 +608,25 @@ Future<void> usersDeleteSocialAccountForAuthenticatedUser(ClientConfig config,
 ///   "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<List<SshSigningKey>> usersListSshSigningKeysForAuthenticatedUser(
-    ClientConfig config,
-    {SdkOptional<int> perPage = const SdkOmitted(),
-    SdkOptional<int> page = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<List<SshSigningKey>>
+    usersListSshSigningKeysForAuthenticatedUser(ClientConfig config,
+        {SdkOptional<int> perPage = const SdkOmitted(),
+        SdkOptional<int> page = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<SshSigningKey>>('GET', '/user/ssh_signing_keys',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'usersListSshSigningKeysForAuthenticatedUser',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  SshSigningKey.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => SshSigningKey.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Creates an SSH signing key for the authenticated user's GitHub account. OAuth app tokens and personal access tokens (classic) need the `write:ssh_signing_key` scope to use this endpoint.
 ///
@@ -824,57 +635,41 @@ Future<List<SshSigningKey>> usersListSshSigningKeysForAuthenticatedUser(
 ///   keys](https://docs.github.com/authentication/connecting-to-github-with-ssh/c
 ///   hecking-for-existing-ssh-keys)."
 /// [title] A descriptive name for the new key.
-Future<SshSigningKey> usersCreateSshSigningKeyForAuthenticatedUser(
-    ClientConfig config,
-    {required String key,
-    SdkOptional<String> title = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
-  sdkValidatePattern('key', key,
-      '^ssh-(rsa|dss|ed25519) |^ecdsa-sha2-nistp(256|384|521) |^(sk-ssh-ed25519|sk-ecdsa-sha2-nistp256)@openssh.com ');
+Future<SshSigningKey>
+    usersCreateSshSigningKeyForAuthenticatedUser(ClientConfig config,
+        {required String key,
+        SdkOptional<String> title = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
+  sdkValidatePattern('key', key, '^ssh-(rsa|dss|ed25519) |^ecdsa-sha2-nistp(256|384|521) |^(sk-ssh-ed25519|sk-ecdsa-sha2-nistp256)@openssh.com ');
 
   return (await sdkRequest<SshSigningKey>('POST', '/user/ssh_signing_keys',
           config: config,
           body: {'key': key, 'title': SdkUtils.unwrapOptional(title)},
           decoder: SdkResponseDecoder.json,
           operationId: 'usersCreateSshSigningKeyForAuthenticatedUser',
-          fromJsonRaw: (value) =>
-              SshSigningKey.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => SshSigningKey.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '401': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Gets extended details for an SSH signing key. OAuth app tokens and personal access tokens (classic) need the `read:ssh_signing_key` scope to use this endpoint.
 ///
 /// [sshSigningKeyId] The unique identifier of the SSH signing key.
-Future<SshSigningKey> usersGetSshSigningKeyForAuthenticatedUser(
-    ClientConfig config,
-    {required int sshSigningKeyId,
-    RequestOptions? requestOptions}) async {
+Future<SshSigningKey> usersGetSshSigningKeyForAuthenticatedUser(ClientConfig config,
+    {required int sshSigningKeyId, RequestOptions? requestOptions}) async {
   return (await sdkRequest<SshSigningKey>('GET',
           '/user/ssh_signing_keys/${Uri.encodeComponent(sshSigningKeyId.toString())}',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'usersGetSshSigningKeyForAuthenticatedUser',
-          fromJsonRaw: (value) =>
-              SshSigningKey.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => SshSigningKey.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Deletes an SSH signing key from the authenticated user's GitHub account. OAuth app tokens and personal access tokens (classic) need the `admin:ssh_signing_key` scope to use this endpoint.
 ///
@@ -887,13 +682,10 @@ Future<void> usersDeleteSshSigningKeyForAuthenticatedUser(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'usersDeleteSshSigningKeyForAuthenticatedUser',
           options: requestOptions,
-          errors: {
-        '401': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'401': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Provides publicly available information about someone with a GitHub account. This method takes their durable user `ID` instead of their `login`, which can change over time. If you are requesting information about an [Enterprise Managed User](https://docs.github.com/enterprise-cloud@latest/admin/managing-iam/understanding-iam-for-enterprises/about-enterprise-managed-users), or a GitHub App bot that is installed in an organization that uses Enterprise Managed Users, your requests must be authenticated as a user or GitHub App that has access to the organization to view that account's information. If you are not authorized, the request will return a `404 Not Found` status. The `email` key in the following response is the publicly visible email address from your GitHub [profile page](https://github.com/settings/profile). When setting up your profile, you can select a primary email address to be public which provides an email entry for this endpoint. If you do not set a public email address for `email`, then it will have a value of `null`. You only see publicly visible email addresses when authenticated with GitHub. For more information, see [Authentication](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#authentication). The Emails API enables you to list all of your email addresses, and toggle a primary email to be visible publicly. For more information, see [Emails API](https://docs.github.com/rest/users/emails).
 ///
@@ -907,11 +699,10 @@ Future<dynamic> usersGetById(ClientConfig config,
           operationId: 'usersGetById',
           fromJsonRaw: (value) => value,
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists all users, in the order that they signed up on GitHub. This list includes personal user accounts and organization accounts. Note: Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers) to get the URL for the next page of users.
 ///
@@ -927,19 +718,16 @@ Future<List<SimpleUser>> usersList(ClientConfig config,
   return (await sdkRequest<List<SimpleUser>>('GET', '/users',
           config: config,
           query: {
-            'since': SdkQueryValue(SdkUtils.unwrapOptional(since),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true)
+            'since': SdkQueryValue(SdkUtils.unwrapOptional(since), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'usersList',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => SimpleUser.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => SimpleUser.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// Provides publicly available information about someone with a GitHub account. If the specified user has a [private profile](https://docs.github.com/account-and-profile/concepts/personal-profile#private-profiles), the `followers` and `following` values are `0` unless the request is authenticated as that user. A request authenticated as the specified user returns the actual values even if the token has no OAuth scopes. The `events_url` value is a URI template. Replace `{/privacy}` with `/public` to retrieve only public events. Omit it to retrieve public events and, when authenticated as the user, private events. For more information, see "[List events for the authenticated user](https://docs.github.com/rest/activity/events#list-events-for-the-authenticated-user)." If you are requesting information about an [Enterprise Managed User](https://docs.github.com/enterprise-cloud@latest/admin/managing-iam/understanding-iam-for-enterprises/about-enterprise-managed-users), or a GitHub App bot that is installed in an organization that uses Enterprise Managed Users, your requests must be authenticated as a user or GitHub App that has access to the organization to view that account's information. If you are not authorized, the request will return a `404 Not Found` status. The `email` key in the following response is the publicly visible email address from your GitHub [profile page](https://github.com/settings/profile). When setting up your profile, you can select a primary email address to be public which provides an email entry for this endpoint. If you do not set a public email address for `email`, then it will have a value of `null`. You only see publicly visible email addresses when authenticated with GitHub. For more information, see [Authentication](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#authentication). The Emails API enables you to list all of your email addresses, and toggle a primary email to be visible publicly. For more information, see…
 ///
@@ -953,11 +741,10 @@ Future<dynamic> usersGetByUsername(ClientConfig config,
           operationId: 'usersGetByUsername',
           fromJsonRaw: (value) => value,
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// List a collection of artifact attestations associated with any entry in a list of subject digests owned by a user. The collection of attestations returned by this endpoint is filtered according to the authenticated user's permissions; if the authenticated user cannot read a repository, the attestations associated with that repository will not be included in the response. In addition, when using a fine-grained access token the `attestations:read` permission is required. **Please note:** in order to offer meaningful security benefits, an attestation's signature and timestamps **must** be cryptographically verified, and the identity of the attestation signer **must** be validated. Attestations can be verified using the [GitHub CLI `attestation verify` command](https://cli.github.com/manual/gh_attestation_verify). For more information, see [our guide on how to use artifact attestations to establish a build's provenance](https://docs.github.com/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds).
 ///
@@ -982,27 +769,24 @@ Future<dynamic> usersGetByUsername(ClientConfig config,
 /// [predicateType] Optional filter for fetching attestations with a given
 ///   predicate type. This option accepts `provenance`, `sbom`, `release`, or
 ///   freeform text for custom predicate types.
-Future<UsersListAttestationsBulkResponse> usersListAttestationsBulk(
-    ClientConfig config,
-    {required String username,
-    required List<String> subjectDigests,
-    SdkOptional<int> perPage = const SdkOmitted(),
-    SdkOptional<String> before = const SdkOmitted(),
-    SdkOptional<String> after = const SdkOmitted(),
-    SdkOptional<String> predicateType = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<UsersListAttestationsBulkResponse>
+    usersListAttestationsBulk(ClientConfig config,
+        {required String username,
+        required List<String> subjectDigests,
+        SdkOptional<int> perPage = const SdkOmitted(),
+        SdkOptional<String> before = const SdkOmitted(),
+        SdkOptional<String> after = const SdkOmitted(),
+        SdkOptional<String> predicateType = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   validateItems('subject_digests', subjectDigests, min: 1, max: 1024);
 
   return (await sdkRequest<UsersListAttestationsBulkResponse>('POST',
           '/users/${Uri.encodeComponent(username.toString())}/attestations/bulk-list',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'before': SdkQueryValue(SdkUtils.unwrapOptional(before),
-                style: 'form', explode: true),
-            'after': SdkQueryValue(SdkUtils.unwrapOptional(after),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'before': SdkQueryValue(SdkUtils.unwrapOptional(before), style: 'form', explode: true),
+            'after': SdkQueryValue(SdkUtils.unwrapOptional(after), style: 'form', explode: true)
           },
           body: {
             'subject_digests': subjectDigests,
@@ -1010,11 +794,11 @@ Future<UsersListAttestationsBulkResponse> usersListAttestationsBulk(
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'usersListAttestationsBulk',
-          fromJsonRaw: (value) => UsersListAttestationsBulkResponse.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => UsersListAttestationsBulkResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Deletes artifact attestations for a user in bulk, identifying them by subject digest or unique attestation ID. Provide either `subject_digests` or `attestation_ids`, but not both; the selected list must contain between 1 and 1,024 entries.
 ///
@@ -1034,11 +818,10 @@ Future<void> usersDeleteAttestationsBulk(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'usersDeleteAttestationsBulk',
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Deletes artifact attestations associated with a subject digest for a GitHub user account. Use `username` and `subject_digest` to identify the account and the attestation subject; a successful response confirms the deletion.
 ///
@@ -1056,11 +839,10 @@ Future<void> usersDeleteAttestationsBySubjectDigest(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'usersDeleteAttestationsBySubjectDigest',
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Delete an artifact attestation by unique ID that is associated with a repository owned by a user.
 ///
@@ -1076,12 +858,10 @@ Future<void> usersDeleteAttestationsById(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'usersDeleteAttestationsById',
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// List a collection of artifact attestations with a given subject digest that are associated with repositories owned by a user. The collection of attestations returned by this endpoint is filtered according to the authenticated user's permissions; if the authenticated user cannot read a repository, the attestations associated with that repository will not be included in the response. In addition, when using a fine-grained access token the `attestations:read` permission is required. **Please note:** in order to offer meaningful security benefits, an attestation's signature and timestamps **must** be cryptographically verified, and the identity of the attestation signer **must** be validated. Attestations can be verified using the [GitHub CLI `attestation verify` command](https://cli.github.com/manual/gh_attestation_verify). For more information, see [our guide on how to use artifact attestations to establish a build's provenance](https://docs.github.com/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds).
 ///
@@ -1118,27 +898,19 @@ Future<UsersListAttestationsResponse> usersListAttestations(ClientConfig config,
           '/users/${Uri.encodeComponent(username.toString())}/attestations/${Uri.encodeComponent(subjectDigest.toString())}',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'before': SdkQueryValue(SdkUtils.unwrapOptional(before),
-                style: 'form', explode: true),
-            'after': SdkQueryValue(SdkUtils.unwrapOptional(after),
-                style: 'form', explode: true),
-            'predicate_type': SdkQueryValue(
-                SdkUtils.unwrapOptional(predicateType),
-                style: 'form',
-                explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'before': SdkQueryValue(SdkUtils.unwrapOptional(before), style: 'form', explode: true),
+            'after': SdkQueryValue(SdkUtils.unwrapOptional(after), style: 'form', explode: true),
+            'predicate_type': SdkQueryValue(SdkUtils.unwrapOptional(predicateType), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'usersListAttestations',
-          fromJsonRaw: (value) => UsersListAttestationsResponse.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => UsersListAttestationsResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists the people following the specified user. If the specified user has a [private profile](https://docs.github.com/account-and-profile/concepts/personal-profile#private-profiles), this endpoint returns an empty list unless the request is authenticated as that user. A request authenticated as the specified user returns the list even if the token has no OAuth scopes.
 ///
@@ -1160,19 +932,16 @@ Future<List<SimpleUser>> usersListFollowersForUser(ClientConfig config,
           'GET', '/users/${Uri.encodeComponent(username.toString())}/followers',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'usersListFollowersForUser',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => SimpleUser.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => SimpleUser.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// Lists the people who the specified user follows. If the specified user has a [private profile](https://docs.github.com/account-and-profile/concepts/personal-profile#private-profiles), this endpoint returns an empty list unless the request is authenticated as that user. A request authenticated as the specified user returns the list even if the token has no OAuth scopes.
 ///
@@ -1194,19 +963,16 @@ Future<List<SimpleUser>> usersListFollowingForUser(ClientConfig config,
           'GET', '/users/${Uri.encodeComponent(username.toString())}/following',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'usersListFollowingForUser',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => SimpleUser.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => SimpleUser.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// Checks whether one GitHub user follows another user. Use `username` and `target_user` to identify the follower and the account being checked.
 ///
@@ -1223,6 +989,7 @@ Future<void> usersCheckFollowingForUser(ClientConfig config,
           options: requestOptions))
       .data;
 }
+
 
 /// Lists the GPG keys for a user. This information is accessible by anyone.
 ///
@@ -1244,19 +1011,16 @@ Future<List<GpgKey>> usersListGpgKeysForUser(ClientConfig config,
           'GET', '/users/${Uri.encodeComponent(username.toString())}/gpg_keys',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'usersListGpgKeysForUser',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => GpgKey.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => GpgKey.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// Provides hovercard information. You can find out more about someone in relation to their pull requests, issues, repositories, and organizations. The `subject_type` and `subject_id` parameters provide context for the person's hovercard, which returns more information than without the parameters. For example, if you wanted to find out more about `octocat` who owns the `Spoon-Knife` repository, you would use a `subject_type` value of `repository` and a `subject_id` value of `1300192` (the ID of the `Spoon-Knife` repository). OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -1268,32 +1032,24 @@ Future<List<GpgKey>> usersListGpgKeysForUser(ClientConfig config,
 ///   when using `subject_type`.
 Future<Hovercard> usersGetContextForUser(ClientConfig config,
     {required String username,
-    SdkOptional<UsersGetContextForUserSubjectType> subjectType =
-        const SdkOmitted(),
+    SdkOptional<UsersGetContextForUserSubjectType> subjectType = const SdkOmitted(),
     SdkOptional<String> subjectId = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<Hovercard>(
           'GET', '/users/${Uri.encodeComponent(username.toString())}/hovercard',
           config: config,
           query: {
-            'subject_type': SdkQueryValue(SdkUtils.unwrapOptional(subjectType),
-                style: 'form', explode: true),
-            'subject_id': SdkQueryValue(SdkUtils.unwrapOptional(subjectId),
-                style: 'form', explode: true)
+            'subject_type': SdkQueryValue(SdkUtils.unwrapOptional(subjectType), style: 'form', explode: true),
+            'subject_id': SdkQueryValue(SdkUtils.unwrapOptional(subjectId), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'usersGetContextForUser',
-          fromJsonRaw: (value) =>
-              Hovercard.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => Hovercard.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists the _verified_ public SSH keys for a user. This is accessible by anyone.
 ///
@@ -1315,19 +1071,16 @@ Future<List<KeySimple>> usersListPublicKeysForUser(ClientConfig config,
           'GET', '/users/${Uri.encodeComponent(username.toString())}/keys',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'usersListPublicKeysForUser',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => KeySimple.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => KeySimple.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// Lists social media accounts for a user. This endpoint is accessible by anyone.
 ///
@@ -1349,20 +1102,16 @@ Future<List<SocialAccount>> usersListSocialAccountsForUser(ClientConfig config,
           '/users/${Uri.encodeComponent(username.toString())}/social_accounts',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'usersListSocialAccountsForUser',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  SocialAccount.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => SocialAccount.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }
+
 
 /// Lists the SSH signing keys for a user. This operation is accessible by anyone.
 ///
@@ -1384,17 +1133,12 @@ Future<List<SshSigningKey>> usersListSshSigningKeysForUser(ClientConfig config,
           '/users/${Uri.encodeComponent(username.toString())}/ssh_signing_keys',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'usersListSshSigningKeysForUser',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  SshSigningKey.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => SshSigningKey.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions))
       .data;
 }

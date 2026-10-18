@@ -10,24 +10,19 @@ import '../types.dart';
 /// Gets the AI Scan setting stored on an organization. The response reports the value stored on the organization. Organization respects enterprise policy. The authenticated user must be an owner or security manager for the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `admin:org`, `repo`, or `write:org` scope to use this endpoint. Organization owners can use `admin:org` or `repo`; security managers need `write:org`.
 ///
 /// [org] The organization name. The name is not case sensitive.
-Future<CodeScanningAiScanOrgSettings> codeScanningGetAiScanEnablementForOrg(
-    ClientConfig config,
-    {required String org,
-    RequestOptions? requestOptions}) async {
+Future<CodeScanningAiScanOrgSettings> codeScanningGetAiScanEnablementForOrg(ClientConfig config,
+    {required String org, RequestOptions? requestOptions}) async {
   return (await sdkRequest<CodeScanningAiScanOrgSettings>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/code-scanning/ai-scan',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'codeScanningGetAiScanEnablementForOrg',
-          fromJsonRaw: (value) => CodeScanningAiScanOrgSettings.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CodeScanningAiScanOrgSettings.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Updates the AI Scan setting stored on an organization. The organization respects the enterprise policy, so enabling is rejected when the enterprise disallows AI Scan. OAuth app tokens and personal access tokens (classic) need the `admin:org`, `repo`, or `write:org` scope to use this endpoint. Organization owners can use `admin:org` or `repo`; security managers need `write:org`.
 ///
@@ -36,31 +31,23 @@ Future<CodeScanningAiScanOrgSettings> codeScanningGetAiScanEnablementForOrg(
 ///   respects enterprise policy. Disabled organizations prevent repositories from
 ///   enabling AI Scan. Enabled organizations enable AI Scan for their
 ///   repositories, but individual repositories can opt out.
-Future<CodeScanningAiScanOrgSettings> codeScanningUpdateAiScanEnablementForOrg(
-    ClientConfig config,
-    {required String org,
-    SdkOptional<CodeScanningAiScanOrgEnablementUpdatePrScan> prScan =
-        const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<CodeScanningAiScanOrgSettings>
+    codeScanningUpdateAiScanEnablementForOrg(ClientConfig config,
+        {required String org,
+        SdkOptional<CodeScanningAiScanOrgEnablementUpdatePrScan> prScan = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<CodeScanningAiScanOrgSettings>('PATCH',
           '/orgs/${Uri.encodeComponent(org.toString())}/code-scanning/ai-scan',
           config: config,
           body: {'pr_scan': SdkUtils.unwrapOptional(prScan)},
           decoder: SdkResponseDecoder.json,
           operationId: 'codeScanningUpdateAiScanEnablementForOrg',
-          fromJsonRaw: (value) => CodeScanningAiScanOrgSettings.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CodeScanningAiScanOrgSettings.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists code scanning alerts for the default branch for all eligible repositories in an organization. Eligible repositories are repositories that are owned by organizations that you own or for which you are a security manager. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)." The authenticated user must be an owner or security manager for the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `security_events` or `repo`s cope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
@@ -101,88 +88,67 @@ Future<CodeScanningAiScanOrgSettings> codeScanningUpdateAiScanEnablementForOrg(
 /// [assignees] Filter alerts by assignees. Provide a comma-separated list of
 ///   user handles (e.g., `octocat` or `octocat,hubot`). Use `*` to list alerts
 ///   with at least one assignee or `none` to list alerts with no assignees.
-Future<List<CodeScanningOrganizationAlertItems>> codeScanningListAlertsForOrg(
-    ClientConfig config,
-    {required String org,
-    SdkOptional<String> toolName = const SdkOmitted(),
-    SdkOptional<String?> toolGuid = const SdkOmitted(),
-    SdkOptional<String> before = const SdkOmitted(),
-    SdkOptional<String> after = const SdkOmitted(),
-    SdkOptional<int> page = const SdkOmitted(),
-    SdkOptional<int> perPage = const SdkOmitted(),
-    SdkOptional<SchemaSchema0df64690> direction = const SdkOmitted(),
-    SdkOptional<CodeScanningAlertStateQuery> state = const SdkOmitted(),
-    SdkOptional<CodeScanningListAlertsForOrgSort> sort = const SdkOmitted(),
-    SdkOptional<CodeScanningAlertSeverity> severity = const SdkOmitted(),
-    SdkOptional<String> assignees = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<List<CodeScanningOrganizationAlertItems>>
+    codeScanningListAlertsForOrg(ClientConfig config,
+        {required String org,
+        SdkOptional<String> toolName = const SdkOmitted(),
+        SdkOptional<String?> toolGuid = const SdkOmitted(),
+        SdkOptional<String> before = const SdkOmitted(),
+        SdkOptional<String> after = const SdkOmitted(),
+        SdkOptional<int> page = const SdkOmitted(),
+        SdkOptional<int> perPage = const SdkOmitted(),
+        SdkOptional<SchemaSchema0df64690> direction = const SdkOmitted(),
+        SdkOptional<CodeScanningAlertStateQuery> state = const SdkOmitted(),
+        SdkOptional<CodeScanningListAlertsForOrgSort> sort = const SdkOmitted(),
+        SdkOptional<CodeScanningAlertSeverity> severity = const SdkOmitted(),
+        SdkOptional<String> assignees = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<CodeScanningOrganizationAlertItems>>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/code-scanning/alerts',
           config: config,
           query: {
-            'tool_name': SdkQueryValue(SdkUtils.unwrapOptional(toolName),
-                style: 'form', explode: true),
-            'tool_guid': SdkQueryValue(SdkUtils.unwrapOptional(toolGuid),
-                style: 'form', explode: true),
-            'before': SdkQueryValue(SdkUtils.unwrapOptional(before),
-                style: 'form', explode: true),
-            'after': SdkQueryValue(SdkUtils.unwrapOptional(after),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction),
-                style: 'form', explode: true),
-            'state': SdkQueryValue(SdkUtils.unwrapOptional(state),
-                style: 'form', explode: true),
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
-                style: 'form', explode: true),
-            'severity': SdkQueryValue(SdkUtils.unwrapOptional(severity),
-                style: 'form', explode: true),
-            'assignees': SdkQueryValue(SdkUtils.unwrapOptional(assignees),
-                style: 'form', explode: true)
+            'tool_name': SdkQueryValue(SdkUtils.unwrapOptional(toolName), style: 'form', explode: true),
+            'tool_guid': SdkQueryValue(SdkUtils.unwrapOptional(toolGuid), style: 'form', explode: true),
+            'before': SdkQueryValue(SdkUtils.unwrapOptional(before), style: 'form', explode: true),
+            'after': SdkQueryValue(SdkUtils.unwrapOptional(after), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction), style: 'form', explode: true),
+            'state': SdkQueryValue(SdkUtils.unwrapOptional(state), style: 'form', explode: true),
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true),
+            'severity': SdkQueryValue(SdkUtils.unwrapOptional(severity), style: 'form', explode: true),
+            'assignees': SdkQueryValue(SdkUtils.unwrapOptional(assignees), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'codeScanningListAlertsForOrg',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => CodeScanningOrganizationAlertItems.fromJson(
-                  item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => CodeScanningOrganizationAlertItems.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Gets whether AI Scan is enabled for a repository. OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
 /// [repo] The name of the repository without the `.git` extension. The name is
 ///   not case sensitive.
-Future<CodeScanningAiScanEnablement> codeScanningGetAiScanEnablement(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    RequestOptions? requestOptions}) async {
+Future<CodeScanningAiScanEnablement>
+    codeScanningGetAiScanEnablement(ClientConfig config,
+        {required String owner,
+        required String repo,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<CodeScanningAiScanEnablement>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/code-scanning/ai-scan',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'codeScanningGetAiScanEnablement',
-          fromJsonRaw: (value) => CodeScanningAiScanEnablement.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CodeScanningAiScanEnablement.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Updates whether AI Scan is enabled for a repository. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
@@ -190,32 +156,24 @@ Future<CodeScanningAiScanEnablement> codeScanningGetAiScanEnablement(
 /// [repo] The name of the repository without the `.git` extension. The name is
 ///   not case sensitive.
 /// [prScan] Whether to enable or disable AI Scan for the repository.
-Future<CodeScanningAiScanEnablement> codeScanningUpdateAiScanEnablement(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    SdkOptional<CodeScanningAiScanEnablementUpdatePrScan> prScan =
-        const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<CodeScanningAiScanEnablement>
+    codeScanningUpdateAiScanEnablement(ClientConfig config,
+        {required String owner,
+        required String repo,
+        SdkOptional<CodeScanningAiScanEnablementUpdatePrScan> prScan = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<CodeScanningAiScanEnablement>('PATCH',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/code-scanning/ai-scan',
           config: config,
           body: {'pr_scan': SdkUtils.unwrapOptional(prScan)},
           decoder: SdkResponseDecoder.json,
           operationId: 'codeScanningUpdateAiScanEnablement',
-          fromJsonRaw: (value) => CodeScanningAiScanEnablement.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CodeScanningAiScanEnablement.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                ValidationError.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists code scanning alerts. The response includes a `most_recent_instance` object. This provides details of the most recent instance of this alert for the default branch (or for the specified Git reference if you used `ref` in the request). OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
@@ -263,72 +221,50 @@ Future<CodeScanningAiScanEnablement> codeScanningUpdateAiScanEnablement(
 /// [assignees] Filter alerts by assignees. Provide a comma-separated list of
 ///   user handles (e.g., `octocat` or `octocat,hubot`). Use `*` to list alerts
 ///   with at least one assignee or `none` to list alerts with no assignees.
-Future<List<CodeScanningAlertItems>> codeScanningListAlertsForRepo(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    SdkOptional<String> toolName = const SdkOmitted(),
-    SdkOptional<String?> toolGuid = const SdkOmitted(),
-    SdkOptional<int> page = const SdkOmitted(),
-    SdkOptional<int> perPage = const SdkOmitted(),
-    SdkOptional<String> ref = const SdkOmitted(),
-    SdkOptional<int> pr = const SdkOmitted(),
-    SdkOptional<SchemaSchema0df64690> direction = const SdkOmitted(),
-    SdkOptional<String> before = const SdkOmitted(),
-    SdkOptional<String> after = const SdkOmitted(),
-    SdkOptional<CodeScanningListAlertsForRepoSort> sort = const SdkOmitted(),
-    SdkOptional<CodeScanningAlertStateQuery> state = const SdkOmitted(),
-    SdkOptional<CodeScanningAlertSeverity> severity = const SdkOmitted(),
-    SdkOptional<String> assignees = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<List<CodeScanningAlertItems>>
+    codeScanningListAlertsForRepo(ClientConfig config,
+        {required String owner,
+        required String repo,
+        SdkOptional<String> toolName = const SdkOmitted(),
+        SdkOptional<String?> toolGuid = const SdkOmitted(),
+        SdkOptional<int> page = const SdkOmitted(),
+        SdkOptional<int> perPage = const SdkOmitted(),
+        SdkOptional<String> ref = const SdkOmitted(),
+        SdkOptional<int> pr = const SdkOmitted(),
+        SdkOptional<SchemaSchema0df64690> direction = const SdkOmitted(),
+        SdkOptional<String> before = const SdkOmitted(),
+        SdkOptional<String> after = const SdkOmitted(),
+        SdkOptional<CodeScanningListAlertsForRepoSort> sort = const SdkOmitted(),
+        SdkOptional<CodeScanningAlertStateQuery> state = const SdkOmitted(),
+        SdkOptional<CodeScanningAlertSeverity> severity = const SdkOmitted(),
+        SdkOptional<String> assignees = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<CodeScanningAlertItems>>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/code-scanning/alerts',
           config: config,
           query: {
-            'tool_name': SdkQueryValue(SdkUtils.unwrapOptional(toolName),
-                style: 'form', explode: true),
-            'tool_guid': SdkQueryValue(SdkUtils.unwrapOptional(toolGuid),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'ref': SdkQueryValue(SdkUtils.unwrapOptional(ref),
-                style: 'form', explode: true),
-            'pr': SdkQueryValue(SdkUtils.unwrapOptional(pr),
-                style: 'form', explode: true),
-            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction),
-                style: 'form', explode: true),
-            'before': SdkQueryValue(SdkUtils.unwrapOptional(before),
-                style: 'form', explode: true),
-            'after': SdkQueryValue(SdkUtils.unwrapOptional(after),
-                style: 'form', explode: true),
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
-                style: 'form', explode: true),
-            'state': SdkQueryValue(SdkUtils.unwrapOptional(state),
-                style: 'form', explode: true),
-            'severity': SdkQueryValue(SdkUtils.unwrapOptional(severity),
-                style: 'form', explode: true),
-            'assignees': SdkQueryValue(SdkUtils.unwrapOptional(assignees),
-                style: 'form', explode: true)
+            'tool_name': SdkQueryValue(SdkUtils.unwrapOptional(toolName), style: 'form', explode: true),
+            'tool_guid': SdkQueryValue(SdkUtils.unwrapOptional(toolGuid), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'ref': SdkQueryValue(SdkUtils.unwrapOptional(ref), style: 'form', explode: true),
+            'pr': SdkQueryValue(SdkUtils.unwrapOptional(pr), style: 'form', explode: true),
+            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction), style: 'form', explode: true),
+            'before': SdkQueryValue(SdkUtils.unwrapOptional(before), style: 'form', explode: true),
+            'after': SdkQueryValue(SdkUtils.unwrapOptional(after), style: 'form', explode: true),
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true),
+            'state': SdkQueryValue(SdkUtils.unwrapOptional(state), style: 'form', explode: true),
+            'severity': SdkQueryValue(SdkUtils.unwrapOptional(severity), style: 'form', explode: true),
+            'assignees': SdkQueryValue(SdkUtils.unwrapOptional(assignees), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'codeScanningListAlertsForRepo',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  CodeScanningAlertItems.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => CodeScanningAlertItems.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Gets a single code scanning alert. OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
@@ -349,17 +285,12 @@ Future<CodeScanningAlert> codeScanningGetAlert(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'codeScanningGetAlert',
-          fromJsonRaw: (value) =>
-              CodeScanningAlert.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CodeScanningAlert.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '503': (value) =>
-            ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Updates the status of a single code scanning alert. OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
@@ -384,8 +315,7 @@ Future<CodeScanningAlert> codeScanningUpdateAlert(ClientConfig config,
     required String repo,
     required int alertNumber,
     SdkOptional<CodeScanningAlertSetState> state = const SdkOmitted(),
-    SdkOptional<CodeScanningAlertDismissedReason?> dismissedReason =
-        const SdkOmitted(),
+    SdkOptional<CodeScanningAlertDismissedReason?> dismissedReason = const SdkOmitted(),
     SdkOptional<String?> dismissedComment = const SdkOmitted(),
     SdkOptional<bool> createRequest = const SdkOmitted(),
     SdkOptional<List<String>> assignees = const SdkOmitted(),
@@ -409,21 +339,12 @@ Future<CodeScanningAlert> codeScanningUpdateAlert(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'codeScanningUpdateAlert',
-          fromJsonRaw: (value) =>
-              CodeScanningAlert.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CodeScanningAlert.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Gets the status and description of an autofix for a code scanning alert on the repository's default branch. OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
@@ -444,17 +365,12 @@ Future<CodeScanningAutofix> codeScanningGetAutofix(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'codeScanningGetAutofix',
-          fromJsonRaw: (value) =>
-              CodeScanningAutofix.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CodeScanningAutofix.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '400': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Creates an autofix for a code scanning alert using the repository's default branch. If an autofix already exists, the response returns it; if one is being generated, the response confirms the request was accepted. OAuth app tokens and personal access tokens (classic) require the `security_events` scope for public or private repositories, or the `public_repo` scope for public repositories only.
 ///
@@ -477,17 +393,12 @@ Future<CodeScanningAutofix> codeScanningCreateAutofix(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'codeScanningCreateAutofix',
-          fromJsonRaw: (value) =>
-              CodeScanningAutofix.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CodeScanningAutofix.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '400': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '500': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Commits an autofix for a code scanning alert from the repository's default branch. If an autofix is committed as a result of this request, then this endpoint will return a 201 Created response. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
@@ -503,14 +414,14 @@ Future<CodeScanningAutofix> codeScanningCreateAutofix(ClientConfig config,
 ///   References](https://git-scm.com/book/en/v2/Git-Internals-Git-References)" in
 ///   the Git documentation.
 /// [message] Commit message to be used.
-Future<CodeScanningAutofixCommitsResponse> codeScanningCommitAutofix(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    required int alertNumber,
-    SdkOptional<String> targetRef = const SdkOmitted(),
-    SdkOptional<String> message = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<CodeScanningAutofixCommitsResponse>
+    codeScanningCommitAutofix(ClientConfig config,
+        {required String owner,
+        required String repo,
+        required int alertNumber,
+        SdkOptional<String> targetRef = const SdkOmitted(),
+        SdkOptional<String> message = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<CodeScanningAutofixCommitsResponse>('POST',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/code-scanning/alerts/${Uri.encodeComponent(alertNumber.toString())}/autofix/commits',
           config: config,
@@ -520,21 +431,12 @@ Future<CodeScanningAutofixCommitsResponse> codeScanningCommitAutofix(
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'codeScanningCommitAutofix',
-          fromJsonRaw: (value) => CodeScanningAutofixCommitsResponse.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CodeScanningAutofixCommitsResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists all instances of the specified code scanning alert. OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
@@ -558,46 +460,33 @@ Future<CodeScanningAutofixCommitsResponse> codeScanningCommitAutofix(
 ///   `&lt;branch name&gt;`. To reference a pull request use
 ///   `refs/pull/&lt;number&gt;/merge`.
 /// [pr] The number of the pull request for the results you want to list.
-Future<List<CodeScanningAlertInstanceList>> codeScanningListAlertInstances(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    required int alertNumber,
-    SdkOptional<int> page = const SdkOmitted(),
-    SdkOptional<int> perPage = const SdkOmitted(),
-    SdkOptional<String> ref = const SdkOmitted(),
-    SdkOptional<int> pr = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<List<CodeScanningAlertInstanceList>>
+    codeScanningListAlertInstances(ClientConfig config,
+        {required String owner,
+        required String repo,
+        required int alertNumber,
+        SdkOptional<int> page = const SdkOmitted(),
+        SdkOptional<int> perPage = const SdkOmitted(),
+        SdkOptional<String> ref = const SdkOmitted(),
+        SdkOptional<int> pr = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<CodeScanningAlertInstanceList>>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/code-scanning/alerts/${Uri.encodeComponent(alertNumber.toString())}/instances',
           config: config,
           query: {
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'ref': SdkQueryValue(SdkUtils.unwrapOptional(ref),
-                style: 'form', explode: true),
-            'pr': SdkQueryValue(SdkUtils.unwrapOptional(pr),
-                style: 'form', explode: true)
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'ref': SdkQueryValue(SdkUtils.unwrapOptional(ref), style: 'form', explode: true),
+            'pr': SdkQueryValue(SdkUtils.unwrapOptional(pr), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'codeScanningListAlertInstances',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => CodeScanningAlertInstanceList.fromJson(
-                  item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => CodeScanningAlertInstanceList.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists the details of all code scanning analyses for a repository, starting with the most recent. The response is paginated and you can use the `page` and `per_page` parameters to list the analyses you're interested in. By default 30 analyses are listed per page. The `rules_count` field in the response give the number of rules that were run in the analysis. For very old analyses this data is not available, and `0` is returned in this field. &gt; [!WARNING] &gt; **Closing down notice:** The `tool_name` field is closing down and will, in future, not be included in the response for this endpoint. The example response reflects this change. The tool name can now be found inside the `tool` field. OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
@@ -627,60 +516,42 @@ Future<List<CodeScanningAlertInstanceList>> codeScanningListAlertInstances(
 /// [sarifId] Filter analyses belonging to the same SARIF upload.
 /// [direction] The direction to sort the results by.
 /// [sort] The property by which to sort the results.
-Future<List<CodeScanningAnalysis>> codeScanningListRecentAnalyses(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    SdkOptional<String> toolName = const SdkOmitted(),
-    SdkOptional<String?> toolGuid = const SdkOmitted(),
-    SdkOptional<int> page = const SdkOmitted(),
-    SdkOptional<int> perPage = const SdkOmitted(),
-    SdkOptional<int> pr = const SdkOmitted(),
-    SdkOptional<String> ref = const SdkOmitted(),
-    SdkOptional<String> sarifId = const SdkOmitted(),
-    SdkOptional<SchemaSchema0df64690> direction = const SdkOmitted(),
-    SdkOptional<CodeScanningListRecentAnalysesSort> sort = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<List<CodeScanningAnalysis>>
+    codeScanningListRecentAnalyses(ClientConfig config,
+        {required String owner,
+        required String repo,
+        SdkOptional<String> toolName = const SdkOmitted(),
+        SdkOptional<String?> toolGuid = const SdkOmitted(),
+        SdkOptional<int> page = const SdkOmitted(),
+        SdkOptional<int> perPage = const SdkOmitted(),
+        SdkOptional<int> pr = const SdkOmitted(),
+        SdkOptional<String> ref = const SdkOmitted(),
+        SdkOptional<String> sarifId = const SdkOmitted(),
+        SdkOptional<SchemaSchema0df64690> direction = const SdkOmitted(),
+        SdkOptional<CodeScanningListRecentAnalysesSort> sort = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<CodeScanningAnalysis>>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/code-scanning/analyses',
           config: config,
           query: {
-            'tool_name': SdkQueryValue(SdkUtils.unwrapOptional(toolName),
-                style: 'form', explode: true),
-            'tool_guid': SdkQueryValue(SdkUtils.unwrapOptional(toolGuid),
-                style: 'form', explode: true),
-            'page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
-                style: 'form', explode: true),
-            'pr': SdkQueryValue(SdkUtils.unwrapOptional(pr),
-                style: 'form', explode: true),
-            'ref': SdkQueryValue(SdkUtils.unwrapOptional(ref),
-                style: 'form', explode: true),
-            'sarif_id': SdkQueryValue(SdkUtils.unwrapOptional(sarifId),
-                style: 'form', explode: true),
-            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction),
-                style: 'form', explode: true),
-            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort),
-                style: 'form', explode: true)
+            'tool_name': SdkQueryValue(SdkUtils.unwrapOptional(toolName), style: 'form', explode: true),
+            'tool_guid': SdkQueryValue(SdkUtils.unwrapOptional(toolGuid), style: 'form', explode: true),
+            'page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
+            'pr': SdkQueryValue(SdkUtils.unwrapOptional(pr), style: 'form', explode: true),
+            'ref': SdkQueryValue(SdkUtils.unwrapOptional(ref), style: 'form', explode: true),
+            'sarif_id': SdkQueryValue(SdkUtils.unwrapOptional(sarifId), style: 'form', explode: true),
+            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction), style: 'form', explode: true),
+            'sort': SdkQueryValue(SdkUtils.unwrapOptional(sort), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'codeScanningListRecentAnalyses',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) =>
-                  CodeScanningAnalysis.fromJson(item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => CodeScanningAnalysis.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Gets a specified code scanning analysis for a repository. The default JSON response contains fields that describe the analysis. This includes the Git reference and commit SHA to which the analysis relates, the datetime of the analysis, the name of the code scanning tool, and the number of alerts. The `rules_count` field in the default response give the number of rules that were run in the analysis. For very old analyses this data is not available, and `0` is returned in this field. This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)." - **`application/sarif+json`**: Instead of returning a summary of the analysis, this endpoint returns a subset of the analysis data that was uploaded. The data is formatted as [SARIF version 2.1.0](https://docs.oasis-open.org/sarif/sarif/v2.1.0/cs01/sarif-v2.1.0-cs01.html). It also returns additional data such as the `github/alertNumber` and `github/alertUrl` properties. OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
@@ -699,18 +570,12 @@ Future<CodeScanningAnalysis> codeScanningGetAnalysis(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'codeScanningGetAnalysis',
-          fromJsonRaw: (value) =>
-              CodeScanningAnalysis.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CodeScanningAnalysis.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '422': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '503': (value) =>
-            ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Deletes a specified code scanning analysis from a repository. You can delete one analysis at a time. To delete a series of analyses, start with the most recent analysis and work backwards. Conceptually, the process is similar to the undo function in a text editor. When you list the analyses for a repository, one or more will be identified as deletable in the response: ``` "deletable": true ``` An analysis is deletable when it's the most recent in a set of analyses. Typically, a repository will have multiple sets of analyses for each enabled code scanning tool, where a set is determined by a unique combination of analysis values: * `ref` * `tool` * `category` If you attempt to delete an analysis that is not the most recent in a set, you'll get a 400 response with the message: ``` Analysis specified is not deletable. ``` The response from a successful `DELETE` operation provides you with two alternative URLs for deleting the next analysis in the set: `next_analysis_url` and `confirm_delete_url`. Use the `next_analysis_url` URL if you want to avoid accidentally deleting the final analysis in a set. This is a useful option if you want to preserve at least one analysis for the specified tool in your repository. Use the `confirm_delete_url` URL if you are content to remove all analyses for a tool. When you delete the last analysis in a set, the value of `next_analysis_url` and `confirm_delete_url` in the 200 response is `null`. As an example of the deletion process, let's imagine that you added a workflow that configured a particular code scanning tool to analyze the code in a repository. This tool has added 15 analyses: 10 on the default branch, and another 5 on a topic branch. You therefore have two separate sets of analyses for this tool. You've now decided that you want to remove all of the analyses for the tool. To do this you must make 15 separate deletion requests. To start, you must find an analysis that's identified as deletable. Each set of analyses always has…
 ///
@@ -724,68 +589,49 @@ Future<CodeScanningAnalysis> codeScanningGetAnalysis(ClientConfig config,
 ///   this parameter to `true`, you'll get a 400 response with the message:
 ///   `Analysis is last of its type and deletion may result in the loss of
 ///   historical alert data. Please specify confirm_delete.`
-Future<CodeScanningAnalysisDeletion> codeScanningDeleteAnalysis(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    required int analysisId,
-    SdkOptional<String?> confirmDelete = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<CodeScanningAnalysisDeletion>
+    codeScanningDeleteAnalysis(ClientConfig config,
+        {required String owner,
+        required String repo,
+        required int analysisId,
+        SdkOptional<String?> confirmDelete = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<CodeScanningAnalysisDeletion>('DELETE',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/code-scanning/analyses/${Uri.encodeComponent(analysisId.toString())}',
           config: config,
           query: {
-            'confirm_delete': SdkQueryValue(
-                SdkUtils.unwrapOptional(confirmDelete),
-                style: 'form',
-                explode: true)
+            'confirm_delete': SdkQueryValue(SdkUtils.unwrapOptional(confirmDelete), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'codeScanningDeleteAnalysis',
-          fromJsonRaw: (value) => CodeScanningAnalysisDeletion.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CodeScanningAnalysisDeletion.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '400': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Lists the CodeQL databases that are available in a repository. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
 /// [repo] The name of the repository without the `.git` extension. The name is
 ///   not case sensitive.
-Future<List<CodeScanningCodeqlDatabase>> codeScanningListCodeqlDatabases(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    RequestOptions? requestOptions}) async {
+Future<List<CodeScanningCodeqlDatabase>>
+    codeScanningListCodeqlDatabases(ClientConfig config,
+        {required String owner,
+        required String repo,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<CodeScanningCodeqlDatabase>>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/code-scanning/codeql/databases',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'codeScanningListCodeqlDatabases',
-          fromJsonRaw: (value) => (value as List)
-              .map((item) => CodeScanningCodeqlDatabase.fromJson(
-                  item as Map<String, dynamic>))
-              .toList(),
+          fromJsonRaw: (value) => (value as List).map((item) => CodeScanningCodeqlDatabase.fromJson(item as Map<String, dynamic>)).toList(),
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '503': (value) =>
-            ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Gets a CodeQL database for a language in a repository. By default this endpoint returns JSON metadata about the CodeQL database. To download the CodeQL database binary content, set the `Accept` header of the request to [`application/zip`](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types), and make sure your HTTP client is configured to follow redirects or use the `Location` header to make a second request to get the redirect URL. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
@@ -793,28 +639,23 @@ Future<List<CodeScanningCodeqlDatabase>> codeScanningListCodeqlDatabases(
 /// [repo] The name of the repository without the `.git` extension. The name is
 ///   not case sensitive.
 /// [language] The language of the CodeQL database.
-Future<CodeScanningCodeqlDatabase> codeScanningGetCodeqlDatabase(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    required String language,
-    RequestOptions? requestOptions}) async {
+Future<CodeScanningCodeqlDatabase>
+    codeScanningGetCodeqlDatabase(ClientConfig config,
+        {required String owner,
+        required String repo,
+        required String language,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<CodeScanningCodeqlDatabase>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/code-scanning/codeql/databases/${Uri.encodeComponent(language.toString())}',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'codeScanningGetCodeqlDatabase',
-          fromJsonRaw: (value) => CodeScanningCodeqlDatabase.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CodeScanningCodeqlDatabase.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '503': (value) =>
-            ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Deletes a CodeQL database for a language in a repository. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
@@ -833,14 +674,10 @@ Future<void> codeScanningDeleteCodeqlDatabase(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'codeScanningDeleteCodeqlDatabase',
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '503': (value) =>
-            ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Creates a new CodeQL variant analysis, which will run a CodeQL query against one or more repositories. Get started by learning more about [running CodeQL queries at scale with Multi-Repository Variant Analysis](https://docs.github.com/code-security/codeql-for-vs-code/getting-started-with-codeql-for-vs-code/running-codeql-queries-at-scale-with-multi-repository-variant-analysis). Use the `owner` and `repo` parameters in the URL to specify the controller repository that will be used for running GitHub Actions workflows and storing the results of the CodeQL variant analysis. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -859,16 +696,16 @@ Future<void> codeScanningDeleteCodeqlDatabase(ClientConfig config,
 /// [repositoryOwners] List of organization or user names whose repositories the
 ///   query should be run against. Precisely one property from `repositories`,
 ///   `repository_lists` and `repository_owners` is required.
-Future<CodeScanningVariantAnalysis> codeScanningCreateVariantAnalysis(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    required CodeScanningVariantAnalysisLanguage language,
-    required String queryPack,
-    SdkOptional<List<String>> repositories = const SdkOmitted(),
-    SdkOptional<List<String>> repositoryLists = const SdkOmitted(),
-    SdkOptional<List<String>> repositoryOwners = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<CodeScanningVariantAnalysis>
+    codeScanningCreateVariantAnalysis(ClientConfig config,
+        {required String owner,
+        required String repo,
+        required CodeScanningVariantAnalysisLanguage language,
+        required String queryPack,
+        SdkOptional<List<String>> repositories = const SdkOmitted(),
+        SdkOptional<List<String>> repositoryLists = const SdkOmitted(),
+        SdkOptional<List<String>> repositoryOwners = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   if (repositoryLists is SdkPresent<List<String>>) {
     validateItems('repository_lists', repositoryLists.value, max: 1);
   }
@@ -888,19 +725,12 @@ Future<CodeScanningVariantAnalysis> codeScanningCreateVariantAnalysis(
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'codeScanningCreateVariantAnalysis',
-          fromJsonRaw: (value) => CodeScanningVariantAnalysis.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CodeScanningVariantAnalysis.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Gets the summary of a CodeQL variant analysis. OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
@@ -908,27 +738,23 @@ Future<CodeScanningVariantAnalysis> codeScanningCreateVariantAnalysis(
 /// [repo] The name of the repository without the `.git` extension. The name is
 ///   not case sensitive.
 /// [codeqlVariantAnalysisId] The unique identifier of the variant analysis.
-Future<CodeScanningVariantAnalysis> codeScanningGetVariantAnalysis(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    required int codeqlVariantAnalysisId,
-    RequestOptions? requestOptions}) async {
+Future<CodeScanningVariantAnalysis>
+    codeScanningGetVariantAnalysis(ClientConfig config,
+        {required String owner,
+        required String repo,
+        required int codeqlVariantAnalysisId,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<CodeScanningVariantAnalysis>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/code-scanning/codeql/variant-analyses/${Uri.encodeComponent(codeqlVariantAnalysisId.toString())}',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'codeScanningGetVariantAnalysis',
-          fromJsonRaw: (value) => CodeScanningVariantAnalysis.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CodeScanningVariantAnalysis.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '503': (value) =>
-            ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Gets the analysis status of a repository in a CodeQL variant analysis. OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
@@ -951,43 +777,34 @@ Future<CodeScanningVariantAnalysisRepoTask>
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'codeScanningGetVariantAnalysisRepoTask',
-          fromJsonRaw: (value) => CodeScanningVariantAnalysisRepoTask.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CodeScanningVariantAnalysisRepoTask.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '503': (value) =>
-            ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Gets a code scanning default setup configuration. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// [owner] The account owner of the repository. The name is not case sensitive.
 /// [repo] The name of the repository without the `.git` extension. The name is
 ///   not case sensitive.
-Future<CodeScanningDefaultSetup> codeScanningGetDefaultSetup(
-    ClientConfig config,
-    {required String owner,
-    required String repo,
-    RequestOptions? requestOptions}) async {
+Future<CodeScanningDefaultSetup>
+    codeScanningGetDefaultSetup(ClientConfig config,
+        {required String owner,
+        required String repo,
+        RequestOptions? requestOptions}) async {
   return (await sdkRequest<CodeScanningDefaultSetup>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/code-scanning/default-setup',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'codeScanningGetDefaultSetup',
-          fromJsonRaw: (value) =>
-              CodeScanningDefaultSetup.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CodeScanningDefaultSetup.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '503': (value) =>
-            ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Updates a code scanning default setup configuration. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
@@ -1007,15 +824,11 @@ Future<Map<String, dynamic>> codeScanningUpdateDefaultSetup(ClientConfig config,
     {required String owner,
     required String repo,
     SdkOptional<CodeScanningDefaultSetupUpdateState> state = const SdkOmitted(),
-    SdkOptional<CodeScanningDefaultSetupUpdateRunnerType> runnerType =
-        const SdkOmitted(),
+    SdkOptional<CodeScanningDefaultSetupUpdateRunnerType> runnerType = const SdkOmitted(),
     SdkOptional<String?> runnerLabel = const SdkOmitted(),
-    SdkOptional<CodeScanningDefaultSetupUpdateQuerySuite> querySuite =
-        const SdkOmitted(),
-    SdkOptional<CodeScanningDefaultSetupUpdateThreatModel> threatModel =
-        const SdkOmitted(),
-    SdkOptional<List<CodeScanningDefaultSetupUpdateLanguagesItem>> languages =
-        const SdkOmitted(),
+    SdkOptional<CodeScanningDefaultSetupUpdateQuerySuite> querySuite = const SdkOmitted(),
+    SdkOptional<CodeScanningDefaultSetupUpdateThreatModel> threatModel = const SdkOmitted(),
+    SdkOptional<List<CodeScanningDefaultSetupUpdateLanguagesItem>> languages = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<Map<String, dynamic>>('PATCH',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/code-scanning/default-setup',
@@ -1032,20 +845,10 @@ Future<Map<String, dynamic>> codeScanningUpdateDefaultSetup(ClientConfig config,
           operationId: 'codeScanningUpdateDefaultSetup',
           fromJsonRaw: (value) => value as Map<String, dynamic>,
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '409': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '422': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Uploads SARIF data containing the results of a code scanning analysis to make the results available in a repository. For troubleshooting information, see "[Troubleshooting SARIF uploads](https://docs.github.com/code-security/code-scanning/troubleshooting-sarif)." There are two places where you can upload code scanning results. - If you upload to a pull request, for example `--ref refs/pull/42/merge` or `--ref refs/pull/42/head`, then the results appear as alerts in a pull request check. For more information, see "Triaging code scanning alerts in pull requests." - If you upload to a branch, for example `--ref refs/heads/my-branch`, then the results appear in the **Security** tab for your repository. For more information, see "Managing code scanning alerts for your repository." You must compress the SARIF-formatted analysis data that you want to upload, using `gzip`, and then encode it as a Base64 format string. For example: ``` gzip -c analysis-data.sarif | base64 -w0 ``` SARIF upload supports a maximum number of entries per the following data objects, and an analysis will be rejected if any of these objects is above its maximum value. For some objects, there are additional values over which the entries will be ignored while keeping the most important entries whenever applicable. To get the most out of your analysis when it includes data above the supported limits, try to optimize the analysis configuration. For example, for the CodeQL tool, identify and remove the most noisy queries. For more information, see "[SARIF results exceed one or more limits](https://docs.github.com/code-security/code-scanning/troubleshooting-sarif/results-exceed-limit)." | **SARIF data** | **Maximum values** | **Additional limits** | |----------------------------------|:------------------:|----------------------------------------------------------------------------------| | Runs per file | 20 | | | Results per run | 25,000 | Only the top 5,000 results will be included, prioritized by…
 ///
@@ -1092,8 +895,7 @@ Future<CodeScanningSarifsReceipt> codeScanningUploadSarif(ClientConfig config,
     SdkOptional<bool> validate = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   validateLength('commit_sha', commitSha, min: 40, max: 64);
-  sdkValidatePattern(
-      'commit_sha', commitSha, '^([0-9a-fA-F]{40}(?:[0-9a-fA-F]{24})?)\$');
+  sdkValidatePattern('commit_sha', commitSha, '^([0-9a-fA-F]{40}(?:[0-9a-fA-F]{24})?)\$');
   sdkValidatePattern('ref', ref, '^refs/(heads|tags|pull)/.*\$');
   if (checkoutUri is SdkPresent<String>) {
     sdkValidateUri('checkout_uri', checkoutUri.value);
@@ -1116,19 +918,12 @@ Future<CodeScanningSarifsReceipt> codeScanningUploadSarif(ClientConfig config,
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'codeScanningUploadSarif',
-          fromJsonRaw: (value) =>
-              CodeScanningSarifsReceipt.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CodeScanningSarifsReceipt.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-            '403': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '404': (value) =>
-                BasicError.fromJson(value as Map<String, dynamic>),
-            '503': (value) =>
-                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-          }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
+
 
 /// Gets information about a SARIF upload, including the status and the URL of the analysis that was uploaded so that you can retrieve details of the analysis. For more information, see "Get a code scanning analysis for a repository." OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
@@ -1146,13 +941,8 @@ Future<CodeScanningSarifsStatus> codeScanningGetSarif(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'codeScanningGetSarif',
-          fromJsonRaw: (value) =>
-              CodeScanningSarifsStatus.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => CodeScanningSarifsStatus.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {
-        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
-        '503': (value) =>
-            ServiceUnavailable.fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
       .data;
 }
