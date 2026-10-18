@@ -8,140 +8,236 @@ part of 'repos.dart';
 class Activity {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// The SHA of the commit before the activity.
   final String before;
+
   /// The SHA of the commit after the activity.
   final String after;
+
   /// The full Git reference, formatted as `refs/heads/&lt;branch name&gt;`.
   final String ref;
+
   /// The time when the activity occurred.
   final String timestamp;
+
   /// The type of the activity that was performed.
   final ActivityActivityType activityType;
+
   /// A GitHub user.
   final NullableSimpleUser? actor;
 
-  const Activity({required this.id, required this.nodeId, required this.before, required this.after, required this.ref, required this.timestamp, required this.activityType, required this.actor});
+  const Activity(
+      {required this.id,
+      required this.nodeId,
+      required this.before,
+      required this.after,
+      required this.ref,
+      required this.timestamp,
+      required this.activityType,
+      required this.actor});
 
-  Activity Function({int id, String nodeId, String before, String after, String ref, String timestamp, ActivityActivityType activityType, NullableSimpleUser? actor}) get copyWith => _copyWith;
+  Activity Function(
+      {int id,
+      String nodeId,
+      String before,
+      String after,
+      String ref,
+      String timestamp,
+      ActivityActivityType activityType,
+      NullableSimpleUser? actor}) get copyWith => _copyWith;
 
-  Activity _copyWith({Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? before = sdkOmittedValue, Object? after = sdkOmittedValue, Object? ref = sdkOmittedValue, Object? timestamp = sdkOmittedValue, Object? activityType = sdkOmittedValue, Object? actor = sdkOmittedValue}) => Activity(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    before: identical(before, sdkOmittedValue) ? this.before : before as String,
-    after: identical(after, sdkOmittedValue) ? this.after : after as String,
-    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-    timestamp: identical(timestamp, sdkOmittedValue) ? this.timestamp : timestamp as String,
-    activityType: identical(activityType, sdkOmittedValue) ? this.activityType : activityType as ActivityActivityType,
-    actor: identical(actor, sdkOmittedValue) ? this.actor : actor as NullableSimpleUser?,
-  );
+  Activity _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? before = sdkOmittedValue,
+          Object? after = sdkOmittedValue,
+          Object? ref = sdkOmittedValue,
+          Object? timestamp = sdkOmittedValue,
+          Object? activityType = sdkOmittedValue,
+          Object? actor = sdkOmittedValue}) =>
+      Activity(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        before:
+            identical(before, sdkOmittedValue) ? this.before : before as String,
+        after: identical(after, sdkOmittedValue) ? this.after : after as String,
+        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+        timestamp: identical(timestamp, sdkOmittedValue)
+            ? this.timestamp
+            : timestamp as String,
+        activityType: identical(activityType, sdkOmittedValue)
+            ? this.activityType
+            : activityType as ActivityActivityType,
+        actor: identical(actor, sdkOmittedValue)
+            ? this.actor
+            : actor as NullableSimpleUser?,
+      );
 
   factory Activity.fromJson(Map<String, dynamic> json) => Activity(
-    id: ((json['id'] as num?)?.toInt())!,
-    nodeId: (json['node_id'] as String?)!,
-    before: (json['before'] as String?)!,
-    after: (json['after'] as String?)!,
-    ref: (json['ref'] as String?)!,
-    timestamp: (json['timestamp'] as String?)!,
-    activityType: (json['activity_type'] != null ? ActivityActivityType.fromJson(json['activity_type'] as String) : null)!,
-    actor: json.containsKey('actor') ? json['actor'] != null ? NullableSimpleUser.fromJson(json['actor'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'actor', 'Required property is missing'),
-  );
+        id: ((json['id'] as num?)?.toInt())!,
+        nodeId: (json['node_id'] as String?)!,
+        before: (json['before'] as String?)!,
+        after: (json['after'] as String?)!,
+        ref: (json['ref'] as String?)!,
+        timestamp: (json['timestamp'] as String?)!,
+        activityType: (json['activity_type'] != null
+            ? ActivityActivityType.fromJson(json['activity_type'] as String)
+            : null)!,
+        actor: json.containsKey('actor')
+            ? json['actor'] != null
+                ? NullableSimpleUser.fromJson(
+                    json['actor'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'actor', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'node_id': nodeId,
-    'before': before,
-    'after': after,
-    'ref': ref,
-    'timestamp': timestamp,
-    'activity_type': activityType.toJson(),
-    'actor': actor?.toJson(),
-  };
+        'id': id,
+        'node_id': nodeId,
+        'before': before,
+        'after': after,
+        'ref': ref,
+        'timestamp': timestamp,
+        'activity_type': activityType.toJson(),
+        'actor': actor?.toJson(),
+      };
 }
 
 /// An autolink reference.
 class Autolink {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
+
   /// The prefix of a key that is linkified.
   final String keyPrefix;
+
   /// A template for the target URL that is generated if a key was found.
   final String urlTemplate;
+
   /// Whether this autolink reference matches alphanumeric characters. If false, this autolink reference only matches numeric characters.
   final bool isAlphanumeric;
+
   /// Optional `date-time`-formatted value serialized in the `updated_at` wire field.
   final SdkOptional<String?> updatedAt;
 
-  const Autolink({required this.id, required this.keyPrefix, required this.urlTemplate, required this.isAlphanumeric, this.updatedAt = const SdkOmitted()});
+  const Autolink(
+      {required this.id,
+      required this.keyPrefix,
+      required this.urlTemplate,
+      required this.isAlphanumeric,
+      this.updatedAt = const SdkOmitted()});
 
-  Autolink Function({int id, String keyPrefix, String urlTemplate, bool isAlphanumeric, SdkOptional<String?> updatedAt}) get copyWith => _copyWith;
+  Autolink Function(
+      {int id,
+      String keyPrefix,
+      String urlTemplate,
+      bool isAlphanumeric,
+      SdkOptional<String?> updatedAt}) get copyWith => _copyWith;
 
-  Autolink _copyWith({Object? id = sdkOmittedValue, Object? keyPrefix = sdkOmittedValue, Object? urlTemplate = sdkOmittedValue, Object? isAlphanumeric = sdkOmittedValue, Object? updatedAt = sdkOmittedValue}) => Autolink(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    keyPrefix: identical(keyPrefix, sdkOmittedValue) ? this.keyPrefix : keyPrefix as String,
-    urlTemplate: identical(urlTemplate, sdkOmittedValue) ? this.urlTemplate : urlTemplate as String,
-    isAlphanumeric: identical(isAlphanumeric, sdkOmittedValue) ? this.isAlphanumeric : isAlphanumeric as bool,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as SdkOptional<String?>,
-  );
+  Autolink _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? keyPrefix = sdkOmittedValue,
+          Object? urlTemplate = sdkOmittedValue,
+          Object? isAlphanumeric = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue}) =>
+      Autolink(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        keyPrefix: identical(keyPrefix, sdkOmittedValue)
+            ? this.keyPrefix
+            : keyPrefix as String,
+        urlTemplate: identical(urlTemplate, sdkOmittedValue)
+            ? this.urlTemplate
+            : urlTemplate as String,
+        isAlphanumeric: identical(isAlphanumeric, sdkOmittedValue)
+            ? this.isAlphanumeric
+            : isAlphanumeric as bool,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as SdkOptional<String?>,
+      );
 
   factory Autolink.fromJson(Map<String, dynamic> json) => Autolink(
-    id: ((json['id'] as num?)?.toInt())!,
-    keyPrefix: (json['key_prefix'] as String?)!,
-    urlTemplate: (json['url_template'] as String?)!,
-    isAlphanumeric: (json['is_alphanumeric'] as bool?)!,
-    updatedAt: json.containsKey('updated_at') ? SdkPresent(json['updated_at'] as String?) : const SdkOmitted(),
-  );
+        id: ((json['id'] as num?)?.toInt())!,
+        keyPrefix: (json['key_prefix'] as String?)!,
+        urlTemplate: (json['url_template'] as String?)!,
+        isAlphanumeric: (json['is_alphanumeric'] as bool?)!,
+        updatedAt: json.containsKey('updated_at')
+            ? SdkPresent(json['updated_at'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'key_prefix': keyPrefix,
-    'url_template': urlTemplate,
-    'is_alphanumeric': isAlphanumeric,
-    ...switch (updatedAt) {
-      SdkPresent<String?>(value: final value) => {'updated_at': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'id': id,
+        'key_prefix': keyPrefix,
+        'url_template': urlTemplate,
+        'is_alphanumeric': isAlphanumeric,
+        ...switch (updatedAt) {
+          SdkPresent<String?>(value: final value) => {
+              'updated_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Clone Traffic
 class CloneTraffic {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `integer` value serialized in the `count` wire field.
   final int count;
+
   /// Required `integer` value serialized in the `uniques` wire field.
   final int uniques;
+
   /// Required array value serialized in the `clones` wire field.
   final List<Traffic> clones;
 
-  const CloneTraffic({required this.count, required this.uniques, required this.clones});
+  const CloneTraffic(
+      {required this.count, required this.uniques, required this.clones});
 
-  CloneTraffic Function({int count, int uniques, List<Traffic> clones}) get copyWith => _copyWith;
+  CloneTraffic Function({int count, int uniques, List<Traffic> clones})
+      get copyWith => _copyWith;
 
-  CloneTraffic _copyWith({Object? count = sdkOmittedValue, Object? uniques = sdkOmittedValue, Object? clones = sdkOmittedValue}) => CloneTraffic(
-    count: identical(count, sdkOmittedValue) ? this.count : count as int,
-    uniques: identical(uniques, sdkOmittedValue) ? this.uniques : uniques as int,
-    clones: identical(clones, sdkOmittedValue) ? this.clones : clones as List<Traffic>,
-  );
+  CloneTraffic _copyWith(
+          {Object? count = sdkOmittedValue,
+          Object? uniques = sdkOmittedValue,
+          Object? clones = sdkOmittedValue}) =>
+      CloneTraffic(
+        count: identical(count, sdkOmittedValue) ? this.count : count as int,
+        uniques:
+            identical(uniques, sdkOmittedValue) ? this.uniques : uniques as int,
+        clones: identical(clones, sdkOmittedValue)
+            ? this.clones
+            : clones as List<Traffic>,
+      );
 
   factory CloneTraffic.fromJson(Map<String, dynamic> json) => CloneTraffic(
-    count: ((json['count'] as num?)?.toInt())!,
-    uniques: ((json['uniques'] as num?)?.toInt())!,
-    clones: ((json['clones'] as List?)?.map((e) => Traffic.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+        count: ((json['count'] as num?)?.toInt())!,
+        uniques: ((json['uniques'] as num?)?.toInt())!,
+        clones: ((json['clones'] as List?)
+            ?.map((e) => Traffic.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'count': count,
-    'uniques': uniques,
-    'clones': clones.map((item) => item.toJson()).toList(),
-  };
+        'count': count,
+        'uniques': uniques,
+        'clones': clones.map((item) => item.toJson()).toList(),
+      };
 }
 
 // CodeFrequencyStat = List<int>
@@ -150,132 +246,220 @@ class CloneTraffic {
 class CodeownersErrorsErrorsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The line number where this errors occurs.
   final int line;
+
   /// The column number where this errors occurs.
   final int column;
+
   /// The contents of the line where the error occurs.
   final SdkOptional<String> source;
+
   /// The type of error.
   final String kind;
+
   /// Suggested action to fix the error. This will usually be `null`, but is provided for some common errors.
   final SdkOptional<String?> suggestion;
+
   /// A human-readable description of the error, combining information from multiple fields, laid out for display in a monospaced typeface (for example, a command-line setting).
   final String message;
+
   /// The path of the file where the error occured.
   final String path;
 
-  const CodeownersErrorsErrorsItem({required this.line, required this.column, this.source = const SdkOmitted(), required this.kind, this.suggestion = const SdkOmitted(), required this.message, required this.path});
+  const CodeownersErrorsErrorsItem(
+      {required this.line,
+      required this.column,
+      this.source = const SdkOmitted(),
+      required this.kind,
+      this.suggestion = const SdkOmitted(),
+      required this.message,
+      required this.path});
 
-  CodeownersErrorsErrorsItem Function({int line, int column, SdkOptional<String> source, String kind, SdkOptional<String?> suggestion, String message, String path}) get copyWith => _copyWith;
+  CodeownersErrorsErrorsItem Function(
+      {int line,
+      int column,
+      SdkOptional<String> source,
+      String kind,
+      SdkOptional<String?> suggestion,
+      String message,
+      String path}) get copyWith => _copyWith;
 
-  CodeownersErrorsErrorsItem _copyWith({Object? line = sdkOmittedValue, Object? column = sdkOmittedValue, Object? source = sdkOmittedValue, Object? kind = sdkOmittedValue, Object? suggestion = sdkOmittedValue, Object? message = sdkOmittedValue, Object? path = sdkOmittedValue}) => CodeownersErrorsErrorsItem(
-    line: identical(line, sdkOmittedValue) ? this.line : line as int,
-    column: identical(column, sdkOmittedValue) ? this.column : column as int,
-    source: identical(source, sdkOmittedValue) ? this.source : source as SdkOptional<String>,
-    kind: identical(kind, sdkOmittedValue) ? this.kind : kind as String,
-    suggestion: identical(suggestion, sdkOmittedValue) ? this.suggestion : suggestion as SdkOptional<String?>,
-    message: identical(message, sdkOmittedValue) ? this.message : message as String,
-    path: identical(path, sdkOmittedValue) ? this.path : path as String,
-  );
+  CodeownersErrorsErrorsItem _copyWith(
+          {Object? line = sdkOmittedValue,
+          Object? column = sdkOmittedValue,
+          Object? source = sdkOmittedValue,
+          Object? kind = sdkOmittedValue,
+          Object? suggestion = sdkOmittedValue,
+          Object? message = sdkOmittedValue,
+          Object? path = sdkOmittedValue}) =>
+      CodeownersErrorsErrorsItem(
+        line: identical(line, sdkOmittedValue) ? this.line : line as int,
+        column:
+            identical(column, sdkOmittedValue) ? this.column : column as int,
+        source: identical(source, sdkOmittedValue)
+            ? this.source
+            : source as SdkOptional<String>,
+        kind: identical(kind, sdkOmittedValue) ? this.kind : kind as String,
+        suggestion: identical(suggestion, sdkOmittedValue)
+            ? this.suggestion
+            : suggestion as SdkOptional<String?>,
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+        path: identical(path, sdkOmittedValue) ? this.path : path as String,
+      );
 
-  factory CodeownersErrorsErrorsItem.fromJson(Map<String, dynamic> json) => CodeownersErrorsErrorsItem(
-    line: ((json['line'] as num?)?.toInt())!,
-    column: ((json['column'] as num?)?.toInt())!,
-    source: json['source'] != null ? SdkPresent((json['source'] as String?)!) : const SdkOmitted(),
-    kind: (json['kind'] as String?)!,
-    suggestion: json.containsKey('suggestion') ? SdkPresent(json['suggestion'] as String?) : const SdkOmitted(),
-    message: (json['message'] as String?)!,
-    path: (json['path'] as String?)!,
-  );
+  factory CodeownersErrorsErrorsItem.fromJson(Map<String, dynamic> json) =>
+      CodeownersErrorsErrorsItem(
+        line: ((json['line'] as num?)?.toInt())!,
+        column: ((json['column'] as num?)?.toInt())!,
+        source: json['source'] != null
+            ? SdkPresent((json['source'] as String?)!)
+            : const SdkOmitted(),
+        kind: (json['kind'] as String?)!,
+        suggestion: json.containsKey('suggestion')
+            ? SdkPresent(json['suggestion'] as String?)
+            : const SdkOmitted(),
+        message: (json['message'] as String?)!,
+        path: (json['path'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'line': line,
-    'column': column,
-    ...switch (source) {
-      SdkPresent<String>(value: final value) => {'source': value,},
-      _ => const <String, dynamic>{},
-    },
-    'kind': kind,
-    ...switch (suggestion) {
-      SdkPresent<String?>(value: final value) => {'suggestion': value,},
-      _ => const <String, dynamic>{},
-    },
-    'message': message,
-    'path': path,
-  };
+        'line': line,
+        'column': column,
+        ...switch (source) {
+          SdkPresent<String>(value: final value) => {
+              'source': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'kind': kind,
+        ...switch (suggestion) {
+          SdkPresent<String?>(value: final value) => {
+              'suggestion': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'message': message,
+        'path': path,
+      };
 }
 
 /// A list of errors found in a repo's CODEOWNERS file
 class CodeownersErrors {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required array value serialized in the `errors` wire field.
   final List<CodeownersErrorsErrorsItem> errors;
 
   const CodeownersErrors({required this.errors});
 
-  CodeownersErrors Function({List<CodeownersErrorsErrorsItem> errors}) get copyWith => _copyWith;
+  CodeownersErrors Function({List<CodeownersErrorsErrorsItem> errors})
+      get copyWith => _copyWith;
 
-  CodeownersErrors _copyWith({Object? errors = sdkOmittedValue}) => CodeownersErrors(
-    errors: identical(errors, sdkOmittedValue) ? this.errors : errors as List<CodeownersErrorsErrorsItem>,
-  );
+  CodeownersErrors _copyWith({Object? errors = sdkOmittedValue}) =>
+      CodeownersErrors(
+        errors: identical(errors, sdkOmittedValue)
+            ? this.errors
+            : errors as List<CodeownersErrorsErrorsItem>,
+      );
 
-  factory CodeownersErrors.fromJson(Map<String, dynamic> json) => CodeownersErrors(
-    errors: ((json['errors'] as List?)?.map((e) => CodeownersErrorsErrorsItem.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+  factory CodeownersErrors.fromJson(Map<String, dynamic> json) =>
+      CodeownersErrors(
+        errors: ((json['errors'] as List?)
+            ?.map((e) =>
+                CodeownersErrorsErrorsItem.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'errors': errors.map((item) => item.toJson()).toList(),
-  };
+        'errors': errors.map((item) => item.toJson()).toList(),
+      };
 }
 
 /// Optional object value serialized in the `permissions` wire field.
 class CollaboratorPermissions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `boolean` value serialized in the `pull` wire field.
   final bool pull;
+
   /// Optional `boolean` value serialized in the `triage` wire field.
   final SdkOptional<bool> triage;
+
   /// Required `boolean` value serialized in the `push` wire field.
   final bool push;
+
   /// Optional `boolean` value serialized in the `maintain` wire field.
   final SdkOptional<bool> maintain;
+
   /// Required `boolean` value serialized in the `admin` wire field.
   final bool admin;
 
-  const CollaboratorPermissions({required this.pull, this.triage = const SdkOmitted(), required this.push, this.maintain = const SdkOmitted(), required this.admin});
+  const CollaboratorPermissions(
+      {required this.pull,
+      this.triage = const SdkOmitted(),
+      required this.push,
+      this.maintain = const SdkOmitted(),
+      required this.admin});
 
-  CollaboratorPermissions Function({bool pull, SdkOptional<bool> triage, bool push, SdkOptional<bool> maintain, bool admin}) get copyWith => _copyWith;
+  CollaboratorPermissions Function(
+      {bool pull,
+      SdkOptional<bool> triage,
+      bool push,
+      SdkOptional<bool> maintain,
+      bool admin}) get copyWith => _copyWith;
 
-  CollaboratorPermissions _copyWith({Object? pull = sdkOmittedValue, Object? triage = sdkOmittedValue, Object? push = sdkOmittedValue, Object? maintain = sdkOmittedValue, Object? admin = sdkOmittedValue}) => CollaboratorPermissions(
-    pull: identical(pull, sdkOmittedValue) ? this.pull : pull as bool,
-    triage: identical(triage, sdkOmittedValue) ? this.triage : triage as SdkOptional<bool>,
-    push: identical(push, sdkOmittedValue) ? this.push : push as bool,
-    maintain: identical(maintain, sdkOmittedValue) ? this.maintain : maintain as SdkOptional<bool>,
-    admin: identical(admin, sdkOmittedValue) ? this.admin : admin as bool,
-  );
+  CollaboratorPermissions _copyWith(
+          {Object? pull = sdkOmittedValue,
+          Object? triage = sdkOmittedValue,
+          Object? push = sdkOmittedValue,
+          Object? maintain = sdkOmittedValue,
+          Object? admin = sdkOmittedValue}) =>
+      CollaboratorPermissions(
+        pull: identical(pull, sdkOmittedValue) ? this.pull : pull as bool,
+        triage: identical(triage, sdkOmittedValue)
+            ? this.triage
+            : triage as SdkOptional<bool>,
+        push: identical(push, sdkOmittedValue) ? this.push : push as bool,
+        maintain: identical(maintain, sdkOmittedValue)
+            ? this.maintain
+            : maintain as SdkOptional<bool>,
+        admin: identical(admin, sdkOmittedValue) ? this.admin : admin as bool,
+      );
 
-  factory CollaboratorPermissions.fromJson(Map<String, dynamic> json) => CollaboratorPermissions(
-    pull: (json['pull'] as bool?)!,
-    triage: json['triage'] != null ? SdkPresent((json['triage'] as bool?)!) : const SdkOmitted(),
-    push: (json['push'] as bool?)!,
-    maintain: json['maintain'] != null ? SdkPresent((json['maintain'] as bool?)!) : const SdkOmitted(),
-    admin: (json['admin'] as bool?)!,
-  );
+  factory CollaboratorPermissions.fromJson(Map<String, dynamic> json) =>
+      CollaboratorPermissions(
+        pull: (json['pull'] as bool?)!,
+        triage: json['triage'] != null
+            ? SdkPresent((json['triage'] as bool?)!)
+            : const SdkOmitted(),
+        push: (json['push'] as bool?)!,
+        maintain: json['maintain'] != null
+            ? SdkPresent((json['maintain'] as bool?)!)
+            : const SdkOmitted(),
+        admin: (json['admin'] as bool?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'pull': pull,
-    ...switch (triage) {
-      SdkPresent<bool>(value: final value) => {'triage': value,},
-      _ => const <String, dynamic>{},
-    },
-    'push': push,
-    ...switch (maintain) {
-      SdkPresent<bool>(value: final value) => {'maintain': value,},
-      _ => const <String, dynamic>{},
-    },
-    'admin': admin,
-  };
+        'pull': pull,
+        ...switch (triage) {
+          SdkPresent<bool>(value: final value) => {
+              'triage': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'push': push,
+        ...switch (maintain) {
+          SdkPresent<bool>(value: final value) => {
+              'maintain': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'admin': admin,
+      };
 }

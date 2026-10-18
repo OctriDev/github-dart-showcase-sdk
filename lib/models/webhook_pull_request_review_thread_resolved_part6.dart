@@ -8,72 +8,123 @@ part of 'webhook_pull_request_review_thread_resolved.dart';
 class WebhookPullRequestReviewThreadResolvedPullRequestBaseRepoPermissions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `boolean` value serialized in the `admin` wire field.
   final bool admin;
+
   /// Optional `boolean` value serialized in the `maintain` wire field.
   final SdkOptional<bool> maintain;
+
   /// Required `boolean` value serialized in the `pull` wire field.
   final bool pull;
+
   /// Required `boolean` value serialized in the `push` wire field.
   final bool push;
+
   /// Optional `boolean` value serialized in the `triage` wire field.
   final SdkOptional<bool> triage;
 
-  const WebhookPullRequestReviewThreadResolvedPullRequestBaseRepoPermissions({required this.admin, this.maintain = const SdkOmitted(), required this.pull, required this.push, this.triage = const SdkOmitted()});
+  const WebhookPullRequestReviewThreadResolvedPullRequestBaseRepoPermissions(
+      {required this.admin,
+      this.maintain = const SdkOmitted(),
+      required this.pull,
+      required this.push,
+      this.triage = const SdkOmitted()});
 
-  WebhookPullRequestReviewThreadResolvedPullRequestBaseRepoPermissions Function({bool admin, SdkOptional<bool> maintain, bool pull, bool push, SdkOptional<bool> triage}) get copyWith => _copyWith;
+  WebhookPullRequestReviewThreadResolvedPullRequestBaseRepoPermissions Function(
+      {bool admin,
+      SdkOptional<bool> maintain,
+      bool pull,
+      bool push,
+      SdkOptional<bool> triage}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewThreadResolvedPullRequestBaseRepoPermissions _copyWith({Object? admin = sdkOmittedValue, Object? maintain = sdkOmittedValue, Object? pull = sdkOmittedValue, Object? push = sdkOmittedValue, Object? triage = sdkOmittedValue}) => WebhookPullRequestReviewThreadResolvedPullRequestBaseRepoPermissions(
-    admin: identical(admin, sdkOmittedValue) ? this.admin : admin as bool,
-    maintain: identical(maintain, sdkOmittedValue) ? this.maintain : maintain as SdkOptional<bool>,
-    pull: identical(pull, sdkOmittedValue) ? this.pull : pull as bool,
-    push: identical(push, sdkOmittedValue) ? this.push : push as bool,
-    triage: identical(triage, sdkOmittedValue) ? this.triage : triage as SdkOptional<bool>,
-  );
+  WebhookPullRequestReviewThreadResolvedPullRequestBaseRepoPermissions
+      _copyWith(
+              {Object? admin = sdkOmittedValue,
+              Object? maintain = sdkOmittedValue,
+              Object? pull = sdkOmittedValue,
+              Object? push = sdkOmittedValue,
+              Object? triage = sdkOmittedValue}) =>
+          WebhookPullRequestReviewThreadResolvedPullRequestBaseRepoPermissions(
+            admin:
+                identical(admin, sdkOmittedValue) ? this.admin : admin as bool,
+            maintain: identical(maintain, sdkOmittedValue)
+                ? this.maintain
+                : maintain as SdkOptional<bool>,
+            pull: identical(pull, sdkOmittedValue) ? this.pull : pull as bool,
+            push: identical(push, sdkOmittedValue) ? this.push : push as bool,
+            triage: identical(triage, sdkOmittedValue)
+                ? this.triage
+                : triage as SdkOptional<bool>,
+          );
 
-  factory WebhookPullRequestReviewThreadResolvedPullRequestBaseRepoPermissions.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewThreadResolvedPullRequestBaseRepoPermissions(
-    admin: (json['admin'] as bool?)!,
-    maintain: json['maintain'] != null ? SdkPresent((json['maintain'] as bool?)!) : const SdkOmitted(),
-    pull: (json['pull'] as bool?)!,
-    push: (json['push'] as bool?)!,
-    triage: json['triage'] != null ? SdkPresent((json['triage'] as bool?)!) : const SdkOmitted(),
-  );
+  factory WebhookPullRequestReviewThreadResolvedPullRequestBaseRepoPermissions.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPullRequestReviewThreadResolvedPullRequestBaseRepoPermissions(
+        admin: (json['admin'] as bool?)!,
+        maintain: json['maintain'] != null
+            ? SdkPresent((json['maintain'] as bool?)!)
+            : const SdkOmitted(),
+        pull: (json['pull'] as bool?)!,
+        push: (json['push'] as bool?)!,
+        triage: json['triage'] != null
+            ? SdkPresent((json['triage'] as bool?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'admin': admin,
-    ...switch (maintain) {
-      SdkPresent<bool>(value: final value) => {'maintain': value,},
-      _ => const <String, dynamic>{},
-    },
-    'pull': pull,
-    'push': push,
-    ...switch (triage) {
-      SdkPresent<bool>(value: final value) => {'triage': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'admin': admin,
+        ...switch (maintain) {
+          SdkPresent<bool>(value: final value) => {
+              'maintain': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'pull': pull,
+        'push': push,
+        ...switch (triage) {
+          SdkPresent<bool>(value: final value) => {
+              'triage': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 sealed class WebhookPullRequestReviewThreadResolvedPullRequestBaseRepoPushedAt {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const WebhookPullRequestReviewThreadResolvedPullRequestBaseRepoPushedAt();
-  factory WebhookPullRequestReviewThreadResolvedPullRequestBaseRepoPushedAt.fromJson(Object? json) {
-    if (json is String) { return WebhookPullRequestReviewThreadResolvedPullRequestBaseRepoPushedAtString(json); }
-    if (json is num) { return WebhookPullRequestReviewThreadResolvedPullRequestBaseRepoPushedAtInt(json.toInt()); }
-    throw FormatException("No variant matched for WebhookPullRequestReviewThreadResolvedPullRequestBaseRepoPushedAt");
+  factory WebhookPullRequestReviewThreadResolvedPullRequestBaseRepoPushedAt.fromJson(
+      Object? json) {
+    if (json is String) {
+      return WebhookPullRequestReviewThreadResolvedPullRequestBaseRepoPushedAtString(
+          json);
+    }
+    if (json is num) {
+      return WebhookPullRequestReviewThreadResolvedPullRequestBaseRepoPushedAtInt(
+          json.toInt());
+    }
+    throw FormatException(
+        "No variant matched for WebhookPullRequestReviewThreadResolvedPullRequestBaseRepoPushedAt");
   }
   Object? toJson();
 }
 
-final class WebhookPullRequestReviewThreadResolvedPullRequestBaseRepoPushedAtInt extends WebhookPullRequestReviewThreadResolvedPullRequestBaseRepoPushedAt {
+final class WebhookPullRequestReviewThreadResolvedPullRequestBaseRepoPushedAtInt
+    extends WebhookPullRequestReviewThreadResolvedPullRequestBaseRepoPushedAt {
   final int value;
-  const WebhookPullRequestReviewThreadResolvedPullRequestBaseRepoPushedAtInt(this.value);
-  @override Object? toJson() => value;
+  const WebhookPullRequestReviewThreadResolvedPullRequestBaseRepoPushedAtInt(
+      this.value);
+  @override
+  Object? toJson() => value;
 }
 
-final class WebhookPullRequestReviewThreadResolvedPullRequestBaseRepoPushedAtString extends WebhookPullRequestReviewThreadResolvedPullRequestBaseRepoPushedAt {
+final class WebhookPullRequestReviewThreadResolvedPullRequestBaseRepoPushedAtString
+    extends WebhookPullRequestReviewThreadResolvedPullRequestBaseRepoPushedAt {
   final String value;
-  const WebhookPullRequestReviewThreadResolvedPullRequestBaseRepoPushedAtString(this.value);
-  @override Object? toJson() => value;
+  const WebhookPullRequestReviewThreadResolvedPullRequestBaseRepoPushedAtString(
+      this.value);
+  @override
+  Object? toJson() => value;
 }

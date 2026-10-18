@@ -8,8 +8,10 @@ part of 'shared_commit.dart';
 class CommitCommitTree {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
 
@@ -17,237 +19,441 @@ class CommitCommitTree {
 
   CommitCommitTree Function({String sha, String url}) get copyWith => _copyWith;
 
-  CommitCommitTree _copyWith({Object? sha = sdkOmittedValue, Object? url = sdkOmittedValue}) => CommitCommitTree(
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  CommitCommitTree _copyWith(
+          {Object? sha = sdkOmittedValue, Object? url = sdkOmittedValue}) =>
+      CommitCommitTree(
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
-  factory CommitCommitTree.fromJson(Map<String, dynamic> json) => CommitCommitTree(
-    sha: (json['sha'] as String?)!,
-    url: (json['url'] as String?)!,
-  );
+  factory CommitCommitTree.fromJson(Map<String, dynamic> json) =>
+      CommitCommitTree(
+        sha: (json['sha'] as String?)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'sha': sha,
-    'url': url,
-  };
+        'sha': sha,
+        'url': url,
+      };
 }
 
 /// Required object value serialized in the `commit` wire field.
 class CommitCommit {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
+
   /// Metaproperties for Git author/committer information.
   final NullableGitUser? author;
+
   /// Metaproperties for Git author/committer information.
   final NullableGitUser? committer;
+
   /// Required `string` value serialized in the `message` wire field.
   final String message;
+
   /// Required `integer` value serialized in the `comment_count` wire field.
   final int commentCount;
+
   /// Required object value serialized in the `tree` wire field.
   final CommitCommitTree tree;
+
   /// Optional object value serialized in the `verification` wire field.
   final SdkOptional<Verification> verification;
 
-  const CommitCommit({required this.url, required this.author, required this.committer, required this.message, required this.commentCount, required this.tree, this.verification = const SdkOmitted()});
+  const CommitCommit(
+      {required this.url,
+      required this.author,
+      required this.committer,
+      required this.message,
+      required this.commentCount,
+      required this.tree,
+      this.verification = const SdkOmitted()});
 
-  CommitCommit Function({String url, NullableGitUser? author, NullableGitUser? committer, String message, int commentCount, CommitCommitTree tree, SdkOptional<Verification> verification}) get copyWith => _copyWith;
+  CommitCommit Function(
+      {String url,
+      NullableGitUser? author,
+      NullableGitUser? committer,
+      String message,
+      int commentCount,
+      CommitCommitTree tree,
+      SdkOptional<Verification> verification}) get copyWith => _copyWith;
 
-  CommitCommit _copyWith({Object? url = sdkOmittedValue, Object? author = sdkOmittedValue, Object? committer = sdkOmittedValue, Object? message = sdkOmittedValue, Object? commentCount = sdkOmittedValue, Object? tree = sdkOmittedValue, Object? verification = sdkOmittedValue}) => CommitCommit(
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    author: identical(author, sdkOmittedValue) ? this.author : author as NullableGitUser?,
-    committer: identical(committer, sdkOmittedValue) ? this.committer : committer as NullableGitUser?,
-    message: identical(message, sdkOmittedValue) ? this.message : message as String,
-    commentCount: identical(commentCount, sdkOmittedValue) ? this.commentCount : commentCount as int,
-    tree: identical(tree, sdkOmittedValue) ? this.tree : tree as CommitCommitTree,
-    verification: identical(verification, sdkOmittedValue) ? this.verification : verification as SdkOptional<Verification>,
-  );
+  CommitCommit _copyWith(
+          {Object? url = sdkOmittedValue,
+          Object? author = sdkOmittedValue,
+          Object? committer = sdkOmittedValue,
+          Object? message = sdkOmittedValue,
+          Object? commentCount = sdkOmittedValue,
+          Object? tree = sdkOmittedValue,
+          Object? verification = sdkOmittedValue}) =>
+      CommitCommit(
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        author: identical(author, sdkOmittedValue)
+            ? this.author
+            : author as NullableGitUser?,
+        committer: identical(committer, sdkOmittedValue)
+            ? this.committer
+            : committer as NullableGitUser?,
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+        commentCount: identical(commentCount, sdkOmittedValue)
+            ? this.commentCount
+            : commentCount as int,
+        tree: identical(tree, sdkOmittedValue)
+            ? this.tree
+            : tree as CommitCommitTree,
+        verification: identical(verification, sdkOmittedValue)
+            ? this.verification
+            : verification as SdkOptional<Verification>,
+      );
 
   factory CommitCommit.fromJson(Map<String, dynamic> json) => CommitCommit(
-    url: (json['url'] as String?)!,
-    author: json.containsKey('author') ? json['author'] != null ? NullableGitUser.fromJson(json['author'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'author', 'Required property is missing'),
-    committer: json.containsKey('committer') ? json['committer'] != null ? NullableGitUser.fromJson(json['committer'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'committer', 'Required property is missing'),
-    message: (json['message'] as String?)!,
-    commentCount: ((json['comment_count'] as num?)?.toInt())!,
-    tree: (json['tree'] != null ? CommitCommitTree.fromJson(json['tree'] as Map<String, dynamic>) : null)!,
-    verification: json['verification'] != null ? SdkPresent((json['verification'] != null ? Verification.fromJson(json['verification'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-  );
+        url: (json['url'] as String?)!,
+        author: json.containsKey('author')
+            ? json['author'] != null
+                ? NullableGitUser.fromJson(
+                    json['author'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'author', 'Required property is missing'),
+        committer: json.containsKey('committer')
+            ? json['committer'] != null
+                ? NullableGitUser.fromJson(
+                    json['committer'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'committer', 'Required property is missing'),
+        message: (json['message'] as String?)!,
+        commentCount: ((json['comment_count'] as num?)?.toInt())!,
+        tree: (json['tree'] != null
+            ? CommitCommitTree.fromJson(json['tree'] as Map<String, dynamic>)
+            : null)!,
+        verification: json['verification'] != null
+            ? SdkPresent((json['verification'] != null
+                ? Verification.fromJson(
+                    json['verification'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'url': url,
-    'author': author?.toJson(),
-    'committer': committer?.toJson(),
-    'message': message,
-    'comment_count': commentCount,
-    'tree': tree.toJson(),
-    ...switch (verification) {
-      SdkPresent<Verification>(value: final value) => {'verification': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'url': url,
+        'author': author?.toJson(),
+        'committer': committer?.toJson(),
+        'message': message,
+        'comment_count': commentCount,
+        'tree': tree.toJson(),
+        ...switch (verification) {
+          SdkPresent<Verification>(value: final value) => {
+              'verification': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Optional object value serialized in the `stats` wire field.
 class CommitStats {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `integer` value serialized in the `additions` wire field.
   final SdkOptional<int> additions;
+
   /// Optional `integer` value serialized in the `deletions` wire field.
   final SdkOptional<int> deletions;
+
   /// Optional `integer` value serialized in the `total` wire field.
   final SdkOptional<int> total;
 
-  const CommitStats({this.additions = const SdkOmitted(), this.deletions = const SdkOmitted(), this.total = const SdkOmitted()});
+  const CommitStats(
+      {this.additions = const SdkOmitted(),
+      this.deletions = const SdkOmitted(),
+      this.total = const SdkOmitted()});
 
-  CommitStats Function({SdkOptional<int> additions, SdkOptional<int> deletions, SdkOptional<int> total}) get copyWith => _copyWith;
+  CommitStats Function(
+      {SdkOptional<int> additions,
+      SdkOptional<int> deletions,
+      SdkOptional<int> total}) get copyWith => _copyWith;
 
-  CommitStats _copyWith({Object? additions = sdkOmittedValue, Object? deletions = sdkOmittedValue, Object? total = sdkOmittedValue}) => CommitStats(
-    additions: identical(additions, sdkOmittedValue) ? this.additions : additions as SdkOptional<int>,
-    deletions: identical(deletions, sdkOmittedValue) ? this.deletions : deletions as SdkOptional<int>,
-    total: identical(total, sdkOmittedValue) ? this.total : total as SdkOptional<int>,
-  );
+  CommitStats _copyWith(
+          {Object? additions = sdkOmittedValue,
+          Object? deletions = sdkOmittedValue,
+          Object? total = sdkOmittedValue}) =>
+      CommitStats(
+        additions: identical(additions, sdkOmittedValue)
+            ? this.additions
+            : additions as SdkOptional<int>,
+        deletions: identical(deletions, sdkOmittedValue)
+            ? this.deletions
+            : deletions as SdkOptional<int>,
+        total: identical(total, sdkOmittedValue)
+            ? this.total
+            : total as SdkOptional<int>,
+      );
 
   factory CommitStats.fromJson(Map<String, dynamic> json) => CommitStats(
-    additions: json['additions'] != null ? SdkPresent(((json['additions'] as num?)?.toInt())!) : const SdkOmitted(),
-    deletions: json['deletions'] != null ? SdkPresent(((json['deletions'] as num?)?.toInt())!) : const SdkOmitted(),
-    total: json['total'] != null ? SdkPresent(((json['total'] as num?)?.toInt())!) : const SdkOmitted(),
-  );
+        additions: json['additions'] != null
+            ? SdkPresent(((json['additions'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        deletions: json['deletions'] != null
+            ? SdkPresent(((json['deletions'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        total: json['total'] != null
+            ? SdkPresent(((json['total'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (additions) {
-      SdkPresent<int>(value: final value) => {'additions': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (deletions) {
-      SdkPresent<int>(value: final value) => {'deletions': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (total) {
-      SdkPresent<int>(value: final value) => {'total': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (additions) {
+          SdkPresent<int>(value: final value) => {
+              'additions': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (deletions) {
+          SdkPresent<int>(value: final value) => {
+              'deletions': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (total) {
+          SdkPresent<int>(value: final value) => {
+              'total': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Required object value serialized in the `parents[]` wire field.
 class CommitParentsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
+
   /// Optional `uri`-formatted value serialized in the `html_url` wire field.
   final SdkOptional<String> htmlUrl;
 
-  const CommitParentsItem({required this.sha, required this.url, this.htmlUrl = const SdkOmitted()});
+  const CommitParentsItem(
+      {required this.sha,
+      required this.url,
+      this.htmlUrl = const SdkOmitted()});
 
-  CommitParentsItem Function({String sha, String url, SdkOptional<String> htmlUrl}) get copyWith => _copyWith;
+  CommitParentsItem Function(
+      {String sha,
+      String url,
+      SdkOptional<String> htmlUrl}) get copyWith => _copyWith;
 
-  CommitParentsItem _copyWith({Object? sha = sdkOmittedValue, Object? url = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue}) => CommitParentsItem(
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String>,
-  );
+  CommitParentsItem _copyWith(
+          {Object? sha = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue}) =>
+      CommitParentsItem(
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as SdkOptional<String>,
+      );
 
-  factory CommitParentsItem.fromJson(Map<String, dynamic> json) => CommitParentsItem(
-    sha: (json['sha'] as String?)!,
-    url: (json['url'] as String?)!,
-    htmlUrl: json['html_url'] != null ? SdkPresent((json['html_url'] as String?)!) : const SdkOmitted(),
-  );
+  factory CommitParentsItem.fromJson(Map<String, dynamic> json) =>
+      CommitParentsItem(
+        sha: (json['sha'] as String?)!,
+        url: (json['url'] as String?)!,
+        htmlUrl: json['html_url'] != null
+            ? SdkPresent((json['html_url'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'sha': sha,
-    'url': url,
-    ...switch (htmlUrl) {
-      SdkPresent<String>(value: final value) => {'html_url': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'sha': sha,
+        'url': url,
+        ...switch (htmlUrl) {
+          SdkPresent<String>(value: final value) => {
+              'html_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Commit
 class Commit {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
+
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String htmlUrl;
+
   /// Required `uri`-formatted value serialized in the `comments_url` wire field.
   final String commentsUrl;
+
   /// Required object value serialized in the `commit` wire field.
   final CommitCommit commit;
+
   /// Required API value serialized in the `author` wire field.
   final CommitAuthor? author;
+
   /// Required API value serialized in the `committer` wire field.
   final CommitCommitter? committer;
+
   /// Required array value serialized in the `parents` wire field.
   final List<CommitParentsItem> parents;
+
   /// Optional object value serialized in the `stats` wire field.
   final SdkOptional<CommitStats> stats;
+
   /// Optional array value serialized in the `files` wire field.
   final SdkOptional<List<DiffEntry>> files;
 
-  const Commit({required this.url, required this.sha, required this.nodeId, required this.htmlUrl, required this.commentsUrl, required this.commit, required this.author, required this.committer, required this.parents, this.stats = const SdkOmitted(), this.files = const SdkOmitted()});
+  const Commit(
+      {required this.url,
+      required this.sha,
+      required this.nodeId,
+      required this.htmlUrl,
+      required this.commentsUrl,
+      required this.commit,
+      required this.author,
+      required this.committer,
+      required this.parents,
+      this.stats = const SdkOmitted(),
+      this.files = const SdkOmitted()});
 
-  Commit Function({String url, String sha, String nodeId, String htmlUrl, String commentsUrl, CommitCommit commit, CommitAuthor? author, CommitCommitter? committer, List<CommitParentsItem> parents, SdkOptional<CommitStats> stats, SdkOptional<List<DiffEntry>> files}) get copyWith => _copyWith;
+  Commit Function(
+      {String url,
+      String sha,
+      String nodeId,
+      String htmlUrl,
+      String commentsUrl,
+      CommitCommit commit,
+      CommitAuthor? author,
+      CommitCommitter? committer,
+      List<CommitParentsItem> parents,
+      SdkOptional<CommitStats> stats,
+      SdkOptional<List<DiffEntry>> files}) get copyWith => _copyWith;
 
-  Commit _copyWith({Object? url = sdkOmittedValue, Object? sha = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? commentsUrl = sdkOmittedValue, Object? commit = sdkOmittedValue, Object? author = sdkOmittedValue, Object? committer = sdkOmittedValue, Object? parents = sdkOmittedValue, Object? stats = sdkOmittedValue, Object? files = sdkOmittedValue}) => Commit(
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
-    commentsUrl: identical(commentsUrl, sdkOmittedValue) ? this.commentsUrl : commentsUrl as String,
-    commit: identical(commit, sdkOmittedValue) ? this.commit : commit as CommitCommit,
-    author: identical(author, sdkOmittedValue) ? this.author : author as CommitAuthor?,
-    committer: identical(committer, sdkOmittedValue) ? this.committer : committer as CommitCommitter?,
-    parents: identical(parents, sdkOmittedValue) ? this.parents : parents as List<CommitParentsItem>,
-    stats: identical(stats, sdkOmittedValue) ? this.stats : stats as SdkOptional<CommitStats>,
-    files: identical(files, sdkOmittedValue) ? this.files : files as SdkOptional<List<DiffEntry>>,
-  );
+  Commit _copyWith(
+          {Object? url = sdkOmittedValue,
+          Object? sha = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? commentsUrl = sdkOmittedValue,
+          Object? commit = sdkOmittedValue,
+          Object? author = sdkOmittedValue,
+          Object? committer = sdkOmittedValue,
+          Object? parents = sdkOmittedValue,
+          Object? stats = sdkOmittedValue,
+          Object? files = sdkOmittedValue}) =>
+      Commit(
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as String,
+        commentsUrl: identical(commentsUrl, sdkOmittedValue)
+            ? this.commentsUrl
+            : commentsUrl as String,
+        commit: identical(commit, sdkOmittedValue)
+            ? this.commit
+            : commit as CommitCommit,
+        author: identical(author, sdkOmittedValue)
+            ? this.author
+            : author as CommitAuthor?,
+        committer: identical(committer, sdkOmittedValue)
+            ? this.committer
+            : committer as CommitCommitter?,
+        parents: identical(parents, sdkOmittedValue)
+            ? this.parents
+            : parents as List<CommitParentsItem>,
+        stats: identical(stats, sdkOmittedValue)
+            ? this.stats
+            : stats as SdkOptional<CommitStats>,
+        files: identical(files, sdkOmittedValue)
+            ? this.files
+            : files as SdkOptional<List<DiffEntry>>,
+      );
 
   factory Commit.fromJson(Map<String, dynamic> json) => Commit(
-    url: (json['url'] as String?)!,
-    sha: (json['sha'] as String?)!,
-    nodeId: (json['node_id'] as String?)!,
-    htmlUrl: (json['html_url'] as String?)!,
-    commentsUrl: (json['comments_url'] as String?)!,
-    commit: (json['commit'] != null ? CommitCommit.fromJson(json['commit'] as Map<String, dynamic>) : null)!,
-    author: json.containsKey('author') ? json['author'] != null ? CommitAuthor.fromJson(json['author']) : null : throw ArgumentError.value(null, 'author', 'Required property is missing'),
-    committer: json.containsKey('committer') ? json['committer'] != null ? CommitCommitter.fromJson(json['committer']) : null : throw ArgumentError.value(null, 'committer', 'Required property is missing'),
-    parents: ((json['parents'] as List?)?.map((e) => CommitParentsItem.fromJson(e as Map<String, dynamic>)).toList())!,
-    stats: json['stats'] != null ? SdkPresent((json['stats'] != null ? CommitStats.fromJson(json['stats'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    files: json['files'] != null ? SdkPresent(((json['files'] as List?)?.map((e) => DiffEntry.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
+        url: (json['url'] as String?)!,
+        sha: (json['sha'] as String?)!,
+        nodeId: (json['node_id'] as String?)!,
+        htmlUrl: (json['html_url'] as String?)!,
+        commentsUrl: (json['comments_url'] as String?)!,
+        commit: (json['commit'] != null
+            ? CommitCommit.fromJson(json['commit'] as Map<String, dynamic>)
+            : null)!,
+        author: json.containsKey('author')
+            ? json['author'] != null
+                ? CommitAuthor.fromJson(json['author'])
+                : null
+            : throw ArgumentError.value(
+                null, 'author', 'Required property is missing'),
+        committer: json.containsKey('committer')
+            ? json['committer'] != null
+                ? CommitCommitter.fromJson(json['committer'])
+                : null
+            : throw ArgumentError.value(
+                null, 'committer', 'Required property is missing'),
+        parents: ((json['parents'] as List?)
+            ?.map((e) => CommitParentsItem.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        stats: json['stats'] != null
+            ? SdkPresent((json['stats'] != null
+                ? CommitStats.fromJson(json['stats'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        files: json['files'] != null
+            ? SdkPresent(((json['files'] as List?)
+                ?.map((e) => DiffEntry.fromJson(e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'url': url,
-    'sha': sha,
-    'node_id': nodeId,
-    'html_url': htmlUrl,
-    'comments_url': commentsUrl,
-    'commit': commit.toJson(),
-    'author': author?.toJson(),
-    'committer': committer?.toJson(),
-    'parents': parents.map((item) => item.toJson()).toList(),
-    ...switch (stats) {
-      SdkPresent<CommitStats>(value: final value) => {'stats': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (files) {
-      SdkPresent<List<DiffEntry>>(value: final value) => {'files': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'url': url,
+        'sha': sha,
+        'node_id': nodeId,
+        'html_url': htmlUrl,
+        'comments_url': commentsUrl,
+        'commit': commit.toJson(),
+        'author': author?.toJson(),
+        'committer': committer?.toJson(),
+        'parents': parents.map((item) => item.toJson()).toList(),
+        ...switch (stats) {
+          SdkPresent<CommitStats>(value: final value) => {
+              'stats': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (files) {
+          SdkPresent<List<DiffEntry>>(value: final value) => {
+              'files': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 sealed class CommitAuthor {
@@ -255,8 +461,13 @@ sealed class CommitAuthor {
   static const String constructionSurface = 'named';
   const CommitAuthor();
   factory CommitAuthor.fromJson(Object? json) {
-    if (json is Map) { return CommitAuthorMap(Map<String, dynamic>.from(json)); }
-    try { return CommitAuthorSimpleUser(SimpleUser.fromJson(json as Map<String, dynamic>)); } catch (_) {}
+    if (json is Map) {
+      return CommitAuthorMap(Map<String, dynamic>.from(json));
+    }
+    try {
+      return CommitAuthorSimpleUser(
+          SimpleUser.fromJson(json as Map<String, dynamic>));
+    } catch (_) {}
     throw FormatException("No variant matched for CommitAuthor");
   }
   Object? toJson();
@@ -265,11 +476,13 @@ sealed class CommitAuthor {
 final class CommitAuthorSimpleUser extends CommitAuthor {
   final SimpleUser value;
   const CommitAuthorSimpleUser(this.value);
-  @override Object? toJson() => value.toJson();
+  @override
+  Object? toJson() => value.toJson();
 }
 
 final class CommitAuthorMap extends CommitAuthor {
   final Map<String, dynamic> value;
   const CommitAuthorMap(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }

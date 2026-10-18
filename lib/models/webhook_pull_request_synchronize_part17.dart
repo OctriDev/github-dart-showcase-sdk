@@ -8,97 +8,206 @@ part of 'webhook_pull_request_synchronize.dart';
 class WebhookPullRequestSynchronizePullRequestMilestone {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `date-time`-formatted value serialized in the `closed_at` wire field.
   final String? closedAt;
+
   /// Required `integer` value serialized in the `closed_issues` wire field.
   final int closedIssues;
+
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String createdAt;
+
   /// Required object value serialized in the `creator` wire field.
   final WebhookPullRequestSynchronizePullRequestMilestoneCreator? creator;
+
   /// Required `string` value serialized in the `description` wire field.
   final String? description;
+
   /// Required `date-time`-formatted value serialized in the `due_on` wire field.
   final String? dueOn;
+
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String htmlUrl;
+
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
+
   /// Required `uri`-formatted value serialized in the `labels_url` wire field.
   final String labelsUrl;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// The number of the milestone.
   final int number;
+
   /// Required `integer` value serialized in the `open_issues` wire field.
   final int openIssues;
+
   /// The state of the milestone.
   final WebhookPullRequestSynchronizePullRequestMilestoneState state;
+
   /// The title of the milestone.
   final String title;
+
   /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
   final String updatedAt;
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
 
-  const WebhookPullRequestSynchronizePullRequestMilestone({required this.closedAt, required this.closedIssues, required this.createdAt, required this.creator, required this.description, required this.dueOn, required this.htmlUrl, required this.id, required this.labelsUrl, required this.nodeId, required this.number, required this.openIssues, required this.state, required this.title, required this.updatedAt, required this.url});
+  const WebhookPullRequestSynchronizePullRequestMilestone(
+      {required this.closedAt,
+      required this.closedIssues,
+      required this.createdAt,
+      required this.creator,
+      required this.description,
+      required this.dueOn,
+      required this.htmlUrl,
+      required this.id,
+      required this.labelsUrl,
+      required this.nodeId,
+      required this.number,
+      required this.openIssues,
+      required this.state,
+      required this.title,
+      required this.updatedAt,
+      required this.url});
 
-  WebhookPullRequestSynchronizePullRequestMilestone Function({String? closedAt, int closedIssues, String createdAt, WebhookPullRequestSynchronizePullRequestMilestoneCreator? creator, String? description, String? dueOn, String htmlUrl, int id, String labelsUrl, String nodeId, int number, int openIssues, WebhookPullRequestSynchronizePullRequestMilestoneState state, String title, String updatedAt, String url}) get copyWith => _copyWith;
+  WebhookPullRequestSynchronizePullRequestMilestone Function(
+      {String? closedAt,
+      int closedIssues,
+      String createdAt,
+      WebhookPullRequestSynchronizePullRequestMilestoneCreator? creator,
+      String? description,
+      String? dueOn,
+      String htmlUrl,
+      int id,
+      String labelsUrl,
+      String nodeId,
+      int number,
+      int openIssues,
+      WebhookPullRequestSynchronizePullRequestMilestoneState state,
+      String title,
+      String updatedAt,
+      String url}) get copyWith => _copyWith;
 
-  WebhookPullRequestSynchronizePullRequestMilestone _copyWith({Object? closedAt = sdkOmittedValue, Object? closedIssues = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? creator = sdkOmittedValue, Object? description = sdkOmittedValue, Object? dueOn = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? id = sdkOmittedValue, Object? labelsUrl = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? number = sdkOmittedValue, Object? openIssues = sdkOmittedValue, Object? state = sdkOmittedValue, Object? title = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookPullRequestSynchronizePullRequestMilestone(
-    closedAt: identical(closedAt, sdkOmittedValue) ? this.closedAt : closedAt as String?,
-    closedIssues: identical(closedIssues, sdkOmittedValue) ? this.closedIssues : closedIssues as int,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    creator: identical(creator, sdkOmittedValue) ? this.creator : creator as WebhookPullRequestSynchronizePullRequestMilestoneCreator?,
-    description: identical(description, sdkOmittedValue) ? this.description : description as String?,
-    dueOn: identical(dueOn, sdkOmittedValue) ? this.dueOn : dueOn as String?,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    labelsUrl: identical(labelsUrl, sdkOmittedValue) ? this.labelsUrl : labelsUrl as String,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    number: identical(number, sdkOmittedValue) ? this.number : number as int,
-    openIssues: identical(openIssues, sdkOmittedValue) ? this.openIssues : openIssues as int,
-    state: identical(state, sdkOmittedValue) ? this.state : state as WebhookPullRequestSynchronizePullRequestMilestoneState,
-    title: identical(title, sdkOmittedValue) ? this.title : title as String,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-  );
+  WebhookPullRequestSynchronizePullRequestMilestone _copyWith(
+          {Object? closedAt = sdkOmittedValue,
+          Object? closedIssues = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? creator = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? dueOn = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? labelsUrl = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? number = sdkOmittedValue,
+          Object? openIssues = sdkOmittedValue,
+          Object? state = sdkOmittedValue,
+          Object? title = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? url = sdkOmittedValue}) =>
+      WebhookPullRequestSynchronizePullRequestMilestone(
+        closedAt: identical(closedAt, sdkOmittedValue)
+            ? this.closedAt
+            : closedAt as String?,
+        closedIssues: identical(closedIssues, sdkOmittedValue)
+            ? this.closedIssues
+            : closedIssues as int,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        creator: identical(creator, sdkOmittedValue)
+            ? this.creator
+            : creator
+                as WebhookPullRequestSynchronizePullRequestMilestoneCreator?,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as String?,
+        dueOn:
+            identical(dueOn, sdkOmittedValue) ? this.dueOn : dueOn as String?,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        labelsUrl: identical(labelsUrl, sdkOmittedValue)
+            ? this.labelsUrl
+            : labelsUrl as String,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        number:
+            identical(number, sdkOmittedValue) ? this.number : number as int,
+        openIssues: identical(openIssues, sdkOmittedValue)
+            ? this.openIssues
+            : openIssues as int,
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state as WebhookPullRequestSynchronizePullRequestMilestoneState,
+        title: identical(title, sdkOmittedValue) ? this.title : title as String,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+      );
 
-  factory WebhookPullRequestSynchronizePullRequestMilestone.fromJson(Map<String, dynamic> json) => WebhookPullRequestSynchronizePullRequestMilestone(
-    closedAt: json.containsKey('closed_at') ? json['closed_at'] as String? : throw ArgumentError.value(null, 'closed_at', 'Required property is missing'),
-    closedIssues: ((json['closed_issues'] as num?)?.toInt())!,
-    createdAt: (json['created_at'] as String?)!,
-    creator: json.containsKey('creator') ? json['creator'] != null ? WebhookPullRequestSynchronizePullRequestMilestoneCreator.fromJson(json['creator'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'creator', 'Required property is missing'),
-    description: json.containsKey('description') ? json['description'] as String? : throw ArgumentError.value(null, 'description', 'Required property is missing'),
-    dueOn: json.containsKey('due_on') ? json['due_on'] as String? : throw ArgumentError.value(null, 'due_on', 'Required property is missing'),
-    htmlUrl: (json['html_url'] as String?)!,
-    id: ((json['id'] as num?)?.toInt())!,
-    labelsUrl: (json['labels_url'] as String?)!,
-    nodeId: (json['node_id'] as String?)!,
-    number: ((json['number'] as num?)?.toInt())!,
-    openIssues: ((json['open_issues'] as num?)?.toInt())!,
-    state: (json['state'] != null ? WebhookPullRequestSynchronizePullRequestMilestoneState.fromJson(json['state'] as String) : null)!,
-    title: (json['title'] as String?)!,
-    updatedAt: (json['updated_at'] as String?)!,
-    url: (json['url'] as String?)!,
-  );
+  factory WebhookPullRequestSynchronizePullRequestMilestone.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPullRequestSynchronizePullRequestMilestone(
+        closedAt: json.containsKey('closed_at')
+            ? json['closed_at'] as String?
+            : throw ArgumentError.value(
+                null, 'closed_at', 'Required property is missing'),
+        closedIssues: ((json['closed_issues'] as num?)?.toInt())!,
+        createdAt: (json['created_at'] as String?)!,
+        creator: json.containsKey('creator')
+            ? json['creator'] != null
+                ? WebhookPullRequestSynchronizePullRequestMilestoneCreator
+                    .fromJson(json['creator'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'creator', 'Required property is missing'),
+        description: json.containsKey('description')
+            ? json['description'] as String?
+            : throw ArgumentError.value(
+                null, 'description', 'Required property is missing'),
+        dueOn: json.containsKey('due_on')
+            ? json['due_on'] as String?
+            : throw ArgumentError.value(
+                null, 'due_on', 'Required property is missing'),
+        htmlUrl: (json['html_url'] as String?)!,
+        id: ((json['id'] as num?)?.toInt())!,
+        labelsUrl: (json['labels_url'] as String?)!,
+        nodeId: (json['node_id'] as String?)!,
+        number: ((json['number'] as num?)?.toInt())!,
+        openIssues: ((json['open_issues'] as num?)?.toInt())!,
+        state: (json['state'] != null
+            ? WebhookPullRequestSynchronizePullRequestMilestoneState.fromJson(
+                json['state'] as String)
+            : null)!,
+        title: (json['title'] as String?)!,
+        updatedAt: (json['updated_at'] as String?)!,
+        url: (json['url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'closed_at': closedAt,
-    'closed_issues': closedIssues,
-    'created_at': createdAt,
-    'creator': creator?.toJson(),
-    'description': description,
-    'due_on': dueOn,
-    'html_url': htmlUrl,
-    'id': id,
-    'labels_url': labelsUrl,
-    'node_id': nodeId,
-    'number': number,
-    'open_issues': openIssues,
-    'state': state.toJson(),
-    'title': title,
-    'updated_at': updatedAt,
-    'url': url,
-  };
+        'closed_at': closedAt,
+        'closed_issues': closedIssues,
+        'created_at': createdAt,
+        'creator': creator?.toJson(),
+        'description': description,
+        'due_on': dueOn,
+        'html_url': htmlUrl,
+        'id': id,
+        'labels_url': labelsUrl,
+        'node_id': nodeId,
+        'number': number,
+        'open_issues': openIssues,
+        'state': state.toJson(),
+        'title': title,
+        'updated_at': updatedAt,
+        'url': url,
+      };
 }

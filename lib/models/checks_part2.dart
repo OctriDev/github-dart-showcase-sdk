@@ -8,203 +8,420 @@ part of 'checks.dart';
 class CheckSuite {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `int64`-formatted value serialized in the `id` wire field.
   final int id;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// Required `string` value serialized in the `head_branch` wire field.
   final String? headBranch;
+
   /// The SHA of the head commit that is being checked.
   final String headSha;
+
   /// The phase of the lifecycle that the check suite is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check suites.
   final CheckSuiteStatus? status;
+
   /// Required enumerated value serialized in the `conclusion` wire field.
   final CheckSuiteConclusion? conclusion;
+
   /// Required `string` value serialized in the `url` wire field.
   final String? url;
+
   /// Required `string` value serialized in the `before` wire field.
   final String? before;
+
   /// Required `string` value serialized in the `after` wire field.
   final String? after;
+
   /// Required array value serialized in the `pull_requests` wire field.
   final List<PullRequestMinimal>? pullRequests;
+
   /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
   final NullableIntegration? app;
+
   /// Minimal Repository
   final MinimalRepository repository;
+
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String? createdAt;
+
   /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
   final String? updatedAt;
+
   /// A commit.
   final SimpleCommit headCommit;
+
   /// Required `integer` value serialized in the `latest_check_runs_count` wire field.
   final int latestCheckRunsCount;
+
   /// Required `string` value serialized in the `check_runs_url` wire field.
   final String checkRunsUrl;
+
   /// Optional `boolean` value serialized in the `rerequestable` wire field.
   final SdkOptional<bool> rerequestable;
+
   /// Optional `boolean` value serialized in the `runs_rerequestable` wire field.
   final SdkOptional<bool> runsRerequestable;
 
-  const CheckSuite({required this.id, required this.nodeId, required this.headBranch, required this.headSha, required this.status, required this.conclusion, required this.url, required this.before, required this.after, required this.pullRequests, required this.app, required this.repository, required this.createdAt, required this.updatedAt, required this.headCommit, required this.latestCheckRunsCount, required this.checkRunsUrl, this.rerequestable = const SdkOmitted(), this.runsRerequestable = const SdkOmitted()});
+  const CheckSuite(
+      {required this.id,
+      required this.nodeId,
+      required this.headBranch,
+      required this.headSha,
+      required this.status,
+      required this.conclusion,
+      required this.url,
+      required this.before,
+      required this.after,
+      required this.pullRequests,
+      required this.app,
+      required this.repository,
+      required this.createdAt,
+      required this.updatedAt,
+      required this.headCommit,
+      required this.latestCheckRunsCount,
+      required this.checkRunsUrl,
+      this.rerequestable = const SdkOmitted(),
+      this.runsRerequestable = const SdkOmitted()});
 
-  CheckSuite Function({int id, String nodeId, String? headBranch, String headSha, CheckSuiteStatus? status, CheckSuiteConclusion? conclusion, String? url, String? before, String? after, List<PullRequestMinimal>? pullRequests, NullableIntegration? app, MinimalRepository repository, String? createdAt, String? updatedAt, SimpleCommit headCommit, int latestCheckRunsCount, String checkRunsUrl, SdkOptional<bool> rerequestable, SdkOptional<bool> runsRerequestable}) get copyWith => _copyWith;
+  CheckSuite Function(
+      {int id,
+      String nodeId,
+      String? headBranch,
+      String headSha,
+      CheckSuiteStatus? status,
+      CheckSuiteConclusion? conclusion,
+      String? url,
+      String? before,
+      String? after,
+      List<PullRequestMinimal>? pullRequests,
+      NullableIntegration? app,
+      MinimalRepository repository,
+      String? createdAt,
+      String? updatedAt,
+      SimpleCommit headCommit,
+      int latestCheckRunsCount,
+      String checkRunsUrl,
+      SdkOptional<bool> rerequestable,
+      SdkOptional<bool> runsRerequestable}) get copyWith => _copyWith;
 
-  CheckSuite _copyWith({Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? headBranch = sdkOmittedValue, Object? headSha = sdkOmittedValue, Object? status = sdkOmittedValue, Object? conclusion = sdkOmittedValue, Object? url = sdkOmittedValue, Object? before = sdkOmittedValue, Object? after = sdkOmittedValue, Object? pullRequests = sdkOmittedValue, Object? app = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? headCommit = sdkOmittedValue, Object? latestCheckRunsCount = sdkOmittedValue, Object? checkRunsUrl = sdkOmittedValue, Object? rerequestable = sdkOmittedValue, Object? runsRerequestable = sdkOmittedValue}) => CheckSuite(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    headBranch: identical(headBranch, sdkOmittedValue) ? this.headBranch : headBranch as String?,
-    headSha: identical(headSha, sdkOmittedValue) ? this.headSha : headSha as String,
-    status: identical(status, sdkOmittedValue) ? this.status : status as CheckSuiteStatus?,
-    conclusion: identical(conclusion, sdkOmittedValue) ? this.conclusion : conclusion as CheckSuiteConclusion?,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String?,
-    before: identical(before, sdkOmittedValue) ? this.before : before as String?,
-    after: identical(after, sdkOmittedValue) ? this.after : after as String?,
-    pullRequests: identical(pullRequests, sdkOmittedValue) ? this.pullRequests : pullRequests as List<PullRequestMinimal>?,
-    app: identical(app, sdkOmittedValue) ? this.app : app as NullableIntegration?,
-    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as MinimalRepository,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String?,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String?,
-    headCommit: identical(headCommit, sdkOmittedValue) ? this.headCommit : headCommit as SimpleCommit,
-    latestCheckRunsCount: identical(latestCheckRunsCount, sdkOmittedValue) ? this.latestCheckRunsCount : latestCheckRunsCount as int,
-    checkRunsUrl: identical(checkRunsUrl, sdkOmittedValue) ? this.checkRunsUrl : checkRunsUrl as String,
-    rerequestable: identical(rerequestable, sdkOmittedValue) ? this.rerequestable : rerequestable as SdkOptional<bool>,
-    runsRerequestable: identical(runsRerequestable, sdkOmittedValue) ? this.runsRerequestable : runsRerequestable as SdkOptional<bool>,
-  );
+  CheckSuite _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? headBranch = sdkOmittedValue,
+          Object? headSha = sdkOmittedValue,
+          Object? status = sdkOmittedValue,
+          Object? conclusion = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? before = sdkOmittedValue,
+          Object? after = sdkOmittedValue,
+          Object? pullRequests = sdkOmittedValue,
+          Object? app = sdkOmittedValue,
+          Object? repository = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? headCommit = sdkOmittedValue,
+          Object? latestCheckRunsCount = sdkOmittedValue,
+          Object? checkRunsUrl = sdkOmittedValue,
+          Object? rerequestable = sdkOmittedValue,
+          Object? runsRerequestable = sdkOmittedValue}) =>
+      CheckSuite(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        headBranch: identical(headBranch, sdkOmittedValue)
+            ? this.headBranch
+            : headBranch as String?,
+        headSha: identical(headSha, sdkOmittedValue)
+            ? this.headSha
+            : headSha as String,
+        status: identical(status, sdkOmittedValue)
+            ? this.status
+            : status as CheckSuiteStatus?,
+        conclusion: identical(conclusion, sdkOmittedValue)
+            ? this.conclusion
+            : conclusion as CheckSuiteConclusion?,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String?,
+        before: identical(before, sdkOmittedValue)
+            ? this.before
+            : before as String?,
+        after:
+            identical(after, sdkOmittedValue) ? this.after : after as String?,
+        pullRequests: identical(pullRequests, sdkOmittedValue)
+            ? this.pullRequests
+            : pullRequests as List<PullRequestMinimal>?,
+        app: identical(app, sdkOmittedValue)
+            ? this.app
+            : app as NullableIntegration?,
+        repository: identical(repository, sdkOmittedValue)
+            ? this.repository
+            : repository as MinimalRepository,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String?,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String?,
+        headCommit: identical(headCommit, sdkOmittedValue)
+            ? this.headCommit
+            : headCommit as SimpleCommit,
+        latestCheckRunsCount: identical(latestCheckRunsCount, sdkOmittedValue)
+            ? this.latestCheckRunsCount
+            : latestCheckRunsCount as int,
+        checkRunsUrl: identical(checkRunsUrl, sdkOmittedValue)
+            ? this.checkRunsUrl
+            : checkRunsUrl as String,
+        rerequestable: identical(rerequestable, sdkOmittedValue)
+            ? this.rerequestable
+            : rerequestable as SdkOptional<bool>,
+        runsRerequestable: identical(runsRerequestable, sdkOmittedValue)
+            ? this.runsRerequestable
+            : runsRerequestable as SdkOptional<bool>,
+      );
 
   factory CheckSuite.fromJson(Map<String, dynamic> json) => CheckSuite(
-    id: ((json['id'] as num?)?.toInt())!,
-    nodeId: (json['node_id'] as String?)!,
-    headBranch: json.containsKey('head_branch') ? json['head_branch'] as String? : throw ArgumentError.value(null, 'head_branch', 'Required property is missing'),
-    headSha: (json['head_sha'] as String?)!,
-    status: json.containsKey('status') ? json['status'] != null ? CheckSuiteStatus.fromJson(json['status'] as String) : null : throw ArgumentError.value(null, 'status', 'Required property is missing'),
-    conclusion: json.containsKey('conclusion') ? json['conclusion'] != null ? CheckSuiteConclusion.fromJson(json['conclusion'] as String) : null : throw ArgumentError.value(null, 'conclusion', 'Required property is missing'),
-    url: json.containsKey('url') ? json['url'] as String? : throw ArgumentError.value(null, 'url', 'Required property is missing'),
-    before: json.containsKey('before') ? json['before'] as String? : throw ArgumentError.value(null, 'before', 'Required property is missing'),
-    after: json.containsKey('after') ? json['after'] as String? : throw ArgumentError.value(null, 'after', 'Required property is missing'),
-    pullRequests: json.containsKey('pull_requests') ? (json['pull_requests'] as List?)?.map((e) => PullRequestMinimal.fromJson(e as Map<String, dynamic>)).toList() : throw ArgumentError.value(null, 'pull_requests', 'Required property is missing'),
-    app: json.containsKey('app') ? json['app'] != null ? NullableIntegration.fromJson(json['app'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'app', 'Required property is missing'),
-    repository: (json['repository'] != null ? MinimalRepository.fromJson(json['repository'] as Map<String, dynamic>) : null)!,
-    createdAt: json.containsKey('created_at') ? json['created_at'] as String? : throw ArgumentError.value(null, 'created_at', 'Required property is missing'),
-    updatedAt: json.containsKey('updated_at') ? json['updated_at'] as String? : throw ArgumentError.value(null, 'updated_at', 'Required property is missing'),
-    headCommit: (json['head_commit'] != null ? SimpleCommit.fromJson(json['head_commit'] as Map<String, dynamic>) : null)!,
-    latestCheckRunsCount: ((json['latest_check_runs_count'] as num?)?.toInt())!,
-    checkRunsUrl: (json['check_runs_url'] as String?)!,
-    rerequestable: json['rerequestable'] != null ? SdkPresent((json['rerequestable'] as bool?)!) : const SdkOmitted(),
-    runsRerequestable: json['runs_rerequestable'] != null ? SdkPresent((json['runs_rerequestable'] as bool?)!) : const SdkOmitted(),
-  );
+        id: ((json['id'] as num?)?.toInt())!,
+        nodeId: (json['node_id'] as String?)!,
+        headBranch: json.containsKey('head_branch')
+            ? json['head_branch'] as String?
+            : throw ArgumentError.value(
+                null, 'head_branch', 'Required property is missing'),
+        headSha: (json['head_sha'] as String?)!,
+        status: json.containsKey('status')
+            ? json['status'] != null
+                ? CheckSuiteStatus.fromJson(json['status'] as String)
+                : null
+            : throw ArgumentError.value(
+                null, 'status', 'Required property is missing'),
+        conclusion: json.containsKey('conclusion')
+            ? json['conclusion'] != null
+                ? CheckSuiteConclusion.fromJson(json['conclusion'] as String)
+                : null
+            : throw ArgumentError.value(
+                null, 'conclusion', 'Required property is missing'),
+        url: json.containsKey('url')
+            ? json['url'] as String?
+            : throw ArgumentError.value(
+                null, 'url', 'Required property is missing'),
+        before: json.containsKey('before')
+            ? json['before'] as String?
+            : throw ArgumentError.value(
+                null, 'before', 'Required property is missing'),
+        after: json.containsKey('after')
+            ? json['after'] as String?
+            : throw ArgumentError.value(
+                null, 'after', 'Required property is missing'),
+        pullRequests: json.containsKey('pull_requests')
+            ? (json['pull_requests'] as List?)
+                ?.map((e) =>
+                    PullRequestMinimal.fromJson(e as Map<String, dynamic>))
+                .toList()
+            : throw ArgumentError.value(
+                null, 'pull_requests', 'Required property is missing'),
+        app: json.containsKey('app')
+            ? json['app'] != null
+                ? NullableIntegration.fromJson(
+                    json['app'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'app', 'Required property is missing'),
+        repository: (json['repository'] != null
+            ? MinimalRepository.fromJson(
+                json['repository'] as Map<String, dynamic>)
+            : null)!,
+        createdAt: json.containsKey('created_at')
+            ? json['created_at'] as String?
+            : throw ArgumentError.value(
+                null, 'created_at', 'Required property is missing'),
+        updatedAt: json.containsKey('updated_at')
+            ? json['updated_at'] as String?
+            : throw ArgumentError.value(
+                null, 'updated_at', 'Required property is missing'),
+        headCommit: (json['head_commit'] != null
+            ? SimpleCommit.fromJson(json['head_commit'] as Map<String, dynamic>)
+            : null)!,
+        latestCheckRunsCount:
+            ((json['latest_check_runs_count'] as num?)?.toInt())!,
+        checkRunsUrl: (json['check_runs_url'] as String?)!,
+        rerequestable: json['rerequestable'] != null
+            ? SdkPresent((json['rerequestable'] as bool?)!)
+            : const SdkOmitted(),
+        runsRerequestable: json['runs_rerequestable'] != null
+            ? SdkPresent((json['runs_rerequestable'] as bool?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'node_id': nodeId,
-    'head_branch': headBranch,
-    'head_sha': headSha,
-    'status': status?.toJson(),
-    'conclusion': conclusion?.toJson(),
-    'url': url,
-    'before': before,
-    'after': after,
-    'pull_requests': pullRequests?.map((item) => item.toJson()).toList(),
-    'app': app?.toJson(),
-    'repository': repository.toJson(),
-    'created_at': createdAt,
-    'updated_at': updatedAt,
-    'head_commit': headCommit.toJson(),
-    'latest_check_runs_count': latestCheckRunsCount,
-    'check_runs_url': checkRunsUrl,
-    ...switch (rerequestable) {
-      SdkPresent<bool>(value: final value) => {'rerequestable': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (runsRerequestable) {
-      SdkPresent<bool>(value: final value) => {'runs_rerequestable': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'id': id,
+        'node_id': nodeId,
+        'head_branch': headBranch,
+        'head_sha': headSha,
+        'status': status?.toJson(),
+        'conclusion': conclusion?.toJson(),
+        'url': url,
+        'before': before,
+        'after': after,
+        'pull_requests': pullRequests?.map((item) => item.toJson()).toList(),
+        'app': app?.toJson(),
+        'repository': repository.toJson(),
+        'created_at': createdAt,
+        'updated_at': updatedAt,
+        'head_commit': headCommit.toJson(),
+        'latest_check_runs_count': latestCheckRunsCount,
+        'check_runs_url': checkRunsUrl,
+        ...switch (rerequestable) {
+          SdkPresent<bool>(value: final value) => {
+              'rerequestable': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (runsRerequestable) {
+          SdkPresent<bool>(value: final value) => {
+              'runs_rerequestable': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Required object value serialized in the `auto_trigger_checks[]` wire field.
 class CheckSuitePreferencePreferencesAutoTriggerChecksItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `integer` value serialized in the `app_id` wire field.
   final int appId;
+
   /// Required `boolean` value serialized in the `setting` wire field.
   final bool setting;
 
-  const CheckSuitePreferencePreferencesAutoTriggerChecksItem({required this.appId, required this.setting});
+  const CheckSuitePreferencePreferencesAutoTriggerChecksItem(
+      {required this.appId, required this.setting});
 
-  CheckSuitePreferencePreferencesAutoTriggerChecksItem Function({int appId, bool setting}) get copyWith => _copyWith;
+  CheckSuitePreferencePreferencesAutoTriggerChecksItem Function(
+      {int appId, bool setting}) get copyWith => _copyWith;
 
-  CheckSuitePreferencePreferencesAutoTriggerChecksItem _copyWith({Object? appId = sdkOmittedValue, Object? setting = sdkOmittedValue}) => CheckSuitePreferencePreferencesAutoTriggerChecksItem(
-    appId: identical(appId, sdkOmittedValue) ? this.appId : appId as int,
-    setting: identical(setting, sdkOmittedValue) ? this.setting : setting as bool,
-  );
+  CheckSuitePreferencePreferencesAutoTriggerChecksItem _copyWith(
+          {Object? appId = sdkOmittedValue,
+          Object? setting = sdkOmittedValue}) =>
+      CheckSuitePreferencePreferencesAutoTriggerChecksItem(
+        appId: identical(appId, sdkOmittedValue) ? this.appId : appId as int,
+        setting: identical(setting, sdkOmittedValue)
+            ? this.setting
+            : setting as bool,
+      );
 
-  factory CheckSuitePreferencePreferencesAutoTriggerChecksItem.fromJson(Map<String, dynamic> json) => CheckSuitePreferencePreferencesAutoTriggerChecksItem(
-    appId: ((json['app_id'] as num?)?.toInt())!,
-    setting: (json['setting'] as bool?)!,
-  );
+  factory CheckSuitePreferencePreferencesAutoTriggerChecksItem.fromJson(
+          Map<String, dynamic> json) =>
+      CheckSuitePreferencePreferencesAutoTriggerChecksItem(
+        appId: ((json['app_id'] as num?)?.toInt())!,
+        setting: (json['setting'] as bool?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'app_id': appId,
-    'setting': setting,
-  };
+        'app_id': appId,
+        'setting': setting,
+      };
 }
 
 /// Required object value serialized in the `preferences` wire field.
 class CheckSuitePreferencePreferences {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional array value serialized in the `auto_trigger_checks` wire field.
-  final SdkOptional<List<CheckSuitePreferencePreferencesAutoTriggerChecksItem>> autoTriggerChecks;
+  final SdkOptional<List<CheckSuitePreferencePreferencesAutoTriggerChecksItem>>
+      autoTriggerChecks;
 
-  const CheckSuitePreferencePreferences({this.autoTriggerChecks = const SdkOmitted()});
+  const CheckSuitePreferencePreferences(
+      {this.autoTriggerChecks = const SdkOmitted()});
 
-  CheckSuitePreferencePreferences Function({SdkOptional<List<CheckSuitePreferencePreferencesAutoTriggerChecksItem>> autoTriggerChecks}) get copyWith => _copyWith;
+  CheckSuitePreferencePreferences Function(
+      {SdkOptional<List<CheckSuitePreferencePreferencesAutoTriggerChecksItem>>
+          autoTriggerChecks}) get copyWith => _copyWith;
 
-  CheckSuitePreferencePreferences _copyWith({Object? autoTriggerChecks = sdkOmittedValue}) => CheckSuitePreferencePreferences(
-    autoTriggerChecks: identical(autoTriggerChecks, sdkOmittedValue) ? this.autoTriggerChecks : autoTriggerChecks as SdkOptional<List<CheckSuitePreferencePreferencesAutoTriggerChecksItem>>,
-  );
+  CheckSuitePreferencePreferences _copyWith(
+          {Object? autoTriggerChecks = sdkOmittedValue}) =>
+      CheckSuitePreferencePreferences(
+        autoTriggerChecks: identical(autoTriggerChecks, sdkOmittedValue)
+            ? this.autoTriggerChecks
+            : autoTriggerChecks as SdkOptional<
+                List<CheckSuitePreferencePreferencesAutoTriggerChecksItem>>,
+      );
 
-  factory CheckSuitePreferencePreferences.fromJson(Map<String, dynamic> json) => CheckSuitePreferencePreferences(
-    autoTriggerChecks: json['auto_trigger_checks'] != null ? SdkPresent(((json['auto_trigger_checks'] as List?)?.map((e) => CheckSuitePreferencePreferencesAutoTriggerChecksItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
+  factory CheckSuitePreferencePreferences.fromJson(Map<String, dynamic> json) =>
+      CheckSuitePreferencePreferences(
+        autoTriggerChecks: json['auto_trigger_checks'] != null
+            ? SdkPresent(((json['auto_trigger_checks'] as List?)
+                ?.map((e) =>
+                    CheckSuitePreferencePreferencesAutoTriggerChecksItem
+                        .fromJson(e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (autoTriggerChecks) {
-      SdkPresent<List<CheckSuitePreferencePreferencesAutoTriggerChecksItem>>(value: final value) => {'auto_trigger_checks': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (autoTriggerChecks) {
+          SdkPresent<
+                List<CheckSuitePreferencePreferencesAutoTriggerChecksItem>>(
+            value: final value
+          ) =>
+            {
+              'auto_trigger_checks':
+                  value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Check suite configuration preferences for a repository.
 class CheckSuitePreference {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required object value serialized in the `preferences` wire field.
   final CheckSuitePreferencePreferences preferences;
+
   /// Minimal Repository
   final MinimalRepository repository;
 
-  const CheckSuitePreference({required this.preferences, required this.repository});
+  const CheckSuitePreference(
+      {required this.preferences, required this.repository});
 
-  CheckSuitePreference Function({CheckSuitePreferencePreferences preferences, MinimalRepository repository}) get copyWith => _copyWith;
+  CheckSuitePreference Function(
+      {CheckSuitePreferencePreferences preferences,
+      MinimalRepository repository}) get copyWith => _copyWith;
 
-  CheckSuitePreference _copyWith({Object? preferences = sdkOmittedValue, Object? repository = sdkOmittedValue}) => CheckSuitePreference(
-    preferences: identical(preferences, sdkOmittedValue) ? this.preferences : preferences as CheckSuitePreferencePreferences,
-    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as MinimalRepository,
-  );
+  CheckSuitePreference _copyWith(
+          {Object? preferences = sdkOmittedValue,
+          Object? repository = sdkOmittedValue}) =>
+      CheckSuitePreference(
+        preferences: identical(preferences, sdkOmittedValue)
+            ? this.preferences
+            : preferences as CheckSuitePreferencePreferences,
+        repository: identical(repository, sdkOmittedValue)
+            ? this.repository
+            : repository as MinimalRepository,
+      );
 
-  factory CheckSuitePreference.fromJson(Map<String, dynamic> json) => CheckSuitePreference(
-    preferences: (json['preferences'] != null ? CheckSuitePreferencePreferences.fromJson(json['preferences'] as Map<String, dynamic>) : null)!,
-    repository: (json['repository'] != null ? MinimalRepository.fromJson(json['repository'] as Map<String, dynamic>) : null)!,
-  );
+  factory CheckSuitePreference.fromJson(Map<String, dynamic> json) =>
+      CheckSuitePreference(
+        preferences: (json['preferences'] != null
+            ? CheckSuitePreferencePreferences.fromJson(
+                json['preferences'] as Map<String, dynamic>)
+            : null)!,
+        repository: (json['repository'] != null
+            ? MinimalRepository.fromJson(
+                json['repository'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'preferences': preferences.toJson(),
-    'repository': repository.toJson(),
-  };
+        'preferences': preferences.toJson(),
+        'repository': repository.toJson(),
+      };
 }

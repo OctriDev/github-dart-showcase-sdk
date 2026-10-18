@@ -6,34 +6,37 @@ part of 'inline.dart';
 // Inline operation models (part 201)
 /// The state of the milestone.
 final class WebhooksMilestoneState {
-
   final String value;
 
   const WebhooksMilestoneState._(this.value);
 
-  factory WebhooksMilestoneState.fromJson(String value) => WebhooksMilestoneState._(value);
+  factory WebhooksMilestoneState.fromJson(String value) =>
+      WebhooksMilestoneState._(value);
 
   static const open = WebhooksMilestoneState._('open');
   static const closed = WebhooksMilestoneState._('closed');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksMilestoneState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhooksMilestoneState && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhooksMilestone3CreatorType {
-
   final String value;
 
   const WebhooksMilestone3CreatorType._(this.value);
 
-  factory WebhooksMilestone3CreatorType.fromJson(String value) => WebhooksMilestone3CreatorType._(value);
+  factory WebhooksMilestone3CreatorType.fromJson(String value) =>
+      WebhooksMilestone3CreatorType._(value);
 
   static const bot = WebhooksMilestone3CreatorType._('Bot');
   static const user = WebhooksMilestone3CreatorType._('User');
@@ -41,193 +44,230 @@ final class WebhooksMilestone3CreatorType {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksMilestone3CreatorType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhooksMilestone3CreatorType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The state of the milestone.
 final class WebhooksMilestone3State {
-
   final String value;
 
   const WebhooksMilestone3State._(this.value);
 
-  factory WebhooksMilestone3State.fromJson(String value) => WebhooksMilestone3State._(value);
+  factory WebhooksMilestone3State.fromJson(String value) =>
+      WebhooksMilestone3State._(value);
 
   static const open = WebhooksMilestone3State._('open');
   static const closed = WebhooksMilestone3State._('closed');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksMilestone3State && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhooksMilestone3State && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookSponsorshipCancelledAction {
-
   final String value;
 
   const WebhookSponsorshipCancelledAction._(this.value);
 
-  factory WebhookSponsorshipCancelledAction.fromJson(String value) => WebhookSponsorshipCancelledAction._(value);
+  factory WebhookSponsorshipCancelledAction.fromJson(String value) =>
+      WebhookSponsorshipCancelledAction._(value);
 
   static const cancelled = WebhookSponsorshipCancelledAction._('cancelled');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookSponsorshipCancelledAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookSponsorshipCancelledAction && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookSponsorshipCreatedAction {
-
   final String value;
 
   const WebhookSponsorshipCreatedAction._(this.value);
 
-  factory WebhookSponsorshipCreatedAction.fromJson(String value) => WebhookSponsorshipCreatedAction._(value);
+  factory WebhookSponsorshipCreatedAction.fromJson(String value) =>
+      WebhookSponsorshipCreatedAction._(value);
 
   static const created = WebhookSponsorshipCreatedAction._('created');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookSponsorshipCreatedAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookSponsorshipCreatedAction && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookSponsorshipEditedAction {
-
   final String value;
 
   const WebhookSponsorshipEditedAction._(this.value);
 
-  factory WebhookSponsorshipEditedAction.fromJson(String value) => WebhookSponsorshipEditedAction._(value);
+  factory WebhookSponsorshipEditedAction.fromJson(String value) =>
+      WebhookSponsorshipEditedAction._(value);
 
   static const edited = WebhookSponsorshipEditedAction._('edited');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookSponsorshipEditedAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookSponsorshipEditedAction && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookSponsorshipPendingCancellationAction {
-
   final String value;
 
   const WebhookSponsorshipPendingCancellationAction._(this.value);
 
-  factory WebhookSponsorshipPendingCancellationAction.fromJson(String value) => WebhookSponsorshipPendingCancellationAction._(value);
+  factory WebhookSponsorshipPendingCancellationAction.fromJson(String value) =>
+      WebhookSponsorshipPendingCancellationAction._(value);
 
-  static const pendingCancellation = WebhookSponsorshipPendingCancellationAction._('pending_cancellation');
+  static const pendingCancellation =
+      WebhookSponsorshipPendingCancellationAction._('pending_cancellation');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookSponsorshipPendingCancellationAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookSponsorshipPendingCancellationAction &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookSponsorshipPendingTierChangeAction {
-
   final String value;
 
   const WebhookSponsorshipPendingTierChangeAction._(this.value);
 
-  factory WebhookSponsorshipPendingTierChangeAction.fromJson(String value) => WebhookSponsorshipPendingTierChangeAction._(value);
+  factory WebhookSponsorshipPendingTierChangeAction.fromJson(String value) =>
+      WebhookSponsorshipPendingTierChangeAction._(value);
 
-  static const pendingTierChange = WebhookSponsorshipPendingTierChangeAction._('pending_tier_change');
+  static const pendingTierChange =
+      WebhookSponsorshipPendingTierChangeAction._('pending_tier_change');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookSponsorshipPendingTierChangeAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookSponsorshipPendingTierChangeAction &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookSponsorshipTierChangedAction {
-
   final String value;
 
   const WebhookSponsorshipTierChangedAction._(this.value);
 
-  factory WebhookSponsorshipTierChangedAction.fromJson(String value) => WebhookSponsorshipTierChangedAction._(value);
+  factory WebhookSponsorshipTierChangedAction.fromJson(String value) =>
+      WebhookSponsorshipTierChangedAction._(value);
 
-  static const tierChanged = WebhookSponsorshipTierChangedAction._('tier_changed');
+  static const tierChanged =
+      WebhookSponsorshipTierChangedAction._('tier_changed');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookSponsorshipTierChangedAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookSponsorshipTierChangedAction && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `price_model` wire field.
 final class WebhooksPreviousMarketplacePurchasePlanPriceModel {
-
   final String value;
 
   const WebhooksPreviousMarketplacePurchasePlanPriceModel._(this.value);
 
-  factory WebhooksPreviousMarketplacePurchasePlanPriceModel.fromJson(String value) => WebhooksPreviousMarketplacePurchasePlanPriceModel._(value);
+  factory WebhooksPreviousMarketplacePurchasePlanPriceModel.fromJson(
+          String value) =>
+      WebhooksPreviousMarketplacePurchasePlanPriceModel._(value);
 
-  static const free = WebhooksPreviousMarketplacePurchasePlanPriceModel._('FREE');
-  static const flatRate = WebhooksPreviousMarketplacePurchasePlanPriceModel._('FLAT_RATE');
-  static const perUnit = WebhooksPreviousMarketplacePurchasePlanPriceModel._('PER_UNIT');
+  static const free =
+      WebhooksPreviousMarketplacePurchasePlanPriceModel._('FREE');
+  static const flatRate =
+      WebhooksPreviousMarketplacePurchasePlanPriceModel._('FLAT_RATE');
+  static const perUnit =
+      WebhooksPreviousMarketplacePurchasePlanPriceModel._('PER_UNIT');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksPreviousMarketplacePurchasePlanPriceModel && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhooksPreviousMarketplacePurchasePlanPriceModel &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhooksProjectCreatorType {
-
   final String value;
 
   const WebhooksProjectCreatorType._(this.value);
 
-  factory WebhooksProjectCreatorType.fromJson(String value) => WebhooksProjectCreatorType._(value);
+  factory WebhooksProjectCreatorType.fromJson(String value) =>
+      WebhooksProjectCreatorType._(value);
 
   static const bot = WebhooksProjectCreatorType._('Bot');
   static const user = WebhooksProjectCreatorType._('User');
@@ -235,44 +275,50 @@ final class WebhooksProjectCreatorType {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksProjectCreatorType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhooksProjectCreatorType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// State of the project; either 'open' or 'closed'
 final class WebhooksProjectState {
-
   final String value;
 
   const WebhooksProjectState._(this.value);
 
-  factory WebhooksProjectState.fromJson(String value) => WebhooksProjectState._(value);
+  factory WebhooksProjectState.fromJson(String value) =>
+      WebhooksProjectState._(value);
 
   static const open = WebhooksProjectState._('open');
   static const closed = WebhooksProjectState._('closed');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksProjectState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhooksProjectState && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `type` wire field.
 final class WebhooksProjectCardCreatorType {
-
   final String value;
 
   const WebhooksProjectCardCreatorType._(this.value);
 
-  factory WebhooksProjectCardCreatorType.fromJson(String value) => WebhooksProjectCardCreatorType._(value);
+  factory WebhooksProjectCardCreatorType.fromJson(String value) =>
+      WebhooksProjectCardCreatorType._(value);
 
   static const bot = WebhooksProjectCardCreatorType._('Bot');
   static const user = WebhooksProjectCardCreatorType._('User');
@@ -280,10 +326,13 @@ final class WebhooksProjectCardCreatorType {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhooksProjectCardCreatorType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhooksProjectCardCreatorType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

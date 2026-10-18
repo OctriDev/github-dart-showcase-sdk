@@ -8,259 +8,491 @@ part of 'misc.dart';
 class IssueReference {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The number of the referenced issue.
   final int number;
+
   /// The title of the referenced issue.
   final String title;
+
   /// The state of the referenced issue.
   final String state;
+
   /// The reason for the referenced issue's state.
   final SdkOptional<String?> stateReason;
+
   /// A GitHub repository.
   final SimpleRepository repository;
+
   /// The type of the referenced issue.
   final IssueReferenceIssueType? issueType;
 
-  const IssueReference({required this.number, required this.title, required this.state, this.stateReason = const SdkOmitted(), required this.repository, required this.issueType});
+  const IssueReference(
+      {required this.number,
+      required this.title,
+      required this.state,
+      this.stateReason = const SdkOmitted(),
+      required this.repository,
+      required this.issueType});
 
-  IssueReference Function({int number, String title, String state, SdkOptional<String?> stateReason, SimpleRepository repository, IssueReferenceIssueType? issueType}) get copyWith => _copyWith;
+  IssueReference Function(
+      {int number,
+      String title,
+      String state,
+      SdkOptional<String?> stateReason,
+      SimpleRepository repository,
+      IssueReferenceIssueType? issueType}) get copyWith => _copyWith;
 
-  IssueReference _copyWith({Object? number = sdkOmittedValue, Object? title = sdkOmittedValue, Object? state = sdkOmittedValue, Object? stateReason = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? issueType = sdkOmittedValue}) => IssueReference(
-    number: identical(number, sdkOmittedValue) ? this.number : number as int,
-    title: identical(title, sdkOmittedValue) ? this.title : title as String,
-    state: identical(state, sdkOmittedValue) ? this.state : state as String,
-    stateReason: identical(stateReason, sdkOmittedValue) ? this.stateReason : stateReason as SdkOptional<String?>,
-    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as SimpleRepository,
-    issueType: identical(issueType, sdkOmittedValue) ? this.issueType : issueType as IssueReferenceIssueType?,
-  );
+  IssueReference _copyWith(
+          {Object? number = sdkOmittedValue,
+          Object? title = sdkOmittedValue,
+          Object? state = sdkOmittedValue,
+          Object? stateReason = sdkOmittedValue,
+          Object? repository = sdkOmittedValue,
+          Object? issueType = sdkOmittedValue}) =>
+      IssueReference(
+        number:
+            identical(number, sdkOmittedValue) ? this.number : number as int,
+        title: identical(title, sdkOmittedValue) ? this.title : title as String,
+        state: identical(state, sdkOmittedValue) ? this.state : state as String,
+        stateReason: identical(stateReason, sdkOmittedValue)
+            ? this.stateReason
+            : stateReason as SdkOptional<String?>,
+        repository: identical(repository, sdkOmittedValue)
+            ? this.repository
+            : repository as SimpleRepository,
+        issueType: identical(issueType, sdkOmittedValue)
+            ? this.issueType
+            : issueType as IssueReferenceIssueType?,
+      );
 
   factory IssueReference.fromJson(Map<String, dynamic> json) => IssueReference(
-    number: ((json['number'] as num?)?.toInt())!,
-    title: (json['title'] as String?)!,
-    state: (json['state'] as String?)!,
-    stateReason: json.containsKey('state_reason') ? SdkPresent(json['state_reason'] as String?) : const SdkOmitted(),
-    repository: (json['repository'] != null ? SimpleRepository.fromJson(json['repository'] as Map<String, dynamic>) : null)!,
-    issueType: json.containsKey('issue_type') ? json['issue_type'] != null ? IssueReferenceIssueType.fromJson(json['issue_type'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'issue_type', 'Required property is missing'),
-  );
+        number: ((json['number'] as num?)?.toInt())!,
+        title: (json['title'] as String?)!,
+        state: (json['state'] as String?)!,
+        stateReason: json.containsKey('state_reason')
+            ? SdkPresent(json['state_reason'] as String?)
+            : const SdkOmitted(),
+        repository: (json['repository'] != null
+            ? SimpleRepository.fromJson(
+                json['repository'] as Map<String, dynamic>)
+            : null)!,
+        issueType: json.containsKey('issue_type')
+            ? json['issue_type'] != null
+                ? IssueReferenceIssueType.fromJson(
+                    json['issue_type'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'issue_type', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'number': number,
-    'title': title,
-    'state': state,
-    ...switch (stateReason) {
-      SdkPresent<String?>(value: final value) => {'state_reason': value,},
-      _ => const <String, dynamic>{},
-    },
-    'repository': repository.toJson(),
-    'issue_type': issueType?.toJson(),
-  };
+        'number': number,
+        'title': title,
+        'state': state,
+        ...switch (stateReason) {
+          SdkPresent<String?>(value: final value) => {
+              'state_reason': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'repository': repository.toJson(),
+        'issue_type': issueType?.toJson(),
+      };
 }
 
 /// A group of pull requests that the merge queue has grouped together to be merged.
 class MergeGroup {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The SHA of the merge group.
   final String headSha;
+
   /// The full ref of the merge group.
   final String headRef;
+
   /// The SHA of the merge group's parent commit.
   final String baseSha;
+
   /// The full ref of the branch the merge group will be merged into.
   final String baseRef;
+
   /// A commit.
   final SimpleCommit headCommit;
 
-  const MergeGroup({required this.headSha, required this.headRef, required this.baseSha, required this.baseRef, required this.headCommit});
+  const MergeGroup(
+      {required this.headSha,
+      required this.headRef,
+      required this.baseSha,
+      required this.baseRef,
+      required this.headCommit});
 
-  MergeGroup Function({String headSha, String headRef, String baseSha, String baseRef, SimpleCommit headCommit}) get copyWith => _copyWith;
+  MergeGroup Function(
+      {String headSha,
+      String headRef,
+      String baseSha,
+      String baseRef,
+      SimpleCommit headCommit}) get copyWith => _copyWith;
 
-  MergeGroup _copyWith({Object? headSha = sdkOmittedValue, Object? headRef = sdkOmittedValue, Object? baseSha = sdkOmittedValue, Object? baseRef = sdkOmittedValue, Object? headCommit = sdkOmittedValue}) => MergeGroup(
-    headSha: identical(headSha, sdkOmittedValue) ? this.headSha : headSha as String,
-    headRef: identical(headRef, sdkOmittedValue) ? this.headRef : headRef as String,
-    baseSha: identical(baseSha, sdkOmittedValue) ? this.baseSha : baseSha as String,
-    baseRef: identical(baseRef, sdkOmittedValue) ? this.baseRef : baseRef as String,
-    headCommit: identical(headCommit, sdkOmittedValue) ? this.headCommit : headCommit as SimpleCommit,
-  );
+  MergeGroup _copyWith(
+          {Object? headSha = sdkOmittedValue,
+          Object? headRef = sdkOmittedValue,
+          Object? baseSha = sdkOmittedValue,
+          Object? baseRef = sdkOmittedValue,
+          Object? headCommit = sdkOmittedValue}) =>
+      MergeGroup(
+        headSha: identical(headSha, sdkOmittedValue)
+            ? this.headSha
+            : headSha as String,
+        headRef: identical(headRef, sdkOmittedValue)
+            ? this.headRef
+            : headRef as String,
+        baseSha: identical(baseSha, sdkOmittedValue)
+            ? this.baseSha
+            : baseSha as String,
+        baseRef: identical(baseRef, sdkOmittedValue)
+            ? this.baseRef
+            : baseRef as String,
+        headCommit: identical(headCommit, sdkOmittedValue)
+            ? this.headCommit
+            : headCommit as SimpleCommit,
+      );
 
   factory MergeGroup.fromJson(Map<String, dynamic> json) => MergeGroup(
-    headSha: (json['head_sha'] as String?)!,
-    headRef: (json['head_ref'] as String?)!,
-    baseSha: (json['base_sha'] as String?)!,
-    baseRef: (json['base_ref'] as String?)!,
-    headCommit: (json['head_commit'] != null ? SimpleCommit.fromJson(json['head_commit'] as Map<String, dynamic>) : null)!,
-  );
+        headSha: (json['head_sha'] as String?)!,
+        headRef: (json['head_ref'] as String?)!,
+        baseSha: (json['base_sha'] as String?)!,
+        baseRef: (json['base_ref'] as String?)!,
+        headCommit: (json['head_commit'] != null
+            ? SimpleCommit.fromJson(json['head_commit'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'head_sha': headSha,
-    'head_ref': headRef,
-    'base_sha': baseSha,
-    'base_ref': baseRef,
-    'head_commit': headCommit.toJson(),
-  };
+        'head_sha': headSha,
+        'head_ref': headRef,
+        'base_sha': baseSha,
+        'base_ref': baseRef,
+        'head_commit': headCommit.toJson(),
+      };
 }
 
 /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an organization, or when the event occurs from activity in a repository owned by an organization.
 class OrganizationSimpleWebhooks {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `login` wire field.
   final String login;
+
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
+
   /// Required `uri`-formatted value serialized in the `repos_url` wire field.
   final String reposUrl;
+
   /// Required `uri`-formatted value serialized in the `events_url` wire field.
   final String eventsUrl;
+
   /// Required `string` value serialized in the `hooks_url` wire field.
   final String hooksUrl;
+
   /// Required `string` value serialized in the `issues_url` wire field.
   final String issuesUrl;
+
   /// Required `string` value serialized in the `members_url` wire field.
   final String membersUrl;
+
   /// Required `string` value serialized in the `public_members_url` wire field.
   final String publicMembersUrl;
+
   /// Required `string` value serialized in the `avatar_url` wire field.
   final String avatarUrl;
+
   /// Required `string` value serialized in the `description` wire field.
   final String? description;
 
-  const OrganizationSimpleWebhooks({required this.login, required this.id, required this.nodeId, required this.url, required this.reposUrl, required this.eventsUrl, required this.hooksUrl, required this.issuesUrl, required this.membersUrl, required this.publicMembersUrl, required this.avatarUrl, required this.description});
+  const OrganizationSimpleWebhooks(
+      {required this.login,
+      required this.id,
+      required this.nodeId,
+      required this.url,
+      required this.reposUrl,
+      required this.eventsUrl,
+      required this.hooksUrl,
+      required this.issuesUrl,
+      required this.membersUrl,
+      required this.publicMembersUrl,
+      required this.avatarUrl,
+      required this.description});
 
-  OrganizationSimpleWebhooks Function({String login, int id, String nodeId, String url, String reposUrl, String eventsUrl, String hooksUrl, String issuesUrl, String membersUrl, String publicMembersUrl, String avatarUrl, String? description}) get copyWith => _copyWith;
+  OrganizationSimpleWebhooks Function(
+      {String login,
+      int id,
+      String nodeId,
+      String url,
+      String reposUrl,
+      String eventsUrl,
+      String hooksUrl,
+      String issuesUrl,
+      String membersUrl,
+      String publicMembersUrl,
+      String avatarUrl,
+      String? description}) get copyWith => _copyWith;
 
-  OrganizationSimpleWebhooks _copyWith({Object? login = sdkOmittedValue, Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? url = sdkOmittedValue, Object? reposUrl = sdkOmittedValue, Object? eventsUrl = sdkOmittedValue, Object? hooksUrl = sdkOmittedValue, Object? issuesUrl = sdkOmittedValue, Object? membersUrl = sdkOmittedValue, Object? publicMembersUrl = sdkOmittedValue, Object? avatarUrl = sdkOmittedValue, Object? description = sdkOmittedValue}) => OrganizationSimpleWebhooks(
-    login: identical(login, sdkOmittedValue) ? this.login : login as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    reposUrl: identical(reposUrl, sdkOmittedValue) ? this.reposUrl : reposUrl as String,
-    eventsUrl: identical(eventsUrl, sdkOmittedValue) ? this.eventsUrl : eventsUrl as String,
-    hooksUrl: identical(hooksUrl, sdkOmittedValue) ? this.hooksUrl : hooksUrl as String,
-    issuesUrl: identical(issuesUrl, sdkOmittedValue) ? this.issuesUrl : issuesUrl as String,
-    membersUrl: identical(membersUrl, sdkOmittedValue) ? this.membersUrl : membersUrl as String,
-    publicMembersUrl: identical(publicMembersUrl, sdkOmittedValue) ? this.publicMembersUrl : publicMembersUrl as String,
-    avatarUrl: identical(avatarUrl, sdkOmittedValue) ? this.avatarUrl : avatarUrl as String,
-    description: identical(description, sdkOmittedValue) ? this.description : description as String?,
-  );
+  OrganizationSimpleWebhooks _copyWith(
+          {Object? login = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? reposUrl = sdkOmittedValue,
+          Object? eventsUrl = sdkOmittedValue,
+          Object? hooksUrl = sdkOmittedValue,
+          Object? issuesUrl = sdkOmittedValue,
+          Object? membersUrl = sdkOmittedValue,
+          Object? publicMembersUrl = sdkOmittedValue,
+          Object? avatarUrl = sdkOmittedValue,
+          Object? description = sdkOmittedValue}) =>
+      OrganizationSimpleWebhooks(
+        login: identical(login, sdkOmittedValue) ? this.login : login as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        reposUrl: identical(reposUrl, sdkOmittedValue)
+            ? this.reposUrl
+            : reposUrl as String,
+        eventsUrl: identical(eventsUrl, sdkOmittedValue)
+            ? this.eventsUrl
+            : eventsUrl as String,
+        hooksUrl: identical(hooksUrl, sdkOmittedValue)
+            ? this.hooksUrl
+            : hooksUrl as String,
+        issuesUrl: identical(issuesUrl, sdkOmittedValue)
+            ? this.issuesUrl
+            : issuesUrl as String,
+        membersUrl: identical(membersUrl, sdkOmittedValue)
+            ? this.membersUrl
+            : membersUrl as String,
+        publicMembersUrl: identical(publicMembersUrl, sdkOmittedValue)
+            ? this.publicMembersUrl
+            : publicMembersUrl as String,
+        avatarUrl: identical(avatarUrl, sdkOmittedValue)
+            ? this.avatarUrl
+            : avatarUrl as String,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as String?,
+      );
 
-  factory OrganizationSimpleWebhooks.fromJson(Map<String, dynamic> json) => OrganizationSimpleWebhooks(
-    login: (json['login'] as String?)!,
-    id: ((json['id'] as num?)?.toInt())!,
-    nodeId: (json['node_id'] as String?)!,
-    url: (json['url'] as String?)!,
-    reposUrl: (json['repos_url'] as String?)!,
-    eventsUrl: (json['events_url'] as String?)!,
-    hooksUrl: (json['hooks_url'] as String?)!,
-    issuesUrl: (json['issues_url'] as String?)!,
-    membersUrl: (json['members_url'] as String?)!,
-    publicMembersUrl: (json['public_members_url'] as String?)!,
-    avatarUrl: (json['avatar_url'] as String?)!,
-    description: json.containsKey('description') ? json['description'] as String? : throw ArgumentError.value(null, 'description', 'Required property is missing'),
-  );
+  factory OrganizationSimpleWebhooks.fromJson(Map<String, dynamic> json) =>
+      OrganizationSimpleWebhooks(
+        login: (json['login'] as String?)!,
+        id: ((json['id'] as num?)?.toInt())!,
+        nodeId: (json['node_id'] as String?)!,
+        url: (json['url'] as String?)!,
+        reposUrl: (json['repos_url'] as String?)!,
+        eventsUrl: (json['events_url'] as String?)!,
+        hooksUrl: (json['hooks_url'] as String?)!,
+        issuesUrl: (json['issues_url'] as String?)!,
+        membersUrl: (json['members_url'] as String?)!,
+        publicMembersUrl: (json['public_members_url'] as String?)!,
+        avatarUrl: (json['avatar_url'] as String?)!,
+        description: json.containsKey('description')
+            ? json['description'] as String?
+            : throw ArgumentError.value(
+                null, 'description', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'login': login,
-    'id': id,
-    'node_id': nodeId,
-    'url': url,
-    'repos_url': reposUrl,
-    'events_url': eventsUrl,
-    'hooks_url': hooksUrl,
-    'issues_url': issuesUrl,
-    'members_url': membersUrl,
-    'public_members_url': publicMembersUrl,
-    'avatar_url': avatarUrl,
-    'description': description,
-  };
+        'login': login,
+        'id': id,
+        'node_id': nodeId,
+        'url': url,
+        'repos_url': reposUrl,
+        'events_url': eventsUrl,
+        'hooks_url': hooksUrl,
+        'issues_url': issuesUrl,
+        'members_url': membersUrl,
+        'public_members_url': publicMembersUrl,
+        'avatar_url': avatarUrl,
+        'description': description,
+      };
 }
 
 /// New requested permissions, categorized by type of permission.
 class PersonalAccessTokenRequestPermissionsAdded {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional object value serialized in the `organization` wire field.
   final SdkOptional<Map<String, String>> organization;
+
   /// Optional object value serialized in the `repository` wire field.
   final SdkOptional<Map<String, String>> repository;
+
   /// Optional object value serialized in the `other` wire field.
   final SdkOptional<Map<String, String>> other;
 
-  const PersonalAccessTokenRequestPermissionsAdded({this.organization = const SdkOmitted(), this.repository = const SdkOmitted(), this.other = const SdkOmitted()});
+  const PersonalAccessTokenRequestPermissionsAdded(
+      {this.organization = const SdkOmitted(),
+      this.repository = const SdkOmitted(),
+      this.other = const SdkOmitted()});
 
-  PersonalAccessTokenRequestPermissionsAdded Function({SdkOptional<Map<String, String>> organization, SdkOptional<Map<String, String>> repository, SdkOptional<Map<String, String>> other}) get copyWith => _copyWith;
+  PersonalAccessTokenRequestPermissionsAdded Function(
+      {SdkOptional<Map<String, String>> organization,
+      SdkOptional<Map<String, String>> repository,
+      SdkOptional<Map<String, String>> other}) get copyWith => _copyWith;
 
-  PersonalAccessTokenRequestPermissionsAdded _copyWith({Object? organization = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? other = sdkOmittedValue}) => PersonalAccessTokenRequestPermissionsAdded(
-    organization: identical(organization, sdkOmittedValue) ? this.organization : organization as SdkOptional<Map<String, String>>,
-    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as SdkOptional<Map<String, String>>,
-    other: identical(other, sdkOmittedValue) ? this.other : other as SdkOptional<Map<String, String>>,
-  );
+  PersonalAccessTokenRequestPermissionsAdded _copyWith(
+          {Object? organization = sdkOmittedValue,
+          Object? repository = sdkOmittedValue,
+          Object? other = sdkOmittedValue}) =>
+      PersonalAccessTokenRequestPermissionsAdded(
+        organization: identical(organization, sdkOmittedValue)
+            ? this.organization
+            : organization as SdkOptional<Map<String, String>>,
+        repository: identical(repository, sdkOmittedValue)
+            ? this.repository
+            : repository as SdkOptional<Map<String, String>>,
+        other: identical(other, sdkOmittedValue)
+            ? this.other
+            : other as SdkOptional<Map<String, String>>,
+      );
 
-  factory PersonalAccessTokenRequestPermissionsAdded.fromJson(Map<String, dynamic> json) => PersonalAccessTokenRequestPermissionsAdded(
-    organization: json['organization'] != null ? SdkPresent((json['organization'] == null ? null : Map<String, dynamic>.from(json['organization'] as Map).map((key, value) => MapEntry(key, value as String)))!) : const SdkOmitted(),
-    repository: json['repository'] != null ? SdkPresent((json['repository'] == null ? null : Map<String, dynamic>.from(json['repository'] as Map).map((key, value) => MapEntry(key, value as String)))!) : const SdkOmitted(),
-    other: json['other'] != null ? SdkPresent((json['other'] == null ? null : Map<String, dynamic>.from(json['other'] as Map).map((key, value) => MapEntry(key, value as String)))!) : const SdkOmitted(),
-  );
+  factory PersonalAccessTokenRequestPermissionsAdded.fromJson(
+          Map<String, dynamic> json) =>
+      PersonalAccessTokenRequestPermissionsAdded(
+        organization: json['organization'] != null
+            ? SdkPresent((json['organization'] == null
+                ? null
+                : Map<String, dynamic>.from(json['organization'] as Map)
+                    .map((key, value) => MapEntry(key, value as String)))!)
+            : const SdkOmitted(),
+        repository: json['repository'] != null
+            ? SdkPresent((json['repository'] == null
+                ? null
+                : Map<String, dynamic>.from(json['repository'] as Map)
+                    .map((key, value) => MapEntry(key, value as String)))!)
+            : const SdkOmitted(),
+        other: json['other'] != null
+            ? SdkPresent((json['other'] == null
+                ? null
+                : Map<String, dynamic>.from(json['other'] as Map)
+                    .map((key, value) => MapEntry(key, value as String)))!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (organization) {
-      SdkPresent<Map<String, String>>(value: final value) => {'organization': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (repository) {
-      SdkPresent<Map<String, String>>(value: final value) => {'repository': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (other) {
-      SdkPresent<Map<String, String>>(value: final value) => {'other': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (organization) {
+          SdkPresent<Map<String, String>>(value: final value) => {
+              'organization': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (repository) {
+          SdkPresent<Map<String, String>>(value: final value) => {
+              'repository': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (other) {
+          SdkPresent<Map<String, String>>(value: final value) => {
+              'other': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Requested permissions that elevate access for a previously approved request for access, categorized by type of permission.
 class PersonalAccessTokenRequestPermissionsUpgraded {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional object value serialized in the `organization` wire field.
   final SdkOptional<Map<String, String>> organization;
+
   /// Optional object value serialized in the `repository` wire field.
   final SdkOptional<Map<String, String>> repository;
+
   /// Optional object value serialized in the `other` wire field.
   final SdkOptional<Map<String, String>> other;
 
-  const PersonalAccessTokenRequestPermissionsUpgraded({this.organization = const SdkOmitted(), this.repository = const SdkOmitted(), this.other = const SdkOmitted()});
+  const PersonalAccessTokenRequestPermissionsUpgraded(
+      {this.organization = const SdkOmitted(),
+      this.repository = const SdkOmitted(),
+      this.other = const SdkOmitted()});
 
-  PersonalAccessTokenRequestPermissionsUpgraded Function({SdkOptional<Map<String, String>> organization, SdkOptional<Map<String, String>> repository, SdkOptional<Map<String, String>> other}) get copyWith => _copyWith;
+  PersonalAccessTokenRequestPermissionsUpgraded Function(
+      {SdkOptional<Map<String, String>> organization,
+      SdkOptional<Map<String, String>> repository,
+      SdkOptional<Map<String, String>> other}) get copyWith => _copyWith;
 
-  PersonalAccessTokenRequestPermissionsUpgraded _copyWith({Object? organization = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? other = sdkOmittedValue}) => PersonalAccessTokenRequestPermissionsUpgraded(
-    organization: identical(organization, sdkOmittedValue) ? this.organization : organization as SdkOptional<Map<String, String>>,
-    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as SdkOptional<Map<String, String>>,
-    other: identical(other, sdkOmittedValue) ? this.other : other as SdkOptional<Map<String, String>>,
-  );
+  PersonalAccessTokenRequestPermissionsUpgraded _copyWith(
+          {Object? organization = sdkOmittedValue,
+          Object? repository = sdkOmittedValue,
+          Object? other = sdkOmittedValue}) =>
+      PersonalAccessTokenRequestPermissionsUpgraded(
+        organization: identical(organization, sdkOmittedValue)
+            ? this.organization
+            : organization as SdkOptional<Map<String, String>>,
+        repository: identical(repository, sdkOmittedValue)
+            ? this.repository
+            : repository as SdkOptional<Map<String, String>>,
+        other: identical(other, sdkOmittedValue)
+            ? this.other
+            : other as SdkOptional<Map<String, String>>,
+      );
 
-  factory PersonalAccessTokenRequestPermissionsUpgraded.fromJson(Map<String, dynamic> json) => PersonalAccessTokenRequestPermissionsUpgraded(
-    organization: json['organization'] != null ? SdkPresent((json['organization'] == null ? null : Map<String, dynamic>.from(json['organization'] as Map).map((key, value) => MapEntry(key, value as String)))!) : const SdkOmitted(),
-    repository: json['repository'] != null ? SdkPresent((json['repository'] == null ? null : Map<String, dynamic>.from(json['repository'] as Map).map((key, value) => MapEntry(key, value as String)))!) : const SdkOmitted(),
-    other: json['other'] != null ? SdkPresent((json['other'] == null ? null : Map<String, dynamic>.from(json['other'] as Map).map((key, value) => MapEntry(key, value as String)))!) : const SdkOmitted(),
-  );
+  factory PersonalAccessTokenRequestPermissionsUpgraded.fromJson(
+          Map<String, dynamic> json) =>
+      PersonalAccessTokenRequestPermissionsUpgraded(
+        organization: json['organization'] != null
+            ? SdkPresent((json['organization'] == null
+                ? null
+                : Map<String, dynamic>.from(json['organization'] as Map)
+                    .map((key, value) => MapEntry(key, value as String)))!)
+            : const SdkOmitted(),
+        repository: json['repository'] != null
+            ? SdkPresent((json['repository'] == null
+                ? null
+                : Map<String, dynamic>.from(json['repository'] as Map)
+                    .map((key, value) => MapEntry(key, value as String)))!)
+            : const SdkOmitted(),
+        other: json['other'] != null
+            ? SdkPresent((json['other'] == null
+                ? null
+                : Map<String, dynamic>.from(json['other'] as Map)
+                    .map((key, value) => MapEntry(key, value as String)))!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (organization) {
-      SdkPresent<Map<String, String>>(value: final value) => {'organization': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (repository) {
-      SdkPresent<Map<String, String>>(value: final value) => {'repository': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (other) {
-      SdkPresent<Map<String, String>>(value: final value) => {'other': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (organization) {
+          SdkPresent<Map<String, String>>(value: final value) => {
+              'organization': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (repository) {
+          SdkPresent<Map<String, String>>(value: final value) => {
+              'repository': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (other) {
+          SdkPresent<Map<String, String>>(value: final value) => {
+              'other': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

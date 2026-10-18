@@ -8,83 +8,139 @@ part of 'shared_repository.dart';
 class RepositoryPermissions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `boolean` value serialized in the `admin` wire field.
   final bool admin;
+
   /// Required `boolean` value serialized in the `pull` wire field.
   final bool pull;
+
   /// Optional `boolean` value serialized in the `triage` wire field.
   final SdkOptional<bool> triage;
+
   /// Required `boolean` value serialized in the `push` wire field.
   final bool push;
+
   /// Optional `boolean` value serialized in the `maintain` wire field.
   final SdkOptional<bool> maintain;
 
-  const RepositoryPermissions({required this.admin, required this.pull, this.triage = const SdkOmitted(), required this.push, this.maintain = const SdkOmitted()});
+  const RepositoryPermissions(
+      {required this.admin,
+      required this.pull,
+      this.triage = const SdkOmitted(),
+      required this.push,
+      this.maintain = const SdkOmitted()});
 
-  RepositoryPermissions Function({bool admin, bool pull, SdkOptional<bool> triage, bool push, SdkOptional<bool> maintain}) get copyWith => _copyWith;
+  RepositoryPermissions Function(
+      {bool admin,
+      bool pull,
+      SdkOptional<bool> triage,
+      bool push,
+      SdkOptional<bool> maintain}) get copyWith => _copyWith;
 
-  RepositoryPermissions _copyWith({Object? admin = sdkOmittedValue, Object? pull = sdkOmittedValue, Object? triage = sdkOmittedValue, Object? push = sdkOmittedValue, Object? maintain = sdkOmittedValue}) => RepositoryPermissions(
-    admin: identical(admin, sdkOmittedValue) ? this.admin : admin as bool,
-    pull: identical(pull, sdkOmittedValue) ? this.pull : pull as bool,
-    triage: identical(triage, sdkOmittedValue) ? this.triage : triage as SdkOptional<bool>,
-    push: identical(push, sdkOmittedValue) ? this.push : push as bool,
-    maintain: identical(maintain, sdkOmittedValue) ? this.maintain : maintain as SdkOptional<bool>,
-  );
+  RepositoryPermissions _copyWith(
+          {Object? admin = sdkOmittedValue,
+          Object? pull = sdkOmittedValue,
+          Object? triage = sdkOmittedValue,
+          Object? push = sdkOmittedValue,
+          Object? maintain = sdkOmittedValue}) =>
+      RepositoryPermissions(
+        admin: identical(admin, sdkOmittedValue) ? this.admin : admin as bool,
+        pull: identical(pull, sdkOmittedValue) ? this.pull : pull as bool,
+        triage: identical(triage, sdkOmittedValue)
+            ? this.triage
+            : triage as SdkOptional<bool>,
+        push: identical(push, sdkOmittedValue) ? this.push : push as bool,
+        maintain: identical(maintain, sdkOmittedValue)
+            ? this.maintain
+            : maintain as SdkOptional<bool>,
+      );
 
-  factory RepositoryPermissions.fromJson(Map<String, dynamic> json) => RepositoryPermissions(
-    admin: (json['admin'] as bool?)!,
-    pull: (json['pull'] as bool?)!,
-    triage: json['triage'] != null ? SdkPresent((json['triage'] as bool?)!) : const SdkOmitted(),
-    push: (json['push'] as bool?)!,
-    maintain: json['maintain'] != null ? SdkPresent((json['maintain'] as bool?)!) : const SdkOmitted(),
-  );
+  factory RepositoryPermissions.fromJson(Map<String, dynamic> json) =>
+      RepositoryPermissions(
+        admin: (json['admin'] as bool?)!,
+        pull: (json['pull'] as bool?)!,
+        triage: json['triage'] != null
+            ? SdkPresent((json['triage'] as bool?)!)
+            : const SdkOmitted(),
+        push: (json['push'] as bool?)!,
+        maintain: json['maintain'] != null
+            ? SdkPresent((json['maintain'] as bool?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'admin': admin,
-    'pull': pull,
-    ...switch (triage) {
-      SdkPresent<bool>(value: final value) => {'triage': value,},
-      _ => const <String, dynamic>{},
-    },
-    'push': push,
-    ...switch (maintain) {
-      SdkPresent<bool>(value: final value) => {'maintain': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'admin': admin,
+        'pull': pull,
+        ...switch (triage) {
+          SdkPresent<bool>(value: final value) => {
+              'triage': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'push': push,
+        ...switch (maintain) {
+          SdkPresent<bool>(value: final value) => {
+              'maintain': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// The status of the code search index for this repository
 class RepositoryCodeSearchIndexStatus {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `boolean` value serialized in the `lexical_search_ok` wire field.
   final SdkOptional<bool> lexicalSearchOk;
+
   /// Optional `string` value serialized in the `lexical_commit_sha` wire field.
   final SdkOptional<String> lexicalCommitSha;
 
-  const RepositoryCodeSearchIndexStatus({this.lexicalSearchOk = const SdkOmitted(), this.lexicalCommitSha = const SdkOmitted()});
+  const RepositoryCodeSearchIndexStatus(
+      {this.lexicalSearchOk = const SdkOmitted(),
+      this.lexicalCommitSha = const SdkOmitted()});
 
-  RepositoryCodeSearchIndexStatus Function({SdkOptional<bool> lexicalSearchOk, SdkOptional<String> lexicalCommitSha}) get copyWith => _copyWith;
+  RepositoryCodeSearchIndexStatus Function(
+      {SdkOptional<bool> lexicalSearchOk,
+      SdkOptional<String> lexicalCommitSha}) get copyWith => _copyWith;
 
-  RepositoryCodeSearchIndexStatus _copyWith({Object? lexicalSearchOk = sdkOmittedValue, Object? lexicalCommitSha = sdkOmittedValue}) => RepositoryCodeSearchIndexStatus(
-    lexicalSearchOk: identical(lexicalSearchOk, sdkOmittedValue) ? this.lexicalSearchOk : lexicalSearchOk as SdkOptional<bool>,
-    lexicalCommitSha: identical(lexicalCommitSha, sdkOmittedValue) ? this.lexicalCommitSha : lexicalCommitSha as SdkOptional<String>,
-  );
+  RepositoryCodeSearchIndexStatus _copyWith(
+          {Object? lexicalSearchOk = sdkOmittedValue,
+          Object? lexicalCommitSha = sdkOmittedValue}) =>
+      RepositoryCodeSearchIndexStatus(
+        lexicalSearchOk: identical(lexicalSearchOk, sdkOmittedValue)
+            ? this.lexicalSearchOk
+            : lexicalSearchOk as SdkOptional<bool>,
+        lexicalCommitSha: identical(lexicalCommitSha, sdkOmittedValue)
+            ? this.lexicalCommitSha
+            : lexicalCommitSha as SdkOptional<String>,
+      );
 
-  factory RepositoryCodeSearchIndexStatus.fromJson(Map<String, dynamic> json) => RepositoryCodeSearchIndexStatus(
-    lexicalSearchOk: json['lexical_search_ok'] != null ? SdkPresent((json['lexical_search_ok'] as bool?)!) : const SdkOmitted(),
-    lexicalCommitSha: json['lexical_commit_sha'] != null ? SdkPresent((json['lexical_commit_sha'] as String?)!) : const SdkOmitted(),
-  );
+  factory RepositoryCodeSearchIndexStatus.fromJson(Map<String, dynamic> json) =>
+      RepositoryCodeSearchIndexStatus(
+        lexicalSearchOk: json['lexical_search_ok'] != null
+            ? SdkPresent((json['lexical_search_ok'] as bool?)!)
+            : const SdkOmitted(),
+        lexicalCommitSha: json['lexical_commit_sha'] != null
+            ? SdkPresent((json['lexical_commit_sha'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (lexicalSearchOk) {
-      SdkPresent<bool>(value: final value) => {'lexical_search_ok': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (lexicalCommitSha) {
-      SdkPresent<String>(value: final value) => {'lexical_commit_sha': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (lexicalSearchOk) {
+          SdkPresent<bool>(value: final value) => {
+              'lexical_search_ok': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (lexicalCommitSha) {
+          SdkPresent<String>(value: final value) => {
+              'lexical_commit_sha': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

@@ -11,27 +11,47 @@ class SearchCommitsResponse {
   final bool incompleteResults;
   final List<CommitSearchResultItem> items;
 
-  const SearchCommitsResponse({required this.totalCount, required this.incompleteResults, required this.items});
+  const SearchCommitsResponse(
+      {required this.totalCount,
+      required this.incompleteResults,
+      required this.items});
 
-  SearchCommitsResponse Function({int totalCount, bool incompleteResults, List<CommitSearchResultItem> items}) get copyWith => _copyWith;
+  SearchCommitsResponse Function(
+      {int totalCount,
+      bool incompleteResults,
+      List<CommitSearchResultItem> items}) get copyWith => _copyWith;
 
-  SearchCommitsResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? incompleteResults = sdkOmittedValue, Object? items = sdkOmittedValue}) => SearchCommitsResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    incompleteResults: identical(incompleteResults, sdkOmittedValue) ? this.incompleteResults : incompleteResults as bool,
-    items: identical(items, sdkOmittedValue) ? this.items : items as List<CommitSearchResultItem>,
-  );
+  SearchCommitsResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? incompleteResults = sdkOmittedValue,
+          Object? items = sdkOmittedValue}) =>
+      SearchCommitsResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        incompleteResults: identical(incompleteResults, sdkOmittedValue)
+            ? this.incompleteResults
+            : incompleteResults as bool,
+        items: identical(items, sdkOmittedValue)
+            ? this.items
+            : items as List<CommitSearchResultItem>,
+      );
 
-  factory SearchCommitsResponse.fromJson(Map<String, dynamic> json) => SearchCommitsResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    incompleteResults: (json['incomplete_results'] as bool?)!,
-    items: ((json['items'] as List?)?.map((e) => CommitSearchResultItem.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+  factory SearchCommitsResponse.fromJson(Map<String, dynamic> json) =>
+      SearchCommitsResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        incompleteResults: (json['incomplete_results'] as bool?)!,
+        items: ((json['items'] as List?)
+            ?.map((e) =>
+                CommitSearchResultItem.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'incomplete_results': incompleteResults,
-    'items': items.map((item) => item.toJson()).toList(),
-  };
+        'total_count': totalCount,
+        'incomplete_results': incompleteResults,
+        'items': items.map((item) => item.toJson()).toList(),
+      };
 }
 
 class SearchIssuesAndPullRequestsResponse {
@@ -40,41 +60,98 @@ class SearchIssuesAndPullRequestsResponse {
   final int totalCount;
   final bool incompleteResults;
   final List<IssueSearchResultItem> items;
+
   /// The type of search that was performed. Possible values are `lexical`, `semantic`, or `hybrid`.
   final SearchIssuesAndPullRequestsResponseSearchType searchType;
+
   /// When a semantic or hybrid search falls back to lexical search, this field contains the reasons for the fallback. Only present when a fallback occurred.
-  final SdkOptional<List<SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem>> lexicalFallbackReason;
+  final SdkOptional<
+          List<SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem>>
+      lexicalFallbackReason;
 
-  const SearchIssuesAndPullRequestsResponse({required this.totalCount, required this.incompleteResults, required this.items, required this.searchType, this.lexicalFallbackReason = const SdkOmitted()});
+  const SearchIssuesAndPullRequestsResponse(
+      {required this.totalCount,
+      required this.incompleteResults,
+      required this.items,
+      required this.searchType,
+      this.lexicalFallbackReason = const SdkOmitted()});
 
-  SearchIssuesAndPullRequestsResponse Function({int totalCount, bool incompleteResults, List<IssueSearchResultItem> items, SearchIssuesAndPullRequestsResponseSearchType searchType, SdkOptional<List<SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem>> lexicalFallbackReason}) get copyWith => _copyWith;
+  SearchIssuesAndPullRequestsResponse Function(
+      {int totalCount,
+      bool incompleteResults,
+      List<IssueSearchResultItem> items,
+      SearchIssuesAndPullRequestsResponseSearchType searchType,
+      SdkOptional<
+              List<
+                  SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem>>
+          lexicalFallbackReason}) get copyWith => _copyWith;
 
-  SearchIssuesAndPullRequestsResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? incompleteResults = sdkOmittedValue, Object? items = sdkOmittedValue, Object? searchType = sdkOmittedValue, Object? lexicalFallbackReason = sdkOmittedValue}) => SearchIssuesAndPullRequestsResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    incompleteResults: identical(incompleteResults, sdkOmittedValue) ? this.incompleteResults : incompleteResults as bool,
-    items: identical(items, sdkOmittedValue) ? this.items : items as List<IssueSearchResultItem>,
-    searchType: identical(searchType, sdkOmittedValue) ? this.searchType : searchType as SearchIssuesAndPullRequestsResponseSearchType,
-    lexicalFallbackReason: identical(lexicalFallbackReason, sdkOmittedValue) ? this.lexicalFallbackReason : lexicalFallbackReason as SdkOptional<List<SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem>>,
-  );
+  SearchIssuesAndPullRequestsResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? incompleteResults = sdkOmittedValue,
+          Object? items = sdkOmittedValue,
+          Object? searchType = sdkOmittedValue,
+          Object? lexicalFallbackReason = sdkOmittedValue}) =>
+      SearchIssuesAndPullRequestsResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        incompleteResults: identical(incompleteResults, sdkOmittedValue)
+            ? this.incompleteResults
+            : incompleteResults as bool,
+        items: identical(items, sdkOmittedValue)
+            ? this.items
+            : items as List<IssueSearchResultItem>,
+        searchType: identical(searchType, sdkOmittedValue)
+            ? this.searchType
+            : searchType as SearchIssuesAndPullRequestsResponseSearchType,
+        lexicalFallbackReason: identical(lexicalFallbackReason, sdkOmittedValue)
+            ? this.lexicalFallbackReason
+            : lexicalFallbackReason as SdkOptional<
+                List<
+                    SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem>>,
+      );
 
-  factory SearchIssuesAndPullRequestsResponse.fromJson(Map<String, dynamic> json) => SearchIssuesAndPullRequestsResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    incompleteResults: (json['incomplete_results'] as bool?)!,
-    items: ((json['items'] as List?)?.map((e) => IssueSearchResultItem.fromJson(e as Map<String, dynamic>)).toList())!,
-    searchType: (json['search_type'] != null ? SearchIssuesAndPullRequestsResponseSearchType.fromJson(json['search_type'] as String) : null)!,
-    lexicalFallbackReason: json['lexical_fallback_reason'] != null ? SdkPresent(((json['lexical_fallback_reason'] as List?)?.map((e) => SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem.fromJson(e as String)).toList())!) : const SdkOmitted(),
-  );
+  factory SearchIssuesAndPullRequestsResponse.fromJson(
+          Map<String, dynamic> json) =>
+      SearchIssuesAndPullRequestsResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        incompleteResults: (json['incomplete_results'] as bool?)!,
+        items: ((json['items'] as List?)
+            ?.map((e) =>
+                IssueSearchResultItem.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        searchType: (json['search_type'] != null
+            ? SearchIssuesAndPullRequestsResponseSearchType.fromJson(
+                json['search_type'] as String)
+            : null)!,
+        lexicalFallbackReason: json['lexical_fallback_reason'] != null
+            ? SdkPresent(((json['lexical_fallback_reason'] as List?)
+                ?.map((e) =>
+                    SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem
+                        .fromJson(e as String))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'incomplete_results': incompleteResults,
-    'items': items.map((item) => item.toJson()).toList(),
-    'search_type': searchType.toJson(),
-    ...switch (lexicalFallbackReason) {
-      SdkPresent<List<SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem>>(value: final value) => {'lexical_fallback_reason': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'total_count': totalCount,
+        'incomplete_results': incompleteResults,
+        'items': items.map((item) => item.toJson()).toList(),
+        'search_type': searchType.toJson(),
+        ...switch (lexicalFallbackReason) {
+          SdkPresent<
+                List<
+                    SearchIssuesAndPullRequestsResponseLexicalFallbackReasonItem>>(
+            value: final value
+          ) =>
+            {
+              'lexical_fallback_reason':
+                  value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class SearchLabelsResponse {
@@ -84,27 +161,47 @@ class SearchLabelsResponse {
   final bool incompleteResults;
   final List<LabelSearchResultItem> items;
 
-  const SearchLabelsResponse({required this.totalCount, required this.incompleteResults, required this.items});
+  const SearchLabelsResponse(
+      {required this.totalCount,
+      required this.incompleteResults,
+      required this.items});
 
-  SearchLabelsResponse Function({int totalCount, bool incompleteResults, List<LabelSearchResultItem> items}) get copyWith => _copyWith;
+  SearchLabelsResponse Function(
+      {int totalCount,
+      bool incompleteResults,
+      List<LabelSearchResultItem> items}) get copyWith => _copyWith;
 
-  SearchLabelsResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? incompleteResults = sdkOmittedValue, Object? items = sdkOmittedValue}) => SearchLabelsResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    incompleteResults: identical(incompleteResults, sdkOmittedValue) ? this.incompleteResults : incompleteResults as bool,
-    items: identical(items, sdkOmittedValue) ? this.items : items as List<LabelSearchResultItem>,
-  );
+  SearchLabelsResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? incompleteResults = sdkOmittedValue,
+          Object? items = sdkOmittedValue}) =>
+      SearchLabelsResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        incompleteResults: identical(incompleteResults, sdkOmittedValue)
+            ? this.incompleteResults
+            : incompleteResults as bool,
+        items: identical(items, sdkOmittedValue)
+            ? this.items
+            : items as List<LabelSearchResultItem>,
+      );
 
-  factory SearchLabelsResponse.fromJson(Map<String, dynamic> json) => SearchLabelsResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    incompleteResults: (json['incomplete_results'] as bool?)!,
-    items: ((json['items'] as List?)?.map((e) => LabelSearchResultItem.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+  factory SearchLabelsResponse.fromJson(Map<String, dynamic> json) =>
+      SearchLabelsResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        incompleteResults: (json['incomplete_results'] as bool?)!,
+        items: ((json['items'] as List?)
+            ?.map((e) =>
+                LabelSearchResultItem.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'incomplete_results': incompleteResults,
-    'items': items.map((item) => item.toJson()).toList(),
-  };
+        'total_count': totalCount,
+        'incomplete_results': incompleteResults,
+        'items': items.map((item) => item.toJson()).toList(),
+      };
 }
 
 class SearchReposResponse {
@@ -114,27 +211,47 @@ class SearchReposResponse {
   final bool incompleteResults;
   final List<RepoSearchResultItem> items;
 
-  const SearchReposResponse({required this.totalCount, required this.incompleteResults, required this.items});
+  const SearchReposResponse(
+      {required this.totalCount,
+      required this.incompleteResults,
+      required this.items});
 
-  SearchReposResponse Function({int totalCount, bool incompleteResults, List<RepoSearchResultItem> items}) get copyWith => _copyWith;
+  SearchReposResponse Function(
+      {int totalCount,
+      bool incompleteResults,
+      List<RepoSearchResultItem> items}) get copyWith => _copyWith;
 
-  SearchReposResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? incompleteResults = sdkOmittedValue, Object? items = sdkOmittedValue}) => SearchReposResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    incompleteResults: identical(incompleteResults, sdkOmittedValue) ? this.incompleteResults : incompleteResults as bool,
-    items: identical(items, sdkOmittedValue) ? this.items : items as List<RepoSearchResultItem>,
-  );
+  SearchReposResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? incompleteResults = sdkOmittedValue,
+          Object? items = sdkOmittedValue}) =>
+      SearchReposResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        incompleteResults: identical(incompleteResults, sdkOmittedValue)
+            ? this.incompleteResults
+            : incompleteResults as bool,
+        items: identical(items, sdkOmittedValue)
+            ? this.items
+            : items as List<RepoSearchResultItem>,
+      );
 
-  factory SearchReposResponse.fromJson(Map<String, dynamic> json) => SearchReposResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    incompleteResults: (json['incomplete_results'] as bool?)!,
-    items: ((json['items'] as List?)?.map((e) => RepoSearchResultItem.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+  factory SearchReposResponse.fromJson(Map<String, dynamic> json) =>
+      SearchReposResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        incompleteResults: (json['incomplete_results'] as bool?)!,
+        items: ((json['items'] as List?)
+            ?.map(
+                (e) => RepoSearchResultItem.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'incomplete_results': incompleteResults,
-    'items': items.map((item) => item.toJson()).toList(),
-  };
+        'total_count': totalCount,
+        'incomplete_results': incompleteResults,
+        'items': items.map((item) => item.toJson()).toList(),
+      };
 }
 
 class SearchTopicsResponse {
@@ -144,27 +261,47 @@ class SearchTopicsResponse {
   final bool incompleteResults;
   final List<TopicSearchResultItem> items;
 
-  const SearchTopicsResponse({required this.totalCount, required this.incompleteResults, required this.items});
+  const SearchTopicsResponse(
+      {required this.totalCount,
+      required this.incompleteResults,
+      required this.items});
 
-  SearchTopicsResponse Function({int totalCount, bool incompleteResults, List<TopicSearchResultItem> items}) get copyWith => _copyWith;
+  SearchTopicsResponse Function(
+      {int totalCount,
+      bool incompleteResults,
+      List<TopicSearchResultItem> items}) get copyWith => _copyWith;
 
-  SearchTopicsResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? incompleteResults = sdkOmittedValue, Object? items = sdkOmittedValue}) => SearchTopicsResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    incompleteResults: identical(incompleteResults, sdkOmittedValue) ? this.incompleteResults : incompleteResults as bool,
-    items: identical(items, sdkOmittedValue) ? this.items : items as List<TopicSearchResultItem>,
-  );
+  SearchTopicsResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? incompleteResults = sdkOmittedValue,
+          Object? items = sdkOmittedValue}) =>
+      SearchTopicsResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        incompleteResults: identical(incompleteResults, sdkOmittedValue)
+            ? this.incompleteResults
+            : incompleteResults as bool,
+        items: identical(items, sdkOmittedValue)
+            ? this.items
+            : items as List<TopicSearchResultItem>,
+      );
 
-  factory SearchTopicsResponse.fromJson(Map<String, dynamic> json) => SearchTopicsResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    incompleteResults: (json['incomplete_results'] as bool?)!,
-    items: ((json['items'] as List?)?.map((e) => TopicSearchResultItem.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+  factory SearchTopicsResponse.fromJson(Map<String, dynamic> json) =>
+      SearchTopicsResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        incompleteResults: (json['incomplete_results'] as bool?)!,
+        items: ((json['items'] as List?)
+            ?.map((e) =>
+                TopicSearchResultItem.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'incomplete_results': incompleteResults,
-    'items': items.map((item) => item.toJson()).toList(),
-  };
+        'total_count': totalCount,
+        'incomplete_results': incompleteResults,
+        'items': items.map((item) => item.toJson()).toList(),
+      };
 }
 
 class SearchUsersResponse {
@@ -174,107 +311,210 @@ class SearchUsersResponse {
   final bool incompleteResults;
   final List<UserSearchResultItem> items;
 
-  const SearchUsersResponse({required this.totalCount, required this.incompleteResults, required this.items});
+  const SearchUsersResponse(
+      {required this.totalCount,
+      required this.incompleteResults,
+      required this.items});
 
-  SearchUsersResponse Function({int totalCount, bool incompleteResults, List<UserSearchResultItem> items}) get copyWith => _copyWith;
+  SearchUsersResponse Function(
+      {int totalCount,
+      bool incompleteResults,
+      List<UserSearchResultItem> items}) get copyWith => _copyWith;
 
-  SearchUsersResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? incompleteResults = sdkOmittedValue, Object? items = sdkOmittedValue}) => SearchUsersResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    incompleteResults: identical(incompleteResults, sdkOmittedValue) ? this.incompleteResults : incompleteResults as bool,
-    items: identical(items, sdkOmittedValue) ? this.items : items as List<UserSearchResultItem>,
-  );
+  SearchUsersResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? incompleteResults = sdkOmittedValue,
+          Object? items = sdkOmittedValue}) =>
+      SearchUsersResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        incompleteResults: identical(incompleteResults, sdkOmittedValue)
+            ? this.incompleteResults
+            : incompleteResults as bool,
+        items: identical(items, sdkOmittedValue)
+            ? this.items
+            : items as List<UserSearchResultItem>,
+      );
 
-  factory SearchUsersResponse.fromJson(Map<String, dynamic> json) => SearchUsersResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    incompleteResults: (json['incomplete_results'] as bool?)!,
-    items: ((json['items'] as List?)?.map((e) => UserSearchResultItem.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+  factory SearchUsersResponse.fromJson(Map<String, dynamic> json) =>
+      SearchUsersResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        incompleteResults: (json['incomplete_results'] as bool?)!,
+        items: ((json['items'] as List?)
+            ?.map(
+                (e) => UserSearchResultItem.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'incomplete_results': incompleteResults,
-    'items': items.map((item) => item.toJson()).toList(),
-  };
+        'total_count': totalCount,
+        'incomplete_results': incompleteResults,
+        'items': items.map((item) => item.toJson()).toList(),
+      };
 }
 
 class UsersUpdateAuthenticatedRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The new name of the user.
   final SdkOptional<String> name;
+
   /// The publicly visible email address of the user.
   final SdkOptional<String> email;
+
   /// The new blog URL of the user.
   final SdkOptional<String> blog;
+
   /// The new Twitter username of the user.
   final SdkOptional<String?> twitterUsername;
+
   /// The new company of the user.
   final SdkOptional<String> company;
+
   /// The new location of the user.
   final SdkOptional<String> location;
+
   /// The new hiring availability of the user.
   final SdkOptional<bool> hireable;
+
   /// The new short biography of the user.
   final SdkOptional<String> bio;
 
-  const UsersUpdateAuthenticatedRequestBody({this.name = const SdkOmitted(), this.email = const SdkOmitted(), this.blog = const SdkOmitted(), this.twitterUsername = const SdkOmitted(), this.company = const SdkOmitted(), this.location = const SdkOmitted(), this.hireable = const SdkOmitted(), this.bio = const SdkOmitted()});
+  const UsersUpdateAuthenticatedRequestBody(
+      {this.name = const SdkOmitted(),
+      this.email = const SdkOmitted(),
+      this.blog = const SdkOmitted(),
+      this.twitterUsername = const SdkOmitted(),
+      this.company = const SdkOmitted(),
+      this.location = const SdkOmitted(),
+      this.hireable = const SdkOmitted(),
+      this.bio = const SdkOmitted()});
 
-  UsersUpdateAuthenticatedRequestBody Function({SdkOptional<String> name, SdkOptional<String> email, SdkOptional<String> blog, SdkOptional<String?> twitterUsername, SdkOptional<String> company, SdkOptional<String> location, SdkOptional<bool> hireable, SdkOptional<String> bio}) get copyWith => _copyWith;
+  UsersUpdateAuthenticatedRequestBody Function(
+      {SdkOptional<String> name,
+      SdkOptional<String> email,
+      SdkOptional<String> blog,
+      SdkOptional<String?> twitterUsername,
+      SdkOptional<String> company,
+      SdkOptional<String> location,
+      SdkOptional<bool> hireable,
+      SdkOptional<String> bio}) get copyWith => _copyWith;
 
-  UsersUpdateAuthenticatedRequestBody _copyWith({Object? name = sdkOmittedValue, Object? email = sdkOmittedValue, Object? blog = sdkOmittedValue, Object? twitterUsername = sdkOmittedValue, Object? company = sdkOmittedValue, Object? location = sdkOmittedValue, Object? hireable = sdkOmittedValue, Object? bio = sdkOmittedValue}) => UsersUpdateAuthenticatedRequestBody(
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    email: identical(email, sdkOmittedValue) ? this.email : email as SdkOptional<String>,
-    blog: identical(blog, sdkOmittedValue) ? this.blog : blog as SdkOptional<String>,
-    twitterUsername: identical(twitterUsername, sdkOmittedValue) ? this.twitterUsername : twitterUsername as SdkOptional<String?>,
-    company: identical(company, sdkOmittedValue) ? this.company : company as SdkOptional<String>,
-    location: identical(location, sdkOmittedValue) ? this.location : location as SdkOptional<String>,
-    hireable: identical(hireable, sdkOmittedValue) ? this.hireable : hireable as SdkOptional<bool>,
-    bio: identical(bio, sdkOmittedValue) ? this.bio : bio as SdkOptional<String>,
-  );
+  UsersUpdateAuthenticatedRequestBody _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? email = sdkOmittedValue,
+          Object? blog = sdkOmittedValue,
+          Object? twitterUsername = sdkOmittedValue,
+          Object? company = sdkOmittedValue,
+          Object? location = sdkOmittedValue,
+          Object? hireable = sdkOmittedValue,
+          Object? bio = sdkOmittedValue}) =>
+      UsersUpdateAuthenticatedRequestBody(
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        email: identical(email, sdkOmittedValue)
+            ? this.email
+            : email as SdkOptional<String>,
+        blog: identical(blog, sdkOmittedValue)
+            ? this.blog
+            : blog as SdkOptional<String>,
+        twitterUsername: identical(twitterUsername, sdkOmittedValue)
+            ? this.twitterUsername
+            : twitterUsername as SdkOptional<String?>,
+        company: identical(company, sdkOmittedValue)
+            ? this.company
+            : company as SdkOptional<String>,
+        location: identical(location, sdkOmittedValue)
+            ? this.location
+            : location as SdkOptional<String>,
+        hireable: identical(hireable, sdkOmittedValue)
+            ? this.hireable
+            : hireable as SdkOptional<bool>,
+        bio: identical(bio, sdkOmittedValue)
+            ? this.bio
+            : bio as SdkOptional<String>,
+      );
 
-  factory UsersUpdateAuthenticatedRequestBody.fromJson(Map<String, dynamic> json) => UsersUpdateAuthenticatedRequestBody(
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    email: json['email'] != null ? SdkPresent((json['email'] as String?)!) : const SdkOmitted(),
-    blog: json['blog'] != null ? SdkPresent((json['blog'] as String?)!) : const SdkOmitted(),
-    twitterUsername: json.containsKey('twitter_username') ? SdkPresent(json['twitter_username'] as String?) : const SdkOmitted(),
-    company: json['company'] != null ? SdkPresent((json['company'] as String?)!) : const SdkOmitted(),
-    location: json['location'] != null ? SdkPresent((json['location'] as String?)!) : const SdkOmitted(),
-    hireable: json['hireable'] != null ? SdkPresent((json['hireable'] as bool?)!) : const SdkOmitted(),
-    bio: json['bio'] != null ? SdkPresent((json['bio'] as String?)!) : const SdkOmitted(),
-  );
+  factory UsersUpdateAuthenticatedRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      UsersUpdateAuthenticatedRequestBody(
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+        email: json['email'] != null
+            ? SdkPresent((json['email'] as String?)!)
+            : const SdkOmitted(),
+        blog: json['blog'] != null
+            ? SdkPresent((json['blog'] as String?)!)
+            : const SdkOmitted(),
+        twitterUsername: json.containsKey('twitter_username')
+            ? SdkPresent(json['twitter_username'] as String?)
+            : const SdkOmitted(),
+        company: json['company'] != null
+            ? SdkPresent((json['company'] as String?)!)
+            : const SdkOmitted(),
+        location: json['location'] != null
+            ? SdkPresent((json['location'] as String?)!)
+            : const SdkOmitted(),
+        hireable: json['hireable'] != null
+            ? SdkPresent((json['hireable'] as bool?)!)
+            : const SdkOmitted(),
+        bio: json['bio'] != null
+            ? SdkPresent((json['bio'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (email) {
-      SdkPresent<String>(value: final value) => {'email': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (blog) {
-      SdkPresent<String>(value: final value) => {'blog': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (twitterUsername) {
-      SdkPresent<String?>(value: final value) => {'twitter_username': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (company) {
-      SdkPresent<String>(value: final value) => {'company': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (location) {
-      SdkPresent<String>(value: final value) => {'location': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (hireable) {
-      SdkPresent<bool>(value: final value) => {'hireable': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (bio) {
-      SdkPresent<String>(value: final value) => {'bio': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (email) {
+          SdkPresent<String>(value: final value) => {
+              'email': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (blog) {
+          SdkPresent<String>(value: final value) => {
+              'blog': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (twitterUsername) {
+          SdkPresent<String?>(value: final value) => {
+              'twitter_username': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (company) {
+          SdkPresent<String>(value: final value) => {
+              'company': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (location) {
+          SdkPresent<String>(value: final value) => {
+              'location': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (hireable) {
+          SdkPresent<bool>(value: final value) => {
+              'hireable': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (bio) {
+          SdkPresent<String>(value: final value) => {
+              'bio': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

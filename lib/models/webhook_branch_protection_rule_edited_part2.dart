@@ -8,176 +8,533 @@ part of 'webhook_branch_protection_rule_edited.dart';
 class WebhookBranchProtectionRuleEditedChanges {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional object value serialized in the `admin_enforced` wire field.
-  final SdkOptional<WebhookBranchProtectionRuleEditedChangesAdminEnforced> adminEnforced;
+  final SdkOptional<WebhookBranchProtectionRuleEditedChangesAdminEnforced>
+      adminEnforced;
+
   /// Optional object value serialized in the `authorized_actor_names` wire field.
-  final SdkOptional<WebhookBranchProtectionRuleEditedChangesAuthorizedActorNames> authorizedActorNames;
+  final SdkOptional<
+          WebhookBranchProtectionRuleEditedChangesAuthorizedActorNames>
+      authorizedActorNames;
+
   /// Optional object value serialized in the `authorized_actors_only` wire field.
-  final SdkOptional<WebhookBranchProtectionRuleEditedChangesAuthorizedActorsOnly> authorizedActorsOnly;
+  final SdkOptional<
+          WebhookBranchProtectionRuleEditedChangesAuthorizedActorsOnly>
+      authorizedActorsOnly;
+
   /// Optional object value serialized in the `authorized_dismissal_actors_only` wire field.
-  final SdkOptional<WebhookBranchProtectionRuleEditedChangesAuthorizedDismissalActorsOnly> authorizedDismissalActorsOnly;
+  final SdkOptional<
+          WebhookBranchProtectionRuleEditedChangesAuthorizedDismissalActorsOnly>
+      authorizedDismissalActorsOnly;
+
   /// Optional object value serialized in the `linear_history_requirement_enforcement_level` wire field.
-  final SdkOptional<WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevel> linearHistoryRequirementEnforcementLevel;
+  final SdkOptional<
+          WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevel>
+      linearHistoryRequirementEnforcementLevel;
+
   /// Optional object value serialized in the `lock_branch_enforcement_level` wire field.
-  final SdkOptional<WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevel> lockBranchEnforcementLevel;
+  final SdkOptional<
+          WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevel>
+      lockBranchEnforcementLevel;
+
   /// Optional object value serialized in the `lock_allows_fork_sync` wire field.
-  final SdkOptional<WebhookBranchProtectionRuleEditedChangesLockAllowsForkSync> lockAllowsForkSync;
+  final SdkOptional<WebhookBranchProtectionRuleEditedChangesLockAllowsForkSync>
+      lockAllowsForkSync;
+
   /// Optional object value serialized in the `pull_request_reviews_enforcement_level` wire field.
-  final SdkOptional<WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevel> pullRequestReviewsEnforcementLevel;
+  final SdkOptional<
+          WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevel>
+      pullRequestReviewsEnforcementLevel;
+
   /// Optional object value serialized in the `require_last_push_approval` wire field.
-  final SdkOptional<WebhookBranchProtectionRuleEditedChangesRequireLastPushApproval> requireLastPushApproval;
+  final SdkOptional<
+          WebhookBranchProtectionRuleEditedChangesRequireLastPushApproval>
+      requireLastPushApproval;
+
   /// Optional object value serialized in the `required_status_checks` wire field.
-  final SdkOptional<WebhookBranchProtectionRuleEditedChangesRequiredStatusChecks> requiredStatusChecks;
+  final SdkOptional<
+          WebhookBranchProtectionRuleEditedChangesRequiredStatusChecks>
+      requiredStatusChecks;
+
   /// Optional object value serialized in the `required_status_checks_enforcement_level` wire field.
-  final SdkOptional<WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevel> requiredStatusChecksEnforcementLevel;
+  final SdkOptional<
+          WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevel>
+      requiredStatusChecksEnforcementLevel;
 
-  const WebhookBranchProtectionRuleEditedChanges({this.adminEnforced = const SdkOmitted(), this.authorizedActorNames = const SdkOmitted(), this.authorizedActorsOnly = const SdkOmitted(), this.authorizedDismissalActorsOnly = const SdkOmitted(), this.linearHistoryRequirementEnforcementLevel = const SdkOmitted(), this.lockBranchEnforcementLevel = const SdkOmitted(), this.lockAllowsForkSync = const SdkOmitted(), this.pullRequestReviewsEnforcementLevel = const SdkOmitted(), this.requireLastPushApproval = const SdkOmitted(), this.requiredStatusChecks = const SdkOmitted(), this.requiredStatusChecksEnforcementLevel = const SdkOmitted()});
+  const WebhookBranchProtectionRuleEditedChanges(
+      {this.adminEnforced = const SdkOmitted(),
+      this.authorizedActorNames = const SdkOmitted(),
+      this.authorizedActorsOnly = const SdkOmitted(),
+      this.authorizedDismissalActorsOnly = const SdkOmitted(),
+      this.linearHistoryRequirementEnforcementLevel = const SdkOmitted(),
+      this.lockBranchEnforcementLevel = const SdkOmitted(),
+      this.lockAllowsForkSync = const SdkOmitted(),
+      this.pullRequestReviewsEnforcementLevel = const SdkOmitted(),
+      this.requireLastPushApproval = const SdkOmitted(),
+      this.requiredStatusChecks = const SdkOmitted(),
+      this.requiredStatusChecksEnforcementLevel = const SdkOmitted()});
 
-  WebhookBranchProtectionRuleEditedChanges Function({SdkOptional<WebhookBranchProtectionRuleEditedChangesAdminEnforced> adminEnforced, SdkOptional<WebhookBranchProtectionRuleEditedChangesAuthorizedActorNames> authorizedActorNames, SdkOptional<WebhookBranchProtectionRuleEditedChangesAuthorizedActorsOnly> authorizedActorsOnly, SdkOptional<WebhookBranchProtectionRuleEditedChangesAuthorizedDismissalActorsOnly> authorizedDismissalActorsOnly, SdkOptional<WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevel> linearHistoryRequirementEnforcementLevel, SdkOptional<WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevel> lockBranchEnforcementLevel, SdkOptional<WebhookBranchProtectionRuleEditedChangesLockAllowsForkSync> lockAllowsForkSync, SdkOptional<WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevel> pullRequestReviewsEnforcementLevel, SdkOptional<WebhookBranchProtectionRuleEditedChangesRequireLastPushApproval> requireLastPushApproval, SdkOptional<WebhookBranchProtectionRuleEditedChangesRequiredStatusChecks> requiredStatusChecks, SdkOptional<WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevel> requiredStatusChecksEnforcementLevel}) get copyWith => _copyWith;
+  WebhookBranchProtectionRuleEditedChanges Function(
+      {SdkOptional<WebhookBranchProtectionRuleEditedChangesAdminEnforced>
+          adminEnforced,
+      SdkOptional<WebhookBranchProtectionRuleEditedChangesAuthorizedActorNames>
+          authorizedActorNames,
+      SdkOptional<WebhookBranchProtectionRuleEditedChangesAuthorizedActorsOnly>
+          authorizedActorsOnly,
+      SdkOptional<
+              WebhookBranchProtectionRuleEditedChangesAuthorizedDismissalActorsOnly>
+          authorizedDismissalActorsOnly,
+      SdkOptional<
+              WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevel>
+          linearHistoryRequirementEnforcementLevel,
+      SdkOptional<
+              WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevel>
+          lockBranchEnforcementLevel,
+      SdkOptional<WebhookBranchProtectionRuleEditedChangesLockAllowsForkSync>
+          lockAllowsForkSync,
+      SdkOptional<
+              WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevel>
+          pullRequestReviewsEnforcementLevel,
+      SdkOptional<
+              WebhookBranchProtectionRuleEditedChangesRequireLastPushApproval>
+          requireLastPushApproval,
+      SdkOptional<WebhookBranchProtectionRuleEditedChangesRequiredStatusChecks>
+          requiredStatusChecks,
+      SdkOptional<
+              WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevel>
+          requiredStatusChecksEnforcementLevel}) get copyWith => _copyWith;
 
-  WebhookBranchProtectionRuleEditedChanges _copyWith({Object? adminEnforced = sdkOmittedValue, Object? authorizedActorNames = sdkOmittedValue, Object? authorizedActorsOnly = sdkOmittedValue, Object? authorizedDismissalActorsOnly = sdkOmittedValue, Object? linearHistoryRequirementEnforcementLevel = sdkOmittedValue, Object? lockBranchEnforcementLevel = sdkOmittedValue, Object? lockAllowsForkSync = sdkOmittedValue, Object? pullRequestReviewsEnforcementLevel = sdkOmittedValue, Object? requireLastPushApproval = sdkOmittedValue, Object? requiredStatusChecks = sdkOmittedValue, Object? requiredStatusChecksEnforcementLevel = sdkOmittedValue}) => WebhookBranchProtectionRuleEditedChanges(
-    adminEnforced: identical(adminEnforced, sdkOmittedValue) ? this.adminEnforced : adminEnforced as SdkOptional<WebhookBranchProtectionRuleEditedChangesAdminEnforced>,
-    authorizedActorNames: identical(authorizedActorNames, sdkOmittedValue) ? this.authorizedActorNames : authorizedActorNames as SdkOptional<WebhookBranchProtectionRuleEditedChangesAuthorizedActorNames>,
-    authorizedActorsOnly: identical(authorizedActorsOnly, sdkOmittedValue) ? this.authorizedActorsOnly : authorizedActorsOnly as SdkOptional<WebhookBranchProtectionRuleEditedChangesAuthorizedActorsOnly>,
-    authorizedDismissalActorsOnly: identical(authorizedDismissalActorsOnly, sdkOmittedValue) ? this.authorizedDismissalActorsOnly : authorizedDismissalActorsOnly as SdkOptional<WebhookBranchProtectionRuleEditedChangesAuthorizedDismissalActorsOnly>,
-    linearHistoryRequirementEnforcementLevel: identical(linearHistoryRequirementEnforcementLevel, sdkOmittedValue) ? this.linearHistoryRequirementEnforcementLevel : linearHistoryRequirementEnforcementLevel as SdkOptional<WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevel>,
-    lockBranchEnforcementLevel: identical(lockBranchEnforcementLevel, sdkOmittedValue) ? this.lockBranchEnforcementLevel : lockBranchEnforcementLevel as SdkOptional<WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevel>,
-    lockAllowsForkSync: identical(lockAllowsForkSync, sdkOmittedValue) ? this.lockAllowsForkSync : lockAllowsForkSync as SdkOptional<WebhookBranchProtectionRuleEditedChangesLockAllowsForkSync>,
-    pullRequestReviewsEnforcementLevel: identical(pullRequestReviewsEnforcementLevel, sdkOmittedValue) ? this.pullRequestReviewsEnforcementLevel : pullRequestReviewsEnforcementLevel as SdkOptional<WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevel>,
-    requireLastPushApproval: identical(requireLastPushApproval, sdkOmittedValue) ? this.requireLastPushApproval : requireLastPushApproval as SdkOptional<WebhookBranchProtectionRuleEditedChangesRequireLastPushApproval>,
-    requiredStatusChecks: identical(requiredStatusChecks, sdkOmittedValue) ? this.requiredStatusChecks : requiredStatusChecks as SdkOptional<WebhookBranchProtectionRuleEditedChangesRequiredStatusChecks>,
-    requiredStatusChecksEnforcementLevel: identical(requiredStatusChecksEnforcementLevel, sdkOmittedValue) ? this.requiredStatusChecksEnforcementLevel : requiredStatusChecksEnforcementLevel as SdkOptional<WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevel>,
-  );
+  WebhookBranchProtectionRuleEditedChanges _copyWith(
+          {Object? adminEnforced = sdkOmittedValue,
+          Object? authorizedActorNames = sdkOmittedValue,
+          Object? authorizedActorsOnly = sdkOmittedValue,
+          Object? authorizedDismissalActorsOnly = sdkOmittedValue,
+          Object? linearHistoryRequirementEnforcementLevel = sdkOmittedValue,
+          Object? lockBranchEnforcementLevel = sdkOmittedValue,
+          Object? lockAllowsForkSync = sdkOmittedValue,
+          Object? pullRequestReviewsEnforcementLevel = sdkOmittedValue,
+          Object? requireLastPushApproval = sdkOmittedValue,
+          Object? requiredStatusChecks = sdkOmittedValue,
+          Object? requiredStatusChecksEnforcementLevel = sdkOmittedValue}) =>
+      WebhookBranchProtectionRuleEditedChanges(
+        adminEnforced: identical(adminEnforced, sdkOmittedValue)
+            ? this.adminEnforced
+            : adminEnforced as SdkOptional<
+                WebhookBranchProtectionRuleEditedChangesAdminEnforced>,
+        authorizedActorNames: identical(authorizedActorNames, sdkOmittedValue)
+            ? this.authorizedActorNames
+            : authorizedActorNames as SdkOptional<
+                WebhookBranchProtectionRuleEditedChangesAuthorizedActorNames>,
+        authorizedActorsOnly: identical(authorizedActorsOnly, sdkOmittedValue)
+            ? this.authorizedActorsOnly
+            : authorizedActorsOnly as SdkOptional<
+                WebhookBranchProtectionRuleEditedChangesAuthorizedActorsOnly>,
+        authorizedDismissalActorsOnly: identical(
+                authorizedDismissalActorsOnly, sdkOmittedValue)
+            ? this.authorizedDismissalActorsOnly
+            : authorizedDismissalActorsOnly as SdkOptional<
+                WebhookBranchProtectionRuleEditedChangesAuthorizedDismissalActorsOnly>,
+        linearHistoryRequirementEnforcementLevel: identical(
+                linearHistoryRequirementEnforcementLevel, sdkOmittedValue)
+            ? this.linearHistoryRequirementEnforcementLevel
+            : linearHistoryRequirementEnforcementLevel as SdkOptional<
+                WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevel>,
+        lockBranchEnforcementLevel: identical(
+                lockBranchEnforcementLevel, sdkOmittedValue)
+            ? this.lockBranchEnforcementLevel
+            : lockBranchEnforcementLevel as SdkOptional<
+                WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevel>,
+        lockAllowsForkSync: identical(lockAllowsForkSync, sdkOmittedValue)
+            ? this.lockAllowsForkSync
+            : lockAllowsForkSync as SdkOptional<
+                WebhookBranchProtectionRuleEditedChangesLockAllowsForkSync>,
+        pullRequestReviewsEnforcementLevel: identical(
+                pullRequestReviewsEnforcementLevel, sdkOmittedValue)
+            ? this.pullRequestReviewsEnforcementLevel
+            : pullRequestReviewsEnforcementLevel as SdkOptional<
+                WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevel>,
+        requireLastPushApproval: identical(
+                requireLastPushApproval, sdkOmittedValue)
+            ? this.requireLastPushApproval
+            : requireLastPushApproval as SdkOptional<
+                WebhookBranchProtectionRuleEditedChangesRequireLastPushApproval>,
+        requiredStatusChecks: identical(requiredStatusChecks, sdkOmittedValue)
+            ? this.requiredStatusChecks
+            : requiredStatusChecks as SdkOptional<
+                WebhookBranchProtectionRuleEditedChangesRequiredStatusChecks>,
+        requiredStatusChecksEnforcementLevel: identical(
+                requiredStatusChecksEnforcementLevel, sdkOmittedValue)
+            ? this.requiredStatusChecksEnforcementLevel
+            : requiredStatusChecksEnforcementLevel as SdkOptional<
+                WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevel>,
+      );
 
-  factory WebhookBranchProtectionRuleEditedChanges.fromJson(Map<String, dynamic> json) => WebhookBranchProtectionRuleEditedChanges(
-    adminEnforced: json['admin_enforced'] != null ? SdkPresent((json['admin_enforced'] != null ? WebhookBranchProtectionRuleEditedChangesAdminEnforced.fromJson(json['admin_enforced'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    authorizedActorNames: json['authorized_actor_names'] != null ? SdkPresent((json['authorized_actor_names'] != null ? WebhookBranchProtectionRuleEditedChangesAuthorizedActorNames.fromJson(json['authorized_actor_names'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    authorizedActorsOnly: json['authorized_actors_only'] != null ? SdkPresent((json['authorized_actors_only'] != null ? WebhookBranchProtectionRuleEditedChangesAuthorizedActorsOnly.fromJson(json['authorized_actors_only'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    authorizedDismissalActorsOnly: json['authorized_dismissal_actors_only'] != null ? SdkPresent((json['authorized_dismissal_actors_only'] != null ? WebhookBranchProtectionRuleEditedChangesAuthorizedDismissalActorsOnly.fromJson(json['authorized_dismissal_actors_only'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    linearHistoryRequirementEnforcementLevel: json['linear_history_requirement_enforcement_level'] != null ? SdkPresent((json['linear_history_requirement_enforcement_level'] != null ? WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevel.fromJson(json['linear_history_requirement_enforcement_level'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    lockBranchEnforcementLevel: json['lock_branch_enforcement_level'] != null ? SdkPresent((json['lock_branch_enforcement_level'] != null ? WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevel.fromJson(json['lock_branch_enforcement_level'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    lockAllowsForkSync: json['lock_allows_fork_sync'] != null ? SdkPresent((json['lock_allows_fork_sync'] != null ? WebhookBranchProtectionRuleEditedChangesLockAllowsForkSync.fromJson(json['lock_allows_fork_sync'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    pullRequestReviewsEnforcementLevel: json['pull_request_reviews_enforcement_level'] != null ? SdkPresent((json['pull_request_reviews_enforcement_level'] != null ? WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevel.fromJson(json['pull_request_reviews_enforcement_level'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    requireLastPushApproval: json['require_last_push_approval'] != null ? SdkPresent((json['require_last_push_approval'] != null ? WebhookBranchProtectionRuleEditedChangesRequireLastPushApproval.fromJson(json['require_last_push_approval'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    requiredStatusChecks: json['required_status_checks'] != null ? SdkPresent((json['required_status_checks'] != null ? WebhookBranchProtectionRuleEditedChangesRequiredStatusChecks.fromJson(json['required_status_checks'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    requiredStatusChecksEnforcementLevel: json['required_status_checks_enforcement_level'] != null ? SdkPresent((json['required_status_checks_enforcement_level'] != null ? WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevel.fromJson(json['required_status_checks_enforcement_level'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-  );
+  factory WebhookBranchProtectionRuleEditedChanges.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookBranchProtectionRuleEditedChanges(
+        adminEnforced: json['admin_enforced'] != null
+            ? SdkPresent((json['admin_enforced'] != null
+                ? WebhookBranchProtectionRuleEditedChangesAdminEnforced
+                    .fromJson(json['admin_enforced'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        authorizedActorNames: json['authorized_actor_names'] != null
+            ? SdkPresent((json['authorized_actor_names'] != null
+                ? WebhookBranchProtectionRuleEditedChangesAuthorizedActorNames
+                    .fromJson(
+                        json['authorized_actor_names'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        authorizedActorsOnly: json['authorized_actors_only'] != null
+            ? SdkPresent((json['authorized_actors_only'] != null
+                ? WebhookBranchProtectionRuleEditedChangesAuthorizedActorsOnly
+                    .fromJson(
+                        json['authorized_actors_only'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        authorizedDismissalActorsOnly: json[
+                    'authorized_dismissal_actors_only'] !=
+                null
+            ? SdkPresent((json['authorized_dismissal_actors_only'] != null
+                ? WebhookBranchProtectionRuleEditedChangesAuthorizedDismissalActorsOnly
+                    .fromJson(json['authorized_dismissal_actors_only']
+                        as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        linearHistoryRequirementEnforcementLevel: json[
+                    'linear_history_requirement_enforcement_level'] !=
+                null
+            ? SdkPresent((json[
+                        'linear_history_requirement_enforcement_level'] !=
+                    null
+                ? WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevel
+                    .fromJson(
+                        json['linear_history_requirement_enforcement_level']
+                            as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        lockBranchEnforcementLevel: json['lock_branch_enforcement_level'] !=
+                null
+            ? SdkPresent((json['lock_branch_enforcement_level'] != null
+                ? WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevel
+                    .fromJson(json['lock_branch_enforcement_level']
+                        as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        lockAllowsForkSync: json['lock_allows_fork_sync'] != null
+            ? SdkPresent((json['lock_allows_fork_sync'] != null
+                ? WebhookBranchProtectionRuleEditedChangesLockAllowsForkSync
+                    .fromJson(
+                        json['lock_allows_fork_sync'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        pullRequestReviewsEnforcementLevel: json[
+                    'pull_request_reviews_enforcement_level'] !=
+                null
+            ? SdkPresent((json['pull_request_reviews_enforcement_level'] != null
+                ? WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevel
+                    .fromJson(json['pull_request_reviews_enforcement_level']
+                        as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        requireLastPushApproval: json['require_last_push_approval'] != null
+            ? SdkPresent((json['require_last_push_approval'] != null
+                ? WebhookBranchProtectionRuleEditedChangesRequireLastPushApproval
+                    .fromJson(json['require_last_push_approval']
+                        as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        requiredStatusChecks: json['required_status_checks'] != null
+            ? SdkPresent((json['required_status_checks'] != null
+                ? WebhookBranchProtectionRuleEditedChangesRequiredStatusChecks
+                    .fromJson(
+                        json['required_status_checks'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        requiredStatusChecksEnforcementLevel: json[
+                    'required_status_checks_enforcement_level'] !=
+                null
+            ? SdkPresent((json['required_status_checks_enforcement_level'] !=
+                    null
+                ? WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevel
+                    .fromJson(json['required_status_checks_enforcement_level']
+                        as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (adminEnforced) {
-      SdkPresent<WebhookBranchProtectionRuleEditedChangesAdminEnforced>(value: final value) => {'admin_enforced': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (authorizedActorNames) {
-      SdkPresent<WebhookBranchProtectionRuleEditedChangesAuthorizedActorNames>(value: final value) => {'authorized_actor_names': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (authorizedActorsOnly) {
-      SdkPresent<WebhookBranchProtectionRuleEditedChangesAuthorizedActorsOnly>(value: final value) => {'authorized_actors_only': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (authorizedDismissalActorsOnly) {
-      SdkPresent<WebhookBranchProtectionRuleEditedChangesAuthorizedDismissalActorsOnly>(value: final value) => {'authorized_dismissal_actors_only': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (linearHistoryRequirementEnforcementLevel) {
-      SdkPresent<WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevel>(value: final value) => {'linear_history_requirement_enforcement_level': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (lockBranchEnforcementLevel) {
-      SdkPresent<WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevel>(value: final value) => {'lock_branch_enforcement_level': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (lockAllowsForkSync) {
-      SdkPresent<WebhookBranchProtectionRuleEditedChangesLockAllowsForkSync>(value: final value) => {'lock_allows_fork_sync': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (pullRequestReviewsEnforcementLevel) {
-      SdkPresent<WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevel>(value: final value) => {'pull_request_reviews_enforcement_level': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (requireLastPushApproval) {
-      SdkPresent<WebhookBranchProtectionRuleEditedChangesRequireLastPushApproval>(value: final value) => {'require_last_push_approval': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (requiredStatusChecks) {
-      SdkPresent<WebhookBranchProtectionRuleEditedChangesRequiredStatusChecks>(value: final value) => {'required_status_checks': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (requiredStatusChecksEnforcementLevel) {
-      SdkPresent<WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevel>(value: final value) => {'required_status_checks_enforcement_level': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (adminEnforced) {
+          SdkPresent<WebhookBranchProtectionRuleEditedChangesAdminEnforced>(
+            value: final value
+          ) =>
+            {
+              'admin_enforced': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (authorizedActorNames) {
+          SdkPresent<
+                WebhookBranchProtectionRuleEditedChangesAuthorizedActorNames>(
+            value: final value
+          ) =>
+            {
+              'authorized_actor_names': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (authorizedActorsOnly) {
+          SdkPresent<
+                WebhookBranchProtectionRuleEditedChangesAuthorizedActorsOnly>(
+            value: final value
+          ) =>
+            {
+              'authorized_actors_only': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (authorizedDismissalActorsOnly) {
+          SdkPresent<
+                WebhookBranchProtectionRuleEditedChangesAuthorizedDismissalActorsOnly>(
+            value: final value
+          ) =>
+            {
+              'authorized_dismissal_actors_only': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (linearHistoryRequirementEnforcementLevel) {
+          SdkPresent<
+                WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevel>(
+            value: final value
+          ) =>
+            {
+              'linear_history_requirement_enforcement_level': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (lockBranchEnforcementLevel) {
+          SdkPresent<
+                WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevel>(
+            value: final value
+          ) =>
+            {
+              'lock_branch_enforcement_level': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (lockAllowsForkSync) {
+          SdkPresent<
+                WebhookBranchProtectionRuleEditedChangesLockAllowsForkSync>(
+            value: final value
+          ) =>
+            {
+              'lock_allows_fork_sync': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (pullRequestReviewsEnforcementLevel) {
+          SdkPresent<
+                WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevel>(
+            value: final value
+          ) =>
+            {
+              'pull_request_reviews_enforcement_level': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (requireLastPushApproval) {
+          SdkPresent<
+                WebhookBranchProtectionRuleEditedChangesRequireLastPushApproval>(
+            value: final value
+          ) =>
+            {
+              'require_last_push_approval': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (requiredStatusChecks) {
+          SdkPresent<
+                WebhookBranchProtectionRuleEditedChangesRequiredStatusChecks>(
+            value: final value
+          ) =>
+            {
+              'required_status_checks': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (requiredStatusChecksEnforcementLevel) {
+          SdkPresent<
+                WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevel>(
+            value: final value
+          ) =>
+            {
+              'required_status_checks_enforcement_level': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Typed representation of the `WebhookBranchProtectionRuleEdited` API schema.
 class WebhookBranchProtectionRuleEdited {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `action` wire field.
   final WebhookBranchProtectionRuleEditedAction action;
+
   /// If the action was `edited`, the changes to the rule.
   final SdkOptional<WebhookBranchProtectionRuleEditedChanges> changes;
+
   /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured on an enterprise account or an organization that's part of an enterprise account. For more information, see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
   final SdkOptional<EnterpriseWebhooks> enterprise;
+
   /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured for and sent to a GitHub App. For more information, see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
   final SdkOptional<SimpleInstallation> installation;
+
   /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an organization, or when the event occurs from activity in a repository owned by an organization.
   final SdkOptional<OrganizationSimpleWebhooks> organization;
+
   /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property when the event occurs from activity in a repository.
   final RepositoryWebhooks repository;
+
   /// The branch protection rule. Includes a `name` and all the [branch protection settings](https://docs.github.com/github/administering-a-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#about-branch-protection-settings) applied to branches that match the name. Binary settings are boolean. Multi-level configurations are one of `off`, `non_admins`, or `everyone`. Actor and build lists are arrays of strings.
   final WebhooksRule rule;
+
   /// A GitHub user.
   final SimpleUser sender;
 
-  const WebhookBranchProtectionRuleEdited({required this.action, this.changes = const SdkOmitted(), this.enterprise = const SdkOmitted(), this.installation = const SdkOmitted(), this.organization = const SdkOmitted(), required this.repository, required this.rule, required this.sender});
+  const WebhookBranchProtectionRuleEdited(
+      {required this.action,
+      this.changes = const SdkOmitted(),
+      this.enterprise = const SdkOmitted(),
+      this.installation = const SdkOmitted(),
+      this.organization = const SdkOmitted(),
+      required this.repository,
+      required this.rule,
+      required this.sender});
 
-  WebhookBranchProtectionRuleEdited Function({WebhookBranchProtectionRuleEditedAction action, SdkOptional<WebhookBranchProtectionRuleEditedChanges> changes, SdkOptional<EnterpriseWebhooks> enterprise, SdkOptional<SimpleInstallation> installation, SdkOptional<OrganizationSimpleWebhooks> organization, RepositoryWebhooks repository, WebhooksRule rule, SimpleUser sender}) get copyWith => _copyWith;
+  WebhookBranchProtectionRuleEdited Function(
+      {WebhookBranchProtectionRuleEditedAction action,
+      SdkOptional<WebhookBranchProtectionRuleEditedChanges> changes,
+      SdkOptional<EnterpriseWebhooks> enterprise,
+      SdkOptional<SimpleInstallation> installation,
+      SdkOptional<OrganizationSimpleWebhooks> organization,
+      RepositoryWebhooks repository,
+      WebhooksRule rule,
+      SimpleUser sender}) get copyWith => _copyWith;
 
-  WebhookBranchProtectionRuleEdited _copyWith({Object? action = sdkOmittedValue, Object? changes = sdkOmittedValue, Object? enterprise = sdkOmittedValue, Object? installation = sdkOmittedValue, Object? organization = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? rule = sdkOmittedValue, Object? sender = sdkOmittedValue}) => WebhookBranchProtectionRuleEdited(
-    action: identical(action, sdkOmittedValue) ? this.action : action as WebhookBranchProtectionRuleEditedAction,
-    changes: identical(changes, sdkOmittedValue) ? this.changes : changes as SdkOptional<WebhookBranchProtectionRuleEditedChanges>,
-    enterprise: identical(enterprise, sdkOmittedValue) ? this.enterprise : enterprise as SdkOptional<EnterpriseWebhooks>,
-    installation: identical(installation, sdkOmittedValue) ? this.installation : installation as SdkOptional<SimpleInstallation>,
-    organization: identical(organization, sdkOmittedValue) ? this.organization : organization as SdkOptional<OrganizationSimpleWebhooks>,
-    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as RepositoryWebhooks,
-    rule: identical(rule, sdkOmittedValue) ? this.rule : rule as WebhooksRule,
-    sender: identical(sender, sdkOmittedValue) ? this.sender : sender as SimpleUser,
-  );
+  WebhookBranchProtectionRuleEdited _copyWith(
+          {Object? action = sdkOmittedValue,
+          Object? changes = sdkOmittedValue,
+          Object? enterprise = sdkOmittedValue,
+          Object? installation = sdkOmittedValue,
+          Object? organization = sdkOmittedValue,
+          Object? repository = sdkOmittedValue,
+          Object? rule = sdkOmittedValue,
+          Object? sender = sdkOmittedValue}) =>
+      WebhookBranchProtectionRuleEdited(
+        action: identical(action, sdkOmittedValue)
+            ? this.action
+            : action as WebhookBranchProtectionRuleEditedAction,
+        changes: identical(changes, sdkOmittedValue)
+            ? this.changes
+            : changes as SdkOptional<WebhookBranchProtectionRuleEditedChanges>,
+        enterprise: identical(enterprise, sdkOmittedValue)
+            ? this.enterprise
+            : enterprise as SdkOptional<EnterpriseWebhooks>,
+        installation: identical(installation, sdkOmittedValue)
+            ? this.installation
+            : installation as SdkOptional<SimpleInstallation>,
+        organization: identical(organization, sdkOmittedValue)
+            ? this.organization
+            : organization as SdkOptional<OrganizationSimpleWebhooks>,
+        repository: identical(repository, sdkOmittedValue)
+            ? this.repository
+            : repository as RepositoryWebhooks,
+        rule:
+            identical(rule, sdkOmittedValue) ? this.rule : rule as WebhooksRule,
+        sender: identical(sender, sdkOmittedValue)
+            ? this.sender
+            : sender as SimpleUser,
+      );
 
-  factory WebhookBranchProtectionRuleEdited.fromJson(Map<String, dynamic> json) => WebhookBranchProtectionRuleEdited(
-    action: (json['action'] != null ? WebhookBranchProtectionRuleEditedAction.fromJson(json['action'] as String) : null)!,
-    changes: json['changes'] != null ? SdkPresent((json['changes'] != null ? WebhookBranchProtectionRuleEditedChanges.fromJson(json['changes'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    enterprise: json['enterprise'] != null ? SdkPresent((json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    installation: json['installation'] != null ? SdkPresent((json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    organization: json['organization'] != null ? SdkPresent((json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    repository: (json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null)!,
-    rule: (json['rule'] != null ? WebhooksRule.fromJson(json['rule'] as Map<String, dynamic>) : null)!,
-    sender: (json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null)!,
-  );
+  factory WebhookBranchProtectionRuleEdited.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookBranchProtectionRuleEdited(
+        action: (json['action'] != null
+            ? WebhookBranchProtectionRuleEditedAction.fromJson(
+                json['action'] as String)
+            : null)!,
+        changes: json['changes'] != null
+            ? SdkPresent((json['changes'] != null
+                ? WebhookBranchProtectionRuleEditedChanges.fromJson(
+                    json['changes'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        enterprise: json['enterprise'] != null
+            ? SdkPresent((json['enterprise'] != null
+                ? EnterpriseWebhooks.fromJson(
+                    json['enterprise'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        installation: json['installation'] != null
+            ? SdkPresent((json['installation'] != null
+                ? SimpleInstallation.fromJson(
+                    json['installation'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        organization: json['organization'] != null
+            ? SdkPresent((json['organization'] != null
+                ? OrganizationSimpleWebhooks.fromJson(
+                    json['organization'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        repository: (json['repository'] != null
+            ? RepositoryWebhooks.fromJson(
+                json['repository'] as Map<String, dynamic>)
+            : null)!,
+        rule: (json['rule'] != null
+            ? WebhooksRule.fromJson(json['rule'] as Map<String, dynamic>)
+            : null)!,
+        sender: (json['sender'] != null
+            ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'action': action.toJson(),
-    ...switch (changes) {
-      SdkPresent<WebhookBranchProtectionRuleEditedChanges>(value: final value) => {'changes': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (enterprise) {
-      SdkPresent<EnterpriseWebhooks>(value: final value) => {'enterprise': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (installation) {
-      SdkPresent<SimpleInstallation>(value: final value) => {'installation': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (organization) {
-      SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {'organization': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'repository': repository.toJson(),
-    'rule': rule.toJson(),
-    'sender': sender.toJson(),
-  };
+        'action': action.toJson(),
+        ...switch (changes) {
+          SdkPresent<WebhookBranchProtectionRuleEditedChanges>(
+            value: final value
+          ) =>
+            {
+              'changes': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (enterprise) {
+          SdkPresent<EnterpriseWebhooks>(value: final value) => {
+              'enterprise': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (installation) {
+          SdkPresent<SimpleInstallation>(value: final value) => {
+              'installation': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (organization) {
+          SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {
+              'organization': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'repository': repository.toJson(),
+        'rule': rule.toJson(),
+        'sender': sender.toJson(),
+      };
 }

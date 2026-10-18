@@ -8,22 +8,33 @@ sealed class WebhookPackagePublishedPackagePackageVersionBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const WebhookPackagePublishedPackagePackageVersionBody();
-  factory WebhookPackagePublishedPackagePackageVersionBody.fromJson(Object? json) {
-    if (json is String) { return WebhookPackagePublishedPackagePackageVersionBodyString(json); }
-    if (json is Map) { return WebhookPackagePublishedPackagePackageVersionBodyMap(Map<String, dynamic>.from(json)); }
-    throw FormatException("No variant matched for WebhookPackagePublishedPackagePackageVersionBody");
+  factory WebhookPackagePublishedPackagePackageVersionBody.fromJson(
+      Object? json) {
+    if (json is String) {
+      return WebhookPackagePublishedPackagePackageVersionBodyString(json);
+    }
+    if (json is Map) {
+      return WebhookPackagePublishedPackagePackageVersionBodyMap(
+          Map<String, dynamic>.from(json));
+    }
+    throw FormatException(
+        "No variant matched for WebhookPackagePublishedPackagePackageVersionBody");
   }
   Object? toJson();
 }
 
-final class WebhookPackagePublishedPackagePackageVersionBodyString extends WebhookPackagePublishedPackagePackageVersionBody {
+final class WebhookPackagePublishedPackagePackageVersionBodyString
+    extends WebhookPackagePublishedPackagePackageVersionBody {
   final String value;
   const WebhookPackagePublishedPackagePackageVersionBodyString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
-final class WebhookPackagePublishedPackagePackageVersionBodyMap extends WebhookPackagePublishedPackagePackageVersionBody {
+final class WebhookPackagePublishedPackagePackageVersionBodyMap
+    extends WebhookPackagePublishedPackagePackageVersionBody {
   final Map<String, dynamic> value;
   const WebhookPackagePublishedPackagePackageVersionBodyMap(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }

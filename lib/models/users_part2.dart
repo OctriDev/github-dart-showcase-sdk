@@ -8,294 +8,512 @@ part of 'users.dart';
 class GpgKey {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `int64`-formatted value serialized in the `id` wire field.
   final int id;
+
   /// Optional `string` value serialized in the `name` wire field.
   final SdkOptional<String?> name;
+
   /// Required `integer` value serialized in the `primary_key_id` wire field.
   final int? primaryKeyId;
+
   /// Required `string` value serialized in the `key_id` wire field.
   final String keyId;
+
   /// Required `string` value serialized in the `public_key` wire field.
   final String publicKey;
+
   /// Required array value serialized in the `emails` wire field.
   final List<GpgKeyEmailsItem> emails;
+
   /// Required array value serialized in the `subkeys` wire field.
   final List<GpgKeySubkeysItem> subkeys;
+
   /// Required `boolean` value serialized in the `can_sign` wire field.
   final bool canSign;
+
   /// Required `boolean` value serialized in the `can_encrypt_comms` wire field.
   final bool canEncryptComms;
+
   /// Required `boolean` value serialized in the `can_encrypt_storage` wire field.
   final bool canEncryptStorage;
+
   /// Required `boolean` value serialized in the `can_certify` wire field.
   final bool canCertify;
+
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String createdAt;
+
   /// Required `date-time`-formatted value serialized in the `expires_at` wire field.
   final String? expiresAt;
+
   /// Required `boolean` value serialized in the `revoked` wire field.
   final bool revoked;
+
   /// Required `string` value serialized in the `raw_key` wire field.
   final String? rawKey;
 
-  const GpgKey({required this.id, this.name = const SdkOmitted(), required this.primaryKeyId, required this.keyId, required this.publicKey, required this.emails, required this.subkeys, required this.canSign, required this.canEncryptComms, required this.canEncryptStorage, required this.canCertify, required this.createdAt, required this.expiresAt, required this.revoked, required this.rawKey});
+  const GpgKey(
+      {required this.id,
+      this.name = const SdkOmitted(),
+      required this.primaryKeyId,
+      required this.keyId,
+      required this.publicKey,
+      required this.emails,
+      required this.subkeys,
+      required this.canSign,
+      required this.canEncryptComms,
+      required this.canEncryptStorage,
+      required this.canCertify,
+      required this.createdAt,
+      required this.expiresAt,
+      required this.revoked,
+      required this.rawKey});
 
-  GpgKey Function({int id, SdkOptional<String?> name, int? primaryKeyId, String keyId, String publicKey, List<GpgKeyEmailsItem> emails, List<GpgKeySubkeysItem> subkeys, bool canSign, bool canEncryptComms, bool canEncryptStorage, bool canCertify, String createdAt, String? expiresAt, bool revoked, String? rawKey}) get copyWith => _copyWith;
+  GpgKey Function(
+      {int id,
+      SdkOptional<String?> name,
+      int? primaryKeyId,
+      String keyId,
+      String publicKey,
+      List<GpgKeyEmailsItem> emails,
+      List<GpgKeySubkeysItem> subkeys,
+      bool canSign,
+      bool canEncryptComms,
+      bool canEncryptStorage,
+      bool canCertify,
+      String createdAt,
+      String? expiresAt,
+      bool revoked,
+      String? rawKey}) get copyWith => _copyWith;
 
-  GpgKey _copyWith({Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? primaryKeyId = sdkOmittedValue, Object? keyId = sdkOmittedValue, Object? publicKey = sdkOmittedValue, Object? emails = sdkOmittedValue, Object? subkeys = sdkOmittedValue, Object? canSign = sdkOmittedValue, Object? canEncryptComms = sdkOmittedValue, Object? canEncryptStorage = sdkOmittedValue, Object? canCertify = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? expiresAt = sdkOmittedValue, Object? revoked = sdkOmittedValue, Object? rawKey = sdkOmittedValue}) => GpgKey(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String?>,
-    primaryKeyId: identical(primaryKeyId, sdkOmittedValue) ? this.primaryKeyId : primaryKeyId as int?,
-    keyId: identical(keyId, sdkOmittedValue) ? this.keyId : keyId as String,
-    publicKey: identical(publicKey, sdkOmittedValue) ? this.publicKey : publicKey as String,
-    emails: identical(emails, sdkOmittedValue) ? this.emails : emails as List<GpgKeyEmailsItem>,
-    subkeys: identical(subkeys, sdkOmittedValue) ? this.subkeys : subkeys as List<GpgKeySubkeysItem>,
-    canSign: identical(canSign, sdkOmittedValue) ? this.canSign : canSign as bool,
-    canEncryptComms: identical(canEncryptComms, sdkOmittedValue) ? this.canEncryptComms : canEncryptComms as bool,
-    canEncryptStorage: identical(canEncryptStorage, sdkOmittedValue) ? this.canEncryptStorage : canEncryptStorage as bool,
-    canCertify: identical(canCertify, sdkOmittedValue) ? this.canCertify : canCertify as bool,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    expiresAt: identical(expiresAt, sdkOmittedValue) ? this.expiresAt : expiresAt as String?,
-    revoked: identical(revoked, sdkOmittedValue) ? this.revoked : revoked as bool,
-    rawKey: identical(rawKey, sdkOmittedValue) ? this.rawKey : rawKey as String?,
-  );
+  GpgKey _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? primaryKeyId = sdkOmittedValue,
+          Object? keyId = sdkOmittedValue,
+          Object? publicKey = sdkOmittedValue,
+          Object? emails = sdkOmittedValue,
+          Object? subkeys = sdkOmittedValue,
+          Object? canSign = sdkOmittedValue,
+          Object? canEncryptComms = sdkOmittedValue,
+          Object? canEncryptStorage = sdkOmittedValue,
+          Object? canCertify = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? expiresAt = sdkOmittedValue,
+          Object? revoked = sdkOmittedValue,
+          Object? rawKey = sdkOmittedValue}) =>
+      GpgKey(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String?>,
+        primaryKeyId: identical(primaryKeyId, sdkOmittedValue)
+            ? this.primaryKeyId
+            : primaryKeyId as int?,
+        keyId: identical(keyId, sdkOmittedValue) ? this.keyId : keyId as String,
+        publicKey: identical(publicKey, sdkOmittedValue)
+            ? this.publicKey
+            : publicKey as String,
+        emails: identical(emails, sdkOmittedValue)
+            ? this.emails
+            : emails as List<GpgKeyEmailsItem>,
+        subkeys: identical(subkeys, sdkOmittedValue)
+            ? this.subkeys
+            : subkeys as List<GpgKeySubkeysItem>,
+        canSign: identical(canSign, sdkOmittedValue)
+            ? this.canSign
+            : canSign as bool,
+        canEncryptComms: identical(canEncryptComms, sdkOmittedValue)
+            ? this.canEncryptComms
+            : canEncryptComms as bool,
+        canEncryptStorage: identical(canEncryptStorage, sdkOmittedValue)
+            ? this.canEncryptStorage
+            : canEncryptStorage as bool,
+        canCertify: identical(canCertify, sdkOmittedValue)
+            ? this.canCertify
+            : canCertify as bool,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        expiresAt: identical(expiresAt, sdkOmittedValue)
+            ? this.expiresAt
+            : expiresAt as String?,
+        revoked: identical(revoked, sdkOmittedValue)
+            ? this.revoked
+            : revoked as bool,
+        rawKey: identical(rawKey, sdkOmittedValue)
+            ? this.rawKey
+            : rawKey as String?,
+      );
 
   factory GpgKey.fromJson(Map<String, dynamic> json) => GpgKey(
-    id: ((json['id'] as num?)?.toInt())!,
-    name: json.containsKey('name') ? SdkPresent(json['name'] as String?) : const SdkOmitted(),
-    primaryKeyId: json.containsKey('primary_key_id') ? (json['primary_key_id'] as num?)?.toInt() : throw ArgumentError.value(null, 'primary_key_id', 'Required property is missing'),
-    keyId: (json['key_id'] as String?)!,
-    publicKey: (json['public_key'] as String?)!,
-    emails: ((json['emails'] as List?)?.map((e) => GpgKeyEmailsItem.fromJson(e as Map<String, dynamic>)).toList())!,
-    subkeys: ((json['subkeys'] as List?)?.map((e) => GpgKeySubkeysItem.fromJson(e as Map<String, dynamic>)).toList())!,
-    canSign: (json['can_sign'] as bool?)!,
-    canEncryptComms: (json['can_encrypt_comms'] as bool?)!,
-    canEncryptStorage: (json['can_encrypt_storage'] as bool?)!,
-    canCertify: (json['can_certify'] as bool?)!,
-    createdAt: (json['created_at'] as String?)!,
-    expiresAt: json.containsKey('expires_at') ? json['expires_at'] as String? : throw ArgumentError.value(null, 'expires_at', 'Required property is missing'),
-    revoked: (json['revoked'] as bool?)!,
-    rawKey: json.containsKey('raw_key') ? json['raw_key'] as String? : throw ArgumentError.value(null, 'raw_key', 'Required property is missing'),
-  );
+        id: ((json['id'] as num?)?.toInt())!,
+        name: json.containsKey('name')
+            ? SdkPresent(json['name'] as String?)
+            : const SdkOmitted(),
+        primaryKeyId: json.containsKey('primary_key_id')
+            ? (json['primary_key_id'] as num?)?.toInt()
+            : throw ArgumentError.value(
+                null, 'primary_key_id', 'Required property is missing'),
+        keyId: (json['key_id'] as String?)!,
+        publicKey: (json['public_key'] as String?)!,
+        emails: ((json['emails'] as List?)
+            ?.map((e) => GpgKeyEmailsItem.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        subkeys: ((json['subkeys'] as List?)
+            ?.map((e) => GpgKeySubkeysItem.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        canSign: (json['can_sign'] as bool?)!,
+        canEncryptComms: (json['can_encrypt_comms'] as bool?)!,
+        canEncryptStorage: (json['can_encrypt_storage'] as bool?)!,
+        canCertify: (json['can_certify'] as bool?)!,
+        createdAt: (json['created_at'] as String?)!,
+        expiresAt: json.containsKey('expires_at')
+            ? json['expires_at'] as String?
+            : throw ArgumentError.value(
+                null, 'expires_at', 'Required property is missing'),
+        revoked: (json['revoked'] as bool?)!,
+        rawKey: json.containsKey('raw_key')
+            ? json['raw_key'] as String?
+            : throw ArgumentError.value(
+                null, 'raw_key', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    ...switch (name) {
-      SdkPresent<String?>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    'primary_key_id': primaryKeyId,
-    'key_id': keyId,
-    'public_key': publicKey,
-    'emails': emails.map((item) => item.toJson()).toList(),
-    'subkeys': subkeys.map((item) => item.toJson()).toList(),
-    'can_sign': canSign,
-    'can_encrypt_comms': canEncryptComms,
-    'can_encrypt_storage': canEncryptStorage,
-    'can_certify': canCertify,
-    'created_at': createdAt,
-    'expires_at': expiresAt,
-    'revoked': revoked,
-    'raw_key': rawKey,
-  };
+        'id': id,
+        ...switch (name) {
+          SdkPresent<String?>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'primary_key_id': primaryKeyId,
+        'key_id': keyId,
+        'public_key': publicKey,
+        'emails': emails.map((item) => item.toJson()).toList(),
+        'subkeys': subkeys.map((item) => item.toJson()).toList(),
+        'can_sign': canSign,
+        'can_encrypt_comms': canEncryptComms,
+        'can_encrypt_storage': canEncryptStorage,
+        'can_certify': canCertify,
+        'created_at': createdAt,
+        'expires_at': expiresAt,
+        'revoked': revoked,
+        'raw_key': rawKey,
+      };
 }
 
 /// Required object value serialized in the `contexts[]` wire field.
 class HovercardContextsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `message` wire field.
   final String message;
+
   /// Required `string` value serialized in the `octicon` wire field.
   final String octicon;
 
   const HovercardContextsItem({required this.message, required this.octicon});
 
-  HovercardContextsItem Function({String message, String octicon}) get copyWith => _copyWith;
+  HovercardContextsItem Function({String message, String octicon})
+      get copyWith => _copyWith;
 
-  HovercardContextsItem _copyWith({Object? message = sdkOmittedValue, Object? octicon = sdkOmittedValue}) => HovercardContextsItem(
-    message: identical(message, sdkOmittedValue) ? this.message : message as String,
-    octicon: identical(octicon, sdkOmittedValue) ? this.octicon : octicon as String,
-  );
+  HovercardContextsItem _copyWith(
+          {Object? message = sdkOmittedValue,
+          Object? octicon = sdkOmittedValue}) =>
+      HovercardContextsItem(
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+        octicon: identical(octicon, sdkOmittedValue)
+            ? this.octicon
+            : octicon as String,
+      );
 
-  factory HovercardContextsItem.fromJson(Map<String, dynamic> json) => HovercardContextsItem(
-    message: (json['message'] as String?)!,
-    octicon: (json['octicon'] as String?)!,
-  );
+  factory HovercardContextsItem.fromJson(Map<String, dynamic> json) =>
+      HovercardContextsItem(
+        message: (json['message'] as String?)!,
+        octicon: (json['octicon'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'message': message,
-    'octicon': octicon,
-  };
+        'message': message,
+        'octicon': octicon,
+      };
 }
 
 /// Hovercard
 class Hovercard {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required array value serialized in the `contexts` wire field.
   final List<HovercardContextsItem> contexts;
 
   const Hovercard({required this.contexts});
 
-  Hovercard Function({List<HovercardContextsItem> contexts}) get copyWith => _copyWith;
+  Hovercard Function({List<HovercardContextsItem> contexts}) get copyWith =>
+      _copyWith;
 
   Hovercard _copyWith({Object? contexts = sdkOmittedValue}) => Hovercard(
-    contexts: identical(contexts, sdkOmittedValue) ? this.contexts : contexts as List<HovercardContextsItem>,
-  );
+        contexts: identical(contexts, sdkOmittedValue)
+            ? this.contexts
+            : contexts as List<HovercardContextsItem>,
+      );
 
   factory Hovercard.fromJson(Map<String, dynamic> json) => Hovercard(
-    contexts: ((json['contexts'] as List?)?.map((e) => HovercardContextsItem.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+        contexts: ((json['contexts'] as List?)
+            ?.map((e) =>
+                HovercardContextsItem.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'contexts': contexts.map((item) => item.toJson()).toList(),
-  };
+        'contexts': contexts.map((item) => item.toJson()).toList(),
+      };
 }
 
 /// Key
 class Key {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `key` wire field.
   final String key;
+
   /// Required `int64`-formatted value serialized in the `id` wire field.
   final int id;
+
   /// Required `string` value serialized in the `url` wire field.
   final String url;
+
   /// Required `string` value serialized in the `title` wire field.
   final String title;
+
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String createdAt;
+
   /// Required `boolean` value serialized in the `verified` wire field.
   final bool verified;
+
   /// Required `boolean` value serialized in the `read_only` wire field.
   final bool readOnly;
+
   /// Optional `date-time`-formatted value serialized in the `last_used` wire field.
   final SdkOptional<String?> lastUsed;
 
-  const Key({required this.key, required this.id, required this.url, required this.title, required this.createdAt, required this.verified, required this.readOnly, this.lastUsed = const SdkOmitted()});
+  const Key(
+      {required this.key,
+      required this.id,
+      required this.url,
+      required this.title,
+      required this.createdAt,
+      required this.verified,
+      required this.readOnly,
+      this.lastUsed = const SdkOmitted()});
 
-  Key Function({String key, int id, String url, String title, String createdAt, bool verified, bool readOnly, SdkOptional<String?> lastUsed}) get copyWith => _copyWith;
+  Key Function(
+      {String key,
+      int id,
+      String url,
+      String title,
+      String createdAt,
+      bool verified,
+      bool readOnly,
+      SdkOptional<String?> lastUsed}) get copyWith => _copyWith;
 
-  Key _copyWith({Object? key = sdkOmittedValue, Object? id = sdkOmittedValue, Object? url = sdkOmittedValue, Object? title = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? verified = sdkOmittedValue, Object? readOnly = sdkOmittedValue, Object? lastUsed = sdkOmittedValue}) => Key(
-    key: identical(key, sdkOmittedValue) ? this.key : key as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    title: identical(title, sdkOmittedValue) ? this.title : title as String,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    verified: identical(verified, sdkOmittedValue) ? this.verified : verified as bool,
-    readOnly: identical(readOnly, sdkOmittedValue) ? this.readOnly : readOnly as bool,
-    lastUsed: identical(lastUsed, sdkOmittedValue) ? this.lastUsed : lastUsed as SdkOptional<String?>,
-  );
+  Key _copyWith(
+          {Object? key = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? title = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? verified = sdkOmittedValue,
+          Object? readOnly = sdkOmittedValue,
+          Object? lastUsed = sdkOmittedValue}) =>
+      Key(
+        key: identical(key, sdkOmittedValue) ? this.key : key as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        title: identical(title, sdkOmittedValue) ? this.title : title as String,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        verified: identical(verified, sdkOmittedValue)
+            ? this.verified
+            : verified as bool,
+        readOnly: identical(readOnly, sdkOmittedValue)
+            ? this.readOnly
+            : readOnly as bool,
+        lastUsed: identical(lastUsed, sdkOmittedValue)
+            ? this.lastUsed
+            : lastUsed as SdkOptional<String?>,
+      );
 
   factory Key.fromJson(Map<String, dynamic> json) => Key(
-    key: (json['key'] as String?)!,
-    id: ((json['id'] as num?)?.toInt())!,
-    url: (json['url'] as String?)!,
-    title: (json['title'] as String?)!,
-    createdAt: (json['created_at'] as String?)!,
-    verified: (json['verified'] as bool?)!,
-    readOnly: (json['read_only'] as bool?)!,
-    lastUsed: json.containsKey('last_used') ? SdkPresent(json['last_used'] as String?) : const SdkOmitted(),
-  );
+        key: (json['key'] as String?)!,
+        id: ((json['id'] as num?)?.toInt())!,
+        url: (json['url'] as String?)!,
+        title: (json['title'] as String?)!,
+        createdAt: (json['created_at'] as String?)!,
+        verified: (json['verified'] as bool?)!,
+        readOnly: (json['read_only'] as bool?)!,
+        lastUsed: json.containsKey('last_used')
+            ? SdkPresent(json['last_used'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'key': key,
-    'id': id,
-    'url': url,
-    'title': title,
-    'created_at': createdAt,
-    'verified': verified,
-    'read_only': readOnly,
-    ...switch (lastUsed) {
-      SdkPresent<String?>(value: final value) => {'last_used': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'key': key,
+        'id': id,
+        'url': url,
+        'title': title,
+        'created_at': createdAt,
+        'verified': verified,
+        'read_only': readOnly,
+        ...switch (lastUsed) {
+          SdkPresent<String?>(value: final value) => {
+              'last_used': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Key Simple
 class KeySimple {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
+
   /// Required `string` value serialized in the `key` wire field.
   final String key;
+
   /// Optional `date-time`-formatted value serialized in the `created_at` wire field.
   final SdkOptional<String> createdAt;
+
   /// Optional `date-time`-formatted value serialized in the `last_used` wire field.
   final SdkOptional<String?> lastUsed;
 
-  const KeySimple({required this.id, required this.key, this.createdAt = const SdkOmitted(), this.lastUsed = const SdkOmitted()});
+  const KeySimple(
+      {required this.id,
+      required this.key,
+      this.createdAt = const SdkOmitted(),
+      this.lastUsed = const SdkOmitted()});
 
-  KeySimple Function({int id, String key, SdkOptional<String> createdAt, SdkOptional<String?> lastUsed}) get copyWith => _copyWith;
+  KeySimple Function(
+      {int id,
+      String key,
+      SdkOptional<String> createdAt,
+      SdkOptional<String?> lastUsed}) get copyWith => _copyWith;
 
-  KeySimple _copyWith({Object? id = sdkOmittedValue, Object? key = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? lastUsed = sdkOmittedValue}) => KeySimple(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    key: identical(key, sdkOmittedValue) ? this.key : key as String,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as SdkOptional<String>,
-    lastUsed: identical(lastUsed, sdkOmittedValue) ? this.lastUsed : lastUsed as SdkOptional<String?>,
-  );
+  KeySimple _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? key = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? lastUsed = sdkOmittedValue}) =>
+      KeySimple(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        key: identical(key, sdkOmittedValue) ? this.key : key as String,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as SdkOptional<String>,
+        lastUsed: identical(lastUsed, sdkOmittedValue)
+            ? this.lastUsed
+            : lastUsed as SdkOptional<String?>,
+      );
 
   factory KeySimple.fromJson(Map<String, dynamic> json) => KeySimple(
-    id: ((json['id'] as num?)?.toInt())!,
-    key: (json['key'] as String?)!,
-    createdAt: json['created_at'] != null ? SdkPresent((json['created_at'] as String?)!) : const SdkOmitted(),
-    lastUsed: json.containsKey('last_used') ? SdkPresent(json['last_used'] as String?) : const SdkOmitted(),
-  );
+        id: ((json['id'] as num?)?.toInt())!,
+        key: (json['key'] as String?)!,
+        createdAt: json['created_at'] != null
+            ? SdkPresent((json['created_at'] as String?)!)
+            : const SdkOmitted(),
+        lastUsed: json.containsKey('last_used')
+            ? SdkPresent(json['last_used'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'key': key,
-    ...switch (createdAt) {
-      SdkPresent<String>(value: final value) => {'created_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (lastUsed) {
-      SdkPresent<String?>(value: final value) => {'last_used': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'id': id,
+        'key': key,
+        ...switch (createdAt) {
+          SdkPresent<String>(value: final value) => {
+              'created_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (lastUsed) {
+          SdkPresent<String?>(value: final value) => {
+              'last_used': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Optional object value serialized in the `plan` wire field.
 class PrivateUserPlan {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `integer` value serialized in the `collaborators` wire field.
   final int collaborators;
+
   /// Required `string` value serialized in the `name` wire field.
   final String name;
+
   /// Required `integer` value serialized in the `space` wire field.
   final int space;
+
   /// Required `integer` value serialized in the `private_repos` wire field.
   final int privateRepos;
 
-  const PrivateUserPlan({required this.collaborators, required this.name, required this.space, required this.privateRepos});
+  const PrivateUserPlan(
+      {required this.collaborators,
+      required this.name,
+      required this.space,
+      required this.privateRepos});
 
-  PrivateUserPlan Function({int collaborators, String name, int space, int privateRepos}) get copyWith => _copyWith;
+  PrivateUserPlan Function(
+      {int collaborators,
+      String name,
+      int space,
+      int privateRepos}) get copyWith => _copyWith;
 
-  PrivateUserPlan _copyWith({Object? collaborators = sdkOmittedValue, Object? name = sdkOmittedValue, Object? space = sdkOmittedValue, Object? privateRepos = sdkOmittedValue}) => PrivateUserPlan(
-    collaborators: identical(collaborators, sdkOmittedValue) ? this.collaborators : collaborators as int,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    space: identical(space, sdkOmittedValue) ? this.space : space as int,
-    privateRepos: identical(privateRepos, sdkOmittedValue) ? this.privateRepos : privateRepos as int,
-  );
+  PrivateUserPlan _copyWith(
+          {Object? collaborators = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? space = sdkOmittedValue,
+          Object? privateRepos = sdkOmittedValue}) =>
+      PrivateUserPlan(
+        collaborators: identical(collaborators, sdkOmittedValue)
+            ? this.collaborators
+            : collaborators as int,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        space: identical(space, sdkOmittedValue) ? this.space : space as int,
+        privateRepos: identical(privateRepos, sdkOmittedValue)
+            ? this.privateRepos
+            : privateRepos as int,
+      );
 
-  factory PrivateUserPlan.fromJson(Map<String, dynamic> json) => PrivateUserPlan(
-    collaborators: ((json['collaborators'] as num?)?.toInt())!,
-    name: (json['name'] as String?)!,
-    space: ((json['space'] as num?)?.toInt())!,
-    privateRepos: ((json['private_repos'] as num?)?.toInt())!,
-  );
+  factory PrivateUserPlan.fromJson(Map<String, dynamic> json) =>
+      PrivateUserPlan(
+        collaborators: ((json['collaborators'] as num?)?.toInt())!,
+        name: (json['name'] as String?)!,
+        space: ((json['space'] as num?)?.toInt())!,
+        privateRepos: ((json['private_repos'] as num?)?.toInt())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'collaborators': collaborators,
-    'name': name,
-    'space': space,
-    'private_repos': privateRepos,
-  };
+        'collaborators': collaborators,
+        'name': name,
+        'space': space,
+        'private_repos': privateRepos,
+      };
 }

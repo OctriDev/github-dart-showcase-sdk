@@ -8,269 +8,532 @@ part of 'repos_rule.dart';
 class RuleSuitePullRequestPullRequestProofOfPresenceVerifier {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The unique identifier of the user.
   final SdkOptional<int> id;
+
   /// The handle for the GitHub user account.
   final SdkOptional<String> login;
+
   /// The type of the user.
   final SdkOptional<String> type_;
 
-  const RuleSuitePullRequestPullRequestProofOfPresenceVerifier({this.id = const SdkOmitted(), this.login = const SdkOmitted(), this.type_ = const SdkOmitted()});
+  const RuleSuitePullRequestPullRequestProofOfPresenceVerifier(
+      {this.id = const SdkOmitted(),
+      this.login = const SdkOmitted(),
+      this.type_ = const SdkOmitted()});
 
-  RuleSuitePullRequestPullRequestProofOfPresenceVerifier Function({SdkOptional<int> id, SdkOptional<String> login, SdkOptional<String> type_}) get copyWith => _copyWith;
+  RuleSuitePullRequestPullRequestProofOfPresenceVerifier Function(
+      {SdkOptional<int> id,
+      SdkOptional<String> login,
+      SdkOptional<String> type_}) get copyWith => _copyWith;
 
-  RuleSuitePullRequestPullRequestProofOfPresenceVerifier _copyWith({Object? id = sdkOmittedValue, Object? login = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => RuleSuitePullRequestPullRequestProofOfPresenceVerifier(
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-    login: identical(login, sdkOmittedValue) ? this.login : login as SdkOptional<String>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<String>,
-  );
+  RuleSuitePullRequestPullRequestProofOfPresenceVerifier _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? login = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      RuleSuitePullRequestPullRequestProofOfPresenceVerifier(
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+        login: identical(login, sdkOmittedValue)
+            ? this.login
+            : login as SdkOptional<String>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as SdkOptional<String>,
+      );
 
-  factory RuleSuitePullRequestPullRequestProofOfPresenceVerifier.fromJson(Map<String, dynamic> json) => RuleSuitePullRequestPullRequestProofOfPresenceVerifier(
-    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
-    login: json['login'] != null ? SdkPresent((json['login'] as String?)!) : const SdkOmitted(),
-    type_: json['type'] != null ? SdkPresent((json['type'] as String?)!) : const SdkOmitted(),
-  );
+  factory RuleSuitePullRequestPullRequestProofOfPresenceVerifier.fromJson(
+          Map<String, dynamic> json) =>
+      RuleSuitePullRequestPullRequestProofOfPresenceVerifier(
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        login: json['login'] != null
+            ? SdkPresent((json['login'] as String?)!)
+            : const SdkOmitted(),
+        type_: json['type'] != null
+            ? SdkPresent((json['type'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (id) {
-      SdkPresent<int>(value: final value) => {'id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (login) {
-      SdkPresent<String>(value: final value) => {'login': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (type_) {
-      SdkPresent<String>(value: final value) => {'type': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (login) {
+          SdkPresent<String>(value: final value) => {
+              'login': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (type_) {
+          SdkPresent<String>(value: final value) => {
+              'type': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// The proof of presence evaluation for the pull request. Null if proof of presence was not evaluated.
 class RuleSuitePullRequestPullRequestProofOfPresence {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The state of the proof of presence evaluation.
   final SdkOptional<String> state;
+
   /// A code describing the reason for the proof of presence state.
   final SdkOptional<String> code;
+
   /// The base commit SHA the proof of presence evaluation applies to. Empty if unavailable.
   final SdkOptional<String> baseSha;
+
   /// The head commit SHA the proof of presence evaluation applies to. Empty if unavailable.
   final SdkOptional<String> headSha;
+
   /// The authentication level required by the rule. Empty if unavailable.
   final SdkOptional<String> requiredLevel;
+
   /// The authentication level that was verified. Empty if proof of presence has not been completed.
   final SdkOptional<String> verifiedLevel;
+
   /// The time proof of presence was verified, in ISO 8601 format. Empty if proof of presence has not been completed.
   final SdkOptional<String> verifiedAt;
+
   /// The user who provided proof of presence. Null if no proof of presence was recorded.
-  final SdkOptional<RuleSuitePullRequestPullRequestProofOfPresenceVerifier?> verifier;
+  final SdkOptional<RuleSuitePullRequestPullRequestProofOfPresenceVerifier?>
+      verifier;
 
-  const RuleSuitePullRequestPullRequestProofOfPresence({this.state = const SdkOmitted(), this.code = const SdkOmitted(), this.baseSha = const SdkOmitted(), this.headSha = const SdkOmitted(), this.requiredLevel = const SdkOmitted(), this.verifiedLevel = const SdkOmitted(), this.verifiedAt = const SdkOmitted(), this.verifier = const SdkOmitted()});
+  const RuleSuitePullRequestPullRequestProofOfPresence(
+      {this.state = const SdkOmitted(),
+      this.code = const SdkOmitted(),
+      this.baseSha = const SdkOmitted(),
+      this.headSha = const SdkOmitted(),
+      this.requiredLevel = const SdkOmitted(),
+      this.verifiedLevel = const SdkOmitted(),
+      this.verifiedAt = const SdkOmitted(),
+      this.verifier = const SdkOmitted()});
 
-  RuleSuitePullRequestPullRequestProofOfPresence Function({SdkOptional<String> state, SdkOptional<String> code, SdkOptional<String> baseSha, SdkOptional<String> headSha, SdkOptional<String> requiredLevel, SdkOptional<String> verifiedLevel, SdkOptional<String> verifiedAt, SdkOptional<RuleSuitePullRequestPullRequestProofOfPresenceVerifier?> verifier}) get copyWith => _copyWith;
+  RuleSuitePullRequestPullRequestProofOfPresence Function(
+      {SdkOptional<String> state,
+      SdkOptional<String> code,
+      SdkOptional<String> baseSha,
+      SdkOptional<String> headSha,
+      SdkOptional<String> requiredLevel,
+      SdkOptional<String> verifiedLevel,
+      SdkOptional<String> verifiedAt,
+      SdkOptional<RuleSuitePullRequestPullRequestProofOfPresenceVerifier?>
+          verifier}) get copyWith => _copyWith;
 
-  RuleSuitePullRequestPullRequestProofOfPresence _copyWith({Object? state = sdkOmittedValue, Object? code = sdkOmittedValue, Object? baseSha = sdkOmittedValue, Object? headSha = sdkOmittedValue, Object? requiredLevel = sdkOmittedValue, Object? verifiedLevel = sdkOmittedValue, Object? verifiedAt = sdkOmittedValue, Object? verifier = sdkOmittedValue}) => RuleSuitePullRequestPullRequestProofOfPresence(
-    state: identical(state, sdkOmittedValue) ? this.state : state as SdkOptional<String>,
-    code: identical(code, sdkOmittedValue) ? this.code : code as SdkOptional<String>,
-    baseSha: identical(baseSha, sdkOmittedValue) ? this.baseSha : baseSha as SdkOptional<String>,
-    headSha: identical(headSha, sdkOmittedValue) ? this.headSha : headSha as SdkOptional<String>,
-    requiredLevel: identical(requiredLevel, sdkOmittedValue) ? this.requiredLevel : requiredLevel as SdkOptional<String>,
-    verifiedLevel: identical(verifiedLevel, sdkOmittedValue) ? this.verifiedLevel : verifiedLevel as SdkOptional<String>,
-    verifiedAt: identical(verifiedAt, sdkOmittedValue) ? this.verifiedAt : verifiedAt as SdkOptional<String>,
-    verifier: identical(verifier, sdkOmittedValue) ? this.verifier : verifier as SdkOptional<RuleSuitePullRequestPullRequestProofOfPresenceVerifier?>,
-  );
+  RuleSuitePullRequestPullRequestProofOfPresence _copyWith(
+          {Object? state = sdkOmittedValue,
+          Object? code = sdkOmittedValue,
+          Object? baseSha = sdkOmittedValue,
+          Object? headSha = sdkOmittedValue,
+          Object? requiredLevel = sdkOmittedValue,
+          Object? verifiedLevel = sdkOmittedValue,
+          Object? verifiedAt = sdkOmittedValue,
+          Object? verifier = sdkOmittedValue}) =>
+      RuleSuitePullRequestPullRequestProofOfPresence(
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state as SdkOptional<String>,
+        code: identical(code, sdkOmittedValue)
+            ? this.code
+            : code as SdkOptional<String>,
+        baseSha: identical(baseSha, sdkOmittedValue)
+            ? this.baseSha
+            : baseSha as SdkOptional<String>,
+        headSha: identical(headSha, sdkOmittedValue)
+            ? this.headSha
+            : headSha as SdkOptional<String>,
+        requiredLevel: identical(requiredLevel, sdkOmittedValue)
+            ? this.requiredLevel
+            : requiredLevel as SdkOptional<String>,
+        verifiedLevel: identical(verifiedLevel, sdkOmittedValue)
+            ? this.verifiedLevel
+            : verifiedLevel as SdkOptional<String>,
+        verifiedAt: identical(verifiedAt, sdkOmittedValue)
+            ? this.verifiedAt
+            : verifiedAt as SdkOptional<String>,
+        verifier: identical(verifier, sdkOmittedValue)
+            ? this.verifier
+            : verifier as SdkOptional<
+                RuleSuitePullRequestPullRequestProofOfPresenceVerifier?>,
+      );
 
-  factory RuleSuitePullRequestPullRequestProofOfPresence.fromJson(Map<String, dynamic> json) => RuleSuitePullRequestPullRequestProofOfPresence(
-    state: json['state'] != null ? SdkPresent((json['state'] as String?)!) : const SdkOmitted(),
-    code: json['code'] != null ? SdkPresent((json['code'] as String?)!) : const SdkOmitted(),
-    baseSha: json['base_sha'] != null ? SdkPresent((json['base_sha'] as String?)!) : const SdkOmitted(),
-    headSha: json['head_sha'] != null ? SdkPresent((json['head_sha'] as String?)!) : const SdkOmitted(),
-    requiredLevel: json['required_level'] != null ? SdkPresent((json['required_level'] as String?)!) : const SdkOmitted(),
-    verifiedLevel: json['verified_level'] != null ? SdkPresent((json['verified_level'] as String?)!) : const SdkOmitted(),
-    verifiedAt: json['verified_at'] != null ? SdkPresent((json['verified_at'] as String?)!) : const SdkOmitted(),
-    verifier: json.containsKey('verifier') ? SdkPresent(json['verifier'] != null ? RuleSuitePullRequestPullRequestProofOfPresenceVerifier.fromJson(json['verifier'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-  );
+  factory RuleSuitePullRequestPullRequestProofOfPresence.fromJson(
+          Map<String, dynamic> json) =>
+      RuleSuitePullRequestPullRequestProofOfPresence(
+        state: json['state'] != null
+            ? SdkPresent((json['state'] as String?)!)
+            : const SdkOmitted(),
+        code: json['code'] != null
+            ? SdkPresent((json['code'] as String?)!)
+            : const SdkOmitted(),
+        baseSha: json['base_sha'] != null
+            ? SdkPresent((json['base_sha'] as String?)!)
+            : const SdkOmitted(),
+        headSha: json['head_sha'] != null
+            ? SdkPresent((json['head_sha'] as String?)!)
+            : const SdkOmitted(),
+        requiredLevel: json['required_level'] != null
+            ? SdkPresent((json['required_level'] as String?)!)
+            : const SdkOmitted(),
+        verifiedLevel: json['verified_level'] != null
+            ? SdkPresent((json['verified_level'] as String?)!)
+            : const SdkOmitted(),
+        verifiedAt: json['verified_at'] != null
+            ? SdkPresent((json['verified_at'] as String?)!)
+            : const SdkOmitted(),
+        verifier: json.containsKey('verifier')
+            ? SdkPresent(json['verifier'] != null
+                ? RuleSuitePullRequestPullRequestProofOfPresenceVerifier
+                    .fromJson(json['verifier'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (state) {
-      SdkPresent<String>(value: final value) => {'state': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (code) {
-      SdkPresent<String>(value: final value) => {'code': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (baseSha) {
-      SdkPresent<String>(value: final value) => {'base_sha': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (headSha) {
-      SdkPresent<String>(value: final value) => {'head_sha': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (requiredLevel) {
-      SdkPresent<String>(value: final value) => {'required_level': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (verifiedLevel) {
-      SdkPresent<String>(value: final value) => {'verified_level': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (verifiedAt) {
-      SdkPresent<String>(value: final value) => {'verified_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (verifier) {
-      SdkPresent<RuleSuitePullRequestPullRequestProofOfPresenceVerifier?>(value: final value) => {'verifier': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (state) {
+          SdkPresent<String>(value: final value) => {
+              'state': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (code) {
+          SdkPresent<String>(value: final value) => {
+              'code': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (baseSha) {
+          SdkPresent<String>(value: final value) => {
+              'base_sha': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (headSha) {
+          SdkPresent<String>(value: final value) => {
+              'head_sha': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (requiredLevel) {
+          SdkPresent<String>(value: final value) => {
+              'required_level': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (verifiedLevel) {
+          SdkPresent<String>(value: final value) => {
+              'verified_level': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (verifiedAt) {
+          SdkPresent<String>(value: final value) => {
+              'verified_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (verifier) {
+          SdkPresent<RuleSuitePullRequestPullRequestProofOfPresenceVerifier?>(
+            value: final value
+          ) =>
+            {
+              'verifier': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// The user who submitted the review.
 class RuleSuitePullRequestPullRequestReviewsItemUser {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The unique identifier of the user.
   final SdkOptional<int> id;
+
   /// The handle for the GitHub user account.
   final SdkOptional<String> login;
+
   /// The type of the user.
   final SdkOptional<String> type_;
 
-  const RuleSuitePullRequestPullRequestReviewsItemUser({this.id = const SdkOmitted(), this.login = const SdkOmitted(), this.type_ = const SdkOmitted()});
+  const RuleSuitePullRequestPullRequestReviewsItemUser(
+      {this.id = const SdkOmitted(),
+      this.login = const SdkOmitted(),
+      this.type_ = const SdkOmitted()});
 
-  RuleSuitePullRequestPullRequestReviewsItemUser Function({SdkOptional<int> id, SdkOptional<String> login, SdkOptional<String> type_}) get copyWith => _copyWith;
+  RuleSuitePullRequestPullRequestReviewsItemUser Function(
+      {SdkOptional<int> id,
+      SdkOptional<String> login,
+      SdkOptional<String> type_}) get copyWith => _copyWith;
 
-  RuleSuitePullRequestPullRequestReviewsItemUser _copyWith({Object? id = sdkOmittedValue, Object? login = sdkOmittedValue, Object? type_ = sdkOmittedValue}) => RuleSuitePullRequestPullRequestReviewsItemUser(
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-    login: identical(login, sdkOmittedValue) ? this.login : login as SdkOptional<String>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<String>,
-  );
+  RuleSuitePullRequestPullRequestReviewsItemUser _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? login = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue}) =>
+      RuleSuitePullRequestPullRequestReviewsItemUser(
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+        login: identical(login, sdkOmittedValue)
+            ? this.login
+            : login as SdkOptional<String>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as SdkOptional<String>,
+      );
 
-  factory RuleSuitePullRequestPullRequestReviewsItemUser.fromJson(Map<String, dynamic> json) => RuleSuitePullRequestPullRequestReviewsItemUser(
-    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
-    login: json['login'] != null ? SdkPresent((json['login'] as String?)!) : const SdkOmitted(),
-    type_: json['type'] != null ? SdkPresent((json['type'] as String?)!) : const SdkOmitted(),
-  );
+  factory RuleSuitePullRequestPullRequestReviewsItemUser.fromJson(
+          Map<String, dynamic> json) =>
+      RuleSuitePullRequestPullRequestReviewsItemUser(
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        login: json['login'] != null
+            ? SdkPresent((json['login'] as String?)!)
+            : const SdkOmitted(),
+        type_: json['type'] != null
+            ? SdkPresent((json['type'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (id) {
-      SdkPresent<int>(value: final value) => {'id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (login) {
-      SdkPresent<String>(value: final value) => {'login': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (type_) {
-      SdkPresent<String>(value: final value) => {'type': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (login) {
+          SdkPresent<String>(value: final value) => {
+              'login': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (type_) {
+          SdkPresent<String>(value: final value) => {
+              'type': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Required object value serialized in the `reviews[]` wire field.
 class RuleSuitePullRequestPullRequestReviewsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The unique identifier of the review.
   final SdkOptional<int> id;
+
   /// The user who submitted the review.
   final SdkOptional<RuleSuitePullRequestPullRequestReviewsItemUser> user;
+
   /// The state of the review.
   final SdkOptional<String> state;
 
-  const RuleSuitePullRequestPullRequestReviewsItem({this.id = const SdkOmitted(), this.user = const SdkOmitted(), this.state = const SdkOmitted()});
+  const RuleSuitePullRequestPullRequestReviewsItem(
+      {this.id = const SdkOmitted(),
+      this.user = const SdkOmitted(),
+      this.state = const SdkOmitted()});
 
-  RuleSuitePullRequestPullRequestReviewsItem Function({SdkOptional<int> id, SdkOptional<RuleSuitePullRequestPullRequestReviewsItemUser> user, SdkOptional<String> state}) get copyWith => _copyWith;
+  RuleSuitePullRequestPullRequestReviewsItem Function(
+      {SdkOptional<int> id,
+      SdkOptional<RuleSuitePullRequestPullRequestReviewsItemUser> user,
+      SdkOptional<String> state}) get copyWith => _copyWith;
 
-  RuleSuitePullRequestPullRequestReviewsItem _copyWith({Object? id = sdkOmittedValue, Object? user = sdkOmittedValue, Object? state = sdkOmittedValue}) => RuleSuitePullRequestPullRequestReviewsItem(
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-    user: identical(user, sdkOmittedValue) ? this.user : user as SdkOptional<RuleSuitePullRequestPullRequestReviewsItemUser>,
-    state: identical(state, sdkOmittedValue) ? this.state : state as SdkOptional<String>,
-  );
+  RuleSuitePullRequestPullRequestReviewsItem _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? user = sdkOmittedValue,
+          Object? state = sdkOmittedValue}) =>
+      RuleSuitePullRequestPullRequestReviewsItem(
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+        user: identical(user, sdkOmittedValue)
+            ? this.user
+            : user
+                as SdkOptional<RuleSuitePullRequestPullRequestReviewsItemUser>,
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state as SdkOptional<String>,
+      );
 
-  factory RuleSuitePullRequestPullRequestReviewsItem.fromJson(Map<String, dynamic> json) => RuleSuitePullRequestPullRequestReviewsItem(
-    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
-    user: json['user'] != null ? SdkPresent((json['user'] != null ? RuleSuitePullRequestPullRequestReviewsItemUser.fromJson(json['user'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    state: json['state'] != null ? SdkPresent((json['state'] as String?)!) : const SdkOmitted(),
-  );
+  factory RuleSuitePullRequestPullRequestReviewsItem.fromJson(
+          Map<String, dynamic> json) =>
+      RuleSuitePullRequestPullRequestReviewsItem(
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        user: json['user'] != null
+            ? SdkPresent((json['user'] != null
+                ? RuleSuitePullRequestPullRequestReviewsItemUser.fromJson(
+                    json['user'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        state: json['state'] != null
+            ? SdkPresent((json['state'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (id) {
-      SdkPresent<int>(value: final value) => {'id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (user) {
-      SdkPresent<RuleSuitePullRequestPullRequestReviewsItemUser>(value: final value) => {'user': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (state) {
-      SdkPresent<String>(value: final value) => {'state': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (user) {
+          SdkPresent<RuleSuitePullRequestPullRequestReviewsItemUser>(
+            value: final value
+          ) =>
+            {
+              'user': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (state) {
+          SdkPresent<String>(value: final value) => {
+              'state': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// The pull request associated with the rule evaluation.
 class RuleSuitePullRequestPullRequest {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The unique identifier of the pull request.
   final SdkOptional<int> id;
+
   /// The number of the pull request.
   final SdkOptional<int> number;
+
   /// The user who created the pull request.
   final SdkOptional<RuleSuitePullRequestPullRequestUser> user;
+
   /// The reviews associated with the pull request.
   final SdkOptional<List<RuleSuitePullRequestPullRequestReviewsItem>> reviews;
+
   /// The proof of presence evaluation for the pull request. Null if proof of presence was not evaluated.
-  final SdkOptional<RuleSuitePullRequestPullRequestProofOfPresence?> proofOfPresence;
+  final SdkOptional<RuleSuitePullRequestPullRequestProofOfPresence?>
+      proofOfPresence;
 
-  const RuleSuitePullRequestPullRequest({this.id = const SdkOmitted(), this.number = const SdkOmitted(), this.user = const SdkOmitted(), this.reviews = const SdkOmitted(), this.proofOfPresence = const SdkOmitted()});
+  const RuleSuitePullRequestPullRequest(
+      {this.id = const SdkOmitted(),
+      this.number = const SdkOmitted(),
+      this.user = const SdkOmitted(),
+      this.reviews = const SdkOmitted(),
+      this.proofOfPresence = const SdkOmitted()});
 
-  RuleSuitePullRequestPullRequest Function({SdkOptional<int> id, SdkOptional<int> number, SdkOptional<RuleSuitePullRequestPullRequestUser> user, SdkOptional<List<RuleSuitePullRequestPullRequestReviewsItem>> reviews, SdkOptional<RuleSuitePullRequestPullRequestProofOfPresence?> proofOfPresence}) get copyWith => _copyWith;
+  RuleSuitePullRequestPullRequest Function(
+      {SdkOptional<int> id,
+      SdkOptional<int> number,
+      SdkOptional<RuleSuitePullRequestPullRequestUser> user,
+      SdkOptional<List<RuleSuitePullRequestPullRequestReviewsItem>> reviews,
+      SdkOptional<RuleSuitePullRequestPullRequestProofOfPresence?>
+          proofOfPresence}) get copyWith => _copyWith;
 
-  RuleSuitePullRequestPullRequest _copyWith({Object? id = sdkOmittedValue, Object? number = sdkOmittedValue, Object? user = sdkOmittedValue, Object? reviews = sdkOmittedValue, Object? proofOfPresence = sdkOmittedValue}) => RuleSuitePullRequestPullRequest(
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-    number: identical(number, sdkOmittedValue) ? this.number : number as SdkOptional<int>,
-    user: identical(user, sdkOmittedValue) ? this.user : user as SdkOptional<RuleSuitePullRequestPullRequestUser>,
-    reviews: identical(reviews, sdkOmittedValue) ? this.reviews : reviews as SdkOptional<List<RuleSuitePullRequestPullRequestReviewsItem>>,
-    proofOfPresence: identical(proofOfPresence, sdkOmittedValue) ? this.proofOfPresence : proofOfPresence as SdkOptional<RuleSuitePullRequestPullRequestProofOfPresence?>,
-  );
+  RuleSuitePullRequestPullRequest _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? number = sdkOmittedValue,
+          Object? user = sdkOmittedValue,
+          Object? reviews = sdkOmittedValue,
+          Object? proofOfPresence = sdkOmittedValue}) =>
+      RuleSuitePullRequestPullRequest(
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+        number: identical(number, sdkOmittedValue)
+            ? this.number
+            : number as SdkOptional<int>,
+        user: identical(user, sdkOmittedValue)
+            ? this.user
+            : user as SdkOptional<RuleSuitePullRequestPullRequestUser>,
+        reviews: identical(reviews, sdkOmittedValue)
+            ? this.reviews
+            : reviews as SdkOptional<
+                List<RuleSuitePullRequestPullRequestReviewsItem>>,
+        proofOfPresence: identical(proofOfPresence, sdkOmittedValue)
+            ? this.proofOfPresence
+            : proofOfPresence
+                as SdkOptional<RuleSuitePullRequestPullRequestProofOfPresence?>,
+      );
 
-  factory RuleSuitePullRequestPullRequest.fromJson(Map<String, dynamic> json) => RuleSuitePullRequestPullRequest(
-    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
-    number: json['number'] != null ? SdkPresent(((json['number'] as num?)?.toInt())!) : const SdkOmitted(),
-    user: json['user'] != null ? SdkPresent((json['user'] != null ? RuleSuitePullRequestPullRequestUser.fromJson(json['user'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    reviews: json['reviews'] != null ? SdkPresent(((json['reviews'] as List?)?.map((e) => RuleSuitePullRequestPullRequestReviewsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-    proofOfPresence: json.containsKey('proof_of_presence') ? SdkPresent(json['proof_of_presence'] != null ? RuleSuitePullRequestPullRequestProofOfPresence.fromJson(json['proof_of_presence'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-  );
+  factory RuleSuitePullRequestPullRequest.fromJson(Map<String, dynamic> json) =>
+      RuleSuitePullRequestPullRequest(
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        number: json['number'] != null
+            ? SdkPresent(((json['number'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        user: json['user'] != null
+            ? SdkPresent((json['user'] != null
+                ? RuleSuitePullRequestPullRequestUser.fromJson(
+                    json['user'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        reviews: json['reviews'] != null
+            ? SdkPresent(((json['reviews'] as List?)
+                ?.map((e) =>
+                    RuleSuitePullRequestPullRequestReviewsItem.fromJson(
+                        e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+        proofOfPresence: json.containsKey('proof_of_presence')
+            ? SdkPresent(json['proof_of_presence'] != null
+                ? RuleSuitePullRequestPullRequestProofOfPresence.fromJson(
+                    json['proof_of_presence'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (id) {
-      SdkPresent<int>(value: final value) => {'id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (number) {
-      SdkPresent<int>(value: final value) => {'number': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (user) {
-      SdkPresent<RuleSuitePullRequestPullRequestUser>(value: final value) => {'user': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (reviews) {
-      SdkPresent<List<RuleSuitePullRequestPullRequestReviewsItem>>(value: final value) => {'reviews': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (proofOfPresence) {
-      SdkPresent<RuleSuitePullRequestPullRequestProofOfPresence?>(value: final value) => {'proof_of_presence': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (number) {
+          SdkPresent<int>(value: final value) => {
+              'number': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (user) {
+          SdkPresent<RuleSuitePullRequestPullRequestUser>(value: final value) =>
+            {
+              'user': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (reviews) {
+          SdkPresent<List<RuleSuitePullRequestPullRequestReviewsItem>>(
+            value: final value
+          ) =>
+            {
+              'reviews': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (proofOfPresence) {
+          SdkPresent<RuleSuitePullRequestPullRequestProofOfPresence?>(
+            value: final value
+          ) =>
+            {
+              'proof_of_presence': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

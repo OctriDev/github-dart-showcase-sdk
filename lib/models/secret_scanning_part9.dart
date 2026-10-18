@@ -8,278 +8,433 @@ part of 'secret_scanning.dart';
 class SecretScanningLocationDiscussionTitle {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The URL to the discussion where the secret was detected.
   final String discussionTitleUrl;
 
-  const SecretScanningLocationDiscussionTitle({required this.discussionTitleUrl});
+  const SecretScanningLocationDiscussionTitle(
+      {required this.discussionTitleUrl});
 
-  SecretScanningLocationDiscussionTitle Function({String discussionTitleUrl}) get copyWith => _copyWith;
+  SecretScanningLocationDiscussionTitle Function({String discussionTitleUrl})
+      get copyWith => _copyWith;
 
-  SecretScanningLocationDiscussionTitle _copyWith({Object? discussionTitleUrl = sdkOmittedValue}) => SecretScanningLocationDiscussionTitle(
-    discussionTitleUrl: identical(discussionTitleUrl, sdkOmittedValue) ? this.discussionTitleUrl : discussionTitleUrl as String,
-  );
+  SecretScanningLocationDiscussionTitle _copyWith(
+          {Object? discussionTitleUrl = sdkOmittedValue}) =>
+      SecretScanningLocationDiscussionTitle(
+        discussionTitleUrl: identical(discussionTitleUrl, sdkOmittedValue)
+            ? this.discussionTitleUrl
+            : discussionTitleUrl as String,
+      );
 
-  factory SecretScanningLocationDiscussionTitle.fromJson(Map<String, dynamic> json) => SecretScanningLocationDiscussionTitle(
-    discussionTitleUrl: (json['discussion_title_url'] as String?)!,
-  );
+  factory SecretScanningLocationDiscussionTitle.fromJson(
+          Map<String, dynamic> json) =>
+      SecretScanningLocationDiscussionTitle(
+        discussionTitleUrl: (json['discussion_title_url'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'discussion_title_url': discussionTitleUrl,
-  };
+        'discussion_title_url': discussionTitleUrl,
+      };
 }
 
 /// Represents an 'issue_body' secret scanning location type. This location type shows that a secret was detected in the body of an issue.
 class SecretScanningLocationIssueBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The API URL to get the issue where the secret was detected.
   final String issueBodyUrl;
+
   /// The GitHub URL for the issue where the secret was detected.
   final SdkOptional<String> htmlUrl;
 
-  const SecretScanningLocationIssueBody({required this.issueBodyUrl, this.htmlUrl = const SdkOmitted()});
+  const SecretScanningLocationIssueBody(
+      {required this.issueBodyUrl, this.htmlUrl = const SdkOmitted()});
 
-  SecretScanningLocationIssueBody Function({String issueBodyUrl, SdkOptional<String> htmlUrl}) get copyWith => _copyWith;
+  SecretScanningLocationIssueBody Function(
+      {String issueBodyUrl,
+      SdkOptional<String> htmlUrl}) get copyWith => _copyWith;
 
-  SecretScanningLocationIssueBody _copyWith({Object? issueBodyUrl = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue}) => SecretScanningLocationIssueBody(
-    issueBodyUrl: identical(issueBodyUrl, sdkOmittedValue) ? this.issueBodyUrl : issueBodyUrl as String,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String>,
-  );
+  SecretScanningLocationIssueBody _copyWith(
+          {Object? issueBodyUrl = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue}) =>
+      SecretScanningLocationIssueBody(
+        issueBodyUrl: identical(issueBodyUrl, sdkOmittedValue)
+            ? this.issueBodyUrl
+            : issueBodyUrl as String,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as SdkOptional<String>,
+      );
 
-  factory SecretScanningLocationIssueBody.fromJson(Map<String, dynamic> json) => SecretScanningLocationIssueBody(
-    issueBodyUrl: (json['issue_body_url'] as String?)!,
-    htmlUrl: json['html_url'] != null ? SdkPresent((json['html_url'] as String?)!) : const SdkOmitted(),
-  );
+  factory SecretScanningLocationIssueBody.fromJson(Map<String, dynamic> json) =>
+      SecretScanningLocationIssueBody(
+        issueBodyUrl: (json['issue_body_url'] as String?)!,
+        htmlUrl: json['html_url'] != null
+            ? SdkPresent((json['html_url'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'issue_body_url': issueBodyUrl,
-    ...switch (htmlUrl) {
-      SdkPresent<String>(value: final value) => {'html_url': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'issue_body_url': issueBodyUrl,
+        ...switch (htmlUrl) {
+          SdkPresent<String>(value: final value) => {
+              'html_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Represents an 'issue_comment' secret scanning location type. This location type shows that a secret was detected in a comment on an issue.
 class SecretScanningLocationIssueComment {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The API URL to get the issue comment where the secret was detected.
   final String issueCommentUrl;
+
   /// The GitHub URL for the issue comment where the secret was detected.
   final SdkOptional<String> htmlUrl;
 
-  const SecretScanningLocationIssueComment({required this.issueCommentUrl, this.htmlUrl = const SdkOmitted()});
+  const SecretScanningLocationIssueComment(
+      {required this.issueCommentUrl, this.htmlUrl = const SdkOmitted()});
 
-  SecretScanningLocationIssueComment Function({String issueCommentUrl, SdkOptional<String> htmlUrl}) get copyWith => _copyWith;
+  SecretScanningLocationIssueComment Function(
+      {String issueCommentUrl,
+      SdkOptional<String> htmlUrl}) get copyWith => _copyWith;
 
-  SecretScanningLocationIssueComment _copyWith({Object? issueCommentUrl = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue}) => SecretScanningLocationIssueComment(
-    issueCommentUrl: identical(issueCommentUrl, sdkOmittedValue) ? this.issueCommentUrl : issueCommentUrl as String,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String>,
-  );
+  SecretScanningLocationIssueComment _copyWith(
+          {Object? issueCommentUrl = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue}) =>
+      SecretScanningLocationIssueComment(
+        issueCommentUrl: identical(issueCommentUrl, sdkOmittedValue)
+            ? this.issueCommentUrl
+            : issueCommentUrl as String,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as SdkOptional<String>,
+      );
 
-  factory SecretScanningLocationIssueComment.fromJson(Map<String, dynamic> json) => SecretScanningLocationIssueComment(
-    issueCommentUrl: (json['issue_comment_url'] as String?)!,
-    htmlUrl: json['html_url'] != null ? SdkPresent((json['html_url'] as String?)!) : const SdkOmitted(),
-  );
+  factory SecretScanningLocationIssueComment.fromJson(
+          Map<String, dynamic> json) =>
+      SecretScanningLocationIssueComment(
+        issueCommentUrl: (json['issue_comment_url'] as String?)!,
+        htmlUrl: json['html_url'] != null
+            ? SdkPresent((json['html_url'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'issue_comment_url': issueCommentUrl,
-    ...switch (htmlUrl) {
-      SdkPresent<String>(value: final value) => {'html_url': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'issue_comment_url': issueCommentUrl,
+        ...switch (htmlUrl) {
+          SdkPresent<String>(value: final value) => {
+              'html_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Represents an 'issue_title' secret scanning location type. This location type shows that a secret was detected in the title of an issue.
 class SecretScanningLocationIssueTitle {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The API URL to get the issue where the secret was detected.
   final String issueTitleUrl;
+
   /// The GitHub URL for the issue where the secret was detected.
   final SdkOptional<String> htmlUrl;
 
-  const SecretScanningLocationIssueTitle({required this.issueTitleUrl, this.htmlUrl = const SdkOmitted()});
+  const SecretScanningLocationIssueTitle(
+      {required this.issueTitleUrl, this.htmlUrl = const SdkOmitted()});
 
-  SecretScanningLocationIssueTitle Function({String issueTitleUrl, SdkOptional<String> htmlUrl}) get copyWith => _copyWith;
+  SecretScanningLocationIssueTitle Function(
+      {String issueTitleUrl,
+      SdkOptional<String> htmlUrl}) get copyWith => _copyWith;
 
-  SecretScanningLocationIssueTitle _copyWith({Object? issueTitleUrl = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue}) => SecretScanningLocationIssueTitle(
-    issueTitleUrl: identical(issueTitleUrl, sdkOmittedValue) ? this.issueTitleUrl : issueTitleUrl as String,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String>,
-  );
+  SecretScanningLocationIssueTitle _copyWith(
+          {Object? issueTitleUrl = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue}) =>
+      SecretScanningLocationIssueTitle(
+        issueTitleUrl: identical(issueTitleUrl, sdkOmittedValue)
+            ? this.issueTitleUrl
+            : issueTitleUrl as String,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as SdkOptional<String>,
+      );
 
-  factory SecretScanningLocationIssueTitle.fromJson(Map<String, dynamic> json) => SecretScanningLocationIssueTitle(
-    issueTitleUrl: (json['issue_title_url'] as String?)!,
-    htmlUrl: json['html_url'] != null ? SdkPresent((json['html_url'] as String?)!) : const SdkOmitted(),
-  );
+  factory SecretScanningLocationIssueTitle.fromJson(
+          Map<String, dynamic> json) =>
+      SecretScanningLocationIssueTitle(
+        issueTitleUrl: (json['issue_title_url'] as String?)!,
+        htmlUrl: json['html_url'] != null
+            ? SdkPresent((json['html_url'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'issue_title_url': issueTitleUrl,
-    ...switch (htmlUrl) {
-      SdkPresent<String>(value: final value) => {'html_url': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'issue_title_url': issueTitleUrl,
+        ...switch (htmlUrl) {
+          SdkPresent<String>(value: final value) => {
+              'html_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Represents a 'pull_request_body' secret scanning location type. This location type shows that a secret was detected in the body of a pull request.
 class SecretScanningLocationPullRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The API URL to get the pull request where the secret was detected.
   final String pullRequestBodyUrl;
+
   /// The GitHub URL for the pull request where the secret was detected.
   final SdkOptional<String> htmlUrl;
 
-  const SecretScanningLocationPullRequestBody({required this.pullRequestBodyUrl, this.htmlUrl = const SdkOmitted()});
+  const SecretScanningLocationPullRequestBody(
+      {required this.pullRequestBodyUrl, this.htmlUrl = const SdkOmitted()});
 
-  SecretScanningLocationPullRequestBody Function({String pullRequestBodyUrl, SdkOptional<String> htmlUrl}) get copyWith => _copyWith;
+  SecretScanningLocationPullRequestBody Function(
+      {String pullRequestBodyUrl,
+      SdkOptional<String> htmlUrl}) get copyWith => _copyWith;
 
-  SecretScanningLocationPullRequestBody _copyWith({Object? pullRequestBodyUrl = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue}) => SecretScanningLocationPullRequestBody(
-    pullRequestBodyUrl: identical(pullRequestBodyUrl, sdkOmittedValue) ? this.pullRequestBodyUrl : pullRequestBodyUrl as String,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String>,
-  );
+  SecretScanningLocationPullRequestBody _copyWith(
+          {Object? pullRequestBodyUrl = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue}) =>
+      SecretScanningLocationPullRequestBody(
+        pullRequestBodyUrl: identical(pullRequestBodyUrl, sdkOmittedValue)
+            ? this.pullRequestBodyUrl
+            : pullRequestBodyUrl as String,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as SdkOptional<String>,
+      );
 
-  factory SecretScanningLocationPullRequestBody.fromJson(Map<String, dynamic> json) => SecretScanningLocationPullRequestBody(
-    pullRequestBodyUrl: (json['pull_request_body_url'] as String?)!,
-    htmlUrl: json['html_url'] != null ? SdkPresent((json['html_url'] as String?)!) : const SdkOmitted(),
-  );
+  factory SecretScanningLocationPullRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      SecretScanningLocationPullRequestBody(
+        pullRequestBodyUrl: (json['pull_request_body_url'] as String?)!,
+        htmlUrl: json['html_url'] != null
+            ? SdkPresent((json['html_url'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'pull_request_body_url': pullRequestBodyUrl,
-    ...switch (htmlUrl) {
-      SdkPresent<String>(value: final value) => {'html_url': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'pull_request_body_url': pullRequestBodyUrl,
+        ...switch (htmlUrl) {
+          SdkPresent<String>(value: final value) => {
+              'html_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Represents a 'pull_request_comment' secret scanning location type. This location type shows that a secret was detected in a comment on a pull request.
 class SecretScanningLocationPullRequestComment {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The API URL to get the pull request comment where the secret was detected.
   final String pullRequestCommentUrl;
+
   /// The GitHub URL for the pull request comment where the secret was detected.
   final SdkOptional<String> htmlUrl;
 
-  const SecretScanningLocationPullRequestComment({required this.pullRequestCommentUrl, this.htmlUrl = const SdkOmitted()});
+  const SecretScanningLocationPullRequestComment(
+      {required this.pullRequestCommentUrl, this.htmlUrl = const SdkOmitted()});
 
-  SecretScanningLocationPullRequestComment Function({String pullRequestCommentUrl, SdkOptional<String> htmlUrl}) get copyWith => _copyWith;
+  SecretScanningLocationPullRequestComment Function(
+      {String pullRequestCommentUrl,
+      SdkOptional<String> htmlUrl}) get copyWith => _copyWith;
 
-  SecretScanningLocationPullRequestComment _copyWith({Object? pullRequestCommentUrl = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue}) => SecretScanningLocationPullRequestComment(
-    pullRequestCommentUrl: identical(pullRequestCommentUrl, sdkOmittedValue) ? this.pullRequestCommentUrl : pullRequestCommentUrl as String,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String>,
-  );
+  SecretScanningLocationPullRequestComment _copyWith(
+          {Object? pullRequestCommentUrl = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue}) =>
+      SecretScanningLocationPullRequestComment(
+        pullRequestCommentUrl: identical(pullRequestCommentUrl, sdkOmittedValue)
+            ? this.pullRequestCommentUrl
+            : pullRequestCommentUrl as String,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as SdkOptional<String>,
+      );
 
-  factory SecretScanningLocationPullRequestComment.fromJson(Map<String, dynamic> json) => SecretScanningLocationPullRequestComment(
-    pullRequestCommentUrl: (json['pull_request_comment_url'] as String?)!,
-    htmlUrl: json['html_url'] != null ? SdkPresent((json['html_url'] as String?)!) : const SdkOmitted(),
-  );
+  factory SecretScanningLocationPullRequestComment.fromJson(
+          Map<String, dynamic> json) =>
+      SecretScanningLocationPullRequestComment(
+        pullRequestCommentUrl: (json['pull_request_comment_url'] as String?)!,
+        htmlUrl: json['html_url'] != null
+            ? SdkPresent((json['html_url'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'pull_request_comment_url': pullRequestCommentUrl,
-    ...switch (htmlUrl) {
-      SdkPresent<String>(value: final value) => {'html_url': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'pull_request_comment_url': pullRequestCommentUrl,
+        ...switch (htmlUrl) {
+          SdkPresent<String>(value: final value) => {
+              'html_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Represents a 'pull_request_review' secret scanning location type. This location type shows that a secret was detected in a review on a pull request.
 class SecretScanningLocationPullRequestReview {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The API URL to get the pull request review where the secret was detected.
   final String pullRequestReviewUrl;
+
   /// The GitHub URL for the pull request review where the secret was detected.
   final SdkOptional<String> htmlUrl;
 
-  const SecretScanningLocationPullRequestReview({required this.pullRequestReviewUrl, this.htmlUrl = const SdkOmitted()});
+  const SecretScanningLocationPullRequestReview(
+      {required this.pullRequestReviewUrl, this.htmlUrl = const SdkOmitted()});
 
-  SecretScanningLocationPullRequestReview Function({String pullRequestReviewUrl, SdkOptional<String> htmlUrl}) get copyWith => _copyWith;
+  SecretScanningLocationPullRequestReview Function(
+      {String pullRequestReviewUrl,
+      SdkOptional<String> htmlUrl}) get copyWith => _copyWith;
 
-  SecretScanningLocationPullRequestReview _copyWith({Object? pullRequestReviewUrl = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue}) => SecretScanningLocationPullRequestReview(
-    pullRequestReviewUrl: identical(pullRequestReviewUrl, sdkOmittedValue) ? this.pullRequestReviewUrl : pullRequestReviewUrl as String,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String>,
-  );
+  SecretScanningLocationPullRequestReview _copyWith(
+          {Object? pullRequestReviewUrl = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue}) =>
+      SecretScanningLocationPullRequestReview(
+        pullRequestReviewUrl: identical(pullRequestReviewUrl, sdkOmittedValue)
+            ? this.pullRequestReviewUrl
+            : pullRequestReviewUrl as String,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as SdkOptional<String>,
+      );
 
-  factory SecretScanningLocationPullRequestReview.fromJson(Map<String, dynamic> json) => SecretScanningLocationPullRequestReview(
-    pullRequestReviewUrl: (json['pull_request_review_url'] as String?)!,
-    htmlUrl: json['html_url'] != null ? SdkPresent((json['html_url'] as String?)!) : const SdkOmitted(),
-  );
+  factory SecretScanningLocationPullRequestReview.fromJson(
+          Map<String, dynamic> json) =>
+      SecretScanningLocationPullRequestReview(
+        pullRequestReviewUrl: (json['pull_request_review_url'] as String?)!,
+        htmlUrl: json['html_url'] != null
+            ? SdkPresent((json['html_url'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'pull_request_review_url': pullRequestReviewUrl,
-    ...switch (htmlUrl) {
-      SdkPresent<String>(value: final value) => {'html_url': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'pull_request_review_url': pullRequestReviewUrl,
+        ...switch (htmlUrl) {
+          SdkPresent<String>(value: final value) => {
+              'html_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Represents a 'pull_request_review_comment' secret scanning location type. This location type shows that a secret was detected in a review comment on a pull request.
 class SecretScanningLocationPullRequestReviewComment {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The API URL to get the pull request review comment where the secret was detected.
   final String pullRequestReviewCommentUrl;
+
   /// The GitHub URL for the pull request review comment where the secret was detected.
   final SdkOptional<String> htmlUrl;
 
-  const SecretScanningLocationPullRequestReviewComment({required this.pullRequestReviewCommentUrl, this.htmlUrl = const SdkOmitted()});
+  const SecretScanningLocationPullRequestReviewComment(
+      {required this.pullRequestReviewCommentUrl,
+      this.htmlUrl = const SdkOmitted()});
 
-  SecretScanningLocationPullRequestReviewComment Function({String pullRequestReviewCommentUrl, SdkOptional<String> htmlUrl}) get copyWith => _copyWith;
+  SecretScanningLocationPullRequestReviewComment Function(
+      {String pullRequestReviewCommentUrl,
+      SdkOptional<String> htmlUrl}) get copyWith => _copyWith;
 
-  SecretScanningLocationPullRequestReviewComment _copyWith({Object? pullRequestReviewCommentUrl = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue}) => SecretScanningLocationPullRequestReviewComment(
-    pullRequestReviewCommentUrl: identical(pullRequestReviewCommentUrl, sdkOmittedValue) ? this.pullRequestReviewCommentUrl : pullRequestReviewCommentUrl as String,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String>,
-  );
+  SecretScanningLocationPullRequestReviewComment _copyWith(
+          {Object? pullRequestReviewCommentUrl = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue}) =>
+      SecretScanningLocationPullRequestReviewComment(
+        pullRequestReviewCommentUrl:
+            identical(pullRequestReviewCommentUrl, sdkOmittedValue)
+                ? this.pullRequestReviewCommentUrl
+                : pullRequestReviewCommentUrl as String,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as SdkOptional<String>,
+      );
 
-  factory SecretScanningLocationPullRequestReviewComment.fromJson(Map<String, dynamic> json) => SecretScanningLocationPullRequestReviewComment(
-    pullRequestReviewCommentUrl: (json['pull_request_review_comment_url'] as String?)!,
-    htmlUrl: json['html_url'] != null ? SdkPresent((json['html_url'] as String?)!) : const SdkOmitted(),
-  );
+  factory SecretScanningLocationPullRequestReviewComment.fromJson(
+          Map<String, dynamic> json) =>
+      SecretScanningLocationPullRequestReviewComment(
+        pullRequestReviewCommentUrl:
+            (json['pull_request_review_comment_url'] as String?)!,
+        htmlUrl: json['html_url'] != null
+            ? SdkPresent((json['html_url'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'pull_request_review_comment_url': pullRequestReviewCommentUrl,
-    ...switch (htmlUrl) {
-      SdkPresent<String>(value: final value) => {'html_url': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'pull_request_review_comment_url': pullRequestReviewCommentUrl,
+        ...switch (htmlUrl) {
+          SdkPresent<String>(value: final value) => {
+              'html_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Represents a 'pull_request_title' secret scanning location type. This location type shows that a secret was detected in the title of a pull request.
 class SecretScanningLocationPullRequestTitle {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The API URL to get the pull request where the secret was detected.
   final String pullRequestTitleUrl;
+
   /// The GitHub URL for the pull request where the secret was detected.
   final SdkOptional<String> htmlUrl;
 
-  const SecretScanningLocationPullRequestTitle({required this.pullRequestTitleUrl, this.htmlUrl = const SdkOmitted()});
+  const SecretScanningLocationPullRequestTitle(
+      {required this.pullRequestTitleUrl, this.htmlUrl = const SdkOmitted()});
 
-  SecretScanningLocationPullRequestTitle Function({String pullRequestTitleUrl, SdkOptional<String> htmlUrl}) get copyWith => _copyWith;
+  SecretScanningLocationPullRequestTitle Function(
+      {String pullRequestTitleUrl,
+      SdkOptional<String> htmlUrl}) get copyWith => _copyWith;
 
-  SecretScanningLocationPullRequestTitle _copyWith({Object? pullRequestTitleUrl = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue}) => SecretScanningLocationPullRequestTitle(
-    pullRequestTitleUrl: identical(pullRequestTitleUrl, sdkOmittedValue) ? this.pullRequestTitleUrl : pullRequestTitleUrl as String,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String>,
-  );
+  SecretScanningLocationPullRequestTitle _copyWith(
+          {Object? pullRequestTitleUrl = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue}) =>
+      SecretScanningLocationPullRequestTitle(
+        pullRequestTitleUrl: identical(pullRequestTitleUrl, sdkOmittedValue)
+            ? this.pullRequestTitleUrl
+            : pullRequestTitleUrl as String,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as SdkOptional<String>,
+      );
 
-  factory SecretScanningLocationPullRequestTitle.fromJson(Map<String, dynamic> json) => SecretScanningLocationPullRequestTitle(
-    pullRequestTitleUrl: (json['pull_request_title_url'] as String?)!,
-    htmlUrl: json['html_url'] != null ? SdkPresent((json['html_url'] as String?)!) : const SdkOmitted(),
-  );
+  factory SecretScanningLocationPullRequestTitle.fromJson(
+          Map<String, dynamic> json) =>
+      SecretScanningLocationPullRequestTitle(
+        pullRequestTitleUrl: (json['pull_request_title_url'] as String?)!,
+        htmlUrl: json['html_url'] != null
+            ? SdkPresent((json['html_url'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'pull_request_title_url': pullRequestTitleUrl,
-    ...switch (htmlUrl) {
-      SdkPresent<String>(value: final value) => {'html_url': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'pull_request_title_url': pullRequestTitleUrl,
+        ...switch (htmlUrl) {
+          SdkPresent<String>(value: final value) => {
+              'html_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

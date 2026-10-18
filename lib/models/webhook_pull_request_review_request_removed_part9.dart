@@ -9,62 +9,111 @@ class WebhookPullRequestReviewRequestRemovedVariant0PullRequestBase {
   static const String constructionSurface = 'named';
   final String label;
   final String ref;
+
   /// A git repository
   final WebhookPullRequestReviewRequestRemovedVariant0PullRequestBaseRepo repo;
   final String sha;
   final WebhookPullRequestReviewRequestRemovedVariant0PullRequestBaseUser? user;
 
-  const WebhookPullRequestReviewRequestRemovedVariant0PullRequestBase({required this.label, required this.ref, required this.repo, required this.sha, required this.user});
+  const WebhookPullRequestReviewRequestRemovedVariant0PullRequestBase(
+      {required this.label,
+      required this.ref,
+      required this.repo,
+      required this.sha,
+      required this.user});
 
-  WebhookPullRequestReviewRequestRemovedVariant0PullRequestBase Function({String label, String ref, WebhookPullRequestReviewRequestRemovedVariant0PullRequestBaseRepo repo, String sha, WebhookPullRequestReviewRequestRemovedVariant0PullRequestBaseUser? user}) get copyWith => _copyWith;
+  WebhookPullRequestReviewRequestRemovedVariant0PullRequestBase Function(
+      {String label,
+      String ref,
+      WebhookPullRequestReviewRequestRemovedVariant0PullRequestBaseRepo repo,
+      String sha,
+      WebhookPullRequestReviewRequestRemovedVariant0PullRequestBaseUser?
+          user}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewRequestRemovedVariant0PullRequestBase _copyWith({Object? label = sdkOmittedValue, Object? ref = sdkOmittedValue, Object? repo = sdkOmittedValue, Object? sha = sdkOmittedValue, Object? user = sdkOmittedValue}) => WebhookPullRequestReviewRequestRemovedVariant0PullRequestBase(
-    label: identical(label, sdkOmittedValue) ? this.label : label as String,
-    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-    repo: identical(repo, sdkOmittedValue) ? this.repo : repo as WebhookPullRequestReviewRequestRemovedVariant0PullRequestBaseRepo,
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-    user: identical(user, sdkOmittedValue) ? this.user : user as WebhookPullRequestReviewRequestRemovedVariant0PullRequestBaseUser?,
-  );
+  WebhookPullRequestReviewRequestRemovedVariant0PullRequestBase _copyWith(
+          {Object? label = sdkOmittedValue,
+          Object? ref = sdkOmittedValue,
+          Object? repo = sdkOmittedValue,
+          Object? sha = sdkOmittedValue,
+          Object? user = sdkOmittedValue}) =>
+      WebhookPullRequestReviewRequestRemovedVariant0PullRequestBase(
+        label: identical(label, sdkOmittedValue) ? this.label : label as String,
+        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+        repo: identical(repo, sdkOmittedValue)
+            ? this.repo
+            : repo
+                as WebhookPullRequestReviewRequestRemovedVariant0PullRequestBaseRepo,
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+        user: identical(user, sdkOmittedValue)
+            ? this.user
+            : user
+                as WebhookPullRequestReviewRequestRemovedVariant0PullRequestBaseUser?,
+      );
 
-  factory WebhookPullRequestReviewRequestRemovedVariant0PullRequestBase.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewRequestRemovedVariant0PullRequestBase(
-    label: (json['label'] as String?)!,
-    ref: (json['ref'] as String?)!,
-    repo: (json['repo'] != null ? WebhookPullRequestReviewRequestRemovedVariant0PullRequestBaseRepo.fromJson(json['repo'] as Map<String, dynamic>) : null)!,
-    sha: (json['sha'] as String?)!,
-    user: json.containsKey('user') ? json['user'] != null ? WebhookPullRequestReviewRequestRemovedVariant0PullRequestBaseUser.fromJson(json['user'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'user', 'Required property is missing'),
-  );
+  factory WebhookPullRequestReviewRequestRemovedVariant0PullRequestBase.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPullRequestReviewRequestRemovedVariant0PullRequestBase(
+        label: (json['label'] as String?)!,
+        ref: (json['ref'] as String?)!,
+        repo: (json['repo'] != null
+            ? WebhookPullRequestReviewRequestRemovedVariant0PullRequestBaseRepo
+                .fromJson(json['repo'] as Map<String, dynamic>)
+            : null)!,
+        sha: (json['sha'] as String?)!,
+        user: json.containsKey('user')
+            ? json['user'] != null
+                ? WebhookPullRequestReviewRequestRemovedVariant0PullRequestBaseUser
+                    .fromJson(json['user'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'user', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'label': label,
-    'ref': ref,
-    'repo': repo.toJson(),
-    'sha': sha,
-    'user': user?.toJson(),
-  };
+        'label': label,
+        'ref': ref,
+        'repo': repo.toJson(),
+        'sha': sha,
+        'user': user?.toJson(),
+      };
 }
 
 sealed class WebhookPullRequestReviewRequestRemovedVariant0PullRequestHeadRepoCreatedAt {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const WebhookPullRequestReviewRequestRemovedVariant0PullRequestHeadRepoCreatedAt();
-  factory WebhookPullRequestReviewRequestRemovedVariant0PullRequestHeadRepoCreatedAt.fromJson(Object? json) {
-    if (json is String) { return WebhookPullRequestReviewRequestRemovedVariant0PullRequestHeadRepoCreatedAtString(json); }
-    if (json is num) { return WebhookPullRequestReviewRequestRemovedVariant0PullRequestHeadRepoCreatedAtInt(json.toInt()); }
-    throw FormatException("No variant matched for WebhookPullRequestReviewRequestRemovedVariant0PullRequestHeadRepoCreatedAt");
+  factory WebhookPullRequestReviewRequestRemovedVariant0PullRequestHeadRepoCreatedAt.fromJson(
+      Object? json) {
+    if (json is String) {
+      return WebhookPullRequestReviewRequestRemovedVariant0PullRequestHeadRepoCreatedAtString(
+          json);
+    }
+    if (json is num) {
+      return WebhookPullRequestReviewRequestRemovedVariant0PullRequestHeadRepoCreatedAtInt(
+          json.toInt());
+    }
+    throw FormatException(
+        "No variant matched for WebhookPullRequestReviewRequestRemovedVariant0PullRequestHeadRepoCreatedAt");
   }
   Object? toJson();
 }
 
-final class WebhookPullRequestReviewRequestRemovedVariant0PullRequestHeadRepoCreatedAtInt extends WebhookPullRequestReviewRequestRemovedVariant0PullRequestHeadRepoCreatedAt {
+final class WebhookPullRequestReviewRequestRemovedVariant0PullRequestHeadRepoCreatedAtInt
+    extends WebhookPullRequestReviewRequestRemovedVariant0PullRequestHeadRepoCreatedAt {
   final int value;
-  const WebhookPullRequestReviewRequestRemovedVariant0PullRequestHeadRepoCreatedAtInt(this.value);
-  @override Object? toJson() => value;
+  const WebhookPullRequestReviewRequestRemovedVariant0PullRequestHeadRepoCreatedAtInt(
+      this.value);
+  @override
+  Object? toJson() => value;
 }
 
-final class WebhookPullRequestReviewRequestRemovedVariant0PullRequestHeadRepoCreatedAtString extends WebhookPullRequestReviewRequestRemovedVariant0PullRequestHeadRepoCreatedAt {
+final class WebhookPullRequestReviewRequestRemovedVariant0PullRequestHeadRepoCreatedAtString
+    extends WebhookPullRequestReviewRequestRemovedVariant0PullRequestHeadRepoCreatedAt {
   final String value;
-  const WebhookPullRequestReviewRequestRemovedVariant0PullRequestHeadRepoCreatedAtString(this.value);
-  @override Object? toJson() => value;
+  const WebhookPullRequestReviewRequestRemovedVariant0PullRequestHeadRepoCreatedAtString(
+      this.value);
+  @override
+  Object? toJson() => value;
 }
 
 class WebhookPullRequestReviewRequestRemovedVariant0PullRequestHeadRepoLicense {
@@ -76,31 +125,57 @@ class WebhookPullRequestReviewRequestRemovedVariant0PullRequestHeadRepoLicense {
   final String spdxId;
   final String? url;
 
-  const WebhookPullRequestReviewRequestRemovedVariant0PullRequestHeadRepoLicense({required this.key, required this.name, required this.nodeId, required this.spdxId, required this.url});
+  const WebhookPullRequestReviewRequestRemovedVariant0PullRequestHeadRepoLicense(
+      {required this.key,
+      required this.name,
+      required this.nodeId,
+      required this.spdxId,
+      required this.url});
 
-  WebhookPullRequestReviewRequestRemovedVariant0PullRequestHeadRepoLicense Function({String key, String name, String nodeId, String spdxId, String? url}) get copyWith => _copyWith;
+  WebhookPullRequestReviewRequestRemovedVariant0PullRequestHeadRepoLicense Function(
+      {String key,
+      String name,
+      String nodeId,
+      String spdxId,
+      String? url}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewRequestRemovedVariant0PullRequestHeadRepoLicense _copyWith({Object? key = sdkOmittedValue, Object? name = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? spdxId = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookPullRequestReviewRequestRemovedVariant0PullRequestHeadRepoLicense(
-    key: identical(key, sdkOmittedValue) ? this.key : key as String,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    spdxId: identical(spdxId, sdkOmittedValue) ? this.spdxId : spdxId as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String?,
-  );
+  WebhookPullRequestReviewRequestRemovedVariant0PullRequestHeadRepoLicense
+      _copyWith(
+              {Object? key = sdkOmittedValue,
+              Object? name = sdkOmittedValue,
+              Object? nodeId = sdkOmittedValue,
+              Object? spdxId = sdkOmittedValue,
+              Object? url = sdkOmittedValue}) =>
+          WebhookPullRequestReviewRequestRemovedVariant0PullRequestHeadRepoLicense(
+            key: identical(key, sdkOmittedValue) ? this.key : key as String,
+            name: identical(name, sdkOmittedValue) ? this.name : name as String,
+            nodeId: identical(nodeId, sdkOmittedValue)
+                ? this.nodeId
+                : nodeId as String,
+            spdxId: identical(spdxId, sdkOmittedValue)
+                ? this.spdxId
+                : spdxId as String,
+            url: identical(url, sdkOmittedValue) ? this.url : url as String?,
+          );
 
-  factory WebhookPullRequestReviewRequestRemovedVariant0PullRequestHeadRepoLicense.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewRequestRemovedVariant0PullRequestHeadRepoLicense(
-    key: (json['key'] as String?)!,
-    name: (json['name'] as String?)!,
-    nodeId: (json['node_id'] as String?)!,
-    spdxId: (json['spdx_id'] as String?)!,
-    url: json.containsKey('url') ? json['url'] as String? : throw ArgumentError.value(null, 'url', 'Required property is missing'),
-  );
+  factory WebhookPullRequestReviewRequestRemovedVariant0PullRequestHeadRepoLicense.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPullRequestReviewRequestRemovedVariant0PullRequestHeadRepoLicense(
+        key: (json['key'] as String?)!,
+        name: (json['name'] as String?)!,
+        nodeId: (json['node_id'] as String?)!,
+        spdxId: (json['spdx_id'] as String?)!,
+        url: json.containsKey('url')
+            ? json['url'] as String?
+            : throw ArgumentError.value(
+                null, 'url', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'key': key,
-    'name': name,
-    'node_id': nodeId,
-    'spdx_id': spdxId,
-    'url': url,
-  };
+        'key': key,
+        'name': name,
+        'node_id': nodeId,
+        'spdx_id': spdxId,
+        'url': url,
+      };
 }
