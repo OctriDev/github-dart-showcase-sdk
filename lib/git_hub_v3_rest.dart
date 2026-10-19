@@ -5902,7 +5902,7 @@ class OrgsNamespace {
           required String customPropertyName,
           required CustomPropertySetPayloadValueType valueType,
           SdkOptional<bool> required_ = const SdkOmitted(),
-          SdkOptional<dynamic> defaultValue = const SdkOmitted(),
+          SdkOptional<List<String>?> defaultValue = const SdkOmitted(),
           SdkOptional<String?> description = const SdkOmitted(),
           SdkOptional<List<String>?> allowedValues = const SdkOmitted(),
           SdkOptional<CustomPropertySetPayloadValuesEditableBy?> valuesEditableBy = const SdkOmitted(),
