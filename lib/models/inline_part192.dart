@@ -6,281 +6,348 @@ part of 'inline.dart';
 // Inline operation models (part 192)
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookSecretScanningAlertCreatedAction {
-
   final String value;
 
   const WebhookSecretScanningAlertCreatedAction._(this.value);
 
-  factory WebhookSecretScanningAlertCreatedAction.fromJson(String value) => WebhookSecretScanningAlertCreatedAction._(value);
+  factory WebhookSecretScanningAlertCreatedAction.fromJson(String value) =>
+      WebhookSecretScanningAlertCreatedAction._(value);
 
   static const created = WebhookSecretScanningAlertCreatedAction._('created');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookSecretScanningAlertCreatedAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookSecretScanningAlertCreatedAction && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `action` wire field.
 final class WebhookSecretScanningAlertLocationCreatedAction {
-
   final String value;
 
   const WebhookSecretScanningAlertLocationCreatedAction._(this.value);
 
-  factory WebhookSecretScanningAlertLocationCreatedAction.fromJson(String value) => WebhookSecretScanningAlertLocationCreatedAction._(value);
+  factory WebhookSecretScanningAlertLocationCreatedAction.fromJson(
+          String value) =>
+      WebhookSecretScanningAlertLocationCreatedAction._(value);
 
-  static const created = WebhookSecretScanningAlertLocationCreatedAction._('created');
+  static const created =
+      WebhookSecretScanningAlertLocationCreatedAction._('created');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookSecretScanningAlertLocationCreatedAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookSecretScanningAlertLocationCreatedAction &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookSecretScanningAlertMetadataCreatedAction {
-
   final String value;
 
   const WebhookSecretScanningAlertMetadataCreatedAction._(this.value);
 
-  factory WebhookSecretScanningAlertMetadataCreatedAction.fromJson(String value) => WebhookSecretScanningAlertMetadataCreatedAction._(value);
+  factory WebhookSecretScanningAlertMetadataCreatedAction.fromJson(
+          String value) =>
+      WebhookSecretScanningAlertMetadataCreatedAction._(value);
 
-  static const metadataCreated = WebhookSecretScanningAlertMetadataCreatedAction._('metadata_created');
+  static const metadataCreated =
+      WebhookSecretScanningAlertMetadataCreatedAction._('metadata_created');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookSecretScanningAlertMetadataCreatedAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookSecretScanningAlertMetadataCreatedAction &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookSecretScanningAlertMetadataRemovedAction {
-
   final String value;
 
   const WebhookSecretScanningAlertMetadataRemovedAction._(this.value);
 
-  factory WebhookSecretScanningAlertMetadataRemovedAction.fromJson(String value) => WebhookSecretScanningAlertMetadataRemovedAction._(value);
+  factory WebhookSecretScanningAlertMetadataRemovedAction.fromJson(
+          String value) =>
+      WebhookSecretScanningAlertMetadataRemovedAction._(value);
 
-  static const metadataRemoved = WebhookSecretScanningAlertMetadataRemovedAction._('metadata_removed');
+  static const metadataRemoved =
+      WebhookSecretScanningAlertMetadataRemovedAction._('metadata_removed');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookSecretScanningAlertMetadataRemovedAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookSecretScanningAlertMetadataRemovedAction &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookSecretScanningAlertPubliclyLeakedAction {
-
   final String value;
 
   const WebhookSecretScanningAlertPubliclyLeakedAction._(this.value);
 
-  factory WebhookSecretScanningAlertPubliclyLeakedAction.fromJson(String value) => WebhookSecretScanningAlertPubliclyLeakedAction._(value);
+  factory WebhookSecretScanningAlertPubliclyLeakedAction.fromJson(
+          String value) =>
+      WebhookSecretScanningAlertPubliclyLeakedAction._(value);
 
-  static const publiclyLeaked = WebhookSecretScanningAlertPubliclyLeakedAction._('publicly_leaked');
+  static const publiclyLeaked =
+      WebhookSecretScanningAlertPubliclyLeakedAction._('publicly_leaked');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookSecretScanningAlertPubliclyLeakedAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookSecretScanningAlertPubliclyLeakedAction &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookSecretScanningAlertReopenedAction {
-
   final String value;
 
   const WebhookSecretScanningAlertReopenedAction._(this.value);
 
-  factory WebhookSecretScanningAlertReopenedAction.fromJson(String value) => WebhookSecretScanningAlertReopenedAction._(value);
+  factory WebhookSecretScanningAlertReopenedAction.fromJson(String value) =>
+      WebhookSecretScanningAlertReopenedAction._(value);
 
-  static const reopened = WebhookSecretScanningAlertReopenedAction._('reopened');
+  static const reopened =
+      WebhookSecretScanningAlertReopenedAction._('reopened');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookSecretScanningAlertReopenedAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookSecretScanningAlertReopenedAction && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookSecretScanningAlertResolvedAction {
-
   final String value;
 
   const WebhookSecretScanningAlertResolvedAction._(this.value);
 
-  factory WebhookSecretScanningAlertResolvedAction.fromJson(String value) => WebhookSecretScanningAlertResolvedAction._(value);
+  factory WebhookSecretScanningAlertResolvedAction.fromJson(String value) =>
+      WebhookSecretScanningAlertResolvedAction._(value);
 
-  static const resolved = WebhookSecretScanningAlertResolvedAction._('resolved');
+  static const resolved =
+      WebhookSecretScanningAlertResolvedAction._('resolved');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookSecretScanningAlertResolvedAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookSecretScanningAlertResolvedAction && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookSecretScanningAlertUnassignedAction {
-
   final String value;
 
   const WebhookSecretScanningAlertUnassignedAction._(this.value);
 
-  factory WebhookSecretScanningAlertUnassignedAction.fromJson(String value) => WebhookSecretScanningAlertUnassignedAction._(value);
+  factory WebhookSecretScanningAlertUnassignedAction.fromJson(String value) =>
+      WebhookSecretScanningAlertUnassignedAction._(value);
 
-  static const unassigned = WebhookSecretScanningAlertUnassignedAction._('unassigned');
+  static const unassigned =
+      WebhookSecretScanningAlertUnassignedAction._('unassigned');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookSecretScanningAlertUnassignedAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookSecretScanningAlertUnassignedAction &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookSecretScanningAlertValidatedAction {
-
   final String value;
 
   const WebhookSecretScanningAlertValidatedAction._(this.value);
 
-  factory WebhookSecretScanningAlertValidatedAction.fromJson(String value) => WebhookSecretScanningAlertValidatedAction._(value);
+  factory WebhookSecretScanningAlertValidatedAction.fromJson(String value) =>
+      WebhookSecretScanningAlertValidatedAction._(value);
 
-  static const validated = WebhookSecretScanningAlertValidatedAction._('validated');
+  static const validated =
+      WebhookSecretScanningAlertValidatedAction._('validated');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookSecretScanningAlertValidatedAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookSecretScanningAlertValidatedAction &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `action` wire field.
 final class WebhookSecretScanningScanCompletedAction {
-
   final String value;
 
   const WebhookSecretScanningScanCompletedAction._(this.value);
 
-  factory WebhookSecretScanningScanCompletedAction.fromJson(String value) => WebhookSecretScanningScanCompletedAction._(value);
+  factory WebhookSecretScanningScanCompletedAction.fromJson(String value) =>
+      WebhookSecretScanningScanCompletedAction._(value);
 
-  static const completed = WebhookSecretScanningScanCompletedAction._('completed');
+  static const completed =
+      WebhookSecretScanningScanCompletedAction._('completed');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookSecretScanningScanCompletedAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookSecretScanningScanCompletedAction && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// If the scan was triggered by a custom pattern update, this will be the scope of the pattern that was updated
 final class WebhookSecretScanningScanCompletedCustomPatternScope {
-
   final String value;
 
   const WebhookSecretScanningScanCompletedCustomPatternScope._(this.value);
 
-  factory WebhookSecretScanningScanCompletedCustomPatternScope.fromJson(String value) => WebhookSecretScanningScanCompletedCustomPatternScope._(value);
+  factory WebhookSecretScanningScanCompletedCustomPatternScope.fromJson(
+          String value) =>
+      WebhookSecretScanningScanCompletedCustomPatternScope._(value);
 
-  static const repository = WebhookSecretScanningScanCompletedCustomPatternScope._('repository');
-  static const organization = WebhookSecretScanningScanCompletedCustomPatternScope._('organization');
-  static const enterprise = WebhookSecretScanningScanCompletedCustomPatternScope._('enterprise');
+  static const repository =
+      WebhookSecretScanningScanCompletedCustomPatternScope._('repository');
+  static const organization =
+      WebhookSecretScanningScanCompletedCustomPatternScope._('organization');
+  static const enterprise =
+      WebhookSecretScanningScanCompletedCustomPatternScope._('enterprise');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookSecretScanningScanCompletedCustomPatternScope && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookSecretScanningScanCompletedCustomPatternScope &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// What type of content was scanned
 final class WebhookSecretScanningScanCompletedSource {
-
   final String value;
 
   const WebhookSecretScanningScanCompletedSource._(this.value);
 
-  factory WebhookSecretScanningScanCompletedSource.fromJson(String value) => WebhookSecretScanningScanCompletedSource._(value);
+  factory WebhookSecretScanningScanCompletedSource.fromJson(String value) =>
+      WebhookSecretScanningScanCompletedSource._(value);
 
   static const git = WebhookSecretScanningScanCompletedSource._('git');
   static const issues = WebhookSecretScanningScanCompletedSource._('issues');
-  static const pullRequests = WebhookSecretScanningScanCompletedSource._('pull-requests');
-  static const discussions = WebhookSecretScanningScanCompletedSource._('discussions');
+  static const pullRequests =
+      WebhookSecretScanningScanCompletedSource._('pull-requests');
+  static const discussions =
+      WebhookSecretScanningScanCompletedSource._('discussions');
   static const wiki = WebhookSecretScanningScanCompletedSource._('wiki');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookSecretScanningScanCompletedSource && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookSecretScanningScanCompletedSource && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// What type of scan was completed
 final class WebhookSecretScanningScanCompletedType {
-
   final String value;
 
   const WebhookSecretScanningScanCompletedType._(this.value);
 
-  factory WebhookSecretScanningScanCompletedType.fromJson(String value) => WebhookSecretScanningScanCompletedType._(value);
+  factory WebhookSecretScanningScanCompletedType.fromJson(String value) =>
+      WebhookSecretScanningScanCompletedType._(value);
 
   static const backfill = WebhookSecretScanningScanCompletedType._('backfill');
-  static const customPatternBackfill = WebhookSecretScanningScanCompletedType._('custom-pattern-backfill');
-  static const patternVersionBackfill = WebhookSecretScanningScanCompletedType._('pattern-version-backfill');
+  static const customPatternBackfill =
+      WebhookSecretScanningScanCompletedType._('custom-pattern-backfill');
+  static const patternVersionBackfill =
+      WebhookSecretScanningScanCompletedType._('pattern-version-backfill');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is WebhookSecretScanningScanCompletedType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is WebhookSecretScanningScanCompletedType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

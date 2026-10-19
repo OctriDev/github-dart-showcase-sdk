@@ -8,25 +8,38 @@ part of 'inline.dart';
 class CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitActionOptions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Whether to use runners labeled with 'dependency-submission' or standard GitHub runners.
   final SdkOptional<bool> labeledRunners;
 
-  const CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitActionOptions({this.labeledRunners = const SdkOmitted()});
+  const CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitActionOptions(
+      {this.labeledRunners = const SdkOmitted()});
 
-  CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitActionOptions Function({SdkOptional<bool> labeledRunners}) get copyWith => _copyWith;
+  CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitActionOptions
+      Function({SdkOptional<bool> labeledRunners}) get copyWith => _copyWith;
 
-  CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitActionOptions _copyWith({Object? labeledRunners = sdkOmittedValue}) => CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitActionOptions(
-    labeledRunners: identical(labeledRunners, sdkOmittedValue) ? this.labeledRunners : labeledRunners as SdkOptional<bool>,
-  );
+  CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitActionOptions
+      _copyWith({Object? labeledRunners = sdkOmittedValue}) =>
+          CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitActionOptions(
+            labeledRunners: identical(labeledRunners, sdkOmittedValue)
+                ? this.labeledRunners
+                : labeledRunners as SdkOptional<bool>,
+          );
 
-  factory CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitActionOptions.fromJson(Map<String, dynamic> json) => CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitActionOptions(
-    labeledRunners: json['labeled_runners'] != null ? SdkPresent((json['labeled_runners'] as bool?)!) : const SdkOmitted(),
-  );
+  factory CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitActionOptions.fromJson(
+          Map<String, dynamic> json) =>
+      CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitActionOptions(
+        labeledRunners: json['labeled_runners'] != null
+            ? SdkPresent((json['labeled_runners'] as bool?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (labeledRunners) {
-      SdkPresent<bool>(value: final value) => {'labeled_runners': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (labeledRunners) {
+          SdkPresent<bool>(value: final value) => {
+              'labeled_runners': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

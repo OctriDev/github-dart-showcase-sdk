@@ -8,280 +8,472 @@ part of 'inline.dart';
 class GitCreateCommitRequestBodyAuthor {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the author (or committer) of the commit
   final String name;
+
   /// The email of the author (or committer) of the commit
   final String email;
+
   /// Indicates when this commit was authored (or committed). This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
   final SdkOptional<String> date;
 
-  const GitCreateCommitRequestBodyAuthor({required this.name, required this.email, this.date = const SdkOmitted()});
+  const GitCreateCommitRequestBodyAuthor(
+      {required this.name,
+      required this.email,
+      this.date = const SdkOmitted()});
 
-  GitCreateCommitRequestBodyAuthor Function({String name, String email, SdkOptional<String> date}) get copyWith => _copyWith;
+  GitCreateCommitRequestBodyAuthor Function(
+      {String name,
+      String email,
+      SdkOptional<String> date}) get copyWith => _copyWith;
 
-  GitCreateCommitRequestBodyAuthor _copyWith({Object? name = sdkOmittedValue, Object? email = sdkOmittedValue, Object? date = sdkOmittedValue}) => GitCreateCommitRequestBodyAuthor(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    email: identical(email, sdkOmittedValue) ? this.email : email as String,
-    date: identical(date, sdkOmittedValue) ? this.date : date as SdkOptional<String>,
-  );
+  GitCreateCommitRequestBodyAuthor _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? email = sdkOmittedValue,
+          Object? date = sdkOmittedValue}) =>
+      GitCreateCommitRequestBodyAuthor(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        email: identical(email, sdkOmittedValue) ? this.email : email as String,
+        date: identical(date, sdkOmittedValue)
+            ? this.date
+            : date as SdkOptional<String>,
+      );
 
-  factory GitCreateCommitRequestBodyAuthor.fromJson(Map<String, dynamic> json) => GitCreateCommitRequestBodyAuthor(
-    name: (json['name'] as String?)!,
-    email: (json['email'] as String?)!,
-    date: json['date'] != null ? SdkPresent((json['date'] as String?)!) : const SdkOmitted(),
-  );
+  factory GitCreateCommitRequestBodyAuthor.fromJson(
+          Map<String, dynamic> json) =>
+      GitCreateCommitRequestBodyAuthor(
+        name: (json['name'] as String?)!,
+        email: (json['email'] as String?)!,
+        date: json['date'] != null
+            ? SdkPresent((json['date'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'email': email,
-    ...switch (date) {
-      SdkPresent<String>(value: final value) => {'date': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'name': name,
+        'email': email,
+        ...switch (date) {
+          SdkPresent<String>(value: final value) => {
+              'date': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Information about the person who is making the commit. By default, `committer` will use the information set in `author`. See the `author` and `committer` object below for details.
 class GitCreateCommitRequestBodyCommitter {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the author (or committer) of the commit
   final SdkOptional<String> name;
+
   /// The email of the author (or committer) of the commit
   final SdkOptional<String> email;
+
   /// Indicates when this commit was authored (or committed). This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
   final SdkOptional<String> date;
 
-  const GitCreateCommitRequestBodyCommitter({this.name = const SdkOmitted(), this.email = const SdkOmitted(), this.date = const SdkOmitted()});
+  const GitCreateCommitRequestBodyCommitter(
+      {this.name = const SdkOmitted(),
+      this.email = const SdkOmitted(),
+      this.date = const SdkOmitted()});
 
-  GitCreateCommitRequestBodyCommitter Function({SdkOptional<String> name, SdkOptional<String> email, SdkOptional<String> date}) get copyWith => _copyWith;
+  GitCreateCommitRequestBodyCommitter Function(
+      {SdkOptional<String> name,
+      SdkOptional<String> email,
+      SdkOptional<String> date}) get copyWith => _copyWith;
 
-  GitCreateCommitRequestBodyCommitter _copyWith({Object? name = sdkOmittedValue, Object? email = sdkOmittedValue, Object? date = sdkOmittedValue}) => GitCreateCommitRequestBodyCommitter(
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    email: identical(email, sdkOmittedValue) ? this.email : email as SdkOptional<String>,
-    date: identical(date, sdkOmittedValue) ? this.date : date as SdkOptional<String>,
-  );
+  GitCreateCommitRequestBodyCommitter _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? email = sdkOmittedValue,
+          Object? date = sdkOmittedValue}) =>
+      GitCreateCommitRequestBodyCommitter(
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        email: identical(email, sdkOmittedValue)
+            ? this.email
+            : email as SdkOptional<String>,
+        date: identical(date, sdkOmittedValue)
+            ? this.date
+            : date as SdkOptional<String>,
+      );
 
-  factory GitCreateCommitRequestBodyCommitter.fromJson(Map<String, dynamic> json) => GitCreateCommitRequestBodyCommitter(
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    email: json['email'] != null ? SdkPresent((json['email'] as String?)!) : const SdkOmitted(),
-    date: json['date'] != null ? SdkPresent((json['date'] as String?)!) : const SdkOmitted(),
-  );
+  factory GitCreateCommitRequestBodyCommitter.fromJson(
+          Map<String, dynamic> json) =>
+      GitCreateCommitRequestBodyCommitter(
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+        email: json['email'] != null
+            ? SdkPresent((json['email'] as String?)!)
+            : const SdkOmitted(),
+        date: json['date'] != null
+            ? SdkPresent((json['date'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (email) {
-      SdkPresent<String>(value: final value) => {'email': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (date) {
-      SdkPresent<String>(value: final value) => {'date': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (email) {
+          SdkPresent<String>(value: final value) => {
+              'email': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (date) {
+          SdkPresent<String>(value: final value) => {
+              'date': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class GitCreateCommitRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The commit message
   final String message;
+
   /// The SHA of the tree object this commit points to
   final String tree;
+
   /// The full SHAs of the commits that were the parents of this commit. If omitted or empty, the commit will be written as a root commit. For a single parent, an array of one SHA should be provided; for a merge commit, an array of more than one should be provided.
   final SdkOptional<List<String>> parents;
+
   /// Information about the author of the commit. By default, the `author` will be the authenticated user and the current date. See the `author` and `committer` object below for details.
   final SdkOptional<GitCreateCommitRequestBodyAuthor> author;
+
   /// Information about the person who is making the commit. By default, `committer` will use the information set in `author`. See the `author` and `committer` object below for details.
   final SdkOptional<GitCreateCommitRequestBodyCommitter> committer;
+
   /// The [PGP signature](https://en.wikipedia.org/wiki/Pretty_Good_Privacy) of the commit. GitHub adds the signature to the `gpgsig` header of the created commit. For a commit signature to be verifiable by Git or GitHub, it must be an ASCII-armored detached PGP signature over the string commit as it would be written to the object database. To pass a `signature` parameter, you need to first manually create a valid PGP signature, which can be complicated. You may find it easier to [use the command line](https://git-scm.com/book/id/v2/Git-Tools-Signing-Your-Work) to create signed commits.
   final SdkOptional<String> signature;
 
-  const GitCreateCommitRequestBody({required this.message, required this.tree, this.parents = const SdkOmitted(), this.author = const SdkOmitted(), this.committer = const SdkOmitted(), this.signature = const SdkOmitted()});
+  const GitCreateCommitRequestBody(
+      {required this.message,
+      required this.tree,
+      this.parents = const SdkOmitted(),
+      this.author = const SdkOmitted(),
+      this.committer = const SdkOmitted(),
+      this.signature = const SdkOmitted()});
 
-  GitCreateCommitRequestBody Function({String message, String tree, SdkOptional<List<String>> parents, SdkOptional<GitCreateCommitRequestBodyAuthor> author, SdkOptional<GitCreateCommitRequestBodyCommitter> committer, SdkOptional<String> signature}) get copyWith => _copyWith;
+  GitCreateCommitRequestBody Function(
+      {String message,
+      String tree,
+      SdkOptional<List<String>> parents,
+      SdkOptional<GitCreateCommitRequestBodyAuthor> author,
+      SdkOptional<GitCreateCommitRequestBodyCommitter> committer,
+      SdkOptional<String> signature}) get copyWith => _copyWith;
 
-  GitCreateCommitRequestBody _copyWith({Object? message = sdkOmittedValue, Object? tree = sdkOmittedValue, Object? parents = sdkOmittedValue, Object? author = sdkOmittedValue, Object? committer = sdkOmittedValue, Object? signature = sdkOmittedValue}) => GitCreateCommitRequestBody(
-    message: identical(message, sdkOmittedValue) ? this.message : message as String,
-    tree: identical(tree, sdkOmittedValue) ? this.tree : tree as String,
-    parents: identical(parents, sdkOmittedValue) ? this.parents : parents as SdkOptional<List<String>>,
-    author: identical(author, sdkOmittedValue) ? this.author : author as SdkOptional<GitCreateCommitRequestBodyAuthor>,
-    committer: identical(committer, sdkOmittedValue) ? this.committer : committer as SdkOptional<GitCreateCommitRequestBodyCommitter>,
-    signature: identical(signature, sdkOmittedValue) ? this.signature : signature as SdkOptional<String>,
-  );
+  GitCreateCommitRequestBody _copyWith(
+          {Object? message = sdkOmittedValue,
+          Object? tree = sdkOmittedValue,
+          Object? parents = sdkOmittedValue,
+          Object? author = sdkOmittedValue,
+          Object? committer = sdkOmittedValue,
+          Object? signature = sdkOmittedValue}) =>
+      GitCreateCommitRequestBody(
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+        tree: identical(tree, sdkOmittedValue) ? this.tree : tree as String,
+        parents: identical(parents, sdkOmittedValue)
+            ? this.parents
+            : parents as SdkOptional<List<String>>,
+        author: identical(author, sdkOmittedValue)
+            ? this.author
+            : author as SdkOptional<GitCreateCommitRequestBodyAuthor>,
+        committer: identical(committer, sdkOmittedValue)
+            ? this.committer
+            : committer as SdkOptional<GitCreateCommitRequestBodyCommitter>,
+        signature: identical(signature, sdkOmittedValue)
+            ? this.signature
+            : signature as SdkOptional<String>,
+      );
 
-  factory GitCreateCommitRequestBody.fromJson(Map<String, dynamic> json) => GitCreateCommitRequestBody(
-    message: (json['message'] as String?)!,
-    tree: (json['tree'] as String?)!,
-    parents: json['parents'] != null ? SdkPresent(((json['parents'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    author: json['author'] != null ? SdkPresent((json['author'] != null ? GitCreateCommitRequestBodyAuthor.fromJson(json['author'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    committer: json['committer'] != null ? SdkPresent((json['committer'] != null ? GitCreateCommitRequestBodyCommitter.fromJson(json['committer'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    signature: json['signature'] != null ? SdkPresent((json['signature'] as String?)!) : const SdkOmitted(),
-  );
+  factory GitCreateCommitRequestBody.fromJson(Map<String, dynamic> json) =>
+      GitCreateCommitRequestBody(
+        message: (json['message'] as String?)!,
+        tree: (json['tree'] as String?)!,
+        parents: json['parents'] != null
+            ? SdkPresent(
+                ((json['parents'] as List?)?.map((e) => e as String).toList())!)
+            : const SdkOmitted(),
+        author: json['author'] != null
+            ? SdkPresent((json['author'] != null
+                ? GitCreateCommitRequestBodyAuthor.fromJson(
+                    json['author'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        committer: json['committer'] != null
+            ? SdkPresent((json['committer'] != null
+                ? GitCreateCommitRequestBodyCommitter.fromJson(
+                    json['committer'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        signature: json['signature'] != null
+            ? SdkPresent((json['signature'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'message': message,
-    'tree': tree,
-    ...switch (parents) {
-      SdkPresent<List<String>>(value: final value) => {'parents': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (author) {
-      SdkPresent<GitCreateCommitRequestBodyAuthor>(value: final value) => {'author': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (committer) {
-      SdkPresent<GitCreateCommitRequestBodyCommitter>(value: final value) => {'committer': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (signature) {
-      SdkPresent<String>(value: final value) => {'signature': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'message': message,
+        'tree': tree,
+        ...switch (parents) {
+          SdkPresent<List<String>>(value: final value) => {
+              'parents': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (author) {
+          SdkPresent<GitCreateCommitRequestBodyAuthor>(value: final value) => {
+              'author': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (committer) {
+          SdkPresent<GitCreateCommitRequestBodyCommitter>(value: final value) =>
+            {
+              'committer': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (signature) {
+          SdkPresent<String>(value: final value) => {
+              'signature': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class GitCreateRefRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the fully qualified reference (ie: `refs/heads/master`). If it doesn't start with 'refs' and have at least two slashes, it will be rejected.
   final String ref;
+
   /// The SHA1 value for this reference.
   final String sha;
 
   const GitCreateRefRequestBody({required this.ref, required this.sha});
 
-  GitCreateRefRequestBody Function({String ref, String sha}) get copyWith => _copyWith;
+  GitCreateRefRequestBody Function({String ref, String sha}) get copyWith =>
+      _copyWith;
 
-  GitCreateRefRequestBody _copyWith({Object? ref = sdkOmittedValue, Object? sha = sdkOmittedValue}) => GitCreateRefRequestBody(
-    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-  );
+  GitCreateRefRequestBody _copyWith(
+          {Object? ref = sdkOmittedValue, Object? sha = sdkOmittedValue}) =>
+      GitCreateRefRequestBody(
+        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+      );
 
-  factory GitCreateRefRequestBody.fromJson(Map<String, dynamic> json) => GitCreateRefRequestBody(
-    ref: (json['ref'] as String?)!,
-    sha: (json['sha'] as String?)!,
-  );
+  factory GitCreateRefRequestBody.fromJson(Map<String, dynamic> json) =>
+      GitCreateRefRequestBody(
+        ref: (json['ref'] as String?)!,
+        sha: (json['sha'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'ref': ref,
-    'sha': sha,
-  };
+        'ref': ref,
+        'sha': sha,
+      };
 }
 
 class GitUpdateRefRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The SHA1 value to set this reference to
   final String sha;
+
   /// Indicates whether to force the update or to make sure the update is a fast-forward update. Leaving this out or setting it to `false` will make sure you're not overwriting work.
   final SdkOptional<bool> force;
 
-  const GitUpdateRefRequestBody({required this.sha, this.force = const SdkOmitted()});
+  const GitUpdateRefRequestBody(
+      {required this.sha, this.force = const SdkOmitted()});
 
-  GitUpdateRefRequestBody Function({String sha, SdkOptional<bool> force}) get copyWith => _copyWith;
+  GitUpdateRefRequestBody Function({String sha, SdkOptional<bool> force})
+      get copyWith => _copyWith;
 
-  GitUpdateRefRequestBody _copyWith({Object? sha = sdkOmittedValue, Object? force = sdkOmittedValue}) => GitUpdateRefRequestBody(
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-    force: identical(force, sdkOmittedValue) ? this.force : force as SdkOptional<bool>,
-  );
+  GitUpdateRefRequestBody _copyWith(
+          {Object? sha = sdkOmittedValue, Object? force = sdkOmittedValue}) =>
+      GitUpdateRefRequestBody(
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+        force: identical(force, sdkOmittedValue)
+            ? this.force
+            : force as SdkOptional<bool>,
+      );
 
-  factory GitUpdateRefRequestBody.fromJson(Map<String, dynamic> json) => GitUpdateRefRequestBody(
-    sha: (json['sha'] as String?)!,
-    force: json['force'] != null ? SdkPresent((json['force'] as bool?)!) : const SdkOmitted(),
-  );
+  factory GitUpdateRefRequestBody.fromJson(Map<String, dynamic> json) =>
+      GitUpdateRefRequestBody(
+        sha: (json['sha'] as String?)!,
+        force: json['force'] != null
+            ? SdkPresent((json['force'] as bool?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'sha': sha,
-    ...switch (force) {
-      SdkPresent<bool>(value: final value) => {'force': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'sha': sha,
+        ...switch (force) {
+          SdkPresent<bool>(value: final value) => {
+              'force': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// An object with information about the individual creating the tag.
 class GitCreateTagRequestBodyTagger {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the author of the tag
   final String name;
+
   /// The email of the author of the tag
   final String email;
+
   /// When this object was tagged. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
   final SdkOptional<String> date;
 
-  const GitCreateTagRequestBodyTagger({required this.name, required this.email, this.date = const SdkOmitted()});
+  const GitCreateTagRequestBodyTagger(
+      {required this.name,
+      required this.email,
+      this.date = const SdkOmitted()});
 
-  GitCreateTagRequestBodyTagger Function({String name, String email, SdkOptional<String> date}) get copyWith => _copyWith;
+  GitCreateTagRequestBodyTagger Function(
+      {String name,
+      String email,
+      SdkOptional<String> date}) get copyWith => _copyWith;
 
-  GitCreateTagRequestBodyTagger _copyWith({Object? name = sdkOmittedValue, Object? email = sdkOmittedValue, Object? date = sdkOmittedValue}) => GitCreateTagRequestBodyTagger(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    email: identical(email, sdkOmittedValue) ? this.email : email as String,
-    date: identical(date, sdkOmittedValue) ? this.date : date as SdkOptional<String>,
-  );
+  GitCreateTagRequestBodyTagger _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? email = sdkOmittedValue,
+          Object? date = sdkOmittedValue}) =>
+      GitCreateTagRequestBodyTagger(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        email: identical(email, sdkOmittedValue) ? this.email : email as String,
+        date: identical(date, sdkOmittedValue)
+            ? this.date
+            : date as SdkOptional<String>,
+      );
 
-  factory GitCreateTagRequestBodyTagger.fromJson(Map<String, dynamic> json) => GitCreateTagRequestBodyTagger(
-    name: (json['name'] as String?)!,
-    email: (json['email'] as String?)!,
-    date: json['date'] != null ? SdkPresent((json['date'] as String?)!) : const SdkOmitted(),
-  );
+  factory GitCreateTagRequestBodyTagger.fromJson(Map<String, dynamic> json) =>
+      GitCreateTagRequestBodyTagger(
+        name: (json['name'] as String?)!,
+        email: (json['email'] as String?)!,
+        date: json['date'] != null
+            ? SdkPresent((json['date'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'email': email,
-    ...switch (date) {
-      SdkPresent<String>(value: final value) => {'date': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'name': name,
+        'email': email,
+        ...switch (date) {
+          SdkPresent<String>(value: final value) => {
+              'date': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class GitCreateTagRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The tag's name. This is typically a version (e.g., "v0.0.1").
   final String tag;
+
   /// The tag message.
   final String message;
+
   /// The SHA of the git object this is tagging.
   final String object;
+
   /// The type of the object we're tagging. Normally this is a `commit` but it can also be a `tree` or a `blob`.
   final GitCreateTagRequestBodyType type_;
+
   /// An object with information about the individual creating the tag.
   final SdkOptional<GitCreateTagRequestBodyTagger> tagger;
 
-  const GitCreateTagRequestBody({required this.tag, required this.message, required this.object, required this.type_, this.tagger = const SdkOmitted()});
+  const GitCreateTagRequestBody(
+      {required this.tag,
+      required this.message,
+      required this.object,
+      required this.type_,
+      this.tagger = const SdkOmitted()});
 
-  GitCreateTagRequestBody Function({String tag, String message, String object, GitCreateTagRequestBodyType type_, SdkOptional<GitCreateTagRequestBodyTagger> tagger}) get copyWith => _copyWith;
+  GitCreateTagRequestBody Function(
+          {String tag,
+          String message,
+          String object,
+          GitCreateTagRequestBodyType type_,
+          SdkOptional<GitCreateTagRequestBodyTagger> tagger})
+      get copyWith => _copyWith;
 
-  GitCreateTagRequestBody _copyWith({Object? tag = sdkOmittedValue, Object? message = sdkOmittedValue, Object? object = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? tagger = sdkOmittedValue}) => GitCreateTagRequestBody(
-    tag: identical(tag, sdkOmittedValue) ? this.tag : tag as String,
-    message: identical(message, sdkOmittedValue) ? this.message : message as String,
-    object: identical(object, sdkOmittedValue) ? this.object : object as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as GitCreateTagRequestBodyType,
-    tagger: identical(tagger, sdkOmittedValue) ? this.tagger : tagger as SdkOptional<GitCreateTagRequestBodyTagger>,
-  );
+  GitCreateTagRequestBody _copyWith(
+          {Object? tag = sdkOmittedValue,
+          Object? message = sdkOmittedValue,
+          Object? object = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? tagger = sdkOmittedValue}) =>
+      GitCreateTagRequestBody(
+        tag: identical(tag, sdkOmittedValue) ? this.tag : tag as String,
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+        object:
+            identical(object, sdkOmittedValue) ? this.object : object as String,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as GitCreateTagRequestBodyType,
+        tagger: identical(tagger, sdkOmittedValue)
+            ? this.tagger
+            : tagger as SdkOptional<GitCreateTagRequestBodyTagger>,
+      );
 
-  factory GitCreateTagRequestBody.fromJson(Map<String, dynamic> json) => GitCreateTagRequestBody(
-    tag: (json['tag'] as String?)!,
-    message: (json['message'] as String?)!,
-    object: (json['object'] as String?)!,
-    type_: (json['type'] != null ? GitCreateTagRequestBodyType.fromJson(json['type'] as String) : null)!,
-    tagger: json['tagger'] != null ? SdkPresent((json['tagger'] != null ? GitCreateTagRequestBodyTagger.fromJson(json['tagger'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-  );
+  factory GitCreateTagRequestBody.fromJson(Map<String, dynamic> json) =>
+      GitCreateTagRequestBody(
+        tag: (json['tag'] as String?)!,
+        message: (json['message'] as String?)!,
+        object: (json['object'] as String?)!,
+        type_: (json['type'] != null
+            ? GitCreateTagRequestBodyType.fromJson(json['type'] as String)
+            : null)!,
+        tagger: json['tagger'] != null
+            ? SdkPresent((json['tagger'] != null
+                ? GitCreateTagRequestBodyTagger.fromJson(
+                    json['tagger'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'tag': tag,
-    'message': message,
-    'object': object,
-    'type': type_.toJson(),
-    ...switch (tagger) {
-      SdkPresent<GitCreateTagRequestBodyTagger>(value: final value) => {'tagger': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'tag': tag,
+        'message': message,
+        'object': object,
+        'type': type_.toJson(),
+        ...switch (tagger) {
+          SdkPresent<GitCreateTagRequestBodyTagger>(value: final value) => {
+              'tagger': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

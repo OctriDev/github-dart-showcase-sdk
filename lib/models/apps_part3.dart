@@ -8,185 +8,389 @@ part of 'apps.dart';
 class MarketplacePurchase {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `url` wire field.
   final String url;
+
   /// Required `string` value serialized in the `type` wire field.
   final String type_;
+
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
+
   /// Required `string` value serialized in the `login` wire field.
   final String login;
+
   /// Optional `string` value serialized in the `organization_billing_email` wire field.
   final SdkOptional<String> organizationBillingEmail;
+
   /// Optional `string` value serialized in the `email` wire field.
   final SdkOptional<String?> email;
+
   /// Optional object value serialized in the `marketplace_pending_change` wire field.
-  final SdkOptional<MarketplacePurchaseMarketplacePendingChange?> marketplacePendingChange;
+  final SdkOptional<MarketplacePurchaseMarketplacePendingChange?>
+      marketplacePendingChange;
+
   /// Required object value serialized in the `marketplace_purchase` wire field.
   final MarketplacePurchaseMarketplacePurchase marketplacePurchase;
 
-  const MarketplacePurchase({required this.url, required this.type_, required this.id, required this.login, this.organizationBillingEmail = const SdkOmitted(), this.email = const SdkOmitted(), this.marketplacePendingChange = const SdkOmitted(), required this.marketplacePurchase});
+  const MarketplacePurchase(
+      {required this.url,
+      required this.type_,
+      required this.id,
+      required this.login,
+      this.organizationBillingEmail = const SdkOmitted(),
+      this.email = const SdkOmitted(),
+      this.marketplacePendingChange = const SdkOmitted(),
+      required this.marketplacePurchase});
 
-  MarketplacePurchase Function({String url, String type_, int id, String login, SdkOptional<String> organizationBillingEmail, SdkOptional<String?> email, SdkOptional<MarketplacePurchaseMarketplacePendingChange?> marketplacePendingChange, MarketplacePurchaseMarketplacePurchase marketplacePurchase}) get copyWith => _copyWith;
+  MarketplacePurchase Function(
+          {String url,
+          String type_,
+          int id,
+          String login,
+          SdkOptional<String> organizationBillingEmail,
+          SdkOptional<String?> email,
+          SdkOptional<MarketplacePurchaseMarketplacePendingChange?>
+              marketplacePendingChange,
+          MarketplacePurchaseMarketplacePurchase marketplacePurchase})
+      get copyWith => _copyWith;
 
-  MarketplacePurchase _copyWith({Object? url = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue, Object? login = sdkOmittedValue, Object? organizationBillingEmail = sdkOmittedValue, Object? email = sdkOmittedValue, Object? marketplacePendingChange = sdkOmittedValue, Object? marketplacePurchase = sdkOmittedValue}) => MarketplacePurchase(
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    login: identical(login, sdkOmittedValue) ? this.login : login as String,
-    organizationBillingEmail: identical(organizationBillingEmail, sdkOmittedValue) ? this.organizationBillingEmail : organizationBillingEmail as SdkOptional<String>,
-    email: identical(email, sdkOmittedValue) ? this.email : email as SdkOptional<String?>,
-    marketplacePendingChange: identical(marketplacePendingChange, sdkOmittedValue) ? this.marketplacePendingChange : marketplacePendingChange as SdkOptional<MarketplacePurchaseMarketplacePendingChange?>,
-    marketplacePurchase: identical(marketplacePurchase, sdkOmittedValue) ? this.marketplacePurchase : marketplacePurchase as MarketplacePurchaseMarketplacePurchase,
-  );
+  MarketplacePurchase _copyWith(
+          {Object? url = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? login = sdkOmittedValue,
+          Object? organizationBillingEmail = sdkOmittedValue,
+          Object? email = sdkOmittedValue,
+          Object? marketplacePendingChange = sdkOmittedValue,
+          Object? marketplacePurchase = sdkOmittedValue}) =>
+      MarketplacePurchase(
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        login: identical(login, sdkOmittedValue) ? this.login : login as String,
+        organizationBillingEmail:
+            identical(organizationBillingEmail, sdkOmittedValue)
+                ? this.organizationBillingEmail
+                : organizationBillingEmail as SdkOptional<String>,
+        email: identical(email, sdkOmittedValue)
+            ? this.email
+            : email as SdkOptional<String?>,
+        marketplacePendingChange: identical(
+                marketplacePendingChange, sdkOmittedValue)
+            ? this.marketplacePendingChange
+            : marketplacePendingChange
+                as SdkOptional<MarketplacePurchaseMarketplacePendingChange?>,
+        marketplacePurchase: identical(marketplacePurchase, sdkOmittedValue)
+            ? this.marketplacePurchase
+            : marketplacePurchase as MarketplacePurchaseMarketplacePurchase,
+      );
 
-  factory MarketplacePurchase.fromJson(Map<String, dynamic> json) => MarketplacePurchase(
-    url: (json['url'] as String?)!,
-    type_: (json['type'] as String?)!,
-    id: ((json['id'] as num?)?.toInt())!,
-    login: (json['login'] as String?)!,
-    organizationBillingEmail: json['organization_billing_email'] != null ? SdkPresent((json['organization_billing_email'] as String?)!) : const SdkOmitted(),
-    email: json.containsKey('email') ? SdkPresent(json['email'] as String?) : const SdkOmitted(),
-    marketplacePendingChange: json.containsKey('marketplace_pending_change') ? SdkPresent(json['marketplace_pending_change'] != null ? MarketplacePurchaseMarketplacePendingChange.fromJson(json['marketplace_pending_change'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-    marketplacePurchase: (json['marketplace_purchase'] != null ? MarketplacePurchaseMarketplacePurchase.fromJson(json['marketplace_purchase'] as Map<String, dynamic>) : null)!,
-  );
+  factory MarketplacePurchase.fromJson(Map<String, dynamic> json) =>
+      MarketplacePurchase(
+        url: (json['url'] as String?)!,
+        type_: (json['type'] as String?)!,
+        id: ((json['id'] as num?)?.toInt())!,
+        login: (json['login'] as String?)!,
+        organizationBillingEmail: json['organization_billing_email'] != null
+            ? SdkPresent((json['organization_billing_email'] as String?)!)
+            : const SdkOmitted(),
+        email: json.containsKey('email')
+            ? SdkPresent(json['email'] as String?)
+            : const SdkOmitted(),
+        marketplacePendingChange: json.containsKey('marketplace_pending_change')
+            ? SdkPresent(json['marketplace_pending_change'] != null
+                ? MarketplacePurchaseMarketplacePendingChange.fromJson(
+                    json['marketplace_pending_change'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        marketplacePurchase: (json['marketplace_purchase'] != null
+            ? MarketplacePurchaseMarketplacePurchase.fromJson(
+                json['marketplace_purchase'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'url': url,
-    'type': type_,
-    'id': id,
-    'login': login,
-    ...switch (organizationBillingEmail) {
-      SdkPresent<String>(value: final value) => {'organization_billing_email': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (email) {
-      SdkPresent<String?>(value: final value) => {'email': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (marketplacePendingChange) {
-      SdkPresent<MarketplacePurchaseMarketplacePendingChange?>(value: final value) => {'marketplace_pending_change': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'marketplace_purchase': marketplacePurchase.toJson(),
-  };
+        'url': url,
+        'type': type_,
+        'id': id,
+        'login': login,
+        ...switch (organizationBillingEmail) {
+          SdkPresent<String>(value: final value) => {
+              'organization_billing_email': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (email) {
+          SdkPresent<String?>(value: final value) => {
+              'email': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (marketplacePendingChange) {
+          SdkPresent<MarketplacePurchaseMarketplacePendingChange?>(
+            value: final value
+          ) =>
+            {
+              'marketplace_pending_change': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'marketplace_purchase': marketplacePurchase.toJson(),
+      };
 }
 
 /// Typed representation of the `NullableScopedInstallation` API schema.
 class NullableScopedInstallation {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The permissions granted to the fine-grained access token.
   final AppPermissions permissions;
+
   /// Describe whether all repositories have been selected or there's a selection involved
   final NullableScopedInstallationRepositorySelection repositorySelection;
+
   /// Required `string` value serialized in the `single_file_name` wire field.
   final String? singleFileName;
+
   /// Optional `boolean` value serialized in the `has_multiple_single_files` wire field.
   final SdkOptional<bool> hasMultipleSingleFiles;
+
   /// Optional array value serialized in the `single_file_paths` wire field.
   final SdkOptional<List<String>> singleFilePaths;
+
   /// Required `uri`-formatted value serialized in the `repositories_url` wire field.
   final String repositoriesUrl;
+
   /// A GitHub user.
   final SimpleUser account;
 
-  const NullableScopedInstallation({required this.permissions, required this.repositorySelection, required this.singleFileName, this.hasMultipleSingleFiles = const SdkOmitted(), this.singleFilePaths = const SdkOmitted(), required this.repositoriesUrl, required this.account});
+  const NullableScopedInstallation(
+      {required this.permissions,
+      required this.repositorySelection,
+      required this.singleFileName,
+      this.hasMultipleSingleFiles = const SdkOmitted(),
+      this.singleFilePaths = const SdkOmitted(),
+      required this.repositoriesUrl,
+      required this.account});
 
-  NullableScopedInstallation Function({AppPermissions permissions, NullableScopedInstallationRepositorySelection repositorySelection, String? singleFileName, SdkOptional<bool> hasMultipleSingleFiles, SdkOptional<List<String>> singleFilePaths, String repositoriesUrl, SimpleUser account}) get copyWith => _copyWith;
+  NullableScopedInstallation Function(
+      {AppPermissions permissions,
+      NullableScopedInstallationRepositorySelection repositorySelection,
+      String? singleFileName,
+      SdkOptional<bool> hasMultipleSingleFiles,
+      SdkOptional<List<String>> singleFilePaths,
+      String repositoriesUrl,
+      SimpleUser account}) get copyWith => _copyWith;
 
-  NullableScopedInstallation _copyWith({Object? permissions = sdkOmittedValue, Object? repositorySelection = sdkOmittedValue, Object? singleFileName = sdkOmittedValue, Object? hasMultipleSingleFiles = sdkOmittedValue, Object? singleFilePaths = sdkOmittedValue, Object? repositoriesUrl = sdkOmittedValue, Object? account = sdkOmittedValue}) => NullableScopedInstallation(
-    permissions: identical(permissions, sdkOmittedValue) ? this.permissions : permissions as AppPermissions,
-    repositorySelection: identical(repositorySelection, sdkOmittedValue) ? this.repositorySelection : repositorySelection as NullableScopedInstallationRepositorySelection,
-    singleFileName: identical(singleFileName, sdkOmittedValue) ? this.singleFileName : singleFileName as String?,
-    hasMultipleSingleFiles: identical(hasMultipleSingleFiles, sdkOmittedValue) ? this.hasMultipleSingleFiles : hasMultipleSingleFiles as SdkOptional<bool>,
-    singleFilePaths: identical(singleFilePaths, sdkOmittedValue) ? this.singleFilePaths : singleFilePaths as SdkOptional<List<String>>,
-    repositoriesUrl: identical(repositoriesUrl, sdkOmittedValue) ? this.repositoriesUrl : repositoriesUrl as String,
-    account: identical(account, sdkOmittedValue) ? this.account : account as SimpleUser,
-  );
+  NullableScopedInstallation _copyWith(
+          {Object? permissions = sdkOmittedValue,
+          Object? repositorySelection = sdkOmittedValue,
+          Object? singleFileName = sdkOmittedValue,
+          Object? hasMultipleSingleFiles = sdkOmittedValue,
+          Object? singleFilePaths = sdkOmittedValue,
+          Object? repositoriesUrl = sdkOmittedValue,
+          Object? account = sdkOmittedValue}) =>
+      NullableScopedInstallation(
+        permissions: identical(permissions, sdkOmittedValue)
+            ? this.permissions
+            : permissions as AppPermissions,
+        repositorySelection: identical(repositorySelection, sdkOmittedValue)
+            ? this.repositorySelection
+            : repositorySelection
+                as NullableScopedInstallationRepositorySelection,
+        singleFileName: identical(singleFileName, sdkOmittedValue)
+            ? this.singleFileName
+            : singleFileName as String?,
+        hasMultipleSingleFiles:
+            identical(hasMultipleSingleFiles, sdkOmittedValue)
+                ? this.hasMultipleSingleFiles
+                : hasMultipleSingleFiles as SdkOptional<bool>,
+        singleFilePaths: identical(singleFilePaths, sdkOmittedValue)
+            ? this.singleFilePaths
+            : singleFilePaths as SdkOptional<List<String>>,
+        repositoriesUrl: identical(repositoriesUrl, sdkOmittedValue)
+            ? this.repositoriesUrl
+            : repositoriesUrl as String,
+        account: identical(account, sdkOmittedValue)
+            ? this.account
+            : account as SimpleUser,
+      );
 
-  factory NullableScopedInstallation.fromJson(Map<String, dynamic> json) => NullableScopedInstallation(
-    permissions: (json['permissions'] != null ? AppPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null)!,
-    repositorySelection: (json['repository_selection'] != null ? NullableScopedInstallationRepositorySelection.fromJson(json['repository_selection'] as String) : null)!,
-    singleFileName: json.containsKey('single_file_name') ? json['single_file_name'] as String? : throw ArgumentError.value(null, 'single_file_name', 'Required property is missing'),
-    hasMultipleSingleFiles: json['has_multiple_single_files'] != null ? SdkPresent((json['has_multiple_single_files'] as bool?)!) : const SdkOmitted(),
-    singleFilePaths: json['single_file_paths'] != null ? SdkPresent(((json['single_file_paths'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    repositoriesUrl: (json['repositories_url'] as String?)!,
-    account: (json['account'] != null ? SimpleUser.fromJson(json['account'] as Map<String, dynamic>) : null)!,
-  );
+  factory NullableScopedInstallation.fromJson(Map<String, dynamic> json) =>
+      NullableScopedInstallation(
+        permissions: (json['permissions'] != null
+            ? AppPermissions.fromJson(
+                json['permissions'] as Map<String, dynamic>)
+            : null)!,
+        repositorySelection: (json['repository_selection'] != null
+            ? NullableScopedInstallationRepositorySelection.fromJson(
+                json['repository_selection'] as String)
+            : null)!,
+        singleFileName: json.containsKey('single_file_name')
+            ? json['single_file_name'] as String?
+            : throw ArgumentError.value(
+                null, 'single_file_name', 'Required property is missing'),
+        hasMultipleSingleFiles: json['has_multiple_single_files'] != null
+            ? SdkPresent((json['has_multiple_single_files'] as bool?)!)
+            : const SdkOmitted(),
+        singleFilePaths: json['single_file_paths'] != null
+            ? SdkPresent(((json['single_file_paths'] as List?)
+                ?.map((e) => e as String)
+                .toList())!)
+            : const SdkOmitted(),
+        repositoriesUrl: (json['repositories_url'] as String?)!,
+        account: (json['account'] != null
+            ? SimpleUser.fromJson(json['account'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'permissions': permissions.toJson(),
-    'repository_selection': repositorySelection.toJson(),
-    'single_file_name': singleFileName,
-    ...switch (hasMultipleSingleFiles) {
-      SdkPresent<bool>(value: final value) => {'has_multiple_single_files': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (singleFilePaths) {
-      SdkPresent<List<String>>(value: final value) => {'single_file_paths': value,},
-      _ => const <String, dynamic>{},
-    },
-    'repositories_url': repositoriesUrl,
-    'account': account.toJson(),
-  };
+        'permissions': permissions.toJson(),
+        'repository_selection': repositorySelection.toJson(),
+        'single_file_name': singleFileName,
+        ...switch (hasMultipleSingleFiles) {
+          SdkPresent<bool>(value: final value) => {
+              'has_multiple_single_files': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (singleFilePaths) {
+          SdkPresent<List<String>>(value: final value) => {
+              'single_file_paths': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'repositories_url': repositoriesUrl,
+        'account': account.toJson(),
+      };
 }
 
 /// User Marketplace Purchase
 class UserMarketplacePurchase {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `billing_cycle` wire field.
   final String billingCycle;
+
   /// Required `date-time`-formatted value serialized in the `next_billing_date` wire field.
   final String? nextBillingDate;
+
   /// Required `integer` value serialized in the `unit_count` wire field.
   final int? unitCount;
+
   /// Required `boolean` value serialized in the `on_free_trial` wire field.
   final bool onFreeTrial;
+
   /// Required `date-time`-formatted value serialized in the `free_trial_ends_on` wire field.
   final String? freeTrialEndsOn;
+
   /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
   final String? updatedAt;
+
   /// Required object value serialized in the `account` wire field.
   final MarketplaceAccount account;
+
   /// Marketplace Listing Plan
   final MarketplaceListingPlan plan;
 
-  const UserMarketplacePurchase({required this.billingCycle, required this.nextBillingDate, required this.unitCount, required this.onFreeTrial, required this.freeTrialEndsOn, required this.updatedAt, required this.account, required this.plan});
+  const UserMarketplacePurchase(
+      {required this.billingCycle,
+      required this.nextBillingDate,
+      required this.unitCount,
+      required this.onFreeTrial,
+      required this.freeTrialEndsOn,
+      required this.updatedAt,
+      required this.account,
+      required this.plan});
 
-  UserMarketplacePurchase Function({String billingCycle, String? nextBillingDate, int? unitCount, bool onFreeTrial, String? freeTrialEndsOn, String? updatedAt, MarketplaceAccount account, MarketplaceListingPlan plan}) get copyWith => _copyWith;
+  UserMarketplacePurchase Function(
+      {String billingCycle,
+      String? nextBillingDate,
+      int? unitCount,
+      bool onFreeTrial,
+      String? freeTrialEndsOn,
+      String? updatedAt,
+      MarketplaceAccount account,
+      MarketplaceListingPlan plan}) get copyWith => _copyWith;
 
-  UserMarketplacePurchase _copyWith({Object? billingCycle = sdkOmittedValue, Object? nextBillingDate = sdkOmittedValue, Object? unitCount = sdkOmittedValue, Object? onFreeTrial = sdkOmittedValue, Object? freeTrialEndsOn = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? account = sdkOmittedValue, Object? plan = sdkOmittedValue}) => UserMarketplacePurchase(
-    billingCycle: identical(billingCycle, sdkOmittedValue) ? this.billingCycle : billingCycle as String,
-    nextBillingDate: identical(nextBillingDate, sdkOmittedValue) ? this.nextBillingDate : nextBillingDate as String?,
-    unitCount: identical(unitCount, sdkOmittedValue) ? this.unitCount : unitCount as int?,
-    onFreeTrial: identical(onFreeTrial, sdkOmittedValue) ? this.onFreeTrial : onFreeTrial as bool,
-    freeTrialEndsOn: identical(freeTrialEndsOn, sdkOmittedValue) ? this.freeTrialEndsOn : freeTrialEndsOn as String?,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String?,
-    account: identical(account, sdkOmittedValue) ? this.account : account as MarketplaceAccount,
-    plan: identical(plan, sdkOmittedValue) ? this.plan : plan as MarketplaceListingPlan,
-  );
+  UserMarketplacePurchase _copyWith(
+          {Object? billingCycle = sdkOmittedValue,
+          Object? nextBillingDate = sdkOmittedValue,
+          Object? unitCount = sdkOmittedValue,
+          Object? onFreeTrial = sdkOmittedValue,
+          Object? freeTrialEndsOn = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? account = sdkOmittedValue,
+          Object? plan = sdkOmittedValue}) =>
+      UserMarketplacePurchase(
+        billingCycle: identical(billingCycle, sdkOmittedValue)
+            ? this.billingCycle
+            : billingCycle as String,
+        nextBillingDate: identical(nextBillingDate, sdkOmittedValue)
+            ? this.nextBillingDate
+            : nextBillingDate as String?,
+        unitCount: identical(unitCount, sdkOmittedValue)
+            ? this.unitCount
+            : unitCount as int?,
+        onFreeTrial: identical(onFreeTrial, sdkOmittedValue)
+            ? this.onFreeTrial
+            : onFreeTrial as bool,
+        freeTrialEndsOn: identical(freeTrialEndsOn, sdkOmittedValue)
+            ? this.freeTrialEndsOn
+            : freeTrialEndsOn as String?,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String?,
+        account: identical(account, sdkOmittedValue)
+            ? this.account
+            : account as MarketplaceAccount,
+        plan: identical(plan, sdkOmittedValue)
+            ? this.plan
+            : plan as MarketplaceListingPlan,
+      );
 
-  factory UserMarketplacePurchase.fromJson(Map<String, dynamic> json) => UserMarketplacePurchase(
-    billingCycle: (json['billing_cycle'] as String?)!,
-    nextBillingDate: json.containsKey('next_billing_date') ? json['next_billing_date'] as String? : throw ArgumentError.value(null, 'next_billing_date', 'Required property is missing'),
-    unitCount: json.containsKey('unit_count') ? (json['unit_count'] as num?)?.toInt() : throw ArgumentError.value(null, 'unit_count', 'Required property is missing'),
-    onFreeTrial: (json['on_free_trial'] as bool?)!,
-    freeTrialEndsOn: json.containsKey('free_trial_ends_on') ? json['free_trial_ends_on'] as String? : throw ArgumentError.value(null, 'free_trial_ends_on', 'Required property is missing'),
-    updatedAt: json.containsKey('updated_at') ? json['updated_at'] as String? : throw ArgumentError.value(null, 'updated_at', 'Required property is missing'),
-    account: (json['account'] != null ? MarketplaceAccount.fromJson(json['account'] as Map<String, dynamic>) : null)!,
-    plan: (json['plan'] != null ? MarketplaceListingPlan.fromJson(json['plan'] as Map<String, dynamic>) : null)!,
-  );
+  factory UserMarketplacePurchase.fromJson(Map<String, dynamic> json) =>
+      UserMarketplacePurchase(
+        billingCycle: (json['billing_cycle'] as String?)!,
+        nextBillingDate: json.containsKey('next_billing_date')
+            ? json['next_billing_date'] as String?
+            : throw ArgumentError.value(
+                null, 'next_billing_date', 'Required property is missing'),
+        unitCount: json.containsKey('unit_count')
+            ? (json['unit_count'] as num?)?.toInt()
+            : throw ArgumentError.value(
+                null, 'unit_count', 'Required property is missing'),
+        onFreeTrial: (json['on_free_trial'] as bool?)!,
+        freeTrialEndsOn: json.containsKey('free_trial_ends_on')
+            ? json['free_trial_ends_on'] as String?
+            : throw ArgumentError.value(
+                null, 'free_trial_ends_on', 'Required property is missing'),
+        updatedAt: json.containsKey('updated_at')
+            ? json['updated_at'] as String?
+            : throw ArgumentError.value(
+                null, 'updated_at', 'Required property is missing'),
+        account: (json['account'] != null
+            ? MarketplaceAccount.fromJson(
+                json['account'] as Map<String, dynamic>)
+            : null)!,
+        plan: (json['plan'] != null
+            ? MarketplaceListingPlan.fromJson(
+                json['plan'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'billing_cycle': billingCycle,
-    'next_billing_date': nextBillingDate,
-    'unit_count': unitCount,
-    'on_free_trial': onFreeTrial,
-    'free_trial_ends_on': freeTrialEndsOn,
-    'updated_at': updatedAt,
-    'account': account.toJson(),
-    'plan': plan.toJson(),
-  };
+        'billing_cycle': billingCycle,
+        'next_billing_date': nextBillingDate,
+        'unit_count': unitCount,
+        'on_free_trial': onFreeTrial,
+        'free_trial_ends_on': freeTrialEndsOn,
+        'updated_at': updatedAt,
+        'account': account.toJson(),
+        'plan': plan.toJson(),
+      };
 }

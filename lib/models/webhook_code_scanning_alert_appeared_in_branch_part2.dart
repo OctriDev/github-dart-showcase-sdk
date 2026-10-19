@@ -8,226 +8,439 @@ part of 'webhook_code_scanning_alert_appeared_in_branch.dart';
 class WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceLocation {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `integer` value serialized in the `end_column` wire field.
   final SdkOptional<int> endColumn;
+
   /// Optional `integer` value serialized in the `end_line` wire field.
   final SdkOptional<int> endLine;
+
   /// Optional `string` value serialized in the `path` wire field.
   final SdkOptional<String> path;
+
   /// Optional `integer` value serialized in the `start_column` wire field.
   final SdkOptional<int> startColumn;
+
   /// Optional `integer` value serialized in the `start_line` wire field.
   final SdkOptional<int> startLine;
 
-  const WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceLocation({this.endColumn = const SdkOmitted(), this.endLine = const SdkOmitted(), this.path = const SdkOmitted(), this.startColumn = const SdkOmitted(), this.startLine = const SdkOmitted()});
+  const WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceLocation(
+      {this.endColumn = const SdkOmitted(),
+      this.endLine = const SdkOmitted(),
+      this.path = const SdkOmitted(),
+      this.startColumn = const SdkOmitted(),
+      this.startLine = const SdkOmitted()});
 
-  WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceLocation Function({SdkOptional<int> endColumn, SdkOptional<int> endLine, SdkOptional<String> path, SdkOptional<int> startColumn, SdkOptional<int> startLine}) get copyWith => _copyWith;
+  WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceLocation Function(
+      {SdkOptional<int> endColumn,
+      SdkOptional<int> endLine,
+      SdkOptional<String> path,
+      SdkOptional<int> startColumn,
+      SdkOptional<int> startLine}) get copyWith => _copyWith;
 
-  WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceLocation _copyWith({Object? endColumn = sdkOmittedValue, Object? endLine = sdkOmittedValue, Object? path = sdkOmittedValue, Object? startColumn = sdkOmittedValue, Object? startLine = sdkOmittedValue}) => WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceLocation(
-    endColumn: identical(endColumn, sdkOmittedValue) ? this.endColumn : endColumn as SdkOptional<int>,
-    endLine: identical(endLine, sdkOmittedValue) ? this.endLine : endLine as SdkOptional<int>,
-    path: identical(path, sdkOmittedValue) ? this.path : path as SdkOptional<String>,
-    startColumn: identical(startColumn, sdkOmittedValue) ? this.startColumn : startColumn as SdkOptional<int>,
-    startLine: identical(startLine, sdkOmittedValue) ? this.startLine : startLine as SdkOptional<int>,
-  );
+  WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceLocation
+      _copyWith(
+              {Object? endColumn = sdkOmittedValue,
+              Object? endLine = sdkOmittedValue,
+              Object? path = sdkOmittedValue,
+              Object? startColumn = sdkOmittedValue,
+              Object? startLine = sdkOmittedValue}) =>
+          WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceLocation(
+            endColumn: identical(endColumn, sdkOmittedValue)
+                ? this.endColumn
+                : endColumn as SdkOptional<int>,
+            endLine: identical(endLine, sdkOmittedValue)
+                ? this.endLine
+                : endLine as SdkOptional<int>,
+            path: identical(path, sdkOmittedValue)
+                ? this.path
+                : path as SdkOptional<String>,
+            startColumn: identical(startColumn, sdkOmittedValue)
+                ? this.startColumn
+                : startColumn as SdkOptional<int>,
+            startLine: identical(startLine, sdkOmittedValue)
+                ? this.startLine
+                : startLine as SdkOptional<int>,
+          );
 
-  factory WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceLocation.fromJson(Map<String, dynamic> json) => WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceLocation(
-    endColumn: json['end_column'] != null ? SdkPresent(((json['end_column'] as num?)?.toInt())!) : const SdkOmitted(),
-    endLine: json['end_line'] != null ? SdkPresent(((json['end_line'] as num?)?.toInt())!) : const SdkOmitted(),
-    path: json['path'] != null ? SdkPresent((json['path'] as String?)!) : const SdkOmitted(),
-    startColumn: json['start_column'] != null ? SdkPresent(((json['start_column'] as num?)?.toInt())!) : const SdkOmitted(),
-    startLine: json['start_line'] != null ? SdkPresent(((json['start_line'] as num?)?.toInt())!) : const SdkOmitted(),
-  );
+  factory WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceLocation.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceLocation(
+        endColumn: json['end_column'] != null
+            ? SdkPresent(((json['end_column'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        endLine: json['end_line'] != null
+            ? SdkPresent(((json['end_line'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        path: json['path'] != null
+            ? SdkPresent((json['path'] as String?)!)
+            : const SdkOmitted(),
+        startColumn: json['start_column'] != null
+            ? SdkPresent(((json['start_column'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        startLine: json['start_line'] != null
+            ? SdkPresent(((json['start_line'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (endColumn) {
-      SdkPresent<int>(value: final value) => {'end_column': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (endLine) {
-      SdkPresent<int>(value: final value) => {'end_line': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (path) {
-      SdkPresent<String>(value: final value) => {'path': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (startColumn) {
-      SdkPresent<int>(value: final value) => {'start_column': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (startLine) {
-      SdkPresent<int>(value: final value) => {'start_line': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (endColumn) {
+          SdkPresent<int>(value: final value) => {
+              'end_column': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (endLine) {
+          SdkPresent<int>(value: final value) => {
+              'end_line': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (path) {
+          SdkPresent<String>(value: final value) => {
+              'path': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (startColumn) {
+          SdkPresent<int>(value: final value) => {
+              'start_column': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (startLine) {
+          SdkPresent<int>(value: final value) => {
+              'start_line': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Optional object value serialized in the `message` wire field.
 class WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceMessage {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `string` value serialized in the `text` wire field.
   final SdkOptional<String> text;
 
-  const WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceMessage({this.text = const SdkOmitted()});
+  const WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceMessage(
+      {this.text = const SdkOmitted()});
 
-  WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceMessage Function({SdkOptional<String> text}) get copyWith => _copyWith;
+  WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceMessage
+      Function({SdkOptional<String> text}) get copyWith => _copyWith;
 
-  WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceMessage _copyWith({Object? text = sdkOmittedValue}) => WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceMessage(
-    text: identical(text, sdkOmittedValue) ? this.text : text as SdkOptional<String>,
-  );
+  WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceMessage
+      _copyWith({Object? text = sdkOmittedValue}) =>
+          WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceMessage(
+            text: identical(text, sdkOmittedValue)
+                ? this.text
+                : text as SdkOptional<String>,
+          );
 
-  factory WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceMessage.fromJson(Map<String, dynamic> json) => WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceMessage(
-    text: json['text'] != null ? SdkPresent((json['text'] as String?)!) : const SdkOmitted(),
-  );
+  factory WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceMessage.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceMessage(
+        text: json['text'] != null
+            ? SdkPresent((json['text'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (text) {
-      SdkPresent<String>(value: final value) => {'text': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (text) {
+          SdkPresent<String>(value: final value) => {
+              'text': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Optional object value serialized in the `most_recent_instance` wire field.
 class WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstance {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Identifies the configuration under which the analysis was executed. For example, in GitHub Actions this includes the workflow filename and job name.
   final String analysisKey;
+
   /// Identifies the configuration under which the analysis was executed.
   final SdkOptional<String> category;
+
   /// Optional array value serialized in the `classifications` wire field.
   final SdkOptional<List<String>> classifications;
+
   /// Optional `string` value serialized in the `commit_sha` wire field.
   final SdkOptional<String> commitSha;
+
   /// Identifies the variable values associated with the environment in which the analysis that generated this alert instance was performed, such as the language that was analyzed.
   final String environment;
+
   /// Optional object value serialized in the `location` wire field.
-  final SdkOptional<WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceLocation> location;
+  final SdkOptional<
+          WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceLocation>
+      location;
+
   /// Optional object value serialized in the `message` wire field.
-  final SdkOptional<WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceMessage> message;
+  final SdkOptional<
+          WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceMessage>
+      message;
+
   /// The full Git reference, formatted as `refs/heads/&lt;branch name&gt;`.
   final String ref;
+
   /// State of a code scanning alert.
-  final WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceState state;
+  final WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceState
+      state;
 
-  const WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstance({required this.analysisKey, this.category = const SdkOmitted(), this.classifications = const SdkOmitted(), this.commitSha = const SdkOmitted(), required this.environment, this.location = const SdkOmitted(), this.message = const SdkOmitted(), required this.ref, required this.state});
+  const WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstance(
+      {required this.analysisKey,
+      this.category = const SdkOmitted(),
+      this.classifications = const SdkOmitted(),
+      this.commitSha = const SdkOmitted(),
+      required this.environment,
+      this.location = const SdkOmitted(),
+      this.message = const SdkOmitted(),
+      required this.ref,
+      required this.state});
 
-  WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstance Function({String analysisKey, SdkOptional<String> category, SdkOptional<List<String>> classifications, SdkOptional<String> commitSha, String environment, SdkOptional<WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceLocation> location, SdkOptional<WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceMessage> message, String ref, WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceState state}) get copyWith => _copyWith;
+  WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstance Function(
+      {String analysisKey,
+      SdkOptional<String> category,
+      SdkOptional<List<String>> classifications,
+      SdkOptional<String> commitSha,
+      String environment,
+      SdkOptional<
+              WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceLocation>
+          location,
+      SdkOptional<
+              WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceMessage>
+          message,
+      String ref,
+      WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceState
+          state}) get copyWith => _copyWith;
 
-  WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstance _copyWith({Object? analysisKey = sdkOmittedValue, Object? category = sdkOmittedValue, Object? classifications = sdkOmittedValue, Object? commitSha = sdkOmittedValue, Object? environment = sdkOmittedValue, Object? location = sdkOmittedValue, Object? message = sdkOmittedValue, Object? ref = sdkOmittedValue, Object? state = sdkOmittedValue}) => WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstance(
-    analysisKey: identical(analysisKey, sdkOmittedValue) ? this.analysisKey : analysisKey as String,
-    category: identical(category, sdkOmittedValue) ? this.category : category as SdkOptional<String>,
-    classifications: identical(classifications, sdkOmittedValue) ? this.classifications : classifications as SdkOptional<List<String>>,
-    commitSha: identical(commitSha, sdkOmittedValue) ? this.commitSha : commitSha as SdkOptional<String>,
-    environment: identical(environment, sdkOmittedValue) ? this.environment : environment as String,
-    location: identical(location, sdkOmittedValue) ? this.location : location as SdkOptional<WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceLocation>,
-    message: identical(message, sdkOmittedValue) ? this.message : message as SdkOptional<WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceMessage>,
-    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-    state: identical(state, sdkOmittedValue) ? this.state : state as WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceState,
-  );
+  WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstance _copyWith(
+          {Object? analysisKey = sdkOmittedValue,
+          Object? category = sdkOmittedValue,
+          Object? classifications = sdkOmittedValue,
+          Object? commitSha = sdkOmittedValue,
+          Object? environment = sdkOmittedValue,
+          Object? location = sdkOmittedValue,
+          Object? message = sdkOmittedValue,
+          Object? ref = sdkOmittedValue,
+          Object? state = sdkOmittedValue}) =>
+      WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstance(
+        analysisKey: identical(analysisKey, sdkOmittedValue)
+            ? this.analysisKey
+            : analysisKey as String,
+        category: identical(category, sdkOmittedValue)
+            ? this.category
+            : category as SdkOptional<String>,
+        classifications: identical(classifications, sdkOmittedValue)
+            ? this.classifications
+            : classifications as SdkOptional<List<String>>,
+        commitSha: identical(commitSha, sdkOmittedValue)
+            ? this.commitSha
+            : commitSha as SdkOptional<String>,
+        environment: identical(environment, sdkOmittedValue)
+            ? this.environment
+            : environment as String,
+        location: identical(location, sdkOmittedValue)
+            ? this.location
+            : location as SdkOptional<
+                WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceLocation>,
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as SdkOptional<
+                WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceMessage>,
+        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state
+                as WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceState,
+      );
 
-  factory WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstance.fromJson(Map<String, dynamic> json) => WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstance(
-    analysisKey: (json['analysis_key'] as String?)!,
-    category: json['category'] != null ? SdkPresent((json['category'] as String?)!) : const SdkOmitted(),
-    classifications: json['classifications'] != null ? SdkPresent(((json['classifications'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    commitSha: json['commit_sha'] != null ? SdkPresent((json['commit_sha'] as String?)!) : const SdkOmitted(),
-    environment: (json['environment'] as String?)!,
-    location: json['location'] != null ? SdkPresent((json['location'] != null ? WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceLocation.fromJson(json['location'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    message: json['message'] != null ? SdkPresent((json['message'] != null ? WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceMessage.fromJson(json['message'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    ref: (json['ref'] as String?)!,
-    state: (json['state'] != null ? WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceState.fromJson(json['state'] as String) : null)!,
-  );
+  factory WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstance.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstance(
+        analysisKey: (json['analysis_key'] as String?)!,
+        category: json['category'] != null
+            ? SdkPresent((json['category'] as String?)!)
+            : const SdkOmitted(),
+        classifications: json['classifications'] != null
+            ? SdkPresent(((json['classifications'] as List?)
+                ?.map((e) => e as String)
+                .toList())!)
+            : const SdkOmitted(),
+        commitSha: json['commit_sha'] != null
+            ? SdkPresent((json['commit_sha'] as String?)!)
+            : const SdkOmitted(),
+        environment: (json['environment'] as String?)!,
+        location: json['location'] != null
+            ? SdkPresent((json['location'] != null
+                ? WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceLocation
+                    .fromJson(json['location'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        message: json['message'] != null
+            ? SdkPresent((json['message'] != null
+                ? WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceMessage
+                    .fromJson(json['message'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        ref: (json['ref'] as String?)!,
+        state: (json['state'] != null
+            ? WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceState
+                .fromJson(json['state'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'analysis_key': analysisKey,
-    ...switch (category) {
-      SdkPresent<String>(value: final value) => {'category': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (classifications) {
-      SdkPresent<List<String>>(value: final value) => {'classifications': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (commitSha) {
-      SdkPresent<String>(value: final value) => {'commit_sha': value,},
-      _ => const <String, dynamic>{},
-    },
-    'environment': environment,
-    ...switch (location) {
-      SdkPresent<WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceLocation>(value: final value) => {'location': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (message) {
-      SdkPresent<WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceMessage>(value: final value) => {'message': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'ref': ref,
-    'state': state.toJson(),
-  };
+        'analysis_key': analysisKey,
+        ...switch (category) {
+          SdkPresent<String>(value: final value) => {
+              'category': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (classifications) {
+          SdkPresent<List<String>>(value: final value) => {
+              'classifications': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (commitSha) {
+          SdkPresent<String>(value: final value) => {
+              'commit_sha': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'environment': environment,
+        ...switch (location) {
+          SdkPresent<
+                WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceLocation>(
+            value: final value
+          ) =>
+            {
+              'location': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (message) {
+          SdkPresent<
+                WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceMessage>(
+            value: final value
+          ) =>
+            {
+              'message': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'ref': ref,
+        'state': state.toJson(),
+      };
 }
 
 /// Required object value serialized in the `rule` wire field.
 class WebhookCodeScanningAlertAppearedInBranchAlertRule {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// A short description of the rule used to detect the alert.
   final String description;
+
   /// A unique identifier for the rule used to detect the alert.
   final String id;
+
   /// The severity of the alert.
   final WebhookCodeScanningAlertAppearedInBranchAlertRuleSeverity? severity;
 
-  const WebhookCodeScanningAlertAppearedInBranchAlertRule({required this.description, required this.id, required this.severity});
+  const WebhookCodeScanningAlertAppearedInBranchAlertRule(
+      {required this.description, required this.id, required this.severity});
 
-  WebhookCodeScanningAlertAppearedInBranchAlertRule Function({String description, String id, WebhookCodeScanningAlertAppearedInBranchAlertRuleSeverity? severity}) get copyWith => _copyWith;
+  WebhookCodeScanningAlertAppearedInBranchAlertRule Function(
+          {String description,
+          String id,
+          WebhookCodeScanningAlertAppearedInBranchAlertRuleSeverity? severity})
+      get copyWith => _copyWith;
 
-  WebhookCodeScanningAlertAppearedInBranchAlertRule _copyWith({Object? description = sdkOmittedValue, Object? id = sdkOmittedValue, Object? severity = sdkOmittedValue}) => WebhookCodeScanningAlertAppearedInBranchAlertRule(
-    description: identical(description, sdkOmittedValue) ? this.description : description as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    severity: identical(severity, sdkOmittedValue) ? this.severity : severity as WebhookCodeScanningAlertAppearedInBranchAlertRuleSeverity?,
-  );
+  WebhookCodeScanningAlertAppearedInBranchAlertRule _copyWith(
+          {Object? description = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? severity = sdkOmittedValue}) =>
+      WebhookCodeScanningAlertAppearedInBranchAlertRule(
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        severity: identical(severity, sdkOmittedValue)
+            ? this.severity
+            : severity
+                as WebhookCodeScanningAlertAppearedInBranchAlertRuleSeverity?,
+      );
 
-  factory WebhookCodeScanningAlertAppearedInBranchAlertRule.fromJson(Map<String, dynamic> json) => WebhookCodeScanningAlertAppearedInBranchAlertRule(
-    description: (json['description'] as String?)!,
-    id: (json['id'] as String?)!,
-    severity: json.containsKey('severity') ? json['severity'] != null ? WebhookCodeScanningAlertAppearedInBranchAlertRuleSeverity.fromJson(json['severity'] as String) : null : throw ArgumentError.value(null, 'severity', 'Required property is missing'),
-  );
+  factory WebhookCodeScanningAlertAppearedInBranchAlertRule.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookCodeScanningAlertAppearedInBranchAlertRule(
+        description: (json['description'] as String?)!,
+        id: (json['id'] as String?)!,
+        severity: json.containsKey('severity')
+            ? json['severity'] != null
+                ? WebhookCodeScanningAlertAppearedInBranchAlertRuleSeverity
+                    .fromJson(json['severity'] as String)
+                : null
+            : throw ArgumentError.value(
+                null, 'severity', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'description': description,
-    'id': id,
-    'severity': severity?.toJson(),
-  };
+        'description': description,
+        'id': id,
+        'severity': severity?.toJson(),
+      };
 }
 
 /// Required object value serialized in the `tool` wire field.
 class WebhookCodeScanningAlertAppearedInBranchAlertTool {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the tool used to generate the code scanning analysis alert.
   final String name;
+
   /// The version of the tool used to detect the alert.
   final String? version;
 
-  const WebhookCodeScanningAlertAppearedInBranchAlertTool({required this.name, required this.version});
+  const WebhookCodeScanningAlertAppearedInBranchAlertTool(
+      {required this.name, required this.version});
 
-  WebhookCodeScanningAlertAppearedInBranchAlertTool Function({String name, String? version}) get copyWith => _copyWith;
+  WebhookCodeScanningAlertAppearedInBranchAlertTool Function(
+      {String name, String? version}) get copyWith => _copyWith;
 
-  WebhookCodeScanningAlertAppearedInBranchAlertTool _copyWith({Object? name = sdkOmittedValue, Object? version = sdkOmittedValue}) => WebhookCodeScanningAlertAppearedInBranchAlertTool(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    version: identical(version, sdkOmittedValue) ? this.version : version as String?,
-  );
+  WebhookCodeScanningAlertAppearedInBranchAlertTool _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? version = sdkOmittedValue}) =>
+      WebhookCodeScanningAlertAppearedInBranchAlertTool(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        version: identical(version, sdkOmittedValue)
+            ? this.version
+            : version as String?,
+      );
 
-  factory WebhookCodeScanningAlertAppearedInBranchAlertTool.fromJson(Map<String, dynamic> json) => WebhookCodeScanningAlertAppearedInBranchAlertTool(
-    name: (json['name'] as String?)!,
-    version: json.containsKey('version') ? json['version'] as String? : throw ArgumentError.value(null, 'version', 'Required property is missing'),
-  );
+  factory WebhookCodeScanningAlertAppearedInBranchAlertTool.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookCodeScanningAlertAppearedInBranchAlertTool(
+        name: (json['name'] as String?)!,
+        version: json.containsKey('version')
+            ? json['version'] as String?
+            : throw ArgumentError.value(
+                null, 'version', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'version': version,
-  };
+        'name': name,
+        'version': version,
+      };
 }

@@ -7,278 +7,523 @@ part of 'inline.dart';
 class ReposCreateDeploymentStatusRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The state of the status. When you set a transient deployment to `inactive`, the deployment will be shown as `destroyed` in GitHub.
   final ReposCreateDeploymentStatusRequestBodyState state;
+
   /// The target URL to associate with this status. This URL should contain output to keep the user updated while the task is running or serve as historical information for what happened in the deployment. &gt; [!NOTE] &gt; It's recommended to use the `log_url` parameter, which replaces `target_url`.
   final SdkOptional<String> targetUrl;
+
   /// The full URL of the deployment's output. This parameter replaces `target_url`. We will continue to accept `target_url` to support legacy uses, but we recommend replacing `target_url` with `log_url`. Setting `log_url` will automatically set `target_url` to the same value. Default: `""`
   final SdkOptional<String> logUrl;
+
   /// A short description of the status. The maximum description length is 140 characters.
   final SdkOptional<String> description;
+
   /// Name for the target deployment environment, which can be changed when setting a deploy status. For example, `production`, `staging`, or `qa`. If not defined, the environment of the previous status on the deployment will be used, if it exists. Otherwise, the environment of the deployment will be used.
   final SdkOptional<String> environment;
+
   /// Sets the URL for accessing your environment. Default: `""`
   final SdkOptional<String> environmentUrl;
+
   /// Adds a new `inactive` status to all prior non-transient, non-production environment deployments with the same repository and `environment` name as the created status's deployment. An `inactive` status is only added to deployments that had a `success` state. Default: `true`
   final SdkOptional<bool> autoInactive;
 
-  const ReposCreateDeploymentStatusRequestBody({required this.state, this.targetUrl = const SdkOmitted(), this.logUrl = const SdkOmitted(), this.description = const SdkOmitted(), this.environment = const SdkOmitted(), this.environmentUrl = const SdkOmitted(), this.autoInactive = const SdkOmitted()});
+  const ReposCreateDeploymentStatusRequestBody(
+      {required this.state,
+      this.targetUrl = const SdkOmitted(),
+      this.logUrl = const SdkOmitted(),
+      this.description = const SdkOmitted(),
+      this.environment = const SdkOmitted(),
+      this.environmentUrl = const SdkOmitted(),
+      this.autoInactive = const SdkOmitted()});
 
-  ReposCreateDeploymentStatusRequestBody Function({ReposCreateDeploymentStatusRequestBodyState state, SdkOptional<String> targetUrl, SdkOptional<String> logUrl, SdkOptional<String> description, SdkOptional<String> environment, SdkOptional<String> environmentUrl, SdkOptional<bool> autoInactive}) get copyWith => _copyWith;
+  ReposCreateDeploymentStatusRequestBody Function(
+      {ReposCreateDeploymentStatusRequestBodyState state,
+      SdkOptional<String> targetUrl,
+      SdkOptional<String> logUrl,
+      SdkOptional<String> description,
+      SdkOptional<String> environment,
+      SdkOptional<String> environmentUrl,
+      SdkOptional<bool> autoInactive}) get copyWith => _copyWith;
 
-  ReposCreateDeploymentStatusRequestBody _copyWith({Object? state = sdkOmittedValue, Object? targetUrl = sdkOmittedValue, Object? logUrl = sdkOmittedValue, Object? description = sdkOmittedValue, Object? environment = sdkOmittedValue, Object? environmentUrl = sdkOmittedValue, Object? autoInactive = sdkOmittedValue}) => ReposCreateDeploymentStatusRequestBody(
-    state: identical(state, sdkOmittedValue) ? this.state : state as ReposCreateDeploymentStatusRequestBodyState,
-    targetUrl: identical(targetUrl, sdkOmittedValue) ? this.targetUrl : targetUrl as SdkOptional<String>,
-    logUrl: identical(logUrl, sdkOmittedValue) ? this.logUrl : logUrl as SdkOptional<String>,
-    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String>,
-    environment: identical(environment, sdkOmittedValue) ? this.environment : environment as SdkOptional<String>,
-    environmentUrl: identical(environmentUrl, sdkOmittedValue) ? this.environmentUrl : environmentUrl as SdkOptional<String>,
-    autoInactive: identical(autoInactive, sdkOmittedValue) ? this.autoInactive : autoInactive as SdkOptional<bool>,
-  );
+  ReposCreateDeploymentStatusRequestBody _copyWith(
+          {Object? state = sdkOmittedValue,
+          Object? targetUrl = sdkOmittedValue,
+          Object? logUrl = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? environment = sdkOmittedValue,
+          Object? environmentUrl = sdkOmittedValue,
+          Object? autoInactive = sdkOmittedValue}) =>
+      ReposCreateDeploymentStatusRequestBody(
+        state: identical(state, sdkOmittedValue)
+            ? this.state
+            : state as ReposCreateDeploymentStatusRequestBodyState,
+        targetUrl: identical(targetUrl, sdkOmittedValue)
+            ? this.targetUrl
+            : targetUrl as SdkOptional<String>,
+        logUrl: identical(logUrl, sdkOmittedValue)
+            ? this.logUrl
+            : logUrl as SdkOptional<String>,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as SdkOptional<String>,
+        environment: identical(environment, sdkOmittedValue)
+            ? this.environment
+            : environment as SdkOptional<String>,
+        environmentUrl: identical(environmentUrl, sdkOmittedValue)
+            ? this.environmentUrl
+            : environmentUrl as SdkOptional<String>,
+        autoInactive: identical(autoInactive, sdkOmittedValue)
+            ? this.autoInactive
+            : autoInactive as SdkOptional<bool>,
+      );
 
-  factory ReposCreateDeploymentStatusRequestBody.fromJson(Map<String, dynamic> json) => ReposCreateDeploymentStatusRequestBody(
-    state: (json['state'] != null ? ReposCreateDeploymentStatusRequestBodyState.fromJson(json['state'] as String) : null)!,
-    targetUrl: json['target_url'] != null ? SdkPresent((json['target_url'] as String?)!) : const SdkOmitted(),
-    logUrl: json['log_url'] != null ? SdkPresent((json['log_url'] as String?)!) : const SdkOmitted(),
-    description: json['description'] != null ? SdkPresent((json['description'] as String?)!) : const SdkOmitted(),
-    environment: json['environment'] != null ? SdkPresent((json['environment'] as String?)!) : const SdkOmitted(),
-    environmentUrl: json['environment_url'] != null ? SdkPresent((json['environment_url'] as String?)!) : const SdkOmitted(),
-    autoInactive: json['auto_inactive'] != null ? SdkPresent((json['auto_inactive'] as bool?)!) : const SdkOmitted(),
-  );
+  factory ReposCreateDeploymentStatusRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      ReposCreateDeploymentStatusRequestBody(
+        state: (json['state'] != null
+            ? ReposCreateDeploymentStatusRequestBodyState.fromJson(
+                json['state'] as String)
+            : null)!,
+        targetUrl: json['target_url'] != null
+            ? SdkPresent((json['target_url'] as String?)!)
+            : const SdkOmitted(),
+        logUrl: json['log_url'] != null
+            ? SdkPresent((json['log_url'] as String?)!)
+            : const SdkOmitted(),
+        description: json['description'] != null
+            ? SdkPresent((json['description'] as String?)!)
+            : const SdkOmitted(),
+        environment: json['environment'] != null
+            ? SdkPresent((json['environment'] as String?)!)
+            : const SdkOmitted(),
+        environmentUrl: json['environment_url'] != null
+            ? SdkPresent((json['environment_url'] as String?)!)
+            : const SdkOmitted(),
+        autoInactive: json['auto_inactive'] != null
+            ? SdkPresent((json['auto_inactive'] as bool?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'state': state.toJson(),
-    ...switch (targetUrl) {
-      SdkPresent<String>(value: final value) => {'target_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (logUrl) {
-      SdkPresent<String>(value: final value) => {'log_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (description) {
-      SdkPresent<String>(value: final value) => {'description': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (environment) {
-      SdkPresent<String>(value: final value) => {'environment': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (environmentUrl) {
-      SdkPresent<String>(value: final value) => {'environment_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (autoInactive) {
-      SdkPresent<bool>(value: final value) => {'auto_inactive': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'state': state.toJson(),
+        ...switch (targetUrl) {
+          SdkPresent<String>(value: final value) => {
+              'target_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (logUrl) {
+          SdkPresent<String>(value: final value) => {
+              'log_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (description) {
+          SdkPresent<String>(value: final value) => {
+              'description': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (environment) {
+          SdkPresent<String>(value: final value) => {
+              'environment': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (environmentUrl) {
+          SdkPresent<String>(value: final value) => {
+              'environment_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (autoInactive) {
+          SdkPresent<bool>(value: final value) => {
+              'auto_inactive': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class ReposCreateDispatchEventRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// A custom webhook event name. Must be 100 characters or fewer.
   final String eventType;
+
   /// JSON payload with extra information about the webhook event that your action or workflow may use. The maximum number of top-level properties is 10. The total size of the JSON payload must be less than 64KB.
   final SdkOptional<Map<String, Object?>> clientPayload;
 
-  const ReposCreateDispatchEventRequestBody({required this.eventType, this.clientPayload = const SdkOmitted()});
+  const ReposCreateDispatchEventRequestBody(
+      {required this.eventType, this.clientPayload = const SdkOmitted()});
 
-  ReposCreateDispatchEventRequestBody Function({String eventType, SdkOptional<Map<String, Object?>> clientPayload}) get copyWith => _copyWith;
+  ReposCreateDispatchEventRequestBody Function(
+          {String eventType, SdkOptional<Map<String, Object?>> clientPayload})
+      get copyWith => _copyWith;
 
-  ReposCreateDispatchEventRequestBody _copyWith({Object? eventType = sdkOmittedValue, Object? clientPayload = sdkOmittedValue}) => ReposCreateDispatchEventRequestBody(
-    eventType: identical(eventType, sdkOmittedValue) ? this.eventType : eventType as String,
-    clientPayload: identical(clientPayload, sdkOmittedValue) ? this.clientPayload : clientPayload as SdkOptional<Map<String, Object?>>,
-  );
+  ReposCreateDispatchEventRequestBody _copyWith(
+          {Object? eventType = sdkOmittedValue,
+          Object? clientPayload = sdkOmittedValue}) =>
+      ReposCreateDispatchEventRequestBody(
+        eventType: identical(eventType, sdkOmittedValue)
+            ? this.eventType
+            : eventType as String,
+        clientPayload: identical(clientPayload, sdkOmittedValue)
+            ? this.clientPayload
+            : clientPayload as SdkOptional<Map<String, Object?>>,
+      );
 
-  factory ReposCreateDispatchEventRequestBody.fromJson(Map<String, dynamic> json) => ReposCreateDispatchEventRequestBody(
-    eventType: (json['event_type'] as String?)!,
-    clientPayload: json['client_payload'] != null ? SdkPresent((json['client_payload'] == null ? null : Map<String, dynamic>.from(json['client_payload'] as Map).map((key, value) => MapEntry(key, value)))!) : const SdkOmitted(),
-  );
+  factory ReposCreateDispatchEventRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      ReposCreateDispatchEventRequestBody(
+        eventType: (json['event_type'] as String?)!,
+        clientPayload: json['client_payload'] != null
+            ? SdkPresent((json['client_payload'] == null
+                ? null
+                : Map<String, dynamic>.from(json['client_payload'] as Map)
+                    .map((key, value) => MapEntry(key, value)))!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'event_type': eventType,
-    ...switch (clientPayload) {
-      SdkPresent<Map<String, Object?>>(value: final value) => {'client_payload': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'event_type': eventType,
+        ...switch (clientPayload) {
+          SdkPresent<Map<String, Object?>>(value: final value) => {
+              'client_payload': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class ReposGetAllEnvironmentsResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The number of environments in this repository
   final SdkOptional<int> totalCount;
   final SdkOptional<List<Environment>> environments;
 
-  const ReposGetAllEnvironmentsResponse({this.totalCount = const SdkOmitted(), this.environments = const SdkOmitted()});
+  const ReposGetAllEnvironmentsResponse(
+      {this.totalCount = const SdkOmitted(),
+      this.environments = const SdkOmitted()});
 
-  ReposGetAllEnvironmentsResponse Function({SdkOptional<int> totalCount, SdkOptional<List<Environment>> environments}) get copyWith => _copyWith;
+  ReposGetAllEnvironmentsResponse Function(
+      {SdkOptional<int> totalCount,
+      SdkOptional<List<Environment>> environments}) get copyWith => _copyWith;
 
-  ReposGetAllEnvironmentsResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? environments = sdkOmittedValue}) => ReposGetAllEnvironmentsResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as SdkOptional<int>,
-    environments: identical(environments, sdkOmittedValue) ? this.environments : environments as SdkOptional<List<Environment>>,
-  );
+  ReposGetAllEnvironmentsResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? environments = sdkOmittedValue}) =>
+      ReposGetAllEnvironmentsResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as SdkOptional<int>,
+        environments: identical(environments, sdkOmittedValue)
+            ? this.environments
+            : environments as SdkOptional<List<Environment>>,
+      );
 
-  factory ReposGetAllEnvironmentsResponse.fromJson(Map<String, dynamic> json) => ReposGetAllEnvironmentsResponse(
-    totalCount: json['total_count'] != null ? SdkPresent(((json['total_count'] as num?)?.toInt())!) : const SdkOmitted(),
-    environments: json['environments'] != null ? SdkPresent(((json['environments'] as List?)?.map((e) => Environment.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
+  factory ReposGetAllEnvironmentsResponse.fromJson(Map<String, dynamic> json) =>
+      ReposGetAllEnvironmentsResponse(
+        totalCount: json['total_count'] != null
+            ? SdkPresent(((json['total_count'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        environments: json['environments'] != null
+            ? SdkPresent(((json['environments'] as List?)
+                ?.map((e) => Environment.fromJson(e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (totalCount) {
-      SdkPresent<int>(value: final value) => {'total_count': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (environments) {
-      SdkPresent<List<Environment>>(value: final value) => {'environments': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (totalCount) {
+          SdkPresent<int>(value: final value) => {
+              'total_count': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (environments) {
+          SdkPresent<List<Environment>>(value: final value) => {
+              'environments': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class ReposCreateOrUpdateEnvironmentRequestBodyReviewersItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The type of reviewer.
   final SdkOptional<DeploymentReviewerType> type_;
+
   /// The id of the user or team who can review the deployment
   final SdkOptional<int> id;
 
-  const ReposCreateOrUpdateEnvironmentRequestBodyReviewersItem({this.type_ = const SdkOmitted(), this.id = const SdkOmitted()});
+  const ReposCreateOrUpdateEnvironmentRequestBodyReviewersItem(
+      {this.type_ = const SdkOmitted(), this.id = const SdkOmitted()});
 
-  ReposCreateOrUpdateEnvironmentRequestBodyReviewersItem Function({SdkOptional<DeploymentReviewerType> type_, SdkOptional<int> id}) get copyWith => _copyWith;
+  ReposCreateOrUpdateEnvironmentRequestBodyReviewersItem Function(
+      {SdkOptional<DeploymentReviewerType> type_,
+      SdkOptional<int> id}) get copyWith => _copyWith;
 
-  ReposCreateOrUpdateEnvironmentRequestBodyReviewersItem _copyWith({Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue}) => ReposCreateOrUpdateEnvironmentRequestBodyReviewersItem(
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<DeploymentReviewerType>,
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-  );
+  ReposCreateOrUpdateEnvironmentRequestBodyReviewersItem _copyWith(
+          {Object? type_ = sdkOmittedValue, Object? id = sdkOmittedValue}) =>
+      ReposCreateOrUpdateEnvironmentRequestBodyReviewersItem(
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as SdkOptional<DeploymentReviewerType>,
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+      );
 
-  factory ReposCreateOrUpdateEnvironmentRequestBodyReviewersItem.fromJson(Map<String, dynamic> json) => ReposCreateOrUpdateEnvironmentRequestBodyReviewersItem(
-    type_: json['type'] != null ? SdkPresent((json['type'] != null ? DeploymentReviewerType.fromJson(json['type'] as String) : null)!) : const SdkOmitted(),
-    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
-  );
+  factory ReposCreateOrUpdateEnvironmentRequestBodyReviewersItem.fromJson(
+          Map<String, dynamic> json) =>
+      ReposCreateOrUpdateEnvironmentRequestBodyReviewersItem(
+        type_: json['type'] != null
+            ? SdkPresent((json['type'] != null
+                ? DeploymentReviewerType.fromJson(json['type'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (type_) {
-      SdkPresent<DeploymentReviewerType>(value: final value) => {'type': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (id) {
-      SdkPresent<int>(value: final value) => {'id': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (type_) {
+          SdkPresent<DeploymentReviewerType>(value: final value) => {
+              'type': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class ReposCreateOrUpdateEnvironmentRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The amount of time to delay a job after the job is initially triggered. The time (in minutes) must be an integer between 0 and 43,200 (30 days).
   final SdkOptional<int> waitTimer;
+
   /// Whether or not a user who created the job is prevented from approving their own job.
   final SdkOptional<bool> preventSelfReview;
+
   /// The people or teams that may review jobs that reference the environment. You can list up to six users or teams as reviewers. The reviewers must have at least read access to the repository. Only one of the required reviewers needs to approve the job for it to proceed.
-  final SdkOptional<List<ReposCreateOrUpdateEnvironmentRequestBodyReviewersItem>?> reviewers;
+  final SdkOptional<
+      List<ReposCreateOrUpdateEnvironmentRequestBodyReviewersItem>?> reviewers;
+
   /// The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.
   final SdkOptional<DeploymentBranchPolicySettings?> deploymentBranchPolicy;
 
-  const ReposCreateOrUpdateEnvironmentRequestBody({this.waitTimer = const SdkOmitted(), this.preventSelfReview = const SdkOmitted(), this.reviewers = const SdkOmitted(), this.deploymentBranchPolicy = const SdkOmitted()});
+  const ReposCreateOrUpdateEnvironmentRequestBody(
+      {this.waitTimer = const SdkOmitted(),
+      this.preventSelfReview = const SdkOmitted(),
+      this.reviewers = const SdkOmitted(),
+      this.deploymentBranchPolicy = const SdkOmitted()});
 
-  ReposCreateOrUpdateEnvironmentRequestBody Function({SdkOptional<int> waitTimer, SdkOptional<bool> preventSelfReview, SdkOptional<List<ReposCreateOrUpdateEnvironmentRequestBodyReviewersItem>?> reviewers, SdkOptional<DeploymentBranchPolicySettings?> deploymentBranchPolicy}) get copyWith => _copyWith;
+  ReposCreateOrUpdateEnvironmentRequestBody Function(
+      {SdkOptional<int> waitTimer,
+      SdkOptional<bool> preventSelfReview,
+      SdkOptional<List<ReposCreateOrUpdateEnvironmentRequestBodyReviewersItem>?>
+          reviewers,
+      SdkOptional<DeploymentBranchPolicySettings?>
+          deploymentBranchPolicy}) get copyWith => _copyWith;
 
-  ReposCreateOrUpdateEnvironmentRequestBody _copyWith({Object? waitTimer = sdkOmittedValue, Object? preventSelfReview = sdkOmittedValue, Object? reviewers = sdkOmittedValue, Object? deploymentBranchPolicy = sdkOmittedValue}) => ReposCreateOrUpdateEnvironmentRequestBody(
-    waitTimer: identical(waitTimer, sdkOmittedValue) ? this.waitTimer : waitTimer as SdkOptional<int>,
-    preventSelfReview: identical(preventSelfReview, sdkOmittedValue) ? this.preventSelfReview : preventSelfReview as SdkOptional<bool>,
-    reviewers: identical(reviewers, sdkOmittedValue) ? this.reviewers : reviewers as SdkOptional<List<ReposCreateOrUpdateEnvironmentRequestBodyReviewersItem>?>,
-    deploymentBranchPolicy: identical(deploymentBranchPolicy, sdkOmittedValue) ? this.deploymentBranchPolicy : deploymentBranchPolicy as SdkOptional<DeploymentBranchPolicySettings?>,
-  );
+  ReposCreateOrUpdateEnvironmentRequestBody _copyWith(
+          {Object? waitTimer = sdkOmittedValue,
+          Object? preventSelfReview = sdkOmittedValue,
+          Object? reviewers = sdkOmittedValue,
+          Object? deploymentBranchPolicy = sdkOmittedValue}) =>
+      ReposCreateOrUpdateEnvironmentRequestBody(
+        waitTimer: identical(waitTimer, sdkOmittedValue)
+            ? this.waitTimer
+            : waitTimer as SdkOptional<int>,
+        preventSelfReview: identical(preventSelfReview, sdkOmittedValue)
+            ? this.preventSelfReview
+            : preventSelfReview as SdkOptional<bool>,
+        reviewers: identical(reviewers, sdkOmittedValue)
+            ? this.reviewers
+            : reviewers as SdkOptional<
+                List<ReposCreateOrUpdateEnvironmentRequestBodyReviewersItem>?>,
+        deploymentBranchPolicy:
+            identical(deploymentBranchPolicy, sdkOmittedValue)
+                ? this.deploymentBranchPolicy
+                : deploymentBranchPolicy
+                    as SdkOptional<DeploymentBranchPolicySettings?>,
+      );
 
-  factory ReposCreateOrUpdateEnvironmentRequestBody.fromJson(Map<String, dynamic> json) => ReposCreateOrUpdateEnvironmentRequestBody(
-    waitTimer: json['wait_timer'] != null ? SdkPresent(((json['wait_timer'] as num?)?.toInt())!) : const SdkOmitted(),
-    preventSelfReview: json['prevent_self_review'] != null ? SdkPresent((json['prevent_self_review'] as bool?)!) : const SdkOmitted(),
-    reviewers: json.containsKey('reviewers') ? SdkPresent((json['reviewers'] as List?)?.map((e) => ReposCreateOrUpdateEnvironmentRequestBodyReviewersItem.fromJson(e as Map<String, dynamic>)).toList()) : const SdkOmitted(),
-    deploymentBranchPolicy: json.containsKey('deployment_branch_policy') ? SdkPresent(json['deployment_branch_policy'] != null ? DeploymentBranchPolicySettings.fromJson(json['deployment_branch_policy'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-  );
+  factory ReposCreateOrUpdateEnvironmentRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      ReposCreateOrUpdateEnvironmentRequestBody(
+        waitTimer: json['wait_timer'] != null
+            ? SdkPresent(((json['wait_timer'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        preventSelfReview: json['prevent_self_review'] != null
+            ? SdkPresent((json['prevent_self_review'] as bool?)!)
+            : const SdkOmitted(),
+        reviewers: json.containsKey('reviewers')
+            ? SdkPresent((json['reviewers'] as List?)
+                ?.map((e) =>
+                    ReposCreateOrUpdateEnvironmentRequestBodyReviewersItem
+                        .fromJson(e as Map<String, dynamic>))
+                .toList())
+            : const SdkOmitted(),
+        deploymentBranchPolicy: json.containsKey('deployment_branch_policy')
+            ? SdkPresent(json['deployment_branch_policy'] != null
+                ? DeploymentBranchPolicySettings.fromJson(
+                    json['deployment_branch_policy'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (waitTimer) {
-      SdkPresent<int>(value: final value) => {'wait_timer': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (preventSelfReview) {
-      SdkPresent<bool>(value: final value) => {'prevent_self_review': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (reviewers) {
-      SdkPresent<List<ReposCreateOrUpdateEnvironmentRequestBodyReviewersItem>?>(value: final value) => {'reviewers': value?.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (deploymentBranchPolicy) {
-      SdkPresent<DeploymentBranchPolicySettings?>(value: final value) => {'deployment_branch_policy': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (waitTimer) {
+          SdkPresent<int>(value: final value) => {
+              'wait_timer': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (preventSelfReview) {
+          SdkPresent<bool>(value: final value) => {
+              'prevent_self_review': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (reviewers) {
+          SdkPresent<
+                List<ReposCreateOrUpdateEnvironmentRequestBodyReviewersItem>?>(
+            value: final value
+          ) =>
+            {
+              'reviewers': value?.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (deploymentBranchPolicy) {
+          SdkPresent<DeploymentBranchPolicySettings?>(value: final value) => {
+              'deployment_branch_policy': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class ReposListDeploymentBranchPoliciesResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The number of deployment branch policies for the environment.
   final int totalCount;
   final List<DeploymentBranchPolicy> branchPolicies;
 
-  const ReposListDeploymentBranchPoliciesResponse({required this.totalCount, required this.branchPolicies});
+  const ReposListDeploymentBranchPoliciesResponse(
+      {required this.totalCount, required this.branchPolicies});
 
-  ReposListDeploymentBranchPoliciesResponse Function({int totalCount, List<DeploymentBranchPolicy> branchPolicies}) get copyWith => _copyWith;
+  ReposListDeploymentBranchPoliciesResponse Function(
+      {int totalCount,
+      List<DeploymentBranchPolicy> branchPolicies}) get copyWith => _copyWith;
 
-  ReposListDeploymentBranchPoliciesResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? branchPolicies = sdkOmittedValue}) => ReposListDeploymentBranchPoliciesResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    branchPolicies: identical(branchPolicies, sdkOmittedValue) ? this.branchPolicies : branchPolicies as List<DeploymentBranchPolicy>,
-  );
+  ReposListDeploymentBranchPoliciesResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? branchPolicies = sdkOmittedValue}) =>
+      ReposListDeploymentBranchPoliciesResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        branchPolicies: identical(branchPolicies, sdkOmittedValue)
+            ? this.branchPolicies
+            : branchPolicies as List<DeploymentBranchPolicy>,
+      );
 
-  factory ReposListDeploymentBranchPoliciesResponse.fromJson(Map<String, dynamic> json) => ReposListDeploymentBranchPoliciesResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    branchPolicies: ((json['branch_policies'] as List?)?.map((e) => DeploymentBranchPolicy.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+  factory ReposListDeploymentBranchPoliciesResponse.fromJson(
+          Map<String, dynamic> json) =>
+      ReposListDeploymentBranchPoliciesResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        branchPolicies: ((json['branch_policies'] as List?)
+            ?.map((e) =>
+                DeploymentBranchPolicy.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'branch_policies': branchPolicies.map((item) => item.toJson()).toList(),
-  };
+        'total_count': totalCount,
+        'branch_policies': branchPolicies.map((item) => item.toJson()).toList(),
+      };
 }
 
 class ReposGetAllDeploymentProtectionRulesResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The number of enabled custom deployment protection rules for this environment
   final SdkOptional<int> totalCount;
-  final SdkOptional<List<DeploymentProtectionRule>> customDeploymentProtectionRules;
+  final SdkOptional<List<DeploymentProtectionRule>>
+      customDeploymentProtectionRules;
 
-  const ReposGetAllDeploymentProtectionRulesResponse({this.totalCount = const SdkOmitted(), this.customDeploymentProtectionRules = const SdkOmitted()});
+  const ReposGetAllDeploymentProtectionRulesResponse(
+      {this.totalCount = const SdkOmitted(),
+      this.customDeploymentProtectionRules = const SdkOmitted()});
 
-  ReposGetAllDeploymentProtectionRulesResponse Function({SdkOptional<int> totalCount, SdkOptional<List<DeploymentProtectionRule>> customDeploymentProtectionRules}) get copyWith => _copyWith;
+  ReposGetAllDeploymentProtectionRulesResponse Function(
+      {SdkOptional<int> totalCount,
+      SdkOptional<List<DeploymentProtectionRule>>
+          customDeploymentProtectionRules}) get copyWith => _copyWith;
 
-  ReposGetAllDeploymentProtectionRulesResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? customDeploymentProtectionRules = sdkOmittedValue}) => ReposGetAllDeploymentProtectionRulesResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as SdkOptional<int>,
-    customDeploymentProtectionRules: identical(customDeploymentProtectionRules, sdkOmittedValue) ? this.customDeploymentProtectionRules : customDeploymentProtectionRules as SdkOptional<List<DeploymentProtectionRule>>,
-  );
+  ReposGetAllDeploymentProtectionRulesResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? customDeploymentProtectionRules = sdkOmittedValue}) =>
+      ReposGetAllDeploymentProtectionRulesResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as SdkOptional<int>,
+        customDeploymentProtectionRules:
+            identical(customDeploymentProtectionRules, sdkOmittedValue)
+                ? this.customDeploymentProtectionRules
+                : customDeploymentProtectionRules
+                    as SdkOptional<List<DeploymentProtectionRule>>,
+      );
 
-  factory ReposGetAllDeploymentProtectionRulesResponse.fromJson(Map<String, dynamic> json) => ReposGetAllDeploymentProtectionRulesResponse(
-    totalCount: json['total_count'] != null ? SdkPresent(((json['total_count'] as num?)?.toInt())!) : const SdkOmitted(),
-    customDeploymentProtectionRules: json['custom_deployment_protection_rules'] != null ? SdkPresent(((json['custom_deployment_protection_rules'] as List?)?.map((e) => DeploymentProtectionRule.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
+  factory ReposGetAllDeploymentProtectionRulesResponse.fromJson(
+          Map<String, dynamic> json) =>
+      ReposGetAllDeploymentProtectionRulesResponse(
+        totalCount: json['total_count'] != null
+            ? SdkPresent(((json['total_count'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        customDeploymentProtectionRules:
+            json['custom_deployment_protection_rules'] != null
+                ? SdkPresent(
+                    ((json['custom_deployment_protection_rules'] as List?)
+                        ?.map((e) => DeploymentProtectionRule.fromJson(
+                            e as Map<String, dynamic>))
+                        .toList())!)
+                : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (totalCount) {
-      SdkPresent<int>(value: final value) => {'total_count': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (customDeploymentProtectionRules) {
-      SdkPresent<List<DeploymentProtectionRule>>(value: final value) => {'custom_deployment_protection_rules': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (totalCount) {
+          SdkPresent<int>(value: final value) => {
+              'total_count': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (customDeploymentProtectionRules) {
+          SdkPresent<List<DeploymentProtectionRule>>(value: final value) => {
+              'custom_deployment_protection_rules':
+                  value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

@@ -8,63 +8,139 @@ part of 'webhook_repository_dispatch_sample.dart';
 class WebhookRepositoryDispatchSample {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The `event_type` that was specified in the `POST /repos/{owner}/{repo}/dispatches` request body.
   final String action;
+
   /// Required `string` value serialized in the `branch` wire field.
   final String branch;
+
   /// The `client_payload` that was specified in the `POST /repos/{owner}/{repo}/dispatches` request body.
   final Map<String, Object?>? clientPayload;
+
   /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured on an enterprise account or an organization that's part of an enterprise account. For more information, see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
   final SdkOptional<EnterpriseWebhooks> enterprise;
+
   /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured for and sent to a GitHub App. For more information, see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
   final SimpleInstallation installation;
+
   /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an organization, or when the event occurs from activity in a repository owned by an organization.
   final SdkOptional<OrganizationSimpleWebhooks> organization;
+
   /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property when the event occurs from activity in a repository.
   final RepositoryWebhooks repository;
+
   /// A GitHub user.
   final SimpleUser sender;
 
-  const WebhookRepositoryDispatchSample({required this.action, required this.branch, required this.clientPayload, this.enterprise = const SdkOmitted(), required this.installation, this.organization = const SdkOmitted(), required this.repository, required this.sender});
+  const WebhookRepositoryDispatchSample(
+      {required this.action,
+      required this.branch,
+      required this.clientPayload,
+      this.enterprise = const SdkOmitted(),
+      required this.installation,
+      this.organization = const SdkOmitted(),
+      required this.repository,
+      required this.sender});
 
-  WebhookRepositoryDispatchSample Function({String action, String branch, Map<String, Object?>? clientPayload, SdkOptional<EnterpriseWebhooks> enterprise, SimpleInstallation installation, SdkOptional<OrganizationSimpleWebhooks> organization, RepositoryWebhooks repository, SimpleUser sender}) get copyWith => _copyWith;
+  WebhookRepositoryDispatchSample Function(
+      {String action,
+      String branch,
+      Map<String, Object?>? clientPayload,
+      SdkOptional<EnterpriseWebhooks> enterprise,
+      SimpleInstallation installation,
+      SdkOptional<OrganizationSimpleWebhooks> organization,
+      RepositoryWebhooks repository,
+      SimpleUser sender}) get copyWith => _copyWith;
 
-  WebhookRepositoryDispatchSample _copyWith({Object? action = sdkOmittedValue, Object? branch = sdkOmittedValue, Object? clientPayload = sdkOmittedValue, Object? enterprise = sdkOmittedValue, Object? installation = sdkOmittedValue, Object? organization = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? sender = sdkOmittedValue}) => WebhookRepositoryDispatchSample(
-    action: identical(action, sdkOmittedValue) ? this.action : action as String,
-    branch: identical(branch, sdkOmittedValue) ? this.branch : branch as String,
-    clientPayload: identical(clientPayload, sdkOmittedValue) ? this.clientPayload : clientPayload as Map<String, Object?>?,
-    enterprise: identical(enterprise, sdkOmittedValue) ? this.enterprise : enterprise as SdkOptional<EnterpriseWebhooks>,
-    installation: identical(installation, sdkOmittedValue) ? this.installation : installation as SimpleInstallation,
-    organization: identical(organization, sdkOmittedValue) ? this.organization : organization as SdkOptional<OrganizationSimpleWebhooks>,
-    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as RepositoryWebhooks,
-    sender: identical(sender, sdkOmittedValue) ? this.sender : sender as SimpleUser,
-  );
+  WebhookRepositoryDispatchSample _copyWith(
+          {Object? action = sdkOmittedValue,
+          Object? branch = sdkOmittedValue,
+          Object? clientPayload = sdkOmittedValue,
+          Object? enterprise = sdkOmittedValue,
+          Object? installation = sdkOmittedValue,
+          Object? organization = sdkOmittedValue,
+          Object? repository = sdkOmittedValue,
+          Object? sender = sdkOmittedValue}) =>
+      WebhookRepositoryDispatchSample(
+        action:
+            identical(action, sdkOmittedValue) ? this.action : action as String,
+        branch:
+            identical(branch, sdkOmittedValue) ? this.branch : branch as String,
+        clientPayload: identical(clientPayload, sdkOmittedValue)
+            ? this.clientPayload
+            : clientPayload as Map<String, Object?>?,
+        enterprise: identical(enterprise, sdkOmittedValue)
+            ? this.enterprise
+            : enterprise as SdkOptional<EnterpriseWebhooks>,
+        installation: identical(installation, sdkOmittedValue)
+            ? this.installation
+            : installation as SimpleInstallation,
+        organization: identical(organization, sdkOmittedValue)
+            ? this.organization
+            : organization as SdkOptional<OrganizationSimpleWebhooks>,
+        repository: identical(repository, sdkOmittedValue)
+            ? this.repository
+            : repository as RepositoryWebhooks,
+        sender: identical(sender, sdkOmittedValue)
+            ? this.sender
+            : sender as SimpleUser,
+      );
 
-  factory WebhookRepositoryDispatchSample.fromJson(Map<String, dynamic> json) => WebhookRepositoryDispatchSample(
-    action: (json['action'] as String?)!,
-    branch: (json['branch'] as String?)!,
-    clientPayload: json.containsKey('client_payload') ? json['client_payload'] == null ? null : Map<String, dynamic>.from(json['client_payload'] as Map).map((key, value) => MapEntry(key, value)) : throw ArgumentError.value(null, 'client_payload', 'Required property is missing'),
-    enterprise: json['enterprise'] != null ? SdkPresent((json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    installation: (json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null)!,
-    organization: json['organization'] != null ? SdkPresent((json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    repository: (json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null)!,
-    sender: (json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null)!,
-  );
+  factory WebhookRepositoryDispatchSample.fromJson(Map<String, dynamic> json) =>
+      WebhookRepositoryDispatchSample(
+        action: (json['action'] as String?)!,
+        branch: (json['branch'] as String?)!,
+        clientPayload: json.containsKey('client_payload')
+            ? json['client_payload'] == null
+                ? null
+                : Map<String, dynamic>.from(json['client_payload'] as Map)
+                    .map((key, value) => MapEntry(key, value))
+            : throw ArgumentError.value(
+                null, 'client_payload', 'Required property is missing'),
+        enterprise: json['enterprise'] != null
+            ? SdkPresent((json['enterprise'] != null
+                ? EnterpriseWebhooks.fromJson(
+                    json['enterprise'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        installation: (json['installation'] != null
+            ? SimpleInstallation.fromJson(
+                json['installation'] as Map<String, dynamic>)
+            : null)!,
+        organization: json['organization'] != null
+            ? SdkPresent((json['organization'] != null
+                ? OrganizationSimpleWebhooks.fromJson(
+                    json['organization'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        repository: (json['repository'] != null
+            ? RepositoryWebhooks.fromJson(
+                json['repository'] as Map<String, dynamic>)
+            : null)!,
+        sender: (json['sender'] != null
+            ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'action': action,
-    'branch': branch,
-    'client_payload': clientPayload,
-    ...switch (enterprise) {
-      SdkPresent<EnterpriseWebhooks>(value: final value) => {'enterprise': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'installation': installation.toJson(),
-    ...switch (organization) {
-      SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {'organization': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'repository': repository.toJson(),
-    'sender': sender.toJson(),
-  };
+        'action': action,
+        'branch': branch,
+        'client_payload': clientPayload,
+        ...switch (enterprise) {
+          SdkPresent<EnterpriseWebhooks>(value: final value) => {
+              'enterprise': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'installation': installation.toJson(),
+        ...switch (organization) {
+          SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {
+              'organization': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'repository': repository.toJson(),
+        'sender': sender.toJson(),
+      };
 }

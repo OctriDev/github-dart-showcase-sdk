@@ -8,105 +8,193 @@ part of 'webhook_pull_request_review_edited.dart';
 class WebhookPullRequestReviewEditedPullRequestAutoMerge {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Commit message for the merge commit.
   final String? commitMessage;
+
   /// Title for the merge commit message.
   final String? commitTitle;
+
   /// Required object value serialized in the `enabled_by` wire field.
   final WebhookPullRequestReviewEditedPullRequestAutoMergeEnabledBy? enabledBy;
+
   /// The merge method to use.
-  final WebhookPullRequestReviewEditedPullRequestAutoMergeMergeMethod mergeMethod;
+  final WebhookPullRequestReviewEditedPullRequestAutoMergeMergeMethod
+      mergeMethod;
 
-  const WebhookPullRequestReviewEditedPullRequestAutoMerge({required this.commitMessage, required this.commitTitle, required this.enabledBy, required this.mergeMethod});
+  const WebhookPullRequestReviewEditedPullRequestAutoMerge(
+      {required this.commitMessage,
+      required this.commitTitle,
+      required this.enabledBy,
+      required this.mergeMethod});
 
-  WebhookPullRequestReviewEditedPullRequestAutoMerge Function({String? commitMessage, String? commitTitle, WebhookPullRequestReviewEditedPullRequestAutoMergeEnabledBy? enabledBy, WebhookPullRequestReviewEditedPullRequestAutoMergeMergeMethod mergeMethod}) get copyWith => _copyWith;
+  WebhookPullRequestReviewEditedPullRequestAutoMerge Function(
+      {String? commitMessage,
+      String? commitTitle,
+      WebhookPullRequestReviewEditedPullRequestAutoMergeEnabledBy? enabledBy,
+      WebhookPullRequestReviewEditedPullRequestAutoMergeMergeMethod
+          mergeMethod}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewEditedPullRequestAutoMerge _copyWith({Object? commitMessage = sdkOmittedValue, Object? commitTitle = sdkOmittedValue, Object? enabledBy = sdkOmittedValue, Object? mergeMethod = sdkOmittedValue}) => WebhookPullRequestReviewEditedPullRequestAutoMerge(
-    commitMessage: identical(commitMessage, sdkOmittedValue) ? this.commitMessage : commitMessage as String?,
-    commitTitle: identical(commitTitle, sdkOmittedValue) ? this.commitTitle : commitTitle as String?,
-    enabledBy: identical(enabledBy, sdkOmittedValue) ? this.enabledBy : enabledBy as WebhookPullRequestReviewEditedPullRequestAutoMergeEnabledBy?,
-    mergeMethod: identical(mergeMethod, sdkOmittedValue) ? this.mergeMethod : mergeMethod as WebhookPullRequestReviewEditedPullRequestAutoMergeMergeMethod,
-  );
+  WebhookPullRequestReviewEditedPullRequestAutoMerge _copyWith(
+          {Object? commitMessage = sdkOmittedValue,
+          Object? commitTitle = sdkOmittedValue,
+          Object? enabledBy = sdkOmittedValue,
+          Object? mergeMethod = sdkOmittedValue}) =>
+      WebhookPullRequestReviewEditedPullRequestAutoMerge(
+        commitMessage: identical(commitMessage, sdkOmittedValue)
+            ? this.commitMessage
+            : commitMessage as String?,
+        commitTitle: identical(commitTitle, sdkOmittedValue)
+            ? this.commitTitle
+            : commitTitle as String?,
+        enabledBy: identical(enabledBy, sdkOmittedValue)
+            ? this.enabledBy
+            : enabledBy
+                as WebhookPullRequestReviewEditedPullRequestAutoMergeEnabledBy?,
+        mergeMethod: identical(mergeMethod, sdkOmittedValue)
+            ? this.mergeMethod
+            : mergeMethod
+                as WebhookPullRequestReviewEditedPullRequestAutoMergeMergeMethod,
+      );
 
-  factory WebhookPullRequestReviewEditedPullRequestAutoMerge.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewEditedPullRequestAutoMerge(
-    commitMessage: json.containsKey('commit_message') ? json['commit_message'] as String? : throw ArgumentError.value(null, 'commit_message', 'Required property is missing'),
-    commitTitle: json.containsKey('commit_title') ? json['commit_title'] as String? : throw ArgumentError.value(null, 'commit_title', 'Required property is missing'),
-    enabledBy: json.containsKey('enabled_by') ? json['enabled_by'] != null ? WebhookPullRequestReviewEditedPullRequestAutoMergeEnabledBy.fromJson(json['enabled_by'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'enabled_by', 'Required property is missing'),
-    mergeMethod: (json['merge_method'] != null ? WebhookPullRequestReviewEditedPullRequestAutoMergeMergeMethod.fromJson(json['merge_method'] as String) : null)!,
-  );
+  factory WebhookPullRequestReviewEditedPullRequestAutoMerge.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPullRequestReviewEditedPullRequestAutoMerge(
+        commitMessage: json.containsKey('commit_message')
+            ? json['commit_message'] as String?
+            : throw ArgumentError.value(
+                null, 'commit_message', 'Required property is missing'),
+        commitTitle: json.containsKey('commit_title')
+            ? json['commit_title'] as String?
+            : throw ArgumentError.value(
+                null, 'commit_title', 'Required property is missing'),
+        enabledBy: json.containsKey('enabled_by')
+            ? json['enabled_by'] != null
+                ? WebhookPullRequestReviewEditedPullRequestAutoMergeEnabledBy
+                    .fromJson(json['enabled_by'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'enabled_by', 'Required property is missing'),
+        mergeMethod: (json['merge_method'] != null
+            ? WebhookPullRequestReviewEditedPullRequestAutoMergeMergeMethod
+                .fromJson(json['merge_method'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'commit_message': commitMessage,
-    'commit_title': commitTitle,
-    'enabled_by': enabledBy?.toJson(),
-    'merge_method': mergeMethod.toJson(),
-  };
+        'commit_message': commitMessage,
+        'commit_title': commitTitle,
+        'enabled_by': enabledBy?.toJson(),
+        'merge_method': mergeMethod.toJson(),
+      };
 }
 
 sealed class WebhookPullRequestReviewEditedPullRequestBaseRepoCreatedAt {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const WebhookPullRequestReviewEditedPullRequestBaseRepoCreatedAt();
-  factory WebhookPullRequestReviewEditedPullRequestBaseRepoCreatedAt.fromJson(Object? json) {
-    if (json is String) { return WebhookPullRequestReviewEditedPullRequestBaseRepoCreatedAtString(json); }
-    if (json is num) { return WebhookPullRequestReviewEditedPullRequestBaseRepoCreatedAtInt(json.toInt()); }
-    throw FormatException("No variant matched for WebhookPullRequestReviewEditedPullRequestBaseRepoCreatedAt");
+  factory WebhookPullRequestReviewEditedPullRequestBaseRepoCreatedAt.fromJson(
+      Object? json) {
+    if (json is String) {
+      return WebhookPullRequestReviewEditedPullRequestBaseRepoCreatedAtString(
+          json);
+    }
+    if (json is num) {
+      return WebhookPullRequestReviewEditedPullRequestBaseRepoCreatedAtInt(
+          json.toInt());
+    }
+    throw FormatException(
+        "No variant matched for WebhookPullRequestReviewEditedPullRequestBaseRepoCreatedAt");
   }
   Object? toJson();
 }
 
-final class WebhookPullRequestReviewEditedPullRequestBaseRepoCreatedAtInt extends WebhookPullRequestReviewEditedPullRequestBaseRepoCreatedAt {
+final class WebhookPullRequestReviewEditedPullRequestBaseRepoCreatedAtInt
+    extends WebhookPullRequestReviewEditedPullRequestBaseRepoCreatedAt {
   final int value;
-  const WebhookPullRequestReviewEditedPullRequestBaseRepoCreatedAtInt(this.value);
-  @override Object? toJson() => value;
+  const WebhookPullRequestReviewEditedPullRequestBaseRepoCreatedAtInt(
+      this.value);
+  @override
+  Object? toJson() => value;
 }
 
-final class WebhookPullRequestReviewEditedPullRequestBaseRepoCreatedAtString extends WebhookPullRequestReviewEditedPullRequestBaseRepoCreatedAt {
+final class WebhookPullRequestReviewEditedPullRequestBaseRepoCreatedAtString
+    extends WebhookPullRequestReviewEditedPullRequestBaseRepoCreatedAt {
   final String value;
-  const WebhookPullRequestReviewEditedPullRequestBaseRepoCreatedAtString(this.value);
-  @override Object? toJson() => value;
+  const WebhookPullRequestReviewEditedPullRequestBaseRepoCreatedAtString(
+      this.value);
+  @override
+  Object? toJson() => value;
 }
 
 /// Required object value serialized in the `license` wire field.
 class WebhookPullRequestReviewEditedPullRequestBaseRepoLicense {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `key` wire field.
   final String key;
+
   /// Required `string` value serialized in the `name` wire field.
   final String name;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// Required `string` value serialized in the `spdx_id` wire field.
   final String spdxId;
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String? url;
 
-  const WebhookPullRequestReviewEditedPullRequestBaseRepoLicense({required this.key, required this.name, required this.nodeId, required this.spdxId, required this.url});
+  const WebhookPullRequestReviewEditedPullRequestBaseRepoLicense(
+      {required this.key,
+      required this.name,
+      required this.nodeId,
+      required this.spdxId,
+      required this.url});
 
-  WebhookPullRequestReviewEditedPullRequestBaseRepoLicense Function({String key, String name, String nodeId, String spdxId, String? url}) get copyWith => _copyWith;
+  WebhookPullRequestReviewEditedPullRequestBaseRepoLicense Function(
+      {String key,
+      String name,
+      String nodeId,
+      String spdxId,
+      String? url}) get copyWith => _copyWith;
 
-  WebhookPullRequestReviewEditedPullRequestBaseRepoLicense _copyWith({Object? key = sdkOmittedValue, Object? name = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? spdxId = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookPullRequestReviewEditedPullRequestBaseRepoLicense(
-    key: identical(key, sdkOmittedValue) ? this.key : key as String,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    spdxId: identical(spdxId, sdkOmittedValue) ? this.spdxId : spdxId as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String?,
-  );
+  WebhookPullRequestReviewEditedPullRequestBaseRepoLicense _copyWith(
+          {Object? key = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? spdxId = sdkOmittedValue,
+          Object? url = sdkOmittedValue}) =>
+      WebhookPullRequestReviewEditedPullRequestBaseRepoLicense(
+        key: identical(key, sdkOmittedValue) ? this.key : key as String,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        spdxId:
+            identical(spdxId, sdkOmittedValue) ? this.spdxId : spdxId as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String?,
+      );
 
-  factory WebhookPullRequestReviewEditedPullRequestBaseRepoLicense.fromJson(Map<String, dynamic> json) => WebhookPullRequestReviewEditedPullRequestBaseRepoLicense(
-    key: (json['key'] as String?)!,
-    name: (json['name'] as String?)!,
-    nodeId: (json['node_id'] as String?)!,
-    spdxId: (json['spdx_id'] as String?)!,
-    url: json.containsKey('url') ? json['url'] as String? : throw ArgumentError.value(null, 'url', 'Required property is missing'),
-  );
+  factory WebhookPullRequestReviewEditedPullRequestBaseRepoLicense.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookPullRequestReviewEditedPullRequestBaseRepoLicense(
+        key: (json['key'] as String?)!,
+        name: (json['name'] as String?)!,
+        nodeId: (json['node_id'] as String?)!,
+        spdxId: (json['spdx_id'] as String?)!,
+        url: json.containsKey('url')
+            ? json['url'] as String?
+            : throw ArgumentError.value(
+                null, 'url', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'key': key,
-    'name': name,
-    'node_id': nodeId,
-    'spdx_id': spdxId,
-    'url': url,
-  };
+        'key': key,
+        'name': name,
+        'node_id': nodeId,
+        'spdx_id': spdxId,
+        'url': url,
+      };
 }

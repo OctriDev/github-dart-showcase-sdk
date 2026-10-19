@@ -8,96 +8,204 @@ part of 'webhook_check_run_requested_action.dart';
 class WebhookCheckRunRequestedActionRequestedAction {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The integrator reference of the action requested by the user.
   final SdkOptional<String> identifier;
 
-  const WebhookCheckRunRequestedActionRequestedAction({this.identifier = const SdkOmitted()});
+  const WebhookCheckRunRequestedActionRequestedAction(
+      {this.identifier = const SdkOmitted()});
 
-  WebhookCheckRunRequestedActionRequestedAction Function({SdkOptional<String> identifier}) get copyWith => _copyWith;
+  WebhookCheckRunRequestedActionRequestedAction Function(
+      {SdkOptional<String> identifier}) get copyWith => _copyWith;
 
-  WebhookCheckRunRequestedActionRequestedAction _copyWith({Object? identifier = sdkOmittedValue}) => WebhookCheckRunRequestedActionRequestedAction(
-    identifier: identical(identifier, sdkOmittedValue) ? this.identifier : identifier as SdkOptional<String>,
-  );
+  WebhookCheckRunRequestedActionRequestedAction _copyWith(
+          {Object? identifier = sdkOmittedValue}) =>
+      WebhookCheckRunRequestedActionRequestedAction(
+        identifier: identical(identifier, sdkOmittedValue)
+            ? this.identifier
+            : identifier as SdkOptional<String>,
+      );
 
-  factory WebhookCheckRunRequestedActionRequestedAction.fromJson(Map<String, dynamic> json) => WebhookCheckRunRequestedActionRequestedAction(
-    identifier: json['identifier'] != null ? SdkPresent((json['identifier'] as String?)!) : const SdkOmitted(),
-  );
+  factory WebhookCheckRunRequestedActionRequestedAction.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookCheckRunRequestedActionRequestedAction(
+        identifier: json['identifier'] != null
+            ? SdkPresent((json['identifier'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (identifier) {
-      SdkPresent<String>(value: final value) => {'identifier': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (identifier) {
+          SdkPresent<String>(value: final value) => {
+              'identifier': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Typed representation of the `WebhookCheckRunRequestedAction` API schema.
 class WebhookCheckRunRequestedAction {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `action` wire field.
   final WebhookCheckRunRequestedActionAction action;
+
   /// A check performed on the code of a given code change
   final CheckRunWithSimpleCheckSuite checkRun;
+
   /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured for and sent to a GitHub App. For more information, see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
   final SdkOptional<SimpleInstallation> installation;
+
   /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured on an enterprise account or an organization that's part of an enterprise account. For more information, see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
   final SdkOptional<EnterpriseWebhooks> enterprise;
+
   /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an organization, or when the event occurs from activity in a repository owned by an organization.
   final SdkOptional<OrganizationSimpleWebhooks> organization;
+
   /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property when the event occurs from activity in a repository.
   final RepositoryWebhooks repository;
+
   /// The action requested by the user.
-  final SdkOptional<WebhookCheckRunRequestedActionRequestedAction> requestedAction;
+  final SdkOptional<WebhookCheckRunRequestedActionRequestedAction>
+      requestedAction;
+
   /// A GitHub user.
   final SimpleUser sender;
 
-  const WebhookCheckRunRequestedAction({required this.action, required this.checkRun, this.installation = const SdkOmitted(), this.enterprise = const SdkOmitted(), this.organization = const SdkOmitted(), required this.repository, this.requestedAction = const SdkOmitted(), required this.sender});
+  const WebhookCheckRunRequestedAction(
+      {required this.action,
+      required this.checkRun,
+      this.installation = const SdkOmitted(),
+      this.enterprise = const SdkOmitted(),
+      this.organization = const SdkOmitted(),
+      required this.repository,
+      this.requestedAction = const SdkOmitted(),
+      required this.sender});
 
-  WebhookCheckRunRequestedAction Function({WebhookCheckRunRequestedActionAction action, CheckRunWithSimpleCheckSuite checkRun, SdkOptional<SimpleInstallation> installation, SdkOptional<EnterpriseWebhooks> enterprise, SdkOptional<OrganizationSimpleWebhooks> organization, RepositoryWebhooks repository, SdkOptional<WebhookCheckRunRequestedActionRequestedAction> requestedAction, SimpleUser sender}) get copyWith => _copyWith;
+  WebhookCheckRunRequestedAction Function(
+      {WebhookCheckRunRequestedActionAction action,
+      CheckRunWithSimpleCheckSuite checkRun,
+      SdkOptional<SimpleInstallation> installation,
+      SdkOptional<EnterpriseWebhooks> enterprise,
+      SdkOptional<OrganizationSimpleWebhooks> organization,
+      RepositoryWebhooks repository,
+      SdkOptional<WebhookCheckRunRequestedActionRequestedAction>
+          requestedAction,
+      SimpleUser sender}) get copyWith => _copyWith;
 
-  WebhookCheckRunRequestedAction _copyWith({Object? action = sdkOmittedValue, Object? checkRun = sdkOmittedValue, Object? installation = sdkOmittedValue, Object? enterprise = sdkOmittedValue, Object? organization = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? requestedAction = sdkOmittedValue, Object? sender = sdkOmittedValue}) => WebhookCheckRunRequestedAction(
-    action: identical(action, sdkOmittedValue) ? this.action : action as WebhookCheckRunRequestedActionAction,
-    checkRun: identical(checkRun, sdkOmittedValue) ? this.checkRun : checkRun as CheckRunWithSimpleCheckSuite,
-    installation: identical(installation, sdkOmittedValue) ? this.installation : installation as SdkOptional<SimpleInstallation>,
-    enterprise: identical(enterprise, sdkOmittedValue) ? this.enterprise : enterprise as SdkOptional<EnterpriseWebhooks>,
-    organization: identical(organization, sdkOmittedValue) ? this.organization : organization as SdkOptional<OrganizationSimpleWebhooks>,
-    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as RepositoryWebhooks,
-    requestedAction: identical(requestedAction, sdkOmittedValue) ? this.requestedAction : requestedAction as SdkOptional<WebhookCheckRunRequestedActionRequestedAction>,
-    sender: identical(sender, sdkOmittedValue) ? this.sender : sender as SimpleUser,
-  );
+  WebhookCheckRunRequestedAction _copyWith(
+          {Object? action = sdkOmittedValue,
+          Object? checkRun = sdkOmittedValue,
+          Object? installation = sdkOmittedValue,
+          Object? enterprise = sdkOmittedValue,
+          Object? organization = sdkOmittedValue,
+          Object? repository = sdkOmittedValue,
+          Object? requestedAction = sdkOmittedValue,
+          Object? sender = sdkOmittedValue}) =>
+      WebhookCheckRunRequestedAction(
+        action: identical(action, sdkOmittedValue)
+            ? this.action
+            : action as WebhookCheckRunRequestedActionAction,
+        checkRun: identical(checkRun, sdkOmittedValue)
+            ? this.checkRun
+            : checkRun as CheckRunWithSimpleCheckSuite,
+        installation: identical(installation, sdkOmittedValue)
+            ? this.installation
+            : installation as SdkOptional<SimpleInstallation>,
+        enterprise: identical(enterprise, sdkOmittedValue)
+            ? this.enterprise
+            : enterprise as SdkOptional<EnterpriseWebhooks>,
+        organization: identical(organization, sdkOmittedValue)
+            ? this.organization
+            : organization as SdkOptional<OrganizationSimpleWebhooks>,
+        repository: identical(repository, sdkOmittedValue)
+            ? this.repository
+            : repository as RepositoryWebhooks,
+        requestedAction: identical(requestedAction, sdkOmittedValue)
+            ? this.requestedAction
+            : requestedAction
+                as SdkOptional<WebhookCheckRunRequestedActionRequestedAction>,
+        sender: identical(sender, sdkOmittedValue)
+            ? this.sender
+            : sender as SimpleUser,
+      );
 
-  factory WebhookCheckRunRequestedAction.fromJson(Map<String, dynamic> json) => WebhookCheckRunRequestedAction(
-    action: (json['action'] != null ? WebhookCheckRunRequestedActionAction.fromJson(json['action'] as String) : null)!,
-    checkRun: (json['check_run'] != null ? CheckRunWithSimpleCheckSuite.fromJson(json['check_run'] as Map<String, dynamic>) : null)!,
-    installation: json['installation'] != null ? SdkPresent((json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    enterprise: json['enterprise'] != null ? SdkPresent((json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    organization: json['organization'] != null ? SdkPresent((json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    repository: (json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null)!,
-    requestedAction: json['requested_action'] != null ? SdkPresent((json['requested_action'] != null ? WebhookCheckRunRequestedActionRequestedAction.fromJson(json['requested_action'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    sender: (json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null)!,
-  );
+  factory WebhookCheckRunRequestedAction.fromJson(Map<String, dynamic> json) =>
+      WebhookCheckRunRequestedAction(
+        action: (json['action'] != null
+            ? WebhookCheckRunRequestedActionAction.fromJson(
+                json['action'] as String)
+            : null)!,
+        checkRun: (json['check_run'] != null
+            ? CheckRunWithSimpleCheckSuite.fromJson(
+                json['check_run'] as Map<String, dynamic>)
+            : null)!,
+        installation: json['installation'] != null
+            ? SdkPresent((json['installation'] != null
+                ? SimpleInstallation.fromJson(
+                    json['installation'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        enterprise: json['enterprise'] != null
+            ? SdkPresent((json['enterprise'] != null
+                ? EnterpriseWebhooks.fromJson(
+                    json['enterprise'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        organization: json['organization'] != null
+            ? SdkPresent((json['organization'] != null
+                ? OrganizationSimpleWebhooks.fromJson(
+                    json['organization'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        repository: (json['repository'] != null
+            ? RepositoryWebhooks.fromJson(
+                json['repository'] as Map<String, dynamic>)
+            : null)!,
+        requestedAction: json['requested_action'] != null
+            ? SdkPresent((json['requested_action'] != null
+                ? WebhookCheckRunRequestedActionRequestedAction.fromJson(
+                    json['requested_action'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        sender: (json['sender'] != null
+            ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'action': action.toJson(),
-    'check_run': checkRun.toJson(),
-    ...switch (installation) {
-      SdkPresent<SimpleInstallation>(value: final value) => {'installation': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (enterprise) {
-      SdkPresent<EnterpriseWebhooks>(value: final value) => {'enterprise': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (organization) {
-      SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {'organization': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'repository': repository.toJson(),
-    ...switch (requestedAction) {
-      SdkPresent<WebhookCheckRunRequestedActionRequestedAction>(value: final value) => {'requested_action': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'sender': sender.toJson(),
-  };
+        'action': action.toJson(),
+        'check_run': checkRun.toJson(),
+        ...switch (installation) {
+          SdkPresent<SimpleInstallation>(value: final value) => {
+              'installation': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (enterprise) {
+          SdkPresent<EnterpriseWebhooks>(value: final value) => {
+              'enterprise': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (organization) {
+          SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {
+              'organization': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'repository': repository.toJson(),
+        ...switch (requestedAction) {
+          SdkPresent<WebhookCheckRunRequestedActionRequestedAction>(
+            value: final value
+          ) =>
+            {
+              'requested_action': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'sender': sender.toJson(),
+      };
 }

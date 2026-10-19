@@ -8,27 +8,46 @@ part of 'webhook_github_app_authorization_revoked.dart';
 class WebhookGithubAppAuthorizationRevoked {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `action` wire field.
   final WebhookGithubAppAuthorizationRevokedAction action;
+
   /// A GitHub user.
   final SimpleUser sender;
 
-  const WebhookGithubAppAuthorizationRevoked({required this.action, required this.sender});
+  const WebhookGithubAppAuthorizationRevoked(
+      {required this.action, required this.sender});
 
-  WebhookGithubAppAuthorizationRevoked Function({WebhookGithubAppAuthorizationRevokedAction action, SimpleUser sender}) get copyWith => _copyWith;
+  WebhookGithubAppAuthorizationRevoked Function(
+      {WebhookGithubAppAuthorizationRevokedAction action,
+      SimpleUser sender}) get copyWith => _copyWith;
 
-  WebhookGithubAppAuthorizationRevoked _copyWith({Object? action = sdkOmittedValue, Object? sender = sdkOmittedValue}) => WebhookGithubAppAuthorizationRevoked(
-    action: identical(action, sdkOmittedValue) ? this.action : action as WebhookGithubAppAuthorizationRevokedAction,
-    sender: identical(sender, sdkOmittedValue) ? this.sender : sender as SimpleUser,
-  );
+  WebhookGithubAppAuthorizationRevoked _copyWith(
+          {Object? action = sdkOmittedValue,
+          Object? sender = sdkOmittedValue}) =>
+      WebhookGithubAppAuthorizationRevoked(
+        action: identical(action, sdkOmittedValue)
+            ? this.action
+            : action as WebhookGithubAppAuthorizationRevokedAction,
+        sender: identical(sender, sdkOmittedValue)
+            ? this.sender
+            : sender as SimpleUser,
+      );
 
-  factory WebhookGithubAppAuthorizationRevoked.fromJson(Map<String, dynamic> json) => WebhookGithubAppAuthorizationRevoked(
-    action: (json['action'] != null ? WebhookGithubAppAuthorizationRevokedAction.fromJson(json['action'] as String) : null)!,
-    sender: (json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null)!,
-  );
+  factory WebhookGithubAppAuthorizationRevoked.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookGithubAppAuthorizationRevoked(
+        action: (json['action'] != null
+            ? WebhookGithubAppAuthorizationRevokedAction.fromJson(
+                json['action'] as String)
+            : null)!,
+        sender: (json['sender'] != null
+            ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'action': action.toJson(),
-    'sender': sender.toJson(),
-  };
+        'action': action.toJson(),
+        'sender': sender.toJson(),
+      };
 }

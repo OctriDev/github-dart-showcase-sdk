@@ -8,158 +8,318 @@ part of 'simple.dart';
 class SimpleCheckSuite {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `string` value serialized in the `after` wire field.
   final SdkOptional<String?> after;
+
   /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
   final SdkOptional<Integration?> app;
+
   /// Optional `string` value serialized in the `before` wire field.
   final SdkOptional<String?> before;
+
   /// Optional enumerated value serialized in the `conclusion` wire field.
   final SdkOptional<SimpleCheckSuiteConclusion?> conclusion;
+
   /// Optional `date-time`-formatted value serialized in the `created_at` wire field.
   final SdkOptional<String> createdAt;
+
   /// Optional `string` value serialized in the `head_branch` wire field.
   final SdkOptional<String?> headBranch;
+
   /// The SHA of the head commit that is being checked.
   final SdkOptional<String> headSha;
+
   /// Optional `integer` value serialized in the `id` wire field.
   final SdkOptional<int> id;
+
   /// Optional `string` value serialized in the `node_id` wire field.
   final SdkOptional<String> nodeId;
+
   /// Optional array value serialized in the `pull_requests` wire field.
   final SdkOptional<List<PullRequestMinimal>> pullRequests;
+
   /// Minimal Repository
   final SdkOptional<MinimalRepository> repository;
+
   /// Optional enumerated value serialized in the `status` wire field.
   final SdkOptional<SimpleCheckSuiteStatus> status;
+
   /// Optional `date-time`-formatted value serialized in the `updated_at` wire field.
   final SdkOptional<String> updatedAt;
+
   /// Optional `string` value serialized in the `url` wire field.
   final SdkOptional<String> url;
 
-  const SimpleCheckSuite({this.after = const SdkOmitted(), this.app = const SdkOmitted(), this.before = const SdkOmitted(), this.conclusion = const SdkOmitted(), this.createdAt = const SdkOmitted(), this.headBranch = const SdkOmitted(), this.headSha = const SdkOmitted(), this.id = const SdkOmitted(), this.nodeId = const SdkOmitted(), this.pullRequests = const SdkOmitted(), this.repository = const SdkOmitted(), this.status = const SdkOmitted(), this.updatedAt = const SdkOmitted(), this.url = const SdkOmitted()});
+  const SimpleCheckSuite(
+      {this.after = const SdkOmitted(),
+      this.app = const SdkOmitted(),
+      this.before = const SdkOmitted(),
+      this.conclusion = const SdkOmitted(),
+      this.createdAt = const SdkOmitted(),
+      this.headBranch = const SdkOmitted(),
+      this.headSha = const SdkOmitted(),
+      this.id = const SdkOmitted(),
+      this.nodeId = const SdkOmitted(),
+      this.pullRequests = const SdkOmitted(),
+      this.repository = const SdkOmitted(),
+      this.status = const SdkOmitted(),
+      this.updatedAt = const SdkOmitted(),
+      this.url = const SdkOmitted()});
 
-  SimpleCheckSuite Function({SdkOptional<String?> after, SdkOptional<Integration?> app, SdkOptional<String?> before, SdkOptional<SimpleCheckSuiteConclusion?> conclusion, SdkOptional<String> createdAt, SdkOptional<String?> headBranch, SdkOptional<String> headSha, SdkOptional<int> id, SdkOptional<String> nodeId, SdkOptional<List<PullRequestMinimal>> pullRequests, SdkOptional<MinimalRepository> repository, SdkOptional<SimpleCheckSuiteStatus> status, SdkOptional<String> updatedAt, SdkOptional<String> url}) get copyWith => _copyWith;
+  SimpleCheckSuite Function(
+      {SdkOptional<String?> after,
+      SdkOptional<Integration?> app,
+      SdkOptional<String?> before,
+      SdkOptional<SimpleCheckSuiteConclusion?> conclusion,
+      SdkOptional<String> createdAt,
+      SdkOptional<String?> headBranch,
+      SdkOptional<String> headSha,
+      SdkOptional<int> id,
+      SdkOptional<String> nodeId,
+      SdkOptional<List<PullRequestMinimal>> pullRequests,
+      SdkOptional<MinimalRepository> repository,
+      SdkOptional<SimpleCheckSuiteStatus> status,
+      SdkOptional<String> updatedAt,
+      SdkOptional<String> url}) get copyWith => _copyWith;
 
-  SimpleCheckSuite _copyWith({Object? after = sdkOmittedValue, Object? app = sdkOmittedValue, Object? before = sdkOmittedValue, Object? conclusion = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? headBranch = sdkOmittedValue, Object? headSha = sdkOmittedValue, Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? pullRequests = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? status = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? url = sdkOmittedValue}) => SimpleCheckSuite(
-    after: identical(after, sdkOmittedValue) ? this.after : after as SdkOptional<String?>,
-    app: identical(app, sdkOmittedValue) ? this.app : app as SdkOptional<Integration?>,
-    before: identical(before, sdkOmittedValue) ? this.before : before as SdkOptional<String?>,
-    conclusion: identical(conclusion, sdkOmittedValue) ? this.conclusion : conclusion as SdkOptional<SimpleCheckSuiteConclusion?>,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as SdkOptional<String>,
-    headBranch: identical(headBranch, sdkOmittedValue) ? this.headBranch : headBranch as SdkOptional<String?>,
-    headSha: identical(headSha, sdkOmittedValue) ? this.headSha : headSha as SdkOptional<String>,
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as SdkOptional<String>,
-    pullRequests: identical(pullRequests, sdkOmittedValue) ? this.pullRequests : pullRequests as SdkOptional<List<PullRequestMinimal>>,
-    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as SdkOptional<MinimalRepository>,
-    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<SimpleCheckSuiteStatus>,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as SdkOptional<String>,
-    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
-  );
+  SimpleCheckSuite _copyWith(
+          {Object? after = sdkOmittedValue,
+          Object? app = sdkOmittedValue,
+          Object? before = sdkOmittedValue,
+          Object? conclusion = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? headBranch = sdkOmittedValue,
+          Object? headSha = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? pullRequests = sdkOmittedValue,
+          Object? repository = sdkOmittedValue,
+          Object? status = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? url = sdkOmittedValue}) =>
+      SimpleCheckSuite(
+        after: identical(after, sdkOmittedValue)
+            ? this.after
+            : after as SdkOptional<String?>,
+        app: identical(app, sdkOmittedValue)
+            ? this.app
+            : app as SdkOptional<Integration?>,
+        before: identical(before, sdkOmittedValue)
+            ? this.before
+            : before as SdkOptional<String?>,
+        conclusion: identical(conclusion, sdkOmittedValue)
+            ? this.conclusion
+            : conclusion as SdkOptional<SimpleCheckSuiteConclusion?>,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as SdkOptional<String>,
+        headBranch: identical(headBranch, sdkOmittedValue)
+            ? this.headBranch
+            : headBranch as SdkOptional<String?>,
+        headSha: identical(headSha, sdkOmittedValue)
+            ? this.headSha
+            : headSha as SdkOptional<String>,
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+        nodeId: identical(nodeId, sdkOmittedValue)
+            ? this.nodeId
+            : nodeId as SdkOptional<String>,
+        pullRequests: identical(pullRequests, sdkOmittedValue)
+            ? this.pullRequests
+            : pullRequests as SdkOptional<List<PullRequestMinimal>>,
+        repository: identical(repository, sdkOmittedValue)
+            ? this.repository
+            : repository as SdkOptional<MinimalRepository>,
+        status: identical(status, sdkOmittedValue)
+            ? this.status
+            : status as SdkOptional<SimpleCheckSuiteStatus>,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as SdkOptional<String>,
+        url: identical(url, sdkOmittedValue)
+            ? this.url
+            : url as SdkOptional<String>,
+      );
 
-  factory SimpleCheckSuite.fromJson(Map<String, dynamic> json) => SimpleCheckSuite(
-    after: json.containsKey('after') ? SdkPresent(json['after'] as String?) : const SdkOmitted(),
-    app: json.containsKey('app') ? SdkPresent(json['app'] != null ? Integration.fromJson(json['app'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-    before: json.containsKey('before') ? SdkPresent(json['before'] as String?) : const SdkOmitted(),
-    conclusion: json.containsKey('conclusion') ? SdkPresent(json['conclusion'] != null ? SimpleCheckSuiteConclusion.fromJson(json['conclusion'] as String) : null) : const SdkOmitted(),
-    createdAt: json['created_at'] != null ? SdkPresent((json['created_at'] as String?)!) : const SdkOmitted(),
-    headBranch: json.containsKey('head_branch') ? SdkPresent(json['head_branch'] as String?) : const SdkOmitted(),
-    headSha: json['head_sha'] != null ? SdkPresent((json['head_sha'] as String?)!) : const SdkOmitted(),
-    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
-    nodeId: json['node_id'] != null ? SdkPresent((json['node_id'] as String?)!) : const SdkOmitted(),
-    pullRequests: json['pull_requests'] != null ? SdkPresent(((json['pull_requests'] as List?)?.map((e) => PullRequestMinimal.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-    repository: json['repository'] != null ? SdkPresent((json['repository'] != null ? MinimalRepository.fromJson(json['repository'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    status: json['status'] != null ? SdkPresent((json['status'] != null ? SimpleCheckSuiteStatus.fromJson(json['status'] as String) : null)!) : const SdkOmitted(),
-    updatedAt: json['updated_at'] != null ? SdkPresent((json['updated_at'] as String?)!) : const SdkOmitted(),
-    url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
-  );
+  factory SimpleCheckSuite.fromJson(Map<String, dynamic> json) =>
+      SimpleCheckSuite(
+        after: json.containsKey('after')
+            ? SdkPresent(json['after'] as String?)
+            : const SdkOmitted(),
+        app: json.containsKey('app')
+            ? SdkPresent(json['app'] != null
+                ? Integration.fromJson(json['app'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        before: json.containsKey('before')
+            ? SdkPresent(json['before'] as String?)
+            : const SdkOmitted(),
+        conclusion: json.containsKey('conclusion')
+            ? SdkPresent(json['conclusion'] != null
+                ? SimpleCheckSuiteConclusion.fromJson(
+                    json['conclusion'] as String)
+                : null)
+            : const SdkOmitted(),
+        createdAt: json['created_at'] != null
+            ? SdkPresent((json['created_at'] as String?)!)
+            : const SdkOmitted(),
+        headBranch: json.containsKey('head_branch')
+            ? SdkPresent(json['head_branch'] as String?)
+            : const SdkOmitted(),
+        headSha: json['head_sha'] != null
+            ? SdkPresent((json['head_sha'] as String?)!)
+            : const SdkOmitted(),
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        nodeId: json['node_id'] != null
+            ? SdkPresent((json['node_id'] as String?)!)
+            : const SdkOmitted(),
+        pullRequests: json['pull_requests'] != null
+            ? SdkPresent(((json['pull_requests'] as List?)
+                ?.map((e) =>
+                    PullRequestMinimal.fromJson(e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+        repository: json['repository'] != null
+            ? SdkPresent((json['repository'] != null
+                ? MinimalRepository.fromJson(
+                    json['repository'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        status: json['status'] != null
+            ? SdkPresent((json['status'] != null
+                ? SimpleCheckSuiteStatus.fromJson(json['status'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        updatedAt: json['updated_at'] != null
+            ? SdkPresent((json['updated_at'] as String?)!)
+            : const SdkOmitted(),
+        url: json['url'] != null
+            ? SdkPresent((json['url'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (after) {
-      SdkPresent<String?>(value: final value) => {'after': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (app) {
-      SdkPresent<Integration?>(value: final value) => {'app': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (before) {
-      SdkPresent<String?>(value: final value) => {'before': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (conclusion) {
-      SdkPresent<SimpleCheckSuiteConclusion?>(value: final value) => {'conclusion': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (createdAt) {
-      SdkPresent<String>(value: final value) => {'created_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (headBranch) {
-      SdkPresent<String?>(value: final value) => {'head_branch': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (headSha) {
-      SdkPresent<String>(value: final value) => {'head_sha': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (id) {
-      SdkPresent<int>(value: final value) => {'id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (nodeId) {
-      SdkPresent<String>(value: final value) => {'node_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (pullRequests) {
-      SdkPresent<List<PullRequestMinimal>>(value: final value) => {'pull_requests': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (repository) {
-      SdkPresent<MinimalRepository>(value: final value) => {'repository': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (status) {
-      SdkPresent<SimpleCheckSuiteStatus>(value: final value) => {'status': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (updatedAt) {
-      SdkPresent<String>(value: final value) => {'updated_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (url) {
-      SdkPresent<String>(value: final value) => {'url': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (after) {
+          SdkPresent<String?>(value: final value) => {
+              'after': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (app) {
+          SdkPresent<Integration?>(value: final value) => {
+              'app': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (before) {
+          SdkPresent<String?>(value: final value) => {
+              'before': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (conclusion) {
+          SdkPresent<SimpleCheckSuiteConclusion?>(value: final value) => {
+              'conclusion': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (createdAt) {
+          SdkPresent<String>(value: final value) => {
+              'created_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (headBranch) {
+          SdkPresent<String?>(value: final value) => {
+              'head_branch': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (headSha) {
+          SdkPresent<String>(value: final value) => {
+              'head_sha': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (nodeId) {
+          SdkPresent<String>(value: final value) => {
+              'node_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (pullRequests) {
+          SdkPresent<List<PullRequestMinimal>>(value: final value) => {
+              'pull_requests': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (repository) {
+          SdkPresent<MinimalRepository>(value: final value) => {
+              'repository': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (status) {
+          SdkPresent<SimpleCheckSuiteStatus>(value: final value) => {
+              'status': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (updatedAt) {
+          SdkPresent<String>(value: final value) => {
+              'updated_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (url) {
+          SdkPresent<String>(value: final value) => {
+              'url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured for and sent to a GitHub App. For more information, see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
 class SimpleInstallation {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The ID of the installation.
   final int id;
+
   /// The global node ID of the installation.
   final String nodeId;
 
   const SimpleInstallation({required this.id, required this.nodeId});
 
-  SimpleInstallation Function({int id, String nodeId}) get copyWith => _copyWith;
+  SimpleInstallation Function({int id, String nodeId}) get copyWith =>
+      _copyWith;
 
-  SimpleInstallation _copyWith({Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue}) => SimpleInstallation(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-  );
+  SimpleInstallation _copyWith(
+          {Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue}) =>
+      SimpleInstallation(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+      );
 
-  factory SimpleInstallation.fromJson(Map<String, dynamic> json) => SimpleInstallation(
-    id: ((json['id'] as num?)?.toInt())!,
-    nodeId: (json['node_id'] as String?)!,
-  );
+  factory SimpleInstallation.fromJson(Map<String, dynamic> json) =>
+      SimpleInstallation(
+        id: ((json['id'] as num?)?.toInt())!,
+        nodeId: (json['node_id'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'node_id': nodeId,
-  };
+        'id': id,
+        'node_id': nodeId,
+      };
 }

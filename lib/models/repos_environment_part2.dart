@@ -4,8 +4,11 @@
 part of 'repos_environment.dart';
 
 // repos_environment domain models (part 2)
-final class EnvironmentProtectionRulesItemEnvironmentProtectionRulesItemVariant2 extends EnvironmentProtectionRulesItem {
+final class EnvironmentProtectionRulesItemEnvironmentProtectionRulesItemVariant2
+    extends EnvironmentProtectionRulesItem {
   final EnvironmentProtectionRulesItemVariant2 value;
-  const EnvironmentProtectionRulesItemEnvironmentProtectionRulesItemVariant2(this.value);
-  @override Object? toJson() => value.toJson();
+  const EnvironmentProtectionRulesItemEnvironmentProtectionRulesItemVariant2(
+      this.value);
+  @override
+  Object? toJson() => value.toJson();
 }

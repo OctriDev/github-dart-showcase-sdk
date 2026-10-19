@@ -8,66 +8,105 @@ sealed class WebhookIssuesTransferredChangesNewRepositoryCreatedAt {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const WebhookIssuesTransferredChangesNewRepositoryCreatedAt();
-  factory WebhookIssuesTransferredChangesNewRepositoryCreatedAt.fromJson(Object? json) {
-    if (json is String) { return WebhookIssuesTransferredChangesNewRepositoryCreatedAtString(json); }
-    if (json is num) { return WebhookIssuesTransferredChangesNewRepositoryCreatedAtInt(json.toInt()); }
-    throw FormatException("No variant matched for WebhookIssuesTransferredChangesNewRepositoryCreatedAt");
+  factory WebhookIssuesTransferredChangesNewRepositoryCreatedAt.fromJson(
+      Object? json) {
+    if (json is String) {
+      return WebhookIssuesTransferredChangesNewRepositoryCreatedAtString(json);
+    }
+    if (json is num) {
+      return WebhookIssuesTransferredChangesNewRepositoryCreatedAtInt(
+          json.toInt());
+    }
+    throw FormatException(
+        "No variant matched for WebhookIssuesTransferredChangesNewRepositoryCreatedAt");
   }
   Object? toJson();
 }
 
-final class WebhookIssuesTransferredChangesNewRepositoryCreatedAtInt extends WebhookIssuesTransferredChangesNewRepositoryCreatedAt {
+final class WebhookIssuesTransferredChangesNewRepositoryCreatedAtInt
+    extends WebhookIssuesTransferredChangesNewRepositoryCreatedAt {
   final int value;
   const WebhookIssuesTransferredChangesNewRepositoryCreatedAtInt(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
-final class WebhookIssuesTransferredChangesNewRepositoryCreatedAtString extends WebhookIssuesTransferredChangesNewRepositoryCreatedAt {
+final class WebhookIssuesTransferredChangesNewRepositoryCreatedAtString
+    extends WebhookIssuesTransferredChangesNewRepositoryCreatedAt {
   final String value;
   const WebhookIssuesTransferredChangesNewRepositoryCreatedAtString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 /// Required object value serialized in the `license` wire field.
 class WebhookIssuesTransferredChangesNewRepositoryLicense {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `key` wire field.
   final String key;
+
   /// Required `string` value serialized in the `name` wire field.
   final String name;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// Required `string` value serialized in the `spdx_id` wire field.
   final String spdxId;
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String? url;
 
-  const WebhookIssuesTransferredChangesNewRepositoryLicense({required this.key, required this.name, required this.nodeId, required this.spdxId, required this.url});
+  const WebhookIssuesTransferredChangesNewRepositoryLicense(
+      {required this.key,
+      required this.name,
+      required this.nodeId,
+      required this.spdxId,
+      required this.url});
 
-  WebhookIssuesTransferredChangesNewRepositoryLicense Function({String key, String name, String nodeId, String spdxId, String? url}) get copyWith => _copyWith;
+  WebhookIssuesTransferredChangesNewRepositoryLicense Function(
+      {String key,
+      String name,
+      String nodeId,
+      String spdxId,
+      String? url}) get copyWith => _copyWith;
 
-  WebhookIssuesTransferredChangesNewRepositoryLicense _copyWith({Object? key = sdkOmittedValue, Object? name = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? spdxId = sdkOmittedValue, Object? url = sdkOmittedValue}) => WebhookIssuesTransferredChangesNewRepositoryLicense(
-    key: identical(key, sdkOmittedValue) ? this.key : key as String,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    spdxId: identical(spdxId, sdkOmittedValue) ? this.spdxId : spdxId as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String?,
-  );
+  WebhookIssuesTransferredChangesNewRepositoryLicense _copyWith(
+          {Object? key = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? spdxId = sdkOmittedValue,
+          Object? url = sdkOmittedValue}) =>
+      WebhookIssuesTransferredChangesNewRepositoryLicense(
+        key: identical(key, sdkOmittedValue) ? this.key : key as String,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        spdxId:
+            identical(spdxId, sdkOmittedValue) ? this.spdxId : spdxId as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String?,
+      );
 
-  factory WebhookIssuesTransferredChangesNewRepositoryLicense.fromJson(Map<String, dynamic> json) => WebhookIssuesTransferredChangesNewRepositoryLicense(
-    key: (json['key'] as String?)!,
-    name: (json['name'] as String?)!,
-    nodeId: (json['node_id'] as String?)!,
-    spdxId: (json['spdx_id'] as String?)!,
-    url: json.containsKey('url') ? json['url'] as String? : throw ArgumentError.value(null, 'url', 'Required property is missing'),
-  );
+  factory WebhookIssuesTransferredChangesNewRepositoryLicense.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookIssuesTransferredChangesNewRepositoryLicense(
+        key: (json['key'] as String?)!,
+        name: (json['name'] as String?)!,
+        nodeId: (json['node_id'] as String?)!,
+        spdxId: (json['spdx_id'] as String?)!,
+        url: json.containsKey('url')
+            ? json['url'] as String?
+            : throw ArgumentError.value(
+                null, 'url', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    'key': key,
-    'name': name,
-    'node_id': nodeId,
-    'spdx_id': spdxId,
-    'url': url,
-  };
+        'key': key,
+        'name': name,
+        'node_id': nodeId,
+        'spdx_id': spdxId,
+        'url': url,
+      };
 }

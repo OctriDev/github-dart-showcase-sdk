@@ -8,201 +8,447 @@ part of 'shared_pull.dart';
 class PullRequestReviewComment {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// URL for the pull request review comment
   final String url;
+
   /// The ID of the pull request review to which the comment belongs.
   final int? pullRequestReviewId;
+
   /// The ID of the pull request review comment.
   final int id;
+
   /// The node ID of the pull request review comment.
   final String nodeId;
+
   /// The diff of the line that the comment refers to.
   final String diffHunk;
+
   /// The relative path of the file to which the comment applies.
   final String path;
+
   /// The line index in the diff to which the comment applies. This field is closing down; use `line` instead.
   final SdkOptional<int> position;
+
   /// The index of the original line in the diff to which the comment applies. This field is closing down; use `original_line` instead.
   final SdkOptional<int> originalPosition;
+
   /// The SHA of the commit to which the comment applies.
   final String commitId;
+
   /// The SHA of the original commit to which the comment applies.
   final String originalCommitId;
+
   /// The comment ID to reply to.
   final SdkOptional<int> inReplyToId;
+
   /// A GitHub user.
   final NullableSimpleUser? user;
+
   /// The text of the comment.
   final String body;
+
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String createdAt;
+
   /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
   final String updatedAt;
+
   /// HTML URL for the pull request review comment.
   final String htmlUrl;
+
   /// URL for the pull request that the review comment belongs to.
   final String pullRequestUrl;
+
   /// How the author is associated with the repository.
   final AuthorAssociation authorAssociation;
+
   /// Required object value serialized in the `_links` wire field.
   final PullRequestReviewCommentLinks links;
+
   /// The first line of the range for a multi-line comment.
   final SdkOptional<int?> startLine;
+
   /// The first line of the range for a multi-line comment.
   final SdkOptional<int?> originalStartLine;
+
   /// The side of the first line of the range for a multi-line comment.
   final SdkOptional<PullRequestReviewCommentStartSide?> startSide;
+
   /// The line of the blob to which the comment applies. The last line of the range for a multi-line comment
   final SdkOptional<int> line;
+
   /// The line of the blob to which the comment applies. The last line of the range for a multi-line comment
   final SdkOptional<int> originalLine;
+
   /// The side of the diff to which the comment applies. The side of the last line of the range for a multi-line comment
   final SdkOptional<PullRequestReviewCommentSide> side;
+
   /// The level at which the comment is targeted, can be a diff line or a file.
   final SdkOptional<PullRequestReviewCommentSubjectType> subjectType;
+
   /// Optional object value serialized in the `reactions` wire field.
   final SdkOptional<ReactionRollup> reactions;
+
   /// Optional `string` value serialized in the `body_html` wire field.
   final SdkOptional<String> bodyHtml;
+
   /// Optional `string` value serialized in the `body_text` wire field.
   final SdkOptional<String> bodyText;
 
-  const PullRequestReviewComment({required this.url, required this.pullRequestReviewId, required this.id, required this.nodeId, required this.diffHunk, required this.path, this.position = const SdkOmitted(), this.originalPosition = const SdkOmitted(), required this.commitId, required this.originalCommitId, this.inReplyToId = const SdkOmitted(), required this.user, required this.body, required this.createdAt, required this.updatedAt, required this.htmlUrl, required this.pullRequestUrl, required this.authorAssociation, required this.links, this.startLine = const SdkOmitted(), this.originalStartLine = const SdkOmitted(), this.startSide = const SdkOmitted(), this.line = const SdkOmitted(), this.originalLine = const SdkOmitted(), this.side = const SdkOmitted(), this.subjectType = const SdkOmitted(), this.reactions = const SdkOmitted(), this.bodyHtml = const SdkOmitted(), this.bodyText = const SdkOmitted()});
+  const PullRequestReviewComment(
+      {required this.url,
+      required this.pullRequestReviewId,
+      required this.id,
+      required this.nodeId,
+      required this.diffHunk,
+      required this.path,
+      this.position = const SdkOmitted(),
+      this.originalPosition = const SdkOmitted(),
+      required this.commitId,
+      required this.originalCommitId,
+      this.inReplyToId = const SdkOmitted(),
+      required this.user,
+      required this.body,
+      required this.createdAt,
+      required this.updatedAt,
+      required this.htmlUrl,
+      required this.pullRequestUrl,
+      required this.authorAssociation,
+      required this.links,
+      this.startLine = const SdkOmitted(),
+      this.originalStartLine = const SdkOmitted(),
+      this.startSide = const SdkOmitted(),
+      this.line = const SdkOmitted(),
+      this.originalLine = const SdkOmitted(),
+      this.side = const SdkOmitted(),
+      this.subjectType = const SdkOmitted(),
+      this.reactions = const SdkOmitted(),
+      this.bodyHtml = const SdkOmitted(),
+      this.bodyText = const SdkOmitted()});
 
-  PullRequestReviewComment Function({String url, int? pullRequestReviewId, int id, String nodeId, String diffHunk, String path, SdkOptional<int> position, SdkOptional<int> originalPosition, String commitId, String originalCommitId, SdkOptional<int> inReplyToId, NullableSimpleUser? user, String body, String createdAt, String updatedAt, String htmlUrl, String pullRequestUrl, AuthorAssociation authorAssociation, PullRequestReviewCommentLinks links, SdkOptional<int?> startLine, SdkOptional<int?> originalStartLine, SdkOptional<PullRequestReviewCommentStartSide?> startSide, SdkOptional<int> line, SdkOptional<int> originalLine, SdkOptional<PullRequestReviewCommentSide> side, SdkOptional<PullRequestReviewCommentSubjectType> subjectType, SdkOptional<ReactionRollup> reactions, SdkOptional<String> bodyHtml, SdkOptional<String> bodyText}) get copyWith => _copyWith;
+  PullRequestReviewComment Function(
+      {String url,
+      int? pullRequestReviewId,
+      int id,
+      String nodeId,
+      String diffHunk,
+      String path,
+      SdkOptional<int> position,
+      SdkOptional<int> originalPosition,
+      String commitId,
+      String originalCommitId,
+      SdkOptional<int> inReplyToId,
+      NullableSimpleUser? user,
+      String body,
+      String createdAt,
+      String updatedAt,
+      String htmlUrl,
+      String pullRequestUrl,
+      AuthorAssociation authorAssociation,
+      PullRequestReviewCommentLinks links,
+      SdkOptional<int?> startLine,
+      SdkOptional<int?> originalStartLine,
+      SdkOptional<PullRequestReviewCommentStartSide?> startSide,
+      SdkOptional<int> line,
+      SdkOptional<int> originalLine,
+      SdkOptional<PullRequestReviewCommentSide> side,
+      SdkOptional<PullRequestReviewCommentSubjectType> subjectType,
+      SdkOptional<ReactionRollup> reactions,
+      SdkOptional<String> bodyHtml,
+      SdkOptional<String> bodyText}) get copyWith => _copyWith;
 
-  PullRequestReviewComment _copyWith({Object? url = sdkOmittedValue, Object? pullRequestReviewId = sdkOmittedValue, Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? diffHunk = sdkOmittedValue, Object? path = sdkOmittedValue, Object? position = sdkOmittedValue, Object? originalPosition = sdkOmittedValue, Object? commitId = sdkOmittedValue, Object? originalCommitId = sdkOmittedValue, Object? inReplyToId = sdkOmittedValue, Object? user = sdkOmittedValue, Object? body = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? pullRequestUrl = sdkOmittedValue, Object? authorAssociation = sdkOmittedValue, Object? links = sdkOmittedValue, Object? startLine = sdkOmittedValue, Object? originalStartLine = sdkOmittedValue, Object? startSide = sdkOmittedValue, Object? line = sdkOmittedValue, Object? originalLine = sdkOmittedValue, Object? side = sdkOmittedValue, Object? subjectType = sdkOmittedValue, Object? reactions = sdkOmittedValue, Object? bodyHtml = sdkOmittedValue, Object? bodyText = sdkOmittedValue}) => PullRequestReviewComment(
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    pullRequestReviewId: identical(pullRequestReviewId, sdkOmittedValue) ? this.pullRequestReviewId : pullRequestReviewId as int?,
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    diffHunk: identical(diffHunk, sdkOmittedValue) ? this.diffHunk : diffHunk as String,
-    path: identical(path, sdkOmittedValue) ? this.path : path as String,
-    position: identical(position, sdkOmittedValue) ? this.position : position as SdkOptional<int>,
-    originalPosition: identical(originalPosition, sdkOmittedValue) ? this.originalPosition : originalPosition as SdkOptional<int>,
-    commitId: identical(commitId, sdkOmittedValue) ? this.commitId : commitId as String,
-    originalCommitId: identical(originalCommitId, sdkOmittedValue) ? this.originalCommitId : originalCommitId as String,
-    inReplyToId: identical(inReplyToId, sdkOmittedValue) ? this.inReplyToId : inReplyToId as SdkOptional<int>,
-    user: identical(user, sdkOmittedValue) ? this.user : user as NullableSimpleUser?,
-    body: identical(body, sdkOmittedValue) ? this.body : body as String,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
-    pullRequestUrl: identical(pullRequestUrl, sdkOmittedValue) ? this.pullRequestUrl : pullRequestUrl as String,
-    authorAssociation: identical(authorAssociation, sdkOmittedValue) ? this.authorAssociation : authorAssociation as AuthorAssociation,
-    links: identical(links, sdkOmittedValue) ? this.links : links as PullRequestReviewCommentLinks,
-    startLine: identical(startLine, sdkOmittedValue) ? this.startLine : startLine as SdkOptional<int?>,
-    originalStartLine: identical(originalStartLine, sdkOmittedValue) ? this.originalStartLine : originalStartLine as SdkOptional<int?>,
-    startSide: identical(startSide, sdkOmittedValue) ? this.startSide : startSide as SdkOptional<PullRequestReviewCommentStartSide?>,
-    line: identical(line, sdkOmittedValue) ? this.line : line as SdkOptional<int>,
-    originalLine: identical(originalLine, sdkOmittedValue) ? this.originalLine : originalLine as SdkOptional<int>,
-    side: identical(side, sdkOmittedValue) ? this.side : side as SdkOptional<PullRequestReviewCommentSide>,
-    subjectType: identical(subjectType, sdkOmittedValue) ? this.subjectType : subjectType as SdkOptional<PullRequestReviewCommentSubjectType>,
-    reactions: identical(reactions, sdkOmittedValue) ? this.reactions : reactions as SdkOptional<ReactionRollup>,
-    bodyHtml: identical(bodyHtml, sdkOmittedValue) ? this.bodyHtml : bodyHtml as SdkOptional<String>,
-    bodyText: identical(bodyText, sdkOmittedValue) ? this.bodyText : bodyText as SdkOptional<String>,
-  );
+  PullRequestReviewComment _copyWith(
+          {Object? url = sdkOmittedValue,
+          Object? pullRequestReviewId = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? diffHunk = sdkOmittedValue,
+          Object? path = sdkOmittedValue,
+          Object? position = sdkOmittedValue,
+          Object? originalPosition = sdkOmittedValue,
+          Object? commitId = sdkOmittedValue,
+          Object? originalCommitId = sdkOmittedValue,
+          Object? inReplyToId = sdkOmittedValue,
+          Object? user = sdkOmittedValue,
+          Object? body = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? pullRequestUrl = sdkOmittedValue,
+          Object? authorAssociation = sdkOmittedValue,
+          Object? links = sdkOmittedValue,
+          Object? startLine = sdkOmittedValue,
+          Object? originalStartLine = sdkOmittedValue,
+          Object? startSide = sdkOmittedValue,
+          Object? line = sdkOmittedValue,
+          Object? originalLine = sdkOmittedValue,
+          Object? side = sdkOmittedValue,
+          Object? subjectType = sdkOmittedValue,
+          Object? reactions = sdkOmittedValue,
+          Object? bodyHtml = sdkOmittedValue,
+          Object? bodyText = sdkOmittedValue}) =>
+      PullRequestReviewComment(
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        pullRequestReviewId: identical(pullRequestReviewId, sdkOmittedValue)
+            ? this.pullRequestReviewId
+            : pullRequestReviewId as int?,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        diffHunk: identical(diffHunk, sdkOmittedValue)
+            ? this.diffHunk
+            : diffHunk as String,
+        path: identical(path, sdkOmittedValue) ? this.path : path as String,
+        position: identical(position, sdkOmittedValue)
+            ? this.position
+            : position as SdkOptional<int>,
+        originalPosition: identical(originalPosition, sdkOmittedValue)
+            ? this.originalPosition
+            : originalPosition as SdkOptional<int>,
+        commitId: identical(commitId, sdkOmittedValue)
+            ? this.commitId
+            : commitId as String,
+        originalCommitId: identical(originalCommitId, sdkOmittedValue)
+            ? this.originalCommitId
+            : originalCommitId as String,
+        inReplyToId: identical(inReplyToId, sdkOmittedValue)
+            ? this.inReplyToId
+            : inReplyToId as SdkOptional<int>,
+        user: identical(user, sdkOmittedValue)
+            ? this.user
+            : user as NullableSimpleUser?,
+        body: identical(body, sdkOmittedValue) ? this.body : body as String,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as String,
+        pullRequestUrl: identical(pullRequestUrl, sdkOmittedValue)
+            ? this.pullRequestUrl
+            : pullRequestUrl as String,
+        authorAssociation: identical(authorAssociation, sdkOmittedValue)
+            ? this.authorAssociation
+            : authorAssociation as AuthorAssociation,
+        links: identical(links, sdkOmittedValue)
+            ? this.links
+            : links as PullRequestReviewCommentLinks,
+        startLine: identical(startLine, sdkOmittedValue)
+            ? this.startLine
+            : startLine as SdkOptional<int?>,
+        originalStartLine: identical(originalStartLine, sdkOmittedValue)
+            ? this.originalStartLine
+            : originalStartLine as SdkOptional<int?>,
+        startSide: identical(startSide, sdkOmittedValue)
+            ? this.startSide
+            : startSide as SdkOptional<PullRequestReviewCommentStartSide?>,
+        line: identical(line, sdkOmittedValue)
+            ? this.line
+            : line as SdkOptional<int>,
+        originalLine: identical(originalLine, sdkOmittedValue)
+            ? this.originalLine
+            : originalLine as SdkOptional<int>,
+        side: identical(side, sdkOmittedValue)
+            ? this.side
+            : side as SdkOptional<PullRequestReviewCommentSide>,
+        subjectType: identical(subjectType, sdkOmittedValue)
+            ? this.subjectType
+            : subjectType as SdkOptional<PullRequestReviewCommentSubjectType>,
+        reactions: identical(reactions, sdkOmittedValue)
+            ? this.reactions
+            : reactions as SdkOptional<ReactionRollup>,
+        bodyHtml: identical(bodyHtml, sdkOmittedValue)
+            ? this.bodyHtml
+            : bodyHtml as SdkOptional<String>,
+        bodyText: identical(bodyText, sdkOmittedValue)
+            ? this.bodyText
+            : bodyText as SdkOptional<String>,
+      );
 
-  factory PullRequestReviewComment.fromJson(Map<String, dynamic> json) => PullRequestReviewComment(
-    url: (json['url'] as String?)!,
-    pullRequestReviewId: json.containsKey('pull_request_review_id') ? (json['pull_request_review_id'] as num?)?.toInt() : throw ArgumentError.value(null, 'pull_request_review_id', 'Required property is missing'),
-    id: ((json['id'] as num?)?.toInt())!,
-    nodeId: (json['node_id'] as String?)!,
-    diffHunk: (json['diff_hunk'] as String?)!,
-    path: (json['path'] as String?)!,
-    position: json['position'] != null ? SdkPresent(((json['position'] as num?)?.toInt())!) : const SdkOmitted(),
-    originalPosition: json['original_position'] != null ? SdkPresent(((json['original_position'] as num?)?.toInt())!) : const SdkOmitted(),
-    commitId: (json['commit_id'] as String?)!,
-    originalCommitId: (json['original_commit_id'] as String?)!,
-    inReplyToId: json['in_reply_to_id'] != null ? SdkPresent(((json['in_reply_to_id'] as num?)?.toInt())!) : const SdkOmitted(),
-    user: json.containsKey('user') ? json['user'] != null ? NullableSimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'user', 'Required property is missing'),
-    body: (json['body'] as String?)!,
-    createdAt: (json['created_at'] as String?)!,
-    updatedAt: (json['updated_at'] as String?)!,
-    htmlUrl: (json['html_url'] as String?)!,
-    pullRequestUrl: (json['pull_request_url'] as String?)!,
-    authorAssociation: (json['author_association'] != null ? AuthorAssociation.fromJson(json['author_association'] as String) : null)!,
-    links: (json['_links'] != null ? PullRequestReviewCommentLinks.fromJson(json['_links'] as Map<String, dynamic>) : null)!,
-    startLine: json.containsKey('start_line') ? SdkPresent((json['start_line'] as num?)?.toInt()) : const SdkOmitted(),
-    originalStartLine: json.containsKey('original_start_line') ? SdkPresent((json['original_start_line'] as num?)?.toInt()) : const SdkOmitted(),
-    startSide: json.containsKey('start_side') ? SdkPresent(json['start_side'] != null ? PullRequestReviewCommentStartSide.fromJson(json['start_side'] as String) : null) : const SdkOmitted(),
-    line: json['line'] != null ? SdkPresent(((json['line'] as num?)?.toInt())!) : const SdkOmitted(),
-    originalLine: json['original_line'] != null ? SdkPresent(((json['original_line'] as num?)?.toInt())!) : const SdkOmitted(),
-    side: json['side'] != null ? SdkPresent((json['side'] != null ? PullRequestReviewCommentSide.fromJson(json['side'] as String) : null)!) : const SdkOmitted(),
-    subjectType: json['subject_type'] != null ? SdkPresent((json['subject_type'] != null ? PullRequestReviewCommentSubjectType.fromJson(json['subject_type'] as String) : null)!) : const SdkOmitted(),
-    reactions: json['reactions'] != null ? SdkPresent((json['reactions'] != null ? ReactionRollup.fromJson(json['reactions'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    bodyHtml: json['body_html'] != null ? SdkPresent((json['body_html'] as String?)!) : const SdkOmitted(),
-    bodyText: json['body_text'] != null ? SdkPresent((json['body_text'] as String?)!) : const SdkOmitted(),
-  );
+  factory PullRequestReviewComment.fromJson(Map<String, dynamic> json) =>
+      PullRequestReviewComment(
+        url: (json['url'] as String?)!,
+        pullRequestReviewId: json.containsKey('pull_request_review_id')
+            ? (json['pull_request_review_id'] as num?)?.toInt()
+            : throw ArgumentError.value(
+                null, 'pull_request_review_id', 'Required property is missing'),
+        id: ((json['id'] as num?)?.toInt())!,
+        nodeId: (json['node_id'] as String?)!,
+        diffHunk: (json['diff_hunk'] as String?)!,
+        path: (json['path'] as String?)!,
+        position: json['position'] != null
+            ? SdkPresent(((json['position'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        originalPosition: json['original_position'] != null
+            ? SdkPresent(((json['original_position'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        commitId: (json['commit_id'] as String?)!,
+        originalCommitId: (json['original_commit_id'] as String?)!,
+        inReplyToId: json['in_reply_to_id'] != null
+            ? SdkPresent(((json['in_reply_to_id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        user: json.containsKey('user')
+            ? json['user'] != null
+                ? NullableSimpleUser.fromJson(
+                    json['user'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'user', 'Required property is missing'),
+        body: (json['body'] as String?)!,
+        createdAt: (json['created_at'] as String?)!,
+        updatedAt: (json['updated_at'] as String?)!,
+        htmlUrl: (json['html_url'] as String?)!,
+        pullRequestUrl: (json['pull_request_url'] as String?)!,
+        authorAssociation: (json['author_association'] != null
+            ? AuthorAssociation.fromJson(json['author_association'] as String)
+            : null)!,
+        links: (json['_links'] != null
+            ? PullRequestReviewCommentLinks.fromJson(
+                json['_links'] as Map<String, dynamic>)
+            : null)!,
+        startLine: json.containsKey('start_line')
+            ? SdkPresent((json['start_line'] as num?)?.toInt())
+            : const SdkOmitted(),
+        originalStartLine: json.containsKey('original_start_line')
+            ? SdkPresent((json['original_start_line'] as num?)?.toInt())
+            : const SdkOmitted(),
+        startSide: json.containsKey('start_side')
+            ? SdkPresent(json['start_side'] != null
+                ? PullRequestReviewCommentStartSide.fromJson(
+                    json['start_side'] as String)
+                : null)
+            : const SdkOmitted(),
+        line: json['line'] != null
+            ? SdkPresent(((json['line'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        originalLine: json['original_line'] != null
+            ? SdkPresent(((json['original_line'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        side: json['side'] != null
+            ? SdkPresent((json['side'] != null
+                ? PullRequestReviewCommentSide.fromJson(json['side'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        subjectType: json['subject_type'] != null
+            ? SdkPresent((json['subject_type'] != null
+                ? PullRequestReviewCommentSubjectType.fromJson(
+                    json['subject_type'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        reactions: json['reactions'] != null
+            ? SdkPresent((json['reactions'] != null
+                ? ReactionRollup.fromJson(
+                    json['reactions'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        bodyHtml: json['body_html'] != null
+            ? SdkPresent((json['body_html'] as String?)!)
+            : const SdkOmitted(),
+        bodyText: json['body_text'] != null
+            ? SdkPresent((json['body_text'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'url': url,
-    'pull_request_review_id': pullRequestReviewId,
-    'id': id,
-    'node_id': nodeId,
-    'diff_hunk': diffHunk,
-    'path': path,
-    ...switch (position) {
-      SdkPresent<int>(value: final value) => {'position': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (originalPosition) {
-      SdkPresent<int>(value: final value) => {'original_position': value,},
-      _ => const <String, dynamic>{},
-    },
-    'commit_id': commitId,
-    'original_commit_id': originalCommitId,
-    ...switch (inReplyToId) {
-      SdkPresent<int>(value: final value) => {'in_reply_to_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    'user': user?.toJson(),
-    'body': body,
-    'created_at': createdAt,
-    'updated_at': updatedAt,
-    'html_url': htmlUrl,
-    'pull_request_url': pullRequestUrl,
-    'author_association': authorAssociation.toJson(),
-    '_links': links.toJson(),
-    ...switch (startLine) {
-      SdkPresent<int?>(value: final value) => {'start_line': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (originalStartLine) {
-      SdkPresent<int?>(value: final value) => {'original_start_line': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (startSide) {
-      SdkPresent<PullRequestReviewCommentStartSide?>(value: final value) => {'start_side': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (line) {
-      SdkPresent<int>(value: final value) => {'line': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (originalLine) {
-      SdkPresent<int>(value: final value) => {'original_line': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (side) {
-      SdkPresent<PullRequestReviewCommentSide>(value: final value) => {'side': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (subjectType) {
-      SdkPresent<PullRequestReviewCommentSubjectType>(value: final value) => {'subject_type': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (reactions) {
-      SdkPresent<ReactionRollup>(value: final value) => {'reactions': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (bodyHtml) {
-      SdkPresent<String>(value: final value) => {'body_html': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (bodyText) {
-      SdkPresent<String>(value: final value) => {'body_text': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'url': url,
+        'pull_request_review_id': pullRequestReviewId,
+        'id': id,
+        'node_id': nodeId,
+        'diff_hunk': diffHunk,
+        'path': path,
+        ...switch (position) {
+          SdkPresent<int>(value: final value) => {
+              'position': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (originalPosition) {
+          SdkPresent<int>(value: final value) => {
+              'original_position': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'commit_id': commitId,
+        'original_commit_id': originalCommitId,
+        ...switch (inReplyToId) {
+          SdkPresent<int>(value: final value) => {
+              'in_reply_to_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'user': user?.toJson(),
+        'body': body,
+        'created_at': createdAt,
+        'updated_at': updatedAt,
+        'html_url': htmlUrl,
+        'pull_request_url': pullRequestUrl,
+        'author_association': authorAssociation.toJson(),
+        '_links': links.toJson(),
+        ...switch (startLine) {
+          SdkPresent<int?>(value: final value) => {
+              'start_line': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (originalStartLine) {
+          SdkPresent<int?>(value: final value) => {
+              'original_start_line': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (startSide) {
+          SdkPresent<PullRequestReviewCommentStartSide?>(value: final value) =>
+            {
+              'start_side': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (line) {
+          SdkPresent<int>(value: final value) => {
+              'line': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (originalLine) {
+          SdkPresent<int>(value: final value) => {
+              'original_line': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (side) {
+          SdkPresent<PullRequestReviewCommentSide>(value: final value) => {
+              'side': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (subjectType) {
+          SdkPresent<PullRequestReviewCommentSubjectType>(value: final value) =>
+            {
+              'subject_type': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (reactions) {
+          SdkPresent<ReactionRollup>(value: final value) => {
+              'reactions': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (bodyHtml) {
+          SdkPresent<String>(value: final value) => {
+              'body_html': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (bodyText) {
+          SdkPresent<String>(value: final value) => {
+              'body_text': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

@@ -12,280 +12,561 @@ class BaseGistFilesValue {
   final SdkOptional<String> language;
   final SdkOptional<String> rawUrl;
   final SdkOptional<int> size;
+
   /// The encoding used for `content`. Currently, `"utf-8"` and `"base64"` are supported.
   final SdkOptional<String> encoding;
 
-  const BaseGistFilesValue({this.filename = const SdkOmitted(), this.type_ = const SdkOmitted(), this.language = const SdkOmitted(), this.rawUrl = const SdkOmitted(), this.size = const SdkOmitted(), this.encoding = const SdkOmitted()});
+  const BaseGistFilesValue(
+      {this.filename = const SdkOmitted(),
+      this.type_ = const SdkOmitted(),
+      this.language = const SdkOmitted(),
+      this.rawUrl = const SdkOmitted(),
+      this.size = const SdkOmitted(),
+      this.encoding = const SdkOmitted()});
 
-  BaseGistFilesValue Function({SdkOptional<String> filename, SdkOptional<String> type_, SdkOptional<String> language, SdkOptional<String> rawUrl, SdkOptional<int> size, SdkOptional<String> encoding}) get copyWith => _copyWith;
+  BaseGistFilesValue Function(
+      {SdkOptional<String> filename,
+      SdkOptional<String> type_,
+      SdkOptional<String> language,
+      SdkOptional<String> rawUrl,
+      SdkOptional<int> size,
+      SdkOptional<String> encoding}) get copyWith => _copyWith;
 
-  BaseGistFilesValue _copyWith({Object? filename = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? language = sdkOmittedValue, Object? rawUrl = sdkOmittedValue, Object? size = sdkOmittedValue, Object? encoding = sdkOmittedValue}) => BaseGistFilesValue(
-    filename: identical(filename, sdkOmittedValue) ? this.filename : filename as SdkOptional<String>,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as SdkOptional<String>,
-    language: identical(language, sdkOmittedValue) ? this.language : language as SdkOptional<String>,
-    rawUrl: identical(rawUrl, sdkOmittedValue) ? this.rawUrl : rawUrl as SdkOptional<String>,
-    size: identical(size, sdkOmittedValue) ? this.size : size as SdkOptional<int>,
-    encoding: identical(encoding, sdkOmittedValue) ? this.encoding : encoding as SdkOptional<String>,
-  );
+  BaseGistFilesValue _copyWith(
+          {Object? filename = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? language = sdkOmittedValue,
+          Object? rawUrl = sdkOmittedValue,
+          Object? size = sdkOmittedValue,
+          Object? encoding = sdkOmittedValue}) =>
+      BaseGistFilesValue(
+        filename: identical(filename, sdkOmittedValue)
+            ? this.filename
+            : filename as SdkOptional<String>,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_ as SdkOptional<String>,
+        language: identical(language, sdkOmittedValue)
+            ? this.language
+            : language as SdkOptional<String>,
+        rawUrl: identical(rawUrl, sdkOmittedValue)
+            ? this.rawUrl
+            : rawUrl as SdkOptional<String>,
+        size: identical(size, sdkOmittedValue)
+            ? this.size
+            : size as SdkOptional<int>,
+        encoding: identical(encoding, sdkOmittedValue)
+            ? this.encoding
+            : encoding as SdkOptional<String>,
+      );
 
-  factory BaseGistFilesValue.fromJson(Map<String, dynamic> json) => BaseGistFilesValue(
-    filename: json['filename'] != null ? SdkPresent((json['filename'] as String?)!) : const SdkOmitted(),
-    type_: json['type'] != null ? SdkPresent((json['type'] as String?)!) : const SdkOmitted(),
-    language: json['language'] != null ? SdkPresent((json['language'] as String?)!) : const SdkOmitted(),
-    rawUrl: json['raw_url'] != null ? SdkPresent((json['raw_url'] as String?)!) : const SdkOmitted(),
-    size: json['size'] != null ? SdkPresent(((json['size'] as num?)?.toInt())!) : const SdkOmitted(),
-    encoding: json['encoding'] != null ? SdkPresent((json['encoding'] as String?)!) : const SdkOmitted(),
-  );
+  factory BaseGistFilesValue.fromJson(Map<String, dynamic> json) =>
+      BaseGistFilesValue(
+        filename: json['filename'] != null
+            ? SdkPresent((json['filename'] as String?)!)
+            : const SdkOmitted(),
+        type_: json['type'] != null
+            ? SdkPresent((json['type'] as String?)!)
+            : const SdkOmitted(),
+        language: json['language'] != null
+            ? SdkPresent((json['language'] as String?)!)
+            : const SdkOmitted(),
+        rawUrl: json['raw_url'] != null
+            ? SdkPresent((json['raw_url'] as String?)!)
+            : const SdkOmitted(),
+        size: json['size'] != null
+            ? SdkPresent(((json['size'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        encoding: json['encoding'] != null
+            ? SdkPresent((json['encoding'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (filename) {
-      SdkPresent<String>(value: final value) => {'filename': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (type_) {
-      SdkPresent<String>(value: final value) => {'type': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (language) {
-      SdkPresent<String>(value: final value) => {'language': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (rawUrl) {
-      SdkPresent<String>(value: final value) => {'raw_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (size) {
-      SdkPresent<int>(value: final value) => {'size': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (encoding) {
-      SdkPresent<String>(value: final value) => {'encoding': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (filename) {
+          SdkPresent<String>(value: final value) => {
+              'filename': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (type_) {
+          SdkPresent<String>(value: final value) => {
+              'type': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (language) {
+          SdkPresent<String>(value: final value) => {
+              'language': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (rawUrl) {
+          SdkPresent<String>(value: final value) => {
+              'raw_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (size) {
+          SdkPresent<int>(value: final value) => {
+              'size': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (encoding) {
+          SdkPresent<String>(value: final value) => {
+              'encoding': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Base Gist
 class BaseGist {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
+
   /// Required `uri`-formatted value serialized in the `forks_url` wire field.
   final String forksUrl;
+
   /// Required `uri`-formatted value serialized in the `commits_url` wire field.
   final String commitsUrl;
+
   /// Required `string` value serialized in the `id` wire field.
   final String id;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// Required `uri`-formatted value serialized in the `git_pull_url` wire field.
   final String gitPullUrl;
+
   /// Required `uri`-formatted value serialized in the `git_push_url` wire field.
   final String gitPushUrl;
+
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String htmlUrl;
+
   /// Required object value serialized in the `files` wire field.
   final Map<String, BaseGistFilesValue> files;
+
   /// Required `boolean` value serialized in the `public` wire field.
   final bool public;
+
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String createdAt;
+
   /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
   final String updatedAt;
+
   /// Required `string` value serialized in the `description` wire field.
   final String? description;
+
   /// Required `integer` value serialized in the `comments` wire field.
   final int comments;
+
   /// Optional `boolean` value serialized in the `comments_enabled` wire field.
   final SdkOptional<bool> commentsEnabled;
+
   /// A GitHub user.
   final NullableSimpleUser? user;
+
   /// Required `uri`-formatted value serialized in the `comments_url` wire field.
   final String commentsUrl;
+
   /// A GitHub user.
   final SdkOptional<SimpleUser> owner;
+
   /// Optional `boolean` value serialized in the `truncated` wire field.
   final SdkOptional<bool> truncated;
+
   /// Optional array value serialized in the `forks` wire field.
   final SdkOptional<List<dynamic>> forks;
+
   /// Optional array value serialized in the `history` wire field.
   final SdkOptional<List<dynamic>> history;
 
-  const BaseGist({required this.url, required this.forksUrl, required this.commitsUrl, required this.id, required this.nodeId, required this.gitPullUrl, required this.gitPushUrl, required this.htmlUrl, required this.files, required this.public, required this.createdAt, required this.updatedAt, required this.description, required this.comments, this.commentsEnabled = const SdkOmitted(), required this.user, required this.commentsUrl, this.owner = const SdkOmitted(), this.truncated = const SdkOmitted(), this.forks = const SdkOmitted(), this.history = const SdkOmitted()});
+  const BaseGist(
+      {required this.url,
+      required this.forksUrl,
+      required this.commitsUrl,
+      required this.id,
+      required this.nodeId,
+      required this.gitPullUrl,
+      required this.gitPushUrl,
+      required this.htmlUrl,
+      required this.files,
+      required this.public,
+      required this.createdAt,
+      required this.updatedAt,
+      required this.description,
+      required this.comments,
+      this.commentsEnabled = const SdkOmitted(),
+      required this.user,
+      required this.commentsUrl,
+      this.owner = const SdkOmitted(),
+      this.truncated = const SdkOmitted(),
+      this.forks = const SdkOmitted(),
+      this.history = const SdkOmitted()});
 
-  BaseGist Function({String url, String forksUrl, String commitsUrl, String id, String nodeId, String gitPullUrl, String gitPushUrl, String htmlUrl, Map<String, BaseGistFilesValue> files, bool public, String createdAt, String updatedAt, String? description, int comments, SdkOptional<bool> commentsEnabled, NullableSimpleUser? user, String commentsUrl, SdkOptional<SimpleUser> owner, SdkOptional<bool> truncated, SdkOptional<List<dynamic>> forks, SdkOptional<List<dynamic>> history}) get copyWith => _copyWith;
+  BaseGist Function(
+      {String url,
+      String forksUrl,
+      String commitsUrl,
+      String id,
+      String nodeId,
+      String gitPullUrl,
+      String gitPushUrl,
+      String htmlUrl,
+      Map<String, BaseGistFilesValue> files,
+      bool public,
+      String createdAt,
+      String updatedAt,
+      String? description,
+      int comments,
+      SdkOptional<bool> commentsEnabled,
+      NullableSimpleUser? user,
+      String commentsUrl,
+      SdkOptional<SimpleUser> owner,
+      SdkOptional<bool> truncated,
+      SdkOptional<List<dynamic>> forks,
+      SdkOptional<List<dynamic>> history}) get copyWith => _copyWith;
 
-  BaseGist _copyWith({Object? url = sdkOmittedValue, Object? forksUrl = sdkOmittedValue, Object? commitsUrl = sdkOmittedValue, Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? gitPullUrl = sdkOmittedValue, Object? gitPushUrl = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? files = sdkOmittedValue, Object? public = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? description = sdkOmittedValue, Object? comments = sdkOmittedValue, Object? commentsEnabled = sdkOmittedValue, Object? user = sdkOmittedValue, Object? commentsUrl = sdkOmittedValue, Object? owner = sdkOmittedValue, Object? truncated = sdkOmittedValue, Object? forks = sdkOmittedValue, Object? history = sdkOmittedValue}) => BaseGist(
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    forksUrl: identical(forksUrl, sdkOmittedValue) ? this.forksUrl : forksUrl as String,
-    commitsUrl: identical(commitsUrl, sdkOmittedValue) ? this.commitsUrl : commitsUrl as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    gitPullUrl: identical(gitPullUrl, sdkOmittedValue) ? this.gitPullUrl : gitPullUrl as String,
-    gitPushUrl: identical(gitPushUrl, sdkOmittedValue) ? this.gitPushUrl : gitPushUrl as String,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
-    files: identical(files, sdkOmittedValue) ? this.files : files as Map<String, BaseGistFilesValue>,
-    public: identical(public, sdkOmittedValue) ? this.public : public as bool,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
-    description: identical(description, sdkOmittedValue) ? this.description : description as String?,
-    comments: identical(comments, sdkOmittedValue) ? this.comments : comments as int,
-    commentsEnabled: identical(commentsEnabled, sdkOmittedValue) ? this.commentsEnabled : commentsEnabled as SdkOptional<bool>,
-    user: identical(user, sdkOmittedValue) ? this.user : user as NullableSimpleUser?,
-    commentsUrl: identical(commentsUrl, sdkOmittedValue) ? this.commentsUrl : commentsUrl as String,
-    owner: identical(owner, sdkOmittedValue) ? this.owner : owner as SdkOptional<SimpleUser>,
-    truncated: identical(truncated, sdkOmittedValue) ? this.truncated : truncated as SdkOptional<bool>,
-    forks: identical(forks, sdkOmittedValue) ? this.forks : forks as SdkOptional<List<dynamic>>,
-    history: identical(history, sdkOmittedValue) ? this.history : history as SdkOptional<List<dynamic>>,
-  );
+  BaseGist _copyWith(
+          {Object? url = sdkOmittedValue,
+          Object? forksUrl = sdkOmittedValue,
+          Object? commitsUrl = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? gitPullUrl = sdkOmittedValue,
+          Object? gitPushUrl = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? files = sdkOmittedValue,
+          Object? public = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? comments = sdkOmittedValue,
+          Object? commentsEnabled = sdkOmittedValue,
+          Object? user = sdkOmittedValue,
+          Object? commentsUrl = sdkOmittedValue,
+          Object? owner = sdkOmittedValue,
+          Object? truncated = sdkOmittedValue,
+          Object? forks = sdkOmittedValue,
+          Object? history = sdkOmittedValue}) =>
+      BaseGist(
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        forksUrl: identical(forksUrl, sdkOmittedValue)
+            ? this.forksUrl
+            : forksUrl as String,
+        commitsUrl: identical(commitsUrl, sdkOmittedValue)
+            ? this.commitsUrl
+            : commitsUrl as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        gitPullUrl: identical(gitPullUrl, sdkOmittedValue)
+            ? this.gitPullUrl
+            : gitPullUrl as String,
+        gitPushUrl: identical(gitPushUrl, sdkOmittedValue)
+            ? this.gitPushUrl
+            : gitPushUrl as String,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as String,
+        files: identical(files, sdkOmittedValue)
+            ? this.files
+            : files as Map<String, BaseGistFilesValue>,
+        public:
+            identical(public, sdkOmittedValue) ? this.public : public as bool,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as String?,
+        comments: identical(comments, sdkOmittedValue)
+            ? this.comments
+            : comments as int,
+        commentsEnabled: identical(commentsEnabled, sdkOmittedValue)
+            ? this.commentsEnabled
+            : commentsEnabled as SdkOptional<bool>,
+        user: identical(user, sdkOmittedValue)
+            ? this.user
+            : user as NullableSimpleUser?,
+        commentsUrl: identical(commentsUrl, sdkOmittedValue)
+            ? this.commentsUrl
+            : commentsUrl as String,
+        owner: identical(owner, sdkOmittedValue)
+            ? this.owner
+            : owner as SdkOptional<SimpleUser>,
+        truncated: identical(truncated, sdkOmittedValue)
+            ? this.truncated
+            : truncated as SdkOptional<bool>,
+        forks: identical(forks, sdkOmittedValue)
+            ? this.forks
+            : forks as SdkOptional<List<dynamic>>,
+        history: identical(history, sdkOmittedValue)
+            ? this.history
+            : history as SdkOptional<List<dynamic>>,
+      );
 
   factory BaseGist.fromJson(Map<String, dynamic> json) => BaseGist(
-    url: (json['url'] as String?)!,
-    forksUrl: (json['forks_url'] as String?)!,
-    commitsUrl: (json['commits_url'] as String?)!,
-    id: (json['id'] as String?)!,
-    nodeId: (json['node_id'] as String?)!,
-    gitPullUrl: (json['git_pull_url'] as String?)!,
-    gitPushUrl: (json['git_push_url'] as String?)!,
-    htmlUrl: (json['html_url'] as String?)!,
-    files: (json['files'] == null ? null : Map<String, dynamic>.from(json['files'] as Map).map((key, value) => MapEntry(key, BaseGistFilesValue.fromJson(value as Map<String, dynamic>))))!,
-    public: (json['public'] as bool?)!,
-    createdAt: (json['created_at'] as String?)!,
-    updatedAt: (json['updated_at'] as String?)!,
-    description: json.containsKey('description') ? json['description'] as String? : throw ArgumentError.value(null, 'description', 'Required property is missing'),
-    comments: ((json['comments'] as num?)?.toInt())!,
-    commentsEnabled: json['comments_enabled'] != null ? SdkPresent((json['comments_enabled'] as bool?)!) : const SdkOmitted(),
-    user: json.containsKey('user') ? json['user'] != null ? NullableSimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'user', 'Required property is missing'),
-    commentsUrl: (json['comments_url'] as String?)!,
-    owner: json['owner'] != null ? SdkPresent((json['owner'] != null ? SimpleUser.fromJson(json['owner'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    truncated: json['truncated'] != null ? SdkPresent((json['truncated'] as bool?)!) : const SdkOmitted(),
-    forks: json['forks'] != null ? SdkPresent(((json['forks'] as List?)?.map((e) => e).toList())!) : const SdkOmitted(),
-    history: json['history'] != null ? SdkPresent(((json['history'] as List?)?.map((e) => e).toList())!) : const SdkOmitted(),
-  );
+        url: (json['url'] as String?)!,
+        forksUrl: (json['forks_url'] as String?)!,
+        commitsUrl: (json['commits_url'] as String?)!,
+        id: (json['id'] as String?)!,
+        nodeId: (json['node_id'] as String?)!,
+        gitPullUrl: (json['git_pull_url'] as String?)!,
+        gitPushUrl: (json['git_push_url'] as String?)!,
+        htmlUrl: (json['html_url'] as String?)!,
+        files: (json['files'] == null
+            ? null
+            : Map<String, dynamic>.from(json['files'] as Map).map(
+                (key, value) => MapEntry(
+                    key,
+                    BaseGistFilesValue.fromJson(
+                        value as Map<String, dynamic>))))!,
+        public: (json['public'] as bool?)!,
+        createdAt: (json['created_at'] as String?)!,
+        updatedAt: (json['updated_at'] as String?)!,
+        description: json.containsKey('description')
+            ? json['description'] as String?
+            : throw ArgumentError.value(
+                null, 'description', 'Required property is missing'),
+        comments: ((json['comments'] as num?)?.toInt())!,
+        commentsEnabled: json['comments_enabled'] != null
+            ? SdkPresent((json['comments_enabled'] as bool?)!)
+            : const SdkOmitted(),
+        user: json.containsKey('user')
+            ? json['user'] != null
+                ? NullableSimpleUser.fromJson(
+                    json['user'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'user', 'Required property is missing'),
+        commentsUrl: (json['comments_url'] as String?)!,
+        owner: json['owner'] != null
+            ? SdkPresent((json['owner'] != null
+                ? SimpleUser.fromJson(json['owner'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        truncated: json['truncated'] != null
+            ? SdkPresent((json['truncated'] as bool?)!)
+            : const SdkOmitted(),
+        forks: json['forks'] != null
+            ? SdkPresent(((json['forks'] as List?)?.map((e) => e).toList())!)
+            : const SdkOmitted(),
+        history: json['history'] != null
+            ? SdkPresent(((json['history'] as List?)?.map((e) => e).toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'url': url,
-    'forks_url': forksUrl,
-    'commits_url': commitsUrl,
-    'id': id,
-    'node_id': nodeId,
-    'git_pull_url': gitPullUrl,
-    'git_push_url': gitPushUrl,
-    'html_url': htmlUrl,
-    'files': files.map((key, value) => MapEntry(key, value.toJson())),
-    'public': public,
-    'created_at': createdAt,
-    'updated_at': updatedAt,
-    'description': description,
-    'comments': comments,
-    ...switch (commentsEnabled) {
-      SdkPresent<bool>(value: final value) => {'comments_enabled': value,},
-      _ => const <String, dynamic>{},
-    },
-    'user': user?.toJson(),
-    'comments_url': commentsUrl,
-    ...switch (owner) {
-      SdkPresent<SimpleUser>(value: final value) => {'owner': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (truncated) {
-      SdkPresent<bool>(value: final value) => {'truncated': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (forks) {
-      SdkPresent<List<dynamic>>(value: final value) => {'forks': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (history) {
-      SdkPresent<List<dynamic>>(value: final value) => {'history': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'url': url,
+        'forks_url': forksUrl,
+        'commits_url': commitsUrl,
+        'id': id,
+        'node_id': nodeId,
+        'git_pull_url': gitPullUrl,
+        'git_push_url': gitPushUrl,
+        'html_url': htmlUrl,
+        'files': files.map((key, value) => MapEntry(key, value.toJson())),
+        'public': public,
+        'created_at': createdAt,
+        'updated_at': updatedAt,
+        'description': description,
+        'comments': comments,
+        ...switch (commentsEnabled) {
+          SdkPresent<bool>(value: final value) => {
+              'comments_enabled': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'user': user?.toJson(),
+        'comments_url': commentsUrl,
+        ...switch (owner) {
+          SdkPresent<SimpleUser>(value: final value) => {
+              'owner': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (truncated) {
+          SdkPresent<bool>(value: final value) => {
+              'truncated': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (forks) {
+          SdkPresent<List<dynamic>>(value: final value) => {
+              'forks': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (history) {
+          SdkPresent<List<dynamic>>(value: final value) => {
+              'history': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Optional object value serialized in the `block` wire field.
 class ForbiddenGistBlock {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `string` value serialized in the `reason` wire field.
   final SdkOptional<String> reason;
+
   /// Optional `string` value serialized in the `created_at` wire field.
   final SdkOptional<String> createdAt;
+
   /// Optional `string` value serialized in the `html_url` wire field.
   final SdkOptional<String?> htmlUrl;
 
-  const ForbiddenGistBlock({this.reason = const SdkOmitted(), this.createdAt = const SdkOmitted(), this.htmlUrl = const SdkOmitted()});
+  const ForbiddenGistBlock(
+      {this.reason = const SdkOmitted(),
+      this.createdAt = const SdkOmitted(),
+      this.htmlUrl = const SdkOmitted()});
 
-  ForbiddenGistBlock Function({SdkOptional<String> reason, SdkOptional<String> createdAt, SdkOptional<String?> htmlUrl}) get copyWith => _copyWith;
+  ForbiddenGistBlock Function(
+      {SdkOptional<String> reason,
+      SdkOptional<String> createdAt,
+      SdkOptional<String?> htmlUrl}) get copyWith => _copyWith;
 
-  ForbiddenGistBlock _copyWith({Object? reason = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue}) => ForbiddenGistBlock(
-    reason: identical(reason, sdkOmittedValue) ? this.reason : reason as SdkOptional<String>,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as SdkOptional<String>,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as SdkOptional<String?>,
-  );
+  ForbiddenGistBlock _copyWith(
+          {Object? reason = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue}) =>
+      ForbiddenGistBlock(
+        reason: identical(reason, sdkOmittedValue)
+            ? this.reason
+            : reason as SdkOptional<String>,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as SdkOptional<String>,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as SdkOptional<String?>,
+      );
 
-  factory ForbiddenGistBlock.fromJson(Map<String, dynamic> json) => ForbiddenGistBlock(
-    reason: json['reason'] != null ? SdkPresent((json['reason'] as String?)!) : const SdkOmitted(),
-    createdAt: json['created_at'] != null ? SdkPresent((json['created_at'] as String?)!) : const SdkOmitted(),
-    htmlUrl: json.containsKey('html_url') ? SdkPresent(json['html_url'] as String?) : const SdkOmitted(),
-  );
+  factory ForbiddenGistBlock.fromJson(Map<String, dynamic> json) =>
+      ForbiddenGistBlock(
+        reason: json['reason'] != null
+            ? SdkPresent((json['reason'] as String?)!)
+            : const SdkOmitted(),
+        createdAt: json['created_at'] != null
+            ? SdkPresent((json['created_at'] as String?)!)
+            : const SdkOmitted(),
+        htmlUrl: json.containsKey('html_url')
+            ? SdkPresent(json['html_url'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (reason) {
-      SdkPresent<String>(value: final value) => {'reason': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (createdAt) {
-      SdkPresent<String>(value: final value) => {'created_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (htmlUrl) {
-      SdkPresent<String?>(value: final value) => {'html_url': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (reason) {
+          SdkPresent<String>(value: final value) => {
+              'reason': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (createdAt) {
+          SdkPresent<String>(value: final value) => {
+              'created_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (htmlUrl) {
+          SdkPresent<String?>(value: final value) => {
+              'html_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Typed representation of the `ForbiddenGist` API schema.
 class ForbiddenGist {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional object value serialized in the `block` wire field.
   final SdkOptional<ForbiddenGistBlock> block;
+
   /// Optional `string` value serialized in the `message` wire field.
   final SdkOptional<String> message;
+
   /// Optional `string` value serialized in the `documentation_url` wire field.
   final SdkOptional<String> documentationUrl;
 
-  const ForbiddenGist({this.block = const SdkOmitted(), this.message = const SdkOmitted(), this.documentationUrl = const SdkOmitted()});
+  const ForbiddenGist(
+      {this.block = const SdkOmitted(),
+      this.message = const SdkOmitted(),
+      this.documentationUrl = const SdkOmitted()});
 
-  ForbiddenGist Function({SdkOptional<ForbiddenGistBlock> block, SdkOptional<String> message, SdkOptional<String> documentationUrl}) get copyWith => _copyWith;
+  ForbiddenGist Function(
+      {SdkOptional<ForbiddenGistBlock> block,
+      SdkOptional<String> message,
+      SdkOptional<String> documentationUrl}) get copyWith => _copyWith;
 
-  ForbiddenGist _copyWith({Object? block = sdkOmittedValue, Object? message = sdkOmittedValue, Object? documentationUrl = sdkOmittedValue}) => ForbiddenGist(
-    block: identical(block, sdkOmittedValue) ? this.block : block as SdkOptional<ForbiddenGistBlock>,
-    message: identical(message, sdkOmittedValue) ? this.message : message as SdkOptional<String>,
-    documentationUrl: identical(documentationUrl, sdkOmittedValue) ? this.documentationUrl : documentationUrl as SdkOptional<String>,
-  );
+  ForbiddenGist _copyWith(
+          {Object? block = sdkOmittedValue,
+          Object? message = sdkOmittedValue,
+          Object? documentationUrl = sdkOmittedValue}) =>
+      ForbiddenGist(
+        block: identical(block, sdkOmittedValue)
+            ? this.block
+            : block as SdkOptional<ForbiddenGistBlock>,
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as SdkOptional<String>,
+        documentationUrl: identical(documentationUrl, sdkOmittedValue)
+            ? this.documentationUrl
+            : documentationUrl as SdkOptional<String>,
+      );
 
   factory ForbiddenGist.fromJson(Map<String, dynamic> json) => ForbiddenGist(
-    block: json['block'] != null ? SdkPresent((json['block'] != null ? ForbiddenGistBlock.fromJson(json['block'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    message: json['message'] != null ? SdkPresent((json['message'] as String?)!) : const SdkOmitted(),
-    documentationUrl: json['documentation_url'] != null ? SdkPresent((json['documentation_url'] as String?)!) : const SdkOmitted(),
-  );
+        block: json['block'] != null
+            ? SdkPresent((json['block'] != null
+                ? ForbiddenGistBlock.fromJson(
+                    json['block'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        message: json['message'] != null
+            ? SdkPresent((json['message'] as String?)!)
+            : const SdkOmitted(),
+        documentationUrl: json['documentation_url'] != null
+            ? SdkPresent((json['documentation_url'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (block) {
-      SdkPresent<ForbiddenGistBlock>(value: final value) => {'block': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (message) {
-      SdkPresent<String>(value: final value) => {'message': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (documentationUrl) {
-      SdkPresent<String>(value: final value) => {'documentation_url': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (block) {
+          SdkPresent<ForbiddenGistBlock>(value: final value) => {
+              'block': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (message) {
+          SdkPresent<String>(value: final value) => {
+              'message': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (documentationUrl) {
+          SdkPresent<String>(value: final value) => {
+              'documentation_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

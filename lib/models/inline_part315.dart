@@ -8,282 +8,419 @@ part of 'inline.dart';
 class AgentTasksGetTaskByRepoAndIdResponseVariant0Creator {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The unique identifier of the user
   final SdkOptional<int> id;
 
-  const AgentTasksGetTaskByRepoAndIdResponseVariant0Creator({this.id = const SdkOmitted()});
+  const AgentTasksGetTaskByRepoAndIdResponseVariant0Creator(
+      {this.id = const SdkOmitted()});
 
-  AgentTasksGetTaskByRepoAndIdResponseVariant0Creator Function({SdkOptional<int> id}) get copyWith => _copyWith;
+  AgentTasksGetTaskByRepoAndIdResponseVariant0Creator Function(
+      {SdkOptional<int> id}) get copyWith => _copyWith;
 
-  AgentTasksGetTaskByRepoAndIdResponseVariant0Creator _copyWith({Object? id = sdkOmittedValue}) => AgentTasksGetTaskByRepoAndIdResponseVariant0Creator(
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-  );
+  AgentTasksGetTaskByRepoAndIdResponseVariant0Creator _copyWith(
+          {Object? id = sdkOmittedValue}) =>
+      AgentTasksGetTaskByRepoAndIdResponseVariant0Creator(
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+      );
 
-  factory AgentTasksGetTaskByRepoAndIdResponseVariant0Creator.fromJson(Map<String, dynamic> json) => AgentTasksGetTaskByRepoAndIdResponseVariant0Creator(
-    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
-  );
+  factory AgentTasksGetTaskByRepoAndIdResponseVariant0Creator.fromJson(
+          Map<String, dynamic> json) =>
+      AgentTasksGetTaskByRepoAndIdResponseVariant0Creator(
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (id) {
-      SdkPresent<int>(value: final value) => {'id': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// A GitHub user
 class AgentTasksGetTaskByRepoAndIdResponseVariant0UserCollaboratorsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The unique identifier of the user
   final SdkOptional<int> id;
 
-  const AgentTasksGetTaskByRepoAndIdResponseVariant0UserCollaboratorsItem({this.id = const SdkOmitted()});
+  const AgentTasksGetTaskByRepoAndIdResponseVariant0UserCollaboratorsItem(
+      {this.id = const SdkOmitted()});
 
-  AgentTasksGetTaskByRepoAndIdResponseVariant0UserCollaboratorsItem Function({SdkOptional<int> id}) get copyWith => _copyWith;
+  AgentTasksGetTaskByRepoAndIdResponseVariant0UserCollaboratorsItem Function(
+      {SdkOptional<int> id}) get copyWith => _copyWith;
 
-  AgentTasksGetTaskByRepoAndIdResponseVariant0UserCollaboratorsItem _copyWith({Object? id = sdkOmittedValue}) => AgentTasksGetTaskByRepoAndIdResponseVariant0UserCollaboratorsItem(
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-  );
+  AgentTasksGetTaskByRepoAndIdResponseVariant0UserCollaboratorsItem _copyWith(
+          {Object? id = sdkOmittedValue}) =>
+      AgentTasksGetTaskByRepoAndIdResponseVariant0UserCollaboratorsItem(
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+      );
 
-  factory AgentTasksGetTaskByRepoAndIdResponseVariant0UserCollaboratorsItem.fromJson(Map<String, dynamic> json) => AgentTasksGetTaskByRepoAndIdResponseVariant0UserCollaboratorsItem(
-    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
-  );
+  factory AgentTasksGetTaskByRepoAndIdResponseVariant0UserCollaboratorsItem.fromJson(
+          Map<String, dynamic> json) =>
+      AgentTasksGetTaskByRepoAndIdResponseVariant0UserCollaboratorsItem(
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (id) {
-      SdkPresent<int>(value: final value) => {'id': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// The owner of the repository
 class AgentTasksGetTaskByRepoAndIdResponseVariant0Owner {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The unique identifier of the user
   final SdkOptional<int> id;
 
-  const AgentTasksGetTaskByRepoAndIdResponseVariant0Owner({this.id = const SdkOmitted()});
+  const AgentTasksGetTaskByRepoAndIdResponseVariant0Owner(
+      {this.id = const SdkOmitted()});
 
-  AgentTasksGetTaskByRepoAndIdResponseVariant0Owner Function({SdkOptional<int> id}) get copyWith => _copyWith;
+  AgentTasksGetTaskByRepoAndIdResponseVariant0Owner Function(
+      {SdkOptional<int> id}) get copyWith => _copyWith;
 
-  AgentTasksGetTaskByRepoAndIdResponseVariant0Owner _copyWith({Object? id = sdkOmittedValue}) => AgentTasksGetTaskByRepoAndIdResponseVariant0Owner(
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-  );
+  AgentTasksGetTaskByRepoAndIdResponseVariant0Owner _copyWith(
+          {Object? id = sdkOmittedValue}) =>
+      AgentTasksGetTaskByRepoAndIdResponseVariant0Owner(
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+      );
 
-  factory AgentTasksGetTaskByRepoAndIdResponseVariant0Owner.fromJson(Map<String, dynamic> json) => AgentTasksGetTaskByRepoAndIdResponseVariant0Owner(
-    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
-  );
+  factory AgentTasksGetTaskByRepoAndIdResponseVariant0Owner.fromJson(
+          Map<String, dynamic> json) =>
+      AgentTasksGetTaskByRepoAndIdResponseVariant0Owner(
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (id) {
-      SdkPresent<int>(value: final value) => {'id': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// The repository this task belongs to
 class AgentTasksGetTaskByRepoAndIdResponseVariant0Repository {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The unique identifier of the repository
   final SdkOptional<int> id;
 
-  const AgentTasksGetTaskByRepoAndIdResponseVariant0Repository({this.id = const SdkOmitted()});
+  const AgentTasksGetTaskByRepoAndIdResponseVariant0Repository(
+      {this.id = const SdkOmitted()});
 
-  AgentTasksGetTaskByRepoAndIdResponseVariant0Repository Function({SdkOptional<int> id}) get copyWith => _copyWith;
+  AgentTasksGetTaskByRepoAndIdResponseVariant0Repository Function(
+      {SdkOptional<int> id}) get copyWith => _copyWith;
 
-  AgentTasksGetTaskByRepoAndIdResponseVariant0Repository _copyWith({Object? id = sdkOmittedValue}) => AgentTasksGetTaskByRepoAndIdResponseVariant0Repository(
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-  );
+  AgentTasksGetTaskByRepoAndIdResponseVariant0Repository _copyWith(
+          {Object? id = sdkOmittedValue}) =>
+      AgentTasksGetTaskByRepoAndIdResponseVariant0Repository(
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+      );
 
-  factory AgentTasksGetTaskByRepoAndIdResponseVariant0Repository.fromJson(Map<String, dynamic> json) => AgentTasksGetTaskByRepoAndIdResponseVariant0Repository(
-    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
-  );
+  factory AgentTasksGetTaskByRepoAndIdResponseVariant0Repository.fromJson(
+          Map<String, dynamic> json) =>
+      AgentTasksGetTaskByRepoAndIdResponseVariant0Repository(
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (id) {
-      SdkPresent<int>(value: final value) => {'id': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// A GitHub resource (pull request, issue, etc.)
 class AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemDataVariant0 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// GitHub resource ID
   final int id;
+
   /// GraphQL global ID
   final SdkOptional<String> globalId;
 
-  const AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemDataVariant0({required this.id, this.globalId = const SdkOmitted()});
+  const AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemDataVariant0(
+      {required this.id, this.globalId = const SdkOmitted()});
 
-  AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemDataVariant0 Function({int id, SdkOptional<String> globalId}) get copyWith => _copyWith;
+  AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemDataVariant0
+          Function({int id, SdkOptional<String> globalId})
+      get copyWith => _copyWith;
 
-  AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemDataVariant0 _copyWith({Object? id = sdkOmittedValue, Object? globalId = sdkOmittedValue}) => AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemDataVariant0(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    globalId: identical(globalId, sdkOmittedValue) ? this.globalId : globalId as SdkOptional<String>,
-  );
+  AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemDataVariant0
+      _copyWith(
+              {Object? id = sdkOmittedValue,
+              Object? globalId = sdkOmittedValue}) =>
+          AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemDataVariant0(
+            id: identical(id, sdkOmittedValue) ? this.id : id as int,
+            globalId: identical(globalId, sdkOmittedValue)
+                ? this.globalId
+                : globalId as SdkOptional<String>,
+          );
 
-  factory AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemDataVariant0.fromJson(Map<String, dynamic> json) => AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemDataVariant0(
-    id: ((json['id'] as num?)?.toInt())!,
-    globalId: json['global_id'] != null ? SdkPresent((json['global_id'] as String?)!) : const SdkOmitted(),
-  );
+  factory AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemDataVariant0.fromJson(
+          Map<String, dynamic> json) =>
+      AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemDataVariant0(
+        id: ((json['id'] as num?)?.toInt())!,
+        globalId: json['global_id'] != null
+            ? SdkPresent((json['global_id'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    ...switch (globalId) {
-      SdkPresent<String>(value: final value) => {'global_id': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'id': id,
+        ...switch (globalId) {
+          SdkPresent<String>(value: final value) => {
+              'global_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// A Git branch reference
 class AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemDataVariant1 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Head branch name
   final String headRef;
+
   /// Base branch name
   final String baseRef;
 
-  const AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemDataVariant1({required this.headRef, required this.baseRef});
+  const AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemDataVariant1(
+      {required this.headRef, required this.baseRef});
 
-  AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemDataVariant1 Function({String headRef, String baseRef}) get copyWith => _copyWith;
+  AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemDataVariant1
+      Function({String headRef, String baseRef}) get copyWith => _copyWith;
 
-  AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemDataVariant1 _copyWith({Object? headRef = sdkOmittedValue, Object? baseRef = sdkOmittedValue}) => AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemDataVariant1(
-    headRef: identical(headRef, sdkOmittedValue) ? this.headRef : headRef as String,
-    baseRef: identical(baseRef, sdkOmittedValue) ? this.baseRef : baseRef as String,
-  );
+  AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemDataVariant1
+      _copyWith(
+              {Object? headRef = sdkOmittedValue,
+              Object? baseRef = sdkOmittedValue}) =>
+          AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemDataVariant1(
+            headRef: identical(headRef, sdkOmittedValue)
+                ? this.headRef
+                : headRef as String,
+            baseRef: identical(baseRef, sdkOmittedValue)
+                ? this.baseRef
+                : baseRef as String,
+          );
 
-  factory AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemDataVariant1.fromJson(Map<String, dynamic> json) => AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemDataVariant1(
-    headRef: (json['head_ref'] as String?)!,
-    baseRef: (json['base_ref'] as String?)!,
-  );
+  factory AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemDataVariant1.fromJson(
+          Map<String, dynamic> json) =>
+      AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemDataVariant1(
+        headRef: (json['head_ref'] as String?)!,
+        baseRef: (json['base_ref'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'head_ref': headRef,
-    'base_ref': baseRef,
-  };
+        'head_ref': headRef,
+        'base_ref': baseRef,
+      };
 }
 
 /// A resource generated by the task
 class AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Provider namespace
-  final AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemProvider provider;
+  final AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemProvider
+      provider;
+
   /// Type of artifact. Available Values: `pull`, `branch`.
   final AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemType type_;
+
   /// Resource data (shape depends on type)
   final dynamic data;
 
-  const AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItem({required this.provider, required this.type_, required this.data});
+  const AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItem(
+      {required this.provider, required this.type_, required this.data});
 
-  AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItem Function({AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemProvider provider, AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemType type_, dynamic data}) get copyWith => _copyWith;
+  AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItem Function(
+      {AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemProvider
+          provider,
+      AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemType type_,
+      dynamic data}) get copyWith => _copyWith;
 
-  AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItem _copyWith({Object? provider = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? data = sdkOmittedValue}) => AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItem(
-    provider: identical(provider, sdkOmittedValue) ? this.provider : provider as AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemProvider,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemType,
-    data: identical(data, sdkOmittedValue) ? this.data : data as dynamic,
-  );
+  AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItem _copyWith(
+          {Object? provider = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? data = sdkOmittedValue}) =>
+      AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItem(
+        provider: identical(provider, sdkOmittedValue)
+            ? this.provider
+            : provider
+                as AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemProvider,
+        type_: identical(type_, sdkOmittedValue)
+            ? this.type_
+            : type_
+                as AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemType,
+        data: identical(data, sdkOmittedValue) ? this.data : data as dynamic,
+      );
 
-  factory AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItem.fromJson(Map<String, dynamic> json) => AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItem(
-    provider: (json['provider'] != null ? AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemProvider.fromJson(json['provider'] as String) : null)!,
-    type_: (json['type'] != null ? AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemType.fromJson(json['type'] as String) : null)!,
-    data: (json['data'])!,
-  );
+  factory AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItem.fromJson(
+          Map<String, dynamic> json) =>
+      AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItem(
+        provider: (json['provider'] != null
+            ? AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemProvider
+                .fromJson(json['provider'] as String)
+            : null)!,
+        type_: (json['type'] != null
+            ? AgentTasksGetTaskByRepoAndIdResponseVariant0ArtifactsItemType
+                .fromJson(json['type'] as String)
+            : null)!,
+        data: (json['data'])!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'provider': provider.toJson(),
-    'type': type_.toJson(),
-    'data': data,
-  };
+        'provider': provider.toJson(),
+        'type': type_.toJson(),
+        'data': data,
+      };
 }
 
 /// Custom agent metadata associated with this task
 class AgentTasksGetTaskByRepoAndIdResponseVariant0CustomAgent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The custom agent's filename without the extension - for example, `performance-optimizer` for a `.github/agents/performance-optimizer.agent.md` custom agent.
   final SdkOptional<String> id;
 
-  const AgentTasksGetTaskByRepoAndIdResponseVariant0CustomAgent({this.id = const SdkOmitted()});
+  const AgentTasksGetTaskByRepoAndIdResponseVariant0CustomAgent(
+      {this.id = const SdkOmitted()});
 
-  AgentTasksGetTaskByRepoAndIdResponseVariant0CustomAgent Function({SdkOptional<String> id}) get copyWith => _copyWith;
+  AgentTasksGetTaskByRepoAndIdResponseVariant0CustomAgent Function(
+      {SdkOptional<String> id}) get copyWith => _copyWith;
 
-  AgentTasksGetTaskByRepoAndIdResponseVariant0CustomAgent _copyWith({Object? id = sdkOmittedValue}) => AgentTasksGetTaskByRepoAndIdResponseVariant0CustomAgent(
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<String>,
-  );
+  AgentTasksGetTaskByRepoAndIdResponseVariant0CustomAgent _copyWith(
+          {Object? id = sdkOmittedValue}) =>
+      AgentTasksGetTaskByRepoAndIdResponseVariant0CustomAgent(
+        id: identical(id, sdkOmittedValue)
+            ? this.id
+            : id as SdkOptional<String>,
+      );
 
-  factory AgentTasksGetTaskByRepoAndIdResponseVariant0CustomAgent.fromJson(Map<String, dynamic> json) => AgentTasksGetTaskByRepoAndIdResponseVariant0CustomAgent(
-    id: json['id'] != null ? SdkPresent((json['id'] as String?)!) : const SdkOmitted(),
-  );
+  factory AgentTasksGetTaskByRepoAndIdResponseVariant0CustomAgent.fromJson(
+          Map<String, dynamic> json) =>
+      AgentTasksGetTaskByRepoAndIdResponseVariant0CustomAgent(
+        id: json['id'] != null
+            ? SdkPresent((json['id'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (id) {
-      SdkPresent<String>(value: final value) => {'id': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (id) {
+          SdkPresent<String>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// The user who created this session
 class AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUser {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The unique identifier of the user
   final SdkOptional<int> id;
 
-  const AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUser({this.id = const SdkOmitted()});
+  const AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUser(
+      {this.id = const SdkOmitted()});
 
-  AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUser Function({SdkOptional<int> id}) get copyWith => _copyWith;
+  AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUser Function(
+      {SdkOptional<int> id}) get copyWith => _copyWith;
 
-  AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUser _copyWith({Object? id = sdkOmittedValue}) => AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUser(
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-  );
+  AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUser _copyWith(
+          {Object? id = sdkOmittedValue}) =>
+      AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUser(
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+      );
 
-  factory AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUser.fromJson(Map<String, dynamic> json) => AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUser(
-    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
-  );
+  factory AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUser.fromJson(
+          Map<String, dynamic> json) =>
+      AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemUser(
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (id) {
-      SdkPresent<int>(value: final value) => {'id': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// The owner of the repository
 class AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemOwner {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The unique identifier of the user
   final SdkOptional<int> id;
 
-  const AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemOwner({this.id = const SdkOmitted()});
+  const AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemOwner(
+      {this.id = const SdkOmitted()});
 
-  AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemOwner Function({SdkOptional<int> id}) get copyWith => _copyWith;
+  AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemOwner Function(
+      {SdkOptional<int> id}) get copyWith => _copyWith;
 
-  AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemOwner _copyWith({Object? id = sdkOmittedValue}) => AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemOwner(
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-  );
+  AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemOwner _copyWith(
+          {Object? id = sdkOmittedValue}) =>
+      AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemOwner(
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+      );
 
-  factory AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemOwner.fromJson(Map<String, dynamic> json) => AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemOwner(
-    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
-  );
+  factory AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemOwner.fromJson(
+          Map<String, dynamic> json) =>
+      AgentTasksGetTaskByRepoAndIdResponseVariant1SessionsItemOwner(
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (id) {
-      SdkPresent<int>(value: final value) => {'id': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

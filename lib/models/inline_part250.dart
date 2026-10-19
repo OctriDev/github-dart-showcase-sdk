@@ -6,288 +6,423 @@ part of 'inline.dart';
 // Inline operation models (part 250)
 /// The type of repositories to attach the configuration to. `selected` means the configuration will be attached to only the repositories specified by `selected_repository_ids`
 final class CodeSecurityAttachConfigurationRequestBodyScope {
-
   final String value;
 
   const CodeSecurityAttachConfigurationRequestBodyScope._(this.value);
 
-  factory CodeSecurityAttachConfigurationRequestBodyScope.fromJson(String value) => CodeSecurityAttachConfigurationRequestBodyScope._(value);
+  factory CodeSecurityAttachConfigurationRequestBodyScope.fromJson(
+          String value) =>
+      CodeSecurityAttachConfigurationRequestBodyScope._(value);
 
   static const all = CodeSecurityAttachConfigurationRequestBodyScope._('all');
-  static const allWithoutConfigurations = CodeSecurityAttachConfigurationRequestBodyScope._('all_without_configurations');
-  static const public = CodeSecurityAttachConfigurationRequestBodyScope._('public');
-  static const privateOrInternal = CodeSecurityAttachConfigurationRequestBodyScope._('private_or_internal');
-  static const selected = CodeSecurityAttachConfigurationRequestBodyScope._('selected');
+  static const allWithoutConfigurations =
+      CodeSecurityAttachConfigurationRequestBodyScope._(
+          'all_without_configurations');
+  static const public =
+      CodeSecurityAttachConfigurationRequestBodyScope._('public');
+  static const privateOrInternal =
+      CodeSecurityAttachConfigurationRequestBodyScope._('private_or_internal');
+  static const selected =
+      CodeSecurityAttachConfigurationRequestBodyScope._('selected');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeSecurityAttachConfigurationRequestBodyScope && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodeSecurityAttachConfigurationRequestBodyScope &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Specify which types of repository this security configuration should be applied to by default.
 final class CodeSecuritySetConfigurationAsDefaultRequestBodyDefaultForNewRepos {
-
   final String value;
 
-  const CodeSecuritySetConfigurationAsDefaultRequestBodyDefaultForNewRepos._(this.value);
+  const CodeSecuritySetConfigurationAsDefaultRequestBodyDefaultForNewRepos._(
+      this.value);
 
-  factory CodeSecuritySetConfigurationAsDefaultRequestBodyDefaultForNewRepos.fromJson(String value) => CodeSecuritySetConfigurationAsDefaultRequestBodyDefaultForNewRepos._(value);
+  factory CodeSecuritySetConfigurationAsDefaultRequestBodyDefaultForNewRepos.fromJson(
+          String value) =>
+      CodeSecuritySetConfigurationAsDefaultRequestBodyDefaultForNewRepos._(
+          value);
 
-  static const all = CodeSecuritySetConfigurationAsDefaultRequestBodyDefaultForNewRepos._('all');
-  static const none = CodeSecuritySetConfigurationAsDefaultRequestBodyDefaultForNewRepos._('none');
-  static const privateAndInternal = CodeSecuritySetConfigurationAsDefaultRequestBodyDefaultForNewRepos._('private_and_internal');
-  static const public = CodeSecuritySetConfigurationAsDefaultRequestBodyDefaultForNewRepos._('public');
+  static const all =
+      CodeSecuritySetConfigurationAsDefaultRequestBodyDefaultForNewRepos._(
+          'all');
+  static const none =
+      CodeSecuritySetConfigurationAsDefaultRequestBodyDefaultForNewRepos._(
+          'none');
+  static const privateAndInternal =
+      CodeSecuritySetConfigurationAsDefaultRequestBodyDefaultForNewRepos._(
+          'private_and_internal');
+  static const public =
+      CodeSecuritySetConfigurationAsDefaultRequestBodyDefaultForNewRepos._(
+          'public');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeSecuritySetConfigurationAsDefaultRequestBodyDefaultForNewRepos && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is CodeSecuritySetConfigurationAsDefaultRequestBodyDefaultForNewRepos &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Specifies which types of repository this security configuration is applied to by default.
 final class CodeSecuritySetConfigurationAsDefaultResponseDefaultForNewRepos {
-
   final String value;
 
-  const CodeSecuritySetConfigurationAsDefaultResponseDefaultForNewRepos._(this.value);
+  const CodeSecuritySetConfigurationAsDefaultResponseDefaultForNewRepos._(
+      this.value);
 
-  factory CodeSecuritySetConfigurationAsDefaultResponseDefaultForNewRepos.fromJson(String value) => CodeSecuritySetConfigurationAsDefaultResponseDefaultForNewRepos._(value);
+  factory CodeSecuritySetConfigurationAsDefaultResponseDefaultForNewRepos.fromJson(
+          String value) =>
+      CodeSecuritySetConfigurationAsDefaultResponseDefaultForNewRepos._(value);
 
-  static const all = CodeSecuritySetConfigurationAsDefaultResponseDefaultForNewRepos._('all');
-  static const none = CodeSecuritySetConfigurationAsDefaultResponseDefaultForNewRepos._('none');
-  static const privateAndInternal = CodeSecuritySetConfigurationAsDefaultResponseDefaultForNewRepos._('private_and_internal');
-  static const public = CodeSecuritySetConfigurationAsDefaultResponseDefaultForNewRepos._('public');
+  static const all =
+      CodeSecuritySetConfigurationAsDefaultResponseDefaultForNewRepos._('all');
+  static const none =
+      CodeSecuritySetConfigurationAsDefaultResponseDefaultForNewRepos._('none');
+  static const privateAndInternal =
+      CodeSecuritySetConfigurationAsDefaultResponseDefaultForNewRepos._(
+          'private_and_internal');
+  static const public =
+      CodeSecuritySetConfigurationAsDefaultResponseDefaultForNewRepos._(
+          'public');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeSecuritySetConfigurationAsDefaultResponseDefaultForNewRepos && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is CodeSecuritySetConfigurationAsDefaultResponseDefaultForNewRepos &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Which users can access codespaces in the organization. `disabled` means that no users can access codespaces in the organization.
 final class CodespacesSetCodespacesAccessRequestBodyVisibility {
-
   final String value;
 
   const CodespacesSetCodespacesAccessRequestBodyVisibility._(this.value);
 
-  factory CodespacesSetCodespacesAccessRequestBodyVisibility.fromJson(String value) => CodespacesSetCodespacesAccessRequestBodyVisibility._(value);
+  factory CodespacesSetCodespacesAccessRequestBodyVisibility.fromJson(
+          String value) =>
+      CodespacesSetCodespacesAccessRequestBodyVisibility._(value);
 
-  static const disabled = CodespacesSetCodespacesAccessRequestBodyVisibility._('disabled');
-  static const selectedMembers = CodespacesSetCodespacesAccessRequestBodyVisibility._('selected_members');
-  static const allMembers = CodespacesSetCodespacesAccessRequestBodyVisibility._('all_members');
-  static const allMembersAndOutsideCollaborators = CodespacesSetCodespacesAccessRequestBodyVisibility._('all_members_and_outside_collaborators');
+  static const disabled =
+      CodespacesSetCodespacesAccessRequestBodyVisibility._('disabled');
+  static const selectedMembers =
+      CodespacesSetCodespacesAccessRequestBodyVisibility._('selected_members');
+  static const allMembers =
+      CodespacesSetCodespacesAccessRequestBodyVisibility._('all_members');
+  static const allMembersAndOutsideCollaborators =
+      CodespacesSetCodespacesAccessRequestBodyVisibility._(
+          'all_members_and_outside_collaborators');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodespacesSetCodespacesAccessRequestBodyVisibility && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodespacesSetCodespacesAccessRequestBodyVisibility &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Which type of organization repositories have access to the organization secret. `selected` means only the repositories specified by `selected_repository_ids` can access the secret.
 final class CodespacesCreateOrUpdateOrgSecretRequestBodyVisibility {
-
   final String value;
 
   const CodespacesCreateOrUpdateOrgSecretRequestBodyVisibility._(this.value);
 
-  factory CodespacesCreateOrUpdateOrgSecretRequestBodyVisibility.fromJson(String value) => CodespacesCreateOrUpdateOrgSecretRequestBodyVisibility._(value);
+  factory CodespacesCreateOrUpdateOrgSecretRequestBodyVisibility.fromJson(
+          String value) =>
+      CodespacesCreateOrUpdateOrgSecretRequestBodyVisibility._(value);
 
-  static const all = CodespacesCreateOrUpdateOrgSecretRequestBodyVisibility._('all');
-  static const private = CodespacesCreateOrUpdateOrgSecretRequestBodyVisibility._('private');
-  static const selected = CodespacesCreateOrUpdateOrgSecretRequestBodyVisibility._('selected');
+  static const all =
+      CodespacesCreateOrUpdateOrgSecretRequestBodyVisibility._('all');
+  static const private =
+      CodespacesCreateOrUpdateOrgSecretRequestBodyVisibility._('private');
+  static const selected =
+      CodespacesCreateOrUpdateOrgSecretRequestBodyVisibility._('selected');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodespacesCreateOrUpdateOrgSecretRequestBodyVisibility && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodespacesCreateOrUpdateOrgSecretRequestBodyVisibility &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The base role that determines default permissions for organization members. - `no_access`: No default access (default) - `reader`: Organization members can read the space - `writer`: Organization members can read and edit the space - `admin`: Organization members have full admin access to the space
 final class CopilotSpacesCreateForOrgRequestBodyBaseRole {
-
   final String value;
 
   const CopilotSpacesCreateForOrgRequestBodyBaseRole._(this.value);
 
-  factory CopilotSpacesCreateForOrgRequestBodyBaseRole.fromJson(String value) => CopilotSpacesCreateForOrgRequestBodyBaseRole._(value);
+  factory CopilotSpacesCreateForOrgRequestBodyBaseRole.fromJson(String value) =>
+      CopilotSpacesCreateForOrgRequestBodyBaseRole._(value);
 
-  static const reader = CopilotSpacesCreateForOrgRequestBodyBaseRole._('reader');
-  static const writer = CopilotSpacesCreateForOrgRequestBodyBaseRole._('writer');
+  static const reader =
+      CopilotSpacesCreateForOrgRequestBodyBaseRole._('reader');
+  static const writer =
+      CopilotSpacesCreateForOrgRequestBodyBaseRole._('writer');
   static const admin = CopilotSpacesCreateForOrgRequestBodyBaseRole._('admin');
-  static const noAccess = CopilotSpacesCreateForOrgRequestBodyBaseRole._('no_access');
+  static const noAccess =
+      CopilotSpacesCreateForOrgRequestBodyBaseRole._('no_access');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CopilotSpacesCreateForOrgRequestBodyBaseRole && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CopilotSpacesCreateForOrgRequestBodyBaseRole &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The type of resource.
 final class CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType {
-
   final String value;
 
-  const CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType._(this.value);
+  const CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType._(
+      this.value);
 
-  factory CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType.fromJson(String value) => CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType._(value);
+  factory CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType.fromJson(
+          String value) =>
+      CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType._(
+          value);
 
-  static const repository = CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType._('repository');
-  static const githubFile = CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType._('github_file');
-  static const freeText = CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType._('free_text');
-  static const githubIssue = CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType._('github_issue');
-  static const githubPullRequest = CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType._('github_pull_request');
-  static const mediaContent = CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType._('media_content');
-  static const uploadedTextFile = CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType._('uploaded_text_file');
+  static const repository =
+      CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType._(
+          'repository');
+  static const githubFile =
+      CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType._(
+          'github_file');
+  static const freeText =
+      CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType._(
+          'free_text');
+  static const githubIssue =
+      CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType._(
+          'github_issue');
+  static const githubPullRequest =
+      CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType._(
+          'github_pull_request');
+  static const mediaContent =
+      CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType._(
+          'media_content');
+  static const uploadedTextFile =
+      CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType._(
+          'uploaded_text_file');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is CopilotSpacesCreateForOrgRequestBodyResourcesAttributesItemResourceType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The base role that determines default permissions for organization members. Changing this field requires admin permissions. - `no_access`: No default access (default) - `reader`: Organization members can read the space - `writer`: Organization members can read and edit the space - `admin`: Organization members have full admin access to the space
 final class CopilotSpacesUpdateForOrgRequestBodyBaseRole {
-
   final String value;
 
   const CopilotSpacesUpdateForOrgRequestBodyBaseRole._(this.value);
 
-  factory CopilotSpacesUpdateForOrgRequestBodyBaseRole.fromJson(String value) => CopilotSpacesUpdateForOrgRequestBodyBaseRole._(value);
+  factory CopilotSpacesUpdateForOrgRequestBodyBaseRole.fromJson(String value) =>
+      CopilotSpacesUpdateForOrgRequestBodyBaseRole._(value);
 
-  static const reader = CopilotSpacesUpdateForOrgRequestBodyBaseRole._('reader');
-  static const writer = CopilotSpacesUpdateForOrgRequestBodyBaseRole._('writer');
+  static const reader =
+      CopilotSpacesUpdateForOrgRequestBodyBaseRole._('reader');
+  static const writer =
+      CopilotSpacesUpdateForOrgRequestBodyBaseRole._('writer');
   static const admin = CopilotSpacesUpdateForOrgRequestBodyBaseRole._('admin');
-  static const noAccess = CopilotSpacesUpdateForOrgRequestBodyBaseRole._('no_access');
+  static const noAccess =
+      CopilotSpacesUpdateForOrgRequestBodyBaseRole._('no_access');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CopilotSpacesUpdateForOrgRequestBodyBaseRole && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CopilotSpacesUpdateForOrgRequestBodyBaseRole &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The type of resource.
 final class CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType {
-
   final String value;
 
-  const CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType._(this.value);
+  const CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType._(
+      this.value);
 
-  factory CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType.fromJson(String value) => CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType._(value);
+  factory CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType.fromJson(
+          String value) =>
+      CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType._(
+          value);
 
-  static const repository = CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType._('repository');
-  static const githubFile = CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType._('github_file');
-  static const freeText = CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType._('free_text');
-  static const githubIssue = CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType._('github_issue');
-  static const githubPullRequest = CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType._('github_pull_request');
-  static const mediaContent = CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType._('media_content');
-  static const uploadedTextFile = CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType._('uploaded_text_file');
+  static const repository =
+      CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType._(
+          'repository');
+  static const githubFile =
+      CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType._(
+          'github_file');
+  static const freeText =
+      CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType._(
+          'free_text');
+  static const githubIssue =
+      CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType._(
+          'github_issue');
+  static const githubPullRequest =
+      CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType._(
+          'github_pull_request');
+  static const mediaContent =
+      CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType._(
+          'media_content');
+  static const uploadedTextFile =
+      CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType._(
+          'uploaded_text_file');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is CopilotSpacesUpdateForOrgRequestBodyResourcesAttributesItemResourceType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The type of actor (user or team).
 final class CopilotSpacesAddCollaboratorForOrgRequestBodyActorType {
-
   final String value;
 
   const CopilotSpacesAddCollaboratorForOrgRequestBodyActorType._(this.value);
 
-  factory CopilotSpacesAddCollaboratorForOrgRequestBodyActorType.fromJson(String value) => CopilotSpacesAddCollaboratorForOrgRequestBodyActorType._(value);
+  factory CopilotSpacesAddCollaboratorForOrgRequestBodyActorType.fromJson(
+          String value) =>
+      CopilotSpacesAddCollaboratorForOrgRequestBodyActorType._(value);
 
-  static const user = CopilotSpacesAddCollaboratorForOrgRequestBodyActorType._('User');
-  static const team = CopilotSpacesAddCollaboratorForOrgRequestBodyActorType._('Team');
+  static const user =
+      CopilotSpacesAddCollaboratorForOrgRequestBodyActorType._('User');
+  static const team =
+      CopilotSpacesAddCollaboratorForOrgRequestBodyActorType._('Team');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CopilotSpacesAddCollaboratorForOrgRequestBodyActorType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CopilotSpacesAddCollaboratorForOrgRequestBodyActorType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The role to grant to the collaborator.
 final class CopilotSpacesAddCollaboratorForOrgRequestBodyRole {
-
   final String value;
 
   const CopilotSpacesAddCollaboratorForOrgRequestBodyRole._(this.value);
 
-  factory CopilotSpacesAddCollaboratorForOrgRequestBodyRole.fromJson(String value) => CopilotSpacesAddCollaboratorForOrgRequestBodyRole._(value);
+  factory CopilotSpacesAddCollaboratorForOrgRequestBodyRole.fromJson(
+          String value) =>
+      CopilotSpacesAddCollaboratorForOrgRequestBodyRole._(value);
 
-  static const reader = CopilotSpacesAddCollaboratorForOrgRequestBodyRole._('reader');
-  static const writer = CopilotSpacesAddCollaboratorForOrgRequestBodyRole._('writer');
-  static const admin = CopilotSpacesAddCollaboratorForOrgRequestBodyRole._('admin');
+  static const reader =
+      CopilotSpacesAddCollaboratorForOrgRequestBodyRole._('reader');
+  static const writer =
+      CopilotSpacesAddCollaboratorForOrgRequestBodyRole._('writer');
+  static const admin =
+      CopilotSpacesAddCollaboratorForOrgRequestBodyRole._('admin');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CopilotSpacesAddCollaboratorForOrgRequestBodyRole && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CopilotSpacesAddCollaboratorForOrgRequestBodyRole &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class CopilotSpacesRemoveCollaboratorForOrgActorType {
-
   final String value;
 
   const CopilotSpacesRemoveCollaboratorForOrgActorType._(this.value);
 
-  factory CopilotSpacesRemoveCollaboratorForOrgActorType.fromJson(String value) => CopilotSpacesRemoveCollaboratorForOrgActorType._(value);
+  factory CopilotSpacesRemoveCollaboratorForOrgActorType.fromJson(
+          String value) =>
+      CopilotSpacesRemoveCollaboratorForOrgActorType._(value);
 
   static const user = CopilotSpacesRemoveCollaboratorForOrgActorType._('User');
   static const team = CopilotSpacesRemoveCollaboratorForOrgActorType._('Team');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CopilotSpacesRemoveCollaboratorForOrgActorType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CopilotSpacesRemoveCollaboratorForOrgActorType &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

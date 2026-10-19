@@ -8,279 +8,512 @@ part of 'projects.dart';
 class ProjectsV2SingleSelectOptionsName {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `raw` wire field.
   final String raw;
+
   /// Required `string` value serialized in the `html` wire field.
   final String html;
 
-  const ProjectsV2SingleSelectOptionsName({required this.raw, required this.html});
+  const ProjectsV2SingleSelectOptionsName(
+      {required this.raw, required this.html});
 
-  ProjectsV2SingleSelectOptionsName Function({String raw, String html}) get copyWith => _copyWith;
+  ProjectsV2SingleSelectOptionsName Function({String raw, String html})
+      get copyWith => _copyWith;
 
-  ProjectsV2SingleSelectOptionsName _copyWith({Object? raw = sdkOmittedValue, Object? html = sdkOmittedValue}) => ProjectsV2SingleSelectOptionsName(
-    raw: identical(raw, sdkOmittedValue) ? this.raw : raw as String,
-    html: identical(html, sdkOmittedValue) ? this.html : html as String,
-  );
+  ProjectsV2SingleSelectOptionsName _copyWith(
+          {Object? raw = sdkOmittedValue, Object? html = sdkOmittedValue}) =>
+      ProjectsV2SingleSelectOptionsName(
+        raw: identical(raw, sdkOmittedValue) ? this.raw : raw as String,
+        html: identical(html, sdkOmittedValue) ? this.html : html as String,
+      );
 
-  factory ProjectsV2SingleSelectOptionsName.fromJson(Map<String, dynamic> json) => ProjectsV2SingleSelectOptionsName(
-    raw: (json['raw'] as String?)!,
-    html: (json['html'] as String?)!,
-  );
+  factory ProjectsV2SingleSelectOptionsName.fromJson(
+          Map<String, dynamic> json) =>
+      ProjectsV2SingleSelectOptionsName(
+        raw: (json['raw'] as String?)!,
+        html: (json['html'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'raw': raw,
-    'html': html,
-  };
+        'raw': raw,
+        'html': html,
+      };
 }
 
 /// The description of the option, in raw text and HTML formats.
 class ProjectsV2SingleSelectOptionsDescription {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `raw` wire field.
   final String raw;
+
   /// Required `string` value serialized in the `html` wire field.
   final String html;
 
-  const ProjectsV2SingleSelectOptionsDescription({required this.raw, required this.html});
+  const ProjectsV2SingleSelectOptionsDescription(
+      {required this.raw, required this.html});
 
-  ProjectsV2SingleSelectOptionsDescription Function({String raw, String html}) get copyWith => _copyWith;
+  ProjectsV2SingleSelectOptionsDescription Function({String raw, String html})
+      get copyWith => _copyWith;
 
-  ProjectsV2SingleSelectOptionsDescription _copyWith({Object? raw = sdkOmittedValue, Object? html = sdkOmittedValue}) => ProjectsV2SingleSelectOptionsDescription(
-    raw: identical(raw, sdkOmittedValue) ? this.raw : raw as String,
-    html: identical(html, sdkOmittedValue) ? this.html : html as String,
-  );
+  ProjectsV2SingleSelectOptionsDescription _copyWith(
+          {Object? raw = sdkOmittedValue, Object? html = sdkOmittedValue}) =>
+      ProjectsV2SingleSelectOptionsDescription(
+        raw: identical(raw, sdkOmittedValue) ? this.raw : raw as String,
+        html: identical(html, sdkOmittedValue) ? this.html : html as String,
+      );
 
-  factory ProjectsV2SingleSelectOptionsDescription.fromJson(Map<String, dynamic> json) => ProjectsV2SingleSelectOptionsDescription(
-    raw: (json['raw'] as String?)!,
-    html: (json['html'] as String?)!,
-  );
+  factory ProjectsV2SingleSelectOptionsDescription.fromJson(
+          Map<String, dynamic> json) =>
+      ProjectsV2SingleSelectOptionsDescription(
+        raw: (json['raw'] as String?)!,
+        html: (json['html'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'raw': raw,
-    'html': html,
-  };
+        'raw': raw,
+        'html': html,
+      };
 }
 
 /// An option for a single select field
 class ProjectsV2SingleSelectOptions {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The unique identifier of the option.
   final String id;
+
   /// The display name of the option, in raw text and HTML formats.
   final ProjectsV2SingleSelectOptionsName name;
+
   /// The description of the option, in raw text and HTML formats.
   final ProjectsV2SingleSelectOptionsDescription description;
+
   /// The color associated with the option.
   final String color;
 
-  const ProjectsV2SingleSelectOptions({required this.id, required this.name, required this.description, required this.color});
+  const ProjectsV2SingleSelectOptions(
+      {required this.id,
+      required this.name,
+      required this.description,
+      required this.color});
 
-  ProjectsV2SingleSelectOptions Function({String id, ProjectsV2SingleSelectOptionsName name, ProjectsV2SingleSelectOptionsDescription description, String color}) get copyWith => _copyWith;
+  ProjectsV2SingleSelectOptions Function(
+      {String id,
+      ProjectsV2SingleSelectOptionsName name,
+      ProjectsV2SingleSelectOptionsDescription description,
+      String color}) get copyWith => _copyWith;
 
-  ProjectsV2SingleSelectOptions _copyWith({Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? description = sdkOmittedValue, Object? color = sdkOmittedValue}) => ProjectsV2SingleSelectOptions(
-    id: identical(id, sdkOmittedValue) ? this.id : id as String,
-    name: identical(name, sdkOmittedValue) ? this.name : name as ProjectsV2SingleSelectOptionsName,
-    description: identical(description, sdkOmittedValue) ? this.description : description as ProjectsV2SingleSelectOptionsDescription,
-    color: identical(color, sdkOmittedValue) ? this.color : color as String,
-  );
+  ProjectsV2SingleSelectOptions _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? color = sdkOmittedValue}) =>
+      ProjectsV2SingleSelectOptions(
+        id: identical(id, sdkOmittedValue) ? this.id : id as String,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as ProjectsV2SingleSelectOptionsName,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as ProjectsV2SingleSelectOptionsDescription,
+        color: identical(color, sdkOmittedValue) ? this.color : color as String,
+      );
 
-  factory ProjectsV2SingleSelectOptions.fromJson(Map<String, dynamic> json) => ProjectsV2SingleSelectOptions(
-    id: (json['id'] as String?)!,
-    name: (json['name'] != null ? ProjectsV2SingleSelectOptionsName.fromJson(json['name'] as Map<String, dynamic>) : null)!,
-    description: (json['description'] != null ? ProjectsV2SingleSelectOptionsDescription.fromJson(json['description'] as Map<String, dynamic>) : null)!,
-    color: (json['color'] as String?)!,
-  );
+  factory ProjectsV2SingleSelectOptions.fromJson(Map<String, dynamic> json) =>
+      ProjectsV2SingleSelectOptions(
+        id: (json['id'] as String?)!,
+        name: (json['name'] != null
+            ? ProjectsV2SingleSelectOptionsName.fromJson(
+                json['name'] as Map<String, dynamic>)
+            : null)!,
+        description: (json['description'] != null
+            ? ProjectsV2SingleSelectOptionsDescription.fromJson(
+                json['description'] as Map<String, dynamic>)
+            : null)!,
+        color: (json['color'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'name': name.toJson(),
-    'description': description.toJson(),
-    'color': color,
-  };
+        'id': id,
+        'name': name.toJson(),
+        'description': description.toJson(),
+        'color': color,
+      };
 }
 
 /// An status update belonging to a project
 class ProjectsV2StatusUpdate {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The unique identifier of the status update.
   final double id;
+
   /// The node ID of the status update.
   final String nodeId;
+
   /// The node ID of the project that this status update belongs to.
   final SdkOptional<String> projectNodeId;
+
   /// A GitHub user.
   final SdkOptional<SimpleUser> creator;
+
   /// The time when the status update was created.
   final String createdAt;
+
   /// The time when the status update was last updated.
   final String updatedAt;
+
   /// The current status.
   final SdkOptional<ProjectsV2StatusUpdateStatus?> status;
+
   /// The start date of the period covered by the update.
   final SdkOptional<String> startDate;
+
   /// The target date associated with the update.
   final SdkOptional<String> targetDate;
+
   /// Body of the status update
   final SdkOptional<String?> body;
 
-  const ProjectsV2StatusUpdate({required this.id, required this.nodeId, this.projectNodeId = const SdkOmitted(), this.creator = const SdkOmitted(), required this.createdAt, required this.updatedAt, this.status = const SdkOmitted(), this.startDate = const SdkOmitted(), this.targetDate = const SdkOmitted(), this.body = const SdkOmitted()});
+  const ProjectsV2StatusUpdate(
+      {required this.id,
+      required this.nodeId,
+      this.projectNodeId = const SdkOmitted(),
+      this.creator = const SdkOmitted(),
+      required this.createdAt,
+      required this.updatedAt,
+      this.status = const SdkOmitted(),
+      this.startDate = const SdkOmitted(),
+      this.targetDate = const SdkOmitted(),
+      this.body = const SdkOmitted()});
 
-  ProjectsV2StatusUpdate Function({double id, String nodeId, SdkOptional<String> projectNodeId, SdkOptional<SimpleUser> creator, String createdAt, String updatedAt, SdkOptional<ProjectsV2StatusUpdateStatus?> status, SdkOptional<String> startDate, SdkOptional<String> targetDate, SdkOptional<String?> body}) get copyWith => _copyWith;
+  ProjectsV2StatusUpdate Function(
+      {double id,
+      String nodeId,
+      SdkOptional<String> projectNodeId,
+      SdkOptional<SimpleUser> creator,
+      String createdAt,
+      String updatedAt,
+      SdkOptional<ProjectsV2StatusUpdateStatus?> status,
+      SdkOptional<String> startDate,
+      SdkOptional<String> targetDate,
+      SdkOptional<String?> body}) get copyWith => _copyWith;
 
-  ProjectsV2StatusUpdate _copyWith({Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? projectNodeId = sdkOmittedValue, Object? creator = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? status = sdkOmittedValue, Object? startDate = sdkOmittedValue, Object? targetDate = sdkOmittedValue, Object? body = sdkOmittedValue}) => ProjectsV2StatusUpdate(
-    id: identical(id, sdkOmittedValue) ? this.id : id as double,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    projectNodeId: identical(projectNodeId, sdkOmittedValue) ? this.projectNodeId : projectNodeId as SdkOptional<String>,
-    creator: identical(creator, sdkOmittedValue) ? this.creator : creator as SdkOptional<SimpleUser>,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
-    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<ProjectsV2StatusUpdateStatus?>,
-    startDate: identical(startDate, sdkOmittedValue) ? this.startDate : startDate as SdkOptional<String>,
-    targetDate: identical(targetDate, sdkOmittedValue) ? this.targetDate : targetDate as SdkOptional<String>,
-    body: identical(body, sdkOmittedValue) ? this.body : body as SdkOptional<String?>,
-  );
+  ProjectsV2StatusUpdate _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? projectNodeId = sdkOmittedValue,
+          Object? creator = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? status = sdkOmittedValue,
+          Object? startDate = sdkOmittedValue,
+          Object? targetDate = sdkOmittedValue,
+          Object? body = sdkOmittedValue}) =>
+      ProjectsV2StatusUpdate(
+        id: identical(id, sdkOmittedValue) ? this.id : id as double,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        projectNodeId: identical(projectNodeId, sdkOmittedValue)
+            ? this.projectNodeId
+            : projectNodeId as SdkOptional<String>,
+        creator: identical(creator, sdkOmittedValue)
+            ? this.creator
+            : creator as SdkOptional<SimpleUser>,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+        status: identical(status, sdkOmittedValue)
+            ? this.status
+            : status as SdkOptional<ProjectsV2StatusUpdateStatus?>,
+        startDate: identical(startDate, sdkOmittedValue)
+            ? this.startDate
+            : startDate as SdkOptional<String>,
+        targetDate: identical(targetDate, sdkOmittedValue)
+            ? this.targetDate
+            : targetDate as SdkOptional<String>,
+        body: identical(body, sdkOmittedValue)
+            ? this.body
+            : body as SdkOptional<String?>,
+      );
 
-  factory ProjectsV2StatusUpdate.fromJson(Map<String, dynamic> json) => ProjectsV2StatusUpdate(
-    id: ((json['id'] as num?)?.toDouble())!,
-    nodeId: (json['node_id'] as String?)!,
-    projectNodeId: json['project_node_id'] != null ? SdkPresent((json['project_node_id'] as String?)!) : const SdkOmitted(),
-    creator: json['creator'] != null ? SdkPresent((json['creator'] != null ? SimpleUser.fromJson(json['creator'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    createdAt: (json['created_at'] as String?)!,
-    updatedAt: (json['updated_at'] as String?)!,
-    status: json.containsKey('status') ? SdkPresent(json['status'] != null ? ProjectsV2StatusUpdateStatus.fromJson(json['status'] as String) : null) : const SdkOmitted(),
-    startDate: json['start_date'] != null ? SdkPresent((json['start_date'] as String?)!) : const SdkOmitted(),
-    targetDate: json['target_date'] != null ? SdkPresent((json['target_date'] as String?)!) : const SdkOmitted(),
-    body: json.containsKey('body') ? SdkPresent(json['body'] as String?) : const SdkOmitted(),
-  );
+  factory ProjectsV2StatusUpdate.fromJson(Map<String, dynamic> json) =>
+      ProjectsV2StatusUpdate(
+        id: ((json['id'] as num?)?.toDouble())!,
+        nodeId: (json['node_id'] as String?)!,
+        projectNodeId: json['project_node_id'] != null
+            ? SdkPresent((json['project_node_id'] as String?)!)
+            : const SdkOmitted(),
+        creator: json['creator'] != null
+            ? SdkPresent((json['creator'] != null
+                ? SimpleUser.fromJson(json['creator'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        createdAt: (json['created_at'] as String?)!,
+        updatedAt: (json['updated_at'] as String?)!,
+        status: json.containsKey('status')
+            ? SdkPresent(json['status'] != null
+                ? ProjectsV2StatusUpdateStatus.fromJson(
+                    json['status'] as String)
+                : null)
+            : const SdkOmitted(),
+        startDate: json['start_date'] != null
+            ? SdkPresent((json['start_date'] as String?)!)
+            : const SdkOmitted(),
+        targetDate: json['target_date'] != null
+            ? SdkPresent((json['target_date'] as String?)!)
+            : const SdkOmitted(),
+        body: json.containsKey('body')
+            ? SdkPresent(json['body'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'node_id': nodeId,
-    ...switch (projectNodeId) {
-      SdkPresent<String>(value: final value) => {'project_node_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (creator) {
-      SdkPresent<SimpleUser>(value: final value) => {'creator': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'created_at': createdAt,
-    'updated_at': updatedAt,
-    ...switch (status) {
-      SdkPresent<ProjectsV2StatusUpdateStatus?>(value: final value) => {'status': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (startDate) {
-      SdkPresent<String>(value: final value) => {'start_date': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (targetDate) {
-      SdkPresent<String>(value: final value) => {'target_date': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (body) {
-      SdkPresent<String?>(value: final value) => {'body': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'id': id,
+        'node_id': nodeId,
+        ...switch (projectNodeId) {
+          SdkPresent<String>(value: final value) => {
+              'project_node_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (creator) {
+          SdkPresent<SimpleUser>(value: final value) => {
+              'creator': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'created_at': createdAt,
+        'updated_at': updatedAt,
+        ...switch (status) {
+          SdkPresent<ProjectsV2StatusUpdateStatus?>(value: final value) => {
+              'status': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (startDate) {
+          SdkPresent<String>(value: final value) => {
+              'start_date': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (targetDate) {
+          SdkPresent<String>(value: final value) => {
+              'target_date': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (body) {
+          SdkPresent<String?>(value: final value) => {
+              'body': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// A view inside a projects v2 project
 class ProjectsV2View {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The unique identifier of the view.
   final int id;
+
   /// The number of the view within the project.
   final int number;
+
   /// The name of the view.
   final String name;
+
   /// The layout of the view.
   final ProjectsV2ViewLayout layout;
+
   /// The node ID of the view.
   final String nodeId;
+
   /// The API URL of the project that contains the view.
   final String projectUrl;
+
   /// The web URL of the view.
   final String htmlUrl;
+
   /// A GitHub user.
   final SimpleUser creator;
+
   /// The time when the view was created.
   final String createdAt;
+
   /// The time when the view was last updated.
   final String updatedAt;
+
   /// The filter query for the view.
   final SdkOptional<String?> filter;
+
   /// The list of field IDs that are visible in the view.
   final List<int> visibleFields;
+
   /// The sorting configuration for the view. Each element is a tuple of [field_id, direction] where direction is "asc" or "desc".
   final List<List<dynamic>> sortBy;
+
   /// The list of field IDs used for horizontal grouping.
   final List<int> groupBy;
+
   /// The list of field IDs used for vertical grouping (board layout).
   final List<int> verticalGroupBy;
 
-  const ProjectsV2View({required this.id, required this.number, required this.name, required this.layout, required this.nodeId, required this.projectUrl, required this.htmlUrl, required this.creator, required this.createdAt, required this.updatedAt, this.filter = const SdkOmitted(), required this.visibleFields, required this.sortBy, required this.groupBy, required this.verticalGroupBy});
+  const ProjectsV2View(
+      {required this.id,
+      required this.number,
+      required this.name,
+      required this.layout,
+      required this.nodeId,
+      required this.projectUrl,
+      required this.htmlUrl,
+      required this.creator,
+      required this.createdAt,
+      required this.updatedAt,
+      this.filter = const SdkOmitted(),
+      required this.visibleFields,
+      required this.sortBy,
+      required this.groupBy,
+      required this.verticalGroupBy});
 
-  ProjectsV2View Function({int id, int number, String name, ProjectsV2ViewLayout layout, String nodeId, String projectUrl, String htmlUrl, SimpleUser creator, String createdAt, String updatedAt, SdkOptional<String?> filter, List<int> visibleFields, List<List<dynamic>> sortBy, List<int> groupBy, List<int> verticalGroupBy}) get copyWith => _copyWith;
+  ProjectsV2View Function(
+      {int id,
+      int number,
+      String name,
+      ProjectsV2ViewLayout layout,
+      String nodeId,
+      String projectUrl,
+      String htmlUrl,
+      SimpleUser creator,
+      String createdAt,
+      String updatedAt,
+      SdkOptional<String?> filter,
+      List<int> visibleFields,
+      List<List<dynamic>> sortBy,
+      List<int> groupBy,
+      List<int> verticalGroupBy}) get copyWith => _copyWith;
 
-  ProjectsV2View _copyWith({Object? id = sdkOmittedValue, Object? number = sdkOmittedValue, Object? name = sdkOmittedValue, Object? layout = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? projectUrl = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? creator = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? filter = sdkOmittedValue, Object? visibleFields = sdkOmittedValue, Object? sortBy = sdkOmittedValue, Object? groupBy = sdkOmittedValue, Object? verticalGroupBy = sdkOmittedValue}) => ProjectsV2View(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    number: identical(number, sdkOmittedValue) ? this.number : number as int,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    layout: identical(layout, sdkOmittedValue) ? this.layout : layout as ProjectsV2ViewLayout,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    projectUrl: identical(projectUrl, sdkOmittedValue) ? this.projectUrl : projectUrl as String,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
-    creator: identical(creator, sdkOmittedValue) ? this.creator : creator as SimpleUser,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
-    filter: identical(filter, sdkOmittedValue) ? this.filter : filter as SdkOptional<String?>,
-    visibleFields: identical(visibleFields, sdkOmittedValue) ? this.visibleFields : visibleFields as List<int>,
-    sortBy: identical(sortBy, sdkOmittedValue) ? this.sortBy : sortBy as List<List<dynamic>>,
-    groupBy: identical(groupBy, sdkOmittedValue) ? this.groupBy : groupBy as List<int>,
-    verticalGroupBy: identical(verticalGroupBy, sdkOmittedValue) ? this.verticalGroupBy : verticalGroupBy as List<int>,
-  );
+  ProjectsV2View _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? number = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? layout = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? projectUrl = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? creator = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? filter = sdkOmittedValue,
+          Object? visibleFields = sdkOmittedValue,
+          Object? sortBy = sdkOmittedValue,
+          Object? groupBy = sdkOmittedValue,
+          Object? verticalGroupBy = sdkOmittedValue}) =>
+      ProjectsV2View(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        number:
+            identical(number, sdkOmittedValue) ? this.number : number as int,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        layout: identical(layout, sdkOmittedValue)
+            ? this.layout
+            : layout as ProjectsV2ViewLayout,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        projectUrl: identical(projectUrl, sdkOmittedValue)
+            ? this.projectUrl
+            : projectUrl as String,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as String,
+        creator: identical(creator, sdkOmittedValue)
+            ? this.creator
+            : creator as SimpleUser,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+        filter: identical(filter, sdkOmittedValue)
+            ? this.filter
+            : filter as SdkOptional<String?>,
+        visibleFields: identical(visibleFields, sdkOmittedValue)
+            ? this.visibleFields
+            : visibleFields as List<int>,
+        sortBy: identical(sortBy, sdkOmittedValue)
+            ? this.sortBy
+            : sortBy as List<List<dynamic>>,
+        groupBy: identical(groupBy, sdkOmittedValue)
+            ? this.groupBy
+            : groupBy as List<int>,
+        verticalGroupBy: identical(verticalGroupBy, sdkOmittedValue)
+            ? this.verticalGroupBy
+            : verticalGroupBy as List<int>,
+      );
 
   factory ProjectsV2View.fromJson(Map<String, dynamic> json) => ProjectsV2View(
-    id: ((json['id'] as num?)?.toInt())!,
-    number: ((json['number'] as num?)?.toInt())!,
-    name: (json['name'] as String?)!,
-    layout: (json['layout'] != null ? ProjectsV2ViewLayout.fromJson(json['layout'] as String) : null)!,
-    nodeId: (json['node_id'] as String?)!,
-    projectUrl: (json['project_url'] as String?)!,
-    htmlUrl: (json['html_url'] as String?)!,
-    creator: (json['creator'] != null ? SimpleUser.fromJson(json['creator'] as Map<String, dynamic>) : null)!,
-    createdAt: (json['created_at'] as String?)!,
-    updatedAt: (json['updated_at'] as String?)!,
-    filter: json.containsKey('filter') ? SdkPresent(json['filter'] as String?) : const SdkOmitted(),
-    visibleFields: ((json['visible_fields'] as List?)?.map((e) => (e as num).toInt()).toList())!,
-    sortBy: ((json['sort_by'] as List?)?.map((e) => (e as List).map((item) => item).toList()).toList())!,
-    groupBy: ((json['group_by'] as List?)?.map((e) => (e as num).toInt()).toList())!,
-    verticalGroupBy: ((json['vertical_group_by'] as List?)?.map((e) => (e as num).toInt()).toList())!,
-  );
+        id: ((json['id'] as num?)?.toInt())!,
+        number: ((json['number'] as num?)?.toInt())!,
+        name: (json['name'] as String?)!,
+        layout: (json['layout'] != null
+            ? ProjectsV2ViewLayout.fromJson(json['layout'] as String)
+            : null)!,
+        nodeId: (json['node_id'] as String?)!,
+        projectUrl: (json['project_url'] as String?)!,
+        htmlUrl: (json['html_url'] as String?)!,
+        creator: (json['creator'] != null
+            ? SimpleUser.fromJson(json['creator'] as Map<String, dynamic>)
+            : null)!,
+        createdAt: (json['created_at'] as String?)!,
+        updatedAt: (json['updated_at'] as String?)!,
+        filter: json.containsKey('filter')
+            ? SdkPresent(json['filter'] as String?)
+            : const SdkOmitted(),
+        visibleFields: ((json['visible_fields'] as List?)
+            ?.map((e) => (e as num).toInt())
+            .toList())!,
+        sortBy: ((json['sort_by'] as List?)
+            ?.map((e) => (e as List).map((item) => item).toList())
+            .toList())!,
+        groupBy: ((json['group_by'] as List?)
+            ?.map((e) => (e as num).toInt())
+            .toList())!,
+        verticalGroupBy: ((json['vertical_group_by'] as List?)
+            ?.map((e) => (e as num).toInt())
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'number': number,
-    'name': name,
-    'layout': layout.toJson(),
-    'node_id': nodeId,
-    'project_url': projectUrl,
-    'html_url': htmlUrl,
-    'creator': creator.toJson(),
-    'created_at': createdAt,
-    'updated_at': updatedAt,
-    ...switch (filter) {
-      SdkPresent<String?>(value: final value) => {'filter': value,},
-      _ => const <String, dynamic>{},
-    },
-    'visible_fields': visibleFields,
-    'sort_by': sortBy,
-    'group_by': groupBy,
-    'vertical_group_by': verticalGroupBy,
-  };
+        'id': id,
+        'number': number,
+        'name': name,
+        'layout': layout.toJson(),
+        'node_id': nodeId,
+        'project_url': projectUrl,
+        'html_url': htmlUrl,
+        'creator': creator.toJson(),
+        'created_at': createdAt,
+        'updated_at': updatedAt,
+        ...switch (filter) {
+          SdkPresent<String?>(value: final value) => {
+              'filter': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'visible_fields': visibleFields,
+        'sort_by': sortBy,
+        'group_by': groupBy,
+        'vertical_group_by': verticalGroupBy,
+      };
 }

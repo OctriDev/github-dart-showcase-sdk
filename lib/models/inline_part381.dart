@@ -7,260 +7,492 @@ part of 'inline.dart';
 class ProjectsCreateViewForOrgRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the view.
   final String name;
+
   /// The layout of the view.
   final ProjectsCreateViewForOrgRequestBodyLayout layout;
+
   /// The filter query for the view. See [Filtering projects](https://docs.github.com/issues/planning-and-tracking-with-projects/customizing-views-in-your-project/filtering-projects) for more information.
   final SdkOptional<String> filter;
+
   /// `visible_fields` is not applicable to `roadmap` layout views. For `table` and `board` layouts, this represents the field IDs that should be visible in the view. If not provided, the default visible fields will be used.
   final SdkOptional<List<int>> visibleFields;
+
   /// Sorting configuration for the view. Each element is a two-element array of `[field_id, direction]` where `direction` is `"asc"` or `"desc"`. Supports multiple sort criteria applied in order.
   final SdkOptional<List<List<dynamic>>> sortBy;
+
   /// The field IDs to group items by (horizontal grouping). Supports a single field. The field must support grouping; fields such as `Title`, `Reviewers`, `Linked pull requests`, `Sub-issues progress`, `Tracked by`, and `Tracks` cannot be grouped on.
   final SdkOptional<List<int>> groupBy;
+
   /// The field IDs to use as columns in `board` layout (vertical grouping). Supports a single field. The field must support grouping; fields such as `Title`, `Reviewers`, `Linked pull requests`, `Sub-issues progress`, `Tracked by`, and `Tracks` cannot be grouped on.
   final SdkOptional<List<int>> verticalGroupBy;
 
-  const ProjectsCreateViewForOrgRequestBody({required this.name, required this.layout, this.filter = const SdkOmitted(), this.visibleFields = const SdkOmitted(), this.sortBy = const SdkOmitted(), this.groupBy = const SdkOmitted(), this.verticalGroupBy = const SdkOmitted()});
+  const ProjectsCreateViewForOrgRequestBody(
+      {required this.name,
+      required this.layout,
+      this.filter = const SdkOmitted(),
+      this.visibleFields = const SdkOmitted(),
+      this.sortBy = const SdkOmitted(),
+      this.groupBy = const SdkOmitted(),
+      this.verticalGroupBy = const SdkOmitted()});
 
-  ProjectsCreateViewForOrgRequestBody Function({String name, ProjectsCreateViewForOrgRequestBodyLayout layout, SdkOptional<String> filter, SdkOptional<List<int>> visibleFields, SdkOptional<List<List<dynamic>>> sortBy, SdkOptional<List<int>> groupBy, SdkOptional<List<int>> verticalGroupBy}) get copyWith => _copyWith;
+  ProjectsCreateViewForOrgRequestBody Function(
+      {String name,
+      ProjectsCreateViewForOrgRequestBodyLayout layout,
+      SdkOptional<String> filter,
+      SdkOptional<List<int>> visibleFields,
+      SdkOptional<List<List<dynamic>>> sortBy,
+      SdkOptional<List<int>> groupBy,
+      SdkOptional<List<int>> verticalGroupBy}) get copyWith => _copyWith;
 
-  ProjectsCreateViewForOrgRequestBody _copyWith({Object? name = sdkOmittedValue, Object? layout = sdkOmittedValue, Object? filter = sdkOmittedValue, Object? visibleFields = sdkOmittedValue, Object? sortBy = sdkOmittedValue, Object? groupBy = sdkOmittedValue, Object? verticalGroupBy = sdkOmittedValue}) => ProjectsCreateViewForOrgRequestBody(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    layout: identical(layout, sdkOmittedValue) ? this.layout : layout as ProjectsCreateViewForOrgRequestBodyLayout,
-    filter: identical(filter, sdkOmittedValue) ? this.filter : filter as SdkOptional<String>,
-    visibleFields: identical(visibleFields, sdkOmittedValue) ? this.visibleFields : visibleFields as SdkOptional<List<int>>,
-    sortBy: identical(sortBy, sdkOmittedValue) ? this.sortBy : sortBy as SdkOptional<List<List<dynamic>>>,
-    groupBy: identical(groupBy, sdkOmittedValue) ? this.groupBy : groupBy as SdkOptional<List<int>>,
-    verticalGroupBy: identical(verticalGroupBy, sdkOmittedValue) ? this.verticalGroupBy : verticalGroupBy as SdkOptional<List<int>>,
-  );
+  ProjectsCreateViewForOrgRequestBody _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? layout = sdkOmittedValue,
+          Object? filter = sdkOmittedValue,
+          Object? visibleFields = sdkOmittedValue,
+          Object? sortBy = sdkOmittedValue,
+          Object? groupBy = sdkOmittedValue,
+          Object? verticalGroupBy = sdkOmittedValue}) =>
+      ProjectsCreateViewForOrgRequestBody(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        layout: identical(layout, sdkOmittedValue)
+            ? this.layout
+            : layout as ProjectsCreateViewForOrgRequestBodyLayout,
+        filter: identical(filter, sdkOmittedValue)
+            ? this.filter
+            : filter as SdkOptional<String>,
+        visibleFields: identical(visibleFields, sdkOmittedValue)
+            ? this.visibleFields
+            : visibleFields as SdkOptional<List<int>>,
+        sortBy: identical(sortBy, sdkOmittedValue)
+            ? this.sortBy
+            : sortBy as SdkOptional<List<List<dynamic>>>,
+        groupBy: identical(groupBy, sdkOmittedValue)
+            ? this.groupBy
+            : groupBy as SdkOptional<List<int>>,
+        verticalGroupBy: identical(verticalGroupBy, sdkOmittedValue)
+            ? this.verticalGroupBy
+            : verticalGroupBy as SdkOptional<List<int>>,
+      );
 
-  factory ProjectsCreateViewForOrgRequestBody.fromJson(Map<String, dynamic> json) => ProjectsCreateViewForOrgRequestBody(
-    name: (json['name'] as String?)!,
-    layout: (json['layout'] != null ? ProjectsCreateViewForOrgRequestBodyLayout.fromJson(json['layout'] as String) : null)!,
-    filter: json['filter'] != null ? SdkPresent((json['filter'] as String?)!) : const SdkOmitted(),
-    visibleFields: json['visible_fields'] != null ? SdkPresent(((json['visible_fields'] as List?)?.map((e) => (e as num).toInt()).toList())!) : const SdkOmitted(),
-    sortBy: json['sort_by'] != null ? SdkPresent(((json['sort_by'] as List?)?.map((e) => (e as List).map((item) => item).toList()).toList())!) : const SdkOmitted(),
-    groupBy: json['group_by'] != null ? SdkPresent(((json['group_by'] as List?)?.map((e) => (e as num).toInt()).toList())!) : const SdkOmitted(),
-    verticalGroupBy: json['vertical_group_by'] != null ? SdkPresent(((json['vertical_group_by'] as List?)?.map((e) => (e as num).toInt()).toList())!) : const SdkOmitted(),
-  );
+  factory ProjectsCreateViewForOrgRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      ProjectsCreateViewForOrgRequestBody(
+        name: (json['name'] as String?)!,
+        layout: (json['layout'] != null
+            ? ProjectsCreateViewForOrgRequestBodyLayout.fromJson(
+                json['layout'] as String)
+            : null)!,
+        filter: json['filter'] != null
+            ? SdkPresent((json['filter'] as String?)!)
+            : const SdkOmitted(),
+        visibleFields: json['visible_fields'] != null
+            ? SdkPresent(((json['visible_fields'] as List?)
+                ?.map((e) => (e as num).toInt())
+                .toList())!)
+            : const SdkOmitted(),
+        sortBy: json['sort_by'] != null
+            ? SdkPresent(((json['sort_by'] as List?)
+                ?.map((e) => (e as List).map((item) => item).toList())
+                .toList())!)
+            : const SdkOmitted(),
+        groupBy: json['group_by'] != null
+            ? SdkPresent(((json['group_by'] as List?)
+                ?.map((e) => (e as num).toInt())
+                .toList())!)
+            : const SdkOmitted(),
+        verticalGroupBy: json['vertical_group_by'] != null
+            ? SdkPresent(((json['vertical_group_by'] as List?)
+                ?.map((e) => (e as num).toInt())
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'layout': layout.toJson(),
-    ...switch (filter) {
-      SdkPresent<String>(value: final value) => {'filter': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (visibleFields) {
-      SdkPresent<List<int>>(value: final value) => {'visible_fields': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (sortBy) {
-      SdkPresent<List<List<dynamic>>>(value: final value) => {'sort_by': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (groupBy) {
-      SdkPresent<List<int>>(value: final value) => {'group_by': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (verticalGroupBy) {
-      SdkPresent<List<int>>(value: final value) => {'vertical_group_by': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'name': name,
+        'layout': layout.toJson(),
+        ...switch (filter) {
+          SdkPresent<String>(value: final value) => {
+              'filter': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (visibleFields) {
+          SdkPresent<List<int>>(value: final value) => {
+              'visible_fields': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (sortBy) {
+          SdkPresent<List<List<dynamic>>>(value: final value) => {
+              'sort_by': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (groupBy) {
+          SdkPresent<List<int>>(value: final value) => {
+              'group_by': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (verticalGroupBy) {
+          SdkPresent<List<int>>(value: final value) => {
+              'vertical_group_by': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class ProjectsCreateDraftItemForAuthenticatedUserRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The title of the draft issue item to create in the project.
   final String title;
+
   /// The body content of the draft issue item to create in the project.
   final SdkOptional<String> body;
 
-  const ProjectsCreateDraftItemForAuthenticatedUserRequestBody({required this.title, this.body = const SdkOmitted()});
+  const ProjectsCreateDraftItemForAuthenticatedUserRequestBody(
+      {required this.title, this.body = const SdkOmitted()});
 
-  ProjectsCreateDraftItemForAuthenticatedUserRequestBody Function({String title, SdkOptional<String> body}) get copyWith => _copyWith;
+  ProjectsCreateDraftItemForAuthenticatedUserRequestBody Function(
+      {String title, SdkOptional<String> body}) get copyWith => _copyWith;
 
-  ProjectsCreateDraftItemForAuthenticatedUserRequestBody _copyWith({Object? title = sdkOmittedValue, Object? body = sdkOmittedValue}) => ProjectsCreateDraftItemForAuthenticatedUserRequestBody(
-    title: identical(title, sdkOmittedValue) ? this.title : title as String,
-    body: identical(body, sdkOmittedValue) ? this.body : body as SdkOptional<String>,
-  );
+  ProjectsCreateDraftItemForAuthenticatedUserRequestBody _copyWith(
+          {Object? title = sdkOmittedValue, Object? body = sdkOmittedValue}) =>
+      ProjectsCreateDraftItemForAuthenticatedUserRequestBody(
+        title: identical(title, sdkOmittedValue) ? this.title : title as String,
+        body: identical(body, sdkOmittedValue)
+            ? this.body
+            : body as SdkOptional<String>,
+      );
 
-  factory ProjectsCreateDraftItemForAuthenticatedUserRequestBody.fromJson(Map<String, dynamic> json) => ProjectsCreateDraftItemForAuthenticatedUserRequestBody(
-    title: (json['title'] as String?)!,
-    body: json['body'] != null ? SdkPresent((json['body'] as String?)!) : const SdkOmitted(),
-  );
+  factory ProjectsCreateDraftItemForAuthenticatedUserRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      ProjectsCreateDraftItemForAuthenticatedUserRequestBody(
+        title: (json['title'] as String?)!,
+        body: json['body'] != null
+            ? SdkPresent((json['body'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'title': title,
-    ...switch (body) {
-      SdkPresent<String>(value: final value) => {'body': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'title': title,
+        ...switch (body) {
+          SdkPresent<String>(value: final value) => {
+              'body': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class ProjectsCreateViewForUserRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the view.
   final String name;
+
   /// The layout of the view.
   final ProjectsCreateViewForUserRequestBodyLayout layout;
+
   /// The filter query for the view. See [Filtering projects](https://docs.github.com/issues/planning-and-tracking-with-projects/customizing-views-in-your-project/filtering-projects) for more information.
   final SdkOptional<String> filter;
+
   /// `visible_fields` is not applicable to `roadmap` layout views. For `table` and `board` layouts, this represents the field IDs that should be visible in the view. If not provided, the default visible fields will be used.
   final SdkOptional<List<int>> visibleFields;
+
   /// Sorting configuration for the view. Each element is a two-element array of `[field_id, direction]` where `direction` is `"asc"` or `"desc"`. Supports multiple sort criteria applied in order.
   final SdkOptional<List<List<dynamic>>> sortBy;
+
   /// The field IDs to group items by (horizontal grouping). Supports a single field. The field must support grouping; fields such as `Title`, `Reviewers`, `Linked pull requests`, `Sub-issues progress`, `Tracked by`, and `Tracks` cannot be grouped on.
   final SdkOptional<List<int>> groupBy;
+
   /// The field IDs to use as columns in `board` layout (vertical grouping). Supports a single field. The field must support grouping; fields such as `Title`, `Reviewers`, `Linked pull requests`, `Sub-issues progress`, `Tracked by`, and `Tracks` cannot be grouped on.
   final SdkOptional<List<int>> verticalGroupBy;
 
-  const ProjectsCreateViewForUserRequestBody({required this.name, required this.layout, this.filter = const SdkOmitted(), this.visibleFields = const SdkOmitted(), this.sortBy = const SdkOmitted(), this.groupBy = const SdkOmitted(), this.verticalGroupBy = const SdkOmitted()});
+  const ProjectsCreateViewForUserRequestBody(
+      {required this.name,
+      required this.layout,
+      this.filter = const SdkOmitted(),
+      this.visibleFields = const SdkOmitted(),
+      this.sortBy = const SdkOmitted(),
+      this.groupBy = const SdkOmitted(),
+      this.verticalGroupBy = const SdkOmitted()});
 
-  ProjectsCreateViewForUserRequestBody Function({String name, ProjectsCreateViewForUserRequestBodyLayout layout, SdkOptional<String> filter, SdkOptional<List<int>> visibleFields, SdkOptional<List<List<dynamic>>> sortBy, SdkOptional<List<int>> groupBy, SdkOptional<List<int>> verticalGroupBy}) get copyWith => _copyWith;
+  ProjectsCreateViewForUserRequestBody Function(
+      {String name,
+      ProjectsCreateViewForUserRequestBodyLayout layout,
+      SdkOptional<String> filter,
+      SdkOptional<List<int>> visibleFields,
+      SdkOptional<List<List<dynamic>>> sortBy,
+      SdkOptional<List<int>> groupBy,
+      SdkOptional<List<int>> verticalGroupBy}) get copyWith => _copyWith;
 
-  ProjectsCreateViewForUserRequestBody _copyWith({Object? name = sdkOmittedValue, Object? layout = sdkOmittedValue, Object? filter = sdkOmittedValue, Object? visibleFields = sdkOmittedValue, Object? sortBy = sdkOmittedValue, Object? groupBy = sdkOmittedValue, Object? verticalGroupBy = sdkOmittedValue}) => ProjectsCreateViewForUserRequestBody(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    layout: identical(layout, sdkOmittedValue) ? this.layout : layout as ProjectsCreateViewForUserRequestBodyLayout,
-    filter: identical(filter, sdkOmittedValue) ? this.filter : filter as SdkOptional<String>,
-    visibleFields: identical(visibleFields, sdkOmittedValue) ? this.visibleFields : visibleFields as SdkOptional<List<int>>,
-    sortBy: identical(sortBy, sdkOmittedValue) ? this.sortBy : sortBy as SdkOptional<List<List<dynamic>>>,
-    groupBy: identical(groupBy, sdkOmittedValue) ? this.groupBy : groupBy as SdkOptional<List<int>>,
-    verticalGroupBy: identical(verticalGroupBy, sdkOmittedValue) ? this.verticalGroupBy : verticalGroupBy as SdkOptional<List<int>>,
-  );
+  ProjectsCreateViewForUserRequestBody _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? layout = sdkOmittedValue,
+          Object? filter = sdkOmittedValue,
+          Object? visibleFields = sdkOmittedValue,
+          Object? sortBy = sdkOmittedValue,
+          Object? groupBy = sdkOmittedValue,
+          Object? verticalGroupBy = sdkOmittedValue}) =>
+      ProjectsCreateViewForUserRequestBody(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        layout: identical(layout, sdkOmittedValue)
+            ? this.layout
+            : layout as ProjectsCreateViewForUserRequestBodyLayout,
+        filter: identical(filter, sdkOmittedValue)
+            ? this.filter
+            : filter as SdkOptional<String>,
+        visibleFields: identical(visibleFields, sdkOmittedValue)
+            ? this.visibleFields
+            : visibleFields as SdkOptional<List<int>>,
+        sortBy: identical(sortBy, sdkOmittedValue)
+            ? this.sortBy
+            : sortBy as SdkOptional<List<List<dynamic>>>,
+        groupBy: identical(groupBy, sdkOmittedValue)
+            ? this.groupBy
+            : groupBy as SdkOptional<List<int>>,
+        verticalGroupBy: identical(verticalGroupBy, sdkOmittedValue)
+            ? this.verticalGroupBy
+            : verticalGroupBy as SdkOptional<List<int>>,
+      );
 
-  factory ProjectsCreateViewForUserRequestBody.fromJson(Map<String, dynamic> json) => ProjectsCreateViewForUserRequestBody(
-    name: (json['name'] as String?)!,
-    layout: (json['layout'] != null ? ProjectsCreateViewForUserRequestBodyLayout.fromJson(json['layout'] as String) : null)!,
-    filter: json['filter'] != null ? SdkPresent((json['filter'] as String?)!) : const SdkOmitted(),
-    visibleFields: json['visible_fields'] != null ? SdkPresent(((json['visible_fields'] as List?)?.map((e) => (e as num).toInt()).toList())!) : const SdkOmitted(),
-    sortBy: json['sort_by'] != null ? SdkPresent(((json['sort_by'] as List?)?.map((e) => (e as List).map((item) => item).toList()).toList())!) : const SdkOmitted(),
-    groupBy: json['group_by'] != null ? SdkPresent(((json['group_by'] as List?)?.map((e) => (e as num).toInt()).toList())!) : const SdkOmitted(),
-    verticalGroupBy: json['vertical_group_by'] != null ? SdkPresent(((json['vertical_group_by'] as List?)?.map((e) => (e as num).toInt()).toList())!) : const SdkOmitted(),
-  );
+  factory ProjectsCreateViewForUserRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      ProjectsCreateViewForUserRequestBody(
+        name: (json['name'] as String?)!,
+        layout: (json['layout'] != null
+            ? ProjectsCreateViewForUserRequestBodyLayout.fromJson(
+                json['layout'] as String)
+            : null)!,
+        filter: json['filter'] != null
+            ? SdkPresent((json['filter'] as String?)!)
+            : const SdkOmitted(),
+        visibleFields: json['visible_fields'] != null
+            ? SdkPresent(((json['visible_fields'] as List?)
+                ?.map((e) => (e as num).toInt())
+                .toList())!)
+            : const SdkOmitted(),
+        sortBy: json['sort_by'] != null
+            ? SdkPresent(((json['sort_by'] as List?)
+                ?.map((e) => (e as List).map((item) => item).toList())
+                .toList())!)
+            : const SdkOmitted(),
+        groupBy: json['group_by'] != null
+            ? SdkPresent(((json['group_by'] as List?)
+                ?.map((e) => (e as num).toInt())
+                .toList())!)
+            : const SdkOmitted(),
+        verticalGroupBy: json['vertical_group_by'] != null
+            ? SdkPresent(((json['vertical_group_by'] as List?)
+                ?.map((e) => (e as num).toInt())
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'layout': layout.toJson(),
-    ...switch (filter) {
-      SdkPresent<String>(value: final value) => {'filter': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (visibleFields) {
-      SdkPresent<List<int>>(value: final value) => {'visible_fields': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (sortBy) {
-      SdkPresent<List<List<dynamic>>>(value: final value) => {'sort_by': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (groupBy) {
-      SdkPresent<List<int>>(value: final value) => {'group_by': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (verticalGroupBy) {
-      SdkPresent<List<int>>(value: final value) => {'vertical_group_by': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'name': name,
+        'layout': layout.toJson(),
+        ...switch (filter) {
+          SdkPresent<String>(value: final value) => {
+              'filter': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (visibleFields) {
+          SdkPresent<List<int>>(value: final value) => {
+              'visible_fields': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (sortBy) {
+          SdkPresent<List<List<dynamic>>>(value: final value) => {
+              'sort_by': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (groupBy) {
+          SdkPresent<List<int>>(value: final value) => {
+              'group_by': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (verticalGroupBy) {
+          SdkPresent<List<int>>(value: final value) => {
+              'vertical_group_by': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class ProjectsAddFieldForUserRequestBodyVariant0 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the field.
   final String name;
+
   /// The field's data type.
   final ProjectsAddFieldForUserRequestBodyVariant0DataType dataType;
 
-  const ProjectsAddFieldForUserRequestBodyVariant0({required this.name, required this.dataType});
+  const ProjectsAddFieldForUserRequestBodyVariant0(
+      {required this.name, required this.dataType});
 
-  ProjectsAddFieldForUserRequestBodyVariant0 Function({String name, ProjectsAddFieldForUserRequestBodyVariant0DataType dataType}) get copyWith => _copyWith;
+  ProjectsAddFieldForUserRequestBodyVariant0 Function(
+          {String name,
+          ProjectsAddFieldForUserRequestBodyVariant0DataType dataType})
+      get copyWith => _copyWith;
 
-  ProjectsAddFieldForUserRequestBodyVariant0 _copyWith({Object? name = sdkOmittedValue, Object? dataType = sdkOmittedValue}) => ProjectsAddFieldForUserRequestBodyVariant0(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    dataType: identical(dataType, sdkOmittedValue) ? this.dataType : dataType as ProjectsAddFieldForUserRequestBodyVariant0DataType,
-  );
+  ProjectsAddFieldForUserRequestBodyVariant0 _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? dataType = sdkOmittedValue}) =>
+      ProjectsAddFieldForUserRequestBodyVariant0(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        dataType: identical(dataType, sdkOmittedValue)
+            ? this.dataType
+            : dataType as ProjectsAddFieldForUserRequestBodyVariant0DataType,
+      );
 
-  factory ProjectsAddFieldForUserRequestBodyVariant0.fromJson(Map<String, dynamic> json) => ProjectsAddFieldForUserRequestBodyVariant0(
-    name: (json['name'] as String?)!,
-    dataType: (json['data_type'] != null ? ProjectsAddFieldForUserRequestBodyVariant0DataType.fromJson(json['data_type'] as String) : null)!,
-  );
+  factory ProjectsAddFieldForUserRequestBodyVariant0.fromJson(
+          Map<String, dynamic> json) =>
+      ProjectsAddFieldForUserRequestBodyVariant0(
+        name: (json['name'] as String?)!,
+        dataType: (json['data_type'] != null
+            ? ProjectsAddFieldForUserRequestBodyVariant0DataType.fromJson(
+                json['data_type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'data_type': dataType.toJson(),
-  };
+        'name': name,
+        'data_type': dataType.toJson(),
+      };
 }
 
 class ProjectsAddFieldForUserRequestBodyVariant1 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the field.
   final String name;
+
   /// The field's data type.
   final ProjectsAddFieldForUserRequestBodyVariant1DataType dataType;
+
   /// The options available for single select fields. At least one option must be provided when creating a single select field.
   final List<ProjectsV2FieldSingleSelectOption> singleSelectOptions;
 
-  const ProjectsAddFieldForUserRequestBodyVariant1({required this.name, required this.dataType, required this.singleSelectOptions});
+  const ProjectsAddFieldForUserRequestBodyVariant1(
+      {required this.name,
+      required this.dataType,
+      required this.singleSelectOptions});
 
-  ProjectsAddFieldForUserRequestBodyVariant1 Function({String name, ProjectsAddFieldForUserRequestBodyVariant1DataType dataType, List<ProjectsV2FieldSingleSelectOption> singleSelectOptions}) get copyWith => _copyWith;
+  ProjectsAddFieldForUserRequestBodyVariant1 Function(
+          {String name,
+          ProjectsAddFieldForUserRequestBodyVariant1DataType dataType,
+          List<ProjectsV2FieldSingleSelectOption> singleSelectOptions})
+      get copyWith => _copyWith;
 
-  ProjectsAddFieldForUserRequestBodyVariant1 _copyWith({Object? name = sdkOmittedValue, Object? dataType = sdkOmittedValue, Object? singleSelectOptions = sdkOmittedValue}) => ProjectsAddFieldForUserRequestBodyVariant1(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    dataType: identical(dataType, sdkOmittedValue) ? this.dataType : dataType as ProjectsAddFieldForUserRequestBodyVariant1DataType,
-    singleSelectOptions: identical(singleSelectOptions, sdkOmittedValue) ? this.singleSelectOptions : singleSelectOptions as List<ProjectsV2FieldSingleSelectOption>,
-  );
+  ProjectsAddFieldForUserRequestBodyVariant1 _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? dataType = sdkOmittedValue,
+          Object? singleSelectOptions = sdkOmittedValue}) =>
+      ProjectsAddFieldForUserRequestBodyVariant1(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        dataType: identical(dataType, sdkOmittedValue)
+            ? this.dataType
+            : dataType as ProjectsAddFieldForUserRequestBodyVariant1DataType,
+        singleSelectOptions: identical(singleSelectOptions, sdkOmittedValue)
+            ? this.singleSelectOptions
+            : singleSelectOptions as List<ProjectsV2FieldSingleSelectOption>,
+      );
 
-  factory ProjectsAddFieldForUserRequestBodyVariant1.fromJson(Map<String, dynamic> json) => ProjectsAddFieldForUserRequestBodyVariant1(
-    name: (json['name'] as String?)!,
-    dataType: (json['data_type'] != null ? ProjectsAddFieldForUserRequestBodyVariant1DataType.fromJson(json['data_type'] as String) : null)!,
-    singleSelectOptions: ((json['single_select_options'] as List?)?.map((e) => ProjectsV2FieldSingleSelectOption.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+  factory ProjectsAddFieldForUserRequestBodyVariant1.fromJson(
+          Map<String, dynamic> json) =>
+      ProjectsAddFieldForUserRequestBodyVariant1(
+        name: (json['name'] as String?)!,
+        dataType: (json['data_type'] != null
+            ? ProjectsAddFieldForUserRequestBodyVariant1DataType.fromJson(
+                json['data_type'] as String)
+            : null)!,
+        singleSelectOptions: ((json['single_select_options'] as List?)
+            ?.map((e) => ProjectsV2FieldSingleSelectOption.fromJson(
+                e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'data_type': dataType.toJson(),
-    'single_select_options': singleSelectOptions.map((item) => item.toJson()).toList(),
-  };
+        'name': name,
+        'data_type': dataType.toJson(),
+        'single_select_options':
+            singleSelectOptions.map((item) => item.toJson()).toList(),
+      };
 }
 
 class ProjectsAddFieldForUserRequestBodyVariant2 {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the field.
   final String name;
+
   /// The field's data type.
   final ProjectsAddFieldForUserRequestBodyVariant2DataType dataType;
+
   /// The configuration for iteration fields.
   final ProjectsV2FieldIterationConfiguration iterationConfiguration;
 
-  const ProjectsAddFieldForUserRequestBodyVariant2({required this.name, required this.dataType, required this.iterationConfiguration});
+  const ProjectsAddFieldForUserRequestBodyVariant2(
+      {required this.name,
+      required this.dataType,
+      required this.iterationConfiguration});
 
-  ProjectsAddFieldForUserRequestBodyVariant2 Function({String name, ProjectsAddFieldForUserRequestBodyVariant2DataType dataType, ProjectsV2FieldIterationConfiguration iterationConfiguration}) get copyWith => _copyWith;
+  ProjectsAddFieldForUserRequestBodyVariant2 Function(
+          {String name,
+          ProjectsAddFieldForUserRequestBodyVariant2DataType dataType,
+          ProjectsV2FieldIterationConfiguration iterationConfiguration})
+      get copyWith => _copyWith;
 
-  ProjectsAddFieldForUserRequestBodyVariant2 _copyWith({Object? name = sdkOmittedValue, Object? dataType = sdkOmittedValue, Object? iterationConfiguration = sdkOmittedValue}) => ProjectsAddFieldForUserRequestBodyVariant2(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    dataType: identical(dataType, sdkOmittedValue) ? this.dataType : dataType as ProjectsAddFieldForUserRequestBodyVariant2DataType,
-    iterationConfiguration: identical(iterationConfiguration, sdkOmittedValue) ? this.iterationConfiguration : iterationConfiguration as ProjectsV2FieldIterationConfiguration,
-  );
+  ProjectsAddFieldForUserRequestBodyVariant2 _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? dataType = sdkOmittedValue,
+          Object? iterationConfiguration = sdkOmittedValue}) =>
+      ProjectsAddFieldForUserRequestBodyVariant2(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        dataType: identical(dataType, sdkOmittedValue)
+            ? this.dataType
+            : dataType as ProjectsAddFieldForUserRequestBodyVariant2DataType,
+        iterationConfiguration: identical(
+                iterationConfiguration, sdkOmittedValue)
+            ? this.iterationConfiguration
+            : iterationConfiguration as ProjectsV2FieldIterationConfiguration,
+      );
 
-  factory ProjectsAddFieldForUserRequestBodyVariant2.fromJson(Map<String, dynamic> json) => ProjectsAddFieldForUserRequestBodyVariant2(
-    name: (json['name'] as String?)!,
-    dataType: (json['data_type'] != null ? ProjectsAddFieldForUserRequestBodyVariant2DataType.fromJson(json['data_type'] as String) : null)!,
-    iterationConfiguration: (json['iteration_configuration'] != null ? ProjectsV2FieldIterationConfiguration.fromJson(json['iteration_configuration'] as Map<String, dynamic>) : null)!,
-  );
+  factory ProjectsAddFieldForUserRequestBodyVariant2.fromJson(
+          Map<String, dynamic> json) =>
+      ProjectsAddFieldForUserRequestBodyVariant2(
+        name: (json['name'] as String?)!,
+        dataType: (json['data_type'] != null
+            ? ProjectsAddFieldForUserRequestBodyVariant2DataType.fromJson(
+                json['data_type'] as String)
+            : null)!,
+        iterationConfiguration: (json['iteration_configuration'] != null
+            ? ProjectsV2FieldIterationConfiguration.fromJson(
+                json['iteration_configuration'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'data_type': dataType.toJson(),
-    'iteration_configuration': iterationConfiguration.toJson(),
-  };
+        'name': name,
+        'data_type': dataType.toJson(),
+        'iteration_configuration': iterationConfiguration.toJson(),
+      };
 }

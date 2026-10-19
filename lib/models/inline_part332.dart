@@ -7,95 +7,184 @@ part of 'inline.dart';
 class ActionsCreateRepoActionsPolicyRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the policy.
   final String name;
+
   /// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
   final RepositoryRuleEnforcement enforcement;
+
   /// Conditions for a repository Actions policy. The object may be empty to preserve or use the default workflow targeting, or contain only `workflow_path`.
   final SdkOptional<ActionsPolicyRepoConditions> conditions;
+
   /// An array of rules within the policy.
   final SdkOptional<List<ActionsRule>> rules;
 
-  const ActionsCreateRepoActionsPolicyRequestBody({required this.name, required this.enforcement, this.conditions = const SdkOmitted(), this.rules = const SdkOmitted()});
+  const ActionsCreateRepoActionsPolicyRequestBody(
+      {required this.name,
+      required this.enforcement,
+      this.conditions = const SdkOmitted(),
+      this.rules = const SdkOmitted()});
 
-  ActionsCreateRepoActionsPolicyRequestBody Function({String name, RepositoryRuleEnforcement enforcement, SdkOptional<ActionsPolicyRepoConditions> conditions, SdkOptional<List<ActionsRule>> rules}) get copyWith => _copyWith;
+  ActionsCreateRepoActionsPolicyRequestBody Function(
+      {String name,
+      RepositoryRuleEnforcement enforcement,
+      SdkOptional<ActionsPolicyRepoConditions> conditions,
+      SdkOptional<List<ActionsRule>> rules}) get copyWith => _copyWith;
 
-  ActionsCreateRepoActionsPolicyRequestBody _copyWith({Object? name = sdkOmittedValue, Object? enforcement = sdkOmittedValue, Object? conditions = sdkOmittedValue, Object? rules = sdkOmittedValue}) => ActionsCreateRepoActionsPolicyRequestBody(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    enforcement: identical(enforcement, sdkOmittedValue) ? this.enforcement : enforcement as RepositoryRuleEnforcement,
-    conditions: identical(conditions, sdkOmittedValue) ? this.conditions : conditions as SdkOptional<ActionsPolicyRepoConditions>,
-    rules: identical(rules, sdkOmittedValue) ? this.rules : rules as SdkOptional<List<ActionsRule>>,
-  );
+  ActionsCreateRepoActionsPolicyRequestBody _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? enforcement = sdkOmittedValue,
+          Object? conditions = sdkOmittedValue,
+          Object? rules = sdkOmittedValue}) =>
+      ActionsCreateRepoActionsPolicyRequestBody(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        enforcement: identical(enforcement, sdkOmittedValue)
+            ? this.enforcement
+            : enforcement as RepositoryRuleEnforcement,
+        conditions: identical(conditions, sdkOmittedValue)
+            ? this.conditions
+            : conditions as SdkOptional<ActionsPolicyRepoConditions>,
+        rules: identical(rules, sdkOmittedValue)
+            ? this.rules
+            : rules as SdkOptional<List<ActionsRule>>,
+      );
 
-  factory ActionsCreateRepoActionsPolicyRequestBody.fromJson(Map<String, dynamic> json) => ActionsCreateRepoActionsPolicyRequestBody(
-    name: (json['name'] as String?)!,
-    enforcement: (json['enforcement'] != null ? RepositoryRuleEnforcement.fromJson(json['enforcement'] as String) : null)!,
-    conditions: json['conditions'] != null ? SdkPresent((json['conditions'] != null ? ActionsPolicyRepoConditions.fromJson(json['conditions']) : null)!) : const SdkOmitted(),
-    rules: json['rules'] != null ? SdkPresent(((json['rules'] as List?)?.map((e) => ActionsRule.fromJson(e)).toList())!) : const SdkOmitted(),
-  );
+  factory ActionsCreateRepoActionsPolicyRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      ActionsCreateRepoActionsPolicyRequestBody(
+        name: (json['name'] as String?)!,
+        enforcement: (json['enforcement'] != null
+            ? RepositoryRuleEnforcement.fromJson(json['enforcement'] as String)
+            : null)!,
+        conditions: json['conditions'] != null
+            ? SdkPresent((json['conditions'] != null
+                ? ActionsPolicyRepoConditions.fromJson(json['conditions'])
+                : null)!)
+            : const SdkOmitted(),
+        rules: json['rules'] != null
+            ? SdkPresent(((json['rules'] as List?)
+                ?.map((e) => ActionsRule.fromJson(e))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'enforcement': enforcement.toJson(),
-    ...switch (conditions) {
-      SdkPresent<ActionsPolicyRepoConditions>(value: final value) => {'conditions': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (rules) {
-      SdkPresent<List<ActionsRule>>(value: final value) => {'rules': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'name': name,
+        'enforcement': enforcement.toJson(),
+        ...switch (conditions) {
+          SdkPresent<ActionsPolicyRepoConditions>(value: final value) => {
+              'conditions': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (rules) {
+          SdkPresent<List<ActionsRule>>(value: final value) => {
+              'rules': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class ActionsUpdateRepoActionsPolicyRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the policy.
   final SdkOptional<String> name;
+
   /// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
   final SdkOptional<RepositoryRuleEnforcement> enforcement;
+
   /// Conditions for a repository Actions policy. The object may be empty to preserve or use the default workflow targeting, or contain only `workflow_path`.
   final SdkOptional<ActionsPolicyRepoConditions> conditions;
+
   /// An array of rules within the policy.
   final SdkOptional<List<ActionsRule>> rules;
 
-  const ActionsUpdateRepoActionsPolicyRequestBody({this.name = const SdkOmitted(), this.enforcement = const SdkOmitted(), this.conditions = const SdkOmitted(), this.rules = const SdkOmitted()});
+  const ActionsUpdateRepoActionsPolicyRequestBody(
+      {this.name = const SdkOmitted(),
+      this.enforcement = const SdkOmitted(),
+      this.conditions = const SdkOmitted(),
+      this.rules = const SdkOmitted()});
 
-  ActionsUpdateRepoActionsPolicyRequestBody Function({SdkOptional<String> name, SdkOptional<RepositoryRuleEnforcement> enforcement, SdkOptional<ActionsPolicyRepoConditions> conditions, SdkOptional<List<ActionsRule>> rules}) get copyWith => _copyWith;
+  ActionsUpdateRepoActionsPolicyRequestBody Function(
+      {SdkOptional<String> name,
+      SdkOptional<RepositoryRuleEnforcement> enforcement,
+      SdkOptional<ActionsPolicyRepoConditions> conditions,
+      SdkOptional<List<ActionsRule>> rules}) get copyWith => _copyWith;
 
-  ActionsUpdateRepoActionsPolicyRequestBody _copyWith({Object? name = sdkOmittedValue, Object? enforcement = sdkOmittedValue, Object? conditions = sdkOmittedValue, Object? rules = sdkOmittedValue}) => ActionsUpdateRepoActionsPolicyRequestBody(
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    enforcement: identical(enforcement, sdkOmittedValue) ? this.enforcement : enforcement as SdkOptional<RepositoryRuleEnforcement>,
-    conditions: identical(conditions, sdkOmittedValue) ? this.conditions : conditions as SdkOptional<ActionsPolicyRepoConditions>,
-    rules: identical(rules, sdkOmittedValue) ? this.rules : rules as SdkOptional<List<ActionsRule>>,
-  );
+  ActionsUpdateRepoActionsPolicyRequestBody _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? enforcement = sdkOmittedValue,
+          Object? conditions = sdkOmittedValue,
+          Object? rules = sdkOmittedValue}) =>
+      ActionsUpdateRepoActionsPolicyRequestBody(
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        enforcement: identical(enforcement, sdkOmittedValue)
+            ? this.enforcement
+            : enforcement as SdkOptional<RepositoryRuleEnforcement>,
+        conditions: identical(conditions, sdkOmittedValue)
+            ? this.conditions
+            : conditions as SdkOptional<ActionsPolicyRepoConditions>,
+        rules: identical(rules, sdkOmittedValue)
+            ? this.rules
+            : rules as SdkOptional<List<ActionsRule>>,
+      );
 
-  factory ActionsUpdateRepoActionsPolicyRequestBody.fromJson(Map<String, dynamic> json) => ActionsUpdateRepoActionsPolicyRequestBody(
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    enforcement: json['enforcement'] != null ? SdkPresent((json['enforcement'] != null ? RepositoryRuleEnforcement.fromJson(json['enforcement'] as String) : null)!) : const SdkOmitted(),
-    conditions: json['conditions'] != null ? SdkPresent((json['conditions'] != null ? ActionsPolicyRepoConditions.fromJson(json['conditions']) : null)!) : const SdkOmitted(),
-    rules: json['rules'] != null ? SdkPresent(((json['rules'] as List?)?.map((e) => ActionsRule.fromJson(e)).toList())!) : const SdkOmitted(),
-  );
+  factory ActionsUpdateRepoActionsPolicyRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      ActionsUpdateRepoActionsPolicyRequestBody(
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+        enforcement: json['enforcement'] != null
+            ? SdkPresent((json['enforcement'] != null
+                ? RepositoryRuleEnforcement.fromJson(
+                    json['enforcement'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        conditions: json['conditions'] != null
+            ? SdkPresent((json['conditions'] != null
+                ? ActionsPolicyRepoConditions.fromJson(json['conditions'])
+                : null)!)
+            : const SdkOmitted(),
+        rules: json['rules'] != null
+            ? SdkPresent(((json['rules'] as List?)
+                ?.map((e) => ActionsRule.fromJson(e))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (enforcement) {
-      SdkPresent<RepositoryRuleEnforcement>(value: final value) => {'enforcement': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (conditions) {
-      SdkPresent<ActionsPolicyRepoConditions>(value: final value) => {'conditions': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (rules) {
-      SdkPresent<List<ActionsRule>>(value: final value) => {'rules': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (enforcement) {
+          SdkPresent<RepositoryRuleEnforcement>(value: final value) => {
+              'enforcement': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (conditions) {
+          SdkPresent<ActionsPolicyRepoConditions>(value: final value) => {
+              'conditions': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (rules) {
+          SdkPresent<List<ActionsRule>>(value: final value) => {
+              'rules': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class ActionsListSelfHostedRunnersForRepoResponse {
@@ -104,150 +193,240 @@ class ActionsListSelfHostedRunnersForRepoResponse {
   final int totalCount;
   final List<Runner> runners;
 
-  const ActionsListSelfHostedRunnersForRepoResponse({required this.totalCount, required this.runners});
+  const ActionsListSelfHostedRunnersForRepoResponse(
+      {required this.totalCount, required this.runners});
 
-  ActionsListSelfHostedRunnersForRepoResponse Function({int totalCount, List<Runner> runners}) get copyWith => _copyWith;
+  ActionsListSelfHostedRunnersForRepoResponse Function(
+      {int totalCount, List<Runner> runners}) get copyWith => _copyWith;
 
-  ActionsListSelfHostedRunnersForRepoResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? runners = sdkOmittedValue}) => ActionsListSelfHostedRunnersForRepoResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    runners: identical(runners, sdkOmittedValue) ? this.runners : runners as List<Runner>,
-  );
+  ActionsListSelfHostedRunnersForRepoResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? runners = sdkOmittedValue}) =>
+      ActionsListSelfHostedRunnersForRepoResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        runners: identical(runners, sdkOmittedValue)
+            ? this.runners
+            : runners as List<Runner>,
+      );
 
-  factory ActionsListSelfHostedRunnersForRepoResponse.fromJson(Map<String, dynamic> json) => ActionsListSelfHostedRunnersForRepoResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    runners: ((json['runners'] as List?)?.map((e) => Runner.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+  factory ActionsListSelfHostedRunnersForRepoResponse.fromJson(
+          Map<String, dynamic> json) =>
+      ActionsListSelfHostedRunnersForRepoResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        runners: ((json['runners'] as List?)
+            ?.map((e) => Runner.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'runners': runners.map((item) => item.toJson()).toList(),
-  };
+        'total_count': totalCount,
+        'runners': runners.map((item) => item.toJson()).toList(),
+      };
 }
 
 class ActionsGetRunnerVersionDeprecationForRepoResponse {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The runner version string.
   final String runnerVersion;
+
   /// The date after which this runner version can no longer register. Null if no schedule is set.
   final SdkOptional<String?> registrationDeprecatesAt;
+
   /// The date after which jobs will no longer be dispatched to runners on this version.
   final SdkOptional<String?> runtimeDeprecatesAt;
 
-  const ActionsGetRunnerVersionDeprecationForRepoResponse({required this.runnerVersion, this.registrationDeprecatesAt = const SdkOmitted(), this.runtimeDeprecatesAt = const SdkOmitted()});
+  const ActionsGetRunnerVersionDeprecationForRepoResponse(
+      {required this.runnerVersion,
+      this.registrationDeprecatesAt = const SdkOmitted(),
+      this.runtimeDeprecatesAt = const SdkOmitted()});
 
-  ActionsGetRunnerVersionDeprecationForRepoResponse Function({String runnerVersion, SdkOptional<String?> registrationDeprecatesAt, SdkOptional<String?> runtimeDeprecatesAt}) get copyWith => _copyWith;
+  ActionsGetRunnerVersionDeprecationForRepoResponse Function(
+      {String runnerVersion,
+      SdkOptional<String?> registrationDeprecatesAt,
+      SdkOptional<String?> runtimeDeprecatesAt}) get copyWith => _copyWith;
 
-  ActionsGetRunnerVersionDeprecationForRepoResponse _copyWith({Object? runnerVersion = sdkOmittedValue, Object? registrationDeprecatesAt = sdkOmittedValue, Object? runtimeDeprecatesAt = sdkOmittedValue}) => ActionsGetRunnerVersionDeprecationForRepoResponse(
-    runnerVersion: identical(runnerVersion, sdkOmittedValue) ? this.runnerVersion : runnerVersion as String,
-    registrationDeprecatesAt: identical(registrationDeprecatesAt, sdkOmittedValue) ? this.registrationDeprecatesAt : registrationDeprecatesAt as SdkOptional<String?>,
-    runtimeDeprecatesAt: identical(runtimeDeprecatesAt, sdkOmittedValue) ? this.runtimeDeprecatesAt : runtimeDeprecatesAt as SdkOptional<String?>,
-  );
+  ActionsGetRunnerVersionDeprecationForRepoResponse _copyWith(
+          {Object? runnerVersion = sdkOmittedValue,
+          Object? registrationDeprecatesAt = sdkOmittedValue,
+          Object? runtimeDeprecatesAt = sdkOmittedValue}) =>
+      ActionsGetRunnerVersionDeprecationForRepoResponse(
+        runnerVersion: identical(runnerVersion, sdkOmittedValue)
+            ? this.runnerVersion
+            : runnerVersion as String,
+        registrationDeprecatesAt:
+            identical(registrationDeprecatesAt, sdkOmittedValue)
+                ? this.registrationDeprecatesAt
+                : registrationDeprecatesAt as SdkOptional<String?>,
+        runtimeDeprecatesAt: identical(runtimeDeprecatesAt, sdkOmittedValue)
+            ? this.runtimeDeprecatesAt
+            : runtimeDeprecatesAt as SdkOptional<String?>,
+      );
 
-  factory ActionsGetRunnerVersionDeprecationForRepoResponse.fromJson(Map<String, dynamic> json) => ActionsGetRunnerVersionDeprecationForRepoResponse(
-    runnerVersion: (json['runner_version'] as String?)!,
-    registrationDeprecatesAt: json.containsKey('registration_deprecates_at') ? SdkPresent(json['registration_deprecates_at'] as String?) : const SdkOmitted(),
-    runtimeDeprecatesAt: json.containsKey('runtime_deprecates_at') ? SdkPresent(json['runtime_deprecates_at'] as String?) : const SdkOmitted(),
-  );
+  factory ActionsGetRunnerVersionDeprecationForRepoResponse.fromJson(
+          Map<String, dynamic> json) =>
+      ActionsGetRunnerVersionDeprecationForRepoResponse(
+        runnerVersion: (json['runner_version'] as String?)!,
+        registrationDeprecatesAt: json.containsKey('registration_deprecates_at')
+            ? SdkPresent(json['registration_deprecates_at'] as String?)
+            : const SdkOmitted(),
+        runtimeDeprecatesAt: json.containsKey('runtime_deprecates_at')
+            ? SdkPresent(json['runtime_deprecates_at'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'runner_version': runnerVersion,
-    ...switch (registrationDeprecatesAt) {
-      SdkPresent<String?>(value: final value) => {'registration_deprecates_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (runtimeDeprecatesAt) {
-      SdkPresent<String?>(value: final value) => {'runtime_deprecates_at': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'runner_version': runnerVersion,
+        ...switch (registrationDeprecatesAt) {
+          SdkPresent<String?>(value: final value) => {
+              'registration_deprecates_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (runtimeDeprecatesAt) {
+          SdkPresent<String?>(value: final value) => {
+              'runtime_deprecates_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class ActionsGenerateRunnerJitconfigForRepoRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The name of the new runner.
   final String name;
+
   /// The ID of the runner group to register the runner to.
   final int runnerGroupId;
+
   /// The names of the custom labels to add to the runner. **Minimum items**: 1. **Maximum items**: 100.
   final List<String> labels;
+
   /// The working directory to be used for job execution, relative to the runner install directory.
   final SdkOptional<String> workFolder;
 
-  const ActionsGenerateRunnerJitconfigForRepoRequestBody({required this.name, required this.runnerGroupId, required this.labels, this.workFolder = const SdkOmitted()});
+  const ActionsGenerateRunnerJitconfigForRepoRequestBody(
+      {required this.name,
+      required this.runnerGroupId,
+      required this.labels,
+      this.workFolder = const SdkOmitted()});
 
-  ActionsGenerateRunnerJitconfigForRepoRequestBody Function({String name, int runnerGroupId, List<String> labels, SdkOptional<String> workFolder}) get copyWith => _copyWith;
+  ActionsGenerateRunnerJitconfigForRepoRequestBody Function(
+      {String name,
+      int runnerGroupId,
+      List<String> labels,
+      SdkOptional<String> workFolder}) get copyWith => _copyWith;
 
-  ActionsGenerateRunnerJitconfigForRepoRequestBody _copyWith({Object? name = sdkOmittedValue, Object? runnerGroupId = sdkOmittedValue, Object? labels = sdkOmittedValue, Object? workFolder = sdkOmittedValue}) => ActionsGenerateRunnerJitconfigForRepoRequestBody(
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    runnerGroupId: identical(runnerGroupId, sdkOmittedValue) ? this.runnerGroupId : runnerGroupId as int,
-    labels: identical(labels, sdkOmittedValue) ? this.labels : labels as List<String>,
-    workFolder: identical(workFolder, sdkOmittedValue) ? this.workFolder : workFolder as SdkOptional<String>,
-  );
+  ActionsGenerateRunnerJitconfigForRepoRequestBody _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? runnerGroupId = sdkOmittedValue,
+          Object? labels = sdkOmittedValue,
+          Object? workFolder = sdkOmittedValue}) =>
+      ActionsGenerateRunnerJitconfigForRepoRequestBody(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        runnerGroupId: identical(runnerGroupId, sdkOmittedValue)
+            ? this.runnerGroupId
+            : runnerGroupId as int,
+        labels: identical(labels, sdkOmittedValue)
+            ? this.labels
+            : labels as List<String>,
+        workFolder: identical(workFolder, sdkOmittedValue)
+            ? this.workFolder
+            : workFolder as SdkOptional<String>,
+      );
 
-  factory ActionsGenerateRunnerJitconfigForRepoRequestBody.fromJson(Map<String, dynamic> json) => ActionsGenerateRunnerJitconfigForRepoRequestBody(
-    name: (json['name'] as String?)!,
-    runnerGroupId: ((json['runner_group_id'] as num?)?.toInt())!,
-    labels: ((json['labels'] as List?)?.map((e) => e as String).toList())!,
-    workFolder: json['work_folder'] != null ? SdkPresent((json['work_folder'] as String?)!) : const SdkOmitted(),
-  );
+  factory ActionsGenerateRunnerJitconfigForRepoRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      ActionsGenerateRunnerJitconfigForRepoRequestBody(
+        name: (json['name'] as String?)!,
+        runnerGroupId: ((json['runner_group_id'] as num?)?.toInt())!,
+        labels: ((json['labels'] as List?)?.map((e) => e as String).toList())!,
+        workFolder: json['work_folder'] != null
+            ? SdkPresent((json['work_folder'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'runner_group_id': runnerGroupId,
-    'labels': labels,
-    ...switch (workFolder) {
-      SdkPresent<String>(value: final value) => {'work_folder': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'name': name,
+        'runner_group_id': runnerGroupId,
+        'labels': labels,
+        ...switch (workFolder) {
+          SdkPresent<String>(value: final value) => {
+              'work_folder': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The names of the custom labels to add to the runner.
   final List<String> labels;
 
-  const ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequestBody({required this.labels});
+  const ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequestBody(
+      {required this.labels});
 
-  ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequestBody Function({List<String> labels}) get copyWith => _copyWith;
+  ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequestBody Function(
+      {List<String> labels}) get copyWith => _copyWith;
 
-  ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequestBody _copyWith({Object? labels = sdkOmittedValue}) => ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequestBody(
-    labels: identical(labels, sdkOmittedValue) ? this.labels : labels as List<String>,
-  );
+  ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequestBody _copyWith(
+          {Object? labels = sdkOmittedValue}) =>
+      ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequestBody(
+        labels: identical(labels, sdkOmittedValue)
+            ? this.labels
+            : labels as List<String>,
+      );
 
-  factory ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequestBody.fromJson(Map<String, dynamic> json) => ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequestBody(
-    labels: ((json['labels'] as List?)?.map((e) => e as String).toList())!,
-  );
+  factory ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequestBody(
+        labels: ((json['labels'] as List?)?.map((e) => e as String).toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'labels': labels,
-  };
+        'labels': labels,
+      };
 }
 
 class ActionsSetCustomLabelsForSelfHostedRunnerForRepoRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The names of the custom labels to set for the runner. You can pass an empty array to remove all custom labels.
   final List<String> labels;
 
-  const ActionsSetCustomLabelsForSelfHostedRunnerForRepoRequestBody({required this.labels});
+  const ActionsSetCustomLabelsForSelfHostedRunnerForRepoRequestBody(
+      {required this.labels});
 
-  ActionsSetCustomLabelsForSelfHostedRunnerForRepoRequestBody Function({List<String> labels}) get copyWith => _copyWith;
+  ActionsSetCustomLabelsForSelfHostedRunnerForRepoRequestBody Function(
+      {List<String> labels}) get copyWith => _copyWith;
 
-  ActionsSetCustomLabelsForSelfHostedRunnerForRepoRequestBody _copyWith({Object? labels = sdkOmittedValue}) => ActionsSetCustomLabelsForSelfHostedRunnerForRepoRequestBody(
-    labels: identical(labels, sdkOmittedValue) ? this.labels : labels as List<String>,
-  );
+  ActionsSetCustomLabelsForSelfHostedRunnerForRepoRequestBody _copyWith(
+          {Object? labels = sdkOmittedValue}) =>
+      ActionsSetCustomLabelsForSelfHostedRunnerForRepoRequestBody(
+        labels: identical(labels, sdkOmittedValue)
+            ? this.labels
+            : labels as List<String>,
+      );
 
-  factory ActionsSetCustomLabelsForSelfHostedRunnerForRepoRequestBody.fromJson(Map<String, dynamic> json) => ActionsSetCustomLabelsForSelfHostedRunnerForRepoRequestBody(
-    labels: ((json['labels'] as List?)?.map((e) => e as String).toList())!,
-  );
+  factory ActionsSetCustomLabelsForSelfHostedRunnerForRepoRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      ActionsSetCustomLabelsForSelfHostedRunnerForRepoRequestBody(
+        labels: ((json['labels'] as List?)?.map((e) => e as String).toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'labels': labels,
-  };
+        'labels': labels,
+      };
 }
 
 class ActionsListWorkflowRunsForRepoResponse {
@@ -256,22 +435,36 @@ class ActionsListWorkflowRunsForRepoResponse {
   final int totalCount;
   final List<WorkflowRun> workflowRuns;
 
-  const ActionsListWorkflowRunsForRepoResponse({required this.totalCount, required this.workflowRuns});
+  const ActionsListWorkflowRunsForRepoResponse(
+      {required this.totalCount, required this.workflowRuns});
 
-  ActionsListWorkflowRunsForRepoResponse Function({int totalCount, List<WorkflowRun> workflowRuns}) get copyWith => _copyWith;
+  ActionsListWorkflowRunsForRepoResponse Function(
+      {int totalCount,
+      List<WorkflowRun> workflowRuns}) get copyWith => _copyWith;
 
-  ActionsListWorkflowRunsForRepoResponse _copyWith({Object? totalCount = sdkOmittedValue, Object? workflowRuns = sdkOmittedValue}) => ActionsListWorkflowRunsForRepoResponse(
-    totalCount: identical(totalCount, sdkOmittedValue) ? this.totalCount : totalCount as int,
-    workflowRuns: identical(workflowRuns, sdkOmittedValue) ? this.workflowRuns : workflowRuns as List<WorkflowRun>,
-  );
+  ActionsListWorkflowRunsForRepoResponse _copyWith(
+          {Object? totalCount = sdkOmittedValue,
+          Object? workflowRuns = sdkOmittedValue}) =>
+      ActionsListWorkflowRunsForRepoResponse(
+        totalCount: identical(totalCount, sdkOmittedValue)
+            ? this.totalCount
+            : totalCount as int,
+        workflowRuns: identical(workflowRuns, sdkOmittedValue)
+            ? this.workflowRuns
+            : workflowRuns as List<WorkflowRun>,
+      );
 
-  factory ActionsListWorkflowRunsForRepoResponse.fromJson(Map<String, dynamic> json) => ActionsListWorkflowRunsForRepoResponse(
-    totalCount: ((json['total_count'] as num?)?.toInt())!,
-    workflowRuns: ((json['workflow_runs'] as List?)?.map((e) => WorkflowRun.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+  factory ActionsListWorkflowRunsForRepoResponse.fromJson(
+          Map<String, dynamic> json) =>
+      ActionsListWorkflowRunsForRepoResponse(
+        totalCount: ((json['total_count'] as num?)?.toInt())!,
+        workflowRuns: ((json['workflow_runs'] as List?)
+            ?.map((e) => WorkflowRun.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'total_count': totalCount,
-    'workflow_runs': workflowRuns.map((item) => item.toJson()).toList(),
-  };
+        'total_count': totalCount,
+        'workflow_runs': workflowRuns.map((item) => item.toJson()).toList(),
+      };
 }
