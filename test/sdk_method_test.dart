@@ -25578,7 +25578,10 @@ void main() {
         valueType: CustomPropertySetPayloadValueType.fromJson(
             jsonDecode("\"single_select\"") as String),
         required_: SdkPresent<bool>((jsonDecode("true") as bool)),
-        defaultValue: SdkPresent<dynamic>(jsonDecode("\"production\"")),
+        defaultValue: SdkPresent<List<String>?>(
+            (jsonDecode("[\"default_value\"]") as List)
+                .map((element) => (element as String))
+                .toList()),
         description: SdkPresent<String?>(
             (jsonDecode("\"Prod or dev environment\"") as String)),
         allowedValues: SdkPresent<List<String>?>(
@@ -25614,7 +25617,10 @@ void main() {
           valueType: CustomPropertySetPayloadValueType.fromJson(
               jsonDecode("\"single_select\"") as String),
           required_: SdkPresent<bool>((jsonDecode("true") as bool)),
-          defaultValue: SdkPresent<dynamic>(jsonDecode("\"production\"")),
+          defaultValue: SdkPresent<List<String>?>(
+              (jsonDecode("[\"default_value\"]") as List)
+                  .map((element) => (element as String))
+                  .toList()),
           description: SdkPresent<String?>(
               (jsonDecode("\"Prod or dev environment\"") as String)),
           allowedValues: SdkPresent<List<String>?>(

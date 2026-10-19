@@ -4,158 +4,6 @@
 part of 'orgs.dart';
 
 // orgs domain models (part 3)
-/// Custom property set payload
-class CustomPropertySetPayload {
-  /// This model is constructed from named fields in one call.
-  static const String constructionSurface = 'named';
-
-  /// The type of the value for the property
-  final CustomPropertySetPayloadValueType valueType;
-
-  /// Whether the property is required.
-  final SdkOptional<bool> required_;
-
-  /// Default value of the property
-  final SdkOptional<dynamic> defaultValue;
-
-  /// Short description of the property
-  final SdkOptional<String?> description;
-
-  /// An ordered list of the allowed values of the property. The property can have up to 200 allowed values.
-  final SdkOptional<List<String>?> allowedValues;
-
-  /// Who can edit the values of the property
-  final SdkOptional<CustomPropertySetPayloadValuesEditableBy?> valuesEditableBy;
-
-  /// Whether setting properties values is mandatory
-  final SdkOptional<bool> requireExplicitValues;
-
-  const CustomPropertySetPayload(
-      {required this.valueType,
-      this.required_ = const SdkOmitted(),
-      this.defaultValue = const SdkOmitted(),
-      this.description = const SdkOmitted(),
-      this.allowedValues = const SdkOmitted(),
-      this.valuesEditableBy = const SdkOmitted(),
-      this.requireExplicitValues = const SdkOmitted()});
-
-  CustomPropertySetPayload Function(
-      {CustomPropertySetPayloadValueType valueType,
-      SdkOptional<bool> required_,
-      SdkOptional<dynamic> defaultValue,
-      SdkOptional<String?> description,
-      SdkOptional<List<String>?> allowedValues,
-      SdkOptional<CustomPropertySetPayloadValuesEditableBy?> valuesEditableBy,
-      SdkOptional<bool> requireExplicitValues}) get copyWith => _copyWith;
-
-  CustomPropertySetPayload _copyWith(
-          {Object? valueType = sdkOmittedValue,
-          Object? required_ = sdkOmittedValue,
-          Object? defaultValue = sdkOmittedValue,
-          Object? description = sdkOmittedValue,
-          Object? allowedValues = sdkOmittedValue,
-          Object? valuesEditableBy = sdkOmittedValue,
-          Object? requireExplicitValues = sdkOmittedValue}) =>
-      CustomPropertySetPayload(
-        valueType: identical(valueType, sdkOmittedValue)
-            ? this.valueType
-            : valueType as CustomPropertySetPayloadValueType,
-        required_: identical(required_, sdkOmittedValue)
-            ? this.required_
-            : required_ as SdkOptional<bool>,
-        defaultValue: identical(defaultValue, sdkOmittedValue)
-            ? this.defaultValue
-            : defaultValue as SdkOptional<dynamic>,
-        description: identical(description, sdkOmittedValue)
-            ? this.description
-            : description as SdkOptional<String?>,
-        allowedValues: identical(allowedValues, sdkOmittedValue)
-            ? this.allowedValues
-            : allowedValues as SdkOptional<List<String>?>,
-        valuesEditableBy: identical(valuesEditableBy, sdkOmittedValue)
-            ? this.valuesEditableBy
-            : valuesEditableBy
-                as SdkOptional<CustomPropertySetPayloadValuesEditableBy?>,
-        requireExplicitValues: identical(requireExplicitValues, sdkOmittedValue)
-            ? this.requireExplicitValues
-            : requireExplicitValues as SdkOptional<bool>,
-      );
-
-  factory CustomPropertySetPayload.fromJson(Map<String, dynamic> json) =>
-      CustomPropertySetPayload(
-        valueType: (json['value_type'] != null
-            ? CustomPropertySetPayloadValueType.fromJson(
-                json['value_type'] as String)
-            : null)!,
-        required_: json['required'] != null
-            ? SdkPresent((json['required'] as bool?)!)
-            : const SdkOmitted(),
-        defaultValue: json.containsKey('default_value')
-            ? SdkPresent(json['default_value'])
-            : const SdkOmitted(),
-        description: json.containsKey('description')
-            ? SdkPresent(json['description'] as String?)
-            : const SdkOmitted(),
-        allowedValues: json.containsKey('allowed_values')
-            ? SdkPresent((json['allowed_values'] as List?)
-                ?.map((e) => e as String)
-                .toList())
-            : const SdkOmitted(),
-        valuesEditableBy: json.containsKey('values_editable_by')
-            ? SdkPresent(json['values_editable_by'] != null
-                ? CustomPropertySetPayloadValuesEditableBy.fromJson(
-                    json['values_editable_by'] as String)
-                : null)
-            : const SdkOmitted(),
-        requireExplicitValues: json['require_explicit_values'] != null
-            ? SdkPresent((json['require_explicit_values'] as bool?)!)
-            : const SdkOmitted(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        'value_type': valueType.toJson(),
-        ...switch (required_) {
-          SdkPresent<bool>(value: final value) => {
-              'required': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (defaultValue) {
-          SdkPresent<dynamic>(value: final value) => {
-              'default_value': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (description) {
-          SdkPresent<String?>(value: final value) => {
-              'description': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (allowedValues) {
-          SdkPresent<List<String>?>(value: final value) => {
-              'allowed_values': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (valuesEditableBy) {
-          SdkPresent<CustomPropertySetPayloadValuesEditableBy?>(
-            value: final value
-          ) =>
-            {
-              'values_editable_by': value?.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (requireExplicitValues) {
-          SdkPresent<bool>(value: final value) => {
-              'require_explicit_values': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
-}
-
 /// External custom property defined for a GitHub App installation
 class ExternalProperty {
   /// This model is constructed from named fields in one call.
@@ -527,5 +375,79 @@ class IssueField {
             },
           _ => const <String, dynamic>{},
         },
+      };
+}
+
+/// Required object value serialized in the `options[]` wire field.
+class OrganizationCreateIssueFieldOptionsItem {
+  /// This model is constructed from named fields in one call.
+  static const String constructionSurface = 'named';
+
+  /// Name of the option.
+  final String name;
+
+  /// Description of the option.
+  final SdkOptional<String?> description;
+
+  /// Color for the option.
+  final OrganizationCreateIssueFieldOptionsItemColor color;
+
+  /// Priority of the option for ordering.
+  final int priority;
+
+  const OrganizationCreateIssueFieldOptionsItem(
+      {required this.name,
+      this.description = const SdkOmitted(),
+      required this.color,
+      required this.priority});
+
+  OrganizationCreateIssueFieldOptionsItem Function(
+      {String name,
+      SdkOptional<String?> description,
+      OrganizationCreateIssueFieldOptionsItemColor color,
+      int priority}) get copyWith => _copyWith;
+
+  OrganizationCreateIssueFieldOptionsItem _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? color = sdkOmittedValue,
+          Object? priority = sdkOmittedValue}) =>
+      OrganizationCreateIssueFieldOptionsItem(
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as SdkOptional<String?>,
+        color: identical(color, sdkOmittedValue)
+            ? this.color
+            : color as OrganizationCreateIssueFieldOptionsItemColor,
+        priority: identical(priority, sdkOmittedValue)
+            ? this.priority
+            : priority as int,
+      );
+
+  factory OrganizationCreateIssueFieldOptionsItem.fromJson(
+          Map<String, dynamic> json) =>
+      OrganizationCreateIssueFieldOptionsItem(
+        name: (json['name'] as String?)!,
+        description: json.containsKey('description')
+            ? SdkPresent(json['description'] as String?)
+            : const SdkOmitted(),
+        color: (json['color'] != null
+            ? OrganizationCreateIssueFieldOptionsItemColor.fromJson(
+                json['color'] as String)
+            : null)!,
+        priority: ((json['priority'] as num?)?.toInt())!,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'name': name,
+        ...switch (description) {
+          SdkPresent<String?>(value: final value) => {
+              'description': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'color': color.toJson(),
+        'priority': priority,
       };
 }
