@@ -8,81 +8,116 @@ part of 'webhook_issues_edited.dart';
 class WebhookIssuesEditedChangesBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The previous version of the body.
   final String from;
 
   const WebhookIssuesEditedChangesBody({required this.from});
 
-  WebhookIssuesEditedChangesBody Function({String from}) get copyWith => _copyWith;
+  WebhookIssuesEditedChangesBody Function({String from}) get copyWith =>
+      _copyWith;
 
-  WebhookIssuesEditedChangesBody _copyWith({Object? from = sdkOmittedValue}) => WebhookIssuesEditedChangesBody(
-    from: identical(from, sdkOmittedValue) ? this.from : from as String,
-  );
+  WebhookIssuesEditedChangesBody _copyWith({Object? from = sdkOmittedValue}) =>
+      WebhookIssuesEditedChangesBody(
+        from: identical(from, sdkOmittedValue) ? this.from : from as String,
+      );
 
-  factory WebhookIssuesEditedChangesBody.fromJson(Map<String, dynamic> json) => WebhookIssuesEditedChangesBody(
-    from: (json['from'] as String?)!,
-  );
+  factory WebhookIssuesEditedChangesBody.fromJson(Map<String, dynamic> json) =>
+      WebhookIssuesEditedChangesBody(
+        from: (json['from'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'from': from,
-  };
+        'from': from,
+      };
 }
 
 /// Optional object value serialized in the `title` wire field.
 class WebhookIssuesEditedChangesTitle {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The previous version of the title.
   final String from;
 
   const WebhookIssuesEditedChangesTitle({required this.from});
 
-  WebhookIssuesEditedChangesTitle Function({String from}) get copyWith => _copyWith;
+  WebhookIssuesEditedChangesTitle Function({String from}) get copyWith =>
+      _copyWith;
 
-  WebhookIssuesEditedChangesTitle _copyWith({Object? from = sdkOmittedValue}) => WebhookIssuesEditedChangesTitle(
-    from: identical(from, sdkOmittedValue) ? this.from : from as String,
-  );
+  WebhookIssuesEditedChangesTitle _copyWith({Object? from = sdkOmittedValue}) =>
+      WebhookIssuesEditedChangesTitle(
+        from: identical(from, sdkOmittedValue) ? this.from : from as String,
+      );
 
-  factory WebhookIssuesEditedChangesTitle.fromJson(Map<String, dynamic> json) => WebhookIssuesEditedChangesTitle(
-    from: (json['from'] as String?)!,
-  );
+  factory WebhookIssuesEditedChangesTitle.fromJson(Map<String, dynamic> json) =>
+      WebhookIssuesEditedChangesTitle(
+        from: (json['from'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'from': from,
-  };
+        'from': from,
+      };
 }
 
 /// The changes to the issue.
 class WebhookIssuesEditedChanges {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional object value serialized in the `body` wire field.
   final SdkOptional<WebhookIssuesEditedChangesBody> body;
+
   /// Optional object value serialized in the `title` wire field.
   final SdkOptional<WebhookIssuesEditedChangesTitle> title;
 
-  const WebhookIssuesEditedChanges({this.body = const SdkOmitted(), this.title = const SdkOmitted()});
+  const WebhookIssuesEditedChanges(
+      {this.body = const SdkOmitted(), this.title = const SdkOmitted()});
 
-  WebhookIssuesEditedChanges Function({SdkOptional<WebhookIssuesEditedChangesBody> body, SdkOptional<WebhookIssuesEditedChangesTitle> title}) get copyWith => _copyWith;
+  WebhookIssuesEditedChanges Function(
+          {SdkOptional<WebhookIssuesEditedChangesBody> body,
+          SdkOptional<WebhookIssuesEditedChangesTitle> title})
+      get copyWith => _copyWith;
 
-  WebhookIssuesEditedChanges _copyWith({Object? body = sdkOmittedValue, Object? title = sdkOmittedValue}) => WebhookIssuesEditedChanges(
-    body: identical(body, sdkOmittedValue) ? this.body : body as SdkOptional<WebhookIssuesEditedChangesBody>,
-    title: identical(title, sdkOmittedValue) ? this.title : title as SdkOptional<WebhookIssuesEditedChangesTitle>,
-  );
+  WebhookIssuesEditedChanges _copyWith(
+          {Object? body = sdkOmittedValue, Object? title = sdkOmittedValue}) =>
+      WebhookIssuesEditedChanges(
+        body: identical(body, sdkOmittedValue)
+            ? this.body
+            : body as SdkOptional<WebhookIssuesEditedChangesBody>,
+        title: identical(title, sdkOmittedValue)
+            ? this.title
+            : title as SdkOptional<WebhookIssuesEditedChangesTitle>,
+      );
 
-  factory WebhookIssuesEditedChanges.fromJson(Map<String, dynamic> json) => WebhookIssuesEditedChanges(
-    body: json['body'] != null ? SdkPresent((json['body'] != null ? WebhookIssuesEditedChangesBody.fromJson(json['body'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    title: json['title'] != null ? SdkPresent((json['title'] != null ? WebhookIssuesEditedChangesTitle.fromJson(json['title'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-  );
+  factory WebhookIssuesEditedChanges.fromJson(Map<String, dynamic> json) =>
+      WebhookIssuesEditedChanges(
+        body: json['body'] != null
+            ? SdkPresent((json['body'] != null
+                ? WebhookIssuesEditedChangesBody.fromJson(
+                    json['body'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        title: json['title'] != null
+            ? SdkPresent((json['title'] != null
+                ? WebhookIssuesEditedChangesTitle.fromJson(
+                    json['title'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (body) {
-      SdkPresent<WebhookIssuesEditedChangesBody>(value: final value) => {'body': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (title) {
-      SdkPresent<WebhookIssuesEditedChangesTitle>(value: final value) => {'title': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (body) {
+          SdkPresent<WebhookIssuesEditedChangesBody>(value: final value) => {
+              'body': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (title) {
+          SdkPresent<WebhookIssuesEditedChangesTitle>(value: final value) => {
+              'title': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

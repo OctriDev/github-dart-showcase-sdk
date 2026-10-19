@@ -6,12 +6,12 @@ part of 'inline.dart';
 // Inline operation models (part 16)
 /// Required enumerated value serialized in the `status` wire field.
 final class CommitComparisonStatus {
-
   final String value;
 
   const CommitComparisonStatus._(this.value);
 
-  factory CommitComparisonStatus.fromJson(String value) => CommitComparisonStatus._(value);
+  factory CommitComparisonStatus.fromJson(String value) =>
+      CommitComparisonStatus._(value);
 
   static const diverged = CommitComparisonStatus._('diverged');
   static const ahead = CommitComparisonStatus._('ahead');
@@ -20,65 +20,84 @@ final class CommitComparisonStatus {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CommitComparisonStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CommitComparisonStatus && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `status` wire field.
 final class ConcurrencyGroupGroupMembersItemStatus {
-
   final String value;
 
   const ConcurrencyGroupGroupMembersItemStatus._(this.value);
 
-  factory ConcurrencyGroupGroupMembersItemStatus.fromJson(String value) => ConcurrencyGroupGroupMembersItemStatus._(value);
+  factory ConcurrencyGroupGroupMembersItemStatus.fromJson(String value) =>
+      ConcurrencyGroupGroupMembersItemStatus._(value);
 
-  static const inProgress = ConcurrencyGroupGroupMembersItemStatus._('in_progress');
+  static const inProgress =
+      ConcurrencyGroupGroupMembersItemStatus._('in_progress');
   static const pending = ConcurrencyGroupGroupMembersItemStatus._('pending');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ConcurrencyGroupGroupMembersItemStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ConcurrencyGroupGroupMembersItemStatus && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `status` wire field.
 final class ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItemStatus {
-
   final String value;
 
-  const ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItemStatus._(this.value);
+  const ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItemStatus._(
+      this.value);
 
-  factory ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItemStatus.fromJson(String value) => ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItemStatus._(value);
+  factory ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItemStatus.fromJson(
+          String value) =>
+      ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItemStatus._(
+          value);
 
-  static const inProgress = ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItemStatus._('in_progress');
-  static const pending = ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItemStatus._('pending');
+  static const inProgress =
+      ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItemStatus._(
+          'in_progress');
+  static const pending =
+      ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItemStatus._(
+          'pending');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItemStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is ConcurrencyGroupRunListConcurrencyGroupsItemGroupMembersItemStatus &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 final class ContentDirectoryItemType {
-
   final String value;
 
   const ContentDirectoryItemType._(this.value);
 
-  factory ContentDirectoryItemType.fromJson(String value) => ContentDirectoryItemType._(value);
+  factory ContentDirectoryItemType.fromJson(String value) =>
+      ContentDirectoryItemType._(value);
 
   static const dir = ContentDirectoryItemType._('dir');
   static const file = ContentDirectoryItemType._('file');
@@ -87,12 +106,15 @@ final class ContentDirectoryItemType {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ContentDirectoryItemType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ContentDirectoryItemType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `type` wire field.
@@ -101,14 +123,17 @@ enum ContentFileType {
 
   static ContentFileType fromJson(String value) {
     switch (value) {
-      case 'file': return ContentFileType.file;
-      default: throw ArgumentError('Unknown ContentFileType: $value');
+      case 'file':
+        return ContentFileType.file;
+      default:
+        throw ArgumentError('Unknown ContentFileType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ContentFileType.file: return 'file';
+      case ContentFileType.file:
+        return 'file';
     }
   }
 
@@ -122,14 +147,17 @@ enum ContentSubmoduleType {
 
   static ContentSubmoduleType fromJson(String value) {
     switch (value) {
-      case 'submodule': return ContentSubmoduleType.submodule;
-      default: throw ArgumentError('Unknown ContentSubmoduleType: $value');
+      case 'submodule':
+        return ContentSubmoduleType.submodule;
+      default:
+        throw ArgumentError('Unknown ContentSubmoduleType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ContentSubmoduleType.submodule: return 'submodule';
+      case ContentSubmoduleType.submodule:
+        return 'submodule';
     }
   }
 
@@ -143,14 +171,17 @@ enum ContentSymlinkType {
 
   static ContentSymlinkType fromJson(String value) {
     switch (value) {
-      case 'symlink': return ContentSymlinkType.symlink;
-      default: throw ArgumentError('Unknown ContentSymlinkType: $value');
+      case 'symlink':
+        return ContentSymlinkType.symlink;
+      default:
+        throw ArgumentError('Unknown ContentSymlinkType: $value');
     }
   }
 
   String toJson() {
     switch (this) {
-      case ContentSymlinkType.symlink: return 'symlink';
+      case ContentSymlinkType.symlink:
+        return 'symlink';
     }
   }
 
@@ -160,12 +191,12 @@ enum ContentSymlinkType {
 
 /// The organization policy for allowing or disallowing Copilot CLI.
 final class CopilotOrganizationDetailsCli {
-
   final String value;
 
   const CopilotOrganizationDetailsCli._(this.value);
 
-  factory CopilotOrganizationDetailsCli.fromJson(String value) => CopilotOrganizationDetailsCli._(value);
+  factory CopilotOrganizationDetailsCli.fromJson(String value) =>
+      CopilotOrganizationDetailsCli._(value);
 
   static const enabled = CopilotOrganizationDetailsCli._('enabled');
   static const disabled = CopilotOrganizationDetailsCli._('disabled');
@@ -173,101 +204,123 @@ final class CopilotOrganizationDetailsCli {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CopilotOrganizationDetailsCli && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CopilotOrganizationDetailsCli && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The organization policy for allowing or disallowing Copilot Chat in the IDE.
 final class CopilotOrganizationDetailsIdeChat {
-
   final String value;
 
   const CopilotOrganizationDetailsIdeChat._(this.value);
 
-  factory CopilotOrganizationDetailsIdeChat.fromJson(String value) => CopilotOrganizationDetailsIdeChat._(value);
+  factory CopilotOrganizationDetailsIdeChat.fromJson(String value) =>
+      CopilotOrganizationDetailsIdeChat._(value);
 
   static const enabled = CopilotOrganizationDetailsIdeChat._('enabled');
   static const disabled = CopilotOrganizationDetailsIdeChat._('disabled');
-  static const unconfigured = CopilotOrganizationDetailsIdeChat._('unconfigured');
+  static const unconfigured =
+      CopilotOrganizationDetailsIdeChat._('unconfigured');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CopilotOrganizationDetailsIdeChat && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CopilotOrganizationDetailsIdeChat && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The Copilot plan of the organization, or the parent enterprise, when applicable.
 final class CopilotOrganizationDetailsPlanType {
-
   final String value;
 
   const CopilotOrganizationDetailsPlanType._(this.value);
 
-  factory CopilotOrganizationDetailsPlanType.fromJson(String value) => CopilotOrganizationDetailsPlanType._(value);
+  factory CopilotOrganizationDetailsPlanType.fromJson(String value) =>
+      CopilotOrganizationDetailsPlanType._(value);
 
   static const business = CopilotOrganizationDetailsPlanType._('business');
   static const enterprise = CopilotOrganizationDetailsPlanType._('enterprise');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CopilotOrganizationDetailsPlanType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CopilotOrganizationDetailsPlanType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The organization policy for allowing or disallowing Copilot features on GitHub.com.
 final class CopilotOrganizationDetailsPlatformChat {
-
   final String value;
 
   const CopilotOrganizationDetailsPlatformChat._(this.value);
 
-  factory CopilotOrganizationDetailsPlatformChat.fromJson(String value) => CopilotOrganizationDetailsPlatformChat._(value);
+  factory CopilotOrganizationDetailsPlatformChat.fromJson(String value) =>
+      CopilotOrganizationDetailsPlatformChat._(value);
 
   static const enabled = CopilotOrganizationDetailsPlatformChat._('enabled');
   static const disabled = CopilotOrganizationDetailsPlatformChat._('disabled');
-  static const unconfigured = CopilotOrganizationDetailsPlatformChat._('unconfigured');
+  static const unconfigured =
+      CopilotOrganizationDetailsPlatformChat._('unconfigured');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CopilotOrganizationDetailsPlatformChat && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CopilotOrganizationDetailsPlatformChat && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The organization policy for allowing or blocking suggestions matching public code (duplication detection filter).
 final class CopilotOrganizationDetailsPublicCodeSuggestions {
-
   final String value;
 
   const CopilotOrganizationDetailsPublicCodeSuggestions._(this.value);
 
-  factory CopilotOrganizationDetailsPublicCodeSuggestions.fromJson(String value) => CopilotOrganizationDetailsPublicCodeSuggestions._(value);
+  factory CopilotOrganizationDetailsPublicCodeSuggestions.fromJson(
+          String value) =>
+      CopilotOrganizationDetailsPublicCodeSuggestions._(value);
 
-  static const allow = CopilotOrganizationDetailsPublicCodeSuggestions._('allow');
-  static const block = CopilotOrganizationDetailsPublicCodeSuggestions._('block');
-  static const unconfigured = CopilotOrganizationDetailsPublicCodeSuggestions._('unconfigured');
+  static const allow =
+      CopilotOrganizationDetailsPublicCodeSuggestions._('allow');
+  static const block =
+      CopilotOrganizationDetailsPublicCodeSuggestions._('block');
+  static const unconfigured =
+      CopilotOrganizationDetailsPublicCodeSuggestions._('unconfigured');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CopilotOrganizationDetailsPublicCodeSuggestions && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CopilotOrganizationDetailsPublicCodeSuggestions &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

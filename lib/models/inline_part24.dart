@@ -6,12 +6,12 @@ part of 'inline.dart';
 // Inline operation models (part 24)
 /// The phase of the lifecycle that the job is currently in.
 final class JobStepsItemStatus {
-
   final String value;
 
   const JobStepsItemStatus._(this.value);
 
-  factory JobStepsItemStatus.fromJson(String value) => JobStepsItemStatus._(value);
+  factory JobStepsItemStatus.fromJson(String value) =>
+      JobStepsItemStatus._(value);
 
   static const queued = JobStepsItemStatus._('queued');
   static const inProgress = JobStepsItemStatus._('in_progress');
@@ -19,22 +19,25 @@ final class JobStepsItemStatus {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is JobStepsItemStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is JobStepsItemStatus && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Required enumerated value serialized in the `price_model` wire field.
 final class MarketplaceListingPlanPriceModel {
-
   final String value;
 
   const MarketplaceListingPlanPriceModel._(this.value);
 
-  factory MarketplaceListingPlanPriceModel.fromJson(String value) => MarketplaceListingPlanPriceModel._(value);
+  factory MarketplaceListingPlanPriceModel.fromJson(String value) =>
+      MarketplaceListingPlanPriceModel._(value);
 
   static const free = MarketplaceListingPlanPriceModel._('FREE');
   static const flatRate = MarketplaceListingPlanPriceModel._('FLAT_RATE');
@@ -42,22 +45,25 @@ final class MarketplaceListingPlanPriceModel {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is MarketplaceListingPlanPriceModel && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is MarketplaceListingPlanPriceModel && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Optional enumerated value serialized in the `merge_type` wire field.
 final class MergedUpstreamMergeType {
-
   final String value;
 
   const MergedUpstreamMergeType._(this.value);
 
-  factory MergedUpstreamMergeType.fromJson(String value) => MergedUpstreamMergeType._(value);
+  factory MergedUpstreamMergeType.fromJson(String value) =>
+      MergedUpstreamMergeType._(value);
 
   static const merge = MergedUpstreamMergeType._('merge');
   static const fastForward = MergedUpstreamMergeType._('fast-forward');
@@ -65,17 +71,19 @@ final class MergedUpstreamMergeType {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is MergedUpstreamMergeType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is MergedUpstreamMergeType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The state of the milestone.
 final class MilestoneState {
-
   final String value;
 
   const MilestoneState._(this.value);
@@ -87,44 +95,52 @@ final class MilestoneState {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is MilestoneState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is MilestoneState && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The policy controlling who can create pull requests: all or collaborators_only.
 final class MinimalRepositoryPullRequestCreationPolicy {
-
   final String value;
 
   const MinimalRepositoryPullRequestCreationPolicy._(this.value);
 
-  factory MinimalRepositoryPullRequestCreationPolicy.fromJson(String value) => MinimalRepositoryPullRequestCreationPolicy._(value);
+  factory MinimalRepositoryPullRequestCreationPolicy.fromJson(String value) =>
+      MinimalRepositoryPullRequestCreationPolicy._(value);
 
   static const all = MinimalRepositoryPullRequestCreationPolicy._('all');
-  static const collaboratorsOnly = MinimalRepositoryPullRequestCreationPolicy._('collaborators_only');
+  static const collaboratorsOnly =
+      MinimalRepositoryPullRequestCreationPolicy._('collaborators_only');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is MinimalRepositoryPullRequestCreationPolicy && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is MinimalRepositoryPullRequestCreationPolicy &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The hosted compute service the network configuration supports.
 final class NetworkConfigurationComputeService {
-
   final String value;
 
   const NetworkConfigurationComputeService._(this.value);
 
-  factory NetworkConfigurationComputeService.fromJson(String value) => NetworkConfigurationComputeService._(value);
+  factory NetworkConfigurationComputeService.fromJson(String value) =>
+      NetworkConfigurationComputeService._(value);
 
   static const none = NetworkConfigurationComputeService._('none');
   static const actions = NetworkConfigurationComputeService._('actions');
@@ -132,68 +148,81 @@ final class NetworkConfigurationComputeService {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is NetworkConfigurationComputeService && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is NetworkConfigurationComputeService && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The image provider.
 final class NullableActionsHostedRunnerPoolImageSource {
-
   final String value;
 
   const NullableActionsHostedRunnerPoolImageSource._(this.value);
 
-  factory NullableActionsHostedRunnerPoolImageSource.fromJson(String value) => NullableActionsHostedRunnerPoolImageSource._(value);
+  factory NullableActionsHostedRunnerPoolImageSource.fromJson(String value) =>
+      NullableActionsHostedRunnerPoolImageSource._(value);
 
   static const github = NullableActionsHostedRunnerPoolImageSource._('github');
-  static const partner = NullableActionsHostedRunnerPoolImageSource._('partner');
+  static const partner =
+      NullableActionsHostedRunnerPoolImageSource._('partner');
   static const custom = NullableActionsHostedRunnerPoolImageSource._('custom');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is NullableActionsHostedRunnerPoolImageSource && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is NullableActionsHostedRunnerPoolImageSource &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Whether a prebuild is currently available when creating a codespace for this machine and repository. If a branch was not specified as a ref, the default branch will be assumed. Value will be "null" if prebuilds are not supported or prebuild availability could not be determined. Value will be "none" if no prebuild is available. Latest values "ready" and "in_progress" indicate the prebuild availability status.
 final class NullableCodespaceMachinePrebuildAvailability {
-
   final String value;
 
   const NullableCodespaceMachinePrebuildAvailability._(this.value);
 
-  factory NullableCodespaceMachinePrebuildAvailability.fromJson(String value) => NullableCodespaceMachinePrebuildAvailability._(value);
+  factory NullableCodespaceMachinePrebuildAvailability.fromJson(String value) =>
+      NullableCodespaceMachinePrebuildAvailability._(value);
 
   static const none = NullableCodespaceMachinePrebuildAvailability._('none');
   static const ready = NullableCodespaceMachinePrebuildAvailability._('ready');
-  static const inProgress = NullableCodespaceMachinePrebuildAvailability._('in_progress');
+  static const inProgress =
+      NullableCodespaceMachinePrebuildAvailability._('in_progress');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is NullableCodespaceMachinePrebuildAvailability && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is NullableCodespaceMachinePrebuildAvailability &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The reason for the current state
 final class NullableIssueStateReason {
-
   final String value;
 
   const NullableIssueStateReason._(this.value);
 
-  factory NullableIssueStateReason.fromJson(String value) => NullableIssueStateReason._(value);
+  factory NullableIssueStateReason.fromJson(String value) =>
+      NullableIssueStateReason._(value);
 
   static const completed = NullableIssueStateReason._('completed');
   static const reopened = NullableIssueStateReason._('reopened');
@@ -202,22 +231,25 @@ final class NullableIssueStateReason {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is NullableIssueStateReason && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is NullableIssueStateReason && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The confidence level the agent had when performing this action.
 final class NullableIssueEventIntentConfidence {
-
   final String value;
 
   const NullableIssueEventIntentConfidence._(this.value);
 
-  factory NullableIssueEventIntentConfidence.fromJson(String value) => NullableIssueEventIntentConfidence._(value);
+  factory NullableIssueEventIntentConfidence.fromJson(String value) =>
+      NullableIssueEventIntentConfidence._(value);
 
   static const low = NullableIssueEventIntentConfidence._('LOW');
   static const medium = NullableIssueEventIntentConfidence._('MEDIUM');
@@ -225,54 +257,68 @@ final class NullableIssueEventIntentConfidence {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is NullableIssueEventIntentConfidence && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is NullableIssueEventIntentConfidence && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The state of the milestone.
 final class NullableMilestoneState {
-
   final String value;
 
   const NullableMilestoneState._(this.value);
 
-  factory NullableMilestoneState.fromJson(String value) => NullableMilestoneState._(value);
+  factory NullableMilestoneState.fromJson(String value) =>
+      NullableMilestoneState._(value);
 
   static const open = NullableMilestoneState._('open');
   static const closed = NullableMilestoneState._('closed');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is NullableMilestoneState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is NullableMilestoneState && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The policy controlling who can create pull requests: all or collaborators_only.
 final class NullableMinimalRepositoryPullRequestCreationPolicy {
-
   final String value;
 
   const NullableMinimalRepositoryPullRequestCreationPolicy._(this.value);
 
-  factory NullableMinimalRepositoryPullRequestCreationPolicy.fromJson(String value) => NullableMinimalRepositoryPullRequestCreationPolicy._(value);
+  factory NullableMinimalRepositoryPullRequestCreationPolicy.fromJson(
+          String value) =>
+      NullableMinimalRepositoryPullRequestCreationPolicy._(value);
 
-  static const all = NullableMinimalRepositoryPullRequestCreationPolicy._('all');
-  static const collaboratorsOnly = NullableMinimalRepositoryPullRequestCreationPolicy._('collaborators_only');
+  static const all =
+      NullableMinimalRepositoryPullRequestCreationPolicy._('all');
+  static const collaboratorsOnly =
+      NullableMinimalRepositoryPullRequestCreationPolicy._(
+          'collaborators_only');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is NullableMinimalRepositoryPullRequestCreationPolicy && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is NullableMinimalRepositoryPullRequestCreationPolicy &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

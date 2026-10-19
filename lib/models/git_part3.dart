@@ -8,148 +8,248 @@ part of 'git.dart';
 class GitTreeTreeItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `path` wire field.
   final String path;
+
   /// Required `string` value serialized in the `mode` wire field.
   final String mode;
+
   /// Required `string` value serialized in the `type` wire field.
   final String type_;
+
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
+
   /// Optional `integer` value serialized in the `size` wire field.
   final SdkOptional<int> size;
+
   /// Optional `string` value serialized in the `url` wire field.
   final SdkOptional<String> url;
 
-  const GitTreeTreeItem({required this.path, required this.mode, required this.type_, required this.sha, this.size = const SdkOmitted(), this.url = const SdkOmitted()});
+  const GitTreeTreeItem(
+      {required this.path,
+      required this.mode,
+      required this.type_,
+      required this.sha,
+      this.size = const SdkOmitted(),
+      this.url = const SdkOmitted()});
 
-  GitTreeTreeItem Function({String path, String mode, String type_, String sha, SdkOptional<int> size, SdkOptional<String> url}) get copyWith => _copyWith;
+  GitTreeTreeItem Function(
+      {String path,
+      String mode,
+      String type_,
+      String sha,
+      SdkOptional<int> size,
+      SdkOptional<String> url}) get copyWith => _copyWith;
 
-  GitTreeTreeItem _copyWith({Object? path = sdkOmittedValue, Object? mode = sdkOmittedValue, Object? type_ = sdkOmittedValue, Object? sha = sdkOmittedValue, Object? size = sdkOmittedValue, Object? url = sdkOmittedValue}) => GitTreeTreeItem(
-    path: identical(path, sdkOmittedValue) ? this.path : path as String,
-    mode: identical(mode, sdkOmittedValue) ? this.mode : mode as String,
-    type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as String,
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-    size: identical(size, sdkOmittedValue) ? this.size : size as SdkOptional<int>,
-    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
-  );
+  GitTreeTreeItem _copyWith(
+          {Object? path = sdkOmittedValue,
+          Object? mode = sdkOmittedValue,
+          Object? type_ = sdkOmittedValue,
+          Object? sha = sdkOmittedValue,
+          Object? size = sdkOmittedValue,
+          Object? url = sdkOmittedValue}) =>
+      GitTreeTreeItem(
+        path: identical(path, sdkOmittedValue) ? this.path : path as String,
+        mode: identical(mode, sdkOmittedValue) ? this.mode : mode as String,
+        type_: identical(type_, sdkOmittedValue) ? this.type_ : type_ as String,
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+        size: identical(size, sdkOmittedValue)
+            ? this.size
+            : size as SdkOptional<int>,
+        url: identical(url, sdkOmittedValue)
+            ? this.url
+            : url as SdkOptional<String>,
+      );
 
-  factory GitTreeTreeItem.fromJson(Map<String, dynamic> json) => GitTreeTreeItem(
-    path: (json['path'] as String?)!,
-    mode: (json['mode'] as String?)!,
-    type_: (json['type'] as String?)!,
-    sha: (json['sha'] as String?)!,
-    size: json['size'] != null ? SdkPresent(((json['size'] as num?)?.toInt())!) : const SdkOmitted(),
-    url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
-  );
+  factory GitTreeTreeItem.fromJson(Map<String, dynamic> json) =>
+      GitTreeTreeItem(
+        path: (json['path'] as String?)!,
+        mode: (json['mode'] as String?)!,
+        type_: (json['type'] as String?)!,
+        sha: (json['sha'] as String?)!,
+        size: json['size'] != null
+            ? SdkPresent(((json['size'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        url: json['url'] != null
+            ? SdkPresent((json['url'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'path': path,
-    'mode': mode,
-    'type': type_,
-    'sha': sha,
-    ...switch (size) {
-      SdkPresent<int>(value: final value) => {'size': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (url) {
-      SdkPresent<String>(value: final value) => {'url': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'path': path,
+        'mode': mode,
+        'type': type_,
+        'sha': sha,
+        ...switch (size) {
+          SdkPresent<int>(value: final value) => {
+              'size': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (url) {
+          SdkPresent<String>(value: final value) => {
+              'url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// The hierarchy between files in a Git repository.
 class GitTree {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
+
   /// Optional `uri`-formatted value serialized in the `url` wire field.
   final SdkOptional<String> url;
+
   /// Required `boolean` value serialized in the `truncated` wire field.
   final bool truncated;
+
   /// Objects specifying a tree structure
   final List<GitTreeTreeItem> tree;
 
-  const GitTree({required this.sha, this.url = const SdkOmitted(), required this.truncated, required this.tree});
+  const GitTree(
+      {required this.sha,
+      this.url = const SdkOmitted(),
+      required this.truncated,
+      required this.tree});
 
-  GitTree Function({String sha, SdkOptional<String> url, bool truncated, List<GitTreeTreeItem> tree}) get copyWith => _copyWith;
+  GitTree Function(
+      {String sha,
+      SdkOptional<String> url,
+      bool truncated,
+      List<GitTreeTreeItem> tree}) get copyWith => _copyWith;
 
-  GitTree _copyWith({Object? sha = sdkOmittedValue, Object? url = sdkOmittedValue, Object? truncated = sdkOmittedValue, Object? tree = sdkOmittedValue}) => GitTree(
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
-    truncated: identical(truncated, sdkOmittedValue) ? this.truncated : truncated as bool,
-    tree: identical(tree, sdkOmittedValue) ? this.tree : tree as List<GitTreeTreeItem>,
-  );
+  GitTree _copyWith(
+          {Object? sha = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? truncated = sdkOmittedValue,
+          Object? tree = sdkOmittedValue}) =>
+      GitTree(
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+        url: identical(url, sdkOmittedValue)
+            ? this.url
+            : url as SdkOptional<String>,
+        truncated: identical(truncated, sdkOmittedValue)
+            ? this.truncated
+            : truncated as bool,
+        tree: identical(tree, sdkOmittedValue)
+            ? this.tree
+            : tree as List<GitTreeTreeItem>,
+      );
 
   factory GitTree.fromJson(Map<String, dynamic> json) => GitTree(
-    sha: (json['sha'] as String?)!,
-    url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
-    truncated: (json['truncated'] as bool?)!,
-    tree: ((json['tree'] as List?)?.map((e) => GitTreeTreeItem.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+        sha: (json['sha'] as String?)!,
+        url: json['url'] != null
+            ? SdkPresent((json['url'] as String?)!)
+            : const SdkOmitted(),
+        truncated: (json['truncated'] as bool?)!,
+        tree: ((json['tree'] as List?)
+            ?.map((e) => GitTreeTreeItem.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'sha': sha,
-    ...switch (url) {
-      SdkPresent<String>(value: final value) => {'url': value,},
-      _ => const <String, dynamic>{},
-    },
-    'truncated': truncated,
-    'tree': tree.map((item) => item.toJson()).toList(),
-  };
+        'sha': sha,
+        ...switch (url) {
+          SdkPresent<String>(value: final value) => {
+              'url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'truncated': truncated,
+        'tree': tree.map((item) => item.toJson()).toList(),
+      };
 }
 
 /// Metaproperties for Git author/committer information.
 class GitUser {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `string` value serialized in the `name` wire field.
   final SdkOptional<String> name;
+
   /// Optional `string` value serialized in the `email` wire field.
   final SdkOptional<String> email;
+
   /// Optional `date-time`-formatted value serialized in the `date` wire field.
   final SdkOptional<String> date;
 
-  const GitUser({this.name = const SdkOmitted(), this.email = const SdkOmitted(), this.date = const SdkOmitted()});
+  const GitUser(
+      {this.name = const SdkOmitted(),
+      this.email = const SdkOmitted(),
+      this.date = const SdkOmitted()});
 
-  GitUser Function({SdkOptional<String> name, SdkOptional<String> email, SdkOptional<String> date}) get copyWith => _copyWith;
+  GitUser Function(
+      {SdkOptional<String> name,
+      SdkOptional<String> email,
+      SdkOptional<String> date}) get copyWith => _copyWith;
 
-  GitUser _copyWith({Object? name = sdkOmittedValue, Object? email = sdkOmittedValue, Object? date = sdkOmittedValue}) => GitUser(
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    email: identical(email, sdkOmittedValue) ? this.email : email as SdkOptional<String>,
-    date: identical(date, sdkOmittedValue) ? this.date : date as SdkOptional<String>,
-  );
+  GitUser _copyWith(
+          {Object? name = sdkOmittedValue,
+          Object? email = sdkOmittedValue,
+          Object? date = sdkOmittedValue}) =>
+      GitUser(
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        email: identical(email, sdkOmittedValue)
+            ? this.email
+            : email as SdkOptional<String>,
+        date: identical(date, sdkOmittedValue)
+            ? this.date
+            : date as SdkOptional<String>,
+      );
 
   factory GitUser.fromJson(Map<String, dynamic> json) => GitUser(
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    email: json['email'] != null ? SdkPresent((json['email'] as String?)!) : const SdkOmitted(),
-    date: json['date'] != null ? SdkPresent((json['date'] as String?)!) : const SdkOmitted(),
-  );
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+        email: json['email'] != null
+            ? SdkPresent((json['email'] as String?)!)
+            : const SdkOmitted(),
+        date: json['date'] != null
+            ? SdkPresent((json['date'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (email) {
-      SdkPresent<String>(value: final value) => {'email': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (date) {
-      SdkPresent<String>(value: final value) => {'date': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (email) {
+          SdkPresent<String>(value: final value) => {
+              'email': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (date) {
+          SdkPresent<String>(value: final value) => {
+              'date': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Short Blob
 class ShortBlob {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `url` wire field.
   final String url;
+
   /// Required `string` value serialized in the `sha` wire field.
   final String sha;
 
@@ -157,18 +257,20 @@ class ShortBlob {
 
   ShortBlob Function({String url, String sha}) get copyWith => _copyWith;
 
-  ShortBlob _copyWith({Object? url = sdkOmittedValue, Object? sha = sdkOmittedValue}) => ShortBlob(
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
-  );
+  ShortBlob _copyWith(
+          {Object? url = sdkOmittedValue, Object? sha = sdkOmittedValue}) =>
+      ShortBlob(
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        sha: identical(sha, sdkOmittedValue) ? this.sha : sha as String,
+      );
 
   factory ShortBlob.fromJson(Map<String, dynamic> json) => ShortBlob(
-    url: (json['url'] as String?)!,
-    sha: (json['sha'] as String?)!,
-  );
+        url: (json['url'] as String?)!,
+        sha: (json['sha'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'url': url,
-    'sha': sha,
-  };
+        'url': url,
+        'sha': sha,
+      };
 }

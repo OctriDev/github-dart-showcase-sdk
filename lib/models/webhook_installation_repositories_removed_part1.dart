@@ -8,120 +8,261 @@ part of 'webhook_installation_repositories_removed.dart';
 class WebhookInstallationRepositoriesRemovedRepositoriesRemovedItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `full_name` wire field.
   final String fullName;
+
   /// Unique identifier of the repository
   final int id;
+
   /// The name of the repository.
   final String name;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// Whether the repository is private or public.
   final bool private;
 
-  const WebhookInstallationRepositoriesRemovedRepositoriesRemovedItem({required this.fullName, required this.id, required this.name, required this.nodeId, required this.private});
+  const WebhookInstallationRepositoriesRemovedRepositoriesRemovedItem(
+      {required this.fullName,
+      required this.id,
+      required this.name,
+      required this.nodeId,
+      required this.private});
 
-  WebhookInstallationRepositoriesRemovedRepositoriesRemovedItem Function({String fullName, int id, String name, String nodeId, bool private}) get copyWith => _copyWith;
+  WebhookInstallationRepositoriesRemovedRepositoriesRemovedItem Function(
+      {String fullName,
+      int id,
+      String name,
+      String nodeId,
+      bool private}) get copyWith => _copyWith;
 
-  WebhookInstallationRepositoriesRemovedRepositoriesRemovedItem _copyWith({Object? fullName = sdkOmittedValue, Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? private = sdkOmittedValue}) => WebhookInstallationRepositoriesRemovedRepositoriesRemovedItem(
-    fullName: identical(fullName, sdkOmittedValue) ? this.fullName : fullName as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    private: identical(private, sdkOmittedValue) ? this.private : private as bool,
-  );
+  WebhookInstallationRepositoriesRemovedRepositoriesRemovedItem _copyWith(
+          {Object? fullName = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? private = sdkOmittedValue}) =>
+      WebhookInstallationRepositoriesRemovedRepositoriesRemovedItem(
+        fullName: identical(fullName, sdkOmittedValue)
+            ? this.fullName
+            : fullName as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        private: identical(private, sdkOmittedValue)
+            ? this.private
+            : private as bool,
+      );
 
-  factory WebhookInstallationRepositoriesRemovedRepositoriesRemovedItem.fromJson(Map<String, dynamic> json) => WebhookInstallationRepositoriesRemovedRepositoriesRemovedItem(
-    fullName: (json['full_name'] as String?)!,
-    id: ((json['id'] as num?)?.toInt())!,
-    name: (json['name'] as String?)!,
-    nodeId: (json['node_id'] as String?)!,
-    private: (json['private'] as bool?)!,
-  );
+  factory WebhookInstallationRepositoriesRemovedRepositoriesRemovedItem.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookInstallationRepositoriesRemovedRepositoriesRemovedItem(
+        fullName: (json['full_name'] as String?)!,
+        id: ((json['id'] as num?)?.toInt())!,
+        name: (json['name'] as String?)!,
+        nodeId: (json['node_id'] as String?)!,
+        private: (json['private'] as bool?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'full_name': fullName,
-    'id': id,
-    'name': name,
-    'node_id': nodeId,
-    'private': private,
-  };
+        'full_name': fullName,
+        'id': id,
+        'name': name,
+        'node_id': nodeId,
+        'private': private,
+      };
 }
 
 /// Typed representation of the `WebhookInstallationRepositoriesRemoved` API schema.
 class WebhookInstallationRepositoriesRemoved {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `action` wire field.
   final WebhookInstallationRepositoriesRemovedAction action;
+
   /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured on an enterprise account or an organization that's part of an enterprise account. For more information, see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
   final SdkOptional<EnterpriseWebhooks> enterprise;
+
   /// Installation
   final Installation installation;
+
   /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an organization, or when the event occurs from activity in a repository owned by an organization.
   final SdkOptional<OrganizationSimpleWebhooks> organization;
+
   /// An array of repository objects, which were added to the installation.
   final List<WebhooksRepositoriesAddedItem> repositoriesAdded;
+
   /// An array of repository objects, which were removed from the installation. When `repository_selection` changes from `all` to `selected`, this array is empty.
-  final List<WebhookInstallationRepositoriesRemovedRepositoriesRemovedItem> repositoriesRemoved;
+  final List<WebhookInstallationRepositoriesRemovedRepositoriesRemovedItem>
+      repositoriesRemoved;
+
   /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property when the event occurs from activity in a repository.
   final SdkOptional<RepositoryWebhooks> repository;
+
   /// Describe whether all repositories have been selected or there's a selection involved
   final WebhooksRepositorySelection repositorySelection;
+
   /// Required object value serialized in the `requester` wire field.
   final WebhooksUser? requester;
+
   /// A GitHub user.
   final SimpleUser sender;
 
-  const WebhookInstallationRepositoriesRemoved({required this.action, this.enterprise = const SdkOmitted(), required this.installation, this.organization = const SdkOmitted(), required this.repositoriesAdded, required this.repositoriesRemoved, this.repository = const SdkOmitted(), required this.repositorySelection, required this.requester, required this.sender});
+  const WebhookInstallationRepositoriesRemoved(
+      {required this.action,
+      this.enterprise = const SdkOmitted(),
+      required this.installation,
+      this.organization = const SdkOmitted(),
+      required this.repositoriesAdded,
+      required this.repositoriesRemoved,
+      this.repository = const SdkOmitted(),
+      required this.repositorySelection,
+      required this.requester,
+      required this.sender});
 
-  WebhookInstallationRepositoriesRemoved Function({WebhookInstallationRepositoriesRemovedAction action, SdkOptional<EnterpriseWebhooks> enterprise, Installation installation, SdkOptional<OrganizationSimpleWebhooks> organization, List<WebhooksRepositoriesAddedItem> repositoriesAdded, List<WebhookInstallationRepositoriesRemovedRepositoriesRemovedItem> repositoriesRemoved, SdkOptional<RepositoryWebhooks> repository, WebhooksRepositorySelection repositorySelection, WebhooksUser? requester, SimpleUser sender}) get copyWith => _copyWith;
+  WebhookInstallationRepositoriesRemoved Function(
+      {WebhookInstallationRepositoriesRemovedAction action,
+      SdkOptional<EnterpriseWebhooks> enterprise,
+      Installation installation,
+      SdkOptional<OrganizationSimpleWebhooks> organization,
+      List<WebhooksRepositoriesAddedItem> repositoriesAdded,
+      List<WebhookInstallationRepositoriesRemovedRepositoriesRemovedItem>
+          repositoriesRemoved,
+      SdkOptional<RepositoryWebhooks> repository,
+      WebhooksRepositorySelection repositorySelection,
+      WebhooksUser? requester,
+      SimpleUser sender}) get copyWith => _copyWith;
 
-  WebhookInstallationRepositoriesRemoved _copyWith({Object? action = sdkOmittedValue, Object? enterprise = sdkOmittedValue, Object? installation = sdkOmittedValue, Object? organization = sdkOmittedValue, Object? repositoriesAdded = sdkOmittedValue, Object? repositoriesRemoved = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? repositorySelection = sdkOmittedValue, Object? requester = sdkOmittedValue, Object? sender = sdkOmittedValue}) => WebhookInstallationRepositoriesRemoved(
-    action: identical(action, sdkOmittedValue) ? this.action : action as WebhookInstallationRepositoriesRemovedAction,
-    enterprise: identical(enterprise, sdkOmittedValue) ? this.enterprise : enterprise as SdkOptional<EnterpriseWebhooks>,
-    installation: identical(installation, sdkOmittedValue) ? this.installation : installation as Installation,
-    organization: identical(organization, sdkOmittedValue) ? this.organization : organization as SdkOptional<OrganizationSimpleWebhooks>,
-    repositoriesAdded: identical(repositoriesAdded, sdkOmittedValue) ? this.repositoriesAdded : repositoriesAdded as List<WebhooksRepositoriesAddedItem>,
-    repositoriesRemoved: identical(repositoriesRemoved, sdkOmittedValue) ? this.repositoriesRemoved : repositoriesRemoved as List<WebhookInstallationRepositoriesRemovedRepositoriesRemovedItem>,
-    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as SdkOptional<RepositoryWebhooks>,
-    repositorySelection: identical(repositorySelection, sdkOmittedValue) ? this.repositorySelection : repositorySelection as WebhooksRepositorySelection,
-    requester: identical(requester, sdkOmittedValue) ? this.requester : requester as WebhooksUser?,
-    sender: identical(sender, sdkOmittedValue) ? this.sender : sender as SimpleUser,
-  );
+  WebhookInstallationRepositoriesRemoved _copyWith(
+          {Object? action = sdkOmittedValue,
+          Object? enterprise = sdkOmittedValue,
+          Object? installation = sdkOmittedValue,
+          Object? organization = sdkOmittedValue,
+          Object? repositoriesAdded = sdkOmittedValue,
+          Object? repositoriesRemoved = sdkOmittedValue,
+          Object? repository = sdkOmittedValue,
+          Object? repositorySelection = sdkOmittedValue,
+          Object? requester = sdkOmittedValue,
+          Object? sender = sdkOmittedValue}) =>
+      WebhookInstallationRepositoriesRemoved(
+        action: identical(action, sdkOmittedValue)
+            ? this.action
+            : action as WebhookInstallationRepositoriesRemovedAction,
+        enterprise: identical(enterprise, sdkOmittedValue)
+            ? this.enterprise
+            : enterprise as SdkOptional<EnterpriseWebhooks>,
+        installation: identical(installation, sdkOmittedValue)
+            ? this.installation
+            : installation as Installation,
+        organization: identical(organization, sdkOmittedValue)
+            ? this.organization
+            : organization as SdkOptional<OrganizationSimpleWebhooks>,
+        repositoriesAdded: identical(repositoriesAdded, sdkOmittedValue)
+            ? this.repositoriesAdded
+            : repositoriesAdded as List<WebhooksRepositoriesAddedItem>,
+        repositoriesRemoved: identical(repositoriesRemoved, sdkOmittedValue)
+            ? this.repositoriesRemoved
+            : repositoriesRemoved as List<
+                WebhookInstallationRepositoriesRemovedRepositoriesRemovedItem>,
+        repository: identical(repository, sdkOmittedValue)
+            ? this.repository
+            : repository as SdkOptional<RepositoryWebhooks>,
+        repositorySelection: identical(repositorySelection, sdkOmittedValue)
+            ? this.repositorySelection
+            : repositorySelection as WebhooksRepositorySelection,
+        requester: identical(requester, sdkOmittedValue)
+            ? this.requester
+            : requester as WebhooksUser?,
+        sender: identical(sender, sdkOmittedValue)
+            ? this.sender
+            : sender as SimpleUser,
+      );
 
-  factory WebhookInstallationRepositoriesRemoved.fromJson(Map<String, dynamic> json) => WebhookInstallationRepositoriesRemoved(
-    action: (json['action'] != null ? WebhookInstallationRepositoriesRemovedAction.fromJson(json['action'] as String) : null)!,
-    enterprise: json['enterprise'] != null ? SdkPresent((json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    installation: (json['installation'] != null ? Installation.fromJson(json['installation'] as Map<String, dynamic>) : null)!,
-    organization: json['organization'] != null ? SdkPresent((json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    repositoriesAdded: ((json['repositories_added'] as List?)?.map((e) => WebhooksRepositoriesAddedItem.fromJson(e as Map<String, dynamic>)).toList())!,
-    repositoriesRemoved: ((json['repositories_removed'] as List?)?.map((e) => WebhookInstallationRepositoriesRemovedRepositoriesRemovedItem.fromJson(e as Map<String, dynamic>)).toList())!,
-    repository: json['repository'] != null ? SdkPresent((json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    repositorySelection: (json['repository_selection'] != null ? WebhooksRepositorySelection.fromJson(json['repository_selection'] as String) : null)!,
-    requester: json.containsKey('requester') ? json['requester'] != null ? WebhooksUser.fromJson(json['requester'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'requester', 'Required property is missing'),
-    sender: (json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null)!,
-  );
+  factory WebhookInstallationRepositoriesRemoved.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookInstallationRepositoriesRemoved(
+        action: (json['action'] != null
+            ? WebhookInstallationRepositoriesRemovedAction.fromJson(
+                json['action'] as String)
+            : null)!,
+        enterprise: json['enterprise'] != null
+            ? SdkPresent((json['enterprise'] != null
+                ? EnterpriseWebhooks.fromJson(
+                    json['enterprise'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        installation: (json['installation'] != null
+            ? Installation.fromJson(
+                json['installation'] as Map<String, dynamic>)
+            : null)!,
+        organization: json['organization'] != null
+            ? SdkPresent((json['organization'] != null
+                ? OrganizationSimpleWebhooks.fromJson(
+                    json['organization'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        repositoriesAdded: ((json['repositories_added'] as List?)
+            ?.map((e) => WebhooksRepositoriesAddedItem.fromJson(
+                e as Map<String, dynamic>))
+            .toList())!,
+        repositoriesRemoved: ((json['repositories_removed'] as List?)
+            ?.map((e) =>
+                WebhookInstallationRepositoriesRemovedRepositoriesRemovedItem
+                    .fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        repository: json['repository'] != null
+            ? SdkPresent((json['repository'] != null
+                ? RepositoryWebhooks.fromJson(
+                    json['repository'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        repositorySelection: (json['repository_selection'] != null
+            ? WebhooksRepositorySelection.fromJson(
+                json['repository_selection'] as String)
+            : null)!,
+        requester: json.containsKey('requester')
+            ? json['requester'] != null
+                ? WebhooksUser.fromJson(
+                    json['requester'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'requester', 'Required property is missing'),
+        sender: (json['sender'] != null
+            ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'action': action.toJson(),
-    ...switch (enterprise) {
-      SdkPresent<EnterpriseWebhooks>(value: final value) => {'enterprise': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'installation': installation.toJson(),
-    ...switch (organization) {
-      SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {'organization': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'repositories_added': repositoriesAdded.map((item) => item.toJson()).toList(),
-    'repositories_removed': repositoriesRemoved.map((item) => item.toJson()).toList(),
-    ...switch (repository) {
-      SdkPresent<RepositoryWebhooks>(value: final value) => {'repository': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'repository_selection': repositorySelection.toJson(),
-    'requester': requester?.toJson(),
-    'sender': sender.toJson(),
-  };
+        'action': action.toJson(),
+        ...switch (enterprise) {
+          SdkPresent<EnterpriseWebhooks>(value: final value) => {
+              'enterprise': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'installation': installation.toJson(),
+        ...switch (organization) {
+          SdkPresent<OrganizationSimpleWebhooks>(value: final value) => {
+              'organization': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'repositories_added':
+            repositoriesAdded.map((item) => item.toJson()).toList(),
+        'repositories_removed':
+            repositoriesRemoved.map((item) => item.toJson()).toList(),
+        ...switch (repository) {
+          SdkPresent<RepositoryWebhooks>(value: final value) => {
+              'repository': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'repository_selection': repositorySelection.toJson(),
+        'requester': requester?.toJson(),
+        'sender': sender.toJson(),
+      };
 }

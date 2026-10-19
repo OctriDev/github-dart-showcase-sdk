@@ -8,234 +8,430 @@ part of 'activity.dart';
 class PullRequestReviewCommentEventComment {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
+
   /// Required `string` value serialized in the `node_id` wire field.
   final String nodeId;
+
   /// Required `uri`-formatted value serialized in the `url` wire field.
   final String url;
+
   /// Required `integer` value serialized in the `pull_request_review_id` wire field.
   final int? pullRequestReviewId;
+
   /// Required `string` value serialized in the `diff_hunk` wire field.
   final String diffHunk;
+
   /// Required `string` value serialized in the `path` wire field.
   final String path;
+
   /// Required `integer` value serialized in the `position` wire field.
   final int? position;
+
   /// Required `integer` value serialized in the `original_position` wire field.
   final int originalPosition;
+
   /// Optional `string` value serialized in the `subject_type` wire field.
   final SdkOptional<String?> subjectType;
+
   /// Required `string` value serialized in the `commit_id` wire field.
   final String commitId;
+
   /// Required object value serialized in the `user` wire field.
   final PullRequestReviewCommentEventCommentUser? user;
+
   /// Required `string` value serialized in the `body` wire field.
   final String body;
+
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String createdAt;
+
   /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
   final String updatedAt;
+
   /// Required `uri`-formatted value serialized in the `html_url` wire field.
   final String htmlUrl;
+
   /// Required `uri`-formatted value serialized in the `pull_request_url` wire field.
   final String pullRequestUrl;
+
   /// Required object value serialized in the `_links` wire field.
   final PullRequestReviewCommentEventCommentLinks links;
+
   /// Required `string` value serialized in the `original_commit_id` wire field.
   final String originalCommitId;
+
   /// Required object value serialized in the `reactions` wire field.
   final PullRequestReviewCommentEventCommentReactions reactions;
+
   /// Optional `integer` value serialized in the `in_reply_to_id` wire field.
   final SdkOptional<int> inReplyToId;
 
-  const PullRequestReviewCommentEventComment({required this.id, required this.nodeId, required this.url, required this.pullRequestReviewId, required this.diffHunk, required this.path, required this.position, required this.originalPosition, this.subjectType = const SdkOmitted(), required this.commitId, required this.user, required this.body, required this.createdAt, required this.updatedAt, required this.htmlUrl, required this.pullRequestUrl, required this.links, required this.originalCommitId, required this.reactions, this.inReplyToId = const SdkOmitted()});
+  const PullRequestReviewCommentEventComment(
+      {required this.id,
+      required this.nodeId,
+      required this.url,
+      required this.pullRequestReviewId,
+      required this.diffHunk,
+      required this.path,
+      required this.position,
+      required this.originalPosition,
+      this.subjectType = const SdkOmitted(),
+      required this.commitId,
+      required this.user,
+      required this.body,
+      required this.createdAt,
+      required this.updatedAt,
+      required this.htmlUrl,
+      required this.pullRequestUrl,
+      required this.links,
+      required this.originalCommitId,
+      required this.reactions,
+      this.inReplyToId = const SdkOmitted()});
 
-  PullRequestReviewCommentEventComment Function({int id, String nodeId, String url, int? pullRequestReviewId, String diffHunk, String path, int? position, int originalPosition, SdkOptional<String?> subjectType, String commitId, PullRequestReviewCommentEventCommentUser? user, String body, String createdAt, String updatedAt, String htmlUrl, String pullRequestUrl, PullRequestReviewCommentEventCommentLinks links, String originalCommitId, PullRequestReviewCommentEventCommentReactions reactions, SdkOptional<int> inReplyToId}) get copyWith => _copyWith;
+  PullRequestReviewCommentEventComment Function(
+      {int id,
+      String nodeId,
+      String url,
+      int? pullRequestReviewId,
+      String diffHunk,
+      String path,
+      int? position,
+      int originalPosition,
+      SdkOptional<String?> subjectType,
+      String commitId,
+      PullRequestReviewCommentEventCommentUser? user,
+      String body,
+      String createdAt,
+      String updatedAt,
+      String htmlUrl,
+      String pullRequestUrl,
+      PullRequestReviewCommentEventCommentLinks links,
+      String originalCommitId,
+      PullRequestReviewCommentEventCommentReactions reactions,
+      SdkOptional<int> inReplyToId}) get copyWith => _copyWith;
 
-  PullRequestReviewCommentEventComment _copyWith({Object? id = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? url = sdkOmittedValue, Object? pullRequestReviewId = sdkOmittedValue, Object? diffHunk = sdkOmittedValue, Object? path = sdkOmittedValue, Object? position = sdkOmittedValue, Object? originalPosition = sdkOmittedValue, Object? subjectType = sdkOmittedValue, Object? commitId = sdkOmittedValue, Object? user = sdkOmittedValue, Object? body = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? pullRequestUrl = sdkOmittedValue, Object? links = sdkOmittedValue, Object? originalCommitId = sdkOmittedValue, Object? reactions = sdkOmittedValue, Object? inReplyToId = sdkOmittedValue}) => PullRequestReviewCommentEventComment(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    pullRequestReviewId: identical(pullRequestReviewId, sdkOmittedValue) ? this.pullRequestReviewId : pullRequestReviewId as int?,
-    diffHunk: identical(diffHunk, sdkOmittedValue) ? this.diffHunk : diffHunk as String,
-    path: identical(path, sdkOmittedValue) ? this.path : path as String,
-    position: identical(position, sdkOmittedValue) ? this.position : position as int?,
-    originalPosition: identical(originalPosition, sdkOmittedValue) ? this.originalPosition : originalPosition as int,
-    subjectType: identical(subjectType, sdkOmittedValue) ? this.subjectType : subjectType as SdkOptional<String?>,
-    commitId: identical(commitId, sdkOmittedValue) ? this.commitId : commitId as String,
-    user: identical(user, sdkOmittedValue) ? this.user : user as PullRequestReviewCommentEventCommentUser?,
-    body: identical(body, sdkOmittedValue) ? this.body : body as String,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
-    pullRequestUrl: identical(pullRequestUrl, sdkOmittedValue) ? this.pullRequestUrl : pullRequestUrl as String,
-    links: identical(links, sdkOmittedValue) ? this.links : links as PullRequestReviewCommentEventCommentLinks,
-    originalCommitId: identical(originalCommitId, sdkOmittedValue) ? this.originalCommitId : originalCommitId as String,
-    reactions: identical(reactions, sdkOmittedValue) ? this.reactions : reactions as PullRequestReviewCommentEventCommentReactions,
-    inReplyToId: identical(inReplyToId, sdkOmittedValue) ? this.inReplyToId : inReplyToId as SdkOptional<int>,
-  );
+  PullRequestReviewCommentEventComment _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? pullRequestReviewId = sdkOmittedValue,
+          Object? diffHunk = sdkOmittedValue,
+          Object? path = sdkOmittedValue,
+          Object? position = sdkOmittedValue,
+          Object? originalPosition = sdkOmittedValue,
+          Object? subjectType = sdkOmittedValue,
+          Object? commitId = sdkOmittedValue,
+          Object? user = sdkOmittedValue,
+          Object? body = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? pullRequestUrl = sdkOmittedValue,
+          Object? links = sdkOmittedValue,
+          Object? originalCommitId = sdkOmittedValue,
+          Object? reactions = sdkOmittedValue,
+          Object? inReplyToId = sdkOmittedValue}) =>
+      PullRequestReviewCommentEventComment(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        pullRequestReviewId: identical(pullRequestReviewId, sdkOmittedValue)
+            ? this.pullRequestReviewId
+            : pullRequestReviewId as int?,
+        diffHunk: identical(diffHunk, sdkOmittedValue)
+            ? this.diffHunk
+            : diffHunk as String,
+        path: identical(path, sdkOmittedValue) ? this.path : path as String,
+        position: identical(position, sdkOmittedValue)
+            ? this.position
+            : position as int?,
+        originalPosition: identical(originalPosition, sdkOmittedValue)
+            ? this.originalPosition
+            : originalPosition as int,
+        subjectType: identical(subjectType, sdkOmittedValue)
+            ? this.subjectType
+            : subjectType as SdkOptional<String?>,
+        commitId: identical(commitId, sdkOmittedValue)
+            ? this.commitId
+            : commitId as String,
+        user: identical(user, sdkOmittedValue)
+            ? this.user
+            : user as PullRequestReviewCommentEventCommentUser?,
+        body: identical(body, sdkOmittedValue) ? this.body : body as String,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as String,
+        pullRequestUrl: identical(pullRequestUrl, sdkOmittedValue)
+            ? this.pullRequestUrl
+            : pullRequestUrl as String,
+        links: identical(links, sdkOmittedValue)
+            ? this.links
+            : links as PullRequestReviewCommentEventCommentLinks,
+        originalCommitId: identical(originalCommitId, sdkOmittedValue)
+            ? this.originalCommitId
+            : originalCommitId as String,
+        reactions: identical(reactions, sdkOmittedValue)
+            ? this.reactions
+            : reactions as PullRequestReviewCommentEventCommentReactions,
+        inReplyToId: identical(inReplyToId, sdkOmittedValue)
+            ? this.inReplyToId
+            : inReplyToId as SdkOptional<int>,
+      );
 
-  factory PullRequestReviewCommentEventComment.fromJson(Map<String, dynamic> json) => PullRequestReviewCommentEventComment(
-    id: ((json['id'] as num?)?.toInt())!,
-    nodeId: (json['node_id'] as String?)!,
-    url: (json['url'] as String?)!,
-    pullRequestReviewId: json.containsKey('pull_request_review_id') ? (json['pull_request_review_id'] as num?)?.toInt() : throw ArgumentError.value(null, 'pull_request_review_id', 'Required property is missing'),
-    diffHunk: (json['diff_hunk'] as String?)!,
-    path: (json['path'] as String?)!,
-    position: json.containsKey('position') ? (json['position'] as num?)?.toInt() : throw ArgumentError.value(null, 'position', 'Required property is missing'),
-    originalPosition: ((json['original_position'] as num?)?.toInt())!,
-    subjectType: json.containsKey('subject_type') ? SdkPresent(json['subject_type'] as String?) : const SdkOmitted(),
-    commitId: (json['commit_id'] as String?)!,
-    user: json.containsKey('user') ? json['user'] != null ? PullRequestReviewCommentEventCommentUser.fromJson(json['user'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'user', 'Required property is missing'),
-    body: (json['body'] as String?)!,
-    createdAt: (json['created_at'] as String?)!,
-    updatedAt: (json['updated_at'] as String?)!,
-    htmlUrl: (json['html_url'] as String?)!,
-    pullRequestUrl: (json['pull_request_url'] as String?)!,
-    links: (json['_links'] != null ? PullRequestReviewCommentEventCommentLinks.fromJson(json['_links'] as Map<String, dynamic>) : null)!,
-    originalCommitId: (json['original_commit_id'] as String?)!,
-    reactions: (json['reactions'] != null ? PullRequestReviewCommentEventCommentReactions.fromJson(json['reactions'] as Map<String, dynamic>) : null)!,
-    inReplyToId: json['in_reply_to_id'] != null ? SdkPresent(((json['in_reply_to_id'] as num?)?.toInt())!) : const SdkOmitted(),
-  );
+  factory PullRequestReviewCommentEventComment.fromJson(
+          Map<String, dynamic> json) =>
+      PullRequestReviewCommentEventComment(
+        id: ((json['id'] as num?)?.toInt())!,
+        nodeId: (json['node_id'] as String?)!,
+        url: (json['url'] as String?)!,
+        pullRequestReviewId: json.containsKey('pull_request_review_id')
+            ? (json['pull_request_review_id'] as num?)?.toInt()
+            : throw ArgumentError.value(
+                null, 'pull_request_review_id', 'Required property is missing'),
+        diffHunk: (json['diff_hunk'] as String?)!,
+        path: (json['path'] as String?)!,
+        position: json.containsKey('position')
+            ? (json['position'] as num?)?.toInt()
+            : throw ArgumentError.value(
+                null, 'position', 'Required property is missing'),
+        originalPosition: ((json['original_position'] as num?)?.toInt())!,
+        subjectType: json.containsKey('subject_type')
+            ? SdkPresent(json['subject_type'] as String?)
+            : const SdkOmitted(),
+        commitId: (json['commit_id'] as String?)!,
+        user: json.containsKey('user')
+            ? json['user'] != null
+                ? PullRequestReviewCommentEventCommentUser.fromJson(
+                    json['user'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'user', 'Required property is missing'),
+        body: (json['body'] as String?)!,
+        createdAt: (json['created_at'] as String?)!,
+        updatedAt: (json['updated_at'] as String?)!,
+        htmlUrl: (json['html_url'] as String?)!,
+        pullRequestUrl: (json['pull_request_url'] as String?)!,
+        links: (json['_links'] != null
+            ? PullRequestReviewCommentEventCommentLinks.fromJson(
+                json['_links'] as Map<String, dynamic>)
+            : null)!,
+        originalCommitId: (json['original_commit_id'] as String?)!,
+        reactions: (json['reactions'] != null
+            ? PullRequestReviewCommentEventCommentReactions.fromJson(
+                json['reactions'] as Map<String, dynamic>)
+            : null)!,
+        inReplyToId: json['in_reply_to_id'] != null
+            ? SdkPresent(((json['in_reply_to_id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'node_id': nodeId,
-    'url': url,
-    'pull_request_review_id': pullRequestReviewId,
-    'diff_hunk': diffHunk,
-    'path': path,
-    'position': position,
-    'original_position': originalPosition,
-    ...switch (subjectType) {
-      SdkPresent<String?>(value: final value) => {'subject_type': value,},
-      _ => const <String, dynamic>{},
-    },
-    'commit_id': commitId,
-    'user': user?.toJson(),
-    'body': body,
-    'created_at': createdAt,
-    'updated_at': updatedAt,
-    'html_url': htmlUrl,
-    'pull_request_url': pullRequestUrl,
-    '_links': links.toJson(),
-    'original_commit_id': originalCommitId,
-    'reactions': reactions.toJson(),
-    ...switch (inReplyToId) {
-      SdkPresent<int>(value: final value) => {'in_reply_to_id': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'id': id,
+        'node_id': nodeId,
+        'url': url,
+        'pull_request_review_id': pullRequestReviewId,
+        'diff_hunk': diffHunk,
+        'path': path,
+        'position': position,
+        'original_position': originalPosition,
+        ...switch (subjectType) {
+          SdkPresent<String?>(value: final value) => {
+              'subject_type': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'commit_id': commitId,
+        'user': user?.toJson(),
+        'body': body,
+        'created_at': createdAt,
+        'updated_at': updatedAt,
+        'html_url': htmlUrl,
+        'pull_request_url': pullRequestUrl,
+        '_links': links.toJson(),
+        'original_commit_id': originalCommitId,
+        'reactions': reactions.toJson(),
+        ...switch (inReplyToId) {
+          SdkPresent<int>(value: final value) => {
+              'in_reply_to_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Typed representation of the `PullRequestReviewCommentEvent` API schema.
 class PullRequestReviewCommentEvent {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `action` wire field.
   final String action;
+
   /// Required object value serialized in the `pull_request` wire field.
   final PullRequestMinimal pullRequest;
+
   /// Required object value serialized in the `comment` wire field.
   final PullRequestReviewCommentEventComment comment;
 
-  const PullRequestReviewCommentEvent({required this.action, required this.pullRequest, required this.comment});
+  const PullRequestReviewCommentEvent(
+      {required this.action, required this.pullRequest, required this.comment});
 
-  PullRequestReviewCommentEvent Function({String action, PullRequestMinimal pullRequest, PullRequestReviewCommentEventComment comment}) get copyWith => _copyWith;
+  PullRequestReviewCommentEvent Function(
+      {String action,
+      PullRequestMinimal pullRequest,
+      PullRequestReviewCommentEventComment comment}) get copyWith => _copyWith;
 
-  PullRequestReviewCommentEvent _copyWith({Object? action = sdkOmittedValue, Object? pullRequest = sdkOmittedValue, Object? comment = sdkOmittedValue}) => PullRequestReviewCommentEvent(
-    action: identical(action, sdkOmittedValue) ? this.action : action as String,
-    pullRequest: identical(pullRequest, sdkOmittedValue) ? this.pullRequest : pullRequest as PullRequestMinimal,
-    comment: identical(comment, sdkOmittedValue) ? this.comment : comment as PullRequestReviewCommentEventComment,
-  );
+  PullRequestReviewCommentEvent _copyWith(
+          {Object? action = sdkOmittedValue,
+          Object? pullRequest = sdkOmittedValue,
+          Object? comment = sdkOmittedValue}) =>
+      PullRequestReviewCommentEvent(
+        action:
+            identical(action, sdkOmittedValue) ? this.action : action as String,
+        pullRequest: identical(pullRequest, sdkOmittedValue)
+            ? this.pullRequest
+            : pullRequest as PullRequestMinimal,
+        comment: identical(comment, sdkOmittedValue)
+            ? this.comment
+            : comment as PullRequestReviewCommentEventComment,
+      );
 
-  factory PullRequestReviewCommentEvent.fromJson(Map<String, dynamic> json) => PullRequestReviewCommentEvent(
-    action: (json['action'] as String?)!,
-    pullRequest: (json['pull_request'] != null ? PullRequestMinimal.fromJson(json['pull_request'] as Map<String, dynamic>) : null)!,
-    comment: (json['comment'] != null ? PullRequestReviewCommentEventComment.fromJson(json['comment'] as Map<String, dynamic>) : null)!,
-  );
+  factory PullRequestReviewCommentEvent.fromJson(Map<String, dynamic> json) =>
+      PullRequestReviewCommentEvent(
+        action: (json['action'] as String?)!,
+        pullRequest: (json['pull_request'] != null
+            ? PullRequestMinimal.fromJson(
+                json['pull_request'] as Map<String, dynamic>)
+            : null)!,
+        comment: (json['comment'] != null
+            ? PullRequestReviewCommentEventComment.fromJson(
+                json['comment'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'action': action,
-    'pull_request': pullRequest.toJson(),
-    'comment': comment.toJson(),
-  };
+        'action': action,
+        'pull_request': pullRequest.toJson(),
+        'comment': comment.toJson(),
+      };
 }
 
 /// Required object value serialized in the `html` wire field.
 class PullRequestReviewEventReviewLinksHtml {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `href` wire field.
   final String href;
 
   const PullRequestReviewEventReviewLinksHtml({required this.href});
 
-  PullRequestReviewEventReviewLinksHtml Function({String href}) get copyWith => _copyWith;
+  PullRequestReviewEventReviewLinksHtml Function({String href}) get copyWith =>
+      _copyWith;
 
-  PullRequestReviewEventReviewLinksHtml _copyWith({Object? href = sdkOmittedValue}) => PullRequestReviewEventReviewLinksHtml(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  PullRequestReviewEventReviewLinksHtml _copyWith(
+          {Object? href = sdkOmittedValue}) =>
+      PullRequestReviewEventReviewLinksHtml(
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
-  factory PullRequestReviewEventReviewLinksHtml.fromJson(Map<String, dynamic> json) => PullRequestReviewEventReviewLinksHtml(
-    href: (json['href'] as String?)!,
-  );
+  factory PullRequestReviewEventReviewLinksHtml.fromJson(
+          Map<String, dynamic> json) =>
+      PullRequestReviewEventReviewLinksHtml(
+        href: (json['href'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 /// Required object value serialized in the `pull_request` wire field.
 class PullRequestReviewEventReviewLinksPullRequest {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `href` wire field.
   final String href;
 
   const PullRequestReviewEventReviewLinksPullRequest({required this.href});
 
-  PullRequestReviewEventReviewLinksPullRequest Function({String href}) get copyWith => _copyWith;
+  PullRequestReviewEventReviewLinksPullRequest Function({String href})
+      get copyWith => _copyWith;
 
-  PullRequestReviewEventReviewLinksPullRequest _copyWith({Object? href = sdkOmittedValue}) => PullRequestReviewEventReviewLinksPullRequest(
-    href: identical(href, sdkOmittedValue) ? this.href : href as String,
-  );
+  PullRequestReviewEventReviewLinksPullRequest _copyWith(
+          {Object? href = sdkOmittedValue}) =>
+      PullRequestReviewEventReviewLinksPullRequest(
+        href: identical(href, sdkOmittedValue) ? this.href : href as String,
+      );
 
-  factory PullRequestReviewEventReviewLinksPullRequest.fromJson(Map<String, dynamic> json) => PullRequestReviewEventReviewLinksPullRequest(
-    href: (json['href'] as String?)!,
-  );
+  factory PullRequestReviewEventReviewLinksPullRequest.fromJson(
+          Map<String, dynamic> json) =>
+      PullRequestReviewEventReviewLinksPullRequest(
+        href: (json['href'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'href': href,
-  };
+        'href': href,
+      };
 }
 
 /// Optional object value serialized in the `_links` wire field.
 class PullRequestReviewEventReviewLinks {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required object value serialized in the `html` wire field.
   final PullRequestReviewEventReviewLinksHtml html;
+
   /// Required object value serialized in the `pull_request` wire field.
   final PullRequestReviewEventReviewLinksPullRequest pullRequest;
 
-  const PullRequestReviewEventReviewLinks({required this.html, required this.pullRequest});
+  const PullRequestReviewEventReviewLinks(
+      {required this.html, required this.pullRequest});
 
-  PullRequestReviewEventReviewLinks Function({PullRequestReviewEventReviewLinksHtml html, PullRequestReviewEventReviewLinksPullRequest pullRequest}) get copyWith => _copyWith;
+  PullRequestReviewEventReviewLinks Function(
+          {PullRequestReviewEventReviewLinksHtml html,
+          PullRequestReviewEventReviewLinksPullRequest pullRequest})
+      get copyWith => _copyWith;
 
-  PullRequestReviewEventReviewLinks _copyWith({Object? html = sdkOmittedValue, Object? pullRequest = sdkOmittedValue}) => PullRequestReviewEventReviewLinks(
-    html: identical(html, sdkOmittedValue) ? this.html : html as PullRequestReviewEventReviewLinksHtml,
-    pullRequest: identical(pullRequest, sdkOmittedValue) ? this.pullRequest : pullRequest as PullRequestReviewEventReviewLinksPullRequest,
-  );
+  PullRequestReviewEventReviewLinks _copyWith(
+          {Object? html = sdkOmittedValue,
+          Object? pullRequest = sdkOmittedValue}) =>
+      PullRequestReviewEventReviewLinks(
+        html: identical(html, sdkOmittedValue)
+            ? this.html
+            : html as PullRequestReviewEventReviewLinksHtml,
+        pullRequest: identical(pullRequest, sdkOmittedValue)
+            ? this.pullRequest
+            : pullRequest as PullRequestReviewEventReviewLinksPullRequest,
+      );
 
-  factory PullRequestReviewEventReviewLinks.fromJson(Map<String, dynamic> json) => PullRequestReviewEventReviewLinks(
-    html: (json['html'] != null ? PullRequestReviewEventReviewLinksHtml.fromJson(json['html'] as Map<String, dynamic>) : null)!,
-    pullRequest: (json['pull_request'] != null ? PullRequestReviewEventReviewLinksPullRequest.fromJson(json['pull_request'] as Map<String, dynamic>) : null)!,
-  );
+  factory PullRequestReviewEventReviewLinks.fromJson(
+          Map<String, dynamic> json) =>
+      PullRequestReviewEventReviewLinks(
+        html: (json['html'] != null
+            ? PullRequestReviewEventReviewLinksHtml.fromJson(
+                json['html'] as Map<String, dynamic>)
+            : null)!,
+        pullRequest: (json['pull_request'] != null
+            ? PullRequestReviewEventReviewLinksPullRequest.fromJson(
+                json['pull_request'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'html': html.toJson(),
-    'pull_request': pullRequest.toJson(),
-  };
+        'html': html.toJson(),
+        'pull_request': pullRequest.toJson(),
+      };
 }

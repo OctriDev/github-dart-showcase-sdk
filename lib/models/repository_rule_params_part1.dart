@@ -8,54 +8,85 @@ part of 'repository_rule_params.dart';
 class RepositoryRuleParamsProofOfPresence {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The level of authentication required before a pull request can be merged.
-  final RepositoryRuleParamsProofOfPresenceRequiredAuthenticationLevel requiredAuthenticationLevel;
+  final RepositoryRuleParamsProofOfPresenceRequiredAuthenticationLevel
+      requiredAuthenticationLevel;
 
-  const RepositoryRuleParamsProofOfPresence({required this.requiredAuthenticationLevel});
+  const RepositoryRuleParamsProofOfPresence(
+      {required this.requiredAuthenticationLevel});
 
-  RepositoryRuleParamsProofOfPresence Function({RepositoryRuleParamsProofOfPresenceRequiredAuthenticationLevel requiredAuthenticationLevel}) get copyWith => _copyWith;
+  RepositoryRuleParamsProofOfPresence Function(
+      {RepositoryRuleParamsProofOfPresenceRequiredAuthenticationLevel
+          requiredAuthenticationLevel}) get copyWith => _copyWith;
 
-  RepositoryRuleParamsProofOfPresence _copyWith({Object? requiredAuthenticationLevel = sdkOmittedValue}) => RepositoryRuleParamsProofOfPresence(
-    requiredAuthenticationLevel: identical(requiredAuthenticationLevel, sdkOmittedValue) ? this.requiredAuthenticationLevel : requiredAuthenticationLevel as RepositoryRuleParamsProofOfPresenceRequiredAuthenticationLevel,
-  );
+  RepositoryRuleParamsProofOfPresence _copyWith(
+          {Object? requiredAuthenticationLevel = sdkOmittedValue}) =>
+      RepositoryRuleParamsProofOfPresence(
+        requiredAuthenticationLevel: identical(
+                requiredAuthenticationLevel, sdkOmittedValue)
+            ? this.requiredAuthenticationLevel
+            : requiredAuthenticationLevel
+                as RepositoryRuleParamsProofOfPresenceRequiredAuthenticationLevel,
+      );
 
-  factory RepositoryRuleParamsProofOfPresence.fromJson(Map<String, dynamic> json) => RepositoryRuleParamsProofOfPresence(
-    requiredAuthenticationLevel: (json['required_authentication_level'] != null ? RepositoryRuleParamsProofOfPresenceRequiredAuthenticationLevel.fromJson(json['required_authentication_level'] as String) : null)!,
-  );
+  factory RepositoryRuleParamsProofOfPresence.fromJson(
+          Map<String, dynamic> json) =>
+      RepositoryRuleParamsProofOfPresence(
+        requiredAuthenticationLevel:
+            (json['required_authentication_level'] != null
+                ? RepositoryRuleParamsProofOfPresenceRequiredAuthenticationLevel
+                    .fromJson(json['required_authentication_level'] as String)
+                : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'required_authentication_level': requiredAuthenticationLevel.toJson(),
-  };
+        'required_authentication_level': requiredAuthenticationLevel.toJson(),
+      };
 }
 
 /// Restricted commit
 class RepositoryRuleParamsRestrictedCommits {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Full or abbreviated commit hash to reject
   final String oid;
+
   /// Reason for restriction
   final SdkOptional<String> reason;
 
-  const RepositoryRuleParamsRestrictedCommits({required this.oid, this.reason = const SdkOmitted()});
+  const RepositoryRuleParamsRestrictedCommits(
+      {required this.oid, this.reason = const SdkOmitted()});
 
-  RepositoryRuleParamsRestrictedCommits Function({String oid, SdkOptional<String> reason}) get copyWith => _copyWith;
+  RepositoryRuleParamsRestrictedCommits Function(
+      {String oid, SdkOptional<String> reason}) get copyWith => _copyWith;
 
-  RepositoryRuleParamsRestrictedCommits _copyWith({Object? oid = sdkOmittedValue, Object? reason = sdkOmittedValue}) => RepositoryRuleParamsRestrictedCommits(
-    oid: identical(oid, sdkOmittedValue) ? this.oid : oid as String,
-    reason: identical(reason, sdkOmittedValue) ? this.reason : reason as SdkOptional<String>,
-  );
+  RepositoryRuleParamsRestrictedCommits _copyWith(
+          {Object? oid = sdkOmittedValue, Object? reason = sdkOmittedValue}) =>
+      RepositoryRuleParamsRestrictedCommits(
+        oid: identical(oid, sdkOmittedValue) ? this.oid : oid as String,
+        reason: identical(reason, sdkOmittedValue)
+            ? this.reason
+            : reason as SdkOptional<String>,
+      );
 
-  factory RepositoryRuleParamsRestrictedCommits.fromJson(Map<String, dynamic> json) => RepositoryRuleParamsRestrictedCommits(
-    oid: (json['oid'] as String?)!,
-    reason: json['reason'] != null ? SdkPresent((json['reason'] as String?)!) : const SdkOmitted(),
-  );
+  factory RepositoryRuleParamsRestrictedCommits.fromJson(
+          Map<String, dynamic> json) =>
+      RepositoryRuleParamsRestrictedCommits(
+        oid: (json['oid'] as String?)!,
+        reason: json['reason'] != null
+            ? SdkPresent((json['reason'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'oid': oid,
-    ...switch (reason) {
-      SdkPresent<String>(value: final value) => {'reason': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'oid': oid,
+        ...switch (reason) {
+          SdkPresent<String>(value: final value) => {
+              'reason': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

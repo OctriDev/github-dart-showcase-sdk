@@ -8,96 +8,206 @@ part of 'activity.dart';
 class Feed {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required `string` value serialized in the `timeline_url` wire field.
   final String timelineUrl;
+
   /// Required `string` value serialized in the `user_url` wire field.
   final String userUrl;
+
   /// Optional `string` value serialized in the `current_user_public_url` wire field.
   final SdkOptional<String> currentUserPublicUrl;
+
   /// Optional `string` value serialized in the `current_user_url` wire field.
   final SdkOptional<String> currentUserUrl;
+
   /// Optional `string` value serialized in the `current_user_actor_url` wire field.
   final SdkOptional<String> currentUserActorUrl;
+
   /// Optional `string` value serialized in the `current_user_organization_url` wire field.
   final SdkOptional<String> currentUserOrganizationUrl;
+
   /// Optional array value serialized in the `current_user_organization_urls` wire field.
   final SdkOptional<List<String>> currentUserOrganizationUrls;
+
   /// Optional `string` value serialized in the `security_advisories_url` wire field.
   final SdkOptional<String> securityAdvisoriesUrl;
+
   /// A feed of discussions for a given repository.
   final SdkOptional<String> repositoryDiscussionsUrl;
+
   /// A feed of discussions for a given repository and category.
   final SdkOptional<String> repositoryDiscussionsCategoryUrl;
+
   /// Required object value serialized in the `_links` wire field.
   final FeedLinks links;
 
-  const Feed({required this.timelineUrl, required this.userUrl, this.currentUserPublicUrl = const SdkOmitted(), this.currentUserUrl = const SdkOmitted(), this.currentUserActorUrl = const SdkOmitted(), this.currentUserOrganizationUrl = const SdkOmitted(), this.currentUserOrganizationUrls = const SdkOmitted(), this.securityAdvisoriesUrl = const SdkOmitted(), this.repositoryDiscussionsUrl = const SdkOmitted(), this.repositoryDiscussionsCategoryUrl = const SdkOmitted(), required this.links});
+  const Feed(
+      {required this.timelineUrl,
+      required this.userUrl,
+      this.currentUserPublicUrl = const SdkOmitted(),
+      this.currentUserUrl = const SdkOmitted(),
+      this.currentUserActorUrl = const SdkOmitted(),
+      this.currentUserOrganizationUrl = const SdkOmitted(),
+      this.currentUserOrganizationUrls = const SdkOmitted(),
+      this.securityAdvisoriesUrl = const SdkOmitted(),
+      this.repositoryDiscussionsUrl = const SdkOmitted(),
+      this.repositoryDiscussionsCategoryUrl = const SdkOmitted(),
+      required this.links});
 
-  Feed Function({String timelineUrl, String userUrl, SdkOptional<String> currentUserPublicUrl, SdkOptional<String> currentUserUrl, SdkOptional<String> currentUserActorUrl, SdkOptional<String> currentUserOrganizationUrl, SdkOptional<List<String>> currentUserOrganizationUrls, SdkOptional<String> securityAdvisoriesUrl, SdkOptional<String> repositoryDiscussionsUrl, SdkOptional<String> repositoryDiscussionsCategoryUrl, FeedLinks links}) get copyWith => _copyWith;
+  Feed Function(
+      {String timelineUrl,
+      String userUrl,
+      SdkOptional<String> currentUserPublicUrl,
+      SdkOptional<String> currentUserUrl,
+      SdkOptional<String> currentUserActorUrl,
+      SdkOptional<String> currentUserOrganizationUrl,
+      SdkOptional<List<String>> currentUserOrganizationUrls,
+      SdkOptional<String> securityAdvisoriesUrl,
+      SdkOptional<String> repositoryDiscussionsUrl,
+      SdkOptional<String> repositoryDiscussionsCategoryUrl,
+      FeedLinks links}) get copyWith => _copyWith;
 
-  Feed _copyWith({Object? timelineUrl = sdkOmittedValue, Object? userUrl = sdkOmittedValue, Object? currentUserPublicUrl = sdkOmittedValue, Object? currentUserUrl = sdkOmittedValue, Object? currentUserActorUrl = sdkOmittedValue, Object? currentUserOrganizationUrl = sdkOmittedValue, Object? currentUserOrganizationUrls = sdkOmittedValue, Object? securityAdvisoriesUrl = sdkOmittedValue, Object? repositoryDiscussionsUrl = sdkOmittedValue, Object? repositoryDiscussionsCategoryUrl = sdkOmittedValue, Object? links = sdkOmittedValue}) => Feed(
-    timelineUrl: identical(timelineUrl, sdkOmittedValue) ? this.timelineUrl : timelineUrl as String,
-    userUrl: identical(userUrl, sdkOmittedValue) ? this.userUrl : userUrl as String,
-    currentUserPublicUrl: identical(currentUserPublicUrl, sdkOmittedValue) ? this.currentUserPublicUrl : currentUserPublicUrl as SdkOptional<String>,
-    currentUserUrl: identical(currentUserUrl, sdkOmittedValue) ? this.currentUserUrl : currentUserUrl as SdkOptional<String>,
-    currentUserActorUrl: identical(currentUserActorUrl, sdkOmittedValue) ? this.currentUserActorUrl : currentUserActorUrl as SdkOptional<String>,
-    currentUserOrganizationUrl: identical(currentUserOrganizationUrl, sdkOmittedValue) ? this.currentUserOrganizationUrl : currentUserOrganizationUrl as SdkOptional<String>,
-    currentUserOrganizationUrls: identical(currentUserOrganizationUrls, sdkOmittedValue) ? this.currentUserOrganizationUrls : currentUserOrganizationUrls as SdkOptional<List<String>>,
-    securityAdvisoriesUrl: identical(securityAdvisoriesUrl, sdkOmittedValue) ? this.securityAdvisoriesUrl : securityAdvisoriesUrl as SdkOptional<String>,
-    repositoryDiscussionsUrl: identical(repositoryDiscussionsUrl, sdkOmittedValue) ? this.repositoryDiscussionsUrl : repositoryDiscussionsUrl as SdkOptional<String>,
-    repositoryDiscussionsCategoryUrl: identical(repositoryDiscussionsCategoryUrl, sdkOmittedValue) ? this.repositoryDiscussionsCategoryUrl : repositoryDiscussionsCategoryUrl as SdkOptional<String>,
-    links: identical(links, sdkOmittedValue) ? this.links : links as FeedLinks,
-  );
+  Feed _copyWith(
+          {Object? timelineUrl = sdkOmittedValue,
+          Object? userUrl = sdkOmittedValue,
+          Object? currentUserPublicUrl = sdkOmittedValue,
+          Object? currentUserUrl = sdkOmittedValue,
+          Object? currentUserActorUrl = sdkOmittedValue,
+          Object? currentUserOrganizationUrl = sdkOmittedValue,
+          Object? currentUserOrganizationUrls = sdkOmittedValue,
+          Object? securityAdvisoriesUrl = sdkOmittedValue,
+          Object? repositoryDiscussionsUrl = sdkOmittedValue,
+          Object? repositoryDiscussionsCategoryUrl = sdkOmittedValue,
+          Object? links = sdkOmittedValue}) =>
+      Feed(
+        timelineUrl: identical(timelineUrl, sdkOmittedValue)
+            ? this.timelineUrl
+            : timelineUrl as String,
+        userUrl: identical(userUrl, sdkOmittedValue)
+            ? this.userUrl
+            : userUrl as String,
+        currentUserPublicUrl: identical(currentUserPublicUrl, sdkOmittedValue)
+            ? this.currentUserPublicUrl
+            : currentUserPublicUrl as SdkOptional<String>,
+        currentUserUrl: identical(currentUserUrl, sdkOmittedValue)
+            ? this.currentUserUrl
+            : currentUserUrl as SdkOptional<String>,
+        currentUserActorUrl: identical(currentUserActorUrl, sdkOmittedValue)
+            ? this.currentUserActorUrl
+            : currentUserActorUrl as SdkOptional<String>,
+        currentUserOrganizationUrl:
+            identical(currentUserOrganizationUrl, sdkOmittedValue)
+                ? this.currentUserOrganizationUrl
+                : currentUserOrganizationUrl as SdkOptional<String>,
+        currentUserOrganizationUrls:
+            identical(currentUserOrganizationUrls, sdkOmittedValue)
+                ? this.currentUserOrganizationUrls
+                : currentUserOrganizationUrls as SdkOptional<List<String>>,
+        securityAdvisoriesUrl: identical(securityAdvisoriesUrl, sdkOmittedValue)
+            ? this.securityAdvisoriesUrl
+            : securityAdvisoriesUrl as SdkOptional<String>,
+        repositoryDiscussionsUrl:
+            identical(repositoryDiscussionsUrl, sdkOmittedValue)
+                ? this.repositoryDiscussionsUrl
+                : repositoryDiscussionsUrl as SdkOptional<String>,
+        repositoryDiscussionsCategoryUrl:
+            identical(repositoryDiscussionsCategoryUrl, sdkOmittedValue)
+                ? this.repositoryDiscussionsCategoryUrl
+                : repositoryDiscussionsCategoryUrl as SdkOptional<String>,
+        links:
+            identical(links, sdkOmittedValue) ? this.links : links as FeedLinks,
+      );
 
   factory Feed.fromJson(Map<String, dynamic> json) => Feed(
-    timelineUrl: (json['timeline_url'] as String?)!,
-    userUrl: (json['user_url'] as String?)!,
-    currentUserPublicUrl: json['current_user_public_url'] != null ? SdkPresent((json['current_user_public_url'] as String?)!) : const SdkOmitted(),
-    currentUserUrl: json['current_user_url'] != null ? SdkPresent((json['current_user_url'] as String?)!) : const SdkOmitted(),
-    currentUserActorUrl: json['current_user_actor_url'] != null ? SdkPresent((json['current_user_actor_url'] as String?)!) : const SdkOmitted(),
-    currentUserOrganizationUrl: json['current_user_organization_url'] != null ? SdkPresent((json['current_user_organization_url'] as String?)!) : const SdkOmitted(),
-    currentUserOrganizationUrls: json['current_user_organization_urls'] != null ? SdkPresent(((json['current_user_organization_urls'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
-    securityAdvisoriesUrl: json['security_advisories_url'] != null ? SdkPresent((json['security_advisories_url'] as String?)!) : const SdkOmitted(),
-    repositoryDiscussionsUrl: json['repository_discussions_url'] != null ? SdkPresent((json['repository_discussions_url'] as String?)!) : const SdkOmitted(),
-    repositoryDiscussionsCategoryUrl: json['repository_discussions_category_url'] != null ? SdkPresent((json['repository_discussions_category_url'] as String?)!) : const SdkOmitted(),
-    links: (json['_links'] != null ? FeedLinks.fromJson(json['_links'] as Map<String, dynamic>) : null)!,
-  );
+        timelineUrl: (json['timeline_url'] as String?)!,
+        userUrl: (json['user_url'] as String?)!,
+        currentUserPublicUrl: json['current_user_public_url'] != null
+            ? SdkPresent((json['current_user_public_url'] as String?)!)
+            : const SdkOmitted(),
+        currentUserUrl: json['current_user_url'] != null
+            ? SdkPresent((json['current_user_url'] as String?)!)
+            : const SdkOmitted(),
+        currentUserActorUrl: json['current_user_actor_url'] != null
+            ? SdkPresent((json['current_user_actor_url'] as String?)!)
+            : const SdkOmitted(),
+        currentUserOrganizationUrl: json['current_user_organization_url'] !=
+                null
+            ? SdkPresent((json['current_user_organization_url'] as String?)!)
+            : const SdkOmitted(),
+        currentUserOrganizationUrls:
+            json['current_user_organization_urls'] != null
+                ? SdkPresent(((json['current_user_organization_urls'] as List?)
+                    ?.map((e) => e as String)
+                    .toList())!)
+                : const SdkOmitted(),
+        securityAdvisoriesUrl: json['security_advisories_url'] != null
+            ? SdkPresent((json['security_advisories_url'] as String?)!)
+            : const SdkOmitted(),
+        repositoryDiscussionsUrl: json['repository_discussions_url'] != null
+            ? SdkPresent((json['repository_discussions_url'] as String?)!)
+            : const SdkOmitted(),
+        repositoryDiscussionsCategoryUrl:
+            json['repository_discussions_category_url'] != null
+                ? SdkPresent(
+                    (json['repository_discussions_category_url'] as String?)!)
+                : const SdkOmitted(),
+        links: (json['_links'] != null
+            ? FeedLinks.fromJson(json['_links'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'timeline_url': timelineUrl,
-    'user_url': userUrl,
-    ...switch (currentUserPublicUrl) {
-      SdkPresent<String>(value: final value) => {'current_user_public_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (currentUserUrl) {
-      SdkPresent<String>(value: final value) => {'current_user_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (currentUserActorUrl) {
-      SdkPresent<String>(value: final value) => {'current_user_actor_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (currentUserOrganizationUrl) {
-      SdkPresent<String>(value: final value) => {'current_user_organization_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (currentUserOrganizationUrls) {
-      SdkPresent<List<String>>(value: final value) => {'current_user_organization_urls': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (securityAdvisoriesUrl) {
-      SdkPresent<String>(value: final value) => {'security_advisories_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (repositoryDiscussionsUrl) {
-      SdkPresent<String>(value: final value) => {'repository_discussions_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (repositoryDiscussionsCategoryUrl) {
-      SdkPresent<String>(value: final value) => {'repository_discussions_category_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    '_links': links.toJson(),
-  };
+        'timeline_url': timelineUrl,
+        'user_url': userUrl,
+        ...switch (currentUserPublicUrl) {
+          SdkPresent<String>(value: final value) => {
+              'current_user_public_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (currentUserUrl) {
+          SdkPresent<String>(value: final value) => {
+              'current_user_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (currentUserActorUrl) {
+          SdkPresent<String>(value: final value) => {
+              'current_user_actor_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (currentUserOrganizationUrl) {
+          SdkPresent<String>(value: final value) => {
+              'current_user_organization_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (currentUserOrganizationUrls) {
+          SdkPresent<List<String>>(value: final value) => {
+              'current_user_organization_urls': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (securityAdvisoriesUrl) {
+          SdkPresent<String>(value: final value) => {
+              'security_advisories_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (repositoryDiscussionsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'repository_discussions_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (repositoryDiscussionsCategoryUrl) {
+          SdkPresent<String>(value: final value) => {
+              'repository_discussions_category_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        '_links': links.toJson(),
+      };
 }

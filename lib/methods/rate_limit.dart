@@ -12,8 +12,11 @@ Future<RateLimitOverview> rateLimitGet(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'rateLimitGet',
-          fromJsonRaw: (value) => RateLimitOverview.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              RateLimitOverview.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }

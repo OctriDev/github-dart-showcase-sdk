@@ -8,34 +8,53 @@ part of 'webhook_issues_field_added.dart';
 class WebhookIssuesFieldAddedIssueField {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The unique identifier of the issue field.
   final int id;
+
   /// The name of the issue field.
   final String name;
+
   /// The data type of the issue field.
   final WebhookIssuesFieldAddedIssueFieldFieldType fieldType;
 
-  const WebhookIssuesFieldAddedIssueField({required this.id, required this.name, required this.fieldType});
+  const WebhookIssuesFieldAddedIssueField(
+      {required this.id, required this.name, required this.fieldType});
 
-  WebhookIssuesFieldAddedIssueField Function({int id, String name, WebhookIssuesFieldAddedIssueFieldFieldType fieldType}) get copyWith => _copyWith;
+  WebhookIssuesFieldAddedIssueField Function(
+          {int id,
+          String name,
+          WebhookIssuesFieldAddedIssueFieldFieldType fieldType})
+      get copyWith => _copyWith;
 
-  WebhookIssuesFieldAddedIssueField _copyWith({Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? fieldType = sdkOmittedValue}) => WebhookIssuesFieldAddedIssueField(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    fieldType: identical(fieldType, sdkOmittedValue) ? this.fieldType : fieldType as WebhookIssuesFieldAddedIssueFieldFieldType,
-  );
+  WebhookIssuesFieldAddedIssueField _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? fieldType = sdkOmittedValue}) =>
+      WebhookIssuesFieldAddedIssueField(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        fieldType: identical(fieldType, sdkOmittedValue)
+            ? this.fieldType
+            : fieldType as WebhookIssuesFieldAddedIssueFieldFieldType,
+      );
 
-  factory WebhookIssuesFieldAddedIssueField.fromJson(Map<String, dynamic> json) => WebhookIssuesFieldAddedIssueField(
-    id: ((json['id'] as num?)?.toInt())!,
-    name: (json['name'] as String?)!,
-    fieldType: (json['field_type'] != null ? WebhookIssuesFieldAddedIssueFieldFieldType.fromJson(json['field_type'] as String) : null)!,
-  );
+  factory WebhookIssuesFieldAddedIssueField.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookIssuesFieldAddedIssueField(
+        id: ((json['id'] as num?)?.toInt())!,
+        name: (json['name'] as String?)!,
+        fieldType: (json['field_type'] != null
+            ? WebhookIssuesFieldAddedIssueFieldFieldType.fromJson(
+                json['field_type'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'name': name,
-    'field_type': fieldType.toJson(),
-  };
+        'id': id,
+        'name': name,
+        'field_type': fieldType.toJson(),
+      };
 }
 
 sealed class WebhookIssuesFieldAddedIssueFieldValueValue {
@@ -43,225 +62,414 @@ sealed class WebhookIssuesFieldAddedIssueFieldValueValue {
   static const String constructionSurface = 'named';
   const WebhookIssuesFieldAddedIssueFieldValueValue();
   factory WebhookIssuesFieldAddedIssueFieldValueValue.fromJson(Object? json) {
-    if (json is String) { return WebhookIssuesFieldAddedIssueFieldValueValueString(json); }
-    if (json is num) { return WebhookIssuesFieldAddedIssueFieldValueValueDouble(json.toDouble()); }
-    if (json is num) { return WebhookIssuesFieldAddedIssueFieldValueValueInt(json.toInt()); }
-    throw FormatException("No variant matched for WebhookIssuesFieldAddedIssueFieldValueValue");
+    if (json is String) {
+      return WebhookIssuesFieldAddedIssueFieldValueValueString(json);
+    }
+    if (json is num) {
+      return WebhookIssuesFieldAddedIssueFieldValueValueDouble(json.toDouble());
+    }
+    if (json is num) {
+      return WebhookIssuesFieldAddedIssueFieldValueValueInt(json.toInt());
+    }
+    throw FormatException(
+        "No variant matched for WebhookIssuesFieldAddedIssueFieldValueValue");
   }
   Object? toJson();
 }
 
-final class WebhookIssuesFieldAddedIssueFieldValueValueString extends WebhookIssuesFieldAddedIssueFieldValueValue {
+final class WebhookIssuesFieldAddedIssueFieldValueValueString
+    extends WebhookIssuesFieldAddedIssueFieldValueValue {
   final String value;
   const WebhookIssuesFieldAddedIssueFieldValueValueString(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
-final class WebhookIssuesFieldAddedIssueFieldValueValueDouble extends WebhookIssuesFieldAddedIssueFieldValueValue {
+final class WebhookIssuesFieldAddedIssueFieldValueValueDouble
+    extends WebhookIssuesFieldAddedIssueFieldValueValue {
   final double value;
   const WebhookIssuesFieldAddedIssueFieldValueValueDouble(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
-final class WebhookIssuesFieldAddedIssueFieldValueValueInt extends WebhookIssuesFieldAddedIssueFieldValueValue {
+final class WebhookIssuesFieldAddedIssueFieldValueValueInt
+    extends WebhookIssuesFieldAddedIssueFieldValueValue {
   final int value;
   const WebhookIssuesFieldAddedIssueFieldValueValueInt(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }
 
 /// The selected option details. Present for single_select field types.
 class WebhookIssuesFieldAddedIssueFieldValueOption {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `integer` value serialized in the `id` wire field.
   final SdkOptional<int> id;
+
   /// Optional `string` value serialized in the `name` wire field.
   final SdkOptional<String> name;
+
   /// Optional `string` value serialized in the `color` wire field.
   final SdkOptional<String> color;
+
   /// Optional `string` value serialized in the `description` wire field.
   final SdkOptional<String?> description;
 
-  const WebhookIssuesFieldAddedIssueFieldValueOption({this.id = const SdkOmitted(), this.name = const SdkOmitted(), this.color = const SdkOmitted(), this.description = const SdkOmitted()});
+  const WebhookIssuesFieldAddedIssueFieldValueOption(
+      {this.id = const SdkOmitted(),
+      this.name = const SdkOmitted(),
+      this.color = const SdkOmitted(),
+      this.description = const SdkOmitted()});
 
-  WebhookIssuesFieldAddedIssueFieldValueOption Function({SdkOptional<int> id, SdkOptional<String> name, SdkOptional<String> color, SdkOptional<String?> description}) get copyWith => _copyWith;
+  WebhookIssuesFieldAddedIssueFieldValueOption Function(
+      {SdkOptional<int> id,
+      SdkOptional<String> name,
+      SdkOptional<String> color,
+      SdkOptional<String?> description}) get copyWith => _copyWith;
 
-  WebhookIssuesFieldAddedIssueFieldValueOption _copyWith({Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? color = sdkOmittedValue, Object? description = sdkOmittedValue}) => WebhookIssuesFieldAddedIssueFieldValueOption(
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    color: identical(color, sdkOmittedValue) ? this.color : color as SdkOptional<String>,
-    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String?>,
-  );
+  WebhookIssuesFieldAddedIssueFieldValueOption _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? color = sdkOmittedValue,
+          Object? description = sdkOmittedValue}) =>
+      WebhookIssuesFieldAddedIssueFieldValueOption(
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        color: identical(color, sdkOmittedValue)
+            ? this.color
+            : color as SdkOptional<String>,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as SdkOptional<String?>,
+      );
 
-  factory WebhookIssuesFieldAddedIssueFieldValueOption.fromJson(Map<String, dynamic> json) => WebhookIssuesFieldAddedIssueFieldValueOption(
-    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    color: json['color'] != null ? SdkPresent((json['color'] as String?)!) : const SdkOmitted(),
-    description: json.containsKey('description') ? SdkPresent(json['description'] as String?) : const SdkOmitted(),
-  );
+  factory WebhookIssuesFieldAddedIssueFieldValueOption.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookIssuesFieldAddedIssueFieldValueOption(
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+        color: json['color'] != null
+            ? SdkPresent((json['color'] as String?)!)
+            : const SdkOmitted(),
+        description: json.containsKey('description')
+            ? SdkPresent(json['description'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (id) {
-      SdkPresent<int>(value: final value) => {'id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (color) {
-      SdkPresent<String>(value: final value) => {'color': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (description) {
-      SdkPresent<String?>(value: final value) => {'description': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (color) {
+          SdkPresent<String>(value: final value) => {
+              'color': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (description) {
+          SdkPresent<String?>(value: final value) => {
+              'description': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// Required object value serialized in the `options[]` wire field.
 class WebhookIssuesFieldAddedIssueFieldValueOptionsItem {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional `integer` value serialized in the `id` wire field.
   final SdkOptional<int> id;
+
   /// Optional `string` value serialized in the `name` wire field.
   final SdkOptional<String> name;
+
   /// Optional `string` value serialized in the `color` wire field.
   final SdkOptional<String> color;
+
   /// Optional `string` value serialized in the `description` wire field.
   final SdkOptional<String?> description;
 
-  const WebhookIssuesFieldAddedIssueFieldValueOptionsItem({this.id = const SdkOmitted(), this.name = const SdkOmitted(), this.color = const SdkOmitted(), this.description = const SdkOmitted()});
+  const WebhookIssuesFieldAddedIssueFieldValueOptionsItem(
+      {this.id = const SdkOmitted(),
+      this.name = const SdkOmitted(),
+      this.color = const SdkOmitted(),
+      this.description = const SdkOmitted()});
 
-  WebhookIssuesFieldAddedIssueFieldValueOptionsItem Function({SdkOptional<int> id, SdkOptional<String> name, SdkOptional<String> color, SdkOptional<String?> description}) get copyWith => _copyWith;
+  WebhookIssuesFieldAddedIssueFieldValueOptionsItem Function(
+      {SdkOptional<int> id,
+      SdkOptional<String> name,
+      SdkOptional<String> color,
+      SdkOptional<String?> description}) get copyWith => _copyWith;
 
-  WebhookIssuesFieldAddedIssueFieldValueOptionsItem _copyWith({Object? id = sdkOmittedValue, Object? name = sdkOmittedValue, Object? color = sdkOmittedValue, Object? description = sdkOmittedValue}) => WebhookIssuesFieldAddedIssueFieldValueOptionsItem(
-    id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String>,
-    color: identical(color, sdkOmittedValue) ? this.color : color as SdkOptional<String>,
-    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String?>,
-  );
+  WebhookIssuesFieldAddedIssueFieldValueOptionsItem _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? color = sdkOmittedValue,
+          Object? description = sdkOmittedValue}) =>
+      WebhookIssuesFieldAddedIssueFieldValueOptionsItem(
+        id: identical(id, sdkOmittedValue) ? this.id : id as SdkOptional<int>,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String>,
+        color: identical(color, sdkOmittedValue)
+            ? this.color
+            : color as SdkOptional<String>,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as SdkOptional<String?>,
+      );
 
-  factory WebhookIssuesFieldAddedIssueFieldValueOptionsItem.fromJson(Map<String, dynamic> json) => WebhookIssuesFieldAddedIssueFieldValueOptionsItem(
-    id: json['id'] != null ? SdkPresent(((json['id'] as num?)?.toInt())!) : const SdkOmitted(),
-    name: json['name'] != null ? SdkPresent((json['name'] as String?)!) : const SdkOmitted(),
-    color: json['color'] != null ? SdkPresent((json['color'] as String?)!) : const SdkOmitted(),
-    description: json.containsKey('description') ? SdkPresent(json['description'] as String?) : const SdkOmitted(),
-  );
+  factory WebhookIssuesFieldAddedIssueFieldValueOptionsItem.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookIssuesFieldAddedIssueFieldValueOptionsItem(
+        id: json['id'] != null
+            ? SdkPresent(((json['id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        name: json['name'] != null
+            ? SdkPresent((json['name'] as String?)!)
+            : const SdkOmitted(),
+        color: json['color'] != null
+            ? SdkPresent((json['color'] as String?)!)
+            : const SdkOmitted(),
+        description: json.containsKey('description')
+            ? SdkPresent(json['description'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (id) {
-      SdkPresent<int>(value: final value) => {'id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (name) {
-      SdkPresent<String>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (color) {
-      SdkPresent<String>(value: final value) => {'color': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (description) {
-      SdkPresent<String?>(value: final value) => {'description': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (id) {
+          SdkPresent<int>(value: final value) => {
+              'id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (name) {
+          SdkPresent<String>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (color) {
+          SdkPresent<String>(value: final value) => {
+              'color': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (description) {
+          SdkPresent<String?>(value: final value) => {
+              'description': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// The value that was set or updated for the issue field. When updating an existing value, the previous value is available in `changes`.
 class WebhookIssuesFieldAddedIssueFieldValue {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The unique identifier of the issue field value.
   final int id;
+
   /// The value of the field. Present for text, date, and number field types.
   final SdkOptional<dynamic> value;
+
   /// The identifier of the selected option. Present for single_select field types.
   final SdkOptional<int> valueId;
+
   /// The selected option details. Present for single_select field types.
   final SdkOptional<WebhookIssuesFieldAddedIssueFieldValueOption> option;
+
   /// The identifiers of the selected options. Present for multi_select field types.
   final SdkOptional<List<int>> valueIds;
+
   /// The selected option details. Present for multi_select field types.
-  final SdkOptional<List<WebhookIssuesFieldAddedIssueFieldValueOptionsItem>> options;
+  final SdkOptional<List<WebhookIssuesFieldAddedIssueFieldValueOptionsItem>>
+      options;
 
-  const WebhookIssuesFieldAddedIssueFieldValue({required this.id, this.value = const SdkOmitted(), this.valueId = const SdkOmitted(), this.option = const SdkOmitted(), this.valueIds = const SdkOmitted(), this.options = const SdkOmitted()});
+  const WebhookIssuesFieldAddedIssueFieldValue(
+      {required this.id,
+      this.value = const SdkOmitted(),
+      this.valueId = const SdkOmitted(),
+      this.option = const SdkOmitted(),
+      this.valueIds = const SdkOmitted(),
+      this.options = const SdkOmitted()});
 
-  WebhookIssuesFieldAddedIssueFieldValue Function({int id, SdkOptional<dynamic> value, SdkOptional<int> valueId, SdkOptional<WebhookIssuesFieldAddedIssueFieldValueOption> option, SdkOptional<List<int>> valueIds, SdkOptional<List<WebhookIssuesFieldAddedIssueFieldValueOptionsItem>> options}) get copyWith => _copyWith;
+  WebhookIssuesFieldAddedIssueFieldValue Function(
+      {int id,
+      SdkOptional<dynamic> value,
+      SdkOptional<int> valueId,
+      SdkOptional<WebhookIssuesFieldAddedIssueFieldValueOption> option,
+      SdkOptional<List<int>> valueIds,
+      SdkOptional<List<WebhookIssuesFieldAddedIssueFieldValueOptionsItem>>
+          options}) get copyWith => _copyWith;
 
-  WebhookIssuesFieldAddedIssueFieldValue _copyWith({Object? id = sdkOmittedValue, Object? value = sdkOmittedValue, Object? valueId = sdkOmittedValue, Object? option = sdkOmittedValue, Object? valueIds = sdkOmittedValue, Object? options = sdkOmittedValue}) => WebhookIssuesFieldAddedIssueFieldValue(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    value: identical(value, sdkOmittedValue) ? this.value : value as SdkOptional<dynamic>,
-    valueId: identical(valueId, sdkOmittedValue) ? this.valueId : valueId as SdkOptional<int>,
-    option: identical(option, sdkOmittedValue) ? this.option : option as SdkOptional<WebhookIssuesFieldAddedIssueFieldValueOption>,
-    valueIds: identical(valueIds, sdkOmittedValue) ? this.valueIds : valueIds as SdkOptional<List<int>>,
-    options: identical(options, sdkOmittedValue) ? this.options : options as SdkOptional<List<WebhookIssuesFieldAddedIssueFieldValueOptionsItem>>,
-  );
+  WebhookIssuesFieldAddedIssueFieldValue _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? value = sdkOmittedValue,
+          Object? valueId = sdkOmittedValue,
+          Object? option = sdkOmittedValue,
+          Object? valueIds = sdkOmittedValue,
+          Object? options = sdkOmittedValue}) =>
+      WebhookIssuesFieldAddedIssueFieldValue(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        value: identical(value, sdkOmittedValue)
+            ? this.value
+            : value as SdkOptional<dynamic>,
+        valueId: identical(valueId, sdkOmittedValue)
+            ? this.valueId
+            : valueId as SdkOptional<int>,
+        option: identical(option, sdkOmittedValue)
+            ? this.option
+            : option
+                as SdkOptional<WebhookIssuesFieldAddedIssueFieldValueOption>,
+        valueIds: identical(valueIds, sdkOmittedValue)
+            ? this.valueIds
+            : valueIds as SdkOptional<List<int>>,
+        options: identical(options, sdkOmittedValue)
+            ? this.options
+            : options as SdkOptional<
+                List<WebhookIssuesFieldAddedIssueFieldValueOptionsItem>>,
+      );
 
-  factory WebhookIssuesFieldAddedIssueFieldValue.fromJson(Map<String, dynamic> json) => WebhookIssuesFieldAddedIssueFieldValue(
-    id: ((json['id'] as num?)?.toInt())!,
-    value: json.containsKey('value') ? SdkPresent(json['value']) : const SdkOmitted(),
-    valueId: json['value_id'] != null ? SdkPresent(((json['value_id'] as num?)?.toInt())!) : const SdkOmitted(),
-    option: json['option'] != null ? SdkPresent((json['option'] != null ? WebhookIssuesFieldAddedIssueFieldValueOption.fromJson(json['option'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    valueIds: json['value_ids'] != null ? SdkPresent(((json['value_ids'] as List?)?.map((e) => (e as num).toInt()).toList())!) : const SdkOmitted(),
-    options: json['options'] != null ? SdkPresent(((json['options'] as List?)?.map((e) => WebhookIssuesFieldAddedIssueFieldValueOptionsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
+  factory WebhookIssuesFieldAddedIssueFieldValue.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookIssuesFieldAddedIssueFieldValue(
+        id: ((json['id'] as num?)?.toInt())!,
+        value: json.containsKey('value')
+            ? SdkPresent(json['value'])
+            : const SdkOmitted(),
+        valueId: json['value_id'] != null
+            ? SdkPresent(((json['value_id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        option: json['option'] != null
+            ? SdkPresent((json['option'] != null
+                ? WebhookIssuesFieldAddedIssueFieldValueOption.fromJson(
+                    json['option'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        valueIds: json['value_ids'] != null
+            ? SdkPresent(((json['value_ids'] as List?)
+                ?.map((e) => (e as num).toInt())
+                .toList())!)
+            : const SdkOmitted(),
+        options: json['options'] != null
+            ? SdkPresent(((json['options'] as List?)
+                ?.map((e) =>
+                    WebhookIssuesFieldAddedIssueFieldValueOptionsItem.fromJson(
+                        e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    ...switch (value) {
-      SdkPresent<dynamic>(value: final value) => {'value': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (valueId) {
-      SdkPresent<int>(value: final value) => {'value_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (option) {
-      SdkPresent<WebhookIssuesFieldAddedIssueFieldValueOption>(value: final value) => {'option': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (valueIds) {
-      SdkPresent<List<int>>(value: final value) => {'value_ids': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (options) {
-      SdkPresent<List<WebhookIssuesFieldAddedIssueFieldValueOptionsItem>>(value: final value) => {'options': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'id': id,
+        ...switch (value) {
+          SdkPresent<dynamic>(value: final value) => {
+              'value': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (valueId) {
+          SdkPresent<int>(value: final value) => {
+              'value_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (option) {
+          SdkPresent<WebhookIssuesFieldAddedIssueFieldValueOption>(
+            value: final value
+          ) =>
+            {
+              'option': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (valueIds) {
+          SdkPresent<List<int>>(value: final value) => {
+              'value_ids': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (options) {
+          SdkPresent<List<WebhookIssuesFieldAddedIssueFieldValueOptionsItem>>(
+            value: final value
+          ) =>
+            {
+              'options': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 sealed class WebhookIssuesFieldAddedChangesIssueFieldValueFromValue {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
   const WebhookIssuesFieldAddedChangesIssueFieldValueFromValue();
-  factory WebhookIssuesFieldAddedChangesIssueFieldValueFromValue.fromJson(Object? json) {
-    if (json is String) { return WebhookIssuesFieldAddedChangesIssueFieldValueFromValueString(json); }
-    if (json is num) { return WebhookIssuesFieldAddedChangesIssueFieldValueFromValueDouble(json.toDouble()); }
-    if (json is num) { return WebhookIssuesFieldAddedChangesIssueFieldValueFromValueInt(json.toInt()); }
-    throw FormatException("No variant matched for WebhookIssuesFieldAddedChangesIssueFieldValueFromValue");
+  factory WebhookIssuesFieldAddedChangesIssueFieldValueFromValue.fromJson(
+      Object? json) {
+    if (json is String) {
+      return WebhookIssuesFieldAddedChangesIssueFieldValueFromValueString(json);
+    }
+    if (json is num) {
+      return WebhookIssuesFieldAddedChangesIssueFieldValueFromValueDouble(
+          json.toDouble());
+    }
+    if (json is num) {
+      return WebhookIssuesFieldAddedChangesIssueFieldValueFromValueInt(
+          json.toInt());
+    }
+    throw FormatException(
+        "No variant matched for WebhookIssuesFieldAddedChangesIssueFieldValueFromValue");
   }
   Object? toJson();
 }
 
-final class WebhookIssuesFieldAddedChangesIssueFieldValueFromValueString extends WebhookIssuesFieldAddedChangesIssueFieldValueFromValue {
+final class WebhookIssuesFieldAddedChangesIssueFieldValueFromValueString
+    extends WebhookIssuesFieldAddedChangesIssueFieldValueFromValue {
   final String value;
-  const WebhookIssuesFieldAddedChangesIssueFieldValueFromValueString(this.value);
-  @override Object? toJson() => value;
+  const WebhookIssuesFieldAddedChangesIssueFieldValueFromValueString(
+      this.value);
+  @override
+  Object? toJson() => value;
 }
 
-final class WebhookIssuesFieldAddedChangesIssueFieldValueFromValueDouble extends WebhookIssuesFieldAddedChangesIssueFieldValueFromValue {
+final class WebhookIssuesFieldAddedChangesIssueFieldValueFromValueDouble
+    extends WebhookIssuesFieldAddedChangesIssueFieldValueFromValue {
   final double value;
-  const WebhookIssuesFieldAddedChangesIssueFieldValueFromValueDouble(this.value);
-  @override Object? toJson() => value;
+  const WebhookIssuesFieldAddedChangesIssueFieldValueFromValueDouble(
+      this.value);
+  @override
+  Object? toJson() => value;
 }
 
-final class WebhookIssuesFieldAddedChangesIssueFieldValueFromValueInt extends WebhookIssuesFieldAddedChangesIssueFieldValueFromValue {
+final class WebhookIssuesFieldAddedChangesIssueFieldValueFromValueInt
+    extends WebhookIssuesFieldAddedChangesIssueFieldValueFromValue {
   final int value;
   const WebhookIssuesFieldAddedChangesIssueFieldValueFromValueInt(this.value);
-  @override Object? toJson() => value;
+  @override
+  Object? toJson() => value;
 }

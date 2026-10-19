@@ -8,77 +8,171 @@ part of 'webhook_issue_relates_to_removed.dart';
 class WebhookIssueRelatesToRemoved {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required enumerated value serialized in the `action` wire field.
   final WebhookIssueRelatesToRemovedAction action;
+
   /// The ID of the issue the relationship was removed from.
   final SdkOptional<double> issueId;
+
   /// Issues are a great way to keep track of tasks, enhancements, and bugs for your projects.
   final SdkOptional<Issue> issue;
+
   /// The ID of the related issue. Only present when both issues belong to the same repository.
   final SdkOptional<double> relatedIssueId;
+
   /// Issues are a great way to keep track of tasks, enhancements, and bugs for your projects.
   final SdkOptional<Issue> relatedIssue;
+
   /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured for and sent to a GitHub App. For more information, see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
   final SdkOptional<SimpleInstallation> installation;
+
   /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an organization, or when the event occurs from activity in a repository owned by an organization.
   final OrganizationSimpleWebhooks organization;
+
   /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property when the event occurs from activity in a repository.
   final RepositoryWebhooks repository;
+
   /// A GitHub user.
   final SimpleUser sender;
 
-  const WebhookIssueRelatesToRemoved({required this.action, this.issueId = const SdkOmitted(), this.issue = const SdkOmitted(), this.relatedIssueId = const SdkOmitted(), this.relatedIssue = const SdkOmitted(), this.installation = const SdkOmitted(), required this.organization, required this.repository, required this.sender});
+  const WebhookIssueRelatesToRemoved(
+      {required this.action,
+      this.issueId = const SdkOmitted(),
+      this.issue = const SdkOmitted(),
+      this.relatedIssueId = const SdkOmitted(),
+      this.relatedIssue = const SdkOmitted(),
+      this.installation = const SdkOmitted(),
+      required this.organization,
+      required this.repository,
+      required this.sender});
 
-  WebhookIssueRelatesToRemoved Function({WebhookIssueRelatesToRemovedAction action, SdkOptional<double> issueId, SdkOptional<Issue> issue, SdkOptional<double> relatedIssueId, SdkOptional<Issue> relatedIssue, SdkOptional<SimpleInstallation> installation, OrganizationSimpleWebhooks organization, RepositoryWebhooks repository, SimpleUser sender}) get copyWith => _copyWith;
+  WebhookIssueRelatesToRemoved Function(
+      {WebhookIssueRelatesToRemovedAction action,
+      SdkOptional<double> issueId,
+      SdkOptional<Issue> issue,
+      SdkOptional<double> relatedIssueId,
+      SdkOptional<Issue> relatedIssue,
+      SdkOptional<SimpleInstallation> installation,
+      OrganizationSimpleWebhooks organization,
+      RepositoryWebhooks repository,
+      SimpleUser sender}) get copyWith => _copyWith;
 
-  WebhookIssueRelatesToRemoved _copyWith({Object? action = sdkOmittedValue, Object? issueId = sdkOmittedValue, Object? issue = sdkOmittedValue, Object? relatedIssueId = sdkOmittedValue, Object? relatedIssue = sdkOmittedValue, Object? installation = sdkOmittedValue, Object? organization = sdkOmittedValue, Object? repository = sdkOmittedValue, Object? sender = sdkOmittedValue}) => WebhookIssueRelatesToRemoved(
-    action: identical(action, sdkOmittedValue) ? this.action : action as WebhookIssueRelatesToRemovedAction,
-    issueId: identical(issueId, sdkOmittedValue) ? this.issueId : issueId as SdkOptional<double>,
-    issue: identical(issue, sdkOmittedValue) ? this.issue : issue as SdkOptional<Issue>,
-    relatedIssueId: identical(relatedIssueId, sdkOmittedValue) ? this.relatedIssueId : relatedIssueId as SdkOptional<double>,
-    relatedIssue: identical(relatedIssue, sdkOmittedValue) ? this.relatedIssue : relatedIssue as SdkOptional<Issue>,
-    installation: identical(installation, sdkOmittedValue) ? this.installation : installation as SdkOptional<SimpleInstallation>,
-    organization: identical(organization, sdkOmittedValue) ? this.organization : organization as OrganizationSimpleWebhooks,
-    repository: identical(repository, sdkOmittedValue) ? this.repository : repository as RepositoryWebhooks,
-    sender: identical(sender, sdkOmittedValue) ? this.sender : sender as SimpleUser,
-  );
+  WebhookIssueRelatesToRemoved _copyWith(
+          {Object? action = sdkOmittedValue,
+          Object? issueId = sdkOmittedValue,
+          Object? issue = sdkOmittedValue,
+          Object? relatedIssueId = sdkOmittedValue,
+          Object? relatedIssue = sdkOmittedValue,
+          Object? installation = sdkOmittedValue,
+          Object? organization = sdkOmittedValue,
+          Object? repository = sdkOmittedValue,
+          Object? sender = sdkOmittedValue}) =>
+      WebhookIssueRelatesToRemoved(
+        action: identical(action, sdkOmittedValue)
+            ? this.action
+            : action as WebhookIssueRelatesToRemovedAction,
+        issueId: identical(issueId, sdkOmittedValue)
+            ? this.issueId
+            : issueId as SdkOptional<double>,
+        issue: identical(issue, sdkOmittedValue)
+            ? this.issue
+            : issue as SdkOptional<Issue>,
+        relatedIssueId: identical(relatedIssueId, sdkOmittedValue)
+            ? this.relatedIssueId
+            : relatedIssueId as SdkOptional<double>,
+        relatedIssue: identical(relatedIssue, sdkOmittedValue)
+            ? this.relatedIssue
+            : relatedIssue as SdkOptional<Issue>,
+        installation: identical(installation, sdkOmittedValue)
+            ? this.installation
+            : installation as SdkOptional<SimpleInstallation>,
+        organization: identical(organization, sdkOmittedValue)
+            ? this.organization
+            : organization as OrganizationSimpleWebhooks,
+        repository: identical(repository, sdkOmittedValue)
+            ? this.repository
+            : repository as RepositoryWebhooks,
+        sender: identical(sender, sdkOmittedValue)
+            ? this.sender
+            : sender as SimpleUser,
+      );
 
-  factory WebhookIssueRelatesToRemoved.fromJson(Map<String, dynamic> json) => WebhookIssueRelatesToRemoved(
-    action: (json['action'] != null ? WebhookIssueRelatesToRemovedAction.fromJson(json['action'] as String) : null)!,
-    issueId: json['issue_id'] != null ? SdkPresent(((json['issue_id'] as num?)?.toDouble())!) : const SdkOmitted(),
-    issue: json['issue'] != null ? SdkPresent((json['issue'] != null ? Issue.fromJson(json['issue'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    relatedIssueId: json['related_issue_id'] != null ? SdkPresent(((json['related_issue_id'] as num?)?.toDouble())!) : const SdkOmitted(),
-    relatedIssue: json['related_issue'] != null ? SdkPresent((json['related_issue'] != null ? Issue.fromJson(json['related_issue'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    installation: json['installation'] != null ? SdkPresent((json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    organization: (json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null)!,
-    repository: (json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null)!,
-    sender: (json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null)!,
-  );
+  factory WebhookIssueRelatesToRemoved.fromJson(Map<String, dynamic> json) =>
+      WebhookIssueRelatesToRemoved(
+        action: (json['action'] != null
+            ? WebhookIssueRelatesToRemovedAction.fromJson(
+                json['action'] as String)
+            : null)!,
+        issueId: json['issue_id'] != null
+            ? SdkPresent(((json['issue_id'] as num?)?.toDouble())!)
+            : const SdkOmitted(),
+        issue: json['issue'] != null
+            ? SdkPresent((json['issue'] != null
+                ? Issue.fromJson(json['issue'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        relatedIssueId: json['related_issue_id'] != null
+            ? SdkPresent(((json['related_issue_id'] as num?)?.toDouble())!)
+            : const SdkOmitted(),
+        relatedIssue: json['related_issue'] != null
+            ? SdkPresent((json['related_issue'] != null
+                ? Issue.fromJson(json['related_issue'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        installation: json['installation'] != null
+            ? SdkPresent((json['installation'] != null
+                ? SimpleInstallation.fromJson(
+                    json['installation'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        organization: (json['organization'] != null
+            ? OrganizationSimpleWebhooks.fromJson(
+                json['organization'] as Map<String, dynamic>)
+            : null)!,
+        repository: (json['repository'] != null
+            ? RepositoryWebhooks.fromJson(
+                json['repository'] as Map<String, dynamic>)
+            : null)!,
+        sender: (json['sender'] != null
+            ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'action': action.toJson(),
-    ...switch (issueId) {
-      SdkPresent<double>(value: final value) => {'issue_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (issue) {
-      SdkPresent<Issue>(value: final value) => {'issue': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (relatedIssueId) {
-      SdkPresent<double>(value: final value) => {'related_issue_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (relatedIssue) {
-      SdkPresent<Issue>(value: final value) => {'related_issue': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (installation) {
-      SdkPresent<SimpleInstallation>(value: final value) => {'installation': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'organization': organization.toJson(),
-    'repository': repository.toJson(),
-    'sender': sender.toJson(),
-  };
+        'action': action.toJson(),
+        ...switch (issueId) {
+          SdkPresent<double>(value: final value) => {
+              'issue_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (issue) {
+          SdkPresent<Issue>(value: final value) => {
+              'issue': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (relatedIssueId) {
+          SdkPresent<double>(value: final value) => {
+              'related_issue_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (relatedIssue) {
+          SdkPresent<Issue>(value: final value) => {
+              'related_issue': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (installation) {
+          SdkPresent<SimpleInstallation>(value: final value) => {
+              'installation': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'organization': organization.toJson(),
+        'repository': repository.toJson(),
+        'sender': sender.toJson(),
+      };
 }

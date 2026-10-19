@@ -8,158 +8,360 @@ part of 'webhooks_review.dart';
 class WebhooksReviewComment {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Required object value serialized in the `_links` wire field.
   final WebhooksReviewCommentLinks links;
+
   /// How the author is associated with the repository.
   final WebhooksReviewCommentAuthorAssociation authorAssociation;
+
   /// The text of the comment.
   final String body;
+
   /// The SHA of the commit to which the comment applies.
   final String commitId;
+
   /// Required `date-time`-formatted value serialized in the `created_at` wire field.
   final String createdAt;
+
   /// The diff of the line that the comment refers to.
   final String diffHunk;
+
   /// HTML URL for the pull request review comment.
   final String htmlUrl;
+
   /// The ID of the pull request review comment.
   final int id;
+
   /// The comment ID to reply to.
   final SdkOptional<int> inReplyToId;
+
   /// The line of the blob to which the comment applies. The last line of the range for a multi-line comment
   final int? line;
+
   /// The node ID of the pull request review comment.
   final String nodeId;
+
   /// The SHA of the original commit to which the comment applies.
   final String originalCommitId;
+
   /// The line of the blob to which the comment applies. The last line of the range for a multi-line comment
   final int originalLine;
+
   /// The index of the original line in the diff to which the comment applies.
   final int originalPosition;
+
   /// The first line of the range for a multi-line comment.
   final int? originalStartLine;
+
   /// The relative path of the file to which the comment applies.
   final String path;
+
   /// The line index in the diff to which the comment applies.
   final int? position;
+
   /// The ID of the pull request review to which the comment belongs.
   final int? pullRequestReviewId;
+
   /// URL for the pull request that the review comment belongs to.
   final String pullRequestUrl;
+
   /// Required object value serialized in the `reactions` wire field.
   final WebhooksReviewCommentReactions reactions;
+
   /// The side of the first line of the range for a multi-line comment.
   final WebhooksReviewCommentSide side;
+
   /// The first line of the range for a multi-line comment.
   final int? startLine;
+
   /// The side of the first line of the range for a multi-line comment.
   final WebhooksReviewCommentStartSide? startSide;
+
   /// The level at which the comment is targeted, can be a diff line or a file.
   final SdkOptional<WebhooksReviewCommentSubjectType> subjectType;
+
   /// Required `date-time`-formatted value serialized in the `updated_at` wire field.
   final String updatedAt;
+
   /// URL for the pull request review comment
   final String url;
+
   /// Required object value serialized in the `user` wire field.
   final WebhooksReviewCommentUser? user;
 
-  const WebhooksReviewComment({required this.links, required this.authorAssociation, required this.body, required this.commitId, required this.createdAt, required this.diffHunk, required this.htmlUrl, required this.id, this.inReplyToId = const SdkOmitted(), required this.line, required this.nodeId, required this.originalCommitId, required this.originalLine, required this.originalPosition, required this.originalStartLine, required this.path, required this.position, required this.pullRequestReviewId, required this.pullRequestUrl, required this.reactions, required this.side, required this.startLine, required this.startSide, this.subjectType = const SdkOmitted(), required this.updatedAt, required this.url, required this.user});
+  const WebhooksReviewComment(
+      {required this.links,
+      required this.authorAssociation,
+      required this.body,
+      required this.commitId,
+      required this.createdAt,
+      required this.diffHunk,
+      required this.htmlUrl,
+      required this.id,
+      this.inReplyToId = const SdkOmitted(),
+      required this.line,
+      required this.nodeId,
+      required this.originalCommitId,
+      required this.originalLine,
+      required this.originalPosition,
+      required this.originalStartLine,
+      required this.path,
+      required this.position,
+      required this.pullRequestReviewId,
+      required this.pullRequestUrl,
+      required this.reactions,
+      required this.side,
+      required this.startLine,
+      required this.startSide,
+      this.subjectType = const SdkOmitted(),
+      required this.updatedAt,
+      required this.url,
+      required this.user});
 
-  WebhooksReviewComment Function({WebhooksReviewCommentLinks links, WebhooksReviewCommentAuthorAssociation authorAssociation, String body, String commitId, String createdAt, String diffHunk, String htmlUrl, int id, SdkOptional<int> inReplyToId, int? line, String nodeId, String originalCommitId, int originalLine, int originalPosition, int? originalStartLine, String path, int? position, int? pullRequestReviewId, String pullRequestUrl, WebhooksReviewCommentReactions reactions, WebhooksReviewCommentSide side, int? startLine, WebhooksReviewCommentStartSide? startSide, SdkOptional<WebhooksReviewCommentSubjectType> subjectType, String updatedAt, String url, WebhooksReviewCommentUser? user}) get copyWith => _copyWith;
+  WebhooksReviewComment Function(
+      {WebhooksReviewCommentLinks links,
+      WebhooksReviewCommentAuthorAssociation authorAssociation,
+      String body,
+      String commitId,
+      String createdAt,
+      String diffHunk,
+      String htmlUrl,
+      int id,
+      SdkOptional<int> inReplyToId,
+      int? line,
+      String nodeId,
+      String originalCommitId,
+      int originalLine,
+      int originalPosition,
+      int? originalStartLine,
+      String path,
+      int? position,
+      int? pullRequestReviewId,
+      String pullRequestUrl,
+      WebhooksReviewCommentReactions reactions,
+      WebhooksReviewCommentSide side,
+      int? startLine,
+      WebhooksReviewCommentStartSide? startSide,
+      SdkOptional<WebhooksReviewCommentSubjectType> subjectType,
+      String updatedAt,
+      String url,
+      WebhooksReviewCommentUser? user}) get copyWith => _copyWith;
 
-  WebhooksReviewComment _copyWith({Object? links = sdkOmittedValue, Object? authorAssociation = sdkOmittedValue, Object? body = sdkOmittedValue, Object? commitId = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? diffHunk = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? id = sdkOmittedValue, Object? inReplyToId = sdkOmittedValue, Object? line = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? originalCommitId = sdkOmittedValue, Object? originalLine = sdkOmittedValue, Object? originalPosition = sdkOmittedValue, Object? originalStartLine = sdkOmittedValue, Object? path = sdkOmittedValue, Object? position = sdkOmittedValue, Object? pullRequestReviewId = sdkOmittedValue, Object? pullRequestUrl = sdkOmittedValue, Object? reactions = sdkOmittedValue, Object? side = sdkOmittedValue, Object? startLine = sdkOmittedValue, Object? startSide = sdkOmittedValue, Object? subjectType = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? url = sdkOmittedValue, Object? user = sdkOmittedValue}) => WebhooksReviewComment(
-    links: identical(links, sdkOmittedValue) ? this.links : links as WebhooksReviewCommentLinks,
-    authorAssociation: identical(authorAssociation, sdkOmittedValue) ? this.authorAssociation : authorAssociation as WebhooksReviewCommentAuthorAssociation,
-    body: identical(body, sdkOmittedValue) ? this.body : body as String,
-    commitId: identical(commitId, sdkOmittedValue) ? this.commitId : commitId as String,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    diffHunk: identical(diffHunk, sdkOmittedValue) ? this.diffHunk : diffHunk as String,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    inReplyToId: identical(inReplyToId, sdkOmittedValue) ? this.inReplyToId : inReplyToId as SdkOptional<int>,
-    line: identical(line, sdkOmittedValue) ? this.line : line as int?,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    originalCommitId: identical(originalCommitId, sdkOmittedValue) ? this.originalCommitId : originalCommitId as String,
-    originalLine: identical(originalLine, sdkOmittedValue) ? this.originalLine : originalLine as int,
-    originalPosition: identical(originalPosition, sdkOmittedValue) ? this.originalPosition : originalPosition as int,
-    originalStartLine: identical(originalStartLine, sdkOmittedValue) ? this.originalStartLine : originalStartLine as int?,
-    path: identical(path, sdkOmittedValue) ? this.path : path as String,
-    position: identical(position, sdkOmittedValue) ? this.position : position as int?,
-    pullRequestReviewId: identical(pullRequestReviewId, sdkOmittedValue) ? this.pullRequestReviewId : pullRequestReviewId as int?,
-    pullRequestUrl: identical(pullRequestUrl, sdkOmittedValue) ? this.pullRequestUrl : pullRequestUrl as String,
-    reactions: identical(reactions, sdkOmittedValue) ? this.reactions : reactions as WebhooksReviewCommentReactions,
-    side: identical(side, sdkOmittedValue) ? this.side : side as WebhooksReviewCommentSide,
-    startLine: identical(startLine, sdkOmittedValue) ? this.startLine : startLine as int?,
-    startSide: identical(startSide, sdkOmittedValue) ? this.startSide : startSide as WebhooksReviewCommentStartSide?,
-    subjectType: identical(subjectType, sdkOmittedValue) ? this.subjectType : subjectType as SdkOptional<WebhooksReviewCommentSubjectType>,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    user: identical(user, sdkOmittedValue) ? this.user : user as WebhooksReviewCommentUser?,
-  );
+  WebhooksReviewComment _copyWith(
+          {Object? links = sdkOmittedValue,
+          Object? authorAssociation = sdkOmittedValue,
+          Object? body = sdkOmittedValue,
+          Object? commitId = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? diffHunk = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? inReplyToId = sdkOmittedValue,
+          Object? line = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? originalCommitId = sdkOmittedValue,
+          Object? originalLine = sdkOmittedValue,
+          Object? originalPosition = sdkOmittedValue,
+          Object? originalStartLine = sdkOmittedValue,
+          Object? path = sdkOmittedValue,
+          Object? position = sdkOmittedValue,
+          Object? pullRequestReviewId = sdkOmittedValue,
+          Object? pullRequestUrl = sdkOmittedValue,
+          Object? reactions = sdkOmittedValue,
+          Object? side = sdkOmittedValue,
+          Object? startLine = sdkOmittedValue,
+          Object? startSide = sdkOmittedValue,
+          Object? subjectType = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? user = sdkOmittedValue}) =>
+      WebhooksReviewComment(
+        links: identical(links, sdkOmittedValue)
+            ? this.links
+            : links as WebhooksReviewCommentLinks,
+        authorAssociation: identical(authorAssociation, sdkOmittedValue)
+            ? this.authorAssociation
+            : authorAssociation as WebhooksReviewCommentAuthorAssociation,
+        body: identical(body, sdkOmittedValue) ? this.body : body as String,
+        commitId: identical(commitId, sdkOmittedValue)
+            ? this.commitId
+            : commitId as String,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        diffHunk: identical(diffHunk, sdkOmittedValue)
+            ? this.diffHunk
+            : diffHunk as String,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        inReplyToId: identical(inReplyToId, sdkOmittedValue)
+            ? this.inReplyToId
+            : inReplyToId as SdkOptional<int>,
+        line: identical(line, sdkOmittedValue) ? this.line : line as int?,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        originalCommitId: identical(originalCommitId, sdkOmittedValue)
+            ? this.originalCommitId
+            : originalCommitId as String,
+        originalLine: identical(originalLine, sdkOmittedValue)
+            ? this.originalLine
+            : originalLine as int,
+        originalPosition: identical(originalPosition, sdkOmittedValue)
+            ? this.originalPosition
+            : originalPosition as int,
+        originalStartLine: identical(originalStartLine, sdkOmittedValue)
+            ? this.originalStartLine
+            : originalStartLine as int?,
+        path: identical(path, sdkOmittedValue) ? this.path : path as String,
+        position: identical(position, sdkOmittedValue)
+            ? this.position
+            : position as int?,
+        pullRequestReviewId: identical(pullRequestReviewId, sdkOmittedValue)
+            ? this.pullRequestReviewId
+            : pullRequestReviewId as int?,
+        pullRequestUrl: identical(pullRequestUrl, sdkOmittedValue)
+            ? this.pullRequestUrl
+            : pullRequestUrl as String,
+        reactions: identical(reactions, sdkOmittedValue)
+            ? this.reactions
+            : reactions as WebhooksReviewCommentReactions,
+        side: identical(side, sdkOmittedValue)
+            ? this.side
+            : side as WebhooksReviewCommentSide,
+        startLine: identical(startLine, sdkOmittedValue)
+            ? this.startLine
+            : startLine as int?,
+        startSide: identical(startSide, sdkOmittedValue)
+            ? this.startSide
+            : startSide as WebhooksReviewCommentStartSide?,
+        subjectType: identical(subjectType, sdkOmittedValue)
+            ? this.subjectType
+            : subjectType as SdkOptional<WebhooksReviewCommentSubjectType>,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        user: identical(user, sdkOmittedValue)
+            ? this.user
+            : user as WebhooksReviewCommentUser?,
+      );
 
-  factory WebhooksReviewComment.fromJson(Map<String, dynamic> json) => WebhooksReviewComment(
-    links: (json['_links'] != null ? WebhooksReviewCommentLinks.fromJson(json['_links'] as Map<String, dynamic>) : null)!,
-    authorAssociation: (json['author_association'] != null ? WebhooksReviewCommentAuthorAssociation.fromJson(json['author_association'] as String) : null)!,
-    body: (json['body'] as String?)!,
-    commitId: (json['commit_id'] as String?)!,
-    createdAt: (json['created_at'] as String?)!,
-    diffHunk: (json['diff_hunk'] as String?)!,
-    htmlUrl: (json['html_url'] as String?)!,
-    id: ((json['id'] as num?)?.toInt())!,
-    inReplyToId: json['in_reply_to_id'] != null ? SdkPresent(((json['in_reply_to_id'] as num?)?.toInt())!) : const SdkOmitted(),
-    line: json.containsKey('line') ? (json['line'] as num?)?.toInt() : throw ArgumentError.value(null, 'line', 'Required property is missing'),
-    nodeId: (json['node_id'] as String?)!,
-    originalCommitId: (json['original_commit_id'] as String?)!,
-    originalLine: ((json['original_line'] as num?)?.toInt())!,
-    originalPosition: ((json['original_position'] as num?)?.toInt())!,
-    originalStartLine: json.containsKey('original_start_line') ? (json['original_start_line'] as num?)?.toInt() : throw ArgumentError.value(null, 'original_start_line', 'Required property is missing'),
-    path: (json['path'] as String?)!,
-    position: json.containsKey('position') ? (json['position'] as num?)?.toInt() : throw ArgumentError.value(null, 'position', 'Required property is missing'),
-    pullRequestReviewId: json.containsKey('pull_request_review_id') ? (json['pull_request_review_id'] as num?)?.toInt() : throw ArgumentError.value(null, 'pull_request_review_id', 'Required property is missing'),
-    pullRequestUrl: (json['pull_request_url'] as String?)!,
-    reactions: (json['reactions'] != null ? WebhooksReviewCommentReactions.fromJson(json['reactions'] as Map<String, dynamic>) : null)!,
-    side: (json['side'] != null ? WebhooksReviewCommentSide.fromJson(json['side'] as String) : null)!,
-    startLine: json.containsKey('start_line') ? (json['start_line'] as num?)?.toInt() : throw ArgumentError.value(null, 'start_line', 'Required property is missing'),
-    startSide: json.containsKey('start_side') ? json['start_side'] != null ? WebhooksReviewCommentStartSide.fromJson(json['start_side'] as String) : null : throw ArgumentError.value(null, 'start_side', 'Required property is missing'),
-    subjectType: json['subject_type'] != null ? SdkPresent((json['subject_type'] != null ? WebhooksReviewCommentSubjectType.fromJson(json['subject_type'] as String) : null)!) : const SdkOmitted(),
-    updatedAt: (json['updated_at'] as String?)!,
-    url: (json['url'] as String?)!,
-    user: json.containsKey('user') ? json['user'] != null ? WebhooksReviewCommentUser.fromJson(json['user'] as Map<String, dynamic>) : null : throw ArgumentError.value(null, 'user', 'Required property is missing'),
-  );
+  factory WebhooksReviewComment.fromJson(Map<String, dynamic> json) =>
+      WebhooksReviewComment(
+        links: (json['_links'] != null
+            ? WebhooksReviewCommentLinks.fromJson(
+                json['_links'] as Map<String, dynamic>)
+            : null)!,
+        authorAssociation: (json['author_association'] != null
+            ? WebhooksReviewCommentAuthorAssociation.fromJson(
+                json['author_association'] as String)
+            : null)!,
+        body: (json['body'] as String?)!,
+        commitId: (json['commit_id'] as String?)!,
+        createdAt: (json['created_at'] as String?)!,
+        diffHunk: (json['diff_hunk'] as String?)!,
+        htmlUrl: (json['html_url'] as String?)!,
+        id: ((json['id'] as num?)?.toInt())!,
+        inReplyToId: json['in_reply_to_id'] != null
+            ? SdkPresent(((json['in_reply_to_id'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        line: json.containsKey('line')
+            ? (json['line'] as num?)?.toInt()
+            : throw ArgumentError.value(
+                null, 'line', 'Required property is missing'),
+        nodeId: (json['node_id'] as String?)!,
+        originalCommitId: (json['original_commit_id'] as String?)!,
+        originalLine: ((json['original_line'] as num?)?.toInt())!,
+        originalPosition: ((json['original_position'] as num?)?.toInt())!,
+        originalStartLine: json.containsKey('original_start_line')
+            ? (json['original_start_line'] as num?)?.toInt()
+            : throw ArgumentError.value(
+                null, 'original_start_line', 'Required property is missing'),
+        path: (json['path'] as String?)!,
+        position: json.containsKey('position')
+            ? (json['position'] as num?)?.toInt()
+            : throw ArgumentError.value(
+                null, 'position', 'Required property is missing'),
+        pullRequestReviewId: json.containsKey('pull_request_review_id')
+            ? (json['pull_request_review_id'] as num?)?.toInt()
+            : throw ArgumentError.value(
+                null, 'pull_request_review_id', 'Required property is missing'),
+        pullRequestUrl: (json['pull_request_url'] as String?)!,
+        reactions: (json['reactions'] != null
+            ? WebhooksReviewCommentReactions.fromJson(
+                json['reactions'] as Map<String, dynamic>)
+            : null)!,
+        side: (json['side'] != null
+            ? WebhooksReviewCommentSide.fromJson(json['side'] as String)
+            : null)!,
+        startLine: json.containsKey('start_line')
+            ? (json['start_line'] as num?)?.toInt()
+            : throw ArgumentError.value(
+                null, 'start_line', 'Required property is missing'),
+        startSide: json.containsKey('start_side')
+            ? json['start_side'] != null
+                ? WebhooksReviewCommentStartSide.fromJson(
+                    json['start_side'] as String)
+                : null
+            : throw ArgumentError.value(
+                null, 'start_side', 'Required property is missing'),
+        subjectType: json['subject_type'] != null
+            ? SdkPresent((json['subject_type'] != null
+                ? WebhooksReviewCommentSubjectType.fromJson(
+                    json['subject_type'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        updatedAt: (json['updated_at'] as String?)!,
+        url: (json['url'] as String?)!,
+        user: json.containsKey('user')
+            ? json['user'] != null
+                ? WebhooksReviewCommentUser.fromJson(
+                    json['user'] as Map<String, dynamic>)
+                : null
+            : throw ArgumentError.value(
+                null, 'user', 'Required property is missing'),
+      );
 
   Map<String, dynamic> toJson() => {
-    '_links': links.toJson(),
-    'author_association': authorAssociation.toJson(),
-    'body': body,
-    'commit_id': commitId,
-    'created_at': createdAt,
-    'diff_hunk': diffHunk,
-    'html_url': htmlUrl,
-    'id': id,
-    ...switch (inReplyToId) {
-      SdkPresent<int>(value: final value) => {'in_reply_to_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    'line': line,
-    'node_id': nodeId,
-    'original_commit_id': originalCommitId,
-    'original_line': originalLine,
-    'original_position': originalPosition,
-    'original_start_line': originalStartLine,
-    'path': path,
-    'position': position,
-    'pull_request_review_id': pullRequestReviewId,
-    'pull_request_url': pullRequestUrl,
-    'reactions': reactions.toJson(),
-    'side': side.toJson(),
-    'start_line': startLine,
-    'start_side': startSide?.toJson(),
-    ...switch (subjectType) {
-      SdkPresent<WebhooksReviewCommentSubjectType>(value: final value) => {'subject_type': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    'updated_at': updatedAt,
-    'url': url,
-    'user': user?.toJson(),
-  };
+        '_links': links.toJson(),
+        'author_association': authorAssociation.toJson(),
+        'body': body,
+        'commit_id': commitId,
+        'created_at': createdAt,
+        'diff_hunk': diffHunk,
+        'html_url': htmlUrl,
+        'id': id,
+        ...switch (inReplyToId) {
+          SdkPresent<int>(value: final value) => {
+              'in_reply_to_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'line': line,
+        'node_id': nodeId,
+        'original_commit_id': originalCommitId,
+        'original_line': originalLine,
+        'original_position': originalPosition,
+        'original_start_line': originalStartLine,
+        'path': path,
+        'position': position,
+        'pull_request_review_id': pullRequestReviewId,
+        'pull_request_url': pullRequestUrl,
+        'reactions': reactions.toJson(),
+        'side': side.toJson(),
+        'start_line': startLine,
+        'start_side': startSide?.toJson(),
+        ...switch (subjectType) {
+          SdkPresent<WebhooksReviewCommentSubjectType>(value: final value) => {
+              'subject_type': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'updated_at': updatedAt,
+        'url': url,
+        'user': user?.toJson(),
+      };
 }

@@ -37,18 +37,27 @@ Future<List<CodeSecurityConfiguration>>
           '/enterprises/${Uri.encodeComponent(enterprise.toString())}/code-security/configurations',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'before': SdkQueryValue(SdkUtils.unwrapOptional(before), style: 'form', explode: true),
-            'after': SdkQueryValue(SdkUtils.unwrapOptional(after), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'before': SdkQueryValue(SdkUtils.unwrapOptional(before),
+                style: 'form', explode: true),
+            'after': SdkQueryValue(SdkUtils.unwrapOptional(after),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'codeSecurityGetConfigurationsForEnterprise',
-          fromJsonRaw: (value) => (value as List).map((item) => CodeSecurityConfiguration.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => CodeSecurityConfiguration.fromJson(
+                  item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Creates a code security configuration in an enterprise. The authenticated user must be an administrator of the enterprise in order to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
 ///
@@ -96,33 +105,42 @@ Future<List<CodeSecurityConfiguration>>
 /// [privateVulnerabilityReporting] The enablement status of private
 ///   vulnerability reporting
 /// [enforcement] The enforcement status for a security configuration
-Future<CodeSecurityConfiguration>
-    codeSecurityCreateConfigurationForEnterprise(ClientConfig config,
-        {required String enterprise,
-        required String name,
-        SdkOptional<String> description = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationForEnterpriseRequestBodyAdvancedSecurity> advancedSecurity = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationForEnterpriseRequestBodyCodeSecurity> codeSecurity = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraph> dependencyGraph = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraphAutosubmitAction> dependencyGraphAutosubmitAction = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraphAutosubmitActionOptions> dependencyGraphAutosubmitActionOptions = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependabotAlerts> dependabotAlerts = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependabotSecurityUpdates> dependabotSecurityUpdates = const SdkOmitted(),
-        SdkOptional<CodeScanningOptions?> codeScanningOptions = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationForEnterpriseRequestBodyCodeScanningDefaultSetup> codeScanningDefaultSetup = const SdkOmitted(),
-        SdkOptional<CodeScanningDefaultSetupOptions?> codeScanningDefaultSetupOptions = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationForEnterpriseRequestBodyCodeScanningDelegatedAlertDismissal> codeScanningDelegatedAlertDismissal = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretProtection> secretProtection = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanning> secretScanning = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningPushProtection> secretScanningPushProtection = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningValidityChecks> secretScanningValidityChecks = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningNonProviderPatterns> secretScanningNonProviderPatterns = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningGenericSecrets> secretScanningGenericSecrets = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningDelegatedAlertDismissal> secretScanningDelegatedAlertDismissal = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningExtendedMetadata> secretScanningExtendedMetadata = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationForEnterpriseRequestBodyPrivateVulnerabilityReporting> privateVulnerabilityReporting = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationForEnterpriseRequestBodyEnforcement> enforcement = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<CodeSecurityConfiguration> codeSecurityCreateConfigurationForEnterprise(ClientConfig config,
+    {required String enterprise,
+    required String name,
+    SdkOptional<String> description = const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationForEnterpriseRequestBodyAdvancedSecurity> advancedSecurity =
+        const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationForEnterpriseRequestBodyCodeSecurity> codeSecurity =
+        const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraph> dependencyGraph =
+        const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraphAutosubmitAction>
+        dependencyGraphAutosubmitAction = const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependencyGraphAutosubmitActionOptions>
+        dependencyGraphAutosubmitActionOptions = const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependabotAlerts> dependabotAlerts =
+        const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationForEnterpriseRequestBodyDependabotSecurityUpdates>
+        dependabotSecurityUpdates = const SdkOmitted(),
+    SdkOptional<CodeScanningOptions?> codeScanningOptions = const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationForEnterpriseRequestBodyCodeScanningDefaultSetup>
+        codeScanningDefaultSetup = const SdkOmitted(),
+    SdkOptional<CodeScanningDefaultSetupOptions?> codeScanningDefaultSetupOptions =
+        const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationForEnterpriseRequestBodyCodeScanningDelegatedAlertDismissal>
+        codeScanningDelegatedAlertDismissal = const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretProtection> secretProtection = const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanning> secretScanning = const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningPushProtection> secretScanningPushProtection = const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningValidityChecks> secretScanningValidityChecks = const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningNonProviderPatterns> secretScanningNonProviderPatterns = const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningGenericSecrets> secretScanningGenericSecrets = const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningDelegatedAlertDismissal> secretScanningDelegatedAlertDismissal = const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationForEnterpriseRequestBodySecretScanningExtendedMetadata> secretScanningExtendedMetadata = const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationForEnterpriseRequestBodyPrivateVulnerabilityReporting> privateVulnerabilityReporting = const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationForEnterpriseRequestBodyEnforcement> enforcement = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   if (description is SdkPresent<String>) {
     validateLength('description', description.value, max: 255);
   }
@@ -136,49 +154,75 @@ Future<CodeSecurityConfiguration>
             'advanced_security': SdkUtils.unwrapOptional(advancedSecurity),
             'code_security': SdkUtils.unwrapOptional(codeSecurity),
             'dependency_graph': SdkUtils.unwrapOptional(dependencyGraph),
-            'dependency_graph_autosubmit_action': SdkUtils.unwrapOptional(dependencyGraphAutosubmitAction),
-            'dependency_graph_autosubmit_action_options': SdkUtils.unwrapOptional(dependencyGraphAutosubmitActionOptions),
+            'dependency_graph_autosubmit_action':
+                SdkUtils.unwrapOptional(dependencyGraphAutosubmitAction),
+            'dependency_graph_autosubmit_action_options':
+                SdkUtils.unwrapOptional(dependencyGraphAutosubmitActionOptions),
             'dependabot_alerts': SdkUtils.unwrapOptional(dependabotAlerts),
-            'dependabot_security_updates': SdkUtils.unwrapOptional(dependabotSecurityUpdates),
-            'code_scanning_options': SdkUtils.unwrapOptional(codeScanningOptions),
-            'code_scanning_default_setup': SdkUtils.unwrapOptional(codeScanningDefaultSetup),
-            'code_scanning_default_setup_options': SdkUtils.unwrapOptional(codeScanningDefaultSetupOptions),
-            'code_scanning_delegated_alert_dismissal': SdkUtils.unwrapOptional(codeScanningDelegatedAlertDismissal),
+            'dependabot_security_updates':
+                SdkUtils.unwrapOptional(dependabotSecurityUpdates),
+            'code_scanning_options':
+                SdkUtils.unwrapOptional(codeScanningOptions),
+            'code_scanning_default_setup':
+                SdkUtils.unwrapOptional(codeScanningDefaultSetup),
+            'code_scanning_default_setup_options':
+                SdkUtils.unwrapOptional(codeScanningDefaultSetupOptions),
+            'code_scanning_delegated_alert_dismissal':
+                SdkUtils.unwrapOptional(codeScanningDelegatedAlertDismissal),
             'secret_protection': SdkUtils.unwrapOptional(secretProtection),
             'secret_scanning': SdkUtils.unwrapOptional(secretScanning),
-            'secret_scanning_push_protection': SdkUtils.unwrapOptional(secretScanningPushProtection),
-            'secret_scanning_validity_checks': SdkUtils.unwrapOptional(secretScanningValidityChecks),
-            'secret_scanning_non_provider_patterns': SdkUtils.unwrapOptional(secretScanningNonProviderPatterns),
-            'secret_scanning_generic_secrets': SdkUtils.unwrapOptional(secretScanningGenericSecrets),
-            'secret_scanning_delegated_alert_dismissal': SdkUtils.unwrapOptional(secretScanningDelegatedAlertDismissal),
-            'secret_scanning_extended_metadata': SdkUtils.unwrapOptional(secretScanningExtendedMetadata),
-            'private_vulnerability_reporting': SdkUtils.unwrapOptional(privateVulnerabilityReporting),
+            'secret_scanning_push_protection':
+                SdkUtils.unwrapOptional(secretScanningPushProtection),
+            'secret_scanning_validity_checks':
+                SdkUtils.unwrapOptional(secretScanningValidityChecks),
+            'secret_scanning_non_provider_patterns':
+                SdkUtils.unwrapOptional(secretScanningNonProviderPatterns),
+            'secret_scanning_generic_secrets':
+                SdkUtils.unwrapOptional(secretScanningGenericSecrets),
+            'secret_scanning_delegated_alert_dismissal':
+                SdkUtils.unwrapOptional(secretScanningDelegatedAlertDismissal),
+            'secret_scanning_extended_metadata':
+                SdkUtils.unwrapOptional(secretScanningExtendedMetadata),
+            'private_vulnerability_reporting':
+                SdkUtils.unwrapOptional(privateVulnerabilityReporting),
             'enforcement': SdkUtils.unwrapOptional(enforcement)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'codeSecurityCreateConfigurationForEnterprise',
-          fromJsonRaw: (value) => CodeSecurityConfiguration.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              CodeSecurityConfiguration.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Lists the default code security configurations for an enterprise. The authenticated user must be an administrator of the enterprise in order to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `read:enterprise` scope to use this endpoint.
 ///
 /// [enterprise] The slug version of the enterprise name.
-Future<List<CodeSecurityDefaultConfigurationsItem>> codeSecurityGetDefaultConfigurationsForEnterprise(ClientConfig config,
-    {required String enterprise, RequestOptions? requestOptions}) async {
+Future<List<CodeSecurityDefaultConfigurationsItem>>
+    codeSecurityGetDefaultConfigurationsForEnterprise(ClientConfig config,
+        {required String enterprise, RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<CodeSecurityDefaultConfigurationsItem>>('GET',
           '/enterprises/${Uri.encodeComponent(enterprise.toString())}/code-security/configurations/defaults',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'codeSecurityGetDefaultConfigurationsForEnterprise',
-          fromJsonRaw: (value) => (value as List).map((item) => CodeSecurityDefaultConfigurationsItem.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => CodeSecurityDefaultConfigurationsItem.fromJson(
+                  item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions))
       .data;
 }
-
 
 /// Gets a code security configuration available in an enterprise. The authenticated user must be an administrator of the enterprise in order to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `read:enterprise` scope to use this endpoint.
 ///
@@ -194,12 +238,15 @@ Future<CodeSecurityConfiguration>
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'codeSecurityGetSingleConfigurationForEnterprise',
-          fromJsonRaw: (value) => CodeSecurityConfiguration.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              CodeSecurityConfiguration.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Updates a code security configuration in an enterprise. The authenticated user must be an administrator of the enterprise in order to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
 ///
@@ -248,34 +295,44 @@ Future<CodeSecurityConfiguration>
 /// [privateVulnerabilityReporting] The enablement status of private
 ///   vulnerability reporting
 /// [enforcement] The enforcement status for a security configuration
-Future<CodeSecurityConfiguration>
-    codeSecurityUpdateEnterpriseConfiguration(ClientConfig config,
-        {required String enterprise,
-        required int configurationId,
-        SdkOptional<String> name = const SdkOmitted(),
-        SdkOptional<String> description = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateEnterpriseConfigurationRequestBodyAdvancedSecurity> advancedSecurity = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeSecurity> codeSecurity = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraph> dependencyGraph = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitAction> dependencyGraphAutosubmitAction = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitActionOptions> dependencyGraphAutosubmitActionOptions = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotAlerts> dependabotAlerts = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotSecurityUpdates> dependabotSecurityUpdates = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDefaultSetup> codeScanningDefaultSetup = const SdkOmitted(),
-        SdkOptional<CodeScanningDefaultSetupOptions?> codeScanningDefaultSetupOptions = const SdkOmitted(),
-        SdkOptional<CodeScanningOptions?> codeScanningOptions = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDelegatedAlertDismissal> codeScanningDelegatedAlertDismissal = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretProtection> secretProtection = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanning> secretScanning = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningPushProtection> secretScanningPushProtection = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningValidityChecks> secretScanningValidityChecks = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningNonProviderPatterns> secretScanningNonProviderPatterns = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningGenericSecrets> secretScanningGenericSecrets = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningDelegatedAlertDismissal> secretScanningDelegatedAlertDismissal = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningExtendedMetadata> secretScanningExtendedMetadata = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateEnterpriseConfigurationRequestBodyPrivateVulnerabilityReporting> privateVulnerabilityReporting = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateEnterpriseConfigurationRequestBodyEnforcement> enforcement = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<CodeSecurityConfiguration> codeSecurityUpdateEnterpriseConfiguration(
+    ClientConfig config,
+    {required String enterprise,
+    required int configurationId,
+    SdkOptional<String> name = const SdkOmitted(),
+    SdkOptional<String> description = const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateEnterpriseConfigurationRequestBodyAdvancedSecurity> advancedSecurity =
+        const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeSecurity> codeSecurity =
+        const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraph> dependencyGraph =
+        const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitAction>
+        dependencyGraphAutosubmitAction = const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependencyGraphAutosubmitActionOptions>
+        dependencyGraphAutosubmitActionOptions = const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotAlerts> dependabotAlerts =
+        const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateEnterpriseConfigurationRequestBodyDependabotSecurityUpdates>
+        dependabotSecurityUpdates = const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDefaultSetup> codeScanningDefaultSetup =
+        const SdkOmitted(),
+    SdkOptional<CodeScanningDefaultSetupOptions?> codeScanningDefaultSetupOptions =
+        const SdkOmitted(),
+    SdkOptional<CodeScanningOptions?> codeScanningOptions = const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateEnterpriseConfigurationRequestBodyCodeScanningDelegatedAlertDismissal>
+        codeScanningDelegatedAlertDismissal = const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretProtection> secretProtection = const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanning> secretScanning = const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningPushProtection> secretScanningPushProtection = const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningValidityChecks> secretScanningValidityChecks = const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningNonProviderPatterns> secretScanningNonProviderPatterns = const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningGenericSecrets> secretScanningGenericSecrets = const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningDelegatedAlertDismissal> secretScanningDelegatedAlertDismissal = const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateEnterpriseConfigurationRequestBodySecretScanningExtendedMetadata> secretScanningExtendedMetadata = const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateEnterpriseConfigurationRequestBodyPrivateVulnerabilityReporting> privateVulnerabilityReporting = const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateEnterpriseConfigurationRequestBodyEnforcement> enforcement = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   if (description is SdkPresent<String>) {
     validateLength('description', description.value, max: 255);
   }
@@ -289,33 +346,58 @@ Future<CodeSecurityConfiguration>
             'advanced_security': SdkUtils.unwrapOptional(advancedSecurity),
             'code_security': SdkUtils.unwrapOptional(codeSecurity),
             'dependency_graph': SdkUtils.unwrapOptional(dependencyGraph),
-            'dependency_graph_autosubmit_action': SdkUtils.unwrapOptional(dependencyGraphAutosubmitAction),
-            'dependency_graph_autosubmit_action_options': SdkUtils.unwrapOptional(dependencyGraphAutosubmitActionOptions),
+            'dependency_graph_autosubmit_action':
+                SdkUtils.unwrapOptional(dependencyGraphAutosubmitAction),
+            'dependency_graph_autosubmit_action_options':
+                SdkUtils.unwrapOptional(dependencyGraphAutosubmitActionOptions),
             'dependabot_alerts': SdkUtils.unwrapOptional(dependabotAlerts),
-            'dependabot_security_updates': SdkUtils.unwrapOptional(dependabotSecurityUpdates),
-            'code_scanning_default_setup': SdkUtils.unwrapOptional(codeScanningDefaultSetup),
-            'code_scanning_default_setup_options': SdkUtils.unwrapOptional(codeScanningDefaultSetupOptions),
-            'code_scanning_options': SdkUtils.unwrapOptional(codeScanningOptions),
-            'code_scanning_delegated_alert_dismissal': SdkUtils.unwrapOptional(codeScanningDelegatedAlertDismissal),
+            'dependabot_security_updates':
+                SdkUtils.unwrapOptional(dependabotSecurityUpdates),
+            'code_scanning_default_setup':
+                SdkUtils.unwrapOptional(codeScanningDefaultSetup),
+            'code_scanning_default_setup_options':
+                SdkUtils.unwrapOptional(codeScanningDefaultSetupOptions),
+            'code_scanning_options':
+                SdkUtils.unwrapOptional(codeScanningOptions),
+            'code_scanning_delegated_alert_dismissal':
+                SdkUtils.unwrapOptional(codeScanningDelegatedAlertDismissal),
             'secret_protection': SdkUtils.unwrapOptional(secretProtection),
             'secret_scanning': SdkUtils.unwrapOptional(secretScanning),
-            'secret_scanning_push_protection': SdkUtils.unwrapOptional(secretScanningPushProtection),
-            'secret_scanning_validity_checks': SdkUtils.unwrapOptional(secretScanningValidityChecks),
-            'secret_scanning_non_provider_patterns': SdkUtils.unwrapOptional(secretScanningNonProviderPatterns),
-            'secret_scanning_generic_secrets': SdkUtils.unwrapOptional(secretScanningGenericSecrets),
-            'secret_scanning_delegated_alert_dismissal': SdkUtils.unwrapOptional(secretScanningDelegatedAlertDismissal),
-            'secret_scanning_extended_metadata': SdkUtils.unwrapOptional(secretScanningExtendedMetadata),
-            'private_vulnerability_reporting': SdkUtils.unwrapOptional(privateVulnerabilityReporting),
+            'secret_scanning_push_protection':
+                SdkUtils.unwrapOptional(secretScanningPushProtection),
+            'secret_scanning_validity_checks':
+                SdkUtils.unwrapOptional(secretScanningValidityChecks),
+            'secret_scanning_non_provider_patterns':
+                SdkUtils.unwrapOptional(secretScanningNonProviderPatterns),
+            'secret_scanning_generic_secrets':
+                SdkUtils.unwrapOptional(secretScanningGenericSecrets),
+            'secret_scanning_delegated_alert_dismissal':
+                SdkUtils.unwrapOptional(secretScanningDelegatedAlertDismissal),
+            'secret_scanning_extended_metadata':
+                SdkUtils.unwrapOptional(secretScanningExtendedMetadata),
+            'private_vulnerability_reporting':
+                SdkUtils.unwrapOptional(privateVulnerabilityReporting),
             'enforcement': SdkUtils.unwrapOptional(enforcement)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'codeSecurityUpdateEnterpriseConfiguration',
-          fromJsonRaw: (value) => CodeSecurityConfiguration.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              CodeSecurityConfiguration.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '409': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Deletes a code security configuration from an enterprise. Repositories attached to the configuration will retain their settings but will no longer be associated with the configuration. The authenticated user must be an administrator for the enterprise to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
 ///
@@ -331,22 +413,26 @@ Future<void> codeSecurityDeleteConfigurationForEnterprise(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'codeSecurityDeleteConfigurationForEnterprise',
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '400': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '409': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Attaches an enterprise code security configuration to repositories. If the repositories specified are already attached to a configuration, they will be re-attached to the provided configuration. If insufficient GHAS licenses are available to attach the configuration to a repository, only free features will be enabled. The authenticated user must be an administrator for the enterprise to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
 ///
 /// [enterprise] The slug version of the enterprise name.
 /// [configurationId] The unique identifier of the code security configuration.
 /// [scope] The type of repositories to attach the configuration to.
-Future<Map<String, dynamic>>
-    codeSecurityAttachEnterpriseConfiguration(ClientConfig config,
-        {required String enterprise,
-        required int configurationId,
-        required CodeSecurityAttachEnterpriseConfigurationRequestBodyScope scope,
-        RequestOptions? requestOptions}) async {
+Future<Map<String, dynamic>> codeSecurityAttachEnterpriseConfiguration(
+    ClientConfig config,
+    {required String enterprise,
+    required int configurationId,
+    required CodeSecurityAttachEnterpriseConfigurationRequestBodyScope scope,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<Map<String, dynamic>>('POST',
           '/enterprises/${Uri.encodeComponent(enterprise.toString())}/code-security/configurations/${Uri.encodeComponent(configurationId.toString())}/attach',
           config: config,
@@ -355,10 +441,18 @@ Future<Map<String, dynamic>>
           operationId: 'codeSecurityAttachEnterpriseConfiguration',
           fromJsonRaw: (value) => value as Map<String, dynamic>,
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '409': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Sets a code security configuration as a default to be applied to new repositories in your enterprise. This configuration will be applied by default to the matching repository type when created, but only for organizations within the enterprise that do not already have a default code security configuration set. The authenticated user must be an administrator for the enterprise to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
 ///
@@ -370,22 +464,33 @@ Future<CodeSecuritySetConfigurationAsDefaultForEnterpriseResponse>
     codeSecuritySetConfigurationAsDefaultForEnterprise(ClientConfig config,
         {required String enterprise,
         required int configurationId,
-        SdkOptional<CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestBodyDefaultForNewRepos> defaultForNewRepos = const SdkOmitted(),
+        SdkOptional<
+                CodeSecuritySetConfigurationAsDefaultForEnterpriseRequestBodyDefaultForNewRepos>
+            defaultForNewRepos = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
-  return (await sdkRequest<CodeSecuritySetConfigurationAsDefaultForEnterpriseResponse>('PUT',
-          '/enterprises/${Uri.encodeComponent(enterprise.toString())}/code-security/configurations/${Uri.encodeComponent(configurationId.toString())}/defaults',
+  return (await sdkRequest<
+              CodeSecuritySetConfigurationAsDefaultForEnterpriseResponse>(
+          'PUT', '/enterprises/${Uri.encodeComponent(enterprise.toString())}/code-security/configurations/${Uri.encodeComponent(configurationId.toString())}/defaults',
           config: config,
           body: {
             'default_for_new_repos': SdkUtils.unwrapOptional(defaultForNewRepos)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'codeSecuritySetConfigurationAsDefaultForEnterprise',
-          fromJsonRaw: (value) => CodeSecuritySetConfigurationAsDefaultForEnterpriseResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              CodeSecuritySetConfigurationAsDefaultForEnterpriseResponse
+                  .fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Lists the repositories associated with an enterprise code security configuration in an organization. The authenticated user must be an administrator of the enterprise in order to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `read:enterprise` scope to use this endpoint.
 ///
@@ -424,19 +529,31 @@ Future<List<CodeSecurityConfigurationRepositories>>
           '/enterprises/${Uri.encodeComponent(enterprise.toString())}/code-security/configurations/${Uri.encodeComponent(configurationId.toString())}/repositories',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'before': SdkQueryValue(SdkUtils.unwrapOptional(before), style: 'form', explode: true),
-            'after': SdkQueryValue(SdkUtils.unwrapOptional(after), style: 'form', explode: true),
-            'status': SdkQueryValue(SdkUtils.unwrapOptional(status), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'before': SdkQueryValue(SdkUtils.unwrapOptional(before),
+                style: 'form', explode: true),
+            'after': SdkQueryValue(SdkUtils.unwrapOptional(after),
+                style: 'form', explode: true),
+            'status': SdkQueryValue(SdkUtils.unwrapOptional(status),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'codeSecurityGetRepositoriesForEnterpriseConfiguration',
-          fromJsonRaw: (value) => (value as List).map((item) => CodeSecurityConfigurationRepositories.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => CodeSecurityConfigurationRepositories.fromJson(
+                  item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Lists all code security configurations available in an organization. The authenticated user must be an administrator or security manager for the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
 ///
@@ -458,31 +575,42 @@ Future<List<CodeSecurityConfigurationRepositories>>
 ///   after this cursor. For more information, see "[Using pagination in the REST
 ///   API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the
 ///   -rest-api)."
-Future<List<CodeSecurityConfiguration>>
-    codeSecurityGetConfigurationsForOrg(ClientConfig config,
-        {required String org,
-        SdkOptional<CodeSecurityGetConfigurationsForOrgTargetType> targetType = const SdkOmitted(),
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<String> before = const SdkOmitted(),
-        SdkOptional<String> after = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<List<CodeSecurityConfiguration>> codeSecurityGetConfigurationsForOrg(
+    ClientConfig config,
+    {required String org,
+    SdkOptional<CodeSecurityGetConfigurationsForOrgTargetType> targetType =
+        const SdkOmitted(),
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<String> before = const SdkOmitted(),
+    SdkOptional<String> after = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<CodeSecurityConfiguration>>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/code-security/configurations',
           config: config,
           query: {
-            'target_type': SdkQueryValue(SdkUtils.unwrapOptional(targetType), style: 'form', explode: true),
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'before': SdkQueryValue(SdkUtils.unwrapOptional(before), style: 'form', explode: true),
-            'after': SdkQueryValue(SdkUtils.unwrapOptional(after), style: 'form', explode: true)
+            'target_type': SdkQueryValue(SdkUtils.unwrapOptional(targetType),
+                style: 'form', explode: true),
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'before': SdkQueryValue(SdkUtils.unwrapOptional(before),
+                style: 'form', explode: true),
+            'after': SdkQueryValue(SdkUtils.unwrapOptional(after),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'codeSecurityGetConfigurationsForOrg',
-          fromJsonRaw: (value) => (value as List).map((item) => CodeSecurityConfiguration.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => CodeSecurityConfiguration.fromJson(
+                  item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Creates a code security configuration in an organization. The authenticated user must be an administrator or security manager for the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
 ///
@@ -536,36 +664,46 @@ Future<List<CodeSecurityConfiguration>>
 /// [privateVulnerabilityReporting] The enablement status of private
 ///   vulnerability reporting
 /// [enforcement] The enforcement status for a security configuration
-Future<CodeSecurityConfiguration>
-    codeSecurityCreateConfiguration(ClientConfig config,
-        {required String org,
-        required String name,
-        SdkOptional<String> description = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationRequestBodyAdvancedSecurity> advancedSecurity = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationRequestBodyCodeSecurity> codeSecurity = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationRequestBodyDependencyGraph> dependencyGraph = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationRequestBodyDependencyGraphAutosubmitAction> dependencyGraphAutosubmitAction = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationRequestBodyDependencyGraphAutosubmitActionOptions> dependencyGraphAutosubmitActionOptions = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationRequestBodyDependabotAlerts> dependabotAlerts = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationRequestBodyDependabotSecurityUpdates> dependabotSecurityUpdates = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationRequestBodyDependabotDelegatedAlertDismissal> dependabotDelegatedAlertDismissal = const SdkOmitted(),
-        SdkOptional<CodeScanningOptions?> codeScanningOptions = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationRequestBodyCodeScanningDefaultSetup> codeScanningDefaultSetup = const SdkOmitted(),
-        SdkOptional<CodeScanningDefaultSetupOptions?> codeScanningDefaultSetupOptions = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal> codeScanningDelegatedAlertDismissal = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationRequestBodySecretProtection> secretProtection = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationRequestBodySecretScanning> secretScanning = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationRequestBodySecretScanningPushProtection> secretScanningPushProtection = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypass> secretScanningDelegatedBypass = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptions> secretScanningDelegatedBypassOptions = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationRequestBodySecretScanningValidityChecks> secretScanningValidityChecks = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationRequestBodySecretScanningNonProviderPatterns> secretScanningNonProviderPatterns = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationRequestBodySecretScanningGenericSecrets> secretScanningGenericSecrets = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedAlertDismissal> secretScanningDelegatedAlertDismissal = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationRequestBodySecretScanningExtendedMetadata> secretScanningExtendedMetadata = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationRequestBodyPrivateVulnerabilityReporting> privateVulnerabilityReporting = const SdkOmitted(),
-        SdkOptional<CodeSecurityCreateConfigurationRequestBodyEnforcement> enforcement = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<CodeSecurityConfiguration> codeSecurityCreateConfiguration(ClientConfig config,
+    {required String org,
+    required String name,
+    SdkOptional<String> description = const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationRequestBodyAdvancedSecurity> advancedSecurity =
+        const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationRequestBodyCodeSecurity> codeSecurity =
+        const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationRequestBodyDependencyGraph> dependencyGraph =
+        const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationRequestBodyDependencyGraphAutosubmitAction>
+        dependencyGraphAutosubmitAction = const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationRequestBodyDependencyGraphAutosubmitActionOptions>
+        dependencyGraphAutosubmitActionOptions = const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationRequestBodyDependabotAlerts> dependabotAlerts =
+        const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationRequestBodyDependabotSecurityUpdates> dependabotSecurityUpdates =
+        const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationRequestBodyDependabotDelegatedAlertDismissal>
+        dependabotDelegatedAlertDismissal = const SdkOmitted(),
+    SdkOptional<CodeScanningOptions?> codeScanningOptions = const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationRequestBodyCodeScanningDefaultSetup> codeScanningDefaultSetup =
+        const SdkOmitted(),
+    SdkOptional<CodeScanningDefaultSetupOptions?> codeScanningDefaultSetupOptions =
+        const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal>
+        codeScanningDelegatedAlertDismissal = const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationRequestBodySecretProtection> secretProtection = const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationRequestBodySecretScanning> secretScanning = const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationRequestBodySecretScanningPushProtection> secretScanningPushProtection = const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypass> secretScanningDelegatedBypass = const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedBypassOptions> secretScanningDelegatedBypassOptions = const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationRequestBodySecretScanningValidityChecks> secretScanningValidityChecks = const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationRequestBodySecretScanningNonProviderPatterns> secretScanningNonProviderPatterns = const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationRequestBodySecretScanningGenericSecrets> secretScanningGenericSecrets = const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationRequestBodySecretScanningDelegatedAlertDismissal> secretScanningDelegatedAlertDismissal = const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationRequestBodySecretScanningExtendedMetadata> secretScanningExtendedMetadata = const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationRequestBodyPrivateVulnerabilityReporting> privateVulnerabilityReporting = const SdkOmitted(),
+    SdkOptional<CodeSecurityCreateConfigurationRequestBodyEnforcement> enforcement = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   if (description is SdkPresent<String>) {
     validateLength('description', description.value, max: 255);
   }
@@ -579,53 +717,85 @@ Future<CodeSecurityConfiguration>
             'advanced_security': SdkUtils.unwrapOptional(advancedSecurity),
             'code_security': SdkUtils.unwrapOptional(codeSecurity),
             'dependency_graph': SdkUtils.unwrapOptional(dependencyGraph),
-            'dependency_graph_autosubmit_action': SdkUtils.unwrapOptional(dependencyGraphAutosubmitAction),
-            'dependency_graph_autosubmit_action_options': SdkUtils.unwrapOptional(dependencyGraphAutosubmitActionOptions),
+            'dependency_graph_autosubmit_action':
+                SdkUtils.unwrapOptional(dependencyGraphAutosubmitAction),
+            'dependency_graph_autosubmit_action_options':
+                SdkUtils.unwrapOptional(dependencyGraphAutosubmitActionOptions),
             'dependabot_alerts': SdkUtils.unwrapOptional(dependabotAlerts),
-            'dependabot_security_updates': SdkUtils.unwrapOptional(dependabotSecurityUpdates),
-            'dependabot_delegated_alert_dismissal': SdkUtils.unwrapOptional(dependabotDelegatedAlertDismissal),
-            'code_scanning_options': SdkUtils.unwrapOptional(codeScanningOptions),
-            'code_scanning_default_setup': SdkUtils.unwrapOptional(codeScanningDefaultSetup),
-            'code_scanning_default_setup_options': SdkUtils.unwrapOptional(codeScanningDefaultSetupOptions),
-            'code_scanning_delegated_alert_dismissal': SdkUtils.unwrapOptional(codeScanningDelegatedAlertDismissal),
+            'dependabot_security_updates':
+                SdkUtils.unwrapOptional(dependabotSecurityUpdates),
+            'dependabot_delegated_alert_dismissal':
+                SdkUtils.unwrapOptional(dependabotDelegatedAlertDismissal),
+            'code_scanning_options':
+                SdkUtils.unwrapOptional(codeScanningOptions),
+            'code_scanning_default_setup':
+                SdkUtils.unwrapOptional(codeScanningDefaultSetup),
+            'code_scanning_default_setup_options':
+                SdkUtils.unwrapOptional(codeScanningDefaultSetupOptions),
+            'code_scanning_delegated_alert_dismissal':
+                SdkUtils.unwrapOptional(codeScanningDelegatedAlertDismissal),
             'secret_protection': SdkUtils.unwrapOptional(secretProtection),
             'secret_scanning': SdkUtils.unwrapOptional(secretScanning),
-            'secret_scanning_push_protection': SdkUtils.unwrapOptional(secretScanningPushProtection),
-            'secret_scanning_delegated_bypass': SdkUtils.unwrapOptional(secretScanningDelegatedBypass),
-            'secret_scanning_delegated_bypass_options': SdkUtils.unwrapOptional(secretScanningDelegatedBypassOptions),
-            'secret_scanning_validity_checks': SdkUtils.unwrapOptional(secretScanningValidityChecks),
-            'secret_scanning_non_provider_patterns': SdkUtils.unwrapOptional(secretScanningNonProviderPatterns),
-            'secret_scanning_generic_secrets': SdkUtils.unwrapOptional(secretScanningGenericSecrets),
-            'secret_scanning_delegated_alert_dismissal': SdkUtils.unwrapOptional(secretScanningDelegatedAlertDismissal),
-            'secret_scanning_extended_metadata': SdkUtils.unwrapOptional(secretScanningExtendedMetadata),
-            'private_vulnerability_reporting': SdkUtils.unwrapOptional(privateVulnerabilityReporting),
+            'secret_scanning_push_protection':
+                SdkUtils.unwrapOptional(secretScanningPushProtection),
+            'secret_scanning_delegated_bypass':
+                SdkUtils.unwrapOptional(secretScanningDelegatedBypass),
+            'secret_scanning_delegated_bypass_options':
+                SdkUtils.unwrapOptional(secretScanningDelegatedBypassOptions),
+            'secret_scanning_validity_checks':
+                SdkUtils.unwrapOptional(secretScanningValidityChecks),
+            'secret_scanning_non_provider_patterns':
+                SdkUtils.unwrapOptional(secretScanningNonProviderPatterns),
+            'secret_scanning_generic_secrets':
+                SdkUtils.unwrapOptional(secretScanningGenericSecrets),
+            'secret_scanning_delegated_alert_dismissal':
+                SdkUtils.unwrapOptional(secretScanningDelegatedAlertDismissal),
+            'secret_scanning_extended_metadata':
+                SdkUtils.unwrapOptional(secretScanningExtendedMetadata),
+            'private_vulnerability_reporting':
+                SdkUtils.unwrapOptional(privateVulnerabilityReporting),
             'enforcement': SdkUtils.unwrapOptional(enforcement)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'codeSecurityCreateConfiguration',
-          fromJsonRaw: (value) => CodeSecurityConfiguration.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              CodeSecurityConfiguration.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Lists the default code security configurations for an organization. The authenticated user must be an administrator or security manager for the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
-Future<List<CodeSecurityDefaultConfigurationsItem>> codeSecurityGetDefaultConfigurations(ClientConfig config,
-    {required String org, RequestOptions? requestOptions}) async {
+Future<List<CodeSecurityDefaultConfigurationsItem>>
+    codeSecurityGetDefaultConfigurations(ClientConfig config,
+        {required String org, RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<CodeSecurityDefaultConfigurationsItem>>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/code-security/configurations/defaults',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'codeSecurityGetDefaultConfigurations',
-          fromJsonRaw: (value) => (value as List).map((item) => CodeSecurityDefaultConfigurationsItem.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => CodeSecurityDefaultConfigurationsItem.fromJson(
+                  item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Detach code security configuration(s) from a set of repositories. Repositories will retain their settings but will no longer be associated with the configuration. The authenticated user must be an administrator or security manager for the organization to use this endpoint. Repositories with active enterprise-enforced attachments are skipped unless the authenticated user can manage the enterprise's code security settings; the rest are detached. Inactive enterprise-enforced attachments, such as failed attachments, are detached. The request still returns `204` if every repository is skipped. OAuth app tokens and classic PATs require the `write:org` scope. Managing enterprise-enforced configurations also requires `admin:enterprise` and is not supported by fine-grained PATs or GitHub App access tokens.
 ///
@@ -636,7 +806,8 @@ Future<void> codeSecurityDetachConfiguration(ClientConfig config,
     {required String org,
     required List<int> selectedRepositoryIds,
     RequestOptions? requestOptions}) async {
-  validateItems('selected_repository_ids', selectedRepositoryIds, min: 1, max: 250);
+  validateItems('selected_repository_ids', selectedRepositoryIds,
+      min: 1, max: 250);
 
   return (await sdkRequest<void>('DELETE',
           '/orgs/${Uri.encodeComponent(org.toString())}/code-security/configurations/detach',
@@ -645,31 +816,41 @@ Future<void> codeSecurityDetachConfiguration(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'codeSecurityDetachConfiguration',
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '409': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Gets a code security configuration available in an organization. The authenticated user must be an administrator or security manager for the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
 ///
 /// [org] The organization name. The name is not case sensitive.
 /// [configurationId] The unique identifier of the code security configuration.
-Future<CodeSecurityConfiguration>
-    codeSecurityGetConfiguration(ClientConfig config,
-        {required String org,
-        required int configurationId,
-        RequestOptions? requestOptions}) async {
+Future<CodeSecurityConfiguration> codeSecurityGetConfiguration(
+    ClientConfig config,
+    {required String org,
+    required int configurationId,
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<CodeSecurityConfiguration>('GET',
           '/orgs/${Uri.encodeComponent(org.toString())}/code-security/configurations/${Uri.encodeComponent(configurationId.toString())}',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'codeSecurityGetConfiguration',
-          fromJsonRaw: (value) => CodeSecurityConfiguration.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              CodeSecurityConfiguration.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Updates a code security configuration in an organization. The authenticated user must be an administrator or security manager for the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
 ///
@@ -724,37 +905,47 @@ Future<CodeSecurityConfiguration>
 /// [privateVulnerabilityReporting] The enablement status of private
 ///   vulnerability reporting
 /// [enforcement] The enforcement status for a security configuration
-Future<CodeSecurityConfiguration>
-    codeSecurityUpdateConfiguration(ClientConfig config,
-        {required String org,
-        required int configurationId,
-        SdkOptional<String> name = const SdkOmitted(),
-        SdkOptional<String> description = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateConfigurationRequestBodyAdvancedSecurity> advancedSecurity = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateConfigurationRequestBodyCodeSecurity> codeSecurity = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateConfigurationRequestBodyDependencyGraph> dependencyGraph = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitAction> dependencyGraphAutosubmitAction = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitActionOptions> dependencyGraphAutosubmitActionOptions = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateConfigurationRequestBodyDependabotAlerts> dependabotAlerts = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateConfigurationRequestBodyDependabotSecurityUpdates> dependabotSecurityUpdates = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateConfigurationRequestBodyDependabotDelegatedAlertDismissal> dependabotDelegatedAlertDismissal = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateConfigurationRequestBodyCodeScanningDefaultSetup> codeScanningDefaultSetup = const SdkOmitted(),
-        SdkOptional<CodeScanningDefaultSetupOptions?> codeScanningDefaultSetupOptions = const SdkOmitted(),
-        SdkOptional<CodeScanningOptions?> codeScanningOptions = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal> codeScanningDelegatedAlertDismissal = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretProtection> secretProtection = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanning> secretScanning = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningPushProtection> secretScanningPushProtection = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypass> secretScanningDelegatedBypass = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptions> secretScanningDelegatedBypassOptions = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningValidityChecks> secretScanningValidityChecks = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningNonProviderPatterns> secretScanningNonProviderPatterns = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningGenericSecrets> secretScanningGenericSecrets = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedAlertDismissal> secretScanningDelegatedAlertDismissal = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningExtendedMetadata> secretScanningExtendedMetadata = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateConfigurationRequestBodyPrivateVulnerabilityReporting> privateVulnerabilityReporting = const SdkOmitted(),
-        SdkOptional<CodeSecurityUpdateConfigurationRequestBodyEnforcement> enforcement = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<CodeSecurityConfiguration> codeSecurityUpdateConfiguration(ClientConfig config,
+    {required String org,
+    required int configurationId,
+    SdkOptional<String> name = const SdkOmitted(),
+    SdkOptional<String> description = const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateConfigurationRequestBodyAdvancedSecurity> advancedSecurity =
+        const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateConfigurationRequestBodyCodeSecurity> codeSecurity =
+        const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateConfigurationRequestBodyDependencyGraph> dependencyGraph =
+        const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitAction>
+        dependencyGraphAutosubmitAction = const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitActionOptions>
+        dependencyGraphAutosubmitActionOptions = const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateConfigurationRequestBodyDependabotAlerts> dependabotAlerts =
+        const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateConfigurationRequestBodyDependabotSecurityUpdates> dependabotSecurityUpdates =
+        const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateConfigurationRequestBodyDependabotDelegatedAlertDismissal>
+        dependabotDelegatedAlertDismissal = const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateConfigurationRequestBodyCodeScanningDefaultSetup> codeScanningDefaultSetup =
+        const SdkOmitted(),
+    SdkOptional<CodeScanningDefaultSetupOptions?> codeScanningDefaultSetupOptions =
+        const SdkOmitted(),
+    SdkOptional<CodeScanningOptions?> codeScanningOptions = const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal>
+        codeScanningDelegatedAlertDismissal = const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretProtection> secretProtection = const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanning> secretScanning = const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningPushProtection> secretScanningPushProtection = const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypass> secretScanningDelegatedBypass = const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedBypassOptions> secretScanningDelegatedBypassOptions = const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningValidityChecks> secretScanningValidityChecks = const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningNonProviderPatterns> secretScanningNonProviderPatterns = const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningGenericSecrets> secretScanningGenericSecrets = const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningDelegatedAlertDismissal> secretScanningDelegatedAlertDismissal = const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateConfigurationRequestBodySecretScanningExtendedMetadata> secretScanningExtendedMetadata = const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateConfigurationRequestBodyPrivateVulnerabilityReporting> privateVulnerabilityReporting = const SdkOmitted(),
+    SdkOptional<CodeSecurityUpdateConfigurationRequestBodyEnforcement> enforcement = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   if (description is SdkPresent<String>) {
     validateLength('description', description.value, max: 255);
   }
@@ -768,36 +959,64 @@ Future<CodeSecurityConfiguration>
             'advanced_security': SdkUtils.unwrapOptional(advancedSecurity),
             'code_security': SdkUtils.unwrapOptional(codeSecurity),
             'dependency_graph': SdkUtils.unwrapOptional(dependencyGraph),
-            'dependency_graph_autosubmit_action': SdkUtils.unwrapOptional(dependencyGraphAutosubmitAction),
-            'dependency_graph_autosubmit_action_options': SdkUtils.unwrapOptional(dependencyGraphAutosubmitActionOptions),
+            'dependency_graph_autosubmit_action':
+                SdkUtils.unwrapOptional(dependencyGraphAutosubmitAction),
+            'dependency_graph_autosubmit_action_options':
+                SdkUtils.unwrapOptional(dependencyGraphAutosubmitActionOptions),
             'dependabot_alerts': SdkUtils.unwrapOptional(dependabotAlerts),
-            'dependabot_security_updates': SdkUtils.unwrapOptional(dependabotSecurityUpdates),
-            'dependabot_delegated_alert_dismissal': SdkUtils.unwrapOptional(dependabotDelegatedAlertDismissal),
-            'code_scanning_default_setup': SdkUtils.unwrapOptional(codeScanningDefaultSetup),
-            'code_scanning_default_setup_options': SdkUtils.unwrapOptional(codeScanningDefaultSetupOptions),
-            'code_scanning_options': SdkUtils.unwrapOptional(codeScanningOptions),
-            'code_scanning_delegated_alert_dismissal': SdkUtils.unwrapOptional(codeScanningDelegatedAlertDismissal),
+            'dependabot_security_updates':
+                SdkUtils.unwrapOptional(dependabotSecurityUpdates),
+            'dependabot_delegated_alert_dismissal':
+                SdkUtils.unwrapOptional(dependabotDelegatedAlertDismissal),
+            'code_scanning_default_setup':
+                SdkUtils.unwrapOptional(codeScanningDefaultSetup),
+            'code_scanning_default_setup_options':
+                SdkUtils.unwrapOptional(codeScanningDefaultSetupOptions),
+            'code_scanning_options':
+                SdkUtils.unwrapOptional(codeScanningOptions),
+            'code_scanning_delegated_alert_dismissal':
+                SdkUtils.unwrapOptional(codeScanningDelegatedAlertDismissal),
             'secret_protection': SdkUtils.unwrapOptional(secretProtection),
             'secret_scanning': SdkUtils.unwrapOptional(secretScanning),
-            'secret_scanning_push_protection': SdkUtils.unwrapOptional(secretScanningPushProtection),
-            'secret_scanning_delegated_bypass': SdkUtils.unwrapOptional(secretScanningDelegatedBypass),
-            'secret_scanning_delegated_bypass_options': SdkUtils.unwrapOptional(secretScanningDelegatedBypassOptions),
-            'secret_scanning_validity_checks': SdkUtils.unwrapOptional(secretScanningValidityChecks),
-            'secret_scanning_non_provider_patterns': SdkUtils.unwrapOptional(secretScanningNonProviderPatterns),
-            'secret_scanning_generic_secrets': SdkUtils.unwrapOptional(secretScanningGenericSecrets),
-            'secret_scanning_delegated_alert_dismissal': SdkUtils.unwrapOptional(secretScanningDelegatedAlertDismissal),
-            'secret_scanning_extended_metadata': SdkUtils.unwrapOptional(secretScanningExtendedMetadata),
-            'private_vulnerability_reporting': SdkUtils.unwrapOptional(privateVulnerabilityReporting),
+            'secret_scanning_push_protection':
+                SdkUtils.unwrapOptional(secretScanningPushProtection),
+            'secret_scanning_delegated_bypass':
+                SdkUtils.unwrapOptional(secretScanningDelegatedBypass),
+            'secret_scanning_delegated_bypass_options':
+                SdkUtils.unwrapOptional(secretScanningDelegatedBypassOptions),
+            'secret_scanning_validity_checks':
+                SdkUtils.unwrapOptional(secretScanningValidityChecks),
+            'secret_scanning_non_provider_patterns':
+                SdkUtils.unwrapOptional(secretScanningNonProviderPatterns),
+            'secret_scanning_generic_secrets':
+                SdkUtils.unwrapOptional(secretScanningGenericSecrets),
+            'secret_scanning_delegated_alert_dismissal':
+                SdkUtils.unwrapOptional(secretScanningDelegatedAlertDismissal),
+            'secret_scanning_extended_metadata':
+                SdkUtils.unwrapOptional(secretScanningExtendedMetadata),
+            'private_vulnerability_reporting':
+                SdkUtils.unwrapOptional(privateVulnerabilityReporting),
             'enforcement': SdkUtils.unwrapOptional(enforcement)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'codeSecurityUpdateConfiguration',
-          fromJsonRaw: (value) => CodeSecurityConfiguration.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              CodeSecurityConfiguration.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '409': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Deletes the desired code security configuration from an organization. Repositories attached to the configuration will retain their settings but will no longer be associated with the configuration. The authenticated user must be an administrator or security manager for the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
 ///
@@ -813,10 +1032,14 @@ Future<void> codeSecurityDeleteConfiguration(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'codeSecurityDeleteConfiguration',
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '400': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '409': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Attach a code security configuration to a set of repositories. If the repositories specified are already attached to a configuration, they will be re-attached to the provided configuration. If insufficient GHAS licenses are available to attach the configuration to a repository, only free features will be enabled. The authenticated user must be an administrator or security manager for the organization to use this endpoint. Directly applying an enterprise-enforced configuration also requires permission to manage the enterprise's code security settings. Without it, the request returns `403` and no repositories change. When applying a different configuration, repositories with active enterprise-enforced attachments are skipped unless the authenticated user can manage the enterprise's code security settings; the remaining repositories are updated. The request still returns `202` if every repository is skipped. OAuth app tokens and classic PATs require the `write:org` scope. Directly applying an enterprise-enforced configuration also requires `admin:enterprise` and is not supported by fine-grained PATs or GitHub App access tokens.
 ///
@@ -828,28 +1051,39 @@ Future<void> codeSecurityDeleteConfiguration(ClientConfig config,
 /// [selectedRepositoryIds] An array of repository IDs to attach the
 ///   configuration to. You can only provide a list of repository ids when the
 ///   `scope` is set to `selected`.
-Future<Map<String, dynamic>>
-    codeSecurityAttachConfiguration(ClientConfig config,
-        {required String org,
-        required int configurationId,
-        required CodeSecurityAttachConfigurationRequestBodyScope scope,
-        SdkOptional<List<int>> selectedRepositoryIds = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<Map<String, dynamic>> codeSecurityAttachConfiguration(
+    ClientConfig config,
+    {required String org,
+    required int configurationId,
+    required CodeSecurityAttachConfigurationRequestBodyScope scope,
+    SdkOptional<List<int>> selectedRepositoryIds = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<Map<String, dynamic>>('POST',
           '/orgs/${Uri.encodeComponent(org.toString())}/code-security/configurations/${Uri.encodeComponent(configurationId.toString())}/attach',
           config: config,
           body: {
             'scope': scope,
-            'selected_repository_ids': SdkUtils.unwrapOptional(selectedRepositoryIds)
+            'selected_repository_ids':
+                SdkUtils.unwrapOptional(selectedRepositoryIds)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'codeSecurityAttachConfiguration',
           fromJsonRaw: (value) => value as Map<String, dynamic>,
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '409': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Sets a code security configuration as a default to be applied to new repositories in your organization. This configuration will be applied to the matching repository type (all, none, public, private and internal) by default when they are created. The authenticated user must be an administrator or security manager for the organization to use this endpoint. Setting an enterprise-enforced configuration as the default also requires permission to manage the enterprise's code security settings. A default set with this endpoint is an organization default, even if the configuration is owned or enforced by the enterprise. An enterprise-enforced configuration set as an enterprise-level default for the same repository visibility takes precedence. OAuth app tokens and classic PATs require the `write:org` scope; setting an enterprise-enforced configuration as the default also requires `admin:enterprise`. Fine-grained PATs and GitHub App access tokens cannot perform that action.
 ///
@@ -861,22 +1095,32 @@ Future<CodeSecuritySetConfigurationAsDefaultResponse>
     codeSecuritySetConfigurationAsDefault(ClientConfig config,
         {required String org,
         required int configurationId,
-        SdkOptional<CodeSecuritySetConfigurationAsDefaultRequestBodyDefaultForNewRepos> defaultForNewRepos = const SdkOmitted(),
+        SdkOptional<
+                CodeSecuritySetConfigurationAsDefaultRequestBodyDefaultForNewRepos>
+            defaultForNewRepos = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
-  return (await sdkRequest<CodeSecuritySetConfigurationAsDefaultResponse>('PUT',
-          '/orgs/${Uri.encodeComponent(org.toString())}/code-security/configurations/${Uri.encodeComponent(configurationId.toString())}/defaults',
+  return (await sdkRequest<CodeSecuritySetConfigurationAsDefaultResponse>(
+          'PUT', '/orgs/${Uri.encodeComponent(org.toString())}/code-security/configurations/${Uri.encodeComponent(configurationId.toString())}/defaults',
           config: config,
           body: {
             'default_for_new_repos': SdkUtils.unwrapOptional(defaultForNewRepos)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'codeSecuritySetConfigurationAsDefault',
-          fromJsonRaw: (value) => CodeSecuritySetConfigurationAsDefaultResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              CodeSecuritySetConfigurationAsDefaultResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Lists the repositories associated with a code security configuration in an organization. The authenticated user must be an administrator or security manager for the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
 ///
@@ -915,19 +1159,34 @@ Future<List<CodeSecurityConfigurationRepositories>>
           '/orgs/${Uri.encodeComponent(org.toString())}/code-security/configurations/${Uri.encodeComponent(configurationId.toString())}/repositories',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'before': SdkQueryValue(SdkUtils.unwrapOptional(before), style: 'form', explode: true),
-            'after': SdkQueryValue(SdkUtils.unwrapOptional(after), style: 'form', explode: true),
-            'status': SdkQueryValue(SdkUtils.unwrapOptional(status), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'before': SdkQueryValue(SdkUtils.unwrapOptional(before),
+                style: 'form', explode: true),
+            'after': SdkQueryValue(SdkUtils.unwrapOptional(after),
+                style: 'form', explode: true),
+            'status': SdkQueryValue(SdkUtils.unwrapOptional(status),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'codeSecurityGetRepositoriesForConfiguration',
-          fromJsonRaw: (value) => (value as List).map((item) => CodeSecurityConfigurationRepositories.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) => CodeSecurityConfigurationRepositories.fromJson(
+                  item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'400': (value) => BasicError.fromJson(value as Map<String, dynamic>), '403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => ValidationErrorSimple.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '400': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                ValidationErrorSimple.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Get the code security configuration that manages a repository's code security settings. The authenticated user must be an administrator or security manager for the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
@@ -944,8 +1203,13 @@ Future<CodeSecurityConfigurationForRepository>
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'codeSecurityGetConfigurationForRepository',
-          fromJsonRaw: (value) => CodeSecurityConfigurationForRepository.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              CodeSecurityConfigurationForRepository.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }

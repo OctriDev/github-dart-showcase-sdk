@@ -7,161 +7,270 @@ part of 'inline.dart';
 class PullsCreateReviewRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The SHA of the commit that needs a review. Not using the latest commit SHA may render your review comment outdated if a subsequent commit modifies the line you specify as the `position`. Defaults to the most recent commit in the pull request when you do not specify a value.
   final SdkOptional<String> commitId;
+
   /// **Required** when using `REQUEST_CHANGES` or `COMMENT` for the `event` parameter. The body text of the pull request review.
   final SdkOptional<String> body;
+
   /// The review action you want to perform. The review actions include: `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. By leaving this blank, you set the review action state to `PENDING`, which means you will need to [submit the pull request review](https://docs.github.com/rest/pulls/reviews#submit-a-review-for-a-pull-request) when you are ready.
   final SdkOptional<PullsCreateReviewRequestBodyEvent> event;
+
   /// Use the following table to specify the location, destination, and contents of the draft review comment.
   final SdkOptional<List<PullsCreateReviewRequestBodyCommentsItem>> comments;
 
-  const PullsCreateReviewRequestBody({this.commitId = const SdkOmitted(), this.body = const SdkOmitted(), this.event = const SdkOmitted(), this.comments = const SdkOmitted()});
+  const PullsCreateReviewRequestBody(
+      {this.commitId = const SdkOmitted(),
+      this.body = const SdkOmitted(),
+      this.event = const SdkOmitted(),
+      this.comments = const SdkOmitted()});
 
-  PullsCreateReviewRequestBody Function({SdkOptional<String> commitId, SdkOptional<String> body, SdkOptional<PullsCreateReviewRequestBodyEvent> event, SdkOptional<List<PullsCreateReviewRequestBodyCommentsItem>> comments}) get copyWith => _copyWith;
+  PullsCreateReviewRequestBody Function(
+          {SdkOptional<String> commitId,
+          SdkOptional<String> body,
+          SdkOptional<PullsCreateReviewRequestBodyEvent> event,
+          SdkOptional<List<PullsCreateReviewRequestBodyCommentsItem>> comments})
+      get copyWith => _copyWith;
 
-  PullsCreateReviewRequestBody _copyWith({Object? commitId = sdkOmittedValue, Object? body = sdkOmittedValue, Object? event = sdkOmittedValue, Object? comments = sdkOmittedValue}) => PullsCreateReviewRequestBody(
-    commitId: identical(commitId, sdkOmittedValue) ? this.commitId : commitId as SdkOptional<String>,
-    body: identical(body, sdkOmittedValue) ? this.body : body as SdkOptional<String>,
-    event: identical(event, sdkOmittedValue) ? this.event : event as SdkOptional<PullsCreateReviewRequestBodyEvent>,
-    comments: identical(comments, sdkOmittedValue) ? this.comments : comments as SdkOptional<List<PullsCreateReviewRequestBodyCommentsItem>>,
-  );
+  PullsCreateReviewRequestBody _copyWith(
+          {Object? commitId = sdkOmittedValue,
+          Object? body = sdkOmittedValue,
+          Object? event = sdkOmittedValue,
+          Object? comments = sdkOmittedValue}) =>
+      PullsCreateReviewRequestBody(
+        commitId: identical(commitId, sdkOmittedValue)
+            ? this.commitId
+            : commitId as SdkOptional<String>,
+        body: identical(body, sdkOmittedValue)
+            ? this.body
+            : body as SdkOptional<String>,
+        event: identical(event, sdkOmittedValue)
+            ? this.event
+            : event as SdkOptional<PullsCreateReviewRequestBodyEvent>,
+        comments: identical(comments, sdkOmittedValue)
+            ? this.comments
+            : comments
+                as SdkOptional<List<PullsCreateReviewRequestBodyCommentsItem>>,
+      );
 
-  factory PullsCreateReviewRequestBody.fromJson(Map<String, dynamic> json) => PullsCreateReviewRequestBody(
-    commitId: json['commit_id'] != null ? SdkPresent((json['commit_id'] as String?)!) : const SdkOmitted(),
-    body: json['body'] != null ? SdkPresent((json['body'] as String?)!) : const SdkOmitted(),
-    event: json['event'] != null ? SdkPresent((json['event'] != null ? PullsCreateReviewRequestBodyEvent.fromJson(json['event'] as String) : null)!) : const SdkOmitted(),
-    comments: json['comments'] != null ? SdkPresent(((json['comments'] as List?)?.map((e) => PullsCreateReviewRequestBodyCommentsItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
+  factory PullsCreateReviewRequestBody.fromJson(Map<String, dynamic> json) =>
+      PullsCreateReviewRequestBody(
+        commitId: json['commit_id'] != null
+            ? SdkPresent((json['commit_id'] as String?)!)
+            : const SdkOmitted(),
+        body: json['body'] != null
+            ? SdkPresent((json['body'] as String?)!)
+            : const SdkOmitted(),
+        event: json['event'] != null
+            ? SdkPresent((json['event'] != null
+                ? PullsCreateReviewRequestBodyEvent.fromJson(
+                    json['event'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        comments: json['comments'] != null
+            ? SdkPresent(((json['comments'] as List?)
+                ?.map((e) => PullsCreateReviewRequestBodyCommentsItem.fromJson(
+                    e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (commitId) {
-      SdkPresent<String>(value: final value) => {'commit_id': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (body) {
-      SdkPresent<String>(value: final value) => {'body': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (event) {
-      SdkPresent<PullsCreateReviewRequestBodyEvent>(value: final value) => {'event': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (comments) {
-      SdkPresent<List<PullsCreateReviewRequestBodyCommentsItem>>(value: final value) => {'comments': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (commitId) {
+          SdkPresent<String>(value: final value) => {
+              'commit_id': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (body) {
+          SdkPresent<String>(value: final value) => {
+              'body': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (event) {
+          SdkPresent<PullsCreateReviewRequestBodyEvent>(value: final value) => {
+              'event': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (comments) {
+          SdkPresent<List<PullsCreateReviewRequestBodyCommentsItem>>(
+            value: final value
+          ) =>
+            {
+              'comments': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class PullsUpdateReviewRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The body text of the pull request review.
   final String body;
 
   const PullsUpdateReviewRequestBody({required this.body});
 
-  PullsUpdateReviewRequestBody Function({String body}) get copyWith => _copyWith;
+  PullsUpdateReviewRequestBody Function({String body}) get copyWith =>
+      _copyWith;
 
-  PullsUpdateReviewRequestBody _copyWith({Object? body = sdkOmittedValue}) => PullsUpdateReviewRequestBody(
-    body: identical(body, sdkOmittedValue) ? this.body : body as String,
-  );
+  PullsUpdateReviewRequestBody _copyWith({Object? body = sdkOmittedValue}) =>
+      PullsUpdateReviewRequestBody(
+        body: identical(body, sdkOmittedValue) ? this.body : body as String,
+      );
 
-  factory PullsUpdateReviewRequestBody.fromJson(Map<String, dynamic> json) => PullsUpdateReviewRequestBody(
-    body: (json['body'] as String?)!,
-  );
+  factory PullsUpdateReviewRequestBody.fromJson(Map<String, dynamic> json) =>
+      PullsUpdateReviewRequestBody(
+        body: (json['body'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'body': body,
-  };
+        'body': body,
+      };
 }
 
 class PullsDismissReviewRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The message for the pull request review dismissal
   final String message;
   final SdkOptional<PullsDismissReviewRequestBodyEvent> event;
 
-  const PullsDismissReviewRequestBody({required this.message, this.event = const SdkOmitted()});
+  const PullsDismissReviewRequestBody(
+      {required this.message, this.event = const SdkOmitted()});
 
-  PullsDismissReviewRequestBody Function({String message, SdkOptional<PullsDismissReviewRequestBodyEvent> event}) get copyWith => _copyWith;
+  PullsDismissReviewRequestBody Function(
+          {String message,
+          SdkOptional<PullsDismissReviewRequestBodyEvent> event})
+      get copyWith => _copyWith;
 
-  PullsDismissReviewRequestBody _copyWith({Object? message = sdkOmittedValue, Object? event = sdkOmittedValue}) => PullsDismissReviewRequestBody(
-    message: identical(message, sdkOmittedValue) ? this.message : message as String,
-    event: identical(event, sdkOmittedValue) ? this.event : event as SdkOptional<PullsDismissReviewRequestBodyEvent>,
-  );
+  PullsDismissReviewRequestBody _copyWith(
+          {Object? message = sdkOmittedValue,
+          Object? event = sdkOmittedValue}) =>
+      PullsDismissReviewRequestBody(
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as String,
+        event: identical(event, sdkOmittedValue)
+            ? this.event
+            : event as SdkOptional<PullsDismissReviewRequestBodyEvent>,
+      );
 
-  factory PullsDismissReviewRequestBody.fromJson(Map<String, dynamic> json) => PullsDismissReviewRequestBody(
-    message: (json['message'] as String?)!,
-    event: json['event'] != null ? SdkPresent((json['event'] != null ? PullsDismissReviewRequestBodyEvent.fromJson(json['event'] as String) : null)!) : const SdkOmitted(),
-  );
+  factory PullsDismissReviewRequestBody.fromJson(Map<String, dynamic> json) =>
+      PullsDismissReviewRequestBody(
+        message: (json['message'] as String?)!,
+        event: json['event'] != null
+            ? SdkPresent((json['event'] != null
+                ? PullsDismissReviewRequestBodyEvent.fromJson(
+                    json['event'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'message': message,
-    ...switch (event) {
-      SdkPresent<PullsDismissReviewRequestBodyEvent>(value: final value) => {'event': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'message': message,
+        ...switch (event) {
+          SdkPresent<PullsDismissReviewRequestBodyEvent>(value: final value) =>
+            {
+              'event': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class PullsSubmitReviewRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The body text of the pull request review
   final SdkOptional<String> body;
+
   /// The review action you want to perform. The review actions include: `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. When you leave this blank, the API returns _HTTP 422 (Unrecognizable entity)_ and sets the review action state to `PENDING`, which means you will need to re-submit the pull request review using a review action.
   final PullsSubmitReviewRequestBodyEvent event;
 
-  const PullsSubmitReviewRequestBody({this.body = const SdkOmitted(), required this.event});
+  const PullsSubmitReviewRequestBody(
+      {this.body = const SdkOmitted(), required this.event});
 
-  PullsSubmitReviewRequestBody Function({SdkOptional<String> body, PullsSubmitReviewRequestBodyEvent event}) get copyWith => _copyWith;
+  PullsSubmitReviewRequestBody Function(
+      {SdkOptional<String> body,
+      PullsSubmitReviewRequestBodyEvent event}) get copyWith => _copyWith;
 
-  PullsSubmitReviewRequestBody _copyWith({Object? body = sdkOmittedValue, Object? event = sdkOmittedValue}) => PullsSubmitReviewRequestBody(
-    body: identical(body, sdkOmittedValue) ? this.body : body as SdkOptional<String>,
-    event: identical(event, sdkOmittedValue) ? this.event : event as PullsSubmitReviewRequestBodyEvent,
-  );
+  PullsSubmitReviewRequestBody _copyWith(
+          {Object? body = sdkOmittedValue, Object? event = sdkOmittedValue}) =>
+      PullsSubmitReviewRequestBody(
+        body: identical(body, sdkOmittedValue)
+            ? this.body
+            : body as SdkOptional<String>,
+        event: identical(event, sdkOmittedValue)
+            ? this.event
+            : event as PullsSubmitReviewRequestBodyEvent,
+      );
 
-  factory PullsSubmitReviewRequestBody.fromJson(Map<String, dynamic> json) => PullsSubmitReviewRequestBody(
-    body: json['body'] != null ? SdkPresent((json['body'] as String?)!) : const SdkOmitted(),
-    event: (json['event'] != null ? PullsSubmitReviewRequestBodyEvent.fromJson(json['event'] as String) : null)!,
-  );
+  factory PullsSubmitReviewRequestBody.fromJson(Map<String, dynamic> json) =>
+      PullsSubmitReviewRequestBody(
+        body: json['body'] != null
+            ? SdkPresent((json['body'] as String?)!)
+            : const SdkOmitted(),
+        event: (json['event'] != null
+            ? PullsSubmitReviewRequestBodyEvent.fromJson(
+                json['event'] as String)
+            : null)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (body) {
-      SdkPresent<String>(value: final value) => {'body': value,},
-      _ => const <String, dynamic>{},
-    },
-    'event': event.toJson(),
-  };
+        ...switch (body) {
+          SdkPresent<String>(value: final value) => {
+              'body': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'event': event.toJson(),
+      };
 }
 
 class PullsUpdateBranchRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The expected SHA of the pull request's HEAD ref. This is the most recent commit on the pull request's branch. If the expected SHA does not match the pull request's HEAD, you will receive a `422 Unprocessable Entity` status. You can use the "[List commits](https://docs.github.com/rest/commits/commits#list-commits)" endpoint to find the most recent commit SHA. Default: SHA of the pull request's current HEAD ref.
   final SdkOptional<String> expectedHeadSha;
 
-  const PullsUpdateBranchRequestBody({this.expectedHeadSha = const SdkOmitted()});
+  const PullsUpdateBranchRequestBody(
+      {this.expectedHeadSha = const SdkOmitted()});
 
-  PullsUpdateBranchRequestBody Function({SdkOptional<String> expectedHeadSha}) get copyWith => _copyWith;
+  PullsUpdateBranchRequestBody Function({SdkOptional<String> expectedHeadSha})
+      get copyWith => _copyWith;
 
-  PullsUpdateBranchRequestBody _copyWith({Object? expectedHeadSha = sdkOmittedValue}) => PullsUpdateBranchRequestBody(
-    expectedHeadSha: identical(expectedHeadSha, sdkOmittedValue) ? this.expectedHeadSha : expectedHeadSha as SdkOptional<String>,
-  );
+  PullsUpdateBranchRequestBody _copyWith(
+          {Object? expectedHeadSha = sdkOmittedValue}) =>
+      PullsUpdateBranchRequestBody(
+        expectedHeadSha: identical(expectedHeadSha, sdkOmittedValue)
+            ? this.expectedHeadSha
+            : expectedHeadSha as SdkOptional<String>,
+      );
 
-  factory PullsUpdateBranchRequestBody.fromJson(Map<String, dynamic> json) => PullsUpdateBranchRequestBody(
-    expectedHeadSha: json['expected_head_sha'] != null ? SdkPresent((json['expected_head_sha'] as String?)!) : const SdkOmitted(),
-  );
+  factory PullsUpdateBranchRequestBody.fromJson(Map<String, dynamic> json) =>
+      PullsUpdateBranchRequestBody(
+        expectedHeadSha: json['expected_head_sha'] != null
+            ? SdkPresent((json['expected_head_sha'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (expectedHeadSha) {
-      SdkPresent<String>(value: final value) => {'expected_head_sha': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (expectedHeadSha) {
+          SdkPresent<String>(value: final value) => {
+              'expected_head_sha': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class PullsUpdateBranchResponse {
@@ -170,53 +279,81 @@ class PullsUpdateBranchResponse {
   final SdkOptional<String> message;
   final SdkOptional<String> url;
 
-  const PullsUpdateBranchResponse({this.message = const SdkOmitted(), this.url = const SdkOmitted()});
+  const PullsUpdateBranchResponse(
+      {this.message = const SdkOmitted(), this.url = const SdkOmitted()});
 
-  PullsUpdateBranchResponse Function({SdkOptional<String> message, SdkOptional<String> url}) get copyWith => _copyWith;
+  PullsUpdateBranchResponse Function(
+      {SdkOptional<String> message,
+      SdkOptional<String> url}) get copyWith => _copyWith;
 
-  PullsUpdateBranchResponse _copyWith({Object? message = sdkOmittedValue, Object? url = sdkOmittedValue}) => PullsUpdateBranchResponse(
-    message: identical(message, sdkOmittedValue) ? this.message : message as SdkOptional<String>,
-    url: identical(url, sdkOmittedValue) ? this.url : url as SdkOptional<String>,
-  );
+  PullsUpdateBranchResponse _copyWith(
+          {Object? message = sdkOmittedValue, Object? url = sdkOmittedValue}) =>
+      PullsUpdateBranchResponse(
+        message: identical(message, sdkOmittedValue)
+            ? this.message
+            : message as SdkOptional<String>,
+        url: identical(url, sdkOmittedValue)
+            ? this.url
+            : url as SdkOptional<String>,
+      );
 
-  factory PullsUpdateBranchResponse.fromJson(Map<String, dynamic> json) => PullsUpdateBranchResponse(
-    message: json['message'] != null ? SdkPresent((json['message'] as String?)!) : const SdkOmitted(),
-    url: json['url'] != null ? SdkPresent((json['url'] as String?)!) : const SdkOmitted(),
-  );
+  factory PullsUpdateBranchResponse.fromJson(Map<String, dynamic> json) =>
+      PullsUpdateBranchResponse(
+        message: json['message'] != null
+            ? SdkPresent((json['message'] as String?)!)
+            : const SdkOmitted(),
+        url: json['url'] != null
+            ? SdkPresent((json['url'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (message) {
-      SdkPresent<String>(value: final value) => {'message': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (url) {
-      SdkPresent<String>(value: final value) => {'url': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (message) {
+          SdkPresent<String>(value: final value) => {
+              'message': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (url) {
+          SdkPresent<String>(value: final value) => {
+              'url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class PullRequestStacksCreateRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// An ordered list of pull request numbers forming the stack from bottom to top.
   final List<int> pullRequests;
 
   const PullRequestStacksCreateRequestBody({required this.pullRequests});
 
-  PullRequestStacksCreateRequestBody Function({List<int> pullRequests}) get copyWith => _copyWith;
+  PullRequestStacksCreateRequestBody Function({List<int> pullRequests})
+      get copyWith => _copyWith;
 
-  PullRequestStacksCreateRequestBody _copyWith({Object? pullRequests = sdkOmittedValue}) => PullRequestStacksCreateRequestBody(
-    pullRequests: identical(pullRequests, sdkOmittedValue) ? this.pullRequests : pullRequests as List<int>,
-  );
+  PullRequestStacksCreateRequestBody _copyWith(
+          {Object? pullRequests = sdkOmittedValue}) =>
+      PullRequestStacksCreateRequestBody(
+        pullRequests: identical(pullRequests, sdkOmittedValue)
+            ? this.pullRequests
+            : pullRequests as List<int>,
+      );
 
-  factory PullRequestStacksCreateRequestBody.fromJson(Map<String, dynamic> json) => PullRequestStacksCreateRequestBody(
-    pullRequests: ((json['pull_requests'] as List?)?.map((e) => (e as num).toInt()).toList())!,
-  );
+  factory PullRequestStacksCreateRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      PullRequestStacksCreateRequestBody(
+        pullRequests: ((json['pull_requests'] as List?)
+            ?.map((e) => (e as num).toInt())
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'pull_requests': pullRequests,
-  };
+        'pull_requests': pullRequests,
+      };
 }
 
 class PullRequestStacksCreateResponseBase {
@@ -226,19 +363,24 @@ class PullRequestStacksCreateResponseBase {
 
   const PullRequestStacksCreateResponseBase({required this.ref});
 
-  PullRequestStacksCreateResponseBase Function({String ref}) get copyWith => _copyWith;
+  PullRequestStacksCreateResponseBase Function({String ref}) get copyWith =>
+      _copyWith;
 
-  PullRequestStacksCreateResponseBase _copyWith({Object? ref = sdkOmittedValue}) => PullRequestStacksCreateResponseBase(
-    ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
-  );
+  PullRequestStacksCreateResponseBase _copyWith(
+          {Object? ref = sdkOmittedValue}) =>
+      PullRequestStacksCreateResponseBase(
+        ref: identical(ref, sdkOmittedValue) ? this.ref : ref as String,
+      );
 
-  factory PullRequestStacksCreateResponseBase.fromJson(Map<String, dynamic> json) => PullRequestStacksCreateResponseBase(
-    ref: (json['ref'] as String?)!,
-  );
+  factory PullRequestStacksCreateResponseBase.fromJson(
+          Map<String, dynamic> json) =>
+      PullRequestStacksCreateResponseBase(
+        ref: (json['ref'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'ref': ref,
-  };
+        'ref': ref,
+      };
 }
 
 class PullRequestStacksCreateResponse {
@@ -249,45 +391,87 @@ class PullRequestStacksCreateResponse {
   final String nodeId;
   final String url;
   final PullRequestStacksCreateResponseBase base_;
+
   /// Whether the stack has any open pull request. False when all pull requests are merged or closed.
   final bool open;
   final String createdAt;
   final List<PullRequestStackPullRequest> pullRequests;
 
-  const PullRequestStacksCreateResponse({required this.id, required this.number, required this.nodeId, required this.url, required this.base_, required this.open, required this.createdAt, required this.pullRequests});
+  const PullRequestStacksCreateResponse(
+      {required this.id,
+      required this.number,
+      required this.nodeId,
+      required this.url,
+      required this.base_,
+      required this.open,
+      required this.createdAt,
+      required this.pullRequests});
 
-  PullRequestStacksCreateResponse Function({int id, int number, String nodeId, String url, PullRequestStacksCreateResponseBase base_, bool open, String createdAt, List<PullRequestStackPullRequest> pullRequests}) get copyWith => _copyWith;
+  PullRequestStacksCreateResponse Function(
+          {int id,
+          int number,
+          String nodeId,
+          String url,
+          PullRequestStacksCreateResponseBase base_,
+          bool open,
+          String createdAt,
+          List<PullRequestStackPullRequest> pullRequests})
+      get copyWith => _copyWith;
 
-  PullRequestStacksCreateResponse _copyWith({Object? id = sdkOmittedValue, Object? number = sdkOmittedValue, Object? nodeId = sdkOmittedValue, Object? url = sdkOmittedValue, Object? base_ = sdkOmittedValue, Object? open = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? pullRequests = sdkOmittedValue}) => PullRequestStacksCreateResponse(
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    number: identical(number, sdkOmittedValue) ? this.number : number as int,
-    nodeId: identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
-    url: identical(url, sdkOmittedValue) ? this.url : url as String,
-    base_: identical(base_, sdkOmittedValue) ? this.base_ : base_ as PullRequestStacksCreateResponseBase,
-    open: identical(open, sdkOmittedValue) ? this.open : open as bool,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as String,
-    pullRequests: identical(pullRequests, sdkOmittedValue) ? this.pullRequests : pullRequests as List<PullRequestStackPullRequest>,
-  );
+  PullRequestStacksCreateResponse _copyWith(
+          {Object? id = sdkOmittedValue,
+          Object? number = sdkOmittedValue,
+          Object? nodeId = sdkOmittedValue,
+          Object? url = sdkOmittedValue,
+          Object? base_ = sdkOmittedValue,
+          Object? open = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? pullRequests = sdkOmittedValue}) =>
+      PullRequestStacksCreateResponse(
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        number:
+            identical(number, sdkOmittedValue) ? this.number : number as int,
+        nodeId:
+            identical(nodeId, sdkOmittedValue) ? this.nodeId : nodeId as String,
+        url: identical(url, sdkOmittedValue) ? this.url : url as String,
+        base_: identical(base_, sdkOmittedValue)
+            ? this.base_
+            : base_ as PullRequestStacksCreateResponseBase,
+        open: identical(open, sdkOmittedValue) ? this.open : open as bool,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as String,
+        pullRequests: identical(pullRequests, sdkOmittedValue)
+            ? this.pullRequests
+            : pullRequests as List<PullRequestStackPullRequest>,
+      );
 
-  factory PullRequestStacksCreateResponse.fromJson(Map<String, dynamic> json) => PullRequestStacksCreateResponse(
-    id: ((json['id'] as num?)?.toInt())!,
-    number: ((json['number'] as num?)?.toInt())!,
-    nodeId: (json['node_id'] as String?)!,
-    url: (json['url'] as String?)!,
-    base_: (json['base'] != null ? PullRequestStacksCreateResponseBase.fromJson(json['base'] as Map<String, dynamic>) : null)!,
-    open: (json['open'] as bool?)!,
-    createdAt: (json['created_at'] as String?)!,
-    pullRequests: ((json['pull_requests'] as List?)?.map((e) => PullRequestStackPullRequest.fromJson(e as Map<String, dynamic>)).toList())!,
-  );
+  factory PullRequestStacksCreateResponse.fromJson(Map<String, dynamic> json) =>
+      PullRequestStacksCreateResponse(
+        id: ((json['id'] as num?)?.toInt())!,
+        number: ((json['number'] as num?)?.toInt())!,
+        nodeId: (json['node_id'] as String?)!,
+        url: (json['url'] as String?)!,
+        base_: (json['base'] != null
+            ? PullRequestStacksCreateResponseBase.fromJson(
+                json['base'] as Map<String, dynamic>)
+            : null)!,
+        open: (json['open'] as bool?)!,
+        createdAt: (json['created_at'] as String?)!,
+        pullRequests: ((json['pull_requests'] as List?)
+            ?.map((e) =>
+                PullRequestStackPullRequest.fromJson(e as Map<String, dynamic>))
+            .toList())!,
+      );
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'number': number,
-    'node_id': nodeId,
-    'url': url,
-    'base': base_.toJson(),
-    'open': open,
-    'created_at': createdAt,
-    'pull_requests': pullRequests.map((item) => item.toJson()).toList(),
-  };
+        'id': id,
+        'number': number,
+        'node_id': nodeId,
+        'url': url,
+        'base': base_.toJson(),
+        'open': open,
+        'created_at': createdAt,
+        'pull_requests': pullRequests.map((item) => item.toJson()).toList(),
+      };
 }

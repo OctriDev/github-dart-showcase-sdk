@@ -30,34 +30,48 @@ import '../types.dart';
 ///   -rest-api)."
 /// [state] If specified, only code quality findings with this state will be
 ///   returned.
-Future<List<CodeQualityFinding>>
-    codeQualityListFindingsForRepo(ClientConfig config,
-        {required String owner,
-        required String repo,
-        SdkOptional<int> perPage = const SdkOmitted(),
-        SdkOptional<SchemaSchema0df64690> direction = const SdkOmitted(),
-        SdkOptional<String> before = const SdkOmitted(),
-        SdkOptional<String> after = const SdkOmitted(),
-        SdkOptional<CodeQualityListFindingsForRepoState> state = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<List<CodeQualityFinding>> codeQualityListFindingsForRepo(
+    ClientConfig config,
+    {required String owner,
+    required String repo,
+    SdkOptional<int> perPage = const SdkOmitted(),
+    SdkOptional<SchemaSchema0df64690> direction = const SdkOmitted(),
+    SdkOptional<String> before = const SdkOmitted(),
+    SdkOptional<String> after = const SdkOmitted(),
+    SdkOptional<CodeQualityListFindingsForRepoState> state = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   return (await sdkRequest<List<CodeQualityFinding>>('GET',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/code-quality/findings',
           config: config,
           query: {
-            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage), style: 'form', explode: true),
-            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction), style: 'form', explode: true),
-            'before': SdkQueryValue(SdkUtils.unwrapOptional(before), style: 'form', explode: true),
-            'after': SdkQueryValue(SdkUtils.unwrapOptional(after), style: 'form', explode: true),
-            'state': SdkQueryValue(SdkUtils.unwrapOptional(state), style: 'form', explode: true)
+            'per_page': SdkQueryValue(SdkUtils.unwrapOptional(perPage),
+                style: 'form', explode: true),
+            'direction': SdkQueryValue(SdkUtils.unwrapOptional(direction),
+                style: 'form', explode: true),
+            'before': SdkQueryValue(SdkUtils.unwrapOptional(before),
+                style: 'form', explode: true),
+            'after': SdkQueryValue(SdkUtils.unwrapOptional(after),
+                style: 'form', explode: true),
+            'state': SdkQueryValue(SdkUtils.unwrapOptional(state),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'codeQualityListFindingsForRepo',
-          fromJsonRaw: (value) => (value as List).map((item) => CodeQualityFinding.fromJson(item as Map<String, dynamic>)).toList(),
+          fromJsonRaw: (value) => (value as List)
+              .map((item) =>
+                  CodeQualityFinding.fromJson(item as Map<String, dynamic>))
+              .toList(),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }
-
 
 /// Gets a single code quality finding. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
@@ -75,12 +89,17 @@ Future<CodeQualityFinding> codeQualityGetFinding(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'codeQualityGetFinding',
-          fromJsonRaw: (value) => CodeQualityFinding.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              CodeQualityFinding.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '503': (value) =>
+            ServiceUnavailable.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Gets a code quality setup configuration. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
@@ -96,12 +115,17 @@ Future<CodeQualitySetup> codeQualityGetSetup(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'codeQualityGetSetup',
-          fromJsonRaw: (value) => CodeQualitySetup.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              CodeQualitySetup.fromJson(value as Map<String, dynamic>),
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+        '403': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '404': (value) => BasicError.fromJson(value as Map<String, dynamic>),
+        '503': (value) =>
+            ServiceUnavailable.fromJson(value as Map<String, dynamic>)
+      }))
       .data;
 }
-
 
 /// Updates a code quality setup configuration. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
@@ -118,10 +142,13 @@ Future<Map<String, dynamic>> codeQualityUpdateSetup(ClientConfig config,
     {required String owner,
     required String repo,
     SdkOptional<CodeQualitySetupUpdateState> state = const SdkOmitted(),
-    SdkOptional<CodeQualitySetupUpdateRunnerType> runnerType = const SdkOmitted(),
+    SdkOptional<CodeQualitySetupUpdateRunnerType> runnerType =
+        const SdkOmitted(),
     SdkOptional<String?> runnerLabel = const SdkOmitted(),
-    SdkOptional<List<CodeQualitySetupUpdateLanguagesItem>> languages = const SdkOmitted(),
-    SdkOptional<CodeQualitySetupUpdateAiFindingsOption> aiFindingsOption = const SdkOmitted(),
+    SdkOptional<List<CodeQualitySetupUpdateLanguagesItem>> languages =
+        const SdkOmitted(),
+    SdkOptional<CodeQualitySetupUpdateAiFindingsOption> aiFindingsOption =
+        const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   return (await sdkRequest<Map<String, dynamic>>('PATCH',
           '/repos/${Uri.encodeComponent(owner.toString())}/${Uri.encodeComponent(repo.toString())}/code-quality/setup',
@@ -137,6 +164,17 @@ Future<Map<String, dynamic>> codeQualityUpdateSetup(ClientConfig config,
           operationId: 'codeQualityUpdateSetup',
           fromJsonRaw: (value) => value as Map<String, dynamic>,
           options: requestOptions,
-          errors: {'403': (value) => BasicError.fromJson(value as Map<String, dynamic>), '404': (value) => BasicError.fromJson(value as Map<String, dynamic>), '409': (value) => BasicError.fromJson(value as Map<String, dynamic>), '422': (value) => BasicError.fromJson(value as Map<String, dynamic>), '503': (value) => ServiceUnavailable.fromJson(value as Map<String, dynamic>)}))
+          errors: {
+            '403': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '404': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '409': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '422': (value) =>
+                BasicError.fromJson(value as Map<String, dynamic>),
+            '503': (value) =>
+                ServiceUnavailable.fromJson(value as Map<String, dynamic>)
+          }))
       .data;
 }

@@ -6,276 +6,418 @@ part of 'inline.dart';
 // Inline operation models (part 248)
 /// The enablement status of secret scanning push protection
 final class CodeSecurityCreateConfigurationRequestBodySecretScanningPushProtection {
-
   final String value;
 
-  const CodeSecurityCreateConfigurationRequestBodySecretScanningPushProtection._(this.value);
+  const CodeSecurityCreateConfigurationRequestBodySecretScanningPushProtection._(
+      this.value);
 
-  factory CodeSecurityCreateConfigurationRequestBodySecretScanningPushProtection.fromJson(String value) => CodeSecurityCreateConfigurationRequestBodySecretScanningPushProtection._(value);
+  factory CodeSecurityCreateConfigurationRequestBodySecretScanningPushProtection.fromJson(
+          String value) =>
+      CodeSecurityCreateConfigurationRequestBodySecretScanningPushProtection._(
+          value);
 
-  static const enabled = CodeSecurityCreateConfigurationRequestBodySecretScanningPushProtection._('enabled');
-  static const disabled = CodeSecurityCreateConfigurationRequestBodySecretScanningPushProtection._('disabled');
-  static const notSet = CodeSecurityCreateConfigurationRequestBodySecretScanningPushProtection._('not_set');
+  static const enabled =
+      CodeSecurityCreateConfigurationRequestBodySecretScanningPushProtection._(
+          'enabled');
+  static const disabled =
+      CodeSecurityCreateConfigurationRequestBodySecretScanningPushProtection._(
+          'disabled');
+  static const notSet =
+      CodeSecurityCreateConfigurationRequestBodySecretScanningPushProtection._(
+          'not_set');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeSecurityCreateConfigurationRequestBodySecretScanningPushProtection && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is CodeSecurityCreateConfigurationRequestBodySecretScanningPushProtection &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The enablement status of secret scanning validity checks
 final class CodeSecurityCreateConfigurationRequestBodySecretScanningValidityChecks {
-
   final String value;
 
-  const CodeSecurityCreateConfigurationRequestBodySecretScanningValidityChecks._(this.value);
+  const CodeSecurityCreateConfigurationRequestBodySecretScanningValidityChecks._(
+      this.value);
 
-  factory CodeSecurityCreateConfigurationRequestBodySecretScanningValidityChecks.fromJson(String value) => CodeSecurityCreateConfigurationRequestBodySecretScanningValidityChecks._(value);
+  factory CodeSecurityCreateConfigurationRequestBodySecretScanningValidityChecks.fromJson(
+          String value) =>
+      CodeSecurityCreateConfigurationRequestBodySecretScanningValidityChecks._(
+          value);
 
-  static const enabled = CodeSecurityCreateConfigurationRequestBodySecretScanningValidityChecks._('enabled');
-  static const disabled = CodeSecurityCreateConfigurationRequestBodySecretScanningValidityChecks._('disabled');
-  static const notSet = CodeSecurityCreateConfigurationRequestBodySecretScanningValidityChecks._('not_set');
+  static const enabled =
+      CodeSecurityCreateConfigurationRequestBodySecretScanningValidityChecks._(
+          'enabled');
+  static const disabled =
+      CodeSecurityCreateConfigurationRequestBodySecretScanningValidityChecks._(
+          'disabled');
+  static const notSet =
+      CodeSecurityCreateConfigurationRequestBodySecretScanningValidityChecks._(
+          'not_set');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeSecurityCreateConfigurationRequestBodySecretScanningValidityChecks && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is CodeSecurityCreateConfigurationRequestBodySecretScanningValidityChecks &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The enablement status of GitHub Advanced Security features. `enabled` will enable both Code Security and Secret Protection features. &gt; [!WARNING] &gt; `code_security` and `secret_protection` are deprecated values for this field. Prefer the individual `code_security` and `secret_protection` fields to set the status of these features.
 final class CodeSecurityUpdateConfigurationRequestBodyAdvancedSecurity {
-
   final String value;
 
-  const CodeSecurityUpdateConfigurationRequestBodyAdvancedSecurity._(this.value);
+  const CodeSecurityUpdateConfigurationRequestBodyAdvancedSecurity._(
+      this.value);
 
-  factory CodeSecurityUpdateConfigurationRequestBodyAdvancedSecurity.fromJson(String value) => CodeSecurityUpdateConfigurationRequestBodyAdvancedSecurity._(value);
+  factory CodeSecurityUpdateConfigurationRequestBodyAdvancedSecurity.fromJson(
+          String value) =>
+      CodeSecurityUpdateConfigurationRequestBodyAdvancedSecurity._(value);
 
-  static const enabled = CodeSecurityUpdateConfigurationRequestBodyAdvancedSecurity._('enabled');
-  static const disabled = CodeSecurityUpdateConfigurationRequestBodyAdvancedSecurity._('disabled');
-  static const codeSecurity = CodeSecurityUpdateConfigurationRequestBodyAdvancedSecurity._('code_security');
-  static const secretProtection = CodeSecurityUpdateConfigurationRequestBodyAdvancedSecurity._('secret_protection');
+  static const enabled =
+      CodeSecurityUpdateConfigurationRequestBodyAdvancedSecurity._('enabled');
+  static const disabled =
+      CodeSecurityUpdateConfigurationRequestBodyAdvancedSecurity._('disabled');
+  static const codeSecurity =
+      CodeSecurityUpdateConfigurationRequestBodyAdvancedSecurity._(
+          'code_security');
+  static const secretProtection =
+      CodeSecurityUpdateConfigurationRequestBodyAdvancedSecurity._(
+          'secret_protection');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeSecurityUpdateConfigurationRequestBodyAdvancedSecurity && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodeSecurityUpdateConfigurationRequestBodyAdvancedSecurity &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The enablement status of code scanning default setup
 final class CodeSecurityUpdateConfigurationRequestBodyCodeScanningDefaultSetup {
-
   final String value;
 
-  const CodeSecurityUpdateConfigurationRequestBodyCodeScanningDefaultSetup._(this.value);
+  const CodeSecurityUpdateConfigurationRequestBodyCodeScanningDefaultSetup._(
+      this.value);
 
-  factory CodeSecurityUpdateConfigurationRequestBodyCodeScanningDefaultSetup.fromJson(String value) => CodeSecurityUpdateConfigurationRequestBodyCodeScanningDefaultSetup._(value);
+  factory CodeSecurityUpdateConfigurationRequestBodyCodeScanningDefaultSetup.fromJson(
+          String value) =>
+      CodeSecurityUpdateConfigurationRequestBodyCodeScanningDefaultSetup._(
+          value);
 
-  static const enabled = CodeSecurityUpdateConfigurationRequestBodyCodeScanningDefaultSetup._('enabled');
-  static const disabled = CodeSecurityUpdateConfigurationRequestBodyCodeScanningDefaultSetup._('disabled');
-  static const notSet = CodeSecurityUpdateConfigurationRequestBodyCodeScanningDefaultSetup._('not_set');
+  static const enabled =
+      CodeSecurityUpdateConfigurationRequestBodyCodeScanningDefaultSetup._(
+          'enabled');
+  static const disabled =
+      CodeSecurityUpdateConfigurationRequestBodyCodeScanningDefaultSetup._(
+          'disabled');
+  static const notSet =
+      CodeSecurityUpdateConfigurationRequestBodyCodeScanningDefaultSetup._(
+          'not_set');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeSecurityUpdateConfigurationRequestBodyCodeScanningDefaultSetup && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is CodeSecurityUpdateConfigurationRequestBodyCodeScanningDefaultSetup &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The enablement status of code scanning delegated alert dismissal
 final class CodeSecurityUpdateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal {
-
   final String value;
 
-  const CodeSecurityUpdateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal._(this.value);
+  const CodeSecurityUpdateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal._(
+      this.value);
 
-  factory CodeSecurityUpdateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal.fromJson(String value) => CodeSecurityUpdateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal._(value);
+  factory CodeSecurityUpdateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal.fromJson(
+          String value) =>
+      CodeSecurityUpdateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal
+          ._(value);
 
-  static const enabled = CodeSecurityUpdateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal._('enabled');
-  static const disabled = CodeSecurityUpdateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal._('disabled');
-  static const notSet = CodeSecurityUpdateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal._('not_set');
+  static const enabled =
+      CodeSecurityUpdateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal
+          ._('enabled');
+  static const disabled =
+      CodeSecurityUpdateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal
+          ._('disabled');
+  static const notSet =
+      CodeSecurityUpdateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal
+          ._('not_set');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeSecurityUpdateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is CodeSecurityUpdateConfigurationRequestBodyCodeScanningDelegatedAlertDismissal &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The enablement status of GitHub Code Security features.
 final class CodeSecurityUpdateConfigurationRequestBodyCodeSecurity {
-
   final String value;
 
   const CodeSecurityUpdateConfigurationRequestBodyCodeSecurity._(this.value);
 
-  factory CodeSecurityUpdateConfigurationRequestBodyCodeSecurity.fromJson(String value) => CodeSecurityUpdateConfigurationRequestBodyCodeSecurity._(value);
+  factory CodeSecurityUpdateConfigurationRequestBodyCodeSecurity.fromJson(
+          String value) =>
+      CodeSecurityUpdateConfigurationRequestBodyCodeSecurity._(value);
 
-  static const enabled = CodeSecurityUpdateConfigurationRequestBodyCodeSecurity._('enabled');
-  static const disabled = CodeSecurityUpdateConfigurationRequestBodyCodeSecurity._('disabled');
-  static const notSet = CodeSecurityUpdateConfigurationRequestBodyCodeSecurity._('not_set');
+  static const enabled =
+      CodeSecurityUpdateConfigurationRequestBodyCodeSecurity._('enabled');
+  static const disabled =
+      CodeSecurityUpdateConfigurationRequestBodyCodeSecurity._('disabled');
+  static const notSet =
+      CodeSecurityUpdateConfigurationRequestBodyCodeSecurity._('not_set');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeSecurityUpdateConfigurationRequestBodyCodeSecurity && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodeSecurityUpdateConfigurationRequestBodyCodeSecurity &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The enablement status of Dependabot alerts
 final class CodeSecurityUpdateConfigurationRequestBodyDependabotAlerts {
-
   final String value;
 
-  const CodeSecurityUpdateConfigurationRequestBodyDependabotAlerts._(this.value);
+  const CodeSecurityUpdateConfigurationRequestBodyDependabotAlerts._(
+      this.value);
 
-  factory CodeSecurityUpdateConfigurationRequestBodyDependabotAlerts.fromJson(String value) => CodeSecurityUpdateConfigurationRequestBodyDependabotAlerts._(value);
+  factory CodeSecurityUpdateConfigurationRequestBodyDependabotAlerts.fromJson(
+          String value) =>
+      CodeSecurityUpdateConfigurationRequestBodyDependabotAlerts._(value);
 
-  static const enabled = CodeSecurityUpdateConfigurationRequestBodyDependabotAlerts._('enabled');
-  static const disabled = CodeSecurityUpdateConfigurationRequestBodyDependabotAlerts._('disabled');
-  static const notSet = CodeSecurityUpdateConfigurationRequestBodyDependabotAlerts._('not_set');
+  static const enabled =
+      CodeSecurityUpdateConfigurationRequestBodyDependabotAlerts._('enabled');
+  static const disabled =
+      CodeSecurityUpdateConfigurationRequestBodyDependabotAlerts._('disabled');
+  static const notSet =
+      CodeSecurityUpdateConfigurationRequestBodyDependabotAlerts._('not_set');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeSecurityUpdateConfigurationRequestBodyDependabotAlerts && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodeSecurityUpdateConfigurationRequestBodyDependabotAlerts &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The enablement status of Dependabot delegated alert dismissal. Requires Dependabot alerts to be enabled.
 final class CodeSecurityUpdateConfigurationRequestBodyDependabotDelegatedAlertDismissal {
-
   final String value;
 
-  const CodeSecurityUpdateConfigurationRequestBodyDependabotDelegatedAlertDismissal._(this.value);
+  const CodeSecurityUpdateConfigurationRequestBodyDependabotDelegatedAlertDismissal._(
+      this.value);
 
-  factory CodeSecurityUpdateConfigurationRequestBodyDependabotDelegatedAlertDismissal.fromJson(String value) => CodeSecurityUpdateConfigurationRequestBodyDependabotDelegatedAlertDismissal._(value);
+  factory CodeSecurityUpdateConfigurationRequestBodyDependabotDelegatedAlertDismissal.fromJson(
+          String value) =>
+      CodeSecurityUpdateConfigurationRequestBodyDependabotDelegatedAlertDismissal
+          ._(value);
 
-  static const enabled = CodeSecurityUpdateConfigurationRequestBodyDependabotDelegatedAlertDismissal._('enabled');
-  static const disabled = CodeSecurityUpdateConfigurationRequestBodyDependabotDelegatedAlertDismissal._('disabled');
-  static const notSet = CodeSecurityUpdateConfigurationRequestBodyDependabotDelegatedAlertDismissal._('not_set');
+  static const enabled =
+      CodeSecurityUpdateConfigurationRequestBodyDependabotDelegatedAlertDismissal
+          ._('enabled');
+  static const disabled =
+      CodeSecurityUpdateConfigurationRequestBodyDependabotDelegatedAlertDismissal
+          ._('disabled');
+  static const notSet =
+      CodeSecurityUpdateConfigurationRequestBodyDependabotDelegatedAlertDismissal
+          ._('not_set');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeSecurityUpdateConfigurationRequestBodyDependabotDelegatedAlertDismissal && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is CodeSecurityUpdateConfigurationRequestBodyDependabotDelegatedAlertDismissal &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The enablement status of Dependabot security updates
 final class CodeSecurityUpdateConfigurationRequestBodyDependabotSecurityUpdates {
-
   final String value;
 
-  const CodeSecurityUpdateConfigurationRequestBodyDependabotSecurityUpdates._(this.value);
+  const CodeSecurityUpdateConfigurationRequestBodyDependabotSecurityUpdates._(
+      this.value);
 
-  factory CodeSecurityUpdateConfigurationRequestBodyDependabotSecurityUpdates.fromJson(String value) => CodeSecurityUpdateConfigurationRequestBodyDependabotSecurityUpdates._(value);
+  factory CodeSecurityUpdateConfigurationRequestBodyDependabotSecurityUpdates.fromJson(
+          String value) =>
+      CodeSecurityUpdateConfigurationRequestBodyDependabotSecurityUpdates._(
+          value);
 
-  static const enabled = CodeSecurityUpdateConfigurationRequestBodyDependabotSecurityUpdates._('enabled');
-  static const disabled = CodeSecurityUpdateConfigurationRequestBodyDependabotSecurityUpdates._('disabled');
-  static const notSet = CodeSecurityUpdateConfigurationRequestBodyDependabotSecurityUpdates._('not_set');
+  static const enabled =
+      CodeSecurityUpdateConfigurationRequestBodyDependabotSecurityUpdates._(
+          'enabled');
+  static const disabled =
+      CodeSecurityUpdateConfigurationRequestBodyDependabotSecurityUpdates._(
+          'disabled');
+  static const notSet =
+      CodeSecurityUpdateConfigurationRequestBodyDependabotSecurityUpdates._(
+          'not_set');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeSecurityUpdateConfigurationRequestBodyDependabotSecurityUpdates && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is CodeSecurityUpdateConfigurationRequestBodyDependabotSecurityUpdates &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The enablement status of Dependency Graph
 final class CodeSecurityUpdateConfigurationRequestBodyDependencyGraph {
-
   final String value;
 
   const CodeSecurityUpdateConfigurationRequestBodyDependencyGraph._(this.value);
 
-  factory CodeSecurityUpdateConfigurationRequestBodyDependencyGraph.fromJson(String value) => CodeSecurityUpdateConfigurationRequestBodyDependencyGraph._(value);
+  factory CodeSecurityUpdateConfigurationRequestBodyDependencyGraph.fromJson(
+          String value) =>
+      CodeSecurityUpdateConfigurationRequestBodyDependencyGraph._(value);
 
-  static const enabled = CodeSecurityUpdateConfigurationRequestBodyDependencyGraph._('enabled');
-  static const disabled = CodeSecurityUpdateConfigurationRequestBodyDependencyGraph._('disabled');
-  static const notSet = CodeSecurityUpdateConfigurationRequestBodyDependencyGraph._('not_set');
+  static const enabled =
+      CodeSecurityUpdateConfigurationRequestBodyDependencyGraph._('enabled');
+  static const disabled =
+      CodeSecurityUpdateConfigurationRequestBodyDependencyGraph._('disabled');
+  static const notSet =
+      CodeSecurityUpdateConfigurationRequestBodyDependencyGraph._('not_set');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeSecurityUpdateConfigurationRequestBodyDependencyGraph && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodeSecurityUpdateConfigurationRequestBodyDependencyGraph &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The enablement status of Automatic dependency submission
 final class CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitAction {
-
   final String value;
 
-  const CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitAction._(this.value);
+  const CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitAction._(
+      this.value);
 
-  factory CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitAction.fromJson(String value) => CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitAction._(value);
+  factory CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitAction.fromJson(
+          String value) =>
+      CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitAction
+          ._(value);
 
-  static const enabled = CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitAction._('enabled');
-  static const disabled = CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitAction._('disabled');
-  static const notSet = CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitAction._('not_set');
+  static const enabled =
+      CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitAction
+          ._('enabled');
+  static const disabled =
+      CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitAction
+          ._('disabled');
+  static const notSet =
+      CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitAction
+          ._('not_set');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitAction && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is CodeSecurityUpdateConfigurationRequestBodyDependencyGraphAutosubmitAction &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The enforcement status for a security configuration
 final class CodeSecurityUpdateConfigurationRequestBodyEnforcement {
-
   final String value;
 
   const CodeSecurityUpdateConfigurationRequestBodyEnforcement._(this.value);
 
-  factory CodeSecurityUpdateConfigurationRequestBodyEnforcement.fromJson(String value) => CodeSecurityUpdateConfigurationRequestBodyEnforcement._(value);
+  factory CodeSecurityUpdateConfigurationRequestBodyEnforcement.fromJson(
+          String value) =>
+      CodeSecurityUpdateConfigurationRequestBodyEnforcement._(value);
 
-  static const enforced = CodeSecurityUpdateConfigurationRequestBodyEnforcement._('enforced');
-  static const unenforced = CodeSecurityUpdateConfigurationRequestBodyEnforcement._('unenforced');
+  static const enforced =
+      CodeSecurityUpdateConfigurationRequestBodyEnforcement._('enforced');
+  static const unenforced =
+      CodeSecurityUpdateConfigurationRequestBodyEnforcement._('unenforced');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CodeSecurityUpdateConfigurationRequestBodyEnforcement && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CodeSecurityUpdateConfigurationRequestBodyEnforcement &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

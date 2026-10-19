@@ -6,55 +6,62 @@ part of 'inline.dart';
 // Inline operation models (part 18)
 /// Optional enumerated value serialized in the `budget_type` wire field.
 final class CreateBudgetBudgetBudgetTypeVariant1 {
-
   final String value;
 
   const CreateBudgetBudgetBudgetTypeVariant1._(this.value);
 
-  factory CreateBudgetBudgetBudgetTypeVariant1.fromJson(String value) => CreateBudgetBudgetBudgetTypeVariant1._(value);
+  factory CreateBudgetBudgetBudgetTypeVariant1.fromJson(String value) =>
+      CreateBudgetBudgetBudgetTypeVariant1._(value);
 
-  static const skupricing = CreateBudgetBudgetBudgetTypeVariant1._('SkuPricing');
+  static const skupricing =
+      CreateBudgetBudgetBudgetTypeVariant1._('SkuPricing');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CreateBudgetBudgetBudgetTypeVariant1 && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CreateBudgetBudgetBudgetTypeVariant1 && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The source type of the property
 final class CustomPropertySourceType {
-
   final String value;
 
   const CustomPropertySourceType._(this.value);
 
-  factory CustomPropertySourceType.fromJson(String value) => CustomPropertySourceType._(value);
+  factory CustomPropertySourceType.fromJson(String value) =>
+      CustomPropertySourceType._(value);
 
   static const organization = CustomPropertySourceType._('organization');
   static const enterprise = CustomPropertySourceType._('enterprise');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CustomPropertySourceType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CustomPropertySourceType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The type of the value for the property
 final class CustomPropertyValueType {
-
   final String value;
 
   const CustomPropertyValueType._(this.value);
 
-  factory CustomPropertyValueType.fromJson(String value) => CustomPropertyValueType._(value);
+  factory CustomPropertyValueType.fromJson(String value) =>
+      CustomPropertyValueType._(value);
 
   static const string = CustomPropertyValueType._('string');
   static const singleSelect = CustomPropertyValueType._('single_select');
@@ -64,162 +71,191 @@ final class CustomPropertyValueType {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CustomPropertyValueType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CustomPropertyValueType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Who can edit the values of the property
 final class CustomPropertyValuesEditableBy {
-
   final String value;
 
   const CustomPropertyValuesEditableBy._(this.value);
 
-  factory CustomPropertyValuesEditableBy.fromJson(String value) => CustomPropertyValuesEditableBy._(value);
+  factory CustomPropertyValuesEditableBy.fromJson(String value) =>
+      CustomPropertyValuesEditableBy._(value);
 
   static const orgActors = CustomPropertyValuesEditableBy._('org_actors');
-  static const orgAndRepoActors = CustomPropertyValuesEditableBy._('org_and_repo_actors');
+  static const orgAndRepoActors =
+      CustomPropertyValuesEditableBy._('org_and_repo_actors');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CustomPropertyValuesEditableBy && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CustomPropertyValuesEditableBy && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The type of the value for the property
 final class CustomPropertySetPayloadValueType {
-
   final String value;
 
   const CustomPropertySetPayloadValueType._(this.value);
 
-  factory CustomPropertySetPayloadValueType.fromJson(String value) => CustomPropertySetPayloadValueType._(value);
+  factory CustomPropertySetPayloadValueType.fromJson(String value) =>
+      CustomPropertySetPayloadValueType._(value);
 
   static const string = CustomPropertySetPayloadValueType._('string');
-  static const singleSelect = CustomPropertySetPayloadValueType._('single_select');
-  static const multiSelect = CustomPropertySetPayloadValueType._('multi_select');
+  static const singleSelect =
+      CustomPropertySetPayloadValueType._('single_select');
+  static const multiSelect =
+      CustomPropertySetPayloadValueType._('multi_select');
   static const trueFalse = CustomPropertySetPayloadValueType._('true_false');
   static const url = CustomPropertySetPayloadValueType._('url');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CustomPropertySetPayloadValueType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CustomPropertySetPayloadValueType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Who can edit the values of the property
 final class CustomPropertySetPayloadValuesEditableBy {
-
   final String value;
 
   const CustomPropertySetPayloadValuesEditableBy._(this.value);
 
-  factory CustomPropertySetPayloadValuesEditableBy.fromJson(String value) => CustomPropertySetPayloadValuesEditableBy._(value);
+  factory CustomPropertySetPayloadValuesEditableBy.fromJson(String value) =>
+      CustomPropertySetPayloadValuesEditableBy._(value);
 
-  static const orgActors = CustomPropertySetPayloadValuesEditableBy._('org_actors');
-  static const orgAndRepoActors = CustomPropertySetPayloadValuesEditableBy._('org_and_repo_actors');
+  static const orgActors =
+      CustomPropertySetPayloadValuesEditableBy._('org_actors');
+  static const orgAndRepoActors =
+      CustomPropertySetPayloadValuesEditableBy._('org_and_repo_actors');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CustomPropertySetPayloadValuesEditableBy && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CustomPropertySetPayloadValuesEditableBy && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The vulnerable dependency's relationship to your project. &gt; [!NOTE] &gt; We are rolling out support for dependency relationship across ecosystems. This value will be "unknown" for all dependencies in unsupported ecosystems.
 final class DependabotAlertDependencyRelationship {
-
   final String value;
 
   const DependabotAlertDependencyRelationship._(this.value);
 
-  factory DependabotAlertDependencyRelationship.fromJson(String value) => DependabotAlertDependencyRelationship._(value);
+  factory DependabotAlertDependencyRelationship.fromJson(String value) =>
+      DependabotAlertDependencyRelationship._(value);
 
   static const unknown = DependabotAlertDependencyRelationship._('unknown');
   static const direct = DependabotAlertDependencyRelationship._('direct');
-  static const transitive = DependabotAlertDependencyRelationship._('transitive');
-  static const inconclusive = DependabotAlertDependencyRelationship._('inconclusive');
+  static const transitive =
+      DependabotAlertDependencyRelationship._('transitive');
+  static const inconclusive =
+      DependabotAlertDependencyRelationship._('inconclusive');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is DependabotAlertDependencyRelationship && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is DependabotAlertDependencyRelationship && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The execution scope of the vulnerable dependency.
 final class DependabotAlertDependencyScope {
-
   final String value;
 
   const DependabotAlertDependencyScope._(this.value);
 
-  factory DependabotAlertDependencyScope.fromJson(String value) => DependabotAlertDependencyScope._(value);
+  factory DependabotAlertDependencyScope.fromJson(String value) =>
+      DependabotAlertDependencyScope._(value);
 
   static const development = DependabotAlertDependencyScope._('development');
   static const runtime = DependabotAlertDependencyScope._('runtime');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is DependabotAlertDependencyScope && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is DependabotAlertDependencyScope && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The reason that the alert was dismissed.
 final class DependabotAlertDismissedReason {
-
   final String value;
 
   const DependabotAlertDismissedReason._(this.value);
 
-  factory DependabotAlertDismissedReason.fromJson(String value) => DependabotAlertDismissedReason._(value);
+  factory DependabotAlertDismissedReason.fromJson(String value) =>
+      DependabotAlertDismissedReason._(value);
 
   static const fixStarted = DependabotAlertDismissedReason._('fix_started');
   static const inaccurate = DependabotAlertDismissedReason._('inaccurate');
   static const noBandwidth = DependabotAlertDismissedReason._('no_bandwidth');
   static const notUsed = DependabotAlertDismissedReason._('not_used');
-  static const tolerableRisk = DependabotAlertDismissedReason._('tolerable_risk');
+  static const tolerableRisk =
+      DependabotAlertDismissedReason._('tolerable_risk');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is DependabotAlertDismissedReason && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is DependabotAlertDismissedReason && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The state of the Dependabot alert.
 final class DependabotAlertState {
-
   final String value;
 
   const DependabotAlertState._(this.value);
 
-  factory DependabotAlertState.fromJson(String value) => DependabotAlertState._(value);
+  factory DependabotAlertState.fromJson(String value) =>
+      DependabotAlertState._(value);
 
   static const autoDismissed = DependabotAlertState._('auto_dismissed');
   static const dismissed = DependabotAlertState._('dismissed');
@@ -228,56 +264,74 @@ final class DependabotAlertState {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is DependabotAlertState && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is DependabotAlertState && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The current status of the dismissal request.
 final class DependabotAlertDismissalRequestSimpleStatus {
-
   final String value;
 
   const DependabotAlertDismissalRequestSimpleStatus._(this.value);
 
-  factory DependabotAlertDismissalRequestSimpleStatus.fromJson(String value) => DependabotAlertDismissalRequestSimpleStatus._(value);
+  factory DependabotAlertDismissalRequestSimpleStatus.fromJson(String value) =>
+      DependabotAlertDismissalRequestSimpleStatus._(value);
 
-  static const pending = DependabotAlertDismissalRequestSimpleStatus._('pending');
-  static const approved = DependabotAlertDismissalRequestSimpleStatus._('approved');
-  static const rejected = DependabotAlertDismissalRequestSimpleStatus._('rejected');
-  static const cancelled = DependabotAlertDismissalRequestSimpleStatus._('cancelled');
+  static const pending =
+      DependabotAlertDismissalRequestSimpleStatus._('pending');
+  static const approved =
+      DependabotAlertDismissalRequestSimpleStatus._('approved');
+  static const rejected =
+      DependabotAlertDismissalRequestSimpleStatus._('rejected');
+  static const cancelled =
+      DependabotAlertDismissalRequestSimpleStatus._('cancelled');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is DependabotAlertDismissalRequestSimpleStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is DependabotAlertDismissalRequestSimpleStatus &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The classification of the advisory.
 final class DependabotAlertSecurityAdvisoryClassification {
-
   final String value;
 
   const DependabotAlertSecurityAdvisoryClassification._(this.value);
 
-  factory DependabotAlertSecurityAdvisoryClassification.fromJson(String value) => DependabotAlertSecurityAdvisoryClassification._(value);
+  factory DependabotAlertSecurityAdvisoryClassification.fromJson(
+          String value) =>
+      DependabotAlertSecurityAdvisoryClassification._(value);
 
-  static const general = DependabotAlertSecurityAdvisoryClassification._('general');
-  static const malware = DependabotAlertSecurityAdvisoryClassification._('malware');
+  static const general =
+      DependabotAlertSecurityAdvisoryClassification._('general');
+  static const malware =
+      DependabotAlertSecurityAdvisoryClassification._('malware');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is DependabotAlertSecurityAdvisoryClassification && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is DependabotAlertSecurityAdvisoryClassification &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

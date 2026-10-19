@@ -8,203 +8,540 @@ part of 'webhook_registry_package_published.dart';
 class WebhookRegistryPackagePublishedRegistryPackagePackageVersion {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// Optional object value serialized in the `author` wire field.
-  final SdkOptional<WebhookRegistryPackagePublishedRegistryPackagePackageVersionAuthor> author;
+  final SdkOptional<
+          WebhookRegistryPackagePublishedRegistryPackagePackageVersionAuthor>
+      author;
+
   /// Optional API value serialized in the `body` wire field.
-  final SdkOptional<WebhookRegistryPackagePublishedRegistryPackagePackageVersionBody> body;
+  final SdkOptional<
+      WebhookRegistryPackagePublishedRegistryPackagePackageVersionBody> body;
+
   /// Optional `string` value serialized in the `body_html` wire field.
   final SdkOptional<String> bodyHtml;
+
   /// Optional object value serialized in the `container_metadata` wire field.
-  final SdkOptional<WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata> containerMetadata;
+  final SdkOptional<
+          WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata>
+      containerMetadata;
+
   /// Optional `string` value serialized in the `created_at` wire field.
   final SdkOptional<String> createdAt;
+
   /// Required `string` value serialized in the `description` wire field.
   final String description;
+
   /// Optional array value serialized in the `docker_metadata` wire field.
-  final SdkOptional<List<WebhookRegistryPackagePublishedRegistryPackagePackageVersionDockerMetadataItem>> dockerMetadata;
+  final SdkOptional<
+          List<
+              WebhookRegistryPackagePublishedRegistryPackagePackageVersionDockerMetadataItem>>
+      dockerMetadata;
+
   /// Optional `boolean` value serialized in the `draft` wire field.
   final SdkOptional<bool> draft;
+
   /// Required `string` value serialized in the `html_url` wire field.
   final String htmlUrl;
+
   /// Required `integer` value serialized in the `id` wire field.
   final int id;
+
   /// Required `string` value serialized in the `installation_command` wire field.
   final String installationCommand;
+
   /// Optional `string` value serialized in the `manifest` wire field.
   final SdkOptional<String> manifest;
+
   /// Required array value serialized in the `metadata` wire field.
   final List<Map<String, Object?>> metadata;
+
   /// Required `string` value serialized in the `name` wire field.
   final String name;
+
   /// Optional object value serialized in the `npm_metadata` wire field.
-  final SdkOptional<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata?> npmMetadata;
+  final SdkOptional<
+          WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata?>
+      npmMetadata;
+
   /// Optional array value serialized in the `nuget_metadata` wire field.
-  final SdkOptional<List<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItem>?> nugetMetadata;
+  final SdkOptional<
+          List<
+              WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItem>?>
+      nugetMetadata;
+
   /// Required array value serialized in the `package_files` wire field.
-  final List<WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFilesItem> packageFiles;
+  final List<
+          WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFilesItem>
+      packageFiles;
+
   /// Required `string` value serialized in the `package_url` wire field.
   final String packageUrl;
+
   /// Optional `boolean` value serialized in the `prerelease` wire field.
   final SdkOptional<bool> prerelease;
+
   /// Optional object value serialized in the `release` wire field.
-  final SdkOptional<WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease> release;
+  final SdkOptional<
+          WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease>
+      release;
+
   /// Optional array value serialized in the `rubygems_metadata` wire field.
   final SdkOptional<List<WebhookRubygemsMetadata>> rubygemsMetadata;
+
   /// Required `string` value serialized in the `summary` wire field.
   final String summary;
+
   /// Optional `string` value serialized in the `tag_name` wire field.
   final SdkOptional<String> tagName;
+
   /// Optional `string` value serialized in the `target_commitish` wire field.
   final SdkOptional<String> targetCommitish;
+
   /// Optional `string` value serialized in the `target_oid` wire field.
   final SdkOptional<String> targetOid;
+
   /// Optional `string` value serialized in the `updated_at` wire field.
   final SdkOptional<String> updatedAt;
+
   /// Required `string` value serialized in the `version` wire field.
   final String version;
 
-  const WebhookRegistryPackagePublishedRegistryPackagePackageVersion({this.author = const SdkOmitted(), this.body = const SdkOmitted(), this.bodyHtml = const SdkOmitted(), this.containerMetadata = const SdkOmitted(), this.createdAt = const SdkOmitted(), required this.description, this.dockerMetadata = const SdkOmitted(), this.draft = const SdkOmitted(), required this.htmlUrl, required this.id, required this.installationCommand, this.manifest = const SdkOmitted(), required this.metadata, required this.name, this.npmMetadata = const SdkOmitted(), this.nugetMetadata = const SdkOmitted(), required this.packageFiles, required this.packageUrl, this.prerelease = const SdkOmitted(), this.release = const SdkOmitted(), this.rubygemsMetadata = const SdkOmitted(), required this.summary, this.tagName = const SdkOmitted(), this.targetCommitish = const SdkOmitted(), this.targetOid = const SdkOmitted(), this.updatedAt = const SdkOmitted(), required this.version});
+  const WebhookRegistryPackagePublishedRegistryPackagePackageVersion(
+      {this.author = const SdkOmitted(),
+      this.body = const SdkOmitted(),
+      this.bodyHtml = const SdkOmitted(),
+      this.containerMetadata = const SdkOmitted(),
+      this.createdAt = const SdkOmitted(),
+      required this.description,
+      this.dockerMetadata = const SdkOmitted(),
+      this.draft = const SdkOmitted(),
+      required this.htmlUrl,
+      required this.id,
+      required this.installationCommand,
+      this.manifest = const SdkOmitted(),
+      required this.metadata,
+      required this.name,
+      this.npmMetadata = const SdkOmitted(),
+      this.nugetMetadata = const SdkOmitted(),
+      required this.packageFiles,
+      required this.packageUrl,
+      this.prerelease = const SdkOmitted(),
+      this.release = const SdkOmitted(),
+      this.rubygemsMetadata = const SdkOmitted(),
+      required this.summary,
+      this.tagName = const SdkOmitted(),
+      this.targetCommitish = const SdkOmitted(),
+      this.targetOid = const SdkOmitted(),
+      this.updatedAt = const SdkOmitted(),
+      required this.version});
 
-  WebhookRegistryPackagePublishedRegistryPackagePackageVersion Function({SdkOptional<WebhookRegistryPackagePublishedRegistryPackagePackageVersionAuthor> author, SdkOptional<WebhookRegistryPackagePublishedRegistryPackagePackageVersionBody> body, SdkOptional<String> bodyHtml, SdkOptional<WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata> containerMetadata, SdkOptional<String> createdAt, String description, SdkOptional<List<WebhookRegistryPackagePublishedRegistryPackagePackageVersionDockerMetadataItem>> dockerMetadata, SdkOptional<bool> draft, String htmlUrl, int id, String installationCommand, SdkOptional<String> manifest, List<Map<String, Object?>> metadata, String name, SdkOptional<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata?> npmMetadata, SdkOptional<List<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItem>?> nugetMetadata, List<WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFilesItem> packageFiles, String packageUrl, SdkOptional<bool> prerelease, SdkOptional<WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease> release, SdkOptional<List<WebhookRubygemsMetadata>> rubygemsMetadata, String summary, SdkOptional<String> tagName, SdkOptional<String> targetCommitish, SdkOptional<String> targetOid, SdkOptional<String> updatedAt, String version}) get copyWith => _copyWith;
+  WebhookRegistryPackagePublishedRegistryPackagePackageVersion Function(
+      {SdkOptional<
+              WebhookRegistryPackagePublishedRegistryPackagePackageVersionAuthor>
+          author,
+      SdkOptional<
+              WebhookRegistryPackagePublishedRegistryPackagePackageVersionBody>
+          body,
+      SdkOptional<String> bodyHtml,
+      SdkOptional<
+              WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata>
+          containerMetadata,
+      SdkOptional<String> createdAt,
+      String description,
+      SdkOptional<
+              List<
+                  WebhookRegistryPackagePublishedRegistryPackagePackageVersionDockerMetadataItem>>
+          dockerMetadata,
+      SdkOptional<bool> draft,
+      String htmlUrl,
+      int id,
+      String installationCommand,
+      SdkOptional<String> manifest,
+      List<Map<String, Object?>> metadata,
+      String name,
+      SdkOptional<
+              WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata?>
+          npmMetadata,
+      SdkOptional<
+              List<
+                  WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItem>?>
+          nugetMetadata,
+      List<WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFilesItem>
+          packageFiles,
+      String packageUrl,
+      SdkOptional<bool> prerelease,
+      SdkOptional<
+              WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease>
+          release,
+      SdkOptional<List<WebhookRubygemsMetadata>> rubygemsMetadata,
+      String summary,
+      SdkOptional<String> tagName,
+      SdkOptional<String> targetCommitish,
+      SdkOptional<String> targetOid,
+      SdkOptional<String> updatedAt,
+      String version}) get copyWith => _copyWith;
 
-  WebhookRegistryPackagePublishedRegistryPackagePackageVersion _copyWith({Object? author = sdkOmittedValue, Object? body = sdkOmittedValue, Object? bodyHtml = sdkOmittedValue, Object? containerMetadata = sdkOmittedValue, Object? createdAt = sdkOmittedValue, Object? description = sdkOmittedValue, Object? dockerMetadata = sdkOmittedValue, Object? draft = sdkOmittedValue, Object? htmlUrl = sdkOmittedValue, Object? id = sdkOmittedValue, Object? installationCommand = sdkOmittedValue, Object? manifest = sdkOmittedValue, Object? metadata = sdkOmittedValue, Object? name = sdkOmittedValue, Object? npmMetadata = sdkOmittedValue, Object? nugetMetadata = sdkOmittedValue, Object? packageFiles = sdkOmittedValue, Object? packageUrl = sdkOmittedValue, Object? prerelease = sdkOmittedValue, Object? release = sdkOmittedValue, Object? rubygemsMetadata = sdkOmittedValue, Object? summary = sdkOmittedValue, Object? tagName = sdkOmittedValue, Object? targetCommitish = sdkOmittedValue, Object? targetOid = sdkOmittedValue, Object? updatedAt = sdkOmittedValue, Object? version = sdkOmittedValue}) => WebhookRegistryPackagePublishedRegistryPackagePackageVersion(
-    author: identical(author, sdkOmittedValue) ? this.author : author as SdkOptional<WebhookRegistryPackagePublishedRegistryPackagePackageVersionAuthor>,
-    body: identical(body, sdkOmittedValue) ? this.body : body as SdkOptional<WebhookRegistryPackagePublishedRegistryPackagePackageVersionBody>,
-    bodyHtml: identical(bodyHtml, sdkOmittedValue) ? this.bodyHtml : bodyHtml as SdkOptional<String>,
-    containerMetadata: identical(containerMetadata, sdkOmittedValue) ? this.containerMetadata : containerMetadata as SdkOptional<WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata>,
-    createdAt: identical(createdAt, sdkOmittedValue) ? this.createdAt : createdAt as SdkOptional<String>,
-    description: identical(description, sdkOmittedValue) ? this.description : description as String,
-    dockerMetadata: identical(dockerMetadata, sdkOmittedValue) ? this.dockerMetadata : dockerMetadata as SdkOptional<List<WebhookRegistryPackagePublishedRegistryPackagePackageVersionDockerMetadataItem>>,
-    draft: identical(draft, sdkOmittedValue) ? this.draft : draft as SdkOptional<bool>,
-    htmlUrl: identical(htmlUrl, sdkOmittedValue) ? this.htmlUrl : htmlUrl as String,
-    id: identical(id, sdkOmittedValue) ? this.id : id as int,
-    installationCommand: identical(installationCommand, sdkOmittedValue) ? this.installationCommand : installationCommand as String,
-    manifest: identical(manifest, sdkOmittedValue) ? this.manifest : manifest as SdkOptional<String>,
-    metadata: identical(metadata, sdkOmittedValue) ? this.metadata : metadata as List<Map<String, Object?>>,
-    name: identical(name, sdkOmittedValue) ? this.name : name as String,
-    npmMetadata: identical(npmMetadata, sdkOmittedValue) ? this.npmMetadata : npmMetadata as SdkOptional<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata?>,
-    nugetMetadata: identical(nugetMetadata, sdkOmittedValue) ? this.nugetMetadata : nugetMetadata as SdkOptional<List<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItem>?>,
-    packageFiles: identical(packageFiles, sdkOmittedValue) ? this.packageFiles : packageFiles as List<WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFilesItem>,
-    packageUrl: identical(packageUrl, sdkOmittedValue) ? this.packageUrl : packageUrl as String,
-    prerelease: identical(prerelease, sdkOmittedValue) ? this.prerelease : prerelease as SdkOptional<bool>,
-    release: identical(release, sdkOmittedValue) ? this.release : release as SdkOptional<WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease>,
-    rubygemsMetadata: identical(rubygemsMetadata, sdkOmittedValue) ? this.rubygemsMetadata : rubygemsMetadata as SdkOptional<List<WebhookRubygemsMetadata>>,
-    summary: identical(summary, sdkOmittedValue) ? this.summary : summary as String,
-    tagName: identical(tagName, sdkOmittedValue) ? this.tagName : tagName as SdkOptional<String>,
-    targetCommitish: identical(targetCommitish, sdkOmittedValue) ? this.targetCommitish : targetCommitish as SdkOptional<String>,
-    targetOid: identical(targetOid, sdkOmittedValue) ? this.targetOid : targetOid as SdkOptional<String>,
-    updatedAt: identical(updatedAt, sdkOmittedValue) ? this.updatedAt : updatedAt as SdkOptional<String>,
-    version: identical(version, sdkOmittedValue) ? this.version : version as String,
-  );
+  WebhookRegistryPackagePublishedRegistryPackagePackageVersion _copyWith(
+          {Object? author = sdkOmittedValue,
+          Object? body = sdkOmittedValue,
+          Object? bodyHtml = sdkOmittedValue,
+          Object? containerMetadata = sdkOmittedValue,
+          Object? createdAt = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? dockerMetadata = sdkOmittedValue,
+          Object? draft = sdkOmittedValue,
+          Object? htmlUrl = sdkOmittedValue,
+          Object? id = sdkOmittedValue,
+          Object? installationCommand = sdkOmittedValue,
+          Object? manifest = sdkOmittedValue,
+          Object? metadata = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? npmMetadata = sdkOmittedValue,
+          Object? nugetMetadata = sdkOmittedValue,
+          Object? packageFiles = sdkOmittedValue,
+          Object? packageUrl = sdkOmittedValue,
+          Object? prerelease = sdkOmittedValue,
+          Object? release = sdkOmittedValue,
+          Object? rubygemsMetadata = sdkOmittedValue,
+          Object? summary = sdkOmittedValue,
+          Object? tagName = sdkOmittedValue,
+          Object? targetCommitish = sdkOmittedValue,
+          Object? targetOid = sdkOmittedValue,
+          Object? updatedAt = sdkOmittedValue,
+          Object? version = sdkOmittedValue}) =>
+      WebhookRegistryPackagePublishedRegistryPackagePackageVersion(
+        author: identical(author, sdkOmittedValue)
+            ? this.author
+            : author as SdkOptional<
+                WebhookRegistryPackagePublishedRegistryPackagePackageVersionAuthor>,
+        body: identical(body, sdkOmittedValue)
+            ? this.body
+            : body as SdkOptional<
+                WebhookRegistryPackagePublishedRegistryPackagePackageVersionBody>,
+        bodyHtml: identical(bodyHtml, sdkOmittedValue)
+            ? this.bodyHtml
+            : bodyHtml as SdkOptional<String>,
+        containerMetadata: identical(containerMetadata, sdkOmittedValue)
+            ? this.containerMetadata
+            : containerMetadata as SdkOptional<
+                WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata>,
+        createdAt: identical(createdAt, sdkOmittedValue)
+            ? this.createdAt
+            : createdAt as SdkOptional<String>,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as String,
+        dockerMetadata: identical(dockerMetadata, sdkOmittedValue)
+            ? this.dockerMetadata
+            : dockerMetadata as SdkOptional<
+                List<
+                    WebhookRegistryPackagePublishedRegistryPackagePackageVersionDockerMetadataItem>>,
+        draft: identical(draft, sdkOmittedValue)
+            ? this.draft
+            : draft as SdkOptional<bool>,
+        htmlUrl: identical(htmlUrl, sdkOmittedValue)
+            ? this.htmlUrl
+            : htmlUrl as String,
+        id: identical(id, sdkOmittedValue) ? this.id : id as int,
+        installationCommand: identical(installationCommand, sdkOmittedValue)
+            ? this.installationCommand
+            : installationCommand as String,
+        manifest: identical(manifest, sdkOmittedValue)
+            ? this.manifest
+            : manifest as SdkOptional<String>,
+        metadata: identical(metadata, sdkOmittedValue)
+            ? this.metadata
+            : metadata as List<Map<String, Object?>>,
+        name: identical(name, sdkOmittedValue) ? this.name : name as String,
+        npmMetadata: identical(npmMetadata, sdkOmittedValue)
+            ? this.npmMetadata
+            : npmMetadata as SdkOptional<
+                WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata?>,
+        nugetMetadata: identical(nugetMetadata, sdkOmittedValue)
+            ? this.nugetMetadata
+            : nugetMetadata as SdkOptional<
+                List<
+                    WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItem>?>,
+        packageFiles: identical(packageFiles, sdkOmittedValue)
+            ? this.packageFiles
+            : packageFiles as List<
+                WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFilesItem>,
+        packageUrl: identical(packageUrl, sdkOmittedValue)
+            ? this.packageUrl
+            : packageUrl as String,
+        prerelease: identical(prerelease, sdkOmittedValue)
+            ? this.prerelease
+            : prerelease as SdkOptional<bool>,
+        release: identical(release, sdkOmittedValue)
+            ? this.release
+            : release as SdkOptional<
+                WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease>,
+        rubygemsMetadata: identical(rubygemsMetadata, sdkOmittedValue)
+            ? this.rubygemsMetadata
+            : rubygemsMetadata as SdkOptional<List<WebhookRubygemsMetadata>>,
+        summary: identical(summary, sdkOmittedValue)
+            ? this.summary
+            : summary as String,
+        tagName: identical(tagName, sdkOmittedValue)
+            ? this.tagName
+            : tagName as SdkOptional<String>,
+        targetCommitish: identical(targetCommitish, sdkOmittedValue)
+            ? this.targetCommitish
+            : targetCommitish as SdkOptional<String>,
+        targetOid: identical(targetOid, sdkOmittedValue)
+            ? this.targetOid
+            : targetOid as SdkOptional<String>,
+        updatedAt: identical(updatedAt, sdkOmittedValue)
+            ? this.updatedAt
+            : updatedAt as SdkOptional<String>,
+        version: identical(version, sdkOmittedValue)
+            ? this.version
+            : version as String,
+      );
 
-  factory WebhookRegistryPackagePublishedRegistryPackagePackageVersion.fromJson(Map<String, dynamic> json) => WebhookRegistryPackagePublishedRegistryPackagePackageVersion(
-    author: json['author'] != null ? SdkPresent((json['author'] != null ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionAuthor.fromJson(json['author'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    body: json['body'] != null ? SdkPresent((json['body'] != null ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionBody.fromJson(json['body']) : null)!) : const SdkOmitted(),
-    bodyHtml: json['body_html'] != null ? SdkPresent((json['body_html'] as String?)!) : const SdkOmitted(),
-    containerMetadata: json['container_metadata'] != null ? SdkPresent((json['container_metadata'] != null ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata.fromJson(json['container_metadata'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    createdAt: json['created_at'] != null ? SdkPresent((json['created_at'] as String?)!) : const SdkOmitted(),
-    description: (json['description'] as String?)!,
-    dockerMetadata: json['docker_metadata'] != null ? SdkPresent(((json['docker_metadata'] as List?)?.map((e) => WebhookRegistryPackagePublishedRegistryPackagePackageVersionDockerMetadataItem.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-    draft: json['draft'] != null ? SdkPresent((json['draft'] as bool?)!) : const SdkOmitted(),
-    htmlUrl: (json['html_url'] as String?)!,
-    id: ((json['id'] as num?)?.toInt())!,
-    installationCommand: (json['installation_command'] as String?)!,
-    manifest: json['manifest'] != null ? SdkPresent((json['manifest'] as String?)!) : const SdkOmitted(),
-    metadata: ((json['metadata'] as List?)?.map((e) => Map<String, dynamic>.from(e as Map).map((key, value) => MapEntry(key, value))).toList())!,
-    name: (json['name'] as String?)!,
-    npmMetadata: json.containsKey('npm_metadata') ? SdkPresent(json['npm_metadata'] != null ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata.fromJson(json['npm_metadata'] as Map<String, dynamic>) : null) : const SdkOmitted(),
-    nugetMetadata: json.containsKey('nuget_metadata') ? SdkPresent((json['nuget_metadata'] as List?)?.map((e) => WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItem.fromJson(e as Map<String, dynamic>)).toList()) : const SdkOmitted(),
-    packageFiles: ((json['package_files'] as List?)?.map((e) => WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFilesItem.fromJson(e as Map<String, dynamic>)).toList())!,
-    packageUrl: (json['package_url'] as String?)!,
-    prerelease: json['prerelease'] != null ? SdkPresent((json['prerelease'] as bool?)!) : const SdkOmitted(),
-    release: json['release'] != null ? SdkPresent((json['release'] != null ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease.fromJson(json['release'] as Map<String, dynamic>) : null)!) : const SdkOmitted(),
-    rubygemsMetadata: json['rubygems_metadata'] != null ? SdkPresent(((json['rubygems_metadata'] as List?)?.map((e) => WebhookRubygemsMetadata.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-    summary: (json['summary'] as String?)!,
-    tagName: json['tag_name'] != null ? SdkPresent((json['tag_name'] as String?)!) : const SdkOmitted(),
-    targetCommitish: json['target_commitish'] != null ? SdkPresent((json['target_commitish'] as String?)!) : const SdkOmitted(),
-    targetOid: json['target_oid'] != null ? SdkPresent((json['target_oid'] as String?)!) : const SdkOmitted(),
-    updatedAt: json['updated_at'] != null ? SdkPresent((json['updated_at'] as String?)!) : const SdkOmitted(),
-    version: (json['version'] as String?)!,
-  );
+  factory WebhookRegistryPackagePublishedRegistryPackagePackageVersion.fromJson(
+          Map<String, dynamic> json) =>
+      WebhookRegistryPackagePublishedRegistryPackagePackageVersion(
+        author: json['author'] != null
+            ? SdkPresent((json['author'] != null
+                ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionAuthor
+                    .fromJson(json['author'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        body: json['body'] != null
+            ? SdkPresent((json['body'] != null
+                ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionBody
+                    .fromJson(json['body'])
+                : null)!)
+            : const SdkOmitted(),
+        bodyHtml: json['body_html'] != null
+            ? SdkPresent((json['body_html'] as String?)!)
+            : const SdkOmitted(),
+        containerMetadata: json['container_metadata'] != null
+            ? SdkPresent((json['container_metadata'] != null
+                ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata
+                    .fromJson(
+                        json['container_metadata'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        createdAt: json['created_at'] != null
+            ? SdkPresent((json['created_at'] as String?)!)
+            : const SdkOmitted(),
+        description: (json['description'] as String?)!,
+        dockerMetadata: json['docker_metadata'] != null
+            ? SdkPresent(((json['docker_metadata'] as List?)
+                ?.map((e) =>
+                    WebhookRegistryPackagePublishedRegistryPackagePackageVersionDockerMetadataItem
+                        .fromJson(e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+        draft: json['draft'] != null
+            ? SdkPresent((json['draft'] as bool?)!)
+            : const SdkOmitted(),
+        htmlUrl: (json['html_url'] as String?)!,
+        id: ((json['id'] as num?)?.toInt())!,
+        installationCommand: (json['installation_command'] as String?)!,
+        manifest: json['manifest'] != null
+            ? SdkPresent((json['manifest'] as String?)!)
+            : const SdkOmitted(),
+        metadata: ((json['metadata'] as List?)
+            ?.map((e) => Map<String, dynamic>.from(e as Map)
+                .map((key, value) => MapEntry(key, value)))
+            .toList())!,
+        name: (json['name'] as String?)!,
+        npmMetadata: json.containsKey('npm_metadata')
+            ? SdkPresent(json['npm_metadata'] != null
+                ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata
+                    .fromJson(json['npm_metadata'] as Map<String, dynamic>)
+                : null)
+            : const SdkOmitted(),
+        nugetMetadata: json.containsKey('nuget_metadata')
+            ? SdkPresent((json['nuget_metadata'] as List?)
+                ?.map((e) =>
+                    WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItem
+                        .fromJson(e as Map<String, dynamic>))
+                .toList())
+            : const SdkOmitted(),
+        packageFiles: ((json['package_files'] as List?)
+            ?.map((e) =>
+                WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFilesItem
+                    .fromJson(e as Map<String, dynamic>))
+            .toList())!,
+        packageUrl: (json['package_url'] as String?)!,
+        prerelease: json['prerelease'] != null
+            ? SdkPresent((json['prerelease'] as bool?)!)
+            : const SdkOmitted(),
+        release: json['release'] != null
+            ? SdkPresent((json['release'] != null
+                ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease
+                    .fromJson(json['release'] as Map<String, dynamic>)
+                : null)!)
+            : const SdkOmitted(),
+        rubygemsMetadata: json['rubygems_metadata'] != null
+            ? SdkPresent(((json['rubygems_metadata'] as List?)
+                ?.map((e) =>
+                    WebhookRubygemsMetadata.fromJson(e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+        summary: (json['summary'] as String?)!,
+        tagName: json['tag_name'] != null
+            ? SdkPresent((json['tag_name'] as String?)!)
+            : const SdkOmitted(),
+        targetCommitish: json['target_commitish'] != null
+            ? SdkPresent((json['target_commitish'] as String?)!)
+            : const SdkOmitted(),
+        targetOid: json['target_oid'] != null
+            ? SdkPresent((json['target_oid'] as String?)!)
+            : const SdkOmitted(),
+        updatedAt: json['updated_at'] != null
+            ? SdkPresent((json['updated_at'] as String?)!)
+            : const SdkOmitted(),
+        version: (json['version'] as String?)!,
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (author) {
-      SdkPresent<WebhookRegistryPackagePublishedRegistryPackagePackageVersionAuthor>(value: final value) => {'author': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (body) {
-      SdkPresent<WebhookRegistryPackagePublishedRegistryPackagePackageVersionBody>(value: final value) => {'body': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (bodyHtml) {
-      SdkPresent<String>(value: final value) => {'body_html': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (containerMetadata) {
-      SdkPresent<WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata>(value: final value) => {'container_metadata': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (createdAt) {
-      SdkPresent<String>(value: final value) => {'created_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    'description': description,
-    ...switch (dockerMetadata) {
-      SdkPresent<List<WebhookRegistryPackagePublishedRegistryPackagePackageVersionDockerMetadataItem>>(value: final value) => {'docker_metadata': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (draft) {
-      SdkPresent<bool>(value: final value) => {'draft': value,},
-      _ => const <String, dynamic>{},
-    },
-    'html_url': htmlUrl,
-    'id': id,
-    'installation_command': installationCommand,
-    ...switch (manifest) {
-      SdkPresent<String>(value: final value) => {'manifest': value,},
-      _ => const <String, dynamic>{},
-    },
-    'metadata': metadata,
-    'name': name,
-    ...switch (npmMetadata) {
-      SdkPresent<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata?>(value: final value) => {'npm_metadata': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (nugetMetadata) {
-      SdkPresent<List<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItem>?>(value: final value) => {'nuget_metadata': value?.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    'package_files': packageFiles.map((item) => item.toJson()).toList(),
-    'package_url': packageUrl,
-    ...switch (prerelease) {
-      SdkPresent<bool>(value: final value) => {'prerelease': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (release) {
-      SdkPresent<WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease>(value: final value) => {'release': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (rubygemsMetadata) {
-      SdkPresent<List<WebhookRubygemsMetadata>>(value: final value) => {'rubygems_metadata': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-    'summary': summary,
-    ...switch (tagName) {
-      SdkPresent<String>(value: final value) => {'tag_name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (targetCommitish) {
-      SdkPresent<String>(value: final value) => {'target_commitish': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (targetOid) {
-      SdkPresent<String>(value: final value) => {'target_oid': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (updatedAt) {
-      SdkPresent<String>(value: final value) => {'updated_at': value,},
-      _ => const <String, dynamic>{},
-    },
-    'version': version,
-  };
+        ...switch (author) {
+          SdkPresent<
+                WebhookRegistryPackagePublishedRegistryPackagePackageVersionAuthor>(
+            value: final value
+          ) =>
+            {
+              'author': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (body) {
+          SdkPresent<
+                WebhookRegistryPackagePublishedRegistryPackagePackageVersionBody>(
+            value: final value
+          ) =>
+            {
+              'body': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (bodyHtml) {
+          SdkPresent<String>(value: final value) => {
+              'body_html': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (containerMetadata) {
+          SdkPresent<
+                WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata>(
+            value: final value
+          ) =>
+            {
+              'container_metadata': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (createdAt) {
+          SdkPresent<String>(value: final value) => {
+              'created_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'description': description,
+        ...switch (dockerMetadata) {
+          SdkPresent<
+                List<
+                    WebhookRegistryPackagePublishedRegistryPackagePackageVersionDockerMetadataItem>>(
+            value: final value
+          ) =>
+            {
+              'docker_metadata': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (draft) {
+          SdkPresent<bool>(value: final value) => {
+              'draft': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'html_url': htmlUrl,
+        'id': id,
+        'installation_command': installationCommand,
+        ...switch (manifest) {
+          SdkPresent<String>(value: final value) => {
+              'manifest': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'metadata': metadata,
+        'name': name,
+        ...switch (npmMetadata) {
+          SdkPresent<
+                WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata?>(
+            value: final value
+          ) =>
+            {
+              'npm_metadata': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (nugetMetadata) {
+          SdkPresent<
+                List<
+                    WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItem>?>(
+            value: final value
+          ) =>
+            {
+              'nuget_metadata': value?.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'package_files': packageFiles.map((item) => item.toJson()).toList(),
+        'package_url': packageUrl,
+        ...switch (prerelease) {
+          SdkPresent<bool>(value: final value) => {
+              'prerelease': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (release) {
+          SdkPresent<
+                WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease>(
+            value: final value
+          ) =>
+            {
+              'release': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (rubygemsMetadata) {
+          SdkPresent<List<WebhookRubygemsMetadata>>(value: final value) => {
+              'rubygems_metadata': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        'summary': summary,
+        ...switch (tagName) {
+          SdkPresent<String>(value: final value) => {
+              'tag_name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (targetCommitish) {
+          SdkPresent<String>(value: final value) => {
+              'target_commitish': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (targetOid) {
+          SdkPresent<String>(value: final value) => {
+              'target_oid': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (updatedAt) {
+          SdkPresent<String>(value: final value) => {
+              'updated_at': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        'version': version,
+      };
 }
